@@ -65,7 +65,7 @@ export const Selection = () => {
   );
 };
 export default {
-  title: 'Selection/Chip/Variants/Selection',
+  title: 'Components/Chip/Chip/Variants/Selection',
   component: Chip,
   parameters: {
     docs: {

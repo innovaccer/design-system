@@ -67,7 +67,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Inputs/EditableChipInput/All',
+  title: 'Components/Inline Editable Fields/EditableChipInput/All',
   component: EditableChipInput,
   parameters: {
     docs: {

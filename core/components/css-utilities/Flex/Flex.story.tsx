@@ -294,7 +294,7 @@ export const flex = () => {
 };
 
 export default {
-  title: 'Others/Styles/Flex',
+  title: 'Styling/Helper Classes/Flex',
   component: flex,
   parameters: {
     viewMode: 'story',

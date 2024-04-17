@@ -31,11 +31,12 @@ export const customSearchPlaceholder = () => {
 };
 
 export default {
-  title: 'Inputs/Dropdown/Custom Search Placeholder',
+  title: 'Components/Dropdown (Deprecated)/Custom Search Placeholder',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
+        isDeprecated: true,
         title: 'Dropdown',
         props: {
           exclude: ['showHead'],

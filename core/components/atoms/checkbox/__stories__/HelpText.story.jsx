@@ -13,6 +13,6 @@ export const withHelpText = () => {
 };
 
 export default {
-  title: 'Selection/Checkbox/With Help Text',
+  title: 'Components/Checkbox/With Help Text',
   component: Checkbox,
 };

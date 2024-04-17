@@ -43,7 +43,7 @@ export const position = () => {
 };
 
 export default {
-  title: 'Overlays/Popover/Variants/Position',
+  title: 'Components/Popover/Variants/Position',
   component: Popover,
   parameters: {
     docs: {

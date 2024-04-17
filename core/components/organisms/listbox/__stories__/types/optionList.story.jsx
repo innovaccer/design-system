@@ -99,7 +99,7 @@ export const optionList = () => {
 };
 
 export default {
-  title: 'Layout/Listbox/Type/Option List',
+  title: 'Components/Listbox/Type/Option List',
   component: Listbox,
   subcomponents: { Listbox, ListboxItem },
   parameters: {

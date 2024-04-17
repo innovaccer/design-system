@@ -51,7 +51,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Navigation/Stepper/All',
+  title: 'Components/Stepper/All',
   component: Stepper,
   parameters: {
     docs: {

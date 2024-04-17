@@ -60,7 +60,7 @@ export const tightList = () => {
 };
 
 export default {
-  title: 'Layout/Listbox/Size/Tight List',
+  title: 'Components/Listbox/Size/Tight List',
   component: Listbox,
   subcomponents: { Listbox, ListboxItem },
   parameters: {

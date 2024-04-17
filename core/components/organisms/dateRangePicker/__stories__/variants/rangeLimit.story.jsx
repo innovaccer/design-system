@@ -20,7 +20,7 @@ export const rangeLimit = () => {
 };
 
 export default {
-  title: 'Date and Time/DateRangePicker/Variants/Range Limit',
+  title: 'Components/DatePicker/DateRangePicker/Variants/Range Limit',
   component: DateRangePicker,
   parameters: {
     docs: {

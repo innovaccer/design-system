@@ -123,13 +123,14 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Inputs/Dropdown/Variants/ControlledDropdown/Single Select',
+  title: 'Components/Dropdown (Deprecated)/Variants/ControlledDropdown/Single Select',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
         customCode,
         title: 'Controlled Dropdown',
+        isDeprecated: true,
         props: {
           components: { Uncontrolled, Controlled },
           exclude: ['showHead'],

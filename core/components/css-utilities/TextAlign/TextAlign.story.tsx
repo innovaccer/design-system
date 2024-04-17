@@ -77,7 +77,7 @@ export const textAlign = () => {
 };
 
 export default {
-  title: 'Others/Styles/Text Align',
+  title: 'Styling/Helper Classes/Text Align',
   component: textAlign,
   parameters: {
     viewMode: 'story',

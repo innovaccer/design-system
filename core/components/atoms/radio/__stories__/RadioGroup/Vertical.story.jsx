@@ -16,7 +16,7 @@ export const vertical = () => {
 };
 
 export default {
-  title: 'Selection/Radio/RadioGroup/Vertical',
+  title: 'Components/Radio/RadioGroup/Vertical',
   component: Radio,
   subcomponents: { ChoiceList },
   parameters: {

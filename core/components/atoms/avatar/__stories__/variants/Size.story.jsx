@@ -29,7 +29,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Indicators/Avatar/Variants/Size',
+  title: 'Components/Avatar/Avatar/Variants/Size',
   component: Avatar,
   parameters: {
     docs: {

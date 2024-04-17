@@ -17,7 +17,7 @@ export const darkPopover = () => (
 );
 
 export default {
-  title: 'Overlays/Popover/Dark Popover',
+  title: 'Components/Popover/Dark Popover',
   component: Popover,
   parameters: {
     docs: {

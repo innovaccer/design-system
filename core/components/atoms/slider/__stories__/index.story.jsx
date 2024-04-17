@@ -31,6 +31,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Selection/Slider/All',
+  title: 'Components/Slider/Slider/All',
   component: Slider,
 };

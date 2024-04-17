@@ -33,7 +33,6 @@ export const colors = () => {
             <Card className="h-100 overflow-hidden">
               <Table data={data} schema={colorSchema} />
             </Card>
-            <br />
           </div>
         );
       })}
@@ -42,7 +41,7 @@ export const colors = () => {
 };
 
 export default {
-  title: 'Others/Design Tokens/Colors',
+  title: 'Styling/Design Tokens/Colors',
   parameters: {
     viewMode: 'story',
     docs: {

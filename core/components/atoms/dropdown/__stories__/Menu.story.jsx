@@ -27,12 +27,13 @@ export const dropdownAsMenu = () => {
 };
 
 export default {
-  title: 'Inputs/Dropdown/Dropdown As Menu',
+  title: 'Components/Dropdown (Deprecated)/Dropdown As Menu',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
         title: 'Dropdown',
+        isDeprecated: true,
         props: {
           components: { Uncontrolled, Controlled },
           exclude: ['showHead'],

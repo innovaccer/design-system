@@ -4,7 +4,7 @@ import { Button } from '@/index';
 export const LoaderInButton = () => <Button appearance="primary" loading={true} aria-label="loading" />;
 
 export default {
-  title: 'Actions/Button/Loader In Button',
+  title: 'Components/Button/Button/Loader In Button',
   component: Button,
   parameters: {
     docs: {

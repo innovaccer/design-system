@@ -12,6 +12,6 @@ export const MessageWithActions = () => (
 );
 
 export default {
-  title: 'Indicators/Message/Message With Actions',
+  title: 'Components/Message/Message With Actions',
   component: Message,
 };

@@ -26,12 +26,13 @@ export const dropdownItemsWithCheckbox = () => {
 };
 
 export default {
-  title: 'Inputs/Dropdown/Dropdown Items With Checkbox',
+  title: 'Components/Dropdown (Deprecated)/Dropdown Items With Checkbox',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
         title: 'Dropdown',
+        isDeprecated: true,
         props: {
           components: { Uncontrolled, Controlled },
         },

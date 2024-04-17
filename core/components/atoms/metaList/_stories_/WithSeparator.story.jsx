@@ -20,7 +20,7 @@ export const WithSeparator = () => {
 };
 
 export default {
-  title: 'Indicators/MetaList/With Separator',
+  title: 'Components/MetaList/With Separator',
   component: MetaList,
   parameters: {
     docs: {

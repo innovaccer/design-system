@@ -81,7 +81,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Overlays/Modal/Old',
+  title: 'Components/Modal/Modal/Old',
   component: Modal,
   subcomponents: { ModalHeader, ModalBody, ModalDescription, ModalFooter },
   parameters: {

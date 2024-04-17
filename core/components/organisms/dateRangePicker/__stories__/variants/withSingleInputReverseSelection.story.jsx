@@ -65,7 +65,7 @@ export const withSingleInputAndReverseSelection = () => {
 };
 
 export default {
-  title: 'Date and Time/DateRangePicker/Variants/With Single Input And Reverse Selection',
+  title: 'Components/DatePicker/DateRangePicker/Variants/With Single Input And Reverse Selection',
   component: DateRangePicker,
   subcomponents: { InputMask },
 };

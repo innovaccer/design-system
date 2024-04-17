@@ -84,7 +84,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Layout/Grid/All',
+  title: 'Components/Grid/All',
   component: Grid,
   subcomponents: { GridCell },
   parameters: {

@@ -104,7 +104,7 @@ const customCode = `() => {
   }`;
 
 export default {
-  title: 'Inputs/VerificationCodeInput/With Reset Button',
+  title: 'Components/Input/VerificationCodeInput/With Reset Button',
   component: VerificationCodeInput,
   parameters: {
     docs: {

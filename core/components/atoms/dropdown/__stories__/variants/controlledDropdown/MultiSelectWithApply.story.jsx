@@ -106,13 +106,14 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Inputs/Dropdown/Variants/ControlledDropdown/Multi Select With Apply Button',
+  title: 'Components/Dropdown (Deprecated)/Variants/ControlledDropdown/Multi Select With Apply Button',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
         customCode,
         title: 'Controlled Dropdown',
+        isDeprecated: true,
         props: {
           components: { Uncontrolled, Controlled },
           exclude: ['showHead'],

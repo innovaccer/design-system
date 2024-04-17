@@ -4,13 +4,15 @@ import { FileUploader } from '@/index';
 export const all = () => <></>;
 
 export default {
-  title: 'Deprecated/FileUploader/All',
+  title: 'Components/File Uploader/FileUploader (Deprecated)/All',
   component: FileUploader,
   parameters: {
     docs: {
       docPage: {
         title: 'FileUploader',
-        description: 'FileUploader Component has been Deprecated, please use Dropzone Component instead.',
+        isDeprecated: true,
+        description:
+          'FileUploader component has been deprecated, please use [Dropzone](https://mds.innovaccer.com/?path=/docs/components-file-uploader-dropzone-all--all) component instead.',
       },
     },
   },

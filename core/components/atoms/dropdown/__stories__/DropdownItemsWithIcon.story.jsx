@@ -30,12 +30,13 @@ export const dropdownItemsWithIcon = () => {
 };
 
 export default {
-  title: 'Inputs/Dropdown/Dropdown Items With Icon',
+  title: 'Components/Dropdown (Deprecated)/Dropdown Items With Icon',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
         title: 'Dropdown',
+        isDeprecated: true,
         props: {
           components: { Uncontrolled, Controlled },
         },

@@ -7,6 +7,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Loaders/Spinner/All',
+  title: 'Components/Progress Indicators/Spinner/All',
   component: Spinner,
 };

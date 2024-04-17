@@ -28,12 +28,13 @@ export const languages = () => {
 };
 
 export default {
-  title: 'Inputs/Dropdown/Languages',
+  title: 'Components/Dropdown (Deprecated)/Languages',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
         title: 'Dropdown',
+        isDeprecated: true,
         props: {
           components: { Uncontrolled, Controlled },
           exclude: ['showHead'],

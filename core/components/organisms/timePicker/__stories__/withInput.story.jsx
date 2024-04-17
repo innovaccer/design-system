@@ -42,7 +42,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Date and Time/Timepicker/TimePickerWithInput/With Input',
+  title: 'Components/Timepicker/TimePickerWithInput/With Input',
   component: TimePickerWithInput,
   parameters: {
     docs: {

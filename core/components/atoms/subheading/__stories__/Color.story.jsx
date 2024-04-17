@@ -93,7 +93,7 @@ export const color = () => {
 };
 
 export default {
-  title: 'Typography/Subheading/Color',
+  title: 'Components/Typography/Subheading/Color',
   component: Subheading,
   parameters: {
     docs: {

@@ -20,7 +20,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Loaders/ProgressRing/Size',
+  title: 'Components/Progress Indicators/ProgressRing/Size',
   component: ProgressRing,
   parameters: {
     docs: {

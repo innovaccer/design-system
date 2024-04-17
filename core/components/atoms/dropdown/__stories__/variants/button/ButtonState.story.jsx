@@ -80,12 +80,13 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Inputs/Dropdown/Variants/Trigger/State',
+  title: 'Components/Dropdown (Deprecated)/Variants/Trigger/State',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
         customCode,
+        isDeprecated: true,
         props: {
           components: { Uncontrolled, Controlled },
           exclude: ['showHead'],

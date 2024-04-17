@@ -21,6 +21,6 @@ export const toastWithActions = () => (
 );
 
 export default {
-  title: 'Indicators/Toast/Toast With Actions',
+  title: 'Components/Toast/Toast With Actions',
   component: Toast,
 };

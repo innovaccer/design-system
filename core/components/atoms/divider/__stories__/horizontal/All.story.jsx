@@ -22,6 +22,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Layout/Divider/Horizontal/All',
+  title: 'Components/Divider/Horizontal/All',
   component: Divider,
 };

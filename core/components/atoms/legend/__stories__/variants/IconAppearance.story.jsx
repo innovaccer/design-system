@@ -30,7 +30,7 @@ export const iconAppearance = () => {
 };
 
 export default {
-  title: 'Indicators/Legend/Variants/Icon Appearance',
+  title: 'Components/Legend/Variants/Icon Appearance',
   component: Legend,
   parameters: {
     docs: {

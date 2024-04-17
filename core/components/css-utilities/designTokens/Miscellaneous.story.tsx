@@ -42,7 +42,7 @@ export const miscellaneous = () => {
 };
 
 export default {
-  title: 'Others/Design Tokens/Miscellaneous',
+  title: 'Styling/Design Tokens/Miscellaneous',
   parameters: {
     viewMode: 'story',
     docs: {

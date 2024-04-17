@@ -31,7 +31,7 @@ export const layout = () => {
 };
 
 export default {
-  title: 'Layout/Action Card/Layout',
+  title: 'Components/Interactive Card/Action Card/Layout',
   component: ActionCard,
   parameters: {
     docs: {

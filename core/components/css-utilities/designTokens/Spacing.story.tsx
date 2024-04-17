@@ -20,7 +20,7 @@ export const spacing = () => {
 };
 
 export default {
-  title: 'Others/Design Tokens/Spacing',
+  title: 'Styling/Design Tokens/Spacing',
   parameters: {
     viewMode: 'story',
     docs: {

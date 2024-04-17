@@ -136,12 +136,13 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Inputs/Dropdown/Fetch Error Template',
+  title: 'Components/Dropdown (Deprecated)/Fetch Error Template',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
         customCode,
+        isDeprecated: true,
         props: {
           components: { Uncontrolled, Controlled },
           exclude: ['showHead'],

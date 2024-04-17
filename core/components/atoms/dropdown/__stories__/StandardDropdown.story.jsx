@@ -34,12 +34,13 @@ export const standardDropdown = () => {
 };
 
 export default {
-  title: 'Inputs/Dropdown/Standard Dropdown',
+  title: 'Components/Dropdown (Deprecated)/Standard Dropdown',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
         title: 'Dropdown',
+        isDeprecated: true,
         props: {
           components: { Uncontrolled, Controlled },
         },

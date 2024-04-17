@@ -22,7 +22,7 @@ export const appearance = () => {
 };
 
 export default {
-  title: 'Typography/Paragraph/Appearance',
+  title: 'Components/Typography/Paragraph/Appearance',
   component: Paragraph,
   parameters: {
     docs: {

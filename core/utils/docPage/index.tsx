@@ -6,7 +6,7 @@ import { html as beautifyHTML } from 'js-beautify';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { vs2015 } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import * as DS from '@';
-import { Button, Card, Heading, CardHeader, Row, Column, Tooltip, Text } from '@/index';
+import { Button, Card, Heading, CardHeader, Row, Column, Tooltip, Text, Badge } from '@/index';
 import vsDark from 'prism-react-renderer/themes/vsDark';
 import { LiveProvider, LiveEditor, LiveError, LivePreview, withLive } from 'react-live';
 import openSandbox from './sandbox';
@@ -355,6 +355,7 @@ export const docPage = () => {
     a11yProps,
     propDescription,
     sandboxTitle,
+    isDeprecated,
   } = sp.docs.docPage || {};
   const { component: { displayName = '' } = {} } = story;
   const pageClassnames = classNames({
@@ -367,9 +368,14 @@ export const docPage = () => {
     <div className={pageClassnames}>
       {!isEmbed && !isEmbedWithProp && (
         <>
-          <Heading size="xl" className="mb-5">
-            {docPageTitle}
-          </Heading>
+          <div className="d-flex align-items-center mb-5">
+            <Heading size="xl">{docPageTitle}</Heading>
+            {isDeprecated && (
+              <Badge appearance="alert" subtle={true} className="ml-4">
+                Deprecated
+              </Badge>
+            )}
+          </div>
           <Description>{description}</Description>
         </>
       )}

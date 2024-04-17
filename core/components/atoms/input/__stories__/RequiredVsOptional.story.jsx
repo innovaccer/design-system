@@ -49,7 +49,7 @@ export const requiredVsOptionalMarking = () => {
 };
 
 export default {
-  title: 'Inputs/Input/Required Vs Optional Marking',
+  title: 'Components/Input/Input/Required Vs Optional Marking',
   component: Input,
   parameters: {
     docs: {
