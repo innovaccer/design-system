@@ -36,7 +36,7 @@ export const solid = () => {
 };
 
 export default {
-  title: 'Indicators/Pills/Solid',
+  title: 'Components/Indicators/Pills/Solid',
   component: Pills,
   parameters: {
     docs: {

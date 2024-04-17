@@ -34,7 +34,7 @@ export const alert = () => {
 };
 
 export default {
-  title: 'Actions/Button/State/Alert',
+  title: 'Components/Button/Button/State/Alert',
   component: Button,
   parameters: {
     docs: {

@@ -136,7 +136,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Inputs/Dropdown/Fetch Error Template',
+  title: 'Components/Dropdown/Dropdown/Fetch Error Template',
   component: Dropdown,
   parameters: {
     docs: {

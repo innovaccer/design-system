@@ -120,7 +120,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Navigation/Tabs/Custom Labels',
+  title: 'Components/Navigation/Tabs/Custom Labels',
   component: Tabs,
   subcomponents: { Tab },
   parameters: {

@@ -32,7 +32,7 @@ export const layout = () => {
 };
 
 export default {
-  title: 'Layout/Selection Card/Layout',
+  title: 'Components/Card/Selection Card/Layout',
   component: SelectionCard,
   parameters: {
     docs: {

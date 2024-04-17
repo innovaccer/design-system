@@ -74,7 +74,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Deprecated/Dialog/Variants/SecondaryButton/Success',
+  title: 'Components/Deprecated/Dialog/Variants/SecondaryButton/Success',
   component: Dialog,
   parameters: {
     docs: {

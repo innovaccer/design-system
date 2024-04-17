@@ -49,7 +49,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/Menu/Grouping/Sub Heading',
+  title: 'Components/Dropdown/Menu/Grouping/Sub Heading',
   component: Menu,
   subcomponents: {
     'Menu.Trigger': Menu.Trigger,

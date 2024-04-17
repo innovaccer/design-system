@@ -254,7 +254,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Select/Multiselect/WithSelectAllAndActionButton',
+  title: 'Components/Dropdown/Select/Multiselect/WithSelectAllAndActionButton',
   component: Select,
   subcomponents: {
     'Select.List': Select.List,

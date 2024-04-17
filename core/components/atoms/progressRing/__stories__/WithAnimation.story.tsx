@@ -29,7 +29,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Loaders/ProgressRing/With Animation',
+  title: 'Components/Loaders/ProgressRing/With Animation',
   component: ProgressRing,
   parameters: {
     docs: {

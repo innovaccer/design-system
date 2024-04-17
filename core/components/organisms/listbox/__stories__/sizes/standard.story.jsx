@@ -60,7 +60,7 @@ export const standardList = () => {
 };
 
 export default {
-  title: 'Layout/Listbox/Size/Standard List',
+  title: 'Components/Layout/Listbox/Size/Standard List',
   component: Listbox,
   subcomponents: { Listbox, ListboxItem },
   parameters: {

@@ -28,7 +28,7 @@ export const Controlled = () => {
 };
 
 export default {
-  title: 'Selection/Radio/RadioGroup/Controlled',
+  title: 'Components/Selection/Radio/RadioGroup/Controlled',
   component: Radio,
   subcomponents: { ChoiceList },
   parameters: {

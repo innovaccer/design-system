@@ -231,7 +231,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Layout/Table/Pinned Columns',
+  title: 'Components/Layout/Table/Pinned Columns',
   component: Table,
   parameters: {
     docs: {

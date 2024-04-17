@@ -4,7 +4,7 @@ import { StatusHint } from '@/index';
 export const warning = () => <StatusHint appearance="warning">Warning</StatusHint>;
 
 export default {
-  title: 'Indicators/StatusHint/Variants/Warning',
+  title: 'Components/Indicators/StatusHint/Variants/Warning',
   component: StatusHint,
   parameters: {
     docs: {

@@ -73,7 +73,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/Menu/Variants/Standard',
+  title: 'Components/Dropdown/Menu/Variants/Standard',
   component: Menu,
   subcomponents: {
     'Menu.Trigger': Menu.Trigger,

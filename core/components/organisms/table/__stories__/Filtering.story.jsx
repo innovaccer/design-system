@@ -832,7 +832,7 @@ import './style.css';
 }`;
 
 export default {
-  title: 'Layout/Table/Filtering',
+  title: 'Components/Layout/Table/Filtering',
   component: Table,
   parameters: {
     docs: {

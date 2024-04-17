@@ -172,7 +172,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Select/Multiselect/SelectedItem',
+  title: 'Components/Dropdown/Select/Multiselect/SelectedItem',
   component: Select,
   subcomponents: {
     'Select.List': Select.List,

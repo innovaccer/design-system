@@ -208,7 +208,7 @@ export const dropdownWithIcon = () => {
 };
 
 export default {
-  title: 'Inputs/Dropdown/Dropdown With Icon',
+  title: 'Components/Dropdown/Dropdown/Dropdown With Icon',
   component: Dropdown,
   parameters: {
     docs: {

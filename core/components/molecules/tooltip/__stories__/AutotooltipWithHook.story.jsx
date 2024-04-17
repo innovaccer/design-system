@@ -44,7 +44,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Overlays/Tooltip/Auto Tooltip With Hook',
+  title: 'Components/Overlays/Tooltip/Auto Tooltip With Hook',
   component: Tooltip,
   parameters: {
     docs: {

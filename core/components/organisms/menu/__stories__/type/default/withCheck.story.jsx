@@ -62,7 +62,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/Menu/Type/Default/With Check',
+  title: 'Components/Dropdown/Menu/Type/Default/With Check',
   component: Menu,
   subcomponents: {
     'Menu.Trigger': Menu.Trigger,

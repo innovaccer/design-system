@@ -20,7 +20,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Selection/Checkbox/Variants/Size',
+  title: 'Components/Selection/Checkbox/Variants/Size',
   component: Checkbox,
   parameters: {
     docs: {

@@ -76,7 +76,7 @@ const customCode = `() => {
 };`;
 
 export default {
-  title: 'Components/Select/LabelOnTop',
+  title: 'Components/Dropdown/Select/LabelOnTop',
   component: Select,
   subcomponents: {
     'Select.List': Select.List,

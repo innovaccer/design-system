@@ -35,7 +35,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Inputs/Dropdown/Dropdown Options Less Than 50',
+  title: 'Components/Dropdown/Dropdown/Dropdown Options Less Than 50',
   component: Dropdown,
   parameters: {
     docs: {

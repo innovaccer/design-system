@@ -76,7 +76,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Layout/Table/Variants/Show Menu',
+  title: 'Components/Layout/Table/Variants/Show Menu',
   component: Table,
   parameters: {
     docs: {

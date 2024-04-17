@@ -225,7 +225,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Navigation/VerticalNav/Custom Items Renderer',
+  title: 'Components/Navigation/VerticalNav/Custom Items Renderer',
   component: VerticalNav,
   parameters: {
     docs: {

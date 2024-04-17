@@ -92,7 +92,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Layout/Table/Variants/Type',
+  title: 'Components/Layout/Table/Variants/Type',
   component: Table,
   parameters: {
     docs: {

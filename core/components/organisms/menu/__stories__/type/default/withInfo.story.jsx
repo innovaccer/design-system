@@ -47,7 +47,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/Menu/Type/Default/With Keyboard Shortcut',
+  title: 'Components/Dropdown/Menu/Type/Default/With Keyboard Shortcut',
   component: Menu,
   subcomponents: {
     'Menu.Trigger': Menu.Trigger,

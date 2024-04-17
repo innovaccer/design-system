@@ -18,7 +18,7 @@ export const appearance = () => {
 };
 
 export default {
-  title: 'Indicators/Toast/Variants/Appearance',
+  title: 'Components/Indicators/Toast/Variants/Appearance',
   component: Toast,
   parameters: {
     docs: {

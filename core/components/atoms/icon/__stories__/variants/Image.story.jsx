@@ -10,12 +10,12 @@ export const image = () => {
 };
 
 export default {
-  title: 'Icon/Icon/Variants/Image',
+  title: 'Components/Icon/Icon/Variants/Image',
   component: Icon,
   parameters: {
     docs: {
       docPage: {
-        title: 'Icon',
+        title: 'Components/Icon',
       },
     },
   },

@@ -124,7 +124,7 @@ export const descriptionList = () => {
 };
 
 export default {
-  title: 'Layout/Listbox/Type/Description List',
+  title: 'Components/Layout/Listbox/Type/Description List',
   component: Listbox,
   subcomponents: { Listbox, ListboxItem },
   parameters: {

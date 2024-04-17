@@ -344,7 +344,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Layout/Table/Nested Table With Nested Cards',
+  title: 'Components/Layout/Table/Nested Table With Nested Cards',
   component: Table,
   parameters: {
     docs: {

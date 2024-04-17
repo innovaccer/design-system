@@ -28,7 +28,7 @@ export const languages = () => {
 };
 
 export default {
-  title: 'Inputs/Dropdown/Languages',
+  title: 'Components/Dropdown/Dropdown/Languages',
   component: Dropdown,
   parameters: {
     docs: {

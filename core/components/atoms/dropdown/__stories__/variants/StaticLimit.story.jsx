@@ -95,7 +95,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Inputs/Dropdown/Variants/Static Limit',
+  title: 'Components/Dropdown/Dropdown/Variants/Static Limit',
   component: Dropdown,
   parameters: {
     docs: {

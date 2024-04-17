@@ -127,7 +127,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Layout/Table/All',
+  title: 'Components/Layout/Table/All',
   component: Table,
   parameters: {
     docs: {

@@ -99,7 +99,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Navigation/Tabs/Tabs With Count',
+  title: 'Components/Navigation/Tabs/Tabs With Count',
   component: Tabs,
   parameters: {
     docs: {

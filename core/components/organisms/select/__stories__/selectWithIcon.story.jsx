@@ -75,7 +75,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Select/SelectWithIcon',
+  title: 'Components/Dropdown/Select/SelectWithIcon',
   component: Select,
   subcomponents: {
     'Select.List': Select.List,

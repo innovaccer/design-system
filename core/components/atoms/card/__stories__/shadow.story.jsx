@@ -18,6 +18,6 @@ export const Shadow = () => {
 };
 
 export default {
-  title: 'Layout/Card/Shadow',
+  title: 'Components/Card/Card/Shadow',
   component: Card,
 };

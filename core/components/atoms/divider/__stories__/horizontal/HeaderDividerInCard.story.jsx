@@ -30,6 +30,6 @@ export const HeaderDividerInCard = () => {
 };
 
 export default {
-  title: 'Layout/Divider/Horizontal/Header Divider In Card',
+  title: 'Components/Layout/Divider/Horizontal/Header Divider In Card',
   component: Divider,
 };

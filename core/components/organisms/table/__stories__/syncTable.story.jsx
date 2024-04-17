@@ -211,7 +211,7 @@ const customCode = `() => {
 `;
 
 export default {
-  title: 'Layout/Table/Sync Table',
+  title: 'Components/Layout/Table/Sync Table',
   component: Table,
   parameters: {
     docs: {

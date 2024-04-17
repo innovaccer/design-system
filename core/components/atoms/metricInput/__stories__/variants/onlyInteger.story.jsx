@@ -67,7 +67,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Inputs/MetricInput/Variants/Only Integer',
+  title: 'Components/Inputs/MetricInput/Variants/Only Integer',
   component: MetricInput,
   parameters: {
     docs: {

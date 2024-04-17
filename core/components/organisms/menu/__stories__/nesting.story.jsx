@@ -59,7 +59,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/Menu/Nesting',
+  title: 'Components/Dropdown/Menu/Nesting',
   component: Menu,
   subcomponents: {
     'Menu.Trigger': Menu.Trigger,

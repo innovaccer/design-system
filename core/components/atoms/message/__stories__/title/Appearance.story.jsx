@@ -29,7 +29,7 @@ export const appearanceWithoutTitle = () => {
 };
 
 export default {
-  title: 'Indicators/Message/Variants/Appearance Without Title',
+  title: 'Components/Indicators/Message/Variants/Appearance Without Title',
   component: Message,
   parameters: {
     docs: {

@@ -29,7 +29,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/Menu/Trigger/Default Trigger',
+  title: 'Components/Dropdown/Menu/Trigger/Default Trigger',
   component: Menu,
   subcomponents: {
     'Menu.Trigger': Menu.Trigger,

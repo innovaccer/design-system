@@ -98,7 +98,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Select/Size',
+  title: 'Components/Dropdown/Select/Size',
   component: Select,
   subcomponents: {
     'Select.List': Select.List,

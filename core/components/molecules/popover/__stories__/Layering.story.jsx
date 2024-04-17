@@ -26,7 +26,7 @@ export const layering = () => {
 };
 
 export default {
-  title: 'Overlays/Popover/Layering',
+  title: 'Components/Overlays/Popover/Layering',
   component: Popover,
   parameters: {
     docs: {

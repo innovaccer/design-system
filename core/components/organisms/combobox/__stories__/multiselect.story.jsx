@@ -114,7 +114,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Combobox/MultiSelect/All',
+  title: 'Components/Dropdown/Combobox/MultiSelect/All',
   component: Combobox,
   subcomponents: { 'Combobox.List': Combobox.List, 'Combobox.Option': Combobox.Option },
   parameters: {

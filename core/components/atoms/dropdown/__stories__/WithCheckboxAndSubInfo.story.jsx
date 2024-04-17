@@ -30,7 +30,7 @@ export const dropdownItemsWithCheckboxAndSubinfo = () => {
 };
 
 export default {
-  title: 'Inputs/Dropdown/Dropdown Items With Checkbox And Subinfo',
+  title: 'Components/Dropdown/Dropdown/Dropdown Items With Checkbox And Subinfo',
   component: Dropdown,
   parameters: {
     docs: {

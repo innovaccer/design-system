@@ -259,7 +259,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Layout/Table/Selection',
+  title: 'Components/Layout/Table/Selection',
   component: Table,
   parameters: {
     docs: {

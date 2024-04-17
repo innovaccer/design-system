@@ -281,7 +281,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Layout/Table/Disabled Row',
+  title: 'Components/Layout/Table/Disabled Row',
   component: Table,
   parameters: {
     docs: {

@@ -86,7 +86,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Combobox/Uncontrolled',
+  title: 'Components/Dropdown/Combobox/Uncontrolled',
   component: Combobox,
   subcomponents: { 'Combobox.List': Combobox.List, 'Combobox.Option': Combobox.Option },
   parameters: {

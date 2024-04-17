@@ -228,7 +228,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Navigation/VerticalNav/Child Items With Icons',
+  title: 'Components/Navigation/VerticalNav/Child Items With Icons',
   component: VerticalNav,
   parameters: {
     docs: {

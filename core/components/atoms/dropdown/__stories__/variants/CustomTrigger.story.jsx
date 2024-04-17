@@ -60,7 +60,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Inputs/Dropdown/Variants/Custom Trigger',
+  title: 'Components/Dropdown/Dropdown/Variants/Custom Trigger',
   component: Dropdown,
   parameters: {
     docs: {

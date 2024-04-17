@@ -146,7 +146,7 @@ const customCode = `() => {
 };`;
 
 export default {
-  title: 'Overlays/Sidesheet/Sticky Footer',
+  title: 'Components/Overlays/Sidesheet/Sticky Footer',
   component: Sidesheet,
   parameters: {
     docs: {

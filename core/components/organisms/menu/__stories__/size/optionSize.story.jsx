@@ -89,7 +89,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/Menu/Size/Option Size',
+  title: 'Components/Dropdown/Menu/Size/Option Size',
   component: Menu,
   subcomponents: {
     'Menu.Trigger': Menu.Trigger,

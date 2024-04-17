@@ -401,6 +401,6 @@ export const pageNotLoadedWithSVG = () => {
 };
 
 export default {
-  title: 'Layout/EmptyState/Page Not Loaded With SVG',
+  title: 'Components/Layout/EmptyState/Page Not Loaded With SVG',
   component: EmptyState,
 };

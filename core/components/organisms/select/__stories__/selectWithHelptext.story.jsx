@@ -78,7 +78,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Select/SelectWithHelptext',
+  title: 'Components/Dropdown/Select/SelectWithHelptext',
   component: Select,
   subcomponents: {
     'Select.List': Select.List,

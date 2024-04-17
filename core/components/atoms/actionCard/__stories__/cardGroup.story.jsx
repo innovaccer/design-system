@@ -90,7 +90,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Layout/Action Card/CardGroup',
+  title: 'Components/Card/Action Card/CardGroup',
   component: ActionCard,
   parameters: {
     docs: {

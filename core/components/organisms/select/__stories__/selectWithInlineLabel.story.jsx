@@ -71,7 +71,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Select/WithInlineLabel',
+  title: 'Components/Dropdown/Select/WithInlineLabel',
   component: Select,
   subcomponents: {
     'Select.List': Select.List,

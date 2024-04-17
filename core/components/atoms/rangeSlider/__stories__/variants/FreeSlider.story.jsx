@@ -17,6 +17,6 @@ export const freeSlider = () => {
 };
 
 export default {
-  title: 'Selection/RangeSlider/Variants/Free Slider',
+  title: 'Components/Selection/RangeSlider/Variants/Free Slider',
   component: RangeSlider,
 };

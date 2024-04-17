@@ -64,12 +64,12 @@ export const Appearance = () => {
 };
 
 export default {
-  title: 'Icon/Icon/Variants/Appearance',
+  title: 'Components/Icon/Icon/Variants/Appearance',
   component: Icon,
   parameters: {
     docs: {
       docPage: {
-        title: 'Icon',
+        title: 'Components/Icon',
       },
     },
   },

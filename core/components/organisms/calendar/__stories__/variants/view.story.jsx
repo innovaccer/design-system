@@ -29,7 +29,7 @@ export const view = () => {
 };
 
 export default {
-  title: 'Date and Time/Calendar/Variants/View',
+  title: 'Components/Date and Time/Calendar/Variants/View',
   component: Calendar,
   parameters: {
     docs: {

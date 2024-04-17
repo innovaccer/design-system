@@ -47,7 +47,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/Menu/Type/Destructive/With Sub Info',
+  title: 'Components/Dropdown/Menu/Type/Destructive/With Sub Info',
   component: Menu,
   subcomponents: {
     'Menu.Trigger': Menu.Trigger,

@@ -19,7 +19,7 @@ export const length = () => {
 };
 
 export default {
-  title: 'Loaders/Placeholder/Paragraph/Length',
+  title: 'Components/Loaders/Placeholder/Paragraph/Length',
   component: Placeholder,
   subcomponents: { PlaceholderParagraph },
   parameters: {

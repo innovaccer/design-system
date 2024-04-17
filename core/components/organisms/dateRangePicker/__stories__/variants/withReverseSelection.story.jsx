@@ -63,7 +63,7 @@ export const allowReverseSelection = () => {
 };
 
 export default {
-  title: 'Date and Time/DateRangePicker/Variants/With Reverse Selection',
+  title: 'Components/Date and Time/DateRangePicker/Variants/With Reverse Selection',
   component: DateRangePicker,
   subcomponents: { InputMask },
 };

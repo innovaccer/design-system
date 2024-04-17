@@ -27,7 +27,7 @@ export const popoverWithAction = () => (
 );
 
 export default {
-  title: 'Overlays/Popover/Popover With Action',
+  title: 'Components/Overlays/Popover/Popover With Action',
   component: Popover,
   parameters: {
     docs: {

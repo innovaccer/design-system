@@ -10,7 +10,7 @@ export const subtleAlert = () => {
 };
 
 export default {
-  title: 'Indicators/Pills/Subtle Alert',
+  title: 'Components/Indicators/Pills/Subtle Alert',
   component: Pills,
   parameters: {
     docs: {

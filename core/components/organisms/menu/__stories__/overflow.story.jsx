@@ -41,7 +41,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/Menu/Overflow',
+  title: 'Components/Dropdown/Menu/Overflow',
   component: Menu,
   subcomponents: {
     'Menu.Trigger': Menu.Trigger,

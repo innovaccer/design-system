@@ -70,7 +70,7 @@ const customCode = `() => {
 `;
 
 export default {
-  title: 'Components/Menu/Trigger/Right Click',
+  title: 'Components/Dropdown/Menu/Trigger/Right Click',
   component: Menu,
   subcomponents: {
     'Menu.Trigger': Menu.Trigger,

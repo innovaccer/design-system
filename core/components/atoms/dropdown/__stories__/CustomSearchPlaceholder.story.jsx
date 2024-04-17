@@ -31,7 +31,7 @@ export const customSearchPlaceholder = () => {
 };
 
 export default {
-  title: 'Inputs/Dropdown/Custom Search Placeholder',
+  title: 'Components/Dropdown/Dropdown/Custom Search Placeholder',
   component: Dropdown,
   parameters: {
     docs: {

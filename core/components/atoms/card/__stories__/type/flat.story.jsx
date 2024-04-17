@@ -11,6 +11,6 @@ export const Flat = () => {
 };
 
 export default {
-  title: 'Layout/Card/Type/Flat',
+  title: 'Components/Card/Card/Type/Flat',
   component: Card,
 };

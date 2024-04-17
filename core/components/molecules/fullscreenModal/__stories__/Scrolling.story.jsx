@@ -167,7 +167,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Overlays/FullscreenModal/Scrolling',
+  title: 'Components/Overlays/FullscreenModal/Scrolling',
   component: FullscreenModal,
   parameters: {
     docs: {

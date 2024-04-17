@@ -63,7 +63,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Overlays/Popover/All',
+  title: 'Components/Overlays/Popover/All',
   component: Popover,
   parameters: {
     docs: {

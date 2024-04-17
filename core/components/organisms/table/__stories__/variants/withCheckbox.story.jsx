@@ -98,7 +98,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Layout/Table/Variants/With Checkbox',
+  title: 'Components/Layout/Table/Variants/With Checkbox',
   component: Table,
   parameters: {
     docs: {

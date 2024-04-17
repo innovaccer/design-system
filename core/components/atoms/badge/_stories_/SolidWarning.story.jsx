@@ -7,6 +7,6 @@ export const solidWarning = () => {
 };
 
 export default {
-  title: 'Indicators/Badge/Solid Warning',
+  title: 'Components/Indicators/Badge/Solid Warning',
   component: Badge,
 };

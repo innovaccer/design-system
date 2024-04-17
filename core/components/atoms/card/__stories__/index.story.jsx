@@ -87,7 +87,7 @@ const customCode = `/*
 }`;
 
 export default {
-  title: 'Layout/Card/All',
+  title: 'Components/Card/Card/All',
   component: Card,
   parameters: {
     docs: {

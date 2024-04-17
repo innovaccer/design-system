@@ -145,7 +145,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Select/WithSearch',
+  title: 'Components/Dropdown/Select/WithSearch',
   component: Select,
   subcomponents: {
     'Select.List': Select.List,

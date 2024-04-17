@@ -7,7 +7,7 @@ export const required = () => {
 };
 
 export default {
-  title: 'Typography/Label/Variants/Required',
+  title: 'Components/Typography/Label/Variants/Required',
   component: Label,
   parameters: {
     docs: {

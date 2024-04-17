@@ -57,7 +57,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'File Inputs/Dropzone/Variants/Disabled',
+  title: 'Components/File Inputs/Dropzone/Variants/Disabled',
   component: Dropzone,
   parameters: {
     docs: {

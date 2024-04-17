@@ -11,6 +11,6 @@ export const subtleWarning = () => {
 };
 
 export default {
-  title: 'Indicators/Badge/Subtle Warning',
+  title: 'Components/Indicators/Badge/Subtle Warning',
   component: Badge,
 };

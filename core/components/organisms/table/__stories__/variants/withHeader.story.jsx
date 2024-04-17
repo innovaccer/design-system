@@ -165,7 +165,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Layout/Table/Variants/With Header',
+  title: 'Components/Layout/Table/Variants/With Header',
   component: Table,
   parameters: {
     docs: {

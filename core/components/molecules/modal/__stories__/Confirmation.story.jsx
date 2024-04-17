@@ -89,7 +89,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Overlays/Modal/Confirmations',
+  title: 'Components/Overlays/Modal/Confirmations',
   component: Modal,
   parameters: {
     docs: {

@@ -242,7 +242,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Inputs/Dropdown/Variants/ControlledDropdown/Multi Select',
+  title: 'Components/Dropdown/Dropdown/Variants/ControlledDropdown/Multi Select',
   component: Dropdown,
   parameters: {
     docs: {

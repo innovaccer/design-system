@@ -166,7 +166,7 @@ const customCode = `/*
 }`;
 
 export default {
-  title: 'Layout/PageHeader/Level 1/With back button/With Tabs',
+  title: 'Components/Layout/PageHeader/Level 1/With back button/With Tabs',
   component: PageHeader,
   parameters: {
     docs: {

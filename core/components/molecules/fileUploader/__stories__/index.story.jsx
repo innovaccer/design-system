@@ -4,7 +4,7 @@ import { FileUploader } from '@/index';
 export const all = () => <></>;
 
 export default {
-  title: 'Deprecated/FileUploader/All',
+  title: 'Components/Deprecated/FileUploader/All',
   component: FileUploader,
   parameters: {
     docs: {

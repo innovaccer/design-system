@@ -90,7 +90,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Combobox/Pre Filled Values',
+  title: 'Components/Dropdown/Combobox/Pre Filled Values',
   component: Combobox,
   subcomponents: { 'Combobox.List': Combobox.List, 'Combobox.Option': Combobox.Option },
   parameters: {

@@ -25,7 +25,7 @@ export const view = () => {
 };
 
 export default {
-  title: 'Date and Time/DateRangePicker/Variants/View',
+  title: 'Components/Date and Time/DateRangePicker/Variants/View',
   component: DateRangePicker,
   parameters: {
     docs: {

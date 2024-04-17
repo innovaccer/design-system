@@ -71,7 +71,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Select/Disabled',
+  title: 'Components/Dropdown/Select/Disabled',
   component: Select,
   subcomponents: {
     'Select.List': Select.List,

@@ -121,7 +121,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Navigation/Tabs/Basic Tabs',
+  title: 'Components/Navigation/Tabs/Basic Tabs',
   component: Tabs,
   parameters: {
     docs: {

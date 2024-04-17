@@ -44,7 +44,7 @@ const customCode = `() => {
 `;
 
 export default {
-  title: 'Layout/Grid/Variants/Grid Loading State',
+  title: 'Components/Layout/Grid/Variants/Grid Loading State',
   component: Grid,
   subcomponents: { GridCell },
   parameters: {

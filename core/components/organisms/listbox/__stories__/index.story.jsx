@@ -67,7 +67,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Layout/Listbox/All',
+  title: 'Components/Layout/Listbox/All',
   component: Listbox,
   subcomponents: { Listbox, ListboxItem },
   parameters: {

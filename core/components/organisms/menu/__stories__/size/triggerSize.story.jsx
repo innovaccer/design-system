@@ -65,7 +65,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/Menu/Size/Trigger Size',
+  title: 'Components/Dropdown/Menu/Size/Trigger Size',
   component: Menu,
   subcomponents: {
     'Menu.Trigger': Menu.Trigger,

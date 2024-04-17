@@ -85,7 +85,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Inputs/Dropdown/Variants/Disabled Option',
+  title: 'Components/Dropdown/Dropdown/Variants/Disabled Option',
   component: Dropdown,
   parameters: {
     docs: {

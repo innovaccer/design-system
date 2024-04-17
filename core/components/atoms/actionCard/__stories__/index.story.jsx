@@ -16,7 +16,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Layout/Action Card/All',
+  title: 'Components/Card/Action Card/All',
   component: ActionCard,
   parameters: {
     docs: {

@@ -8,6 +8,6 @@ export const CustomDescription = () => (
 );
 
 export default {
-  title: 'Indicators/Message/Custom Description',
+  title: 'Components/Indicators/Message/Custom Description',
   component: Message,
 };

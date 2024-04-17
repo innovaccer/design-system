@@ -241,7 +241,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Layout/Listbox/Nested List',
+  title: 'Components/Layout/Listbox/Nested List',
   component: Listbox,
   subcomponents: { Listbox, ListboxItem },
   parameters: {

@@ -53,7 +53,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Selection/Slider/Custom Labels',
+  title: 'Components/Selection/Slider/Custom Labels',
   component: Slider,
   parameters: {
     docs: {

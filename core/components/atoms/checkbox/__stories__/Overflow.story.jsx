@@ -6,7 +6,7 @@ export const OverflowBehavior = () => (
 );
 
 export default {
-  title: 'Selection/Checkbox/Overflow Behavior',
+  title: 'Components/Selection/Checkbox/Overflow Behavior',
   component: Checkbox,
   parameters: {
     docs: {

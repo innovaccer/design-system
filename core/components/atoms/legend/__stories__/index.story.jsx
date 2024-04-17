@@ -29,7 +29,7 @@ const customCode = `() => {
     );
 }`;
 export default {
-  title: 'Indicators/Legend/All',
+  title: 'Components/Indicators/Legend/All',
   component: Legend,
   parameters: {
     docs: {

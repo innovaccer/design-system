@@ -55,7 +55,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Date and Time/TimePicker/TimePickerWithSearch/From To',
+  title: 'Components/Date and Time/TimePicker/TimePickerWithSearch/From To',
   component: TimePickerWithSearch,
   parameters: {
     docs: {

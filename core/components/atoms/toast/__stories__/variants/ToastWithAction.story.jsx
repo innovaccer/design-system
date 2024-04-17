@@ -48,7 +48,7 @@ export const toastWithAction = () => {
 };
 
 export default {
-  title: 'Indicators/Toast/Variants/Toast With Action',
+  title: 'Components/Indicators/Toast/Variants/Toast With Action',
   component: Toast,
   parameters: {
     docs: {

@@ -61,7 +61,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/Menu/Grouping/Divider',
+  title: 'Components/Dropdown/Menu/Grouping/Divider',
   component: Menu,
   subcomponents: {
     'Menu.Trigger': Menu.Trigger,

@@ -240,7 +240,7 @@ const customCode = `/*
 }`;
 
 export default {
-  title: 'Layout/PageHeader/Level 1/With back button/With Stepper',
+  title: 'Components/Layout/PageHeader/Level 1/With back button/With Stepper',
   component: PageHeader,
   parameters: {
     docs: {

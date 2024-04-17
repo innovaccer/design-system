@@ -7,7 +7,7 @@ export const defaultChecked = () => (
 );
 
 export default {
-  title: 'Selection/Radio/Default Checked',
+  title: 'Components/Selection/Radio/Default Checked',
   component: Radio,
   parameters: {
     docs: {

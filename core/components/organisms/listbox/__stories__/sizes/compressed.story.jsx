@@ -60,7 +60,7 @@ export const compressedList = () => {
 };
 
 export default {
-  title: 'Layout/Listbox/Size/Compressed List',
+  title: 'Components/Layout/Listbox/Size/Compressed List',
   component: Listbox,
   subcomponents: { Listbox, ListboxItem },
   parameters: {

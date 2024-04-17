@@ -71,7 +71,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Select/All',
+  title: 'Components/Dropdown/Select/All',
   component: Select,
   subcomponents: {
     'Select.List': Select.List,

@@ -90,7 +90,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Select/FetchErrorTemplate',
+  title: 'Components/Dropdown/Select/FetchErrorTemplate',
   component: Select,
   subcomponents: {
     'Select.List': Select.List,

@@ -11,7 +11,7 @@ export const lightPopover = () => (
 );
 
 export default {
-  title: 'Overlays/Popover/Light Popover',
+  title: 'Components/Overlays/Popover/Light Popover',
   component: Popover,
   parameters: {
     docs: {

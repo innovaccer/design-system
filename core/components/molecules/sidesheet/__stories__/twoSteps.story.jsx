@@ -193,7 +193,7 @@ const customCode = `() => {
 };`;
 
 export default {
-  title: 'Overlays/Sidesheet/Two Steps',
+  title: 'Components/Overlays/Sidesheet/Two Steps',
   component: Sidesheet,
   parameters: {
     docs: {

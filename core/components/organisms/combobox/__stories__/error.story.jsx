@@ -88,7 +88,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Combobox/With Error',
+  title: 'Components/Dropdown/Combobox/With Error',
   component: Combobox,
   subcomponents: { 'Combobox.List': Combobox.List, 'Combobox.Option': Combobox.Option },
   parameters: {

@@ -120,7 +120,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Combobox/Custom Options',
+  title: 'Components/Dropdown/Combobox/Custom Options',
   component: Combobox,
   subcomponents: { 'Combobox.List': Combobox.List, 'Combobox.Option': Combobox.Option },
   parameters: {

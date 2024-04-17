@@ -52,7 +52,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Inputs/Dropdown/Variants/Options Wrap',
+  title: 'Components/Dropdown/Dropdown/Variants/Options Wrap',
   component: Dropdown,
   parameters: {
     docs: {

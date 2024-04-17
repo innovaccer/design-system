@@ -21,7 +21,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Loaders/Spinner/Size',
+  title: 'Components/Loaders/Spinner/Size',
   component: Spinner,
   parameters: {
     docs: {

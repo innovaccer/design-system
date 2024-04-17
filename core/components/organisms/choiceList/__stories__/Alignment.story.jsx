@@ -27,6 +27,6 @@ export const alignment = () => {
 };
 
 export default {
-  title: 'Selection/ChoiceList/Alignment',
+  title: 'Components/Selection/ChoiceList/Alignment',
   component: ChoiceList,
 };

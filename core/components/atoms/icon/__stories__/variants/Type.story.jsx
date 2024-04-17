@@ -22,12 +22,12 @@ export const type = () => {
 };
 
 export default {
-  title: 'Icon/Icon/Variants/Type',
+  title: 'Components/Icon/Icon/Variants/Type',
   component: Icon,
   parameters: {
     docs: {
       docPage: {
-        title: 'Icon',
+        title: 'Components/Icon',
       },
     },
   },

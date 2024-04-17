@@ -86,7 +86,7 @@ const customCode = `/*
 }`;
 
 export default {
-  title: 'Overlays/Popover/Variants/Boundary Element',
+  title: 'Components/Overlays/Popover/Variants/Boundary Element',
   component: Popover,
   parameters: {
     docs: {

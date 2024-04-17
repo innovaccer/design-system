@@ -116,7 +116,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Layout/Table/Table As Option List',
+  title: 'Components/Layout/Table/Table As Option List',
   component: Table,
   parameters: {
     docs: {

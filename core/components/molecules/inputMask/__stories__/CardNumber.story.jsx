@@ -37,6 +37,6 @@ export const cardNumber = () => {
 };
 
 export default {
-  title: 'Inputs/InputMask/Card Number',
+  title: 'Components/Inputs/InputMask/Card Number',
   component: InputMask,
 };

@@ -200,7 +200,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Overlays/Modal/Scrolling',
+  title: 'Components/Overlays/Modal/Scrolling',
   component: Modal,
   parameters: {
     docs: {

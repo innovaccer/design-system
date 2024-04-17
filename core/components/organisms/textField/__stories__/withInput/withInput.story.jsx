@@ -41,7 +41,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Inputs/TextField/TextField With Input/With Input',
+  title: 'Components/Inputs/TextField/TextField With Input/With Input',
   component: TextFieldWithInput,
   parameters: {
     docs: {

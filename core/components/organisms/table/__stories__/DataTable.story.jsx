@@ -410,7 +410,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Layout/Table/Data Table',
+  title: 'Components/Layout/Table/Data Table',
   component: Table,
   parameters: {
     docs: {

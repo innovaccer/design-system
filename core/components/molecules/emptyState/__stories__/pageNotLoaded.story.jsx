@@ -18,6 +18,6 @@ export const pageNotLoaded = () => (
 );
 
 export default {
-  title: 'Layout/EmptyState/Page Not Loaded',
+  title: 'Components/Layout/EmptyState/Page Not Loaded',
   component: EmptyState,
 };

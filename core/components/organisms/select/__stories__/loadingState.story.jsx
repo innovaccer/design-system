@@ -152,7 +152,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Select/LoadingState',
+  title: 'Components/Dropdown/Select/LoadingState',
   component: Select,
   subcomponents: {
     'Select.List': Select.List,
