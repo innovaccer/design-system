@@ -62,7 +62,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Indicators/AvatarGroup/Variants/Border Color',
+  title: 'Components/AvatarGroup/Variants/Border Color',
   component: AvatarGroup,
   parameters: {
     docs: {

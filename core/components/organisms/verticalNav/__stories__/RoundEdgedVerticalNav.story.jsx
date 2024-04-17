@@ -289,7 +289,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Navigation/VerticalNav/Round Edged Vertical Navigation',
+  title: 'Components/VerticalNav/Round Edged Vertical Navigation',
   component: VerticalNav,
   parameters: {
     docs: {

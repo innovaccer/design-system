@@ -61,7 +61,7 @@ export const resourceList = () => {
 };
 
 export default {
-  title: 'Layout/Listbox/Type/Resource List',
+  title: 'Components/Listbox/Type/Resource List',
   component: Listbox,
   subcomponents: { Listbox, ListboxItem },
   parameters: {

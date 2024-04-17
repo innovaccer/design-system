@@ -69,7 +69,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Inputs/Dropdown/Variants/With Error Template',
+  title: 'Components/Dropdown/Variants/With Error Template',
   component: Dropdown,
   parameters: {
     docs: {

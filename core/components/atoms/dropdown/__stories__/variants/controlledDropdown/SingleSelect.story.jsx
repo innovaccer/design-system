@@ -123,7 +123,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Inputs/Dropdown/Variants/ControlledDropdown/Single Select',
+  title: 'Components/Dropdown/Variants/ControlledDropdown/Single Select',
   component: Dropdown,
   parameters: {
     docs: {

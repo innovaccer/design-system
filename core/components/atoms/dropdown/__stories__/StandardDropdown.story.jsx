@@ -34,7 +34,7 @@ export const standardDropdown = () => {
 };
 
 export default {
-  title: 'Inputs/Dropdown/Standard Dropdown',
+  title: 'Components/Dropdown/Standard Dropdown',
   component: Dropdown,
   parameters: {
     docs: {

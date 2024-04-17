@@ -23,7 +23,7 @@ export const withLabel = () => {
 };
 
 export default {
-  title: 'Selection/Switch/With Label',
+  title: 'Components/Switch/With Label',
   component: Switch,
   parameters: {
     docs: {

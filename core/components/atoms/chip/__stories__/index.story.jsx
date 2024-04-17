@@ -35,6 +35,6 @@ export const all = () => {
   );
 };
 export default {
-  title: 'Selection/Chip/All',
+  title: 'Components/Chip/All',
   component: Chip,
 };

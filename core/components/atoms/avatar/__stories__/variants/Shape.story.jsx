@@ -21,7 +21,7 @@ export const shape = () => {
 };
 
 export default {
-  title: 'Indicators/Avatar/Variants/Shape',
+  title: 'Components/Avatar/Variants/Shape',
   component: Avatar,
   parameters: {
     docs: {

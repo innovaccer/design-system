@@ -10,6 +10,6 @@ export const inlineLoader = () => (
 );
 
 export default {
-  title: 'Loaders/Spinner/Inline Loader',
+  title: 'Components/Spinner/Inline Loader',
   component: Spinner,
 };

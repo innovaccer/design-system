@@ -38,7 +38,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Inputs/ChipInput/Chips Wrapped To Next Line',
+  title: 'Components/ChipInput/Chips Wrapped To Next Line',
   component: ChipInput,
   parameters: {
     docs: {

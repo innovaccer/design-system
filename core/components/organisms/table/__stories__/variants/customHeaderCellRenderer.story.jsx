@@ -405,7 +405,7 @@ const customCode = `() => {
 
 export default {
   component: Table,
-  title: 'Layout/Table/Variants/Custom Header Cell Renderer',
+  title: 'Components/Table/Variants/Custom Header Cell Renderer',
   parameters: {
     docs: {
       docPage: {

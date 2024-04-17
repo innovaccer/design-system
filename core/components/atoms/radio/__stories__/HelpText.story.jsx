@@ -15,6 +15,6 @@ export const withHelpText = () => {
 };
 
 export default {
-  title: 'Selection/Radio/With Help Text',
+  title: 'Components/Radio/With Help Text',
   component: Radio,
 };

@@ -5,7 +5,7 @@ import { Navigation } from '@/index';
 export const all = () => <></>;
 
 export default {
-  title: 'Deprecated/Navigation/All',
+  title: 'Components/Navigation/All',
   component: Navigation,
   parameters: {
     docs: {

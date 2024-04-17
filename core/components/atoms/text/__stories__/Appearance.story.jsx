@@ -20,7 +20,7 @@ export const appearance = () => {
 };
 
 export default {
-  title: 'Typography/Text/Appearance',
+  title: 'Components/Text/Appearance',
   component: Text,
   parameters: {
     docs: {

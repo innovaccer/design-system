@@ -106,7 +106,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Navigation/VerticalNav/Custom Trigger',
+  title: 'Components/VerticalNav/Custom Trigger',
   component: VerticalNav,
   parameters: {
     docs: {

@@ -16,7 +16,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Navigation/Link/Variants/Size',
+  title: 'Components/Link/Variants/Size',
   component: Link,
   parameters: {
     docs: {

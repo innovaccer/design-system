@@ -58,7 +58,7 @@ const customCode = `() => {
 };`;
 
 export default {
-  title: 'Inputs/Input/Label Position',
+  title: 'Components/Input/Label Position',
   component: Input,
   parameters: {
     docs: {

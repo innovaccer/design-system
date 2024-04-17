@@ -101,7 +101,7 @@ const customCode = `() => {
 };`;
 
 export default {
-  title: 'Inputs/Input/Variants/Controlled Input',
+  title: 'Components/Input/Variants/Controlled Input',
   component: Input,
   subcomponents: { ActionButton },
   parameters: {

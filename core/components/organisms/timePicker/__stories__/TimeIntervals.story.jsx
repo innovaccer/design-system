@@ -37,7 +37,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Date and Time/TimePicker/TimePickerWithSearch/Time Intervals',
+  title: 'Components/TimePicker/TimePickerWithSearch/Time Intervals',
   component: TimePickerWithSearch,
   parameters: {
     docs: {

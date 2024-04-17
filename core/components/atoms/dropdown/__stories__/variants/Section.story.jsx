@@ -44,7 +44,7 @@ export const sections = () => {
 };
 
 export default {
-  title: 'Inputs/Dropdown/Variants/Sections',
+  title: 'Components/Dropdown/Variants/Sections',
   component: Dropdown,
   parameters: {
     docs: {

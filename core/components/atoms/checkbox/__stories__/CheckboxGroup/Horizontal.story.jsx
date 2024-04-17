@@ -27,7 +27,7 @@ export const Horizontal = () => {
 };
 
 export default {
-  title: 'Selection/Checkbox/Checkbox Group/Horizontal',
+  title: 'Components/Checkbox/Checkbox Group/Horizontal',
   component: Checkbox,
   parameters: {
     docs: {

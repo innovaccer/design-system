@@ -77,7 +77,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Layout/Table/Variants/Size',
+  title: 'Components/Table/Variants/Size',
   component: Table,
   parameters: {
     docs: {

@@ -64,7 +64,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Indicators/AvatarGroup/Variants/Size',
+  title: 'Components/AvatarGroup/Variants/Size',
   component: AvatarGroup,
   parameters: {
     docs: {

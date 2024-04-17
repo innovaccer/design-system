@@ -42,7 +42,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Inputs/TextField/TextField With TextArea/With TextArea',
+  title: 'Components/TextField/TextField With TextArea/With TextArea',
   component: TextFieldWithTextarea,
   parameters: {
     docs: {

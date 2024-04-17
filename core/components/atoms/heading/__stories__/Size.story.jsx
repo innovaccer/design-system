@@ -30,7 +30,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Typography/Heading/Size',
+  title: 'Components/Heading/Size',
   component: Heading,
   parameters: {
     docs: {

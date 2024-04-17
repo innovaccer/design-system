@@ -7,7 +7,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Typography/Paragraph/All',
+  title: 'Components/Paragraph/All',
   component: Paragraph,
   parameters: {
     docs: {

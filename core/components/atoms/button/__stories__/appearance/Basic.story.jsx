@@ -8,7 +8,7 @@ export const Basic = () => (
 );
 
 export default {
-  title: 'Actions/Button/Appearance/Basic',
+  title: 'Components/Button/Appearance/Basic',
   component: Button,
   parameters: {
     docs: {

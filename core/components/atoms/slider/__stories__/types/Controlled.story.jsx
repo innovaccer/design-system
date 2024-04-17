@@ -45,7 +45,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Selection/Slider/Types/Controlled Slider',
+  title: 'Components/Slider/Types/Controlled Slider',
   component: Slider,
   parameters: {
     docs: {

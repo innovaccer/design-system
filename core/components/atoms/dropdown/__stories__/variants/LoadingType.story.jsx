@@ -73,7 +73,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Inputs/Dropdown/Variants/Loading Type',
+  title: 'Components/Dropdown/Variants/Loading Type',
   component: Dropdown,
   parameters: {
     docs: {

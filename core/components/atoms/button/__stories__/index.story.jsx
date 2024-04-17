@@ -15,7 +15,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Actions/Button/All',
+  title: 'Components/Button/All',
   component: Button,
   parameters: {
     docs: {

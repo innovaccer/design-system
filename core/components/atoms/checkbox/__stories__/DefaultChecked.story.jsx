@@ -4,7 +4,7 @@ import { Checkbox } from '@/index';
 export const defaultChecked = () => <Checkbox label="Emergency contact" defaultChecked={true} />;
 
 export default {
-  title: 'Selection/Checkbox/Default Checked',
+  title: 'Components/Checkbox/Default Checked',
   component: Checkbox,
   parameters: {
     docs: {

@@ -10,6 +10,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Loaders/ProgressRing/All',
+  title: 'Components/ProgressRing/All',
   component: ProgressRing,
 };

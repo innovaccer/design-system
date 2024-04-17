@@ -50,7 +50,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Inputs/Dropdown/Variants/Align',
+  title: 'Components/Dropdown/Variants/Align',
   component: Dropdown,
   parameters: {
     docs: {

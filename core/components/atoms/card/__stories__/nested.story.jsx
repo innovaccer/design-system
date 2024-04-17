@@ -194,7 +194,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Layout/Card/Card Within A Card',
+  title: 'Components/Card/Card Within A Card',
   component: Card,
   parameters: {
     docs: {

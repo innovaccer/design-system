@@ -26,7 +26,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Indicators/MetaList/Size',
+  title: 'Components/MetaList/Size',
   component: MetaList,
   parameters: {
     docs: {

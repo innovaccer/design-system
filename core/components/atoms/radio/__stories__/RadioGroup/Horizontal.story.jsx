@@ -17,7 +17,7 @@ export const horizontal = () => {
 };
 
 export default {
-  title: 'Selection/Radio/RadioGroup/Horizontal',
+  title: 'Components/Radio/RadioGroup/Horizontal',
   component: Radio,
   subcomponents: { ChoiceList },
   parameters: {

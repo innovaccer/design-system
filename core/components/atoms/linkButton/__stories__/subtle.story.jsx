@@ -19,7 +19,7 @@ export const subtle = () => {
 };
 
 export default {
-  title: 'Actions/LinkButton/Subtle',
+  title: 'Components/LinkButton/Subtle',
   component: LinkButton,
   parameters: {
     docs: {

@@ -98,7 +98,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Layout/PageHeader/Level 1/With breadcrumb/Level 1 With Filter',
+  title: 'Components/PageHeader/Level 1/With breadcrumb/Level 1 With Filter',
   component: PageHeader,
   parameters: {
     docs: {

@@ -21,7 +21,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Loaders/Placeholder/All',
+  title: 'Components/Placeholder/All',
   component: Placeholder,
   subcomponents: { PlaceholderImage, PlaceholderParagraph },
 };

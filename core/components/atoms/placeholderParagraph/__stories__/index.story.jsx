@@ -9,7 +9,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Loaders/Placeholder/Paragraph/All',
+  title: 'Components/Placeholder/Paragraph/All',
   component: Placeholder,
   subcomponents: { PlaceholderParagraph },
   parameters: {

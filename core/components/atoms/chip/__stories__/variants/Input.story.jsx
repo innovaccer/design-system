@@ -22,7 +22,7 @@ export const Input = () => {
   );
 };
 export default {
-  title: 'Selection/Chip/Variants/Input',
+  title: 'Components/Chip/Variants/Input',
   component: Chip,
   parameters: {
     docs: {

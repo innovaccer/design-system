@@ -23,7 +23,7 @@ export const Action = () => {
 };
 
 export default {
-  title: 'Selection/Chip/Variants/Action',
+  title: 'Components/Chip/Variants/Action',
   component: Chip,
   parameters: {
     docs: {

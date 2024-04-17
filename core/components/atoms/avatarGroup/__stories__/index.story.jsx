@@ -55,7 +55,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Indicators/AvatarGroup/All',
+  title: 'Components/AvatarGroup/All',
   component: AvatarGroup,
   parameters: {
     docs: {

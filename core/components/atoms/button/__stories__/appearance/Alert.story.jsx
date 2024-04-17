@@ -8,7 +8,7 @@ export const Alert = () => (
 );
 
 export default {
-  title: 'Actions/Button/Appearance/Alert',
+  title: 'Components/Button/Appearance/Alert',
   component: Button,
   parameters: {
     docs: {

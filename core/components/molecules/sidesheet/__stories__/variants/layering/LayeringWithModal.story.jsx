@@ -178,7 +178,7 @@ const customCode = `() =>  {
 };`;
 
 export default {
-  title: 'Overlays/Sidesheet/Variants/Layering/Layering With Modal',
+  title: 'Components/Sidesheet/Variants/Layering/Layering With Modal',
   component: Sidesheet,
   parameters: {
     docs: {

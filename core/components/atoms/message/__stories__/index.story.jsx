@@ -23,6 +23,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Indicators/Message/All',
+  title: 'Components/Message/All',
   component: Message,
 };

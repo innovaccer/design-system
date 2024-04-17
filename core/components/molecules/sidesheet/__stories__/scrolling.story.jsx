@@ -212,7 +212,7 @@ const customCode = `() => {
 };`;
 
 export default {
-  title: 'Overlays/Sidesheet/Scrolling',
+  title: 'Components/Sidesheet/Scrolling',
   component: Sidesheet,
   parameters: {
     docs: {

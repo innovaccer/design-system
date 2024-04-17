@@ -5,6 +5,6 @@ import { ProgressBar } from '@/index';
 export const fiftyPercent = () => <ProgressBar value={50} max={100} />;
 
 export default {
-  title: 'Loaders/ProgressBar/Fifty Percent',
+  title: 'Components/ProgressBar/Fifty Percent',
   component: ProgressBar,
 };

@@ -344,7 +344,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Navigation/VerticalNav/Hoverable Vertical Navigation',
+  title: 'Components/VerticalNav/Hoverable Vertical Navigation',
   component: VerticalNav,
   parameters: {
     docs: {

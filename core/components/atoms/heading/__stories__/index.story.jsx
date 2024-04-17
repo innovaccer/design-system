@@ -7,7 +7,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Typography/Heading/All',
+  title: 'Components/Heading/All',
   component: Heading,
   parameters: {
     docs: {

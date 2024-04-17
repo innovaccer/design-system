@@ -25,7 +25,7 @@ export const withIcon = () => {
 };
 
 export default {
-  title: 'Actions/LinkButton/With Icon',
+  title: 'Components/LinkButton/With Icon',
   component: LinkButton,
   parameters: {
     docs: {

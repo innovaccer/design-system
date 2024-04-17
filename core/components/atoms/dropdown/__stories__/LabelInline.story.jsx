@@ -43,7 +43,7 @@ export const LabelInline = () => {
 };
 
 export default {
-  title: 'Inputs/Dropdown/Label Inline',
+  title: 'Components/Dropdown/Label Inline',
   component: Dropdown,
   parameters: {
     docs: {

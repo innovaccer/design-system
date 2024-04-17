@@ -223,7 +223,7 @@ const customCode = `
 }`;
 
 export default {
-  title: 'Overlays/FullscreenModal/Two Steps Workflow',
+  title: 'Components/FullscreenModal/Two Steps Workflow',
   component: FullscreenModal,
   parameters: {
     docs: {
