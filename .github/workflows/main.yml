@@ -117,7 +117,7 @@ jobs:
         if: steps.is_release_commit.outputs.result == 1
         run: npm run extract
         env:
-          STORYBOOK_HOST: 'https://mds.innovaccer.com/iframe.html?id=indicators-avatargroup-all--all&args=&viewMode=story'
+          STORYBOOK_HOST: 'https://mds.innovaccer.com/iframe.html?id=components-avatar-avatargroup-all--all&args=&viewMode=story'
 
       - name: build
         if: steps.is_release_commit.outputs.result == 1
