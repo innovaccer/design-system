@@ -207,6 +207,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     maxHeight,
     minHeight,
     withSearch,
+    width,
     setWithSearch,
     multiSelect,
     listRef,

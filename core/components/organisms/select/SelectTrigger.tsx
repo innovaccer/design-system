@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Icon, Text } from '@/index';
+import { Icon, Text, Tooltip } from '@/index';
 import { IconType } from '@/common.type';
 import { SelectContext } from './SelectContext';
 import { handleKeyDownTrigger, computeValue } from './utils';
@@ -68,6 +68,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
   } = props;
 
   const contextProp = React.useContext(SelectContext);
+  const elementRef = React.useRef(null);
 
   const {
     openPopover,
@@ -80,6 +81,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     setHighlightFirstItem,
     setHighlightLastItem,
     triggerRef,
+    width,
   } = contextProp;
 
   const buttonDisabled = disabled ? 'disabled' : 'default';
@@ -108,53 +110,63 @@ const SelectTrigger = (props: SelectTriggerProps) => {
   });
 
   const textClass = classNames({
-    ['Text']: true,
-    ['Text--regular']: true,
     ['Select-trigger-text']: true,
   });
 
   return (
-    <button
-      ref={triggerRef}
-      onKeyDown={(event) => handleKeyDownTrigger(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem)}
-      type="button"
-      className={buttonClass}
-      disabled={disabled}
-      tabIndex={0}
-      aria-haspopup="listbox"
-      aria-expanded={openPopover}
-      aria-label="trigger"
-      data-test="DesignSystem-Select-trigger"
-      {...rest}
-    >
-      {
-        <div className="Select-trigger-wrapper">
-          {inlineLabel && (
-            <Text appearance="subtle" className="mr-4 white-space-nowrap">
-              {`${inlineLabel.trim().charAt(0).toUpperCase()}${inlineLabel.trim().slice(1)}`}
-            </Text>
-          )}
-          {icon && !inlineLabel && (
-            <Icon appearance={buttonDisabled} className="d-flex align-items-center mr-4" name={icon} type={iconType} />
-          )}
-          {value && <span className={textClass}>{value}</span>}
-        </div>
-      }
-      {isOptionSelected && withClearButton && (
-        <Icon
-          appearance={buttonDisabled}
-          onClick={onClearHandler}
-          className="align-items-center mr-2 ml-3 Select-crossButton"
-          size={12}
-          name="close"
-          aria-label="clear selected"
-          type={iconType}
-          data-test="DesignSystem-Select--closeIcon"
-        />
-      )}
+    <Tooltip showOnTruncation={true} showTooltip={!openPopover} tooltip={value} elementRef={elementRef}>
+      <button
+        ref={triggerRef}
+        onKeyDown={(event) => handleKeyDownTrigger(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem)}
+        type="button"
+        className={buttonClass}
+        disabled={disabled}
+        style={{ maxWidth: width }}
+        tabIndex={0}
+        aria-haspopup="listbox"
+        aria-expanded={openPopover}
+        aria-label="trigger"
+        data-test="DesignSystem-Select-trigger"
+        {...rest}
+      >
+        {
+          <div className="Select-trigger-wrapper ellipsis--noWrap">
+            {inlineLabel && (
+              <Text appearance="subtle" className="mr-4 white-space-nowrap">
+                {`${inlineLabel.trim().charAt(0).toUpperCase()}${inlineLabel.trim().slice(1)}`}
+              </Text>
+            )}
+            {icon && !inlineLabel && (
+              <Icon
+                appearance={buttonDisabled}
+                className="d-flex align-items-center mr-4"
+                name={icon}
+                type={iconType}
+              />
+            )}
+            {value && (
+              <Text ref={elementRef} className={textClass}>
+                {value}
+              </Text>
+            )}
+          </div>
+        }
+        {isOptionSelected && withClearButton && (
+          <Icon
+            appearance={buttonDisabled}
+            onClick={onClearHandler}
+            className="align-items-center mr-2 ml-3 Select-crossButton"
+            size={12}
+            name="close"
+            aria-label="clear selected"
+            type={iconType}
+            data-test="DesignSystem-Select--closeIcon"
+          />
+        )}
 
-      <Icon appearance={buttonDisabled} name={iconName} type={iconType} />
-    </button>
+        <Icon appearance={buttonDisabled} name={iconName} type={iconType} />
+      </button>
+    </Tooltip>
   );
 };
 
