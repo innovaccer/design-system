@@ -549,7 +549,7 @@ export class Table extends React.Component<TableProps, TableState> {
   };
 
   updateDataFn = () => {
-    const { fetchData, pageSize, withPagination, data: dataProp, onSearch, uniqueColumnName = 'id' } = this.props;
+    const { fetchData, pageSize, withPagination, data: dataProp, onSearch, uniqueColumnName } = this.props;
 
     const { async, page, sortingList, filterList, searchTerm } = this.state;
 
@@ -588,8 +588,8 @@ export class Table extends React.Component<TableProps, TableState> {
 
               const selectedData = getUpdatedData(
                 dataReplica,
-                uniqueColumnName,
                 this.selectedRowsRef.current,
+                uniqueColumnName,
                 this.clearSelectionRef.current,
                 this.selectAllRef.current
               );
@@ -628,6 +628,7 @@ export class Table extends React.Component<TableProps, TableState> {
 
       const renderedSchema = this.state.schema.length ? this.state.schema : schema;
       const preSelectedRows = renderedData.filter((item: RowData) => item._selected);
+      const renderedDataReplica = JSON.parse(JSON.stringify(renderedData));
 
       if (this.clearSelectionRef.current) {
         this.selectedRowsRef.current = [];
@@ -638,9 +639,9 @@ export class Table extends React.Component<TableProps, TableState> {
       }
 
       const selectedData = getUpdatedData(
-        renderedData,
-        uniqueColumnName,
+        renderedDataReplica,
         this.selectedRowsRef.current,
+        uniqueColumnName,
         this.clearSelectionRef.current,
         this.selectAllRef.current
       );
@@ -660,7 +661,7 @@ export class Table extends React.Component<TableProps, TableState> {
   onSelect: onSelectFn = (rowIndexes, selected) => {
     const { data } = this.state;
 
-    const { onSelect, uniqueColumnName = 'id' } = this.props;
+    const { onSelect, uniqueColumnName } = this.props;
 
     if (this.selectAllRef.current && rowIndexes !== -1 && !selected) {
       this.selectAllRef.current = false;
@@ -720,7 +721,7 @@ export class Table extends React.Component<TableProps, TableState> {
         selectedItemList = [{ ...rowData, _selected: selected }, ...this.selectedRowsRef.current];
       }
 
-      if (!selected) {
+      if (!selected && uniqueColumnName) {
         selectedItemList = this.selectedRowsRef.current.filter(
           (item: RowData) => item[uniqueColumnName] !== rowData[uniqueColumnName]
         );
@@ -746,7 +747,7 @@ export class Table extends React.Component<TableProps, TableState> {
   };
 
   onSelectAll: onSelectAllFunction = (selected, selectAll, headerCheckbox) => {
-    const { onSelect, uniqueColumnName = 'id' } = this.props;
+    const { onSelect, uniqueColumnName } = this.props;
 
     const { data } = this.state;
 
@@ -777,7 +778,7 @@ export class Table extends React.Component<TableProps, TableState> {
         selectAll === undefined
           ? [...(this.selectedRowsRef.current || []), ...newData.filter((d) => d._selected)]
           : this.selectedRowsRef.current;
-    } else if (!selected && headerCheckbox) {
+    } else if (!selected && headerCheckbox && uniqueColumnName) {
       this.selectAllRef.current = false;
       this.selectedRowsRef.current = [...(this.selectedRowsRef.current || []), ...newData];
 
