@@ -93,7 +93,6 @@ interface PopperWrapperState {
   animationKeyframe: string;
   isOpen: boolean;
   uniqueKey: string;
-  showClosingAnimation: boolean;
 }
 
 export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWrapperState> {
@@ -120,7 +119,6 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
       animationKeyframe: '',
       isOpen: this.props.open || false,
       uniqueKey: '',
-      showClosingAnimation: false,
     };
 
     this.hoverableDelay = 100;
@@ -229,19 +227,9 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
         this.mouseMoveHandler();
       } else {
         onToggle(false, 'mouseLeave');
-        this.setState(
-          {
-            showClosingAnimation: true,
-          },
-          () => {
-            window.setTimeout(() => {
-              this.setState({
-                showClosingAnimation: false,
-                isOpen: false,
-              });
-            }, 120);
-          }
-        );
+        this.setState({
+          isOpen: false,
+        });
       }
     }
   }
