@@ -1,3 +1,39 @@
+## 2.31.1 (2024-04-19)
+
+### Highlights
+
+- fix(table): update table selection behaviour in sync table (aa39ac56)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+- fix(table): update table selection behaviour in sync table (aa39ac56)
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 2.31.0 (2024-04-15)
 
 ### Highlights
