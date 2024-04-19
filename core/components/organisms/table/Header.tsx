@@ -207,8 +207,10 @@ export const Header = (props: HeaderProps) => {
       return `Selected ${selectedRowsCount} ${customLabel}${getPluralSuffix(selectedRowsCount)}`;
     } else if (selectedCount && !uniqueColumnName && withCheckbox) {
       return `Selected ${selectedCount} ${customLabel}${getPluralSuffix(selectedCount)}`;
+    } else if (withPagination) {
+      return `Showing ${startIndex}-${endIndex} of ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`;
     }
-    return;
+    return `Showing ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`;
   };
 
   return (
