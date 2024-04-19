@@ -7,8 +7,8 @@ const isElementPresent = (list: [], uniqueColumnName: string, value: any) => {
 
 export const getUpdatedData = (
   data: GridProps['data'],
-  uniqueColumnName: string,
   selectedList: [],
+  uniqueColumnName?: string,
   isCancelSelection?: boolean,
   isSelectAll?: boolean
 ) => {
@@ -16,7 +16,8 @@ export const getUpdatedData = (
     if (
       isSelectAll ||
       (item._selected && !isCancelSelection) ||
-      (item[uniqueColumnName] &&
+      (uniqueColumnName &&
+        item[uniqueColumnName] &&
         selectedList &&
         isElementPresent(selectedList, uniqueColumnName, item[uniqueColumnName]) &&
         !isCancelSelection)
@@ -47,6 +48,9 @@ const uniqueByKey = (arr: RowData[], key: string) => {
   });
 };
 
-export const removeDuplicate = (data: RowData[], uniqueColumnName: string) => {
-  return uniqueByKey(data, uniqueColumnName);
+export const removeDuplicate = (data: RowData[], uniqueColumnName?: string) => {
+  if (uniqueColumnName) {
+    return uniqueByKey(data, uniqueColumnName);
+  }
+  return data;
 };
