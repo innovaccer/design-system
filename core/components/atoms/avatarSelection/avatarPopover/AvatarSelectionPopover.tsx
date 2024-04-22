@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Checkbox } from '@/index';
+import { Checkbox, Tooltip } from '@/index';
 import { AvatarData } from '../AvatarSelection';
 import SelectionAvatarInput from './AvatarSelectionInput';
 import classNames from 'classnames';
@@ -15,6 +15,45 @@ interface AvatarPopoverProps {
   children?: React.ReactNode;
   customStyle: { width?: number; minHeight?: number; maxHeight?: number };
 }
+
+interface AvatarSelectionItemProps {
+  avatarData: AvatarData;
+  isSelected?: boolean;
+}
+
+const AvatarSelectionItem = (props: AvatarSelectionItemProps) => {
+  const { avatarData, isSelected } = props;
+  const [showTooltip, setShowTooltip] = React.useState(false);
+  const elementRef = React.useRef(null);
+
+  const { firstName = '', lastName = '' } = avatarData;
+  const name = `${firstName} ${lastName}`;
+
+  return (
+    <Tooltip showOnTruncation={true} tooltip={name} elementRef={elementRef} open={showTooltip}>
+      <AvatarSelectionOption
+        value={avatarData}
+        onFocus={() => {
+          setShowTooltip(true);
+        }}
+        onBlur={() => {
+          setShowTooltip(false);
+        }}
+      >
+        <Checkbox
+          defaultChecked={isSelected}
+          checked={isSelected}
+          label={name}
+          size="regular"
+          tabIndex={-1}
+          className="ellipsis--noWrap"
+          data-test="DesignSystem-AvatarSelection--Checkbox"
+          labelRef={elementRef}
+        />
+      </AvatarSelectionOption>
+    </Tooltip>
+  );
+};
 
 export const AvatarSelectionPopover = (props: AvatarPopoverProps) => {
   const { hiddenAvatarList, customStyle, searchPlaceholder, searchComparator, children } = props;
@@ -58,7 +97,6 @@ export const AvatarSelectionPopover = (props: AvatarPopoverProps) => {
     ['py-3']: !withSearch,
     ['pb-3']: withSearch,
     ['SelectionAvatarGroup-popper']: true,
-    ['overflow-hidden']: true,
   });
 
   return (
@@ -88,23 +126,9 @@ export const AvatarSelectionPopover = (props: AvatarPopoverProps) => {
 
         <AvatarSelectionList>
           {searchList.map((avatarData: AvatarData, index: number) => {
-            const { firstName = '', lastName = '' } = avatarData;
-            const name = `${firstName} ${lastName}`;
             const isSelected = selectedItems?.includes(avatarData);
 
-            return (
-              <AvatarSelectionOption key={index} value={avatarData}>
-                <Checkbox
-                  defaultChecked={isSelected}
-                  checked={isSelected}
-                  label={name}
-                  size="regular"
-                  tabIndex={-1}
-                  className="ellipsis--noWrap"
-                  data-test="DesignSystem-AvatarSelection--Checkbox"
-                />
-              </AvatarSelectionOption>
-            );
+            return <AvatarSelectionItem key={index} avatarData={avatarData} isSelected={isSelected} />;
           })}
         </AvatarSelectionList>
       </div>

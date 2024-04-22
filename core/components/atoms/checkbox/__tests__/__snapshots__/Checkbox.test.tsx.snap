@@ -36,7 +36,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--default Text--regular"
+            class="Text Text--default Text--regular ellipsis--noWrap mw-100"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -90,7 +90,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--default Text--regular"
+            class="Text Text--default Text--regular ellipsis--noWrap mw-100"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -145,7 +145,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--disabled Text--regular"
+            class="Text Text--disabled Text--regular ellipsis--noWrap mw-100"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -200,7 +200,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--disabled Text--regular"
+            class="Text Text--disabled Text--regular ellipsis--noWrap mw-100"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -270,7 +270,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--default Text--regular"
+            class="Text Text--default Text--regular ellipsis--noWrap mw-100"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -340,7 +340,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--default Text--regular"
+            class="Text Text--default Text--regular ellipsis--noWrap mw-100"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -411,7 +411,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--disabled Text--regular"
+            class="Text Text--disabled Text--regular ellipsis--noWrap mw-100"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -482,7 +482,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--disabled Text--regular"
+            class="Text Text--disabled Text--regular ellipsis--noWrap mw-100"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -536,7 +536,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--default Text--regular"
+            class="Text Text--default Text--regular ellipsis--noWrap mw-100"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -591,7 +591,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--disabled Text--regular"
+            class="Text Text--disabled Text--regular ellipsis--noWrap mw-100"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -645,7 +645,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--default Text--small"
+            class="Text Text--default Text--small ellipsis--noWrap mw-100"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -700,7 +700,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--disabled Text--small"
+            class="Text Text--disabled Text--small ellipsis--noWrap mw-100"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -767,7 +767,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--default Text--regular"
+            class="Text Text--default Text--regular ellipsis--noWrap mw-100"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -835,7 +835,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--disabled Text--regular"
+            class="Text Text--disabled Text--regular ellipsis--noWrap mw-100"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -904,7 +904,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--default Text--small"
+            class="Text Text--default Text--small ellipsis--noWrap mw-100"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -974,7 +974,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--disabled Text--small"
+            class="Text Text--disabled Text--small ellipsis--noWrap mw-100"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -1044,7 +1044,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--default Text--regular"
+            class="Text Text--default Text--regular ellipsis--noWrap mw-100"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -1112,7 +1112,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--default Text--small"
+            class="Text Text--default Text--small ellipsis--noWrap mw-100"
             data-test="DesignSystem-Text"
           >
             Checkbox

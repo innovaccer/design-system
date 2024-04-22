@@ -8,6 +8,7 @@
   box-sizing: border-box;
   padding-top: var(--spacing-s);
   padding-bottom: var(--spacing-s);
+  width: 100%;
 }
 
 .Checkbox-input {

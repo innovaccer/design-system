@@ -62,6 +62,10 @@ export interface CheckboxProps extends BaseProps, OmitNativeProps<HTMLInputEleme
    * htmlFor label id for checkbox
    */
   id?: string;
+  /**
+   * Pass ref to the checkbox text
+   */
+  labelRef?: React.Ref<HTMLSpanElement>;
 }
 
 export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props, forwardedRef) => {
@@ -80,6 +84,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     checked: checkedProp,
     helpText,
     id = `${name}-${label}-${uidGenerator()}`,
+    labelRef,
     ...rest
   } = props;
 
@@ -176,7 +181,12 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
         <div className="Checkbox-labelWrapper">
           {label && label.trim() && (
             <label htmlFor={id} className={CheckboxLabelClass} data-test="DesignSystem-Checkbox-Label">
-              <Text size={size === 'tiny' ? 'small' : 'regular'} appearance={disabled ? 'disabled' : 'default'}>
+              <Text
+                size={size === 'tiny' ? 'small' : 'regular'}
+                appearance={disabled ? 'disabled' : 'default'}
+                className="ellipsis--noWrap mw-100"
+                ref={labelRef}
+              >
                 {label.trim()}
               </Text>
             </label>

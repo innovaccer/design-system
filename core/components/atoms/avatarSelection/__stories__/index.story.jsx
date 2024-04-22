@@ -48,7 +48,7 @@ export const all = () => {
       lastName: 'Green',
     },
     {
-      firstName: 'Walter',
+      firstName: 'Walter Paxton',
       lastName: 'Wheeler',
       selected: true,
     },
@@ -105,7 +105,7 @@ const customCode = `() => {
       lastName: 'Green',
     },
     {
-      firstName: 'Walter',
+      firstName: 'Walter Paxton',
       lastName: 'Wheeler',
       selected: true,
     },
