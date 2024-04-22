@@ -35,6 +35,6 @@
   bottom: 0;
   left: 0;
   z-index: 2;
-  opacity: 50%;
+  opacity: var(--opacity-10);
   background: var(--secondary-light);
 }

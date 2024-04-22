@@ -1,5 +1,5 @@
 .card-opacity {
-  opacity: 0.6;
+  opacity: var(--opacity-10);
 }
 
 .overview-card:hover .card-opacity {

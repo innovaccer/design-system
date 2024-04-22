@@ -71,16 +71,16 @@
   --inverse-lightest: var(--night-lightest);
 
   /* shadow */
-  --primary-shadow: color-mod(var(--primary) a(0.16));
-  --secondary-shadow: color-mod(var(--secondary) a(0.16));
-  --success-shadow: color-mod(var(--success) a(0.16));
-  --alert-shadow: color-mod(var(--alert) a(0.16));
-  --warning-shadow: color-mod(var(--warning) a(0.16));
-  --accent1-shadow: color-mod(var(--accent1) a(0.16));
-  --accent2-shadow: color-mod(var(--accent2) a(0.16));
-  --accent3-shadow: color-mod(var(--accent3) a(0.16));
-  --accent4-shadow: color-mod(var(--accent4) a(0.16));
-  --inverse-shadow: color-mod(var(--inverse) a(0.16));
+  --primary-shadow: color-mod(var(--primary) a(var(--opacity-4)));
+  --secondary-shadow: color-mod(var(--secondary) a(var(--opacity-4)));
+  --success-shadow: color-mod(var(--success) a(var(--opacity-4)));
+  --alert-shadow: color-mod(var(--alert) a(var(--opacity-4)));
+  --warning-shadow: color-mod(var(--warning) a(var(--opacity-4)));
+  --accent1-shadow: color-mod(var(--accent1) a(var(--opacity-4)));
+  --accent2-shadow: color-mod(var(--accent2) a(var(--opacity-4)));
+  --accent3-shadow: color-mod(var(--accent3) a(var(--opacity-4)));
+  --accent4-shadow: color-mod(var(--accent4) a(var(--opacity-4)));
+  --inverse-shadow: color-mod(var(--inverse) a(var(--opacity-4)));
 
   /* Text colors */
   --text: var(--night);
@@ -205,17 +205,15 @@
   --duration--slow-01: 400ms;
   --duration--slow-02: 720ms;
 
-  /**** Opacity ****/
-  --opacity-0: 0;
-  --opacity-4: 0.04;
-  --opacity-8: 0.08;
-  --opacity-12: 0.12;
-  --opacity-16: 0.16;
-  --opacity-24: 0.24;
-  --opacity-32: 0.32;
-  --opacity-40: 0.4;
-  --opacity-48: 0.48;
-  --opacity-64: 0.64;
-  --opacity-80: 0.8;
-  --opacity-100: 1;
+  /* Opacity */
+  --opacity-1: 0.04;
+  --opacity-2: 0.08;
+  --opacity-3: 0.12;
+  --opacity-4: 0.16;
+  --opacity-6: 0.24;
+  --opacity-8: 0.32;
+  --opacity-10: 0.4;
+  --opacity-12: 0.48;
+  --opacity-16: 0.64;
+  --opacity-20: 0.8;
 }
