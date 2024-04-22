@@ -165,6 +165,10 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
           zIndex: zIndex === undefined ? zIndex : zIndex + 1,
           isOpen: true,
         });
+      } else if (!this.props.open && this.props.animationClass) {
+        this.setState({
+          isOpen: false,
+        });
       }
     }
   }

@@ -25,10 +25,18 @@ export interface MenuItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement | 
    * Disables the menu item
    */
   disabled?: boolean;
+  /**
+   * Handler to be called when `Menu List Item` is in focus
+   */
+  onFocus?: (event: React.FocusEvent) => void;
+  /**
+   * Handler to be called when `Menu List Item` is out of focus
+   */
+  onBlur?: (event: React.FocusEvent) => void;
 }
 
 export const MenuItem = (props: MenuItemProps) => {
-  const { children, className, onClick, disabled, ...rest } = props;
+  const { children, className, onClick, disabled, onFocus, ...rest } = props;
   const contextProp = React.useContext(MenuContext);
   const subMenuContextProp = React.useContext(SubMenuContext);
   const isSubMenuTrigger = false;
@@ -68,6 +76,7 @@ export const MenuItem = (props: MenuItemProps) => {
   const onFocusHandler = (event: React.FocusEvent) => {
     setFocusedOption?.(event.target as HTMLElement);
     setOpenPopover?.(true);
+    onFocus?.(event);
   };
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
