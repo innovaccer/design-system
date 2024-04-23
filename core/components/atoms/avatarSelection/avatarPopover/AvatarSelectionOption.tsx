@@ -20,6 +20,14 @@ export interface SelectionOptionProps extends BaseProps {
    * Set a custom element for list item
    */
   tagName: ItemTagType;
+  /**
+   * Handler to be called when `AvatarSelectionOption` is in focus
+   */
+  onFocus?: (event: React.FocusEvent) => void;
+  /**
+   * Handler to be called when `AvatarSelectionOption` is out of focus
+   */
+  onBlur?: (event: React.FocusEvent) => void;
 }
 
 export const AvatarSelectionOption = (props: SelectionOptionProps) => {
