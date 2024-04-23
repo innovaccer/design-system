@@ -332,12 +332,13 @@
 
 .Grid-cellGroup--pinned-left {
   left: 0;
-  border-right: var(--border);
+  border-style: inset;
+  border-right: var(--spacing-xs) solid rgba(213, 213, 213, var(--opacity-3));
   border-right-width: 4px;
   border-image: linear-gradient(
       to right,
-      var(--secondary),
-      var(--secondary) 25%,
+      var(--secondary-light),
+      var(--secondary-light) 25%,
       color-mod(var(--secondary) a(0.1)) 25%,
       color-mod(var(--secondary) a(0.1))
     )
@@ -346,12 +347,13 @@
 
 .Grid-cellGroup--pinned-right {
   right: 0;
-  border-left: var(--border);
+  border-style: inset;
+  border-left: var(--spacing-xs) solid rgba(213, 213, 213, var(--opacity-3));
   border-left-width: 4px;
   border-image: linear-gradient(
       to left,
-      var(--secondary),
-      var(--secondary) 25%,
+      var(--secondary-light),
+      var(--secondary-light) 25%,
       color-mod(var(--secondary) a(0.1)) 25%,
       color-mod(var(--secondary) a(0.1))
     )
