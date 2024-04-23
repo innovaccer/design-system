@@ -22,6 +22,8 @@ const config = {
     '!**/dist/**/*',
     '!**/__stories__/**/*',
     '!**/*.story.tsx',
+    '!core/*.type.tsx',
+    '!core/*.d.ts',
   ],
   globals: {
     window: true,
