@@ -57,6 +57,10 @@ ReactDOM.render(<App />, document.getElementById("root"));
   href="https://fonts.googleapis.com/icon?family=Material+Icons"
   rel="stylesheet"
 />
+<link
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
+  rel="stylesheet"
+/>
 <div class="p-6">
   <div id="root"></div>
 </div>
