@@ -66,12 +66,12 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "cypress": "^10.3.1",
+    "cypress": "^13.8.1",
     "eslint": "^7.31.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "^2.3.2",
-    "start-server-and-test": "^1.14.0",
+    "start-server-and-test": "^2.0.3",
     "typescript": "3.9.10"
   }
 }
