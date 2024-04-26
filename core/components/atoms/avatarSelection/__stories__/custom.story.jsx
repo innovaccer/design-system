@@ -114,6 +114,7 @@ export const custom = () => {
             size="regular"
             helpText={email}
             labelRef={elementRef}
+            className="w-100"
           />
         </AvatarSelection.Option>
       </Tooltip>
@@ -262,6 +263,7 @@ const customCode = `() => {
             size="regular"
             helpText={email}
             labelRef={elementRef}
+            className="w-100"
           />
         </AvatarSelection.Option>
       </Tooltip>
