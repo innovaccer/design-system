@@ -23,7 +23,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Loaders/Placeholder/Image/Size',
+  title: 'Components/Progress Indicators/Placeholder/Image/Size',
   component: Placeholder,
   subcomponents: { PlaceholderImage },
   parameters: {

@@ -44,12 +44,13 @@ export const sections = () => {
 };
 
 export default {
-  title: 'Inputs/Dropdown/Variants/Sections',
+  title: 'Components/Dropdown (Deprecated)/Variants/Sections',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
         title: 'Dropdown',
+        isDeprecated: true,
         props: {
           components: { Uncontrolled, Controlled },
           exclude: ['showHead'],

@@ -54,7 +54,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Inputs/EditableInput/All',
+  title: 'Components/Inline Editable Fields/EditableInput/All',
   component: EditableInput,
   parameters: {
     docs: {

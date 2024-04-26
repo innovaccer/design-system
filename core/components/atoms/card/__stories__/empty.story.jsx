@@ -31,6 +31,6 @@ export const EmptyCard = () => {
 };
 
 export default {
-  title: 'Layout/Card/Empty Card',
+  title: 'Components/Card/Empty Card',
   component: Card,
 };

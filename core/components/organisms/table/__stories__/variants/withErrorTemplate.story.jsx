@@ -137,7 +137,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Layout/Table/Variants/With Error Template',
+  title: 'Components/Table/Variants/With Error Template',
   component: Table,
   parameters: {
     docs: {

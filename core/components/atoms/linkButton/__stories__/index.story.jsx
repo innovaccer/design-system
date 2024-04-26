@@ -20,7 +20,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Actions/LinkButton/All',
+  title: 'Components/Button/LinkButton/All',
   component: LinkButton,
   parameters: {
     docs: {

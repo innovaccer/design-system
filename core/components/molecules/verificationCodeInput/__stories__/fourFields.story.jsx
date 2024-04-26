@@ -12,7 +12,7 @@ export const WithFourFields = () => {
 };
 
 export default {
-  title: 'Inputs/VerificationCodeInput/With Four Fields',
+  title: 'Components/Input/VerificationCodeInput/With Four Fields',
   component: VerificationCodeInput,
   parameters: {
     docs: {

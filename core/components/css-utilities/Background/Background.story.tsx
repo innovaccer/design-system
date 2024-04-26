@@ -111,7 +111,7 @@ export const background = () => {
 };
 
 export default {
-  title: 'Others/Styles/Background',
+  title: 'Styling/Helper Classes/Background',
   component: background,
   parameters: {
     viewMode: 'story',

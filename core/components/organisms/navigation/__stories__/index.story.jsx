@@ -5,13 +5,15 @@ import { Navigation } from '@/index';
 export const all = () => <></>;
 
 export default {
-  title: 'Deprecated/Navigation/All',
+  title: 'Components/Navigation (Deprecated)/All',
   component: Navigation,
   parameters: {
     docs: {
       docPage: {
         title: 'Navigation',
-        description: 'Navigation Component has been Deprecated. Please use VerticalNav and HorizontalNav instead.',
+        isDeprecated: true,
+        description:
+          'Navigation component has been deprecated, please use [VerticalNav](https://mds.innovaccer.com/?path=/docs/components-verticalnav-verticalnav-all--all) and [HorizontalNav](https://mds.innovaccer.com/?path=/docs/components-horizontalnav-all--all) components instead.',
       },
     },
   },

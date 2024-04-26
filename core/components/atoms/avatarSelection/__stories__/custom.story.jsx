@@ -295,7 +295,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Indicators/AvatarSelection/Custom',
+  title: 'Components/Avatar/AvatarSelection/Custom',
   component: AvatarSelection,
   subcomponents: {
     'AvatarSelection.Input': Input,

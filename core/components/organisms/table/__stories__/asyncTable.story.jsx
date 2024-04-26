@@ -318,7 +318,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Layout/Table/Async Table',
+  title: 'Components/Table/Async Table',
   component: Table,
   parameters: {
     docs: {

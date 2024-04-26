@@ -91,7 +91,7 @@ export const typography = () => {
 };
 
 export default {
-  title: 'Others/Design Tokens/Typography',
+  title: 'Styling/Design Tokens/Typography',
   parameters: {
     viewMode: 'story',
     docs: {

@@ -25,12 +25,13 @@ export const gender = () => {
 };
 
 export default {
-  title: 'Inputs/Dropdown/Gender',
+  title: 'Components/Dropdown (Deprecated)/Gender',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
         title: 'Dropdown',
+        isDeprecated: true,
         props: {
           components: { Uncontrolled, Controlled },
           exclude: ['showHead'],

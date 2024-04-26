@@ -27,7 +27,7 @@ export const Vertical = () => {
 };
 
 export default {
-  title: 'Selection/Checkbox/Checkbox Group/Vertical',
+  title: 'Components/Checkbox/Checkbox Group/Vertical',
   component: Checkbox,
   parameters: {
     docs: {

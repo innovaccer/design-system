@@ -5,13 +5,15 @@ import Caption from '../index';
 export const all = () => <></>;
 
 export default {
-  title: 'Deprecated/Caption/All',
+  title: 'Components/Caption (Deprecated)/All',
   component: Caption,
   parameters: {
     docs: {
       docPage: {
         title: 'Caption',
-        description: 'Caption Component has been Deprecated, please use Inline Message and Text Component instead.',
+        isDeprecated: true,
+        description:
+          'Caption component has been deprecated, please use [HelpText](https://mds.innovaccer.com/?path=/docs/components-helptext-all--all) component instead.',
       },
     },
   },

@@ -73,13 +73,14 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Inputs/Dropdown/Variants/Loading Type',
+  title: 'Components/Dropdown (Deprecated)/Variants/Loading Type',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
         customCode,
         title: 'Dropdown',
+        isDeprecated: true,
         props: {
           components: { Uncontrolled, Controlled },
           exclude: ['showHead'],

@@ -208,12 +208,13 @@ export const dropdownWithIcon = () => {
 };
 
 export default {
-  title: 'Inputs/Dropdown/Dropdown With Icon',
+  title: 'Components/Dropdown (Deprecated)/Dropdown With Icon',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
         title: 'Dropdown',
+        isDeprecated: true,
         props: {
           components: { Uncontrolled, Controlled },
         },

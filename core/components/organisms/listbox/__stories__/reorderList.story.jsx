@@ -81,7 +81,7 @@ export const reorderList = () => {
 };
 
 export default {
-  title: 'Layout/Listbox/Reorder List',
+  title: 'Components/Listbox/Reorder List',
   component: Listbox,
   subcomponents: { Listbox, ListboxItem },
   parameters: {

@@ -47,7 +47,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Overlays/Backdrop/All',
+  title: 'Components/Backdrop/All',
   component: Backdrop,
   parameters: {
     docs: {

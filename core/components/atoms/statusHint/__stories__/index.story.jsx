@@ -15,6 +15,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Indicators/StatusHint/All',
+  title: 'Components/StatusHint/All',
   component: StatusHint,
 };

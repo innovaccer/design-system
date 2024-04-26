@@ -40,7 +40,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Overlays/Tooltip/Auto Tooltip',
+  title: 'Components/Tooltip/Auto Tooltip',
   component: Tooltip,
   parameters: {
     docs: {

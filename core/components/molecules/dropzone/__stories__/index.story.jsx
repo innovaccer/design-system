@@ -182,7 +182,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'File Inputs/Dropzone/All',
+  title: 'Components/File Uploader/Dropzone/All',
   component: Dropzone,
   parameters: {
     docs: {

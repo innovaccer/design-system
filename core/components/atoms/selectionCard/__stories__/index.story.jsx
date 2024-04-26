@@ -112,7 +112,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Layout/Selection Card/All',
+  title: 'Components/Interactive Card/Selection Card/All',
   component: SelectionCard,
   parameters: {
     docs: {

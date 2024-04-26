@@ -16,7 +16,7 @@ export const labelButtonGroup = () => (
 );
 
 export default {
-  title: 'Actions/Button/Label Button Group',
+  title: 'Components/Button/Button/Label Button Group',
   component: Button,
   parameters: {
     docs: {

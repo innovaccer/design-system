@@ -54,6 +54,12 @@ export interface DialogProps extends BaseProps {
   secondaryButtonCallback: () => void;
 }
 
+/**
+ *
+ * Dialog component has been deprecated, please use [Modal](https://mds.innovaccer.com/?path=/docs/components-modal-modal-all--all) component instead.
+ *
+ */
+
 const Dialog = (props: DialogProps) => {
   const {
     dimension,

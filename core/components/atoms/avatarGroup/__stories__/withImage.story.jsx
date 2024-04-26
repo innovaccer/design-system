@@ -45,7 +45,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Indicators/AvatarGroup/With Image',
+  title: 'Components/Avatar/AvatarGroup/With Image',
   component: AvatarGroup,
   subcomponents: { 'Avatar.Image': Avatar.Image, 'Avatar.Icon': Avatar.Icon },
   parameters: {

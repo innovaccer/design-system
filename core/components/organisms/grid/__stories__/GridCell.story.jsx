@@ -49,7 +49,7 @@ export const Grid_Cell = () => {
 };
 
 export default {
-  title: 'Layout/Grid/Grid Cell',
+  title: 'Components/Grid/Grid Cell',
   component: Grid,
   subcomponents: { GridCell },
 };

@@ -25,6 +25,6 @@ export const labelWrap = () => {
 };
 
 export default {
-  title: 'Indicators/StatusHint/Label Wrap',
+  title: 'Components/StatusHint/Label Wrap',
   component: StatusHint,
 };

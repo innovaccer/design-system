@@ -16,7 +16,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Selection/Radio/All',
+  title: 'Components/Radio/All',
   component: Radio,
   parameters: {
     docs: {

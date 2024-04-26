@@ -30,12 +30,13 @@ export const searchInDropdown = () => {
 };
 
 export default {
-  title: 'Inputs/Dropdown/Search In Dropdown',
+  title: 'Components/Dropdown (Deprecated)/Search In Dropdown',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
         title: 'Dropdown',
+        isDeprecated: true,
         props: {
           components: { Uncontrolled, Controlled },
         },

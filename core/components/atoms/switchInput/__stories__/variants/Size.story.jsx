@@ -34,7 +34,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Selection/Switch/Variants/Size',
+  title: 'Components/Switch/Variants/Size',
   component: Switch,
   parameters: {
     docs: {

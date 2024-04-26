@@ -91,7 +91,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Layout/PageHeader/Level 0/Level 0 With Filter',
+  title: 'Components/PageHeader/Level 0/Level 0 With Filter',
   component: PageHeader,
   parameters: {
     docs: {

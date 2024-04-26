@@ -231,7 +231,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Layout/Table/Table As Description List',
+  title: 'Components/Table/Table As Description List',
   component: Table,
   parameters: {
     docs: {
