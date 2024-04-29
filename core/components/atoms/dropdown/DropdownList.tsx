@@ -596,7 +596,7 @@ const DropdownList = (props: OptionsProps) => {
     if (isDropdownListBlank) {
       if (noResultMessage) {
         return (
-          <div className="Dropdown-wrapper" style={dropdownStyle} data-test="DesignSystem-Dropdown--errorWrapper">
+          <div className="Dropdown-wrapper w-100" style={dropdownStyle} data-test="DesignSystem-Dropdown--errorWrapper">
             <div className={'Option'}>
               <div className={'Option-subinfo'}>{noResultMessage}</div>
             </div>
