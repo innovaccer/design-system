@@ -43,6 +43,6 @@ describe('Cypress Test of patterns page', () => {
 
   it('check navigation of status table', () => {
     cy.visit(statusURL);
-    cy.statusTable();
+    cy.statusTable(statusURL);
   });
 });

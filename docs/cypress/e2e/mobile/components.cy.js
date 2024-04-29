@@ -21,7 +21,7 @@ describe('Cypress Test of component mobile page', () => {
 
   it('check navigation of status table', () => {
     cy.visit(statusURL);
-    cy.statusTable();
+    cy.statusTable(statusURL);
   });
   
   Cypress._.times(3, (i) => {

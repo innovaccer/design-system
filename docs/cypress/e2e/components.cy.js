@@ -18,7 +18,7 @@ describe('Cypress Test of component page', () => {
 
   it('check navigation of status table', () => {
     cy.visit(statusURL);
-    cy.statusTable();
+    cy.statusTable(statusURL);
   });
 
   it('check for all the links it redirects', () => {
