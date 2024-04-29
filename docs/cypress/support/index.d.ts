@@ -7,7 +7,7 @@ declare namespace Cypress {
         leftnavTraverse(arr: Array<string>): Chainable<Element>
         tabsVisit(): Chainable<Element>
         livePreview(): Chainable<Element>
-        statusTable(): Chainable<Element>
+        statusTable(statusURL: string): Chainable<Element>
         searchBar(falseQuery: string, searchQuery: string): Chainable<Element>
         splitArray(navLink: Array<string>, subNavLink: Array<string>): Chainable<Element>
     }
