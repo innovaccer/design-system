@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu, Text, Tooltip } from '@/index';
 
-export const overflowOptions = () => {
+export const overflowBehaviorOfItems = () => {
   const [showTooltip, setShowTooltip] = React.useState(false);
   const elementRef = React.useRef(null);
 
@@ -54,7 +54,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/Menu/Overflow/Overflow Options',
+  title: 'Components/Menu/Overflow Behavior Of Items',
   component: Menu,
   subcomponents: {
     'Menu.Trigger': Menu.Trigger,
