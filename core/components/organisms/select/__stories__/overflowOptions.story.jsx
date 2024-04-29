@@ -4,7 +4,7 @@ import { action } from '@/utils/action';
 import './style.css';
 
 // CSF format story
-export const overflowOptions = () => {
+export const overflowBehavior = () => {
   const medicineList = [
     { label: 'Aspirin', value: 'Aspirin' },
     { label: 'Paracetamol', value: 'Paracetamol' },
@@ -115,7 +115,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Select/Overflow Options',
+  title: 'Components/Select/Overflow Behavior',
   component: Select,
   subcomponents: {
     'Select.List': Select.List,

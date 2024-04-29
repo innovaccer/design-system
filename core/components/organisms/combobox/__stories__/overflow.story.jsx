@@ -4,7 +4,7 @@ import { action } from '@/utils/action';
 import './style.css';
 
 // CSF format story
-export const overflowOptions = () => {
+export const overflowBehavior = () => {
   const barrierList = [
     { label: 'Health issues', value: 'Health issues' },
     { label: 'Lack of employment', value: 'Lack of employment' },
@@ -138,7 +138,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Combobox/Overflow Options',
+  title: 'Components/Combobox/Overflow Behavior',
   component: Combobox,
   subcomponents: { 'Combobox.List': Combobox.List, 'Combobox.Option': Combobox.Option },
   parameters: {

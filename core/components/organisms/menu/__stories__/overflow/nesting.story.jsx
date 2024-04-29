@@ -2,7 +2,7 @@ import React from 'react';
 import { Menu, Text, Tooltip, Icon } from '@/index';
 import '../style.css';
 
-export const nesting = () => {
+export const overflowBehaviorOfNestedItems = () => {
   const [showTooltip, setShowTooltip] = React.useState(false);
   const elementRef = React.useRef(null);
 
@@ -99,7 +99,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/Menu/Overflow/Nesting',
+  title: 'Components/Menu/Overflow Behavior Of Nested Items',
   component: Menu,
   subcomponents: {
     'Menu.Trigger': Menu.Trigger,
