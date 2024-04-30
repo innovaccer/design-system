@@ -13,6 +13,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Selection/ChoiceList/All',
+  title: 'Components/ChoiceList/All',
   component: ChoiceList,
 };

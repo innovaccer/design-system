@@ -26,12 +26,13 @@ export const dropdownItemsWithSubInfo = () => {
 };
 
 export default {
-  title: 'Inputs/Dropdown/Dropdown Items With Sub Info',
+  title: 'Components/Dropdown (Deprecated)/Dropdown Items With Sub Info',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
         title: 'Dropdown',
+        isDeprecated: true,
         props: {
           components: { Uncontrolled, Controlled },
         },

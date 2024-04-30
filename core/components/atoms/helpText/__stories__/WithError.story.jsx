@@ -15,6 +15,6 @@ export const withError = () => {
 };
 
 export default {
-  title: 'Typography/HelpText/With Error',
+  title: 'Components/HelpText/With Error',
   component: HelpText,
 };

@@ -240,7 +240,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Layout/Table/Compressed Table',
+  title: 'Components/Table/Compressed Table',
   component: Table,
   parameters: {
     docs: {

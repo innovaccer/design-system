@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { AvatarSelection, Checkbox, Input } from '@/index';
+import { AvatarSelection, Checkbox, Input, Tooltip } from '@/index';
+import './style.css';
 
 export const custom = () => {
   const list = [
@@ -25,11 +26,16 @@ export const custom = () => {
       lastName: 'Stark',
     },
     {
+      firstName: 'Thom',
+      lastName: 'Yorke',
+      email: 'thom12@gmail.com',
+    },
+    {
       firstName: 'Rachel',
       lastName: 'Green',
     },
     {
-      firstName: 'Walter',
+      firstName: 'Walter Harry Paxton',
       lastName: 'Wheeler',
       selected: true,
     },
@@ -81,36 +87,71 @@ export const custom = () => {
     setSelectedItems(list);
   };
 
+  const AvatarSelectionItem = (props) => {
+    const { avatarData, isSelected } = props;
+    const [showTooltip, setShowTooltip] = React.useState(false);
+    const elementRef = React.useRef(null);
+
+    const { firstName = '', lastName = '', email } = avatarData;
+    const name = `${firstName} ${lastName}`;
+
+    return (
+      <Tooltip showOnTruncation={true} tooltip={name} elementRef={elementRef} open={showTooltip}>
+        <AvatarSelection.Option
+          value={avatarData}
+          className="d-flex align-items-center"
+          onFocus={() => {
+            setShowTooltip(true);
+          }}
+          onBlur={() => {
+            setShowTooltip(false);
+          }}
+        >
+          <Checkbox
+            key={isSelected}
+            checked={isSelected}
+            label={name}
+            size="regular"
+            helpText={email}
+            labelRef={elementRef}
+            className="w-100"
+          />
+        </AvatarSelection.Option>
+      </Tooltip>
+    );
+  };
+
   return (
     <AvatarSelection size="tiny" list={avatarList} onSelect={onSelectHandler}>
-      <AvatarSelection.Input placeholder="search user" onChange={onSearchHandler} />
+      <div className="AvatarSelection-wrapper">
+        <AvatarSelection.Input placeholder="Search user" onChange={onSearchHandler} />
 
-      {searchList.length === 0 && (
-        <AvatarSelection.EmptyState
-          title="No users found"
-          description="Try modifying your search to find what you are looking for."
-        />
-      )}
+        {searchList.length === 0 && (
+          <AvatarSelection.EmptyState
+            title="No users found"
+            description="Try modifying your search to find what you are looking for."
+          />
+        )}
 
-      <AvatarSelection.List>
-        {searchList.map((avatarData, index) => {
-          const { firstName = '', lastName = '' } = avatarData;
-          const name = `${firstName} ${lastName}`;
+        <AvatarSelection.List>
+          {searchList.map((avatarData, index) => {
+            const isSelected = selectedItems.find((item) => item.firstName === avatarData.firstName);
 
-          const isSelected = selectedItems.find((item) => item.firstName === avatarData.firstName);
-
-          return (
-            <AvatarSelection.Option key={index} value={avatarData} className="d-flex align-items-center">
-              <Checkbox key={isSelected} checked={isSelected} label={name} size="regular" />
-            </AvatarSelection.Option>
-          );
-        })}
-      </AvatarSelection.List>
+            return <AvatarSelectionItem key={index} avatarData={avatarData} isSelected={isSelected} />;
+          })}
+        </AvatarSelection.List>
+      </div>
     </AvatarSelection>
   );
 };
 
 const customCode = `() => {
+
+  /*
+    .AvatarSelection-wrapper {
+      width: var(--spacing-8);
+    }
+  */
   const list = [
     {
       firstName: 'John',
@@ -136,10 +177,14 @@ const customCode = `() => {
     {
       firstName: 'Thom',
       lastName: 'Yorke',
-      email: 'thomyorke12@gmail.com'
+      email: 'thom12@gmail.com',
     },
     {
-      firstName: 'Walter',
+      firstName: 'Rachel',
+      lastName: 'Green',
+    },
+    {
+      firstName: 'Walter Harry Paxton',
       lastName: 'Wheeler',
       selected: true,
     },
@@ -151,6 +196,10 @@ const customCode = `() => {
     {
       firstName: 'John',
       lastName: 'Doe',
+      iconOptions: {
+        name: 'places',
+        type: 'outlined',
+      },
       selected: true,
     },
     {
@@ -187,37 +236,66 @@ const customCode = `() => {
     setSelectedItems(list);
   };
 
+  const AvatarSelectionItem = (props) => {
+    const { avatarData, isSelected } = props;
+    const [showTooltip, setShowTooltip] = React.useState(false);
+    const elementRef = React.useRef(null);
+
+    const { firstName = '', lastName = '', email } = avatarData;
+    const name = \`\${firstName} \${lastName}\`;
+
+    return (
+      <Tooltip showOnTruncation={true} tooltip={name} elementRef={elementRef} open={showTooltip}>
+        <AvatarSelection.Option
+          value={avatarData}
+          className="d-flex align-items-center"
+          onFocus={() => {
+            setShowTooltip(true);
+          }}
+          onBlur={() => {
+            setShowTooltip(false);
+          }}
+        >
+          <Checkbox
+            key={isSelected}
+            checked={isSelected}
+            label={name}
+            size="regular"
+            helpText={email}
+            labelRef={elementRef}
+            className="w-100"
+          />
+        </AvatarSelection.Option>
+      </Tooltip>
+    );
+  };
+
   return (
     <AvatarSelection size="tiny" list={avatarList} onSelect={onSelectHandler}>
-      <AvatarSelection.Input placeholder="search user" onChange={onSearchHandler} />
+      <div className="AvatarSelection-wrapper">
+        <AvatarSelection.Input placeholder="Search user" onChange={onSearchHandler} />
 
-      {searchList.length === 0 && (
-        <AvatarSelection.EmptyState
-          title="No users found"
-          description="Try modifying your search to find what you are looking for."
-        />
-      )}
+        {searchList.length === 0 && (
+          <AvatarSelection.EmptyState
+            title="No users found"
+            description="Try modifying your search to find what you are looking for."
+          />
+        )}
 
-      <AvatarSelection.List>
-        {searchList.map((avatarData, index) => {
-          const { firstName = '', lastName = '', email } = avatarData;
-          const name = \`\${firstName} \${lastName}\`;
+        <AvatarSelection.List>
+          {searchList.map((avatarData, index) => {
+            const isSelected = selectedItems.find((item) => item.firstName === avatarData.firstName);
 
-          const isSelected = selectedItems.find((item) => item.firstName === avatarData.firstName);
-
-          return (
-            <AvatarSelection.Option key={index} value={avatarData} className="d-flex align-items-center">
-              <Checkbox key={isSelected} checked={isSelected} label={name} size="regular" helpText={email} />
-            </AvatarSelection.Option>
-          );
-        })}
-      </AvatarSelection.List>
+            return <AvatarSelectionItem key={index} avatarData={avatarData} isSelected={isSelected} />;
+          })}
+        </AvatarSelection.List>
+      </div>
     </AvatarSelection>
   );
 }`;
 
 export default {
-  title: 'Indicators/AvatarSelection/Custom',
+  title: 'Components/Avatar/AvatarSelection/Custom',
   component: AvatarSelection,
   subcomponents: {
     'AvatarSelection.Input': Input,

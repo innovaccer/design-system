@@ -95,12 +95,13 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Inputs/Dropdown/Variants/Static Limit',
+  title: 'Components/Dropdown (Deprecated)/Variants/Static Limit',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
         customCode,
+        isDeprecated: true,
         props: {
           components: { Uncontrolled, Controlled },
           exclude: ['showHead'],

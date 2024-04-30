@@ -234,6 +234,13 @@ interface DropdownState {
 }
 
 /**
+ *
+ * Dropdown component has been deprecated, please use following components instead:
+ *
+ * - [Select](https://mds.innovaccer.com/?path=/docs/components-select-all--all)
+ * - [Menu](https://mds.innovaccer.com/?path=/docs/components-menu-all--all)
+ * - [Combobox](https://mds.innovaccer.com/?path=/docs/components-combobox-all--all)
+ *
  * ###Note:
  * 1. Dropdown props types:
  *  - async: fetchOptions

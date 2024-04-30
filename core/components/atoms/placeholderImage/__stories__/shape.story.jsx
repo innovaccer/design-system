@@ -21,7 +21,7 @@ export const shape = () => {
 };
 
 export default {
-  title: 'Loaders/Placeholder/Image/Shape',
+  title: 'Components/Progress Indicators/Placeholder/Image/Shape',
   component: Placeholder,
   subcomponents: { PlaceholderImage },
   parameters: {

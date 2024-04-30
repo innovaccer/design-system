@@ -59,12 +59,13 @@ export const dropdownWithActionButtons = () => {
 };
 
 export default {
-  title: 'Inputs/Dropdown/Dropdown With Action Buttons',
+  title: 'Components/Dropdown (Deprecated)/Dropdown With Action Buttons',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
         title: 'Dropdown',
+        isDeprecated: true,
         props: {
           components: { Uncontrolled, Controlled },
         },

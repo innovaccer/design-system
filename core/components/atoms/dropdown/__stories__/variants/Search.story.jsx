@@ -31,12 +31,13 @@ export const search = () => {
 };
 
 export default {
-  title: 'Inputs/Dropdown/Variants/Search',
+  title: 'Components/Dropdown (Deprecated)/Variants/Search',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
         title: 'Dropdown',
+        isDeprecated: true,
         props: {
           components: { Uncontrolled, Controlled },
           exclude: ['showHead'],

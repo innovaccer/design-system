@@ -19,12 +19,13 @@ export const dropdownAsMenuWithSubinfo = () => {
 };
 
 export default {
-  title: 'Inputs/Dropdown/Dropdown As Menu With Subinfo',
+  title: 'Components/Dropdown (Deprecated)/Dropdown As Menu With Subinfo',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
         title: 'Dropdown',
+        isDeprecated: true,
         props: {
           components: { Uncontrolled, Controlled },
           exclude: ['showHead'],

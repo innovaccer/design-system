@@ -18,7 +18,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Indicators/MetaList/All',
+  title: 'Components/MetaList/All',
   component: MetaList,
   parameters: {
     docs: {

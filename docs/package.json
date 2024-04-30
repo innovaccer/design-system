@@ -9,7 +9,7 @@
     "serve": "gatsby serve",
     "deploy": "gatsby-plugin-s3 deploy --yes",
     "clean": "gatsby clean",
-    "extract:dev": "export STORYBOOK_HOST='http://localhost:5000/iframe.html?id=indicators-avatargroup-all--all&args=&viewMode=story' && node ./tools/extract.js",
+    "extract:dev": "export STORYBOOK_HOST='http://localhost:5000/iframe.html?id=components-avatar-avatargroup-all--all&args=&viewMode=story' && node ./tools/extract.js",
     "extract": "node ./tools/extract.js",
     "cypress:open": "cypress open",
     "cypress": "cypress run",
@@ -25,7 +25,7 @@
     "@fontsource/nunito": "^4.5.0",
     "@fontsource/nunito-sans": "^4.5.0",
     "@fontsource/roboto-mono": "^4.5.0",
-    "@innovaccer/design-system": "2.30.0",
+    "@innovaccer/design-system": "2.31.0",
     "@mdx-js/mdx": "^1.5.5",
     "@mdx-js/react": "^1.5.5",
     "@storybook/theming": "^6.3.6",
@@ -66,12 +66,12 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "cypress": "^10.3.1",
+    "cypress": "^13.8.1",
     "eslint": "^7.31.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "^2.3.2",
-    "start-server-and-test": "^1.14.0",
+    "start-server-and-test": "^2.0.3",
     "typescript": "3.9.10"
   }
 }

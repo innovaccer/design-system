@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { AvatarSelection, Checkbox, Label, Input } from '@/index';
 
-export const listSize = () => {
+export const listItemSize = () => {
   const list = [
     {
       firstName: 'John',
@@ -245,7 +245,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Indicators/AvatarSelection/List Size',
+  title: 'Components/Avatar/AvatarSelection/List Item Size',
   component: AvatarSelection,
   subcomponents: {
     'AvatarSelection.Input': Input,

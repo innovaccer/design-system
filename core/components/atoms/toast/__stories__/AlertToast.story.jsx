@@ -11,6 +11,6 @@ export const alertToast = () => (
 );
 
 export default {
-  title: 'Indicators/Toast/Alert Toast',
+  title: 'Components/Toast/Alert Toast',
   component: Toast,
 };

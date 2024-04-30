@@ -23,7 +23,7 @@ export const withIcon = () => {
 };
 
 export default {
-  title: 'Indicators/Avatar/With Icon',
+  title: 'Components/Avatar/Avatar/With Icon',
   component: Avatar,
   subcomponents: { 'Avatar.Image': Avatar.Image, 'Avatar.Icon': Avatar.Icon },
 };

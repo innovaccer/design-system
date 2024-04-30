@@ -61,7 +61,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Navigation/Breadcrumbs/Less Than 4 Levels',
+  title: 'Components/Breadcrumbs/Less Than 4 Levels',
   component: Breadcrumbs,
   parameters: {
     docs: {

@@ -90,7 +90,7 @@ pre[class*='language-'] {
 }
 
 .namespace {
-  opacity: 0.7;
+  opacity: var(--opacity-16);
 }
 
 .token.property,

@@ -36,7 +36,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Navigation/Collapsible/All',
+  title: 'Components/VerticalNav/Collapsible/All',
   component: Collapsible,
   parameters: {
     docs: {

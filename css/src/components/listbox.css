@@ -59,11 +59,11 @@
 }
 
 .Listbox-item--selected {
-  background: color-mod(var(--primary-lightest) a(var(--opacity-48)));
+  background: color-mod(var(--primary-lightest) a(var(--opacity-12)));
 }
 
 .Listbox-item--selected:hover {
-  background: color-mod(var(--primary-lighter) a(var(--opacity-48)));
+  background: color-mod(var(--primary-lighter) a(var(--opacity-12)));
 }
 
 .Listbox-item--selected:focus,
@@ -108,7 +108,7 @@
 /* Listbox type - disabled  */
 
 .Listbox-item--disabled {
-  opacity: var(--opacity-40);
+  opacity: var(--opacity-10);
   pointer-events: none;
 }
 

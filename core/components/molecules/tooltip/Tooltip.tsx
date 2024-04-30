@@ -64,6 +64,10 @@ export interface TooltipProps extends Omit<PopoverProps, TooltipPopperProps>, Ba
    * it will refer to the rendered children
    */
   elementRef?: React.RefObject<HTMLElement>;
+  /**
+   * Handles open/close
+   */
+  open?: boolean;
 }
 
 export const detectTruncation = (boundaryRef: React.RefObject<HTMLElement>) => {
@@ -81,7 +85,7 @@ export const Tooltip = (props: TooltipProps) => {
   React.useEffect(() => {
     const element = elementRef ? elementRef : childrenRef;
     setIsTruncated(detectTruncation(element));
-  }, [childrenRef, elementRef]);
+  }, [childrenRef, elementRef, children]);
 
   const renderChildren =
     elementRef || !React.isValidElement(children)

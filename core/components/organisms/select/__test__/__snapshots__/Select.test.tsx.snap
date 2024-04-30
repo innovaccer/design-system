@@ -22,14 +22,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -71,14 +73,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -120,14 +124,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -169,14 +175,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -218,14 +226,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -267,14 +277,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -316,14 +328,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -365,14 +379,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -414,14 +430,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -463,14 +481,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -512,14 +532,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -561,14 +583,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -610,14 +634,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -659,14 +685,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -708,14 +736,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -757,14 +787,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -806,14 +838,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -855,14 +889,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -904,14 +940,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -953,14 +991,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -1002,14 +1042,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -1051,14 +1093,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -1100,14 +1144,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -1149,14 +1195,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -1198,14 +1246,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -1247,14 +1297,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -1296,14 +1348,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -1345,14 +1399,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -1394,14 +1450,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -1443,14 +1501,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -1492,14 +1552,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -1541,14 +1603,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -1590,14 +1654,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -1639,14 +1705,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -1688,14 +1756,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -1737,14 +1807,16 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -1786,14 +1858,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -1835,14 +1909,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -1884,14 +1960,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -1933,14 +2011,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -1982,14 +2062,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -2031,14 +2113,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -2080,14 +2164,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -2129,14 +2215,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -2178,14 +2266,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -2227,14 +2317,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -2276,14 +2368,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -2325,14 +2419,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -2374,14 +2470,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -2423,14 +2521,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -2472,14 +2572,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -2521,14 +2623,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -2570,14 +2674,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -2619,14 +2725,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -2668,14 +2776,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -2717,14 +2827,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -2766,14 +2878,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -2815,14 +2929,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -2864,14 +2980,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -2913,14 +3031,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -2962,14 +3082,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -3011,14 +3133,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -3060,14 +3184,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -3109,14 +3235,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -3158,14 +3286,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -3207,14 +3337,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -3256,14 +3388,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -3305,14 +3439,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -3354,14 +3490,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -3403,14 +3541,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -3452,14 +3592,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -3501,14 +3643,16 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -3550,14 +3694,16 @@ exports[`Select component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>
@@ -3599,14 +3745,16 @@ exports[`Select component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
+          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
           <div
-            class="Select-trigger-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular Select-trigger-text"
+              class="Text Text--default Text--regular Select-trigger-text"
+              data-test="DesignSystem-Text"
             >
               Select
             </span>

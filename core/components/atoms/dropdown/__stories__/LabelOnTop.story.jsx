@@ -47,12 +47,13 @@ export const LabelOnTop = () => {
 };
 
 export default {
-  title: 'Inputs/Dropdown/Label On Top',
+  title: 'Components/Dropdown (Deprecated)/Label On Top',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
         title: 'Dropdown',
+        isDeprecated: true,
         props: {
           components: { Uncontrolled, Controlled },
         },

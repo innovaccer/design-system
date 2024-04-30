@@ -19,7 +19,7 @@ export const opacity = () => {
 };
 
 export default {
-  title: 'Others/Design Tokens/Opacity',
+  title: 'Styling/Design Tokens/Opacity',
   parameters: {
     viewMode: 'story',
     docs: {

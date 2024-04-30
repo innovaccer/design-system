@@ -5,6 +5,6 @@ import { InlineMessage } from '@/index';
 export const alert = () => <InlineMessage appearance="alert" description="Inline message goes here." />;
 
 export default {
-  title: 'Indicators/InlineMessage/Appearance/Alert',
+  title: 'Components/InlineMessage/Appearance/Alert',
   component: InlineMessage,
 };

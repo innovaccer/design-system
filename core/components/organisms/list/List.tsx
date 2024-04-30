@@ -10,6 +10,8 @@ export type SyncListProps = Omit<SyncTableProps, ExcludeTypes>;
 export type AsyncListProps = Omit<AsyncTableProps, ExcludeTypes>;
 
 /**
+ * List component has been deprecated, please use [Listbox](https://mds.innovaccer.com/?path=/docs/components-listbox-all--all) component instead.
+ *
  * **`List` is a pattern of `Table` with no Head Cells.**
  *
  * Please refer to stories of Table for examples. Simply replace `Table` with `List` to use it.

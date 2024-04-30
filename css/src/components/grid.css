@@ -28,7 +28,7 @@
 }
 
 .Grid--resource .Grid-row--body:focus {
-  box-shadow: var(--shadow-spread) color-mod(var(--secondary) a(var(--opacity-16)));
+  box-shadow: var(--shadow-spread) color-mod(var(--secondary) a(var(--opacity-4)));
   outline: none;
 }
 
@@ -147,13 +147,13 @@
 
 .Grid-row--selected,
 .Grid-row--selected .Grid-cellGroup {
-  background: color-mod(var(--primary-lightest) a(var(--opacity-48)));
+  background: color-mod(var(--primary-lightest) a(var(--opacity-12)));
   transition: var(--duration--fast-02) var(--standard-productive-curve);
 }
 
 .Grid-row--selected:hover,
 .Grid-row--selected .Grid-cellGroup:hover {
-  background: color-mod(var(--primary-lighter) a(var(--opacity-48))) !important;
+  background: color-mod(var(--primary-lighter) a(var(--opacity-12))) !important;
 }
 
 .Grid-row--selected:active,
@@ -164,7 +164,7 @@
 .Grid-row--selected:focus,
 .Grid-row--selected .Grid-cellGroup:focus {
   outline: none;
-  box-shadow: var(--shadow-spread) color-mod(var(--primary) a(var(--opacity-16)));
+  box-shadow: var(--shadow-spread) color-mod(var(--primary) a(var(--opacity-4)));
 }
 
 .Grid-rowWrapper:last-child .Grid-row--body {
@@ -243,7 +243,7 @@
 } */
 
 .Grid-row--disabled {
-  opacity: var(--opacity-40);
+  opacity: var(--opacity-10);
   pointer-events: none;
 }
 
@@ -332,12 +332,13 @@
 
 .Grid-cellGroup--pinned-left {
   left: 0;
-  border-right: var(--border);
+  border-style: inset;
+  border-right: var(--spacing-xs) solid rgba(213, 213, 213, var(--opacity-3));
   border-right-width: 4px;
   border-image: linear-gradient(
       to right,
-      var(--secondary),
-      var(--secondary) 25%,
+      var(--secondary-light),
+      var(--secondary-light) 25%,
       color-mod(var(--secondary) a(0.1)) 25%,
       color-mod(var(--secondary) a(0.1))
     )
@@ -346,12 +347,13 @@
 
 .Grid-cellGroup--pinned-right {
   right: 0;
-  border-left: var(--border);
+  border-style: inset;
+  border-left: var(--spacing-xs) solid rgba(213, 213, 213, var(--opacity-3));
   border-left-width: 4px;
   border-image: linear-gradient(
       to left,
-      var(--secondary),
-      var(--secondary) 25%,
+      var(--secondary-light),
+      var(--secondary-light) 25%,
       color-mod(var(--secondary) a(0.1)) 25%,
       color-mod(var(--secondary) a(0.1))
     )

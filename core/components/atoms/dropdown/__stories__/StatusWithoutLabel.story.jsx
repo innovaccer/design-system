@@ -26,12 +26,13 @@ export const statusWithoutLabel = () => {
 };
 
 export default {
-  title: 'Inputs/Dropdown/Status Without Label',
+  title: 'Components/Dropdown (Deprecated)/Status Without Label',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
         title: 'Dropdown',
+        isDeprecated: true,
         props: {
           components: { Uncontrolled, Controlled },
           exclude: ['showHead'],

@@ -190,7 +190,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Navigation/HorizontalNav/Left Aligned',
+  title: 'Components/HorizontalNav/Left Aligned',
   component: HorizontalNav,
   parameters: {
     docs: {

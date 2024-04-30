@@ -43,12 +43,13 @@ export const LabelInline = () => {
 };
 
 export default {
-  title: 'Inputs/Dropdown/Label Inline',
+  title: 'Components/Dropdown (Deprecated)/Label Inline',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
         title: 'Dropdown',
+        isDeprecated: true,
         props: {
           components: { Uncontrolled, Controlled },
         },

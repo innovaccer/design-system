@@ -107,17 +107,17 @@ jobs:
       - uses: actions/setup-node@v1
         if: steps.is_release_commit.outputs.result == 1
         with:
-          node-version: '14.x'
+          node-version: '20.x'
 
       - name: npm install
         if: steps.is_release_commit.outputs.result == 1
-        run: npm i
+        run: npm i --force
 
       - name: extract stories
         if: steps.is_release_commit.outputs.result == 1
         run: npm run extract
         env:
-          STORYBOOK_HOST: 'https://mds.innovaccer.com/iframe.html?id=indicators-avatargroup-all--all&args=&viewMode=story'
+          STORYBOOK_HOST: 'https://mds.innovaccer.com/iframe.html?id=components-avatar-avatargroup-all--all&args=&viewMode=story'
 
       - name: build
         if: steps.is_release_commit.outputs.result == 1

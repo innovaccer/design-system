@@ -43,12 +43,13 @@ export const optionType = () => {
 };
 
 export default {
-  title: 'Inputs/Dropdown/Variants/Option Type',
+  title: 'Components/Dropdown (Deprecated)/Variants/Option Type',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
         title: 'Dropdown',
+        isDeprecated: true,
         props: {
           components: { Uncontrolled, Controlled },
           exclude: ['showHead'],

@@ -93,7 +93,7 @@ export const animation = () => {
 };
 
 export default {
-  title: 'Others/Styles/Animation',
+  title: 'Styling/Helper Classes/Animation',
   component: animation,
   parameters: {
     viewMode: 'story',

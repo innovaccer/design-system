@@ -127,7 +127,7 @@ Cypress.Commands.add('tabsVisit', () => {
   });
 });
 
-Cypress.Commands.add('statusTable', () => {
+Cypress.Commands.add('statusTable', (statusURL) => {
   cy.get('[data-test=DesignSystem-Table-wrapper]')
     .find('a')
     .each((page) => {
@@ -135,8 +135,14 @@ Cypress.Commands.add('statusTable', () => {
         cy.request(page.prop('href'));
       }
     });
-  cy.wait(1000);
-  cy.get('[data-test=DesignSystem-Grid-cellGroup]').click({ multiple: true, force: true });
+  cy.wait(2000);
+
+  cy.get('[data-test=DesignSystem-Grid-cellGroup]').then((elements) => {
+    elements.map((index, element) => {
+      cy.get('[data-test=DesignSystem-Grid-cellGroup]').eq(index).click({ force : true})
+      cy.visit(statusURL)
+    })
+  })
 });
 
 Cypress.Commands.add('searchBar', (falseQuery, searchQuery) => {

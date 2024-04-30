@@ -25,7 +25,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Overlays/Tooltip/Show Tooltip',
+  title: 'Components/Tooltip/Show Tooltip',
   component: Tooltip,
   parameters: {
     docs: {

@@ -59,12 +59,13 @@ export const dropdownWithHelpText = () => {
 };
 
 export default {
-  title: 'Inputs/Dropdown/Dropdown With Help Text',
+  title: 'Components/Dropdown (Deprecated)/Dropdown With Help Text',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
         title: 'Dropdown',
+        isDeprecated: true,
         props: {
           components: { Uncontrolled, Controlled },
         },

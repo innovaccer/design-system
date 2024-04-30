@@ -178,7 +178,7 @@ export const sizing = () => {
 };
 
 export default {
-  title: 'Others/Styles/Sizing',
+  title: 'Styling/Helper Classes/Sizing',
   component: sizing,
   parameters: {
     viewMode: 'story',

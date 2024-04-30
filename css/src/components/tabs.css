@@ -120,7 +120,7 @@
 }
 
 .Tab-pills--disabled {
-  opacity: 60%;
+  opacity: var(--opacity-10);
   cursor: not-allowed;
 }
 

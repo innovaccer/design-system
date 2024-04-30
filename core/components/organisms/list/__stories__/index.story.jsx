@@ -85,11 +85,12 @@ export const all = () => {
 };
 
 export default {
-  title: 'Layout/List/All',
+  title: 'Components/List (Deprecated)/All',
   component: List,
   parameters: {
     docs: {
       docPage: {
+        isDeprecated: true,
         noStory: true,
         props: {
           components: { AsyncList, SyncList },

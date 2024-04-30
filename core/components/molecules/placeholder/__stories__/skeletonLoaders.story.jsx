@@ -33,7 +33,7 @@ export const skeletonLoaders = () => {
 };
 
 export default {
-  title: 'Loaders/Placeholder/Skeleton Loaders',
+  title: 'Components/Progress Indicators/Placeholder/Skeleton Loaders',
   component: Placeholder,
   subcomponents: { PlaceholderImage, PlaceholderParagraph },
 };

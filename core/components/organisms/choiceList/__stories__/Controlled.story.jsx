@@ -29,6 +29,6 @@ export const Controlled = () => {
 };
 
 export default {
-  title: 'Selection/ChoiceList/Controlled',
+  title: 'Components/ChoiceList/Controlled',
   component: ChoiceList,
 };

@@ -109,7 +109,7 @@ const customCode = `() => {
 };`;
 
 export default {
-  title: 'Inputs/Input/Input With Help Text',
+  title: 'Components/Input/Input/Input With Help Text',
   component: Input,
   subcomponents: { ActionButton },
   parameters: {

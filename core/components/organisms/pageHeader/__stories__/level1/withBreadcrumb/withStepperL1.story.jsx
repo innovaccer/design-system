@@ -193,7 +193,7 @@ const customCode = `/*
 }`;
 
 export default {
-  title: 'Layout/PageHeader/Level 1/With breadcrumb/Level 1 With Stepper',
+  title: 'Components/PageHeader/Level 1/With breadcrumb/Level 1 With Stepper',
   component: PageHeader,
   parameters: {
     docs: {

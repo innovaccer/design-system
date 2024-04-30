@@ -51,7 +51,7 @@ const customCode = `/*
 }`;
 
 export default {
-  title: 'Inputs/EditableInput/Variants/Error',
+  title: 'Components/Inline Editable Fields/EditableInput/Variants/Error',
   component: EditableInput,
   parameters: {
     docs: {

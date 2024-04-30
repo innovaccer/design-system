@@ -26,7 +26,7 @@ export const transitions = () => {
 };
 
 export default {
-  title: 'Others/Design Tokens/Transitions',
+  title: 'Styling/Design Tokens/Transitions',
   parameters: {
     viewMode: 'story',
     docs: {

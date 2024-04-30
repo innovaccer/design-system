@@ -50,13 +50,14 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Inputs/Dropdown/Variants/Align',
+  title: 'Components/Dropdown (Deprecated)/Variants/Align',
   component: Dropdown,
   parameters: {
     docs: {
       docPage: {
         customCode,
         title: 'Dropdown',
+        isDeprecated: true,
         props: {
           components: { Uncontrolled, Controlled },
           exclude: ['showHead'],

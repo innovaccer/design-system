@@ -30,6 +30,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Selection/RangeSlider/All',
+  title: 'Components/Slider/RangeSlider/All',
   component: RangeSlider,
 };

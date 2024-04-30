@@ -224,7 +224,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Overlays/Modal/Input Modals',
+  title: 'Components/Modal/Modal/Input Modals',
   component: Modal,
   parameters: {
     docs: {

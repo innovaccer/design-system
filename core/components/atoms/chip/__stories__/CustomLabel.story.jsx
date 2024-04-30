@@ -76,7 +76,7 @@ export const customLabel = () => {
 };
 
 export default {
-  title: 'Selection/Chip/Custom Label',
+  title: 'Components/Chip/Chip/Custom Label',
   component: Chip,
   parameters: {
     docs: {

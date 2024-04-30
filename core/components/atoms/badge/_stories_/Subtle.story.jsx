@@ -29,7 +29,7 @@ export const subtle = () => {
 };
 
 export default {
-  title: 'Indicators/Badge/Subtle',
+  title: 'Components/Badge/Subtle',
   component: Badge,
   parameters: {
     docs: {
