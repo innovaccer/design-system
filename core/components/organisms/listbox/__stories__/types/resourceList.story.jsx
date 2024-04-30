@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Listbox, Card, Text, Icon, MetaList, Badge, CardHeader, Heading } from '@/index';
+import { Listbox, Card, Text, Icon, MetaList, Badge, CardHeader, Heading, StatusHint } from '@/index';
 import { ListboxItem } from '../../listboxItem';
 
 export const resourceList = () => {
@@ -9,21 +9,25 @@ export const resourceList = () => {
       time: '2 days ago',
       sender: 'Dr. John Matthews(your primary care physician)',
       status: 'Due',
+      activated: true,
     },
     {
       title: 'Diabetes Self Management Assessment',
       time: '1 week ago',
       sender: 'Dr. John Matthews(your primary care physician)',
+      activated: false,
     },
     {
       title: 'Depression Screening',
       time: '2 week ago',
       sender: 'Dr. Nina Locke(Psychologist)',
+      activated: false,
     },
     {
       title: 'PHQ-9 ',
       time: '1 mon ago',
       sender: 'Dr. Jimmy',
+      activated: false,
     },
   ];
 
@@ -36,7 +40,13 @@ export const resourceList = () => {
       <Listbox type="resource">
         {dataList.map((record, key) => {
           return (
-            <Listbox.Item disabled={key === 2} id={key} key={key} className="justify-content-between">
+            <Listbox.Item
+              activated={record.activated}
+              disabled={key === 2}
+              id={key}
+              key={key}
+              className="justify-content-between"
+            >
               <div className="d-flex align-items-center">
                 <Icon name="assignment" size={20} appearance="primary" className="mr-4" />
                 <div>
@@ -51,7 +61,7 @@ export const resourceList = () => {
                   <MetaList list={[{ label: `Sent by ${record.sender}` }, { label: `${record.time}` }]} />
                 </div>
               </div>
-              <Icon name="chevron_right" size={20} appearance="subtle" />
+              <StatusHint appearance="info">{record.activated ? 'Active' : 'Inactive'}</StatusHint>
             </Listbox.Item>
           );
         })}
