@@ -1,3 +1,60 @@
+## 2.32.0 (2024-05-01)
+
+### Highlights
+
+- feat(opacity): update values of opacity with tokens in components (e9701951)
+- feat(storybook): update storybook structure in alphabetical order (81c5261a)
+- feat(docs): update storybook preview link in markdown (5c367b4c)
+- feat(menu): add overflow behavior in option items (4b2f4239)
+- feat(combobox): add overflow behavior for option items (ef09ab38)
+- feat(avatarSelection): add overflow behavior for popover options (0d0bed91)
+- feat(select): add overflow behavior in option item and trigger (999ff9d3)
+- docs(node): node 20 migration (e3737cd8)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(opacity): update values of opacity with tokens in components (e9701951)
+- feat(storybook): update storybook structure in alphabetical order (81c5261a)
+- feat(docs): update storybook preview link in markdown (5c367b4c)
+- feat(menu): add overflow behavior in option items (4b2f4239)
+- feat(combobox): add overflow behavior for option items (ef09ab38)
+- feat(avatarSelection): add overflow behavior for popover options (0d0bed91)
+- feat(select): add overflow behavior in option item and trigger (999ff9d3)
+- docs(node): node 20 migration (e3737cd8)
+
+### Fixes
+
+- fix(tooltip): tooltip not appearing on consecutive list hover (670e3a4e)
+- fix: update material symbols link on codesandbox (ad7c15a7)
+- fix(grid): update style for pinned columns (d68c7300)
+- fix(dropdown): fix width of error template in dropdown (5fd99771)
+- docs(node): fix cypress test cases (f6fd95c7)
+
+### Improvements
+
+- chore: add launch config for jest test case debugging in VS Code (9bcc8016)
+- chore: update jest config to exclude type definition files from coverage (589c2b58)
+- test(accessibility): add test cases for accessibility utils (6f27cee8)
+- fix: update name of overflow stories of select, menu, combobox (e2ab96d9)
+
+### Documentation
+
+- docs(combobox): update image for overflow behavior of option item (619cf381)
+
+---
+
 ## 2.31.1 (2024-04-19)
 
 ### Highlights
