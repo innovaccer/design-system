@@ -82,7 +82,7 @@
   height: var(--spacing-2);
   padding: var(--spacing-s);
   margin-left: var(--spacing);
-  margin-top: 6px;
+  margin-top: var(--spacing-0-75);
   cursor: pointer;
   border-radius: 10px;
 }

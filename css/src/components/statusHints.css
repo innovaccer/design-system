@@ -10,7 +10,7 @@
   height: var(--spacing);
   width: var(--spacing);
   margin-right: var(--spacing);
-  margin-top: 6px;
+  margin-top: var(--spacing-0-75);
 }
 
 .StatusHint--alert {

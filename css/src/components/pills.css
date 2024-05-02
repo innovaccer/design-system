@@ -8,8 +8,8 @@
   font-size: var(--font-size-s);
   line-height: var(--font-height-s);
   text-transform: uppercase;
-  padding-right: 6px;
-  padding-left: 6px;
+  padding-right: var(--spacing-0-75);
+  padding-left: var(--spacing-0-75);
   padding-top: var(--spacing-s);
   padding-bottom: var(--spacing-s);
   border-radius: 20px;
