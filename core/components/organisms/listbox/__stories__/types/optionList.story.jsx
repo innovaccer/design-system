@@ -12,6 +12,7 @@ import {
   Text,
   Icon,
   CardFooter,
+  StatusHint,
 } from '@/index';
 import { ListboxItem } from '../../listboxItem';
 import '../style.css';
@@ -21,26 +22,32 @@ export const optionList = () => {
     {
       name: 'ED Discharge care Protocol',
       subInfo: 'Pediatric',
+      selected: true,
     },
     {
       name: 'Behavioral Outreach',
       subInfo: 'Remote patient monitoring',
+      selected: false,
     },
     {
       name: 'Chronic Care Protocol - Diabetes',
       subInfo: 'Hospice',
+      selected: false,
     },
     {
       name: 'TCM Care Protocol',
       subInfo: 'Chronic Care Management',
+      selected: false,
     },
     {
       name: 'CAD Outreach',
       subInfo: 'Pharmacy management',
+      selected: false,
     },
     {
       name: 'Diabetes care protocol',
       subInfo: 'Remote patient monitoring',
+      selected: false,
     },
   ];
   return (
@@ -72,11 +79,14 @@ export const optionList = () => {
             <Listbox type="option">
               {dataList.map((data, key) => {
                 return (
-                  <Listbox.Item key={key} id={key} disabled={key === 2}>
-                    <div>
-                      <Text>{data.name}</Text>
-                      <br />
-                      <Text appearance="subtle">{data.subInfo}</Text>
+                  <Listbox.Item selected={data.selected} key={key} id={key} disabled={key === 2}>
+                    <div className="d-flex w-100 justify-content-between">
+                      <div>
+                        <Text>{data.name}</Text>
+                        <br />
+                        <Text appearance="subtle">{data.subInfo}</Text>
+                      </div>
+                      <StatusHint appearance="info">{data.selected ? 'Selected' : 'Unselected'}</StatusHint>
                     </div>
                   </Listbox.Item>
                 );
