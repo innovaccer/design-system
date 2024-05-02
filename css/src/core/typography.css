@@ -144,12 +144,12 @@ body {
 }
 
 .Label-requiredIndicator {
-  height: 6px;
-  width: 6px;
+  height: var(--spacing-0-75);
+  width: var(--spacing-0-75);
   border-radius: 50%;
   background: var(--alert);
   margin-left: var(--spacing-m);
-  margin-bottom: 6px;
+  margin-bottom: var(--spacing-0-75);
   display: inline-flex;
 }
 

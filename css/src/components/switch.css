@@ -38,7 +38,7 @@
   width: 100%;
   background-color: var(--secondary-light);
   transition: background 120ms ease;
-  padding-right: 6px;
+  padding-right: var(--spacing-0-75);
 }
 
 .Switch-input:focus ~ .Switch-wrapper {
@@ -93,7 +93,7 @@
 .Switch-wrapper--checked {
   background-color: var(--primary);
   transition: background 120ms ease;
-  padding-left: 6px;
+  padding-left: var(--spacing-0-75);
   padding-right: 2px !important;
 }
 

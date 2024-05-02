@@ -26,8 +26,8 @@
 
 .Input--regular {
   height: var(--font-height-l);
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: var(--spacing-0-75);
+  padding-bottom: var(--spacing-0-75);
 }
 
 .Input--large {
