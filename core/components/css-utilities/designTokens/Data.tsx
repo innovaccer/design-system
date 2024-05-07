@@ -91,6 +91,7 @@ export const spacingData = [
   { token: '--spacing-xs', value: '1px' },
   { token: '--spacing-s', value: '2px' },
   { token: '--spacing-m', value: '4px' },
+  { token: '--spacing-0-75', value: '6px' },
   { token: '--spacing', value: '8px' },
   { token: '--spacing-l', value: '12px' },
   { token: '--spacing-2', value: '16px' },

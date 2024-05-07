@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Input } from '@/index';
 import { SelectContext } from './SelectContext';
-import { BaseProps } from '@/utils/types';
 import { handleInputKeyDown } from './utils';
+import { InputProps } from '@/index.type';
 
-export interface SelectInputProps extends BaseProps {
+export interface SelectInputProps extends InputProps {
   /**
    * Callback function when user clicks the clear button
    */

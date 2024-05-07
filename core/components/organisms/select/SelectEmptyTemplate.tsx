@@ -7,11 +7,11 @@ interface SelectEmptyTemplateProps extends BaseProps {
   /**
    * Heading of `EmptyState`
    */
-  title: string;
+  title?: string;
   /**
    * Description of `EmptyState`
    */
-  description: string;
+  description?: string;
   /**
    * Button / ButtonGroups to be added inside `EmptyState`
    */

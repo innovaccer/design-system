@@ -32,7 +32,7 @@
   align-items: center;
   margin-left: var(--spacing-l);
   margin-top: var(--spacing-l);
-  margin-bottom: 6px;
+  margin-bottom: var(--spacing-0-75);
 }
 
 .Dropdown-section--withClear {
@@ -63,8 +63,8 @@
 
 .Option,
 .Option-loading {
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: var(--spacing-0-75);
+  padding-bottom: var(--spacing-0-75);
   padding-left: var(--spacing-l);
   padding-right: var(--spacing);
 }
@@ -80,8 +80,8 @@
 .OptionCheckbox {
   width: 100%;
   padding-left: var(--spacing-l);
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: var(--spacing-0-75);
+  padding-bottom: var(--spacing-0-75);
 }
 
 .Option--active,
