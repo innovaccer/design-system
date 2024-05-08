@@ -1,3 +1,41 @@
+## 2.32.1 (2024-05-08)
+
+### Highlights
+
+- feat(spacing): implement 6px token and replace hardcoded value (292e6e2e)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(listbox): add selected and activated type in listbox stories (46c24416)
+- feat(spacing): implement 6px token and replace hardcoded value (292e6e2e)
+- feat(select): add appendToBody and boundary element props support 
+
+### Fixes
+
+- fix(select): make title description optional in empty template (42ae0d79)
+
+### Improvements
+
+NA
+
+### Documentation
+
+- docs(spacing): add 6px token documentation (93d299e7)
+
+---
+
 ## 2.32.0 (2024-05-01)
 
 ### Highlights
