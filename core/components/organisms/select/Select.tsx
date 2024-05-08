@@ -45,6 +45,14 @@ export interface SelectProps extends BaseProps {
    */
   value?: OptionType | OptionType[];
   /**
+   * BoundaryElement for `Popover`
+   */
+  boundaryElement?: React.RefObject<HTMLElement> | Element;
+  /**
+   * Appends `trigger` wrapper inside body
+   */
+  appendToBody?: boolean;
+  /**
    * Handler for clicks outside the popover component.
    */
   onOutsideClick?: () => void;
@@ -105,6 +113,8 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     maxHeight,
     minHeight,
     value,
+    boundaryElement,
+    appendToBody,
     multiSelect = false,
     onOutsideClick,
     triggerOptions,
@@ -227,6 +237,8 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
           className="mt-3"
           triggerClass="d-block"
           customStyle={popoverStyle}
+          boundaryElement={boundaryElement}
+          appendToBody={appendToBody}
           trigger={<SelectTrigger aria-controls="select-listbox" {...triggerOptions}></SelectTrigger>}
         >
           <OutsideClick onOutsideClick={onOutsideClickHandler}>
