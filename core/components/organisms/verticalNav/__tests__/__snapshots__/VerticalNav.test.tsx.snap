@@ -156,7 +156,7 @@ exports[`Vertical Navigation component
             assignment_ind
           </i>
           <span
-            class="Text Text--regular color-inverse MenuItem-Text"
+            class="Text Text--regular color-inverse MenuItem-Text "
             data-test="DesignSystem-VerticalNav--Text"
           >
             Patient 360
@@ -196,7 +196,7 @@ exports[`Vertical Navigation component
             forum
           </i>
           <span
-            class="Text Text--regular color-inverse MenuItem-Text"
+            class="Text Text--regular color-inverse MenuItem-Text "
             data-test="DesignSystem-VerticalNav--Text"
           >
             Care Management and Resources
@@ -227,7 +227,7 @@ exports[`Vertical Navigation component
             assignment_ind
           </i>
           <span
-            class="Text Text--regular color-primary-dark MenuItem-Text"
+            class="Text Text--regular color-primary-dark MenuItem-Text mr-5"
             data-test="DesignSystem-VerticalNav--Text"
           >
             Timeline
@@ -250,7 +250,7 @@ exports[`Vertical Navigation component
             events
           </i>
           <span
-            class="Text Text--regular color-inverse MenuItem-Text"
+            class="Text Text--regular color-inverse MenuItem-Text mr-5"
             data-test="DesignSystem-VerticalNav--Text"
           >
             Care Plans
@@ -274,7 +274,7 @@ exports[`Vertical Navigation component
             airline_seat_flat_angled
           </i>
           <span
-            class="Text Text--regular color-inverse-lightest MenuItem-Text"
+            class="Text Text--regular color-inverse-lightest MenuItem-Text "
             data-test="DesignSystem-VerticalNav--Text"
           >
             Episodes
@@ -304,7 +304,7 @@ exports[`Vertical Navigation component
             favorite
           </i>
           <span
-            class="Text Text--regular color-inverse MenuItem-Text"
+            class="Text Text--regular color-inverse MenuItem-Text "
             data-test="DesignSystem-VerticalNav--Text"
           >
             Risk

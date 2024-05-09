@@ -48,7 +48,7 @@ export const LabelOverflowBehaviour = () => {
 
   return (
     <div className="bg-secondary-lightest vh-100">
-      <VerticalNav menus={data} expanded={true} active={active} onClick={setActive} showTooltip={true} />
+      <VerticalNav menus={data} expanded={true} active={active} onClick={setActive} />
     </div>
   );
 };
@@ -104,8 +104,7 @@ const customCode = `() => {
         menus={data}
         expanded={true}
         active={active}
-        onClick={setActive}
-        showTooltip={true}      
+        onClick={setActive}   
       />
     </div>
   );
