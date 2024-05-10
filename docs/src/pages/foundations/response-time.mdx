@@ -15,14 +15,14 @@ showMobile: true
 
 For example, this is the limit from the time the user selects a row in a table until that row should highlight or otherwise give feedback that it's selected.
 
-<table style="width: 100%">
+<table style={{width: "100%"}}>
   <tbody>
     <tr>
-      <th style="width:33%; text-align: left;">Good</th>
-      <th style="width:33%; text-align: left;">Needs improvement</th>
-      <th style="width:33%; text-align: left;">Poor</th>
+      <th style={{width:"33%", textAlign: "left"}}>Good</th>
+      <th style={{width:"33%", textAlign: "left"}}>Needs improvement</th>
+      <th style={{width:"33%", textAlign: "left"}}>Poor</th>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>[0, 100ms]</td>
       <td>(100ms, 300ms]</td>
       <td>over 300ms</td>
@@ -44,14 +44,14 @@ feeling of operating directly on the data.
 For example, if sorting a table according to the selected column can't be done in 0.1 seconds, it certainly has to be done in 1 second, or users will feel that the UI is sluggish and will lose the sense of "flow" in performing their task. For delays of more than 1 second, indicate to the user that the computer is working on the problem, for example by changing the shape of the cursor.
 
 
-<table style="width: 100%">
+<table style={{width: "100%"}}>
   <tbody>
     <tr>
-      <th style="width:33%; text-align: left;">Good</th>
-      <th style="width:33%; text-align: left;">Needs improvement</th>
-      <th style="width:33%; text-align: left;">Poor</th>
+      <th style={{width:"33%", textAlign: "left"}}>Good</th>
+      <th style={{width:"33%", textAlign: "left"}}>Needs improvement</th>
+      <th style={{width:"33%", textAlign: "left"}}>Poor</th>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>[0, 1000ms]</td>
       <td>(1000ms, 3000ms]</td>
       <td>over 3000ms</td>

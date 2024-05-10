@@ -1,17 +1,17 @@
 import { useStaticQuery, graphql } from 'gatsby';
 
 export default function MdsChangelog() {
-  const {
-    allMdx: { edges },
-  } = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query MDS_CHANGELOG {
       allMdx(filter: { frontmatter: { title: { eq: "Release notes" } } }) {
         edges {
           node {
-            internal {
-              content
+            body 
+            frontmatter {
+              date
             }
-            headings(depth: h2) {
+            headings {
+              depth
               value
             }
           }
@@ -20,7 +20,7 @@ export default function MdsChangelog() {
     }
   `);
 
-  const items = edges.map(({ node }) => node);
+  const edges = data.allMdx.edges;
 
   const record = {
     version: '',
@@ -28,23 +28,38 @@ export default function MdsChangelog() {
     updatesList: [],
   };
 
-  if (items.length > 0) {
-    const metadata = items[0].headings[0].value;
+  if (edges.length > 0) {
+    const latestReleaseNote = edges[0].node;
+    const versionInfo = latestReleaseNote.headings.find(heading => heading.depth === 2)?.value || '';
 
-    record.version = metadata.substring(0, metadata.indexOf('('));
-    record.releaseDate = metadata.substring(metadata.indexOf('(') + 1, metadata.lastIndexOf(')'));
+    const semVerRegex = /^(\d+\.\d+\.\d+)\s+\((\d{4}-\d{2}-\d{2})\)$/;
 
-    const htmlContent = items[0].internal.content;
-    const latestUpdate = htmlContent.split('\n----')[0];
+    const versionMatch = versionInfo.match(semVerRegex);
 
-    let updateList = latestUpdate.split('###');
 
-    const listSeparator = /[*-]+\s/;
+    if (versionMatch) {
+      record.version = versionMatch[1].trim();
+      record.releaseDate = versionMatch[2].trim();
+    }
 
-    updateList.shift();
-    updateList
-      .filter((item) => listSeparator.test(item))
-      .map((item) => record.updatesList.push(item.split(listSeparator)));
+    const updatesSections = latestReleaseNote.body.split('###').slice(1); 
+
+    updatesSections.forEach(section => {
+      const lines = section.trim().split('\n').filter(Boolean); 
+
+      if (lines.length > 1) {
+        const title = lines[0].trim();
+        const items = lines.slice(1).filter(line => line.startsWith('- ')).map(line => line.substring(2).trim());
+
+        if (items.length > 0) {
+          record.updatesList.push({
+            title: title,
+            items: items
+          });
+        }
+      }
+    });
   }
+
   return record;
 }

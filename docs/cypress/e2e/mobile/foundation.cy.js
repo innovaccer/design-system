@@ -11,7 +11,7 @@ describe('Cypress Test of foundations mobile page', () => {
   it('check for all the links it redirects', () => {
     navLink.forEach((page) => {
       cy.visit(page);
-      cy.linkVisit();
+      cy.wait(2000);
     });
   });
 

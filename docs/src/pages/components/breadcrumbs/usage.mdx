@@ -5,6 +5,8 @@ tabs: ['Usage', 'Code']
 showMobile: true
 ---
 
+import breadcrumbStructure from "./images/breadcrumb-structure.png"
+
 Breadcrumbs help users become aware of their current location with respect to the rest of the product/application. Breadcrumbs show the hierarchical progress from the highest entity level to the lowest.
 
 As helpful as they are, breadcrumbs should never replace the main navigation on a page.
@@ -26,17 +28,17 @@ Since the breadcrumb component is made up of the subtle link, you can change its
 <br />
 <br />
 
-<img src="./images/breadcrumb-structure.png" width="100%" height="auto" />
+<img src={breadcrumbStructure} width="100%" height="auto" />
 
 <br />
 
-<table style="width: 100%">
+<table style={{width: "100%"}}>
   <tbody>
     <tr>
-      <th style="width:50%; text-align: left;">Property</th>
-      <th style="width:50%; text-align: left;">Value(s)</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>
         Padding
         <br />
@@ -44,7 +46,7 @@ Since the breadcrumb component is made up of the subtle link, you can change its
       </td>
       <td>4 px, 4 px</td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Max width</td>
       <td>160 px</td>
     </tr>
@@ -58,14 +60,14 @@ Since the breadcrumb component is made up of the subtle link, you can change its
 <br />
 <br />
 
-<table style="width: 100%">
+<table style={{width: "100%"}}>
   <tbody>
     <tr>
-      <th style="width:33%; text-align: left;">Property</th>
-      <th style="width:33%; text-align: left;">Value(s)</th>
-      <th style="width:33%; text-align: left;">Default value</th>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>
         Label
         <br />
@@ -73,7 +75,7 @@ Since the breadcrumb component is made up of the subtle link, you can change its
       <td>&#60;label&#62;</td>
       <td>-</td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>
         Link
         <br />

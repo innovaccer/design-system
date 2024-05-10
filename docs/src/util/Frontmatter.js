@@ -8,7 +8,9 @@ export function useFrontmatter(relativePagePath) {
       allMdx {
         edges {
           node {
-            slug
+            fields {
+              slug 
+            }
             frontmatter {
               description
               logos
@@ -25,7 +27,7 @@ export function useFrontmatter(relativePagePath) {
   const componentName = relativePagePath.slice(1, relativePagePath.lastIndexOf('/'));
 
   const data = edges.filter((item) => {
-    const { slug, frontmatter } = item.node;
+    const { fields: { slug }, frontmatter } = item.node;
     if (relativePagePath.includes('mobile')) {
       return slug.includes(componentName) && slug.includes('mobile') && frontmatter.title != frontmatter.description;
     }

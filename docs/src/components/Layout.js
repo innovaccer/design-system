@@ -110,12 +110,20 @@ const Layout = ({
   const [tooltipName, setTooltipName] = useState(copyMessage);
   const frontmatter = useFrontmatter(relativePagePath);
   const refCode = React.createRef();
+  const mainContainerRef = React.createRef();
   const isOverviewPage = relativePagePath.includes('overview');
   const [lightboxDetail, setLightboxDetail] = useState({
     open: false,
     imgSrc: '',
     alt: 'image',
   });
+
+  
+  React.useEffect(() => {
+    if (mainContainerRef.current && location.hash === "") {
+      mainContainerRef.current.scrollTop = 0;
+    }
+  }, [location]);
 
   const imageClickHandler = (props) => {
     const { src, title } = props;
@@ -243,7 +251,7 @@ const Layout = ({
           showMobile={showMobile}
           frontmatter={frontmatter}
         />
-        <Column className={`${showAnimation() ? 'page-animation' : ''} page-scroll h-100`} id="main-container">
+        <Column className={`${showAnimation() ? 'page-animation' : ''} page-scroll h-100`} id="main-container" ref={mainContainerRef}>
           {!isOverviewPage ? (
             <MarkdownContainer
               relativePagePath={relativePagePath}

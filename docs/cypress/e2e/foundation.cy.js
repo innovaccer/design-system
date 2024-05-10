@@ -25,6 +25,7 @@ describe('Cypress Test of foundations page', () => {
   it('check if images of page are loading', () => {
     navLink.forEach((page) => {
       cy.visit(page);
+      cy.wait(3000);
       cy.imageRender();
     });
   });

@@ -24,6 +24,7 @@ const LeftNav = (props) => {
 
   function getActiveNavItem() {
     const pathName = window.location.pathname;
+
     if (isBrowser && pathName && frontmatter.tabs) {
       const url = pathName.split('/');
       const componentName = pathName.includes('mobile') ? url[2] + '/' + url[3] : url[1] + '/' + url[2];
