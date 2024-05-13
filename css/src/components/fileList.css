@@ -23,6 +23,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
 }
 .FileItem-file {
   display: flex;
@@ -38,6 +39,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-right: var(--spacing);
   margin-left: var(--spacing-l);
 }
 .FileItem-error {

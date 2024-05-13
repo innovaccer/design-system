@@ -45,7 +45,7 @@ exports[`FileList component
             />
           </svg>
           <span
-            class="Text Text--subtle Text--regular FileItem-text"
+            class="Text Text--subtle Text--medium Text--regular FileItem-text"
             data-test="DesignSystem-FileListItem--Name"
           >
             Audio File.mp3
@@ -55,7 +55,7 @@ exports[`FileList component
           class="FileItem-actions"
         >
           <span
-            class="Text Text--subtle Text--regular FileItem-size"
+            class="Text Text--subtle Text--small FileItem-size"
             data-test="DesignSystem-FileListItem--Size"
           >
             3 MB
@@ -82,7 +82,7 @@ exports[`FileList component
             movie
           </i>
           <span
-            class="Text Text--default Text--regular FileItem-text"
+            class="Text Text--default Text--medium Text--regular FileItem-text"
             data-test="DesignSystem-FileListItem--Name"
           >
             Video File.mp4
@@ -92,7 +92,7 @@ exports[`FileList component
           class="FileItem-actions"
         >
           <span
-            class="Text Text--subtle Text--regular FileItem-size"
+            class="Text Text--subtle Text--small FileItem-size"
             data-test="DesignSystem-FileListItem--Size"
           >
             4 MB
@@ -119,7 +119,7 @@ exports[`FileList component
             image
           </i>
           <span
-            class="Text Text--subtle Text--regular FileItem-text"
+            class="Text Text--subtle Text--medium Text--regular FileItem-text"
             data-test="DesignSystem-FileListItem--Name"
           >
             Image File.jpeg
@@ -129,7 +129,7 @@ exports[`FileList component
           class="FileItem-actions"
         >
           <span
-            class="Text Text--subtle Text--regular FileItem-size"
+            class="Text Text--subtle Text--small FileItem-size"
             data-test="DesignSystem-FileListItem--Size"
           >
             3 MB
@@ -175,7 +175,7 @@ exports[`FileList component
             insert_drive_file
           </i>
           <span
-            class="Text Text--default Text--regular FileItem-text"
+            class="Text Text--default Text--medium Text--regular FileItem-text"
             data-test="DesignSystem-FileListItem--Name"
           >
             Document File.pdf
@@ -185,7 +185,7 @@ exports[`FileList component
           class="FileItem-actions"
         >
           <span
-            class="Text Text--subtle Text--regular FileItem-size"
+            class="Text Text--subtle Text--small FileItem-size"
             data-test="DesignSystem-FileListItem--Size"
           >
             3 MB
@@ -212,7 +212,7 @@ exports[`FileList component
             text_snippet
           </i>
           <span
-            class="Text Text--default Text--regular FileItem-text"
+            class="Text Text--default Text--medium Text--regular FileItem-text"
             data-test="DesignSystem-FileListItem--Name"
           >
             Other File
@@ -222,7 +222,7 @@ exports[`FileList component
           class="FileItem-actions"
         >
           <span
-            class="Text Text--subtle Text--regular FileItem-size"
+            class="Text Text--subtle Text--small FileItem-size"
             data-test="DesignSystem-FileListItem--Size"
           >
             3 MB
