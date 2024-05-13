@@ -119,6 +119,12 @@
   white-space: nowrap;
 }
 
+.MenuItem--overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .MenuItem-count {
   margin-right: var(--spacing-m);
 }
