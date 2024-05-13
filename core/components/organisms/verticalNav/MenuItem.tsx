@@ -62,7 +62,7 @@ export const MenuItem = (props: MenuItemProps) => {
 
   const [isTextTruncated, setIsTextTruncated] = React.useState(false);
   const { detectTruncation } = Tooltip.useAutoTooltip();
-  const contentRef = React.useRef(null);
+  const contentRef = React.createRef<HTMLElement>();
 
   React.useEffect(() => {
     const isTruncated = detectTruncation(contentRef);
@@ -76,7 +76,7 @@ export const MenuItem = (props: MenuItemProps) => {
         data-test="DesignSystem-VerticalNav--Text"
         ref={contentRef}
         color={labelColor}
-        className={`MenuItem-Text ${hasSubmenu || menu.count !== undefined ? '' : 'mr-5'}`}
+        className={`MenuItem-Text MenuItem--overflow ${hasSubmenu || menu.count !== undefined ? '' : 'mr-5'}`}
       >
         {label}
       </Text>
@@ -125,6 +125,7 @@ export const MenuItem = (props: MenuItemProps) => {
 
   const customItemProps = {
     ...props,
+    contentRef,
     MenuIcon: () => MenuIcon({ isChildrenVisible }),
     MenuLabel: () => MenuLabel({ label: menu.label, labelColor: itemColor }),
     MenuPills: () =>
@@ -136,7 +137,7 @@ export const MenuItem = (props: MenuItemProps) => {
   ) : (
     // TODO(a11y)
     // eslint-disable-next-line
-    <Tooltip showTooltip={isTextTruncated} tooltip={menu.label} position="right">
+    <Tooltip showTooltip={expanded ? isTextTruncated : true} tooltip={menu.label} position="right">
       <Link componentType="a" className={ItemClass} {...baseProps}>
         <div className="d-flex align-items-center overflow-hidden">
           {menu.icon && (

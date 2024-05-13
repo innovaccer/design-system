@@ -127,7 +127,7 @@ const customCode = `() => {
     },
     {
       name: 'care_management',
-      label: 'Care Management',
+      label: 'Care Management policies',
       icon: 'forum',
       count: 40,
       subMenu: [
@@ -205,10 +205,21 @@ const customCode = `() => {
   });
 
   const customItemRenderer = (props) => {
-    const {menu, onClick, hasSubmenu, expanded, isChildren, MenuIcon, MenuLabel, MenuPills} = props;
+    const {menu, onClick, hasSubmenu, expanded, contentRef, isChildren, MenuIcon, MenuLabel, MenuPills} = props;
+    const [isTextTruncated, setIsTextTruncated] = React.useState(false);
+    const { detectTruncation } = Tooltip.useAutoTooltip();
+  
+    React.useEffect(() => {
+      const isTruncated = detectTruncation(contentRef);
+      setIsTextTruncated(isTruncated);
+      console.log(isTruncated);
+    }, []);
+
     return ( 
+      <Tooltip showTooltip={isTextTruncated} tooltip={menu.label} position="right">
       <div 
         onClick={() => onClick(menu)}
+        style={{width: '232px'}}
         className={\`p-5 d-flex align-items-center cursor-pointer \${isChildren ? 'ml-7' : ''}\`}
       >
         {menu.icon && (
@@ -218,6 +229,7 @@ const customCode = `() => {
         <div className="ml-5 d-flex">{MenuPills()}</div>
         {hasSubmenu && MenuIcon()}
       </div>
+      </Tooltip>
     );
   };
   
