@@ -2584,7 +2584,7 @@ NA
 - fixes GridBody scrollTop issue on unmount. (766b5686)
 - updates pagination component according to design. (601c3a47)
 - fixes expanded state on initial render of Collapsible component. (e2967a7b)
-- fixes single line case for width<240px in ChipInput. (92a37b6f)
+- fixes single line case for width greater than 240px in ChipInput. (92a37b6f)
 - fixes slider tooltip to move with pointer in Slider component. (f1698ff3)
 - fixes label onClick handling of MultiSlider component (ff4af117)
 - Updates DS-_ to Design-System-_ as data-test attribute value in components. (6956653e)

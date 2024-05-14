@@ -89,12 +89,18 @@ export const FileListItem = (props: FileListItemProps) => {
             data-test="DesignSystem-FileListItem--Name"
             className="FileItem-text"
             appearance={status === 'completed' ? 'default' : 'subtle'}
+            weight="medium"
           >
             {name}
           </Text>
         </div>
         <div className="FileItem-actions">
-          <Text className="FileItem-size" appearance={'subtle'} data-test="DesignSystem-FileListItem--Size">
+          <Text
+            className="FileItem-size"
+            size="small"
+            appearance={'subtle'}
+            data-test="DesignSystem-FileListItem--Size"
+          >
             {fileSize || file.size}
           </Text>
           {!!actions && actions}

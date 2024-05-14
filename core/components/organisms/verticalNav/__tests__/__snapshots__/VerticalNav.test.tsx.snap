@@ -8,113 +8,143 @@ exports[`Vertical Navigation component
     <div
       class="VerticalNav"
     >
-      <a
-        class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
-        data-test="DesignSystem-VerticalNav--Item"
-        href="/patient360"
-        tabindex="0"
+      <style />
+      <div
+        class="OutsideClick PopperWrapper-trigger"
       >
-        <div
-          class="d-flex align-items-center overflow-hidden"
+        <a
+          class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
+          data-test="DesignSystem-VerticalNav--Item"
+          href="/patient360"
+          tabindex="0"
         >
-          <i
-            class="material-symbols material-symbols-rounded Icon"
-            data-test="DesignSystem-VerticalNav--Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
+          <div
+            class="d-flex align-items-center overflow-hidden"
           >
-            assignment_ind
-          </i>
-        </div>
-      </a>
-      <a
-        class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
-        data-test="DesignSystem-VerticalNav--Item"
-        tabindex="0"
+            <i
+              class="material-symbols material-symbols-rounded Icon"
+              data-test="DesignSystem-VerticalNav--Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              assignment_ind
+            </i>
+          </div>
+        </a>
+      </div>
+      <style />
+      <div
+        class="OutsideClick PopperWrapper-trigger"
       >
-        <div
-          class="d-flex align-items-center overflow-hidden"
+        <a
+          class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
+          data-test="DesignSystem-VerticalNav--Item"
+          tabindex="0"
         >
-          <i
-            class="material-symbols material-symbols-rounded Icon"
-            data-test="DesignSystem-VerticalNav--Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
+          <div
+            class="d-flex align-items-center overflow-hidden"
           >
-            forum
-          </i>
-        </div>
-      </a>
-      <a
-        class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--active color-primary-dark"
-        tabindex="0"
+            <i
+              class="material-symbols material-symbols-rounded Icon"
+              data-test="DesignSystem-VerticalNav--Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              forum
+            </i>
+          </div>
+        </a>
+      </div>
+      <style />
+      <div
+        class="OutsideClick PopperWrapper-trigger"
       >
-        <div
-          class="d-flex align-items-center overflow-hidden"
+        <a
+          class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--active color-primary-dark"
+          tabindex="0"
         >
-          <i
-            class="material-symbols material-symbols-rounded Icon"
-            data-test="DesignSystem-VerticalNav--Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
+          <div
+            class="d-flex align-items-center overflow-hidden"
           >
-            assignment_ind
-          </i>
-        </div>
-      </a>
-      <a
-        class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
-        tabindex="0"
+            <i
+              class="material-symbols material-symbols-rounded Icon"
+              data-test="DesignSystem-VerticalNav--Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              assignment_ind
+            </i>
+          </div>
+        </a>
+      </div>
+      <style />
+      <div
+        class="OutsideClick PopperWrapper-trigger"
       >
-        <div
-          class="d-flex align-items-center overflow-hidden"
+        <a
+          class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
+          tabindex="0"
         >
-          <i
-            class="material-symbols material-symbols-rounded Icon"
-            data-test="DesignSystem-VerticalNav--Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
+          <div
+            class="d-flex align-items-center overflow-hidden"
           >
-            events
-          </i>
-        </div>
-      </a>
-      <a
-        class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--disabled color-inverse-lightest"
-        data-test="DesignSystem-VerticalNav--Item"
-        tabindex="0"
+            <i
+              class="material-symbols material-symbols-rounded Icon"
+              data-test="DesignSystem-VerticalNav--Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              events
+            </i>
+          </div>
+        </a>
+      </div>
+      <style />
+      <div
+        class="OutsideClick PopperWrapper-trigger"
       >
-        <div
-          class="d-flex align-items-center overflow-hidden"
+        <a
+          class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--disabled color-inverse-lightest"
+          data-test="DesignSystem-VerticalNav--Item"
+          tabindex="0"
         >
-          <i
-            class="material-symbols material-symbols-rounded Icon"
-            data-test="DesignSystem-VerticalNav--Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
+          <div
+            class="d-flex align-items-center overflow-hidden"
           >
-            airline_seat_flat_angled
-          </i>
-        </div>
-      </a>
-      <a
-        class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
-        data-test="DesignSystem-VerticalNav--Item"
-        tabindex="0"
+            <i
+              class="material-symbols material-symbols-rounded Icon"
+              data-test="DesignSystem-VerticalNav--Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              airline_seat_flat_angled
+            </i>
+          </div>
+        </a>
+      </div>
+      <style />
+      <div
+        class="OutsideClick PopperWrapper-trigger"
       >
-        <div
-          class="d-flex align-items-center overflow-hidden"
+        <a
+          class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
+          data-test="DesignSystem-VerticalNav--Item"
+          tabindex="0"
         >
-          <i
-            class="material-symbols material-symbols-rounded Icon"
-            data-test="DesignSystem-VerticalNav--Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
+          <div
+            class="d-flex align-items-center overflow-hidden"
           >
-            favorite
-          </i>
-        </div>
-      </a>
+            <i
+              class="material-symbols material-symbols-rounded Icon"
+              data-test="DesignSystem-VerticalNav--Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              favorite
+            </i>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 </body>
@@ -156,7 +186,7 @@ exports[`Vertical Navigation component
             assignment_ind
           </i>
           <span
-            class="Text Text--regular color-inverse MenuItem-Text"
+            class="Text Text--regular color-inverse MenuItem-Text MenuItem--overflow "
             data-test="DesignSystem-VerticalNav--Text"
           >
             Patient 360
@@ -196,7 +226,7 @@ exports[`Vertical Navigation component
             forum
           </i>
           <span
-            class="Text Text--regular color-inverse MenuItem-Text"
+            class="Text Text--regular color-inverse MenuItem-Text MenuItem--overflow "
             data-test="DesignSystem-VerticalNav--Text"
           >
             Care Management and Resources
@@ -227,7 +257,7 @@ exports[`Vertical Navigation component
             assignment_ind
           </i>
           <span
-            class="Text Text--regular color-primary-dark MenuItem-Text"
+            class="Text Text--regular color-primary-dark MenuItem-Text MenuItem--overflow mr-5"
             data-test="DesignSystem-VerticalNav--Text"
           >
             Timeline
@@ -250,7 +280,7 @@ exports[`Vertical Navigation component
             events
           </i>
           <span
-            class="Text Text--regular color-inverse MenuItem-Text"
+            class="Text Text--regular color-inverse MenuItem-Text MenuItem--overflow mr-5"
             data-test="DesignSystem-VerticalNav--Text"
           >
             Care Plans
@@ -274,7 +304,7 @@ exports[`Vertical Navigation component
             airline_seat_flat_angled
           </i>
           <span
-            class="Text Text--regular color-inverse-lightest MenuItem-Text"
+            class="Text Text--regular color-inverse-lightest MenuItem-Text MenuItem--overflow "
             data-test="DesignSystem-VerticalNav--Text"
           >
             Episodes
@@ -304,7 +334,7 @@ exports[`Vertical Navigation component
             favorite
           </i>
           <span
-            class="Text Text--regular color-inverse MenuItem-Text"
+            class="Text Text--regular color-inverse MenuItem-Text MenuItem--overflow "
             data-test="DesignSystem-VerticalNav--Text"
           >
             Risk

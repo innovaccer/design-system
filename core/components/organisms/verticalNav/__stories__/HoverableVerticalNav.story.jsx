@@ -215,7 +215,7 @@ const customCode = `() => {
     },
     {
       name: 'care_management',
-      label: 'Care Management',
+      label: 'Care Management Policies',
       icon: 'forum',
       subMenu: [
         {

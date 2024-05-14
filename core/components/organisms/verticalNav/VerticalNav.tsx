@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Text, Tooltip } from '@/index';
+import { Text } from '@/index';
 import { MenuItem, MenuItemProps } from './MenuItem';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { getMenu, isMenuActive, ActiveMenu, Menu, getExpandedMenus } from '@/utils/navigationHelper';
@@ -64,6 +64,9 @@ export interface VerticalNavProps extends BaseProps {
   customItemRenderer?: (props: MenuItemProps) => JSX.Element;
   /**
    * Determines whether to show tooltip for menu label
+   * **This prop is DEPRECATED now,**
+   * **Auto tooltip feature is enable now on text truncation,**
+   * **Please don't use this prop.**
    */
   showTooltip: boolean;
 }
@@ -73,7 +76,7 @@ export interface VerticalNavProps extends BaseProps {
  */
 
 export const VerticalNav = (props: VerticalNavProps) => {
-  const { menus, active, onClick, expanded, rounded, autoCollapse, className, customItemRenderer, showTooltip } = props;
+  const { menus, active, onClick, expanded, rounded, autoCollapse, className, customItemRenderer } = props;
 
   const [subMenuExpandedState, setSubMenuExpandedState] = React.useState<Record<string, boolean>>({});
   const [menuState, setMenuState] = React.useState<Record<string, boolean>>({});
@@ -149,22 +152,7 @@ export const VerticalNav = (props: VerticalNavProps) => {
               </Text>
             </div>
           )}
-          {showTooltip ? (
-            <Tooltip tooltip={menu.label} position="right">
-              <MenuItem
-                data-test="DesignSystem-VerticalNav--Item"
-                menu={menu}
-                expanded={expanded}
-                isActive={isActive}
-                hasSubmenu={hasSubmenu}
-                isChildren={false}
-                rounded={rounded}
-                isChildrenVisible={isChildrenVisible}
-                onClick={onClickHandler}
-                customItemRenderer={customItemRenderer}
-              />
-            </Tooltip>
-          ) : (
+          {
             <MenuItem
               data-test="DesignSystem-VerticalNav--Item"
               menu={menu}
@@ -177,24 +165,10 @@ export const VerticalNav = (props: VerticalNavProps) => {
               onClick={onClickHandler}
               customItemRenderer={customItemRenderer}
             />
-          )}
+          }
           {isChildrenVisible &&
             menu.subMenu!.map((subMenu, id) => {
-              return showTooltip ? (
-                <Tooltip tooltip={subMenu.label} position="right">
-                  <MenuItem
-                    key={id}
-                    menu={subMenu}
-                    expanded={expanded}
-                    hasSubmenu={false}
-                    isChildren={true}
-                    rounded={rounded}
-                    onClick={onClickHandler}
-                    isActive={isMenuActive(menus, subMenu, active)}
-                    customItemRenderer={customItemRenderer}
-                  />
-                </Tooltip>
-              ) : (
+              return (
                 <MenuItem
                   key={id}
                   menu={subMenu}

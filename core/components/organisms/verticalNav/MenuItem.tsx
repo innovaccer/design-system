@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Text, Icon, Pills } from '@/index';
+import { Text, Icon, Pills, Tooltip } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { getNavItemColor, getPillsAppearance, Menu } from '@/utils/navigationHelper';
 import Link from '@/components/atoms/_text';
@@ -31,15 +31,6 @@ interface MenuIconProps {
   isChildrenVisible?: boolean;
 }
 
-const MenuLabel = (props: MenuLabelProps) => {
-  const { label, labelColor } = props;
-  return (
-    <Text data-test="DesignSystem-VerticalNav--Text" color={labelColor} className="MenuItem-Text">
-      {label}
-    </Text>
-  );
-};
-
 const MenuIcon = (props: MenuIconProps) => {
   const { isChildrenVisible } = props;
   return <Icon className="mx-4" name={isChildrenVisible ? 'keyboard_arrow_up' : 'keyboard_arrow_down'} />;
@@ -68,6 +59,29 @@ const MenuPills = (props: MenuPillsProps) => {
 export const MenuItem = (props: MenuItemProps) => {
   const { menu, isActive, expanded, rounded, hasSubmenu, isChildren, isChildrenVisible, onClick, customItemRenderer } =
     props;
+
+  const [isTextTruncated, setIsTextTruncated] = React.useState(false);
+  const { detectTruncation } = Tooltip.useAutoTooltip();
+  const contentRef = React.createRef<HTMLElement>();
+
+  React.useEffect(() => {
+    const isTruncated = detectTruncation(contentRef);
+    setIsTextTruncated(isTruncated);
+  }, [contentRef]);
+
+  const MenuLabel = (props: MenuLabelProps) => {
+    const { label, labelColor } = props;
+    return (
+      <Text
+        data-test="DesignSystem-VerticalNav--Text"
+        ref={contentRef}
+        color={labelColor}
+        className={`MenuItem-Text MenuItem--overflow ${hasSubmenu || menu.count !== undefined ? '' : 'mr-5'}`}
+      >
+        {label}
+      </Text>
+    );
+  };
 
   const onClickHandler = (ev: { preventDefault: () => void }) => {
     ev.preventDefault();
@@ -111,6 +125,7 @@ export const MenuItem = (props: MenuItemProps) => {
 
   const customItemProps = {
     ...props,
+    contentRef,
     MenuIcon: () => MenuIcon({ isChildrenVisible }),
     MenuLabel: () => MenuLabel({ label: menu.label, labelColor: itemColor }),
     MenuPills: () =>
@@ -122,20 +137,22 @@ export const MenuItem = (props: MenuItemProps) => {
   ) : (
     // TODO(a11y)
     // eslint-disable-next-line
-    <Link componentType="a" className={ItemClass} {...baseProps}>
-      <div className="d-flex align-items-center overflow-hidden">
-        {menu.icon && (
-          <Icon
-            data-test="DesignSystem-VerticalNav--Icon"
-            className={expanded ? 'mr-4' : ''}
-            name={menu.icon}
-            type={menu.iconType}
-          />
-        )}
-        {expanded && <MenuLabel label={menu.label} labelColor={itemColor} />}
-      </div>
-      {expanded && renderSubMenu()}
-    </Link>
+    <Tooltip showTooltip={expanded ? isTextTruncated : true} tooltip={menu.label} position="right">
+      <Link componentType="a" className={ItemClass} {...baseProps}>
+        <div className="d-flex align-items-center overflow-hidden">
+          {menu.icon && (
+            <Icon
+              data-test="DesignSystem-VerticalNav--Icon"
+              className={expanded ? 'mr-4' : ''}
+              name={menu.icon}
+              type={menu.iconType}
+            />
+          )}
+          {expanded && <MenuLabel label={menu.label} labelColor={itemColor} />}
+        </div>
+        {expanded && renderSubMenu()}
+      </Link>
+    </Tooltip>
   );
 };
 
