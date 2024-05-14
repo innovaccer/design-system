@@ -1,3 +1,41 @@
+## 2.33.0 (2024-05-14)
+
+### Highlights
+
+- feat(verticalnav): add auto tooltip feature and update spacing (f1182a50)
+- feat(verticalnav): add support for tooltip in case of non expandable icon (53a5a3d5)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(verticalnav): add auto tooltip feature and update spacing (f1182a50)
+- feat(verticalnav): add support for tooltip in case of non expandable icon (53a5a3d5)
+
+### Fixes
+
+- fix(fileList): update font size weight and spacing in between the text and action icon (4acfbeac)
+
+### Improvements
+
+- feat(gatsby): update changelog for latest gatsby version (57bb181d)
+
+### Documentation
+
+- docs(verticalnav): add overflow documentation (0c49411e)
+
+---
+
 ## 2.32.1 (2024-05-08)
 
 ### Highlights
@@ -20,7 +58,7 @@ NA
 
 - feat(listbox): add selected and activated type in listbox stories (46c24416)
 - feat(spacing): implement 6px token and replace hardcoded value (292e6e2e)
-- feat(select): add appendToBody and boundary element props support 
+- feat(select): add appendToBody and boundary element props support (8a74dc4f)
 
 ### Fixes
 
