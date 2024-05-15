@@ -81,7 +81,6 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     setHighlightFirstItem,
     setHighlightLastItem,
     triggerRef,
-    width,
   } = contextProp;
 
   const buttonDisabled = disabled ? 'disabled' : 'default';
@@ -114,14 +113,20 @@ const SelectTrigger = (props: SelectTriggerProps) => {
   });
 
   return (
-    <Tooltip showOnTruncation={true} showTooltip={!openPopover} tooltip={value} elementRef={elementRef}>
+    <Tooltip
+      showOnTruncation={true}
+      showTooltip={!openPopover}
+      tooltip={value}
+      elementRef={elementRef}
+      className="w-100"
+      triggerClass="w-100"
+    >
       <button
         ref={triggerRef}
         onKeyDown={(event) => handleKeyDownTrigger(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem)}
         type="button"
         className={buttonClass}
         disabled={disabled}
-        style={{ maxWidth: width }}
         tabIndex={0}
         aria-haspopup="listbox"
         aria-expanded={openPopover}

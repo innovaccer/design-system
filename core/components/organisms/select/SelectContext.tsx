@@ -11,7 +11,7 @@ export type ContextProps = {
   onOptionClick?: (option: OptionType | OptionType[]) => void;
   maxHeight?: number;
   minHeight?: number;
-  width?: number;
+  width?: number | string;
   withSearch?: boolean;
   setWithSearch?: React.Dispatch<React.SetStateAction<boolean>>;
   multiSelect?: boolean;
