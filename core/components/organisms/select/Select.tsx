@@ -10,6 +10,7 @@ import SelectEmptyTemplate from './SelectEmptyTemplate';
 import { focusListItem, mapInitialValue } from './utils';
 import SelectFooter from './SelectFooter';
 import { BaseProps } from '@/utils/types';
+import { PopoverProps } from '@/index.type';
 
 export interface SelectProps extends BaseProps {
   /**
@@ -27,7 +28,7 @@ export interface SelectProps extends BaseProps {
   /**
    * width of the trigger.
    */
-  width?: number;
+  width?: number | string;
   /**
    * width of the popover by default it will be equal to the width of trigger.
    */
@@ -135,14 +136,21 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
   const [focusedOption, setFocusedOption] = React.useState<HTMLElement | undefined>();
   const [highlightFirstItem, setHighlightFirstItem] = React.useState<boolean>(false);
   const [highlightLastItem, setHighlightLastItem] = React.useState<boolean>(false);
+  const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>({ width: popoverWidth || width });
 
   const triggerStyle = {
     width: width,
   };
 
-  const popoverStyle = {
-    width: popoverWidth ? popoverWidth : width,
-  };
+  React.useEffect(() => {
+    // if popover width is not provided explicitly, apply the trigger width to popover width
+    if (!popoverWidth && triggerRef.current?.clientWidth) {
+      setPopoverStyle({
+        ...popoverStyle,
+        width: triggerRef.current?.clientWidth,
+      });
+    }
+  }, []);
 
   React.useImperativeHandle(ref, () => ({
     setOpen: (open: boolean) => {

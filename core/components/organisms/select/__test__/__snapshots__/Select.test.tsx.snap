@@ -22,7 +22,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -73,7 +72,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -124,7 +122,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -175,7 +172,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -226,7 +222,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -277,7 +272,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -328,7 +322,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -379,7 +372,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -430,7 +422,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -481,7 +472,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -532,7 +522,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -583,7 +572,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -634,7 +622,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -685,7 +672,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -736,7 +722,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -787,7 +772,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -838,7 +822,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -889,7 +872,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -940,7 +922,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -991,7 +972,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -1042,7 +1022,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -1093,7 +1072,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -1144,7 +1122,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -1195,7 +1172,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -1246,7 +1222,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -1297,7 +1272,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -1348,7 +1322,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -1399,7 +1372,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -1450,7 +1422,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -1501,7 +1472,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -1552,7 +1522,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -1603,7 +1572,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -1654,7 +1622,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -1705,7 +1672,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -1756,7 +1722,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -1807,7 +1772,6 @@ exports[`Select List component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -1858,7 +1822,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -1909,7 +1872,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -1960,7 +1922,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -2011,7 +1972,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -2062,7 +2022,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -2113,7 +2072,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -2164,7 +2122,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -2215,7 +2172,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -2266,7 +2222,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -2317,7 +2272,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -2368,7 +2322,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -2419,7 +2372,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -2470,7 +2422,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -2521,7 +2472,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -2572,7 +2522,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -2623,7 +2572,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -2674,7 +2622,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -2725,7 +2672,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -2776,7 +2722,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -2827,7 +2772,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -2878,7 +2822,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -2929,7 +2872,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -2980,7 +2922,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -3031,7 +2972,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -3082,7 +3022,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -3133,7 +3072,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -3184,7 +3122,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -3235,7 +3172,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -3286,7 +3222,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -3337,7 +3272,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -3388,7 +3322,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -3439,7 +3372,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -3490,7 +3422,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -3541,7 +3472,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -3592,7 +3522,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -3643,7 +3572,6 @@ exports[`Select Option component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -3694,7 +3622,6 @@ exports[`Select component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
@@ -3745,7 +3672,6 @@ exports[`Select component snapshots
           aria-label="trigger"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
           data-test="DesignSystem-Select-trigger"
-          style="max-width: 176px;"
           tabindex="0"
           type="button"
         >
