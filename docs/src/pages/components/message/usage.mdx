@@ -68,13 +68,13 @@ The success variant is used when the inline message needs to notify the successf
 ![Structure of standard message](./images/message-structure.png)
 <br/>
 
-<table style="width: 100%">
+<table style={{width: "100%"}}>
  <tbody>
    <tr>
-     <th style="width:50%; text-align: left;">Property</th>
-     <th style="width:50%; text-align: left;">Value(s)</th>
+     <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+     <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
    </tr>
-   <tr style="vertical-align: top">
+   <tr style={{verticalAlign: "top"}}>
       <td>Padding<br/><em>(top, right, bottom, left)</em></td>
       <td>12 px, 24 px, 16 px, 16 px</td>
    </tr>
@@ -88,13 +88,13 @@ The success variant is used when the inline message needs to notify the successf
 
 <br/>
 
-<table style="width: 100%">
+<table style={{width: "100%"}}>
  <tbody>
    <tr>
-     <th style="width:50%; text-align: left;">Property</th>
-     <th style="width:50%; text-align: left;">Value(s)</th>
+     <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+     <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
    </tr>
-   <tr style="vertical-align: top">
+   <tr style={{verticalAlign: "top"}}>
      <td>Height</td>
      <td>
          <ul>
@@ -109,14 +109,14 @@ The success variant is used when the inline message needs to notify the successf
 
 ### Configurations
 #### Standard message
-<table style="width: 100%">
+<table style={{width: "100%"}}>
   <tbody>
     <tr>
-      <th style="width:33%; text-align: left;">Property</th>
-      <th style="width:33%; text-align: left;">Value(s)</th>
-      <th style="width:33%; text-align: left;">Default value</th>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Appearance</td>
       <td>
           <ul>
@@ -128,17 +128,17 @@ The success variant is used when the inline message needs to notify the successf
       </td>
       <td>Info</td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Title<br/><em>(optional)</em></td>
       <td>&#60;title&#62;</td>
       <td>-</td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Description</td>
       <td>&#60;description&#62;</td>
       <td>-</td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Actions<br/><em>(optional)</em></td>
       <td>
           <ul>
@@ -153,14 +153,14 @@ The success variant is used when the inline message needs to notify the successf
 <br/>
 
 #### Inline message
-<table style="width: 100%">
+<table style={{width: "100%"}}>
   <tbody>
     <tr>
-      <th style="width:33%; text-align: left;">Property</th>
-      <th style="width:33%; text-align: left;">Value(s)</th>
-      <th style="width:33%; text-align: left;">Default value</th>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Appearance</td>
       <td>
           <ul>
@@ -172,7 +172,7 @@ The success variant is used when the inline message needs to notify the successf
       </td>
       <td>Info</td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Size</td>
       <td>
           <ul>
@@ -182,7 +182,7 @@ The success variant is used when the inline message needs to notify the successf
       </td>
       <td>Regular</td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Description</td>
       <td>&#60;description&#62;</td>
       <td>-</td>
@@ -234,45 +234,45 @@ Inline message component appears below the component it is related to, with a 4p
 
 <br />
 
-<table style="width: 100%">
+<table style={{width: "100%"}}>
   <tbody>
     <tr>
-      <th style="width:25%; text-align: left;">Factors</th>
-      <th style="width:25%; text-align: left;">Toast</th>
-      <th style="width:25%; text-align: left;">Message</th>
-      <th style="width:25%; text-align: left;">Modal</th>
+      <th style={{width:"25%", textAlign: "left"}}>Factors</th>
+      <th style={{width:"25%", textAlign: "left"}}>Toast</th>
+      <th style={{width:"25%", textAlign: "left"}}>Message</th>
+      <th style={{width:"25%", textAlign: "left"}}>Modal</th>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Severity</td>
       <td><Badge appearance="warning" subtle={true}>LOW</Badge></td>
       <td><Badge appearance="accent1" subtle={true}>MEDIUM</Badge></td>
       <td><Badge appearance="alert" subtle={true}>CRITICAL</Badge></td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Feedback</td>
       <td>Feedback or update after an action has taken place</td>
       <td>Information or feedback that aids users in completing their action or flow</td>
       <td>Critical information that requires user input or interaction</td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>When to use</td>
       <td>After an action has taken place</td>
       <td>Before or after an action has taken place</td>
       <td>Before an action has taken place</td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Information detail</td>
       <td>Concise</td>
       <td>Concise</td>
       <td>In-depth</td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Intrusiveness</td>
       <td>Unobtrusive</td>
       <td>Attention demanding</td>
       <td>Disruptive</td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Duration</td>
       <td>Persists for 5 seconds (Default), can be customized in case of a critical notification</td>
       <td>Persists but can be removed from the view upon resolution of the error.</td>

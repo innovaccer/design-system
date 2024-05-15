@@ -6,6 +6,9 @@ showMobile: true
 keywords: ['Modal']
 ---
 
+import dialogs4 from './images/dialogs-4.gif'
+import dialogs5 from './images/dialogs-5.gif'
+
 Dialogs are used to present information, critical alerts, and confirmations to the users. They retain focus until dismissed or a required action has been taken.
 Dialogs are interruptive and hence should be used sparingly.
 
@@ -111,7 +114,7 @@ The **Cancel button ( X )** present at the top left is used to return to the mai
 
 These are the most basic type of full-screen dialogs, where there is only one step in the flow. 
 
-<img src='./images/dialogs-4.gif' width='100%' height='auto'/>
+<img src={dialogs4} width='100%' height='auto'/>
 
 <br/>
 <br/>
@@ -120,7 +123,7 @@ These are the most basic type of full-screen dialogs, where there is only one st
 
 For cases where the transactions such as creating an entity take more than one step, stacking of the subpages is done. The users can navigate back through the steps using the Back button(←) which takes place of the Cancel button(X) from the 2nd step onwards.
 
-<img src='./images/dialogs-5.gif' width='100%' height='auto'/>
+<img src={dialogs5} width='100%' height='auto'/>
 
 <br/>
 <br/>

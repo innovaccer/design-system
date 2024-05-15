@@ -11,6 +11,7 @@ describe('Cypress Test of component page', () => {
 
   it('check for the overview page', () => {
     cy.visit(componentURL);
+    cy.wait(2000);
     cy.searchBar('abc', 'Buttons');
     cy.linkVisit();
     cy.tileToggle();

@@ -79,6 +79,19 @@ Cypress.Commands.add('linkVisit', () => {
   });
 });
 
+
+Cypress.Commands.add('linkVisitOverviewPage', () => {
+  cy.get('[data-test=Docs-content-wrapper]')
+  .find('a')
+  .not(':contains("email")')
+  .each((page) => {
+    if (page.prop('href').length) {
+      cy.request(page.prop('href'));
+      cy.wait(2000);
+    }
+  });
+});
+
 Cypress.Commands.add('leftnavTraverse', (arr) => {
   cy.get('[data-test=Docs-Leftnav]')
     .find('a')
@@ -146,10 +159,10 @@ Cypress.Commands.add('statusTable', (statusURL) => {
 });
 
 Cypress.Commands.add('searchBar', (falseQuery, searchQuery) => {
-  cy.get('[data-test=Docs-content-wrapper]').find('input[name="input"]').type(`${falseQuery}{enter}`);
+  cy.get('[data-test=Docs-content-wrapper]').find('input[name="input"]').should('not.be.disabled').type(`${falseQuery}{enter}`);
   cy.get('[data-test=DesignSystem-EmptyState]').contains(`No results found for '${falseQuery}'`);
 
-  cy.get('[data-test=Docs-content-wrapper]').find('input[name="input"]').clear().type(`${searchQuery}{enter}`);
+  cy.get('[data-test=Docs-content-wrapper]').find('input[name="input"]').should('not.be.disabled').clear().type(`${searchQuery}{enter}`);
   cy.get('[data-test=Docs-Card-Heading]').contains(searchQuery);
 });
 

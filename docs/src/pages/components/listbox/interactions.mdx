@@ -1,3 +1,7 @@
+import ReorderingItems from './images/Reordering-items.gif'
+import ExpandingItem from './images/Expanding-item.gif'
+import CollapsingItem from './images/Collapsing-item.gif'
+
 ### Reordering list items
 
 To reorder, pick the item to be reordered via the drag handle placed at the beginning. Items other than the picked item will reorder as soon as the picked item reaches the boundary of the adjacent item.
@@ -11,7 +15,7 @@ To reorder, pick the item to be reordered via the drag handle placed at the begi
 
 <br />
 
-<img width='100%' height='auto' src='./images/Reordering-items.gif' alt='Reordering a list item using the drag indicator' />
+<img width='100%' height='auto' src={ReorderingItems} alt='Reordering a list item using the drag indicator' />
 
 <Caption>Reordering a list item using the drag indicator</Caption>
 
@@ -20,19 +24,19 @@ To reorder, pick the item to be reordered via the drag handle placed at the begi
 <br/>
 <br/>
 
-<table style="width: 100%">
+<table style={{width: "100%"}}>
   <tbody>
     <tr>
-      <th style="width:33%; text-align: left;">Property</th>
-      <th style="width:33%; text-align: left;">Initial</th>
-      <th style="width:33%; text-align: left;">Final</th>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Initial</th>
+      <th style={{width:"33%", textAlign: "left"}}>Final</th>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Fill</td>
       <td>Nil</td>
       <td>#FFFFFF</td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Shadow</td>
       <td>Nil</td>
       <td>Shadow-30</td>
@@ -47,14 +51,14 @@ To reorder, pick the item to be reordered via the drag handle placed at the begi
 <br/>
 <br/>
 
-<table style="width: 100%">
+<table style={{width: "100%"}}>
   <tbody>
     <tr>
-      <th style="width:33%; text-align: left;">Property</th>
-      <th style="width:33%; text-align: left;">Initial</th>
-      <th style="width:33%; text-align: left;">Final</th>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Initial</th>
+      <th style={{width:"33%", textAlign: "left"}}>Final</th>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Y position</td>
       <td>Current position</td>
       <td>Reordered position</td>
@@ -66,13 +70,13 @@ To reorder, pick the item to be reordered via the drag handle placed at the begi
 
 **Curve**
 
-<table style="width: 100%">
+<table style={{width: "100%"}}>
   <tbody>
     <tr>
-      <th style="width:50%; text-align: left;">Curve</th>
-      <th style="width:50%; text-align: left;">Duration</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Curve</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Duration</th>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>cubic-bezier(0.2, 0, 0.38, 0.9)</td>
       <td>240ms</td>
     </tr>
@@ -88,7 +92,7 @@ To reorder, pick the item to be reordered via the drag handle placed at the begi
 <br/>
 <br/>
 
-<img width='100%' height='auto' src='./images/Expanding-item.gif' alt='Expanding an item in a nested list' />
+<img width='100%' height='auto' src={ExpandingItem} alt='Expanding an item in a nested list' />
 
 <Caption>Expanding an item in a nested list</Caption>
 
@@ -97,14 +101,14 @@ To reorder, pick the item to be reordered via the drag handle placed at the begi
 <br/>
 <br/>
 
-<table style="width: 100%">
+<table style={{width: "100%"}}>
   <tbody>
     <tr>
-      <th style="width:33%; text-align: left;">Property</th>
-      <th style="width:33%; text-align: left;">Initial</th>
-      <th style="width:33%; text-align: left;">Final</th>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Initial</th>
+      <th style={{width:"33%", textAlign: "left"}}>Final</th>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Rotation</td>
       <td>0°</td>
       <td>180° (clockwise)</td>
@@ -116,13 +120,13 @@ To reorder, pick the item to be reordered via the drag handle placed at the begi
 
 **Curve**
 
-<table style="width: 100%">
+<table style={{width: "100%"}}>
   <tbody>
     <tr>
-      <th style="width:50%; text-align: left;">Curve</th>
-      <th style="width:50%; text-align: left;">Duration</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Curve</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Duration</th>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>cubic-bezier(0.2, 0, 0.38, 0.9)</td>
       <td>240ms</td>
     </tr>
@@ -136,14 +140,14 @@ To reorder, pick the item to be reordered via the drag handle placed at the begi
 <br/>
 <br/>
 
-<table style="width: 100%">
+<table style={{width: "100%"}}>
   <tbody>
     <tr>
-      <th style="width:33%; text-align: left;">Property</th>
-      <th style="width:33%; text-align: left;">Initial</th>
-      <th style="width:33%; text-align: left;">Final</th>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Initial</th>
+      <th style={{width:"33%", textAlign: "left"}}>Final</th>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Height</td>
       <td>0px</td>
       <td>height</td>
@@ -155,13 +159,13 @@ To reorder, pick the item to be reordered via the drag handle placed at the begi
 
 **Curve**
 
-<table style="width: 100%">
+<table style={{width: "100%"}}>
   <tbody>
     <tr>
-      <th style="width:50%; text-align: left;">Curve</th>
-      <th style="width:50%; text-align: left;">Duration</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Curve</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Duration</th>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>cubic-bezier(0, 0, 0.38, 0.9)</td>
       <td>240ms</td>
     </tr>
@@ -175,7 +179,7 @@ To reorder, pick the item to be reordered via the drag handle placed at the begi
 <br/>
 <br/>
 
-<img width='100%' height='auto' src='./images/Collapsing-item.gif' alt='Collapsing an item in a nested list' />
+<img width='100%' height='auto' src={CollapsingItem} alt='Collapsing an item in a nested list' />
 
 <Caption>Collapsing an item in a nested list</Caption>
 
@@ -184,14 +188,14 @@ To reorder, pick the item to be reordered via the drag handle placed at the begi
 <br/>
 <br/>
 
-<table style="width: 100%">
+<table style={{width: "100%"}}>
   <tbody>
     <tr>
-      <th style="width:33%; text-align: left;">Property</th>
-      <th style="width:33%; text-align: left;">Initial</th>
-      <th style="width:33%; text-align: left;">Final</th>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Initial</th>
+      <th style={{width:"33%", textAlign: "left"}}>Final</th>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Rotation</td>
       <td>180°</td>
       <td>0° (anti-clockwise)</td>
@@ -203,13 +207,13 @@ To reorder, pick the item to be reordered via the drag handle placed at the begi
 
 **Curve**
 
-<table style="width: 100%">
+<table style={{width: "100%"}}>
   <tbody>
     <tr>
-      <th style="width:50%; text-align: left;">Curve</th>
-      <th style="width:50%; text-align: left;">Duration</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Curve</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Duration</th>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>cubic-bezier(0.2, 0, 0.38, 0.9)</td>
       <td>240ms</td>
     </tr>
@@ -223,14 +227,14 @@ To reorder, pick the item to be reordered via the drag handle placed at the begi
 <br/>
 <br/>
 
-<table style="width: 100%">
+<table style={{width: "100%"}}>
   <tbody>
     <tr>
-      <th style="width:33%; text-align: left;">Property</th>
-      <th style="width:33%; text-align: left;">Initial</th>
-      <th style="width:33%; text-align: left;">Final</th>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Initial</th>
+      <th style={{width:"33%", textAlign: "left"}}>Final</th>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Height</td>
       <td>height</td>
       <td>0px</td>
@@ -242,13 +246,13 @@ To reorder, pick the item to be reordered via the drag handle placed at the begi
 
 **Curve**
 
-<table style="width: 100%">
+<table style={{width: "100%"}}>
   <tbody>
     <tr>
-      <th style="width:50%; text-align: left;">Curve</th>
-      <th style="width:50%; text-align: left;">Duration</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Curve</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Duration</th>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>cubic-bezier(0.2, 0, 1, 0.9)</td>
       <td>160ms</td>
     </tr>

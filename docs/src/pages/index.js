@@ -16,29 +16,29 @@ const Home = () => {
 
   const releaseDate = new Date(changelog.releaseDate).toString().slice(3, 15);
 
-  const getChangelogContent = () =>
-    changelog.updatesList.slice(0, 2).map((updates) => {
-      return updates.map((item, key) => {
+    const getChangelogContent = () => {
+      return changelog.updatesList.slice(0,2).map((updates, updateKey) => {
         return (
-          key < 3 &&
-          (key === 0 ? (
-            <div className="mt-5" key={key}>
+          <div key={updateKey}> 
+            <div className="mt-5">
               <Text weight="strong" size="large">
-                {item}
+                {updates.title}
               </Text>
             </div>
-          ) : (
-            <div className="list" key={key}>
-              <li className="m-0">
-                <Text appearance="subtle" size="small" weight="medium">
-                  {item.substring(0, item.lastIndexOf('('))}
-                </Text>
-              </li>
-            </div>
-          ))
+            {updates.items.slice(0, 2).map((item, itemKey) => ( 
+              <div className="list" key={itemKey}> 
+                <li className="m-0">
+                  <Text appearance="subtle" size="small" weight="medium">
+                    {item.substring(0, item.lastIndexOf('('))}
+                  </Text>
+                </li>
+              </div>
+            ))}
+          </div>
         );
       });
-    });
+    };
+    
 
   return (
     <Homepage relativePagePath={'/404'} is404={true}>
@@ -82,7 +82,7 @@ const Home = () => {
                 <Card className="px-7 card-padding mr-6 h-100 overflow-visible" shadow="none">
                   <div className="d-flex">
                     <Heading size="m" className="mb-2">
-                      Masala Design System v{changelog.version.trim()}
+                    Masala Design System v{changelog.version.trim()} 
                     </Heading>
                     <div>
                       <Badge appearance="success" className="ml-4 mt-3">
