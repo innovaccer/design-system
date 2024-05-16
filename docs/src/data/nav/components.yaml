@@ -2,7 +2,28 @@ base: components
 menus:
   - label: Overview
     link: /components/overview/all-components/
-    
+
+  - label: AI Components
+    link: /components/overview/ai-components/
+    hideInMobile: true
+    subMenu: [
+      {
+        label: 'AIButton',
+      },
+      {
+        label: 'AIChip',
+      },
+      {
+        label: 'AIIconButton',
+      },
+      {
+        label: 'Sara',
+      },
+      {
+        label: 'SaraSparkle',
+      },
+    ]
+
   - label: Action sheet
     link: /components/actionSheet/usage/
     hideInWeb: true

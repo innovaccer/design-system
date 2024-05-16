@@ -10,6 +10,7 @@ const isBrowser = typeof window !== 'undefined';
 const LeftNav = (props) => {
   const { relativePagePath, showMobile, frontmatter } = props;
   const navItemsList = useNavItems(relativePagePath);
+  console.log('navItemsList', navItemsList);
   const navItems = navItemsList.filter((item) => {
     if (relativePagePath.includes(MOBILE)) {
       return !item.hideInMobile;
