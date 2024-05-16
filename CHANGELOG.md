@@ -1,3 +1,41 @@
+## 2.34.0 (2024-05-16)
+
+### Highlights
+
+- feat(gatsby): migration from v3 to v5 (3a26576d)
+- feat(select): add support for relative width for trigger (f74c8951)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(gatsby): migration from v3 to v5 (3a26576d)
+- feat(select): add support for relative width for trigger (f74c8951)
+
+### Fixes
+
+- fix(select): update argument type of onchange prop for search input (ae61b0e0)
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 2.33.0 (2024-05-14)
 
 ### Highlights
