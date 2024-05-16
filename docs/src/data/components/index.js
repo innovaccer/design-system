@@ -102,7 +102,7 @@ export const data = [
     link: 'helpText/usage',
     name: 'Help text',
     design: 'Available',
-    code: 'Unavailable',
+    code: 'Available',
     image: () => <StaticImage src="./images/Helptext2.png" alt="Help text" imgStyle={imgStyle} />,
   },
   {

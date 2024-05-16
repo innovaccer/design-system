@@ -33,6 +33,7 @@ const getRawPreviewCode = (customCode, dataProvider) => {
   if (dataProvider) {
     return `() => <div><Spinner /></div>`;
   }
+
   if (customCode) {
     return `${generateImports(customCode, DS, '@innovaccer/design-system')}
 

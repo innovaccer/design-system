@@ -19,7 +19,7 @@ const Rectangle = ({ name }) => {
 
 const useGetStorybookData = async (name) => {
   let componentName = name;
-  let componentPath = `/sb/${componentName}.json`;
+  let componentPath = `/sb/${componentName}.json`; 
 
   // To handle Rich Text Editor Stories
   if (name.startsWith('library')) {
@@ -37,36 +37,29 @@ const useGetStorybookData = async (name) => {
 };
 
 function getJsxCode(name) {
-  return useGetStorybookData(name)
-    .then(componentData => {
-      const jsxCode = componentData && componentData.parameters
+  return useGetStorybookData(name).then((componentData) => {
+    const jsxCode =
+      componentData && componentData.parameters
         ? componentData.parameters.docs.docPage?.customCode ||
-        componentData.parameters.storySource?.source
+          componentData.parameters.storySource?.source
         : '';
-      return jsxCode;
-
-    })
+    return jsxCode;
+  });
 }
 
 const Preview = ({ name }) => {
   return (
     <div>
-      <PropsTable
-        dataProvider={() => getJsxCode(name)}
-      />
+      <PropsTable dataProvider={() => getJsxCode(name)} />
     </div>
   );
 };
 
 function getPropTableData(name) {
-  return useGetStorybookData(name)
-    .then(componentData => {
-      const jsxCode = componentData
-        ? componentData.parameters.argTypes
-        : '';
-      return jsxCode;
-
-    })
+  return useGetStorybookData(name).then((componentData) => {
+    const jsxCode = componentData ? componentData.parameters.argTypes : '';
+    return jsxCode;
+  });
 }
 
 const FrameWrapper = ({ componentName }) => {
