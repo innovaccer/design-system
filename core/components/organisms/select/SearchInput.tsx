@@ -4,7 +4,7 @@ import { SelectContext } from './SelectContext';
 import { handleInputKeyDown } from './utils';
 import { InputProps } from '@/index.type';
 
-export interface SelectInputProps extends InputProps {
+export interface SelectInputProps extends Omit<InputProps, 'onChange'> {
   /**
    * Callback function when user clicks the clear button
    */
@@ -12,7 +12,7 @@ export interface SelectInputProps extends InputProps {
   /**
    * Callback function when `Input` text changes
    */
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (value?: string) => void;
 }
 
 export const SearchInput = (props: SelectInputProps) => {

@@ -54,7 +54,7 @@ const customCode = `() => {
   ];
 
   const onSelectHandler = (selectedOption) => {
-    action('selectedOption', selectedOption)();
+    console.log('selectedOption', selectedOption);
   };
 
   return (
