@@ -4,6 +4,8 @@ description: There are different types of pages that a mobile apps can use.
 showMobile: true
 ---
 
+import pageTypes3 from "./images/pageTypes-3.gif"
+
 ### Level 0 Page
 This is the root-level page of a mobile app.
 #### Default Page
@@ -27,24 +29,24 @@ Non-modal pages are those which the users cannot dismiss or cancel. They can onl
 The **Back button (←)** present at the top left is used to navigate back through the stack/levels.
 
 ##### Properties
-<table style="width: 100%">
+<table style={{width: "100%"}}>
   <tbody>
     <tr>
-      <th style="width:33%; text-align: left;">Property</th>
-      <th style="width:33%; text-align: left;">Value(s)</th>
-      <th style="width:33%; text-align: left;">Default value</th>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Action</td>
       <td>Back button</td>
       <td>-</td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Background color</td>
       <td>stone-lightest</td>
       <td>-</td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Page transition</td>
       <td>Slide-in(left to right)</td>
       <td>-</td>
@@ -55,25 +57,25 @@ The **Back button (←)** present at the top left is used to navigate back throu
 
 ##### Transitions
 **Navigating deep in the pages/levels**
-<table style="width: 100%">
+<table style={{width: "100%"}}>
   <tbody>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Interaction</td>
       <td>Slide-in(right to left)</td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Style of motion</td>
       <td>Expressive motion</td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Easing</td>
       <td>Entrance easing</td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Curve</td>
       <td>cubic-bezier(0,0,0.3,1)</td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Duration</td>
       <td>240ms</td>
     </tr>
@@ -82,25 +84,25 @@ The **Back button (←)** present at the top left is used to navigate back throu
 <br/>
 
 **Navigating back through the stacks/levels**
-<table style="width: 100%">
+<table style={{width: "100%"}}>
   <tbody>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Interaction</td>
       <td>Slide-out(left to right)</td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Style of motion</td>
       <td>Expressive motion</td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Easing</td>
       <td>Exit easing</td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Curve</td>
       <td>cubic-bezier(0.4, 0.14, 1, 1)</td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Duration</td>
       <td>240ms</td>
     </tr>
@@ -108,5 +110,5 @@ The **Back button (←)** present at the top left is used to navigate back throu
 </table>
 <br/>
 
-<img style="width: 100%" src="/images/pageTypes-3.gif" alt="Stacking of non-modal pages" />
+<img style={{width: "100%"}} src={pageTypes3} alt="Stacking of non-modal pages" />
 <br/>

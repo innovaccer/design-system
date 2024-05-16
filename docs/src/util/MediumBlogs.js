@@ -5,7 +5,7 @@ export default function MediumBlogs() {
     allMediumPost: { edges },
   } = useStaticQuery(graphql`
     query MEDIUM_BLOGS {
-      allMediumPost(sort: { fields: [createdAt], order: DESC }) {
+      allMediumPost(sort: {createdAt: DESC}) {
         edges {
           node {
             id

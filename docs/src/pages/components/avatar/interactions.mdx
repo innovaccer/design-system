@@ -173,19 +173,19 @@
 <br/>
 <br/>
 
-<table style="width: 100%">
+<table style={{width: "100%"}}>
   <tbody>
     <tr>
-      <th style="width:33%; text-align: left;">Initial state</th>
-      <th style="width:33%; text-align: left;">Keyboard Interaction</th>
-      <th style="width:33%; text-align: left;">Final state</th>
+      <th style={{width:"33%", textAlign: "left"}}>Initial state</th>
+      <th style={{width:"33%", textAlign: "left"}}>Keyboard Interaction</th>
+      <th style={{width:"33%", textAlign: "left"}}>Final state</th>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Avatar in default state  </td>
       <td>&#60;Tab&#62;</td>
       <td>The avatar will be in focus</td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Avatar in focus  </td>
       <td>&#60;Tab&#62;</td>
       <td>
@@ -196,7 +196,7 @@
         </ul>
       </td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td></td>
       <td>&#60;Enter&#62;</td>
       <td>
@@ -206,7 +206,7 @@
         </ul>
       </td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td></td>
       <td>&#60;down arrow&#62;</td>
       <td>
@@ -216,7 +216,7 @@
         </ul>
       </td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td></td>
       <td>&#60;up arrow&#62;</td>
       <td>
@@ -226,26 +226,26 @@
         </ul>
       </td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td></td>
       <td>&#60;Escape&#62;</td>
       <td>Nothing happens.</td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Popover is open and an item is in focus<br/>(The trigger will not be in focus at this instance)</td>
       <td>&#60;Tab&#62;</td>
       <td>
         Shift focus to the next item in Tab sequence on the page. <br/>The popover will be excluded from the tab sequence on the page. 
       </td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td></td>
       <td>&#60;Enter&#62;</td>
       <td>
         Select the focused item. Popover will remain open. 
       </td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td></td>
       <td>&#60;down arrow&#62;</td>
       <td>
@@ -262,14 +262,15 @@
         </ul>
       </td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td></td>
       <td>&#60;up arrow&#62;</td>
       <td>
         <ul>
           <li>Shift focus to the previous focusable item.</li>
           <li>If focus is on the first item, shift focus to the last focusable item.</li>
-          <li>In case of search: 
+          <li>
+            In case of search: 
             <ul>
               <li class="ml-5">If focus is on the first item, shift focus to search.</li>
               <li class="ml-5">If focus is on search, shift focus to the last focusable item.</li>
@@ -278,7 +279,7 @@
         </ul>
       </td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td></td>
       <td>&#60;Escape&#62;</td>
       <td>Close the popover. Focus is now on the numeric avatar.</td>

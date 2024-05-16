@@ -12,7 +12,7 @@ const TableOfContent = (props) => {
 
   let navItems = useNavItems(relativePagePath);
   const [active, setActive] = useState('');
-
+  
   useEffect(() => {
     const navIds = getIds(navItems);
     let element = document.getElementById('main-container');
@@ -20,7 +20,7 @@ const TableOfContent = (props) => {
     return () => {
       element.removeEventListener('scroll', (e) => onScrollHandler(e, navIds), true);
     };
-  }, []);
+  }, [navItems]);
 
   useEffect(() => {
     let urlHash = '';
@@ -30,7 +30,7 @@ const TableOfContent = (props) => {
     } else if (navItems && navItems.length) {
       setActive(navItems[0].url?.slice(1));
     }
-  }, []);
+  }, [location]);
 
   const isInViewport = (element) => {
     const rect = element.getBoundingClientRect();
@@ -65,15 +65,17 @@ const TableOfContent = (props) => {
             setActive(item);
             resultFound = true;
             let activeElement = document.getElementsByClassName('active-link')[0];
-            let activeUrl = activeElement.getElementsByClassName('toc-link')[0].href;
-            let subHeading = document.getElementsByClassName('subheading')[0];
-
-            const activeContent = fetchUrl(activeUrl);
-            let flag = isInViewport(activeElement);
-            if (flag === 'belowViewPort') activeElement.scrollIntoView(true);
-            else if (flag === 'aboveViewPort') {
-              if (activeContent == idList[0]) subHeading.scrollIntoView(true);
-              else activeElement.scrollIntoView(true);
+            if(activeElement){
+              let activeUrl = activeElement.getElementsByClassName('toc-link')[0].href;
+              let subHeading = document.getElementsByClassName('subheading')[0];
+              
+              const activeContent = fetchUrl(activeUrl);
+              let flag = isInViewport(activeElement);
+              if (flag === 'belowViewPort') activeElement.scrollIntoView(true);
+              else if (flag === 'aboveViewPort') { 
+                if (activeContent == idList[0]) subHeading.scrollIntoView(true);
+                else activeElement.scrollIntoView(true);
+              }
             }
           }
         }

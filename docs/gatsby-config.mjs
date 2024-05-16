@@ -1,17 +1,17 @@
-require("dotenv").config({
+import dotenv from 'dotenv';
+dotenv.config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
-const path = require('path');
-
-const remarkSlug = require(`remark-slug`);
-
+import path from 'path';
+import remarkSlug from 'remark-slug';
 
 const repositoryDefault = {
   baseUrl: '',
   subDirectory: '',
   branch: 'main',
 };
+
 
 const {
   isSearchEnabled = true,
@@ -109,8 +109,7 @@ const defaultRemarkPlugins = [
   },
 ];
 
-module.exports = {
-  siteMetadata: {
+const siteMetadata =  {
     isSearchEnabled,
     isServiceWorkerEnabled,
     title: 'Masala Design System',
@@ -119,8 +118,9 @@ module.exports = {
     keywords: 'gatsby,theme,MDS,masala,design,system, masala design system,style,guide,component,library,design system,styleguide',
     lang: 'en',
     repository: { ...repositoryDefault, ...repository },
-  },
-  plugins: [
+  }
+
+const plugins = [
     {
       resolve: `gatsby-source-filesystem`,
       name: `Nav`,
@@ -150,17 +150,14 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: mdxExtensions,
-        remarkPlugins: [remarkSlug],
+        mdxOptions: {
+          remarkPlugins: [remarkSlug],
+        },
         gatsbyRemarkPlugins: [
           ...defaultRemarkPlugins,
           ...gatsbyRemarkPlugins,
           `gatsby-remark-images`
-        ],
-        plugins: [`gatsby-remark-images`],
-        defaultLayouts: {
-          default: require.resolve('./src/components/templates/Default.js'),
-          home: require.resolve('./src/components/templates/Homepage.js'),
-        },
+        ]
       },
     },
     {
@@ -188,5 +185,10 @@ module.exports = {
       },
     }
   ]
-}
 
+const config = {
+  siteMetadata,
+  plugins
+};
+
+export default config;

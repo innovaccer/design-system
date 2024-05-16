@@ -1,6 +1,9 @@
+import comboboxOpening from "./images/combobox-opening.gif"
+import comboboxClosing from "./images/combobox-closing.gif"
+
 ### Combobox - opening
 
-<img width="100%" height="auto" src="./images/combobox-opening.gif" alt="Opening of Combobox" />
+<img width="100%" height="auto" src={comboboxOpening} alt="Opening of Combobox" />
 
 <Caption>Opening of Combobox</Caption>
 
@@ -10,7 +13,7 @@ Default [popover](https://design.innovaccer.com/components/popover/interactions/
 
 ### Combobox - closing
 
-<img width="100%" height="auto" src="./images/combobox-closing.gif" alt="Closing a Combobox" />
+<img width="100%" height="auto" src={comboboxClosing} alt="Closing a Combobox" />
 
 <Caption>Closing a Combobox</Caption>
 
@@ -22,24 +25,24 @@ Default [popover](https://design.innovaccer.com/components/popover/interactions/
 
 <br />
 
-<table style="width: 100%">
+<table style={{width: "100%"}}>
   <tbody>
     <tr>
-      <th style="width:33%; text-align: left;">Initial state</th>
-      <th style="width:33%; text-align: left;">Keyboard Interaction</th>
-      <th style="width:33%; text-align: left;">Final state</th>
+      <th style={{width:"33%", textAlign: "left"}}>Initial state</th>
+      <th style={{width:"33%", textAlign: "left"}}>Keyboard Interaction</th>
+      <th style={{width:"33%", textAlign: "left"}}>Final state</th>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Combobox in default state </td>
       <td>&#60;Tab&#62;</td>
       <td>Combobox will be in focus but the popover will not be opened. </td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td></td>
       <td>Click</td>
       <td>Combobox will be in focus and the popover will be opened. </td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Combobox in focus (typing state)</td>
       <td>&#60;Tab&#62;</td>
       <td>
@@ -47,7 +50,7 @@ Default [popover](https://design.innovaccer.com/components/popover/interactions/
         on the page
       </td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td></td>
       <td>Type characters</td>
       <td>
@@ -57,7 +60,7 @@ Default [popover](https://design.innovaccer.com/components/popover/interactions/
         </ul>
       </td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td></td>
       <td>&#60;down arrow&#62;</td>
       <td>
@@ -69,7 +72,7 @@ Default [popover](https://design.innovaccer.com/components/popover/interactions/
         </ul>
       </td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td></td>
       <td>&#60;up arrow&#62;</td>
       <td>
@@ -81,7 +84,7 @@ Default [popover](https://design.innovaccer.com/components/popover/interactions/
         </ul>
       </td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td></td>
       <td>&#60;Escape&#62;</td>
       <td>
@@ -94,7 +97,7 @@ Default [popover](https://design.innovaccer.com/components/popover/interactions/
         </ul>
       </td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td></td>
       <td>&#60;Backspace/Delete&#62;</td>
       <td>
@@ -120,12 +123,12 @@ Default [popover](https://design.innovaccer.com/components/popover/interactions/
         </ul>
       </td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Popover is open and first item is focused. <br /> (Combobox will not be in focus at this instance)  </td>
       <td>&#60;Tab&#62;</td>
       <td>Focus shifts to next item in Tab sequence on the page. <br /> The popover will be excluded from the tab sequence on the page</td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td></td>
       <td>&#60;down arrow&#62;</td>
       <td>
@@ -135,7 +138,7 @@ Default [popover](https://design.innovaccer.com/components/popover/interactions/
         </ul>
       </td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td></td>
       <td>&#60;up arrow&#62;</td>
       <td>
@@ -145,12 +148,12 @@ Default [popover](https://design.innovaccer.com/components/popover/interactions/
         </ul>
       </td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td></td>
       <td>&#60;Escape&#62;</td>
       <td>Close the popover. Focus is now on the combobox with no change to the value entered in the combobox(if any). </td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td></td>
       <td>&#60;Enter&#62;</td>
       <td>

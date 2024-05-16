@@ -6,6 +6,8 @@ showMobile: true
 keywords: ['Path', 'Steps', 'Multistep', 'Wizard', 'Onboarding']
 ---
 
+import stepper1 from './images/stepper-1.gif'
+
 Steppers are used to help users keep track of their progress in a multi-step workflow. It is recommended to break down a long process into multiple steps using steppers to help users keep track of their progress while completing a task.
 
 <Preview name='components-stepper-all--all' />
@@ -20,25 +22,25 @@ The stepper can be used at different places to serve different purposes. The ste
 
 <br/>
 
-<table style="width: 100%">
+<table style={{width: "100%"}}>
  <tbody>
    <tr>
-     <th style="width:50%; text-align: left;">Property</th>
-     <th style="width:50%; text-align: left;">Value(s)</th>
+     <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+     <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
    </tr>
-   <tr style="vertical-align: top">
+   <tr style={{verticalAlign: "top"}}>
       <td>Height (of a stepper item)</td>
       <td>32 px</td>
    </tr>
-   <tr style="vertical-align: top">
+   <tr style={{verticalAlign: "top"}}>
      <td>Corner radius (of the active stepper item)</td>
      <td>16 px</td>
    </tr>
-   <tr style="vertical-align: top">
+   <tr style={{verticalAlign: "top"}}>
      <td>Margin (of a stepper item)<br/><em>(top, right, bottom, left)</em></td>
      <td>0 px, 1 px, 0 px, 1 px</td>
    </tr>
-   <tr style="vertical-align: top">
+   <tr style={{verticalAlign: "top"}}>
      <td>Spacing between stepper items</td>
      <td>0 px</td>
    </tr>
@@ -48,14 +50,14 @@ The stepper can be used at different places to serve different purposes. The ste
 
 
 ### Configurations
-<table style="width: 100%">
+<table style={{width: "100%"}}>
   <tbody>
     <tr>
-      <th style="width:33%; text-align: left;">Property</th>
-      <th style="width:33%; text-align: left;">Value(s)</th>
-      <th style="width:33%; text-align: left;">Default value</th>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Leading icon</td>
       <td>
         <ul>
@@ -65,7 +67,7 @@ The stepper can be used at different places to serve different purposes. The ste
       </td>
       <td>radio_button_unchecked</td>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Label</td>
       <td>&#60;label&#62;</td>
       <td>-</td>
@@ -82,7 +84,7 @@ The stepper can be used at different places to serve different purposes. The ste
 
 Users cannot visit any upcoming steps however they can visit any previous steps given the step was done or skipped.
 
-<img src='./images/stepper-1.gif' width='100%' height='auto'/>
+<img src={stepper1} width='100%' height='auto'/>
 
 <br/>
 <br/>

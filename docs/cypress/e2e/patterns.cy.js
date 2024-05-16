@@ -38,7 +38,8 @@ describe('Cypress Test of patterns page', () => {
 
   it('check for search bar of overview page', () => {
     cy.visit(patternsURL);
-    cy.searchBar('abc', 'Form');
+    cy.wait(2000)
+    cy.searchBar('abc', 'Form' );
   });
 
   it('check navigation of status table', () => {

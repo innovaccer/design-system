@@ -61,13 +61,13 @@ For example, if a user is scrolling the content of the body, any basic divider p
 
 <br/>
  
-<table style="width: 100%">
+<table style={{width: "100%"}}>
  <tbody>
   <tr>
-    <th style="width:50%; text-align: left;">Property</th>
-    <th style="width:50%; text-align: left;">Value(s)</th>
+    <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+    <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
   </tr>
-  <tr style="vertical-align: top">
+  <tr style={{verticalAlign: "top"}}>
     <td>Height</td>
     <td>1 px</td>
   </tr>
@@ -82,13 +82,13 @@ For example, if a user is scrolling the content of the body, any basic divider p
 
 <br/>
  
-<table style="width: 100%">
+<table style={{width: "100%"}}>
  <tbody>
   <tr>
-    <th style="width:50%; text-align: left;">Property</th>
-    <th style="width:50%; text-align: left;">Value(s)</th>
+    <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+    <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
   </tr>
-  <tr style="vertical-align: top">
+  <tr style={{verticalAlign: "top"}}>
     <td>Width</td>
     <td>1 px</td>
   </tr>
@@ -102,14 +102,14 @@ For example, if a user is scrolling the content of the body, any basic divider p
 <br/>
 <br/>
 
-<table style="width: 100%">
+<table style={{width: "100%"}}>
   <tbody>
     <tr>
-      <th style="width:33%; text-align: left;">Property</th>
-      <th style="width:33%; text-align: left;">Value(s)</th>
-      <th style="width:33%; text-align: left;">Default value</th>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
     </tr>
-    <tr style="vertical-align: top">
+    <tr style={{verticalAlign: "top"}}>
       <td>Appearance</td>
       <td>
           <ul>
@@ -131,7 +131,7 @@ For example, if a user is scrolling the content of the body, any basic divider p
 Horizontal dividers with basic appearance can be slightly spaced from the left (12px or 16 px). This way they can separate related list-type content. They should be aligned with anchoring elements in the left such as icons, avatars, etc.
 <Preview name="components-divider-indented--indented"/>
 
-> Table is the only exception here where we do not use the indented divider in rows because table can have vertical dividers as well which then make it appear like the familiar Excel like structure. Having an indented divider doesn't work in that case.
+Table is the only exception here where we do not use the indented divider in rows because table can have vertical dividers as well which then make it appear like the familiar Excel like structure. Having an indented divider doesn't work in that case.
 
 <br/>
 In most of the cases, the content inside cards/containers already has a padding of 16px and thus the divider(s) should start in such a way that it is aligned with the content (be it text or an anchor point like an icon, avatar, etc.).
