@@ -41,7 +41,7 @@ function Overview({ data, mode, path = 'components' }) {
           previewList.map(({ image = () => <img alt="" />, name, status, showOverview = true, link = '' }) => {
             if (showOverview) {
               return (
-                <div key={name} className="overview-container-card pb-6 mr-6">
+                <div key={name} className="overview-container-card mb-6 mr-6">
                   <Link
                     className="card-link"
                     disabled={!link.length}

@@ -61,9 +61,10 @@ const MDXPage = (props) => {
 const OverviewContainer = (props) => {
   return (
     <Row className="justify-content-center">
-      <Column data-test="Docs-content-wrapper" className="py-8 min-vh-100 overview-container" size={12}>
+      <Column data-test="Docs-content-wrapper" className="py-8 min-vh-100 inner-left-container" size={9}>
         <ComponentsPage {...props} />
       </Column>
+      <Column size={3}></Column>
     </Row>
   );
 };
