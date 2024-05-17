@@ -1,5 +1,5 @@
 .card-opacity {
-  opacity: var(--opacity-10);
+  opacity: var(--opacity-20);
 }
 
 .overview-card:hover .card-opacity {
@@ -35,5 +35,6 @@
 }
 
 .overview-container-card {
-  max-width: 220px;
+  width: 220px;
+  height: 184px;
 }
