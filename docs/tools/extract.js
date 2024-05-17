@@ -8,7 +8,7 @@ const puppeteerCore = require('puppeteer-core');
 
 const STORYBOOK_HOST =
   process.env.STORYBOOK_HOST ||
-  'https://innovaccer.github.io/design-system/iframe.html?id=components-avatar-avatargroup-all--all&args=&viewMode=story';
+  'https://mds.innovaccer.com/iframe.html?id=components-avatar-avatargroup-all--all&args=&viewMode=story';
 
 const read = async (url) => {
     const browser = await usePuppeteerBrowser();
