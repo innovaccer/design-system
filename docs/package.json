@@ -2,21 +2,27 @@
   "name": "docs",
   "version": "1.0.0",
   "description": "<p align=\"center\">   <a href=\"#\">     <img alt=\"\" src=\"https://innovaccer.com/static/image/site-logo/innovaccer-logo-black.svg\" width=\"20%\" />   </a> </p> <h1 align=\"center\">   Masala Design System </h1> <h3 align=\"center\">   Gatsby site for Masala Design system documentation. </h3>",
+  "author": "",
+  "license": "MIT",
   "main": "index.js",
+  "engineStrict": true,
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
-    "dev": "./tools/develop.sh",
     "build": "./tools/build.sh",
-    "serve": "gatsby serve",
-    "deploy": "gatsby-plugin-s3 deploy --yes",
     "clean": "gatsby clean",
-    "extract:dev": "export STORYBOOK_HOST='http://localhost:5000/iframe.html?id=components-avatar-avatargroup-all--all&args=&viewMode=story' && node ./tools/extract.js",
-    "extract": "node ./tools/extract.js",
-    "cypress:open": "cypress open",
     "cypress": "cypress run",
-    "lint:check": "eslint ./src --ext .tsx,.ts,.js",
+    "cypress:open": "cypress open",
+    "deploy": "gatsby-plugin-s3 deploy --yes",
+    "dev": "./tools/develop.sh",
+    "extract": "node ./tools/extract.js",
+    "extract:dev": "export STORYBOOK_HOST='http://localhost:5000/iframe.html?id=components-avatar-avatargroup-all--all&args=&viewMode=story' && node ./tools/extract.js",
     "lint": "npm run lint:check -- --fix",
-    "prettier:check": "prettier --config ./.prettierrc --check",
+    "lint:check": "eslint ./src --ext .tsx,.ts,.js",
     "prettier": "prettier --config ./.prettierrc --write 'src/**/*.css'",
+    "prettier:check": "prettier --config ./.prettierrc --check",
+    "serve": "gatsby serve",
     "test": "CYPRESS_HOST_URL='http://localhost:9000' start-server-and-test serve http://localhost:9000 cypress"
   },
   "dependencies": {
@@ -63,9 +69,6 @@
     "remark-slug": "^6.1.0",
     "unist-util-visit": "^5.0.0"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
   "devDependencies": {
     "cypress": "^13.8.1",
     "eslint": "^7.31.0",
@@ -74,5 +77,6 @@
     "prettier": "^2.3.2",
     "start-server-and-test": "^2.0.3",
     "typescript": "3.9.10"
-  }
+  },
+  "keywords": []
 }
