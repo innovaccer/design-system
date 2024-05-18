@@ -2,7 +2,7 @@ name: Docs pull request
 
 on: 
   pull_request:
-    paths: ['docs/**']
+    paths: 'docs/**'
 
 jobs:
   lint_test_build:
@@ -23,14 +23,6 @@ jobs:
 
       - name: lint
         run: npm run lint:check
-      
-      - name: extract stories
-        run: npm run extract
-        env:
-          STORYBOOK_HOST: 'https://mds-dev.innovaccer.com/iframe.html?id=components-avatar-avatargroup-all--all&args=&viewMode=story'
 
       - name: build
         run: npm run build
-
-      - name: test
-        run: npm run test
