@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import Editable from '@/components/atoms/editable';
-import { ChipInput, Button, Chip, Text } from '@/index';
+import { ChipInput, Button, Chip, Text, Popover, InlineMessage } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { ChipInputProps } from '@/index.type';
 
@@ -23,13 +23,21 @@ export interface EditableChipInputProps extends BaseProps {
    */
   disableSaveAction?: boolean;
   /**
+   * Shows error state in case of failed validation
+   */
+  error?: boolean;
+  /**
+   * Error message to be shown in case of failed validation
+   */
+  errorMessage?: string;
+  /**
    * Props to be used for `ChipInput`
    */
-  chipInputOptions: Omit<ChipInputProps, 'placeholder' | 'value' | 'defaultValue'>;
+  chipInputOptions: Omit<ChipInputProps, 'error' | 'placeholder' | 'value' | 'defaultValue'>;
 }
 
 export const EditableChipInput = (props: EditableChipInputProps) => {
-  const { placeholder, onChange, className, disableSaveAction, chipInputOptions } = props;
+  const { error, errorMessage, placeholder, onChange, className, disableSaveAction, chipInputOptions } = props;
 
   const { onChange: onChipInputChange, chipOptions = {}, ...rest } = chipInputOptions;
   const { onClick, ...chipObject } = chipOptions;
@@ -37,6 +45,7 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
   const [inputValue, setInputValue] = React.useState(props.value);
   const [value, setValue] = React.useState(props.value);
   const [showComponent, setShowComponent] = React.useState(false);
+  const ref = React.useRef<HTMLDivElement>(null);
 
   const baseProps = extractBaseProps(props);
   const isWithChips = inputValue && inputValue.length;
@@ -134,22 +143,39 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
     return <Text className="pt-1">{placeholder}</Text>;
   };
 
+  const chipInputComponentWidth = ref.current?.getBoundingClientRect().width;
+
+  const chipInputComponent = (
+    <div data-test="DesignSystem-EditableChipInput--wrapper" style={{ width: chipInputComponentWidth }}>
+      <ChipInput
+        data-test="DesignSystem-EditableChipInput--ChipInput"
+        placeholder={placeholder}
+        onChange={onChipInputChangeHandler}
+        value={inputValue}
+        error={error}
+        chipOptions={chipOptions}
+        {...rest}
+        className={inputClass}
+      />
+    </div>
+  );
+
   const renderChildren = () => {
     if (showComponent) {
-      return (
-        <div data-test="DesignSystem-EditableChipInput--wrapper">
-          <ChipInput
-            data-test="DesignSystem-EditableChipInput--ChipInput"
-            placeholder={placeholder}
-            onChange={onChipInputChangeHandler}
-            value={inputValue}
-            chipOptions={chipOptions}
-            {...rest}
-            className={inputClass}
-          />
-        </div>
+      return error && errorMessage ? (
+        <Popover
+          trigger={chipInputComponent}
+          position="right"
+          className="px-6 py-6 d-flex align-items-center"
+          on="hover"
+        >
+          <InlineMessage appearance="alert" description={errorMessage} />
+        </Popover>
+      ) : (
+        chipInputComponent
       );
     }
+
     return (
       <div className={defaultClasses} data-test="DesignSystem-EditableChipInput--Default">
         {renderDefaultState()}
@@ -158,7 +184,7 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
   };
 
   return (
-    <div className={classes} data-test="DesignSystem-EditableChipInput" {...baseProps}>
+    <div className={classes} data-test="DesignSystem-EditableChipInput" {...baseProps} ref={ref}>
       <Editable onChange={onChangeHandler} editing={showComponent}>
         {renderChildren()}
       </Editable>
