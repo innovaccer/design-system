@@ -1,5 +1,19 @@
 .card-opacity {
   opacity: var(--opacity-20);
+  flex: 1;
+}
+
+.overview-card .gatsby-image-wrapper img {
+  object-fit: contain;
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.overview-card .gatsby-image-wrapper {
+  height: 100%;
 }
 
 .overview-card:hover .card-opacity {
