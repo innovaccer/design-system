@@ -1,16 +1,18 @@
 import * as React from 'react';
 import { EmptyState, Button } from '@/index';
-import noContent from './assets/no-files-empty-files.svg';
+import noContent from '../assets/error.svg';
 
-export const all = () => {
+export const serverUnavailable = () => {
   return (
     <EmptyState>
       <EmptyState.Image src={noContent}></EmptyState.Image>
-      <EmptyState.Title>Title goes here</EmptyState.Title>
-      <EmptyState.Description>Description goes here</EmptyState.Description>
+      <EmptyState.Title>Uh-oh, our server is taking a nap!</EmptyState.Title>
+      <EmptyState.Description>
+        The server is unavailable at the moment due to maintenance downtime or capacity problems. You can try again
+        later.
+      </EmptyState.Description>
       <EmptyState.Actions>
-        <Button className="mr-4">Secondary action</Button>
-        <Button appearance="primary">Primary action</Button>
+        <Button>Go back</Button>
       </EmptyState.Actions>
     </EmptyState>
   );
@@ -22,20 +24,20 @@ const customCode = `() => {
   return (
       <EmptyState>
         <EmptyState.Image src={${ImagePath}}></EmptyState.Image>
-        <EmptyState.Title>Title goes here</EmptyState.Title>
+        <EmptyState.Title>Uh-oh, our server is taking a nap!</EmptyState.Title>
         <EmptyState.Description>
-          Description goes here
+          The server is unavailable at the moment due to maintenance downtime or capacity problems. You can try again
+          later.
         </EmptyState.Description>
         <EmptyState.Actions>
-          <Button className="mr-4">Secondary action</Button>
-          <Button appearance="primary">Primary action</Button>
+          <Button>Go back</Button>
         </EmptyState.Actions>
       </EmptyState>
   );
 }`;
 
 export default {
-  title: 'Components/EmptyState/All',
+  title: 'Components/EmptyState/Variants/Server Unavailable',
   component: EmptyState,
   subcomponents: {
     'EmptyState.Image': EmptyState.Image,

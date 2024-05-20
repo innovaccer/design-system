@@ -1,16 +1,17 @@
 import * as React from 'react';
 import { EmptyState, Button } from '@/index';
-import noContent from './assets/no-files-empty-files.svg';
+import noContent from '../assets/connection-lost.svg';
 
-export const all = () => {
+export const internetIssue = () => {
   return (
     <EmptyState>
       <EmptyState.Image src={noContent}></EmptyState.Image>
-      <EmptyState.Title>Title goes here</EmptyState.Title>
-      <EmptyState.Description>Description goes here</EmptyState.Description>
+      <EmptyState.Title>You are offline</EmptyState.Title>
+      <EmptyState.Description>
+        Looks like you are not connected to the internet. Check your connection and try again.
+      </EmptyState.Description>
       <EmptyState.Actions>
-        <Button className="mr-4">Secondary action</Button>
-        <Button appearance="primary">Primary action</Button>
+        <Button icon="refresh">Try again</Button>
       </EmptyState.Actions>
     </EmptyState>
   );
@@ -22,20 +23,19 @@ const customCode = `() => {
   return (
       <EmptyState>
         <EmptyState.Image src={${ImagePath}}></EmptyState.Image>
-        <EmptyState.Title>Title goes here</EmptyState.Title>
+        <EmptyState.Title>You are offline</EmptyState.Title>
         <EmptyState.Description>
-          Description goes here
+          Looks like you are not connected to the internet. Check your connection and try again.
         </EmptyState.Description>
         <EmptyState.Actions>
-          <Button className="mr-4">Secondary action</Button>
-          <Button appearance="primary">Primary action</Button>
+          <Button icon="refresh">Try again</Button>
         </EmptyState.Actions>
       </EmptyState>
   );
 }`;
 
 export default {
-  title: 'Components/EmptyState/All',
+  title: 'Components/EmptyState/Variants/Internet Issue',
   component: EmptyState,
   subcomponents: {
     'EmptyState.Image': EmptyState.Image,
