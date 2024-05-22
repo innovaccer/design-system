@@ -21,6 +21,8 @@ const path = require('path');
     }
   };
 
+  console.log('------Extracting Mds-AI Stories------\n\n')
+
   // Launch the browser
   const browser = await usePuppeteerBrowser();
   const page = await browser.newPage();
@@ -62,7 +64,7 @@ const path = require('path');
   await browser.close();
 
   // Create a directory to store the JSON files
-  const outputDir = 'static/ai-storybook-data';
+  const outputDir = 'static/mds-ai';
   if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir);
   }
@@ -95,7 +97,7 @@ const path = require('path');
 
     // Construct the final component string
     const sourceCode = `<${componentName} ${argsString} />`;
-    console.log(componentName,' Component SourceCode: ', sourceCode);
+    console.log(componentName,'Component SourceCode:', sourceCode);
     return sourceCode;
   }
 
@@ -110,5 +112,5 @@ const path = require('path');
     })
   );
 
-  console.log(`Stories data extracted and saved to ${outputDir}`);
+  console.log(`\n\nStories data extracted and saved to ${outputDir}`);
 })();
