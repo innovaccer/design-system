@@ -13,6 +13,7 @@ menus:
       },
       {
         label: 'AI Chip',
+        link: /components/AIChip/usage/
       },
       {
         label: 'Sara',
