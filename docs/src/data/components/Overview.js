@@ -27,7 +27,7 @@ function Overview({ data, mode, path = 'components' }) {
   });
 
   return (
-    <div>
+    <div style={{marginRight: '-16px'}}>
       <Input
         className="w-25 my-7"
         icon="search"
