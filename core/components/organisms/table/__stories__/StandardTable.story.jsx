@@ -81,7 +81,7 @@ export const standardTable = () => {
   ];
 
   return (
-    <Card>
+    <Card className="overflow-hidden">
       <Table
         loaderSchema={loaderSchema}
         showMenu={false}
@@ -179,7 +179,7 @@ const customCode = `() => {
   ];
 
   return (
-      <Card>
+      <Card className="overflow-hidden">
         <Table
           showMenu={false}
           separator={false}

@@ -99,7 +99,7 @@ export const pinnedColumns = () => {
   ];
 
   return (
-    <Card>
+    <Card className="overflow-hidden">
       <Table
         loaderSchema={loaderSchema}
         size="compressed"
@@ -213,7 +213,7 @@ const customCode = `() => {
   ];
 
   return (
-      <Card>
+      <Card className="overflow-hidden">
         <Table
           showMenu={false}
           size="compressed"

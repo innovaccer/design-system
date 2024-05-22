@@ -18,7 +18,7 @@ export const withPagination = () => {
           <Column key={index} className="ml-10" size={5}>
             <Heading>{`paginationType: ${v}`}</Heading>
             <div className="vh-75">
-              <Card shadow="light" className="h-100">
+              <Card className="h-100 overflow-hidden">
                 <Table
                   data={data}
                   schema={schema}
@@ -92,7 +92,7 @@ const customCode = `
       <Column key={index} className="ml-10" size={5}>
         <Heading>{\`paginationType: \${v}\`}</Heading>
         <div className="vh-75">
-          <Card shadow="light" className="h-100">
+          <Card className="h-100 overflow-hidden">
             <Table
               data={data}
               schema={schema}

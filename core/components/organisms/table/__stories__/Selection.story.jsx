@@ -146,7 +146,7 @@ export const selection = () => {
     },
   ];
   return (
-    <Card>
+    <Card className="overflow-hidden">
       <Table
         loaderSchema={loaderSchema}
         type="resource"
@@ -229,7 +229,7 @@ const customCode = `
     },
   ];
   return (
-      <Card>
+      <Card className="overflow-hidden">
         <Table
           type="resource"
           data={data}

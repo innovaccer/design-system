@@ -18,7 +18,7 @@ export const type = () => {
           <Column key={index} className="ml-10" size={5}>
             <Heading>{v}</Heading>
             <div className="vh-75">
-              <Card shadow="light" className="h-100">
+              <Card className="h-100 overflow-hidden">
                 <Table
                   type={v}
                   data={data}
@@ -72,7 +72,7 @@ const customCode = `
       <Column key={index} className="ml-10" size={5}>
         <Heading>{v}</Heading>
         <div className="vh-75">
-          <Card shadow="light" className="h-100">
+          <Card className="h-100 overflow-hidden">
             <Table
               type={v}
               data={data}
