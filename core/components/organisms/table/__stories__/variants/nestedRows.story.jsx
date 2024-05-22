@@ -12,7 +12,7 @@ export const nestedRows = () => {
 
   return (
     <div className="vh-75">
-      <Card shadow="light" className="h-100">
+      <Card className="h-100 overflow-hidden">
         <Table
           schema={schema}
           data={data}

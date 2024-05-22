@@ -187,7 +187,7 @@ export const customHeaderCellRenderer = () => {
   ];
 
   return (
-    <Card>
+    <Card className="overflow-hidden">
       <Table
         loaderSchema={loaderSchema}
         showMenu={false}
@@ -388,7 +388,7 @@ const customCode = `() => {
   const loaderSchema = ${JSON.stringify(loaderSchema, null, 4)};
 
   return (
-      <Card>
+      <Card className="overflow-hidden">
         <Table
           loaderSchema={loaderSchema}
           showMenu={false}

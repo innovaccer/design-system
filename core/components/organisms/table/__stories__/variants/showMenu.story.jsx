@@ -17,7 +17,7 @@ export const showMenu = () => {
           <Column size={5} key={index} className="ml-10">
             <Heading>{`showMenu: ${v}`}</Heading>
             <div className="vh-75">
-              <Card shadow="light" className="h-100">
+              <Card className="h-100 overflow-hidden">
                 <Table showMenu={v} data={data} schema={schema} />
               </Card>
             </div>
@@ -63,7 +63,7 @@ const customCode = `
       <Column size={5} key={index} className="ml-10">
         <Heading>{\`showMenu: \${v}\`}</Heading>
         <div className="vh-75">
-          <Card shadow="light" className="h-100">
+          <Card className="h-100 overflow-hidden">
             <Table showMenu={v} data={data} schema={schema} />
           </Card>
         </div>

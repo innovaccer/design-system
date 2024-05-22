@@ -81,7 +81,7 @@ export const tightTable = () => {
   ];
 
   return (
-    <Card>
+    <Card className="overflow-hidden">
       <Table
         loaderSchema={loaderSchema}
         size="tight"
@@ -180,7 +180,7 @@ const customCode = `() => {
   ];
 
   return (
-      <Card>
+      <Card className="overflow-hidden">
         <Table
           showMenu={false}
           size="tight"

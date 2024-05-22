@@ -150,7 +150,7 @@ export const resourceTable = () => {
   ];
 
   return (
-    <Card>
+    <Card className="overflow-hidden">
       <Table
         loaderSchema={loaderSchema}
         showMenu={false}
@@ -277,7 +277,7 @@ const customCode = `
   ];
 
   return (
-    <Card>
+    <Card className="overflow-hidden">
       <Table
         showMenu={false}
         type="resource"
