@@ -1,5 +1,6 @@
 const puppeteerCore = require('puppeteer-core');
 const fs = require('fs');
+const path = require('path');
 
 (async () => {
   const usePuppeteerBrowser = async () => {
@@ -66,9 +67,45 @@ const fs = require('fs');
     fs.mkdirSync(outputDir);
   }
 
+  const generateArgString = (args) => {
+    const argsString = Object.entries(args)
+      .map(([key, value]) => {
+        if (typeof value === 'string') {
+          return `${key}="${value}"`;
+        } else if (typeof value === 'number' || typeof value === 'boolean') {
+          return `${key}={${value}}`;
+        } else if (typeof value === 'object' && Object.keys(value).length === 0) {
+          // If the value is an empty object, we might want to handle it as null or some default value
+          return `${key}={null}`;
+        } else {
+          // Handle other object cases if necessary
+          return `${key}={${JSON.stringify(value)}}`;
+        }
+      })
+      .join(' ');
+
+    return argsString;
+  };
+
+  function createComponentString(data) {
+    // Extract component name from the kind property
+    const componentName = data.kind.split('/').pop();
+
+    const argsString = generateArgString(data.args);
+
+    // Construct the final component string
+    const sourceCode = `<${componentName} ${argsString} />`;
+    console.log(componentName,' Component SourceCode: ', sourceCode);
+    return sourceCode;
+  }
+
   // Save the stories data as a JSON file
   await Promise.all(
     Object.keys(stories).map(async (key) => {
+      const targetComponent = stories[key];
+      if (targetComponent.parameters.__isArgsStory) {
+        targetComponent.parameters.docs.source.originalSource = createComponentString(targetComponent);
+      }
       return fs.writeFileSync(`${outputDir}/${key}.json`, JSON.stringify(stories[key], null, 2), 'utf-8');
     })
   );

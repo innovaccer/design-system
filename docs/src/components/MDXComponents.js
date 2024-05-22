@@ -17,9 +17,9 @@ const Rectangle = ({ name }) => {
   );
 };
 
-const useGetStorybookData = async (name) => {
+const useGetStorybookData = async (name, libName) => {
   let componentName = name;
-  let componentPath = `/sb/${componentName}.json`;
+  let componentPath = libName ? `/${libName}/${componentName}.json` : `/sb/${componentName}.json`; 
 
   // To handle Rich Text Editor Stories
   if (name.startsWith('library')) {
@@ -36,37 +36,31 @@ const useGetStorybookData = async (name) => {
   return data;
 };
 
-function getJsxCode(name) {
-  return useGetStorybookData(name)
-    .then(componentData => {
-      const jsxCode = componentData && componentData.parameters
+function getJsxCode(name, libName) {
+  return useGetStorybookData(name, libName).then((componentData) => {
+    const jsxCode =
+      componentData && componentData.parameters
         ? componentData.parameters.docs.docPage?.customCode ||
-        componentData.parameters.storySource?.source
+          componentData.parameters.docs.source?.originalSource ||
+          componentData.parameters.storySource?.source
         : '';
-      return jsxCode;
-
-    })
+    return jsxCode;
+  });
 }
 
-const Preview = ({ name }) => {
+const Preview = ({ name, libName }) => {
   return (
     <div>
-      <PropsTable
-        dataProvider={() => getJsxCode(name)}
-      />
+      <PropsTable dataProvider={() => getJsxCode(name, libName)} libName={libName} />
     </div>
   );
 };
 
-function getPropTableData(name) {
-  return useGetStorybookData(name)
-    .then(componentData => {
-      const jsxCode = componentData
-        ? componentData.parameters.argTypes
-        : '';
-      return jsxCode;
-
-    })
+function getPropTableData(name, libName) {
+  return useGetStorybookData(name, libName).then((componentData) => {
+    const jsxCode = componentData ? componentData.parameters.argTypes || componentData.argTypes : '';
+    return jsxCode;
+  });
 }
 
 const FrameWrapper = ({ componentName }) => {
@@ -90,14 +84,14 @@ const FrameWrapper = ({ componentName }) => {
   );
 };
 
-const PreviewWithPropTable = ({ name, embed }) => {
+const PreviewWithPropTable = ({ name, embed, libName }) => {
   const [data, setData] = React.useState({});
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
 
   React.useEffect(() => {
     if (!embed) {
-      getPropTableData(name)
+      getPropTableData(name, libName)
         .then((data) => {
           setData(data);
           setLoading(false);
@@ -130,13 +124,13 @@ const PreviewWithPropTable = ({ name, embed }) => {
   );
 };
 
-const A11yBlock = ({ name }) => {
+const A11yBlock = ({ name, libName }) => {
   const [data, setData] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
 
   React.useEffect(() => {
-    useGetStorybookData(name)
+    useGetStorybookData(name, libName)
       .then((componentData) => {
         const a11yProps = componentData && componentData.parameters.docs.docPage?.a11yProps;
 

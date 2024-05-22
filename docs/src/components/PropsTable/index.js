@@ -7,6 +7,7 @@ import openSandbox from './sandbox.tsx';
 import vsDark from 'prism-react-renderer/themes/vsDark';
 import generateImports from './generateImports';
 import * as DS from '@innovaccer/design-system';
+import * as AIDesignSystem from 'mds-ai';
 import './card.css';
 import { vs2015 } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { Card, CardHeader, CardBody, Button, Icon, Tooltip } from '@innovaccer/design-system';
@@ -29,12 +30,21 @@ const beautifyHTMLOptions = {
   indent_empty_lines: true,
 };
 
-const getRawPreviewCode = (customCode, dataProvider) => {
+const getRawPreviewCode = (customCode, dataProvider, libName) => {
   if (dataProvider) {
     return `() => <div><Spinner /></div>`;
   }
+
+  const libraryImportName = {
+    'mds-ai': { import: 'mds-ai', code: AIDesignSystem },
+  };
+
   if (customCode) {
-    return `${generateImports(customCode, DS, '@innovaccer/design-system')}
+    return `${generateImports(
+      customCode,
+      libraryImportName[libName]?.code || DS,
+      libraryImportName[libName]?.import || '@innovaccer/design-system'
+    )}
 
 ${customCode}
     `;
@@ -56,13 +66,13 @@ const TabsWrap = withLive(({ live, onUpdate }) => {
   return null;
 });
 
-const StoryComp = ({ componentData, dataProvider }) => {
+const StoryComp = ({ componentData, dataProvider, libName }) => {
   const testRef = useRef(null);
   const [zoom, setZoom] = useState(1);
   const [htmlCode, setHtmlCode] = useState('');
   const [isExpanded, setIsExpanded] = useState(false);
   const [activeButton, setActiveButton] = useState('React');
-  const [jsxCode, setJsxCode] = React.useState(getRawPreviewCode(componentData, dataProvider));
+  const [jsxCode, setJsxCode] = React.useState(getRawPreviewCode(componentData, dataProvider, libName));
   const [isTooltipActive, setTooltipActive] = useState(false);
   const [tooltipName, setTooltipName] = useState(copyMessage);
 
@@ -70,7 +80,7 @@ const StoryComp = ({ componentData, dataProvider }) => {
     if (dataProvider) {
       dataProvider()
         .then((data) => {
-          setJsxCode(getRawPreviewCode(data));
+          setJsxCode(getRawPreviewCode(data, false, libName));
         })
         .catch((err) => {
           setJsxCode(
@@ -166,7 +176,7 @@ const StoryComp = ({ componentData, dataProvider }) => {
     }
   };
 
-  const imports = React.useMemo(() => ({ ...DS }), []);
+  const imports = React.useMemo(() => ({ ...DS, ...AIDesignSystem }), []);
 
   return (
     <>
