@@ -16,9 +16,7 @@ menus:
       },
       {
         label: 'Sara',
-      },
-      {
-        label: 'Sara Sparkle',
+        link: /components/Sara/usage/
       },
     ]
 
