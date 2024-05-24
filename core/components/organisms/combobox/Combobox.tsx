@@ -69,6 +69,8 @@ export interface ComboboxProps extends BaseProps {
    * Callback function when user clicks the clear button
    */
   onClear?: (event: React.MouseEvent<HTMLElement, MouseEvent> | React.KeyboardEvent<HTMLElement>) => void;
+  onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
+  onKeyUp?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
   /**
    * Material icon name to be displayed in trigger
    */
@@ -112,6 +114,8 @@ export const Combobox = (props: ComboboxProps) => {
     chipValue,
     clearButton,
     onSearch,
+    onKeyDown,
+    onKeyUp,
   } = props;
 
   const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>();
@@ -215,6 +219,8 @@ export const Combobox = (props: ComboboxProps) => {
     multiSelect,
     chipValue,
     clearButton,
+    onKeyDown,
+    onKeyUp,
   };
 
   const contextProp = {

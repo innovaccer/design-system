@@ -67,7 +67,8 @@ export interface MultiSelectTriggerProps extends BaseProps {
   /**
    * Callback function that is called when the chips change.
    */
-  onKeyDown?: (e: React.KeyboardEvent) => void;
+  onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
+  onKeyUp?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
   /**
    * Handler to be called when `Input` loses focus
    */
