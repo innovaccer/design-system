@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { EmptyState, Button } from '@/index';
-import noContent from './assets/no-files-empty-files.svg';
+import noContent from '../assets/no-files-empty-files.svg';
 
-export const all = () => {
+export const emptyData = () => {
   return (
     <EmptyState>
       <EmptyState.Image src={noContent}></EmptyState.Image>
-      <EmptyState.Title>Title goes here</EmptyState.Title>
-      <EmptyState.Description>Description goes here</EmptyState.Description>
+      <EmptyState.Title>There are no referrals yet</EmptyState.Title>
+      <EmptyState.Description>When you create a new referral, you will see it here.</EmptyState.Description>
       <EmptyState.Actions>
         <Button className="mr-4">Secondary action</Button>
         <Button appearance="primary">Primary action</Button>
@@ -22,10 +22,8 @@ const customCode = `() => {
   return (
       <EmptyState>
         <EmptyState.Image src={${ImagePath}}></EmptyState.Image>
-        <EmptyState.Title>Title goes here</EmptyState.Title>
-        <EmptyState.Description>
-          Description goes here
-        </EmptyState.Description>
+        <EmptyState.Title>There are no referrals yet</EmptyState.Title>
+        <EmptyState.Description>When you create a new referral, you will see it here.</EmptyState.Description>
         <EmptyState.Actions>
           <Button className="mr-4">Secondary action</Button>
           <Button appearance="primary">Primary action</Button>
@@ -35,7 +33,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/EmptyState/All',
+  title: 'Components/EmptyState/Variants/Empty Data',
   component: EmptyState,
   subcomponents: {
     'EmptyState.Image': EmptyState.Image,

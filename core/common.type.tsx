@@ -121,3 +121,5 @@ export type OptionType = {
 };
 
 export type TListboxSize = 'standard' | 'compressed' | 'tight';
+
+export type TEmptyStateSize = 'standard' | 'compressed' | 'tight' | 'large' | 'small';
