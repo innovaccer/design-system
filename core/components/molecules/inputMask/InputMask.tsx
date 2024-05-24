@@ -151,13 +151,22 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
     [ref.current]
   );
 
+  const setSelectionRange_compatible_types = ['text', 'password', 'tel', 'url'];
+
   const setSelectionPos = React.useCallback(
     (pos: SelectionPos): void => {
       if (ref.current) {
         const el = ref.current;
         const start = Math.min(pos.start, pos.end);
         const end = Math.max(pos.start, pos.end);
-        el.setSelectionRange(start, end);
+        if (setSelectionRange_compatible_types.includes(el.type)) {
+          el.setSelectionRange(start, end);
+        } else {
+          const el_type = el.type;
+          el.type = 'text';
+          el.setSelectionRange(start, end);
+          el.type = el_type;
+        }
       }
     },
     [ref.current]
