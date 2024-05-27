@@ -17,7 +17,7 @@ const EmptyStateTitle = (props: EmptyDescriptionProps) => {
   const { children, className, ...rest } = props;
   const contextProp = React.useContext(EmptyStateContext);
 
-  const { size = 'standard', maxWidth } = contextProp;
+  const { size = 'standard' } = contextProp;
 
   const headingClass = classNames(
     {
@@ -29,12 +29,7 @@ const EmptyStateTitle = (props: EmptyDescriptionProps) => {
 
   if (size === 'standard') {
     return (
-      <Heading
-        data-test="DesignSystem-EmptyState--Heading"
-        style={{ maxWidth: maxWidth }}
-        className={headingClass}
-        {...rest}
-      >
+      <Heading data-test="DesignSystem-EmptyState--Heading" className={headingClass} {...rest}>
         {children}
       </Heading>
     );
@@ -43,7 +38,6 @@ const EmptyStateTitle = (props: EmptyDescriptionProps) => {
   return (
     <Text
       data-test="DesignSystem-EmptyState--Heading"
-      style={{ maxWidth: maxWidth }}
       className={headingClass}
       weight="medium"
       size={textSize[size]}

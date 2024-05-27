@@ -20,8 +20,8 @@ const EmptyStateActions = (props: EmptyActionProps) => {
   const actionWrapperClasses = classNames(
     {
       [`EmptyState-actions--${size}`]: true,
+      ['EmptyState-actions']: true,
     },
-    'd-flex',
     className
   );
 

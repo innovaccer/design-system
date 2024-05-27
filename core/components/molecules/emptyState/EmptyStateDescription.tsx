@@ -17,7 +17,7 @@ const EmptyStateDescription = (props: EmptyDescriptionProps) => {
   const { children, className, ...rest } = props;
   const contextProp = React.useContext(EmptyStateContext);
 
-  const { size = 'standard', maxWidth } = contextProp;
+  const { size = 'standard' } = contextProp;
 
   const textSize: Record<string, TextSize> = {
     standard: 'regular',
@@ -36,7 +36,6 @@ const EmptyStateDescription = (props: EmptyDescriptionProps) => {
   return (
     <Text
       size={textSize[size]}
-      style={{ maxWidth: maxWidth }}
       appearance="subtle"
       className={descriptionClasses}
       data-test="DesignSystem-EmptyState--Text"
