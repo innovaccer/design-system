@@ -54,7 +54,20 @@ const EmptyStateImage = (props: EmptyImageProps) => {
   const { children, maxHeight, height, minHeight, src, alt, className, ...rest } = props;
   const contextProp = React.useContext(EmptyStateContext);
 
-  const imageWrapperClasses = classNames({ ['EmptyState-image']: true }, className);
+  const imageClasses = classNames(
+    {
+      ['EmptyState-image']: true,
+    },
+    className
+  );
+
+  const imageWrapperClasses = classNames(
+    {
+      ['d-flex']: true,
+      ['justify-content-center']: true,
+    },
+    className
+  );
 
   const { size = 'standard' } = contextProp;
 
@@ -77,7 +90,7 @@ const EmptyStateImage = (props: EmptyImageProps) => {
       {src && (
         <div>
           <img
-            className={imageWrapperClasses}
+            className={imageClasses}
             src={src}
             alt={alt}
             style={{ ...sizeStyle }}

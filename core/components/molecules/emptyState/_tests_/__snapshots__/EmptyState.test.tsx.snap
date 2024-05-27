@@ -16,19 +16,17 @@ exports[`EmptyState component
         <span
           class="Text Text--default Text--medium Text--large EmptyState-text EmptyState-title--compressed"
           data-test="DesignSystem-EmptyState--Heading"
-          style="max-width: 400px;"
         >
           title must be passed here
         </span>
         <span
           class="Text Text--subtle Text--regular EmptyState-text mt-3"
           data-test="DesignSystem-EmptyState--Text"
-          style="max-width: 400px;"
         >
           Description must be passed here
         </span>
         <div
-          class="EmptyState-image"
+          class="d-flex justify-content-center"
           style="max-height: 150px;"
         >
           <i
@@ -41,7 +39,7 @@ exports[`EmptyState component
           </i>
         </div>
         <div
-          class="EmptyState-actions--compressed d-flex"
+          class="EmptyState-actions--compressed EmptyState-actions"
           data-test="DesignSystem-EmptyState--Actions"
         >
           <button
@@ -140,19 +138,17 @@ exports[`EmptyState component
         <h4
           class="Heading Heading--m Heading--default EmptyState-text EmptyState-title--standard"
           data-test="DesignSystem-EmptyState--Heading"
-          style="max-width: 480px;"
         >
           title must be passed here
         </h4>
         <span
           class="Text Text--subtle Text--regular EmptyState-text mt-3"
           data-test="DesignSystem-EmptyState--Text"
-          style="max-width: 480px;"
         >
           Description must be passed here
         </span>
         <div
-          class="EmptyState-image"
+          class="d-flex justify-content-center"
           style="max-height: 200px;"
         >
           <i
@@ -165,7 +161,7 @@ exports[`EmptyState component
           </i>
         </div>
         <div
-          class="EmptyState-actions--standard d-flex"
+          class="EmptyState-actions--standard EmptyState-actions"
           data-test="DesignSystem-EmptyState--Actions"
         >
           <button
@@ -202,19 +198,17 @@ exports[`EmptyState component
         <span
           class="Text Text--default Text--medium Text--regular EmptyState-text EmptyState-title--tight"
           data-test="DesignSystem-EmptyState--Heading"
-          style="max-width: 320px;"
         >
           title must be passed here
         </span>
         <span
           class="Text Text--subtle Text--small EmptyState-text mt-3"
           data-test="DesignSystem-EmptyState--Text"
-          style="max-width: 320px;"
         >
           Description must be passed here
         </span>
         <div
-          class="EmptyState-image"
+          class="d-flex justify-content-center"
           style="max-height: 100px;"
         >
           <i
@@ -227,7 +221,7 @@ exports[`EmptyState component
           </i>
         </div>
         <div
-          class="EmptyState-actions--tight d-flex"
+          class="EmptyState-actions--tight EmptyState-actions"
           data-test="DesignSystem-EmptyState--Actions"
         >
           <button

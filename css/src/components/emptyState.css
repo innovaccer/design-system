@@ -11,12 +11,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: transparent;
   width: 100%;
 }
 
 .EmptyState-image {
+  display: flex;
+  justify-content: center;
   width: 100%;
   height: 100%;
+  object-fit: contain;
 }
 
 .EmptyState-title {
@@ -49,6 +53,12 @@
 .EmptyState-text {
   display: flex;
   text-align: center;
+  justify-content: center;
+}
+
+.EmptyState-actions {
+  display: flex;
+  justify-content: center;
 }
 
 .EmptyState-title--compressed {
