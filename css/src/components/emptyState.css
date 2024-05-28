@@ -6,6 +6,23 @@
   background: transparent;
 }
 
+.EmptyState-Wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  width: 100%;
+}
+
+.EmptyState-image {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .EmptyState-title {
   text-align: center;
   max-width: 480px;
@@ -31,4 +48,37 @@
 
 .EmptyState-description--small {
   margin-bottom: var(--spacing-2);
+}
+
+.EmptyState-text {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.EmptyState-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.EmptyState-title--compressed {
+  margin-top: var(--spacing-2);
+}
+.EmptyState-title--standard {
+  margin-top: var(--spacing-xl);
+}
+.EmptyState-title--tight {
+  margin-top: var(--spacing-l);
+}
+
+.EmptyState-actions--compressed {
+  margin-top: var(--spacing-2);
+}
+
+.EmptyState-actions--standard {
+  margin-top: var(--spacing-xl);
+}
+
+.EmptyState-actions--tight {
+  margin-top: var(--spacing-l);
 }

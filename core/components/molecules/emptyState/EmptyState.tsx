@@ -3,94 +3,191 @@ import classNames from 'classnames';
 import { HeadingProps, TextProps } from '@/index.type';
 import { Heading, Text } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-
-type EmptyStateSize = 'large' | 'small';
+import EmptyStateContext from './EmptyStateContext';
+import EmptyStateImage from './EmptyStateImage';
+import EmptyStateTitle from './EmptyStateTitle';
+import EmptyStateDescription from './EmptyStateDescription';
+import EmptyStateActions from './EmptyStateActions';
+import { TEmptyStateSize } from '@/common.type';
 
 export interface EmptyStateProps extends BaseProps {
-  /**
-   *  Illustration to be shown (Either image or imageSrc is mandatory to show image )
-   */
+  /** @ignore */
   imageSrc?: string;
-  /**
-   * Heading of `EmptyState`
-   */
-  title: string;
-  /**
-   * Description of `EmptyState`
-   */
-  description: string;
+  /** @ignore */
+  title?: string;
+  /** @ignore */
+  description?: string;
+  /** @ignore */
+  image?: React.ReactNode;
   /**
    * Size of `EmptyState`
    *
-   * Size: 'large' | 'small'
+   * Size: 'standard' | 'compressed' | 'tight'
+   *
+   * **['large' and 'small' sizes are deprecated sizes please don't use them]**
    */
-  size: EmptyStateSize;
+  size?: TEmptyStateSize;
   /**
-   * Button / ButtonGroups to be added inside `EmptyState`
+   * Sets the maximum width of the `EmptyState` component.
+   * default to the pre-defined size based on the `size` prop.
+   */
+  maxWidth?: number | string;
+  /**
+   * Sets the minimum width of the `EmptyState` component.
+   */
+  minWidth?: number | string;
+  /**
+   * Sets the width of the `EmptyState` component.
+   */
+  width?: number | string;
+  /**
+   * child component to be added inside `EmptyState`
    */
   children?: React.ReactNode;
-  /**
-   * Image to be shown. Image height should be set while providing image. Provide height as 128px when size is  'small'. Provide height as 256px when size is  'large'.
-   */
-  image?: React.ReactNode;
 }
 
 export const imageHeight = {
   large: '256px',
   small: '128px',
+  standard: '256px',
+  compressed: '256px',
+  tight: '256px',
 };
 
-export const HeadingSize: Record<EmptyStateSize, HeadingProps['size']> = {
+export const templateWidth = {
+  standard: '480px',
+  compressed: '400px',
+  tight: '320px',
+  large: '480px',
+  small: '480px',
+};
+
+export const HeadingSize: Record<TEmptyStateSize, HeadingProps['size']> = {
   large: 'l',
   small: 'm',
+  standard: 'l',
+  compressed: 'l',
+  tight: 'l',
 };
 
-export const textSize: Record<EmptyStateSize, TextProps['size']> = {
+export const textSize: Record<TEmptyStateSize, TextProps['size']> = {
   large: 'large',
   small: 'regular',
+  standard: 'large',
+  compressed: 'large',
+  tight: 'regular',
 };
 
 export const EmptyState = (props: EmptyStateProps) => {
-  const { imageSrc, title, description, size, children, className, image } = props;
+  const {
+    imageSrc,
+    title,
+    description,
+    size = 'standard',
+    children,
+    className,
+    image,
+    maxWidth,
+    minWidth,
+    width,
+  } = props;
 
   const baseProps = extractBaseProps(props);
 
-  const WrapperClass = classNames(
+  let templateSize: TEmptyStateSize = 'standard';
+
+  const isValidSize = (size: TEmptyStateSize) => size === 'large' || size === 'small';
+
+  if (title || description) {
+    templateSize = isValidSize(size) ? size : 'large';
+  } else {
+    templateSize = isValidSize(size) ? 'standard' : size;
+  }
+
+  const wrapperClasses = classNames(
     {
       ['EmptyState']: true,
     },
     className
   );
 
-  const HeadingClass = classNames({
+  const emptyStateWrapper = classNames({ ['EmptyState-Wrapper']: true }, className);
+
+  const headingClasses = classNames({
     ['EmptyState-title']: true,
-    [`EmptyState-title--${size}`]: true,
+    [`EmptyState-title--${templateSize}`]: true,
   });
 
-  const TextClass = classNames({
+  const textClasses = classNames({
     ['EmptyState-description']: true,
-    [`EmptyState-description--${size}`]: children !== undefined,
+    [`EmptyState-description--${templateSize}`]: children !== undefined,
   });
+
+  if (title || description) {
+    return (
+      <div data-test="DesignSystem-EmptyState" {...baseProps} className={wrapperClasses}>
+        {image && <div style={{ height: imageHeight[templateSize] }}>{image}</div>}
+        {imageSrc && !image && (
+          //TODO(a11y)
+          //eslint-disable-next-line
+          <img src={imageSrc} height={imageHeight[templateSize]} data-test="DesignSystem-EmptyState--Img" />
+        )}
+        {title && (
+          <Heading
+            data-test="DesignSystem-EmptyState--Heading"
+            size={HeadingSize[templateSize]}
+            className={headingClasses}
+          >
+            {title}
+          </Heading>
+        )}
+        {description && (
+          <Text
+            size={textSize[templateSize]}
+            className={textClasses}
+            appearance="subtle"
+            data-test="DesignSystem-EmptyState--Text"
+          >
+            {description}
+          </Text>
+        )}
+        {children && children}
+      </div>
+    );
+  }
+
+  const templateMaxWidth = maxWidth ? maxWidth : templateWidth[templateSize];
+
+  const customStyle = {
+    maxWidth: templateMaxWidth,
+    minWidth: minWidth,
+    width: width,
+  };
 
   return (
-    <div data-test="DesignSystem-EmptyState" {...baseProps} className={WrapperClass}>
-      {image && <div style={{ height: imageHeight[size] }}>{image}</div>}
-      {imageSrc && !image && (
-        //TODO(a11y)
-        //eslint-disable-next-line
-        <img src={imageSrc} height={imageHeight[size]} data-test="DesignSystem-EmptyState--Img" />
-      )}
-      <Heading data-test="DesignSystem-EmptyState--Heading" size={HeadingSize[size]} className={HeadingClass}>
-        {title}
-      </Heading>
-      <Text size={textSize[size]} className={TextClass} appearance="subtle" data-test="DesignSystem-EmptyState--Text">
-        {description}
-      </Text>
-      {children && children}
-    </div>
+    <EmptyStateContext.Provider value={{ size: templateSize, maxWidth: templateMaxWidth }}>
+      <div className="d-flex justify-content-center align-item-center w-100 h-100">
+        <div
+          data-test="DesignSystem-EmptyState--Wrapper"
+          className={emptyStateWrapper}
+          style={customStyle}
+          {...baseProps}
+        >
+          {children}
+        </div>
+      </div>
+    </EmptyStateContext.Provider>
   );
 };
 
 EmptyState.displayName = 'EmptyState';
+EmptyState.Title = EmptyStateTitle;
+EmptyState.Description = EmptyStateDescription;
+EmptyState.Image = EmptyStateImage;
+EmptyState.Actions = EmptyStateActions;
+
+EmptyState.defaultProps = {
+  size: 'standard',
+};
 
 export default EmptyState;

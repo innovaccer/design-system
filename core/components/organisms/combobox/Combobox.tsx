@@ -31,6 +31,13 @@ export interface ComboboxProps extends BaseProps {
   width?: number;
   /**
    * Callback function to be called when the input text changes
+   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
+   * OptionType: {
+   *    label: string;
+   *    value: any;
+   *    isSelectedOption?: boolean;
+   * }
+   * </pre>
    */
   onChange?: (option?: OptionType | OptionType[]) => void;
   /**
@@ -39,10 +46,26 @@ export interface ComboboxProps extends BaseProps {
   onSearch?: (value?: string) => void;
   /**
    * Value passed to input trigger for single select in case of controlled mode
+   *
+   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
+   * OptionType: {
+   *    label: string;
+   *    value: any;
+   *    isSelectedOption?: boolean;
+   * }
+   * </pre>
+   *
    */
   value?: OptionType;
   /**
    * Value passed to multiselect trigger in case of controlled mode
+   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
+   * OptionType: {
+   *    label: string;
+   *    value: any;
+   *    isSelectedOption?: boolean;
+   * }
+   * </pre>
    */
   chipValue?: OptionType[];
   /**
@@ -69,6 +92,14 @@ export interface ComboboxProps extends BaseProps {
    * Callback function when user clicks the clear button
    */
   onClear?: (event: React.MouseEvent<HTMLElement, MouseEvent> | React.KeyboardEvent<HTMLElement>) => void;
+  /**
+   * Callback function to be called when key is pressed
+   */
+  onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
+  /**
+   * Callback function to be called when key is released
+   */
+  onKeyUp?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
   /**
    * Material icon name to be displayed in trigger
    */
@@ -112,6 +143,8 @@ export const Combobox = (props: ComboboxProps) => {
     chipValue,
     clearButton,
     onSearch,
+    onKeyDown,
+    onKeyUp,
   } = props;
 
   const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>();
@@ -215,6 +248,8 @@ export const Combobox = (props: ComboboxProps) => {
     multiSelect,
     chipValue,
     clearButton,
+    onKeyDown,
+    onKeyUp,
   };
 
   const contextProp = {

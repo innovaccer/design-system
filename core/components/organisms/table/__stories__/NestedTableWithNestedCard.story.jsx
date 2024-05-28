@@ -145,7 +145,7 @@ export const nestedTableWithNestedCards = () => {
   };
 
   return (
-    <Card>
+    <Card className="overflow-hidden">
       <Table
         data={data}
         schema={schema}
@@ -320,7 +320,7 @@ const customCode = `() => {
   }
 
   return (
-    <Card>
+    <Card className="overflow-hidden">
       <Table
         data={data}
         schema={schema}

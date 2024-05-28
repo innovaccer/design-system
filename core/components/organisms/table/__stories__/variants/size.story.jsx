@@ -17,7 +17,7 @@ export const size = () => {
           <Column key={index} className="ml-10 mt-7" size={5}>
             <Heading>{v}</Heading>
             <div className="vh-50">
-              <Card shadow="light" className="h-100">
+              <Card className="h-100 overflow-hidden">
                 <Table size={v} data={data} schema={schema} />
               </Card>
             </div>
@@ -64,7 +64,7 @@ const customCode = `
           <Column key={index} className="ml-10 mt-7" size={5}>
             <Heading>{v}</Heading>
             <div className="vh-50">
-              <Card shadow="light" className="h-100">
+              <Card className="h-100 overflow-hidden">
                 <Table size={v} data={data} schema={schema} />
               </Card>
             </div>

@@ -27,7 +27,7 @@ function Overview({ data, mode, path = 'components' }) {
   });
 
   return (
-    <div>
+    <div style={{marginRight: '-16px'}}>
       <Input
         className="w-25 my-7"
         icon="search"
@@ -41,30 +41,29 @@ function Overview({ data, mode, path = 'components' }) {
           previewList.map(({ image = () => <img alt="" />, name, status, showOverview = true, link = '' }) => {
             if (showOverview) {
               return (
-                <div key={name} className="overview-container-card pb-6 mr-6">
+                <div key={name} className="overview-container-card mb-6 mr-6">
                   <Link
                     className="card-link"
                     disabled={!link.length}
                     to={mode === 'mobile' ? `/mobile/${path}/${link}` : `/${path}/${link}`}
                   >
-                    <Card shadow="none" className="w-100 overflow-hidden overview-card pb-5 h-100">
-                      <CardBody className="px-0">
-                        <div className="py-5 card-opacity d-flex flex-column">
-                          <div className="d-flex justify-content-end mr-5">
-                            {status && <StatusTag category={status} />}
-                          </div>
-
-                          <div
-                            className="d-flex justify-content-center align-items-center"
-                            style={{ overflow: 'hidden', height: '168px' }}
-                          >
-                            {React.createElement(image)}
-                          </div>
+                    <Card shadow="none" className="overview-card w-100 h-100">
+                      <div className="w-100 h-100 py-5 d-flex flex-column">
+                        <div className="card-opacity w-100 h-100 overflow-hidden">
+                          {status && (
+                            <div className="d-flex justify-content-end mr-5">
+                              <StatusTag category={status} />
+                            </div>
+                          )}
+                          <div className="h-100">{React.createElement(image)}</div>
                         </div>
-                        <Heading data-test="Docs-Card-Heading" size="s" className="ml-6 position-absolute card-heading">
-                          {name}
-                        </Heading>
-                      </CardBody>
+
+                        <div className="w-100">
+                          <Heading data-test="Docs-Card-Heading" size="s" className="pt-5 pl-6">
+                            {name}
+                          </Heading>
+                        </div>
+                      </div>
                     </Card>
                   </Link>
                 </div>
@@ -82,7 +81,6 @@ function Overview({ data, mode, path = 'components' }) {
           </div>
         )}
       </div>
-
     </div>
   );
 }

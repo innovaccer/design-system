@@ -46,8 +46,9 @@ export const ChipInputBox = (props: MultiSelectTriggerProps) => {
     }
   };
 
-  const onKeyDownHandler = (event: React.KeyboardEvent) => {
+  const onKeyDownHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
     handleKeyDown(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem);
+    props.onKeyDown && props.onKeyDown(event);
   };
 
   return (

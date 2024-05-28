@@ -18,7 +18,7 @@ export const showHead = () => {
           <Column key={index} size={5} className="ml-10">
             <Heading>{`showHead: ${v}`}</Heading>
             <div className="vh-75">
-              <Card shadow="light" className="h-100">
+              <Card className="h-100 overflow-hidden">
                 <Table showHead={v} data={data} schema={schema} />
               </Card>
             </div>
@@ -120,7 +120,7 @@ const customCode = `() => {
       <Column key={index} size={5} className="ml-10">
         <Heading>{\`showHead: \${v}\`}</Heading>
         <div className="vh-75">
-          <Card shadow="light" className="h-100">
+          <Card className="h-100 overflow-hidden">
             <Table showHead={v} data={data} schema={schema} />
           </Card>
         </div>

@@ -51,9 +51,10 @@ const ComponentsContainer = ({ children, pageTitle, relativePagePath, tabs, page
         </Heading>
         <Paragraph >{isSiblingTab ? frontmatter?.description : pageDescription}</Paragraph>
       </div>
+      <div className='px-11'> 
       {tabsList && tabsList.length && (
         <div className="TabHeader mb-7 position-sticky bg-light" id='tab-container' data-test='Docs-Tab-Header'>
-          <div className="px-11 mt-4">
+          <div className="mt-4">
             <Tabs activeIndex={activeIndex} className={`${isTabPinned ? "border-bottom-0" : "TabBorder"}`} onTabChange={onTabChangeHandler}>
               {tabsList.map((tab, index) => (
                 <Tab label={tab} key={index} ></Tab>
@@ -63,7 +64,6 @@ const ComponentsContainer = ({ children, pageTitle, relativePagePath, tabs, page
           <div className={`${isTabPinned ? "TabBorder--sticky" : ""}`}></div>
         </div>
       )}
-      <div className='px-11'> 
       {children}
       </div>
     </>

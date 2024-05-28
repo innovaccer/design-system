@@ -2,7 +2,7 @@ name: Docs pull request
 
 on: 
   pull_request:
-    paths: 'docs/**'
+    paths: ['docs/**']
 
 jobs:
   lint_test_build:

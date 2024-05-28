@@ -19,6 +19,7 @@ export interface ComboboxOptionProps extends BaseProps {
    * OptionType: {
    *    label: string;
    *    value: any;
+   *    isSelectedOption?: boolean;
    * }
    * </pre>
    */

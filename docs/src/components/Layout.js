@@ -60,7 +60,7 @@ const MDXPage = (props) => {
 
 const OverviewContainer = (props) => {
   return (
-    <Row className="justify-content-center">
+    <Row>
       <Column data-test="Docs-content-wrapper" className="py-8 min-vh-100 overview-container" size={12}>
         <ComponentsPage {...props} />
       </Column>
@@ -118,9 +118,8 @@ const Layout = ({
     alt: 'image',
   });
 
-  
   React.useEffect(() => {
-    if (mainContainerRef.current && location.hash === "") {
+    if (mainContainerRef.current && location.hash === '') {
       mainContainerRef.current.scrollTop = 0;
     }
   }, [location]);
@@ -251,7 +250,11 @@ const Layout = ({
           showMobile={showMobile}
           frontmatter={frontmatter}
         />
-        <Column className={`${showAnimation() ? 'page-animation' : ''} page-scroll h-100`} id="main-container" ref={mainContainerRef}>
+        <Column
+          className={`${showAnimation() ? 'page-animation' : ''} page-scroll h-100`}
+          id="main-container"
+          ref={mainContainerRef}
+        >
           {!isOverviewPage ? (
             <MarkdownContainer
               relativePagePath={relativePagePath}

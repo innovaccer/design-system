@@ -8,7 +8,7 @@ import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/
 export const withHeader = () => {
   return (
     <div className="vh-75">
-      <Card shadow="light" className="h-100">
+      <Card className="h-100 overflow-hidden">
         <Table
           data={data}
           schema={schema}
@@ -142,7 +142,7 @@ const customCode = `
     <div
       className="vh-75"
     >
-      <Card shadow="light" className="h-100">
+      <Card className="h-100 overflow-hidden">
         <Table
           data={data}
           schema={schema}
