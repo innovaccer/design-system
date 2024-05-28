@@ -39,8 +39,9 @@ export const InputBox = (props: InputProps) => {
     props.onClear?.(event);
   };
 
-  const onKeyDownHandler = (event: React.KeyboardEvent) => {
+  const onKeyDownHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
     handleKeyDown(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem);
+    props.onKeyDown && props.onKeyDown(event);
   };
 
   return (
