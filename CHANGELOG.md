@@ -1,3 +1,48 @@
+## 2.35.0 (2024-05-28)
+
+### Highlights
+
+- feat(emptyState): add emptyState component (0a8c8f89)
+- feat(combobox): add keyboard event handler support (748f7deb)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(emptyState): add emptyState component (0a8c8f89)
+- feat(combobox): add keyboard event handler support (748f7deb)
+
+### Fixes
+
+- fix(docs): update components overview page layouts (c646237f)
+- fix(docs): update components overview page layout and cards layout (a633151b)
+- docs: update layout of components overview page and card opacity (8524e733)
+- fix(table): update table stories card border radius (39d7f348)
+- fix(inputMask): update set selectionRange method for unsupported types (a0d90ed0)
+- fix(emptyState): fix alignment issue when className is passed (0209f18c)
+
+### Improvements
+
+- refactor: structure package json and add engines restriction (2e531a3f)
+- refactor(docs): update default storybook url in docs exporter script (97c9c80b)
+- chore(actions): add docs site test step for docs pull request (a97913a8)
+
+### Documentation
+
+- docs(uistate): update empty state in uistate documentation (0217a54b)
+
+---
+
 ## 2.34.0 (2024-05-16)
 
 ### Highlights
