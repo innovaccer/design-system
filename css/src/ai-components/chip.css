@@ -1,0 +1,63 @@
+.AIChip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--spacing-l);
+  padding: var(--spacing-s) var(--spacing);
+  background: var(--secondary-light);
+  cursor: pointer;
+  width: fit-content;
+  border: 0;
+}
+
+.AIChip:hover {
+  background: var(--secondary);
+}
+
+.AIChip:active {
+  background: var(--secondary-dark);
+}
+
+.AIChip:focus,
+.AIChip:focus-visible {
+  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+  outline: none;
+}
+
+.AIChip-icon {
+  width: var(--spacing-2);
+  height: var(--spacing-2);
+  font-size: var(--spacing-2) !important;
+  margin-right: var(--spacing-m);
+  background: linear-gradient(to bottom, #ffc208 0%, #e31c79 100%);
+  background-clip: text;
+  color: transparent;
+}
+
+.AIChip-text {
+  color: var(--inverse);
+  font-size: var(--font-size);
+  line-height: var(--font-height);
+  font-family: var(--font-family);
+}
+
+/* Disabled Chip */
+
+.AIChip--disabled {
+  background: var(--secondary-lighter);
+}
+
+.AIChip-icon--disabled {
+  background: linear-gradient(to bottom, #ffe79e 0%, #f4a4c9 100%);
+  background-clip: text;
+  color: transparent;
+}
+
+.AIChip-text--disabled {
+  color: var(--inverse-lightest);
+}
+
+.AIChip:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
