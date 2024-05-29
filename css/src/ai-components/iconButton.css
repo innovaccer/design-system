@@ -1,0 +1,67 @@
+.AIIconButton {
+  background: transparent;
+  padding: var(--spacing);
+  border-radius: var(--spacing-m);
+  cursor: pointer;
+  border: 0;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size);
+  line-height: var(--font-height-s);
+  position: relative;
+}
+
+.AIIconButton:hover {
+  background: var(--secondary);
+  color: var(--secondary) !important;
+}
+
+.AIIconButton:active {
+  background: var(--secondary-dark);
+  color: var(--secondary-dark) !important;
+}
+
+.AIIconButton:focus {
+  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+}
+
+.AIIconButton:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  background: transparent;
+  color: var(--inverse-lightest);
+}
+
+.AIIconButton-icon {
+  overflow: hidden;
+  flex-shrink: 0;
+  user-select: none;
+  line-height: inherit;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.AIIconButton-AIIcon {
+  position: absolute;
+}
+
+.AIIconButton-AIIcon--regularTop {
+  bottom: calc(var(--spacing-l) + var(--spacing-s)); /* 14px */
+  left: calc(var(--spacing-l) + var(--spacing-xs)); /* 13px */
+}
+
+.AIIconButton-AIIcon--largeTop {
+  bottom: calc(var(--spacing-2) + var(--spacing-s)); /* 18px */
+  left: calc(var(--spacing-2) + var(--spacing-xs)); /* 17px */
+}
+
+.AIIconButton-AIIcon--regularBottom {
+  top: calc(var(--spacing-l) + var(--spacing-xs)); /* 13px */
+  left: calc(var(--spacing-l) + var(--spacing-s)); /* 14px */
+}
+
+.AIIconButton-AIIcon--largeBottom {
+  top: calc(var(--spacing-2) + var(--spacing-xs)); /* 17px */
+  left: calc(var(--spacing-2) + var(--spacing-s)); /* 18px */
+}
