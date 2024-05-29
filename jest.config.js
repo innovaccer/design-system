@@ -7,7 +7,7 @@ const config = {
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   modulePaths: ['core'],
-  setupFilesAfterEnv: ['./scripts/setupTest.ts'],
+  setupFilesAfterEnv: ['./scripts/setupTest.ts', 'jest-canvas-mock'],
   globalSetup: './scripts/setupGlobalJest.ts',
   transformIgnorePatterns: [`/node_modules/(?!${esModules})`],
   // snapshotSerializers: ['enzyme-to-json/serializer'],

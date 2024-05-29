@@ -92,3 +92,5 @@ export { AvatarSelectionProps } from './components/atoms/avatarSelection';
 export { ComboboxProps } from './components/organisms/combobox';
 export { SelectProps } from './components/organisms/select';
 export { MenuProps } from './components/organisms/menu';
+
+export { SaraSparkleProps } from './ai-components/SaraSparkle';
