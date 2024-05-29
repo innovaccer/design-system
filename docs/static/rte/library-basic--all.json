@@ -205,7 +205,7 @@
           "type": "object"
         },
         "name": "mention",
-        "description": "Used to enable mention in the editor\n\n| Name | Description | Default |\n| --- | --- | --- |\n| seperator | Character that separates a mention from word preceding it | '  ' |\n| trigger | Character that causes mention suggestions to appear, | '@' |\n| suggestion | Properties: label, value, icon | |\n| fetchSuggestions | Fetch dynamic suggestions list (Either use suggestion or fetchSuggestions option)\n| chipOptions | [Design System Chip Props](https://innovaccer.github.io/design-system/?path=/docs/components-chip-all--all) | |\n| dropdownOptions | Properties: dropdownClassName, customOptionRenderer = (suggestion, active, index) => React.ReactNode | |\n| renderer | customRenderer = (value) => React.ReactNode | |",
+        "description": "Used to enable mention in the editor\n\n| Name | Description | Default |\n| --- | --- | --- |\n| seperator | Character that separates a mention from word preceding it | '  ' |\n| trigger | Character that causes mention suggestions to appear, | '@' |\n| suggestion | Properties: label, value, icon | |\n| fetchSuggestions | Fetch dynamic suggestions list (Either use suggestion or fetchSuggestions option)\n| chipOptions | [Design System Chip Props](https://mds.innovaccer.com/?path=/docs/components-chip-chip-all--all) | |\n| dropdownOptions | Properties: dropdownClassName, customOptionRenderer = (suggestion, active, index) => React.ReactNode | |\n| renderer | customRenderer = (value) => React.ReactNode | |",
         "type": {
           "required": false,
           "name": "object",
@@ -684,7 +684,7 @@
         "type": "object"
       },
       "name": "mention",
-      "description": "Used to enable mention in the editor\n\n| Name | Description | Default |\n| --- | --- | --- |\n| seperator | Character that separates a mention from word preceding it | '  ' |\n| trigger | Character that causes mention suggestions to appear, | '@' |\n| suggestion | Properties: label, value, icon | |\n| fetchSuggestions | Fetch dynamic suggestions list (Either use suggestion or fetchSuggestions option)\n| chipOptions | [Design System Chip Props](https://innovaccer.github.io/design-system/?path=/docs/components-chip-all--all) | |\n| dropdownOptions | Properties: dropdownClassName, customOptionRenderer = (suggestion, active, index) => React.ReactNode | |\n| renderer | customRenderer = (value) => React.ReactNode | |",
+      "description": "Used to enable mention in the editor\n\n| Name | Description | Default |\n| --- | --- | --- |\n| seperator | Character that separates a mention from word preceding it | '  ' |\n| trigger | Character that causes mention suggestions to appear, | '@' |\n| suggestion | Properties: label, value, icon | |\n| fetchSuggestions | Fetch dynamic suggestions list (Either use suggestion or fetchSuggestions option)\n| chipOptions | [Design System Chip Props](https://mds.innovaccer.com/?path=/docs/components-chip-chip-all--all) | |\n| dropdownOptions | Properties: dropdownClassName, customOptionRenderer = (suggestion, active, index) => React.ReactNode | |\n| renderer | customRenderer = (value) => React.ReactNode | |",
       "type": {
         "required": false,
         "name": "object",

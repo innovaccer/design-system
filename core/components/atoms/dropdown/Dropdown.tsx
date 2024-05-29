@@ -64,7 +64,7 @@ interface SyncProps {
    *   value: React.ReactText;
    *   icon?: string;
    *   subInfo?: string | [MetaListProps]
-   *    (https://innovaccer.github.io/design-system/?path=/docs/components-metalist-all--all);
+   *    (https://mds.innovaccer.com/?path=/docs/components-metalist-all--all);
    *   optionType?: OptionType;
    *   selected?: boolean;
    *   disabled?: boolean;
