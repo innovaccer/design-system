@@ -96,5 +96,6 @@ export { Menu } from './components/organisms/menu';
 
 export { AIButton } from './ai-components/AIButton';
 export { SaraSparkle } from './ai-components/SaraSparkle';
+export { Sara } from './ai-components/Sara';
 
 export { version } from '../package.json';
