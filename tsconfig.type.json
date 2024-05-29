@@ -1,7 +1,7 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "dist/.lib",
+    "outDir": "dist/types",
     "incremental": true,
     "esModuleInterop": true,
     "composite": true,
