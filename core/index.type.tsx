@@ -98,3 +98,4 @@ export { AIButtonProps } from './ai-components/AIButton';
 export { SaraProps } from './ai-components/Sara';
 export { AIIconButtonProps } from './ai-components/AIIconButton';
 export { AIChipProps } from './ai-components/AIChip';
+export { AIResponseProps } from './ai-components/AIResponse';
