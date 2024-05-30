@@ -93,6 +93,9 @@ export const all = () => {
       rangePicker={rangePicker}
       jumpView={jumpView}
       date={convertToDate(dateValue)}
+      events={{
+        '01/12/2023': true,
+      }}
       onDateChange={(currDate) => action(`on date change : ${currDate}`)()}
       onRangeChange={(sDate, eDate) => action(`on range change: ${sDate} - ${eDate}`)()}
       view={view}

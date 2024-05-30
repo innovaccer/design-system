@@ -254,7 +254,15 @@
 }
 
 .Calendar-valueWrapper--dummy {
-  opacity: var(--transparent-58);
+  opacity: var(--opacity-20);
+}
+
+.Calendar-valueWrapper--disabled {
+  opacity: var(--opacity-10);
+}
+
+.Calendar-valueWrapper--active-dummy {
+  opacity: var(--opacity-16);
 }
 
 .Calendar-value--disabled {
