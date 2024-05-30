@@ -94,4 +94,6 @@ export { Combobox } from './components/organisms/combobox';
 export { Select } from './components/organisms/select';
 export { Menu } from './components/organisms/menu';
 
+export { AIButton } from './ai-components/AIButton';
+
 export { version } from '../package.json';

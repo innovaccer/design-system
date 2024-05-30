@@ -10,6 +10,7 @@ import replace from '@rollup/plugin-replace';
 import { uglify } from "rollup-plugin-uglify";
 import gzipPlugin from 'rollup-plugin-gzip'
 import { compress } from 'brotli';
+import image from '@rollup/plugin-image';
 
 const banner = () => {
 
@@ -72,6 +73,8 @@ const commonJsPlugins =  [
     // Compile TypeScript/JavaScript files
     babel({ extensions, include: ['core/**/*'] }),
 
+    image(),
+
     json(),
 
     replace({
@@ -117,6 +120,8 @@ const tsConfig = {
         { find: '@', replacement: path.resolve('./core') },
       ]
     }),
+
+    image(),
 
     json(),
     
