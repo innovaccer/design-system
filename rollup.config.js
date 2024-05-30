@@ -10,6 +10,7 @@ import replace from '@rollup/plugin-replace';
 import { uglify } from "rollup-plugin-uglify";
 import gzipPlugin from 'rollup-plugin-gzip'
 import { compress } from 'brotli';
+import postcss from 'rollup-plugin-postcss';
 
 const banner = () => {
   const {
@@ -52,17 +53,19 @@ const baseConfig = {
 
 const commonJsPlugins = [
   alias({
-    entries: [
-      { find: '@', replacement: path.resolve('./core') },
-    ]
+    entries: [{ find: '@', replacement: path.resolve('./core') }],
   }),
   resolve({ extensions, preferBuiltins: false }),
   commonjs(),
   babel({ extensions, include: ['core/**/*'] }),
   json(),
   replace({
-    'process.env.NODE_ENV': JSON.stringify('production')
-  })
+    'process.env.NODE_ENV': JSON.stringify('production'),
+  }),
+  postcss({
+    modules: true, // Enable CSS Modules
+    extensions: ['.css', '.scss', '.sass'],
+  }),
 ];
 
 const jsUmdOutputConfig = {
@@ -112,9 +115,7 @@ const tsConfig = {
   external: ['react', 'react-dom', 'classnames', 'react-popper'],
   plugins: [
     alias({
-      entries: [
-        { find: '@', replacement: path.resolve('./core') },
-      ]
+      entries: [{ find: '@', replacement: path.resolve('./core') }],
     }),
     json(),
     resolve({ extensions }),
@@ -124,6 +125,10 @@ const tsConfig = {
     }),
     commonjs(),
     babel({ extensions, include: ['core/**/*'] }),
+    postcss({
+      modules: true, // Enable CSS Modules
+      extensions: ['.css', '.scss', '.sass'],
+    }),
   ],
   output: {
     dir: 'dist',
@@ -132,7 +137,7 @@ const tsConfig = {
     globals: globals(),
     banner: banner(),
     sourcemap: true,
-  }
+  },
 };
 
 const brotliConfig = {

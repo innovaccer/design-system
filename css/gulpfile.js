@@ -5,6 +5,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const concat = require('gulp-concat');
 const postcssColorMod = require('postcss-color-mod-function');
 const cleaner = require('gulp-clean');
+const path = require('path');
 
 const materialIcons = './material-design-icons/iconfont/material-icons.css';
 const materialFont = './material-design-icons/iconfont/*.{ttf,otf,woff2}';
@@ -16,6 +17,7 @@ const sources = [
   './src/core/*.css',
   './src/components/*.css',
   './src/utils/*.css',
+  path.join(__dirname, '../core/components/**/*.css'),
 ];
 
 function clean() {

@@ -112,6 +112,7 @@
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-gzip": "^2.5.0",
     "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-uglify": "^6.0.4",
     "trim": ">=0.0.3",
     "ts-jest": "^24.3.0",

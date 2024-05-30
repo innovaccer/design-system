@@ -3,6 +3,9 @@ import { Row, Column, PageHeader, Button, Tabs, Card, Table, ButtonProps } from 
 
 
 
+    
+
+
 // You can now use the Button component and its props in your React components
 const MyComponent: React.FC = () => {
   // You can use the ButtonProps type to define the prop structure for custom button components
@@ -119,7 +122,7 @@ const UserManagementTable: React.FC = () => {
 
   return (
     <Row>
-      <Column size={11}>
+      <Column size={11} className="p-5">
         <div className="bg-secondary-lightest">
           <PageHeader title="Users" separator={true} tabs={tab} actions={actions} />
         </div>
@@ -154,6 +157,12 @@ const UserManagementTable: React.FC = () => {
           />
         </Card>
         <MyComponent />
+        <div
+          dangerouslySetInnerHTML={{
+            __html:
+              '<button data-test="DesignSystem-Button" class="Button Button--regular Button--alert Button--iconAlign-left" tabindex="0" aria-label="Delete"><span class="Button-text">Delete</span></button>',
+          }}
+        ></div>
       </Column>
     </Row>
   );

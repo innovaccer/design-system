@@ -1,12 +1,15 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Text, Tooltip, Icon } from '@/index';
+import Icon from '@/components/atoms/icon';
+import Text from '@/components/atoms/text';
+import Tooltip from '@/components/molecules/tooltip';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { TooltipProps } from '@/index.type';
 import { AccentAppearance, AvatarSize, AvatarShape } from '@/common.type';
 import AvatarIcon from './avatarIcon';
 import AvatarImage from './avatarImage';
 import AvatarProvider from './AvatarProvider';
+import styles from './avatar.module.css';
 
 export interface AvatarProps extends BaseProps {
   /**
@@ -79,27 +82,27 @@ export const Avatar = (props: AvatarProps) => {
 
   const AvatarClassNames = classNames(
     {
-      Avatar: true,
-      ['Avatar--square']: shape === 'square',
-      [`Avatar--${size}`]: shape !== 'square',
-      [`Avatar--${AvatarAppearance}`]: AvatarAppearance,
-      ['Avatar--disabled']: !initials || !withTooltip,
+      [styles.Avatar]: true,
+      [styles['Avatar--square']]: shape === 'square',
+      [styles[`Avatar--${size}`]]: shape !== 'square',
+      [styles[`Avatar--${AvatarAppearance}`]]: AvatarAppearance,
+      [styles['Avatar--disabled']]: !initials || !withTooltip,
     },
     className
   );
 
   const AvatarWrapperClassNames = classNames({
-    ['Avatar--wrapper']: shape === 'square',
-    [`Avatar--${size}`]: shape === 'square',
+    [styles['Avatar--wrapper']]: shape === 'square',
+    [styles[`Avatar--${size}`]]: shape === 'square',
   });
 
   const TextClassNames = classNames({
-    [`Avatar-content--${size}`]: size,
-    [`Avatar-content--${AvatarAppearance}`]: AvatarAppearance,
+    [styles[`Avatar-content--${size}`]]: size,
+    [styles[`Avatar-content--${AvatarAppearance}`]]: AvatarAppearance,
   });
 
   const IconClassNames = classNames({
-    [`Avatar-content--${AvatarAppearance}`]: AvatarAppearance,
+    [styles[`Avatar-content--${AvatarAppearance}`]]: AvatarAppearance,
   });
 
   const sharedProp = {

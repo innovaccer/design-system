@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { BaseHtmlProps, BaseProps } from '@/utils/types';
 import classNames from 'classnames';
+import styles from './actionCard.module.css';
 
 export interface ActionCardProps extends BaseProps, BaseHtmlProps<HTMLDivElement> {
   /**
@@ -26,8 +27,8 @@ export const ActionCard = (props: ActionCardProps) => {
 
   const classes = classNames(
     {
-      ['ActionCard']: true,
-      ['ActionCard--disabled']: disabled,
+      [styles['ActionCard']]: true,
+      [styles['ActionCard--disabled']]: disabled,
     },
     className
   );
@@ -49,7 +50,11 @@ export const ActionCard = (props: ActionCardProps) => {
       {...rest}
     >
       {disabled && (
-        <div style={{ zIndex }} data-test="DesignSystem-ActionCard-Overlay" className="ActionCard-overlay--disabled" />
+        <div
+          style={{ zIndex }}
+          data-test="DesignSystem-ActionCard-Overlay"
+          className={styles['ActionCard-overlay--disabled']}
+        />
       )}
       {children}
     </div>
