@@ -84,7 +84,7 @@ export interface ModalProps extends BaseProps {
    *  OverlayFooterOptions {
    *    actions: ButtonProps[];
    *  }
-   * ([ButtonProps](https://innovaccer.github.io/design-system/?path=/docs/components-button-all--all))
+   * ([ButtonProps](https://mds.innovaccer.com/?path=/docs/components-button-button-all--all))
    * </pre>
    */
   footerOptions?: FooterOptions;
