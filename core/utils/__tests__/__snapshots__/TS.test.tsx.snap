@@ -51,17 +51,24 @@ exports[`TS renders children 1`] = `
       Hello World!
     </span>
   </div>
-  <div
-    class="Chip-wrapper Chip Chip--input"
-    data-test="DesignSystem-Chip--GenericChip"
-    tabindex="0"
-  >
-    <span
-      class="Text Text--regular color-inverse Chip-text"
-      data-test="DesignSystem-GenericChip--Text"
+  <div>
+    <div
+      class="Chip-wrapper Chip Chip--input"
+      data-test="DesignSystem-Chip--GenericChip"
+      style="max-width: 256px;"
+      tabindex="0"
     >
-      Hello World!
-    </span>
+      <div
+        class="Chip-text--truncate"
+      >
+        <span
+          class="Text Text--regular color-inverse Chip-text"
+          data-test="DesignSystem-GenericChip--Text"
+        >
+          Hello World!
+        </span>
+      </div>
+    </div>
   </div>
   <div
     class="ChipGroup"
@@ -737,17 +744,24 @@ exports[`TS renders children 1`] = `
       class="d-flex justify-content-center pb-6"
       data-test="DesignSystem-Select--TodaysDate-wrapper"
     >
-      <div
-        class="Chip-wrapper Chip Chip--action"
-        data-test="DesignSystem-Chip--GenericChip"
-        tabindex="0"
-      >
-        <span
-          class="Text Text--regular color-inverse Chip-text"
-          data-test="DesignSystem-GenericChip--Text"
+      <div>
+        <div
+          class="Chip-wrapper Chip Chip--action"
+          data-test="DesignSystem-Chip--GenericChip"
+          style="max-width: 256px;"
+          tabindex="0"
         >
-          Today, Jun 14
-        </span>
+          <div
+            class="Chip-text--truncate"
+          >
+            <span
+              class="Text Text--regular color-inverse Chip-text"
+              data-test="DesignSystem-GenericChip--Text"
+            >
+              Today, Jun 14
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
