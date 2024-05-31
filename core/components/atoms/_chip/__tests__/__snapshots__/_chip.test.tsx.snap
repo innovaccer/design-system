@@ -8,6 +8,7 @@ exports[`Chip component
     <div
       class="Chip-wrapper undefined"
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
+      style="max-width: 256px;"
       tabindex="0"
     >
       <i
@@ -18,12 +19,16 @@ exports[`Chip component
       >
         events
       </i>
-      <span
-        class="Text Text--regular color-inverse Chip-text"
-        data-test="DesignSystem-GenericChip--Text"
+      <div
+        class="Chip-text--truncate"
       >
-        ChipLabel
-      </span>
+        <span
+          class="Text Text--regular color-inverse Chip-text"
+          data-test="DesignSystem-GenericChip--Text"
+        >
+          ChipLabel
+        </span>
+      </div>
     </div>
   </div>
 </body>
@@ -37,6 +42,7 @@ exports[`Chip component
     <div
       class="Chip-wrapper undefined"
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
+      style="max-width: 256px;"
       tabindex="0"
     >
       <i
@@ -47,12 +53,16 @@ exports[`Chip component
       >
         events
       </i>
-      <span
-        class="Text Text--regular color-primary-dark Chip-text"
-        data-test="DesignSystem-GenericChip--Text"
+      <div
+        class="Chip-text--truncate"
       >
-        ChipLabel
-      </span>
+        <span
+          class="Text Text--regular color-primary-dark Chip-text"
+          data-test="DesignSystem-GenericChip--Text"
+        >
+          ChipLabel
+        </span>
+      </div>
     </div>
   </div>
 </body>
@@ -66,6 +76,7 @@ exports[`Chip component
     <div
       class="Chip-wrapper undefined"
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
+      style="max-width: 256px;"
       tabindex="-1"
     >
       <i
@@ -76,12 +87,16 @@ exports[`Chip component
       >
         events
       </i>
-      <span
-        class="Text Text--regular color-inverse-lightest Chip-text"
-        data-test="DesignSystem-GenericChip--Text"
+      <div
+        class="Chip-text--truncate"
       >
-        ChipLabel
-      </span>
+        <span
+          class="Text Text--regular color-inverse-lightest Chip-text"
+          data-test="DesignSystem-GenericChip--Text"
+        >
+          ChipLabel
+        </span>
+      </div>
     </div>
   </div>
 </body>
@@ -95,6 +110,7 @@ exports[`Chip component
     <div
       class="Chip-wrapper undefined"
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
+      style="max-width: 256px;"
       tabindex="-1"
     >
       <i
@@ -105,12 +121,16 @@ exports[`Chip component
       >
         events
       </i>
-      <span
-        class="Text Text--regular color-primary-lighter primary-dark Chip-text"
-        data-test="DesignSystem-GenericChip--Text"
+      <div
+        class="Chip-text--truncate"
       >
-        ChipLabel
-      </span>
+        <span
+          class="Text Text--regular color-primary-lighter primary-dark Chip-text"
+          data-test="DesignSystem-GenericChip--Text"
+        >
+          ChipLabel
+        </span>
+      </div>
     </div>
   </div>
 </body>
@@ -124,6 +144,7 @@ exports[`Chip component
     <div
       class="Chip-wrapper undefined"
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
+      style="max-width: 256px;"
       tabindex="0"
     >
       <i
@@ -134,12 +155,16 @@ exports[`Chip component
       >
         events
       </i>
-      <span
-        class="Text Text--regular color-inverse Chip-text"
-        data-test="DesignSystem-GenericChip--Text"
+      <div
+        class="Chip-text--truncate"
       >
-        ChipLabel
-      </span>
+        <span
+          class="Text Text--regular color-inverse Chip-text"
+          data-test="DesignSystem-GenericChip--Text"
+        >
+          ChipLabel
+        </span>
+      </div>
       <div
         class="Chip-icon Chip-icon--right cursor-pointer"
         data-test="DesignSystem-GenericChip--clearButton"
@@ -168,6 +193,7 @@ exports[`Chip component
     <div
       class="Chip-wrapper undefined"
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
+      style="max-width: 256px;"
       tabindex="0"
     >
       <i
@@ -178,12 +204,16 @@ exports[`Chip component
       >
         events
       </i>
-      <span
-        class="Text Text--regular color-primary-dark Chip-text"
-        data-test="DesignSystem-GenericChip--Text"
+      <div
+        class="Chip-text--truncate"
       >
-        ChipLabel
-      </span>
+        <span
+          class="Text Text--regular color-primary-dark Chip-text"
+          data-test="DesignSystem-GenericChip--Text"
+        >
+          ChipLabel
+        </span>
+      </div>
       <div
         class="Chip-icon Chip-icon--right cursor-pointer Chip-icon--selected"
         data-test="DesignSystem-GenericChip--clearButton"
@@ -212,6 +242,7 @@ exports[`Chip component
     <div
       class="Chip-wrapper undefined"
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
+      style="max-width: 256px;"
       tabindex="-1"
     >
       <i
@@ -222,12 +253,16 @@ exports[`Chip component
       >
         events
       </i>
-      <span
-        class="Text Text--regular color-inverse-lightest Chip-text"
-        data-test="DesignSystem-GenericChip--Text"
+      <div
+        class="Chip-text--truncate"
       >
-        ChipLabel
-      </span>
+        <span
+          class="Text Text--regular color-inverse-lightest Chip-text"
+          data-test="DesignSystem-GenericChip--Text"
+        >
+          ChipLabel
+        </span>
+      </div>
       <div
         class="Chip-icon Chip-icon--right Chip-icon-disabled--right"
         data-test="DesignSystem-GenericChip--clearButton"
@@ -256,6 +291,7 @@ exports[`Chip component
     <div
       class="Chip-wrapper undefined"
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
+      style="max-width: 256px;"
       tabindex="-1"
     >
       <i
@@ -266,12 +302,16 @@ exports[`Chip component
       >
         events
       </i>
-      <span
-        class="Text Text--regular color-primary-lighter primary-dark Chip-text"
-        data-test="DesignSystem-GenericChip--Text"
+      <div
+        class="Chip-text--truncate"
       >
-        ChipLabel
-      </span>
+        <span
+          class="Text Text--regular color-primary-lighter primary-dark Chip-text"
+          data-test="DesignSystem-GenericChip--Text"
+        >
+          ChipLabel
+        </span>
+      </div>
       <div
         class="Chip-icon Chip-icon--right Chip-icon-disabled--right Chip-icon--selected"
         data-test="DesignSystem-GenericChip--clearButton"

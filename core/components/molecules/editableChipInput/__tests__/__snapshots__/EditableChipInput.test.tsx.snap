@@ -22,14 +22,19 @@ exports[`EditableChipInput component
           <div
             class="Chip-wrapper Chip Chip--input Chip-icon--clear my-2 mx-2"
             data-test="DesignSystem-EditableChipInput--Chip"
+            style="max-width: 256px;"
             tabindex="0"
           >
-            <span
-              class="Text Text--regular color-inverse Chip-text"
-              data-test="DesignSystem-GenericChip--Text"
+            <div
+              class="Chip-text--truncate"
             >
-              Chip1
-            </span>
+              <span
+                class="Text Text--regular color-inverse Chip-text"
+                data-test="DesignSystem-GenericChip--Text"
+              >
+                Chip1
+              </span>
+            </div>
             <div
               class="Chip-icon Chip-icon--right cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
@@ -49,14 +54,19 @@ exports[`EditableChipInput component
           <div
             class="Chip-wrapper Chip Chip--input Chip-icon--clear my-2 mx-2"
             data-test="DesignSystem-EditableChipInput--Chip"
+            style="max-width: 256px;"
             tabindex="0"
           >
-            <span
-              class="Text Text--regular color-inverse Chip-text"
-              data-test="DesignSystem-GenericChip--Text"
+            <div
+              class="Chip-text--truncate"
             >
-              Chip2
-            </span>
+              <span
+                class="Text Text--regular color-inverse Chip-text"
+                data-test="DesignSystem-GenericChip--Text"
+              >
+                Chip2
+              </span>
+            </div>
             <div
               class="Chip-icon Chip-icon--right cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
@@ -102,14 +112,19 @@ exports[`EditableChipInput component
           <div
             class="Chip-wrapper Chip Chip--input Chip-icon--clear my-2 mx-2"
             data-test="DesignSystem-EditableChipInput--Chip"
+            style="max-width: 256px;"
             tabindex="0"
           >
-            <span
-              class="Text Text--regular color-inverse Chip-text"
-              data-test="DesignSystem-GenericChip--Text"
+            <div
+              class="Chip-text--truncate"
             >
-              Chip1
-            </span>
+              <span
+                class="Text Text--regular color-inverse Chip-text"
+                data-test="DesignSystem-GenericChip--Text"
+              >
+                Chip1
+              </span>
+            </div>
             <div
               class="Chip-icon Chip-icon--right cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
@@ -129,14 +144,19 @@ exports[`EditableChipInput component
           <div
             class="Chip-wrapper Chip Chip--input Chip-icon--clear my-2 mx-2"
             data-test="DesignSystem-EditableChipInput--Chip"
+            style="max-width: 256px;"
             tabindex="0"
           >
-            <span
-              class="Text Text--regular color-inverse Chip-text"
-              data-test="DesignSystem-GenericChip--Text"
+            <div
+              class="Chip-text--truncate"
             >
-              Chip2
-            </span>
+              <span
+                class="Text Text--regular color-inverse Chip-text"
+                data-test="DesignSystem-GenericChip--Text"
+              >
+                Chip2
+              </span>
+            </div>
             <div
               class="Chip-icon Chip-icon--right cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
