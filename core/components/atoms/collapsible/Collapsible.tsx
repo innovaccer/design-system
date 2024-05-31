@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Icon } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import styles from './Collapsible.module.css';
 
 export interface CollapsibleProps extends BaseProps {
   /**
@@ -50,27 +51,27 @@ export const Collapsible = (props: CollapsibleProps) => {
   });
 
   const WrapperClass = classNames({
-    ['Collapsible-wrapper']: true,
-    ['Collapsible-wrapper--overlay']: !isClicked,
+    [styles['Collapsible-wrapper']]: true,
+    [styles['Collapsible-wrapper--overlay']]: !isClicked,
   });
 
   const BodyClass = classNames({
-    ['Collapsible-body']: true,
+    [styles['Collapsible-body']]: true,
     ['overflow-hidden']: !expanded && hoverable,
   });
 
   const classes = classNames(
     {
-      Collapsible: true,
-      ['Collapsible--overlay']: !isClicked,
-      ['Collapsible--shadow']: !isClicked && expanded,
+      [styles.Collapsible]: true,
+      [styles['Collapsible--overlay']]: !isClicked,
+      [styles['Collapsible--shadow']]: !isClicked && expanded,
     },
     className
   );
 
   const FooterClass = classNames({
-    ['Collapsible-footer']: true,
-    ['Collapsible-footer--seperator']: seperator,
+    [styles['Collapsible-footer']]: true,
+    [styles['Collapsible-footer--seperator']]: seperator,
   });
 
   const onToggleHandler = (newExpanded: boolean, type: string) => () => {

@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { BaseProps, BaseHtmlProps } from '@/utils/types';
 import { Icon } from '@/index';
 import { IconType } from '@/common.type';
+import styles from './LinkButton.module.css';
 
 export type ButtonType = 'button' | 'submit' | 'reset';
 export type LinkButtonSize = 'tiny' | 'regular';
@@ -76,17 +77,17 @@ export const LinkButton = React.forwardRef<HTMLButtonElement, LinkButtonProps>((
   const { children, type, className, disabled, tabIndex, icon, subtle, size, iconAlign, iconType, ...rest } = props;
 
   const buttonClass = classNames({
-    ['LinkButton']: true,
-    [`LinkButton--${size}`]: size,
-    ['LinkButton--default']: !subtle,
-    ['LinkButton--subtle']: subtle,
-    [`LinkButton--iconAlign-${iconAlign}`]: children && iconAlign,
+    [styles.LinkButton]: true,
+    [styles[`LinkButton--${size}`]]: size,
+    [styles['LinkButton--default']]: !subtle,
+    [styles['LinkButton--subtle']]: subtle,
+    [styles[`LinkButton--iconAlign-${iconAlign}`]]: children && iconAlign,
     [`${className}`]: className,
   });
 
   const iconClass = classNames({
-    ['LinkButton-icon']: true,
-    [`LinkButton-icon--${iconAlign}`]: children && iconAlign,
+    [styles['LinkButton-icon']]: true,
+    [styles[`LinkButton-icon--${iconAlign}`]]: children && iconAlign,
   });
 
   return (

@@ -6,6 +6,7 @@ import { Name } from '../chip/Chip';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { IconProps, TextProps } from '@/index.type';
 import { IconType } from '@/common.type';
+import styles from '../chip/chip.module.css';
 
 export interface GenericChipProps extends BaseProps {
   label: string | React.ReactElement;
@@ -27,11 +28,11 @@ export const GenericChip = (props: GenericChipProps) => {
 
   const iconClass = (align: string) =>
     classNames({
-      ['Chip-icon']: true,
-      [`Chip-icon--${align}`]: align,
-      [`Chip-icon-disabled--right`]: align === 'right' && disabled,
-      ['cursor-pointer']: align === 'right' && !disabled,
-      ['Chip-icon--selected']: align === 'right' && selected,
+      [styles['Chip-icon']]: true,
+      [styles[`Chip-icon--${align}`]]: align,
+      [styles[`Chip-icon-disabled--right`]]: align === 'right' && disabled,
+      [styles['cursor-pointer']]: align === 'right' && !disabled,
+      [styles['Chip-icon--selected']]: align === 'right' && selected,
     });
 
   const onCloseHandler = (e: React.MouseEvent | React.KeyboardEvent) => {
@@ -51,18 +52,18 @@ export const GenericChip = (props: GenericChipProps) => {
 
   const iconAppearance = (align: string) =>
     classNames({
-      ['disabled']: disabled && !selected,
-      ['primary_dark']: !disabled && selected,
-      ['primary_lighter']: disabled && selected,
-      ['subtle']: !disabled && !selected && align === 'right',
-      ['inverse']: !disabled && !selected && align === 'left',
+      [styles['disabled']]: disabled && !selected,
+      [styles['primary_dark']]: !disabled && selected,
+      [styles['primary_lighter']]: disabled && selected,
+      [styles['subtle']]: !disabled && !selected && align === 'right',
+      [styles['inverse']]: !disabled && !selected && align === 'left',
     }) as IconProps['appearance'];
 
   const textColor = classNames({
-    ['primary-lighter']: disabled && selected,
-    ['inverse-lightest']: disabled && !selected,
-    ['primary-dark']: selected,
-    ['inverse']: !disabled && !selected,
+    [styles['primary-lighter']]: disabled && selected,
+    [styles['inverse-lightest']]: disabled && !selected,
+    [styles['primary-dark']]: selected,
+    [styles['inverse']]: !disabled && !selected,
   }) as TextProps['color'];
 
   const renderLabel = () => {
@@ -74,12 +75,12 @@ export const GenericChip = (props: GenericChipProps) => {
               data-test="DesignSystem-GenericChip--LabelPrefix"
               weight="medium"
               color={textColor}
-              className="Chip-text mr-3"
+              className={styles['Chip-text'] + ' mr-3'}
             >
               {labelPrefix}
             </Text>
           )}
-          <Text data-test="DesignSystem-GenericChip--Text" color={textColor} className="Chip-text">
+          <Text data-test="DesignSystem-GenericChip--Text" color={textColor} className={styles['Chip-text']}>
             {label}
           </Text>
         </>
@@ -96,7 +97,7 @@ export const GenericChip = (props: GenericChipProps) => {
       tabIndex={disabled ? -1 : 0}
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
       {...baseProps}
-      className={`Chip-wrapper ${className}`}
+      className={styles['Chip-wrapper'] + ` ${className}`}
       onClick={onClickHandler}
     >
       {icon && (

@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { Text, Icon, MetaList } from '@/index';
+import styles from './chat.module.css';
 
 export type StatusType = 'failed' | 'sending' | 'sent' | 'read' | 'urgent';
 
@@ -20,14 +21,16 @@ export const Status = (props: StatusProps) => {
 
   const StatusClass = classNames(
     {
-      ['d-flex align-items-center mt-3']: true,
+      [styles['d-flex']]: true,
+      [styles['align-items-center']]: true,
+      [styles['mt-3']]: true,
     },
     className
   );
 
   const TextClass = classNames(
     {
-      ['ChatMessage-status']: true,
+      [styles['ChatMessage-status']]: true,
     },
     className
   );

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, BaseHtmlProps } from '@/utils/types';
+import styles from './Row.module.css';
 
 export type RowProps = BaseProps & BaseHtmlProps<HTMLDivElement>;
 
@@ -8,7 +9,7 @@ export const Row = React.forwardRef<HTMLDivElement, RowProps>((props, ref) => {
   const { className, children, ...rest } = props;
 
   const classes = classNames({
-    Row: true,
+    [styles.Row]: true,
     [`${className}`]: className,
   });
   return (

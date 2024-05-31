@@ -4,6 +4,7 @@ import { Text, InlineMessage, Button } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import FileUploaderStatus from './FileUploaderStatus';
 import { FileStatus } from '@/common.type';
+import styles from './FileUploader.module.css';
 
 export interface FileItem {
   /**
@@ -47,7 +48,7 @@ export const FileUploaderItem = (props: FileUploaderItemProps) => {
 
   const FileItemClass = classNames(
     {
-      ['FileUploaderItem']: true,
+      [styles.FileUploaderItem]: true,
     },
     className
   );
@@ -61,8 +62,8 @@ export const FileUploaderItem = (props: FileUploaderItemProps) => {
       className={FileItemClass}
       onClick={() => onClick && onClick(file, id)}
     >
-      <div className="FileUploaderItem-file">
-        <Text className="FileUploaderItem-text" appearance={status === 'completed' ? 'default' : 'subtle'}>
+      <div className={styles.FileUploaderItemFile}>
+        <Text className={styles.FileUploaderItemText} appearance={status === 'completed' ? 'default' : 'subtle'}>
           {name}
         </Text>
         <div className="d-flex align-items-center">

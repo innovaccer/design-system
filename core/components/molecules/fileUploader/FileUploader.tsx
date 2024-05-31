@@ -4,6 +4,7 @@ import { Text } from '@/index';
 import FileUploaderFormat, { FileUploaderFormatProps } from './FileUploaderFormat';
 import FileUploaderButton, { FileUploaderButtonProps } from './FileUploaderButton';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import styles from './FileUploader.module.css';
 
 export interface FileUploaderProps extends FileUploaderButtonProps, FileUploaderFormatProps, BaseProps {
   /**
@@ -40,7 +41,7 @@ export const FileUploader = (props: FileUploaderProps) => {
 
   const FileUploaderClass = classNames(
     {
-      ['FileUploader']: true,
+      [styles.FileUploader]: true,
     },
     className
   );

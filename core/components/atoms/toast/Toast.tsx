@@ -6,6 +6,7 @@ import Icon from '@/components/atoms/icon';
 import ActionButton from './ActionButton';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { MessageAppearance } from '@/common.type';
+import styles from './Toast.module.css';
 
 export type Action = {
   /**
@@ -61,9 +62,9 @@ export const Toast = (props: ToastProps) => {
 
   const wrapperClass = classNames(
     {
-      ['Toast']: true,
-      ['Toast--withMessage']: message,
-      [`Toast--${appearance}`]: appearance,
+      [styles.Toast]: true,
+      [styles.ToastWithMessage]: message,
+      [styles[`Toast${appearance}`]]: appearance,
     },
     className
   );
@@ -78,26 +79,26 @@ export const Toast = (props: ToastProps) => {
   const icon = IconMapping[appearance];
 
   const titleClass = classNames({
-    ['Toast-title']: true,
-    ['Toast-title--withMessage']: message,
+    [styles.ToastTitle]: true,
+    [styles.ToastTitleWithMessage]: message,
   });
 
   const iconClass = (align: string) =>
     classNames({
-      ['Toast-icon']: true,
-      [`Toast-icon--${align}`]: align,
-      [`Toast-icon--${appearance}`]: appearance,
-      [`Toast-close-icon--${appearance}`]: appearance && align === 'right',
+      [styles.ToastIcon]: true,
+      [styles[`ToastIcon${align}`]]: align,
+      [styles[`ToastIcon${appearance}`]]: appearance,
+      [styles[`ToastCloseIcon${appearance}`]]: appearance && align === 'right',
     });
 
   const textClass = classNames({
-    ['Toast-text']: true,
-    [`Toast-text--${appearance}`]: appearance,
+    [styles.ToastText]: true,
+    [styles[`ToastText${appearance}`]]: appearance,
   });
 
   const headingClass = classNames({
-    ['Toast-heading']: true,
-    [`Toast-heading--${appearance}`]: appearance,
+    [styles.ToastHeading]: true,
+    [styles[`ToastHeading${appearance}`]]: appearance,
   });
 
   const onCloseHandler = () => {

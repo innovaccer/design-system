@@ -4,6 +4,7 @@ import { BaseProps } from '@/utils/types';
 import { Text } from '@/index';
 import { TextSize } from 'types';
 import EmptyStateContext from './EmptyStateContext';
+import styles from './EmptyState.module.css';
 
 export interface EmptyDescriptionProps extends BaseProps {
   /**
@@ -27,7 +28,7 @@ const EmptyStateDescription = (props: EmptyDescriptionProps) => {
 
   const descriptionClasses = classNames(
     {
-      [`EmptyState-text`]: true,
+      [styles['EmptyState-text']]: true,
       ['mt-3']: true,
     },
     className

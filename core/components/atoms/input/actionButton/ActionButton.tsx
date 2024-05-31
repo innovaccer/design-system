@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { BaseProps } from '@/utils/types';
 import { IconType } from '@/common.type';
 import { Icon } from '@/index';
+import styles from './ActionButton.module.css';
 
 export type ActionButtonType = 'outlined' | 'rounded';
 
@@ -46,7 +47,7 @@ export const ActionButton = (props: ActionButtonProps) => {
   const { className, iconType, ...rest } = props;
 
   const iconClass = classNames({
-    ['ActionButton']: true,
+    [styles.ActionButton]: true,
     [`${className}`]: className,
   });
 

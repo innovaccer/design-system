@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Text } from '@/index';
 import classNames from 'classnames';
+import styles from './avatarGroup.module.css';
 
 const AvatarPopperBody = (props: any) => {
   const { hiddenAvatarList, popperRenderer, maxHeight, dark } = props;
@@ -11,7 +12,7 @@ const AvatarPopperBody = (props: any) => {
 
   return (
     <div className="px-4 py-3">
-      <div className="AvatarGroup-TextWrapper" style={{ maxHeight }}>
+      <div className={styles.AvatarGroupTextWrapper} style={{ maxHeight }}>
         {hiddenAvatarList.map((item: any, ind: any) => {
           const { firstName = '', lastName = '' } = item;
           const name = `${firstName} ${lastName}`;

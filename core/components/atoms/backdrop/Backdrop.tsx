@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import styles from './Backdrop.module.css';
 
 const { useEffect, useState } = React;
 
@@ -34,10 +35,10 @@ export const Backdrop: React.FC<BackdropProps> = (props) => {
 
   const classes = classNames(
     {
-      Backdrop: true,
-      'Backdrop--open': open,
-      'Backdrop-animation--open': animate,
-      'Backdrop-animation--close': !animate,
+      [styles.Backdrop]: true,
+      [styles['Backdrop--open']]: open,
+      [styles['Backdrop-animation--open']]: animate,
+      [styles['Backdrop-animation--close']]: !animate,
     },
     className
   );

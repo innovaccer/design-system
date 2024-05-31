@@ -4,6 +4,7 @@ import { BaseProps } from '@/utils/types';
 import { Heading, Text } from '@/index';
 import EmptyStateContext from './EmptyStateContext';
 import { textSize } from './EmptyState';
+import styles from './EmptyState.module.css';
 
 export interface EmptyDescriptionProps extends BaseProps {
   /**
@@ -21,8 +22,8 @@ const EmptyStateTitle = (props: EmptyDescriptionProps) => {
 
   const headingClass = classNames(
     {
-      [`EmptyState-text`]: true,
-      [`EmptyState-title--${size}`]: true,
+      [styles['EmptyState-text']]: true,
+      [styles[`EmptyState-title--${size}`]]: true,
     },
     className
   );

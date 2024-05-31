@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { SharedProps } from './ChatMessage';
+import styles from './chat.module.css';
 
 export interface BoxProps extends BaseProps {
   /**
@@ -24,11 +25,11 @@ export const Box = (props: InternalBoxProps) => {
 
   const MessageClass = classNames(
     {
-      ['Box']: true,
-      [`Box--${type}`]: type,
-      ['Box--typing']: isTyping,
-      ['Box--urgent']: statusType === 'urgent',
-      [`Box-${type}--withStatus`]: withStatus || isTyping,
+      [styles.Box]: true,
+      [styles[`Box--${type}`]]: type,
+      [styles['Box--typing']]: isTyping,
+      [styles['Box--urgent']]: statusType === 'urgent',
+      [styles[`Box-${type}--withStatus`]]: withStatus || isTyping,
     },
     className
   );

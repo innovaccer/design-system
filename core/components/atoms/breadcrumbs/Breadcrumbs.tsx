@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Button, Link, Tooltip, Dropdown } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import styles from './Breadcrumbs.module.css';
 
 interface Breadcrumb {
   label: string;
@@ -52,7 +53,7 @@ const RenderLink = ({ item, onClick }: renderLinkProps) => {
 
   return (
     <Link
-      className="Breadcrumbs-link ellipsis--noWrap"
+      className={classNames(styles['Breadcrumbs-link'], 'ellipsis--noWrap')}
       data-test="DesignSystem-Breadcrumbs-link"
       href={item.link}
       onClick={onClickHandler}
@@ -66,7 +67,7 @@ const RenderLink = ({ item, onClick }: renderLinkProps) => {
 
 const RenderItem = ({ item, onClick, index, showTooltip }: renderItemProps) => {
   return (
-    <div key={index} className="Breadcrumbs-item" data-test="DesignSystem-Breadcrumbs-item">
+    <div key={index} className={styles['Breadcrumbs-item']} data-test="DesignSystem-Breadcrumbs-item">
       {showTooltip ? (
         <Tooltip tooltip={item.label} position="bottom">
           <RenderLink item={item} onClick={onClick} />
@@ -74,7 +75,7 @@ const RenderItem = ({ item, onClick, index, showTooltip }: renderItemProps) => {
       ) : (
         <RenderLink item={item} onClick={onClick} />
       )}
-      <span className="Breadcrumbs-itemSeparator">/</span>
+      <span className={styles['Breadcrumbs-itemSeparator']}>/</span>
     </div>
   );
 };
@@ -93,7 +94,7 @@ const renderDropdown = (list: BreadcrumbsProps['list'], onClick: BreadcrumbsProp
         appearance="transparent"
         icon="more_horiz_filled"
         largeIcon={true}
-        className="Breadcrumbs-Button"
+        className={styles['Breadcrumbs-Button']}
         data-test="DesignSystem-Breadcrumbs--Button"
       />
     );
@@ -101,7 +102,7 @@ const renderDropdown = (list: BreadcrumbsProps['list'], onClick: BreadcrumbsProp
 
   return (
     <Dropdown
-      className="Breadcrumbs-dropdown"
+      className={styles['Breadcrumbs-dropdown']}
       triggerSize={'tiny'}
       triggerOptions={{ customTrigger }}
       options={options}
@@ -122,7 +123,7 @@ export const Breadcrumbs = (props: BreadcrumbsProps) => {
 
   const BreadcrumbClass = classNames(
     {
-      ['Breadcrumbs']: true,
+      [styles['Breadcrumbs']]: true,
     },
     className
   );
@@ -138,7 +139,7 @@ export const Breadcrumbs = (props: BreadcrumbsProps) => {
           <RenderItem item={list[0]} onClick={onClick} showTooltip={showTooltip} />
           <div className="d-flex align-items-center">
             {renderDropdown(list.slice(1, list.length - 1), onClick)}
-            <span className="Breadcrumbs-itemSeparator">/</span>
+            <span className={styles['Breadcrumbs-itemSeparator']}>/</span>
           </div>
           <RenderItem item={list[list.length - 1]} onClick={onClick} showTooltip={showTooltip} />
         </>

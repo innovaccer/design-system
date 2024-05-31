@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import styles from './Spinner.module.css';
 
 export type SpinnerAppearance = 'primary' | 'secondary' | 'white';
 export type SpinnerSize = 'small' | 'medium' | 'large';
@@ -25,14 +26,14 @@ export const Spinner = (props: SpinnerProps) => {
 
   const wrapperClasses = classNames(
     {
-      Spinner: true,
-      [`Spinner--${size}`]: size,
+      [styles.Spinner]: true,
+      [styles[`Spinner--${size}`]]: size,
     },
     className
   );
   const circleClasses = classNames({
-    Circle: true,
-    [`Circle--${appearance}`]: appearance,
+    [styles.Circle]: true,
+    [styles[`Circle--${appearance}`]]: appearance,
   });
 
   const svgProps = {

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Text, Button } from '@/index';
 import { ErrorType } from './Dropdown';
+import styles from './dropdown.module.css';
 
 interface ErrorTemplateProps {
   dropdownStyle: React.CSSProperties;
@@ -22,7 +23,11 @@ const errorDescription: Record<string, string> = {
 
 export const ErrorTemplate: React.FC<ErrorTemplateProps> = ({ dropdownStyle, errorType, updateOptions }) => {
   return (
-    <div className="Dropdown-wrapper px-7 d-flex" style={dropdownStyle} data-test="DesignSystem-Dropdown--wrapper">
+    <div
+      className={`${styles.DropdownWrapper} px-7 d-flex`}
+      style={dropdownStyle}
+      data-test="DesignSystem-Dropdown--wrapper"
+    >
       <div
         className="d-flex flex-column justify-content-center align-items-center w-100"
         data-test="DesignSystem-Dropdown--errorWrapper"

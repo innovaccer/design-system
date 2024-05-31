@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import styles from '../card/card.module.css';
 
 export interface CardFooterProps extends BaseProps {
   /**
@@ -19,8 +20,8 @@ export const CardFooter = (props: CardFooterProps) => {
 
   const classes = classNames(
     {
-      'Card-footer': true,
-      ['Card-footer--withSeperator']: withSeperator,
+      [styles['Card-footer']]: true,
+      [styles['Card-footer--withSeperator']]: withSeperator,
     },
     className
   );

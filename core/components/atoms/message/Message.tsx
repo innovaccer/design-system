@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { Icon, Heading, Text } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { MessageAppearance } from '@/common.type';
+import styles from './Message.module.css';
 
 const IconMapping = {
   success: 'check_circle',
@@ -46,26 +47,26 @@ export const Message = (props: MessageProps) => {
 
   const MessageClass = classNames(
     {
-      ['Message']: true,
-      [`Message--${appearance}`]: appearance,
+      [styles.Message]: true,
+      [styles[`Message--${appearance}`]]: appearance,
     },
     className
   );
 
   const IconClass = classNames({
-    ['Message-icon']: true,
-    [`Message-icon--${appearance}`]: appearance,
-    ['Message-icon--withTitle']: title,
+    [styles['Message-icon']]: true,
+    [styles[`Message-icon--${appearance}`]]: appearance,
+    [styles['Message-icon--withTitle']]: title,
   });
 
   const TitleClass = classNames({
-    ['Message-heading']: true,
-    [`Message-heading--${appearance}`]: appearance,
+    [styles['Message-heading']]: true,
+    [styles[`Message-heading--${appearance}`]]: appearance,
   });
 
   const DescriptionClass = classNames({
-    ['Message-text']: true,
-    [`Message-text--${appearance}`]: appearance,
+    [styles['Message-text']]: true,
+    [styles[`Message-text--${appearance}`]]: appearance,
   });
 
   const renderDescription = (description: string, children: React.ReactNode) => {
@@ -79,7 +80,7 @@ export const Message = (props: MessageProps) => {
 
     if (children) {
       return (
-        <div data-test="DesignSystem-Message--Description" className="Message-description">
+        <div data-test="DesignSystem-Message--Description" className={styles['Message-description']}>
           {children}
         </div>
       );
@@ -104,7 +105,7 @@ export const Message = (props: MessageProps) => {
         )}
         {renderDescription(props.description, props.children)}
         {actions && (
-          <div data-test="DesignSystem-Message--actions" className="Message-actions">
+          <div data-test="DesignSystem-Message--actions" className={styles['Message-actions']}>
             {actions}
           </div>
         )}

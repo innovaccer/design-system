@@ -9,6 +9,7 @@ import { MetaList, Text } from '@/index';
 import { MetaListProps, IconProps, TextProps } from '@/index.type';
 import { OptionType } from '../DropdownList';
 import { ChangeEvent, IconType } from '@/common.type';
+import styles from '../dropdown.module.css';
 
 export type ClickEvent = React.MouseEvent<HTMLDivElement>;
 
@@ -105,28 +106,28 @@ const Option = (props: OptionProps) => {
   const component = OptionTypeMapping[type];
 
   const OptionClassName = classNames({
-    ['Option']: true,
-    ['Option--active']: active,
-    ['Option--selected']: selected && !menu,
-    ['Option--disabled']: disabled,
-    ['OptionWrapper']: true,
-    [`color-${color}`]: true,
+    [styles.Option]: true,
+    [styles['Option--active']]: active,
+    [styles['Option--selected']]: selected && !menu,
+    [styles['Option--disabled']]: disabled,
+    [styles.OptionWrapper]: true,
+    [styles[`color-${color}`]]: true,
   });
 
   const CheckboxClassName = classNames({
-    ['Option-checkbox']: true,
-    ['Option-checkbox--active']: active,
-    ['OptionWrapper']: true,
+    [styles['Option-checkbox']]: true,
+    [styles['Option-checkbox--active']]: active,
+    [styles.OptionWrapper]: true,
   });
 
   const textClassName = classNames({
-    ['Option-text']: true,
-    ['Option-text--wrap']: !props.truncateOption,
+    [styles['Option-text']]: true,
+    [styles['Option-text--wrap']]: !props.truncateOption,
   });
 
   const customOptionClass = classNames({
-    ['OptionWrapper']: true,
-    ['OptionWrapper--disabled']: disabled,
+    [styles.OptionWrapper]: true,
+    [styles['OptionWrapper--disabled']]: disabled,
   });
 
   const onUpdateActiveOption = () => {
@@ -181,7 +182,7 @@ const Option = (props: OptionProps) => {
           color={subInfoColor}
           size="small"
           weight="medium"
-          className="Option-subInfo"
+          className={styles['Option-subInfo']}
         >
           {subInfo}
         </Text>

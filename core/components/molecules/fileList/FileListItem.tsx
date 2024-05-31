@@ -4,6 +4,7 @@ import { Text, InlineMessage } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import FileIcon from './FileIcon';
 import { FileStatus } from '@/common.type';
+import styles from './FileList.module.css';
 
 export interface FileObject extends BaseProps, Record<string, any> {
   /**
@@ -67,7 +68,7 @@ export const FileListItem = (props: FileListItemProps) => {
 
   const FileItemClass = classNames(
     {
-      ['FileItem']: true,
+      [styles.FileItem]: true,
     },
     className
   );
@@ -82,21 +83,21 @@ export const FileListItem = (props: FileListItemProps) => {
     // TODO(a11y)
     //  eslint-disable-next-line
     <div {...baseProps} className={FileItemClass} onClick={onClickHandler} data-test="DesignSystem-FileListItem">
-      <div className="FileItem-file">
-        <div className="FileItem-fileContent">
+      <div className={styles.FileItemFile}>
+        <div className={styles.FileItemFileContent}>
           <FileIcon file={file} status={status} progress={progress} />
           <Text
             data-test="DesignSystem-FileListItem--Name"
-            className="FileItem-text"
+            className={styles.FileItemText}
             appearance={status === 'completed' ? 'default' : 'subtle'}
             weight="medium"
           >
             {name}
           </Text>
         </div>
-        <div className="FileItem-actions">
+        <div className={styles.FileItemActions}>
           <Text
-            className="FileItem-size"
+            className={styles.FileItemSize}
             size="small"
             appearance={'subtle'}
             data-test="DesignSystem-FileListItem--Size"
@@ -107,7 +108,7 @@ export const FileListItem = (props: FileListItemProps) => {
         </div>
       </div>
       {status === 'error' && (
-        <InlineMessage size="small" appearance="alert" description={errorMessage} className={'FileItem-error'} />
+        <InlineMessage size="small" appearance="alert" description={errorMessage} className={styles.FileItemError} />
       )}
     </div>
   );

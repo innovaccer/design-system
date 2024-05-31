@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { BaseProps } from '@/utils/types';
 import EmptyStateContext from './EmptyStateContext';
+import styles from './EmptyState.module.css';
 
 export interface EmptyActionProps extends BaseProps {
   /**
@@ -19,8 +20,8 @@ const EmptyStateActions = (props: EmptyActionProps) => {
 
   const actionWrapperClasses = classNames(
     {
-      [`EmptyState-actions--${size}`]: true,
-      ['EmptyState-actions']: true,
+      [styles[`EmptyState-actions--${size}`]]: true,
+      [styles['EmptyState-actions']]: true,
     },
     className
   );

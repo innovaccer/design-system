@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import styles from './Divider.module.css';
 
 type DividerType = 'basic' | 'header';
 
@@ -23,11 +24,11 @@ export const Divider = (props: DividerProps) => {
 
   const DividerClass = classNames(
     {
-      ['Divider']: true,
-      ['Divider--horizontal']: !vertical,
-      ['Divider--vertical']: vertical,
-      ['Divider--basic']: !vertical && appearance !== 'header',
-      ['Divider--header']: !vertical && appearance === 'header',
+      [styles.Divider]: true,
+      [styles['Divider--horizontal']]: !vertical,
+      [styles['Divider--vertical']]: vertical,
+      [styles['Divider--basic']]: !vertical && appearance !== 'header',
+      [styles['Divider--header']]: !vertical && appearance === 'header',
     },
     className
   );

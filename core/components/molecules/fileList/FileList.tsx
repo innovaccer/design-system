@@ -2,6 +2,8 @@ import * as React from 'react';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { FileListItem, FileListItemProps } from './FileListItem';
 import { Card } from '@/index';
+import styles from './FileList.module.css';
+
 export interface FileListProps extends BaseProps {
   /**
    * <pre className="DocPage-codeBlock">
@@ -44,7 +46,7 @@ export const FileList = (props: FileListProps) => {
   if (fileList.length === 0) return null;
 
   return (
-    <Card {...baseProps} shadow={'none'} className={className}>
+    <Card {...baseProps} shadow={'none'} className={`${styles.card} ${className}`}>
       {fileList.map((fileItem, index) => (
         <FileListItem
           key={index}

@@ -39,12 +39,7 @@ export const OutsideClick = React.forwardRef<HTMLDivElement, OutsideClickProps>(
     }
   }, []);
 
-  const classes = classNames(
-    {
-      ['OutsideClick']: true,
-    },
-    className
-  );
+  const classes = classNames(className);
 
   return (
     <div ref={innerRef} {...rest} className={classes}>

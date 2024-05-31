@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Text } from '@/index';
 import { OptionTypeProps } from './index';
+import styles from '../dropdown.module.css';
 
 const MetaOption = (props: OptionTypeProps) => {
   const { className, textClassName, onClickHandler, optionData, onUpdateActiveOption, renderSubInfo, color, dataTest } =
@@ -12,15 +13,15 @@ const MetaOption = (props: OptionTypeProps) => {
     // TODO(a11y): fix accessibility
     /* eslint-disable */
     <div
-      className={className}
+      className={styles[className]}
       onClick={onClickHandler}
       onMouseEnter={onUpdateActiveOption}
       data-test={dataTest}
       data-disabled={disabled}
     >
       {/* eslint-enable */}
-      <div className={'Option-label'}>
-        <Text className={textClassName} color={color}>
+      <div className={styles['Option-label']}>
+        <Text className={styles[textClassName]} color={color}>
           {label}
         </Text>
         {subInfo && renderSubInfo(subInfo)}

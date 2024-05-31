@@ -5,6 +5,8 @@ import { BaseProps, OmitNativeProps } from '@/utils/types';
 import uidGenerator from '@/utils/uidGenerator';
 import { ChangeEvent } from '@/common.type';
 import CheckboxIcon from './CheckboxIcon';
+import styles from './Checkbox.module.css';
+
 export type CheckBoxSize = 'regular' | 'tiny';
 
 export interface CheckboxProps extends BaseProps, OmitNativeProps<HTMLInputElement, 'onChange'> {
@@ -108,32 +110,32 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
 
   const CheckboxClass = classNames(
     {
-      ['Checkbox']: true,
-      ['Checkbox--disabled']: disabled,
+      [styles.Checkbox]: true,
+      [styles['Checkbox--disabled']]: disabled,
     },
     className
   );
 
   const CheckboxOuterWrapper = classNames({
-    ['Checkbox-outerWrapper']: true,
-    [`Checkbox-outerWrapper--${size}`]: size,
+    [styles['Checkbox-outerWrapper']]: true,
+    [styles[`Checkbox-outerWrapper--${size}`]]: size,
   });
 
   const CheckboxInputWrapper = classNames({
-    ['Checkbox-input']: true,
-    ['Checkbox-input--checked']: checked,
-    ['Checkbox-input--indeterminate']: props.indeterminate,
+    [styles['Checkbox-input']]: true,
+    [styles['Checkbox-input--checked']]: checked,
+    [styles['Checkbox-input--indeterminate']]: props.indeterminate,
   });
 
   const CheckboxWrapper = classNames({
-    ['Checkbox-wrapper']: true,
-    ['Checkbox-wrapper--default']: !error,
-    ['Checkbox-wrapper--error']: error,
+    [styles['Checkbox-wrapper']]: true,
+    [styles['Checkbox-wrapper--default']]: !error,
+    [styles['Checkbox-wrapper--error']]: error,
   });
 
   const CheckboxLabelClass = classNames({
-    ['Checkbox-label']: true,
-    ['Checkbox-label--tiny']: size === 'tiny',
+    [styles['Checkbox-label']]: true,
+    [styles['Checkbox-label--tiny']]: size === 'tiny',
   });
 
   const setIndeterminate = (indeterminateValue: any) => {
@@ -149,10 +151,10 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
   };
 
   const IconMapper = classNames({
-    ['checked--regular']: checked && size === 'regular',
-    ['checked--tiny']: checked && size === 'tiny',
-    ['indeterminate--regular']: indeterminate && size === 'regular',
-    ['indeterminate--tiny']: indeterminate && size === 'tiny',
+    [styles['checked--regular']]: checked && size === 'regular',
+    [styles['checked--tiny']]: checked && size === 'tiny',
+    [styles['indeterminate--regular']]: indeterminate && size === 'regular',
+    [styles['indeterminate--tiny']]: indeterminate && size === 'tiny',
   });
 
   return (
@@ -178,7 +180,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
             {IconMapper && <CheckboxIcon name={IconMapper} />}
           </span>
         </div>
-        <div className="Checkbox-labelWrapper">
+        <div className={styles['Checkbox-labelWrapper']}>
           {label && label.trim() && (
             <label htmlFor={id} className={CheckboxLabelClass} data-test="DesignSystem-Checkbox-Label">
               <Text

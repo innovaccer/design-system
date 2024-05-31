@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseHtmlProps, BaseProps } from '@/utils/types';
+import styles from './Textarea.module.css';
 
 export interface TextareaProps extends BaseProps, BaseHtmlProps<HTMLTextAreaElement> {
   /**
@@ -81,9 +82,9 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((pr
 
   const classes = classNames(
     {
-      ['Textarea']: true,
-      ['Textarea--resize']: resize,
-      ['Textarea--error']: error,
+      [styles.Textarea]: true,
+      [styles['Textarea--resize']]: resize,
+      [styles['Textarea--error']]: error,
     },
     className
   );

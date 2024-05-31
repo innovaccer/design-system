@@ -1,6 +1,7 @@
 import { Schema } from '../../organisms/grid';
 import { GridCell, Button } from '@/index';
 import * as React from 'react';
+import styles from './YourCSSModule.module.css';
 
 const copyCode = (val: string) => navigator.clipboard.writeText(val);
 
@@ -19,6 +20,7 @@ export const classSchema: Schema = [
             appearance="transparent"
             icon="content_copy"
             onClick={copyCode.bind(null, marginClasses)}
+            className={styles.button}
           />
         </>
       );
@@ -38,6 +40,7 @@ export const classSchema: Schema = [
             appearance="transparent"
             icon="content_copy"
             onClick={copyCode.bind(null, paddingClasses)}
+            className={styles.button}
           />
         </>
       );

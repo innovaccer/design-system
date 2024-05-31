@@ -2,6 +2,7 @@ import * as React from 'react';
 import Text, { TextAppearance } from '@/components/atoms/text';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import styles from './Legend.module.css';
 
 export interface LegendProps extends BaseProps {
   /**
@@ -55,12 +56,12 @@ export const Legend = (props: LegendProps) => {
 
   const legendClass = classNames(
     {
-      ['Legend']: true,
+      [styles.Legend]: true,
     },
     className
   );
 
-  const styles = {
+  const iconStyles = {
     background: `var(--${iconAppearance})`,
     height: `${iconSize}px`,
     width: `${iconSize}px`,
@@ -77,7 +78,7 @@ export const Legend = (props: LegendProps) => {
       onMouseLeave={(e) => onMouseLeave && onMouseLeave(e)}
     >
       {/* eslint-enable */}
-      <span className="Legend-icon" style={styles} />
+      <span className={styles['Legend-icon']} style={iconStyles} />
       <Text appearance={labelAppearance} weight={labelWeight}>
         {children}
       </Text>

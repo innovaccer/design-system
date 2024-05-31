@@ -10,6 +10,7 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 import { ChangeEvent } from '@/common.type';
 import { ErrorTemplate } from './ErrorTemplate';
 import { ErrorType } from './Dropdown';
+import styles from './Dropdown.module.css';
 
 export type DropdownAlign = 'left' | 'right';
 export type OptionType = 'DEFAULT' | 'WITH_ICON' | 'WITH_META' | 'ICON_WITH_META';
@@ -255,7 +256,7 @@ const DropdownList = (props: OptionsProps) => {
   const [minHeight, setMinHeight] = React.useState<number | undefined>();
 
   const getMinHeight = () => {
-    const dropdownWrapper = document.querySelector<HTMLElement>('.Dropdown-wrapper');
+    const dropdownWrapper = document.querySelector<HTMLElement>(`.${styles['Dropdown-wrapper']}`);
     const minHeight = dropdownWrapper?.offsetHeight;
     minHeight && setMinHeight(minHeight);
   };
@@ -354,28 +355,28 @@ const DropdownList = (props: OptionsProps) => {
 
   const getDropdownSectionClass = (showClearButton?: boolean) => {
     return classNames({
-      ['Dropdown-section']: true,
-      ['Dropdown-section--withClear']: showClearButton,
+      [styles['Dropdown-section']]: true,
+      [styles['Dropdown-section--withClear']]: showClearButton,
     });
   };
 
   const dropdownClass = classNames(
     {
-      ['Dropdown']: true,
+      [styles['Dropdown']]: true,
     },
     className
   );
 
   const dropdownWrapperClass = classNames({
-    ['Dropdown-wrapper']: true,
-    ['Dropdown-wrapper--wrap']: !truncateOption,
+    [styles['Dropdown-wrapper']]: true,
+    [styles['Dropdown-wrapper--wrap']]: !truncateOption,
   });
 
   const SelectAllClass = classNames({
-    ['Option-checkbox--active']: cursor === 0,
-    ['Option-checkboxWrapper']: true,
-    ['Option-checkbox']: true,
-    ['OptionWrapper']: true,
+    [styles['Option-checkbox--active']]: cursor === 0,
+    [styles['Option-checkboxWrapper']]: true,
+    [styles['Option-checkbox']]: true,
+    [styles['OptionWrapper']]: true,
   });
 
   const onToggleDropdown = (open: boolean, type?: string) => {
@@ -418,7 +419,7 @@ const DropdownList = (props: OptionsProps) => {
   const renderFooter = () => {
     const { footerLabel = 'Search for more options' } = props;
     return (
-      <div className="Dropdown-footer">
+      <div className={styles['Dropdown-footer']}>
         <Text size="small" appearance={'subtle'}>
           {footerLabel}
         </Text>

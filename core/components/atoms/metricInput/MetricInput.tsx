@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { Button, Icon, Text } from '@/index';
 import { BaseHtmlProps, BaseProps, extractBaseProps } from '@/utils/types';
 import { AutoComplete, IconType } from '@/common.type';
+import styles from './MetricInput.module.css';
 
 export type MetricInputSize = 'regular' | 'large';
 
@@ -165,40 +166,40 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
 
   const classes = classNames(
     {
-      ['MetricInput']: true,
-      [`MetricInput--${size}`]: size,
-      ['MetricInput--disabled']: disabled || readOnly,
-      ['MetricInput--error']: error,
+      [styles.MetricInput]: true,
+      [styles[`MetricInput--${size}`]]: size,
+      [styles['MetricInput--disabled']]: disabled || readOnly,
+      [styles['MetricInput--error']]: error,
     },
     className
   );
 
   const inputClass = classNames({
-    ['MetricInput-input']: true,
-    [`MetricInput-input--${size}`]: size,
-    [`mr-4`]: !suffix && !showActionButton && size === 'regular',
-    [`mr-6`]: !suffix && !showActionButton && size === 'large',
+    [styles['MetricInput-input']]: true,
+    [styles[`MetricInput-input--${size}`]]: size,
+    [styles['mr-4']]: !suffix && !showActionButton && size === 'regular',
+    [styles['mr-6']]: !suffix && !showActionButton && size === 'large',
   });
 
   const iconClass = classNames({
-    ['MetricInput-icon']: true,
-    [`MetricInput-icon--${size}`]: size,
+    [styles['MetricInput-icon']]: true,
+    [styles[`MetricInput-icon--${size}`]]: size,
   });
 
   const prefixClass = classNames({
-    ['mr-4']: size === 'regular',
-    ['mr-5']: size !== 'regular',
+    [styles['mr-4']]: size === 'regular',
+    [styles['mr-5']]: size !== 'regular',
   });
 
   const suffixClass = classNames({
-    ['ml-4 mr-3']: size === 'regular',
-    ['mx-5']: size !== 'regular',
+    [styles['ml-4']]: size === 'regular',
+    [styles['mx-5']]: size !== 'regular',
   });
 
   const actionButton = classNames({
-    ['p-0']: true,
-    [`MetricInput-arrowIcon--${size}`]: size,
-    ['ml-3']: true,
+    [styles['p-0']]: true,
+    [styles[`MetricInput-arrowIcon--${size}`]]: size,
+    [styles['ml-3']]: true,
   });
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -303,12 +304,12 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
         </Text>
       )}
       {showActionButton && (
-        <div className="MetricInput-arrowIcons">
+        <div className={styles['MetricInput-arrowIcons']}>
           <Button
             type="button"
             icon="keyboard_arrow_up"
             size={actionButtonSize}
-            className={`${actionButton} mb-2`}
+            className={`${actionButton} ${styles['mb-2']}`}
             onClick={(e) => onArrowClick(e, 'up')}
             data-test="DesignSystem-MetricInput--upIcon"
           />

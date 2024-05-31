@@ -4,6 +4,7 @@ import Editable from '@/components/atoms/editable';
 import { ChipInput, Button, Chip, Text } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { ChipInputProps } from '@/index.type';
+import styles from './EditableChipInput.module.css';
 
 export interface EditableChipInputProps extends BaseProps {
   /**
@@ -51,22 +52,22 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
 
   const classes = classNames(
     {
-      ['EditableChipInput']: true,
+      [styles.EditableChipInput]: true,
     },
     className
   );
 
   const actionClass = classNames({
-    ['EditableChipInput-actions']: true,
+    [styles.EditableChipInputActions]: true,
   });
 
   const defaultClasses = classNames({
-    ['EditableChipInput-default']: !isWithChips,
-    ['EditableChipInput-defaultWithChips']: isWithChips,
+    [styles.EditableChipInputDefault]: !isWithChips,
+    [styles.EditableChipInputDefaultWithChips]: isWithChips,
   });
 
   const inputClass = classNames({
-    ['EditableChipInput-chipInput']: true,
+    [styles.EditableChipInputChipInput]: true,
   });
 
   const onChipInputChangeHandler = (val: string[]) => {

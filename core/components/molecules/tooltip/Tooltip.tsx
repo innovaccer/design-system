@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Popover, Text } from '@/index';
+import { Popover } from '../popover';
+import { Text } from '@/components/atoms/text';
 import { PopoverProps } from '@/index.type';
 import { BaseProps, filterProps } from '@/utils/types';
 

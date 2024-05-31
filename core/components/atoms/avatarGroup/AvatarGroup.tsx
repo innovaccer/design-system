@@ -7,6 +7,7 @@ import { AvatarSize } from '@/common.type';
 import AvatarCount from './AvatarCount';
 import Avatars from './Avatars';
 import AvatarPopperBody from './AvatarPopperBody';
+import styles from './AvatarGroup.module.css';
 
 interface AvatarData extends Record<string, any> {
   firstName?: string;
@@ -119,14 +120,14 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
 
   const AvatarGroupClass = classNames(
     {
-      ['AvatarGroup']: true,
+      [styles.AvatarGroup]: true,
     },
     className
   );
 
   const popperClass = classNames(
     {
-      ['AvatarGroup-Popper']: true,
+      [styles['AvatarGroup-Popper']]: true,
     },
     popperClassName
   );

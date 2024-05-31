@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import styles from './ProgressBar.module.css';
 
 export type ProgressBarSize = 'small' | 'regular';
 
@@ -28,17 +29,12 @@ export const ProgressBar = (props: ProgressBarProps) => {
     width: value > 0 ? `${(Math.min(value, max) * 100) / max}%` : '0',
   };
 
-  const ProgressBarClass = classNames(
-    {
-      ProgressBar: true,
-    },
-    className
-  );
+  const ProgressBarClass = classNames(styles.ProgressBar, className);
 
   const ProgressIndicatorClass = classNames({
-    ['ProgressBar-indicator']: true,
-    ['ProgressBar-indicator--small']: size === 'small',
-    ['ProgressBar-indicator--regular']: size === 'regular',
+    [styles['ProgressBar-indicator']]: true,
+    [styles['ProgressBar-indicator--small']]: size === 'small',
+    [styles['ProgressBar-indicator--regular']]: size === 'regular',
   });
 
   return (

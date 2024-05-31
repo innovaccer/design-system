@@ -3,6 +3,7 @@ import GenericText from '../_text';
 import classNames from 'classnames';
 import { BaseHtmlProps, BaseProps } from '@/utils/types';
 import { TextColor } from '@/common.type';
+import styles from '../typography.module.css';
 
 export type TextSize = 'small' | 'regular' | 'large';
 export type TextAppearance = 'default' | 'white' | 'destructive' | 'subtle' | 'disabled' | 'success' | 'link';
@@ -39,13 +40,13 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, ref) =>
 
   const classes = classNames(
     {
-      Text: true,
-      [`Text--${appearance}`]: !color && appearance,
-      [`Text--${weight}`]: weight,
-      [`Text--${size}`]: size,
-      [`color-${color}`]: color,
+      [styles.Text]: true,
+      [styles[`Text--${appearance}`]]: !color && appearance,
+      [styles[`Text--${weight}`]]: weight,
+      [styles[`Text--${size}`]]: size,
+      [styles[`color-${color}`]]: color,
       /* SOON_TO_BE_DEPRECATED */
-      ['Text--small']: size === 'small' || small,
+      [styles['Text--small']]: size === 'small' || small,
     },
     className
   );

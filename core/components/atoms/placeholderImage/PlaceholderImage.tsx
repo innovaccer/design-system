@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import styles from '../../molecules/placeholder/placeholder.module.css';
 
 export type PlaceholderImageSize = 'small' | 'medium' | 'large';
 
@@ -22,10 +23,10 @@ export const PlaceholderImage = (props: PlaceholderImageProps) => {
 
   const classes = classNames(
     {
-      PlaceholderImage: true,
-      'Placeholder--animation': true,
-      ['PlaceholderImage--round']: round,
-      [`PlaceholderImage--${size}`]: size,
+      [styles.PlaceholderImage]: true,
+      [styles['Placeholder--animation']]: true,
+      [styles['PlaceholderImage--round']]: round,
+      [styles[`PlaceholderImage--${size}`]]: size,
     },
     className
   );

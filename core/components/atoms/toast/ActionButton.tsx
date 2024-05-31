@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import Text from '@/components/atoms/text';
 import { MessageAppearance } from '@/common.type';
+import styles from './toast.module.css';
 
 export interface Props {
   appearance: MessageAppearance;
@@ -13,10 +14,10 @@ const ActionButton = (props: Props) => {
   const { appearance, label, onClick } = props;
 
   const buttonClass = classNames({
-    ['Button']: true,
-    ['Button--tiny']: true,
-    ['Toast-actionButton']: true,
-    [`Toast-actionButton--${appearance}`]: appearance,
+    [styles.Button]: true,
+    [styles['Button--tiny']]: true,
+    [styles.ToastActionButton]: true,
+    [styles[`ToastActionButton--${appearance}`]]: appearance,
   });
 
   const onClickHandler = (e: React.MouseEvent) => {
