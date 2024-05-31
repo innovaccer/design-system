@@ -1,12 +1,12 @@
 import React from 'react';
 import { AIButton } from '@/index';
 
-export const Primary = () => {
-  return <AIButton appearance="primary">Primary Button</AIButton>;
+export const Basic = () => {
+  return <AIButton>Basic Button</AIButton>;
 };
 
 export default {
-  title: 'Components/AI/AI Button/States/Primary',
+  title: 'Components/AI/AI Button/Appearance/Basic',
   component: AIButton,
   parameters: {
     docs: {
