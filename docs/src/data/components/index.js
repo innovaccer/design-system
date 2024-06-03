@@ -92,6 +92,13 @@ export const data = [
     image: () => <StaticImage src="./images/Dropdowns.png" alt="Dropdowns" imgStyle={imgStyle} />,
   },
   {
+    link: 'emptyState/usage',
+    name: 'EmptyState',
+    design: 'Available',
+    code: 'Available',
+    image: () => <StaticImage src="./images/EmptyState.png" alt="EmptyState" imgStyle={imgStyle} />,
+  },
+  {
     link: 'helpText/usage',
     name: 'Help text',
     design: 'Available',
