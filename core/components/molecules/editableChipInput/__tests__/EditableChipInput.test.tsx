@@ -13,7 +13,7 @@ const editableWrapperTestId = 'DesignSystem-EditableWrapper';
 const defaultComponentTestId = 'DesignSystem-EditableChipInput--Default';
 const chipInputTestId = 'DesignSystem-EditableChipInput--ChipInput';
 const placeholder = 'Add Value';
-const chipOptions = { onClick, clearButton: true };
+const chipOptions = { onClick, maxWidth: '256px', clearButton: true };
 const chipInputOptions = {
   chipOptions,
   allowDuplicates: false,
@@ -136,5 +136,36 @@ describe('EditableChipInput component with action buttons and props: value and c
     expect(queryByTestId(chipInputTestId)).not.toBeInTheDocument();
     expect(getAllByTestId('DesignSystem-EditableChipInput--Chip')[0].textContent).toMatch('Chip3clear');
     expect(getAllByTestId('DesignSystem-EditableChipInput--Chip')[1].textContent).toMatch('Chip4clear');
+  });
+});
+
+describe('EditableChipInput component with chipOptions maxWidth', () => {
+  const chipOptionsWithMaxWidth = {
+    clearButton: true,
+    maxWidth: '200px',
+    onClick: jest.fn(),
+  };
+
+  const chipInputOptions = {
+    chipOptions: chipOptionsWithMaxWidth,
+    allowDuplicates: false,
+    defaultValue: [],
+    autoFocus: true,
+  };
+
+  it('applies maxWidth style to chips from chipOptions', () => {
+    const { getAllByTestId } = render(
+      <EditableChipInput
+        onChange={onChange}
+        value={['this is very very very long text']}
+        chipInputOptions={chipInputOptions}
+      />
+    );
+
+    // Assuming the EditableChipInput applies the `chipOptions.maxWidth` to the chip items.
+    const chips = getAllByTestId('DesignSystem-EditableChipInput--Chip');
+    chips.forEach((chip) => {
+      expect(chip).toHaveStyle(`max-width: ${chipOptionsWithMaxWidth.maxWidth}`);
+    });
   });
 });

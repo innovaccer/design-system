@@ -10,6 +10,7 @@ const BooleanValue = [true, false];
 const FunctionValue = jest.fn();
 const chipOptions = {
   clearButton: true,
+  maxWidth: '256px',
   onClick: FunctionValue,
 };
 
@@ -200,5 +201,20 @@ describe('ChipInput component text transform', () => {
 
       expect(getAllByTestId('DesignSystem-ChipInput--Chip')[key].textContent).toMatch(value);
     });
+  });
+});
+
+describe('ChipInput component with chipOptions', () => {
+  const chipOptions = {
+    clearButton: true,
+    maxWidth: '200px',
+    onClick: FunctionValue,
+  };
+
+  it('applies maxWidth style from chipOptions', () => {
+    const { getAllByTestId } = render(
+      <ChipInput value={['this is very very very  long text']} chipOptions={chipOptions} />
+    );
+    expect(getAllByTestId('DesignSystem-ChipInput--Chip')[0]).toHaveStyle({ maxWidth: '200px' });
   });
 });
