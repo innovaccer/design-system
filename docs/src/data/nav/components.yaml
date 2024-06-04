@@ -2,6 +2,26 @@ base: components
 menus:
   - label: Overview
     link: /components/overview/all-components/
+
+  - label: AI
+    link: /components/AIButton/usage/
+    hideInMobile: true
+    subMenu: [
+      {
+        label: 'AI Buttons',
+        link: /components/AIButton/usage/
+      },
+      {
+        label: 'AI Chip',
+        link: /components/AIChip/usage/
+      },
+      {
+        label: 'Sara',
+      },
+      {
+        label: 'Sara Sparkle',
+      },
+    ]
     
   - label: Action sheet
     link: /components/actionSheet/usage/
