@@ -8,6 +8,13 @@ const imgStyle = {
 
 export const data = [
   {
+    link: 'AIButton/usage/',
+    design: 'Available',
+    name: 'AI',
+    code: 'Available',
+    image: () => <StaticImage src="./images/Sara.png" alt="AI Components" imgStyle={imgStyle} />,
+  },
+  {
     link: 'avatar/usage',
     design: 'Available',
     name: 'Avatar',
