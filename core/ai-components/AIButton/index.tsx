@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { TButtonAppearance, TButtonType, TBaseHtmlProps } from '../common.type';
 import BasicIcon from './icons/Basic.svg';
+import BasicDisabledIcon from './icons/BasicDisabled.svg';
 import PrimaryIcon from './icons/Primary.svg';
 
 export interface AIButtonProps extends TBaseHtmlProps<HTMLButtonElement> {
@@ -48,7 +49,7 @@ export interface AIButtonProps extends TBaseHtmlProps<HTMLButtonElement> {
 }
 
 export const AIButton = (props: AIButtonProps) => {
-  const { appearance, className, children, ...rest } = props;
+  const { appearance, className, children, disabled, ...rest } = props;
 
   const buttonClassNames = classNames(
     {
@@ -63,10 +64,10 @@ export const AIButton = (props: AIButtonProps) => {
     'AIButton-Icon': true,
   });
 
-  const buttonIcon = appearance === 'primary' ? PrimaryIcon : BasicIcon;
+  const buttonIcon = appearance === 'primary' ? PrimaryIcon : disabled ? BasicDisabledIcon : BasicIcon;
 
   return (
-    <button className={buttonClassNames} data-test="DesignSystem-AI-Button" {...rest}>
+    <button className={buttonClassNames} data-test="DesignSystem-AI-Button" disabled={disabled} {...rest}>
       <img
         src={buttonIcon}
         alt="Button Icon"

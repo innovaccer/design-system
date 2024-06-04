@@ -1,19 +1,19 @@
 import React from 'react';
 import { AIButton } from '@/index';
 
-export const Disabled = () => {
+export const Primary = () => {
   return (
     <div className="d-flex justify-content-between w-50">
-      <AIButton appearance="primary" disabled>
-        Primary Button
+      <AIButton appearance="primary">Primary Button</AIButton>
+      <AIButton appearance="primary" disabled={true}>
+        Disabled Button
       </AIButton>
-      <AIButton disabled>Basic Button</AIButton>
     </div>
   );
 };
 
 export default {
-  title: 'Components/AI/AI Button/States/Disabled',
+  title: 'Components/AI/AI Button/State/Primary',
   component: AIButton,
   parameters: {
     docs: {
