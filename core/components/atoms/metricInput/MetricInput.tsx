@@ -167,7 +167,8 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
     {
       ['MetricInput']: true,
       [`MetricInput--${size}`]: size,
-      ['MetricInput--disabled']: disabled || readOnly,
+      ['MetricInput--disabled']: disabled,
+      ['MetricInput--readOnly']: readOnly,
       ['MetricInput--error']: error,
     },
     className

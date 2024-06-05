@@ -195,8 +195,9 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     {
       ['Input']: true,
       [`Input--${size}`]: size,
-      ['Input--disabled']: disabled || readOnly,
+      ['Input--disabled']: disabled,
       ['Input--error']: error,
+      ['Input--readOnly']: readOnly,
     },
     className
   );

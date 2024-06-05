@@ -37,6 +37,12 @@
   border-color: var(--secondary-light);
 }
 
+.Textarea--readOnly {
+  pointer-events: none;
+  background: var(--secondary-lightest);
+  border-color: var(--secondary);
+}
+
 .Textarea--error {
   border: var(--spacing-xs) solid var(--alert);
 }

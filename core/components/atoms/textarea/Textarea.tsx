@@ -43,6 +43,10 @@ export interface TextareaProps extends BaseProps, BaseHtmlProps<HTMLTextAreaElem
    */
   resize?: boolean;
   /**
+   * Disables the `Textarea`, making it unable to type
+   */
+  readOnly?: boolean;
+  /**
    * Callback function when `Textarea` text changes
    */
   onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
@@ -76,6 +80,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((pr
     onBlur,
     onFocus,
     className,
+    readOnly,
     ...rest
   } = props;
 
@@ -84,6 +89,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((pr
       ['Textarea']: true,
       ['Textarea--resize']: resize,
       ['Textarea--error']: error,
+      ['Textarea--readOnly']: readOnly,
     },
     className
   );
