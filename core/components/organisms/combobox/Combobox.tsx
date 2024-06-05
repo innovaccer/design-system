@@ -26,6 +26,10 @@ export interface ComboboxProps extends BaseProps {
    */
   maxHeight?: number;
   /**
+   * Specifies min height of Popover
+   */
+  minHeight?: number;
+  /**
    * Specifies width of Popover
    */
   width?: number;
@@ -117,6 +121,11 @@ export interface ComboboxProps extends BaseProps {
    */
   clearButton?: boolean;
   /**
+   * Describe the style that will be applied to the popper element
+   * Refer to [this](https://popper.js.org/docs/v1/#modifierscomputestyle)
+   */
+  computeStyles?: object;
+  /**
    * Adds custom class to trigger wrapper
    */
   className?: string;
@@ -129,6 +138,7 @@ export const Combobox = (props: ComboboxProps) => {
     multiSelect,
     className,
     maxHeight,
+    minHeight,
     width,
     value,
     placeholder,
@@ -145,6 +155,7 @@ export const Combobox = (props: ComboboxProps) => {
     onSearch,
     onKeyDown,
     onKeyUp,
+    computeStyles,
   } = props;
 
   const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>();
@@ -164,6 +175,19 @@ export const Combobox = (props: ComboboxProps) => {
 
   const inputTriggerRef = React.useRef<HTMLInputElement>();
   const popoverId = `DesignSystem-Combobox--Popover-${uidGenerator()}`;
+  const defaultPopoverStyle = {
+    fn: (data: any) => {
+      return {
+        ...data,
+        styles: {
+          ...data.styles,
+          position: 'fixed',
+        },
+      };
+    },
+  };
+
+  const popoverComputeStyle = computeStyles ?? defaultPopoverStyle;
 
   React.useEffect(() => {
     const popperWidth = triggerRef.current?.clientWidth;
@@ -174,6 +198,7 @@ export const Combobox = (props: ComboboxProps) => {
 
     const wrapperStyle = {
       maxHeight: maxHeight || 'var(--spacing-9)',
+      minHeight: minHeight,
       overflowY: 'auto',
       boxSizing: 'border-box',
     };
@@ -285,6 +310,7 @@ export const Combobox = (props: ComboboxProps) => {
             customStyle={popoverStyle}
             onToggle={onToggleHandler}
             trigger={<ComboboxTrigger {...triggerProps} />}
+            computeStyles={popoverComputeStyle}
           >
             <div style={wrapperStyle} ref={listRef} id={popoverId}>
               {children && typeof children === 'function' ? children(contextProp) : children}
