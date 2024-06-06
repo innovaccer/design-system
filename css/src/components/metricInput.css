@@ -46,6 +46,12 @@
   pointer-events: none;
 }
 
+.MetricInput--readOnly {
+  background: var(--secondary-lightest);
+  border-color: var(--secondary);
+  pointer-events: none;
+}
+
 .MetricInput--disabled .MetricInput-icon {
   color: var(--inverse-lightest);
 }
