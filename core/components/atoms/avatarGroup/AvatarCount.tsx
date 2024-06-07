@@ -20,7 +20,13 @@ const AvatarCount = (props: any) => {
   });
 
   return (
-    <div data-test="DesignSystem-AvatarGroup--TriggerAvatar" className="AvatarCount-wrapper" style={avatarStyle}>
+    <div
+      data-test="DesignSystem-AvatarGroup--TriggerAvatar"
+      className="AvatarCount-wrapper"
+      style={avatarStyle}
+      tabIndex={0}
+      role="button"
+    >
       <span data-test="DesignSystem-AvatarGroup--TriggerAvatarVariants" className={AvatarVariantsClass}>
         <Text appearance={'white'} className={ContentClass}>
           {`+${hiddenAvatarCount}`}
