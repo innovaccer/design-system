@@ -23,6 +23,8 @@ export interface AvatarData extends Record<string, any> {
   icon?: React.ReactNode;
   image?: React.ReactNode;
   selected?: boolean;
+  disabled?: boolean;
+  tooltipSuffix?: string;
 }
 
 export interface AvatarSelectionProps extends BaseProps {
@@ -37,6 +39,8 @@ export interface AvatarSelectionProps extends BaseProps {
    *  icon?: React.ReactNode;
    *  image?: React.ReactNode;
    *  selected?: boolean;
+   *  disabled?: boolean;
+   *  tooltipSuffix?: string;
    * }
    * </pre>
    *

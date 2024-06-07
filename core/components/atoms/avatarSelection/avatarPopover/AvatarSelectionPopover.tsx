@@ -26,13 +26,14 @@ const AvatarSelectionItem = (props: AvatarSelectionItemProps) => {
   const [showTooltip, setShowTooltip] = React.useState(false);
   const elementRef = React.useRef(null);
 
-  const { firstName = '', lastName = '' } = avatarData;
-  const name = `${firstName} ${lastName}`;
+  const { firstName = '', lastName = '', disabled, tooltipSuffix } = avatarData;
+  const name = `${firstName || ''} ${lastName || ''} ${tooltipSuffix || ''}` || '';
 
   return (
     <Tooltip showOnTruncation={true} tooltip={name} elementRef={elementRef} open={showTooltip}>
       <AvatarSelectionOption
         value={avatarData}
+        disabled={disabled}
         onFocus={() => {
           setShowTooltip(true);
         }}

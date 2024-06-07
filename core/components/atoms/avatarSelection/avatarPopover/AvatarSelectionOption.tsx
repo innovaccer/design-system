@@ -17,6 +17,10 @@ export interface SelectionOptionProps extends BaseProps {
    */
   value?: any;
   /**
+   * Set as `true` for disabled list item
+   */
+  disabled?: boolean;
+  /**
    * Set a custom element for list item
    */
   tagName: ItemTagType;
@@ -31,7 +35,7 @@ export interface SelectionOptionProps extends BaseProps {
 }
 
 export const AvatarSelectionOption = (props: SelectionOptionProps) => {
-  const { children, value, ...rest } = props;
+  const { children, value, disabled, ...rest } = props;
 
   const contextProp = React.useContext(AvatarSelectionContext);
 
@@ -51,6 +55,11 @@ export const AvatarSelectionOption = (props: SelectionOptionProps) => {
 
   const onSelectHandler = (event: React.MouseEvent | React.KeyboardEvent, avatarData: AvatarData) => {
     event.preventDefault();
+
+    if (disabled) {
+      return;
+    }
+
     let list = selectedItems ? [...selectedItems] : [];
 
     if (selectedItems?.includes(avatarData)) {
@@ -84,6 +93,7 @@ export const AvatarSelectionOption = (props: SelectionOptionProps) => {
       onKeyDown={(event) => onKeyDownHandler(event)}
       selected={selectedItems?.includes(value)}
       data-test="DesignSystem-AvatarSelection--Option"
+      disabled={disabled}
       tabIndex={-1}
       {...rest}
     >
