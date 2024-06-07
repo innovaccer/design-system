@@ -4,9 +4,9 @@ menus:
     link: /data-visualizations/overview/all/
   - label: Colors
     link: /data-visualizations/color/usage/
-  - label: Bar charts
+  - label: Bar Charts
     link: /data-visualizations/barChart/usage/
-  - label: Donut chart
+  - label: Donut Charts
     link: /data-visualizations/donutChart/usage/
   - label: Line charts
     link: /data-visualizations/lineChart/usage/

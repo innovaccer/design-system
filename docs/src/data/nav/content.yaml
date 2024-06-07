@@ -1,25 +1,25 @@
 base: content
 menus:
-  - label: Voice and tone guidelines
+  - label: Voice and Tone Guidelines
     link: /content/voice-and-tone-guidelines/tabs/voice-and-tone/
 
-  - label: House rules
+  - label: House Rules
     link: /content/house-rules/tabs/basics/
 
-  - label: Button guidelines
+  - label: Button Guidelines
     link: /content/button-guidelines/tabs/confusing-buttons/
 
-  - label: Email guidelines
+  - label: Email Guidelines
     link: /content/email-guidelines/
 
-  - label: Error messages
+  - label: Error Messages
     link: /content/error-messages/
 
-  - label: Empty states
+  - label: Empty States
     link: /content/empty-states/
 
-  - label: Placeholder text
+  - label: Placeholder Text
     link: /content/placeholder-text/
 
-  - label: Rules
+  - label: Rules Guidelines
     link: /content/rules

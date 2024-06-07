@@ -4,7 +4,7 @@ menus:
     link: /patterns/overview/all-patterns/
   - label: Email
     link: /patterns/email/usage/
-  - label: File uploader
+  - label: File Uploader
     link: /patterns/fileUploader/usage/
   - label: Form
     link: /patterns/form/usage/
@@ -12,5 +12,5 @@ menus:
     link: /patterns/layouts/usage/
   - label: Table Filters
     link: /patterns/tableFilters/usage/
-  - label: UI states
+  - label: UI States
     link: /patterns/uiStates/usage/
