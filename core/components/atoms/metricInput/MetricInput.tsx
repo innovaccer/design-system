@@ -257,7 +257,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (showActionButton) {
       onKeyDownHandler(e);
-    } else e.preventDefault();
+    }
   };
 
   const actionButtonSize = size === 'large' ? 'regular' : 'tiny';

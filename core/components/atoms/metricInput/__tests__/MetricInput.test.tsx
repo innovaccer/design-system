@@ -240,4 +240,21 @@ describe('MetricInput component with props showActionButton', () => {
     expect(queryByTestId('DesignSystem-MetricInput--upIcon')).not.toBeInTheDocument();
     expect(queryByTestId('DesignSystem-MetricInput--downIcon')).not.toBeInTheDocument();
   });
+
+  it('update value with showActionButton=false', () => {
+    const newValue = 11;
+
+    const { getByTestId, rerender } = render(
+      <MetricInput showActionButton={false} value={value} onChange={FunctionValue} />
+    );
+    const metricInput = getByTestId('DesignSystem-MetricInput');
+    expect(metricInput).toHaveValue(value);
+
+    fireEvent.change(metricInput, { target: { value: newValue } });
+    expect(metricInput).toHaveValue(value);
+    expect(FunctionValue).toHaveBeenCalled();
+
+    rerender(<MetricInput value={newValue} onChange={FunctionValue} />);
+    expect(metricInput).toHaveValue(newValue);
+  });
 });
