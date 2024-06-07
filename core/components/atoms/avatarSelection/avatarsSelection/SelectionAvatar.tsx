@@ -18,7 +18,7 @@ export const SelectionAvatar = (props: SelectionAvatarProps) => {
   const { icon, image, ...rest } = props;
 
   return (
-    <Avatar role="checkbox" {...rest} withTooltip={true} className="cursor-pointer">
+    <Avatar tabIndex={-1} role="checkbox" {...rest} withTooltip={true} className="cursor-pointer">
       {image || icon}
     </Avatar>
   );

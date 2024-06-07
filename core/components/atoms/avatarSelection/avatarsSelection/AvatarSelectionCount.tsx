@@ -54,7 +54,7 @@ export const AvatarSelectionCount = (props: CountAvatarProp) => {
       aria-controls={popoverId}
       ref={triggerRef}
     >
-      <Avatar size={size} appearance="secondary" className="SelectionAvatarCount cursor-pointer">
+      <Avatar tabIndex={-1} size={size} appearance="secondary" className="SelectionAvatarCount cursor-pointer">
         <Text className="overflow-hidden">{`+${hiddenAvatarCount}`}</Text>
       </Avatar>
     </div>

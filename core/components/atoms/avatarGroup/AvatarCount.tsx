@@ -15,7 +15,7 @@ const AvatarCount = (props: any) => {
     [`Avatar--regular`]: size === 'regular',
     [`Avatar--tiny`]: size === 'tiny',
     [`Avatar--secondary`]: true,
-    ['Avatar--disabled']: true,
+    ['cursor-default']: true,
     ['cursor-pointer']: on === 'click',
   });
 

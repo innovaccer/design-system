@@ -26,8 +26,9 @@ Object {
               role="presentation"
             >
               <span
-                class="Avatar Avatar--regular Avatar--accent1"
+                class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
                 data-test="DesignSystem-Avatar"
+                tabindex="0"
               >
                 <i
                   class="material-symbols material-symbols-rounded Icon Icon--accent1Darker"
@@ -56,8 +57,9 @@ Object {
               role="presentation"
             >
               <span
-                class="Avatar Avatar--regular Avatar--alert"
+                class="Avatar Avatar--regular Avatar--alert Avatar--default"
                 data-test="DesignSystem-Avatar"
+                tabindex="0"
               >
                 <i
                   class="material-symbols material-symbols-rounded Icon Icon--white"
@@ -94,8 +96,9 @@ Object {
             role="presentation"
           >
             <span
-              class="Avatar Avatar--regular Avatar--accent1"
+              class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
               data-test="DesignSystem-Avatar"
+              tabindex="0"
             >
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--accent1Darker"
@@ -124,8 +127,9 @@ Object {
             role="presentation"
           >
             <span
-              class="Avatar Avatar--regular Avatar--alert"
+              class="Avatar Avatar--regular Avatar--alert Avatar--default"
               data-test="DesignSystem-Avatar"
+              tabindex="0"
             >
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--white"
@@ -221,8 +225,9 @@ Object {
               role="presentation"
             >
               <span
-                class="Avatar Avatar--tiny Avatar--accent1"
+                class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
                 data-test="DesignSystem-Avatar"
+                tabindex="0"
               >
                 <i
                   class="material-symbols material-symbols-rounded Icon Icon--accent1Darker"
@@ -251,8 +256,9 @@ Object {
               role="presentation"
             >
               <span
-                class="Avatar Avatar--tiny Avatar--alert"
+                class="Avatar Avatar--tiny Avatar--alert Avatar--default"
                 data-test="DesignSystem-Avatar"
+                tabindex="0"
               >
                 <i
                   class="material-symbols material-symbols-rounded Icon Icon--white"
@@ -289,8 +295,9 @@ Object {
             role="presentation"
           >
             <span
-              class="Avatar Avatar--tiny Avatar--accent1"
+              class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
               data-test="DesignSystem-Avatar"
+              tabindex="0"
             >
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--accent1Darker"
@@ -319,8 +326,9 @@ Object {
             role="presentation"
           >
             <span
-              class="Avatar Avatar--tiny Avatar--alert"
+              class="Avatar Avatar--tiny Avatar--alert Avatar--default"
               data-test="DesignSystem-Avatar"
+              tabindex="0"
             >
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--white"

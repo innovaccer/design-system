@@ -34,6 +34,10 @@ export interface AvatarProps extends BaseProps {
    */
   tooltipPosition: TooltipProps['position'];
   /**
+   * Label to be displayed inside tooltip after name
+   */
+  tooltipSuffix?: string;
+  /**
    * Determines size of `Avatar`
    */
   size: AvatarSize;
@@ -42,9 +46,17 @@ export interface AvatarProps extends BaseProps {
    */
   shape: AvatarShape;
   /**
+   * Disables the `Avatar`
+   */
+  disabled?: boolean;
+  /**
    * Describe aria-role for the `Avatar`
    */
   role?: string;
+  /**
+   * Defines tabIndex of the `Avatar`
+   */
+  tabIndex?: number;
 }
 
 const initialsLength = 2;
@@ -62,6 +74,9 @@ export const Avatar = (props: AvatarProps) => {
     className,
     appearance,
     shape,
+    disabled,
+    tooltipSuffix,
+    tabIndex,
     role = 'presentation',
   } = props;
 
@@ -72,7 +87,13 @@ export const Avatar = (props: AvatarProps) => {
       ? children.trim().slice(0, initialsLength)
       : `${firstName ? firstName.trim()[0] : ''}${lastName ? lastName.trim()[0] : ''}`;
 
-  const tooltip = children && typeof children === 'string' ? children : `${firstName || ''} ${lastName || ''}` || '';
+  const getTooltipName = () => {
+    if (children && typeof children === 'string') {
+      return `${children} ${tooltipSuffix || ''}`;
+    }
+
+    return `${firstName || ''} ${lastName || ''} ${tooltipSuffix || ''}` || '';
+  };
 
   const AvatarAppearance =
     appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] || DefaultAppearance;
@@ -83,13 +104,15 @@ export const Avatar = (props: AvatarProps) => {
       ['Avatar--square']: shape === 'square',
       [`Avatar--${size}`]: shape !== 'square',
       [`Avatar--${AvatarAppearance}`]: AvatarAppearance,
-      ['Avatar--disabled']: !initials || !withTooltip,
+      ['Avatar--noInitials']: !initials || !withTooltip,
+      ['Avatar--disabled']: disabled,
+      ['Avatar--default']: !disabled,
     },
     className
   );
 
   const AvatarWrapperClassNames = classNames({
-    ['Avatar--wrapper']: shape === 'square',
+    ['Avatar-wrapper--square']: shape === 'square',
     [`Avatar--${size}`]: shape === 'square',
   });
 
@@ -114,7 +137,12 @@ export const Avatar = (props: AvatarProps) => {
       return (
         <span data-test="DesignSystem-AvatarWrapper" className={AvatarWrapperClassNames} role={role}>
           <AvatarProvider value={sharedProp}>
-            <span data-test="DesignSystem-Avatar" {...baseProps} className={AvatarClassNames}>
+            <span
+              data-test="DesignSystem-Avatar"
+              {...baseProps}
+              className={AvatarClassNames}
+              tabIndex={tabIndex || disabled ? -1 : 0}
+            >
               {children}
             </span>
           </AvatarProvider>
@@ -124,7 +152,12 @@ export const Avatar = (props: AvatarProps) => {
 
     return (
       <span data-test="DesignSystem-AvatarWrapper" className={AvatarWrapperClassNames} role={role}>
-        <span data-test="DesignSystem-Avatar" {...baseProps} className={AvatarClassNames}>
+        <span
+          data-test="DesignSystem-Avatar"
+          {...baseProps}
+          className={AvatarClassNames}
+          tabIndex={tabIndex || disabled ? -1 : 0}
+        >
           {initials && (
             <Text weight="medium" appearance={'white'} className={TextClassNames}>
               {initials}
@@ -147,7 +180,7 @@ export const Avatar = (props: AvatarProps) => {
   const renderTooltip = () => {
     if (withTooltip && initials) {
       return (
-        <Tooltip tooltip={tooltip} position={tooltipPosition} triggerClass={'flex-grow-0'}>
+        <Tooltip tooltip={getTooltipName()} position={tooltipPosition} triggerClass={'flex-grow-0'}>
           {renderAvatar()}
         </Tooltip>
       );
