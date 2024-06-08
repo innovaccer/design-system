@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ChipInput, Label, Row, Column } from '@/index';
 
-export const chipsWrappedToNextLine = () => {
+export const overflowBehavior = () => {
   const [value, setValue] = React.useState([
     'Anyone',
     'Person with disability',
@@ -38,7 +38,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Input/ChipInput/Chips Wrapped To Next Line',
+  title: 'Components/Input/ChipInput/Overflow Behavior',
   component: ChipInput,
   parameters: {
     docs: {

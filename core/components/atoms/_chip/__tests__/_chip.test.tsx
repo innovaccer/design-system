@@ -34,7 +34,7 @@ describe('Chip component', () => {
 describe('Chip component', () => {
   it('renders chip component', () => {
     const { getByTestId } = render(<GenericChip label="ChipLabel" name="Chip" icon="events" clearButton={true} />);
-    expect(getByTestId('DesignSystem-GenericChip--GenericChipWrapper')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-GenericChip--Wrapper')).toBeInTheDocument();
     expect(getByTestId('DesignSystem-GenericChip--Icon')).toBeInTheDocument();
     expect(getByTestId('DesignSystem-GenericChip--Text')).toBeInTheDocument();
     expect(getByTestId('DesignSystem-GenericChip--clearButton')).toBeInTheDocument();
@@ -44,7 +44,7 @@ describe('Chip component', () => {
 
   it('renders chip component with minimum props', () => {
     const { getByTestId, queryByTestId } = render(<GenericChip label="ChipLabel" name="Chip" />);
-    expect(getByTestId('DesignSystem-GenericChip--GenericChipWrapper')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-GenericChip--Wrapper')).toBeInTheDocument();
     expect(queryByTestId('DesignSystem-GenericChip--Icon')).not.toBeInTheDocument();
     expect(getByTestId('DesignSystem-GenericChip--Text')).toBeInTheDocument();
     expect(queryByTestId('DesignSystem-GenericChip--clearButton')).not.toBeInTheDocument();
@@ -58,7 +58,7 @@ describe('Chip component', () => {
 
   it('renders chip component with prop onClick', () => {
     const { getByTestId } = render(<GenericChip label="ChipLabel" name="Chip" onClick={FunctionValue} />);
-    const onClick = getByTestId('DesignSystem-GenericChip--GenericChipWrapper');
+    const onClick = getByTestId('DesignSystem-GenericChip--Wrapper');
     fireEvent.click(onClick);
     expect(FunctionValue).toHaveBeenCalled();
   });
@@ -95,5 +95,17 @@ describe('Chip component label prefix test', () => {
     expect(labelPrefixElement).toBeInTheDocument();
     expect(labelPrefixElement).toHaveTextContent('ChipLabelPrefix');
     expect(labelPrefixElement).toHaveClass('Text--medium');
+  });
+});
+
+describe('Chip component with keyboard interaction', () => {
+  it('calls onClick when Enter key is pressed', () => {
+    const onClick = jest.fn();
+    const { getByTestId } = render(<GenericChip name="Chip" label="Test Chip" onClick={onClick} />);
+
+    const chipWrapper = getByTestId('DesignSystem-GenericChip--Wrapper');
+    fireEvent.keyDown(chipWrapper, { key: 'Enter', code: 'Enter' });
+
+    expect(onClick).toHaveBeenCalledTimes(1);
   });
 });

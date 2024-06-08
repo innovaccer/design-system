@@ -15,6 +15,7 @@ type ChipOptions = {
   type?: ChipProps['type'];
   iconType?: ChipProps['iconType'];
   clearButton?: ChipProps['clearButton'];
+  maxWidth?: ChipProps['maxWidth'];
   onClick?: (value: string, index: number) => void;
 };
 
@@ -27,8 +28,9 @@ export interface ChipInputProps extends BaseProps {
    * <pre className="DocPage-codeBlock">
    *  ChipOptions: {
    *   icon?: string;
-   *   type?: action | input | selection
+   *   type?: action | input | selection;
    *   clearButton?: boolean;
+   *   maxWidth?: string | number;
    *   onClick?: (value: string, index: number) => void;
    *   iconType?: 'rounded' | 'outlined'
    *  }

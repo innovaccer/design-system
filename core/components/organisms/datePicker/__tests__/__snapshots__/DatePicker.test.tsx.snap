@@ -646,17 +646,25 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
         class="d-flex justify-content-center pb-6"
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
-        <div
-          class="Chip-wrapper Chip Chip--action"
-          data-test="DesignSystem-Chip--GenericChip"
-          tabindex="0"
-        >
-          <span
-            class="Text Text--regular color-inverse Chip-text"
-            data-test="DesignSystem-GenericChip--Text"
+        <div>
+          <div
+            class="Chip-wrapper Chip Chip--action"
+            data-test="DesignSystem-Chip--GenericChip"
+            role="button"
+            style="max-width: var(--spacing-9);"
+            tabindex="0"
           >
-            Today, Sep 22
-          </span>
+            <div
+              class="Chip-text--truncate"
+            >
+              <span
+                class="Text Text--regular color-inverse Chip-text"
+                data-test="DesignSystem-GenericChip--Text"
+              >
+                Today, Sep 22
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1311,17 +1319,25 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
         class="d-flex justify-content-center pb-6"
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
-        <div
-          class="Chip-wrapper Chip Chip-action--disabled"
-          data-test="DesignSystem-Chip--GenericChip"
-          tabindex="-1"
-        >
-          <span
-            class="Text Text--regular color-inverse-lightest Chip-text"
-            data-test="DesignSystem-GenericChip--Text"
+        <div>
+          <div
+            class="Chip-wrapper Chip Chip-action--disabled"
+            data-test="DesignSystem-Chip--GenericChip"
+            role="button"
+            style="max-width: var(--spacing-9);"
+            tabindex="-1"
           >
-            Today, Sep 22
-          </span>
+            <div
+              class="Chip-text--truncate"
+            >
+              <span
+                class="Text Text--regular color-inverse-lightest Chip-text"
+                data-test="DesignSystem-GenericChip--Text"
+              >
+                Today, Sep 22
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1976,17 +1992,25 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
         class="d-flex justify-content-center pb-6"
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
-        <div
-          class="Chip-wrapper Chip Chip-action--disabled"
-          data-test="DesignSystem-Chip--GenericChip"
-          tabindex="-1"
-        >
-          <span
-            class="Text Text--regular color-inverse-lightest Chip-text"
-            data-test="DesignSystem-GenericChip--Text"
+        <div>
+          <div
+            class="Chip-wrapper Chip Chip-action--disabled"
+            data-test="DesignSystem-Chip--GenericChip"
+            role="button"
+            style="max-width: var(--spacing-9);"
+            tabindex="-1"
           >
-            Today, Sep 22
-          </span>
+            <div
+              class="Chip-text--truncate"
+            >
+              <span
+                class="Text Text--regular color-inverse-lightest Chip-text"
+                data-test="DesignSystem-GenericChip--Text"
+              >
+                Today, Sep 22
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -2640,17 +2664,25 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
         class="d-flex justify-content-center pb-6"
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
-        <div
-          class="Chip-wrapper Chip Chip--action"
-          data-test="DesignSystem-Chip--GenericChip"
-          tabindex="0"
-        >
-          <span
-            class="Text Text--regular color-inverse Chip-text"
-            data-test="DesignSystem-GenericChip--Text"
+        <div>
+          <div
+            class="Chip-wrapper Chip Chip--action"
+            data-test="DesignSystem-Chip--GenericChip"
+            role="button"
+            style="max-width: var(--spacing-9);"
+            tabindex="0"
           >
-            Today, Sep 22
-          </span>
+            <div
+              class="Chip-text--truncate"
+            >
+              <span
+                class="Text Text--regular color-inverse Chip-text"
+                data-test="DesignSystem-GenericChip--Text"
+              >
+                Today, Sep 22
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -3304,17 +3336,25 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
         class="d-flex justify-content-center pb-6"
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
-        <div
-          class="Chip-wrapper Chip Chip--action"
-          data-test="DesignSystem-Chip--GenericChip"
-          tabindex="0"
-        >
-          <span
-            class="Text Text--regular color-inverse Chip-text"
-            data-test="DesignSystem-GenericChip--Text"
+        <div>
+          <div
+            class="Chip-wrapper Chip Chip--action"
+            data-test="DesignSystem-Chip--GenericChip"
+            role="button"
+            style="max-width: var(--spacing-9);"
+            tabindex="0"
           >
-            Today, Sep 22
-          </span>
+            <div
+              class="Chip-text--truncate"
+            >
+              <span
+                class="Text Text--regular color-inverse Chip-text"
+                data-test="DesignSystem-GenericChip--Text"
+              >
+                Today, Sep 22
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -3968,17 +4008,25 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
         class="d-flex justify-content-center pb-6"
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
-        <div
-          class="Chip-wrapper Chip Chip--action"
-          data-test="DesignSystem-Chip--GenericChip"
-          tabindex="0"
-        >
-          <span
-            class="Text Text--regular color-inverse Chip-text"
-            data-test="DesignSystem-GenericChip--Text"
+        <div>
+          <div
+            class="Chip-wrapper Chip Chip--action"
+            data-test="DesignSystem-Chip--GenericChip"
+            role="button"
+            style="max-width: var(--spacing-9);"
+            tabindex="0"
           >
-            Today, Sep 22
-          </span>
+            <div
+              class="Chip-text--truncate"
+            >
+              <span
+                class="Text Text--regular color-inverse Chip-text"
+                data-test="DesignSystem-GenericChip--Text"
+              >
+                Today, Sep 22
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -4226,17 +4274,25 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
         class="d-flex justify-content-center pb-6"
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
-        <div
-          class="Chip-wrapper Chip Chip--action"
-          data-test="DesignSystem-Chip--GenericChip"
-          tabindex="0"
-        >
-          <span
-            class="Text Text--regular color-inverse Chip-text"
-            data-test="DesignSystem-GenericChip--Text"
+        <div>
+          <div
+            class="Chip-wrapper Chip Chip--action"
+            data-test="DesignSystem-Chip--GenericChip"
+            role="button"
+            style="max-width: var(--spacing-9);"
+            tabindex="0"
           >
-            Today, Sep 22
-          </span>
+            <div
+              class="Chip-text--truncate"
+            >
+              <span
+                class="Text Text--regular color-inverse Chip-text"
+                data-test="DesignSystem-GenericChip--Text"
+              >
+                Today, Sep 22
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -4476,17 +4532,25 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
         class="d-flex justify-content-center pb-6 pt-3"
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
-        <div
-          class="Chip-wrapper Chip Chip--action"
-          data-test="DesignSystem-Chip--GenericChip"
-          tabindex="0"
-        >
-          <span
-            class="Text Text--regular color-inverse Chip-text"
-            data-test="DesignSystem-GenericChip--Text"
+        <div>
+          <div
+            class="Chip-wrapper Chip Chip--action"
+            data-test="DesignSystem-Chip--GenericChip"
+            role="button"
+            style="max-width: var(--spacing-9);"
+            tabindex="0"
           >
-            Today, Sep 22
-          </span>
+            <div
+              class="Chip-text--truncate"
+            >
+              <span
+                class="Text Text--regular color-inverse Chip-text"
+                data-test="DesignSystem-GenericChip--Text"
+              >
+                Today, Sep 22
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -5140,17 +5204,25 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
         class="d-flex justify-content-center pb-6"
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
-        <div
-          class="Chip-wrapper Chip Chip--action"
-          data-test="DesignSystem-Chip--GenericChip"
-          tabindex="0"
-        >
-          <span
-            class="Text Text--regular color-inverse Chip-text"
-            data-test="DesignSystem-GenericChip--Text"
+        <div>
+          <div
+            class="Chip-wrapper Chip Chip--action"
+            data-test="DesignSystem-Chip--GenericChip"
+            role="button"
+            style="max-width: var(--spacing-9);"
+            tabindex="0"
           >
-            Today, Sep 22
-          </span>
+            <div
+              class="Chip-text--truncate"
+            >
+              <span
+                class="Text Text--regular color-inverse Chip-text"
+                data-test="DesignSystem-GenericChip--Text"
+              >
+                Today, Sep 22
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
