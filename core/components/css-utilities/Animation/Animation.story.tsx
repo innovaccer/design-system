@@ -75,6 +75,11 @@ export const animation = () => {
       className: 'rotate-anticlockwise',
       properties: 'The object is rotating in an anti-clockwise direction, using a standard-productive-curve',
     },
+    {
+      className: 'shimmer-text',
+      properties:
+        'Creates a shimmer animation over a text element from left to right with two second linear infinite loop',
+    },
   ];
 
   return (

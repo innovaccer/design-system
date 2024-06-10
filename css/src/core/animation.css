@@ -108,3 +108,23 @@
   transform: rotateZ(180deg);
   transition: var(--duration--moderate-02) var(--standard-productive-curve);
 }
+
+.shimmer-text {
+  text-align: center;
+  background: var(--inverse-light);
+  color: rgba(47, 47, 47, 0.1) !important;
+  background: linear-gradient(to right, var(--inverse-light) 0%, var(--secondary-dark) 50%, var(--inverse-light) 100%);
+  background-size: 200% 100%;
+  background-clip: text;
+  animation: shimmerText 2s infinite linear forwards;
+  background-clip: text;
+}
+
+@keyframes shimmerText {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
