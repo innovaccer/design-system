@@ -16,6 +16,10 @@
   pointer-events: none;
 }
 
+.AIButton:focus {
+  outline: 0;
+}
+
 /* Primary Button */
 
 .AIButton--primary {
