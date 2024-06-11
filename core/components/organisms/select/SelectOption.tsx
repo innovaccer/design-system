@@ -99,7 +99,7 @@ export const SelectOption = (props: SelectOptionProps) => {
       data-test="DesignSystem-Select-Option"
       {...rest}
     >
-      <div className="d-flex align-items-center">
+      <div className="d-flex align-items-center w-100">
         {multiSelect && withCheckbox && (
           <Checkbox
             tabIndex={-1}

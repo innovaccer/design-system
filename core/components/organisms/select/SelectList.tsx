@@ -38,8 +38,14 @@ export const SelectList = (props: SelectListProps) => {
   };
 
   return (
-    <Listbox aria-label="Options item list" aria-multiselectable={multiSelect} className="my-3" {...rest}>
-      <div style={wrapperStyle}>{children}</div>
+    <Listbox
+      style={wrapperStyle}
+      aria-label="Options item list"
+      aria-multiselectable={multiSelect}
+      className="my-3"
+      {...rest}
+    >
+      {children}
     </Listbox>
   );
 };
