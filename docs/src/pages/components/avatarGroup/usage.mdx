@@ -1,0 +1,297 @@
+---
+title: Avatar Group
+description: Avatar group displays a group of avatars stacked together. 
+tabs: ['Usage', 'Code', 'Interactions']
+showMobile: true
+keywords: ['Profile', 'Avatarpair', 'Groupavatar', 'Avatargroup', 'AvatarSelection']
+---
+
+### Types
+
+#### Avatar Group
+
+An avatar group displays a group of avatars stacked together to represent entities. 
+
+<Preview name="components-avatar-avatargroup-all--all" />
+
+#### Selection Avatar Group
+
+Selection avatar displays a group of avatars that can be interacted with. It is mainly used for filtering of data.
+
+<Preview name="components-avatar-avatarselection-all--all" />
+
+### States
+
+#### Avatar Group
+
+Avatar group comes in **3 states for upfront avatars** i.e default, focus and disabled. It has **2 states for numeric avatars** i.e default and focus.
+
+![States of Avatars in Avatar Group](./images/states-avatar-group.png)
+<Caption>States of Avatars in Avatar Group</Caption>
+
+#### Selection Avatar Group
+
+Selection avatar group comes in **5 states** - default, hover, active, focus and disabled.
+
+![States of Avatars in Selection Avatar Group](./images/states.png)
+<Caption>States of Avatars in Selection Avatar Group</Caption>
+
+### Sizes
+
+Both avatar group and selection avatar group come in **2 sizes** - small and regular.
+
+![[Left] Regular size vs [Right] Small size of avatars](./images/sizes.png)
+<Caption>[Left] Regular size vs [Right] Small size of avatars</Caption>
+
+### Variants
+
+Both avatar group and selection avatar group share the same variants.
+
+#### With Initials
+
+![[Left] Avatar group vs [Right] Selection avatar group with initials](./images/with-initials.png)
+<Caption>[Left] Avatar group vs [Right] Selection avatar group with initials</Caption>
+
+#### With Icon
+
+![[Left] Avatar group vs [Right] Selection avatar group with icon](./images/with-icon.png)
+<Caption>[Left] Avatar group vs [Right] Selection avatar group with icon</Caption>
+
+#### With Image
+
+![[Left] Avatar group vs [Right] Selection avatar group with image](./images/with-image.png)
+<Caption>[Left] Avatar group vs [Right] Selection avatar group with image</Caption>
+
+### Structure
+
+#### Option item (Selection Avatar Group)
+
+<br />
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Padding (Top and bottom)</td>
+      <td>
+        <ul>
+          <li>
+            4px
+          </li>
+          <li>
+            8px
+          </li>
+          <li>
+            12px
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Padding (Left and right)</td>
+      <td>16px</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+### Configurations
+
+#### Avatar Group
+
+<br />
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Size</td>
+      <td>
+        <ul>
+          <li>Small</li>
+          <li>Regular</li>
+        </ul>
+      </td>
+      <td>Regular</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Border color</td>
+      <td>&#60;color&#62;</td>
+      <td>Namak</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Additional users</td>
+      <td>&#60;count&#62;</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+#### Selection Avatar Group
+
+<br />
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Size</td>
+      <td>
+        <ul>
+          <li>Small</li>
+          <li>Regular</li>
+        </ul>
+      </td>
+      <td>Regular</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Border color</td>
+      <td>&#60;color&#62;</td>
+      <td>Namak</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Additional users</td>
+      <td>&#60;count&#62;</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+#### Option Item (Selection Avatar Group)
+
+<br />
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Label</td>
+      <td>&#60;label&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Size</td>
+      <td>
+        <ul>
+          <li>Standard</li>
+          <li>Compressed</li>
+          <li>Tight</li>
+        </ul>
+      </td>
+      <td>Compressed</td>
+    </tr>
+  </tbody>
+</table>
+
+#### Popover
+
+<br />
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Width</td>
+      <td>&#60;width&#62;</td>
+      <td>176px (Customizable)</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Max height</td>
+      <td>&#60;max_height&#62;</td>
+      <td>256px (Customizable)</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Min height</td>
+      <td>&#60;min_height&#62;</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+### Usage
+
+#### Max Count
+
+Here are the guidelines for the maximum number of avatars permitted to prevent excessive cognitive load.
+
+##### Avatar Group
+
+Avatar group is limited to three entities. For groups larger than three, only two avatars are displayed. The additional avatars are represented by a numeric avatar with the text +N (where N is the number of remaining avatars beyond two).
+
+![[Left] Three avatars vs [Right] More than three avatars](./images/max-count-3.png)
+<Caption>[Left] Three avatars vs [Right] More than three avatars</Caption>
+
+**Note:** To display the additional entities that are not visible upfront, a popover with the full names of those entities is shown when you hover over the numeric avatar.
+
+![Popover displays hidden entities when hovering](./images/count-more-than-three.png)
+<Caption>Popover displays hidden entities when hovering</Caption>
+
+##### Selection Avatar Group
+
+Selection avatar group is limited to six entities to facilitate data filtering and alleviate cognitive overload. For groups larger than three, only two avatars are displayed. The additional avatars are represented by a numeric avatar with the text +N (where N is the number of remaining avatars beyond two).
+
+![[Left] Six avatars vs [Right] More than six avatars](./images/max-count-6.png)
+<Caption>[Left] Six avatars vs [Right] More than six avatars</Caption>
+
+**Note:** To view additional entities not visible upfront, click the numeric avatar to display a popover with a checklist of their full names.
+
+![Popover displays hidden entities upon clicking](./images/count-more-than-6.png)
+<Caption>Popover displays hidden entities upon clicking</Caption>
+
+#### Round Avatar Group vs Square Avatar
+
+Round avatar groups are designed to facilitate an interactive and visually cohesive representation of individual members within a group. In contrast, square avatars are ideal for presenting the group as a unified entity.
+
+#### Selection Avatar Group vs Select
+
+It is recommended to use selection avatar group for fewer entities, and select for a larger number of options.
+
+#### Width of Popover
+
+While the popover's width is flexible and can vary, it is advisable to maintain a size that is equal to or larger than the avatar group.
+
+![Width of popover](./images/popover-width.png)
+<Caption>Width of popover</Caption>
+
+#### Overflow Behavior of Items
+
+In case of overflow, the items will get truncated and can be viewed inside a tooltip on hover.  
+
+![Overflow behavior of items](./images/overflow-behavior.png)
+<Caption>Overflow behavior of items inside popover</Caption>
+
+#### Appending Suffix to the Name of an Entity
+
+In an avatar group, you can add a suffix to an entity's name that appears in tooltips and popovers. 
+
+**Note:** Adding a suffix for disabled states is recommended to keep users informed.
+
+![Appending a suffix to the name of the disabled entity](./images/tooltip-suffix.png)
+<Caption>Appending a suffix to the name of the disabled entity</Caption>

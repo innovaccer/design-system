@@ -22,6 +22,13 @@ export const data = [
     image: () => <StaticImage src="./images/Avatar.png" alt="Avatar" imgStyle={imgStyle} />,
   },
   {
+    link: 'avatarGroup/usage',
+    design: 'Available',
+    name: 'Avatar Group',
+    code: 'Available',
+    image: () => <StaticImage src="./images/AvatarGroup.png" alt="Avatar Group" imgStyle={imgStyle} />,
+  },
+  {
     link: 'badges/usage',
     name: 'Badge',
     design: 'Available',

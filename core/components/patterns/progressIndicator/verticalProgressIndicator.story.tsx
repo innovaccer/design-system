@@ -13,7 +13,7 @@ export const Vertical = () => {
 };
 
 export default {
-  title: 'Patterns/ProgressIndicator/Vertical',
+  title: 'Components/AI/Progress Indicator/Vertical',
   parameters: {
     docs: {
       docPage: {
