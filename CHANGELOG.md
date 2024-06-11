@@ -1,3 +1,73 @@
+## 2.36.0 (2024-06-11)
+
+### Highlights
+
+- feat(AIButton): add new AI Button component (ce14715c)
+- feat(saraSparkle): add sara sparkle component (e7f54cb3)
+- feat(sara): add new sara component (848ee75c)
+- feat(AIButton): update stories for AI Button component (fbe8b2fd)
+- feat(AIIconButton): add new AI Icon Button Component (120079bd)
+- feat(AIChip): add new AI Chip component (66bd9303)
+- feat(AIResponse): add new AI Response component (09c7f087)
+- feat(progressIndicator): add new progress indicator pattern (f3eaf718)
+- feat(calendar): update calendar states (9d515e38)
+- feat(Input): update readonly state for all input components (8aa4b949)
+- feat(chip): add overflow behavior in chip and chipInput (b5fac8d0)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(AIButton): add new AI Button component (ce14715c)
+- feat(saraSparkle): add sara sparkle component (e7f54cb3)
+- feat(sara): add new sara component (848ee75c)
+- feat(AIButton): update stories for AI Button component (fbe8b2fd)
+- feat(AIIconButton): add new AI Icon Button Component (120079bd)
+- feat(AIChip): add new AI Chip component (66bd9303)
+- feat(AIResponse): add new AI Response component (09c7f087)
+- feat(calendar): update calendar states (9d515e38)
+- feat(Input): update readonly state for all input components (8aa4b949)
+- feat(chip): add overflow behavior in chip and chipInput (b5fac8d0)
+- feat(progressIndicator): add new progress indicator pattern (f3eaf718)
+
+### Fixes
+
+- fix: update storybook link (0f79e9de)
+- fix(actions): update node js version for chromatic build job (20c18981)
+- fix(metricInput): update value of metric input when showActionButton prop is false (5e8b396b)
+- fix(select): update overflow of options in popover with respect to trigger size (4dad3cd3)
+- fix(select): update state of placeholder (c8f9f154)
+- fix(saraSparkle): update size of sara sparkle in story (8ab3d928)
+- fix(AIButton): update focus state of AI Button component (426872c4)
+
+### Improvements
+
+- fix(docs): update title for components, content, patterns and visualization page (4f3dedde)
+
+### Documentation
+
+- docs(calendar): update images of calendar states (d8b72589)
+- docs(chip): add overflow behavior in chip (992403da)
+- docs(chipInput): add overflow behavior in chipInput (c4313572)
+- docs(emptyState): add empty state documentation (a572b460)
+- docs(input): update the documentation of state of input (f31e9aaf)
+- docs(AIChip): add documentation of AI Chip component (04c8a303)
+- docs(AITrigger): add AI trigger components documentation (77909038)
+- docs(sara): add sara and sara sparkle documentation (439f03a2)
+- docs(AIResponse): add AI Response documentation (ebe60d42)
+
+---
+
 ## 2.35.0 (2024-05-28)
 
 ### Highlights
