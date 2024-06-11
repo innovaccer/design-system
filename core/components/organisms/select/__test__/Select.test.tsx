@@ -7,7 +7,6 @@ import { SelectProps as Props } from '@/index.type';
 const BooleanValue = [true, false];
 const FunctionValue = jest.fn();
 const placeholder = 'Select';
-const defaultValue = { label: 'Option 1', value: 'Option 1' };
 const multiSelectValue = [{ label: 'Option 1', value: 'Option 1' }];
 const checkedState = ['checked', 'unchecked', 'indeterminate'];
 const triggerSize = ['regular', 'small'];
@@ -112,17 +111,6 @@ describe('Select component single input trigger tests', () => {
     const inputTrigger = getByTestId('DesignSystem-Select-trigger');
     expect(inputTrigger).toBeInTheDocument();
     expect(inputTrigger).toHaveTextContent(placeholder);
-  });
-
-  it('check for default value in single input trigger', () => {
-    const { getByTestId } = render(
-      <Select onSelect={FunctionValue} value={defaultValue}>
-        {children}
-      </Select>
-    );
-    const inputTrigger = getByTestId('DesignSystem-Select-trigger');
-    expect(inputTrigger).toBeInTheDocument();
-    expect(inputTrigger).toHaveTextContent(defaultValue.label);
   });
 
   it('check for onSelect event handler in single input trigger', () => {
@@ -266,5 +254,25 @@ describe('Select component multiple select trigger tests', () => {
 
     fireEvent.click(closeIcon);
     expect(inputTrigger).toHaveTextContent(placeholder);
+  });
+});
+
+describe('Check for default value in single select', () => {
+  const defaultValues = [
+    { label: 'Option 1', value: 'Option 1' },
+    { label: 'Option 2', value: 123 },
+    { label: 'Option 3', value: { data: [{ label: 'Option 1', value: 'Option 1' }] } },
+  ];
+
+  test.each(defaultValues)('check for default value: %s', (defaultValue) => {
+    const { getByTestId } = render(
+      <Select onSelect={FunctionValue} value={defaultValue}>
+        {children}
+      </Select>
+    );
+    const inputTrigger = getByTestId('DesignSystem-Select-trigger');
+
+    expect(inputTrigger).toBeInTheDocument();
+    expect(inputTrigger).toHaveTextContent(defaultValue.label);
   });
 });

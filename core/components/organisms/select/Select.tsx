@@ -19,6 +19,12 @@ export interface SelectProps extends BaseProps {
   multiSelect?: boolean;
   /**
    * Callback function triggered when an option is selected.
+   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
+   * OptionType: {
+   *   label: string;
+   *   value: any;
+   * }
+   * </pre>
    */
   onSelect: (option?: OptionType | OptionType[]) => void;
   /**
@@ -43,6 +49,12 @@ export interface SelectProps extends BaseProps {
   minHeight?: number;
   /**
    * Values pre-selected in the select component.
+   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
+   * OptionType: {
+   *   label: string;
+   *   value: any;
+   * }
+   * </pre>
    */
   value?: OptionType | OptionType[];
   /**
@@ -194,7 +206,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
   React.useEffect(() => {
     if (value) {
       setSelectValue(value);
-      setIsOptionSelected(Array.isArray(value) ? value.length > 0 : value.value.trim().length > 0);
+      setIsOptionSelected(Array.isArray(value) ? value.length > 0 : value && 'value' in value);
     }
   }, [value]);
 
