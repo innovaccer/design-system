@@ -16,6 +16,10 @@ menus:
         link: /components/AIChip/usage/
       },
       {
+        label: 'AI Response',
+        link: /components/AIResponse/usage/
+      },
+      {
         label: 'Sara',
         link: /components/sara/usage/
       },
