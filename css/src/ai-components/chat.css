@@ -1,0 +1,28 @@
+.AIResponse-box {
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(to right, rgba(255, 194, 8, 0.64), rgba(227, 28, 121, 0.64)) border-box;
+  border-radius: var(--spacing-l);
+  border: var(--spacing-s) solid transparent;
+  border-top-left-radius: 0;
+  padding: var(--spacing) var(--spacing-l);
+}
+
+.AIResponse-actionBar {
+  margin-top: var(--spacing-m);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.AIResponse-button {
+  opacity: var(--opacity-12);
+}
+
+.AIResponse-box:hover .AIResponse-button {
+  opacity: 1;
+}
+
+.AIResponse-button--selected {
+  opacity: 1;
+}

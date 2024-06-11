@@ -10,6 +10,10 @@ export interface MenuTriggerProps extends BaseProps {
    * Defines size of the `Trigger`
    */
   size?: 'tiny' | 'regular';
+  /**
+   * Defines appearance of the `Trigger`
+   */
+  appearance?: 'transparent' | 'basic';
 }
 
 export const MenuTrigger = (props: MenuTriggerProps) => {

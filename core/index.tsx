@@ -99,5 +99,6 @@ export { SaraSparkle } from './ai-components/SaraSparkle';
 export { Sara } from './ai-components/Sara';
 export { AIIconButton } from './ai-components/AIIconButton';
 export { AIChip } from './ai-components/AIChip';
+export { AIResponse } from './ai-components/AIResponse';
 
 export { version } from '../package.json';
