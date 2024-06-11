@@ -109,6 +109,8 @@ const SelectTrigger = (props: SelectTriggerProps) => {
   });
 
   const textClass = classNames({
+    ['Text']: true,
+    ['Text--regular']: true,
     ['Select-trigger-text']: true,
   });
 
@@ -150,9 +152,9 @@ const SelectTrigger = (props: SelectTriggerProps) => {
               />
             )}
             {value && (
-              <Text ref={elementRef} className={textClass}>
+              <span ref={elementRef} className={textClass}>
                 {value}
-              </Text>
+              </span>
             )}
           </div>
         }

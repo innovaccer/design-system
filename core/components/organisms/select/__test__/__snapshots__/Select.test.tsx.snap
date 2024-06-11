@@ -29,8 +29,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -79,8 +78,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -129,8 +127,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -179,8 +176,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -229,8 +225,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -279,8 +274,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -329,8 +323,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -379,8 +372,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -429,8 +421,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -479,8 +470,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -529,8 +519,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -579,8 +568,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -629,8 +617,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -679,8 +666,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -729,8 +715,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -779,8 +764,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -829,8 +813,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -879,8 +862,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -929,8 +911,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -979,8 +960,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -1029,8 +1009,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -1079,8 +1058,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -1129,8 +1107,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -1179,8 +1156,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -1229,8 +1205,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -1279,8 +1254,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -1329,8 +1303,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -1379,8 +1352,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -1429,8 +1401,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -1479,8 +1450,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -1529,8 +1499,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -1579,8 +1548,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -1629,8 +1597,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -1679,8 +1646,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -1729,8 +1695,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -1779,8 +1744,7 @@ exports[`Select List component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -1829,8 +1793,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -1879,8 +1842,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -1929,8 +1891,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -1979,8 +1940,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -2029,8 +1989,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -2079,8 +2038,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -2129,8 +2087,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -2179,8 +2136,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -2229,8 +2185,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -2279,8 +2234,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -2329,8 +2283,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -2379,8 +2332,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -2429,8 +2381,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -2479,8 +2430,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -2529,8 +2479,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -2579,8 +2528,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -2629,8 +2577,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -2679,8 +2626,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -2729,8 +2675,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -2779,8 +2724,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -2829,8 +2773,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -2879,8 +2822,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -2929,8 +2871,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -2979,8 +2920,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -3029,8 +2969,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -3079,8 +3018,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -3129,8 +3067,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -3179,8 +3116,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -3229,8 +3165,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -3279,8 +3214,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -3329,8 +3263,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -3379,8 +3312,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -3429,8 +3361,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -3479,8 +3410,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -3529,8 +3459,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -3579,8 +3508,7 @@ exports[`Select Option component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -3629,8 +3557,7 @@ exports[`Select component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
@@ -3679,8 +3606,7 @@ exports[`Select component snapshots
             class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--default Text--regular Select-trigger-text"
-              data-test="DesignSystem-Text"
+              class="Text Text--regular Select-trigger-text"
             >
               Select
             </span>
