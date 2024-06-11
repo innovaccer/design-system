@@ -9,7 +9,7 @@ import SearchInput from './SearchInput';
 import SelectEmptyTemplate from './SelectEmptyTemplate';
 import { focusListItem, mapInitialValue } from './utils';
 import SelectFooter from './SelectFooter';
-import { BaseProps } from '@/utils/types';
+import { BaseProps, extractBaseProps } from '@/utils/types';
 import { PopoverProps } from '@/index.type';
 
 export interface SelectProps extends BaseProps {
@@ -142,6 +142,8 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     width: width,
   };
 
+  const baseProps = extractBaseProps(props);
+
   React.useEffect(() => {
     // if popover width is not provided explicitly, apply the trigger width to popover width
     if (!popoverWidth && triggerRef.current?.clientWidth) {
@@ -238,7 +240,13 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
 
   return (
     <SelectContext.Provider value={contextProp}>
-      <div data-test="DesignSystem-Select" aria-haspopup="listbox" aria-expanded={openPopover} style={triggerStyle}>
+      <div
+        data-test="DesignSystem-Select"
+        aria-haspopup="listbox"
+        aria-expanded={openPopover}
+        style={triggerStyle}
+        {...baseProps}
+      >
         <Popover
           open={openPopover}
           onToggle={onToggleHandler}

@@ -1043,6 +1043,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
             const wrapperClass = classNames({
               'Calendar-valueWrapper': true,
+              'Calendar-valueWrapper--disabled': disabled,
               'Calendar-valueWrapper--inRange': !isEdgeElement && isValueRange,
               'Calendar-valueWrapper--inEdgeRange': isValueRange && isEdgeElement,
               'Calendar-valueWrapper--inRangeError': isRangeError,
@@ -1055,7 +1056,8 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                 (isStart && isRangeError) || (rangePicker && isRangeError && isStartActive),
               'Calendar-valueWrapper--endError':
                 (isEnd && isRangeError) || (rangePicker && isRangeError && isEndActive),
-              'Calendar-valueWrapper--dummy': dummy,
+              'Calendar-valueWrapper--dummy': dummy && !disabled && !activeDate,
+              'Calendar-valueWrapper--active-dummy': dummy && !disabled && activeDate,
               'Calendar-valueWrapper--hoverDate': rangePicker && isHoverForwardLast,
               'Calendar-valueWrapper--hoverEndDate': rangePicker && isHoverBackwardLast,
               'Calendar-valueWrapper--inStartRange': isValueRange && col === 0 && !active && !activeDate,
@@ -1080,9 +1082,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             const getTextColor = classNames({
               inverse: !active && !today() && !disabled && !activeDate,
               white: active || activeDate,
-              'primary-lighter': today() && disabled,
               primary: today(),
-              'inverse-lightest': disabled,
             }) as TextColor;
 
             return (
@@ -1092,6 +1092,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                     <Text
                       color={getTextColor}
                       size={size === 'small' ? 'small' : 'regular'}
+                      appearance={disabled ? 'subtle' : 'default'}
                       data-test="DesignSystem-Calendar--dateValue"
                       className={valueClass}
                       onClick={onClickHandler(date)}
@@ -1106,7 +1107,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                 {((dummy && date > 0 && index === monthsInView - 1) || (dummy && date <= 0 && index === 0)) && (
                   <>
                     <Text
-                      appearance={active || activeDate ? 'white' : disabled ? 'disabled' : today() ? 'link' : 'default'}
+                      appearance={active || activeDate ? 'white' : today() ? 'link' : 'subtle'}
                       size={size === 'small' ? 'small' : 'regular'}
                       data-test="DesignSystem-Calendar--dateValue"
                       className={valueClass}

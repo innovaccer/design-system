@@ -1,12 +1,10 @@
 const path = require('path');
 
 module.exports = {
-  "stories": [
-    "../core/components/**/*.story.@(js|jsx|ts|tsx)"
-  ],
-  "addons": [
+  stories: ['../core/components/**/*.story.@(js|jsx|ts|tsx)', '../core/ai-components/**/*.story.@(js|jsx|ts|tsx)'],
+  addons: [
     /**
-     * Adds following addons 
+     * Adds following addons
      * Docs
      * Controls
      * Actions
@@ -15,9 +13,9 @@ module.exports = {
      * Toolbars & globals
      * https://storybook.js.org/docs/react/essentials/introduction
      */
-    "@storybook/addon-essentials",
+    '@storybook/addon-essentials',
     '@storybook/addon-a11y',
-    "@storybook/addon-knobs",
+    '@storybook/addon-knobs',
   ],
   typescript: {
     check: false,
@@ -40,12 +38,12 @@ module.exports = {
   },
   refs: {
     'rich-text-editor': {
-      title: "Rich Text Editor",
-      url: "https://innovaccer.github.io/mds-rich-text-editor/"
+      title: 'Rich Text Editor',
+      url: 'https://innovaccer.github.io/mds-rich-text-editor/',
     },
     'mds-helpers': {
-      title: "MDS Helpers",
-      url: "https://innovaccer.github.io/mds-helpers/"
-    }
-   }
-}
+      title: 'MDS Helpers',
+      url: 'https://innovaccer.github.io/mds-helpers/',
+    },
+  },
+};

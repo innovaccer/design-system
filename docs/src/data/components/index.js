@@ -8,6 +8,13 @@ const imgStyle = {
 
 export const data = [
   {
+    link: 'AIButton/usage/',
+    design: 'Available',
+    name: 'AI',
+    code: 'Available',
+    image: () => <StaticImage src="./images/Sara.png" alt="AI Components" imgStyle={imgStyle} />,
+  },
+  {
     link: 'avatar/usage',
     design: 'Available',
     name: 'Avatar',
@@ -92,10 +99,17 @@ export const data = [
     image: () => <StaticImage src="./images/Dropdowns.png" alt="Dropdowns" imgStyle={imgStyle} />,
   },
   {
+    link: 'emptyState/usage',
+    name: 'EmptyState',
+    design: 'Available',
+    code: 'Available',
+    image: () => <StaticImage src="./images/EmptyState.png" alt="EmptyState" imgStyle={imgStyle} />,
+  },
+  {
     link: 'helpText/usage',
     name: 'Help text',
     design: 'Available',
-    code: 'Unavailable',
+    code: 'Available',
     image: () => <StaticImage src="./images/Helptext2.png" alt="Help text" imgStyle={imgStyle} />,
   },
   {

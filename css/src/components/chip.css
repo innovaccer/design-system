@@ -112,6 +112,14 @@
   color: var(--primary-darker);
 }
 
+.Chip-text--truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline;
+  max-width: 100%;
+}
+
 .Chip-selection--selectedDisabled {
   background: var(--primary-lightest);
   border-color: var(--primary-lighter);

@@ -61,7 +61,7 @@ const App = () => {
 ```
 
 For more information about each component, check out our
-[Storybook](https://innovaccer.github.io/design-system/).
+[Storybook](https://mds.innovaccer.com/).
 Check out our [Tutorial](/docs/AppTutorial.md) to guide you in creating an awesome app.
 
 ## CDN
@@ -135,7 +135,7 @@ Here are the supporting repositories.
 
 - [🌶 Masala Design System](http://design.innovaccer.com)
 
-- [📗 Components Storybook](https://innovaccer.github.io/design-system)
+- [📗 Components Storybook](https://mds.innovaccer.com)
 
 ## ❗ Code of Conduct
 

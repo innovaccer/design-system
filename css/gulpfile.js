@@ -15,6 +15,7 @@ const sources = [
   materialIcons,
   './src/core/*.css',
   './src/components/*.css',
+  './src/ai-components/*.css',
   './src/utils/*.css',
 ];
 

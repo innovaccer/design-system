@@ -167,7 +167,8 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
     {
       ['MetricInput']: true,
       [`MetricInput--${size}`]: size,
-      ['MetricInput--disabled']: disabled || readOnly,
+      ['MetricInput--disabled']: disabled,
+      ['MetricInput--readOnly']: readOnly,
       ['MetricInput--error']: error,
     },
     className
@@ -256,7 +257,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (showActionButton) {
       onKeyDownHandler(e);
-    } else e.preventDefault();
+    }
   };
 
   const actionButtonSize = size === 'large' ? 'regular' : 'tiny';

@@ -1,0 +1,11 @@
+.AIResponse-menu-button {
+  opacity: var(--opacity-12);
+}
+
+.AIResponse-box:hover .AIResponse-menu-button {
+  opacity: 1;
+}
+
+.AIResponse-box .Menu-Trigger--active {
+  opacity: 1;
+}

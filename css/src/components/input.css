@@ -67,6 +67,12 @@
   pointer-events: none;
 }
 
+.Input--readOnly {
+  background: var(--secondary-lightest);
+  border-color: var(--secondary);
+  pointer-events: none;
+}
+
 .Input--disabled .Input-icon--left {
   color: var(--inverse-lightest);
 }

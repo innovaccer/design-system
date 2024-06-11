@@ -16,29 +16,28 @@ const Home = () => {
 
   const releaseDate = new Date(changelog.releaseDate).toString().slice(3, 15);
 
-    const getChangelogContent = () => {
-      return changelog.updatesList.slice(0,2).map((updates, updateKey) => {
-        return (
-          <div key={updateKey}> 
-            <div className="mt-5">
-              <Text weight="strong" size="large">
-                {updates.title}
-              </Text>
-            </div>
-            {updates.items.slice(0, 2).map((item, itemKey) => ( 
-              <div className="list" key={itemKey}> 
-                <li className="m-0">
-                  <Text appearance="subtle" size="small" weight="medium">
-                    {item.substring(0, item.lastIndexOf('('))}
-                  </Text>
-                </li>
-              </div>
-            ))}
+  const getChangelogContent = () => {
+    return changelog.updatesList.slice(0, 2).map((updates, updateKey) => {
+      return (
+        <div key={updateKey}>
+          <div className="mt-5">
+            <Text weight="strong" size="large">
+              {updates.title}
+            </Text>
           </div>
-        );
-      });
-    };
-    
+          {updates.items.slice(0, 2).map((item, itemKey) => (
+            <div className="list" key={itemKey}>
+              <li className="m-0">
+                <Text appearance="subtle" size="small" weight="medium">
+                  {item.substring(0, item.lastIndexOf('('))}
+                </Text>
+              </li>
+            </div>
+          ))}
+        </div>
+      );
+    });
+  };
 
   return (
     <Homepage relativePagePath={'/404'} is404={true}>
@@ -82,12 +81,11 @@ const Home = () => {
                 <Card className="px-7 card-padding mr-6 h-100 overflow-visible" shadow="none">
                   <div className="d-flex">
                     <Heading size="m" className="mb-2">
-                    Masala Design System v{changelog.version.trim()} 
+                      Masala Design System v{changelog.version.trim()}
                     </Heading>
                     <div>
                       <Badge appearance="success" className="ml-4 mt-3">
-                        {' '}
-                        NEW{' '}
+                        NEW
                       </Badge>
                     </div>
                   </div>
@@ -147,7 +145,7 @@ const Home = () => {
             <Row className="mt-8">
               <Column size={1} />
               {resourceSection.map((resource, key) => (
-                <Column key={key} className={`${key === 2 ? 'mr-0': 'mr-7'}`}>
+                <Column key={key} className={`${key === 2 ? 'mr-0' : 'mr-7'}`}>
                   <Link href={resource.link} target="_blank">
                     <Card className="p-6 h-100 overflow-visible" shadow="none">
                       <Row>

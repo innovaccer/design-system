@@ -9,15 +9,19 @@ jobs:
   chromatic-deployment:
     # Operating System
     runs-on: ubuntu-latest
+
+    env:
+      NODE_OPTIONS: --openssl-legacy-provider
+
     # Job steps
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0 # 👈 Required to retrieve git history
       
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v4
         with:
-          node-version: '14.x'
+          node-version: '20.x'
       
       - name: Install dependencies
         run: npm ci

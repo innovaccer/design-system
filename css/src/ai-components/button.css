@@ -1,0 +1,74 @@
+.AIButton {
+  padding: var(--spacing) var(--spacing-l);
+  border-radius: var(--spacing-m);
+  cursor: pointer;
+  border: 0;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size);
+  line-height: var(--font-height-s);
+  display: flex;
+  align-items: center;
+}
+
+.AIButton:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.AIButton:focus {
+  outline: 0;
+}
+
+/* Primary Button */
+
+.AIButton--primary {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.AIButton--primary:hover {
+  background: var(--primary-dark);
+}
+
+.AIButton--primary:active {
+  background: var(--primary-darker);
+}
+
+.AIButton--primary:disabled {
+  background: var(--primary-lighter);
+}
+
+.AIButton--primary:focus {
+  box-shadow: var(--shadow-spread) var(--primary-shadow);
+}
+
+/* Basic Button */
+
+.AIButton--basic {
+  background: var(--secondary-light);
+  color: var(--inverse);
+}
+
+.AIButton--basic:hover {
+  background: var(--secondary);
+}
+
+.AIButton--basic:active {
+  background: var(--secondary-dark);
+}
+
+.AIButton--basic:disabled {
+  background: var(--secondary-lighter);
+  color: var(--inverse-lightest);
+}
+
+.AIButton--basic:focus {
+  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+}
+
+/* Button Icon */
+
+.AIButton-Icon {
+  margin-right: var(--spacing);
+}

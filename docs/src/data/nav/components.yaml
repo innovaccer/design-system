@@ -2,6 +2,28 @@ base: components
 menus:
   - label: Overview
     link: /components/overview/all-components/
+
+  - label: AI
+    link: /components/AIButton/usage/
+    hideInMobile: true
+    subMenu: [
+      {
+        label: 'AI Buttons',
+        link: /components/AIButton/usage/
+      },
+      {
+        label: 'AI Chip',
+        link: /components/AIChip/usage/
+      },
+      {
+        label: 'AI Response',
+        link: /components/AIResponse/usage/
+      },
+      {
+        label: 'Sara',
+        link: /components/sara/usage/
+      },
+    ]
     
   - label: Action sheet
     link: /components/actionSheet/usage/
@@ -26,7 +48,7 @@ menus:
     link: /components/bottomSheet/usage/
     hideInWeb: true
 
-  - label: Buttons
+  - label: Button
     link: /components/button/usage/
 
   - label: Calendar
@@ -46,7 +68,7 @@ menus:
     link: /components/combobox/usage/
     hideInMobile: true
 
-  - label: Date pickers
+  - label: Date Pickers
     link: /components/datePicker/usage/
     hideInMobile: true
 
@@ -60,8 +82,12 @@ menus:
 
   - label: Dropdowns
     link: /components/dropdowns/usage/
+  
+  - label: Empty state
+    link: /components/emptyState/usage/
+    hideInMobile: true
     
-  - label: Help text
+  - label: Help Text
     link: /components/helpText/usage/
     hideInMobile: true
 
@@ -69,7 +95,7 @@ menus:
     link: /components/icons/usage/
     hideInMobile: true
 
-  - label: Inline editable fields
+  - label: Inline Editable Fields
     link: /components/inlineEditableFields/usage/
     hideInMobile: true
 
@@ -84,7 +110,7 @@ menus:
     link: /components/links/usage/
     hideInMobile: true
 
-  - label: Link button
+  - label: Link Button
     link: /components/linkButton/usage/
     hideInMobile: true
 
@@ -103,7 +129,7 @@ menus:
   - label: Messages
     link: /components/message/usage/
 
-  - label: Meta list
+  - label: Meta List
     link: /components/metaList/usage/
 
   - label: Modals
@@ -118,7 +144,7 @@ menus:
     link: /components/navigationVertical/usage/
     hideInMobile: true
 
-  - label: Page headers
+  - label: Page Headers
     link: /components/pageHeaders/usage/
 
   - label: Pagination
@@ -133,14 +159,14 @@ menus:
     link: /components/popover/usage/
     hideInMobile: true
 
-  - label: Progress indicators
+  - label: Progress Indicators
     link: /components/progressIndicators/usage/
     hideInMobile: true
 
   - label: Radio
     link: /components/radio/usage/
 
-  - label: Rich text editor
+  - label: Rich Text Editor
     link: /components/richTextEditor/usage/
     hideInMobile: true
 
@@ -155,7 +181,7 @@ menus:
   - label: Sliders
     link: /components/slider/usage/
 
-  - label: Status hint
+  - label: Status Hint
     link: /components/statusHint/usage/
 
   - label: Stepper
@@ -164,14 +190,14 @@ menus:
   - label: Switch
     link: /components/switch/usage/
 
-  - label: Tables
+  - label: Table
     link: /components/table/usage/
     hideInMobile: true
 
   - label: Tabs
     link: /components/tabs/usage/
 
-  - label: Time picker
+  - label: Time Picker
     link: /components/timePicker/usage/
     hideInMobile: true
 

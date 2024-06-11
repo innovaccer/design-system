@@ -60,7 +60,7 @@
   outline: none;
   display: flex;
   width: 100%;
-  min-width: 30%;
+  min-width: 15%;
   flex: 0px;
   box-sizing: border-box;
   height: var(--spacing-xl);

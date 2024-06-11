@@ -94,4 +94,11 @@ export { Combobox } from './components/organisms/combobox';
 export { Select } from './components/organisms/select';
 export { Menu } from './components/organisms/menu';
 
+export { AIButton } from './ai-components/AIButton';
+export { SaraSparkle } from './ai-components/SaraSparkle';
+export { Sara } from './ai-components/Sara';
+export { AIIconButton } from './ai-components/AIIconButton';
+export { AIChip } from './ai-components/AIChip';
+export { AIResponse } from './ai-components/AIResponse';
+
 export { version } from '../package.json';

@@ -52,6 +52,10 @@ export interface ChipProps extends BaseProps {
    * Name of chip
    */
   name: Name;
+  /**
+   * Maximum width of the chip
+   */
+  maxWidth?: string | number;
 }
 
 export const Chip = (props: ChipProps) => {
@@ -68,6 +72,7 @@ export const Chip = (props: ChipProps) => {
     className,
     labelPrefix,
     iconType,
+    maxWidth,
   } = props;
 
   const baseProps = extractBaseProps(props);
@@ -109,6 +114,7 @@ export const Chip = (props: ChipProps) => {
       onClick={onClickHandler}
       name={name}
       labelPrefix={labelPrefix}
+      maxWidth={maxWidth}
     />
   );
 };
@@ -116,6 +122,7 @@ export const Chip = (props: ChipProps) => {
 Chip.displayName = 'Chip';
 Chip.defaultProps = {
   type: 'input',
+  maxWidth: 'var(--spacing-9)',
 };
 
 export default Chip;
