@@ -211,7 +211,6 @@
 
 .Grid-cell--head {
   overflow: hidden;
-  padding-right: var(--spacing-m);
 }
 
 .Grid-cell--dragged {
@@ -471,7 +470,7 @@
 
 .Header {
   background: var(--white);
-  padding: var(--spacing-l);
+  padding: var(--spacing-l) var(--spacing) var(--spacing) var(--spacing-l);
   border-bottom: var(--border);
 }
 
