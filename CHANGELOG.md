@@ -1,3 +1,39 @@
+## 2.36.1 (2024-06-12)
+
+### Highlights
+
+NA
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+- fix(select): enable support for arbitrary default values in single select (bea359b7)
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 2.36.0 (2024-06-11)
 
 ### Highlights
