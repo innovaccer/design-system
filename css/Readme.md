@@ -42,9 +42,9 @@
 ## NEUTRALS
 | Token 	| value 	| preview 	|
 |-	|-	|-	|
-| --inverse 	| `#2F2F2F` 	| ![#2F2F2F](https://via.placeholder.com/15/2F2F2F/000000?text=+) 	|
-| --inverse-light 	| `#595959` 	| ![#595959](https://via.placeholder.com/15/595959/000000?text=+) 	|
-| --inverse-lighter 	| `#868686` 	| ![#868686](https://via.placeholder.com/15/868686/000000?text=+) 	|
+| --inverse 	| `#1F1F1F` 	| ![#1F1F1F](https://via.placeholder.com/15/1F1F1F/000000?text=+) 	|
+| --inverse-light 	| `#494949` 	| ![#494949](https://via.placeholder.com/15/494949/000000?text=+) 	|
+| --inverse-lighter 	| `#707070` 	| ![#707070](https://via.placeholder.com/15/707070/000000?text=+) 	|
 | --inverse-lightest 	| `#A6A6A6` 	| ![#A6A6A6](https://via.placeholder.com/15/A6A6A6/000000?text=+) 	|
 | --secondary 	| `#D5D5D5` 	| ![#D5D5D5](https://via.placeholder.com/15/D5D5D5/000000?text=+) 	|
 | --secondary-dark 	| `#C5C5C5` 	| ![#C5C5C5](https://via.placeholder.com/15/C5C5C5/000000?text=+) 	|
