@@ -1,3 +1,41 @@
+## 2.36.2 (2024-06-13)
+
+### Highlights
+
+- style(colors): update night color hex code (d6f913c6)
+- feat(combobox): add support for computeStyle prop for popover positioning (b073ff74)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- style(colors): update night color hex code (d6f913c6)
+- feat(combobox): add support for computeStyle prop for popover positioning (b073ff74)
+
+### Fixes
+
+NA
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 2.36.1 (2024-06-12)
 
 ### Highlights
