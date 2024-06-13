@@ -95,6 +95,11 @@ export interface PopoverProps extends Pick<PopperWrapperProps, PopperProps>, Bas
     x: number;
     y: number;
   };
+  /**
+   * Describe the style that will be applied to the popper element
+   * Refer to [this](https://popper.js.org/docs/v1/#modifierscomputestyle)
+   */
+  computeStyles?: object;
 }
 
 export const Popover = (props: PopoverProps) => {
