@@ -36,9 +36,9 @@ export const tokenColors = [
     { token: '--warning-shadow', value: 'rgba(255, 194, 8, 0.16)' },
   ],
   [
-    { token: '--inverse', value: '#2F2F2F' },
-    { token: '--inverse-light', value: '#595959' },
-    { token: '--inverse-lighter', value: '#868686' },
+    { token: '--inverse', value: '#1F1F1F' },
+    { token: '--inverse-light', value: '#494949' },
+    { token: '--inverse-lighter', value: '#707070' },
     { token: '--inverse-lightest', value: '#A6A6A6' },
     { token: '--inverse-shadow', value: 'rgba(47, 47, 47, 0.16)' },
     { token: '--secondary', value: '#D5D5D5' },
@@ -106,8 +106,8 @@ export const spacingData = [
 ];
 
 export const textColors = [
-  { token: '--text', value: '#2F2F2F' },
-  { token: '--text-subtle', value: '#595959' },
+  { token: '--text', value: '#1F1F1F' },
+  { token: '--text-subtle', value: '#494949' },
   { token: '--text-link', value: '#0070DD' },
   { token: '--text-disabled', value: '#A6A6A6' },
   { token: '--text-destructive', value: '#D93737' },

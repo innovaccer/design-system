@@ -86,6 +86,11 @@ export interface PopperWrapperProps {
     x: number;
     y: number;
   };
+  /**
+   * Describe the style that will be applied to the popper element
+   * Refer to [this](https://popper.js.org/docs/v1/#modifierscomputestyle)
+   */
+  computeStyles?: object;
 }
 
 interface PopperWrapperState {
@@ -440,7 +445,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
   }
 
   render() {
-    const { placement, appendToBody, hide, boundaryElement, triggerCoordinates } = this.props;
+    const { placement, appendToBody, hide, boundaryElement, triggerCoordinates, computeStyles } = this.props;
     const { animationKeyframe, isOpen } = this.state;
 
     const coordinatesPopper = (
@@ -450,6 +455,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
         modifiers={{
           preventOverflow: { boundariesElement: boundaryElement || document.body },
           hide: { enabled: hide },
+          computeStyles: computeStyles,
           ...(triggerCoordinates && {
             offset: {
               offset: `${triggerCoordinates.x}px, ${triggerCoordinates.y}px`,
@@ -476,6 +482,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
               modifiers={{
                 preventOverflow: { boundariesElement: boundaryElement || document.body },
                 hide: { enabled: hide },
+                computeStyles: computeStyles,
               }}
             >
               {this.getPopperChildren}
@@ -486,7 +493,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
         {isOpen && appendToBody && triggerCoordinates && ReactDOM.createPortal(coordinatesPopper, document.body)}
 
         {isOpen && !appendToBody && !triggerCoordinates && (
-          <Popper placement={placement} innerRef={this.popupRef}>
+          <Popper placement={placement} innerRef={this.popupRef} modifiers={{ computeStyles: computeStyles }}>
             {this.getPopperChildren}
           </Popper>
         )}
