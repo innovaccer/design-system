@@ -1331,7 +1331,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
               class="Chip-text--truncate"
             >
               <span
-                class="Text Text--regular color-inverse-lightest Chip-text"
+                class="Text Text--default Text--regular Chip-text"
                 data-test="DesignSystem-GenericChip--Text"
               >
                 Today, Sep 22
@@ -2004,7 +2004,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
               class="Chip-text--truncate"
             >
               <span
-                class="Text Text--regular color-inverse-lightest Chip-text"
+                class="Text Text--default Text--regular Chip-text"
                 data-test="DesignSystem-GenericChip--Text"
               >
                 Today, Sep 22

@@ -55,10 +55,11 @@
 }
 
 .Chip-action--disabled {
-  background: var(--secondary-lighter);
+  background: var(--secondary-light);
+  opacity: var(--opacity-12);
   border: 0px;
   outline: none;
-  cursor: default;
+  cursor: not-allowed;
 }
 
 .Chip--selection {
@@ -83,17 +84,19 @@
 }
 
 .Chip-selection--disabled {
-  background: var(--secondary-lightest);
-  border-color: var(--secondary-lighter);
+  background: var(--white);
+  border-color: var(--secondary);
+  opacity: var(--opacity-12);
+  cursor: not-allowed;
 }
 
 .Chip-selection--selected {
-  background: var(--primary-lightest);
+  background: color-mod(var(--primary-lightest) a(var(--opacity-12)));
   border-color: var(--primary-lighter);
 }
 
 .Chip-selection--selected:hover {
-  background: var(--primary-lighter);
+  background: color-mod(var(--primary-lighter) a(var(--opacity-12)));
   border-color: var(--primary-light);
 }
 
@@ -121,7 +124,7 @@
 }
 
 .Chip-selection--selectedDisabled {
-  background: var(--primary-lightest);
+  background: color-mod(var(--primary-lightest) a(var(--opacity-12)));
   border-color: var(--primary-lighter);
 }
 
@@ -147,6 +150,8 @@
 
 .Chip-input--disabled {
   background: var(--secondary-lighter);
+  opacity: var(--opacity-12);
+  cursor: not-allowed;
   border: 0px;
 }
 
