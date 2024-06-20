@@ -27,13 +27,20 @@ export const ActionCard = (props: ActionCardProps) => {
   const classes = classNames(
     {
       ['ActionCard']: true,
+      ['ActionCard--default']: !disabled,
       ['ActionCard--disabled']: disabled,
     },
     className
   );
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
-    if (event.key === 'Enter' && onClick) {
+    if (event.key === 'Enter' && onClick && !disabled) {
+      onClick(event);
+    }
+  };
+
+  const onClickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (!disabled && onClick) {
       onClick(event);
     }
   };
@@ -44,7 +51,7 @@ export const ActionCard = (props: ActionCardProps) => {
       role="link"
       data-test="DesignSystem-ActionCard"
       className={classes}
-      onClick={onClick}
+      onClick={onClickHandler}
       onKeyDown={onKeyDownHandler}
       {...rest}
     >
