@@ -146,7 +146,8 @@ exports[`Pagination component
       <div
         class="MetricInput MetricInput--regular Pagination-MetricInput"
         data-test="DesignSystem-MetricInputWrapper"
-        role="presentation"
+        role="textbox"
+        tabindex="0"
       >
         <input
           class="MetricInput-input MetricInput-input--regular"

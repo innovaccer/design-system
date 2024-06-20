@@ -30,6 +30,10 @@
   cursor: text;
 }
 
+.MetricInput:focus-visible {
+  outline: none;
+}
+
 .MetricInput:focus-within {
   background: var(--white);
   border-color: var(--primary);

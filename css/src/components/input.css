@@ -42,6 +42,10 @@
   cursor: text;
 }
 
+.Input:focus-visible {
+  outline: none;
+}
+
 .Input:focus-within {
   background: var(--white);
   border-color: var(--primary);
