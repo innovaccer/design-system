@@ -1,30 +1,37 @@
 import * as React from 'react';
-import { Avatar } from '@/index';
-import Text from '@/components/atoms/text';
+import { Avatar, Row, Text, Column } from '@/index';
 
 // CSF format story
 export const size = () => {
   const weight = 'strong';
 
   return (
-    <div className="d-flex">
-      <div className="mr-9 d-flex flex-column">
-        <Text weight={weight}>Regular</Text> <br />
+    <Row className="w-50">
+      <Column>
+        <Text weight={weight}>Regular</Text>
+        <br />
+        <br />
         <Avatar firstName="John" lastName="Doe" />
-      </div>
-      <div className="mr-9  d-flex flex-column">
-        <Text weight={weight}>Tiny</Text> <br />
+      </Column>
+      <Column>
+        <Text weight={weight}>Tiny</Text>
+        <br />
+        <br />
         <Avatar firstName="John" lastName="Doe" size="tiny" />
-      </div>
-      <div className="mr-9 d-flex flex-column">
-        <Text weight={weight}>Regular</Text> <br />
+      </Column>
+      <Column>
+        <Text weight={weight}>Regular</Text>
+        <br />
+        <br />
         <Avatar appearance="accent4" firstName="John" lastName="Doe" shape="square" />
-      </div>
-      <div className="mr-9  d-flex flex-column">
-        <Text weight={weight}>Tiny</Text> <br />
+      </Column>
+      <Column>
+        <Text weight={weight}>Tiny</Text>
+        <br />
+        <br />
         <Avatar appearance="accent4" firstName="John" lastName="Doe" size="tiny" shape="square" />
-      </div>
-    </div>
+      </Column>
+    </Row>
   );
 };
 

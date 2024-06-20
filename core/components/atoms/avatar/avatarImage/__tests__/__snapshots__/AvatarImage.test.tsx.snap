@@ -17,8 +17,9 @@ Object {
           role="presentation"
         >
           <span
-            class="Avatar Avatar--regular Avatar--accent1"
+            class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
             data-test="DesignSystem-Avatar"
+            tabindex="0"
           >
             <img
               alt="John"
@@ -38,8 +39,9 @@ Object {
         role="presentation"
       >
         <span
-          class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"
+          class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default"
           data-test="DesignSystem-Avatar"
+          tabindex="0"
         >
           <img
             data-test="DesignSystem-Image"
@@ -58,8 +60,9 @@ Object {
       role="presentation"
     >
       <span
-        class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"
+        class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default"
         data-test="DesignSystem-Avatar"
+        tabindex="0"
       >
         <img
           data-test="DesignSystem-Image"
@@ -137,8 +140,9 @@ Object {
         role="presentation"
       >
         <span
-          class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"
+          class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default"
           data-test="DesignSystem-Avatar"
+          tabindex="0"
         >
           <svg
             fill="black"
@@ -166,8 +170,9 @@ Object {
       role="presentation"
     >
       <span
-        class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"
+        class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default"
         data-test="DesignSystem-Avatar"
+        tabindex="0"
       >
         <svg
           fill="black"

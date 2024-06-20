@@ -32,8 +32,9 @@ Object {
                 role="checkbox"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--accent1 cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
@@ -67,8 +68,9 @@ Object {
                 role="checkbox"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--alert cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
@@ -102,8 +104,9 @@ Object {
                 role="checkbox"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--warning cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
@@ -137,8 +140,9 @@ Object {
                 role="checkbox"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--accent2 cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
@@ -172,8 +176,9 @@ Object {
                 role="checkbox"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--accent2 cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
@@ -206,8 +211,9 @@ Object {
               role="presentation"
             >
               <span
-                class="Avatar Avatar--regular Avatar--secondary Avatar--disabled SelectionAvatarCount cursor-pointer"
+                class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
                 data-test="DesignSystem-Avatar"
+                tabindex="-1"
               >
                 <span
                   class="Text Text--default Text--regular overflow-hidden"
@@ -248,8 +254,9 @@ Object {
               role="checkbox"
             >
               <span
-                class="Avatar Avatar--regular Avatar--accent1 cursor-pointer"
+                class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
                 data-test="DesignSystem-Avatar"
+                tabindex="-1"
               >
                 <span
                   class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
@@ -283,8 +290,9 @@ Object {
               role="checkbox"
             >
               <span
-                class="Avatar Avatar--regular Avatar--alert cursor-pointer"
+                class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
                 data-test="DesignSystem-Avatar"
+                tabindex="-1"
               >
                 <span
                   class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
@@ -318,8 +326,9 @@ Object {
               role="checkbox"
             >
               <span
-                class="Avatar Avatar--regular Avatar--warning cursor-pointer"
+                class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
                 data-test="DesignSystem-Avatar"
+                tabindex="-1"
               >
                 <span
                   class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
@@ -353,8 +362,9 @@ Object {
               role="checkbox"
             >
               <span
-                class="Avatar Avatar--regular Avatar--accent2 cursor-pointer"
+                class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                 data-test="DesignSystem-Avatar"
+                tabindex="-1"
               >
                 <span
                   class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
@@ -388,8 +398,9 @@ Object {
               role="checkbox"
             >
               <span
-                class="Avatar Avatar--regular Avatar--accent2 cursor-pointer"
+                class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                 data-test="DesignSystem-Avatar"
+                tabindex="-1"
               >
                 <span
                   class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
@@ -422,8 +433,9 @@ Object {
             role="presentation"
           >
             <span
-              class="Avatar Avatar--regular Avatar--secondary Avatar--disabled SelectionAvatarCount cursor-pointer"
+              class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
               data-test="DesignSystem-Avatar"
+              tabindex="-1"
             >
               <span
                 class="Text Text--default Text--regular overflow-hidden"
@@ -523,8 +535,9 @@ Object {
                 role="checkbox"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--accent1 cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
@@ -558,8 +571,9 @@ Object {
                 role="checkbox"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--alert cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
@@ -593,8 +607,9 @@ Object {
                 role="checkbox"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--warning cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
@@ -628,8 +643,9 @@ Object {
                 role="checkbox"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--accent2 cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
@@ -663,8 +679,9 @@ Object {
                 role="checkbox"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--accent2 cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
@@ -697,8 +714,9 @@ Object {
               role="presentation"
             >
               <span
-                class="Avatar Avatar--regular Avatar--secondary Avatar--disabled SelectionAvatarCount cursor-pointer"
+                class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
                 data-test="DesignSystem-Avatar"
+                tabindex="-1"
               >
                 <span
                   class="Text Text--default Text--regular overflow-hidden"
@@ -739,8 +757,9 @@ Object {
               role="checkbox"
             >
               <span
-                class="Avatar Avatar--regular Avatar--accent1 cursor-pointer"
+                class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
                 data-test="DesignSystem-Avatar"
+                tabindex="-1"
               >
                 <span
                   class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
@@ -774,8 +793,9 @@ Object {
               role="checkbox"
             >
               <span
-                class="Avatar Avatar--regular Avatar--alert cursor-pointer"
+                class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
                 data-test="DesignSystem-Avatar"
+                tabindex="-1"
               >
                 <span
                   class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
@@ -809,8 +829,9 @@ Object {
               role="checkbox"
             >
               <span
-                class="Avatar Avatar--regular Avatar--warning cursor-pointer"
+                class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
                 data-test="DesignSystem-Avatar"
+                tabindex="-1"
               >
                 <span
                   class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
@@ -844,8 +865,9 @@ Object {
               role="checkbox"
             >
               <span
-                class="Avatar Avatar--regular Avatar--accent2 cursor-pointer"
+                class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                 data-test="DesignSystem-Avatar"
+                tabindex="-1"
               >
                 <span
                   class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
@@ -879,8 +901,9 @@ Object {
               role="checkbox"
             >
               <span
-                class="Avatar Avatar--regular Avatar--accent2 cursor-pointer"
+                class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                 data-test="DesignSystem-Avatar"
+                tabindex="-1"
               >
                 <span
                   class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
@@ -913,8 +936,9 @@ Object {
             role="presentation"
           >
             <span
-              class="Avatar Avatar--regular Avatar--secondary Avatar--disabled SelectionAvatarCount cursor-pointer"
+              class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
               data-test="DesignSystem-Avatar"
+              tabindex="-1"
             >
               <span
                 class="Text Text--default Text--regular overflow-hidden"
@@ -1014,8 +1038,9 @@ Object {
                 role="checkbox"
               >
                 <span
-                  class="Avatar Avatar--tiny Avatar--accent1 cursor-pointer"
+                  class="Avatar Avatar--tiny Avatar--accent1 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"
@@ -1049,8 +1074,9 @@ Object {
                 role="checkbox"
               >
                 <span
-                  class="Avatar Avatar--tiny Avatar--alert cursor-pointer"
+                  class="Avatar Avatar--tiny Avatar--alert Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--alert"
@@ -1084,8 +1110,9 @@ Object {
                 role="checkbox"
               >
                 <span
-                  class="Avatar Avatar--tiny Avatar--warning cursor-pointer"
+                  class="Avatar Avatar--tiny Avatar--warning Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--warning"
@@ -1119,8 +1146,9 @@ Object {
                 role="checkbox"
               >
                 <span
-                  class="Avatar Avatar--tiny Avatar--accent2 cursor-pointer"
+                  class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--accent2"
@@ -1154,8 +1182,9 @@ Object {
                 role="checkbox"
               >
                 <span
-                  class="Avatar Avatar--tiny Avatar--accent2 cursor-pointer"
+                  class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--accent2"
@@ -1188,8 +1217,9 @@ Object {
               role="presentation"
             >
               <span
-                class="Avatar Avatar--tiny Avatar--secondary Avatar--disabled SelectionAvatarCount cursor-pointer"
+                class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
                 data-test="DesignSystem-Avatar"
+                tabindex="-1"
               >
                 <span
                   class="Text Text--default Text--regular overflow-hidden"
@@ -1230,8 +1260,9 @@ Object {
               role="checkbox"
             >
               <span
-                class="Avatar Avatar--tiny Avatar--accent1 cursor-pointer"
+                class="Avatar Avatar--tiny Avatar--accent1 Avatar--default cursor-pointer"
                 data-test="DesignSystem-Avatar"
+                tabindex="-1"
               >
                 <span
                   class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"
@@ -1265,8 +1296,9 @@ Object {
               role="checkbox"
             >
               <span
-                class="Avatar Avatar--tiny Avatar--alert cursor-pointer"
+                class="Avatar Avatar--tiny Avatar--alert Avatar--default cursor-pointer"
                 data-test="DesignSystem-Avatar"
+                tabindex="-1"
               >
                 <span
                   class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--alert"
@@ -1300,8 +1332,9 @@ Object {
               role="checkbox"
             >
               <span
-                class="Avatar Avatar--tiny Avatar--warning cursor-pointer"
+                class="Avatar Avatar--tiny Avatar--warning Avatar--default cursor-pointer"
                 data-test="DesignSystem-Avatar"
+                tabindex="-1"
               >
                 <span
                   class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--warning"
@@ -1335,8 +1368,9 @@ Object {
               role="checkbox"
             >
               <span
-                class="Avatar Avatar--tiny Avatar--accent2 cursor-pointer"
+                class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
                 data-test="DesignSystem-Avatar"
+                tabindex="-1"
               >
                 <span
                   class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--accent2"
@@ -1370,8 +1404,9 @@ Object {
               role="checkbox"
             >
               <span
-                class="Avatar Avatar--tiny Avatar--accent2 cursor-pointer"
+                class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
                 data-test="DesignSystem-Avatar"
+                tabindex="-1"
               >
                 <span
                   class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--accent2"
@@ -1404,8 +1439,9 @@ Object {
             role="presentation"
           >
             <span
-              class="Avatar Avatar--tiny Avatar--secondary Avatar--disabled SelectionAvatarCount cursor-pointer"
+              class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
               data-test="DesignSystem-Avatar"
+              tabindex="-1"
             >
               <span
                 class="Text Text--default Text--regular overflow-hidden"
@@ -1505,8 +1541,9 @@ Object {
                 role="checkbox"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--accent1 cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
@@ -1540,8 +1577,9 @@ Object {
                 role="checkbox"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--alert cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
@@ -1575,8 +1613,9 @@ Object {
                 role="checkbox"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--warning cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
@@ -1610,8 +1649,9 @@ Object {
                 role="checkbox"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--accent2 cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
@@ -1645,8 +1685,9 @@ Object {
                 role="checkbox"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--accent2 cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
@@ -1679,8 +1720,9 @@ Object {
               role="presentation"
             >
               <span
-                class="Avatar Avatar--regular Avatar--secondary Avatar--disabled SelectionAvatarCount cursor-pointer"
+                class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
                 data-test="DesignSystem-Avatar"
+                tabindex="-1"
               >
                 <span
                   class="Text Text--default Text--regular overflow-hidden"
@@ -1735,8 +1777,9 @@ Object {
                 role="checkbox"
               >
                 <span
-                  class="Avatar Avatar--tiny Avatar--accent1 cursor-pointer"
+                  class="Avatar Avatar--tiny Avatar--accent1 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"
@@ -1770,8 +1813,9 @@ Object {
                 role="checkbox"
               >
                 <span
-                  class="Avatar Avatar--tiny Avatar--alert cursor-pointer"
+                  class="Avatar Avatar--tiny Avatar--alert Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--alert"
@@ -1805,8 +1849,9 @@ Object {
                 role="checkbox"
               >
                 <span
-                  class="Avatar Avatar--tiny Avatar--warning cursor-pointer"
+                  class="Avatar Avatar--tiny Avatar--warning Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--warning"
@@ -1840,8 +1885,9 @@ Object {
                 role="checkbox"
               >
                 <span
-                  class="Avatar Avatar--tiny Avatar--accent2 cursor-pointer"
+                  class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--accent2"
@@ -1875,8 +1921,9 @@ Object {
                 role="checkbox"
               >
                 <span
-                  class="Avatar Avatar--tiny Avatar--accent2 cursor-pointer"
+                  class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
                   data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
                   <span
                     class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--accent2"
@@ -1909,8 +1956,9 @@ Object {
               role="presentation"
             >
               <span
-                class="Avatar Avatar--tiny Avatar--secondary Avatar--disabled SelectionAvatarCount cursor-pointer"
+                class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
                 data-test="DesignSystem-Avatar"
+                tabindex="-1"
               >
                 <span
                   class="Text Text--default Text--regular overflow-hidden"
@@ -1951,8 +1999,9 @@ Object {
               role="checkbox"
             >
               <span
-                class="Avatar Avatar--tiny Avatar--accent1 cursor-pointer"
+                class="Avatar Avatar--tiny Avatar--accent1 Avatar--default cursor-pointer"
                 data-test="DesignSystem-Avatar"
+                tabindex="-1"
               >
                 <span
                   class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"
@@ -1986,8 +2035,9 @@ Object {
               role="checkbox"
             >
               <span
-                class="Avatar Avatar--tiny Avatar--alert cursor-pointer"
+                class="Avatar Avatar--tiny Avatar--alert Avatar--default cursor-pointer"
                 data-test="DesignSystem-Avatar"
+                tabindex="-1"
               >
                 <span
                   class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--alert"
@@ -2021,8 +2071,9 @@ Object {
               role="checkbox"
             >
               <span
-                class="Avatar Avatar--tiny Avatar--warning cursor-pointer"
+                class="Avatar Avatar--tiny Avatar--warning Avatar--default cursor-pointer"
                 data-test="DesignSystem-Avatar"
+                tabindex="-1"
               >
                 <span
                   class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--warning"
@@ -2056,8 +2107,9 @@ Object {
               role="checkbox"
             >
               <span
-                class="Avatar Avatar--tiny Avatar--accent2 cursor-pointer"
+                class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
                 data-test="DesignSystem-Avatar"
+                tabindex="-1"
               >
                 <span
                   class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--accent2"
@@ -2091,8 +2143,9 @@ Object {
               role="checkbox"
             >
               <span
-                class="Avatar Avatar--tiny Avatar--accent2 cursor-pointer"
+                class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
                 data-test="DesignSystem-Avatar"
+                tabindex="-1"
               >
                 <span
                   class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--accent2"
@@ -2125,8 +2178,9 @@ Object {
             role="presentation"
           >
             <span
-              class="Avatar Avatar--tiny Avatar--secondary Avatar--disabled SelectionAvatarCount cursor-pointer"
+              class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
               data-test="DesignSystem-Avatar"
+              tabindex="-1"
             >
               <span
                 class="Text Text--default Text--regular overflow-hidden"

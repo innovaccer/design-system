@@ -300,6 +300,8 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
             ref,
             onMouseEnter: this.handleMouseEnter,
             onMouseLeave: this.handleMouseLeave,
+            onFocus: this.handleMouseEnter,
+            onBlur: this.handleMouseLeave,
           }
         : {
             ref,

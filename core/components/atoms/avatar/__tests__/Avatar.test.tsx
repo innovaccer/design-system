@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import Avatar, { AvatarProps as Props } from '../Avatar';
 import { AccentAppearance, AvatarShape, AvatarSize } from '@/common.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -18,10 +18,12 @@ const appearances: AccentAppearance[] = [
 const sizes: AvatarSize[] = ['regular', 'tiny'];
 
 const shapes: AvatarShape[] = ['round', 'square'];
+const booleanValues = [true, false];
 
 describe('Avatar component', () => {
   const mapper = {
     appearance: valueHelper(appearances, { required: true, iterate: true }),
+    disabled: valueHelper(booleanValues, { required: true, iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
@@ -168,5 +170,52 @@ describe('Avatar component with prop:shape', () => {
       </Avatar>
     );
     expect(getByTestId('DesignSystem-Avatar')).toHaveClass('Avatar--tiny');
+  });
+});
+
+describe('Avatar component with prop:disabled', () => {
+  it('should have the Avatar--disabled class when disabled is true', () => {
+    const { getByTestId } = render(<Avatar disabled={true}>Design</Avatar>);
+    expect(getByTestId('DesignSystem-Avatar')).toHaveClass('Avatar--disabled');
+  });
+
+  it('should not have the Avatar--disabled class when disabled is false', () => {
+    const { getByTestId } = render(<Avatar>Design</Avatar>);
+    expect(getByTestId('DesignSystem-Avatar')).not.toHaveClass('Avatar--disabled');
+  });
+});
+
+describe('Avatar component with tooltip', () => {
+  it('should show the tooltip on hover', () => {
+    const { getByTestId } = render(<Avatar>Design</Avatar>);
+    const avatarEle = getByTestId('DesignSystem-AvatarWrapper');
+    fireEvent.mouseEnter(avatarEle);
+    const tooltip = getByTestId('DesignSystem-Popover');
+    expect(tooltip).toBeInTheDocument();
+    expect(tooltip).toHaveTextContent('Design');
+  });
+
+  it('should show the tooltip with tooltip prefix on hover', () => {
+    const { getByTestId } = render(
+      <Avatar disabled={true} firstName="John" lastName="Doe" tooltipSuffix="(Deactivated)" />
+    );
+    const avatarEle = getByTestId('DesignSystem-AvatarWrapper');
+    fireEvent.mouseEnter(avatarEle);
+    const tooltip = getByTestId('DesignSystem-Popover');
+    expect(tooltip).toBeInTheDocument();
+    expect(tooltip).toHaveTextContent('John Doe (Deactivated)');
+  });
+
+  it('should show the tooltip with tooltip prefix for children', () => {
+    const { getByTestId } = render(
+      <Avatar disabled={true} tooltipSuffix="(Deactivated)">
+        John Doe
+      </Avatar>
+    );
+    const avatarEle = getByTestId('DesignSystem-AvatarWrapper');
+    fireEvent.mouseEnter(avatarEle);
+    const tooltip = getByTestId('DesignSystem-Popover');
+    expect(tooltip).toBeInTheDocument();
+    expect(tooltip).toHaveTextContent('John Doe (Deactivated)');
   });
 });

@@ -10,9 +10,16 @@
   text-transform: uppercase;
   border-radius: 50%;
   cursor: default;
+  position: relative;
 }
 
-.Avatar--wrapper {
+.Avatar--default:focus,
+.Avatar--default:focus-visible {
+  outline: 3px solid var(--primary-shadow);
+  outline-offset: 3px;
+}
+
+.Avatar-wrapper--square {
   padding: var(--spacing-xs);
   box-sizing: border-box;
 }
@@ -33,8 +40,24 @@
   width: var(--spacing-xl);
 }
 
-.Avatar--disabled {
+.Avatar--noInitials {
   cursor: default;
+}
+
+.Avatar--disabled {
+  cursor: not-allowed;
+}
+
+.Avatar--disabled::after {
+  opacity: var(--opacity-20);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  pointer-events: none;
+  content: '';
+  background-color: var(--white);
 }
 
 .Avatar--primary {
