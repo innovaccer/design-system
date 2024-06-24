@@ -26,7 +26,19 @@ describe('Action Card component snapshots', () => {
 });
 
 describe('Action Card component event handlers', () => {
-  it('check for onClick handler', () => {
+  it('check for onClick handler with disabled', () => {
+    const { getByTestId } = render(
+      <ActionCard onClick={FunctionValue} disabled={true}>
+        {children}
+      </ActionCard>
+    );
+    const cardElement = getByTestId('DesignSystem-ActionCard');
+
+    fireEvent.click(cardElement);
+    expect(FunctionValue).not.toHaveBeenCalled();
+  });
+
+  it('check for onClick handler with non disabled', () => {
     const { getByTestId } = render(<ActionCard onClick={FunctionValue}>{children}</ActionCard>);
     const cardElement = getByTestId('DesignSystem-ActionCard');
     expect(cardElement).toHaveTextContent(text);
@@ -44,10 +56,20 @@ describe('Action Card component custom classes', () => {
   });
 });
 
+describe('Action Card component default classes', () => {
+  it('check for default classes', () => {
+    const { getByTestId } = render(<ActionCard>{children}</ActionCard>);
+    const cardElement = getByTestId('DesignSystem-ActionCard');
+    expect(cardElement).toHaveClass('ActionCard');
+    expect(cardElement).toHaveClass('ActionCard--default');
+  });
+});
+
 describe('Action Card component disabled state', () => {
   it('check for disabled class', () => {
     const { getByTestId } = render(<ActionCard disabled={true}>{children}</ActionCard>);
     const cardElement = getByTestId('DesignSystem-ActionCard');
+    expect(cardElement).toHaveClass('ActionCard');
     expect(cardElement).toHaveClass('ActionCard--disabled');
   });
 
