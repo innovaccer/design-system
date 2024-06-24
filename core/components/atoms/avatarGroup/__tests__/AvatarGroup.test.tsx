@@ -205,3 +205,29 @@ describe('AvatarGroup Component with prop: icon', () => {
     expect(getAllByTestId('DesignSystem-Icon')).toHaveLength(defaultMax);
   });
 });
+
+describe('AvatarGroup Component with prop: tooltipSuffix', () => {
+  it('renders disabled avatar with tooltip suffix', () => {
+    const list = [
+      {
+        firstName: 'Nancy',
+        lastName: 'Wheeler',
+        disabled: true,
+        tooltipSuffix: '(Deactivated)',
+      },
+      {
+        firstName: 'John',
+        lastName: 'Doe',
+      },
+    ];
+    const { getAllByTestId, getByTestId } = render(<AvatarGroup list={list} max={1} />);
+    const avatarEle = getAllByTestId('DesignSystem-AvatarWrapper')[0];
+    fireEvent.mouseEnter(avatarEle);
+    const tooltip = getByTestId('DesignSystem-Popover');
+    expect(tooltip).toBeInTheDocument();
+    expect(tooltip).toHaveTextContent('Nancy Wheeler (Deactivated)');
+
+    const avatarItem = getByTestId('DesignSystem-Avatar');
+    expect(avatarItem).toHaveClass('Avatar--disabled');
+  });
+});

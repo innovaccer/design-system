@@ -1,5 +1,6 @@
 .AvatarGroup-item {
   border-radius: 50%;
+  position: relative;
 }
 
 .AvatarGroup-item--regular {
@@ -29,4 +30,11 @@
 
 .AvatarCount-wrapper {
   border-radius: 50%;
+  position: relative;
+}
+
+.AvatarCount-wrapper:focus,
+.AvatarCount-wrapper:focus-visible {
+  outline: 3px solid var(--primary-shadow);
+  outline-offset: 3px;
 }
