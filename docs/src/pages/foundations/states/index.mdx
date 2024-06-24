@@ -22,7 +22,7 @@ Consider it as 0 for reference point.
 <br/>
 
 #### Hover
-A component is in default state when it is not interacted with.
+A component transitions into hover state when the cursor is placed over it.
 
 ##### State logic
 
@@ -35,7 +35,7 @@ A component is in default state when it is not interacted with.
 <br/>
 
 #### Active
-A component is in default state when it is not interacted with.
+A component transitions into active state when it is being pressed.
 
 ##### State logic
 
@@ -48,7 +48,7 @@ A component is in default state when it is not interacted with.
 <br/>
 
 #### Focus
-A component is in default state when it is not interacted with.
+A component transitions into focus state when it is highlighted by the user using a mouse, keyboard or voice input. This state indicates that the component is ready to interact with.
 
 ##### State logic
 
@@ -61,7 +61,7 @@ Focus ring of 3px border, outside.
 <br/>
 
 #### Disabled
-A component is in default state when it is not interacted with.
+A component transitions into disabled state when it cannot be interacted with.
 
 ##### State logic
 
@@ -74,7 +74,7 @@ A component is in default state when it is not interacted with.
 <br/>
 
 #### Loading
-A component is in default state when it is not interacted with.
+A component transitions into loading state if the action needs to be processed before proceeding.
 
 ##### State logic
 
@@ -87,7 +87,11 @@ A component is in default state when it is not interacted with.
 <br/>
 
 #### Selected
-A component is in default state when it is not interacted with.
+A component transitions into selected state when it is selected as an option out of many. The selected state should have medium emphasis so that it’s noticeable but not distracting. 
+
+##### State logic
+
+Jal/Lightest at 48% opacity for background color and Jal/Dark for text(wherever applicable)
 
 ![Selected state](./images/selected-state.png)
 <Caption> Selected state </Caption>
@@ -96,7 +100,11 @@ A component is in default state when it is not interacted with.
 <br/>
 
 #### Activated
-A component is in default state when it is not interacted with.
+A component transitions into activated state when a view associated with it is currently being viewed.
+
+##### State logic
+
+Jal/Lightest for background color and Jal/Dark for text(wherever applicable)
 
 ![Activated state](./images/activated-state.png)
 <Caption> Activated state </Caption>
@@ -105,7 +113,7 @@ A component is in default state when it is not interacted with.
 <br/>
 
 #### Dragged
-A component is in default state when it is not interacted with.
+A component transitions into dragged state when it is picked to move around.
 
 ![Dragged state](./images/dragged-state.png)
 <Caption> Dragged state </Caption>
@@ -146,5 +154,3 @@ A component is in default state when it is not interacted with.
 
 <br/>
 <br/>
-
-> * = Updated from foundation because the color does not have more lighter/darker variations or there is no sufficient contrast.
