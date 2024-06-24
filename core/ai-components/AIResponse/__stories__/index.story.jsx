@@ -30,7 +30,7 @@ export const All = () => {
       <div className="ml-4">
         <AIResponse>
           <AIResponse.Body>
-            <Text>Hello, I'd like to schedule an appointment with my cardiologist. Can you help me with that?</Text>
+            <Text>Hello, would you like to book an appointment with your cardiologist?</Text>
           </AIResponse.Body>
 
           <AIResponse.ActionBar>
@@ -111,7 +111,7 @@ const customCode = `() => {
       <div className="ml-4">
         <AIResponse>
           <AIResponse.Body>
-            <Text>Hello, I'd like to schedule an appointment with my cardiologist. Can you help me with that?</Text>
+            <Text>Hello, would you like to book an appointment with your cardiologist?</Text>
           </AIResponse.Body>
 
           <AIResponse.ActionBar>
