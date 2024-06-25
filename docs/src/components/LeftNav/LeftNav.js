@@ -10,6 +10,8 @@ const isBrowser = typeof window !== 'undefined';
 const LeftNav = (props) => {
   const { relativePagePath, showMobile, frontmatter } = props;
   const navItemsList = useNavItems(relativePagePath);
+  const pathName = window.location.pathname;
+
   const navItems = navItemsList.filter((item) => {
     if (relativePagePath.includes(MOBILE)) {
       return !item.hideInMobile;
@@ -52,7 +54,7 @@ const LeftNav = (props) => {
 
     ele.addEventListener('scroll', setPosition(ele.scrollTop));
     return () => ele.removeEventListener('scroll', setPosition(ele.scrollTop));
-  }, []);
+  }, [pathName]);
 
   const onClickHandler = (menu) => {
     navigate(menu.link);
@@ -82,9 +84,12 @@ const LeftNav = (props) => {
     }
     return componentName.toUpperCase();
   };
-
   return (
-    <div data-test="Docs-Leftnav" id="navbar-container" className="h-100 bg-secondary-lightest border-right page-scroll">
+    <div
+      data-test="Docs-Leftnav"
+      id="navbar-container"
+      className="h-100 bg-secondary-lightest border-right page-scroll"
+    >
       {showMenuButtons && (
         <div className="d-flex pt-6 pl-6">
           <Tile
@@ -108,7 +113,14 @@ const LeftNav = (props) => {
       <Subheading className="pl-6 pt-6 pb-3" appearance="subtle">
         {getHeading()}
       </Subheading>
-      <VerticalNav data-test="Docs-VerticalNav--Items" menus={navItems} active={active} onClick={onClickHandler} expanded={true} autoCollapse={false} />
+      <VerticalNav
+        data-test="Docs-VerticalNav--Items"
+        menus={navItems}
+        active={active}
+        onClick={onClickHandler}
+        expanded={true}
+        autoCollapse={false}
+      />
     </div>
   );
 };
