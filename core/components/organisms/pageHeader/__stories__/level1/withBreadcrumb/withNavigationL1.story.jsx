@@ -2,7 +2,7 @@ import * as React from 'react';
 import { HorizontalNav, Breadcrumbs, Badge, MetaList, PageHeader, StatusHint, Row, Column } from '@/index';
 import { action } from '@/utils/action';
 
-export const level1WithNavigation = () => {
+export const withNavigation = () => {
   const navigationData = [
     {
       name: 'menu_1',
@@ -137,7 +137,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/PageHeader/Level 1/With breadcrumb/Level 1 With Navigation',
+  title: 'Components/PageHeader/Level 1/With breadcrumb/With Navigation',
   component: PageHeader,
   parameters: {
     docs: {

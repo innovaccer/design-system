@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { Stepper, Button, Breadcrumbs, Badge, Text, MetaList, Avatar, PageHeader, Dropdown } from '@/index';
+import { Stepper, Button, Breadcrumbs, Badge, Text, MetaList, AvatarGroup, PageHeader, Dropdown } from '@/index';
 import { action } from '@/utils/action';
 import '../../style.css';
 
-export const level1WithStepper = () => {
+export const withStepper = () => {
   const stepperData = [
     {
       value: 'step_1',
@@ -34,30 +34,60 @@ export const level1WithStepper = () => {
     },
   ];
 
-  const [active, setActive] = React.useState(0);
-  const [completed, setCompleted] = React.useState(-1);
+  const avatarList = [
+    {
+      firstName: 'John',
+      lastName: 'Doe',
+    },
+    {
+      firstName: 'Steven',
+      lastName: 'Packton',
+    },
+    {
+      firstName: 'Nancy',
+      lastName: 'Wheeler',
+    },
+    {
+      firstName: 'Monica',
+      lastName: 'Geller',
+    },
+    {
+      firstName: 'Arya',
+      lastName: 'Stark',
+    },
+    {
+      firstName: 'Rachel',
+      lastName: 'Green',
+    },
+    {
+      firstName: 'Walter',
+      lastName: 'Wheeler',
+    },
+  ];
+
+  const [active, setActive] = React.useState(2);
 
   const onChangeHandler = (activeStep) => {
     setActive(activeStep);
   };
 
-  const onClickHandler = () => {
-    if (active > completed) setCompleted(active);
-    active > completed ? setActive(active + 1) : setActive(completed + 1);
-  };
-
-  const stepper = <Stepper steps={stepperData} onChange={onChangeHandler} active={active} completed={completed} />;
+  const stepper = <Stepper steps={stepperData} onChange={onChangeHandler} active={active} completed={1} />;
   const actions = (
     <div className="d-flex justify-content-end align-items-center">
-      <Text className="mr-4">few minutes ago</Text>
-      <Avatar className="mr-4" firstName="John" lastName="Doe" appearance="accent2" />
+      <Text appearance="subtle" className="mr-4">
+        Few minutes ago
+      </Text>
+      <AvatarGroup
+        className="mr-4"
+        list={avatarList}
+        borderColor="var(--secondary-lightest)"
+        popoverOptions={{ dark: true, on: 'hover', position: 'bottom' }}
+      />
+
       <div className="mr-4">
         <Dropdown menu={true} icon="more_horiz" options={options} />
       </div>
-      <Button className="mr-4">Finish Later</Button>
-      <Button appearance="primary" onClick={onClickHandler}>
-        Next
-      </Button>
+      <Button className="mr-4">Finish later</Button>
     </div>
   );
   const breadcrumbs = (
@@ -129,23 +159,53 @@ const customCode = `/*
     }
   ];
 
-  const [active, setActive] = React.useState(0);
-  const [completed, setCompleted] = React.useState(-1);
+  const avatarList = [
+    {
+      firstName: 'John',
+      lastName: 'Doe',
+    },
+    {
+      firstName: 'Steven',
+      lastName: 'Packton',
+    },
+    {
+      firstName: 'Nancy',
+      lastName: 'Wheeler',
+    },
+    {
+      firstName: 'Monica',
+      lastName: 'Geller',
+    },
+    {
+      firstName: 'Arya',
+      lastName: 'Stark',
+    },
+    {
+      firstName: 'Rachel',
+      lastName: 'Green',
+    },
+    {
+      firstName: 'Walter',
+      lastName: 'Wheeler',
+    },
+  ];
+
+  const [active, setActive] = React.useState(2);
 
   const onChangeHandler = (activeStep) => {
     setActive(activeStep);
   };
 
-  const onClickHandler = () => {
-    if (active > completed) setCompleted(active);
-    active > completed ? setActive(active + 1) : setActive(completed + 1);
-  };
-
-  const stepper = <Stepper steps={stepperData} onChange={onChangeHandler} active={active} completed={completed} />;
+  const stepper = <Stepper steps={stepperData} onChange={onChangeHandler} active={active} completed={1} />;
   const actions = (
     <div className="d-flex justify-content-end align-items-center">
-      <Text className="mr-4">few minutes ago</Text>
-      <Avatar className="mr-4" firstName="John" lastName="Doe" appearance="accent2"/>
+      <Text appearance="subtle" className="mr-4">Few minutes ago</Text>
+      <AvatarGroup
+        className="mr-4"
+        list={avatarList}
+        borderColor="var(--secondary-lightest)"
+        popoverOptions={{ dark: true, on: 'hover', position: 'bottom' }}
+      />
       <div className="mr-4">
         <Dropdown
           menu={true}
@@ -153,8 +213,7 @@ const customCode = `/*
           options={options}
         />
       </div>
-      <Button className="mr-4">Finish Later</Button>
-      <Button appearance="primary" onClick={onClickHandler}>Next</Button>
+      <Button className="mr-4">Finish later</Button>
     </div>
   );
   const breadcrumbs = (
@@ -193,7 +252,7 @@ const customCode = `/*
 }`;
 
 export default {
-  title: 'Components/PageHeader/Level 1/With breadcrumb/Level 1 With Stepper',
+  title: 'Components/PageHeader/Level 1/With breadcrumb/With Stepper',
   component: PageHeader,
   parameters: {
     docs: {

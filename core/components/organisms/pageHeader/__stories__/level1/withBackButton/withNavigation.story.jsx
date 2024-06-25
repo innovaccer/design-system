@@ -60,12 +60,19 @@ export const withNavigation = () => {
 
   const actions = (
     <div className="d-flex justify-content-end align-items-center">
-      <Text className="mr-4">few minutes ago</Text>
-      <AvatarGroup className="mr-4" list={list} popoverOptions={{ dark: true, on: 'hover', position: 'bottom' }} />
+      <Text appearance="subtle" className="mr-4">
+        Few minutes ago
+      </Text>
+      <AvatarGroup
+        className="mr-4"
+        list={list}
+        borderColor="var(--secondary-lightest)"
+        popoverOptions={{ dark: true, on: 'hover', position: 'bottom' }}
+      />
       <div className="mr-4">
         <Dropdown menu={true} icon="more_horiz" options={options} />
       </div>
-      <Button className="mr-4">Finish Later</Button>
+      <Button className="mr-4">Finish later</Button>
       <Button appearance="primary" onClick={onClickHandler}>
         Next
       </Button>
@@ -162,12 +169,12 @@ const customCode = `/*
 
   const actions = (
     <div className="d-flex justify-content-end align-items-center">
-      <Text className="mr-4">few minutes ago</Text>
-      <AvatarGroup className="mr-4" list={list} popoverOptions={{ dark: true, on: 'hover', position: 'bottom' }} />
+      <Text appearance="subtle" className="mr-4">Few minutes ago</Text>
+      <AvatarGroup borderColor="var(--secondary-lightest)" className="mr-4" list={list} popoverOptions={{ dark: true, on: 'hover', position: 'bottom' }} />
       <div className="mr-4">
         <Dropdown menu={true} icon="more_horiz" options={options} />
       </div>
-      <Button className="mr-4">Finish Later</Button>
+      <Button className="mr-4">Finish later</Button>
       <Button appearance="primary" onClick={onClickHandler}>
         Next
       </Button>

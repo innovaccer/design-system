@@ -64,30 +64,28 @@ export const withStepper = () => {
     },
   ];
 
-  const [active, setActive] = React.useState(0);
-  const [completed, setCompleted] = React.useState(-1);
+  const [active, setActive] = React.useState(2);
 
   const onChangeHandler = (activeStep) => {
     setActive(activeStep);
   };
 
-  const onClickHandler = () => {
-    if (active > completed) setCompleted(active);
-    active > completed ? setActive(active + 1) : setActive(completed + 1);
-  };
-
-  const stepper = <Stepper steps={stepperData} onChange={onChangeHandler} active={active} completed={completed} />;
+  const stepper = <Stepper steps={stepperData} onChange={onChangeHandler} active={active} completed={1} />;
   const actions = (
     <div className="d-flex justify-content-end align-items-center">
-      <Text className="mr-4">few minutes ago</Text>
-      <AvatarGroup className="mr-4" list={list} popoverOptions={{ dark: true, on: 'hover', position: 'bottom' }} />
+      <Text appearance="subtle" className="mr-4">
+        Few minutes ago
+      </Text>
+      <AvatarGroup
+        className="mr-4"
+        list={list}
+        borderColor="var(--secondary-lightest)"
+        popoverOptions={{ dark: true, on: 'hover', position: 'bottom' }}
+      />
       <div className="mr-4">
         <Dropdown menu={true} icon="more_horiz" options={options} />
       </div>
-      <Button className="mr-4">Finish Later</Button>
-      <Button appearance="primary" onClick={onClickHandler}>
-        Next
-      </Button>
+      <Button className="mr-4">Finish later</Button>
     </div>
   );
 
@@ -181,23 +179,17 @@ const customCode = `/*
     },
   ];
 
-  const [active, setActive] = React.useState(0);
-  const [completed, setCompleted] = React.useState(-1);
+  const [active, setActive] = React.useState(2);
 
   const onChangeHandler = (activeStep) => {
     setActive(activeStep);
   };
 
-  const onClickHandler = () => {
-    if (active > completed) setCompleted(active);
-    active > completed ? setActive(active + 1) : setActive(completed + 1);
-  };
-
-  const stepper = <Stepper steps={stepperData} onChange={onChangeHandler} active={active} completed={completed} />;
+  const stepper = <Stepper steps={stepperData} onChange={onChangeHandler} active={active} completed={1} />;
   const actions = (
     <div className="d-flex justify-content-end align-items-center">
-      <Text className="mr-4">few minutes ago</Text>
-      <AvatarGroup className="mr-4" list={list} popoverOptions={{ dark: true, on: 'hover', position: 'bottom' }} />
+      <Text appearance="subtle" className="mr-4">Few minutes ago</Text>
+      <AvatarGroup className="mr-4" list={list} borderColor="var(--secondary-lightest)" popoverOptions={{ dark: true, on: 'hover', position: 'bottom' }} />
       <div className="mr-4">
         <Dropdown
           menu={true}
@@ -205,8 +197,7 @@ const customCode = `/*
           options={options}
         />
       </div>
-      <Button className="mr-4">Finish Later</Button>
-      <Button appearance="primary" onClick={onClickHandler}>Next</Button>
+      <Button className="mr-4">Finish later</Button>
     </div>
   );
 

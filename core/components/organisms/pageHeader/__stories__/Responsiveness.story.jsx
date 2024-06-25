@@ -50,8 +50,10 @@ export const Responsiveness = () => {
 
   const actions = (
     <div className="d-flex justify-content-end align-items-center">
-      <Text className="mr-4">Updated 1 day ago</Text>
-      <AvatarGroup className="mr-5" list={list} />
+      <Text appearance="subtle" className="mr-4">
+        Updated 1 day ago
+      </Text>
+      <AvatarGroup borderColor="var(--secondary-lightest)" className="mr-5" list={list} />
       <div>
         <Dropdown menu={true} optionType="WITH_ICON" icon="more_horiz" options={options} align="left" />
       </div>
@@ -137,8 +139,8 @@ const customCode = `() => {
 
   const actions = (
     <div className="d-flex justify-content-end align-items-center">
-    <Text className="mr-4">Updated 1 day ago</Text>
-    <AvatarGroup className="mr-5" list={list}/>
+    <Text appearance="subtle" className="mr-4">Updated 1 day ago</Text>
+    <AvatarGroup borderColor="var(--secondary-lightest)" className="mr-5" list={list}/>
     <div>
       <Dropdown
         menu={true}

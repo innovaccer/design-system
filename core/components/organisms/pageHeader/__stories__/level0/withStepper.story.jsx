@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { PageHeader, Stepper, Button, Text } from '@/index';
+import { PageHeader, Stepper, Button } from '@/index';
 
-export const level0WithStepper = () => {
+export const withStepper = () => {
   const title = 'Annual Wellness Visit';
 
   const stepperData = [
@@ -21,32 +21,17 @@ export const level0WithStepper = () => {
 
   const separator = false;
 
-  const [active, setActive] = React.useState(0);
-  const [completed, setCompleted] = React.useState(-1);
+  const [active, setActive] = React.useState(2);
 
   const onChangeHandler = (activeStep) => {
     setActive(activeStep);
   };
 
-  const onClickHandler = () => {
-    if (active > completed) setCompleted(active);
-    active > completed ? setActive(active + 1) : setActive(completed + 1);
-  };
-
   const options = {
     title,
     separator,
-    stepper: <Stepper steps={stepperData} onChange={onChangeHandler} active={active} completed={completed} />,
-    actions: (
-      <div className="d-flex justify-content-end align-items-center">
-        <span className="mr-4">
-          <Text appearance="subtle">Meta data</Text>
-        </span>
-        <Button appearance="primary" onClick={onClickHandler}>
-          Next
-        </Button>
-      </div>
-    ),
+    stepper: <Stepper steps={stepperData} onChange={onChangeHandler} active={active} completed={1} />,
+    actions: <Button>Finish later</Button>,
   };
 
   return (
@@ -74,28 +59,17 @@ const customCode = `() => {
     }
   ];
 
-  const [active, setActive] = React.useState(0);
-  const [completed, setCompleted] = React.useState(-1);
+  const [active, setActive] = React.useState(2);
 
   const onChangeHandler = (activeStep) => {
     setActive(activeStep)
   };
 
-  const onClickHandler = () => {
-    if (active > completed) setCompleted(active);
-    active > completed ? setActive(active + 1) : setActive(completed + 1);
-  }
-
   const options = {
     title,
     separator: false,
-    stepper: <Stepper steps={stepperData} onChange={onChangeHandler} active={active} completed={completed} />,
-    actions: (
-      <div className="d-flex justify-content-end align-items-center">
-        <span className="mr-4"><Text appearance="subtle">Meta data</Text></span>
-        <Button appearance="primary" onClick={onClickHandler}>Next</Button>
-      </div>
-    )
+    stepper: <Stepper steps={stepperData} onChange={onChangeHandler} active={active} completed={1} />,
+    actions: <Button>Finish later</Button>
   };
 
   return (
@@ -106,7 +80,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/PageHeader/Level 0/Level 0 With Stepper',
+  title: 'Components/PageHeader/Level 0/With Stepper',
   component: PageHeader,
   parameters: {
     docs: {

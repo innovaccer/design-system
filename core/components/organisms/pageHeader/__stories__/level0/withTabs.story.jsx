@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Button, Tabs, PageHeader, Row, Column } from '@/index';
 
-export const level0WithFilter = () => {
+export const withTabs = () => {
   const tabs = [
     {
       count: 4,
@@ -91,7 +91,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/PageHeader/Level 0/Level 0 With Filter',
+  title: 'Components/PageHeader/Level 0/With Tabs',
   component: PageHeader,
   parameters: {
     docs: {
