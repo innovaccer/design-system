@@ -1,29 +1,36 @@
 .Selection-card {
-  cursor: pointer;
   border-radius: var(--spacing-m);
   position: relative;
-  box-shadow: inset 0 0 0 var(--spacing-xs) var(--secondary-dark);
   transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
-.Selection-card:hover {
+.Selection-card--default {
+  cursor: pointer;
+  box-shadow: inset 0 0 0 var(--spacing-xs) var(--secondary-dark);
+}
+
+.Selection-card--default:hover {
   box-shadow: inset 0 0 0 var(--spacing-s) var(--inverse-lightest);
   transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
-.Selection-card:focus,
-.Selection-card:focus-visible {
+.Selection-card--default:focus,
+.Selection-card--default:focus-visible {
   outline: none;
-  box-shadow: var(--shadow-spread) var(--secondary-shadow), inset 0 0 0 var(--spacing-xs) var(--secondary-light);
+  box-shadow: var(--shadow-spread) var(--secondary-shadow), inset 0 0 0 var(--spacing-xs) var(--secondary-dark);
 }
 
-.Selection-card:active {
+.Selection-card--default:active {
   box-shadow: inset 0 0 0 var(--spacing-s) var(--primary);
   transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
 .Selection-card--disabled {
-  pointer-events: none;
+  cursor: not-allowed;
+  outline: none;
+}
+
+.Selection-card--default-disabled {
   box-shadow: inset 0 0 0 var(--spacing-xs) var(--secondary-lighter);
 }
 
@@ -48,7 +55,6 @@
 }
 
 .Selection-card--selected-disabled {
-  pointer-events: none;
   box-shadow: inset 0 0 0 var(--spacing-xs) var(--primary-lighter);
 }
 
@@ -65,12 +71,12 @@
   border-radius: var(--spacing-m);
 }
 
-.Selection-card:active .Selection-card-overlay {
+.Selection-card--default:active .Selection-card-overlay {
   background-color: var(--primary);
   opacity: var(--opacity-3);
 }
 
-.Selection-card--disabled .Selection-card-overlay {
+.Selection-card--default-disabled .Selection-card-overlay {
   background-color: var(--secondary-lightest);
   opacity: var(--opacity-10);
 }

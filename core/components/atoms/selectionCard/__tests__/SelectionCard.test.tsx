@@ -31,6 +31,16 @@ const SingleSelect = () => {
       >
         Single Selection Item 2
       </SelectionCard>
+
+      <SelectionCard
+        id="item3"
+        data-test="Selection-card-3"
+        disabled={true}
+        onClick={() => updateCardSelection('item3')}
+        selected={isCardSelected('item3')}
+      >
+        Single Selection Item 3
+      </SelectionCard>
     </div>
   );
 };
@@ -49,6 +59,7 @@ const MultiSelect = () => {
       >
         Multi Selection
       </SelectionCard>
+
       <SelectionCard
         id="item2"
         cardValue={{ title: 'Item 2' }}
@@ -57,6 +68,16 @@ const MultiSelect = () => {
         selected={isCardSelected('item2')}
       >
         Multi Selection
+      </SelectionCard>
+
+      <SelectionCard
+        id="item3"
+        data-test="Selection-card-3"
+        disabled={true}
+        onClick={() => updateCardSelection('item3')}
+        selected={isCardSelected('item3')}
+      >
+        Single Selection Item 3
       </SelectionCard>
     </div>
   );
@@ -88,6 +109,7 @@ describe('selection card component tests', () => {
     const element = getByTestId('DesignSystem-SelectionCard');
     expect(element).toBeInTheDocument();
     expect(element).toHaveClass('Selection-card');
+    expect(element).toHaveClass('Selection-card--default');
     expect(element).toHaveTextContent(StringValue);
   });
 });
@@ -120,6 +142,7 @@ describe('selection card disabled item component tests', () => {
     );
     const element = getByTestId('DesignSystem-SelectionCard');
     expect(element).toHaveClass('Selection-card--disabled');
+    expect(element).toHaveClass('Selection-card--default-disabled');
   });
 
   it('check for disabled class for selected item', () => {
@@ -129,7 +152,19 @@ describe('selection card disabled item component tests', () => {
       </SelectionCard>
     );
     const element = getByTestId('DesignSystem-SelectionCard');
+    expect(element).toHaveClass('Selection-card--disabled');
     expect(element).toHaveClass('Selection-card--selected-disabled');
+  });
+
+  it('check for onClick event for disabled item', () => {
+    const { getByTestId } = render(
+      <SelectionCard id={name} onClick={FunctionValue} disabled={true} selected={true}>
+        {StringValue}
+      </SelectionCard>
+    );
+    const element = getByTestId('DesignSystem-SelectionCard');
+    fireEvent.click(element);
+    expect(FunctionValue).not.toHaveBeenCalled();
   });
 });
 
@@ -181,6 +216,12 @@ describe('selection card component hooks test', () => {
 
     fireEvent.click(element2);
     expect(element2).not.toHaveClass('Selection-card--selected');
+    const element3 = getByTestId('Selection-card-3');
+    fireEvent.click(element2);
+
+    fireEvent.click(element3);
+    expect(element3).not.toHaveClass('Selection-card--selected');
+    expect(element2).toHaveClass('Selection-card--selected');
   });
 
   it('test for multi select hook', () => {
@@ -195,5 +236,11 @@ describe('selection card component hooks test', () => {
 
     fireEvent.click(element1);
     expect(element1).not.toHaveClass('Selection-card--selected');
+
+    const element3 = getByTestId('Selection-card-3');
+    fireEvent.click(element3);
+    expect(element3).not.toHaveClass('Selection-card--selected');
+
+    expect(element2).toHaveClass('Selection-card--selected');
   });
 });
