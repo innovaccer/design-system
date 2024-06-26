@@ -94,8 +94,25 @@ const jsEsmOutputConfig = {
 
 const jsUmdConfig = {
   ...baseConfig,
-  plugins: [...commonJsPlugins, uglify()],
-  output: jsUmdOutputConfig
+  plugins: [
+    alias({
+      entries: [{ find: '@', replacement: path.resolve('./core') }],
+    }),
+    resolve({ extensions, preferBuiltins: false }),
+    commonjs(),
+    babel({ extensions, include: ['core/**/*'] }),
+    json(),
+    replace({
+      'process.env.NODE_ENV': JSON.stringify('production'),
+    }),
+    postcss({
+      modules: false, // Enable CSS Modules
+      autoModules: false,
+      extensions: ['.css', '.scss', '.sass'],
+    }),
+    uglify()
+  ],
+  output: jsUmdOutputConfig,
 };
 
 const jsCjsConfig = {
