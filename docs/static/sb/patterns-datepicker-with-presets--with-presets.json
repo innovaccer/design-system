@@ -29,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.31.1",
+        "brandTitle": "Masala Design System v2.36.2",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -594,11 +594,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "Pick<InputMaskProps, \"open\" | \"children\" | \"name\" | \"className\" | \"data-test\" | \"size\" | \"accept\" | \"acceptCharset\" | \"action\" | \"allowFullScreen\" | \"allowTransparency\" | ... 361 more ... | \"clearOnEmptyBlur\">"
+          "value": "Pick<InputMaskProps, \"name\" | \"type\" | \"defaultValue\" | \"size\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"onChange\" | \"onClear\" | \"info\" | \"min\" | \"max\" | \"minLength\" | ... 359 more ... | \"clearOnEmptyBlur\">"
         },
         "table": {
           "type": {
-            "summary": "Pick<InputMaskProps, \"open\" | \"children\" | \"name\" | \"className\" | \"data-test\" | \"size\" | \"accept\" | \"acceptCharset\" | \"action\" | \"allowFullScreen\" | \"allowTransparency\" | ... 361 more ... | \"clearOnEmptyBlur\">"
+            "summary": "Pick<InputMaskProps, \"name\" | \"type\" | \"defaultValue\" | \"size\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"onChange\" | \"onClear\" | \"info\" | \"min\" | \"max\" | \"minLength\" | ... 359 more ... | \"clearOnEmptyBlur\">"
           },
           "defaultValue": {
             "summary": "{ }"
@@ -1053,11 +1053,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "Pick<InputMaskProps, \"open\" | \"children\" | \"name\" | \"className\" | \"data-test\" | \"size\" | \"accept\" | \"acceptCharset\" | \"action\" | \"allowFullScreen\" | \"allowTransparency\" | ... 361 more ... | \"clearOnEmptyBlur\">"
+        "value": "Pick<InputMaskProps, \"name\" | \"type\" | \"defaultValue\" | \"size\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"onChange\" | \"onClear\" | \"info\" | \"min\" | \"max\" | \"minLength\" | ... 359 more ... | \"clearOnEmptyBlur\">"
       },
       "table": {
         "type": {
-          "summary": "Pick<InputMaskProps, \"open\" | \"children\" | \"name\" | \"className\" | \"data-test\" | \"size\" | \"accept\" | \"acceptCharset\" | \"action\" | \"allowFullScreen\" | \"allowTransparency\" | ... 361 more ... | \"clearOnEmptyBlur\">"
+          "summary": "Pick<InputMaskProps, \"name\" | \"type\" | \"defaultValue\" | \"size\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"onChange\" | \"onClear\" | \"info\" | \"min\" | \"max\" | \"minLength\" | ... 359 more ... | \"clearOnEmptyBlur\">"
         },
         "defaultValue": {
           "summary": "{ }"
