@@ -4,6 +4,7 @@ import { Listbox, Checkbox } from '@/index';
 import { OptionType } from '@/common.type';
 import { BaseProps } from '@/utils/types';
 import { handleKeyDown, elementExist, removeOrAddToList } from './utils';
+import classNames from 'classnames';
 
 type checkedType = 'checked' | 'unchecked' | 'indeterminate';
 
@@ -72,6 +73,15 @@ export const SelectOption = (props: SelectOptionProps) => {
 
   const indeterminate = checkedState === 'indeterminate';
 
+  const optionItemClass = classNames({
+    ['Select-option']: true,
+  });
+
+  const textClass = classNames({
+    ['Select-option--text']: true,
+    'pt-2': multiSelect,
+  });
+
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
     handleKeyDown(
       event,
@@ -99,7 +109,7 @@ export const SelectOption = (props: SelectOptionProps) => {
       data-test="DesignSystem-Select-Option"
       {...rest}
     >
-      <div className="d-flex align-items-center w-100">
+      <div className={optionItemClass}>
         {multiSelect && withCheckbox && (
           <Checkbox
             tabIndex={-1}
@@ -108,7 +118,7 @@ export const SelectOption = (props: SelectOptionProps) => {
             indeterminate={indeterminate}
           />
         )}
-        <div className={multiSelect ? 'Select-trigger-text pt-2' : 'Select-trigger-text'}>{children}</div>
+        <div className={textClass}>{children}</div>
       </div>
     </Listbox.Item>
   );

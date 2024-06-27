@@ -49,11 +49,7 @@ export const withSections = () => {
       <Select.List>
         {Object.keys(groupedMedicine).map((group) => (
           <React.Fragment key={group}>
-            <Text
-              className="d-flex justify-content-between align-self-center ml-6 mt-5 mr-5 mb-4"
-              size="small"
-              appearance={'subtle'}
-            >
+            <Text className="d-flex ml-6 mt-5 mr-5 mb-4" size="small" appearance={'subtle'}>
               {group}
             </Text>
             {groupedMedicine[group].map((item) => (
@@ -110,7 +106,7 @@ const customCode = `() => {
         {Object.keys(groupedMedicine).map((group) => (
           <React.Fragment key={group}>
             <Text
-              className="d-flex justify-content-between align-self-center ml-6 mt-5 mr-5 mb-4"
+              className="d-flex ml-6 mt-5 mr-5 mb-4"
               size="small"
               appearance={'subtle'}
             >

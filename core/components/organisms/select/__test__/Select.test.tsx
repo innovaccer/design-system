@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
-import { Select } from '@/index';
+import { Select, AIIconButton } from '@/index';
 import { SelectProps as Props } from '@/index.type';
 
 const BooleanValue = [true, false];
@@ -111,6 +111,68 @@ describe('Select component single input trigger tests', () => {
     const inputTrigger = getByTestId('DesignSystem-Select-trigger');
     expect(inputTrigger).toBeInTheDocument();
     expect(inputTrigger).toHaveTextContent(placeholder);
+  });
+
+  it('check for the default width of trigger', () => {
+    const { getByTestId } = render(<Select onSelect={FunctionValue}>{children}</Select>);
+    const triggerButton = getByTestId('DesignSystem-Select-trigger');
+    expect(triggerButton).toBeInTheDocument();
+    expect(triggerButton).toHaveStyle('width: 176px');
+  });
+
+  it('check for the default width of popover', () => {
+    const { getByTestId } = render(<Select onSelect={FunctionValue}>{children}</Select>);
+    const triggerButton = getByTestId('DesignSystem-Select-trigger');
+    expect(triggerButton).toBeInTheDocument();
+    fireEvent.click(triggerButton);
+    const popover = getByTestId('DesignSystem-Popover');
+    expect(popover).toBeInTheDocument();
+    expect(popover).toHaveStyle('width: 176px');
+  });
+
+  it('override the default width of trigger', () => {
+    const { getByTestId } = render(
+      <Select width={200} onSelect={FunctionValue}>
+        {children}
+      </Select>
+    );
+    const triggerButton = getByTestId('DesignSystem-Select-trigger');
+    expect(triggerButton).toBeInTheDocument();
+    expect(triggerButton).toHaveStyle('width: 200px');
+  });
+
+  it('override the default width of popover', () => {
+    const { getByTestId } = render(
+      <Select popoverWidth={200} onSelect={FunctionValue}>
+        {children}
+      </Select>
+    );
+    const triggerButton = getByTestId('DesignSystem-Select-trigger');
+    expect(triggerButton).toBeInTheDocument();
+    fireEvent.click(triggerButton);
+    const popover = getByTestId('DesignSystem-Popover');
+    expect(popover).toBeInTheDocument();
+    expect(popover).toHaveStyle('width: 200px');
+  });
+
+  it('check for onToggle event handler in select', () => {
+    const onToggleFunctionValue = jest.fn();
+
+    const { getByTestId } = render(
+      <Select onSelect={FunctionValue} onToggle={onToggleFunctionValue}>
+        {children}
+      </Select>
+    );
+    const inputTrigger = getByTestId('DesignSystem-Select-trigger');
+    expect(inputTrigger).toBeInTheDocument();
+
+    fireEvent.click(inputTrigger);
+    const popover = getByTestId('DesignSystem-Popover');
+    expect(onToggleFunctionValue).toHaveBeenCalledWith(true);
+    expect(popover).toBeInTheDocument();
+
+    fireEvent.click(inputTrigger);
+    expect(onToggleFunctionValue).toHaveBeenCalledWith(false);
   });
 
   it('check for onSelect event handler in single input trigger', () => {
@@ -274,5 +336,22 @@ describe('Check for default value in single select', () => {
 
     expect(inputTrigger).toBeInTheDocument();
     expect(inputTrigger).toHaveTextContent(defaultValue.label);
+  });
+});
+
+describe('Render custom trigger in select', () => {
+  const customTrigger = <AIIconButton data-test="AIIconButton-trigger" icon="import_contacts" type="button" />;
+
+  it('check for custom trigger', () => {
+    const { getByTestId } = render(
+      <Select onSelect={FunctionValue} trigger={customTrigger}>
+        {children}
+      </Select>
+    );
+    const Trigger = getByTestId('AIIconButton-trigger');
+    expect(Trigger).toBeInTheDocument();
+    fireEvent.click(Trigger);
+    const popover = getByTestId('DesignSystem-Popover');
+    expect(popover).toBeInTheDocument();
   });
 });
