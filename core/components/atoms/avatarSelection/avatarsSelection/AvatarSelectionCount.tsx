@@ -31,6 +31,7 @@ export const AvatarSelectionCount = (props: CountAvatarProp) => {
 
   const wrapperClassName = classNames({
     ['SelectionAvatarCount-wrapper']: true,
+    [`SelectionAvatarGroup-item`]: true,
     ['SelectionAvatarCount--selected']: selectedItemCount > 0,
   });
 

@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Avatar } from '@/index';
 import { AvatarSize } from '@/common.type';
 import { AvatarProps, TooltipProps } from '@/index.type';
+import classNames from 'classnames';
 
 interface SelectionAvatarProps {
   size?: AvatarSize;
@@ -12,13 +13,19 @@ interface SelectionAvatarProps {
   icon?: React.ReactNode;
   image?: React.ReactNode;
   tooltipPosition?: TooltipProps['position'];
+  disabled?: boolean;
+  tooltipSuffix?: string;
 }
 
 export const SelectionAvatar = (props: SelectionAvatarProps) => {
-  const { icon, image, ...rest } = props;
+  const { icon, image, disabled, ...rest } = props;
+
+  const avatarClassName = classNames({
+    ['cursor-pointer']: !disabled,
+  });
 
   return (
-    <Avatar tabIndex={-1} role="checkbox" {...rest} withTooltip={true} className="cursor-pointer">
+    <Avatar role="checkbox" {...rest} disabled={disabled} withTooltip={true} className={avatarClassName}>
       {image || icon}
     </Avatar>
   );
