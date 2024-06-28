@@ -11,7 +11,7 @@ export const Horizontal = () => {
 };
 
 export default {
-  title: 'Patterns/ProgressIndicator/Horizontal',
+  title: 'Components/AI/Progress Indicator/Horizontal',
   parameters: {
     docs: {
       docPage: {
