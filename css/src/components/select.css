@@ -72,7 +72,8 @@
   padding-left: var(--spacing);
 }
 
-.Select-trigger-text {
+.Select-trigger--text,
+.Select-option--text {
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
@@ -128,4 +129,10 @@
 
 .Select-crossButton:active {
   background-color: var(--secondary-dark);
+}
+
+.Select-option {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
 }

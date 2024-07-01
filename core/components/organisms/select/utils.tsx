@@ -33,7 +33,7 @@ export const computeValue = (
   setLabel?: (count: number) => string | undefined
 ) => {
   if (!multiSelect) {
-    return selectValue?.label.trim() || '';
+    return selectValue?.label?.trim() || '';
   }
   const label = setLabel?.(selectValue.length);
 
