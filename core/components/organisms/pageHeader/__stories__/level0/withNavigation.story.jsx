@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { HorizontalNav, Button, PageHeader, Row, Column } from '@/index';
 
-export const level0WithNavigation = () => {
+export const withNavigation = () => {
   const navigationData = [
     {
       name: 'menu_1',
@@ -85,7 +85,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/PageHeader/Level 0/Level 0 With Navigation',
+  title: 'Components/PageHeader/Level 0/With Navigation',
   component: PageHeader,
   parameters: {
     docs: {
