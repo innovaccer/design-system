@@ -31,7 +31,13 @@ export const size = () => {
         <Text weight="strong" className="mb-5">
           Small
         </Text>
-        <Tabs size="small" activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6" headerClassName="pl-3">
+        <Tabs
+          size="small"
+          activeIndex={activeIndex}
+          onTabChange={onTabChangeHandler}
+          className="mb-6"
+          headerClassName="pl-3"
+        >
           <Tab label="All" count={15} className="pl-6">
             <div>All</div>
           </Tab>
