@@ -48,8 +48,8 @@ export const dismissibleTab = () => {
           <div>Declined</div>
         </Tab>
       )}
-      <Tab label="Extras" disabled={true} count={1}>
-        <div>Extras</div>
+      <Tab label="Successful" disabled={true} count={1} isDismissible={true}>
+        <div>Successful</div>
       </Tab>
     </Tabs>
   );
@@ -99,8 +99,8 @@ const customCode = `() => {
           <div>Declined</div>
         </Tab>
       )}
-      <Tab label="Extras" disabled={true} count={1}>
-        <div>Extras</div>
+      <Tab label="Successful" disabled={true} count={1} isDismissible={true}>
+        <div>Successful</div>
       </Tab>
     </Tabs>
   );

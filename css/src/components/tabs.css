@@ -23,9 +23,16 @@
   flex-direction: row;
   cursor: pointer;
   min-width: 40px;
-  padding: var(--spacing-l) var(--spacing-l) var(--spacing-2);
   margin-bottom: calc(-1 * var(--spacing-xs));
   text-align: center;
+}
+
+.Tab--small {
+  padding: var(--spacing) var(--spacing-l) var(--spacing-l);
+}
+
+.Tab--regular {
+  padding: var(--spacing-l) var(--spacing-l) var(--spacing-2);
 }
 
 .Tab:last-child {
