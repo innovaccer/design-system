@@ -14,6 +14,8 @@ interface AvatarData extends Record<string, any> {
   appearance?: AvatarProps['appearance'];
   icon?: React.ReactNode;
   image?: React.ReactNode;
+  disabled?: boolean;
+  tooltipSuffix?: string;
 }
 
 interface AvatarPopoverProps {
@@ -37,6 +39,8 @@ export interface AvatarGroupProps extends BaseProps {
    *  appearance?: Appearance;
    *  icon?: React.ReactNode;
    *  image?: React.ReactNode;
+   *  disabled?: boolean;
+   *  tooltipSuffix?: string;
    * }
    * </pre>
    *
@@ -77,7 +81,7 @@ export interface AvatarGroupProps extends BaseProps {
    * | position | Position to place `Popover` | bottom |
    * | on | Event triggering the `Popover` | hover |
    * | maxHeight | Max height of `Popover Text Wrapper` (does not work in case of custom popperRenderer) | 150 |
-   * | popperClassName | Custom classname added to `Popover` | |
+   * | popperClassName | Custom className added to `Popover` | |
    *
    */
   popoverOptions: AvatarPopoverProps;

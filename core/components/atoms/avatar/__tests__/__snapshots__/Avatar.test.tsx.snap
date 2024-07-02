@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Avatar component 
-  appearance: "accent1"
+  appearance: "accent1", disabled: false
  1`] = `
 Object {
   "asFragment": [Function],
@@ -17,8 +17,9 @@ Object {
           role="presentation"
         >
           <span
-            class="Avatar Avatar--regular Avatar--accent1"
+            class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
             data-test="DesignSystem-Avatar"
+            tabindex="0"
           >
             <span
               class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
@@ -42,8 +43,9 @@ Object {
         role="presentation"
       >
         <span
-          class="Avatar Avatar--regular Avatar--accent1"
+          class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
           data-test="DesignSystem-Avatar"
+          tabindex="0"
         >
           <span
             class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
@@ -110,7 +112,7 @@ Object {
 `;
 
 exports[`Avatar component 
-  appearance: "accent2"
+  appearance: "accent1", disabled: true
  1`] = `
 Object {
   "asFragment": [Function],
@@ -126,8 +128,120 @@ Object {
           role="presentation"
         >
           <span
-            class="Avatar Avatar--regular Avatar--accent2"
+            class="Avatar Avatar--regular Avatar--accent1 Avatar--disabled"
             data-test="DesignSystem-Avatar"
+            tabindex="-1"
+          >
+            <span
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+              data-test="DesignSystem-Text"
+            >
+              JD
+            </span>
+          </span>
+        </span>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <style />
+    <div
+      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+    >
+      <span
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
+        role="presentation"
+      >
+        <span
+          class="Avatar Avatar--regular Avatar--accent1 Avatar--disabled"
+          data-test="DesignSystem-Avatar"
+          tabindex="-1"
+        >
+          <span
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+            data-test="DesignSystem-Text"
+          >
+            JD
+          </span>
+        </span>
+      </span>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  appearance: "accent2", disabled: false
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <style />
+      <div
+        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      >
+        <span
+          class=""
+          data-test="DesignSystem-AvatarWrapper"
+          role="presentation"
+        >
+          <span
+            class="Avatar Avatar--regular Avatar--accent2 Avatar--default"
+            data-test="DesignSystem-Avatar"
+            tabindex="0"
           >
             <span
               class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
@@ -151,8 +265,9 @@ Object {
         role="presentation"
       >
         <span
-          class="Avatar Avatar--regular Avatar--accent2"
+          class="Avatar Avatar--regular Avatar--accent2 Avatar--default"
           data-test="DesignSystem-Avatar"
+          tabindex="0"
         >
           <span
             class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
@@ -219,7 +334,7 @@ Object {
 `;
 
 exports[`Avatar component 
-  appearance: "accent3"
+  appearance: "accent2", disabled: true
  1`] = `
 Object {
   "asFragment": [Function],
@@ -235,8 +350,120 @@ Object {
           role="presentation"
         >
           <span
-            class="Avatar Avatar--regular Avatar--accent3"
+            class="Avatar Avatar--regular Avatar--accent2 Avatar--disabled"
             data-test="DesignSystem-Avatar"
+            tabindex="-1"
+          >
+            <span
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
+              data-test="DesignSystem-Text"
+            >
+              JD
+            </span>
+          </span>
+        </span>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <style />
+    <div
+      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+    >
+      <span
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
+        role="presentation"
+      >
+        <span
+          class="Avatar Avatar--regular Avatar--accent2 Avatar--disabled"
+          data-test="DesignSystem-Avatar"
+          tabindex="-1"
+        >
+          <span
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
+            data-test="DesignSystem-Text"
+          >
+            JD
+          </span>
+        </span>
+      </span>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  appearance: "accent3", disabled: false
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <style />
+      <div
+        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      >
+        <span
+          class=""
+          data-test="DesignSystem-AvatarWrapper"
+          role="presentation"
+        >
+          <span
+            class="Avatar Avatar--regular Avatar--accent3 Avatar--default"
+            data-test="DesignSystem-Avatar"
+            tabindex="0"
           >
             <span
               class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent3"
@@ -260,8 +487,9 @@ Object {
         role="presentation"
       >
         <span
-          class="Avatar Avatar--regular Avatar--accent3"
+          class="Avatar Avatar--regular Avatar--accent3 Avatar--default"
           data-test="DesignSystem-Avatar"
+          tabindex="0"
         >
           <span
             class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent3"
@@ -328,7 +556,7 @@ Object {
 `;
 
 exports[`Avatar component 
-  appearance: "accent4"
+  appearance: "accent3", disabled: true
  1`] = `
 Object {
   "asFragment": [Function],
@@ -344,8 +572,120 @@ Object {
           role="presentation"
         >
           <span
-            class="Avatar Avatar--regular Avatar--accent4"
+            class="Avatar Avatar--regular Avatar--accent3 Avatar--disabled"
             data-test="DesignSystem-Avatar"
+            tabindex="-1"
+          >
+            <span
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent3"
+              data-test="DesignSystem-Text"
+            >
+              JD
+            </span>
+          </span>
+        </span>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <style />
+    <div
+      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+    >
+      <span
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
+        role="presentation"
+      >
+        <span
+          class="Avatar Avatar--regular Avatar--accent3 Avatar--disabled"
+          data-test="DesignSystem-Avatar"
+          tabindex="-1"
+        >
+          <span
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent3"
+            data-test="DesignSystem-Text"
+          >
+            JD
+          </span>
+        </span>
+      </span>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  appearance: "accent4", disabled: false
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <style />
+      <div
+        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      >
+        <span
+          class=""
+          data-test="DesignSystem-AvatarWrapper"
+          role="presentation"
+        >
+          <span
+            class="Avatar Avatar--regular Avatar--accent4 Avatar--default"
+            data-test="DesignSystem-Avatar"
+            tabindex="0"
           >
             <span
               class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent4"
@@ -369,8 +709,9 @@ Object {
         role="presentation"
       >
         <span
-          class="Avatar Avatar--regular Avatar--accent4"
+          class="Avatar Avatar--regular Avatar--accent4 Avatar--default"
           data-test="DesignSystem-Avatar"
+          tabindex="0"
         >
           <span
             class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent4"
@@ -437,7 +778,7 @@ Object {
 `;
 
 exports[`Avatar component 
-  appearance: "alert"
+  appearance: "accent4", disabled: true
  1`] = `
 Object {
   "asFragment": [Function],
@@ -453,8 +794,120 @@ Object {
           role="presentation"
         >
           <span
-            class="Avatar Avatar--regular Avatar--alert"
+            class="Avatar Avatar--regular Avatar--accent4 Avatar--disabled"
             data-test="DesignSystem-Avatar"
+            tabindex="-1"
+          >
+            <span
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent4"
+              data-test="DesignSystem-Text"
+            >
+              JD
+            </span>
+          </span>
+        </span>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <style />
+    <div
+      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+    >
+      <span
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
+        role="presentation"
+      >
+        <span
+          class="Avatar Avatar--regular Avatar--accent4 Avatar--disabled"
+          data-test="DesignSystem-Avatar"
+          tabindex="-1"
+        >
+          <span
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent4"
+            data-test="DesignSystem-Text"
+          >
+            JD
+          </span>
+        </span>
+      </span>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  appearance: "alert", disabled: false
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <style />
+      <div
+        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      >
+        <span
+          class=""
+          data-test="DesignSystem-AvatarWrapper"
+          role="presentation"
+        >
+          <span
+            class="Avatar Avatar--regular Avatar--alert Avatar--default"
+            data-test="DesignSystem-Avatar"
+            tabindex="0"
           >
             <span
               class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
@@ -478,8 +931,9 @@ Object {
         role="presentation"
       >
         <span
-          class="Avatar Avatar--regular Avatar--alert"
+          class="Avatar Avatar--regular Avatar--alert Avatar--default"
           data-test="DesignSystem-Avatar"
+          tabindex="0"
         >
           <span
             class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
@@ -546,7 +1000,7 @@ Object {
 `;
 
 exports[`Avatar component 
-  appearance: "primary"
+  appearance: "alert", disabled: true
  1`] = `
 Object {
   "asFragment": [Function],
@@ -562,8 +1016,120 @@ Object {
           role="presentation"
         >
           <span
-            class="Avatar Avatar--regular Avatar--primary"
+            class="Avatar Avatar--regular Avatar--alert Avatar--disabled"
             data-test="DesignSystem-Avatar"
+            tabindex="-1"
+          >
+            <span
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
+              data-test="DesignSystem-Text"
+            >
+              JD
+            </span>
+          </span>
+        </span>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <style />
+    <div
+      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+    >
+      <span
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
+        role="presentation"
+      >
+        <span
+          class="Avatar Avatar--regular Avatar--alert Avatar--disabled"
+          data-test="DesignSystem-Avatar"
+          tabindex="-1"
+        >
+          <span
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
+            data-test="DesignSystem-Text"
+          >
+            JD
+          </span>
+        </span>
+      </span>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  appearance: "primary", disabled: false
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <style />
+      <div
+        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      >
+        <span
+          class=""
+          data-test="DesignSystem-AvatarWrapper"
+          role="presentation"
+        >
+          <span
+            class="Avatar Avatar--regular Avatar--primary Avatar--default"
+            data-test="DesignSystem-Avatar"
+            tabindex="0"
           >
             <span
               class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--primary"
@@ -587,8 +1153,9 @@ Object {
         role="presentation"
       >
         <span
-          class="Avatar Avatar--regular Avatar--primary"
+          class="Avatar Avatar--regular Avatar--primary Avatar--default"
           data-test="DesignSystem-Avatar"
+          tabindex="0"
         >
           <span
             class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--primary"
@@ -655,7 +1222,7 @@ Object {
 `;
 
 exports[`Avatar component 
-  appearance: "success"
+  appearance: "primary", disabled: true
  1`] = `
 Object {
   "asFragment": [Function],
@@ -671,8 +1238,120 @@ Object {
           role="presentation"
         >
           <span
-            class="Avatar Avatar--regular Avatar--success"
+            class="Avatar Avatar--regular Avatar--primary Avatar--disabled"
             data-test="DesignSystem-Avatar"
+            tabindex="-1"
+          >
+            <span
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--primary"
+              data-test="DesignSystem-Text"
+            >
+              JD
+            </span>
+          </span>
+        </span>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <style />
+    <div
+      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+    >
+      <span
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
+        role="presentation"
+      >
+        <span
+          class="Avatar Avatar--regular Avatar--primary Avatar--disabled"
+          data-test="DesignSystem-Avatar"
+          tabindex="-1"
+        >
+          <span
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--primary"
+            data-test="DesignSystem-Text"
+          >
+            JD
+          </span>
+        </span>
+      </span>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  appearance: "success", disabled: false
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <style />
+      <div
+        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      >
+        <span
+          class=""
+          data-test="DesignSystem-AvatarWrapper"
+          role="presentation"
+        >
+          <span
+            class="Avatar Avatar--regular Avatar--success Avatar--default"
+            data-test="DesignSystem-Avatar"
+            tabindex="0"
           >
             <span
               class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--success"
@@ -696,8 +1375,9 @@ Object {
         role="presentation"
       >
         <span
-          class="Avatar Avatar--regular Avatar--success"
+          class="Avatar Avatar--regular Avatar--success Avatar--default"
           data-test="DesignSystem-Avatar"
+          tabindex="0"
         >
           <span
             class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--success"
@@ -764,7 +1444,7 @@ Object {
 `;
 
 exports[`Avatar component 
-  appearance: "warning"
+  appearance: "success", disabled: true
  1`] = `
 Object {
   "asFragment": [Function],
@@ -780,8 +1460,120 @@ Object {
           role="presentation"
         >
           <span
-            class="Avatar Avatar--regular Avatar--warning"
+            class="Avatar Avatar--regular Avatar--success Avatar--disabled"
             data-test="DesignSystem-Avatar"
+            tabindex="-1"
+          >
+            <span
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--success"
+              data-test="DesignSystem-Text"
+            >
+              JD
+            </span>
+          </span>
+        </span>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <style />
+    <div
+      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+    >
+      <span
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
+        role="presentation"
+      >
+        <span
+          class="Avatar Avatar--regular Avatar--success Avatar--disabled"
+          data-test="DesignSystem-Avatar"
+          tabindex="-1"
+        >
+          <span
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--success"
+            data-test="DesignSystem-Text"
+          >
+            JD
+          </span>
+        </span>
+      </span>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  appearance: "warning", disabled: false
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <style />
+      <div
+        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      >
+        <span
+          class=""
+          data-test="DesignSystem-AvatarWrapper"
+          role="presentation"
+        >
+          <span
+            class="Avatar Avatar--regular Avatar--warning Avatar--default"
+            data-test="DesignSystem-Avatar"
+            tabindex="0"
           >
             <span
               class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
@@ -805,8 +1597,120 @@ Object {
         role="presentation"
       >
         <span
-          class="Avatar Avatar--regular Avatar--warning"
+          class="Avatar Avatar--regular Avatar--warning Avatar--default"
           data-test="DesignSystem-Avatar"
+          tabindex="0"
+        >
+          <span
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
+            data-test="DesignSystem-Text"
+          >
+            JD
+          </span>
+        </span>
+      </span>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  appearance: "warning", disabled: true
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <style />
+      <div
+        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      >
+        <span
+          class=""
+          data-test="DesignSystem-AvatarWrapper"
+          role="presentation"
+        >
+          <span
+            class="Avatar Avatar--regular Avatar--warning Avatar--disabled"
+            data-test="DesignSystem-Avatar"
+            tabindex="-1"
+          >
+            <span
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
+              data-test="DesignSystem-Text"
+            >
+              JD
+            </span>
+          </span>
+        </span>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <style />
+    <div
+      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+    >
+      <span
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
+        role="presentation"
+      >
+        <span
+          class="Avatar Avatar--regular Avatar--warning Avatar--disabled"
+          data-test="DesignSystem-Avatar"
+          tabindex="-1"
         >
           <span
             class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
@@ -889,8 +1793,9 @@ Object {
           role="presentation"
         >
           <span
-            class="Avatar Avatar--regular Avatar--accent1"
+            class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
             data-test="DesignSystem-Avatar"
+            tabindex="0"
           >
             <span
               class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
@@ -914,8 +1819,9 @@ Object {
         role="presentation"
       >
         <span
-          class="Avatar Avatar--regular Avatar--accent1"
+          class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
           data-test="DesignSystem-Avatar"
+          tabindex="0"
         >
           <span
             class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
@@ -993,13 +1899,14 @@ Object {
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class="Avatar--wrapper Avatar--regular"
+          class="Avatar-wrapper--square Avatar--regular"
           data-test="DesignSystem-AvatarWrapper"
           role="presentation"
         >
           <span
-            class="Avatar Avatar--square Avatar--accent1"
+            class="Avatar Avatar--square Avatar--accent1 Avatar--default"
             data-test="DesignSystem-Avatar"
+            tabindex="0"
           >
             <span
               class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
@@ -1018,13 +1925,14 @@ Object {
       class="OutsideClick PopperWrapper-trigger flex-grow-0"
     >
       <span
-        class="Avatar--wrapper Avatar--regular"
+        class="Avatar-wrapper--square Avatar--regular"
         data-test="DesignSystem-AvatarWrapper"
         role="presentation"
       >
         <span
-          class="Avatar Avatar--square Avatar--accent1"
+          class="Avatar Avatar--square Avatar--accent1 Avatar--default"
           data-test="DesignSystem-Avatar"
+          tabindex="0"
         >
           <span
             class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
@@ -1107,8 +2015,9 @@ Object {
           role="presentation"
         >
           <span
-            class="Avatar Avatar--regular Avatar--accent1"
+            class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
             data-test="DesignSystem-Avatar"
+            tabindex="0"
           >
             <span
               class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
@@ -1132,8 +2041,9 @@ Object {
         role="presentation"
       >
         <span
-          class="Avatar Avatar--regular Avatar--accent1"
+          class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
           data-test="DesignSystem-Avatar"
+          tabindex="0"
         >
           <span
             class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
@@ -1216,8 +2126,9 @@ Object {
           role="presentation"
         >
           <span
-            class="Avatar Avatar--tiny Avatar--accent1"
+            class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
             data-test="DesignSystem-Avatar"
+            tabindex="0"
           >
             <span
               class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"
@@ -1241,8 +2152,9 @@ Object {
         role="presentation"
       >
         <span
-          class="Avatar Avatar--tiny Avatar--accent1"
+          class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
           data-test="DesignSystem-Avatar"
+          tabindex="0"
         >
           <span
             class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"

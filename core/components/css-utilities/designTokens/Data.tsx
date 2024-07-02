@@ -107,7 +107,7 @@ export const spacingData = [
 
 export const textColors = [
   { token: '--text', value: '#1F1F1F' },
-  { token: '--text-subtle', value: '#494949' },
+  { token: '--text-subtle', value: '#707070' },
   { token: '--text-link', value: '#0070DD' },
   { token: '--text-disabled', value: '#A6A6A6' },
   { token: '--text-destructive', value: '#D93737' },

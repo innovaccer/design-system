@@ -64,6 +64,35 @@ const selectedList = [
   },
 ];
 
+const disabledList = [
+  {
+    firstName: 'John',
+    lastName: 'Doe',
+    disabled: true,
+  },
+  {
+    firstName: 'Steven',
+    lastName: 'Packton',
+  },
+  {
+    firstName: 'Nancy',
+    lastName: 'Wheeler',
+  },
+  {
+    firstName: 'Monica',
+    lastName: 'Geller',
+  },
+  {
+    firstName: 'Arya',
+    lastName: 'Stark',
+  },
+  {
+    firstName: 'Rachel',
+    lastName: 'Green',
+    disabled: true,
+  },
+];
+
 describe('AvatarSelection component snapshot', () => {
   const mapper = {
     list: valueHelper(list, { required: true }),
@@ -160,7 +189,7 @@ describe('AvatarSelection component with prop: max', () => {
 
 describe('AvatarSelection component with prop:withSearch', () => {
   it('render search input for withSearch:true', () => {
-    const { getByTestId } = render(<AvatarSelection list={list} withSearch={true} />);
+    const { getByTestId, getAllByTestId } = render(<AvatarSelection list={list} withSearch={true} />);
 
     const trigger = getByTestId('DesignSystem-AvatarSelection--TriggerAvatar');
 
@@ -175,6 +204,30 @@ describe('AvatarSelection component with prop:withSearch', () => {
 
     const emptyState = getByTestId('DesignSystem-AvatarSelection--EmptyState');
     expect(emptyState).toBeInTheDocument();
+
+    const clearIcon = getByTestId('DesignSystem-Input--closeIcon');
+    expect(clearIcon).toBeInTheDocument();
+    fireEvent.click(clearIcon);
+
+    const optionList = getAllByTestId('DesignSystem-AvatarSelection--Option');
+    expect(optionList).toHaveLength(1);
+  });
+
+  it('render search input for searchComparator:true', () => {
+    jest.resetAllMocks();
+    const { getByTestId } = render(<AvatarSelection list={list} withSearch={true} searchComparator={FunctionValue} />);
+
+    const trigger = getByTestId('DesignSystem-AvatarSelection--TriggerAvatar');
+
+    fireEvent.click(trigger);
+    expect(getByTestId('DesignSystem-AvatarSelection--Popover')).toBeInTheDocument();
+
+    const searchInput = getByTestId('DesignSystem-AvatarSelection--Input');
+    expect(getByTestId('DesignSystem-AvatarSelection--Input')).toBeInTheDocument();
+
+    fireEvent.change(searchInput, { target: { value: 'xyz' } });
+
+    expect(FunctionValue).toHaveBeenCalled();
   });
 
   it('render search input for withSearch:false', () => {
@@ -185,6 +238,25 @@ describe('AvatarSelection component with prop:withSearch', () => {
     const searchInput = queryByTestId('DesignSystem-AvatarSelection--Input');
     expect(getByTestId('DesignSystem-AvatarSelection--Popover')).toBeInTheDocument();
     expect(searchInput).toBeNull();
+  });
+
+  it('check for keyboard handler with prop:withSearch', () => {
+    const { getByTestId, queryByTestId, getAllByTestId } = render(<AvatarSelection list={list} withSearch={true} />);
+    const trigger = getByTestId('DesignSystem-AvatarSelection--TriggerAvatar');
+    fireEvent.click(trigger);
+    expect(getByTestId('DesignSystem-AvatarSelection--Popover')).toBeInTheDocument();
+
+    const searchInput = queryByTestId('DesignSystem-AvatarSelection--Input');
+    expect(searchInput).toBeInTheDocument();
+
+    if (searchInput) {
+      fireEvent.keyDown(searchInput, { key: 'ArrowUp' });
+    }
+    const optionList = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+    expect(optionList[0]).toHaveFocus();
+
+    fireEvent.keyDown(optionList[0], { key: 'ArrowUp' });
+    expect(searchInput).toHaveFocus();
   });
 });
 
@@ -285,4 +357,92 @@ describe('AvatarSelection component children', () => {
   const trigger = getByTestId('DesignSystem-AvatarSelection--TriggerAvatar');
   fireEvent.click(trigger);
   expect(getByTestId('DesignSystem-Custom-Children')).toBeInTheDocument();
+});
+
+describe('AvatarSelection component with custom avatar renderer', () => {
+  const { getAllByTestId } = render(
+    <AvatarSelection
+      list={list}
+      avatarRenderer={() => <div data-test="AvatarSelection-Custom-Renderer">Avatar Selection Custom Renderer</div>}
+    />
+  );
+
+  const customAvatarList = getAllByTestId('AvatarSelection-Custom-Renderer');
+  expect(customAvatarList).toHaveLength(5);
+});
+
+describe('AvatarSelection component with keyboard interactions', () => {
+  it('check for keyboard interaction from avatar count trigger', () => {
+    jest.resetAllMocks();
+    const { getByTestId, queryByTestId } = render(
+      <AvatarSelection list={selectedList} withSearch={true} onSelect={FunctionValue} />
+    );
+    const trigger = getByTestId('DesignSystem-AvatarSelection--TriggerAvatar');
+    fireEvent.keyDown(trigger, { key: 'ArrowUp' });
+    expect(getByTestId('DesignSystem-AvatarSelection--Popover')).toBeInTheDocument();
+
+    const searchInput = queryByTestId('DesignSystem-AvatarSelection--Input');
+    expect(searchInput).toBeInTheDocument();
+  });
+
+  it('check for keyboard interaction from avatar element', () => {
+    jest.resetAllMocks();
+    const { getAllByTestId } = render(
+      <AvatarSelection list={selectedList} withSearch={true} onSelect={FunctionValue} />
+    );
+    const avatarElement = getAllByTestId('DesignSystem-AvatarSelection--Avatar')[0];
+    fireEvent.keyDown(avatarElement, { key: 'Enter' });
+    expect(FunctionValue).toHaveBeenCalled();
+    expect(FunctionValue).toHaveBeenCalledWith([
+      {
+        firstName: 'Rachel',
+        lastName: 'Green',
+        selected: true,
+      },
+    ]);
+  });
+
+  it('check for keyboard interaction from disabled avatar element', () => {
+    jest.resetAllMocks();
+    const { getAllByTestId } = render(
+      <AvatarSelection list={disabledList} withSearch={true} onSelect={FunctionValue} />
+    );
+    const avatarElement = getAllByTestId('DesignSystem-AvatarSelection--Avatar')[0];
+    fireEvent.keyDown(avatarElement, { key: 'Enter' });
+    expect(FunctionValue).not.toHaveBeenCalled();
+  });
+});
+
+describe('AvatarSelection component test with disabled states', () => {
+  it('check for avatar callbacks for disabled avatar', () => {
+    jest.resetAllMocks();
+    const { getAllByTestId } = render(
+      <AvatarSelection list={disabledList} withSearch={true} onSelect={FunctionValue} />
+    );
+    const avatarList = getAllByTestId('DesignSystem-AvatarSelection--Avatar');
+    fireEvent.click(avatarList[0]);
+    expect(FunctionValue).not.toHaveBeenCalled();
+  });
+
+  it('check if disabled option is selected onClick event', () => {
+    jest.resetAllMocks();
+    const { getByTestId, getAllByTestId } = render(
+      <AvatarSelection list={disabledList} withSearch={true} onSelect={FunctionValue} />
+    );
+    const trigger = getByTestId('DesignSystem-AvatarSelection--TriggerAvatar');
+    fireEvent.click(trigger);
+    expect(getByTestId('DesignSystem-AvatarSelection--Popover')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-AvatarSelection--TriggerAvatar')).not.toHaveClass(
+      'SelectionAvatarCount--selected'
+    );
+
+    const optionList = getAllByTestId('DesignSystem-AvatarSelection--Option');
+    expect(optionList).toHaveLength(1);
+    fireEvent.click(optionList[0]);
+    expect(getByTestId('DesignSystem-AvatarSelection--TriggerAvatar')).not.toHaveClass(
+      'SelectionAvatarCount--selected'
+    );
+
+    expect(FunctionValue).not.toHaveBeenCalled();
+  });
 });

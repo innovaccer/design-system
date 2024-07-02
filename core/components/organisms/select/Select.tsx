@@ -70,6 +70,14 @@ export interface SelectProps extends BaseProps {
    */
   onOutsideClick?: () => void;
   /**
+   * Callback after Popover is toggled
+   */
+  onToggle?: (open: boolean) => void;
+  /**
+   * Defines custom trigger for the `Select`
+   */
+  trigger?: React.ReactElement;
+  /**
    * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
    *
    * TriggerProps:
@@ -132,6 +140,8 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     onOutsideClick,
     triggerOptions,
     popoverWidth,
+    trigger,
+    onToggle,
   } = props;
 
   const [openPopover, setOpenPopover] = React.useState(false);
@@ -150,18 +160,24 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
   const [highlightLastItem, setHighlightLastItem] = React.useState<boolean>(false);
   const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>({ width: popoverWidth || width });
 
-  const triggerStyle = {
-    width: width,
-  };
-
   const baseProps = extractBaseProps(props);
+
+  const getTriggerElement = () => {
+    if (trigger) {
+      return React.cloneElement(trigger, { ref: triggerRef });
+    }
+    return <SelectTrigger aria-controls="select-listbox" {...triggerOptions} />;
+  };
 
   React.useEffect(() => {
     // if popover width is not provided explicitly, apply the trigger width to popover width
-    if (!popoverWidth && triggerRef.current?.clientWidth) {
+    const MIN_WIDTH = 176;
+    const triggerWidth = triggerRef.current?.clientWidth;
+
+    if (!popoverWidth && triggerWidth) {
       setPopoverStyle({
         ...popoverStyle,
-        width: triggerRef.current?.clientWidth,
+        width: trigger ? Math.max(triggerWidth || 0, MIN_WIDTH) : triggerWidth,
       });
     }
   }, []);
@@ -211,11 +227,15 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
   }, [value]);
 
   const onToggleHandler = (open: boolean) => {
+    if (onToggle) {
+      onToggle(open);
+    }
+
     if (triggerOptions && triggerOptions.disabled) {
       setOpenPopover(false);
     } else {
-      setHighlightFirstItem(open);
       setOpenPopover(open);
+      setHighlightFirstItem(open);
     }
   };
 
@@ -252,22 +272,17 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
 
   return (
     <SelectContext.Provider value={contextProp}>
-      <div
-        data-test="DesignSystem-Select"
-        aria-haspopup="listbox"
-        aria-expanded={openPopover}
-        style={triggerStyle}
-        {...baseProps}
-      >
+      <div data-test="DesignSystem-Select" aria-haspopup="listbox" aria-expanded={openPopover} {...baseProps}>
         <Popover
           open={openPopover}
           onToggle={onToggleHandler}
           className="mt-3"
           triggerClass="d-block"
+          position="bottom-start"
           customStyle={popoverStyle}
           boundaryElement={boundaryElement}
           appendToBody={appendToBody}
-          trigger={<SelectTrigger aria-controls="select-listbox" {...triggerOptions}></SelectTrigger>}
+          trigger={getTriggerElement()}
         >
           <OutsideClick onOutsideClick={onOutsideClickHandler}>
             <div role="listbox" id="select-listbox" tabIndex={0} ref={listRef}>

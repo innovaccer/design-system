@@ -33,6 +33,10 @@ menus:
     link: /components/avatar/usage/
     hideInMobile: true
 
+  - label: Avatar Group
+    link: /components/avatarGroup/usage/
+    hideInMobile: true
+
   - label: Badge
     link: /components/badges/usage/
 

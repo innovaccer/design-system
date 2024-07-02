@@ -22,6 +22,10 @@ export const SelectionAvatarsWrapper = (props: SelectionAvatarsWrapperProps) => 
   const { setSelectedItems, selectedItems, onSelect } = contextProp;
 
   const onClickHandler = (item: AvatarData) => {
+    if (item.disabled) {
+      return;
+    }
+
     let list = selectedItems;
     if (selectedItems?.includes(item)) {
       list = selectedItems.filter((selectedItem: AvatarData) => selectedItem !== item);
@@ -34,6 +38,10 @@ export const SelectionAvatarsWrapper = (props: SelectionAvatarsWrapperProps) => 
   };
 
   const handleKeyDown = (event: React.KeyboardEvent, item: AvatarData) => {
+    if (item.disabled) {
+      return;
+    }
+
     switch (event.key) {
       case 'Enter':
         onClickHandler(item);
@@ -46,9 +54,10 @@ export const SelectionAvatarsWrapper = (props: SelectionAvatarsWrapperProps) => 
   return (
     <>
       {avatarList.map((avatarItem: AvatarData, index: any) => {
-        const { appearance, firstName, lastName, icon, image } = avatarItem;
+        const { appearance, firstName, lastName, icon, image, disabled, tooltipSuffix } = avatarItem;
         const GroupClass = classNames({
           [`SelectionAvatarGroup-item`]: true,
+          [`SelectionAvatarGroup-item--active`]: !disabled,
           [`SelectionAvatarGroup-item--selected`]: selectedItems?.includes(avatarItem),
         });
 
@@ -59,7 +68,7 @@ export const SelectionAvatarsWrapper = (props: SelectionAvatarsWrapperProps) => 
         return (
           <span key={index} className="SelectionAvatarGroup-wrapper">
             <div
-              tabIndex={0}
+              tabIndex={-1}
               role="checkbox"
               style={avatarStyle}
               className={GroupClass}
@@ -77,6 +86,8 @@ export const SelectionAvatarsWrapper = (props: SelectionAvatarsWrapperProps) => 
                 tooltipPosition={tooltipPosition}
                 icon={icon}
                 image={image}
+                disabled={disabled}
+                tooltipSuffix={tooltipSuffix}
               />
             </div>
           </span>

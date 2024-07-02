@@ -26,7 +26,7 @@
 
 .Message--warning {
   border-color: var(--accent1);
-  background-color: color-mod(var(--warning-lightest) a(var(--opacity-10)));
+  background-color: color-mod(var(--accent1-lightest) a(var(--opacity-10)));
 }
 
 .Message-icon {

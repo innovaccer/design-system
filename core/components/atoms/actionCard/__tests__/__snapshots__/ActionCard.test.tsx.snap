@@ -6,7 +6,7 @@ exports[`Action Card component snapshots
 <body>
   <div>
     <div
-      class="ActionCard"
+      class="ActionCard ActionCard--default"
       data-test="DesignSystem-ActionCard"
       role="link"
       tabindex="0"
@@ -25,7 +25,7 @@ exports[`Action Card component snapshots
 <body>
   <div>
     <div
-      class="ActionCard"
+      class="ActionCard ActionCard--default"
       data-test="DesignSystem-ActionCard"
       role="link"
       tabindex="0"

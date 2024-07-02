@@ -42,19 +42,23 @@ export const SelectionCard = (props: SelectionCardProps) => {
   const classes = classNames(
     {
       ['Selection-card']: true,
-      ['Selection-card--selected']: selected,
-      ['Selection-card--disabled']: disabled && !selected,
+      ['Selection-card--default']: !disabled,
+      ['Selection-card--selected']: selected && !disabled,
+      ['Selection-card--disabled']: disabled,
+      ['Selection-card--default-disabled']: disabled && !selected,
       ['Selection-card--selected-disabled']: disabled && selected,
     },
     className
   );
 
   const onClickHandler = (event: ClickEventType) => {
-    onClick && onClick(event, id, cardValue);
+    if (!disabled && onClick) {
+      onClick(event, id, cardValue);
+    }
   };
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' && !disabled) {
       onClickHandler(event);
     }
   };
@@ -63,7 +67,7 @@ export const SelectionCard = (props: SelectionCardProps) => {
     <div
       role="checkbox"
       aria-checked={selected}
-      tabIndex={0}
+      tabIndex={disabled ? -1 : 0}
       onKeyDown={onKeyDownHandler}
       onClick={(event) => onClickHandler(event)}
       className={classes}

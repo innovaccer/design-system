@@ -69,16 +69,12 @@ export const GenericChip = (props: GenericChipProps) => {
 
   const iconAppearance = (align: string) =>
     classNames({
-      ['disabled']: disabled && !selected,
-      ['primary_dark']: !disabled && selected,
-      ['primary_lighter']: disabled && selected,
-      ['subtle']: !disabled && !selected && align === 'right',
-      ['inverse']: !disabled && !selected && align === 'left',
+      ['primary_dark']: selected,
+      ['subtle']: !selected && align === 'right',
+      ['inverse']: !selected && align === 'left',
     }) as IconProps['appearance'];
 
   const textColor = classNames({
-    ['primary-lighter']: disabled && selected,
-    ['inverse-lightest']: disabled && !selected,
     ['primary-dark']: selected,
     ['inverse']: !disabled && !selected,
   }) as TextProps['color'];

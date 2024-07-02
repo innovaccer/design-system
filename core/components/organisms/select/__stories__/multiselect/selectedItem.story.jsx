@@ -52,7 +52,7 @@ export const selectedItem = () => {
       <Select.List>
         {selectedOptions.length > 0 && (
           <React.Fragment>
-            <Text className="d-flex justify-content-between ml-6 mt-5 mr-5 mb-4" size="small" appearance="subtle">
+            <Text className="d-flex ml-6 mt-5 mr-5 mb-4" size="small" appearance="subtle">
               Selected Items
             </Text>
             {selectedOptions.map((option) => (
@@ -67,11 +67,7 @@ export const selectedItem = () => {
             group !== 'Selected Items' &&
             groupedMedicine[group].length > 0 && (
               <React.Fragment key={group}>
-                <Text
-                  className="d-flex justify-content-between align-self-center ml-6 mt-5 mr-5 mb-4"
-                  size="small"
-                  appearance={'subtle'}
-                >
+                <Text className="d-flex ml-6 mt-5 mr-5 mb-4" size="small" appearance={'subtle'}>
                   {group}
                 </Text>
                 {groupedMedicine[group].map((item) => (
@@ -136,7 +132,7 @@ const customCode = `() => {
       <Select.List>
         {selectedOptions.length > 0 && (
           <React.Fragment>
-            <Text className="d-flex justify-content-between ml-6 mt-5 mr-5 mb-4" size="small" appearance="subtle">
+            <Text className="d-flex ml-6 mt-5 mr-5 mb-4" size="small" appearance="subtle">
               Selected Items
             </Text>
             {selectedOptions.map((option) => (
@@ -152,7 +148,7 @@ const customCode = `() => {
             groupedMedicine[group].length > 0 && (
               <React.Fragment key={group}>
                 <Text
-                  className="d-flex justify-content-between align-self-center ml-6 mt-5 mr-5 mb-4"
+                  className="d-flex ml-6 mt-5 mr-5 mb-4"
                   size="small"
                   appearance={'subtle'}
                 >

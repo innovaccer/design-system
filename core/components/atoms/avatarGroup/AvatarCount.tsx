@@ -15,12 +15,18 @@ const AvatarCount = (props: any) => {
     [`Avatar--regular`]: size === 'regular',
     [`Avatar--tiny`]: size === 'tiny',
     [`Avatar--secondary`]: true,
-    ['Avatar--disabled']: true,
+    ['cursor-default']: true,
     ['cursor-pointer']: on === 'click',
   });
 
   return (
-    <div data-test="DesignSystem-AvatarGroup--TriggerAvatar" className="AvatarCount-wrapper" style={avatarStyle}>
+    <div
+      data-test="DesignSystem-AvatarGroup--TriggerAvatar"
+      className="AvatarCount-wrapper"
+      style={avatarStyle}
+      tabIndex={0}
+      role="button"
+    >
       <span data-test="DesignSystem-AvatarGroup--TriggerAvatarVariants" className={AvatarVariantsClass}>
         <Text appearance={'white'} className={ContentClass}>
           {`+${hiddenAvatarCount}`}

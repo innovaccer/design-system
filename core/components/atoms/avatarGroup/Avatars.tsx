@@ -12,7 +12,7 @@ const Avatars = (props: any) => {
   });
 
   const avatars = avatarList.map((item: any, index: any) => {
-    const { appearance, firstName, lastName, icon, image } = item;
+    const { appearance, firstName, lastName, icon, image, disabled, tooltipSuffix } = item;
     return (
       <div data-test="DesignSystem-AvatarGroup--Avatar" className={GroupClass} style={avatarStyle} key={index}>
         <Avatar
@@ -21,7 +21,9 @@ const Avatars = (props: any) => {
           firstName={firstName}
           lastName={lastName}
           withTooltip={true}
+          disabled={disabled}
           tooltipPosition={tooltipPosition}
+          tooltipSuffix={tooltipSuffix}
         >
           {image || icon}
         </Avatar>

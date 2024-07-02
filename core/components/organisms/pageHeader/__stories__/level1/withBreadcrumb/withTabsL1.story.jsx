@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Tabs, PageHeader, Breadcrumbs, Row, Column } from '@/index';
 import { action } from '@/utils/action';
 
-export const level1WithFilter = () => {
+export const withTabs = () => {
   const tabs = [
     {
       count: 32,
@@ -98,7 +98,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/PageHeader/Level 1/With breadcrumb/Level 1 With Filter',
+  title: 'Components/PageHeader/Level 1/With breadcrumb/With Tabs',
   component: PageHeader,
   parameters: {
     docs: {

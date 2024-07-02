@@ -6,7 +6,7 @@ exports[`selection card item component snapshot
 <body>
   <div>
     <div
-      class="Selection-card"
+      class="Selection-card Selection-card--default"
       data-test="DesignSystem-SelectionCard"
       role="checkbox"
       tabindex="0"
@@ -29,7 +29,7 @@ exports[`selection card item component snapshot
   <div>
     <div
       aria-checked="false"
-      class="Selection-card"
+      class="Selection-card Selection-card--default"
       data-test="DesignSystem-SelectionCard"
       role="checkbox"
       tabindex="0"
@@ -52,7 +52,7 @@ exports[`selection card item component snapshot
   <div>
     <div
       aria-checked="true"
-      class="Selection-card Selection-card--selected"
+      class="Selection-card Selection-card--default Selection-card--selected"
       data-test="DesignSystem-SelectionCard"
       role="checkbox"
       tabindex="0"
@@ -74,10 +74,10 @@ exports[`selection card item component snapshot
 <body>
   <div>
     <div
-      class="Selection-card Selection-card--disabled"
+      class="Selection-card Selection-card--disabled Selection-card--default-disabled"
       data-test="DesignSystem-SelectionCard"
       role="checkbox"
-      tabindex="0"
+      tabindex="-1"
     >
       <div
         class="Selection-card-overlay"
@@ -97,10 +97,10 @@ exports[`selection card item component snapshot
   <div>
     <div
       aria-checked="false"
-      class="Selection-card Selection-card--disabled"
+      class="Selection-card Selection-card--disabled Selection-card--default-disabled"
       data-test="DesignSystem-SelectionCard"
       role="checkbox"
-      tabindex="0"
+      tabindex="-1"
     >
       <div
         class="Selection-card-overlay"
@@ -120,10 +120,10 @@ exports[`selection card item component snapshot
   <div>
     <div
       aria-checked="true"
-      class="Selection-card Selection-card--selected Selection-card--selected-disabled"
+      class="Selection-card Selection-card--disabled Selection-card--selected-disabled"
       data-test="DesignSystem-SelectionCard"
       role="checkbox"
-      tabindex="0"
+      tabindex="-1"
     >
       <div
         class="Selection-card-overlay"
@@ -142,7 +142,7 @@ exports[`selection card item component snapshot
 <body>
   <div>
     <div
-      class="Selection-card"
+      class="Selection-card Selection-card--default"
       data-test="DesignSystem-SelectionCard"
       role="checkbox"
       tabindex="0"
@@ -165,7 +165,7 @@ exports[`selection card item component snapshot
   <div>
     <div
       aria-checked="false"
-      class="Selection-card"
+      class="Selection-card Selection-card--default"
       data-test="DesignSystem-SelectionCard"
       role="checkbox"
       tabindex="0"
@@ -188,7 +188,7 @@ exports[`selection card item component snapshot
   <div>
     <div
       aria-checked="true"
-      class="Selection-card Selection-card--selected"
+      class="Selection-card Selection-card--default Selection-card--selected"
       data-test="DesignSystem-SelectionCard"
       role="checkbox"
       tabindex="0"

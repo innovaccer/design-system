@@ -1,22 +1,25 @@
 import * as React from 'react';
-import { Avatar } from '@/index';
-import Text from '@/components/atoms/text';
+import { Avatar, Row, Column, Text } from '@/index';
 
 // CSF format story
 export const shape = () => {
   const weight = 'strong';
 
   return (
-    <div className="d-flex">
-      <div className="mr-9 d-flex flex-column">
-        <Text weight={weight}>Round</Text> <br />
+    <Row className="w-50">
+      <Column>
+        <Text weight={weight}>Round</Text>
+        <br />
+        <br />
         <Avatar appearance="accent2" firstName="John" lastName="Doe" />
-      </div>
-      <div className="mr-9  d-flex flex-column">
-        <Text weight={weight}>Square</Text> <br />
+      </Column>
+      <Column>
+        <Text weight={weight}>Square</Text>
+        <br />
+        <br />
         <Avatar appearance="accent2" firstName="John" lastName="Doe" shape="square" />
-      </div>
-    </div>
+      </Column>
+    </Row>
   );
 };
 

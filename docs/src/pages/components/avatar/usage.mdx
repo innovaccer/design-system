@@ -1,12 +1,10 @@
 ---
 title: Avatar
-description: Avatar is used to identify users through display pictures or their initials.
-tabs: ['Usage', 'Code', 'Interactions']
+description: Avatar is used to identify an entity through display pictures, icons or their initials.
+tabs: ['Usage', 'Code']
 showMobile: true
 keywords: ['Profile', 'Avatarpair', 'Groupavatar', 'Avatargroup', 'AvatarSelection']
 ---
-
-An avatar consists of a display picture of the entity that it represents i.e. a user. In case a display picture is not available, it consists of a colored background and the initials of the name that it represents. And if somehow the initials can't be fetched, a fallback glyph is used.
 
 ### Appearances
 
@@ -21,11 +19,13 @@ Avatar comes in **2 shapes** - round and square.
 Round avatar represents a single entity i.e a user, bot or app.
 
 ![Shapes](./images/round-avatar.png)
+<Caption>A round avatar</Caption>
 
 #### Square avatar
 Square avatar represents a group of entities or organization.
 
 ![Shapes](./images/square-avatar.png)
+<Caption>A square avatar</Caption>
 
 ### Sizes
 
@@ -33,19 +33,29 @@ Avatar comes in **2 sizes** - small and regular.
 
 <Preview name="components-avatar-avatar-variants-size--size" />
 
+### States
+
+Avatar comes in **3 states** - default, focus and disabled.
+
+![Default, Focus and Disabled states in Avatar](./images/states.png)
+<Caption>Default, Focus and Disabled states in Avatar</Caption>
+
 ### Variants
-
-#### With Image
-
-![With Image](./images/with-image.png)
-
-#### With Icon
-
-![With Icon](./images/with-icon.png)
 
 #### With Initials
 
 ![With Initials](./images/with-initials.png)
+<Caption>Avatars with initials</Caption>
+
+#### With Icon
+
+![With Icon](./images/with-icon.png)
+<Caption>Avatars with icon</Caption>
+
+#### With Image
+
+![With Image](./images/with-image.png)
+<Caption>Avatars with image</Caption>
 
 ### Structure
 #### Round avatar
@@ -54,6 +64,7 @@ Avatar comes in **2 sizes** - small and regular.
 <br />
 
 ![Structure of avatar](./images/avatar-structure.png)
+<Caption>Structure of round avatar</Caption>
 
 <br />
 
@@ -64,14 +75,27 @@ Avatar comes in **2 sizes** - small and regular.
       <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
     </tr>
     <tr style={{verticalAlign: "top"}}>
-      <td>Size</td>
+      <td>Height</td>
       <td>
         <ul>
           <li>
-            24x24 px <em>(Small)</em>
+            24px <em>(Small)</em>
           </li>
           <li>
-            32x32 px <em>(Regular)</em>
+            32px <em>(Regular)</em>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Width</td>
+      <td>
+        <ul>
+          <li>
+            24px <em>(Small)</em>
+          </li>
+          <li>
+            32px <em>(Regular)</em>
           </li>
         </ul>
       </td>
@@ -86,6 +110,7 @@ Avatar comes in **2 sizes** - small and regular.
 <br />
 
 ![Structure of avatar](./images/square-avatar-structure.png)
+<Caption>Structure of square avatar</Caption>
 
 <br />
 
@@ -96,56 +121,34 @@ Avatar comes in **2 sizes** - small and regular.
       <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
     </tr>
     <tr style={{verticalAlign: "top"}}>
-      <td>Size</td>
+      <td>Height</td>
       <td>
         <ul>
           <li>
-            24x24 px <em>(Small)</em>
+            24px <em>(Small)</em>
           </li>
           <li>
-            32x32 px <em>(Regular)</em>
+            32px <em>(Regular)</em>
           </li>
         </ul>
       </td>
     </tr>
-        <tr style={{verticalAlign: "top"}}>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Width</td>
+      <td>
+        <ul>
+          <li>
+            24px <em>(Small)</em>
+          </li>
+          <li>
+            32px <em>(Regular)</em>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
       <td>Corner radius</td>
       <td>4 px</td>
-    </tr>
-  </tbody>
-</table>
-<br />
-
-#### Option item
-
-<br />
-<br />
-
-<table style={{width: "100%"}}>
-  <tbody>
-    <tr>
-      <th style={{width:"50%",  textAlign: "left"}}>Padding</th>
-      <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
-    </tr>
-    <tr style={{verticalAlign: "top"}}>
-      <td>Top and bottom</td>
-      <td>
-        <ul>
-          <li>
-            4px
-          </li>
-          <li>
-            8px
-          </li>
-          <li>
-            12px
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr style={{verticalAlign: "top"}}>
-      <td>Left and right</td>
-      <td>16 px</td>
     </tr>
   </tbody>
 </table>
@@ -215,16 +218,6 @@ Avatar comes in **2 sizes** - small and regular.
       <td>&#60;last_name&#62;</td>
       <td>-</td>
     </tr>
-    <tr style={{verticalAlign: "top"}}>
-      <td>Border color</td>
-      <td>&#60;color&#62;</td>
-      <td>Namak</td>
-    </tr>
-    <tr style={{verticalAlign: "top"}}>
-      <td>Additional users</td>
-      <td>&#60;count&#62;</td>
-      <td>-</td>
-    </tr>
   </tbody>
 </table>
 <br />
@@ -292,69 +285,6 @@ Avatar comes in **2 sizes** - small and regular.
 </table>
 <br />
 
-#### Option Item
-
-<br />
-<br />
-
-<table style={{width: "100%"}}>
-  <tbody>
-    <tr>
-      <th style={{width:"33%", textAlign: "left"}}>Property</th>
-      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
-      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
-    </tr>
-    <tr style={{verticalAlign: "top"}}>
-      <td>Label</td>
-      <td>&#60;label&#62;</td>
-      <td>-</td>
-    </tr>
-    <tr style={{verticalAlign: "top"}}>
-      <td>Size</td>
-      <td>
-        <ul>
-          <li>Standard</li>
-          <li>Compressed</li>
-          <li>Tight</li>
-        </ul>
-      </td>
-      <td>Compressed</td>
-    </tr>
-  </tbody>
-</table>
-<br />
-
-#### Popover
-
-<br />
-<br />
-
-<table style={{width: "100%"}}>
-  <tbody>
-    <tr>
-      <th style={{width:"33%", textAlign: "left"}}>Property</th>
-      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
-      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
-    </tr>
-    <tr style={{verticalAlign: "top"}}>
-      <td>Width</td>
-      <td>&#60;width&#62;</td>
-      <td>176px (Customizable)</td>
-    </tr>
-    <tr style={{verticalAlign: "top"}}>
-      <td>Max height</td>
-      <td>&#60;max_height&#62;</td>
-      <td>256px (Customizable)</td>
-    </tr>
-    <tr style={{verticalAlign: "top"}}>
-      <td>Min height</td>
-      <td>&#60;min_height&#62;</td>
-      <td>-</td>
-    </tr>
-  </tbody>
-</table>
-<br />
-
 ### Usage
 
 <br />
@@ -366,18 +296,21 @@ The background color of an avatar should be generated dynamically in such a way 
 For example, an avatar generated for a user - Franklin Clinton, can look like following and it should look the same wherever it is used.
 
 ![Color assignment](./images/avatar-1.png)
+<Caption>Color assignment in avatars</Caption>
 
-<Caption>Color assignment</Caption>
 <br />
 
 #### Displaying Name
 
-Since an avatar can only show an image or the initials, there should be an option to show the full name of the entity. This is achieved by **hovering** over on the avatar to display a tooltip containing the full name.
+Since an avatar can either show an image, icon or the initials, there should be an option to show the full name of the entity. This is achieved by hovering over on the avatar to display a tooltip containing the full name.
 
-![Hovering on an avatar](./images/avatar-2.png)
-
+![Hovering on an avatar](./images/displaying-name.png)
 <Caption>Hovering on an avatar</Caption>
 <br />
+
+#### Square avatar vs Round avatar group
+
+Square avatars and round avatar group are both used to group entities. Square avatar is ideal for presenting a group as a unified entity, while round avatar group facilitates an interactive and visually cohesive representation of individual members within the group.
 
 #### Fallback hierarchy
 
@@ -386,92 +319,25 @@ This is the fallback order defined for avatars:
 ![With Image](./images/fallback-hierarchy.png)
 <Caption>Fallback hierarchy</Caption>
 
-#### Square avatar vs Round avatar group
-
-Square avatars and round avatar group are both used to group entities. Square avatar is ideal for presenting a group as a unified entity, while round avatar group facilitates an interactive and visually cohesive representation of individual members within the group.
-
-#### Avoid square avatar with icon button
+#### Avoid square avatar with Icon button
 
 It is recommended to not use square avatar in conjunction with an icon button as users may mistake the avatar for a button.
 
 ![Square avatar with icon button](./images/square-avatar-with-icon-button.png)
+<Caption>Not able to identify the square avatar clearly when used with icon button</Caption>
 
-#### Selection using avatars
-
-Avatar group can also be used to make selection which can help in filtering data.
-
-![Selection using avatars](./images/selection-using-avatars.png)
-
-#### Number of avatars
-
-Avatars can be used individually or as a group if required. For example - if an activity is being performed by 4 users, an avatar group should be used to represent them.
-
-To be specific, an avatar can be used in 3 ways as -
-
-##### Single entity
-
-![Single entity](./images/avatar-1.png)
-
-<Caption>Single avatar</Caption>
-
-##### Two/Three entities
-
-![Two/Three entities](./images/three-entities.png)
-
-<Caption>Two/Three entities</Caption>
-
-##### More than three entities
-
-![More than 2 entities](./images/avatar-4.png)
-
-<Caption>More than three avatars</Caption>
-
-In order to show the additional entities that are not visible upfront, a popover having the list of full names of those additional entities is shown on hover.
-
-![Showing list of names in an avatar group](./images/avatar-5.png)
-
-<Caption>Showing list of names in an avatar group</Caption>
-<br />
-
-##### Selection in avatar
-
-<br />
-
-<b>Up to six entities</b>
-
-Avatar group can accommodate up to six avatars to facilitate data filtering and alleviate cognitive overload.
-
-![Count - Up to six entities](./images/count-up-to-six-entities.png)
-
-<br/>
-
-<b>More than six entities </b>
-
-In case of selection to show additional entities that are not visible upfront, a popover having the checklist of full names of those additional entities is shown on clicking the avatar.
-
-![Count - More than six entities](./images/count-more-than-six-entities.png)
-
-#### Selection avatar group vs Select
-
-It is recommended to use selection avatar group for fewer entities, and select for a larger number of options.
-
-#### Using PNG and SVG in avatar
+#### Using PNG and SVG in Avatar
 
 It is recommended to use stone light or a suitable background color that ensures enough contrast between the image and its backdrop when using PNG or SVG formats without a background. 
 
 ![Using PNG and SVG in avatar](./images/image-guideline.png)
 <Caption>Using PNG and SVG in avatar</Caption>
 
-#### Width of popover
+#### Appending Suffix to the Name of an Entity
 
-While the popover's width is flexible and can vary, it is advisable to maintain a size that is equal to or larger than the avatar group.
+In an avatar group, you can add a suffix to an entity's name that appears in tooltips and popovers. 
 
-![Width of popover](./images/width-of-popover.png)
-<Caption>Width of popover</Caption>
+**Note:** Adding a suffix for disabled states is recommended to keep users informed.
 
-#### Overflow behavior of items
-
-In case of overflow, the items will get truncated and can be viewed inside a tooltip on hover.  
-
-![Overflow behavior of items](./images/overflow-behavior-of-items.png)
-<Caption>Overflow behavior of items</Caption>
+![Appending a suffix to the name of the disabled entity](./images/tooltip-suffix.png)
+<Caption>Appending a suffix to the name of the disabled entity</Caption>

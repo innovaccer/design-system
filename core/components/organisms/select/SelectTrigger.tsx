@@ -81,6 +81,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     setHighlightFirstItem,
     setHighlightLastItem,
     triggerRef,
+    width,
   } = contextProp;
 
   const buttonDisabled = disabled ? 'disabled' : 'default';
@@ -88,6 +89,9 @@ const SelectTrigger = (props: SelectTriggerProps) => {
   const displayValue = computeValue(multiSelect, selectValue, setLabel);
   const value = isOptionSelected && displayValue.length > 0 ? displayValue : trimmedPlaceholder;
   const iconName = openPopover ? 'keyboard_arrow_up' : 'keyboard_arrow_down';
+  const triggerStyle = {
+    width: width,
+  };
 
   const onClearHandler = (event: React.MouseEvent<HTMLElement>) => {
     event.stopPropagation();
@@ -111,7 +115,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
   const textClass = classNames({
     ['Text']: true,
     ['Text--regular']: true,
-    ['Select-trigger-text']: true,
+    ['Select-trigger--text']: true,
   });
 
   return (
@@ -130,6 +134,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
         className={buttonClass}
         disabled={disabled}
         tabIndex={0}
+        style={triggerStyle}
         aria-haspopup="listbox"
         aria-expanded={openPopover}
         aria-label="trigger"
