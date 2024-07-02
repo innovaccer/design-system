@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tabs component 
-  activeIndex: 0, onTabChange: "[Function]", withSeparator: false
+  activeIndex: 0, onTabChange: "[Function]", withSeparator: false, size: "regular"
  1`] = `
 <DocumentFragment>
   <div
@@ -13,7 +13,7 @@ exports[`Tabs component
       data-test="DesignSystem-Tabs--Header"
     >
       <div
-        class="Tab Tab--active Tab-selected align-items-center"
+        class="Tab Tab--regular Tab--active Tab-selected align-items-center"
         data-test="DesignSystem-Tabs--Tab"
         tabindex="0"
       >
@@ -40,7 +40,7 @@ exports[`Tabs component
         </i>
       </div>
       <div
-        class="Tab align-items-center"
+        class="Tab Tab--regular align-items-center"
         data-test="DesignSystem-Tabs--Tab"
         tabindex="0"
       >
@@ -60,7 +60,7 @@ exports[`Tabs component
         </span>
       </div>
       <div
-        class="Tab Tab--disabled align-items-center"
+        class="Tab Tab--regular Tab--disabled align-items-center"
         data-test="DesignSystem-Tabs--Tab"
         tabindex="-1"
       >
@@ -83,7 +83,7 @@ exports[`Tabs component
 `;
 
 exports[`Tabs component 
-  activeIndex: 0, onTabChange: "[Function]", withSeparator: true
+  activeIndex: 0, onTabChange: "[Function]", withSeparator: false, size: "small"
  1`] = `
 <DocumentFragment>
   <div
@@ -91,11 +91,11 @@ exports[`Tabs component
     data-test="DesignSystem-Tabs"
   >
     <div
-      class="TabsWrapper-header TabsWrapper-header--withSeparator"
+      class="TabsWrapper-header"
       data-test="DesignSystem-Tabs--Header"
     >
       <div
-        class="Tab Tab--active Tab-selected align-items-center"
+        class="Tab Tab--small Tab--active Tab-selected align-items-center"
         data-test="DesignSystem-Tabs--Tab"
         tabindex="0"
       >
@@ -122,7 +122,7 @@ exports[`Tabs component
         </i>
       </div>
       <div
-        class="Tab align-items-center"
+        class="Tab Tab--small align-items-center"
         data-test="DesignSystem-Tabs--Tab"
         tabindex="0"
       >
@@ -142,7 +142,171 @@ exports[`Tabs component
         </span>
       </div>
       <div
-        class="Tab Tab--disabled align-items-center"
+        class="Tab Tab--small Tab--disabled align-items-center"
+        data-test="DesignSystem-Tabs--Tab"
+        tabindex="-1"
+      >
+        <span
+          class="Pills Badge--secondary Tab-pills Tab-pills--disabled"
+          data-test="DesignSystem-Tabs--Pills"
+        >
+          10
+        </span>
+        <span
+          class="Text Text--disabled Text--regular"
+          data-test="DesignSystem-Tabs--Text"
+        >
+          Tab 3
+        </span>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Tabs component 
+  activeIndex: 0, onTabChange: "[Function]", withSeparator: true, size: "regular"
+ 1`] = `
+<DocumentFragment>
+  <div
+    class="TabsWrapper"
+    data-test="DesignSystem-Tabs"
+  >
+    <div
+      class="TabsWrapper-header TabsWrapper-header--withSeparator"
+      data-test="DesignSystem-Tabs--Header"
+    >
+      <div
+        class="Tab Tab--regular Tab--active Tab-selected align-items-center"
+        data-test="DesignSystem-Tabs--Tab"
+        tabindex="0"
+      >
+        <span
+          class="Pills Badge--primary Tab-pills"
+          data-test="DesignSystem-Tabs--Pills"
+        >
+          10
+        </span>
+        <span
+          class="Text Text--link Text--regular Tab-selected"
+          data-test="DesignSystem-Tabs--Text"
+        >
+          Tab 1
+        </span>
+        <i
+          class="material-symbols material-symbols-rounded Icon Icon--info DismissibleTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
+          data-test="DesignSystem-DismissibleTabs--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+          tabindex="0"
+        >
+          clear
+        </i>
+      </div>
+      <div
+        class="Tab Tab--regular align-items-center"
+        data-test="DesignSystem-Tabs--Tab"
+        tabindex="0"
+      >
+        <i
+          class="material-symbols material-symbols-rounded Icon Icon--subtle mr-4 "
+          data-test="DesignSystem-Tabs--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          call_received
+        </i>
+        <span
+          class="Text Text--subtle Text--regular"
+          data-test="DesignSystem-Tabs--Text"
+        >
+          Tab 2
+        </span>
+      </div>
+      <div
+        class="Tab Tab--regular Tab--disabled align-items-center"
+        data-test="DesignSystem-Tabs--Tab"
+        tabindex="-1"
+      >
+        <span
+          class="Pills Badge--secondary Tab-pills Tab-pills--disabled"
+          data-test="DesignSystem-Tabs--Pills"
+        >
+          10
+        </span>
+        <span
+          class="Text Text--disabled Text--regular"
+          data-test="DesignSystem-Tabs--Text"
+        >
+          Tab 3
+        </span>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Tabs component 
+  activeIndex: 0, onTabChange: "[Function]", withSeparator: true, size: "small"
+ 1`] = `
+<DocumentFragment>
+  <div
+    class="TabsWrapper"
+    data-test="DesignSystem-Tabs"
+  >
+    <div
+      class="TabsWrapper-header TabsWrapper-header--withSeparator"
+      data-test="DesignSystem-Tabs--Header"
+    >
+      <div
+        class="Tab Tab--small Tab--active Tab-selected align-items-center"
+        data-test="DesignSystem-Tabs--Tab"
+        tabindex="0"
+      >
+        <span
+          class="Pills Badge--primary Tab-pills"
+          data-test="DesignSystem-Tabs--Pills"
+        >
+          10
+        </span>
+        <span
+          class="Text Text--link Text--regular Tab-selected"
+          data-test="DesignSystem-Tabs--Text"
+        >
+          Tab 1
+        </span>
+        <i
+          class="material-symbols material-symbols-rounded Icon Icon--info DismissibleTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
+          data-test="DesignSystem-DismissibleTabs--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+          tabindex="0"
+        >
+          clear
+        </i>
+      </div>
+      <div
+        class="Tab Tab--small align-items-center"
+        data-test="DesignSystem-Tabs--Tab"
+        tabindex="0"
+      >
+        <i
+          class="material-symbols material-symbols-rounded Icon Icon--subtle mr-4 "
+          data-test="DesignSystem-Tabs--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          call_received
+        </i>
+        <span
+          class="Text Text--subtle Text--regular"
+          data-test="DesignSystem-Tabs--Text"
+        >
+          Tab 2
+        </span>
+      </div>
+      <div
+        class="Tab Tab--small Tab--disabled align-items-center"
         data-test="DesignSystem-Tabs--Tab"
         tabindex="-1"
       >

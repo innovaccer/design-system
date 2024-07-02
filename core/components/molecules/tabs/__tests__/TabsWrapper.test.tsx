@@ -3,10 +3,12 @@ import { render, fireEvent } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { Tab, TabsWrapper, Text } from '@/index';
 import { TabsWrapperProps as Props } from '@/index.type';
+import { TTabSize } from '@/common.type';
 
 const TabValue = [0, 1];
 const FunctionValue = jest.fn();
 const Label = <Text>Tab(Recommended)</Text>;
+const tabSize: TTabSize[] = ['regular', 'small'];
 
 describe('TabsWrapper component', () => {
   const Mapper: Record<string, any> = {
@@ -132,5 +134,18 @@ describe('TabsWrapper component with prop: onTabChange', () => {
     expect(FunctionValue).toHaveBeenCalledWith(clickedTab);
     rerender(tabs(clickedTab));
     expect(getAllByTestId('DesignSystem-Tabs--Header')[clickedTab]).toHaveClass('Tab--active');
+  });
+});
+
+describe('TabsWrapper component with prop:size', () => {
+  tabSize.forEach((size) => {
+    it(`should have the Tab--${size} class when size=${size}`, () => {
+      const { getByTestId } = render(
+        <TabsWrapper active={1} onTabChange={FunctionValue} size={size}>
+          <Tab label={<></>}>Tab 1</Tab>
+        </TabsWrapper>
+      );
+      expect(getByTestId('DesignSystem-Tabs--Header')).toHaveClass(`Tab--${size}`);
+    });
   });
 });

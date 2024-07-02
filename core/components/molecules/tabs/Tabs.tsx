@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Pills, Icon, Text, Tab } from '@/index';
 import { BaseProps, extractBaseProps, SingleOrArray } from '@/utils/types';
-import { IconType } from '@/common.type';
+import { IconType, TTabSize } from '@/common.type';
 
 type Tab = React.ReactElement | TabConfig;
 type noop = (tabInfo: TabInfo) => void;
@@ -70,6 +70,10 @@ export interface TabsProps extends BaseProps {
    * Adds custom class to Tab header
    */
   headerClassName?: string;
+  /**
+   * Defines size of `Tab` component
+   */
+  size?: TTabSize;
 }
 
 const getChildrenArray = (children: SingleOrArray<React.ReactElement>) => {
@@ -97,7 +101,7 @@ const filterInlineComponent = (children: SingleOrArray<React.ReactElement>) => {
 };
 
 export const Tabs = (props: TabsProps) => {
-  const { children, withSeparator, onTabChange, className, headerClassName } = props;
+  const { children, withSeparator, onTabChange, className, headerClassName, size } = props;
 
   const baseProps = extractBaseProps(props);
   const tabRefs: HTMLDivElement[] = [];
@@ -272,6 +276,8 @@ export const Tabs = (props: TabsProps) => {
 
     const tabHeaderClass = classNames({
       ['Tab']: true,
+      ['Tab--regular']: size === 'regular',
+      ['Tab--small']: size === 'small',
       ['Tab--disabled']: disabled,
       ['Tab--active']: !disabled && activeIndex === index,
       ['Tab-selected']: !disabled && activeIndex === index,
@@ -313,6 +319,7 @@ Tabs.displayName = 'Tabs';
 Tabs.defaultProps = {
   withSeparator: true,
   tabs: [],
+  size: 'regular',
 };
 
 export default Tabs;
