@@ -1,3 +1,64 @@
+## 2.37.0 (2024-07-02)
+
+### Highlights
+
+- feat(select): add support for custom trigger in select (4e85e268)
+- feat(avatar): add disabled state in avatar component (008691a9)
+- feat(avatargroup): add disabled state in avatar group component (773ba954)
+- feat(avatarselection): add disabled state in avatar selection component (402946cc)
+- feat(chip): update chip states (b9a46789)
+- feat(ActionCard): update states and spacing in action card (e42e0eb8)
+- feat(selectionCard): update states and spacing in selection card (8ea2982c)
+- feat(message): update warning appearance background color (b7716cd7)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(avatar): add disabled state in avatar component (008691a9)
+- feat(avatargroup): add disabled state in avatar group component (773ba954)
+- feat(avatarselection): add disabled state in avatar selection component (402946cc)
+- feat(select): add support for custom trigger in select (4e85e268)
+- feat(chip): update chip states (b9a46789)
+- feat(ActionCard): update states and spacing in action card (e42e0eb8)
+- feat(selectionCard): update states and spacing in selection card (8ea2982c)
+- feat(message): update warning appearance background color (b7716cd7)
+
+### Fixes
+
+- fix(docs): remove interaction tab from avatar documentation (4a80dede)
+- fix(cypress): update link visit function for breadcrumb (9a3da237)
+
+### Improvements
+
+- feat(stepper): update the stories for steppers (3e95e3a4)
+- feat(table): update table filter story (c9c64c31)
+
+### Documentation
+
+- docs(interactive-cards): update states and spacing documentation (826b0c6a)
+- docs(states): update documentation of states in foundations (f5d53f2d)
+- docs(inlineEditable): update documentation of inline editable field (0ce2dfbf)
+- docs(chip): update chip state images (b1a9db6b)
+- docs(page-header): update stepper section in page header (69599cb2)
+- docs(stepper): update stepper page documentation (5b17adae)
+- docs(avatar): update documentation of avatar component (b9749949)
+- docs(avatarGroup): add documentation of avatar group and selection (b5e78996)
+- docs(AIResponse): update images in AI Response examples (f2b7c50c)
+- docs(select): add custom trigger documentation (8a8e5964)
+
+---
+
 ## 2.36.2 (2024-06-13)
 
 ### Highlights
