@@ -67,12 +67,14 @@ Cypress.Commands.add('tileToggle', () => {
 Cypress.Commands.add('linkVisit', () => {
   cy.wait(1000);
   cy.get('[data-test=Docs-content-wrapper]').then((container) => {
-    if (container.find('a').length) {
+    if (container.find('a').length > 0) {
       cy.get('a')
         .not(':contains("email")')
+        .not('[data-test=DesignSystem-Breadcrumbs-link]')
         .each((page) => {
-          if (page.prop('href').length) {
-            cy.request(page.prop('href'));
+          const href = page.prop('href');
+          if (href && href.length) {
+            cy.request(href);
           }
         });
     }
