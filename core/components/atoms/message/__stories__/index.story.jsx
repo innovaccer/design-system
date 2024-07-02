@@ -3,13 +3,11 @@ import { Message, LinkButton } from '@/index';
 
 // CSF format story
 export const all = () => {
-  const appearance = 'warning';
   const title = 'Design System';
   const description = 'Design System is a library of reusable components';
 
   return (
     <Message
-      appearance={appearance}
       title={title}
       description={description}
       actions={

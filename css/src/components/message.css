@@ -11,22 +11,22 @@
 
 .Message--alert {
   border-color: var(--alert);
-  background-color: color-mod(var(--alert-lightest) a(var(--opacity-10)));
+  background-color: color-mod(var(--alert) a(var(--opacity-1)));
 }
 
 .Message--success {
   border-color: var(--success);
-  background-color: color-mod(var(--success-lightest) a(var(--opacity-10)));
+  background-color: color-mod(var(--success) a(var(--opacity-1)));
 }
 
 .Message--info {
   border-color: var(--primary);
-  background-color: color-mod(var(--primary-lightest) a(var(--opacity-10)));
+  background-color: color-mod(var(--primary) a(var(--opacity-1)));
 }
 
 .Message--warning {
   border-color: var(--accent1);
-  background-color: color-mod(var(--accent1-lightest) a(var(--opacity-10)));
+  background-color: color-mod(var(--accent1) a(var(--opacity-1)));
 }
 
 .Message-icon {
