@@ -128,6 +128,7 @@
     "typescript-transform-paths": "^1.1.14"
   },
   "dependencies": {
+    "@figma/code-connect": "^1.0.1",
     "classnames": "^2.3.1",
     "core-js": "^3.9.1",
     "js-beautify": "1.14.1",
