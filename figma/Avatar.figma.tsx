@@ -17,7 +17,7 @@ figma.connect(
         Tawak: 'accent1',
         Nimbu: 'accent4',
         Neel: 'accent3',
-        Jamun: 'accent4',
+        Jamun: 'accent2',
       }),
       size: figma.enum('Size', {
         Regular: 'regular',
