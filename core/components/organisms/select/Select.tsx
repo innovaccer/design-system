@@ -161,6 +161,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
   const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>({ width: popoverWidth || width });
 
   const baseProps = extractBaseProps(props);
+  const WrapperStyle = trigger ? {} : { width: width };
 
   const getTriggerElement = () => {
     if (trigger) {
@@ -272,7 +273,13 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
 
   return (
     <SelectContext.Provider value={contextProp}>
-      <div data-test="DesignSystem-Select" aria-haspopup="listbox" aria-expanded={openPopover} {...baseProps}>
+      <div
+        data-test="DesignSystem-Select"
+        style={WrapperStyle}
+        aria-haspopup="listbox"
+        aria-expanded={openPopover}
+        {...baseProps}
+      >
         <Popover
           open={openPopover}
           onToggle={onToggleHandler}
