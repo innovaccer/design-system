@@ -1,3 +1,40 @@
+## 2.37.1 (2024-07-04)
+
+### Highlights
+
+- feat(icon): update material symbols font file (8e51ba0f)
+- fix(select): ensure popover toggles correctly on cursor click (84228b0c)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(icon): update material symbols font file (8e51ba0f)
+
+### Fixes
+
+- fix(select): ensure popover toggles correctly on cursor click (84228b0c)
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 2.37.0 (2024-07-02)
 
 ### Highlights
