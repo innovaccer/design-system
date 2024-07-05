@@ -100,6 +100,8 @@ const jsUmdConfig = {
 
 const jsEsmConfig = {
   ...baseConfig,
+  // react-lottie-player was marked external in esm build to prevent the build from including code that actually required Web APIs like document.getElementsByTagName, etc.
+  external: [...baseConfig.external, '@lottiefiles/react-lottie-player'],
   // Slice is used here to remove uglify compression during esm builds
   plugins: commonJsPlugins.slice(0,-1),
   output: {
