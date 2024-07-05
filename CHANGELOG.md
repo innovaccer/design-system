@@ -1,3 +1,39 @@
+## 2.38.0 (2024-07-05)
+
+### Highlights
+
+- chore(react-lottie-player): moved to externals for esm module (88fc0af4)
+
+### Breaking changes
+
+- chore(react-lottie-player): moved to externals for esm module (88fc0af4)
+
+### Migration guide
+
+- If relying on ESM build, install `@lottiefiles/react-lottie-player` for animation related components.
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+NA
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 2.37.1 (2024-07-04)
 
 ### Highlights
