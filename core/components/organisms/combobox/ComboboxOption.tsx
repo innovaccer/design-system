@@ -36,6 +36,14 @@ export interface ComboboxOptionProps extends BaseProps {
    * Handler to be called when `Option Item` is clicked
    */
   onClick?: (option: OptionType) => void;
+  /**
+   * Handler to be called when `Option Item` is focused
+   */
+  onFocus?: (event: React.FocusEvent) => void;
+  /**
+   * Handler to be called when `Option Item` is blurred
+   */
+  onBlur?: (event: React.FocusEvent) => void;
 }
 
 export const ComboboxOption = (props: ComboboxOptionProps) => {
