@@ -1,16 +1,17 @@
 
   /**
-   * Generated on: 1716891583546 
+   * Generated on: 1720783452575 
    *      Package: @innovaccer/design-system
-   *      Version: v2.34.0
+   *      Version: v2.38.1
    *      License: MIT
-   *         Docs: https://innovaccer.github.io/design-system
+   *         Docs: https://mds.innovaccer.com
    */
 
     
 import * as React from 'react';
 import React__default, { useRef, useReducer, useCallback, useEffect as useEffect$2, useMemo, useState as useState$3 } from 'react';
 import * as ReactDOM from 'react-dom';
+import { Player } from '@lottiefiles/react-lottie-player';
 
 var colorToHex = function colorToHex(color) {
   return getComputedStyle(document.documentElement).getPropertyValue("--".concat(color));
@@ -906,16 +907,27 @@ var Avatar = function Avatar(props) {
       className = props.className,
       appearance = props.appearance,
       shape = props.shape,
+      disabled = props.disabled,
+      tooltipSuffix = props.tooltipSuffix,
+      tabIndex = props.tabIndex,
       _props$role = props.role,
       role = _props$role === void 0 ? 'presentation' : _props$role;
   var baseProps = extractBaseProps(props);
   var initials = children && typeof children === 'string' ? children.trim().slice(0, initialsLength) : "".concat(firstName ? firstName.trim()[0] : '').concat(lastName ? lastName.trim()[0] : '');
-  var tooltip = children && typeof children === 'string' ? children : "".concat(firstName || '', " ").concat(lastName || '') || '';
+
+  var getTooltipName = function getTooltipName() {
+    if (children && typeof children === 'string') {
+      return "".concat(children, " ").concat(tooltipSuffix || '');
+    }
+
+    return "".concat(firstName || '', " ").concat(lastName || '', " ").concat(tooltipSuffix || '') || '';
+  };
+
   var AvatarAppearance = appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] || DefaultAppearance;
   var AvatarClassNames = classnames((_classNames = {
     Avatar: true
-  }, _defineProperty$1(_classNames, 'Avatar--square', shape === 'square'), _defineProperty$1(_classNames, "Avatar--".concat(size), shape !== 'square'), _defineProperty$1(_classNames, "Avatar--".concat(AvatarAppearance), AvatarAppearance), _defineProperty$1(_classNames, 'Avatar--disabled', !initials || !withTooltip), _classNames), className);
-  var AvatarWrapperClassNames = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'Avatar--wrapper', shape === 'square'), _defineProperty$1(_classNames2, "Avatar--".concat(size), shape === 'square'), _classNames2));
+  }, _defineProperty$1(_classNames, 'Avatar--square', shape === 'square'), _defineProperty$1(_classNames, "Avatar--".concat(size), shape !== 'square'), _defineProperty$1(_classNames, "Avatar--".concat(AvatarAppearance), AvatarAppearance), _defineProperty$1(_classNames, 'Avatar--noInitials', !initials || !withTooltip), _defineProperty$1(_classNames, 'Avatar--disabled', disabled), _defineProperty$1(_classNames, 'Avatar--default', !disabled), _classNames), className);
+  var AvatarWrapperClassNames = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'Avatar-wrapper--square', shape === 'square'), _defineProperty$1(_classNames2, "Avatar--".concat(size), shape === 'square'), _classNames2));
   var TextClassNames = classnames((_classNames3 = {}, _defineProperty$1(_classNames3, "Avatar-content--".concat(size), size), _defineProperty$1(_classNames3, "Avatar-content--".concat(AvatarAppearance), AvatarAppearance), _classNames3));
   var IconClassNames = classnames(_defineProperty$1({}, "Avatar-content--".concat(AvatarAppearance), AvatarAppearance));
   var sharedProp = {
@@ -936,7 +948,8 @@ var Avatar = function Avatar(props) {
       }, /*#__PURE__*/React.createElement("span", _extends$2({
         "data-test": "DesignSystem-Avatar"
       }, baseProps, {
-        className: AvatarClassNames
+        className: AvatarClassNames,
+        tabIndex: tabIndex || disabled ? -1 : 0
       }), children)));
     }
 
@@ -947,7 +960,8 @@ var Avatar = function Avatar(props) {
     }, /*#__PURE__*/React.createElement("span", _extends$2({
       "data-test": "DesignSystem-Avatar"
     }, baseProps, {
-      className: AvatarClassNames
+      className: AvatarClassNames,
+      tabIndex: tabIndex || disabled ? -1 : 0
     }), initials && /*#__PURE__*/React.createElement(Text, {
       weight: "medium",
       appearance: 'white',
@@ -964,7 +978,7 @@ var Avatar = function Avatar(props) {
   var renderTooltip = function renderTooltip() {
     if (withTooltip && initials) {
       return /*#__PURE__*/React.createElement(Tooltip, {
-        tooltip: tooltip,
+        tooltip: getTooltipName(),
         position: tooltipPosition,
         triggerClass: 'flex-grow-0'
       }, renderAvatar());
@@ -995,11 +1009,13 @@ var AvatarCount = function AvatarCount(props) {
   var ContentClass = classnames((_classNames = {}, _defineProperty$1(_classNames, "Avatar-content--secondary", true), _defineProperty$1(_classNames, "Avatar-content--tiny", size === 'tiny'), _classNames));
   var AvatarVariantsClass = classnames((_classNames2 = {
     Avatar: true
-  }, _defineProperty$1(_classNames2, "Avatar--regular", size === 'regular'), _defineProperty$1(_classNames2, "Avatar--tiny", size === 'tiny'), _defineProperty$1(_classNames2, "Avatar--secondary", true), _defineProperty$1(_classNames2, 'Avatar--disabled', true), _defineProperty$1(_classNames2, 'cursor-pointer', on === 'click'), _classNames2));
+  }, _defineProperty$1(_classNames2, "Avatar--regular", size === 'regular'), _defineProperty$1(_classNames2, "Avatar--tiny", size === 'tiny'), _defineProperty$1(_classNames2, "Avatar--secondary", true), _defineProperty$1(_classNames2, 'cursor-default', true), _defineProperty$1(_classNames2, 'cursor-pointer', on === 'click'), _classNames2));
   return /*#__PURE__*/React.createElement("div", {
     "data-test": "DesignSystem-AvatarGroup--TriggerAvatar",
     className: "AvatarCount-wrapper",
-    style: avatarStyle
+    style: avatarStyle,
+    tabIndex: 0,
+    role: "button"
   }, /*#__PURE__*/React.createElement("span", {
     "data-test": "DesignSystem-AvatarGroup--TriggerAvatarVariants",
     className: AvatarVariantsClass
@@ -1022,7 +1038,9 @@ var Avatars = function Avatars(props) {
         firstName = item.firstName,
         lastName = item.lastName,
         icon = item.icon,
-        image = item.image;
+        image = item.image,
+        disabled = item.disabled,
+        tooltipSuffix = item.tooltipSuffix;
     return /*#__PURE__*/React.createElement("div", {
       "data-test": "DesignSystem-AvatarGroup--Avatar",
       className: GroupClass,
@@ -1034,7 +1052,9 @@ var Avatars = function Avatars(props) {
       firstName: firstName,
       lastName: lastName,
       withTooltip: true,
-      tooltipPosition: tooltipPosition
+      disabled: disabled,
+      tooltipPosition: tooltipPosition,
+      tooltipSuffix: tooltipSuffix
     }, image || icon));
   });
   return avatars;
@@ -1061,8 +1081,10 @@ var AvatarPopperBody = function AvatarPopperBody(props) {
     var _item$firstName = item.firstName,
         firstName = _item$firstName === void 0 ? '' : _item$firstName,
         _item$lastName = item.lastName,
-        lastName = _item$lastName === void 0 ? '' : _item$lastName;
-    var name = "".concat(firstName, " ").concat(lastName);
+        lastName = _item$lastName === void 0 ? '' : _item$lastName,
+        _item$tooltipSuffix = item.tooltipSuffix,
+        tooltipSuffix = _item$tooltipSuffix === void 0 ? '' : _item$tooltipSuffix;
+    var name = "".concat(firstName, " ").concat(lastName, " ").concat(tooltipSuffix);
     var AvatarTextClass = classnames(_defineProperty$1({}, "mb-4", ind < hiddenAvatarList.length - 1));
     return /*#__PURE__*/React.createElement(Text, {
       key: ind,
@@ -1358,7 +1380,7 @@ var Breadcrumbs = function Breadcrumbs(props) {
   })));
 };
 
-var _excluded$_ = ["size", "appearance", "iconAlign", "tabIndex", "largeIcon", "type", "children", "icon", "expanded", "selected", "loading", "disabled", "className", "tooltip", "iconType"];
+var _excluded$16 = ["size", "appearance", "iconAlign", "tabIndex", "largeIcon", "type", "children", "icon", "expanded", "selected", "loading", "disabled", "className", "tooltip", "iconType"];
 var sizeMapping$3 = {
   tiny: 12,
   regular: 16,
@@ -1387,7 +1409,7 @@ var ButtonElement = /*#__PURE__*/React.forwardRef(function (props, ref) {
       className = props.className;
       props.tooltip;
       var iconType = props.iconType,
-      rest = _objectWithoutProperties(props, _excluded$_);
+      rest = _objectWithoutProperties(props, _excluded$16);
 
   var buttonClass = classnames((_classNames = {}, _defineProperty$1(_classNames, 'Button', true), _defineProperty$1(_classNames, 'Button--expanded', expanded), _defineProperty$1(_classNames, "Button--".concat(size), size), _defineProperty$1(_classNames, "Button--".concat(size, "Square"), !children), _defineProperty$1(_classNames, "Button--".concat(appearance), appearance), _defineProperty$1(_classNames, 'Button--selected', selected && (appearance === 'basic' || appearance === 'transparent')), _defineProperty$1(_classNames, "Button--iconAlign-".concat(iconAlign), children && iconAlign), _defineProperty$1(_classNames, "".concat(className), className), _classNames));
   var iconClass = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'Button-icon', true), _defineProperty$1(_classNames2, "Button-icon--".concat(iconAlign), children && iconAlign), _classNames2));
@@ -2380,6 +2402,7 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
           var isValueRange = inRange || rangePicker && (active || activeDate);
           var wrapperClass = classnames({
             'Calendar-valueWrapper': true,
+            'Calendar-valueWrapper--disabled': disabled,
             'Calendar-valueWrapper--inRange': !isEdgeElement && isValueRange,
             'Calendar-valueWrapper--inEdgeRange': isValueRange && isEdgeElement,
             'Calendar-valueWrapper--inRangeError': isRangeError,
@@ -2388,7 +2411,8 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
             'Calendar-valueWrapper--startEnd': isStart && isEnd,
             'Calendar-valueWrapper--startError': isStart && isRangeError || rangePicker && isRangeError && isStartActive,
             'Calendar-valueWrapper--endError': isEnd && isRangeError || rangePicker && isRangeError && isEndActive,
-            'Calendar-valueWrapper--dummy': dummy,
+            'Calendar-valueWrapper--dummy': dummy && !disabled && !activeDate,
+            'Calendar-valueWrapper--active-dummy': dummy && !disabled && activeDate,
             'Calendar-valueWrapper--hoverDate': rangePicker && isHoverForwardLast,
             'Calendar-valueWrapper--hoverEndDate': rangePicker && isHoverBackwardLast,
             'Calendar-valueWrapper--inStartRange': isValueRange && col === 0 && !active && !activeDate,
@@ -2408,9 +2432,7 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
           var getTextColor = classnames({
             inverse: !active && !today() && !disabled && !activeDate,
             white: active || activeDate,
-            'primary-lighter': today() && disabled,
-            primary: today(),
-            'inverse-lightest': disabled
+            primary: today()
           });
           return /*#__PURE__*/React.createElement("div", {
             key: "".concat(row, "-").concat(col),
@@ -2419,13 +2441,14 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
           }, !dummy && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Text, {
             color: getTextColor,
             size: size === 'small' ? 'small' : 'regular',
+            appearance: disabled ? 'subtle' : 'default',
             "data-test": "DesignSystem-Calendar--dateValue",
             className: valueClass,
             onClick: onClickHandler(date),
             onMouseOver: onMouseOverHandler(date),
             onMouseEnter: onMouseEnterHandler.bind(_assertThisInitialized$1(_this), date, today(), disabled)
           }, date), isEventExist && _this.renderEventsIndicator(size, active)), (dummy && date > 0 && index === monthsInView - 1 || dummy && date <= 0 && index === 0) && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Text, {
-            appearance: active || activeDate ? 'white' : disabled ? 'disabled' : today() ? 'link' : 'default',
+            appearance: active || activeDate ? 'white' : today() ? 'link' : 'subtle',
             size: size === 'small' ? 'small' : 'regular',
             "data-test": "DesignSystem-Calendar--dateValue",
             className: valueClass,
@@ -2733,7 +2756,7 @@ _defineProperty$1(Calendar, "defaultProps", {
   jumpView: true
 });
 
-var _excluded$Z = ["shadow", "children", "className"];
+var _excluded$15 = ["shadow", "children", "className"];
 var Card = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var _classNames;
 
@@ -2741,7 +2764,7 @@ var Card = /*#__PURE__*/React.forwardRef(function (props, ref) {
       shadow = _props$shadow === void 0 ? 'shadow10' : _props$shadow,
       children = props.children,
       className = props.className,
-      rest = _objectWithoutProperties(props, _excluded$Z);
+      rest = _objectWithoutProperties(props, _excluded$15);
 
   var classes = classnames((_classNames = {
     Card: true
@@ -2758,12 +2781,12 @@ Card.defaultProps = {
   shadow: 'shadow10'
 };
 
-var _excluded$Y = ["border", "children", "className"];
+var _excluded$14 = ["border", "children", "className"];
 var CardSubdued = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var border = props.border,
       children = props.children,
       className = props.className,
-      rest = _objectWithoutProperties(props, _excluded$Y);
+      rest = _objectWithoutProperties(props, _excluded$14);
 
   var classes = classnames(_defineProperty$1({
     CardSubdued: true
@@ -2830,7 +2853,7 @@ var isSpaceKey = function isSpaceKey(e) {
   return e.key === 'Space';
 };
 
-var _excluded$X = ["onClick", "onKeyDown", "role", "tabIndex"];
+var _excluded$13 = ["onClick", "onKeyDown", "role", "tabIndex"];
 var allowed = {
   button: new Set(['Enter', 'Space', 'Spacebar', ' ']),
   link: new Set(['Enter']),
@@ -2854,7 +2877,7 @@ var useAccessibilityProps = function useAccessibilityProps(_ref) {
       _ref$role = _ref.role,
       role = _ref$role === void 0 ? 'button' : _ref$role,
       tabIndex = _ref.tabIndex,
-      rest = _objectWithoutProperties(_ref, _excluded$X);
+      rest = _objectWithoutProperties(_ref, _excluded$13);
 
   return _objectSpread2({}, onClick ? {
     onClick: onClick,
@@ -2972,14 +2995,14 @@ Icon.defaultProps = {
   size: 16
 };
 
-var _excluded$W = ["children", "componentType", "className"];
+var _excluded$12 = ["children", "componentType", "className"];
 
 var GenericText = function GenericText(_ref, ref) {
   var children = _ref.children,
       _ref$componentType = _ref.componentType,
       componentType = _ref$componentType === void 0 ? 'span' : _ref$componentType,
       className = _ref.className,
-      rest = _objectWithoutProperties(_ref, _excluded$W);
+      rest = _objectWithoutProperties(_ref, _excluded$12);
 
   return /*#__PURE__*/React.createElement(componentType, _objectSpread2(_objectSpread2({}, rest), {}, {
     className: className,
@@ -2989,7 +3012,7 @@ var GenericText = function GenericText(_ref, ref) {
 
 var Link$1 = /*#__PURE__*/React.forwardRef(GenericText);
 
-var _excluded$V = ["appearance", "size", "children", "weight", "small", "className", "color"];
+var _excluded$11 = ["appearance", "size", "children", "weight", "small", "className", "color"];
 var Text = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var _classNames;
 
@@ -3002,7 +3025,7 @@ var Text = /*#__PURE__*/React.forwardRef(function (props, ref) {
       small = props.small,
       className = props.className,
       color = props.color,
-      rest = _objectWithoutProperties(props, _excluded$V);
+      rest = _objectWithoutProperties(props, _excluded$11);
 
   var classes = classnames((_classNames = {
     Text: true
@@ -3033,7 +3056,25 @@ var GenericChip = function GenericChip(props) {
       onClose = props.onClose,
       onClick = props.onClick,
       labelPrefix = props.labelPrefix,
-      iconType = props.iconType;
+      iconType = props.iconType,
+      maxWidth = props.maxWidth;
+  var wrapperStyle = {
+    maxWidth: maxWidth
+  };
+
+  var _React$useState = React.useState(false),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      isTextTruncated = _React$useState2[0],
+      setIsTextTruncated = _React$useState2[1];
+
+  var _Tooltip$useAutoToolt = Tooltip.useAutoTooltip(),
+      detectTruncation = _Tooltip$useAutoToolt.detectTruncation;
+
+  var contentRef = /*#__PURE__*/React.createRef();
+  React.useEffect(function () {
+    var isTruncated = detectTruncation(contentRef);
+    setIsTextTruncated(isTruncated);
+  }, [contentRef]);
   var baseProps = extractBaseProps(props);
 
   var iconClass = function iconClass(align) {
@@ -3057,17 +3098,26 @@ var GenericChip = function GenericChip(props) {
     }
   };
 
+  var onChipKeyDownHandler = function onChipKeyDownHandler(event) {
+    if (event.key === 'Enter') {
+      onClickHandler();
+    }
+  };
+
   var iconAppearance = function iconAppearance(align) {
     var _classNames2;
 
-    return classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'disabled', disabled && !selected), _defineProperty$1(_classNames2, 'primary_dark', !disabled && selected), _defineProperty$1(_classNames2, 'primary_lighter', disabled && selected), _defineProperty$1(_classNames2, 'subtle', !disabled && !selected && align === 'right'), _defineProperty$1(_classNames2, 'inverse', !disabled && !selected && align === 'left'), _classNames2));
+    return classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'primary_dark', selected), _defineProperty$1(_classNames2, 'subtle', !selected && align === 'right'), _defineProperty$1(_classNames2, 'inverse', !selected && align === 'left'), _classNames2));
   };
 
-  var textColor = classnames((_classNames3 = {}, _defineProperty$1(_classNames3, 'primary-lighter', disabled && selected), _defineProperty$1(_classNames3, 'inverse-lightest', disabled && !selected), _defineProperty$1(_classNames3, 'primary-dark', selected), _defineProperty$1(_classNames3, 'inverse', !disabled && !selected), _classNames3));
+  var textColor = classnames((_classNames3 = {}, _defineProperty$1(_classNames3, 'primary-dark', selected), _defineProperty$1(_classNames3, 'inverse', !disabled && !selected), _classNames3));
 
   var renderLabel = function renderLabel() {
     if (typeof label === 'string') {
-      return /*#__PURE__*/React.createElement(React.Fragment, null, labelPrefix && /*#__PURE__*/React.createElement(Text, {
+      return /*#__PURE__*/React.createElement("div", {
+        className: "Chip-text--truncate",
+        ref: contentRef
+      }, labelPrefix && /*#__PURE__*/React.createElement(Text, {
         "data-test": "DesignSystem-GenericChip--LabelPrefix",
         weight: "medium",
         color: textColor,
@@ -3082,38 +3132,52 @@ var GenericChip = function GenericChip(props) {
     return label;
   };
 
-  return (
-    /*#__PURE__*/
-    // TODO(a11y)
-    // eslint-disable-next-line
-    React.createElement("div", _extends$2({
-      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-      tabIndex: disabled ? -1 : 0,
-      "data-test": "DesignSystem-GenericChip--GenericChipWrapper"
-    }, baseProps, {
-      className: "Chip-wrapper ".concat(className),
-      onClick: onClickHandler
-    }), icon && /*#__PURE__*/React.createElement(Icon, {
-      "data-test": "DesignSystem-GenericChip--Icon",
-      name: icon,
-      type: iconType,
-      appearance: iconAppearance('left'),
-      className: iconClass('left')
-    }), renderLabel(), clearButton && /*#__PURE__*/React.createElement("div", {
-      role: "button",
-      onClick: onCloseHandler,
-      tabIndex: disabled ? -1 : 0,
-      onKeyDown: onKeyDownHandler,
-      className: iconClass('right'),
-      "data-test": "DesignSystem-GenericChip--clearButton"
-    }, /*#__PURE__*/React.createElement(Icon, {
-      name: "clear",
-      appearance: iconAppearance('right'),
-      className: "p-2"
-    })))
-  );
+  var getTooltipText = function getTooltipText() {
+    var labelText = typeof label === 'string' ? label : '';
+
+    if (labelPrefix) {
+      return "".concat(labelPrefix, " ").concat(labelText);
+    }
+
+    return labelText;
+  };
+
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Tooltip, {
+    showTooltip: isTextTruncated,
+    "data-test": "DesignSystem-GenericChip--Tooltip",
+    tooltip: getTooltipText()
+  }, /*#__PURE__*/React.createElement("div", _extends$2({
+    tabIndex: disabled ? -1 : 0,
+    style: wrapperStyle,
+    "data-test": "DesignSystem-GenericChip--Wrapper",
+    role: "button",
+    onKeyDown: onChipKeyDownHandler
+  }, baseProps, {
+    className: "Chip-wrapper ".concat(className),
+    onClick: onClickHandler
+  }), icon && /*#__PURE__*/React.createElement(Icon, {
+    "data-test": "DesignSystem-GenericChip--Icon",
+    name: icon,
+    type: iconType,
+    appearance: iconAppearance('left'),
+    className: iconClass('left')
+  }), renderLabel(), clearButton && /*#__PURE__*/React.createElement("div", {
+    role: "button",
+    onClick: onCloseHandler,
+    tabIndex: disabled ? -1 : 0,
+    onKeyDown: onKeyDownHandler,
+    className: iconClass('right'),
+    "data-test": "DesignSystem-GenericChip--clearButton"
+  }, /*#__PURE__*/React.createElement(Icon, {
+    name: "clear",
+    appearance: iconAppearance('right'),
+    className: "p-2"
+  })))));
 };
 GenericChip.displayName = 'GenericChip';
+GenericChip.defaultProps = {
+  maxWidth: 'var(--spacing-9)'
+};
 
 var Chip = function Chip(props) {
   var _classNames;
@@ -3129,7 +3193,8 @@ var Chip = function Chip(props) {
       name = props.name,
       className = props.className,
       labelPrefix = props.labelPrefix,
-      iconType = props.iconType;
+      iconType = props.iconType,
+      maxWidth = props.maxWidth;
   var baseProps = extractBaseProps(props);
 
   var onCloseHandler = function onCloseHandler() {
@@ -3158,12 +3223,14 @@ var Chip = function Chip(props) {
     onClose: onCloseHandler,
     onClick: onClickHandler,
     name: name,
-    labelPrefix: labelPrefix
+    labelPrefix: labelPrefix,
+    maxWidth: maxWidth
   }));
 };
 Chip.displayName = 'Chip';
 Chip.defaultProps = {
-  type: 'input'
+  type: 'input',
+  maxWidth: 'var(--spacing-9)'
 };
 
 var ChipGroup = function ChipGroup(props) {
@@ -3290,7 +3357,7 @@ var CheckboxIcon = function CheckboxIcon(props) {
   }
 };
 
-var _excluded$U = ["size", "tabIndex", "defaultChecked", "indeterminate", "label", "error", "disabled", "onChange", "name", "value", "className", "checked", "helpText", "id", "labelRef"];
+var _excluded$10 = ["size", "tabIndex", "defaultChecked", "indeterminate", "label", "error", "disabled", "onChange", "name", "value", "className", "checked", "helpText", "id", "labelRef"];
 var Checkbox = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
   var _classNames, _classNames2, _classNames3, _classNames4, _classNames5, _classNames6;
 
@@ -3312,7 +3379,7 @@ var Checkbox = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
       _props$id = props.id,
       id = _props$id === void 0 ? "".concat(name, "-").concat(label, "-").concat(uidGenerator()) : _props$id,
       labelRef = props.labelRef,
-      rest = _objectWithoutProperties(props, _excluded$U);
+      rest = _objectWithoutProperties(props, _excluded$10);
 
   var ref = React.useRef(null);
   React.useImperativeHandle(forwardedRef, function () {
@@ -3395,7 +3462,7 @@ var Checkbox = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
 });
 Checkbox.displayName = 'Checkbox';
 
-var _excluded$T = ["size", "sizeXS", "sizeS", "sizeM", "sizeL", "sizeXL", "className", "children"];
+var _excluded$$ = ["size", "sizeXS", "sizeS", "sizeM", "sizeL", "sizeXL", "className", "children"];
 var Column = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var _classNames;
 
@@ -3407,7 +3474,7 @@ var Column = /*#__PURE__*/React.forwardRef(function (props, ref) {
       sizeXL = props.sizeXL,
       className = props.className,
       children = props.children,
-      rest = _objectWithoutProperties(props, _excluded$T);
+      rest = _objectWithoutProperties(props, _excluded$$);
 
   var classes = classnames((_classNames = {}, _defineProperty$1(_classNames, 'Col', true), _defineProperty$1(_classNames, "Col--".concat(size), size), _defineProperty$1(_classNames, "Col--xs-".concat(sizeXS), sizeXS), _defineProperty$1(_classNames, "Col--s-".concat(sizeS), sizeS), _defineProperty$1(_classNames, "Col--m-".concat(sizeM), sizeM), _defineProperty$1(_classNames, "Col--l-".concat(sizeL), sizeL), _defineProperty$1(_classNames, "Col--xl-".concat(sizeXL), sizeXL), _defineProperty$1(_classNames, "".concat(className), className), _classNames));
   return /*#__PURE__*/React.createElement("div", _extends$2({
@@ -3518,7 +3585,7 @@ var Trigger$1 = function Trigger(props) {
   }));
 };
 
-var _excluded$S = ["date", "open", "position", "inputFormat", "outputFormat", "inputOptions", "validators", "withInput", "disabledBefore", "disabledAfter", "onDateChange", "closeOnSelect", "size", "showTodayDate", "children", "view"];
+var _excluded$_ = ["date", "open", "position", "inputFormat", "outputFormat", "inputOptions", "validators", "withInput", "disabledBefore", "disabledAfter", "onDateChange", "closeOnSelect", "size", "showTodayDate", "children", "view"];
 var DatePicker = /*#__PURE__*/function (_React$Component) {
   _inherits(DatePicker, _React$Component);
 
@@ -3673,7 +3740,7 @@ var DatePicker = /*#__PURE__*/function (_React$Component) {
           _this$props4$children = _this$props4.children,
           children = _this$props4$children === void 0 ? /*#__PURE__*/React.createElement(React.Fragment, null) : _this$props4$children,
           view = _this$props4.view,
-          rest = _objectWithoutProperties(_this$props4, _excluded$S);
+          rest = _objectWithoutProperties(_this$props4, _excluded$_);
 
       var date = this.state.date;
       var months = config.months;
@@ -4739,7 +4806,7 @@ function debounce$1 (delay, atBegin, callback) {
   return callback === undefined ? throttle(delay, atBegin, false) : throttle(delay, callback, atBegin !== false);
 }
 
-var _excluded$R = ["triggerSize", "placeholder", "menu", "children", "icon", "disabled", "open", "inlineLabel", "error", "iconType"];
+var _excluded$Z = ["triggerSize", "placeholder", "menu", "children", "icon", "disabled", "open", "inlineLabel", "error", "iconType"];
 var DropdownButton = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var _classNames, _classNames2;
 
@@ -4756,7 +4823,7 @@ var DropdownButton = /*#__PURE__*/React.forwardRef(function (props, ref) {
       inlineLabel = props.inlineLabel,
       error = props.error,
       iconType = props.iconType,
-      rest = _objectWithoutProperties(props, _excluded$R);
+      rest = _objectWithoutProperties(props, _excluded$Z);
 
   var buttonDisabled = disabled ? 'disabled' : 'default';
   var trimmedPlaceholder = placeholder.trim();
@@ -5829,7 +5896,7 @@ var DropdownList = function DropdownList(props) {
 
 DropdownList.displayName = 'DropdownList';
 
-var _excluded$Q = ["triggerOptions", "selected", "tabIndex"];
+var _excluded$Y = ["triggerOptions", "selected", "tabIndex"];
 var inputRef = /*#__PURE__*/React.createRef();
 
 /**
@@ -6528,7 +6595,7 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
           triggerOptions = _this$props14$trigger === void 0 ? {} : _this$props14$trigger;
           _this$props14.selected;
           var tabIndex = _this$props14.tabIndex,
-          rest = _objectWithoutProperties(_this$props14, _excluded$Q);
+          rest = _objectWithoutProperties(_this$props14, _excluded$Y);
 
       var remainingOptionsLen = searchedOptionsLength - options.length;
       var firstEnabledOption = tabIndex ? tabIndex : _isSelectAllPresent(searchTerm, remainingOptionsLen, withSelectAll, withCheckbox) ? 0 : options.findIndex(function (option) {
@@ -6576,7 +6643,7 @@ _defineProperty$1(Dropdown, "defaultProps", {
   searchDebounceDuration: 300
 });
 
-var _excluded$P = ["appearance", "size", "children", "className", "color"];
+var _excluded$X = ["appearance", "size", "children", "className", "color"];
 var sizeMap = {
   s: 'h5',
   m: 'h4',
@@ -6592,7 +6659,7 @@ var Heading = function Heading(props) {
       children = props.children,
       className = props.className,
       color = props.color,
-      rest = _objectWithoutProperties(props, _excluded$P);
+      rest = _objectWithoutProperties(props, _excluded$X);
 
   var classes = classnames((_classNames = {
     Heading: true
@@ -6610,13 +6677,13 @@ Heading.defaultProps = {
   size: 'm'
 };
 
-var _excluded$O = ["className", "iconType"];
+var _excluded$W = ["className", "iconType"];
 var ActionButton$1 = function ActionButton(props) {
   var _classNames;
 
   var className = props.className,
       iconType = props.iconType,
-      rest = _objectWithoutProperties(props, _excluded$O);
+      rest = _objectWithoutProperties(props, _excluded$W);
 
   var iconClass = classnames((_classNames = {}, _defineProperty$1(_classNames, 'ActionButton', true), _defineProperty$1(_classNames, "".concat(className), className), _classNames));
   return /*#__PURE__*/React.createElement(Icon, _extends$2({
@@ -6631,7 +6698,7 @@ ActionButton$1.defaultProps = {
   type: 'rounded'
 };
 
-var _excluded$N = ["size", "type", "minWidth", "defaultValue", "name", "placeholder", "value", "icon", "inlineLabel", "required", "error", "info", "onChange", "onClick", "onClear", "onBlur", "onFocus", "onPaste", "actionIcon", "className", "autoFocus", "disabled", "readOnly", "iconType"];
+var _excluded$V = ["size", "type", "minWidth", "defaultValue", "name", "placeholder", "value", "icon", "inlineLabel", "required", "error", "info", "onChange", "onClick", "onClear", "onBlur", "onFocus", "onPaste", "actionIcon", "className", "autoFocus", "disabled", "readOnly", "iconType"];
 var sizeMapping$2 = {
   tiny: 12,
   regular: 16,
@@ -6673,7 +6740,7 @@ var Input = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
       disabled = props.disabled,
       readOnly = props.readOnly,
       iconType = props.iconType,
-      rest = _objectWithoutProperties(props, _excluded$N);
+      rest = _objectWithoutProperties(props, _excluded$V);
 
   var ref = React.useRef(null);
 
@@ -6693,7 +6760,7 @@ var Input = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
     });
   }, []);
   var baseProps = extractBaseProps(props);
-  var classes = classnames((_classNames = {}, _defineProperty$1(_classNames, 'Input', true), _defineProperty$1(_classNames, "Input--".concat(size), size), _defineProperty$1(_classNames, 'Input--disabled', disabled || readOnly), _defineProperty$1(_classNames, 'Input--error', error), _classNames), className);
+  var classes = classnames((_classNames = {}, _defineProperty$1(_classNames, 'Input', true), _defineProperty$1(_classNames, "Input--".concat(size), size), _defineProperty$1(_classNames, 'Input--disabled', disabled), _defineProperty$1(_classNames, 'Input--error', error), _defineProperty$1(_classNames, 'Input--readOnly', readOnly), _classNames), className);
   var inputClass = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'Input-input', true), _defineProperty$1(_classNames2, "Input-input--".concat(size), size), _classNames2));
   var leftIconClass = classnames((_classNames3 = {}, _defineProperty$1(_classNames3, 'Input-icon', true), _defineProperty$1(_classNames3, 'Input-icon--left', true), _defineProperty$1(_classNames3, 'Input-icon--inputBlank', isInputBlank), _defineProperty$1(_classNames3, 'Input-icon--error', error), _classNames3));
   var rightIconClass = classnames((_classNames4 = {}, _defineProperty$1(_classNames4, 'Input-icon', true), _defineProperty$1(_classNames4, 'Input-iconWrapper--right', true), _classNames4));
@@ -6782,7 +6849,7 @@ Object.assign(Input, {
   ActionButton: ActionButton$1
 });
 
-var _excluded$M = ["size", "defaultValue", "name", "placeholder", "icon", "prefix", "suffix", "error", "min", "max", "onChange", "onClick", "onBlur", "onFocus", "className", "autoFocus", "disabled", "readOnly", "value", "showActionButton", "onKeyDown", "iconType"];
+var _excluded$U = ["size", "defaultValue", "name", "placeholder", "icon", "prefix", "suffix", "error", "min", "max", "onChange", "onClick", "onBlur", "onFocus", "className", "autoFocus", "disabled", "readOnly", "value", "showActionButton", "onKeyDown", "iconType"];
 var sizeMapping$1 = {
   regular: 16,
   large: 20
@@ -6833,7 +6900,7 @@ var MetricInput = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
       showActionButton = _props$showActionButt === void 0 ? true : _props$showActionButt,
       onKeyDown = props.onKeyDown,
       iconType = props.iconType,
-      rest = _objectWithoutProperties(props, _excluded$M);
+      rest = _objectWithoutProperties(props, _excluded$U);
 
   var ref = React.useRef(null);
   var isUncontrolled = valueProp === undefined;
@@ -6859,7 +6926,7 @@ var MetricInput = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
     }
   }, [valueProp]);
   var baseProps = extractBaseProps(props);
-  var classes = classnames((_classNames = {}, _defineProperty$1(_classNames, 'MetricInput', true), _defineProperty$1(_classNames, "MetricInput--".concat(size), size), _defineProperty$1(_classNames, 'MetricInput--disabled', disabled || readOnly), _defineProperty$1(_classNames, 'MetricInput--error', error), _classNames), className);
+  var classes = classnames((_classNames = {}, _defineProperty$1(_classNames, 'MetricInput', true), _defineProperty$1(_classNames, "MetricInput--".concat(size), size), _defineProperty$1(_classNames, 'MetricInput--disabled', disabled), _defineProperty$1(_classNames, 'MetricInput--readOnly', readOnly), _defineProperty$1(_classNames, 'MetricInput--error', error), _classNames), className);
   var inputClass = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'MetricInput-input', true), _defineProperty$1(_classNames2, "MetricInput-input--".concat(size), size), _defineProperty$1(_classNames2, "mr-4", !suffix && !showActionButton && size === 'regular'), _defineProperty$1(_classNames2, "mr-6", !suffix && !showActionButton && size === 'large'), _classNames2));
   var iconClass = classnames((_classNames3 = {}, _defineProperty$1(_classNames3, 'MetricInput-icon', true), _defineProperty$1(_classNames3, "MetricInput-icon--".concat(size), size), _classNames3));
   var prefixClass = classnames((_classNames4 = {}, _defineProperty$1(_classNames4, 'mr-4', size === 'regular'), _defineProperty$1(_classNames4, 'mr-5', size !== 'regular'), _classNames4));
@@ -6919,7 +6986,7 @@ var MetricInput = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
   var handleKeyDown = function handleKeyDown(e) {
     if (showActionButton) {
       onKeyDownHandler(e);
-    } else e.preventDefault();
+    }
   };
 
   var actionButtonSize = size === 'large' ? 'regular' : 'tiny';
@@ -6999,7 +7066,7 @@ var getDefaultValue = function getDefaultValue(mask, placeholderChar) {
   return val;
 };
 
-var _excluded$L = ["mask", "value", "placeholderChar", "validators", "clearOnEmptyBlur", "defaultValue", "mask", "error", "caption", "required", "onChange", "onPaste", "onBlur", "onFocus", "onClear", "className", "id", "helpText"];
+var _excluded$T = ["mask", "value", "placeholderChar", "validators", "clearOnEmptyBlur", "defaultValue", "mask", "error", "caption", "required", "onChange", "onPaste", "onBlur", "onFocus", "onClear", "className", "id", "helpText"];
 
 /**
  * It works as Uncontrolled Input
@@ -7028,7 +7095,7 @@ var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
       className = props.className,
       id = props.id,
       helpText = props.helpText,
-      rest = _objectWithoutProperties(props, _excluded$L);
+      rest = _objectWithoutProperties(props, _excluded$T);
 
   var isEditable = React.useCallback(function (pos) {
     return _typeof(mask[pos]) === 'object';
@@ -7341,7 +7408,7 @@ InputMask.utils = {
 };
 var X = InputMask;
 
-var _excluded$K = ["required", "optional", "withInput", "disabled", "children", "className", "info"];
+var _excluded$S = ["required", "optional", "withInput", "disabled", "children", "className", "info"];
 
 /**
  * *NOTE: Extends props with HTMLProps<HTMLLabelElement>*
@@ -7356,7 +7423,7 @@ var Label = function Label(props) {
       children = props.children,
       className = props.className,
       info = props.info,
-      rest = _objectWithoutProperties(props, _excluded$K);
+      rest = _objectWithoutProperties(props, _excluded$S);
 
   var baseProps = extractBaseProps(props);
   var LabelClass = classnames((_classNames = {
@@ -7514,7 +7581,7 @@ var Editable = function Editable(props) {
 };
 Editable.displayName = 'Editable';
 
-var _excluded$J = ["onChange", "onClose"];
+var _excluded$R = ["onChange", "onClose"];
 var EditableDropdown = function EditableDropdown(props) {
   var _classNames2;
 
@@ -7525,7 +7592,7 @@ var EditableDropdown = function EditableDropdown(props) {
 
   var onDropdownChange = dropdownOptions.onChange,
       onDropdownClose = dropdownOptions.onClose,
-      rest = _objectWithoutProperties(dropdownOptions, _excluded$J);
+      rest = _objectWithoutProperties(dropdownOptions, _excluded$R);
 
   var _React$useState = React.useState(placeholder),
       _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -7608,7 +7675,7 @@ EditableDropdown.defaultProps = {
   dropdownOptions: {}
 };
 
-var _excluded$I = ["children", "className", "appearance", "size", "disabled"];
+var _excluded$Q = ["children", "className", "appearance", "size", "disabled"];
 var Link = function Link(props) {
   var _classNames;
 
@@ -7617,7 +7684,7 @@ var Link = function Link(props) {
       appearance = props.appearance,
       size = props.size,
       disabled = props.disabled,
-      rest = _objectWithoutProperties(props, _excluded$I);
+      rest = _objectWithoutProperties(props, _excluded$Q);
 
   var classes = classnames((_classNames = {
     Link: true
@@ -8513,12 +8580,12 @@ _defineProperty$1(MultiSlider, "defaultProps", {
 
 _defineProperty$1(MultiSlider, "Handle", MultiSliderHandle);
 
-var _excluded$H = ["children", "className", "onOutsideClick"];
+var _excluded$P = ["children", "className", "onOutsideClick"];
 var OutsideClick = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var children = props.children,
       className = props.className,
       onOutsideClick = props.onOutsideClick,
-      rest = _objectWithoutProperties(props, _excluded$H);
+      rest = _objectWithoutProperties(props, _excluded$P);
 
   var innerRef = React.useRef(null);
   React.useImperativeHandle(ref, function () {
@@ -8550,7 +8617,7 @@ var OutsideClick = /*#__PURE__*/React.forwardRef(function (props, ref) {
 });
 OutsideClick.displayName = 'OutsideClick';
 
-var _excluded$G = ["appearance", "children", "className", "color"];
+var _excluded$O = ["appearance", "children", "className", "color"];
 var Paragraph = function Paragraph(props) {
   var _classNames;
 
@@ -8558,7 +8625,7 @@ var Paragraph = function Paragraph(props) {
       children = props.children,
       className = props.className,
       color = props.color,
-      rest = _objectWithoutProperties(props, _excluded$G);
+      rest = _objectWithoutProperties(props, _excluded$O);
 
   var classes = classnames((_classNames = {
     Text: true
@@ -8606,7 +8673,7 @@ ProgressBar.defaultProps = {
   size: 'regular'
 };
 
-var _excluded$F = ["size", "label", "disabled", "onChange", "name", "value", "checked", "defaultChecked", "className", "helpText", "error"];
+var _excluded$N = ["size", "label", "disabled", "onChange", "name", "value", "checked", "defaultChecked", "className", "helpText", "error"];
 var Radio = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
   var _classNames, _classNames2, _classNames3;
 
@@ -8622,7 +8689,7 @@ var Radio = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
       className = props.className,
       helpText = props.helpText,
       error = props.error,
-      rest = _objectWithoutProperties(props, _excluded$F);
+      rest = _objectWithoutProperties(props, _excluded$N);
 
   var ref = React.useRef(null);
   React.useImperativeHandle(forwardedRef, function () {
@@ -8673,11 +8740,11 @@ var Radio = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
 });
 Radio.displayName = 'Radio';
 
-var _excluded$E = ["className", "children"];
+var _excluded$M = ["className", "children"];
 var Row = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var className = props.className,
       children = props.children,
-      rest = _objectWithoutProperties(props, _excluded$E);
+      rest = _objectWithoutProperties(props, _excluded$M);
 
   var classes = classnames(_defineProperty$1({
     Row: true
@@ -8794,13 +8861,13 @@ Spinner.defaultProps = {
   size: 'medium'
 };
 
-var _excluded$D = ["value", "defaultValue", "onRelease", "onChange"];
+var _excluded$L = ["value", "defaultValue", "onRelease", "onChange"];
 var Slider = function Slider(props) {
   var valueProp = props.value,
       defaultValue = props.defaultValue,
       onRelease = props.onRelease,
       onChange = props.onChange,
-      rest = _objectWithoutProperties(props, _excluded$D);
+      rest = _objectWithoutProperties(props, _excluded$L);
 
   var _React$useState = React.useState(valueProp === undefined ? defaultValue : valueProp),
       _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -8833,7 +8900,7 @@ Slider.defaultProps = _objectSpread2(_objectSpread2({}, MultiSlider.defaultProps
   defaultValue: 0
 });
 
-var _excluded$C = ["value", "defaultValue", "onChange", "onRelease"];
+var _excluded$K = ["value", "defaultValue", "onChange", "onRelease"];
 var RangeIndex;
 
 (function (RangeIndex) {
@@ -8846,7 +8913,7 @@ var RangeSlider = function RangeSlider(props) {
       defaultValue = props.defaultValue,
       onChange = props.onChange,
       onRelease = props.onRelease,
-      rest = _objectWithoutProperties(props, _excluded$C);
+      rest = _objectWithoutProperties(props, _excluded$K);
 
   var _React$useState = React.useState(valueProp === undefined ? defaultValue : valueProp),
       _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -8882,7 +8949,7 @@ RangeSlider.defaultProps = _objectSpread2(_objectSpread2({}, MultiSlider.default
   defaultValue: [0, 10]
 });
 
-var _excluded$B = ["appearance", "children", "className", "color"];
+var _excluded$J = ["appearance", "children", "className", "color"];
 var Subheading = function Subheading(props) {
   var _classNames;
 
@@ -8890,7 +8957,7 @@ var Subheading = function Subheading(props) {
       children = props.children,
       className = props.className,
       color = props.color,
-      rest = _objectWithoutProperties(props, _excluded$B);
+      rest = _objectWithoutProperties(props, _excluded$J);
 
   var classes = classnames((_classNames = {
     Subheading: true
@@ -8907,7 +8974,7 @@ Subheading.defaultProps = {
   appearance: 'default'
 };
 
-var _excluded$A = ["size", "defaultChecked", "disabled", "onChange", "name", "value", "className", "appearance", "checked"];
+var _excluded$I = ["size", "defaultChecked", "disabled", "onChange", "name", "value", "className", "appearance", "checked"];
 
 /**
  * ######Switch has two types:
@@ -8927,7 +8994,7 @@ var Switch = /*#__PURE__*/React.forwardRef(function (props, ref) {
       className = props.className;
       props.appearance;
       var checkedProp = props.checked,
-      rest = _objectWithoutProperties(props, _excluded$A);
+      rest = _objectWithoutProperties(props, _excluded$I);
 
   var _React$useState = React.useState(checkedProp === undefined ? defaultChecked : checkedProp),
       _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -8966,7 +9033,7 @@ var Switch = /*#__PURE__*/React.forwardRef(function (props, ref) {
 });
 Switch.displayName = 'Switch';
 
-var _excluded$z = ["rows", "resize", "disabled", "name", "placeholder", "value", "defaultValue", "required", "error", "onChange", "onClick", "onBlur", "onFocus", "className"];
+var _excluded$H = ["rows", "resize", "disabled", "name", "placeholder", "value", "defaultValue", "required", "error", "onChange", "onClick", "onBlur", "onFocus", "className", "readOnly"];
 var Textarea = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var _classNames;
 
@@ -8986,9 +9053,10 @@ var Textarea = /*#__PURE__*/React.forwardRef(function (props, ref) {
       onBlur = props.onBlur,
       onFocus = props.onFocus,
       className = props.className,
-      rest = _objectWithoutProperties(props, _excluded$z);
+      readOnly = props.readOnly,
+      rest = _objectWithoutProperties(props, _excluded$H);
 
-  var classes = classnames((_classNames = {}, _defineProperty$1(_classNames, 'Textarea', true), _defineProperty$1(_classNames, 'Textarea--resize', resize), _defineProperty$1(_classNames, 'Textarea--error', error), _classNames), className);
+  var classes = classnames((_classNames = {}, _defineProperty$1(_classNames, 'Textarea', true), _defineProperty$1(_classNames, 'Textarea--resize', resize), _defineProperty$1(_classNames, 'Textarea--error', error), _defineProperty$1(_classNames, 'Textarea--readOnly', readOnly), _classNames), className);
   return /*#__PURE__*/React.createElement("textarea", _extends$2({
     "data-test": "DesignSystem-Textarea"
   }, rest, {
@@ -12907,12 +12975,12 @@ var PopperJS = Popper$1;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var b="function"===typeof Symbol&&Symbol.for,c=b?Symbol.for("react.element"):60103,d=b?Symbol.for("react.portal"):60106,e=b?Symbol.for("react.fragment"):60107,f=b?Symbol.for("react.strict_mode"):60108,g=b?Symbol.for("react.profiler"):60114,h=b?Symbol.for("react.provider"):60109,k=b?Symbol.for("react.context"):60110,l=b?Symbol.for("react.async_mode"):60111,m=b?Symbol.for("react.concurrent_mode"):60111,n=b?Symbol.for("react.forward_ref"):60112,p=b?Symbol.for("react.suspense"):60113,q=b?
-Symbol.for("react.suspense_list"):60120,r=b?Symbol.for("react.memo"):60115,t=b?Symbol.for("react.lazy"):60116,v=b?Symbol.for("react.block"):60121,w=b?Symbol.for("react.fundamental"):60117,x=b?Symbol.for("react.responder"):60118,y=b?Symbol.for("react.scope"):60119;
-function z(a){if("object"===typeof a&&null!==a){var u=a.$$typeof;switch(u){case c:switch(a=a.type,a){case l:case m:case e:case g:case f:case p:return a;default:switch(a=a&&a.$$typeof,a){case k:case n:case t:case r:case h:return a;default:return u}}case d:return u}}}function A(a){return z(a)===m}var AsyncMode=l;var ConcurrentMode=m;var ContextConsumer=k;var ContextProvider=h;var Element=c;var ForwardRef=n;var Fragment=e;var Lazy=t;var Memo=r;var Portal=d;
-var Profiler=g;var StrictMode=f;var Suspense=p;var isAsyncMode=function(a){return A(a)||z(a)===l};var isConcurrentMode=A;var isContextConsumer=function(a){return z(a)===k};var isContextProvider=function(a){return z(a)===h};var isElement=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===c};var isForwardRef=function(a){return z(a)===n};var isFragment=function(a){return z(a)===e};var isLazy=function(a){return z(a)===t};
+var b="function"===typeof Symbol&&Symbol.for,c=b?Symbol.for("react.element"):60103,d=b?Symbol.for("react.portal"):60106,e=b?Symbol.for("react.fragment"):60107,f=b?Symbol.for("react.strict_mode"):60108,g=b?Symbol.for("react.profiler"):60114,h$4=b?Symbol.for("react.provider"):60109,k=b?Symbol.for("react.context"):60110,l=b?Symbol.for("react.async_mode"):60111,m=b?Symbol.for("react.concurrent_mode"):60111,n=b?Symbol.for("react.forward_ref"):60112,p=b?Symbol.for("react.suspense"):60113,q=b?
+Symbol.for("react.suspense_list"):60120,r=b?Symbol.for("react.memo"):60115,t=b?Symbol.for("react.lazy"):60116,v$4=b?Symbol.for("react.block"):60121,w$4=b?Symbol.for("react.fundamental"):60117,x=b?Symbol.for("react.responder"):60118,y=b?Symbol.for("react.scope"):60119;
+function z(a){if("object"===typeof a&&null!==a){var u=a.$$typeof;switch(u){case c:switch(a=a.type,a){case l:case m:case e:case g:case f:case p:return a;default:switch(a=a&&a.$$typeof,a){case k:case n:case t:case r:case h$4:return a;default:return u}}case d:return u}}}function A(a){return z(a)===m}var AsyncMode=l;var ConcurrentMode=m;var ContextConsumer=k;var ContextProvider=h$4;var Element=c;var ForwardRef=n;var Fragment=e;var Lazy=t;var Memo=r;var Portal=d;
+var Profiler=g;var StrictMode=f;var Suspense=p;var isAsyncMode=function(a){return A(a)||z(a)===l};var isConcurrentMode=A;var isContextConsumer=function(a){return z(a)===k};var isContextProvider=function(a){return z(a)===h$4};var isElement=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===c};var isForwardRef=function(a){return z(a)===n};var isFragment=function(a){return z(a)===e};var isLazy=function(a){return z(a)===t};
 var isMemo=function(a){return z(a)===r};var isPortal=function(a){return z(a)===d};var isProfiler=function(a){return z(a)===g};var isStrictMode=function(a){return z(a)===f};var isSuspense=function(a){return z(a)===p};
-var isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===e||a===m||a===g||a===f||a===p||a===q||"object"===typeof a&&null!==a&&(a.$$typeof===t||a.$$typeof===r||a.$$typeof===h||a.$$typeof===k||a.$$typeof===n||a.$$typeof===w||a.$$typeof===x||a.$$typeof===y||a.$$typeof===v)};var typeOf=z;
+var isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===e||a===m||a===g||a===f||a===p||a===q||"object"===typeof a&&null!==a&&(a.$$typeof===t||a.$$typeof===r||a.$$typeof===h$4||a.$$typeof===k||a.$$typeof===n||a.$$typeof===w$4||a.$$typeof===x||a.$$typeof===y||a.$$typeof===v$4)};var typeOf=z;
 
 var reactIs_production_min = {
 	AsyncMode: AsyncMode,
@@ -13935,7 +14003,9 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
       var options = on === 'hover' ? {
         ref: ref,
         onMouseEnter: this.handleMouseEnter,
-        onMouseLeave: this.handleMouseLeave
+        onMouseLeave: this.handleMouseLeave,
+        onFocus: this.handleMouseEnter,
+        onBlur: this.handleMouseLeave
       } : {
         ref: ref,
         onClick: function onClick(ev) {
@@ -14076,7 +14146,8 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
           appendToBody = _this$props6.appendToBody,
           hide = _this$props6.hide,
           boundaryElement = _this$props6.boundaryElement,
-          triggerCoordinates = _this$props6.triggerCoordinates;
+          triggerCoordinates = _this$props6.triggerCoordinates,
+          computeStyles = _this$props6.computeStyles;
       var _this$state2 = this.state,
           animationKeyframe = _this$state2.animationKeyframe,
           isOpen = _this$state2.isOpen;
@@ -14089,7 +14160,8 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
           },
           hide: {
             enabled: hide
-          }
+          },
+          computeStyles: computeStyles
         }, triggerCoordinates && {
           offset: {
             offset: "".concat(triggerCoordinates.x, "px, ").concat(triggerCoordinates.y, "px")
@@ -14110,11 +14182,15 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
           },
           hide: {
             enabled: hide
-          }
+          },
+          computeStyles: computeStyles
         }
       }, this.getPopperChildren), document.body), isOpen && appendToBody && triggerCoordinates && /*#__PURE__*/ReactDOM.createPortal(coordinatesPopper, document.body), isOpen && !appendToBody && !triggerCoordinates && /*#__PURE__*/React.createElement(Popper, {
         placement: placement,
-        innerRef: this.popupRef
+        innerRef: this.popupRef,
+        modifiers: {
+          computeStyles: computeStyles
+        }
       }, this.getPopperChildren));
     }
   }]);
@@ -14131,7 +14207,7 @@ _defineProperty$1(PopperWrapper, "defaultProps", {
   style: {}
 });
 
-var _excluded$y = ["position", "customStyle", "dark", "children", "onToggle", "className", "hideOnReferenceEscape", "boundaryElement", "name"];
+var _excluded$G = ["position", "customStyle", "dark", "children", "onToggle", "className", "hideOnReferenceEscape", "boundaryElement", "name"];
 var propsList = ['appendToBody', 'trigger', 'hoverable', 'on', 'open', 'closeOnBackdropClick', 'offset', 'closeOnScroll'];
 var Popover = function Popover(props) {
   var position = props.position,
@@ -14144,7 +14220,7 @@ var Popover = function Popover(props) {
       _props$boundaryElemen = props.boundaryElement,
       boundaryElement = _props$boundaryElemen === void 0 ? document.body : _props$boundaryElemen,
       name = props.name,
-      rest = _objectWithoutProperties(props, _excluded$y);
+      rest = _objectWithoutProperties(props, _excluded$G);
 
   var _React$useState = React.useState(!!props.open),
       _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -14197,7 +14273,7 @@ Popover.defaultProps = Object.assign({}, filterProps(PopperWrapper.defaultProps,
   customStyle: {}
 });
 
-var _excluded$x = ["type", "onClick"];
+var _excluded$F = ["type", "onClick"];
 var keyCodes$1 = {
   BACKSPACE: 'Backspace',
   DELETE: 'Delete',
@@ -14316,7 +14392,7 @@ var ChipInput = function ChipInput(props) {
     var _chipOptions$type = chipOptions.type,
         type = _chipOptions$type === void 0 ? 'input' : _chipOptions$type,
         _onClick = chipOptions.onClick,
-        rest = _objectWithoutProperties(chipOptions, _excluded$x);
+        rest = _objectWithoutProperties(chipOptions, _excluded$F);
 
     return /*#__PURE__*/React.createElement(Chip, _extends$2({
       "data-test": "DesignSystem-ChipInput--Chip",
@@ -14821,7 +14897,7 @@ var HorizontalNav = function HorizontalNav(props) {
   }), list);
 };
 
-var _excluded$w = ["children", "tooltip", "showTooltip", "showOnTruncation", "elementRef"];
+var _excluded$E = ["children", "tooltip", "showTooltip", "showOnTruncation", "elementRef"];
 var tooltipPropsList = ['trigger', 'on', 'open', 'offset', 'onToggle', 'dark', 'customStyle', 'closeOnBackdropClick', 'hideOnReferenceEscape', 'closeOnScroll'];
 var positionValue = {
   bottom: 'bottom',
@@ -14844,7 +14920,7 @@ var Tooltip = function Tooltip(props) {
       showTooltip = props.showTooltip,
       showOnTruncation = props.showOnTruncation,
       elementRef = props.elementRef,
-      rest = _objectWithoutProperties(props, _excluded$w);
+      rest = _objectWithoutProperties(props, _excluded$E);
 
   var childrenRef = React.useRef(null);
 
@@ -14965,7 +15041,7 @@ Dialog.defaultProps = {
   secondaryButtonAppearance: 'basic'
 };
 
-var _excluded$v = ["label"];
+var _excluded$D = ["label"];
 var OverlayFooter = function OverlayFooter(props) {
   var open = props.open,
       className = props.className,
@@ -15002,7 +15078,7 @@ var OverlayFooter = function OverlayFooter(props) {
       className: classes
     }), actions.map(function (_ref, index) {
       _ref.label;
-          var options = _objectWithoutProperties(_ref, _excluded$v);
+          var options = _objectWithoutProperties(_ref, _excluded$D);
 
       return /*#__PURE__*/React.createElement(Button, _extends$2({
         type: "button"
@@ -16137,7 +16213,7 @@ ChatMessage.displayName = 'ChatMessage';
 
 var EmptyStateContext = /*#__PURE__*/React.createContext({});
 
-var _excluded$u = ["children", "maxHeight", "height", "minHeight", "src", "alt", "className"];
+var _excluded$C = ["children", "maxHeight", "height", "minHeight", "src", "alt", "className"];
 var imageHeight$1 = {
   standard: '200px',
   compressed: '150px',
@@ -16156,7 +16232,7 @@ var EmptyStateImage = function EmptyStateImage(props) {
       src = props.src,
       alt = props.alt,
       className = props.className,
-      rest = _objectWithoutProperties(props, _excluded$u);
+      rest = _objectWithoutProperties(props, _excluded$C);
 
   var contextProp = React__default.useContext(EmptyStateContext);
   var imageClasses = classnames(_defineProperty$1({}, 'EmptyState-image', true), className);
@@ -16185,14 +16261,14 @@ var EmptyStateImage = function EmptyStateImage(props) {
   }, rest))));
 };
 
-var _excluded$t = ["children", "className"];
+var _excluded$B = ["children", "className"];
 
 var EmptyStateTitle = function EmptyStateTitle(props) {
   var _classNames;
 
   var children = props.children,
       className = props.className,
-      rest = _objectWithoutProperties(props, _excluded$t);
+      rest = _objectWithoutProperties(props, _excluded$B);
 
   var contextProp = React__default.useContext(EmptyStateContext);
   var _contextProp$size = contextProp.size,
@@ -16214,14 +16290,14 @@ var EmptyStateTitle = function EmptyStateTitle(props) {
   }, rest), children);
 };
 
-var _excluded$s = ["children", "className"];
+var _excluded$A = ["children", "className"];
 
 var EmptyStateDescription = function EmptyStateDescription(props) {
   var _classNames;
 
   var children = props.children,
       className = props.className,
-      rest = _objectWithoutProperties(props, _excluded$s);
+      rest = _objectWithoutProperties(props, _excluded$A);
 
   var contextProp = React__default.useContext(EmptyStateContext);
   var _contextProp$size = contextProp.size,
@@ -16240,14 +16316,14 @@ var EmptyStateDescription = function EmptyStateDescription(props) {
   }, rest), children);
 };
 
-var _excluded$r = ["children", "className"];
+var _excluded$z = ["children", "className"];
 
 var EmptyStateActions = function EmptyStateActions(props) {
   var _classNames;
 
   var children = props.children,
       className = props.className,
-      rest = _objectWithoutProperties(props, _excluded$r);
+      rest = _objectWithoutProperties(props, _excluded$z);
 
   var contextProp = React__default.useContext(EmptyStateContext);
   var _contextProp$size = contextProp.size,
@@ -16549,7 +16625,7 @@ Pagination.defaultProps = {
   pageJumpDebounceDuration: 750
 };
 
-var _excluded$q = ["onChange"];
+var _excluded$y = ["onChange"];
 var EditableInput = function EditableInput(props) {
   var _classNames2, _classNames4;
 
@@ -16563,7 +16639,7 @@ var EditableInput = function EditableInput(props) {
       className = props.className;
 
   var onInputChange = inputOptions.onChange,
-      rest = _objectWithoutProperties(inputOptions, _excluded$q);
+      rest = _objectWithoutProperties(inputOptions, _excluded$y);
 
   var _React$useState = React.useState(props.value),
       _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -16726,7 +16802,7 @@ EditableInput.defaultProps = {
   inputOptions: {}
 };
 
-var _excluded$p = ["onChange", "chipOptions"],
+var _excluded$x = ["onChange", "chipOptions"],
     _excluded2$2 = ["onClick"];
 var EditableChipInput = function EditableChipInput(props) {
   var _classNames3;
@@ -16740,7 +16816,7 @@ var EditableChipInput = function EditableChipInput(props) {
   var onChipInputChange = chipInputOptions.onChange,
       _chipInputOptions$chi = chipInputOptions.chipOptions,
       chipOptions = _chipInputOptions$chi === void 0 ? {} : _chipInputOptions$chi,
-      rest = _objectWithoutProperties(chipInputOptions, _excluded$p);
+      rest = _objectWithoutProperties(chipInputOptions, _excluded$x);
 
   var _onClick = chipOptions.onClick,
       chipObject = _objectWithoutProperties(chipOptions, _excluded2$2);
@@ -17556,7 +17632,7 @@ var getCustomDates = function getCustomDates() {
   };
 };
 
-var _excluded$o = ["startDate", "endDate", "yearNav", "monthNav", "open", "inputFormat", "outputFormat", "startInputOptions", "endInputOptions", "validators", "withInput", "position", "disabledBefore", "disabledAfter", "onRangeChange", "rangeLimit"];
+var _excluded$w = ["startDate", "endDate", "yearNav", "monthNav", "open", "inputFormat", "outputFormat", "startInputOptions", "endInputOptions", "validators", "withInput", "position", "disabledBefore", "disabledAfter", "onRangeChange", "rangeLimit"];
 var DateRangePicker = /*#__PURE__*/function (_React$Component) {
   _inherits(DateRangePicker, _React$Component);
 
@@ -17832,7 +17908,7 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
           disabledAfter = _this$props6.disabledAfter;
           _this$props6.onRangeChange;
           var rangeLimit = _this$props6.rangeLimit,
-          rest = _objectWithoutProperties(_this$props6, _excluded$o);
+          rest = _objectWithoutProperties(_this$props6, _excluded$w);
 
       var _this$state3 = this.state,
           startDate = _this$state3.startDate,
@@ -18736,7 +18812,7 @@ function _fromFileEntry() {
   return _fromFileEntry.apply(this, arguments);
 }
 
-var _excluded$n = ["refKey", "onKeyDown", "onFocus", "onBlur", "onClick", "onDragEnterCallback", "onDragOverCallback", "onDragLeaveCallback", "onDropCallback"],
+var _excluded$v = ["refKey", "onKeyDown", "onFocus", "onBlur", "onClick", "onDragEnterCallback", "onDragOverCallback", "onDragLeaveCallback", "onDropCallback"],
     _excluded2$1 = ["refKey", "onChange", "onClick"];
 var initialState = {
   isFocused: false,
@@ -19014,7 +19090,7 @@ var DropzoneBase = function DropzoneBase(props) {
           onDragOverCallback = _ref.onDragOverCallback,
           onDragLeaveCallback = _ref.onDragLeaveCallback,
           onDropCallback = _ref.onDropCallback,
-          rest = _objectWithoutProperties(_ref, _excluded$n);
+          rest = _objectWithoutProperties(_ref, _excluded$v);
 
       return _objectSpread2(_defineProperty$1({
         onDragEnter: composeDragHandler(composeEventHandlers(onDragEnterCallback, onDragEnterCb)),
@@ -21358,7 +21434,7 @@ var removeDuplicate = function removeDuplicate(data, uniqueColumnName) {
   return data;
 };
 
-var _excluded$m = ["children"];
+var _excluded$u = ["children"];
 
 var defaultErrorTemplate = function defaultErrorTemplate(props) {
   var _props$errorType = props.errorType,
@@ -21904,7 +21980,7 @@ var Table = /*#__PURE__*/function (_React$Component) {
 
       var _ref = headerOptions,
           headerChildren = _ref.children,
-          headerAttr = _objectWithoutProperties(_ref, _excluded$m);
+          headerAttr = _objectWithoutProperties(_ref, _excluded$u);
 
       var classes = className ? " ".concat(className) : '';
       var totalRecords = this.state.totalRecords;
@@ -22477,7 +22553,7 @@ FileList.defaultProps = {
 };
 FileList.displayName = 'FileList';
 
-var _excluded$l = ["type", "fields", "placeholder", "autoFocus", "onComplete", "onFocus", "onBlur", "className", "value"];
+var _excluded$t = ["type", "fields", "placeholder", "autoFocus", "onComplete", "onFocus", "onBlur", "className", "value"];
 var KEY_CODE = {
   backspace: 'Backspace',
   left: 'ArrowLeft',
@@ -22502,7 +22578,7 @@ var VerificationCodeInput = function VerificationCodeInput(props) {
       onBlur = props.onBlur,
       className = props.className;
       props.value;
-      var rest = _objectWithoutProperties(props, _excluded$l);
+      var rest = _objectWithoutProperties(props, _excluded$t);
 
   var initialValues = useMemo(function () {
     if (props.value && props.value.length) {
@@ -22913,7 +22989,7 @@ var HelpText = function HelpText(props) {
 };
 HelpText.displayName = 'HelpText';
 
-var _excluded$k = ["children", "type", "className", "disabled", "tabIndex", "icon", "subtle", "size", "iconAlign", "iconType"];
+var _excluded$s = ["children", "type", "className", "disabled", "tabIndex", "icon", "subtle", "size", "iconAlign", "iconType"];
 var sizeMapping = {
   tiny: 12,
   regular: 16
@@ -22931,7 +23007,7 @@ var LinkButton = /*#__PURE__*/React.forwardRef(function (props, ref) {
       size = props.size,
       iconAlign = props.iconAlign,
       iconType = props.iconType,
-      rest = _objectWithoutProperties(props, _excluded$k);
+      rest = _objectWithoutProperties(props, _excluded$s);
 
   var buttonClass = classnames((_classNames = {}, _defineProperty$1(_classNames, 'LinkButton', true), _defineProperty$1(_classNames, "LinkButton--".concat(size), size), _defineProperty$1(_classNames, 'LinkButton--default', !subtle), _defineProperty$1(_classNames, 'LinkButton--subtle', subtle), _defineProperty$1(_classNames, "LinkButton--iconAlign-".concat(iconAlign), children && iconAlign), _defineProperty$1(_classNames, "".concat(className), className), _classNames));
   var iconClass = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'LinkButton-icon', true), _defineProperty$1(_classNames2, "LinkButton-icon--".concat(iconAlign), children && iconAlign), _classNames2));
@@ -22958,7 +23034,7 @@ LinkButton.defaultProps = {
   iconAlign: 'left'
 };
 
-var _excluded$j = ["children", "disabled", "className", "zIndex", "onClick"];
+var _excluded$r = ["children", "disabled", "className", "zIndex", "onClick"];
 var ActionCard = function ActionCard(props) {
   var _classNames;
 
@@ -22967,12 +23043,18 @@ var ActionCard = function ActionCard(props) {
       className = props.className,
       zIndex = props.zIndex,
       onClick = props.onClick,
-      rest = _objectWithoutProperties(props, _excluded$j);
+      rest = _objectWithoutProperties(props, _excluded$r);
 
-  var classes = classnames((_classNames = {}, _defineProperty$1(_classNames, 'ActionCard', true), _defineProperty$1(_classNames, 'ActionCard--disabled', disabled), _classNames), className);
+  var classes = classnames((_classNames = {}, _defineProperty$1(_classNames, 'ActionCard', true), _defineProperty$1(_classNames, 'ActionCard--default', !disabled), _defineProperty$1(_classNames, 'ActionCard--disabled', disabled), _classNames), className);
 
   var onKeyDownHandler = function onKeyDownHandler(event) {
-    if (event.key === 'Enter' && onClick) {
+    if (event.key === 'Enter' && onClick && !disabled) {
+      onClick(event);
+    }
+  };
+
+  var onClickHandler = function onClickHandler(event) {
+    if (!disabled && onClick) {
       onClick(event);
     }
   };
@@ -22982,7 +23064,7 @@ var ActionCard = function ActionCard(props) {
     role: "link",
     "data-test": "DesignSystem-ActionCard",
     className: classes,
-    onClick: onClick,
+    onClick: onClickHandler,
     onKeyDown: onKeyDownHandler
   }, rest), disabled && /*#__PURE__*/React.createElement("div", {
     style: {
@@ -23069,7 +23151,7 @@ function useSingleSelect() {
   };
 }
 
-var _excluded$i = ["children", "onClick", "disabled", "id", "cardValue", "overlayZIndex", "selected", "className"];
+var _excluded$q = ["children", "onClick", "disabled", "id", "cardValue", "overlayZIndex", "selected", "className"];
 var SelectionCard = function SelectionCard(props) {
   var _classNames;
 
@@ -23081,16 +23163,18 @@ var SelectionCard = function SelectionCard(props) {
       overlayZIndex = props.overlayZIndex,
       selected = props.selected,
       className = props.className,
-      rest = _objectWithoutProperties(props, _excluded$i);
+      rest = _objectWithoutProperties(props, _excluded$q);
 
-  var classes = classnames((_classNames = {}, _defineProperty$1(_classNames, 'Selection-card', true), _defineProperty$1(_classNames, 'Selection-card--selected', selected), _defineProperty$1(_classNames, 'Selection-card--disabled', disabled && !selected), _defineProperty$1(_classNames, 'Selection-card--selected-disabled', disabled && selected), _classNames), className);
+  var classes = classnames((_classNames = {}, _defineProperty$1(_classNames, 'Selection-card', true), _defineProperty$1(_classNames, 'Selection-card--default', !disabled), _defineProperty$1(_classNames, 'Selection-card--selected', selected && !disabled), _defineProperty$1(_classNames, 'Selection-card--disabled', disabled), _defineProperty$1(_classNames, 'Selection-card--default-disabled', disabled && !selected), _defineProperty$1(_classNames, 'Selection-card--selected-disabled', disabled && selected), _classNames), className);
 
   var onClickHandler = function onClickHandler(event) {
-    onClick && onClick(event, id, cardValue);
+    if (!disabled && onClick) {
+      onClick(event, id, cardValue);
+    }
   };
 
   var onKeyDownHandler = function onKeyDownHandler(event) {
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' && !disabled) {
       onClickHandler(event);
     }
   };
@@ -23098,7 +23182,7 @@ var SelectionCard = function SelectionCard(props) {
   return /*#__PURE__*/React.createElement("div", _extends$2({
     role: "checkbox",
     "aria-checked": selected,
-    tabIndex: 0,
+    tabIndex: disabled ? -1 : 0,
     onKeyDown: onKeyDownHandler,
     onClick: function onClick(event) {
       return onClickHandler(event);
@@ -23994,7 +24078,7 @@ var NestedList = function NestedList(props) {
   }, nestedBody));
 };
 
-var _excluded$h = ["nestedBody", "expanded", "id", "onClick", "value", "tagName"];
+var _excluded$p = ["nestedBody", "expanded", "id", "onClick", "value", "tagName"];
 var ListboxItem = function ListboxItem(props) {
   var nestedBody = props.nestedBody,
       expanded = props.expanded,
@@ -24003,7 +24087,7 @@ var ListboxItem = function ListboxItem(props) {
       value = props.value,
       _props$tagName = props.tagName,
       Tag = _props$tagName === void 0 ? 'li' : _props$tagName,
-      rest = _objectWithoutProperties(props, _excluded$h);
+      rest = _objectWithoutProperties(props, _excluded$p);
 
   var contextProp = React.useContext(ListboxContext);
   var showDivider = contextProp.showDivider,
@@ -24033,7 +24117,7 @@ ListboxItem.defaultProps = {
   tagName: 'li'
 };
 
-var _excluded$g = ["children", "className", "draggable", "size", "type", "showDivider", "tagName"];
+var _excluded$o = ["children", "className", "draggable", "size", "type", "showDivider", "tagName"];
 var ListboxContext = /*#__PURE__*/React.createContext({
   size: 'standard',
   type: 'resource',
@@ -24049,7 +24133,7 @@ var Listbox = function Listbox(props) {
       type = props.type,
       showDivider = props.showDivider,
       Tag = props.tagName,
-      rest = _objectWithoutProperties(props, _excluded$g);
+      rest = _objectWithoutProperties(props, _excluded$o);
 
   var baseProps = extractBaseProps(props);
   var classes = classnames({
@@ -24243,17 +24327,20 @@ var TextField = function TextField(props) {
 };
 TextField.displayName = 'TextField';
 
-var _excluded$f = ["icon", "image"];
+var _excluded$n = ["icon", "image", "disabled"];
 var SelectionAvatar = function SelectionAvatar(props) {
   var icon = props.icon,
       image = props.image,
-      rest = _objectWithoutProperties(props, _excluded$f);
+      disabled = props.disabled,
+      rest = _objectWithoutProperties(props, _excluded$n);
 
+  var avatarClassName = classnames(_defineProperty$1({}, 'cursor-pointer', !disabled));
   return /*#__PURE__*/React.createElement(Avatar, _extends$2({
     role: "checkbox"
   }, rest, {
+    disabled: disabled,
     withTooltip: true,
-    className: "cursor-pointer"
+    className: avatarClassName
   }), image || icon);
 };
 
@@ -24271,6 +24358,10 @@ var SelectionAvatarsWrapper = function SelectionAvatarsWrapper(props) {
       onSelect = contextProp.onSelect;
 
   var onClickHandler = function onClickHandler(item) {
+    if (item.disabled) {
+      return;
+    }
+
     var list = selectedItems;
 
     if (selectedItems !== null && selectedItems !== void 0 && selectedItems.includes(item)) {
@@ -24288,6 +24379,10 @@ var SelectionAvatarsWrapper = function SelectionAvatarsWrapper(props) {
   };
 
   var handleKeyDown = function handleKeyDown(event, item) {
+    if (item.disabled) {
+      return;
+    }
+
     switch (event.key) {
       case 'Enter':
         onClickHandler(item);
@@ -24302,8 +24397,10 @@ var SelectionAvatarsWrapper = function SelectionAvatarsWrapper(props) {
         firstName = avatarItem.firstName,
         lastName = avatarItem.lastName,
         icon = avatarItem.icon,
-        image = avatarItem.image;
-    var GroupClass = classnames((_classNames = {}, _defineProperty$1(_classNames, "SelectionAvatarGroup-item", true), _defineProperty$1(_classNames, "SelectionAvatarGroup-item--selected", selectedItems === null || selectedItems === void 0 ? void 0 : selectedItems.includes(avatarItem)), _classNames));
+        image = avatarItem.image,
+        disabled = avatarItem.disabled,
+        tooltipSuffix = avatarItem.tooltipSuffix;
+    var GroupClass = classnames((_classNames = {}, _defineProperty$1(_classNames, "SelectionAvatarGroup-item", true), _defineProperty$1(_classNames, "SelectionAvatarGroup-item--active", !disabled), _defineProperty$1(_classNames, "SelectionAvatarGroup-item--selected", selectedItems === null || selectedItems === void 0 ? void 0 : selectedItems.includes(avatarItem)), _classNames));
 
     if (avatarRenderer) {
       return avatarRenderer(avatarItem);
@@ -24313,7 +24410,7 @@ var SelectionAvatarsWrapper = function SelectionAvatarsWrapper(props) {
       key: index,
       className: "SelectionAvatarGroup-wrapper"
     }, /*#__PURE__*/React.createElement("div", {
-      tabIndex: 0,
+      tabIndex: -1,
       role: "checkbox",
       style: avatarStyle,
       className: GroupClass,
@@ -24333,7 +24430,9 @@ var SelectionAvatarsWrapper = function SelectionAvatarsWrapper(props) {
       withTooltip: true,
       tooltipPosition: tooltipPosition,
       icon: icon,
-      image: image
+      image: image,
+      disabled: disabled,
+      tooltipSuffix: tooltipSuffix
     })));
   }));
 };
@@ -24405,7 +24504,7 @@ var AvatarSelectionCount = function AvatarSelectionCount(props) {
       selectedItemCount = _React$useState2[0],
       setSelectedItemCount = _React$useState2[1];
 
-  var wrapperClassName = classnames((_classNames = {}, _defineProperty$1(_classNames, 'SelectionAvatarCount-wrapper', true), _defineProperty$1(_classNames, 'SelectionAvatarCount--selected', selectedItemCount > 0), _classNames));
+  var wrapperClassName = classnames((_classNames = {}, _defineProperty$1(_classNames, 'SelectionAvatarCount-wrapper', true), _defineProperty$1(_classNames, "SelectionAvatarGroup-item", true), _defineProperty$1(_classNames, 'SelectionAvatarCount--selected', selectedItemCount > 0), _classNames));
   React.useEffect(function () {
     var selectedList = hiddenAvatarList.filter(function (data1) {
       return selectedItems === null || selectedItems === void 0 ? void 0 : selectedItems.some(function (data2) {
@@ -24428,6 +24527,7 @@ var AvatarSelectionCount = function AvatarSelectionCount(props) {
     "aria-controls": popoverId,
     ref: triggerRef
   }, /*#__PURE__*/React.createElement(Avatar, {
+    tabIndex: -1,
     size: size,
     appearance: "secondary",
     className: "SelectionAvatarCount cursor-pointer"
@@ -24548,11 +24648,12 @@ AvatarSelectionList.defaultProps = {
   tagName: 'ul'
 };
 
-var _excluded$e = ["children", "value"];
+var _excluded$m = ["children", "value", "disabled"];
 var AvatarSelectionOption = function AvatarSelectionOption(props) {
   var children = props.children,
       value = props.value,
-      rest = _objectWithoutProperties(props, _excluded$e);
+      disabled = props.disabled,
+      rest = _objectWithoutProperties(props, _excluded$m);
 
   var contextProp = React.useContext(AvatarSelectionContext);
   var setSelectedItems = contextProp.setSelectedItems,
@@ -24569,6 +24670,11 @@ var AvatarSelectionOption = function AvatarSelectionOption(props) {
 
   var onSelectHandler = function onSelectHandler(event, avatarData) {
     event.preventDefault();
+
+    if (disabled) {
+      return;
+    }
+
     var list = selectedItems ? _toConsumableArray(selectedItems) : [];
 
     if (selectedItems !== null && selectedItems !== void 0 && selectedItems.includes(avatarData)) {
@@ -24597,6 +24703,7 @@ var AvatarSelectionOption = function AvatarSelectionOption(props) {
     },
     selected: selectedItems === null || selectedItems === void 0 ? void 0 : selectedItems.includes(value),
     "data-test": "DesignSystem-AvatarSelection--Option",
+    disabled: disabled,
     tabIndex: -1
   }, rest), children);
 };
@@ -24638,8 +24745,10 @@ var AvatarSelectionItem = function AvatarSelectionItem(props) {
   var _avatarData$firstName = avatarData.firstName,
       firstName = _avatarData$firstName === void 0 ? '' : _avatarData$firstName,
       _avatarData$lastName = avatarData.lastName,
-      lastName = _avatarData$lastName === void 0 ? '' : _avatarData$lastName;
-  var name = "".concat(firstName, " ").concat(lastName);
+      lastName = _avatarData$lastName === void 0 ? '' : _avatarData$lastName,
+      disabled = avatarData.disabled,
+      tooltipSuffix = avatarData.tooltipSuffix;
+  var name = "".concat(firstName || '', " ").concat(lastName || '', " ").concat(tooltipSuffix || '') || '';
   return /*#__PURE__*/React.createElement(Tooltip, {
     showOnTruncation: true,
     tooltip: name,
@@ -24647,6 +24756,7 @@ var AvatarSelectionItem = function AvatarSelectionItem(props) {
     open: showTooltip
   }, /*#__PURE__*/React.createElement(AvatarSelectionOption, {
     value: avatarData,
+    disabled: disabled,
     onFocus: function onFocus() {
       setShowTooltip(true);
     },
@@ -24992,12 +25102,12 @@ var navigateOptions$2 = function navigateOptions(direction, focusedOption, setFo
   });
 };
 
-var _excluded$d = ["children", "option", "onClick"];
+var _excluded$l = ["children", "option", "onClick"];
 var ComboboxOption = function ComboboxOption(props) {
   var children = props.children,
       option = props.option,
       onClick = props.onClick,
-      rest = _objectWithoutProperties(props, _excluded$d);
+      rest = _objectWithoutProperties(props, _excluded$l);
 
   var contextProp = React.useContext(ComboboxContext);
   var onOptionClick = contextProp.onOptionClick,
@@ -25143,7 +25253,7 @@ var InputBox = function InputBox(props) {
   }));
 };
 
-var _excluded$c = ["chipOptions", "allowDuplicates", "disabled", "error", "placeholder", "defaultValue", "value", "className", "autoFocus", "onChange", "onBlur", "onFocus", "onKeyDown", "onInputChange", "tabIndex", "role"],
+var _excluded$k = ["chipOptions", "allowDuplicates", "disabled", "error", "placeholder", "defaultValue", "value", "className", "autoFocus", "onChange", "onBlur", "onFocus", "onKeyDown", "onInputChange", "tabIndex", "role"],
     _excluded2 = ["type", "onClick"];
 var keyCodes = {
   BACKSPACE: 'Backspace',
@@ -25169,7 +25279,7 @@ var MultiSelectTrigger = function MultiSelectTrigger(props) {
       onInputChange = props.onInputChange,
       tabIndex = props.tabIndex,
       role = props.role,
-      rest = _objectWithoutProperties(props, _excluded$c);
+      rest = _objectWithoutProperties(props, _excluded$k);
 
   var inputRef = /*#__PURE__*/React.createRef();
 
@@ -25412,12 +25522,12 @@ var ChipInputBox = function ChipInputBox(props) {
   }));
 };
 
-var _excluded$b = ["multiSelect", "chipValue", "value"];
+var _excluded$j = ["multiSelect", "chipValue", "value"];
 var ComboboxTrigger = function ComboboxTrigger(props) {
   var multiSelect = props.multiSelect,
       chipValue = props.chipValue,
       value = props.value,
-      rest = _objectWithoutProperties(props, _excluded$b);
+      rest = _objectWithoutProperties(props, _excluded$j);
 
   if (multiSelect) {
     var icon = props.icon,
@@ -25447,6 +25557,7 @@ var Combobox = function Combobox(props) {
       multiSelect = props.multiSelect,
       className = props.className,
       maxHeight = props.maxHeight,
+      minHeight = props.minHeight,
       width = props.width,
       value = props.value,
       placeholder = props.placeholder,
@@ -25462,7 +25573,8 @@ var Combobox = function Combobox(props) {
       clearButton = props.clearButton,
       onSearch = props.onSearch,
       onKeyDown = props.onKeyDown,
-      onKeyUp = props.onKeyUp;
+      onKeyUp = props.onKeyUp,
+      computeStyles = props.computeStyles;
 
   var _React$useState = React.useState(),
       _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -25522,6 +25634,16 @@ var Combobox = function Combobox(props) {
 
   var inputTriggerRef = React.useRef();
   var popoverId = "DesignSystem-Combobox--Popover-".concat(uidGenerator());
+  var defaultPopoverStyle = {
+    fn: function fn(data) {
+      return _objectSpread2(_objectSpread2({}, data), {}, {
+        styles: _objectSpread2(_objectSpread2({}, data.styles), {}, {
+          position: 'fixed'
+        })
+      });
+    }
+  };
+  var popoverComputeStyle = computeStyles !== null && computeStyles !== void 0 ? computeStyles : defaultPopoverStyle;
   React.useEffect(function () {
     var _triggerRef$current;
 
@@ -25531,6 +25653,7 @@ var Combobox = function Combobox(props) {
     };
     var wrapperStyle = {
       maxHeight: maxHeight || 'var(--spacing-9)',
+      minHeight: minHeight,
       overflowY: 'auto',
       boxSizing: 'border-box'
     };
@@ -25642,7 +25765,8 @@ var Combobox = function Combobox(props) {
     triggerClass: "d-block",
     customStyle: popoverStyle,
     onToggle: onToggleHandler,
-    trigger: /*#__PURE__*/React.createElement(ComboboxTrigger, triggerProps)
+    trigger: /*#__PURE__*/React.createElement(ComboboxTrigger, triggerProps),
+    computeStyles: popoverComputeStyle
   }, /*#__PURE__*/React.createElement("div", {
     style: wrapperStyle,
     ref: listRef,
@@ -25654,7 +25778,7 @@ Combobox.Option = ComboboxOption;
 
 var SelectContext = /*#__PURE__*/React.createContext({});
 
-var _excluded$a = ["children"];
+var _excluded$i = ["children"];
 var SelectList = function SelectList(props) {
   var contextProp = React.useContext(SelectContext);
   var withSearch = contextProp.withSearch,
@@ -25663,7 +25787,7 @@ var SelectList = function SelectList(props) {
       multiSelect = contextProp.multiSelect;
 
   var children = props.children,
-      rest = _objectWithoutProperties(props, _excluded$a);
+      rest = _objectWithoutProperties(props, _excluded$i);
 
   var searchInputHeight = 33;
   var wrapperStyle = {
@@ -25672,12 +25796,11 @@ var SelectList = function SelectList(props) {
     minHeight: minHeight
   };
   return /*#__PURE__*/React.createElement(Listbox, _extends$2({
+    style: wrapperStyle,
     "aria-label": "Options item list",
     "aria-multiselectable": multiSelect,
     className: "my-3"
-  }, rest), /*#__PURE__*/React.createElement("div", {
-    style: wrapperStyle
-  }, children));
+  }, rest), children);
 };
 SelectList.defaultProps = {
   type: 'option',
@@ -25720,7 +25843,9 @@ var removeOrAddToList = function removeOrAddToList(targetObject, prevList) {
 };
 var computeValue = function computeValue(multiSelect, selectValue, setLabel) {
   if (!multiSelect) {
-    return (selectValue === null || selectValue === void 0 ? void 0 : selectValue.label.trim()) || '';
+    var _selectValue$label;
+
+    return (selectValue === null || selectValue === void 0 ? void 0 : (_selectValue$label = selectValue.label) === null || _selectValue$label === void 0 ? void 0 : _selectValue$label.trim()) || '';
   }
 
   var label = setLabel === null || setLabel === void 0 ? void 0 : setLabel(selectValue.length);
@@ -25861,8 +25986,10 @@ var handleInputKeyDown = function handleInputKeyDown(event, listRef, setFocusedO
   setFocusedOption && setFocusedOption(targetOption);
 };
 
-var _excluded$9 = ["children", "option", "checkedState", "onClick", "withCheckbox", "disabled"];
+var _excluded$h = ["children", "option", "checkedState", "onClick", "withCheckbox", "disabled"];
 var SelectOption = function SelectOption(props) {
+  var _classNames2;
+
   var children = props.children,
       option = props.option,
       checkedState = props.checkedState,
@@ -25870,7 +25997,7 @@ var SelectOption = function SelectOption(props) {
       _props$withCheckbox = props.withCheckbox,
       withCheckbox = _props$withCheckbox === void 0 ? true : _props$withCheckbox,
       disabled = props.disabled,
-      rest = _objectWithoutProperties(props, _excluded$9);
+      rest = _objectWithoutProperties(props, _excluded$h);
 
   var contextProp = React.useContext(SelectContext);
   var onOptionClick = contextProp.onOptionClick,
@@ -25903,6 +26030,8 @@ var SelectOption = function SelectOption(props) {
 
   var checked = checkedState === 'checked' || elementExist(option, selectValue) !== -1;
   var indeterminate = checkedState === 'indeterminate';
+  var optionItemClass = classnames(_defineProperty$1({}, 'Select-option', true));
+  var textClass = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'Select-option--text', true), _defineProperty$1(_classNames2, 'pt-2', multiSelect), _classNames2));
 
   var onKeyDownHandler = function onKeyDownHandler(event) {
     handleKeyDown$2(event, focusedOption, setFocusedOption, setHighlightFirstItem, setHighlightLastItem, listRef, withSearch, setOpenPopover, triggerRef);
@@ -25921,24 +26050,24 @@ var SelectOption = function SelectOption(props) {
     disabled: disabled,
     "data-test": "DesignSystem-Select-Option"
   }, rest), /*#__PURE__*/React.createElement("div", {
-    className: "d-flex align-items-center"
+    className: optionItemClass
   }, multiSelect && withCheckbox && /*#__PURE__*/React.createElement(Checkbox, {
     tabIndex: -1,
     "aria-checked": indeterminate ? 'mixed' : checked,
     checked: checked,
     indeterminate: indeterminate
   }), /*#__PURE__*/React.createElement("div", {
-    className: multiSelect ? 'Select-trigger-text pt-2' : 'Select-trigger-text'
+    className: textClass
   }, children)));
 };
 SelectOption.defaultProps = {
   withCheckbox: true
 };
 
-var _excluded$8 = ["triggerSize", "placeholder", "withClearButton", "icon", "disabled", "inlineLabel", "iconType", "onClear", "setLabel"];
+var _excluded$g = ["triggerSize", "placeholder", "withClearButton", "icon", "disabled", "inlineLabel", "iconType", "onClear", "setLabel"];
 
 var SelectTrigger = function SelectTrigger(props) {
-  var _classNames;
+  var _classNames, _classNames2;
 
   var triggerSize = props.triggerSize,
       placeholder = props.placeholder,
@@ -25949,7 +26078,7 @@ var SelectTrigger = function SelectTrigger(props) {
       iconType = props.iconType,
       onClear = props.onClear,
       setLabel = props.setLabel,
-      rest = _objectWithoutProperties(props, _excluded$8);
+      rest = _objectWithoutProperties(props, _excluded$g);
 
   var contextProp = React.useContext(SelectContext);
   var elementRef = React.useRef(null);
@@ -25962,12 +26091,16 @@ var SelectTrigger = function SelectTrigger(props) {
       setOpenPopover = contextProp.setOpenPopover,
       setHighlightFirstItem = contextProp.setHighlightFirstItem,
       setHighlightLastItem = contextProp.setHighlightLastItem,
-      triggerRef = contextProp.triggerRef;
+      triggerRef = contextProp.triggerRef,
+      width = contextProp.width;
   var buttonDisabled = disabled ? 'disabled' : 'default';
   var trimmedPlaceholder = placeholder === null || placeholder === void 0 ? void 0 : placeholder.trim();
   var displayValue = computeValue(multiSelect, selectValue, setLabel);
   var value = isOptionSelected && displayValue.length > 0 ? displayValue : trimmedPlaceholder;
   var iconName = openPopover ? 'keyboard_arrow_up' : 'keyboard_arrow_down';
+  var triggerStyle = {
+    width: width
+  };
 
   var onClearHandler = function onClearHandler(event) {
     event.stopPropagation();
@@ -25984,7 +26117,7 @@ var SelectTrigger = function SelectTrigger(props) {
   };
 
   var buttonClass = classnames((_classNames = {}, _defineProperty$1(_classNames, 'Button', true), _defineProperty$1(_classNames, 'Select-trigger', true), _defineProperty$1(_classNames, "Select-trigger--".concat(triggerSize), triggerSize), _defineProperty$1(_classNames, 'Select-trigger--placeholder', !isOptionSelected), _defineProperty$1(_classNames, 'Select-trigger--icon', icon), _defineProperty$1(_classNames, 'Select-trigger--open', openPopover), _classNames));
-  var textClass = classnames(_defineProperty$1({}, 'Select-trigger-text', true));
+  var textClass = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'Text', true), _defineProperty$1(_classNames2, 'Text--regular', true), _defineProperty$1(_classNames2, 'Select-trigger--text', true), _classNames2));
   return /*#__PURE__*/React.createElement(Tooltip, {
     showOnTruncation: true,
     showTooltip: !openPopover,
@@ -26001,6 +26134,7 @@ var SelectTrigger = function SelectTrigger(props) {
     className: buttonClass,
     disabled: disabled,
     tabIndex: 0,
+    style: triggerStyle,
     "aria-haspopup": "listbox",
     "aria-expanded": openPopover,
     "aria-label": "trigger",
@@ -26015,7 +26149,7 @@ var SelectTrigger = function SelectTrigger(props) {
     className: "d-flex align-items-center mr-4",
     name: icon,
     type: iconType
-  }), value && /*#__PURE__*/React.createElement(Text, {
+  }), value && /*#__PURE__*/React.createElement("span", {
     ref: elementRef,
     className: textClass
   }, value)), isOptionSelected && withClearButton && /*#__PURE__*/React.createElement(Icon, {
@@ -26040,7 +26174,7 @@ SelectTrigger.defaultProps = {
   withClearButton: true
 };
 
-var _excluded$7 = ["onChange", "onClear"];
+var _excluded$f = ["onChange", "onClear"];
 var SearchInput = function SearchInput(props) {
   var contextProp = React.useContext(SelectContext);
   var setWithSearch = contextProp.setWithSearch,
@@ -26052,7 +26186,7 @@ var SearchInput = function SearchInput(props) {
 
   var onChange = props.onChange,
       onClear = props.onClear,
-      rest = _objectWithoutProperties(props, _excluded$7);
+      rest = _objectWithoutProperties(props, _excluded$f);
 
   React.useEffect(function () {
     setWithSearch === null || setWithSearch === void 0 ? void 0 : setWithSearch(true);
@@ -26086,7 +26220,7 @@ var SearchInput = function SearchInput(props) {
   })));
 };
 
-var _excluded$6 = ["title", "description", "children"];
+var _excluded$e = ["title", "description", "children"];
 var SelectEmptyTemplate = function SelectEmptyTemplate(props) {
   var contextProp = React.useContext(SelectContext);
   var maxHeight = contextProp.maxHeight,
@@ -26095,7 +26229,7 @@ var SelectEmptyTemplate = function SelectEmptyTemplate(props) {
   var title = props.title,
       description = props.description,
       children = props.children,
-      rest = _objectWithoutProperties(props, _excluded$6);
+      rest = _objectWithoutProperties(props, _excluded$e);
 
   var searchInputHeight = 33;
   var wrapperStyle = {
@@ -26125,10 +26259,10 @@ var SelectEmptyTemplate = function SelectEmptyTemplate(props) {
   }, description), children && children));
 };
 
-var _excluded$5 = ["children"];
+var _excluded$d = ["children"];
 var SelectFooter = function SelectFooter(props) {
   var children = props.children,
-      rest = _objectWithoutProperties(props, _excluded$5);
+      rest = _objectWithoutProperties(props, _excluded$d);
 
   return /*#__PURE__*/React.createElement("div", _extends$2({
     className: "Select-buttonWrapper"
@@ -26148,7 +26282,9 @@ var Select = /*#__PURE__*/React.forwardRef(function (props, ref) {
       multiSelect = _props$multiSelect === void 0 ? false : _props$multiSelect,
       onOutsideClick = props.onOutsideClick,
       triggerOptions = props.triggerOptions,
-      popoverWidth = props.popoverWidth;
+      popoverWidth = props.popoverWidth,
+      trigger = props.trigger,
+      onToggle = props.onToggle;
 
   var _React$useState = React.useState(false),
       _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -26197,18 +26333,33 @@ var Select = /*#__PURE__*/React.forwardRef(function (props, ref) {
       popoverStyle = _React$useState16[0],
       setPopoverStyle = _React$useState16[1];
 
-  var triggerStyle = {
+  var baseProps = extractBaseProps(props);
+  var WrapperStyle = trigger ? {} : {
     width: width
   };
+
+  var getTriggerElement = function getTriggerElement() {
+    if (trigger) {
+      return /*#__PURE__*/React.cloneElement(trigger, {
+        ref: triggerRef
+      });
+    }
+
+    return /*#__PURE__*/React.createElement(SelectTrigger, _extends$2({
+      "aria-controls": "select-listbox"
+    }, triggerOptions));
+  };
+
   React.useEffect(function () {
     var _triggerRef$current;
 
     // if popover width is not provided explicitly, apply the trigger width to popover width
-    if (!popoverWidth && (_triggerRef$current = triggerRef.current) !== null && _triggerRef$current !== void 0 && _triggerRef$current.clientWidth) {
-      var _triggerRef$current2;
+    var MIN_WIDTH = 176;
+    var triggerWidth = (_triggerRef$current = triggerRef.current) === null || _triggerRef$current === void 0 ? void 0 : _triggerRef$current.clientWidth;
 
+    if (!popoverWidth && triggerWidth) {
       setPopoverStyle(_objectSpread2(_objectSpread2({}, popoverStyle), {}, {
-        width: (_triggerRef$current2 = triggerRef.current) === null || _triggerRef$current2 === void 0 ? void 0 : _triggerRef$current2.clientWidth
+        width: trigger ? Math.max(triggerWidth || 0, MIN_WIDTH) : triggerWidth
       }));
     }
   }, []);
@@ -26258,16 +26409,20 @@ var Select = /*#__PURE__*/React.forwardRef(function (props, ref) {
   React.useEffect(function () {
     if (value) {
       setSelectValue(value);
-      setIsOptionSelected(Array.isArray(value) ? value.length > 0 : value.value.trim().length > 0);
+      setIsOptionSelected(Array.isArray(value) ? value.length > 0 : value && 'value' in value);
     }
   }, [value]);
 
   var onToggleHandler = function onToggleHandler(open) {
+    if (onToggle) {
+      onToggle(open);
+    }
+
     if (triggerOptions && triggerOptions.disabled) {
       setOpenPopover(false);
     } else {
-      setHighlightFirstItem(open);
       setOpenPopover(open);
+      setHighlightFirstItem(open);
     }
   };
 
@@ -26303,22 +26458,21 @@ var Select = /*#__PURE__*/React.forwardRef(function (props, ref) {
   };
   return /*#__PURE__*/React.createElement(SelectContext.Provider, {
     value: contextProp
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", _extends$2({
     "data-test": "DesignSystem-Select",
+    style: WrapperStyle,
     "aria-haspopup": "listbox",
-    "aria-expanded": openPopover,
-    style: triggerStyle
-  }, /*#__PURE__*/React.createElement(Popover, {
+    "aria-expanded": openPopover
+  }, baseProps), /*#__PURE__*/React.createElement(Popover, {
     open: openPopover,
     onToggle: onToggleHandler,
     className: "mt-3",
     triggerClass: "d-block",
+    position: "bottom-start",
     customStyle: popoverStyle,
     boundaryElement: boundaryElement,
     appendToBody: appendToBody,
-    trigger: /*#__PURE__*/React.createElement(SelectTrigger, _extends$2({
-      "aria-controls": "select-listbox"
-    }, triggerOptions))
+    trigger: getTriggerElement()
   }, /*#__PURE__*/React.createElement(OutsideClick, {
     onOutsideClick: onOutsideClickHandler
   }, /*#__PURE__*/React.createElement("div", {
@@ -26339,12 +26493,12 @@ Select.SearchInput = SearchInput;
 Select.EmptyTemplate = SelectEmptyTemplate;
 Select.Footer = SelectFooter;
 
-var _excluded$4 = ["label", "children", "showDivider"];
+var _excluded$c = ["label", "children", "showDivider"];
 var MenuGroup = function MenuGroup(props) {
   var label = props.label,
       children = props.children,
       showDivider = props.showDivider,
-      rest = _objectWithoutProperties(props, _excluded$4);
+      rest = _objectWithoutProperties(props, _excluded$c);
 
   if (label) {
     return /*#__PURE__*/React__default.createElement("div", _extends$2({
@@ -26463,14 +26617,14 @@ var navigateSubMenu = function navigateSubMenu(isSubMenuTrigger, direction, subL
 
 var SubMenuContext = /*#__PURE__*/React.createContext({});
 
-var _excluded$3 = ["children", "className", "onClick", "disabled", "onFocus"];
+var _excluded$b = ["children", "className", "onClick", "disabled", "onFocus"];
 var MenuItem = function MenuItem(props) {
   var children = props.children,
       className = props.className,
       onClick = props.onClick,
       disabled = props.disabled,
       onFocus = props.onFocus,
-      rest = _objectWithoutProperties(props, _excluded$3);
+      rest = _objectWithoutProperties(props, _excluded$b);
 
   var contextProp = React__default.useContext(MenuContext);
   var subMenuContextProp = React__default.useContext(SubMenuContext);
@@ -26546,10 +26700,10 @@ MenuItem.defaultProps = {
   tagName: 'a'
 };
 
-var _excluded$2 = ["children"];
+var _excluded$a = ["children"];
 var MenuList = function MenuList(props) {
   var children = props.children,
-      rest = _objectWithoutProperties(props, _excluded$2);
+      rest = _objectWithoutProperties(props, _excluded$a);
 
   return /*#__PURE__*/React__default.createElement(Listbox, _extends$2({
     "data-test": "DesignSystem-Menu-List"
@@ -26697,7 +26851,7 @@ var SubMenu = function SubMenu(props) {
   }, subMenuElement);
 };
 
-var _excluded$1 = ["children", "width", "minHeight", "maxHeight", "className", "open"];
+var _excluded$9 = ["children", "width", "minHeight", "maxHeight", "className", "open"];
 var Menu = function Menu(props) {
   var children = props.children,
       width = props.width,
@@ -26705,7 +26859,7 @@ var Menu = function Menu(props) {
       maxHeight = props.maxHeight,
       className = props.className,
       open = props.open,
-      rest = _objectWithoutProperties(props, _excluded$1);
+      rest = _objectWithoutProperties(props, _excluded$9);
 
   var _React$useState = React__default.useState(open),
       _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -26804,16 +26958,19 @@ Menu.defaultProps = {
   position: 'bottom-start'
 };
 
-var img$1 = "data:image/svg+xml,%3csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M10 0C10 5.52285 5.52285 10 0 10C5.52285 10 10 14.4772 10 20C10 14.4772 14.4772 10 20 10C14.4772 10 10 5.52285 10 0ZM20 14C20 17.3137 17.3137 20 14 20C17.3137 20 20 22.6863 20 26C20 22.6863 22.6863 20 26 20C22.6863 20 20 17.3137 20 14Z' fill='%232F2F2F'/%3e%3c/svg%3e";
+var img$4 = "data:image/svg+xml,%3csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M10 0C10 5.52285 5.52285 10 0 10C5.52285 10 10 14.4772 10 20C10 14.4772 14.4772 10 20 10C14.4772 10 10 5.52285 10 0ZM20 14C20 17.3137 17.3137 20 14 20C17.3137 20 20 22.6863 20 26C20 22.6863 22.6863 20 26 20C22.6863 20 20 17.3137 20 14Z' fill='%231f1f1f'/%3e%3c/svg%3e";
 
-var img = "data:image/svg+xml,%3csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M10 0C10 5.52285 5.52285 10 0 10C5.52285 10 10 14.4772 10 20C10 14.4772 14.4772 10 20 10C14.4772 10 10 5.52285 10 0ZM20 14C20 17.3137 17.3137 20 14 20C17.3137 20 20 22.6863 20 26C20 22.6863 22.6863 20 26 20C22.6863 20 20 17.3137 20 14Z' fill='white'/%3e%3c/svg%3e";
+var img$3 = "data:image/svg+xml,%3csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M10 0C10 5.52285 5.52285 10 0 10C5.52285 10 10 14.4772 10 20C10 14.4772 14.4772 10 20 10C14.4772 10 10 5.52285 10 0ZM20 14C20 17.3137 17.3137 20 14 20C17.3137 20 20 22.6863 20 26C20 22.6863 22.6863 20 26 20C22.6863 20 20 17.3137 20 14Z' fill='%23A6A6A6'/%3e%3c/svg%3e";
 
-var _excluded = ["appearance", "className", "children"];
+var img$2 = "data:image/svg+xml,%3csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M10 0C10 5.52285 5.52285 10 0 10C5.52285 10 10 14.4772 10 20C10 14.4772 14.4772 10 20 10C14.4772 10 10 5.52285 10 0ZM20 14C20 17.3137 17.3137 20 14 20C17.3137 20 20 22.6863 20 26C20 22.6863 22.6863 20 26 20C22.6863 20 20 17.3137 20 14Z' fill='white'/%3e%3c/svg%3e";
+
+var _excluded$8 = ["appearance", "className", "children", "disabled"];
 var AIButton = function AIButton(props) {
   var appearance = props.appearance,
       className = props.className,
       children = props.children,
-      rest = _objectWithoutProperties(props, _excluded);
+      disabled = props.disabled,
+      rest = _objectWithoutProperties(props, _excluded$8);
 
   var buttonClassNames = classnames({
     AIButton: true,
@@ -26823,10 +26980,11 @@ var AIButton = function AIButton(props) {
   var IconClassNames = classnames({
     'AIButton-Icon': true
   });
-  var buttonIcon = appearance === 'primary' ? img : img$1;
+  var buttonIcon = appearance === 'primary' ? img$2 : disabled ? img$3 : img$4;
   return /*#__PURE__*/React.createElement("button", _extends$2({
     className: buttonClassNames,
-    "data-test": "DesignSystem-AI-Button"
+    "data-test": "DesignSystem-AI-Button",
+    disabled: disabled
   }, rest), /*#__PURE__*/React.createElement("img", {
     src: buttonIcon,
     alt: "Button Icon",
@@ -26841,6 +26999,4361 @@ AIButton.defaultProps = {
   type: 'button'
 };
 
-var version = "2.34.0";
+var img$1 = "data:image/svg+xml,%3csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M18 3C18 11.2843 11.2843 18 3 18C11.2843 18 18 24.7157 18 33C18 24.7157 24.7157 18 33 18C24.7157 18 18 11.2843 18 3ZM33 24C33 28.9706 28.9706 33 24 33C28.9706 33 33 37.0294 33 42C33 37.0294 37.0294 33 42 33C37.0294 33 33 28.9706 33 24Z' fill='url(%23paint0_linear_3166_11159)'/%3e%3cdefs%3e%3clinearGradient id='paint0_linear_3166_11159' x1='16.5' y1='9.75' x2='24.8926' y2='36.3113' gradientUnits='userSpaceOnUse'%3e%3cstop stop-color='%23FFC208'/%3e%3cstop offset='1' stop-color='%23E31C79'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e";
 
-export { AIButton, ActionCard, Avatar, AvatarGroup, AvatarSelection, Backdrop, Badge, Breadcrumbs, Button, Calendar, Caption, Card, CardBody, CardFooter, CardHeader, CardSubdued, ChatMessage, Checkbox, Chip, ChipGroup, ChipInput, ChoiceList, Collapsible, Column, Combobox, DatePicker, DateRangePicker, Dialog, Divider, Dropdown, Dropzone, EditableChipInput, EditableDropdown, EditableInput, EmptyState, FileList, FileUploader, FileUploaderList, FullscreenModal, Grid, GridCell, Heading, HelpText, HorizontalNav, Icon, InlineMessage, Input, X as InputMask, Label, Legend, Link, LinkButton, List, Listbox, Menu, Message, MetaList, MetricInput, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, MultiSlider, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderImage, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Select, SelectionCard, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, Tabs, TabsWrapper, Text, TextField, Textarea, TimePicker, Toast, Tooltip, index as Utils, VerificationCodeInput, VerticalNav, version };
+var v$3 = "4.8.0";
+var meta$3 = {
+	g: "LottieFiles AE 3.5.4",
+	a: "",
+	k: "",
+	d: "",
+	tc: ""
+};
+var fr$3 = 60;
+var ip$3 = 0;
+var op$3 = 120;
+var w$3 = 400;
+var h$3 = 400;
+var nm$3 = "A";
+var assets$3 = [
+	{
+		id: "comp_0",
+		layers: [
+			{
+				ind: 1,
+				ty: 4,
+				nm: "L",
+				sr: 1,
+				ks: {
+					o: {
+						a: 0,
+						k: 100
+					},
+					r: {
+						a: 0,
+						k: 0
+					},
+					p: {
+						a: 1,
+						k: [
+							{
+								i: {
+									x: 0.667,
+									y: 1
+								},
+								o: {
+									x: 0.167,
+									y: 0.167
+								},
+								t: 0,
+								s: [
+									163,
+									163,
+									0
+								],
+								to: [
+									0,
+									0,
+									0
+								],
+								ti: [
+									0,
+									0,
+									0
+								]
+							},
+							{
+								i: {
+									x: 0.667,
+									y: 1
+								},
+								o: {
+									x: 0.333,
+									y: 0
+								},
+								t: 20,
+								s: [
+									163,
+									128,
+									0
+								],
+								to: [
+									0,
+									0,
+									0
+								],
+								ti: [
+									0,
+									0,
+									0
+								]
+							},
+							{
+								i: {
+									x: 0.667,
+									y: 1
+								},
+								o: {
+									x: 0.333,
+									y: 0
+								},
+								t: 45,
+								s: [
+									163,
+									173,
+									0
+								],
+								to: [
+									0,
+									0,
+									0
+								],
+								ti: [
+									0,
+									0,
+									0
+								]
+							},
+							{
+								t: 55,
+								s: [
+									163,
+									163,
+									0
+								]
+							}
+						]
+					},
+					a: {
+						a: 0,
+						k: [
+							-37.5,
+							-37.5,
+							0
+						]
+					},
+					s: {
+						a: 0,
+						k: [
+							100,
+							100,
+							100
+						]
+					}
+				},
+				ao: 0,
+				shapes: [
+					{
+						ind: 0,
+						ty: "sh",
+						ks: {
+							a: 0,
+							k: {
+								i: [
+									[
+										0,
+										69.036
+									],
+									[
+										69.036,
+										0
+									],
+									[
+										0,
+										-69.036
+									],
+									[
+										-69.036,
+										0
+									]
+								],
+								o: [
+									[
+										0,
+										69.036
+									],
+									[
+										69.036,
+										0
+									],
+									[
+										0,
+										-69.036
+									],
+									[
+										-69.036,
+										0
+									]
+								],
+								v: [
+									[
+										-37.5,
+										-162.5
+									],
+									[
+										-162.5,
+										-37.5
+									],
+									[
+										-37.5,
+										87.5
+									],
+									[
+										87.5,
+										-37.5
+									]
+								],
+								c: true
+							}
+						},
+						nm: "P"
+					},
+					{
+						ty: "mm",
+						mm: 1,
+						nm: "M"
+					},
+					{
+						ty: "gf",
+						o: {
+							a: 0,
+							k: 100
+						},
+						r: 1,
+						g: {
+							p: 3,
+							k: {
+								a: 0,
+								k: [
+									0,
+									1,
+									0.761,
+									0.031,
+									0.5,
+									0.945,
+									0.435,
+									0.253,
+									1,
+									0.89,
+									0.11,
+									0.475
+								]
+							}
+						},
+						s: {
+							a: 0,
+							k: [
+								-47.5,
+								-114
+							]
+						},
+						e: {
+							a: 0,
+							k: [
+								49.962,
+								105.608
+							]
+						},
+						t: 1,
+						nm: "G"
+					}
+				],
+				ip: 0,
+				op: 120,
+				st: 0
+			},
+			{
+				ind: 2,
+				ty: 4,
+				nm: "S",
+				sr: 1,
+				ks: {
+					o: {
+						a: 0,
+						k: 100
+					},
+					r: {
+						a: 0,
+						k: 0
+					},
+					p: {
+						a: 1,
+						k: [
+							{
+								i: {
+									x: 0.571,
+									y: 0.571
+								},
+								o: {
+									x: 0.167,
+									y: 0.167
+								},
+								t: 0,
+								s: [
+									287,
+									287,
+									0
+								],
+								to: [
+									0,
+									0,
+									0
+								],
+								ti: [
+									0,
+									0,
+									0
+								]
+							},
+							{
+								i: {
+									x: 0.704,
+									y: 1
+								},
+								o: {
+									x: 0.332,
+									y: 0.152
+								},
+								t: 15,
+								s: [
+									287,
+									287,
+									0
+								],
+								to: [
+									0,
+									0,
+									0
+								],
+								ti: [
+									0,
+									0,
+									0
+								]
+							},
+							{
+								i: {
+									x: 0.667,
+									y: 1
+								},
+								o: {
+									x: 0.333,
+									y: 0
+								},
+								t: 30,
+								s: [
+									287,
+									270,
+									0
+								],
+								to: [
+									0,
+									0,
+									0
+								],
+								ti: [
+									0,
+									0,
+									0
+								]
+							},
+							{
+								i: {
+									x: 0.667,
+									y: 1
+								},
+								o: {
+									x: 0.333,
+									y: 0
+								},
+								t: 60,
+								s: [
+									287,
+									293,
+									0
+								],
+								to: [
+									0,
+									0,
+									0
+								],
+								ti: [
+									0,
+									0,
+									0
+								]
+							},
+							{
+								t: 67,
+								s: [
+									287,
+									287,
+									0
+								]
+							}
+						]
+					},
+					a: {
+						a: 0,
+						k: [
+							87.5,
+							87.5,
+							0
+						]
+					},
+					s: {
+						a: 0,
+						k: [
+							100,
+							100,
+							100
+						]
+					}
+				},
+				ao: 0,
+				shapes: [
+					{
+						ind: 0,
+						ty: "sh",
+						ks: {
+							a: 0,
+							k: {
+								i: [
+									[
+										0,
+										41.421
+									],
+									[
+										41.421,
+										0
+									],
+									[
+										0,
+										-41.421
+									],
+									[
+										-41.421,
+										0
+									]
+								],
+								o: [
+									[
+										0,
+										41.421
+									],
+									[
+										41.421,
+										0
+									],
+									[
+										0,
+										-41.421
+									],
+									[
+										-41.421,
+										0
+									]
+								],
+								v: [
+									[
+										87.5,
+										12.5
+									],
+									[
+										12.5,
+										87.5
+									],
+									[
+										87.5,
+										162.5
+									],
+									[
+										162.5,
+										87.5
+									]
+								],
+								c: true
+							}
+						},
+						nm: "P"
+					},
+					{
+						ty: "mm",
+						mm: 1,
+						nm: "M"
+					},
+					{
+						ty: "gf",
+						o: {
+							a: 0,
+							k: 100
+						},
+						r: 1,
+						g: {
+							p: 3,
+							k: {
+								a: 0,
+								k: [
+									0,
+									1,
+									0.761,
+									0.031,
+									0.5,
+									0.945,
+									0.435,
+									0.253,
+									1,
+									0.89,
+									0.11,
+									0.475
+								]
+							}
+						},
+						s: {
+							a: 0,
+							k: [
+								-47.5,
+								-114
+							]
+						},
+						e: {
+							a: 0,
+							k: [
+								49.962,
+								105.608
+							]
+						},
+						t: 1,
+						nm: "G"
+					}
+				],
+				ip: 0,
+				op: 120,
+				st: 0
+			}
+		]
+	}
+];
+var layers$3 = [
+	{
+		ind: 1,
+		ty: 4,
+		nm: "G",
+		sr: 1,
+		ks: {
+			o: {
+				a: 0,
+				k: 100
+			},
+			r: {
+				a: 0,
+				k: 0
+			},
+			p: {
+				a: 0,
+				k: [
+					200,
+					200,
+					0
+				]
+			},
+			a: {
+				a: 0,
+				k: [
+					0,
+					0,
+					0
+				]
+			},
+			s: {
+				a: 0,
+				k: [
+					140,
+					140,
+					100
+				]
+			}
+		},
+		ao: 0,
+		ef: [
+			{
+				ty: 28,
+				nm: "S",
+				np: 8,
+				en: 1,
+				ef: [
+					{
+						ty: 10,
+						nm: "T",
+						v: {
+							a: 0,
+							k: 2
+						}
+					},
+					{
+						ty: 7,
+						nm: "U",
+						v: {
+							a: 0,
+							k: 4
+						}
+					},
+					{
+						ty: 7,
+						nm: "I",
+						v: {
+							a: 0,
+							k: 0
+						}
+					},
+					{
+						ty: 7,
+						nm: "I",
+						v: {
+							a: 0,
+							k: 1
+						}
+					},
+					{
+						ty: 7,
+						nm: "C",
+						v: {
+							a: 0,
+							k: 1
+						}
+					},
+					{
+						ty: 7,
+						nm: "P",
+						v: {
+							a: 0,
+							k: 1
+						}
+					}
+				]
+			}
+		],
+		shapes: [
+			{
+				ty: "gr",
+				it: [
+					{
+						ty: "rc",
+						d: 1,
+						s: {
+							a: 0,
+							k: [
+								400,
+								400
+							]
+						},
+						p: {
+							a: 0,
+							k: [
+								0,
+								0
+							]
+						},
+						r: {
+							a: 0,
+							k: 0
+						},
+						nm: "R"
+					},
+					{
+						ty: "st",
+						c: {
+							a: 0,
+							k: [
+								1,
+								1,
+								1,
+								1
+							]
+						},
+						o: {
+							a: 0,
+							k: 100
+						},
+						w: {
+							a: 0,
+							k: 2
+						},
+						lc: 1,
+						lj: 1,
+						ml: 4,
+						nm: "S"
+					},
+					{
+						ty: "gf",
+						o: {
+							a: 0,
+							k: 100
+						},
+						r: 1,
+						g: {
+							p: 3,
+							k: {
+								a: 0,
+								k: [
+									0,
+									1,
+									0.761,
+									0.031,
+									0.5,
+									0.945,
+									0.435,
+									0.253,
+									1,
+									0.89,
+									0.11,
+									0.475
+								]
+							}
+						},
+						s: {
+							a: 0,
+							k: [
+								-26,
+								-85
+							]
+						},
+						e: {
+							a: 0,
+							k: [
+								39,
+								45
+							]
+						},
+						t: 1,
+						nm: "G"
+					},
+					{
+						ty: "tr",
+						p: {
+							a: 0,
+							k: [
+								-0.209,
+								0.658
+							]
+						},
+						a: {
+							a: 0,
+							k: [
+								0,
+								0
+							]
+						},
+						s: {
+							a: 0,
+							k: [
+								100,
+								100
+							]
+						},
+						r: {
+							a: 0,
+							k: 0
+						},
+						o: {
+							a: 0,
+							k: 100
+						},
+						sk: {
+							a: 0,
+							k: 0
+						},
+						sa: {
+							a: 0,
+							k: 0
+						},
+						nm: "T"
+					}
+				],
+				nm: "R"
+			}
+		],
+		ip: 0,
+		op: 120,
+		st: 0
+	},
+	{
+		ind: 2,
+		ty: 0,
+		nm: "[",
+		refId: "comp_0",
+		sr: 1,
+		ks: {
+			o: {
+				a: 0,
+				k: 100
+			},
+			r: {
+				a: 0,
+				k: 0
+			},
+			p: {
+				a: 0,
+				k: [
+					200,
+					200,
+					0
+				]
+			},
+			a: {
+				a: 0,
+				k: [
+					200,
+					200,
+					0
+				]
+			},
+			s: {
+				a: 0,
+				k: [
+					100,
+					100,
+					100
+				]
+			}
+		},
+		ao: 0,
+		w: 400,
+		h: 400,
+		ip: 0,
+		op: 120,
+		st: 0
+	}
+];
+var markers$3 = [
+];
+var Listening = {
+	v: v$3,
+	meta: meta$3,
+	fr: fr$3,
+	ip: ip$3,
+	op: op$3,
+	w: w$3,
+	h: h$3,
+	nm: nm$3,
+	assets: assets$3,
+	layers: layers$3,
+	markers: markers$3
+};
+
+var v$2 = "4.8.0";
+var meta$2 = {
+	g: "LottieFiles AE 3.5.4",
+	a: "",
+	k: "",
+	d: "",
+	tc: ""
+};
+var fr$2 = 60;
+var ip$2 = 0;
+var op$2 = 180;
+var w$2 = 400;
+var h$2 = 400;
+var nm$2 = "A";
+var assets$2 = [
+	{
+		id: "comp_0",
+		layers: [
+			{
+				ind: 1,
+				ty: 4,
+				nm: "L",
+				sr: 1,
+				ks: {
+					o: {
+						a: 0,
+						k: 100
+					},
+					r: {
+						a: 0,
+						k: 0
+					},
+					p: {
+						a: 0,
+						k: [
+							163,
+							163,
+							0
+						]
+					},
+					a: {
+						a: 0,
+						k: [
+							-37.5,
+							-37.5,
+							0
+						]
+					},
+					s: {
+						a: 1,
+						k: [
+							{
+								i: {
+									x: [
+										0.667,
+										0.667,
+										0.667
+									],
+									y: [
+										1,
+										1,
+										1
+									]
+								},
+								o: {
+									x: [
+										0.333,
+										0.333,
+										0.333
+									],
+									y: [
+										0,
+										0,
+										0
+									]
+								},
+								t: 0,
+								s: [
+									100,
+									100,
+									100
+								]
+							},
+							{
+								i: {
+									x: [
+										0.667,
+										0.667,
+										0.667
+									],
+									y: [
+										1,
+										1,
+										1
+									]
+								},
+								o: {
+									x: [
+										0.333,
+										0.333,
+										0.333
+									],
+									y: [
+										0,
+										0,
+										0
+									]
+								},
+								t: 15,
+								s: [
+									130,
+									130,
+									100
+								]
+							},
+							{
+								t: 30,
+								s: [
+									100,
+									100,
+									100
+								]
+							}
+						]
+					}
+				},
+				ao: 0,
+				shapes: [
+					{
+						ind: 0,
+						ty: "sh",
+						ks: {
+							a: 0,
+							k: {
+								i: [
+									[
+										0,
+										69.036
+									],
+									[
+										69.036,
+										0
+									],
+									[
+										0,
+										-69.036
+									],
+									[
+										-69.036,
+										0
+									]
+								],
+								o: [
+									[
+										0,
+										69.036
+									],
+									[
+										69.036,
+										0
+									],
+									[
+										0,
+										-69.036
+									],
+									[
+										-69.036,
+										0
+									]
+								],
+								v: [
+									[
+										-37.5,
+										-162.5
+									],
+									[
+										-162.5,
+										-37.5
+									],
+									[
+										-37.5,
+										87.5
+									],
+									[
+										87.5,
+										-37.5
+									]
+								],
+								c: true
+							}
+						},
+						nm: "P"
+					},
+					{
+						ty: "mm",
+						mm: 1,
+						nm: "M"
+					},
+					{
+						ty: "gf",
+						o: {
+							a: 0,
+							k: 100
+						},
+						r: 1,
+						g: {
+							p: 3,
+							k: {
+								a: 0,
+								k: [
+									0,
+									1,
+									0.761,
+									0.031,
+									0.5,
+									0.945,
+									0.435,
+									0.253,
+									1,
+									0.89,
+									0.11,
+									0.475
+								]
+							}
+						},
+						s: {
+							a: 0,
+							k: [
+								-47.5,
+								-114
+							]
+						},
+						e: {
+							a: 0,
+							k: [
+								49.962,
+								105.608
+							]
+						},
+						t: 1,
+						nm: "G"
+					}
+				],
+				ip: 0,
+				op: 187,
+				st: 0
+			},
+			{
+				ind: 2,
+				ty: 4,
+				nm: "S",
+				sr: 1,
+				ks: {
+					o: {
+						a: 0,
+						k: 100
+					},
+					r: {
+						a: 0,
+						k: 0
+					},
+					p: {
+						a: 0,
+						k: [
+							287,
+							287,
+							0
+						]
+					},
+					a: {
+						a: 0,
+						k: [
+							87.5,
+							87.5,
+							0
+						]
+					},
+					s: {
+						a: 1,
+						k: [
+							{
+								i: {
+									x: [
+										0.667,
+										0.667,
+										0.667
+									],
+									y: [
+										1,
+										1,
+										1
+									]
+								},
+								o: {
+									x: [
+										0.333,
+										0.333,
+										0.333
+									],
+									y: [
+										0,
+										0,
+										0
+									]
+								},
+								t: 0,
+								s: [
+									100,
+									100,
+									100
+								]
+							},
+							{
+								i: {
+									x: [
+										0.667,
+										0.667,
+										0.667
+									],
+									y: [
+										1,
+										1,
+										1
+									]
+								},
+								o: {
+									x: [
+										0.333,
+										0.333,
+										0.333
+									],
+									y: [
+										0,
+										0,
+										0
+									]
+								},
+								t: 10,
+								s: [
+									100,
+									100,
+									100
+								]
+							},
+							{
+								i: {
+									x: [
+										0.667,
+										0.667,
+										0.667
+									],
+									y: [
+										1,
+										1,
+										1
+									]
+								},
+								o: {
+									x: [
+										0.333,
+										0.333,
+										0.333
+									],
+									y: [
+										0,
+										0,
+										0
+									]
+								},
+								t: 25,
+								s: [
+									120,
+									120,
+									100
+								]
+							},
+							{
+								t: 40,
+								s: [
+									100,
+									100,
+									100
+								]
+							}
+						]
+					}
+				},
+				ao: 0,
+				shapes: [
+					{
+						ind: 0,
+						ty: "sh",
+						ks: {
+							a: 0,
+							k: {
+								i: [
+									[
+										0,
+										41.421
+									],
+									[
+										41.421,
+										0
+									],
+									[
+										0,
+										-41.421
+									],
+									[
+										-41.421,
+										0
+									]
+								],
+								o: [
+									[
+										0,
+										41.421
+									],
+									[
+										41.421,
+										0
+									],
+									[
+										0,
+										-41.421
+									],
+									[
+										-41.421,
+										0
+									]
+								],
+								v: [
+									[
+										87.5,
+										12.5
+									],
+									[
+										12.5,
+										87.5
+									],
+									[
+										87.5,
+										162.5
+									],
+									[
+										162.5,
+										87.5
+									]
+								],
+								c: true
+							}
+						},
+						nm: "P"
+					},
+					{
+						ty: "mm",
+						mm: 1,
+						nm: "M"
+					},
+					{
+						ty: "gf",
+						o: {
+							a: 0,
+							k: 100
+						},
+						r: 1,
+						g: {
+							p: 3,
+							k: {
+								a: 0,
+								k: [
+									0,
+									1,
+									0.761,
+									0.031,
+									0.5,
+									0.945,
+									0.435,
+									0.253,
+									1,
+									0.89,
+									0.11,
+									0.475
+								]
+							}
+						},
+						s: {
+							a: 0,
+							k: [
+								-47.5,
+								-114
+							]
+						},
+						e: {
+							a: 0,
+							k: [
+								49.962,
+								105.608
+							]
+						},
+						t: 1,
+						nm: "G"
+					}
+				],
+				ip: 0,
+				op: 208,
+				st: 0
+			}
+		]
+	}
+];
+var layers$2 = [
+	{
+		ind: 1,
+		ty: 4,
+		nm: "S",
+		sr: 1,
+		ks: {
+			o: {
+				a: 0,
+				k: 100
+			},
+			r: {
+				a: 0,
+				k: 0
+			},
+			p: {
+				a: 1,
+				k: [
+					{
+						i: {
+							x: 0.667,
+							y: 1
+						},
+						o: {
+							x: 0.333,
+							y: 0
+						},
+						t: 60,
+						s: [
+							200,
+							200,
+							0
+						],
+						to: [
+							0,
+							0,
+							0
+						],
+						ti: [
+							0,
+							0,
+							0
+						]
+					},
+					{
+						t: 90,
+						s: [
+							440,
+							449.5,
+							0
+						]
+					}
+				]
+			},
+			a: {
+				a: 0,
+				k: [
+					0,
+					0,
+					0
+				]
+			},
+			s: {
+				a: 0,
+				k: [
+					100,
+					100,
+					100
+				]
+			}
+		},
+		ao: 0,
+		ef: [
+			{
+				ty: 28,
+				nm: "S",
+				np: 8,
+				en: 1,
+				ef: [
+					{
+						ty: 10,
+						nm: "T",
+						v: {
+							a: 0,
+							k: 3
+						}
+					},
+					{
+						ty: 7,
+						nm: "U",
+						v: {
+							a: 0,
+							k: 4
+						}
+					},
+					{
+						ty: 7,
+						nm: "I",
+						v: {
+							a: 0,
+							k: 0
+						}
+					},
+					{
+						ty: 7,
+						nm: "I",
+						v: {
+							a: 0,
+							k: 1
+						}
+					},
+					{
+						ty: 7,
+						nm: "C",
+						v: {
+							a: 0,
+							k: 1
+						}
+					},
+					{
+						ty: 7,
+						nm: "P",
+						v: {
+							a: 0,
+							k: 1
+						}
+					}
+				]
+			}
+		],
+		shapes: [
+			{
+				ty: "gr",
+				it: [
+					{
+						ind: 0,
+						ty: "sh",
+						ks: {
+							a: 0,
+							k: {
+								i: [
+									[
+										37.834,
+										0
+									],
+									[
+										0,
+										-5.181
+									],
+									[
+										-37.834,
+										0
+									],
+									[
+										0,
+										5.181
+									]
+								],
+								o: [
+									[
+										-37.834,
+										0
+									],
+									[
+										0,
+										5.181
+									],
+									[
+										37.834,
+										0
+									],
+									[
+										0,
+										-5.181
+									]
+								],
+								v: [
+									[
+										0,
+										-9.381
+									],
+									[
+										-68.505,
+										0
+									],
+									[
+										0,
+										9.381
+									],
+									[
+										68.505,
+										0
+									]
+								],
+								c: true
+							}
+						},
+						nm: "P"
+					},
+					{
+						ty: "st",
+						c: {
+							a: 0,
+							k: [
+								1,
+								1,
+								1,
+								1
+							]
+						},
+						o: {
+							a: 0,
+							k: 100
+						},
+						w: {
+							a: 0,
+							k: 0
+						},
+						lc: 1,
+						lj: 1,
+						ml: 4,
+						nm: "S"
+					},
+					{
+						ty: "gf",
+						o: {
+							a: 0,
+							k: 100
+						},
+						r: 1,
+						g: {
+							p: 3,
+							k: {
+								a: 0,
+								k: [
+									0,
+									1,
+									1,
+									1,
+									0.5,
+									1,
+									1,
+									1,
+									1,
+									1,
+									1,
+									1,
+									0,
+									1,
+									0.5,
+									0.5,
+									1,
+									0
+								]
+							}
+						},
+						s: {
+							a: 0,
+							k: [
+								0.249,
+								0.249
+							]
+						},
+						e: {
+							a: 0,
+							k: [
+								91.305,
+								-0.238
+							]
+						},
+						t: 2,
+						h: {
+							a: 0,
+							k: 0
+						},
+						a: {
+							a: 0,
+							k: 90
+						},
+						nm: "G"
+					},
+					{
+						ty: "tr",
+						p: {
+							a: 0,
+							k: [
+								-116.514,
+								-105.125
+							]
+						},
+						a: {
+							a: 0,
+							k: [
+								0,
+								0
+							]
+						},
+						s: {
+							a: 0,
+							k: [
+								124.149,
+								173.892
+							]
+						},
+						r: {
+							a: 0,
+							k: -41.711
+						},
+						o: {
+							a: 0,
+							k: 100
+						},
+						sk: {
+							a: 0,
+							k: 0
+						},
+						sa: {
+							a: 0,
+							k: 0
+						},
+						nm: "T"
+					}
+				],
+				nm: "E"
+			}
+		],
+		ip: 0,
+		op: 180,
+		st: 0
+	},
+	{
+		ind: 2,
+		ty: 4,
+		nm: "G",
+		sr: 1,
+		ks: {
+			o: {
+				a: 0,
+				k: 100
+			},
+			r: {
+				a: 0,
+				k: 0
+			},
+			p: {
+				a: 0,
+				k: [
+					200,
+					200,
+					0
+				]
+			},
+			a: {
+				a: 0,
+				k: [
+					0,
+					0,
+					0
+				]
+			},
+			s: {
+				a: 0,
+				k: [
+					140,
+					140,
+					100
+				]
+			}
+		},
+		ao: 0,
+		ef: [
+			{
+				ty: 28,
+				nm: "S",
+				np: 8,
+				en: 1,
+				ef: [
+					{
+						ty: 10,
+						nm: "T",
+						v: {
+							a: 0,
+							k: 3
+						}
+					},
+					{
+						ty: 7,
+						nm: "U",
+						v: {
+							a: 0,
+							k: 4
+						}
+					},
+					{
+						ty: 7,
+						nm: "I",
+						v: {
+							a: 0,
+							k: 0
+						}
+					},
+					{
+						ty: 7,
+						nm: "I",
+						v: {
+							a: 0,
+							k: 1
+						}
+					},
+					{
+						ty: 7,
+						nm: "C",
+						v: {
+							a: 0,
+							k: 1
+						}
+					},
+					{
+						ty: 7,
+						nm: "P",
+						v: {
+							a: 0,
+							k: 1
+						}
+					}
+				]
+			}
+		],
+		shapes: [
+			{
+				ty: "gr",
+				it: [
+					{
+						ty: "rc",
+						d: 1,
+						s: {
+							a: 0,
+							k: [
+								400,
+								400
+							]
+						},
+						p: {
+							a: 0,
+							k: [
+								0,
+								0
+							]
+						},
+						r: {
+							a: 0,
+							k: 0
+						},
+						nm: "R"
+					},
+					{
+						ty: "st",
+						c: {
+							a: 0,
+							k: [
+								1,
+								1,
+								1,
+								1
+							]
+						},
+						o: {
+							a: 0,
+							k: 100
+						},
+						w: {
+							a: 0,
+							k: 2
+						},
+						lc: 1,
+						lj: 1,
+						ml: 4,
+						nm: "S"
+					},
+					{
+						ty: "gf",
+						o: {
+							a: 0,
+							k: 100
+						},
+						r: 1,
+						g: {
+							p: 3,
+							k: {
+								a: 0,
+								k: [
+									0,
+									1,
+									0.761,
+									0.031,
+									0.5,
+									0.945,
+									0.435,
+									0.253,
+									1,
+									0.89,
+									0.11,
+									0.475
+								]
+							}
+						},
+						s: {
+							a: 0,
+							k: [
+								-26,
+								-85
+							]
+						},
+						e: {
+							a: 0,
+							k: [
+								39,
+								45
+							]
+						},
+						t: 1,
+						nm: "G"
+					},
+					{
+						ty: "tr",
+						p: {
+							a: 0,
+							k: [
+								-0.209,
+								0.658
+							]
+						},
+						a: {
+							a: 0,
+							k: [
+								0,
+								0
+							]
+						},
+						s: {
+							a: 0,
+							k: [
+								100,
+								100
+							]
+						},
+						r: {
+							a: 0,
+							k: 0
+						},
+						o: {
+							a: 0,
+							k: 100
+						},
+						sk: {
+							a: 0,
+							k: 0
+						},
+						sa: {
+							a: 0,
+							k: 0
+						},
+						nm: "T"
+					}
+				],
+				nm: "R"
+			}
+		],
+		ip: 0,
+		op: 180,
+		st: 0
+	},
+	{
+		ind: 3,
+		ty: 0,
+		nm: "[",
+		refId: "comp_0",
+		sr: 1,
+		ks: {
+			o: {
+				a: 0,
+				k: 100
+			},
+			r: {
+				a: 0,
+				k: 0
+			},
+			p: {
+				a: 0,
+				k: [
+					200,
+					200,
+					0
+				]
+			},
+			a: {
+				a: 0,
+				k: [
+					200,
+					200,
+					0
+				]
+			},
+			s: {
+				a: 0,
+				k: [
+					100,
+					100,
+					100
+				]
+			}
+		},
+		ao: 0,
+		w: 400,
+		h: 400,
+		ip: 0,
+		op: 180,
+		st: 0
+	}
+];
+var markers$2 = [
+];
+var AIProcessingLong = {
+	v: v$2,
+	meta: meta$2,
+	fr: fr$2,
+	ip: ip$2,
+	op: op$2,
+	w: w$2,
+	h: h$2,
+	nm: nm$2,
+	assets: assets$2,
+	layers: layers$2,
+	markers: markers$2
+};
+
+var v$1 = "4.8.0";
+var meta$1 = {
+	g: "LottieFiles AE 3.5.4",
+	a: "Anagh Sharma",
+	k: "",
+	d: "Progress indicator to be used for showing AI processing input for a short period of time.",
+	tc: ""
+};
+var fr$1 = 60;
+var ip$1 = 0;
+var op$1 = 120;
+var w$1 = 400;
+var h$1 = 400;
+var nm$1 = "A";
+var assets$1 = [
+	{
+		id: "comp_0",
+		layers: [
+			{
+				ind: 1,
+				ty: 4,
+				nm: "L",
+				sr: 1,
+				ks: {
+					o: {
+						a: 0,
+						k: 100
+					},
+					r: {
+						a: 1,
+						k: [
+							{
+								i: {
+									x: [
+										0.667
+									],
+									y: [
+										1
+									]
+								},
+								o: {
+									x: [
+										0.167
+									],
+									y: [
+										0.167
+									]
+								},
+								t: 0,
+								s: [
+									0
+								]
+							},
+							{
+								t: 90,
+								s: [
+									270
+								]
+							}
+						]
+					},
+					p: {
+						a: 0,
+						k: [
+							163,
+							163,
+							0
+						]
+					},
+					a: {
+						a: 0,
+						k: [
+							-37.5,
+							-37.5,
+							0
+						]
+					},
+					s: {
+						a: 0,
+						k: [
+							100,
+							100,
+							100
+						]
+					}
+				},
+				ao: 0,
+				shapes: [
+					{
+						ind: 0,
+						ty: "sh",
+						ks: {
+							a: 0,
+							k: {
+								i: [
+									[
+										0,
+										69.036
+									],
+									[
+										69.036,
+										0
+									],
+									[
+										0,
+										-69.036
+									],
+									[
+										-69.036,
+										0
+									]
+								],
+								o: [
+									[
+										0,
+										69.036
+									],
+									[
+										69.036,
+										0
+									],
+									[
+										0,
+										-69.036
+									],
+									[
+										-69.036,
+										0
+									]
+								],
+								v: [
+									[
+										-37.5,
+										-162.5
+									],
+									[
+										-162.5,
+										-37.5
+									],
+									[
+										-37.5,
+										87.5
+									],
+									[
+										87.5,
+										-37.5
+									]
+								],
+								c: true
+							}
+						},
+						nm: "P"
+					},
+					{
+						ty: "mm",
+						mm: 1,
+						nm: "M"
+					},
+					{
+						ty: "gf",
+						o: {
+							a: 0,
+							k: 100
+						},
+						r: 1,
+						g: {
+							p: 3,
+							k: {
+								a: 0,
+								k: [
+									0,
+									1,
+									0.761,
+									0.031,
+									0.5,
+									0.945,
+									0.435,
+									0.253,
+									1,
+									0.89,
+									0.11,
+									0.475
+								]
+							}
+						},
+						s: {
+							a: 0,
+							k: [
+								-47.5,
+								-114
+							]
+						},
+						e: {
+							a: 0,
+							k: [
+								49.962,
+								105.608
+							]
+						},
+						t: 1,
+						nm: "G"
+					}
+				],
+				ip: 0,
+				op: 308,
+				st: 0
+			},
+			{
+				ind: 2,
+				ty: 4,
+				nm: "S",
+				sr: 1,
+				ks: {
+					o: {
+						a: 0,
+						k: 100
+					},
+					r: {
+						a: 1,
+						k: [
+							{
+								i: {
+									x: [
+										0.667
+									],
+									y: [
+										1
+									]
+								},
+								o: {
+									x: [
+										0.167
+									],
+									y: [
+										0.167
+									]
+								},
+								t: 0,
+								s: [
+									0
+								]
+							},
+							{
+								t: 90,
+								s: [
+									360
+								]
+							}
+						]
+					},
+					p: {
+						a: 0,
+						k: [
+							287,
+							287,
+							0
+						]
+					},
+					a: {
+						a: 0,
+						k: [
+							87.5,
+							87.5,
+							0
+						]
+					},
+					s: {
+						a: 0,
+						k: [
+							100,
+							100,
+							100
+						]
+					}
+				},
+				ao: 0,
+				shapes: [
+					{
+						ind: 0,
+						ty: "sh",
+						ks: {
+							a: 0,
+							k: {
+								i: [
+									[
+										0,
+										41.421
+									],
+									[
+										41.421,
+										0
+									],
+									[
+										0,
+										-41.421
+									],
+									[
+										-41.421,
+										0
+									]
+								],
+								o: [
+									[
+										0,
+										41.421
+									],
+									[
+										41.421,
+										0
+									],
+									[
+										0,
+										-41.421
+									],
+									[
+										-41.421,
+										0
+									]
+								],
+								v: [
+									[
+										87.5,
+										12.5
+									],
+									[
+										12.5,
+										87.5
+									],
+									[
+										87.5,
+										162.5
+									],
+									[
+										162.5,
+										87.5
+									]
+								],
+								c: true
+							}
+						},
+						nm: "P"
+					},
+					{
+						ty: "mm",
+						mm: 1,
+						nm: "M"
+					},
+					{
+						ty: "gf",
+						o: {
+							a: 0,
+							k: 100
+						},
+						r: 1,
+						g: {
+							p: 3,
+							k: {
+								a: 0,
+								k: [
+									0,
+									1,
+									0.761,
+									0.031,
+									0.5,
+									0.945,
+									0.435,
+									0.253,
+									1,
+									0.89,
+									0.11,
+									0.475
+								]
+							}
+						},
+						s: {
+							a: 0,
+							k: [
+								-47.5,
+								-114
+							]
+						},
+						e: {
+							a: 0,
+							k: [
+								49.962,
+								105.608
+							]
+						},
+						t: 1,
+						nm: "G"
+					}
+				],
+				ip: 0,
+				op: 316,
+				st: 0
+			}
+		]
+	}
+];
+var layers$1 = [
+	{
+		ind: 1,
+		ty: 4,
+		nm: "G",
+		sr: 1,
+		ks: {
+			o: {
+				a: 0,
+				k: 100
+			},
+			r: {
+				a: 0,
+				k: 0
+			},
+			p: {
+				a: 0,
+				k: [
+					200,
+					200,
+					0
+				]
+			},
+			a: {
+				a: 0,
+				k: [
+					0,
+					0,
+					0
+				]
+			},
+			s: {
+				a: 0,
+				k: [
+					140,
+					140,
+					100
+				]
+			}
+		},
+		ao: 0,
+		ef: [
+			{
+				ty: 28,
+				nm: "S",
+				np: 8,
+				en: 1,
+				ef: [
+					{
+						ty: 10,
+						nm: "T",
+						v: {
+							a: 0,
+							k: 2
+						}
+					},
+					{
+						ty: 7,
+						nm: "U",
+						v: {
+							a: 0,
+							k: 4
+						}
+					},
+					{
+						ty: 7,
+						nm: "I",
+						v: {
+							a: 0,
+							k: 0
+						}
+					},
+					{
+						ty: 7,
+						nm: "I",
+						v: {
+							a: 0,
+							k: 1
+						}
+					},
+					{
+						ty: 7,
+						nm: "C",
+						v: {
+							a: 0,
+							k: 1
+						}
+					},
+					{
+						ty: 7,
+						nm: "P",
+						v: {
+							a: 0,
+							k: 1
+						}
+					}
+				]
+			}
+		],
+		shapes: [
+			{
+				ty: "gr",
+				it: [
+					{
+						ty: "rc",
+						d: 1,
+						s: {
+							a: 0,
+							k: [
+								400,
+								400
+							]
+						},
+						p: {
+							a: 0,
+							k: [
+								0,
+								0
+							]
+						},
+						r: {
+							a: 0,
+							k: 0
+						},
+						nm: "R"
+					},
+					{
+						ty: "st",
+						c: {
+							a: 0,
+							k: [
+								1,
+								1,
+								1,
+								1
+							]
+						},
+						o: {
+							a: 0,
+							k: 100
+						},
+						w: {
+							a: 0,
+							k: 2
+						},
+						lc: 1,
+						lj: 1,
+						ml: 4,
+						nm: "S"
+					},
+					{
+						ty: "gf",
+						o: {
+							a: 0,
+							k: 100
+						},
+						r: 1,
+						g: {
+							p: 3,
+							k: {
+								a: 1,
+								k: [
+									{
+										i: {
+											x: 0.667,
+											y: 1
+										},
+										o: {
+											x: 0.333,
+											y: 0
+										},
+										t: 0,
+										s: [
+											0,
+											1,
+											0.761,
+											0.031,
+											0.5,
+											0.945,
+											0.435,
+											0.253,
+											1,
+											0.89,
+											0.11,
+											0.475
+										]
+									},
+									{
+										i: {
+											x: 0.667,
+											y: 1
+										},
+										o: {
+											x: 0.333,
+											y: 0
+										},
+										t: 45,
+										s: [
+											0,
+											0.89,
+											0.11,
+											0.475,
+											0.5,
+											0.945,
+											0.435,
+											0.253,
+											1,
+											1,
+											0.761,
+											0.031
+										]
+									},
+									{
+										t: 90,
+										s: [
+											0,
+											1,
+											0.761,
+											0.031,
+											0.5,
+											0.945,
+											0.435,
+											0.253,
+											1,
+											0.89,
+											0.11,
+											0.475
+										]
+									}
+								]
+							}
+						},
+						s: {
+							a: 0,
+							k: [
+								-26,
+								-85
+							]
+						},
+						e: {
+							a: 0,
+							k: [
+								39,
+								45
+							]
+						},
+						t: 1,
+						nm: "G"
+					},
+					{
+						ty: "tr",
+						p: {
+							a: 0,
+							k: [
+								-0.209,
+								0.658
+							]
+						},
+						a: {
+							a: 0,
+							k: [
+								0,
+								0
+							]
+						},
+						s: {
+							a: 0,
+							k: [
+								100,
+								100
+							]
+						},
+						r: {
+							a: 0,
+							k: 0
+						},
+						o: {
+							a: 0,
+							k: 100
+						},
+						sk: {
+							a: 0,
+							k: 0
+						},
+						sa: {
+							a: 0,
+							k: 0
+						},
+						nm: "T"
+					}
+				],
+				nm: "R"
+			}
+		],
+		ip: 0,
+		op: 125,
+		st: 0
+	},
+	{
+		ind: 2,
+		ty: 0,
+		nm: "[",
+		refId: "comp_0",
+		sr: 1,
+		ks: {
+			o: {
+				a: 0,
+				k: 100
+			},
+			r: {
+				a: 0,
+				k: 0
+			},
+			p: {
+				a: 0,
+				k: [
+					200,
+					200,
+					0
+				]
+			},
+			a: {
+				a: 0,
+				k: [
+					200,
+					200,
+					0
+				]
+			},
+			s: {
+				a: 0,
+				k: [
+					100,
+					100,
+					100
+				]
+			}
+		},
+		ao: 0,
+		w: 400,
+		h: 400,
+		ip: 0,
+		op: 300,
+		st: 0
+	}
+];
+var markers$1 = [
+];
+var AIProcessingShort = {
+	v: v$1,
+	meta: meta$1,
+	fr: fr$1,
+	ip: ip$1,
+	op: op$1,
+	w: w$1,
+	h: h$1,
+	nm: nm$1,
+	assets: assets$1,
+	layers: layers$1,
+	markers: markers$1
+};
+
+var _excluded$7 = ["size", "state", "alt", "className"];
+var SaraSparkle = function SaraSparkle(props) {
+  var size = props.size,
+      state = props.state,
+      alt = props.alt,
+      className = props.className,
+      rest = _objectWithoutProperties(props, _excluded$7);
+
+  var stateMapping = {
+    listening: Listening,
+    'short-processing': AIProcessingShort,
+    'long-processing': AIProcessingLong
+  };
+  var SaraClassNames = classnames({
+    'align-bottom': state === 'default'
+  }, className);
+
+  if (state === 'default') {
+    return /*#__PURE__*/React.createElement("div", _extends$2({
+      "data-test": "DesignSystem-AI-Sara-Sparkle"
+    }, rest), /*#__PURE__*/React.createElement("img", {
+      src: img$1,
+      alt: alt,
+      width: size,
+      height: size,
+      className: SaraClassNames
+    }));
+  }
+
+  return /*#__PURE__*/React.createElement("div", _extends$2({
+    "data-test": "DesignSystem-AI-Sara-Sparkle",
+    className: className
+  }, rest), /*#__PURE__*/React.createElement(Player, {
+    autoplay: true,
+    loop: true,
+    src: state && stateMapping[state] || Listening,
+    style: {
+      height: size,
+      width: size
+    }
+  }));
+};
+SaraSparkle.defaultProps = {
+  size: 24,
+  state: 'default'
+};
+
+var v = "4.8.0";
+var meta = {
+	g: "LottieFiles AE 3.5.4",
+	a: "Anagh Sharma",
+	k: "",
+	d: "Progress indicator to be used for showing Sara when it is idle.",
+	tc: ""
+};
+var fr = 60;
+var ip = 0;
+var op = 360;
+var w = 96;
+var h = 96;
+var nm = "S";
+var assets = [
+	{
+		id: "comp_0",
+		layers: [
+			{
+				ind: 1,
+				ty: 4,
+				nm: "S",
+				sr: 1,
+				ks: {
+					o: {
+						a: 0,
+						k: 100
+					},
+					r: {
+						a: 1,
+						k: [
+							{
+								i: {
+									x: [
+										0.833
+									],
+									y: [
+										0.833
+									]
+								},
+								o: {
+									x: [
+										0.167
+									],
+									y: [
+										0.167
+									]
+								},
+								t: 0,
+								s: [
+									0
+								]
+							},
+							{
+								t: 360,
+								s: [
+									360
+								]
+							}
+						]
+					},
+					p: {
+						a: 0,
+						k: [
+							48,
+							48,
+							0
+						]
+					},
+					a: {
+						a: 0,
+						k: [
+							0,
+							0,
+							0
+						]
+					},
+					s: {
+						a: 0,
+						k: [
+							100,
+							100,
+							100
+						]
+					}
+				},
+				ao: 0,
+				ef: [
+					{
+						ty: 28,
+						nm: "S",
+						np: 8,
+						en: 1,
+						ef: [
+							{
+								ty: 10,
+								nm: "T",
+								v: {
+									a: 0,
+									k: 2
+								}
+							},
+							{
+								ty: 7,
+								nm: "U",
+								v: {
+									a: 0,
+									k: 4
+								}
+							},
+							{
+								ty: 7,
+								nm: "I",
+								v: {
+									a: 0,
+									k: 0
+								}
+							},
+							{
+								ty: 7,
+								nm: "I",
+								v: {
+									a: 0,
+									k: 1
+								}
+							},
+							{
+								ty: 7,
+								nm: "C",
+								v: {
+									a: 0,
+									k: 1
+								}
+							},
+							{
+								ty: 7,
+								nm: "P",
+								v: {
+									a: 0,
+									k: 1
+								}
+							}
+						]
+					}
+				],
+				shapes: [
+					{
+						ty: "gr",
+						it: [
+							{
+								ty: "rc",
+								d: 1,
+								s: {
+									a: 0,
+									k: [
+										128,
+										128.055
+									]
+								},
+								p: {
+									a: 0,
+									k: [
+										0,
+										0
+									]
+								},
+								r: {
+									a: 0,
+									k: 0
+								},
+								nm: "R"
+							},
+							{
+								ty: "st",
+								c: {
+									a: 0,
+									k: [
+										1,
+										1,
+										1,
+										1
+									]
+								},
+								o: {
+									a: 0,
+									k: 100
+								},
+								w: {
+									a: 0,
+									k: 0
+								},
+								lc: 1,
+								lj: 1,
+								ml: 4,
+								nm: "S"
+							},
+							{
+								ty: "gf",
+								o: {
+									a: 0,
+									k: 100
+								},
+								r: 1,
+								g: {
+									p: 3,
+									k: {
+										a: 0,
+										k: [
+											0,
+											1,
+											0.761,
+											0.031,
+											0.5,
+											0.945,
+											0.435,
+											0.253,
+											1,
+											0.89,
+											0.11,
+											0.475
+										]
+									}
+								},
+								s: {
+									a: 0,
+									k: [
+										-19.515,
+										-47.635
+									]
+								},
+								e: {
+									a: 0,
+									k: [
+										13.662,
+										48.644
+									]
+								},
+								t: 1,
+								nm: "G"
+							},
+							{
+								ty: "tr",
+								p: {
+									a: 0,
+									k: [
+										-0.019,
+										-0.248
+									]
+								},
+								a: {
+									a: 0,
+									k: [
+										0,
+										0
+									]
+								},
+								s: {
+									a: 0,
+									k: [
+										100,
+										100
+									]
+								},
+								r: {
+									a: 0,
+									k: 0
+								},
+								o: {
+									a: 0,
+									k: 100
+								},
+								sk: {
+									a: 0,
+									k: 0
+								},
+								sa: {
+									a: 0,
+									k: 0
+								},
+								nm: "T"
+							}
+						],
+						nm: "R"
+					}
+				],
+				ip: 0,
+				op: 480,
+				st: 0
+			},
+			{
+				ind: 2,
+				ty: 4,
+				nm: "F",
+				sr: 1,
+				ks: {
+					o: {
+						a: 0,
+						k: 100
+					},
+					r: {
+						a: 0,
+						k: 0
+					},
+					p: {
+						a: 0,
+						k: [
+							48,
+							47.996,
+							0
+						]
+					},
+					a: {
+						a: 0,
+						k: [
+							0,
+							0,
+							0
+						]
+					},
+					s: {
+						a: 1,
+						k: [
+							{
+								i: {
+									x: [
+										0.833,
+										0.833,
+										0.833
+									],
+									y: [
+										0.833,
+										0.833,
+										0.833
+									]
+								},
+								o: {
+									x: [
+										0.167,
+										0.167,
+										0.167
+									],
+									y: [
+										0.167,
+										0.167,
+										0.167
+									]
+								},
+								t: 0,
+								s: [
+									90,
+									90,
+									100
+								]
+							},
+							{
+								i: {
+									x: [
+										0.833,
+										0.833,
+										0.833
+									],
+									y: [
+										0.833,
+										0.833,
+										0.833
+									]
+								},
+								o: {
+									x: [
+										0.167,
+										0.167,
+										0.167
+									],
+									y: [
+										0.167,
+										0.167,
+										0.167
+									]
+								},
+								t: 25,
+								s: [
+									90,
+									90,
+									100
+								]
+							},
+							{
+								i: {
+									x: [
+										0.833,
+										0.833,
+										0.833
+									],
+									y: [
+										0.833,
+										0.833,
+										0.833
+									]
+								},
+								o: {
+									x: [
+										0.167,
+										0.167,
+										0.167
+									],
+									y: [
+										0.167,
+										0.167,
+										0.167
+									]
+								},
+								t: 110,
+								s: [
+									100,
+									100,
+									100
+								]
+							},
+							{
+								t: 175,
+								s: [
+									90,
+									90,
+									100
+								]
+							}
+						]
+					}
+				},
+				ao: 0,
+				shapes: [
+					{
+						ty: "gr",
+						it: [
+							{
+								ind: 0,
+								ty: "sh",
+								ks: {
+									a: 0,
+									k: {
+										i: [
+											[
+												0,
+												0
+											],
+											[
+												-6.612,
+												1.895
+											],
+											[
+												-7.835,
+												0
+											],
+											[
+												0,
+												0
+											],
+											[
+												-1.663,
+												6.671
+											],
+											[
+												-3.92,
+												6.787
+											],
+											[
+												0,
+												0
+											],
+											[
+												4.945,
+												4.776
+											],
+											[
+												3.915,
+												6.792
+											],
+											[
+												0,
+												0
+											],
+											[
+												6.608,
+												-1.9
+											],
+											[
+												7.84,
+												0
+											],
+											[
+												0,
+												0
+											],
+											[
+												1.663,
+												-6.676
+											],
+											[
+												3.92,
+												-6.787
+											],
+											[
+												0,
+												0
+											],
+											[
+												-4.95,
+												-4.776
+											],
+											[
+												-3.92,
+												-6.787
+											]
+										],
+										o: [
+											[
+												3.92,
+												6.787
+											],
+											[
+												1.663,
+												6.671
+											],
+											[
+												0,
+												0
+											],
+											[
+												7.84,
+												0
+											],
+											[
+												6.608,
+												1.895
+											],
+											[
+												0,
+												0
+											],
+											[
+												3.92,
+												-6.787
+											],
+											[
+												4.945,
+												-4.776
+											],
+											[
+												0,
+												0
+											],
+											[
+												-3.92,
+												-6.787
+											],
+											[
+												-1.663,
+												-6.676
+											],
+											[
+												0,
+												0
+											],
+											[
+												-7.835,
+												0
+											],
+											[
+												-6.612,
+												-1.9
+											],
+											[
+												0,
+												0
+											],
+											[
+												-3.92,
+												6.792
+											],
+											[
+												-4.95,
+												4.776
+											],
+											[
+												0,
+												0
+											]
+										],
+										v: [
+											[
+												-38.919,
+												28.571
+											],
+											[
+												-20.715,
+												35.89
+											],
+											[
+												-5.281,
+												47.996
+											],
+											[
+												5.28,
+												47.996
+											],
+											[
+												20.719,
+												35.89
+											],
+											[
+												38.917,
+												28.571
+											],
+											[
+												44.196,
+												19.425
+											],
+											[
+												41.436,
+												0
+											],
+											[
+												44.2,
+												-19.425
+											],
+											[
+												38.917,
+												-28.571
+											],
+											[
+												20.719,
+												-35.886
+											],
+											[
+												5.28,
+												-47.996
+											],
+											[
+												-5.281,
+												-47.996
+											],
+											[
+												-20.715,
+												-35.886
+											],
+											[
+												-38.919,
+												-28.571
+											],
+											[
+												-44.197,
+												-19.425
+											],
+											[
+												-41.432,
+												0
+											],
+											[
+												-44.197,
+												19.425
+											]
+										],
+										c: true
+									}
+								},
+								nm: "P"
+							},
+							{
+								ty: "gf",
+								o: {
+									a: 0,
+									k: 100
+								},
+								r: 1,
+								g: {
+									p: 3,
+									k: {
+										a: 0,
+										k: [
+											0,
+											1,
+											0.761,
+											0.031,
+											0.5,
+											0.945,
+											0.435,
+											0.253,
+											1,
+											0.89,
+											0.11,
+											0.475
+										]
+									}
+								},
+								s: {
+									a: 0,
+									k: [
+										-19.515,
+										-47.635
+									]
+								},
+								e: {
+									a: 0,
+									k: [
+										13.662,
+										48.644
+									]
+								},
+								t: 1,
+								nm: "G"
+							},
+							{
+								ty: "tr",
+								p: {
+									a: 0,
+									k: [
+										0,
+										0
+									]
+								},
+								a: {
+									a: 0,
+									k: [
+										0,
+										0
+									]
+								},
+								s: {
+									a: 0,
+									k: [
+										100,
+										100
+									]
+								},
+								r: {
+									a: 0,
+									k: 0
+								},
+								o: {
+									a: 0,
+									k: 100
+								},
+								sk: {
+									a: 0,
+									k: 0
+								},
+								sa: {
+									a: 0,
+									k: 0
+								},
+								nm: "T"
+							}
+						],
+						nm: "F"
+					}
+				],
+				ip: 0,
+				op: 496,
+				st: 0
+			}
+		]
+	}
+];
+var layers = [
+	{
+		ind: 1,
+		ty: 4,
+		nm: "S",
+		sr: 1,
+		ks: {
+			o: {
+				a: 0,
+				k: 100
+			},
+			r: {
+				a: 0,
+				k: 0
+			},
+			p: {
+				a: 0,
+				k: [
+					48,
+					48,
+					0
+				]
+			},
+			a: {
+				a: 0,
+				k: [
+					0,
+					0,
+					0
+				]
+			},
+			s: {
+				a: 1,
+				k: [
+					{
+						i: {
+							x: [
+								0.833,
+								0.833,
+								0.833
+							],
+							y: [
+								0.833,
+								0.833,
+								0.833
+							]
+						},
+						o: {
+							x: [
+								0.167,
+								0.167,
+								0.167
+							],
+							y: [
+								0.167,
+								0.167,
+								0.167
+							]
+						},
+						t: 0,
+						s: [
+							34,
+							34,
+							100
+						]
+					},
+					{
+						i: {
+							x: [
+								0.833,
+								0.833,
+								0.833
+							],
+							y: [
+								0.833,
+								0.833,
+								0.833
+							]
+						},
+						o: {
+							x: [
+								0.167,
+								0.167,
+								0.167
+							],
+							y: [
+								0.167,
+								0.167,
+								0.167
+							]
+						},
+						t: 50,
+						s: [
+							41,
+							41,
+							100
+						]
+					},
+					{
+						i: {
+							x: [
+								0.833,
+								0.833,
+								0.833
+							],
+							y: [
+								0.833,
+								0.833,
+								0.833
+							]
+						},
+						o: {
+							x: [
+								0.167,
+								0.167,
+								0.167
+							],
+							y: [
+								0.167,
+								0.167,
+								0.167
+							]
+						},
+						t: 110,
+						s: [
+							40,
+							40,
+							100
+						]
+					},
+					{
+						t: 150,
+						s: [
+							34,
+							34,
+							100
+						]
+					}
+				]
+			}
+		},
+		ao: 0,
+		shapes: [
+			{
+				ty: "gr",
+				it: [
+					{
+						ind: 0,
+						ty: "sh",
+						ks: {
+							a: 0,
+							k: {
+								i: [
+									[
+										0,
+										41.421
+									],
+									[
+										41.421,
+										0
+									],
+									[
+										0,
+										-41.421
+									],
+									[
+										-41.421,
+										0
+									]
+								],
+								o: [
+									[
+										0,
+										41.421
+									],
+									[
+										41.421,
+										0
+									],
+									[
+										0,
+										-41.421
+									],
+									[
+										-41.421,
+										0
+									]
+								],
+								v: [
+									[
+										0,
+										-75
+									],
+									[
+										-75,
+										0
+									],
+									[
+										0,
+										75
+									],
+									[
+										75,
+										0
+									]
+								],
+								c: true
+							}
+						},
+						nm: "P"
+					},
+					{
+						ty: "fl",
+						c: {
+							a: 0,
+							k: [
+								1,
+								1,
+								1,
+								1
+							]
+						},
+						o: {
+							a: 0,
+							k: 100
+						},
+						r: 1,
+						nm: "F"
+					},
+					{
+						ty: "tr",
+						p: {
+							a: 0,
+							k: [
+								0,
+								0
+							]
+						},
+						a: {
+							a: 0,
+							k: [
+								0,
+								0
+							]
+						},
+						s: {
+							a: 0,
+							k: [
+								100,
+								100
+							]
+						},
+						r: {
+							a: 0,
+							k: 0
+						},
+						o: {
+							a: 0,
+							k: 100
+						},
+						sk: {
+							a: 0,
+							k: 0
+						},
+						sa: {
+							a: 0,
+							k: 0
+						},
+						nm: "T"
+					}
+				],
+				nm: "S"
+			}
+		],
+		ip: 0,
+		op: 396,
+		st: 0
+	},
+	{
+		ind: 3,
+		ty: 0,
+		nm: "C",
+		refId: "comp_0",
+		sr: 1,
+		ks: {
+			o: {
+				a: 0,
+				k: 100
+			},
+			r: {
+				a: 0,
+				k: 0
+			},
+			p: {
+				a: 0,
+				k: [
+					48,
+					47.994,
+					0
+				]
+			},
+			a: {
+				a: 0,
+				k: [
+					48,
+					48,
+					0
+				]
+			},
+			s: {
+				a: 0,
+				k: [
+					90,
+					90,
+					100
+				]
+			}
+		},
+		ao: 0,
+		w: 96,
+		h: 96,
+		ip: 0,
+		op: 480,
+		st: 0
+	}
+];
+var markers = [
+];
+var AIResting = {
+	v: v,
+	meta: meta,
+	fr: fr,
+	ip: ip,
+	op: op,
+	w: w,
+	h: h,
+	nm: nm,
+	assets: assets,
+	layers: layers,
+	markers: markers
+};
+
+var img = "data:image/svg+xml,%3csvg width='64' height='64' viewBox='0 0 64 64' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cg clip-path='url(%23clip0_3314_32121)'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M18.1898 55.9227C13.7816 57.1861 8.66759 55.5682 6.05421 51.0432L2.53533 44.9454C-0.0780511 40.4204 1.0788 35.1799 4.37855 31.9957C1.0788 28.8114 -0.0780511 23.5742 2.53533 19.046L6.05421 12.9482C8.66759 8.42323 13.7816 6.80532 18.1898 8.07193C19.2983 3.62107 23.2555 -0.00149536 28.479 -0.00149536H35.52C40.7468 -0.00149536 44.7039 3.62107 45.8124 8.07193C50.2174 6.80532 55.3314 8.42323 57.9448 12.9482L61.4669 19.046C64.0771 23.5742 62.9202 28.8114 59.6237 31.9957C62.9202 35.1799 64.0771 40.4204 61.4637 44.9454L57.9448 51.0432C55.3314 55.5682 50.2174 57.1861 45.8124 55.9227C44.7039 60.3703 40.7468 63.9929 35.52 63.9929H28.479C23.2555 63.9929 19.2983 60.3703 18.1898 55.9227Z' fill='url(%23paint0_linear_3314_32121)'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 32C23.0457 32 32 23.0457 32 12C32 23.0457 40.9543 32 52 32C40.9543 32 32 40.9543 32 52C32 40.9543 23.0457 32 12 32Z' fill='white'/%3e%3c/g%3e%3cdefs%3e%3clinearGradient id='paint0_linear_3314_32121' x1='18.99' y1='0.239091' x2='41.9606' y2='54.7321' gradientUnits='userSpaceOnUse'%3e%3cstop stop-color='%23FFC208'/%3e%3cstop offset='1' stop-color='%23E31C79'/%3e%3c/linearGradient%3e%3cclipPath id='clip0_3314_32121'%3e%3crect width='64' height='64' fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e";
+
+var _excluded$6 = ["size", "state", "alt", "className"];
+var Sara = function Sara(props) {
+  var size = props.size,
+      state = props.state,
+      alt = props.alt,
+      className = props.className,
+      rest = _objectWithoutProperties(props, _excluded$6);
+
+  var SaraClassNames = classnames({
+    'align-bottom': state === 'default'
+  }, className);
+
+  if (state === 'default') {
+    return /*#__PURE__*/React.createElement("div", _extends$2({
+      "data-test": "DesignSystem-AI-Sara"
+    }, rest), /*#__PURE__*/React.createElement("img", {
+      src: img,
+      alt: alt,
+      width: size,
+      height: size,
+      className: SaraClassNames
+    }));
+  }
+
+  return /*#__PURE__*/React.createElement("div", _extends$2({
+    "data-test": "DesignSystem-AI-Sara",
+    className: className
+  }, rest), /*#__PURE__*/React.createElement(Player, {
+    autoplay: true,
+    loop: true,
+    src: AIResting,
+    style: {
+      height: size,
+      width: size
+    }
+  }));
+};
+Sara.defaultProps = {
+  size: 32,
+  state: 'default'
+};
+
+var SaraIconTop = function SaraIconTop(props) {
+  var className = props.className;
+  return /*#__PURE__*/React__default.createElement("svg", {
+    width: "16",
+    height: "16",
+    viewBox: "0 0 16 16",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    className: className,
+    "data-test": "DesignSystem-AI-Icon"
+  }, /*#__PURE__*/React__default.createElement("mask", {
+    id: "path-1-outside-1_3121_1765",
+    maskUnits: "userSpaceOnUse",
+    x: "0",
+    y: "0",
+    width: "15",
+    height: "15",
+    fill: "black"
+  }, /*#__PURE__*/React__default.createElement("rect", {
+    fill: "white",
+    width: "15",
+    height: "15"
+  }), /*#__PURE__*/React__default.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M6 1C6 3.76142 3.76142 6 1 6C3.76142 6 6 8.23858 6 11C6 8.23858 8.23858 6 11 6C8.23858 6 6 3.76142 6 1ZM11 8C11 9.65685 9.65685 11 8 11C9.65685 11 11 12.3431 11 14C11 12.3431 12.3431 11 14 11C12.3431 11 11 9.65685 11 8Z"
+  })), /*#__PURE__*/React__default.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M6 1C6 3.76142 3.76142 6 1 6C3.76142 6 6 8.23858 6 11C6 8.23858 8.23858 6 11 6C8.23858 6 6 3.76142 6 1ZM11 8C11 9.65685 9.65685 11 8 11C9.65685 11 11 12.3431 11 14C11 12.3431 12.3431 11 14 11C12.3431 11 11 9.65685 11 8Z",
+    fill: "url(#paint0_linear_3121_1765)"
+  }), /*#__PURE__*/React__default.createElement("path", {
+    d: "M1 5C0.447715 5 0 5.44772 0 6C0 6.55228 0.447715 7 1 7V5ZM7 1C7 0.447715 6.55228 0 6 0C5.44772 0 5 0.447715 5 1H7ZM5 11C5 11.5523 5.44772 12 6 12C6.55228 12 7 11.5523 7 11H5ZM11 7C11.5523 7 12 6.55228 12 6C12 5.44772 11.5523 5 11 5V7ZM8 10C7.44772 10 7 10.4477 7 11C7 11.5523 7.44772 12 8 12V10ZM12 8C12 7.44772 11.5523 7 11 7C10.4477 7 10 7.44772 10 8H12ZM10 14C10 14.5523 10.4477 15 11 15C11.5523 15 12 14.5523 12 14H10ZM14 12C14.5523 12 15 11.5523 15 11C15 10.4477 14.5523 10 14 10V12ZM1 7C4.31371 7 7 4.31371 7 1H5C5 3.20914 3.20914 5 1 5V7ZM7 11C7 7.68629 4.31371 5 1 5V7C3.20914 7 5 8.79086 5 11H7ZM11 5C7.68629 5 5 7.68629 5 11H7C7 8.79086 8.79086 7 11 7V5ZM5 1C5 4.31371 7.68629 7 11 7V5C8.79086 5 7 3.20914 7 1H5ZM8 12C10.2091 12 12 10.2091 12 8H10C10 9.10457 9.10457 10 8 10V12ZM12 14C12 11.7909 10.2091 10 8 10V12C9.10457 12 10 12.8954 10 14H12ZM14 10C11.7909 10 10 11.7909 10 14H12C12 12.8954 12.8954 12 14 12V10ZM10 8C10 10.2091 11.7909 12 14 12V10C12.8954 10 12 9.10457 12 8H10Z",
+    fill: "currentColor",
+    mask: "url(#path-1-outside-1_3121_1765)"
+  }), /*#__PURE__*/React__default.createElement("defs", null, /*#__PURE__*/React__default.createElement("linearGradient", {
+    id: "paint0_linear_3121_1765",
+    x1: "5.5",
+    y1: "3.25",
+    x2: "8.29755",
+    y2: "12.1038",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React__default.createElement("stop", {
+    stopColor: "#FFC208"
+  }), /*#__PURE__*/React__default.createElement("stop", {
+    offset: "1",
+    stopColor: "#E31C79"
+  }))));
+};
+
+var SaraIconBottom = function SaraIconBottom(props) {
+  var className = props.className;
+  return /*#__PURE__*/React__default.createElement("svg", {
+    width: "16",
+    height: "16",
+    viewBox: "0 0 16 16",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    className: className,
+    "data-test": "DesignSystem-AI-Icon"
+  }, /*#__PURE__*/React__default.createElement("mask", {
+    id: "path-1-outside-1_2094_5789",
+    maskUnits: "userSpaceOnUse",
+    x: "1",
+    y: "0",
+    width: "15",
+    height: "15",
+    fill: "black"
+  }, /*#__PURE__*/React__default.createElement("rect", {
+    fill: "white",
+    x: "1",
+    width: "15",
+    height: "15"
+  }), /*#__PURE__*/React__default.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M15 6C12.2386 6 10 3.76142 10 1C10 3.76142 7.76142 6 5 6C7.76142 6 10 8.23858 10 11C10 8.23858 12.2386 6 15 6ZM8 11C6.34315 11 5 9.65685 5 8C5 9.65685 3.65685 11 2 11C3.65685 11 5 12.3431 5 14C5 12.3431 6.34315 11 8 11Z"
+  })), /*#__PURE__*/React__default.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M15 6C12.2386 6 10 3.76142 10 1C10 3.76142 7.76142 6 5 6C7.76142 6 10 8.23858 10 11C10 8.23858 12.2386 6 15 6ZM8 11C6.34315 11 5 9.65685 5 8C5 9.65685 3.65685 11 2 11C3.65685 11 5 12.3431 5 14C5 12.3431 6.34315 11 8 11Z",
+    fill: "url(#paint0_linear_2094_5789)"
+  }), /*#__PURE__*/React__default.createElement("path", {
+    d: "M11 1C11 0.447715 10.5523 0 10 0C9.44772 0 9 0.447715 9 1L11 1ZM15 7C15.5523 7 16 6.55228 16 6C16 5.44772 15.5523 5 15 5L15 7ZM5 5C4.44771 5 4 5.44772 4 6C4 6.55228 4.44771 7 5 7L5 5ZM9 11C9 11.5523 9.44772 12 10 12C10.5523 12 11 11.5523 11 11L9 11ZM6 8C6 7.44772 5.55229 7 5 7C4.44771 7 4 7.44772 4 8H6ZM8 12C8.55228 12 9 11.5523 9 11C9 10.4477 8.55228 10 8 10V12ZM2 10C1.44771 10 1 10.4477 1 11C1 11.5523 1.44771 12 2 12V10ZM4 14C4 14.5523 4.44771 15 5 15C5.55229 15 6 14.5523 6 14H4ZM9 1C9 4.31371 11.6863 7 15 7L15 5C12.7909 5 11 3.20914 11 1L9 1ZM5 7C8.31371 7 11 4.31371 11 1L9 1C9 3.20914 7.20914 5 5 5L5 7ZM11 11C11 7.68629 8.31371 5 5 5L5 7C7.20914 7 9 8.79086 9 11L11 11ZM15 5C11.6863 5 9 7.68629 9 11L11 11C11 8.79086 12.7909 7 15 7L15 5ZM4 8C4 10.2091 5.79086 12 8 12V10C6.89543 10 6 9.10457 6 8H4ZM2 12C4.20914 12 6 10.2091 6 8H4C4 9.10457 3.10457 10 2 10V12ZM6 14C6 11.7909 4.20914 10 2 10V12C3.10457 12 4 12.8954 4 14H6ZM8 10C5.79086 10 4 11.7909 4 14H6C6 12.8954 6.89543 12 8 12V10Z",
+    fill: "currentColor",
+    mask: "url(#path-1-outside-1_2094_5789)"
+  }), /*#__PURE__*/React__default.createElement("defs", null, /*#__PURE__*/React__default.createElement("linearGradient", {
+    id: "paint0_linear_2094_5789",
+    x1: "12.75",
+    y1: "5.5",
+    x2: "3.89622",
+    y2: "8.29755",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React__default.createElement("stop", {
+    stopColor: "#FFC208"
+  }), /*#__PURE__*/React__default.createElement("stop", {
+    offset: "1",
+    stopColor: "#E31C79"
+  }))));
+};
+
+var SaraDisabledTop = function SaraDisabledTop(props) {
+  var className = props.className;
+  return /*#__PURE__*/React__default.createElement("svg", {
+    width: "16",
+    height: "16",
+    viewBox: "0 0 16 16",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    className: className,
+    "data-test": "DesignSystem-AI-Icon"
+  }, /*#__PURE__*/React__default.createElement("mask", {
+    id: "path-1-outside-1_2094_5659",
+    maskUnits: "userSpaceOnUse",
+    x: "0",
+    y: "0",
+    width: "15",
+    height: "15",
+    fill: "black"
+  }, /*#__PURE__*/React__default.createElement("rect", {
+    fill: "white",
+    width: "15",
+    height: "15"
+  }), /*#__PURE__*/React__default.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M6 1C6 3.76142 3.76142 6 1 6C3.76142 6 6 8.23858 6 11C6 8.23858 8.23858 6 11 6C8.23858 6 6 3.76142 6 1ZM11 8C11 9.65685 9.65685 11 8 11C9.65685 11 11 12.3431 11 14C11 12.3431 12.3431 11 14 11C12.3431 11 11 9.65685 11 8Z"
+  })), /*#__PURE__*/React__default.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M6 1C6 3.76142 3.76142 6 1 6C3.76142 6 6 8.23858 6 11C6 8.23858 8.23858 6 11 6C8.23858 6 6 3.76142 6 1ZM11 8C11 9.65685 9.65685 11 8 11C9.65685 11 11 12.3431 11 14C11 12.3431 12.3431 11 14 11C12.3431 11 11 9.65685 11 8Z",
+    fill: "url(#paint0_linear_2094_5659)"
+  }), /*#__PURE__*/React__default.createElement("path", {
+    d: "M1 5C0.447715 5 0 5.44772 0 6C0 6.55228 0.447715 7 1 7V5ZM7 1C7 0.447715 6.55228 0 6 0C5.44772 0 5 0.447715 5 1H7ZM5 11C5 11.5523 5.44772 12 6 12C6.55228 12 7 11.5523 7 11H5ZM11 7C11.5523 7 12 6.55228 12 6C12 5.44772 11.5523 5 11 5V7ZM8 10C7.44772 10 7 10.4477 7 11C7 11.5523 7.44772 12 8 12V10ZM12 8C12 7.44772 11.5523 7 11 7C10.4477 7 10 7.44772 10 8H12ZM10 14C10 14.5523 10.4477 15 11 15C11.5523 15 12 14.5523 12 14H10ZM14 12C14.5523 12 15 11.5523 15 11C15 10.4477 14.5523 10 14 10V12ZM1 7C4.31371 7 7 4.31371 7 1H5C5 3.20914 3.20914 5 1 5V7ZM7 11C7 7.68629 4.31371 5 1 5V7C3.20914 7 5 8.79086 5 11H7ZM11 5C7.68629 5 5 7.68629 5 11H7C7 8.79086 8.79086 7 11 7V5ZM5 1C5 4.31371 7.68629 7 11 7V5C8.79086 5 7 3.20914 7 1H5ZM8 12C10.2091 12 12 10.2091 12 8H10C10 9.10457 9.10457 10 8 10V12ZM12 14C12 11.7909 10.2091 10 8 10V12C9.10457 12 10 12.8954 10 14H12ZM14 10C11.7909 10 10 11.7909 10 14H12C12 12.8954 12.8954 12 14 12V10ZM10 8C10 10.2091 11.7909 12 14 12V10C12.8954 10 12 9.10457 12 8H10Z",
+    fill: "currentColor",
+    mask: "url(#path-1-outside-1_2094_5659)"
+  }), /*#__PURE__*/React__default.createElement("defs", null, /*#__PURE__*/React__default.createElement("linearGradient", {
+    id: "paint0_linear_2094_5659",
+    x1: "5.5",
+    y1: "3.25",
+    x2: "8.29755",
+    y2: "12.1038",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React__default.createElement("stop", {
+    stopColor: "#FFE79E"
+  }), /*#__PURE__*/React__default.createElement("stop", {
+    offset: "1",
+    stopColor: "#F4A4C9"
+  }))));
+};
+
+var SaraDisabledBottom = function SaraDisabledBottom(props) {
+  var className = props.className;
+  return /*#__PURE__*/React__default.createElement("svg", {
+    width: "16",
+    height: "16",
+    viewBox: "0 0 16 16",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    className: className,
+    "data-test": "DesignSystem-AI-Icon"
+  }, /*#__PURE__*/React__default.createElement("mask", {
+    id: "path-1-outside-1_2094_5854",
+    maskUnits: "userSpaceOnUse",
+    x: "1",
+    y: "0",
+    width: "15",
+    height: "15",
+    fill: "black"
+  }, /*#__PURE__*/React__default.createElement("rect", {
+    fill: "white",
+    x: "1",
+    width: "15",
+    height: "15"
+  }), /*#__PURE__*/React__default.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M15 6C12.2386 6 10 3.76142 10 1C10 3.76142 7.76142 6 5 6C7.76142 6 10 8.23858 10 11C10 8.23858 12.2386 6 15 6ZM8 11C6.34315 11 5 9.65685 5 8C5 9.65685 3.65685 11 2 11C3.65685 11 5 12.3431 5 14C5 12.3431 6.34315 11 8 11Z"
+  })), /*#__PURE__*/React__default.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M15 6C12.2386 6 10 3.76142 10 1C10 3.76142 7.76142 6 5 6C7.76142 6 10 8.23858 10 11C10 8.23858 12.2386 6 15 6ZM8 11C6.34315 11 5 9.65685 5 8C5 9.65685 3.65685 11 2 11C3.65685 11 5 12.3431 5 14C5 12.3431 6.34315 11 8 11Z",
+    fill: "url(#paint0_linear_2094_5854)"
+  }), /*#__PURE__*/React__default.createElement("path", {
+    d: "M11 1C11 0.447715 10.5523 0 10 0C9.44772 0 9 0.447715 9 1L11 1ZM15 7C15.5523 7 16 6.55228 16 6C16 5.44772 15.5523 5 15 5L15 7ZM5 5C4.44771 5 4 5.44772 4 6C4 6.55228 4.44771 7 5 7L5 5ZM9 11C9 11.5523 9.44772 12 10 12C10.5523 12 11 11.5523 11 11L9 11ZM6 8C6 7.44772 5.55229 7 5 7C4.44771 7 4 7.44772 4 8H6ZM8 12C8.55228 12 9 11.5523 9 11C9 10.4477 8.55228 10 8 10V12ZM2 10C1.44771 10 1 10.4477 1 11C1 11.5523 1.44771 12 2 12V10ZM4 14C4 14.5523 4.44771 15 5 15C5.55229 15 6 14.5523 6 14H4ZM9 1C9 4.31371 11.6863 7 15 7L15 5C12.7909 5 11 3.20914 11 1L9 1ZM5 7C8.31371 7 11 4.31371 11 1L9 1C9 3.20914 7.20914 5 5 5L5 7ZM11 11C11 7.68629 8.31371 5 5 5L5 7C7.20914 7 9 8.79086 9 11L11 11ZM15 5C11.6863 5 9 7.68629 9 11L11 11C11 8.79086 12.7909 7 15 7L15 5ZM4 8C4 10.2091 5.79086 12 8 12V10C6.89543 10 6 9.10457 6 8H4ZM2 12C4.20914 12 6 10.2091 6 8H4C4 9.10457 3.10457 10 2 10V12ZM6 14C6 11.7909 4.20914 10 2 10V12C3.10457 12 4 12.8954 4 14H6ZM8 10C5.79086 10 4 11.7909 4 14H6C6 12.8954 6.89543 12 8 12V10Z",
+    fill: "currentColor",
+    mask: "url(#path-1-outside-1_2094_5854)"
+  }), /*#__PURE__*/React__default.createElement("defs", null, /*#__PURE__*/React__default.createElement("linearGradient", {
+    id: "paint0_linear_2094_5854",
+    x1: "12.75",
+    y1: "5.5",
+    x2: "3.89622",
+    y2: "8.29755",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React__default.createElement("stop", {
+    stopColor: "#FFE79E"
+  }), /*#__PURE__*/React__default.createElement("stop", {
+    offset: "1",
+    stopColor: "#F4A4C9"
+  }))));
+};
+
+var SaraIcon = function SaraIcon(props) {
+  var size = props.size,
+      position = props.position,
+      disabled = props.disabled;
+  var AIIconClassNames = classnames({
+    'AIIconButton-AIIcon': true,
+    'AIIconButton-AIIcon--largeTop': position === 'top' && size === 'large',
+    'AIIconButton-AIIcon--regularTop': position === 'top' && size === 'regular',
+    'AIIconButton-AIIcon--regularBottom': position === 'bottom' && size === 'regular',
+    'AIIconButton-AIIcon--largeBottom': position === 'bottom' && size === 'large'
+  });
+
+  if (disabled && position === 'bottom') {
+    return /*#__PURE__*/React.createElement(SaraDisabledBottom, {
+      className: AIIconClassNames
+    });
+  }
+
+  if (disabled && position === 'top') {
+    return /*#__PURE__*/React.createElement(SaraDisabledTop, {
+      className: AIIconClassNames
+    });
+  }
+
+  if (position === 'bottom') {
+    return /*#__PURE__*/React.createElement(SaraIconBottom, {
+      className: AIIconClassNames
+    });
+  }
+
+  return /*#__PURE__*/React.createElement(SaraIconTop, {
+    className: AIIconClassNames
+  });
+};
+SaraIcon.defaultProps = {
+  size: 'regular',
+  position: 'top'
+};
+
+var _excluded$5 = ["icon", "position", "className", "size", "strokeColor", "tooltip", "disabled"];
+var AIIconButton = function AIIconButton(props) {
+  var _classNames;
+
+  var icon = props.icon,
+      position = props.position,
+      className = props.className,
+      size = props.size,
+      strokeColor = props.strokeColor,
+      tooltip = props.tooltip,
+      disabled = props.disabled,
+      rest = _objectWithoutProperties(props, _excluded$5);
+
+  var buttonClassNames = classnames({
+    AIIconButton: true
+  }, className);
+  var IconClassNames = classnames((_classNames = {
+    'AIIconButton-icon': true
+  }, _defineProperty$1(_classNames, 'material-symbols', true), _defineProperty$1(_classNames, 'material-symbols-rounded', true), _classNames));
+  var sizeMapping = {
+    regular: 16,
+    large: 20
+  };
+  var iconStyles = {
+    fontSize: "".concat(sizeMapping[size], "px"),
+    width: "".concat(sizeMapping[size], "px"),
+    height: "".concat(sizeMapping[size], "px"),
+    color: disabled ? '#A6A6A6' : 'rgb(0, 0, 0)'
+  };
+  var saraIconProps = {
+    disabled: disabled,
+    size: size,
+    position: position
+  };
+  return /*#__PURE__*/React.createElement(Tooltip, {
+    tooltip: tooltip,
+    showTooltip: !!tooltip && !disabled
+  }, /*#__PURE__*/React.createElement("button", _extends$2({
+    className: buttonClassNames,
+    "data-test": "DesignSystem-AI-IconButton",
+    disabled: disabled
+  }, rest, {
+    style: {
+      color: strokeColor
+    }
+  }), /*#__PURE__*/React.createElement("i", {
+    "data-test": "DesignSystem-Icon",
+    className: IconClassNames,
+    style: iconStyles
+  }, icon), /*#__PURE__*/React.createElement(SaraIcon, saraIconProps)));
+};
+AIIconButton.defaultProps = {
+  size: 'regular',
+  position: 'top',
+  strokeColor: '#fff'
+};
+
+var _excluded$4 = ["label", "icon", "disabled", "name", "className"];
+var AIChip = function AIChip(props) {
+  var _classNames;
+
+  var label = props.label,
+      icon = props.icon,
+      disabled = props.disabled;
+      props.name;
+      var className = props.className,
+      rest = _objectWithoutProperties(props, _excluded$4);
+
+  var ChipClassNames = classnames({
+    AIChip: true,
+    'AIChip--disabled': disabled
+  }, className);
+  var IconClassNames = classnames((_classNames = {
+    'AIChip-icon': true,
+    'AIChip-icon--disabled': disabled
+  }, _defineProperty$1(_classNames, 'material-symbols', true), _defineProperty$1(_classNames, 'material-symbols-rounded', true), _classNames));
+  var TextClassNames = classnames({
+    'AIChip-text': true,
+    'AIChip-text--disabled': disabled
+  });
+  return /*#__PURE__*/React.createElement("button", _extends$2({
+    type: "button",
+    "data-test": "DesignSystem-AI-Chip",
+    className: ChipClassNames,
+    disabled: disabled
+  }, rest), /*#__PURE__*/React.createElement("i", {
+    "data-test": "DesignSystem-AI-Chip-Icon",
+    className: IconClassNames
+  }, icon), /*#__PURE__*/React.createElement("span", {
+    "data-test": "DesignSystem-AI-Chip-Text",
+    className: TextClassNames
+  }, label));
+};
+
+var _excluded$3 = ["children", "className"];
+var ChatBox = function ChatBox(props) {
+  var children = props.children,
+      className = props.className,
+      rest = _objectWithoutProperties(props, _excluded$3);
+
+  var chatBoxClassNames = classnames({
+    'AIResponse-box': true
+  }, className);
+  return /*#__PURE__*/React.createElement("div", _extends$2({
+    className: chatBoxClassNames,
+    "data-test": "DesignSystem-AIResponse-Box"
+  }, rest), children);
+};
+
+var _excluded$2 = ["className", "selected"];
+var ChatButton = function ChatButton(props) {
+  var className = props.className,
+      selected = props.selected,
+      rest = _objectWithoutProperties(props, _excluded$2);
+
+  var chatButtonClassNames = classnames({
+    'AIResponse-button': true,
+    'AIResponse-button--selected': selected
+  }, className);
+  return /*#__PURE__*/React.createElement(Button, _extends$2({
+    "data-test": "DesignSystem-AIResponse-Button"
+  }, rest, {
+    selected: selected,
+    size: "tiny",
+    largeIcon: true,
+    appearance: "transparent",
+    className: chatButtonClassNames
+  }));
+};
+
+var _excluded$1 = ["children", "className"];
+var ChatActionBar = function ChatActionBar(props) {
+  var children = props.children,
+      className = props.className,
+      rest = _objectWithoutProperties(props, _excluded$1);
+
+  var actionBarClassNames = classnames({
+    'AIResponse-actionBar': true
+  }, className);
+  return /*#__PURE__*/React.createElement("div", _extends$2({
+    className: actionBarClassNames,
+    "data-test": "DesignSystem-AIResponse-ActionBar"
+  }, rest), children);
+};
+
+var _excluded = ["children", "className"];
+var ChatBody = function ChatBody(props) {
+  var children = props.children,
+      className = props.className,
+      rest = _objectWithoutProperties(props, _excluded);
+
+  var chatBodyClassNames = classnames({
+    'pb-3': true
+  }, className);
+  return /*#__PURE__*/React.createElement("div", _extends$2({
+    className: chatBodyClassNames,
+    "data-test": "DesignSystem-AIResponse-Body"
+  }, rest), children);
+};
+
+var AIResponse = function AIResponse(props) {
+  var children = props.children;
+  return /*#__PURE__*/React.createElement(ChatBox, props, children);
+};
+AIResponse.Button = ChatButton;
+AIResponse.ActionBar = ChatActionBar;
+AIResponse.Body = ChatBody;
+
+var version = "2.38.1";
+
+export { AIButton, AIChip, AIIconButton, AIResponse, ActionCard, Avatar, AvatarGroup, AvatarSelection, Backdrop, Badge, Breadcrumbs, Button, Calendar, Caption, Card, CardBody, CardFooter, CardHeader, CardSubdued, ChatMessage, Checkbox, Chip, ChipGroup, ChipInput, ChoiceList, Collapsible, Column, Combobox, DatePicker, DateRangePicker, Dialog, Divider, Dropdown, Dropzone, EditableChipInput, EditableDropdown, EditableInput, EmptyState, FileList, FileUploader, FileUploaderList, FullscreenModal, Grid, GridCell, Heading, HelpText, HorizontalNav, Icon, InlineMessage, Input, X as InputMask, Label, Legend, Link, LinkButton, List, Listbox, Menu, Message, MetaList, MetricInput, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, MultiSlider, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderImage, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Sara, SaraSparkle, Select, SelectionCard, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, Tabs, TabsWrapper, Text, TextField, Textarea, TimePicker, Toast, Tooltip, index as Utils, VerificationCodeInput, VerticalNav, version };
