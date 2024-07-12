@@ -1,3 +1,41 @@
+## 2.38.1 (2024-07-12)
+
+### Highlights
+
+- fix: move lottie player npm package from dev-dependencies to dependencies (65d70faf)
+- fix(combobox): add onFocus and onBlur callback function in combobox options (83e66918)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+- fix: move lottie player npm package from dev-dependencies to dependencies (65d70faf)
+- fix(combobox): add onFocus and onBlur callback function in combobox options (83e66918)
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 2.38.0 (2024-07-05)
 
 ### Highlights
