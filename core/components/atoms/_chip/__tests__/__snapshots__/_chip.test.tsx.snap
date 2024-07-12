@@ -5,7 +5,9 @@ exports[`Chip component
  1`] = `
 <body>
   <div>
-    <div>
+    <div
+      class="d-inline-flex"
+    >
       <div
         class="Chip-wrapper undefined"
         data-test="DesignSystem-GenericChip--Wrapper"
@@ -42,7 +44,9 @@ exports[`Chip component
  1`] = `
 <body>
   <div>
-    <div>
+    <div
+      class="d-inline-flex"
+    >
       <div
         class="Chip-wrapper undefined"
         data-test="DesignSystem-GenericChip--Wrapper"
@@ -79,7 +83,9 @@ exports[`Chip component
  1`] = `
 <body>
   <div>
-    <div>
+    <div
+      class="d-inline-flex"
+    >
       <div
         class="Chip-wrapper undefined"
         data-test="DesignSystem-GenericChip--Wrapper"
@@ -116,7 +122,9 @@ exports[`Chip component
  1`] = `
 <body>
   <div>
-    <div>
+    <div
+      class="d-inline-flex"
+    >
       <div
         class="Chip-wrapper undefined"
         data-test="DesignSystem-GenericChip--Wrapper"
@@ -153,7 +161,9 @@ exports[`Chip component
  1`] = `
 <body>
   <div>
-    <div>
+    <div
+      class="d-inline-flex"
+    >
       <div
         class="Chip-wrapper undefined"
         data-test="DesignSystem-GenericChip--Wrapper"
@@ -205,7 +215,9 @@ exports[`Chip component
  1`] = `
 <body>
   <div>
-    <div>
+    <div
+      class="d-inline-flex"
+    >
       <div
         class="Chip-wrapper undefined"
         data-test="DesignSystem-GenericChip--Wrapper"
@@ -257,7 +269,9 @@ exports[`Chip component
  1`] = `
 <body>
   <div>
-    <div>
+    <div
+      class="d-inline-flex"
+    >
       <div
         class="Chip-wrapper undefined"
         data-test="DesignSystem-GenericChip--Wrapper"
@@ -309,7 +323,9 @@ exports[`Chip component
  1`] = `
 <body>
   <div>
-    <div>
+    <div
+      class="d-inline-flex"
+    >
       <div
         class="Chip-wrapper undefined"
         data-test="DesignSystem-GenericChip--Wrapper"

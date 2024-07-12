@@ -112,7 +112,7 @@ export const GenericChip = (props: GenericChipProps) => {
   };
 
   return (
-    <div>
+    <div className="d-inline-flex">
       <Tooltip showTooltip={isTextTruncated} data-test="DesignSystem-GenericChip--Tooltip" tooltip={getTooltipText()}>
         <div
           tabIndex={disabled ? -1 : 0}

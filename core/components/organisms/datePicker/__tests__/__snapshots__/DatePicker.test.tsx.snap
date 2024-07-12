@@ -646,7 +646,9 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
         class="d-flex justify-content-center pb-6"
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
-        <div>
+        <div
+          class="d-inline-flex"
+        >
           <div
             class="Chip-wrapper Chip Chip--action"
             data-test="DesignSystem-Chip--GenericChip"
@@ -1319,7 +1321,9 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
         class="d-flex justify-content-center pb-6"
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
-        <div>
+        <div
+          class="d-inline-flex"
+        >
           <div
             class="Chip-wrapper Chip Chip-action--disabled"
             data-test="DesignSystem-Chip--GenericChip"
@@ -1992,7 +1996,9 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
         class="d-flex justify-content-center pb-6"
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
-        <div>
+        <div
+          class="d-inline-flex"
+        >
           <div
             class="Chip-wrapper Chip Chip-action--disabled"
             data-test="DesignSystem-Chip--GenericChip"
@@ -2664,7 +2670,9 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
         class="d-flex justify-content-center pb-6"
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
-        <div>
+        <div
+          class="d-inline-flex"
+        >
           <div
             class="Chip-wrapper Chip Chip--action"
             data-test="DesignSystem-Chip--GenericChip"
@@ -3336,7 +3344,9 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
         class="d-flex justify-content-center pb-6"
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
-        <div>
+        <div
+          class="d-inline-flex"
+        >
           <div
             class="Chip-wrapper Chip Chip--action"
             data-test="DesignSystem-Chip--GenericChip"
@@ -4008,7 +4018,9 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
         class="d-flex justify-content-center pb-6"
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
-        <div>
+        <div
+          class="d-inline-flex"
+        >
           <div
             class="Chip-wrapper Chip Chip--action"
             data-test="DesignSystem-Chip--GenericChip"
@@ -4274,7 +4286,9 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
         class="d-flex justify-content-center pb-6"
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
-        <div>
+        <div
+          class="d-inline-flex"
+        >
           <div
             class="Chip-wrapper Chip Chip--action"
             data-test="DesignSystem-Chip--GenericChip"
@@ -4532,7 +4546,9 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
         class="d-flex justify-content-center pb-6 pt-3"
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
-        <div>
+        <div
+          class="d-inline-flex"
+        >
           <div
             class="Chip-wrapper Chip Chip--action"
             data-test="DesignSystem-Chip--GenericChip"
@@ -5204,7 +5220,9 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
         class="d-flex justify-content-center pb-6"
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
-        <div>
+        <div
+          class="d-inline-flex"
+        >
           <div
             class="Chip-wrapper Chip Chip--action"
             data-test="DesignSystem-Chip--GenericChip"

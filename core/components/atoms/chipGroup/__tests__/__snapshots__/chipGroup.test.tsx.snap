@@ -12,7 +12,9 @@ exports[`ChipGroup component
       <span
         class="ChipGroup-item"
       >
-        <div>
+        <div
+          class="d-inline-flex"
+        >
           <div
             class="Chip-wrapper Chip Chip--action"
             data-test="DesignSystem-ChipGroup--Chip"
@@ -44,7 +46,9 @@ exports[`ChipGroup component
       <span
         class="ChipGroup-item"
       >
-        <div>
+        <div
+          class="d-inline-flex"
+        >
           <div
             class="Chip-wrapper Chip Chip--input Chip-icon--clear"
             data-test="DesignSystem-ChipGroup--Chip"
@@ -91,7 +95,9 @@ exports[`ChipGroup component
       <span
         class="ChipGroup-item"
       >
-        <div>
+        <div
+          class="d-inline-flex"
+        >
           <div
             class="Chip-wrapper Chip Chip--selection Chip-selection--selected Chip-icon--clear"
             data-test="DesignSystem-ChipGroup--Chip"
@@ -138,7 +144,9 @@ exports[`ChipGroup component
       <span
         class="ChipGroup-item"
       >
-        <div>
+        <div
+          class="d-inline-flex"
+        >
           <div
             class="Chip-wrapper Chip Chip--selection Chip-icon--clear"
             data-test="DesignSystem-ChipGroup--Chip"
