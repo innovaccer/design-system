@@ -2416,7 +2416,7 @@ exports[`TS renders children 1`] = `
       class="TabsWrapper-header"
     >
       <div
-        class="Tab Tab--active"
+        class="Tab Tab--active Tab--regular"
         data-test="DesignSystem-Tabs--Header"
       />
     </div>

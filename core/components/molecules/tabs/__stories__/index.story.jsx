@@ -16,11 +16,17 @@ export const all = () => {
       <Tab label="All" count={15} className="pl-6">
         <div>All</div>
       </Tab>
-      <Tab label="Tab(Recommended)" count={10} className="pl-6">
-        <div>Tab(Recommended)</div>
+      <Tab label="Pending" count={5} className="pl-6">
+        <div>Pending</div>
       </Tab>
-      <Tab label="Extras" disabled={true} count={5}>
-        <div>Extras</div>
+      <Tab label="Transferred" count={3} className="pl-6">
+        <div>Transferred</div>
+      </Tab>
+      <Tab label="Successful" count={2} className="pl-6">
+        <div>Successful</div>
+      </Tab>
+      <Tab label="Declined" disabled={true} count={5}>
+        <div>Declined</div>
       </Tab>
     </Tabs>
   );
@@ -34,20 +40,21 @@ const customCode = `() => {
   };
 
   return(
-    <Tabs
-      activeIndex={activeIndex}
-      onTabChange={onTabChangeHandler}
-      className="mb-6"
-      headerClassName='pl-3'
-    >
+    <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6" headerClassName="pl-3">
       <Tab label="All" count={15} className="pl-6">
         <div>All</div>
       </Tab>
-      <Tab label="Tab(Recommended)" count={10} className="pl-6">
-        <div>Tab(Recommended)</div>
+      <Tab label="Pending" count={5} className="pl-6">
+        <div>Pending</div>
       </Tab>
-      <Tab label="Extras" disabled={true} count={5}>
-        <div>Extras</div>
+      <Tab label="Transferred" count={3} className="pl-6">
+        <div>Transferred</div>
+      </Tab>
+      <Tab label="Successful" count={2} className="pl-6">
+        <div>Successful</div>
+      </Tab>
+      <Tab label="Declined" disabled={true} count={5}>
+        <div>Declined</div>
       </Tab>
     </Tabs>
   );

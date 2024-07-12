@@ -4,6 +4,8 @@ import { Tabs, Dropdown, Input, Tab } from '@/index';
 
 // CSF format story
 export const inlineContent = () => {
+  const [activeIndex, setActiveIndex] = React.useState(0);
+
   const options = [
     {
       label: 'Increasing',
@@ -16,11 +18,12 @@ export const inlineContent = () => {
   ];
 
   const onTabChangeHandler = (tabIndex) => {
+    setActiveIndex(tabIndex);
     return action(`tab-change: ${tabIndex}`)();
   };
 
   return (
-    <Tabs onTabChange={onTabChangeHandler} className="mb-6">
+    <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6">
       <Tab label="All" count={12} className="pl-5">
         <div>All</div>
       </Tab>
@@ -43,6 +46,8 @@ export const inlineContent = () => {
 };
 
 const customCode = `() => {
+  const [activeIndex, setActiveIndex] = React.useState(0);
+
   const options = [
     {
       label: 'Increasing',
@@ -54,10 +59,15 @@ const customCode = `() => {
     },
   ];
 
+  const onTabChangeHandler = (tabIndex) => {
+    setActiveIndex(tabIndex);
+  };
+
   return(
     <Tabs
-      onTabChange={console.log}
+      onTabChange={onTabChangeHandler}
       className="mb-6"
+      activeIndex={activeIndex}
     >
       <Tab label="All" count={12} className="pl-5">
         <div>All</div>

@@ -28,7 +28,10 @@ export const basicTabs = () => {
     },
   ];
 
+  const [activeIndex, setActiveIndex] = React.useState(0);
+
   const onTabChangeHandler = (tabIndex) => {
+    setActiveIndex(tabIndex);
     return action(`tab-change: ${tabIndex}`)();
   };
 
@@ -42,7 +45,7 @@ export const basicTabs = () => {
           <Dropdown options={options} />
         </div>
       </div>
-      <Tabs onTabChange={onTabChangeHandler} className="mb-6">
+      <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6">
         <Tab label="Clinical Gaps" className="pl-5">
           <div>Clinical Gaps</div>
         </Tab>
@@ -82,38 +85,31 @@ const customCode = `() => {
     }
   ];
 
+  const [activeIndex, setActiveIndex] = React.useState(0);
+
+  const onTabChangeHandler = (tabIndex) => {
+    setActiveIndex(tabIndex);
+  };
+
   return(
     <div>
       <div className="d-flex justify-content-between">
-        <Heading size="m" className="pl-5">Data Gaps</Heading>
-        <div style={{width: 'var(--spacing-8)'}}>
+        <Heading size="m" className="pl-5">
+          Data Gaps
+        </Heading>
+        <div style={{ width: 'var(--spacing-8)' }}>
           <Dropdown options={options} />
         </div>
       </div>
-      <Tabs className="mb-6">
-        <Tab
-          label="Clinical Gaps"
-          className="pl-5"
-        >
-          <div>
-            Clinical Gaps
-          </div>
+      <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6">
+        <Tab label="Clinical Gaps" className="pl-5">
+          <div>Clinical Gaps</div>
         </Tab>
-        <Tab
-          label="Billing Gaps"
-          className="pl-5"
-        >
-          <div>
-            Billing Gaps
-          </div>
+        <Tab label="Billing Gaps" className="pl-5">
+          <div>Billing Gaps</div>
         </Tab>
-        <Tab
-          label="Claim Gaps"
-          disabled={true}
-        >
-          <div>
-            Claim Gaps
-          </div>
+        <Tab label="Claim Gaps" disabled={true}>
+          <div>Claim Gaps</div>
         </Tab>
       </Tabs>
     </div>

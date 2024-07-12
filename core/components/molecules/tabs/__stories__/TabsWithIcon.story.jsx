@@ -4,7 +4,10 @@ import { Tabs, Heading, Link, Tab } from '@/index';
 
 // CSF format story
 export const tabsWithIcon = () => {
+  const [activeIndex, setActiveIndex] = React.useState(0);
+
   const onTabChangeHandler = (tabIndex) => {
+    setActiveIndex(tabIndex);
     return action(`tab-change: ${tabIndex}`)();
   };
 
@@ -16,7 +19,7 @@ export const tabsWithIcon = () => {
         </Heading>
         <Link className="ml-4">Measure definition</Link>
       </div>
-      <Tabs onTabChange={onTabChangeHandler} className="mb-6">
+      <Tabs onTabChange={onTabChangeHandler} className="mb-6" activeIndex={activeIndex}>
         <Tab label="2020" icon="warning" className="pl-5">
           <div>2020</div>
         </Tab>
@@ -35,6 +38,12 @@ export const tabsWithIcon = () => {
 };
 
 const customCode = `() => {
+  const [activeIndex, setActiveIndex] = React.useState(0);
+
+  const onTabChangeHandler = (tabIndex) => {
+    setActiveIndex(tabIndex);
+  };
+
   return(
     <div>
       <div className="d-flex align-items-center">
@@ -42,7 +51,8 @@ const customCode = `() => {
         <Link className="ml-4">Measure definition</Link>
       </div>
       <Tabs
-        onTabChange={console.log}
+        activeIndex={activeIndex}
+        onTabChange={onTabChangeHandler}
         className="mb-6"
       >
         <Tab label="2020" icon="warning" className="pl-5">
