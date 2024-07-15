@@ -91,6 +91,10 @@ export interface PopperWrapperProps {
    * Refer to [this](https://popper.js.org/docs/v1/#modifierscomputestyle)
    */
   computeStyles?: object;
+  /**
+   * Defines whether to show popover or not
+   */
+  disabled?: boolean;
 }
 
 interface PopperWrapperState {
@@ -115,6 +119,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     hoverable: true,
     appendToBody: true,
     style: {},
+    disabled: false,
   };
 
   constructor(props: PopperWrapperProps) {
@@ -122,7 +127,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
 
     this.state = {
       animationKeyframe: '',
-      isOpen: this.props.open || false,
+      isOpen: (this.props.open && !this.props.disabled) || false,
       uniqueKey: '',
     };
 
@@ -162,7 +167,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
       this.setState({
         animationKeyframe: '',
       });
-      if (this.props.open) {
+      if (this.props.open && !this.props.disabled) {
         const triggerElement = this.triggerRef.current;
         const zIndex = this.getZIndexForLayer(triggerElement);
 
@@ -293,9 +298,9 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
   };
 
   getTriggerElement(ref: React.Ref<any>) {
-    const { trigger, on, triggerClass } = this.props;
+    const { trigger, on, triggerClass, disabled } = this.props;
     const options =
-      on === 'hover'
+      on === 'hover' && !disabled
         ? {
             ref,
             onMouseEnter: this.handleMouseEnter,
@@ -307,7 +312,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
             ref,
             onClick: (ev: React.MouseEvent<HTMLDivElement>) => {
               ev.stopPropagation();
-              this.togglePopper('onClick');
+              !disabled && this.togglePopper('onClick');
             },
           };
 
