@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Pills, Icon, Text, Tab } from '@/index';
+import { Pills, Icon, Text, Tab, Tooltip } from '@/index';
 import { BaseProps, extractBaseProps, SingleOrArray } from '@/utils/types';
 import { IconType, TTabSize } from '@/common.type';
 
@@ -74,6 +74,10 @@ export interface TabsProps extends BaseProps {
    * Defines size of `Tab` component
    */
   size?: TTabSize;
+  /**
+   * Adds maxWidth to the `Tab` component
+   */
+  maxWidth?: string | number;
 }
 
 const getChildrenArray = (children: SingleOrArray<React.ReactElement>) => {
@@ -101,7 +105,7 @@ const filterInlineComponent = (children: SingleOrArray<React.ReactElement>) => {
 };
 
 export const Tabs = (props: TabsProps) => {
-  const { children, withSeparator, onTabChange, className, headerClassName, size } = props;
+  const { children, withSeparator, onTabChange, className, headerClassName, size, maxWidth } = props;
 
   const baseProps = extractBaseProps(props);
   const tabRefs: HTMLDivElement[] = [];
@@ -251,22 +255,45 @@ export const Tabs = (props: TabsProps) => {
   };
 
   const renderTab = (tab: Tab, index: number) => {
+    const elementRef = React.createRef<HTMLElement>();
+
     const { label = '', disabled, isDismissible, onDismiss = () => {} } = tab as TabConfig;
     if (typeof label !== 'string') {
       return label;
     }
     const textAppearance = activeIndex === index ? 'link' : disabled ? 'disabled' : 'subtle';
+
     const tabTextClass = classNames({
+      ['ellipsis--noWrap']: true,
       ['Tab-selected']: !disabled && activeIndex === index,
     });
+
+    const tabClass = classNames({
+      ['Tab--regular']: size === 'regular',
+      ['Tab--small']: size === 'small',
+      ['Tab--overflow']: true,
+    });
+
     return (
-      <>
-        {renderInfo(tab, index)}
-        <Text data-test="DesignSystem-Tabs--Text" appearance={textAppearance} className={tabTextClass}>
-          {label}
-        </Text>
-        {isDismissible && renderDismissIcon(tab, index, onDismiss)}
-      </>
+      <Tooltip
+        showOnTruncation={true}
+        tooltip={label}
+        elementRef={elementRef}
+        triggerClass="ellipsis--noWrap flex-grow-0"
+      >
+        <span className={tabClass} data-test="DesignSystem-Tabs--TextWrapper" style={{ maxWidth }}>
+          {renderInfo(tab, index)}
+          <Text
+            data-test="DesignSystem-Tabs--Text"
+            appearance={textAppearance}
+            className={tabTextClass}
+            ref={elementRef}
+          >
+            {label}
+          </Text>
+          {isDismissible && renderDismissIcon(tab, index, onDismiss)}
+        </span>
+      </Tooltip>
     );
   };
 
@@ -276,8 +303,6 @@ export const Tabs = (props: TabsProps) => {
 
     const tabHeaderClass = classNames({
       ['Tab']: true,
-      ['Tab--regular']: size === 'regular',
-      ['Tab--small']: size === 'small',
       ['Tab--disabled']: disabled,
       ['Tab--active']: !disabled && activeIndex === index,
       ['Tab-selected']: !disabled && activeIndex === index,
@@ -300,6 +325,7 @@ export const Tabs = (props: TabsProps) => {
       </div>
     );
   });
+
   return (
     <div data-test="DesignSystem-Tabs" {...baseProps} className={wrapperClass}>
       <div className={headerClass} data-test="DesignSystem-Tabs--Header">
@@ -320,6 +346,7 @@ Tabs.defaultProps = {
   withSeparator: true,
   tabs: [],
   size: 'regular',
+  maxWidth: 'var(--spacing-9)',
 };
 
 export default Tabs;
