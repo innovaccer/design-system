@@ -12,7 +12,7 @@ exports[`TabsWrapper component
       class="TabsWrapper-header"
     >
       <div
-        class="Tab Tab--active"
+        class="Tab Tab--active Tab--regular"
         data-test="DesignSystem-Tabs--Header"
       >
         <span
@@ -23,7 +23,7 @@ exports[`TabsWrapper component
         </span>
       </div>
       <div
-        class="Tab Tab--disabled"
+        class="Tab Tab--disabled Tab--regular"
         data-test="DesignSystem-Tabs--Header"
       >
         <span
@@ -56,7 +56,7 @@ exports[`TabsWrapper component
       class="TabsWrapper-header"
     >
       <div
-        class="Tab Tab--active"
+        class="Tab Tab--active Tab--regular"
         data-test="DesignSystem-Tabs--Header"
       >
         <span
@@ -67,7 +67,7 @@ exports[`TabsWrapper component
         </span>
       </div>
       <div
-        class="Tab Tab--disabled"
+        class="Tab Tab--disabled Tab--regular"
         data-test="DesignSystem-Tabs--Header"
       >
         <span

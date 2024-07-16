@@ -3,10 +3,12 @@ import { render, fireEvent } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { Tabs, Tab } from '@/index';
 import { TabsProps as Props, TabConfig } from '@/index.type';
+import { TTabSize } from '@/common.type';
 
 const activeIndex = 0;
 const FunctionValue = jest.fn();
 const BooleanValue = [true, false];
+const tabSize: TTabSize[] = ['regular', 'small'];
 const tabs = [
   {
     count: 10,
@@ -31,6 +33,7 @@ describe('Tabs component', () => {
     activeIndex: valueHelper(activeIndex, { required: true }),
     onTabChange: valueHelper(FunctionValue, { required: true }),
     withSeparator: valueHelper(BooleanValue, { required: true, iterate: true }),
+    size: valueHelper(tabSize, { required: true, iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
@@ -285,5 +288,18 @@ describe('Tabs Wrapper component header class', () => {
       </Tabs>
     );
     expect(getByTestId('DesignSystem-Tabs--Header')).toHaveClass('header-class');
+  });
+});
+
+describe('Tabs component with prop:size', () => {
+  tabSize.forEach((size) => {
+    it(`should have the Tab--${size} class when size=${size}`, () => {
+      const { getByTestId } = render(
+        <Tabs activeIndex={0} size={size}>
+          <Tab label="Tab(Recommended)" isDismissible={true} onDismiss={FunctionValue}></Tab>
+        </Tabs>
+      );
+      expect(getByTestId('DesignSystem-Tabs--Tab')).toHaveClass(`Tab--${size}`);
+    });
   });
 });

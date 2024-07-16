@@ -18,39 +18,39 @@ export const customLabels = () => {
         label={
           <>
             <div className="d-flex mr-4">
-              <Pills appearance={activeIndex === 0 ? 'primary' : 'secondary'}>12</Pills>
+              <Pills appearance={activeIndex === 0 ? 'primary' : 'secondary'}>10</Pills>
             </div>
-            <Text appearance={activeIndex !== 0 ? 'subtle' : 'link'}>All</Text>
+            <Text appearance={activeIndex !== 0 ? 'subtle' : 'link'}>Custom Label 1</Text>
           </>
         }
       >
-        <div>All</div>
+        <div>Custom Label 1</div>
       </Tab>
       <Tab
         className="pl-5"
         label={
           <>
             <div className="d-flex mr-4">
-              <Pills appearance={activeIndex === 1 ? 'primary' : 'secondary'}>2</Pills>
+              <Pills appearance={activeIndex === 1 ? 'primary' : 'secondary'}>5</Pills>
             </div>
-            <Text appearance={activeIndex !== 1 ? 'subtle' : 'link'}>Tab(Recommended)</Text>
+            <Text appearance={activeIndex !== 1 ? 'subtle' : 'link'}>Custom Label 2</Text>
           </>
         }
       >
-        <div>Tab(Recommended)</div>
+        <div>Custom Label 2</div>
       </Tab>
       <Tab
         label={
           <>
             <div className="d-flex mr-4">
-              <Pills appearance={activeIndex === 2 ? 'primary' : 'secondary'}>20</Pills>
+              <Pills appearance={activeIndex === 2 ? 'primary' : 'secondary'}>5</Pills>
             </div>
-            <Text appearance={activeIndex !== 2 ? 'subtle' : 'link'}>Extras</Text>
+            <Text appearance={activeIndex !== 2 ? 'subtle' : 'link'}>Custom Label 3</Text>
           </>
         }
         disabled={true}
       >
-        <div>Extras</div>
+        <div>Custom Label 3</div>
       </Tab>
     </Tabs>
   );
@@ -65,55 +65,45 @@ const customCode = `() => {
   };
 
   return (
-    <Tabs
-      activeIndex={activeIndex}
-      onTabChange={onTabChangeHandler}
-      className="mb-6"
-    >
+    <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6">
       <Tab
         className="pl-5"
         label={
           <>
             <div className="d-flex mr-4">
-              <Pills appearance={activeIndex === 0 ? 'primary' : 'secondary'}>02</Pills>
+              <Pills appearance={activeIndex === 0 ? 'primary' : 'secondary'}>10</Pills>
             </div>
-            <Text appearance={activeIndex !== 0 ? 'subtle' : 'link'}>All</Text>
+            <Text appearance={activeIndex !== 0 ? 'subtle' : 'link'}>Custom Label 1</Text>
           </>
         }
       >
-        <div>
-          All
-        </div>
+        <div>Custom Label 1</div>
       </Tab>
       <Tab
         className="pl-5"
-        label={(
+        label={
           <>
             <div className="d-flex mr-4">
-              <Pills appearance={activeIndex === 1 ? 'primary' : 'secondary'}>2</Pills>
+              <Pills appearance={activeIndex === 1 ? 'primary' : 'secondary'}>5</Pills>
             </div>
-            <Text appearance={activeIndex !== 1 ? 'subtle' : 'link'}>Tab(Recommended)</Text>
+            <Text appearance={activeIndex !== 1 ? 'subtle' : 'link'}>Custom Label 2</Text>
           </>
-        )}
+        }
       >
-        <div>
-          Tab(Recommended)
-        </div>
+        <div>Custom Label 2</div>
       </Tab>
       <Tab
         label={
           <>
             <div className="d-flex mr-4">
-              <Pills appearance={activeIndex === 2 ? 'primary' : 'secondary'}>20</Pills>
+              <Pills appearance={activeIndex === 2 ? 'primary' : 'secondary'}>5</Pills>
             </div>
-            <Text appearance={activeIndex !== 2 ? 'subtle' : 'link'}>Extras</Text>
+            <Text appearance={activeIndex !== 2 ? 'subtle' : 'link'}>Custom Label 3</Text>
           </>
         }
         disabled={true}
       >
-        <div>
-          Extras
-        </div>
+        <div>Custom Label 3</div>
       </Tab>
     </Tabs>
   );

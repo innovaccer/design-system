@@ -3,7 +3,7 @@ import { action } from '@/utils/action';
 import { Tabs, Tab, EmptyState } from '@/index';
 
 // CSF format story
-export const disabledWithActive = () => {
+export const disabledWithActivated = () => {
   const [activeIndex, setActiveIndex] = React.useState(0);
 
   const onTabChangeHandler = (tabIndex) => {
@@ -27,11 +27,11 @@ export const disabledWithActive = () => {
           <div>All</div>
         )}
       </Tab>
-      <Tab label="Tab(Recommended)" icon="warning">
-        <div>Tab(Recommended)</div>
+      <Tab label="Successful" icon="check_circle">
+        <div>Successful</div>
       </Tab>
-      <Tab label="Extras" disabled={true} icon="check_circle">
-        <div>Extras</div>
+      <Tab label="Declined" disabled={true} icon="warning">
+        <div>Declined</div>
       </Tab>
     </Tabs>
   );
@@ -60,18 +60,18 @@ const customCode = `() => {
           <div>All</div>
         )}
       </Tab>
-      <Tab label="Tab(Recommended)" icon="warning">
-        <div>Tab(Recommended)</div>
+      <Tab label="Successful" icon="check_circle">
+        <div>Successful</div>
       </Tab>
-      <Tab label="Extras" disabled={true} icon="check_circle">
-        <div>Extras</div>
+      <Tab label="Declined" disabled={true} icon="warning">
+        <div>Declined</div>
       </Tab>
     </Tabs>
   );
 }`;
 
 export default {
-  title: 'Components/Tabs/Disabled With Active',
+  title: 'Components/Tabs/Disabled With Activated',
   component: Tabs,
   parameters: {
     docs: {

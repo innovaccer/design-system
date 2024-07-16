@@ -52,7 +52,9 @@ exports[`TS renders children 1`] = `
       Hello World!
     </span>
   </div>
-  <div>
+  <div
+    class="d-inline-flex"
+  >
     <div
       class="Chip-wrapper Chip Chip--input"
       data-test="DesignSystem-Chip--GenericChip"
@@ -746,7 +748,9 @@ exports[`TS renders children 1`] = `
       class="d-flex justify-content-center pb-6"
       data-test="DesignSystem-Select--TodaysDate-wrapper"
     >
-      <div>
+      <div
+        class="d-inline-flex"
+      >
         <div
           class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-Chip--GenericChip"
@@ -2412,7 +2416,7 @@ exports[`TS renders children 1`] = `
       class="TabsWrapper-header"
     >
       <div
-        class="Tab Tab--active"
+        class="Tab Tab--active Tab--regular"
         data-test="DesignSystem-Tabs--Header"
       />
     </div>

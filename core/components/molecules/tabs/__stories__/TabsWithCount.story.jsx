@@ -4,6 +4,8 @@ import { Tabs, Heading, Dropdown, Button, Input, Tab } from '@/index';
 
 // CSF format story
 export const tabsWithCount = () => {
+  const [activeIndex, setActiveIndex] = React.useState(0);
+
   const options = [
     {
       label: 'Increasing',
@@ -16,6 +18,7 @@ export const tabsWithCount = () => {
   ];
 
   const onTabChangeHandler = (tabIndex) => {
+    setActiveIndex(tabIndex);
     return action(`tab-change: ${tabIndex}`)();
   };
 
@@ -28,7 +31,7 @@ export const tabsWithCount = () => {
         <Button appearance="primary">New Strategy</Button>
       </div>
       <div className="d-flex align-items-center mt-3">
-        <Tabs onTabChange={onTabChangeHandler} className="mb-6">
+        <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6">
           <Tab label="All" count={12} className="pl-5">
             <div>All</div>
           </Tab>
@@ -64,6 +67,12 @@ const customCode = `() => {
     },
   ];
 
+  const [activeIndex, setActiveIndex] = React.useState(0);
+
+  const onTabChangeHandler = (tabIndex) => {
+    setActiveIndex(tabIndex);
+  };
+
   return(
     <div>
       <div className="d-flex justify-content-between">
@@ -72,8 +81,9 @@ const customCode = `() => {
       </div>
       <div className="d-flex align-items-center mt-3" >
         <Tabs
-          onTabChange={console.log}
+          onTabChange={onTabChangeHandler}
           className="mb-6"
+          activeIndex={activeIndex}
         >
           <Tab label="All" count={12} className="pl-5">
             <div>All</div>

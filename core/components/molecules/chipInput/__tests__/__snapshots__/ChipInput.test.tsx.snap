@@ -17,7 +17,9 @@ exports[`ChipInput component
         <div
           class="ChipInput-wrapper"
         >
-          <div>
+          <div
+            class="d-inline-flex"
+          >
             <div
               class="Chip-wrapper Chip Chip--input Chip-icon--clear my-3 mx-2"
               data-test="DesignSystem-ChipInput--Chip"
@@ -52,7 +54,9 @@ exports[`ChipInput component
               </div>
             </div>
           </div>
-          <div>
+          <div
+            class="d-inline-flex"
+          >
             <div
               class="Chip-wrapper Chip Chip--input Chip-icon--clear my-3 mx-2"
               data-test="DesignSystem-ChipInput--Chip"
@@ -126,7 +130,9 @@ exports[`ChipInput component
         <div
           class="ChipInput-wrapper"
         >
-          <div>
+          <div
+            class="d-inline-flex"
+          >
             <div
               class="Chip-wrapper Chip Chip-input--disabled Chip-icon--clear my-3 mx-2"
               data-test="DesignSystem-ChipInput--Chip"
@@ -161,7 +167,9 @@ exports[`ChipInput component
               </div>
             </div>
           </div>
-          <div>
+          <div
+            class="d-inline-flex"
+          >
             <div
               class="Chip-wrapper Chip Chip-input--disabled Chip-icon--clear my-3 mx-2"
               data-test="DesignSystem-ChipInput--Chip"
@@ -236,7 +244,9 @@ exports[`ChipInput component
         <div
           class="ChipInput-wrapper"
         >
-          <div>
+          <div
+            class="d-inline-flex"
+          >
             <div
               class="Chip-wrapper Chip Chip--input Chip-icon--clear my-3 mx-2"
               data-test="DesignSystem-ChipInput--Chip"
@@ -271,7 +281,9 @@ exports[`ChipInput component
               </div>
             </div>
           </div>
-          <div>
+          <div
+            class="d-inline-flex"
+          >
             <div
               class="Chip-wrapper Chip Chip--input Chip-icon--clear my-3 mx-2"
               data-test="DesignSystem-ChipInput--Chip"

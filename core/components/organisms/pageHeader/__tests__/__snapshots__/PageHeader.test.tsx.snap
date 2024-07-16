@@ -230,7 +230,7 @@ exports[`Navigation component
                 data-test="DesignSystem-Tabs--Header"
               >
                 <div
-                  class="Tab Tab--active Tab-selected align-items-center"
+                  class="Tab Tab--regular Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
                   tabindex="0"
                 >
@@ -248,7 +248,7 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
-                  class="Tab align-items-center"
+                  class="Tab Tab--regular align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
                   tabindex="0"
                 >
@@ -266,7 +266,7 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
-                  class="Tab align-items-center"
+                  class="Tab Tab--regular align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
                   tabindex="0"
                 >
@@ -528,7 +528,7 @@ exports[`Navigation component
                 data-test="DesignSystem-Tabs--Header"
               >
                 <div
-                  class="Tab Tab--active Tab-selected align-items-center"
+                  class="Tab Tab--regular Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
                   tabindex="0"
                 >
@@ -546,7 +546,7 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
-                  class="Tab align-items-center"
+                  class="Tab Tab--regular align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
                   tabindex="0"
                 >
@@ -564,7 +564,7 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
-                  class="Tab align-items-center"
+                  class="Tab Tab--regular align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
                   tabindex="0"
                 >
@@ -821,7 +821,7 @@ exports[`Navigation component
                 data-test="DesignSystem-Tabs--Header"
               >
                 <div
-                  class="Tab Tab--active Tab-selected align-items-center"
+                  class="Tab Tab--regular Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
                   tabindex="0"
                 >
@@ -839,7 +839,7 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
-                  class="Tab align-items-center"
+                  class="Tab Tab--regular align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
                   tabindex="0"
                 >
@@ -857,7 +857,7 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
-                  class="Tab align-items-center"
+                  class="Tab Tab--regular align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
                   tabindex="0"
                 >
@@ -943,7 +943,7 @@ exports[`Navigation component
                 data-test="DesignSystem-Tabs--Header"
               >
                 <div
-                  class="Tab Tab--active Tab-selected align-items-center"
+                  class="Tab Tab--regular Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
                   tabindex="0"
                 >
@@ -961,7 +961,7 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
-                  class="Tab align-items-center"
+                  class="Tab Tab--regular align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
                   tabindex="0"
                 >
@@ -979,7 +979,7 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
-                  class="Tab align-items-center"
+                  class="Tab Tab--regular align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
                   tabindex="0"
                 >
@@ -1674,7 +1674,7 @@ exports[`Navigation component
                 data-test="DesignSystem-Tabs--Header"
               >
                 <div
-                  class="Tab Tab--active Tab-selected align-items-center"
+                  class="Tab Tab--regular Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
                   tabindex="0"
                 >
@@ -1692,7 +1692,7 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
-                  class="Tab align-items-center"
+                  class="Tab Tab--regular align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
                   tabindex="0"
                 >
@@ -1710,7 +1710,7 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
-                  class="Tab align-items-center"
+                  class="Tab Tab--regular align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
                   tabindex="0"
                 >
