@@ -1,3 +1,45 @@
+## 2.39.0 (2024-07-16)
+
+### Highlights
+
+- feat(tab): add small size support in tab component (0060c807)
+- feat(Message): update background colors in message (d31d5fd1)
+- feat(AIResponse): add generating response story (9f64993e)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(tab): add small size support in tab component (0060c807)
+- feat(Message): update background colors in message (d31d5fd1)
+- feat(AIResponse): add generating response story (9f64993e)
+
+### Fixes
+
+- fix(chip): update inline alignment for multiple chips (bf8f6b29)
+
+### Improvements
+
+NA
+
+### Documentation
+
+- docs(message): update images in message documentation (2bf6b150)
+- docs(tabs): add small size tabs documentation (5dbd6c9f)
+- docs(AIResponse): add stories for generating content (96332c35)
+
+---
+
 ## 2.38.1 (2024-07-12)
 
 ### Highlights
