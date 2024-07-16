@@ -9,3 +9,57 @@
 .AIResponse-box .Menu-Trigger--active {
   opacity: 1;
 }
+
+.AIResponse-text {
+  animation: fadeIn var(--duration--moderate-02) var(--standard-productive-curve);
+}
+
+.feedback-card-animate {
+  animation: fadeIn var(--duration--moderate-02) var(--entrance-productive-curve);
+  animation-fill-mode: forwards;
+}
+
+@keyframes expandForm {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: 216px;
+    opacity: 1;
+  }
+}
+
+@keyframes collapseForm {
+  from {
+    height: 216px;
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+.feedback-form-animate--open {
+  animation: expandForm var(--duration--moderate-02) var(--entrance-productive-curve);
+  animation-fill-mode: forwards;
+}
+
+.feedback-form-animate--close {
+  animation: collapseForm var(--duration--moderate-02) var(--exit-productive-curve);
+  animation-fill-mode: forwards;
+}
+
+.feedback-content-animate--open {
+  animation: fadeIn var(--duration--moderate-02) var(--entrance-productive-curve);
+  animation-delay: var(--duration--moderate-02);
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.feedback-content-animate--close {
+  animation: fadeOut var(--duration--moderate-02) var(--exit-productive-curve);
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
