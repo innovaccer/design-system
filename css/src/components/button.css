@@ -108,19 +108,19 @@
 .Button--basic {
   background: var(--white);
   color: var(--inverse);
-  border: 1px solid var(--stone);
+  border: var(--spacing-xs) solid var(--secondary);
   box-shadow: var(--shadow-button);
 }
 
 .Button--basic:hover {
-  background: var(--stone-lighter);
-  border: 1px solid var(--stone-dark);
+  background: var(--secondary-lighter);
+  border: var(--spacing-xs) solid var(--secondary-dark);
   box-shadow: var(--shadow-button);
 }
 
 .Button--basic:active {
-  background: var(--stone-light);
-  border: 1px solid var(--stone-dark);
+  background: var(--secondary-light);
+  border: var(--spacing-xs) solid var(--secondary-dark);
 }
 
 .Button--basic:focus {
@@ -130,7 +130,7 @@
 .Button--basic:disabled {
   background: var(--white);
   color: var(--inverse-lightest);
-  border: 1px solid var(--stone-light);
+  border: var(--spacing-xs) solid var(--secondary-light);
 }
 
 .Button--primary {
@@ -199,7 +199,7 @@
 }
 
 .Button--transparent:hover {
-  background: var(--stone-lighter);
+  background: var(--secondary-lighter);
 }
 
 .Button--transparent:focus {
@@ -207,7 +207,7 @@
 }
 
 .Button--transparent:active {
-  background: var(--stone-light);
+  background: var(--secondary-light);
 }
 
 .Button--transparent:focus:active {
@@ -238,18 +238,18 @@
 .Button--selected {
   background: var(--primary-lightest);
   color: var(--primary-dark);
-  border: 1px solid var(--primary);
+  border: var(--spacing-xs) solid var(--primary);
 }
 
 .Button--selected:hover {
   background: var(--primary-lighter);
-  border: 1px solid var(--primary-dark);
+  border: var(--spacing-xs) solid var(--primary-dark);
 }
 
 .Button--selected:active {
   background: var(--primary-lighter);
   color: var(--primary-darker);
-  border: 1px solid var(--primary-darker);
+  border: var(--spacing-xs) solid var(--primary-darker);
 }
 
 .Button--selected:focus {
@@ -264,7 +264,7 @@
 .Button--selected:disabled {
   background: var(--primary-lightest);
   color: var(--primary-lighter);
-  border: 1px solid var(--primary-lighter);
+  border: var(--spacing-xs) solid var(--primary-lighter);
 }
 
 .Button-text--hidden {
