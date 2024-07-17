@@ -3,8 +3,10 @@
   justify-content: space-between;
   padding-top: unset;
   padding-bottom: unset;
-  background: var(--secondary-light);
-  color: var(--text);
+  background: var(--white);
+  color: var(--inverse);
+  border: var(--spacing-xs) solid var(--secondary);
+  box-shadow: var(--shadow-button);
   transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
@@ -50,26 +52,27 @@
 }
 
 .DropdownButton:hover {
-  background: var(--secondary);
-  color: var(--text);
+  background: var(--secondary-lighter);
+  border: var(--spacing-xs) solid var(--secondary-dark);
+  box-shadow: var(--shadow-button);
 }
 
 .DropdownButton:focus {
-  background-color: var(--secondary-light);
   box-shadow: var(--shadow-spread) var(--secondary-shadow);
 }
 
 .DropdownButton:active,
 .DropdownButton--open {
-  background-color: var(--secondary-dark) !important;
-  color: var(--text) !important;
+  background: var(--secondary-light);
+  border: var(--spacing-xs) solid var(--secondary-dark);
   animation-timing-function: cubic-bezier(0, 0, 0.38, 0.9);
   animation-duration: 120ms;
 }
 
 .DropdownButton:disabled {
-  background: var(--secondary-lighter);
-  color: var(--text-disabled);
+  background: var(--white);
+  color: var(--inverse-lightest);
+  border: var(--spacing-xs) solid var(--secondary-light);
   pointer-events: none;
 }
 
