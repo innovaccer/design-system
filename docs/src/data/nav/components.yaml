@@ -110,6 +110,9 @@ menus:
   - label: Inputs
     link: /components/inputs/usage/
 
+  - label: Key Value Pair
+    link: /components/keyValuePair/usage/
+
   - label: Link
     link: /components/links/usage/
     hideInMobile: true
