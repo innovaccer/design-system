@@ -108,3 +108,9 @@
 .Sidesheet-body--firstPage {
   animation: fadeIn var(--duration--fast-02) var(--standard-expressive-curve);
 }
+
+@media (min-width: 960px) and (max-width: 1400px) and (orientation: landscape) {
+  .Sidesheet {
+    height: 100dvh;
+  }
+}
