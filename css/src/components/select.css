@@ -21,32 +21,38 @@
   justify-content: space-between;
   padding-top: unset;
   padding-bottom: unset;
-  background: var(--secondary-light);
-  color: var(--text);
+  background: var(--white);
+  color: var(--inverse);
+  border: var(--spacing-xs) solid var(--secondary);
+  box-shadow: var(--shadow-button);
   transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
 .Select-trigger:disabled {
-  background: var(--secondary-lighter);
+  border: var(--spacing-xs) solid var(--secondary);
+  background: var(--white);
   color: var(--text-disabled);
   pointer-events: none;
 }
 
 .Select-trigger:active,
 .Select-trigger--open {
-  background-color: var(--secondary-dark) !important;
-  color: var(--text) !important;
   animation-timing-function: cubic-bezier(0, 0, 0.38, 0.9);
   animation-duration: 120ms;
+  color: var(--text) !important;
+  background: var(--secondary-light) !important;
+  border: var(--spacing-xs) solid var(--inverse-lightest);
 }
 
 .Select-trigger:hover {
-  background: var(--secondary);
   color: var(--text);
+  background: var(--secondary-lighter);
+  border: var(--spacing-xs) solid var(--secondary-dark);
+  box-shadow: var(--shadow-button);
 }
 
-.Select-trigger:focus {
-  background-color: var(--secondary-light);
+.Select-trigger:focus,
+.Select-trigger:focus-visible {
   box-shadow: var(--shadow-spread) var(--secondary-shadow);
 }
 
