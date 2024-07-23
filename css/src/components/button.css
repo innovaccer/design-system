@@ -245,40 +245,35 @@
   color: var(--primary-dark);
   border: var(--spacing-xs) solid var(--primary-lighter);
   background: color-mod(var(--primary-lightest) a(var(--opacity-12)));
-  box-shadow: var(--shadow-button);
 }
 
 .Button--selected:hover {
   border: var(--spacing-xs) solid var(--primary-light);
   background: color-mod(var(--primary-lighter) a(var(--opacity-12)));
-  box-shadow: var(--shadow-button);
 }
 
 .Button--selected:active {
   color: var(--primary-darker);
   border: var(--spacing-xs) solid var(--primary-dark);
   background: var(--primary-lighter);
-  box-shadow: var(--shadow-button);
 }
 
 .Button--selected:focus {
   border: var(--spacing-xs) solid var(--primary);
   background: color-mod(var(--primary-lightest) a(var(--opacity-12)));
-  box-shadow: var(--shadow-spread) var(--primary-shadow);
 }
 
 .Button--selected:focus:active {
   color: var(--primary-darker);
   border: var(--spacing-xs) solid var(--primary-dark);
   background: var(--primary-lighter);
-  box-shadow: var(--shadow-button);
 }
 
 .Button--selected:disabled {
   color: var(--primary-lighter);
   border: var(--spacing-xs) solid var(--primary-lighter);
   background: color-mod(var(--primary-lightest) a(var(--opacity-12)));
-  box-shadow: var(--shadow-button);
+  opacity: var(--opacity-12);
 }
 
 .Button-text--hidden {
