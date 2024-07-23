@@ -245,28 +245,33 @@
   color: var(--primary-dark);
   border: var(--spacing-xs) solid var(--primary-lighter);
   background: color-mod(var(--primary-lightest) a(var(--opacity-12)));
+  box-shadow: none;
 }
 
 .Button--selected:hover {
   border: var(--spacing-xs) solid var(--primary-light);
   background: color-mod(var(--primary-lighter) a(var(--opacity-12)));
+  box-shadow: none;
 }
 
 .Button--selected:active {
   color: var(--primary-darker);
   border: var(--spacing-xs) solid var(--primary-dark);
   background: var(--primary-lighter);
+  box-shadow: none;
 }
 
 .Button--selected:focus {
   border: var(--spacing-xs) solid var(--primary);
   background: color-mod(var(--primary-lightest) a(var(--opacity-12)));
+  box-shadow: none;
 }
 
 .Button--selected:focus:active {
   color: var(--primary-darker);
   border: var(--spacing-xs) solid var(--primary-dark);
   background: var(--primary-lighter);
+  box-shadow: none;
 }
 
 .Button--selected:disabled {
@@ -274,6 +279,7 @@
   border: var(--spacing-xs) solid var(--primary-lighter);
   background: color-mod(var(--primary-lightest) a(var(--opacity-12)));
   opacity: var(--opacity-12);
+  box-shadow: none;
 }
 
 .Button-text--hidden {
