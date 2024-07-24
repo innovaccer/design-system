@@ -299,7 +299,18 @@ describe('Tabs component with prop:size', () => {
           <Tab label="Tab(Recommended)" isDismissible={true} onDismiss={FunctionValue}></Tab>
         </Tabs>
       );
-      expect(getByTestId('DesignSystem-Tabs--Tab')).toHaveClass(`Tab--${size}`);
+      expect(getByTestId('DesignSystem-Tabs--TextWrapper')).toHaveClass(`Tab--${size}`);
     });
+  });
+});
+
+describe('Tabs Wrapper component custom max-width', () => {
+  it('render tab component header with custom max-width', () => {
+    const { getByTestId } = render(
+      <Tabs activeIndex={0} maxWidth={100}>
+        <Tab label="Tab(Recommended)" isDismissible={true} onDismiss={FunctionValue}></Tab>
+      </Tabs>
+    );
+    expect(getByTestId('DesignSystem-Tabs--TextWrapper')).toHaveStyle('max-width: 100px;');
   });
 });
