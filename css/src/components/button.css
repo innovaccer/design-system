@@ -106,24 +106,36 @@
 }
 
 .Button--basic {
-  background: var(--secondary-light);
+  background: var(--white);
   color: var(--inverse);
+  border: var(--spacing-xs) solid var(--secondary);
+  box-shadow: var(--shadow-button);
 }
 
 .Button--basic:hover {
-  background: var(--secondary);
+  background: var(--secondary-lighter);
+  border: var(--spacing-xs) solid var(--secondary-dark);
+  box-shadow: var(--shadow-button);
 }
 
-.Button--basic:active {
-  background: var(--secondary-dark);
-}
-
-.Button--basic:focus {
+.Button--basic:focus,
+.Button--basic:focus-visible {
   box-shadow: var(--shadow-spread) var(--secondary-shadow);
 }
 
+.Button--basic:active {
+  background: var(--secondary-light);
+  border: var(--spacing-xs) solid var(--inverse-lightest);
+}
+
+.Button--basic:focus:active {
+  background: var(--secondary-light);
+  border: var(--spacing-xs) solid var(--inverse-lightest);
+}
+
 .Button--basic:disabled {
-  background: var(--secondary-lighter);
+  border: var(--spacing-xs) solid var(--secondary);
+  background: var(--white);
   color: var(--inverse-lightest);
 }
 
@@ -193,7 +205,7 @@
 }
 
 .Button--transparent:hover {
-  background: var(--secondary);
+  background: var(--secondary-lighter);
 }
 
 .Button--transparent:focus {
@@ -201,16 +213,16 @@
 }
 
 .Button--transparent:active {
-  background: var(--secondary-dark);
+  background: var(--secondary-light);
 }
 
 .Button--transparent:focus:active {
-  background: var(--secondary-dark);
+  background: var(--secondary-light);
 }
 
 .Button--transparent:disabled {
   background: transparent;
-  color: var(--inverse-lightest);
+  color: var(--inverse-lighter);
 }
 
 .Button-spinner {
@@ -230,31 +242,44 @@
 }
 
 .Button--selected {
-  background: var(--primary-lightest);
   color: var(--primary-dark);
+  border: var(--spacing-xs) solid var(--primary-lighter);
+  background: color-mod(var(--primary-lightest) a(var(--opacity-12)));
+  box-shadow: none;
 }
 
 .Button--selected:hover {
-  background: var(--primary-lighter);
+  border: var(--spacing-xs) solid var(--primary-light);
+  background: color-mod(var(--primary-lighter) a(var(--opacity-12)));
+  box-shadow: none;
 }
 
 .Button--selected:active {
-  background: var(--primary-lighter);
   color: var(--primary-darker);
+  border: var(--spacing-xs) solid var(--primary-dark);
+  background: var(--primary-lighter);
+  box-shadow: none;
 }
 
 .Button--selected:focus {
-  background: var(--primary-lightest);
-  box-shadow: var(--shadow-spread) var(--primary-shadow);
+  border: var(--spacing-xs) solid var(--primary);
+  background: color-mod(var(--primary-lightest) a(var(--opacity-12)));
+  box-shadow: none;
 }
 
 .Button--selected:focus:active {
+  color: var(--primary-darker);
+  border: var(--spacing-xs) solid var(--primary-dark);
   background: var(--primary-lighter);
+  box-shadow: none;
 }
 
 .Button--selected:disabled {
-  background: var(--primary-lightest);
   color: var(--primary-lighter);
+  border: var(--spacing-xs) solid var(--primary-lighter);
+  background: color-mod(var(--primary-lightest) a(var(--opacity-12)));
+  opacity: var(--opacity-12);
+  box-shadow: none;
 }
 
 .Button-text--hidden {
