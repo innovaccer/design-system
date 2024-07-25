@@ -16,8 +16,15 @@ figma.connect(Button, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS--
       'Icon Left': 'left',
       'Icon Right': 'right',
     }),
+    icon: figma.enum('Variant', {
+      'Icon Left': 'refresh',
+      'Icon Right': 'refresh',
+    }),
     disabled: figma.enum('State', {
       Disabled: true,
+    }),
+    loading: figma.enum('State', {
+      Loading: true,
     }),
   },
   example: (props) => (
@@ -40,8 +47,15 @@ figma.connect(Button, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS--
       'Icon Left': 'left',
       'Icon Right': 'right',
     }),
+    icon: figma.enum('Variant', {
+      'Icon Left': 'refresh',
+      'Icon Right': 'refresh',
+    }),
     disabled: figma.enum('State', {
       Disabled: true,
+    }),
+    loading: figma.enum('State', {
+      Loading: true,
     }),
   },
   example: (props) => (
@@ -64,8 +78,15 @@ figma.connect(Button, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS--
       'Icon Left': 'left',
       'Icon Right': 'right',
     }),
+    icon: figma.enum('Variant', {
+      'Icon Left': 'refresh',
+      'Icon Right': 'refresh',
+    }),
     disabled: figma.enum('State', {
       Disabled: true,
+    }),
+    loading: figma.enum('State', {
+      Loading: true,
     }),
   },
   example: (props) => (
@@ -89,8 +110,15 @@ figma.connect(Button, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS--
       'Icon Left': 'left',
       'Icon Right': 'right',
     }),
+    icon: figma.enum('Variant', {
+      'Icon Left': 'refresh',
+      'Icon Right': 'refresh',
+    }),
     disabled: figma.enum('State', {
       Disabled: true,
+    }),
+    loading: figma.enum('State', {
+      Loading: true,
     }),
   },
   example: (props) => (
@@ -120,6 +148,9 @@ figma.connect(Button, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS--
     disabled: figma.enum('State', {
       Disabled: true,
     }),
+    loading: figma.enum('State', {
+      Loading: true,
+    }),
   },
   example: (props) => <Button icon="more_horiz" {...props} />,
 });
@@ -142,6 +173,9 @@ figma.connect(Button, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS--
     }),
     disabled: figma.enum('State', {
       Disabled: true,
+    }),
+    loading: figma.enum('State', {
+      Loading: true,
     }),
   },
   example: (props) => (
