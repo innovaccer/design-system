@@ -100,6 +100,10 @@ export interface PopoverProps extends Pick<PopperWrapperProps, PopperProps>, Bas
    * Refer to [this](https://popper.js.org/docs/v1/#modifierscomputestyle)
    */
   computeStyles?: object;
+  /**
+   * Defines whether to show popover or not
+   */
+  disabled?: boolean;
 }
 
 export const Popover = (props: PopoverProps) => {
