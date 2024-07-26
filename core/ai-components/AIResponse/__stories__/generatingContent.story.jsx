@@ -322,7 +322,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/AI/AI Response (Beta)/Generating Content',
+  title: 'Components/AI/AI Response/Generating Content',
   component: AIResponse,
   subcomponents: {
     'AIResponse.Button': AIResponse.Button,
