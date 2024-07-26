@@ -25,7 +25,7 @@ export const CustomContent = () => {
 };
 
 export default {
-  title: 'Components/AI/AI Response (Beta)/Custom Content',
+  title: 'Components/AI/AI Response/Custom Content',
   component: AIResponse,
   subcomponents: {
     'AIResponse.Button': AIResponse.Button,

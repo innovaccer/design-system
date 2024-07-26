@@ -438,7 +438,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/AI/AI Response (Beta)/Giving Feedback',
+  title: 'Components/AI/AI Response/Giving Feedback',
   component: AIResponse,
   subcomponents: {
     'AIResponse.Button': AIResponse.Button,
