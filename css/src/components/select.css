@@ -82,6 +82,7 @@
   margin: 0;
   font-size: var(--font-size);
   line-height: var(--font-height);
+  width: 100%;
 }
 
 .Select-trigger--regular {
