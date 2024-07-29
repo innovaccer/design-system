@@ -4,7 +4,7 @@ import { KeyValuePair, Card } from '@/index';
 export const topBottomWidth = () => {
   return (
     <Card className="p-7 w-25" shadow="none">
-      <KeyValuePair className="d-flex flex-column">
+      <KeyValuePair>
         <KeyValuePair.Key label="Additional comments" />
         <KeyValuePair.Value value="Patient visited the clinic and requested an appointment." />
       </KeyValuePair>
