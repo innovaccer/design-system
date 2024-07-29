@@ -93,6 +93,7 @@ export { AvatarSelection } from './components/atoms/avatarSelection';
 export { Combobox } from './components/organisms/combobox';
 export { Select } from './components/organisms/select';
 export { Menu } from './components/organisms/menu';
+export { KeyValuePair } from './components/molecules/keyValuePair';
 
 export { AIButton } from './ai-components/AIButton';
 export { SaraSparkle } from './ai-components/SaraSparkle';
