@@ -13,68 +13,86 @@ exports[`Tabs component
       data-test="DesignSystem-Tabs--Header"
     >
       <div
-        class="Tab Tab--regular Tab--active Tab-selected align-items-center"
+        class="Tab Tab--active Tab-selected align-items-center"
         data-test="DesignSystem-Tabs--Tab"
         tabindex="0"
       >
         <span
-          class="Pills Badge--primary Tab-pills"
-          data-test="DesignSystem-Tabs--Pills"
+          class="Tab--regular Tab--overflow"
+          data-test="DesignSystem-Tabs--TextWrapper"
+          style="max-width: var(--spacing-9);"
         >
-          10
+          <span
+            class="Pills Badge--primary Tab-pills"
+            data-test="DesignSystem-Tabs--Pills"
+          >
+            10
+          </span>
+          <span
+            class="Text Text--link Text--regular ellipsis--noWrap Tab-selected"
+            data-test="DesignSystem-Tabs--Text"
+          >
+            Tab 1
+          </span>
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--info DismissibleTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
+            data-test="DesignSystem-DismissibleTabs--Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+            tabindex="0"
+          >
+            clear
+          </i>
         </span>
-        <span
-          class="Text Text--link Text--regular Tab-selected"
-          data-test="DesignSystem-Tabs--Text"
-        >
-          Tab 1
-        </span>
-        <i
-          class="material-symbols material-symbols-rounded Icon Icon--info DismissibleTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
-          data-test="DesignSystem-DismissibleTabs--Icon"
-          role="button"
-          style="font-size: 16px; width: 16px;"
-          tabindex="0"
-        >
-          clear
-        </i>
       </div>
       <div
-        class="Tab Tab--regular align-items-center"
+        class="Tab align-items-center"
         data-test="DesignSystem-Tabs--Tab"
         tabindex="0"
       >
-        <i
-          class="material-symbols material-symbols-rounded Icon Icon--subtle mr-4 "
-          data-test="DesignSystem-Tabs--Icon"
-          role="button"
-          style="font-size: 16px; width: 16px;"
-        >
-          call_received
-        </i>
         <span
-          class="Text Text--subtle Text--regular"
-          data-test="DesignSystem-Tabs--Text"
+          class="Tab--regular Tab--overflow"
+          data-test="DesignSystem-Tabs--TextWrapper"
+          style="max-width: var(--spacing-9);"
         >
-          Tab 2
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--subtle mr-4 "
+            data-test="DesignSystem-Tabs--Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            call_received
+          </i>
+          <span
+            class="Text Text--subtle Text--regular ellipsis--noWrap"
+            data-test="DesignSystem-Tabs--Text"
+          >
+            Tab 2
+          </span>
         </span>
       </div>
       <div
-        class="Tab Tab--regular Tab--disabled align-items-center"
+        class="Tab Tab--disabled align-items-center"
         data-test="DesignSystem-Tabs--Tab"
         tabindex="-1"
       >
         <span
-          class="Pills Badge--secondary Tab-pills Tab-pills--disabled"
-          data-test="DesignSystem-Tabs--Pills"
+          class="Tab--regular Tab--overflow"
+          data-test="DesignSystem-Tabs--TextWrapper"
+          style="max-width: var(--spacing-9);"
         >
-          10
-        </span>
-        <span
-          class="Text Text--disabled Text--regular"
-          data-test="DesignSystem-Tabs--Text"
-        >
-          Tab 3
+          <span
+            class="Pills Badge--secondary Tab-pills Tab-pills--disabled"
+            data-test="DesignSystem-Tabs--Pills"
+          >
+            10
+          </span>
+          <span
+            class="Text Text--disabled Text--regular ellipsis--noWrap"
+            data-test="DesignSystem-Tabs--Text"
+          >
+            Tab 3
+          </span>
         </span>
       </div>
     </div>
@@ -95,68 +113,86 @@ exports[`Tabs component
       data-test="DesignSystem-Tabs--Header"
     >
       <div
-        class="Tab Tab--small Tab--active Tab-selected align-items-center"
+        class="Tab Tab--active Tab-selected align-items-center"
         data-test="DesignSystem-Tabs--Tab"
         tabindex="0"
       >
         <span
-          class="Pills Badge--primary Tab-pills"
-          data-test="DesignSystem-Tabs--Pills"
+          class="Tab--small Tab--overflow"
+          data-test="DesignSystem-Tabs--TextWrapper"
+          style="max-width: var(--spacing-9);"
         >
-          10
+          <span
+            class="Pills Badge--primary Tab-pills"
+            data-test="DesignSystem-Tabs--Pills"
+          >
+            10
+          </span>
+          <span
+            class="Text Text--link Text--regular ellipsis--noWrap Tab-selected"
+            data-test="DesignSystem-Tabs--Text"
+          >
+            Tab 1
+          </span>
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--info DismissibleTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
+            data-test="DesignSystem-DismissibleTabs--Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+            tabindex="0"
+          >
+            clear
+          </i>
         </span>
-        <span
-          class="Text Text--link Text--regular Tab-selected"
-          data-test="DesignSystem-Tabs--Text"
-        >
-          Tab 1
-        </span>
-        <i
-          class="material-symbols material-symbols-rounded Icon Icon--info DismissibleTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
-          data-test="DesignSystem-DismissibleTabs--Icon"
-          role="button"
-          style="font-size: 16px; width: 16px;"
-          tabindex="0"
-        >
-          clear
-        </i>
       </div>
       <div
-        class="Tab Tab--small align-items-center"
+        class="Tab align-items-center"
         data-test="DesignSystem-Tabs--Tab"
         tabindex="0"
       >
-        <i
-          class="material-symbols material-symbols-rounded Icon Icon--subtle mr-4 "
-          data-test="DesignSystem-Tabs--Icon"
-          role="button"
-          style="font-size: 16px; width: 16px;"
-        >
-          call_received
-        </i>
         <span
-          class="Text Text--subtle Text--regular"
-          data-test="DesignSystem-Tabs--Text"
+          class="Tab--small Tab--overflow"
+          data-test="DesignSystem-Tabs--TextWrapper"
+          style="max-width: var(--spacing-9);"
         >
-          Tab 2
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--subtle mr-4 "
+            data-test="DesignSystem-Tabs--Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            call_received
+          </i>
+          <span
+            class="Text Text--subtle Text--regular ellipsis--noWrap"
+            data-test="DesignSystem-Tabs--Text"
+          >
+            Tab 2
+          </span>
         </span>
       </div>
       <div
-        class="Tab Tab--small Tab--disabled align-items-center"
+        class="Tab Tab--disabled align-items-center"
         data-test="DesignSystem-Tabs--Tab"
         tabindex="-1"
       >
         <span
-          class="Pills Badge--secondary Tab-pills Tab-pills--disabled"
-          data-test="DesignSystem-Tabs--Pills"
+          class="Tab--small Tab--overflow"
+          data-test="DesignSystem-Tabs--TextWrapper"
+          style="max-width: var(--spacing-9);"
         >
-          10
-        </span>
-        <span
-          class="Text Text--disabled Text--regular"
-          data-test="DesignSystem-Tabs--Text"
-        >
-          Tab 3
+          <span
+            class="Pills Badge--secondary Tab-pills Tab-pills--disabled"
+            data-test="DesignSystem-Tabs--Pills"
+          >
+            10
+          </span>
+          <span
+            class="Text Text--disabled Text--regular ellipsis--noWrap"
+            data-test="DesignSystem-Tabs--Text"
+          >
+            Tab 3
+          </span>
         </span>
       </div>
     </div>
@@ -177,68 +213,86 @@ exports[`Tabs component
       data-test="DesignSystem-Tabs--Header"
     >
       <div
-        class="Tab Tab--regular Tab--active Tab-selected align-items-center"
+        class="Tab Tab--active Tab-selected align-items-center"
         data-test="DesignSystem-Tabs--Tab"
         tabindex="0"
       >
         <span
-          class="Pills Badge--primary Tab-pills"
-          data-test="DesignSystem-Tabs--Pills"
+          class="Tab--regular Tab--overflow"
+          data-test="DesignSystem-Tabs--TextWrapper"
+          style="max-width: var(--spacing-9);"
         >
-          10
+          <span
+            class="Pills Badge--primary Tab-pills"
+            data-test="DesignSystem-Tabs--Pills"
+          >
+            10
+          </span>
+          <span
+            class="Text Text--link Text--regular ellipsis--noWrap Tab-selected"
+            data-test="DesignSystem-Tabs--Text"
+          >
+            Tab 1
+          </span>
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--info DismissibleTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
+            data-test="DesignSystem-DismissibleTabs--Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+            tabindex="0"
+          >
+            clear
+          </i>
         </span>
-        <span
-          class="Text Text--link Text--regular Tab-selected"
-          data-test="DesignSystem-Tabs--Text"
-        >
-          Tab 1
-        </span>
-        <i
-          class="material-symbols material-symbols-rounded Icon Icon--info DismissibleTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
-          data-test="DesignSystem-DismissibleTabs--Icon"
-          role="button"
-          style="font-size: 16px; width: 16px;"
-          tabindex="0"
-        >
-          clear
-        </i>
       </div>
       <div
-        class="Tab Tab--regular align-items-center"
+        class="Tab align-items-center"
         data-test="DesignSystem-Tabs--Tab"
         tabindex="0"
       >
-        <i
-          class="material-symbols material-symbols-rounded Icon Icon--subtle mr-4 "
-          data-test="DesignSystem-Tabs--Icon"
-          role="button"
-          style="font-size: 16px; width: 16px;"
-        >
-          call_received
-        </i>
         <span
-          class="Text Text--subtle Text--regular"
-          data-test="DesignSystem-Tabs--Text"
+          class="Tab--regular Tab--overflow"
+          data-test="DesignSystem-Tabs--TextWrapper"
+          style="max-width: var(--spacing-9);"
         >
-          Tab 2
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--subtle mr-4 "
+            data-test="DesignSystem-Tabs--Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            call_received
+          </i>
+          <span
+            class="Text Text--subtle Text--regular ellipsis--noWrap"
+            data-test="DesignSystem-Tabs--Text"
+          >
+            Tab 2
+          </span>
         </span>
       </div>
       <div
-        class="Tab Tab--regular Tab--disabled align-items-center"
+        class="Tab Tab--disabled align-items-center"
         data-test="DesignSystem-Tabs--Tab"
         tabindex="-1"
       >
         <span
-          class="Pills Badge--secondary Tab-pills Tab-pills--disabled"
-          data-test="DesignSystem-Tabs--Pills"
+          class="Tab--regular Tab--overflow"
+          data-test="DesignSystem-Tabs--TextWrapper"
+          style="max-width: var(--spacing-9);"
         >
-          10
-        </span>
-        <span
-          class="Text Text--disabled Text--regular"
-          data-test="DesignSystem-Tabs--Text"
-        >
-          Tab 3
+          <span
+            class="Pills Badge--secondary Tab-pills Tab-pills--disabled"
+            data-test="DesignSystem-Tabs--Pills"
+          >
+            10
+          </span>
+          <span
+            class="Text Text--disabled Text--regular ellipsis--noWrap"
+            data-test="DesignSystem-Tabs--Text"
+          >
+            Tab 3
+          </span>
         </span>
       </div>
     </div>
@@ -259,68 +313,86 @@ exports[`Tabs component
       data-test="DesignSystem-Tabs--Header"
     >
       <div
-        class="Tab Tab--small Tab--active Tab-selected align-items-center"
+        class="Tab Tab--active Tab-selected align-items-center"
         data-test="DesignSystem-Tabs--Tab"
         tabindex="0"
       >
         <span
-          class="Pills Badge--primary Tab-pills"
-          data-test="DesignSystem-Tabs--Pills"
+          class="Tab--small Tab--overflow"
+          data-test="DesignSystem-Tabs--TextWrapper"
+          style="max-width: var(--spacing-9);"
         >
-          10
+          <span
+            class="Pills Badge--primary Tab-pills"
+            data-test="DesignSystem-Tabs--Pills"
+          >
+            10
+          </span>
+          <span
+            class="Text Text--link Text--regular ellipsis--noWrap Tab-selected"
+            data-test="DesignSystem-Tabs--Text"
+          >
+            Tab 1
+          </span>
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--info DismissibleTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
+            data-test="DesignSystem-DismissibleTabs--Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+            tabindex="0"
+          >
+            clear
+          </i>
         </span>
-        <span
-          class="Text Text--link Text--regular Tab-selected"
-          data-test="DesignSystem-Tabs--Text"
-        >
-          Tab 1
-        </span>
-        <i
-          class="material-symbols material-symbols-rounded Icon Icon--info DismissibleTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
-          data-test="DesignSystem-DismissibleTabs--Icon"
-          role="button"
-          style="font-size: 16px; width: 16px;"
-          tabindex="0"
-        >
-          clear
-        </i>
       </div>
       <div
-        class="Tab Tab--small align-items-center"
+        class="Tab align-items-center"
         data-test="DesignSystem-Tabs--Tab"
         tabindex="0"
       >
-        <i
-          class="material-symbols material-symbols-rounded Icon Icon--subtle mr-4 "
-          data-test="DesignSystem-Tabs--Icon"
-          role="button"
-          style="font-size: 16px; width: 16px;"
-        >
-          call_received
-        </i>
         <span
-          class="Text Text--subtle Text--regular"
-          data-test="DesignSystem-Tabs--Text"
+          class="Tab--small Tab--overflow"
+          data-test="DesignSystem-Tabs--TextWrapper"
+          style="max-width: var(--spacing-9);"
         >
-          Tab 2
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--subtle mr-4 "
+            data-test="DesignSystem-Tabs--Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            call_received
+          </i>
+          <span
+            class="Text Text--subtle Text--regular ellipsis--noWrap"
+            data-test="DesignSystem-Tabs--Text"
+          >
+            Tab 2
+          </span>
         </span>
       </div>
       <div
-        class="Tab Tab--small Tab--disabled align-items-center"
+        class="Tab Tab--disabled align-items-center"
         data-test="DesignSystem-Tabs--Tab"
         tabindex="-1"
       >
         <span
-          class="Pills Badge--secondary Tab-pills Tab-pills--disabled"
-          data-test="DesignSystem-Tabs--Pills"
+          class="Tab--small Tab--overflow"
+          data-test="DesignSystem-Tabs--TextWrapper"
+          style="max-width: var(--spacing-9);"
         >
-          10
-        </span>
-        <span
-          class="Text Text--disabled Text--regular"
-          data-test="DesignSystem-Tabs--Text"
-        >
-          Tab 3
+          <span
+            class="Pills Badge--secondary Tab-pills Tab-pills--disabled"
+            data-test="DesignSystem-Tabs--Pills"
+          >
+            10
+          </span>
+          <span
+            class="Text Text--disabled Text--regular ellipsis--noWrap"
+            data-test="DesignSystem-Tabs--Text"
+          >
+            Tab 3
+          </span>
         </span>
       </div>
     </div>

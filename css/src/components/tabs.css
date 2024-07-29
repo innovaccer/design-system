@@ -124,6 +124,7 @@
 .Tab-pills {
   cursor: pointer;
   margin-right: var(--spacing);
+  overflow: visible;
 }
 
 .Tab-pills--disabled {
@@ -160,4 +161,9 @@
 
 .DismissibleTab-icon--selected:active {
   background-color: var(--primary-light);
+}
+
+.Tab--overflow {
+  display: flex;
+  box-sizing: border-box;
 }

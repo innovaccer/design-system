@@ -11,7 +11,7 @@ export const GeneratingResponse = () => {
 };
 
 export default {
-  title: 'Components/AI/AI Response (Beta)/Generating Response',
+  title: 'Components/AI/AI Response/Generating Response',
   component: AIResponse,
   subcomponents: {
     'AIResponse.Button': AIResponse.Button,

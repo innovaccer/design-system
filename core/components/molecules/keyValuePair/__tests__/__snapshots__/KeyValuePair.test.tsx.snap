@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`KeyValue component snapshot 
+  
+ 1`] = `
+<body>
+  <div>
+    <dl
+      class="m-0"
+      data-test="DesignSystem-KeyValuePair"
+    >
+      <dt
+        class="d-flex align-items-center"
+        data-test="DesignSystem-KeyValuePair-KeyElement"
+      >
+        <span
+          class="Text Text--subtle Text--medium Text--regular"
+          data-test="DesignSystem-Text"
+        >
+          Label
+        </span>
+      </dt>
+      <dd
+        class="m-0"
+        data-test="DesignSystem-KeyValuePair-ValueElement"
+      >
+        <span
+          class="Text Text--default Text--regular"
+          data-test="DesignSystem-Text"
+        >
+          Value
+        </span>
+      </dd>
+    </dl>
+  </div>
+</body>
+`;

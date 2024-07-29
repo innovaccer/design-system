@@ -173,7 +173,11 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
   );
 
   const setCursorPosition = React.useCallback(
-    (val: number) => setSelectionPos({ start: val, end: val }),
+    (val: number) => {
+      if (document && document.activeElement === ref.current) {
+        setSelectionPos({ start: val, end: val });
+      }
+    },
     [setSelectionPos]
   );
 
