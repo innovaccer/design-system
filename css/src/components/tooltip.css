@@ -3,7 +3,7 @@
   padding: var(--spacing-m) var(--spacing);
   border-radius: var(--spacing-m);
   z-index: 500;
-  background: color-mod(var(--inverse) a(0.88));
+  background: var(--inverse);
   overflow: hidden;
   box-sizing: border-box;
   transition: opacity 120ms;
