@@ -7,28 +7,28 @@ export const columnWithFixedWidth = () => {
       <Card className="px-6 py-7" shadow="none">
         <Row className="d-flex justify-content-between">
           <Column size={2}>
-            <KeyValuePair className="d-flex flex-column">
+            <KeyValuePair>
               <KeyValuePair.Key label="Provider" />
               <KeyValuePair.Value value="Dr. Anil Jain" />
             </KeyValuePair>
           </Column>
 
           <Column size={2}>
-            <KeyValuePair className="d-flex flex-column">
+            <KeyValuePair>
               <KeyValuePair.Key label="TIN" />
               <KeyValuePair.Value value="879-79-7989" />
             </KeyValuePair>
           </Column>
 
           <Column size={2}>
-            <KeyValuePair className="d-flex flex-column">
+            <KeyValuePair>
               <KeyValuePair.Key label="Location" />
               <KeyValuePair.Value value="San Diego, California" />
             </KeyValuePair>
           </Column>
 
           <Column size={2}>
-            <KeyValuePair className="d-flex flex-column">
+            <KeyValuePair>
               <KeyValuePair.Key label="Quality score" />
               <KeyValuePair.Value value="89" />
             </KeyValuePair>
@@ -37,21 +37,21 @@ export const columnWithFixedWidth = () => {
 
         <Row className="mt-6 d-flex justify-content-between">
           <Column size={2}>
-            <KeyValuePair className="d-flex flex-column">
+            <KeyValuePair>
               <KeyValuePair.Key label="PCPs" />
               <KeyValuePair.Value value="2" />
             </KeyValuePair>
           </Column>
 
           <Column size={2}>
-            <KeyValuePair className="d-flex flex-column">
+            <KeyValuePair>
               <KeyValuePair.Key label="Risk score" />
               <KeyValuePair.Value value="1.5" />
             </KeyValuePair>
           </Column>
 
           <Column size={2}>
-            <KeyValuePair className="d-flex flex-column">
+            <KeyValuePair>
               <KeyValuePair.Key label="Patient count" />
               <KeyValuePair.Value value="590" />
             </KeyValuePair>
@@ -64,21 +64,21 @@ export const columnWithFixedWidth = () => {
       <Card className="px-6 py-7 mt-6" shadow="none">
         <Row className="d-flex justify-content-between">
           <Column size={2}>
-            <KeyValuePair className="d-flex flex-column">
+            <KeyValuePair>
               <KeyValuePair.Key label="Ticket type" />
               <KeyValuePair.Value value="Appointment request" />
             </KeyValuePair>
           </Column>
 
           <Column size={2}>
-            <KeyValuePair className="d-flex flex-column">
+            <KeyValuePair>
               <KeyValuePair.Key label="Channel" />
               <KeyValuePair.Value value="Text Message" />
             </KeyValuePair>
           </Column>
 
           <Column size={2}>
-            <KeyValuePair className="d-flex flex-column">
+            <KeyValuePair>
               <KeyValuePair.Key label="Transfer status" />
               <KeyValuePair.Value>
                 <StatusHint appearance="success">Complete</StatusHint>
@@ -87,7 +87,7 @@ export const columnWithFixedWidth = () => {
           </Column>
 
           <Column size={2}>
-            <KeyValuePair className="d-flex flex-column">
+            <KeyValuePair>
               <KeyValuePair.Key label="Location" />
               <KeyValuePair.Value>
                 <LinkButton>Add</LinkButton>

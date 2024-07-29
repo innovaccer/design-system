@@ -3,7 +3,7 @@ import { action } from '@/utils/action';
 import { Tabs, Tab } from '@/index';
 
 // CSF format story
-export const overflowBehaviorOfTabLabel = () => {
+export const tabLabelOverflow = () => {
   const [activeIndex, setActiveIndex] = React.useState(0);
 
   const onTabChangeHandler = (tabIndex) => {
@@ -61,7 +61,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Tabs/Overflow Behavior Of Tab Label',
+  title: 'Components/Tabs/Tab Label Overflow',
   component: Tabs,
   parameters: {
     docs: {

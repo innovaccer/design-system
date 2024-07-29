@@ -1,85 +1,29 @@
 import * as React from 'react';
-import { KeyValuePair, Card, Heading, Avatar, Text } from '@/index';
+import { KeyValuePair, Text } from '@/index';
 
 export const all = () => {
-  const healthRecordList = [
-    { key: 'TIN', value: '879-79-7989' },
-    { key: 'Location', value: 'San Diego, California' },
-    { key: 'PCPs', value: '2' },
-    { key: 'Risk score', value: '1.5' },
-    { key: 'Assignee', value: 'Joy Lawson', showAvatar: true },
-    { key: 'Quality score', value: '89' },
-    { key: 'Patient count', value: '590' },
-  ];
-
   return (
-    <Card className="p-6" shadow="none">
-      <Heading size="s">Health center</Heading>
-      <div className="d-flex justify-content-between mt-4">
-        {healthRecordList.map((healthRecord) => {
-          return (
-            <KeyValuePair className="d-flex flex-column" key={healthRecord}>
-              <KeyValuePair.Key label={healthRecord.key} />
-              <KeyValuePair.Value value={healthRecord.value}>
-                {healthRecord.showAvatar && (
-                  <div className="mt-3 d-flex align-items-center">
-                    <Avatar appearance="primary" firstName="Joy" lastName="Lawson" size="tiny" />
-                    <Text className="ml-4">{healthRecord.value}</Text>
-                  </div>
-                )}
-              </KeyValuePair.Value>
-            </KeyValuePair>
-          );
-        })}
+    <div className="d-flex justify-content-between w-75">
+      <div>
+        <Text weight="strong">Left Right Arrangement</Text>
+        <KeyValuePair className="d-flex mt-8">
+          <KeyValuePair.Key className="mr-7" icon="call" label="Phone" />
+          <KeyValuePair.Value value="(555) 555-5555" />
+        </KeyValuePair>
       </div>
-    </Card>
+      <div>
+        <Text weight="strong">Top Bottom Arrangement</Text>
+        <KeyValuePair className="mt-8">
+          <KeyValuePair.Key label="Name" />
+          <KeyValuePair.Value value="Joy Lawson" />
+        </KeyValuePair>
+      </div>
+    </div>
   );
 };
-
-const customCode = `() => {
-  const healthRecordList = [
-    { key: 'TIN', value: '879-79-7989' },
-    { key: 'Location', value: 'San Diego, California' },
-    { key: 'PCPs', value: '2' },
-    { key: 'Risk score', value: '1.5' },
-    { key: 'Assignee', value: 'Joy Lawson', showAvatar: true },
-    { key: 'Quality score', value: '89' },
-    { key: 'Patient count', value: '590' },
-  ];
-
-  return (
-    <Card className="p-6" shadow="none">
-      <Heading size="s">Health center</Heading>
-      <div className="d-flex justify-content-between mt-4">
-        {healthRecordList.map((healthRecord) => {
-          return (
-            <KeyValuePair className="d-flex flex-column" key={healthRecord}>
-              <KeyValuePair.Key label={healthRecord.key} />
-              <KeyValuePair.Value value={healthRecord.value}>
-                {healthRecord.showAvatar && (
-                  <div className="mt-3 d-flex align-items-center">
-                    <Avatar appearance="primary" firstName="Joy" lastName="Lawson" size="tiny" />
-                    <Text className="ml-4">{healthRecord.value}</Text>
-                  </div>
-                )}
-              </KeyValuePair.Value>
-            </KeyValuePair>
-          );
-        })}
-      </div>
-    </Card>
-  );
-}`;
 
 export default {
   title: 'Components/KeyValuePair/All',
   component: KeyValuePair,
   subcomponents: { 'KeyValuePair.Key': KeyValuePair.Key, 'KeyValuePair.Value': KeyValuePair.Value },
-  parameters: {
-    docs: {
-      docPage: {
-        customCode,
-      },
-    },
-  },
 };

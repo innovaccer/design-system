@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { KeyValuePair, Card, Heading } from '@/index';
+import { KeyValuePair, Card, Heading, Avatar, Text } from '@/index';
 
 export const topBottomArrangement = () => {
   const healthRecordList = [
-    { key: 'Provider', value: 'Dr. Anil Jain' },
     { key: 'TIN', value: '879-79-7989' },
     { key: 'Location', value: 'San Diego, California' },
     { key: 'PCPs', value: '2' },
     { key: 'Risk score', value: '1.5' },
+    { key: 'Assignee', value: 'Joy Lawson', showAvatar: true },
     { key: 'Quality score', value: '89' },
     { key: 'Patient count', value: '590' },
   ];
@@ -18,9 +18,16 @@ export const topBottomArrangement = () => {
       <div className="d-flex justify-content-between mt-4">
         {healthRecordList.map((healthRecord) => {
           return (
-            <KeyValuePair className="d-flex flex-column" key={healthRecord}>
+            <KeyValuePair key={healthRecord}>
               <KeyValuePair.Key label={healthRecord.key} />
-              <KeyValuePair.Value value={healthRecord.value} />
+              <KeyValuePair.Value value={healthRecord.value}>
+                {healthRecord.showAvatar && (
+                  <div className="mt-3 d-flex align-items-center">
+                    <Avatar appearance="primary" firstName="Joy" lastName="Lawson" size="tiny" />
+                    <Text className="ml-4">{healthRecord.value}</Text>
+                  </div>
+                )}
+              </KeyValuePair.Value>
             </KeyValuePair>
           );
         })}
@@ -31,11 +38,11 @@ export const topBottomArrangement = () => {
 
 const customCode = `() => {
   const healthRecordList = [
-    { key: 'Provider', value: 'Dr. Anil Jain' },
     { key: 'TIN', value: '879-79-7989' },
     { key: 'Location', value: 'San Diego, California' },
     { key: 'PCPs', value: '2' },
     { key: 'Risk score', value: '1.5' },
+    { key: 'Assignee', value: 'Joy Lawson', showAvatar: true },
     { key: 'Quality score', value: '89' },
     { key: 'Patient count', value: '590' },
   ];
@@ -46,9 +53,16 @@ const customCode = `() => {
       <div className="d-flex justify-content-between mt-4">
         {healthRecordList.map((healthRecord) => {
           return (
-            <KeyValuePair className="d-flex flex-column" key={healthRecord}>
+            <KeyValuePair key={healthRecord}>
               <KeyValuePair.Key label={healthRecord.key} />
-              <KeyValuePair.Value value={healthRecord.value} />
+              <KeyValuePair.Value value={healthRecord.value}>
+                {healthRecord.showAvatar && (
+                  <div className="mt-3 d-flex align-items-center">
+                    <Avatar appearance="primary" firstName="Joy" lastName="Lawson" size="tiny" />
+                    <Text className="ml-4">{healthRecord.value}</Text>
+                  </div>
+                )}
+              </KeyValuePair.Value>
             </KeyValuePair>
           );
         })}
