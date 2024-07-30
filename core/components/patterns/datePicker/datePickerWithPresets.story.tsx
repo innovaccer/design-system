@@ -19,7 +19,7 @@ const customCode = `() => {
     const [date, setDate] = React.useState(new Date());
     const [selectedChip, setSelectedChip] = React.useState('today');
     
-    const classNames = size === 'small' ? 'd-block mb-4' : 'd-block mb-5';
+    const classNames = size === 'small' ? 'd-flex mb-4' : 'd-flex mb-5';
     return (
       <DatePicker date={date} showTodayDate={false} size={size} withInput={withInput}>
         <div className="pt-6 px-5">
@@ -53,7 +53,7 @@ const customCode = `() => {
               }}
             />
             <Chip
-              label="3 Days later"
+              label="3 days later"
               clearButton={false}
               type="action"
               className={classNames}
@@ -64,7 +64,7 @@ const customCode = `() => {
               }}
             />
             <Chip
-              label="1 Week later"
+              label="1 week later"
               clearButton={false}
               type="action"
               className={classNames}
@@ -75,7 +75,7 @@ const customCode = `() => {
               }}
             />
             <Chip
-              label="30 Days later"
+              label="30 days later"
               clearButton={false}
               type="action"
               className={classNames}

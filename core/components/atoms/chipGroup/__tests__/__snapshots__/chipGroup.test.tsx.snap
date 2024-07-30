@@ -13,33 +13,29 @@ exports[`ChipGroup component
         class="ChipGroup-item"
       >
         <div
-          class="d-inline-flex"
+          class="Chip-wrapper Chip Chip--action"
+          data-test="DesignSystem-ChipGroup--Chip"
+          role="button"
+          style="max-width: var(--spacing-9);"
+          tabindex="0"
         >
-          <div
-            class="Chip-wrapper Chip Chip--action"
-            data-test="DesignSystem-ChipGroup--Chip"
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--inverse Chip-icon Chip-icon--left"
+            data-test="DesignSystem-GenericChip--Icon"
             role="button"
-            style="max-width: var(--spacing-9);"
-            tabindex="0"
+            style="font-size: 16px; width: 16px;"
           >
-            <i
-              class="material-symbols material-symbols-rounded Icon Icon--inverse Chip-icon Chip-icon--left"
-              data-test="DesignSystem-GenericChip--Icon"
-              role="button"
-              style="font-size: 16px; width: 16px;"
+            assessment
+          </i>
+          <div
+            class="Chip-text--truncate"
+          >
+            <span
+              class="Text Text--regular color-inverse Chip-text"
+              data-test="DesignSystem-GenericChip--Text"
             >
-              assessment
-            </i>
-            <div
-              class="Chip-text--truncate"
-            >
-              <span
-                class="Text Text--regular color-inverse Chip-text"
-                data-test="DesignSystem-GenericChip--Text"
-              >
-                Action
-              </span>
-            </div>
+              Action
+            </span>
           </div>
         </div>
       </span>
@@ -47,48 +43,44 @@ exports[`ChipGroup component
         class="ChipGroup-item"
       >
         <div
-          class="d-inline-flex"
+          class="Chip-wrapper Chip Chip--input Chip-icon--clear"
+          data-test="DesignSystem-ChipGroup--Chip"
+          role="button"
+          style="max-width: var(--spacing-9);"
+          tabindex="0"
         >
-          <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear"
-            data-test="DesignSystem-ChipGroup--Chip"
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--inverse Chip-icon Chip-icon--left"
+            data-test="DesignSystem-GenericChip--Icon"
             role="button"
-            style="max-width: var(--spacing-9);"
+            style="font-size: 16px; width: 16px;"
+          >
+            assessment
+          </i>
+          <div
+            class="Chip-text--truncate"
+          >
+            <span
+              class="Text Text--regular color-inverse Chip-text"
+              data-test="DesignSystem-GenericChip--Text"
+            >
+              Input
+            </span>
+          </div>
+          <div
+            class="Chip-icon Chip-icon--right cursor-pointer"
+            data-test="DesignSystem-GenericChip--clearButton"
+            role="button"
             tabindex="0"
           >
             <i
-              class="material-symbols material-symbols-rounded Icon Icon--inverse Chip-icon Chip-icon--left"
-              data-test="DesignSystem-GenericChip--Icon"
+              class="material-symbols material-symbols-rounded Icon Icon--subtle p-2"
+              data-test="DesignSystem-Icon"
               role="button"
               style="font-size: 16px; width: 16px;"
             >
-              assessment
+              clear
             </i>
-            <div
-              class="Chip-text--truncate"
-            >
-              <span
-                class="Text Text--regular color-inverse Chip-text"
-                data-test="DesignSystem-GenericChip--Text"
-              >
-                Input
-              </span>
-            </div>
-            <div
-              class="Chip-icon Chip-icon--right cursor-pointer"
-              data-test="DesignSystem-GenericChip--clearButton"
-              role="button"
-              tabindex="0"
-            >
-              <i
-                class="material-symbols material-symbols-rounded Icon Icon--subtle p-2"
-                data-test="DesignSystem-Icon"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                clear
-              </i>
-            </div>
           </div>
         </div>
       </span>
@@ -96,48 +88,44 @@ exports[`ChipGroup component
         class="ChipGroup-item"
       >
         <div
-          class="d-inline-flex"
+          class="Chip-wrapper Chip Chip--selection Chip-selection--selected Chip-icon--clear"
+          data-test="DesignSystem-ChipGroup--Chip"
+          role="button"
+          style="max-width: var(--spacing-9);"
+          tabindex="0"
         >
-          <div
-            class="Chip-wrapper Chip Chip--selection Chip-selection--selected Chip-icon--clear"
-            data-test="DesignSystem-ChipGroup--Chip"
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--primaryDark Chip-icon Chip-icon--left"
+            data-test="DesignSystem-GenericChip--Icon"
             role="button"
-            style="max-width: var(--spacing-9);"
+            style="font-size: 16px; width: 16px;"
+          >
+            assessment
+          </i>
+          <div
+            class="Chip-text--truncate"
+          >
+            <span
+              class="Text Text--regular color-primary-dark Chip-text"
+              data-test="DesignSystem-GenericChip--Text"
+            >
+              Selection
+            </span>
+          </div>
+          <div
+            class="Chip-icon Chip-icon--right cursor-pointer Chip-icon--selected"
+            data-test="DesignSystem-GenericChip--clearButton"
+            role="button"
             tabindex="0"
           >
             <i
-              class="material-symbols material-symbols-rounded Icon Icon--primaryDark Chip-icon Chip-icon--left"
-              data-test="DesignSystem-GenericChip--Icon"
+              class="material-symbols material-symbols-rounded Icon Icon--primaryDark p-2"
+              data-test="DesignSystem-Icon"
               role="button"
               style="font-size: 16px; width: 16px;"
             >
-              assessment
+              clear
             </i>
-            <div
-              class="Chip-text--truncate"
-            >
-              <span
-                class="Text Text--regular color-primary-dark Chip-text"
-                data-test="DesignSystem-GenericChip--Text"
-              >
-                Selection
-              </span>
-            </div>
-            <div
-              class="Chip-icon Chip-icon--right cursor-pointer Chip-icon--selected"
-              data-test="DesignSystem-GenericChip--clearButton"
-              role="button"
-              tabindex="0"
-            >
-              <i
-                class="material-symbols material-symbols-rounded Icon Icon--primaryDark p-2"
-                data-test="DesignSystem-Icon"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                clear
-              </i>
-            </div>
           </div>
         </div>
       </span>
@@ -145,48 +133,44 @@ exports[`ChipGroup component
         class="ChipGroup-item"
       >
         <div
-          class="d-inline-flex"
+          class="Chip-wrapper Chip Chip--selection Chip-icon--clear"
+          data-test="DesignSystem-ChipGroup--Chip"
+          role="button"
+          style="max-width: var(--spacing-9);"
+          tabindex="0"
         >
-          <div
-            class="Chip-wrapper Chip Chip--selection Chip-icon--clear"
-            data-test="DesignSystem-ChipGroup--Chip"
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--inverse Chip-icon Chip-icon--left"
+            data-test="DesignSystem-GenericChip--Icon"
             role="button"
-            style="max-width: var(--spacing-9);"
+            style="font-size: 16px; width: 16px;"
+          >
+            assessment
+          </i>
+          <div
+            class="Chip-text--truncate"
+          >
+            <span
+              class="Text Text--regular color-inverse Chip-text"
+              data-test="DesignSystem-GenericChip--Text"
+            >
+              Selection
+            </span>
+          </div>
+          <div
+            class="Chip-icon Chip-icon--right cursor-pointer"
+            data-test="DesignSystem-GenericChip--clearButton"
+            role="button"
             tabindex="0"
           >
             <i
-              class="material-symbols material-symbols-rounded Icon Icon--inverse Chip-icon Chip-icon--left"
-              data-test="DesignSystem-GenericChip--Icon"
+              class="material-symbols material-symbols-rounded Icon Icon--subtle p-2"
+              data-test="DesignSystem-Icon"
               role="button"
               style="font-size: 16px; width: 16px;"
             >
-              assessment
+              clear
             </i>
-            <div
-              class="Chip-text--truncate"
-            >
-              <span
-                class="Text Text--regular color-inverse Chip-text"
-                data-test="DesignSystem-GenericChip--Text"
-              >
-                Selection
-              </span>
-            </div>
-            <div
-              class="Chip-icon Chip-icon--right cursor-pointer"
-              data-test="DesignSystem-GenericChip--clearButton"
-              role="button"
-              tabindex="0"
-            >
-              <i
-                class="material-symbols material-symbols-rounded Icon Icon--subtle p-2"
-                data-test="DesignSystem-Icon"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                clear
-              </i>
-            </div>
           </div>
         </div>
       </span>
