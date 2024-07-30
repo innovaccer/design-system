@@ -99,6 +99,7 @@
 | --spacing-xs 	| 1px   	|
 | --spacing-s  	| 2px   	|
 | --spacing-m  	| 4px   	|
+| --spacing-0-75  	| 6px   	|
 | --spacing    	| 8px   	|
 | --spacing-l  	| 12px  	|
 | --spacing-2  	| 16px  	|
@@ -128,12 +129,13 @@ x - for classes that set both *-left and *-right<br>
 y - for classes that set both *-top and *-bottom<br>   
 blank - for classes that set a margin or padding on all 4 sides of the element<br>  
 Where size is one of:
-| value | properites |
+| value | properties |
 | ----- | ---------- |         
 | **0** |  0 ; |
 | **1** |  --spacing-xs ;|
 | **2** |  --spacing-s ; |
 | **3** |  --spacing-m ; |
+| **3-5** |  --spacing-0-75 ; |
 | **4** |  --spacing ; |
 | **5** |  --spacing-l ; |
 | **6** |  --spacing-2 ; |
@@ -155,6 +157,7 @@ Where size is one of:
 | **.m-1** 	| **.p-1** 	|
 | **.m-2** 	| **.p-2** 	|
 | **.m-3** 	| **.p-3** 	|
+| **.m-3-5** 	| **.p-3-5** 	|
 | **.m-4** 	| **.p-4** 	|
 | **.m-5** 	| **.p-5** 	|
 | **.m-6** 	| **.p-6** 	|
@@ -171,6 +174,7 @@ Where size is one of:
 | **.mx-1** 	| **.px-1** 	|
 | **.mx-2** 	| **.px-2** 	|
 | **.mx-3** 	| **.px-3** 	|
+| **.mx-3-5** 	| **.px-3-5** 	|
 | **.mx-4** 	| **.px-4** 	|
 | **.mx-5** 	| **.px-5** 	|
 | **.mx-6** 	| **.px-6** 	|
@@ -187,6 +191,7 @@ Where size is one of:
 | **.my-1** 	| **.py-1** 	|
 | **.my-2** 	| **.py-2** 	|
 | **.my-3** 	| **.py-3** 	|
+| **.my-3-5** 	| **.py-3-5** 	|
 | **.my-4** 	| **.py-4** 	|
 | **.my-5** 	| **.py-5** 	|
 | **.my-6** 	| **.py-6** 	|
@@ -203,6 +208,7 @@ Where size is one of:
 | **.mt-1** 	| **.pt-1** 	|
 | **.mt-2** 	| **.pt-2** 	|
 | **.mt-3** 	| **.pt-3** 	|
+| **.mt-3-5** 	| **.pt-3-5** 	|
 | **.mt-4** 	| **.pt-4** 	|
 | **.mt-5** 	| **.pt-5** 	|
 | **.mt-6** 	| **.pt-6** 	|
@@ -219,6 +225,7 @@ Where size is one of:
 | **.mb-1** 	| **.pb-1** 	|
 | **.mb-2** 	| **.pb-2** 	|
 | **.mb-3** 	| **.pb-3** 	|
+| **.mb-3-5** 	| **.pb-3-5** 	|
 | **.mb-4** 	| **.pb-4** 	|
 | **.mb-5** 	| **.pb-5** 	|
 | **.mb-6** 	| **.pb-6** 	|
@@ -235,6 +242,7 @@ Where size is one of:
 | **.mr-1** 	| **.pr-1** 	|
 | **.mr-2** 	| **.pr-2** 	|
 | **.mr-3** 	| **.pr-3** 	|
+| **.mr-3-5** 	| **.pr-3-5** 	|
 | **.mr-4** 	| **.pr-4** 	|
 | **.mr-5** 	| **.pr-5** 	|
 | **.mr-6** 	| **.pr-6** 	|
@@ -251,6 +259,7 @@ Where size is one of:
 | **.ml-1** 	| **.pl-1** 	|
 | **.ml-2** 	| **.pl-2** 	|
 | **.ml-3** 	| **.pl-3** 	|
+| **.ml-3-5** 	| **.pl-3-5** 	|
 | **.ml-4** 	| **.pl-4** 	|
 | **.ml-5** 	| **.pl-5** 	|
 | **.ml-6** 	| **.pl-6** 	|

@@ -16,6 +16,10 @@ const classMap = [
     paddingClasses: 'p-3',
   },
   {
+    marginClasses: 'm-3-5',
+    paddingClasses: 'p-3-5',
+  },
+  {
     marginClasses: 'm-4',
     paddingClasses: 'p-4',
   },
@@ -78,6 +82,10 @@ const classMap = [
   {
     marginClasses: 'mx-3',
     paddingClasses: 'px-3',
+  },
+  {
+    marginClasses: 'mx-3-5',
+    paddingClasses: 'px-3-5',
   },
   {
     marginClasses: 'mx-4',
@@ -144,6 +152,10 @@ const classMap = [
     paddingClasses: 'py-3',
   },
   {
+    marginClasses: 'my-3-5',
+    paddingClasses: 'py-3-5',
+  },
+  {
     marginClasses: 'my-4',
     paddingClasses: 'py-4',
   },
@@ -206,6 +218,10 @@ const classMap = [
   {
     marginClasses: 'mt-3',
     paddingClasses: 'pt-3',
+  },
+  {
+    marginClasses: 'mt-3-5',
+    paddingClasses: 'pt-3-5',
   },
   {
     marginClasses: 'mt-4',
@@ -272,6 +288,10 @@ const classMap = [
     paddingClasses: 'pb-3',
   },
   {
+    marginClasses: 'mb-3-5',
+    paddingClasses: 'pb-3-5',
+  },
+  {
     marginClasses: 'mb-4',
     paddingClasses: 'pb-4',
   },
@@ -334,6 +354,10 @@ const classMap = [
   {
     marginClasses: 'mr-3',
     paddingClasses: 'pr-3',
+  },
+  {
+    marginClasses: 'mr-3-5',
+    paddingClasses: 'pr-3-5',
   },
   {
     marginClasses: 'mr-4',
@@ -400,6 +424,10 @@ const classMap = [
     paddingClasses: 'pl-3',
   },
   {
+    marginClasses: 'ml-3-5',
+    paddingClasses: 'pl-3-5',
+  },
+  {
     marginClasses: 'ml-4',
     paddingClasses: 'pl-4',
   },
@@ -454,6 +482,7 @@ export const sizeData = [
   { pixel: '1px', value: '1', properties: 'var(--spacing-xs)' },
   { pixel: '2px', value: '2', properties: 'var(--spacing-s)' },
   { pixel: '4px', value: '3', properties: 'var(--spacing-m)' },
+  { pixel: '6px', value: '3-5', properties: 'var(--spacing-0-75)' },
   { pixel: '8px', value: '4', properties: 'var(--spacing)' },
   { pixel: '12px', value: '5', properties: 'var(--spacing-l)' },
   { pixel: '16px', value: '6', properties: 'var(--spacing-2)' },
@@ -468,11 +497,12 @@ export const sizeData = [
   { pixel: '', value: 'auto', properties: 'auto' },
 ];
 
-const sizeMap = {
+const sizeMap: Record<string | number, string> = {
   0: '0',
   1: '1px',
   2: '2px',
   3: '4px',
+  '3-5': '6px',
   4: '8px',
   5: '12px',
   6: '16px',
@@ -489,7 +519,13 @@ const sizeMap = {
 
 export const classData = classMap.map((item) => {
   const { paddingClasses = '' } = item;
-  const key = paddingClasses.split('-')[1] as keyof typeof sizeMap;
+  const values = paddingClasses.split('-');
+  let key;
+  if (values.length > 2) {
+    key = '3-5' as keyof typeof sizeMap;
+  } else {
+    key = values[1] as keyof typeof sizeMap;
+  }
 
   return {
     ...item,
