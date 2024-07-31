@@ -299,7 +299,7 @@ export const Tabs = (props: TabsProps) => {
 
   const renderTabs = tabs.map((tab: Tab, index) => {
     const currentTabProp = children && 'props' in tab ? tab.props : tab;
-    const { disabled } = currentTabProp;
+    const { disabled, label } = currentTabProp;
 
     const tabHeaderClass = classNames({
       ['Tab']: true,
@@ -307,6 +307,8 @@ export const Tabs = (props: TabsProps) => {
       ['Tab--active']: !disabled && activeIndex === index,
       ['Tab-selected']: !disabled && activeIndex === index,
       ['align-items-center']: true,
+      ['Tab--regular']: size === 'regular' && typeof label !== 'string',
+      ['Tab--small']: size === 'small' && typeof label !== 'string',
     });
 
     return (
