@@ -8,10 +8,10 @@ keywords: ['Colors']
 Data visualization is the representation of information in pictorial or graphical format, such as charts, graphs, maps, and diagrams. 
 Because color can affect our perception of information, the appropriate use of color is critical in making a data visualization successful.
 
-### Assigning colors
+### Assigning Colors
 Use color tokens according to the usage guidelines to achieve appropriate color contrasts.
 
-#### Categorical palette
+#### Categorical Palette
 
 Categorical palette consists of 10 colors shown below. The order of the colors should not be changed under any circumstance.
 <b>Note:</b> Follow the same sequence as the numbers in the token names. This ensures each color is visually distinct from its neighbors across all color deficiencies. 
@@ -29,9 +29,9 @@ Categorical palette consists of 10 colors shown below. The order of the colors s
 <br/>
 <br/>
 
-#### Multi hue palette
+#### Multi Hue Palette
 
-##### Sequential palette
+##### Sequential Palette
 Sequential palette is used to illustrate a continuous or sequential change in values from low to high.
 
 ![Sequential palette](./images/color-3.png)
@@ -39,11 +39,11 @@ Sequential palette is used to illustrate a continuous or sequential change in va
 <br/>
 <br/>
 
-##### Diverging palette
+##### Diverging Palette
 Diverging palette is used when dealing with negative values or ranges that have two extremes with a baseline in the middle. 
 Diverging colors are ordered. Use these for ordinal and ratio scales, especially when there is a meaningful middle value. These may also be used for interval scales. Do not use these for categorical scales.
 
-###### Blue - Red palette
+###### Blue - Red Palette
 Depending on the visual outcome of the chart, if the negative sentiment is to be highlighted then use Blue - Red palette. 
 
 ![Blue - Red palette](./images/color-4.png)
@@ -56,7 +56,7 @@ Depending on the visual outcome of the chart, if the negative sentiment is to be
 <br/>
 <br/>
 
-###### Yellow - Green palette
+###### Yellow - Green Palette
 Depending on the visual outcome of the chart, if the positive sentiment is to be highlighted then use Yellow - Green palette. 
 
 ![Yellow - Green palette](./images/color-6.png)
@@ -71,7 +71,7 @@ Depending on the visual outcome of the chart, if the positive sentiment is to be
 
 ### Usage
 
-#### Apply a border or space between adjacent colors
+#### Apply a Border or Space Between Adjacent Colors
 While the color tokens pass 3:1 contrast ratios against backgrounds, they might not against each other. To comply with WCAG 2.0, apply a space or border as a visual separator between data elements.
 
 ![White border between adjacent bars and slices](./images/color-8.png)
@@ -79,7 +79,7 @@ While the color tokens pass 3:1 contrast ratios against backgrounds, they might 
 <br/>
 <br/>
 
-#### Be consistent with color
+#### Be Consistent With Color
 If a color is used to represent a category in one chart, all other charts should use that color for the same category.
 This should only be done when the category has significant importance and repeats itself in two or more charts.
 <b>Note:</b> When a color is used to depict a specific category across charts, it should not be used in the categorical palette.
@@ -89,28 +89,28 @@ This should only be done when the category has significant importance and repeat
 <br/>
 <br/>
 
-#### Don't use sequential color with categorical data
+#### Don't Use Sequential Color With Categorical Data
 Sequential colors are optimized for numeric meaning. Using these colors for dimensions can undermine the numeric association and lead users to misunderstand visualizations.
 
 ![Don't use sequential color with categorical data](./images/color-10.png)
 <br/>
 <br/>
 
-#### Don’t use categorical with single data series or sequential data
+#### Don’t Use Categorical With Single Data Series or Sequential Data
 Categorical colors are optimized for maximum differentiation. Using them for sequences (ordinal, interval, or ratio scales), even when arranged by hue, makes it more difficult for users to understand.
 
 ![Don’t use categorical with single data series or sequential data](./images/color-11.png)
 <br/>
 <br/>
 
-#### Use upto 6 categorical colors
+#### Use Upto 6 Categorical Colors
 Categorical colors become more difficult to comprehend starting at 6 colors, and extremely difficult to understand at 12. If you have a need for more than 6 colors, try alternative charts or table.
 
 ![Use upto 6 categorical colors](./images/color-12.png)
 <br/>
 <br/>
 
-#### Don't place text on chart colors
+#### Don't Place Text on Chart Colors
 All color tokens don’t support accessible pairings with text, i.e. 4.5:1 contrast. Consider placing text next to the chart element instead.
 
 ![Don't place text on chart colors](./images/color-13.png)

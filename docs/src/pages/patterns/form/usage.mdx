@@ -18,21 +18,21 @@ While using a multi-column form, make sure that the fields that are placed adjac
 ### Types
 Forms can come in various types such as -
 
-#### Single step forms
+#### Single Step Forms
 These are the most basic forms that can be completed in a single step. Clicking the primary action submits the form.
 
 ![A single step form](./images/form-2.png)
 <Caption>A single step form</Caption>
 
-#### Multi-step forms
+#### Multi-Step Forms
 
-##### Two steps
+##### Two Steps
 Instead of using a stepper for two step forms, it is recommended to have a way to go back to the previous step such as a back button in the header or a ‘Previous’ button in the footer.
 
 ![A two step form](./images/form-3.png)
 <Caption>A two step form</Caption>
 
-##### More than two steps
+##### More Than Two Steps
 Multi step forms generally have three or more steps. These forms should be created using [Steppers](/components/steppers/usage/).
 
 Actions in such forms: 
@@ -49,7 +49,7 @@ Actions in such forms:
 
 ### Usage
 
-#### Layout of the form fields
+#### Layout of the Form Fields
 Form fields can be aligned in various ways depending upon the space available.
 
 ##### Vertical
@@ -70,7 +70,7 @@ In these forms, inputs fields are horizontally stacked in order to save vertical
 ![Inline arrangement of form fields](./images/form-32.png)
 <Caption>Inline arrangement of form fields</Caption>
 
-#### Position and order of actions
+#### Position and Order of Actions
 Number of actions in a form should be limited i.e. 2 or 3 at max. If there is a requirement of tertiary action right where the primary and secondary actions are, consider using the transparent button.
 
 Primary actions should be disabled until all of the required fields have been filled. A tooltip showing appropriate text should appear while hovering over that disabled action.
@@ -102,7 +102,7 @@ Content here takes space that is less than 75% of the height. Hence, the actions
 ![When content takes less than 75% of the height](./images/form-35.png)
 <Caption>When content takes less than 75% of the height</Caption>
 
-##### In page forms
+##### In Page Forms
 In a page-long form, users scans through F pattern, hence the actions should be on the bottom left. Primary action would be the leftmost action followed by other actions (if any). One can use inline labels as well, because plenty of vertical space is available.
 
 **Note:** It is recommended to use large size of buttons in the case of such forms.
@@ -112,7 +112,7 @@ In a page-long form, users scans through F pattern, hence the actions should be 
 ![Form in a full screen modal](./images/form-17.png)
 <Caption>Form in a full screen modal</Caption>
 
-#### Required vs. Optional fields
+#### Required vs. Optional Fields
 Form fields can be marked as optional or required depending upon the context. To avoid unnecessary clutter, mark only the minority fields as optional or required.
 
 It is recommended to keep the notations of required and optional fields consistent throughout the app as different notations can confuse users.
@@ -132,7 +132,7 @@ It is recommended to keep the notations of required and optional fields consiste
 ![Using “(optional)” tag](./images/form-19.png)
 <Caption>Using “(optional)” tag</Caption>
 
-#### Validation and feedback
+#### Validation and Feedback
 Forms can be validated either while typing or after clicking the primary action to submit the form depending upon the field type.
 
 For example: password field while creating an account should be verified while typing whereas password field while signing in to an account can be verified after clicking on primary action.
@@ -141,31 +141,31 @@ After validating, proper feedback should be conveyed to the users in order to he
 
 Feedback in a form can be shown in multiple ways. Some of them are:
 
-##### Inline feedback
+##### Inline Feedback
 Errors in form fields are shown using the [Inline message](/components/message/usage/#inline-message-1) component and should be persistent until the error gets resolved. 
 
 ![Inline feedback for input field](./images/form-11.png)
 <Caption>Inline feedback for input field</Caption>
 
-##### Collective form feedback
+##### Collective Form Feedback
 In case of errors in the overall form submission such as required fields are not filled, etc., use a [standard message](/components/message/usage/#standard) component. These kinds of errors generally occur after clicking on the primary action to submit the form. 
 
 ![Collective form feedback after clicking the “Login” button](./images/form-12.png)
 <Caption>Collective form feedback after clicking the “Login” button</Caption>
 
-#### Auto-complete
+#### Auto-Complete
 Users can accept the autocomplete suggestion by pressing the tab key or the right arrow key.
 
 ![An auto-complete field](./images/form-20.png)
 <Caption>An auto-complete field</Caption>
 
-#### Auto-suggestion
+#### Auto-Suggestion
 Suggestions can be shown in a form just below the input field.
 
 ![An auto-suggestion field](./images/form-21.png)
 <Caption>An auto-suggestion field</Caption>
 
-#### Auto-saving
+#### Auto-Saving
 Forms data can be auto saved based on an event or a pre defined time interval. In such cases, users should also be given an option to manually save the data. Doing so can be helpful in cases when autosave fails due to some reason.
 
 The status of auto-saving the data should appear just under the heading where the form is being used e.g. just under the title in page header, just under the heading in a modal or a side sheet.
