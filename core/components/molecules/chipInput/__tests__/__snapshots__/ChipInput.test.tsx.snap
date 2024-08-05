@@ -87,6 +87,7 @@ exports[`ChipInput component
             class="ChipInput-input"
             data-test="DesignSystem-ChipInput--Input"
             placeholder=""
+            style="flex-basis: 0px;"
             value=""
           />
         </div>
@@ -193,6 +194,7 @@ exports[`ChipInput component
             data-test="DesignSystem-ChipInput--Input"
             disabled=""
             placeholder=""
+            style="flex-basis: 0px;"
             value=""
           />
         </div>
@@ -298,6 +300,7 @@ exports[`ChipInput component
             class="ChipInput-input"
             data-test="DesignSystem-ChipInput--Input"
             placeholder=""
+            style="flex-basis: 0px;"
             value=""
           />
         </div>
