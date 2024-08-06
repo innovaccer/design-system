@@ -112,43 +112,46 @@ export const GenericChip = (props: GenericChipProps) => {
   };
 
   return (
-    <div className="d-inline-flex">
-      <Tooltip showTooltip={isTextTruncated} data-test="DesignSystem-GenericChip--Tooltip" tooltip={getTooltipText()}>
-        <div
-          tabIndex={disabled ? -1 : 0}
-          style={wrapperStyle}
-          data-test="DesignSystem-GenericChip--Wrapper"
-          role="button"
-          onKeyDown={onChipKeyDownHandler}
-          {...baseProps}
-          className={`Chip-wrapper ${className}`}
-          onClick={onClickHandler}
-        >
-          {icon && (
-            <Icon
-              data-test="DesignSystem-GenericChip--Icon"
-              name={icon}
-              type={iconType}
-              appearance={iconAppearance('left')}
-              className={iconClass('left')}
-            />
-          )}
-          {renderLabel()}
-          {clearButton && (
-            <div
-              role="button"
-              onClick={onCloseHandler}
-              tabIndex={disabled ? -1 : 0}
-              onKeyDown={onKeyDownHandler}
-              className={iconClass('right')}
-              data-test="DesignSystem-GenericChip--clearButton"
-            >
-              <Icon name="clear" appearance={iconAppearance('right')} className="p-2" />
-            </div>
-          )}
-        </div>
-      </Tooltip>
-    </div>
+    <Tooltip
+      showTooltip={isTextTruncated}
+      data-test="DesignSystem-GenericChip--Tooltip"
+      tooltip={getTooltipText()}
+      triggerClass="flex-grow-0"
+    >
+      <div
+        tabIndex={disabled ? -1 : 0}
+        style={wrapperStyle}
+        data-test="DesignSystem-GenericChip--Wrapper"
+        role="button"
+        onKeyDown={onChipKeyDownHandler}
+        {...baseProps}
+        className={`Chip-wrapper ${className}`}
+        onClick={onClickHandler}
+      >
+        {icon && (
+          <Icon
+            data-test="DesignSystem-GenericChip--Icon"
+            name={icon}
+            type={iconType}
+            appearance={iconAppearance('left')}
+            className={iconClass('left')}
+          />
+        )}
+        {renderLabel()}
+        {clearButton && (
+          <div
+            role="button"
+            onClick={onCloseHandler}
+            tabIndex={disabled ? -1 : 0}
+            onKeyDown={onKeyDownHandler}
+            className={iconClass('right')}
+            data-test="DesignSystem-GenericChip--clearButton"
+          >
+            <Icon name="clear" appearance={iconAppearance('right')} className="p-2" />
+          </div>
+        )}
+      </div>
+    </Tooltip>
   );
 };
 
