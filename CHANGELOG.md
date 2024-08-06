@@ -1,3 +1,43 @@
+## 2.40.1 (2024-08-06)
+
+### Highlights
+
+- fix(chip): fix horizontal and vertical alignment of multiple chips (02a8c24b)
+- fix(tabs): fix spacing for custom labels tabs (b3d63c8c)
+- fix(materialSymbols): revert material symbols file (e0b20f70)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+- fix(chip): fix horizontal and vertical alignment of multiple chips (02a8c24b)
+- fix(tabs): fix spacing for custom labels tabs (b3d63c8c)
+- fix(materialSymbols): revert material symbols file (e0b20f70)
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 2.40.0 (2024-07-29)
 
 ### Highlights
