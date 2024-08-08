@@ -92,6 +92,8 @@ export const ChipInput = (props: ChipInputProps) => {
   } = props;
 
   const inputRef = React.createRef<HTMLInputElement>();
+  const customRef = React.useRef<any>();
+
   const [chips, setChips] = React.useState(value || defaultValue);
   const [inputValue, setInputValue] = React.useState('');
 
@@ -102,6 +104,13 @@ export const ChipInput = (props: ChipInputProps) => {
       setChips(value);
     }
   }, [value]);
+
+  React.useEffect(() => {
+    if (inputValue === '' && inputRef.current) {
+      inputRef.current.style.flexBasis = '0';
+      customRef.current.charCount = null;
+    }
+  }, [inputValue]);
 
   const ChipInputBorderClass = classNames({
     ['ChipInput-border']: true,
@@ -178,6 +187,23 @@ export const ChipInput = (props: ChipInputProps) => {
   };
 
   const onInputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const elementScrollWidth = inputRef.current?.scrollWidth;
+    const elementClientWidth = inputRef.current?.clientWidth;
+    const charLen = e.target.value.length;
+
+    if (elementScrollWidth && elementClientWidth && inputRef.current) {
+      if (elementScrollWidth > elementClientWidth && inputValue.length <= charLen && customRef.current) {
+        inputRef.current.style.flexBasis = 'auto';
+        customRef.current.charCount = charLen;
+      } else if (
+        elementScrollWidth <= elementClientWidth &&
+        inputValue.length > charLen &&
+        charLen <= customRef.current?.charCount - 2
+      ) {
+        inputRef.current.style.flex = '0';
+      }
+    }
+
     setInputValue(e.target.value);
   };
 
@@ -215,7 +241,7 @@ export const ChipInput = (props: ChipInputProps) => {
         onClick={onClickHandler}
         tabIndex={disabled ? -1 : 0}
       >
-        <div className="ChipInput-wrapper">
+        <div className="ChipInput-wrapper" ref={customRef}>
           {chips && chips.length > 0 && chipComponents}
           <input
             data-test="DesignSystem-ChipInput--Input"
