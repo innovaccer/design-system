@@ -13,6 +13,10 @@ export const accepts = (file: File, acceptedFiles?: string | string[]) => {
     const mimeType = (file.type || '').toLowerCase();
     const baseMimeType = mimeType.replace(/\/.*$/, '');
 
+    if (!mimeType) {
+      return true;
+    }
+
     return acceptedFilesArray.some((type) => {
       const validType = type.trim().toLowerCase();
       if (validType.charAt(0) === '.') {
