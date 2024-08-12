@@ -23,7 +23,7 @@ UI states are used to inform users about the various states a page or container 
 * Avoid flicker (showing an element and then removing it).
 <br/>
 
-### Loading state
+### Loading State
 A typical process starts with loading the app first. If we go step by step -
 
 <table style={{width: "100%"}}>
@@ -70,37 +70,37 @@ A typical process starts with loading the app first. If we go step by step -
 <br/>
 
 ### Examples
-#### Loading the app
+#### Loading the App
 
 ![Loading the app](./images/uiStates-1.jpg)
 <br/>
 <br/>
 
-#### Loading the page template
+#### Loading the Page Template
 
 ![Loading the page template](./images/uiStates-2.jpg)
 <br/>
 <br/>
 
-#### Making API calls - Data can be empty
+#### Making API Calls - Data Can Be Empty
 
 ![Making API calls where data can be empty](./images/uiStates-3.jpg)
 <br/>
 <br/>
 
-#### Making API calls - Data cannot be empty
+#### Making API Calls - Data Cannot Be Empty
 
 ![Making API calls where data cannot be empty](./images/uiStates-4.jpg)
 <br/>
 <br/>
 
-#### Searching - Data can be empty
+#### Searching - Data Can Be Empty
 
 ![Searching where data can be empty](./images/uiStates-5.jpg)
 <br/>
 <br/>
 
-#### Pagination - Data cannot be empty
+#### Pagination - Data Cannot Be Empty
 
 ![Pagination where data cannot be empty](./images/uiStates-6.jpg)
 <br/>
@@ -113,7 +113,7 @@ Empty state shows that there is no data to display. Such states can be utilized 
 **Note:** Please refer these comprehensive guidelines about empty states. 
 
 
-#### No data state
+#### No Data State
 
 This state occurs when the page is accessed for the first time, hence has no data to display. It should convey what users can expect once data is available, while providing constructive guidance about next steps.
 
@@ -122,18 +122,18 @@ This state occurs when the page is accessed for the first time, hence has no dat
 ![No Data State](./images/NoDataState.png)
 <Caption>UI state for no data</Caption>
 
-#### Empty state based on user action
+#### Empty State Based on User Action
 
 These empty states occur as consequences of user-initiated actions:
 
-##### No search results
+##### No Search Results
 
 This state indicates that there are no search results and provides guidance on modifying search terms to proceed with the search.
 
 ![No search results](./images/NoSearchResults.png)
 <Caption>UI State for no search results</Caption>
 
-##### No filter results
+##### No Filter Results
 
 This state indicates the absence of results based on applied filter values and guides users on adjusting the filters to continue.
 
@@ -148,25 +148,25 @@ Users should be provided with a succinct yet descriptive message along with an a
 
 Following are some of the common error types: 
 
-#### Failed to fetch data
+#### Failed to Fetch Data
 
 This state shows up when there are problems in fetching data from the system.
 
 ![No to fetch data](./images/FailedToFetchData.png)
 <Caption>Error while fetching data</Caption>
 
-#### Page doesn’t exist
+#### Page Doesn’t Exist
 
 This state shows up when the requested page does not exist anymore.
 
 ![Page doesn’t exist](./images/PageDoesnotExist.png)
 <Caption>Page doesn’t exist</Caption>
 
-#### Connectivity issues
+#### Connectivity Issues
 
 Error state to convey the lost internet connection.
 
-##### Opening/navigating to a new page
+##### Opening/navigating to a New Page
 
 Error state while opening a new page or navigating to some other links. 
 
@@ -175,7 +175,7 @@ Error state while opening a new page or navigating to some other links.
 ![Error while opening a new page with no internet connection](./images/ConnectivityIssue-1.png)
 <Caption>Error while opening a new page with no internet connection</Caption>
 
-##### Taking actions on the same page
+##### Taking Actions on the Same Page
 
 For cases when users try to perform any action on the page having no internet, a prompt should be given stating the reason of the failure.
 
@@ -184,21 +184,21 @@ For cases when users try to perform any action on the page having no internet, a
 ![Error while taking action on the page with no internet connection](./images/ConnectivityIssue-2.png)
 <Caption>Error while taking action on the page with no internet connection</Caption>
 
-#### Server unavailable
+#### Server Unavailable
 
 This state shows up when the server is unable to handle the request due to temporary overload. 
 
 ![UI state when server is unavailable](./images/ServerDown.png)
 <Caption>UI state when server is unavailable</Caption>
 
-#### Permission issue
+#### Permission Issue
 
 This state shows up when the user does not have the access to view the requested content. 
 
 ![Error while viewing the restricted content](./images/AccessIssue.png)
 <Caption>Error while viewing the restricted content</Caption>
 
-#### Request timeout
+#### Request Timeout
 
 System throws this error whenever there is a lot of delay in the response of a particular request. 
 

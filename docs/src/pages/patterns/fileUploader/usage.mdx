@@ -45,14 +45,14 @@ Dropzone component comes in **4 states** - default, active, error and disabled.
 ### Usage
 <br/>
 
-#### Uploading to the server
+#### Uploading to the Server
 Basis on the requirement, file uploader can either -
 - Upload the file directly to the server the moment a user picks/drops a file **OR**
 - Upload the file only when an Upload, Submit, or similar action is triggered by the user.
 
 It is suggested to use the latter so as to minimize the resource load (network calls).
 
-#### Status of file uploading
+#### Status of File Uploading
 To show the status of a file being uploaded, a file uploader item is used which contains information such as the file name, upload progress, any error, etc. Progress ring is used to indicate the progress.
 
 ![States of file uploading](./images/fileUploader-5.png)
@@ -70,7 +70,7 @@ Here the height of the card remains the same and it can accommodate a maximum of
 <br/>
 
 #### Errors
-##### Before dropping files
+##### Before Dropping Files
 File uploader provides the option to indicate that a file format is not accepted or the file size exceeds the limit through different visual cues.
 
 **Note**: Users can still drop the file. In that case, a file uploader item will be used to show the error as illustrated in the next section.
@@ -79,14 +79,14 @@ File uploader provides the option to indicate that a file format is not accepted
 <br/>
 <br/>
 
-##### While uploading
+##### While Uploading
 File uploader also provides the option to indicate that there was an error while uploading the file. These types of errors are shown using the file uploader item.
 
 ![Error while uploading a file](./images/fileUploader-8.jpg)
 <br/>
 <br/>
 
-#### File processing required
+#### File Processing Required
 File uploader is a simple component and it does not involve processing or analyzing file(s) as a part of it. But there can be cases when you need to process or analyze the uploaded file to check whether the content of the file matches your requirement(s).
 
 If the case arises, always process or analyze the file after an Upload, Submit, or similar action has been triggered by the users.
@@ -95,7 +95,7 @@ If the case arises, always process or analyze the file after an Upload, Submit, 
 <br/>
 <br/>
 
-#### File uploader in a form
+#### File Uploader in a Form
 The state of the submit button in a form depends on whether the file will be uploaded right away on the server or if it will be uploaded after the users click on submit.
 
 1. If the file has been uploaded to the server already then the submit button becomes enabled only when the file has been uploaded successfully.
