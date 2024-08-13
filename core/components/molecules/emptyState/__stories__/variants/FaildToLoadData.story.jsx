@@ -19,7 +19,10 @@ export const faildToLoadData = () => {
 
 const ImagePath = JSON.stringify(noContent);
 
-const customCode = `() => {
+const customCode = `
+// import 404-nothing-here-3 from '@innovaccer/mds-images/ui-states/404-nothing-here-3.svg';
+
+() => {
   return (
       <EmptyState>
         <EmptyState.Image src={${ImagePath}}></EmptyState.Image>

@@ -18,7 +18,10 @@ export const compressed = () => {
 
 const ImagePath = JSON.stringify(noContent);
 
-const customCode = `() => {
+const customCode = `
+// import no-files-empty-files from '@innovaccer/mds-images/ui-states/no-files-empty-files.svg';
+
+() => {
   return (
       <EmptyState size="compressed">
         <EmptyState.Image src={${ImagePath}}></EmptyState.Image>

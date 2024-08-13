@@ -20,7 +20,10 @@ export const serverUnavailable = () => {
 
 const ImagePath = JSON.stringify(noContent);
 
-const customCode = `() => {
+const customCode = `
+// import error from '@innovaccer/mds-images/ui-states/error.svg';
+
+() => {
   return (
       <EmptyState>
         <EmptyState.Image src={${ImagePath}}></EmptyState.Image>

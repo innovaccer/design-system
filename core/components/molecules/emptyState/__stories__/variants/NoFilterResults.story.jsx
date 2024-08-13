@@ -17,7 +17,10 @@ export const noFilterResults = () => {
 
 const ImagePath = JSON.stringify(noContent);
 
-const customCode = `() => {
+const customCode = `
+// import file-not-found from '@innovaccer/mds-images/ui-states/file-not-found.svg';
+
+() => {
   return (
       <EmptyState>
         <EmptyState.Image src={${ImagePath}}></EmptyState.Image>

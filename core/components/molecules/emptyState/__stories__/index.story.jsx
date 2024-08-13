@@ -100,7 +100,11 @@ export const all = () => {
   );
 };
 
-const customCode = `() => {
+const customCode = `
+// import no-files-empty-files from '@innovaccer/mds-images/ui-states/no-files-empty-files.svg';
+
+() => {
+
   return (
     <EmptyState>
       <EmptyState.Image>

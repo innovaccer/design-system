@@ -17,7 +17,10 @@ export const noSearchResults = () => {
 
 const ImagePath = JSON.stringify(noContent);
 
-const customCode = `() => {
+const customCode = `
+// import search-1 from '@innovaccer/mds-images/ui-states/search-1.svg';
+
+() => {
   return (
       <EmptyState>
         <EmptyState.Image src={${ImagePath}}></EmptyState.Image>
