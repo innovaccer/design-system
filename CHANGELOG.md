@@ -1,3 +1,47 @@
+## 2.41.0 (2024-08-13)
+
+### Highlights
+
+- feat(chipInput): add overflow behavior for input text (90eb6381)
+- feat(spacing): add spacing class for 6px token (d2e1dd4c)
+- feat(docs): update headings to title case for all markdown file (c2e3b5a1)
+- feat(tooltip): update opacity of tooltip and images in docs site (79decc1d)
+- feat(AIComponents): add figma code connect for AI Components (900d6712)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(chipInput): add overflow behavior for input text (90eb6381)
+- feat(spacing): add spacing class for 6px token (d2e1dd4c)
+- feat(docs): update headings to title case for all markdown file (c2e3b5a1)
+- feat(tooltip): update opacity of tooltip and images in docs site (79decc1d)
+- feat(AIComponents): add figma code connect for AI Components (900d6712)
+
+### Fixes
+
+- fix(dropzone): update error state for unknown file type (083e1d74)
+
+### Improvements
+
+NA
+
+### Documentation
+
+- docs(uiStates): update story live preview for UI States (5e6e115b)
+
+---
+
 ## 2.40.1 (2024-08-06)
 
 ### Highlights
