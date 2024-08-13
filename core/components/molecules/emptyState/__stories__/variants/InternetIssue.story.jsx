@@ -19,7 +19,10 @@ export const internetIssue = () => {
 
 const ImagePath = JSON.stringify(noContent);
 
-const customCode = `() => {
+const customCode = `
+// import connection-lost from '@innovaccer/mds-images/ui-states/connection-lost.svg';
+
+() => {
   return (
       <EmptyState>
         <EmptyState.Image src={${ImagePath}}></EmptyState.Image>

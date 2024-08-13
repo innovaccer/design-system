@@ -19,7 +19,10 @@ export const previewUnavailable = () => {
 
 const ImagePath = JSON.stringify(noContent);
 
-const customCode = `() => {
+const customCode = `
+// import content-unavailable from '@innovaccer/mds-images/ui-states/content-unavailable.svg';
+
+() => {
   return (
       <EmptyState>
         <EmptyState.Image src={${ImagePath}}></EmptyState.Image>

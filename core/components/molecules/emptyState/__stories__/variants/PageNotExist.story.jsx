@@ -19,7 +19,10 @@ export const pageNotExist = () => {
 
 const ImagePath = JSON.stringify(noContent);
 
-const customCode = `() => {
+const customCode = `
+// import file-broken-or-not-found from '@innovaccer/mds-images/ui-states/file-broken-or-not-found.svg';
+
+() => {
   return (
       <EmptyState>
         <EmptyState.Image src={${ImagePath}}></EmptyState.Image>

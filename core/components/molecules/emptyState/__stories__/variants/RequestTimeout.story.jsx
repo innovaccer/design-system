@@ -19,7 +19,10 @@ export const requestTimeout = () => {
 
 const ImagePath = JSON.stringify(noContent);
 
-const customCode = `() => {
+const customCode = `
+// import history-time from '@innovaccer/mds-images/ui-states/history-time.svg';
+
+() => {
   return (
       <EmptyState>
         <EmptyState.Image src={${ImagePath}}></EmptyState.Image>
