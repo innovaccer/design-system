@@ -32,7 +32,7 @@ export const resourceList = () => {
   ];
 
   return (
-    <Card>
+    <Card shadow="none">
       <CardHeader>
         <Heading size="s">Screenings and assessments</Heading>
       </CardHeader>

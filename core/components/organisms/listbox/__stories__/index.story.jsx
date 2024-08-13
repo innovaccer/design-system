@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Listbox, Heading } from '@/index';
+import { Listbox, Heading, Card, CardHeader } from '@/index';
 import { ListboxItem } from '../listboxItem';
 
 export const all = () => {
@@ -22,16 +22,17 @@ export const all = () => {
   ];
 
   return (
-    <div>
-      <Heading size="s" className="mb-5">
-        Select Assessment
-      </Heading>
+    <Card shadow="none">
+      <CardHeader>
+        <Heading size="s">Select Assessment</Heading>
+      </CardHeader>
+
       <Listbox>
         {data.map((item, key) => {
           return <Listbox.Item key={key}>{item.assessment}</Listbox.Item>;
         })}
       </Listbox>
-    </div>
+    </Card>
   );
 };
 
@@ -55,14 +56,17 @@ const customCode = `() => {
   ];
 
   return (
-    <div>
-      <Heading size="s" className='mb-5'>Select Assessment</Heading>
+    <Card shadow="none">
+      <CardHeader>
+        <Heading size="s">Select Assessment</Heading>
+      </CardHeader>
+
       <Listbox>
         {data.map((item, key) => {
           return <Listbox.Item key={key}>{item.assessment}</Listbox.Item>;
         })}
       </Listbox>
-    </div>
+    </Card>
   );
 }`;
 

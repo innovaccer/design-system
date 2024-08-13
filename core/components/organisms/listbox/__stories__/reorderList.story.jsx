@@ -49,7 +49,7 @@ export const reorderList = () => {
     //   height: var(--spacing-9);
     // }
 
-    <Card className="w-50">
+    <Card className="w-50" shadow="none">
       <div className="pt-6 ml-6 mb-5">
         <Heading>Todo’s table columns</Heading>
         <Text appearance="subtle">Select the columns that you want to see in work list</Text>
