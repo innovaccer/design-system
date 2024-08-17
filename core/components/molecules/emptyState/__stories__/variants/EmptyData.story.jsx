@@ -1,11 +1,13 @@
 import * as React from 'react';
 import { EmptyState, Button } from '@/index';
-import noContent from '../assets/no-files-empty-files.svg';
+import noFilesEmptyFiles from '@innovaccer/mds-images/ui-states/no-files-empty-files.svg';
+// import noFilesEmptyFiles from '../../../../../assets/no-files-empty-files.svg';
+// import noFilesEmptyFiles from '@/assets/no-files-empty-files.svg';
 
 export const emptyData = () => {
   return (
     <EmptyState>
-      <EmptyState.Image src={noContent}></EmptyState.Image>
+      <EmptyState.Image src={noFilesEmptyFiles}></EmptyState.Image>
       <EmptyState.Title>There are no referrals yet</EmptyState.Title>
       <EmptyState.Description>When you create a new referral, you will see it here.</EmptyState.Description>
       <EmptyState.Actions>
@@ -16,7 +18,7 @@ export const emptyData = () => {
   );
 };
 
-const ImagePath = JSON.stringify(noContent);
+// const ImagePath = JSON.stringify(noContent);
 
 const customCode = `
 // import no-files-empty-files from '@innovaccer/mds-images/ui-states/no-files-empty-files.svg';
@@ -24,7 +26,7 @@ const customCode = `
 () => {
   return (
       <EmptyState>
-        <EmptyState.Image src={${ImagePath}}></EmptyState.Image>
+        <EmptyState.Image src={noFilesEmptyFiles}></EmptyState.Image>
         <EmptyState.Title>There are no referrals yet</EmptyState.Title>
         <EmptyState.Description>When you create a new referral, you will see it here.</EmptyState.Description>
         <EmptyState.Actions>

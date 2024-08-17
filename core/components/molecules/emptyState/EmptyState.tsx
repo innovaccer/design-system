@@ -9,6 +9,7 @@ import EmptyStateTitle from './EmptyStateTitle';
 import EmptyStateDescription from './EmptyStateDescription';
 import EmptyStateActions from './EmptyStateActions';
 import { TEmptyStateSize } from '@/common.type';
+// import noFilesEmptyFiles from '@innovaccer/mds-images/ui-states/no-files-empty-files.svg';
 
 export interface EmptyStateProps extends BaseProps {
   /** @ignore */
@@ -92,6 +93,7 @@ export const EmptyState = (props: EmptyStateProps) => {
     width,
   } = props;
 
+  // console.log('noFilesEmptyFiles', noFilesEmptyFiles);
   const baseProps = extractBaseProps(props);
 
   let templateSize: TEmptyStateSize = 'standard';

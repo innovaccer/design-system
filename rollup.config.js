@@ -35,6 +35,9 @@ const banner = () => {
 
 }
 
+console.log('Resolved path>>>>>>>>>>>>>>>>>>>>:', path.resolve(__dirname, './core/assets'));
+
+
 const extensions = [
   '.js', '.jsx', '.ts', '.tsx',
 ];
@@ -57,31 +60,46 @@ const baseConfig = {
   external: ['react', 'react-dom'],
 }
 
-const commonJsPlugins =  [
-    alias({
-      entries: [
-        { find: '@', replacement: path.resolve('./core') },
-      ]
-    }),
-    
-    // Allows node_modules resolution
-    resolve({ extensions, preferBuiltins: false }),
+const commonJsPlugins = [
+  // alias({
+  //   entries: [
+  //     { find: /^@innovaccer\/mds-images\/ui-states\/(.*)$/, replacement: path.resolve(__dirname, '@/assets/$1') },
+  //     // { find: '@innovaccer/mds-images/ui-states', replacement: path.resolve('./core/assets') },
+  //     { find: '@', replacement: path.resolve('./core') },
+  //   ],
+  // }),
 
-    // Allow bundling cjs modules. Rollup doesn't understand cjs
-    commonjs(),
+  alias({
+    entries: [
+      {
+        find: new RegExp('^@innovaccer/mds-images/ui-states/(.*)$'), 
+        replacement: path.resolve(__dirname, 'core/assets/$1')
+      },
+      {
+        find: '@', 
+        replacement: path.resolve(__dirname, 'core')
+      },
+    ],
+  }),
 
-    // Compile TypeScript/JavaScript files
-    babel({ extensions, include: ['core/**/*'] }),
+  // Allows node_modules resolution
+  resolve({ extensions, preferBuiltins: false }),
 
-    image(),
+  // Allow bundling cjs modules. Rollup doesn't understand cjs
+  commonjs(),
 
-    json(),
+  // Compile TypeScript/JavaScript files
+  babel({ extensions, include: ['core/**/*'] }),
 
-    replace({
-      'process.env.NODE_ENV': JSON.stringify('production')
-    }),
-    uglify()
-  ]
+  image(),
+
+  json(),
+
+  replace({
+    'process.env.NODE_ENV': JSON.stringify('production'),
+  }),
+  uglify(),
+];
 
 const jsUmdOutputConfig = {
     file: 'dist/index.umd.js',
@@ -120,16 +138,22 @@ const tsConfig = {
     alias({
       entries: [
         { find: '@', replacement: path.resolve('./core') },
-      ]
+        {
+          find: new RegExp('^@innovaccer/mds-images/ui-states/(.*)$'),
+          replacement: path.resolve(__dirname, 'core/assets/$1'),
+        },
+        // { find: /^@innovaccer\/mds-images\/ui-states\/(.*)$/, replacement: path.resolve('../../../../../assets/$1') },
+        // { find: '@innovaccer/mds-images/ui-states', replacement: path.resolve('./core/assets') },
+      ],
     }),
 
     image(),
 
     json(),
-    
+
     // Allows node_modules resolution
     resolve({ extensions }),
-    
+
     typescript({
       typescript: require('ttypescript'),
       tsconfig: path.resolve(__dirname, './tsconfig.type.json'),
@@ -148,8 +172,8 @@ const tsConfig = {
     globals: globals(),
     banner: banner(),
     sourcemap: true,
-  }
-}
+  },
+};
 
 const brotliConfig = {
   ...baseConfig,
