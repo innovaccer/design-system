@@ -7,19 +7,13 @@ import path from 'path';
 import packageJSON from './package.json';
 import typescript from '@rollup/plugin-typescript';
 import replace from '@rollup/plugin-replace';
-import { uglify } from "rollup-plugin-uglify";
-import gzipPlugin from 'rollup-plugin-gzip'
+import { uglify } from 'rollup-plugin-uglify';
+import gzipPlugin from 'rollup-plugin-gzip';
 import { compress } from 'brotli';
 import image from '@rollup/plugin-image';
 
 const banner = () => {
-
-  const {
-    version,
-    name,
-    license,
-    homepage,
-  } = packageJSON;
+  const { version, name, license, homepage } = packageJSON;
 
   const banner = `
   /**
@@ -32,23 +26,17 @@ const banner = () => {
 
     `;
   return banner;
+};
 
-}
+const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 
-console.log('Resolved path>>>>>>>>>>>>>>>>>>>>:', path.resolve(__dirname, './core/assets'));
-
-
-const extensions = [
-  '.js', '.jsx', '.ts', '.tsx',
-];
-
-const formats = ['esm', 'umd'] // 'cjs'
+const formats = ['esm', 'umd']; // 'cjs'
 
 function globals() {
   return {
-    'react': 'React',
+    react: 'React',
     'react-dom': 'ReactDOM',
-    'classnames': 'classNames',
+    classnames: 'classNames',
     'react-popper': 'ReactPopper',
   };
 }
@@ -58,28 +46,11 @@ const baseConfig = {
   // Specify here external modules which you don't want to include in your bundle (for instance: 'lodash', 'moment' etc.)
   // https://rollupjs.org/guide/en#external-e-external
   external: ['react', 'react-dom'],
-}
+};
 
 const commonJsPlugins = [
-  // alias({
-  //   entries: [
-  //     { find: /^@innovaccer\/mds-images\/ui-states\/(.*)$/, replacement: path.resolve(__dirname, '@/assets/$1') },
-  //     // { find: '@innovaccer/mds-images/ui-states', replacement: path.resolve('./core/assets') },
-  //     { find: '@', replacement: path.resolve('./core') },
-  //   ],
-  // }),
-
   alias({
-    entries: [
-      {
-        find: new RegExp('^@innovaccer/mds-images/ui-states/(.*)$'), 
-        replacement: path.resolve(__dirname, 'core/assets/$1')
-      },
-      {
-        find: '@', 
-        replacement: path.resolve(__dirname, 'core')
-      },
-    ],
+    entries: [{ find: '@', replacement: path.resolve('./core') }],
   }),
 
   // Allows node_modules resolution
@@ -102,49 +73,40 @@ const commonJsPlugins = [
 ];
 
 const jsUmdOutputConfig = {
-    file: 'dist/index.umd.js',
-    format: 'umd',
-    name: `InnovaccerDesignSystem`,
-    globals: globals(),
-    banner: banner()
-}
+  file: 'dist/index.umd.js',
+  format: 'umd',
+  name: `InnovaccerDesignSystem`,
+  globals: globals(),
+  banner: banner(),
+};
 
 const jsUmdConfig = {
   ...baseConfig,
   plugins: commonJsPlugins,
-  output: jsUmdOutputConfig  
-
-}
+  output: jsUmdOutputConfig,
+};
 
 const jsEsmConfig = {
   ...baseConfig,
   // react-lottie-player was marked external in esm build to prevent the build from including code that actually required Web APIs like document.getElementsByTagName, etc.
   external: [...baseConfig.external, '@lottiefiles/react-lottie-player'],
   // Slice is used here to remove uglify compression during esm builds
-  plugins: commonJsPlugins.slice(0,-1),
+  plugins: commonJsPlugins.slice(0, -1),
   output: {
     file: 'dist/index.esm.js',
     format: 'esm',
     name: `InnovaccerDesignSystem`,
     globals: globals(),
-    banner: banner()
-  }
-}
+    banner: banner(),
+  },
+};
 
 const tsConfig = {
   ...baseConfig,
   external: ['react', 'react-dom', 'classnames', 'react-popper'],
   plugins: [
     alias({
-      entries: [
-        { find: '@', replacement: path.resolve('./core') },
-        {
-          find: new RegExp('^@innovaccer/mds-images/ui-states/(.*)$'),
-          replacement: path.resolve(__dirname, 'core/assets/$1'),
-        },
-        // { find: /^@innovaccer\/mds-images\/ui-states\/(.*)$/, replacement: path.resolve('../../../../../assets/$1') },
-        // { find: '@innovaccer/mds-images/ui-states', replacement: path.resolve('./core/assets') },
-      ],
+      entries: [{ find: '@', replacement: path.resolve('./core') }],
     }),
 
     image(),
@@ -179,23 +141,20 @@ const brotliConfig = {
   ...baseConfig,
   plugins: [
     gzipPlugin({
-	    customCompression: content => compress(Buffer.from(content)),
-	    fileName: '.br',
+      customCompression: (content) => compress(Buffer.from(content)),
+      fileName: '.br',
     }),
-    ...commonJsPlugins
+    ...commonJsPlugins,
   ],
 
-  output: jsUmdOutputConfig  
-}
+  output: jsUmdOutputConfig,
+};
 
 const gzipConfig = {
   ...baseConfig,
-  plugins: [
-    gzipPlugin(),
-    ...commonJsPlugins
-  ],
+  plugins: [gzipPlugin(), ...commonJsPlugins],
 
-  output: jsUmdOutputConfig  
-}
+  output: jsUmdOutputConfig,
+};
 
 export default [jsUmdConfig, jsEsmConfig, tsConfig, brotliConfig, gzipConfig];

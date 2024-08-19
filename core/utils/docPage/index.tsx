@@ -13,7 +13,8 @@ import openSandbox from './sandbox';
 import generateImports from './generateImports';
 import * as componentLib from '@/index';
 import classNames from 'classnames';
-
+import * as mdsImages from '@innovaccer/mds-images';
+// import * as mdsImages from '../../../mds-images';
 export interface Example {
   title: string;
   description?: string;
@@ -222,7 +223,7 @@ const StoryComp = (props: {
     setJsxCode(updatedCode);
   }, []);
 
-  const imports = React.useMemo(() => ({ ...DS, ...importScope }), []);
+  const imports = React.useMemo(() => ({ ...DS, ...importScope, ...mdsImages }), []);
 
   const tabChangeHandler = (tab: number) => {
     setActiveTab(tab);

@@ -45,6 +45,7 @@
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
     "@figma/code-connect": "^1.0.1",
+    "@innovaccer/mds-images": "file:mds-images",
     "@rollup/plugin-alias": "^3.0.1",
     "@rollup/plugin-commonjs": "^11.0.2",
     "@rollup/plugin-image": "^3.0.3",

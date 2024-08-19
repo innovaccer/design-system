@@ -16,6 +16,7 @@
     "strictNullChecks": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "preserveSymlinks": true,
     "lib": ["es6", "es7", "es2017", "dom"],
     "baseUrl": "./",
     "types": [],

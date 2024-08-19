@@ -1,0 +1,8 @@
+{
+  "name": "@innovaccer/mds-images",
+  "version": "1.0.0",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "author": "",
+  "license": "MIT"
+}

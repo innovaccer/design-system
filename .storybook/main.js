@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
   stories: ['../core/components/**/*.story.@(js|jsx|ts|tsx)', '../core/ai-components/**/*.story.@(js|jsx|ts|tsx)'],
+  staticDirs: ['../mds-images',],
   addons: [
     /**
      * Adds following addons
@@ -33,9 +34,11 @@ module.exports = {
   },
   webpackFinal: async (config, { configType }) => {
     config.resolve.alias['@'] = path.resolve(__dirname, '../core');
+    // config.resolve.alias['@innovaccer/mds-images/ui-states'] = path.resolve(__dirname, '../core/ui-states');
     // Return the altered config
     return config;
   },
+
   refs: {
     'rich-text-editor': {
       title: 'Rich Text Editor',
