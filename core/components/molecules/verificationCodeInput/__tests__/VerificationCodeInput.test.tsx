@@ -203,6 +203,26 @@ describe('VerificationCodeInput component callback', () => {
     expect(FunctionValue).toHaveBeenCalledWith('4321');
   });
 
+  it('Trigger onChange', () => {
+    const { getByTestId } = render(<VerificationCodeInput onChange={FunctionValue} />);
+
+    const [input0, input1, input2, input3] = [
+      ...(getByTestId('DesignSystem-VerificationCodeInput').querySelectorAll('div > input') as any),
+    ];
+
+    fireEvent.change(input0, { target: { value: '4' } });
+    expect(FunctionValue).toHaveBeenCalledWith('4');
+
+    fireEvent.change(input1, { target: { value: '3' } });
+    expect(FunctionValue).toHaveBeenCalledWith('43');
+
+    fireEvent.change(input2, { target: { value: '2' } });
+    expect(FunctionValue).toHaveBeenCalledWith('432');
+
+    fireEvent.change(input3, { target: { value: '1' } });
+    expect(FunctionValue).toHaveBeenCalledWith('4321');
+  });
+
   it('Trigger onFocus', () => {
     const { getByTestId } = render(<VerificationCodeInput onFocus={FunctionValue} />);
 
