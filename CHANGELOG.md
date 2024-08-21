@@ -1,3 +1,40 @@
+## 2.41.1 (2024-08-21)
+
+### Highlights
+
+- feat(verificationCodeInput): add onchange prop in verificationInputCode component (e8b45e85)
+- chore: upgrade js-beautify package version (e8159526)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(verificationCodeInput): add onchange prop in verificationInputCode component (e8b45e85)
+
+### Fixes
+
+NA
+
+### Improvements
+
+- chore: upgrade js-beautify package version (e8159526)
+
+### Documentation
+
+NA
+
+---
+
 ## 2.41.0 (2024-08-13)
 
 ### Highlights
