@@ -31,6 +31,7 @@ export const all = () => {
         value={value}
         disabled={disabled}
         readOnly={readOnly}
+        onChange={action('on-change')}
         onComplete={action('on-complete')}
         onFocus={action('on-focus')}
         onBlur={action('on-blur')}
