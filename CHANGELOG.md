@@ -1,3 +1,39 @@
+## 2.41.2 (2024-08-21)
+
+### Highlights
+
+- chore: upgrade js-beautify package to 1.14.10 version (30067a15)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+NA
+
+### Improvements
+
+- chore: upgrade js-beautify package to 1.14.10 version (30067a15)
+
+### Documentation
+
+NA
+
+---
+
 ## 2.41.1 (2024-08-21)
 
 ### Highlights
