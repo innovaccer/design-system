@@ -31,6 +31,11 @@ interface VerificationProps extends BaseProps {
    * Callback triggered after all values are entered.
    */
   onComplete?: (value: string) => void;
+
+  /**
+   * Callback triggered when input value is changed.
+   */
+  onChange?: (value: string) => void;
 }
 
 type Refs = RefObject<HTMLInputElement>[];
@@ -62,6 +67,7 @@ const VerificationCodeInput = (props: VerificationCodeInputProps) => {
     placeholder = '_',
     autoFocus = true,
     onComplete,
+    onChange,
     onFocus,
     onBlur,
     className,
@@ -93,9 +99,9 @@ const VerificationCodeInput = (props: VerificationCodeInputProps) => {
 
   useEffect(() => {
     const completeValue = values.join('');
-    if (onComplete && completeValue.length === fields) {
-      onComplete(completeValue);
-    }
+    const isComplete = completeValue.length === fields;
+    isComplete && onComplete?.(completeValue);
+    onChange?.(completeValue);
   }, [values]);
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
