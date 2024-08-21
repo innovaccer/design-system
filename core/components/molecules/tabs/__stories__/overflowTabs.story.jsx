@@ -74,7 +74,7 @@ export const overflowTabs = () => {
         <div>Declined</div>
       </Tab> */}
 
-      <div>
+      {/* <div> */}
         {tabList.map((tabInfo, index) => {
           const { label, count, disabled } = tabInfo;
           return (
@@ -104,7 +104,7 @@ export const overflowTabs = () => {
             })}
           </Menu.List>
         </Menu>
-      </div>
+      {/* </div> */}
     </Tabs>
   );
 };
