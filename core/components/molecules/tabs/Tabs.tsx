@@ -78,40 +78,61 @@ export interface TabsProps extends BaseProps {
    * Adds maxWidth to the `Tab` component
    */
   maxWidth?: string | number;
+  /**
+   * If Tabs defines overflow behavior
+   */
+  isOverflow?: boolean;
 }
 
 const getChildrenArray = (children: SingleOrArray<React.ReactElement>) => {
   return Array.isArray(children) ? children : [children];
 };
 
-const filterTabs = (children: SingleOrArray<React.ReactElement>) => {
-  const childrenArray = getChildrenArray(children);
+const filterTabs = (children: SingleOrArray<React.ReactElement>, isOverflow?: boolean) => {
+  // if(children && typeof children[0] === '')
 
-  const tabs = childrenArray.filter(
-    (element: React.ReactElement) => typeof element.type === 'function' && element.type.name === Tab.name
-  );
+  if (isOverflow) {
+    console.log('childrenchildren', children, '00', children[0]);
+    let updatedArray = [...children[0]];
+    console.log('updatedArrayupdatedArray', updatedArray);
+    return updatedArray;
+  } else {
+    const childrenArray = getChildrenArray(children);
 
-  return tabs;
+    const tabs = childrenArray.filter(
+      (element: React.ReactElement) => typeof element.type === 'function' && element.type.name === Tab.name
+    );
+
+    console.log('tabbsss', tabs, children, childrenArray);
+
+    return tabs;
+  }
 };
 
-const filterInlineComponent = (children: SingleOrArray<React.ReactElement>) => {
-  const childrenArray = getChildrenArray(children);
+const filterInlineComponent = (children: SingleOrArray<React.ReactElement>, isOverflow?: boolean) => {
+  let childrenArray = getChildrenArray(children);
+
+  if(isOverflow) {
+    childrenArray = [children[1]];
+  }
 
   const inlineComponent = childrenArray.filter(
     (element: React.ReactElement) => !(typeof element.type === 'function' && element.type.name === Tab.name)
   );
 
+  console.log('inlineComponentinlineComponent', inlineComponent);
+
   return inlineComponent;
 };
 
 export const Tabs = (props: TabsProps) => {
-  const { children, withSeparator, onTabChange, className, headerClassName, size, maxWidth } = props;
+  const { children, withSeparator, onTabChange, className, headerClassName, size, maxWidth, isOverflow } = props;
 
   const baseProps = extractBaseProps(props);
   const tabRefs: HTMLDivElement[] = [];
 
-  const tabs: Tab[] = children ? filterTabs(children) : props.tabs;
-  const inlineComponent = children ? filterInlineComponent(children) : <></>;
+  const tabs: Tab[] = children ? filterTabs(children, isOverflow) : props.tabs;
+  const inlineComponent = children ? filterInlineComponent(children, isOverflow) : <></>;
   const totalTabs = tabs.length;
 
   const [activeIndex, setActiveTab] = React.useState(
