@@ -57,31 +57,31 @@ const baseConfig = {
   external: ['react', 'react-dom'],
 }
 
-const commonJsPlugins =  [
-    alias({
-      entries: [
-        { find: '@', replacement: path.resolve('./core') },
-      ]
-    }),
-    
-    // Allows node_modules resolution
-    resolve({ extensions, preferBuiltins: false }),
+const commonJsPlugins = [
+  alias({
+    entries: [
+      { find: '@', replacement: path.resolve('./core') }
+    ],
+  }),
 
-    // Allow bundling cjs modules. Rollup doesn't understand cjs
-    commonjs(),
+  // Allows node_modules resolution
+  resolve({ extensions, preferBuiltins: false }),
 
-    // Compile TypeScript/JavaScript files
-    babel({ extensions, include: ['core/**/*'] }),
+  // Allow bundling cjs modules. Rollup doesn't understand cjs
+  commonjs(),
 
-    image(),
+  // Compile TypeScript/JavaScript files
+  babel({ extensions, include: ['core/**/*'] }),
 
-    json(),
+  image(),
 
-    replace({
-      'process.env.NODE_ENV': JSON.stringify('production')
-    }),
-    uglify()
-  ]
+  json(),
+
+  replace({
+    'process.env.NODE_ENV': JSON.stringify('production'),
+  }),
+  uglify(),
+];
 
 const jsUmdOutputConfig = {
     file: 'dist/index.umd.js',

@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { EmptyState, Button } from '@/index';
-import noContent from '../assets/error.svg';
+import errorState from '@innovaccer/mds-images/ui-states/error.svg';
 
 export const serverUnavailable = () => {
   return (
     <EmptyState>
-      <EmptyState.Image src={noContent}></EmptyState.Image>
+      <EmptyState.Image src={errorState}></EmptyState.Image>
       <EmptyState.Title>Uh-oh, our server is taking a nap!</EmptyState.Title>
       <EmptyState.Description>
         The server is unavailable at the moment due to maintenance downtime or capacity problems. You can try again
@@ -18,12 +18,17 @@ export const serverUnavailable = () => {
   );
 };
 
-const ImagePath = JSON.stringify(noContent);
+const ImagePath = JSON.stringify(errorState);
 
 const customCode = `() => {
+  // import errorState from '@innovaccer/mds-images/ui-states/error.svg';
+
   return (
       <EmptyState>
         <EmptyState.Image src={${ImagePath}}></EmptyState.Image>
+        {/* Replace image path used above with imported image file name
+        <EmptyState.Image src={errorState}></EmptyState.Image> */}
+
         <EmptyState.Title>Uh-oh, our server is taking a nap!</EmptyState.Title>
         <EmptyState.Description>
           The server is unavailable at the moment due to maintenance downtime or capacity problems. You can try again

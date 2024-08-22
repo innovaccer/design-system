@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { EmptyState, Button } from '@/index';
-import noContent from '../assets/404-nothing-here-3.svg';
+import noContent from '@innovaccer/mds-images/ui-states/404-nothing-here-3.svg';
 
-export const faildToLoadData = () => {
+export const failedToLoadData = () => {
   return (
     <EmptyState>
       <EmptyState.Image src={noContent}></EmptyState.Image>
@@ -20,9 +20,14 @@ export const faildToLoadData = () => {
 const ImagePath = JSON.stringify(noContent);
 
 const customCode = `() => {
+  // import noContent from '@innovaccer/mds-images/ui-states/404-nothing-here-3.svg';
+
   return (
       <EmptyState>
         <EmptyState.Image src={${ImagePath}}></EmptyState.Image>
+        {/* Replace image path used above with imported image file name
+        <EmptyState.Image src={noContent}></EmptyState.Image> */}
+
         <EmptyState.Title>Failed to load data</EmptyState.Title>
         <EmptyState.Description>
           We are unable to fetch the data. Try again. If the issue persists, contact Innovaccer support.
@@ -35,7 +40,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/EmptyState/Variants/Faild To Load Data',
+  title: 'Components/EmptyState/Variants/Failed To Load Data',
   component: EmptyState,
   subcomponents: {
     'EmptyState.Image': EmptyState.Image,
