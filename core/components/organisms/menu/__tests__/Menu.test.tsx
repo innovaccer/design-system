@@ -152,6 +152,20 @@ describe('Menu component with callback', () => {
     fireEvent.click(getByTestId('DesignSystem-Menu-ListItem'));
     expect(FunctionValue).toHaveBeenCalled();
   });
+
+  it('check for onToggle callback', () => {
+    const { getByTestId } = render(
+      <Menu onToggle={FunctionValue} trigger={<Menu.Trigger />}>
+        <Menu.List>
+          <Menu.Item>Menu Item 1</Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+
+    fireEvent.click(getByTestId('DesignSystem-Menu-Trigger'));
+    expect(FunctionValue).toHaveBeenCalled();
+    expect(FunctionValue).toHaveBeenCalledWith(true);
+  });
 });
 
 describe('Menu component with Nesting', () => {

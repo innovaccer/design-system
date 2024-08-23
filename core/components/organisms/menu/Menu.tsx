@@ -48,10 +48,14 @@ export interface MenuProps extends BaseProps {
     x: number;
     y: number;
   };
+  /**
+   * Callback after `Menu` is toggled
+   */
+  onToggle?: (open?: boolean) => void;
 }
 
 export const Menu = (props: MenuProps) => {
-  const { children, width, minHeight, maxHeight, className, open, ...rest } = props;
+  const { children, width, minHeight, maxHeight, className, open, onToggle, ...rest } = props;
   const [openPopover, setOpenPopover] = React.useState(open);
   const [highlightFirstItem, setHighlightFirstItem] = React.useState<boolean>(false);
   const [highlightLastItem, setHighlightLastItem] = React.useState<boolean>(false);
@@ -90,6 +94,7 @@ export const Menu = (props: MenuProps) => {
       setHighlightFirstItem(false);
       setHighlightLastItem(false);
     }
+    onToggle?.(openPopover);
   }, [openPopover]);
 
   const onToggleHandler = (open: boolean) => {
