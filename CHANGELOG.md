@@ -1,3 +1,40 @@
+## 2.41.3 (2024-08-23)
+
+### Highlights
+
+- chore: downgrade js-beautify package version to 1.14.1 (5c3d0f2f)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+NA
+
+### Improvements
+
+- chore: downgrade js-beautify package version to 1.14.1 (5c3d0f2f)
+
+### Documentation
+
+NA
+
+---
+
+
 ## 2.41.2 (2024-08-21)
 
 ### Highlights
