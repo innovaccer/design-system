@@ -462,6 +462,14 @@ Tabs should have short, scannable labels, typically a single word. If labels are
 
 Too many tabs can unnecessarily clutter the UI. Hence it is recommended **not to use more than 5 tabs** at once.
 
+#### Overflowing Tabs
+
+When a tab group has more tabs than can fit in the viewport, the extra tabs are moved into a menu next to the last visible tab. Selecting a tab from the menu replaces the last visible tab.  
+
+**Note:** The active tab is always visible and never moved into the overflow menu.
+
+<Preview name="components-tabs-overflow-overflow-tabs--overflow-tabs" />
+
 #### When to Use Small Tabs
 
 It is recommended to use small tabs in case of a space constraint or high data density.
