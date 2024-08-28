@@ -84,7 +84,7 @@ export const descriptionList = () => {
     // .Listbox-wrapper {
     //   height: var(--spacing-9);
     // }
-    <Card>
+    <Card shadow="none">
       <CardHeader className="pb-4">
         <Heading size="s">Sharing test manual</Heading>
         <Input className=" mr-4 mt-5 w-25 mb-6" icon="search" name="input" placeholder="Search" />
