@@ -4,6 +4,7 @@ import { Manager, Reference, Popper } from 'react-popper';
 import { OutsideClick } from '@/index';
 import classNames from 'classnames';
 import { PositionType } from '@/common.type';
+import { flushSync } from 'react-dom';
 
 type ActionType = 'click' | 'hover';
 type Offset = 'small' | 'medium' | 'large';
@@ -437,8 +438,8 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
       onMouseLeave: this.handleMouseLeave,
       onAnimationEnd: () => {
         if (!open) {
-          this.setState({
-            isOpen: false,
+          flushSync(() => {
+            this.setState({ isOpen: false });
           });
         }
       },
