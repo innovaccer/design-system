@@ -37,6 +37,14 @@
   flex-direction: row-reverse;
 }
 
+.Button-regularIcon--left {
+  margin-left: calc(-1 * var(--spacing-s));
+}
+
+.Button-regularIcon--right {
+  margin-right: calc(-1 * var(--spacing-s));
+}
+
 .Button--tiny {
   height: var(--spacing-xl);
   padding-right: var(--spacing);
@@ -91,11 +99,11 @@
 }
 
 .Button-icon--left {
-  margin-right: var(--spacing);
+  margin-right: var(--spacing-0-75);
 }
 
 .Button-icon--right {
-  margin-left: var(--spacing);
+  margin-left: var(--spacing-0-75);
 }
 
 .Button--tiny .Button-icon--left {

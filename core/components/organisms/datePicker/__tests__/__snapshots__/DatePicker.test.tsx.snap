@@ -28,6 +28,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
               >
                 <div
                   class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
                   <i
                     class="material-symbols material-symbols-rounded Icon"
@@ -87,6 +88,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
               >
                 <div
                   class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
                   <i
                     class="material-symbols material-symbols-rounded Icon"
@@ -699,6 +701,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
               >
                 <div
                   class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
                   <i
                     class="material-symbols material-symbols-rounded Icon"
@@ -758,6 +761,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
               >
                 <div
                   class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
                   <i
                     class="material-symbols material-symbols-rounded Icon"
@@ -1370,6 +1374,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
               >
                 <div
                   class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
                   <i
                     class="material-symbols material-symbols-rounded Icon"
@@ -1429,6 +1434,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
               >
                 <div
                   class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
                   <i
                     class="material-symbols material-symbols-rounded Icon"
@@ -2040,6 +2046,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
               >
                 <div
                   class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
                   <i
                     class="material-symbols material-symbols-rounded Icon"
@@ -2099,6 +2106,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
               >
                 <div
                   class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
                   <i
                     class="material-symbols material-symbols-rounded Icon"
@@ -2710,6 +2718,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
               >
                 <div
                   class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
                   <i
                     class="material-symbols material-symbols-rounded Icon"
@@ -2769,6 +2778,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
               >
                 <div
                   class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
                   <i
                     class="material-symbols material-symbols-rounded Icon"
@@ -3380,6 +3390,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
               >
                 <div
                   class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
                   <i
                     class="material-symbols material-symbols-rounded Icon"
@@ -3439,6 +3450,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
               >
                 <div
                   class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
                   <i
                     class="material-symbols material-symbols-rounded Icon"
@@ -4050,6 +4062,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
               >
                 <div
                   class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
                   <i
                     class="material-symbols material-symbols-rounded Icon"
@@ -4091,6 +4104,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
               >
                 <div
                   class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
                   <i
                     class="material-symbols material-symbols-rounded Icon"
@@ -4314,6 +4328,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
               >
                 <div
                   class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
                   <i
                     class="material-symbols material-symbols-rounded Icon"
@@ -4347,6 +4362,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
               >
                 <div
                   class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
                   <i
                     class="material-symbols material-symbols-rounded Icon"
@@ -4570,6 +4586,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
               >
                 <div
                   class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
                   <i
                     class="material-symbols material-symbols-rounded Icon"
@@ -4629,6 +4646,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
               >
                 <div
                   class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
                 >
                   <i
                     class="material-symbols material-symbols-rounded Icon"

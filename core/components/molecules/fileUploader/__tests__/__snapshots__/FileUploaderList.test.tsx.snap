@@ -57,6 +57,7 @@ exports[`FileUploaderList component
           >
             <div
               class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
             >
               <i
                 class="material-symbols material-symbols-rounded Icon"
@@ -94,6 +95,7 @@ exports[`FileUploaderList component
           >
             <div
               class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
             >
               <i
                 class="material-symbols material-symbols-rounded Icon"
@@ -131,6 +133,7 @@ exports[`FileUploaderList component
           >
             <div
               class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
             >
               <i
                 class="material-symbols material-symbols-rounded Icon"
@@ -149,6 +152,7 @@ exports[`FileUploaderList component
           >
             <div
               class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
             >
               <i
                 class="material-symbols material-symbols-rounded Icon"

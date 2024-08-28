@@ -126,6 +126,7 @@ exports[`TS renders children 1`] = `
             >
               <div
                 class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
               >
                 <i
                   class="material-symbols material-symbols-rounded Icon"
@@ -185,6 +186,7 @@ exports[`TS renders children 1`] = `
             >
               <div
                 class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
               >
                 <i
                   class="material-symbols material-symbols-rounded Icon"
@@ -1599,6 +1601,7 @@ exports[`TS renders children 1`] = `
       >
         <div
           class="Button-icon"
+          data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
             class="material-symbols material-symbols-rounded Icon"
@@ -1653,6 +1656,7 @@ exports[`TS renders children 1`] = `
       >
         <div
           class="Button-icon"
+          data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
             class="material-symbols material-symbols-rounded Icon"
@@ -1672,6 +1676,7 @@ exports[`TS renders children 1`] = `
       >
         <div
           class="Button-icon"
+          data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
             class="material-symbols material-symbols-rounded Icon"
@@ -1695,6 +1700,7 @@ exports[`TS renders children 1`] = `
       >
         <div
           class="Button-icon"
+          data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
             class="material-symbols material-symbols-rounded Icon"
@@ -1714,6 +1720,7 @@ exports[`TS renders children 1`] = `
       >
         <div
           class="Button-icon"
+          data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
             class="material-symbols material-symbols-rounded Icon"
@@ -1803,6 +1810,7 @@ exports[`TS renders children 1`] = `
         >
           <div
             class="Button-icon"
+            data-test="DesignSystem-Button--Icon-Wrapper"
           >
             <i
               class="material-symbols material-symbols-rounded Icon"
@@ -1846,6 +1854,7 @@ exports[`TS renders children 1`] = `
         >
           <div
             class="Button-icon"
+            data-test="DesignSystem-Button--Icon-Wrapper"
           >
             <i
               class="material-symbols material-symbols-rounded Icon"
