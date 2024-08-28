@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Pills, Icon, Text, Tab, Tooltip } from '@/index';
+import { Pills, Icon, Text, Tab, Tooltip, Button, Menu } from '@/index';
 import { BaseProps, extractBaseProps, SingleOrArray } from '@/utils/types';
 import { IconType, TTabSize } from '@/common.type';
 
@@ -109,14 +109,131 @@ export const Tabs = (props: TabsProps) => {
 
   const baseProps = extractBaseProps(props);
   const tabRefs: HTMLDivElement[] = [];
+  const allTabRefs: HTMLDivElement[] = [];
+  const tabsWrapperRef = React.useRef<HTMLDivElement>(null);
+  const moreButtonRef = React.useRef<HTMLButtonElement>(null);
 
   const tabs: Tab[] = children ? filterTabs(children) : props.tabs;
   const inlineComponent = children ? filterInlineComponent(children) : <></>;
   const totalTabs = tabs.length;
+  const [showMore, setShowMore] = React.useState(false);
+  const [displayTabs, setDisplayTabs] = React.useState(tabs);
+  const [isTabDismiss, setIsTabDismiss] = React.useState(false);
+  const [isTabAdded, setIsTabAdded] = React.useState(false);
+  const [widthDifference, setWidthDifference] = React.useState(0);
+  const [extraTabsList, setExtraTabsList] = React.useState<Tab[]>([]);
+  const [isMenuExpanded, setIsMenuExpanded] = React.useState<boolean | undefined>(false);
 
   const [activeIndex, setActiveTab] = React.useState(
     props.activeIndex && props.activeIndex < totalTabs ? props.activeIndex : 0
   );
+
+  React.useLayoutEffect(() => {
+    if (showMore) {
+      let remainingWidth = widthDifference;
+
+      if (moreButtonRef.current) {
+        remainingWidth = remainingWidth - moreButtonRef.current.clientWidth;
+      }
+
+      let index = tabs.length - 1;
+      while (remainingWidth >= 0 && index >= 0) {
+        remainingWidth = remainingWidth - allTabRefs[index]?.scrollWidth;
+        index = index - 1;
+      }
+
+      const newList = [...tabs].slice(0, index + 1);
+      const extraList = [...tabs].slice(index + 1, tabs.length);
+
+      setExtraTabsList(extraList);
+      setDisplayTabs(newList);
+    }
+  }, [showMore]);
+
+  React.useLayoutEffect(() => {
+    if (tabsWrapperRef.current) {
+      const containerClientWidth = tabsWrapperRef.current.clientWidth;
+      const containerScrollWidth = tabsWrapperRef.current.scrollWidth;
+
+      const isOverflow = containerScrollWidth > containerClientWidth;
+
+      setShowMore(isOverflow);
+      isOverflow && setWidthDifference(containerScrollWidth - containerClientWidth);
+    }
+  }, []);
+
+  const addMenuItemToTab = () => {
+    if (tabsWrapperRef.current) {
+      const containerClientWidth = tabsWrapperRef.current.clientWidth;
+      const containerScrollWidth = tabsWrapperRef.current.scrollWidth;
+
+      const isOverflow = containerScrollWidth > containerClientWidth;
+
+      setIsTabAdded(false);
+      isOverflow && setWidthDifference(containerScrollWidth - containerClientWidth);
+
+      let remainingWidth = containerScrollWidth - containerClientWidth;
+
+      if (isOverflow) {
+        let index = displayTabs.length - 1;
+        while (remainingWidth >= 0 && index > 0) {
+          remainingWidth = remainingWidth - allTabRefs[index - 1]?.scrollWidth;
+          index = index - 1;
+        }
+
+        const removeIndex = displayTabs.length - index;
+        const newList = displayTabs.slice(0, removeIndex).concat(displayTabs.slice(-1));
+
+        const extraList = [...tabs]
+          .slice(index, tabs.length)
+          .filter((item) => item !== displayTabs[displayTabs.length - 1]);
+
+        setExtraTabsList(extraList);
+        setDisplayTabs(newList);
+        setActiveTab(newList.length - 1);
+      }
+    }
+  };
+
+  const replaceTabWithMenuItem = () => {
+    if (tabsWrapperRef.current) {
+      const containerClientWidth = tabsWrapperRef.current.clientWidth;
+      const containerScrollWidth = tabsWrapperRef.current.scrollWidth;
+
+      const isOverflow = containerScrollWidth > containerClientWidth;
+
+      setShowMore(isOverflow);
+      setIsTabDismiss(false);
+      isOverflow && setWidthDifference(containerScrollWidth - containerClientWidth);
+
+      let remainingWidth = containerScrollWidth - containerClientWidth;
+
+      if (moreButtonRef.current?.clientWidth) {
+        remainingWidth = remainingWidth - moreButtonRef.current.clientWidth;
+      }
+
+      let index = tabs.length;
+      while (remainingWidth >= 0 && index >= 0) {
+        remainingWidth = remainingWidth - allTabRefs[index]?.scrollWidth;
+        index = index - 1;
+      }
+
+      const newList = [...tabs].slice(0, index + 1);
+      const extraList = [...tabs].slice(index + 1, tabs.length);
+      setExtraTabsList(extraList);
+      setDisplayTabs(newList);
+    }
+  };
+
+  React.useEffect(() => {
+    isTabDismiss && replaceTabWithMenuItem();
+    if (isTabAdded) {
+      const tabIndex = displayTabs.length - 1;
+      addMenuItemToTab();
+      setActiveTab(tabIndex);
+      if (onTabChange) onTabChange(tabIndex);
+    }
+  }, [displayTabs]);
 
   React.useEffect(() => {
     if (props.activeIndex !== undefined && props.activeIndex < totalTabs) {
@@ -238,10 +355,14 @@ export const Tabs = (props: TabsProps) => {
       });
 
     const tabInfo = { label: label, activeIndex: activeIndex, currentTabIndex: index };
+
     const onCloseHandler = (e: React.MouseEvent) => {
       e.stopPropagation();
       if (onDismiss) onDismiss(tabInfo);
+      setDisplayTabs([...tabs]);
+      setIsTabDismiss(true);
     };
+
     return (
       <Icon
         data-test="DesignSystem-DismissibleTabs--Icon"
@@ -297,7 +418,7 @@ export const Tabs = (props: TabsProps) => {
     );
   };
 
-  const renderTabs = tabs.map((tab: Tab, index) => {
+  const renderTabs = displayTabs.map((tab: Tab, index) => {
     const currentTabProp = children && 'props' in tab ? tab.props : tab;
     const { disabled, label } = currentTabProp;
 
@@ -315,7 +436,10 @@ export const Tabs = (props: TabsProps) => {
       // TODO(a11y)
       //  eslint-disable-next-line
       <div
-        ref={(element) => element && !disabled && tabRefs.push(element)}
+        ref={(element) => {
+          element && !disabled && tabRefs.push(element);
+          element && allTabRefs.push(element);
+        }}
         data-test="DesignSystem-Tabs--Tab"
         key={index}
         className={tabHeaderClass}
@@ -328,15 +452,80 @@ export const Tabs = (props: TabsProps) => {
     );
   });
 
+  const onMenuItemClick = (tabInfo: Tab, tabIndex: number) => {
+    const removedElement = displayTabs.pop();
+    displayTabs.push(tabInfo);
+
+    extraTabsList.splice(tabIndex, 1);
+    removedElement && extraTabsList.unshift(removedElement);
+    setDisplayTabs([...displayTabs]);
+    setExtraTabsList([...extraTabsList]);
+    setIsTabAdded(true);
+  };
+
+  const renderMoreTabs = () => {
+    const buttonClassName = classNames({
+      ['Tabs-Menu-Button--open']: isMenuExpanded,
+      ['Tabs-Menu-Button--regular']: size === 'regular',
+      ['Tabs-Menu-Button--small']: size === 'small',
+    });
+
+    return (
+      <Menu
+        width={176}
+        onToggle={(open) => setIsMenuExpanded(open)}
+        trigger={
+          <Button
+            ref={moreButtonRef}
+            icon={isMenuExpanded ? 'expand_less' : 'expand_more'}
+            iconAlign="right"
+            appearance="transparent"
+            className={buttonClassName}
+            data-test="DesignSystem-Tabs-Menu--Trigger"
+          >
+            More
+          </Button>
+        }
+      >
+        <Menu.List>
+          {extraTabsList.map((tabInfo, index) => {
+            const currentTabProp = children && 'props' in tabInfo ? tabInfo.props : tabInfo;
+            const { disabled, label } = currentTabProp;
+
+            const elementRef = React.createRef<HTMLElement>();
+
+            return (
+              <Tooltip showOnTruncation={true} tooltip={label} elementRef={elementRef} key={index}>
+                <Menu.Item onClick={() => onMenuItemClick(tabInfo, index)} disabled={disabled} key={index}>
+                  <span
+                    className={'Tab--overflow w-100'}
+                    data-test="DesignSystem-Tabs-Menu--TextWrapper"
+                    style={{ maxWidth: '160px' }}
+                  >
+                    {renderInfo(currentTabProp, -1)}
+                    <Text data-test="DesignSystem-Tabs--Text" className={'ellipsis--noWrap'} ref={elementRef}>
+                      {label}
+                    </Text>
+                  </span>
+                </Menu.Item>
+              </Tooltip>
+            );
+          })}
+        </Menu.List>
+      </Menu>
+    );
+  };
+
   return (
     <div data-test="DesignSystem-Tabs" {...baseProps} className={wrapperClass}>
-      <div className={headerClass} data-test="DesignSystem-Tabs--Header">
+      <div className={headerClass} data-test="DesignSystem-Tabs--Header" ref={tabsWrapperRef}>
         {renderTabs}
+        {showMore && extraTabsList.length > 0 && renderMoreTabs()}
         {inlineComponent}
       </div>
       {children && (
         <div className={tabContentClass} data-test="DesignSystem-Tabs--Content">
-          {tabs[activeIndex]}
+          {displayTabs[activeIndex]}
         </div>
       )}
     </div>
