@@ -33,6 +33,7 @@ module.exports = {
   },
   webpackFinal: async (config, { configType }) => {
     config.resolve.alias['@'] = path.resolve(__dirname, '../core');
+    config.resolve.alias['@innovaccer/mds-images/ui-states'] = path.resolve(__dirname, '../mds-images/ui-states');
     // Return the altered config
     return config;
   },

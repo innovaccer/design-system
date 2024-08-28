@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { EmptyState, Button } from '@/index';
-import noContent from '../assets/connection-lost.svg';
+import connectionLost from '@innovaccer/mds-images/ui-states/connection-lost.svg';
 
 export const internetIssue = () => {
   return (
     <EmptyState>
-      <EmptyState.Image src={noContent}></EmptyState.Image>
+      <EmptyState.Image src={connectionLost}></EmptyState.Image>
       <EmptyState.Title>You are offline</EmptyState.Title>
       <EmptyState.Description>
         Looks like you are not connected to the internet. Check your connection and try again.
@@ -17,12 +17,17 @@ export const internetIssue = () => {
   );
 };
 
-const ImagePath = JSON.stringify(noContent);
+const ImagePath = JSON.stringify(connectionLost);
 
 const customCode = `() => {
+  // import connectionLost from '@innovaccer/mds-images/ui-states/connection-lost.svg';
+
   return (
       <EmptyState>
         <EmptyState.Image src={${ImagePath}}></EmptyState.Image>
+        {/* Replace image path used above with imported image file name
+        <EmptyState.Image src={connectionLost}></EmptyState.Image> */}
+
         <EmptyState.Title>You are offline</EmptyState.Title>
         <EmptyState.Description>
           Looks like you are not connected to the internet. Check your connection and try again.
