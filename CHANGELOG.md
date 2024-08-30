@@ -1,3 +1,248 @@
+## 2.41.3 (2024-08-23)
+
+### Highlights
+
+- chore: downgrade js-beautify package version to 1.14.1 (5c3d0f2f)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+NA
+
+### Improvements
+
+- chore: downgrade js-beautify package version to 1.14.1 (5c3d0f2f)
+
+### Documentation
+
+NA
+
+---
+
+
+## 2.41.2 (2024-08-21)
+
+### Highlights
+
+- chore: upgrade js-beautify package to 1.14.10 version (30067a15)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+NA
+
+### Improvements
+
+- chore: upgrade js-beautify package to 1.14.10 version (30067a15)
+
+### Documentation
+
+NA
+
+---
+
+## 2.41.1 (2024-08-21)
+
+### Highlights
+
+- feat(verificationCodeInput): add onchange prop in verificationInputCode component (e8b45e85)
+- chore: upgrade js-beautify package version (e8159526)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(verificationCodeInput): add onchange prop in verificationInputCode component (e8b45e85)
+
+### Fixes
+
+NA
+
+### Improvements
+
+- chore: upgrade js-beautify package version (e8159526)
+
+### Documentation
+
+NA
+
+---
+
+## 2.41.0 (2024-08-13)
+
+### Highlights
+
+- feat(chipInput): add overflow behavior for input text (90eb6381)
+- feat(spacing): add spacing class for 6px token (d2e1dd4c)
+- feat(docs): update headings to title case for all markdown file (c2e3b5a1)
+- feat(tooltip): update opacity of tooltip and images in docs site (79decc1d)
+- feat(AIComponents): add figma code connect for AI Components (900d6712)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(chipInput): add overflow behavior for input text (90eb6381)
+- feat(spacing): add spacing class for 6px token (d2e1dd4c)
+- feat(docs): update headings to title case for all markdown file (c2e3b5a1)
+- feat(tooltip): update opacity of tooltip and images in docs site (79decc1d)
+- feat(AIComponents): add figma code connect for AI Components (900d6712)
+
+### Fixes
+
+- fix(dropzone): update error state for unknown file type (083e1d74)
+
+### Improvements
+
+NA
+
+### Documentation
+
+- docs(uiStates): update story live preview for UI States (5e6e115b)
+
+---
+
+## 2.40.1 (2024-08-06)
+
+### Highlights
+
+- fix(chip): fix horizontal and vertical alignment of multiple chips (02a8c24b)
+- fix(tabs): fix spacing for custom labels tabs (b3d63c8c)
+- fix(materialSymbols): revert material symbols file (e0b20f70)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+- fix(chip): fix horizontal and vertical alignment of multiple chips (02a8c24b)
+- fix(tabs): fix spacing for custom labels tabs (b3d63c8c)
+- fix(materialSymbols): revert material symbols file (e0b20f70)
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
+## 2.40.0 (2024-07-29)
+
+### Highlights
+
+- feat(keyValuePair): add new key-value-pair component (e3d6a8bb)
+- feat(figma): add figma code connect to atomic components (c66e9e3c)
+- feat(tabs): add overflow behavior for text label (1aeaf466)
+- feat: figma code connect for atom components (df43978b)
+- feat(figma): update figma code connect variable for button component (c45a1223)
+- feat(popover): add disabled prop to prevent toggle for disabled trigger (fdc01a87)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(keyValuePair): add new key-value-pair component (e3d6a8bb)
+- feat(figma): add figma code connect to atomic components (c66e9e3c)
+- feat(tabs): add overflow behavior for text label (1aeaf466)
+- feat: figma code connect for atom components (df43978b)
+- feat(figma): update figma code connect variable for button component (c45a1223)
+- feat(popover): add disabled prop to prevent toggle for disabled trigger (fdc01a87)
+
+### Fixes
+
+- fix(inputMask): autofocus issue for WebKit browsers fix (201be4e2)
+- fix(AIResponse): remove beta from the AI Response stories (37b44f0f)
+- fix(link): add description for using subtle as appearance in link component (e820f517)
+- fix(select): update width for select option wrapper (6f5527d3)
+- fix(docs): remove keyValuePair nav from mobile page (137a9a92)
+
+### Improvements
+
+- feat(keyValuePair): update stories of keyValuePair component (323ecb62)
+
+### Documentation
+
+- docs(tabs): update tab label overflow documentation (b23e2592)
+- docs(keyValuePair): add key value pair component documentation (be957de5)
+
+---
+
 ## 2.39.0 (2024-07-16)
 
 ### Highlights

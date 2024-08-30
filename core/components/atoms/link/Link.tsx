@@ -54,6 +54,13 @@ export interface LinkProps extends BaseProps, OmitNativeProps<HTMLLinkElement, '
   children: React.ReactNode;
 }
 
+/**
+ *
+ * The choice to use the appearance `subtle` property for the **Link** component, while using the `subtle` boolean prop for the **LinkButton** component, is based on the different roles of typography and action components.
+ * - The **Link** component is primarily a typography element. Typography components use the "appearance" property to define their visual style, ensuring consistency and predictability when styling text-based elements.
+ * - In contrast, the **LinkButton** component is an action component. Action components use "boolean props" to indicate variations in their behavior and appearance. Therefore, the **LinkButton** uses the `subtle` boolean prop to signify a specific visual style that aligns with other button components.
+ */
+
 export const Link = (props: LinkProps) => {
   const { children, className, appearance, size, disabled, ...rest } = props;
 

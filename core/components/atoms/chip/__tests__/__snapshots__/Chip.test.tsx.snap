@@ -6,16 +6,12 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="d-inline-flex"
-    >
-      <div
-        class="Chip-wrapper Chip Chip--Action"
-        data-test="DesignSystem-Chip--GenericChip"
-        role="button"
-        style="max-width: var(--spacing-9);"
-        tabindex="0"
-      />
-    </div>
+      class="Chip-wrapper Chip Chip--Action"
+      data-test="DesignSystem-Chip--GenericChip"
+      role="button"
+      style="max-width: var(--spacing-9);"
+      tabindex="0"
+    />
   </div>
 </body>
 `;
@@ -26,16 +22,12 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="d-inline-flex"
-    >
-      <div
-        class="Chip-wrapper Chip Chip--Action"
-        data-test="DesignSystem-Chip--GenericChip"
-        role="button"
-        style="max-width: var(--spacing-9);"
-        tabindex="0"
-      />
-    </div>
+      class="Chip-wrapper Chip Chip--Action"
+      data-test="DesignSystem-Chip--GenericChip"
+      role="button"
+      style="max-width: var(--spacing-9);"
+      tabindex="0"
+    />
   </div>
 </body>
 `;
@@ -46,16 +38,12 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="d-inline-flex"
-    >
-      <div
-        class="Chip-wrapper Chip Chip-Action--disabled"
-        data-test="DesignSystem-Chip--GenericChip"
-        role="button"
-        style="max-width: var(--spacing-9);"
-        tabindex="-1"
-      />
-    </div>
+      class="Chip-wrapper Chip Chip-Action--disabled"
+      data-test="DesignSystem-Chip--GenericChip"
+      role="button"
+      style="max-width: var(--spacing-9);"
+      tabindex="-1"
+    />
   </div>
 </body>
 `;
@@ -66,16 +54,12 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="d-inline-flex"
-    >
-      <div
-        class="Chip-wrapper Chip Chip--Input"
-        data-test="DesignSystem-Chip--GenericChip"
-        role="button"
-        style="max-width: var(--spacing-9);"
-        tabindex="0"
-      />
-    </div>
+      class="Chip-wrapper Chip Chip--Input"
+      data-test="DesignSystem-Chip--GenericChip"
+      role="button"
+      style="max-width: var(--spacing-9);"
+      tabindex="0"
+    />
   </div>
 </body>
 `;
@@ -86,16 +70,12 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="d-inline-flex"
-    >
-      <div
-        class="Chip-wrapper Chip Chip--Input"
-        data-test="DesignSystem-Chip--GenericChip"
-        role="button"
-        style="max-width: var(--spacing-9);"
-        tabindex="0"
-      />
-    </div>
+      class="Chip-wrapper Chip Chip--Input"
+      data-test="DesignSystem-Chip--GenericChip"
+      role="button"
+      style="max-width: var(--spacing-9);"
+      tabindex="0"
+    />
   </div>
 </body>
 `;
@@ -106,16 +86,12 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="d-inline-flex"
-    >
-      <div
-        class="Chip-wrapper Chip Chip-Input--disabled"
-        data-test="DesignSystem-Chip--GenericChip"
-        role="button"
-        style="max-width: var(--spacing-9);"
-        tabindex="-1"
-      />
-    </div>
+      class="Chip-wrapper Chip Chip-Input--disabled"
+      data-test="DesignSystem-Chip--GenericChip"
+      role="button"
+      style="max-width: var(--spacing-9);"
+      tabindex="-1"
+    />
   </div>
 </body>
 `;
@@ -126,16 +102,12 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="d-inline-flex"
-    >
-      <div
-        class="Chip-wrapper Chip Chip--Selection"
-        data-test="DesignSystem-Chip--GenericChip"
-        role="button"
-        style="max-width: var(--spacing-9);"
-        tabindex="0"
-      />
-    </div>
+      class="Chip-wrapper Chip Chip--Selection"
+      data-test="DesignSystem-Chip--GenericChip"
+      role="button"
+      style="max-width: var(--spacing-9);"
+      tabindex="0"
+    />
   </div>
 </body>
 `;
@@ -146,16 +118,12 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="d-inline-flex"
-    >
-      <div
-        class="Chip-wrapper Chip Chip--Selection"
-        data-test="DesignSystem-Chip--GenericChip"
-        role="button"
-        style="max-width: var(--spacing-9);"
-        tabindex="0"
-      />
-    </div>
+      class="Chip-wrapper Chip Chip--Selection"
+      data-test="DesignSystem-Chip--GenericChip"
+      role="button"
+      style="max-width: var(--spacing-9);"
+      tabindex="0"
+    />
   </div>
 </body>
 `;
@@ -166,16 +134,12 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="d-inline-flex"
-    >
-      <div
-        class="Chip-wrapper Chip Chip-Selection--disabled"
-        data-test="DesignSystem-Chip--GenericChip"
-        role="button"
-        style="max-width: var(--spacing-9);"
-        tabindex="-1"
-      />
-    </div>
+      class="Chip-wrapper Chip Chip-Selection--disabled"
+      data-test="DesignSystem-Chip--GenericChip"
+      role="button"
+      style="max-width: var(--spacing-9);"
+      tabindex="-1"
+    />
   </div>
 </body>
 `;
@@ -186,16 +150,12 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="d-inline-flex"
-    >
-      <div
-        class="Chip-wrapper Chip Chip--Selection"
-        data-test="DesignSystem-Chip--GenericChip"
-        role="button"
-        style="max-width: var(--spacing-9);"
-        tabindex="0"
-      />
-    </div>
+      class="Chip-wrapper Chip Chip--Selection"
+      data-test="DesignSystem-Chip--GenericChip"
+      role="button"
+      style="max-width: var(--spacing-9);"
+      tabindex="0"
+    />
   </div>
 </body>
 `;
@@ -206,16 +166,12 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="d-inline-flex"
-    >
-      <div
-        class="Chip-wrapper Chip Chip--Selection Chip-Selection--selected"
-        data-test="DesignSystem-Chip--GenericChip"
-        role="button"
-        style="max-width: var(--spacing-9);"
-        tabindex="0"
-      />
-    </div>
+      class="Chip-wrapper Chip Chip--Selection Chip-Selection--selected"
+      data-test="DesignSystem-Chip--GenericChip"
+      role="button"
+      style="max-width: var(--spacing-9);"
+      tabindex="0"
+    />
   </div>
 </body>
 `;

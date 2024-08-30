@@ -15,13 +15,13 @@ If the information or interactions are more complex, consider using a side sheet
 
 <br />
 
-#### Standard modal
+#### Standard Modal
 
 Standard modals appear in the center of the screen along with an overlay which prevents users from interacting with the background.
 
 <Preview name="components-modal-modal-all--all" />
 
-#### Full screen modal
+#### Full Screen Modal
 
 Full screen modals cover the entire screen. They are used when you want the complete undivided attention of users. The prime use case is when the users create a new entity because in such cases the context with the content behind the modal is typically not required.
 
@@ -31,7 +31,7 @@ They should not be used for confirmations, critical alerts or to present informa
 
 ### Variants
 
-#### Standard modal
+#### Standard Modal
 
 ##### Dialogs
 
@@ -51,7 +51,7 @@ Confirmation dialogs are used to take confirmation from users before taking any 
 
 <Preview name="components-modal-modal-confirmations--confirmations" />
 
-##### Input modals
+##### Input Modals
 
 Input modals are used to present forms to users such as input fields, dropdowns, etc.
 
@@ -59,7 +59,7 @@ Input modals are used to present forms to users such as input fields, dropdowns,
 
 ### Sizes
 
-#### Standard modal
+#### Standard Modal
 
 Standard modal comes in **3 sizes** basis on the breakpoints -
 
@@ -124,7 +124,7 @@ Standard modal comes in **3 sizes** basis on the breakpoints -
 <br />
 <br />
 
-#### Full screen modal
+#### Full Screen Modal
 
 The content of a full screen modal comes in **2 sizes** basis on the breakpoints -
 
@@ -179,7 +179,7 @@ The content of a full screen modal comes in **2 sizes** basis on the breakpoints
 <br />
 <br />
 
-##### Standard modal
+##### Standard Modal
 
 <br />
 
@@ -225,7 +225,7 @@ The content of a full screen modal comes in **2 sizes** basis on the breakpoints
 </table>
 <br />
 
-##### Full-screen modal
+##### Full-Screen Modal
 
 <br />
 
@@ -249,7 +249,7 @@ The content of a full screen modal comes in **2 sizes** basis on the breakpoints
 
 ### Configurations
 
-#### Standard modal
+#### Standard Modal
 
 <table style={{width: "100%"}}>
   <tbody>
@@ -273,7 +273,7 @@ The content of a full screen modal comes in **2 sizes** basis on the breakpoints
 </table>
 <br />
 
-#### Full-screen modal
+#### Full-Screen Modal
 
 <table style={{width: "100%"}}>
   <tbody>
@@ -300,7 +300,7 @@ The content of a full screen modal comes in **2 sizes** basis on the breakpoints
 
 <br />
 
-#### Positioning and scaling of modals
+#### Positioning and Scaling of Modals
 
 Modals are vertically center-aligned. They scale vertically in case the content is long enough, until reaching 64px from the screen’s top and bottom edge. In those cases, a scroll is introduced as well.
 
@@ -314,7 +314,7 @@ Modals are vertically center-aligned. They scale vertically in case the content 
 <br />
 <br />
 
-#### Default focus on secondary action
+#### Default Focus on Secondary Action
 
 By default, the **secondary** action should be in its focused state when the modal appears. This helps to avoid the trigger of primary action (especially the delete action) by accidental pressing of Enter key.
 
@@ -325,7 +325,7 @@ By default, the **secondary** action should be in its focused state when the mod
 <br />
 <br />
 
-#### The order of the action buttons
+#### The Order of the Action Buttons
 
 The primary and secondary actions appear at the bottom right in a modal. However, the order in which they appear has to be the same regardless of the nature of the primary action (create, delete, etc.). Listing primary actions last improves the flow, because the modal then [“ends” with its conclusion](https://www.nngroup.com/articles/ok-cancel-or-cancel-ok/). Also, keeping the order the same makes the position of actions predictable.
 
@@ -334,7 +334,7 @@ The primary and secondary actions appear at the bottom right in a modal. However
 <br />
 <br />
 
-#### Using in conjunction with the message component
+#### Using in Conjunction With the Message Component
 
 Message component can be used in the body of the modal in case the need arises. It should always **appear at the top** in the body section.
 
@@ -365,7 +365,7 @@ The dividers in the header and the footer should **only** be shown when the cont
 <br />
 <br />
 
-#### Scrollable content
+#### Scrollable Content
 
 You should avoid adding scrollable content in a modal as they are meant to be used to convey concise information, alerts, and confirmations. But there can be cases when scrolling is unavoidable.
 
@@ -375,13 +375,13 @@ Few points to keep in mind then -
 - To indicate that the content can be scrolled, use a scrollbar and show the dividers in both the header and the footer component. This helps to convey that the header and the footer are fixed.
   <Preview name="components-modal-modal-scrolling--scrolling" />
 
-#### Closing the modal
+#### Closing the Modal
 
 Clicking outside the modal should **not** cancel the current process and close the modal by default. However, this behavior is configurable and can be turned **on** for dialogs only since they just present information and any sort of user interaction is not required there. Pressing **ESC** key on the keyboard does the same.
 
 <br />
 
-#### Using forms
+#### Using Forms
 
 Forms with simple inputs can be used inside a modal. For more complex forms and interactions, **side sheets** should be considered.
 
@@ -398,22 +398,22 @@ Steppers can also be used in a modal as long as the content is concise and short
 <br />
 <br />
 
-#### Full screen modals
+#### Full Screen Modals
 
 <br />
 
-##### Lifetime of a full screen modal
+##### Lifetime of a Full Screen Modal
 
 Full screen modal is initialized and displayed when a user clicks on a “Create …” entity button. It is de-initialized and closed as soon as that entity is created.
 **DO NOT** use full screen modals for workflows involving multiple steps.
 
-##### Two steps workflow - Back button
+##### Two Steps Workflow - Back Button
 
 To maintain simplicity, full screen modals are only supposed to have 1 step. But even then, there can be cases when a two steps workflow is required in order to create an entity. In that case, the header of the full screen modal can be updated to include a back button.
 
 <Preview name="components-modal-fullscreenmodal-two-steps-workflow--two-steps-workflow" />
 
-##### Action buttons
+##### Action Buttons
 
 Just like the default modals, the action buttons appear at the bottom right and follows the same order rules.
 
@@ -424,7 +424,7 @@ Just like the default modals, the action buttons appear at the bottom right and 
 <br />
 <br />
 
-#### Scrolling behavior
+#### Scrolling Behavior
 
 Unlike default modals, the header and footer are **not fixed** in the full screen modals. So the content goes beneath the fold like this -
 
