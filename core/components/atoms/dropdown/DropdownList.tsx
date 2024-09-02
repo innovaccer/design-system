@@ -552,7 +552,7 @@ const DropdownList = (props: OptionsProps) => {
     const id = `Checkbox-option-${index}-${item.value}-${new Date().getTime()}`;
 
     return (
-      <label htmlFor={id}>
+      <label htmlFor={id} key={index}>
         <Option
           optionData={item}
           truncateOption={truncateOption}

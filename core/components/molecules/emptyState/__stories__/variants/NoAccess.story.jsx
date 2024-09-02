@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { EmptyState, Button } from '@/index';
-import noContent from '../assets/locked.svg';
+import lockedState from '@innovaccer/mds-images/ui-states/locked.svg';
 
 export const noAccess = () => {
   return (
     <EmptyState>
-      <EmptyState.Image src={noContent}></EmptyState.Image>
+      <EmptyState.Image src={lockedState}></EmptyState.Image>
       <EmptyState.Title>Access denied</EmptyState.Title>
       <EmptyState.Description>
         You don’t have the access to this page. Contact your admin for more information.
@@ -17,12 +17,17 @@ export const noAccess = () => {
   );
 };
 
-const ImagePath = JSON.stringify(noContent);
+const ImagePath = JSON.stringify(lockedState);
 
 const customCode = `() => {
+  // import lockedState from '@innovaccer/mds-images/ui-states/locked.svg';
+
   return (
       <EmptyState>
         <EmptyState.Image src={${ImagePath}}></EmptyState.Image>
+        {/* Replace image path used above with imported image file name
+        <EmptyState.Image src={lockedState}></EmptyState.Image> */}
+
         <EmptyState.Title>Access denied</EmptyState.Title>
         <EmptyState.Description>
           You don’t have the access to this page. Contact your admin for more information.

@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { EmptyState, Button } from '@/index';
-import noContent from '../assets/file-broken-or-not-found.svg';
+import fileBroken from '@innovaccer/mds-images/ui-states/file-broken-or-not-found.svg';
 
 export const pageNotExist = () => {
   return (
     <EmptyState>
-      <EmptyState.Image src={noContent}></EmptyState.Image>
+      <EmptyState.Image src={fileBroken}></EmptyState.Image>
       <EmptyState.Title>Page does not exist</EmptyState.Title>
       <EmptyState.Description>
         You seem to have followed a dead link. Check the URL or use the go home button given below.
@@ -17,12 +17,17 @@ export const pageNotExist = () => {
   );
 };
 
-const ImagePath = JSON.stringify(noContent);
+const ImagePath = JSON.stringify(fileBroken);
 
 const customCode = `() => {
+  // import fileBroken from '@innovaccer/mds-images/ui-states/file-broken-or-not-found.svg';
+
   return (
       <EmptyState>
         <EmptyState.Image src={${ImagePath}}></EmptyState.Image>
+        {/* Replace image path used above with imported image file name
+        <EmptyState.Image src={fileBroken}></EmptyState.Image> */}
+
         <EmptyState.Title>Page does not exist</EmptyState.Title>
         <EmptyState.Description>
           You seem to have followed a dead link. Check the URL or use the go home button given below.

@@ -75,7 +75,7 @@ export const nestedList = () => {
   };
 
   return (
-    <Card className="w-75">
+    <Card className="w-75" shadow="none">
       <Listbox type="description" className="Listbox-wrapper overflow-auto">
         {dataList.map((record, key) => {
           const expanded = expandList.includes(key);
@@ -195,7 +195,7 @@ const customCode = `
   };
 
   return (
-    <Card className="w-75">
+    <Card className="w-75" shadow="none">
       <Listbox type="description" className="Listbox-wrapper overflow-auto">
         {dataList.map((record, key) => {
           const expanded = expandList.includes(key);

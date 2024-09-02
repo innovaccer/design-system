@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { EmptyState, Button } from '@/index';
-import noContent from '../assets/content-unavailable.svg';
+import previewContent from '@innovaccer/mds-images/ui-states/content-unavailable.svg';
 
 export const previewUnavailable = () => {
   return (
     <EmptyState>
-      <EmptyState.Image src={noContent}></EmptyState.Image>
+      <EmptyState.Image src={previewContent}></EmptyState.Image>
       <EmptyState.Title>Preview for this file is not available</EmptyState.Title>
       <EmptyState.Description>
         The file size is too big or not supported. You can download the file to view it on your computer.
@@ -17,12 +17,17 @@ export const previewUnavailable = () => {
   );
 };
 
-const ImagePath = JSON.stringify(noContent);
+const ImagePath = JSON.stringify(previewContent);
 
 const customCode = `() => {
+  // import previewContent from '@innovaccer/mds-images/ui-states/content-unavailable.svg';
+
   return (
       <EmptyState>
         <EmptyState.Image src={${ImagePath}}></EmptyState.Image>
+        {/* Replace image path used above with imported image file name
+        <EmptyState.Image src={previewContent}></EmptyState.Image> */}
+
         <EmptyState.Title>Preview for this file is not available</EmptyState.Title>
         <EmptyState.Description>
           The file size is too big or not supported. You can download the file to view it on your computer.

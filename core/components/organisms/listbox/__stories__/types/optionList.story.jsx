@@ -56,7 +56,7 @@ export const optionList = () => {
     //   height: var(--spacing-9);
     // }
 
-    <Card>
+    <Card shadow="none">
       <CardHeader>
         <Heading size="s">Select starting template</Heading>
       </CardHeader>

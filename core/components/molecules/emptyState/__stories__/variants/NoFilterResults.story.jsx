@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { EmptyState, Button } from '@/index';
-import noContent from '../assets/file-not-found.svg';
+import fileNotFound from '@innovaccer/mds-images/ui-states/file-not-found.svg';
 
 export const noFilterResults = () => {
   return (
     <EmptyState>
-      <EmptyState.Image src={noContent}></EmptyState.Image>
+      <EmptyState.Image src={fileNotFound}></EmptyState.Image>
       <EmptyState.Title>No results match your criteria</EmptyState.Title>
       <EmptyState.Description>Try adjusting your filters to find what you are looking for.</EmptyState.Description>
       <EmptyState.Actions>
@@ -15,12 +15,17 @@ export const noFilterResults = () => {
   );
 };
 
-const ImagePath = JSON.stringify(noContent);
+const ImagePath = JSON.stringify(fileNotFound);
 
 const customCode = `() => {
+  // import fileNotFound from '@innovaccer/mds-images/ui-states/file-not-found.svg';
+
   return (
       <EmptyState>
         <EmptyState.Image src={${ImagePath}}></EmptyState.Image>
+        {/* Replace image path used above with imported image file name
+        <EmptyState.Image src={fileNotFound}></EmptyState.Image> */}
+
         <EmptyState.Title>No results match your criteria</EmptyState.Title>
         <EmptyState.Description>Try adjusting your filters to find what you are looking for.</EmptyState.Description>
         <EmptyState.Actions>
