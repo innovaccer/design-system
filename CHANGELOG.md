@@ -1,3 +1,44 @@
+## 2.42.0 (2024-09-03)
+
+### Highlights
+
+- feat(code-connect): add figma code connect for molecules component (7d351423)
+- feat(menu): add onToggle callback prop (1085fe69)
+- feat(emptyState): add mds-images import statement in stories (0c2a5af6)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(code-connect): add figma code connect for molecules component (7d351423)
+- feat(menu): add onToggle callback prop (1085fe69)
+- feat(emptyState): add mds-images import statement in stories (0c2a5af6)
+
+### Fixes
+
+- fix(listbox): add card with no shadow in listbox stories (973673a2)
+- fix(dropdown): add key to the dropdown list item (8c08fe60)
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 2.41.3 (2024-08-23)
 
 ### Highlights
