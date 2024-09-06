@@ -2,6 +2,8 @@ base: patterns
 menus:
   - label: Overview
     link: /patterns/overview/all-patterns/
+  - label: Browser Tab Title
+    link: /patterns/browserTabTitle/usage/
   - label: Email
     link: /patterns/email/usage/
   - label: File Uploader
