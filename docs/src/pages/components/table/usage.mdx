@@ -281,37 +281,35 @@ The cursor changes to Pointing Hand when hovering on a header cell indicating th
 <Preview name='components-table-pinned-columns--pinned-columns' />
 
 #### Selection
-On selection - Sort, Filters, and other actions disappear in lieu of Bulk Action(s). There can be different states and behaviors after selection is triggered -
 
-##### No Items Selected - the Default State
-<br/>
+##### Default Selection
 
-![When no item is selected](./images/table-14.png)
+**No items selected**
+
+![When no item is selected](./images/no-item-selected.png)
 <Caption>When no item is selected</Caption>
-<br/>
 
-##### A Few Items Selected
-When a selection is triggered, there is an option to provide actions related to the selection at the top right.
+**A few items selected**
 
-![When a few items are selected](./images/table-15.png)
+When a row is selected, the number of selected items is shown in the header.
+The selection is **preserved** in case of - pagination, filters and search.
+
+![When a few items are selected](./images/few-items-selected.png)
 <Caption>When a few items are selected</Caption>
-<br/>
 
-##### All Items on the Page Selected
+**All items selected**
 
 An option to select all the items across all pages is presented in the header.
 
-![When all items on a page are selected](./images/table-16.png)
-<Caption>When all items on a page are selected</Caption>
-<br/>
+![When all items are selected](./images/all-items-selected.png)
+<Caption>When all items are selected</Caption>
 
-##### All Items Selected
+**Clear selection**
 
 An option to clear selection is presented in the header.
 
-![When all items across all pages are selected](./images/table-17.png)
-<Caption>When all items across all pages are selected</Caption>
-<br/>
+![Clear Selection](./images/clear-selection.png)
+<Caption>Clear Selection</Caption>
 
 #### Scrolling
 Table header remains fixed when scrolling so as to maintain the connection of the values in the cells with the column headers which helps easy understanding of data.
@@ -369,3 +367,97 @@ Numerical data indicating size or quantity of an entity (such as count, score, p
 Numerical data indicating non-quantitative data (such as zip-code, id, version number, etc) should align to the **left**.
 <br/>
 
+#### Selection With Search/Filters
+
+##### No Selection Before Search/Filters
+
+In case of no previous selection, the “Showing x items” displays the number of the search or filter results. 
+
+![When no item is selected before applying filters](./images/no-selection-before-filters.png)
+<Caption>When no item is selected before applying filters</Caption>
+
+<br/>
+<br/>
+
+##### A Few Items Selected Before Search/Filters
+
+In this case, the previous selection is preserved and ‘Selected n items’ persists, while “Select x items” button updates to show the number of search or filter results. 
+
+![When a few items item are selected before applying filters](./images/few-selection-before-filters.png)
+<Caption>When a few items item are selected before applying filters</Caption>
+
+<br/>
+<br/>
+
+##### A Few Items Selected After Search/Filters
+
+When a row is selected, “Selected n items” is updated to display the number of selected items.
+
+![When a few items are selected with applied filters](./images/items-selected-with-filters.png)
+<Caption>When a few items are selected with applied filters</Caption>
+
+<br/>
+<br/>
+
+##### All Items Selected After Search/Filters
+
+When all the search and filter results are selected, the “Select x items” button is disabled until the selection is modified. 
+
+**Note:** The “Select x items” displays the count of search or filter results, hence clicking that will only select the search or filter results. 
+
+![When all items are selected with applied filters](./images/all-items-with-filters.png)
+<Caption>When all items are selected with applied filters</Caption>
+
+<br/>
+<br/>
+
+#### Bulk Actions In Table
+
+##### Global Bulk Actions
+
+Global bulk actions are used to perform actions on all the items of a table at once, they are a permanent part of the interface and aligned with the search input and filters. It is recommended to use **basic button** and **icon button** to display global bulk actions in a table. 
+
+**Note:** In case of filtering in table, global bulk actions only impact the result that matches the applied filters. 
+
+![Global bulk actions in table](./images/global-bulk-action.png)
+<Caption>Global bulk actions in table</Caption>
+
+<br/>
+<br/>
+
+##### Selection Bulk Actions
+
+Selection bulk actions allow users to perform the same operation on multiple selected items at once. They appear right next to the selection options with a divider in between separating the two. It is recommended to use **basic button** and **basic icon button** to display selection bulk actions in a table.
+
+![Selection bulk actions in table](./images/selection-bulk-action.png)
+<Caption>Selection bulk actions in table</Caption>
+
+<br/>
+<br/>
+
+#### Primary Button As A Bulk Action
+
+It is recommended to use primary button as a bulk action only when it serves as the primary action on the page.
+
+![Primary button as a bulk action](./images/primary-bulk-action.png)
+<Caption>Primary button as a bulk action</Caption>
+
+<br/>
+<br/>
+
+#### Bulk Actions In Case of A Space Constraint
+
+It is recommended to use **basic icon buttons** or **menu** for showing bulk actions in case of a space constraint. 
+
+![Bulk actions in case of a space constraint](./images/bulk-action-in-space-constraint.png)
+<Caption>Bulk actions in case of a space constraint</Caption>
+
+<br/>
+<br/>
+
+#### Bulk Actions In Table vs Actions In Page Header
+
+Bulk actions in table are used to bring changes to the table and actions in page header are used for prominent page actions like creating a new entity, etc . 
+
+![Bulk actions in table vs Actions in page header](./images/bulk-action-in-table.png)
+<Caption>Bulk actions in table vs Actions in page header</Caption>
