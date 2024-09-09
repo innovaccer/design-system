@@ -137,6 +137,7 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
   const iconClass = classNames({
     ['Button-icon']: true,
     [`Button-icon--${iconAlign}`]: children && iconAlign,
+    [`Button-regularIcon--${iconAlign}`]: children && iconAlign && size === 'regular' && !expanded,
   });
 
   return (
@@ -162,7 +163,7 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
       ) : (
         <>
           {icon && (
-            <div className={iconClass}>
+            <div className={iconClass} data-test="DesignSystem-Button--Icon-Wrapper">
               <Icon
                 data-test="DesignSystem-Button--Icon"
                 name={icon}

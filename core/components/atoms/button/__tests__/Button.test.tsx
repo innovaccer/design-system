@@ -258,3 +258,37 @@ describe('Button component with Tooltip', () => {
     expect(TooltipComponent).not.toBeInTheDocument();
   });
 });
+
+describe('Button component with Icon', () => {
+  it('check for icon classes with align:left', () => {
+    const { getByTestId } = render(
+      <Button appearance="basic" icon="keyboard_arrow_right" tooltip="Next in rank">
+        Click Me
+      </Button>
+    );
+
+    expect(getByTestId('DesignSystem-Button--Icon-Wrapper')).toHaveClass('Button-regularIcon--left');
+  });
+
+  it('check for icon classes with align:right', () => {
+    const { getByTestId } = render(
+      <Button appearance="basic" icon="keyboard_arrow_right" iconAlign="right" tooltip="Next in rank">
+        Click Me
+      </Button>
+    );
+
+    expect(getByTestId('DesignSystem-Button--Icon-Wrapper')).toHaveClass('Button-regularIcon--right');
+  });
+
+  it('check for icon classes with align:left without children', () => {
+    const { getByTestId } = render(<Button appearance="basic" icon="keyboard_arrow_right" tooltip="Next in rank" />);
+
+    expect(getByTestId('DesignSystem-Button--Icon-Wrapper')).not.toHaveClass('Button-regularIcon--left');
+  });
+
+  it('check for icon classes with align:right without children', () => {
+    const { getByTestId } = render(<Button appearance="basic" icon="keyboard_arrow_right" tooltip="Next in rank" />);
+
+    expect(getByTestId('DesignSystem-Button--Icon-Wrapper')).not.toHaveClass('Button-regularIcon--right');
+  });
+});
