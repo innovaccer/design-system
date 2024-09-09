@@ -15,6 +15,13 @@ export const data = [
     image: () => <StaticImage src="./images/patterns/email.png" alt="Email" imgStyle={imgStyle} />,
   },
   {
+    link: 'browserTabTitle/usage',
+    design: 'Available',
+    name: 'Browser Tab Title',
+    code: 'Available',
+    image: () => <StaticImage src="./images/patterns/fileUploader.png" alt="File uploader" imgStyle={imgStyle} />,
+  },
+  {
     link: 'fileUploader/usage',
     design: 'Available',
     name: 'File uploader',
