@@ -101,22 +101,8 @@
   font-size: 10px !important;
 }
 
-.Avatar-content--secondary {
+.Avatar-content {
   color: var(--inverse) !important;
-}
-
-.Avatar-content--success {
-  color: var(--success-darker) !important;
-}
-
-.Avatar-content--warning {
-  color: var(--warning-darker) !important;
-}
-
-.Avatar-content--accent1 {
-  color: var(--accent1-darker) !important;
-}
-
-.Avatar-content--accent4 {
-  color: var(--accent4-darker) !important;
+  opacity: var(--opacity-20);
+  mix-blend-mode: multiply;
 }
