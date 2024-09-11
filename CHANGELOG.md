@@ -1,3 +1,43 @@
+## 2.43.0 (2024-09-11)
+
+### Highlights
+
+- feat(Button): update spacing of icon with label (6d44f718)
+- docs(browserTitle): add browser tab title documentation (1306e042)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(Button): update spacing of icon with label (6d44f718)
+
+### Fixes
+
+- fix(popover): add check for element in getComputeStyle function (03f016ce)
+
+### Improvements
+
+NA
+
+### Documentation
+
+- docs(table): add table selection documentation (73a10d9d)
+- docs(pageHeader): update images for icon with label button in pageHeader documentation (c8d8338d)
+- docs(avatar): update image for square avatar in documentation (fc14cdad)
+- docs(browserTitle): add browser tab title documentation (1306e042)
+
+---
+
 ## 2.42.0 (2024-09-03)
 
 ### Highlights
