@@ -204,13 +204,14 @@ const customCode = `
     {
       name: 'name',
       displayName: 'Name',
-      width: '30%',
+      width: '20%',
       cellType: 'WITH_META_LIST',
       sorting: false,
       translate: a => ({
         title: a.name,
         metaList: [\`\${a.recipients} recipients\`]
       }),
+      pinned: 'left'
     },
     {
       name: 'status',
@@ -248,7 +249,7 @@ const customCode = `
       name: 'user',
       displayName: '',
       sorting: false,
-      width: '20%',
+      width: '10%',
       cellRenderer: (props) => {
         const { data } = props;
         return (
@@ -273,7 +274,8 @@ const customCode = `
           </div>
         );
       }
-    }
+    },
+    
   ];
 
   return (
@@ -284,6 +286,7 @@ const customCode = `
         data={data}
         schema={schema}
         withHeader={true}
+        withCheckbox={true}
         filterPosition="HEADER"
         onSelect={(rowIndex, selected, selectedList, selectAll) =>
           console.log(\`on-select:- rowIndex: \${rowIndex} selected: \${selected} selectedList: \${JSON.stringify(selectedList)} selectAll: \${selectAll}\`)
