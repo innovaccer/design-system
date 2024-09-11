@@ -36,7 +36,8 @@ exports[`FileUploader component
         type="button"
       >
         <div
-          class="Button-icon Button-icon--left"
+          class="Button-icon Button-icon--left Button-regularIcon--left"
+          data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
             class="material-symbols material-symbols-rounded Icon"
@@ -94,7 +95,8 @@ exports[`FileUploader component prop:accept snapshot
         type="button"
       >
         <div
-          class="Button-icon Button-icon--left"
+          class="Button-icon Button-icon--left Button-regularIcon--left"
+          data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
             class="material-symbols material-symbols-rounded Icon"
@@ -153,7 +155,8 @@ exports[`FileUploader component prop:disabled snapshot
         type="button"
       >
         <div
-          class="Button-icon Button-icon--left"
+          class="Button-icon Button-icon--left Button-regularIcon--left"
+          data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
             class="material-symbols material-symbols-rounded Icon"
@@ -212,7 +215,8 @@ exports[`FileUploader component prop:disabled snapshot
         type="button"
       >
         <div
-          class="Button-icon Button-icon--left"
+          class="Button-icon Button-icon--left Button-regularIcon--left"
+          data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
             class="material-symbols material-symbols-rounded Icon"
@@ -271,7 +275,8 @@ exports[`FileUploader component prop:multiple snapshot
         type="button"
       >
         <div
-          class="Button-icon Button-icon--left"
+          class="Button-icon Button-icon--left Button-regularIcon--left"
+          data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
             class="material-symbols material-symbols-rounded Icon"
@@ -329,7 +334,8 @@ exports[`FileUploader component prop:multiple snapshot
         type="button"
       >
         <div
-          class="Button-icon Button-icon--left"
+          class="Button-icon Button-icon--left Button-regularIcon--left"
+          data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
             class="material-symbols material-symbols-rounded Icon"

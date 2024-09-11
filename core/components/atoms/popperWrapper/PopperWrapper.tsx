@@ -322,13 +322,13 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     const shouldPopoverClose = (clicked: HTMLElement): boolean => {
       const popover = this.popupRef.current as HTMLElement;
       const container = document.body;
-      const popoverIndex = parseInt(window.getComputedStyle(popover).zIndex);
+      const popoverIndex = popover && parseInt(window.getComputedStyle(popover).zIndex);
       let clickInsideLayer = false;
       let shouldClose = false;
 
       const openedLayers = container.querySelectorAll('[data-opened="true"]');
       openedLayers.forEach((layer) => {
-        if (layer.contains(clicked)) {
+        if (layer && layer.contains(clicked)) {
           clickInsideLayer = true;
           const clickedIndex = parseInt(window.getComputedStyle(layer).zIndex);
           if (popoverIndex > clickedIndex) {

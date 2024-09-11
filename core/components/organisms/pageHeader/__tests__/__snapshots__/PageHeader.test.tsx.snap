@@ -53,6 +53,7 @@ exports[`Navigation component
             >
               <div
                 class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
               >
                 <i
                   class="material-symbols material-symbols-rounded Icon"
@@ -364,6 +365,7 @@ exports[`Navigation component
             >
               <div
                 class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
               >
                 <i
                   class="material-symbols material-symbols-rounded Icon"
@@ -680,6 +682,7 @@ exports[`Navigation component
             >
               <div
                 class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
               >
                 <i
                   class="material-symbols material-symbols-rounded Icon"
@@ -1467,6 +1470,7 @@ exports[`Navigation component
             >
               <div
                 class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
               >
                 <i
                   class="material-symbols material-symbols-rounded Icon"
@@ -1564,6 +1568,7 @@ exports[`Navigation component
             >
               <div
                 class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
               >
                 <i
                   class="material-symbols material-symbols-rounded Icon"

@@ -504,6 +504,7 @@ exports[`Button component
     >
       <div
         class="Button-icon Button-icon--left"
+        data-test="DesignSystem-Button--Icon-Wrapper"
       >
         <i
           class="material-symbols material-symbols-rounded Icon"
@@ -536,6 +537,7 @@ exports[`Button component
     >
       <div
         class="Button-icon Button-icon--right"
+        data-test="DesignSystem-Button--Icon-Wrapper"
       >
         <i
           class="material-symbols material-symbols-rounded Icon"
@@ -568,6 +570,7 @@ exports[`Button component
     >
       <div
         class="Button-icon Button-icon--left"
+        data-test="DesignSystem-Button--Icon-Wrapper"
       >
         <i
           class="material-symbols material-symbols-rounded Icon"
@@ -619,7 +622,8 @@ exports[`Button component
       tabindex="0"
     >
       <div
-        class="Button-icon Button-icon--left"
+        class="Button-icon Button-icon--left Button-regularIcon--left"
+        data-test="DesignSystem-Button--Icon-Wrapper"
       >
         <i
           class="material-symbols material-symbols-rounded Icon"
@@ -651,7 +655,8 @@ exports[`Button component
       tabindex="0"
     >
       <div
-        class="Button-icon Button-icon--right"
+        class="Button-icon Button-icon--right Button-regularIcon--right"
+        data-test="DesignSystem-Button--Icon-Wrapper"
       >
         <i
           class="material-symbols material-symbols-rounded Icon"
@@ -683,7 +688,8 @@ exports[`Button component
       tabindex="0"
     >
       <div
-        class="Button-icon Button-icon--left"
+        class="Button-icon Button-icon--left Button-regularIcon--left"
+        data-test="DesignSystem-Button--Icon-Wrapper"
       >
         <i
           class="material-symbols material-symbols-rounded Icon"
@@ -736,6 +742,7 @@ exports[`Button component
     >
       <div
         class="Button-icon Button-icon--left"
+        data-test="DesignSystem-Button--Icon-Wrapper"
       >
         <i
           class="material-symbols material-symbols-rounded Icon"
@@ -768,6 +775,7 @@ exports[`Button component
     >
       <div
         class="Button-icon Button-icon--right"
+        data-test="DesignSystem-Button--Icon-Wrapper"
       >
         <i
           class="material-symbols material-symbols-rounded Icon"
@@ -800,6 +808,7 @@ exports[`Button component
     >
       <div
         class="Button-icon Button-icon--left"
+        data-test="DesignSystem-Button--Icon-Wrapper"
       >
         <i
           class="material-symbols material-symbols-rounded Icon"

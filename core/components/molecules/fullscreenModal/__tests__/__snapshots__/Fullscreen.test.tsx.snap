@@ -56,6 +56,7 @@ exports[`FullscreenModal component
                   >
                     <div
                       class="Button-icon"
+                      data-test="DesignSystem-Button--Icon-Wrapper"
                     >
                       <i
                         class="material-symbols material-symbols-rounded Icon"
@@ -139,6 +140,7 @@ exports[`FullscreenModal component
                   >
                     <div
                       class="Button-icon"
+                      data-test="DesignSystem-Button--Icon-Wrapper"
                     >
                       <i
                         class="material-symbols material-symbols-rounded Icon"
@@ -264,6 +266,7 @@ exports[`FullscreenModal component
                   >
                     <div
                       class="Button-icon"
+                      data-test="DesignSystem-Button--Icon-Wrapper"
                     >
                       <i
                         class="material-symbols material-symbols-rounded Icon"
@@ -354,6 +357,7 @@ exports[`FullscreenModal component
                   >
                     <div
                       class="Button-icon"
+                      data-test="DesignSystem-Button--Icon-Wrapper"
                     >
                       <i
                         class="material-symbols material-symbols-rounded Icon"
@@ -436,6 +440,7 @@ exports[`FullscreenModal component
                   >
                     <div
                       class="Button-icon"
+                      data-test="DesignSystem-Button--Icon-Wrapper"
                     >
                       <i
                         class="material-symbols material-symbols-rounded Icon"
@@ -561,6 +566,7 @@ exports[`FullscreenModal component
                   >
                     <div
                       class="Button-icon"
+                      data-test="DesignSystem-Button--Icon-Wrapper"
                     >
                       <i
                         class="material-symbols material-symbols-rounded Icon"
