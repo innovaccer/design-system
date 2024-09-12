@@ -8,7 +8,7 @@ import AvatarCount from './AvatarCount';
 import Avatars from './Avatars';
 import AvatarPopperBody from './AvatarPopperBody';
 
-interface AvatarData extends Record<string, any> {
+export interface AvatarData extends Record<string, any> {
   firstName?: string;
   lastName?: string;
   appearance?: AvatarProps['appearance'];
@@ -23,9 +23,11 @@ interface AvatarPopoverProps {
   appendToBody?: PopoverProps['appendToBody'];
   dark?: PopoverProps['dark'];
   position?: PopoverProps['position'];
-  on?: PopoverProps['on'];
-  maxHeight?: number;
   popperClassName?: string;
+  on?: PopoverProps['on'];
+  maxHeight?: number | string;
+  minHeight?: number | string;
+  width?: number | string;
 }
 
 export interface AvatarGroupProps extends BaseProps {
@@ -65,10 +67,11 @@ export interface AvatarGroupProps extends BaseProps {
    * AvatarPopoverProps: {
    *   popperRenderer?: (names: AvatarData[]) => JSX.Element;
    *   appendToBody?: boolean;
-   *   dark?: boolean;
    *   position?: Position;
    *   on?: ActionType;
    *   maxHeight?: number;
+   *   minHeight?: number | string;
+   *   width?: number | string;
    *   popperClassName?: string;
    * }
    * </pre>
@@ -77,10 +80,11 @@ export interface AvatarGroupProps extends BaseProps {
    * | --- | --- | --- |
    * | popperRenderer | Callback function to create custom popover content  | |
    * | appendToBody | Appends `Popover` wrapper inside body | true |
-   * | dark | Changes background of `Popover` | true |
    * | position | Position to place `Popover` | bottom |
    * | on | Event triggering the `Popover` | hover |
-   * | maxHeight | Max height of `Popover Text Wrapper` (does not work in case of custom popperRenderer) | 150 |
+   * | maxHeight | Max height of `Popover Text Wrapper` (does not work in case of custom popperRenderer) | 256 |
+   * | minHeight | Min height of `Popover Text Wrapper` (does not work in case of custom popperRenderer) |  |
+   * | width | width of `Popover Text Wrapper` (does not work in case of custom popperRenderer) | 176 |
    * | popperClassName | Custom className added to `Popover` | |
    *
    */
@@ -96,10 +100,11 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
 
   const {
     popperRenderer,
-    maxHeight = 150,
+    maxHeight = 256,
+    width = 176,
+    minHeight,
     position = 'bottom',
     on = 'hover',
-    dark = true,
     appendToBody = true,
     popperClassName = '',
   } = popoverOptions;
@@ -128,31 +133,24 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
     className
   );
 
-  const popperClass = classNames(
-    {
-      ['AvatarGroup-Popper']: true,
-    },
-    popperClassName
-  );
-
   return (
     <div data-test="DesignSystem-AvatarGroup" {...baseProps} className={`${AvatarGroupClass} d-inline-flex`}>
       <Avatars size={size} avatarList={avatarList} avatarStyle={avatarStyle} tooltipPosition={tooltipPosition} />
       {list.length - max > 0 && list.length !== 3 && (
         <Popover
           on={on}
-          dark={dark}
           trigger={<AvatarCount on={on} size={size} hiddenAvatarCount={hiddenAvatarCount} avatarStyle={avatarStyle} />}
           position={position}
           appendToBody={appendToBody}
-          className={popperClass}
           offset="medium"
         >
           <AvatarPopperBody
             hiddenAvatarList={list.slice(max, list.length)}
             popperRenderer={popperRenderer}
             maxHeight={maxHeight}
-            dark={dark}
+            minHeight={minHeight}
+            width={width}
+            popperClassName={popperClassName}
           />
         </Popover>
       )}

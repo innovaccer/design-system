@@ -127,6 +127,49 @@ describe('AvatarGroup component', () => {
       expect(avatar.textContent).toMatch(avatarsInitials[index]);
     });
   });
+
+  it('renders popover list item with disabled state', () => {
+    const list = [
+      {
+        firstName: 'John',
+        lastName: 'Doe',
+      },
+      {
+        firstName: 'Steven',
+        lastName: 'Packton',
+      },
+      {
+        firstName: 'Nancy',
+        lastName: 'Wheeler',
+        disabled: true,
+      },
+      {
+        firstName: 'Monica',
+        lastName: 'Geller',
+      },
+      {
+        firstName: 'Arya',
+        lastName: 'Stark',
+      },
+      {
+        firstName: 'Rachel',
+        lastName: 'Green',
+      },
+    ];
+
+    const { getByTestId, getAllByTestId } = render(
+      <AvatarGroup list={list} max={2} popoverOptions={{ on: 'click' }} />
+    );
+
+    expect(getByTestId('DesignSystem-AvatarGroup--TriggerAvatarVariants')).toHaveClass('cursor-pointer');
+
+    const extraAvatar = getByTestId('DesignSystem-AvatarGroup--TriggerAvatar');
+    fireEvent.click(extraAvatar);
+    const listItem = getAllByTestId('DesignSystem-AvatarGroup--Item');
+
+    expect(listItem[0]).toHaveAttribute('disabled');
+    expect(listItem[1]).not.toHaveAttribute('disabled');
+  });
 });
 
 describe('AvatarGroup Component with overwrite class', () => {

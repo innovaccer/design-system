@@ -3,7 +3,7 @@ import { AvatarGroup, Avatar, Text } from '@/index';
 import { list } from '../AvatarList';
 import './style.css';
 
-export const customPopper = () => {
+export const customPopover = () => {
   const popperRenderer = (names) => {
     const AvatarList = names.map((avatar, index) => {
       const { firstName, lastName, appearance } = avatar;
@@ -25,7 +25,7 @@ export const customPopper = () => {
     return <div className="overflow-auto py-4 px-6 UserAvatars-popover">{AvatarList}</div>;
   };
 
-  return <AvatarGroup list={list} popoverOptions={{ popperRenderer, dark: false, on: 'click' }} />;
+  return <AvatarGroup list={list} popoverOptions={{ popperRenderer, dark: false }} />;
 };
 
 const customCode = `/*
@@ -95,13 +95,13 @@ const customCode = `/*
   return (
     <AvatarGroup
       list={list}
-      popoverOptions={{ dark: false, on: 'click', popperRenderer }}
+      popoverOptions={{ dark: false, popperRenderer }}
     />
   );
 }`;
 
 export default {
-  title: 'Components/Avatar/AvatarGroup/Variants/Custom Popper',
+  title: 'Components/Avatar/AvatarGroup/Variants/Custom Popover',
   component: AvatarGroup,
   parameters: {
     docs: {
