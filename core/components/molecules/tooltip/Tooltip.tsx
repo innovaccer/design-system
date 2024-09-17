@@ -68,6 +68,10 @@ export interface TooltipProps extends Omit<PopoverProps, TooltipPopperProps>, Ba
    * Handles open/close
    */
   open?: boolean;
+  /**
+   * timer limit after which tooltip disappears
+   */
+  timerLimit?: number;
 }
 
 export const detectTruncation = (boundaryRef: React.RefObject<HTMLElement>) => {
@@ -81,11 +85,37 @@ export const Tooltip = (props: TooltipProps) => {
   const { children, tooltip, showTooltip, showOnTruncation, elementRef, ...rest } = props;
   const childrenRef = React.useRef(null);
   const [isTruncated, setIsTruncated] = React.useState(false);
+  // state to control tooltip
+  const [isTooltipOpen, setIsTooltipOpen] = React.useState(false);
+  // timerRef to manage setTimeout
+  const timerRef = React.useRef<NodeJS.Timer | null>(null);
 
   React.useEffect(() => {
     const element = elementRef ? elementRef : childrenRef;
     setIsTruncated(detectTruncation(element));
   }, [childrenRef, elementRef, children]);
+
+
+  React.useEffect(() => {
+    if (isTooltipOpen) {
+      timerRef.current = setTimeout(() => {
+        setIsTooltipOpen(false);
+      }, props.timerLimit);
+    }
+    return () => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+    };
+  }, [isTooltipOpen]);
+
+
+  const iPadToolTipChildren = React.cloneElement(children as React.ReactElement<any>, {
+    ref: childrenRef,
+    onTouchStart: () => {
+      setIsTooltipOpen(true);
+    }
+  });
 
   const renderChildren =
     elementRef || !React.isValidElement(children)
@@ -107,6 +137,26 @@ export const Tooltip = (props: TooltipProps) => {
     </div>
   );
 
+  if(isDevicePad()) {
+    return (
+      <Popover
+      open={showOnTruncation ? isTooltipOpen && isTruncated : isTooltipOpen}
+      trigger={iPadToolTipChildren}
+      on={'hover'}
+      offset={'medium'}
+      {...rest}
+      animationClass={{
+        open: `Tooltip-animation-open-${positionValue[props.position]}`,
+        close: `Tooltip-animation-close-${positionValue[props.position]}`,
+      }}
+      className="Tooltip-container"
+    >
+      {tooltipWrapper}
+    </Popover>
+    )
+
+  }
+
   if (showOnTruncation) {
     return isTruncated ? (
       <Popover
@@ -126,7 +176,7 @@ export const Tooltip = (props: TooltipProps) => {
       renderChildren
     );
   }
-
+ 
   return (
     <Popover
       trigger={children}
