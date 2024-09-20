@@ -10,11 +10,11 @@ figma.connect(MetaList, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS
       Small: 'small',
     }),
     list: figma.enum('Icon left', {
-      true: [
+      True: [
         { icon: 'assessment', label: 'Meta data' },
         { icon: 'assessment', label: 'Meta data' },
       ],
-      false: [{ label: 'Meta data' }, { label: 'Meta data' }],
+      False: [{ label: 'Meta data' }, { label: 'Meta data' }],
     }),
   },
   example: (props) => <MetaList {...props} />,

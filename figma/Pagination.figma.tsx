@@ -6,9 +6,9 @@ figma.connect(Pagination, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/M
   imports: ["import { Pagination } from '@innovaccer/design-system'"],
   props: {
     type: figma.enum('Jump', {
-      'True': 'jump',
-      'False': 'basic',
+      True: 'jump',
+      False: 'basic',
     }),
   },
-  example: (props) => <Pagination onPageChange={() => {}} {...props} />,
+  example: (props) => <Pagination {...props} onPageChange={() => {}} />,
 });
