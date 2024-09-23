@@ -4,29 +4,66 @@ export const getAnimationClass = (uniqueKey: string, expanded?: boolean) => {
   return '';
 };
 
-const getHeight = (listItemRef: React.RefObject<HTMLDivElement>) => {
-  const scrollHeight = listItemRef.current?.scrollHeight;
-  return scrollHeight;
-};
+// const getHeight = (listItemRef: React.RefObject<HTMLDivElement>) => {
+//   const scrollHeight = listItemRef.current?.scrollHeight;
+//   console.log(
+//     'aalistItemRef.current',
+//     listItemRef.current,
+//     'scrollHeight',
+//     scrollHeight,
+//     'clientheight',
+//     listItemRef.current?.clientHeight,
+//     'offset',
+//     listItemRef.current?.offsetHeight
+// );
+//   // debugger;
+//   return scrollHeight;
+// };
 
-export const menuItemAnimation = (listItemRef: React.RefObject<HTMLDivElement>, uniqueKey: string) => {
-  return `
+export const menuItemAnimation = (scrollHeight: number | undefined, uniqueKey: string) => {
+  console.log('myy listitem scrollHeight', scrollHeight);
+
+  // if (scrollHeight) {
+    return `
       @keyframes nestedList-open-${uniqueKey} {
       from {
         height: 0px;
       }
       to {
-        height: ${getHeight(listItemRef)}px;
+        height: ${scrollHeight}px;
       }
     }
 
     @keyframes nestedList-close-${uniqueKey} {
       from {
-        height: ${getHeight(listItemRef)}px;
+        height: ${scrollHeight}px;
       }
       to {
         height: 0px;
       }
     }
   `;
+  // } 
+  // return ''
+  // else {
+  //   return `
+  //     @keyframes nestedList-open-${uniqueKey} {
+  //     from {
+  //       height: 0px;
+  //     }
+  //     to {
+  //       height: auto;
+  //     }
+  //   }
+
+  //   @keyframes nestedList-close-${uniqueKey} {
+  //     from {
+  //       height: auto;
+  //     }
+  //     to {
+  //       height: 0px;
+  //     }
+  //   }
+  // `;
+  // }
 };

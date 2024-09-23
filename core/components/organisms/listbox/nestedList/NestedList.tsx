@@ -21,7 +21,7 @@ export const NestedList = (props: NestedListProp) => {
   const prevState = usePrevious(expanded);
   const [open, setOpen] = React.useState(expanded);
   const [keyframe, setKeyframe] = React.useState('');
-  const listItemRef = React.useRef<HTMLDivElement>(null);
+  const listItemRef = React.createRef<HTMLDivElement>();
   const uniqueKey = Math.random().toString(36).substring(2, 6);
 
   const [animation, setAnimation] = React.useState(getAnimationClass(uniqueKey, expanded));
@@ -31,7 +31,9 @@ export const NestedList = (props: NestedListProp) => {
       setOpen(true);
     }
     requestAnimationFrame(() => {
-      const result = menuItemAnimation(listItemRef, uniqueKey);
+      const scrollHeight = listItemRef.current?.scrollHeight;
+
+      const result = menuItemAnimation(scrollHeight, uniqueKey);
       setKeyframe(result);
     });
 
