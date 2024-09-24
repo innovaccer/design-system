@@ -87,6 +87,12 @@ describe('DatePicker component today date chip', () => {
     fireEvent.click(chip);
     expect(FunctionValue).toHaveBeenCalled();
   });
+
+  it('disable today chip in case of disabledAfter prop', () => {
+    const todayDate = new Date();
+    const { getByTestId } = render(<DatePicker disabledAfter={todayDate} view="date" />);
+    expect(getByTestId('DesignSystem-Chip--GenericChip')).not.toHaveClass('Chip-action--disabled');
+  });
 });
 
 describe('renders DatePicker component Event Handlers ', () => {

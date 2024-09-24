@@ -241,17 +241,26 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     const dateDisabledBefore = convertToDate(disabledBefore, inputFormat, validators);
     const dateDisabledAfter = convertToDate(disabledAfter, inputFormat, validators);
 
+    const isSameDay = (date1: Date, date2: Date) => {
+      return (
+        date1.getFullYear() === date2.getFullYear() &&
+        date1.getMonth() === date2.getMonth() &&
+        date1.getDate() === date2.getDate()
+      );
+    };
+
     const isTodayDisabled = () => {
-      let isTodayDateDisabled = true;
-      if (currDate && dateDisabledBefore && dateDisabledAfter) {
-        isTodayDateDisabled = currDate > dateDisabledBefore && currDate < dateDisabledAfter;
-      } else if (currDate && dateDisabledBefore) {
-        isTodayDateDisabled = currDate > dateDisabledBefore;
-      } else if (currDate && dateDisabledAfter) {
-        isTodayDateDisabled = currDate < dateDisabledAfter;
+      if (
+        (dateDisabledBefore && isSameDay(todayDate, dateDisabledBefore)) ||
+        (dateDisabledAfter && isSameDay(todayDate, dateDisabledAfter))
+      ) {
+        return false;
       }
 
-      return !isTodayDateDisabled;
+      const isTodayDateDisabled =
+        (dateDisabledBefore && todayDate < dateDisabledBefore) || (dateDisabledAfter && todayDate > dateDisabledAfter);
+
+      return isTodayDateDisabled;
     };
 
     const todayChipClass = classNames({
