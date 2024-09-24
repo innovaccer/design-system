@@ -55,10 +55,14 @@ export interface ListboxItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement
    * Specify tabIndex to list item
    */
   tabIndex?: number;
+  /**
+   * 
+   */
+  isContentChange?: boolean;
 }
 
 export const ListboxItem = (props: ListboxItemProps) => {
-  const { nestedBody, expanded, id, onClick, value, tagName: Tag = 'li', ...rest } = props;
+  const { nestedBody, expanded, id, onClick, isContentChange, value, tagName: Tag = 'li', ...rest } = props;
 
   const contextProp = React.useContext(ListboxContext);
   const { showDivider, draggable } = contextProp;
@@ -81,7 +85,7 @@ export const ListboxItem = (props: ListboxItemProps) => {
       className={tagClass}
     >
       <ListBody {...props} />
-      {nestedBody && <NestedList expanded={expanded} nestedBody={nestedBody} />}
+      {nestedBody && <NestedList expanded={expanded} nestedBody={nestedBody} isContentChange={isContentChange} />}
       {showDivider && <Divider className="Listbox-divider" />}
     </Tag>
   );

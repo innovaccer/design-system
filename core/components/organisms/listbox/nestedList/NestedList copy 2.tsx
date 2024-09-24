@@ -3,7 +3,6 @@ import { menuItemAnimation, getAnimationClass } from './Animation';
 
 export interface NestedListProp {
   expanded?: boolean;
-  isContentChange?: boolean;
   nestedBody?: React.ReactNode;
 }
 
@@ -27,37 +26,6 @@ export const NestedList = (props: NestedListProp) => {
 
   const [animation, setAnimation] = React.useState(getAnimationClass(uniqueKey, expanded));
 
-  // Observe nestedBody changes and resize
-  // const resizeObserver = React.useRef<ResizeObserver>();
-  // React.useEffect(() => {
-  //   const handleResize = debounce((entries: any) => {
-  //     for (let entry of entries) {
-  //       const scrollHeight = entry.target.scrollHeight;
-  //       console.log('resize height', scrollHeight);
-  //       setKeyframe(menuItemAnimation(scrollHeight, uniqueKey));
-  //     }
-  //   }, 100); // Debouncing for 100ms
-
-  //   const observer = new ResizeObserver(handleResize);
-  //   if (listItemRef.current) {
-  //     observer.observe(listItemRef.current);
-  //   }
-
-  //   return () => {
-  //     observer.disconnect();
-  //   };
-  // }, [nestedBody]);
-  // }, [nestedBody, props.isContentChange, uniqueKey]);
-
-  // Example debounce function
-  // function debounce(fn:any, delay: any) {
-  //   let timeout;
-  //   return function (...args) {
-  //     clearTimeout(timeout);
-  //     timeout = setTimeout(() => fn.apply(this, args), delay);
-  //   };
-  // }
-
   React.useEffect(() => {
     console.log('prevstate', prevState, 'expanded', expanded);
     if (prevState != undefined && prevState !== expanded) {
@@ -75,7 +43,6 @@ export const NestedList = (props: NestedListProp) => {
     });
 
     const animationClass = getAnimationClass(uniqueKey, expanded);
-    console.log('animation class', animationClass, listItemRef.current);
     setAnimation(animationClass);
   }, [expanded]);
 
@@ -107,6 +74,3 @@ export const NestedList = (props: NestedListProp) => {
 };
 
 export default NestedList;
-
-////
-// Simplify ResizeObserver effect

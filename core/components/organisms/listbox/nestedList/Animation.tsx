@@ -1,6 +1,6 @@
 export const getAnimationClass = (uniqueKey: string, expanded?: boolean) => {
-  if (expanded) return `nestedList-open-${uniqueKey} 240ms cubic-bezier(0, 0, 0.38, 0.9)`;
-  else if (!expanded) return `nestedList-close-${uniqueKey} 160ms cubic-bezier(0.2, 0, 1, 0.9)`;
+  if (expanded) return `fadeIn 240ms cubic-bezier(0, 0, 0.38, 0.9)`;
+  else if (!expanded) return `fadeOut 160ms cubic-bezier(0.2, 0, 1, 0.9)`;
   return '';
 };
 
