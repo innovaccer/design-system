@@ -149,9 +149,9 @@ exports[`Combobox component snapshots
                   aria-label=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
                   class="ChipInput-input"
                   data-test="DesignSystem-MultiSelectTrigger--Input"
-                  forwardedref="[object Object]"
                   placeholder=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
                   role="combobox"
+                  style="flex-basis: 0px;"
                   value=""
                 />
               </div>
@@ -196,9 +196,9 @@ exports[`Combobox component snapshots
                   aria-label=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
                   class="ChipInput-input"
                   data-test="DesignSystem-MultiSelectTrigger--Input"
-                  forwardedref="[object Object]"
                   placeholder=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
                   role="combobox"
+                  style="flex-basis: 0px;"
                   value=""
                 />
               </div>
@@ -243,9 +243,9 @@ exports[`Combobox component snapshots
                   aria-label=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
                   class="ChipInput-input"
                   data-test="DesignSystem-MultiSelectTrigger--Input"
-                  forwardedref="[object Object]"
                   placeholder=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
                   role="combobox"
+                  style="flex-basis: 0px;"
                   value=""
                 />
               </div>
