@@ -200,8 +200,13 @@ export const Tabs = (props: TabsProps) => {
         setExtraTabsList(extraList);
         setDisplayTabs(newList);
         setActiveTab(newList.length - 1);
+        if (onTabChange) onTabChange(newList.length - 1);
       }
+
+      return isOverflow;
     }
+
+    return;
   };
 
   const replaceTabWithMenuItem = () => {
@@ -238,9 +243,12 @@ export const Tabs = (props: TabsProps) => {
     isTabDismiss && replaceTabWithMenuItem();
     if (isTabAdded) {
       const tabIndex = displayTabs.length - 1;
-      addMenuItemToTab();
-      setActiveTab(tabIndex);
-      if (onTabChange) onTabChange(tabIndex);
+      const isOverflow = addMenuItemToTab();
+
+      if (!isOverflow) {
+        setActiveTab(tabIndex);
+        if (onTabChange) onTabChange(tabIndex);
+      }
     }
   }, [displayTabs]);
 
