@@ -29,5 +29,10 @@ class MockResizeObserver {
   observe() {}
   unobserve() {}
 }
+declare global {}
 
-global.ResizeObserver = MockResizeObserver;
+// For a browser environment, use the `window` object.
+(window as any).ResizeObserver = MockResizeObserver;
+
+// For a Node.js environment, use the `global` object.
+(global as any).ResizeObserver = MockResizeObserver;
