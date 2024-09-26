@@ -111,6 +111,7 @@ export const Tabs = (props: TabsProps) => {
   const tabRefs: HTMLDivElement[] = [];
   const allTabRefs: HTMLDivElement[] = [];
   const tabsWrapperRef = React.useRef<HTMLDivElement>(null);
+  const tabsHeaderRef = React.useRef<HTMLDivElement>(null);
   const moreButtonRef = React.useRef<HTMLButtonElement>(null);
 
   const tabs: Tab[] = children ? filterTabs(children) : props.tabs;
@@ -128,7 +129,7 @@ export const Tabs = (props: TabsProps) => {
     props.activeIndex && props.activeIndex < totalTabs ? props.activeIndex : 0
   );
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     if (showMore) {
       let remainingWidth = widthDifference;
 
@@ -150,22 +151,30 @@ export const Tabs = (props: TabsProps) => {
     }
   }, [showMore]);
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
+    const observer = new ResizeObserver(() => {
+      if (tabsWrapperRef.current && tabsHeaderRef.current) {
+        const containerClientWidth = tabsHeaderRef.current?.clientWidth;
+        const containerScrollWidth = tabsWrapperRef.current?.clientWidth;
+
+        const isOverflow = containerScrollWidth > containerClientWidth;
+
+        isOverflow && setShowMore(isOverflow);
+        isOverflow && setWidthDifference(containerScrollWidth - containerClientWidth);
+      }
+    });
+
     if (tabsWrapperRef.current) {
-      const containerClientWidth = tabsWrapperRef.current.clientWidth;
-      const containerScrollWidth = tabsWrapperRef.current.scrollWidth;
-
-      const isOverflow = containerScrollWidth > containerClientWidth;
-
-      setShowMore(isOverflow);
-      isOverflow && setWidthDifference(containerScrollWidth - containerClientWidth);
+      observer.observe(tabsWrapperRef.current);
     }
+
+    return () => observer.disconnect();
   }, []);
 
   const addMenuItemToTab = () => {
-    if (tabsWrapperRef.current) {
-      const containerClientWidth = tabsWrapperRef.current.clientWidth;
-      const containerScrollWidth = tabsWrapperRef.current.scrollWidth;
+    if (tabsWrapperRef.current && tabsHeaderRef.current) {
+      const containerClientWidth = tabsHeaderRef.current.clientWidth;
+      const containerScrollWidth = tabsHeaderRef.current.scrollWidth;
 
       const isOverflow = containerScrollWidth > containerClientWidth;
 
@@ -196,9 +205,9 @@ export const Tabs = (props: TabsProps) => {
   };
 
   const replaceTabWithMenuItem = () => {
-    if (tabsWrapperRef.current) {
-      const containerClientWidth = tabsWrapperRef.current.clientWidth;
-      const containerScrollWidth = tabsWrapperRef.current.scrollWidth;
+    if (tabsWrapperRef.current && tabsHeaderRef.current) {
+      const containerClientWidth = tabsHeaderRef.current.clientWidth;
+      const containerScrollWidth = tabsHeaderRef.current.scrollWidth;
 
       const isOverflow = containerScrollWidth > containerClientWidth;
 
@@ -518,10 +527,12 @@ export const Tabs = (props: TabsProps) => {
 
   return (
     <div data-test="DesignSystem-Tabs" {...baseProps} className={wrapperClass}>
-      <div className={headerClass} data-test="DesignSystem-Tabs--Header" ref={tabsWrapperRef}>
-        {renderTabs}
-        {showMore && extraTabsList.length > 0 && renderMoreTabs()}
-        {inlineComponent}
+      <div className={headerClass} data-test="DesignSystem-Tabs--Header" ref={tabsHeaderRef}>
+        <div className="d-flex" ref={tabsWrapperRef}>
+          {renderTabs}
+          {showMore && extraTabsList.length > 0 && renderMoreTabs()}
+          {inlineComponent}
+        </div>
       </div>
       {children && (
         <div className={tabContentClass} data-test="DesignSystem-Tabs--Content">
