@@ -13,6 +13,14 @@ figma.connect(LinkButton, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/M
       Disabled: true,
     }),
     subtle: figma.boolean('Subtle'),
+    icon: figma.enum('Icon', {
+      'Icon Left': 'event',
+      'Icon Right': 'event',
+    }),
+    iconAlign: figma.enum('Icon', {
+      'Icon Left': 'left',
+      'Icon Right': 'right',
+    })
   },
   example: (props) => <LinkButton {...props}>Link Button</LinkButton>,
 });

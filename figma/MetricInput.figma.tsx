@@ -10,12 +10,12 @@ figma.connect(MetricInput, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/
       Large: 'large',
     }),
     prefix: figma.enum('Prefix', {
-      true: 'Prefix',
-      false: undefined,
+      True: 'Prefix',
+      False: undefined,
     }),
     suffix: figma.enum('Suffix', {
-      true: 'Suffix',
-      false: undefined,
+      True: 'Suffix',
+      False: undefined,
     }),
     showActionButton: figma.boolean('Actions'),
   },

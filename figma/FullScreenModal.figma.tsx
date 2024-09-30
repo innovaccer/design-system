@@ -12,6 +12,7 @@ figma.connect(FullscreenModal, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7g
   },
   example: (props) => (
     <FullscreenModal
+      {...props}
       open={true}
       headerOptions={{
         heading: 'Heading',
@@ -27,7 +28,6 @@ figma.connect(FullscreenModal, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7g
           </Button>
         </>
       }
-      {...props}
     >
       <Text>FullscreenModal Body</Text>
     </FullscreenModal>

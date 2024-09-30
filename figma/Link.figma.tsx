@@ -17,5 +17,9 @@ figma.connect(Link, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---W
       Disabled: true,
     }),
   },
-  example: (props) => <Link {...props}>{props.size} link</Link>,
+  example: (props) => (
+    <Link {...props} href="">
+      {props.size} link
+    </Link>
+  ),
 });
