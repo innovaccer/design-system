@@ -92,7 +92,7 @@
 }
 
 .Select-trigger--placeholder {
-  color: var(--text-subtle);
+  color: var(--text);
 }
 
 .Select-trigger--icon {
