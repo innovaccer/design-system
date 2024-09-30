@@ -104,6 +104,10 @@ export interface PopoverProps extends Pick<PopperWrapperProps, PopperProps>, Bas
    * Defines whether to show popover or not
    */
   disabled?: boolean;
+  /**
+   * Add delay to the popover opening event
+   */
+  openDelay?: number;
 }
 
 export const Popover = (props: PopoverProps) => {

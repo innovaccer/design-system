@@ -68,6 +68,10 @@ export interface TooltipProps extends Omit<PopoverProps, TooltipPopperProps>, Ba
    * Handles open/close
    */
   open?: boolean;
+  /**
+   * Add delay to the tooltip opening event
+   */
+  openDelay?: number;
 }
 
 export const detectTruncation = (boundaryRef: React.RefObject<HTMLElement>) => {
