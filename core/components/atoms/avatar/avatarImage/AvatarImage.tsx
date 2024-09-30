@@ -24,7 +24,7 @@ export const AvatarImage = (props: AvatarImageProps) => {
   const { children, src } = props;
   const [error, setError] = React.useState(false);
   const contextProp = React.useContext(AvatarContext);
-  const { size, appearance, firstName, lastName } = contextProp;
+  const { size, appearance, firstName, lastName, darkAppearance } = contextProp;
 
   const baseProps = extractBaseProps(props);
 
@@ -33,11 +33,11 @@ export const AvatarImage = (props: AvatarImageProps) => {
 
   const TextClassNames = classNames({
     [`Avatar-content--${size}`]: size,
-    [`Avatar-content--${appearance}`]: appearance,
+    ['Avatar-content']: appearance && darkAppearance.includes(appearance),
   });
 
   const IconClassNames = classNames({
-    [`Avatar-content--${appearance}`]: appearance,
+    ['Avatar-content']: appearance && darkAppearance.includes(appearance),
   });
 
   const onError = () => {

@@ -3,6 +3,7 @@ import { Icon } from '@/index';
 import { AvatarContext } from '../AvatarProvider';
 import { IconAppearance } from '../../icon';
 import { BaseProps } from '@/utils/types';
+import classNames from 'classnames';
 
 export interface AvatarIconProps extends BaseProps {
   /**
@@ -29,12 +30,16 @@ const appearanceMapper: Record<string, string> = {
 
 export const AvatarIcon = (props: AvatarIconProps) => {
   const contextProp = React.useContext(AvatarContext);
-  const { size, appearance } = contextProp;
+  const { size, appearance, darkAppearance = [] } = contextProp;
   const iconSize = size === 'regular' ? 20 : 16;
 
   const iconAppearance = (appearance && (appearanceMapper[appearance] as IconAppearance)) || 'inverse';
 
-  return <Icon {...props} size={iconSize} appearance={iconAppearance} />;
+  const IconClassNames = classNames({
+    ['Avatar-content']: appearance && darkAppearance.includes(appearance),
+  });
+
+  return <Icon {...props} size={iconSize} appearance={iconAppearance} className={IconClassNames} />;
 };
 
 export default AvatarIcon;

@@ -22,7 +22,7 @@ Object {
             tabindex="0"
           >
             <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
               data-test="DesignSystem-Text"
             >
               JD
@@ -48,7 +48,7 @@ Object {
           tabindex="0"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
             data-test="DesignSystem-Text"
           >
             JD
@@ -133,7 +133,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
               data-test="DesignSystem-Text"
             >
               JD
@@ -159,7 +159,7 @@ Object {
           tabindex="-1"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
             data-test="DesignSystem-Text"
           >
             JD
@@ -244,7 +244,7 @@ Object {
             tabindex="0"
           >
             <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular"
               data-test="DesignSystem-Text"
             >
               JD
@@ -270,7 +270,7 @@ Object {
           tabindex="0"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular"
             data-test="DesignSystem-Text"
           >
             JD
@@ -355,7 +355,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular"
               data-test="DesignSystem-Text"
             >
               JD
@@ -381,7 +381,7 @@ Object {
           tabindex="-1"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular"
             data-test="DesignSystem-Text"
           >
             JD
@@ -466,7 +466,7 @@ Object {
             tabindex="0"
           >
             <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent3"
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular"
               data-test="DesignSystem-Text"
             >
               JD
@@ -492,7 +492,7 @@ Object {
           tabindex="0"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent3"
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular"
             data-test="DesignSystem-Text"
           >
             JD
@@ -577,7 +577,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent3"
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular"
               data-test="DesignSystem-Text"
             >
               JD
@@ -603,7 +603,7 @@ Object {
           tabindex="-1"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent3"
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular"
             data-test="DesignSystem-Text"
           >
             JD
@@ -688,7 +688,7 @@ Object {
             tabindex="0"
           >
             <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent4"
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
               data-test="DesignSystem-Text"
             >
               JD
@@ -714,7 +714,7 @@ Object {
           tabindex="0"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent4"
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
             data-test="DesignSystem-Text"
           >
             JD
@@ -799,7 +799,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent4"
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
               data-test="DesignSystem-Text"
             >
               JD
@@ -825,7 +825,7 @@ Object {
           tabindex="-1"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent4"
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
             data-test="DesignSystem-Text"
           >
             JD
@@ -910,7 +910,7 @@ Object {
             tabindex="0"
           >
             <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular"
               data-test="DesignSystem-Text"
             >
               JD
@@ -936,7 +936,7 @@ Object {
           tabindex="0"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular"
             data-test="DesignSystem-Text"
           >
             JD
@@ -1021,7 +1021,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular"
               data-test="DesignSystem-Text"
             >
               JD
@@ -1047,7 +1047,7 @@ Object {
           tabindex="-1"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular"
             data-test="DesignSystem-Text"
           >
             JD
@@ -1132,7 +1132,7 @@ Object {
             tabindex="0"
           >
             <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--primary"
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular"
               data-test="DesignSystem-Text"
             >
               JD
@@ -1158,7 +1158,7 @@ Object {
           tabindex="0"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--primary"
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular"
             data-test="DesignSystem-Text"
           >
             JD
@@ -1243,7 +1243,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--primary"
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular"
               data-test="DesignSystem-Text"
             >
               JD
@@ -1269,7 +1269,7 @@ Object {
           tabindex="-1"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--primary"
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular"
             data-test="DesignSystem-Text"
           >
             JD
@@ -1354,7 +1354,7 @@ Object {
             tabindex="0"
           >
             <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--success"
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
               data-test="DesignSystem-Text"
             >
               JD
@@ -1380,7 +1380,7 @@ Object {
           tabindex="0"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--success"
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
             data-test="DesignSystem-Text"
           >
             JD
@@ -1465,7 +1465,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--success"
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
               data-test="DesignSystem-Text"
             >
               JD
@@ -1491,7 +1491,7 @@ Object {
           tabindex="-1"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--success"
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
             data-test="DesignSystem-Text"
           >
             JD
@@ -1576,7 +1576,7 @@ Object {
             tabindex="0"
           >
             <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
               data-test="DesignSystem-Text"
             >
               JD
@@ -1602,7 +1602,7 @@ Object {
           tabindex="0"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
             data-test="DesignSystem-Text"
           >
             JD
@@ -1687,7 +1687,7 @@ Object {
             tabindex="-1"
           >
             <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
               data-test="DesignSystem-Text"
             >
               JD
@@ -1713,7 +1713,7 @@ Object {
           tabindex="-1"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
             data-test="DesignSystem-Text"
           >
             JD
@@ -1798,7 +1798,7 @@ Object {
             tabindex="0"
           >
             <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
               data-test="DesignSystem-Text"
             >
               JD
@@ -1824,7 +1824,7 @@ Object {
           tabindex="0"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
             data-test="DesignSystem-Text"
           >
             JD
@@ -1909,7 +1909,7 @@ Object {
             tabindex="0"
           >
             <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
               data-test="DesignSystem-Text"
             >
               JD
@@ -1935,7 +1935,7 @@ Object {
           tabindex="0"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
             data-test="DesignSystem-Text"
           >
             JD
@@ -2020,7 +2020,7 @@ Object {
             tabindex="0"
           >
             <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
               data-test="DesignSystem-Text"
             >
               JD
@@ -2046,7 +2046,7 @@ Object {
           tabindex="0"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
             data-test="DesignSystem-Text"
           >
             JD
@@ -2131,7 +2131,7 @@ Object {
             tabindex="0"
           >
             <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"
+              class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
               data-test="DesignSystem-Text"
             >
               JD
@@ -2157,7 +2157,7 @@ Object {
           tabindex="0"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"
+            class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
             data-test="DesignSystem-Text"
           >
             JD

@@ -5,6 +5,7 @@ type ContextProps = {
   appearance?: string;
   firstName?: string;
   lastName?: string;
+  darkAppearance: string[];
 };
 
 export const AvatarContext = React.createContext<ContextProps>({
@@ -12,6 +13,7 @@ export const AvatarContext = React.createContext<ContextProps>({
   appearance: 'secondary',
   firstName: '',
   lastName: '',
+  darkAppearance: [],
 });
 
 export default AvatarContext.Provider;
