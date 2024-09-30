@@ -1322,17 +1322,17 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
         <div
-          class="Chip-wrapper Chip Chip-action--disabled"
+          class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-Chip--GenericChip"
           role="button"
           style="max-width: var(--spacing-9);"
-          tabindex="-1"
+          tabindex="0"
         >
           <div
             class="Chip-text--truncate"
           >
             <span
-              class="Text Text--default Text--regular Chip-text"
+              class="Text Text--regular color-inverse Chip-text"
               data-test="DesignSystem-GenericChip--Text"
             >
               Today, Sep 22
@@ -1995,17 +1995,17 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
         <div
-          class="Chip-wrapper Chip Chip-action--disabled"
+          class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-Chip--GenericChip"
           role="button"
           style="max-width: var(--spacing-9);"
-          tabindex="-1"
+          tabindex="0"
         >
           <div
             class="Chip-text--truncate"
           >
             <span
-              class="Text Text--default Text--regular Chip-text"
+              class="Text Text--regular color-inverse Chip-text"
               data-test="DesignSystem-GenericChip--Text"
             >
               Today, Sep 22
