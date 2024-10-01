@@ -54,12 +54,12 @@ export const ChipInputBox = (props: MultiSelectTriggerProps) => {
   return (
     <MultiSelectTrigger
       {...props}
+      ref={inputTriggerRef}
       value={chipInputValue}
       onChange={onChangeHandler}
       onInputChange={onUpdateHandler}
       onKeyDown={onKeyDownHandler}
       tabIndex={-1}
-      forwardedRef={inputTriggerRef}
       role="combobox"
       aria-haspopup="listbox"
       aria-controls={popoverId}
