@@ -1,3 +1,51 @@
+## 2.44.0 (2024-10-01)
+
+### Highlights
+
+- feat(avatarGroup): update avatar group popover list design (2de75c4f)
+- feat(select): update text color of select trigger placeholder (e23be2e4)
+- feat(avatar): update appearance of text and icon in avatar (e592a5ae)
+- feat(popover): add support for delay on popover opening (eaa5c228)
+- feat(molecules): add figma code connect for molecules component (de8c4b4b)
+- feat(combobox): add input text overflow behavior (e6b2f986)
+- feat(avatarGroup): update label for overflow story of avatar group (78668fd2)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(avatarGroup): update avatar group popover list design (2de75c4f)
+- feat(select): update text color of select trigger placeholder (e23be2e4)
+- feat(avatar): update appearance of text and icon in avatar (e592a5ae)
+- feat(popover): add support for delay on popover opening (eaa5c228)
+- feat(molecules): add figma code connect for molecules component (de8c4b4b)
+- feat(combobox): add input text overflow behavior (e6b2f986)
+- feat(avatarGroup): update label for overflow story of avatar group (78668fd2)
+
+### Fixes
+
+- fix(datepicker): update today date chip disabled state (449acb4f)
+
+### Improvements
+
+NA
+
+### Documentation
+
+- docs: update docs for browser title and table filters (f6495841)
+
+---
+
 ## 2.43.0 (2024-09-11)
 
 ### Highlights
