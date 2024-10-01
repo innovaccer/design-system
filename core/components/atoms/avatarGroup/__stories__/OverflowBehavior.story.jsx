@@ -6,7 +6,7 @@ export const OverflowBehavior = () => {
   return (
     <div className="d-flex">
       <div className="flex-column mr-9 ">
-        <Text weight="strong">Dynamic Width</Text>
+        <Text weight="strong">Dynamic Width (Recommended)</Text>
         <div className="mt-4">
           <AvatarGroup list={list} popoverOptions={{ width: 200 }} />
         </div>
@@ -56,7 +56,7 @@ const customCode = `() => {
   return (
     <div className="d-flex">
       <div className="flex-column mr-9 ">
-        <Text weight="strong">Dynamic Width</Text>
+        <Text weight="strong">Dynamic Width (Recommended)</Text>
         <div className="mt-4">
           <AvatarGroup list={list} popoverOptions={{ width: 200 }} />
         </div>
