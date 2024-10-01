@@ -6,8 +6,8 @@ const AvatarCount = (props: any) => {
   const { hiddenAvatarCount, avatarStyle, size, on } = props;
 
   const ContentClass = classNames({
-    [`Avatar-content--secondary`]: true,
-    [`Avatar-content--tiny`]: size === 'tiny',
+    ['Avatar-content']: true,
+    ['Avatar-content--tiny']: size === 'tiny',
   });
 
   const AvatarVariantsClass = classNames({
@@ -28,9 +28,7 @@ const AvatarCount = (props: any) => {
       role="button"
     >
       <span data-test="DesignSystem-AvatarGroup--TriggerAvatarVariants" className={AvatarVariantsClass}>
-        <Text appearance={'white'} className={ContentClass}>
-          {`+${hiddenAvatarCount}`}
-        </Text>
+        <Text className={ContentClass}>{`+${hiddenAvatarCount}`}</Text>
       </span>
     </div>
   );

@@ -131,6 +131,18 @@ describe('Avatar component with prop:appearance', () => {
   });
 });
 
+describe('Avatar component accessibility', () => {
+  it('should have the Avatar-content class when appearance is secondary', () => {
+    const { getByTestId } = render(<Avatar appearance="secondary">Design</Avatar>);
+    expect(getByTestId('DesignSystem-Text')).toHaveClass('Avatar-content');
+  });
+
+  it('should not have the Avatar-content class when appearance is primary', () => {
+    const { getByTestId } = render(<Avatar appearance="primary">Design</Avatar>);
+    expect(getByTestId('DesignSystem-Text')).not.toHaveClass('Avatar-content');
+  });
+});
+
 describe('Avatar component with prop:size', () => {
   it('should have the Avatar--regular class when size is regular', () => {
     const { getByTestId } = render(<Avatar>Design</Avatar>);

@@ -56,7 +56,7 @@ export const AvatarSelectionCount = (props: CountAvatarProp) => {
       ref={triggerRef}
     >
       <Avatar tabIndex={-1} size={size} appearance="secondary" className="SelectionAvatarCount cursor-pointer">
-        <Text className="overflow-hidden">{`+${hiddenAvatarCount}`}</Text>
+        <Text className="overflow-hidden Avatar-content">{`+${hiddenAvatarCount}`}</Text>
       </Avatar>
     </div>
   );

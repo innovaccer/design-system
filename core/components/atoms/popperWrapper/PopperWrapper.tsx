@@ -96,6 +96,10 @@ export interface PopperWrapperProps {
    * Defines whether to show popover or not
    */
   disabled?: boolean;
+  /**
+   * Add delay to the popover opening event
+   */
+  openDelay?: number;
 }
 
 interface PopperWrapperState {
@@ -222,15 +226,23 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
   }
 
   handleMouseEnter() {
-    const { on } = this.props;
+    const { on, openDelay, onToggle } = this.props;
     if (on === 'hover') {
       if (this._timer) clearTimeout(this._timer);
-      const { onToggle } = this.props;
 
-      onToggle(true, 'mouseEnter');
-      this.setState(() => {
-        return { isOpen: true };
-      });
+      if (openDelay) {
+        this._timer = window.setTimeout(() => {
+          this.setState(() => {
+            return { isOpen: true };
+          });
+          this.togglePopper('mouseEnter', true);
+        }, openDelay);
+      } else {
+        onToggle(true, 'mouseEnter');
+        this.setState(() => {
+          return { isOpen: true };
+        });
+      }
     }
   }
 
@@ -298,6 +310,19 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     return newStyle;
   };
 
+  onClickHandler = () => {
+    const { openDelay } = this.props;
+
+    // to add delay only while opening
+    if (openDelay && !this.state.isOpen) {
+      window.setTimeout(() => {
+        this.togglePopper('onClick');
+      }, openDelay);
+    } else {
+      this.togglePopper('onClick');
+    }
+  };
+
   getTriggerElement(ref: React.Ref<any>) {
     const { trigger, on, triggerClass, disabled } = this.props;
     const options =
@@ -313,7 +338,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
             ref,
             onClick: (ev: React.MouseEvent<HTMLDivElement>) => {
               ev.stopPropagation();
-              !disabled && this.togglePopper('onClick');
+              !disabled && this.onClickHandler();
             },
           };
 

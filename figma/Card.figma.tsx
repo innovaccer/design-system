@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardHeader, CardBody, CardFooter } from '@/index';
+import { Card, CardHeader, CardBody, CardFooter, CardSubdued } from '@/index';
 import figma from '@figma/code-connect';
 
 figma.connect(Card, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=39-315', {
@@ -17,6 +17,26 @@ figma.connect(Card, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---W
       <CardHeader>Card Header</CardHeader>
       <CardBody>Card Body</CardBody>
       <CardFooter>Card Footer</CardFooter>
+    </Card>
+  ),
+});
+
+// Subdued Card
+figma.connect(Card, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=1857-12808', {
+  imports: ["import { Card } from '@innovaccer/design-system'"],
+  props: {
+    cardSubdued: figma.enum('Subdued on', {
+      Bottom: <CardSubdued border="bottom">Subdued section.</CardSubdued>,
+      Right: <CardSubdued border="right">Subdued section.</CardSubdued>,
+      Top: <CardSubdued border="top">Subdued section.</CardSubdued>,
+      Left: <CardSubdued border="left">Subdued section.</CardSubdued>,
+    }),
+  },
+  example: (props) => (
+    <Card>
+      <CardHeader>Card Header</CardHeader>
+      <CardBody>Card Body</CardBody>
+      {props.cardSubdued}
     </Card>
   ),
 });

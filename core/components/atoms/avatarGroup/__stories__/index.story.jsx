@@ -3,16 +3,14 @@ import { AvatarGroup } from '@/index';
 import { list } from './AvatarList';
 
 export const all = () => {
-  const position = 'bottom-end';
+  const position = 'bottom';
   const on = 'hover';
-  const dark = true;
   const max = 2;
   const options = {
     max,
     popoverOptions: {
       on,
       position,
-      dark,
     },
     list: list.slice(0, 4),
   };
@@ -51,7 +49,7 @@ const customCode = `() => {
       lastName: 'Wheeler'
     },
   ];
-  return <AvatarGroup list={list} popoverOptions={{ dark: true, on: 'hover', position: 'bottom'}}/>;
+  return <AvatarGroup list={list} popoverOptions={{ position: 'bottom'}} />;
 }`;
 
 export default {

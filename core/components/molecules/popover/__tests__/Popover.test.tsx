@@ -195,6 +195,30 @@ describe('renders Popover component with prop: open and onToggle', () => {
     cleanup();
     expect(queryByTestId('DesignSystem-Popover')).not.toBeInTheDocument();
   });
+
+  it('Popover component with openDelay and onToggle', () => {
+    const open = true;
+    const openDelay = 1000;
+    const { getByTestId, queryByTestId, rerender } = render(
+      <Popover trigger={trigger} open={open} openDelay={openDelay} onToggle={FunctionValue}>
+        Popover
+      </Popover>
+    );
+
+    expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
+
+    const popoverTrigger = getByTestId('DesignSystem-PopoverTrigger');
+    fireEvent.click(popoverTrigger);
+    expect(FunctionValue).toHaveBeenCalledWith(!open, 'onClick');
+
+    rerender(
+      <Popover trigger={trigger} open={!open} onToggle={FunctionValue}>
+        Popover
+      </Popover>
+    );
+    cleanup();
+    expect(queryByTestId('DesignSystem-Popover')).not.toBeInTheDocument();
+  });
 });
 
 describe('Popover component with overwrite class', () => {

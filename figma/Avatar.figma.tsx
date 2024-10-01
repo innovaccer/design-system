@@ -33,6 +33,17 @@ figma.connect(Avatar, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS--
     disabled: figma.enum('State', {
       Disabled: true,
     }),
+    image: figma.enum('Type', {
+      Image: <Avatar.Image src="" />,
+    }),
+    icon: figma.enum('Type', {
+      Icon: <Avatar.Icon name="person" />,
+    }),
   },
-  example: (props) => <Avatar {...props} />,
+  example: ({ icon, image, ...rest }) => (
+    <Avatar {...rest} withTooltip={true}>
+      {icon}
+      {image}
+    </Avatar>
+  ),
 });

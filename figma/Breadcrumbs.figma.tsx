@@ -6,7 +6,7 @@ figma.connect(Breadcrumbs, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/
   imports: ["import { Breadcrumbs } from '@innovaccer/design-system'"],
   props: {
     list: figma.enum('Overflow', {
-      false: [
+      False: [
         {
           label: 'Level 0',
           link: '/',
@@ -24,7 +24,7 @@ figma.connect(Breadcrumbs, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/
           link: '/',
         },
       ],
-      true: [
+      True: [
         {
           label: 'Level 0',
           link: '/',
@@ -48,5 +48,10 @@ figma.connect(Breadcrumbs, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/
       ],
     }),
   },
-  example: (props) => <Breadcrumbs showTooltip={true} {...props} />,
+  example: (props) => (
+    <Breadcrumbs
+      showTooltip={true}
+      {...props}
+    />
+  ),
 });

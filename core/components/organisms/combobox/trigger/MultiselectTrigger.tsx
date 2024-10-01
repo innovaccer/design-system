@@ -98,7 +98,7 @@ export interface MultiSelectTriggerProps extends BaseProps {
   role?: React.AriaRole;
 }
 
-export const MultiSelectTrigger = (props: MultiSelectTriggerProps) => {
+export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTriggerProps>((props, forwardedInputRef) => {
   const {
     chipOptions,
     allowDuplicates,
@@ -119,7 +119,10 @@ export const MultiSelectTrigger = (props: MultiSelectTriggerProps) => {
     ...rest
   } = props;
 
-  const inputRef = React.createRef<HTMLInputElement>();
+  const localInputRef = React.useRef<HTMLInputElement>();
+  const customRef = React.useRef<any>();
+  const inputElementRef = (forwardedInputRef || localInputRef) as React.RefObject<HTMLInputElement>;
+
   const [chips, setChips] = React.useState<OptionType[]>(value || defaultValue);
   const [inputValue, setInputValue] = React.useState('');
 
@@ -131,6 +134,13 @@ export const MultiSelectTrigger = (props: MultiSelectTriggerProps) => {
       setInputValue('');
     }
   }, [value]);
+
+  React.useEffect(() => {
+    if (inputValue === '' && inputElementRef.current) {
+      inputElementRef.current.style.flexBasis = '0';
+      customRef.current.charCount = null;
+    }
+  }, [inputValue]);
 
   const ChipInputBorderClass = classNames({
     ['ChipInput-border']: true,
@@ -213,12 +223,33 @@ export const MultiSelectTrigger = (props: MultiSelectTriggerProps) => {
   };
 
   const onInputChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const inputElement = inputElementRef.current;
+
+    if (inputElement) {
+      const charLen = event.target.value.length;
+      const elementScrollWidth = inputElement.scrollWidth;
+      const elementClientWidth = inputElement.clientWidth;
+
+      if (elementScrollWidth > elementClientWidth && inputValue.length <= charLen) {
+        inputElement.style.flexBasis = 'auto';
+        if (customRef.current) {
+          customRef.current.charCount = charLen;
+        }
+      } else if (
+        elementScrollWidth <= elementClientWidth &&
+        inputValue.length > charLen &&
+        charLen <= (customRef.current?.charCount || 0) - 1
+      ) {
+        inputElement.style.flexBasis = '0';
+      }
+    }
+
     setInputValue(event.target.value);
     onInputChange && onInputChange(event);
   };
 
   const onClickHandler = () => {
-    inputRef.current?.focus();
+    inputElementRef.current?.focus();
   };
 
   const chipComponents = chips.map((chip, index) => {
@@ -253,12 +284,12 @@ export const MultiSelectTrigger = (props: MultiSelectTriggerProps) => {
         onClick={onClickHandler}
         tabIndex={disabled ? -1 : tabIndex || 0}
       >
-        <div className="ChipInput-wrapper">
+        <div className="ChipInput-wrapper" ref={customRef}>
           {chips && chips.length > 0 && chipComponents}
           <input
             {...rest}
             data-test="DesignSystem-MultiSelectTrigger--Input"
-            ref={props.forwardedRef || inputRef}
+            ref={inputElementRef}
             className="ChipInput-input"
             autoFocus={autoFocus}
             placeholder={chips && chips.length > 0 ? '' : placeholder}
@@ -285,7 +316,7 @@ export const MultiSelectTrigger = (props: MultiSelectTriggerProps) => {
       </div>
     </div>
   );
-};
+});
 
 MultiSelectTrigger.displayName = 'MultiSelectTrigger';
 MultiSelectTrigger.defaultProps = {

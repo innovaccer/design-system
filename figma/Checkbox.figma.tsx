@@ -17,7 +17,7 @@ figma.connect(Checkbox, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS
       Indeterminate: true,
     }),
     helpText: figma.enum('Help Text', {
-      true: 'Help text goes here',
+      True: 'Help text goes here',
     }),
     error: figma.boolean('Error'),
     disabled: figma.boolean('Disabled'),

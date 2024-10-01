@@ -98,6 +98,8 @@ export const Avatar = (props: AvatarProps) => {
   const AvatarAppearance =
     appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] || DefaultAppearance;
 
+  const darkAppearance = ['secondary', 'success', 'warning', 'accent1', 'accent4'];
+
   const AvatarClassNames = classNames(
     {
       Avatar: true,
@@ -118,11 +120,11 @@ export const Avatar = (props: AvatarProps) => {
 
   const TextClassNames = classNames({
     [`Avatar-content--${size}`]: size,
-    [`Avatar-content--${AvatarAppearance}`]: AvatarAppearance,
+    ['Avatar-content']: darkAppearance.includes(AvatarAppearance),
   });
 
   const IconClassNames = classNames({
-    [`Avatar-content--${AvatarAppearance}`]: AvatarAppearance,
+    ['Avatar-content']: darkAppearance.includes(AvatarAppearance),
   });
 
   const sharedProp = {
@@ -130,6 +132,7 @@ export const Avatar = (props: AvatarProps) => {
     firstName,
     lastName,
     appearance: AvatarAppearance,
+    darkAppearance,
   };
 
   const renderAvatar = () => {

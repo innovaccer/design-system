@@ -10,5 +10,5 @@ figma.connect(RangeSlider, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/
       Disabled: true,
     }),
   },
-  example: (props) => <RangeSlider defaultValue={[2, 4]} {...props} />,
+  example: (props) => <RangeSlider defaultValue={[2, 4]} label="Label" {...props} />,
 });
