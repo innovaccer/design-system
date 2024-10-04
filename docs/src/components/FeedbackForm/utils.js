@@ -50,18 +50,18 @@ export const getFeedbackOptions = (selectedOption) => {
       return {
         heading: 'What did you like?',
         choiceListOptions: positiveChoices,
-        Feedback_Type_ID: '1abd2340-9897-11ed-be33-0b714d6d3ec3',
-        Selected_Option_ID: '43e51150-9898-11ed-be33-0b714d6d3ec3',
-        Comment_Box_ID: '71e075e0-9898-11ed-be33-0b714d6d3ec3',
+        Feedback_Type_ID: '9282ac39-f587-4ae1-ab0a-0c3d23461b81',
+        Selected_Option_ID: 'c6eaad04-8f97-4c7e-89df-73d530db1ce0',
+        Comment_Box_ID: '1487fdc5-c078-4461-8506-a8ffcfde32c6',
       };
 
     case 'No':
       return {
         heading: 'Oh, what went wrong?',
         choiceListOptions: negativeChoices,
-        Feedback_Type_ID: '1abd2340-9897-11ed-be33-0b714d6d3ec3',
-        Selected_Option_ID: 'ce1b9070-9897-11ed-be33-0b714d6d3ec3',
-        Comment_Box_ID: 'f5852220-9897-11ed-be33-0b714d6d3ec3',
+        Feedback_Type_ID: '9282ac39-f587-4ae1-ab0a-0c3d23461b81',
+        Selected_Option_ID: '70aa236c-2889-436a-a359-0a97c654cb29',
+        Comment_Box_ID: '13ed6dde-a0b1-4848-8dba-f36dfee0dc7c',
       };
 
     default:
