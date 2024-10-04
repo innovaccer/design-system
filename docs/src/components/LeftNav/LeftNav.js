@@ -25,9 +25,12 @@ const LeftNav = (props) => {
   function getActiveNavItem() {
     const pathName = window.location.pathname;
 
+
     if (isBrowser && pathName && frontmatter.tabs) {
       const url = pathName.split('/');
+      console.log(url, "url")
       const componentName = pathName.includes('mobile') ? url[2] + '/' + url[3] : url[1] + '/' + url[2];
+      console.log(componentName, "name")
       const activeMenu = navItems.filter(({ link }) => {
         return link && link.includes(componentName);
       });
@@ -52,7 +55,7 @@ const LeftNav = (props) => {
 
     ele.addEventListener('scroll', setPosition(ele.scrollTop));
     return () => ele.removeEventListener('scroll', setPosition(ele.scrollTop));
-  }, []);
+  }, [window.location.pathname]);
 
   const onClickHandler = (menu) => {
     navigate(menu.link);
