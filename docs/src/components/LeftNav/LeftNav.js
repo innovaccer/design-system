@@ -3,6 +3,7 @@ import { useNavItems } from '../../util/NavItems';
 import { VerticalNav, Subheading } from '@innovaccer/design-system';
 import { navigate } from 'gatsby';
 import { MOBILE } from '../../util/constants';
+import { useLocation } from 'react-router-dom';
 import Tile from '../Tile/Tile';
 
 const isBrowser = typeof window !== 'undefined';
@@ -51,7 +52,7 @@ const LeftNav = (props) => {
 
     ele.addEventListener('scroll', setPosition(ele.scrollTop));
     return () => ele.removeEventListener('scroll', setPosition(ele.scrollTop));
-  }, [window?.location.pathname]);
+  }, [props.location.pathname]);
 
   const onClickHandler = (menu) => {
     navigate(menu.link);
