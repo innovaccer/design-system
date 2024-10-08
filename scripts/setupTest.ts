@@ -6,7 +6,7 @@ const { configure } = ReactTestingLibrary;
 
 configure({ testIdAttribute: 'data-test' });
 
-jest.mock('@/utils/uidGenerator', () => () => ('Test-uid'));
+jest.mock('@/utils/uidGenerator', () => () => 'Test-uid');
 
 document.createRange = () => ({
   setStart: () => {},
@@ -18,7 +18,21 @@ document.createRange = () => ({
   },
   // @ts-ignore
   commonAncestorContainer: {
-    nodeName: "BODY",
+    nodeName: 'BODY',
     ownerDocument: document,
   },
 });
+
+class MockResizeObserver {
+  constructor() {}
+  disconnect() {}
+  observe() {}
+  unobserve() {}
+}
+declare global {}
+
+// For a browser environment, use the `window` object.
+(window as any).ResizeObserver = MockResizeObserver;
+
+// For a Node.js environment, use the `global` object.
+(global as any).ResizeObserver = MockResizeObserver;

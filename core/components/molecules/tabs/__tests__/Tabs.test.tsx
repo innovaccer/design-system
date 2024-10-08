@@ -314,3 +314,51 @@ describe('Tabs Wrapper component custom max-width', () => {
     expect(getByTestId('DesignSystem-Tabs--TextWrapper')).toHaveStyle('max-width: 100px;');
   });
 });
+
+describe('Tabs component overflow behavior', () => {
+  it('render multiple tabs with more button', async () => {
+    const { getByTestId, getAllByTestId } = render(
+      <Tabs activeIndex={0} maxWidth={10}>
+        <Tab label="All" count={24}>
+          <div>All</div>
+        </Tab>
+        <Tab label="Under Review" count={5}>
+          <div>Under Review</div>
+        </Tab>
+        <Tab label="Transferred" count={3}>
+          <div>Transferred</div>
+        </Tab>
+        <Tab label="Successful" count={2}>
+          <div>Successful</div>
+        </Tab>
+        <Tab label="Declined" count={5}>
+          <div>Declined</div>
+        </Tab>
+        <Tab label="Unsuccessful Transfer" count={4}>
+          <div>Unsuccessful Transfer</div>
+        </Tab>
+        <Tab label="Pending" count={3}>
+          <div>Pending</div>
+        </Tab>
+        <Tab label="On Hold" count={2}>
+          <div>On Hold</div>
+        </Tab>
+      </Tabs>
+    );
+
+    // Simulate width overflow
+    Object.defineProperty(HTMLElement.prototype, 'clientWidth', { configurable: true, value: 500 });
+    Object.defineProperty(HTMLElement.prototype, 'scrollWidth', { configurable: true, value: 1000 });
+
+    setTimeout(() => {
+      expect(getByTestId('DesignSystem-Tabs-Menu--Trigger')).toBeInTheDocument();
+      expect(getAllByTestId('DesignSystem-Tabs--Tab')).toHaveLength(5);
+
+      fireEvent.click(getByTestId('DesignSystem-Tabs-Menu--Trigger'));
+      expect(getAllByTestId('DesignSystem-Menu-ListItem')).toHaveLength(3);
+
+      fireEvent.click(getAllByTestId('DesignSystem-Menu-ListItem')[0]);
+      expect(getAllByTestId('DesignSystem-Tabs--Tab')).toHaveLength(5);
+    }, 1000);
+  });
+});
