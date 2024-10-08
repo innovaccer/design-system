@@ -249,6 +249,7 @@ const Layout = ({
           pageTitle={pageTitle}
           showMobile={showMobile}
           frontmatter={frontmatter}
+          location={location}
         />
         <Column
           className={`${showAnimation() ? 'page-animation' : ''} page-scroll h-100`}
