@@ -3,7 +3,6 @@ import { useNavItems } from '../../util/NavItems';
 import { VerticalNav, Subheading } from '@innovaccer/design-system';
 import { navigate } from 'gatsby';
 import { MOBILE } from '../../util/constants';
-import { useLocation } from 'react-router-dom';
 import Tile from '../Tile/Tile';
 
 const isBrowser = typeof window !== 'undefined';
