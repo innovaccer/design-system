@@ -1,66 +1,6 @@
 {
   "auditReportVersion": 2,
   "vulnerabilities": {
-    "@commitlint/cli": {
-      "name": "@commitlint/cli",
-      "severity": "high",
-      "isDirect": false,
-      "via": [
-        "@commitlint/lint"
-      ],
-      "effects": [
-        "commitlint"
-      ],
-      "range": "9.0.0 - 16.3.0",
-      "nodes": [
-        "node_modules/commitlint/node_modules/@commitlint/cli"
-      ],
-      "fixAvailable": {
-        "name": "commitlint",
-        "version": "19.5.0",
-        "isSemVerMajor": true
-      }
-    },
-    "@commitlint/is-ignored": {
-      "name": "@commitlint/is-ignored",
-      "severity": "high",
-      "isDirect": false,
-      "via": [
-        "semver"
-      ],
-      "effects": [
-        "@commitlint/lint"
-      ],
-      "range": "9.0.0 - 17.6.5",
-      "nodes": [
-        "node_modules/commitlint/node_modules/@commitlint/is-ignored"
-      ],
-      "fixAvailable": {
-        "name": "commitlint",
-        "version": "19.5.0",
-        "isSemVerMajor": true
-      }
-    },
-    "@commitlint/lint": {
-      "name": "@commitlint/lint",
-      "severity": "high",
-      "isDirect": false,
-      "via": [
-        "@commitlint/is-ignored"
-      ],
-      "effects": [
-        "@commitlint/cli"
-      ],
-      "range": "9.0.0 - 16.2.4",
-      "nodes": [
-        "node_modules/commitlint/node_modules/@commitlint/lint"
-      ],
-      "fixAvailable": {
-        "name": "commitlint",
-        "version": "19.5.0",
-        "isSemVerMajor": true
-      }
-    },
     "@jest/core": {
       "name": "@jest/core",
       "severity": "moderate",
@@ -768,24 +708,6 @@
         "isSemVerMajor": true
       }
     },
-    "commitlint": {
-      "name": "commitlint",
-      "severity": "high",
-      "isDirect": true,
-      "via": [
-        "@commitlint/cli"
-      ],
-      "effects": [],
-      "range": "9.0.1 - 16.3.0",
-      "nodes": [
-        "node_modules/commitlint"
-      ],
-      "fixAvailable": {
-        "name": "commitlint",
-        "version": "19.5.0",
-        "isSemVerMajor": true
-      }
-    },
     "cpy": {
       "name": "cpy",
       "severity": "moderate",
@@ -1169,10 +1091,8 @@
       "via": [
         "jest-cli"
       ],
-      "effects": [
-        "ts-jest"
-      ],
-      "range": "23.5.0 - 24.9.0",
+      "effects": [],
+      "range": "24.2.0-alpha.0 - 24.9.0",
       "nodes": [
         "node_modules/jest"
       ],
@@ -2190,11 +2110,7 @@
       "nodes": [
         "node_modules/postcss"
       ],
-      "fixAvailable": {
-        "name": "gulp-postcss",
-        "version": "10.0.0",
-        "isSemVerMajor": true
-      }
+      "fixAvailable": false
     },
     "postcss-color-mod-function": {
       "name": "postcss-color-mod-function",
@@ -2508,22 +2424,6 @@
           "range": "<4.3.2"
         },
         {
-          "source": 1098562,
-          "name": "semver",
-          "dependency": "semver",
-          "title": "semver vulnerable to Regular Expression Denial of Service",
-          "url": "https://github.com/advisories/GHSA-c2qf-rxjj-qqgw",
-          "severity": "high",
-          "cwe": [
-            "CWE-1333"
-          ],
-          "cvss": {
-            "score": 7.5,
-            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-          },
-          "range": ">=7.0.0 <7.5.2"
-        },
-        {
           "source": 1098563,
           "name": "semver",
           "dependency": "semver",
@@ -2541,14 +2441,12 @@
         }
       ],
       "effects": [
-        "@commitlint/is-ignored",
         "levelup",
         "npm",
         "typescript-estree"
       ],
-      "range": "<=5.7.1 || 7.0.0 - 7.5.1",
+      "range": "<=5.7.1",
       "nodes": [
-        "node_modules/commitlint/node_modules/semver",
         "node_modules/levelup/node_modules/semver",
         "node_modules/npm/node_modules/semver",
         "node_modules/typescript-estree/node_modules/semver"
@@ -2775,7 +2673,6 @@
       "severity": "moderate",
       "isDirect": true,
       "via": [
-        "jest",
         "yargs-parser"
       ],
       "effects": [],
@@ -3016,17 +2913,17 @@
       "info": 0,
       "low": 1,
       "moderate": 73,
-      "high": 50,
+      "high": 46,
       "critical": 4,
-      "total": 128
+      "total": 124
     },
     "dependencies": {
       "prod": 98,
-      "dev": 3947,
-      "optional": 63,
-      "peer": 14,
+      "dev": 3872,
+      "optional": 64,
+      "peer": 15,
       "peerOptional": 0,
-      "total": 4045
+      "total": 3970
     }
   }
 }
