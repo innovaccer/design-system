@@ -74,7 +74,7 @@
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "all-contributors-cli": "^6.20.0",
-    "autoprefixer": "^9.7.3",
+    "autoprefixer": "10.4.20",
     "babel-loader": "^8.0.6",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "bl": ">=1.2.3",
