@@ -116,7 +116,7 @@
     "rollup-plugin-node-builtins": "^2.1.2",
     "rollup-plugin-uglify": "^6.0.4",
     "trim": ">=0.0.3",
-    "ts-jest": "^24.3.0",
+    "ts-jest": "29.2.5",
     "ts-loader": "^6.2.1",
     "tslint": "^6.0.0-beta0",
     "tslint-config-airbnb": "^5.11.2",
@@ -136,6 +136,9 @@
     },
     "tslint-react": {
       "tslint": "$tslint"
+    },
+    "ts-jest": {
+      "typescript": "$typescript"
     }
   },
   "dependencies": {
