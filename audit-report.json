@@ -1,37 +1,6 @@
 {
   "auditReportVersion": 2,
   "vulnerabilities": {
-    "@jest/core": {
-      "name": "@jest/core",
-      "severity": "moderate",
-      "isDirect": false,
-      "via": [
-        "@jest/reporters",
-        "@jest/transform",
-        "jest-config",
-        "jest-haste-map",
-        "jest-message-util",
-        "jest-resolve-dependencies",
-        "jest-runner",
-        "jest-runtime",
-        "jest-snapshot",
-        "jest-util",
-        "jest-watcher",
-        "micromatch"
-      ],
-      "effects": [
-        "jest-cli"
-      ],
-      "range": "<=25.5.4",
-      "nodes": [
-        "node_modules/@jest/core"
-      ],
-      "fixAvailable": {
-        "name": "jest",
-        "version": "29.7.0",
-        "isSemVerMajor": true
-      }
-    },
     "@jest/environment": {
       "name": "@jest/environment",
       "severity": "moderate",
@@ -40,9 +9,7 @@
         "@jest/fake-timers",
         "@jest/transform"
       ],
-      "effects": [
-        "jest-runner"
-      ],
+      "effects": [],
       "range": "<=24.9.0",
       "nodes": [
         "node_modules/@jest/environment"
@@ -57,8 +24,6 @@
         "jest-message-util"
       ],
       "effects": [
-        "jest-environment-jsdom",
-        "jest-environment-node",
         "jest-util"
       ],
       "range": "<=24.9.0",
@@ -66,55 +31,8 @@
         "node_modules/@jest/fake-timers"
       ],
       "fixAvailable": {
-        "name": "jest",
-        "version": "29.7.0",
-        "isSemVerMajor": true
-      }
-    },
-    "@jest/reporters": {
-      "name": "@jest/reporters",
-      "severity": "moderate",
-      "isDirect": false,
-      "via": [
-        "@jest/environment",
-        "@jest/transform",
-        "jest-haste-map",
-        "jest-runtime",
-        "jest-util",
-        "node-notifier"
-      ],
-      "effects": [
-        "@jest/core"
-      ],
-      "range": "<=26.4.0",
-      "nodes": [
-        "node_modules/@jest/reporters"
-      ],
-      "fixAvailable": {
-        "name": "jest",
-        "version": "29.7.0",
-        "isSemVerMajor": true
-      }
-    },
-    "@jest/test-sequencer": {
-      "name": "@jest/test-sequencer",
-      "severity": "moderate",
-      "isDirect": false,
-      "via": [
-        "jest-haste-map",
-        "jest-runner",
-        "jest-runtime"
-      ],
-      "effects": [
-        "jest-config"
-      ],
-      "range": "<=24.9.0",
-      "nodes": [
-        "node_modules/@jest/test-sequencer"
-      ],
-      "fixAvailable": {
-        "name": "jest",
-        "version": "29.7.0",
+        "name": "@storybook/addon-docs",
+        "version": "8.3.5",
         "isSemVerMajor": true
       }
     },
@@ -130,22 +48,16 @@
       ],
       "effects": [
         "@jest/environment",
-        "@storybook/addon-docs",
-        "babel-jest",
-        "jest-runtime"
+        "@storybook/addon-docs"
       ],
       "range": "<=26.6.2",
       "nodes": [
-        "node_modules/@jest/core/node_modules/@jest/transform",
         "node_modules/@jest/environment/node_modules/@jest/transform",
-        "node_modules/@jest/reporters/node_modules/@jest/transform",
-        "node_modules/@jest/transform",
-        "node_modules/babel-jest/node_modules/@jest/transform",
-        "node_modules/jest-runtime/node_modules/@jest/transform"
+        "node_modules/@jest/transform"
       ],
       "fixAvailable": {
-        "name": "jest",
-        "version": "29.7.0",
+        "name": "@storybook/addon-docs",
+        "version": "8.3.5",
         "isSemVerMajor": true
       }
     },
@@ -504,20 +416,14 @@
       ],
       "range": "1.2.0 - 2.0.0",
       "nodes": [
-        "node_modules/@jest/core/node_modules/anymatch",
         "node_modules/@jest/environment/node_modules/anymatch",
-        "node_modules/@jest/reporters/node_modules/anymatch",
-        "node_modules/@jest/test-sequencer/node_modules/anymatch",
-        "node_modules/babel-jest/node_modules/anymatch",
         "node_modules/glob-watcher/node_modules/anymatch",
-        "node_modules/jest-runner/node_modules/anymatch",
-        "node_modules/jest-runtime/node_modules/anymatch",
         "node_modules/sane/node_modules/anymatch",
         "node_modules/watchpack-chokidar2/node_modules/anymatch"
       ],
       "fixAvailable": {
-        "name": "jest",
-        "version": "29.7.0",
+        "name": "gulp",
+        "version": "5.0.0",
         "isSemVerMajor": true
       }
     },
@@ -536,26 +442,6 @@
       "fixAvailable": {
         "name": "autoprefixer",
         "version": "10.4.20",
-        "isSemVerMajor": true
-      }
-    },
-    "babel-jest": {
-      "name": "babel-jest",
-      "severity": "moderate",
-      "isDirect": false,
-      "via": [
-        "@jest/transform"
-      ],
-      "effects": [
-        "jest-config"
-      ],
-      "range": "24.2.0-alpha.0 - 24.9.0",
-      "nodes": [
-        "node_modules/babel-jest"
-      ],
-      "fixAvailable": {
-        "name": "jest",
-        "version": "29.7.0",
         "isSemVerMajor": true
       }
     },
@@ -742,27 +628,6 @@
         "node_modules/css-loader"
       ],
       "fixAvailable": true
-    },
-    "expect": {
-      "name": "expect",
-      "severity": "moderate",
-      "isDirect": false,
-      "via": [
-        "jest-message-util"
-      ],
-      "effects": [
-        "jest-jasmine2",
-        "jest-snapshot"
-      ],
-      "range": "21.0.0-beta.1 - 24.9.0",
-      "nodes": [
-        "node_modules/expect"
-      ],
-      "fixAvailable": {
-        "name": "jest",
-        "version": "29.7.0",
-        "isSemVerMajor": true
-      }
     },
     "fast-glob": {
       "name": "fast-glob",
@@ -1084,111 +949,6 @@
       ],
       "fixAvailable": true
     },
-    "jest": {
-      "name": "jest",
-      "severity": "moderate",
-      "isDirect": true,
-      "via": [
-        "jest-cli"
-      ],
-      "effects": [],
-      "range": "24.2.0-alpha.0 - 24.9.0",
-      "nodes": [
-        "node_modules/jest"
-      ],
-      "fixAvailable": {
-        "name": "jest",
-        "version": "29.7.0",
-        "isSemVerMajor": true
-      }
-    },
-    "jest-cli": {
-      "name": "jest-cli",
-      "severity": "moderate",
-      "isDirect": false,
-      "via": [
-        "@jest/core",
-        "jest-config",
-        "jest-util"
-      ],
-      "effects": [
-        "jest"
-      ],
-      "range": "23.5.0 - 24.9.0",
-      "nodes": [
-        "node_modules/jest-cli"
-      ],
-      "fixAvailable": {
-        "name": "jest",
-        "version": "29.7.0",
-        "isSemVerMajor": true
-      }
-    },
-    "jest-config": {
-      "name": "jest-config",
-      "severity": "moderate",
-      "isDirect": false,
-      "via": [
-        "@jest/test-sequencer",
-        "babel-jest",
-        "jest-environment-jsdom",
-        "jest-environment-node",
-        "jest-jasmine2",
-        "jest-util",
-        "micromatch"
-      ],
-      "effects": [
-        "jest-cli",
-        "jest-runner",
-        "jest-runtime"
-      ],
-      "range": "12.1.1-alpha.2935e14d - 25.5.4",
-      "nodes": [
-        "node_modules/jest-config"
-      ],
-      "fixAvailable": {
-        "name": "jest",
-        "version": "29.7.0",
-        "isSemVerMajor": true
-      }
-    },
-    "jest-each": {
-      "name": "jest-each",
-      "severity": "moderate",
-      "isDirect": false,
-      "via": [
-        "jest-util"
-      ],
-      "effects": [],
-      "range": "24.2.0-alpha.0 - 24.9.0",
-      "nodes": [
-        "node_modules/jest-each"
-      ],
-      "fixAvailable": true
-    },
-    "jest-environment-jsdom": {
-      "name": "jest-environment-jsdom",
-      "severity": "moderate",
-      "isDirect": false,
-      "via": [
-        "@jest/environment",
-        "@jest/fake-timers",
-        "jest-util",
-        "jsdom"
-      ],
-      "effects": [
-        "jest-config"
-      ],
-      "range": "10.0.2 - 25.5.0",
-      "nodes": [
-        "node_modules/jest-environment-jsdom"
-      ],
-      "fixAvailable": {
-        "name": "jest",
-        "version": "29.7.0",
-        "isSemVerMajor": true
-      }
-    },
     "jest-environment-jsdom-fifteen": {
       "name": "jest-environment-jsdom-fifteen",
       "severity": "moderate",
@@ -1205,22 +965,6 @@
       ],
       "fixAvailable": false
     },
-    "jest-environment-node": {
-      "name": "jest-environment-node",
-      "severity": "moderate",
-      "isDirect": false,
-      "via": [
-        "@jest/environment",
-        "@jest/fake-timers",
-        "jest-util"
-      ],
-      "effects": [],
-      "range": "24.2.0-alpha.0 - 24.9.0",
-      "nodes": [
-        "node_modules/jest-environment-node"
-      ],
-      "fixAvailable": true
-    },
     "jest-haste-map": {
       "name": "jest-haste-map",
       "severity": "moderate",
@@ -1232,51 +976,16 @@
         "sane"
       ],
       "effects": [
-        "@jest/reporters",
-        "@jest/test-sequencer",
-        "@jest/transform",
-        "jest-runtime"
+        "@jest/transform"
       ],
       "range": "18.1.0 - 26.6.2",
       "nodes": [
-        "node_modules/@jest/core/node_modules/jest-haste-map",
         "node_modules/@jest/environment/node_modules/jest-haste-map",
-        "node_modules/@jest/reporters/node_modules/jest-haste-map",
-        "node_modules/@jest/test-sequencer/node_modules/jest-haste-map",
-        "node_modules/babel-jest/node_modules/jest-haste-map",
-        "node_modules/jest-haste-map",
-        "node_modules/jest-runner/node_modules/jest-haste-map",
-        "node_modules/jest-runtime/node_modules/jest-haste-map"
+        "node_modules/jest-haste-map"
       ],
       "fixAvailable": {
-        "name": "jest",
-        "version": "29.7.0",
-        "isSemVerMajor": true
-      }
-    },
-    "jest-jasmine2": {
-      "name": "jest-jasmine2",
-      "severity": "moderate",
-      "isDirect": false,
-      "via": [
-        "@jest/environment",
-        "expect",
-        "jest-each",
-        "jest-message-util",
-        "jest-runtime",
-        "jest-snapshot",
-        "jest-util"
-      ],
-      "effects": [
-        "jest-config"
-      ],
-      "range": "18.5.0-alpha.7da3df39 - 24.9.0",
-      "nodes": [
-        "node_modules/jest-jasmine2"
-      ],
-      "fixAvailable": {
-        "name": "jest",
-        "version": "29.7.0",
+        "name": "@storybook/addon-docs",
+        "version": "8.3.5",
         "isSemVerMajor": true
       }
     },
@@ -1288,103 +997,15 @@
         "micromatch"
       ],
       "effects": [
-        "@jest/fake-timers",
-        "expect",
-        "jest-jasmine2",
-        "jest-runner",
-        "jest-runtime",
-        "jest-snapshot"
+        "@jest/fake-timers"
       ],
       "range": "18.5.0-alpha.7da3df39 - 24.9.0",
       "nodes": [
         "node_modules/jest-message-util"
       ],
       "fixAvailable": {
-        "name": "jest",
-        "version": "29.7.0",
-        "isSemVerMajor": true
-      }
-    },
-    "jest-resolve-dependencies": {
-      "name": "jest-resolve-dependencies",
-      "severity": "moderate",
-      "isDirect": false,
-      "via": [
-        "jest-snapshot"
-      ],
-      "effects": [],
-      "range": "23.3.0 - 24.9.0",
-      "nodes": [
-        "node_modules/jest-resolve-dependencies"
-      ],
-      "fixAvailable": true
-    },
-    "jest-runner": {
-      "name": "jest-runner",
-      "severity": "moderate",
-      "isDirect": false,
-      "via": [
-        "@jest/environment",
-        "jest-config",
-        "jest-haste-map",
-        "jest-jasmine2",
-        "jest-message-util",
-        "jest-runtime",
-        "jest-util"
-      ],
-      "effects": [],
-      "range": "21.0.0-alpha.1 - 24.9.0",
-      "nodes": [
-        "node_modules/jest-runner"
-      ],
-      "fixAvailable": true
-    },
-    "jest-runtime": {
-      "name": "jest-runtime",
-      "severity": "moderate",
-      "isDirect": false,
-      "via": [
-        "@jest/environment",
-        "@jest/transform",
-        "jest-config",
-        "jest-haste-map",
-        "jest-message-util",
-        "jest-snapshot",
-        "jest-util"
-      ],
-      "effects": [
-        "jest-jasmine2"
-      ],
-      "range": "18.1.0 - 24.9.0",
-      "nodes": [
-        "node_modules/jest-runtime"
-      ],
-      "fixAvailable": {
-        "name": "jest",
-        "version": "29.7.0",
-        "isSemVerMajor": true
-      }
-    },
-    "jest-snapshot": {
-      "name": "jest-snapshot",
-      "severity": "moderate",
-      "isDirect": false,
-      "via": [
-        "expect",
-        "jest-message-util"
-      ],
-      "effects": [
-        "jest-jasmine2",
-        "jest-resolve-dependencies",
-        "jest-runtime"
-      ],
-      "range": "23.3.0 - 24.9.0",
-      "nodes": [
-        "node_modules/jest-snapshot"
-      ],
-      "fixAvailable": {
-        "name": "jest",
-        "version": "29.7.0",
+        "name": "@storybook/addon-docs",
+        "version": "8.3.5",
         "isSemVerMajor": true
       }
     },
@@ -1396,47 +1017,18 @@
         "@jest/fake-timers"
       ],
       "effects": [
-        "jest-each",
-        "jest-haste-map",
-        "jest-watcher"
+        "jest-haste-map"
       ],
       "range": "24.2.0-alpha.0 - 24.9.0",
       "nodes": [
-        "node_modules/@jest/core/node_modules/jest-util",
         "node_modules/@jest/environment/node_modules/jest-util",
-        "node_modules/@jest/reporters/node_modules/jest-util",
-        "node_modules/@jest/test-sequencer/node_modules/jest-util",
-        "node_modules/babel-jest/node_modules/jest-util",
-        "node_modules/jest-cli/node_modules/jest-util",
-        "node_modules/jest-config/node_modules/jest-util",
-        "node_modules/jest-each/node_modules/jest-util",
-        "node_modules/jest-environment-jsdom-fifteen/node_modules/jest-util",
-        "node_modules/jest-environment-jsdom/node_modules/jest-util",
-        "node_modules/jest-environment-node/node_modules/jest-util",
-        "node_modules/jest-jasmine2/node_modules/jest-util",
-        "node_modules/jest-runner/node_modules/jest-util",
-        "node_modules/jest-runtime/node_modules/jest-util",
-        "node_modules/jest-watcher/node_modules/jest-util"
+        "node_modules/jest-environment-jsdom-fifteen/node_modules/jest-util"
       ],
       "fixAvailable": {
-        "name": "jest",
-        "version": "29.7.0",
+        "name": "@storybook/addon-docs",
+        "version": "8.3.5",
         "isSemVerMajor": true
       }
-    },
-    "jest-watcher": {
-      "name": "jest-watcher",
-      "severity": "moderate",
-      "isDirect": false,
-      "via": [
-        "jest-util"
-      ],
-      "effects": [],
-      "range": "24.2.0-alpha.0 - 24.9.0",
-      "nodes": [
-        "node_modules/jest-watcher"
-      ],
-      "fixAvailable": true
     },
     "jsdom": {
       "name": "jsdom",
@@ -1448,19 +1040,13 @@
         "tough-cookie"
       ],
       "effects": [
-        "jest-environment-jsdom",
         "jest-environment-jsdom-fifteen"
       ],
       "range": "0.1.20 || 0.2.0 - 16.5.3",
       "nodes": [
-        "node_modules/jest-environment-jsdom-fifteen/node_modules/jsdom",
-        "node_modules/jsdom"
+        "node_modules/jest-environment-jsdom-fifteen/node_modules/jsdom"
       ],
-      "fixAvailable": {
-        "name": "jest",
-        "version": "29.7.0",
-        "isSemVerMajor": true
-      }
+      "fixAvailable": false
     },
     "latest-version": {
       "name": "latest-version",
@@ -1594,18 +1180,12 @@
       "via": [
         "npm-registry-fetch"
       ],
-      "effects": [
-        "npm"
-      ],
+      "effects": [],
       "range": "<=1.0.1",
       "nodes": [
         "node_modules/npm/node_modules/libnpmorg"
       ],
-      "fixAvailable": {
-        "name": "npm",
-        "version": "10.9.0",
-        "isSemVerMajor": true
-      }
+      "fixAvailable": true
     },
     "libnpmpublish": {
       "name": "libnpmpublish",
@@ -1642,12 +1222,18 @@
       "via": [
         "npm-registry-fetch"
       ],
-      "effects": [],
+      "effects": [
+        "npm"
+      ],
       "range": "<=1.0.2",
       "nodes": [
         "node_modules/npm/node_modules/libnpmteam"
       ],
-      "fixAvailable": true
+      "fixAvailable": {
+        "name": "npm",
+        "version": "10.9.0",
+        "isSemVerMajor": true
+      }
     },
     "libnpx": {
       "name": "libnpx",
@@ -1769,13 +1355,11 @@
         "braces"
       ],
       "effects": [
-        "@jest/core",
         "@jest/transform",
         "anymatch",
         "fast-glob",
         "findup-sync",
         "fork-ts-checker-webpack-plugin",
-        "jest-config",
         "jest-haste-map",
         "jest-message-util",
         "matchdep",
@@ -1812,41 +1396,6 @@
       "fixAvailable": {
         "name": "npm",
         "version": "10.9.0",
-        "isSemVerMajor": true
-      }
-    },
-    "node-notifier": {
-      "name": "node-notifier",
-      "severity": "moderate",
-      "isDirect": false,
-      "via": [
-        {
-          "source": 1086436,
-          "name": "node-notifier",
-          "dependency": "node-notifier",
-          "title": "OS Command Injection in node-notifier",
-          "url": "https://github.com/advisories/GHSA-5fw9-fq32-wv5p",
-          "severity": "moderate",
-          "cwe": [
-            "CWE-78"
-          ],
-          "cvss": {
-            "score": 5.6,
-            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L"
-          },
-          "range": "<8.0.1"
-        }
-      ],
-      "effects": [
-        "@jest/reporters"
-      ],
-      "range": "<8.0.1",
-      "nodes": [
-        "node_modules/@jest/reporters/node_modules/node-notifier"
-      ],
-      "fixAvailable": {
-        "name": "jest",
-        "version": "29.7.0",
         "isSemVerMajor": true
       }
     },
@@ -2110,7 +1659,11 @@
       "nodes": [
         "node_modules/postcss"
       ],
-      "fixAvailable": false
+      "fixAvailable": {
+        "name": "autoprefixer",
+        "version": "10.4.20",
+        "isSemVerMajor": true
+      }
     },
     "postcss-color-mod-function": {
       "name": "postcss-color-mod-function",
@@ -2317,11 +1870,7 @@
       "nodes": [
         "node_modules/request-promise-core"
       ],
-      "fixAvailable": {
-        "name": "jest",
-        "version": "29.7.0",
-        "isSemVerMajor": true
-      }
+      "fixAvailable": false
     },
     "request-promise-native": {
       "name": "request-promise-native",
@@ -2339,11 +1888,7 @@
       "nodes": [
         "node_modules/request-promise-native"
       ],
-      "fixAvailable": {
-        "name": "jest",
-        "version": "29.7.0",
-        "isSemVerMajor": true
-      }
+      "fixAvailable": false
     },
     "rollup-plugin-node-builtins": {
       "name": "rollup-plugin-node-builtins",
@@ -2397,8 +1942,8 @@
         "node_modules/sane"
       ],
       "fixAvailable": {
-        "name": "jest",
-        "version": "29.7.0",
+        "name": "@storybook/addon-docs",
+        "version": "8.3.5",
         "isSemVerMajor": true
       }
     },
@@ -2912,18 +2457,18 @@
     "vulnerabilities": {
       "info": 0,
       "low": 1,
-      "moderate": 73,
+      "moderate": 55,
       "high": 46,
       "critical": 4,
-      "total": 124
+      "total": 106
     },
     "dependencies": {
       "prod": 98,
-      "dev": 3872,
-      "optional": 64,
-      "peer": 15,
+      "dev": 4015,
+      "optional": 58,
+      "peer": 16,
       "peerOptional": 0,
-      "total": 3970
+      "total": 4113
     }
   }
 }
