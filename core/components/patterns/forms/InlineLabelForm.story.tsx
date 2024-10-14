@@ -70,17 +70,28 @@ const customCode = `
               </Column>
               <Column size={8} className="d-flex">
                 <div className="mr-5 w-25">
-                  <Dropdown
-                    options={languages}
-                    onChange={(value) => {
+                  <Select
+                    width="100%"
+                    triggerOptions={{ withClearButton: false }}
+                    onSelect={(option) => {
                       const updatedData = {
                         ...this.state.data,
-                        language: value,
-                        defaultLanguage: defaultLanguage !== '' ? value : defaultLanguage,
+                        language: option.value,
+                        defaultLanguage: defaultLanguage !== '' ? option.value : defaultLanguage,
                       };
                       this.setState({data: updatedData})
                     }}
-                  />
+                  >
+                    <Select.List>
+                      {languages.map((item, key) => {
+                        return (
+                          <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                            {item.label}
+                          </Select.Option>
+                        )
+                      })}
+                    </Select.List>
+                  </Select>
                 </div>
                 <Checkbox
                   name="defaultLanguage"
