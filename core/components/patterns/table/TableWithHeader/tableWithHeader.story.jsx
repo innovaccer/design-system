@@ -344,6 +344,73 @@ import './style.css';
         ? \`Showing \${startIndex}-\${endIndex} of \${totalRecords} item\${getPluralSuffix(totalRecords)}\`
         : \`Showing \${totalRecords} item\${getPluralSuffix(totalRecords)}\`;
   
+    const nameOptions = [
+      { label: 'A-G', value: 'a-g' },
+      { label: 'H-R', value: 'h-r' },
+      { label: 'S-Z', value: 's-z' }
+    ];
+
+  const selectRef = React.useRef(null);
+  const [selectedOptions, setSelectedOptions] = React.useState([]);
+  const [previousSelectedOptions, setPreviousSelectedOptions] = React.useState([]);
+  const [checkedState, setCheckedState] = React.useState('unchecked');
+  const [isDisabled, setIsDisabled] = React.useState(true);
+
+  const handleSelect = (selectedOption) => {
+    setIsDisabled(false);
+    console.log('selectedOption', selectedOption);
+    setSelectedOptions(selectedOption);
+  };
+
+  const handleSelectAllClick = (selectedOption) => {
+    setIsDisabled(false);
+    console.log(selectedOption, 'handleSelectAllClick');
+    if (checkedState === 'checked') {
+      setCheckedState('unchecked');
+      setSelectedOptions([]);
+    } else {
+      setCheckedState('checked');
+      setSelectedOptions(nameOptions);
+    }
+  };
+
+  const onClearHandler = () => {
+    setCheckedState('unchecked');
+    setSelectedOptions([]);
+    setPreviousSelectedOptions([]);
+  };
+
+  const onApplyOptions = () => {
+    console.log('onApply button called');
+    selectRef.current.setOpen(false);
+    setPreviousSelectedOptions(selectedOptions);
+    onFilterChange('name', selectedOptions.map(option => option.value));
+  };
+
+  const onCancelOptions = () => {
+    console.log('onCancel button called');
+    selectRef.current.setOpen(false);
+    setSelectedOptions(previousSelectedOptions);
+  };
+
+  const onOutsideClickHandler = () => {
+    setSelectedOptions(previousSelectedOptions);
+  };
+
+  React.useEffect(() => {
+    setSelectedOptions(previousSelectedOptions);
+  }, [previousSelectedOptions]);
+
+  React.useEffect(() => {
+    if (selectedOptions.length === nameOptions.length) {
+      setCheckedState('checked');
+    } else if (selectedOptions.length === 0) {
+      setCheckedState('unchecked');
+    } else {
+      setCheckedState('indeterminate');
+    }
+  }, [checkedState, selectedOptions]);
+
     return (
       <div className="Header">
         <div className="Header-content Header-content--top">
@@ -361,19 +428,58 @@ import './style.css';
           <div className="Header-dropdown">
             <div className="Table-filters Table-filters--horizontal">
               <div className="Table-filter">
-                <Dropdown
-                  key="name"
-                  disabled={loading}
-                  withCheckbox={true}
-                  showApplyButton={true}
-                  inlineLabel={"Name"}
-                  options={[
-                    { label: 'A-G', value: 'a-g', selected: true },
-                    { label: 'H-R', value: 'h-r', selected: true },
-                    { label: 'S-Z', value: 's-z', selected: true },
-                  ]}
-                  onChange={selected => onFilterChange("name", selected)}
-                />
+                <Select
+                  ref={selectRef}
+                  onOutsideClick={onOutsideClickHandler}
+                  multiSelect={true}
+                  value={selectedOptions}
+                  triggerOptions={{ 
+                    onClear: onClearHandler, 
+                    disabled: loading,
+                    inlineLabel: 'Name',
+                    withClearButton: false,
+                  }}
+                  onSelect={handleSelect}
+                >
+                  <Select.List>
+                    <Select.Option
+                      checkedState={checkedState}
+                      onClick={handleSelectAllClick}
+                      option={{ label: 'SelectAll', value: 'SelectAll' }}
+                    >
+                      Select All
+                    </Select.Option>
+                    {nameOptions.map((item, key) => {
+                      return (
+                        <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                          {item.label}
+                        </Select.Option>
+                      )
+                    })}
+                  </Select.List>
+                  <Select.Footer>
+                    <Button
+                      size={'tiny'}
+                      className="mr-4"
+                      appearance={'basic'}
+                      onClick={onCancelOptions}
+                      data-test="DesignSystem-Select-CancelButton"
+                      type="button"
+                    >
+                      Cancel
+                    </Button>
+                    <Button
+                      appearance={'primary'}
+                      size={'tiny'}
+                      onClick={onApplyOptions}
+                      data-test="DesignSystem-Select-ApplyButton"
+                      type="button"
+                      disabled={isDisabled}
+                    >
+                      Apply
+                    </Button>
+                  </Select.Footer>
+                </Select>
               </div>
               <div className="Table-filter">
                 <Button
@@ -463,12 +569,84 @@ import './style.css';
         selectAll: getSelectAll([]),
         searchTerm: undefined,
         showVerticalFilters: props.showVerticalFilters,
+        selectedGenderOptions: [],
+        previousSelectedGenderOptions: [],
+        genderCheckedState: 'unchecked',
+        isGenderDisabled: true,
       };
   
       this.pageSize = 4;
       this.searchDebounceDuration = 750;
       this.debounceUpdate = debounce(this.searchDebounceDuration, this.updateDataFn);
+    
+      this.genderOptions = [
+        { label: 'Male', value: 'male' },
+        { label: 'Female', value: 'female' },
+      ];
+
+      this.genderSelectRef = React.createRef();
+
+      this.handleGenderSelect = this.handleGenderSelect.bind(this);
+      this.handleGenderSelectAllClick = this.handleGenderSelectAllClick.bind(this);
+      this.onGenderClearHandler = this.onGenderClearHandler.bind(this);
+      this.onGenderApplyOptions = this.onGenderApplyOptions.bind(this);
+      this.onGenderCancelOptions = this.onGenderCancelOptions.bind(this);
+      this.onGenderOutsideClickHandler = this.onGenderOutsideClickHandler.bind(this);
+      this.updateGenderCheckedState = this.updateGenderCheckedState.bind(this);  
     }
+
+    handleGenderSelect(selectedOption) {
+      this.setState({ 
+        isGenderDisabled: false,
+        selectedGenderOptions: selectedOption
+      }, this.updateGenderCheckedState);
+    }
+
+    updateGenderCheckedState() {
+      if (this.state.selectedGenderOptions.length === this.genderOptions.length) {
+        this.setState({ genderCheckedState: 'checked' });
+      } else if (this.state.selectedGenderOptions.length === 0) {
+        this.setState({ genderCheckedState: 'unchecked' });
+      } else {
+        this.setState({ genderCheckedState: 'indeterminate' });
+      }
+    }
+
+    handleGenderSelectAllClick(selectedOption) {
+      this.setState({ isGenderDisabled: false });
+      console.log(selectedOption, 'handleGenderSelectAllClick');
+      if (this.state.genderCheckedState === 'checked') {
+        this.setState({ genderCheckedState: 'unchecked' });
+        this.setState({ selectedGenderOptions: [] });
+      } else {
+        this.setState({ genderCheckedState: 'checked' });
+        this.setState({ selectedGenderOptions: this.genderOptions });
+      }
+    }
+
+    onGenderClearHandler() {
+      this.setState({ genderCheckedState: 'unchecked' });
+      this.setState({ selectedGenderOptions: [] });
+      this.setState({ previousSelectedGenderOptions: [] });
+    }
+
+    onGenderApplyOptions() {
+      this.genderSelectRef.current.setOpen(false);
+      console.log('onGenderApply button called');
+      this.setState({ previousSelectedGenderOptions: this.state.selectedGenderOptions });
+      this.onFilterChange("gender", this.state.selectedGenderOptions.map(option => option.value));
+    }
+
+    onGenderCancelOptions() {
+      console.log('onGenderCancel button called');
+      this.genderSelectRef.current.setOpen(false);
+      this.setState({ selectedGenderOptions: this.state.previousSelectedGenderOptions });
+    }
+
+    onGenderOutsideClickHandler() {
+      this.setState({ selectedGenderOptions: this.state.previousSelectedGenderOptions });
+    }
+
 
     componentDidMount() {
       this.updateData();
@@ -485,6 +663,14 @@ import './style.css';
         || prevState.sortingList !== this.state.sortingList
         || prevState.searchTerm !== this.state.searchTerm) {
         if (!this.props.loading) this.updateData({});
+      }
+
+      if (prevState.selectedGenderOptions !== this.state.selectedGenderOptions) {
+        if (this.state.selectedGenderOptions.length === this.genderOptions.length) {
+          this.setState({ genderCheckedState: 'checked' });
+        } else if (this.state.selectedGenderOptions.length === 0) {
+          this.setState({ genderCheckedState: 'unchecked' });
+        }
       }
     }
 
@@ -732,18 +918,58 @@ import './style.css';
             </div>
             <div>
               <div className="Table-filter">
-                <Dropdown
-                  key="gender"
-                  disabled={loading}
-                  withCheckbox={true}
-                  showApplyButton={true}
-                  inlineLabel={"Gender"}
-                  options={[
-                    { label: 'Male', value: 'male', selected: true },
-                    { label: 'Female', value: 'female', selected: true },
-                  ]}
-                  onChange={selected => this.onFilterChange("gender", selected)}
-                />
+                <Select
+                  ref={this.genderSelectRef}
+                  onOutsideClick={this.onGenderOutsideClickHandler}
+                  multiSelect={true}
+                  value={this.state.selectedGenderOptions}
+                  triggerOptions={{ 
+                    onClear: this.onGenderClearHandler, 
+                    disabled: loading,
+                    inlineLabel: 'Gender',
+                    withClearButton: false,
+                  }}
+                  onSelect={this.handleGenderSelect}
+                >
+                  <Select.List>
+                    <Select.Option
+                      checkedState={this.state.genderCheckedState}
+                      onClick={this.handleGenderSelectAllClick}
+                      option={{ label: 'SelectAll', value: 'SelectAll' }}
+                    >
+                      Select All
+                    </Select.Option>
+                    {this.genderOptions.map((item, key) => {
+                      return (
+                        <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                          {item.label}
+                        </Select.Option>
+                      )
+                    })}
+                  </Select.List>
+                  <Select.Footer>
+                    <Button
+                      size={'tiny'}
+                      className="mr-4"
+                      appearance={'basic'}
+                      onClick={this.onGenderCancelOptions}
+                      data-test="DesignSystem-Select-CancelButton"
+                      type="button"
+                    >
+                      Cancel
+                    </Button>
+                    <Button
+                      appearance={'primary'}
+                      size={'tiny'}
+                      onClick={this.onGenderApplyOptions}
+                      data-test="DesignSystem-Select-ApplyButton"
+                      type="button"
+                      disabled={this.state.isGenderDisabled}
+                    >
+                      Apply
+                    </Button>
+                  </Select.Footer>
+                </Select>
               </div>
               <div className="Table-filter">
                 <DatePicker
