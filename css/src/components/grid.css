@@ -502,12 +502,14 @@
 /* Selected States */
 
 .Grid-row--selected {
-  background: color-mod(var(--primary-lightest) a(var(--opacity-12)));
+  /* background: color-mod(var(--primary-lightest) a(var(--opacity-12))); */
+  background: color-mod(var(--primary-lightest));
   /* transition: var(--duration--fast-02) var(--standard-productive-curve); */
 }
 
 .Grid-row--selected:hover {
-  background: color-mod(var(--primary-lighter) a(var(--opacity-12))) !important;
+  /* background: color-mod(var(--primary-lighter) a(var(--opacity-12))) !important; */
+  background: color-mod(var(--primary-lighter)) !important;
 }
 
 .Grid-row--selected:active {
@@ -519,7 +521,7 @@
   box-shadow: var(--shadow-spread) color-mod(var(--primary) a(var(--opacity-4)));
 }
 
-/* Pinned Columns */
+/* Pinned Columns Default State */
 
 .Grid--resource .Grid-row--body:hover .Grid-cellGroup--pinned-left,
 .Grid--resource .Grid-row--body:hover .Grid-cellGroup--pinned-right {
@@ -540,19 +542,25 @@
 
 /* Pinned Columns Selected State */
 
-.Grid-row--selected .Grid-cellGroup--pinned-left {
-  background: color-mod(var(--primary-lightest) a(var(--opacity-12)));
+.Grid-row--selected .Grid-cellGroup--pinned-left,
+.Grid-row--selected .Grid-cellGroup--pinned-right {
+  /* background: color-mod(var(--primary-lightest) a(var(--opacity-12))); */
+  background: color-mod(var(--primary-lightest));
 }
 
-.Grid-row--selected:hover .Grid-cellGroup--pinned-left {
-  background: color-mod(var(--primary-lighter) a(var(--opacity-12))) !important;
+.Grid-row--selected:hover .Grid-cellGroup--pinned-left,
+.Grid-row--selected:hover .Grid-cellGroup--pinned-right {
+  /* background: color-mod(var(--primary-lighter) a(var(--opacity-12))) !important; */
+  background: color-mod(var(--primary-lighter)) !important;
 }
 
-.Grid-row--selected:active .Grid-cellGroup--pinned-left {
+.Grid-row--selected:active .Grid-cellGroup--pinned-left,
+.Grid-row--selected:active .Grid-cellGroup--pinned-right {
   background: var(--primary-lighter) !important;
 }
 
-.Grid-row--selected:focus .Grid-cellGroup--pinned-left {
+.Grid-row--selected:focus .Grid-cellGroup--pinned-left,
+.Grid-row--selected:focus .Grid-cellGroup--pinned-right {
   outline: none;
   box-shadow: var(--shadow-spread) color-mod(var(--primary) a(var(--opacity-4)));
 }

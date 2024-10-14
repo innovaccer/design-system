@@ -246,6 +246,36 @@ const customCode = `
       sorting: false,
     },
     {
+      name: 'lastUpdated',
+      displayName: 'Last Updated on',
+      width: '30%',
+      sorting: false,
+    },
+    {
+      name: 'lastUpdated',
+      displayName: 'Last Updated on',
+      width: '30%',
+      sorting: false,
+    },
+    {
+      name: 'lastUpdated',
+      displayName: 'Last Updated on',
+      width: '30%',
+      sorting: false,
+    },
+    {
+      name: 'lastUpdated',
+      displayName: 'Last Updated on',
+      width: '30%',
+      sorting: false,
+    },
+    {
+      name: 'lastUpdated',
+      displayName: 'Last Updated on',
+      width: '30%',
+      sorting: false,
+    },
+    {
       name: 'user',
       displayName: '',
       sorting: false,
