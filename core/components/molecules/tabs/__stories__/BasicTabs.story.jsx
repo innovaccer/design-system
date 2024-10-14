@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { Tabs, Heading, Dropdown, Tab } from '@/index';
+import { Tabs, Heading, Select, Tab } from '@/index';
 
 // CSF format story
 export const basicTabs = () => {
@@ -42,7 +42,20 @@ export const basicTabs = () => {
           Data Gaps
         </Heading>
         <div style={{ width: 'var(--spacing-8)' }}>
-          <Dropdown options={options} />
+          <Select
+            value={{ label: options[0].label, value: options[0].value }}
+            triggerOptions={{ withClearButton: false }}
+          >
+            <Select.List>
+              {options.map((item, key) => {
+                return (
+                  <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                    {item.label}
+                  </Select.Option>
+                );
+              })}
+            </Select.List>
+          </Select>
         </div>
       </div>
       <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6">
@@ -98,7 +111,20 @@ const customCode = `() => {
           Data Gaps
         </Heading>
         <div style={{ width: 'var(--spacing-8)' }}>
-          <Dropdown options={options} />
+          <Select
+            value={{ label: options[0].label, value: options[0].value }}
+            triggerOptions={{ withClearButton: false }}
+          >
+            <Select.List>
+              {options.map((item, key) => {
+                return (
+                  <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                    {item.label}
+                  </Select.Option>
+                )
+              })}
+            </Select.List>
+          </Select>
         </div>
       </div>
       <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6">
