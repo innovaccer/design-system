@@ -1,3 +1,39 @@
+## 3.1.0 (2024-10-08)
+
+### Highlights
+
+- chore: migrate to node 20 and fix security vulnerability (d8a26021)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+- chore: migrate to node 20 and fix security vulnerability (d8a26021)
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+NA
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 2.44.0 (2024-10-01)
 
 ### Highlights
