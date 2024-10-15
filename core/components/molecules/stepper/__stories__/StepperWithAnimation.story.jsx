@@ -6,7 +6,7 @@ import {
   Card,
   Heading,
   Text,
-  Dropdown,
+  Select,
   Label,
   DateRangePicker,
   Row,
@@ -83,11 +83,31 @@ export const stepperWithAnimation = () => {
             <Column size={6} className="d-flex">
               <div className="mr-6 w-100">
                 <Label withInput={true}>Region</Label>
-                <Dropdown options={options} />
+                <Select triggerOptions={{ withClearButton: false }}>
+                  <Select.List>
+                    {options.map((item, key) => {
+                      return (
+                        <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                          {item.label}
+                        </Select.Option>
+                      );
+                    })}
+                  </Select.List>
+                </Select>
               </div>
               <div className="w-100">
                 <Label withInput={true}>Organization</Label>
-                <Dropdown options={options} />
+                <Select triggerOptions={{ withClearButton: false }}>
+                  <Select.List>
+                    {options.map((item, key) => {
+                      return (
+                        <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                          {item.label}
+                        </Select.Option>
+                      );
+                    })}
+                  </Select.List>
+                </Select>
               </div>
             </Column>
           </Row>
@@ -154,7 +174,21 @@ export const stepperWithAnimation = () => {
               </Column>
               <Column size={8} className="d-flex align-items-center">
                 <div className="mr-5 w-25 align-items-center">
-                  <Dropdown options={languages} />
+                  <Select
+                    width
+                    value={{ label: 'English', value: 'English' }}
+                    triggerOptions={{ withClearButton: false }}
+                  >
+                    <Select.List>
+                      {languages.map((item, key) => {
+                        return (
+                          <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                            {item.label}
+                          </Select.Option>
+                        );
+                      })}
+                    </Select.List>
+                  </Select>
                 </div>
                 <Checkbox className="align-items-center" name="defaultLanguage" label="Set as Default" />
               </Column>
@@ -165,7 +199,17 @@ export const stepperWithAnimation = () => {
                 <Text>Preferred Method of Contact</Text>
               </Column>
               <Column size={8} className="d-flex align-items-center">
-                <Dropdown options={method} />
+                <Select value={{ label: 'Message', value: 'Message' }} triggerOptions={{ withClearButton: false }}>
+                  <Select.List>
+                    {method.map((item, key) => {
+                      return (
+                        <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                          {item.label}
+                        </Select.Option>
+                      );
+                    })}
+                  </Select.List>
+                </Select>
               </Column>
             </Row>
             <Row className="mt-6">
@@ -475,11 +519,31 @@ const customCode = `() => {
             <Column size={6} className="d-flex">
               <div className="mr-6 w-100">
                 <Label withInput={true}>Region</Label>
-                <Dropdown options={options} />
+                <Select triggerOptions={{ withClearButton: false }}>
+                  <Select.List>
+                    {options.map((item, key) => {
+                      return (
+                        <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                          {item.label}
+                        </Select.Option>
+                      );
+                    })}
+                  </Select.List>
+                </Select>
               </div>
               <div className="w-100">
                 <Label withInput={true}>Organization</Label>
-                <Dropdown options={options} />
+                <Select triggerOptions={{ withClearButton: false }}>
+                  <Select.List>
+                    {options.map((item, key) => {
+                      return (
+                        <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                          {item.label}
+                        </Select.Option>
+                      );
+                    })}
+                  </Select.List>
+                </Select>
               </div>
             </Column>
           </Row>
@@ -544,7 +608,21 @@ const customCode = `() => {
               </Column>
               <Column size={8} className="d-flex align-items-center">
                 <div className="mr-5 w-25 align-items-center">
-                  <Dropdown options={languages} />
+                  <Select
+                    width
+                    value={{ label: 'English', value: 'English' }}
+                    triggerOptions={{ withClearButton: false }}
+                  >
+                    <Select.List>
+                      {languages.map((item, key) => {
+                        return (
+                          <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                            {item.label}
+                          </Select.Option>
+                        );
+                      })}
+                    </Select.List>
+                  </Select>
                 </div>
                 <Checkbox className="align-items-center" name="defaultLanguage" label="Set as Default" />
               </Column>
@@ -555,7 +633,17 @@ const customCode = `() => {
                 <Text>Preferred Method of Contact</Text>
               </Column>
               <Column size={8} className="d-flex align-items-center">
-                <Dropdown options={method} />
+                <Select value={{ label: 'Message', value: 'Message' }} triggerOptions={{ withClearButton: false }}>
+                  <Select.List>
+                    {method.map((item, key) => {
+                      return (
+                        <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                          {item.label}
+                        </Select.Option>
+                      );
+                    })}
+                  </Select.List>
+                </Select>
               </Column>
             </Row>
             <Row className="mt-6">
