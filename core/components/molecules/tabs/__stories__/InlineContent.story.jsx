@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { Tabs, Dropdown, Input, Tab } from '@/index';
+import { Tabs, Select, Input, Tab } from '@/index';
 
 // CSF format story
 export const inlineContent = () => {
@@ -38,7 +38,22 @@ export const inlineContent = () => {
           <Input placeholder="Search by name" icon="search" />
         </div>
         <div style={{ width: 'var(--spacing-8)' }} className="ml-4">
-          <Dropdown options={options} placeholder="Sort by" />
+          <Select
+            triggerOptions={{
+              withClearButton: false,
+              placeholder: 'Sort by',
+            }}
+          >
+            <Select.List>
+              {options.map((item, key) => {
+                return (
+                  <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                    {item.label}
+                  </Select.Option>
+                );
+              })}
+            </Select.List>
+          </Select>
         </div>
       </div>
     </Tabs>
@@ -83,7 +98,22 @@ const customCode = `() => {
           <Input placeholder="Search by name" icon="search" />
         </div>
         <div style={{ width: 'var(--spacing-8)' }} className="ml-4">
-          <Dropdown options={options} placeholder="Sort by" />
+          <Select
+            triggerOptions={{ 
+              withClearButton: false,
+              placeholder: 'Sort by',
+            }}
+          >
+            <Select.List>
+              {options.map((item, key) => {
+                return (
+                  <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                    {item.label}
+                  </Select.Option>
+                )
+              })}
+            </Select.List>
+          </Select>
         </div>
       </div>
     </Tabs>

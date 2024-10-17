@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Stepper, Button, Breadcrumbs, Badge, Text, MetaList, Avatar, PageHeader, Dropdown } from '@/index';
+import { Stepper, Button, Breadcrumbs, Badge, Text, MetaList, Avatar, PageHeader, Menu } from '@/index';
 import { action } from '@/utils/action';
 
 export const stepperInPageHeader = () => {
@@ -18,21 +18,6 @@ export const stepperInPageHeader = () => {
     },
   ];
 
-  const options = [
-    {
-      label: 'Option 1',
-      value: 'Option 1',
-    },
-    {
-      label: 'Option 2',
-      value: 'Option 2',
-    },
-    {
-      label: 'Option 3',
-      value: 'Option 3',
-    },
-  ];
-
   const [active, setActive] = React.useState(2);
 
   const onChangeHandler = (activeStep) => {
@@ -48,7 +33,13 @@ export const stepperInPageHeader = () => {
       </Text>
       <Avatar className="mr-4" firstName="John" lastName="Doe" appearance="accent2" />
       <div className="mr-4">
-        <Dropdown menu={true} icon="more_horiz" options={options} />
+        <Menu trigger={<Menu.Trigger />}>
+          <Menu.List>
+            <Menu.Item>Option 1</Menu.Item>
+            <Menu.Item>Option 2</Menu.Item>
+            <Menu.Item>Option 3</Menu.Item>
+          </Menu.List>
+        </Menu>
       </div>
       <Button className="mr-4">Finish later</Button>
     </div>
@@ -102,21 +93,6 @@ const customCode = `() => {
     }
   ];
 
-  const options = [
-    {
-      label: 'Option 1',
-      value: 'Option 1',
-    },
-    {
-      label: 'Option 2',
-      value: 'Option 2',
-    },
-    {
-      label: 'Option 3',
-      value: 'Option 3',
-    }
-  ];
-
   const [active, setActive] = React.useState(2);
 
   const onChangeHandler = (activeStep) => {
@@ -130,11 +106,13 @@ const customCode = `() => {
       <Text className="mr-4" appearance="subtle" >Few minutes ago</Text>
       <Avatar className="mr-4" firstName="John" lastName="Doe" appearance="accent2"/>
       <div className="mr-4">
-        <Dropdown
-          menu={true}
-          icon="more_horiz"
-          options={options}
-        />
+        <Menu trigger={<Menu.Trigger />}>
+          <Menu.List>
+            <Menu.Item>Option 1</Menu.Item>
+            <Menu.Item>Option 2</Menu.Item>
+            <Menu.Item>Option 3</Menu.Item>
+          </Menu.List>
+        </Menu>
       </div>
       <Button className="mr-4">Finish later</Button>
     </div>
