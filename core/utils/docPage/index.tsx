@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Description, ArgsTable } from '@storybook/addon-docs/blocks';
 import { renderToStaticMarkup } from 'react-dom/server';
 import reactElementToJSXString from 'react-element-to-jsx-string';
-import { html as beautifyHTML } from 'js-beautify';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { vs2015 } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import * as DS from '@';
@@ -20,24 +19,6 @@ export interface Example {
   imports: string[];
   component: React.ReactNode;
 }
-
-const beautifyHTMLOptions = {
-  indent_size: 2,
-  wrap_line_length: 0,
-  preserve_newlines: true,
-  jslint_happy: true,
-  end_with_newline: false,
-  indent_inner_html: true,
-  break_chained_methods: true,
-  keep_array_indentation: true,
-  good_stuff: true,
-  indent_empty_lines: true,
-};
-
-const beautifyJSXOptions = {
-  ...beautifyHTMLOptions,
-  e4x: true,
-};
 
 const JSXtoStringOptions = {
   filterProps: (val: any) => {
@@ -136,7 +117,7 @@ const getRawPreviewCode = (customCode: string, comp: React.ReactNode) => {
 ${customCode}
     `;
   }
-  const jsx = `${beautifyHTML(reactElementToJSXString(comp, JSXtoStringOptions), beautifyJSXOptions)}`;
+  const jsx = reactElementToJSXString(comp, JSXtoStringOptions);
   const importString = generateImports(jsx, componentLib, '@innovaccer/design-system');
 
   const code = `
@@ -164,7 +145,7 @@ const StoryComp = (props: {
   const { story } = getStory();
   // const comp = sp.storySource.source;
   const comp = story.originalStoryFn();
-  const html = !noHtml ? beautifyHTML(renderToStaticMarkup(comp), beautifyHTMLOptions) : '';
+  const html = !noHtml ? renderToStaticMarkup(comp) : '';
 
   const [activeTab, setActiveTab] = React.useState<number>(0);
   const [jsxCode, setJsxCode] = React.useState<string>(getRawPreviewCode(customCode, comp));
@@ -201,7 +182,7 @@ const StoryComp = (props: {
     React.useEffect(() => {
       if (!error && activeTab === 1) {
         try {
-          const htmlValue = beautifyHTML(renderToStaticMarkup(<Element />), beautifyHTMLOptions);
+          const htmlValue = renderToStaticMarkup(<Element />);
           setHtmlCode(htmlValue);
         } catch (e) {
           return;
