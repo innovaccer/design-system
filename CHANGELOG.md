@@ -1,3 +1,48 @@
+## 3.2.0 (2024-10-17)
+
+### Highlights
+
+- chore: remove js-beautify dependency (a9f0c2b7)
+- fix(satismeter): update survey questions id for api response (ba8f0386)
+- chore: fix security vulnerabilities in dev dependencies (1302de94)
+- fix: replace deprecated 'dropdown' with Select and Menu in stories
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+- chore: remove js-beautify dependency (a9f0c2b7)
+
+### Features
+
+NA
+
+### Fixes
+
+- fix(satismeter): update survey questions id for api response (ba8f0386)
+
+### Improvements
+
+- chore: fix security vulnerabilities in dev dependencies (1302de94)
+- refactor(helpText): replace Dropdown with Select component in story of HelpText (9ff836dc)
+- fix(stepper): replace deprecated 'dropdown' with Select and Menu in Stepper (184b42ac)
+- fix(editableChipInput): fix overflow behavior of editableChipInput component (6e5fccbc)
+- fix(tabs): replace deprecated 'dropdown' with Select in tabs (1fa589fc)
+- fix(button): replace deprecated Dropdown with Menu in Button (8dd6c959)
+- fix(popover): replace deprecated 'dropdown' with Select in Popover (3ebee272)
+
+### Documentation
+
+NA
+
+---
+
 ## 3.1.0 (2024-10-08)
 
 ### Highlights
