@@ -1,26 +1,19 @@
 import * as React from 'react';
-import Button from '@/components/atoms/button';
-import Dropdown from '@/components/atoms/dropdown';
+import { Button, Menu } from '@/index';
 
 export const splitButton = () => {
-  const options = [
-    {
-      label: 'Download All',
-      value: 'Download All',
-    },
-    {
-      label: 'Download Selected',
-      value: 'Download Selected',
-    },
-  ];
-
   return (
     <div className="d-flex">
       <Button className="mr-2" aria-label="Request review">
         Request review
       </Button>
       <div className="mb-10">
-        <Dropdown menu={true} icon="expand_more" options={options} width={150} />
+        <Menu trigger={<Menu.Trigger />}>
+          <Menu.List>
+            <Menu.Item>Download All</Menu.Item>
+            <Menu.Item>Download Selected</Menu.Item>
+          </Menu.List>
+        </Menu>
       </div>
     </div>
   );
