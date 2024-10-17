@@ -13,7 +13,11 @@ export const overflowBehavior = () => {
   const onClick = (item) => action(`onClick: ${item}`);
 
   const placeholder = 'Add Value';
-  const chipOptions = { onClick, clearButton: true };
+  const chipOptions = {
+    onClick,
+    clearButton: true,
+    maxWidth: 'var(--spacing-8)',
+  };
   const chipInputOptions = {
     chipOptions,
     allowDuplicates: false,
@@ -44,7 +48,11 @@ const customCode = `() => {
   const onClick = (item) =>  console.log(item);
 
   const placeholder ='Add Value';
-  const chipOptions = { onClick, clearButton:true };
+  const chipOptions = {
+    onClick,
+    clearButton: true,
+    maxWidth: 'var(--spacing-8)',
+  };
   const chipInputOptions = {
     chipOptions,
     allowDuplicates:false,

@@ -6,7 +6,11 @@ import { EditableChipInput } from '@/index';
 
 export const uncontrolled = () => {
   const onClick = (item) => action(`onClick: ${item}`);
-  const chipOptions = { onClick, clearButton: true };
+  const chipOptions = {
+    onClick,
+    clearButton: true,
+    maxWidth: 'var(--spacing-8)',
+  };
   const chipInputOptions = {
     chipOptions,
     allowDuplicates: false,
@@ -27,7 +31,11 @@ export const uncontrolled = () => {
 
 const customCode = `() => {
   const onClick = (item) => console.log(\`onClick: \${item}\`);
-  const chipOptions = { onClick, clearButton: true };
+  const chipOptions = {
+    onClick,
+    clearButton: true,
+    maxWidth: 'var(--spacing-8)',
+  };
   const chipInputOptions = {
     chipOptions,
     allowDuplicates: false,
