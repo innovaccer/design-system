@@ -76,31 +76,38 @@ export const GridRow = (props: GridRowProps) => {
     if (currSchema.length) {
       const classes = classNames({
         'Grid-cellGroup': true,
-        'Grid-cellGroup--pinned': pinned,
-        [`Grid-cellGroup--pinned-${pinned}`]: pinned,
+        'Grid-cellWrapper--pinned': pinned,
+        [`Grid-cellWrapper--pinned-${pinned}`]: pinned,
         'Grid-cellGroup--main': !pinned,
       });
 
-      return (
-        <div className={classes} data-test="DesignSystem-Grid-cellGroup">
-          {renderCheckbox(shouldRenderCheckbox)}
-          {currSchema.map((s, index) => {
-            let cI = pinned === 'left' ? index : leftPinnedSchema.length + index;
-            if (pinned === 'right') cI += unpinnedSchema.length;
+      const pinnedClasses = classNames({
+        'Grid-cellGroup--pinned bg-light': pinned,
+        [`Grid-cellGroup--pinned-${pinned}`]: pinned,
+      });
 
-            return (
-              <Cell
-                key={`${rI}-${cI}`}
-                rowIndex={rI}
-                colIndex={cI}
-                firstCell={!index}
-                schema={s}
-                data={data}
-                expandedState={[expanded, setExpanded]}
-                nestedRowData={nestedRowData}
-              />
-            );
-          })}
+      return (
+        <div className={pinnedClasses}>
+          <div className={classes} data-test="DesignSystem-Grid-cellGroup">
+            {renderCheckbox(shouldRenderCheckbox)}
+            {currSchema.map((s, index) => {
+              let cI = pinned === 'left' ? index : leftPinnedSchema.length + index;
+              if (pinned === 'right') cI += unpinnedSchema.length;
+
+              return (
+                <Cell
+                  key={`${rI}-${cI}`}
+                  rowIndex={rI}
+                  colIndex={cI}
+                  firstCell={!index}
+                  schema={s}
+                  data={data}
+                  expandedState={[expanded, setExpanded]}
+                  nestedRowData={nestedRowData}
+                />
+              );
+            })}
+          </div>
         </div>
       );
     }
