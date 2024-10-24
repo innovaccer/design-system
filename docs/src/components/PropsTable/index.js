@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import '@innovaccer/design-system/css';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { html as beautifyHTML } from 'js-beautify';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import openSandbox from './sandbox.tsx';
 import vsDark from 'prism-react-renderer/themes/vsDark';
@@ -15,19 +14,6 @@ import './prism.css';
 import { copyMessage, copyMessageSuccess } from '../../util/constants';
 import { useEffect } from 'react';
 import ErrorBoundary from '../ErrorBoundary';
-
-const beautifyHTMLOptions = {
-  indent_size: 2,
-  wrap_line_length: 0,
-  preserve_newlines: true,
-  jslint_happy: true,
-  end_with_newline: false,
-  indent_inner_html: true,
-  break_chained_methods: true,
-  keep_array_indentation: true,
-  good_stuff: true,
-  indent_empty_lines: true,
-};
 
 const getRawPreviewCode = (customCode, dataProvider) => {
   if (dataProvider) {
@@ -47,7 +33,7 @@ const TabsWrap = withLive(({ live, onUpdate }) => {
     const { element: Element } = live;
     if (live.element) {
       try {
-        const htmlValue = beautifyHTML(renderToStaticMarkup(<Element />), beautifyHTMLOptions);
+        const htmlValue = renderToStaticMarkup(<Element />);
         onUpdate(htmlValue);
       } catch (e) {
         console.log(e);
