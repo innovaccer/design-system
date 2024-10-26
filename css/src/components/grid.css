@@ -588,3 +588,11 @@
     )
     1 100%;
 }
+
+.DraggableDropdown--open {
+  background-color: var(--secondary-dark) !important;
+}
+
+.reorderIcon {
+  color: var(--inverse-lighter);
+}

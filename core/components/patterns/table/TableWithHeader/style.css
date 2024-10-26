@@ -16,6 +16,13 @@
   padding: 0 var(--spacing-l);
 }
 
+.Table-filters--horizontal {
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  padding: 0 var(--spacing-l);
+}
+
 .Table-filtersHeading {
   display: flex;
   align-items: center;
@@ -39,7 +46,7 @@
 }
 
 .Table-filters--horizontal .Table-filter {
-  padding: 0 var(--spacing-m);
+  padding: 0 var(--spacing);
 }
 
 .Table-filters--horizontal .Table-filter:first-of-type {

@@ -230,6 +230,18 @@ describe('render Table component with header', () => {
 });
 
 describe('render Table component with DraggableDropdown', () => {
+  it('render table : draggableDropDown Apply button is enabled on change', () => {
+    const schema = [{ name: 'name', displayName: 'Name', width: '50%' }];
+    const { getAllByTestId } = render(<Table withHeader={true} data={tableData} schema={schema} />);
+    const draggableDropdown = getAllByTestId('DesignSystem-Button')[0];
+    fireEvent.click(draggableDropdown);
+    const draggableApplyButton = getAllByTestId('DesignSystem-Button')[3];
+    expect(draggableApplyButton).toHaveAttribute('disabled');
+    const draggableDropdownCheckbox = getAllByTestId('DesignSystem-Checkbox-InputBox')[0];
+    fireEvent.click(draggableDropdownCheckbox);
+    expect(draggableApplyButton).not.toHaveAttribute('disabled');
+  });
+
   it('render table : draggableDropDown Apply button is triggered', () => {
     const schema = [{ name: 'name', displayName: 'Name', width: '50%' }];
     const { getAllByTestId } = render(<Table withHeader={true} data={tableData} schema={schema} />);
