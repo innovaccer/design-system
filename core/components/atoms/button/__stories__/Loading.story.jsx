@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Button } from '@/index';
 
-export const LoaderInButton = () => <Button appearance="primary" loading={true} aria-label="loading" />;
+export const LoaderInButton = () => <Button loading={true} aria-label="loading" />;
 
 export default {
   title: 'Components/Button/Button/Loader In Button',

@@ -3,7 +3,7 @@ import { Spinner, Text } from '@/index';
 
 // CSF format story
 export const size = () => {
-  const sizes = ['small', 'medium', 'large'];
+  const sizes = ['xsmall', 'small', 'medium', 'large'];
   return (
     <div className="d-flex">
       {sizes.map((SpinnerSize, ind) => {

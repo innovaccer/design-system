@@ -221,6 +221,43 @@ describe('Button component with icon', () => {
       expect(getByTestId('DesignSystem-Button--Spinner')).toHaveClass('Button-spinner');
     });
 
+    it('Should have Spinner--xsmall class when loading state for button size=tiny', () => {
+      const { getByTestId } = render(
+        <Button loading={true} size="tiny">
+          Button
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button--Spinner')).toHaveClass('Spinner--xsmall');
+    });
+
+    it('Should have Spinner--xsmall class when loading state for button size=regular', () => {
+      const { getByTestId } = render(
+        <Button loading={true} size="regular">
+          Button
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button--Spinner')).toHaveClass('Spinner--xsmall');
+    });
+
+    it('Should have Spinner--small class when loading state for button size=large', () => {
+      const { getByTestId } = render(
+        <Button loading={true} size="large">
+          Button
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button--Spinner')).toHaveClass('Spinner--small');
+    });
+
+    it('Should have Spinner--xsmall class when loading state for icon button', () => {
+      const { getByTestId } = render(<Button loading={true} icon="places" />);
+      expect(getByTestId('DesignSystem-Button--Spinner')).toHaveClass('Spinner--xsmall');
+    });
+
+    it('Should have Spinner--xsmall class when loading state for large icon button', () => {
+      const { getByTestId } = render(<Button loading={true} icon="places" size="large" />);
+      expect(getByTestId('DesignSystem-Button--Spinner')).toHaveClass('Spinner--xsmall');
+    });
+
     it('Should have no Button-spinner class when no loading state', () => {
       const { getByTestId } = render(<Button loading={false}>Button</Button>);
       expect(getByTestId('DesignSystem-Button')).not.toHaveClass('Button-spinner');
