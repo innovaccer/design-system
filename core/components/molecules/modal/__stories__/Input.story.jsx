@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { Modal, Button, Navigation, Heading, Label, Dropdown } from '@/index';
+import { Modal, Button, Navigation, Heading, Label, Select } from '@/index';
 
 export const inputModals = () => {
   const [open, setOpen] = React.useState(false);
@@ -85,23 +85,63 @@ export const inputModals = () => {
           <Label withInput={true} required={true}>
             Type
           </Label>
-          <Dropdown options={options} className="w-50" />
+          <Select triggerOptions={{ withClearButton: false }}>
+            <Select.List>
+              {options.map((item, key) => {
+                return (
+                  <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                    {item.label}
+                  </Select.Option>
+                );
+              })}
+            </Select.List>
+          </Select>
           <Label withInput={true} className="mt-5">
             Active Date
           </Label>
-          <Dropdown options={options} className="w-50" />
+          <Select triggerOptions={{ withClearButton: false }}>
+            <Select.List>
+              {options.map((item, key) => {
+                return (
+                  <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                    {item.label}
+                  </Select.Option>
+                );
+              })}
+            </Select.List>
+          </Select>
           <div className="d-flex pb-4">
             <div className="d-block w-75">
               <Label withInput={true} required={true} className="mt-5">
                 Diagnosis Diseases
               </Label>
-              <Dropdown options={options} />
+              <Select triggerOptions={{ withClearButton: false }} width="100%">
+                <Select.List>
+                  {options.map((item, key) => {
+                    return (
+                      <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                        {item.label}
+                      </Select.Option>
+                    );
+                  })}
+                </Select.List>
+              </Select>
             </div>
             <div className="ml-5 d-block w-25">
               <Label withInput={true} required={true} className="mt-5">
                 Version
               </Label>
-              <Dropdown options={options} />
+              <Select triggerOptions={{ withClearButton: false }}>
+                <Select.List>
+                  {options.map((item, key) => {
+                    return (
+                      <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                        {item.label}
+                      </Select.Option>
+                    );
+                  })}
+                </Select.List>
+              </Select>
             </div>
           </div>
         </div>
@@ -194,27 +234,57 @@ const customCode = `() => {
       >
         <div className="my-5">
           <Label withInput={true} required={true}>Type</Label>
-          <Dropdown
-              options={options}
-              className="w-50"
-          />
+          <Select triggerOptions={{ withClearButton: false }}>
+            <Select.List>
+              {options.map((item, key) => {
+                return (
+                  <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                    {item.label}
+                  </Select.Option>
+                );
+              })}
+            </Select.List>
+          </Select>
           <Label withInput={true} className="mt-5">Active Date</Label>
-          <Dropdown
-              options={options}
-              className="w-50"
-          />
+          <Select triggerOptions={{ withClearButton: false }}>
+            <Select.List>
+              {options.map((item, key) => {
+                return (
+                  <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                    {item.label}
+                  </Select.Option>
+                );
+              })}
+            </Select.List>
+          </Select>
           <div className="d-flex pb-4">
             <div className="d-block w-75">
               <Label withInput={true} required={true} className="mt-5">Diagnosis Diseases</Label>
-              <Dropdown
-                  options={options}
-              />
+              <Select triggerOptions={{ withClearButton: false }} width="100%">
+                <Select.List>
+                  {options.map((item, key) => {
+                    return (
+                      <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                        {item.label}
+                      </Select.Option>
+                    );
+                  })}
+                </Select.List>
+              </Select>
             </div>
             <div className="ml-5 d-block w-25">
               <Label withInput={true} required={true} className="mt-5">Version</Label>
-              <Dropdown
-                  options={options}
-              />
+              <Select triggerOptions={{ withClearButton: false }}>
+                <Select.List>
+                  {options.map((item, key) => {
+                    return (
+                      <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                        {item.label}
+                      </Select.Option>
+                    );
+                  })}
+                </Select.List>
+              </Select>
             </div>
           </div>
         </div>
