@@ -140,6 +140,8 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
     [`Button-regularIcon--${iconAlign}`]: children && iconAlign && size === 'regular' && !expanded,
   });
 
+  const spinnerSize = size === 'large' && children ? 'small' : 'xsmall';
+
   return (
     <button
       data-test="DesignSystem-Button"
@@ -153,7 +155,7 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
       {loading ? (
         <>
           <Spinner
-            size="small"
+            size={spinnerSize}
             appearance={appearance === 'basic' || appearance === 'transparent' ? 'secondary' : 'white'}
             data-test="DesignSystem-Button--Spinner"
             className="Button-spinner"

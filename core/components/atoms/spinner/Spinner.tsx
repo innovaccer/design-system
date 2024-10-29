@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type SpinnerAppearance = 'primary' | 'secondary' | 'white';
-export type SpinnerSize = 'small' | 'medium' | 'large';
+export type SpinnerSize = 'xsmall' | 'small' | 'medium' | 'large';
 
 export interface SpinnerProps extends BaseProps {
   /**
@@ -30,6 +30,7 @@ export const Spinner = (props: SpinnerProps) => {
     },
     className
   );
+
   const circleClasses = classNames({
     Circle: true,
     [`Circle--${appearance}`]: appearance,
@@ -38,13 +39,21 @@ export const Spinner = (props: SpinnerProps) => {
   const svgProps = {
     viewBox: '0 0 50 50',
   };
+
+  const strokeWidthMapping = {
+    xsmall: 8,
+    small: 6,
+    medium: 4,
+    large: 4,
+  };
+
   const circleProps = {
     cx: 25,
     cy: 25,
     r: 20,
     fill: 'none',
     strokeMiterlimit: '10',
-    strokeWidth: '4',
+    strokeWidth: strokeWidthMapping[size],
   };
 
   return (
