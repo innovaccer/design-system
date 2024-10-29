@@ -1,0 +1,1130 @@
+{
+  "auditReportVersion": 2,
+  "vulnerabilities": {
+    "axios": {
+      "name": "axios",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1097679,
+          "name": "axios",
+          "dependency": "axios",
+          "title": "Axios Cross-Site Request Forgery Vulnerability",
+          "url": "https://github.com/advisories/GHSA-wf5p-g6vw-rhxx",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-352"
+          ],
+          "cvss": {
+            "score": 6.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+          },
+          "range": ">=0.8.1 <0.28.0"
+        }
+      ],
+      "effects": [
+        "gatsby",
+        "gatsby-source-medium"
+      ],
+      "range": "0.8.1 - 0.27.2",
+      "nodes": [
+        "node_modules/axios"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-plugin-mdx",
+        "version": "2.15.0",
+        "isSemVerMajor": true
+      }
+    },
+    "babel-plugin-remove-graphql-queries": {
+      "name": "babel-plugin-remove-graphql-queries",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "gatsby"
+      ],
+      "effects": [],
+      "range": ">=2.17.0-next.0",
+      "nodes": [
+        "node_modules/babel-plugin-remove-graphql-queries"
+      ],
+      "fixAvailable": true
+    },
+    "body-parser": {
+      "name": "body-parser",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1099520,
+          "name": "body-parser",
+          "dependency": "body-parser",
+          "title": "body-parser vulnerable to denial of service when url encoding is enabled",
+          "url": "https://github.com/advisories/GHSA-qwcr-r2fm-qrc7",
+          "severity": "high",
+          "cwe": [
+            "CWE-405"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<1.20.3"
+        }
+      ],
+      "effects": [
+        "gatsby"
+      ],
+      "range": "<1.20.3",
+      "nodes": [
+        "node_modules/body-parser"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-plugin-mdx",
+        "version": "2.15.0",
+        "isSemVerMajor": true
+      }
+    },
+    "cookie": {
+      "name": "cookie",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1099846,
+          "name": "cookie",
+          "dependency": "cookie",
+          "title": "cookie accepts cookie name, path, and domain with out of bounds characters",
+          "url": "https://github.com/advisories/GHSA-pxg6-pf52-xh8x",
+          "severity": "low",
+          "cwe": [
+            "CWE-74"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": "<0.7.0"
+        }
+      ],
+      "effects": [
+        "engine.io",
+        "gatsby"
+      ],
+      "range": "<0.7.0",
+      "nodes": [
+        "node_modules/cookie",
+        "node_modules/engine.io/node_modules/cookie"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-plugin-mdx",
+        "version": "2.15.0",
+        "isSemVerMajor": true
+      }
+    },
+    "degenerator": {
+      "name": "degenerator",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1090403,
+          "name": "degenerator",
+          "dependency": "degenerator",
+          "title": "Code Injection in pac-resolver",
+          "url": "https://github.com/advisories/GHSA-9j49-mfvp-vmhm",
+          "severity": "high",
+          "cwe": [
+            "CWE-94"
+          ],
+          "cvss": {
+            "score": 8.1,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+          },
+          "range": "<3.0.1"
+        }
+      ],
+      "effects": [
+        "pac-resolver"
+      ],
+      "range": "<3.0.1",
+      "nodes": [
+        "node_modules/degenerator"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-plugin-s3",
+        "version": "0.2.4",
+        "isSemVerMajor": true
+      }
+    },
+    "engine.io": {
+      "name": "engine.io",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        "cookie"
+      ],
+      "effects": [
+        "socket.io"
+      ],
+      "range": "1.8.0 - 6.6.1",
+      "nodes": [
+        "node_modules/engine.io"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-plugin-mdx",
+        "version": "2.15.0",
+        "isSemVerMajor": true
+      }
+    },
+    "fs-posix": {
+      "name": "fs-posix",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "git-win"
+      ],
+      "effects": [
+        "gatsby-plugin-s3"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/fs-posix"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-plugin-s3",
+        "version": "0.2.4",
+        "isSemVerMajor": true
+      }
+    },
+    "gatsby": {
+      "name": "gatsby",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        "axios",
+        "babel-plugin-remove-graphql-queries",
+        "body-parser",
+        "cookie",
+        "gatsby-plugin-page-creator",
+        "gatsby-plugin-typescript",
+        "gatsby-plugin-utils",
+        "path-to-regexp",
+        "socket.io",
+        "webpack-dev-middleware"
+      ],
+      "effects": [
+        "babel-plugin-remove-graphql-queries",
+        "gatsby-plugin-image",
+        "gatsby-plugin-mdx",
+        "gatsby-plugin-nprogress",
+        "gatsby-plugin-page-creator",
+        "gatsby-plugin-sharp",
+        "gatsby-plugin-typescript",
+        "gatsby-plugin-utils",
+        "gatsby-remark-copy-linked-files",
+        "gatsby-remark-images",
+        "gatsby-remark-prismjs",
+        "gatsby-remark-responsive-iframe",
+        "gatsby-remark-smartypants",
+        "gatsby-source-filesystem",
+        "gatsby-source-medium",
+        "gatsby-transformer-sharp",
+        "gatsby-transformer-yaml"
+      ],
+      "range": ">=1.0.0-alpha.3",
+      "nodes": [
+        "node_modules/gatsby"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-plugin-mdx",
+        "version": "2.15.0",
+        "isSemVerMajor": true
+      }
+    },
+    "gatsby-plugin-image": {
+      "name": "gatsby-plugin-image",
+      "severity": "moderate",
+      "isDirect": true,
+      "via": [
+        "babel-plugin-remove-graphql-queries",
+        "gatsby",
+        "gatsby-plugin-sharp",
+        "gatsby-plugin-utils",
+        "gatsby-source-filesystem"
+      ],
+      "effects": [],
+      "range": ">=0.8.0-next.0",
+      "nodes": [
+        "node_modules/gatsby-plugin-image"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-plugin-image",
+        "version": "0.7.2",
+        "isSemVerMajor": true
+      }
+    },
+    "gatsby-plugin-mdx": {
+      "name": "gatsby-plugin-mdx",
+      "severity": "moderate",
+      "isDirect": true,
+      "via": [
+        "gatsby",
+        "gatsby-plugin-utils",
+        "gatsby-source-filesystem"
+      ],
+      "effects": [],
+      "range": ">=3.0.0-alpha-9689ff.5",
+      "nodes": [
+        "node_modules/gatsby-plugin-mdx"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-plugin-mdx",
+        "version": "2.15.0",
+        "isSemVerMajor": true
+      }
+    },
+    "gatsby-plugin-nprogress": {
+      "name": "gatsby-plugin-nprogress",
+      "severity": "moderate",
+      "isDirect": true,
+      "via": [
+        "gatsby"
+      ],
+      "effects": [],
+      "range": ">=2.11.0-next.0",
+      "nodes": [
+        "node_modules/gatsby-plugin-nprogress"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-plugin-nprogress",
+        "version": "2.10.0",
+        "isSemVerMajor": true
+      }
+    },
+    "gatsby-plugin-page-creator": {
+      "name": "gatsby-plugin-page-creator",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "gatsby",
+        "gatsby-plugin-utils"
+      ],
+      "effects": [],
+      "range": ">=2.11.0-next.0",
+      "nodes": [
+        "node_modules/gatsby-plugin-page-creator"
+      ],
+      "fixAvailable": true
+    },
+    "gatsby-plugin-s3": {
+      "name": "gatsby-plugin-s3",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        "fs-posix",
+        "proxy-agent"
+      ],
+      "effects": [],
+      "range": ">=0.2.5",
+      "nodes": [
+        "node_modules/gatsby-plugin-s3"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-plugin-s3",
+        "version": "0.2.4",
+        "isSemVerMajor": true
+      }
+    },
+    "gatsby-plugin-sharp": {
+      "name": "gatsby-plugin-sharp",
+      "severity": "moderate",
+      "isDirect": true,
+      "via": [
+        "gatsby",
+        "gatsby-plugin-utils"
+      ],
+      "effects": [
+        "gatsby-plugin-image",
+        "gatsby-remark-images",
+        "gatsby-transformer-sharp"
+      ],
+      "range": ">=2.15.0-next.0",
+      "nodes": [
+        "node_modules/gatsby-plugin-sharp"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-plugin-sharp",
+        "version": "2.14.4",
+        "isSemVerMajor": true
+      }
+    },
+    "gatsby-plugin-typescript": {
+      "name": "gatsby-plugin-typescript",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "babel-plugin-remove-graphql-queries",
+        "gatsby"
+      ],
+      "effects": [
+        "gatsby"
+      ],
+      "range": ">=2.13.0-next.0",
+      "nodes": [
+        "node_modules/gatsby-plugin-typescript"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-plugin-mdx",
+        "version": "2.15.0",
+        "isSemVerMajor": true
+      }
+    },
+    "gatsby-plugin-utils": {
+      "name": "gatsby-plugin-utils",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "gatsby"
+      ],
+      "effects": [
+        "gatsby",
+        "gatsby-plugin-image",
+        "gatsby-plugin-mdx",
+        "gatsby-plugin-page-creator",
+        "gatsby-plugin-sharp",
+        "gatsby-transformer-sharp"
+      ],
+      "range": "0.2.27-qod.19 - 0.2.27-qod.21 || 0.2.31-query-modules-debug-missing-sq.23 || >=0.2.35",
+      "nodes": [
+        "node_modules/gatsby-plugin-utils"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-plugin-image",
+        "version": "0.7.2",
+        "isSemVerMajor": true
+      }
+    },
+    "gatsby-remark-copy-linked-files": {
+      "name": "gatsby-remark-copy-linked-files",
+      "severity": "moderate",
+      "isDirect": true,
+      "via": [
+        "gatsby"
+      ],
+      "effects": [],
+      "range": ">=2.11.0-next.0",
+      "nodes": [
+        "node_modules/gatsby-remark-copy-linked-files"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-remark-copy-linked-files",
+        "version": "2.10.0",
+        "isSemVerMajor": true
+      }
+    },
+    "gatsby-remark-images": {
+      "name": "gatsby-remark-images",
+      "severity": "moderate",
+      "isDirect": true,
+      "via": [
+        "gatsby",
+        "gatsby-plugin-sharp"
+      ],
+      "effects": [],
+      "range": "1.6.0-alpha.03b9df85 - 2.0.0-alpha.23 || 2.1.0-alpha.80a21f04 - 2.1.0-alpha.e328d33f || >=3.12.0-next.0",
+      "nodes": [
+        "node_modules/gatsby-remark-images"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-remark-images",
+        "version": "3.11.1",
+        "isSemVerMajor": true
+      }
+    },
+    "gatsby-remark-prismjs": {
+      "name": "gatsby-remark-prismjs",
+      "severity": "moderate",
+      "isDirect": true,
+      "via": [
+        "gatsby"
+      ],
+      "effects": [],
+      "range": ">=3.14.0-next.0",
+      "nodes": [
+        "node_modules/gatsby-remark-prismjs"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-remark-prismjs",
+        "version": "3.13.0",
+        "isSemVerMajor": true
+      }
+    },
+    "gatsby-remark-responsive-iframe": {
+      "name": "gatsby-remark-responsive-iframe",
+      "severity": "moderate",
+      "isDirect": true,
+      "via": [
+        "gatsby"
+      ],
+      "effects": [],
+      "range": ">=2.12.0-next.0",
+      "nodes": [
+        "node_modules/gatsby-remark-responsive-iframe"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-remark-responsive-iframe",
+        "version": "2.11.0",
+        "isSemVerMajor": true
+      }
+    },
+    "gatsby-remark-smartypants": {
+      "name": "gatsby-remark-smartypants",
+      "severity": "moderate",
+      "isDirect": true,
+      "via": [
+        "gatsby"
+      ],
+      "effects": [],
+      "range": ">=2.11.0-next.0",
+      "nodes": [
+        "node_modules/gatsby-remark-smartypants"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-remark-smartypants",
+        "version": "2.10.0",
+        "isSemVerMajor": true
+      }
+    },
+    "gatsby-source-filesystem": {
+      "name": "gatsby-source-filesystem",
+      "severity": "moderate",
+      "isDirect": true,
+      "via": [
+        "gatsby"
+      ],
+      "effects": [],
+      "range": ">=2.12.0-next.0",
+      "nodes": [
+        "node_modules/gatsby-source-filesystem"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-source-filesystem",
+        "version": "2.11.1",
+        "isSemVerMajor": true
+      }
+    },
+    "gatsby-source-medium": {
+      "name": "gatsby-source-medium",
+      "severity": "moderate",
+      "isDirect": true,
+      "via": [
+        "axios",
+        "gatsby"
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/gatsby-source-medium"
+      ],
+      "fixAvailable": false
+    },
+    "gatsby-transformer-sharp": {
+      "name": "gatsby-transformer-sharp",
+      "severity": "moderate",
+      "isDirect": true,
+      "via": [
+        "gatsby",
+        "gatsby-plugin-sharp",
+        "gatsby-plugin-utils"
+      ],
+      "effects": [],
+      "range": ">=2.13.0-next.0",
+      "nodes": [
+        "node_modules/gatsby-transformer-sharp"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-transformer-sharp",
+        "version": "2.12.1",
+        "isSemVerMajor": true
+      }
+    },
+    "gatsby-transformer-yaml": {
+      "name": "gatsby-transformer-yaml",
+      "severity": "moderate",
+      "isDirect": true,
+      "via": [
+        "gatsby"
+      ],
+      "effects": [],
+      "range": ">=2.12.0-next.0",
+      "nodes": [
+        "node_modules/gatsby-transformer-yaml"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-transformer-yaml",
+        "version": "2.11.0",
+        "isSemVerMajor": true
+      }
+    },
+    "git-win": {
+      "name": "git-win",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "got",
+        "in-gfw",
+        "nugget"
+      ],
+      "effects": [
+        "fs-posix"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/git-win"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-plugin-s3",
+        "version": "0.2.4",
+        "isSemVerMajor": true
+      }
+    },
+    "got": {
+      "name": "got",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1088948,
+          "name": "got",
+          "dependency": "got",
+          "title": "Got allows a redirect to a UNIX socket",
+          "url": "https://github.com/advisories/GHSA-pfrx-2q88-qq97",
+          "severity": "moderate",
+          "cwe": [],
+          "cvss": {
+            "score": 5.3,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+          },
+          "range": "<11.8.5"
+        }
+      ],
+      "effects": [
+        "git-win"
+      ],
+      "range": "<11.8.5",
+      "nodes": [
+        "node_modules/git-win/node_modules/got"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-plugin-s3",
+        "version": "0.2.4",
+        "isSemVerMajor": true
+      }
+    },
+    "in-gfw": {
+      "name": "in-gfw",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "mem"
+      ],
+      "effects": [
+        "git-win"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/in-gfw"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-plugin-s3",
+        "version": "0.2.4",
+        "isSemVerMajor": true
+      }
+    },
+    "ip": {
+      "name": "ip",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1097720,
+          "name": "ip",
+          "dependency": "ip",
+          "title": "NPM IP package incorrectly identifies some private IP addresses as public",
+          "url": "https://github.com/advisories/GHSA-78xj-cgh5-2h22",
+          "severity": "low",
+          "cwe": [
+            "CWE-918"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": "<1.1.9"
+        },
+        {
+          "source": 1099357,
+          "name": "ip",
+          "dependency": "ip",
+          "title": "ip SSRF improper categorization in isPublic",
+          "url": "https://github.com/advisories/GHSA-2p57-rm9w-gvfp",
+          "severity": "high",
+          "cwe": [
+            "CWE-918"
+          ],
+          "cvss": {
+            "score": 8.1,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+          },
+          "range": "<=2.0.1"
+        }
+      ],
+      "effects": [
+        "pac-resolver",
+        "socks"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/ip",
+        "node_modules/socks/node_modules/ip"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-plugin-s3",
+        "version": "0.2.4",
+        "isSemVerMajor": true
+      }
+    },
+    "mem": {
+      "name": "mem",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1085685,
+          "name": "mem",
+          "dependency": "mem",
+          "title": "Denial of Service in mem",
+          "url": "https://github.com/advisories/GHSA-4xcv-9jjx-gfj3",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-400"
+          ],
+          "cvss": {
+            "score": 5.1,
+            "vectorString": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+          },
+          "range": "<4.0.0"
+        }
+      ],
+      "effects": [
+        "in-gfw"
+      ],
+      "range": "<4.0.0",
+      "nodes": [
+        "node_modules/in-gfw/node_modules/mem"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-plugin-s3",
+        "version": "0.2.4",
+        "isSemVerMajor": true
+      }
+    },
+    "netmask": {
+      "name": "netmask",
+      "severity": "critical",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1089900,
+          "name": "netmask",
+          "dependency": "netmask",
+          "title": "Improper parsing of octal bytes in netmask",
+          "url": "https://github.com/advisories/GHSA-4c7m-wxvm-r7gc",
+          "severity": "critical",
+          "cwe": [
+            "CWE-20"
+          ],
+          "cvss": {
+            "score": 9.1,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
+          },
+          "range": "<1.1.0"
+        },
+        {
+          "source": 1093560,
+          "name": "netmask",
+          "dependency": "netmask",
+          "title": "netmask npm package mishandles octal input data",
+          "url": "https://github.com/advisories/GHSA-pch5-whg9-qr2r",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-20"
+          ],
+          "cvss": {
+            "score": 5.3,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+          },
+          "range": "<2.0.1"
+        }
+      ],
+      "effects": [
+        "pac-resolver"
+      ],
+      "range": "<=2.0.0",
+      "nodes": [
+        "node_modules/netmask"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-plugin-s3",
+        "version": "0.2.4",
+        "isSemVerMajor": true
+      }
+    },
+    "nugget": {
+      "name": "nugget",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "request"
+      ],
+      "effects": [
+        "git-win"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/nugget"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-plugin-s3",
+        "version": "0.2.4",
+        "isSemVerMajor": true
+      }
+    },
+    "pac-proxy-agent": {
+      "name": "pac-proxy-agent",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "pac-resolver"
+      ],
+      "effects": [
+        "proxy-agent"
+      ],
+      "range": "<=4.1.0",
+      "nodes": [
+        "node_modules/pac-proxy-agent"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-plugin-s3",
+        "version": "0.2.4",
+        "isSemVerMajor": true
+      }
+    },
+    "pac-resolver": {
+      "name": "pac-resolver",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1090384,
+          "name": "pac-resolver",
+          "dependency": "pac-resolver",
+          "title": "Code Injection in pac-resolver",
+          "url": "https://github.com/advisories/GHSA-9j49-mfvp-vmhm",
+          "severity": "high",
+          "cwe": [
+            "CWE-94"
+          ],
+          "cvss": {
+            "score": 8.1,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+          },
+          "range": "<5.0.0"
+        },
+        "degenerator",
+        "ip",
+        "netmask"
+      ],
+      "effects": [
+        "pac-proxy-agent"
+      ],
+      "range": "<=7.0.0",
+      "nodes": [
+        "node_modules/pac-resolver"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-plugin-s3",
+        "version": "0.2.4",
+        "isSemVerMajor": true
+      }
+    },
+    "path-to-regexp": {
+      "name": "path-to-regexp",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1099562,
+          "name": "path-to-regexp",
+          "dependency": "path-to-regexp",
+          "title": "path-to-regexp outputs backtracking regular expressions",
+          "url": "https://github.com/advisories/GHSA-9wv6-86v2-598j",
+          "severity": "high",
+          "cwe": [
+            "CWE-1333"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<0.1.10"
+        }
+      ],
+      "effects": [
+        "gatsby"
+      ],
+      "range": "<0.1.10",
+      "nodes": [
+        "node_modules/path-to-regexp"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-plugin-mdx",
+        "version": "2.15.0",
+        "isSemVerMajor": true
+      }
+    },
+    "proxy-agent": {
+      "name": "proxy-agent",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "pac-proxy-agent"
+      ],
+      "effects": [
+        "gatsby-plugin-s3"
+      ],
+      "range": "1.1.0 - 4.0.1",
+      "nodes": [
+        "node_modules/proxy-agent"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-plugin-s3",
+        "version": "0.2.4",
+        "isSemVerMajor": true
+      }
+    },
+    "puppeteer-core": {
+      "name": "puppeteer-core",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        "ws"
+      ],
+      "effects": [],
+      "range": "11.0.0 - 22.11.1",
+      "nodes": [
+        "node_modules/puppeteer-core"
+      ],
+      "fixAvailable": {
+        "name": "puppeteer-core",
+        "version": "23.6.1",
+        "isSemVerMajor": true
+      }
+    },
+    "request": {
+      "name": "request",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1096727,
+          "name": "request",
+          "dependency": "request",
+          "title": "Server-Side Request Forgery in Request",
+          "url": "https://github.com/advisories/GHSA-p8p7-x288-28g6",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-918"
+          ],
+          "cvss": {
+            "score": 6.1,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+          },
+          "range": "<=2.88.2"
+        },
+        "tough-cookie"
+      ],
+      "effects": [
+        "nugget"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/request"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-plugin-s3",
+        "version": "0.2.4",
+        "isSemVerMajor": true
+      }
+    },
+    "socket.io": {
+      "name": "socket.io",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        "engine.io"
+      ],
+      "effects": [
+        "gatsby"
+      ],
+      "range": "1.6.0 - 4.7.5",
+      "nodes": [
+        "node_modules/socket.io"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-plugin-mdx",
+        "version": "2.15.0",
+        "isSemVerMajor": true
+      }
+    },
+    "socks": {
+      "name": "socks",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        "ip"
+      ],
+      "effects": [],
+      "range": "1.0.0 - 1.1.8 || 2.3.3 - 2.4.1",
+      "nodes": [
+        "node_modules/socks"
+      ],
+      "fixAvailable": true
+    },
+    "tough-cookie": {
+      "name": "tough-cookie",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1097682,
+          "name": "tough-cookie",
+          "dependency": "tough-cookie",
+          "title": "tough-cookie Prototype Pollution vulnerability",
+          "url": "https://github.com/advisories/GHSA-72xf-g2v4-qvf3",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-1321"
+          ],
+          "cvss": {
+            "score": 6.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
+          },
+          "range": "<4.1.3"
+        }
+      ],
+      "effects": [
+        "request"
+      ],
+      "range": "<4.1.3",
+      "nodes": [
+        "node_modules/request/node_modules/tough-cookie"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-plugin-s3",
+        "version": "0.2.4",
+        "isSemVerMajor": true
+      }
+    },
+    "webpack-dev-middleware": {
+      "name": "webpack-dev-middleware",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1096729,
+          "name": "webpack-dev-middleware",
+          "dependency": "webpack-dev-middleware",
+          "title": "Path traversal in webpack-dev-middleware",
+          "url": "https://github.com/advisories/GHSA-wr3j-pwj9-hqq6",
+          "severity": "high",
+          "cwe": [
+            "CWE-22"
+          ],
+          "cvss": {
+            "score": 7.4,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:N/A:N"
+          },
+          "range": "<=5.3.3"
+        }
+      ],
+      "effects": [
+        "gatsby"
+      ],
+      "range": "<=5.3.3",
+      "nodes": [
+        "node_modules/webpack-dev-middleware"
+      ],
+      "fixAvailable": {
+        "name": "gatsby-plugin-mdx",
+        "version": "2.15.0",
+        "isSemVerMajor": true
+      }
+    },
+    "ws": {
+      "name": "ws",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1098392,
+          "name": "ws",
+          "dependency": "ws",
+          "title": "ws affected by a DoS when handling a request with many HTTP headers",
+          "url": "https://github.com/advisories/GHSA-3h5v-q93c-6h6q",
+          "severity": "high",
+          "cwe": [
+            "CWE-476"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": ">=8.0.0 <8.17.1"
+        }
+      ],
+      "effects": [
+        "puppeteer-core"
+      ],
+      "range": "8.0.0 - 8.17.0",
+      "nodes": [
+        "node_modules/puppeteer-core/node_modules/ws"
+      ],
+      "fixAvailable": {
+        "name": "puppeteer-core",
+        "version": "23.6.1",
+        "isSemVerMajor": true
+      }
+    }
+  },
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 4,
+      "moderate": 26,
+      "high": 12,
+      "critical": 1,
+      "total": 43
+    },
+    "dependencies": {
+      "prod": 1841,
+      "dev": 83,
+      "optional": 98,
+      "peer": 15,
+      "peerOptional": 0,
+      "total": 2035
+    }
+  }
+}
