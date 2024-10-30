@@ -131,7 +131,7 @@ export const inputModals = () => {
               <Label withInput={true} required={true} className="mt-5">
                 Version
               </Label>
-              <Select triggerOptions={{ withClearButton: false }}>
+              <Select triggerOptions={{ withClearButton: false }} width="100%">
                 <Select.List>
                   {options.map((item, key) => {
                     return (
@@ -274,7 +274,7 @@ const customCode = `() => {
             </div>
             <div className="ml-5 d-block w-25">
               <Label withInput={true} required={true} className="mt-5">Version</Label>
-              <Select triggerOptions={{ withClearButton: false }}>
+              <Select triggerOptions={{ withClearButton: false }} width="100%">
                 <Select.List>
                   {options.map((item, key) => {
                     return (
