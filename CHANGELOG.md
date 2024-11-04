@@ -1,3 +1,41 @@
+## 3.3.0 (2024-11-04)
+
+### Highlights
+
+- fix(table): fix selection state of resource table (9e9fb824)
+- fix(docs): remove js-beautify dependency (8e6cbac0)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+- fix(table): fix selection state of resource table (9e9fb824)
+- fix(docs): remove js-beautify dependency (8e6cbac0)
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 3.2.0 (2024-10-17)
 
 ### Highlights
