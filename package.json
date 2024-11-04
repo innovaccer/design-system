@@ -63,7 +63,7 @@
     "@storybook/addon-viewport": "6.4.8",
     "@storybook/preset-typescript": "3.0.0",
     "@storybook/react": "6.5.14",
-    "@storybook/storybook-deployer": "2.8.10",
+    "@storybook/storybook-deployer": "2.8.16",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^10.4.7",
     "@types/jest": "^24.9.1",
