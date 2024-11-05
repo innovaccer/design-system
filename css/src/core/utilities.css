@@ -20,12 +20,24 @@
 }
 
 ::-webkit-scrollbar {
-  width: var(--spacing-2);
+  width: 16px;
 }
 
 ::-webkit-scrollbar-thumb {
-  border: var(--spacing-s) solid rgba(0, 0, 0, 0);
-  background-clip: padding-box;
-  border-radius: var(--spacing);
-  background-color: var(--secondary);
+  background: #c5c5c5;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a6a6a6;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #707070;
+  border: 2px solid transparent;
+  background-clip: content-box;
 }
