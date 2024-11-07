@@ -255,9 +255,10 @@ const DropdownList = (props: OptionsProps) => {
   const [minHeight, setMinHeight] = React.useState<number | undefined>();
 
   const getMinHeight = () => {
-    const dropdownWrapper = document.querySelector<HTMLElement>('.Dropdown-wrapper');
-    const minHeight = dropdownWrapper?.offsetHeight;
-    minHeight && setMinHeight(minHeight);
+    if (dropdownRef.current) {
+      const minHeight = dropdownRef.current?.offsetHeight;
+      minHeight && setMinHeight(minHeight);
+    }
   };
 
   const isDropdownListBlank = listOptions.length === 0 && !loadingOptions && selected.length <= 0;
@@ -274,7 +275,6 @@ const DropdownList = (props: OptionsProps) => {
         minWidth: minWidth ? minWidth : popperMinWidth,
         maxWidth: maxWidth ? maxWidth : '100%',
       };
-      requestAnimationFrame(getMinHeight);
 
       setPopoverStyle(popperWrapperStyle);
 
@@ -285,6 +285,7 @@ const DropdownList = (props: OptionsProps) => {
         }, 100);
       }
     }
+    requestAnimationFrame(getMinHeight);
 
     return () => {
       clearTimeout(timer);
