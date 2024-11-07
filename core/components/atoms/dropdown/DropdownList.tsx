@@ -275,6 +275,7 @@ const DropdownList = (props: OptionsProps) => {
         minWidth: minWidth ? minWidth : popperMinWidth,
         maxWidth: maxWidth ? maxWidth : '100%',
       };
+      requestAnimationFrame(getMinHeight);
 
       setPopoverStyle(popperWrapperStyle);
 
@@ -285,7 +286,6 @@ const DropdownList = (props: OptionsProps) => {
         }, 100);
       }
     }
-    requestAnimationFrame(getMinHeight);
 
     return () => {
       clearTimeout(timer);
