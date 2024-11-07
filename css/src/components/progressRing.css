@@ -12,6 +12,11 @@
   width: var(--spacing-2);
 }
 
+.Ring--large {
+  height: var(--spacing-4);
+  width: var(--spacing-4);
+}
+
 .Ring Circle {
   fill: none;
 }

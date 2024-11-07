@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
-export type ProgressRingSize = 'small' | 'regular';
+export type ProgressRingSize = 'small' | 'regular' | 'large';
 
 export interface ProgressRingProps extends BaseProps {
   /**
@@ -17,10 +17,14 @@ export interface ProgressRingProps extends BaseProps {
    * Describes how much work the task indicated by the `Progress Ring` requires.
    */
   max: number;
+  /**
+   *
+   */
+  originalStroke?: boolean;
 }
 
 export const ProgressRing = (props: ProgressRingProps) => {
-  const { size, max, value, className } = props;
+  const { size, max, value, className, originalStroke } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -41,12 +45,18 @@ export const ProgressRing = (props: ProgressRingProps) => {
 
   const updatedValue = value > 0 ? (Math.min(value, max) * 100) / max : 0;
 
+  const strokeWidthMapping = {
+    small: 6,
+    regular: 4,
+    large: 4,
+  };
+
   const circleProps = {
     cx: 25,
     cy: 25,
     r: radius,
     fill: 'none',
-    strokeWidth: '8',
+    strokeWidth: originalStroke ? '8' : strokeWidthMapping[size],
     strokeDasharray: `${circumference} ${circumference}`,
   };
 
