@@ -1,6 +1,6 @@
 import * as React from 'react';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
-import { Card, Table, Dropdown, Avatar, Button } from '@/index';
+import { Card, Table, Menu, Avatar, Text } from '@/index';
 import { AsyncTable, SyncTable } from './_common_/types';
 import { action } from '@/utils/action';
 
@@ -132,17 +132,16 @@ export const resourceTable = () => {
         <div className="d-flex align-items-center justify-content-end flex-grow-1">
           <Avatar firstName={props.data.firstName} lastName={props.data.lastName} />
           <div className="ml-6">
-            <Dropdown
-              triggerOptions={{
-                customTrigger: () => <Button icon="more_horiz" appearance="transparent" />,
-              }}
-              menu={true}
-              align="left"
-              options={[
-                { label: 'Edit', value: 'Edit' },
-                { label: 'Delete', value: 'Delete' },
-              ]}
-            />
+            <Menu trigger={<Menu.Trigger appearance="transparent" />}>
+              <Menu.List>
+                <Menu.Item>
+                  <Text>Edit</Text>
+                </Menu.Item>
+                <Menu.Item>
+                  <Text>Delete</Text>
+                </Menu.Item>
+              </Menu.List>
+            </Menu>
           </div>
         </div>
       ),
@@ -255,20 +254,16 @@ const customCode = `
           <div className="d-flex align-items-center justify-content-end flex-grow-1">
             <Avatar firstName={data.firstName} lastName={data.lastName} />
             <div className="ml-6">
-              <Dropdown
-                triggerOptions={{
-                  customTrigger: () => (
-                    <Button icon="more_horiz" appearance="transparent" />
-                  )
-                }}
-                menu={true}
-                align="left"
-                options={[
-                  { label: 'Edit', value: 'Edit' },
-                  { label: 'Delete', value: 'Delete' }
-                ]}
-                popoverOptions={{appendToBody:false}}
-              />
+              <Menu trigger={<Menu.Trigger appearance="transparent" />}>
+                <Menu.List>
+                  <Menu.Item>
+                    <Text>Edit</Text>
+                  </Menu.Item>
+                  <Menu.Item>
+                    <Text>Delete</Text>
+                  </Menu.Item>
+                </Menu.List>
+              </Menu>
             </div>
           </div>
         );
