@@ -2,14 +2,19 @@
   transform: rotate(-90deg);
 }
 
+.Ring--small {
+  height: var(--spacing-2);
+  width: var(--spacing-2);
+}
+
 .Ring--regular {
   height: var(--spacing-3);
   width: var(--spacing-3);
 }
 
-.Ring--small {
-  height: var(--spacing-2);
-  width: var(--spacing-2);
+.Ring--large {
+  height: var(--spacing-4);
+  width: var(--spacing-4);
 }
 
 .Ring Circle {

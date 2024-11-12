@@ -8,7 +8,7 @@ figma.connect(ProgressRing, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T
     size: figma.enum('Size', {
       Small: 'small',
       Regular: 'regular',
-      Large: 'regular',
+      Large: 'large',
     }),
     value: figma.enum('Percentage', {
       '25%': 25,
