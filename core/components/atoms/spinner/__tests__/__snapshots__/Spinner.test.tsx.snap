@@ -131,7 +131,30 @@ exports[`Spinner component
         fill="none"
         r="20"
         stroke-miterlimit="10"
-        stroke-width="4"
+        stroke-width="6"
+      />
+    </svg>
+  </div>
+</body>
+`;
+
+exports[`Spinner component 
+  size: "xsmall"
+ 1`] = `
+<body>
+  <div>
+    <svg
+      class="Spinner Spinner--xsmall"
+      viewBox="0 0 50 50"
+    >
+      <circle
+        class="Circle Circle--primary"
+        cx="25"
+        cy="25"
+        fill="none"
+        r="20"
+        stroke-miterlimit="10"
+        stroke-width="8"
       />
     </svg>
   </div>
