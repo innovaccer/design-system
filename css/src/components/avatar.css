@@ -106,3 +106,48 @@
   opacity: var(--opacity-20);
   mix-blend-mode: multiply;
 }
+
+.Avatar-subtle--primary {
+  color: var(--primary-darker);
+  background: var(--primary-lightest);
+}
+
+.Avatar-subtle--secondary {
+  color: var(--text);
+  background: var(--secondary-light);
+}
+
+.Avatar-subtle--success {
+  color: var(--success-darker);
+  background: var(--success-lightest);
+}
+
+.Avatar-subtle--alert {
+  color: var(--alert-darker);
+  background: var(--alert-lightest);
+}
+
+.Avatar-subtle--warning {
+  color: var(--warning-darker);
+  background: var(--warning-lightest);
+}
+
+.Avatar-subtle--accent1 {
+  color: var(--accent1-darker);
+  background: var(--accent1-lightest);
+}
+
+.Avatar-subtle--accent2 {
+  color: var(--accent2-darker);
+  background: var(--accent2-lightest);
+}
+
+.Avatar-subtle--accent3 {
+  color: var(--accent3-darker);
+  background: var(--accent3-lightest);
+}
+
+.Avatar-subtle--accent4 {
+  color: var(--accent4-darker);
+  background: var(--accent4-lightest);
+}

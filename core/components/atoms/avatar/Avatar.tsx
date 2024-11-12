@@ -57,6 +57,10 @@ export interface AvatarProps extends BaseProps {
    * Defines tabIndex of the `Avatar`
    */
   tabIndex?: number;
+  /**
+   * Makes `Avatar` appearance subtle
+   */
+  subtle?: boolean;
 }
 
 const initialsLength = 2;
@@ -77,6 +81,7 @@ export const Avatar = (props: AvatarProps) => {
     disabled,
     tooltipSuffix,
     tabIndex,
+    subtle,
     role = 'presentation',
   } = props;
 
@@ -105,7 +110,8 @@ export const Avatar = (props: AvatarProps) => {
       Avatar: true,
       ['Avatar--square']: shape === 'square',
       [`Avatar--${size}`]: shape !== 'square',
-      [`Avatar--${AvatarAppearance}`]: AvatarAppearance,
+      [`Avatar--${AvatarAppearance}`]: AvatarAppearance && !subtle,
+      [`Avatar-subtle--${AvatarAppearance}`]: AvatarAppearance && subtle,
       ['Avatar--noInitials']: !initials || !withTooltip,
       ['Avatar--disabled']: disabled,
       ['Avatar--default']: !disabled,
