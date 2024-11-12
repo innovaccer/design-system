@@ -142,13 +142,18 @@ const customCode = `() => {
     <Text appearance="subtle" className="mr-4">Updated 1 day ago</Text>
     <AvatarGroup borderColor="var(--secondary-lightest)" className="mr-5" list={list}/>
     <div>
-      <Dropdown
-        menu={true}
-        optionType="WITH_ICON"
-        icon="more_horiz"
-        options={options}
-        align="left"
-      />
+        <Menu trigger={<Menu.Trigger />}>
+          <Menu.List>
+            <Menu.Item className="d-flex align-items-center">
+              <Icon name="print" className="mr-4 my-2" />
+              <Text>Edit</Text>
+            </Menu.Item>
+            <Menu.Item className="d-flex align-items-center">
+              <Icon name="assignment_turned_in" className="mr-4 my-2" />
+              <Text>Complete</Text>
+            </Menu.Item>
+          </Menu.List>
+      </Menu>
     </div>
     </div>
   );
