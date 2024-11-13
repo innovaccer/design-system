@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseHtmlProps, BaseProps } from '@/utils/types';
-import styles from './CardSubdued.module.css';
+import styles from './cardSubdued.module.css';
 
 type Border = 'top' | 'left' | 'right' | 'bottom';
 

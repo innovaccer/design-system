@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Button } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import styles from './FileUploader.module.css';
+import styles from './fileUploader.module.css';
 
 export interface FileUploaderButtonProps extends BaseProps {
   /**

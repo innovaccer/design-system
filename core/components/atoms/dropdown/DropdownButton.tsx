@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Icon, Text } from '@/index';
 import { IconType } from '@/common.type';
-import styles from './Dropdown.module.css';
+import styles from './dropdownButton.module.css';
 
 export type DropDownButtonSize = 'tiny' | 'regular';
 

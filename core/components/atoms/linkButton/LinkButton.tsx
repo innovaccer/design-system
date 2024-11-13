@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { BaseProps, BaseHtmlProps } from '@/utils/types';
 import { Icon } from '@/index';
 import { IconType } from '@/common.type';
-import styles from './LinkButton.module.css';
+import styles from './linkButton.module.css';
 
 export type ButtonType = 'button' | 'submit' | 'reset';
 export type LinkButtonSize = 'tiny' | 'regular';

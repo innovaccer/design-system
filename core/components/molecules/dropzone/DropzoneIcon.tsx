@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Dropzone.module.css';
+import styles from './dropzone.module.css';
 
 type SVGIconProps = {
   /**

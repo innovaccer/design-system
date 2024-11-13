@@ -4,7 +4,7 @@ import { Text } from '@/index';
 import FileUploaderFormat, { FileUploaderFormatProps } from './FileUploaderFormat';
 import FileUploaderButton, { FileUploaderButtonProps } from './FileUploaderButton';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import styles from './FileUploader.module.css';
+import styles from './fileUploader.module.css';
 
 export interface FileUploaderProps extends FileUploaderButtonProps, FileUploaderFormatProps, BaseProps {
   /**

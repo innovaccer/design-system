@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Chip, Icon } from '@/index';
 import { ChipProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import styles from './ChipInput.module.css';
+import styles from './chipInput.module.css';
 
 const keyCodes = {
   BACKSPACE: 'Backspace',

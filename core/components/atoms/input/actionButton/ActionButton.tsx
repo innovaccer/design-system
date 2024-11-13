@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { BaseProps } from '@/utils/types';
 import { IconType } from '@/common.type';
 import { Icon } from '@/index';
-import styles from './ActionButton.module.css';
+import styles from './actionButton.module.css';
 
 export type ActionButtonType = 'outlined' | 'rounded';
 

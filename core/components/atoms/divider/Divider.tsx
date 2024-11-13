@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import styles from './Divider.module.css';
+import styles from './divider.module.css';
 
 type DividerType = 'basic' | 'header';
 

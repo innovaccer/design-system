@@ -5,7 +5,7 @@ import { IconProps } from '@/index.type';
 import { BaseHtmlProps, BaseProps, extractBaseProps } from '@/utils/types';
 import { AutoComplete, IconType } from '@/common.type';
 import ActionButton from './actionButton';
-import styles from './Input.module.css';
+import styles from './input.module.css';
 
 export type InputType = 'text' | 'password' | 'number' | 'email' | 'tel' | 'url';
 export type InputSize = 'tiny' | 'regular' | 'large';

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseHtmlProps, BaseProps } from '@/utils/types';
-import styles from './Card.module.css';
+import styles from './card.module.css';
 
 export type Shadow = 'none' | 'default' | 'light' | 'medium' | 'dark' | 'shadow10' | 'shadow20' | 'shadow30';
 

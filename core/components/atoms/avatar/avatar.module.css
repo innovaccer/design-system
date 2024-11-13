@@ -10,6 +10,7 @@
   text-transform: uppercase;
   border-radius: 50%;
   cursor: default;
+  background-color: red;
 }
 
 .Avatar--wrapper {

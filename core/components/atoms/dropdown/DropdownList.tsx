@@ -10,7 +10,7 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 import { ChangeEvent } from '@/common.type';
 import { ErrorTemplate } from './ErrorTemplate';
 import { ErrorType } from './Dropdown';
-import styles from './Dropdown.module.css';
+import styles from './dropdown.module.css';
 
 export type DropdownAlign = 'left' | 'right';
 export type OptionType = 'DEFAULT' | 'WITH_ICON' | 'WITH_META' | 'ICON_WITH_META';

@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Button, Link, Tooltip, Dropdown } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import styles from './Breadcrumbs.module.css';
+import styles from './breadcrumbs.module.css';
 
 interface Breadcrumb {
   label: string;

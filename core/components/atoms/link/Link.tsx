@@ -2,7 +2,7 @@ import * as React from 'react';
 import GenericText from '../_text';
 import classNames from 'classnames';
 import { BaseProps, OmitNativeProps } from '@/utils/types';
-import styles from './Link.module.css';
+import styles from './link.module.css';
 
 type LinkTarget = '_blank' | '_self' | '_parent' | '_top';
 type LinkAppearance = 'default' | 'subtle';

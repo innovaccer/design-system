@@ -4,7 +4,7 @@ import Meta, { MetaProps } from './Meta';
 import { Icon } from '@/index';
 import { IconProps, TextProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import styles from './MetaList.module.css';
+import styles from './metaList.module.css';
 
 export type MetaSize = 'small' | 'regular';
 export interface MetaListProps extends BaseProps {

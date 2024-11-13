@@ -3,7 +3,7 @@ import GenericChip from '../_chip';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { IconType } from '@/common.type';
-import styles from './Chip.module.css';
+import styles from './chip.module.css';
 
 export type ChipType = 'action' | 'selection' | 'input';
 export type Name = number | string | object;

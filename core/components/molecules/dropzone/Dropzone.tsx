@@ -8,7 +8,7 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 import { fileErrorMessages } from './FileErrors';
 import { useAccessibilityProps } from '@/accessibility/utils';
 import DropzoneIcon from './DropzoneIcon';
-import styles from './Dropzone.module.css';
+import styles from './dropzone.module.css';
 
 export type DropZoneType = 'standard' | 'compressed' | 'tight';
 

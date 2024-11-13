@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Icon } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import styles from './Collapsible.module.css';
+import styles from './collapsible.module.css';
 
 export interface CollapsibleProps extends BaseProps {
   /**

@@ -70,6 +70,8 @@ export const Avatar = (props: AvatarProps) => {
 
   const baseProps = extractBaseProps(props);
 
+  console.log('stylessss', styles);
+
   const initials =
     children && typeof children === 'string'
       ? children.trim().slice(0, initialsLength)

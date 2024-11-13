@@ -4,7 +4,7 @@ import Editable from '@/components/atoms/editable';
 import { ChipInput, Button, Chip, Text } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { ChipInputProps } from '@/index.type';
-import styles from './EditableChipInput.module.css';
+import styles from './editableChipInput.module.css';
 
 export interface EditableChipInputProps extends BaseProps {
   /**

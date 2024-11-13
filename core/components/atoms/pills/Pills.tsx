@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { AccentAppearance } from '@/common.type';
-import styles from './Pills.module.css';
+import styles from './pills.module.css';
 
 export interface PillsProps extends BaseProps {
   /**

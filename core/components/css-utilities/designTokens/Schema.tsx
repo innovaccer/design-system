@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Schema } from '../../organisms/grid';
 import { GridCell, Button } from '@/index';
-import styles from './YourStyles.module.css';
+// import styles from './YourStyles.module.css';
 
 const copyCode = (val: string) => navigator.clipboard.writeText(val);
 
@@ -82,7 +82,7 @@ export const getSchema = (property: string, text: string, classnames?: string, c
         return (
           <div
             style={styleObj}
-            className={`${classnames} ${props.data.setBgColor === undefined ? '' : styles.setBgColor}`}
+            className={`${classnames} ${props.data.setBgColor === undefined ? '' : 'setBgColor'}`}
           >
             {text}
           </div>

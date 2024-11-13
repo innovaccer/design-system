@@ -9,7 +9,7 @@ import EmptyStateTitle from './EmptyStateTitle';
 import EmptyStateDescription from './EmptyStateDescription';
 import EmptyStateActions from './EmptyStateActions';
 import { TEmptyStateSize } from '@/common.type';
-import styles from './EmptyState.module.css';
+import styles from './emptyState.module.css';
 
 export interface EmptyStateProps extends BaseProps {
   /** @ignore */

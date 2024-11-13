@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Icon, Heading, Text } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { MessageAppearance } from '@/common.type';
-import styles from './Message.module.css';
+import styles from './message.module.css';
 
 const IconMapping = {
   success: 'check_circle',

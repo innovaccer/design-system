@@ -4,7 +4,7 @@ import Editable from '@/components/atoms/editable';
 import { Input, Button, Popover, InlineMessage } from '@/index';
 import { InputProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import styles from './EditableInput.module.css';
+import styles from './editableInput.module.css';
 
 export interface EditableInputProps extends BaseProps {
   /**

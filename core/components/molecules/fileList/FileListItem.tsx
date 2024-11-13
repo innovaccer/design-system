@@ -4,7 +4,7 @@ import { Text, InlineMessage } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import FileIcon from './FileIcon';
 import { FileStatus } from '@/common.type';
-import styles from './FileList.module.css';
+import styles from './fileList.module.css';
 
 export interface FileObject extends BaseProps, Record<string, any> {
   /**

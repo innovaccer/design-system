@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { useAccessibilityProps } from '@/accessibility/utils';
-import styles from './Icon.module.css';
+import styles from './icon.module.css';
 
 export type IconAppearance =
   | 'default'

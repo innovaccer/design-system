@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ProgressRing, Icon } from '@/index';
 import { FileListItemProps } from './FileListItem';
 import classNames from 'classnames';
-import styles from './Filelist.module.css';
+import styles from './fileList.module.css';
 const { useEffect, useState } = React;
 
 const IconMapping: { [key: string]: string } = {

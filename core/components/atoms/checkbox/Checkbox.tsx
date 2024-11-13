@@ -5,7 +5,7 @@ import { BaseProps, OmitNativeProps } from '@/utils/types';
 import uidGenerator from '@/utils/uidGenerator';
 import { ChangeEvent } from '@/common.type';
 import CheckboxIcon from './CheckboxIcon';
-import styles from './Checkbox.module.css';
+import styles from './checkbox.module.css';
 
 export type CheckBoxSize = 'regular' | 'tiny';
 

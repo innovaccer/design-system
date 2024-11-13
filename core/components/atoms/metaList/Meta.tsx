@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Icon, Text } from '@/index';
 import { MetaSize } from './MetaList';
 import { IconType } from '@/common.type';
-import styles from './Metalist.module.css';
+import styles from './metaList.module.css';
 
 export interface MetaProps {
   label: string;

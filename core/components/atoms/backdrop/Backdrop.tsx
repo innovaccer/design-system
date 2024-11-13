@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import styles from './Backdrop.module.css';
+import styles from './backdrop.module.css';
 
 const { useEffect, useState } = React;
 

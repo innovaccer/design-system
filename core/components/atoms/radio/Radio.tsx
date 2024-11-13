@@ -4,7 +4,7 @@ import Text from '@/components/atoms/text';
 import { BaseProps, OmitNativeProps } from '@/utils/types';
 import uidGenerator from '@/utils/uidGenerator';
 import { ChangeEvent } from '@/common.type';
-import styles from './Radio.module.css';
+import styles from './radio.module.css';
 
 export type RadioSize = 'regular' | 'tiny';
 

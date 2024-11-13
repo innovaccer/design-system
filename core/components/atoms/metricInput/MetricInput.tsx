@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Button, Icon, Text } from '@/index';
 import { BaseHtmlProps, BaseProps, extractBaseProps } from '@/utils/types';
 import { AutoComplete, IconType } from '@/common.type';
-import styles from './MetricInput.module.css';
+import styles from './metricInput.module.css';
 
 export type MetricInputSize = 'regular' | 'large';
 

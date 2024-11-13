@@ -4,7 +4,7 @@ import { Text, InlineMessage, Button } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import FileUploaderStatus from './FileUploaderStatus';
 import { FileStatus } from '@/common.type';
-import styles from './FileUploader.module.css';
+import styles from './fileUploader.module.css';
 
 export interface FileItem {
   /**

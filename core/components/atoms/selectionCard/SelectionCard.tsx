@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, BaseHtmlProps } from '@/utils/types';
 import { useMultiSelect, useSingleSelect } from './hooks';
-import styles from './SelectionCard.module.css';
+import styles from './selectionCard.module.css';
 
 type ClickEventType = React.MouseEvent<HTMLDivElement> | React.KeyboardEvent;
 

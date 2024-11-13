@@ -7,7 +7,7 @@ import { AvatarSize } from '@/common.type';
 import AvatarCount from './AvatarCount';
 import Avatars from './Avatars';
 import AvatarPopperBody from './AvatarPopperBody';
-import styles from './AvatarGroup.module.css';
+import styles from './avatarGroup.module.css';
 
 interface AvatarData extends Record<string, any> {
   firstName?: string;

@@ -6,7 +6,7 @@ import Icon from '@/components/atoms/icon';
 import ActionButton from './ActionButton';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { MessageAppearance } from '@/common.type';
-import styles from './Toast.module.css';
+import styles from './toast.module.css';
 
 export type Action = {
   /**

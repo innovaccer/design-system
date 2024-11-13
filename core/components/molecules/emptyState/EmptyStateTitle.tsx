@@ -4,7 +4,7 @@ import { BaseProps } from '@/utils/types';
 import { Heading, Text } from '@/index';
 import EmptyStateContext from './EmptyStateContext';
 import { textSize } from './EmptyState';
-import styles from './EmptyState.module.css';
+import styles from './emptyState.module.css';
 
 export interface EmptyDescriptionProps extends BaseProps {
   /**

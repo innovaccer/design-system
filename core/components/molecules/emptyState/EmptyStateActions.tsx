@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { BaseProps } from '@/utils/types';
 import EmptyStateContext from './EmptyStateContext';
-import styles from './EmptyState.module.css';
+import styles from './emptyState.module.css';
 
 export interface EmptyActionProps extends BaseProps {
   /**

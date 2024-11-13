@@ -2,7 +2,7 @@ import React from 'react';
 import { BaseProps } from '@/utils/types';
 import EmptyStateContext from './EmptyStateContext';
 import classNames from 'classnames';
-import styles from './EmptyState.module.css';
+import styles from './emptyState.module.css';
 
 export interface EmptyImageProps extends BaseProps, React.ImgHTMLAttributes<HTMLImageElement> {
   /**

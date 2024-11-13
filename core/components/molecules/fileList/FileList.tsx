@@ -2,7 +2,7 @@ import * as React from 'react';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { FileListItem, FileListItemProps } from './FileListItem';
 import { Card } from '@/index';
-import styles from './FileList.module.css';
+import styles from './fileList.module.css';
 
 export interface FileListProps extends BaseProps {
   /**

@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { OmitNativeProps, BaseProps } from '@/utils/types';
 import { isSpaceKey } from '@/accessibility/utils';
 import { ChangeEvent } from '@/common.type';
-import styles from './Switch.module.css';
+import styles from './switch.module.css';
 
 export type SwitchSize = 'regular' | 'tiny' | 'large';
 export type SwitchAppearance = 'primary' | 'alert' | 'success' | 'warning';
