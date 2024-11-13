@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import styles from '@css/components/progressBar.module.css';
 
 export type ProgressBarSize = 'small' | 'regular';
 
@@ -30,15 +31,15 @@ export const ProgressBar = (props: ProgressBarProps) => {
 
   const ProgressBarClass = classNames(
     {
-      ProgressBar: true,
+      [styles.ProgressBar]: true,
     },
     className
   );
 
   const ProgressIndicatorClass = classNames({
-    ['ProgressBar-indicator']: true,
-    ['ProgressBar-indicator--small']: size === 'small',
-    ['ProgressBar-indicator--regular']: size === 'regular',
+    [styles['ProgressBar-indicator']]: true,
+    [styles['ProgressBar-indicator--small']]: size === 'small',
+    [styles['ProgressBar-indicator--regular']]: size === 'regular',
   });
 
   return (

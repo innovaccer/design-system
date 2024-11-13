@@ -7,6 +7,7 @@ import { AvatarSize } from '@/common.type';
 import AvatarCount from './AvatarCount';
 import Avatars from './Avatars';
 import AvatarPopperBody from './AvatarPopperBody';
+import styles from '@css/components/avatarGroup.module.css';
 
 export interface AvatarData extends Record<string, any> {
   firstName?: string;
@@ -128,13 +129,14 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
 
   const AvatarGroupClass = classNames(
     {
-      ['AvatarGroup']: true,
+      [styles['AvatarGroup']]: true,
+      'd-inline-flex': true,
     },
     className
   );
 
   return (
-    <div data-test="DesignSystem-AvatarGroup" {...baseProps} className={`${AvatarGroupClass} d-inline-flex`}>
+    <div data-test="DesignSystem-AvatarGroup" {...baseProps} className={AvatarGroupClass}>
       <Avatars size={size} avatarList={avatarList} avatarStyle={avatarStyle} tooltipPosition={tooltipPosition} />
       {list.length - max > 0 && list.length !== 3 && (
         <Popover

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import styles from '@css/components/progressRing.module.css';
 
 export type ProgressRingSize = 'small' | 'regular' | 'large';
 
@@ -29,8 +30,8 @@ export const ProgressRing = (props: ProgressRingProps) => {
 
   const ProgressRingClass = classNames(
     {
-      Ring: true,
-      [`Ring--${size}`]: size,
+      [styles.Ring]: true,
+      [styles[`Ring--${size}`]]: size,
     },
     className
   );
@@ -52,9 +53,9 @@ export const ProgressRing = (props: ProgressRingProps) => {
 
   return (
     <svg data-test="DesignSystem-ProgressRing" {...baseProps} className={ProgressRingClass} {...svgProps}>
-      <circle className="Ring-background" {...circleProps} />
+      <circle className={styles['Ring-background']} {...circleProps} />
       <circle
-        className="Ring-indicator"
+        className={styles['Ring-indicator']}
         strokeDashoffset={circumference - (updatedValue / 100) * circumference}
         {...circleProps}
         data-test="DesignSystem-ProgressRing--Circle"

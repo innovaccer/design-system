@@ -4,6 +4,7 @@ import Text from '@/components/atoms/text';
 import { BaseProps, OmitNativeProps } from '@/utils/types';
 import uidGenerator from '@/utils/uidGenerator';
 import { ChangeEvent } from '@/common.type';
+import styles from '@css/components/radio.module.css';
 
 export type RadioSize = 'regular' | 'tiny';
 
@@ -75,26 +76,26 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
 
   const RadioClass = classNames(
     {
-      ['Radio']: true,
-      ['Radio--disabled']: disabled,
+      [styles['Radio']]: true,
+      [styles['Radio--disabled']]: disabled,
     },
     className
   );
 
   const RadioWrapper = classNames({
-    ['Radio-wrapper']: true,
-    [`Radio-defaultWrapper`]: !error,
-    [`Radio-errorWrapper`]: error,
-    [`Radio-wrapper--${size}`]: size,
+    [styles['Radio-wrapper']]: true,
+    [styles[`Radio-defaultWrapper`]]: !error,
+    [styles[`Radio-errorWrapper`]]: error,
+    [styles[`Radio-wrapper--${size}`]]: size,
   });
 
   const RadioOuterWrapper = classNames({
-    ['Radio-outerWrapper']: true,
-    [`Radio-outerWrapper--${size}`]: size,
+    [styles['Radio-outerWrapper']]: true,
+    [styles[`Radio-outerWrapper--${size}`]]: size,
   });
 
   const RadioLabelClass = classNames({
-    ['Radio-Label']: true,
+    [styles['Radio-Label']]: true,
   });
 
   const id = `${name}-${label}-${uidGenerator()}`;
@@ -112,13 +113,13 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
           name={name}
           value={value}
           onChange={onChange}
-          className="Radio-input"
+          className={styles['Radio-input']}
           id={id}
           data-test="DesignSystem-Radio-Input"
         />
         <span data-test="DesignSystem-Radio-wrapper" className={RadioWrapper} />
       </div>
-      <div className="Radio-labelWrapper">
+      <div className={styles['Radio-labelWrapper']}>
         {label && (
           <label className={RadioLabelClass} htmlFor={id} data-test="DesignSystem-Radio-Label">
             <Text size={size === 'tiny' ? 'small' : 'regular'} appearance={disabled ? 'disabled' : 'default'}>

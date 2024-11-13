@@ -7,6 +7,7 @@ import AvatarSelectionList from './AvatarSelectionList';
 import AvatarSelectionOption from './AvatarSelectionOption';
 import AvatarSelectionEmptyState from './AvatarSelectionEmptyState';
 import { AvatarSelectionContext } from '../AvatarSelectionContext';
+import styles from '@css/components/avatarSelection.module.css';
 
 interface AvatarPopoverProps {
   hiddenAvatarList: AvatarData[];
@@ -97,7 +98,7 @@ export const AvatarSelectionPopover = (props: AvatarPopoverProps) => {
   const popperClassName = classNames({
     ['py-3']: !withSearch,
     ['pb-3']: withSearch,
-    ['SelectionAvatarGroup-popper']: true,
+    [styles['SelectionAvatarGroup-popper']]: true,
   });
 
   return (

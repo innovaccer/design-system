@@ -5,6 +5,7 @@ import { AvatarData } from '../AvatarSelection';
 import { AvatarSelectionContext } from '../AvatarSelectionContext';
 import { AvatarSize } from '@/common.type';
 import { TooltipProps } from '@/index.type';
+import styles from '@css/components/avatarSelection.module.css';
 
 interface SelectionAvatarsWrapperProps {
   size?: AvatarSize;
@@ -56,9 +57,9 @@ export const SelectionAvatarsWrapper = (props: SelectionAvatarsWrapperProps) => 
       {avatarList.map((avatarItem: AvatarData, index: any) => {
         const { appearance, firstName, lastName, icon, image, disabled, tooltipSuffix } = avatarItem;
         const GroupClass = classNames({
-          [`SelectionAvatarGroup-item`]: true,
-          [`SelectionAvatarGroup-item--active`]: !disabled,
-          [`SelectionAvatarGroup-item--selected`]: selectedItems?.includes(avatarItem),
+          [styles[`SelectionAvatarGroup-item`]]: true,
+          [styles[`SelectionAvatarGroup-item--active`]]: !disabled,
+          [styles[`SelectionAvatarGroup-item--selected`]]: selectedItems?.includes(avatarItem),
         });
 
         if (avatarRenderer) {
@@ -66,7 +67,7 @@ export const SelectionAvatarsWrapper = (props: SelectionAvatarsWrapperProps) => 
         }
 
         return (
-          <span key={index} className="SelectionAvatarGroup-wrapper">
+          <span key={index} className={styles['SelectionAvatarGroup-wrapper']}>
             <div
               tabIndex={-1}
               role="checkbox"

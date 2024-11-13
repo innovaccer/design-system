@@ -14,6 +14,7 @@ import {
   isElementOfType,
 } from './SliderUtils';
 import { NumberRange } from '@/common.type';
+import styles from '@css/components/slider.module.css';
 
 export interface MultiSliderProps extends BaseProps {
   /**
@@ -324,7 +325,7 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
       };
 
       const SliderTicksClass = classNames({
-        ['Slider-ticks']: true,
+        [styles['Slider-ticks']]: true,
         ['bg-dark']: active,
       });
 
@@ -333,7 +334,7 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
       labels.push(
         <div
           onClick={onClickHandler}
-          className={'Slider-label'}
+          className={styles['Slider-label']}
           key={i}
           style={style}
           onMouseOver={() => this.handleLabelMouseOver(i)}
@@ -366,10 +367,10 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
     const fillTrack = this.getTrackFill(start, end);
 
     const classes = classNames({
-      ['Slider-progress']: true,
-      ['Slider-progress--disabled']: this.props.disabled,
-      ['Slider-progress--inRange']: fillTrack,
-      ['Slider-progress--inRangeDisabled']: fillTrack && this.props.disabled,
+      [styles['Slider-progress']]: true,
+      [styles['Slider-progress--disabled']]: this.props.disabled,
+      [styles['Slider-progress--inRange']]: fillTrack,
+      [styles['Slider-progress--inRangeDisabled']]: fillTrack && this.props.disabled,
     });
 
     return <div key={`track-${index}`} className={classes} style={style} />;
@@ -409,14 +410,14 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
 
     const SliderClass = classNames(
       {
-        ['Slider']: true,
+        [styles['Slider']]: true,
       },
       className
     );
 
     const WrapperClass = classNames({
-      ['Slider-wrapper']: true,
-      ['Slider-wrapper--disabled']: this.props.disabled,
+      [styles['Slider-wrapper']]: true,
+      [styles['Slider-wrapper--disabled']]: this.props.disabled,
     });
 
     return (
@@ -426,7 +427,7 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
           {/* TODO(a11y): fix accessibility  */}
           {/* eslint-disable */}
           <div
-            className="Slider-track"
+            className={styles['Slider-track']}
             ref={(ref) => (this.trackElement = ref)}
             onMouseDown={this.maybeHandleTrackClick}
             data-test="DesignSystem-MultiSlider-Slider-Track"
@@ -434,7 +435,7 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
             {/* eslint-enable */}
             {this.renderTracks()}
           </div>
-          <div className="Slider-axis">{this.renderLabels()}</div>
+          <div className={styles['Slider-axis']}>{this.renderLabels()}</div>
           {this.renderHandles()}
         </div>
       </div>

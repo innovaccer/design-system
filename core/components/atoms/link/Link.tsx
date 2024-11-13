@@ -2,6 +2,7 @@ import * as React from 'react';
 import GenericText from '../_text';
 import classNames from 'classnames';
 import { BaseProps, OmitNativeProps } from '@/utils/types';
+import styles from '@css/components/link.module.css';
 
 type LinkTarget = '_blank' | '_self' | '_parent' | '_top';
 type LinkAppearance = 'default' | 'subtle';
@@ -66,10 +67,10 @@ export const Link = (props: LinkProps) => {
 
   const classes = classNames(
     {
-      Link: true,
-      [`Link--${size}`]: size,
-      [`Link--${appearance}`]: appearance,
-      [`Link--${appearance}-disabled`]: disabled,
+      [styles.Link]: true,
+      [styles[`Link--${size}`]]: size,
+      [styles[`Link--${appearance}`]]: appearance,
+      [styles[`Link--${appearance}-disabled`]]: disabled,
     },
     className
   );

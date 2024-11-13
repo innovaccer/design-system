@@ -3,6 +3,7 @@ import GenericChip from '../_chip';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { IconType } from '@/common.type';
+import styles from '@css/components/chip.module.css';
 
 export type ChipType = 'action' | 'selection' | 'input';
 export type Name = number | string | object;
@@ -89,12 +90,12 @@ export const Chip = (props: ChipProps) => {
 
   const chipClass = classNames(
     {
-      Chip: true,
-      [`Chip-${type}--disabled`]: disabled,
-      [`Chip--${type}`]: type && !disabled,
-      [`Chip-${type}--selected`]: selected && !disabled,
-      [`Chip-selection--selectedDisabled`]: type === 'selection' && selected && disabled,
-      ['Chip-icon--clear']: clearbutton,
+      [styles.Chip]: true,
+      [styles[`Chip-${type}--disabled`]]: disabled,
+      [styles[`Chip--${type}`]]: type && !disabled,
+      [styles[`Chip-${type}--selected`]]: selected && !disabled,
+      [styles[`Chip-selection--selectedDisabled`]]: type === 'selection' && selected && disabled,
+      [styles['Chip-icon--clear']]: clearbutton,
     },
     className
   );

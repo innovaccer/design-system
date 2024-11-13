@@ -1,6 +1,7 @@
 import React from 'react';
 import { Toast } from '@/index';
 import figma from '@figma/code-connect';
+import { Action } from '@/components/atoms/toast';
 
 figma.connect(Toast, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=694-632&m=dev', {
   imports: ["import { Toast } from '@innovaccer/design-system'"],
@@ -23,5 +24,5 @@ figma.connect(Toast, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---
       false: undefined,
     }),
   },
-  example: (props) => <Toast title="Title goes here" {...props} />,
+  example: (props) => <Toast title="Title goes here" {...props} actions={props.actions as Action[]} />,
 });
