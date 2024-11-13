@@ -10,6 +10,8 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 import { ChangeEvent } from '@/common.type';
 import { ErrorTemplate } from './ErrorTemplate';
 import { ErrorType } from './Dropdown';
+import dropdownStyles from '@css/components/dropdown.module.css';
+import checkboxStyles from '@css/components/checkbox.module.css';
 
 export type DropdownAlign = 'left' | 'right';
 export type OptionType = 'DEFAULT' | 'WITH_ICON' | 'WITH_META' | 'ICON_WITH_META';
@@ -354,27 +356,27 @@ const DropdownList = (props: OptionsProps) => {
 
   const getDropdownSectionClass = (showClearButton?: boolean) => {
     return classNames({
-      ['Dropdown-section']: true,
-      ['Dropdown-section--withClear']: showClearButton,
+      [dropdownStyles['Dropdown-section']]: true,
+      [dropdownStyles['Dropdown-section--withClear']]: showClearButton,
     });
   };
 
   const dropdownClass = classNames(
     {
-      ['Dropdown']: true,
+      [dropdownStyles['Dropdown']]: true,
     },
     className
   );
 
   const dropdownWrapperClass = classNames({
-    ['Dropdown-wrapper']: true,
-    ['Dropdown-wrapper--wrap']: !truncateOption,
+    [dropdownStyles['Dropdown-wrapper']]: true,
+    [dropdownStyles['Dropdown-wrapper--wrap']]: !truncateOption,
   });
 
   const SelectAllClass = classNames({
-    ['Option-checkbox--active']: cursor === 0,
-    ['Option-checkboxWrapper']: true,
-    ['Option-checkbox']: true,
+    [dropdownStyles['Option-checkbox--active']]: cursor === 0,
+    [dropdownStyles['Option-checkboxWrapper']]: true,
+    [dropdownStyles['Option-checkbox']]: true,
     ['OptionWrapper']: true,
   });
 
@@ -418,7 +420,7 @@ const DropdownList = (props: OptionsProps) => {
   const renderFooter = () => {
     const { footerLabel = 'Search for more options' } = props;
     return (
-      <div className="Dropdown-footer">
+      <div className={dropdownStyles['Dropdown-footer']}>
         <Text size="small" appearance={'subtle'}>
           {footerLabel}
         </Text>
@@ -454,7 +456,7 @@ const DropdownList = (props: OptionsProps) => {
     const disable = _isEqual(previousSelected, tempSelected) || props.loadingOptions;
 
     return (
-      <div className="Dropdown-buttonWrapper">
+      <div className={dropdownStyles['Dropdown-buttonWrapper']}>
         <Button
           ref={dropdownCancelButtonRef}
           className="mr-4"
@@ -485,7 +487,7 @@ const DropdownList = (props: OptionsProps) => {
 
   const renderSearch = () => {
     return (
-      <div className="Dropdown-inputWrapper">
+      <div className={dropdownStyles['Dropdown-inputWrapper']}>
         <Input
           name="Dropdown-search"
           icon={'search'}
@@ -498,7 +500,7 @@ const DropdownList = (props: OptionsProps) => {
           onClear={searchClearHandler}
           ref={inputRef}
           autoComplete={'off'}
-          className="Dropdown-input"
+          className={dropdownStyles['Dropdown-input']}
         />
       </div>
     );
@@ -509,7 +511,7 @@ const DropdownList = (props: OptionsProps) => {
     const type = withCheckbox ? 'WITH_CHECKBOX' : optionType;
     return arr.map((option, ind) => {
       return (
-        <div className="Option-loading" key={`${option}-${ind}`}>
+        <div className={dropdownStyles['Option-loading']} key={`${option}-${ind}`}>
           <Loading loadingType={type} optionIndex={ind} />
         </div>
       );
@@ -524,14 +526,14 @@ const DropdownList = (props: OptionsProps) => {
 
     return (
       <div className={SelectAllClass} onMouseEnter={() => updateActiveOption(0, true)}>
-        <label htmlFor={id} className="Checkbox-label">
+        <label htmlFor={id} className={checkboxStyles['Checkbox-label']}>
           <Checkbox
             label={label}
             onChange={onSelectAll}
             checked={selectAll.checked}
             indeterminate={selectAll.indeterminate}
             tabIndex={-1}
-            className="OptionCheckbox"
+            className={dropdownStyles['OptionCheckbox']}
             id={id}
           />
         </label>
@@ -583,10 +585,15 @@ const DropdownList = (props: OptionsProps) => {
 
     const groupedListOptions = groupListOptions(listOptions);
 
+    const emptyMessageClass = classNames({
+      [dropdownStyles['Dropdown-wrapper']]: true,
+      'w-100': true,
+    });
+
     if (loadersCount && loadingOptions) {
       return (
-        <div className={'Dropdown-loading'}>
-          <div className="Dropdown-wrapper" style={loaderStyle}>
+        <div className={dropdownStyles['Dropdown-loading']}>
+          <div className={dropdownStyles['Dropdown-wrapper']} style={loaderStyle}>
             {renderLoading(loadersCount)}
           </div>
         </div>
@@ -596,9 +603,9 @@ const DropdownList = (props: OptionsProps) => {
     if (isDropdownListBlank) {
       if (noResultMessage) {
         return (
-          <div className="Dropdown-wrapper w-100" style={dropdownStyle} data-test="DesignSystem-Dropdown--errorWrapper">
-            <div className={'Option'}>
-              <div className={'Option-subinfo'}>{noResultMessage}</div>
+          <div className={emptyMessageClass} style={dropdownStyle} data-test="DesignSystem-Dropdown--errorWrapper">
+            <div className={dropdownStyles['Option']}>
+              <div className={dropdownStyles['Option-subinfo']}>{noResultMessage}</div>
             </div>
           </div>
         );
@@ -624,7 +631,7 @@ const DropdownList = (props: OptionsProps) => {
           const updatedIndex = index + selected.length;
 
           return (
-            <div className="Option-checkboxWrapper" key={index}>
+            <div className={dropdownStyles['Option-checkboxWrapper']} key={index}>
               {isGroupDifferent && currentGroup && renderGroups(currentGroup)}
               {renderOptions(option, updatedIndex)}
             </div>

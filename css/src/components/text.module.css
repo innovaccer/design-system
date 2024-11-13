@@ -1,0 +1,56 @@
+/* Text */
+.Text {
+  margin: 0;
+  line-height: var(--font-height);
+}
+
+.Text--small {
+  font-size: var(--font-size-s);
+  line-height: var(--font-height-normal);
+}
+
+.Text--regular {
+  font-size: var(--font-size);
+  line-height: var(--font-height);
+}
+
+.Text--large {
+  font-size: var(--font-size-m);
+  line-height: var(--font-height-m);
+}
+
+.Text--default {
+  color: var(--text);
+}
+
+.Text--subtle {
+  color: var(--text-subtle);
+}
+
+.Text--disabled {
+  color: var(--text-disabled);
+}
+
+.Text--destructive {
+  color: var(--text-destructive);
+}
+
+.Text--white {
+  color: var(--text-white);
+}
+
+.Text--success {
+  color: var(--text-success);
+}
+
+.Text--link {
+  color: var(--text-link);
+}
+
+.Text--medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.Text--strong {
+  font-weight: var(--font-weight-bold);
+}

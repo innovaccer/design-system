@@ -7,6 +7,7 @@ import { AccentAppearance, AvatarSize, AvatarShape } from '@/common.type';
 import AvatarIcon from './avatarIcon';
 import AvatarImage from './avatarImage';
 import AvatarProvider from './AvatarProvider';
+import styles from '@css/components/avatar.module.css';
 
 type TPresence = 'active' | 'away';
 
@@ -121,29 +122,29 @@ export const Avatar = (props: AvatarProps) => {
 
   const AvatarClassNames = classNames(
     {
-      Avatar: true,
-      ['Avatar--square']: shape === 'square',
-      [`Avatar--${size}`]: shape !== 'square',
-      [`Avatar--${AvatarAppearance}`]: AvatarAppearance,
-      ['Avatar--noInitials']: !initials || !withTooltip,
-      ['Avatar--disabled']: disabled,
-      ['Avatar--default']: !disabled,
+      [styles.Avatar]: true,
+      [styles['Avatar--square']]: shape === 'square',
+      [styles[`Avatar--${size}`]]: shape !== 'square',
+      [styles[`Avatar--${AvatarAppearance}`]]: AvatarAppearance,
+      [styles['Avatar--noInitials']]: !initials || !withTooltip,
+      [styles['Avatar--disabled']]: disabled,
+      [styles['Avatar--default']]: !disabled,
     },
     className
   );
 
   const AvatarWrapperClassNames = classNames({
-    ['Avatar-wrapper--square']: shape === 'square',
-    [`Avatar--${size}`]: shape === 'square',
+    [styles['Avatar-wrapper--square']]: shape === 'square',
+    [styles[`Avatar--${size}`]]: shape === 'square',
   });
 
   const TextClassNames = classNames({
-    [`Avatar-content--${size}`]: size,
-    ['Avatar-content']: darkAppearance.includes(AvatarAppearance),
+    [styles[`Avatar-content--${size}`]]: size,
+    [styles['Avatar-content']]: darkAppearance.includes(AvatarAppearance),
   });
 
   const IconClassNames = classNames({
-    ['Avatar-content']: darkAppearance.includes(AvatarAppearance),
+    [styles['Avatar-content']]: darkAppearance.includes(AvatarAppearance),
   });
 
   const presenceClassNames = classNames({

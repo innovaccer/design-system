@@ -342,7 +342,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
             },
           };
 
-    const classes = classNames('PopperWrapper-trigger', triggerClass);
+    const classes = classNames('d-inline-flex flex-grow-1', triggerClass);
 
     const shouldPopoverClose = (clicked: HTMLElement): boolean => {
       const popover = this.popupRef.current as HTMLElement;

@@ -3,10 +3,17 @@ import { OptionTypeProps } from './index';
 import Checkbox from '@/components/atoms/checkbox';
 import { Text, MetaList } from '@/index';
 import { MetaListProps } from '@/index.type';
+import styles from '@css/components/dropdown.module.css';
+import classNames from 'classnames';
 
 const CheckboxOption = (props: OptionTypeProps) => {
   const { className, selected, optionData, onChangeHandler, onUpdateActiveOption, dataTest, id = '' } = props;
   const { subInfo, label, disabled } = optionData;
+
+  const checkboxClassName = classNames({
+    [styles['OptionCheckbox']]: true,
+    ['pb-0']: subInfo,
+  });
 
   const renderSubInfo = (subInfo: string | MetaListProps) => {
     const labelAppearance = disabled ? 'disabled' : 'subtle';
@@ -46,7 +53,7 @@ const CheckboxOption = (props: OptionTypeProps) => {
         checked={selected}
         onChange={onChangeHandler}
         tabIndex={-1}
-        className={`OptionCheckbox ${subInfo ? 'pb-0' : ''}`}
+        className={checkboxClassName}
         data-test={`${dataTest}--Checkbox`}
         id={id}
       />

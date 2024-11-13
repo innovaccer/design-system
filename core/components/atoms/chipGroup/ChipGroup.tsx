@@ -2,6 +2,7 @@ import * as React from 'react';
 import Chip, { ChipProps } from '../chip/Chip';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import styles from '@css/components/chipGroup.module.css';
 
 export interface ChipGroupProps extends BaseProps {
   /**
@@ -46,7 +47,7 @@ export const ChipGroup = (props: ChipGroupProps) => {
 
   const ChipGroupClass = classNames(
     {
-      ['ChipGroup']: true,
+      [styles.ChipGroup]: true,
     },
     className
   );
@@ -56,7 +57,7 @@ export const ChipGroup = (props: ChipGroupProps) => {
       {list.map((item, ind) => {
         const { label = '', icon, type, disabled, selected, clearButton, name, iconType } = item;
         return (
-          <span key={ind} className="ChipGroup-item">
+          <span key={ind} className={styles['ChipGroup-item']}>
             <Chip
               data-test="DesignSystem-ChipGroup--Chip"
               name={name}

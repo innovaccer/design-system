@@ -6,7 +6,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip-wrapper undefined"
+      class="Chip-wrapper"
       data-test="DesignSystem-GenericChip--Wrapper"
       role="button"
       style="max-width: var(--spacing-9);"
@@ -41,7 +41,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip-wrapper undefined"
+      class="Chip-wrapper"
       data-test="DesignSystem-GenericChip--Wrapper"
       role="button"
       style="max-width: var(--spacing-9);"
@@ -76,7 +76,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip-wrapper undefined"
+      class="Chip-wrapper"
       data-test="DesignSystem-GenericChip--Wrapper"
       role="button"
       style="max-width: var(--spacing-9);"
@@ -111,7 +111,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip-wrapper undefined"
+      class="Chip-wrapper"
       data-test="DesignSystem-GenericChip--Wrapper"
       role="button"
       style="max-width: var(--spacing-9);"
@@ -146,7 +146,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip-wrapper undefined"
+      class="Chip-wrapper"
       data-test="DesignSystem-GenericChip--Wrapper"
       role="button"
       style="max-width: var(--spacing-9);"
@@ -196,7 +196,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip-wrapper undefined"
+      class="Chip-wrapper"
       data-test="DesignSystem-GenericChip--Wrapper"
       role="button"
       style="max-width: var(--spacing-9);"
@@ -246,7 +246,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip-wrapper undefined"
+      class="Chip-wrapper"
       data-test="DesignSystem-GenericChip--Wrapper"
       role="button"
       style="max-width: var(--spacing-9);"
@@ -296,7 +296,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip-wrapper undefined"
+      class="Chip-wrapper"
       data-test="DesignSystem-GenericChip--Wrapper"
       role="button"
       style="max-width: var(--spacing-9);"
