@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { HorizontalNav, Button, AvatarGroup, Badge, Text, StatusHint, PageHeader, Dropdown } from '@/index';
+import { HorizontalNav, Button, AvatarGroup, Badge, Text, StatusHint, PageHeader, Menu } from '@/index';
 import '../../style.css';
 
 export const withNavigation = () => {
@@ -70,7 +70,14 @@ export const withNavigation = () => {
         popoverOptions={{ dark: true, on: 'hover', position: 'bottom' }}
       />
       <div className="mr-4">
-        <Dropdown menu={true} icon="more_horiz" options={options} />
+        <Menu trigger={<Menu.Trigger />}>
+          <Menu.List>
+            {options.map((item, key) => {
+              const { label } = item;
+              return <Menu.Item key={key}>{label}</Menu.Item>;
+            })}
+          </Menu.List>
+        </Menu>
       </div>
       <Button className="mr-4">Finish later</Button>
       <Button appearance="primary" onClick={onClickHandler}>
@@ -172,7 +179,20 @@ const customCode = `/*
       <Text appearance="subtle" className="mr-4">Few minutes ago</Text>
       <AvatarGroup borderColor="var(--secondary-lightest)" className="mr-4" list={list} popoverOptions={{ dark: true, on: 'hover', position: 'bottom' }} />
       <div className="mr-4">
-        <Dropdown menu={true} icon="more_horiz" options={options} />
+        <Menu trigger={<Menu.Trigger />}>
+          <Menu.List>
+            {
+              options.map((item, key) => {
+                const { label } = item;
+                return (
+                  <Menu.Item key={key}>
+                    {label}
+                  </Menu.Item>
+                );
+              })
+            }
+          </Menu.List>
+        </Menu>
       </div>
       <Button className="mr-4">Finish later</Button>
       <Button appearance="primary" onClick={onClickHandler}>

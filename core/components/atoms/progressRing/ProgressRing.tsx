@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
-export type ProgressRingSize = 'small' | 'regular';
+export type ProgressRingSize = 'small' | 'regular' | 'large';
 
 export interface ProgressRingProps extends BaseProps {
   /**

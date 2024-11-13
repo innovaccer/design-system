@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Stepper, Button, Breadcrumbs, Badge, Text, MetaList, AvatarGroup, PageHeader, Dropdown } from '@/index';
+import { Stepper, Button, Breadcrumbs, Badge, Text, MetaList, AvatarGroup, PageHeader, Menu } from '@/index';
 import { action } from '@/utils/action';
 import '../../style.css';
 
@@ -85,7 +85,14 @@ export const withStepper = () => {
       />
 
       <div className="mr-4">
-        <Dropdown menu={true} icon="more_horiz" options={options} />
+        <Menu trigger={<Menu.Trigger />}>
+          <Menu.List>
+            {options.map((item, key) => {
+              const { label } = item;
+              return <Menu.Item key={key}>{label}</Menu.Item>;
+            })}
+          </Menu.List>
+        </Menu>
       </div>
       <Button className="mr-4">Finish later</Button>
     </div>
@@ -207,11 +214,20 @@ const customCode = `/*
         popoverOptions={{ dark: true, on: 'hover', position: 'bottom' }}
       />
       <div className="mr-4">
-        <Dropdown
-          menu={true}
-          icon="more_horiz"
-          options={options}
-        />
+       <Menu trigger={<Menu.Trigger />}>
+        <Menu.List>
+          {
+            options.map((item, key) => {
+              const { label } = item;
+              return (
+                <Menu.Item key={key}>
+                  {label}
+                </Menu.Item>
+              );
+            })
+          }
+        </Menu.List>
+      </Menu>
       </div>
       <Button className="mr-4">Finish later</Button>
     </div>

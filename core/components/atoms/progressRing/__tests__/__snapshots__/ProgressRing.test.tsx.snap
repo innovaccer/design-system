@@ -1,6 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ProgressRing component 
+  value: 30, size: "large"
+ 1`] = `
+<body>
+  <div>
+    <svg
+      class="Ring Ring--large"
+      data-test="DesignSystem-ProgressRing"
+      viewBox="0 0 50 50"
+    >
+      <circle
+        class="Ring-background"
+        cx="25"
+        cy="25"
+        fill="none"
+        r="20"
+        stroke-dasharray="125.66370614359172 125.66370614359172"
+        stroke-width="8"
+      />
+      <circle
+        class="Ring-indicator"
+        cx="25"
+        cy="25"
+        data-test="DesignSystem-ProgressRing--Circle"
+        fill="none"
+        r="20"
+        stroke-dasharray="125.66370614359172 125.66370614359172"
+        stroke-dashoffset="87.96459430051421"
+        stroke-width="8"
+      />
+    </svg>
+  </div>
+</body>
+`;
+
+exports[`ProgressRing component 
   value: 30, size: "regular"
  1`] = `
 <body>
