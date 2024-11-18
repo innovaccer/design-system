@@ -6,6 +6,7 @@ figma.connect(Spinner, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS-
   imports: ["import { Spinner } from '@innovaccer/design-system'"],
   props: {
     size: figma.enum('Size', {
+      'Extra Small': 'xsmall',
       Small: 'small',
       Regular: 'medium',
       Large: 'large',
