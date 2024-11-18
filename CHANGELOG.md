@@ -1,3 +1,57 @@
+## 3.4.0 (2024-11-18)
+
+### Highlights
+
+- feat(progressBar): update small size from 2px to 4px (c5ed8a80)
+- feat(progressRing): add large size support in progress ring component (2da8320b)
+- feat(spinner): add extra small size for spinner (16ab49ff)
+- feat(scrollbar): update scrollbar state (ca53ef74)
+- feat(spinner): add secondary and white appearances (c1730ed5)
+- feat(spinner): update figma code connect for extra small size of spinner (e4bdbb0f)
+
+### Breaking changes
+
+- feat(progressBar): update small size from 2px to 4px (c5ed8a80)
+- feat(scrollbar): update scrollbar state (ca53ef74)
+- Revert "fix(table): fix selection state of resource table" (fc4f1739)
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(progressBar): update small size from 2px to 4px (c5ed8a80)
+- feat(progressRing): add large size support in progress ring component (2da8320b)
+- feat(spinner): add extra small size for spinner (16ab49ff)
+- feat(scrollbar): update scrollbar state (ca53ef74)
+- feat(spinner): add secondary and white appearances (c1730ed5)
+- feat(spinner): update figma code connect for extra small size of spinner (e4bdbb0f)
+
+### Fixes
+
+- fix(docs): update active state for leftnav menu item (c07b00a3)
+- fix(docs): synchronize active tab state with URL to prevent mismatch after navigation (c5bd00d8)
+- Revert "fix(table): fix selection state of resource table" (fc4f1739)
+
+### Improvements
+
+- fix(modal): update story of Modal component and replace Dropdown with Select component (60c93bb8)
+- fix(Table): update stories of Resource table component and replace Dropdown with Menu component (95775d34)
+- fix(HorizontalNav): update stories of HorizontalNav component and replace Dropdown with Select component (e6b9cfb8)
+- fix(pageheader): replace dropdown with Menu component in Pageheader stories (dad8ae1d)
+- chore: remove jira automation workflow for github issues (6b5ebb8e)
+
+### Documentation
+
+- docs(docs): update progress indicator documentation (2788f9d5)
+
+---
+
 ## 3.3.0 (2024-11-04)
 
 ### Highlights
