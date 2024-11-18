@@ -73,7 +73,7 @@ exports[`Button component
       tabindex="0"
     >
       <svg
-        class="Spinner Spinner--small Button-spinner"
+        class="Spinner Spinner--xsmall Button-spinner"
         data-test="DesignSystem-Button--Spinner"
         viewBox="0 0 50 50"
       >
@@ -84,7 +84,7 @@ exports[`Button component
           fill="none"
           r="20"
           stroke-miterlimit="10"
-          stroke-width="4"
+          stroke-width="8"
         />
       </svg>
       <span
@@ -191,7 +191,7 @@ exports[`Button component
       tabindex="0"
     >
       <svg
-        class="Spinner Spinner--small Button-spinner"
+        class="Spinner Spinner--xsmall Button-spinner"
         data-test="DesignSystem-Button--Spinner"
         viewBox="0 0 50 50"
       >
@@ -202,7 +202,7 @@ exports[`Button component
           fill="none"
           r="20"
           stroke-miterlimit="10"
-          stroke-width="4"
+          stroke-width="8"
         />
       </svg>
       <span
@@ -309,7 +309,7 @@ exports[`Button component
       tabindex="0"
     >
       <svg
-        class="Spinner Spinner--small Button-spinner"
+        class="Spinner Spinner--xsmall Button-spinner"
         data-test="DesignSystem-Button--Spinner"
         viewBox="0 0 50 50"
       >
@@ -320,7 +320,7 @@ exports[`Button component
           fill="none"
           r="20"
           stroke-miterlimit="10"
-          stroke-width="4"
+          stroke-width="8"
         />
       </svg>
       <span
@@ -427,7 +427,7 @@ exports[`Button component
       tabindex="0"
     >
       <svg
-        class="Spinner Spinner--small Button-spinner"
+        class="Spinner Spinner--xsmall Button-spinner"
         data-test="DesignSystem-Button--Spinner"
         viewBox="0 0 50 50"
       >
@@ -438,7 +438,7 @@ exports[`Button component
           fill="none"
           r="20"
           stroke-miterlimit="10"
-          stroke-width="4"
+          stroke-width="8"
         />
       </svg>
       <span
@@ -904,7 +904,7 @@ exports[`Button component with no children
       tabindex="0"
     >
       <svg
-        class="Spinner Spinner--small Button-spinner"
+        class="Spinner Spinner--xsmall Button-spinner"
         data-test="DesignSystem-Button--Spinner"
         viewBox="0 0 50 50"
       >
@@ -915,7 +915,7 @@ exports[`Button component with no children
           fill="none"
           r="20"
           stroke-miterlimit="10"
-          stroke-width="4"
+          stroke-width="8"
         />
       </svg>
       <span
@@ -939,7 +939,7 @@ exports[`Button component with no children
       tabindex="0"
     >
       <svg
-        class="Spinner Spinner--small Button-spinner"
+        class="Spinner Spinner--xsmall Button-spinner"
         data-test="DesignSystem-Button--Spinner"
         viewBox="0 0 50 50"
       >
@@ -950,7 +950,7 @@ exports[`Button component with no children
           fill="none"
           r="20"
           stroke-miterlimit="10"
-          stroke-width="4"
+          stroke-width="8"
         />
       </svg>
       <span
@@ -974,7 +974,7 @@ exports[`Button component with no children
       tabindex="0"
     >
       <svg
-        class="Spinner Spinner--small Button-spinner"
+        class="Spinner Spinner--xsmall Button-spinner"
         data-test="DesignSystem-Button--Spinner"
         viewBox="0 0 50 50"
       >
@@ -985,7 +985,7 @@ exports[`Button component with no children
           fill="none"
           r="20"
           stroke-miterlimit="10"
-          stroke-width="4"
+          stroke-width="8"
         />
       </svg>
       <span
@@ -1009,7 +1009,7 @@ exports[`Button component with no children
       tabindex="0"
     >
       <svg
-        class="Spinner Spinner--small Button-spinner"
+        class="Spinner Spinner--xsmall Button-spinner"
         data-test="DesignSystem-Button--Spinner"
         viewBox="0 0 50 50"
       >
@@ -1020,7 +1020,7 @@ exports[`Button component with no children
           fill="none"
           r="20"
           stroke-miterlimit="10"
-          stroke-width="4"
+          stroke-width="8"
         />
       </svg>
       <span

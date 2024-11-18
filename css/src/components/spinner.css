@@ -26,6 +26,11 @@
   animation: rotate 2s linear infinite;
 }
 
+.Spinner--xsmall {
+  height: var(--spacing-l);
+  width: var(--spacing-l);
+}
+
 .Spinner--small {
   height: var(--spacing-2);
   width: var(--spacing-2);
@@ -53,9 +58,9 @@
 }
 
 .Circle--secondary {
-  stroke: var(--primary);
+  stroke: var(--secondary-dark);
 }
 
 .Circle--white {
-  stroke: var(--primary);
+  stroke: var(--white);
 }

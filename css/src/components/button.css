@@ -227,16 +227,6 @@
   z-index: 1;
 }
 
-.Button--tiny .Spinner--small {
-  height: var(--font-size-s);
-  width: var(--font-size-s);
-}
-
-.Button--large .Spinner--small {
-  height: var(--font-size-l);
-  width: var(--font-size-l);
-}
-
 .Button--selected {
   background: var(--primary-lightest);
   color: var(--primary-dark);

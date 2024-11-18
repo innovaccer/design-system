@@ -4,7 +4,7 @@ import Spinner, { SpinnerProps as Props } from '../Spinner';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const appearance = ['primary', 'secondary', 'white'];
-const size = ['small', 'medium', 'large'];
+const size = ['xsmall', 'small', 'medium', 'large'];
 
 describe('Spinner component', () => {
   const mapper = {

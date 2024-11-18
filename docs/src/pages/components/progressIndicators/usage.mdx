@@ -20,17 +20,13 @@ Goes from 0 to 100 linearly.
 
 #### Progress Ring
 
-Goes from 0 to 100 along the circumference. It comes in 2 sizes -
+Goes from 0 to 100 along the circumference.
 
 <Preview name='components-progress-indicators-progressring-size--size'/>
 
 #### Spinner
 
-Spins endlessly to show indeterminate progress unlike progress bar and ring. Spinner comes in 3 sizes -
-
-**Small** - For inline loaders such as in Buttons.
-**Medium** - For Modals and Cards.
-**Big** - For Page loaders.
+Spins endlessly to show indeterminate progress unlike progress bar and ring.
 
 <Preview name='components-progress-indicators-spinner-size--size'/>
 
@@ -40,6 +36,38 @@ Skeleton loaders are used if there is a defined template for the data that is go
 
 <Preview name='components-progress-indicators-placeholder-skeleton-loaders--skeleton-loaders'/>
 <br/>
+
+### Sizes
+
+#### Progress Bar
+
+Progress bar comes in **2 sizes** - small and regular.
+
+![Progress Bar - Size](./images/progress-bar-size.png)
+<Caption>Progress Bar - Size</Caption>
+
+#### Progress Ring
+
+Progress bar comes in **3 sizes** - small, regular and large.
+
+![Progress Ring - Size](./images/progress-ring-size.png)
+<Caption>Progress Ring - Size</Caption>
+
+#### Spinner
+
+Progress bar comes in **4 sizes** - extra small, small, regular and large. 
+
+![Spinner - Size](./images/spinner-size.png)
+<Caption>Spinner - Size</Caption>
+
+### Shape
+
+#### Skeleton Loaders - Image
+
+For images, skeleton loaders come in **2 shapes** - square and round. 
+
+![Skeleton Loaders - Image - Shape](./images/skeleton-loader-shape.png)
+<Caption>Skeleton Loaders - Image - Shape</Caption>
 
 ### Structure
 <br/>
@@ -59,7 +87,7 @@ Skeleton loaders are used if there is a defined template for the data that is go
    </tr>
    <tr style={{verticalAlign: "top"}}>
       <td>Height</td>
-      <td>2 px <em>(Small)</em><br/>
+      <td>4 px <em>(Small)</em><br/>
           8 px <em>(Regular)</em></td>
    </tr>
    <tr style={{verticalAlign: "top"}}>
@@ -85,7 +113,8 @@ Skeleton loaders are used if there is a defined template for the data that is go
    <tr style={{verticalAlign: "top"}}>
       <td>Size</td>
       <td>16x16 px <em>(Small)</em><br/>
-          32x32 px <em>(Regular)</em></td>
+          32x32 px <em>(Regular)</em><br/>
+          48x48 px <em>(Large)</em></td>
    </tr>
  </tbody>
 </table>
@@ -105,7 +134,8 @@ Skeleton loaders are used if there is a defined template for the data that is go
    </tr>
    <tr style={{verticalAlign: "top"}}>
       <td>Size</td>
-      <td>16x16 px <em>(Small)</em><br/>
+      <td>12x12 px <em>(Extra small)</em><br/>
+          16x16 px <em>(Small)</em><br/>
           32x32 px <em>(Regular)</em><br/>
           48x48 px <em>(Large)</em></td>
    </tr>
@@ -116,6 +146,26 @@ Skeleton loaders are used if there is a defined template for the data that is go
 ### Configurations
 <br/>
 <br/>
+
+#### Progress Bar
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Value</td>
+      <td>&#60;value&#62;</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+#### Progress Indicator
 
 <table style={{width: "100%"}}>
   <tbody>
@@ -144,8 +194,35 @@ Skeleton loaders are used if there is a defined template for the data that is go
 </table>
 <br/>
 
+#### Spinner
 
-**Note**: Large size is only available for 'Spinners'.
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Size</td>
+      <td>
+          <ul>
+            <li>Extra small</li>
+            <li>Small</li>
+            <li>Regular</li>
+            <li>Large</li>
+          </ul>
+      </td>
+      <td>Regular</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Value</td>
+      <td>&#60;value&#62;</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
 
 ### Usage
 
@@ -225,7 +302,56 @@ Skeleton loaders imitate each component of a cell separately at the time of load
 
 <br/>
 
-#### Skeleton Loader vs Spinner
+##### Using a spinner based on size
+
+Spinners are used differently depending on their size.
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Size: 'Extra small',
+        Usecase: 'For inline loaders such as in tiny buttons',
+      },
+      {
+        Size: 'Small',
+        Usecase: 'For inline loaders such as in regular and large buttons',
+      },
+      {
+        Size: 'Regular',
+        Usecase: 'For Modals and Cards',
+      },
+      {
+        Size: 'Large',
+        Usecase: 'For Media and Page loaders.',
+      },
+    ]}
+    schema={[
+      {
+        name: 'Size',
+        displayName: 'Size',
+        width: '50%',
+        sorting: false,
+        separator: true,
+      },
+      {
+        name: 'Usecase',
+        displayName: 'Use-case',
+        width: '50%',
+        sorting: false,
+        separator: true
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+
+
+
+##### Skeleton Loader vs Spinner
 
 A typical process starts with loading the app first. Refer to the table below and  the examples to have a better understanding:
 
@@ -294,7 +420,7 @@ A typical process starts with loading the app first. Refer to the table below an
 </Card>
 <br/>
 
-#### Progressive Loading
+##### Progressive Loading
 
 Progressive loading is a technique that loads the page in chunks i.e. from the simplest view to the most detailed view. Table in the above section demonstrates the step-by-step loading of a page. 
 

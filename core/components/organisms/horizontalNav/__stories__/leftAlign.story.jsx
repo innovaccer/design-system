@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { Modal, Button, HorizontalNav, Dropdown, Label, Heading } from '@/index';
+import { Modal, Button, HorizontalNav, Select, Label, Heading } from '@/index';
 
 export const leftAligned = () => {
   const options = [];
@@ -82,15 +82,45 @@ export const leftAligned = () => {
           <Label withInput={true} required={true}>
             Type
           </Label>
-          <Dropdown options={options} />
+          <Select triggerOptions={{ withClearButton: false }} width="100%">
+            <Select.List>
+              {options.map((item, key) => {
+                return (
+                  <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                    {item.label}
+                  </Select.Option>
+                );
+              })}
+            </Select.List>
+          </Select>
           <Label withInput={true} className="mt-6">
             Active Date
           </Label>
-          <Dropdown options={options} />
+          <Select triggerOptions={{ withClearButton: false }} width="100%">
+            <Select.List>
+              {options.map((item, key) => {
+                return (
+                  <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                    {item.label}
+                  </Select.Option>
+                );
+              })}
+            </Select.List>
+          </Select>
           <Label withInput={true} className="mt-6" required={true}>
             Diagnosis Diseases
           </Label>
-          <Dropdown options={options} />
+          <Select triggerOptions={{ withClearButton: false }} width="100%">
+            <Select.List>
+              {options.map((item, key) => {
+                return (
+                  <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                    {item.label}
+                  </Select.Option>
+                );
+              })}
+            </Select.List>
+          </Select>
         </div>
       </Modal>
     </div>
@@ -172,17 +202,41 @@ const customCode = `() => {
       >
         <div className="py-5 w-50">
           <Label withInput={true} required={true}>Type</Label>
-          <Dropdown
-            options={options}
-          />
+          <Select triggerOptions={{ withClearButton: false }} width="100%">
+            <Select.List>
+              {options.map((item, key) => {
+                return (
+                  <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                    {item.label}
+                  </Select.Option>
+                );
+              })}
+            </Select.List>
+          </Select>
           <Label withInput={true} className="mt-6">Active Date</Label>
-          <Dropdown
-            options={options}
-          />
+          <Select triggerOptions={{ withClearButton: false }} width="100%">
+            <Select.List>
+              {options.map((item, key) => {
+                return (
+                  <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                    {item.label}
+                  </Select.Option>
+                );
+              })}
+            </Select.List>
+          </Select>
           <Label withInput={true} className="mt-6" required={true}>Diagnosis Diseases</Label>
-          <Dropdown
-            options={options}
-          />
+            <Select triggerOptions={{ withClearButton: false }} width="100%">
+            <Select.List>
+              {options.map((item, key) => {
+                return (
+                  <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                    {item.label}
+                  </Select.Option>
+                );
+              })}
+            </Select.List>
+          </Select>
         </div>
       </Modal>
     </div>

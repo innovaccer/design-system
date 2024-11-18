@@ -301,7 +301,7 @@ describe('render Table without headerOptions', () => {
     const dropdownOption = getAllByTestId('DesignSystem-DropdownOption--WITH_ICON')[3];
     fireEvent.click(dropdownOption);
     const cellGroup = getAllByTestId('DesignSystem-Grid-cellGroup')[1];
-    expect(cellGroup).toHaveClass('Grid-cellWrapper--pinned-right');
+    expect(cellGroup).toHaveClass('Grid-cellGroup--pinned-right');
   });
 
   it('render Table: call onSelectAll ', () => {

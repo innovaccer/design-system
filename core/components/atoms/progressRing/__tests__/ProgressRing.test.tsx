@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import ProgressRing, { ProgressRingProps as Props } from '../ProgressRing';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
-const size = ['small', 'regular'];
+const size = ['small', 'regular', 'large'];
 
 describe('ProgressRing component', () => {
   const mapper = {
@@ -45,9 +45,14 @@ describe('ProgressRing component', () => {
       expect(getByTestId('DesignSystem-ProgressRing')).toHaveClass('Ring Ring--regular');
     });
 
-    it('ProgressRing component should have the Ring--regular class when size={small}', () => {
+    it('ProgressRing component should have the Ring--small class when size={small}', () => {
       const { getByTestId } = render(<ProgressRing value={50} max={100} size="small" />);
       expect(getByTestId('DesignSystem-ProgressRing')).toHaveClass('Ring Ring--small');
+    });
+
+    it('ProgressRing component should have the Ring--large class when size={large}', () => {
+      const { getByTestId } = render(<ProgressRing value={50} max={100} size="large" />);
+      expect(getByTestId('DesignSystem-ProgressRing')).toHaveClass('Ring Ring--large');
     });
   });
 });

@@ -11,7 +11,7 @@
 }
 
 .ProgressBar-indicator--small {
-  height: var(--spacing-s);
+  height: var(--spacing-m);
 }
 
 .ProgressBar-indicator--regular {

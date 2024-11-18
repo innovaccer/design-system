@@ -3,7 +3,7 @@ import { ProgressRing, Text } from '@/index';
 
 // CSF format story
 export const size = () => {
-  const sizes = ['small', 'regular'];
+  const sizes = ['small', 'regular', 'large'];
   return (
     <div className="d-flex">
       {sizes.map((ProgressRingSize, ind) => {
