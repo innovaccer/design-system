@@ -63,7 +63,7 @@
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-helmet": "^6.1.0",
-    "react-live": "^2.3.0",
+    "react-live": "^3.0.0",
     "react-popper": "2.3.0",
     "react-syntax-highlighter": "^15.4.4",
     "remark-slug": "^6.1.0",
