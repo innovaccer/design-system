@@ -257,7 +257,7 @@ const DropdownList = (props: OptionsProps) => {
   const [minHeight, setMinHeight] = React.useState<number | undefined>();
 
   const getMinHeight = () => {
-    const dropdownWrapper = document.querySelector<HTMLElement>('.Dropdown-wrapper');
+    const dropdownWrapper = document.querySelector<HTMLElement>(`.${dropdownStyles['Dropdown-wrapper']}`);
     const minHeight = dropdownWrapper?.offsetHeight;
     minHeight && setMinHeight(minHeight);
   };
@@ -682,7 +682,7 @@ const DropdownList = (props: OptionsProps) => {
         const activeElement = document.activeElement;
         if (dropdownOpen && (inputRef.current === activeElement || dropdownTriggerRef.current === activeElement)) {
           event.preventDefault();
-          const classes = withCheckbox ? `${optionClass} .Checkbox-input` : optionClass;
+          const classes = withCheckbox ? `${optionClass} .${checkboxStyles['Checkbox-input']}` : optionClass;
           const elements = document.querySelectorAll(classes);
           const element = elements[cursor] as HTMLElement;
           if (element) element.click();
