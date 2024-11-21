@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom';
-const ReactTestingLibrary = require('@testing-library/react');
+// const ReactTestingLibrary = require('@testing-library/react');
+import ReactTestingLibrary from '@testing-library/react';
 
 // Configure React Testing Library
 const { configure } = ReactTestingLibrary;
