@@ -15,7 +15,7 @@
     "ts-jest": "^29.1.4"
   },
   "dependencies": {
-    "@innovaccer/design-system": "file:../..",
+    "@innovaccer/design-system": "file:../../..",
     "typescript": "^5.4.5"
   }
 }

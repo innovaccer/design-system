@@ -102,7 +102,7 @@ const umdPlugins = [
   postcss({
     modules: false, // Enable CSS Modules
     autoModules: false,
-    extract: true,
+    // extract: true,
     extensions: ['.css', '.scss', '.sass'],
   }),
   uglify(),
@@ -193,24 +193,25 @@ const tsConfig = {
   },
 };
 
-const brotliConfig = {
-  ...baseConfig,
-  plugins: [
-    gzipPlugin({
-      customCompression: (content) => compress(Buffer.from(content)),
-      fileName: '.br',
-    }),
-    ...commonJsPlugins,
-  ],
+// const brotliConfig = {
+//   ...baseConfig,
+//   plugins: [
+//     gzipPlugin({
+//       customCompression: (content) => compress(Buffer.from(content)),
+//       fileName: '.br',
+//     }),
+//     ...commonJsPlugins,
+//   ],
 
-  output: jsUmdOutputConfig,
-};
+//   output: jsUmdOutputConfig,
+// };
 
-const gzipConfig = {
-  ...baseConfig,
-  plugins: [gzipPlugin(), ...commonJsPlugins],
+// const gzipConfig = {
+//   ...baseConfig,
+//   plugins: [gzipPlugin(), ...commonJsPlugins],
 
-  output: jsUmdOutputConfig,
-};
+//   output: jsUmdOutputConfig,
+// };
 
-export default [jsUmdConfig, jsCjsConfig, jsEsmConfig, tsConfig, brotliConfig, gzipConfig];
+export default [jsUmdConfig, jsCjsConfig, jsEsmConfig, tsConfig];
+  // , brotliConfig, gzipConfig];

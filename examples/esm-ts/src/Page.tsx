@@ -1,11 +1,6 @@
 import React from 'react';
 import { Row, Column, PageHeader, Button, Tabs, Card, Table, ButtonProps } from '@innovaccer/design-system';
 
-
-
-    
-
-
 // You can now use the Button component and its props in your React components
 const MyComponent: React.FC = () => {
   // You can use the ButtonProps type to define the prop structure for custom button components
@@ -21,8 +16,6 @@ const MyComponent: React.FC = () => {
     </Button>
   );
 };
-
-
 
 const UserManagementTable: React.FC = () => {
   const tabs = [

@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "cp ../../css/dist/index.css ./ && cp ../../dist/umd/index.js ./ && vite",
+    "dev": "cp ../../css/dist/index.css ./ && cp ../../css/dist/index.css.map ./ && cp ../../dist/umd/index.js ./ && vite",
     "build": "vite build",
     "preview": "vite preview"
   },
