@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { TIconPosition, TButtonType, TSize2Hierarchy, TBaseHtmlProps } from '../common.type';
 import { Tooltip } from '@/index';
 import SaraIcon from './SaraIcon';
+import styles from '@css/ai-components/iconButton.module.css';
 
 export interface AIIconButtonProps extends Omit<TBaseHtmlProps<HTMLButtonElement>, 'size'> {
   /**
@@ -64,13 +65,13 @@ export const AIIconButton = (props: AIIconButtonProps) => {
 
   const buttonClassNames = classNames(
     {
-      AIIconButton: true,
+      [styles.AIIconButton]: true,
     },
     className
   );
 
   const IconClassNames = classNames({
-    'AIIconButton-icon': true,
+    [styles['AIIconButton-icon']]: true,
     ['material-symbols']: true,
     ['material-symbols-rounded']: true,
   });
