@@ -100,9 +100,9 @@ const umdPlugins = [
     'process.env.NODE_ENV': JSON.stringify('production'),
   }),
   postcss({
-    modules: false, // Enable CSS Modules
-    autoModules: false,
-    extract: true,
+    modules: {
+      generateScopedName: (name) => name, // Use the original class name
+    },
     extensions: ['.css', '.scss', '.sass'],
   }),
   uglify(),
