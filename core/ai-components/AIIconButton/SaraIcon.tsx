@@ -5,6 +5,7 @@ import SaraIconTop from './icons/SaraIconTop';
 import SaraIconBottom from './icons/SaraIconBottom';
 import SaraDisabledTop from './icons/SaraDisabledTop';
 import SaraDisabledBottom from './icons/SaraDisabledBottom';
+import styles from '@css/ai-components/iconButton.module.css';
 
 interface SaraIconProp {
   size: TSize2Hierarchy;
@@ -16,11 +17,11 @@ export const SaraIcon = (props: SaraIconProp) => {
   const { size, position, disabled } = props;
 
   const AIIconClassNames = classNames({
-    'AIIconButton-AIIcon': true,
-    'AIIconButton-AIIcon--largeTop': position === 'top' && size === 'large',
-    'AIIconButton-AIIcon--regularTop': position === 'top' && size === 'regular',
-    'AIIconButton-AIIcon--regularBottom': position === 'bottom' && size === 'regular',
-    'AIIconButton-AIIcon--largeBottom': position === 'bottom' && size === 'large',
+    [styles['AIIconButton-AIIcon']]: true,
+    [styles['AIIconButton-AIIcon--largeTop']]: position === 'top' && size === 'large',
+    [styles['AIIconButton-AIIcon--regularTop']]: position === 'top' && size === 'regular',
+    [styles['AIIconButton-AIIcon--regularBottom']]: position === 'bottom' && size === 'regular',
+    [styles['AIIconButton-AIIcon--largeBottom']]: position === 'bottom' && size === 'large',
   });
 
   if (disabled && position === 'bottom') {
