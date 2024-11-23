@@ -184,7 +184,7 @@ const tsConfig = {
     }),
   ],
   output: {
-    dir: 'dist',
+    dir: 'dist/ts',
     format: 'umd',
     name: `inno`,
     globals: globals(),
@@ -203,14 +203,26 @@ const brotliConfig = {
     ...commonJsPlugins,
   ],
 
-  output: jsUmdOutputConfig,
+  output: {
+    file: 'dist/brotli/index.js',
+    format: 'umd',
+    name: `InnovaccerDesignSystem`,
+    globals: globals(),
+    banner: banner(),
+  },
 };
 
 const gzipConfig = {
   ...baseConfig,
   plugins: [gzipPlugin(), ...commonJsPlugins],
 
-  output: jsUmdOutputConfig,
+  output: {
+    file: 'dist/gzip/index.js',
+    format: 'umd',
+    name: `InnovaccerDesignSystem`,
+    globals: globals(),
+    banner: banner(),
+  },
 };
 
 export default [jsUmdConfig, jsCjsConfig, jsEsmConfig, tsConfig, brotliConfig, gzipConfig];
