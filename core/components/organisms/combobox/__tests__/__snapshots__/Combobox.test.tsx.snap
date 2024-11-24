@@ -11,7 +11,7 @@ exports[`Combobox component snapshots
       >
         <style />
         <div
-          class="OutsideClick PopperWrapper-trigger d-block"
+          class="OutsideClick d-inline-flex flex-grow-1 d-block"
         >
           <div
             class="Input Input--large"
@@ -50,7 +50,7 @@ exports[`Combobox component snapshots
       >
         <style />
         <div
-          class="OutsideClick PopperWrapper-trigger d-block"
+          class="OutsideClick d-inline-flex flex-grow-1 d-block"
         >
           <div
             class="Input Input--regular"
@@ -89,7 +89,7 @@ exports[`Combobox component snapshots
       >
         <style />
         <div
-          class="OutsideClick PopperWrapper-trigger d-block"
+          class="OutsideClick d-inline-flex flex-grow-1 d-block"
         >
           <div
             class="Input Input--tiny"
@@ -128,7 +128,7 @@ exports[`Combobox component snapshots
       >
         <style />
         <div
-          class="OutsideClick PopperWrapper-trigger d-block"
+          class="OutsideClick d-inline-flex flex-grow-1 d-block"
         >
           <div
             class="ChipInput-border"
@@ -175,7 +175,7 @@ exports[`Combobox component snapshots
       >
         <style />
         <div
-          class="OutsideClick PopperWrapper-trigger d-block"
+          class="OutsideClick d-inline-flex flex-grow-1 d-block"
         >
           <div
             class="ChipInput-border"
@@ -222,7 +222,7 @@ exports[`Combobox component snapshots
       >
         <style />
         <div
-          class="OutsideClick PopperWrapper-trigger d-block"
+          class="OutsideClick d-inline-flex flex-grow-1 d-block"
         >
           <div
             class="ChipInput-border"

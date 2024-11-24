@@ -10,7 +10,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -53,7 +53,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--error"
@@ -96,7 +96,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -139,7 +139,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--error"
@@ -182,7 +182,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -225,7 +225,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--error"
@@ -268,7 +268,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -311,7 +311,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--error"

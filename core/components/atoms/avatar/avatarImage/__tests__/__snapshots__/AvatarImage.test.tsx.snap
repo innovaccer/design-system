@@ -7,38 +7,9 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <span
-        class="position-relative d-inline-flex"
-      >
-        <style />
-        <div
-          class="OutsideClick PopperWrapper-trigger flex-grow-0"
-        >
-          <span
-            class=""
-            data-test="DesignSystem-AvatarWrapper"
-            role="presentation"
-          >
-            <span
-              class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
-              data-test="DesignSystem-Avatar"
-              tabindex="0"
-            >
-              <img
-                alt="John"
-                data-test="DesignSystem-Image"
-                height="32"
-                src="https://design.innovaccer.com/images/withoutType.png"
-                width="32"
-              />
-            </span>
-          </span>
-        </div>
-      </span>
-    </div>
-    <div>
-      <span
-        class="position-relative d-inline-flex"
+      <style />
+      <div
+        class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
       >
         <span
           class=""
