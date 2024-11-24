@@ -117,6 +117,7 @@ const umdPlugins = [
     modules: {
       generateScopedName: (name) => name, // Use the original class name
     },
+    extract: true,
     extensions: ['.css', '.scss', '.sass'],
   }),
   uglify(),
@@ -244,4 +245,4 @@ const gzipConfig = {
   },
 };
 
-export default [jsUmdConfig, jsCjsConfig, jsEsmConfig, tsConfig, brotliConfig, gzipConfig];
+export default [jsUmdConfig, jsCjsConfig, jsEsmConfig, brotliConfig, gzipConfig];
