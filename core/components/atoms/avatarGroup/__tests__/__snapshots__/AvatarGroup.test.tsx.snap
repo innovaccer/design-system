@@ -99,7 +99,7 @@ Object {
         >
           <style />
           <div
-            class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
           >
             <span
               class=""
@@ -134,7 +134,7 @@ Object {
         >
           <style />
           <div
-            class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
           >
             <span
               class=""
@@ -157,7 +157,76 @@ Object {
               </span>
             </span>
           </div>
-        </span>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="AvatarGroup d-inline-flex"
+      data-test="DesignSystem-AvatarGroup"
+    >
+      <div
+        class="AvatarGroup-item AvatarGroup-item--regular"
+        data-test="DesignSystem-AvatarGroup--Avatar"
+        style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
+      >
+        <style />
+        <div
+          class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
+              data-test="DesignSystem-Avatar"
+              tabindex="0"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
+                data-test="DesignSystem-Icon"
+                role="button"
+                style="font-size: 20px; width: 20px;"
+              >
+                places
+              </i>
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        class="AvatarGroup-item AvatarGroup-item--regular"
+        data-test="DesignSystem-AvatarGroup--Avatar"
+        style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
+      >
+        <style />
+        <div
+          class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--alert Avatar--default"
+              data-test="DesignSystem-Avatar"
+              tabindex="0"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon Icon--white"
+                data-test="DesignSystem-Icon"
+                role="button"
+                style="font-size: 20px; width: 20px;"
+              >
+                smart_toy
+              </i>
+            </span>
+          </span>
+        </div>
       </div>
     </div>
   </div>,
@@ -314,7 +383,7 @@ Object {
         >
           <style />
           <div
-            class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
           >
             <span
               class=""
@@ -349,7 +418,7 @@ Object {
         >
           <style />
           <div
-            class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
           >
             <span
               class=""
@@ -372,7 +441,76 @@ Object {
               </span>
             </span>
           </div>
-        </span>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="AvatarGroup d-inline-flex"
+      data-test="DesignSystem-AvatarGroup"
+    >
+      <div
+        class="AvatarGroup-item AvatarGroup-item--tiny"
+        data-test="DesignSystem-AvatarGroup--Avatar"
+        style="background-color: white; box-shadow: 0 0 0  var(--spacing-s) white;"
+      >
+        <style />
+        <div
+          class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
+              data-test="DesignSystem-Avatar"
+              tabindex="0"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
+                data-test="DesignSystem-Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                places
+              </i>
+            </span>
+          </span>
+        </div>
+      </div>
+      <div
+        class="AvatarGroup-item AvatarGroup-item--tiny"
+        data-test="DesignSystem-AvatarGroup--Avatar"
+        style="background-color: white; box-shadow: 0 0 0  var(--spacing-s) white;"
+      >
+        <style />
+        <div
+          class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--tiny Avatar--alert Avatar--default"
+              data-test="DesignSystem-Avatar"
+              tabindex="0"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon Icon--white"
+                data-test="DesignSystem-Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                smart_toy
+              </i>
+            </span>
+          </span>
+        </div>
       </div>
     </div>
   </div>,

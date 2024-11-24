@@ -10,7 +10,7 @@ exports[`Vertical Navigation component
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger"
+        class="OutsideClick d-inline-flex flex-grow-1"
       >
         <a
           class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
@@ -34,7 +34,7 @@ exports[`Vertical Navigation component
       </div>
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger"
+        class="OutsideClick d-inline-flex flex-grow-1"
       >
         <a
           class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
@@ -57,7 +57,7 @@ exports[`Vertical Navigation component
       </div>
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger"
+        class="OutsideClick d-inline-flex flex-grow-1"
       >
         <a
           class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--active color-primary-dark"
@@ -79,7 +79,7 @@ exports[`Vertical Navigation component
       </div>
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger"
+        class="OutsideClick d-inline-flex flex-grow-1"
       >
         <a
           class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
@@ -101,7 +101,7 @@ exports[`Vertical Navigation component
       </div>
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger"
+        class="OutsideClick d-inline-flex flex-grow-1"
       >
         <a
           class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--disabled color-inverse-lightest"
@@ -124,7 +124,7 @@ exports[`Vertical Navigation component
       </div>
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger"
+        class="OutsideClick d-inline-flex flex-grow-1"
       >
         <a
           class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
