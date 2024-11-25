@@ -13,9 +13,8 @@ import { compress } from 'brotli';
 import image from '@rollup/plugin-image';
 import postcss from 'rollup-plugin-postcss';
 
+const { version, name, license, homepage } = packageJSON;
 const banner = () => {
-  const { version, name, license, homepage } = packageJSON;
-
   const banner = `
   /**
    * Generated on: ${new Date().toISOString()} 
@@ -50,6 +49,16 @@ const baseConfig = {
   external: ['react', 'react-dom'],
 };
 
+function generateHash(str) {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i);
+    hash = (hash << 5) - hash + char;
+    hash |= 0; // Convert to 32bit integer
+  }
+  return hash.toString(36).substring(0, 5);
+}
+
 const commonJsPlugins = [
   alias({
     entries: aliasEntries,
@@ -72,7 +81,12 @@ const commonJsPlugins = [
     'process.env.NODE_ENV': JSON.stringify('production'),
   }),
   postcss({
-    modules: true, // Enable CSS Modules
+    modules: {
+      generateScopedName: (name, fileName) => {
+        const hash = generateHash(fileName + name);
+        return `${name}__v${version}___${hash}`;
+      },
+    },
     extensions: ['.css', '.scss', '.sass'],
   }),
   uglify(),
@@ -103,6 +117,7 @@ const umdPlugins = [
     modules: {
       generateScopedName: (name) => name, // Use the original class name
     },
+    extract: true,
     extensions: ['.css', '.scss', '.sass'],
   }),
   uglify(),
@@ -179,12 +194,17 @@ const tsConfig = {
     // Compile TypeScript/JavaScript files
     babel({ extensions, include: ['core/**/*'] }),
     postcss({
-      modules: true, // Enable CSS Modules
+      modules: {
+        generateScopedName: (name, fileName) => {
+          const hash = generateHash(fileName + name);
+          return `${name}__v${version}___${hash}`;
+        },
+      },
       extensions: ['.css', '.scss', '.sass'],
     }),
   ],
   output: {
-    dir: 'dist',
+    dir: 'dist/ts',
     format: 'umd',
     name: `inno`,
     globals: globals(),
@@ -203,14 +223,26 @@ const brotliConfig = {
     ...commonJsPlugins,
   ],
 
-  output: jsUmdOutputConfig,
+  output: {
+    file: 'dist/brotli/index.js',
+    format: 'umd',
+    name: `InnovaccerDesignSystem`,
+    globals: globals(),
+    banner: banner(),
+  },
 };
 
 const gzipConfig = {
   ...baseConfig,
   plugins: [gzipPlugin(), ...commonJsPlugins],
 
-  output: jsUmdOutputConfig,
+  output: {
+    file: 'dist/gzip/index.js',
+    format: 'umd',
+    name: `InnovaccerDesignSystem`,
+    globals: globals(),
+    banner: banner(),
+  },
 };
 
-export default [jsUmdConfig, jsCjsConfig, jsEsmConfig, tsConfig, brotliConfig, gzipConfig];
+export default [jsUmdConfig, jsCjsConfig, jsEsmConfig, brotliConfig, gzipConfig];
