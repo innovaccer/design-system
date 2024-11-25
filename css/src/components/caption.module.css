@@ -1,0 +1,20 @@
+/* Caption */
+.Caption {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.Caption--withInput {
+  margin-top: var(--spacing-m);
+}
+
+.Caption-icon {
+  display: flex;
+  align-content: center;
+  margin-right: var(--spacing-m);
+}
+
+.Caption--hidden {
+  display: none;
+}

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { TBaseHtmlProps } from '../common.type';
+import styles from '@css/ai-components/chat.module.css';
 
 export interface ChatBoxProps extends TBaseHtmlProps<HTMLDivElement> {
   /**
@@ -22,7 +23,7 @@ export const ChatBox = (props: ChatBoxProps) => {
 
   const chatBoxClassNames = classNames(
     {
-      'AIResponse-box': true,
+      [styles['AIResponse-box']]: true,
     },
     className
   );

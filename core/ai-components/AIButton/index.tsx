@@ -4,6 +4,7 @@ import { TButtonAppearance, TButtonType, TBaseHtmlProps } from '../common.type';
 import BasicIcon from './icons/Basic.svg';
 import BasicDisabledIcon from './icons/BasicDisabled.svg';
 import PrimaryIcon from './icons/Primary.svg';
+import styles from '@css/ai-components/button.module.css';
 
 export interface AIButtonProps extends TBaseHtmlProps<HTMLButtonElement> {
   /**
@@ -53,15 +54,15 @@ export const AIButton = (props: AIButtonProps) => {
 
   const buttonClassNames = classNames(
     {
-      AIButton: true,
-      'AIButton--primary': appearance === 'primary',
-      'AIButton--basic': appearance === 'basic',
+      [styles.AIButton]: true,
+      [styles['AIButton--primary']]: appearance === 'primary',
+      [styles['AIButton--basic']]: appearance === 'basic',
     },
     className
   );
 
   const IconClassNames = classNames({
-    'AIButton-Icon': true,
+    [styles['AIButton-Icon']]: true,
   });
 
   const buttonIcon = appearance === 'primary' ? PrimaryIcon : disabled ? BasicDisabledIcon : BasicIcon;

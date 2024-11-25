@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Text, Listbox, Tooltip } from '@/index';
 import classNames from 'classnames';
 import { AvatarData } from './AvatarGroup';
+import styles from '@css/components/avatarGroup.module.css';
 
 interface AvatarPopperProps {
   popperRenderer?: (names: AvatarData[]) => JSX.Element;
@@ -21,7 +22,8 @@ const AvatarPopperBody = (props: AvatarPopperProps) => {
 
   const popperClass = classNames(
     {
-      ['AvatarGroup-Popper py-3']: true,
+      [styles['AvatarGroup-Popper']]: true,
+      ['py-3']: true,
     },
     popperClassName
   );

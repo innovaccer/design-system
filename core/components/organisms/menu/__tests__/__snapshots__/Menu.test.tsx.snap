@@ -7,7 +7,7 @@ exports[`Menu component snapshot
   <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger"
+      class="OutsideClick d-inline-flex flex-grow-1"
     />
   </div>
 </body>
@@ -20,7 +20,7 @@ exports[`Menu component snapshot
   <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger"
+      class="OutsideClick d-inline-flex flex-grow-1"
     />
   </div>
   <div
@@ -83,7 +83,7 @@ exports[`Menu component with Nesting snapshot
   <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger"
+      class="OutsideClick d-inline-flex flex-grow-1"
     />
   </div>
 </body>
@@ -96,7 +96,7 @@ exports[`Menu component with Nesting snapshot
   <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger"
+      class="OutsideClick d-inline-flex flex-grow-1"
     />
   </div>
   <div
@@ -148,7 +148,7 @@ exports[`Menu component with Nesting snapshot
         </a>
         <style />
         <div
-          class="OutsideClick PopperWrapper-trigger"
+          class="OutsideClick d-inline-flex flex-grow-1"
         >
           <a
             aria-controls="DesignSystem-Menu--Popover-Test-uid"
@@ -191,7 +191,7 @@ exports[`Menu component with Trigger snapshot
   <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger"
+      class="OutsideClick d-inline-flex flex-grow-1"
     >
       <button
         aria-expanded="false"
@@ -227,7 +227,7 @@ exports[`Menu component with Trigger snapshot
   <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger"
+      class="OutsideClick d-inline-flex flex-grow-1"
     >
       <button
         aria-expanded="true"

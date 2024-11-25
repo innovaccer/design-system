@@ -10,7 +10,7 @@ exports[`Dropdown component
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -53,7 +53,7 @@ exports[`Dropdown component
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -96,7 +96,7 @@ exports[`Dropdown component
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -139,7 +139,7 @@ exports[`Dropdown component
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -182,7 +182,7 @@ exports[`Dropdown component
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--icon"
@@ -233,7 +233,7 @@ exports[`Dropdown component
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -282,7 +282,7 @@ exports[`Dropdown component
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -325,7 +325,7 @@ exports[`Dropdown component
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--icon"
@@ -377,7 +377,7 @@ exports[`Dropdown component
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -427,7 +427,7 @@ exports[`Dropdown component
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -471,7 +471,7 @@ exports[`Dropdown component
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -514,7 +514,7 @@ exports[`Dropdown component
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -557,7 +557,7 @@ exports[`Dropdown component
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -600,7 +600,7 @@ exports[`Dropdown component
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -643,7 +643,7 @@ exports[`Dropdown component
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -686,7 +686,7 @@ exports[`Dropdown component
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger"
+        class="OutsideClick d-inline-flex flex-grow-1"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--regularSquare"
@@ -720,7 +720,7 @@ exports[`Dropdown component
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -763,7 +763,7 @@ exports[`Dropdown component
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -806,7 +806,7 @@ exports[`Dropdown component
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -849,7 +849,7 @@ exports[`Dropdown component
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -892,7 +892,7 @@ exports[`Dropdown component
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -935,7 +935,7 @@ exports[`Dropdown component
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -978,7 +978,7 @@ exports[`Dropdown component
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -1021,7 +1021,7 @@ exports[`Dropdown component
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -1064,7 +1064,7 @@ exports[`Dropdown component
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--tiny DropdownButton--placeholder"
@@ -1107,7 +1107,7 @@ exports[`Dropdown component
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -1150,7 +1150,7 @@ exports[`Dropdown component
     >
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger w-100"
+        class="OutsideClick d-inline-flex flex-grow-1 w-100"
       >
         <button
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
