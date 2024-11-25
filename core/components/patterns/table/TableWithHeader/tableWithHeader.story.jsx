@@ -419,7 +419,7 @@ import './style.css';
                             size="tiny"
                             onClick={() => setSelectAllRecords(false)}
                           >
-                            Clear Selection
+                            Clear selection
                           </Button>
                         )
                       }

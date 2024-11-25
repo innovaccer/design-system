@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { Card, Table } from '@/index';
-import { errorTemplate } from '@/components/organisms/grid/__stories__/_common_/errorTemplate';
+import data from '@/components/organisms/grid/__stories__/_common_/data';
 import schema from '@/components/organisms/grid/__stories__/_common_/schema';
 import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/_common_/types';
 
 // CSF format story
-export const withErrorTemplate = () => {
+export const basicPagination = () => {
   return (
-    <div className="vh-75">
+    <div className="vh-50">
       <Card className="h-100 overflow-hidden">
-        <Table schema={schema} data={[]} error={true} errorTemplate={errorTemplate} />
+        <Table data={data} pageSize={6} schema={schema} withPagination={true} paginationType={'basic'} />
       </Card>
     </div>
   );
@@ -17,11 +17,12 @@ export const withErrorTemplate = () => {
 
 const customCode = `
 () => {
+  const data = ${JSON.stringify(data, null, 4)};
+
   const schema = [
     {
       name: 'name',
       displayName: 'Name',
-      width: 300,
       resizable: true,
       separator: true,
       tooltip: true,
@@ -59,7 +60,6 @@ const customCode = `
       width: 350,
       resizable: true,
       sorting: false,
-      cellType: 'WITH_META_LIST'
     },
     {
       name: 'gender',
@@ -90,6 +90,7 @@ const customCode = `
       resizable: true,
       align: 'center',
       cellType: 'ICON',
+      sorting: false,
       translate: _ => ({
         icon: 'events'
       })
@@ -99,36 +100,34 @@ const customCode = `
       displayName: 'Custom Cell',
       width: 200,
       resizable: true,
-      separator: true,
-      cellRenderer: (props) => {
-        const {
-          loading
-        } = props;
-
-        if (loading) return <></>;
-
+      cellType: 'WITH_META_LIST',
+      sorting: false,
+      cellRenderer: props => {
         return (
-          <Button appearance={'primary'}>Button</Button>
+          <>
+            <Icon className="mr-5" name="events" />
+            <GridCell
+              {...props}
+              schema={{
+                ...props.schema,
+                name: 'email'
+              }}
+            />
+          </>
         );
       }
     },
   ];
 
-  const errorTemplate = () => {
-    return (
-      <Heading appearance={'disabled'}>We failed as a team</Heading>
-    );
-  };
-
   return (
-    <div
-      className="vh-75"
-    >
+    <div className="vh-50">
       <Card className="h-100 overflow-hidden">
         <Table
+          data={data}
+          pageSize={6}
           schema={schema}
-          error={true}
-          errorTemplate={errorTemplate}
+          withPagination={true}
+          paginationType={'basic'}
         />
       </Card>
     </div>
@@ -137,12 +136,13 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/Table/Variants/With Error Template',
+  title: 'Components/Table/Pagination/Basic Pagination',
   component: Table,
   parameters: {
     docs: {
       docPage: {
         customCode,
+        title: 'Basic Pagination in Table',
         props: {
           components: { AsyncTable, SyncTable },
           exclude: ['showHead'],

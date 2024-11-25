@@ -9,7 +9,6 @@ const schema: ColumnSchema[] = [
     width: '40%',
     resizable: true,
     tooltip: true,
-    // pinned: 'left',
     separator: true,
     translate: (a) => ({
       title: `${a.firstName} ${a.lastName}`,
@@ -21,9 +20,6 @@ const schema: ColumnSchema[] = [
       { label: 'H-R', value: 'h-r' },
       { label: 'S-Z', value: 's-z' },
     ],
-    // comparator: (a, b) => (
-    //   a.lastName.localeCompare(b.lastName) && a.firstName.localeCompare(b.firstName)
-    // ),
     onFilterChange: (a, filters) => {
       for (const filter of filters) {
         switch (filter) {
@@ -40,8 +36,26 @@ const schema: ColumnSchema[] = [
       }
       return false;
     },
-    // cellType: 'AVATAR'
     cellType: 'AVATAR_WITH_TEXT',
+  },
+  {
+    name: 'customCell',
+    displayName: 'Custom Cell',
+    width: 200,
+    resizable: true,
+    cellRenderer: (props) => {
+      const { loading } = props;
+
+      if (loading) return <PlaceholderParagraph length="medium" />;
+
+      const [weight, setWeight] = React.useState('');
+
+      const onChangeWeight = (value: string) => {
+        setWeight(value);
+      };
+
+      return <EditableInput placeholder="Add Weight" value={weight} onChange={onChangeWeight} size="tiny" />;
+    },
   },
   {
     name: 'email',
@@ -49,19 +63,13 @@ const schema: ColumnSchema[] = [
     width: 250,
     resizable: true,
     sorting: false,
-    // separator: true,
-    // pinned: 'left',
-    // align: 'center',
-    // comparator: (a, b) => a.email.title.localeCompare(b.email.title),
     cellType: 'WITH_META_LIST',
-    // image: iconImg,
   },
   {
     name: 'gender',
     displayName: 'Gender',
     width: 180,
     resizable: true,
-    // separator: true,
     comparator: (a, b) => a.gender.localeCompare(b.gender),
     cellType: 'STATUS_HINT',
     translate: (a) => ({
@@ -89,30 +97,6 @@ const schema: ColumnSchema[] = [
     translate: () => ({
       icon: 'events',
     }),
-    // separator: true,
-    // status: "success"
-  },
-  {
-    name: 'customCell',
-    displayName: 'Custom Cell',
-    width: 200,
-    resizable: true,
-    // pinned: 'right',
-    // separator: true,
-    cellRenderer: (props) => {
-      const { loading } = props;
-
-      if (loading) return <PlaceholderParagraph length="medium" />;
-
-      const [weight, setWeight] = React.useState('');
-
-      const onChangeWeight = (value: string) => {
-        setWeight(value);
-      };
-
-      return <EditableInput placeholder="Add Weight" value={weight} onChange={onChangeWeight} size="tiny" />;
-    },
-    // status: "success"
   },
 ];
 
