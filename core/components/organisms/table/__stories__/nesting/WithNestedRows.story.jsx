@@ -1,36 +1,35 @@
 import * as React from 'react';
-import { Card, Heading, Table, Column, Row } from '@/index';
-import data from '@/components/organisms/grid/__stories__/_common_/data';
+import { Card, Table } from '@/index';
+import { nestedRowRenderer } from '@/components/organisms/grid/__stories__/_common_/nestedRowRenderer';
 import schema from '@/components/organisms/grid/__stories__/_common_/schema';
 import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/_common_/types';
+import data from '@/components/organisms/grid/__stories__/_common_/data';
+import { action } from '@/utils/action';
 
 // CSF format story
-export const showHead = () => {
-  const values = [true, false];
-
-  // to freeze the object for typescript
-  // console.log(schema, 'hi');
+export const withNestedRows = () => {
+  schema[0].width = 400;
 
   return (
-    <div className="d-flex flex-wrap">
-      <Row>
-        {values.map((v, index) => (
-          <Column key={index} size={5} className="ml-10">
-            <Heading>{`showHead: ${v}`}</Heading>
-            <div className="vh-75">
-              <Card className="h-100 overflow-hidden">
-                <Table showHead={v} data={data} schema={schema} />
-              </Card>
-            </div>
-          </Column>
-        ))}
-      </Row>
+    <div className="vh-75">
+      <Card className="h-100 overflow-hidden">
+        <Table
+          schema={schema}
+          data={data}
+          nestedRows={true}
+          nestedRowRenderer={nestedRowRenderer}
+          onRowClick={(rowData, rowIndex) =>
+            action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()
+          }
+        />
+      </Card>
     </div>
   );
 };
 
-const customCode = `() => {
-  const data = ${JSON.stringify(data, null, 4)};
+const customCode = `
+() => {
+  const data = ${JSON.stringify(data.slice(0, 10), null, 4)};
 
   const schema = [
     {
@@ -74,6 +73,7 @@ const customCode = `() => {
       width: 350,
       resizable: true,
       sorting: false,
+      cellType: 'WITH_META_LIST'
     },
     {
       name: 'gender',
@@ -109,36 +109,74 @@ const customCode = `() => {
         icon: 'events'
       })
     },
+    {
+      name: 'customCell',
+      displayName: 'Custom Cell',
+      width: 200,
+      resizable: true,
+      separator: true,
+      sorting: false,
+      cellRenderer: (props) => {
+        const {
+          loading
+        } = props;
+
+        if (loading) return <></>;
+
+        return (
+          <Button appearance={'primary'}>Button</Button>
+        );
+      }
+    },
   ];
 
-  const values = [true, false];
+  const nestedRowRenderer = (props) => {
+    const {
+      schema,
+      data,
+      loading,
+      rowIndex,
+      expanded
+    } = props;
+
+    if (rowIndex % 2) {
+      return false;
+    }
+    return (
+      <div>
+        <Divider className='ml-5' />
+        <List
+          loading={loading}
+          schema={schema}
+          data={[data]}
+        />
+      </div>
+    );
+  }
 
   return (
-    <div className="d-flex flex-wrap">
-    <Row>
-    {values.map((v, index) => (
-      <Column key={index} size={5} className="ml-10">
-        <Heading>{\`showHead: \${v}\`}</Heading>
-        <div className="vh-75">
-          <Card className="h-100 overflow-hidden">
-            <Table showHead={v} data={data} schema={schema} />
-          </Card>
-        </div>
-      </Column>
-    ))}
-  </Row>
+    <div className="vh-75">
+      <Card className="h-100 overflow-hidden">
+        <Table
+          data={data}
+          schema={schema}
+          nestedRows={true}
+          nestedRowRenderer={nestedRowRenderer}
+        />
+      </Card>
     </div>
   );
 };
 `;
 
 export default {
-  title: 'Components/Table/Variants/Show Head',
+  title: 'Components/Table/Nesting/With Nested Rows',
   component: Table,
   parameters: {
     docs: {
       docPage: {
         customCode,
+        title: 'Nested Table With Nested Rows',
         props: {
           components: { AsyncTable, SyncTable },
           exclude: ['showHead'],

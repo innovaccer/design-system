@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Card, Table, CardSubdued, Text, Column, Row, Button } from '@/index';
-import { AsyncTable, SyncTable } from './_common_/types';
+import { AsyncTable, SyncTable } from '../_common_/types';
 import { action } from '@/utils/action';
 
-export const nestedTableWithNestedCards = () => {
+export const withNestedCards = () => {
   const data = [
     {
       firstName: 'Brooke',
@@ -344,7 +344,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Table/Nested Table With Nested Cards',
+  title: 'Components/Table/Nesting/With Nested Cards',
   component: Table,
   parameters: {
     docs: {
