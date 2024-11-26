@@ -116,6 +116,7 @@ export const Avatar = (props: AvatarProps) => {
   const AvatarWrapperClassNames = classNames({
     ['Avatar-wrapper--square']: shape === 'square',
     [`Avatar--${size}`]: shape === 'square',
+    // ['position-relative']: true,
   });
 
   const TextClassNames = classNames({
@@ -126,6 +127,11 @@ export const Avatar = (props: AvatarProps) => {
   const IconClassNames = classNames({
     ['Avatar-content']: darkAppearance.includes(AvatarAppearance),
   });
+
+  const statusHintClassName = classNames({
+    ['Avatar-statusHint']: true,
+    ['d-none']: shape !== 'round' || size !== 'regular',
+  })
 
   const sharedProp = {
     size,
@@ -154,31 +160,38 @@ export const Avatar = (props: AvatarProps) => {
     }
 
     return (
-      <span data-test="DesignSystem-AvatarWrapper" className={AvatarWrapperClassNames} role={role}>
-        <span
-          data-test="DesignSystem-Avatar"
-          {...baseProps}
-          className={AvatarClassNames}
-          tabIndex={tabIndex || disabled ? -1 : 0}
-        >
-          {initials && (
-            <Text weight="medium" appearance={'white'} className={TextClassNames}>
-              {initials}
-            </Text>
-          )}
-          {!initials && (
-            <Icon
-              data-test="DesignSystem-Avatar--Icon"
-              name="person"
-              size={size === 'regular' ? 20 : 16}
-              appearance={'white'}
-              className={IconClassNames}
-            />
-          )}
+      <span className="position-relative">
+        <span data-test="DesignSystem-AvatarWrapper" className={AvatarWrapperClassNames} role={role}>
+          <span
+            data-test="DesignSystem-Avatar"
+            {...baseProps}
+            className={AvatarClassNames}
+            tabIndex={tabIndex || disabled ? -1 : 0}
+          >
+            {initials && (
+              <Text weight="medium" appearance={'white'} className={TextClassNames}>
+                {initials}
+              </Text>
+            )}
+            {!initials && (
+              <Icon
+                data-test="DesignSystem-Avatar--Icon"
+                name="person"
+                size={size === 'regular' ? 20 : 16}
+                appearance={'white'}
+                className={IconClassNames}
+              />
+            )}
+          </span>
+        </span>
+
+        <span className={statusHintClassName}>
+          <Icon name="done" size={12} appearance="white" type="rounded" />
         </span>
       </span>
     );
   };
+
 
   const renderTooltip = () => {
     if (withTooltip && initials) {

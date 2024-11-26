@@ -106,3 +106,17 @@
   opacity: var(--opacity-20);
   mix-blend-mode: multiply;
 }
+
+.Avatar-statusHint {
+  top: -2px;
+  right: -2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: green;
+  position: absolute;
+}
