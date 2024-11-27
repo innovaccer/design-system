@@ -20,6 +20,8 @@ const sizes: AvatarSize[] = ['regular', 'tiny'];
 const shapes: AvatarShape[] = ['round', 'square'];
 const booleanValues = [true, false];
 
+const statusComponent = <div>status</div>;
+
 describe('Avatar component', () => {
   const mapper = {
     appearance: valueHelper(appearances, { required: true, iterate: true }),
@@ -268,5 +270,49 @@ describe('Avatar component with prop:presence', () => {
     const { getByTestId } = render(<Avatar firstName="John" lastName="Doe" presence="away" strokeColor="red" />);
     const presenceEle = getByTestId('DesignSystem-Avatar--Presence');
     expect(presenceEle).toHaveStyle('box-shadow: 0 0 0 var(--spacing-s) red');
+  });
+});
+
+describe('Avatar component with prop:status', () => {
+  it('should have the Avatar-status class when size is regular', () => {
+    const { getByTestId } = render(<Avatar status={statusComponent}>Design</Avatar>);
+    const statusElement = getByTestId('DesignSystem-Avatar--Status');
+    expect(statusElement).toBeInTheDocument();
+    expect(statusElement).toHaveClass('Avatar-status');
+  });
+
+  it('should not have the Avatar-status class when size is tiny', () => {
+    render(
+      <Avatar status={statusComponent} size="tiny">
+        Design
+      </Avatar>
+    );
+    const statusElement = screen.queryByText('DesignSystem-Avatar--Status');
+    expect(statusElement).not.toBeInTheDocument();
+  });
+
+  it('should have the Avatar-status class when shape is round', () => {
+    const { getByTestId } = render(<Avatar status={statusComponent}>Design</Avatar>);
+    const statusElement = getByTestId('DesignSystem-Avatar--Status');
+    expect(statusElement).toBeInTheDocument();
+    expect(statusElement).toHaveClass('Avatar-status');
+  });
+
+  it('should not have the Avatar-status class when shape is square', () => {
+    render(
+      <Avatar status={statusComponent} shape="square">
+        Design
+      </Avatar>
+    );
+    const statusElement = screen.queryByText('DesignSystem-Avatar--Status');
+    expect(statusElement).not.toBeInTheDocument();
+  });
+
+  it('status should have custom stroke color', () => {
+    const { getByTestId } = render(
+      <Avatar firstName="John" lastName="Doe" status={statusComponent} strokeColor="red" />
+    );
+    const statusElement = getByTestId('DesignSystem-Avatar--Status');
+    expect(statusElement).toHaveStyle('box-shadow: 0 0 0 var(--spacing-s) red');
   });
 });
