@@ -1,0 +1,8 @@
+.status-trigger {
+  width: 100%;
+  border-radius: 50%;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
