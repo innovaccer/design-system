@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar } from '@/index';
+import { Avatar, Icon } from '@/index';
 import figma from '@figma/code-connect';
 
 figma.connect(Avatar, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=37-592', {
@@ -38,6 +38,9 @@ figma.connect(Avatar, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS--
     }),
     icon: figma.enum('Type', {
       Icon: <Avatar.Icon name="person" />,
+    }),
+    status: figma.enum('Status', {
+      true: <Icon name="done" size={10} appearance="white" />,
     }),
   },
   example: ({ icon, image, ...rest }) => (

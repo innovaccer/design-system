@@ -1,0 +1,20 @@
+.status-trigger {
+  width: 100%;
+  border-radius: 50%;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-trigger--success {
+  background-color: var(--success);
+}
+
+.status-trigger--accent2-darker {
+  background-color: var(--accent2-darker);
+}
+
+.status-trigger--success-dark {
+  background-color: var(--success-dark);
+}
