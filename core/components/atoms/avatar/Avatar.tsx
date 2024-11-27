@@ -11,6 +11,8 @@ import styles from '@css/components/avatar.module.css';
 
 type TPresence = 'active' | 'away';
 
+type TPresence = 'active' | 'away';
+
 export interface AvatarProps extends BaseProps {
   /**
    * Color of the `Avatar`
