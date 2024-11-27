@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import Avatar, { AvatarProps as Props } from '../Avatar';
 import { AccentAppearance, AvatarShape, AvatarSize } from '@/common.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -229,5 +229,44 @@ describe('Avatar component with tooltip', () => {
     const tooltip = getByTestId('DesignSystem-Popover');
     expect(tooltip).toBeInTheDocument();
     expect(tooltip).toHaveTextContent('John Doe (Deactivated)');
+  });
+});
+
+describe('Avatar component with prop:presence', () => {
+  it('presence should be available for only round avatar', () => {
+    const { getByTestId } = render(<Avatar firstName="John" lastName="Doe" presence="active" shape="round" />);
+    const presenceEle = getByTestId('DesignSystem-Avatar--Presence');
+    expect(presenceEle).toBeInTheDocument();
+    expect(presenceEle).toHaveClass('Avatar-presence');
+  });
+
+  it('presence should not be available for square avatar', () => {
+    render(<Avatar firstName="John" lastName="Doe" presence="active" shape="square" />);
+    const presenceEle = screen.queryByText('DesignSystem-Avatar--Presence');
+    expect(presenceEle).not.toBeInTheDocument();
+  });
+
+  it('presence should not be available for disabled avatar', () => {
+    render(<Avatar firstName="John" lastName="Doe" presence="active" disabled={true} />);
+    const presenceEle = screen.queryByText('DesignSystem-Avatar--Presence');
+    expect(presenceEle).not.toBeInTheDocument();
+  });
+
+  it('presence should have active class for prop presence:active', () => {
+    const { getByTestId } = render(<Avatar firstName="John" lastName="Doe" presence="active" />);
+    const presenceEle = getByTestId('DesignSystem-Avatar--Presence');
+    expect(presenceEle).toHaveClass('Avatar-presence--active');
+  });
+
+  it('presence should have active class for prop presence:away', () => {
+    const { getByTestId } = render(<Avatar firstName="John" lastName="Doe" presence="away" />);
+    const presenceEle = getByTestId('DesignSystem-Avatar--Presence');
+    expect(presenceEle).toHaveClass('Avatar-presence--away');
+  });
+
+  it('presence should have custom stroke color', () => {
+    const { getByTestId } = render(<Avatar firstName="John" lastName="Doe" presence="away" strokeColor="red" />);
+    const presenceEle = getByTestId('DesignSystem-Avatar--Presence');
+    expect(presenceEle).toHaveStyle('box-shadow: 0 0 0 var(--spacing-s) red');
   });
 });
