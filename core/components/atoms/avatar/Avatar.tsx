@@ -64,6 +64,10 @@ export interface AvatarProps extends BaseProps {
    */
   presence?: TPresence;
   /**
+   * Show status indicator for the `Avatar`
+   */
+  status?: React.ReactNode;
+  /**
    * Stroke color of `Presence indicator` & `Status indicator` in `Avatar`
    */
   strokeColor?: string;
@@ -88,6 +92,7 @@ export const Avatar = (props: AvatarProps) => {
     tooltipSuffix,
     tabIndex,
     presence,
+    status,
     strokeColor,
     role = 'presentation',
   } = props;
@@ -112,6 +117,7 @@ export const Avatar = (props: AvatarProps) => {
 
   const darkAppearance = ['secondary', 'success', 'warning', 'accent1', 'accent4'];
   const showPresence = presence && !disabled && shape === 'round';
+  const showStatus = status && size === 'regular' && shape === 'round';
 
   const AvatarClassNames = classNames(
     {
@@ -214,6 +220,11 @@ export const Avatar = (props: AvatarProps) => {
       )}
       {showPresence && (
         <span data-test="DesignSystem-Avatar--Presence" className={presenceClassNames} style={borderStyle} />
+      )}
+      {showStatus && (
+        <span data-test="DesignSystem-Avatar--Status" className="Avatar-status" style={borderStyle}>
+          {status}
+        </span>
       )}
     </span>
   );
