@@ -3,7 +3,7 @@ import { action } from '@/utils/action';
 import { Tabs, Tab, Button } from '@/index';
 
 // CSF format story
-export const dismissibleTab = () => {
+export const dismissibleTabs = () => {
   const [activeIndex, setActiveIndex] = React.useState(0);
   const [dismissList, setDismissList] = React.useState([]);
 
@@ -24,9 +24,9 @@ export const dismissibleTab = () => {
       <Button className="mb-7" onClick={() => setDismissList([])}>
         Reset
       </Button>
-      <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} key={dismissList} className="mb-6">
+      <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6" key={dismissList}>
         {!dismissList.includes('All') && (
-          <Tab label="All" count={15} className="pl-5">
+          <Tab label="All" count={24} className="pl-5">
             <div>All</div>
           </Tab>
         )}
@@ -52,9 +52,44 @@ export const dismissibleTab = () => {
             <div>Declined</div>
           </Tab>
         )}
-        <Tab label="Successful" disabled={true} count={1} isDismissible={true}>
-          <div>Successful</div>
-        </Tab>
+        {!dismissList.includes('Transferred') && (
+          <Tab
+            label="Transferred"
+            className="pl-5"
+            count={2}
+            isDismissible={true}
+            onDismiss={(tabInfo) => onDismissHandler(tabInfo)}
+          >
+            <div>Transferred</div>
+          </Tab>
+        )}
+        {!dismissList.includes('Unsuccessful Transfer') && (
+          <Tab
+            label="Unsuccessful Transfer"
+            className="pl-5"
+            count={3}
+            isDismissible={true}
+            onDismiss={(tabInfo) => onDismissHandler(tabInfo)}
+          >
+            <div>Unsuccessful Transfer</div>
+          </Tab>
+        )}
+        {!dismissList.includes('On Hold') && (
+          <Tab
+            label="On Hold"
+            className="pl-5"
+            count={4}
+            isDismissible={true}
+            onDismiss={(tabInfo) => onDismissHandler(tabInfo)}
+          >
+            <div>On Hold</div>
+          </Tab>
+        )}
+        {!dismissList.includes('Successful') && (
+          <Tab label="Successful" count={1} isDismissible={true} onDismiss={(tabInfo) => onDismissHandler(tabInfo)}>
+            <div>Successful</div>
+          </Tab>
+        )}
       </Tabs>
     </div>
   );
@@ -82,7 +117,7 @@ const customCode = `() => {
       </Button>
       <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6" key={dismissList}>
         {!dismissList.includes('All') && (
-          <Tab label="All" count={15} className="pl-5">
+          <Tab label="All" count={24} className="pl-5">
             <div>All</div>
           </Tab>
         )}
@@ -108,16 +143,51 @@ const customCode = `() => {
             <div>Declined</div>
           </Tab>
         )}
-        <Tab label="Successful" disabled={true} count={1} isDismissible={true}>
-          <div>Successful</div>
-        </Tab>
+        {!dismissList.includes('Transferred') && (
+          <Tab
+            label="Transferred"
+            className="pl-5"
+            count={2}
+            isDismissible={true}
+            onDismiss={(tabInfo) => onDismissHandler(tabInfo)}
+          >
+            <div>Transferred</div>
+          </Tab>
+        )}
+        {!dismissList.includes('Unsuccessful Transfer') && (
+          <Tab
+            label="Unsuccessful Transfer"
+            className="pl-5"
+            count={3}
+            isDismissible={true}
+            onDismiss={(tabInfo) => onDismissHandler(tabInfo)}
+          >
+            <div>Unsuccessful Transfer</div>
+          </Tab>
+        )}
+        {!dismissList.includes('On Hold') && (
+          <Tab
+            label="On Hold"
+            className="pl-5"
+            count={4}
+            isDismissible={true}
+            onDismiss={(tabInfo) => onDismissHandler(tabInfo)}
+          >
+            <div>On Hold</div>
+          </Tab>
+        )}
+        {!dismissList.includes('Successful') && (
+          <Tab label="Successful" count={1} isDismissible={true} onDismiss={(tabInfo) => onDismissHandler(tabInfo)}>
+            <div>Successful</div>
+          </Tab>
+        )}
       </Tabs>
     </div>
   );
 }`;
 
 export default {
-  title: 'Components/Tabs/Dismissible Tab ',
+  title: 'Components/Tabs/Overflow Tab/Dismissible Tabs',
   component: Tabs,
   parameters: {
     docs: {

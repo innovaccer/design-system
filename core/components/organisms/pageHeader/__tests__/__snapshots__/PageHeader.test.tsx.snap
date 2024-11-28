@@ -231,76 +231,80 @@ exports[`Navigation component
                 data-test="DesignSystem-Tabs--Header"
               >
                 <div
-                  class="Tab Tab--active Tab-selected align-items-center"
-                  data-test="DesignSystem-Tabs--Tab"
-                  tabindex="0"
+                  class="d-flex"
                 >
-                  <span
-                    class="Tab--regular Tab--overflow"
-                    data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                  <div
+                    class="Tab Tab--active Tab-selected align-items-center"
+                    data-test="DesignSystem-Tabs--Tab"
+                    tabindex="0"
                   >
                     <span
-                      class="Pills Badge--primary Tab-pills"
-                      data-test="DesignSystem-Tabs--Pills"
+                      class="Tab--regular Tab--overflow"
+                      data-test="DesignSystem-Tabs--TextWrapper"
+                      style="max-width: var(--spacing-9);"
                     >
-                      32
+                      <span
+                        class="Pills Badge--primary Tab-pills"
+                        data-test="DesignSystem-Tabs--Pills"
+                      >
+                        32
+                      </span>
+                      <span
+                        class="Text Text--link Text--regular ellipsis--noWrap Tab-selected"
+                        data-test="DesignSystem-Tabs--Text"
+                      >
+                        New
+                      </span>
                     </span>
-                    <span
-                      class="Text Text--link Text--regular ellipsis--noWrap Tab-selected"
-                      data-test="DesignSystem-Tabs--Text"
-                    >
-                      New
-                    </span>
-                  </span>
-                </div>
-                <div
-                  class="Tab align-items-center"
-                  data-test="DesignSystem-Tabs--Tab"
-                  tabindex="0"
-                >
-                  <span
-                    class="Tab--regular Tab--overflow"
-                    data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                  </div>
+                  <div
+                    class="Tab align-items-center"
+                    data-test="DesignSystem-Tabs--Tab"
+                    tabindex="0"
                   >
                     <span
-                      class="Pills Badge--secondary Tab-pills"
-                      data-test="DesignSystem-Tabs--Pills"
+                      class="Tab--regular Tab--overflow"
+                      data-test="DesignSystem-Tabs--TextWrapper"
+                      style="max-width: var(--spacing-9);"
                     >
-                      4
+                      <span
+                        class="Pills Badge--secondary Tab-pills"
+                        data-test="DesignSystem-Tabs--Pills"
+                      >
+                        4
+                      </span>
+                      <span
+                        class="Text Text--subtle Text--regular ellipsis--noWrap"
+                        data-test="DesignSystem-Tabs--Text"
+                      >
+                        Invalid
+                      </span>
                     </span>
-                    <span
-                      class="Text Text--subtle Text--regular ellipsis--noWrap"
-                      data-test="DesignSystem-Tabs--Text"
-                    >
-                      Invalid
-                    </span>
-                  </span>
-                </div>
-                <div
-                  class="Tab align-items-center"
-                  data-test="DesignSystem-Tabs--Tab"
-                  tabindex="0"
-                >
-                  <span
-                    class="Tab--regular Tab--overflow"
-                    data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                  </div>
+                  <div
+                    class="Tab align-items-center"
+                    data-test="DesignSystem-Tabs--Tab"
+                    tabindex="0"
                   >
                     <span
-                      class="Pills Badge--secondary Tab-pills"
-                      data-test="DesignSystem-Tabs--Pills"
+                      class="Tab--regular Tab--overflow"
+                      data-test="DesignSystem-Tabs--TextWrapper"
+                      style="max-width: var(--spacing-9);"
                     >
-                      2
+                      <span
+                        class="Pills Badge--secondary Tab-pills"
+                        data-test="DesignSystem-Tabs--Pills"
+                      >
+                        2
+                      </span>
+                      <span
+                        class="Text Text--subtle Text--regular ellipsis--noWrap"
+                        data-test="DesignSystem-Tabs--Text"
+                      >
+                        Duplicate
+                      </span>
                     </span>
-                    <span
-                      class="Text Text--subtle Text--regular ellipsis--noWrap"
-                      data-test="DesignSystem-Tabs--Text"
-                    >
-                      Duplicate
-                    </span>
-                  </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -548,76 +552,80 @@ exports[`Navigation component
                 data-test="DesignSystem-Tabs--Header"
               >
                 <div
-                  class="Tab Tab--active Tab-selected align-items-center"
-                  data-test="DesignSystem-Tabs--Tab"
-                  tabindex="0"
+                  class="d-flex"
                 >
-                  <span
-                    class="Tab--regular Tab--overflow"
-                    data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                  <div
+                    class="Tab Tab--active Tab-selected align-items-center"
+                    data-test="DesignSystem-Tabs--Tab"
+                    tabindex="0"
                   >
                     <span
-                      class="Pills Badge--primary Tab-pills"
-                      data-test="DesignSystem-Tabs--Pills"
+                      class="Tab--regular Tab--overflow"
+                      data-test="DesignSystem-Tabs--TextWrapper"
+                      style="max-width: var(--spacing-9);"
                     >
-                      32
+                      <span
+                        class="Pills Badge--primary Tab-pills"
+                        data-test="DesignSystem-Tabs--Pills"
+                      >
+                        32
+                      </span>
+                      <span
+                        class="Text Text--link Text--regular ellipsis--noWrap Tab-selected"
+                        data-test="DesignSystem-Tabs--Text"
+                      >
+                        New
+                      </span>
                     </span>
-                    <span
-                      class="Text Text--link Text--regular ellipsis--noWrap Tab-selected"
-                      data-test="DesignSystem-Tabs--Text"
-                    >
-                      New
-                    </span>
-                  </span>
-                </div>
-                <div
-                  class="Tab align-items-center"
-                  data-test="DesignSystem-Tabs--Tab"
-                  tabindex="0"
-                >
-                  <span
-                    class="Tab--regular Tab--overflow"
-                    data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                  </div>
+                  <div
+                    class="Tab align-items-center"
+                    data-test="DesignSystem-Tabs--Tab"
+                    tabindex="0"
                   >
                     <span
-                      class="Pills Badge--secondary Tab-pills"
-                      data-test="DesignSystem-Tabs--Pills"
+                      class="Tab--regular Tab--overflow"
+                      data-test="DesignSystem-Tabs--TextWrapper"
+                      style="max-width: var(--spacing-9);"
                     >
-                      4
+                      <span
+                        class="Pills Badge--secondary Tab-pills"
+                        data-test="DesignSystem-Tabs--Pills"
+                      >
+                        4
+                      </span>
+                      <span
+                        class="Text Text--subtle Text--regular ellipsis--noWrap"
+                        data-test="DesignSystem-Tabs--Text"
+                      >
+                        Invalid
+                      </span>
                     </span>
-                    <span
-                      class="Text Text--subtle Text--regular ellipsis--noWrap"
-                      data-test="DesignSystem-Tabs--Text"
-                    >
-                      Invalid
-                    </span>
-                  </span>
-                </div>
-                <div
-                  class="Tab align-items-center"
-                  data-test="DesignSystem-Tabs--Tab"
-                  tabindex="0"
-                >
-                  <span
-                    class="Tab--regular Tab--overflow"
-                    data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                  </div>
+                  <div
+                    class="Tab align-items-center"
+                    data-test="DesignSystem-Tabs--Tab"
+                    tabindex="0"
                   >
                     <span
-                      class="Pills Badge--secondary Tab-pills"
-                      data-test="DesignSystem-Tabs--Pills"
+                      class="Tab--regular Tab--overflow"
+                      data-test="DesignSystem-Tabs--TextWrapper"
+                      style="max-width: var(--spacing-9);"
                     >
-                      2
+                      <span
+                        class="Pills Badge--secondary Tab-pills"
+                        data-test="DesignSystem-Tabs--Pills"
+                      >
+                        2
+                      </span>
+                      <span
+                        class="Text Text--subtle Text--regular ellipsis--noWrap"
+                        data-test="DesignSystem-Tabs--Text"
+                      >
+                        Duplicate
+                      </span>
                     </span>
-                    <span
-                      class="Text Text--subtle Text--regular ellipsis--noWrap"
-                      data-test="DesignSystem-Tabs--Text"
-                    >
-                      Duplicate
-                    </span>
-                  </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -860,76 +868,80 @@ exports[`Navigation component
                 data-test="DesignSystem-Tabs--Header"
               >
                 <div
-                  class="Tab Tab--active Tab-selected align-items-center"
-                  data-test="DesignSystem-Tabs--Tab"
-                  tabindex="0"
+                  class="d-flex"
                 >
-                  <span
-                    class="Tab--regular Tab--overflow"
-                    data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                  <div
+                    class="Tab Tab--active Tab-selected align-items-center"
+                    data-test="DesignSystem-Tabs--Tab"
+                    tabindex="0"
                   >
                     <span
-                      class="Pills Badge--primary Tab-pills"
-                      data-test="DesignSystem-Tabs--Pills"
+                      class="Tab--regular Tab--overflow"
+                      data-test="DesignSystem-Tabs--TextWrapper"
+                      style="max-width: var(--spacing-9);"
                     >
-                      32
+                      <span
+                        class="Pills Badge--primary Tab-pills"
+                        data-test="DesignSystem-Tabs--Pills"
+                      >
+                        32
+                      </span>
+                      <span
+                        class="Text Text--link Text--regular ellipsis--noWrap Tab-selected"
+                        data-test="DesignSystem-Tabs--Text"
+                      >
+                        New
+                      </span>
                     </span>
-                    <span
-                      class="Text Text--link Text--regular ellipsis--noWrap Tab-selected"
-                      data-test="DesignSystem-Tabs--Text"
-                    >
-                      New
-                    </span>
-                  </span>
-                </div>
-                <div
-                  class="Tab align-items-center"
-                  data-test="DesignSystem-Tabs--Tab"
-                  tabindex="0"
-                >
-                  <span
-                    class="Tab--regular Tab--overflow"
-                    data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                  </div>
+                  <div
+                    class="Tab align-items-center"
+                    data-test="DesignSystem-Tabs--Tab"
+                    tabindex="0"
                   >
                     <span
-                      class="Pills Badge--secondary Tab-pills"
-                      data-test="DesignSystem-Tabs--Pills"
+                      class="Tab--regular Tab--overflow"
+                      data-test="DesignSystem-Tabs--TextWrapper"
+                      style="max-width: var(--spacing-9);"
                     >
-                      4
+                      <span
+                        class="Pills Badge--secondary Tab-pills"
+                        data-test="DesignSystem-Tabs--Pills"
+                      >
+                        4
+                      </span>
+                      <span
+                        class="Text Text--subtle Text--regular ellipsis--noWrap"
+                        data-test="DesignSystem-Tabs--Text"
+                      >
+                        Invalid
+                      </span>
                     </span>
-                    <span
-                      class="Text Text--subtle Text--regular ellipsis--noWrap"
-                      data-test="DesignSystem-Tabs--Text"
-                    >
-                      Invalid
-                    </span>
-                  </span>
-                </div>
-                <div
-                  class="Tab align-items-center"
-                  data-test="DesignSystem-Tabs--Tab"
-                  tabindex="0"
-                >
-                  <span
-                    class="Tab--regular Tab--overflow"
-                    data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                  </div>
+                  <div
+                    class="Tab align-items-center"
+                    data-test="DesignSystem-Tabs--Tab"
+                    tabindex="0"
                   >
                     <span
-                      class="Pills Badge--secondary Tab-pills"
-                      data-test="DesignSystem-Tabs--Pills"
+                      class="Tab--regular Tab--overflow"
+                      data-test="DesignSystem-Tabs--TextWrapper"
+                      style="max-width: var(--spacing-9);"
                     >
-                      2
+                      <span
+                        class="Pills Badge--secondary Tab-pills"
+                        data-test="DesignSystem-Tabs--Pills"
+                      >
+                        2
+                      </span>
+                      <span
+                        class="Text Text--subtle Text--regular ellipsis--noWrap"
+                        data-test="DesignSystem-Tabs--Text"
+                      >
+                        Duplicate
+                      </span>
                     </span>
-                    <span
-                      class="Text Text--subtle Text--regular ellipsis--noWrap"
-                      data-test="DesignSystem-Tabs--Text"
-                    >
-                      Duplicate
-                    </span>
-                  </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1000,76 +1012,80 @@ exports[`Navigation component
                 data-test="DesignSystem-Tabs--Header"
               >
                 <div
-                  class="Tab Tab--active Tab-selected align-items-center"
-                  data-test="DesignSystem-Tabs--Tab"
-                  tabindex="0"
+                  class="d-flex"
                 >
-                  <span
-                    class="Tab--regular Tab--overflow"
-                    data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                  <div
+                    class="Tab Tab--active Tab-selected align-items-center"
+                    data-test="DesignSystem-Tabs--Tab"
+                    tabindex="0"
                   >
                     <span
-                      class="Pills Badge--primary Tab-pills"
-                      data-test="DesignSystem-Tabs--Pills"
+                      class="Tab--regular Tab--overflow"
+                      data-test="DesignSystem-Tabs--TextWrapper"
+                      style="max-width: var(--spacing-9);"
                     >
-                      32
+                      <span
+                        class="Pills Badge--primary Tab-pills"
+                        data-test="DesignSystem-Tabs--Pills"
+                      >
+                        32
+                      </span>
+                      <span
+                        class="Text Text--link Text--regular ellipsis--noWrap Tab-selected"
+                        data-test="DesignSystem-Tabs--Text"
+                      >
+                        New
+                      </span>
                     </span>
-                    <span
-                      class="Text Text--link Text--regular ellipsis--noWrap Tab-selected"
-                      data-test="DesignSystem-Tabs--Text"
-                    >
-                      New
-                    </span>
-                  </span>
-                </div>
-                <div
-                  class="Tab align-items-center"
-                  data-test="DesignSystem-Tabs--Tab"
-                  tabindex="0"
-                >
-                  <span
-                    class="Tab--regular Tab--overflow"
-                    data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                  </div>
+                  <div
+                    class="Tab align-items-center"
+                    data-test="DesignSystem-Tabs--Tab"
+                    tabindex="0"
                   >
                     <span
-                      class="Pills Badge--secondary Tab-pills"
-                      data-test="DesignSystem-Tabs--Pills"
+                      class="Tab--regular Tab--overflow"
+                      data-test="DesignSystem-Tabs--TextWrapper"
+                      style="max-width: var(--spacing-9);"
                     >
-                      4
+                      <span
+                        class="Pills Badge--secondary Tab-pills"
+                        data-test="DesignSystem-Tabs--Pills"
+                      >
+                        4
+                      </span>
+                      <span
+                        class="Text Text--subtle Text--regular ellipsis--noWrap"
+                        data-test="DesignSystem-Tabs--Text"
+                      >
+                        Invalid
+                      </span>
                     </span>
-                    <span
-                      class="Text Text--subtle Text--regular ellipsis--noWrap"
-                      data-test="DesignSystem-Tabs--Text"
-                    >
-                      Invalid
-                    </span>
-                  </span>
-                </div>
-                <div
-                  class="Tab align-items-center"
-                  data-test="DesignSystem-Tabs--Tab"
-                  tabindex="0"
-                >
-                  <span
-                    class="Tab--regular Tab--overflow"
-                    data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                  </div>
+                  <div
+                    class="Tab align-items-center"
+                    data-test="DesignSystem-Tabs--Tab"
+                    tabindex="0"
                   >
                     <span
-                      class="Pills Badge--secondary Tab-pills"
-                      data-test="DesignSystem-Tabs--Pills"
+                      class="Tab--regular Tab--overflow"
+                      data-test="DesignSystem-Tabs--TextWrapper"
+                      style="max-width: var(--spacing-9);"
                     >
-                      2
+                      <span
+                        class="Pills Badge--secondary Tab-pills"
+                        data-test="DesignSystem-Tabs--Pills"
+                      >
+                        2
+                      </span>
+                      <span
+                        class="Text Text--subtle Text--regular ellipsis--noWrap"
+                        data-test="DesignSystem-Tabs--Text"
+                      >
+                        Duplicate
+                      </span>
                     </span>
-                    <span
-                      class="Text Text--subtle Text--regular ellipsis--noWrap"
-                      data-test="DesignSystem-Tabs--Text"
-                    >
-                      Duplicate
-                    </span>
-                  </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1751,76 +1767,80 @@ exports[`Navigation component
                 data-test="DesignSystem-Tabs--Header"
               >
                 <div
-                  class="Tab Tab--active Tab-selected align-items-center"
-                  data-test="DesignSystem-Tabs--Tab"
-                  tabindex="0"
+                  class="d-flex"
                 >
-                  <span
-                    class="Tab--regular Tab--overflow"
-                    data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                  <div
+                    class="Tab Tab--active Tab-selected align-items-center"
+                    data-test="DesignSystem-Tabs--Tab"
+                    tabindex="0"
                   >
                     <span
-                      class="Pills Badge--primary Tab-pills"
-                      data-test="DesignSystem-Tabs--Pills"
+                      class="Tab--regular Tab--overflow"
+                      data-test="DesignSystem-Tabs--TextWrapper"
+                      style="max-width: var(--spacing-9);"
                     >
-                      32
+                      <span
+                        class="Pills Badge--primary Tab-pills"
+                        data-test="DesignSystem-Tabs--Pills"
+                      >
+                        32
+                      </span>
+                      <span
+                        class="Text Text--link Text--regular ellipsis--noWrap Tab-selected"
+                        data-test="DesignSystem-Tabs--Text"
+                      >
+                        New
+                      </span>
                     </span>
-                    <span
-                      class="Text Text--link Text--regular ellipsis--noWrap Tab-selected"
-                      data-test="DesignSystem-Tabs--Text"
-                    >
-                      New
-                    </span>
-                  </span>
-                </div>
-                <div
-                  class="Tab align-items-center"
-                  data-test="DesignSystem-Tabs--Tab"
-                  tabindex="0"
-                >
-                  <span
-                    class="Tab--regular Tab--overflow"
-                    data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                  </div>
+                  <div
+                    class="Tab align-items-center"
+                    data-test="DesignSystem-Tabs--Tab"
+                    tabindex="0"
                   >
                     <span
-                      class="Pills Badge--secondary Tab-pills"
-                      data-test="DesignSystem-Tabs--Pills"
+                      class="Tab--regular Tab--overflow"
+                      data-test="DesignSystem-Tabs--TextWrapper"
+                      style="max-width: var(--spacing-9);"
                     >
-                      4
+                      <span
+                        class="Pills Badge--secondary Tab-pills"
+                        data-test="DesignSystem-Tabs--Pills"
+                      >
+                        4
+                      </span>
+                      <span
+                        class="Text Text--subtle Text--regular ellipsis--noWrap"
+                        data-test="DesignSystem-Tabs--Text"
+                      >
+                        Invalid
+                      </span>
                     </span>
-                    <span
-                      class="Text Text--subtle Text--regular ellipsis--noWrap"
-                      data-test="DesignSystem-Tabs--Text"
-                    >
-                      Invalid
-                    </span>
-                  </span>
-                </div>
-                <div
-                  class="Tab align-items-center"
-                  data-test="DesignSystem-Tabs--Tab"
-                  tabindex="0"
-                >
-                  <span
-                    class="Tab--regular Tab--overflow"
-                    data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                  </div>
+                  <div
+                    class="Tab align-items-center"
+                    data-test="DesignSystem-Tabs--Tab"
+                    tabindex="0"
                   >
                     <span
-                      class="Pills Badge--secondary Tab-pills"
-                      data-test="DesignSystem-Tabs--Pills"
+                      class="Tab--regular Tab--overflow"
+                      data-test="DesignSystem-Tabs--TextWrapper"
+                      style="max-width: var(--spacing-9);"
                     >
-                      2
+                      <span
+                        class="Pills Badge--secondary Tab-pills"
+                        data-test="DesignSystem-Tabs--Pills"
+                      >
+                        2
+                      </span>
+                      <span
+                        class="Text Text--subtle Text--regular ellipsis--noWrap"
+                        data-test="DesignSystem-Tabs--Text"
+                      >
+                        Duplicate
+                      </span>
                     </span>
-                    <span
-                      class="Text Text--subtle Text--regular ellipsis--noWrap"
-                      data-test="DesignSystem-Tabs--Text"
-                    >
-                      Duplicate
-                    </span>
-                  </span>
+                  </div>
                 </div>
               </div>
             </div>

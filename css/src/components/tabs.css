@@ -9,7 +9,6 @@
 .TabsWrapper-header {
   box-sizing: border-box;
   display: flex;
-  align-items: center;
   flex-direction: row;
 }
 
@@ -25,6 +24,7 @@
   min-width: 40px;
   margin-bottom: calc(-1 * var(--spacing-xs));
   text-align: center;
+  flex-shrink: 0;
 }
 
 .Tab--small {
@@ -166,4 +166,16 @@
 .Tab--overflow {
   display: flex;
   box-sizing: border-box;
+}
+
+.Tabs-Menu-Button--regular {
+  margin-top: var(--spacing-0-75);
+}
+
+.Tabs-Menu-Button--small {
+  margin-top: var(--spacing-s);
+}
+
+.Tabs-Menu-Button--open {
+  background-color: var(--secondary-dark) !important;
 }
