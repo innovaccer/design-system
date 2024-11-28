@@ -258,3 +258,16 @@ describe('MetricInput component with props showActionButton', () => {
     expect(metricInput).toHaveValue(newValue);
   });
 });
+
+describe('MetricInput component', () => {
+  it('has focus state when MetricInputWrapper is clicked', () => {
+    const { getByTestId } = render(<MetricInput />);
+    const metricInputWrapper = getByTestId('DesignSystem-MetricInputWrapper');
+    const metricInput = getByTestId('DesignSystem-MetricInput');
+
+    metricInput.focus = FunctionValue;
+    fireEvent.click(metricInputWrapper);
+
+    expect(metricInput.focus).toHaveBeenCalled();
+  });
+});
