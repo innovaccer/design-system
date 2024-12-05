@@ -189,6 +189,18 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     if (autoFocus) ref.current?.focus({ preventScroll: true });
   }, []);
 
+  React.useEffect(() => {
+    if (ref.current && value !== undefined) {
+      const element = ref.current as HTMLInputElement;
+      try {
+        const cursorPosition = element.value.length;
+        element.setSelectionRange(cursorPosition, cursorPosition);
+      } catch (error) {
+        console.error('Error setting selection range:', error);
+      }
+    }
+  }, [type]);
+
   const baseProps = extractBaseProps(props);
 
   const classes = classNames(
