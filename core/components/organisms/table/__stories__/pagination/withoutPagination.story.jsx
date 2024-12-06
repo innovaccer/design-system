@@ -1,21 +1,25 @@
 import * as React from 'react';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
 import data from '@/components/organisms/grid/__stories__/_common_/data';
-import editableSchema from '@/components/organisms/grid/__stories__/_common_/editableSchema';
+import schema from '@/components/organisms/grid/__stories__/_common_/schema';
 import { Card, Table } from '@/index';
 import { AsyncTable, SyncTable } from '../_common_/types';
 import { action } from '@/utils/action';
 
-export const withEditableCell = () => {
+export const withoutPagination = () => {
   return (
     <div className="vh-75">
       <Card className="h-100 overflow-hidden">
         <Table
           loaderSchema={loaderSchema}
-          data={data}
-          schema={editableSchema}
+          data={[...Array(100)].map((_, index) => {
+            return data[index % 10];
+          })}
+          schema={schema}
           withHeader={true}
           withCheckbox={true}
+          withPagination={false}
+          uniqueColumnName="email"
           onSelect={(rowIndex, selected, selectedList, selectAll) =>
             action(
               `on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(
@@ -25,6 +29,7 @@ export const withEditableCell = () => {
           }
           headerOptions={{
             withSearch: true,
+            allowSelectAll: true,
           }}
           onSearch={(currData, searchTerm) => {
             return currData.filter(
@@ -33,8 +38,6 @@ export const withEditableCell = () => {
                 d.lastName.toLowerCase().match(searchTerm.toLowerCase())
             );
           }}
-          withPagination={true}
-          pageSize={5}
           onPageChange={(newPage) => action(`on-page-change:- ${newPage}`)()}
         />
       </Card>
@@ -42,9 +45,14 @@ export const withEditableCell = () => {
   );
 };
 
-const customCode = `
-() => {
-  const data = ${JSON.stringify(data.slice(0, 10), null, 4)};
+const customCode = `() => {
+  const data = ${JSON.stringify(
+    [...Array(100)].map((_, index) => {
+      return data[index % 10];
+    }),
+    null,
+    4
+  )};
 
   const schema = [
     {
@@ -129,49 +137,44 @@ const customCode = `
       displayName: 'Custom Cell',
       width: 200,
       resizable: true,
-      separator: true,
+      cellType: 'WITH_META_LIST',
       sorting: false,
-      cellRenderer: (props) => {
-        const { loading } = props;
-
-        if (loading) return (
-          <PlaceholderParagraph length="medium" />
-        );
-
-        const [weight, setWeight] = React.useState('');
-
-        const onChangeWeight = (value) => {
-          setWeight(value);
-        };
-
+      cellRenderer: props => {
         return (
-          <EditableInput
-            placeholder="Add Weight"
-            value={weight}
-            onChange={onChangeWeight}
-            size="tiny"
-          />
+          <>
+            <Icon className="mr-5" name="events" />
+            <GridCell
+              {...props}
+              schema={{
+                ...props.schema,
+                name: 'email'
+              }}
+            />
+          </>
         );
       }
     },
   ];
 
-  const loaderSchema = ${JSON.stringify(loaderSchema, null, 4)};
+  const [error, setError] = React.useState(false);
 
   return (
-    <div
-      className="vh-75"
-    >
+    <div className="vh-75">
       <Card className="h-100 overflow-hidden">
         <Table
-          loaderSchema={loaderSchema}
+          error={error}
           data={data}
           schema={schema}
           withHeader={true}
+          uniqueColumnName="email"
+          withPagination={false}
           headerOptions={{
-            withSearch: true
+            withSearch: true,
+            allowSelectAll: true,
           }}
           onSearch={(currData, searchTerm) => {
+            console.log('onsearch called', searchTerm);
+            setError(!error);
             return currData.filter(d =>
               d.firstName.toLowerCase().match(searchTerm.toLowerCase())
               || d.lastName.toLowerCase().match(searchTerm.toLowerCase())
@@ -179,8 +182,6 @@ const customCode = `
           }}
           withCheckbox={true}
           onSelect={(rowIndex, selected, selectedList, selectAll) => console.log(\`on-select:- rowIndex: \${rowIndex} selected: \${selected} selectedList: \${JSON.stringify(selectedList)} selectAll: \${selectAll}\`)}
-          withPagination={true}
-          pageSize={5}
           onPageChange={newPage => console.log(\`on-page-change:- \${newPage}\`)}
         />
       </Card>
@@ -190,12 +191,13 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/Table/Variants/With Editable Cell',
+  title: 'Components/Table/Pagination/Without Pagination',
   component: Table,
   parameters: {
     docs: {
       docPage: {
         customCode,
+        title: 'Table without Pagination',
         props: {
           components: { AsyncTable, SyncTable },
           exclude: ['showHead'],

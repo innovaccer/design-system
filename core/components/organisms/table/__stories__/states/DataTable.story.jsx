@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { Card, Table, Badge, Icon } from '@/index';
+import { Card, Table } from '@/index';
+import { AsyncTable, SyncTable } from '../_common_/types';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
-import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/_common_/types';
 
-export const customHeaderCellRenderer = () => {
+export const dataTable = () => {
   const data = [
     {
       claim_id: 'Q10000101',
@@ -14,6 +14,7 @@ export const customHeaderCellRenderer = () => {
       last_dos: '03/30/2020',
       firstName: 'Brooke',
       lastName: 'Heeran',
+      disabled: true,
     },
     {
       claim_id: 'Q10000102',
@@ -34,6 +35,7 @@ export const customHeaderCellRenderer = () => {
       last_dos: '05/30/2020',
       firstName: 'Lemmie',
       lastName: 'Ciric',
+      disabled: true,
     },
     {
       claim_id: 'Q10000104',
@@ -120,14 +122,6 @@ export const customHeaderCellRenderer = () => {
       width: '15%',
       separator: true,
       cellType: 'DEFAULT',
-      headerCellRenderer: () => {
-        return (
-          <>
-            <Icon name="info" />
-            <Badge>Custom Header</Badge>
-          </>
-        );
-      },
     },
     {
       name: 'insurance_name',
@@ -195,6 +189,17 @@ export const customHeaderCellRenderer = () => {
         data={data}
         schema={schema}
         withHeader={true}
+        headerOptions={{
+          withSearch: true,
+        }}
+        onSearch={(currData, searchTerm) => {
+          return currData.filter(
+            (d) =>
+              d.firstName.toLowerCase().match(searchTerm.toLowerCase()) ||
+              d.lastName.toLowerCase().match(searchTerm.toLowerCase()) ||
+              d.claim_id.toLowerCase().match(searchTerm.toLowerCase())
+          );
+        }}
         withPagination={true}
         pageSize={5}
       />
@@ -213,6 +218,7 @@ const customCode = `() => {
       last_dos: "03/30/2020",
       firstName: 'Brooke',
       lastName: 'Heeran',
+      disabled: true,
     },
     {
       claim_id: 'Q10000102',
@@ -233,6 +239,7 @@ const customCode = `() => {
       last_dos: "05/30/2020",
       firstName: 'Lemmie',
       lastName: 'Ciric',
+      disabled: true,
     },
     {
       claim_id: 'Q10000104',
@@ -318,15 +325,7 @@ const customCode = `() => {
       displayName: 'Claim Type',
       width: '15%',
       separator: true,
-      cellType: "DEFAULT",
-      headerCellRenderer: () => {
-        return (
-          <>
-            <Icon name="info" />
-            <Badge>Custom Header</Badge>
-          </>
-        )
-      },
+      cellType: "DEFAULT"
     },
     {
       name: 'insurance_name',
@@ -396,6 +395,17 @@ const customCode = `() => {
           data={data}
           schema={schema}
           withHeader={true}
+          headerOptions={{
+            withSearch: true
+          }}
+          onSearch={(currData, searchTerm) => {
+            return currData.filter(d =>
+              d.firstName.toLowerCase().match(searchTerm.toLowerCase())
+              || d.lastName.toLowerCase().match(searchTerm.toLowerCase())
+              || d.claim_id.toLowerCase().match(searchTerm.toLowerCase())
+            );
+          }}
+          withPagination={true}
           pageSize={5}
           onPageChange={newPage => console.log(\`on-page-change:- \${newPage}\`)}
         />
@@ -404,12 +414,13 @@ const customCode = `() => {
 }`;
 
 export default {
+  title: 'Components/Table/States/Data Table',
   component: Table,
-  title: 'Components/Table/Variants/Custom Header Cell Renderer',
   parameters: {
     docs: {
       docPage: {
         customCode,
+        title: 'States in Data table',
         props: {
           components: { AsyncTable, SyncTable },
           exclude: ['showHead'],

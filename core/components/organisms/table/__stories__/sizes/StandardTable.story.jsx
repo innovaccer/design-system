@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Card, Table } from '@/index';
-import { AsyncTable, SyncTable } from './_common_/types';
+import { AsyncTable, SyncTable } from '../_common_/types';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
 
-export const tightTable = () => {
+export const standardTable = () => {
   const data = [
     {
       name: 'MSSP Track 1 Urban',
@@ -16,28 +16,28 @@ export const tightTable = () => {
       name: 'MSSP Track 1 Rural',
       status: 'Active',
       measures: '9',
-      current_period: 'March 2017 - Feb 2019',
+      current_period: 'March 2017 - Feb 201',
       added_in: 'March 2015',
     },
     {
       name: 'MSSP Track 2',
       status: 'Inactive',
       measures: '14',
-      current_period: 'March 2017 - Feb 2018',
+      current_period: 'March 2017 - Feb 201',
       added_in: 'March 2016',
     },
     {
       name: 'Aetna',
       status: 'Active',
       measures: '20',
-      current_period: 'March 2017 - Feb 2019',
+      current_period: 'March 2017 - Feb 201',
       added_in: 'March 2019',
     },
     {
       name: 'BCBS',
       status: 'Active',
       measures: '16',
-      current_period: 'March 2017 - Feb 2018',
+      current_period: 'March 2017 - Feb 201',
       added_in: 'March 2017',
     },
   ];
@@ -84,7 +84,6 @@ export const tightTable = () => {
     <Card className="overflow-hidden">
       <Table
         loaderSchema={loaderSchema}
-        size="tight"
         showMenu={false}
         separator={false}
         data={data}
@@ -183,7 +182,6 @@ const customCode = `() => {
       <Card className="overflow-hidden">
         <Table
           showMenu={false}
-          size="tight"
           separator={false}
           data={data}
           schema={schema}
@@ -203,13 +201,13 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Table/Tight Table',
+  title: 'Components/Table/Sizes/Standard Table',
   component: Table,
   parameters: {
     docs: {
       docPage: {
         customCode,
-        title: 'Tight Table',
+        title: 'Standard Table',
         props: {
           components: { AsyncTable, SyncTable },
           exclude: ['showHead'],
