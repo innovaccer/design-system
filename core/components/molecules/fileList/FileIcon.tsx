@@ -3,6 +3,7 @@ import { ProgressRing, Icon } from '@/index';
 import { FileListItemProps } from './FileListItem';
 import classNames from 'classnames';
 const { useEffect, useState } = React;
+import styles from '@css/components/fileList.module.css';
 
 const IconMapping: { [key: string]: string } = {
   audio: 'audiotrack',
@@ -26,14 +27,14 @@ export const FileIcon = (props: FileIconProps) => {
   const fileType = IconMapping[type] ? type : 'others';
 
   const iconClass = classNames({
-    ['FileIcon']: true,
-    ['FileIcon--animate']: animate,
-    [`FileIcon--${fileType}`]: true,
+    [styles['FileIcon']]: true,
+    [styles['FileIcon--animate']]: animate,
+    [styles[`FileIcon--${fileType}`]]: true,
   });
 
   const uploadingIconClass = classNames({
-    ['FileIcon']: true,
-    ['FileIcon--uploading']: true,
+    [styles['FileIcon']]: true,
+    [styles['FileIcon--uploading']]: true,
   });
 
   useEffect(() => {

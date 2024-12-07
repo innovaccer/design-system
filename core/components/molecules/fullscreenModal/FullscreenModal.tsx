@@ -10,6 +10,7 @@ import { ColumnProps } from '@/index.type';
 import { getWrapperElement, getUpdatedZIndex, closeOnEscapeKeypress } from '@/utils/overlayHelper';
 import OverlayManager from '@/utils/OverlayManager';
 import { FooterOptions } from '@/common.type';
+import styles from '@css/components/fullscreenModal.module.css';
 
 export type FullScreenDimension = 'medium' | 'large';
 
@@ -199,9 +200,9 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
 
     const classes = classNames(
       {
-        FullscreenModal: true,
-        'FullscreenModal-animation--open': animate,
-        'FullscreenModal-animation--close': !animate,
+        [styles.FullscreenModal]: true,
+        [styles['FullscreenModal-animation--open']]: animate,
+        [styles['FullscreenModal-animation--close']]: !animate,
       },
       className
     );
@@ -237,7 +238,7 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
         <div data-test="DesignSystem-FullscreenModal" {...baseProps} className={classes} ref={this.modalRef}>
           <Row className="justify-content-center">
             <Column {...sizeMap[dimension]}>
-              <Row className="FullscreenModal-header">
+              <Row className={styles["FullscreenModal-header"]}>
                 <Column>
                   {!header && <OverlayHeader data-test="DesignSystem-FullscreenModal--header" {...headerOptions} />}
 
@@ -256,7 +257,7 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
                   </Tooltip>
                 </Column>
               </Row>
-              <OverlayBody data-test="DesignSystem-FullscreenModal--Body" className="FullscreenModal-body">
+              <OverlayBody data-test="DesignSystem-FullscreenModal--Body" className={styles["FullscreenModal-body"]}>
                 {children}
               </OverlayBody>
               {(!!footer || !!footerOptions) && (
@@ -264,7 +265,7 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
                   data-test="DesignSystem-FullscreenModal--footer"
                   {...footerOptions}
                   open={open}
-                  className="FullscreenModal-footer"
+                  className={styles["FullscreenModal-footer"]}
                 >
                   {footer}
                 </OverlayFooter>
