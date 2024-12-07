@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { OverlayFooter } from '@/components/molecules/overlayFooter';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import styles from '@css/components/modal.module.css';
 
 export interface ModalFooterProps extends BaseProps {
   open?: boolean;
@@ -17,8 +18,8 @@ export const ModalFooter = (props: ModalFooterProps) => {
 
   const classes = classNames(
     {
-      ['Modal-footer']: true,
-      ['Modal-footer--withSeperator']: seperator,
+      [styles['Modal-footer']]: true,
+      [styles['Modal-footer--withSeperator']]: seperator,
     },
     className
   );
