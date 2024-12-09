@@ -8,7 +8,8 @@ exports[`MetricInput component
     <div
       class="MetricInput MetricInput--regular"
       data-test="DesignSystem-MetricInputWrapper"
-      role="presentation"
+      role="textbox"
+      tabindex="0"
     >
       <i
         class="material-symbols material-symbols-rounded Icon Icon--subtle MetricInput-icon MetricInput-icon--regular"
@@ -81,7 +82,8 @@ exports[`MetricInput component
     <div
       class="MetricInput MetricInput--regular MetricInput--error"
       data-test="DesignSystem-MetricInputWrapper"
-      role="presentation"
+      role="textbox"
+      tabindex="0"
     >
       <i
         class="material-symbols material-symbols-rounded Icon Icon--subtle MetricInput-icon MetricInput-icon--regular"
@@ -154,7 +156,8 @@ exports[`MetricInput component
     <div
       class="MetricInput MetricInput--large"
       data-test="DesignSystem-MetricInputWrapper"
-      role="presentation"
+      role="textbox"
+      tabindex="0"
     >
       <span
         class="Text Text--subtle Text--large mr-5"
@@ -232,7 +235,8 @@ exports[`MetricInput component
     <div
       class="MetricInput MetricInput--regular"
       data-test="DesignSystem-MetricInputWrapper"
-      role="presentation"
+      role="textbox"
+      tabindex="0"
     >
       <span
         class="Text Text--subtle Text--regular mr-4"

@@ -886,8 +886,9 @@ exports[`TS renders children 1`] = `
   <div
     class="Input Input--regular"
     data-test="DesignSystem-InputWrapper"
-    role="presentation"
+    role="textbox"
     style="min-width: 256px;"
+    tabindex="0"
   >
     <input
       class="Input-input Input-input--regular"
@@ -903,8 +904,9 @@ exports[`TS renders children 1`] = `
     <div
       class="Input Input--regular"
       data-test="DesignSystem-InputWrapper"
-      role="presentation"
+      role="textbox"
       style="min-width: 256px;"
+      tabindex="0"
     >
       <input
         autocomplete="off"
