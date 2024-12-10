@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import FileUploaderItem, { FileItem } from './FileUploaderItem';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import styles from '@css/components/fileUploader.module.css';
 
 export interface FileUploaderListProps extends BaseProps {
   /**
@@ -47,7 +48,7 @@ export const FileUploaderList = (props: FileUploaderListProps) => {
 
   const FileListClass = classNames(
     {
-      ['FileUploaderList']: true,
+      [styles['FileUploaderList']]: true,
     },
     className
   );

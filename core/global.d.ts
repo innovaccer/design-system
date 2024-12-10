@@ -8,3 +8,5 @@ declare module 'react-dynamic-virtual-scroll';
 declare module '*svg';
 
 declare const __STORYBOOK_STORY_STORE__: any;
+
+declare module '*.module.css';

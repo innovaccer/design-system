@@ -3,6 +3,7 @@ import { Text, Icon } from '@/index';
 import classNames from 'classnames';
 import { AvatarContext } from '../AvatarProvider';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import styles from '@css/components/avatar.module.css';
 
 export interface AvatarImageProps extends BaseProps {
   /**
@@ -32,12 +33,12 @@ export const AvatarImage = (props: AvatarImageProps) => {
   const imgSize = size && sizeMapper[size];
 
   const TextClassNames = classNames({
-    [`Avatar-content--${size}`]: size,
-    ['Avatar-content']: appearance && darkAppearance.includes(appearance),
+    [styles[`Avatar-content--${size}`]]: size,
+    [styles['Avatar-content']]: appearance && darkAppearance.includes(appearance),
   });
 
   const IconClassNames = classNames({
-    ['Avatar-content']: appearance && darkAppearance.includes(appearance),
+    [styles['Avatar-content']]: appearance && darkAppearance.includes(appearance),
   });
 
   const onError = () => {

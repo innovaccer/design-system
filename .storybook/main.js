@@ -16,6 +16,17 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-a11y',
     '@storybook/addon-knobs',
+    {
+      name: 'storybook-css-modules',
+      options: {
+        cssModulesLoaderOptions: {
+          importLoaders: 1,
+          modules: {
+            localIdentName: '[local]', // Use local class names directly
+          },
+        },
+      },
+    },
   ],
   typescript: {
     check: false,
@@ -33,6 +44,7 @@ module.exports = {
   },
   webpackFinal: async (config, { configType }) => {
     config.resolve.alias['@'] = path.resolve(__dirname, '../core');
+    config.resolve.alias['@css'] = path.resolve(__dirname, '../css/src');
     config.resolve.alias['@innovaccer/mds-images/ui-states'] = path.resolve(__dirname, '../mds-images/ui-states');
     // Return the altered config
     return config;

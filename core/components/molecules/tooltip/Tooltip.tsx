@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Popover, Text } from '@/index';
 import { PopoverProps } from '@/index.type';
 import { BaseProps, filterProps } from '@/utils/types';
+import styles from '@css/components/tooltip.module.css';
 
 type Position = 'top-start' | 'top' | 'top-end' | 'right' | 'bottom-end' | 'bottom' | 'bottom-start' | 'left';
 
@@ -104,8 +105,8 @@ export const Tooltip = (props: TooltipProps) => {
   }
 
   const tooltipWrapper = (
-    <div className="Tooltip">
-      <Text className="Tooltip-text" appearance="white">
+    <div className={styles["Tooltip"]}>
+      <Text className={styles["Tooltip-text"]} appearance="white">
         {tooltip}
       </Text>
     </div>
@@ -119,10 +120,10 @@ export const Tooltip = (props: TooltipProps) => {
         offset={'medium'}
         {...rest}
         animationClass={{
-          open: `Tooltip-animation-open-${positionValue[props.position]}`,
-          close: `Tooltip-animation-close-${positionValue[props.position]}`,
+          open: styles[`Tooltip-animation-open-${positionValue[props.position]}`],
+          close: styles[`Tooltip-animation-close-${positionValue[props.position]}`],
         }}
-        className="Tooltip-container"
+        className={styles['Tooltip-container']}
       >
         {tooltipWrapper}
       </Popover>
@@ -138,10 +139,10 @@ export const Tooltip = (props: TooltipProps) => {
       offset={'medium'}
       {...rest}
       animationClass={{
-        open: `Tooltip-animation-open-${positionValue[props.position]}`,
-        close: `Tooltip-animation-close-${positionValue[props.position]}`,
+        open: styles[`Tooltip-animation-open-${positionValue[props.position]}`],
+        close: styles[`Tooltip-animation-close-${positionValue[props.position]}`],
       }}
-      className="Tooltip-container"
+      className={styles['Tooltip-container']}
     >
       {tooltipWrapper}
     </Popover>

@@ -4,6 +4,7 @@ import Editable from '@/components/atoms/editable';
 import { Input, Button, Popover, InlineMessage } from '@/index';
 import { InputProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import styles from '@css/components/editableInput.module.css';
 
 export interface EditableInputProps extends BaseProps {
   /**
@@ -60,23 +61,23 @@ export const EditableInput = (props: EditableInputProps) => {
 
   const EditableInputClass = classNames(
     {
-      ['EditableInput']: true,
+      [styles['EditableInput']]: true,
     },
     className
   );
 
   const EditableDefaultClass = classNames({
-    ['EditableInput-default']: true,
-    [`EditableInput-default--${size}`]: size,
+    [styles['EditableInput-default']]: true,
+    [styles[`EditableInput-default--${size}`]]: size,
   });
 
   const InputClass = classNames({
-    ['EditableInput-Input--tiny']: size === 'tiny',
+    [styles['EditableInput-Input--tiny']]: size === 'tiny',
   });
 
   const ActionClass = classNames({
-    ['EditableInput-actions']: true,
-    [`EditableInput-actions--${size}`]: size,
+    [styles['EditableInput-actions']]: true,
+    [styles[`EditableInput-actions--${size}`]]: size,
   });
 
   const setDefaultComponent = (updatedValue?: string) => {

@@ -2,6 +2,9 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Icon, Text } from '@/index';
 import { IconType } from '@/common.type';
+import dropdownButtonStyles from '@css/components/dropdownButton.module.css';
+import buttonStyles from '@css/components/button.module.css';
+import textStyles from '@css/components/text.module.css';
 
 export type DropDownButtonSize = 'tiny' | 'regular';
 
@@ -69,20 +72,20 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
   const iconName = !menu ? 'keyboard_arrow_down' : icon ? icon : 'more_horiz';
 
   const buttonClass = classNames({
-    ['Button']: true,
-    ['DropdownButton']: true,
-    [`DropdownButton--${triggerSize}`]: triggerSize,
-    [`DropdownButton--${triggerSize}Square`]: menu,
-    ['DropdownButton--placeholder']: !children && !menu,
-    ['DropdownButton--icon']: icon,
-    ['DropdownButton--open']: open,
-    ['DropdownButton--error']: error,
+    [buttonStyles['Button']]: true,
+    [dropdownButtonStyles.DropdownButton]: true,
+    [dropdownButtonStyles[`DropdownButton--${triggerSize}`]]: triggerSize,
+    [dropdownButtonStyles[`DropdownButton--${triggerSize}Square`]]: menu,
+    [dropdownButtonStyles['DropdownButton--placeholder']]: !children && !menu,
+    [dropdownButtonStyles['DropdownButton--icon']]: icon,
+    [dropdownButtonStyles['DropdownButton--open']]: open,
+    [dropdownButtonStyles['DropdownButton--error']]: error,
   });
 
   const textClass = classNames({
-    ['Text']: true,
-    ['Text--regular']: true,
-    ['DropdownButton-text']: true,
+    [textStyles['Text']]: true,
+    [textStyles['Text--regular']]: true,
+    [dropdownButtonStyles['DropdownButton-text']]: true,
   });
 
   return (
@@ -97,7 +100,7 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
       {...rest}
     >
       {!menu && (
-        <div className="DropdownButton-wrapper">
+        <div className={dropdownButtonStyles['DropdownButton-wrapper']}>
           {inlineLabel && (
             <Text appearance="subtle" className="mr-4 white-space-nowrap">
               {`${inlineLabel.trim().charAt(0).toUpperCase()}${inlineLabel.trim().slice(1)}`}

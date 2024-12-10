@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { useAccessibilityProps } from '@/accessibility/utils';
+import iconStyles from '@css/components/icon.module.css';
 
 export type IconAppearance =
   | 'default'
@@ -153,8 +154,8 @@ export const Icon = (props: IconProps) => {
     ['material-symbols']: true,
     ['material-symbols-rounded']: type === 'rounded',
     ['material-symbols-outlined']: type === 'outlined',
-    ['Icon']: true,
-    [`Icon--${color}`]: appearance,
+    [iconStyles['Icon']]: true,
+    [iconStyles[`Icon--${color}`]]: appearance,
     [`${className}`]: className,
   });
 

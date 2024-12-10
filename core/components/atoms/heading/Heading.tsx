@@ -3,6 +3,7 @@ import GenericText from '../_text';
 import classNames from 'classnames';
 import { BaseHtmlProps, BaseProps } from '@/utils/types';
 import { HeadingAppearance, TextColor } from '@/common.type';
+import styles from '@css/components/heading.module.css';
 
 export type HeadingSize = 's' | 'm' | 'l' | 'xl' | 'xxl';
 
@@ -38,9 +39,9 @@ export const Heading = (props: HeadingProps) => {
 
   const classes = classNames(
     {
-      Heading: true,
-      [`Heading--${size}`]: size,
-      [`Heading--${appearance}`]: !color && appearance,
+      [styles.Heading]: true,
+      [styles[`Heading--${size}`]]: size,
+      [styles[`Heading--${appearance}`]]: !color && appearance,
       [`color-${color}`]: color,
     },
     className

@@ -279,28 +279,28 @@ const AvatarAppearance =
   appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] || DefaultAppearance;
 ```
 
-- [ClassNames](https://www.npmjs.com/package/classnames) is a utility for conditionally joining CSS classNames together.
-- CSS is added according to [BEM Convention](http://getbem.com/naming/).
+- CSS Module has been used to define the class names.
+
+1. Create a CSS file inside `css` directory with the file extension `module.css` (e.g `avatar.module.css`)
+2. Import the CSS file inside your component's `.tsx` file using: 
+
+```jsx
+import styles from './avatar.module.css';
+```
+
+3. Use [ClassNames](https://www.npmjs.com/package/classnames), a utility for conditionally joining CSS classNames together.
+4. Follow the [BEM Convention](http://getbem.com/naming/) and use CSS Modules for naming CSS classes.
 
 ```jsx
 const classes = classNames(
   {
-    Avatar: true,
-    [`Avatar--${size}`]: size,
-    [`Avatar--${AvatarAppearance}`]: AvatarAppearance,
-    ['Avatar--disabled']: !initials || !withTooltip,
+    [styles.Avatar]: true,
+    [styles[`Avatar--${size}`]]: size,
+    [styles[`Avatar--${AvatarAppearance}`]]: AvatarAppearance,
+    [styles['Avatar--disabled']]: !initials || !withTooltip,
   },
   className
 );
-
-const ContentClass = classNames({
-  [`Avatar-content--${size}`]: size,
-  [`Avatar-content--${AvatarAppearance}`]: AvatarAppearance,
-});
-
-const IconClass = classNames({
-  [`Avatar-content--${AvatarAppearance}`]: AvatarAppearance,
-});
 ```
 
 - Add rendering logic and `data-test` attribute.

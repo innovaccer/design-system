@@ -9,7 +9,7 @@ Object {
     <div>
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
       >
         <span
           class=""
@@ -35,7 +35,7 @@ Object {
   "container": <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
     >
       <span
         class=""
@@ -120,7 +120,7 @@ Object {
     <div>
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
       >
         <span
           class=""
@@ -146,7 +146,7 @@ Object {
   "container": <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
     >
       <span
         class=""
@@ -231,7 +231,7 @@ Object {
     <div>
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
       >
         <span
           class=""
@@ -257,7 +257,7 @@ Object {
   "container": <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
     >
       <span
         class=""
@@ -342,7 +342,7 @@ Object {
     <div>
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
       >
         <span
           class=""
@@ -368,7 +368,7 @@ Object {
   "container": <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
     >
       <span
         class=""
@@ -453,7 +453,7 @@ Object {
     <div>
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
       >
         <span
           class=""
@@ -479,7 +479,7 @@ Object {
   "container": <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
     >
       <span
         class=""
@@ -564,7 +564,7 @@ Object {
     <div>
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
       >
         <span
           class=""
@@ -590,7 +590,7 @@ Object {
   "container": <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
     >
       <span
         class=""
@@ -675,7 +675,7 @@ Object {
     <div>
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
       >
         <span
           class=""
@@ -701,7 +701,7 @@ Object {
   "container": <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
     >
       <span
         class=""
@@ -786,7 +786,7 @@ Object {
     <div>
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
       >
         <span
           class=""
@@ -812,7 +812,7 @@ Object {
   "container": <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
     >
       <span
         class=""
@@ -897,7 +897,7 @@ Object {
     <div>
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
       >
         <span
           class=""
@@ -923,7 +923,7 @@ Object {
   "container": <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
     >
       <span
         class=""
@@ -1008,7 +1008,7 @@ Object {
     <div>
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
       >
         <span
           class=""
@@ -1034,7 +1034,7 @@ Object {
   "container": <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
     >
       <span
         class=""
@@ -1119,7 +1119,7 @@ Object {
     <div>
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
       >
         <span
           class=""
@@ -1145,7 +1145,7 @@ Object {
   "container": <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
     >
       <span
         class=""
@@ -1230,7 +1230,7 @@ Object {
     <div>
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
       >
         <span
           class=""
@@ -1256,7 +1256,7 @@ Object {
   "container": <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
     >
       <span
         class=""
@@ -1341,7 +1341,7 @@ Object {
     <div>
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
       >
         <span
           class=""
@@ -1367,7 +1367,7 @@ Object {
   "container": <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
     >
       <span
         class=""
@@ -1452,7 +1452,7 @@ Object {
     <div>
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
       >
         <span
           class=""
@@ -1478,7 +1478,7 @@ Object {
   "container": <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
     >
       <span
         class=""
@@ -1563,7 +1563,7 @@ Object {
     <div>
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
       >
         <span
           class=""
@@ -1589,7 +1589,7 @@ Object {
   "container": <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
     >
       <span
         class=""
@@ -1674,7 +1674,7 @@ Object {
     <div>
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
       >
         <span
           class=""
@@ -1700,7 +1700,7 @@ Object {
   "container": <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
     >
       <span
         class=""
@@ -1785,7 +1785,7 @@ Object {
     <div>
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
       >
         <span
           class=""
@@ -1811,7 +1811,7 @@ Object {
   "container": <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
     >
       <span
         class=""
@@ -1896,7 +1896,7 @@ Object {
     <div>
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
       >
         <span
           class="Avatar-wrapper--square Avatar--regular"
@@ -1922,7 +1922,7 @@ Object {
   "container": <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
     >
       <span
         class="Avatar-wrapper--square Avatar--regular"
@@ -2007,7 +2007,7 @@ Object {
     <div>
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
       >
         <span
           class=""
@@ -2033,7 +2033,7 @@ Object {
   "container": <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
     >
       <span
         class=""
@@ -2118,7 +2118,7 @@ Object {
     <div>
       <style />
       <div
-        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
       >
         <span
           class=""
@@ -2144,7 +2144,7 @@ Object {
   "container": <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
     >
       <span
         class=""

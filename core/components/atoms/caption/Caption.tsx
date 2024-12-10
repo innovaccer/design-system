@@ -3,6 +3,7 @@ import Text from '@/components/atoms/text';
 import Icon from '@/components/atoms/icon';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import styles from '@css/components/caption.module.css';
 
 export interface CaptionProps extends BaseProps {
   /**
@@ -30,15 +31,15 @@ export const Caption = (props: CaptionProps) => {
 
   const classes = classNames(
     {
-      Caption: true,
-      ['Caption--hidden']: hide,
-      ['Caption--withInput']: withInput,
+      [styles.Caption]: true,
+      [styles['Caption--hidden']]: hide,
+      [styles['Caption--withInput']]: withInput,
     },
     className
   );
 
   const errorIconClass = classNames({
-    ['Caption-icon']: true,
+    [styles['Caption-icon']]: true,
   });
 
   return (

@@ -4,6 +4,7 @@ import Editable from '@/components/atoms/editable';
 import { Dropdown } from '@/index';
 import { DropdownProps } from '@/index.type';
 import { BaseProps, extractBaseProps, MakeOptional } from '@/utils/types';
+import styles from '@css/components/editableDropdown.module.css';
 
 type DropdownOptions = MakeOptional<DropdownProps, keyof typeof Dropdown['defaultProps']>;
 
@@ -33,13 +34,13 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
 
   const CompClass = classNames(
     {
-      ['EditableDropdown']: true,
+      [styles['EditableDropdown']]: true,
     },
     className
   );
 
   const DefaultCompClass = classNames({
-    ['EditableDropdown-default']: true,
+    [styles['EditableDropdown-default']]: true,
     ['d-none']: showComponent,
   });
 

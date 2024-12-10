@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { PopperWrapper, PopperWrapperProps } from '@/components/atoms/popperWrapper';
 import { BaseProps, filterProps } from '@/utils/types';
 import { PositionType as Position } from '@/common.type';
+import styles from '@css/components/popover.module.css';
 
 export interface CustomStyle {
   height?: number | string;
@@ -145,8 +146,8 @@ export const Popover = (props: PopoverProps) => {
 
   const classes = classNames(
     {
-      Popover: true,
-      ['Popover--dark']: dark,
+      [styles.Popover]: true,
+      [styles['Popover--dark']]: dark,
     },
     className
   );

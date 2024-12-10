@@ -3,6 +3,7 @@ import GenericText from '../_text';
 import classNames from 'classnames';
 import { BaseHtmlProps, BaseProps } from '@/utils/types';
 import { TextColor } from '@/common.type';
+import styles from '@css/components/text.module.css';
 
 export type ParagraphAppearance = 'default' | 'white' | 'destructive' | 'subtle' | 'disabled';
 
@@ -27,8 +28,8 @@ export const Paragraph = (props: ParagraphProps) => {
 
   const classes = classNames(
     {
-      Text: true,
-      [`Text--${appearance}`]: !color && appearance,
+      [styles.Text]: true,
+      [styles[`Text--${appearance}`]]: !color && appearance,
       [`color-${color}`]: color,
     },
     className

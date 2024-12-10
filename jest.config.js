@@ -10,7 +10,6 @@ const config = {
   setupFilesAfterEnv: ['./scripts/setupTest.ts', 'jest-canvas-mock'],
   globalSetup: './scripts/setupGlobalJest.ts',
   transformIgnorePatterns: [`/node_modules/(?!${esModules})`],
-  // snapshotSerializers: ['enzyme-to-json/serializer'],
   testEnvironment: 'jest-environment-jsdom-fifteen',
   collectCoverage: true,
   coverageReporters: ['json', 'lcov', 'text', 'text-summary', 'html'],
@@ -24,6 +23,7 @@ const config = {
     '!**/*.story.tsx',
     '!core/*.type.tsx',
     '!core/*.d.ts',
+    '!**/examples/*',
   ],
   globals: {
     window: true,
@@ -35,7 +35,13 @@ const config = {
   moduleNameMapper: {
     '@/(.*)$': '<rootDir>/core/$1',
     '\\.svg$': '<rootDir>/__mocks__/fileMock.js',
+    '\\.module\\.css$': 'identity-obj-proxy',
+    '\\.css$': '<rootDir>/__mocks__/styleMock.js', // Mock global CSS
+    '^@css/(.*)$': '<rootDir>/path/to/css/$1', // Map CSS module paths correctly
   },
+  testPathIgnorePatterns: [
+    '<rootDir>/examples/',
+  ],
 };
 
 module.exports = config;
