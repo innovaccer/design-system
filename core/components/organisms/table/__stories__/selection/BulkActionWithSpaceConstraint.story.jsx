@@ -1,12 +1,30 @@
 import * as React from 'react';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
 import data from '@/components/organisms/grid/__stories__/_common_/data';
-import { Card, Table } from '@/index';
-import { AsyncTable, SyncTable } from './_common_/types';
+import { Card, Table, Button } from '@/index';
+import { AsyncTable, SyncTable } from '../_common_/types';
 import { fetchData } from '@/components/organisms/grid/__stories__/_common_/fetchData';
 import { action } from '@/utils/action';
 
-export const selectAllRows = () => {
+export const withBulkActionsAndSpaceConstraint = () => {
+  const selectionActionRenderer = (selectedData, selectAll) => {
+    action('selectedData', selectedData, 'selectAll', selectAll)();
+    return (
+      <div className="d-flex align-items-center">
+        <Button size="tiny" className="mr-4" icon="delete" tooltip="Delete" />
+        <Button size="tiny" icon="content_paste" tooltip="Export" />
+      </div>
+    );
+  };
+
+  const onDataExport = (data) => {
+    action('Exporting data', data)();
+  };
+
+  const globalActionTrigger = (data) => {
+    return <Button onClick={() => onDataExport(data)}>Export</Button>;
+  };
+
   return (
     <div>
       <Card className="h-100 overflow-hidden">
@@ -15,6 +33,7 @@ export const selectAllRows = () => {
           fetchData={fetchData}
           withHeader={true}
           withCheckbox={true}
+          uniqueColumnName="email"
           onSelect={(rowIndex, selected, selectedList, selectAll) =>
             action(
               `on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(
@@ -25,7 +44,9 @@ export const selectAllRows = () => {
           headerOptions={{
             withSearch: true,
             allowSelectAll: true,
+            selectionActionRenderer,
             customSelectionLabel: 'user',
+            globalActionRenderer: globalActionTrigger,
           }}
           withPagination={true}
           pageSize={5}
@@ -103,6 +124,7 @@ const customCode = `
   };
 
   const data = ${JSON.stringify(data.slice(0, 10), null, 4)};
+  const [formattedData, setFormattedData] = React.useState(data);
 
   const schema = [
     {
@@ -227,6 +249,7 @@ const customCode = `
     const filteredData = filterData(schema, data, filterList);
     const searchedData = filteredData.filter(d => onSearch(d, searchTerm));
     const sortedData = sortData(schema, searchedData, sortingList);
+    setFormattedData(sortedData);
 
     if (page && pageSize) {
       return new Promise(resolve => {
@@ -258,6 +281,24 @@ const customCode = `
 
   const loaderSchema = ${JSON.stringify(loaderSchema, null, 4)};
 
+  const onDataExport = (data) => {
+    console.log("Exporting data", data);
+  }
+
+  const globalActionTrigger = (data) => {
+    return (<Button onClick={() => onDataExport(data)}>Export</Button>);
+  } 
+
+  const selectionActionRenderer = (selectedData, selectAll) => {
+    console.log('selectedData in output', selectedData, 'selectAll', selectAll);
+    return (
+      <div className="d-flex align-items-center">
+        <Button size="tiny" className="mr-4" icon="delete" tooltip='Delete' />
+        <Button size="tiny" icon="content_paste" tooltip='Export' />
+      </div>
+    )
+  }
+
   return (
     <div>
       <Card className="h-100 overflow-hidden">
@@ -265,10 +306,13 @@ const customCode = `
           loaderSchema={loaderSchema}
           fetchData={fetchData}
           withHeader={true}
+          uniqueColumnName="firstName"
           headerOptions={{
+            selectionActionRenderer,
             withSearch: true,
-            allowSelectAll: true,
             customSelectionLabel: 'user',
+            globalActionRenderer : globalActionTrigger,
+            allowSelectAll: true,
           }}
           withCheckbox={true}
           onSelect={(rowIndex, selected, selectedList, selectAll) => console.log(\`on-select: - rowIndex: \${ rowIndex } selected: \${ selected } selectedList: \${ JSON.stringify(selectedList) } selectAll: \${ selectAll } \`)}
@@ -282,31 +326,14 @@ const customCode = `
 };
 `;
 
-const description = `
-  ### Note: 
-  1. Use **allowSelectAll** in headerOptions to select **All** the rows of the table. 
-  <pre class="DocPage-codeBlock mx-6 mb-7 p-5">
-    headerOptions={{
-      allowSelectAll: true,
-    }}
-  </pre>
-  2. Use **customSelectionLabel** in headerOptions to show custom label string in header on row selection.<br/>
-  If no custom label is given then *'item'* is shown by default. *(for e.g: "Selected 5 <b>items</b> on this page")* 
-  <pre class="DocPage-codeBlock mx-6 mb-7 p-5">
-    headerOptions={{
-      customSelectionLabel: 'user',
-    }}
-  </pre>
-`;
-
 export default {
-  title: 'Components/Table/Select All Rows',
+  title: 'Components/Table/Selection/With Bulk Actions And Space Constraint',
   component: Table,
   parameters: {
     docs: {
       docPage: {
         customCode,
-        description,
+        title: 'Table with Bulk Actions and Space Constraint',
         props: {
           components: { AsyncTable, SyncTable },
           exclude: ['showHead'],

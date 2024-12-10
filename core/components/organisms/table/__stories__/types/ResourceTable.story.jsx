@@ -1,7 +1,7 @@
 import * as React from 'react';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
 import { Card, Table, Menu, Avatar, Text } from '@/index';
-import { AsyncTable, SyncTable } from './_common_/types';
+import { AsyncTable, SyncTable } from '../_common_/types';
 import { action } from '@/utils/action';
 
 const data = [
@@ -307,12 +307,13 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/Table/Resource Table',
+  title: 'Components/Table/Types/Resource Table',
   component: Table,
   parameters: {
     docs: {
       docPage: {
         customCode,
+        title: 'Resource Table',
         props: {
           components: { AsyncTable, SyncTable },
           exclude: ['showHead'],

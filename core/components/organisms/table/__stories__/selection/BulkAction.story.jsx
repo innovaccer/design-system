@@ -2,11 +2,11 @@ import * as React from 'react';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
 import data from '@/components/organisms/grid/__stories__/_common_/data';
 import { Card, Table, Button } from '@/index';
-import { AsyncTable, SyncTable } from './_common_/types';
+import { AsyncTable, SyncTable } from '../_common_/types';
 import { fetchData } from '@/components/organisms/grid/__stories__/_common_/fetchData';
 import { action } from '@/utils/action';
 
-export const asyncTable = () => {
+export const withBulkActions = () => {
   const selectionActionRenderer = (selectedData, selectAll) => {
     action('selectedData', selectedData, 'selectAll', selectAll)();
     return (
@@ -19,6 +19,14 @@ export const asyncTable = () => {
     );
   };
 
+  const onDataExport = (data) => {
+    action('Exporting data', data)();
+  };
+
+  const globalActionTrigger = (data) => {
+    return <Button onClick={() => onDataExport(data)}>Export</Button>;
+  };
+
   return (
     <div>
       <Card className="h-100 overflow-hidden">
@@ -27,7 +35,7 @@ export const asyncTable = () => {
           fetchData={fetchData}
           withHeader={true}
           withCheckbox={true}
-          uniqueColumnName="firstName"
+          uniqueColumnName="email"
           onSelect={(rowIndex, selected, selectedList, selectAll) =>
             action(
               `on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(
@@ -39,6 +47,8 @@ export const asyncTable = () => {
             withSearch: true,
             allowSelectAll: true,
             selectionActionRenderer,
+            customSelectionLabel: 'user',
+            globalActionRenderer: globalActionTrigger,
           }}
           withPagination={true}
           pageSize={5}
@@ -302,6 +312,7 @@ const customCode = `
           headerOptions={{
             selectionActionRenderer,
             withSearch: true,
+            customSelectionLabel: 'user',
             globalActionRenderer : globalActionTrigger,
             allowSelectAll: true,
           }}
@@ -318,13 +329,13 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/Table/Async Table',
+  title: 'Components/Table/Selection/With Bulk Actions',
   component: Table,
   parameters: {
     docs: {
       docPage: {
         customCode,
-        title: 'Async Table',
+        title: 'Table with Bulk Actions',
         props: {
           components: { AsyncTable, SyncTable },
           exclude: ['showHead'],

@@ -30,5 +30,5 @@
 }
 
 .StatusHint--default {
-  background: var(--secondary);
+  background: var(--secondary-light);
 }

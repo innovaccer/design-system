@@ -217,6 +217,7 @@ export default {
     docs: {
       docPage: {
         customCode,
+        title: 'Sync Table',
         props: {
           components: { AsyncTable, SyncTable },
           exclude: ['showHead'],

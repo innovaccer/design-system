@@ -1,130 +1,258 @@
 import * as React from 'react';
-import schema from '@/components/organisms/grid/__stories__/_common_/schema';
-import data from '@/components/organisms/grid/__stories__/_common_/data';
-import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
-import { fetchData } from '@/components/organisms/grid/__stories__/_common_/fetchData';
-import { action } from '@/utils/action';
-import { Card, Table } from '@/index';
+import { Table, Card } from '@/index';
 import { AsyncTable, SyncTable } from './_common_/types';
-import { nestedRowRenderer } from '../../grid/__stories__/_common_/nestedRowRenderer';
-import { errorTemplate } from '../../grid/__stories__/_common_/errorTemplate';
 
 export const all = () => {
-  const async = false;
+  const data = [
+    {
+      firstName: 'Brooke',
+      lastName: 'Heeran',
+      email: 'bheeran0@altervista.org',
+      gender: 'Female',
+      status: 'Failed',
+    },
+    {
+      firstName: 'Frazer',
+      lastName: 'Cathro',
+      email: 'fcathro1@ucla.edu',
+      gender: 'Male',
+      status: 'Failed',
+    },
+    {
+      firstName: 'Lemmie',
+      lastName: 'Ciric',
+      email: {
+        title: 'lciric2@dmoz.org',
+        metaList: ['First', 'Second'],
+      },
+      gender: 'Male',
+      status: 'Completed',
+    },
+    {
+      firstName: 'Randy',
+      lastName: 'Boatwright',
+      email: 'rboatwright3@arstechnica.com',
+      status: 'Completed',
+      gender: 'Male',
+    },
+    {
+      firstName: 'Rolando',
+      lastName: 'Cyples',
+      email: 'rcyples4@biglobe.ne.jp',
+      gender: 'Male',
+      status: 'Failed',
+    },
+    {
+      firstName: 'Lem',
+      lastName: 'Males',
+      email: 'lmales5@admin.ch',
+      gender: 'Male',
+      status: 'Failed',
+    },
+    {
+      firstName: 'Sayres',
+      lastName: 'Adelberg',
+      email: 'sadelberg6@uol.com.br',
+      gender: 'Male',
+      status: 'Completed',
+    },
+    {
+      firstName: 'Murray',
+      lastName: 'Bravington',
+      email: 'mbravington7@drupal.org',
+      gender: 'Male',
+      status: 'Failed',
+    },
+    {
+      firstName: 'Jena',
+      lastName: 'Swatheridge',
+      email: 'jswatheridge8@npr.org',
+      gender: 'Female',
+      status: 'Failed',
+    },
+    {
+      firstName: 'Annabel',
+      lastName: 'Nelsey',
+      email: 'anelsey9@google.com',
+      gender: 'Female',
+      status: 'Completed',
+    },
+  ];
 
-  let loading;
-  let error;
-  let applyData;
-  let applySchema;
-  const applyLoaderSchema = true;
-
-  if (!async) {
-    loading = false;
-
-    error = false;
-
-    applySchema = true;
-
-    applyData = true;
-  }
-
-  const type = 'resource';
-
-  const size = 'comfortable';
-
-  const draggable = true;
-
-  const nestedRows = false;
-
-  const withHeader = true;
-
-  const withCheckbox = false;
-
-  const showMenu = true;
-
-  const withPagination = false;
-
-  const page = 1;
-
-  const paginationType = 'jump';
-
-  const pageSize = 12;
-
-  const multipleSorting = false;
-
-  const headCellTooltip = false;
-
-  const separator = false;
-
-  const filterPosition = 'HEADER';
-
-  let dataAttr = {};
-  if (async) {
-    dataAttr = {
-      fetchData,
-    };
-  } else {
-    dataAttr = {
-      loading,
-      error,
-      schema: applySchema ? schema : [],
-      data: applyData ? data : [],
-    };
-  }
+  const schema = [
+    {
+      name: 'firstName',
+      displayName: 'Name',
+      cellType: 'AVATAR_WITH_TEXT',
+      width: '25%',
+      translate: (a) => ({
+        title: `${a.firstName} ${a.lastName}`,
+        firstName: a.firstName,
+        lastName: a.lastName,
+      }),
+    },
+    {
+      name: 'email',
+      displayName: 'Email',
+      width: '25%',
+    },
+    {
+      name: 'gender',
+      displayName: 'Gender',
+      width: '25%',
+    },
+    {
+      name: 'status',
+      displayName: 'Status',
+      width: '25%',
+    },
+  ];
 
   return (
-    <div className="vh-75">
+    <div className="vh-50">
       <Card className="h-100 overflow-hidden">
         <Table
-          key={`${async}`}
-          {...dataAttr}
-          loading={loading}
-          error={error}
-          errorTemplate={errorTemplate}
-          withHeader={withHeader}
+          page={1}
+          data={data}
+          schema={schema}
+          showMenu={true}
+          withHeader={true}
+          withPagination={true}
+          pageSize={4}
           headerOptions={{
             withSearch: true,
           }}
-          withCheckbox={withCheckbox}
-          showMenu={showMenu}
-          type={type}
-          size={size}
-          headCellTooltip={headCellTooltip}
-          separator={separator}
-          draggable={draggable}
-          nestedRows={nestedRows}
-          nestedRowRenderer={nestedRowRenderer}
-          withPagination={withPagination}
-          page={page}
-          paginationType={paginationType}
-          pageSize={pageSize}
-          loaderSchema={applyLoaderSchema ? loaderSchema : undefined}
-          onRowClick={(rowData, rowIndex) =>
-            action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()
-          }
-          onSelect={(rowIndex, selected, selectedList, selectAll) =>
-            action(
-              `on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(
-                selectedList
-              )} selectAll: ${selectAll}`
-            )()
-          }
-          onPageChange={(newPage) => action(`on-page-change:- ${newPage}`)()}
-          onSearch={(currData, searchTerm) => {
-            action(`on-search:- currData: ${JSON.stringify(currData)}, searchTerm: ${searchTerm}`)();
-            return currData;
-          }}
-          multipleSorting={multipleSorting}
-          sortingList={[{ name: 'name', type: 'desc' }]}
-          filterList={{
-            name: ['h-r', 's-z'],
-          }}
-          filterPosition={filterPosition}
         />
       </Card>
     </div>
   );
 };
+
+const customCode = `() => {
+  const data = [
+    {
+      firstName: 'Brooke',
+      lastName: 'Heeran',
+      email: 'bheeran0@altervista.org',
+      gender: 'Female',
+      status: 'Failed',
+    },
+    {
+      firstName: 'Frazer',
+      lastName: 'Cathro',
+      email: 'fcathro1@ucla.edu',
+      gender: 'Male',
+      status: 'Failed',
+    },
+    {
+      firstName: 'Lemmie',
+      lastName: 'Ciric',
+      email: {
+        title: 'lciric2@dmoz.org',
+        metaList: ['First', 'Second'],
+      },
+      gender: 'Male',
+      status: 'Completed',
+    },
+    {
+      firstName: 'Randy',
+      lastName: 'Boatwright',
+      email: 'rboatwright3@arstechnica.com',
+      status: 'Completed',
+      gender: 'Male',
+    },
+    {
+      firstName: 'Rolando',
+      lastName: 'Cyples',
+      email: 'rcyples4@biglobe.ne.jp',
+      gender: 'Male',
+      status: 'Failed',
+    },
+    {
+      firstName: 'Lem',
+      lastName: 'Males',
+      email: 'lmales5@admin.ch',
+      gender: 'Male',
+      status: 'Failed',
+    },
+    {
+      firstName: 'Sayres',
+      lastName: 'Adelberg',
+      email: 'sadelberg6@uol.com.br',
+      gender: 'Male',
+      status: 'Completed',
+    },
+    {
+      firstName: 'Murray',
+      lastName: 'Bravington',
+      email: 'mbravington7@drupal.org',
+      gender: 'Male',
+      status: 'Failed',
+    },
+    {
+      firstName: 'Jena',
+      lastName: 'Swatheridge',
+      email: 'jswatheridge8@npr.org',
+      gender: 'Female',
+      status: 'Failed',
+    },
+    {
+      firstName: 'Annabel',
+      lastName: 'Nelsey',
+      email: 'anelsey9@google.com',
+      gender: 'Female',
+      status: 'Completed',
+    },
+  ];
+
+  const schema = [
+    {
+      name: 'firstName',
+      displayName: 'Name',
+      cellType: 'AVATAR_WITH_TEXT',
+      width: '25%',
+      translate: (a) => ({
+        title: \`\${a.firstName} \${a.lastName}\`,
+        firstName: a.firstName,
+        lastName: a.lastName,
+      }),
+    },
+    {
+      name: 'email',
+      displayName: 'Email',
+      width: '25%',
+    },
+    {
+      name: 'gender',
+      displayName: 'Gender',
+      width: '25%',
+    },
+    {
+      name: 'status',
+      displayName: 'Status',
+      width: '25%',
+    },
+  ];
+
+  return (
+    <div className="vh-50">
+      <Card className="h-100 overflow-hidden">
+        <Table
+          page={1}
+          data={data}
+          schema={schema}
+          showMenu={true}
+          withHeader={true}
+          withPagination={true}
+          pageSize={4}
+          headerOptions={{
+            withSearch: true,
+          }}
+        />
+      </Card>
+    </div>
+  );
+}`;
 
 export default {
   title: 'Components/Table/All',
@@ -132,11 +260,11 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        customCode,
         props: {
           components: { AsyncTable, SyncTable },
           exclude: ['showHead'],
         },
-        noStory: true,
       },
     },
   },

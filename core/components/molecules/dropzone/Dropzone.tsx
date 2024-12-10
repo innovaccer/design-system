@@ -77,12 +77,12 @@ export const Dropzone = (props: DropzoneProps) => {
               Drag your files here or
             </Text>
             <Text
-              tabIndex={disabled ? -1 : 0}
               className="ml-2 cursor-pointer"
               size="large"
               weight="strong"
               appearance={disabled ? 'disabled' : 'link'}
               {...buttonAccessibilityProps}
+              tabIndex={disabled ? -1 : 0}
             >
               browse files
             </Text>

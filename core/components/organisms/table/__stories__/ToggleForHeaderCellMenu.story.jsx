@@ -5,8 +5,8 @@ import { Card, Heading, Table, Row, Column } from '@/index';
 import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/_common_/types';
 
 // CSF format story
-export const size = () => {
-  const values = ['comfortable', 'standard', 'compressed', 'tight'];
+export const toggleForHeaderCellMenu = () => {
+  const values = [true, false];
 
   // to freeze the object for typescript
 
@@ -14,11 +14,11 @@ export const size = () => {
     <div className="d-flex flex-wrap">
       <Row>
         {values.map((v, index) => (
-          <Column key={index} className="ml-10 mt-7" size={5}>
-            <Heading>{v}</Heading>
-            <div className="vh-50">
+          <Column size={5} key={index} className="ml-10">
+            <Heading>{`showMenu: ${v}`}</Heading>
+            <div className="vh-75">
               <Card className="h-100 overflow-hidden">
-                <Table size={v} data={data} schema={schema} />
+                <Table showMenu={v} data={data} schema={schema} />
               </Card>
             </div>
           </Column>
@@ -36,7 +36,6 @@ const customCode = `
     {
       name: 'name',
       displayName: 'Name',
-      width: 300,
       resizable: true,
       separator: true,
       tooltip: true,
@@ -55,34 +54,35 @@ const customCode = `
     },
   ];
 
-  const values = ['comfortable', 'standard', 'compressed', 'tight'];
+  const values = [true, false];
 
   return (
     <div className="d-flex flex-wrap">
-      <Row>
-        {values.map((v, index) => (
-          <Column key={index} className="ml-10 mt-7" size={5}>
-            <Heading>{v}</Heading>
-            <div className="vh-50">
-              <Card className="h-100 overflow-hidden">
-                <Table size={v} data={data} schema={schema} />
-              </Card>
-            </div>
-          </Column>
-        ))}
-      </Row>
+    <Row>
+    {values.map((v, index) => (
+      <Column size={5} key={index} className="ml-10">
+        <Heading>{\`showMenu: \${v}\`}</Heading>
+        <div className="vh-75">
+          <Card className="h-100 overflow-hidden">
+            <Table showMenu={v} data={data} schema={schema} />
+          </Card>
+        </div>
+      </Column>
+    ))}
+  </Row>
     </div>
   );
 };
 `;
 
 export default {
-  title: 'Components/Table/Variants/Size',
+  title: 'Components/Table/Toggle For Header Cell Menu',
   component: Table,
   parameters: {
     docs: {
       docPage: {
         customCode,
+        title: 'Toggle Option For Header Cell Menu',
         props: {
           components: { AsyncTable, SyncTable },
           exclude: ['showHead'],

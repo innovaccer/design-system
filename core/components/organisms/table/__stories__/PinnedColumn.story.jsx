@@ -237,7 +237,7 @@ export default {
     docs: {
       docPage: {
         customCode,
-        title: 'Pinned Column',
+        title: 'Pinned Columns in Table',
         props: {
           components: { AsyncTable, SyncTable },
           exclude: ['showHead'],

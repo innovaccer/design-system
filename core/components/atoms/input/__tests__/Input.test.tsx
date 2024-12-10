@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import Input, { InputProps as Props } from '../Input';
 
@@ -10,6 +10,7 @@ const nameValue = 'name';
 const inputType = ['text', 'password', 'number'];
 const size = ['tiny', 'regular', 'large'];
 const FunctionValue = jest.fn();
+const defaultValue = '123';
 
 describe('Input component', () => {
   const mapper: Record<string, any> = {
@@ -171,4 +172,40 @@ describe('Input component', () => {
   };
 
   testHelper(mapper, testFunc);
+});
+
+describe('Input component selection range is set correctly on input type change', () => {
+  it('through Action Button', () => {
+    const InputComponent = () => {
+      const [visibility, setVisibility] = React.useState(false);
+
+      return (
+        <Input
+          defaultValue={defaultValue}
+          type={visibility ? 'number' : 'password'}
+          actionIcon={
+            <Input.ActionButton
+              onClick={() => setVisibility((x) => !x)}
+              name={visibility ? 'visibility_on' : 'visibility_off'}
+            />
+          }
+        />
+      );
+    };
+
+    const { getByTestId } = render(<InputComponent />);
+    const input = getByTestId('DesignSystem-Input');
+    const actionButton = getByTestId('DesignSystem-Input-ActionButton');
+
+    input.focus = jest.fn();
+
+    fireEvent.click(actionButton);
+
+    expect(input.focus).toHaveBeenCalled();
+    expect((input as HTMLInputElement).type).toBe('number');
+
+    fireEvent.click(actionButton);
+    expect(input.focus).toHaveBeenCalled();
+    expect((input as HTMLInputElement).type).toBe('password');
+  });
 });

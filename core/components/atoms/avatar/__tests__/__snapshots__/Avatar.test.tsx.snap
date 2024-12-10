@@ -7,6 +7,39 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <style />
+        <div
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
+              data-test="DesignSystem-Avatar"
+              tabindex="0"
+            >
+              <span
+                class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
       <style />
       <div
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
@@ -30,32 +63,7 @@ Object {
           </span>
         </span>
       </div>
-    </div>
-  </body>,
-  "container": <div>
-    <style />
-    <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
-    >
-      <span
-        class=""
-        data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
-      >
-        <span
-          class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
-          data-test="DesignSystem-Avatar"
-          tabindex="0"
-        >
-          <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-            data-test="DesignSystem-Text"
-          >
-            JD
-          </span>
-        </span>
-      </span>
-    </div>
+    </span>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -118,6 +126,39 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <style />
+        <div
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--accent1 Avatar--disabled"
+              data-test="DesignSystem-Avatar"
+              tabindex="-1"
+            >
+              <span
+                class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
       <style />
       <div
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
@@ -141,32 +182,7 @@ Object {
           </span>
         </span>
       </div>
-    </div>
-  </body>,
-  "container": <div>
-    <style />
-    <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
-    >
-      <span
-        class=""
-        data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
-      >
-        <span
-          class="Avatar Avatar--regular Avatar--accent1 Avatar--disabled"
-          data-test="DesignSystem-Avatar"
-          tabindex="-1"
-        >
-          <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-            data-test="DesignSystem-Text"
-          >
-            JD
-          </span>
-        </span>
-      </span>
-    </div>
+    </span>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -229,6 +245,39 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <style />
+        <div
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--accent2 Avatar--default"
+              data-test="DesignSystem-Avatar"
+              tabindex="0"
+            >
+              <span
+                class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
       <style />
       <div
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
@@ -252,32 +301,7 @@ Object {
           </span>
         </span>
       </div>
-    </div>
-  </body>,
-  "container": <div>
-    <style />
-    <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
-    >
-      <span
-        class=""
-        data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
-      >
-        <span
-          class="Avatar Avatar--regular Avatar--accent2 Avatar--default"
-          data-test="DesignSystem-Avatar"
-          tabindex="0"
-        >
-          <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-            data-test="DesignSystem-Text"
-          >
-            JD
-          </span>
-        </span>
-      </span>
-    </div>
+    </span>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -340,6 +364,39 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <style />
+        <div
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--accent2 Avatar--disabled"
+              data-test="DesignSystem-Avatar"
+              tabindex="-1"
+            >
+              <span
+                class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
       <style />
       <div
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
@@ -363,32 +420,7 @@ Object {
           </span>
         </span>
       </div>
-    </div>
-  </body>,
-  "container": <div>
-    <style />
-    <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
-    >
-      <span
-        class=""
-        data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
-      >
-        <span
-          class="Avatar Avatar--regular Avatar--accent2 Avatar--disabled"
-          data-test="DesignSystem-Avatar"
-          tabindex="-1"
-        >
-          <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-            data-test="DesignSystem-Text"
-          >
-            JD
-          </span>
-        </span>
-      </span>
-    </div>
+    </span>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -451,6 +483,39 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <style />
+        <div
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--accent3 Avatar--default"
+              data-test="DesignSystem-Avatar"
+              tabindex="0"
+            >
+              <span
+                class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
       <style />
       <div
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
@@ -474,32 +539,7 @@ Object {
           </span>
         </span>
       </div>
-    </div>
-  </body>,
-  "container": <div>
-    <style />
-    <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
-    >
-      <span
-        class=""
-        data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
-      >
-        <span
-          class="Avatar Avatar--regular Avatar--accent3 Avatar--default"
-          data-test="DesignSystem-Avatar"
-          tabindex="0"
-        >
-          <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-            data-test="DesignSystem-Text"
-          >
-            JD
-          </span>
-        </span>
-      </span>
-    </div>
+    </span>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -562,6 +602,39 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <style />
+        <div
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--accent3 Avatar--disabled"
+              data-test="DesignSystem-Avatar"
+              tabindex="-1"
+            >
+              <span
+                class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
       <style />
       <div
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
@@ -585,32 +658,7 @@ Object {
           </span>
         </span>
       </div>
-    </div>
-  </body>,
-  "container": <div>
-    <style />
-    <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
-    >
-      <span
-        class=""
-        data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
-      >
-        <span
-          class="Avatar Avatar--regular Avatar--accent3 Avatar--disabled"
-          data-test="DesignSystem-Avatar"
-          tabindex="-1"
-        >
-          <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-            data-test="DesignSystem-Text"
-          >
-            JD
-          </span>
-        </span>
-      </span>
-    </div>
+    </span>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -673,6 +721,39 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <style />
+        <div
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--accent4 Avatar--default"
+              data-test="DesignSystem-Avatar"
+              tabindex="0"
+            >
+              <span
+                class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
       <style />
       <div
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
@@ -696,32 +777,7 @@ Object {
           </span>
         </span>
       </div>
-    </div>
-  </body>,
-  "container": <div>
-    <style />
-    <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
-    >
-      <span
-        class=""
-        data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
-      >
-        <span
-          class="Avatar Avatar--regular Avatar--accent4 Avatar--default"
-          data-test="DesignSystem-Avatar"
-          tabindex="0"
-        >
-          <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-            data-test="DesignSystem-Text"
-          >
-            JD
-          </span>
-        </span>
-      </span>
-    </div>
+    </span>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -784,6 +840,39 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <style />
+        <div
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--accent4 Avatar--disabled"
+              data-test="DesignSystem-Avatar"
+              tabindex="-1"
+            >
+              <span
+                class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
       <style />
       <div
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
@@ -807,32 +896,7 @@ Object {
           </span>
         </span>
       </div>
-    </div>
-  </body>,
-  "container": <div>
-    <style />
-    <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
-    >
-      <span
-        class=""
-        data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
-      >
-        <span
-          class="Avatar Avatar--regular Avatar--accent4 Avatar--disabled"
-          data-test="DesignSystem-Avatar"
-          tabindex="-1"
-        >
-          <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-            data-test="DesignSystem-Text"
-          >
-            JD
-          </span>
-        </span>
-      </span>
-    </div>
+    </span>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -895,6 +959,39 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <style />
+        <div
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--alert Avatar--default"
+              data-test="DesignSystem-Avatar"
+              tabindex="0"
+            >
+              <span
+                class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
       <style />
       <div
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
@@ -918,32 +1015,7 @@ Object {
           </span>
         </span>
       </div>
-    </div>
-  </body>,
-  "container": <div>
-    <style />
-    <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
-    >
-      <span
-        class=""
-        data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
-      >
-        <span
-          class="Avatar Avatar--regular Avatar--alert Avatar--default"
-          data-test="DesignSystem-Avatar"
-          tabindex="0"
-        >
-          <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-            data-test="DesignSystem-Text"
-          >
-            JD
-          </span>
-        </span>
-      </span>
-    </div>
+    </span>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -1006,6 +1078,39 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <style />
+        <div
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--alert Avatar--disabled"
+              data-test="DesignSystem-Avatar"
+              tabindex="-1"
+            >
+              <span
+                class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
       <style />
       <div
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
@@ -1029,32 +1134,7 @@ Object {
           </span>
         </span>
       </div>
-    </div>
-  </body>,
-  "container": <div>
-    <style />
-    <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
-    >
-      <span
-        class=""
-        data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
-      >
-        <span
-          class="Avatar Avatar--regular Avatar--alert Avatar--disabled"
-          data-test="DesignSystem-Avatar"
-          tabindex="-1"
-        >
-          <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-            data-test="DesignSystem-Text"
-          >
-            JD
-          </span>
-        </span>
-      </span>
-    </div>
+    </span>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -1117,6 +1197,39 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <style />
+        <div
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--primary Avatar--default"
+              data-test="DesignSystem-Avatar"
+              tabindex="0"
+            >
+              <span
+                class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
       <style />
       <div
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
@@ -1140,32 +1253,7 @@ Object {
           </span>
         </span>
       </div>
-    </div>
-  </body>,
-  "container": <div>
-    <style />
-    <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
-    >
-      <span
-        class=""
-        data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
-      >
-        <span
-          class="Avatar Avatar--regular Avatar--primary Avatar--default"
-          data-test="DesignSystem-Avatar"
-          tabindex="0"
-        >
-          <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-            data-test="DesignSystem-Text"
-          >
-            JD
-          </span>
-        </span>
-      </span>
-    </div>
+    </span>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -1228,6 +1316,39 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <style />
+        <div
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--primary Avatar--disabled"
+              data-test="DesignSystem-Avatar"
+              tabindex="-1"
+            >
+              <span
+                class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
       <style />
       <div
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
@@ -1251,32 +1372,7 @@ Object {
           </span>
         </span>
       </div>
-    </div>
-  </body>,
-  "container": <div>
-    <style />
-    <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
-    >
-      <span
-        class=""
-        data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
-      >
-        <span
-          class="Avatar Avatar--regular Avatar--primary Avatar--disabled"
-          data-test="DesignSystem-Avatar"
-          tabindex="-1"
-        >
-          <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-            data-test="DesignSystem-Text"
-          >
-            JD
-          </span>
-        </span>
-      </span>
-    </div>
+    </span>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -1339,6 +1435,39 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <style />
+        <div
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--success Avatar--default"
+              data-test="DesignSystem-Avatar"
+              tabindex="0"
+            >
+              <span
+                class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
       <style />
       <div
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
@@ -1362,32 +1491,7 @@ Object {
           </span>
         </span>
       </div>
-    </div>
-  </body>,
-  "container": <div>
-    <style />
-    <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
-    >
-      <span
-        class=""
-        data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
-      >
-        <span
-          class="Avatar Avatar--regular Avatar--success Avatar--default"
-          data-test="DesignSystem-Avatar"
-          tabindex="0"
-        >
-          <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-            data-test="DesignSystem-Text"
-          >
-            JD
-          </span>
-        </span>
-      </span>
-    </div>
+    </span>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -1450,6 +1554,39 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <style />
+        <div
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--success Avatar--disabled"
+              data-test="DesignSystem-Avatar"
+              tabindex="-1"
+            >
+              <span
+                class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
       <style />
       <div
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
@@ -1473,32 +1610,7 @@ Object {
           </span>
         </span>
       </div>
-    </div>
-  </body>,
-  "container": <div>
-    <style />
-    <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
-    >
-      <span
-        class=""
-        data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
-      >
-        <span
-          class="Avatar Avatar--regular Avatar--success Avatar--disabled"
-          data-test="DesignSystem-Avatar"
-          tabindex="-1"
-        >
-          <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-            data-test="DesignSystem-Text"
-          >
-            JD
-          </span>
-        </span>
-      </span>
-    </div>
+    </span>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -1561,6 +1673,39 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <style />
+        <div
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--warning Avatar--default"
+              data-test="DesignSystem-Avatar"
+              tabindex="0"
+            >
+              <span
+                class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
       <style />
       <div
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
@@ -1584,32 +1729,7 @@ Object {
           </span>
         </span>
       </div>
-    </div>
-  </body>,
-  "container": <div>
-    <style />
-    <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
-    >
-      <span
-        class=""
-        data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
-      >
-        <span
-          class="Avatar Avatar--regular Avatar--warning Avatar--default"
-          data-test="DesignSystem-Avatar"
-          tabindex="0"
-        >
-          <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-            data-test="DesignSystem-Text"
-          >
-            JD
-          </span>
-        </span>
-      </span>
-    </div>
+    </span>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -1672,6 +1792,39 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <style />
+        <div
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--warning Avatar--disabled"
+              data-test="DesignSystem-Avatar"
+              tabindex="-1"
+            >
+              <span
+                class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
       <style />
       <div
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
@@ -1695,32 +1848,7 @@ Object {
           </span>
         </span>
       </div>
-    </div>
-  </body>,
-  "container": <div>
-    <style />
-    <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
-    >
-      <span
-        class=""
-        data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
-      >
-        <span
-          class="Avatar Avatar--regular Avatar--warning Avatar--disabled"
-          data-test="DesignSystem-Avatar"
-          tabindex="-1"
-        >
-          <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-            data-test="DesignSystem-Text"
-          >
-            JD
-          </span>
-        </span>
-      </span>
-    </div>
+    </span>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -1783,6 +1911,39 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <style />
+        <div
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
+              data-test="DesignSystem-Avatar"
+              tabindex="0"
+            >
+              <span
+                class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
       <style />
       <div
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
@@ -1806,32 +1967,7 @@ Object {
           </span>
         </span>
       </div>
-    </div>
-  </body>,
-  "container": <div>
-    <style />
-    <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
-    >
-      <span
-        class=""
-        data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
-      >
-        <span
-          class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
-          data-test="DesignSystem-Avatar"
-          tabindex="0"
-        >
-          <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-            data-test="DesignSystem-Text"
-          >
-            JD
-          </span>
-        </span>
-      </span>
-    </div>
+    </span>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -1894,6 +2030,39 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <style />
+        <div
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        >
+          <span
+            class="Avatar-wrapper--square Avatar--regular"
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--square Avatar--accent1 Avatar--default"
+              data-test="DesignSystem-Avatar"
+              tabindex="0"
+            >
+              <span
+                class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
       <style />
       <div
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
@@ -1917,32 +2086,7 @@ Object {
           </span>
         </span>
       </div>
-    </div>
-  </body>,
-  "container": <div>
-    <style />
-    <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
-    >
-      <span
-        class="Avatar-wrapper--square Avatar--regular"
-        data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
-      >
-        <span
-          class="Avatar Avatar--square Avatar--accent1 Avatar--default"
-          data-test="DesignSystem-Avatar"
-          tabindex="0"
-        >
-          <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-            data-test="DesignSystem-Text"
-          >
-            JD
-          </span>
-        </span>
-      </span>
-    </div>
+    </span>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -2005,6 +2149,39 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <style />
+        <div
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
+              data-test="DesignSystem-Avatar"
+              tabindex="0"
+            >
+              <span
+                class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
       <style />
       <div
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
@@ -2028,32 +2205,7 @@ Object {
           </span>
         </span>
       </div>
-    </div>
-  </body>,
-  "container": <div>
-    <style />
-    <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
-    >
-      <span
-        class=""
-        data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
-      >
-        <span
-          class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
-          data-test="DesignSystem-Avatar"
-          tabindex="0"
-        >
-          <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-            data-test="DesignSystem-Text"
-          >
-            JD
-          </span>
-        </span>
-      </span>
-    </div>
+    </span>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -2116,6 +2268,39 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <style />
+        <div
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
+              data-test="DesignSystem-Avatar"
+              tabindex="0"
+            >
+              <span
+                class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
       <style />
       <div
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
@@ -2139,32 +2324,7 @@ Object {
           </span>
         </span>
       </div>
-    </div>
-  </body>,
-  "container": <div>
-    <style />
-    <div
-      class="OutsideClick PopperWrapper-trigger flex-grow-0"
-    >
-      <span
-        class=""
-        data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
-      >
-        <span
-          class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
-          data-test="DesignSystem-Avatar"
-          tabindex="0"
-        >
-          <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
-            data-test="DesignSystem-Text"
-          >
-            JD
-          </span>
-        </span>
-      </span>
-    </div>
+    </span>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

@@ -106,3 +106,20 @@
   opacity: var(--opacity-20);
   mix-blend-mode: multiply;
 }
+
+.Avatar-presence {
+  position: absolute;
+  border-radius: 50%;
+  width: var(--spacing);
+  height: var(--spacing);
+  right: 0;
+  bottom: 0;
+}
+
+.Avatar-presence--active {
+  background: var(--success);
+}
+
+.Avatar-presence--away {
+  background: var(--secondary-dark);
+}

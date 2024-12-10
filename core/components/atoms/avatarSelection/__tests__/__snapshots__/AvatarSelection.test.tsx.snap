@@ -22,29 +22,33 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-            <style />
-            <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            <span
+              class="position-relative d-inline-flex"
             >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
+              <style />
+              <div
+                class="OutsideClick PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="checkbox"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-                    data-test="DesignSystem-Text"
+                    class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
                   >
-                    JD
+                    <span
+                      class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                      data-test="DesignSystem-Text"
+                    >
+                      JD
+                    </span>
                   </span>
                 </span>
-              </span>
-            </div>
+              </div>
+            </span>
           </div>
         </span>
         <span
@@ -58,29 +62,33 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-            <style />
-            <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            <span
+              class="position-relative d-inline-flex"
             >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
+              <style />
+              <div
+                class="OutsideClick PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="checkbox"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-                    data-test="DesignSystem-Text"
+                    class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
                   >
-                    SP
+                    <span
+                      class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                      data-test="DesignSystem-Text"
+                    >
+                      SP
+                    </span>
                   </span>
                 </span>
-              </span>
-            </div>
+              </div>
+            </span>
           </div>
         </span>
         <span
@@ -94,29 +102,33 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-            <style />
-            <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            <span
+              class="position-relative d-inline-flex"
             >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
+              <style />
+              <div
+                class="OutsideClick PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="checkbox"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-                    data-test="DesignSystem-Text"
+                    class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
                   >
-                    NW
+                    <span
+                      class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                      data-test="DesignSystem-Text"
+                    >
+                      NW
+                    </span>
                   </span>
                 </span>
-              </span>
-            </div>
+              </div>
+            </span>
           </div>
         </span>
         <span
@@ -130,29 +142,33 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-            <style />
-            <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            <span
+              class="position-relative d-inline-flex"
             >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
+              <style />
+              <div
+                class="OutsideClick PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="checkbox"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-                    data-test="DesignSystem-Text"
+                    class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
                   >
-                    MG
+                    <span
+                      class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                      data-test="DesignSystem-Text"
+                    >
+                      MG
+                    </span>
                   </span>
                 </span>
-              </span>
-            </div>
+              </div>
+            </span>
           </div>
         </span>
         <span
@@ -166,29 +182,33 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-            <style />
-            <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            <span
+              class="position-relative d-inline-flex"
             >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
+              <style />
+              <div
+                class="OutsideClick PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="checkbox"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-                    data-test="DesignSystem-Text"
+                    class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
                   >
-                    AS
+                    <span
+                      class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                      data-test="DesignSystem-Text"
+                    >
+                      AS
+                    </span>
                   </span>
                 </span>
-              </span>
-            </div>
+              </div>
+            </span>
           </div>
         </span>
         <style />
@@ -206,20 +226,24 @@ Object {
             tabindex="0"
           >
             <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="presentation"
+              class="position-relative d-inline-flex"
             >
               <span
-                class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="-1"
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="presentation"
               >
                 <span
-                  class="Text Text--default Text--regular overflow-hidden Avatar-content"
-                  data-test="DesignSystem-Text"
+                  class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
-                  +1
+                  <span
+                    class="Text Text--default Text--regular overflow-hidden Avatar-content"
+                    data-test="DesignSystem-Text"
+                  >
+                    +1
+                  </span>
                 </span>
               </span>
             </span>
@@ -244,29 +268,33 @@ Object {
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
           tabindex="-1"
         >
-          <style />
-          <div
-            class="OutsideClick PopperWrapper-trigger flex-grow-0"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="checkbox"
+            <style />
+            <div
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="0"
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="checkbox"
               >
                 <span
-                  class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-                  data-test="DesignSystem-Text"
+                  class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="0"
                 >
-                  JD
+                  <span
+                    class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                    data-test="DesignSystem-Text"
+                  >
+                    JD
+                  </span>
                 </span>
               </span>
-            </span>
-          </div>
+            </div>
+          </span>
         </div>
       </span>
       <span
@@ -280,29 +308,33 @@ Object {
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
           tabindex="-1"
         >
-          <style />
-          <div
-            class="OutsideClick PopperWrapper-trigger flex-grow-0"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="checkbox"
+            <style />
+            <div
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="0"
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="checkbox"
               >
                 <span
-                  class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-                  data-test="DesignSystem-Text"
+                  class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="0"
                 >
-                  SP
+                  <span
+                    class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                    data-test="DesignSystem-Text"
+                  >
+                    SP
+                  </span>
                 </span>
               </span>
-            </span>
-          </div>
+            </div>
+          </span>
         </div>
       </span>
       <span
@@ -316,29 +348,33 @@ Object {
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
           tabindex="-1"
         >
-          <style />
-          <div
-            class="OutsideClick PopperWrapper-trigger flex-grow-0"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="checkbox"
+            <style />
+            <div
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="0"
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="checkbox"
               >
                 <span
-                  class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-                  data-test="DesignSystem-Text"
+                  class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="0"
                 >
-                  NW
+                  <span
+                    class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                    data-test="DesignSystem-Text"
+                  >
+                    NW
+                  </span>
                 </span>
               </span>
-            </span>
-          </div>
+            </div>
+          </span>
         </div>
       </span>
       <span
@@ -352,29 +388,33 @@ Object {
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
           tabindex="-1"
         >
-          <style />
-          <div
-            class="OutsideClick PopperWrapper-trigger flex-grow-0"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="checkbox"
+            <style />
+            <div
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="0"
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="checkbox"
               >
                 <span
-                  class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-                  data-test="DesignSystem-Text"
+                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="0"
                 >
-                  MG
+                  <span
+                    class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                    data-test="DesignSystem-Text"
+                  >
+                    MG
+                  </span>
                 </span>
               </span>
-            </span>
-          </div>
+            </div>
+          </span>
         </div>
       </span>
       <span
@@ -388,29 +428,33 @@ Object {
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
           tabindex="-1"
         >
-          <style />
-          <div
-            class="OutsideClick PopperWrapper-trigger flex-grow-0"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="checkbox"
+            <style />
+            <div
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="0"
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="checkbox"
               >
                 <span
-                  class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-                  data-test="DesignSystem-Text"
+                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="0"
                 >
-                  AS
+                  <span
+                    class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                    data-test="DesignSystem-Text"
+                  >
+                    AS
+                  </span>
                 </span>
               </span>
-            </span>
-          </div>
+            </div>
+          </span>
         </div>
       </span>
       <style />
@@ -428,20 +472,24 @@ Object {
           tabindex="0"
         >
           <span
-            class=""
-            data-test="DesignSystem-AvatarWrapper"
-            role="presentation"
+            class="position-relative d-inline-flex"
           >
             <span
-              class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
-              data-test="DesignSystem-Avatar"
-              tabindex="-1"
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
             >
               <span
-                class="Text Text--default Text--regular overflow-hidden Avatar-content"
-                data-test="DesignSystem-Text"
+                class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
+                data-test="DesignSystem-Avatar"
+                tabindex="-1"
               >
-                +1
+                <span
+                  class="Text Text--default Text--regular overflow-hidden Avatar-content"
+                  data-test="DesignSystem-Text"
+                >
+                  +1
+                </span>
               </span>
             </span>
           </span>
@@ -525,29 +573,33 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-            <style />
-            <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            <span
+              class="position-relative d-inline-flex"
             >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
+              <style />
+              <div
+                class="OutsideClick PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="checkbox"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-                    data-test="DesignSystem-Text"
+                    class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
                   >
-                    JD
+                    <span
+                      class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                      data-test="DesignSystem-Text"
+                    >
+                      JD
+                    </span>
                   </span>
                 </span>
-              </span>
-            </div>
+              </div>
+            </span>
           </div>
         </span>
         <span
@@ -561,29 +613,33 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-            <style />
-            <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            <span
+              class="position-relative d-inline-flex"
             >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
+              <style />
+              <div
+                class="OutsideClick PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="checkbox"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-                    data-test="DesignSystem-Text"
+                    class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
                   >
-                    SP
+                    <span
+                      class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                      data-test="DesignSystem-Text"
+                    >
+                      SP
+                    </span>
                   </span>
                 </span>
-              </span>
-            </div>
+              </div>
+            </span>
           </div>
         </span>
         <span
@@ -597,29 +653,33 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-            <style />
-            <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            <span
+              class="position-relative d-inline-flex"
             >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
+              <style />
+              <div
+                class="OutsideClick PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="checkbox"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-                    data-test="DesignSystem-Text"
+                    class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
                   >
-                    NW
+                    <span
+                      class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                      data-test="DesignSystem-Text"
+                    >
+                      NW
+                    </span>
                   </span>
                 </span>
-              </span>
-            </div>
+              </div>
+            </span>
           </div>
         </span>
         <span
@@ -633,29 +693,33 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-            <style />
-            <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            <span
+              class="position-relative d-inline-flex"
             >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
+              <style />
+              <div
+                class="OutsideClick PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="checkbox"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-                    data-test="DesignSystem-Text"
+                    class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
                   >
-                    MG
+                    <span
+                      class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                      data-test="DesignSystem-Text"
+                    >
+                      MG
+                    </span>
                   </span>
                 </span>
-              </span>
-            </div>
+              </div>
+            </span>
           </div>
         </span>
         <span
@@ -669,29 +733,33 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-            <style />
-            <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            <span
+              class="position-relative d-inline-flex"
             >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
+              <style />
+              <div
+                class="OutsideClick PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="checkbox"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-                    data-test="DesignSystem-Text"
+                    class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
                   >
-                    AS
+                    <span
+                      class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                      data-test="DesignSystem-Text"
+                    >
+                      AS
+                    </span>
                   </span>
                 </span>
-              </span>
-            </div>
+              </div>
+            </span>
           </div>
         </span>
         <style />
@@ -709,20 +777,24 @@ Object {
             tabindex="0"
           >
             <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="presentation"
+              class="position-relative d-inline-flex"
             >
               <span
-                class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="-1"
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="presentation"
               >
                 <span
-                  class="Text Text--default Text--regular overflow-hidden Avatar-content"
-                  data-test="DesignSystem-Text"
+                  class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
-                  +1
+                  <span
+                    class="Text Text--default Text--regular overflow-hidden Avatar-content"
+                    data-test="DesignSystem-Text"
+                  >
+                    +1
+                  </span>
                 </span>
               </span>
             </span>
@@ -747,29 +819,33 @@ Object {
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
           tabindex="-1"
         >
-          <style />
-          <div
-            class="OutsideClick PopperWrapper-trigger flex-grow-0"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="checkbox"
+            <style />
+            <div
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="0"
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="checkbox"
               >
                 <span
-                  class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-                  data-test="DesignSystem-Text"
+                  class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="0"
                 >
-                  JD
+                  <span
+                    class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                    data-test="DesignSystem-Text"
+                  >
+                    JD
+                  </span>
                 </span>
               </span>
-            </span>
-          </div>
+            </div>
+          </span>
         </div>
       </span>
       <span
@@ -783,29 +859,33 @@ Object {
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
           tabindex="-1"
         >
-          <style />
-          <div
-            class="OutsideClick PopperWrapper-trigger flex-grow-0"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="checkbox"
+            <style />
+            <div
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="0"
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="checkbox"
               >
                 <span
-                  class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-                  data-test="DesignSystem-Text"
+                  class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="0"
                 >
-                  SP
+                  <span
+                    class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                    data-test="DesignSystem-Text"
+                  >
+                    SP
+                  </span>
                 </span>
               </span>
-            </span>
-          </div>
+            </div>
+          </span>
         </div>
       </span>
       <span
@@ -819,29 +899,33 @@ Object {
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
           tabindex="-1"
         >
-          <style />
-          <div
-            class="OutsideClick PopperWrapper-trigger flex-grow-0"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="checkbox"
+            <style />
+            <div
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="0"
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="checkbox"
               >
                 <span
-                  class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-                  data-test="DesignSystem-Text"
+                  class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="0"
                 >
-                  NW
+                  <span
+                    class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                    data-test="DesignSystem-Text"
+                  >
+                    NW
+                  </span>
                 </span>
               </span>
-            </span>
-          </div>
+            </div>
+          </span>
         </div>
       </span>
       <span
@@ -855,29 +939,33 @@ Object {
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
           tabindex="-1"
         >
-          <style />
-          <div
-            class="OutsideClick PopperWrapper-trigger flex-grow-0"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="checkbox"
+            <style />
+            <div
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="0"
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="checkbox"
               >
                 <span
-                  class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-                  data-test="DesignSystem-Text"
+                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="0"
                 >
-                  MG
+                  <span
+                    class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                    data-test="DesignSystem-Text"
+                  >
+                    MG
+                  </span>
                 </span>
               </span>
-            </span>
-          </div>
+            </div>
+          </span>
         </div>
       </span>
       <span
@@ -891,29 +979,33 @@ Object {
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
           tabindex="-1"
         >
-          <style />
-          <div
-            class="OutsideClick PopperWrapper-trigger flex-grow-0"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="checkbox"
+            <style />
+            <div
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="0"
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="checkbox"
               >
                 <span
-                  class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-                  data-test="DesignSystem-Text"
+                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="0"
                 >
-                  AS
+                  <span
+                    class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                    data-test="DesignSystem-Text"
+                  >
+                    AS
+                  </span>
                 </span>
               </span>
-            </span>
-          </div>
+            </div>
+          </span>
         </div>
       </span>
       <style />
@@ -931,20 +1023,24 @@ Object {
           tabindex="0"
         >
           <span
-            class=""
-            data-test="DesignSystem-AvatarWrapper"
-            role="presentation"
+            class="position-relative d-inline-flex"
           >
             <span
-              class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
-              data-test="DesignSystem-Avatar"
-              tabindex="-1"
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
             >
               <span
-                class="Text Text--default Text--regular overflow-hidden Avatar-content"
-                data-test="DesignSystem-Text"
+                class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
+                data-test="DesignSystem-Avatar"
+                tabindex="-1"
               >
-                +1
+                <span
+                  class="Text Text--default Text--regular overflow-hidden Avatar-content"
+                  data-test="DesignSystem-Text"
+                >
+                  +1
+                </span>
               </span>
             </span>
           </span>
@@ -1028,29 +1124,33 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-            <style />
-            <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            <span
+              class="position-relative d-inline-flex"
             >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
+              <style />
+              <div
+                class="OutsideClick PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class="Avatar Avatar--tiny Avatar--accent1 Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="checkbox"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
-                    data-test="DesignSystem-Text"
+                    class="Avatar Avatar--tiny Avatar--accent1 Avatar--default cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
                   >
-                    JD
+                    <span
+                      class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
+                      data-test="DesignSystem-Text"
+                    >
+                      JD
+                    </span>
                   </span>
                 </span>
-              </span>
-            </div>
+              </div>
+            </span>
           </div>
         </span>
         <span
@@ -1064,29 +1164,33 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-            <style />
-            <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            <span
+              class="position-relative d-inline-flex"
             >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
+              <style />
+              <div
+                class="OutsideClick PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class="Avatar Avatar--tiny Avatar--alert Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="checkbox"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
-                    data-test="DesignSystem-Text"
+                    class="Avatar Avatar--tiny Avatar--alert Avatar--default cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
                   >
-                    SP
+                    <span
+                      class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                      data-test="DesignSystem-Text"
+                    >
+                      SP
+                    </span>
                   </span>
                 </span>
-              </span>
-            </div>
+              </div>
+            </span>
           </div>
         </span>
         <span
@@ -1100,29 +1204,33 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-            <style />
-            <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            <span
+              class="position-relative d-inline-flex"
             >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
+              <style />
+              <div
+                class="OutsideClick PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class="Avatar Avatar--tiny Avatar--warning Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="checkbox"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
-                    data-test="DesignSystem-Text"
+                    class="Avatar Avatar--tiny Avatar--warning Avatar--default cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
                   >
-                    NW
+                    <span
+                      class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
+                      data-test="DesignSystem-Text"
+                    >
+                      NW
+                    </span>
                   </span>
                 </span>
-              </span>
-            </div>
+              </div>
+            </span>
           </div>
         </span>
         <span
@@ -1136,29 +1244,33 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-            <style />
-            <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            <span
+              class="position-relative d-inline-flex"
             >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
+              <style />
+              <div
+                class="OutsideClick PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="checkbox"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
-                    data-test="DesignSystem-Text"
+                    class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
                   >
-                    MG
+                    <span
+                      class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                      data-test="DesignSystem-Text"
+                    >
+                      MG
+                    </span>
                   </span>
                 </span>
-              </span>
-            </div>
+              </div>
+            </span>
           </div>
         </span>
         <span
@@ -1172,29 +1284,33 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-            <style />
-            <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            <span
+              class="position-relative d-inline-flex"
             >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
+              <style />
+              <div
+                class="OutsideClick PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="checkbox"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
-                    data-test="DesignSystem-Text"
+                    class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
                   >
-                    AS
+                    <span
+                      class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                      data-test="DesignSystem-Text"
+                    >
+                      AS
+                    </span>
                   </span>
                 </span>
-              </span>
-            </div>
+              </div>
+            </span>
           </div>
         </span>
         <style />
@@ -1212,20 +1328,24 @@ Object {
             tabindex="0"
           >
             <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="presentation"
+              class="position-relative d-inline-flex"
             >
               <span
-                class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="-1"
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="presentation"
               >
                 <span
-                  class="Text Text--default Text--regular overflow-hidden Avatar-content"
-                  data-test="DesignSystem-Text"
+                  class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
-                  +1
+                  <span
+                    class="Text Text--default Text--regular overflow-hidden Avatar-content"
+                    data-test="DesignSystem-Text"
+                  >
+                    +1
+                  </span>
                 </span>
               </span>
             </span>
@@ -1250,29 +1370,33 @@ Object {
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
           tabindex="-1"
         >
-          <style />
-          <div
-            class="OutsideClick PopperWrapper-trigger flex-grow-0"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="checkbox"
+            <style />
+            <div
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class="Avatar Avatar--tiny Avatar--accent1 Avatar--default cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="0"
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="checkbox"
               >
                 <span
-                  class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
-                  data-test="DesignSystem-Text"
+                  class="Avatar Avatar--tiny Avatar--accent1 Avatar--default cursor-pointer"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="0"
                 >
-                  JD
+                  <span
+                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
+                    data-test="DesignSystem-Text"
+                  >
+                    JD
+                  </span>
                 </span>
               </span>
-            </span>
-          </div>
+            </div>
+          </span>
         </div>
       </span>
       <span
@@ -1286,29 +1410,33 @@ Object {
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
           tabindex="-1"
         >
-          <style />
-          <div
-            class="OutsideClick PopperWrapper-trigger flex-grow-0"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="checkbox"
+            <style />
+            <div
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class="Avatar Avatar--tiny Avatar--alert Avatar--default cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="0"
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="checkbox"
               >
                 <span
-                  class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
-                  data-test="DesignSystem-Text"
+                  class="Avatar Avatar--tiny Avatar--alert Avatar--default cursor-pointer"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="0"
                 >
-                  SP
+                  <span
+                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                    data-test="DesignSystem-Text"
+                  >
+                    SP
+                  </span>
                 </span>
               </span>
-            </span>
-          </div>
+            </div>
+          </span>
         </div>
       </span>
       <span
@@ -1322,29 +1450,33 @@ Object {
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
           tabindex="-1"
         >
-          <style />
-          <div
-            class="OutsideClick PopperWrapper-trigger flex-grow-0"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="checkbox"
+            <style />
+            <div
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class="Avatar Avatar--tiny Avatar--warning Avatar--default cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="0"
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="checkbox"
               >
                 <span
-                  class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
-                  data-test="DesignSystem-Text"
+                  class="Avatar Avatar--tiny Avatar--warning Avatar--default cursor-pointer"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="0"
                 >
-                  NW
+                  <span
+                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
+                    data-test="DesignSystem-Text"
+                  >
+                    NW
+                  </span>
                 </span>
               </span>
-            </span>
-          </div>
+            </div>
+          </span>
         </div>
       </span>
       <span
@@ -1358,29 +1490,33 @@ Object {
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
           tabindex="-1"
         >
-          <style />
-          <div
-            class="OutsideClick PopperWrapper-trigger flex-grow-0"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="checkbox"
+            <style />
+            <div
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="0"
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="checkbox"
               >
                 <span
-                  class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
-                  data-test="DesignSystem-Text"
+                  class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="0"
                 >
-                  MG
+                  <span
+                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                    data-test="DesignSystem-Text"
+                  >
+                    MG
+                  </span>
                 </span>
               </span>
-            </span>
-          </div>
+            </div>
+          </span>
         </div>
       </span>
       <span
@@ -1394,29 +1530,33 @@ Object {
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
           tabindex="-1"
         >
-          <style />
-          <div
-            class="OutsideClick PopperWrapper-trigger flex-grow-0"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="checkbox"
+            <style />
+            <div
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="0"
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="checkbox"
               >
                 <span
-                  class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
-                  data-test="DesignSystem-Text"
+                  class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="0"
                 >
-                  AS
+                  <span
+                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                    data-test="DesignSystem-Text"
+                  >
+                    AS
+                  </span>
                 </span>
               </span>
-            </span>
-          </div>
+            </div>
+          </span>
         </div>
       </span>
       <style />
@@ -1434,20 +1574,24 @@ Object {
           tabindex="0"
         >
           <span
-            class=""
-            data-test="DesignSystem-AvatarWrapper"
-            role="presentation"
+            class="position-relative d-inline-flex"
           >
             <span
-              class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
-              data-test="DesignSystem-Avatar"
-              tabindex="-1"
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
             >
               <span
-                class="Text Text--default Text--regular overflow-hidden Avatar-content"
-                data-test="DesignSystem-Text"
+                class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
+                data-test="DesignSystem-Avatar"
+                tabindex="-1"
               >
-                +1
+                <span
+                  class="Text Text--default Text--regular overflow-hidden Avatar-content"
+                  data-test="DesignSystem-Text"
+                >
+                  +1
+                </span>
               </span>
             </span>
           </span>
@@ -1531,29 +1675,33 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-            <style />
-            <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            <span
+              class="position-relative d-inline-flex"
             >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
+              <style />
+              <div
+                class="OutsideClick PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="checkbox"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-                    data-test="DesignSystem-Text"
+                    class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
                   >
-                    JD
+                    <span
+                      class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                      data-test="DesignSystem-Text"
+                    >
+                      JD
+                    </span>
                   </span>
                 </span>
-              </span>
-            </div>
+              </div>
+            </span>
           </div>
         </span>
         <span
@@ -1567,29 +1715,33 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-            <style />
-            <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            <span
+              class="position-relative d-inline-flex"
             >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
+              <style />
+              <div
+                class="OutsideClick PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="checkbox"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-                    data-test="DesignSystem-Text"
+                    class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
                   >
-                    SP
+                    <span
+                      class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                      data-test="DesignSystem-Text"
+                    >
+                      SP
+                    </span>
                   </span>
                 </span>
-              </span>
-            </div>
+              </div>
+            </span>
           </div>
         </span>
         <span
@@ -1603,29 +1755,33 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-            <style />
-            <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            <span
+              class="position-relative d-inline-flex"
             >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
+              <style />
+              <div
+                class="OutsideClick PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="checkbox"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-                    data-test="DesignSystem-Text"
+                    class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
                   >
-                    NW
+                    <span
+                      class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                      data-test="DesignSystem-Text"
+                    >
+                      NW
+                    </span>
                   </span>
                 </span>
-              </span>
-            </div>
+              </div>
+            </span>
           </div>
         </span>
         <span
@@ -1639,29 +1795,33 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-            <style />
-            <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            <span
+              class="position-relative d-inline-flex"
             >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
+              <style />
+              <div
+                class="OutsideClick PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="checkbox"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-                    data-test="DesignSystem-Text"
+                    class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
                   >
-                    MG
+                    <span
+                      class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                      data-test="DesignSystem-Text"
+                    >
+                      MG
+                    </span>
                   </span>
                 </span>
-              </span>
-            </div>
+              </div>
+            </span>
           </div>
         </span>
         <span
@@ -1675,29 +1835,33 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-            <style />
-            <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            <span
+              class="position-relative d-inline-flex"
             >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
+              <style />
+              <div
+                class="OutsideClick PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="checkbox"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-                    data-test="DesignSystem-Text"
+                    class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
                   >
-                    AS
+                    <span
+                      class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                      data-test="DesignSystem-Text"
+                    >
+                      AS
+                    </span>
                   </span>
                 </span>
-              </span>
-            </div>
+              </div>
+            </span>
           </div>
         </span>
         <style />
@@ -1715,20 +1879,24 @@ Object {
             tabindex="0"
           >
             <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="presentation"
+              class="position-relative d-inline-flex"
             >
               <span
-                class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="-1"
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="presentation"
               >
                 <span
-                  class="Text Text--default Text--regular overflow-hidden Avatar-content"
-                  data-test="DesignSystem-Text"
+                  class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
-                  +1
+                  <span
+                    class="Text Text--default Text--regular overflow-hidden Avatar-content"
+                    data-test="DesignSystem-Text"
+                  >
+                    +1
+                  </span>
                 </span>
               </span>
             </span>
@@ -1796,20 +1964,24 @@ Object {
             tabindex="0"
           >
             <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="presentation"
+              class="position-relative d-inline-flex"
             >
               <span
-                class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="-1"
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="presentation"
               >
                 <span
-                  class="Text Text--default Text--regular overflow-hidden Avatar-content"
-                  data-test="DesignSystem-Text"
+                  class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
-                  +1
+                  <span
+                    class="Text Text--default Text--regular overflow-hidden Avatar-content"
+                    data-test="DesignSystem-Text"
+                  >
+                    +1
+                  </span>
                 </span>
               </span>
             </span>
@@ -1833,29 +2005,33 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-            <style />
-            <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            <span
+              class="position-relative d-inline-flex"
             >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
+              <style />
+              <div
+                class="OutsideClick PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class="Avatar Avatar--tiny Avatar--accent1 Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="checkbox"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
-                    data-test="DesignSystem-Text"
+                    class="Avatar Avatar--tiny Avatar--accent1 Avatar--default cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
                   >
-                    JD
+                    <span
+                      class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
+                      data-test="DesignSystem-Text"
+                    >
+                      JD
+                    </span>
                   </span>
                 </span>
-              </span>
-            </div>
+              </div>
+            </span>
           </div>
         </span>
         <span
@@ -1869,29 +2045,33 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-            <style />
-            <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            <span
+              class="position-relative d-inline-flex"
             >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
+              <style />
+              <div
+                class="OutsideClick PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class="Avatar Avatar--tiny Avatar--alert Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="checkbox"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
-                    data-test="DesignSystem-Text"
+                    class="Avatar Avatar--tiny Avatar--alert Avatar--default cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
                   >
-                    SP
+                    <span
+                      class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                      data-test="DesignSystem-Text"
+                    >
+                      SP
+                    </span>
                   </span>
                 </span>
-              </span>
-            </div>
+              </div>
+            </span>
           </div>
         </span>
         <span
@@ -1905,29 +2085,33 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-            <style />
-            <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            <span
+              class="position-relative d-inline-flex"
             >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
+              <style />
+              <div
+                class="OutsideClick PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class="Avatar Avatar--tiny Avatar--warning Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="checkbox"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
-                    data-test="DesignSystem-Text"
+                    class="Avatar Avatar--tiny Avatar--warning Avatar--default cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
                   >
-                    NW
+                    <span
+                      class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
+                      data-test="DesignSystem-Text"
+                    >
+                      NW
+                    </span>
                   </span>
                 </span>
-              </span>
-            </div>
+              </div>
+            </span>
           </div>
         </span>
         <span
@@ -1941,29 +2125,33 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-            <style />
-            <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            <span
+              class="position-relative d-inline-flex"
             >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
+              <style />
+              <div
+                class="OutsideClick PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="checkbox"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
-                    data-test="DesignSystem-Text"
+                    class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
                   >
-                    MG
+                    <span
+                      class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                      data-test="DesignSystem-Text"
+                    >
+                      MG
+                    </span>
                   </span>
                 </span>
-              </span>
-            </div>
+              </div>
+            </span>
           </div>
         </span>
         <span
@@ -1977,29 +2165,33 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-            <style />
-            <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            <span
+              class="position-relative d-inline-flex"
             >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
+              <style />
+              <div
+                class="OutsideClick PopperWrapper-trigger flex-grow-0"
               >
                 <span
-                  class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="checkbox"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
-                    data-test="DesignSystem-Text"
+                    class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
                   >
-                    AS
+                    <span
+                      class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                      data-test="DesignSystem-Text"
+                    >
+                      AS
+                    </span>
                   </span>
                 </span>
-              </span>
-            </div>
+              </div>
+            </span>
           </div>
         </span>
         <style />
@@ -2017,20 +2209,24 @@ Object {
             tabindex="0"
           >
             <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="presentation"
+              class="position-relative d-inline-flex"
             >
               <span
-                class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="-1"
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="presentation"
               >
                 <span
-                  class="Text Text--default Text--regular overflow-hidden Avatar-content"
-                  data-test="DesignSystem-Text"
+                  class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="-1"
                 >
-                  +1
+                  <span
+                    class="Text Text--default Text--regular overflow-hidden Avatar-content"
+                    data-test="DesignSystem-Text"
+                  >
+                    +1
+                  </span>
                 </span>
               </span>
             </span>
@@ -2055,29 +2251,33 @@ Object {
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
           tabindex="-1"
         >
-          <style />
-          <div
-            class="OutsideClick PopperWrapper-trigger flex-grow-0"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="checkbox"
+            <style />
+            <div
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class="Avatar Avatar--tiny Avatar--accent1 Avatar--default cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="0"
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="checkbox"
               >
                 <span
-                  class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
-                  data-test="DesignSystem-Text"
+                  class="Avatar Avatar--tiny Avatar--accent1 Avatar--default cursor-pointer"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="0"
                 >
-                  JD
+                  <span
+                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
+                    data-test="DesignSystem-Text"
+                  >
+                    JD
+                  </span>
                 </span>
               </span>
-            </span>
-          </div>
+            </div>
+          </span>
         </div>
       </span>
       <span
@@ -2091,29 +2291,33 @@ Object {
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
           tabindex="-1"
         >
-          <style />
-          <div
-            class="OutsideClick PopperWrapper-trigger flex-grow-0"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="checkbox"
+            <style />
+            <div
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class="Avatar Avatar--tiny Avatar--alert Avatar--default cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="0"
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="checkbox"
               >
                 <span
-                  class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
-                  data-test="DesignSystem-Text"
+                  class="Avatar Avatar--tiny Avatar--alert Avatar--default cursor-pointer"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="0"
                 >
-                  SP
+                  <span
+                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                    data-test="DesignSystem-Text"
+                  >
+                    SP
+                  </span>
                 </span>
               </span>
-            </span>
-          </div>
+            </div>
+          </span>
         </div>
       </span>
       <span
@@ -2127,29 +2331,33 @@ Object {
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
           tabindex="-1"
         >
-          <style />
-          <div
-            class="OutsideClick PopperWrapper-trigger flex-grow-0"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="checkbox"
+            <style />
+            <div
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class="Avatar Avatar--tiny Avatar--warning Avatar--default cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="0"
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="checkbox"
               >
                 <span
-                  class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
-                  data-test="DesignSystem-Text"
+                  class="Avatar Avatar--tiny Avatar--warning Avatar--default cursor-pointer"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="0"
                 >
-                  NW
+                  <span
+                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
+                    data-test="DesignSystem-Text"
+                  >
+                    NW
+                  </span>
                 </span>
               </span>
-            </span>
-          </div>
+            </div>
+          </span>
         </div>
       </span>
       <span
@@ -2163,29 +2371,33 @@ Object {
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
           tabindex="-1"
         >
-          <style />
-          <div
-            class="OutsideClick PopperWrapper-trigger flex-grow-0"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="checkbox"
+            <style />
+            <div
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="0"
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="checkbox"
               >
                 <span
-                  class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
-                  data-test="DesignSystem-Text"
+                  class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="0"
                 >
-                  MG
+                  <span
+                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                    data-test="DesignSystem-Text"
+                  >
+                    MG
+                  </span>
                 </span>
               </span>
-            </span>
-          </div>
+            </div>
+          </span>
         </div>
       </span>
       <span
@@ -2199,29 +2411,33 @@ Object {
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
           tabindex="-1"
         >
-          <style />
-          <div
-            class="OutsideClick PopperWrapper-trigger flex-grow-0"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="checkbox"
+            <style />
+            <div
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
-                class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="0"
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="checkbox"
               >
                 <span
-                  class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
-                  data-test="DesignSystem-Text"
+                  class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="0"
                 >
-                  AS
+                  <span
+                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                    data-test="DesignSystem-Text"
+                  >
+                    AS
+                  </span>
                 </span>
               </span>
-            </span>
-          </div>
+            </div>
+          </span>
         </div>
       </span>
       <style />
@@ -2239,20 +2455,24 @@ Object {
           tabindex="0"
         >
           <span
-            class=""
-            data-test="DesignSystem-AvatarWrapper"
-            role="presentation"
+            class="position-relative d-inline-flex"
           >
             <span
-              class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
-              data-test="DesignSystem-Avatar"
-              tabindex="-1"
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
             >
               <span
-                class="Text Text--default Text--regular overflow-hidden Avatar-content"
-                data-test="DesignSystem-Text"
+                class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
+                data-test="DesignSystem-Avatar"
+                tabindex="-1"
               >
-                +1
+                <span
+                  class="Text Text--default Text--regular overflow-hidden Avatar-content"
+                  data-test="DesignSystem-Text"
+                >
+                  +1
+                </span>
               </span>
             </span>
           </span>

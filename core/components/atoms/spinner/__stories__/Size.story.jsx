@@ -8,7 +8,7 @@ export const size = () => {
     <div className="d-flex">
       {sizes.map((SpinnerSize, ind) => {
         return (
-          <div key={ind} className="mr-8">
+          <div key={ind} className="mr-8 d-flex flex-column align-items-center">
             <div className="h-75">
               <Spinner size={SpinnerSize} />
             </div>

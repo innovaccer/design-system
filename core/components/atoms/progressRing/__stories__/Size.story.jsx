@@ -8,7 +8,7 @@ export const size = () => {
     <div className="d-flex">
       {sizes.map((ProgressRingSize, ind) => {
         return (
-          <div key={ind} className="mr-10">
+          <div key={ind} className="mr-10 d-flex flex-column align-items-center">
             <ProgressRing size={ProgressRingSize} value={30} />
             <br />
             <Text weight="strong">{ProgressRingSize.charAt(0).toUpperCase() + ProgressRingSize.slice(1)}</Text>

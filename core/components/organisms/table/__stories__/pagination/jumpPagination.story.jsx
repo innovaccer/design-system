@@ -2,33 +2,14 @@ import * as React from 'react';
 import { Card, Table } from '@/index';
 import data from '@/components/organisms/grid/__stories__/_common_/data';
 import schema from '@/components/organisms/grid/__stories__/_common_/schema';
-import { action } from '@/utils/action';
 import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/_common_/types';
 
-export const withHeader = () => {
+// CSF format story
+export const jumpPagination = () => {
   return (
-    <div className="vh-75">
+    <div className="vh-50">
       <Card className="h-100 overflow-hidden">
-        <Table
-          data={data}
-          schema={schema}
-          withHeader={true}
-          withCheckbox={true}
-          showHead={false}
-          draggable={true}
-          withPagination={true}
-          onSelect={(rowIndex, selected, selectedList, selectAll) =>
-            action(
-              `on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(
-                selectedList
-              )} selectAll: ${selectAll}`
-            )()
-          }
-          onPageChange={(newPage) => action(`on-page-change:- ${newPage}`)()}
-          headerOptions={{
-            withSearch: true,
-          }}
-        />
+        <Table data={data} pageSize={6} schema={schema} withPagination={true} paginationType={'jump'} />
       </Card>
     </div>
   );
@@ -42,7 +23,6 @@ const customCode = `
     {
       name: 'name',
       displayName: 'Name',
-      width: 300,
       resizable: true,
       separator: true,
       tooltip: true,
@@ -80,7 +60,6 @@ const customCode = `
       width: 350,
       resizable: true,
       sorting: false,
-      cellType: 'WITH_META_LIST'
     },
     {
       name: 'gender',
@@ -111,6 +90,7 @@ const customCode = `
       resizable: true,
       align: 'center',
       cellType: 'ICON',
+      sorting: false,
       translate: _ => ({
         icon: 'events'
       })
@@ -121,6 +101,7 @@ const customCode = `
       width: 200,
       resizable: true,
       cellType: 'WITH_META_LIST',
+      sorting: false,
       cellRenderer: props => {
         return (
           <>
@@ -139,24 +120,14 @@ const customCode = `
   ];
 
   return (
-    <div
-      className="vh-75"
-    >
+    <div className="vh-50">
       <Card className="h-100 overflow-hidden">
         <Table
           data={data}
+          pageSize={6}
           schema={schema}
-          withHeader={true}
-          withCheckbox={true}
-          showHead={false}
-          draggable={true}
-          onSelect={function(){}}
           withPagination={true}
-          pageSize={15}
-          onPageChange={function(){}}
-          headerOptions={{
-            withSearch: true,
-          }}
+          paginationType={'jump'}
         />
       </Card>
     </div>
@@ -165,13 +136,13 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/Table/Variants/With Header',
+  title: 'Components/Table/Pagination/Jump Pagination',
   component: Table,
   parameters: {
     docs: {
       docPage: {
         customCode,
-        title: 'Standard Table',
+        title: 'Jump Pagination in Table',
         props: {
           components: { AsyncTable, SyncTable },
           exclude: ['showHead'],
