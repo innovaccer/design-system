@@ -149,6 +149,13 @@ interface AsyncProps {
    *      searchTerm?: string;
    *  }
    * </pre>
+   *
+   * <pre className="DocPage-codeBlock">
+   * fetchData returns a promise which
+   *  - resolves with data, schema, count and searchTerm
+   *  - rejects with error: true, errorType: 'FAILED\_TO\_FETCH'
+   *  - resolves with no records found, error: true, errorType: 'NO\_RECORDS\_FOUND'
+   * </pre>
    */
   fetchData?: fetchDataFunction;
 }
@@ -297,6 +304,22 @@ interface SharedTableProps extends BaseProps {
    *    errorType: TableProps['errorType']
    * }
    * </pre>
+   *
+   * Default errorTemplate:
+   *
+   * <pre class="DocPage-codeBlock mx-6 mb-7">
+   * (props) => {
+   *      const { errorType = 'DEFAULT' } = props;
+   *      const errorMessages = {
+   *        'FAILED\_TO\_FETCH': 'Failed to fetch data',
+   *        'NO\_RECORDS\_FOUND': 'No results found',
+   *        'DEFAULT': 'No results found'
+   *      }
+   *      return(
+   *        \<Heading>{errorMessages[errorType]}\</Heading>
+   *      );
+   * }
+   * </pre>
    */
   errorTemplate?: React.FunctionComponent<ErrorTemplateProps>;
   /**
@@ -405,33 +428,6 @@ export const defaultProps = {
   pageJumpDebounceDuration: 750,
   errorTemplate: defaultErrorTemplate,
 };
-
-/**
- * ###Note:
- * 1. Sync Table:
- *  - Manually toggle loading/error state to update data, schema.
- * 2. Async Table:
- *  - fetchData return:
- *    - Promise resolve with no records:
- *      error: true, errorType: 'NO\_RECORDS\_FOUND'
- *    - Promise reject:
- *      error: true, errorType: 'FAILED\_TO\_FETCH'
- * 3. Default errorTemplate:
- *
- * <pre class="DocPage-codeBlock mx-6 mb-7">
- * (props) => {
- *      const { errorType = 'DEFAULT' } = props;
- *      const errorMessages = {
- *        'FAILED\_TO\_FETCH': 'Failed to fetch data',
- *        'NO\_RECORDS\_FOUND': 'No results found',
- *        'DEFAULT': 'No results found'
- *      }
- *      return(
- *        \<Heading>{errorMessages[errorType]}\</Heading>
- *      );
- * }
- * </pre>
- */
 
 export class Table extends React.Component<TableProps, TableState> {
   static defaultProps = defaultProps;
