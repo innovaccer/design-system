@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { Button } from '@/index';
 import { ButtonProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import styles from '@css/components/overlay.module.css';
 
 export interface OverlayFooterProps extends BaseProps {
   open?: boolean;
@@ -17,7 +18,7 @@ export const OverlayFooter = (props: OverlayFooterProps) => {
 
   const classes = classNames(
     {
-      OverlayFooter: true,
+      [styles.OverlayFooter]: true,
     },
     className
   );

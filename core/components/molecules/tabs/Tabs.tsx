@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { Pills, Icon, Text, Tab, Tooltip } from '@/index';
 import { BaseProps, extractBaseProps, SingleOrArray } from '@/utils/types';
 import { IconType, TTabSize } from '@/common.type';
+import styles from '@css/components/tabs.module.css';
 
 type Tab = React.ReactElement | TabConfig;
 type noop = (tabInfo: TabInfo) => void;
@@ -126,15 +127,15 @@ export const Tabs = (props: TabsProps) => {
 
   const wrapperClass = classNames(
     {
-      ['TabsWrapper']: true,
+      [styles['TabsWrapper']]: true,
     },
     className
   );
 
   const headerClass = classNames(
     {
-      ['TabsWrapper-header']: true,
-      ['TabsWrapper-header--withSeparator']: withSeparator,
+      [styles['TabsWrapper-header']]: true,
+      [styles['TabsWrapper-header--withSeparator']]: withSeparator,
     },
     className,
     headerClassName
@@ -142,8 +143,8 @@ export const Tabs = (props: TabsProps) => {
 
   const getPillsClass = (disabled?: boolean) =>
     classNames({
-      ['Tab-pills']: true,
-      ['Tab-pills--disabled']: disabled,
+      [styles['Tab-pills']]: true,
+      [styles['Tab-pills--disabled']]: disabled,
     });
 
   const getActiveTabClass = () => {
@@ -164,7 +165,7 @@ export const Tabs = (props: TabsProps) => {
   const activeTabClass = getActiveTabClass();
 
   const tabContentClass = classNames({
-    ['TabsWrapper-content']: true,
+    [styles['TabsWrapper-content']]: true,
     [`${activeTabClass}`]: activeTabClass,
   });
 
@@ -206,7 +207,7 @@ export const Tabs = (props: TabsProps) => {
     }
 
     const iconClass = classNames({
-      ['Tab-selected']: !disabled && activeIndex === index,
+      [styles['Tab-selected']]: !disabled && activeIndex === index,
     });
 
     if (icon) {
@@ -230,11 +231,11 @@ export const Tabs = (props: TabsProps) => {
 
     const dismissIconClass = (disabled?: boolean) =>
       classNames({
-        [`DismissibleTab-icon--right`]: true,
-        ['DismissibleTab-icon--default']: !disabled && activeIndex !== index,
-        [`DismissibleTab-icon--selected`]: !disabled && activeIndex === index,
+        [styles[`DismissibleTab-icon--right`]]: true,
+        [styles['DismissibleTab-icon--default']]: !disabled && activeIndex !== index,
+        [styles[`DismissibleTab-icon--selected`]]: !disabled && activeIndex === index,
         ['cursor-pointer']: !disabled,
-        ['Tab-selected']: !disabled && activeIndex === index,
+        [styles['Tab-selected']]: !disabled && activeIndex === index,
       });
 
     const tabInfo = { label: label, activeIndex: activeIndex, currentTabIndex: index };
@@ -265,13 +266,13 @@ export const Tabs = (props: TabsProps) => {
 
     const tabTextClass = classNames({
       ['ellipsis--noWrap']: true,
-      ['Tab-selected']: !disabled && activeIndex === index,
+      [styles['Tab-selected']]: !disabled && activeIndex === index,
     });
 
     const tabClass = classNames({
-      ['Tab--regular']: size === 'regular',
-      ['Tab--small']: size === 'small',
-      ['Tab--overflow']: true,
+      [styles['Tab--regular']]: size === 'regular',
+      [styles['Tab--small']]: size === 'small',
+      [styles['Tab--overflow']]: true,
     });
 
     return (
@@ -302,13 +303,13 @@ export const Tabs = (props: TabsProps) => {
     const { disabled, label } = currentTabProp;
 
     const tabHeaderClass = classNames({
-      ['Tab']: true,
-      ['Tab--disabled']: disabled,
-      ['Tab--active']: !disabled && activeIndex === index,
-      ['Tab-selected']: !disabled && activeIndex === index,
+      [styles['Tab']]: true,
+      [styles['Tab--disabled']]: disabled,
+      [styles['Tab--active']]: !disabled && activeIndex === index,
+      [styles['Tab-selected']]: !disabled && activeIndex === index,
       ['align-items-center']: true,
-      ['Tab--regular']: size === 'regular' && typeof label !== 'string',
-      ['Tab--small']: size === 'small' && typeof label !== 'string',
+      [styles['Tab--regular']]: size === 'regular' && typeof label !== 'string',
+      [styles['Tab--small']]: size === 'small' && typeof label !== 'string',
     });
 
     return (

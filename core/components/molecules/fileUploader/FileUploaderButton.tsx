@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Button } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import styles from '@css/components/fileUploader.module.css';
 
 export interface FileUploaderButtonProps extends BaseProps {
   /**
@@ -41,7 +42,7 @@ export const FileUploaderButton = (props: FileUploaderButtonProps) => {
 
   const FileUploaderButtonClass = classNames(
     {
-      ['FileUploaderButton']: true,
+      [styles['FileUploaderButton']]: true,
     },
     className
   );
@@ -60,7 +61,7 @@ export const FileUploaderButton = (props: FileUploaderButtonProps) => {
         disabled={disabled}
         type="file"
         tabIndex={-1}
-        className="FileUploaderButton-input"
+        className={styles["FileUploaderButton-input"]}
         onChange={(event) => {
           const fileList = event.target.files ? Array.from(event.target.files) : [];
           if (onChange) onChange(fileList, event);

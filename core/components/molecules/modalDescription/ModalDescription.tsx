@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import Text from '@/components/atoms/text';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import styles from '@css/components/modal.module.css';
 
 export interface ModalDescriptionProps extends BaseProps {
   title?: string;
@@ -14,7 +15,7 @@ export const ModalDescription = (props: ModalDescriptionProps) => {
 
   const classes = classNames(
     {
-      'Modal-description': true,
+      [styles['Modal-description']]: true,
     },
     className
   );

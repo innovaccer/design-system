@@ -10,6 +10,7 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 import { getWrapperElement, getUpdatedZIndex, closeOnEscapeKeypress } from '@/utils/overlayHelper';
 import OverlayManager from '@/utils/OverlayManager';
 import { FooterOptions } from '@/common.type';
+import styles from '@css/components/sidesheet.module.css';
 
 export type SidesheetDimension = 'regular' | 'large';
 
@@ -228,10 +229,10 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
 
     const classes = classNames(
       {
-        Sidesheet: true,
-        'Sidesheet--open': open,
-        'Sidesheet-animation--open': animate,
-        'Sidesheet-animation--close': !animate,
+        [styles.Sidesheet]: true,
+        [styles['Sidesheet--open']]: open,
+        [styles['Sidesheet-animation--open']]: animate,
+        [styles['Sidesheet-animation--close']]: !animate,
       },
       className
     );
@@ -244,26 +245,26 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
     });
 
     const headerClass = classNames({
-      ['Sidesheet-header']: true,
-      ['Sidesheet-header--withSeperator']: seperator,
+      [styles['Sidesheet-header']]: true,
+      [styles['Sidesheet-header--withSeperator']]: seperator,
     });
 
     const footerClass = classNames({
-      ['Sidesheet-footer']: true,
-      ['Sidesheet-footer--withSeperator']: seperator,
-      ['Sidesheet-footer--stickToBottom']: stickFooter,
+      [styles['Sidesheet-footer']]: true,
+      [styles['Sidesheet-footer--withSeperator']]: seperator,
+      [styles['Sidesheet-footer--stickToBottom']]: stickFooter,
     });
 
     const bodyClass = classNames({
-      ['Sidesheet-body']: true,
-      ['Sidesheet-body--withMargin']: !!footer && stickFooter,
-      ['Sidesheet-body--nextPage']: headerOptions?.backButton || headerOptions?.backIcon,
-      ['Sidesheet-body--firstPage']: !headerOptions?.backButton && !headerOptions?.backIcon,
+      [styles['Sidesheet-body']]: true,
+      [styles['Sidesheet-body--withMargin']]: !!footer && stickFooter,
+      [styles['Sidesheet-body--nextPage']]: headerOptions?.backButton || headerOptions?.backIcon,
+      [styles['Sidesheet-body--firstPage']]: !headerOptions?.backButton && !headerOptions?.backIcon,
     });
 
     const headingClass = classNames({
-      ['Sidesheet-header--shiftRight']: headerOptions?.backButton || headerOptions?.backIcon,
-      ['Sidesheet-header--shiftLeft']: !headerOptions?.backButton && !headerOptions?.backIcon,
+      [styles['Sidesheet-header--shiftRight']]: headerOptions?.backButton || headerOptions?.backIcon,
+      [styles['Sidesheet-header--shiftLeft']]: !headerOptions?.backButton && !headerOptions?.backIcon,
     });
 
     const baseProps = extractBaseProps(this.props);
