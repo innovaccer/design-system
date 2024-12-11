@@ -21,7 +21,7 @@ exports[`EditableDropdown component
         >
           <style />
           <div
-            class="OutsideClick d-inline-flex flex-grow-1 w-100"
+            class="OutsideClick PopperWrapper-trigger w-100"
           >
             <button
               class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
