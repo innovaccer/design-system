@@ -9,6 +9,7 @@ import { NestedRowProps } from './GridNestedRow';
 import classNames from 'classnames';
 import { GridProvider } from './GridContext';
 import defaultProps from './defaultProps';
+import styles from '@css/components/grid.module.css';
 
 export type SortType = 'asc' | 'desc' | 'unsort';
 export type Pinned = 'left' | 'right' | 'unpin';
@@ -494,9 +495,9 @@ export class Grid extends React.Component<GridProps, GridState> {
 
     const classes = classNames(
       {
-        Grid: 'true',
-        [`Grid--${type}`]: type,
-        [`Grid--${size}`]: size,
+        [styles.Grid]: 'true',
+        [styles[`Grid--${type}`]]: type,
+        [styles[`Grid--${size}`]]: size,
       },
       className
     );

@@ -18,6 +18,8 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 import { debounce } from 'throttle-debounce';
 import { PaginationProps } from '@/components/molecules/pagination';
 import { getUpdatedData, removeDuplicate } from './utils';
+import tableStyles from '@css/components/table.module.css';
+import classNames from 'classnames';
 
 export interface ErrorTemplateProps {
   errorType?: TableProps['errorType'];
@@ -912,11 +914,12 @@ export class Table extends React.Component<TableProps, TableState> {
 
     const { totalRecords } = this.state;
     const totalPages = getTotalPages(totalRecords, pageSize);
+    const tableClass = classNames(tableStyles['Table'], classes);
 
     return (
-      <div {...baseProps} className={`Table${classes}`} data-test="DesignSystem-Table-wrapper">
+      <div {...baseProps} className={tableClass} data-test="DesignSystem-Table-wrapper">
         {withHeader && (
-          <div className="Table-header" data-test="DesignSystem-Table-header">
+          <div data-test="DesignSystem-Table-header">
             <Header
               {...this.state}
               // updateData={updateData}
@@ -941,7 +944,7 @@ export class Table extends React.Component<TableProps, TableState> {
             </Header>
           </div>
         )}
-        <div className="Table-grid">
+        <div className={tableStyles["Table-grid"]}>
           <Grid
             {...this.state}
             key={this.state.searchTerm}
@@ -970,7 +973,7 @@ export class Table extends React.Component<TableProps, TableState> {
           />
         </div>
         {withPagination && !this.state.loading && !this.state.error && totalPages > 1 && (
-          <div className="Table-pagination">
+          <div className={tableStyles["Table-pagination"]}>
             <Pagination
               page={this.state.page}
               totalPages={getTotalPages(totalRecords, pageSize)}

@@ -5,6 +5,7 @@ import { OptionType } from '@/common.type';
 import { BaseProps } from '@/utils/types';
 import { handleKeyDown, elementExist, removeOrAddToList } from './utils';
 import classNames from 'classnames';
+import styles from '@css/components/select.module.css';
 
 type checkedType = 'checked' | 'unchecked' | 'indeterminate';
 
@@ -74,11 +75,11 @@ export const SelectOption = (props: SelectOptionProps) => {
   const indeterminate = checkedState === 'indeterminate';
 
   const optionItemClass = classNames({
-    ['Select-option']: true,
+    [styles['Select-option']]: true,
   });
 
   const textClass = classNames({
-    ['Select-option--text']: true,
+    [styles['Select-option--text']]: true,
     'pt-2': multiSelect,
   });
 

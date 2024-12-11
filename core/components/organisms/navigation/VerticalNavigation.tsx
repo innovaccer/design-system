@@ -9,6 +9,7 @@ import {
   Menu,
   ActiveMenu,
 } from '@/utils/navigationHelper';
+import styles from '@css/components/navigation.module.css';
 
 const { useState } = React;
 
@@ -124,15 +125,15 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
     const activeMenuIcon = (!expanded && isMenuActive(menus, menu, active)) || activeMenu;
 
     const menuClasses = classNames({
-      'Navigation-menu': true,
-      ['Navigation-menu--vertical']: true,
-      ['Navigation-menu--active']: activeMenu,
-      ['Navigation-menu--rounded']: expanded && rounded,
+      [styles['Navigation-menu']]: true,
+      [styles['Navigation-menu--vertical']]: true,
+      [styles['Navigation-menu--active']]: activeMenu,
+      [styles['Navigation-menu--rounded']]: expanded && rounded,
     });
 
     const menuIconClasses = classNames({
-      'Navigation-menuIcon': true,
-      'Navigation-menuIcon--active': activeMenuIcon,
+      [styles['Navigation-menuIcon']]: true,
+      [styles['Navigation-menuIcon--active']]: activeMenuIcon,
     });
 
     return (
@@ -154,7 +155,7 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
           )}
           {expanded && (
             <>
-              <span className="Navigation-menuLabel">
+              <span className={styles["Navigation-menuLabel"]}>
                 <Text appearance={getTextAppearance(activeMenu, menu.disabled)}>{menu.label}</Text>
               </span>
               {menu.subMenu && menu.subMenu.length > 0 && (
@@ -168,7 +169,7 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
             </>
           )}
         </div>
-        <div className="Navigation-subMenu">
+        <div className={styles["Navigation-subMenu"]}>
           {menuState[menu.name] &&
             menu.subMenu &&
             expanded &&
@@ -176,8 +177,8 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
               const isActive = isMenuActive(menus, subMenu, active);
 
               const subMenuClasses = classNames(menuClasses, {
-                ['Navigation-menu--subMenu']: true,
-                ['Navigation-menu--active']: isActive,
+                [styles['Navigation-menu--subMenu']]: true,
+                [styles['Navigation-menu--active']]: isActive,
               });
 
               return (
@@ -198,22 +199,16 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
     );
   });
 
-  const footerClasses = classNames({
-    'Navigation-footer': true,
-    ['Navigation-footer--border']: true,
-  });
+  const footerClasses = classNames(styles['Navigation-footer'], styles['Navigation-footer--border']);
+
+  const IconClassName = classNames(styles['Navigation-menuIcon'], styles['Navigation-menuIcon--footer']);
 
   return (
     <>
-      <div className="Navigation-body">{list}</div>
+      <div className={styles['Navigation-body']}>{list}</div>
       {footer && (
         <div className={footerClasses}>
-          <Icon
-            className="Navigation-menuIcon Navigation-menuIcon--footer"
-            name="menu_open"
-            size={16}
-            onClick={() => onToggle && onToggle(!expanded)}
-          />
+          <Icon className={IconClassName} name="menu_open" size={16} onClick={() => onToggle && onToggle(!expanded)} />
         </div>
       )}
     </>

@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { Checkbox, Radio, Label } from '@/index';
 import { BaseProps } from '@/utils/types';
 import { ChangeEvent } from '@/common.type';
+import styles from '@css/components/choiceList.module.css';
 
 export type ChoiceListAlignment = 'horizontal' | 'vertical';
 export type ChoiceListSize = 'regular' | 'tiny';
@@ -134,7 +135,7 @@ const renderRadio = (
 
 const getCheckboxClassName = (alignment: ChoiceListAlignment, index: number) => {
   const ChoiceListCheckboxClass = classNames({
-    [`ChoiceList-checkbox--${alignment}`]: true,
+    [styles[`ChoiceList-checkbox--${alignment}`]]: true,
     ['ml-0']: index === 0 && alignment === 'horizontal',
     ['mt-4']: alignment === 'horizontal',
   });
@@ -143,7 +144,7 @@ const getCheckboxClassName = (alignment: ChoiceListAlignment, index: number) => 
 
 const getRadioClassName = (alignment: ChoiceListAlignment, index: number) => {
   const ChoiceListRadioClass = classNames({
-    [`ChoiceList-radio--${alignment}`]: true,
+    [styles[`ChoiceList-radio--${alignment}`]]: true,
     ['ml-0']: index === 0 && alignment === 'horizontal',
     ['mt-4']: alignment === 'horizontal',
   });
@@ -166,17 +167,17 @@ export const ChoiceList = (props: ChoiceListProps) => {
   let selectedChoiceValue = (selected && selected) || [];
   const ChoiceListClass = classNames(
     {
-      ['ChoiceList']: true,
+      [styles['ChoiceList']]: true,
     },
     className
   );
 
   const ChoiceListVerticalClass = classNames({
-    ['ChoiceList--alignVertical']: true,
+    [styles['ChoiceList--alignVertical']]: true,
   });
 
   const ChoiceHorizontalClass = classNames({
-    ['ChoiceList--alignHorizontal']: true,
+    [styles['ChoiceList--alignHorizontal']]: true,
   });
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
