@@ -6,6 +6,7 @@ import { GridNestedRow } from './GridNestedRow';
 import { Cell } from './Cell';
 import GridContext from './GridContext';
 import { GridBodyProps } from './GridBody';
+import styles from '@css/components/grid.module.css';
 
 export interface GridRowProps {
   schema: Schema;
@@ -25,9 +26,9 @@ export const GridRow = (props: GridRowProps) => {
   const rowRef = React.useRef<HTMLDivElement>(null);
   const [expanded, setExpanded] = React.useState<boolean>(false);
 
-  const rowClasses = classNames('Grid-row', 'Grid-row--body', {
-    'Grid-row--selected': data._selected,
-    'Grid-row--disabled': data.disabled,
+  const rowClasses = classNames(styles['Grid-row'], styles['Grid-row--body'], {
+    [styles['Grid-row--selected']]: data._selected,
+    [styles['Grid-row--disabled']]: data.disabled,
   });
 
   const onClickHandler = React.useCallback(() => {
@@ -54,10 +55,12 @@ export const GridRow = (props: GridRowProps) => {
   const renderCheckbox = (show: boolean) => {
     if (!show || !withCheckbox) return null;
 
+    const CheckboxClass = classNames(styles['Grid-cell'], styles['Grid-cell--body'], styles['Grid-cell--checkbox']);
+
     return (
       // TODO(a11y)
       // eslint-disable-next-line
-      <div className="Grid-cell Grid-cell--body Grid-cell--checkbox" onClick={(e) => e.stopPropagation()}>
+      <div className={CheckboxClass} onClick={(e) => e.stopPropagation()}>
         {loading ? (
           <Placeholder />
         ) : (
@@ -75,10 +78,10 @@ export const GridRow = (props: GridRowProps) => {
   const renderSchema = (currSchema: Schema, shouldRenderCheckbox: boolean, pinned?: Pinned) => {
     if (currSchema.length) {
       const classes = classNames({
-        'Grid-cellGroup': true,
-        'Grid-cellGroup--pinned': pinned,
-        [`Grid-cellGroup--pinned-${pinned}`]: pinned,
-        'Grid-cellGroup--main': !pinned,
+        [styles['Grid-cellGroup']]: true,
+        [styles['Grid-cellGroup--pinned']]: pinned,
+        [styles[`Grid-cellGroup--pinned-${pinned}`]]: pinned,
+        [styles['Grid-cellGroup--main']]: !pinned,
       });
 
       return (
@@ -109,7 +112,7 @@ export const GridRow = (props: GridRowProps) => {
   };
 
   const wrapperClasses = classNames(className, {
-    'Grid-rowWrapper': true,
+    [styles['Grid-rowWrapper']]: true,
   });
 
   return (
@@ -121,7 +124,7 @@ export const GridRow = (props: GridRowProps) => {
         {renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length)}
         {renderSchema(rightPinnedSchema, false, 'right')}
       </div>
-      {nestedRows && expanded && <div className="Grid-nestedRow">{nestedRowData}</div>}
+      {nestedRows && expanded && <div className={styles["Grid-nestedRow"]}>{nestedRowData}</div>}
     </div>
   );
 };

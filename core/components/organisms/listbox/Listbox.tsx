@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { DraggableList } from './reorderList';
 import { ListboxItem } from './listboxItem';
 import { TListboxSize } from '@/common.type';
+import styles from '@css/components/listbox.module.css';
 
 type ListboxType = 'option' | 'description' | 'resource';
 export type TagType = 'ul' | 'ol' | 'div' | 'nav';
@@ -48,12 +49,7 @@ export const Listbox = (props: ListboxProps) => {
   const { children, className, draggable, size, type, showDivider, tagName: Tag, ...rest } = props;
   const baseProps = extractBaseProps(props);
 
-  const classes = classNames(
-    {
-      Listbox: true,
-    },
-    className
-  );
+  const classes = classNames(styles.Listbox, className);
 
   const sharedProp = {
     size,

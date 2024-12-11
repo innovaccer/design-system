@@ -11,6 +11,7 @@ import classNames from 'classnames';
 import MenuContext from './MenuContext';
 import { focusListItem } from './trigger/utils';
 import SubMenuContext from './SubMenuContext';
+import styles from '@css/components/menu.module.css';
 
 export interface MenuProps extends BaseProps {
   /**
@@ -66,12 +67,7 @@ export const Menu = (props: MenuProps) => {
 
   const { menuID } = subMenuContextProp;
 
-  const popoverClassName = classNames(
-    {
-      ['Menu']: true,
-    },
-    className
-  );
+  const popoverClassName = classNames(styles.Menu, className);
 
   React.useEffect(() => {
     setOpenPopover(open);
