@@ -221,7 +221,7 @@ exports[`Modal component
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1"
+              class="OutsideClick PopperWrapper-trigger"
             >
               <button
                 class="Button Button--regular Button--regularSquare Button--transparent"
@@ -389,7 +389,7 @@ exports[`Modal component
             >
               <style />
               <div
-                class="OutsideClick d-inline-flex flex-grow-1"
+                class="OutsideClick PopperWrapper-trigger"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -569,7 +569,7 @@ exports[`Modal component
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1"
+              class="OutsideClick PopperWrapper-trigger"
             >
               <button
                 class="Button Button--regular Button--regularSquare Button--transparent"
@@ -729,7 +729,7 @@ exports[`Modal component
             >
               <style />
               <div
-                class="OutsideClick d-inline-flex flex-grow-1"
+                class="OutsideClick PopperWrapper-trigger"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -1052,7 +1052,7 @@ exports[`Modal component
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1"
+              class="OutsideClick PopperWrapper-trigger"
             >
               <button
                 class="Button Button--regular Button--regularSquare Button--transparent"
@@ -1220,7 +1220,7 @@ exports[`Modal component
             >
               <style />
               <div
-                class="OutsideClick d-inline-flex flex-grow-1"
+                class="OutsideClick PopperWrapper-trigger"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -1400,7 +1400,7 @@ exports[`Modal component
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1"
+              class="OutsideClick PopperWrapper-trigger"
             >
               <button
                 class="Button Button--regular Button--regularSquare Button--transparent"
@@ -1560,7 +1560,7 @@ exports[`Modal component
             >
               <style />
               <div
-                class="OutsideClick d-inline-flex flex-grow-1"
+                class="OutsideClick PopperWrapper-trigger"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -1883,7 +1883,7 @@ exports[`Modal component
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1"
+              class="OutsideClick PopperWrapper-trigger"
             >
               <button
                 class="Button Button--regular Button--regularSquare Button--transparent"
@@ -2051,7 +2051,7 @@ exports[`Modal component
             >
               <style />
               <div
-                class="OutsideClick d-inline-flex flex-grow-1"
+                class="OutsideClick PopperWrapper-trigger"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -2231,7 +2231,7 @@ exports[`Modal component
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1"
+              class="OutsideClick PopperWrapper-trigger"
             >
               <button
                 class="Button Button--regular Button--regularSquare Button--transparent"
@@ -2391,7 +2391,7 @@ exports[`Modal component
             >
               <style />
               <div
-                class="OutsideClick d-inline-flex flex-grow-1"
+                class="OutsideClick PopperWrapper-trigger"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"

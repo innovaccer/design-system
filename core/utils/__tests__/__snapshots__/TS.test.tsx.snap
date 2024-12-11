@@ -771,7 +771,7 @@ exports[`TS renders children 1`] = `
   >
     <style />
     <div
-      class="OutsideClick d-inline-flex flex-grow-1 w-100"
+      class="OutsideClick PopperWrapper-trigger w-100"
     >
       <button
         class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -817,7 +817,7 @@ exports[`TS renders children 1`] = `
         >
           <style />
           <div
-            class="OutsideClick d-inline-flex flex-grow-1 w-100"
+            class="OutsideClick PopperWrapper-trigger w-100"
           >
             <button
               class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -1558,7 +1558,7 @@ exports[`TS renders children 1`] = `
   </div>
   <style />
   <div
-    class="OutsideClick d-inline-flex flex-grow-1"
+    class="OutsideClick PopperWrapper-trigger"
   >
     <span
       class="Text Text--default Text--regular"
@@ -1778,7 +1778,7 @@ exports[`TS renders children 1`] = `
   </svg>
   <style />
   <div
-    class="OutsideClick d-inline-flex flex-grow-1"
+    class="OutsideClick PopperWrapper-trigger"
   >
     <span
       class="Text Text--default Text--regular"

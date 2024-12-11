@@ -24,7 +24,7 @@ Object {
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
                 class=""
@@ -60,7 +60,7 @@ Object {
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
                 class=""
@@ -96,7 +96,7 @@ Object {
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
                 class=""
@@ -132,7 +132,7 @@ Object {
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
                 class=""
@@ -168,7 +168,7 @@ Object {
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
                 class=""
@@ -193,7 +193,7 @@ Object {
         </span>
         <style />
         <div
-          class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
           <div
             aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -246,7 +246,7 @@ Object {
         >
           <style />
           <div
-            class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+            class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
               class=""
@@ -282,7 +282,7 @@ Object {
         >
           <style />
           <div
-            class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+            class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
               class=""
@@ -318,7 +318,7 @@ Object {
         >
           <style />
           <div
-            class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+            class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
               class=""
@@ -354,7 +354,7 @@ Object {
         >
           <style />
           <div
-            class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+            class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
               class=""
@@ -390,7 +390,7 @@ Object {
         >
           <style />
           <div
-            class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+            class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
               class=""
@@ -415,7 +415,7 @@ Object {
       </span>
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+        class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <div
           aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -527,7 +527,7 @@ Object {
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
                 class=""
@@ -563,7 +563,7 @@ Object {
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
                 class=""
@@ -599,7 +599,7 @@ Object {
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
                 class=""
@@ -635,7 +635,7 @@ Object {
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
                 class=""
@@ -671,7 +671,7 @@ Object {
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
                 class=""
@@ -696,7 +696,7 @@ Object {
         </span>
         <style />
         <div
-          class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
           <div
             aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -749,7 +749,7 @@ Object {
         >
           <style />
           <div
-            class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+            class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
               class=""
@@ -785,7 +785,7 @@ Object {
         >
           <style />
           <div
-            class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+            class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
               class=""
@@ -821,7 +821,7 @@ Object {
         >
           <style />
           <div
-            class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+            class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
               class=""
@@ -857,7 +857,7 @@ Object {
         >
           <style />
           <div
-            class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+            class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
               class=""
@@ -893,7 +893,7 @@ Object {
         >
           <style />
           <div
-            class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+            class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
               class=""
@@ -918,7 +918,7 @@ Object {
       </span>
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+        class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <div
           aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -1030,7 +1030,7 @@ Object {
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
                 class=""
@@ -1066,7 +1066,7 @@ Object {
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
                 class=""
@@ -1102,7 +1102,7 @@ Object {
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
                 class=""
@@ -1138,7 +1138,7 @@ Object {
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
                 class=""
@@ -1174,7 +1174,7 @@ Object {
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
                 class=""
@@ -1199,7 +1199,7 @@ Object {
         </span>
         <style />
         <div
-          class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
           <div
             aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -1252,7 +1252,7 @@ Object {
         >
           <style />
           <div
-            class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+            class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
               class=""
@@ -1288,7 +1288,7 @@ Object {
         >
           <style />
           <div
-            class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+            class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
               class=""
@@ -1324,7 +1324,7 @@ Object {
         >
           <style />
           <div
-            class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+            class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
               class=""
@@ -1360,7 +1360,7 @@ Object {
         >
           <style />
           <div
-            class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+            class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
               class=""
@@ -1396,7 +1396,7 @@ Object {
         >
           <style />
           <div
-            class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+            class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
               class=""
@@ -1421,7 +1421,7 @@ Object {
       </span>
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+        class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <div
           aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -1533,7 +1533,7 @@ Object {
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
                 class=""
@@ -1569,7 +1569,7 @@ Object {
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
                 class=""
@@ -1605,7 +1605,7 @@ Object {
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
                 class=""
@@ -1641,7 +1641,7 @@ Object {
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
                 class=""
@@ -1677,7 +1677,7 @@ Object {
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
                 class=""
@@ -1702,7 +1702,7 @@ Object {
         </span>
         <style />
         <div
-          class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
           <div
             aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -1783,7 +1783,7 @@ Object {
         </div>
         <style />
         <div
-          class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
           <div
             aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -1835,7 +1835,7 @@ Object {
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
                 class=""
@@ -1871,7 +1871,7 @@ Object {
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
                 class=""
@@ -1907,7 +1907,7 @@ Object {
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
                 class=""
@@ -1943,7 +1943,7 @@ Object {
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
                 class=""
@@ -1979,7 +1979,7 @@ Object {
           >
             <style />
             <div
-              class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+              class="OutsideClick PopperWrapper-trigger flex-grow-0"
             >
               <span
                 class=""
@@ -2004,7 +2004,7 @@ Object {
         </span>
         <style />
         <div
-          class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
           <div
             aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -2057,7 +2057,7 @@ Object {
         >
           <style />
           <div
-            class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+            class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
               class=""
@@ -2093,7 +2093,7 @@ Object {
         >
           <style />
           <div
-            class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+            class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
               class=""
@@ -2129,7 +2129,7 @@ Object {
         >
           <style />
           <div
-            class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+            class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
               class=""
@@ -2165,7 +2165,7 @@ Object {
         >
           <style />
           <div
-            class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+            class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
               class=""
@@ -2201,7 +2201,7 @@ Object {
         >
           <style />
           <div
-            class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+            class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
               class=""
@@ -2226,7 +2226,7 @@ Object {
       </span>
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+        class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <div
           aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"

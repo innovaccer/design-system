@@ -13,7 +13,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -63,7 +63,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -113,7 +113,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -163,7 +163,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -213,7 +213,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -263,7 +263,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -313,7 +313,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -363,7 +363,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -413,7 +413,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -463,7 +463,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -513,7 +513,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -563,7 +563,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -613,7 +613,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -663,7 +663,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -713,7 +713,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -763,7 +763,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -813,7 +813,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -863,7 +863,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -913,7 +913,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -963,7 +963,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -1013,7 +1013,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -1063,7 +1063,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -1113,7 +1113,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -1163,7 +1163,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -1213,7 +1213,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -1263,7 +1263,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -1313,7 +1313,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -1363,7 +1363,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -1413,7 +1413,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -1463,7 +1463,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -1513,7 +1513,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -1563,7 +1563,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -1613,7 +1613,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -1663,7 +1663,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -1713,7 +1713,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -1763,7 +1763,7 @@ exports[`Select List component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -1813,7 +1813,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -1863,7 +1863,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -1913,7 +1913,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -1963,7 +1963,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -2013,7 +2013,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -2063,7 +2063,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -2113,7 +2113,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -2163,7 +2163,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -2213,7 +2213,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -2263,7 +2263,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -2313,7 +2313,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -2363,7 +2363,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -2413,7 +2413,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -2463,7 +2463,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -2513,7 +2513,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -2563,7 +2563,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -2613,7 +2613,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -2663,7 +2663,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -2713,7 +2713,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -2763,7 +2763,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -2813,7 +2813,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -2863,7 +2863,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -2913,7 +2913,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -2963,7 +2963,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -3013,7 +3013,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -3063,7 +3063,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -3113,7 +3113,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -3163,7 +3163,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -3213,7 +3213,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -3263,7 +3263,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -3313,7 +3313,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -3363,7 +3363,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -3413,7 +3413,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -3463,7 +3463,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -3513,7 +3513,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -3563,7 +3563,7 @@ exports[`Select Option component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -3613,7 +3613,7 @@ exports[`Select component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"
@@ -3663,7 +3663,7 @@ exports[`Select component snapshots
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 d-block"
+        class="OutsideClick PopperWrapper-trigger d-block"
       >
         <button
           aria-controls="select-listbox"

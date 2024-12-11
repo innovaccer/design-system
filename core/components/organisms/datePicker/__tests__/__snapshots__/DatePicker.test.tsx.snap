@@ -5237,7 +5237,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
   <div>
     <style />
     <div
-      class="OutsideClick d-inline-flex flex-grow-1 w-100"
+      class="OutsideClick PopperWrapper-trigger w-100"
     >
       <div
         class="d-flex flex-column flex-grow-1"
