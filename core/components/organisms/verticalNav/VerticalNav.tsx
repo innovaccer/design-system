@@ -4,6 +4,7 @@ import { Text } from '@/index';
 import { MenuItem, MenuItemProps } from './MenuItem';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { getMenu, isMenuActive, ActiveMenu, Menu, getExpandedMenus } from '@/utils/navigationHelper';
+import styles from '@css/components/verticalNav.module.css';
 
 export interface VerticalNavProps extends BaseProps {
   /**
@@ -139,8 +140,8 @@ export const VerticalNav = (props: VerticalNavProps) => {
       const hasGroup = index === 0 || menus[index - 1].group !== menu.group;
 
       const sectionClass = classNames({
-        ['VerticalNav-section']: true,
-        ['VerticalNav-section--border']: index !== 0,
+        [styles['VerticalNav-section']]: true,
+        [styles['VerticalNav-section--border']]: index !== 0,
       });
 
       return (
@@ -191,8 +192,8 @@ export const VerticalNav = (props: VerticalNavProps) => {
 
   const classes = classNames(
     {
-      VerticalNav: true,
-      ['VerticalNav--expanded']: expanded,
+      [styles.VerticalNav]: true,
+      [styles['VerticalNav--expanded']]: expanded,
     },
     className
   );

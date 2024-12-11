@@ -10,7 +10,7 @@ exports[`Vertical Navigation component
     >
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1"
+        class="OutsideClick PopperWrapper-trigger"
       >
         <a
           class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
@@ -34,7 +34,7 @@ exports[`Vertical Navigation component
       </div>
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1"
+        class="OutsideClick PopperWrapper-trigger"
       >
         <a
           class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
@@ -57,7 +57,7 @@ exports[`Vertical Navigation component
       </div>
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1"
+        class="OutsideClick PopperWrapper-trigger"
       >
         <a
           class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--active color-primary-dark"
@@ -79,7 +79,7 @@ exports[`Vertical Navigation component
       </div>
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1"
+        class="OutsideClick PopperWrapper-trigger"
       >
         <a
           class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
@@ -101,7 +101,7 @@ exports[`Vertical Navigation component
       </div>
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1"
+        class="OutsideClick PopperWrapper-trigger"
       >
         <a
           class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--disabled color-inverse-lightest"
@@ -124,7 +124,7 @@ exports[`Vertical Navigation component
       </div>
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1"
+        class="OutsideClick PopperWrapper-trigger"
       >
         <a
           class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
@@ -186,7 +186,7 @@ exports[`Vertical Navigation component
             assignment_ind
           </i>
           <span
-            class="Text Text--regular color-inverse MenuItem-Text MenuItem--overflow "
+            class="Text Text--regular color-inverse MenuItem-Text MenuItem--overflow mr-5"
             data-test="DesignSystem-VerticalNav--Text"
           >
             Patient 360
@@ -226,7 +226,7 @@ exports[`Vertical Navigation component
             forum
           </i>
           <span
-            class="Text Text--regular color-inverse MenuItem-Text MenuItem--overflow "
+            class="Text Text--regular color-inverse MenuItem-Text MenuItem--overflow"
             data-test="DesignSystem-VerticalNav--Text"
           >
             Care Management and Resources
@@ -257,7 +257,7 @@ exports[`Vertical Navigation component
             assignment_ind
           </i>
           <span
-            class="Text Text--regular color-primary-dark MenuItem-Text MenuItem--overflow mr-5"
+            class="Text Text--regular color-primary-dark MenuItem-Text MenuItem--overflow"
             data-test="DesignSystem-VerticalNav--Text"
           >
             Timeline
@@ -280,7 +280,7 @@ exports[`Vertical Navigation component
             events
           </i>
           <span
-            class="Text Text--regular color-inverse MenuItem-Text MenuItem--overflow mr-5"
+            class="Text Text--regular color-inverse MenuItem-Text MenuItem--overflow"
             data-test="DesignSystem-VerticalNav--Text"
           >
             Care Plans
@@ -304,7 +304,7 @@ exports[`Vertical Navigation component
             airline_seat_flat_angled
           </i>
           <span
-            class="Text Text--regular color-inverse-lightest MenuItem-Text MenuItem--overflow "
+            class="Text Text--regular color-inverse-lightest MenuItem-Text MenuItem--overflow mr-5"
             data-test="DesignSystem-VerticalNav--Text"
           >
             Episodes
@@ -334,7 +334,7 @@ exports[`Vertical Navigation component
             favorite
           </i>
           <span
-            class="Text Text--regular color-inverse MenuItem-Text MenuItem--overflow "
+            class="Text Text--regular color-inverse MenuItem-Text MenuItem--overflow"
             data-test="DesignSystem-VerticalNav--Text"
           >
             Risk

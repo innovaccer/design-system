@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { Button, Heading, Text, Icon } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { TextColor } from '@/common.type';
+import styles from '@css/components/calendar.module.css';
 
 import config from './config';
 import { Size, Day, View, Events } from './types';
@@ -567,8 +568,8 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     }
 
     const headerIconClass = classNames({
-      'Calendar-headerIcon': true,
-      [`Calendar-headerIcon--${type}`]: type,
+      [styles['Calendar-headerIcon']]: true,
+      [styles[`Calendar-headerIcon--${type}`]]: type,
     });
 
     return (
@@ -610,9 +611,9 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const { year: yearNavVal, month: monthNavVal } = this.getNavDateInfo(index);
 
     const headerContentClass = classNames({
-      'Calendar-headerContent': true,
-      'Calendar-headerContent--noIcon-left': index === monthsInView - 1,
-      'Calendar-headerContent--noIcon-right': index === 0,
+      [styles['Calendar-headerContent']]: true,
+      [styles['Calendar-headerContent--noIcon-left']]: index === monthsInView - 1,
+      [styles['Calendar-headerContent--noIcon-right']]: index === 0,
     });
 
     let headerContent = '';
@@ -686,7 +687,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const noOfRows = Math.ceil(yearBlockRange / yearsInRow);
 
     return Array.from({ length: noOfRows }, (_y, row) => (
-      <div key={row} className="Calendar-valueRow">
+      <div key={row} className={styles["Calendar-valueRow"]}>
         {Array.from({ length: yearsInRow }, (_x, col) => {
           const offset = yearsInRow * row + col;
           if (offset === yearBlockNav) return undefined;
@@ -699,17 +700,17 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           };
 
           const valueClass = classNames({
-            'Calendar-value': true,
-            'Calendar-value--active': active,
-            'Calendar-value--disabled': disabled,
-            'Calendar-yearValue': true,
-            [`Calendar-yearValue--${size}`]: size,
-            'Calendar-value--currDateMonthYear': isCurrentYear(),
+            [styles['Calendar-value']]: true,
+            [styles['Calendar-value--active']]: active,
+            [styles['Calendar-value--disabled']]: disabled,
+            [styles['Calendar-yearValue']]: true,
+            [styles[`Calendar-yearValue--${size}`]]: size,
+            [styles['Calendar-value--currDateMonthYear']]: isCurrentYear(),
           });
 
           const textClass = classNames({
-            'Calendar-value--currDate': isCurrentYear() && !active,
-            'Calendar-text': true,
+            [styles['Calendar-value--currDate']]: isCurrentYear() && !active,
+            [styles['Calendar-text']]: true,
           });
 
           const getTextColor = classNames({
@@ -750,7 +751,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const noOfRows = Math.ceil(monthBlock / monthsInRow);
 
     return Array.from({ length: noOfRows }, (_y, row) => (
-      <div key={row} className="Calendar-valueRow">
+      <div key={row} className={styles["Calendar-valueRow"]}>
         {Array.from({ length: monthsInRow }, (_x, col) => {
           const month = monthsInRow * row + col;
           const disabled =
@@ -760,12 +761,12 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             return currYear === yearNav && currMonth === month;
           };
           const valueClass = classNames({
-            'Calendar-value': true,
-            'Calendar-value--active': active,
-            'Calendar-value--disabled': disabled,
-            'Calendar-monthValue': true,
-            [`Calendar-monthValue--${size}`]: size,
-            'Calendar-value--currDateMonthYear': isCurrentMonth(),
+            [styles['Calendar-value']]: true,
+            [styles['Calendar-value--active']]: active,
+            [styles['Calendar-value--disabled']]: disabled,
+            [styles['Calendar-monthValue']]: true,
+            [styles[`Calendar-monthValue--${size}`]]: size,
+            [styles['Calendar-value--currDateMonthYear']]: isCurrentMonth(),
           });
 
           const getTextColor = classNames({
@@ -777,8 +778,8 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           }) as TextColor;
 
           const textClass = classNames({
-            'Calendar-value--currDate': isCurrentMonth() && !active,
-            'Calendar-text': true,
+            [styles['Calendar-value--currDate']]: isCurrentMonth() && !active,
+            [styles['Calendar-text']]: true,
           });
 
           return (
@@ -820,10 +821,10 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     return (
       <>
-        <div className="Calendar-dayValues">
+        <div className={styles["Calendar-dayValues"]}>
           {Array.from({ length: 7 }, (_x, day) => {
             const valueClass = classNames({
-              'Calendar-valueWrapper': true,
+              [styles['Calendar-valueWrapper']]: true,
             });
             const dayValue = (day + daysInRow + getIndexOfDay(firstDayOfWeek)) % daysInRow;
 
@@ -834,7 +835,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             );
           })}
         </div>
-        <div className="Calendar-dateValues" onMouseLeave={this.onDateRowMouseLeaveHandler}>
+        <div className={styles["Calendar-dateValues"]} onMouseLeave={this.onDateRowMouseLeaveHandler}>
           {this.renderDateValues(index)}
         </div>
       </>
@@ -843,9 +844,9 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
   renderEventsIndicator(size: string, active: boolean) {
     const eventsIndicatorClass = classNames({
-      'Calendar-eventsIndicator': true,
-      [`Calendar-eventsIndicator--${size}`]: true,
-      'Calendar-eventsIndicator--active': active,
+      [styles['Calendar-eventsIndicator']]: true,
+      [styles[`Calendar-eventsIndicator--${size}`]]: true,
+      [styles['Calendar-eventsIndicator--active']]: active,
     });
     return <span data-test="DesignSystem-Calendar-Event-Indicator" className={eventsIndicatorClass} />;
   }
@@ -938,7 +939,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     return Array.from({ length: noOfRows }, (_y, row) => {
       return (
-        <div key={row} className="Calendar-valueRow">
+        <div key={row} className={styles["Calendar-valueRow"]}>
           {Array.from({ length: daysInRow }, (_x, col) => {
             const date = daysInRow * row + col - dummyDays + 1;
             const dummy = date <= 0 || date > dayRange;
@@ -1042,41 +1043,41 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             const isValueRange = inRange || (rangePicker && (active || activeDate));
 
             const wrapperClass = classNames({
-              'Calendar-valueWrapper': true,
-              'Calendar-valueWrapper--disabled': disabled,
-              'Calendar-valueWrapper--inRange': !isEdgeElement && isValueRange,
-              'Calendar-valueWrapper--inEdgeRange': isValueRange && isEdgeElement,
-              'Calendar-valueWrapper--inRangeError': isRangeError,
-              'Calendar-valueWrapper--start':
+              [styles['Calendar-valueWrapper']]: true,
+              [styles['Calendar-valueWrapper--disabled']]: disabled,
+              [styles['Calendar-valueWrapper--inRange']]: !isEdgeElement && isValueRange,
+              [styles['Calendar-valueWrapper--inEdgeRange']]: isValueRange && isEdgeElement,
+              [styles['Calendar-valueWrapper--inRangeError']]: isRangeError,
+              [styles['Calendar-valueWrapper--start']]:
                 (isStart && !isEnd && col !== 6) || (rangePicker && isStartActive && col !== 6),
-              'Calendar-valueWrapper--end':
+              [styles['Calendar-valueWrapper--end']]:
                 (isEnd && !isStart && col !== 0) || (rangePicker && isEndActive && col !== 0),
-              'Calendar-valueWrapper--startEnd': isStart && isEnd,
-              'Calendar-valueWrapper--startError':
+              [styles['Calendar-valueWrapper--startEnd']]: isStart && isEnd,
+              [styles['Calendar-valueWrapper--startError']]:
                 (isStart && isRangeError) || (rangePicker && isRangeError && isStartActive),
-              'Calendar-valueWrapper--endError':
+              [styles['Calendar-valueWrapper--endError']]:
                 (isEnd && isRangeError) || (rangePicker && isRangeError && isEndActive),
-              'Calendar-valueWrapper--dummy': dummy && !disabled && !activeDate,
-              'Calendar-valueWrapper--active-dummy': dummy && !disabled && activeDate,
-              'Calendar-valueWrapper--hoverDate': rangePicker && isHoverForwardLast,
-              'Calendar-valueWrapper--hoverEndDate': rangePicker && isHoverBackwardLast,
-              'Calendar-valueWrapper--inStartRange': isValueRange && col === 0 && !active && !activeDate,
-              'Calendar-valueWrapper--inEndRange': isValueRange && col === 6 && !active && !activeDate,
+              [styles['Calendar-valueWrapper--dummy']]: dummy && !disabled && !activeDate,
+              [styles['Calendar-valueWrapper--active-dummy']]: dummy && !disabled && activeDate,
+              [styles['Calendar-valueWrapper--hoverDate']]: rangePicker && isHoverForwardLast,
+              [styles['Calendar-valueWrapper--hoverEndDate']]: rangePicker && isHoverBackwardLast,
+              [styles['Calendar-valueWrapper--inStartRange']]: isValueRange && col === 0 && !active && !activeDate,
+              [styles['Calendar-valueWrapper--inEndRange']]: isValueRange && col === 6 && !active && !activeDate,
             });
 
             const valueClass = classNames({
-              'Calendar-value': true,
-              'Calendar-inRangeValue': !isStart && !isEnd && !active && !activeDate,
-              'Calendar-value--start': isStart && !isEnd,
-              'Calendar-value--end': isEnd && !isStart,
-              'Calendar-value--startError': isStart && isRangeError,
-              'Calendar-value--endError': isEnd && isRangeError,
-              'Calendar-value--active': active || activeDate,
-              'Calendar-value--disabled': disabled,
-              'Calendar-dateValue': true,
-              [`Calendar-dateValue--${size}`]: size,
-              'Calendar-value--currDateMonthYear': today(),
-              'Calendar-value--currDate': today() && !active && !activeDate,
+              [styles['Calendar-value']]: true,
+              [styles['Calendar-inRangeValue']]: !isStart && !isEnd && !active && !activeDate,
+              [styles['Calendar-value--start']]: isStart && !isEnd,
+              [styles['Calendar-value--end']]: isEnd && !isStart,
+              [styles['Calendar-value--startError']]: isStart && isRangeError,
+              [styles['Calendar-value--endError']]: isEnd && isRangeError,
+              [styles['Calendar-value--active']]: active || activeDate,
+              [styles['Calendar-value--disabled']]: disabled,
+              [styles['Calendar-dateValue']]: true,
+              [styles[`Calendar-dateValue--${size}`]]: size,
+              [styles['Calendar-value--currDateMonthYear']]: today(),
+              [styles['Calendar-value--currDate']]: today() && !active && !activeDate,
             });
 
             const getTextColor = classNames({
@@ -1134,17 +1135,17 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const { view } = this.state;
 
     const containerClass = classNames({
-      ['Calendar']: true,
-      [`Calendar-${view}--${size}`]: view,
-      [`Calendar--${size}`]: size,
+      [styles['Calendar']]: true,
+      [styles[`Calendar-${view}--${size}`]]: view,
+      [styles[`Calendar--${size}`]]: size,
     });
 
     const headerClass = classNames({
-      [`Calendar-header--${size}`]: size,
+      [styles[`Calendar-header--${size}`]]: size,
     });
 
     const bodyClass = classNames({
-      'Calendar-body': true,
+      [styles['Calendar-body']]: true,
     });
 
     return (
@@ -1169,7 +1170,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const baseProps = extractBaseProps(this.props);
     const classes = classNames(
       {
-        'Calendar-wrapper': true,
+        [styles['Calendar-wrapper']]: true,
       },
       className
     );
