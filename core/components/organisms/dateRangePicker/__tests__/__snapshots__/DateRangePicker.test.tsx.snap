@@ -39950,7 +39950,7 @@ exports[`DateRangePicker component
   <div>
     <style />
     <div
-      class="OutsideClick d-inline-flex flex-grow-1 w-100"
+      class="OutsideClick PopperWrapper-trigger w-100"
     >
       <div
         class="Row"
@@ -40093,7 +40093,7 @@ exports[`DateRangePicker component
   <div>
     <style />
     <div
-      class="OutsideClick d-inline-flex flex-grow-1 w-100"
+      class="OutsideClick PopperWrapper-trigger w-100"
     >
       <div
         class="Row"
@@ -40236,7 +40236,7 @@ exports[`DateRangePicker component
   <div>
     <style />
     <div
-      class="OutsideClick d-inline-flex flex-grow-1 w-100"
+      class="OutsideClick PopperWrapper-trigger w-100"
     >
       <div
         class="Row"
@@ -41464,7 +41464,7 @@ exports[`DateRangePicker component
   <div>
     <style />
     <div
-      class="OutsideClick d-inline-flex flex-grow-1 w-100"
+      class="OutsideClick PopperWrapper-trigger w-100"
     >
       <div
         class="Row"
@@ -41607,7 +41607,7 @@ exports[`DateRangePicker component
   <div>
     <style />
     <div
-      class="OutsideClick d-inline-flex flex-grow-1 w-100"
+      class="OutsideClick PopperWrapper-trigger w-100"
     >
       <div
         class="Row"
@@ -41750,7 +41750,7 @@ exports[`DateRangePicker component
   <div>
     <style />
     <div
-      class="OutsideClick d-inline-flex flex-grow-1 w-100"
+      class="OutsideClick PopperWrapper-trigger w-100"
     >
       <div
         class="Row"
@@ -42978,7 +42978,7 @@ exports[`DateRangePicker component
   <div>
     <style />
     <div
-      class="OutsideClick d-inline-flex flex-grow-1 w-100"
+      class="OutsideClick PopperWrapper-trigger w-100"
     >
       <div
         class="Row"
@@ -44109,7 +44109,7 @@ exports[`DateRangePicker component
   <div>
     <style />
     <div
-      class="OutsideClick d-inline-flex flex-grow-1 w-100"
+      class="OutsideClick PopperWrapper-trigger w-100"
     >
       <div
         class="Row"
@@ -45240,7 +45240,7 @@ exports[`DateRangePicker component
   <div>
     <style />
     <div
-      class="OutsideClick d-inline-flex flex-grow-1 w-100"
+      class="OutsideClick PopperWrapper-trigger w-100"
     >
       <div
         class="Row"
@@ -47456,7 +47456,7 @@ exports[`DateRangePicker component
   <div>
     <style />
     <div
-      class="OutsideClick d-inline-flex flex-grow-1 w-100"
+      class="OutsideClick PopperWrapper-trigger w-100"
     >
       <div
         class="Row"
@@ -48587,7 +48587,7 @@ exports[`DateRangePicker component
   <div>
     <style />
     <div
-      class="OutsideClick d-inline-flex flex-grow-1 w-100"
+      class="OutsideClick PopperWrapper-trigger w-100"
     >
       <div
         class="Row"
@@ -49718,7 +49718,7 @@ exports[`DateRangePicker component
   <div>
     <style />
     <div
-      class="OutsideClick d-inline-flex flex-grow-1 w-100"
+      class="OutsideClick PopperWrapper-trigger w-100"
     >
       <div
         class="Row"
