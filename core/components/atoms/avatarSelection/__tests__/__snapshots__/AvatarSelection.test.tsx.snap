@@ -22,14 +22,8 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-<<<<<<< HEAD
             <span
               class="position-relative d-inline-flex"
-=======
-            <style />
-            <div
-              class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
->>>>>>> 731d812b (chore: update popover snapshots)
             >
               <style />
               <div
@@ -68,14 +62,8 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-<<<<<<< HEAD
             <span
               class="position-relative d-inline-flex"
-=======
-            <style />
-            <div
-              class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
->>>>>>> 731d812b (chore: update popover snapshots)
             >
               <style />
               <div
@@ -114,14 +102,8 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-<<<<<<< HEAD
             <span
               class="position-relative d-inline-flex"
-=======
-            <style />
-            <div
-              class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
->>>>>>> 731d812b (chore: update popover snapshots)
             >
               <style />
               <div
@@ -160,14 +142,8 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-<<<<<<< HEAD
             <span
               class="position-relative d-inline-flex"
-=======
-            <style />
-            <div
-              class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
->>>>>>> 731d812b (chore: update popover snapshots)
             >
               <style />
               <div
@@ -206,44 +182,36 @@ Object {
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
             tabindex="-1"
           >
-<<<<<<< HEAD
             <span
               class="position-relative d-inline-flex"
-=======
             <style />
             <div
               class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
->>>>>>> 731d812b (chore: update popover snapshots)
             >
-              <style />
-              <div
-                class="OutsideClick PopperWrapper-trigger flex-grow-0"
+              <span
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="checkbox"
               >
                 <span
-                  class=""
-                  data-test="DesignSystem-AvatarWrapper"
-                  role="checkbox"
+                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="0"
                 >
                   <span
-                    class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
-                    data-test="DesignSystem-Avatar"
-                    tabindex="0"
+                    class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                    data-test="DesignSystem-Text"
                   >
-                    <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-                      data-test="DesignSystem-Text"
-                    >
-                      AS
-                    </span>
+                    AS
                   </span>
                 </span>
-              </div>
-            </span>
+              </span>
+            </div>
           </div>
         </span>
         <style />
         <div
-          class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
           <div
             aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -298,14 +266,8 @@ Object {
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
           tabindex="-1"
         >
-<<<<<<< HEAD
           <span
             class="position-relative d-inline-flex"
-=======
-          <style />
-          <div
-            class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
->>>>>>> 731d812b (chore: update popover snapshots)
           >
             <style />
             <div
@@ -344,14 +306,8 @@ Object {
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
           tabindex="-1"
         >
-<<<<<<< HEAD
           <span
             class="position-relative d-inline-flex"
-=======
-          <style />
-          <div
-            class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
->>>>>>> 731d812b (chore: update popover snapshots)
           >
             <style />
             <div
@@ -390,39 +346,31 @@ Object {
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
           tabindex="-1"
         >
-<<<<<<< HEAD
           <span
             class="position-relative d-inline-flex"
-=======
           <style />
           <div
             class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
->>>>>>> 731d812b (chore: update popover snapshots)
           >
-            <style />
-            <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="checkbox"
             >
               <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
+                class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
+                  class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                  data-test="DesignSystem-Text"
                 >
-                  <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-                    data-test="DesignSystem-Text"
-                  >
-                    NW
-                  </span>
+                  NW
                 </span>
               </span>
-            </div>
-          </span>
+            </span>
+          </div>
         </div>
       </span>
       <span
@@ -443,32 +391,26 @@ Object {
           <style />
           <div
             class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
->>>>>>> 731d812b (chore: update popover snapshots)
           >
-            <style />
-            <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="checkbox"
             >
               <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
+                class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
+                  class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                  data-test="DesignSystem-Text"
                 >
-                  <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    MG
-                  </span>
+                  MG
                 </span>
               </span>
-            </div>
-          </span>
+            </span>
+          </div>
         </div>
       </span>
       <span
@@ -519,7 +461,7 @@ Object {
       </span>
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+        class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <div
           aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -640,32 +582,26 @@ Object {
             <style />
             <div
               class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
->>>>>>> 731d812b (chore: update popover snapshots)
             >
-              <style />
-              <div
-                class="OutsideClick PopperWrapper-trigger flex-grow-0"
+              <span
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="checkbox"
               >
                 <span
-                  class=""
-                  data-test="DesignSystem-AvatarWrapper"
-                  role="checkbox"
+                  class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="0"
                 >
                   <span
-                    class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
-                    data-test="DesignSystem-Avatar"
-                    tabindex="0"
+                    class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                    data-test="DesignSystem-Text"
                   >
-                    <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-                      data-test="DesignSystem-Text"
-                    >
-                      JD
-                    </span>
+                    JD
                   </span>
                 </span>
-              </div>
-            </span>
+              </span>
+            </div>
           </div>
         </span>
         <span
@@ -854,7 +790,7 @@ Object {
         </span>
         <style />
         <div
-          class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
           <div
             aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -1130,7 +1066,7 @@ Object {
       </span>
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+        class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <div
           aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -1465,7 +1401,7 @@ Object {
         </span>
         <style />
         <div
-          class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
           <div
             aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -1741,7 +1677,7 @@ Object {
       </span>
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+        class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <div
           aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -2076,7 +2012,7 @@ Object {
         </span>
         <style />
         <div
-          class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
           <div
             aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -2161,7 +2097,7 @@ Object {
         </div>
         <style />
         <div
-          class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
           <div
             aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -2436,7 +2372,7 @@ Object {
         </span>
         <style />
         <div
-          class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+          class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
           <div
             aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -2707,7 +2643,7 @@ Object {
       </span>
       <style />
       <div
-        class="OutsideClick d-inline-flex flex-grow-1 flex-grow-0"
+        class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <div
           aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
