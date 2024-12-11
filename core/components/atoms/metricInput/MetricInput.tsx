@@ -4,6 +4,7 @@ import { Button, Icon, Text } from '@/index';
 import { BaseHtmlProps, BaseProps, extractBaseProps } from '@/utils/types';
 import { AutoComplete, IconType } from '@/common.type';
 import styles from '@css/components/metricInput.module.css';
+import paginationStyles from '@css/components/pagination.module.css';
 
 export type MetricInputSize = 'regular' | 'large';
 
@@ -305,7 +306,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
         </Text>
       )}
       {showActionButton && (
-        <div className={styles['MetricInput-arrowIcons']}>
+        <div className={paginationStyles['MetricInput-arrowIcons']}>
           <Button
             type="button"
             icon="keyboard_arrow_up"
