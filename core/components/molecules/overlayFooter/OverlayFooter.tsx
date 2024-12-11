@@ -4,6 +4,7 @@ import { Button } from '@/index';
 import { ButtonProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import styles from '@css/components/overlay.module.css';
+import buttonStyles from '@css/components/overlay.module.css';
 
 export interface OverlayFooterProps extends BaseProps {
   open?: boolean;
@@ -28,7 +29,9 @@ export const OverlayFooter = (props: OverlayFooterProps) => {
   React.useEffect(() => {
     if (open) {
       if (wrapperRef.current) {
-        const secondaryBtns: NodeListOf<HTMLButtonElement> = wrapperRef.current?.querySelectorAll('.Button--basic');
+        const secondaryBtns: NodeListOf<HTMLButtonElement> = wrapperRef.current?.querySelectorAll(
+          `.${buttonStyles['Button--basic']}`
+        );
         const secondaryBtn = secondaryBtns[secondaryBtns.length - 1];
         if (secondaryBtn) {
           window.requestAnimationFrame(() => secondaryBtn.focus({ preventScroll: true }));

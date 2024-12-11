@@ -25,7 +25,7 @@ export const GridBody = (props: GridBodyProps) => {
   const { schema, prevPageInfo, updatePrevPageInfo, onSelect } = props;
 
   React.useEffect(() => {
-    const gridBodyEl = ref!.querySelector('.Grid-body');
+    const gridBodyEl = ref!.querySelector(`.${styles['Grid-body']}`);
     if (gridBodyEl) {
       window.requestAnimationFrame(() => {
         if (prevPageInfo.page === page) {
