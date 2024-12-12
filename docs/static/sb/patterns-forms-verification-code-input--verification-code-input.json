@@ -29,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.31.1",
+        "brandTitle": "Masala Design System v3.4.0",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -297,6 +297,21 @@
           "defaultValue": null
         }
       },
+      "onChange": {
+        "name": "onChange",
+        "description": "Callback triggered when input value is changed.",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((value: string) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((value: string) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
       "className": {
         "name": "className",
         "description": "Adds custom class",
@@ -323,21 +338,6 @@
         "table": {
           "type": {
             "summary": "string | undefined"
-          },
-          "defaultValue": null
-        }
-      },
-      "autoFocus": {
-        "name": "autoFocus",
-        "description": "Adds autoFocus",
-        "type": {
-          "required": false,
-          "name": "other",
-          "value": "boolean | undefined"
-        },
-        "table": {
-          "type": {
-            "summary": "boolean | undefined"
           },
           "defaultValue": null
         }
@@ -428,6 +428,21 @@
         "table": {
           "type": {
             "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "autoFocus": {
+        "name": "autoFocus",
+        "description": "Adds autoFocus",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
           },
           "defaultValue": null
         }
@@ -599,6 +614,21 @@
         "defaultValue": null
       }
     },
+    "onChange": {
+      "name": "onChange",
+      "description": "Callback triggered when input value is changed.",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((value: string) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((value: string) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
     "className": {
       "name": "className",
       "description": "Adds custom class",
@@ -625,21 +655,6 @@
       "table": {
         "type": {
           "summary": "string | undefined"
-        },
-        "defaultValue": null
-      }
-    },
-    "autoFocus": {
-      "name": "autoFocus",
-      "description": "Adds autoFocus",
-      "type": {
-        "required": false,
-        "name": "other",
-        "value": "boolean | undefined"
-      },
-      "table": {
-        "type": {
-          "summary": "boolean | undefined"
         },
         "defaultValue": null
       }
@@ -730,6 +745,21 @@
       "table": {
         "type": {
           "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "autoFocus": {
+      "name": "autoFocus",
+      "description": "Adds autoFocus",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
         },
         "defaultValue": null
       }
