@@ -1,16 +1,18 @@
 
   /**
-   * Generated on: 1716891583546 
+   * Generated on: 1733997051660 
    *      Package: @innovaccer/design-system
-   *      Version: v2.34.0
+   *      Version: v3.5.0
    *      License: MIT
-   *         Docs: https://innovaccer.github.io/design-system
+   *         Docs: https://mds.innovaccer.com
    */
 
     
 import * as React from 'react';
 import React__default, { useRef, useReducer, useCallback, useEffect as useEffect$2, useMemo, useState as useState$3 } from 'react';
 import * as ReactDOM from 'react-dom';
+import { flushSync } from 'react-dom';
+import { Player } from '@lottiefiles/react-lottie-player';
 
 var colorToHex = function colorToHex(color) {
   return getComputedStyle(document.documentElement).getPropertyValue("--".concat(color));
@@ -21,402 +23,287 @@ var css = /*#__PURE__*/Object.freeze({
   colorToHex: colorToHex
 });
 
-function ownKeys(object, enumerableOnly) {
-  var keys = Object.keys(object);
-
-  if (Object.getOwnPropertySymbols) {
-    var symbols = Object.getOwnPropertySymbols(object);
-
-    if (enumerableOnly) {
-      symbols = symbols.filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-      });
-    }
-
-    keys.push.apply(keys, symbols);
-  }
-
-  return keys;
+function _arrayLikeToArray(r, a) {
+  (null == a || a > r.length) && (a = r.length);
+  for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e];
+  return n;
 }
-
-function _objectSpread2(target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i] != null ? arguments[i] : {};
-
-    if (i % 2) {
-      ownKeys(Object(source), true).forEach(function (key) {
-        _defineProperty$1(target, key, source[key]);
-      });
-    } else if (Object.getOwnPropertyDescriptors) {
-      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-    } else {
-      ownKeys(Object(source)).forEach(function (key) {
-        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-      });
-    }
-  }
-
-  return target;
+function _arrayWithHoles(r) {
+  if (Array.isArray(r)) return r;
 }
-
-function _typeof(obj) {
-  "@babel/helpers - typeof";
-
-  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-    _typeof = function (obj) {
-      return typeof obj;
-    };
-  } else {
-    _typeof = function (obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-    };
-  }
-
-  return _typeof(obj);
+function _arrayWithoutHoles(r) {
+  if (Array.isArray(r)) return _arrayLikeToArray(r);
 }
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+function _assertThisInitialized$1(e) {
+  if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  return e;
+}
+function asyncGeneratorStep(n, t, e, r, o, a, c) {
   try {
-    var info = gen[key](arg);
-    var value = info.value;
-  } catch (error) {
-    reject(error);
-    return;
+    var i = n[a](c),
+      u = i.value;
+  } catch (n) {
+    return void e(n);
   }
-
-  if (info.done) {
-    resolve(value);
-  } else {
-    Promise.resolve(value).then(_next, _throw);
-  }
+  i.done ? t(u) : Promise.resolve(u).then(r, o);
 }
-
-function _asyncToGenerator(fn) {
+function _asyncToGenerator(n) {
   return function () {
-    var self = this,
-        args = arguments;
-    return new Promise(function (resolve, reject) {
-      var gen = fn.apply(self, args);
-
-      function _next(value) {
-        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+    var t = this,
+      e = arguments;
+    return new Promise(function (r, o) {
+      var a = n.apply(t, e);
+      function _next(n) {
+        asyncGeneratorStep(a, r, o, _next, _throw, "next", n);
       }
-
-      function _throw(err) {
-        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+      function _throw(n) {
+        asyncGeneratorStep(a, r, o, _next, _throw, "throw", n);
       }
-
-      _next(undefined);
+      _next(void 0);
     });
   };
 }
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
+function _classCallCheck(a, n) {
+  if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function");
+}
+function _defineProperties(e, r) {
+  for (var t = 0; t < r.length; t++) {
+    var o = r[t];
+    o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o);
   }
 }
-
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, descriptor.key, descriptor);
-  }
+function _createClass(e, r, t) {
+  return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", {
+    writable: !1
+  }), e;
 }
-
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  return Constructor;
-}
-
-function _defineProperty$1(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-}
-
-function _extends$2() {
-  _extends$2 = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends$2.apply(this, arguments);
-}
-
-function _inherits(subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function");
-  }
-
-  subClass.prototype = Object.create(superClass && superClass.prototype, {
-    constructor: {
-      value: subClass,
-      writable: true,
-      configurable: true
-    }
-  });
-  if (superClass) _setPrototypeOf(subClass, superClass);
-}
-
-function _getPrototypeOf(o) {
-  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
-    return o.__proto__ || Object.getPrototypeOf(o);
-  };
-  return _getPrototypeOf(o);
-}
-
-function _setPrototypeOf(o, p) {
-  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
-    o.__proto__ = p;
-    return o;
-  };
-
-  return _setPrototypeOf(o, p);
-}
-
-function _isNativeReflectConstruct() {
-  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
-  if (Reflect.construct.sham) return false;
-  if (typeof Proxy === "function") return true;
-
-  try {
-    Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
-    return true;
-  } catch (e) {
-    return false;
-  }
-}
-
-function _objectWithoutPropertiesLoose$1(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
-
-  return target;
-}
-
-function _objectWithoutProperties(source, excluded) {
-  if (source == null) return {};
-
-  var target = _objectWithoutPropertiesLoose$1(source, excluded);
-
-  var key, i;
-
-  if (Object.getOwnPropertySymbols) {
-    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
-
-    for (i = 0; i < sourceSymbolKeys.length; i++) {
-      key = sourceSymbolKeys[i];
-      if (excluded.indexOf(key) >= 0) continue;
-      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
-      target[key] = source[key];
-    }
-  }
-
-  return target;
-}
-
-function _assertThisInitialized$1(self) {
-  if (self === void 0) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-
-  return self;
-}
-
-function _possibleConstructorReturn(self, call) {
-  if (call && (typeof call === "object" || typeof call === "function")) {
-    return call;
-  } else if (call !== void 0) {
-    throw new TypeError("Derived constructors may only return object or undefined");
-  }
-
-  return _assertThisInitialized$1(self);
-}
-
-function _createSuper(Derived) {
-  var hasNativeReflectConstruct = _isNativeReflectConstruct();
-
-  return function _createSuperInternal() {
-    var Super = _getPrototypeOf(Derived),
-        result;
-
-    if (hasNativeReflectConstruct) {
-      var NewTarget = _getPrototypeOf(this).constructor;
-
-      result = Reflect.construct(Super, arguments, NewTarget);
-    } else {
-      result = Super.apply(this, arguments);
-    }
-
-    return _possibleConstructorReturn(this, result);
-  };
-}
-
-function _slicedToArray(arr, i) {
-  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
-}
-
-function _toConsumableArray(arr) {
-  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
-}
-
-function _arrayWithoutHoles(arr) {
-  if (Array.isArray(arr)) return _arrayLikeToArray(arr);
-}
-
-function _arrayWithHoles(arr) {
-  if (Array.isArray(arr)) return arr;
-}
-
-function _iterableToArray(iter) {
-  if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
-}
-
-function _iterableToArrayLimit(arr, i) {
-  var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
-
-  if (_i == null) return;
-  var _arr = [];
-  var _n = true;
-  var _d = false;
-
-  var _s, _e;
-
-  try {
-    for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) {
-      _arr.push(_s.value);
-
-      if (i && _arr.length === i) break;
-    }
-  } catch (err) {
-    _d = true;
-    _e = err;
-  } finally {
-    try {
-      if (!_n && _i["return"] != null) _i["return"]();
-    } finally {
-      if (_d) throw _e;
-    }
-  }
-
-  return _arr;
-}
-
-function _unsupportedIterableToArray(o, minLen) {
-  if (!o) return;
-  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
-  var n = Object.prototype.toString.call(o).slice(8, -1);
-  if (n === "Object" && o.constructor) n = o.constructor.name;
-  if (n === "Map" || n === "Set") return Array.from(o);
-  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
-}
-
-function _arrayLikeToArray(arr, len) {
-  if (len == null || len > arr.length) len = arr.length;
-
-  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
-
-  return arr2;
-}
-
-function _nonIterableSpread() {
-  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-}
-
-function _nonIterableRest() {
-  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-}
-
-function _createForOfIteratorHelper(o, allowArrayLike) {
-  var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"];
-
-  if (!it) {
-    if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
-      if (it) o = it;
-      var i = 0;
-
-      var F = function () {};
-
+function _createForOfIteratorHelper(r, e) {
+  var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
+  if (!t) {
+    if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) {
+      t && (r = t);
+      var n = 0,
+        F = function () {};
       return {
         s: F,
         n: function () {
-          if (i >= o.length) return {
-            done: true
-          };
-          return {
-            done: false,
-            value: o[i++]
+          return n >= r.length ? {
+            done: !0
+          } : {
+            done: !1,
+            value: r[n++]
           };
         },
-        e: function (e) {
-          throw e;
+        e: function (r) {
+          throw r;
         },
         f: F
       };
     }
-
     throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
   }
-
-  var normalCompletion = true,
-      didErr = false,
-      err;
+  var o,
+    a = !0,
+    u = !1;
   return {
     s: function () {
-      it = it.call(o);
+      t = t.call(r);
     },
     n: function () {
-      var step = it.next();
-      normalCompletion = step.done;
-      return step;
+      var r = t.next();
+      return a = r.done, r;
     },
-    e: function (e) {
-      didErr = true;
-      err = e;
+    e: function (r) {
+      u = !0, o = r;
     },
     f: function () {
       try {
-        if (!normalCompletion && it.return != null) it.return();
+        a || null == t.return || t.return();
       } finally {
-        if (didErr) throw err;
+        if (u) throw o;
       }
     }
   };
 }
+function _createSuper(t) {
+  var r = _isNativeReflectConstruct();
+  return function () {
+    var e,
+      o = _getPrototypeOf(t);
+    if (r) {
+      var s = _getPrototypeOf(this).constructor;
+      e = Reflect.construct(o, arguments, s);
+    } else e = o.apply(this, arguments);
+    return _possibleConstructorReturn(this, e);
+  };
+}
+function _defineProperty$1(e, r, t) {
+  return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, {
+    value: t,
+    enumerable: !0,
+    configurable: !0,
+    writable: !0
+  }) : e[r] = t, e;
+}
+function _extends$2() {
+  return _extends$2 = Object.assign ? Object.assign.bind() : function (n) {
+    for (var e = 1; e < arguments.length; e++) {
+      var t = arguments[e];
+      for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]);
+    }
+    return n;
+  }, _extends$2.apply(null, arguments);
+}
+function _getPrototypeOf(t) {
+  return _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function (t) {
+    return t.__proto__ || Object.getPrototypeOf(t);
+  }, _getPrototypeOf(t);
+}
+function _inherits(t, e) {
+  if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function");
+  t.prototype = Object.create(e && e.prototype, {
+    constructor: {
+      value: t,
+      writable: !0,
+      configurable: !0
+    }
+  }), Object.defineProperty(t, "prototype", {
+    writable: !1
+  }), e && _setPrototypeOf(t, e);
+}
+function _isNativeReflectConstruct() {
+  try {
+    var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
+  } catch (t) {}
+  return (_isNativeReflectConstruct = function () {
+    return !!t;
+  })();
+}
+function _iterableToArray(r) {
+  if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r);
+}
+function _iterableToArrayLimit(r, l) {
+  var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
+  if (null != t) {
+    var e,
+      n,
+      i,
+      u,
+      a = [],
+      f = !0,
+      o = !1;
+    try {
+      if (i = (t = t.call(r)).next, 0 === l) {
+        if (Object(t) !== t) return;
+        f = !1;
+      } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0);
+    } catch (r) {
+      o = !0, n = r;
+    } finally {
+      try {
+        if (!f && null != t.return && (u = t.return(), Object(u) !== u)) return;
+      } finally {
+        if (o) throw n;
+      }
+    }
+    return a;
+  }
+}
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+function ownKeys(e, r) {
+  var t = Object.keys(e);
+  if (Object.getOwnPropertySymbols) {
+    var o = Object.getOwnPropertySymbols(e);
+    r && (o = o.filter(function (r) {
+      return Object.getOwnPropertyDescriptor(e, r).enumerable;
+    })), t.push.apply(t, o);
+  }
+  return t;
+}
+function _objectSpread2(e) {
+  for (var r = 1; r < arguments.length; r++) {
+    var t = null != arguments[r] ? arguments[r] : {};
+    r % 2 ? ownKeys(Object(t), !0).forEach(function (r) {
+      _defineProperty$1(e, r, t[r]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) {
+      Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
+    });
+  }
+  return e;
+}
+function _objectWithoutProperties(e, t) {
+  if (null == e) return {};
+  var o,
+    r,
+    i = _objectWithoutPropertiesLoose$1(e, t);
+  if (Object.getOwnPropertySymbols) {
+    var s = Object.getOwnPropertySymbols(e);
+    for (r = 0; r < s.length; r++) o = s[r], t.includes(o) || {}.propertyIsEnumerable.call(e, o) && (i[o] = e[o]);
+  }
+  return i;
+}
+function _objectWithoutPropertiesLoose$1(r, e) {
+  if (null == r) return {};
+  var t = {};
+  for (var n in r) if ({}.hasOwnProperty.call(r, n)) {
+    if (e.includes(n)) continue;
+    t[n] = r[n];
+  }
+  return t;
+}
+function _possibleConstructorReturn(t, e) {
+  if (e && ("object" == typeof e || "function" == typeof e)) return e;
+  if (void 0 !== e) throw new TypeError("Derived constructors may only return object or undefined");
+  return _assertThisInitialized$1(t);
+}
+function _setPrototypeOf(t, e) {
+  return _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, e) {
+    return t.__proto__ = e, t;
+  }, _setPrototypeOf(t, e);
+}
+function _slicedToArray(r, e) {
+  return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest();
+}
+function _toConsumableArray(r) {
+  return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread();
+}
+function _toPrimitive(t, r) {
+  if ("object" != typeof t || !t) return t;
+  var e = t[Symbol.toPrimitive];
+  if (void 0 !== e) {
+    var i = e.call(t, r || "default");
+    if ("object" != typeof i) return i;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return ("string" === r ? String : Number)(t);
+}
+function _toPropertyKey(t) {
+  var i = _toPrimitive(t, "string");
+  return "symbol" == typeof i ? i : i + "";
+}
+function _typeof(o) {
+  "@babel/helpers - typeof";
+
+  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
+    return typeof o;
+  } : function (o) {
+    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+  }, _typeof(o);
+}
+function _unsupportedIterableToArray(r, a) {
+  if (r) {
+    if ("string" == typeof r) return _arrayLikeToArray(r, a);
+    var t = {}.toString.call(r).slice(8, -1);
+    return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0;
+  }
+}
 
 var _placeholders;
-
 var placeholders = (_placeholders = {}, _defineProperty$1(_placeholders, 'hh:mm', '--:--'), _defineProperty$1(_placeholders, 'hh:mm AM', '--:-- AM'), _placeholders);
 var isPlaceholderPresent = function isPlaceholderPresent(placeholderChar, time) {
   return time && time.includes(placeholderChar);
@@ -424,7 +311,6 @@ var isPlaceholderPresent = function isPlaceholderPresent(placeholderChar, time) 
 var isFormat12hour = function isFormat12hour(format) {
   return format === 'hh:mm AM';
 };
-
 var get12hourFormat = function get12hourFormat(hours) {
   var AMPM = hours < 12 ? 'AM' : 'PM';
   var hrs = hours % 12 || 12;
@@ -433,34 +319,26 @@ var get12hourFormat = function get12hourFormat(hours) {
     AMPM: AMPM
   };
 };
-
 var get24hourFormat = function get24hourFormat(hours, am_pm) {
   var convertedHours = hours;
-
   if (am_pm) {
     if (am_pm === 'PM' && hours < 12) {
       convertedHours = hours + 12;
     } else if (am_pm === 'AM' && hours === 12) {
       convertedHours = hours - 12;
     }
-
     return convertedHours;
   }
-
   return hours;
 };
-
 var translateToTime = function translateToTime(format, time) {
   if (!time) return '';
-
   if (typeof time === 'number') {
     var timeObj = getTimeObjectFromNumber(format, time);
     return translateToString$1(format, timeObj);
   }
-
   return time;
 };
-
 var getTimeObjectFromNumber = function getTimeObjectFromNumber(format, time) {
   var d = new Date(time);
   var hrs = d.getHours();
@@ -475,7 +353,6 @@ var getTimeObjectFromNumber = function getTimeObjectFromNumber(format, time) {
     am_pm: am_pm
   };
 };
-
 var getTimeObjFromStr = function getTimeObjFromStr(format, time) {
   var separator = ':';
   var hours = 0;
@@ -493,7 +370,6 @@ var getTimeObjFromStr = function getTimeObjFromStr(format, time) {
       case 'hh':
         hours = +v[i] || 0;
         break;
-
       case 'mm':
         minutes = +v[i] || 0;
         break;
@@ -507,12 +383,10 @@ var getTimeObjFromStr = function getTimeObjFromStr(format, time) {
 };
 var getOutputTimeString = function getOutputTimeString(inputFormat, outputFormat, time) {
   if (inputFormat === outputFormat) return time;
-
   var _getTimeObjFromStr = getTimeObjFromStr(inputFormat, time),
-      hours = _getTimeObjFromStr.hours,
-      minutes = _getTimeObjFromStr.minutes,
-      am_pm = _getTimeObjFromStr.am_pm;
-
+    hours = _getTimeObjFromStr.hours,
+    minutes = _getTimeObjFromStr.minutes,
+    am_pm = _getTimeObjFromStr.am_pm;
   var AMPM = isFormat12hour(outputFormat) ? get12hourFormat(hours).AMPM : '';
   var hrs = isFormat12hour(outputFormat) ? get12hourFormat(hours).hrs : get24hourFormat(hours, am_pm);
   var timeStr = translateToString$1(outputFormat, {
@@ -522,11 +396,10 @@ var getOutputTimeString = function getOutputTimeString(inputFormat, outputFormat
   });
   return timeStr;
 };
-
 var translateToString$1 = function translateToString(format, time) {
   var hours = time.hours,
-      minutes = time.minutes,
-      am_pm = time.am_pm;
+    minutes = time.minutes,
+    am_pm = time.am_pm;
   var separator = ':';
   var timeFormat = format.split(' ');
   var v = timeFormat[0].split(separator);
@@ -536,12 +409,10 @@ var translateToString$1 = function translateToString(format, time) {
       case 'hh':
         val += hours < 10 ? "0".concat(hours) : hours;
         break;
-
       case 'mm':
         val += minutes < 10 ? "0".concat(minutes) : minutes;
         break;
     }
-
     if (i !== f.length - 1) val += separator;
   });
   val += isFormat12hour(format) && am_pm ? " ".concat(am_pm) : '';
@@ -552,7 +423,6 @@ var isValid = function isValid(validators) {
   for (var _len = arguments.length, value = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
     value[_key - 1] = arguments[_key];
   }
-
   var iterator = Array.isArray(validators) ? validators : [validators];
   return iterator.every(function (validator) {
     return validator.apply(void 0, value);
@@ -560,103 +430,74 @@ var isValid = function isValid(validators) {
 };
 var date$1 = function date(val, format) {
   var validate = function validate(date, month, year) {
-    var monthLength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; // Adjust for leap years
+    var monthLength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
-    if (year % 400 == 0 || year % 100 != 0 && year % 4 == 0) monthLength[1] = 29; // Check the range of the day
+    // Adjust for leap years
+    if (year % 400 == 0 || year % 100 != 0 && year % 4 == 0) monthLength[1] = 29;
 
+    // Check the range of the day
     return month <= 12 && date <= monthLength[month - 1];
   };
-
   if (val) {
     switch (format) {
       case 'dd/mm/yyyy':
         {
           var p = val.split('/');
-
           var _date = +p[0] || 1;
-
           var month = +p[1] || 1;
           var year = +p[2] || 1900;
           return validate(_date, month, year);
         }
-
       case 'mm/dd/yyyy':
         {
           var _p = val.split('/');
-
           var _date2 = +_p[1] || 1;
-
           var _month = +_p[0] || 1;
-
           var _year = +_p[2] || 1900;
-
           return validate(_date2, _month, _year);
         }
-
       case 'yyyy/mm/dd':
         {
           var _p2 = val.split('/');
-
           var _date3 = +_p2[2] || 1;
-
           var _month2 = +_p2[1] || 1;
-
           var _year2 = +_p2[0] || 1900;
-
           return validate(_date3, _month2, _year2);
         }
-
       case 'dd-mm-yyyy':
         {
           var _p3 = val.split('-');
-
           var _date4 = +_p3[0] || 1;
-
           var _month3 = +_p3[1] || 1;
-
           var _year3 = +_p3[2] || 1900;
-
           return validate(_date4, _month3, _year3);
         }
-
       case 'mm-dd-yyyy':
         {
           var _p4 = val.split('-');
-
           var _date5 = +_p4[1] || 1;
-
           var _month4 = +_p4[0] || 1;
-
           var _year4 = +_p4[2] || 1900;
-
           return validate(_date5, _month4, _year4);
         }
-
       case 'yyyy-mm-dd':
         {
           var _p5 = val.split('-');
-
           var _date6 = +_p5[2] || 1;
-
           var _month5 = +_p5[1] || 1;
-
           var _year5 = +_p5[0] || 1900;
-
           return validate(_date6, _month5, _year5);
         }
-
       default:
         return false;
     }
   }
-
   return false;
 };
 var time$1 = function time(val, format) {
   var _getTimeObjFromStr = getTimeObjFromStr(format, val),
-      hours = _getTimeObjFromStr.hours,
-      minutes = _getTimeObjFromStr.minutes;
-
+    hours = _getTimeObjFromStr.hours,
+    minutes = _getTimeObjFromStr.minutes;
   var hoursCond = isFormat12hour(format) ? hours <= 12 : hours < 24;
   return hoursCond && minutes <= 60;
 };
@@ -664,7 +505,6 @@ var isNaturalNumber = function isNaturalNumber(val) {
   if (typeof val === 'string' && /[^0-9]/.test(val) || typeof val === 'number' && (val <= 0 || val - Math.floor(val) !== 0)) {
     return false;
   }
-
   return true;
 };
 
@@ -677,7 +517,6 @@ var validators = /*#__PURE__*/Object.freeze({
 });
 
 var _time;
-
 var date = {
   'dd/mm/yyyy': [/[0123]/, /\d/, '/', /[01]/, /\d/, '/', /\d/, /\d/, /\d/, /\d/],
   'mm/dd/yyyy': [/[01]/, /\d/, '/', /[0123]/, /\d/, '/', /\d/, /\d/, /\d/, /\d/],
@@ -781,6 +620,7 @@ var classnames = createCommonjsModule(function (module) {
 // export type Props<T, U> = Omit<T, keyof U> & {
 //   [P in keyof T & keyof U]?: T[P];
 // };
+
 var extractBaseProps = function extractBaseProps(props) {
   var baseProps = ['className', 'data-test'];
   var basePropsObj = baseProps.reduce(function (acc, curr) {
@@ -801,7 +641,8 @@ var AvatarContext = /*#__PURE__*/React.createContext({
   size: 'regular',
   appearance: 'secondary',
   firstName: '',
-  lastName: ''
+  lastName: '',
+  darkAppearance: []
 });
 var AvatarProvider = AvatarContext.Provider;
 
@@ -819,12 +660,16 @@ var appearanceMapper = {
 var AvatarIcon = function AvatarIcon(props) {
   var contextProp = React.useContext(AvatarContext);
   var size = contextProp.size,
-      appearance = contextProp.appearance;
+    appearance = contextProp.appearance,
+    _contextProp$darkAppe = contextProp.darkAppearance,
+    darkAppearance = _contextProp$darkAppe === void 0 ? [] : _contextProp$darkAppe;
   var iconSize = size === 'regular' ? 20 : 16;
   var iconAppearance = appearance && appearanceMapper[appearance] || 'inverse';
+  var IconClassNames = classnames(_defineProperty$1({}, 'Avatar-content', appearance && darkAppearance.includes(appearance)));
   return /*#__PURE__*/React.createElement(Icon, _extends$2({}, props, {
     size: iconSize,
-    appearance: iconAppearance
+    appearance: iconAppearance,
+    className: IconClassNames
   }));
 };
 
@@ -834,34 +679,29 @@ var sizeMapper = {
 };
 var AvatarImage = function AvatarImage(props) {
   var _classNames;
-
   var children = props.children,
-      src = props.src;
-
+    src = props.src;
   var _React$useState = React.useState(false),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      error = _React$useState2[0],
-      setError = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    error = _React$useState2[0],
+    setError = _React$useState2[1];
   var contextProp = React.useContext(AvatarContext);
   var size = contextProp.size,
-      appearance = contextProp.appearance,
-      firstName = contextProp.firstName,
-      lastName = contextProp.lastName;
+    appearance = contextProp.appearance,
+    firstName = contextProp.firstName,
+    lastName = contextProp.lastName,
+    darkAppearance = contextProp.darkAppearance;
   var baseProps = extractBaseProps(props);
   var initials = "".concat(firstName ? firstName.trim()[0] : '').concat(lastName ? lastName.trim()[0] : '');
   var imgSize = size && sizeMapper[size];
-  var TextClassNames = classnames((_classNames = {}, _defineProperty$1(_classNames, "Avatar-content--".concat(size), size), _defineProperty$1(_classNames, "Avatar-content--".concat(appearance), appearance), _classNames));
-  var IconClassNames = classnames(_defineProperty$1({}, "Avatar-content--".concat(appearance), appearance));
-
+  var TextClassNames = classnames((_classNames = {}, _defineProperty$1(_classNames, "Avatar-content--".concat(size), size), _defineProperty$1(_classNames, 'Avatar-content', appearance && darkAppearance.includes(appearance)), _classNames));
+  var IconClassNames = classnames(_defineProperty$1({}, 'Avatar-content', appearance && darkAppearance.includes(appearance)));
   var onError = function onError() {
     setError(true);
   };
-
   if (children) {
     return /*#__PURE__*/React.createElement(React.Fragment, null, children);
   }
-
   if (error) {
     if (initials) {
       return /*#__PURE__*/React.createElement(Text, _extends$2({
@@ -870,7 +710,6 @@ var AvatarImage = function AvatarImage(props) {
         className: TextClassNames
       }, baseProps), initials);
     }
-
     return /*#__PURE__*/React.createElement(Icon, {
       "data-test": "DesignSystem-Avatar--Icon",
       name: "person",
@@ -879,7 +718,6 @@ var AvatarImage = function AvatarImage(props) {
       className: IconClassNames
     });
   }
-
   return /*#__PURE__*/React.createElement("img", _extends$2({
     "data-test": "DesignSystem-Image",
     src: src,
@@ -895,36 +733,53 @@ var initialsLength = 2;
 var DefaultAppearance = 'secondary';
 var colors = ['accent4', 'primary', 'accent3', 'alert', 'accent2', 'warning', 'accent1', 'success'];
 var Avatar = function Avatar(props) {
-  var _classNames, _classNames2, _classNames3;
-
+  var _classNames, _classNames2, _classNames3, _classNames5;
   var withTooltip = props.withTooltip,
-      tooltipPosition = props.tooltipPosition,
-      size = props.size,
-      children = props.children,
-      firstName = props.firstName,
-      lastName = props.lastName,
-      className = props.className,
-      appearance = props.appearance,
-      shape = props.shape,
-      _props$role = props.role,
-      role = _props$role === void 0 ? 'presentation' : _props$role;
+    tooltipPosition = props.tooltipPosition,
+    size = props.size,
+    children = props.children,
+    firstName = props.firstName,
+    lastName = props.lastName,
+    className = props.className,
+    appearance = props.appearance,
+    shape = props.shape,
+    disabled = props.disabled,
+    tooltipSuffix = props.tooltipSuffix,
+    tabIndex = props.tabIndex,
+    presence = props.presence,
+    status = props.status,
+    strokeColor = props.strokeColor,
+    _props$role = props.role,
+    role = _props$role === void 0 ? 'presentation' : _props$role;
   var baseProps = extractBaseProps(props);
   var initials = children && typeof children === 'string' ? children.trim().slice(0, initialsLength) : "".concat(firstName ? firstName.trim()[0] : '').concat(lastName ? lastName.trim()[0] : '');
-  var tooltip = children && typeof children === 'string' ? children : "".concat(firstName || '', " ").concat(lastName || '') || '';
+  var getTooltipName = function getTooltipName() {
+    if (children && typeof children === 'string') {
+      return "".concat(children, " ").concat(tooltipSuffix || '');
+    }
+    return "".concat(firstName || '', " ").concat(lastName || '', " ").concat(tooltipSuffix || '') || '';
+  };
   var AvatarAppearance = appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] || DefaultAppearance;
+  var darkAppearance = ['secondary', 'success', 'warning', 'accent1', 'accent4'];
+  var showPresence = presence && !disabled && shape === 'round';
+  var showStatus = status && size === 'regular' && shape === 'round';
   var AvatarClassNames = classnames((_classNames = {
     Avatar: true
-  }, _defineProperty$1(_classNames, 'Avatar--square', shape === 'square'), _defineProperty$1(_classNames, "Avatar--".concat(size), shape !== 'square'), _defineProperty$1(_classNames, "Avatar--".concat(AvatarAppearance), AvatarAppearance), _defineProperty$1(_classNames, 'Avatar--disabled', !initials || !withTooltip), _classNames), className);
-  var AvatarWrapperClassNames = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'Avatar--wrapper', shape === 'square'), _defineProperty$1(_classNames2, "Avatar--".concat(size), shape === 'square'), _classNames2));
-  var TextClassNames = classnames((_classNames3 = {}, _defineProperty$1(_classNames3, "Avatar-content--".concat(size), size), _defineProperty$1(_classNames3, "Avatar-content--".concat(AvatarAppearance), AvatarAppearance), _classNames3));
-  var IconClassNames = classnames(_defineProperty$1({}, "Avatar-content--".concat(AvatarAppearance), AvatarAppearance));
+  }, _defineProperty$1(_classNames, 'Avatar--square', shape === 'square'), _defineProperty$1(_classNames, "Avatar--".concat(size), shape !== 'square'), _defineProperty$1(_classNames, "Avatar--".concat(AvatarAppearance), AvatarAppearance), _defineProperty$1(_classNames, 'Avatar--noInitials', !initials || !withTooltip), _defineProperty$1(_classNames, 'Avatar--disabled', disabled), _defineProperty$1(_classNames, 'Avatar--default', !disabled), _classNames), className);
+  var AvatarWrapperClassNames = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'Avatar-wrapper--square', shape === 'square'), _defineProperty$1(_classNames2, "Avatar--".concat(size), shape === 'square'), _classNames2));
+  var TextClassNames = classnames((_classNames3 = {}, _defineProperty$1(_classNames3, "Avatar-content--".concat(size), size), _defineProperty$1(_classNames3, 'Avatar-content', darkAppearance.includes(AvatarAppearance)), _classNames3));
+  var IconClassNames = classnames(_defineProperty$1({}, 'Avatar-content', darkAppearance.includes(AvatarAppearance)));
+  var presenceClassNames = classnames((_classNames5 = {}, _defineProperty$1(_classNames5, 'Avatar-presence', presence), _defineProperty$1(_classNames5, 'Avatar-presence--active', presence === 'active'), _defineProperty$1(_classNames5, 'Avatar-presence--away', presence === 'away'), _classNames5));
+  var borderStyle = {
+    boxShadow: "0 0 0 var(--spacing-s) ".concat(strokeColor)
+  };
   var sharedProp = {
     size: size,
     firstName: firstName,
     lastName: lastName,
-    appearance: AvatarAppearance
+    appearance: AvatarAppearance,
+    darkAppearance: darkAppearance
   };
-
   var renderAvatar = function renderAvatar() {
     if (children && typeof children !== 'string') {
       return /*#__PURE__*/React.createElement("span", {
@@ -936,10 +791,10 @@ var Avatar = function Avatar(props) {
       }, /*#__PURE__*/React.createElement("span", _extends$2({
         "data-test": "DesignSystem-Avatar"
       }, baseProps, {
-        className: AvatarClassNames
+        className: AvatarClassNames,
+        tabIndex: tabIndex || disabled ? -1 : 0
       }), children)));
     }
-
     return /*#__PURE__*/React.createElement("span", {
       "data-test": "DesignSystem-AvatarWrapper",
       className: AvatarWrapperClassNames,
@@ -947,7 +802,8 @@ var Avatar = function Avatar(props) {
     }, /*#__PURE__*/React.createElement("span", _extends$2({
       "data-test": "DesignSystem-Avatar"
     }, baseProps, {
-      className: AvatarClassNames
+      className: AvatarClassNames,
+      tabIndex: tabIndex || disabled ? -1 : 0
     }), initials && /*#__PURE__*/React.createElement(Text, {
       weight: "medium",
       appearance: 'white',
@@ -960,19 +816,23 @@ var Avatar = function Avatar(props) {
       className: IconClassNames
     })));
   };
-
   var renderTooltip = function renderTooltip() {
-    if (withTooltip && initials) {
-      return /*#__PURE__*/React.createElement(Tooltip, {
-        tooltip: tooltip,
-        position: tooltipPosition,
-        triggerClass: 'flex-grow-0'
-      }, renderAvatar());
-    }
-
-    return renderAvatar();
+    return /*#__PURE__*/React.createElement("span", {
+      className: "position-relative d-inline-flex"
+    }, withTooltip && initials ? /*#__PURE__*/React.createElement(Tooltip, {
+      tooltip: getTooltipName(),
+      position: tooltipPosition,
+      triggerClass: "flex-grow-0"
+    }, renderAvatar()) : renderAvatar(), showPresence && /*#__PURE__*/React.createElement("span", {
+      "data-test": "DesignSystem-Avatar--Presence",
+      className: presenceClassNames,
+      style: borderStyle
+    }), showStatus && /*#__PURE__*/React.createElement("span", {
+      "data-test": "DesignSystem-Avatar--Status",
+      className: "Avatar-status",
+      style: borderStyle
+    }, status));
   };
-
   return renderTooltip();
 };
 Avatar.displayName = 'Avatar';
@@ -982,47 +842,49 @@ Avatar.defaultProps = {
   tooltipPosition: 'bottom',
   withTooltip: true,
   size: 'regular',
-  shape: 'round'
+  shape: 'round',
+  strokeColor: 'var(--white)'
 };
 
 var AvatarCount = function AvatarCount(props) {
   var _classNames, _classNames2;
-
   var hiddenAvatarCount = props.hiddenAvatarCount,
-      avatarStyle = props.avatarStyle,
-      size = props.size,
-      on = props.on;
-  var ContentClass = classnames((_classNames = {}, _defineProperty$1(_classNames, "Avatar-content--secondary", true), _defineProperty$1(_classNames, "Avatar-content--tiny", size === 'tiny'), _classNames));
+    avatarStyle = props.avatarStyle,
+    size = props.size,
+    on = props.on;
+  var ContentClass = classnames((_classNames = {}, _defineProperty$1(_classNames, 'Avatar-content', true), _defineProperty$1(_classNames, 'Avatar-content--tiny', size === 'tiny'), _classNames));
   var AvatarVariantsClass = classnames((_classNames2 = {
     Avatar: true
-  }, _defineProperty$1(_classNames2, "Avatar--regular", size === 'regular'), _defineProperty$1(_classNames2, "Avatar--tiny", size === 'tiny'), _defineProperty$1(_classNames2, "Avatar--secondary", true), _defineProperty$1(_classNames2, 'Avatar--disabled', true), _defineProperty$1(_classNames2, 'cursor-pointer', on === 'click'), _classNames2));
+  }, _defineProperty$1(_classNames2, "Avatar--regular", size === 'regular'), _defineProperty$1(_classNames2, "Avatar--tiny", size === 'tiny'), _defineProperty$1(_classNames2, "Avatar--secondary", true), _defineProperty$1(_classNames2, 'cursor-default', true), _defineProperty$1(_classNames2, 'cursor-pointer', on === 'click'), _classNames2));
   return /*#__PURE__*/React.createElement("div", {
     "data-test": "DesignSystem-AvatarGroup--TriggerAvatar",
     className: "AvatarCount-wrapper",
-    style: avatarStyle
+    style: avatarStyle,
+    tabIndex: 0,
+    role: "button"
   }, /*#__PURE__*/React.createElement("span", {
     "data-test": "DesignSystem-AvatarGroup--TriggerAvatarVariants",
     className: AvatarVariantsClass
   }, /*#__PURE__*/React.createElement(Text, {
-    appearance: 'white',
     className: ContentClass
   }, "+".concat(hiddenAvatarCount))));
 };
 
 var Avatars = function Avatars(props) {
   var _classNames;
-
   var avatarList = props.avatarList,
-      avatarStyle = props.avatarStyle,
-      tooltipPosition = props.tooltipPosition,
-      size = props.size;
+    avatarStyle = props.avatarStyle,
+    tooltipPosition = props.tooltipPosition,
+    size = props.size;
   var GroupClass = classnames((_classNames = {}, _defineProperty$1(_classNames, "AvatarGroup-item", true), _defineProperty$1(_classNames, "AvatarGroup-item--tiny", size === 'tiny'), _defineProperty$1(_classNames, "AvatarGroup-item--regular", size === 'regular'), _classNames));
   var avatars = avatarList.map(function (item, index) {
     var appearance = item.appearance,
-        firstName = item.firstName,
-        lastName = item.lastName,
-        icon = item.icon,
-        image = item.image;
+      firstName = item.firstName,
+      lastName = item.lastName,
+      icon = item.icon,
+      image = item.image,
+      disabled = item.disabled,
+      tooltipSuffix = item.tooltipSuffix;
     return /*#__PURE__*/React.createElement("div", {
       "data-test": "DesignSystem-AvatarGroup--Avatar",
       className: GroupClass,
@@ -1034,7 +896,9 @@ var Avatars = function Avatars(props) {
       firstName: firstName,
       lastName: lastName,
       withTooltip: true,
-      tooltipPosition: tooltipPosition
+      disabled: disabled,
+      tooltipPosition: tooltipPosition,
+      tooltipSuffix: tooltipSuffix
     }, image || icon));
   });
   return avatars;
@@ -1042,58 +906,79 @@ var Avatars = function Avatars(props) {
 
 var AvatarPopperBody = function AvatarPopperBody(props) {
   var hiddenAvatarList = props.hiddenAvatarList,
-      popperRenderer = props.popperRenderer,
-      maxHeight = props.maxHeight,
-      dark = props.dark;
-
+    popperRenderer = props.popperRenderer,
+    maxHeight = props.maxHeight,
+    minHeight = props.minHeight,
+    width = props.width,
+    popperClassName = props.popperClassName;
   if (popperRenderer) {
     return popperRenderer(hiddenAvatarList);
   }
-
+  var popperClass = classnames(_defineProperty$1({}, 'AvatarGroup-Popper py-3', true), popperClassName);
   return /*#__PURE__*/React.createElement("div", {
-    className: "px-4 py-3"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "AvatarGroup-TextWrapper",
     style: {
+      width: width,
+      minHeight: minHeight,
       maxHeight: maxHeight
-    }
-  }, hiddenAvatarList.map(function (item, ind) {
+    },
+    className: popperClass,
+    "data-test": "DesignSystem-AvatarGroup--Popover"
+  }, /*#__PURE__*/React.createElement(Listbox, {
+    showDivider: false,
+    type: "description",
+    size: "compressed",
+    tagName: "ul",
+    "data-test": "DesignSystem-AvatarGroup--List"
+  }, hiddenAvatarList.map(function (item, index) {
     var _item$firstName = item.firstName,
-        firstName = _item$firstName === void 0 ? '' : _item$firstName,
-        _item$lastName = item.lastName,
-        lastName = _item$lastName === void 0 ? '' : _item$lastName;
-    var name = "".concat(firstName, " ").concat(lastName);
-    var AvatarTextClass = classnames(_defineProperty$1({}, "mb-4", ind < hiddenAvatarList.length - 1));
-    return /*#__PURE__*/React.createElement(Text, {
-      key: ind,
-      appearance: dark ? 'white' : 'default',
-      className: AvatarTextClass,
-      "data-test": "DesignSystem-AvatarGroup--Text"
-    }, name);
+      firstName = _item$firstName === void 0 ? '' : _item$firstName,
+      _item$lastName = item.lastName,
+      lastName = _item$lastName === void 0 ? '' : _item$lastName,
+      _item$tooltipSuffix = item.tooltipSuffix,
+      tooltipSuffix = _item$tooltipSuffix === void 0 ? '' : _item$tooltipSuffix,
+      disabled = item.disabled;
+    var name = "".concat(firstName, " ").concat(lastName, " ").concat(tooltipSuffix);
+    var elementRef = React.useRef(null);
+    return /*#__PURE__*/React.createElement(Tooltip, {
+      key: index,
+      showOnTruncation: true,
+      tooltip: name,
+      elementRef: elementRef
+    }, /*#__PURE__*/React.createElement(Listbox.Item, {
+      disabled: disabled,
+      className: "cursor-default",
+      tagName: "li",
+      "data-test": "DesignSystem-AvatarGroup--Item"
+    }, /*#__PURE__*/React.createElement(Text, {
+      ref: elementRef,
+      "data-test": "DesignSystem-AvatarGroup--Text",
+      className: "ellipsis--noWrap"
+    }, name)));
   })));
 };
 
 var AvatarGroup = function AvatarGroup(props) {
   var max = props.max,
-      borderColor = props.borderColor,
-      popoverOptions = props.popoverOptions,
-      tooltipPosition = props.tooltipPosition,
-      list = props.list,
-      className = props.className,
-      size = props.size;
+    borderColor = props.borderColor,
+    popoverOptions = props.popoverOptions,
+    tooltipPosition = props.tooltipPosition,
+    list = props.list,
+    className = props.className,
+    size = props.size;
   var popperRenderer = popoverOptions.popperRenderer,
-      _popoverOptions$maxHe = popoverOptions.maxHeight,
-      maxHeight = _popoverOptions$maxHe === void 0 ? 150 : _popoverOptions$maxHe,
-      _popoverOptions$posit = popoverOptions.position,
-      position = _popoverOptions$posit === void 0 ? 'bottom' : _popoverOptions$posit,
-      _popoverOptions$on = popoverOptions.on,
-      on = _popoverOptions$on === void 0 ? 'hover' : _popoverOptions$on,
-      _popoverOptions$dark = popoverOptions.dark,
-      dark = _popoverOptions$dark === void 0 ? true : _popoverOptions$dark,
-      _popoverOptions$appen = popoverOptions.appendToBody,
-      appendToBody = _popoverOptions$appen === void 0 ? true : _popoverOptions$appen,
-      _popoverOptions$poppe = popoverOptions.popperClassName,
-      popperClassName = _popoverOptions$poppe === void 0 ? '' : _popoverOptions$poppe;
+    _popoverOptions$maxHe = popoverOptions.maxHeight,
+    maxHeight = _popoverOptions$maxHe === void 0 ? 256 : _popoverOptions$maxHe,
+    _popoverOptions$width = popoverOptions.width,
+    width = _popoverOptions$width === void 0 ? 176 : _popoverOptions$width,
+    minHeight = popoverOptions.minHeight,
+    _popoverOptions$posit = popoverOptions.position,
+    position = _popoverOptions$posit === void 0 ? 'bottom' : _popoverOptions$posit,
+    _popoverOptions$on = popoverOptions.on,
+    on = _popoverOptions$on === void 0 ? 'hover' : _popoverOptions$on,
+    _popoverOptions$appen = popoverOptions.appendToBody,
+    appendToBody = _popoverOptions$appen === void 0 ? true : _popoverOptions$appen,
+    _popoverOptions$poppe = popoverOptions.popperClassName,
+    popperClassName = _popoverOptions$poppe === void 0 ? '' : _popoverOptions$poppe;
   var baseProps = extractBaseProps(props);
   var hiddenAvatarCount = list.length > max ? Math.min(list.length - max, 99) : 0;
   var style = {
@@ -1106,7 +991,6 @@ var AvatarGroup = function AvatarGroup(props) {
   var avatarStyle = size === 'tiny' ? _objectSpread2(_objectSpread2({}, style), tinyAvatarStyle) : style;
   var avatarList = list.length === 3 ? list : list.slice(0, max);
   var AvatarGroupClass = classnames(_defineProperty$1({}, 'AvatarGroup', true), className);
-  var popperClass = classnames(_defineProperty$1({}, 'AvatarGroup-Popper', true), popperClassName);
   return /*#__PURE__*/React.createElement("div", _extends$2({
     "data-test": "DesignSystem-AvatarGroup"
   }, baseProps, {
@@ -1118,7 +1002,6 @@ var AvatarGroup = function AvatarGroup(props) {
     tooltipPosition: tooltipPosition
   }), list.length - max > 0 && list.length !== 3 && /*#__PURE__*/React.createElement(Popover, {
     on: on,
-    dark: dark,
     trigger: /*#__PURE__*/React.createElement(AvatarCount, {
       on: on,
       size: size,
@@ -1127,13 +1010,14 @@ var AvatarGroup = function AvatarGroup(props) {
     }),
     position: position,
     appendToBody: appendToBody,
-    className: popperClass,
     offset: "medium"
   }, /*#__PURE__*/React.createElement(AvatarPopperBody, {
     hiddenAvatarList: list.slice(max, list.length),
     popperRenderer: popperRenderer,
     maxHeight: maxHeight,
-    dark: dark
+    minHeight: minHeight,
+    width: width,
+    popperClassName: popperClassName
   })));
 };
 AvatarGroup.displayName = 'AvatarGroup';
@@ -1146,49 +1030,42 @@ AvatarGroup.defaultProps = {
 };
 
 var useEffect$1 = React.useEffect,
-    useState$2 = React.useState;
-
+  useState$2 = React.useState;
 /**
  * ### Note:
  * **   The backdrop component is used to provide emphasis on a particular element or parts of it. <br/>**
  * The backdrop signals to the user of a state change within the application and can be used for creating loaders, dialogs, and more. <br/>
  * In its simplest form, the backdrop component will add a dimmed layer over your application.
  */
+
 var Backdrop = function Backdrop(props) {
   var className = props.className;
   var baseProps = extractBaseProps(props);
-
   var _useState = useState$2(null),
-      _useState2 = _slicedToArray(_useState, 2),
-      savedBodyOverflow = _useState2[0],
-      setBodyOverflow = _useState2[1];
-
+    _useState2 = _slicedToArray(_useState, 2),
+    savedBodyOverflow = _useState2[0],
+    setBodyOverflow = _useState2[1];
   var _React$useState = React.useState(props.open),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      open = _React$useState2[0],
-      setOpen = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    open = _React$useState2[0],
+    setOpen = _React$useState2[1];
   var _React$useState3 = React.useState(props.open),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      animate = _React$useState4[0],
-      setAnimate = _React$useState4[1];
-
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    animate = _React$useState4[0],
+    setAnimate = _React$useState4[1];
   var classes = classnames({
     Backdrop: true,
     'Backdrop--open': open,
     'Backdrop-animation--open': animate,
     'Backdrop-animation--close': !animate
   }, className);
-
   var disableBodyScroll = function disableBodyScroll() {
     document.body.style.setProperty('overflow', 'hidden', 'important');
   };
-
   var enableBodyScroll = function enableBodyScroll() {
     document.body.style.overflow = savedBodyOverflow || '';
     setBodyOverflow(null);
   };
-
   useEffect$1(function () {
     if (props.open) {
       setBodyOverflow(document.body.style.overflow);
@@ -1196,7 +1073,6 @@ var Backdrop = function Backdrop(props) {
       setOpen(true);
       setAnimate(true);
     }
-
     if (!props.open) {
       window.setTimeout(function () {
         setOpen(false);
@@ -1204,12 +1080,11 @@ var Backdrop = function Backdrop(props) {
       setAnimate(false);
       enableBodyScroll();
     }
-
     return function () {
       enableBodyScroll();
     };
   }, [props.open]);
-  var BackdropElement = /*#__PURE__*/ReactDOM.createPortal( /*#__PURE__*/React.createElement("div", _extends$2({
+  var BackdropElement = /*#__PURE__*/ReactDOM.createPortal(/*#__PURE__*/React.createElement("div", _extends$2({
     "data-test": "DesignSystem-Backdrop",
     "data-layer": true,
     "data-opened": open
@@ -1225,11 +1100,10 @@ Backdrop.displayName = 'Backdrop';
 
 var Badge = function Badge(props) {
   var _classNames;
-
   var appearance = props.appearance,
-      children = props.children,
-      subtle = props.subtle,
-      className = props.className;
+    children = props.children,
+    subtle = props.subtle,
+    className = props.className;
   var baseProps = extractBaseProps(props);
   var classes = classnames((_classNames = {
     Badge: true
@@ -1247,15 +1121,13 @@ Badge.defaultProps = {
 
 var RenderLink = function RenderLink(_ref) {
   var item = _ref.item,
-      onClick = _ref.onClick;
-
+    onClick = _ref.onClick;
   var onClickHandler = function onClickHandler(ev) {
     if (onClick) {
       ev.preventDefault();
       onClick(item.link);
     }
   };
-
   return /*#__PURE__*/React.createElement(Link, {
     className: "Breadcrumbs-link ellipsis--noWrap",
     "data-test": "DesignSystem-Breadcrumbs-link",
@@ -1265,12 +1137,11 @@ var RenderLink = function RenderLink(_ref) {
     size: "tiny"
   }, item.label);
 };
-
 var RenderItem = function RenderItem(_ref2) {
   var item = _ref2.item,
-      onClick = _ref2.onClick,
-      index = _ref2.index,
-      showTooltip = _ref2.showTooltip;
+    onClick = _ref2.onClick,
+    index = _ref2.index,
+    showTooltip = _ref2.showTooltip;
   return /*#__PURE__*/React.createElement("div", {
     key: index,
     className: "Breadcrumbs-item",
@@ -1288,7 +1159,6 @@ var RenderItem = function RenderItem(_ref2) {
     className: "Breadcrumbs-itemSeparator"
   }, "/"));
 };
-
 var renderDropdown = function renderDropdown(list, onClick) {
   var options = list.map(function (item) {
     return {
@@ -1296,7 +1166,6 @@ var renderDropdown = function renderDropdown(list, onClick) {
       value: item.link
     };
   });
-
   var customTrigger = function customTrigger() {
     return /*#__PURE__*/React.createElement(Button, {
       type: "button",
@@ -1308,7 +1177,6 @@ var renderDropdown = function renderDropdown(list, onClick) {
       "data-test": "DesignSystem-Breadcrumbs--Button"
     });
   };
-
   return /*#__PURE__*/React.createElement(Dropdown, {
     className: "Breadcrumbs-dropdown",
     triggerSize: 'tiny',
@@ -1324,12 +1192,11 @@ var renderDropdown = function renderDropdown(list, onClick) {
     }
   });
 };
-
 var Breadcrumbs = function Breadcrumbs(props) {
   var list = props.list,
-      onClick = props.onClick,
-      className = props.className,
-      showTooltip = props.showTooltip;
+    onClick = props.onClick,
+    className = props.className,
+    showTooltip = props.showTooltip;
   var baseProps = extractBaseProps(props);
   var BreadcrumbClass = classnames(_defineProperty$1({}, 'Breadcrumbs', true), className);
   return /*#__PURE__*/React.createElement("div", _extends$2({
@@ -1358,39 +1225,39 @@ var Breadcrumbs = function Breadcrumbs(props) {
   })));
 };
 
-var _excluded$_ = ["size", "appearance", "iconAlign", "tabIndex", "largeIcon", "type", "children", "icon", "expanded", "selected", "loading", "disabled", "className", "tooltip", "iconType"];
+var _excluded$16 = ["size", "appearance", "iconAlign", "tabIndex", "largeIcon", "type", "children", "icon", "expanded", "selected", "loading", "disabled", "className", "tooltip", "iconType"];
 var sizeMapping$3 = {
   tiny: 12,
   regular: 16,
   large: 20
-}; // eslint-disable-next-line react/display-name
+};
 
+// eslint-disable-next-line react/display-name
 var ButtonElement = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var _classNames, _classNames2;
-
   var _props$size = props.size,
-      size = _props$size === void 0 ? 'regular' : _props$size,
-      _props$appearance = props.appearance,
-      appearance = _props$appearance === void 0 ? 'basic' : _props$appearance,
-      _props$iconAlign = props.iconAlign,
-      iconAlign = _props$iconAlign === void 0 ? 'left' : _props$iconAlign,
-      _props$tabIndex = props.tabIndex,
-      tabIndex = _props$tabIndex === void 0 ? 0 : _props$tabIndex,
-      largeIcon = props.largeIcon,
-      type = props.type,
-      children = props.children,
-      icon = props.icon,
-      expanded = props.expanded,
-      selected = props.selected,
-      loading = props.loading,
-      disabled = props.disabled,
-      className = props.className;
-      props.tooltip;
-      var iconType = props.iconType,
-      rest = _objectWithoutProperties(props, _excluded$_);
-
+    size = _props$size === void 0 ? 'regular' : _props$size,
+    _props$appearance = props.appearance,
+    appearance = _props$appearance === void 0 ? 'basic' : _props$appearance,
+    _props$iconAlign = props.iconAlign,
+    iconAlign = _props$iconAlign === void 0 ? 'left' : _props$iconAlign,
+    _props$tabIndex = props.tabIndex,
+    tabIndex = _props$tabIndex === void 0 ? 0 : _props$tabIndex,
+    largeIcon = props.largeIcon,
+    type = props.type,
+    children = props.children,
+    icon = props.icon,
+    expanded = props.expanded,
+    selected = props.selected,
+    loading = props.loading,
+    disabled = props.disabled,
+    className = props.className;
+    props.tooltip;
+    var iconType = props.iconType,
+    rest = _objectWithoutProperties(props, _excluded$16);
   var buttonClass = classnames((_classNames = {}, _defineProperty$1(_classNames, 'Button', true), _defineProperty$1(_classNames, 'Button--expanded', expanded), _defineProperty$1(_classNames, "Button--".concat(size), size), _defineProperty$1(_classNames, "Button--".concat(size, "Square"), !children), _defineProperty$1(_classNames, "Button--".concat(appearance), appearance), _defineProperty$1(_classNames, 'Button--selected', selected && (appearance === 'basic' || appearance === 'transparent')), _defineProperty$1(_classNames, "Button--iconAlign-".concat(iconAlign), children && iconAlign), _defineProperty$1(_classNames, "".concat(className), className), _classNames));
-  var iconClass = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'Button-icon', true), _defineProperty$1(_classNames2, "Button-icon--".concat(iconAlign), children && iconAlign), _classNames2));
+  var iconClass = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'Button-icon', true), _defineProperty$1(_classNames2, "Button-icon--".concat(iconAlign), children && iconAlign), _defineProperty$1(_classNames2, "Button-regularIcon--".concat(iconAlign), children && iconAlign && size === 'regular' && !expanded), _classNames2));
+  var spinnerSize = size === 'large' && children ? 'small' : 'xsmall';
   return /*#__PURE__*/React.createElement("button", _extends$2({
     "data-test": "DesignSystem-Button",
     ref: ref,
@@ -1399,14 +1266,15 @@ var ButtonElement = /*#__PURE__*/React.forwardRef(function (props, ref) {
     disabled: disabled || loading,
     tabIndex: tabIndex
   }, rest), loading ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Spinner, {
-    size: "small",
+    size: spinnerSize,
     appearance: appearance === 'basic' || appearance === 'transparent' ? 'secondary' : 'white',
     "data-test": "DesignSystem-Button--Spinner",
     className: "Button-spinner"
   }), /*#__PURE__*/React.createElement(Text, {
     className: "Button-text Button-text--hidden"
   }, children || '')) : /*#__PURE__*/React.createElement(React.Fragment, null, icon && /*#__PURE__*/React.createElement("div", {
-    className: iconClass
+    className: iconClass,
+    "data-test": "DesignSystem-Button--Icon-Wrapper"
   }, /*#__PURE__*/React.createElement(Icon, {
     "data-test": "DesignSystem-Button--Icon",
     name: icon,
@@ -1418,8 +1286,8 @@ var ButtonElement = /*#__PURE__*/React.forwardRef(function (props, ref) {
 });
 var Button = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var icon = props.icon,
-      tooltip = props.tooltip,
-      children = props.children;
+    tooltip = props.tooltip,
+    children = props.children;
   return icon && tooltip && !children ? /*#__PURE__*/React.createElement(Tooltip, {
     tooltip: tooltip
   }, /*#__PURE__*/React.createElement(ButtonElement, _extends$2({}, props, {
@@ -1459,7 +1327,6 @@ var getFirstDayOfMonth = function getFirstDayOfMonth(year, month) {
 var getDateInfo = function getDateInfo(d) {
   if (d) {
     var dateVal = convertToDate(d);
-
     if (dateVal) {
       var year = dateVal.getFullYear();
       var month = dateVal.getMonth();
@@ -1477,12 +1344,10 @@ var getDateInfo = function getDateInfo(d) {
       return {};
     }
   }
-
   return {};
 };
 var convertToDate = function convertToDate(d, format, validators) {
   var dateVal;
-
   if (d) {
     if (typeof d === 'number') {
       dateVal = new Date(d);
@@ -1490,90 +1355,75 @@ var convertToDate = function convertToDate(d, format, validators) {
       return format ? translateToDate(format, d, validators) : undefined;
     } else if (!(d instanceof Date)) {
       var _ref = d,
-          year = _ref.year,
-          month = _ref.month,
-          date = _ref.date;
+        year = _ref.year,
+        month = _ref.month,
+        date = _ref.date;
       dateVal = new Date(year, month, date, 0, 0, 0);
     } else {
       dateVal = d;
     }
   }
-
   return dateVal;
 };
 var compareYearBlock = function compareYearBlock(d, operator, currDecade) {
   if (d) {
     var _getDateInfo = getDateInfo(d),
-        limitDecade = _getDateInfo.decadeYear;
-
+      limitDecade = _getDateInfo.decadeYear;
     switch (operator) {
       case 'less':
         if (limitDecade < currDecade) return true;
         break;
-
       case 'more':
         if (limitDecade > currDecade) return true;
         break;
-
       case 'equal':
         if (limitDecade === currDecade) return true;
         break;
     }
   }
-
   return false;
 };
 var compareDate = function compareDate(d, operator, currYear, currMonth, currDate) {
   if (d) {
     var _getDateInfo2 = getDateInfo(d),
-        limitYear = _getDateInfo2.year,
-        limitMonth = _getDateInfo2.month,
-        limitDate = _getDateInfo2.date;
-
+      limitYear = _getDateInfo2.year,
+      limitMonth = _getDateInfo2.month,
+      limitDate = _getDateInfo2.date;
     switch (operator) {
       case 'less':
         if (limitYear < currYear) return true;
         if (limitYear > currYear) return false;
-
         if (currMonth !== undefined) {
           if (limitMonth < currMonth) return true;
           if (limitMonth > currMonth) return false;
         }
-
         if (currDate !== undefined && limitDate < currDate) return true;
         break;
-
       case 'more':
         if (limitYear > currYear) return true;
         if (limitYear < currYear) return false;
-
         if (currMonth !== undefined) {
           if (limitMonth > currMonth) return true;
           if (limitMonth < currMonth) return false;
         }
-
         if (currDate !== undefined && limitDate > currDate) return true;
         break;
-
       case 'equal':
         if (currDate !== undefined) {
           if (limitYear === currYear && limitMonth === currMonth && limitDate === currDate) return true;
         } else if (currMonth !== undefined) {
           if (limitYear === currYear && limitMonth === currMonth) return true;
         } else if (limitYear === currYear) return true;
-
     }
   }
-
   return false;
 };
 var translateToString = function translateToString(format, d) {
   if (format && d) {
     var _getDateInfo3 = getDateInfo(d),
-        year = _getDateInfo3.year,
-        month = _getDateInfo3.month,
-        date = _getDateInfo3.date;
-
+      year = _getDateInfo3.year,
+      month = _getDateInfo3.month,
+      date = _getDateInfo3.date;
     var separator = format.includes('/') ? '/' : '-';
     var f = format.split(separator);
     var val = f.reduce(function (out, curr, i) {
@@ -1581,43 +1431,36 @@ var translateToString = function translateToString(format, d) {
         case 'mm':
           out += (month < 9 && '0') + (month + 1);
           break;
-
         case 'yyyy':
           out += year;
           break;
-
         case 'dd':
           out += (date < 10 && '0') + date;
           break;
       }
-
       if (i !== f.length - 1) out += separator;
       return out;
     }, '');
     return val;
   }
-
   return '';
 };
 var translateToDate = function translateToDate(format, val) {
   var validators = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
-
   if (isValid(validators, val, format)) {
     var separator = format.includes('/') ? '/' : '-';
     var year = -1,
-        month = -1,
-        date = -1;
+      month = -1,
+      date = -1;
     var v = val.split(separator);
     format.split(separator).forEach(function (f, i) {
       switch (f) {
         case 'mm':
           month = +v[i] - 1;
           break;
-
         case 'yyyy':
           year = +v[i];
           break;
-
         case 'dd':
           date = +v[i];
           break;
@@ -1635,38 +1478,28 @@ var translateToDate = function translateToDate(format, val) {
 };
 var dateComparison = function dateComparison(date, operator, currDate, currMonth, currYear) {
   var currentDate = new Date("".concat(currYear, "-").concat(currMonth, "-").concat(currDate));
-
   if (date) {
     switch (operator) {
       case 'less':
         return date <= currentDate;
-
       case 'equal':
         return date.toDateString() === currentDate.toDateString();
-
       case 'more':
         return date >= currentDate;
-
       default:
         return false;
     }
   }
-
   return false;
 };
 
 var Calendar = /*#__PURE__*/function (_React$Component) {
   _inherits(Calendar, _React$Component);
-
   var _super = _createSuper(Calendar);
-
   function Calendar(props) {
     var _this;
-
     _classCallCheck(this, Calendar);
-
     _this = _super.call(this, props);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "updateState", function (year, month, date) {
       _this.setState({
         year: year,
@@ -1674,89 +1507,74 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
         date: date
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "getDateValue", function (year, month, date) {
       var d = new Date(year, month, date);
       return d;
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "getNavDateInfo", function (index) {
       var _this$state = _this.state,
-          yearBlockNav = _this$state.yearBlockNav,
-          yearNav = _this$state.yearNav,
-          monthNav = _this$state.monthNav;
+        yearBlockNav = _this$state.yearBlockNav,
+        yearNav = _this$state.yearNav,
+        monthNav = _this$state.monthNav;
       var monthBlock = config.monthBlock;
       var yearBlock = yearBlockNav;
-      var month = (monthNav + index) % monthBlock === -1 ? 11 : (monthNav + index) % monthBlock; // const year = yearNav + (index !== 0 && month < monthNav ? 1 : 0);
-
+      var month = (monthNav + index) % monthBlock === -1 ? 11 : (monthNav + index) % monthBlock;
+      // const year = yearNav + (index !== 0 && month < monthNav ? 1 : 0);
       var year;
-
       if (index >= 0) {
         year = yearNav + (index !== 0 && month < monthNav ? 1 : 0);
       } else {
         year = yearNav - (index !== 0 && month > monthNav ? 1 : 0);
       }
-
       return {
         yearBlock: yearBlock,
         year: year,
         month: month
       };
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "getInRangeError", function () {
       var _this$props = _this.props,
-          rangePicker = _this$props.rangePicker,
-          rangeLimit = _this$props.rangeLimit;
+        rangePicker = _this$props.rangePicker,
+        rangeLimit = _this$props.rangeLimit;
       var _this$state2 = _this.state,
-          startDateState = _this$state2.startDate,
-          endDateState = _this$state2.endDate,
-          hoverDateState = _this$state2.hoverDate;
-
+        startDateState = _this$state2.startDate,
+        endDateState = _this$state2.endDate,
+        hoverDateState = _this$state2.hoverDate;
       if (rangePicker && rangeLimit) {
         var _getDateInfo = getDateInfo(startDateState),
-            startYear = _getDateInfo.year,
-            startMonth = _getDateInfo.month,
-            _startDate2 = _getDateInfo.date;
-
+          startYear = _getDateInfo.year,
+          startMonth = _getDateInfo.month,
+          startDate = _getDateInfo.date;
         var _getDateInfo2 = getDateInfo(endDateState),
-            endYear = _getDateInfo2.year,
-            endMonth = _getDateInfo2.month,
-            _endDate2 = _getDateInfo2.date;
-
+          endYear = _getDateInfo2.year,
+          endMonth = _getDateInfo2.month,
+          endDate = _getDateInfo2.date;
         var _getDateInfo3 = getDateInfo(hoverDateState),
-            hoverYear = _getDateInfo3.year,
-            hoverMonth = _getDateInfo3.month,
-            hoverDate = _getDateInfo3.date;
-
+          hoverYear = _getDateInfo3.year,
+          hoverMonth = _getDateInfo3.month,
+          hoverDate = _getDateInfo3.date;
         var limitDate;
-
         if (startDateState) {
           limitDate = new Date(startDateState);
-          limitDate.setDate(_startDate2 + rangeLimit);
-          return compareDate(limitDate, 'less', hoverYear, hoverMonth, hoverDate + 1) || compareDate(limitDate, 'less', endYear, endMonth, _endDate2 + 1);
+          limitDate.setDate(startDate + rangeLimit);
+          return compareDate(limitDate, 'less', hoverYear, hoverMonth, hoverDate + 1) || compareDate(limitDate, 'less', endYear, endMonth, endDate + 1);
         }
-
         if (endDateState) {
           limitDate = new Date(endDateState);
-          limitDate.setDate(_endDate2 - rangeLimit);
-          return compareDate(limitDate, 'more', hoverYear, hoverMonth, hoverDate - 1) || compareDate(limitDate, 'more', startYear, startMonth, _startDate2 - 1);
+          limitDate.setDate(endDate - rangeLimit);
+          return compareDate(limitDate, 'more', hoverYear, hoverMonth, hoverDate - 1) || compareDate(limitDate, 'more', startYear, startMonth, startDate - 1);
         }
       }
-
       return false;
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "selectYear", function (year) {
       return function () {
         _this.updateState(year);
-
         _this.setState({
           view: 'month'
         });
       };
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "yearMouseOverHandler", function (year, isCurrentYear, isDisabled, ev) {
       var onYearHover = _this.props.onYearHover;
       var yearData = {
@@ -1767,17 +1585,14 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
       };
       if (onYearHover) onYearHover(yearData, ev);
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "selectMonth", function (month) {
       return function () {
         _this.updateState(_this.state.yearNav, month);
-
         _this.setState({
           view: 'date'
         });
       };
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "monthMouseOverHandler", function (month, isCurrentMonth, isDisabled, ev) {
       var months = config.months;
       var onMonthHover = _this.props.onMonthHover;
@@ -1790,20 +1605,16 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
       };
       if (onMonthHover) onMonthHover(monthData, ev);
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "selectDate", function (index, date, prevMonthDayRange, dayRange) {
       var d = _this.calculateDate(index, date, prevMonthDayRange, dayRange, false);
-
       _this.setState({
         currDate: d
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "calculateDate", function (index, date, prevMonthDayRange, dayRange, isDateHovered) {
       var neighbouringMonthIndex;
       var neighbouringMonthDate;
       var type = '';
-
       if (date <= 0) {
         neighbouringMonthIndex = index - 1;
         neighbouringMonthDate = prevMonthDayRange + date;
@@ -1815,32 +1626,25 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
         neighbouringMonthIndex = index;
         neighbouringMonthDate = date;
       }
-
       var _this$getNavDateInfo = _this.getNavDateInfo(neighbouringMonthIndex),
-          year = _this$getNavDateInfo.year,
-          month = _this$getNavDateInfo.month;
-
+        year = _this$getNavDateInfo.year,
+        month = _this$getNavDateInfo.month;
       if (isDateHovered === false) {
         _this.updateState(year, month, neighbouringMonthDate);
-
         _this.onNavIconClickHandler(type)();
       }
-
       var d = _this.getDateValue(year, month, neighbouringMonthDate);
-
       return d;
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onNavIconClickHandler", function (type) {
       return function () {
         var _this$state3 = _this.state,
-            view = _this$state3.view,
-            yearBlockNav = _this$state3.yearBlockNav,
-            yearNav = _this$state3.yearNav,
-            monthNav = _this$state3.monthNav;
+          view = _this$state3.view,
+          yearBlockNav = _this$state3.yearBlockNav,
+          yearNav = _this$state3.yearNav,
+          monthNav = _this$state3.monthNav;
         var yearBlockRange = config.yearBlockRange,
-            monthBlock = config.monthBlock;
-
+          monthBlock = config.monthBlock;
         switch (view) {
           case 'year':
             if (type === 'prev') _this.setState({
@@ -1850,7 +1654,6 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
               yearBlockNav: yearBlockNav + yearBlockRange
             });
             break;
-
           case 'month':
             if (type === 'prev') _this.setState({
               yearNav: yearNav - 1
@@ -1859,80 +1662,64 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
               yearNav: yearNav + 1
             });
             break;
-
           case 'date':
             if (type === 'prev') {
               if (monthNav === 0) _this.setState({
                 yearNav: yearNav - 1
               });
-
               _this.setState({
                 monthNav: (monthBlock + monthNav - 1) % monthBlock
               });
             }
-
             if (type === 'next') {
               if (monthNav === monthBlock - 1) _this.setState({
                 yearNav: yearNav + 1
               });
-
               _this.setState({
                 monthNav: (monthNav + 1) % monthBlock
               });
             }
-
             break;
         }
       };
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "renderJumpButton", function (type) {
       var _this$props2 = _this.props,
-          disabledBefore = _this$props2.disabledBefore,
-          disabledAfter = _this$props2.disabledAfter,
-          size = _this$props2.size;
+        disabledBefore = _this$props2.disabledBefore,
+        disabledAfter = _this$props2.disabledAfter,
+        size = _this$props2.size;
       var _this$state4 = _this.state,
-          view = _this$state4.view,
-          yearBlockNav = _this$state4.yearBlockNav,
-          yearNav = _this$state4.yearNav,
-          monthNav = _this$state4.monthNav;
+        view = _this$state4.view,
+        yearBlockNav = _this$state4.yearBlockNav,
+        yearNav = _this$state4.yearNav,
+        monthNav = _this$state4.monthNav;
       var disabled = false;
-
       switch (view) {
         case 'year':
           if (type === 'prev') {
             disabled = compareYearBlock(disabledBefore, 'more', yearBlockNav) || compareYearBlock(disabledBefore, 'equal', yearBlockNav);
           }
-
           if (type === 'next') {
             disabled = compareYearBlock(disabledAfter, 'less', yearBlockNav) || compareYearBlock(disabledAfter, 'equal', yearBlockNav);
           }
-
           break;
-
         case 'month':
           if (type === 'prev') {
             disabled = compareDate(disabledBefore, 'more', yearNav - 1);
           }
-
           if (type === 'next') {
             disabled = compareDate(disabledAfter, 'less', yearNav + 1);
           }
-
           break;
-
         case 'date':
           if (type === 'prev') {
             disabled = compareDate(disabledBefore, 'more', yearNav, monthNav - 1);
           }
-
           if (type === 'next') {
             disabled = compareDate(disabledAfter, 'less', yearNav, monthNav + 1);
           }
-
           break;
       }
-
       var headerIconClass = classnames(_defineProperty$1({
         'Calendar-headerIcon': true
       }, "Calendar-headerIcon--".concat(type), type));
@@ -1946,16 +1733,13 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
         onClick: _this.onNavIconClickHandler(type)
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onNavHeadingClickHandler", function (currView) {
       return function () {
         var monthsInView = _this.props.monthsInView;
         var jumpView = _this.props.jumpView;
-
         if (jumpView) {
           if (monthsInView > 1) jumpView = false;
         }
-
         if (jumpView) {
           if (currView === 'year') _this.setState({
             view: 'date'
@@ -1969,22 +1753,19 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
         }
       };
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "renderHeaderContent", function (index) {
       var _this$props3 = _this.props,
-          size = _this$props3.size,
-          monthsInView = _this$props3.monthsInView,
-          rangePicker = _this$props3.rangePicker;
+        size = _this$props3.size,
+        monthsInView = _this$props3.monthsInView,
+        rangePicker = _this$props3.rangePicker;
       var _this$state5 = _this.state,
-          view = _this$state5.view,
-          yearBlockNav = _this$state5.yearBlockNav;
+        view = _this$state5.view,
+        yearBlockNav = _this$state5.yearBlockNav;
       var yearBlockRange = config.yearBlockRange,
-          months = config.months;
-
+        months = config.months;
       var _this$getNavDateInfo2 = _this.getNavDateInfo(index),
-          yearNavVal = _this$getNavDateInfo2.year,
-          monthNavVal = _this$getNavDateInfo2.month;
-
+        yearNavVal = _this$getNavDateInfo2.year,
+        monthNavVal = _this$getNavDateInfo2.month;
       var headerContentClass = classnames({
         'Calendar-headerContent': true,
         'Calendar-headerContent--noIcon-left': index === monthsInView - 1,
@@ -1993,7 +1774,6 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
       var headerContent = '';
       if (view === 'year') headerContent = "".concat(yearBlockNav, " - ").concat(yearBlockNav + (yearBlockRange - 1));
       if (view === 'month') headerContent = "".concat(yearNavVal);
-
       var renderHeading = function renderHeading(content) {
         if (size === 'small') {
           return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Text, {
@@ -2004,7 +1784,6 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
             name: "keyboard_arrow_down"
           }));
         }
-
         return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Heading, {
           size: "s"
         }, content), view !== 'year' && !rangePicker && /*#__PURE__*/React.createElement(Icon, {
@@ -2013,7 +1792,6 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
           name: "keyboard_arrow_down"
         }));
       };
-
       return /*#__PURE__*/React.createElement("div", {
         className: headerContentClass
       }, view !== 'date' &&
@@ -2031,18 +1809,17 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
         onClick: _this.onNavHeadingClickHandler('month')
       }, renderHeading(yearNavVal))));
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "renderBodyYear", function () {
       var yearBlockRange = config.yearBlockRange,
-          yearsInRow = config.yearsInRow;
+        yearsInRow = config.yearsInRow;
       var _this$props4 = _this.props,
-          size = _this$props4.size,
-          rangePicker = _this$props4.rangePicker,
-          disabledBefore = _this$props4.disabledBefore,
-          disabledAfter = _this$props4.disabledAfter;
+        size = _this$props4.size,
+        rangePicker = _this$props4.rangePicker,
+        disabledBefore = _this$props4.disabledBefore,
+        disabledAfter = _this$props4.disabledAfter;
       var _this$state6 = _this.state,
-          yearBlockNav = _this$state6.yearBlockNav,
-          currYear = _this$state6.currYear;
+        yearBlockNav = _this$state6.yearBlockNav,
+        currYear = _this$state6.currYear;
       var noOfRows = Math.ceil(yearBlockRange / yearsInRow);
       return Array.from({
         length: noOfRows
@@ -2054,17 +1831,14 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
           length: yearsInRow
         }, function (_x, col) {
           var _classNames2;
-
           var offset = yearsInRow * row + col;
           if (offset === yearBlockNav) return undefined;
           var year = yearBlockNav + offset;
           var disabled = compareDate(disabledBefore, 'more', year) || compareDate(disabledAfter, 'less', year);
           var active = !disabled && !rangePicker && year === _this.state.year;
-
           var isCurrentYear = function isCurrentYear() {
             return year === currYear;
           };
-
           var valueClass = classnames((_classNames2 = {
             'Calendar-value': true,
             'Calendar-value--active': active,
@@ -2101,20 +1875,19 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
         }));
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "renderBodyMonth", function () {
       var monthBlock = config.monthBlock,
-          monthsInRow = config.monthsInRow,
-          months = config.months;
+        monthsInRow = config.monthsInRow,
+        months = config.months;
       var _this$props5 = _this.props,
-          size = _this$props5.size,
-          disabledBefore = _this$props5.disabledBefore,
-          disabledAfter = _this$props5.disabledAfter;
+        size = _this$props5.size,
+        disabledBefore = _this$props5.disabledBefore,
+        disabledAfter = _this$props5.disabledAfter;
       var _this$state7 = _this.state,
-          yearNav = _this$state7.yearNav,
-          year = _this$state7.year,
-          currYear = _this$state7.currYear,
-          currMonth = _this$state7.currMonth;
+        yearNav = _this$state7.yearNav,
+        year = _this$state7.year,
+        currYear = _this$state7.currYear,
+        currMonth = _this$state7.currMonth;
       var noOfRows = Math.ceil(monthBlock / monthsInRow);
       return Array.from({
         length: noOfRows
@@ -2126,15 +1899,12 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
           length: monthsInRow
         }, function (_x, col) {
           var _classNames3;
-
           var month = monthsInRow * row + col;
           var disabled = compareDate(disabledBefore, 'more', yearNav, month) || compareDate(disabledAfter, 'less', yearNav, month);
           var active = !disabled && year === yearNav && month === _this.state.month;
-
           var isCurrentMonth = function isCurrentMonth() {
             return currYear === yearNav && currMonth === month;
           };
-
           var valueClass = classnames((_classNames3 = {
             'Calendar-value': true,
             'Calendar-value--active': active,
@@ -2171,23 +1941,20 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
         }));
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onDateRowMouseLeaveHandler", function () {
       var rangePicker = _this.props.rangePicker;
-
       if (rangePicker) {
         _this.setState({
           hoverDate: undefined
         });
       }
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "renderBodyDate", function (index) {
       var daysInRow = config.daysInRow,
-          days = config.days;
+        days = config.days;
       var _this$props6 = _this.props,
-          size = _this$props6.size,
-          firstDayOfWeek = _this$props6.firstDayOfWeek;
+        size = _this$props6.size,
+        firstDayOfWeek = _this$props6.firstDayOfWeek;
       var textSize = size === 'large' ? 'regular' : 'small';
       return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
         className: "Calendar-dayValues"
@@ -2210,33 +1977,30 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
         onMouseLeave: _this.onDateRowMouseLeaveHandler
       }, _this.renderDateValues(index)));
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "renderDateValues", function (index) {
       var daysInRow = config.daysInRow,
-          monthBlock = config.monthBlock;
+        monthBlock = config.monthBlock;
       var _this$props7 = _this.props,
-          size = _this$props7.size,
-          rangePicker = _this$props7.rangePicker,
-          firstDayOfWeek = _this$props7.firstDayOfWeek,
-          disabledBefore = _this$props7.disabledBefore,
-          disabledAfter = _this$props7.disabledAfter,
-          monthsInView = _this$props7.monthsInView,
-          onDateHover = _this$props7.onDateHover;
+        size = _this$props7.size,
+        rangePicker = _this$props7.rangePicker,
+        firstDayOfWeek = _this$props7.firstDayOfWeek,
+        disabledBefore = _this$props7.disabledBefore,
+        disabledAfter = _this$props7.disabledAfter,
+        monthsInView = _this$props7.monthsInView,
+        onDateHover = _this$props7.onDateHover;
       var _this$state8 = _this.state,
-          startDate = _this$state8.startDate,
-          endDate = _this$state8.endDate,
-          hoverDate = _this$state8.hoverDate,
-          yearState = _this$state8.year,
-          monthState = _this$state8.month,
-          dateState = _this$state8.date,
-          currMonth = _this$state8.currMonth,
-          currYear = _this$state8.currYear,
-          todayDate = _this$state8.todayDate;
-
+        startDate = _this$state8.startDate,
+        endDate = _this$state8.endDate,
+        hoverDate = _this$state8.hoverDate,
+        yearState = _this$state8.year,
+        monthState = _this$state8.month,
+        dateState = _this$state8.date,
+        currMonth = _this$state8.currMonth,
+        currYear = _this$state8.currYear,
+        todayDate = _this$state8.todayDate;
       var _this$getNavDateInfo3 = _this.getNavDateInfo(index),
-          yearNavVal = _this$getNavDateInfo3.year,
-          monthNavVal = _this$getNavDateInfo3.month;
-
+        yearNavVal = _this$getNavDateInfo3.year,
+        monthNavVal = _this$getNavDateInfo3.month;
       var prevMonth = monthNavVal - 1;
       var prevYear = yearNavVal;
       var prevMonthDayRange = getDaysInMonth(prevYear, prevMonth);
@@ -2245,16 +2009,14 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
       var desiredFirstDayIndex = getIndexOfDay(firstDayOfWeek);
       var dayDiff = (firstDayIndex - desiredFirstDayIndex + 7) % 7;
       var dummyDays = Math.abs(dayDiff);
-      var noOfRows = Math.ceil((dayRange + dummyDays) / daysInRow); // if(noOfRows !== 6 && monthsInView <= 1) ?
+      var noOfRows = Math.ceil((dayRange + dummyDays) / daysInRow);
 
+      // if(noOfRows !== 6 && monthsInView <= 1) ?
       if (noOfRows === 6) ; else if (monthsInView > 1) ; else {
         noOfRows = noOfRows + 1;
       }
-
       var inRangeError = _this.getInRangeError();
-
       var events = _this.props.events;
-
       var onClickHandler = function onClickHandler(date) {
         return function () {
           if (rangePicker) {
@@ -2268,12 +2030,10 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
           }
         };
       };
-
       var onMouseOverHandler = function onMouseOverHandler(date) {
         return function () {
           if (rangePicker) {
             var d = _this.getDateValue(yearNavVal, monthNavVal, date);
-
             if (!startDate || !endDate) {
               _this.setState({
                 hoverDate: d
@@ -2282,11 +2042,10 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
           }
         };
       };
-
       var onMouseEnterHandler = function onMouseEnterHandler(date, isToday, isDisabled, ev) {
         var d = _this.calculateDate(index, date, prevMonthDayRange, dayRange, true) || new Date();
         var months = config.months,
-            days = config.days;
+          days = config.days;
         var dayName = days.large[d.getDay()];
         var dateData = {
           value: d.getDate(),
@@ -2301,7 +2060,6 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
         };
         if (onDateHover) onDateHover(dateData, ev);
       };
-
       return Array.from({
         length: noOfRows
       }, function (_y, row) {
@@ -2312,15 +2070,12 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
           length: daysInRow
         }, function (_x, col) {
           var _classNames4;
-
           var date = daysInRow * row + col - dummyDays + 1;
           var dummy = date <= 0 || date > dayRange;
           var disabled = compareDate(disabledBefore, 'more', yearNavVal, monthNavVal, date) || compareDate(disabledAfter, 'less', yearNavVal, monthNavVal, date);
           var active = !disabled && yearState === yearNavVal && monthState === monthNavVal && dateState === date;
-
           var today = function today() {
             var boolVal;
-
             if (date <= 0) {
               boolVal = currYear === yearNavVal && currMonth === monthNavVal - 1 && todayDate === prevMonthDayRange + date;
             } else if (date > dayRange) {
@@ -2328,25 +2083,20 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
             } else {
               boolVal = currYear === yearNavVal && currMonth === monthNavVal && todayDate === date;
             }
-
             return boolVal;
           };
-
           var startActive = false;
           var endActive = false;
           var inRange = false;
           var inRangeLast = false;
-
           var _getDateInfo4 = getDateInfo(startDate),
-              sYear = _getDateInfo4.year,
-              sMonth = _getDateInfo4.month,
-              sDate = _getDateInfo4.date;
-
+            sYear = _getDateInfo4.year,
+            sMonth = _getDateInfo4.month,
+            sDate = _getDateInfo4.date;
           var _getDateInfo5 = getDateInfo(endDate),
-              eYear = _getDateInfo5.year,
-              eMonth = _getDateInfo5.month,
-              eDate = _getDateInfo5.date;
-
+            eYear = _getDateInfo5.year,
+            eMonth = _getDateInfo5.month,
+            eDate = _getDateInfo5.date;
           var isStart = startActive || endDate && inRangeLast && compareDate(hoverDate, 'less', eYear, eMonth, eDate);
           var isEnd = endActive || startDate && inRangeLast && compareDate(hoverDate, 'more', sYear, sMonth, sDate);
           var dateInString = "".concat(date <= 0 ? prevMonthDayRange + date : date > dayRange ? date - dayRange : date);
@@ -2354,13 +2104,11 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
           var yearInString = "".concat(date <= 0 && monthNavVal + 1 === 1 ? yearNavVal - 1 : date > dayRange && monthNavVal + 1 === 12 ? yearNavVal + 1 : yearNavVal);
           var completeDateString = "".concat(monthInString.length === 2 ? monthInString : "0".concat(monthInString), "/").concat(dateInString.length === 2 ? dateInString : "0".concat(dateInString), "/").concat(yearInString);
           var isEventExist = events && _typeof(events) === 'object' && events.hasOwnProperty(completeDateString);
-
           if (rangePicker) {
             startActive = compareDate(startDate, 'equal', yearNavVal, monthNavVal, date);
             endActive = compareDate(endDate, 'equal', yearNavVal, monthNavVal, date);
             inRangeLast = compareDate(hoverDate, 'equal', yearNavVal, monthNavVal, date);
             active = !disabled && (startActive || endActive);
-
             if (startDate && endDate) {
               inRange = !disabled && (dateComparison(startDate, 'less', dateInString, monthInString, yearInString) && dateComparison(endDate, 'more', dateInString, monthInString, yearInString) || startActive || endActive);
             } else if (startDate) {
@@ -2369,7 +2117,6 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
               inRange = !disabled && (dateComparison(hoverDate, 'less', dateInString, monthInString, yearInString) || inRangeLast) && dateComparison(endDate, 'more', dateInString, monthInString, yearInString);
             }
           }
-
           var isRangeError = inRange && inRangeError;
           var isStartActive = startDate && dateComparison(startDate, 'equal', dateInString, monthInString, yearInString);
           var isEndActive = endDate && dateComparison(endDate, 'equal', dateInString, monthInString, yearInString);
@@ -2380,6 +2127,7 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
           var isValueRange = inRange || rangePicker && (active || activeDate);
           var wrapperClass = classnames({
             'Calendar-valueWrapper': true,
+            'Calendar-valueWrapper--disabled': disabled,
             'Calendar-valueWrapper--inRange': !isEdgeElement && isValueRange,
             'Calendar-valueWrapper--inEdgeRange': isValueRange && isEdgeElement,
             'Calendar-valueWrapper--inRangeError': isRangeError,
@@ -2388,7 +2136,8 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
             'Calendar-valueWrapper--startEnd': isStart && isEnd,
             'Calendar-valueWrapper--startError': isStart && isRangeError || rangePicker && isRangeError && isStartActive,
             'Calendar-valueWrapper--endError': isEnd && isRangeError || rangePicker && isRangeError && isEndActive,
-            'Calendar-valueWrapper--dummy': dummy,
+            'Calendar-valueWrapper--dummy': dummy && !disabled && !activeDate,
+            'Calendar-valueWrapper--active-dummy': dummy && !disabled && activeDate,
             'Calendar-valueWrapper--hoverDate': rangePicker && isHoverForwardLast,
             'Calendar-valueWrapper--hoverEndDate': rangePicker && isHoverBackwardLast,
             'Calendar-valueWrapper--inStartRange': isValueRange && col === 0 && !active && !activeDate,
@@ -2408,9 +2157,7 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
           var getTextColor = classnames({
             inverse: !active && !today() && !disabled && !activeDate,
             white: active || activeDate,
-            'primary-lighter': today() && disabled,
-            primary: today(),
-            'inverse-lightest': disabled
+            primary: today()
           });
           return /*#__PURE__*/React.createElement("div", {
             key: "".concat(row, "-").concat(col),
@@ -2419,13 +2166,14 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
           }, !dummy && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Text, {
             color: getTextColor,
             size: size === 'small' ? 'small' : 'regular',
+            appearance: disabled ? 'subtle' : 'default',
             "data-test": "DesignSystem-Calendar--dateValue",
             className: valueClass,
             onClick: onClickHandler(date),
             onMouseOver: onMouseOverHandler(date),
             onMouseEnter: onMouseEnterHandler.bind(_assertThisInitialized$1(_this), date, today(), disabled)
           }, date), isEventExist && _this.renderEventsIndicator(size, active)), (dummy && date > 0 && index === monthsInView - 1 || dummy && date <= 0 && index === 0) && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Text, {
-            appearance: active || activeDate ? 'white' : disabled ? 'disabled' : today() ? 'link' : 'default',
+            appearance: active || activeDate ? 'white' : today() ? 'link' : 'subtle',
             size: size === 'small' ? 'small' : 'regular',
             "data-test": "DesignSystem-Calendar--dateValue",
             className: valueClass,
@@ -2436,13 +2184,11 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
         }));
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "renderCalendar", function (index) {
       var _classNames5;
-
       var _this$props8 = _this.props,
-          size = _this$props8.size,
-          monthsInView = _this$props8.monthsInView;
+        size = _this$props8.size,
+        monthsInView = _this$props8.monthsInView;
       var view = _this.state.view;
       var containerClass = classnames((_classNames5 = {}, _defineProperty$1(_classNames5, 'Calendar', true), _defineProperty$1(_classNames5, "Calendar-".concat(view, "--").concat(size), view), _defineProperty$1(_classNames5, "Calendar--".concat(size), size), _classNames5));
       var headerClass = classnames(_defineProperty$1({}, "Calendar-header--".concat(size), size));
@@ -2459,24 +2205,19 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
         className: bodyClass
       }, view === 'year' && _this.renderBodyYear(), view === 'month' && _this.renderBodyMonth(), view === 'date' && _this.renderBodyDate(index)));
     });
-
     var _this$props9 = _this.props,
-        _rangePicker = _this$props9.rangePicker,
-        _startDate = _this$props9.startDate,
-        _endDate = _this$props9.endDate,
-        _monthsInView = _this$props9.monthsInView,
-        _view = _this$props9.view;
+      _rangePicker = _this$props9.rangePicker,
+      _startDate = _this$props9.startDate,
+      _endDate = _this$props9.endDate,
+      _monthsInView = _this$props9.monthsInView,
+      _view = _this$props9.view;
     var currDate = _rangePicker ? _endDate || _startDate : props.date;
-
     var _yearNav = props.yearNav !== undefined ? props.yearNav : getDateInfo(currDate || Date.now()).year;
-
     var _monthNav = props.monthNav !== undefined ? props.monthNav : getDateInfo(currDate || Date.now()).month;
-
     var _getDateInfo6 = getDateInfo(currDate),
-        _year = _getDateInfo6.year,
-        _month = _getDateInfo6.month,
-        _date = _getDateInfo6.date;
-
+      _year = _getDateInfo6.year,
+      _month = _getDateInfo6.month,
+      _date = _getDateInfo6.date;
     var todayCompleteDate = getDateInfo(new Date(Date.now()));
     _this.state = {
       currDate: currDate,
@@ -2495,43 +2236,34 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
     };
     return _this;
   }
-
   _createClass(Calendar, [{
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps, prevState) {
       var _prevState$startDate, _this$state$startDate, _this$state$endDate, _prevState$endDate, _this$state$endDate2;
-
       var monthsInView = this.props.monthsInView;
-
       if (prevProps.date !== this.props.date) {
         var _getDateInfo7 = getDateInfo(this.props.date),
-            year = _getDateInfo7.year,
-            month = _getDateInfo7.month,
-            _date2 = _getDateInfo7.date;
-
-        this.updateState(year, month, _date2);
+          year = _getDateInfo7.year,
+          month = _getDateInfo7.month,
+          date = _getDateInfo7.date;
+        this.updateState(year, month, date);
         var d = convertToDate(this.props.date);
         this.setState({
           currDate: d
         });
       }
-
       if (this.props.startDate && !isNaN(this.props.startDate.getTime()) && prevProps.startDate !== this.props.startDate) {
         var _d = convertToDate(this.props.startDate);
-
         this.setState({
           startDate: _d
         });
       }
-
       if (this.props.endDate && !isNaN(this.props.endDate.getTime()) && prevProps.endDate !== this.props.endDate) {
         var _d2 = convertToDate(this.props.endDate);
-
         this.setState({
           endDate: _d2
         });
       }
-
       if (prevProps.view !== this.props.view) {
         if (this.props.monthsInView === 1) {
           this.setState({
@@ -2539,10 +2271,8 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
           });
         }
       }
-
       if (prevProps.yearNav !== this.props.yearNav) {
         var yearNav = this.props.yearNav;
-
         if (yearNav) {
           this.setState({
             yearNav: yearNav,
@@ -2550,47 +2280,40 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
           });
         }
       }
-
       if (prevProps.monthNav !== this.props.monthNav) {
         var monthNav = this.props.monthNav;
-
         if (monthNav) {
           this.setState({
             monthNav: monthNav
           });
         }
       }
-
       if (prevState.currDate !== this.state.currDate) {
         var _this$props10 = this.props,
-            rangePicker = _this$props10.rangePicker,
-            onDateChange = _this$props10.onDateChange;
+          rangePicker = _this$props10.rangePicker,
+          onDateChange = _this$props10.onDateChange;
         var _this$state9 = this.state,
-            currDate = _this$state9.currDate,
-            _startDate3 = _this$state9.startDate,
-            _endDate3 = _this$state9.endDate;
-
+          currDate = _this$state9.currDate,
+          startDate = _this$state9.startDate,
+          endDate = _this$state9.endDate;
         if (currDate) {
           if (onDateChange) onDateChange(currDate);
-
           if (rangePicker) {
             this.setState({
               hoverDate: undefined
             });
-
-            if (_startDate3 && _endDate3) {
+            if (startDate && endDate) {
               this.setState({
                 startDate: currDate,
                 endDate: undefined
               });
             } else {
               var _getDateInfo8 = getDateInfo(currDate),
-                  _year2 = _getDateInfo8.year,
-                  _month2 = _getDateInfo8.month,
-                  _date3 = _getDateInfo8.date;
-
-              if (_startDate3) {
-                if (compareDate(_startDate3, 'more', _year2, _month2, _date3)) {
+                _year2 = _getDateInfo8.year,
+                _month2 = _getDateInfo8.month,
+                _date2 = _getDateInfo8.date;
+              if (startDate) {
+                if (compareDate(startDate, 'more', _year2, _month2, _date2)) {
                   this.setState({
                     startDate: currDate
                   });
@@ -2599,8 +2322,8 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
                     endDate: currDate
                   });
                 }
-              } else if (_endDate3) {
-                if (compareDate(_endDate3, 'less', _year2, _month2, _date3)) {
+              } else if (endDate) {
+                if (compareDate(endDate, 'less', _year2, _month2, _date2)) {
                   this.setState({
                     endDate: currDate
                   });
@@ -2622,51 +2345,44 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
           }
         }
       }
-
       if (this.state.startDate && !isNaN(this.state.startDate.getTime()) && ((_prevState$startDate = prevState.startDate) === null || _prevState$startDate === void 0 ? void 0 : _prevState$startDate.getTime()) !== ((_this$state$startDate = this.state.startDate) === null || _this$state$startDate === void 0 ? void 0 : _this$state$startDate.getTime()) || this.state.endDate && !isNaN((_this$state$endDate = this.state.endDate) === null || _this$state$endDate === void 0 ? void 0 : _this$state$endDate.getTime()) && ((_prevState$endDate = prevState.endDate) === null || _prevState$endDate === void 0 ? void 0 : _prevState$endDate.getTime()) !== ((_this$state$endDate2 = this.state.endDate) === null || _this$state$endDate2 === void 0 ? void 0 : _this$state$endDate2.getTime())) {
         var onRangeChange = this.props.onRangeChange;
         var _this$state10 = this.state,
-            _startDate4 = _this$state10.startDate,
-            _endDate4 = _this$state10.endDate;
-        if (onRangeChange) onRangeChange(_startDate4, _endDate4);
+          _startDate2 = _this$state10.startDate,
+          _endDate2 = _this$state10.endDate;
+        if (onRangeChange) onRangeChange(_startDate2, _endDate2);
       }
-
       if (this.props.allowReverseSelection && prevState.hoverDate !== this.state.hoverDate) {
         var _this$state11 = this.state,
-            hoverDate = _this$state11.hoverDate,
-            _startDate5 = _this$state11.startDate,
-            _endDate5 = _this$state11.endDate;
-
-        if (_startDate5 && !_endDate5) {
-          var _getDateInfo9 = getDateInfo(_startDate5),
-              _year3 = _getDateInfo9.year,
-              _month3 = _getDateInfo9.month,
-              _date4 = _getDateInfo9.date;
-
-          if (compareDate(hoverDate, 'less', _year3, _month3, _date4)) {
+          hoverDate = _this$state11.hoverDate,
+          _startDate3 = _this$state11.startDate,
+          _endDate3 = _this$state11.endDate;
+        if (_startDate3 && !_endDate3) {
+          var _getDateInfo9 = getDateInfo(_startDate3),
+            _year3 = _getDateInfo9.year,
+            _month3 = _getDateInfo9.month,
+            _date3 = _getDateInfo9.date;
+          if (compareDate(hoverDate, 'less', _year3, _month3, _date3)) {
             this.setState({
               startDate: undefined,
-              endDate: _startDate5
+              endDate: _startDate3
             });
           }
-        } else if (_endDate5 && !_startDate5) {
-          var _getDateInfo10 = getDateInfo(_endDate5),
-              _year4 = _getDateInfo10.year,
-              _month4 = _getDateInfo10.month,
-              _date5 = _getDateInfo10.date;
-
-          if (compareDate(hoverDate, 'more', _year4, _month4, _date5)) {
+        } else if (_endDate3 && !_startDate3) {
+          var _getDateInfo10 = getDateInfo(_endDate3),
+            _year4 = _getDateInfo10.year,
+            _month4 = _getDateInfo10.month,
+            _date4 = _getDateInfo10.date;
+          if (compareDate(hoverDate, 'more', _year4, _month4, _date4)) {
             this.setState({
-              startDate: _endDate5,
+              startDate: _endDate3,
               endDate: undefined
             });
           }
         }
       }
-
       if (prevState.year !== this.state.year) {
         var _year5 = this.state.year;
-
         if (_year5 !== undefined && monthsInView === 1) {
           this.setState({
             year: _year5,
@@ -2675,10 +2391,8 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
           });
         }
       }
-
       if (prevState.month !== this.state.month) {
         var _month5 = this.state.month;
-
         if (_month5 !== undefined && monthsInView === 1) {
           this.setState({
             monthNav: _month5
@@ -2690,7 +2404,6 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
     key: "renderEventsIndicator",
     value: function renderEventsIndicator(size, active) {
       var _classNames7;
-
       var eventsIndicatorClass = classnames((_classNames7 = {
         'Calendar-eventsIndicator': true
       }, _defineProperty$1(_classNames7, "Calendar-eventsIndicator--".concat(size), true), _defineProperty$1(_classNames7, 'Calendar-eventsIndicator--active', active), _classNames7));
@@ -2703,10 +2416,9 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var _this2 = this;
-
       var _this$props11 = this.props,
-          monthsInView = _this$props11.monthsInView,
-          className = _this$props11.className;
+        monthsInView = _this$props11.monthsInView,
+        className = _this$props11.className;
       var baseProps = extractBaseProps(this.props);
       var classes = classnames({
         'Calendar-wrapper': true
@@ -2721,10 +2433,8 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
       }));
     }
   }]);
-
   return Calendar;
 }(React.Component);
-
 _defineProperty$1(Calendar, "defaultProps", {
   size: 'large',
   monthsInView: 1,
@@ -2733,16 +2443,14 @@ _defineProperty$1(Calendar, "defaultProps", {
   jumpView: true
 });
 
-var _excluded$Z = ["shadow", "children", "className"];
+var _excluded$15 = ["shadow", "children", "className"];
 var Card = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var _classNames;
-
   var _props$shadow = props.shadow,
-      shadow = _props$shadow === void 0 ? 'shadow10' : _props$shadow,
-      children = props.children,
-      className = props.className,
-      rest = _objectWithoutProperties(props, _excluded$Z);
-
+    shadow = _props$shadow === void 0 ? 'shadow10' : _props$shadow,
+    children = props.children,
+    className = props.className,
+    rest = _objectWithoutProperties(props, _excluded$15);
   var classes = classnames((_classNames = {
     Card: true
   }, _defineProperty$1(_classNames, "Card--".concat(shadow), shadow), _defineProperty$1(_classNames, "".concat(className), className), _classNames));
@@ -2758,13 +2466,12 @@ Card.defaultProps = {
   shadow: 'shadow10'
 };
 
-var _excluded$Y = ["border", "children", "className"];
+var _excluded$14 = ["border", "children", "className"];
 var CardSubdued = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var border = props.border,
-      children = props.children,
-      className = props.className,
-      rest = _objectWithoutProperties(props, _excluded$Y);
-
+    children = props.children,
+    className = props.className,
+    rest = _objectWithoutProperties(props, _excluded$14);
   var classes = classnames(_defineProperty$1({
     CardSubdued: true
   }, "CardSubdued--".concat(border), border), className);
@@ -2779,7 +2486,7 @@ CardSubdued.displayName = 'CardSubdued';
 
 var CardHeader = function CardHeader(props) {
   var className = props.className,
-      children = props.children;
+    children = props.children;
   var baseProps = extractBaseProps(props);
   var classes = classnames({
     'Card-header': true
@@ -2794,7 +2501,7 @@ CardHeader.displayName = 'CardHeader';
 
 var CardBody = function CardBody(props) {
   var className = props.className,
-      children = props.children;
+    children = props.children;
   var baseProps = extractBaseProps(props);
   var classes = classnames({
     'Card-body': true
@@ -2809,8 +2516,8 @@ CardBody.displayName = 'CardBody';
 
 var CardFooter = function CardFooter(props) {
   var className = props.className,
-      children = props.children,
-      withSeperator = props.withSeperator;
+    children = props.children,
+    withSeperator = props.withSeperator;
   var baseProps = extractBaseProps(props);
   var classes = classnames(_defineProperty$1({
     'Card-footer': true
@@ -2830,32 +2537,30 @@ var isSpaceKey = function isSpaceKey(e) {
   return e.key === 'Space';
 };
 
-var _excluded$X = ["onClick", "onKeyDown", "role", "tabIndex"];
+var _excluded$13 = ["onClick", "onKeyDown", "role", "tabIndex"];
 var allowed = {
   button: new Set(['Enter', 'Space', 'Spacebar', ' ']),
   link: new Set(['Enter']),
   // onChange handles everything, no need for extra keyboard interaction
   checkbox: new Set([]),
   radio: new Set([])
-}; // Refer for keyboard interactions: https://webaim.org/techniques/keyboard/#testing
+};
 
+// Refer for keyboard interactions: https://webaim.org/techniques/keyboard/#testing
 var isKeyboardInteractionAllowed = function isKeyboardInteractionAllowed(role, key) {
   if (!allowed[role]) {
     return false;
   }
-
   var allowedKeys = allowed[role];
   return allowedKeys.has(key);
 };
-
 var useAccessibilityProps = function useAccessibilityProps(_ref) {
   var onClick = _ref.onClick,
-      _onKeyDown = _ref.onKeyDown,
-      _ref$role = _ref.role,
-      role = _ref$role === void 0 ? 'button' : _ref$role,
-      tabIndex = _ref.tabIndex,
-      rest = _objectWithoutProperties(_ref, _excluded$X);
-
+    _onKeyDown = _ref.onKeyDown,
+    _ref$role = _ref.role,
+    role = _ref$role === void 0 ? 'button' : _ref$role,
+    tabIndex = _ref.tabIndex,
+    rest = _objectWithoutProperties(_ref, _excluded$13);
   return _objectSpread2({}, onClick ? {
     onClick: onClick,
     role: role,
@@ -2864,12 +2569,9 @@ var useAccessibilityProps = function useAccessibilityProps(_ref) {
     onKeyDown: function onKeyDown(e) {
       if (_onKeyDown) {
         _onKeyDown(e);
-
         return;
       }
-
       var key = e.key;
-
       if (isKeyboardInteractionAllowed(role, key)) {
         if (onClick) {
           e.preventDefault();
@@ -2883,6 +2585,8 @@ var useAccessibilityProps = function useAccessibilityProps(_ref) {
     'aria-label': rest['aria-label']
   });
 };
+
+// 'outline', 'rounded' to be deprecated soon.
 
 var iconTypeMapper = {
   timelapse: 'outlined',
@@ -2914,6 +2618,7 @@ var iconTypeMapper = {
   radio_button_checked: 'outlined',
   "delete": 'outlined'
 };
+
 /**
  *
  * <pre class="DocPage-codeBlock mx-6 mb-7">
@@ -2925,12 +2630,11 @@ var iconTypeMapper = {
 
 var Icon = function Icon(props) {
   var _classNames;
-
   var appearance = props.appearance,
-      className = props.className,
-      name = props.name,
-      size = props.size,
-      children = props.children;
+    className = props.className,
+    name = props.name,
+    size = props.size,
+    children = props.children;
   var accessibilityProps = useAccessibilityProps(props);
   var baseProps = extractBaseProps(props);
   var mapper = {
@@ -2941,25 +2645,23 @@ var Icon = function Icon(props) {
     'two-tone': 'rounded'
   };
   var type = props.type && mapper[props.type] || props.type || name && iconTypeMapper[name] || 'rounded';
-
   var getIconAppearance = function getIconAppearance(iconColor) {
     var x = iconColor.indexOf('_');
     return iconColor.slice(0, x) + iconColor.charAt(x + 1).toUpperCase() + iconColor.slice(x + 2);
   };
-
   var color = appearance && appearance.includes('_') ? getIconAppearance(appearance) : appearance;
   var iconClass = classnames((_classNames = {}, _defineProperty$1(_classNames, 'material-symbols', true), _defineProperty$1(_classNames, 'material-symbols-rounded', type === 'rounded'), _defineProperty$1(_classNames, 'material-symbols-outlined', type === 'outlined'), _defineProperty$1(_classNames, 'Icon', true), _defineProperty$1(_classNames, "Icon--".concat(color), appearance), _defineProperty$1(_classNames, "".concat(className), className), _classNames));
   var styles = {
     fontSize: "".concat(size, "px"),
     width: "".concat(size, "px")
-  }; // change `children` to {name} after migration
+  };
 
+  // change `children` to {name} after migration
   if (children && /*#__PURE__*/React.isValidElement(children)) {
     return /*#__PURE__*/React.createElement("span", _extends$2({}, baseProps, {
       className: className
     }), children);
   }
-
   return /*#__PURE__*/React.createElement("i", _extends$2({
     "data-test": "DesignSystem-Icon"
   }, baseProps, {
@@ -2972,38 +2674,33 @@ Icon.defaultProps = {
   size: 16
 };
 
-var _excluded$W = ["children", "componentType", "className"];
-
+var _excluded$12 = ["children", "componentType", "className"];
 var GenericText = function GenericText(_ref, ref) {
   var children = _ref.children,
-      _ref$componentType = _ref.componentType,
-      componentType = _ref$componentType === void 0 ? 'span' : _ref$componentType,
-      className = _ref.className,
-      rest = _objectWithoutProperties(_ref, _excluded$W);
-
+    _ref$componentType = _ref.componentType,
+    componentType = _ref$componentType === void 0 ? 'span' : _ref$componentType,
+    className = _ref.className,
+    rest = _objectWithoutProperties(_ref, _excluded$12);
   return /*#__PURE__*/React.createElement(componentType, _objectSpread2(_objectSpread2({}, rest), {}, {
     className: className,
     ref: ref
   }), children);
 };
-
 var Link$1 = /*#__PURE__*/React.forwardRef(GenericText);
 
-var _excluded$V = ["appearance", "size", "children", "weight", "small", "className", "color"];
+var _excluded$11 = ["appearance", "size", "children", "weight", "small", "className", "color"];
 var Text = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var _classNames;
-
   var _props$appearance = props.appearance,
-      appearance = _props$appearance === void 0 ? 'default' : _props$appearance,
-      _props$size = props.size,
-      size = _props$size === void 0 ? 'regular' : _props$size,
-      children = props.children,
-      weight = props.weight,
-      small = props.small,
-      className = props.className,
-      color = props.color,
-      rest = _objectWithoutProperties(props, _excluded$V);
-
+    appearance = _props$appearance === void 0 ? 'default' : _props$appearance,
+    _props$size = props.size,
+    size = _props$size === void 0 ? 'regular' : _props$size,
+    children = props.children,
+    weight = props.weight,
+    small = props.small,
+    className = props.className,
+    color = props.color,
+    rest = _objectWithoutProperties(props, _excluded$11);
   var classes = classnames((_classNames = {
     Text: true
   }, _defineProperty$1(_classNames, "Text--".concat(appearance), !color && appearance), _defineProperty$1(_classNames, "Text--".concat(weight), weight), _defineProperty$1(_classNames, "Text--".concat(size), size), _defineProperty$1(_classNames, "color-".concat(color), color), _defineProperty$1(_classNames, 'Text--small', size === 'small' || small), _classNames), className);
@@ -3023,51 +2720,64 @@ Text.defaultProps = {
 
 var GenericChip = function GenericChip(props) {
   var _classNames3;
-
   var label = props.label,
-      icon = props.icon,
-      clearButton = props.clearButton,
-      disabled = props.disabled,
-      className = props.className,
-      selected = props.selected,
-      onClose = props.onClose,
-      onClick = props.onClick,
-      labelPrefix = props.labelPrefix,
-      iconType = props.iconType;
+    icon = props.icon,
+    clearButton = props.clearButton,
+    disabled = props.disabled,
+    className = props.className,
+    selected = props.selected,
+    onClose = props.onClose,
+    onClick = props.onClick,
+    labelPrefix = props.labelPrefix,
+    iconType = props.iconType,
+    maxWidth = props.maxWidth;
+  var wrapperStyle = {
+    maxWidth: maxWidth
+  };
+  var _React$useState = React.useState(false),
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    isTextTruncated = _React$useState2[0],
+    setIsTextTruncated = _React$useState2[1];
+  var _Tooltip$useAutoToolt = Tooltip.useAutoTooltip(),
+    detectTruncation = _Tooltip$useAutoToolt.detectTruncation;
+  var contentRef = /*#__PURE__*/React.createRef();
+  React.useEffect(function () {
+    var isTruncated = detectTruncation(contentRef);
+    setIsTextTruncated(isTruncated);
+  }, [contentRef]);
   var baseProps = extractBaseProps(props);
-
   var iconClass = function iconClass(align) {
     var _classNames;
-
     return classnames((_classNames = {}, _defineProperty$1(_classNames, 'Chip-icon', true), _defineProperty$1(_classNames, "Chip-icon--".concat(align), align), _defineProperty$1(_classNames, "Chip-icon-disabled--right", align === 'right' && disabled), _defineProperty$1(_classNames, 'cursor-pointer', align === 'right' && !disabled), _defineProperty$1(_classNames, 'Chip-icon--selected', align === 'right' && selected), _classNames));
   };
-
   var onCloseHandler = function onCloseHandler(e) {
     e.stopPropagation();
     if (onClose) onClose();
   };
-
   var onClickHandler = function onClickHandler() {
     if (onClick) onClick();
   };
-
   var onKeyDownHandler = function onKeyDownHandler(event) {
     if (event.key === 'Enter') {
       onCloseHandler(event);
     }
   };
-
+  var onChipKeyDownHandler = function onChipKeyDownHandler(event) {
+    if (event.key === 'Enter') {
+      onClickHandler();
+    }
+  };
   var iconAppearance = function iconAppearance(align) {
     var _classNames2;
-
-    return classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'disabled', disabled && !selected), _defineProperty$1(_classNames2, 'primary_dark', !disabled && selected), _defineProperty$1(_classNames2, 'primary_lighter', disabled && selected), _defineProperty$1(_classNames2, 'subtle', !disabled && !selected && align === 'right'), _defineProperty$1(_classNames2, 'inverse', !disabled && !selected && align === 'left'), _classNames2));
+    return classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'primary_dark', selected), _defineProperty$1(_classNames2, 'subtle', !selected && align === 'right'), _defineProperty$1(_classNames2, 'inverse', !selected && align === 'left'), _classNames2));
   };
-
-  var textColor = classnames((_classNames3 = {}, _defineProperty$1(_classNames3, 'primary-lighter', disabled && selected), _defineProperty$1(_classNames3, 'inverse-lightest', disabled && !selected), _defineProperty$1(_classNames3, 'primary-dark', selected), _defineProperty$1(_classNames3, 'inverse', !disabled && !selected), _classNames3));
-
+  var textColor = classnames((_classNames3 = {}, _defineProperty$1(_classNames3, 'primary-dark', selected), _defineProperty$1(_classNames3, 'inverse', !disabled && !selected), _classNames3));
   var renderLabel = function renderLabel() {
     if (typeof label === 'string') {
-      return /*#__PURE__*/React.createElement(React.Fragment, null, labelPrefix && /*#__PURE__*/React.createElement(Text, {
+      return /*#__PURE__*/React.createElement("div", {
+        className: "Chip-text--truncate",
+        ref: contentRef
+      }, labelPrefix && /*#__PURE__*/React.createElement(Text, {
         "data-test": "DesignSystem-GenericChip--LabelPrefix",
         weight: "medium",
         color: textColor,
@@ -3078,68 +2788,75 @@ var GenericChip = function GenericChip(props) {
         className: "Chip-text"
       }, label));
     }
-
     return label;
   };
-
-  return (
-    /*#__PURE__*/
-    // TODO(a11y)
-    // eslint-disable-next-line
-    React.createElement("div", _extends$2({
-      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-      tabIndex: disabled ? -1 : 0,
-      "data-test": "DesignSystem-GenericChip--GenericChipWrapper"
-    }, baseProps, {
-      className: "Chip-wrapper ".concat(className),
-      onClick: onClickHandler
-    }), icon && /*#__PURE__*/React.createElement(Icon, {
-      "data-test": "DesignSystem-GenericChip--Icon",
-      name: icon,
-      type: iconType,
-      appearance: iconAppearance('left'),
-      className: iconClass('left')
-    }), renderLabel(), clearButton && /*#__PURE__*/React.createElement("div", {
-      role: "button",
-      onClick: onCloseHandler,
-      tabIndex: disabled ? -1 : 0,
-      onKeyDown: onKeyDownHandler,
-      className: iconClass('right'),
-      "data-test": "DesignSystem-GenericChip--clearButton"
-    }, /*#__PURE__*/React.createElement(Icon, {
-      name: "clear",
-      appearance: iconAppearance('right'),
-      className: "p-2"
-    })))
-  );
+  var getTooltipText = function getTooltipText() {
+    var labelText = typeof label === 'string' ? label : '';
+    if (labelPrefix) {
+      return "".concat(labelPrefix, " ").concat(labelText);
+    }
+    return labelText;
+  };
+  return /*#__PURE__*/React.createElement(Tooltip, {
+    showTooltip: isTextTruncated,
+    "data-test": "DesignSystem-GenericChip--Tooltip",
+    tooltip: getTooltipText(),
+    triggerClass: "flex-grow-0"
+  }, /*#__PURE__*/React.createElement("div", _extends$2({
+    tabIndex: disabled ? -1 : 0,
+    style: wrapperStyle,
+    "data-test": "DesignSystem-GenericChip--Wrapper",
+    role: "button",
+    onKeyDown: onChipKeyDownHandler
+  }, baseProps, {
+    className: "Chip-wrapper ".concat(className),
+    onClick: onClickHandler
+  }), icon && /*#__PURE__*/React.createElement(Icon, {
+    "data-test": "DesignSystem-GenericChip--Icon",
+    name: icon,
+    type: iconType,
+    appearance: iconAppearance('left'),
+    className: iconClass('left')
+  }), renderLabel(), clearButton && /*#__PURE__*/React.createElement("div", {
+    role: "button",
+    onClick: onCloseHandler,
+    tabIndex: disabled ? -1 : 0,
+    onKeyDown: onKeyDownHandler,
+    className: iconClass('right'),
+    "data-test": "DesignSystem-GenericChip--clearButton"
+  }, /*#__PURE__*/React.createElement(Icon, {
+    name: "clear",
+    appearance: iconAppearance('right'),
+    className: "p-2"
+  }))));
 };
 GenericChip.displayName = 'GenericChip';
+GenericChip.defaultProps = {
+  maxWidth: 'var(--spacing-9)'
+};
 
 var Chip = function Chip(props) {
   var _classNames;
-
   var label = props.label,
-      icon = props.icon,
-      clearButton = props.clearButton,
-      type = props.type,
-      disabled = props.disabled,
-      selected = props.selected,
-      onClose = props.onClose,
-      onClick = props.onClick,
-      name = props.name,
-      className = props.className,
-      labelPrefix = props.labelPrefix,
-      iconType = props.iconType;
+    icon = props.icon,
+    clearButton = props.clearButton,
+    type = props.type,
+    disabled = props.disabled,
+    selected = props.selected,
+    onClose = props.onClose,
+    onClick = props.onClick,
+    name = props.name,
+    className = props.className,
+    labelPrefix = props.labelPrefix,
+    iconType = props.iconType,
+    maxWidth = props.maxWidth;
   var baseProps = extractBaseProps(props);
-
   var onCloseHandler = function onCloseHandler() {
     if (!disabled && onClose) onClose(name);
   };
-
   var onClickHandler = function onClickHandler() {
     if (!disabled && onClick) onClick(name);
   };
-
   var clearbutton = type === 'action' ? false : clearButton;
   var select = type === 'selection' && selected ? true : false;
   var chipClass = classnames((_classNames = {
@@ -3158,29 +2875,28 @@ var Chip = function Chip(props) {
     onClose: onCloseHandler,
     onClick: onClickHandler,
     name: name,
-    labelPrefix: labelPrefix
+    labelPrefix: labelPrefix,
+    maxWidth: maxWidth
   }));
 };
 Chip.displayName = 'Chip';
 Chip.defaultProps = {
-  type: 'input'
+  type: 'input',
+  maxWidth: 'var(--spacing-9)'
 };
 
 var ChipGroup = function ChipGroup(props) {
   var list = props.list,
-      onClick = props.onClick,
-      onClose = props.onClose,
-      className = props.className;
+    onClick = props.onClick,
+    onClose = props.onClose,
+    className = props.className;
   var baseProps = extractBaseProps(props);
-
   var onClickHandler = function onClickHandler(item) {
     if (onClick) onClick(item);
   };
-
   var onCloseHandler = function onCloseHandler(item) {
     if (onClose) onClose(item);
   };
-
   var ChipGroupClass = classnames(_defineProperty$1({}, 'ChipGroup', true), className);
   return /*#__PURE__*/React.createElement("div", _extends$2({
     "data-test": "DesignSystem-ChipGroup"
@@ -3188,14 +2904,14 @@ var ChipGroup = function ChipGroup(props) {
     className: ChipGroupClass
   }), list.map(function (item, ind) {
     var _item$label = item.label,
-        label = _item$label === void 0 ? '' : _item$label,
-        icon = item.icon,
-        type = item.type,
-        disabled = item.disabled,
-        selected = item.selected,
-        clearButton = item.clearButton,
-        name = item.name,
-        iconType = item.iconType;
+      label = _item$label === void 0 ? '' : _item$label,
+      icon = item.icon,
+      type = item.type,
+      disabled = item.disabled,
+      selected = item.selected,
+      clearButton = item.clearButton,
+      name = item.name,
+      iconType = item.iconType;
     return /*#__PURE__*/React.createElement("span", {
       key: ind,
       className: "ChipGroup-item"
@@ -3246,7 +2962,6 @@ var CheckboxIcon = function CheckboxIcon(props) {
         d: "M3.66667 5.56L8.72667 0.5L9.66667 1.44667L3.66667 7.44667L0.333333 4.11333L1.27333 3.17333L3.66667 5.56Z",
         fill: "white"
       }));
-
     case 'checked--tiny':
       return /*#__PURE__*/React__default.createElement("svg", {
         width: "10",
@@ -3258,7 +2973,6 @@ var CheckboxIcon = function CheckboxIcon(props) {
         d: "M0.333344 4L1.27334 3.06L3.66668 5.44667L8.72668 0.386665L9.66668 1.33333L3.66668 7.33333L0.333344 4Z",
         fill: "white"
       }));
-
     case 'indeterminate--regular':
       return /*#__PURE__*/React__default.createElement("svg", {
         width: "10",
@@ -3270,7 +2984,6 @@ var CheckboxIcon = function CheckboxIcon(props) {
         d: "M0 0H10V2H0V0Z",
         fill: "white"
       }));
-
     case 'indeterminate--tiny':
       return /*#__PURE__*/React__default.createElement("svg", {
         width: "8",
@@ -3284,46 +2997,41 @@ var CheckboxIcon = function CheckboxIcon(props) {
         d: "M8 0H0V2H8V0Z",
         fill: "white"
       }));
-
     default:
       return null;
   }
 };
 
-var _excluded$U = ["size", "tabIndex", "defaultChecked", "indeterminate", "label", "error", "disabled", "onChange", "name", "value", "className", "checked", "helpText", "id", "labelRef"];
+var _excluded$10 = ["size", "tabIndex", "defaultChecked", "indeterminate", "label", "error", "disabled", "onChange", "name", "value", "className", "checked", "helpText", "id", "labelRef"];
 var Checkbox = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
   var _classNames, _classNames2, _classNames3, _classNames4, _classNames5, _classNames6;
-
   var _props$size = props.size,
-      size = _props$size === void 0 ? 'regular' : _props$size,
-      _props$tabIndex = props.tabIndex,
-      tabIndex = _props$tabIndex === void 0 ? 0 : _props$tabIndex,
-      defaultChecked = props.defaultChecked,
-      indeterminate = props.indeterminate,
-      label = props.label,
-      error = props.error,
-      disabled = props.disabled,
-      onChange = props.onChange,
-      name = props.name,
-      value = props.value,
-      className = props.className,
-      checkedProp = props.checked,
-      helpText = props.helpText,
-      _props$id = props.id,
-      id = _props$id === void 0 ? "".concat(name, "-").concat(label, "-").concat(uidGenerator()) : _props$id,
-      labelRef = props.labelRef,
-      rest = _objectWithoutProperties(props, _excluded$U);
-
+    size = _props$size === void 0 ? 'regular' : _props$size,
+    _props$tabIndex = props.tabIndex,
+    tabIndex = _props$tabIndex === void 0 ? 0 : _props$tabIndex,
+    defaultChecked = props.defaultChecked,
+    indeterminate = props.indeterminate,
+    label = props.label,
+    error = props.error,
+    disabled = props.disabled,
+    onChange = props.onChange,
+    name = props.name,
+    value = props.value,
+    className = props.className,
+    checkedProp = props.checked,
+    helpText = props.helpText,
+    _props$id = props.id,
+    id = _props$id === void 0 ? "".concat(name, "-").concat(label, "-").concat(uidGenerator()) : _props$id,
+    labelRef = props.labelRef,
+    rest = _objectWithoutProperties(props, _excluded$10);
   var ref = React.useRef(null);
   React.useImperativeHandle(forwardedRef, function () {
     return ref.current;
   });
-
   var _React$useState = React.useState(checkedProp === undefined ? defaultChecked : checkedProp),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      checked = _React$useState2[0],
-      setChecked = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    checked = _React$useState2[0],
+    setChecked = _React$useState2[1];
   React.useEffect(function () {
     setIndeterminate(indeterminate);
   }, [indeterminate]);
@@ -3337,20 +3045,16 @@ var Checkbox = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
   var CheckboxInputWrapper = classnames((_classNames3 = {}, _defineProperty$1(_classNames3, 'Checkbox-input', true), _defineProperty$1(_classNames3, 'Checkbox-input--checked', checked), _defineProperty$1(_classNames3, 'Checkbox-input--indeterminate', props.indeterminate), _classNames3));
   var CheckboxWrapper = classnames((_classNames4 = {}, _defineProperty$1(_classNames4, 'Checkbox-wrapper', true), _defineProperty$1(_classNames4, 'Checkbox-wrapper--default', !error), _defineProperty$1(_classNames4, 'Checkbox-wrapper--error', error), _classNames4));
   var CheckboxLabelClass = classnames((_classNames5 = {}, _defineProperty$1(_classNames5, 'Checkbox-label', true), _defineProperty$1(_classNames5, 'Checkbox-label--tiny', size === 'tiny'), _classNames5));
-
   var setIndeterminate = function setIndeterminate(indeterminateValue) {
     ref.current.indeterminate = indeterminateValue;
   };
-
   var onChangeHandler = function onChangeHandler(e) {
     if (checkedProp === undefined) {
       setChecked(e.target.checked);
       setIndeterminate(e.target.indeterminate);
     }
-
     if (onChange) onChange(e);
   };
-
   var IconMapper = classnames((_classNames6 = {}, _defineProperty$1(_classNames6, 'checked--regular', checked && size === 'regular'), _defineProperty$1(_classNames6, 'checked--tiny', checked && size === 'tiny'), _defineProperty$1(_classNames6, 'indeterminate--regular', indeterminate && size === 'regular'), _defineProperty$1(_classNames6, 'indeterminate--tiny', indeterminate && size === 'tiny'), _classNames6));
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
     "data-test": "DesignSystem-Checkbox",
@@ -3395,20 +3099,18 @@ var Checkbox = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
 });
 Checkbox.displayName = 'Checkbox';
 
-var _excluded$T = ["size", "sizeXS", "sizeS", "sizeM", "sizeL", "sizeXL", "className", "children"];
+var _excluded$$ = ["size", "sizeXS", "sizeS", "sizeM", "sizeL", "sizeXL", "className", "children"];
 var Column = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var _classNames;
-
   var size = props.size,
-      sizeXS = props.sizeXS,
-      sizeS = props.sizeS,
-      sizeM = props.sizeM,
-      sizeL = props.sizeL,
-      sizeXL = props.sizeXL,
-      className = props.className,
-      children = props.children,
-      rest = _objectWithoutProperties(props, _excluded$T);
-
+    sizeXS = props.sizeXS,
+    sizeS = props.sizeS,
+    sizeM = props.sizeM,
+    sizeL = props.sizeL,
+    sizeXL = props.sizeXL,
+    className = props.className,
+    children = props.children,
+    rest = _objectWithoutProperties(props, _excluded$$);
   var classes = classnames((_classNames = {}, _defineProperty$1(_classNames, 'Col', true), _defineProperty$1(_classNames, "Col--".concat(size), size), _defineProperty$1(_classNames, "Col--xs-".concat(sizeXS), sizeXS), _defineProperty$1(_classNames, "Col--s-".concat(sizeS), sizeS), _defineProperty$1(_classNames, "Col--m-".concat(sizeM), sizeM), _defineProperty$1(_classNames, "Col--l-".concat(sizeL), sizeL), _defineProperty$1(_classNames, "Col--xl-".concat(sizeXL), sizeXL), _defineProperty$1(_classNames, "".concat(className), className), _classNames));
   return /*#__PURE__*/React.createElement("div", _extends$2({
     ref: ref,
@@ -3421,55 +3123,47 @@ Column.displayName = 'Column';
 
 var Trigger$1 = function Trigger(props) {
   var inputFormat = props.inputFormat,
-      inputOptions = props.inputOptions,
-      validators = props.validators,
-      state = props.state,
-      setState = props.setState;
+    inputOptions = props.inputOptions,
+    validators = props.validators,
+    state = props.state,
+    setState = props.setState;
   var init = state.init,
-      date$1 = state.date,
-      error = state.error;
+    date$1 = state.date,
+    error = state.error;
   var _inputOptions$placeho = inputOptions.placeholderChar,
-      placeholderChar = _inputOptions$placeho === void 0 ? '_' : _inputOptions$placeho;
-
+    placeholderChar = _inputOptions$placeho === void 0 ? '_' : _inputOptions$placeho;
   var onPasteHandler = function onPasteHandler(_e, val) {
     var onPaste = inputOptions.onPaste;
     setState({
       open: true
     });
-
     if (val && !val.includes(placeholderChar)) {
       var d = translateToDate(inputFormat, val, validators);
       setState({
         date: d
       });
     }
-
     if (onPaste) onPaste(_e, val);
   };
-
   var onChangeHandler = function onChangeHandler(_e, val) {
     var onChange = inputOptions.onChange;
     setState({
       open: true
     });
-
     if (val && !val.includes(placeholderChar)) {
       var d = translateToDate(inputFormat, val, validators);
       setState({
         date: d
       });
     }
-
     if (onChange) onChange(_e);
   };
-
   var onBlurHandler = function onBlurHandler(_e, val) {
     var onBlur = inputOptions.onBlur;
     setState({
       init: true
     });
     var hasNumber = /\d/;
-
     if (val && hasNumber.test(val) && val.includes(placeholderChar)) {
       setState({
         error: true
@@ -3479,10 +3173,8 @@ var Trigger$1 = function Trigger(props) {
         error: false
       });
     }
-
     if (onBlur) onBlur(_e, val || '');
   };
-
   var onClearHandler = function onClearHandler(e) {
     var onClear = inputOptions.onClear;
     setState({
@@ -3491,14 +3183,11 @@ var Trigger$1 = function Trigger(props) {
     });
     if (onClear) onClear(e);
   };
-
   var showError = inputOptions.error || inputOptions.required && error && init;
   var errorMessage = inputOptions.caption === undefined ? 'Invalid value' : inputOptions.caption;
-
   var inputValidator = function inputValidator(val) {
     return isValid(validators, val, inputFormat);
   };
-
   var mask = date[inputFormat];
   return /*#__PURE__*/React.createElement(X, _extends$2({
     icon: "events",
@@ -3518,89 +3207,68 @@ var Trigger$1 = function Trigger(props) {
   }));
 };
 
-var _excluded$S = ["date", "open", "position", "inputFormat", "outputFormat", "inputOptions", "validators", "withInput", "disabledBefore", "disabledAfter", "onDateChange", "closeOnSelect", "size", "showTodayDate", "children", "view"];
+var _excluded$_ = ["date", "open", "position", "inputFormat", "outputFormat", "inputOptions", "validators", "withInput", "disabledBefore", "disabledAfter", "onDateChange", "closeOnSelect", "size", "showTodayDate", "children", "view"];
 var DatePicker = /*#__PURE__*/function (_React$Component) {
   _inherits(DatePicker, _React$Component);
-
   var _super = _createSuper(DatePicker);
-
   function DatePicker(props) {
     var _this;
-
     _classCallCheck(this, DatePicker);
-
     _this = _super.call(this, props);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "getError", function (date) {
       var _this$props = _this.props,
-          disabledBefore = _this$props.disabledBefore,
-          disabledAfter = _this$props.disabledAfter,
-          outputFormat = _this$props.outputFormat,
-          onError = _this$props.onError;
+        disabledBefore = _this$props.disabledBefore,
+        disabledAfter = _this$props.disabledAfter,
+        outputFormat = _this$props.outputFormat,
+        onError = _this$props.onError;
       if (!date) return false;
-
       var _getDateInfo = getDateInfo(disabledBefore),
-          dbYear = _getDateInfo.year,
-          dbMonth = _getDateInfo.month,
-          dbDate = _getDateInfo.date;
-
+        dbYear = _getDateInfo.year,
+        dbMonth = _getDateInfo.month,
+        dbDate = _getDateInfo.date;
       var _getDateInfo2 = getDateInfo(disabledAfter),
-          daYear = _getDateInfo2.year,
-          daMonth = _getDateInfo2.month,
-          daDate = _getDateInfo2.date;
-
+        daYear = _getDateInfo2.year,
+        daMonth = _getDateInfo2.month,
+        daDate = _getDateInfo2.date;
       if (compareDate(date, 'less', dbYear, dbMonth, dbDate) || compareDate(date, 'more', daYear, daMonth, daDate)) {
         if (onError) {
           var dVal = translateToString(outputFormat, date);
           onError(date, dVal);
         }
-
         return true;
       }
-
       return false;
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onDateChangeHandler", function (d) {
       _this.setState({
         init: true,
         date: d
       });
-
       var closeOnSelect = _this.props.closeOnSelect;
       if (closeOnSelect) _this.setState({
         open: false
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onToggleHandler", function (o, type) {
       var disabled = _this.props.inputOptions.disabled;
       if (disabled) return;
-
       switch (type) {
         case 'outsideClick':
           _this.setState({
             open: o
           });
-
           break;
-
         case 'onClick':
           _this.setState({
             open: true
           });
-
           break;
       }
     });
-
     var inputFormat = props.inputFormat,
-        validators = props.validators;
-
+      validators = props.validators;
     var _date = convertToDate(props.date, inputFormat, validators);
-
     var error = _this.getError(_date);
-
     _this.state = {
       date: _date,
       error: error,
@@ -3609,40 +3277,36 @@ var DatePicker = /*#__PURE__*/function (_React$Component) {
     };
     return _this;
   }
-
   _createClass(DatePicker, [{
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps, prevState) {
       if (prevProps.date !== this.props.date) {
         var _this$props2 = this.props,
-            inputFormat = _this$props2.inputFormat,
-            validators = _this$props2.validators;
+          inputFormat = _this$props2.inputFormat,
+          validators = _this$props2.validators;
         var d = convertToDate(this.props.date, inputFormat, validators);
         this.setState({
           date: d
         });
       }
-
       if (prevProps.open !== this.props.open) {
         this.setState({
           open: this.props.open || false
         });
       }
-
       if (prevState.date !== this.state.date) {
         var _this$props3 = this.props,
-            onDateChange = _this$props3.onDateChange,
-            outputFormat = _this$props3.outputFormat;
-        var _date2 = this.state.date;
-        var newError = this.getError(_date2);
+          onDateChange = _this$props3.onDateChange,
+          outputFormat = _this$props3.outputFormat;
+        var date = this.state.date;
+        var newError = this.getError(date);
         this.setState({
           error: newError
         });
-
         if (onDateChange) {
           if (!newError) {
-            var dVal = translateToString(outputFormat, _date2);
-            onDateChange(_date2, dVal);
+            var dVal = translateToString(outputFormat, date);
+            onDateChange(date, dVal);
           } else {
             onDateChange(undefined, '');
           }
@@ -3653,28 +3317,26 @@ var DatePicker = /*#__PURE__*/function (_React$Component) {
     key: "renderCalendar",
     value: function renderCalendar() {
       var _this2 = this;
-
       var _this$props4 = this.props;
-          _this$props4.date;
-          _this$props4.open;
-          _this$props4.position;
-          var inputFormat = _this$props4.inputFormat;
-          _this$props4.outputFormat;
-          _this$props4.inputOptions;
-          var validators = _this$props4.validators;
-          _this$props4.withInput;
-          var disabledBefore = _this$props4.disabledBefore,
-          disabledAfter = _this$props4.disabledAfter;
-          _this$props4.onDateChange;
-          _this$props4.closeOnSelect;
-          var size = _this$props4.size,
-          _this$props4$showToda = _this$props4.showTodayDate,
-          showTodayDate = _this$props4$showToda === void 0 ? true : _this$props4$showToda,
-          _this$props4$children = _this$props4.children,
-          children = _this$props4$children === void 0 ? /*#__PURE__*/React.createElement(React.Fragment, null) : _this$props4$children,
-          view = _this$props4.view,
-          rest = _objectWithoutProperties(_this$props4, _excluded$S);
-
+        _this$props4.date;
+        _this$props4.open;
+        _this$props4.position;
+        var inputFormat = _this$props4.inputFormat;
+        _this$props4.outputFormat;
+        _this$props4.inputOptions;
+        var validators = _this$props4.validators;
+        _this$props4.withInput;
+        var disabledBefore = _this$props4.disabledBefore,
+        disabledAfter = _this$props4.disabledAfter;
+        _this$props4.onDateChange;
+        _this$props4.closeOnSelect;
+        var size = _this$props4.size,
+        _this$props4$showToda = _this$props4.showTodayDate,
+        showTodayDate = _this$props4$showToda === void 0 ? true : _this$props4$showToda,
+        _this$props4$children = _this$props4.children,
+        children = _this$props4$children === void 0 ? /*#__PURE__*/React.createElement(React.Fragment, null) : _this$props4$children,
+        view = _this$props4.view,
+        rest = _objectWithoutProperties(_this$props4, _excluded$_);
       var date = this.state.date;
       var months = config.months;
       var todayDate = new Date(Date.now());
@@ -3682,21 +3344,16 @@ var DatePicker = /*#__PURE__*/function (_React$Component) {
       var currDate = convertToDate(date, inputFormat, validators);
       var dateDisabledBefore = convertToDate(disabledBefore, inputFormat, validators);
       var dateDisabledAfter = convertToDate(disabledAfter, inputFormat, validators);
-
-      var isTodayDisabled = function isTodayDisabled() {
-        var isTodayDateDisabled = true;
-
-        if (currDate && dateDisabledBefore && dateDisabledAfter) {
-          isTodayDateDisabled = currDate > dateDisabledBefore && currDate < dateDisabledAfter;
-        } else if (currDate && dateDisabledBefore) {
-          isTodayDateDisabled = currDate > dateDisabledBefore;
-        } else if (currDate && dateDisabledAfter) {
-          isTodayDateDisabled = currDate < dateDisabledAfter;
-        }
-
-        return !isTodayDateDisabled;
+      var isSameDay = function isSameDay(date1, date2) {
+        return date1.getFullYear() === date2.getFullYear() && date1.getMonth() === date2.getMonth() && date1.getDate() === date2.getDate();
       };
-
+      var isTodayDisabled = function isTodayDisabled() {
+        if (dateDisabledBefore && isSameDay(todayDate, dateDisabledBefore) || dateDisabledAfter && isSameDay(todayDate, dateDisabledAfter)) {
+          return false;
+        }
+        var isTodayDateDisabled = dateDisabledBefore && todayDate < dateDisabledBefore || dateDisabledAfter && todayDate > dateDisabledAfter;
+        return isTodayDateDisabled;
+      };
       var todayChipClass = classnames({
         'd-flex justify-content-center': true,
         'pb-5': size === 'small',
@@ -3729,14 +3386,13 @@ var DatePicker = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var _this$props5 = this.props,
-          position = _this$props5.position,
-          withInput = _this$props5.withInput,
-          inputFormat = _this$props5.inputFormat,
-          inputOptions = _this$props5.inputOptions,
-          validators = _this$props5.validators,
-          popoverOptions = _this$props5.popoverOptions;
+        position = _this$props5.position,
+        withInput = _this$props5.withInput,
+        inputFormat = _this$props5.inputFormat,
+        inputOptions = _this$props5.inputOptions,
+        validators = _this$props5.validators,
+        popoverOptions = _this$props5.popoverOptions;
       var open = this.state.open;
-
       if (withInput) {
         return /*#__PURE__*/React.createElement(Popover, _extends$2({
           trigger: /*#__PURE__*/React.createElement(Trigger$1, {
@@ -3754,14 +3410,11 @@ var DatePicker = /*#__PURE__*/function (_React$Component) {
           onToggle: this.onToggleHandler
         }), this.renderCalendar());
       }
-
       return this.renderCalendar();
     }
   }]);
-
   return DatePicker;
 }(React.Component);
-
 _defineProperty$1(DatePicker, "defaultProps", _objectSpread2(_objectSpread2({}, Calendar.defaultProps), {}, {
   position: 'bottom-start',
   inputFormat: 'mm/dd/yyyy',
@@ -3777,61 +3430,54 @@ var parseDate = function parseDate(date_time) {
   d.setMinutes(date_time.substring(3, 5));
   return d;
 };
-
 var isFormat12Hour = function isFormat12Hour(format) {
   return format === '12-Hour';
 };
-
 var isTimeIn12HourFormat = function isTimeIn12HourFormat(time) {
   return _isTimeInAM(time) || _isTimeInPM(time);
 };
-
 var _isTimeInAM = function _isTimeInAM(time) {
   return time.includes('a') || time.includes('A');
 };
 var _isTimeInPM = function _isTimeInPM(time) {
   return time.includes('p') || time.includes('P');
 };
+
 /**
  * Convert time from 12 hour format to 24 hour format
  * @param timeStr in hh:mm [AM/PM] format
  * @returns time in HH:MM format
  */
-
 var convert12To24HourFormat$1 = function convert12To24HourFormat(timeStr) {
   var _timeStr$split = timeStr.split(' '),
-      _timeStr$split2 = _slicedToArray(_timeStr$split, 2),
-      time = _timeStr$split2[0],
-      modifier = _timeStr$split2[1];
-
+    _timeStr$split2 = _slicedToArray(_timeStr$split, 2),
+    time = _timeStr$split2[0],
+    modifier = _timeStr$split2[1];
   var timeArr = time.split(':');
   var hours = timeArr[0];
   var minutes = timeArr[1];
-
   if (hours === '12' && _isTimeInAM(modifier)) {
     hours = '00';
   }
-
   if (_isTimeInPM(modifier) && hours !== '12') {
     hours = (parseInt(hours, 10) + 12).toString();
   }
-
   return "".concat(hours, ":").concat(minutes);
 };
+
 /**
  * @param val
  * @returns insert 0 at start in case of single digit
  */
-
 var convertToTwoDigit = function convertToTwoDigit(val) {
   return ('0' + val).slice(-2);
 };
+
 /**
  * Convert time from 24 hour format to 12 hour format
  * @param timeStr in HH:MM format
  * @returns time in hh:mm [AM/PM] format
  */
-
 var convert24To12HourFormat = function convert24To12HourFormat(timeStr) {
   var timeArr = timeStr.split(':');
   var hours = parseInt(timeArr[0], 10);
@@ -3843,52 +3489,46 @@ var convert24To12HourFormat = function convert24To12HourFormat(timeStr) {
   var result = "".concat(hoursInString.toString(), ":").concat(minutes, " ").concat(modifier);
   return result;
 };
-
 var getTimeIn24HrFormat = function getTimeIn24HrFormat(timeStr) {
   if (isTimeIn12HourFormat(timeStr)) {
     return convert12To24HourFormat$1(timeStr);
   }
-
   return timeStr;
 };
+
 /**
  * @param startTime in HH:MM format
  * @param endTime in HH:MM format
  * @returns returns true if start time is greater than end time
  */
-
-
 var checkTimeDifference = function checkTimeDifference(startTime, endTime) {
   var parseStartTime = parseDate(startTime);
   var parseEndTime = parseDate(endTime);
   return parseStartTime > parseEndTime;
 };
+
 /**
  * @param startTime in HH:MM format
  * @param endTime in HH:MM format
  * @param interval
  * @returns array of 24 hour time list based on interval
  */
-
 var get24HourTimeList = function get24HourTimeList(startTime, endTime, interval) {
   var timeList = [];
   var parseStartTime = parseDate(startTime);
   var parseEndTime = parseDate(endTime);
-
   while (parseStartTime <= parseEndTime) {
     timeList.push(parseStartTime.toTimeString().substring(0, 5));
     parseStartTime.setMinutes(parseStartTime.getMinutes() + interval);
   }
-
   return timeList;
 };
+
 /**
  * @param startTime in HH:MM format
  * @param interval
  * @returns time list in 24 hour format including times option for next day
  */
-
-
 var getReverseTimeList = function getReverseTimeList(startTime, endTime, interval) {
   var timeList = get24HourTimeList('00:00', '23:59', interval);
   var startTimeIndex = timeList.indexOf(startTime);
@@ -3899,15 +3539,12 @@ var getReverseTimeList = function getReverseTimeList(startTime, endTime, interva
   var result = presentDayList.concat(nextDayList);
   return result;
 };
-
 var getTimeListIn24HourFormat = function getTimeListIn24HourFormat(startTime, endTime, interval) {
   if (endTime === '' || checkTimeDifference(startTime, endTime)) {
     return getReverseTimeList(startTime, endTime, interval);
   }
-
   return get24HourTimeList(startTime, endTime, interval);
 };
-
 var getTimeDifference = function getTimeDifference(startTime, endTime) {
   var timeStart = new Date('07/07/2022 ' + startTime);
   var timeEnd = new Date('07/07/2022 ' + endTime);
@@ -3920,40 +3557,30 @@ var getTimeDifference = function getTimeDifference(startTime, endTime) {
     minute: minute
   };
 };
-
 var getCustomLabel = function getCustomLabel(time, timeFormat, showDuration, referenceTime) {
   var label = time;
-
   if (isFormat12Hour(timeFormat)) {
     label = convert24To12HourFormat(time);
   }
-
   if (showDuration && referenceTime) {
     var _getTimeDifference = getTimeDifference(referenceTime, time),
-        hour = _getTimeDifference.hour,
-        minute = _getTimeDifference.minute;
-
+      hour = _getTimeDifference.hour,
+      minute = _getTimeDifference.minute;
     var timeDiffLabel = " (".concat(hour, " hr ").concat(minute, " min)");
     label += timeDiffLabel;
   }
-
   return label;
 };
-
 var isOptionDisabled = function isOptionDisabled(time, timeFormat, disabledSlotList) {
   var timeValue = time;
-
   if (isFormat12Hour(timeFormat)) {
     timeValue = convert24To12HourFormat(time);
   }
-
   if (disabledSlotList.includes(timeValue)) {
     return true;
   }
-
   return false;
 };
-
 var convertTimeToOptionList = function convertTimeToOptionList(timeList, timeFormat) {
   var id = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'TimePicker-Option-key';
   var showDuration = arguments.length > 3 ? arguments[3] : undefined;
@@ -3970,19 +3597,17 @@ var convertTimeToOptionList = function convertTimeToOptionList(timeList, timeFor
   });
   return optionList;
 };
-
 var computeEndTime = function computeEndTime(startTime) {
   return startTime ? '' : '23:59';
 };
-
 var getDropdownOptionList = function getDropdownOptionList(props) {
   var startTime = props.startTime,
-      endTime = props.endTime,
-      interval = props.interval,
-      timeFormat = props.timeFormat,
-      showDuration = props.showDuration,
-      disabledSlotList = props.disabledSlotList,
-      id = props.id;
+    endTime = props.endTime,
+    interval = props.interval,
+    timeFormat = props.timeFormat,
+    showDuration = props.showDuration,
+    disabledSlotList = props.disabledSlotList,
+    id = props.id;
   var startTimeIn24Hr = startTime ? getTimeIn24HrFormat(startTime) : '00:00';
   var endTimeIn24Hr = endTime ? getTimeIn24HrFormat(endTime) : computeEndTime(startTime);
   var timeList = getTimeListIn24HourFormat(startTimeIn24Hr, endTimeIn24Hr, interval);
@@ -3997,48 +3622,40 @@ var convertMinTo60 = function convertMinTo60(time) {
   var min = (timeInNum.toString() + '0').slice(0, 2);
   return min;
 };
-
 var get24HourCurrentTime = function get24HourCurrentTime() {
   var today = new Date();
   return convertToTwoDigit(today.getHours()) + ':' + convertToTwoDigit(today.getMinutes());
 };
-
 var convertHourTo24 = function convertHourTo24(time) {
   var timeInNum = parseInt(time, 10) % 24;
   return timeInNum.toString();
 };
-
 var convertHourTo12 = function convertHourTo12(time) {
   var timeInNum = parseInt(time, 10) % 12;
   return timeInNum.toString();
 };
-
 var _checkNumber = function _checkNumber(str) {
   var numberRegex = /^[0-9]+$/;
   return numberRegex.test(str);
 };
-
 var _checkNumberWithAMPM = function _checkNumberWithAMPM(str) {
   var numberWithAMPMRegex = /^[0-9]+[ AaMmPp]+$/;
   return numberWithAMPMRegex.test(str);
 };
-
 var _checkNumberWithSpecialChar = function _checkNumberWithSpecialChar(str) {
   var numberWithSpecialCharRegex = /^[0-9]+[`\s!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?~][0-9]*$/;
   return numberWithSpecialCharRegex.test(str);
 };
-
 var _checkNumberWithSpecialCharAMPM = function _checkNumberWithSpecialCharAMPM(str) {
   var numberWithSpecialCharAMPM = /^[0-9]+[`\s!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?~][0-9]+[ AaMmPp]+$/;
   return numberWithSpecialCharAMPM.test(str);
 };
-
 var specialCharRegex = /[`\s!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?~]/;
+
 /**
  * @param searchTime in [number special-char number] format
  * @returns timeObj with hour & minute in 24 hour format
  */
-
 var getTimeFromNumberWithSpecialChar = function getTimeFromNumberWithSpecialChar(searchTime) {
   var time = searchTime.split(specialCharRegex);
   var hour = convertHourTo24(time[0]);
@@ -4050,26 +3667,23 @@ var getTimeFromNumberWithSpecialChar = function getTimeFromNumberWithSpecialChar
     min: mm
   };
 };
+
 /**
  * If search term only contains number
  * @param searchTerm
  * @returns timeObj with hour & minute in 24 hour format
  */
-
-
 var getSearchTimeFromNumber = function getSearchTimeFromNumber(searchTerm, show12HourFormat) {
   var searchLen = searchTerm.length;
   var searchTimeInNum = parseInt(searchTerm, 10);
   var firstTwoTerm = searchTerm.slice(0, 2);
   var hh = '00';
   var mm = '00';
-
   switch (searchLen) {
     case 1:
       // if search term length is 1 consider it as hour
       hh = '0' + searchTerm;
       break;
-
     case 2:
       // if search term length is 2
       if (searchTimeInNum <= 24 || show12HourFormat && searchTimeInNum <= 12) {
@@ -4078,223 +3692,198 @@ var getSearchTimeFromNumber = function getSearchTimeFromNumber(searchTerm, show1
       } else {
         // consider first term as hour and last term as min
         hh = '0' + searchTerm[0];
-        mm = convertMinTo60(searchTerm[1] + '0'); // mm = searchTerm[1] + '0';
+        mm = convertMinTo60(searchTerm[1] + '0');
+        // mm = searchTerm[1] + '0';
       }
-
       break;
-
     case 3:
       hh = '0' + searchTerm[0];
       mm = convertMinTo60(searchTerm.slice(1));
       break;
-
     case 4:
       hh = show12HourFormat ? convertHourTo12(firstTwoTerm) : convertHourTo24(firstTwoTerm);
       mm = convertMinTo60(searchTerm.slice(2));
       break;
-
     default:
       // set time as -1 in case of invalid time
       hh = '-1';
       mm = '-1';
   }
-
   return {
     hour: hh,
     min: mm
   };
 };
+
 /**
  * @param searchTime in [number AMPM] format
  * @returns timeObj with hour & minute in 24 hour format
  */
-
-
 var getTimeFromNumberWithAMPM = function getTimeFromNumberWithAMPM(searchTime) {
   var timeArr = searchTime.split(/[\saAmMpP]/);
-
   var _getSearchTimeFromNum = getSearchTimeFromNumber(timeArr[0], true),
-      hour = _getSearchTimeFromNum.hour,
-      min = _getSearchTimeFromNum.min;
-
+    hour = _getSearchTimeFromNum.hour,
+    min = _getSearchTimeFromNum.min;
   return {
     hour: hour,
     min: min
   };
 };
+
 /**
  * @param searchTerm entered by user in any format
  * @returns modified search term in 24 hour format
  */
-
-
 var formatSearchTerm = function formatSearchTerm(optionList, searchTerm) {
   var searchTime = {
     hour: '00',
     min: '00'
-  }; // If search term only contains numbers
+  };
 
+  // If search term only contains numbers
   if (_checkNumber(searchTerm)) {
     var searchTimeInHHMM = getSearchTimeFromNumber(searchTerm);
-
     if (parseInt(searchTimeInHHMM.hour) <= 12 && parseInt(searchTimeInHHMM.hour) > 0) {
       // switch to AM/PM based on current time
       searchTime = getCurrentRelativeTime(optionList, searchTimeInHHMM);
     } else {
       searchTime = searchTimeInHHMM;
     }
-  } // if search term contains numbers along with [ampm]
+  }
+
+  // if search term contains numbers along with [ampm]
   else if (_checkNumberWithAMPM(searchTerm)) {
     searchTime = getTimeFromNumberWithAMPM(searchTerm);
     searchTime.hour = convert12To24HourFormat(searchTime.hour, searchTerm);
-  } // if search term contains numbers along with special character
+  }
+
+  // if search term contains numbers along with special character
   else if (_checkNumberWithSpecialChar(searchTerm)) {
     var _searchTimeInHHMM = getTimeFromNumberWithSpecialChar(searchTerm);
-
     if (parseInt(_searchTimeInHHMM.hour) <= 12) {
       // switch to AM/PM based on current time
       searchTime = getCurrentRelativeTime(optionList, _searchTimeInHHMM);
     } else {
       searchTime = _searchTimeInHHMM;
     }
-  } // if search term contains numbers, special character & [AmPm]
+  }
+
+  // if search term contains numbers, special character & [AmPm]
   else if (_checkNumberWithSpecialCharAMPM(searchTerm)) {
     var timeWithoutAMPM = searchTerm.replace(/[\saApPmM]/g, '');
-
     if (_checkNumber(timeWithoutAMPM)) {
       searchTime = getSearchTimeFromNumber(timeWithoutAMPM, true);
     } else if (_checkNumberWithSpecialChar(timeWithoutAMPM)) {
       searchTime = getTimeFromNumberWithSpecialChar(timeWithoutAMPM);
     }
-
     searchTime.hour = convert12To24HourFormat(searchTime.hour, searchTerm);
   }
-
   return searchTime;
 };
+
 /**
  * @param hours
  * @param searchTerm
  * @returns hours based on AM/PM in 24 hour format
  */
-
 var convert12To24HourFormat = function convert12To24HourFormat(hours, searchTerm) {
   if (hours === '12' && _isTimeInAM(searchTerm)) {
     hours = '00';
   } else if (_isTimeInPM(searchTerm) && hours !== '12') {
     hours = (parseInt(hours, 10) + 12).toString();
   }
-
   return hours;
 };
+
 /**
  * Switch to AM/PM time based on current time
  * @param optionList
  * @param searchTime
  */
-
-
 var getCurrentRelativeTime = function getCurrentRelativeTime(optionList, searchTime) {
   var searchTimeStr = "".concat(searchTime.hour, ":").concat(searchTime.min);
   var currentTime = get24HourCurrentTime();
   var greaterTime = checkTimeDifference(currentTime, searchTimeStr);
   var currentTimeIndex = findClosestTimeIndex(optionList, currentTime);
   var searchTimeIndex = findClosestTimeIndex(optionList, searchTimeStr);
-
   if (greaterTime && currentTimeIndex > searchTimeIndex) {
     var hourIn24Format = parseInt(searchTime.hour, 10) + 12;
     searchTime.hour = hourIn24Format.toString();
   }
-
   return searchTime;
 };
-
 var findClosestTimeIndex = function findClosestTimeIndex(optionList, searchItem) {
   var closestItemIndex = 0;
   var minTime = {
     hour: 100,
     mins: 100
   };
-
   for (var index = 0; index < optionList.length; index++) {
     var _getTimeDifference = getTimeDifference(searchItem, optionList[index]),
-        hour = _getTimeDifference.hour,
-        minute = _getTimeDifference.minute;
-
+      hour = _getTimeDifference.hour,
+      minute = _getTimeDifference.minute;
     if (hour < minTime.hour || hour === minTime.hour && minute < minTime.mins) {
       minTime.hour = hour;
       minTime.mins = minute;
       closestItemIndex = index;
     }
   }
-
   return closestItemIndex;
 };
+
 /**
  * Get index of search term from option list
  * @param optionList
  * @param searchTerm
  * @returns Index of the search term in option list
  */
-
-
 var getSearchIndex = function getSearchIndex(optionList, searchTerm) {
   var _formatSearchTerm = formatSearchTerm(optionList, searchTerm),
-      hour = _formatSearchTerm.hour,
-      min = _formatSearchTerm.min;
-
+    hour = _formatSearchTerm.hour,
+    min = _formatSearchTerm.min;
   if (min === '60') {
     min = '00';
     hour = (parseInt(hour, 10) + 1).toString();
   }
-
   var searchItem = "".concat(hour, ":").concat(min);
   var searchIndex = findClosestTimeIndex(optionList, searchItem);
   return searchIndex;
 };
+
 /**
  * @param searchTerm
  * @returns count number of digits present inside search term
  */
-
 var countNumberInStr = function countNumberInStr(searchTerm) {
   var _searchTerm$match;
-
   return ((_searchTerm$match = searchTerm.match(/\d/g)) === null || _searchTerm$match === void 0 ? void 0 : _searchTerm$match.length) || 0;
 };
-
 var isValidSearchTerm = function isValidSearchTerm(searchTerm) {
   var totalDigit = countNumberInStr(searchTerm);
   return totalDigit > 0 && totalDigit < 5;
 };
-
 var getValueFromOptionList = function getValueFromOptionList(optionList) {
   var list = optionList.map(function (option) {
     return option.value;
   });
   return list;
 };
-
 var getSearchValueIndex = function getSearchValueIndex(options, searchTerm) {
   // Search Term is valid if it contains number
   if (!isValidSearchTerm(searchTerm)) {
     return -1;
   }
-
   var searchIndex = getSearchIndex(options, searchTerm);
   return searchIndex;
 };
-
 var getScrollIndex = function getScrollIndex(dropdownOptionList, searchTerm) {
   var optionList = getValueFromOptionList(dropdownOptionList);
-
   if (searchTerm === '') {
     // return current time index
     var currTime = get24HourCurrentTime();
     var currTimeIndex = findClosestTimeIndex(optionList, currTime);
     return currTimeIndex;
   }
-
   return getSearchValueIndex(optionList, searchTerm);
 };
 
@@ -4304,13 +3893,11 @@ var getSearchedOptions = function getSearchedOptions(options, searchTerm) {
   });
   return result;
 };
-
 var sortList = function sortList(arr) {
   return arr.sort(function (a, b) {
     return a.value > b.value ? 1 : b.value > a.value ? -1 : 0;
   });
 };
-
 var _isEqual = function _isEqual(firstList, secondList) {
   var firstSortedList = sortList(_toConsumableArray(firstList));
   var secondSortedList = sortList(_toConsumableArray(secondList));
@@ -4337,7 +3924,6 @@ var scrollIntoView = function scrollIntoView(menuElement, focusedElement) {
   var menuRect = menuElement === null || menuElement === void 0 ? void 0 : menuElement.getBoundingClientRect();
   var focusedRect = focusedElement.getBoundingClientRect();
   var overscroll = focusedElement.offsetHeight;
-
   if (focusedRect.bottom > menuRect.bottom && menuElement) {
     scrollTo(menuElement, focusedElement.offsetTop - menuRect.height + overscroll);
   } else if (focusedRect.top < menuRect.top && menuElement) {
@@ -4352,7 +3938,6 @@ var getSelectAll$1 = function getSelectAll(selected, optionsLength, disabledOpti
         checked: true
       }; //
     }
-
     var indeterminate = selected.length > 0 && selected.length !== optionsLength;
     var checked = selected.length > 0 && selected.length === optionsLength;
     var obj = {
@@ -4361,7 +3946,6 @@ var getSelectAll$1 = function getSelectAll(selected, optionsLength, disabledOpti
     };
     return obj;
   }
-
   return {
     indeterminate: false,
     checked: false
@@ -4369,7 +3953,6 @@ var getSelectAll$1 = function getSelectAll(selected, optionsLength, disabledOpti
 };
 var scrollToOptionIndex = function scrollToOptionIndex(scrollIndex, listOptions) {
   var _listOptions$scrollIn;
-
   var optionID = listOptions && ((_listOptions$scrollIn = listOptions[scrollIndex]) === null || _listOptions$scrollIn === void 0 ? void 0 : _listOptions$scrollIn.optionID);
   var targetOption = document.getElementById(optionID);
   targetOption && targetOption.scrollIntoView && targetOption.scrollIntoView({
@@ -4379,11 +3962,9 @@ var scrollToOptionIndex = function scrollToOptionIndex(scrollIndex, listOptions)
 var groupListOptions = function groupListOptions(listOptions) {
   var groupList = listOptions.reduce(function (acc, option) {
     var group = option.group || '';
-
     if (!acc[group]) {
       acc[group] = [];
     }
-
     acc[group].push(option);
     return acc;
   }, {});
@@ -4395,78 +3976,67 @@ var groupListOptions = function groupListOptions(listOptions) {
 
 var TimePickerWithSearch = function TimePickerWithSearch(props) {
   var open = props.open,
-      endTime = props.endTime,
-      interval = props.interval,
-      onChange = props.onChange,
-      startTime = props.startTime,
-      timeFormat = props.timeFormat,
-      showDuration = props.showDuration,
-      noResultMessage = props.noResultMessage,
-      disabledSlotList = props.disabledSlotList,
-      fetchTimeOptions = props.fetchTimeOptions,
-      error = props.error;
-
+    endTime = props.endTime,
+    interval = props.interval,
+    onChange = props.onChange,
+    startTime = props.startTime,
+    timeFormat = props.timeFormat,
+    showDuration = props.showDuration,
+    noResultMessage = props.noResultMessage,
+    disabledSlotList = props.disabledSlotList,
+    fetchTimeOptions = props.fetchTimeOptions,
+    error = props.error;
   var _React$useState = React.useState(0),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      tabIndex = _React$useState2[0],
-      setTabIndex = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    tabIndex = _React$useState2[0],
+    setTabIndex = _React$useState2[1];
   var _React$useState3 = React.useState(false),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      openPopover = _React$useState4[0],
-      setOpenPopover = _React$useState4[1];
-
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    openPopover = _React$useState4[0],
+    setOpenPopover = _React$useState4[1];
   var _React$useState5 = React.useState(-1),
-      _React$useState6 = _slicedToArray(_React$useState5, 2),
-      selectedIndex = _React$useState6[0],
-      setSelectedIndex = _React$useState6[1];
-
+    _React$useState6 = _slicedToArray(_React$useState5, 2),
+    selectedIndex = _React$useState6[0],
+    setSelectedIndex = _React$useState6[1];
   var _React$useState7 = React.useState(0),
-      _React$useState8 = _slicedToArray(_React$useState7, 2),
-      counter = _React$useState8[0],
-      setCounter = _React$useState8[1];
-
+    _React$useState8 = _slicedToArray(_React$useState7, 2),
+    counter = _React$useState8[0],
+    setCounter = _React$useState8[1];
   var dropdownOptionList = getDropdownOptionList(props);
   React.useEffect(function () {
     open !== undefined && setOpenPopover(open);
   }, [open]);
   React.useEffect(function () {
     var timer;
-
     if (openPopover && selectedIndex != -1) {
       setTabIndex(selectedIndex);
       timer = setTimeout(function () {
         scrollToOptionIndex(selectedIndex, dropdownOptionList);
       }, 100);
     }
-
     return function () {
       clearTimeout(timer);
     };
-  }, [openPopover]); // Required to re-render dropdown forcefully whenever props changes
+  }, [openPopover]);
 
+  // Required to re-render dropdown forcefully whenever props changes
   React.useEffect(function () {
     setCounter(counter + 1);
   }, [startTime, endTime, interval, showDuration, disabledSlotList]);
-
   var onChangeHandler = function onChangeHandler(props) {
     var time = props;
-
     if (isFormat12Hour(timeFormat)) {
       time = convert24To12HourFormat(time);
     }
-
     var selectIndex = dropdownOptionList.findIndex(function (option) {
       return option.value === props;
     });
     setSelectedIndex(selectIndex);
     onChange && onChange(time);
   };
-
   var getOptionList = function getOptionList(searchTerm) {
     var scrollIndex;
     var indexValue = getScrollIndex(dropdownOptionList, searchTerm);
-
     if (searchTerm === '' && selectedIndex != -1) {
       scrollIndex = selectedIndex;
       setTabIndex(selectedIndex);
@@ -4474,7 +4044,6 @@ var TimePickerWithSearch = function TimePickerWithSearch(props) {
       scrollIndex = indexValue;
       setTabIndex(indexValue);
     }
-
     return Promise.resolve({
       options: indexValue === -1 ? [] : dropdownOptionList,
       count: dropdownOptionList.length,
@@ -4482,11 +4051,9 @@ var TimePickerWithSearch = function TimePickerWithSearch(props) {
       searchTerm: searchTerm
     });
   };
-
   var fetchOptionList = function fetchOptionList() {
     return fetchTimeOptions ? fetchTimeOptions : getOptionList;
   };
-
   return /*#__PURE__*/React.createElement(Dropdown, {
     key: counter,
     maxHeight: 160,
@@ -4513,65 +4080,54 @@ TimePickerWithSearch.displayName = 'TimePickerWithSearch';
 
 var TimePickerWithInput = function TimePickerWithInput(props) {
   var validators = props.validators,
-      inputOptions = props.inputOptions,
-      inputFormat = props.inputFormat,
-      outputFormat = props.outputFormat,
-      onTimeChange = props.onTimeChange,
-      timeProp = props.time,
-      error = props.error;
-
+    inputOptions = props.inputOptions,
+    inputFormat = props.inputFormat,
+    outputFormat = props.outputFormat,
+    onTimeChange = props.onTimeChange,
+    timeProp = props.time,
+    error = props.error;
   var _React$useState = React.useState(timeProp),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      time$1 = _React$useState2[0],
-      setTime = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    time$1 = _React$useState2[0],
+    setTime = _React$useState2[1];
   var _React$useState3 = React.useState(false),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      init = _React$useState4[0],
-      setInit = _React$useState4[1];
-
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    init = _React$useState4[0],
+    setInit = _React$useState4[1];
   var _inputOptions$placeho = inputOptions.placeholderChar,
-      placeholderChar = _inputOptions$placeho === void 0 ? '_' : _inputOptions$placeho;
+    placeholderChar = _inputOptions$placeho === void 0 ? '_' : _inputOptions$placeho;
   React.useEffect(function () {
     var timeStr = translateToTime(inputFormat, time$1);
     var updatedTime = timeProp === undefined && timeStr.includes(placeholderChar) ? time$1 : timeProp;
     setTime(updatedTime);
   }, [timeProp]);
-
   var onChangeHandler = function onChangeHandler(e) {
     var val = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
     var updatedTime = val === null || val === void 0 ? void 0 : val.toUpperCase();
     setTime(updatedTime);
-
     if (inputOptions.onChange) {
       inputOptions.onChange(e, val);
     }
   };
-
   var onBlurHandler = function onBlurHandler(e) {
     var val = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
     var updatedTime = translateToTime(inputFormat, time$1);
     setInit(true);
-
     if (onTimeChange) {
       var outputTimeStr = updatedTime && !isPlaceholderPresent(placeholderChar, updatedTime) ? getOutputTimeString(inputFormat, outputFormat, updatedTime) : undefined;
       onTimeChange(outputTimeStr);
     }
-
     if (inputOptions.onBlur) inputOptions.onBlur(e, val);
   };
-
   var onClearHandler = function onClearHandler(e) {
     var updatedTime = '';
     setInit(true);
     if (onTimeChange) onTimeChange(updatedTime);
     if (inputOptions.onClear) inputOptions.onClear(e);
   };
-
   var inputValidator = function inputValidator(val) {
     return isValid(validators, val, inputFormat);
   };
-
   var mask = time[inputFormat];
   return /*#__PURE__*/React.createElement(X, _extends$2({
     placeholder: placeholders[inputFormat],
@@ -4739,25 +4295,23 @@ function debounce$1 (delay, atBegin, callback) {
   return callback === undefined ? throttle(delay, atBegin, false) : throttle(delay, callback, atBegin !== false);
 }
 
-var _excluded$R = ["triggerSize", "placeholder", "menu", "children", "icon", "disabled", "open", "inlineLabel", "error", "iconType"];
+var _excluded$Z = ["triggerSize", "placeholder", "menu", "children", "icon", "disabled", "open", "inlineLabel", "error", "iconType"];
 var DropdownButton = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var _classNames, _classNames2;
-
   var _props$triggerSize = props.triggerSize,
-      triggerSize = _props$triggerSize === void 0 ? 'regular' : _props$triggerSize,
-      _props$placeholder = props.placeholder,
-      placeholder = _props$placeholder === void 0 ? 'Select' : _props$placeholder,
-      _props$menu = props.menu,
-      menu = _props$menu === void 0 ? false : _props$menu,
-      children = props.children,
-      icon = props.icon,
-      disabled = props.disabled,
-      open = props.open,
-      inlineLabel = props.inlineLabel,
-      error = props.error,
-      iconType = props.iconType,
-      rest = _objectWithoutProperties(props, _excluded$R);
-
+    triggerSize = _props$triggerSize === void 0 ? 'regular' : _props$triggerSize,
+    _props$placeholder = props.placeholder,
+    placeholder = _props$placeholder === void 0 ? 'Select' : _props$placeholder,
+    _props$menu = props.menu,
+    menu = _props$menu === void 0 ? false : _props$menu,
+    children = props.children,
+    icon = props.icon,
+    disabled = props.disabled,
+    open = props.open,
+    inlineLabel = props.inlineLabel,
+    error = props.error,
+    iconType = props.iconType,
+    rest = _objectWithoutProperties(props, _excluded$Z);
   var buttonDisabled = disabled ? 'disabled' : 'default';
   var trimmedPlaceholder = placeholder.trim();
   var value = children ? children : trimmedPlaceholder;
@@ -4794,21 +4348,19 @@ DropdownButton.displayName = 'DropdownButton';
 
 var CheckboxOption = function CheckboxOption(props) {
   var className = props.className,
-      selected = props.selected,
-      optionData = props.optionData,
-      onChangeHandler = props.onChangeHandler,
-      onUpdateActiveOption = props.onUpdateActiveOption,
-      dataTest = props.dataTest,
-      _props$id = props.id,
-      id = _props$id === void 0 ? '' : _props$id;
+    selected = props.selected,
+    optionData = props.optionData,
+    onChangeHandler = props.onChangeHandler,
+    onUpdateActiveOption = props.onUpdateActiveOption,
+    dataTest = props.dataTest,
+    _props$id = props.id,
+    id = _props$id === void 0 ? '' : _props$id;
   var subInfo = optionData.subInfo,
-      label = optionData.label,
-      disabled = optionData.disabled;
-
+    label = optionData.label,
+    disabled = optionData.disabled;
   var renderSubInfo = function renderSubInfo(subInfo) {
     var labelAppearance = disabled ? 'disabled' : 'subtle';
     var iconAppearance = selected ? 'white' : 'disabled';
-
     if (typeof subInfo === 'string') {
       return /*#__PURE__*/React.createElement(Text, {
         "data-test": "DesignSystem-DropdownOption--WITH_META--Meta",
@@ -4817,10 +4369,9 @@ var CheckboxOption = function CheckboxOption(props) {
         weight: "medium"
       }, subInfo);
     }
-
     var _subInfo$list = subInfo.list,
-        list = _subInfo$list === void 0 ? [] : _subInfo$list,
-        seperator = subInfo.seperator;
+      list = _subInfo$list === void 0 ? [] : _subInfo$list,
+      seperator = subInfo.seperator;
     return /*#__PURE__*/React.createElement(MetaList, {
       list: list,
       seperator: seperator,
@@ -4830,7 +4381,6 @@ var CheckboxOption = function CheckboxOption(props) {
       "data-test": "DesignSystem-DropdownOption--WITH_META--MetaList"
     });
   };
-
   return /*#__PURE__*/React.createElement("div", {
     className: className,
     onMouseEnter: onUpdateActiveOption,
@@ -4852,18 +4402,17 @@ var CheckboxOption = function CheckboxOption(props) {
 
 var DefaultOption = function DefaultOption(props) {
   var className = props.className,
-      textClassName = props.textClassName,
-      onClickHandler = props.onClickHandler,
-      optionData = props.optionData,
-      color = props.color,
-      onUpdateActiveOption = props.onUpdateActiveOption,
-      dataTest = props.dataTest;
+    textClassName = props.textClassName,
+    onClickHandler = props.onClickHandler,
+    optionData = props.optionData,
+    color = props.color,
+    onUpdateActiveOption = props.onUpdateActiveOption,
+    dataTest = props.dataTest;
   var label = optionData.label,
-      disabled = optionData.disabled;
+    disabled = optionData.disabled;
   return (
     /*#__PURE__*/
     // TODO(a11y): fix accessibility
-
     /* eslint-disable */
     React.createElement("div", {
       className: className,
@@ -4883,20 +4432,19 @@ var DefaultOption = function DefaultOption(props) {
 
 var MetaOption = function MetaOption(props) {
   var className = props.className,
-      textClassName = props.textClassName,
-      onClickHandler = props.onClickHandler,
-      optionData = props.optionData,
-      onUpdateActiveOption = props.onUpdateActiveOption,
-      renderSubInfo = props.renderSubInfo,
-      color = props.color,
-      dataTest = props.dataTest;
+    textClassName = props.textClassName,
+    onClickHandler = props.onClickHandler,
+    optionData = props.optionData,
+    onUpdateActiveOption = props.onUpdateActiveOption,
+    renderSubInfo = props.renderSubInfo,
+    color = props.color,
+    dataTest = props.dataTest;
   var subInfo = optionData.subInfo,
-      label = optionData.label,
-      disabled = optionData.disabled;
+    label = optionData.label,
+    disabled = optionData.disabled;
   return (
     /*#__PURE__*/
     // TODO(a11y): fix accessibility
-
     /* eslint-disable */
     React.createElement("div", {
       className: className,
@@ -4915,23 +4463,21 @@ var MetaOption = function MetaOption(props) {
 
 var IconOption = function IconOption(props) {
   var _classNames;
-
   var className = props.className,
-      textClassName = props.textClassName,
-      onClickHandler = props.onClickHandler,
-      optionData = props.optionData,
-      onUpdateActiveOption = props.onUpdateActiveOption,
-      color = props.color,
-      dataTest = props.dataTest;
+    textClassName = props.textClassName,
+    onClickHandler = props.onClickHandler,
+    optionData = props.optionData,
+    onUpdateActiveOption = props.onUpdateActiveOption,
+    color = props.color,
+    dataTest = props.dataTest;
   var label = optionData.label,
-      icon = optionData.icon,
-      disabled = optionData.disabled,
-      iconType = optionData.iconType;
+    icon = optionData.icon,
+    disabled = optionData.disabled,
+    iconType = optionData.iconType;
   var OptionClass = classnames((_classNames = {}, _defineProperty$1(_classNames, "".concat(className), true), _defineProperty$1(_classNames, 'Option--icon', icon), _classNames));
   return (
     /*#__PURE__*/
     // TODO(a11y): fix accessibility
-
     /* eslint-disable */
     React.createElement("div", {
       className: OptionClass,
@@ -4955,25 +4501,23 @@ var IconOption = function IconOption(props) {
 
 var IconWithMetaOption = function IconWithMetaOption(props) {
   var _classNames;
-
   var className = props.className,
-      textClassName = props.textClassName,
-      renderSubInfo = props.renderSubInfo,
-      onClickHandler = props.onClickHandler,
-      optionData = props.optionData,
-      onUpdateActiveOption = props.onUpdateActiveOption,
-      appearance = props.appearance,
-      color = props.color,
-      dataTest = props.dataTest;
+    textClassName = props.textClassName,
+    renderSubInfo = props.renderSubInfo,
+    onClickHandler = props.onClickHandler,
+    optionData = props.optionData,
+    onUpdateActiveOption = props.onUpdateActiveOption,
+    appearance = props.appearance,
+    color = props.color,
+    dataTest = props.dataTest;
   var subInfo = optionData.subInfo,
-      label = optionData.label,
-      icon = optionData.icon,
-      disabled = optionData.disabled;
+    label = optionData.label,
+    icon = optionData.icon,
+    disabled = optionData.disabled;
   var OptionClass = classnames((_classNames = {}, _defineProperty$1(_classNames, "".concat(className), true), _defineProperty$1(_classNames, 'Option--icon', icon), _classNames));
   return (
     /*#__PURE__*/
     // TODO(a11y): fix accessibility
-
     /* eslint-disable */
     React.createElement("div", {
       className: OptionClass,
@@ -4997,26 +4541,22 @@ var IconWithMetaOption = function IconWithMetaOption(props) {
 
 var _OptionTypeMapping;
 var OptionTypeMapping = (_OptionTypeMapping = {}, _defineProperty$1(_OptionTypeMapping, 'DEFAULT', DefaultOption), _defineProperty$1(_OptionTypeMapping, 'WITH_ICON', IconOption), _defineProperty$1(_OptionTypeMapping, 'WITH_META', MetaOption), _defineProperty$1(_OptionTypeMapping, 'WITH_CHECKBOX', CheckboxOption), _defineProperty$1(_OptionTypeMapping, 'ICON_WITH_META', IconWithMetaOption), _OptionTypeMapping);
-
 var Option = function Option(props) {
   var _classNames, _classNames2, _classNames3, _classNames4;
-
   var optionData = props.optionData,
-      selected = props.selected,
-      onClick = props.onClick,
-      updateActiveOption = props.updateActiveOption,
-      onChange = props.onChange,
-      active = props.active,
-      index = props.index,
-      checkboxes = props.checkboxes,
-      menu = props.menu,
-      _props$id = props.id,
-      id = _props$id === void 0 ? '' : _props$id;
-
+    selected = props.selected,
+    onClick = props.onClick,
+    updateActiveOption = props.updateActiveOption,
+    onChange = props.onChange,
+    active = props.active,
+    index = props.index,
+    checkboxes = props.checkboxes,
+    menu = props.menu,
+    _props$id = props.id,
+    id = _props$id === void 0 ? '' : _props$id;
   var _ref = optionData.optionType ? optionData : props,
-      _ref$optionType = _ref.optionType,
-      optionType = _ref$optionType === void 0 ? 'DEFAULT' : _ref$optionType;
-
+    _ref$optionType = _ref.optionType,
+    optionType = _ref$optionType === void 0 ? 'DEFAULT' : _ref$optionType;
   var disabled = optionData.disabled;
   var color = disabled ? 'inverse-lightest' : selected && !menu ? 'primary-dark' : 'inverse';
   var appearance = disabled ? 'disabled' : selected && !menu ? 'primary_dark' : 'default';
@@ -5026,24 +4566,20 @@ var Option = function Option(props) {
   var CheckboxClassName = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'Option-checkbox', true), _defineProperty$1(_classNames2, 'Option-checkbox--active', active), _defineProperty$1(_classNames2, 'OptionWrapper', true), _classNames2));
   var textClassName = classnames((_classNames3 = {}, _defineProperty$1(_classNames3, 'Option-text', true), _defineProperty$1(_classNames3, 'Option-text--wrap', !props.truncateOption), _classNames3));
   var customOptionClass = classnames((_classNames4 = {}, _defineProperty$1(_classNames4, 'OptionWrapper', true), _defineProperty$1(_classNames4, 'OptionWrapper--disabled', disabled), _classNames4));
-
   var onUpdateActiveOption = function onUpdateActiveOption() {
     if (disabled) return;
     if (updateActiveOption) updateActiveOption(index);
   };
-
   var onClickHandler = function onClickHandler(e) {
     e.stopPropagation();
     if (disabled) return;
     if (onClick) onClick();
   };
-
   var onChangeHandler = function onChangeHandler(e) {
     e.stopPropagation();
     if (disabled) return;
     if (onChange) onChange(e);
   };
-
   if (props.optionRenderer) {
     return /*#__PURE__*/React.createElement("div", _extends$2({
       "data-test": "DesignSystem-DropdownOption--Custom",
@@ -5060,12 +4596,10 @@ var Option = function Option(props) {
       index: index
     }));
   }
-
   var renderSubInfo = function renderSubInfo(subInfo) {
     var labelAppearance = disabled ? 'disabled' : selected && !menu ? 'white' : 'subtle';
     var subInfoColor = disabled ? 'inverse-lightest' : selected && !menu ? 'primary-dark' : 'inverse-lighter';
     var iconAppearance = selected ? 'white' : 'disabled';
-
     if (typeof subInfo === 'string') {
       return /*#__PURE__*/React.createElement(Text, {
         "data-test": "DesignSystem-DropdownOption--WITH_META--Meta",
@@ -5075,10 +4609,9 @@ var Option = function Option(props) {
         className: "Option-subInfo"
       }, subInfo);
     }
-
     var _subInfo$list = subInfo.list,
-        list = _subInfo$list === void 0 ? [] : _subInfo$list,
-        seperator = subInfo.seperator;
+      list = _subInfo$list === void 0 ? [] : _subInfo$list,
+      seperator = subInfo.seperator;
     return /*#__PURE__*/React.createElement(MetaList, {
       list: list,
       seperator: seperator,
@@ -5088,7 +4621,6 @@ var Option = function Option(props) {
       "data-test": "DesignSystem-DropdownOption--WITH_META--MetaList"
     });
   };
-
   return component({
     selected: selected,
     index: index,
@@ -5108,10 +4640,9 @@ var Option = function Option(props) {
 
 var PlaceholderParagraph = function PlaceholderParagraph(props) {
   var _classNames2;
-
   var length = props.length,
-      size = props.size,
-      className = props.className;
+    size = props.size,
+    className = props.className;
   var baseProps = extractBaseProps(props);
   var classes = classnames(_defineProperty$1({
     'Placeholder--animation': true,
@@ -5133,11 +4664,10 @@ PlaceholderParagraph.defaultProps = {
 
 var PlaceholderImage = function PlaceholderImage(props) {
   var _classNames;
-
   var _props$size = props.size,
-      size = _props$size === void 0 ? 'small' : _props$size,
-      round = props.round,
-      className = props.className;
+    size = _props$size === void 0 ? 'small' : _props$size,
+    round = props.round,
+    className = props.className;
   var baseProps = extractBaseProps(props);
   var classes = classnames((_classNames = {
     PlaceholderImage: true,
@@ -5154,10 +4684,10 @@ PlaceholderImage.defaultProps = {
 
 var Placeholder = function Placeholder(props) {
   var imageSize = props.imageSize,
-      withImage = props.withImage,
-      round = props.round,
-      children = props.children,
-      className = props.className;
+    withImage = props.withImage,
+    round = props.round,
+    children = props.children,
+    className = props.className;
   var baseProps = extractBaseProps(props);
   var paragraphClasses = classnames(_defineProperty$1({
     'Placeholder-paragraph': true
@@ -5184,17 +4714,15 @@ Placeholder.defaultProps = {
 
 var Loading = function Loading(props) {
   var loadingType = props.loadingType,
-      optionIndex = props.optionIndex;
+    optionIndex = props.optionIndex;
   var placeholderSizes = ['medium', 'large'];
   var size = placeholderSizes[(optionIndex + 2) % 2];
-
   switch (loadingType) {
     case 'DEFAULT':
       return /*#__PURE__*/React.createElement(PlaceholderParagraph, {
         length: size,
         "data-test": "DesignSystem-Dropdown--PlaceholderParagraph"
       });
-
     case 'WITH_ICON':
       return /*#__PURE__*/React.createElement(Placeholder, {
         withImage: true,
@@ -5203,7 +4731,6 @@ var Loading = function Loading(props) {
       }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
         length: "large"
       }));
-
     case 'WITH_META':
       return /*#__PURE__*/React.createElement(Placeholder, {
         withImage: false,
@@ -5216,7 +4743,6 @@ var Loading = function Loading(props) {
         size: "xxs",
         "data-test": "DesignSystem-Dropdown--PlaceholderParagraph"
       }));
-
     case 'WITH_CHECKBOX':
       return /*#__PURE__*/React.createElement(Placeholder, {
         withImage: true,
@@ -5224,7 +4750,6 @@ var Loading = function Loading(props) {
       }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
         length: "large"
       }));
-
     case 'ICON_WITH_META':
       return /*#__PURE__*/React.createElement(Placeholder, {
         withImage: true,
@@ -5240,7 +4765,6 @@ var Loading = function Loading(props) {
         "data-test": "DesignSystem-Dropdown--PlaceholderParagraph"
       }));
   }
-
   return null;
 };
 
@@ -5256,8 +4780,8 @@ var errorDescription = {
 };
 var ErrorTemplate = function ErrorTemplate(_ref) {
   var dropdownStyle = _ref.dropdownStyle,
-      errorType = _ref.errorType,
-      updateOptions = _ref.updateOptions;
+    errorType = _ref.errorType,
+    updateOptions = _ref.updateOptions;
   return /*#__PURE__*/React.createElement("div", {
     className: "Dropdown-wrapper px-7 d-flex",
     style: dropdownStyle,
@@ -5289,91 +4813,82 @@ var alignmentMapping = {
   right: 'bottom-start',
   left: 'bottom-end'
 };
-
 var DropdownList = function DropdownList(props) {
   var _classNames3, _classNames4;
-
   var _props$listOptions = props.listOptions,
-      listOptions = _props$listOptions === void 0 ? [] : _props$listOptions,
-      inputRef = props.inputRef,
-      _props$align = props.align,
-      align = _props$align === void 0 ? 'right' : _props$align,
-      _props$optionType = props.optionType,
-      optionType = _props$optionType === void 0 ? 'DEFAULT' : _props$optionType,
-      _props$applyButtonLab = props.applyButtonLabel,
-      applyButtonLabel = _props$applyButtonLab === void 0 ? 'Apply' : _props$applyButtonLab,
-      _props$cancelButtonLa = props.cancelButtonLabel,
-      cancelButtonLabel = _props$cancelButtonLa === void 0 ? 'Cancel' : _props$cancelButtonLa,
-      _props$truncateOption = props.truncateOption,
-      truncateOption = _props$truncateOption === void 0 ? true : _props$truncateOption,
-      _props$withSelectAll = props.withSelectAll,
-      withSelectAll = _props$withSelectAll === void 0 ? true : _props$withSelectAll,
-      _props$maxHeight = props.maxHeight,
-      maxHeight = _props$maxHeight === void 0 ? 200 : _props$maxHeight,
-      customTrigger = props.customTrigger,
-      selected = props.selected,
-      tempSelected = props.tempSelected,
-      previousSelected = props.previousSelected,
-      remainingOptions = props.remainingOptions,
-      firstEnabledOption = props.firstEnabledOption,
-      dropdownOpen = props.dropdownOpen,
-      menu = props.menu,
-      searchTerm = props.searchTerm,
-      showApplyButton = props.showApplyButton,
-      withCheckbox = props.withCheckbox,
-      withSearch = props.withSearch,
-      popoverOptions = props.popoverOptions,
-      onSearchChange = props.onSearchChange,
-      optionRenderer = props.optionRenderer,
-      applyOptions = props.applyOptions,
-      cancelOptions = props.cancelOptions,
-      toggleDropdown = props.toggleDropdown,
-      className = props.className,
-      _props$searchPlacehol = props.searchPlaceholder,
-      searchPlaceholder = _props$searchPlacehol === void 0 ? 'Search..' : _props$searchPlacehol,
-      scrollIndex = props.scrollIndex,
-      updateOptions = props.updateOptions,
-      noResultMessage = props.noResultMessage,
-      errorType = props.errorType,
-      loadingOptions = props.loadingOptions;
+    listOptions = _props$listOptions === void 0 ? [] : _props$listOptions,
+    inputRef = props.inputRef,
+    _props$align = props.align,
+    align = _props$align === void 0 ? 'right' : _props$align,
+    _props$optionType = props.optionType,
+    optionType = _props$optionType === void 0 ? 'DEFAULT' : _props$optionType,
+    _props$applyButtonLab = props.applyButtonLabel,
+    applyButtonLabel = _props$applyButtonLab === void 0 ? 'Apply' : _props$applyButtonLab,
+    _props$cancelButtonLa = props.cancelButtonLabel,
+    cancelButtonLabel = _props$cancelButtonLa === void 0 ? 'Cancel' : _props$cancelButtonLa,
+    _props$truncateOption = props.truncateOption,
+    truncateOption = _props$truncateOption === void 0 ? true : _props$truncateOption,
+    _props$withSelectAll = props.withSelectAll,
+    withSelectAll = _props$withSelectAll === void 0 ? true : _props$withSelectAll,
+    _props$maxHeight = props.maxHeight,
+    maxHeight = _props$maxHeight === void 0 ? 200 : _props$maxHeight,
+    customTrigger = props.customTrigger,
+    selected = props.selected,
+    tempSelected = props.tempSelected,
+    previousSelected = props.previousSelected,
+    remainingOptions = props.remainingOptions,
+    firstEnabledOption = props.firstEnabledOption,
+    dropdownOpen = props.dropdownOpen,
+    menu = props.menu,
+    searchTerm = props.searchTerm,
+    showApplyButton = props.showApplyButton,
+    withCheckbox = props.withCheckbox,
+    withSearch = props.withSearch,
+    popoverOptions = props.popoverOptions,
+    onSearchChange = props.onSearchChange,
+    optionRenderer = props.optionRenderer,
+    applyOptions = props.applyOptions,
+    cancelOptions = props.cancelOptions,
+    toggleDropdown = props.toggleDropdown,
+    className = props.className,
+    _props$searchPlacehol = props.searchPlaceholder,
+    searchPlaceholder = _props$searchPlacehol === void 0 ? 'Search..' : _props$searchPlacehol,
+    scrollIndex = props.scrollIndex,
+    updateOptions = props.updateOptions,
+    noResultMessage = props.noResultMessage,
+    errorType = props.errorType,
+    loadingOptions = props.loadingOptions;
   var baseProps = extractBaseProps(props);
   var dropdownRef = /*#__PURE__*/React.createRef();
   var triggerRef = /*#__PURE__*/React.createRef();
   var dropdownTriggerRef = /*#__PURE__*/React.createRef();
   var dropdownCancelButtonRef = /*#__PURE__*/React.createRef();
   var dropdownApplyButtonRef = /*#__PURE__*/React.createRef();
-
   var _React$useState = React.useState(),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      popoverStyle = _React$useState2[0],
-      setPopoverStyle = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    popoverStyle = _React$useState2[0],
+    setPopoverStyle = _React$useState2[1];
   var _React$useState3 = React.useState(firstEnabledOption),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      cursor = _React$useState4[0],
-      setCursor = _React$useState4[1];
-
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    cursor = _React$useState4[0],
+    setCursor = _React$useState4[1];
   var _React$useState5 = React.useState(),
-      _React$useState6 = _slicedToArray(_React$useState5, 2),
-      minHeight = _React$useState6[0],
-      setMinHeight = _React$useState6[1];
-
+    _React$useState6 = _slicedToArray(_React$useState5, 2),
+    minHeight = _React$useState6[0],
+    setMinHeight = _React$useState6[1];
   var getMinHeight = function getMinHeight() {
     var dropdownWrapper = document.querySelector('.Dropdown-wrapper');
     var minHeight = dropdownWrapper === null || dropdownWrapper === void 0 ? void 0 : dropdownWrapper.offsetHeight;
     minHeight && setMinHeight(minHeight);
   };
-
   var isDropdownListBlank = listOptions.length === 0 && !loadingOptions && selected.length <= 0;
   React.useEffect(function () {
     var timer;
-
     if (dropdownOpen) {
       var _triggerRef$current;
-
       var width = props.width,
-          minWidth = props.minWidth,
-          maxWidth = props.maxWidth;
+        minWidth = props.minWidth,
+        maxWidth = props.maxWidth;
       var popperWidth = (_triggerRef$current = triggerRef.current) === null || _triggerRef$current === void 0 ? void 0 : _triggerRef$current.clientWidth;
       var popperMinWidth = showApplyButton ? 176 : menu ? 128 : popperWidth;
       var popperWrapperStyle = {
@@ -5382,15 +4897,15 @@ var DropdownList = function DropdownList(props) {
         maxWidth: maxWidth ? maxWidth : '100%'
       };
       requestAnimationFrame(getMinHeight);
-      setPopoverStyle(popperWrapperStyle); // scrolls to current time
+      setPopoverStyle(popperWrapperStyle);
 
+      // scrolls to current time
       if (scrollIndex && tempSelected.length === 0) {
         timer = setTimeout(function () {
           scrollToOptionIndex(scrollIndex, listOptions);
         }, 100);
       }
     }
-
     return function () {
       clearTimeout(timer);
     };
@@ -5399,15 +4914,15 @@ var DropdownList = function DropdownList(props) {
     if (firstEnabledOption !== cursor) setCursor(firstEnabledOption);
   }, [firstEnabledOption]);
   var _props$triggerSize = props.triggerSize,
-      triggerSize = _props$triggerSize === void 0 ? 'regular' : _props$triggerSize,
-      _props$placeholder = props.placeholder,
-      placeholder = _props$placeholder === void 0 ? 'Select' : _props$placeholder,
-      icon = props.icon,
-      error = props.error,
-      disabled = props.disabled,
-      inlineLabel = props.inlineLabel,
-      triggerLabel = props.triggerLabel,
-      iconType = props.iconType;
+    triggerSize = _props$triggerSize === void 0 ? 'regular' : _props$triggerSize,
+    _props$placeholder = props.placeholder,
+    placeholder = _props$placeholder === void 0 ? 'Select' : _props$placeholder,
+    icon = props.icon,
+    error = props.error,
+    disabled = props.disabled,
+    inlineLabel = props.inlineLabel,
+    triggerLabel = props.triggerLabel,
+    iconType = props.iconType;
   var CustomTrigger = customTrigger ? customTrigger(triggerLabel ? triggerLabel : placeholder) : /*#__PURE__*/React.createElement(React.Fragment, null);
   var NewCustomTrigger = /*#__PURE__*/React.cloneElement(CustomTrigger, {
     tabIndex: 0,
@@ -5437,7 +4952,6 @@ var DropdownList = function DropdownList(props) {
     overflowX: 'hidden',
     minHeight: minHeight
   };
-
   var defaultErrorTemplate = function defaultErrorTemplate() {
     return /*#__PURE__*/React.createElement(ErrorTemplate, {
       dropdownStyle: _objectSpread2(_objectSpread2({}, dropdownStyle), {}, {
@@ -5447,64 +4961,49 @@ var DropdownList = function DropdownList(props) {
       errorType: errorType
     });
   };
-
   var getDropdownSectionClass = function getDropdownSectionClass(showClearButton) {
     var _classNames;
-
     return classnames((_classNames = {}, _defineProperty$1(_classNames, 'Dropdown-section', true), _defineProperty$1(_classNames, 'Dropdown-section--withClear', showClearButton), _classNames));
   };
-
   var dropdownClass = classnames(_defineProperty$1({}, 'Dropdown', true), className);
   var dropdownWrapperClass = classnames((_classNames3 = {}, _defineProperty$1(_classNames3, 'Dropdown-wrapper', true), _defineProperty$1(_classNames3, 'Dropdown-wrapper--wrap', !truncateOption), _classNames3));
   var SelectAllClass = classnames((_classNames4 = {}, _defineProperty$1(_classNames4, 'Option-checkbox--active', cursor === 0), _defineProperty$1(_classNames4, 'Option-checkboxWrapper', true), _defineProperty$1(_classNames4, 'Option-checkbox', true), _defineProperty$1(_classNames4, 'OptionWrapper', true), _classNames4));
-
   var onToggleDropdown = function onToggleDropdown(open, type) {
     var _dropdownTriggerRef$c;
-
     toggleDropdown(open, type);
     if (!disabled) (_dropdownTriggerRef$c = dropdownTriggerRef.current) === null || _dropdownTriggerRef$c === void 0 ? void 0 : _dropdownTriggerRef$c.focus();
     setCursor(firstEnabledOption);
   };
-
   var onCancelOptions = function onCancelOptions() {
     var _dropdownTriggerRef$c2;
-
     cancelOptions();
     (_dropdownTriggerRef$c2 = dropdownTriggerRef.current) === null || _dropdownTriggerRef$c2 === void 0 ? void 0 : _dropdownTriggerRef$c2.focus();
   };
-
   var onApplyOptions = function onApplyOptions() {
     var _dropdownTriggerRef$c3;
-
     applyOptions();
     (_dropdownTriggerRef$c3 = dropdownTriggerRef.current) === null || _dropdownTriggerRef$c3 === void 0 ? void 0 : _dropdownTriggerRef$c3.focus();
   };
-
   var optionClickHandler = function optionClickHandler(item) {
     var _dropdownTriggerRef$c4;
-
     props.onOptionSelect(item);
     (_dropdownTriggerRef$c4 = dropdownTriggerRef.current) === null || _dropdownTriggerRef$c4 === void 0 ? void 0 : _dropdownTriggerRef$c4.focus();
   };
-
   var searchClearHandler = function searchClearHandler() {
     setCursor(firstEnabledOption);
     if (onSearchChange && searchTerm) onSearchChange('');
   };
-
   var searchHandler = function searchHandler(event) {
     setCursor(firstEnabledOption);
     if (onSearchChange) onSearchChange(event.target.value);
   };
-
   var updateActiveOption = function updateActiveOption(index, parentCheckbox) {
     var updatedIndex = withCheckbox && withSelectAll && !props.async && !parentCheckbox ? index + 1 : index;
     setCursor(updatedIndex);
   };
-
   var renderFooter = function renderFooter() {
     var _props$footerLabel = props.footerLabel,
-        footerLabel = _props$footerLabel === void 0 ? 'Search for more options' : _props$footerLabel;
+      footerLabel = _props$footerLabel === void 0 ? 'Search for more options' : _props$footerLabel;
     return /*#__PURE__*/React.createElement("div", {
       className: "Dropdown-footer"
     }, /*#__PURE__*/React.createElement(Text, {
@@ -5512,7 +5011,6 @@ var DropdownList = function DropdownList(props) {
       appearance: 'subtle'
     }, footerLabel));
   };
-
   var renderGroups = function renderGroups(group, selectedGroup) {
     var onClearOptions = props.onClearOptions;
     var isClearDisabled = selected.every(function (option) {
@@ -5531,7 +5029,6 @@ var DropdownList = function DropdownList(props) {
       type: "button"
     }, "Clear"));
   };
-
   var renderApplyButton = function renderApplyButton() {
     var disable = _isEqual(previousSelected, tempSelected) || props.loadingOptions;
     return /*#__PURE__*/React.createElement("div", {
@@ -5556,7 +5053,6 @@ var DropdownList = function DropdownList(props) {
       type: "button"
     }, applyButtonLabel));
   };
-
   var renderSearch = function renderSearch() {
     return /*#__PURE__*/React.createElement("div", {
       className: "Dropdown-inputWrapper"
@@ -5564,7 +5060,8 @@ var DropdownList = function DropdownList(props) {
       name: "Dropdown-search",
       icon: 'search',
       value: searchTerm,
-      placeholder: searchPlaceholder // TODO(a11y): research more on this.
+      placeholder: searchPlaceholder
+      // TODO(a11y): research more on this.
       // eslint-disable-next-line jsx-a11y/no-autofocus
       ,
       autoFocus: true,
@@ -5575,7 +5072,6 @@ var DropdownList = function DropdownList(props) {
       className: "Dropdown-input"
     }));
   };
-
   var renderLoading = function renderLoading(loadersLength) {
     var arr = Array(loadersLength).fill('Loading');
     var type = withCheckbox ? 'WITH_CHECKBOX' : optionType;
@@ -5589,12 +5085,11 @@ var DropdownList = function DropdownList(props) {
       }));
     });
   };
-
   var renderSelectAll = function renderSelectAll() {
     var _props$selectAllLabel = props.selectAllLabel,
-        selectAllLabel = _props$selectAllLabel === void 0 ? 'Select All' : _props$selectAllLabel,
-        selectAll = props.selectAll,
-        onSelectAll = props.onSelectAll;
+      selectAllLabel = _props$selectAllLabel === void 0 ? 'Select All' : _props$selectAllLabel,
+      selectAll = props.selectAll,
+      onSelectAll = props.onSelectAll;
     var label = selectAllLabel.trim() ? selectAllLabel.trim() : 'Select All';
     var id = "Checkbox-option-".concat(label.toLowerCase().replace(/\s+/g, ''), "-").concat(new Date().getTime());
     return /*#__PURE__*/React.createElement("div", {
@@ -5615,21 +5110,21 @@ var DropdownList = function DropdownList(props) {
       id: id
     })));
   };
-
   var renderOptions = function renderOptions(item, index) {
     // const selectAllPresent = withCheckbox
     //   && remainingOptions === 0
     //   && searchTerm === ''
     //   && withSelectAll;
-    var selectAllPresent = _isSelectAllPresent(searchTerm, remainingOptions, withSelectAll, withCheckbox);
 
+    var selectAllPresent = _isSelectAllPresent(searchTerm, remainingOptions, withSelectAll, withCheckbox);
     var active = selectAllPresent ? index + 1 === cursor : index === cursor;
     var optionIsSelected = tempSelected.findIndex(function (option) {
       return option.value === item.value;
     }) !== -1;
     var id = "Checkbox-option-".concat(index, "-").concat(item.value, "-").concat(new Date().getTime());
     return /*#__PURE__*/React.createElement("label", {
-      htmlFor: id
+      htmlFor: id,
+      key: index
     }, /*#__PURE__*/React.createElement(Option, {
       optionData: item,
       truncateOption: truncateOption,
@@ -5650,23 +5145,18 @@ var DropdownList = function DropdownList(props) {
       id: id
     }));
   };
-
   var renderDropdownSection = function renderDropdownSection() {
     var _listOptions$0$group;
-
     var _props$selectedSectio = props.selectedSectionLabel,
-        selectedSectionLabel = _props$selectedSectio === void 0 ? 'Selected Items' : _props$selectedSectio,
-        _props$allItemsSectio = props.allItemsSectionLabel,
-        allItemsSectionLabel = _props$allItemsSectio === void 0 ? 'All Items' : _props$allItemsSectio,
-        _props$loadersCount = props.loadersCount,
-        loadersCount = _props$loadersCount === void 0 ? 10 : _props$loadersCount,
-        _props$errorTemplate = props.errorTemplate,
-        errorTemplate = _props$errorTemplate === void 0 ? defaultErrorTemplate : _props$errorTemplate;
-
+      selectedSectionLabel = _props$selectedSectio === void 0 ? 'Selected Items' : _props$selectedSectio,
+      _props$allItemsSectio = props.allItemsSectionLabel,
+      allItemsSectionLabel = _props$allItemsSectio === void 0 ? 'All Items' : _props$allItemsSectio,
+      _props$loadersCount = props.loadersCount,
+      loadersCount = _props$loadersCount === void 0 ? 10 : _props$loadersCount,
+      _props$errorTemplate = props.errorTemplate,
+      errorTemplate = _props$errorTemplate === void 0 ? defaultErrorTemplate : _props$errorTemplate;
     var selectAllPresent = _isSelectAllPresent(searchTerm, remainingOptions, withSelectAll, withCheckbox);
-
     var groupedListOptions = groupListOptions(listOptions);
-
     if (loadersCount && loadingOptions) {
       return /*#__PURE__*/React.createElement("div", {
         className: 'Dropdown-loading'
@@ -5675,7 +5165,6 @@ var DropdownList = function DropdownList(props) {
         style: loaderStyle
       }, renderLoading(loadersCount)));
     }
-
     if (isDropdownListBlank) {
       if (noResultMessage) {
         return /*#__PURE__*/React.createElement("div", {
@@ -5693,14 +5182,14 @@ var DropdownList = function DropdownList(props) {
         });
       }
     }
-
     return /*#__PURE__*/React.createElement("div", {
       className: dropdownWrapperClass,
       style: dropdownStyle,
       ref: dropdownRef
     }, selectAllPresent && renderSelectAll(), selected.length > 0 && renderGroups(selectedSectionLabel, true), selected.map(function (option, index) {
       return renderOptions(option, index);
-    }), selected.length > 0 && listOptions.length - selected.length > 0 && !((_listOptions$0$group = listOptions[0].group) !== null && _listOptions$0$group !== void 0 && _listOptions$0$group.trim()) && // allItemsSectionLabel is displayed only when there are no groups
+    }), selected.length > 0 && listOptions.length - selected.length > 0 && !((_listOptions$0$group = listOptions[0].group) !== null && _listOptions$0$group !== void 0 && _listOptions$0$group.trim()) &&
+    // allItemsSectionLabel is displayed only when there are no groups
     renderGroups(allItemsSectionLabel), groupedListOptions.map(function (option, index) {
       var prevGroup = index > 0 ? groupedListOptions[index - 1].group : selected.length ? selectedSectionLabel : undefined;
       var currentGroup = option.group;
@@ -5712,23 +5201,19 @@ var DropdownList = function DropdownList(props) {
       }, isGroupDifferent && currentGroup && renderGroups(currentGroup), renderOptions(option, updatedIndex));
     }), props.async && remainingOptions > 0 && renderFooter());
   };
-
   var focusOption = function focusOption(direction, classes) {
     var elements = document.querySelectorAll(classes);
     var updatedCursor = direction === 'down' ? cursor + 1 : cursor - 1;
     var startIndex = updatedCursor;
     var endIndex = direction === 'down' ? elements.length : -1;
-
     while (startIndex !== endIndex) {
       var node = elements[startIndex];
-
       if (node.getAttribute('data-disabled') !== 'true') {
         var element = elements[startIndex];
         if (element) scrollIntoView(dropdownRef.current, element);
         if (element !== undefined) setCursor(startIndex);
         break;
       }
-
       if (direction === 'down') {
         startIndex++;
       } else {
@@ -5736,25 +5221,20 @@ var DropdownList = function DropdownList(props) {
       }
     }
   };
-
   var onkeydown = function onkeydown(event) {
     var optionClass = '.OptionWrapper';
-
     switch (event.key) {
       case 'ArrowDown':
         event.preventDefault();
         dropdownOpen ? focusOption('down', optionClass) : onToggleDropdown(!dropdownOpen);
         break;
-
       case 'ArrowUp':
         event.preventDefault();
         dropdownOpen ? focusOption('up', optionClass) : onToggleDropdown(!dropdownOpen);
         break;
-
       case 'Enter':
         {
           var activeElement = document.activeElement;
-
           if (dropdownOpen && (inputRef.current === activeElement || dropdownTriggerRef.current === activeElement)) {
             event.preventDefault();
             var classes = withCheckbox ? "".concat(optionClass, " .Checkbox-input") : optionClass;
@@ -5762,49 +5242,38 @@ var DropdownList = function DropdownList(props) {
             var element = elements[cursor];
             if (element) element.click();
           }
-
           if (!dropdownOpen) onToggleDropdown(!dropdownOpen);
           break;
         }
-
       case 'Tab':
         {
           var _dropdownApplyButtonR;
-
           if (!showApplyButton && dropdownOpen) {
             event.preventDefault();
             onToggleDropdown(false, 'onClick');
             return;
           }
-
           var currentElement = document.activeElement;
           var disabledApplyButton = (_dropdownApplyButtonR = dropdownApplyButtonRef.current) === null || _dropdownApplyButtonR === void 0 ? void 0 : _dropdownApplyButtonR.disabled;
-
           if ((currentElement === dropdownCancelButtonRef.current && disabledApplyButton || currentElement === dropdownApplyButtonRef.current) && dropdownOpen) {
             event.preventDefault();
             onToggleDropdown(false, 'onClick');
             return;
           }
-
           if (showApplyButton && dropdownOpen) {
             event.preventDefault();
-
             if (currentElement === dropdownCancelButtonRef.current) {
               var _dropdownApplyButtonR2;
-
               (_dropdownApplyButtonR2 = dropdownApplyButtonRef.current) === null || _dropdownApplyButtonR2 === void 0 ? void 0 : _dropdownApplyButtonR2.focus();
             } else {
               var _dropdownCancelButton;
-
               (_dropdownCancelButton = dropdownCancelButtonRef.current) === null || _dropdownCancelButton === void 0 ? void 0 : _dropdownCancelButton.focus();
             }
           }
-
           break;
         }
     }
   };
-
   var enableSearch = withSearch || props.async;
   return (
     /*#__PURE__*/
@@ -5826,12 +5295,10 @@ var DropdownList = function DropdownList(props) {
     }), enableSearch && renderSearch(), renderDropdownSection(), showApplyButton && withCheckbox && renderApplyButton()))
   );
 };
-
 DropdownList.displayName = 'DropdownList';
 
-var _excluded$Q = ["triggerOptions", "selected", "tabIndex"];
+var _excluded$Y = ["triggerOptions", "selected", "tabIndex"];
 var inputRef = /*#__PURE__*/React.createRef();
-
 /**
  *
  * Dropdown component has been deprecated, please use following components instead:
@@ -5870,25 +5337,18 @@ var inputRef = /*#__PURE__*/React.createRef();
  */
 var Dropdown = /*#__PURE__*/function (_React$Component) {
   _inherits(Dropdown, _React$Component);
-
   var _super = _createSuper(Dropdown);
-
   function Dropdown(props) {
     var _this;
-
     _classCallCheck(this, Dropdown);
-
     _this = _super.call(this, props);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "staticLimit", void 0);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "getDisabledOptions", function () {
       var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
       return options.filter(function (option) {
         return option.disabled;
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "fetchOptionsFunction", function (searchTerm) {
       var options = _this.props.options;
       var filteredOptions = searchTerm ? getSearchedOptions(options, searchTerm) : options;
@@ -5900,7 +5360,6 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
         });
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "getUnSelectedOptions", function (options, init) {
       if (options.length) {
         if (!init) {
@@ -5910,25 +5369,20 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
             }) === -1;
           });
         }
-
         var _this$props$selected = _this.props.selected,
-            _selected2 = _this$props$selected === void 0 ? [] : _this$props$selected;
-
+          selected = _this$props$selected === void 0 ? [] : _this$props$selected;
         var unSelectedGroup = options.filter(function (option) {
-          return _isControlled(_this.props.selected) ? _selected2.findIndex(function (item) {
+          return _isControlled(_this.props.selected) ? selected.findIndex(function (item) {
             return item.value === option.value;
           }) === -1 : !option.selected;
         });
         return unSelectedGroup;
       }
-
       return options;
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "getSelectedOptions", function (options, init) {
       var _this$props$selected2 = _this.props.selected,
-          selected = _this$props$selected2 === void 0 ? [] : _this$props$selected2;
-
+        selected = _this$props$selected2 === void 0 ? [] : _this$props$selected2;
       if (options.length) {
         if (!init) return _this.state.tempSelected;
         var selectedGroup = _isControlled(_this.props.selected) ? selected : options.filter(function (option) {
@@ -5936,45 +5390,37 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
         });
         return selectedGroup;
       }
-
       return [];
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "updateOptions", function (init, async) {
       var _this$state = _this.state,
-          searchTerm = _this$state.searchTerm,
-          selectAll = _this$state.selectAll,
-          tempSelected = _this$state.tempSelected,
-          previousSelected = _this$state.previousSelected,
-          errorType = _this$state.errorType;
+        searchTerm = _this$state.searchTerm,
+        selectAll = _this$state.selectAll,
+        tempSelected = _this$state.tempSelected,
+        previousSelected = _this$state.previousSelected,
+        errorType = _this$state.errorType;
       var updatedAsync = async === undefined ? _this.state.async : async;
       var _this$props = _this.props,
-          fetchOptions = _this$props.fetchOptions,
-          withCheckbox = _this$props.withCheckbox,
-          withSearch = _this$props.withSearch;
+        fetchOptions = _this$props.fetchOptions,
+        withCheckbox = _this$props.withCheckbox,
+        withSearch = _this$props.withSearch;
       var fetchFunction = fetchOptions ? fetchOptions : _this.fetchOptionsFunction;
       fetchFunction(searchTerm).then(function (res) {
         var options = res.options,
-            count = res.count;
-
+          count = res.count;
         if (res.scrollToIndex) {
           setTimeout(function () {
             scrollToOptionIndex(res.scrollToIndex, options);
           }, 0);
         }
-
         if (!res.searchTerm || res.searchTerm && res.searchTerm === _this.state.searchTerm) {
           var _inputRef$current;
-
           updatedAsync = searchTerm === '' ? count > _this.staticLimit : updatedAsync;
           var unSelectedGroup = _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ? _this.getUnSelectedOptions(options, init) : options;
           var selectedGroup = searchTerm === '' ? _this.getSelectedOptions(options, init) : [];
           var optionsLength = searchTerm === '' ? count : _this.state.optionsLength;
-
           var disabledOptions = _this.getDisabledOptions(unSelectedGroup.slice(0, _this.staticLimit));
-
           var errorResult = errorType;
-
           if (optionsLength === 0 && searchTerm === '') {
             errorResult = 'DEFAULT';
           } else if (searchTerm !== '') {
@@ -5982,7 +5428,6 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
           } else {
             errorResult = 'FAILED_TO_FETCH';
           }
-
           _this.setState(_objectSpread2(_objectSpread2({}, _this.state), {}, {
             errorType: fetchOptions ? errorResult : errorType,
             scrollIndex: res.scrollToIndex || 0,
@@ -5997,7 +5442,6 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
             triggerLabel: _this.updateTriggerLabel(init ? selectedGroup : tempSelected),
             selectAll: !updatedAsync && init ? getSelectAll$1(selectedGroup, optionsLength, disabledOptions.length) : selectAll
           }));
-
           if (updatedAsync || withSearch) (_inputRef$current = inputRef.current) === null || _inputRef$current === void 0 ? void 0 : _inputRef$current.focus();
         }
       })["catch"](function () {
@@ -6008,7 +5452,6 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
         });
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "updateSearchTerm", function (search) {
       _this.setState(_objectSpread2(_objectSpread2({}, _this.state), {}, {
         loading: true,
@@ -6017,88 +5460,74 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
         errorType: 'NO_RECORDS_FOUND'
       }));
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "updateOnPopperToggle", function () {
       var _this$props2 = _this.props,
-          withCheckbox = _this$props2.withCheckbox,
-          showApplyButton = _this$props2.showApplyButton,
-          onClose = _this$props2.onClose,
-          name = _this$props2.name,
-          _this$props2$selected = _this$props2.selected,
-          selected = _this$props2$selected === void 0 ? [] : _this$props2$selected;
+        withCheckbox = _this$props2.withCheckbox,
+        showApplyButton = _this$props2.showApplyButton,
+        onClose = _this$props2.onClose,
+        name = _this$props2.name,
+        _this$props2$selected = _this$props2.selected,
+        selected = _this$props2$selected === void 0 ? [] : _this$props2$selected;
       var _this$state2 = _this.state,
-          previousSelected = _this$state2.previousSelected,
-          tempSelected = _this$state2.tempSelected,
-          optionsLength = _this$state2.optionsLength,
-          async = _this$state2.async,
-          loading = _this$state2.loading,
-          searchTerm = _this$state2.searchTerm,
-          options = _this$state2.options;
+        previousSelected = _this$state2.previousSelected,
+        tempSelected = _this$state2.tempSelected,
+        optionsLength = _this$state2.optionsLength,
+        async = _this$state2.async,
+        loading = _this$state2.loading,
+        searchTerm = _this$state2.searchTerm,
+        options = _this$state2.options;
       var popperIsOpen = _isOpenControlled(_this.props.open) ? _this.props.open : _this.state.open;
-
       var disabledOptionsCount = _this.getDisabledOptions(options).length;
-
       if (withCheckbox && showApplyButton) {
         var temporarySelected = _isControlled(_this.props.selected) ? selected : previousSelected;
-
         _this.setState({
           tempSelected: temporarySelected,
           selectAll: getSelectAll$1(temporarySelected, optionsLength, disabledOptionsCount),
           triggerLabel: _this.updateTriggerLabel(temporarySelected)
         });
       }
-
       if (_isOpenControlled(_this.props.open)) {
         _this.setState({
           open: popperIsOpen
         });
       }
-
       if (popperIsOpen) {
         var moveSelectedGroup = _showSelectedItems(async, searchTerm, withCheckbox) && !_isEqual(_this.state.selected, tempSelected);
-
         _this.setState({
           loading: moveSelectedGroup || loading || searchTerm !== '',
           searchInit: searchTerm !== '',
           searchTerm: ''
         });
-
         if (moveSelectedGroup) _this.updateOptions(false);
       }
-
       if (onClose && !popperIsOpen) {
         var arr = withCheckbox && showApplyButton ? _isControlled(_this.props.selected) ? selected : previousSelected : _this.state.tempSelected;
         var values = arr.map(function (option) {
           return option.value;
         });
-
         _this.debounceOnClose(values, name);
       }
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "debounceOnClose", debounce$1(300, function (values, name) {
       var onClose = _this.props.onClose;
-
       if (onClose) {
         onClose(values, name);
       }
     }));
-
     _defineProperty$1(_assertThisInitialized$1(_this), "updateTriggerLabel", function () {
       var selectedArray = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
       var totalOptions = arguments.length > 1 ? arguments[1] : undefined;
       var selectedLength = selectedArray.length;
       if (selectedLength === 0) return '';
       var _this$props3 = _this.props,
-          _this$props3$triggerO = _this$props3.triggerOptions,
-          triggerOptions = _this$props3$triggerO === void 0 ? {} : _this$props3$triggerO,
-          getLabel = _this$props3.getLabel;
+        _this$props3$triggerO = _this$props3.triggerOptions,
+        triggerOptions = _this$props3$triggerO === void 0 ? {} : _this$props3$triggerO,
+        getLabel = _this$props3.getLabel;
       var customLabel = triggerOptions.customLabel,
-          _triggerOptions$label = triggerOptions.labelLimit,
-          labelLimit = _triggerOptions$label === void 0 ? 2 : _triggerOptions$label;
+        _triggerOptions$label = triggerOptions.labelLimit,
+        labelLimit = _triggerOptions$label === void 0 ? 2 : _triggerOptions$label;
       var optionsLength = _this.state ? _this.state.optionsLength : totalOptions;
       var label = '';
-
       if (selectedLength <= labelLimit) {
         label = selectedArray.map(function (option) {
           return option.label;
@@ -6106,35 +5535,30 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
       } else {
         label = customLabel ? customLabel(selectedLength, optionsLength, selectedArray) : "".concat(selectedLength, " selected");
       }
-
       if (getLabel) getLabel(label);
       return label;
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "updateSelectedOptions", function (selectedArray, isSingleSelect, isControlled) {
       var _this$state3 = _this.state,
-          optionsLength = _this$state3.optionsLength,
-          previousSelected = _this$state3.previousSelected,
-          selected = _this$state3.selected,
-          loading = _this$state3.loading,
-          open = _this$state3.open;
+        optionsLength = _this$state3.optionsLength,
+        previousSelected = _this$state3.previousSelected,
+        selected = _this$state3.selected,
+        loading = _this$state3.loading,
+        open = _this$state3.open;
       var _this$props4 = _this.props,
-          onChange = _this$props4.onChange,
-          withCheckbox = _this$props4.withCheckbox,
-          showApplyButton = _this$props4.showApplyButton,
-          closeOnSelect = _this$props4.closeOnSelect,
-          name = _this$props4.name,
-          onPopperToggle = _this$props4.onPopperToggle;
+        onChange = _this$props4.onChange,
+        withCheckbox = _this$props4.withCheckbox,
+        showApplyButton = _this$props4.showApplyButton,
+        closeOnSelect = _this$props4.closeOnSelect,
+        name = _this$props4.name,
+        onPopperToggle = _this$props4.onPopperToggle;
       var updatePreviousSelected = withCheckbox && showApplyButton && isControlled;
-
       var disabledOptions = _this.getDisabledOptions(_this.state.options);
-
       var isClearClicked = selectedArray.length === 0 && selected.length > 0 || selectedArray.every(function (option) {
         return option.disabled;
       }) && !selected.every(function (option) {
         return option.disabled;
       });
-
       _this.setState(_objectSpread2(_objectSpread2({}, _this.state), {}, {
         tempSelected: selectedArray,
         triggerLabel: _this.updateTriggerLabel(selectedArray),
@@ -6144,9 +5568,7 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
         selected: isClearClicked ? selectedArray : selected,
         loading: isClearClicked ? true : loading
       }));
-
       if (isClearClicked) _this.debounceClear();
-
       if (onChange && (!showApplyButton || isControlled)) {
         var values = selectedArray.map(function (item) {
           return item.value;
@@ -6154,94 +5576,75 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
         var selectedValues = isSingleSelect ? values[0] : values;
         onChange(selectedValues, name);
       }
-
       if (!withCheckbox && closeOnSelect && onPopperToggle && _isOpenControlled(_this.props.open)) {
         onPopperToggle(false, 'optionClick');
       }
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "isValidOption", function (option) {
       var _this$props5 = _this.props,
-          closeOnSelect = _this$props5.closeOnSelect,
-          withCheckbox = _this$props5.withCheckbox,
-          open = _this$props5.open,
-          onPopperToggle = _this$props5.onPopperToggle;
+        closeOnSelect = _this$props5.closeOnSelect,
+        withCheckbox = _this$props5.withCheckbox,
+        open = _this$props5.open,
+        onPopperToggle = _this$props5.onPopperToggle;
       var temp = _this.state.tempSelected;
-
       if (temp.length > 0 && !withCheckbox && temp[0].value === option['value']) {
         _this.setState(_objectSpread2(_objectSpread2({}, _this.state), {}, {
           open: _isOpenControlled(open) || !closeOnSelect
         }));
-
         if (!withCheckbox && closeOnSelect && onPopperToggle && _isOpenControlled(open)) {
           onPopperToggle(false, 'optionClick');
         }
-
         return false;
       }
-
       return true;
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onOptionSelect", function (option) {
       var _this$props6 = _this.props,
-          onUpdate = _this$props6.onUpdate,
-          selected = _this$props6.selected,
-          menu = _this$props6.menu;
-
+        onUpdate = _this$props6.onUpdate,
+        selected = _this$props6.selected,
+        menu = _this$props6.menu;
       if (_isControlled(selected)) {
         if (onUpdate && (_this.isValidOption(option) || menu)) {
           onUpdate('select-option', option);
         }
-
         return;
       }
-
       if (_this.isValidOption(option) || menu) {
         _this.updateSelectedOptions([option], true);
       }
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onSelect", function (option, checked) {
       var _this$props7 = _this.props,
-          onUpdate = _this$props7.onUpdate,
-          selected = _this$props7.selected,
-          showApplyButton = _this$props7.showApplyButton;
-
+        onUpdate = _this$props7.onUpdate,
+        selected = _this$props7.selected,
+        showApplyButton = _this$props7.showApplyButton;
       if (_isControlled(selected) && !showApplyButton) {
         if (onUpdate) onUpdate(checked ? 'select-option' : 'deselect-option', option);
         return;
       }
-
       var tempSelected = _this.state.tempSelected;
       var selectedArray = tempSelected.slice();
-
       if (!checked) {
         var index = selectedArray.findIndex(function (item) {
           return item.value === option.value;
         });
         selectedArray.splice(index, 1);
       }
-
       selectedArray = checked ? selectedArray.concat(option) : selectedArray;
-
       _this.updateSelectedOptions(selectedArray, false);
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onSelectAll", function (event) {
       var _this$props8 = _this.props,
-          onUpdate = _this$props8.onUpdate,
-          selected = _this$props8.selected,
-          showApplyButton = _this$props8.showApplyButton;
+        onUpdate = _this$props8.onUpdate,
+        selected = _this$props8.selected,
+        showApplyButton = _this$props8.showApplyButton;
       var _this$state4 = _this.state,
-          tempSelected = _this$state4.tempSelected,
-          options = _this$state4.options;
-
+        tempSelected = _this$state4.tempSelected,
+        options = _this$state4.options;
       if (_isControlled(selected) && !showApplyButton) {
         if (onUpdate) onUpdate(event.target.checked ? 'select-all' : 'deselect-all');
         return;
       }
-
       var selectedArr = tempSelected.slice();
       var selectedDisabledArray = selectedArr.filter(function (option) {
         return option.disabled;
@@ -6249,10 +5652,8 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
       var selectedArray = event.target.checked ? [].concat(_toConsumableArray(options.filter(function (option) {
         return !option.disabled;
       })), _toConsumableArray(selectedDisabledArray)) : selectedDisabledArray;
-
       _this.updateSelectedOptions(selectedArray, false);
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "debounceSearch", debounce$1(_this.props.searchDebounceDuration, function () {
       _this.setState({
         searchInit: false
@@ -6260,7 +5661,6 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
         _this.updateOptions(false);
       });
     }));
-
     _defineProperty$1(_assertThisInitialized$1(_this), "reload", function () {
       _this.setState({
         loading: true
@@ -6268,164 +5668,128 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
         _this.updateOptions(false);
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "debounceClear", debounce$1(250, function () {
       return _this.updateOptions(false);
     }));
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onClearOptions", function () {
       var _this$props9 = _this.props,
-          selected = _this$props9.selected,
-          name = _this$props9.name,
-          onUpdate = _this$props9.onUpdate,
-          showApplyButton = _this$props9.showApplyButton,
-          onChange = _this$props9.onChange;
+        selected = _this$props9.selected,
+        name = _this$props9.name,
+        onUpdate = _this$props9.onUpdate,
+        showApplyButton = _this$props9.showApplyButton,
+        onChange = _this$props9.onChange;
       var tempSelected = _this.state.tempSelected;
       var selectedArray = tempSelected.filter(function (option) {
         return option.disabled;
       });
-
       if (_isControlled(selected) && !showApplyButton) {
         if (onUpdate) onUpdate('clear-all');
         return;
       }
-
       _this.setState({
         selected: selectedArray,
         tempSelected: selectedArray,
         triggerLabel: '',
         loading: true
       });
-
       _this.debounceClear();
-
       if (onChange && !showApplyButton) onChange(selectedArray, name);
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onTogglePopper", function (type) {
       var onPopperToggle = _this.props.onPopperToggle;
-
       if (onPopperToggle && _isOpenControlled(_this.props.open)) {
         onPopperToggle(false, type);
       }
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onCancelOptions", function () {
       var _this$state5 = _this.state,
-          previousSelected = _this$state5.previousSelected,
-          tempSelected = _this$state5.tempSelected,
-          optionsLength = _this$state5.optionsLength;
+        previousSelected = _this$state5.previousSelected,
+        tempSelected = _this$state5.tempSelected,
+        optionsLength = _this$state5.optionsLength;
       var _this$props10 = _this.props,
-          selected = _this$props10.selected,
-          onUpdate = _this$props10.onUpdate,
-          onClose = _this$props10.onClose,
-          name = _this$props10.name;
+        selected = _this$props10.selected,
+        onUpdate = _this$props10.onUpdate,
+        onClose = _this$props10.onClose,
+        name = _this$props10.name;
       var popperIsOpen = _isOpenControlled(_this.props.open) ? _this.state.open : false;
       var values = previousSelected.map(function (option) {
         return option.value;
       });
-
       if (_isControlled(selected)) {
         if (onUpdate) onUpdate('cancel-selected', previousSelected, tempSelected);
-
         _this.onTogglePopper('cancelClick');
-
         return;
       }
-
       var label = _this.updateTriggerLabel(previousSelected);
-
       var disabledOptions = _this.getDisabledOptions(_this.state.options);
-
       _this.setState(_objectSpread2(_objectSpread2({}, _this.state), {}, {
         tempSelected: previousSelected,
         selectAll: getSelectAll$1(previousSelected, optionsLength, disabledOptions.length),
         triggerLabel: label,
         open: popperIsOpen
       }));
-
       if (onClose && !popperIsOpen) {
         onClose(values, name);
       }
-
       _this.onTogglePopper('cancelClick');
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onApplyOptions", function () {
       var _this$state6 = _this.state,
-          tempSelected = _this$state6.tempSelected,
-          previousSelected = _this$state6.previousSelected;
+        tempSelected = _this$state6.tempSelected,
+        previousSelected = _this$state6.previousSelected;
       var _this$props11 = _this.props,
-          onChange = _this$props11.onChange,
-          selected = _this$props11.selected,
-          onUpdate = _this$props11.onUpdate,
-          onClose = _this$props11.onClose,
-          name = _this$props11.name;
+        onChange = _this$props11.onChange,
+        selected = _this$props11.selected,
+        onUpdate = _this$props11.onUpdate,
+        onClose = _this$props11.onClose,
+        name = _this$props11.name;
       var popperIsOpen = _isOpenControlled(_this.props.open) ? _this.state.open : false;
       var values = tempSelected.map(function (option) {
         return option.value;
       });
-
       if (_isControlled(selected)) {
         if (onUpdate) onUpdate('apply-selected', previousSelected, tempSelected);
-
         _this.onTogglePopper('applyClick');
-
         return;
       }
-
       _this.setState(_objectSpread2(_objectSpread2({}, _this.state), {}, {
         previousSelected: tempSelected,
         optionsApplied: true,
         open: popperIsOpen
       }));
-
       if (onChange) {
         onChange(values, name);
       }
-
       if (onClose && !popperIsOpen) {
         onClose(values, name);
       }
-
       _this.onTogglePopper('applyClick');
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onToggleDropdown", function (updatedOpen, type) {
       if (_this.props.disabled) {
         return;
       }
-
       var onPopperToggle = _this.props.onPopperToggle;
-
       if (onPopperToggle && _isOpenControlled(_this.props.open)) {
         onPopperToggle(updatedOpen, type);
         return;
       }
-
       _this.setState({
         open: updatedOpen
       });
     });
-
     var _props$selected = props.selected,
-        _selected = _props$selected === void 0 ? [] : _props$selected,
-        _totalOptions = props.totalOptions,
-        _withCheckbox = props.withCheckbox,
-        _loading = props.loading,
-        _open = props.open,
-        _options = props.options;
-
+      _selected = _props$selected === void 0 ? [] : _props$selected,
+      _totalOptions = props.totalOptions,
+      _withCheckbox = props.withCheckbox,
+      _loading = props.loading,
+      _open = props.open,
+      _options = props.options;
     _this.staticLimit = Math.min(100, props.staticLimit);
-
     var _optionsLength = _totalOptions ? _totalOptions : _options.length;
-
     var _async = 'fetchOptions' in _this.props || _optionsLength > _this.staticLimit;
-
     var _selectedGroup = !_async ? _this.getSelectedOptions(_options, true) : [];
-
     var _disabledOptions = _this.getDisabledOptions(_options);
-
     _this.state = {
       async: _async,
       optionsLength: _optionsLength,
@@ -6445,7 +5809,6 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
     };
     return _this;
   }
-
   _createClass(Dropdown, [{
     key: "componentDidMount",
     value: function componentDidMount() {
@@ -6457,28 +5820,25 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
     value: function componentDidUpdate(prevProps, prevState) {
       if (!this.state.async) {
         var _this$props12 = this.props,
-            loading = _this$props12.loading,
-            fetchOptions = _this$props12.fetchOptions,
-            _this$props12$options = _this$props12.options,
-            _options2 = _this$props12$options === void 0 ? [] : _this$props12$options,
-            withSearch = _this$props12.withSearch;
-
-        var disabledOptionsCount = this.getDisabledOptions(_options2).length;
-
+          loading = _this$props12.loading,
+          fetchOptions = _this$props12.fetchOptions,
+          _this$props12$options = _this$props12.options,
+          options = _this$props12$options === void 0 ? [] : _this$props12$options,
+          withSearch = _this$props12.withSearch;
+        var disabledOptionsCount = this.getDisabledOptions(options).length;
         if (prevProps.loading !== loading && !fetchOptions) {
-          if (_options2.length > this.staticLimit) {
+          if (options.length > this.staticLimit) {
             this.updateOptions(true, true);
           } else {
             var _inputRef$current2;
-
-            var selectedGroup = this.getSelectedOptions(_options2, true);
+            var selectedGroup = this.getSelectedOptions(options, true);
             this.setState(_objectSpread2(_objectSpread2({}, this.state), {}, {
-              options: _options2,
+              options: options,
               loading: loading,
               tempSelected: selectedGroup,
               previousSelected: selectedGroup,
-              optionsLength: _options2.length,
-              searchedOptionsLength: _options2.length,
+              optionsLength: options.length,
+              searchedOptionsLength: options.length,
               triggerLabel: this.updateTriggerLabel(selectedGroup),
               selectAll: getSelectAll$1(selectedGroup, this.state.optionsLength, disabledOptionsCount)
             }));
@@ -6486,16 +5846,13 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
           }
         }
       }
-
       if (this.props.selected !== undefined && prevProps.selected !== this.props.selected && prevProps.loading === this.props.loading) {
         var isSingleSelect = !this.props.withCheckbox;
         this.updateSelectedOptions(this.props.selected, isSingleSelect, true);
       }
-
       if (prevState.searchTerm !== this.state.searchTerm) {
         this.debounceSearch();
       }
-
       if (prevProps.open !== this.props.open || prevState.open !== this.state.open) {
         if (_isOpenControlled(this.props.open) && this.props.open === this.state.open) return;
         this.updateOnPopperToggle();
@@ -6505,31 +5862,29 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var _this$state7 = this.state,
-          options = _this$state7.options,
-          async = _this$state7.async,
-          open = _this$state7.open,
-          searchTerm = _this$state7.searchTerm,
-          searchInit = _this$state7.searchInit,
-          loading = _this$state7.loading,
-          searchedOptionsLength = _this$state7.searchedOptionsLength,
-          tempSelected = _this$state7.tempSelected,
-          selectAll = _this$state7.selectAll,
-          triggerLabel = _this$state7.triggerLabel,
-          previousSelected = _this$state7.previousSelected,
-          scrollIndex = _this$state7.scrollIndex,
-          errorType = _this$state7.errorType;
+        options = _this$state7.options,
+        async = _this$state7.async,
+        open = _this$state7.open,
+        searchTerm = _this$state7.searchTerm,
+        searchInit = _this$state7.searchInit,
+        loading = _this$state7.loading,
+        searchedOptionsLength = _this$state7.searchedOptionsLength,
+        tempSelected = _this$state7.tempSelected,
+        selectAll = _this$state7.selectAll,
+        triggerLabel = _this$state7.triggerLabel,
+        previousSelected = _this$state7.previousSelected,
+        scrollIndex = _this$state7.scrollIndex,
+        errorType = _this$state7.errorType;
       var _this$props13 = this.props,
-          _this$props13$withSel = _this$props13.withSelectAll,
-          withSelectAll = _this$props13$withSel === void 0 ? true : _this$props13$withSel,
-          withCheckbox = _this$props13.withCheckbox;
-
+        _this$props13$withSel = _this$props13.withSelectAll,
+        withSelectAll = _this$props13$withSel === void 0 ? true : _this$props13$withSel,
+        withCheckbox = _this$props13.withCheckbox;
       var _this$props14 = this.props,
-          _this$props14$trigger = _this$props14.triggerOptions,
-          triggerOptions = _this$props14$trigger === void 0 ? {} : _this$props14$trigger;
-          _this$props14.selected;
-          var tabIndex = _this$props14.tabIndex,
-          rest = _objectWithoutProperties(_this$props14, _excluded$Q);
-
+        _this$props14$trigger = _this$props14.triggerOptions,
+        triggerOptions = _this$props14$trigger === void 0 ? {} : _this$props14$trigger;
+        _this$props14.selected;
+        var tabIndex = _this$props14.tabIndex,
+        rest = _objectWithoutProperties(_this$props14, _excluded$Y);
       var remainingOptionsLen = searchedOptionsLength - options.length;
       var firstEnabledOption = tabIndex ? tabIndex : _isSelectAllPresent(searchTerm, remainingOptionsLen, withSelectAll, withCheckbox) ? 0 : options.findIndex(function (option) {
         return !option.disabled;
@@ -6564,10 +5919,8 @@ var Dropdown = /*#__PURE__*/function (_React$Component) {
       }, rest));
     }
   }]);
-
   return Dropdown;
 }(React.Component);
-
 _defineProperty$1(Dropdown, "defaultProps", {
   triggerOptions: {},
   options: [],
@@ -6576,7 +5929,7 @@ _defineProperty$1(Dropdown, "defaultProps", {
   searchDebounceDuration: 300
 });
 
-var _excluded$P = ["appearance", "size", "children", "className", "color"];
+var _excluded$X = ["appearance", "size", "children", "className", "color"];
 var sizeMap = {
   s: 'h5',
   m: 'h4',
@@ -6586,14 +5939,12 @@ var sizeMap = {
 };
 var Heading = function Heading(props) {
   var _classNames;
-
   var appearance = props.appearance,
-      size = props.size,
-      children = props.children,
-      className = props.className,
-      color = props.color,
-      rest = _objectWithoutProperties(props, _excluded$P);
-
+    size = props.size,
+    children = props.children,
+    className = props.className,
+    color = props.color,
+    rest = _objectWithoutProperties(props, _excluded$X);
   var classes = classnames((_classNames = {
     Heading: true
   }, _defineProperty$1(_classNames, "Heading--".concat(size), size), _defineProperty$1(_classNames, "Heading--".concat(appearance), !color && appearance), _defineProperty$1(_classNames, "color-".concat(color), color), _classNames), className);
@@ -6610,14 +5961,12 @@ Heading.defaultProps = {
   size: 'm'
 };
 
-var _excluded$O = ["className", "iconType"];
+var _excluded$W = ["className", "iconType"];
 var ActionButton$1 = function ActionButton(props) {
   var _classNames;
-
   var className = props.className,
-      iconType = props.iconType,
-      rest = _objectWithoutProperties(props, _excluded$O);
-
+    iconType = props.iconType,
+    rest = _objectWithoutProperties(props, _excluded$W);
   var iconClass = classnames((_classNames = {}, _defineProperty$1(_classNames, 'ActionButton', true), _defineProperty$1(_classNames, "".concat(className), className), _classNames));
   return /*#__PURE__*/React.createElement(Icon, _extends$2({
     className: iconClass,
@@ -6631,69 +5980,75 @@ ActionButton$1.defaultProps = {
   type: 'rounded'
 };
 
-var _excluded$N = ["size", "type", "minWidth", "defaultValue", "name", "placeholder", "value", "icon", "inlineLabel", "required", "error", "info", "onChange", "onClick", "onClear", "onBlur", "onFocus", "onPaste", "actionIcon", "className", "autoFocus", "disabled", "readOnly", "iconType"];
+var _excluded$V = ["size", "type", "minWidth", "defaultValue", "name", "placeholder", "value", "icon", "inlineLabel", "required", "error", "info", "onChange", "onClick", "onClear", "onBlur", "onFocus", "onPaste", "actionIcon", "className", "autoFocus", "disabled", "readOnly", "iconType"];
 var sizeMapping$2 = {
   tiny: 12,
   regular: 16,
   large: 20
 };
+
 /**
  * ###### Input has two types:
  *  - [Controlled Input](https://reactjs.org/docs/forms.html#controlled-components)
  *  - [Uncontrolled Input](https://reactjs.org/docs/uncontrolled-components.html)
  */
-
 var Input = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
   var _classNames, _classNames2, _classNames3, _classNames4;
-
   var _props$size = props.size,
-      size = _props$size === void 0 ? 'regular' : _props$size,
-      _props$type = props.type,
-      type = _props$type === void 0 ? 'text' : _props$type,
-      _props$minWidth = props.minWidth,
-      minWidth = _props$minWidth === void 0 ? type !== 'number' ? 256 : undefined : _props$minWidth,
-      defaultValue = props.defaultValue,
-      name = props.name,
-      placeholder = props.placeholder,
-      value = props.value,
-      icon = props.icon,
-      inlineLabel = props.inlineLabel,
-      required = props.required,
-      error = props.error,
-      info = props.info,
-      onChange = props.onChange,
-      onClick = props.onClick,
-      onClear = props.onClear,
-      onBlur = props.onBlur,
-      onFocus = props.onFocus,
-      onPaste = props.onPaste,
-      actionIcon = props.actionIcon,
-      className = props.className,
-      autoFocus = props.autoFocus,
-      disabled = props.disabled,
-      readOnly = props.readOnly,
-      iconType = props.iconType,
-      rest = _objectWithoutProperties(props, _excluded$N);
-
+    size = _props$size === void 0 ? 'regular' : _props$size,
+    _props$type = props.type,
+    type = _props$type === void 0 ? 'text' : _props$type,
+    _props$minWidth = props.minWidth,
+    minWidth = _props$minWidth === void 0 ? type !== 'number' ? 256 : undefined : _props$minWidth,
+    defaultValue = props.defaultValue,
+    name = props.name,
+    placeholder = props.placeholder,
+    value = props.value,
+    icon = props.icon,
+    inlineLabel = props.inlineLabel,
+    required = props.required,
+    error = props.error,
+    info = props.info,
+    onChange = props.onChange,
+    onClick = props.onClick,
+    onClear = props.onClear,
+    onBlur = props.onBlur,
+    onFocus = props.onFocus,
+    onPaste = props.onPaste,
+    actionIcon = props.actionIcon,
+    className = props.className,
+    autoFocus = props.autoFocus,
+    disabled = props.disabled,
+    readOnly = props.readOnly,
+    iconType = props.iconType,
+    rest = _objectWithoutProperties(props, _excluded$V);
   var ref = React.useRef(null);
-
   var _React$useState = React.useState(!value),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      isInputBlank = _React$useState2[0],
-      setIsInputBlank = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    isInputBlank = _React$useState2[0],
+    setIsInputBlank = _React$useState2[1];
   React.useImperativeHandle(forwardedRef, function () {
     return ref.current;
   });
   React.useEffect(function () {
     var _ref$current;
-
     if (autoFocus) (_ref$current = ref.current) === null || _ref$current === void 0 ? void 0 : _ref$current.focus({
       preventScroll: true
     });
   }, []);
+  React.useEffect(function () {
+    if (ref.current && value !== undefined) {
+      var element = ref.current;
+      try {
+        var cursorPosition = element.value.length;
+        element.setSelectionRange(cursorPosition, cursorPosition);
+      } catch (error) {
+        console.error('Error setting selection range:', error);
+      }
+    }
+  }, [type]);
   var baseProps = extractBaseProps(props);
-  var classes = classnames((_classNames = {}, _defineProperty$1(_classNames, 'Input', true), _defineProperty$1(_classNames, "Input--".concat(size), size), _defineProperty$1(_classNames, 'Input--disabled', disabled || readOnly), _defineProperty$1(_classNames, 'Input--error', error), _classNames), className);
+  var classes = classnames((_classNames = {}, _defineProperty$1(_classNames, 'Input', true), _defineProperty$1(_classNames, "Input--".concat(size), size), _defineProperty$1(_classNames, 'Input--disabled', disabled), _defineProperty$1(_classNames, 'Input--error', error), _defineProperty$1(_classNames, 'Input--readOnly', readOnly), _classNames), className);
   var inputClass = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'Input-input', true), _defineProperty$1(_classNames2, "Input-input--".concat(size), size), _classNames2));
   var leftIconClass = classnames((_classNames3 = {}, _defineProperty$1(_classNames3, 'Input-icon', true), _defineProperty$1(_classNames3, 'Input-icon--left', true), _defineProperty$1(_classNames3, 'Input-icon--inputBlank', isInputBlank), _defineProperty$1(_classNames3, 'Input-icon--error', error), _classNames3));
   var rightIconClass = classnames((_classNames4 = {}, _defineProperty$1(_classNames4, 'Input-icon', true), _defineProperty$1(_classNames4, 'Input-iconWrapper--right', true), _classNames4));
@@ -6714,13 +6069,11 @@ var Input = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
     },
     onClick: function onClick() {
       var _ref$current2;
-
       return (_ref$current2 = ref.current) === null || _ref$current2 === void 0 ? void 0 : _ref$current2.focus();
     },
     role: "presentation",
     onBlur: function onBlur() {
       var _ref$current3;
-
       return setIsInputBlank(!((_ref$current3 = ref.current) !== null && _ref$current3 !== void 0 && _ref$current3.value));
     }
   }, inlineLabel && /*#__PURE__*/React.createElement("div", {
@@ -6754,8 +6107,7 @@ var Input = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
     /**
      *for readOnly: true, tab focus from input element is removed. Hence, its tabIndex is set to -1.
      *For rest, "undefined" lets user agent(browser) use the default tabIndex.
-     */
-    ,
+     */,
     tabIndex: readOnly ? -1 : undefined
   })), disabled ? '' : info ? /*#__PURE__*/React.createElement(Tooltip, {
     position: "bottom",
@@ -6766,7 +6118,6 @@ var Input = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
     "data-test": "DesignSystem-Input--closeIcon",
     onClick: function onClick(e) {
       var _ref$current4;
-
       (_ref$current4 = ref.current) === null || _ref$current4 === void 0 ? void 0 : _ref$current4.focus({
         preventScroll: true
       });
@@ -6782,73 +6133,65 @@ Object.assign(Input, {
   ActionButton: ActionButton$1
 });
 
-var _excluded$M = ["size", "defaultValue", "name", "placeholder", "icon", "prefix", "suffix", "error", "min", "max", "onChange", "onClick", "onBlur", "onFocus", "className", "autoFocus", "disabled", "readOnly", "value", "showActionButton", "onKeyDown", "iconType"];
+var _excluded$U = ["size", "defaultValue", "name", "placeholder", "icon", "prefix", "suffix", "error", "min", "max", "onChange", "onClick", "onBlur", "onFocus", "className", "autoFocus", "disabled", "readOnly", "value", "showActionButton", "onKeyDown", "iconType"];
 var sizeMapping$1 = {
   regular: 16,
   large: 20
 };
-
 var capMin = function capMin() {
   var min = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : -Infinity;
   var value = arguments.length > 1 ? arguments[1] : undefined;
   return isNaN(min) || !min && min !== 0 || isNaN(value) || !value && value !== 0 ? value : Math.max(min, value);
 };
-
 var capMax = function capMax() {
   var max = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : +Infinity;
   var value = arguments.length > 1 ? arguments[1] : undefined;
   return isNaN(max) || !max && max !== 0 || isNaN(value) || !value && value !== 0 ? value : Math.min(max, value);
 };
+
 /**
  * ###### MetricInput has two types:
  *  - [Controlled MetricInput](https://reactjs.org/docs/forms.html#controlled-components)
  *  - [Uncontrolled MetricInput](https://reactjs.org/docs/uncontrolled-components.html)
  */
-
-
 var MetricInput = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
   var _classNames, _classNames2, _classNames3, _classNames4, _classNames5, _classNames6;
-
   var _props$size = props.size,
-      size = _props$size === void 0 ? 'regular' : _props$size,
-      defaultValue = props.defaultValue,
-      name = props.name,
-      placeholder = props.placeholder,
-      icon = props.icon,
-      prefix = props.prefix,
-      suffix = props.suffix,
-      error = props.error,
-      min = props.min,
-      max = props.max,
-      onChange = props.onChange,
-      onClick = props.onClick,
-      onBlur = props.onBlur,
-      onFocus = props.onFocus,
-      className = props.className,
-      autoFocus = props.autoFocus,
-      disabled = props.disabled,
-      readOnly = props.readOnly,
-      valueProp = props.value,
-      _props$showActionButt = props.showActionButton,
-      showActionButton = _props$showActionButt === void 0 ? true : _props$showActionButt,
-      onKeyDown = props.onKeyDown,
-      iconType = props.iconType,
-      rest = _objectWithoutProperties(props, _excluded$M);
-
+    size = _props$size === void 0 ? 'regular' : _props$size,
+    defaultValue = props.defaultValue,
+    name = props.name,
+    placeholder = props.placeholder,
+    icon = props.icon,
+    prefix = props.prefix,
+    suffix = props.suffix,
+    error = props.error,
+    min = props.min,
+    max = props.max,
+    onChange = props.onChange,
+    onClick = props.onClick,
+    onBlur = props.onBlur,
+    onFocus = props.onFocus,
+    className = props.className,
+    autoFocus = props.autoFocus,
+    disabled = props.disabled,
+    readOnly = props.readOnly,
+    valueProp = props.value,
+    _props$showActionButt = props.showActionButton,
+    showActionButton = _props$showActionButt === void 0 ? true : _props$showActionButt,
+    onKeyDown = props.onKeyDown,
+    iconType = props.iconType,
+    rest = _objectWithoutProperties(props, _excluded$U);
   var ref = React.useRef(null);
   var isUncontrolled = valueProp === undefined;
-
   var _React$useState = React.useState(valueProp || defaultValue),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      value = _React$useState2[0],
-      setValue = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    value = _React$useState2[0],
+    setValue = _React$useState2[1];
   React.useImperativeHandle(forwardedRef, function () {
     return ref.current;
   });
   React.useEffect(function () {
     var _ref$current;
-
     if (autoFocus) (_ref$current = ref.current) === null || _ref$current === void 0 ? void 0 : _ref$current.focus({
       preventScroll: true
     });
@@ -6859,24 +6202,20 @@ var MetricInput = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
     }
   }, [valueProp]);
   var baseProps = extractBaseProps(props);
-  var classes = classnames((_classNames = {}, _defineProperty$1(_classNames, 'MetricInput', true), _defineProperty$1(_classNames, "MetricInput--".concat(size), size), _defineProperty$1(_classNames, 'MetricInput--disabled', disabled || readOnly), _defineProperty$1(_classNames, 'MetricInput--error', error), _classNames), className);
+  var classes = classnames((_classNames = {}, _defineProperty$1(_classNames, 'MetricInput', true), _defineProperty$1(_classNames, "MetricInput--".concat(size), size), _defineProperty$1(_classNames, 'MetricInput--disabled', disabled), _defineProperty$1(_classNames, 'MetricInput--readOnly', readOnly), _defineProperty$1(_classNames, 'MetricInput--error', error), _classNames), className);
   var inputClass = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'MetricInput-input', true), _defineProperty$1(_classNames2, "MetricInput-input--".concat(size), size), _defineProperty$1(_classNames2, "mr-4", !suffix && !showActionButton && size === 'regular'), _defineProperty$1(_classNames2, "mr-6", !suffix && !showActionButton && size === 'large'), _classNames2));
   var iconClass = classnames((_classNames3 = {}, _defineProperty$1(_classNames3, 'MetricInput-icon', true), _defineProperty$1(_classNames3, "MetricInput-icon--".concat(size), size), _classNames3));
   var prefixClass = classnames((_classNames4 = {}, _defineProperty$1(_classNames4, 'mr-4', size === 'regular'), _defineProperty$1(_classNames4, 'mr-5', size !== 'regular'), _classNames4));
   var suffixClass = classnames((_classNames5 = {}, _defineProperty$1(_classNames5, 'ml-4 mr-3', size === 'regular'), _defineProperty$1(_classNames5, 'mx-5', size !== 'regular'), _classNames5));
   var actionButton = classnames((_classNames6 = {}, _defineProperty$1(_classNames6, 'p-0', true), _defineProperty$1(_classNames6, "MetricInput-arrowIcon--".concat(size), size), _defineProperty$1(_classNames6, 'ml-3', true), _classNames6));
-
   var onChangeHandler = function onChangeHandler(e) {
     if (isUncontrolled) {
       setValue(e.target.value);
     }
-
     if (onChange) onChange(e);
   };
-
   var onArrowClick = function onArrowClick(e, direction) {
     var _newValue$toString$sp;
-
     var newValue = Number(value || 0);
     var decimalDigits = ((_newValue$toString$sp = newValue.toString().split('.')[1]) === null || _newValue$toString$sp === void 0 ? void 0 : _newValue$toString$sp.length) || 0;
     var isValid = direction === 'down' ? min !== undefined && newValue > min || min === undefined : max !== undefined && newValue < max || max === undefined;
@@ -6884,7 +6223,6 @@ var MetricInput = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
     newValue = direction === 'down' ? newValue - 1 : newValue + 1;
     newValue = capMax(max, capMin(min, +newValue.toFixed(decimalDigits)));
     if (isUncontrolled) setValue(newValue);
-
     if (onChange) {
       var syntheticEvent = Object.create(e, {
         target: {
@@ -6896,32 +6234,27 @@ var MetricInput = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
       onChange(syntheticEvent);
     }
   };
-
   var onKeyDownHandler = function onKeyDownHandler(e) {
     switch (e.key) {
       case 'e':
       case 'E':
         e.preventDefault();
         return;
-
       case 'ArrowDown':
         e.preventDefault();
         onArrowClick(e, 'down');
         return;
-
       case 'ArrowUp':
         e.preventDefault();
         onArrowClick(e, 'up');
         return;
     }
   };
-
   var handleKeyDown = function handleKeyDown(e) {
     if (showActionButton) {
       onKeyDownHandler(e);
-    } else e.preventDefault();
+    }
   };
-
   var actionButtonSize = size === 'large' ? 'regular' : 'tiny';
   return /*#__PURE__*/React.createElement("div", {
     "data-test": "DesignSystem-MetricInputWrapper",
@@ -6991,16 +6324,13 @@ var isEditable = function isEditable(mask, pos) {
 };
 var getDefaultValue = function getDefaultValue(mask, placeholderChar) {
   var val = '';
-
   for (var i = 0; i < mask.length; i++) {
     val += isEditable(mask, i) ? placeholderChar : mask[i];
   }
-
   return val;
 };
 
-var _excluded$L = ["mask", "value", "placeholderChar", "validators", "clearOnEmptyBlur", "defaultValue", "mask", "error", "caption", "required", "onChange", "onPaste", "onBlur", "onFocus", "onClear", "className", "id", "helpText"];
-
+var _excluded$T = ["mask", "value", "placeholderChar", "validators", "clearOnEmptyBlur", "defaultValue", "mask", "error", "caption", "required", "onChange", "onPaste", "onBlur", "onFocus", "onClear", "className", "id", "helpText"];
 /**
  * It works as Uncontrolled Input
  *
@@ -7008,28 +6338,27 @@ var _excluded$L = ["mask", "value", "placeholderChar", "validators", "clearOnEmp
  */
 var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
   props.mask;
-      var valueProp = props.value,
-      _props$placeholderCha = props.placeholderChar,
-      placeholderChar = _props$placeholderCha === void 0 ? '_' : _props$placeholderCha,
-      _props$validators = props.validators,
-      validators = _props$validators === void 0 ? [] : _props$validators,
-      _props$clearOnEmptyBl = props.clearOnEmptyBlur,
-      clearOnEmptyBlur = _props$clearOnEmptyBl === void 0 ? true : _props$clearOnEmptyBl,
-      defaultValue = props.defaultValue,
-      mask = props.mask,
-      error = props.error,
-      caption = props.caption,
-      required = props.required,
-      onChange = props.onChange,
-      onPaste = props.onPaste,
-      onBlur = props.onBlur,
-      onFocus = props.onFocus,
-      onClear = props.onClear,
-      className = props.className,
-      id = props.id,
-      helpText = props.helpText,
-      rest = _objectWithoutProperties(props, _excluded$L);
-
+    var valueProp = props.value,
+    _props$placeholderCha = props.placeholderChar,
+    placeholderChar = _props$placeholderCha === void 0 ? '_' : _props$placeholderCha,
+    _props$validators = props.validators,
+    validators = _props$validators === void 0 ? [] : _props$validators,
+    _props$clearOnEmptyBl = props.clearOnEmptyBlur,
+    clearOnEmptyBlur = _props$clearOnEmptyBl === void 0 ? true : _props$clearOnEmptyBl,
+    defaultValue = props.defaultValue,
+    mask = props.mask,
+    error = props.error,
+    caption = props.caption,
+    required = props.required,
+    onChange = props.onChange,
+    onPaste = props.onPaste,
+    onBlur = props.onBlur,
+    onFocus = props.onFocus,
+    onClear = props.onClear,
+    className = props.className,
+    id = props.id,
+    helpText = props.helpText,
+    rest = _objectWithoutProperties(props, _excluded$T);
   var isEditable = React.useCallback(function (pos) {
     return _typeof(mask[pos]) === 'object';
   }, [mask]);
@@ -7038,18 +6367,14 @@ var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
       for (var i = position; i < mask.length; i++) {
         if (isEditable(i)) return i;
       }
-
       return mask.length;
     }
-
     if (type === 'left') {
       for (var _i = position; _i >= 0; _i--) {
         if (isEditable(_i - 1)) return _i;
       }
-
       return 0;
     }
-
     return position;
   }, [mask, isEditable]);
   var getDefaultSelection = React.useCallback(function () {
@@ -7074,12 +6399,10 @@ var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
   var deferId = React.useRef();
   var selectionPos = React.useRef(defaultSelection);
   var newSelectionPos = React.useRef(0);
-
   var _React$useState = React.useState(defaultValue || valueProp || ''),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      value = _React$useState2[0],
-      setValue = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    value = _React$useState2[0],
+    setValue = _React$useState2[1];
   React.useImperativeHandle(forwardRef, function () {
     return ref.current;
   });
@@ -7094,7 +6417,6 @@ var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
   }, []);
   var getCurrSelection = React.useCallback(function () {
     var _ref$current, _ref$current2;
-
     return {
       start: ((_ref$current = ref.current) === null || _ref$current === void 0 ? void 0 : _ref$current.selectionStart) || 0,
       end: ((_ref$current2 = ref.current) === null || _ref$current2 === void 0 ? void 0 : _ref$current2.selectionEnd) || 0
@@ -7106,7 +6428,6 @@ var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
       var el = ref.current;
       var start = Math.min(pos.start, pos.end);
       var end = Math.max(pos.start, pos.end);
-
       if (setSelectionRange_compatible_types.includes(el.type)) {
         el.setSelectionRange(start, end);
       } else {
@@ -7118,21 +6439,21 @@ var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
     }
   }, [ref.current]);
   var setCursorPosition = React.useCallback(function (val) {
-    return setSelectionPos({
-      start: val,
-      end: val
-    });
+    if (document && document.activeElement === ref.current) {
+      setSelectionPos({
+        start: val,
+        end: val
+      });
+    }
   }, [setSelectionPos]);
   var insertAtIndex = React.useCallback(function (currValue, index) {
     var iterator = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
     var newValue = '';
     var newIndex = index + 1;
     var newIterator = iterator;
-
     if (index >= mask.length) {
       return newValue;
     }
-
     if (iterator >= currValue.length) {
       selectionPos.current = {
         start: index,
@@ -7140,21 +6461,17 @@ var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
       };
       return newValue;
     }
-
     var m = mask[index];
-
     if (isEditable(index)) {
       if (currValue[iterator].match(m)) {
         newValue += currValue[iterator];
       } else {
         newValue += placeholderChar;
       }
-
       newIterator++;
     } else {
       newValue += m;
     }
-
     newValue += insertAtIndex(currValue, newIndex, newIterator);
     return newValue;
   }, [mask, placeholderChar, isEditable]);
@@ -7162,47 +6479,36 @@ var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
     selectionPos.current = getCurrSelection();
     deferId.current = window.requestAnimationFrame(updateSelection);
   }, [selectionPos.current, getCurrSelection]);
-
   var matchSeparatorValue = function matchSeparatorValue(currValue) {
     var separator = props.placeholder || 'dd/mm/yyyy';
-
     if (separator.substring(0, 4) === 'yyyy') {
       return currValue && currValue[4] === separator[4] && currValue[7] === separator[7];
     }
-
     return currValue && currValue[2] === separator[2] && currValue[5] === separator[5];
   };
-
   var isSameFormat = function isSameFormat(currValue, inputLength) {
     var value = currValue.substring(0, inputLength);
-
     if (inputLength === 23) {
       var date = value.split(' - ');
       var startVal = date[0];
       var endVal = date[1];
       return matchSeparatorValue(startVal) && matchSeparatorValue(endVal);
     }
-
     return matchSeparatorValue(value);
   };
-
   var onPasteHandler = function onPasteHandler(e) {
     var _e$clipboardData;
-
     e.preventDefault();
     var pastedValue = (_e$clipboardData = e.clipboardData) === null || _e$clipboardData === void 0 ? void 0 : _e$clipboardData.getData('Text');
     var sameFormat = isSameFormat(pastedValue, pastedValue.length);
     var isValidDate = isValid(validators, pastedValue);
-
     if (sameFormat && onPaste && isValidDate) {
       onPaste(e, pastedValue);
       setValue(pastedValue);
     }
   };
-
   var onChangeHandler = React.useCallback(function (e) {
     var _e$currentTarget;
-
     var inputVal = (_e$currentTarget = e.currentTarget) === null || _e$currentTarget === void 0 ? void 0 : _e$currentTarget.value;
     var currSelection = getCurrSelection();
     var start = Math.min(selectionPos.current.start, currSelection.start);
@@ -7215,38 +6521,28 @@ var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
     enteredVal = inputVal.slice(start, end);
     updatedVal = insertAtIndex(enteredVal, start);
     var oldValue = value;
-
     if (oldValue.length === 0 && (id === 'parent-TimePicker' || id === 'parent-DatePicker')) {
       oldValue = defaultPlaceholderValue;
     }
-
     insertedStringLength = updatedVal.length;
-
     if (currSelection.end > selectionPos.current.end) {
       removedLength = insertedStringLength ? getSelectionLength(selectionPos.current) : 0;
     } else if (inputVal.length < oldValue.length) {
       removedLength = oldValue.length - inputVal.length;
     }
-
     var maskedVal = oldValue.split('');
-
     for (var i = 0; i < insertedStringLength; i++) {
       maskedVal[start + i] = updatedVal[i];
     }
-
     for (var _i2 = 0; _i2 < removedLength; _i2++) {
       var index$1 = start + insertedStringLength + _i2;
       maskedVal[index$1] = getPlaceholderValue(index$1, index$1);
     }
-
     var enteredValue = maskedVal.slice(0, mask.length).join('');
-
     if (updatedVal !== placeholderChar && updatedVal !== '' && !updatedVal.includes(placeholderChar) && isValid(validators, enteredValue)) {
       cursorPosition += insertedStringLength;
     }
-
     var newCursorPosition = getNewCursorPosition(removedLength ? 'left' : 'right', cursorPosition);
-
     if (removedLength === 1 && !updatedVal.length && !isEditable(cursorPosition) && newCursorPosition > 0) {
       cursorPosition = newCursorPosition;
       cursorPosition--;
@@ -7254,10 +6550,8 @@ var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
     } else if (removedLength !== 1) {
       cursorPosition = newCursorPosition;
     }
-
     var newValue = maskedVal.slice(0, mask.length).join('');
     newSelectionPos.current = cursorPosition;
-
     if (newValue !== oldValue && isValid(validators, newValue)) {
       if (defaultPlaceholderValue === '__:__ _M') {
         setValue(newValue.toUpperCase());
@@ -7274,14 +6568,12 @@ var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
   }, [selectionPos.current, validators, getCurrSelection, insertAtIndex, getSelectionLength, getPlaceholderValue, getNewCursorPosition, isEditable, setCursorPosition, setValue, onChange]);
   var onBlurHandler = React.useCallback(function (e) {
     var inputVal = e.currentTarget.value;
-
     if (clearOnEmptyBlur) {
       if (inputVal === defaultPlaceholderValue) {
         setValue('');
         inputVal = '';
       }
     }
-
     onBlur === null || onBlur === void 0 ? void 0 : onBlur(e, inputVal);
     if (deferId.current) window.cancelAnimationFrame(deferId.current);
   }, [clearOnEmptyBlur, deferId.current, getPlaceholderValue, setValue, onBlur]);
@@ -7292,12 +6584,10 @@ var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
   }, [setValue, getPlaceholderValue, setCursorPosition, getDefaultSelection, onClear]);
   var onFocusHandler = React.useCallback(function (e) {
     deferId.current = window.requestAnimationFrame(updateSelection);
-
     if (!value) {
       newSelectionPos.current = defaultSelection.start;
       setValue(getPlaceholderValue());
     }
-
     onFocus === null || onFocus === void 0 ? void 0 : onFocus(e);
   }, [deferId.current, value, updateSelection, setValue, setSelectionPos, onFocus]);
   var classes = React.useMemo(function () {
@@ -7318,8 +6608,7 @@ var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
     /**
      * input right cross icon should be visible only
      * when user provides value
-     */
-    ,
+     */,
     onClear: !isValueEqualPlaceholder ? onClearHandler : undefined,
     onBlur: onBlurHandler,
     onPaste: onPasteHandler,
@@ -7330,34 +6619,31 @@ var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
     error: error
   }));
 });
-InputMask.displayName = 'InputMask'; // we are adding a new property which is not present in default interface
+InputMask.displayName = 'InputMask';
+// we are adding a new property which is not present in default interface
 // we could have explicitly added the interface above with definition
 // but then it would force us to marks utils as optional
 // as we cannot add new properties by defining the InputMask
 // that would cause user to use `!` everywhere or check for utils
-
 InputMask.utils = {
   getDefaultValue: getDefaultValue
 };
 var X = InputMask;
 
-var _excluded$K = ["required", "optional", "withInput", "disabled", "children", "className", "info"];
-
+var _excluded$S = ["required", "optional", "withInput", "disabled", "children", "className", "info"];
 /**
  * *NOTE: Extends props with HTMLProps<HTMLLabelElement>*
  */
 var Label = function Label(props) {
   var _classNames;
-
   var required = props.required,
-      optional = props.optional,
-      withInput = props.withInput,
-      disabled = props.disabled,
-      children = props.children,
-      className = props.className,
-      info = props.info,
-      rest = _objectWithoutProperties(props, _excluded$K);
-
+    optional = props.optional,
+    withInput = props.withInput,
+    disabled = props.disabled,
+    children = props.children,
+    className = props.className,
+    info = props.info,
+    rest = _objectWithoutProperties(props, _excluded$S);
   var baseProps = extractBaseProps(props);
   var LabelClass = classnames((_classNames = {
     Label: true
@@ -7366,18 +6652,15 @@ var Label = function Label(props) {
     'Label-text': true,
     'Label--disabled': disabled
   });
-
   var renderInfo = function renderInfo() {
     var isRequired = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
     var isOptional = arguments.length > 1 ? arguments[1] : undefined;
-
     if (isRequired) {
       return /*#__PURE__*/React.createElement("span", {
         className: "Label-requiredIndicator",
         "data-test": "DesignSystem-Label--RequiredIndicator"
       });
     }
-
     if (isOptional) {
       return /*#__PURE__*/React.createElement(Text, {
         "data-test": "DesignSystem-Label--OptionalText",
@@ -7385,10 +6668,8 @@ var Label = function Label(props) {
         className: "Label-optionalText"
       }, "(optional)");
     }
-
     return null;
   };
-
   var renderIndicator = function renderIndicator(info) {
     return /*#__PURE__*/React.createElement(Tooltip, {
       tooltip: info
@@ -7400,7 +6681,6 @@ var Label = function Label(props) {
       className: "ml-3 cursor-pointer d-flex align-items-center"
     }));
   };
-
   return /*#__PURE__*/React.createElement("div", _extends$2({
     "data-test": "DesignSystem-Label"
   }, baseProps, {
@@ -7415,12 +6695,11 @@ Label.displayName = 'Label';
 
 var Caption = function Caption(props) {
   var _classNames;
-
   var error = props.error,
-      hide = props.hide,
-      withInput = props.withInput,
-      children = props.children,
-      className = props.className;
+    hide = props.hide,
+    withInput = props.withInput,
+    children = props.children,
+    className = props.className;
   var baseProps = extractBaseProps(props);
   var classes = classnames((_classNames = {
     Caption: true
@@ -7445,24 +6724,24 @@ Caption.displayName = 'Caption';
 
 var Legend = function Legend(props) {
   var iconAppearance = props.iconAppearance,
-      iconSize = props.iconSize,
-      labelAppearance = props.labelAppearance,
-      children = props.children,
-      labelWeight = props.labelWeight,
-      _onMouseEnter = props.onMouseEnter,
-      _onMouseLeave = props.onMouseLeave,
-      _onClick = props.onClick,
-      className = props.className;
+    iconSize = props.iconSize,
+    labelAppearance = props.labelAppearance,
+    children = props.children,
+    labelWeight = props.labelWeight,
+    _onMouseEnter = props.onMouseEnter,
+    _onMouseLeave = props.onMouseLeave,
+    _onClick = props.onClick,
+    className = props.className;
   var baseProps = extractBaseProps(props);
   var legendClass = classnames(_defineProperty$1({}, 'Legend', true), className);
   var styles = {
     background: "var(--".concat(iconAppearance, ")"),
     height: "".concat(iconSize, "px"),
     width: "".concat(iconSize, "px")
-  }; // TODO(a11y): fix accessibility
+  };
 
+  // TODO(a11y): fix accessibility
   /* eslint-disable */
-
   return /*#__PURE__*/React.createElement("div", _extends$2({}, baseProps, {
     className: legendClass,
     onClick: function onClick(e) {
@@ -7490,9 +6769,9 @@ Legend.defaultProps = {
 
 var Editable = function Editable(props) {
   var className = props.className,
-      onChange = props.onChange,
-      editing = props.editing,
-      children = props.children;
+    onChange = props.onChange,
+    editing = props.editing,
+    children = props.children;
   var baseProps = extractBaseProps(props);
   var EditableClass = classnames(_defineProperty$1({}, 'Editable', true), className);
   return /*#__PURE__*/React.createElement("div", _extends$2({
@@ -7514,76 +6793,62 @@ var Editable = function Editable(props) {
 };
 Editable.displayName = 'Editable';
 
-var _excluded$J = ["onChange", "onClose"];
+var _excluded$R = ["onChange", "onClose"];
 var EditableDropdown = function EditableDropdown(props) {
   var _classNames2;
-
   var placeholder = props.placeholder,
-      dropdownOptions = props.dropdownOptions,
-      className = props.className,
-      customTriggerRenderer = props.customTriggerRenderer;
-
+    dropdownOptions = props.dropdownOptions,
+    className = props.className,
+    customTriggerRenderer = props.customTriggerRenderer;
   var onDropdownChange = dropdownOptions.onChange,
-      onDropdownClose = dropdownOptions.onClose,
-      rest = _objectWithoutProperties(dropdownOptions, _excluded$J);
-
+    onDropdownClose = dropdownOptions.onClose,
+    rest = _objectWithoutProperties(dropdownOptions, _excluded$R);
   var _React$useState = React.useState(placeholder),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      label = _React$useState2[0],
-      setLabel = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    label = _React$useState2[0],
+    setLabel = _React$useState2[1];
   var _React$useState3 = React.useState(false),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      editing = _React$useState4[0],
-      setEditing = _React$useState4[1];
-
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    editing = _React$useState4[0],
+    setEditing = _React$useState4[1];
   var _React$useState5 = React.useState(false),
-      _React$useState6 = _slicedToArray(_React$useState5, 2),
-      showComponent = _React$useState6[0],
-      setShowComponent = _React$useState6[1];
-
+    _React$useState6 = _slicedToArray(_React$useState5, 2),
+    showComponent = _React$useState6[0],
+    setShowComponent = _React$useState6[1];
   var CompClass = classnames(_defineProperty$1({}, 'EditableDropdown', true), className);
   var DefaultCompClass = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'EditableDropdown-default', true), _defineProperty$1(_classNames2, 'd-none', showComponent), _classNames2));
   var EditableDropdownClass = classnames(_defineProperty$1({}, 'd-none', !showComponent));
   var baseProps = extractBaseProps(props);
-
   var getLabel = function getLabel(updatedLabel) {
     setLabel(updatedLabel);
   };
-
   var onChangeHandler = function onChangeHandler(eventType) {
     switch (eventType) {
       case 'edit':
         setEditing(true);
         setShowComponent(true);
         break;
-
       case 'hover':
         setShowComponent(true);
         break;
-
       case 'default':
         setShowComponent(false);
     }
   };
-
   var onChange = function onChange(value) {
     setEditing(false);
     setShowComponent(false);
     if (onDropdownChange) onDropdownChange(value);
   };
-
   var onClose = function onClose(selected) {
     setEditing(false);
     setShowComponent(false);
     if (onDropdownClose) onDropdownClose(selected);
   };
-
   var renderComponent = function renderComponent(componentLabel) {
     if (customTriggerRenderer) return customTriggerRenderer(componentLabel);
     return componentLabel;
   };
-
   return /*#__PURE__*/React.createElement("div", _extends$2({
     "data-test": "DesignSystem-EditableDropdown"
   }, baseProps, {
@@ -7608,17 +6873,22 @@ EditableDropdown.defaultProps = {
   dropdownOptions: {}
 };
 
-var _excluded$I = ["children", "className", "appearance", "size", "disabled"];
+var _excluded$Q = ["children", "className", "appearance", "size", "disabled"];
+/**
+ *
+ * The choice to use the appearance `subtle` property for the **Link** component, while using the `subtle` boolean prop for the **LinkButton** component, is based on the different roles of typography and action components.
+ * - The **Link** component is primarily a typography element. Typography components use the "appearance" property to define their visual style, ensuring consistency and predictability when styling text-based elements.
+ * - In contrast, the **LinkButton** component is an action component. Action components use "boolean props" to indicate variations in their behavior and appearance. Therefore, the **LinkButton** uses the `subtle` boolean prop to signify a specific visual style that aligns with other button components.
+ */
+
 var Link = function Link(props) {
   var _classNames;
-
   var children = props.children,
-      className = props.className,
-      appearance = props.appearance,
-      size = props.size,
-      disabled = props.disabled,
-      rest = _objectWithoutProperties(props, _excluded$I);
-
+    className = props.className,
+    appearance = props.appearance,
+    size = props.size,
+    disabled = props.disabled,
+    rest = _objectWithoutProperties(props, _excluded$Q);
   var classes = classnames((_classNames = {
     Link: true
   }, _defineProperty$1(_classNames, "Link--".concat(size), size), _defineProperty$1(_classNames, "Link--".concat(appearance), appearance), _defineProperty$1(_classNames, "Link--".concat(appearance, "-disabled"), disabled), _classNames), className);
@@ -7644,10 +6914,9 @@ var IconMapping$2 = {
 };
 var Message = function Message(props) {
   var _classNames, _classNames2, _classNames3, _classNames4;
-
   var actions = props.actions,
-      title = props.title,
-      className = props.className;
+    title = props.title,
+    className = props.className;
   var appearance = props.appearance;
   appearance = appearance === 'default' ? 'info' : appearance;
   var baseProps = extractBaseProps(props);
@@ -7655,7 +6924,6 @@ var Message = function Message(props) {
   var IconClass = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'Message-icon', true), _defineProperty$1(_classNames2, "Message-icon--".concat(appearance), appearance), _defineProperty$1(_classNames2, 'Message-icon--withTitle', title), _classNames2));
   var TitleClass = classnames((_classNames3 = {}, _defineProperty$1(_classNames3, 'Message-heading', true), _defineProperty$1(_classNames3, "Message-heading--".concat(appearance), appearance), _classNames3));
   var DescriptionClass = classnames((_classNames4 = {}, _defineProperty$1(_classNames4, 'Message-text', true), _defineProperty$1(_classNames4, "Message-text--".concat(appearance), appearance), _classNames4));
-
   var renderDescription = function renderDescription(description, children) {
     if (description || typeof children === 'string') {
       return /*#__PURE__*/React.createElement(Text, {
@@ -7663,17 +6931,14 @@ var Message = function Message(props) {
         className: DescriptionClass
       }, description || (typeof children === 'string' ? children : ''));
     }
-
     if (children) {
       return /*#__PURE__*/React.createElement("div", {
         "data-test": "DesignSystem-Message--Description",
         className: "Message-description"
       }, children);
     }
-
     return null;
   };
-
   return /*#__PURE__*/React.createElement("div", _extends$2({
     "data-test": "DesignSystem-Message"
   }, baseProps, {
@@ -7700,9 +6965,9 @@ Message.defaultProps = {
 
 var Meta = function Meta(props) {
   var label = props.label,
-      icon = props.icon,
-      size = props.size,
-      iconType = props.iconType;
+    icon = props.icon,
+    size = props.size,
+    iconType = props.iconType;
   return /*#__PURE__*/React.createElement("span", {
     "data-test": "DesignSystem-MetaList--Meta",
     className: 'Meta'
@@ -7723,11 +6988,10 @@ Meta.displayName = 'Meta';
 
 var MetaList = function MetaList(props) {
   var _classNames3;
-
   var list = props.list,
-      seperator = props.seperator,
-      className = props.className,
-      size = props.size;
+    seperator = props.seperator,
+    className = props.className,
+    size = props.size;
   var baseProps = extractBaseProps(props);
   var MetaClass = classnames(_defineProperty$1({}, 'MetaList', true), className);
   var SeperatorClass = classnames(_defineProperty$1({}, 'MetaList-seperator', true));
@@ -7744,9 +7008,9 @@ var MetaList = function MetaList(props) {
     appearance: "disabled"
   }), list.map(function (item, ind) {
     var _item$label = item.label,
-        label = _item$label === void 0 ? '' : _item$label,
-        icon = item.icon,
-        iconType = item.iconType;
+      label = _item$label === void 0 ? '' : _item$label,
+      icon = item.icon,
+      iconType = item.iconType;
     var rightSeperator = ind !== list.length - 1;
     return /*#__PURE__*/React.createElement("span", {
       key: ind,
@@ -7784,12 +7048,10 @@ var formatPercentage = function formatPercentage(ratio) {
 };
 var countDecimalPlaces = function countDecimalPlaces(value) {
   if (!isFinite(value)) return 0;
-
   if (Math.floor(value) !== value) {
     var valueArray = value.toString().split('.');
     return valueArray[1].length || 0;
   }
-
   return 0;
 };
 var approxEqual = function approxEqual(a, b) {
@@ -7800,7 +7062,6 @@ var clamp = function clamp(value, min, max) {
   if (value == null) {
     return value;
   }
-
   return Math.min(Math.max(value, min), max);
 };
 var arraysEqual = function arraysEqual(oldValues, newValues) {
@@ -7813,25 +7074,20 @@ function argMin(values, argFn) {
   if (values.length === 0) {
     return undefined;
   }
-
   var minValue = values[0];
   var minArg = argFn(minValue);
-
   for (var index = 1; index < values.length; index++) {
-    var _value = values[index];
-    var arg = argFn(_value);
-
+    var value = values[index];
+    var arg = argFn(value);
     if (arg < minArg) {
-      minValue = _value;
+      minValue = value;
       minArg = arg;
     }
   }
-
   return minValue;
 }
 function fillValues(values, startIndex, endIndex, fillValue) {
   var inc = startIndex < endIndex ? 1 : -1;
-
   for (var index = startIndex; index !== endIndex + inc; index += inc) {
     values[index] = fillValue;
   }
@@ -7842,151 +7098,112 @@ function isElementOfType(element) {
 
 var Handle = /*#__PURE__*/function (_React$Component) {
   _inherits(Handle, _React$Component);
-
   var _super = _createSuper(Handle);
-
   function Handle() {
     var _this;
-
     _classCallCheck(this, Handle);
-
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
-
     _this = _super.call.apply(_super, [this].concat(args));
-
     _defineProperty$1(_assertThisInitialized$1(_this), "state", {
       isHandleMoving: false,
       isHandleHovered: false
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "handleElement", null);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "refHandlers", {
       handle: function handle(el) {
         return _this.handleElement = el;
       }
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "mouseEventClientOffset", function (event) {
       return event.clientX;
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "clientToValue", function (clientPixel) {
       var _this$props = _this.props,
-          stepSize = _this$props.stepSize,
-          tickSize = _this$props.tickSize,
-          value = _this$props.value;
-
+        stepSize = _this$props.stepSize,
+        tickSize = _this$props.tickSize,
+        value = _this$props.value;
       if (_this.handleElement == null) {
         return value;
       }
-
       var clientPixelNormalized = clientPixel;
-
       var _this$getHandleMidpoi = _this.getHandleMidpointAndOffset(_this.handleElement),
-          handleMidpoint = _this$getHandleMidpoi.handleMidpoint,
-          handleOffset = _this$getHandleMidpoi.handleOffset;
-
+        handleMidpoint = _this$getHandleMidpoi.handleMidpoint,
+        handleOffset = _this$getHandleMidpoi.handleOffset;
       var handleCenterPixel = handleMidpoint + handleOffset;
       var pixelDelta = clientPixelNormalized - handleCenterPixel;
-
       if (isNaN(pixelDelta)) {
         return value;
       }
-
       return value + Math.round(pixelDelta / (tickSize * stepSize)) * stepSize;
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "changeValue", function (newValue) {
       var callback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _this.props.onChange;
       var updatedValue = clamp(newValue, _this.props.min, _this.props.max);
-
       if (!isNaN(updatedValue) && _this.props.value !== updatedValue) {
         if (callback) callback(updatedValue);
       }
-
       return updatedValue;
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "endHandleMovement", function (event) {
       var clientPixel = _this.mouseEventClientOffset(event);
-
       var onRelease = _this.props.onRelease;
-
       _this.removeDocumentEventListeners();
-
       _this.setState({
         isHandleMoving: false
       });
-
       var finalValue = _this.changeValue(_this.clientToValue(clientPixel));
-
       if (onRelease) onRelease(finalValue);
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "continueHandleMovement", function (event) {
       var clientPixel = _this.mouseEventClientOffset(event);
-
       if (_this.state.isHandleMoving && !_this.props.disabled) {
         var value = _this.clientToValue(clientPixel);
-
         _this.changeValue(value);
       }
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "beginHandleMovement", function (event) {
       if (_this.props.disabled) return;
       document.addEventListener('mousemove', _this.continueHandleMovement);
       document.addEventListener('mouseup', _this.endHandleMovement);
-
       _this.setState({
         isHandleMoving: true
       });
-
       var value = _this.clientToValue(event.clientX);
-
       _this.changeValue(value);
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "handleKeyDown", function (event) {
       if (_this.props.disabled) return;
       var _this$props2 = _this.props,
-          stepSize = _this$props2.stepSize,
-          value = _this$props2.value;
-      var keyCode = event.keyCode; // TODO(a11y): add ARROW_DOWN & ARROW_UP too
+        stepSize = _this$props2.stepSize,
+        value = _this$props2.value;
+      var keyCode = event.keyCode;
 
+      // TODO(a11y): add ARROW_DOWN & ARROW_UP too
       if (keyCode === ARROW_LEFT) {
         _this.changeValue(value - stepSize);
-
         event.preventDefault();
       } else if (keyCode === ARROW_RIGHT) {
         _this.changeValue(value + stepSize);
-
         event.preventDefault();
       }
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "handleKeyUp", function (event) {
       if (_this.props.disabled) return;
-
       if ([ARROW_LEFT, ARROW_RIGHT].indexOf(event.keyCode) >= 0) {
         var onRelease = _this.props.onRelease;
         if (onRelease) onRelease(_this.props.value);
       }
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "getHandleMidpointAndOffset", function (handleElement) {
       var useOppositeDimension = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-
       if (handleElement == null) {
         return {
           handleMidpoint: 0,
           handleOffset: 0
         };
       }
-
       var handleRect = handleElement.getBoundingClientRect();
       var sizeKey = useOppositeDimension ? 'height' : 'width';
       var handleOffset = handleRect.left;
@@ -7995,27 +7212,22 @@ var Handle = /*#__PURE__*/function (_React$Component) {
         handleMidpoint: handleRect[sizeKey] / 2
       };
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "handleMouseOver", function () {
       _this.setState({
         isHandleHovered: true
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "handleMouseLeave", function () {
       _this.setState({
         isHandleHovered: false
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "removeDocumentEventListeners", function () {
       document.removeEventListener('mousemove', _this.continueHandleMovement);
       document.removeEventListener('mouseup', _this.endHandleMovement);
     });
-
     return _this;
   }
-
   _createClass(Handle, [{
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
@@ -8032,22 +7244,19 @@ var Handle = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var _classNames, _classNames2;
-
       var _this$props3 = this.props,
-          min = _this$props3.min,
-          tickSizeRatio = _this$props3.tickSizeRatio,
-          value = _this$props3.value,
-          disabled = _this$props3.disabled,
-          label = _this$props3.label,
-          isCurrentLabelHovered = _this$props3.isCurrentLabelHovered;
+        min = _this$props3.min,
+        tickSizeRatio = _this$props3.tickSizeRatio,
+        value = _this$props3.value,
+        disabled = _this$props3.disabled,
+        label = _this$props3.label,
+        isCurrentLabelHovered = _this$props3.isCurrentLabelHovered;
       var _this$state = this.state,
-          isHandleMoving = _this$state.isHandleMoving,
-          isHandleHovered = _this$state.isHandleHovered;
+        isHandleMoving = _this$state.isHandleMoving,
+        isHandleHovered = _this$state.isHandleHovered;
       var showTootlip = isHandleMoving || isHandleHovered || isCurrentLabelHovered;
-
       var _this$getHandleMidpoi2 = this.getHandleMidpointAndOffset(this.handleElement, true),
-          handleMidpoint = _this$getHandleMidpoi2.handleMidpoint;
-
+        handleMidpoint = _this$getHandleMidpoi2.handleMidpoint;
       var offsetRatio = (value - min) * tickSizeRatio;
       var offsetCalc = "calc(".concat(formatPercentage(offsetRatio), " - ").concat(handleMidpoint, "px)");
       var style = {
@@ -8058,7 +7267,6 @@ var Handle = /*#__PURE__*/function (_React$Component) {
       return (
         /*#__PURE__*/
         // TODO(a11y): fix accessibility
-
         /* eslint-disable */
         React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
           className: className,
@@ -8078,46 +7286,34 @@ var Handle = /*#__PURE__*/function (_React$Component) {
       );
     }
   }]);
-
   return Handle;
 }(React.Component);
 
 var MultiSliderHandle = function MultiSliderHandle() {
   return null;
 };
-
 var MultiSlider = /*#__PURE__*/function (_React$Component) {
   _inherits(MultiSlider, _React$Component);
-
   var _super = _createSuper(MultiSlider);
-
   function MultiSlider(_props) {
     var _this;
-
     _classCallCheck(this, MultiSlider);
-
     _this = _super.call(this, _props);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "handleElements", []);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "trackElement", null);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "getLabelPrecision", function (_ref) {
       var labelPrecision = _ref.labelPrecision,
-          stepSize = _ref.stepSize;
+        stepSize = _ref.stepSize;
       return labelPrecision == null ? countDecimalPlaces(stepSize) : labelPrecision;
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "getOffsetRatio", function (value) {
       return clamp((value - _this.props.min) * _this.state.tickSizeRatio, 0, 1);
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "addHandleRef", function (ref) {
       if (ref != null) {
         _this.handleElements.push(ref);
       }
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "getHandleValues", function (props) {
       var maybeHandles = React.Children.map(props.children, function (child) {
         return isElementOfType(child) ? child.props : null;
@@ -8131,60 +7327,47 @@ var MultiSlider = /*#__PURE__*/function (_React$Component) {
       });
       return handles;
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "updateTickSize", function () {
       if (_this.trackElement != null) {
         var trackSize = _this.trackElement.clientWidth;
         var tickSizeRatio = 1 / (_this.props.max - _this.props.min);
         var tickSize = trackSize * tickSizeRatio;
-
         _this.setState({
           tickSize: tickSize,
           tickSizeRatio: tickSizeRatio
         });
       }
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "getTrackFill", function (start, end) {
       if (start.fillAfter !== undefined) {
         return start.fillAfter;
       }
-
       if (end !== undefined && end.fillBefore !== undefined) {
         return end.fillBefore;
       }
-
       return false;
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "maybeHandleTrackClick", function (event) {
       var target = event.target;
       var canHandleTrackEvent = !_this.props.disabled && target.closest('.Slider-handle') == null;
-
       if (canHandleTrackEvent) {
         var foundHandle = _this.nearestHandleForValue(_this.handleElements, function (handle) {
           return handle.mouseEventClientOffset(event);
         });
-
         if (foundHandle) {
           foundHandle.beginHandleMovement(event);
         }
       }
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "getLockedHandleIndex", function (startIndex, endIndex) {
       var inc = startIndex < endIndex ? 1 : -1;
-
       for (var index = startIndex + inc; index !== endIndex + inc; index += inc) {
         return index;
       }
-
       return -1;
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "getNewHandleValues", function (newValue, oldIndex) {
       var handleProps = _this.getHandleValues(_this.props);
-
       var oldValues = handleProps.map(function (handle) {
         return handle.value;
       });
@@ -8194,9 +7377,7 @@ var MultiSlider = /*#__PURE__*/function (_React$Component) {
         return left - right;
       });
       var newIndex = newValues.indexOf(newValue);
-
       var lockIndex = _this.getLockedHandleIndex(oldIndex, newIndex);
-
       if (lockIndex === -1) {
         fillValues(newValues, oldIndex, newIndex, newValue);
       } else {
@@ -8204,78 +7385,62 @@ var MultiSlider = /*#__PURE__*/function (_React$Component) {
         fillValues(oldValues, oldIndex, lockIndex, lockValue);
         return oldValues;
       }
-
       return newValues;
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onReleaseHandler", function (newValue, index) {
       var onRangeRelease = _this.props.onRangeRelease;
-
       var handleProps = _this.getHandleValues(_this.props);
+      var newValues = _this.getNewHandleValues(newValue, index);
 
-      var newValues = _this.getNewHandleValues(newValue, index); // Range Slider callback
-
-
+      // Range Slider callback
       if (onRangeRelease) {
         var range = newValues;
         onRangeRelease(range);
-      } // Slider callback
+      }
 
-
+      // Slider callback
       handleProps.forEach(function (handle, i) {
         if (handle.onRelease) handle.onRelease(newValues[i]);
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onChangeHandler", function (newValue, index) {
       var onRangeChange = _this.props.onRangeChange;
-
       var handleProps = _this.getHandleValues(_this.props);
-
       var oldValues = handleProps.map(function (handle) {
         return handle.value;
       });
-
       var newValues = _this.getNewHandleValues(newValue, index);
-
       if (!arraysEqual(newValues, oldValues)) {
         // Range Slider Callback
         if (onRangeChange) {
           var range = newValues;
           onRangeChange(range);
-        } // Slider callback
+        }
 
-
+        // Slider callback
         handleProps.forEach(function (handle, i) {
           if (handle.onChange) handle.onChange(newValues[i]);
         });
       }
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "formatLabel", function (value) {
       var labelRenderer = _this.props.labelRenderer;
       var labelValue = value.toFixed(_this.state.labelPrecision);
-
       if (typeof labelRenderer === 'function') {
         return labelRenderer(Number(labelValue));
       }
-
       return labelValue;
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "renderHandles", function () {
       var _this$props = _this.props,
-          disabled = _this$props.disabled,
-          max = _this$props.max,
-          min = _this$props.min,
-          stepSize = _this$props.stepSize;
-
+        disabled = _this$props.disabled,
+        max = _this$props.max,
+        min = _this$props.min,
+        stepSize = _this$props.stepSize;
       var handleProps = _this.getHandleValues(_this.props);
-
       if (handleProps.length === 0) {
         return null;
       }
-
       return handleProps.map(function (_ref2, index) {
         var value = _ref2.value;
         var isCurrentLabelHovered = _this.state.hoveredLabelValue === Number(value.toFixed(_this.state.labelPrecision));
@@ -8300,49 +7465,41 @@ var MultiSlider = /*#__PURE__*/function (_React$Component) {
         });
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "renderLabels", function () {
       var _this$props2 = _this.props,
-          labelStepSize = _this$props2.labelStepSize,
-          max = _this$props2.max,
-          min = _this$props2.min,
-          labelRenderer = _this$props2.labelRenderer,
-          disabled = _this$props2.disabled;
+        labelStepSize = _this$props2.labelStepSize,
+        max = _this$props2.max,
+        min = _this$props2.min,
+        labelRenderer = _this$props2.labelRenderer,
+        disabled = _this$props2.disabled;
       var labels = [];
       var stepSizeRatio = _this.state.tickSizeRatio * labelStepSize;
-
       var handles = _this.getHandleValues(_this.props);
-
       var activeLabels = handles.map(function (handle) {
         return handle.value.toFixed(_this.state.labelPrecision);
       });
-
       var _loop = function _loop(i, offsetRatio) {
         var _classNames;
-
         var offsetPercentage = formatPercentage(offsetRatio);
         var style = {
           left: offsetPercentage
         };
         var active = !disabled && activeLabels.indexOf(i.toFixed(_this.state.labelPrecision)) !== -1;
-
         var onClickHandler = function onClickHandler(event) {
           if (!_this.props.disabled) {
             var foundHandle = _this.nearestHandleForValue(_this.handleElements, function (handle) {
               return handle.mouseEventClientOffset(event);
             });
-
             if (foundHandle) {
               foundHandle.changeValue(i);
             }
           }
         };
+        var SliderTicksClass = classnames((_classNames = {}, _defineProperty$1(_classNames, 'Slider-ticks', true), _defineProperty$1(_classNames, 'bg-dark', active), _classNames));
 
-        var SliderTicksClass = classnames((_classNames = {}, _defineProperty$1(_classNames, 'Slider-ticks', true), _defineProperty$1(_classNames, 'bg-dark', active), _classNames)); // TODO(a11y): fix accessibility
-
+        // TODO(a11y): fix accessibility
         /* eslint-disable */
-
-        labels.push( /*#__PURE__*/React.createElement("div", {
+        labels.push(/*#__PURE__*/React.createElement("div", {
           onClick: onClickHandler,
           className: 'Slider-label',
           key: i,
@@ -8359,35 +7516,27 @@ var MultiSlider = /*#__PURE__*/function (_React$Component) {
           appearance: active ? 'default' : 'disabled'
         }, _this.formatLabel(i))));
       };
-
       for (var i = min, offsetRatio = 0; i < max || approxEqual(i, max); i += labelStepSize, offsetRatio += stepSizeRatio) {
         _loop(i, offsetRatio);
       }
-
       return labels;
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "renderTrackFill", function (index, start, end) {
       var _classNames2;
-
       var _sort = [_this.getOffsetRatio(start.value), _this.getOffsetRatio(end.value)].sort(function (left, right) {
-        return left - right;
-      }),
-          _sort2 = _slicedToArray(_sort, 2),
-          startRatio = _sort2[0],
-          endRatio = _sort2[1];
-
+          return left - right;
+        }),
+        _sort2 = _slicedToArray(_sort, 2),
+        startRatio = _sort2[0],
+        endRatio = _sort2[1];
       var startOffset = Number((startRatio * 100).toFixed(2));
       var endOffset = Number(((1 - endRatio) * 100).toFixed(2));
       var width = "".concat(100 - endOffset - startOffset, "%");
       var orientationStyle = {
         width: width
       };
-
       var style = _objectSpread2({}, orientationStyle);
-
       var fillTrack = _this.getTrackFill(start, end);
-
       var classes = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'Slider-progress', true), _defineProperty$1(_classNames2, 'Slider-progress--disabled', _this.props.disabled), _defineProperty$1(_classNames2, 'Slider-progress--inRange', fillTrack), _defineProperty$1(_classNames2, 'Slider-progress--inRangeDisabled', fillTrack && _this.props.disabled), _classNames2));
       return /*#__PURE__*/React.createElement("div", {
         key: "track-".concat(index),
@@ -8395,10 +7544,8 @@ var MultiSlider = /*#__PURE__*/function (_React$Component) {
         style: style
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "renderTracks", function () {
       var trackStops = _this.getHandleValues(_this.props);
-
       trackStops.push({
         value: _this.props.max
       });
@@ -8413,19 +7560,16 @@ var MultiSlider = /*#__PURE__*/function (_React$Component) {
       });
       return handles;
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "handleLabelMouseOver", function (value) {
       _this.setState({
         hoveredLabelValue: value
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "handleLabelMouseLeave", function () {
       _this.setState({
         hoveredLabelValue: undefined
       });
     });
-
     _this.state = {
       labelPrecision: _this.getLabelPrecision(_this.props),
       tickSize: 0,
@@ -8433,7 +7577,6 @@ var MultiSlider = /*#__PURE__*/function (_React$Component) {
     };
     return _this;
   }
-
   _createClass(MultiSlider, [{
     key: "getDerivedStateFromProps",
     value: function getDerivedStateFromProps(props) {
@@ -8446,11 +7589,9 @@ var MultiSlider = /*#__PURE__*/function (_React$Component) {
     value: function getSnapshotBeforeUpdate(prevProps) {
       var prevHandleProps = this.getHandleValues(prevProps);
       var newHandleProps = this.getHandleValues(this.props);
-
       if (newHandleProps.length !== prevHandleProps.length) {
         this.handleElements = [];
       }
-
       return null;
     }
   }, {
@@ -8472,11 +7613,10 @@ var MultiSlider = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var _classNames4,
-          _this2 = this;
-
+        _this2 = this;
       var _this$props3 = this.props,
-          label = _this$props3.label,
-          className = _this$props3.className;
+        label = _this$props3.label,
+        className = _this$props3.className;
       var baseProps = extractBaseProps(this.props);
       var SliderClass = classnames(_defineProperty$1({}, 'Slider', true), className);
       var WrapperClass = classnames((_classNames4 = {}, _defineProperty$1(_classNames4, 'Slider-wrapper', true), _defineProperty$1(_classNames4, 'Slider-wrapper--disabled', this.props.disabled), _classNames4));
@@ -8499,10 +7639,8 @@ var MultiSlider = /*#__PURE__*/function (_React$Component) {
       }, this.renderLabels()), this.renderHandles()));
     }
   }]);
-
   return MultiSlider;
 }(React.Component);
-
 _defineProperty$1(MultiSlider, "defaultProps", {
   labelStepSize: 1,
   max: 10,
@@ -8510,16 +7648,14 @@ _defineProperty$1(MultiSlider, "defaultProps", {
   stepSize: 1,
   labelRenderer: true
 });
-
 _defineProperty$1(MultiSlider, "Handle", MultiSliderHandle);
 
-var _excluded$H = ["children", "className", "onOutsideClick"];
+var _excluded$P = ["children", "className", "onOutsideClick"];
 var OutsideClick = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var children = props.children,
-      className = props.className,
-      onOutsideClick = props.onOutsideClick,
-      rest = _objectWithoutProperties(props, _excluded$H);
-
+    className = props.className,
+    onOutsideClick = props.onOutsideClick,
+    rest = _objectWithoutProperties(props, _excluded$P);
   var innerRef = React.useRef(null);
   React.useImperativeHandle(ref, function () {
     return innerRef.current;
@@ -8532,11 +7668,9 @@ var OutsideClick = /*#__PURE__*/React.forwardRef(function (props, ref) {
   }, []);
   var handleOutsideClick = React.useCallback(function (event) {
     var element = innerRef;
-
     if (!event.target || !element.current) {
       return;
     }
-
     if (!element.current.contains(event.target)) {
       onOutsideClick(event);
     }
@@ -8550,16 +7684,14 @@ var OutsideClick = /*#__PURE__*/React.forwardRef(function (props, ref) {
 });
 OutsideClick.displayName = 'OutsideClick';
 
-var _excluded$G = ["appearance", "children", "className", "color"];
+var _excluded$O = ["appearance", "children", "className", "color"];
 var Paragraph = function Paragraph(props) {
   var _classNames;
-
   var appearance = props.appearance,
-      children = props.children,
-      className = props.className,
-      color = props.color,
-      rest = _objectWithoutProperties(props, _excluded$G);
-
+    children = props.children,
+    className = props.className,
+    color = props.color,
+    rest = _objectWithoutProperties(props, _excluded$O);
   var classes = classnames((_classNames = {
     Text: true
   }, _defineProperty$1(_classNames, "Text--".concat(appearance), !color && appearance), _defineProperty$1(_classNames, "color-".concat(color), color), _classNames), className);
@@ -8577,11 +7709,10 @@ Paragraph.defaultProps = {
 
 var ProgressBar = function ProgressBar(props) {
   var _classNames;
-
   var max = props.max,
-      value = props.value,
-      className = props.className,
-      size = props.size;
+    value = props.value,
+    className = props.className,
+    size = props.size;
   var baseProps = extractBaseProps(props);
   var style = {
     width: value > 0 ? "".concat(Math.min(value, max) * 100 / max, "%") : '0'
@@ -8606,24 +7737,22 @@ ProgressBar.defaultProps = {
   size: 'regular'
 };
 
-var _excluded$F = ["size", "label", "disabled", "onChange", "name", "value", "checked", "defaultChecked", "className", "helpText", "error"];
+var _excluded$N = ["size", "label", "disabled", "onChange", "name", "value", "checked", "defaultChecked", "className", "helpText", "error"];
 var Radio = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
   var _classNames, _classNames2, _classNames3;
-
   var _props$size = props.size,
-      size = _props$size === void 0 ? 'regular' : _props$size,
-      label = props.label,
-      disabled = props.disabled,
-      onChange = props.onChange,
-      name = props.name,
-      value = props.value,
-      checked = props.checked,
-      defaultChecked = props.defaultChecked,
-      className = props.className,
-      helpText = props.helpText,
-      error = props.error,
-      rest = _objectWithoutProperties(props, _excluded$F);
-
+    size = _props$size === void 0 ? 'regular' : _props$size,
+    label = props.label,
+    disabled = props.disabled,
+    onChange = props.onChange,
+    name = props.name,
+    value = props.value,
+    checked = props.checked,
+    defaultChecked = props.defaultChecked,
+    className = props.className,
+    helpText = props.helpText,
+    error = props.error,
+    rest = _objectWithoutProperties(props, _excluded$N);
   var ref = React.useRef(null);
   React.useImperativeHandle(forwardedRef, function () {
     return ref.current;
@@ -8673,12 +7802,11 @@ var Radio = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
 });
 Radio.displayName = 'Radio';
 
-var _excluded$E = ["className", "children"];
+var _excluded$M = ["className", "children"];
 var Row = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var className = props.className,
-      children = props.children,
-      rest = _objectWithoutProperties(props, _excluded$E);
-
+    children = props.children,
+    rest = _objectWithoutProperties(props, _excluded$M);
   var classes = classnames(_defineProperty$1({
     Row: true
   }, "".concat(className), className));
@@ -8693,14 +7821,13 @@ Row.displayName = 'Row';
 
 var StatusHint = function StatusHint(props) {
   var _classNames2;
-
   var appearance = props.appearance,
-      children = props.children,
-      _onMouseEnter = props.onMouseEnter,
-      _onMouseLeave = props.onMouseLeave,
-      _onClick = props.onClick,
-      truncateLabel = props.truncateLabel,
-      className = props.className;
+    children = props.children,
+    _onMouseEnter = props.onMouseEnter,
+    _onMouseLeave = props.onMouseLeave,
+    _onClick = props.onClick,
+    truncateLabel = props.truncateLabel,
+    className = props.className;
   var baseProps = extractBaseProps(props);
   var StatusHintClass = classnames(_defineProperty$1({}, 'StatusHint', true), className);
   var StatusHintIconClass = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'StatusHint-icon', true), _defineProperty$1(_classNames2, "StatusHint--".concat(appearance), appearance), _classNames2));
@@ -8708,7 +7835,6 @@ var StatusHint = function StatusHint(props) {
   return (
     /*#__PURE__*/
     // TODO(a11y): fix accessibility
-
     /* eslint-disable */
     React.createElement("div", _extends$2({
       "data-test": "DesignSystem-StatusHint"
@@ -8740,11 +7866,10 @@ StatusHint.defaultProps = {
 
 var Pills = function Pills(props) {
   var _classNames;
-
   var appearance = props.appearance,
-      children = props.children,
-      subtle = props.subtle,
-      className = props.className;
+    children = props.children,
+    subtle = props.subtle,
+    className = props.className;
   var baseProps = extractBaseProps(props);
   var classes = classnames((_classNames = {
     Pills: true
@@ -8762,8 +7887,8 @@ Pills.defaultProps = {
 
 var Spinner = function Spinner(props) {
   var appearance = props.appearance,
-      size = props.size,
-      className = props.className;
+    size = props.size,
+    className = props.className;
   var baseProps = extractBaseProps(props);
   var wrapperClasses = classnames(_defineProperty$1({
     Spinner: true
@@ -8774,13 +7899,19 @@ var Spinner = function Spinner(props) {
   var svgProps = {
     viewBox: '0 0 50 50'
   };
+  var strokeWidthMapping = {
+    xsmall: 8,
+    small: 6,
+    medium: 4,
+    large: 4
+  };
   var circleProps = {
     cx: 25,
     cy: 25,
     r: 20,
     fill: 'none',
     strokeMiterlimit: '10',
-    strokeWidth: '4'
+    strokeWidth: strokeWidthMapping[size]
   };
   return /*#__PURE__*/React.createElement("svg", _extends$2({}, baseProps, {
     className: wrapperClasses
@@ -8794,33 +7925,28 @@ Spinner.defaultProps = {
   size: 'medium'
 };
 
-var _excluded$D = ["value", "defaultValue", "onRelease", "onChange"];
+var _excluded$L = ["value", "defaultValue", "onRelease", "onChange"];
 var Slider = function Slider(props) {
   var valueProp = props.value,
-      defaultValue = props.defaultValue,
-      onRelease = props.onRelease,
-      onChange = props.onChange,
-      rest = _objectWithoutProperties(props, _excluded$D);
-
+    defaultValue = props.defaultValue,
+    onRelease = props.onRelease,
+    onChange = props.onChange,
+    rest = _objectWithoutProperties(props, _excluded$L);
   var _React$useState = React.useState(valueProp === undefined ? defaultValue : valueProp),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      value = _React$useState2[0],
-      setValue = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    value = _React$useState2[0],
+    setValue = _React$useState2[1];
   React.useEffect(function () {
     if (valueProp !== undefined) {
       setValue(valueProp);
     }
   }, [valueProp]);
-
   var onChangeHandler = function onChangeHandler(newValue) {
     if (valueProp === undefined) {
       setValue(newValue);
     }
-
     if (onChange) onChange(newValue);
   };
-
   return /*#__PURE__*/React.createElement(MultiSlider, rest, /*#__PURE__*/React.createElement(MultiSlider.Handle, {
     value: value,
     onChange: onChangeHandler,
@@ -8833,40 +7959,33 @@ Slider.defaultProps = _objectSpread2(_objectSpread2({}, MultiSlider.defaultProps
   defaultValue: 0
 });
 
-var _excluded$C = ["value", "defaultValue", "onChange", "onRelease"];
+var _excluded$K = ["value", "defaultValue", "onChange", "onRelease"];
 var RangeIndex;
-
 (function (RangeIndex) {
   RangeIndex[RangeIndex["START"] = 0] = "START";
   RangeIndex[RangeIndex["END"] = 1] = "END";
 })(RangeIndex || (RangeIndex = {}));
-
 var RangeSlider = function RangeSlider(props) {
   var valueProp = props.value,
-      defaultValue = props.defaultValue,
-      onChange = props.onChange,
-      onRelease = props.onRelease,
-      rest = _objectWithoutProperties(props, _excluded$C);
-
+    defaultValue = props.defaultValue,
+    onChange = props.onChange,
+    onRelease = props.onRelease,
+    rest = _objectWithoutProperties(props, _excluded$K);
   var _React$useState = React.useState(valueProp === undefined ? defaultValue : valueProp),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      value = _React$useState2[0],
-      setValue = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    value = _React$useState2[0],
+    setValue = _React$useState2[1];
   React.useEffect(function () {
     if (valueProp !== undefined) {
       setValue(valueProp);
     }
   }, [valueProp]);
-
   var onChangeHandler = function onChangeHandler(range) {
     if (valueProp === undefined) {
       setValue(range);
     }
-
     if (onChange) onChange(range);
   };
-
   return /*#__PURE__*/React.createElement(MultiSlider, _extends$2({
     onRangeChange: onChangeHandler,
     onRangeRelease: onRelease
@@ -8882,16 +8001,14 @@ RangeSlider.defaultProps = _objectSpread2(_objectSpread2({}, MultiSlider.default
   defaultValue: [0, 10]
 });
 
-var _excluded$B = ["appearance", "children", "className", "color"];
+var _excluded$J = ["appearance", "children", "className", "color"];
 var Subheading = function Subheading(props) {
   var _classNames;
-
   var appearance = props.appearance,
-      children = props.children,
-      className = props.className,
-      color = props.color,
-      rest = _objectWithoutProperties(props, _excluded$B);
-
+    children = props.children,
+    className = props.className,
+    color = props.color,
+    rest = _objectWithoutProperties(props, _excluded$J);
   var classes = classnames((_classNames = {
     Subheading: true
   }, _defineProperty$1(_classNames, "Subheading--".concat(appearance), !color && appearance), _defineProperty$1(_classNames, "color-".concat(color), color), _classNames), className);
@@ -8907,8 +8024,7 @@ Subheading.defaultProps = {
   appearance: 'default'
 };
 
-var _excluded$A = ["size", "defaultChecked", "disabled", "onChange", "name", "value", "className", "appearance", "checked"];
-
+var _excluded$I = ["size", "defaultChecked", "disabled", "onChange", "name", "value", "className", "appearance", "checked"];
 /**
  * ######Switch has two types:
  *  - [Controlled Switch](https://reactjs.org/docs/forms.html#controlled-components)
@@ -8916,37 +8032,32 @@ var _excluded$A = ["size", "defaultChecked", "disabled", "onChange", "name", "va
  */
 var Switch = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var _classNames, _classNames2;
-
   var _props$size = props.size,
-      size = _props$size === void 0 ? 'regular' : _props$size,
-      defaultChecked = props.defaultChecked,
-      disabled = props.disabled,
-      onChange = props.onChange,
-      name = props.name,
-      value = props.value,
-      className = props.className;
-      props.appearance;
-      var checkedProp = props.checked,
-      rest = _objectWithoutProperties(props, _excluded$A);
-
+    size = _props$size === void 0 ? 'regular' : _props$size,
+    defaultChecked = props.defaultChecked,
+    disabled = props.disabled,
+    onChange = props.onChange,
+    name = props.name,
+    value = props.value,
+    className = props.className;
+    props.appearance;
+    var checkedProp = props.checked,
+    rest = _objectWithoutProperties(props, _excluded$I);
   var _React$useState = React.useState(checkedProp === undefined ? defaultChecked : checkedProp),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      checked = _React$useState2[0],
-      setChecked = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    checked = _React$useState2[0],
+    setChecked = _React$useState2[1];
   React.useEffect(function () {
     if (checkedProp !== undefined) setChecked(checkedProp);
   }, [checkedProp]);
   var SwitchClass = classnames((_classNames = {}, _defineProperty$1(_classNames, 'Switch', true), _defineProperty$1(_classNames, 'Switch--disabled', disabled), _defineProperty$1(_classNames, "Switch--".concat(size), size), _classNames), className);
   var SwitchWrapper = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'Switch-wrapper', true), _defineProperty$1(_classNames2, 'Switch-wrapper--disabled', disabled), _defineProperty$1(_classNames2, "Switch-wrapper--".concat(size), size), _defineProperty$1(_classNames2, 'Switch-wrapper--checked', checked), _defineProperty$1(_classNames2, 'Switch-wrapper--checkedDisabled', checked && disabled), _classNames2));
-
   var onChangeHandler = function onChangeHandler(event) {
     if (event.type == 'change' || isSpaceKey(event)) {
       if (checkedProp === undefined) setChecked(!checked);
       if (onChange) onChange(event, !checked);
     }
   };
-
   return /*#__PURE__*/React.createElement("div", {
     className: SwitchClass
   }, /*#__PURE__*/React.createElement("input", _extends$2({}, rest, {
@@ -8966,29 +8077,28 @@ var Switch = /*#__PURE__*/React.forwardRef(function (props, ref) {
 });
 Switch.displayName = 'Switch';
 
-var _excluded$z = ["rows", "resize", "disabled", "name", "placeholder", "value", "defaultValue", "required", "error", "onChange", "onClick", "onBlur", "onFocus", "className"];
+var _excluded$H = ["rows", "resize", "disabled", "name", "placeholder", "value", "defaultValue", "required", "error", "onChange", "onClick", "onBlur", "onFocus", "className", "readOnly"];
 var Textarea = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var _classNames;
-
   var _props$rows = props.rows,
-      rows = _props$rows === void 0 ? 3 : _props$rows,
-      _props$resize = props.resize,
-      resize = _props$resize === void 0 ? true : _props$resize,
-      disabled = props.disabled,
-      name = props.name,
-      placeholder = props.placeholder,
-      value = props.value,
-      defaultValue = props.defaultValue,
-      required = props.required,
-      error = props.error,
-      onChange = props.onChange,
-      onClick = props.onClick,
-      onBlur = props.onBlur,
-      onFocus = props.onFocus,
-      className = props.className,
-      rest = _objectWithoutProperties(props, _excluded$z);
-
-  var classes = classnames((_classNames = {}, _defineProperty$1(_classNames, 'Textarea', true), _defineProperty$1(_classNames, 'Textarea--resize', resize), _defineProperty$1(_classNames, 'Textarea--error', error), _classNames), className);
+    rows = _props$rows === void 0 ? 3 : _props$rows,
+    _props$resize = props.resize,
+    resize = _props$resize === void 0 ? true : _props$resize,
+    disabled = props.disabled,
+    name = props.name,
+    placeholder = props.placeholder,
+    value = props.value,
+    defaultValue = props.defaultValue,
+    required = props.required,
+    error = props.error,
+    onChange = props.onChange,
+    onClick = props.onClick,
+    onBlur = props.onBlur,
+    onFocus = props.onFocus,
+    className = props.className,
+    readOnly = props.readOnly,
+    rest = _objectWithoutProperties(props, _excluded$H);
+  var classes = classnames((_classNames = {}, _defineProperty$1(_classNames, 'Textarea', true), _defineProperty$1(_classNames, 'Textarea--resize', resize), _defineProperty$1(_classNames, 'Textarea--error', error), _defineProperty$1(_classNames, 'Textarea--readOnly', readOnly), _classNames), className);
   return /*#__PURE__*/React.createElement("textarea", _extends$2({
     "data-test": "DesignSystem-Textarea"
   }, rest, {
@@ -9011,17 +8121,14 @@ Textarea.displayName = 'Textarea';
 
 var ActionButton = function ActionButton(props) {
   var _classNames;
-
   var appearance = props.appearance,
-      label = props.label,
-      onClick = props.onClick;
+    label = props.label,
+    onClick = props.onClick;
   var buttonClass = classnames((_classNames = {}, _defineProperty$1(_classNames, 'Button', true), _defineProperty$1(_classNames, 'Button--tiny', true), _defineProperty$1(_classNames, 'Toast-actionButton', true), _defineProperty$1(_classNames, "Toast-actionButton--".concat(appearance), appearance), _classNames));
-
   var onClickHandler = function onClickHandler(e) {
     e.preventDefault();
     if (onClick) onClick(e);
   };
-
   return /*#__PURE__*/React.createElement("button", {
     className: buttonClass,
     onClick: onClickHandler
@@ -9029,7 +8136,6 @@ var ActionButton = function ActionButton(props) {
     appearance: "white"
   }, label));
 };
-
 ActionButton.displayName = 'ActionButton';
 ActionButton.defaultProps = {
   appearance: 'default'
@@ -9037,12 +8143,11 @@ ActionButton.defaultProps = {
 
 var Toast = function Toast(props) {
   var _classNames, _classNames2, _classNames4, _classNames5;
-
   var title = props.title,
-      message = props.message,
-      actions = props.actions,
-      onClose = props.onClose,
-      className = props.className;
+    message = props.message,
+    actions = props.actions,
+    onClose = props.onClose,
+    className = props.className;
   var appearance = props.appearance;
   appearance = appearance === 'default' ? 'info' : appearance;
   var baseProps = extractBaseProps(props);
@@ -9055,20 +8160,15 @@ var Toast = function Toast(props) {
   };
   var icon = IconMapping[appearance];
   var titleClass = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'Toast-title', true), _defineProperty$1(_classNames2, 'Toast-title--withMessage', message), _classNames2));
-
   var iconClass = function iconClass(align) {
     var _classNames3;
-
     return classnames((_classNames3 = {}, _defineProperty$1(_classNames3, 'Toast-icon', true), _defineProperty$1(_classNames3, "Toast-icon--".concat(align), align), _defineProperty$1(_classNames3, "Toast-icon--".concat(appearance), appearance), _defineProperty$1(_classNames3, "Toast-close-icon--".concat(appearance), appearance && align === 'right'), _classNames3));
   };
-
   var textClass = classnames((_classNames4 = {}, _defineProperty$1(_classNames4, 'Toast-text', true), _defineProperty$1(_classNames4, "Toast-text--".concat(appearance), appearance), _classNames4));
   var headingClass = classnames((_classNames5 = {}, _defineProperty$1(_classNames5, 'Toast-heading', true), _defineProperty$1(_classNames5, "Toast-heading--".concat(appearance), appearance), _classNames5));
-
   var onCloseHandler = function onCloseHandler() {
     if (onClose) onClose();
   };
-
   return /*#__PURE__*/React.createElement("div", _extends$2({}, baseProps, {
     className: wrapperClass
   }), icon && /*#__PURE__*/React.createElement(Icon, {
@@ -9358,7 +8458,7 @@ if (!Object.keys) {
 }
 var implementation$4 = keysShim$1;
 
-var slice$1 = Array.prototype.slice;
+var slice = Array.prototype.slice;
 
 
 var origKeys = Object.keys;
@@ -9376,7 +8476,7 @@ keysShim.shim = function shimObjectKeys() {
 		if (!keysWorksWithArguments) {
 			Object.keys = function keys(object) { // eslint-disable-line func-name-matching
 				if (isArguments$1(object)) {
-					return originalKeys(slice$1.call(object));
+					return originalKeys(slice.call(object));
 				}
 				return originalKeys(object);
 			};
@@ -9434,6 +8534,27 @@ var shams = function hasToStringTagShams() {
 	return shams$1() && !!Symbol.toStringTag;
 };
 
+/** @type {import('.')} */
+var esErrors = Error;
+
+/** @type {import('./eval')} */
+var _eval = EvalError;
+
+/** @type {import('./range')} */
+var range = RangeError;
+
+/** @type {import('./ref')} */
+var ref = ReferenceError;
+
+/** @type {import('./syntax')} */
+var syntax = SyntaxError;
+
+/** @type {import('./type')} */
+var type = TypeError;
+
+/** @type {import('./uri')} */
+var uri = URIError;
+
 var origSymbol = typeof Symbol !== 'undefined' && Symbol;
 
 
@@ -9446,46 +8567,92 @@ var hasSymbols$2 = function hasNativeSymbols() {
 	return shams$1();
 };
 
+var test = {
+	__proto__: null,
+	foo: {}
+};
+
+var $Object$1 = Object;
+
+/** @type {import('.')} */
+var hasProto$1 = function hasProto() {
+	// @ts-expect-error: TS errors on an inherited property for some reason
+	return { __proto__: test }.foo === test.foo
+		&& !(test instanceof $Object$1);
+};
+
 /* eslint no-invalid-this: 1 */
 
 var ERROR_MESSAGE = 'Function.prototype.bind called on incompatible ';
-var slice = Array.prototype.slice;
 var toStr$2 = Object.prototype.toString;
+var max = Math.max;
 var funcType = '[object Function]';
+
+var concatty = function concatty(a, b) {
+    var arr = [];
+
+    for (var i = 0; i < a.length; i += 1) {
+        arr[i] = a[i];
+    }
+    for (var j = 0; j < b.length; j += 1) {
+        arr[j + a.length] = b[j];
+    }
+
+    return arr;
+};
+
+var slicy = function slicy(arrLike, offset) {
+    var arr = [];
+    for (var i = offset || 0, j = 0; i < arrLike.length; i += 1, j += 1) {
+        arr[j] = arrLike[i];
+    }
+    return arr;
+};
+
+var joiny = function (arr, joiner) {
+    var str = '';
+    for (var i = 0; i < arr.length; i += 1) {
+        str += arr[i];
+        if (i + 1 < arr.length) {
+            str += joiner;
+        }
+    }
+    return str;
+};
 
 var implementation$3 = function bind(that) {
     var target = this;
-    if (typeof target !== 'function' || toStr$2.call(target) !== funcType) {
+    if (typeof target !== 'function' || toStr$2.apply(target) !== funcType) {
         throw new TypeError(ERROR_MESSAGE + target);
     }
-    var args = slice.call(arguments, 1);
+    var args = slicy(arguments, 1);
 
     var bound;
     var binder = function () {
         if (this instanceof bound) {
             var result = target.apply(
                 this,
-                args.concat(slice.call(arguments))
+                concatty(args, arguments)
             );
             if (Object(result) === result) {
                 return result;
             }
             return this;
-        } else {
-            return target.apply(
-                that,
-                args.concat(slice.call(arguments))
-            );
         }
+        return target.apply(
+            that,
+            concatty(args, arguments)
+        );
+
     };
 
-    var boundLength = Math.max(0, target.length - args.length);
+    var boundLength = max(0, target.length - args.length);
     var boundArgs = [];
     for (var i = 0; i < boundLength; i++) {
-        boundArgs.push('$' + i);
+        boundArgs[i] = '$' + i;
     }
 
-    bound = Function('binder', 'return function (' + boundArgs.join(',') + '){ return binder.apply(this,arguments); }')(binder);
+    bound = Function('binder', 'return function (' + joiny(boundArgs, ',') + '){ return binder.apply(this,arguments); }')(binder);
 
     if (target.prototype) {
         var Empty = function Empty() {};
@@ -9499,13 +8666,42 @@ var implementation$3 = function bind(that) {
 
 var functionBind = Function.prototype.bind || implementation$3;
 
-var src = functionBind.call(Function.call, Object.prototype.hasOwnProperty);
+var call = Function.prototype.call;
+var $hasOwn = Object.prototype.hasOwnProperty;
+
+
+/** @type {import('.')} */
+var hasown = functionBind.call(call, $hasOwn);
+
+var $Error = esErrors;
+
+var $EvalError = _eval;
+
+var $RangeError = range;
+
+var $ReferenceError = ref;
+
+var $SyntaxError = syntax;
+
+var $TypeError$2 = type;
+
+var $URIError = uri;
+
+var require$$1 = hasProto$1;
+
+var hasOwn = hasown;
 
 var undefined$1;
 
-var $SyntaxError = SyntaxError;
+
+
+
+
+
+
+
+
 var $Function = Function;
-var $TypeError$2 = TypeError;
 
 // eslint-disable-next-line consistent-return
 var getEvalledConstructor = function (expressionSyntax) {
@@ -9514,19 +8710,19 @@ var getEvalledConstructor = function (expressionSyntax) {
 	} catch (e) {}
 };
 
-var $gOPD$1 = Object.getOwnPropertyDescriptor;
-if ($gOPD$1) {
+var $gOPD$2 = Object.getOwnPropertyDescriptor;
+if ($gOPD$2) {
 	try {
-		$gOPD$1({}, '');
+		$gOPD$2({}, '');
 	} catch (e) {
-		$gOPD$1 = null; // this is IE 8, which has a broken gOPD
+		$gOPD$2 = null; // this is IE 8, which has a broken gOPD
 	}
 }
 
 var throwTypeError = function () {
 	throw new $TypeError$2();
 };
-var ThrowTypeError = $gOPD$1
+var ThrowTypeError = $gOPD$2
 	? (function () {
 		try {
 			// eslint-disable-next-line no-unused-expressions, no-caller, no-restricted-properties
@@ -9535,7 +8731,7 @@ var ThrowTypeError = $gOPD$1
 		} catch (calleeThrows) {
 			try {
 				// IE 8 throws on Object.getOwnPropertyDescriptor(arguments, '')
-				return $gOPD$1(arguments, 'callee').get;
+				return $gOPD$2(arguments, 'callee').get;
 			} catch (gOPDthrows) {
 				return throwTypeError;
 			}
@@ -9544,18 +8740,24 @@ var ThrowTypeError = $gOPD$1
 	: throwTypeError;
 
 var hasSymbols$1 = hasSymbols$2();
+var hasProto = require$$1();
 
-var getProto$1 = Object.getPrototypeOf || function (x) { return x.__proto__; }; // eslint-disable-line no-proto
+var getProto$1 = Object.getPrototypeOf || (
+	hasProto
+		? function (x) { return x.__proto__; } // eslint-disable-line no-proto
+		: null
+);
 
 var needsEval = {};
 
-var TypedArray = typeof Uint8Array === 'undefined' ? undefined$1 : getProto$1(Uint8Array);
+var TypedArray = typeof Uint8Array === 'undefined' || !getProto$1 ? undefined$1 : getProto$1(Uint8Array);
 
 var INTRINSICS = {
+	__proto__: null,
 	'%AggregateError%': typeof AggregateError === 'undefined' ? undefined$1 : AggregateError,
 	'%Array%': Array,
 	'%ArrayBuffer%': typeof ArrayBuffer === 'undefined' ? undefined$1 : ArrayBuffer,
-	'%ArrayIteratorPrototype%': hasSymbols$1 ? getProto$1([][Symbol.iterator]()) : undefined$1,
+	'%ArrayIteratorPrototype%': hasSymbols$1 && getProto$1 ? getProto$1([][Symbol.iterator]()) : undefined$1,
 	'%AsyncFromSyncIteratorPrototype%': undefined$1,
 	'%AsyncFunction%': needsEval,
 	'%AsyncGenerator%': needsEval,
@@ -9563,6 +8765,8 @@ var INTRINSICS = {
 	'%AsyncIteratorPrototype%': needsEval,
 	'%Atomics%': typeof Atomics === 'undefined' ? undefined$1 : Atomics,
 	'%BigInt%': typeof BigInt === 'undefined' ? undefined$1 : BigInt,
+	'%BigInt64Array%': typeof BigInt64Array === 'undefined' ? undefined$1 : BigInt64Array,
+	'%BigUint64Array%': typeof BigUint64Array === 'undefined' ? undefined$1 : BigUint64Array,
 	'%Boolean%': Boolean,
 	'%DataView%': typeof DataView === 'undefined' ? undefined$1 : DataView,
 	'%Date%': Date,
@@ -9570,9 +8774,9 @@ var INTRINSICS = {
 	'%decodeURIComponent%': decodeURIComponent,
 	'%encodeURI%': encodeURI,
 	'%encodeURIComponent%': encodeURIComponent,
-	'%Error%': Error,
+	'%Error%': $Error,
 	'%eval%': eval, // eslint-disable-line no-eval
-	'%EvalError%': EvalError,
+	'%EvalError%': $EvalError,
 	'%Float32Array%': typeof Float32Array === 'undefined' ? undefined$1 : Float32Array,
 	'%Float64Array%': typeof Float64Array === 'undefined' ? undefined$1 : Float64Array,
 	'%FinalizationRegistry%': typeof FinalizationRegistry === 'undefined' ? undefined$1 : FinalizationRegistry,
@@ -9583,10 +8787,10 @@ var INTRINSICS = {
 	'%Int32Array%': typeof Int32Array === 'undefined' ? undefined$1 : Int32Array,
 	'%isFinite%': isFinite,
 	'%isNaN%': isNaN,
-	'%IteratorPrototype%': hasSymbols$1 ? getProto$1(getProto$1([][Symbol.iterator]())) : undefined$1,
+	'%IteratorPrototype%': hasSymbols$1 && getProto$1 ? getProto$1(getProto$1([][Symbol.iterator]())) : undefined$1,
 	'%JSON%': typeof JSON === 'object' ? JSON : undefined$1,
 	'%Map%': typeof Map === 'undefined' ? undefined$1 : Map,
-	'%MapIteratorPrototype%': typeof Map === 'undefined' || !hasSymbols$1 ? undefined$1 : getProto$1(new Map()[Symbol.iterator]()),
+	'%MapIteratorPrototype%': typeof Map === 'undefined' || !hasSymbols$1 || !getProto$1 ? undefined$1 : getProto$1(new Map()[Symbol.iterator]()),
 	'%Math%': Math,
 	'%Number%': Number,
 	'%Object%': Object,
@@ -9594,15 +8798,15 @@ var INTRINSICS = {
 	'%parseInt%': parseInt,
 	'%Promise%': typeof Promise === 'undefined' ? undefined$1 : Promise,
 	'%Proxy%': typeof Proxy === 'undefined' ? undefined$1 : Proxy,
-	'%RangeError%': RangeError,
-	'%ReferenceError%': ReferenceError,
+	'%RangeError%': $RangeError,
+	'%ReferenceError%': $ReferenceError,
 	'%Reflect%': typeof Reflect === 'undefined' ? undefined$1 : Reflect,
 	'%RegExp%': RegExp,
 	'%Set%': typeof Set === 'undefined' ? undefined$1 : Set,
-	'%SetIteratorPrototype%': typeof Set === 'undefined' || !hasSymbols$1 ? undefined$1 : getProto$1(new Set()[Symbol.iterator]()),
+	'%SetIteratorPrototype%': typeof Set === 'undefined' || !hasSymbols$1 || !getProto$1 ? undefined$1 : getProto$1(new Set()[Symbol.iterator]()),
 	'%SharedArrayBuffer%': typeof SharedArrayBuffer === 'undefined' ? undefined$1 : SharedArrayBuffer,
 	'%String%': String,
-	'%StringIteratorPrototype%': hasSymbols$1 ? getProto$1(''[Symbol.iterator]()) : undefined$1,
+	'%StringIteratorPrototype%': hasSymbols$1 && getProto$1 ? getProto$1(''[Symbol.iterator]()) : undefined$1,
 	'%Symbol%': hasSymbols$1 ? Symbol : undefined$1,
 	'%SyntaxError%': $SyntaxError,
 	'%ThrowTypeError%': ThrowTypeError,
@@ -9612,11 +8816,21 @@ var INTRINSICS = {
 	'%Uint8ClampedArray%': typeof Uint8ClampedArray === 'undefined' ? undefined$1 : Uint8ClampedArray,
 	'%Uint16Array%': typeof Uint16Array === 'undefined' ? undefined$1 : Uint16Array,
 	'%Uint32Array%': typeof Uint32Array === 'undefined' ? undefined$1 : Uint32Array,
-	'%URIError%': URIError,
+	'%URIError%': $URIError,
 	'%WeakMap%': typeof WeakMap === 'undefined' ? undefined$1 : WeakMap,
 	'%WeakRef%': typeof WeakRef === 'undefined' ? undefined$1 : WeakRef,
 	'%WeakSet%': typeof WeakSet === 'undefined' ? undefined$1 : WeakSet
 };
+
+if (getProto$1) {
+	try {
+		null.error; // eslint-disable-line no-unused-expressions
+	} catch (e) {
+		// https://github.com/tc39/proposal-shadowrealm/pull/384#issuecomment-1364264229
+		var errorProto = getProto$1(getProto$1(e));
+		INTRINSICS['%Error.prototype%'] = errorProto;
+	}
+}
 
 var doEval = function doEval(name) {
 	var value;
@@ -9633,7 +8847,7 @@ var doEval = function doEval(name) {
 		}
 	} else if (name === '%AsyncIteratorPrototype%') {
 		var gen = doEval('%AsyncGenerator%');
-		if (gen) {
+		if (gen && getProto$1) {
 			value = getProto$1(gen.prototype);
 		}
 	}
@@ -9644,6 +8858,7 @@ var doEval = function doEval(name) {
 };
 
 var LEGACY_ALIASES = {
+	__proto__: null,
 	'%ArrayBufferPrototype%': ['ArrayBuffer', 'prototype'],
 	'%ArrayPrototype%': ['Array', 'prototype'],
 	'%ArrayProto_entries%': ['Array', 'prototype', 'entries'],
@@ -9703,6 +8918,7 @@ var $concat = functionBind.call(Function.call, Array.prototype.concat);
 var $spliceApply = functionBind.call(Function.apply, Array.prototype.splice);
 var $replace = functionBind.call(Function.call, String.prototype.replace);
 var $strSlice = functionBind.call(Function.call, String.prototype.slice);
+var $exec$1 = functionBind.call(Function.call, RegExp.prototype.exec);
 
 /* adapted from https://github.com/lodash/lodash/blob/4.17.15/dist/lodash.js#L6735-L6744 */
 var rePropName = /[^%.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|%$))/g;
@@ -9726,12 +8942,12 @@ var stringToPath = function stringToPath(string) {
 var getBaseIntrinsic = function getBaseIntrinsic(name, allowMissing) {
 	var intrinsicName = name;
 	var alias;
-	if (src(LEGACY_ALIASES, intrinsicName)) {
+	if (hasOwn(LEGACY_ALIASES, intrinsicName)) {
 		alias = LEGACY_ALIASES[intrinsicName];
 		intrinsicName = '%' + alias[0] + '%';
 	}
 
-	if (src(INTRINSICS, intrinsicName)) {
+	if (hasOwn(INTRINSICS, intrinsicName)) {
 		var value = INTRINSICS[intrinsicName];
 		if (value === needsEval) {
 			value = doEval(intrinsicName);
@@ -9758,6 +8974,9 @@ var getIntrinsic = function GetIntrinsic(name, allowMissing) {
 		throw new $TypeError$2('"allowMissing" argument must be a boolean');
 	}
 
+	if ($exec$1(/^%?[^%]*%?$/, name) === null) {
+		throw new $SyntaxError('`%` may not be present anywhere but at the beginning and end of the intrinsic name');
+	}
 	var parts = stringToPath(name);
 	var intrinsicBaseName = parts.length > 0 ? parts[0] : '';
 
@@ -9792,7 +9011,7 @@ var getIntrinsic = function GetIntrinsic(name, allowMissing) {
 		intrinsicBaseName += '.' + part;
 		intrinsicRealName = '%' + intrinsicBaseName + '%';
 
-		if (src(INTRINSICS, intrinsicRealName)) {
+		if (hasOwn(INTRINSICS, intrinsicRealName)) {
 			value = INTRINSICS[intrinsicRealName];
 		} else if (value != null) {
 			if (!(part in value)) {
@@ -9801,8 +9020,8 @@ var getIntrinsic = function GetIntrinsic(name, allowMissing) {
 				}
 				return void undefined$1;
 			}
-			if ($gOPD$1 && (i + 1) >= parts.length) {
-				var desc = $gOPD$1(value, part);
+			if ($gOPD$2 && (i + 1) >= parts.length) {
+				var desc = $gOPD$2(value, part);
 				isOwn = !!desc;
 
 				// By convention, when a data property is converted to an accessor
@@ -9818,7 +9037,7 @@ var getIntrinsic = function GetIntrinsic(name, allowMissing) {
 					value = value[part];
 				}
 			} else {
-				isOwn = src(value, part);
+				isOwn = hasOwn(value, part);
 				value = value[part];
 			}
 
@@ -9830,42 +9049,174 @@ var getIntrinsic = function GetIntrinsic(name, allowMissing) {
 	return value;
 };
 
+var GetIntrinsic = getIntrinsic;
+
+/** @type {import('.')} */
+var $defineProperty$1 = GetIntrinsic('%Object.defineProperty%', true) || false;
+if ($defineProperty$1) {
+	try {
+		$defineProperty$1({}, 'a', { value: 1 });
+	} catch (e) {
+		// IE 8 has a broken defineProperty
+		$defineProperty$1 = false;
+	}
+}
+
+var esDefineProperty = $defineProperty$1;
+
+var $gOPD$1 = GetIntrinsic('%Object.getOwnPropertyDescriptor%', true);
+
+if ($gOPD$1) {
+	try {
+		$gOPD$1([], 'length');
+	} catch (e) {
+		// IE 8 has a broken gOPD
+		$gOPD$1 = null;
+	}
+}
+
+var gopd = $gOPD$1;
+
+var $defineProperty = esDefineProperty;
+
+var gOPD$2 = gopd;
+
+/** @type {import('.')} */
+var defineDataProperty = function defineDataProperty(
+	obj,
+	property,
+	value
+) {
+	if (!obj || (typeof obj !== 'object' && typeof obj !== 'function')) {
+		throw new $TypeError$2('`obj` must be an object or a function`');
+	}
+	if (typeof property !== 'string' && typeof property !== 'symbol') {
+		throw new $TypeError$2('`property` must be a string or a symbol`');
+	}
+	if (arguments.length > 3 && typeof arguments[3] !== 'boolean' && arguments[3] !== null) {
+		throw new $TypeError$2('`nonEnumerable`, if provided, must be a boolean or null');
+	}
+	if (arguments.length > 4 && typeof arguments[4] !== 'boolean' && arguments[4] !== null) {
+		throw new $TypeError$2('`nonWritable`, if provided, must be a boolean or null');
+	}
+	if (arguments.length > 5 && typeof arguments[5] !== 'boolean' && arguments[5] !== null) {
+		throw new $TypeError$2('`nonConfigurable`, if provided, must be a boolean or null');
+	}
+	if (arguments.length > 6 && typeof arguments[6] !== 'boolean') {
+		throw new $TypeError$2('`loose`, if provided, must be a boolean');
+	}
+
+	var nonEnumerable = arguments.length > 3 ? arguments[3] : null;
+	var nonWritable = arguments.length > 4 ? arguments[4] : null;
+	var nonConfigurable = arguments.length > 5 ? arguments[5] : null;
+	var loose = arguments.length > 6 ? arguments[6] : false;
+
+	/* @type {false | TypedPropertyDescriptor<unknown>} */
+	var desc = !!gOPD$2 && gOPD$2(obj, property);
+
+	if ($defineProperty) {
+		$defineProperty(obj, property, {
+			configurable: nonConfigurable === null && desc ? desc.configurable : !nonConfigurable,
+			enumerable: nonEnumerable === null && desc ? desc.enumerable : !nonEnumerable,
+			value: value,
+			writable: nonWritable === null && desc ? desc.writable : !nonWritable
+		});
+	} else if (loose || (!nonEnumerable && !nonWritable && !nonConfigurable)) {
+		// must fall back to [[Set]], and was not explicitly asked to make non-enumerable, non-writable, or non-configurable
+		obj[property] = value; // eslint-disable-line no-param-reassign
+	} else {
+		throw new $SyntaxError('This environment does not support defining a property as non-configurable, non-writable, or non-enumerable.');
+	}
+};
+
+var hasPropertyDescriptors = function hasPropertyDescriptors() {
+	return !!$defineProperty;
+};
+
+hasPropertyDescriptors.hasArrayLengthDefineBug = function hasArrayLengthDefineBug() {
+	// node v0.6 has a bug where array lengths can be Set but not Defined
+	if (!$defineProperty) {
+		return null;
+	}
+	try {
+		return $defineProperty([], 'length', { value: 1 }).length !== 1;
+	} catch (e) {
+		// In Firefox 4-22, defining length on an array throws an exception.
+		return true;
+	}
+};
+
+var hasPropertyDescriptors_1 = hasPropertyDescriptors;
+
+var define = defineDataProperty;
+
+var require$$0 = hasPropertyDescriptors_1;
+
+var hasDescriptors = require$$0();
+
+
+
+var $floor = GetIntrinsic('%Math.floor%');
+
+/** @type {import('.')} */
+var setFunctionLength$1 = function setFunctionLength(fn, length) {
+	if (typeof fn !== 'function') {
+		throw new $TypeError$2('`fn` is not a function');
+	}
+	if (typeof length !== 'number' || length < 0 || length > 0xFFFFFFFF || $floor(length) !== length) {
+		throw new $TypeError$2('`length` must be a positive 32-bit integer');
+	}
+
+	var loose = arguments.length > 2 && !!arguments[2];
+
+	var functionLengthIsConfigurable = true;
+	var functionLengthIsWritable = true;
+	if ('length' in fn && gOPD$2) {
+		var desc = gOPD$2(fn, 'length');
+		if (desc && !desc.configurable) {
+			functionLengthIsConfigurable = false;
+		}
+		if (desc && !desc.writable) {
+			functionLengthIsWritable = false;
+		}
+	}
+
+	if (functionLengthIsConfigurable || functionLengthIsWritable || !loose) {
+		if (hasDescriptors) {
+			define(/** @type {Parameters<define>[0]} */ (fn), 'length', length, true, true);
+		} else {
+			define(/** @type {Parameters<define>[0]} */ (fn), 'length', length);
+		}
+	}
+	return fn;
+};
+
+var setFunctionLength = setFunctionLength$1;
+
 var callBind = createCommonjsModule(function (module) {
 
 
 
 
-var $apply = getIntrinsic('%Function.prototype.apply%');
-var $call = getIntrinsic('%Function.prototype.call%');
-var $reflectApply = getIntrinsic('%Reflect.apply%', true) || functionBind.call($call, $apply);
 
-var $gOPD = getIntrinsic('%Object.getOwnPropertyDescriptor%', true);
-var $defineProperty = getIntrinsic('%Object.defineProperty%', true);
-var $max = getIntrinsic('%Math.max%');
 
-if ($defineProperty) {
-	try {
-		$defineProperty({}, 'a', { value: 1 });
-	} catch (e) {
-		// IE 8 has a broken defineProperty
-		$defineProperty = null;
-	}
-}
+var $apply = GetIntrinsic('%Function.prototype.apply%');
+var $call = GetIntrinsic('%Function.prototype.call%');
+var $reflectApply = GetIntrinsic('%Reflect.apply%', true) || functionBind.call($call, $apply);
+
+
+var $max = GetIntrinsic('%Math.max%');
 
 module.exports = function callBind(originalFunction) {
-	var func = $reflectApply(functionBind, $call, arguments);
-	if ($gOPD && $defineProperty) {
-		var desc = $gOPD(func, 'length');
-		if (desc.configurable) {
-			// original length, plus the receiver, minus any additional arguments (after the receiver)
-			$defineProperty(
-				func,
-				'length',
-				{ value: 1 + $max(0, originalFunction.length - (arguments.length - 1)) }
-			);
-		}
+	if (typeof originalFunction !== 'function') {
+		throw new $TypeError$2('a function is required');
 	}
-	return func;
+	var func = $reflectApply(functionBind, $call, arguments);
+	return setFunctionLength(
+		func,
+		1 + $max(0, originalFunction.length - (arguments.length - 1)),
+		true
+	);
 };
 
 var applyBind = function applyBind() {
@@ -9880,10 +9231,10 @@ if ($defineProperty) {
 });
 callBind.apply;
 
-var $indexOf = callBind(getIntrinsic('String.prototype.indexOf'));
+var $indexOf = callBind(GetIntrinsic('String.prototype.indexOf'));
 
 var callBound = function callBoundIntrinsic(name, allowMissing) {
-	var intrinsic = getIntrinsic(name, !!allowMissing);
+	var intrinsic = GetIntrinsic(name, !!allowMissing);
 	if (typeof intrinsic === 'function' && $indexOf(name, '.prototype.') > -1) {
 		return callBind(intrinsic);
 	}
@@ -12907,12 +12258,12 @@ var PopperJS = Popper$1;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var b="function"===typeof Symbol&&Symbol.for,c=b?Symbol.for("react.element"):60103,d=b?Symbol.for("react.portal"):60106,e=b?Symbol.for("react.fragment"):60107,f=b?Symbol.for("react.strict_mode"):60108,g=b?Symbol.for("react.profiler"):60114,h=b?Symbol.for("react.provider"):60109,k=b?Symbol.for("react.context"):60110,l=b?Symbol.for("react.async_mode"):60111,m=b?Symbol.for("react.concurrent_mode"):60111,n=b?Symbol.for("react.forward_ref"):60112,p=b?Symbol.for("react.suspense"):60113,q=b?
-Symbol.for("react.suspense_list"):60120,r=b?Symbol.for("react.memo"):60115,t=b?Symbol.for("react.lazy"):60116,v=b?Symbol.for("react.block"):60121,w=b?Symbol.for("react.fundamental"):60117,x=b?Symbol.for("react.responder"):60118,y=b?Symbol.for("react.scope"):60119;
-function z(a){if("object"===typeof a&&null!==a){var u=a.$$typeof;switch(u){case c:switch(a=a.type,a){case l:case m:case e:case g:case f:case p:return a;default:switch(a=a&&a.$$typeof,a){case k:case n:case t:case r:case h:return a;default:return u}}case d:return u}}}function A(a){return z(a)===m}var AsyncMode=l;var ConcurrentMode=m;var ContextConsumer=k;var ContextProvider=h;var Element=c;var ForwardRef=n;var Fragment=e;var Lazy=t;var Memo=r;var Portal=d;
-var Profiler=g;var StrictMode=f;var Suspense=p;var isAsyncMode=function(a){return A(a)||z(a)===l};var isConcurrentMode=A;var isContextConsumer=function(a){return z(a)===k};var isContextProvider=function(a){return z(a)===h};var isElement=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===c};var isForwardRef=function(a){return z(a)===n};var isFragment=function(a){return z(a)===e};var isLazy=function(a){return z(a)===t};
+var b="function"===typeof Symbol&&Symbol.for,c=b?Symbol.for("react.element"):60103,d=b?Symbol.for("react.portal"):60106,e=b?Symbol.for("react.fragment"):60107,f=b?Symbol.for("react.strict_mode"):60108,g=b?Symbol.for("react.profiler"):60114,h$4=b?Symbol.for("react.provider"):60109,k=b?Symbol.for("react.context"):60110,l=b?Symbol.for("react.async_mode"):60111,m=b?Symbol.for("react.concurrent_mode"):60111,n=b?Symbol.for("react.forward_ref"):60112,p=b?Symbol.for("react.suspense"):60113,q=b?
+Symbol.for("react.suspense_list"):60120,r=b?Symbol.for("react.memo"):60115,t=b?Symbol.for("react.lazy"):60116,v$4=b?Symbol.for("react.block"):60121,w$4=b?Symbol.for("react.fundamental"):60117,x=b?Symbol.for("react.responder"):60118,y=b?Symbol.for("react.scope"):60119;
+function z(a){if("object"===typeof a&&null!==a){var u=a.$$typeof;switch(u){case c:switch(a=a.type,a){case l:case m:case e:case g:case f:case p:return a;default:switch(a=a&&a.$$typeof,a){case k:case n:case t:case r:case h$4:return a;default:return u}}case d:return u}}}function A(a){return z(a)===m}var AsyncMode=l;var ConcurrentMode=m;var ContextConsumer=k;var ContextProvider=h$4;var Element=c;var ForwardRef=n;var Fragment=e;var Lazy=t;var Memo=r;var Portal=d;
+var Profiler=g;var StrictMode=f;var Suspense=p;var isAsyncMode=function(a){return A(a)||z(a)===l};var isConcurrentMode=A;var isContextConsumer=function(a){return z(a)===k};var isContextProvider=function(a){return z(a)===h$4};var isElement=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===c};var isForwardRef=function(a){return z(a)===n};var isFragment=function(a){return z(a)===e};var isLazy=function(a){return z(a)===t};
 var isMemo=function(a){return z(a)===r};var isPortal=function(a){return z(a)===d};var isProfiler=function(a){return z(a)===g};var isStrictMode=function(a){return z(a)===f};var isSuspense=function(a){return z(a)===p};
-var isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===e||a===m||a===g||a===f||a===p||a===q||"object"===typeof a&&null!==a&&(a.$$typeof===t||a.$$typeof===r||a.$$typeof===h||a.$$typeof===k||a.$$typeof===n||a.$$typeof===w||a.$$typeof===x||a.$$typeof===y||a.$$typeof===v)};var typeOf=z;
+var isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===e||a===m||a===g||a===f||a===p||a===q||"object"===typeof a&&null!==a&&(a.$$typeof===t||a.$$typeof===r||a.$$typeof===h$4||a.$$typeof===k||a.$$typeof===n||a.$$typeof===w$4||a.$$typeof===x||a.$$typeof===y||a.$$typeof===v$4)};var typeOf=z;
 
 var reactIs_production_min = {
 	AsyncMode: AsyncMode,
@@ -13703,76 +13054,66 @@ function Reference(props) {
 
 var PopperWrapper = /*#__PURE__*/function (_React$Component) {
   _inherits(PopperWrapper, _React$Component);
-
   var _super = _createSuper(PopperWrapper);
-
   function PopperWrapper(props) {
     var _this;
-
     _classCallCheck(this, PopperWrapper);
-
     _this = _super.call(this, props);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "triggerRef", void 0);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "popupRef", void 0);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "hoverableDelay", void 0);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "_timer", void 0);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "_throttleWait", void 0);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "offsetMapping", void 0);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "togglePopper", function (type, newValue) {
       var _this$props = _this.props,
-          open = _this$props.open,
-          onToggle = _this$props.onToggle;
+        open = _this$props.open,
+        onToggle = _this$props.onToggle;
       onToggle(newValue === undefined ? !open : newValue, type);
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "doesEventContainsElement", function (event, ref) {
       var el = ref.current;
       return el && el.contains(event.target);
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "getUpdatedStyle", function (oldStyle, placement, offset) {
       var style = _this.props.style;
-
       var newStyle = _objectSpread2(_objectSpread2({}, style), oldStyle);
-
       var position = placement ? placement.split('-')[0] : placement;
-
       switch (position) {
         case 'top':
           newStyle.marginBottom = _this.offsetMapping[offset];
           break;
-
         case 'bottom':
           newStyle.marginTop = _this.offsetMapping[offset];
           break;
-
         case 'left':
           newStyle.marginRight = _this.offsetMapping[offset];
           break;
-
         case 'right':
           newStyle.marginLeft = _this.offsetMapping[offset];
           break;
       }
-
       if (_this.props.triggerCoordinates) {
         newStyle.position = 'absolute';
         newStyle.transform = "translate(".concat(_this.props.triggerCoordinates.x, "px, ").concat(_this.props.triggerCoordinates.y, "px)");
       }
-
       return newStyle;
     });
+    _defineProperty$1(_assertThisInitialized$1(_this), "onClickHandler", function () {
+      var openDelay = _this.props.openDelay;
 
+      // to add delay only while opening
+      if (openDelay && !_this.state.isOpen) {
+        window.setTimeout(function () {
+          _this.togglePopper('onClick');
+        }, openDelay);
+      } else {
+        _this.togglePopper('onClick');
+      }
+    });
     _this.state = {
       animationKeyframe: '',
-      isOpen: _this.props.open || false,
+      isOpen: _this.props.open && !_this.props.disabled || false,
       uniqueKey: ''
     };
     _this.hoverableDelay = 100;
@@ -13790,7 +13131,6 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
     _this.boundaryScrollHandler = _this.boundaryScrollHandler.bind(_assertThisInitialized$1(_this));
     return _this;
   }
-
   _createClass(PopperWrapper, [{
     key: "componentDidMount",
     value: function componentDidMount() {
@@ -13808,14 +13148,12 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
         this.removeBoundaryScrollHandler();
         this.addBoundaryScrollHandler();
       }
-
       if (prevProps.open !== this.props.open) {
         this._throttleWait = false;
         this.setState({
           animationKeyframe: ''
         });
-
-        if (this.props.open) {
+        if (this.props.open && !this.props.disabled) {
           var triggerElement = this.triggerRef.current;
           var zIndex = this.getZIndexForLayer(triggerElement);
           this.setState({
@@ -13838,10 +13176,9 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
     key: "boundaryScrollHandler",
     value: function boundaryScrollHandler() {
       var _this$props2 = this.props,
-          open = _this$props2.open,
-          on = _this$props2.on,
-          closeOnScroll = _this$props2.closeOnScroll;
-
+        open = _this$props2.open,
+        on = _this$props2.on,
+        closeOnScroll = _this$props2.closeOnScroll;
       if (on === 'click' && closeOnScroll) {
         if (open) {
           if (!this._throttleWait) {
@@ -13869,7 +13206,6 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
     key: "mouseMoveHandler",
     value: function mouseMoveHandler() {
       var _this2 = this;
-
       if (this._timer) clearTimeout(this._timer);
       this._timer = window.setTimeout(function () {
         var onToggle = _this2.props.onToggle;
@@ -13879,29 +13215,40 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleMouseEnter",
     value: function handleMouseEnter() {
-      var on = this.props.on;
-
+      var _this3 = this;
+      var _this$props3 = this.props,
+        on = _this$props3.on,
+        openDelay = _this$props3.openDelay,
+        onToggle = _this$props3.onToggle;
       if (on === 'hover') {
         if (this._timer) clearTimeout(this._timer);
-        var onToggle = this.props.onToggle;
-        onToggle(true, 'mouseEnter');
-        this.setState(function () {
-          return {
-            isOpen: true
-          };
-        });
+        if (openDelay) {
+          this._timer = window.setTimeout(function () {
+            _this3.setState(function () {
+              return {
+                isOpen: true
+              };
+            });
+            _this3.togglePopper('mouseEnter', true);
+          }, openDelay);
+        } else {
+          onToggle(true, 'mouseEnter');
+          this.setState(function () {
+            return {
+              isOpen: true
+            };
+          });
+        }
       }
     }
   }, {
     key: "handleMouseLeave",
     value: function handleMouseLeave() {
       var on = this.props.on;
-
       if (on === 'hover') {
-        var _this$props3 = this.props,
-            hoverable = _this$props3.hoverable,
-            onToggle = _this$props3.onToggle;
-
+        var _this$props4 = this.props,
+          hoverable = _this$props4.hoverable,
+          onToggle = _this$props4.onToggle;
         if (hoverable) {
           this.mouseMoveHandler();
         } else {
@@ -13918,7 +13265,6 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
       if (node === null) {
         return;
       }
-
       var layerNode = node.closest('[data-layer]') || document.body;
       var zIndex = layerNode === document.body ? 'auto' : parseInt(window.getComputedStyle(layerNode).zIndex || '0', 10);
       return zIndex === 'auto' || isNaN(zIndex) ? 500 : zIndex;
@@ -13926,64 +13272,58 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "getTriggerElement",
     value: function getTriggerElement(ref) {
-      var _this3 = this;
-
-      var _this$props4 = this.props,
-          trigger = _this$props4.trigger,
-          on = _this$props4.on,
-          triggerClass = _this$props4.triggerClass;
-      var options = on === 'hover' ? {
+      var _this4 = this;
+      var _this$props5 = this.props,
+        trigger = _this$props5.trigger,
+        on = _this$props5.on,
+        triggerClass = _this$props5.triggerClass,
+        disabled = _this$props5.disabled;
+      var options = on === 'hover' && !disabled ? {
         ref: ref,
         onMouseEnter: this.handleMouseEnter,
-        onMouseLeave: this.handleMouseLeave
+        onMouseLeave: this.handleMouseLeave,
+        onFocus: this.handleMouseEnter,
+        onBlur: this.handleMouseLeave
       } : {
         ref: ref,
         onClick: function onClick(ev) {
           ev.stopPropagation();
-
-          _this3.togglePopper('onClick');
+          !disabled && _this4.onClickHandler();
         }
       };
       var classes = classnames('PopperWrapper-trigger', triggerClass);
-
       var shouldPopoverClose = function shouldPopoverClose(clicked) {
-        var popover = _this3.popupRef.current;
+        var popover = _this4.popupRef.current;
         var container = document.body;
-        var popoverIndex = parseInt(window.getComputedStyle(popover).zIndex);
+        var popoverIndex = popover && parseInt(window.getComputedStyle(popover).zIndex);
         var clickInsideLayer = false;
         var shouldClose = false;
         var openedLayers = container.querySelectorAll('[data-opened="true"]');
         openedLayers.forEach(function (layer) {
-          if (layer.contains(clicked)) {
+          if (layer && layer.contains(clicked)) {
             clickInsideLayer = true;
             var clickedIndex = parseInt(window.getComputedStyle(layer).zIndex);
-
             if (popoverIndex > clickedIndex) {
               shouldClose = true;
               return;
             }
           }
         });
-
         if (container.isEqualNode(clicked) || shouldClose || !container.contains(clicked) || !clickInsideLayer) {
           return true;
         }
-
         return false;
       };
-
       var onOutsideClickHandler = function onOutsideClickHandler(event) {
-        var _this3$props = _this3.props,
-            open = _this3$props.open,
-            closeOnBackdropClick = _this3$props.closeOnBackdropClick;
-
+        var _this4$props = _this4.props,
+          open = _this4$props.open,
+          closeOnBackdropClick = _this4$props.closeOnBackdropClick;
         if (open && shouldPopoverClose(event.target) && closeOnBackdropClick) {
-          if (!_this3.doesEventContainsElement(event, _this3.popupRef)) {
-            _this3.togglePopper('outsideClick');
+          if (!_this4.doesEventContainsElement(event, _this4.popupRef)) {
+            _this4.togglePopper('outsideClick');
           }
         }
       };
-
       return /*#__PURE__*/React.createElement(OutsideClick, _extends$2({
         className: classes,
         onOutsideClick: onOutsideClickHandler
@@ -13992,48 +13332,41 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "getPopperChildren",
     value: function getPopperChildren(_ref) {
-      var _this4 = this;
-
+      var _this5 = this;
       var ref = _ref.ref,
-          style = _ref.style,
-          placement = _ref.placement,
-          outOfBoundaries = _ref.outOfBoundaries;
-      var _this$props5 = this.props,
-          offset = _this$props5.offset,
-          children = _this$props5.children,
-          open = _this$props5.open,
-          animationClass = _this$props5.animationClass;
+        style = _ref.style,
+        placement = _ref.placement,
+        outOfBoundaries = _ref.outOfBoundaries;
+      var _this$props6 = this.props,
+        offset = _this$props6.offset,
+        children = _this$props6.children,
+        open = _this$props6.open,
+        animationClass = _this$props6.animationClass;
       var _this$state = this.state,
-          zIndex = _this$state.zIndex,
-          animationKeyframe = _this$state.animationKeyframe,
-          uniqueKey = _this$state.uniqueKey;
+        zIndex = _this$state.zIndex,
+        animationKeyframe = _this$state.animationKeyframe,
+        uniqueKey = _this$state.uniqueKey;
       var newStyle = offset ? this.getUpdatedStyle(style, placement, offset) : style;
-
       var childrenStyles = _objectSpread2(_objectSpread2({}, newStyle), {}, {
         zIndex: zIndex
       });
-
       var classes = '';
-
       if (!animationClass) {
         var _this$popupRef$curren, _this$popupRef$curren2;
-
-        var maxHeight = (_this$popupRef$curren = this.popupRef.current) === null || _this$popupRef$curren === void 0 ? void 0 : _this$popupRef$curren.offsetHeight; // we need to check for transformStyles so that we open the popover at correct position (left/right)
-
+        var maxHeight = (_this$popupRef$curren = this.popupRef.current) === null || _this$popupRef$curren === void 0 ? void 0 : _this$popupRef$curren.offsetHeight;
+        // we need to check for transformStyles so that we open the popover at correct position (left/right)
         var transformStyles = (_this$popupRef$curren2 = this.popupRef.current) === null || _this$popupRef$curren2 === void 0 ? void 0 : _this$popupRef$curren2.style.getPropertyValue('transform');
-
         if (transformStyles && maxHeight && placement && !animationKeyframe) {
           var _uniqueKey = Math.random().toString(36).substring(2, 6);
-
           var isTop = placement.includes('top');
           var popperAnimation = "\n        @keyframes popper-open-".concat(_uniqueKey, " {\n          from { \n            max-height: 0;\n            ").concat(isTop ? "margin-top: ".concat(maxHeight, "px") : '', ";\n          }\n          to {\n            max-height: ").concat(maxHeight, "px;\n            ").concat(isTop ? "margin-top: 0px" : '', ";\n          }\n        }\n        @keyframes popper-close-").concat(_uniqueKey, " {\n          from {\n            max-height: ").concat(maxHeight, "px;\n            ").concat(isTop ? "margin-top: 0px" : '', ";\n          }\n          to {\n            max-height: 0;\n            ").concat(isTop ? "margin-top: ".concat(maxHeight, "px") : '', ";\n          }\n        }\n        ");
           this.setState({
             animationKeyframe: popperAnimation,
             uniqueKey: _uniqueKey
           });
-        } // defining popper-fade-in custom keyframe as it is specific to popover usecase.
+        }
 
-
+        // defining popper-fade-in custom keyframe as it is specific to popover usecase.
         var popperAnimationStyles = {
           animation: open ? "popper-open-".concat(uniqueKey, " 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms") : "popper-close-".concat(uniqueKey, " 120ms cubic-bezier(0.2, 0, 1, 0.9), fadeOut 100ms")
         };
@@ -14042,10 +13375,8 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
         });
       } else {
         var _classNames;
-
         classes = classnames((_classNames = {}, _defineProperty$1(_classNames, "".concat(animationClass.open), this.state.isOpen), _defineProperty$1(_classNames, "".concat(animationClass.close), !this.state.isOpen), _classNames), children.props.className);
       }
-
       var childProps = {
         ref: ref,
         style: childrenStyles,
@@ -14055,8 +13386,10 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
         onMouseLeave: this.handleMouseLeave,
         onAnimationEnd: function onAnimationEnd() {
           if (!open) {
-            _this4.setState({
-              isOpen: false
+            flushSync(function () {
+              _this5.setState({
+                isOpen: false
+              });
             });
           }
         }
@@ -14069,17 +13402,17 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this5 = this;
-
-      var _this$props6 = this.props,
-          placement = _this$props6.placement,
-          appendToBody = _this$props6.appendToBody,
-          hide = _this$props6.hide,
-          boundaryElement = _this$props6.boundaryElement,
-          triggerCoordinates = _this$props6.triggerCoordinates;
+      var _this6 = this;
+      var _this$props7 = this.props,
+        placement = _this$props7.placement,
+        appendToBody = _this$props7.appendToBody,
+        hide = _this$props7.hide,
+        boundaryElement = _this$props7.boundaryElement,
+        triggerCoordinates = _this$props7.triggerCoordinates,
+        computeStyles = _this$props7.computeStyles;
       var _this$state2 = this.state,
-          animationKeyframe = _this$state2.animationKeyframe,
-          isOpen = _this$state2.isOpen;
+        animationKeyframe = _this$state2.animationKeyframe,
+        isOpen = _this$state2.isOpen;
       var coordinatesPopper = /*#__PURE__*/React.createElement(Popper, {
         placement: placement,
         innerRef: this.popupRef,
@@ -14089,7 +13422,8 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
           },
           hide: {
             enabled: hide
-          }
+          },
+          computeStyles: computeStyles
         }, triggerCoordinates && {
           offset: {
             offset: "".concat(triggerCoordinates.x, "px, ").concat(triggerCoordinates.y, "px")
@@ -14100,8 +13434,8 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
         innerRef: this.triggerRef
       }, function (_ref2) {
         var ref = _ref2.ref;
-        return _this5.getTriggerElement(ref);
-      }), isOpen && appendToBody && !triggerCoordinates && /*#__PURE__*/ReactDOM.createPortal( /*#__PURE__*/React.createElement(Popper, {
+        return _this6.getTriggerElement(ref);
+      }), isOpen && appendToBody && !triggerCoordinates && /*#__PURE__*/ReactDOM.createPortal(/*#__PURE__*/React.createElement(Popper, {
         placement: placement,
         innerRef: this.popupRef,
         modifiers: {
@@ -14110,52 +13444,52 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
           },
           hide: {
             enabled: hide
-          }
+          },
+          computeStyles: computeStyles
         }
       }, this.getPopperChildren), document.body), isOpen && appendToBody && triggerCoordinates && /*#__PURE__*/ReactDOM.createPortal(coordinatesPopper, document.body), isOpen && !appendToBody && !triggerCoordinates && /*#__PURE__*/React.createElement(Popper, {
         placement: placement,
-        innerRef: this.popupRef
+        innerRef: this.popupRef,
+        modifiers: {
+          computeStyles: computeStyles
+        }
       }, this.getPopperChildren));
     }
   }]);
-
   return PopperWrapper;
 }(React.Component);
-
 _defineProperty$1(PopperWrapper, "defaultProps", {
   on: 'click',
   offset: 'medium',
   closeOnBackdropClick: true,
   hoverable: true,
   appendToBody: true,
-  style: {}
+  style: {},
+  disabled: false
 });
 
-var _excluded$y = ["position", "customStyle", "dark", "children", "onToggle", "className", "hideOnReferenceEscape", "boundaryElement", "name"];
+var _excluded$G = ["position", "customStyle", "dark", "children", "onToggle", "className", "hideOnReferenceEscape", "boundaryElement", "name"];
 var propsList = ['appendToBody', 'trigger', 'hoverable', 'on', 'open', 'closeOnBackdropClick', 'offset', 'closeOnScroll'];
 var Popover = function Popover(props) {
   var position = props.position,
-      customStyle = props.customStyle,
-      dark = props.dark,
-      children = props.children,
-      onToggle = props.onToggle,
-      className = props.className,
-      hideOnReferenceEscape = props.hideOnReferenceEscape,
-      _props$boundaryElemen = props.boundaryElement,
-      boundaryElement = _props$boundaryElemen === void 0 ? document.body : _props$boundaryElemen,
-      name = props.name,
-      rest = _objectWithoutProperties(props, _excluded$y);
-
+    customStyle = props.customStyle,
+    dark = props.dark,
+    children = props.children,
+    onToggle = props.onToggle,
+    className = props.className,
+    hideOnReferenceEscape = props.hideOnReferenceEscape,
+    _props$boundaryElemen = props.boundaryElement,
+    boundaryElement = _props$boundaryElemen === void 0 ? document.body : _props$boundaryElemen,
+    name = props.name,
+    rest = _objectWithoutProperties(props, _excluded$G);
   var _React$useState = React.useState(!!props.open),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      open = _React$useState2[0],
-      setOpen = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    open = _React$useState2[0],
+    setOpen = _React$useState2[1];
   var _React$useState3 = React.useState(false),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      init = _React$useState4[0],
-      setInit = _React$useState4[1];
-
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    init = _React$useState4[0],
+    setInit = _React$useState4[1];
   React.useEffect(function () {
     if (props.open !== undefined) setOpen(props.open);
   }, [props.open]);
@@ -14197,7 +13531,7 @@ Popover.defaultProps = Object.assign({}, filterProps(PopperWrapper.defaultProps,
   customStyle: {}
 });
 
-var _excluded$x = ["type", "onClick"];
+var _excluded$F = ["type", "onClick"];
 var keyCodes$1 = {
   BACKSPACE: 'Backspace',
   DELETE: 'Delete',
@@ -14205,119 +13539,114 @@ var keyCodes$1 = {
 };
 var ChipInput = function ChipInput(props) {
   var _classNames, _classNames2;
-
   var chipOptions = props.chipOptions,
-      allowDuplicates = props.allowDuplicates,
-      disabled = props.disabled,
-      error = props.error,
-      placeholder = props.placeholder,
-      defaultValue = props.defaultValue,
-      value = props.value,
-      className = props.className,
-      autoFocus = props.autoFocus,
-      onChange = props.onChange,
-      onBlur = props.onBlur,
-      onFocus = props.onFocus;
+    allowDuplicates = props.allowDuplicates,
+    disabled = props.disabled,
+    error = props.error,
+    placeholder = props.placeholder,
+    defaultValue = props.defaultValue,
+    value = props.value,
+    className = props.className,
+    autoFocus = props.autoFocus,
+    onChange = props.onChange,
+    onBlur = props.onBlur,
+    onFocus = props.onFocus;
   var inputRef = /*#__PURE__*/React.createRef();
-
+  var customRef = React.useRef();
   var _React$useState = React.useState(value || defaultValue),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      chips = _React$useState2[0],
-      setChips = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    chips = _React$useState2[0],
+    setChips = _React$useState2[1];
   var _React$useState3 = React.useState(''),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      inputValue = _React$useState4[0],
-      setInputValue = _React$useState4[1];
-
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    inputValue = _React$useState4[0],
+    setInputValue = _React$useState4[1];
   var baseProps = extractBaseProps(props);
   React.useEffect(function () {
     if (value !== undefined) {
       setChips(value);
     }
   }, [value]);
+  React.useEffect(function () {
+    if (inputValue === '' && inputRef.current) {
+      inputRef.current.style.flexBasis = '0';
+      customRef.current.charCount = null;
+    }
+  }, [inputValue]);
   var ChipInputBorderClass = classnames((_classNames = {}, _defineProperty$1(_classNames, 'ChipInput-border', true), _defineProperty$1(_classNames, 'ChipInput-border--error', error), _classNames));
   var ChipInputClass = classnames((_classNames2 = {
     ChipInput: true
   }, _defineProperty$1(_classNames2, 'ChipInput--disabled', disabled), _defineProperty$1(_classNames2, 'ChipInput--withChips', chips && chips.length > 0), _defineProperty$1(_classNames2, 'ChipInput--error', error), _classNames2), className);
-
   var onUpdateChips = function onUpdateChips(updatedChips) {
     if (onChange) onChange(updatedChips);
   };
-
   var onChipDeleteHandler = function onChipDeleteHandler(index) {
     var updatedChips = _toConsumableArray(chips);
-
     updatedChips.splice(index, 1);
-
     if (!value) {
       setChips(updatedChips);
     }
-
     onUpdateChips(updatedChips);
   };
-
   var onChipAddHandler = function onChipAddHandler() {
     if (!inputValue) return;
     var chip = inputValue.trim();
-
     if ((allowDuplicates || chips.indexOf(chip) === -1) && chip) {
       var updatedChips = [].concat(_toConsumableArray(chips), [chip]);
-
       if (!value) {
         setChips(updatedChips);
       }
-
       onUpdateChips(updatedChips);
       setInputValue('');
     }
   };
-
   var onDeleteAllHandler = function onDeleteAllHandler() {
     var updatedChips = [];
-
     if (!value) {
       setChips(updatedChips);
     }
-
     onUpdateChips(updatedChips);
   };
-
   var onKeyDownHandler = function onKeyDownHandler(event) {
     var chipsLength = chips.length;
-
     switch (event.key) {
       case keyCodes$1.DELETE:
       case keyCodes$1.BACKSPACE:
         if (inputValue === '' && chipsLength > 0) {
           onChipDeleteHandler(chipsLength - 1);
         }
-
         break;
-
       case keyCodes$1.ENTER:
         event.preventDefault();
         onChipAddHandler();
         break;
     }
   };
-
   var onInputChangeHandler = function onInputChangeHandler(e) {
+    var _inputRef$current, _inputRef$current2;
+    var elementScrollWidth = (_inputRef$current = inputRef.current) === null || _inputRef$current === void 0 ? void 0 : _inputRef$current.scrollWidth;
+    var elementClientWidth = (_inputRef$current2 = inputRef.current) === null || _inputRef$current2 === void 0 ? void 0 : _inputRef$current2.clientWidth;
+    var charLen = e.target.value.length;
+    if (elementScrollWidth && elementClientWidth && inputRef.current) {
+      var _customRef$current;
+      if (elementScrollWidth > elementClientWidth && inputValue.length <= charLen && customRef.current) {
+        inputRef.current.style.flexBasis = 'auto';
+        customRef.current.charCount = charLen;
+      } else if (elementScrollWidth <= elementClientWidth && inputValue.length > charLen && charLen <= ((_customRef$current = customRef.current) === null || _customRef$current === void 0 ? void 0 : _customRef$current.charCount) - 2) {
+        inputRef.current.style.flex = '0';
+      }
+    }
     setInputValue(e.target.value);
   };
-
   var onClickHandler = function onClickHandler() {
-    var _inputRef$current;
-
-    (_inputRef$current = inputRef.current) === null || _inputRef$current === void 0 ? void 0 : _inputRef$current.focus();
+    var _inputRef$current3;
+    (_inputRef$current3 = inputRef.current) === null || _inputRef$current3 === void 0 ? void 0 : _inputRef$current3.focus();
   };
-
   var chipComponents = chips.map(function (chip, index) {
     var _chipOptions$type = chipOptions.type,
-        type = _chipOptions$type === void 0 ? 'input' : _chipOptions$type,
-        _onClick = chipOptions.onClick,
-        rest = _objectWithoutProperties(chipOptions, _excluded$x);
-
+      type = _chipOptions$type === void 0 ? 'input' : _chipOptions$type,
+      _onClick = chipOptions.onClick,
+      rest = _objectWithoutProperties(chipOptions, _excluded$F);
     return /*#__PURE__*/React.createElement(Chip, _extends$2({
       "data-test": "DesignSystem-ChipInput--Chip",
       label: chip,
@@ -14334,44 +13663,38 @@ var ChipInput = function ChipInput(props) {
       }
     }, rest));
   });
-  return (
-    /*#__PURE__*/
-
-    /* TODO(a11y): fix accessibility  */
-
-    /* eslint-disable  */
-    React.createElement("div", {
-      "data-test": "DesignSystem-ChipInput--Border",
-      className: ChipInputBorderClass
-    }, /*#__PURE__*/React.createElement("div", _extends$2({
-      "data-test": "DesignSystem-ChipInput"
-    }, baseProps, {
-      className: ChipInputClass,
-      onClick: onClickHandler,
-      tabIndex: disabled ? -1 : 0
-    }), /*#__PURE__*/React.createElement("div", {
-      className: "ChipInput-wrapper"
-    }, chips && chips.length > 0 && chipComponents, /*#__PURE__*/React.createElement("input", {
-      "data-test": "DesignSystem-ChipInput--Input",
-      ref: inputRef,
-      className: "ChipInput-input",
-      autoFocus: autoFocus,
-      placeholder: chips && chips.length > 0 ? '' : placeholder,
-      disabled: disabled,
-      value: inputValue,
-      onBlur: onBlur,
-      onFocus: onFocus,
-      onChange: onInputChangeHandler,
-      onKeyDown: onKeyDownHandler
-    })), chips.length > 0 && /*#__PURE__*/React.createElement(Icon, {
-      "data-test": "DesignSystem-ChipInput--Icon",
-      name: "close",
-      appearance: disabled ? 'disabled' : 'subtle',
-      className: "ChipInput-icon",
-      onClick: onDeleteAllHandler,
-      tabIndex: disabled ? -1 : 0
-    })))
-  );
+  return /*#__PURE__*/ /* TODO(a11y): fix accessibility  */ /* eslint-disable  */React.createElement("div", {
+    "data-test": "DesignSystem-ChipInput--Border",
+    className: ChipInputBorderClass
+  }, /*#__PURE__*/React.createElement("div", _extends$2({
+    "data-test": "DesignSystem-ChipInput"
+  }, baseProps, {
+    className: ChipInputClass,
+    onClick: onClickHandler,
+    tabIndex: disabled ? -1 : 0
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "ChipInput-wrapper",
+    ref: customRef
+  }, chips && chips.length > 0 && chipComponents, /*#__PURE__*/React.createElement("input", {
+    "data-test": "DesignSystem-ChipInput--Input",
+    ref: inputRef,
+    className: "ChipInput-input",
+    autoFocus: autoFocus,
+    placeholder: chips && chips.length > 0 ? '' : placeholder,
+    disabled: disabled,
+    value: inputValue,
+    onBlur: onBlur,
+    onFocus: onFocus,
+    onChange: onInputChangeHandler,
+    onKeyDown: onKeyDownHandler
+  })), chips.length > 0 && /*#__PURE__*/React.createElement(Icon, {
+    "data-test": "DesignSystem-ChipInput--Icon",
+    name: "close",
+    appearance: disabled ? 'disabled' : 'subtle',
+    className: "ChipInput-icon",
+    onClick: onDeleteAllHandler,
+    tabIndex: disabled ? -1 : 0
+  })));
 };
 ChipInput.displayName = 'ChipInput';
 ChipInput.defaultProps = {
@@ -14392,16 +13715,13 @@ var getPillsAppearance = function getPillsAppearance(isActive) {
 };
 var getMenu = function getMenu(menus, active) {
   var _iterator = _createForOfIteratorHelper(menus),
-      _step;
-
+    _step;
   try {
     for (_iterator.s(); !(_step = _iterator.n()).done;) {
       var menu = _step.value;
-
       if (active.name && menu.name === active.name || active.link && menu.link === active.link) {
         return menu;
       }
-
       if (menu.subMenu) {
         var activeMenu = menu.subMenu.find(function (submenu) {
           return active.name && submenu.name === active.name || active.link && submenu.link === active.link;
@@ -14414,22 +13734,18 @@ var getMenu = function getMenu(menus, active) {
   } finally {
     _iterator.f();
   }
-
   return null;
 };
 var getExpandedMenus = function getExpandedMenus(menus, active) {
   var expandedMenus = {};
   var activeMenu = active ? getMenu(menus, active) : null;
-
   var _iterator2 = _createForOfIteratorHelper(menus),
-      _step2;
-
+    _step2;
   try {
     for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
       var menu = _step2.value;
       // Determine if the current menu is active or should be expanded by default
       var isActiveOrExpanded = (activeMenu === null || activeMenu === void 0 ? void 0 : activeMenu.name.split('.')[0]) === menu.name || menu.expanded;
-
       if (menu.subMenu) {
         expandedMenus[menu.name] = !!isActiveOrExpanded;
       }
@@ -14439,7 +13755,6 @@ var getExpandedMenus = function getExpandedMenus(menus, active) {
   } finally {
     _iterator2.f();
   }
-
   return expandedMenus;
 };
 var isMenuActive = function isMenuActive(menus, menu, active) {
@@ -14447,7 +13762,6 @@ var isMenuActive = function isMenuActive(menus, menu, active) {
     var currActiveMenu = getMenu(menus, active);
     return !!currActiveMenu && (currActiveMenu === menu || currActiveMenu.name.split('.')[0] === menu.name || currActiveMenu.name === menu.name || !!currActiveMenu.link && currActiveMenu.link === menu.link);
   }
-
   return false;
 };
 var getNavItemColor = function getNavItemColor(isActive, disabled) {
@@ -14461,13 +13775,11 @@ var _MenuIcon = function MenuIcon(props) {
     name: isChildrenVisible ? 'keyboard_arrow_up' : 'keyboard_arrow_down'
   });
 };
-
 var _MenuPills = function MenuPills(props) {
   var _classNames;
-
   var disabled = props.disabled,
-      isActive = props.isActive,
-      count = props.count;
+    isActive = props.isActive,
+    count = props.count;
   var PillsClass = classnames((_classNames = {}, _defineProperty$1(_classNames, 'MenuItem-count', true), _defineProperty$1(_classNames, 'MenuItem-count--disabled', disabled), _classNames));
   return /*#__PURE__*/React.createElement(Pills, {
     subtle: disabled,
@@ -14476,37 +13788,31 @@ var _MenuPills = function MenuPills(props) {
     "data-test": "DesignSystem-VerticalNav--Pills"
   }, count);
 };
-
 var MenuItem$1 = function MenuItem(props) {
   var _classNames2;
-
   var menu = props.menu,
-      isActive = props.isActive,
-      expanded = props.expanded,
-      rounded = props.rounded,
-      hasSubmenu = props.hasSubmenu,
-      isChildren = props.isChildren,
-      isChildrenVisible = props.isChildrenVisible,
-      onClick = props.onClick,
-      customItemRenderer = props.customItemRenderer;
-
+    isActive = props.isActive,
+    expanded = props.expanded,
+    rounded = props.rounded,
+    hasSubmenu = props.hasSubmenu,
+    isChildren = props.isChildren,
+    isChildrenVisible = props.isChildrenVisible,
+    onClick = props.onClick,
+    customItemRenderer = props.customItemRenderer;
   var _React$useState = React.useState(false),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      isTextTruncated = _React$useState2[0],
-      setIsTextTruncated = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    isTextTruncated = _React$useState2[0],
+    setIsTextTruncated = _React$useState2[1];
   var _Tooltip$useAutoToolt = Tooltip.useAutoTooltip(),
-      detectTruncation = _Tooltip$useAutoToolt.detectTruncation;
-
+    detectTruncation = _Tooltip$useAutoToolt.detectTruncation;
   var contentRef = /*#__PURE__*/React.createRef();
   React.useEffect(function () {
     var isTruncated = detectTruncation(contentRef);
     setIsTextTruncated(isTruncated);
   }, [contentRef]);
-
   var _MenuLabel = function MenuLabel(props) {
     var label = props.label,
-        labelColor = props.labelColor;
+      labelColor = props.labelColor;
     return /*#__PURE__*/React.createElement(Text, {
       "data-test": "DesignSystem-VerticalNav--Text",
       ref: contentRef,
@@ -14514,28 +13820,23 @@ var MenuItem$1 = function MenuItem(props) {
       className: "MenuItem-Text MenuItem--overflow ".concat(hasSubmenu || menu.count !== undefined ? '' : 'mr-5')
     }, label);
   };
-
   var onClickHandler = function onClickHandler(ev) {
     ev.preventDefault();
     if (onClick) onClick(menu);
   };
-
   var baseProps = _objectSpread2({
     onClick: onClickHandler,
     href: menu.link,
     tabIndex: 0
   }, extractBaseProps(props));
-
   var itemColor = getNavItemColor(isActive, menu.disabled);
   var ItemClass = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'MenuItem', true), _defineProperty$1(_classNames2, 'MenuItem--vertical', true), _defineProperty$1(_classNames2, 'MenuItem--collapsed', !expanded), _defineProperty$1(_classNames2, 'MenuItem--expanded', expanded), _defineProperty$1(_classNames2, 'MenuItem--active', isActive), _defineProperty$1(_classNames2, 'MenuItem--disabled', menu.disabled), _defineProperty$1(_classNames2, 'MenuItem--subMenu', isChildren && expanded), _defineProperty$1(_classNames2, 'MenuItem--rounded', rounded && expanded), _defineProperty$1(_classNames2, "color-".concat(itemColor), true), _classNames2));
-
   var renderSubMenu = function renderSubMenu() {
     if (hasSubmenu) {
       return /*#__PURE__*/React.createElement(_MenuIcon, {
         isChildrenVisible: isChildrenVisible
       });
     }
-
     if (menu.count !== undefined) {
       var count = menu.count > 99 ? '99+' : menu.count;
       return /*#__PURE__*/React.createElement(_MenuPills, {
@@ -14544,12 +13845,9 @@ var MenuItem$1 = function MenuItem(props) {
         count: count
       });
     }
-
     return null;
   };
-
   if (!expanded && !menu.icon) return null;
-
   var customItemProps = _objectSpread2(_objectSpread2({}, props), {}, {
     contentRef: contentRef,
     MenuIcon: function MenuIcon() {
@@ -14571,7 +13869,6 @@ var MenuItem$1 = function MenuItem(props) {
       }) : /*#__PURE__*/React.createElement(React.Fragment, null);
     }
   });
-
   return customItemRenderer ? customItemRenderer(customItemProps) :
   /*#__PURE__*/
   // TODO(a11y)
@@ -14602,26 +13899,24 @@ MenuItem$1.defaultProps = {
 /**
  * ####NOTE: VerticalNav sets first subMenu(if present) active if the Navigation is collapsed.
  */
+
 var VerticalNav = function VerticalNav(props) {
   var menus = props.menus,
-      active = props.active,
-      onClick = props.onClick,
-      expanded = props.expanded,
-      rounded = props.rounded,
-      autoCollapse = props.autoCollapse,
-      className = props.className,
-      customItemRenderer = props.customItemRenderer;
-
+    active = props.active,
+    onClick = props.onClick,
+    expanded = props.expanded,
+    rounded = props.rounded,
+    autoCollapse = props.autoCollapse,
+    className = props.className,
+    customItemRenderer = props.customItemRenderer;
   var _React$useState = React.useState({}),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      subMenuExpandedState = _React$useState2[0],
-      setSubMenuExpandedState = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    subMenuExpandedState = _React$useState2[0],
+    setSubMenuExpandedState = _React$useState2[1];
   var _React$useState3 = React.useState({}),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      menuState = _React$useState4[0],
-      setMenuState = _React$useState4[1];
-
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    menuState = _React$useState4[0],
+    setMenuState = _React$useState4[1];
   var baseProps = extractBaseProps(props);
   React.useEffect(function () {
     if (props.active) {
@@ -14633,21 +13928,16 @@ var VerticalNav = function VerticalNav(props) {
     var expandedMenus = getExpandedMenus(menus, active);
     setSubMenuExpandedState(expandedMenus);
   }, []);
-
   var updateMenuState = function updateMenuState(menu, val) {
     var currMenu = getMenu(menus, menu);
-
     if (currMenu) {
       var nameSplit = currMenu.name.split('.');
-
       if (nameSplit.length > 1 || currMenu.subMenu) {
         var name = nameSplit[0];
-
         if (autoCollapse) {
           setMenuState(_defineProperty$1({}, name, val || !menuState[name]));
         } else {
           var menuData = _objectSpread2({}, menuState);
-
           menuData[name] = val !== undefined ? val : !menuData[name];
           setMenuState(menuData);
         }
@@ -14658,7 +13948,6 @@ var VerticalNav = function VerticalNav(props) {
       }
     }
   };
-
   var onClickHandler = function onClickHandler(menu) {
     if (menu.subMenu) {
       if (!expanded) {
@@ -14667,7 +13956,6 @@ var VerticalNav = function VerticalNav(props) {
         if (!subMenuExpandedState[menu.name]) {
           updateMenuState(menu);
         }
-
         setMenuState(_objectSpread2(_objectSpread2({}, menuState), {}, _defineProperty$1({}, menu.name, false)));
         setSubMenuExpandedState(_objectSpread2(_objectSpread2({}, subMenuExpandedState), {}, _defineProperty$1({}, menu.name, !subMenuExpandedState[menu.name])));
       }
@@ -14675,11 +13963,9 @@ var VerticalNav = function VerticalNav(props) {
       if (onClick) onClick(menu);
     }
   };
-
   var renderList = function renderList() {
     var list = menus.map(function (menu, index) {
       var _classNames;
-
       var isActive = !menuState[menu.name] && isMenuActive(menus, menu, active);
       var hasSubmenu = menu.subMenu && menu.subMenu.length > 0;
       var isChildrenVisible = hasSubmenu && (menuState[menu.name] || subMenuExpandedState[menu.name]);
@@ -14721,7 +14007,6 @@ var VerticalNav = function VerticalNav(props) {
     });
     return list;
   };
-
   var classes = classnames(_defineProperty$1({
     VerticalNav: true
   }, 'VerticalNav--expanded', expanded), className);
@@ -14738,24 +14023,20 @@ VerticalNav.defaultProps = {
 
 var HorizontalNav = function HorizontalNav(props) {
   var menus = props.menus,
-      active = props.active,
-      onClick = props.onClick,
-      className = props.className;
+    active = props.active,
+    onClick = props.onClick,
+    className = props.className;
   var baseProps = extractBaseProps(props);
   var classes = classnames(_defineProperty$1({}, 'HorizontalNav', true), className);
-
   var onClickHandler = function onClickHandler(menu) {
     return function () {
       if (onClick) onClick(menu);
     };
   };
-
   var getPillsClass = function getPillsClass(disabled) {
     var _classNames2;
-
     return classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'HorizontalNav-pills', true), _defineProperty$1(_classNames2, 'HorizontalNav-pills--disabled', disabled), _defineProperty$1(_classNames2, 'HorizontalNav-animate', true), _classNames2));
   };
-
   var renderIcon = function renderIcon(menu, isActive) {
     if (menu.count !== undefined) {
       var count = menu.count > 99 ? '99+' : menu.count;
@@ -14766,7 +14047,6 @@ var HorizontalNav = function HorizontalNav(props) {
         "data-test": "DesignSystem-HorizontalNav--Pills"
       }, count);
     }
-
     if (menu.icon) {
       return /*#__PURE__*/React.createElement(Icon, {
         className: "mr-3 HorizontalNav-animate",
@@ -14775,19 +14055,15 @@ var HorizontalNav = function HorizontalNav(props) {
         "data-test": "DesignSystem-HorizontalNav--Icon"
       });
     }
-
     return null;
   };
-
   var onKeyDownHandler = function onKeyDownHandler(event, menu) {
     if (event.key === 'Enter' && onClick) {
       onClick(menu);
     }
   };
-
   var list = menus.map(function (menu, index) {
     var _classNames3;
-
     var isActive = isMenuActive(menus, menu, active);
     var itemColor = getNavItemColor(isActive, menu.disabled);
     var menuClasses = classnames((_classNames3 = {
@@ -14821,7 +14097,7 @@ var HorizontalNav = function HorizontalNav(props) {
   }), list);
 };
 
-var _excluded$w = ["children", "tooltip", "showTooltip", "showOnTruncation", "elementRef"];
+var _excluded$E = ["children", "tooltip", "showTooltip", "showOnTruncation", "elementRef"];
 var tooltipPropsList = ['trigger', 'on', 'open', 'offset', 'onToggle', 'dark', 'customStyle', 'closeOnBackdropClick', 'hideOnReferenceEscape', 'closeOnScroll'];
 var positionValue = {
   bottom: 'bottom',
@@ -14840,19 +14116,16 @@ var detectTruncation = function detectTruncation(boundaryRef) {
 };
 var Tooltip = function Tooltip(props) {
   var children = props.children,
-      tooltip = props.tooltip,
-      showTooltip = props.showTooltip,
-      showOnTruncation = props.showOnTruncation,
-      elementRef = props.elementRef,
-      rest = _objectWithoutProperties(props, _excluded$w);
-
+    tooltip = props.tooltip,
+    showTooltip = props.showTooltip,
+    showOnTruncation = props.showOnTruncation,
+    elementRef = props.elementRef,
+    rest = _objectWithoutProperties(props, _excluded$E);
   var childrenRef = React.useRef(null);
-
   var _React$useState = React.useState(false),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      isTruncated = _React$useState2[0],
-      setIsTruncated = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    isTruncated = _React$useState2[0],
+    setIsTruncated = _React$useState2[1];
   React.useEffect(function () {
     var element = elementRef ? elementRef : childrenRef;
     setIsTruncated(detectTruncation(element));
@@ -14860,19 +14133,16 @@ var Tooltip = function Tooltip(props) {
   var renderChildren = elementRef || ! /*#__PURE__*/React.isValidElement(children) ? children : /*#__PURE__*/React.cloneElement(children, {
     ref: childrenRef
   });
-
   if (!showTooltip) {
     // If showTooltip is false skip the Popover and return the children directly
     return children;
   }
-
   var tooltipWrapper = /*#__PURE__*/React.createElement("div", {
     className: "Tooltip"
   }, /*#__PURE__*/React.createElement(Text, {
     className: "Tooltip-text",
     appearance: "white"
   }, tooltip));
-
   if (showOnTruncation) {
     return isTruncated ? /*#__PURE__*/React.createElement(Popover, _extends$2({
       trigger: renderChildren,
@@ -14886,7 +14156,6 @@ var Tooltip = function Tooltip(props) {
       className: "Tooltip-container"
     }), tooltipWrapper) : renderChildren;
   }
-
   return /*#__PURE__*/React.createElement(Popover, _extends$2({
     trigger: children,
     on: 'hover',
@@ -14899,13 +14168,11 @@ var Tooltip = function Tooltip(props) {
     className: "Tooltip-container"
   }), tooltipWrapper);
 };
-
 Tooltip.useAutoTooltip = function () {
   return {
     detectTruncation: detectTruncation
   };
 };
-
 Tooltip.defaultProps = Object.assign({}, filterProps(Popover.defaultProps, tooltipPropsList), {
   hoverable: false,
   showTooltip: true,
@@ -14917,19 +14184,20 @@ Tooltip.defaultProps = Object.assign({}, filterProps(Popover.defaultProps, toolt
  * Dialog component has been deprecated, please use [Modal](https://mds.innovaccer.com/?path=/docs/components-modal-modal-all--all) component instead.
  *
  */
+
 var Dialog = function Dialog(props) {
   var dimension = props.dimension,
-      primaryButtonAppearance = props.primaryButtonAppearance,
-      secondaryButtonAppearance = props.secondaryButtonAppearance,
-      open = props.open,
-      onClose = props.onClose,
-      heading = props.heading,
-      title = props.title,
-      description = props.description,
-      primaryButtonLabel = props.primaryButtonLabel,
-      primaryButtonCallback = props.primaryButtonCallback,
-      secondaryButtonLabel = props.secondaryButtonLabel,
-      secondaryButtonCallback = props.secondaryButtonCallback;
+    primaryButtonAppearance = props.primaryButtonAppearance,
+    secondaryButtonAppearance = props.secondaryButtonAppearance,
+    open = props.open,
+    onClose = props.onClose,
+    heading = props.heading,
+    title = props.title,
+    description = props.description,
+    primaryButtonLabel = props.primaryButtonLabel,
+    primaryButtonCallback = props.primaryButtonCallback,
+    secondaryButtonLabel = props.secondaryButtonLabel,
+    secondaryButtonCallback = props.secondaryButtonCallback;
   var baseProps = extractBaseProps(props);
   return /*#__PURE__*/React.createElement(Modal, _extends$2({
     "data-test": "DesignSystem-Dialog"
@@ -14957,7 +14225,6 @@ var Dialog = function Dialog(props) {
     description: description
   }));
 };
-
 Dialog.displayName = 'Dialog';
 Dialog.defaultProps = {
   dimension: 'small',
@@ -14965,12 +14232,12 @@ Dialog.defaultProps = {
   secondaryButtonAppearance: 'basic'
 };
 
-var _excluded$v = ["label"];
+var _excluded$D = ["label"];
 var OverlayFooter = function OverlayFooter(props) {
   var open = props.open,
-      className = props.className,
-      children = props.children,
-      actions = props.actions;
+    className = props.className,
+    children = props.children,
+    actions = props.actions;
   var baseProps = extractBaseProps(props);
   var classes = classnames({
     OverlayFooter: true
@@ -14980,10 +14247,8 @@ var OverlayFooter = function OverlayFooter(props) {
     if (open) {
       if (wrapperRef.current) {
         var _wrapperRef$current;
-
         var secondaryBtns = (_wrapperRef$current = wrapperRef.current) === null || _wrapperRef$current === void 0 ? void 0 : _wrapperRef$current.querySelectorAll('.Button--basic');
         var secondaryBtn = secondaryBtns[secondaryBtns.length - 1];
-
         if (secondaryBtn) {
           window.requestAnimationFrame(function () {
             return secondaryBtn.focus({
@@ -14994,7 +14259,6 @@ var OverlayFooter = function OverlayFooter(props) {
       }
     }
   }, [open]);
-
   if (actions) {
     return /*#__PURE__*/React.createElement("div", _extends$2({
       ref: wrapperRef
@@ -15002,8 +14266,7 @@ var OverlayFooter = function OverlayFooter(props) {
       className: classes
     }), actions.map(function (_ref, index) {
       _ref.label;
-          var options = _objectWithoutProperties(_ref, _excluded$v);
-
+        var options = _objectWithoutProperties(_ref, _excluded$D);
       return /*#__PURE__*/React.createElement(Button, _extends$2({
         type: "button"
       }, options, {
@@ -15011,7 +14274,6 @@ var OverlayFooter = function OverlayFooter(props) {
       }));
     }));
   }
-
   return /*#__PURE__*/React.createElement("div", _extends$2({
     "data-test": "DesignSystem-OverlayFooter",
     ref: wrapperRef
@@ -15023,15 +14285,14 @@ OverlayFooter.displayName = 'OverlayFooter';
 
 var OverlayHeader = function OverlayHeader(props) {
   var _classNames2;
-
   var className = props.className,
-      heading = props.heading,
-      subHeading = props.subHeading,
-      backButton = props.backButton,
-      backIcon = props.backIcon,
-      backIconCallback = props.backIconCallback,
-      backButtonCallback = props.backButtonCallback,
-      headingClass = props.headingClass;
+    heading = props.heading,
+    subHeading = props.subHeading,
+    backButton = props.backButton,
+    backIcon = props.backIcon,
+    backIconCallback = props.backIconCallback,
+    backButtonCallback = props.backButtonCallback,
+    headingClass = props.headingClass;
   var baseProps = extractBaseProps(props);
   var classes = classnames(_defineProperty$1({
     OverlayHeader: true
@@ -15063,7 +14324,7 @@ OverlayHeader.displayName = 'OverlayHeader';
 
 var OverlayBody = function OverlayBody(props) {
   var children = props.children,
-      className = props.className;
+    className = props.className;
   var baseProps = extractBaseProps(props);
   var classes = classnames({
     OverlayBody: true
@@ -15082,19 +14343,17 @@ OverlayBody.displayName = 'OverlayBody';
 
 var getWrapperElement = function getWrapperElement() {
   var element = document.querySelector('.Overlay-wrapper');
-
   if (element === null) {
     element = document.createElement('div');
     element.classList.add('Overlay-wrapper');
     document.body.appendChild(element);
   }
-
   return element;
 };
 var getUpdatedZIndex = function getUpdatedZIndex(ele) {
   var containerClassName = ele.containerClassName,
-      elementRef = ele.elementRef,
-      element = ele.element;
+    elementRef = ele.elementRef,
+    element = ele.element;
   if (element === null) return;
   var elements = element.querySelectorAll(containerClassName);
   if (elements.length < 1) return;
@@ -15107,12 +14366,14 @@ var getUpdatedZIndex = function getUpdatedZIndex(ele) {
     zIndex = Math.max(zIndex, prevZIndex + 10);
   });
   return zIndex > 0 ? zIndex : undefined;
-}; // keyboard event, boolean?, (event: Event) => void
+};
 
+// keyboard event, boolean?, (event: Event) => void
 var closeOnEscapeKeypress = function closeOnEscapeKeypress(event, isTopOverlay, onClose) {
   if (event.key === 'Escape' && isTopOverlay) {
-    onClose(event); // prevent browser-specific escape key behavior (Safari exits fullscreen)
+    onClose(event);
 
+    // prevent browser-specific escape key behavior (Safari exits fullscreen)
     event.preventDefault();
   }
 };
@@ -15120,22 +14381,17 @@ var closeOnEscapeKeypress = function closeOnEscapeKeypress(event, isTopOverlay, 
 var OverlayManager = /*#__PURE__*/function () {
   function OverlayManager() {
     _classCallCheck(this, OverlayManager);
-
     _defineProperty$1(this, "overlays", void 0);
-
     this.overlays = [];
   }
-
   _createClass(OverlayManager, [{
     key: "add",
     value: function add(overlay) {
       if (overlay === null) return;
       var overlayIdx = this.overlays.indexOf(overlay);
-
       if (overlayIdx !== -1) {
         return overlayIdx;
       }
-
       overlayIdx = this.overlays.length;
       this.overlays.push(overlay);
       return overlayIdx;
@@ -15145,11 +14401,9 @@ var OverlayManager = /*#__PURE__*/function () {
     value: function remove(overlay) {
       if (overlay === null) return;
       var overlayIdx = this.overlays.indexOf(overlay);
-
       if (overlayIdx === -1) {
         return;
       }
-
       this.overlays.splice(overlayIdx, 1);
     }
   }, {
@@ -15159,10 +14413,8 @@ var OverlayManager = /*#__PURE__*/function () {
       return !!this.overlays.length && this.overlays[this.overlays.length - 1] === overlay;
     }
   }]);
-
   return OverlayManager;
 }();
-
 var instance = new OverlayManager();
 Object.freeze(instance);
 
@@ -15172,25 +14424,17 @@ Object.freeze(instance);
  */
 var Modal = /*#__PURE__*/function (_React$Component) {
   _inherits(Modal, _React$Component);
-
   var _super = _createSuper(Modal);
-
   function Modal(props) {
     var _this;
-
     _classCallCheck(this, Modal);
-
     _this = _super.call(this, props);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "modalRef", /*#__PURE__*/React.createRef());
-
     _defineProperty$1(_assertThisInitialized$1(_this), "element", void 0);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onCloseHandler", function (event) {
       var isTopOverlay = instance.isTopOverlay(_this.modalRef.current);
       closeOnEscapeKeypress(event, isTopOverlay, _this.onOutsideClickHandler);
     });
-
     _this.element = getWrapperElement();
     _this.state = {
       open: props.open,
@@ -15199,7 +14443,6 @@ var Modal = /*#__PURE__*/function (_React$Component) {
     _this.onOutsideClickHandler = _this.onOutsideClickHandler.bind(_assertThisInitialized$1(_this));
     return _this;
   }
-
   _createClass(Modal, [{
     key: "componentDidMount",
     value: function componentDidMount() {
@@ -15207,16 +14450,13 @@ var Modal = /*#__PURE__*/function (_React$Component) {
         if (this.state.open) {
           instance.add(this.modalRef.current);
         }
-
         document.addEventListener('keydown', this.onCloseHandler);
       }
-
       if (this.props.backdropClose) {
         if (this.state.open) {
           instance.add(this.modalRef.current);
         }
       }
-
       var zIndex = getUpdatedZIndex({
         element: this.element,
         containerClassName: '.Overlay-container',
@@ -15237,7 +14477,6 @@ var Modal = /*#__PURE__*/function (_React$Component) {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
       var _this2 = this;
-
       if (prevProps.open !== this.props.open) {
         if (this.props.open) {
           var zIndex = getUpdatedZIndex({
@@ -15269,11 +14508,10 @@ var Modal = /*#__PURE__*/function (_React$Component) {
     key: "onOutsideClickHandler",
     value: function onOutsideClickHandler(event) {
       var _this$props = this.props,
-          closeOnEscape = _this$props.closeOnEscape,
-          backdropClose = _this$props.backdropClose,
-          onClose = _this$props.onClose;
+        closeOnEscape = _this$props.closeOnEscape,
+        backdropClose = _this$props.backdropClose,
+        onClose = _this$props.onClose;
       var open = this.state.open;
-
       if (open && instance.isTopOverlay(this.modalRef.current)) {
         if (closeOnEscape || backdropClose) instance.remove(this.modalRef.current);
         if (onClose) onClose(event, 'OutsideClick');else if (typeof backdropClose === 'function') backdropClose(event, 'OutsideClick');
@@ -15283,22 +14521,21 @@ var Modal = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var _classNames, _classNames2, _classNames3, _classNames4;
-
       var _this$state = this.state,
-          animate = _this$state.animate,
-          open = _this$state.open,
-          zIndex = _this$state.zIndex;
+        animate = _this$state.animate,
+        open = _this$state.open,
+        zIndex = _this$state.zIndex;
       var _this$props2 = this.props,
-          className = _this$props2.className,
-          backdropClose = _this$props2.backdropClose,
-          dimension = _this$props2.dimension,
-          children = _this$props2.children,
-          headerOptions = _this$props2.headerOptions,
-          header = _this$props2.header,
-          footerOptions = _this$props2.footerOptions,
-          seperator = _this$props2.seperator,
-          footer = _this$props2.footer,
-          onClose = _this$props2.onClose;
+        className = _this$props2.className,
+        backdropClose = _this$props2.backdropClose,
+        dimension = _this$props2.dimension,
+        children = _this$props2.children,
+        headerOptions = _this$props2.headerOptions,
+        header = _this$props2.header,
+        footerOptions = _this$props2.footerOptions,
+        seperator = _this$props2.seperator,
+        footer = _this$props2.footer,
+        onClose = _this$props2.onClose;
       var BackdropZIndex = zIndex ? zIndex - 1 : 1000;
       var classes = classnames({
         Modal: true,
@@ -15382,22 +14619,20 @@ var Modal = /*#__PURE__*/function (_React$Component) {
       }));
     }
   }]);
-
   return Modal;
 }(React.Component);
-
 _defineProperty$1(Modal, "defaultProps", {
   dimension: 'medium'
 });
 
 var ModalHeader = function ModalHeader(props) {
   var className = props.className,
-      heading = props.heading,
-      subHeading = props.subHeading,
-      onClose = props.onClose,
-      seperator = props.seperator,
-      backIcon = props.backIcon,
-      backIconCallback = props.backIconCallback;
+    heading = props.heading,
+    subHeading = props.subHeading,
+    onClose = props.onClose,
+    seperator = props.seperator,
+    backIcon = props.backIcon,
+    backIconCallback = props.backIconCallback;
   var baseProps = extractBaseProps(props);
   var classes = classnames(_defineProperty$1({
     'Modal-header': true
@@ -15424,7 +14659,7 @@ ModalHeader.displayName = 'ModalHeader';
 
 var ModalBody = function ModalBody(props) {
   var children = props.children,
-      className = props.className;
+    className = props.className;
   var baseProps = extractBaseProps(props);
   var classes = classnames({
     'Modal-body': true,
@@ -15443,11 +14678,10 @@ ModalBody.displayName = 'ModalBody';
 
 var ModalFooter = function ModalFooter(props) {
   var _classNames;
-
   var open = props.open,
-      children = props.children,
-      className = props.className,
-      seperator = props.seperator;
+    children = props.children,
+    className = props.className,
+    seperator = props.seperator;
   var baseProps = extractBaseProps(props);
   var classes = classnames((_classNames = {}, _defineProperty$1(_classNames, 'Modal-footer', true), _defineProperty$1(_classNames, 'Modal-footer--withSeperator', seperator), _classNames), className);
   return /*#__PURE__*/React.createElement(OverlayFooter, _extends$2({}, baseProps, {
@@ -15459,23 +14693,15 @@ ModalFooter.displayName = 'ModalFooter';
 
 var FullscreenModal = /*#__PURE__*/function (_React$Component) {
   _inherits(FullscreenModal, _React$Component);
-
   var _super = _createSuper(FullscreenModal);
-
   function FullscreenModal(props) {
     var _this;
-
     _classCallCheck(this, FullscreenModal);
-
     _this = _super.call(this, props);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "modalRef", /*#__PURE__*/React.createRef());
-
     _defineProperty$1(_assertThisInitialized$1(_this), "element", void 0);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onOutsideClickHandler", function (event) {
       instance.remove(_this.modalRef.current);
-
       if (_this.props.onClose) {
         _this.props.onClose(event, 'EscapePress');
       } else {
@@ -15490,12 +14716,10 @@ var FullscreenModal = /*#__PURE__*/function (_React$Component) {
         });
       }
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onCloseHandler", function (event) {
       var isTopOverlay = instance.isTopOverlay(_this.modalRef.current);
       closeOnEscapeKeypress(event, isTopOverlay, _this.onOutsideClickHandler);
     });
-
     _this.element = getWrapperElement();
     _this.state = {
       open: props.open,
@@ -15503,7 +14727,6 @@ var FullscreenModal = /*#__PURE__*/function (_React$Component) {
     };
     return _this;
   }
-
   _createClass(FullscreenModal, [{
     key: "componentDidMount",
     value: function componentDidMount() {
@@ -15511,7 +14734,6 @@ var FullscreenModal = /*#__PURE__*/function (_React$Component) {
         if (this.state.open) {
           instance.add(this.modalRef.current);
         }
-
         document.addEventListener('keydown', this.onCloseHandler);
       }
     }
@@ -15524,7 +14746,6 @@ var FullscreenModal = /*#__PURE__*/function (_React$Component) {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
       var _this2 = this;
-
       if (prevProps.open !== this.props.open) {
         if (this.props.open) {
           var zIndex = getUpdatedZIndex({
@@ -15556,20 +14777,19 @@ var FullscreenModal = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var _classNames;
-
       var _this$state = this.state,
-          animate = _this$state.animate,
-          open = _this$state.open,
-          zIndex = _this$state.zIndex;
+        animate = _this$state.animate,
+        open = _this$state.open,
+        zIndex = _this$state.zIndex;
       var _this$props = this.props,
-          className = _this$props.className,
-          dimension = _this$props.dimension,
-          children = _this$props.children,
-          header = _this$props.header,
-          headerOptions = _this$props.headerOptions,
-          footer = _this$props.footer,
-          footerOptions = _this$props.footerOptions,
-          onClose = _this$props.onClose;
+        className = _this$props.className,
+        dimension = _this$props.dimension,
+        children = _this$props.children,
+        header = _this$props.header,
+        headerOptions = _this$props.headerOptions,
+        footer = _this$props.footer,
+        footerOptions = _this$props.footerOptions,
+        onClose = _this$props.onClose;
       var classes = classnames({
         FullscreenModal: true,
         'FullscreenModal-animation--open': animate,
@@ -15633,10 +14853,8 @@ var FullscreenModal = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/React.createElement(React.Fragment, null, WrapperElement);
     }
   }]);
-
   return FullscreenModal;
 }(React.Component);
-
 _defineProperty$1(FullscreenModal, "defaultProps", {
   dimension: 'medium'
 });
@@ -15645,28 +14863,19 @@ var sidesheetWidth = {
   regular: '6',
   large: '10'
 };
-
 var Sidesheet = /*#__PURE__*/function (_React$Component) {
   _inherits(Sidesheet, _React$Component);
-
   var _super = _createSuper(Sidesheet);
-
   function Sidesheet(props) {
     var _this;
-
     _classCallCheck(this, Sidesheet);
-
     _this = _super.call(this, props);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "sidesheetRef", /*#__PURE__*/React.createRef());
-
     _defineProperty$1(_assertThisInitialized$1(_this), "element", void 0);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onCloseHandler", function (event) {
       var isTopOverlay = instance.isTopOverlay(_this.sidesheetRef.current);
       closeOnEscapeKeypress(event, isTopOverlay, _this.onOutsideClickHandler);
     });
-
     _this.element = getWrapperElement();
     _this.state = {
       open: props.open,
@@ -15675,7 +14884,6 @@ var Sidesheet = /*#__PURE__*/function (_React$Component) {
     _this.onOutsideClickHandler = _this.onOutsideClickHandler.bind(_assertThisInitialized$1(_this));
     return _this;
   }
-
   _createClass(Sidesheet, [{
     key: "componentDidMount",
     value: function componentDidMount() {
@@ -15683,14 +14891,11 @@ var Sidesheet = /*#__PURE__*/function (_React$Component) {
         if (this.state.open) {
           instance.add(this.sidesheetRef.current);
         }
-
         document.addEventListener('keydown', this.onCloseHandler);
       }
-
       if (this.props.backdropClose && this.state.open) {
         instance.add(this.sidesheetRef.current);
       }
-
       var zIndex = getUpdatedZIndex({
         element: this.element,
         containerClassName: '.Overlay-container',
@@ -15735,11 +14940,10 @@ var Sidesheet = /*#__PURE__*/function (_React$Component) {
     key: "onOutsideClickHandler",
     value: function onOutsideClickHandler(event) {
       var _this$props = this.props,
-          backdropClose = _this$props.backdropClose,
-          closeOnEscape = _this$props.closeOnEscape,
-          onClose = _this$props.onClose;
+        backdropClose = _this$props.backdropClose,
+        closeOnEscape = _this$props.closeOnEscape,
+        onClose = _this$props.onClose;
       var open = this.state.open;
-
       if (open && instance.isTopOverlay(this.sidesheetRef.current)) {
         if (backdropClose || closeOnEscape) instance.remove(this.sidesheetRef.current);
         if (onClose) onClose(event, 'OutsideClick');
@@ -15758,27 +14962,26 @@ var Sidesheet = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var _classNames,
-          _classNames2,
-          _classNames3,
-          _classNames4,
-          _classNames5,
-          _this2 = this;
-
+        _classNames2,
+        _classNames3,
+        _classNames4,
+        _classNames5,
+        _this2 = this;
       var _this$state = this.state,
-          animate = _this$state.animate,
-          open = _this$state.open,
-          zIndex = _this$state.zIndex;
+        animate = _this$state.animate,
+        open = _this$state.open,
+        zIndex = _this$state.zIndex;
       var _this$props2 = this.props,
-          className = _this$props2.className,
-          backdropClose = _this$props2.backdropClose,
-          dimension = _this$props2.dimension,
-          footer = _this$props2.footer,
-          seperator = _this$props2.seperator,
-          stickFooter = _this$props2.stickFooter,
-          headerOptions = _this$props2.headerOptions,
-          footerOptions = _this$props2.footerOptions,
-          header = _this$props2.header,
-          onClose = _this$props2.onClose;
+        className = _this$props2.className,
+        backdropClose = _this$props2.backdropClose,
+        dimension = _this$props2.dimension,
+        footer = _this$props2.footer,
+        seperator = _this$props2.seperator,
+        stickFooter = _this$props2.stickFooter,
+        headerOptions = _this$props2.headerOptions,
+        footerOptions = _this$props2.footerOptions,
+        header = _this$props2.header,
+        onClose = _this$props2.onClose;
       var BackdropZIndex = zIndex ? zIndex - 1 : 1000;
       var classes = classnames({
         Sidesheet: true,
@@ -15848,10 +15051,8 @@ var Sidesheet = /*#__PURE__*/function (_React$Component) {
       }));
     }
   }]);
-
   return Sidesheet;
 }(React.Component);
-
 _defineProperty$1(Sidesheet, "defaultProps", {
   dimension: 'regular',
   stickFooter: false,
@@ -15860,26 +15061,22 @@ _defineProperty$1(Sidesheet, "defaultProps", {
 
 var Collapsible = function Collapsible(props) {
   var _classNames, _classNames2, _classNames3, _classNames4;
-
   var expanded = props.expanded,
-      hoverable = props.hoverable,
-      expandedWidth = props.expandedWidth,
-      height = props.height,
-      children = props.children,
-      className = props.className,
-      onToggle = props.onToggle,
-      withTrigger = props.withTrigger;
-
+    hoverable = props.hoverable,
+    expandedWidth = props.expandedWidth,
+    height = props.height,
+    children = props.children,
+    className = props.className,
+    onToggle = props.onToggle,
+    withTrigger = props.withTrigger;
   var _React$useState = React.useState(true),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      isClicked = _React$useState2[0],
-      setIsClicked = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    isClicked = _React$useState2[0],
+    setIsClicked = _React$useState2[1];
   var _React$useState3 = React.useState(false),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      seperator = _React$useState4[0],
-      setSeperator = _React$useState4[1];
-
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    seperator = _React$useState4[0],
+    setSeperator = _React$useState4[1];
   var ref = /*#__PURE__*/React.createRef();
   var baseProps = extractBaseProps(props);
   React.useEffect(function () {
@@ -15893,7 +15090,6 @@ var Collapsible = function Collapsible(props) {
     Collapsible: true
   }, _defineProperty$1(_classNames3, 'Collapsible--overlay', !isClicked), _defineProperty$1(_classNames3, 'Collapsible--shadow', !isClicked && expanded), _classNames3), className);
   var FooterClass = classnames((_classNames4 = {}, _defineProperty$1(_classNames4, 'Collapsible-footer', true), _defineProperty$1(_classNames4, 'Collapsible-footer--seperator', seperator), _classNames4));
-
   var onToggleHandler = function onToggleHandler(newExpanded, type) {
     return function () {
       if (onToggle) {
@@ -15901,16 +15097,13 @@ var Collapsible = function Collapsible(props) {
           if (isClicked && expanded || !hoverable) return;
           setIsClicked(false);
         }
-
         if (type === 'click') {
           setIsClicked(true);
         }
-
         onToggle(newExpanded);
       }
     };
   };
-
   var width = expanded ? expandedWidth : undefined;
   return /*#__PURE__*/React.createElement("div", {
     "data-test": "DesignSystem-CollapsibleWrapper",
@@ -15957,18 +15150,17 @@ Collapsible.defaultProps = {
 
 var Status$1 = function Status(props) {
   var type = props.type,
-      time = props.time,
-      className = props.className,
-      _props$readText = props.readText,
-      readText = _props$readText === void 0 ? 'Read' : _props$readText,
-      _props$failedText = props.failedText,
-      failedText = _props$failedText === void 0 ? 'Click to retry' : _props$failedText,
-      _props$sendingText = props.sendingText,
-      sendingText = _props$sendingText === void 0 ? 'Sending..' : _props$sendingText;
+    time = props.time,
+    className = props.className,
+    _props$readText = props.readText,
+    readText = _props$readText === void 0 ? 'Read' : _props$readText,
+    _props$failedText = props.failedText,
+    failedText = _props$failedText === void 0 ? 'Click to retry' : _props$failedText,
+    _props$sendingText = props.sendingText,
+    sendingText = _props$sendingText === void 0 ? 'Sending..' : _props$sendingText;
   var baseProps = extractBaseProps(props);
   var StatusClass = classnames(_defineProperty$1({}, 'd-flex align-items-center mt-3', true), className);
   var TextClass = classnames(_defineProperty$1({}, 'ChatMessage-status', true), className);
-
   var getTime = function getTime(t) {
     if (typeof t === 'number') {
       var d = new Date(t);
@@ -15978,10 +15170,8 @@ var Status$1 = function Status(props) {
       var hrs = hours % 12 || 12;
       return "".concat(hrs, ":").concat(minutes, " ").concat(AMPM);
     }
-
     return t;
   };
-
   switch (type) {
     case 'failed':
       return /*#__PURE__*/React.createElement("div", _extends$2({}, baseProps, {
@@ -16000,7 +15190,6 @@ var Status$1 = function Status(props) {
         }],
         seperator: true
       }));
-
     case 'urgent':
       return /*#__PURE__*/React.createElement("div", _extends$2({}, baseProps, {
         className: StatusClass
@@ -16018,7 +15207,6 @@ var Status$1 = function Status(props) {
         }],
         seperator: true
       }));
-
     case 'read':
       return /*#__PURE__*/React.createElement("div", _extends$2({}, baseProps, {
         className: StatusClass
@@ -16031,21 +15219,18 @@ var Status$1 = function Status(props) {
         }],
         seperator: true
       }));
-
     case 'sending':
       return /*#__PURE__*/React.createElement(Text, _extends$2({}, baseProps, {
         appearance: "subtle",
         size: "small",
         className: TextClass
       }), sendingText);
-
     case 'sent':
       return /*#__PURE__*/React.createElement(React.Fragment, null, time && /*#__PURE__*/React.createElement(Text, _extends$2({}, baseProps, {
         appearance: "subtle",
         size: "small",
         className: TextClass
       }), getTime(time)));
-
     default:
       return null;
   }
@@ -16054,20 +15239,18 @@ Status$1.displayName = 'Status';
 
 var Box = function Box(props) {
   var _classNames;
-
   var children = props.children,
-      type = props.type,
-      isTyping = props.isTyping,
-      statusType = props.statusType,
-      withStatus = props.withStatus,
-      onClick = props.onClick,
-      className = props.className;
+    type = props.type,
+    isTyping = props.isTyping,
+    statusType = props.statusType,
+    withStatus = props.withStatus,
+    onClick = props.onClick,
+    className = props.className;
   var baseProps = extractBaseProps(props);
   var MessageClass = classnames((_classNames = {}, _defineProperty$1(_classNames, 'Box', true), _defineProperty$1(_classNames, "Box--".concat(type), type), _defineProperty$1(_classNames, 'Box--typing', isTyping), _defineProperty$1(_classNames, 'Box--urgent', statusType === 'urgent'), _defineProperty$1(_classNames, "Box-".concat(type, "--withStatus"), withStatus || isTyping), _classNames), className);
+
   /* TODO(a11y): fix accessibility  */
-
   /* eslint-disable  */
-
   return /*#__PURE__*/React.createElement("div", _extends$2({}, baseProps, {
     className: MessageClass,
     onClick: onClick,
@@ -16079,13 +15262,12 @@ Box.displayName = 'Box';
 
 var MessageText = function MessageText(props) {
   var text = props.text,
-      type = props.type,
-      isTyping = props.isTyping,
-      typingText = props.typingText,
-      statusType = props.statusType,
-      className = props.className;
+    type = props.type,
+    isTyping = props.isTyping,
+    typingText = props.typingText,
+    statusType = props.statusType,
+    className = props.className;
   var baseProps = extractBaseProps(props);
-
   if (isTyping && type === 'incoming') {
     return /*#__PURE__*/React.createElement(Text, _extends$2({}, baseProps, {
       appearance: 'subtle',
@@ -16093,7 +15275,6 @@ var MessageText = function MessageText(props) {
       className: className
     }), typingText);
   }
-
   return /*#__PURE__*/React.createElement(Text, _extends$2({}, baseProps, {
     className: className,
     appearance: statusType === 'sending' ? 'subtle' : 'default'
@@ -16107,17 +15288,15 @@ MessageText.displayName = 'MessageText';
 
 var ChatMessage = function ChatMessage(props) {
   var type = props.type,
-      text = props.text,
-      isTyping = props.isTyping,
-      typingText = props.typingText,
-      statusOptions = props.statusOptions,
-      onClick = props.onClick,
-      className = props.className;
+    text = props.text,
+    isTyping = props.isTyping,
+    typingText = props.typingText,
+    statusOptions = props.statusOptions,
+    onClick = props.onClick,
+    className = props.className;
   var baseProps = extractBaseProps(props);
-
   var _ref = statusOptions || {},
-      statusType = _ref.type;
-
+    statusType = _ref.type;
   return /*#__PURE__*/React.createElement(Box, _extends$2({}, baseProps, {
     type: type,
     className: className,
@@ -16137,7 +15316,7 @@ ChatMessage.displayName = 'ChatMessage';
 
 var EmptyStateContext = /*#__PURE__*/React.createContext({});
 
-var _excluded$u = ["children", "maxHeight", "height", "minHeight", "src", "alt", "className"];
+var _excluded$C = ["children", "maxHeight", "height", "minHeight", "src", "alt", "className"];
 var imageHeight$1 = {
   standard: '200px',
   compressed: '150px',
@@ -16145,37 +15324,32 @@ var imageHeight$1 = {
   large: '200px',
   small: '200px'
 };
-
 var EmptyStateImage = function EmptyStateImage(props) {
   var _classNames2;
-
   var children = props.children,
-      maxHeight = props.maxHeight,
-      height = props.height,
-      minHeight = props.minHeight,
-      src = props.src,
-      alt = props.alt,
-      className = props.className,
-      rest = _objectWithoutProperties(props, _excluded$u);
-
+    maxHeight = props.maxHeight,
+    height = props.height,
+    minHeight = props.minHeight,
+    src = props.src,
+    alt = props.alt,
+    className = props.className,
+    rest = _objectWithoutProperties(props, _excluded$C);
   var contextProp = React__default.useContext(EmptyStateContext);
   var imageClasses = classnames(_defineProperty$1({}, 'EmptyState-image', true), className);
   var imageWrapperClasses = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'd-flex', true), _defineProperty$1(_classNames2, 'justify-content-center', true), _classNames2), className);
   var _contextProp$size = contextProp.size,
-      size = _contextProp$size === void 0 ? 'standard' : _contextProp$size;
+    size = _contextProp$size === void 0 ? 'standard' : _contextProp$size;
   var sizeStyle = {
     maxHeight: maxHeight !== null && maxHeight !== void 0 ? maxHeight : imageHeight$1[size],
     height: height,
     minHeight: minHeight
   };
-
   if (children) {
     return /*#__PURE__*/React__default.createElement("div", _extends$2({}, rest, {
       className: imageWrapperClasses,
       style: _objectSpread2({}, sizeStyle)
     }), children);
   }
-
   return /*#__PURE__*/React__default.createElement(React__default.Fragment, null, src && /*#__PURE__*/React__default.createElement("div", null, /*#__PURE__*/React__default.createElement("img", _extends$2({
     className: imageClasses,
     src: src,
@@ -16185,27 +15359,22 @@ var EmptyStateImage = function EmptyStateImage(props) {
   }, rest))));
 };
 
-var _excluded$t = ["children", "className"];
-
+var _excluded$B = ["children", "className"];
 var EmptyStateTitle = function EmptyStateTitle(props) {
   var _classNames;
-
   var children = props.children,
-      className = props.className,
-      rest = _objectWithoutProperties(props, _excluded$t);
-
+    className = props.className,
+    rest = _objectWithoutProperties(props, _excluded$B);
   var contextProp = React__default.useContext(EmptyStateContext);
   var _contextProp$size = contextProp.size,
-      size = _contextProp$size === void 0 ? 'standard' : _contextProp$size;
+    size = _contextProp$size === void 0 ? 'standard' : _contextProp$size;
   var headingClass = classnames((_classNames = {}, _defineProperty$1(_classNames, "EmptyState-text", true), _defineProperty$1(_classNames, "EmptyState-title--".concat(size), true), _classNames), className);
-
   if (size === 'standard') {
     return /*#__PURE__*/React__default.createElement(Heading, _extends$2({
       "data-test": "DesignSystem-EmptyState--Heading",
       className: headingClass
     }, rest), children);
   }
-
   return /*#__PURE__*/React__default.createElement(Text, _extends$2({
     "data-test": "DesignSystem-EmptyState--Heading",
     className: headingClass,
@@ -16214,18 +15383,15 @@ var EmptyStateTitle = function EmptyStateTitle(props) {
   }, rest), children);
 };
 
-var _excluded$s = ["children", "className"];
-
+var _excluded$A = ["children", "className"];
 var EmptyStateDescription = function EmptyStateDescription(props) {
   var _classNames;
-
   var children = props.children,
-      className = props.className,
-      rest = _objectWithoutProperties(props, _excluded$s);
-
+    className = props.className,
+    rest = _objectWithoutProperties(props, _excluded$A);
   var contextProp = React__default.useContext(EmptyStateContext);
   var _contextProp$size = contextProp.size,
-      size = _contextProp$size === void 0 ? 'standard' : _contextProp$size;
+    size = _contextProp$size === void 0 ? 'standard' : _contextProp$size;
   var textSize = {
     standard: 'regular',
     compressed: 'regular',
@@ -16240,18 +15406,15 @@ var EmptyStateDescription = function EmptyStateDescription(props) {
   }, rest), children);
 };
 
-var _excluded$r = ["children", "className"];
-
+var _excluded$z = ["children", "className"];
 var EmptyStateActions = function EmptyStateActions(props) {
   var _classNames;
-
   var children = props.children,
-      className = props.className,
-      rest = _objectWithoutProperties(props, _excluded$r);
-
+    className = props.className,
+    rest = _objectWithoutProperties(props, _excluded$z);
   var contextProp = React__default.useContext(EmptyStateContext);
   var _contextProp$size = contextProp.size,
-      size = _contextProp$size === void 0 ? 'standard' : _contextProp$size;
+    size = _contextProp$size === void 0 ? 'standard' : _contextProp$size;
   var actionWrapperClasses = classnames((_classNames = {}, _defineProperty$1(_classNames, "EmptyState-actions--".concat(size), true), _defineProperty$1(_classNames, 'EmptyState-actions', true), _classNames), className);
   return /*#__PURE__*/React__default.createElement("div", _extends$2({
     "data-test": "DesignSystem-EmptyState--Actions",
@@ -16289,36 +15452,31 @@ var textSize = {
 };
 var EmptyState = function EmptyState(props) {
   var _classNames3, _classNames4;
-
   var imageSrc = props.imageSrc,
-      title = props.title,
-      description = props.description,
-      _props$size = props.size,
-      size = _props$size === void 0 ? 'standard' : _props$size,
-      children = props.children,
-      className = props.className,
-      image = props.image,
-      maxWidth = props.maxWidth,
-      minWidth = props.minWidth,
-      width = props.width;
+    title = props.title,
+    description = props.description,
+    _props$size = props.size,
+    size = _props$size === void 0 ? 'standard' : _props$size,
+    children = props.children,
+    className = props.className,
+    image = props.image,
+    maxWidth = props.maxWidth,
+    minWidth = props.minWidth,
+    width = props.width;
   var baseProps = extractBaseProps(props);
   var templateSize = 'standard';
-
   var isValidSize = function isValidSize(size) {
     return size === 'large' || size === 'small';
   };
-
   if (title || description) {
     templateSize = isValidSize(size) ? size : 'large';
   } else {
     templateSize = isValidSize(size) ? 'standard' : size;
   }
-
   var wrapperClasses = classnames(_defineProperty$1({}, 'EmptyState', true), className);
   var emptyStateWrapper = classnames(_defineProperty$1({}, 'EmptyState-Wrapper', true), className);
   var headingClasses = classnames((_classNames3 = {}, _defineProperty$1(_classNames3, 'EmptyState-title', true), _defineProperty$1(_classNames3, "EmptyState-title--".concat(templateSize), true), _classNames3));
   var textClasses = classnames((_classNames4 = {}, _defineProperty$1(_classNames4, 'EmptyState-description', true), _defineProperty$1(_classNames4, "EmptyState-description--".concat(templateSize), children !== undefined), _classNames4));
-
   if (title || description) {
     return /*#__PURE__*/React.createElement("div", _extends$2({
       "data-test": "DesignSystem-EmptyState"
@@ -16347,7 +15505,6 @@ var EmptyState = function EmptyState(props) {
       "data-test": "DesignSystem-EmptyState--Text"
     }, description), children && children);
   }
-
   var templateMaxWidth = maxWidth ? maxWidth : templateWidth[templateSize];
   var customStyle = {
     maxWidth: templateMaxWidth,
@@ -16378,8 +15535,8 @@ EmptyState.defaultProps = {
 
 var ModalDescription = function ModalDescription(props) {
   var title = props.title,
-      description = props.description,
-      className = props.className;
+    description = props.description,
+    className = props.className;
   var baseProps = extractBaseProps(props);
   var classes = classnames({
     'Modal-description': true
@@ -16399,29 +15556,24 @@ ModalDescription.displayName = 'ModalDescription';
 
 var Pagination = function Pagination(props) {
   var _classNames, _classNames2, _classNames3;
-
   var type = props.type,
-      totalPages = props.totalPages,
-      onPageChange = props.onPageChange,
-      className = props.className,
-      pageJumpDebounceDuration = props.pageJumpDebounceDuration;
+    totalPages = props.totalPages,
+    onPageChange = props.onPageChange,
+    className = props.className,
+    pageJumpDebounceDuration = props.pageJumpDebounceDuration;
   var baseProps = extractBaseProps(props);
-
   var _React$useState = React.useState(props.page),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      page = _React$useState2[0],
-      setPage = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    page = _React$useState2[0],
+    setPage = _React$useState2[1];
   var _React$useState3 = React.useState(false),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      init = _React$useState4[0],
-      setInit = _React$useState4[1];
-
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    init = _React$useState4[0],
+    setInit = _React$useState4[1];
   var _React$useState5 = React.useState(0),
-      _React$useState6 = _slicedToArray(_React$useState5, 2),
-      debounceCancelCounter = _React$useState6[0],
-      setDebounceCancelCounter = _React$useState6[1];
-
+    _React$useState6 = _slicedToArray(_React$useState5, 2),
+    debounceCancelCounter = _React$useState6[0],
+    setDebounceCancelCounter = _React$useState6[1];
   var debouncePageChange = React.useCallback(debounce$1(pageJumpDebounceDuration, onPageChange), [debounceCancelCounter]);
   React.useEffect(function () {
     setPage(props.page);
@@ -16444,52 +15596,42 @@ var Pagination = function Pagination(props) {
          * cancel method above removes the single debounce function instance available.
          * To make a new instance available, we have to update the dependency object.
          */
-
         setDebounceCancelCounter(function (prev) {
           return prev + 1;
         });
       }
     }
   }, [page]);
-
   var inputChangeHandler = function inputChangeHandler(e) {
     e.preventDefault();
     var val = +e.target.value.trim();
-
     if (val >= 0 && val <= totalPages) {
       if (!init) setInit(true);
       setPage(val);
     }
   };
-
   var onKeyPressHandler = function onKeyPressHandler(e) {
     if (!isNaturalNumber(e.key)) {
       e.preventDefault();
     }
   };
-
   var onClickHandler = function onClickHandler(buttonType) {
     setInit(true);
-
     switch (buttonType) {
       case 'first':
         setPage(1);
         break;
-
       case 'last':
         setPage(totalPages);
         break;
-
       case 'prev':
         if (page > 1) setPage(page - 1);
         break;
-
       case 'next':
         if (page < totalPages) setPage(page + 1);
         break;
     }
   };
-
   return /*#__PURE__*/React.createElement("div", _extends$2({
     "data-test": "DesignSystem-Pagination"
   }, baseProps, {
@@ -16549,42 +15691,35 @@ Pagination.defaultProps = {
   pageJumpDebounceDuration: 750
 };
 
-var _excluded$q = ["onChange"];
+var _excluded$y = ["onChange"];
 var EditableInput = function EditableInput(props) {
   var _classNames2, _classNames4;
-
   var error = props.error,
-      size = props.size,
-      errorMessage = props.errorMessage,
-      placeholder = props.placeholder,
-      inputOptions = props.inputOptions,
-      disableSaveAction = props.disableSaveAction,
-      onChange = props.onChange,
-      className = props.className;
-
+    size = props.size,
+    errorMessage = props.errorMessage,
+    placeholder = props.placeholder,
+    inputOptions = props.inputOptions,
+    disableSaveAction = props.disableSaveAction,
+    onChange = props.onChange,
+    className = props.className;
   var onInputChange = inputOptions.onChange,
-      rest = _objectWithoutProperties(inputOptions, _excluded$q);
-
+    rest = _objectWithoutProperties(inputOptions, _excluded$y);
   var _React$useState = React.useState(props.value),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      inputValue = _React$useState2[0],
-      setInputValue = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    inputValue = _React$useState2[0],
+    setInputValue = _React$useState2[1];
   var _React$useState3 = React.useState(props.value),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      value = _React$useState4[0],
-      setValue = _React$useState4[1];
-
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    value = _React$useState4[0],
+    setValue = _React$useState4[1];
   var _React$useState5 = React.useState(false),
-      _React$useState6 = _slicedToArray(_React$useState5, 2),
-      editing = _React$useState6[0],
-      setEditing = _React$useState6[1];
-
+    _React$useState6 = _slicedToArray(_React$useState5, 2),
+    editing = _React$useState6[0],
+    setEditing = _React$useState6[1];
   var _React$useState7 = React.useState(false),
-      _React$useState8 = _slicedToArray(_React$useState7, 2),
-      showComponent = _React$useState8[0],
-      setShowComponent = _React$useState8[1];
-
+    _React$useState8 = _slicedToArray(_React$useState7, 2),
+    showComponent = _React$useState8[0],
+    setShowComponent = _React$useState8[1];
   var inputRef = /*#__PURE__*/React.createRef();
   var baseProps = extractBaseProps(props);
   var isControlled = props.value !== undefined;
@@ -16595,53 +15730,46 @@ var EditableInput = function EditableInput(props) {
   var EditableDefaultClass = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'EditableInput-default', true), _defineProperty$1(_classNames2, "EditableInput-default--".concat(size), size), _classNames2));
   var InputClass = classnames(_defineProperty$1({}, 'EditableInput-Input--tiny', size === 'tiny'));
   var ActionClass = classnames((_classNames4 = {}, _defineProperty$1(_classNames4, 'EditableInput-actions', true), _defineProperty$1(_classNames4, "EditableInput-actions--".concat(size), size), _classNames4));
-
   var setDefaultComponent = function setDefaultComponent(updatedValue) {
     setInputValue(updatedValue);
     setEditing(false);
     setShowComponent(false);
   };
-
   var onSaveChanges = function onSaveChanges() {
     if (!isControlled) setValue(inputValue);
     if (onChange) onChange(inputValue || '');
     setDefaultComponent(inputValue);
   };
-
   var onInputChangeHandler = function onInputChangeHandler(e) {
     setInputValue(e.target.value);
     if (onInputChange) onInputChange(e);
   };
-
   var onChangeHandler = function onChangeHandler(eventType) {
     switch (eventType) {
       case 'edit':
         {
           var _inputRef$current;
-
           (_inputRef$current = inputRef.current) === null || _inputRef$current === void 0 ? void 0 : _inputRef$current.focus();
           setEditing(true);
           setShowComponent(true);
           break;
         }
-
       case 'hover':
         {
           setShowComponent(true);
           break;
         }
-
       case 'default':
         {
           setShowComponent(false);
         }
     }
   };
-
   var inputComponent = /*#__PURE__*/React.createElement(Input, _extends$2({
     defaultValue: inputValue,
     placeholder: placeholder,
-    className: InputClass // TODO(a11y)
+    className: InputClass
+    // TODO(a11y)
     // eslint-disable-next-line jsx-a11y/no-autofocus
     ,
     autoFocus: editing,
@@ -16651,21 +15779,18 @@ var EditableInput = function EditableInput(props) {
     ref: inputRef,
     "data-test": "DesignSystem-EditableInput--Input"
   }, rest));
-
   var onKeyDown = function onKeyDown(event) {
     if (document.activeElement === inputRef.current) {
       switch (event.key) {
         case 'Enter':
           onSaveChanges();
           break;
-
         case 'Escape':
           setDefaultComponent(value);
           break;
       }
     }
   };
-
   var renderChildren = function renderChildren() {
     if (showComponent) {
       return error && errorMessage && editing ? /*#__PURE__*/React.createElement(Popover, {
@@ -16678,13 +15803,11 @@ var EditableInput = function EditableInput(props) {
         description: errorMessage
       })) : inputComponent;
     }
-
     return /*#__PURE__*/React.createElement("div", {
       className: EditableDefaultClass,
       "data-test": "DesignSystem-EditableInput--Default"
     }, value || placeholder);
   };
-
   return (
     /*#__PURE__*/
     // TODO(a11y)
@@ -16726,40 +15849,33 @@ EditableInput.defaultProps = {
   inputOptions: {}
 };
 
-var _excluded$p = ["onChange", "chipOptions"],
-    _excluded2$2 = ["onClick"];
+var _excluded$x = ["onChange", "chipOptions"],
+  _excluded2$2 = ["onClick"];
 var EditableChipInput = function EditableChipInput(props) {
   var _classNames3;
-
   var placeholder = props.placeholder,
-      onChange = props.onChange,
-      className = props.className,
-      disableSaveAction = props.disableSaveAction,
-      chipInputOptions = props.chipInputOptions;
-
+    onChange = props.onChange,
+    className = props.className,
+    disableSaveAction = props.disableSaveAction,
+    chipInputOptions = props.chipInputOptions;
   var onChipInputChange = chipInputOptions.onChange,
-      _chipInputOptions$chi = chipInputOptions.chipOptions,
-      chipOptions = _chipInputOptions$chi === void 0 ? {} : _chipInputOptions$chi,
-      rest = _objectWithoutProperties(chipInputOptions, _excluded$p);
-
+    _chipInputOptions$chi = chipInputOptions.chipOptions,
+    chipOptions = _chipInputOptions$chi === void 0 ? {} : _chipInputOptions$chi,
+    rest = _objectWithoutProperties(chipInputOptions, _excluded$x);
   var _onClick = chipOptions.onClick,
-      chipObject = _objectWithoutProperties(chipOptions, _excluded2$2);
-
+    chipObject = _objectWithoutProperties(chipOptions, _excluded2$2);
   var _React$useState = React.useState(props.value),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      inputValue = _React$useState2[0],
-      setInputValue = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    inputValue = _React$useState2[0],
+    setInputValue = _React$useState2[1];
   var _React$useState3 = React.useState(props.value),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      value = _React$useState4[0],
-      setValue = _React$useState4[1];
-
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    value = _React$useState4[0],
+    setValue = _React$useState4[1];
   var _React$useState5 = React.useState(false),
-      _React$useState6 = _slicedToArray(_React$useState5, 2),
-      showComponent = _React$useState6[0],
-      setShowComponent = _React$useState6[1];
-
+    _React$useState6 = _slicedToArray(_React$useState5, 2),
+    showComponent = _React$useState6[0],
+    setShowComponent = _React$useState6[1];
   var baseProps = extractBaseProps(props);
   var isWithChips = inputValue && inputValue.length;
   var isControlled = props.value !== undefined;
@@ -16773,23 +15889,19 @@ var EditableChipInput = function EditableChipInput(props) {
   var actionClass = classnames(_defineProperty$1({}, 'EditableChipInput-actions', true));
   var defaultClasses = classnames((_classNames3 = {}, _defineProperty$1(_classNames3, 'EditableChipInput-default', !isWithChips), _defineProperty$1(_classNames3, 'EditableChipInput-defaultWithChips', isWithChips), _classNames3));
   var inputClass = classnames(_defineProperty$1({}, 'EditableChipInput-chipInput', true));
-
   var onChipInputChangeHandler = function onChipInputChangeHandler(val) {
     setInputValue(val);
     if (onChipInputChange) onChipInputChange(val);
   };
-
   var setDefaultComponent = function setDefaultComponent(updatedValue) {
     setInputValue(updatedValue);
     setShowComponent(false);
   };
-
   var onSaveChanges = function onSaveChanges() {
     if (!isControlled) setValue(inputValue);
     if (onChange && inputValue) onChange(inputValue);
     setDefaultComponent(inputValue);
   };
-
   var onChangeHandler = function onChangeHandler(eventType) {
     switch (eventType) {
       case 'edit':
@@ -16797,12 +15909,10 @@ var EditableChipInput = function EditableChipInput(props) {
           setShowComponent(true);
           break;
         }
-
       case 'hover':
         {
           break;
         }
-
       case 'default':
         {
           setShowComponent(false);
@@ -16810,22 +15920,17 @@ var EditableChipInput = function EditableChipInput(props) {
         }
     }
   };
-
   var onChipDelete = function onChipDelete(index) {
     if (value) {
       var updatedValue = _toConsumableArray(value);
-
       updatedValue.splice(index, 1);
-
       if (!isControlled) {
         setInputValue(updatedValue);
         setValue(updatedValue);
       }
-
       if (onChange) onChange(updatedValue);
     }
   };
-
   var renderDefaultState = function renderDefaultState() {
     if (inputValue && inputValue.length) {
       return inputValue.map(function (val, index) {
@@ -16845,12 +15950,10 @@ var EditableChipInput = function EditableChipInput(props) {
         }));
       });
     }
-
     return /*#__PURE__*/React.createElement(Text, {
       className: "pt-1"
     }, placeholder);
   };
-
   var renderChildren = function renderChildren() {
     if (showComponent) {
       return /*#__PURE__*/React.createElement("div", {
@@ -16865,13 +15968,11 @@ var EditableChipInput = function EditableChipInput(props) {
         className: inputClass
       })));
     }
-
     return /*#__PURE__*/React.createElement("div", {
       className: defaultClasses,
       "data-test": "DesignSystem-EditableChipInput--Default"
     }, renderDefaultState());
   };
-
   return /*#__PURE__*/React.createElement("div", _extends$2({
     className: classes,
     "data-test": "DesignSystem-EditableChipInput"
@@ -16905,9 +16006,9 @@ EditableChipInput.defaultProps = {
 
 var ProgressRing = function ProgressRing(props) {
   var size = props.size,
-      max = props.max,
-      value = props.value,
-      className = props.className;
+    max = props.max,
+    value = props.value,
+    className = props.className;
   var baseProps = extractBaseProps(props);
   var radius = 20;
   var circumference = 2 * Math.PI * radius;
@@ -16947,26 +16048,22 @@ ProgressRing.defaultProps = {
 
 var Step = function Step(props) {
   var _classNames;
-
   var label = props.label,
-      value = props.value,
-      disabled = props.disabled,
-      active = props.active,
-      completed = props.completed,
-      onChange = props.onChange;
+    value = props.value,
+    disabled = props.disabled,
+    active = props.active,
+    completed = props.completed,
+    onChange = props.onChange;
   var StepClass = classnames((_classNames = {}, _defineProperty$1(_classNames, 'Step', true), _defineProperty$1(_classNames, 'Stepper-animate', true), _defineProperty$1(_classNames, 'Step--active', active), _defineProperty$1(_classNames, 'Step--disabled', disabled), _defineProperty$1(_classNames, 'Step--completed', completed), _classNames));
-
   var onClickHandle = function onClickHandle() {
     if (disabled) return;
     if (onChange) onChange(label, value);
   };
-
   var onKeyDownHandler = function onKeyDownHandler(event) {
     if (event.key === 'Enter') {
       onClickHandle();
     }
   };
-
   var textColor = active ? 'primary-dark' : disabled ? 'inverse-lightest' : 'inverse';
   return (
     /*#__PURE__*/
@@ -16995,17 +16092,15 @@ Step.displayName = 'Step';
 
 var Stepper = function Stepper(props) {
   var steps = props.steps,
-      active = props.active,
-      completed = props.completed,
-      onChange = props.onChange,
-      className = props.className,
-      skipIndexes = props.skipIndexes;
+    active = props.active,
+    completed = props.completed,
+    onChange = props.onChange,
+    className = props.className,
+    skipIndexes = props.skipIndexes;
   var baseProps = extractBaseProps(props);
-
   var onChangeHandler = function onChangeHandler(index, stepLabel, stepValue) {
     if (onChange) onChange(index, completed, stepLabel, stepValue);
   };
-
   var StepperClass = classnames(_defineProperty$1({}, 'Stepper', true), className);
   return /*#__PURE__*/React.createElement("div", _extends$2({
     "data-test": "DesignSystem-Stepper"
@@ -17013,7 +16108,7 @@ var Stepper = function Stepper(props) {
     className: StepperClass
   }), steps.map(function (step, index) {
     var label = step.label,
-        value = step.value;
+      value = step.value;
     var isSkipped = skipIndexes.includes(index);
     var activeStep = active === index;
     var completedStep = !isSkipped && completed >= index;
@@ -17040,81 +16135,67 @@ Stepper.defaultProps = {
 
 var Trigger = function Trigger(props) {
   var inputFormat = props.inputFormat,
-      startInputOptions = props.startInputOptions,
-      endInputOptions = props.endInputOptions,
-      validators = props.validators,
-      state = props.state,
-      setState = props.setState;
+    startInputOptions = props.startInputOptions,
+    endInputOptions = props.endInputOptions,
+    validators = props.validators,
+    state = props.state,
+    setState = props.setState;
   var init = state.init,
-      startDate = state.startDate,
-      endDate = state.endDate,
-      startError = state.startError,
-      endError = state.endError;
-
+    startDate = state.startDate,
+    endDate = state.endDate,
+    startError = state.startError,
+    endError = state.endError;
   var updateNav = function updateNav(type) {
     if (type === 'start') {
       var _getDateInfo = getDateInfo(startDate),
-          year = _getDateInfo.year,
-          month = _getDateInfo.month;
-
+        year = _getDateInfo.year,
+        month = _getDateInfo.month;
       setState({
         yearNav: year,
         monthNav: month
       });
     }
-
     if (type === 'end') {
       var _getDateInfo2 = getDateInfo(endDate),
-          _year = _getDateInfo2.year,
-          _month = _getDateInfo2.month;
-
+        _year = _getDateInfo2.year,
+        _month = _getDateInfo2.month;
       setState({
         yearNav: _year,
         monthNav: _month
       });
     }
   };
-
   var onPasteHandler = function onPasteHandler(_e, val, type) {
     setState({
       open: true
     });
-
     if (type === 'start') {
       var placeholderChar = startInputOptions.placeholderChar || '_';
-
       if (val && !val.includes(placeholderChar)) {
         var d = translateToDate(inputFormat, val, validators);
-
         if (d) {
           setState({
             startDate: d
           });
-
           if (endDate) {
             var _getDateInfo3 = getDateInfo(endDate),
-                eYear = _getDateInfo3.year,
-                eMonth = _getDateInfo3.month,
-                eDate = _getDateInfo3.date;
-
+              eYear = _getDateInfo3.year,
+              eMonth = _getDateInfo3.month,
+              eDate = _getDateInfo3.date;
             if (compareDate(startDate, 'more', eYear, eMonth, eDate)) {
               setState({
                 endDate: undefined
               });
             }
           }
-
           if (startInputOptions.onPaste) startInputOptions.onPaste(_e, val);
         }
       }
     }
-
     if (type === 'end') {
       var _placeholderChar = endInputOptions.placeholderChar ? endInputOptions.placeholderChar : '_';
-
       if (val && !val.includes(_placeholderChar)) {
         var _d = translateToDate(inputFormat, val, validators);
-
         if (_d) {
           setState({
             endDate: _d
@@ -17124,29 +16205,23 @@ var Trigger = function Trigger(props) {
       }
     }
   };
-
   var onChangeHandler = function onChangeHandler(_e, val, type) {
     setState({
       open: true
     });
-
     if (type === 'start') {
       var placeholderChar = startInputOptions.placeholderChar || '_';
-
       if (val && !val.includes(placeholderChar)) {
         var d = translateToDate(inputFormat, val, validators);
-
         if (d && !isNaN(d.getTime())) {
           setState({
             startDate: d
           });
-
           if (endDate) {
             var _getDateInfo4 = getDateInfo(endDate),
-                eYear = _getDateInfo4.year,
-                eMonth = _getDateInfo4.month,
-                eDate = _getDateInfo4.date;
-
+              eYear = _getDateInfo4.year,
+              eMonth = _getDateInfo4.month,
+              eDate = _getDateInfo4.date;
             if (compareDate(startDate, 'more', eYear, eMonth, eDate)) {
               setState({
                 endDate: undefined
@@ -17156,30 +16231,24 @@ var Trigger = function Trigger(props) {
         }
       }
     }
-
     if (type === 'end') {
       var _placeholderChar2 = endInputOptions.placeholderChar ? endInputOptions.placeholderChar : '_';
-
       if (val && !val.includes(_placeholderChar2)) {
         var _d2 = translateToDate(inputFormat, val, validators);
-
         if (_d2 && !isNaN(_d2.getTime())) setState({
           endDate: _d2
         });
       }
     }
   };
-
   var onBlurHandler = function onBlurHandler(_e, val, type) {
     setState({
       init: true
     });
     var hasNumber = /\d/;
-
     if (type === 'start') {
       var _startInputOptions$pl = startInputOptions.placeholderChar,
-          placeholderChar = _startInputOptions$pl === void 0 ? '_' : _startInputOptions$pl;
-
+        placeholderChar = _startInputOptions$pl === void 0 ? '_' : _startInputOptions$pl;
       if (val && hasNumber.test(val) && val.includes(placeholderChar)) {
         setState({
           startError: true
@@ -17189,16 +16258,13 @@ var Trigger = function Trigger(props) {
           startError: false
         });
       }
-
       if (!val || val.includes(placeholderChar)) setState({
         startDate: undefined
       });
     }
-
     if (type === 'end') {
       var _endInputOptions$plac = endInputOptions.placeholderChar,
-          _placeholderChar3 = _endInputOptions$plac === void 0 ? '_' : _endInputOptions$plac;
-
+        _placeholderChar3 = _endInputOptions$plac === void 0 ? '_' : _endInputOptions$plac;
       if (val && hasNumber.test(val) && val.includes(_placeholderChar3)) {
         setState({
           endError: true
@@ -17208,25 +16274,21 @@ var Trigger = function Trigger(props) {
           endError: false
         });
       }
-
       if (!val || val.includes(_placeholderChar3)) setState({
         endDate: undefined
       });
     }
   };
-
   var onClearHandler = function onClearHandler(type) {
     setState({
       init: true
     });
-
     if (type === 'start') {
       setState({
         startDate: undefined
       });
       updateNav('end');
     }
-
     if (type === 'end') {
       setState({
         endDate: undefined
@@ -17234,15 +16296,12 @@ var Trigger = function Trigger(props) {
       updateNav('start');
     }
   };
-
   var onClickHandler = function onClickHandler(type) {
     var open = state.open;
-
     if (!open) {
       updateNav(type);
     }
   };
-
   var mask = date[inputFormat];
   var startPlaceholderChar = startInputOptions.placeholderChar || '_';
   var endPlaceholderChar = endInputOptions.placeholderChar || '_';
@@ -17252,11 +16311,9 @@ var Trigger = function Trigger(props) {
   var endErrorMessage = endInputOptions.caption === undefined ? 'Invalid value' : endInputOptions.caption;
   var startLabel = startInputOptions.label;
   var endLabel = endInputOptions.label;
-
   var inputValidator = function inputValidator(val) {
     return isValid(validators, val, inputFormat);
   };
-
   return /*#__PURE__*/React.createElement(Row, {
     "data-test": "DesignSystem-DateRangePicker-InputTrigger"
   }, /*#__PURE__*/React.createElement(Column, {
@@ -17328,36 +16385,33 @@ var Trigger = function Trigger(props) {
 
 var SingleInputTrigger = function SingleInputTrigger(props) {
   var inputFormat = props.inputFormat,
-      inputOptions = props.inputOptions,
-      validators = props.validators,
-      state = props.state,
-      setState = props.setState;
+    inputOptions = props.inputOptions,
+    validators = props.validators,
+    state = props.state,
+    setState = props.setState;
   var init = state.init,
-      startDate = state.startDate,
-      endDate = state.endDate,
-      startValue = state.startValue,
-      endValue = state.endValue,
-      startError = state.startError,
-      endError = state.endError;
+    startDate = state.startDate,
+    endDate = state.endDate,
+    startValue = state.startValue,
+    endValue = state.endValue,
+    startError = state.startError,
+    endError = state.endError;
   var mask = rangeDate[inputFormat];
   var showError = inputOptions.error || inputOptions.required && (startError || endError) && init;
   var errorMessage = inputOptions.caption === undefined ? 'Invalid value' : inputOptions.caption;
   var label = inputOptions.label;
   var _inputOptions$placeho = inputOptions.placeholderChar,
-      placeholderChar = _inputOptions$placeho === void 0 ? '_' : _inputOptions$placeho;
+    placeholderChar = _inputOptions$placeho === void 0 ? '_' : _inputOptions$placeho;
   var defaultValue = X.utils.getDefaultValue(mask, placeholderChar).split(' - ');
   var sValue = startValue || defaultValue[0];
   var eValue = endValue || defaultValue[1];
-
   var inputValidator = function inputValidator(val) {
     var _val$split = val.split(' - '),
-        _val$split2 = _slicedToArray(_val$split, 2),
-        startVal = _val$split2[0],
-        endVal = _val$split2[1];
-
+      _val$split2 = _slicedToArray(_val$split, 2),
+      startVal = _val$split2[0],
+      endVal = _val$split2[1];
     return isValid(validators, startVal, inputFormat) && isValid(validators, endVal, inputFormat);
   };
-
   var onPasteHandler = function onPasteHandler(_e, val) {
     var onPaste = inputOptions.onPaste;
     var date = val.split(' - ');
@@ -17373,28 +16427,23 @@ var SingleInputTrigger = function SingleInputTrigger(props) {
     });
     if (onPaste) onPaste(_e, val);
   };
-
   var onChangeHandler = function onChangeHandler(_e, val) {
     var date = val.split(' - ');
     var startVal = date[0];
     var endVal = date[1];
-
     if (startValue !== startVal && startVal && !startVal.includes(placeholderChar)) {
       var startD = translateToDate(inputFormat, startVal, validators);
-
       if (startD) {
         var isEndDateValid = endValue && !endValue.includes(placeholderChar);
         setState({
           startDate: startD,
           endDate: isEndDateValid ? endDate : undefined
         });
-
         if (endDate) {
           var _getDateInfo = getDateInfo(endDate),
-              eYear = _getDateInfo.year,
-              eMonth = _getDateInfo.month,
-              eDate = _getDateInfo.date;
-
+            eYear = _getDateInfo.year,
+            eMonth = _getDateInfo.month,
+            eDate = _getDateInfo.date;
           if (compareDate(startDate, 'more', eYear, eMonth, eDate)) {
             setState({
               endDate: undefined
@@ -17403,11 +16452,9 @@ var SingleInputTrigger = function SingleInputTrigger(props) {
         }
       }
     }
-
     if (endValue !== endVal && endVal && !endVal.includes(placeholderChar)) {
       var endD = translateToDate(inputFormat, endVal, validators);
       var isStartDateValid = startValue && !startValue.includes(placeholderChar);
-
       if (endD) {
         setState({
           endDate: endD,
@@ -17415,16 +16462,13 @@ var SingleInputTrigger = function SingleInputTrigger(props) {
         });
       }
     }
-
     setState({
       startValue: startVal,
       endValue: endVal
     });
   };
-
   var getErrorState = function getErrorState(currentVal, siblingVal) {
     var hasNumber = /\d/;
-
     if (currentVal && siblingVal && !currentVal.includes(placeholderChar) && siblingVal.includes(placeholderChar)) {
       return true;
     } else if (currentVal && hasNumber.test(currentVal) && currentVal.includes(placeholderChar)) {
@@ -17432,10 +16476,8 @@ var SingleInputTrigger = function SingleInputTrigger(props) {
     } else if (currentVal && !hasNumber.test(currentVal) || !currentVal) {
       return false;
     }
-
     return null;
   };
-
   var onBlurHandler = function onBlurHandler(_e, val) {
     setState({
       init: true
@@ -17445,14 +16487,12 @@ var SingleInputTrigger = function SingleInputTrigger(props) {
     var endVal = date[1];
     var startErr = getErrorState(startVal, endVal);
     var endErr = getErrorState(endVal, startVal);
-
     if (startErr !== null && endErr !== null) {
       setState({
         startError: startErr,
         endError: endErr
       });
     }
-
     if (!startVal || startVal.includes(placeholderChar)) setState({
       startDate: undefined
     });
@@ -17460,7 +16500,6 @@ var SingleInputTrigger = function SingleInputTrigger(props) {
       endDate: undefined
     });
   };
-
   var onClearHandler = function onClearHandler() {
     setState({
       init: true,
@@ -17470,7 +16509,6 @@ var SingleInputTrigger = function SingleInputTrigger(props) {
       monthNav: undefined
     });
   };
-
   return /*#__PURE__*/React.createElement(Row, {
     "data-test": "DesignSystem-DateRangePicker-SingleInputTrigger"
   }, /*#__PURE__*/React.createElement(Column, null, label && /*#__PURE__*/React.createElement(Label, {
@@ -17503,7 +16541,6 @@ var setDate = function setDate(date) {
   var d = new Date();
   return new Date(d.setDate(date));
 };
-
 var getCurrentYear = function getCurrentYear() {
   var current = new Date();
   var currentYear = current.getFullYear();
@@ -17556,21 +16593,15 @@ var getCustomDates = function getCustomDates() {
   };
 };
 
-var _excluded$o = ["startDate", "endDate", "yearNav", "monthNav", "open", "inputFormat", "outputFormat", "startInputOptions", "endInputOptions", "validators", "withInput", "position", "disabledBefore", "disabledAfter", "onRangeChange", "rangeLimit"];
+var _excluded$w = ["startDate", "endDate", "yearNav", "monthNav", "open", "inputFormat", "outputFormat", "startInputOptions", "endInputOptions", "validators", "withInput", "position", "disabledBefore", "disabledAfter", "onRangeChange", "rangeLimit"];
 var DateRangePicker = /*#__PURE__*/function (_React$Component) {
   _inherits(DateRangePicker, _React$Component);
-
   var _super = _createSuper(DateRangePicker);
-
   function DateRangePicker(props) {
     var _this;
-
     _classCallCheck(this, DateRangePicker);
-
     _this = _super.call(this, props);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "monthsInView", void 0);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "getDate", function (startDate, endDate) {
       var inputFormat = _this.props.inputFormat;
       var startVal = startDate ? translateToString(inputFormat, startDate) : '';
@@ -17580,81 +16611,64 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
         endValue: endVal
       };
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "getErrors", function (startDate, endDate) {
       var isError = function isError(date) {
         var _this$props = _this.props,
-            disabledBefore = _this$props.disabledBefore,
-            disabledAfter = _this$props.disabledAfter;
-
+          disabledBefore = _this$props.disabledBefore,
+          disabledAfter = _this$props.disabledAfter;
         var _getDateInfo = getDateInfo(disabledBefore),
-            dbYear = _getDateInfo.year,
-            dbMonth = _getDateInfo.month,
-            dbDate = _getDateInfo.date;
-
+          dbYear = _getDateInfo.year,
+          dbMonth = _getDateInfo.month,
+          dbDate = _getDateInfo.date;
         var _getDateInfo2 = getDateInfo(disabledAfter),
-            daYear = _getDateInfo2.year,
-            daMonth = _getDateInfo2.month,
-            daDate = _getDateInfo2.date;
-
+          daYear = _getDateInfo2.year,
+          daMonth = _getDateInfo2.month,
+          daDate = _getDateInfo2.date;
         return !date ? false : compareDate(date, 'less', dbYear, dbMonth, dbDate) || compareDate(date, 'more', daYear, daMonth, daDate);
       };
-
       var startError = isError(startDate);
       var endError = isError(endDate);
-
       var _getDateInfo3 = getDateInfo(endDate),
-          eYear = _getDateInfo3.year,
-          eMonth = _getDateInfo3.month,
-          eDate = _getDateInfo3.date;
-
+        eYear = _getDateInfo3.year,
+        eMonth = _getDateInfo3.month,
+        eDate = _getDateInfo3.date;
       if (compareDate(startDate, 'more', eYear, eMonth, eDate)) {
         startError = true;
         endError = true;
       }
-
       return {
         startError: startError,
         endError: endError
       };
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "getInRangeError", function () {
       var rangeLimit = _this.props.rangeLimit;
-
       if (rangeLimit) {
         var _this$state = _this.state,
-            _startDate2 = _this$state.startDate,
-            _endDate2 = _this$state.endDate;
-
-        var _getDateInfo4 = getDateInfo(_startDate2),
-            sYear = _getDateInfo4.year,
-            sMonth = _getDateInfo4.month,
-            sDate = _getDateInfo4.date;
-
-        var _getDateInfo5 = getDateInfo(_endDate2),
-            eYear = _getDateInfo5.year,
-            eMonth = _getDateInfo5.month,
-            eDate = _getDateInfo5.date;
-
+          startDate = _this$state.startDate,
+          endDate = _this$state.endDate;
+        var _getDateInfo4 = getDateInfo(startDate),
+          sYear = _getDateInfo4.year,
+          sMonth = _getDateInfo4.month,
+          sDate = _getDateInfo4.date;
+        var _getDateInfo5 = getDateInfo(endDate),
+          eYear = _getDateInfo5.year,
+          eMonth = _getDateInfo5.month,
+          eDate = _getDateInfo5.date;
         var limitDate;
-
-        if (_startDate2) {
-          limitDate = new Date(_startDate2);
+        if (startDate) {
+          limitDate = new Date(startDate);
           limitDate.setDate(sDate + rangeLimit);
           return compareDate(limitDate, 'less', eYear, eMonth, eDate + 1);
         }
-
-        if (_endDate2) {
-          limitDate = new Date(_endDate2);
+        if (endDate) {
+          limitDate = new Date(endDate);
           limitDate.setDate(eDate - rangeLimit);
           return compareDate(limitDate, 'more', sYear, sMonth, sDate - 1);
         }
       }
-
       return false;
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onRangeChangeHandler", function (sDate, eDate) {
       _this.setState({
         init: true,
@@ -17664,48 +16678,37 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
         endValue: eDate ? translateToString(_this.props.inputFormat, eDate) : ''
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onToggleHandler", function (o, type) {
       var _this$props2 = _this.props,
-          singleInput = _this$props2.singleInput,
-          inputOptions = _this$props2.inputOptions,
-          startInputOptions = _this$props2.startInputOptions,
-          endInputOptions = _this$props2.endInputOptions;
+        singleInput = _this$props2.singleInput,
+        inputOptions = _this$props2.inputOptions,
+        startInputOptions = _this$props2.startInputOptions,
+        endInputOptions = _this$props2.endInputOptions;
       var disabled = singleInput ? inputOptions.disabled : startInputOptions.disabled || endInputOptions.disabled;
       if (disabled) return;
-
       switch (type) {
         case 'outsideClick':
           _this.setState({
             open: o
           });
-
           break;
-
         case 'onClick':
           _this.setState({
             open: true
           });
-
           break;
       }
     });
-
     var _inputFormat = props.inputFormat,
-        validators = props.validators;
-
+      validators = props.validators;
     var _startDate = convertToDate(props.startDate, _inputFormat, validators);
-
     var _endDate = convertToDate(props.endDate, _inputFormat, validators);
-
     var _this$getDate = _this.getDate(_startDate, _endDate),
-        startValue = _this$getDate.startValue,
-        endValue = _this$getDate.endValue;
-
+      startValue = _this$getDate.startValue,
+      endValue = _this$getDate.endValue;
     var _this$getErrors = _this.getErrors(_startDate, _endDate),
-        _startError = _this$getErrors.startError,
-        _endError = _this$getErrors.endError;
-
+      _startError = _this$getErrors.startError,
+      _endError = _this$getErrors.endError;
     _this.state = {
       startDate: _startDate,
       endDate: _endDate,
@@ -17721,14 +16724,13 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
     _this.monthsInView = props.monthsInView || (props.withInput ? 2 : 1);
     return _this;
   }
-
   _createClass(DateRangePicker, [{
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps, prevState) {
       if (prevProps.startDate !== this.props.startDate) {
         var _this$props3 = this.props,
-            inputFormat = _this$props3.inputFormat,
-            validators = _this$props3.validators;
+          inputFormat = _this$props3.inputFormat,
+          validators = _this$props3.validators;
         var d = convertToDate(this.props.startDate, inputFormat, validators);
         var val = translateToString(inputFormat, d);
         this.setState({
@@ -17736,75 +16738,62 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
           startValue: val
         });
       }
-
       if (prevProps.endDate !== this.props.endDate) {
         var _this$props4 = this.props,
-            _inputFormat2 = _this$props4.inputFormat,
-            _validators = _this$props4.validators;
-
+          _inputFormat2 = _this$props4.inputFormat,
+          _validators = _this$props4.validators;
         var _d = convertToDate(this.props.endDate, _inputFormat2, _validators);
-
         var _val = translateToString(_inputFormat2, _d);
-
         this.setState({
           endDate: _d,
           endValue: _val
         });
       }
-
       if (prevProps.open !== this.props.open) {
         this.setState({
           open: this.props.open || false
         });
       }
-
       if (prevProps.yearNav !== this.props.yearNav) {
         this.setState({
           yearNav: this.props.yearNav
         });
       }
-
       if (prevProps.monthNav !== this.props.monthNav) {
         this.setState({
           monthNav: this.props.monthNav
         });
       }
-
       if (prevState.startDate !== this.state.startDate || prevState.endDate !== this.state.endDate) {
         var _this$props5 = this.props,
-            onRangeChange = _this$props5.onRangeChange,
-            outputFormat = _this$props5.outputFormat;
+          onRangeChange = _this$props5.onRangeChange,
+          outputFormat = _this$props5.outputFormat;
         var _this$state2 = this.state,
-            _startDate3 = _this$state2.startDate,
-            _endDate3 = _this$state2.endDate;
-
-        var _this$getErrors2 = this.getErrors(_startDate3, _endDate3),
-            startError = _this$getErrors2.startError,
-            endError = _this$getErrors2.endError;
-
+          startDate = _this$state2.startDate,
+          endDate = _this$state2.endDate;
+        var _this$getErrors2 = this.getErrors(startDate, endDate),
+          startError = _this$getErrors2.startError,
+          endError = _this$getErrors2.endError;
         this.setState({
           startError: startError,
           endError: endError
         });
-
         if (onRangeChange) {
           var inRangeError = this.getInRangeError();
-          var sValue = translateToString(outputFormat, _startDate3);
-          var eValue = translateToString(outputFormat, _endDate3);
-
+          var sValue = translateToString(outputFormat, startDate);
+          var eValue = translateToString(outputFormat, endDate);
           if (!inRangeError && !startError && !endError) {
             if (this.props.allowReverseSelection) {
-              if (_startDate3 && _endDate3) {
-                onRangeChange(_startDate3, _endDate3, sValue, eValue);
+              if (startDate && endDate) {
+                onRangeChange(startDate, endDate, sValue, eValue);
               }
             } else {
-              onRangeChange(_startDate3, _endDate3, sValue, eValue);
+              onRangeChange(startDate, endDate, sValue, eValue);
             }
           } else if (!this.props.allowReverseSelection) {
-            if (!startError) onRangeChange(_startDate3, undefined, sValue, eValue);else if (!endError) onRangeChange(undefined, _endDate3, sValue, eValue);else onRangeChange(undefined, undefined, sValue, eValue);
+            if (!startError) onRangeChange(startDate, undefined, sValue, eValue);else if (!endError) onRangeChange(undefined, endDate, sValue, eValue);else onRangeChange(undefined, undefined, sValue, eValue);
           }
         }
-
         if (this.state.startDate && this.state.endDate) {
           this.setState({
             open: false
@@ -17816,29 +16805,28 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
     key: "renderCalendar",
     value: function renderCalendar() {
       var _this$props6 = this.props;
-          _this$props6.startDate;
-          _this$props6.endDate;
-          _this$props6.yearNav;
-          _this$props6.monthNav;
-          _this$props6.open;
-          var inputFormat = _this$props6.inputFormat;
-          _this$props6.outputFormat;
-          _this$props6.startInputOptions;
-          _this$props6.endInputOptions;
-          var validators = _this$props6.validators;
-          _this$props6.withInput;
-          _this$props6.position;
-          var disabledBefore = _this$props6.disabledBefore,
-          disabledAfter = _this$props6.disabledAfter;
-          _this$props6.onRangeChange;
-          var rangeLimit = _this$props6.rangeLimit,
-          rest = _objectWithoutProperties(_this$props6, _excluded$o);
-
+        _this$props6.startDate;
+        _this$props6.endDate;
+        _this$props6.yearNav;
+        _this$props6.monthNav;
+        _this$props6.open;
+        var inputFormat = _this$props6.inputFormat;
+        _this$props6.outputFormat;
+        _this$props6.startInputOptions;
+        _this$props6.endInputOptions;
+        var validators = _this$props6.validators;
+        _this$props6.withInput;
+        _this$props6.position;
+        var disabledBefore = _this$props6.disabledBefore,
+        disabledAfter = _this$props6.disabledAfter;
+        _this$props6.onRangeChange;
+        var rangeLimit = _this$props6.rangeLimit,
+        rest = _objectWithoutProperties(_this$props6, _excluded$w);
       var _this$state3 = this.state,
-          startDate = _this$state3.startDate,
-          endDate = _this$state3.endDate,
-          yearNav = _this$state3.yearNav,
-          monthNav = _this$state3.monthNav;
+        startDate = _this$state3.startDate,
+        endDate = _this$state3.endDate,
+        yearNav = _this$state3.yearNav,
+        monthNav = _this$state3.monthNav;
       return /*#__PURE__*/React.createElement(Calendar, _extends$2({}, rest, {
         monthsInView: this.monthsInView,
         rangePicker: true,
@@ -17856,21 +16844,19 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var _classNames;
-
       var _this$props7 = this.props,
-          withInput = _this$props7.withInput,
-          startInputOptions = _this$props7.startInputOptions,
-          endInputOptions = _this$props7.endInputOptions,
-          inputOptions = _this$props7.inputOptions,
-          inputFormat = _this$props7.inputFormat,
-          position = _this$props7.position,
-          validators = _this$props7.validators,
-          singleInput = _this$props7.singleInput,
-          contentAlign = _this$props7.contentAlign,
-          children = _this$props7.children;
+        withInput = _this$props7.withInput,
+        startInputOptions = _this$props7.startInputOptions,
+        endInputOptions = _this$props7.endInputOptions,
+        inputOptions = _this$props7.inputOptions,
+        inputFormat = _this$props7.inputFormat,
+        position = _this$props7.position,
+        validators = _this$props7.validators,
+        singleInput = _this$props7.singleInput,
+        contentAlign = _this$props7.contentAlign,
+        children = _this$props7.children;
       var open = this.state.open;
       var RangePickerClass = classnames((_classNames = {}, _defineProperty$1(_classNames, 'DateRangePicker', true), _defineProperty$1(_classNames, "DateRangePicker--".concat(contentAlign), contentAlign), _classNames));
-
       if (withInput) {
         var trigger = singleInput ? /*#__PURE__*/React.createElement(SingleInputTrigger, {
           inputFormat: inputFormat,
@@ -17896,14 +16882,11 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
           onToggle: this.onToggleHandler
         }, children, this.renderCalendar());
       }
-
       return this.renderCalendar();
     }
   }]);
-
   return DateRangePicker;
 }(React.Component);
-
 _defineProperty$1(DateRangePicker, "utils", {
   getCurrentWeek: getCurrentWeek,
   getPreviousWeek: getPreviousWeek,
@@ -17913,7 +16896,6 @@ _defineProperty$1(DateRangePicker, "utils", {
   getCurrentYear: getCurrentYear,
   getCurrentMonth: getCurrentMonth
 });
-
 _defineProperty$1(DateRangePicker, "defaultProps", _objectSpread2(_objectSpread2({}, Calendar.defaultProps), {}, {
   children: /*#__PURE__*/React.createElement(React.Fragment, null),
   contentAlign: 'left',
@@ -17935,34 +16917,30 @@ _defineProperty$1(DateRangePicker, "defaultProps", _objectSpread2(_objectSpread2
 
 var TabsWrapper = function TabsWrapper(props) {
   var children = props.children,
-      onTabChange = props.onTabChange,
-      className = props.className;
+    onTabChange = props.onTabChange,
+    className = props.className,
+    size = props.size;
   var baseProps = extractBaseProps(props);
   var tabs = Array.isArray(children) ? children : [children];
   var totalTabs = tabs.length;
-
   var _React$useState = React.useState(props.active && props.active < totalTabs ? props.active : 0),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      active = _React$useState2[0],
-      setActiveTab = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    active = _React$useState2[0],
+    setActiveTab = _React$useState2[1];
   React.useEffect(function () {
     setActiveTab(props.active && props.active < totalTabs ? props.active : 0);
   }, [props.active]);
   var wrapperClass = classnames(_defineProperty$1({}, 'TabsWrapper', true), className);
-
   var tabClickHandler = function tabClickHandler(tabIndex) {
     setActiveTab(tabIndex);
     if (onTabChange) onTabChange(tabIndex);
   };
-
   var TabsHeader = tabs.map(function (child, index) {
     var _classNames2;
-
     var _child$props = child.props,
-        label = _child$props.label,
-        disabled = _child$props.disabled;
-    var tabHeaderClass = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'Tab', true), _defineProperty$1(_classNames2, 'Tab--disabled', disabled), _defineProperty$1(_classNames2, 'Tab--active', !disabled && active === index), _classNames2));
+      label = _child$props.label,
+      disabled = _child$props.disabled;
+    var tabHeaderClass = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'Tab', true), _defineProperty$1(_classNames2, 'Tab--disabled', disabled), _defineProperty$1(_classNames2, 'Tab--active', !disabled && active === index), _defineProperty$1(_classNames2, 'Tab--regular', size === 'regular'), _defineProperty$1(_classNames2, 'Tab--small', size === 'small'), _classNames2));
     return (
       /*#__PURE__*/
       // TODO(a11y)
@@ -17989,6 +16967,9 @@ var TabsWrapper = function TabsWrapper(props) {
   }, tabs[active]));
 };
 TabsWrapper.displayName = 'TabsWrapper';
+TabsWrapper.defaultProps = {
+  size: 'regular'
+};
 
 var Tab = function Tab(props) {
   var children = props.children;
@@ -17999,7 +16980,6 @@ Tab.displayName = 'Tab';
 var getChildrenArray = function getChildrenArray(children) {
   return Array.isArray(children) ? children : [children];
 };
-
 var filterTabs = function filterTabs(children) {
   var childrenArray = getChildrenArray(children);
   var tabs = childrenArray.filter(function (element) {
@@ -18007,7 +16987,6 @@ var filterTabs = function filterTabs(children) {
   });
   return tabs;
 };
-
 var filterInlineComponent = function filterInlineComponent(children) {
   var childrenArray = getChildrenArray(children);
   var inlineComponent = childrenArray.filter(function (element) {
@@ -18015,26 +16994,24 @@ var filterInlineComponent = function filterInlineComponent(children) {
   });
   return inlineComponent;
 };
-
 var Tabs = function Tabs(props) {
   var _classNames2, _classNames4;
-
   var children = props.children,
-      withSeparator = props.withSeparator,
-      onTabChange = props.onTabChange,
-      className = props.className,
-      headerClassName = props.headerClassName;
+    withSeparator = props.withSeparator,
+    onTabChange = props.onTabChange,
+    className = props.className,
+    headerClassName = props.headerClassName,
+    size = props.size,
+    maxWidth = props.maxWidth;
   var baseProps = extractBaseProps(props);
   var tabRefs = [];
   var tabs = children ? filterTabs(children) : props.tabs;
   var inlineComponent = children ? filterInlineComponent(children) : /*#__PURE__*/React.createElement(React.Fragment, null);
   var totalTabs = tabs.length;
-
   var _React$useState = React.useState(props.activeIndex && props.activeIndex < totalTabs ? props.activeIndex : 0),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      activeIndex = _React$useState2[0],
-      setActiveTab = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    activeIndex = _React$useState2[0],
+    setActiveTab = _React$useState2[1];
   React.useEffect(function () {
     if (props.activeIndex !== undefined && props.activeIndex < totalTabs) {
       setActiveTab(props.activeIndex);
@@ -18042,67 +17019,52 @@ var Tabs = function Tabs(props) {
   }, [props.activeIndex]);
   var wrapperClass = classnames(_defineProperty$1({}, 'TabsWrapper', true), className);
   var headerClass = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'TabsWrapper-header', true), _defineProperty$1(_classNames2, 'TabsWrapper-header--withSeparator', withSeparator), _classNames2), className, headerClassName);
-
   var getPillsClass = function getPillsClass(disabled) {
     var _classNames3;
-
     return classnames((_classNames3 = {}, _defineProperty$1(_classNames3, 'Tab-pills', true), _defineProperty$1(_classNames3, 'Tab-pills--disabled', disabled), _classNames3));
   };
-
   var getActiveTabClass = function getActiveTabClass() {
     var activeTab;
     var activeTabClass;
-
     if (tabs && tabs.length && tabs[activeIndex] && 'props' in tabs[activeIndex]) {
       var _activeTab$props;
-
       activeTab = tabs[activeIndex];
       activeTabClass = (_activeTab$props = activeTab.props) === null || _activeTab$props === void 0 ? void 0 : _activeTab$props.className;
     } else {
       activeTab = tabs[activeIndex];
       activeTabClass = activeTab && activeTab.className;
     }
-
     return activeTabClass;
   };
-
   var activeTabClass = getActiveTabClass();
   var tabContentClass = classnames((_classNames4 = {}, _defineProperty$1(_classNames4, 'TabsWrapper-content', true), _defineProperty$1(_classNames4, "".concat(activeTabClass), activeTabClass), _classNames4));
-
   var tabClickHandler = function tabClickHandler(tabIndex, isKeyboard) {
     if (props.activeIndex === undefined) {
       var _tabRefs$tabIndex;
-
       setActiveTab(tabIndex);
       if (!isKeyboard) (_tabRefs$tabIndex = tabRefs[tabIndex]) === null || _tabRefs$tabIndex === void 0 ? void 0 : _tabRefs$tabIndex.blur();
     }
-
     if (onTabChange) onTabChange(tabIndex);
   };
-
   var tabKeyDownHandler = function tabKeyDownHandler(event, tabIndex) {
     if (event.key === 'Enter') {
       tabClickHandler(tabIndex, true);
     }
-
     if (event.key === 'ArrowLeft' && tabIndex > 0) {
       var prevElement = tabRefs[tabIndex - 1];
       prevElement === null || prevElement === void 0 ? void 0 : prevElement.focus();
     }
-
     if (event.key === 'ArrowRight' && tabIndex < tabs.length) {
       var nextElement = tabRefs[tabIndex + 1];
       nextElement === null || nextElement === void 0 ? void 0 : nextElement.focus();
     }
   };
-
   var renderInfo = function renderInfo(tab, index) {
     var _ref = tab,
-        count = _ref.count,
-        icon = _ref.icon,
-        disabled = _ref.disabled,
-        iconType = _ref.iconType;
-
+      count = _ref.count,
+      icon = _ref.icon,
+      disabled = _ref.disabled,
+      iconType = _ref.iconType;
     if (count !== undefined) {
       return /*#__PURE__*/React.createElement(Pills, {
         "data-test": "DesignSystem-Tabs--Pills",
@@ -18110,9 +17072,7 @@ var Tabs = function Tabs(props) {
         appearance: activeIndex === index ? 'primary' : 'secondary'
       }, count);
     }
-
     var iconClass = classnames(_defineProperty$1({}, 'Tab-selected', !disabled && activeIndex === index));
-
     if (icon) {
       var iconAppearance = activeIndex === index ? 'info' : disabled ? 'disabled' : 'subtle';
       return /*#__PURE__*/React.createElement(Icon, {
@@ -18123,33 +17083,26 @@ var Tabs = function Tabs(props) {
         appearance: iconAppearance
       });
     }
-
     return null;
   };
-
   var renderDismissIcon = function renderDismissIcon(tab, index, onDismiss) {
     var _ref2 = tab,
-        disabled = _ref2.disabled,
-        label = _ref2.label;
+      disabled = _ref2.disabled,
+      label = _ref2.label;
     var iconAppearance = activeIndex === index ? 'info' : disabled ? 'disabled' : 'subtle';
-
     var dismissIconClass = function dismissIconClass(disabled) {
       var _classNames6;
-
       return classnames((_classNames6 = {}, _defineProperty$1(_classNames6, "DismissibleTab-icon--right", true), _defineProperty$1(_classNames6, 'DismissibleTab-icon--default', !disabled && activeIndex !== index), _defineProperty$1(_classNames6, "DismissibleTab-icon--selected", !disabled && activeIndex === index), _defineProperty$1(_classNames6, 'cursor-pointer', !disabled), _defineProperty$1(_classNames6, 'Tab-selected', !disabled && activeIndex === index), _classNames6));
     };
-
     var tabInfo = {
       label: label,
       activeIndex: activeIndex,
       currentTabIndex: index
     };
-
     var onCloseHandler = function onCloseHandler(e) {
       e.stopPropagation();
       if (onDismiss) onDismiss(tabInfo);
     };
-
     return /*#__PURE__*/React.createElement(Icon, {
       "data-test": "DesignSystem-DismissibleTabs--Icon",
       name: "clear",
@@ -18159,35 +17112,46 @@ var Tabs = function Tabs(props) {
       tabIndex: disabled ? -1 : 0
     });
   };
-
   var renderTab = function renderTab(tab, index) {
+    var _classNames7, _classNames8;
+    var elementRef = /*#__PURE__*/React.createRef();
     var _ref3 = tab,
-        _ref3$label = _ref3.label,
-        label = _ref3$label === void 0 ? '' : _ref3$label,
-        disabled = _ref3.disabled,
-        isDismissible = _ref3.isDismissible,
-        _ref3$onDismiss = _ref3.onDismiss,
-        onDismiss = _ref3$onDismiss === void 0 ? function () {} : _ref3$onDismiss;
-
+      _ref3$label = _ref3.label,
+      label = _ref3$label === void 0 ? '' : _ref3$label,
+      disabled = _ref3.disabled,
+      isDismissible = _ref3.isDismissible,
+      _ref3$onDismiss = _ref3.onDismiss,
+      onDismiss = _ref3$onDismiss === void 0 ? function () {} : _ref3$onDismiss;
     if (typeof label !== 'string') {
       return label;
     }
-
     var textAppearance = activeIndex === index ? 'link' : disabled ? 'disabled' : 'subtle';
-    var tabTextClass = classnames(_defineProperty$1({}, 'Tab-selected', !disabled && activeIndex === index));
-    return /*#__PURE__*/React.createElement(React.Fragment, null, renderInfo(tab, index), /*#__PURE__*/React.createElement(Text, {
+    var tabTextClass = classnames((_classNames7 = {}, _defineProperty$1(_classNames7, 'ellipsis--noWrap', true), _defineProperty$1(_classNames7, 'Tab-selected', !disabled && activeIndex === index), _classNames7));
+    var tabClass = classnames((_classNames8 = {}, _defineProperty$1(_classNames8, 'Tab--regular', size === 'regular'), _defineProperty$1(_classNames8, 'Tab--small', size === 'small'), _defineProperty$1(_classNames8, 'Tab--overflow', true), _classNames8));
+    return /*#__PURE__*/React.createElement(Tooltip, {
+      showOnTruncation: true,
+      tooltip: label,
+      elementRef: elementRef,
+      triggerClass: "ellipsis--noWrap flex-grow-0"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: tabClass,
+      "data-test": "DesignSystem-Tabs--TextWrapper",
+      style: {
+        maxWidth: maxWidth
+      }
+    }, renderInfo(tab, index), /*#__PURE__*/React.createElement(Text, {
       "data-test": "DesignSystem-Tabs--Text",
       appearance: textAppearance,
-      className: tabTextClass
-    }, label), isDismissible && renderDismissIcon(tab, index, onDismiss));
+      className: tabTextClass,
+      ref: elementRef
+    }, label), isDismissible && renderDismissIcon(tab, index, onDismiss)));
   };
-
   var renderTabs = tabs.map(function (tab, index) {
-    var _classNames8;
-
+    var _classNames9;
     var currentTabProp = children && 'props' in tab ? tab.props : tab;
-    var disabled = currentTabProp.disabled;
-    var tabHeaderClass = classnames((_classNames8 = {}, _defineProperty$1(_classNames8, 'Tab', true), _defineProperty$1(_classNames8, 'Tab--disabled', disabled), _defineProperty$1(_classNames8, 'Tab--active', !disabled && activeIndex === index), _defineProperty$1(_classNames8, 'Tab-selected', !disabled && activeIndex === index), _defineProperty$1(_classNames8, 'align-items-center', true), _classNames8));
+    var disabled = currentTabProp.disabled,
+      label = currentTabProp.label;
+    var tabHeaderClass = classnames((_classNames9 = {}, _defineProperty$1(_classNames9, 'Tab', true), _defineProperty$1(_classNames9, 'Tab--disabled', disabled), _defineProperty$1(_classNames9, 'Tab--active', !disabled && activeIndex === index), _defineProperty$1(_classNames9, 'Tab-selected', !disabled && activeIndex === index), _defineProperty$1(_classNames9, 'align-items-center', true), _defineProperty$1(_classNames9, 'Tab--regular', size === 'regular' && typeof label !== 'string'), _defineProperty$1(_classNames9, 'Tab--small', size === 'small' && typeof label !== 'string'), _classNames9));
     return (
       /*#__PURE__*/
       // TODO(a11y)
@@ -18224,7 +17188,9 @@ var Tabs = function Tabs(props) {
 Tabs.displayName = 'Tabs';
 Tabs.defaultProps = {
   withSeparator: true,
-  tabs: []
+  tabs: [],
+  size: 'regular',
+  maxWidth: 'var(--spacing-9)'
 };
 
 var accepts = function accepts(file, acceptedFiles) {
@@ -18233,39 +17199,35 @@ var accepts = function accepts(file, acceptedFiles) {
     var fileName = file.name || '';
     var mimeType = (file.type || '').toLowerCase();
     var baseMimeType = mimeType.replace(/\/.*$/, '');
+    if (!mimeType) {
+      return true;
+    }
     return acceptedFilesArray.some(function (type) {
       var validType = type.trim().toLowerCase();
-
       if (validType.charAt(0) === '.') {
         return fileName.toLowerCase().endsWith(validType);
       }
-
       if (validType.endsWith('/*')) {
         return baseMimeType === validType.replace(/\/.*$/, '');
       }
-
       return mimeType === validType;
     });
   }
-
   return true;
 };
 var isPropagationStopped = function isPropagationStopped(event) {
   if (typeof event.isPropagationStopped === 'function') {
     return event.isPropagationStopped();
   }
-
   if (typeof event.cancelBubble !== 'undefined') {
     return event.cancelBubble;
   }
-
   return false;
 };
 var isEvtWithFiles = function isEvtWithFiles(event) {
   if (!event.dataTransfer) {
     return !!event.target && !!event.target.files;
   }
-
   return Array.prototype.some.call(event.dataTransfer.types, function (type) {
     return type === 'Files' || type === 'application/x-moz-file';
   });
@@ -18277,17 +17239,14 @@ var composeEventHandlers = function composeEventHandlers() {
   for (var _len = arguments.length, fns = new Array(_len), _key = 0; _key < _len; _key++) {
     fns[_key] = arguments[_key];
   }
-
   return function (event) {
     for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
       args[_key2 - 1] = arguments[_key2];
     }
-
     return fns.some(function (fn) {
       if (!isPropagationStopped(event) && fn) {
         fn.apply(void 0, [event].concat(args));
       }
-
       return isPropagationStopped(event);
     });
   };
@@ -18298,37 +17257,31 @@ var reducer = function reducer(state, action) {
       return _objectSpread2(_objectSpread2({}, state), {}, {
         isFocused: true
       });
-
     case 'blur':
       return _objectSpread2(_objectSpread2({}, state), {}, {
         isFocused: false
       });
-
     case 'openDialog':
       return _objectSpread2(_objectSpread2({}, state), {}, {
         isFileDialogActive: true
       });
-
     case 'closeDialog':
       return _objectSpread2(_objectSpread2({}, state), {}, {
         isFileDialogActive: false
       });
-
     case 'setDraggedFiles':
       /* eslint no-case-declarations: 0 */
       var isDragActive = action.isDragActive,
-          draggedFiles = action.draggedFiles;
+        draggedFiles = action.draggedFiles;
       return _objectSpread2(_objectSpread2({}, state), {}, {
         draggedFiles: draggedFiles,
         isDragActive: isDragActive
       });
-
     case 'setFiles':
       return _objectSpread2(_objectSpread2({}, state), {}, {
         acceptedFiles: action.acceptedFiles,
         fileRejections: action.fileRejections
       });
-
     case 'reset':
       return _objectSpread2(_objectSpread2({}, state), {}, {
         isFileDialogActive: false,
@@ -18337,7 +17290,6 @@ var reducer = function reducer(state, action) {
         acceptedFiles: [],
         fileRejections: []
       });
-
     default:
       return state;
   }
@@ -18349,11 +17301,9 @@ var fileErrorMessages = {
   FILE_TOO_SMALL: 'File is too small',
   TOO_MANY_FILES: 'Multiple files are not accepted'
 };
-
 var isDefined = function isDefined(value) {
   return value !== undefined && value !== null;
 };
-
 var getInvalidTypeRejectionErr = function getInvalidTypeRejectionErr(accept) {
   var updatedAccept = Array.isArray(accept) && accept.length === 1 ? accept[0] : accept;
   var messageSuffix = Array.isArray(updatedAccept) ? "one of ".concat(updatedAccept.join(', ')) : updatedAccept;
@@ -18389,78 +17339,71 @@ var fileMatchSize = function fileMatchSize(file, minSize, maxSize) {
       return [false, getTooLargeRejectionErr(maxSize)];
     }
   }
-
   return [true, null];
 };
 var getFileError = function getFileError(options) {
   var files = options.files,
-      accept = options.accept,
-      minSize = options.minSize,
-      maxSize = options.maxSize,
-      multiple = options.multiple;
-
+    accept = options.accept,
+    minSize = options.minSize,
+    maxSize = options.maxSize,
+    multiple = options.multiple;
   if (!multiple && files.length > 1) {
     return 'TOO_MANY_FILES';
   }
-
   var typeError = files.every(function (file) {
     var _fileAccepted = fileAccepted(file, accept),
-        _fileAccepted2 = _slicedToArray(_fileAccepted, 1),
-        accepted = _fileAccepted2[0];
-
+      _fileAccepted2 = _slicedToArray(_fileAccepted, 1),
+      accepted = _fileAccepted2[0];
     return !accepted;
   });
   var sizeError = files.every(function (file) {
     var _fileMatchSize = fileMatchSize(file, minSize, maxSize),
-        _fileMatchSize2 = _slicedToArray(_fileMatchSize, 1),
-        sizeMatch = _fileMatchSize2[0];
-
+      _fileMatchSize2 = _slicedToArray(_fileMatchSize, 1),
+      sizeMatch = _fileMatchSize2[0];
     return !sizeMatch;
   });
   return typeError ? 'FILE_INVALID_TYPE' : sizeError ? 'FILE_TOO_LARGE' : '';
 };
 var allFilesAccepted = function allFilesAccepted(options) {
   var files = options.files,
-      accept = options.accept,
-      minSize = options.minSize,
-      maxSize = options.maxSize,
-      multiple = options.multiple;
-
+    accept = options.accept,
+    minSize = options.minSize,
+    maxSize = options.maxSize,
+    multiple = options.multiple;
   if (!multiple && files.length > 1) {
     return false;
   }
-
   return files.every(function (file) {
     var _fileAccepted3 = fileAccepted(file, accept),
-        _fileAccepted4 = _slicedToArray(_fileAccepted3, 1),
-        accepted = _fileAccepted4[0];
-
+      _fileAccepted4 = _slicedToArray(_fileAccepted3, 1),
+      accepted = _fileAccepted4[0];
     var _fileMatchSize3 = fileMatchSize(file, minSize, maxSize),
-        _fileMatchSize4 = _slicedToArray(_fileMatchSize3, 1),
-        sizeMatch = _fileMatchSize4[0];
-
+      _fileMatchSize4 = _slicedToArray(_fileMatchSize3, 1),
+      sizeMatch = _fileMatchSize4[0];
     return accepted && sizeMatch;
   });
 };
 
-var COMMON_MIME_TYPES = new Map([// image
-['gif', 'image/gif'], ['ico', 'image/x-icon'], ['jpeg', 'image/jpeg'], ['jpg', 'image/jpeg'], ['png', 'image/png'], ['bmp', 'image/bmp'], ['tif', 'image/tiff'], ['tiff', 'image/tiff'], ['apng', 'image/apng'], ['avif', 'image/avif'], ['jfif', 'image/jpeg'], ['pjpeg', 'image/pjpeg'], ['pjp', 'image/jpeg'], ['svg', 'image/svg+xml'], ['webp', 'image/webp'], ['cur', 'image/x-win-bitmap'], ['MTS', 'model/vnd.mts'], // Video
-['roq', 'video'], ['f4a', 'video'], ['f4b', 'video'], ['drc', 'video'], ['nsv', 'video'], ['avi', 'video/x-msvideo'], ['mkv', 'video/x-matroska'], ['mov', 'video/quicktime'], ['mp4', 'video/mp4'], ['webm', 'video/webm'], ['flv', 'video/x-flv'], ['vob', 'video/x-ms-vob'], ['ogv', 'video/ogg'], ['ogg', 'application/ogg'], ['gifv', 'image/gif'], ['mng', 'video/x-mng'], ['M2TS', 'video/MP2T'], ['TS', 'video/mp2t'], ['qt', 'video/quicktime'], ['wmv', 'video/x-ms-wmv'], ['yuv', 'application/octet-stream'], ['rm', 'application/vnd.rn-realmedia'], ['rmvb', 'application/vnd.rn-realmedia-vbr'], ['viv', 'video/vnd.vivo'], ['asf', 'video/x-ms-asf'], ['amv', 'video/x-amv'], ['m4v', 'video/x-m4v'], ['mpg', 'video/mpeg'], ['mpeg', 'video/mpeg'], ['mpe', 'video/mpeg'], ['mpv', 'video/mpv'], ['m2v', 'video/mpeg'], ['svi', 'video/x-msvideo'], ['3gp', 'video/3gpp'], ['3g2', 'video/3gpp2'], ['mxf', 'application/mxf'], ['flv', 'video/x-flv'], ['f4v', 'video/x-f4v'], ['f4p', 'video/mp4'], // audio
-['aa', 'audio'], ['aax', 'audio'], ['act', 'audio'], ['alac', 'audio'], ['ape', 'audio'], ['awb', 'audio'], ['dss', 'audio'], ['dvf', 'audio'], ['iklax', 'audio'], ['ivs', 'audio'], ['msv', 'audio'], ['nmf', 'audio'], ['mogg', 'audio'], ['raw', 'audio'], ['rf64', 'audio'], ['sln', 'audio'], ['wv', 'audio'], ['8svx', 'audio'], ['3gp', 'audio/3gpp'], ['mp2', 'audio/mpeg'], ['aac', 'audio/x-aac'], ['aiff', 'audio/x-aiff'], ['amr', 'audio/amr'], ['au', 'audio/basic'], ['flac', 'audio/x-flac'], ['gsm', 'audio/gsm'], ['m4a', 'audio/mp4a-latm'], ['m4b', 'audio/mp4a-latm'], ['m4p', 'audio/mp4a-latm'], ['mmf', 'application/vnd.smaf'], ['mp3', 'audio/mpeg'], ['ogg', 'audio/ogg'], ['oga', 'audio/ogg'], ['opus', 'audio/opus'], ['tta', 'audio/x-tta'], ['voc', 'audio/x-voice'], ['wav', 'audio/x-wav'], ['wma', 'audio/x-ms-wma'], ['webm', 'audio/webm'], ['cda ', 'application/x-cdf'], ['ra', 'audio/x-pn-realaudio'], ['vox', 'application/x-authorware-bin'], ['rm', 'application/vnd.rn-realmedia'], ['mpc', 'application/vnd.mophun.certificate'], // docs
+var COMMON_MIME_TYPES = new Map([
+// image
+['gif', 'image/gif'], ['ico', 'image/x-icon'], ['jpeg', 'image/jpeg'], ['jpg', 'image/jpeg'], ['png', 'image/png'], ['bmp', 'image/bmp'], ['tif', 'image/tiff'], ['tiff', 'image/tiff'], ['apng', 'image/apng'], ['avif', 'image/avif'], ['jfif', 'image/jpeg'], ['pjpeg', 'image/pjpeg'], ['pjp', 'image/jpeg'], ['svg', 'image/svg+xml'], ['webp', 'image/webp'], ['cur', 'image/x-win-bitmap'], ['MTS', 'model/vnd.mts'],
+// Video
+['roq', 'video'], ['f4a', 'video'], ['f4b', 'video'], ['drc', 'video'], ['nsv', 'video'], ['avi', 'video/x-msvideo'], ['mkv', 'video/x-matroska'], ['mov', 'video/quicktime'], ['mp4', 'video/mp4'], ['webm', 'video/webm'], ['flv', 'video/x-flv'], ['vob', 'video/x-ms-vob'], ['ogv', 'video/ogg'], ['ogg', 'application/ogg'], ['gifv', 'image/gif'], ['mng', 'video/x-mng'], ['M2TS', 'video/MP2T'], ['TS', 'video/mp2t'], ['qt', 'video/quicktime'], ['wmv', 'video/x-ms-wmv'], ['yuv', 'application/octet-stream'], ['rm', 'application/vnd.rn-realmedia'], ['rmvb', 'application/vnd.rn-realmedia-vbr'], ['viv', 'video/vnd.vivo'], ['asf', 'video/x-ms-asf'], ['amv', 'video/x-amv'], ['m4v', 'video/x-m4v'], ['mpg', 'video/mpeg'], ['mpeg', 'video/mpeg'], ['mpe', 'video/mpeg'], ['mpv', 'video/mpv'], ['m2v', 'video/mpeg'], ['svi', 'video/x-msvideo'], ['3gp', 'video/3gpp'], ['3g2', 'video/3gpp2'], ['mxf', 'application/mxf'], ['flv', 'video/x-flv'], ['f4v', 'video/x-f4v'], ['f4p', 'video/mp4'],
+// audio
+['aa', 'audio'], ['aax', 'audio'], ['act', 'audio'], ['alac', 'audio'], ['ape', 'audio'], ['awb', 'audio'], ['dss', 'audio'], ['dvf', 'audio'], ['iklax', 'audio'], ['ivs', 'audio'], ['msv', 'audio'], ['nmf', 'audio'], ['mogg', 'audio'], ['raw', 'audio'], ['rf64', 'audio'], ['sln', 'audio'], ['wv', 'audio'], ['8svx', 'audio'], ['3gp', 'audio/3gpp'], ['mp2', 'audio/mpeg'], ['aac', 'audio/x-aac'], ['aiff', 'audio/x-aiff'], ['amr', 'audio/amr'], ['au', 'audio/basic'], ['flac', 'audio/x-flac'], ['gsm', 'audio/gsm'], ['m4a', 'audio/mp4a-latm'], ['m4b', 'audio/mp4a-latm'], ['m4p', 'audio/mp4a-latm'], ['mmf', 'application/vnd.smaf'], ['mp3', 'audio/mpeg'], ['ogg', 'audio/ogg'], ['oga', 'audio/ogg'], ['opus', 'audio/opus'], ['tta', 'audio/x-tta'], ['voc', 'audio/x-voice'], ['wav', 'audio/x-wav'], ['wma', 'audio/x-ms-wma'], ['webm', 'audio/webm'], ['cda ', 'application/x-cdf'], ['ra', 'audio/x-pn-realaudio'], ['vox', 'application/x-authorware-bin'], ['rm', 'application/vnd.rn-realmedia'], ['mpc', 'application/vnd.mophun.certificate'],
+// docs
 ['pdf', 'application/pdf'], ['zip', 'application/zip'], ['doc', 'application/msword'], ['docx', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'], ['xlss', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'], ['xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'], ['xls', 'application/vnd.ms-excel'], ['odt', 'application/vnd.oasis.opendocument.text'], ['tex', 'application/x-tex'], ['wpd', 'application/wordperfect'], ['ods', 'application/vnd.oasis.opendocument.spreadsheet'], ['csv', 'text/csv'], ['rtf', 'text/rtf'], ['txt', 'text/plain'], ['tsv', 'text/tab-separated-values']]);
 var FILES_TO_IGNORE = ['.DS_Store', 'Thumbs.db'];
 function fromEvent(_x) {
   return _fromEvent.apply(this, arguments);
 }
-
 function _fromEvent() {
-  _fromEvent = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(evt) {
+  _fromEvent = _asyncToGenerator(/*#__PURE__*/regeneratorRuntime.mark(function _callee2(evt) {
     return regeneratorRuntime.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
             return _context2.abrupt("return", isDragEvt(evt) && evt.dataTransfer ? getDataTransferFiles(evt.dataTransfer, evt.type) : getInputFiles(evt));
-
           case 1:
           case "end":
             return _context2.stop();
@@ -18470,17 +17413,14 @@ function _fromEvent() {
   }));
   return _fromEvent.apply(this, arguments);
 }
-
 function isDragEvt(value) {
   return !!value.dataTransfer;
 }
-
 function toFileWithPath(file, path) {
   var f = withMimeType(file);
-
   if (typeof f.path !== 'string') {
     var _ref = file,
-        webkitRelativePath = _ref.webkitRelativePath;
+      webkitRelativePath = _ref.webkitRelativePath;
     Object.defineProperty(f, 'path', {
       value: typeof path === 'string' ? path : typeof webkitRelativePath === 'string' && webkitRelativePath.length > 0 ? webkitRelativePath : file.name,
       writable: false,
@@ -18488,18 +17428,14 @@ function toFileWithPath(file, path) {
       enumerable: true
     });
   }
-
   return f;
 }
-
 function withMimeType(file) {
   var name = file.name;
   var hasExtension = name && name.lastIndexOf('.') !== -1;
-
   if (hasExtension && !file.type) {
     var ext = name.split('.').pop().toLowerCase();
     var type = COMMON_MIME_TYPES.get(ext);
-
     if (type) {
       Object.defineProperty(file, 'type', {
         value: type,
@@ -18509,27 +17445,22 @@ function withMimeType(file) {
       });
     }
   }
-
   return file;
 }
-
 function getInputFiles(evt) {
   var files = isInput(evt.target) ? evt.target.files ? fromList(evt.target.files) : [] : [];
   return files.map(function (file) {
     return toFileWithPath(file);
   });
 }
-
 function isInput(value) {
   return value !== null;
 }
-
 function getDataTransferFiles(_x2, _x3) {
   return _getDataTransferFiles.apply(this, arguments);
 }
-
 function _getDataTransferFiles() {
-  _getDataTransferFiles = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(dt, type) {
+  _getDataTransferFiles = _asyncToGenerator(/*#__PURE__*/regeneratorRuntime.mark(function _callee3(dt, type) {
     var items, files;
     return regeneratorRuntime.wrap(function _callee3$(_context3) {
       while (1) {
@@ -18539,31 +17470,24 @@ function _getDataTransferFiles() {
               _context3.next = 8;
               break;
             }
-
             items = fromList(dt.items).filter(function (item) {
               return item.kind === 'file';
             });
-
             if (!(type !== 'drop')) {
               _context3.next = 4;
               break;
             }
-
             return _context3.abrupt("return", items);
-
           case 4:
             _context3.next = 6;
             return Promise.all(items.map(toFilePromises));
-
           case 6:
             files = _context3.sent;
             return _context3.abrupt("return", noIgnoredFiles(flatten(files)));
-
           case 8:
             return _context3.abrupt("return", noIgnoredFiles(fromList(dt.files).map(function (file) {
               return toFileWithPath(file);
             })));
-
           case 9:
           case "end":
             return _context3.stop();
@@ -18573,67 +17497,54 @@ function _getDataTransferFiles() {
   }));
   return _getDataTransferFiles.apply(this, arguments);
 }
-
 function noIgnoredFiles(files) {
   return files.filter(function (file) {
     return FILES_TO_IGNORE.indexOf(file.name) === -1;
   });
 }
-
 function fromList(items) {
-  var files = []; // tslint:disable: prefer-for-of
+  var files = [];
 
+  // tslint:disable: prefer-for-of
   for (var i = 0; i < items.length; i++) {
     var file = items[i];
     files.push(file);
   }
-
   return files;
 }
-
 function toFilePromises(item) {
   if (typeof item.webkitGetAsEntry !== 'function') {
     return fromDataTransferItem(item);
   }
-
   var entry = item.webkitGetAsEntry();
-
   if (entry && entry.isDirectory) {
     return fromDirEntry(entry);
   }
-
   return fromDataTransferItem(item);
 }
-
 function flatten(items) {
   return items.reduce(function (acc, files) {
     return [].concat(_toConsumableArray(acc), _toConsumableArray(Array.isArray(files) ? flatten(files) : [files]));
   }, []);
 }
-
 function fromDataTransferItem(item) {
   var file = item.getAsFile();
-
   if (!file) {
     return Promise.reject("".concat(item, " is not a File"));
   }
-
   var fwp = toFileWithPath(file);
   return Promise.resolve(fwp);
 }
-
 function fromEntry(_x4) {
   return _fromEntry.apply(this, arguments);
 }
-
 function _fromEntry() {
-  _fromEntry = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4(entry) {
+  _fromEntry = _asyncToGenerator(/*#__PURE__*/regeneratorRuntime.mark(function _callee4(entry) {
     return regeneratorRuntime.wrap(function _callee4$(_context4) {
       while (1) {
         switch (_context4.prev = _context4.next) {
           case 0:
             return _context4.abrupt("return", entry.isDirectory ? fromDirEntry(entry) : fromFileEntry(entry));
-
           case 1:
           case "end":
             return _context4.stop();
@@ -18643,15 +17554,13 @@ function _fromEntry() {
   }));
   return _fromEntry.apply(this, arguments);
 }
-
 function fromDirEntry(entry) {
   var reader = entry.createReader();
   return new Promise(function (resolve, reject) {
     var entries = [];
-
     function readEntries() {
-      reader.readEntries( /*#__PURE__*/function () {
-        var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(batch) {
+      reader.readEntries(/*#__PURE__*/function () {
+        var _ref2 = _asyncToGenerator(/*#__PURE__*/regeneratorRuntime.mark(function _callee(batch) {
           var files, items;
           return regeneratorRuntime.wrap(function _callee$(_context) {
             while (1) {
@@ -18661,32 +17570,27 @@ function fromDirEntry(entry) {
                     _context.next = 13;
                     break;
                   }
-
                   _context.prev = 1;
                   _context.next = 4;
                   return Promise.all(entries);
-
                 case 4:
                   files = _context.sent;
                   resolve(files);
                   _context.next = 11;
                   break;
-
                 case 8:
                   _context.prev = 8;
                   _context.t0 = _context["catch"](1);
                   reject(_context.t0);
-
                 case 11:
                   _context.next = 16;
                   break;
-
                 case 13:
                   items = Promise.all(batch.map(fromEntry));
-                  entries.push(items); // Continue reading
+                  entries.push(items);
 
+                  // Continue reading
                   readEntries();
-
                 case 16:
                 case "end":
                   return _context.stop();
@@ -18694,7 +17598,6 @@ function fromDirEntry(entry) {
             }
           }, _callee, null, [[1, 8]]);
         }));
-
         return function (_x5) {
           return _ref2.apply(this, arguments);
         };
@@ -18702,17 +17605,14 @@ function fromDirEntry(entry) {
         reject(err);
       });
     }
-
     readEntries();
   });
 }
-
 function fromFileEntry(_x6) {
   return _fromFileEntry.apply(this, arguments);
 }
-
 function _fromFileEntry() {
-  _fromFileEntry = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5(entry) {
+  _fromFileEntry = _asyncToGenerator(/*#__PURE__*/regeneratorRuntime.mark(function _callee5(entry) {
     return regeneratorRuntime.wrap(function _callee5$(_context5) {
       while (1) {
         switch (_context5.prev = _context5.next) {
@@ -18725,7 +17625,6 @@ function _fromFileEntry() {
                 reject(err);
               });
             }));
-
           case 1:
           case "end":
             return _context5.stop();
@@ -18736,8 +17635,8 @@ function _fromFileEntry() {
   return _fromFileEntry.apply(this, arguments);
 }
 
-var _excluded$n = ["refKey", "onKeyDown", "onFocus", "onBlur", "onClick", "onDragEnterCallback", "onDragOverCallback", "onDragLeaveCallback", "onDropCallback"],
-    _excluded2$1 = ["refKey", "onChange", "onClick"];
+var _excluded$v = ["refKey", "onKeyDown", "onFocus", "onBlur", "onClick", "onDragEnterCallback", "onDragOverCallback", "onDragLeaveCallback", "onDropCallback"],
+  _excluded2$1 = ["refKey", "onChange", "onClick"];
 var initialState = {
   isFocused: false,
   isFileDialogActive: false,
@@ -18750,31 +17649,29 @@ var initialState = {
 };
 var DropzoneBase = function DropzoneBase(props) {
   var accept = props.accept,
-      disabled = props.disabled,
-      maxSize = props.maxSize,
-      minSize = props.minSize,
-      multiple = props.multiple,
-      onDragEnter = props.onDragEnter,
-      onDragLeave = props.onDragLeave,
-      onDragOver = props.onDragOver,
-      onDrop = props.onDrop,
-      onDropAccepted = props.onDropAccepted,
-      onDropRejected = props.onDropRejected,
-      onFileDialogCancel = props.onFileDialogCancel,
-      getFilesFromEvent = props.getFilesFromEvent,
-      preventDropOnDocument = props.preventDropOnDocument,
-      validator = props.validator;
+    disabled = props.disabled,
+    maxSize = props.maxSize,
+    minSize = props.minSize,
+    multiple = props.multiple,
+    onDragEnter = props.onDragEnter,
+    onDragLeave = props.onDragLeave,
+    onDragOver = props.onDragOver,
+    onDrop = props.onDrop,
+    onDropAccepted = props.onDropAccepted,
+    onDropRejected = props.onDropRejected,
+    onFileDialogCancel = props.onFileDialogCancel,
+    getFilesFromEvent = props.getFilesFromEvent,
+    preventDropOnDocument = props.preventDropOnDocument,
+    validator = props.validator;
   var rootRef = useRef(null);
   var inputRef = useRef(null);
-
   var _useReducer = useReducer(reducer, initialState),
-      _useReducer2 = _slicedToArray(_useReducer, 2),
-      state = _useReducer2[0],
-      dispatch = _useReducer2[1];
-
+    _useReducer2 = _slicedToArray(_useReducer, 2),
+    state = _useReducer2[0],
+    dispatch = _useReducer2[1];
   var isFocused = state.isFocused,
-      isFileDialogActive = state.isFileDialogActive,
-      draggedFiles = state.draggedFiles;
+    isFileDialogActive = state.isFileDialogActive,
+    draggedFiles = state.draggedFiles;
   var openFileDialog = useCallback(function () {
     if (inputRef.current) {
       dispatch({
@@ -18784,18 +17681,15 @@ var DropzoneBase = function DropzoneBase(props) {
       inputRef.current.click();
     }
   }, [dispatch]);
-
   var onWindowFocus = function onWindowFocus() {
     if (isFileDialogActive) {
       setTimeout(function () {
         if (inputRef.current) {
-          var _files = inputRef.current.files;
-
-          if (!_files || !_files.length) {
+          var files = inputRef.current.files;
+          if (!files || !files.length) {
             dispatch({
               type: 'closeDialog'
             });
-
             if (typeof onFileDialogCancel === 'function') {
               onFileDialogCancel();
             }
@@ -18804,25 +17698,25 @@ var DropzoneBase = function DropzoneBase(props) {
       }, 300);
     }
   };
-
   useEffect$2(function () {
     window.addEventListener('focus', onWindowFocus, false);
     return function () {
       window.removeEventListener('focus', onWindowFocus, false);
     };
-  }, [inputRef, isFileDialogActive, onFileDialogCancel]); // Cb to open the file dialog when SPACE/ENTER occurs on the dropzone
+  }, [inputRef, isFileDialogActive, onFileDialogCancel]);
 
+  // Cb to open the file dialog when SPACE/ENTER occurs on the dropzone
   var onKeyDownCb = useCallback(function (event) {
     if (!rootRef.current || !rootRef.current.isEqualNode(event.target)) {
       return;
     }
-
     if (event.keyCode === 32 || event.keyCode === 13) {
       event.preventDefault();
       openFileDialog();
     }
-  }, [rootRef, inputRef]); // Update focus state for the dropzone
+  }, [rootRef, inputRef]);
 
+  // Update focus state for the dropzone
   var onFocusCb = useCallback(function () {
     dispatch({
       type: 'focus'
@@ -18834,23 +17728,19 @@ var DropzoneBase = function DropzoneBase(props) {
     });
   }, []);
   var dragTargetsRef = useRef([]);
-
   var onDocumentDrop = function onDocumentDrop(event) {
     // Not every event target type is element so we have to check if it is.
     if (event.target instanceof HTMLDivElement && rootRef.current && rootRef.current.contains(event.target)) {
       return;
     }
-
     event.preventDefault();
     dragTargetsRef.current = [];
   };
-
   useEffect$2(function () {
     if (preventDropOnDocument) {
       document.addEventListener('dragover', onDocumentDragOver, false);
       document.addEventListener('drop', onDocumentDrop, false);
     }
-
     return function () {
       if (preventDropOnDocument) {
         document.removeEventListener('dragover', onDocumentDragOver);
@@ -18862,19 +17752,16 @@ var DropzoneBase = function DropzoneBase(props) {
     event.preventDefault();
     event.persist();
     dragTargetsRef.current = [].concat(_toConsumableArray(dragTargetsRef.current), [event.target]);
-
     if (isEvtWithFiles(event)) {
       Promise.resolve(getFilesFromEvent(event)).then(function (files) {
         if (isPropagationStopped(event)) {
           return;
         }
-
         dispatch({
           draggedFiles: files,
           isDragActive: true,
           type: 'setDraggedFiles'
         });
-
         if (onDragEnter) {
           onDragEnter(event);
         }
@@ -18884,19 +17771,14 @@ var DropzoneBase = function DropzoneBase(props) {
   var onDragOverCb = useCallback(function (event) {
     event.preventDefault();
     event.persist();
-
     if (event.dataTransfer) {
       try {
         event.dataTransfer.dropEffect = 'copy';
-      } catch (_unused) {}
-      /* eslint-disable-line no-empty */
-
+      } catch (_unused) {} /* eslint-disable-line no-empty */
     }
-
     if (isEvtWithFiles(event) && onDragOver) {
       onDragOver(event);
     }
-
     return false;
   }, [onDragOver]);
   var onDragLeaveCb = useCallback(function (event) {
@@ -18906,63 +17788,51 @@ var DropzoneBase = function DropzoneBase(props) {
       return rootRef.current && rootRef.current.contains(target);
     });
     var targetIdx = targets.indexOf(event.target);
-
     if (targetIdx !== -1) {
       targets.splice(targetIdx, 1);
     }
-
     dragTargetsRef.current = targets;
-
     if (targets.length > 0) {
       return;
     }
-
     dispatch({
       isDragActive: false,
       type: 'setDraggedFiles',
       draggedFiles: []
     });
-
     if (isEvtWithFiles(event) && onDragLeave) {
       onDragLeave(event);
     }
   }, [rootRef, onDragLeave]);
   var onDropCb = useCallback(function (event) {
-    event.preventDefault(); // Persist here because we need the event later after getFilesFromEvent() is done
-
+    event.preventDefault();
+    // Persist here because we need the event later after getFilesFromEvent() is done
     event.persist();
     dragTargetsRef.current = [];
-
     if (isEvtWithFiles(event)) {
       Promise.resolve(getFilesFromEvent(event)).then(function (files) {
         if (isPropagationStopped(event)) {
           return;
         }
-
         var acceptedFiles = [];
         var fileRejections = [];
         files.forEach(function (file) {
           var _fileAccepted = fileAccepted(file, accept),
-              _fileAccepted2 = _slicedToArray(_fileAccepted, 2),
-              accepted = _fileAccepted2[0],
-              acceptError = _fileAccepted2[1];
-
+            _fileAccepted2 = _slicedToArray(_fileAccepted, 2),
+            accepted = _fileAccepted2[0],
+            acceptError = _fileAccepted2[1];
           var _fileMatchSize = fileMatchSize(file, minSize, maxSize),
-              _fileMatchSize2 = _slicedToArray(_fileMatchSize, 2),
-              sizeMatch = _fileMatchSize2[0],
-              sizeError = _fileMatchSize2[1];
-
+            _fileMatchSize2 = _slicedToArray(_fileMatchSize, 2),
+            sizeMatch = _fileMatchSize2[0],
+            sizeError = _fileMatchSize2[1];
           var customErrors = validator ? validator(file) : null;
-
           if (accepted && sizeMatch && !customErrors) {
             acceptedFiles.push(file);
           } else {
             var errors = [acceptError, sizeError];
-
             if (customErrors) {
               errors = errors.concat(customErrors);
             }
-
             var filteredErrors = errors.filter(function (e) {
               return e;
             });
@@ -18977,45 +17847,38 @@ var DropzoneBase = function DropzoneBase(props) {
           fileRejections: fileRejections,
           type: 'setFiles'
         });
-
         if (onDrop) {
           onDrop(event, acceptedFiles, fileRejections);
         }
-
         if (fileRejections.length > 0 && onDropRejected) {
           onDropRejected(event, fileRejections);
         }
-
         if (acceptedFiles.length > 0 && onDropAccepted) {
           onDropAccepted(event, acceptedFiles);
         }
       });
     }
-
     dispatch({
       type: 'reset'
     });
   }, [multiple, accept, minSize, maxSize, getFilesFromEvent, onDrop, onDropAccepted, onDropRejected]);
-
   var composeDragHandler = function composeDragHandler(fn) {
     return disabled ? null : fn;
   };
-
   var getRootProps = useMemo(function () {
     return function () {
       var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-          _ref$refKey = _ref.refKey,
-          refKey = _ref$refKey === void 0 ? 'ref' : _ref$refKey;
-          _ref.onKeyDown;
-          _ref.onFocus;
-          _ref.onBlur;
-          _ref.onClick;
-          var onDragEnterCallback = _ref.onDragEnterCallback,
-          onDragOverCallback = _ref.onDragOverCallback,
-          onDragLeaveCallback = _ref.onDragLeaveCallback,
-          onDropCallback = _ref.onDropCallback,
-          rest = _objectWithoutProperties(_ref, _excluded$n);
-
+        _ref$refKey = _ref.refKey,
+        refKey = _ref$refKey === void 0 ? 'ref' : _ref$refKey;
+        _ref.onKeyDown;
+        _ref.onFocus;
+        _ref.onBlur;
+        _ref.onClick;
+        var onDragEnterCallback = _ref.onDragEnterCallback,
+        onDragOverCallback = _ref.onDragOverCallback,
+        onDragLeaveCallback = _ref.onDragLeaveCallback,
+        onDropCallback = _ref.onDropCallback,
+        rest = _objectWithoutProperties(_ref, _excluded$v);
       return _objectSpread2(_defineProperty$1({
         onDragEnter: composeDragHandler(composeEventHandlers(onDragEnterCallback, onDragEnterCb)),
         onDragOver: composeDragHandler(composeEventHandlers(onDragOverCallback, onDragOverCb)),
@@ -19030,12 +17893,11 @@ var DropzoneBase = function DropzoneBase(props) {
   var getInputProps = useMemo(function () {
     return function () {
       var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-          _ref2$refKey = _ref2.refKey,
-          refKey = _ref2$refKey === void 0 ? 'ref' : _ref2$refKey,
-          onChange = _ref2.onChange,
-          onClick = _ref2.onClick,
-          rest = _objectWithoutProperties(_ref2, _excluded2$1);
-
+        _ref2$refKey = _ref2.refKey,
+        refKey = _ref2$refKey === void 0 ? 'ref' : _ref2$refKey,
+        onChange = _ref2.onChange,
+        onClick = _ref2.onClick,
+        rest = _objectWithoutProperties(_ref2, _excluded2$1);
       var inputProps = _defineProperty$1({
         accept: accept,
         multiple: multiple,
@@ -19048,7 +17910,6 @@ var DropzoneBase = function DropzoneBase(props) {
         autoComplete: 'off',
         tabIndex: -1
       }, refKey, inputRef);
-
       return _objectSpread2(_objectSpread2({}, inputProps), rest);
     };
   }, [inputRef, accept, multiple, onDropCb, disabled]);
@@ -19099,7 +17960,6 @@ var svgCode = {
   "default": 'M14.6667 53.3334C13.6 53.3334 12.6667 52.9334 11.8667 52.1334C11.0667 51.3334 10.6667 50.4 10.6667 49.3334V39.8H14.6667V49.3334H49.3333V39.8H53.3333V49.3334C53.3333 50.4 52.9333 51.3334 52.1333 52.1334C51.3333 52.9334 50.4 53.3334 49.3333 53.3334H14.6667ZM32 43.1334L19.1333 30.2667L22 27.4L30 35.4V10.6667H34V35.4L42 27.4L44.8667 30.2667L32 43.1334Z',
   error: 'M31.9988 45.3334C32.6218 45.3334 33.1444 45.1227 33.5667 44.7012C33.9889 44.2798 34.2 43.7575 34.2 43.1346C34.2 42.5115 33.9893 41.9889 33.5679 41.5667C33.1464 41.1445 32.6242 40.9334 32.0012 40.9334C31.3782 40.9334 30.8555 41.1441 30.4333 41.5655C30.0111 41.987 29.8 42.5092 29.8 43.1322C29.8 43.7552 30.0107 44.2778 30.4321 44.7C30.8536 45.1223 31.3758 45.3334 31.9988 45.3334ZM32.2117 35.1334C32.7817 35.1334 33.2555 34.9417 33.6333 34.5584C34.0111 34.175 34.2 33.7 34.2 33.1334V20.2667C34.2 19.7 34.0072 19.225 33.6217 18.8417C33.2361 18.4584 32.7583 18.2667 32.1883 18.2667C31.6183 18.2667 31.1444 18.4584 30.7667 18.8417C30.3889 19.225 30.2 19.7 30.2 20.2667V33.1334C30.2 33.7 30.3928 34.175 30.7783 34.5584C31.1639 34.9417 31.6417 35.1334 32.2117 35.1334ZM32.0177 58.6667C28.3407 58.6667 24.8851 57.9667 21.6511 56.5667C18.417 55.1667 15.5889 53.2556 13.1667 50.8334C10.7444 48.4111 8.83333 45.5813 7.43333 42.344C6.03333 39.1066 5.33333 35.6475 5.33333 31.9667C5.33333 28.2859 6.03333 24.8268 7.43333 21.5894C8.83333 18.3521 10.7444 15.5334 13.1667 13.1334C15.5889 10.7334 18.4187 8.83337 21.6561 7.43337C24.8934 6.03337 28.3525 5.33337 32.0333 5.33337C35.7142 5.33337 39.1733 6.03337 42.4106 7.43337C45.648 8.83337 48.4667 10.7334 50.8667 13.1334C53.2667 15.5334 55.1667 18.3556 56.5667 21.6C57.9667 24.8445 58.6667 28.3052 58.6667 31.9823C58.6667 35.6594 57.9667 39.1149 56.5667 42.349C55.1667 45.583 53.2667 48.4071 50.8667 50.8211C48.4667 53.2351 45.6444 55.1463 42.4 56.5544C39.1555 57.9626 35.6948 58.6667 32.0177 58.6667Z'
 };
-
 var DropzoneIcon = function DropzoneIcon(props) {
   var IconStyle = {
     height: 'var(--spacing-5)',
@@ -19132,7 +17992,7 @@ DropzoneActive.displayName = 'DropzoneActive';
 
 var DropzoneError = function DropzoneError(props) {
   var type = props.type,
-      error = props.error;
+    error = props.error;
   return /*#__PURE__*/React.createElement(React.Fragment, null, type !== 'tight' && /*#__PURE__*/React.createElement(DropzoneIcon, {
     type: type,
     name: "error"
@@ -19146,26 +18006,22 @@ DropzoneError.displayName = 'DropzoneError';
 
 var Dropzone = function Dropzone(props) {
   var _classNames, _classNames2;
-
   var type = props.type,
-      sizeLabel = props.sizeLabel,
-      className = props.className,
-      formatLabel = props.formatLabel,
-      sampleFileLink = props.sampleFileLink,
-      disabled = props.disabled;
-
+    sizeLabel = props.sizeLabel,
+    className = props.className,
+    formatLabel = props.formatLabel,
+    sampleFileLink = props.sampleFileLink,
+    disabled = props.disabled;
   var _DropzoneBase = DropzoneBase(props),
-      open = _DropzoneBase.open,
-      getRootProps = _DropzoneBase.getRootProps,
-      getInputProps = _DropzoneBase.getInputProps,
-      isDragActive = _DropzoneBase.isDragActive,
-      isDragReject = _DropzoneBase.isDragReject,
-      fileError = _DropzoneBase.fileError;
-
+    open = _DropzoneBase.open,
+    getRootProps = _DropzoneBase.getRootProps,
+    getInputProps = _DropzoneBase.getInputProps,
+    isDragActive = _DropzoneBase.isDragActive,
+    isDragReject = _DropzoneBase.isDragReject,
+    fileError = _DropzoneBase.fileError;
   var baseProps = extractBaseProps(props);
   var DropzoneClass = classnames((_classNames = {}, _defineProperty$1(_classNames, 'Dropzone', true), _defineProperty$1(_classNames, "Dropzone--".concat(type), type), _defineProperty$1(_classNames, 'Dropzone--disabled', disabled), _defineProperty$1(_classNames, 'Dropzone--active', isDragActive), _defineProperty$1(_classNames, 'Dropzone--error', isDragReject), _defineProperty$1(_classNames, 'Dropzone-animation', true), _defineProperty$1(_classNames, 'Dropzone-animation--default', !isDragActive && type !== 'standard'), _defineProperty$1(_classNames, 'Dropzone-animation--active', isDragActive && !isDragReject && type !== 'standard'), _defineProperty$1(_classNames, 'Dropzone-standard--default', !isDragActive && type === 'standard'), _defineProperty$1(_classNames, 'Dropzone-standard--active', isDragActive && !isDragReject && type === 'standard'), _classNames), className);
   var WrapperClass = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'DropzoneWrapper', true), _defineProperty$1(_classNames2, "DropzoneWrapper--".concat(type), true), _classNames2));
-
   var renderDropzone = function renderDropzone() {
     if (isDragReject) return /*#__PURE__*/React.createElement(DropzoneError, {
       type: type,
@@ -19191,12 +18047,13 @@ var Dropzone = function Dropzone(props) {
       className: "mr-2",
       appearance: disabled ? 'disabled' : 'default'
     }, "Drag your files here or"), /*#__PURE__*/React.createElement(Text, _extends$2({
-      tabIndex: disabled ? -1 : 0,
       className: "ml-2 cursor-pointer",
       size: "large",
       weight: "strong",
       appearance: disabled ? 'disabled' : 'link'
-    }, buttonAccessibilityProps), "browse files"), /*#__PURE__*/React.createElement("input", getInputProps())), formatLabel && /*#__PURE__*/React.createElement(Text, {
+    }, buttonAccessibilityProps, {
+      tabIndex: disabled ? -1 : 0
+    }), "browse files"), /*#__PURE__*/React.createElement("input", getInputProps())), formatLabel && /*#__PURE__*/React.createElement(Text, {
       appearance: disabled ? 'disabled' : 'subtle'
     }, formatLabel), sizeLabel && /*#__PURE__*/React.createElement(Text, {
       appearance: disabled ? 'disabled' : 'subtle'
@@ -19204,7 +18061,6 @@ var Dropzone = function Dropzone(props) {
       className: "mt-5"
     }, sampleFileLink)));
   };
-
   return /*#__PURE__*/React.createElement("div", _extends$2({}, getRootProps(), baseProps, {
     className: DropzoneClass,
     "data-test": "DesignSystem-Dropzone"
@@ -19217,7 +18073,6 @@ Dropzone.defaultProps = _objectSpread2(_objectSpread2({}, DropzoneBase.defaultPr
 
 var FileUploaderFormat = function FileUploaderFormat(props) {
   var formatLabel = props.formatLabel;
-
   if (formatLabel) {
     return /*#__PURE__*/React.createElement(Text, {
       size: "small",
@@ -19225,20 +18080,19 @@ var FileUploaderFormat = function FileUploaderFormat(props) {
       className: "mt-4"
     }, formatLabel);
   }
-
   return null;
 };
 FileUploaderFormat.displayName = 'FileUploaderFormat';
 
 var FileUploaderButton = function FileUploaderButton(props) {
   var accept = props.accept,
-      multiple = props.multiple,
-      uploadButtonLabel = props.uploadButtonLabel,
-      disabled = props.disabled,
-      name = props.name,
-      className = props.className,
-      id = props.id,
-      _onChange = props.onChange;
+    multiple = props.multiple,
+    uploadButtonLabel = props.uploadButtonLabel,
+    disabled = props.disabled,
+    name = props.name,
+    className = props.className,
+    id = props.id,
+    _onChange = props.onChange;
   var baseProps = extractBaseProps(props);
   var FileUploaderButtonClass = classnames(_defineProperty$1({}, 'FileUploaderButton', true), className);
   return /*#__PURE__*/React.createElement("div", _extends$2({}, baseProps, {
@@ -19272,17 +18126,17 @@ FileUploaderButton.displayName = 'FileUploaderButton';
 
 var FileUploader = function FileUploader(props) {
   var accept = props.accept,
-      multiple = props.multiple,
-      disabled = props.disabled,
-      title = props.title,
-      uploadButtonLabel = props.uploadButtonLabel,
-      sizeLabel = props.sizeLabel,
-      formatLabel = props.formatLabel,
-      sampleFileLink = props.sampleFileLink,
-      className = props.className,
-      id = props.id,
-      name = props.name,
-      onChange = props.onChange;
+    multiple = props.multiple,
+    disabled = props.disabled,
+    title = props.title,
+    uploadButtonLabel = props.uploadButtonLabel,
+    sizeLabel = props.sizeLabel,
+    formatLabel = props.formatLabel,
+    sampleFileLink = props.sampleFileLink,
+    className = props.className,
+    id = props.id,
+    name = props.name,
+    onChange = props.onChange;
   var baseProps = extractBaseProps(props);
   var FileUploaderClass = classnames(_defineProperty$1({}, 'FileUploader', true), className);
   return /*#__PURE__*/React.createElement("div", _extends$2({}, baseProps, {
@@ -19317,9 +18171,8 @@ FileUploader.displayName = 'FileUploader';
 
 var FileUploaderStatus = function FileUploaderStatus(props) {
   var progress = props.progress,
-      status = props.status,
-      onRetry = props.onRetry;
-
+    status = props.status,
+    onRetry = props.onRetry;
   switch (status) {
     case 'uploading':
       return /*#__PURE__*/React.createElement(ProgressRing, {
@@ -19327,7 +18180,6 @@ var FileUploaderStatus = function FileUploaderStatus(props) {
         value: progress,
         className: "mr-4"
       });
-
     case 'error':
       return /*#__PURE__*/React.createElement(Button, {
         appearance: "transparent",
@@ -19336,7 +18188,6 @@ var FileUploaderStatus = function FileUploaderStatus(props) {
         icon: "refresh",
         className: "mr-2"
       });
-
     default:
       return null;
   }
@@ -19349,14 +18200,14 @@ FileUploaderStatus.defaultProps = {
 
 var FileUploaderItem = function FileUploaderItem(props) {
   var file = props.file,
-      id = props.id,
-      status = props.status,
-      errorMessage = props.errorMessage,
-      progress = props.progress,
-      _onClick = props.onClick,
-      onDelete = props.onDelete,
-      _onRetry = props.onRetry,
-      className = props.className;
+    id = props.id,
+    status = props.status,
+    errorMessage = props.errorMessage,
+    progress = props.progress,
+    _onClick = props.onClick,
+    onDelete = props.onDelete,
+    _onRetry = props.onRetry,
+    className = props.className;
   var name = file.name;
   var baseProps = extractBaseProps(props);
   var FileItemClass = classnames(_defineProperty$1({}, 'FileUploaderItem', true), className);
@@ -19409,10 +18260,10 @@ FileUploaderItem.displayName = 'FileUploaderItem';
 
 var FileUploaderList = function FileUploaderList(props) {
   var fileList = props.fileList,
-      onClick = props.onClick,
-      onDelete = props.onDelete,
-      onRetry = props.onRetry,
-      className = props.className;
+    onClick = props.onClick,
+    onDelete = props.onDelete,
+    onRetry = props.onRetry,
+    className = props.className;
   var baseProps = extractBaseProps(props);
   var FileListClass = classnames(_defineProperty$1({}, 'FileUploaderList', true), className);
   if (fileList.length === 0) return null;
@@ -19436,17 +18287,14 @@ FileUploaderList.displayName = 'FileUploaderList';
 var resizeCol = function resizeCol(_ref, name, el) {
   var updateColumnSchema = _ref.updateColumnSchema;
   var elX = el === null || el === void 0 ? void 0 : el.getBoundingClientRect().x;
-
   function resizable(ev) {
     ev.preventDefault();
-
     if (elX) {
       updateColumnSchema(name, {
         width: ev.pageX - elX
       });
     }
   }
-
   window.addEventListener('mousemove', resizable);
   window.addEventListener('mouseup', function () {
     window.removeEventListener('mousemove', resizable);
@@ -19454,18 +18302,14 @@ var resizeCol = function resizeCol(_ref, name, el) {
 };
 var sortColumn = function sortColumn(_ref2, name, type) {
   var sortingList = _ref2.sortingList,
-      updateSortingList = _ref2.updateSortingList;
-
+    updateSortingList = _ref2.updateSortingList;
   var newSortingList = _toConsumableArray(sortingList);
-
   var index = newSortingList.findIndex(function (l) {
     return l.name === name;
   });
-
   if (index !== -1) {
     newSortingList = [].concat(_toConsumableArray(newSortingList.slice(0, index)), _toConsumableArray(newSortingList.slice(index + 1)));
   }
-
   if (type !== 'unsort') newSortingList.push({
     name: name,
     type: type
@@ -19488,16 +18332,14 @@ var hideColumn = function hideColumn(_ref4, name, value) {
 };
 function getWidth(_ref5, width) {
   var ref = _ref5.ref,
-      withCheckbox = _ref5.withCheckbox;
+    withCheckbox = _ref5.withCheckbox;
   var isPercent = typeof width === 'string' && width.slice(-1) === '%';
-
   if (isPercent) {
     var checkboxCell = ref.querySelector('.Grid-cell--checkbox');
     var checkboxWidth = withCheckbox ? (checkboxCell === null || checkboxCell === void 0 ? void 0 : checkboxCell.clientWidth) || 28 : 0;
     var gridWidth = ref.clientWidth - checkboxWidth;
     return gridWidth * (+width.slice(0, -1) / 100);
   }
-
   return width;
 }
 function getCellSize(cellType) {
@@ -19529,14 +18371,11 @@ function getCellSize(cellType) {
 
 var updateBatchData = function updateBatchData(data, rowIndexes, dataUpdate, selectDisabledRow) {
   var updatedData = _toConsumableArray(data);
-
   var _iterator = _createForOfIteratorHelper(rowIndexes),
-      _step;
-
+    _step;
   try {
     for (_iterator.s(); !(_step = _iterator.n()).done;) {
       var rowIndex = _step.value;
-
       if (data[rowIndex].disabled && selectDisabledRow || !data[rowIndex].disabled) {
         updatedData[rowIndex] = _objectSpread2(_objectSpread2({}, updatedData[rowIndex]), dataUpdate);
       }
@@ -19546,23 +18385,19 @@ var updateBatchData = function updateBatchData(data, rowIndexes, dataUpdate, sel
   } finally {
     _iterator.f();
   }
-
   return updatedData;
 };
 function translateData(schema, data) {
   var newData = _objectSpread2({}, data);
-
   if (schema.translate) {
     var translatedData = schema.translate(data);
     newData[schema.name] = translatedData !== null && _typeof(translatedData) === 'object' ? _objectSpread2(_objectSpread2({}, newData[schema.name]), translatedData) : translatedData;
   }
-
   if (newData[schema.name] === null || _typeof(newData[schema.name]) !== 'object') {
     newData[schema.name] = {
       title: newData[schema.name]
     };
   }
-
   return newData;
 }
 var filterData = function filterData() {
@@ -19570,7 +18405,6 @@ var filterData = function filterData() {
   var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
   var filterList = arguments.length > 2 ? arguments[2] : undefined;
   var filteredData = data;
-
   if (filterList) {
     Object.keys(filterList).forEach(function (schemaName) {
       var filters = filterList[schemaName];
@@ -19578,7 +18412,6 @@ var filterData = function filterData() {
         return s.name === schemaName;
       });
       var onFilterChange = schema[sIndex].onFilterChange;
-
       if (filters.length && onFilterChange) {
         filteredData = filteredData.filter(function (d) {
           return onFilterChange(d, filters);
@@ -19586,30 +18419,25 @@ var filterData = function filterData() {
       }
     });
   }
-
   return filteredData;
 };
 var sortData = function sortData() {
   var schema = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
   var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
   var sortingList = arguments.length > 2 ? arguments[2] : undefined;
-
   var sortedData = _toConsumableArray(data);
-
   sortingList === null || sortingList === void 0 ? void 0 : sortingList.forEach(function (l) {
     var sIndex = schema.findIndex(function (s) {
       return s.name === l.name;
     });
-
     if (sIndex !== -1) {
       var defaultComparator = function defaultComparator(a, b) {
         var aData = translateData(schema[sIndex], a);
         var bData = translateData(schema[sIndex], b);
         return aData[l.name].title.localeCompare(bData[l.name].title);
       };
-
       var _schema$sIndex$compar = schema[sIndex].comparator,
-          comparator = _schema$sIndex$compar === void 0 ? defaultComparator : _schema$sIndex$compar;
+        comparator = _schema$sIndex$compar === void 0 ? defaultComparator : _schema$sIndex$compar;
       sortedData.sort(comparator);
       if (l.type === 'desc') sortedData.reverse();
     }
@@ -19629,13 +18457,11 @@ var paginateData = function paginateData() {
 var moveToIndex = function moveToIndex(arr, from, to) {
   if (from === to) return arr;
   var newArr = arr;
-
   if (from < to) {
     newArr = [].concat(_toConsumableArray(arr.slice(0, from)), _toConsumableArray(arr.slice(from + 1, to + 1)), [arr[from]], _toConsumableArray(arr.slice(to + 1)));
   } else {
     newArr = [].concat(_toConsumableArray(arr.slice(0, to)), [arr[from]], _toConsumableArray(arr.slice(to, from)), _toConsumableArray(arr.slice(from + 1)));
   }
-
   return newArr;
 };
 var getTotalPages = function getTotalPages(totalRecords, pageSize) {
@@ -19648,11 +18474,9 @@ var getSelectAll = function getSelectAll(tableData, selectDisabledRow, clearSele
       checked: false
     };
   }
-
   var data = tableData.filter(function (d) {
     return d.disabled && selectDisabledRow || !d.disabled;
   });
-
   if (data.length) {
     var anyUnSelected = data.some(function (d) {
       return !d._selected;
@@ -19667,7 +18491,6 @@ var getSelectAll = function getSelectAll(tableData, selectDisabledRow, clearSele
       checked: checked
     };
   }
-
   return {
     indeterminate: false,
     checked: false
@@ -19678,11 +18501,9 @@ var hasSchema = function hasSchema(schema) {
 };
 var getSchema = function getSchema(schema, loading, loaderSchema) {
   var response = schema;
-
   if (!hasSchema(schema) && loading) {
     response = loaderSchema;
   }
-
   return response;
 };
 var getPluralSuffix = function getPluralSuffix(count) {
@@ -19714,13 +18535,13 @@ var GridProvider = context.Provider;
 var HeaderCell = function HeaderCell(props) {
   var context$1 = React.useContext(context);
   var schema = props.schema,
-      setIsDragged = props.setIsDragged,
-      colIndex = props.colIndex,
-      onSelectAll = props.onSelectAll,
-      onMenuChange = props.onMenuChange,
-      onFilterChange = props.onFilterChange,
-      updateColumnSchema = props.updateColumnSchema,
-      reorderColumn = props.reorderColumn;
+    setIsDragged = props.setIsDragged,
+    colIndex = props.colIndex,
+    onSelectAll = props.onSelectAll,
+    onMenuChange = props.onMenuChange,
+    onFilterChange = props.onFilterChange,
+    updateColumnSchema = props.updateColumnSchema,
+    reorderColumn = props.reorderColumn;
   var headProps = {
     schema: schema,
     colIndex: colIndex,
@@ -19732,18 +18553,18 @@ var HeaderCell = function HeaderCell(props) {
     setIsDragged: setIsDragged
   };
   var loading = context$1.loading,
-      draggable = context$1.draggable,
-      showMenu = context$1.showMenu,
-      sortingList = context$1.sortingList,
-      filterList = context$1.filterList,
-      headCellTooltip = context$1.headCellTooltip,
-      showFilters = context$1.showFilters,
-      schemaProp = context$1.schema;
+    draggable = context$1.draggable,
+    showMenu = context$1.showMenu,
+    sortingList = context$1.sortingList,
+    filterList = context$1.filterList,
+    headCellTooltip = context$1.headCellTooltip,
+    showFilters = context$1.showFilters,
+    schemaProp = context$1.schema;
   var _schema$sorting = schema.sorting,
-      sorting = _schema$sorting === void 0 ? true : _schema$sorting,
-      name = schema.name,
-      filters = schema.filters,
-      pinned = schema.pinned;
+    sorting = _schema$sorting === void 0 ? true : _schema$sorting,
+    name = schema.name,
+    filters = schema.filters,
+    pinned = schema.pinned;
   var isValidSchema = hasSchema(schemaProp);
   var listIndex = sortingList.findIndex(function (l) {
     return l.name === name;
@@ -19800,7 +18621,6 @@ var HeaderCell = function HeaderCell(props) {
       }) !== -1
     });
   }) : [];
-
   var renderLabel = function renderLabel() {
     return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Text, {
       weight: "strong",
@@ -19815,7 +18635,6 @@ var HeaderCell = function HeaderCell(props) {
       name: "unfold_more"
     })));
   };
-
   return /*#__PURE__*/React.createElement("div", {
     key: name,
     className: classes,
@@ -19890,23 +18709,20 @@ var HeaderCell = function HeaderCell(props) {
     }
   }));
 };
-
 var BodyCell = function BodyCell(props) {
   var context$1 = React.useContext(context);
   var data = props.data,
-      schema = props.schema,
-      expandedState = props.expandedState,
-      rowIndex = props.rowIndex,
-      colIndex = props.colIndex,
-      nestedRowData = props.nestedRowData;
+    schema = props.schema,
+    expandedState = props.expandedState,
+    rowIndex = props.rowIndex,
+    colIndex = props.colIndex,
+    nestedRowData = props.nestedRowData;
   var size = context$1.size,
-      loading = context$1.loading,
-      nestedRows = context$1.nestedRows;
-
+    loading = context$1.loading,
+    nestedRows = context$1.nestedRows;
   var _expandedState = _slicedToArray(expandedState, 2),
-      expanded = _expandedState[0],
-      setExpanded = _expandedState[1];
-
+    expanded = _expandedState[0],
+    setExpanded = _expandedState[1];
   var cellProps = {
     rowIndex: rowIndex,
     colIndex: colIndex,
@@ -19935,46 +18751,42 @@ var BodyCell = function BodyCell(props) {
     key: "".concat(rowIndex, "-").concat(colIndex)
   }, cellProps)));
 };
-
 var Cell = function Cell(props) {
   var context$1 = React.useContext(context);
   var _ref = props,
-      isHead = _ref.isHead,
-      firstCell = _ref.firstCell,
-      schema = _ref.schema,
-      data = _ref.data,
-      rowIndex = _ref.rowIndex,
-      colIndex = _ref.colIndex,
-      expandedState = _ref.expandedState,
-      onSelectAll = _ref.onSelectAll,
-      onMenuChange = _ref.onMenuChange,
-      onFilterChange = _ref.onFilterChange,
-      updateColumnSchema = _ref.updateColumnSchema,
-      reorderColumn = _ref.reorderColumn,
-      nestedRowData = _ref.nestedRowData;
+    isHead = _ref.isHead,
+    firstCell = _ref.firstCell,
+    schema = _ref.schema,
+    data = _ref.data,
+    rowIndex = _ref.rowIndex,
+    colIndex = _ref.colIndex,
+    expandedState = _ref.expandedState,
+    onSelectAll = _ref.onSelectAll,
+    onMenuChange = _ref.onMenuChange,
+    onFilterChange = _ref.onFilterChange,
+    updateColumnSchema = _ref.updateColumnSchema,
+    reorderColumn = _ref.reorderColumn,
+    nestedRowData = _ref.nestedRowData;
   var draggable = context$1.draggable,
-      separator = context$1.separator,
-      nestedRows = context$1.nestedRows,
-      ref = context$1.ref,
-      withCheckbox = context$1.withCheckbox;
+    separator = context$1.separator,
+    nestedRows = context$1.nestedRows,
+    ref = context$1.ref,
+    withCheckbox = context$1.withCheckbox;
   var name = schema.name,
-      hidden = schema.hidden,
-      pinned = schema.pinned,
-      _schema$cellType = schema.cellType,
-      cellType = _schema$cellType === void 0 ? 'DEFAULT' : _schema$cellType;
-
+    hidden = schema.hidden,
+    pinned = schema.pinned,
+    _schema$cellType = schema.cellType,
+    cellType = _schema$cellType === void 0 ? 'DEFAULT' : _schema$cellType;
   var _getCellSize = getCellSize(cellType),
-      width = _getCellSize.width,
-      _getCellSize$minWidth = _getCellSize.minWidth,
-      minWidth = _getCellSize$minWidth === void 0 ? 96 : _getCellSize$minWidth,
-      _getCellSize$maxWidth = _getCellSize.maxWidth,
-      maxWidth = _getCellSize$maxWidth === void 0 ? 800 : _getCellSize$maxWidth;
-
+    width = _getCellSize.width,
+    _getCellSize$minWidth = _getCellSize.minWidth,
+    minWidth = _getCellSize$minWidth === void 0 ? 96 : _getCellSize$minWidth,
+    _getCellSize$maxWidth = _getCellSize.maxWidth,
+    maxWidth = _getCellSize$maxWidth === void 0 ? 800 : _getCellSize$maxWidth;
   var _React$useState = React.useState(false),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      isDragged = _React$useState2[0],
-      setIsDragged = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    isDragged = _React$useState2[0],
+    setIsDragged = _React$useState2[1];
   var cellClass = classnames({
     'Grid-cell': true,
     'Grid-cell--head': isHead,
@@ -20058,14 +18870,14 @@ var Cell = function Cell(props) {
 var GridHead = function GridHead(props) {
   var context$1 = React.useContext(context);
   var schema = props.schema,
-      onSelectAll = props.onSelectAll,
-      onMenuChange = props.onMenuChange,
-      onFilterChange = props.onFilterChange,
-      updateColumnSchema = props.updateColumnSchema,
-      reorderColumn = props.reorderColumn;
+    onSelectAll = props.onSelectAll,
+    onMenuChange = props.onMenuChange,
+    onFilterChange = props.onFilterChange,
+    updateColumnSchema = props.updateColumnSchema,
+    reorderColumn = props.reorderColumn;
   var withCheckbox = context$1.withCheckbox,
-      loading = context$1.loading,
-      selectAll = context$1.selectAll;
+    loading = context$1.loading,
+    selectAll = context$1.selectAll;
   var pinnedSchema = schema.filter(function (s) {
     return !s.hidden && s.pinned;
   });
@@ -20078,7 +18890,6 @@ var GridHead = function GridHead(props) {
   var unpinnedSchema = schema.filter(function (s) {
     return !s.hidden && !s.pinned;
   });
-
   var renderCheckbox = function renderCheckbox(show) {
     if (!show || !withCheckbox) return null;
     return /*#__PURE__*/React.createElement("div", {
@@ -20087,11 +18898,9 @@ var GridHead = function GridHead(props) {
       onChange: onSelectAll
     })));
   };
-
   var renderSchema = function renderSchema(currSchema, shouldRenderCheckbox, pinned) {
     if (currSchema.length) {
       var _classNames;
-
       var classes = classnames((_classNames = {
         'Grid-cellGroup': true,
         'Grid-cellGroup--pinned': pinned
@@ -20115,10 +18924,8 @@ var GridHead = function GridHead(props) {
         });
       }));
     }
-
     return null;
   };
-
   return /*#__PURE__*/React.createElement("div", {
     className: "Grid-head",
     "data-test": "DesignSystem-GridHead-wrapper"
@@ -20130,23 +18937,26 @@ var GridHead = function GridHead(props) {
 var GridNestedRow = function GridNestedRow(props) {
   var context$1 = React.useContext(context);
   var schema = context$1.schema,
-      loading = context$1.loading,
-      nestedRowRenderer = context$1.nestedRowRenderer;
+    loading = context$1.loading,
+    nestedRowRenderer = context$1.nestedRowRenderer;
   var data = props.data,
-      rowIndex = props.rowIndex,
-      expanded = props.expanded;
+    rowIndex = props.rowIndex,
+    expanded = props.expanded;
   if (nestedRowRenderer) return nestedRowRenderer({
     data: data,
     schema: schema,
     loading: loading,
     rowIndex: rowIndex,
     expanded: expanded
-  }); // return (
+  });
+  // return (
   //   <Text>{JSON.stringify(data)}</Text>
   // )
+
   // const {
   //   schema: propSchema
   // } = _this.props;
+
   // if (data._expanded) {
   //   const showHead = data._expanded.showHead;
   //   const schema = data._expanded.schema || propSchema;
@@ -20159,6 +18969,7 @@ var GridNestedRow = function GridNestedRow(props) {
   //     } = data;
   //     gridData = [rest];
   //   }
+
   //   return (
   //     <div className="Grid-expandedRow">
   //       <Grid
@@ -20171,29 +18982,26 @@ var GridNestedRow = function GridNestedRow(props) {
   //     </div>
   //   );
   // }
-
   return null;
 };
 
 var GridRow = function GridRow(props) {
   var context$1 = React.useContext(context);
   var type = context$1.type,
-      onRowClick = context$1.onRowClick,
-      loading = context$1.loading,
-      withCheckbox = context$1.withCheckbox,
-      nestedRows = context$1.nestedRows;
+    onRowClick = context$1.onRowClick,
+    loading = context$1.loading,
+    withCheckbox = context$1.withCheckbox,
+    nestedRows = context$1.nestedRows;
   var schema = props.schema,
-      data = props.data,
-      rI = props.rowIndex,
-      onSelect = props.onSelect,
-      className = props.className;
+    data = props.data,
+    rI = props.rowIndex,
+    onSelect = props.onSelect,
+    className = props.className;
   var rowRef = React.useRef(null);
-
   var _React$useState = React.useState(false),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      expanded = _React$useState2[0],
-      setExpanded = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    expanded = _React$useState2[0],
+    setExpanded = _React$useState2[1];
   var rowClasses = classnames('Grid-row', 'Grid-row--body', {
     'Grid-row--selected': data._selected,
     'Grid-row--disabled': data.disabled
@@ -20223,7 +19031,6 @@ var GridRow = function GridRow(props) {
     expanded: expanded
   };
   var nestedRowData = GridNestedRow(nestedProps);
-
   var renderCheckbox = function renderCheckbox(show) {
     if (!show || !withCheckbox) return null;
     return (
@@ -20243,11 +19050,9 @@ var GridRow = function GridRow(props) {
       }))
     );
   };
-
   var renderSchema = function renderSchema(currSchema, shouldRenderCheckbox, pinned) {
     if (currSchema.length) {
       var _classNames;
-
       var classes = classnames((_classNames = {
         'Grid-cellGroup': true,
         'Grid-cellGroup--pinned': pinned
@@ -20270,10 +19075,8 @@ var GridRow = function GridRow(props) {
         });
       }));
     }
-
     return null;
   };
-
   var wrapperClasses = classnames(className, {
     'Grid-rowWrapper': true
   });
@@ -20295,26 +19098,23 @@ GridRow.defaultProps = {
 var GridBody = function GridBody(props) {
   var context$1 = React.useContext(context);
   var data = context$1.data,
-      ref = context$1.ref,
-      loading = context$1.loading,
-      error = context$1.error,
-      withPagination = context$1.withPagination,
-      page = context$1.page,
-      pageSize = context$1.pageSize,
-      totalRecords = context$1.totalRecords,
-      errorTemplate = context$1.errorTemplate;
-
+    ref = context$1.ref,
+    loading = context$1.loading,
+    error = context$1.error,
+    withPagination = context$1.withPagination,
+    page = context$1.page,
+    pageSize = context$1.pageSize,
+    totalRecords = context$1.totalRecords,
+    errorTemplate = context$1.errorTemplate;
   if (!loading && error) {
     return errorTemplate ? typeof errorTemplate === 'function' ? errorTemplate({}) : errorTemplate : null;
   }
-
   var schema = props.schema,
-      prevPageInfo = props.prevPageInfo,
-      updatePrevPageInfo = props.updatePrevPageInfo,
-      onSelect = props.onSelect;
+    prevPageInfo = props.prevPageInfo,
+    updatePrevPageInfo = props.updatePrevPageInfo,
+    onSelect = props.onSelect;
   React.useEffect(function () {
     var gridBodyEl = ref.querySelector('.Grid-body');
-
     if (gridBodyEl) {
       window.requestAnimationFrame(function () {
         if (prevPageInfo.page === page) {
@@ -20322,7 +19122,6 @@ var GridBody = function GridBody(props) {
         }
       });
     }
-
     return function () {
       if (gridBodyEl) {
         updatePrevPageInfo({
@@ -20335,7 +19134,6 @@ var GridBody = function GridBody(props) {
   var totalPages = Math.ceil(totalRecords / pageSize);
   var isLastPage = withPagination && page === totalPages;
   var dataLength = isLastPage ? totalRecords - (page - 1) * pageSize : loading ? pageSize : withPagination ? Math.min(totalRecords, pageSize) : totalRecords;
-
   var renderRow = function renderRow(rowIndex, item) {
     return /*#__PURE__*/React.createElement(GridRow, {
       key: rowIndex,
@@ -20345,17 +19143,14 @@ var GridBody = function GridBody(props) {
       onSelect: onSelect
     });
   };
-
   var getArrayList = function getArrayList() {
     if (loading && !data.length) {
       return _toConsumableArray(Array(dataLength).map(function (x) {
         return x;
       }));
     }
-
     return data;
   };
-
   return /*#__PURE__*/React.createElement("div", {
     className: "Grid-body"
   }, getArrayList().map(function (item, i) {
@@ -20365,69 +19160,49 @@ var GridBody = function GridBody(props) {
 
 var Grid = /*#__PURE__*/function (_React$Component) {
   _inherits(Grid, _React$Component);
-
   var _super = _createSuper(Grid);
-
   function Grid(props) {
     var _this;
-
     _classCallCheck(this, Grid);
-
     _this = _super.call(this, props);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "gridRef", null);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "isHeadSyncing", false);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "isBodySyncing", false);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "syncScroll", function (type) {
       return function () {
         var gridHeadEl = _this.gridRef.querySelector('.Grid-head');
-
         var gridBodyEl = _this.gridRef.querySelector('.Grid-body');
-
         if (type === 'head') {
           if (!_this.isHeadSyncing) {
             _this.isBodySyncing = true;
             gridBodyEl.scrollLeft = gridHeadEl.scrollLeft;
           }
-
           _this.isHeadSyncing = false;
         }
-
         if (type === 'body') {
           if (!_this.isBodySyncing) {
             _this.isHeadSyncing = true;
             gridHeadEl.scrollLeft = gridBodyEl.scrollLeft;
           }
-
           _this.isBodySyncing = false;
         }
       };
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "updateRenderedSchema", function (newSchema) {
       var updateSchema = _this.props.updateSchema;
-
       if (updateSchema) {
         updateSchema(newSchema);
       }
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "updateColumnSchema", function (name, schemaUpdate) {
       var schema = _this.props.schema;
-
       var newSchema = _toConsumableArray(schema);
-
       var ind = newSchema.findIndex(function (s) {
         return s.name === name;
       });
       newSchema[ind] = _objectSpread2(_objectSpread2({}, newSchema[ind]), schemaUpdate);
-
       _this.updateRenderedSchema(newSchema);
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "reorderColumn", function (from, to) {
       var schema = _this.props.schema;
       var fromInd = schema.findIndex(function (s) {
@@ -20437,29 +19212,22 @@ var Grid = /*#__PURE__*/function (_React$Component) {
         return s.name === to;
       });
       var newSchema = moveToIndex(schema, fromInd, toInd);
-
       _this.updateRenderedSchema(newSchema);
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "updateSortingList", function (sortingList) {
       var updateSortingList = _this.props.updateSortingList;
-
       if (updateSortingList) {
         updateSortingList(sortingList);
       }
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "updateFilterList", function (filterList) {
       var updateFilterList = _this.props.updateFilterList;
-
       if (updateFilterList) {
         updateFilterList(filterList);
       }
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onMenuChange", function (name, selected) {
       var sortingList = _this.props.sortingList;
-
       switch (selected) {
         case 'sortAsc':
           sortColumn({
@@ -20467,39 +19235,33 @@ var Grid = /*#__PURE__*/function (_React$Component) {
             updateSortingList: _this.updateSortingList
           }, name, 'asc');
           break;
-
         case 'sortDesc':
           sortColumn({
             sortingList: sortingList,
             updateSortingList: _this.updateSortingList
           }, name, 'desc');
           break;
-
         case 'unsort':
           sortColumn({
             sortingList: sortingList,
             updateSortingList: _this.updateSortingList
           }, name, 'unsort');
           break;
-
         case 'pinLeft':
           pinColumn({
             updateColumnSchema: _this.updateColumnSchema
           }, name, 'left');
           break;
-
         case 'pinRight':
           pinColumn({
             updateColumnSchema: _this.updateColumnSchema
           }, name, 'right');
           break;
-
         case 'unpin':
           pinColumn({
             updateColumnSchema: _this.updateColumnSchema
           }, name, 'unpin');
           break;
-
         case 'hide':
           hideColumn({
             updateColumnSchema: _this.updateColumnSchema
@@ -20507,37 +19269,28 @@ var Grid = /*#__PURE__*/function (_React$Component) {
           break;
       }
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onFilterChange", function (name, selected) {
       var filterList = _this.props.filterList;
-
       var newFilterList = _objectSpread2(_objectSpread2({}, filterList), {}, _defineProperty$1({}, name, selected));
-
       _this.updateFilterList(newFilterList);
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onSelect", function (rowIndex, selected) {
       var onSelect = _this.props.onSelect;
-
       if (onSelect) {
         onSelect(rowIndex, selected);
       }
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onSelectAll", function (event) {
       var onSelectAll = _this.props.onSelectAll;
-
       if (onSelectAll) {
         onSelectAll(event.target.checked, undefined, true);
       }
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "updatePrevPageInfo", function (value) {
       _this.setState({
         prevPageInfo: value
       });
     });
-
     var pageInfo = {
       page: 1,
       scrollTop: 0
@@ -20548,7 +19301,6 @@ var Grid = /*#__PURE__*/function (_React$Component) {
     };
     return _this;
   }
-
   _createClass(Grid, [{
     key: "componentDidMount",
     value: function componentDidMount() {
@@ -20574,7 +19326,6 @@ var Grid = /*#__PURE__*/function (_React$Component) {
       if (prevState.init !== this.state.init) {
         this.addScrollListeners();
       }
-
       if (prevProps.page !== this.props.page || prevProps.error !== this.props.error) {
         this.removeScrollListeners();
         this.addScrollListeners();
@@ -20585,7 +19336,6 @@ var Grid = /*#__PURE__*/function (_React$Component) {
     value: function addScrollListeners() {
       var gridHeadEl = this.gridRef.querySelector('.Grid-head');
       var gridBodyEl = this.gridRef.querySelector('.Grid-body');
-
       if (gridHeadEl && gridBodyEl) {
         gridHeadEl.addEventListener('scroll', this.syncScroll('head'));
         gridBodyEl.addEventListener('scroll', this.syncScroll('body'));
@@ -20596,7 +19346,6 @@ var Grid = /*#__PURE__*/function (_React$Component) {
     value: function removeScrollListeners() {
       var gridHeadEl = this.gridRef.querySelector('.Grid-head');
       var gridBodyEl = this.gridRef.querySelector('.Grid-body');
-
       if (gridHeadEl && gridBodyEl) {
         gridHeadEl.removeEventListener('scroll', this.syncScroll('head'));
         gridBodyEl.removeEventListener('scroll', this.syncScroll('body'));
@@ -20606,21 +19355,20 @@ var Grid = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var _classNames,
-          _this2 = this,
-          _this$onSelectAll;
-
+        _this2 = this,
+        _this$onSelectAll;
       var baseProps = extractBaseProps(this.props);
       var _this$state = this.state,
-          init = _this$state.init,
-          prevPageInfo = _this$state.prevPageInfo;
+        init = _this$state.init,
+        prevPageInfo = _this$state.prevPageInfo;
       var _this$props = this.props,
-          type = _this$props.type,
-          size = _this$props.size,
-          showHead = _this$props.showHead,
-          className = _this$props.className,
-          page = _this$props.page,
-          loading = _this$props.loading,
-          loaderSchema = _this$props.loaderSchema;
+        type = _this$props.type,
+        size = _this$props.size,
+        showHead = _this$props.showHead,
+        className = _this$props.className,
+        page = _this$props.page,
+        loading = _this$props.loading,
+        loaderSchema = _this$props.loaderSchema;
       var schema = getSchema(this.props.schema, loading, loaderSchema);
       var classes = classnames((_classNames = {
         Grid: 'true'
@@ -20651,19 +19399,63 @@ var Grid = /*#__PURE__*/function (_React$Component) {
       })));
     }
   }]);
-
   return Grid;
 }(React.Component);
-
 _defineProperty$1(Grid, "defaultProps", void 0);
-
 Grid.defaultProps = defaultProps$1;
+
+// export interface ImageProps {
+//   src: string;
+//   size?: number;
+// }
+
+// export interface StatusProps extends PartialCellProps {
+//   appearanceMapper?: GridProps['statusMapper'];
+// }
+
+// export const Image = (props: ImageProps) => {
+//   const {
+//     src,
+//     size
+//   } = props;
+
+//   const style = {
+//     height: `${size}px`,
+//     width: `${size}px`,
+//   };
+
+//   return (
+//     <img className="Image" src={src} style={style} />
+//   );
+// };
+
+// const ImageCell = (props: PartialCellProps) => {
+//   const {
+//     schema,
+//     loading
+//   } = props;
+
+//   const src = schema.image;
+//   const size = 32;
+
+//   if (loading) {
+//     return (
+//       <Placeholder imageSize={'medium'} round={true} />
+//     );
+//   }
+
+//   return (
+//     <Image
+//       src={src || ''}
+//       size={size}
+//     />
+//   );
+// };
 
 var renderTitle = function renderTitle(props) {
   var tooltip = props.tooltip,
-      cellData = props.cellData;
+    cellData = props.cellData;
   var children = cellData.title;
-
   if (children !== undefined && children !== null) {
     if (tooltip) {
       return /*#__PURE__*/React.createElement(Tooltip, {
@@ -20674,19 +19466,15 @@ var renderTitle = function renderTitle(props) {
         className: "w-100 ellipsis"
       }, children));
     }
-
     return /*#__PURE__*/React.createElement(Text, {
       className: "w-100 ellipsis"
     }, children);
   }
-
   return null;
 };
-
 var renderMetaList = function renderMetaList(props) {
   var cellData = props.cellData;
   var metaList = cellData.metaList;
-
   if (metaList) {
     return /*#__PURE__*/React.createElement("div", {
       className: "GridCell-metaList",
@@ -20700,16 +19488,13 @@ var renderMetaList = function renderMetaList(props) {
       }, list);
     }));
   }
-
   return null;
 };
-
 var renderAvatar = function renderAvatar(props) {
   var cellData = props.cellData;
   var firstName = cellData.firstName,
-      lastName = cellData.lastName,
-      title = cellData.title;
-
+    lastName = cellData.lastName,
+    title = cellData.title;
   if (firstName || lastName) {
     return /*#__PURE__*/React.createElement(Avatar, {
       className: "mr-5",
@@ -20717,59 +19502,49 @@ var renderAvatar = function renderAvatar(props) {
       lastName: lastName
     });
   }
-
   if (title) {
     return /*#__PURE__*/React.createElement(Avatar, {
       className: "mr-5"
     }, title);
   }
-
   return null;
 };
-
 var renderIcon = function renderIcon(props) {
   var cellData = props.cellData;
   var title = cellData.title,
-      icon = cellData.icon;
+    icon = cellData.icon;
   var iconName = icon || title;
-
   if (iconName) {
     return /*#__PURE__*/React.createElement(Icon, {
       name: iconName
     });
   }
-
   return null;
 };
-
 var renderStatusHint = function renderStatusHint(props) {
   var cellData = props.cellData;
   var statusAppearance = cellData.statusAppearance;
   var children = cellData.title;
-
   if (children) {
     return /*#__PURE__*/React.createElement(StatusHint, {
       appearance: statusAppearance
     }, children);
   }
-
   return null;
 };
-
 var GridCell = function GridCell(props) {
   var size = props.size,
-      schema = props.schema,
-      loading = props.loading;
+    schema = props.schema,
+    loading = props.loading;
   var data = !loading ? translateData(schema, props.data) : {};
   var name = schema.name,
-      _schema$cellType = schema.cellType,
-      cellType = _schema$cellType === void 0 ? 'DEFAULT' : _schema$cellType,
-      _schema$align = schema.align,
-      align = _schema$align === void 0 ? 'left' : _schema$align,
-      tooltip = schema.tooltip;
+    _schema$cellType = schema.cellType,
+    cellType = _schema$cellType === void 0 ? 'DEFAULT' : _schema$cellType,
+    _schema$align = schema.align,
+    align = _schema$align === void 0 ? 'left' : _schema$align,
+    tooltip = schema.tooltip;
   var cellData = data[name];
   var cellClass = classnames(_defineProperty$1({}, 'GridCell', true));
-
   switch (cellType) {
     case 'DEFAULT':
       return /*#__PURE__*/React.createElement("div", {
@@ -20781,7 +19556,6 @@ var GridCell = function GridCell(props) {
         tooltip: tooltip,
         cellData: cellData
       }));
-
     case 'WITH_META_LIST':
       return /*#__PURE__*/React.createElement("div", {
         className: "".concat(cellClass, " GridCell--metaList")
@@ -20797,7 +19571,6 @@ var GridCell = function GridCell(props) {
       }), renderMetaList({
         cellData: cellData
       })));
-
     case 'AVATAR':
       if (loading) {
         return /*#__PURE__*/React.createElement(Placeholder, {
@@ -20806,14 +19579,12 @@ var GridCell = function GridCell(props) {
           round: true
         });
       }
-
       return /*#__PURE__*/React.createElement("div", {
         className: "".concat(cellClass, " GridCell--align-").concat(align, " GridCell--avatar"),
         "data-test": "DesignSystem-GridCell-avatar"
       }, size !== 'tight' && renderAvatar({
         cellData: cellData
       }));
-
     case 'AVATAR_WITH_TEXT':
       if (loading) {
         return /*#__PURE__*/React.createElement(Placeholder, {
@@ -20824,7 +19595,6 @@ var GridCell = function GridCell(props) {
           length: "medium"
         }));
       }
-
       return /*#__PURE__*/React.createElement("div", {
         className: "".concat(cellClass, "   "),
         "data-test": "DesignSystem-GridCell-avatarWithText"
@@ -20834,7 +19604,6 @@ var GridCell = function GridCell(props) {
         tooltip: tooltip,
         cellData: cellData
       }));
-
     case 'AVATAR_WITH_META_LIST':
       if (loading) {
         return /*#__PURE__*/React.createElement(Placeholder, {
@@ -20848,7 +19617,6 @@ var GridCell = function GridCell(props) {
           length: "large"
         }));
       }
-
       return /*#__PURE__*/React.createElement("div", {
         className: "".concat(cellClass, " GridCell--avatarWithText"),
         "data-test": "DesignSystem-GridCell-avatarWithMetaList"
@@ -20862,7 +19630,6 @@ var GridCell = function GridCell(props) {
       }), renderMetaList({
         cellData: cellData
       })));
-
     case 'ICON':
       if (loading) {
         return /*#__PURE__*/React.createElement(Placeholder, {
@@ -20871,14 +19638,12 @@ var GridCell = function GridCell(props) {
           round: true
         });
       }
-
       return /*#__PURE__*/React.createElement("div", {
         className: "".concat(cellClass, " GridCell--align-").concat(align, " GridCell--icon"),
         "data-test": "DesignSystem-GridCell-icon"
       }, renderIcon({
         cellData: cellData
       }));
-
     case 'STATUS_HINT':
       return /*#__PURE__*/React.createElement("div", {
         className: "".concat(cellClass, " GridCell--align-").concat(align, " GridCell--statusHint")
@@ -20892,34 +19657,28 @@ var GridCell = function GridCell(props) {
         cellData: cellData
       }));
   }
-
   return null;
 };
 GridCell.displayName = 'GridCell';
 
 var DraggableDropdown = function DraggableDropdown(props) {
   var options = props.options,
-      onChange = props.onChange;
-
+    onChange = props.onChange;
   var _React$useState = React.useState(false),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      open = _React$useState2[0],
-      setOpen = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    open = _React$useState2[0],
+    setOpen = _React$useState2[1];
   var _React$useState3 = React.useState(options),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      tempOptions = _React$useState4[0],
-      setTempOptions = _React$useState4[1];
-
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    tempOptions = _React$useState4[0],
+    setTempOptions = _React$useState4[1];
   var _React$useState5 = React.useState('var(--spacing-8)'),
-      _React$useState6 = _slicedToArray(_React$useState5, 2),
-      triggerWidth = _React$useState6[0],
-      setTriggerWidth = _React$useState6[1];
-
+    _React$useState6 = _slicedToArray(_React$useState5, 2),
+    triggerWidth = _React$useState6[0],
+    setTriggerWidth = _React$useState6[1];
   React.useEffect(function () {
     setTempOptions(options);
   }, [open]);
-
   var handleParentChange = function handleParentChange(e) {
     setTempOptions(tempOptions.map(function (option) {
       return _objectSpread2(_objectSpread2({}, option), {}, {
@@ -20927,29 +19686,23 @@ var DraggableDropdown = function DraggableDropdown(props) {
       });
     }));
   };
-
   var handleChildChange = function handleChildChange(e, index) {
     var newOptions = _toConsumableArray(tempOptions);
-
     newOptions[index] = _objectSpread2(_objectSpread2({}, newOptions[index]), {}, {
       selected: e.target.checked
     });
     setTempOptions(newOptions);
   };
-
   var onToggleHandler = function onToggleHandler(newOpen) {
     setOpen(newOpen);
   };
-
   var onCancelHandler = function onCancelHandler() {
     setOpen(false);
   };
-
   var onApplyHandler = function onApplyHandler() {
     setOpen(false);
     if (onChange) onChange(tempOptions);
   };
-
   return /*#__PURE__*/React.createElement("div", {
     className: "Dropdown"
   }, /*#__PURE__*/React.createElement(Popover, {
@@ -21034,52 +19787,48 @@ var DraggableDropdown = function DraggableDropdown(props) {
 
 var Header = function Header(props) {
   var _selectedRowsRef$curr;
-
   var loading = props.loading,
-      error = props.error,
-      data = props.data,
-      displayData = props.displayData,
-      schema = props.schema,
-      withSearch = props.withSearch,
-      showHead = props.showHead,
-      withPagination = props.withPagination,
-      page = props.page,
-      pageSize = props.pageSize,
-      withCheckbox = props.withCheckbox,
-      children = props.children,
-      updateSchema = props.updateSchema,
-      _props$filterList = props.filterList,
-      filterList = _props$filterList === void 0 ? {} : _props$filterList,
-      updateFilterList = props.updateFilterList,
-      _props$totalRecords = props.totalRecords,
-      totalRecords = _props$totalRecords === void 0 ? 0 : _props$totalRecords,
-      onSelectAll = props.onSelectAll,
-      searchPlaceholder = props.searchPlaceholder,
-      selectAll = props.selectAll,
-      searchTerm = props.searchTerm,
-      updateSearchTerm = props.updateSearchTerm,
-      globalActionRenderer = props.globalActionRenderer,
-      dynamicColumn = props.dynamicColumn,
-      allowSelectAll = props.allowSelectAll,
-      showFilters = props.showFilters,
-      customSelectionLabel = props.customSelectionLabel,
-      selectedRowsRef = props.selectedRowsRef,
-      selectedAllRef = props.selectedAllRef,
-      onClearSelection = props.onClearSelection,
-      onSelectAllRows = props.onSelectAllRows,
-      selectionActionRenderer = props.selectionActionRenderer,
-      uniqueColumnName = props.uniqueColumnName;
-
+    error = props.error,
+    data = props.data,
+    displayData = props.displayData,
+    schema = props.schema,
+    withSearch = props.withSearch,
+    showHead = props.showHead,
+    withPagination = props.withPagination,
+    page = props.page,
+    pageSize = props.pageSize,
+    withCheckbox = props.withCheckbox,
+    children = props.children,
+    updateSchema = props.updateSchema,
+    _props$filterList = props.filterList,
+    filterList = _props$filterList === void 0 ? {} : _props$filterList,
+    updateFilterList = props.updateFilterList,
+    _props$totalRecords = props.totalRecords,
+    totalRecords = _props$totalRecords === void 0 ? 0 : _props$totalRecords,
+    onSelectAll = props.onSelectAll,
+    searchPlaceholder = props.searchPlaceholder,
+    selectAll = props.selectAll,
+    searchTerm = props.searchTerm,
+    updateSearchTerm = props.updateSearchTerm,
+    globalActionRenderer = props.globalActionRenderer,
+    dynamicColumn = props.dynamicColumn,
+    allowSelectAll = props.allowSelectAll,
+    showFilters = props.showFilters,
+    customSelectionLabel = props.customSelectionLabel,
+    selectedRowsRef = props.selectedRowsRef,
+    selectedAllRef = props.selectedAllRef,
+    onClearSelection = props.onClearSelection,
+    onSelectAllRows = props.onSelectAllRows,
+    selectionActionRenderer = props.selectionActionRenderer,
+    uniqueColumnName = props.uniqueColumnName;
   var _React$useState = React.useState(false),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      selectAllRecords = _React$useState2[0],
-      setSelectAllRecords = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    selectAllRecords = _React$useState2[0],
+    setSelectAllRecords = _React$useState2[1];
   var _React$useState3 = React.useState(true),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      flag = _React$useState4[0],
-      setFlag = _React$useState4[1];
-
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    flag = _React$useState4[0],
+    setFlag = _React$useState4[1];
   var customLabel = customSelectionLabel ? customSelectionLabel : 'item';
   var selectedCount = data.filter(function (d) {
     return d._selected;
@@ -21088,22 +19837,18 @@ var Header = function Header(props) {
   var endIndex = Math.min(page * pageSize, totalRecords);
   var selectedRowsCount = (selectedAllRef === null || selectedAllRef === void 0 ? void 0 : selectedAllRef.current) === true ? totalRecords : (selectedRowsRef === null || selectedRowsRef === void 0 ? void 0 : (_selectedRowsRef$curr = selectedRowsRef.current) === null || _selectedRowsRef$curr === void 0 ? void 0 : _selectedRowsRef$curr.length) || 0;
   var showSelectedRowLabel = withCheckbox && (selectedCount || selectedRowsCount > 0);
-
   var _React$useState5 = React.useState(true),
-      _React$useState6 = _slicedToArray(_React$useState5, 2),
-      showSelectedLabel = _React$useState6[0],
-      setShowSelectedLabel = _React$useState6[1];
-
+    _React$useState6 = _slicedToArray(_React$useState5, 2),
+    showSelectedLabel = _React$useState6[0],
+    setShowSelectedLabel = _React$useState6[1];
   var _React$useState7 = React.useState(false),
-      _React$useState8 = _slicedToArray(_React$useState7, 2),
-      animateSelectedLabel = _React$useState8[0],
-      setAnimateSelectedLabel = _React$useState8[1];
-
+    _React$useState8 = _slicedToArray(_React$useState7, 2),
+    animateSelectedLabel = _React$useState8[0],
+    setAnimateSelectedLabel = _React$useState8[1];
   var _React$useState9 = React.useState(false),
-      _React$useState10 = _slicedToArray(_React$useState9, 2),
-      animateUnSelectedLabel = _React$useState10[0],
-      setAnimateUnSelectedLabel = _React$useState10[1];
-
+    _React$useState10 = _slicedToArray(_React$useState9, 2),
+    animateUnSelectedLabel = _React$useState10[0],
+    setAnimateUnSelectedLabel = _React$useState10[1];
   React.useEffect(function () {
     if (showSelectedRowLabel) {
       setAnimateUnSelectedLabel(true);
@@ -21113,19 +19858,16 @@ var Header = function Header(props) {
       setAnimateSelectedLabel(true);
     }
   }, [showSelectedRowLabel]);
-
   var onUnSelectAnimationEnd = function onUnSelectAnimationEnd() {
     showSelectedRowLabel ? setShowSelectedLabel(true) : setShowSelectedLabel(false);
     setAnimateSelectedLabel(true);
     setAnimateUnSelectedLabel(false);
   };
-
   var onSelectAnimationEnd = function onSelectAnimationEnd() {
     showSelectedRowLabel ? setShowSelectedLabel(true) : setShowSelectedLabel(false);
     setAnimateSelectedLabel(false);
     setAnimateUnSelectedLabel(true);
   };
-
   var unselectedRowLabelClass = classnames({
     'Table-Header-Label--hide': animateUnSelectedLabel && showSelectedRowLabel,
     'Table-Header-Label--show': animateUnSelectedLabel && !showSelectedRowLabel
@@ -21148,23 +19890,18 @@ var Header = function Header(props) {
   var filterSchema = schema.filter(function (s) {
     return s.filters;
   });
-
   var onSearchChange = function onSearchChange(e) {
     var value = e.target.value;
-
     if (updateSearchTerm) {
       updateSearchTerm(value);
     }
   };
-
   var onFilterChange = function onFilterChange(name, filters) {
     var newFilterList = _objectSpread2(_objectSpread2({}, filterList), {}, _defineProperty$1({}, name, filters));
-
     if (updateFilterList) {
       updateFilterList(newFilterList);
     }
   };
-
   var columnOptions = schema.map(function (s) {
     return {
       label: s.displayName,
@@ -21172,7 +19909,6 @@ var Header = function Header(props) {
       selected: !s.hidden
     };
   });
-
   var onDynamicColumnUpdate = function onDynamicColumnUpdate(options) {
     var newSchema = options.map(function (option) {
       return _objectSpread2(_objectSpread2({}, schema.find(function (colSchema) {
@@ -21180,24 +19916,20 @@ var Header = function Header(props) {
       })), {}, {
         hidden: !option.selected
         /* tslint:disable:no-object-literal-type-assertion */
-
       });
     });
     /* tslint:enable:no-object-literal-type-assertion */
 
     if (updateSchema) updateSchema(newSchema);
   };
-
   var getUnSelectedRowLabel = function getUnSelectedRowLabel() {
     if (error) {
       return "Showing 0 ".concat(customLabel, "s");
     } else if (withPagination) {
       return "Showing ".concat(startIndex, "-").concat(endIndex, " of ").concat(totalRecords, " ").concat(customLabel).concat(getPluralSuffix(totalRecords));
     }
-
     return "Showing ".concat(totalRecords, " ").concat(customLabel).concat(getPluralSuffix(totalRecords));
   };
-
   var getSelectedRowLabel = function getSelectedRowLabel() {
     if (selectedRowsCount > 0 && uniqueColumnName && withCheckbox) {
       return "Selected ".concat(selectedRowsCount, " ").concat(customLabel).concat(getPluralSuffix(selectedRowsCount));
@@ -21206,10 +19938,8 @@ var Header = function Header(props) {
     } else if (withPagination) {
       return "Showing ".concat(startIndex, "-").concat(endIndex, " of ").concat(totalRecords, " ").concat(customLabel).concat(getPluralSuffix(totalRecords));
     }
-
     return "Showing ".concat(totalRecords, " ").concat(customLabel).concat(getPluralSuffix(totalRecords));
   };
-
   return /*#__PURE__*/React.createElement("div", {
     className: "Header"
   }, /*#__PURE__*/React.createElement("div", {
@@ -21236,8 +19966,8 @@ var Header = function Header(props) {
     className: "Header-filters"
   }, filterSchema.map(function (s) {
     var name = s.name,
-        displayName = s.displayName,
-        filters = s.filters;
+      displayName = s.displayName,
+      filters = s.filters;
     var filterOptions = filters ? filters.map(function (f) {
       return _objectSpread2(_objectSpread2({}, f), {}, {
         selected: filterList[name] && filterList[name].findIndex(function (fl) {
@@ -21293,7 +20023,7 @@ var Header = function Header(props) {
     size: "tiny",
     className: "ml-4",
     onClick: onClearSelection
-  }, "Clear Selection"), selectionActionRenderer && /*#__PURE__*/React.createElement(Divider, {
+  }, "Clear selection"), selectionActionRenderer && /*#__PURE__*/React.createElement(Divider, {
     vertical: true,
     className: "mx-4 Table-Header--Divider"
   }))), selectionActionRenderer && selectedRowsCount > 0 && showSelectedLabel && /*#__PURE__*/React.createElement("div", {
@@ -21320,7 +20050,6 @@ var isElementPresent = function isElementPresent(list, uniqueColumnName, value) 
   });
   return arr.length > 0;
 };
-
 var getUpdatedData = function getUpdatedData(data, selectedList, uniqueColumnName, isCancelSelection, isSelectAll) {
   var updatedData = data.map(function (item) {
     if (isSelectAll || item._selected && !isCancelSelection || uniqueColumnName && item[uniqueColumnName] && selectedList && isElementPresent(selectedList, uniqueColumnName, item[uniqueColumnName]) && !isCancelSelection) {
@@ -21330,17 +20059,14 @@ var getUpdatedData = function getUpdatedData(data, selectedList, uniqueColumnNam
     } else {
       item._selected = false;
     }
-
     return item;
   });
   return updatedData;
 };
-
 var uniqueByKey = function uniqueByKey(arr, key) {
   var list = new Set();
   return arr.filter(function (obj) {
     var value = obj[key];
-
     if (list.has(value)) {
       return false;
     } else {
@@ -21349,20 +20075,17 @@ var uniqueByKey = function uniqueByKey(arr, key) {
     }
   });
 };
-
 var removeDuplicate = function removeDuplicate(data, uniqueColumnName) {
   if (uniqueColumnName) {
     return uniqueByKey(data, uniqueColumnName);
   }
-
   return data;
 };
 
-var _excluded$m = ["children"];
-
+var _excluded$u = ["children"];
 var defaultErrorTemplate = function defaultErrorTemplate(props) {
   var _props$errorType = props.errorType,
-      errorType = _props$errorType === void 0 ? 'DEFAULT' : _props$errorType;
+    errorType = _props$errorType === void 0 ? 'DEFAULT' : _props$errorType;
   var errorMessages = {
     FAILED_TO_FETCH: 'Failed to fetch data',
     NO_RECORDS_FOUND: 'No results found',
@@ -21370,7 +20093,6 @@ var defaultErrorTemplate = function defaultErrorTemplate(props) {
   };
   return /*#__PURE__*/React.createElement(Heading, null, errorMessages[errorType]);
 };
-
 var defaultProps = {
   type: 'data',
   size: 'standard',
@@ -21396,84 +20118,44 @@ var defaultProps = {
   pageJumpDebounceDuration: 750,
   errorTemplate: defaultErrorTemplate
 };
-/**
- * ###Note:
- * 1. Sync Table:
- *  - Manually toggle loading/error state to update data, schema.
- * 2. Async Table:
- *  - fetchData return:
- *    - Promise resolve with no records:
- *      error: true, errorType: 'NO\_RECORDS\_FOUND'
- *    - Promise reject:
- *      error: true, errorType: 'FAILED\_TO\_FETCH'
- * 3. Default errorTemplate:
- *
- * <pre class="DocPage-codeBlock mx-6 mb-7">
- * (props) => {
- *      const { errorType = 'DEFAULT' } = props;
- *      const errorMessages = {
- *        'FAILED\_TO\_FETCH': 'Failed to fetch data',
- *        'NO\_RECORDS\_FOUND': 'No results found',
- *        'DEFAULT': 'No results found'
- *      }
- *      return(
- *        \<Heading>{errorMessages[errorType]}\</Heading>
- *      );
- * }
- * </pre>
- */
-
 var Table = /*#__PURE__*/function (_React$Component) {
   _inherits(Table, _React$Component);
-
   var _super = _createSuper(Table);
-
   function Table(props) {
     var _this;
-
     _classCallCheck(this, Table);
-
     _this = _super.call(this, props);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "debounceUpdate", void 0);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "selectedRowsRef", /*#__PURE__*/React.createRef());
-
     _defineProperty$1(_assertThisInitialized$1(_this), "clearSelectionRef", /*#__PURE__*/React.createRef());
-
     _defineProperty$1(_assertThisInitialized$1(_this), "selectAllRef", /*#__PURE__*/React.createRef());
-
     _defineProperty$1(_assertThisInitialized$1(_this), "updateData", function (searchUpdate) {
       if (_this.state.async) {
         _this.setState({
           loading: true
         });
       }
-
       if (searchUpdate) {
         _this.debounceUpdate();
       } else {
         _this.updateDataFn();
       }
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "updateDataFn", function () {
       var _this$props = _this.props,
-          fetchData = _this$props.fetchData,
-          pageSize = _this$props.pageSize,
-          withPagination = _this$props.withPagination,
-          dataProp = _this$props.data,
-          onSearch = _this$props.onSearch,
-          uniqueColumnName = _this$props.uniqueColumnName;
+        fetchData = _this$props.fetchData,
+        pageSize = _this$props.pageSize,
+        withPagination = _this$props.withPagination,
+        dataProp = _this$props.data,
+        onSearch = _this$props.onSearch,
+        uniqueColumnName = _this$props.uniqueColumnName;
       var _this$state = _this.state,
-          async = _this$state.async,
-          page = _this$state.page,
-          sortingList = _this$state.sortingList,
-          filterList = _this$state.filterList,
-          searchTerm = _this$state.searchTerm;
-
+        async = _this$state.async,
+        page = _this$state.page,
+        sortingList = _this$state.sortingList,
+        filterList = _this$state.filterList,
+        searchTerm = _this$state.searchTerm;
       _this.onSelect(-1, false);
-
       var opts = {
         page: page,
         pageSize: pageSize,
@@ -21481,40 +20163,34 @@ var Table = /*#__PURE__*/function (_React$Component) {
         filterList: filterList,
         searchTerm: searchTerm
       };
-
       if (!_this.props.withPagination) {
         delete opts.page;
         delete opts.pageSize;
       }
-
       if (async) {
         if (fetchData) {
           fetchData(opts).then(function (res) {
             if (!res.searchTerm || res.searchTerm && res.searchTerm === _this.state.searchTerm) {
-              var _data2 = res.data;
-              var dataReplica = JSON.parse(JSON.stringify(_data2));
+              var data = res.data;
+              var dataReplica = JSON.parse(JSON.stringify(data));
               var schema = _this.state.schema.length ? _this.state.schema : res.schema;
-
-              var preSelectedRows = _data2.filter(function (item) {
+              var preSelectedRows = data.filter(function (item) {
                 return item._selected;
               });
-
               if (_this.clearSelectionRef.current) {
                 _this.selectedRowsRef.current = [];
               } else {
                 _this.selectedRowsRef.current = _this.selectedRowsRef.current ? removeDuplicate([].concat(_toConsumableArray(_this.selectedRowsRef.current), _toConsumableArray(preSelectedRows)), uniqueColumnName) : removeDuplicate(_toConsumableArray(preSelectedRows), uniqueColumnName);
               }
-
               var selectedData = getUpdatedData(dataReplica, _this.selectedRowsRef.current, uniqueColumnName, _this.clearSelectionRef.current, _this.selectAllRef.current);
-
               _this.setState({
                 data: selectedData,
-                displayData: _data2,
+                displayData: data,
                 schema: schema,
                 selectAll: getSelectAll(selectedData, _this.props.selectDisabledRow, _this.clearSelectionRef.current),
                 totalRecords: res.count,
                 loading: false,
-                error: !_data2.length,
+                error: !data.length,
                 errorType: 'NO_RECORDS_FOUND'
               });
             }
@@ -21533,25 +20209,20 @@ var Table = /*#__PURE__*/function (_React$Component) {
         var sortedData = sortData(schema, searchedData, sortingList);
         var renderedData = sortedData;
         var totalRecords = sortedData.length;
-
         if (withPagination && page && pageSize) {
           renderedData = paginateData(renderedData, page, pageSize);
         }
-
         var renderedSchema = _this.state.schema.length ? _this.state.schema : schema;
         var preSelectedRows = renderedData.filter(function (item) {
           return item._selected;
         });
         var renderedDataReplica = JSON.parse(JSON.stringify(renderedData));
-
         if (_this.clearSelectionRef.current) {
           _this.selectedRowsRef.current = [];
         } else {
           _this.selectedRowsRef.current = _this.selectedRowsRef.current ? removeDuplicate([].concat(_toConsumableArray(_this.selectedRowsRef.current), _toConsumableArray(preSelectedRows)), uniqueColumnName) : removeDuplicate(_toConsumableArray(preSelectedRows), uniqueColumnName);
         }
-
         var selectedData = getUpdatedData(renderedDataReplica, _this.selectedRowsRef.current, uniqueColumnName, _this.clearSelectionRef.current, _this.selectAllRef.current);
-
         _this.setState({
           totalRecords: totalRecords,
           error: !renderedData.length,
@@ -21563,27 +20234,22 @@ var Table = /*#__PURE__*/function (_React$Component) {
         });
       }
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onSelect", function (rowIndexes, selected) {
       var data = _this.state.data;
       var _this$props2 = _this.props,
-          onSelect = _this$props2.onSelect,
-          uniqueColumnName = _this$props2.uniqueColumnName;
-
+        onSelect = _this$props2.onSelect,
+        uniqueColumnName = _this$props2.uniqueColumnName;
       if (_this.selectAllRef.current && rowIndexes !== -1 && !selected) {
         _this.selectAllRef.current = false;
         _this.selectedRowsRef.current = [];
-
         var _indexes = Array.from({
           length: data.length
         }, function (_, i) {
           return i;
         });
-
         var _newData = updateBatchData(data, _indexes, {
           _selected: false
         }, _this.props.selectDisabledRow);
-
         _this.setState({
           data: _newData,
           selectAll: {
@@ -21591,7 +20257,6 @@ var Table = /*#__PURE__*/function (_React$Component) {
             indeterminate: false
           }
         });
-
         if (onSelect) {
           if (_this.props.uniqueColumnName) {
             onSelect(_indexes, selected, _this.selectedRowsRef.current, _this.selectAllRef.current);
@@ -21602,48 +20267,38 @@ var Table = /*#__PURE__*/function (_React$Component) {
             }));
           }
         }
-
         return;
       }
-
       var indexes = [rowIndexes];
       var rowData = data[rowIndexes];
       var selectedItemList = rowIndexes === -1 ? [] : [rowData];
       var newData = data;
-
       if (rowIndexes >= 0) {
         newData = updateBatchData(data, indexes, {
           _selected: selected
         }, _this.props.selectDisabledRow);
-
         _this.resetClearSelection();
-
         _this.setState({
           data: newData,
           selectAll: getSelectAll(newData, _this.props.selectDisabledRow, _this.clearSelectionRef.current)
         });
-
         if (_this.selectedRowsRef.current && selected) {
           selectedItemList = [_objectSpread2(_objectSpread2({}, rowData), {}, {
             _selected: selected
           })].concat(_toConsumableArray(_this.selectedRowsRef.current));
         }
-
         if (!selected && uniqueColumnName) {
           selectedItemList = _this.selectedRowsRef.current.filter(function (item) {
             return item[uniqueColumnName] !== rowData[uniqueColumnName];
           });
         }
-
         _this.selectedRowsRef.current = removeDuplicate(selectedItemList, uniqueColumnName);
       } else if (rowIndexes === -1 && _this.selectedRowsRef.current) {
         selectedItemList = _this.selectedRowsRef.current;
       }
-
       if (onSelect) {
         if (_this.props.uniqueColumnName) {
           var _selectedItemList;
-
           onSelect(indexes, selected, rowIndexes === -1 && ((_selectedItemList = selectedItemList) === null || _selectedItemList === void 0 ? void 0 : _selectedItemList.length) === 0 ? [] : _this.selectedRowsRef.current, _this.selectAllRef.current);
         } else {
           // To avoid breaking the current selection flow
@@ -21653,11 +20308,10 @@ var Table = /*#__PURE__*/function (_React$Component) {
         }
       }
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onSelectAll", function (selected, selectAll, headerCheckbox) {
       var _this$props3 = _this.props,
-          onSelect = _this$props3.onSelect,
-          uniqueColumnName = _this$props3.uniqueColumnName;
+        onSelect = _this$props3.onSelect,
+        uniqueColumnName = _this$props3.uniqueColumnName;
       var data = _this.state.data;
       var indexes = Array.from({
         length: data.length
@@ -21674,10 +20328,8 @@ var Table = /*#__PURE__*/function (_React$Component) {
         }
       });
       var selectedData = [];
-
       if (selected) {
         _this.resetClearSelection();
-
         selectedData = selectAll === undefined ? [].concat(_toConsumableArray(_this.selectedRowsRef.current || []), _toConsumableArray(newData.filter(function (d) {
           return d._selected;
         }))) : _this.selectedRowsRef.current;
@@ -21693,11 +20345,9 @@ var Table = /*#__PURE__*/function (_React$Component) {
         _this.selectedRowsRef.current = [];
         _this.selectAllRef.current = false;
       }
-
       if (!(headerCheckbox && !selected)) {
         _this.selectedRowsRef.current = removeDuplicate(selectedData, uniqueColumnName);
       }
-
       if (onSelect) {
         if (_this.props.uniqueColumnName) {
           if (headerCheckbox && !selected) {
@@ -21711,76 +20361,59 @@ var Table = /*#__PURE__*/function (_React$Component) {
           }), selectAll);
         }
       }
-
       _this.setState({
         data: newData,
         selectAll: getSelectAll(newData, _this.props.selectDisabledRow)
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onPageChange", function (newPage) {
       _this.setState({
         page: newPage
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "updateSchema", function (newSchema) {
       _this.setState({
         schema: newSchema
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "updateSortingList", function (newSortingList) {
       var multipleSorting = _this.props.multipleSorting;
-
       _this.setState({
         sortingList: multipleSorting ? _toConsumableArray(newSortingList) : newSortingList.slice(-1),
         page: 1
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "updateFilterList", function (newFilterList) {
       _this.setState({
         filterList: newFilterList,
         page: 1
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "updateSearchTerm", function (newSearchTerm) {
       _this.setState({
         searchTerm: newSearchTerm,
         page: 1
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onClearSelection", function () {
       _this.selectedRowsRef.current = [];
       _this.clearSelectionRef.current = true;
       _this.selectAllRef.current = false;
-
       _this.onSelectAll(false);
-
       _this.setState({
         selectAll: getSelectAll([], _this.props.selectDisabledRow, _this.clearSelectionRef.current)
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "resetClearSelection", function () {
       _this.clearSelectionRef.current = false;
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onSelectAllRows", function () {
       _this.selectAllRef.current = _this.props.uniqueColumnName ? true : false;
-
       _this.onSelectAll(true, true);
     });
-
-    var _async = ('fetchData' in _this.props);
-
+    var _async = 'fetchData' in _this.props;
     var _data = props.data || [];
-
     var _schema = props.schema || [];
-
     _this.state = {
       async: _async,
       data: !_async ? _data : [],
@@ -21799,7 +20432,6 @@ var Table = /*#__PURE__*/function (_React$Component) {
     _this.debounceUpdate = debounce$1(props.searchDebounceDuration, _this.updateDataFn);
     return _this;
   }
-
   _createClass(Table, [{
     key: "componentDidMount",
     value: function componentDidMount() {
@@ -21809,55 +20441,49 @@ var Table = /*#__PURE__*/function (_React$Component) {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps, prevState) {
       var _this2 = this;
-
       if (!this.state.async) {
         if (prevProps.error !== this.props.error) {
           var _this$props4 = this.props,
-              _this$props4$data = _this$props4.data,
-              _data3 = _this$props4$data === void 0 ? [] : _this$props4$data,
-              _this$props4$schema = _this$props4.schema,
-              schema = _this$props4$schema === void 0 ? [] : _this$props4$schema;
-
+            _this$props4$data = _this$props4.data,
+            data = _this$props4$data === void 0 ? [] : _this$props4$data,
+            _this$props4$schema = _this$props4.schema,
+            schema = _this$props4$schema === void 0 ? [] : _this$props4$schema;
           this.setState({
-            data: _data3,
-            displayData: _data3,
+            data: data,
+            displayData: data,
             schema: schema,
             error: this.props.error || false,
             errorType: this.props.errorType,
             page: 1,
-            totalRecords: _data3.length || 0,
+            totalRecords: data.length || 0,
             selectAll: getSelectAll([])
           });
         }
-
         if (prevProps.loading !== this.props.loading) {
           var _this$props5 = this.props,
-              _this$props5$data = _this$props5.data,
-              _data4 = _this$props5$data === void 0 ? [] : _this$props5$data,
-              _this$props5$schema = _this$props5.schema,
-              _schema2 = _this$props5$schema === void 0 ? [] : _this$props5$schema;
-
+            _this$props5$data = _this$props5.data,
+            _data2 = _this$props5$data === void 0 ? [] : _this$props5$data,
+            _this$props5$schema = _this$props5.schema,
+            _schema2 = _this$props5$schema === void 0 ? [] : _this$props5$schema;
           this.setState({
-            data: _data4,
-            displayData: _data4,
+            data: _data2,
+            displayData: _data2,
             schema: _schema2,
             loading: this.props.loading || false,
             error: this.props.error || false,
             errorType: this.props.errorType,
             page: 1,
-            totalRecords: _data4.length || 0,
+            totalRecords: _data2.length || 0,
             selectAll: getSelectAll([])
           }, function () {
             _this2.updateData();
           });
         }
       }
-
       if (prevState.page !== this.state.page) {
         var onPageChange = this.props.onPageChange;
         if (onPageChange) onPageChange(this.state.page);
       }
-
       if (prevState.page !== this.state.page || prevState.filterList !== this.state.filterList || prevState.sortingList !== this.state.sortingList || prevState.searchTerm !== this.state.searchTerm) {
         if (!this.props.loading) {
           // let errorType = "";
@@ -21878,34 +20504,32 @@ var Table = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var _this$props6 = this.props,
-          showHead = _this$props6.showHead,
-          type = _this$props6.type,
-          size = _this$props6.size,
-          headCellTooltip = _this$props6.headCellTooltip,
-          separator = _this$props6.separator,
-          draggable = _this$props6.draggable,
-          nestedRows = _this$props6.nestedRows,
-          nestedRowRenderer = _this$props6.nestedRowRenderer,
-          withHeader = _this$props6.withHeader,
-          headerOptions = _this$props6.headerOptions,
-          withCheckbox = _this$props6.withCheckbox,
-          showMenu = _this$props6.showMenu,
-          withPagination = _this$props6.withPagination,
-          paginationType = _this$props6.paginationType,
-          pageSize = _this$props6.pageSize,
-          pageJumpDebounceDuration = _this$props6.pageJumpDebounceDuration,
-          onRowClick = _this$props6.onRowClick,
-          loaderSchema = _this$props6.loaderSchema,
-          errorTemplate = _this$props6.errorTemplate,
-          className = _this$props6.className,
-          filterPosition = _this$props6.filterPosition,
-          uniqueColumnName = _this$props6.uniqueColumnName;
+        showHead = _this$props6.showHead,
+        type = _this$props6.type,
+        size = _this$props6.size,
+        headCellTooltip = _this$props6.headCellTooltip,
+        separator = _this$props6.separator,
+        draggable = _this$props6.draggable,
+        nestedRows = _this$props6.nestedRows,
+        nestedRowRenderer = _this$props6.nestedRowRenderer,
+        withHeader = _this$props6.withHeader,
+        headerOptions = _this$props6.headerOptions,
+        withCheckbox = _this$props6.withCheckbox,
+        showMenu = _this$props6.showMenu,
+        withPagination = _this$props6.withPagination,
+        paginationType = _this$props6.paginationType,
+        pageSize = _this$props6.pageSize,
+        pageJumpDebounceDuration = _this$props6.pageJumpDebounceDuration,
+        onRowClick = _this$props6.onRowClick,
+        loaderSchema = _this$props6.loaderSchema,
+        errorTemplate = _this$props6.errorTemplate,
+        className = _this$props6.className,
+        filterPosition = _this$props6.filterPosition,
+        uniqueColumnName = _this$props6.uniqueColumnName;
       var baseProps = extractBaseProps(this.props);
-
       var _ref = headerOptions,
-          headerChildren = _ref.children,
-          headerAttr = _objectWithoutProperties(_ref, _excluded$m);
-
+        headerChildren = _ref.children,
+        headerAttr = _objectWithoutProperties(_ref, _excluded$u);
       var classes = className ? " ".concat(className) : '';
       var totalRecords = this.state.totalRecords;
       var totalPages = getTotalPages(totalRecords, pageSize);
@@ -21917,7 +20541,8 @@ var Table = /*#__PURE__*/function (_React$Component) {
         "data-test": "DesignSystem-Table-header"
       }, /*#__PURE__*/React.createElement(Header, _extends$2({}, this.state, {
         // updateData={updateData}
-        updateSchema: this.updateSchema // updateSortingList={updateSortingList}
+        updateSchema: this.updateSchema
+        // updateSortingList={updateSortingList}
         ,
         updateFilterList: this.updateFilterList,
         updateSearchTerm: this.updateSearchTerm,
@@ -21971,10 +20596,8 @@ var Table = /*#__PURE__*/function (_React$Component) {
       })));
     }
   }]);
-
   return Table;
 }(React.Component);
-
 _defineProperty$1(Table, "defaultProps", defaultProps);
 
 /**
@@ -21995,40 +20618,33 @@ List.defaultProps = defaultProps;
 var useState$1 = React.useState;
 var VerticalNavigation = function VerticalNavigation(props) {
   var menus = props.menus,
-      active = props.active,
-      onClick = props.onClick,
-      expanded = props.expanded,
-      rounded = props.rounded,
-      onToggle = props.onToggle,
-      footer = props.footer,
-      autoCollapse = props.autoCollapse;
-
+    active = props.active,
+    onClick = props.onClick,
+    expanded = props.expanded,
+    rounded = props.rounded,
+    onToggle = props.onToggle,
+    footer = props.footer,
+    autoCollapse = props.autoCollapse;
   var _useState = useState$1({}),
-      _useState2 = _slicedToArray(_useState, 2),
-      menuState = _useState2[0],
-      setMenuState = _useState2[1];
-
+    _useState2 = _slicedToArray(_useState, 2),
+    menuState = _useState2[0],
+    setMenuState = _useState2[1];
   React.useEffect(function () {
     if (props.active) {
       var currMenu = getMenu(menus, props.active);
       if (currMenu) updateMenuState(currMenu, true);
     }
   }, [props.active]);
-
   var updateMenuState = function updateMenuState(menu, val) {
     var currMenu = getMenu(menus, menu);
-
     if (currMenu) {
       var nameSplit = currMenu.name.split('.');
-
       if (nameSplit.length > 1 || currMenu.subMenu) {
         var name = nameSplit[0];
-
         if (autoCollapse) {
           setMenuState(_defineProperty$1({}, name, val || !menuState[name]));
         } else {
           var menuData = _objectSpread2({}, menuState);
-
           menuData[name] = val !== undefined ? val : !menuData[name];
           setMenuState(menuData);
         }
@@ -22039,7 +20655,6 @@ var VerticalNavigation = function VerticalNavigation(props) {
       }
     }
   };
-
   var onClickHandler = function onClickHandler(menu) {
     if (!menu.disabled) {
       if (menu.subMenu) {
@@ -22053,10 +20668,8 @@ var VerticalNavigation = function VerticalNavigation(props) {
       }
     }
   };
-
   var list = menus.map(function (menu, index) {
     var _classNames;
-
     var activeMenu = expanded && !menuState[menu.name] && isMenuActive(menus, menu, active);
     var activeMenuIcon = !expanded && isMenuActive(menus, menu, active) || activeMenu;
     var menuClasses = classnames((_classNames = {
@@ -22093,7 +20706,6 @@ var VerticalNavigation = function VerticalNavigation(props) {
       className: "Navigation-subMenu"
     }, menuState[menu.name] && menu.subMenu && expanded && menu.subMenu.map(function (subMenu, ind) {
       var _classNames2;
-
       var isActive = isMenuActive(menus, subMenu, active);
       var subMenuClasses = classnames(menuClasses, (_classNames2 = {}, _defineProperty$1(_classNames2, 'Navigation-menu--subMenu', true), _defineProperty$1(_classNames2, 'Navigation-menu--active', isActive), _classNames2));
       return (
@@ -22138,23 +20750,22 @@ VerticalNavigation.defaultProps = {
 /**
  * ####NOTE: Navigation will be deprecated soon. VerticalNav and HorizontalNav will be supported.
  */
+
 var Navigation = function Navigation(props) {
   var _classNames;
-
   var type = props.type,
-      align = props.align,
-      menus = props.menus,
-      active = props.active,
-      onClick = props.onClick,
-      expanded = props.expanded,
-      rounded = props.rounded,
-      onToggle = props.onToggle,
-      footer = props.footer,
-      autoCollapse = props.autoCollapse,
-      className = props.className;
+    align = props.align,
+    menus = props.menus,
+    active = props.active,
+    onClick = props.onClick,
+    expanded = props.expanded,
+    rounded = props.rounded,
+    onToggle = props.onToggle,
+    footer = props.footer,
+    autoCollapse = props.autoCollapse,
+    className = props.className;
   var baseProps = extractBaseProps(props);
   var classes = classnames((_classNames = {}, _defineProperty$1(_classNames, 'Navigation', true), _defineProperty$1(_classNames, "Navigation--".concat(type), type), _defineProperty$1(_classNames, 'justify-content-center', type === 'horizontal' && align === 'center'), _defineProperty$1(_classNames, 'justify-content-start', type === 'horizontal' && align === 'left'), _defineProperty$1(_classNames, 'Navigation--collapsed', !expanded), _classNames), className);
-
   var renderNavigation = function renderNavigation() {
     return type === 'horizontal' ? /*#__PURE__*/React.createElement(HorizontalNav, {
       menus: menus,
@@ -22171,7 +20782,6 @@ var Navigation = function Navigation(props) {
       onClick: onClick
     });
   };
-
   return /*#__PURE__*/React.createElement("div", _extends$2({}, baseProps, {
     className: classes
   }), renderNavigation());
@@ -22186,10 +20796,10 @@ Navigation.defaultProps = {
 
 var Status = function Status(props) {
   var status = props.status,
-      meta = props.meta,
-      navigationPosition = props.navigationPosition,
-      navigation = props.navigation,
-      tabs = props.tabs;
+    meta = props.meta,
+    navigationPosition = props.navigationPosition,
+    navigation = props.navigation,
+    tabs = props.tabs;
   var statusClasses = classnames({
     'PageHeader-statusWrapper': true,
     'mb-3': navigationPosition === 'bottom' && navigation || tabs
@@ -22201,8 +20811,8 @@ var Status = function Status(props) {
 };
 var Action = function Action(props) {
   var actions = props.actions,
-      navigation = props.navigation,
-      stepper = props.stepper;
+    navigation = props.navigation,
+    stepper = props.stepper;
   return /*#__PURE__*/React.createElement(React.Fragment, null, actions ? /*#__PURE__*/React.createElement(Column, {
     size: "4",
     sizeXL: "4",
@@ -22221,12 +20831,10 @@ var Action = function Action(props) {
 };
 var Nav = function Nav(props) {
   var navigation = props.navigation,
-      stepper = props.stepper;
-
+    stepper = props.stepper;
   if (!navigation && !stepper) {
     return null;
   }
-
   return /*#__PURE__*/React.createElement("div", {
     className: "PageHeader-navigationWrapper",
     "data-test": "DesignSystem-PageHeader--Nav"
@@ -22234,8 +20842,8 @@ var Nav = function Nav(props) {
 };
 var CenterNav = function CenterNav(props) {
   var colSize = props.colSize,
-      breadcrumbs = props.breadcrumbs,
-      navigationPosition = props.navigationPosition;
+    breadcrumbs = props.breadcrumbs,
+    navigationPosition = props.navigationPosition;
   return /*#__PURE__*/React.createElement(React.Fragment, null, (!breadcrumbs || navigationPosition === 'center') && colSize === '4' && /*#__PURE__*/React.createElement(Column, {
     size: "4",
     sizeXL: "4",
@@ -22252,7 +20860,7 @@ var BackButton = function BackButton(props) {
 };
 var Title = function Title(props) {
   var badge = props.badge,
-      title = props.title;
+    title = props.title;
   return /*#__PURE__*/React.createElement("div", {
     className: "PageHeader-titleWrapper",
     "data-test": "DesignSystem-PageHeader--Title"
@@ -22263,18 +20871,18 @@ var Title = function Title(props) {
 
 var PageHeader = function PageHeader(props) {
   var title = props.title,
-      navigation = props.navigation,
-      stepper = props.stepper,
-      actions = props.actions,
-      tabs = props.tabs,
-      breadcrumbs = props.breadcrumbs,
-      badge = props.badge,
-      separator = props.separator,
-      status = props.status,
-      meta = props.meta,
-      navigationPosition = props.navigationPosition,
-      className = props.className,
-      button = props.button;
+    navigation = props.navigation,
+    stepper = props.stepper,
+    actions = props.actions,
+    tabs = props.tabs,
+    breadcrumbs = props.breadcrumbs,
+    badge = props.badge,
+    separator = props.separator,
+    status = props.status,
+    meta = props.meta,
+    navigationPosition = props.navigationPosition,
+    className = props.className,
+    button = props.button;
   var baseProps = extractBaseProps(props);
   var wrapperClasses = classnames(_defineProperty$1({
     'PageHeader-wrapper': true
@@ -22338,7 +20946,7 @@ PageHeader.defaultProps = {
 };
 
 var useEffect = React.useEffect,
-    useState = React.useState;
+  useState = React.useState;
 var IconMapping$1 = {
   audio: 'audiotrack',
   image: 'image',
@@ -22348,16 +20956,13 @@ var IconMapping$1 = {
 };
 var FileIcon = function FileIcon(props) {
   var _classNames, _classNames2;
-
   var progress = props.progress,
-      status = props.status,
-      file = props.file;
-
+    status = props.status,
+    file = props.file;
   var _useState = useState(false),
-      _useState2 = _slicedToArray(_useState, 2),
-      animate = _useState2[0],
-      setAnimate = _useState2[1];
-
+    _useState2 = _slicedToArray(_useState, 2),
+    animate = _useState2[0],
+    setAnimate = _useState2[1];
   var type = file.type.split('/')[0] || 'others';
   var fileType = IconMapping$1[type] ? type : 'others';
   var iconClass = classnames((_classNames = {}, _defineProperty$1(_classNames, 'FileIcon', true), _defineProperty$1(_classNames, 'FileIcon--animate', animate), _defineProperty$1(_classNames, "FileIcon--".concat(fileType), true), _classNames));
@@ -22369,7 +20974,6 @@ var FileIcon = function FileIcon(props) {
       setAnimate(false);
     }
   }, [status]);
-
   if (status === 'uploading') {
     return /*#__PURE__*/React.createElement(ProgressRing, {
       size: "small",
@@ -22378,7 +20982,6 @@ var FileIcon = function FileIcon(props) {
       "data-test": "DesignSystem-FileListItem--ProgressRing"
     });
   }
-
   return /*#__PURE__*/React.createElement(Icon, {
     name: IconMapping$1[fileType],
     className: iconClass,
@@ -22393,24 +20996,22 @@ FileIcon.defaultProps = {
 
 var FileListItem = function FileListItem(props) {
   var progress = props.progress,
-      errorMessage = props.errorMessage,
-      onClick = props.onClick,
-      className = props.className,
-      actions = props.actions,
-      fileItem = props.fileItem,
-      file = props.file,
-      status = props.status,
-      fileSize = props.fileSize;
+    errorMessage = props.errorMessage,
+    onClick = props.onClick,
+    className = props.className,
+    actions = props.actions,
+    fileItem = props.fileItem,
+    file = props.file,
+    status = props.status,
+    fileSize = props.fileSize;
   var name = file.name;
   var baseProps = extractBaseProps(props);
   var FileItemClass = classnames(_defineProperty$1({}, 'FileItem', true), className);
-
   var onClickHandler = function onClickHandler() {
     if (onClick) {
       onClick(fileItem);
     }
   };
-
   return (
     /*#__PURE__*/
     // TODO(a11y)
@@ -22455,9 +21056,9 @@ FileListItem.displayName = 'FileListItem';
 
 var FileList = function FileList(props) {
   var fileList = props.fileList,
-      onClick = props.onClick,
-      actionRenderer = props.actionRenderer,
-      className = props.className;
+    onClick = props.onClick,
+    actionRenderer = props.actionRenderer,
+    className = props.className;
   var baseProps = extractBaseProps(props);
   if (fileList.length === 0) return null;
   return /*#__PURE__*/React.createElement(Card, _extends$2({}, baseProps, {
@@ -22477,7 +21078,7 @@ FileList.defaultProps = {
 };
 FileList.displayName = 'FileList';
 
-var _excluded$l = ["type", "fields", "placeholder", "autoFocus", "onComplete", "onFocus", "onBlur", "className", "value"];
+var _excluded$t = ["type", "fields", "placeholder", "autoFocus", "onComplete", "onChange", "onFocus", "onBlur", "className", "value"];
 var KEY_CODE = {
   backspace: 'Backspace',
   left: 'ArrowLeft',
@@ -22487,28 +21088,26 @@ var KEY_CODE = {
   e: 'e',
   E: 'E'
 };
-
 var VerificationCodeInput = function VerificationCodeInput(props) {
   var _props$type = props.type,
-      type = _props$type === void 0 ? 'number' : _props$type,
-      _props$fields = props.fields,
-      fields = _props$fields === void 0 ? 4 : _props$fields,
-      _props$placeholder = props.placeholder,
-      placeholder = _props$placeholder === void 0 ? '_' : _props$placeholder,
-      _props$autoFocus = props.autoFocus,
-      autoFocus = _props$autoFocus === void 0 ? true : _props$autoFocus,
-      onComplete = props.onComplete,
-      onFocus = props.onFocus,
-      onBlur = props.onBlur,
-      className = props.className;
-      props.value;
-      var rest = _objectWithoutProperties(props, _excluded$l);
-
+    type = _props$type === void 0 ? 'number' : _props$type,
+    _props$fields = props.fields,
+    fields = _props$fields === void 0 ? 4 : _props$fields,
+    _props$placeholder = props.placeholder,
+    placeholder = _props$placeholder === void 0 ? '_' : _props$placeholder,
+    _props$autoFocus = props.autoFocus,
+    autoFocus = _props$autoFocus === void 0 ? true : _props$autoFocus,
+    onComplete = props.onComplete,
+    onChange = props.onChange,
+    onFocus = props.onFocus,
+    onBlur = props.onBlur,
+    className = props.className;
+    props.value;
+    var rest = _objectWithoutProperties(props, _excluded$t);
   var initialValues = useMemo(function () {
     if (props.value && props.value.length) {
       return props.value.split('');
     }
-
     return Array(fields).fill('');
   }, []);
   var initialRefs = useMemo(function () {
@@ -22516,16 +21115,13 @@ var VerificationCodeInput = function VerificationCodeInput(props) {
       return /*#__PURE__*/React__default.createRef();
     });
   }, []);
-
   var _useState = useState$3(initialValues),
-      _useState2 = _slicedToArray(_useState, 2),
-      values = _useState2[0],
-      setValues = _useState2[1];
-
+    _useState2 = _slicedToArray(_useState, 2),
+    values = _useState2[0],
+    setValues = _useState2[1];
   var _useState3 = useState$3(initialRefs),
-      _useState4 = _slicedToArray(_useState3, 1),
-      refs = _useState4[0];
-
+    _useState4 = _slicedToArray(_useState3, 1),
+    refs = _useState4[0];
   useEffect$2(function () {
     if (refs[0] && refs[0].current && autoFocus) {
       refs[0].current.focus({
@@ -22535,35 +21131,27 @@ var VerificationCodeInput = function VerificationCodeInput(props) {
   }, []);
   useEffect$2(function () {
     var completeValue = values.join('');
-
-    if (onComplete && completeValue.length === fields) {
-      onComplete(completeValue);
-    }
+    var isComplete = completeValue.length === fields;
+    isComplete && (onComplete === null || onComplete === void 0 ? void 0 : onComplete(completeValue));
+    onChange === null || onChange === void 0 ? void 0 : onChange(completeValue);
   }, [values]);
-
   var onChangeHandler = function onChangeHandler(e) {
     var index = parseInt(e.target.dataset.id, 10);
     var fieldValue = e.target.value;
     var nextRef;
-
     var newValues = _toConsumableArray(values);
-
     if (!fieldValue) {
       return;
     }
-
     if (fieldValue.length > 1) {
       var nextIndex = fieldValue.length + index - 1;
-
       if (nextIndex >= fields) {
         nextIndex = fields - 1;
       }
-
       nextRef = refs[nextIndex];
       var split = fieldValue.split('');
       split.forEach(function (item, i) {
         var cursor = index + i;
-
         if (cursor < fields) {
           newValues[cursor] = item;
         }
@@ -22574,7 +21162,6 @@ var VerificationCodeInput = function VerificationCodeInput(props) {
       newValues[index] = fieldValue;
       setValues(newValues);
     }
-
     if (nextRef && nextRef.current) {
       nextRef.current.focus({
         preventScroll: true
@@ -22582,38 +21169,30 @@ var VerificationCodeInput = function VerificationCodeInput(props) {
       nextRef.current.select();
     }
   };
-
   var onFocusHandler = function onFocusHandler(e) {
     e.target.select();
     e.target.placeholder = '';
-
     if (onFocus) {
       onFocus(e);
     }
   };
-
   var onBlurHandler = function onBlurHandler(e) {
     e.target.placeholder = placeholder;
-
     if (onBlur) {
       onBlur(e);
     }
   };
-
   var onKeyDown = function onKeyDown(e) {
     var index = parseInt(e.currentTarget.dataset.id, 10);
     var prevIndex = index - 1;
     var nextIndex = index + 1;
     var prev = refs[prevIndex];
     var nextRef = refs[nextIndex];
-
     switch (e.key) {
       case KEY_CODE.backspace:
         {
           e.preventDefault();
-
           var vals = _toConsumableArray(values);
-
           if (values[index]) {
             vals[index] = '';
             setValues(vals);
@@ -22624,36 +21203,28 @@ var VerificationCodeInput = function VerificationCodeInput(props) {
             });
             setValues(vals);
           }
-
           break;
         }
-
       case KEY_CODE.left:
         {
           e.preventDefault();
-
           if (prev && prev.current) {
             prev.current.focus({
               preventScroll: true
             });
           }
-
           break;
         }
-
       case KEY_CODE.right:
         {
           e.preventDefault();
-
           if (nextRef && nextRef.current) {
             nextRef.current.focus({
               preventScroll: true
             });
           }
-
           break;
         }
-
       case KEY_CODE.up:
       case KEY_CODE.down:
       case KEY_CODE.e:
@@ -22662,19 +21233,16 @@ var VerificationCodeInput = function VerificationCodeInput(props) {
           if (type === 'number') {
             e.preventDefault();
           }
-
           break;
         }
     }
   };
-
   var wrapperClassNames = function wrapperClassNames(i) {
     return classnames({
       'VerificationCodeInput-Input': true,
       'ml-4': i > 0
     }, className);
   };
-
   return /*#__PURE__*/React__default.createElement("div", {
     "data-test": "DesignSystem-VerificationCodeInput",
     className: "VerificationCodeInput"
@@ -22696,7 +21264,6 @@ var VerificationCodeInput = function VerificationCodeInput(props) {
     }, rest));
   }));
 };
-
 VerificationCodeInput.displayName = 'VerificationCodeInput';
 VerificationCodeInput.defaultProps = {
   type: 'number',
@@ -22711,11 +21278,10 @@ var IconMapping = {
 };
 var InlineMessage = function InlineMessage(props) {
   var _classNames2;
-
   var appearance = props.appearance,
-      className = props.className,
-      description = props.description,
-      size = props.size;
+    className = props.className,
+    description = props.description,
+    size = props.size;
   var baseProps = extractBaseProps(props);
   var InlineMessageClass = classnames(_defineProperty$1({}, 'InlineMessage', true), className);
   var IconClass = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'InlineMessage-icon--warning', appearance === 'warning'), _defineProperty$1(_classNames2, 'InlineMessage-icon--small', size === 'small'), _defineProperty$1(_classNames2, 'InlineMessage-icon--regular', size === 'regular'), _classNames2));
@@ -22749,10 +21315,10 @@ InlineMessage.defaultProps = {
 var renderCheckbox = function renderCheckbox(list, handleOnChange, ChoiceListDisabled, size, alignment, selected) {
   return list.map(function (item, checkboxIndex) {
     var name = item.name,
-        value = item.value,
-        helpText = item.helpText,
-        disabled = item.disabled,
-        label = item.label;
+      value = item.value,
+      helpText = item.helpText,
+      disabled = item.disabled,
+      label = item.label;
     return /*#__PURE__*/React.createElement(Checkbox, {
       key: checkboxIndex,
       label: label,
@@ -22767,14 +21333,13 @@ var renderCheckbox = function renderCheckbox(list, handleOnChange, ChoiceListDis
     });
   });
 };
-
 var renderRadio = function renderRadio(list, handleOnChange, ChoiceListDisabled, size, alignment, selected) {
   return list.map(function (item, radioIndex) {
     var name = item.name,
-        value = item.value,
-        helpText = item.helpText,
-        disabled = item.disabled,
-        label = item.label;
+      value = item.value,
+      helpText = item.helpText,
+      disabled = item.disabled,
+      label = item.label;
     return /*#__PURE__*/React.createElement(Radio, {
       key: radioIndex,
       label: label,
@@ -22789,41 +21354,35 @@ var renderRadio = function renderRadio(list, handleOnChange, ChoiceListDisabled,
     });
   });
 };
-
 var getCheckboxClassName = function getCheckboxClassName(alignment, index) {
   var _classNames;
-
   var ChoiceListCheckboxClass = classnames((_classNames = {}, _defineProperty$1(_classNames, "ChoiceList-checkbox--".concat(alignment), true), _defineProperty$1(_classNames, 'ml-0', index === 0 && alignment === 'horizontal'), _defineProperty$1(_classNames, 'mt-4', alignment === 'horizontal'), _classNames));
   return ChoiceListCheckboxClass;
 };
-
 var getRadioClassName = function getRadioClassName(alignment, index) {
   var _classNames2;
-
   var ChoiceListRadioClass = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, "ChoiceList-radio--".concat(alignment), true), _defineProperty$1(_classNames2, 'ml-0', index === 0 && alignment === 'horizontal'), _defineProperty$1(_classNames2, 'mt-4', alignment === 'horizontal'), _classNames2));
   return ChoiceListRadioClass;
 };
-
 var ChoiceList = function ChoiceList(props) {
   var title = props.title,
-      choices = props.choices,
-      _props$alignment = props.alignment,
-      alignment = _props$alignment === void 0 ? 'vertical' : _props$alignment,
-      _props$allowMultiple = props.allowMultiple,
-      allowMultiple = _props$allowMultiple === void 0 ? false : _props$allowMultiple,
-      onChange = props.onChange,
-      _props$disabled = props.disabled,
-      disabled = _props$disabled === void 0 ? false : _props$disabled,
-      _props$size = props.size,
-      size = _props$size === void 0 ? 'regular' : _props$size,
-      className = props.className;
+    choices = props.choices,
+    _props$alignment = props.alignment,
+    alignment = _props$alignment === void 0 ? 'vertical' : _props$alignment,
+    _props$allowMultiple = props.allowMultiple,
+    allowMultiple = _props$allowMultiple === void 0 ? false : _props$allowMultiple,
+    onChange = props.onChange,
+    _props$disabled = props.disabled,
+    disabled = _props$disabled === void 0 ? false : _props$disabled,
+    _props$size = props.size,
+    size = _props$size === void 0 ? 'regular' : _props$size,
+    className = props.className;
   var _props$selected = props.selected,
-      selected = _props$selected === void 0 ? [] : _props$selected;
+    selected = _props$selected === void 0 ? [] : _props$selected;
   var selectedChoiceValue = selected && selected || [];
   var ChoiceListClass = classnames(_defineProperty$1({}, 'ChoiceList', true), className);
   var ChoiceListVerticalClass = classnames(_defineProperty$1({}, 'ChoiceList--alignVertical', true));
   var ChoiceHorizontalClass = classnames(_defineProperty$1({}, 'ChoiceList--alignHorizontal', true));
-
   var handleOnChange = function handleOnChange(e) {
     if (e.target.checked && allowMultiple) {
       if (!selectedChoiceValue.includes(e.target.value)) {
@@ -22834,17 +21393,14 @@ var ChoiceList = function ChoiceList(props) {
         return el !== e.target.value;
       });
     }
-
     if (!allowMultiple) {
       if (!selectedChoiceValue.includes(e.target.value)) {
         selectedChoiceValue = [];
         selectedChoiceValue = [].concat(_toConsumableArray(selectedChoiceValue), [e.target.value]);
       }
     }
-
     if (onChange) onChange(e, selectedChoiceValue);
   };
-
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("fieldset", {
     className: ChoiceListClass,
     "data-test": "DesignSystem-ChoiceList-Wrapper"
@@ -22866,10 +21422,9 @@ ChoiceList.defaultProps = {
 
 var Divider = function Divider(props) {
   var _classNames;
-
   var vertical = props.vertical,
-      appearance = props.appearance,
-      className = props.className;
+    appearance = props.appearance,
+    className = props.className;
   var baseProps = extractBaseProps(props);
   var DividerClass = classnames((_classNames = {}, _defineProperty$1(_classNames, 'Divider', true), _defineProperty$1(_classNames, 'Divider--horizontal', !vertical), _defineProperty$1(_classNames, 'Divider--vertical', vertical), _defineProperty$1(_classNames, 'Divider--basic', !vertical && appearance !== 'header'), _defineProperty$1(_classNames, 'Divider--header', !vertical && appearance === 'header'), _classNames), className);
   return /*#__PURE__*/React.createElement("hr", _extends$2({
@@ -22886,14 +21441,13 @@ Divider.defaultProps = {
 
 var HelpText = function HelpText(props) {
   var error = props.error,
-      message = props.message,
-      className = props.className;
+    message = props.message,
+    className = props.className;
   var baseProps = extractBaseProps(props);
   var classes = classnames({
     'mt-3': true
   }, className);
   if (!message) return null;
-
   if (error) {
     return /*#__PURE__*/React.createElement(InlineMessage, {
       size: "small",
@@ -22902,7 +21456,6 @@ var HelpText = function HelpText(props) {
       description: message
     });
   }
-
   return /*#__PURE__*/React.createElement("div", _extends$2({}, baseProps, {
     className: classes
   }), /*#__PURE__*/React.createElement(Text, {
@@ -22913,26 +21466,24 @@ var HelpText = function HelpText(props) {
 };
 HelpText.displayName = 'HelpText';
 
-var _excluded$k = ["children", "type", "className", "disabled", "tabIndex", "icon", "subtle", "size", "iconAlign", "iconType"];
+var _excluded$s = ["children", "type", "className", "disabled", "tabIndex", "icon", "subtle", "size", "iconAlign", "iconType"];
 var sizeMapping = {
   tiny: 12,
   regular: 16
 };
 var LinkButton = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var _classNames, _classNames2;
-
   var children = props.children,
-      type = props.type,
-      className = props.className,
-      disabled = props.disabled,
-      tabIndex = props.tabIndex,
-      icon = props.icon,
-      subtle = props.subtle,
-      size = props.size,
-      iconAlign = props.iconAlign,
-      iconType = props.iconType,
-      rest = _objectWithoutProperties(props, _excluded$k);
-
+    type = props.type,
+    className = props.className,
+    disabled = props.disabled,
+    tabIndex = props.tabIndex,
+    icon = props.icon,
+    subtle = props.subtle,
+    size = props.size,
+    iconAlign = props.iconAlign,
+    iconType = props.iconType,
+    rest = _objectWithoutProperties(props, _excluded$s);
   var buttonClass = classnames((_classNames = {}, _defineProperty$1(_classNames, 'LinkButton', true), _defineProperty$1(_classNames, "LinkButton--".concat(size), size), _defineProperty$1(_classNames, 'LinkButton--default', !subtle), _defineProperty$1(_classNames, 'LinkButton--subtle', subtle), _defineProperty$1(_classNames, "LinkButton--iconAlign-".concat(iconAlign), children && iconAlign), _defineProperty$1(_classNames, "".concat(className), className), _classNames));
   var iconClass = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'LinkButton-icon', true), _defineProperty$1(_classNames2, "LinkButton-icon--".concat(iconAlign), children && iconAlign), _classNames2));
   return /*#__PURE__*/React.createElement("button", _extends$2({
@@ -22958,31 +21509,32 @@ LinkButton.defaultProps = {
   iconAlign: 'left'
 };
 
-var _excluded$j = ["children", "disabled", "className", "zIndex", "onClick"];
+var _excluded$r = ["children", "disabled", "className", "zIndex", "onClick"];
 var ActionCard = function ActionCard(props) {
   var _classNames;
-
   var children = props.children,
-      disabled = props.disabled,
-      className = props.className,
-      zIndex = props.zIndex,
-      onClick = props.onClick,
-      rest = _objectWithoutProperties(props, _excluded$j);
-
-  var classes = classnames((_classNames = {}, _defineProperty$1(_classNames, 'ActionCard', true), _defineProperty$1(_classNames, 'ActionCard--disabled', disabled), _classNames), className);
-
+    disabled = props.disabled,
+    className = props.className,
+    zIndex = props.zIndex,
+    onClick = props.onClick,
+    rest = _objectWithoutProperties(props, _excluded$r);
+  var classes = classnames((_classNames = {}, _defineProperty$1(_classNames, 'ActionCard', true), _defineProperty$1(_classNames, 'ActionCard--default', !disabled), _defineProperty$1(_classNames, 'ActionCard--disabled', disabled), _classNames), className);
   var onKeyDownHandler = function onKeyDownHandler(event) {
-    if (event.key === 'Enter' && onClick) {
+    if (event.key === 'Enter' && onClick && !disabled) {
       onClick(event);
     }
   };
-
+  var onClickHandler = function onClickHandler(event) {
+    if (!disabled && onClick) {
+      onClick(event);
+    }
+  };
   return /*#__PURE__*/React.createElement("div", _extends$2({
     tabIndex: disabled ? -1 : 0,
     role: "link",
     "data-test": "DesignSystem-ActionCard",
     className: classes,
-    onClick: onClick,
+    onClick: onClickHandler,
     onKeyDown: onKeyDownHandler
   }, rest), disabled && /*#__PURE__*/React.createElement("div", {
     style: {
@@ -22997,17 +21549,14 @@ ActionCard.displayName = 'ActionCard';
 var selectedCardValues = new Map();
 function useMultiSelect() {
   var _React$useState = React.useState([]),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      selectedCardIds = _React$useState2[0],
-      setSelectedCardIds = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    selectedCardIds = _React$useState2[0],
+    setSelectedCardIds = _React$useState2[1];
   var isCardSelected = function isCardSelected(id) {
     return selectedCardIds.includes(id);
   };
-
   var updateCardSelection = function updateCardSelection(id, value) {
     var idList = _toConsumableArray(selectedCardIds);
-
     if (isCardSelected(id)) {
       idList = selectedCardIds.filter(function (cardKey) {
         return id !== cardKey;
@@ -23017,10 +21566,8 @@ function useMultiSelect() {
       idList.push(id);
       selectedCardValues.set(id, value);
     }
-
     setSelectedCardIds(idList);
   };
-
   return {
     selectedCardIds: selectedCardIds,
     selectedCardValues: selectedCardValues,
@@ -23031,24 +21578,19 @@ function useMultiSelect() {
 
 function useSingleSelect() {
   var _React$useState = React.useState([]),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      selectedCardIds = _React$useState2[0],
-      setSelectedCardIds = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    selectedCardIds = _React$useState2[0],
+    setSelectedCardIds = _React$useState2[1];
   var _React$useState3 = React.useState([]),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      selectedCardValues = _React$useState4[0],
-      setSelectedCardValues = _React$useState4[1];
-
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    selectedCardValues = _React$useState4[0],
+    setSelectedCardValues = _React$useState4[1];
   var isCardSelected = function isCardSelected(id) {
     return selectedCardIds.includes(id);
   };
-
   var updateCardSelection = function updateCardSelection(id, value) {
     var idList = _toConsumableArray(selectedCardIds);
-
     var valueList = _toConsumableArray(selectedCardValues);
-
     if (selectedCardIds.includes(id)) {
       idList = [];
       valueList = [];
@@ -23056,11 +21598,9 @@ function useSingleSelect() {
       idList = [id];
       valueList = value ? [value] : [];
     }
-
     setSelectedCardIds(idList);
     setSelectedCardValues(valueList);
   };
-
   return {
     selectedCardIds: selectedCardIds,
     selectedCardValues: selectedCardValues,
@@ -23069,36 +21609,33 @@ function useSingleSelect() {
   };
 }
 
-var _excluded$i = ["children", "onClick", "disabled", "id", "cardValue", "overlayZIndex", "selected", "className"];
+var _excluded$q = ["children", "onClick", "disabled", "id", "cardValue", "overlayZIndex", "selected", "className"];
 var SelectionCard = function SelectionCard(props) {
   var _classNames;
-
   var children = props.children,
-      onClick = props.onClick,
-      disabled = props.disabled,
-      id = props.id,
-      cardValue = props.cardValue,
-      overlayZIndex = props.overlayZIndex,
-      selected = props.selected,
-      className = props.className,
-      rest = _objectWithoutProperties(props, _excluded$i);
-
-  var classes = classnames((_classNames = {}, _defineProperty$1(_classNames, 'Selection-card', true), _defineProperty$1(_classNames, 'Selection-card--selected', selected), _defineProperty$1(_classNames, 'Selection-card--disabled', disabled && !selected), _defineProperty$1(_classNames, 'Selection-card--selected-disabled', disabled && selected), _classNames), className);
-
+    onClick = props.onClick,
+    disabled = props.disabled,
+    id = props.id,
+    cardValue = props.cardValue,
+    overlayZIndex = props.overlayZIndex,
+    selected = props.selected,
+    className = props.className,
+    rest = _objectWithoutProperties(props, _excluded$q);
+  var classes = classnames((_classNames = {}, _defineProperty$1(_classNames, 'Selection-card', true), _defineProperty$1(_classNames, 'Selection-card--default', !disabled), _defineProperty$1(_classNames, 'Selection-card--selected', selected && !disabled), _defineProperty$1(_classNames, 'Selection-card--disabled', disabled), _defineProperty$1(_classNames, 'Selection-card--default-disabled', disabled && !selected), _defineProperty$1(_classNames, 'Selection-card--selected-disabled', disabled && selected), _classNames), className);
   var onClickHandler = function onClickHandler(event) {
-    onClick && onClick(event, id, cardValue);
+    if (!disabled && onClick) {
+      onClick(event, id, cardValue);
+    }
   };
-
   var onKeyDownHandler = function onKeyDownHandler(event) {
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' && !disabled) {
       onClickHandler(event);
     }
   };
-
   return /*#__PURE__*/React.createElement("div", _extends$2({
     role: "checkbox",
     "aria-checked": selected,
-    tabIndex: 0,
+    tabIndex: disabled ? -1 : 0,
     onKeyDown: onKeyDownHandler,
     onClick: function onClick(event) {
       return onClickHandler(event);
@@ -23136,29 +21673,26 @@ function transformItem(element) {
   var offsetY = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
   var offsetX = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
   if (!element) return;
-
   if (offsetY === null || offsetX === null) {
     element.style.removeProperty('transform');
     return;
   }
-
   element.style.transform = "translate(".concat(offsetX, "px, ").concat(offsetY, "px)");
 }
 function setItemTransition(element, duration, timing) {
   if (element) {
     element.style['transition'] = "transform ".concat(duration, "ms").concat(timing ? " ".concat(timing) : '');
   }
-} // returns the "slot" for the targetValue, aka where it should go
-// in an ordered "array", it starts with -1 index
+}
 
+// returns the "slot" for the targetValue, aka where it should go
+// in an ordered "array", it starts with -1 index
 function binarySearch(array, targetValue) {
   var min = 0;
   var max = array.length - 1;
   var guess;
-
   while (min <= max) {
     guess = Math.floor((max + min) / 2);
-
     if (!array[guess + 1] || array[guess] <= targetValue && array[guess + 1] >= targetValue) {
       return guess;
     } else if (array[guess] < targetValue && array[guess + 1] < targetValue) {
@@ -23167,77 +21701,54 @@ function binarySearch(array, targetValue) {
       max = guess - 1;
     }
   }
-
   return -1;
-} // A throttle function that uses requestAnimationFrame to rate limit
+}
 
+// A throttle function that uses requestAnimationFrame to rate limit
 var schd = function schd(fn) {
   var lastArgs = [];
   var frameId = null;
-
   var wrapperFn = function wrapperFn() {
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
-
     lastArgs = args;
-
     if (frameId) {
       return;
     }
-
     frameId = requestAnimationFrame(function () {
       frameId = null;
       fn.apply(void 0, _toConsumableArray(lastArgs));
     });
   };
-
   wrapperFn.cancel = function () {
     if (frameId) {
       cancelAnimationFrame(frameId);
     }
   };
-
   return wrapperFn;
 };
 
 var AUTOSCROLL_ACTIVE_OFFSET = 200;
 var AUTOSCROLL_SPEED_RATIO = 10;
-
 var Draggable = /*#__PURE__*/function (_React$Component) {
   _inherits(Draggable, _React$Component);
-
   var _super = _createSuper(Draggable);
-
   function Draggable(props) {
     var _this;
-
     _classCallCheck(this, Draggable);
-
     _this = _super.call(this, props);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "listRef", /*#__PURE__*/React.createRef());
-
     _defineProperty$1(_assertThisInitialized$1(_this), "ghostRef", /*#__PURE__*/React.createRef());
-
     _defineProperty$1(_assertThisInitialized$1(_this), "topOffsets", []);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "itemTranslateOffsets", []);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "initialYOffset", 0);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "lastScroll", 0);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "lastYOffset", 0);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "lastListYOffset", 0);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "dropTimeout", void 0);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "needle", -1);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "afterIndex", -2);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "state", {
       itemDragged: -1,
       itemDraggedOutOfBounds: -1,
@@ -23251,17 +21762,13 @@ var Draggable = /*#__PURE__*/function (_React$Component) {
       scrollingSpeed: 0,
       scrollWindow: false
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "schdOnMouseMove", void 0);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "schdOnTouchMove", void 0);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "schdOnEnd", void 0);
-
     _defineProperty$1(_assertThisInitialized$1(_this), "doScrolling", function () {
       var _this$state = _this.state,
-          scrollingSpeed = _this$state.scrollingSpeed,
-          scrollWindow = _this$state.scrollWindow;
+        scrollingSpeed = _this$state.scrollingSpeed,
+        scrollWindow = _this$state.scrollWindow;
       var listEl = _this.listRef.current;
       window.requestAnimationFrame(function () {
         if (scrollWindow) {
@@ -23269,21 +21776,17 @@ var Draggable = /*#__PURE__*/function (_React$Component) {
         } else {
           listEl.scrollTop += scrollingSpeed;
         }
-
         if (scrollingSpeed !== 0) {
           _this.doScrolling();
         }
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "getChildren", function () {
       if (_this.listRef && _this.listRef.current) {
         return Array.from(_this.listRef.current.children);
       }
-
       return [];
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "calculateOffsets", function () {
       _this.topOffsets = _this.getChildren().map(function (item) {
         return item.getBoundingClientRect().top;
@@ -23292,33 +21795,24 @@ var Draggable = /*#__PURE__*/function (_React$Component) {
         return getTranslateOffset(item);
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "getTargetIndex", function (e) {
       return _this.getChildren().findIndex(function (child) {
         return child === e.target || child.contains(e.target);
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onMouseOrTouchStart", function (e) {
       var _e$target;
-
       if (_this.dropTimeout && _this.state.itemDragged > -1) {
         window.clearTimeout(_this.dropTimeout);
-
         _this.finishDrop();
       }
-
       var isTouch = isTouchEvent(e);
       if (!isTouch && e.button !== 0) return;
-
       var index = _this.getTargetIndex(e);
-
       var listItemTouched = _this.getChildren()[index];
-
       var isValidDragHandle = (_e$target = e.target) === null || _e$target === void 0 ? void 0 : _e$target.classList.contains('Listbox-item--drag-icon');
       if (!isValidDragHandle) return;
       e.preventDefault();
-
       if (isTouch) {
         var opts = {
           passive: false
@@ -23330,40 +21824,30 @@ var Draggable = /*#__PURE__*/function (_React$Component) {
       } else {
         document.addEventListener('mousemove', _this.schdOnMouseMove);
         document.addEventListener('mouseup', _this.schdOnEnd);
-
         var listItemDragged = _this.getChildren()[_this.state.itemDragged];
-
         if (listItemDragged && listItemDragged.style) {
           listItemDragged.style.touchAction = '';
         }
       }
-
       _this.onStart(listItemTouched, isTouch ? e.touches[0].clientX : e.clientX, isTouch ? e.touches[0].clientY : e.clientY, index);
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "getYOffset", function () {
       var listScroll = _this.listRef.current ? _this.listRef.current.scrollTop : 0;
       return window.pageYOffset + listScroll;
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onStart", function (target, clientX, clientY, index) {
       if (_this.state.selectedItem > -1) {
         _this.setState({
           selectedItem: -1
         });
-
         _this.needle = -1;
       }
-
       var targetRect = target.getBoundingClientRect();
       var targetStyles = window.getComputedStyle(target);
-
       _this.calculateOffsets();
-
       _this.initialYOffset = _this.getYOffset();
       _this.lastYOffset = window.pageYOffset;
       _this.lastListYOffset = _this.listRef.current.scrollTop;
-
       _this.setState({
         itemDragged: index,
         targetX: targetRect.left - parseInt(targetStyles['margin-left'], 10),
@@ -23374,76 +21858,58 @@ var Draggable = /*#__PURE__*/function (_React$Component) {
         initialY: clientY
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onMouseMove", function (e) {
       e.cancelable && e.preventDefault();
-
       _this.onMove(e.clientX, e.clientY);
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onTouchMove", function (e) {
       e.cancelable && e.preventDefault();
-
       _this.onMove(e.touches[0].clientX, e.touches[0].clientY);
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onWheel", function (e) {
       if (_this.state.itemDragged < 0) return;
       _this.lastScroll = _this.listRef.current.scrollTop += e.deltaY;
-
       _this.moveOtherItems();
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onMove", function (clientX, clientY) {
       if (_this.state.itemDragged === -1) return null;
       transformItem(_this.ghostRef.current, clientY - _this.state.initialY, _this.props.lockVertically ? 0 : clientX - _this.state.initialX);
-
       _this.autoScrolling(clientY);
-
       _this.moveOtherItems();
-
       return;
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "moveOtherItems", function () {
       var targetRect = _this.ghostRef.current.getBoundingClientRect();
-
       var itemVerticalCenter = targetRect.top + targetRect.height / 2;
       var offset = getTranslateOffset(_this.getChildren()[_this.state.itemDragged]);
-
-      var currentYOffset = _this.getYOffset(); // adjust offsets if scrolling happens during the item movement
-
-
+      var currentYOffset = _this.getYOffset();
+      // adjust offsets if scrolling happens during the item movement
       if (_this.initialYOffset !== currentYOffset) {
         _this.topOffsets = _this.topOffsets.map(function (offset) {
           return offset - (currentYOffset - _this.initialYOffset);
         });
         _this.initialYOffset = currentYOffset;
       }
-
       if (_this.isDraggedItemOutOfBounds() && _this.props.removableByMove) {
         _this.afterIndex = _this.topOffsets.length + 1;
       } else {
         _this.afterIndex = binarySearch(_this.topOffsets, itemVerticalCenter);
       }
-
       _this.animateItems(_this.afterIndex === -1 ? 0 : _this.afterIndex, _this.state.itemDragged, offset);
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "autoScrolling", function (clientY) {
       var _getBoundingClientRec = _this.listRef.current.getBoundingClientRect(),
-          top = _getBoundingClientRec.top,
-          bottom = _getBoundingClientRec.bottom,
-          height = _getBoundingClientRec.height;
-
-      var viewportHeight = window.innerHeight || document.documentElement.clientHeight; // auto scrolling for the window (down)
-
+        top = _getBoundingClientRec.top,
+        bottom = _getBoundingClientRec.bottom,
+        height = _getBoundingClientRec.height;
+      var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      // auto scrolling for the window (down)
       if (bottom > viewportHeight && viewportHeight - clientY < AUTOSCROLL_ACTIVE_OFFSET) {
         _this.setState({
           scrollingSpeed: Math.round((AUTOSCROLL_ACTIVE_OFFSET - (viewportHeight - clientY)) / AUTOSCROLL_SPEED_RATIO),
           scrollWindow: true
-        }); // auto scrolling for the window (up)
-
+        });
+        // auto scrolling for the window (up)
       } else if (top < 0 && clientY < AUTOSCROLL_ACTIVE_OFFSET) {
         _this.setState({
           scrollingSpeed: Math.round((AUTOSCROLL_ACTIVE_OFFSET - clientY) / -AUTOSCROLL_SPEED_RATIO),
@@ -23455,18 +21921,15 @@ var Draggable = /*#__PURE__*/function (_React$Component) {
             scrollingSpeed: 0,
             scrollWindow: false
           });
-        } // auto scrolling for containers with overflow
-
-
+        }
+        // auto scrolling for containers with overflow
         if (height + 20 < _this.listRef.current.scrollHeight) {
           var scrollingSpeed = 0;
-
           if (clientY - top < AUTOSCROLL_ACTIVE_OFFSET) {
             scrollingSpeed = Math.round((AUTOSCROLL_ACTIVE_OFFSET - (clientY - top)) / -AUTOSCROLL_SPEED_RATIO);
           } else if (bottom - clientY < AUTOSCROLL_ACTIVE_OFFSET) {
             scrollingSpeed = Math.round((AUTOSCROLL_ACTIVE_OFFSET - (bottom - clientY)) / AUTOSCROLL_SPEED_RATIO);
           }
-
           if (_this.state.scrollingSpeed !== scrollingSpeed) {
             _this.setState({
               scrollingSpeed: scrollingSpeed
@@ -23475,18 +21938,14 @@ var Draggable = /*#__PURE__*/function (_React$Component) {
         }
       }
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "animateItems", function (needle, movedItem, offset) {
       var animateMovedItem = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
-
       _this.getChildren().forEach(function (item, i) {
         setItemTransition(item, _this.props.transitionDuration);
-
         if (movedItem === i && animateMovedItem) {
           if (movedItem === needle) {
             return transformItem(item, null);
           }
-
           transformItem(item, movedItem < needle ? _this.itemTranslateOffsets.slice(movedItem + 1, needle + 1).reduce(function (a, b) {
             return a + b;
           }, 0) : _this.itemTranslateOffsets.slice(needle, movedItem).reduce(function (a, b) {
@@ -23501,31 +21960,24 @@ var Draggable = /*#__PURE__*/function (_React$Component) {
         }
       });
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "isDraggedItemOutOfBounds", function () {
       var initialRect = _this.getChildren()[_this.state.itemDragged].getBoundingClientRect();
-
       var targetRect = _this.ghostRef.current.getBoundingClientRect();
-
       if (Math.abs(initialRect.left - targetRect.left) > targetRect.width) {
         if (_this.state.itemDraggedOutOfBounds === -1) {
           _this.setState({
             itemDraggedOutOfBounds: _this.state.itemDragged
           });
         }
-
         return true;
       }
-
       if (_this.state.itemDraggedOutOfBounds > -1) {
         _this.setState({
           itemDraggedOutOfBounds: -1
         });
       }
-
       return false;
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onEnd", function (e) {
       e.cancelable && e.preventDefault();
       document.removeEventListener('mousemove', _this.schdOnMouseMove);
@@ -23533,19 +21985,18 @@ var Draggable = /*#__PURE__*/function (_React$Component) {
       document.removeEventListener('mouseup', _this.schdOnEnd);
       document.removeEventListener('touchup', _this.schdOnEnd);
       document.removeEventListener('touchcancel', _this.schdOnEnd);
-
       var removeItem = _this.props.removableByMove && _this.isDraggedItemOutOfBounds();
-
       if (!removeItem && _this.props.transitionDuration > 0 && _this.afterIndex !== -2) {
         // animate drop
         schd(function () {
           setItemTransition(_this.ghostRef.current, _this.props.transitionDuration, 'cubic-bezier(0.2, 0, 0.38, 0.9)');
-
           if (_this.afterIndex < 1 && _this.state.itemDragged === 0) {
             transformItem(_this.ghostRef.current, 0, 0);
           } else {
-            transformItem(_this.ghostRef.current, // compensate window scroll
-            -(window.pageYOffset - _this.lastYOffset) + // compensate container scroll
+            transformItem(_this.ghostRef.current,
+            // compensate window scroll
+            -(window.pageYOffset - _this.lastYOffset) +
+            // compensate container scroll
             -(_this.listRef.current.scrollTop - _this.lastListYOffset) + (_this.state.itemDragged < _this.afterIndex ? _this.itemTranslateOffsets.slice(_this.state.itemDragged + 1, _this.afterIndex + 1).reduce(function (a, b) {
               return a + b;
             }, 0) : _this.itemTranslateOffsets.slice(_this.afterIndex < 0 ? 0 : _this.afterIndex, _this.state.itemDragged).reduce(function (a, b) {
@@ -23554,13 +22005,10 @@ var Draggable = /*#__PURE__*/function (_React$Component) {
           }
         })();
       }
-
       _this.dropTimeout = window.setTimeout(_this.finishDrop, removeItem || _this.afterIndex === -2 ? 0 : _this.props.transitionDuration);
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "finishDrop", function () {
       var removeItem = _this.props.removableByMove && _this.isDraggedItemOutOfBounds();
-
       if (removeItem || _this.afterIndex > -2 && _this.state.itemDragged !== _this.afterIndex) {
         _this.props.onChange({
           oldIndex: _this.state.itemDragged,
@@ -23568,112 +22016,86 @@ var Draggable = /*#__PURE__*/function (_React$Component) {
           targetRect: _this.ghostRef.current.getBoundingClientRect()
         });
       }
-
       _this.getChildren().forEach(function (item) {
         setItemTransition(item, 0);
         transformItem(item, null);
         item.style.touchAction = '';
       });
-
       _this.setState({
         itemDragged: -1,
         scrollingSpeed: 0
       });
-
-      _this.afterIndex = -2; // sometimes the scroll gets messed up after the drop, fix:
-
+      _this.afterIndex = -2;
+      // sometimes the scroll gets messed up after the drop, fix:
       if (_this.lastScroll > 0) {
         _this.listRef.current.scrollTop = _this.lastScroll;
         _this.lastScroll = 0;
       }
     });
-
     _defineProperty$1(_assertThisInitialized$1(_this), "onKeyDown", function (e) {
       var selectedItem = _this.state.selectedItem;
-
       var index = _this.getTargetIndex(e);
-
       if (index === -1 || _this.props.values[index] && _this.props.values[index].props.disabled) {
         return;
       }
-
       if (e.key === ' ') {
         e.preventDefault();
-
         if (selectedItem === index) {
           if (selectedItem !== _this.needle) {
             _this.getChildren().forEach(function (item) {
               setItemTransition(item, 0);
               transformItem(item, null);
             });
-
             _this.props.onChange({
               oldIndex: selectedItem,
               newIndex: _this.needle,
               targetRect: _this.getChildren()[_this.needle].getBoundingClientRect()
             });
-
             _this.getChildren()[_this.needle].focus();
           }
-
           _this.setState({
             selectedItem: -1
           });
-
           _this.needle = -1;
         } else {
           _this.setState({
             selectedItem: index
           });
-
           _this.needle = index;
-
           _this.calculateOffsets();
         }
       }
-
       if ((e.key === 'ArrowDown' || e.key === 'j') && selectedItem > -1 && _this.needle < _this.props.values.length - 1) {
         e.preventDefault();
         var offset = getTranslateOffset(_this.getChildren()[selectedItem]);
         _this.needle++;
-
         _this.animateItems(_this.needle, selectedItem, offset, true);
       }
-
       if ((e.key === 'ArrowUp' || e.key === 'k') && selectedItem > -1 && _this.needle > 0) {
         e.preventDefault();
-
         var _offset = getTranslateOffset(_this.getChildren()[selectedItem]);
-
         _this.needle--;
-
         _this.animateItems(_this.needle, selectedItem, _offset, true);
       }
-
       if (e.key === 'Escape' && selectedItem > -1) {
         _this.getChildren().forEach(function (item) {
           setItemTransition(item, 0);
           transformItem(item, null);
         });
-
         _this.setState({
           selectedItem: -1
         });
-
         _this.needle = -1;
       }
-
       if ((e.key === 'Tab' || e.key === 'Enter') && selectedItem > -1) {
         e.preventDefault();
       }
     });
-
     _this.schdOnMouseMove = schd(_this.onMouseMove);
     _this.schdOnTouchMove = schd(_this.onTouchMove);
     _this.schdOnEnd = schd(_this.onEnd);
     return _this;
   }
-
   _createClass(Draggable, [{
     key: "componentDidMount",
     value: function componentDidMount() {
@@ -23696,11 +22118,9 @@ var Draggable = /*#__PURE__*/function (_React$Component) {
     value: function componentWillUnmount() {
       document.removeEventListener('touchstart', this.onMouseOrTouchStart);
       document.removeEventListener('mousedown', this.onMouseOrTouchStart);
-
       if (this.dropTimeout) {
         window.clearTimeout(this.dropTimeout);
       }
-
       this.schdOnMouseMove.cancel();
       this.schdOnTouchMove.cancel();
       this.schdOnEnd.cancel();
@@ -23709,7 +22129,6 @@ var Draggable = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var _this2 = this;
-
       var baseStyle = {
         userSelect: 'none',
         WebkitUserSelect: 'none',
@@ -23718,7 +22137,6 @@ var Draggable = /*#__PURE__*/function (_React$Component) {
         boxSizing: 'border-box',
         position: 'relative'
       };
-
       var ghostStyle = _objectSpread2(_objectSpread2({}, baseStyle), {}, {
         top: this.state.targetY,
         left: this.state.targetX,
@@ -23730,7 +22148,6 @@ var Draggable = /*#__PURE__*/function (_React$Component) {
         position: 'fixed',
         boxShadow: '0 4px 16px 0 rgba(0, 0, 0, 0.16)'
       });
-
       return /*#__PURE__*/React.createElement(React.Fragment, null, this.props.renderList({
         children: this.props.values.map(function (value, index) {
           var isHidden = index === _this2.state.itemDragged;
@@ -23772,10 +22189,8 @@ var Draggable = /*#__PURE__*/function (_React$Component) {
       }), document.body));
     }
   }]);
-
   return Draggable;
 }(React.Component);
-
 _defineProperty$1(Draggable, "defaultProps", {
   transitionDuration: 240,
   lockVertically: false,
@@ -23784,8 +22199,8 @@ _defineProperty$1(Draggable, "defaultProps", {
 
 var DraggableList = function DraggableList(props) {
   var children = props.children,
-      className = props.className,
-      Tag = props.tagName;
+    className = props.className,
+    Tag = props.tagName;
   var baseProps = extractBaseProps(props);
   var classes = classnames({
     Listbox: true
@@ -23796,32 +22211,29 @@ var DraggableList = function DraggableList(props) {
     });
     return element;
   });
-
   var _React$useState = React__default.useState(renderChildren),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      childList = _React$useState2[0],
-      setChildList = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    childList = _React$useState2[0],
+    setChildList = _React$useState2[1];
   var onChangeHandler = function onChangeHandler(props) {
     var oldIndex = props.oldIndex,
-        newIndex = props.newIndex;
+      newIndex = props.newIndex;
     var updatedList = arrayMove(childList, oldIndex, newIndex);
     setChildList(updatedList);
   };
-
   return /*#__PURE__*/React__default.createElement(Draggable, {
     values: childList,
     onChange: onChangeHandler,
     renderItem: function renderItem(_ref) {
       var value = _ref.value,
-          props = _ref.props;
+        props = _ref.props;
       return /*#__PURE__*/React__default.createElement("div", _extends$2({}, props, {
         className: "Listbox-item--draggable"
       }), value);
     },
     renderList: function renderList(_ref2) {
       var children = _ref2.children,
-          props = _ref2.props;
+        props = _ref2.props;
       return /*#__PURE__*/React__default.createElement(Tag, _extends$2({
         "data-test": "DesignSystem-Listbox"
       }, baseProps, {
@@ -23834,28 +22246,21 @@ var DraggableList = function DraggableList(props) {
 var isDisabledElement = function isDisabledElement(element) {
   return element && element.getAttribute('data-disabled') === 'true';
 };
-
 var getNextSibling = function getNextSibling(element) {
   var _element$parentNode, _element$parentNode$n;
-
   return element === null || element === void 0 ? void 0 : (_element$parentNode = element.parentNode) === null || _element$parentNode === void 0 ? void 0 : (_element$parentNode$n = _element$parentNode.nextSibling) === null || _element$parentNode$n === void 0 ? void 0 : _element$parentNode$n.firstChild;
 };
-
 var getPrevSibling = function getPrevSibling(element) {
   var _element$parentNode2, _element$parentNode2$;
-
   return element === null || element === void 0 ? void 0 : (_element$parentNode2 = element.parentNode) === null || _element$parentNode2 === void 0 ? void 0 : (_element$parentNode2$ = _element$parentNode2.previousSibling) === null || _element$parentNode2$ === void 0 ? void 0 : _element$parentNode2$.firstChild;
 };
-
 var focusOption = function focusOption(element, direction) {
   var iterateElement = element;
-
   while (iterateElement) {
     if (!isDisabledElement(iterateElement)) {
       iterateElement.focus();
       break;
     }
-
     if (direction === 'down') {
       iterateElement = getNextSibling(iterateElement);
     } else {
@@ -23863,18 +22268,15 @@ var focusOption = function focusOption(element, direction) {
     }
   }
 };
-
 var onKeyDown = function onKeyDown(event) {
   var sourceElement = event.target;
   var nextElement = getNextSibling(sourceElement);
   var prevElement = getPrevSibling(sourceElement);
-
   switch (event.key) {
     case 'ArrowDown':
       event.preventDefault();
       focusOption(nextElement, 'down');
       break;
-
     case 'ArrowUp':
       event.preventDefault();
       focusOption(prevElement, 'up');
@@ -23884,17 +22286,16 @@ var onKeyDown = function onKeyDown(event) {
 
 var ListBody = function ListBody(props) {
   var _classNames;
-
   var children = props.children,
-      className = props.className,
-      disabled = props.disabled,
-      selected = props.selected,
-      activated = props.activated,
-      tabIndex = props.tabIndex;
+    className = props.className,
+    disabled = props.disabled,
+    selected = props.selected,
+    activated = props.activated,
+    tabIndex = props.tabIndex;
   var contextProp = React.useContext(ListboxContext);
   var size = contextProp.size,
-      type = contextProp.type,
-      draggable = contextProp.draggable;
+    type = contextProp.type,
+    draggable = contextProp.draggable;
   var itemClass = classnames((_classNames = {
     'Listbox-item': true
   }, _defineProperty$1(_classNames, "Listbox-item--".concat(size), size), _defineProperty$1(_classNames, "Listbox-item--".concat(type), type), _defineProperty$1(_classNames, 'Listbox-item--disabled', disabled), _defineProperty$1(_classNames, 'Listbox-item--selected', selected && type === 'option'), _defineProperty$1(_classNames, 'Listbox-item--activated', activated && type === 'resource'), _classNames), className);
@@ -23919,14 +22320,11 @@ var getAnimationClass = function getAnimationClass(uniqueKey, expanded) {
   if (expanded) return "nestedList-open-".concat(uniqueKey, " 240ms cubic-bezier(0, 0, 0.38, 0.9)");else if (!expanded) return "nestedList-close-".concat(uniqueKey, " 160ms cubic-bezier(0.2, 0, 1, 0.9)");
   return '';
 };
-
 var getHeight = function getHeight(listItemRef) {
   var _listItemRef$current;
-
   var scrollHeight = (_listItemRef$current = listItemRef.current) === null || _listItemRef$current === void 0 ? void 0 : _listItemRef$current.scrollHeight;
   return scrollHeight;
 };
-
 var menuItemAnimation = function menuItemAnimation(listItemRef, uniqueKey) {
   return "\n      @keyframes nestedList-open-".concat(uniqueKey, " {\n      from {\n        height: 0px;\n      }\n      to {\n        height: ").concat(getHeight(listItemRef), "px;\n      }\n    }\n\n    @keyframes nestedList-close-").concat(uniqueKey, " {\n      from {\n        height: ").concat(getHeight(listItemRef), "px;\n      }\n      to {\n        height: 0px;\n      }\n    }\n  ");
 };
@@ -23940,35 +22338,28 @@ function usePrevious(value) {
   }, [value]);
   return ref.current;
 }
-
 var NestedList = function NestedList(props) {
   var nestedBody = props.nestedBody,
-      expanded = props.expanded;
+    expanded = props.expanded;
   var prevState = usePrevious(expanded);
-
   var _React$useState = React.useState(expanded),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      open = _React$useState2[0],
-      setOpen = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    open = _React$useState2[0],
+    setOpen = _React$useState2[1];
   var _React$useState3 = React.useState(''),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      keyframe = _React$useState4[0],
-      setKeyframe = _React$useState4[1];
-
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    keyframe = _React$useState4[0],
+    setKeyframe = _React$useState4[1];
   var listItemRef = React.useRef(null);
   var uniqueKey = Math.random().toString(36).substring(2, 6);
-
   var _React$useState5 = React.useState(getAnimationClass(uniqueKey, expanded)),
-      _React$useState6 = _slicedToArray(_React$useState5, 2),
-      animation = _React$useState6[0],
-      setAnimation = _React$useState6[1];
-
+    _React$useState6 = _slicedToArray(_React$useState5, 2),
+    animation = _React$useState6[0],
+    setAnimation = _React$useState6[1];
   React.useEffect(function () {
     if (prevState != undefined && prevState !== expanded) {
       setOpen(true);
     }
-
     requestAnimationFrame(function () {
       var result = menuItemAnimation(listItemRef, uniqueKey);
       setKeyframe(result);
@@ -23976,11 +22367,9 @@ var NestedList = function NestedList(props) {
     var animationClass = getAnimationClass(uniqueKey, expanded);
     setAnimation(animationClass);
   }, [expanded]);
-
   var handleAnimationEnd = function handleAnimationEnd() {
     !expanded && setOpen(false);
   };
-
   var styles = {
     animation: animation,
     overflow: 'hidden',
@@ -23994,25 +22383,22 @@ var NestedList = function NestedList(props) {
   }, nestedBody));
 };
 
-var _excluded$h = ["nestedBody", "expanded", "id", "onClick", "value", "tagName"];
+var _excluded$p = ["nestedBody", "expanded", "id", "onClick", "value", "tagName"];
 var ListboxItem = function ListboxItem(props) {
   var nestedBody = props.nestedBody,
-      expanded = props.expanded,
-      id = props.id,
-      onClick = props.onClick,
-      value = props.value,
-      _props$tagName = props.tagName,
-      Tag = _props$tagName === void 0 ? 'li' : _props$tagName,
-      rest = _objectWithoutProperties(props, _excluded$h);
-
+    expanded = props.expanded,
+    id = props.id,
+    onClick = props.onClick,
+    value = props.value,
+    _props$tagName = props.tagName,
+    Tag = _props$tagName === void 0 ? 'li' : _props$tagName,
+    rest = _objectWithoutProperties(props, _excluded$p);
   var contextProp = React.useContext(ListboxContext);
   var showDivider = contextProp.showDivider,
-      draggable = contextProp.draggable;
-
+    draggable = contextProp.draggable;
   var onClickHandler = function onClickHandler(e) {
     onClick && onClick(e, id, value);
   };
-
   var tagClass = classnames(_defineProperty$1({}, 'Listbox-item-wrapper', !draggable));
   return /*#__PURE__*/React.createElement(Tag, _extends$2({
     id: id,
@@ -24033,7 +22419,7 @@ ListboxItem.defaultProps = {
   tagName: 'li'
 };
 
-var _excluded$g = ["children", "className", "draggable", "size", "type", "showDivider", "tagName"];
+var _excluded$o = ["children", "className", "draggable", "size", "type", "showDivider", "tagName"];
 var ListboxContext = /*#__PURE__*/React.createContext({
   size: 'standard',
   type: 'resource',
@@ -24043,14 +22429,13 @@ var ListboxContext = /*#__PURE__*/React.createContext({
 var Provider = ListboxContext.Provider;
 var Listbox = function Listbox(props) {
   var children = props.children,
-      className = props.className,
-      draggable = props.draggable,
-      size = props.size,
-      type = props.type,
-      showDivider = props.showDivider,
-      Tag = props.tagName,
-      rest = _objectWithoutProperties(props, _excluded$g);
-
+    className = props.className,
+    draggable = props.draggable,
+    size = props.size,
+    type = props.type,
+    showDivider = props.showDivider,
+    Tag = props.tagName,
+    rest = _objectWithoutProperties(props, _excluded$o);
   var baseProps = extractBaseProps(props);
   var classes = classnames({
     Listbox: true
@@ -24082,7 +22467,7 @@ Listbox.Item = ListboxItem;
 // TextFieldCommon.tsx
 var RenderHelpText = function RenderHelpText(_ref) {
   var helpText = _ref.helpText,
-      error = _ref.error;
+    error = _ref.error;
   return /*#__PURE__*/React__default.createElement(HelpText, {
     className: "d-flex",
     message: helpText.trim().length > 0 ? helpText : ' ',
@@ -24091,7 +22476,7 @@ var RenderHelpText = function RenderHelpText(_ref) {
 };
 var RenderCounter = function RenderCounter(_ref2) {
   var inputText = _ref2.inputText,
-      max = _ref2.max;
+    max = _ref2.max;
   return /*#__PURE__*/React__default.createElement("div", {
     className: "mt-3 d-flex"
   }, /*#__PURE__*/React__default.createElement(Text, {
@@ -24114,40 +22499,35 @@ var RenderCounter = function RenderCounter(_ref2) {
 
 var TextFieldWithTextarea = function TextFieldWithTextarea(props) {
   var label = props.label,
-      _props$rows = props.rows,
-      rows = _props$rows === void 0 ? 3 : _props$rows,
-      _props$resize = props.resize,
-      resize = _props$resize === void 0 ? true : _props$resize,
-      required = props.required,
-      error = props.error,
-      onChange = props.onChange,
-      _props$value = props.value,
-      value = _props$value === void 0 ? '' : _props$value,
-      _props$max = props.max,
-      max = _props$max === void 0 ? 200 : _props$max,
-      _props$helpText = props.helpText,
-      helpText = _props$helpText === void 0 ? ' ' : _props$helpText;
+    _props$rows = props.rows,
+    rows = _props$rows === void 0 ? 3 : _props$rows,
+    _props$resize = props.resize,
+    resize = _props$resize === void 0 ? true : _props$resize,
+    required = props.required,
+    error = props.error,
+    onChange = props.onChange,
+    _props$value = props.value,
+    value = _props$value === void 0 ? '' : _props$value,
+    _props$max = props.max,
+    max = _props$max === void 0 ? 200 : _props$max,
+    _props$helpText = props.helpText,
+    helpText = _props$helpText === void 0 ? ' ' : _props$helpText;
   var textareaRef = React.useRef(null);
-
   var _React$useState = React.useState(value),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      inputText = _React$useState2[0],
-      setInputText = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    inputText = _React$useState2[0],
+    setInputText = _React$useState2[1];
   var _React$useState3 = React.useState(0),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      helptextWidth = _React$useState4[0],
-      setHelptextWidth = _React$useState4[1];
-
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    helptextWidth = _React$useState4[0],
+    setHelptextWidth = _React$useState4[1];
   var onChangeHandler = function onChangeHandler(e) {
     setInputText(e.target.value);
     if (onChange) onChange(e);
   };
-
   var inputError = error || inputText.length > max;
   React.useEffect(function () {
     var textarea = textareaRef.current;
-
     if (window.ResizeObserver) {
       var resizeObserver = new window.ResizeObserver(function (entries) {
         var entry = entries[0];
@@ -24159,7 +22539,6 @@ var TextFieldWithTextarea = function TextFieldWithTextarea(props) {
         resizeObserver.disconnect();
       };
     }
-
     return function () {};
   }, []);
   return /*#__PURE__*/React.createElement("div", null, label && /*#__PURE__*/React.createElement(Label, {
@@ -24187,27 +22566,24 @@ var TextFieldWithTextarea = function TextFieldWithTextarea(props) {
 
 var TextFieldWithInput = function TextFieldWithInput(props) {
   var label = props.label,
-      minWidth = props.minWidth,
-      required = props.required,
-      error = props.error,
-      onChange = props.onChange,
-      _props$value = props.value,
-      value = _props$value === void 0 ? '' : _props$value,
-      _props$max = props.max,
-      max = _props$max === void 0 ? 200 : _props$max,
-      _props$helpText = props.helpText,
-      helpText = _props$helpText === void 0 ? ' ' : _props$helpText;
-
+    minWidth = props.minWidth,
+    required = props.required,
+    error = props.error,
+    onChange = props.onChange,
+    _props$value = props.value,
+    value = _props$value === void 0 ? '' : _props$value,
+    _props$max = props.max,
+    max = _props$max === void 0 ? 200 : _props$max,
+    _props$helpText = props.helpText,
+    helpText = _props$helpText === void 0 ? ' ' : _props$helpText;
   var _React$useState = React.useState(value),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      inputText = _React$useState2[0],
-      setInputText = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    inputText = _React$useState2[0],
+    setInputText = _React$useState2[1];
   var onChangeHandler = function onChangeHandler(event) {
     setInputText(event.target.value);
     if (onChange) onChange(event);
   };
-
   var inputError = error || inputText.length > max;
   return /*#__PURE__*/React.createElement("div", null, label && /*#__PURE__*/React.createElement(Label, {
     required: required,
@@ -24234,26 +22610,26 @@ TextFieldWithInput.defaultProps = {
 
 var TextField = function TextField(props) {
   var withTextarea = props.withTextarea;
-
   if (withTextarea) {
     return /*#__PURE__*/React.createElement(TextFieldWithTextarea, props);
   }
-
   return /*#__PURE__*/React.createElement(TextFieldWithInput, props);
 };
 TextField.displayName = 'TextField';
 
-var _excluded$f = ["icon", "image"];
+var _excluded$n = ["icon", "image", "disabled"];
 var SelectionAvatar = function SelectionAvatar(props) {
   var icon = props.icon,
-      image = props.image,
-      rest = _objectWithoutProperties(props, _excluded$f);
-
+    image = props.image,
+    disabled = props.disabled,
+    rest = _objectWithoutProperties(props, _excluded$n);
+  var avatarClassName = classnames(_defineProperty$1({}, 'cursor-pointer', !disabled));
   return /*#__PURE__*/React.createElement(Avatar, _extends$2({
     role: "checkbox"
   }, rest, {
+    disabled: disabled,
     withTooltip: true,
-    className: "cursor-pointer"
+    className: avatarClassName
   }), image || icon);
 };
 
@@ -24261,59 +22637,58 @@ var AvatarSelectionContext = /*#__PURE__*/React.createContext({});
 
 var SelectionAvatarsWrapper = function SelectionAvatarsWrapper(props) {
   var avatarList = props.avatarList,
-      avatarStyle = props.avatarStyle,
-      tooltipPosition = props.tooltipPosition,
-      size = props.size,
-      avatarRenderer = props.avatarRenderer;
+    avatarStyle = props.avatarStyle,
+    tooltipPosition = props.tooltipPosition,
+    size = props.size,
+    avatarRenderer = props.avatarRenderer;
   var contextProp = React.useContext(AvatarSelectionContext);
   var setSelectedItems = contextProp.setSelectedItems,
-      selectedItems = contextProp.selectedItems,
-      onSelect = contextProp.onSelect;
-
+    selectedItems = contextProp.selectedItems,
+    onSelect = contextProp.onSelect;
   var onClickHandler = function onClickHandler(item) {
+    if (item.disabled) {
+      return;
+    }
     var list = selectedItems;
-
     if (selectedItems !== null && selectedItems !== void 0 && selectedItems.includes(item)) {
       list = selectedItems.filter(function (selectedItem) {
         return selectedItem !== item;
       });
     } else {
       var _list;
-
       (_list = list) === null || _list === void 0 ? void 0 : _list.push(item);
     }
-
     list && (setSelectedItems === null || setSelectedItems === void 0 ? void 0 : setSelectedItems(_toConsumableArray(list)));
     onSelect && onSelect(list);
   };
-
   var handleKeyDown = function handleKeyDown(event, item) {
+    if (item.disabled) {
+      return;
+    }
     switch (event.key) {
       case 'Enter':
         onClickHandler(item);
         break;
     }
   };
-
   return /*#__PURE__*/React.createElement(React.Fragment, null, avatarList.map(function (avatarItem, index) {
     var _classNames;
-
     var appearance = avatarItem.appearance,
-        firstName = avatarItem.firstName,
-        lastName = avatarItem.lastName,
-        icon = avatarItem.icon,
-        image = avatarItem.image;
-    var GroupClass = classnames((_classNames = {}, _defineProperty$1(_classNames, "SelectionAvatarGroup-item", true), _defineProperty$1(_classNames, "SelectionAvatarGroup-item--selected", selectedItems === null || selectedItems === void 0 ? void 0 : selectedItems.includes(avatarItem)), _classNames));
-
+      firstName = avatarItem.firstName,
+      lastName = avatarItem.lastName,
+      icon = avatarItem.icon,
+      image = avatarItem.image,
+      disabled = avatarItem.disabled,
+      tooltipSuffix = avatarItem.tooltipSuffix;
+    var GroupClass = classnames((_classNames = {}, _defineProperty$1(_classNames, "SelectionAvatarGroup-item", true), _defineProperty$1(_classNames, "SelectionAvatarGroup-item--active", !disabled), _defineProperty$1(_classNames, "SelectionAvatarGroup-item--selected", selectedItems === null || selectedItems === void 0 ? void 0 : selectedItems.includes(avatarItem)), _classNames));
     if (avatarRenderer) {
       return avatarRenderer(avatarItem);
     }
-
     return /*#__PURE__*/React.createElement("span", {
       key: index,
       className: "SelectionAvatarGroup-wrapper"
     }, /*#__PURE__*/React.createElement("div", {
-      tabIndex: 0,
+      tabIndex: -1,
       role: "checkbox",
       style: avatarStyle,
       className: GroupClass,
@@ -24333,7 +22708,9 @@ var SelectionAvatarsWrapper = function SelectionAvatarsWrapper(props) {
       withTooltip: true,
       tooltipPosition: tooltipPosition,
       icon: icon,
-      image: image
+      image: image,
+      disabled: disabled,
+      tooltipSuffix: tooltipSuffix
     })));
   }));
 };
@@ -24344,12 +22721,10 @@ var handleKeyDown$6 = function handleKeyDown(event, setOpenPopover, setHighlight
       setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(true);
       setHighlightFirstItem === null || setHighlightFirstItem === void 0 ? void 0 : setHighlightFirstItem(true);
       break;
-
     case 'ArrowDown':
       setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(true);
       setHighlightFirstItem === null || setHighlightFirstItem === void 0 ? void 0 : setHighlightFirstItem(true);
       break;
-
     case 'ArrowUp':
       setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(true);
       setHighlightLastItem === null || setHighlightLastItem === void 0 ? void 0 : setHighlightLastItem(true);
@@ -24358,25 +22733,20 @@ var handleKeyDown$6 = function handleKeyDown(event, setOpenPopover, setHighlight
 };
 var focusListItem$3 = function focusListItem(position, setFocusedOption, listRef, withSearch) {
   var _listRef$current2, _targetOption, _targetOption2, _targetOption2$scroll;
-
   if (withSearch && position === 'down') {
     var _listRef$current, _searchInput$;
-
     var searchInput = (_listRef$current = listRef.current) === null || _listRef$current === void 0 ? void 0 : _listRef$current.querySelectorAll('[data-test="DesignSystem-AvatarSelection--Input"]');
     searchInput && ((_searchInput$ = searchInput[0]) === null || _searchInput$ === void 0 ? void 0 : _searchInput$.focus());
     setFocusedOption === null || setFocusedOption === void 0 ? void 0 : setFocusedOption(searchInput);
     return;
   }
-
   var listItems = (_listRef$current2 = listRef.current) === null || _listRef$current2 === void 0 ? void 0 : _listRef$current2.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
   var targetOption;
-
   if (position === 'down') {
     targetOption = listItems === null || listItems === void 0 ? void 0 : listItems[0];
   } else {
     targetOption = listItems === null || listItems === void 0 ? void 0 : listItems[listItems.length - 1];
   }
-
   (_targetOption = targetOption) === null || _targetOption === void 0 ? void 0 : _targetOption.focus();
   (_targetOption2 = targetOption) === null || _targetOption2 === void 0 ? void 0 : (_targetOption2$scroll = _targetOption2.scrollIntoView) === null || _targetOption2$scroll === void 0 ? void 0 : _targetOption2$scroll.call(_targetOption2, {
     block: 'center'
@@ -24386,26 +22756,23 @@ var focusListItem$3 = function focusListItem(position, setFocusedOption, listRef
 
 var AvatarSelectionCount = function AvatarSelectionCount(props) {
   var _classNames;
-
   var hiddenAvatarCount = props.hiddenAvatarCount,
-      avatarStyle = props.avatarStyle,
-      size = props.size,
-      hiddenAvatarList = props.hiddenAvatarList;
+    avatarStyle = props.avatarStyle,
+    size = props.size,
+    hiddenAvatarList = props.hiddenAvatarList;
   var contextProp = React.useContext(AvatarSelectionContext);
   var selectedItems = contextProp.selectedItems,
-      setHighlightFirstItem = contextProp.setHighlightFirstItem,
-      setHighlightLastItem = contextProp.setHighlightLastItem,
-      triggerRef = contextProp.triggerRef,
-      setOpenPopover = contextProp.setOpenPopover,
-      openPopover = contextProp.openPopover,
-      popoverId = contextProp.popoverId;
-
+    setHighlightFirstItem = contextProp.setHighlightFirstItem,
+    setHighlightLastItem = contextProp.setHighlightLastItem,
+    triggerRef = contextProp.triggerRef,
+    setOpenPopover = contextProp.setOpenPopover,
+    openPopover = contextProp.openPopover,
+    popoverId = contextProp.popoverId;
   var _React$useState = React.useState(0),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      selectedItemCount = _React$useState2[0],
-      setSelectedItemCount = _React$useState2[1];
-
-  var wrapperClassName = classnames((_classNames = {}, _defineProperty$1(_classNames, 'SelectionAvatarCount-wrapper', true), _defineProperty$1(_classNames, 'SelectionAvatarCount--selected', selectedItemCount > 0), _classNames));
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    selectedItemCount = _React$useState2[0],
+    setSelectedItemCount = _React$useState2[1];
+  var wrapperClassName = classnames((_classNames = {}, _defineProperty$1(_classNames, 'SelectionAvatarCount-wrapper', true), _defineProperty$1(_classNames, "SelectionAvatarGroup-item", true), _defineProperty$1(_classNames, 'SelectionAvatarCount--selected', selectedItemCount > 0), _classNames));
   React.useEffect(function () {
     var selectedList = hiddenAvatarList.filter(function (data1) {
       return selectedItems === null || selectedItems === void 0 ? void 0 : selectedItems.some(function (data2) {
@@ -24428,11 +22795,12 @@ var AvatarSelectionCount = function AvatarSelectionCount(props) {
     "aria-controls": popoverId,
     ref: triggerRef
   }, /*#__PURE__*/React.createElement(Avatar, {
+    tabIndex: -1,
     size: size,
     appearance: "secondary",
     className: "SelectionAvatarCount cursor-pointer"
   }, /*#__PURE__*/React.createElement(Text, {
-    className: "overflow-hidden"
+    className: "overflow-hidden Avatar-content"
   }, "+".concat(hiddenAvatarCount))));
 };
 
@@ -24442,18 +22810,15 @@ var handleKeyDown$5 = function handleKeyDown(event, focusedOption, setFocusedOpt
       event.preventDefault();
       navigateOptions$3('up', focusedOption, setFocusedOption, listRef, withSearch);
       break;
-
     case 'ArrowDown':
       event.preventDefault();
       navigateOptions$3('down', focusedOption, setFocusedOption, listRef, withSearch);
       break;
-
     case 'Enter':
       handleEnterKey$2(focusedOption);
       setHighlightLastItem === null || setHighlightLastItem === void 0 ? void 0 : setHighlightLastItem(false);
       setHighlightFirstItem === null || setHighlightFirstItem === void 0 ? void 0 : setHighlightFirstItem(false);
       break;
-
     case 'Escape':
       setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(false);
       triggerRef.current.focus();
@@ -24461,17 +22826,14 @@ var handleKeyDown$5 = function handleKeyDown(event, focusedOption, setFocusedOpt
       break;
   }
 };
-
 var handleEnterKey$2 = function handleEnterKey(focusedOption) {
   focusedOption === null || focusedOption === void 0 ? void 0 : focusedOption.click();
 };
-
 var navigateOptions$3 = function navigateOptions(direction, focusedOption, setFocusedOption, listRef, withSearch) {
   var listItems = listRef === null || listRef === void 0 ? void 0 : listRef.current.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
   var index = Array.from(listItems).findIndex(function (item) {
     return item == focusedOption;
   });
-
   if (index === -1) {
     index = direction === 'up' ? listItems.length - 1 : 0;
   } else if (withSearch && index === 0 && direction === 'up' || withSearch && index === listItems.length - 1 && direction === 'down') {
@@ -24488,31 +22850,25 @@ var navigateOptions$3 = function navigateOptions(direction, focusedOption, setFo
     });
   }
 };
-
 var handleInputKeyDown$1 = function handleInputKeyDown(event, listRef, setFocusedOption, setOpenPopover, triggerRef) {
   var _listRef$current, _targetOption, _targetOption2, _targetOption2$scroll;
-
   var listItems = (_listRef$current = listRef.current) === null || _listRef$current === void 0 ? void 0 : _listRef$current.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
   var targetOption;
-
   switch (event.key) {
     case 'ArrowUp':
       event.preventDefault();
       targetOption = listItems[listItems.length - 1];
       break;
-
     case 'ArrowDown':
       event.preventDefault();
       targetOption = listItems[0];
       break;
-
     case 'Escape':
       setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(false);
       triggerRef.current.focus();
       setFocusedOption === null || setFocusedOption === void 0 ? void 0 : setFocusedOption(undefined);
       break;
   }
-
   (_targetOption = targetOption) === null || _targetOption === void 0 ? void 0 : _targetOption.focus();
   (_targetOption2 = targetOption) === null || _targetOption2 === void 0 ? void 0 : (_targetOption2$scroll = _targetOption2.scrollIntoView) === null || _targetOption2$scroll === void 0 ? void 0 : _targetOption2$scroll.call(_targetOption2, {
     block: 'center'
@@ -24523,9 +22879,9 @@ var handleInputKeyDown$1 = function handleInputKeyDown(event, listRef, setFocuse
 var AvatarSelectionInput = function AvatarSelectionInput(props) {
   var contextProp = React.useContext(AvatarSelectionContext);
   var listRef = contextProp.listRef,
-      setFocusedOption = contextProp.setFocusedOption,
-      setOpenPopover = contextProp.setOpenPopover,
-      triggerRef = contextProp.triggerRef;
+    setFocusedOption = contextProp.setFocusedOption,
+    setOpenPopover = contextProp.setOpenPopover,
+    triggerRef = contextProp.triggerRef;
   return /*#__PURE__*/React.createElement("div", {
     className: "SelectionAvatar-inputWrapper"
   }, /*#__PURE__*/React.createElement(Input, _extends$2({
@@ -24548,29 +22904,30 @@ AvatarSelectionList.defaultProps = {
   tagName: 'ul'
 };
 
-var _excluded$e = ["children", "value"];
+var _excluded$m = ["children", "value", "disabled"];
 var AvatarSelectionOption = function AvatarSelectionOption(props) {
   var children = props.children,
-      value = props.value,
-      rest = _objectWithoutProperties(props, _excluded$e);
-
+    value = props.value,
+    disabled = props.disabled,
+    rest = _objectWithoutProperties(props, _excluded$m);
   var contextProp = React.useContext(AvatarSelectionContext);
   var setSelectedItems = contextProp.setSelectedItems,
-      selectedItems = contextProp.selectedItems,
-      onSelect = contextProp.onSelect,
-      focusedOption = contextProp.focusedOption,
-      setFocusedOption = contextProp.setFocusedOption,
-      setHighlightFirstItem = contextProp.setHighlightFirstItem,
-      setHighlightLastItem = contextProp.setHighlightLastItem,
-      listRef = contextProp.listRef,
-      withSearch = contextProp.withSearch,
-      setOpenPopover = contextProp.setOpenPopover,
-      triggerRef = contextProp.triggerRef;
-
+    selectedItems = contextProp.selectedItems,
+    onSelect = contextProp.onSelect,
+    focusedOption = contextProp.focusedOption,
+    setFocusedOption = contextProp.setFocusedOption,
+    setHighlightFirstItem = contextProp.setHighlightFirstItem,
+    setHighlightLastItem = contextProp.setHighlightLastItem,
+    listRef = contextProp.listRef,
+    withSearch = contextProp.withSearch,
+    setOpenPopover = contextProp.setOpenPopover,
+    triggerRef = contextProp.triggerRef;
   var onSelectHandler = function onSelectHandler(event, avatarData) {
     event.preventDefault();
+    if (disabled) {
+      return;
+    }
     var list = selectedItems ? _toConsumableArray(selectedItems) : [];
-
     if (selectedItems !== null && selectedItems !== void 0 && selectedItems.includes(avatarData)) {
       list = selectedItems.filter(function (selectedItem) {
         return selectedItem !== avatarData;
@@ -24578,16 +22935,13 @@ var AvatarSelectionOption = function AvatarSelectionOption(props) {
     } else {
       list.push(avatarData);
     }
-
     setSelectedItems === null || setSelectedItems === void 0 ? void 0 : setSelectedItems(_toConsumableArray(list));
     setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(true);
     onSelect && onSelect(list);
   };
-
   var onKeyDownHandler = function onKeyDownHandler(event) {
     handleKeyDown$5(event, focusedOption, setFocusedOption, setHighlightFirstItem, setHighlightLastItem, listRef, withSearch, setOpenPopover, triggerRef);
   };
-
   return /*#__PURE__*/React.createElement(Listbox.Item, _extends$2({
     onClick: function onClick(event) {
       return onSelectHandler(event, value);
@@ -24597,6 +22951,7 @@ var AvatarSelectionOption = function AvatarSelectionOption(props) {
     },
     selected: selectedItems === null || selectedItems === void 0 ? void 0 : selectedItems.includes(value),
     "data-test": "DesignSystem-AvatarSelection--Option",
+    disabled: disabled,
     tabIndex: -1
   }, rest), children);
 };
@@ -24606,8 +22961,8 @@ AvatarSelectionOption.defaultProps = {
 
 var AvatarSelectionEmptyState = function AvatarSelectionEmptyState(props) {
   var height = props.height,
-      title = props.title,
-      description = props.description;
+    title = props.title,
+    description = props.description;
   return /*#__PURE__*/React.createElement("div", {
     className: "d-flex flex-column justify-content-center align-items-center",
     style: {
@@ -24627,19 +22982,19 @@ var AvatarSelectionEmptyState = function AvatarSelectionEmptyState(props) {
 
 var AvatarSelectionItem = function AvatarSelectionItem(props) {
   var avatarData = props.avatarData,
-      isSelected = props.isSelected;
-
+    isSelected = props.isSelected;
   var _React$useState = React.useState(false),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      showTooltip = _React$useState2[0],
-      setShowTooltip = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    showTooltip = _React$useState2[0],
+    setShowTooltip = _React$useState2[1];
   var elementRef = React.useRef(null);
   var _avatarData$firstName = avatarData.firstName,
-      firstName = _avatarData$firstName === void 0 ? '' : _avatarData$firstName,
-      _avatarData$lastName = avatarData.lastName,
-      lastName = _avatarData$lastName === void 0 ? '' : _avatarData$lastName;
-  var name = "".concat(firstName, " ").concat(lastName);
+    firstName = _avatarData$firstName === void 0 ? '' : _avatarData$firstName,
+    _avatarData$lastName = avatarData.lastName,
+    lastName = _avatarData$lastName === void 0 ? '' : _avatarData$lastName,
+    disabled = avatarData.disabled,
+    tooltipSuffix = avatarData.tooltipSuffix;
+  var name = "".concat(firstName || '', " ").concat(lastName || '', " ").concat(tooltipSuffix || '') || '';
   return /*#__PURE__*/React.createElement(Tooltip, {
     showOnTruncation: true,
     tooltip: name,
@@ -24647,6 +23002,7 @@ var AvatarSelectionItem = function AvatarSelectionItem(props) {
     open: showTooltip
   }, /*#__PURE__*/React.createElement(AvatarSelectionOption, {
     value: avatarData,
+    disabled: disabled,
     onFocus: function onFocus() {
       setShowTooltip(true);
     },
@@ -24664,59 +23020,47 @@ var AvatarSelectionItem = function AvatarSelectionItem(props) {
     labelRef: elementRef
   })));
 };
-
 var AvatarSelectionPopover = function AvatarSelectionPopover(props) {
   var _classNames;
-
   var hiddenAvatarList = props.hiddenAvatarList,
-      customStyle = props.customStyle,
-      searchPlaceholder = props.searchPlaceholder,
-      searchComparator = props.searchComparator,
-      children = props.children;
-
+    customStyle = props.customStyle,
+    searchPlaceholder = props.searchPlaceholder,
+    searchComparator = props.searchComparator,
+    children = props.children;
   var _React$useState3 = React.useState(hiddenAvatarList),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      searchList = _React$useState4[0],
-      setSearchList = _React$useState4[1];
-
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    searchList = _React$useState4[0],
+    setSearchList = _React$useState4[1];
   var _React$useState5 = React.useState(''),
-      _React$useState6 = _slicedToArray(_React$useState5, 2),
-      searchValue = _React$useState6[0],
-      setSearchValue = _React$useState6[1];
-
+    _React$useState6 = _slicedToArray(_React$useState5, 2),
+    searchValue = _React$useState6[0],
+    setSearchValue = _React$useState6[1];
   var contextProp = React.useContext(AvatarSelectionContext);
   var selectedItems = contextProp.selectedItems,
-      listRef = contextProp.listRef,
-      withSearch = contextProp.withSearch,
-      popoverId = contextProp.popoverId;
-
+    listRef = contextProp.listRef,
+    withSearch = contextProp.withSearch,
+    popoverId = contextProp.popoverId;
   if (children) {
     return /*#__PURE__*/React.createElement(React.Fragment, null, children);
   }
-
   var onSearchHandler = function onSearchHandler(event) {
     var searchValue = event.target.value;
     var list = hiddenAvatarList === null || hiddenAvatarList === void 0 ? void 0 : hiddenAvatarList.filter(function (avatarData) {
       var _firstName$toLowerCas, _lastName$toLowerCase;
-
       var firstName = avatarData.firstName,
-          lastName = avatarData.lastName;
-
+        lastName = avatarData.lastName;
       if (searchComparator) {
         return searchComparator(searchValue, avatarData);
       }
-
       return (firstName === null || firstName === void 0 ? void 0 : (_firstName$toLowerCas = firstName.toLowerCase()) === null || _firstName$toLowerCas === void 0 ? void 0 : _firstName$toLowerCas.startsWith(searchValue.toLowerCase())) || (lastName === null || lastName === void 0 ? void 0 : (_lastName$toLowerCase = lastName.toLowerCase()) === null || _lastName$toLowerCase === void 0 ? void 0 : _lastName$toLowerCase.startsWith(searchValue.toLowerCase()));
     });
     setSearchValue(searchValue);
     setSearchList(list);
   };
-
   var onClearHandler = function onClearHandler() {
     setSearchValue('');
     setSearchList(hiddenAvatarList);
   };
-
   var popperClassName = classnames((_classNames = {}, _defineProperty$1(_classNames, 'py-3', !withSearch), _defineProperty$1(_classNames, 'pb-3', withSearch), _defineProperty$1(_classNames, 'SelectionAvatarGroup-popper', true), _classNames));
   return /*#__PURE__*/React.createElement("div", {
     style: {
@@ -24749,46 +23093,40 @@ var AvatarSelectionPopover = function AvatarSelectionPopover(props) {
 
 var AvatarSelection = function AvatarSelection(props) {
   var max = props.max,
-      borderColor = props.borderColor,
-      tooltipPosition = props.tooltipPosition,
-      list = props.list,
-      className = props.className,
-      size = props.size,
-      avatarRenderer = props.avatarRenderer,
-      onSelect = props.onSelect,
-      width = props.width,
-      maxHeight = props.maxHeight,
-      minHeight = props.minHeight,
-      searchPlaceholder = props.searchPlaceholder,
-      withSearch = props.withSearch,
-      searchComparator = props.searchComparator,
-      children = props.children;
-
+    borderColor = props.borderColor,
+    tooltipPosition = props.tooltipPosition,
+    list = props.list,
+    className = props.className,
+    size = props.size,
+    avatarRenderer = props.avatarRenderer,
+    onSelect = props.onSelect,
+    width = props.width,
+    maxHeight = props.maxHeight,
+    minHeight = props.minHeight,
+    searchPlaceholder = props.searchPlaceholder,
+    withSearch = props.withSearch,
+    searchComparator = props.searchComparator,
+    children = props.children;
   var _React$useState = React.useState([]),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      selectedItems = _React$useState2[0],
-      setSelectedItems = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    selectedItems = _React$useState2[0],
+    setSelectedItems = _React$useState2[1];
   var _React$useState3 = React.useState(false),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      openPopover = _React$useState4[0],
-      setOpenPopover = _React$useState4[1];
-
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    openPopover = _React$useState4[0],
+    setOpenPopover = _React$useState4[1];
   var _React$useState5 = React.useState(),
-      _React$useState6 = _slicedToArray(_React$useState5, 2),
-      focusedOption = _React$useState6[0],
-      setFocusedOption = _React$useState6[1];
-
+    _React$useState6 = _slicedToArray(_React$useState5, 2),
+    focusedOption = _React$useState6[0],
+    setFocusedOption = _React$useState6[1];
   var _React$useState7 = React.useState(false),
-      _React$useState8 = _slicedToArray(_React$useState7, 2),
-      highlightFirstItem = _React$useState8[0],
-      setHighlightFirstItem = _React$useState8[1];
-
+    _React$useState8 = _slicedToArray(_React$useState7, 2),
+    highlightFirstItem = _React$useState8[0],
+    setHighlightFirstItem = _React$useState8[1];
   var _React$useState9 = React.useState(false),
-      _React$useState10 = _slicedToArray(_React$useState9, 2),
-      highlightLastItem = _React$useState10[0],
-      setHighlightLastItem = _React$useState10[1];
-
+    _React$useState10 = _slicedToArray(_React$useState9, 2),
+    highlightLastItem = _React$useState10[0],
+    setHighlightLastItem = _React$useState10[1];
   var listRef = /*#__PURE__*/React.createRef();
   var triggerRef = /*#__PURE__*/React.createRef();
   React.useEffect(function () {
@@ -24851,11 +23189,9 @@ var AvatarSelection = function AvatarSelection(props) {
     hiddenAvatarCount: hiddenAvatarCount,
     hiddenAvatarList: hiddenAvatarList
   };
-
   var onToggleHandler = function onToggleHandler(open) {
     open ? setOpenPopover(true) : setOpenPopover(false);
   };
-
   var contextProp = {
     listRef: listRef,
     onSelect: onSelect,
@@ -24927,18 +23263,15 @@ var handleKeyDown$4 = function handleKeyDown(event, focusedOption, setFocusedOpt
       event.preventDefault();
       navigateOptions$2('up', focusedOption, setFocusedOption, listRef);
       break;
-
     case 'ArrowDown':
       event.preventDefault();
       navigateOptions$2('down', focusedOption, setFocusedOption, listRef);
       break;
-
     case 'Enter':
       handleEnterKey$1(focusedOption, multiSelect, inputTriggerRef, listRef, setFocusedOption);
       setHighlightLastItem === null || setHighlightLastItem === void 0 ? void 0 : setHighlightLastItem(false);
       setHighlightFirstItem === null || setHighlightFirstItem === void 0 ? void 0 : setHighlightFirstItem(false);
       break;
-
     case 'Escape':
       setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(false);
       inputTriggerRef.current.focus();
@@ -24946,10 +23279,8 @@ var handleKeyDown$4 = function handleKeyDown(event, focusedOption, setFocusedOpt
       break;
   }
 };
-
 var handleEnterKey$1 = function handleEnterKey(focusedOption, multiSelect, inputTriggerRef, listRef, setFocusedOption) {
   focusedOption === null || focusedOption === void 0 ? void 0 : focusedOption.click();
-
   if (!multiSelect) {
     inputTriggerRef.current.focus();
   } else {
@@ -24959,7 +23290,6 @@ var handleEnterKey$1 = function handleEnterKey(focusedOption, multiSelect, input
     var index = listArr.findIndex(function (item) {
       return item == focusedOption;
     });
-
     if (index === listArr.length - 1) {
       listItems[0].focus();
       setFocusedOption && setFocusedOption(listItems[0]);
@@ -24969,21 +23299,17 @@ var handleEnterKey$1 = function handleEnterKey(focusedOption, multiSelect, input
     }
   }
 };
-
 var navigateOptions$2 = function navigateOptions(direction, focusedOption, setFocusedOption, listRef) {
   var _targetOption$scrollI;
-
   var listItems = listRef.current.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
   var index = Array.from(listItems).findIndex(function (item) {
     return item == focusedOption;
   });
-
   if (index === -1) {
     index = direction === 'up' ? listItems.length - 1 : 0;
   } else {
     index = direction === 'up' ? (index - 1 + listItems.length) % listItems.length : (index + 1) % listItems.length;
   }
-
   var targetOption = listItems[index];
   targetOption.focus();
   setFocusedOption && setFocusedOption(targetOption);
@@ -24992,39 +23318,34 @@ var navigateOptions$2 = function navigateOptions(direction, focusedOption, setFo
   });
 };
 
-var _excluded$d = ["children", "option", "onClick"];
+var _excluded$l = ["children", "option", "onClick"];
 var ComboboxOption = function ComboboxOption(props) {
   var children = props.children,
-      option = props.option,
-      onClick = props.onClick,
-      rest = _objectWithoutProperties(props, _excluded$d);
-
+    option = props.option,
+    onClick = props.onClick,
+    rest = _objectWithoutProperties(props, _excluded$l);
   var contextProp = React.useContext(ComboboxContext);
   var onOptionClick = contextProp.onOptionClick,
-      inputValue = contextProp.inputValue,
-      focusedOption = contextProp.focusedOption,
-      setFocusedOption = contextProp.setFocusedOption,
-      setOpenPopover = contextProp.setOpenPopover,
-      inputTriggerRef = contextProp.inputTriggerRef,
-      setHighlightFirstItem = contextProp.setHighlightFirstItem,
-      setHighlightLastItem = contextProp.setHighlightLastItem,
-      multiSelect = contextProp.multiSelect,
-      listRef = contextProp.listRef;
-
+    inputValue = contextProp.inputValue,
+    focusedOption = contextProp.focusedOption,
+    setFocusedOption = contextProp.setFocusedOption,
+    setOpenPopover = contextProp.setOpenPopover,
+    inputTriggerRef = contextProp.inputTriggerRef,
+    setHighlightFirstItem = contextProp.setHighlightFirstItem,
+    setHighlightLastItem = contextProp.setHighlightLastItem,
+    multiSelect = contextProp.multiSelect,
+    listRef = contextProp.listRef;
   var onClickHandler = function onClickHandler() {
     if (onClick) {
       return onClick(option);
     }
-
     return onOptionClick && onOptionClick(_objectSpread2(_objectSpread2({}, option), {}, {
       isSelectedOption: true
     }));
   };
-
   var onKeyDownHandler = function onKeyDownHandler(event) {
     handleKeyDown$4(event, focusedOption, setFocusedOption, setOpenPopover, inputTriggerRef, setHighlightFirstItem, setHighlightLastItem, multiSelect, listRef);
   };
-
   return /*#__PURE__*/React.createElement(Listbox.Item, _extends$2({
     onClick: onClickHandler,
     selected: option.label === (inputValue === null || inputValue === void 0 ? void 0 : inputValue.label),
@@ -25044,12 +23365,10 @@ var handleKeyDown$3 = function handleKeyDown(event, setOpenPopover, setHighlight
       setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(true);
       setHighlightLastItem === null || setHighlightLastItem === void 0 ? void 0 : setHighlightLastItem(true);
       break;
-
     case 'ArrowDown':
       setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(true);
       setHighlightFirstItem === null || setHighlightFirstItem === void 0 ? void 0 : setHighlightFirstItem(true);
       break;
-
     case 'Escape':
     case 'Tab':
       setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(false);
@@ -25058,42 +23377,35 @@ var handleKeyDown$3 = function handleKeyDown(event, setOpenPopover, setHighlight
 };
 var focusListItem$2 = function focusListItem(position, setFocusedOption, listRef) {
   var _listRef$current, _targetOption;
-
   var listItems = (_listRef$current = listRef.current) === null || _listRef$current === void 0 ? void 0 : _listRef$current.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
   var targetOption;
-
   if (position === 'down') {
     targetOption = listItems === null || listItems === void 0 ? void 0 : listItems[0];
   } else {
     targetOption = listItems[listItems.length - 1];
   }
-
   (_targetOption = targetOption) === null || _targetOption === void 0 ? void 0 : _targetOption.focus();
-
   if (targetOption && typeof targetOption.scrollIntoView === 'function') {
     var _targetOption2;
-
     (_targetOption2 = targetOption) === null || _targetOption2 === void 0 ? void 0 : _targetOption2.scrollIntoView({
       block: 'center',
       behavior: 'smooth'
     });
   }
-
   setFocusedOption && setFocusedOption(targetOption);
 };
 
 var InputBox = function InputBox(props) {
   var contextProp = React.useContext(ComboboxContext);
   var inputValue = contextProp.inputValue,
-      setInputValue = contextProp.setInputValue,
-      setFocusedOption = contextProp.setFocusedOption,
-      setOpenPopover = contextProp.setOpenPopover,
-      inputTriggerRef = contextProp.inputTriggerRef,
-      setHighlightFirstItem = contextProp.setHighlightFirstItem,
-      setHighlightLastItem = contextProp.setHighlightLastItem,
-      openPopover = contextProp.openPopover,
-      popoverId = contextProp.popoverId;
-
+    setInputValue = contextProp.setInputValue,
+    setFocusedOption = contextProp.setFocusedOption,
+    setOpenPopover = contextProp.setOpenPopover,
+    inputTriggerRef = contextProp.inputTriggerRef,
+    setHighlightFirstItem = contextProp.setHighlightFirstItem,
+    setHighlightLastItem = contextProp.setHighlightLastItem,
+    openPopover = contextProp.openPopover,
+    popoverId = contextProp.popoverId;
   var onChangeHandler = function onChangeHandler(event) {
     var value = event.target.value;
     setFocusedOption && setFocusedOption(undefined);
@@ -25103,15 +23415,12 @@ var InputBox = function InputBox(props) {
       isSelectedOption: false
     };
     setInputValue && setInputValue(newValue);
-
     if (value !== '') {
       setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(true);
     }
   };
-
   var onClearHandler = function onClearHandler(event) {
     var _props$onClear;
-
     event.stopPropagation();
     var newValue = {
       label: '',
@@ -25122,12 +23431,10 @@ var InputBox = function InputBox(props) {
     setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(true);
     (_props$onClear = props.onClear) === null || _props$onClear === void 0 ? void 0 : _props$onClear.call(props, event);
   };
-
   var onKeyDownHandler = function onKeyDownHandler(event) {
     handleKeyDown$3(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem);
     props.onKeyDown && props.onKeyDown(event);
   };
-
   return /*#__PURE__*/React.createElement(Input, _extends$2({}, props, {
     ref: inputTriggerRef,
     value: inputValue === null || inputValue === void 0 ? void 0 : inputValue.label,
@@ -25143,46 +23450,43 @@ var InputBox = function InputBox(props) {
   }));
 };
 
-var _excluded$c = ["chipOptions", "allowDuplicates", "disabled", "error", "placeholder", "defaultValue", "value", "className", "autoFocus", "onChange", "onBlur", "onFocus", "onKeyDown", "onInputChange", "tabIndex", "role"],
-    _excluded2 = ["type", "onClick"];
+var _excluded$k = ["chipOptions", "allowDuplicates", "disabled", "error", "placeholder", "defaultValue", "value", "className", "autoFocus", "onChange", "onBlur", "onFocus", "onKeyDown", "onInputChange", "tabIndex", "role"],
+  _excluded2 = ["type", "onClick"];
 var keyCodes = {
   BACKSPACE: 'Backspace',
   DELETE: 'Delete',
   ENTER: 'Enter'
 };
-var MultiSelectTrigger = function MultiSelectTrigger(props) {
+var MultiSelectTrigger = /*#__PURE__*/React.forwardRef(function (props, forwardedInputRef) {
   var _classNames, _classNames2;
-
   var chipOptions = props.chipOptions,
-      allowDuplicates = props.allowDuplicates,
-      disabled = props.disabled,
-      error = props.error,
-      placeholder = props.placeholder,
-      defaultValue = props.defaultValue,
-      value = props.value,
-      className = props.className,
-      autoFocus = props.autoFocus,
-      onChange = props.onChange,
-      onBlur = props.onBlur,
-      onFocus = props.onFocus,
-      onKeyDown = props.onKeyDown,
-      onInputChange = props.onInputChange,
-      tabIndex = props.tabIndex,
-      role = props.role,
-      rest = _objectWithoutProperties(props, _excluded$c);
-
-  var inputRef = /*#__PURE__*/React.createRef();
-
+    allowDuplicates = props.allowDuplicates,
+    disabled = props.disabled,
+    error = props.error,
+    placeholder = props.placeholder,
+    defaultValue = props.defaultValue,
+    value = props.value,
+    className = props.className,
+    autoFocus = props.autoFocus,
+    onChange = props.onChange,
+    onBlur = props.onBlur,
+    onFocus = props.onFocus,
+    onKeyDown = props.onKeyDown,
+    onInputChange = props.onInputChange,
+    tabIndex = props.tabIndex,
+    role = props.role,
+    rest = _objectWithoutProperties(props, _excluded$k);
+  var localInputRef = React.useRef();
+  var customRef = React.useRef();
+  var inputElementRef = forwardedInputRef || localInputRef;
   var _React$useState = React.useState(value || defaultValue),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      chips = _React$useState2[0],
-      setChips = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    chips = _React$useState2[0],
+    setChips = _React$useState2[1];
   var _React$useState3 = React.useState(''),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      inputValue = _React$useState4[0],
-      setInputValue = _React$useState4[1];
-
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    inputValue = _React$useState4[0],
+    setInputValue = _React$useState4[1];
   var baseProps = extractBaseProps(props);
   React.useEffect(function () {
     if (value !== undefined) {
@@ -25190,101 +23494,100 @@ var MultiSelectTrigger = function MultiSelectTrigger(props) {
       setInputValue('');
     }
   }, [value]);
+  React.useEffect(function () {
+    if (inputValue === '' && inputElementRef.current) {
+      inputElementRef.current.style.flexBasis = '0';
+      customRef.current.charCount = null;
+    }
+  }, [inputValue]);
   var ChipInputBorderClass = classnames((_classNames = {}, _defineProperty$1(_classNames, 'ChipInput-border', true), _defineProperty$1(_classNames, 'ChipInput-border--error', error), _classNames));
   var ChipInputClass = classnames((_classNames2 = {
     ChipInput: true
   }, _defineProperty$1(_classNames2, 'ChipInput--disabled', disabled), _defineProperty$1(_classNames2, 'ChipInput--withChips', chips && chips.length > 0), _defineProperty$1(_classNames2, 'ChipInput--error', error), _classNames2), className);
-
   var onUpdateChips = function onUpdateChips(updatedChips) {
     if (onChange) onChange(updatedChips);
   };
-
   var onChipDeleteHandler = function onChipDeleteHandler(index) {
     var updatedChips = _toConsumableArray(chips);
-
     updatedChips.splice(index, 1);
-
     if (!value) {
       setChips(updatedChips);
     }
-
     onUpdateChips(updatedChips);
   };
-
   var onChipAddHandler = function onChipAddHandler() {
     if (!inputValue) return;
     var chip = inputValue.trim();
     var isChipExist = chips.filter(function (item) {
       return item.label === chip;
     }).length > 0;
-
     if ((allowDuplicates || !isChipExist) && chip) {
       var updatedChips = [].concat(_toConsumableArray(chips), [{
         label: chip,
         value: chip,
         isSelectedOption: false
       }]);
-
       if (!value) {
         setChips(updatedChips);
       }
-
       onUpdateChips(updatedChips);
       setInputValue('');
     }
   };
-
   var onDeleteAllHandler = function onDeleteAllHandler(e) {
     e.stopPropagation();
     var updatedChips = [];
-
     if (!value) {
       setChips(updatedChips);
     }
-
     onUpdateChips(updatedChips);
     setInputValue('');
     onInputChange && onInputChange();
   };
-
   var onKeyDownHandler = function onKeyDownHandler(event) {
     var chipsLength = chips.length;
-
     switch (event.key) {
       case keyCodes.DELETE:
       case keyCodes.BACKSPACE:
         if (inputValue === '' && chipsLength > 0) {
           onChipDeleteHandler(chipsLength - 1);
         }
-
         break;
-
       case keyCodes.ENTER:
         event.preventDefault();
         onChipAddHandler();
         break;
     }
-
     onKeyDown && onKeyDown(event);
   };
-
   var onInputChangeHandler = function onInputChangeHandler(event) {
+    var inputElement = inputElementRef.current;
+    if (inputElement) {
+      var _customRef$current;
+      var charLen = event.target.value.length;
+      var elementScrollWidth = inputElement.scrollWidth;
+      var elementClientWidth = inputElement.clientWidth;
+      if (elementScrollWidth > elementClientWidth && inputValue.length <= charLen) {
+        inputElement.style.flexBasis = 'auto';
+        if (customRef.current) {
+          customRef.current.charCount = charLen;
+        }
+      } else if (elementScrollWidth <= elementClientWidth && inputValue.length > charLen && charLen <= (((_customRef$current = customRef.current) === null || _customRef$current === void 0 ? void 0 : _customRef$current.charCount) || 0) - 1) {
+        inputElement.style.flexBasis = '0';
+      }
+    }
     setInputValue(event.target.value);
     onInputChange && onInputChange(event);
   };
-
   var onClickHandler = function onClickHandler() {
-    var _inputRef$current;
-
-    (_inputRef$current = inputRef.current) === null || _inputRef$current === void 0 ? void 0 : _inputRef$current.focus();
+    var _inputElementRef$curr;
+    (_inputElementRef$curr = inputElementRef.current) === null || _inputElementRef$curr === void 0 ? void 0 : _inputElementRef$curr.focus();
   };
-
   var chipComponents = chips.map(function (chip, index) {
     var _chipOptions$type = chipOptions.type,
-        type = _chipOptions$type === void 0 ? 'input' : _chipOptions$type,
-        _onClick = chipOptions.onClick,
-        rest = _objectWithoutProperties(chipOptions, _excluded2);
-
+      type = _chipOptions$type === void 0 ? 'input' : _chipOptions$type,
+      _onClick = chipOptions.onClick,
+      rest = _objectWithoutProperties(chipOptions, _excluded2);
     var chipLabel = typeof chip === 'string' ? chip : chip === null || chip === void 0 ? void 0 : chip.label;
     return /*#__PURE__*/React.createElement(Chip, _extends$2({
       "data-test": "DesignSystem-MultiSelectTrigger--Chip",
@@ -25302,46 +23605,40 @@ var MultiSelectTrigger = function MultiSelectTrigger(props) {
       }
     }, rest));
   });
-  return (
-    /*#__PURE__*/
-
-    /* TODO(a11y): fix accessibility  */
-
-    /* eslint-disable  */
-    React.createElement("div", {
-      "data-test": "DesignSystem-MultiSelectTrigger--Border",
-      className: ChipInputBorderClass
-    }, /*#__PURE__*/React.createElement("div", _extends$2({
-      "data-test": "DesignSystem-MultiSelectTrigger"
-    }, baseProps, {
-      className: ChipInputClass,
-      onClick: onClickHandler,
-      tabIndex: disabled ? -1 : tabIndex || 0
-    }), /*#__PURE__*/React.createElement("div", {
-      className: "ChipInput-wrapper"
-    }, chips && chips.length > 0 && chipComponents, /*#__PURE__*/React.createElement("input", _extends$2({}, rest, {
-      "data-test": "DesignSystem-MultiSelectTrigger--Input",
-      ref: props.forwardedRef || inputRef,
-      className: "ChipInput-input",
-      autoFocus: autoFocus,
-      placeholder: chips && chips.length > 0 ? '' : placeholder,
-      disabled: disabled,
-      value: inputValue,
-      onBlur: onBlur,
-      onFocus: onFocus,
-      onChange: onInputChangeHandler,
-      onKeyDown: onKeyDownHandler,
-      role: role
-    }))), (chips.length > 0 || inputValue.length > 0) && /*#__PURE__*/React.createElement(Icon, {
-      "data-test": "DesignSystem-MultiSelectTrigger--Icon",
-      name: "close",
-      appearance: disabled ? 'disabled' : 'subtle',
-      className: "ChipInput-icon",
-      onClick: onDeleteAllHandler,
-      tabIndex: disabled ? -1 : 0
-    })))
-  );
-};
+  return /*#__PURE__*/ /* TODO(a11y): fix accessibility  */ /* eslint-disable  */React.createElement("div", {
+    "data-test": "DesignSystem-MultiSelectTrigger--Border",
+    className: ChipInputBorderClass
+  }, /*#__PURE__*/React.createElement("div", _extends$2({
+    "data-test": "DesignSystem-MultiSelectTrigger"
+  }, baseProps, {
+    className: ChipInputClass,
+    onClick: onClickHandler,
+    tabIndex: disabled ? -1 : tabIndex || 0
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "ChipInput-wrapper",
+    ref: customRef
+  }, chips && chips.length > 0 && chipComponents, /*#__PURE__*/React.createElement("input", _extends$2({}, rest, {
+    "data-test": "DesignSystem-MultiSelectTrigger--Input",
+    ref: inputElementRef,
+    className: "ChipInput-input",
+    autoFocus: autoFocus,
+    placeholder: chips && chips.length > 0 ? '' : placeholder,
+    disabled: disabled,
+    value: inputValue,
+    onBlur: onBlur,
+    onFocus: onFocus,
+    onChange: onInputChangeHandler,
+    onKeyDown: onKeyDownHandler,
+    role: role
+  }))), (chips.length > 0 || inputValue.length > 0) && /*#__PURE__*/React.createElement(Icon, {
+    "data-test": "DesignSystem-MultiSelectTrigger--Icon",
+    name: "close",
+    appearance: disabled ? 'disabled' : 'subtle',
+    className: "ChipInput-icon",
+    onClick: onDeleteAllHandler,
+    tabIndex: disabled ? -1 : 0
+  })));
+});
 MultiSelectTrigger.displayName = 'MultiSelectTrigger';
 MultiSelectTrigger.defaultProps = {
   chipOptions: {},
@@ -25353,56 +23650,47 @@ MultiSelectTrigger.defaultProps = {
 var ChipInputBox = function ChipInputBox(props) {
   var contextProp = React__default.useContext(ComboboxContext);
   var chipInputValue = contextProp.chipInputValue,
-      setChipInputValue = contextProp.setChipInputValue,
-      setOpenPopover = contextProp.setOpenPopover,
-      setFocusedOption = contextProp.setFocusedOption,
-      setChipInputText = contextProp.setChipInputText,
-      setHighlightFirstItem = contextProp.setHighlightFirstItem,
-      setHighlightLastItem = contextProp.setHighlightLastItem,
-      inputTriggerRef = contextProp.inputTriggerRef,
-      openPopover = contextProp.openPopover,
-      popoverId = contextProp.popoverId;
-
+    setChipInputValue = contextProp.setChipInputValue,
+    setOpenPopover = contextProp.setOpenPopover,
+    setFocusedOption = contextProp.setFocusedOption,
+    setChipInputText = contextProp.setChipInputText,
+    setHighlightFirstItem = contextProp.setHighlightFirstItem,
+    setHighlightLastItem = contextProp.setHighlightLastItem,
+    inputTriggerRef = contextProp.inputTriggerRef,
+    openPopover = contextProp.openPopover,
+    popoverId = contextProp.popoverId;
   var onChangeHandler = function onChangeHandler(chips) {
     setFocusedOption && setFocusedOption(undefined);
     setChipInputValue && setChipInputValue(chips);
-
     if (chips.length === 0) {
       setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(true);
     }
   };
-
   var onUpdateHandler = function onUpdateHandler(event) {
     var _event$target;
-
     var value = event === null || event === void 0 ? void 0 : (_event$target = event.target) === null || _event$target === void 0 ? void 0 : _event$target.value;
-
     if (!value) {
       setChipInputText === null || setChipInputText === void 0 ? void 0 : setChipInputText('');
       setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(true);
       inputTriggerRef === null || inputTriggerRef === void 0 ? void 0 : inputTriggerRef.current.focus();
       return;
     }
-
     setChipInputText && setChipInputText(value);
-
     if (value !== '') {
       setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(true);
     }
   };
-
   var onKeyDownHandler = function onKeyDownHandler(event) {
     handleKeyDown$3(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem);
     props.onKeyDown && props.onKeyDown(event);
   };
-
   return /*#__PURE__*/React__default.createElement(MultiSelectTrigger, _extends$2({}, props, {
+    ref: inputTriggerRef,
     value: chipInputValue,
     onChange: onChangeHandler,
     onInputChange: onUpdateHandler,
     onKeyDown: onKeyDownHandler,
     tabIndex: -1,
-    forwardedRef: inputTriggerRef,
     role: "combobox",
     "aria-haspopup": "listbox",
     "aria-controls": popoverId,
@@ -25412,17 +23700,16 @@ var ChipInputBox = function ChipInputBox(props) {
   }));
 };
 
-var _excluded$b = ["multiSelect", "chipValue", "value"];
+var _excluded$j = ["multiSelect", "chipValue", "value"];
 var ComboboxTrigger = function ComboboxTrigger(props) {
   var multiSelect = props.multiSelect,
-      chipValue = props.chipValue,
-      value = props.value,
-      rest = _objectWithoutProperties(props, _excluded$b);
-
+    chipValue = props.chipValue,
+    value = props.value,
+    rest = _objectWithoutProperties(props, _excluded$j);
   if (multiSelect) {
     var icon = props.icon,
-        clearButton = props.clearButton,
-        iconType = props.iconType;
+      clearButton = props.clearButton,
+      iconType = props.iconType;
     var chipInputOptions = {
       icon: icon,
       clearButton: clearButton,
@@ -25435,7 +23722,6 @@ var ComboboxTrigger = function ComboboxTrigger(props) {
       value: chipValue
     }));
   }
-
   return /*#__PURE__*/React.createElement(InputBox, _extends$2({}, props, {
     value: value === null || value === void 0 ? void 0 : value.label
   }));
@@ -25443,94 +23729,94 @@ var ComboboxTrigger = function ComboboxTrigger(props) {
 
 var Combobox = function Combobox(props) {
   var children = props.children,
-      onChange = props.onChange,
-      multiSelect = props.multiSelect,
-      className = props.className,
-      maxHeight = props.maxHeight,
-      width = props.width,
-      value = props.value,
-      placeholder = props.placeholder,
-      disabled = props.disabled,
-      error = props.error,
-      onBlur = props.onBlur,
-      onFocus = props.onFocus,
-      onClear = props.onClear,
-      icon = props.icon,
-      iconType = props.iconType,
-      size = props.size,
-      chipValue = props.chipValue,
-      clearButton = props.clearButton,
-      onSearch = props.onSearch,
-      onKeyDown = props.onKeyDown,
-      onKeyUp = props.onKeyUp;
-
+    onChange = props.onChange,
+    multiSelect = props.multiSelect,
+    className = props.className,
+    maxHeight = props.maxHeight,
+    minHeight = props.minHeight,
+    width = props.width,
+    value = props.value,
+    placeholder = props.placeholder,
+    disabled = props.disabled,
+    error = props.error,
+    onBlur = props.onBlur,
+    onFocus = props.onFocus,
+    onClear = props.onClear,
+    icon = props.icon,
+    iconType = props.iconType,
+    size = props.size,
+    chipValue = props.chipValue,
+    clearButton = props.clearButton,
+    onSearch = props.onSearch,
+    onKeyDown = props.onKeyDown,
+    onKeyUp = props.onKeyUp,
+    computeStyles = props.computeStyles;
   var _React$useState = React.useState(),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      popoverStyle = _React$useState2[0],
-      setPopoverStyle = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    popoverStyle = _React$useState2[0],
+    setPopoverStyle = _React$useState2[1];
   var _React$useState3 = React.useState({}),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      wrapperStyle = _React$useState4[0],
-      setWrapperStyle = _React$useState4[1];
-
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    wrapperStyle = _React$useState4[0],
+    setWrapperStyle = _React$useState4[1];
   var triggerRef = /*#__PURE__*/React.createRef();
   var listRef = /*#__PURE__*/React.createRef();
-
   var _React$useState5 = React.useState(false),
-      _React$useState6 = _slicedToArray(_React$useState5, 2),
-      openPopover = _React$useState6[0],
-      setOpenPopover = _React$useState6[1];
-
+    _React$useState6 = _slicedToArray(_React$useState5, 2),
+    openPopover = _React$useState6[0],
+    setOpenPopover = _React$useState6[1];
   var _React$useState7 = React.useState(false),
-      _React$useState8 = _slicedToArray(_React$useState7, 2),
-      isOptionSelected = _React$useState8[0],
-      setIsOptionSelected = _React$useState8[1];
-
+    _React$useState8 = _slicedToArray(_React$useState7, 2),
+    isOptionSelected = _React$useState8[0],
+    setIsOptionSelected = _React$useState8[1];
   var _React$useState9 = React.useState(),
-      _React$useState10 = _slicedToArray(_React$useState9, 2),
-      focusedOption = _React$useState10[0],
-      setFocusedOption = _React$useState10[1];
-
+    _React$useState10 = _slicedToArray(_React$useState9, 2),
+    focusedOption = _React$useState10[0],
+    setFocusedOption = _React$useState10[1];
   var _React$useState11 = React.useState(value || {
-    label: '',
-    value: ''
-  }),
-      _React$useState12 = _slicedToArray(_React$useState11, 2),
-      inputValue = _React$useState12[0],
-      setInputValue = _React$useState12[1];
-
+      label: '',
+      value: ''
+    }),
+    _React$useState12 = _slicedToArray(_React$useState11, 2),
+    inputValue = _React$useState12[0],
+    setInputValue = _React$useState12[1];
   var _React$useState13 = React.useState(chipValue),
-      _React$useState14 = _slicedToArray(_React$useState13, 2),
-      chipInputValue = _React$useState14[0],
-      setChipInputValue = _React$useState14[1];
-
+    _React$useState14 = _slicedToArray(_React$useState13, 2),
+    chipInputValue = _React$useState14[0],
+    setChipInputValue = _React$useState14[1];
   var _React$useState15 = React.useState(''),
-      _React$useState16 = _slicedToArray(_React$useState15, 2),
-      chipInputText = _React$useState16[0],
-      setChipInputText = _React$useState16[1];
-
+    _React$useState16 = _slicedToArray(_React$useState15, 2),
+    chipInputText = _React$useState16[0],
+    setChipInputText = _React$useState16[1];
   var _React$useState17 = React.useState(false),
-      _React$useState18 = _slicedToArray(_React$useState17, 2),
-      highlightFirstItem = _React$useState18[0],
-      setHighlightFirstItem = _React$useState18[1];
-
+    _React$useState18 = _slicedToArray(_React$useState17, 2),
+    highlightFirstItem = _React$useState18[0],
+    setHighlightFirstItem = _React$useState18[1];
   var _React$useState19 = React.useState(false),
-      _React$useState20 = _slicedToArray(_React$useState19, 2),
-      highlightLastItem = _React$useState20[0],
-      setHighlightLastItem = _React$useState20[1];
-
+    _React$useState20 = _slicedToArray(_React$useState19, 2),
+    highlightLastItem = _React$useState20[0],
+    setHighlightLastItem = _React$useState20[1];
   var inputTriggerRef = React.useRef();
   var popoverId = "DesignSystem-Combobox--Popover-".concat(uidGenerator());
+  var defaultPopoverStyle = {
+    fn: function fn(data) {
+      return _objectSpread2(_objectSpread2({}, data), {}, {
+        styles: _objectSpread2(_objectSpread2({}, data.styles), {}, {
+          position: 'fixed'
+        })
+      });
+    }
+  };
+  var popoverComputeStyle = computeStyles !== null && computeStyles !== void 0 ? computeStyles : defaultPopoverStyle;
   React.useEffect(function () {
     var _triggerRef$current;
-
     var popperWidth = (_triggerRef$current = triggerRef.current) === null || _triggerRef$current === void 0 ? void 0 : _triggerRef$current.clientWidth;
     var popperWrapperStyle = {
       width: width || popperWidth
     };
     var wrapperStyle = {
       maxHeight: maxHeight || 'var(--spacing-9)',
+      minHeight: minHeight,
       overflowY: 'auto',
       boxSizing: 'border-box'
     };
@@ -25542,7 +23828,6 @@ var Combobox = function Combobox(props) {
       multiSelect ? setOpenPopover(true) : setOpenPopover(false);
       setIsOptionSelected(false);
     }
-
     var value = multiSelect ? chipInputValue : inputValue;
     onChange && !isOptionSelected && onChange(value);
   }, [inputValue, chipInputValue]);
@@ -25569,10 +23854,8 @@ var Combobox = function Combobox(props) {
   React.useEffect(function () {
     onSearch && onSearch(chipInputText);
   }, [chipInputText]);
-
   var onOptionClick = function onOptionClick(option) {
     setIsOptionSelected(true);
-
     if (!multiSelect) {
       setInputValue(option);
       onChange && onChange(option);
@@ -25582,15 +23865,12 @@ var Combobox = function Combobox(props) {
       onChange && onChange(chipList);
     }
   };
-
   var outsideClickHandler = function outsideClickHandler() {
     !multiSelect && setOpenPopover(false);
   };
-
   var onToggleHandler = function onToggleHandler(open) {
     open ? setOpenPopover(true) : setOpenPopover(false);
   };
-
   var triggerProps = {
     value: value,
     placeholder: placeholder,
@@ -25642,7 +23922,8 @@ var Combobox = function Combobox(props) {
     triggerClass: "d-block",
     customStyle: popoverStyle,
     onToggle: onToggleHandler,
-    trigger: /*#__PURE__*/React.createElement(ComboboxTrigger, triggerProps)
+    trigger: /*#__PURE__*/React.createElement(ComboboxTrigger, triggerProps),
+    computeStyles: popoverComputeStyle
   }, /*#__PURE__*/React.createElement("div", {
     style: wrapperStyle,
     ref: listRef,
@@ -25654,17 +23935,15 @@ Combobox.Option = ComboboxOption;
 
 var SelectContext = /*#__PURE__*/React.createContext({});
 
-var _excluded$a = ["children"];
+var _excluded$i = ["children"];
 var SelectList = function SelectList(props) {
   var contextProp = React.useContext(SelectContext);
   var withSearch = contextProp.withSearch,
-      minHeight = contextProp.minHeight,
-      maxHeight = contextProp.maxHeight,
-      multiSelect = contextProp.multiSelect;
-
+    minHeight = contextProp.minHeight,
+    maxHeight = contextProp.maxHeight,
+    multiSelect = contextProp.multiSelect;
   var children = props.children,
-      rest = _objectWithoutProperties(props, _excluded$a);
-
+    rest = _objectWithoutProperties(props, _excluded$i);
   var searchInputHeight = 33;
   var wrapperStyle = {
     maxHeight: withSearch ? maxHeight - searchInputHeight : maxHeight,
@@ -25672,12 +23951,11 @@ var SelectList = function SelectList(props) {
     minHeight: minHeight
   };
   return /*#__PURE__*/React.createElement(Listbox, _extends$2({
+    style: wrapperStyle,
     "aria-label": "Options item list",
     "aria-multiselectable": multiSelect,
     className: "my-3"
-  }, rest), /*#__PURE__*/React.createElement("div", {
-    style: wrapperStyle
-  }, children));
+  }, rest), children);
 };
 SelectList.defaultProps = {
   type: 'option',
@@ -25700,35 +23978,29 @@ var elementExist = function elementExist(targetObject, mainList) {
   if (!Array.isArray(mainList)) {
     return targetObject.value === (mainList === null || mainList === void 0 ? void 0 : mainList.value) ? 0 : -1;
   }
-
   return mainList.findIndex(function (item) {
     return item.value === targetObject.value;
   });
 };
 var removeOrAddToList = function removeOrAddToList(targetObject, prevList) {
   var newList = _toConsumableArray(prevList);
-
   var existingIndex = elementExist(targetObject, newList);
-
   if (existingIndex !== -1) {
     newList.splice(existingIndex, 1);
   } else {
     newList.push(targetObject);
   }
-
   return newList;
 };
 var computeValue = function computeValue(multiSelect, selectValue, setLabel) {
   if (!multiSelect) {
-    return (selectValue === null || selectValue === void 0 ? void 0 : selectValue.label.trim()) || '';
+    var _selectValue$label;
+    return (selectValue === null || selectValue === void 0 ? void 0 : (_selectValue$label = selectValue.label) === null || _selectValue$label === void 0 ? void 0 : _selectValue$label.trim()) || '';
   }
-
   var label = setLabel === null || setLabel === void 0 ? void 0 : setLabel(selectValue.length);
-
   if (label) {
     return label;
   }
-
   if (selectValue.length <= 2) {
     return selectValue.map(function (pair) {
       return "".concat(pair.label);
@@ -25744,12 +24016,10 @@ var handleKeyDownTrigger = function handleKeyDownTrigger(event, setOpenPopover, 
       setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(true);
       setHighlightFirstItem === null || setHighlightFirstItem === void 0 ? void 0 : setHighlightFirstItem(true);
       break;
-
     case 'ArrowDown':
       setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(true);
       setHighlightFirstItem === null || setHighlightFirstItem === void 0 ? void 0 : setHighlightFirstItem(true);
       break;
-
     case 'ArrowUp':
       setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(true);
       setHighlightLastItem === null || setHighlightLastItem === void 0 ? void 0 : setHighlightLastItem(true);
@@ -25758,17 +24028,14 @@ var handleKeyDownTrigger = function handleKeyDownTrigger(event, setOpenPopover, 
 };
 var focusListItem$1 = function focusListItem(position, setFocusedOption, listRef) {
   var _listRef$current, _listRef$current2, _targetOption, _targetOption2;
-
   var searchInput = (_listRef$current = listRef.current) === null || _listRef$current === void 0 ? void 0 : _listRef$current.querySelectorAll('[data-test="DesignSystem-Select--Input"]');
   var listItems = (_listRef$current2 = listRef.current) === null || _listRef$current2 === void 0 ? void 0 : _listRef$current2.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
   var targetOption;
-
   if (position === 'down') {
     targetOption = (searchInput === null || searchInput === void 0 ? void 0 : searchInput[0]) || (listItems === null || listItems === void 0 ? void 0 : listItems[0]);
   } else {
     targetOption = listItems === null || listItems === void 0 ? void 0 : listItems[listItems.length - 1];
   }
-
   (_targetOption = targetOption) === null || _targetOption === void 0 ? void 0 : _targetOption.focus();
   (_targetOption2 = targetOption) === null || _targetOption2 === void 0 ? void 0 : _targetOption2.scrollIntoView({
     block: 'center'
@@ -25781,23 +24048,19 @@ var handleKeyDown$2 = function handleKeyDown(event, focusedOption, setFocusedOpt
       event.preventDefault();
       navigateOptions$1('up', focusedOption, setFocusedOption, listRef, withSearch);
       break;
-
     case 'ArrowDown':
       event.preventDefault();
       navigateOptions$1('down', focusedOption, setFocusedOption, listRef, withSearch);
       break;
-
     case 'Enter':
       handleEnterKey(focusedOption);
       setHighlightLastItem === null || setHighlightLastItem === void 0 ? void 0 : setHighlightLastItem(false);
       setHighlightFirstItem === null || setHighlightFirstItem === void 0 ? void 0 : setHighlightFirstItem(false);
       break;
-
     case 'Tab':
       setHighlightLastItem === null || setHighlightLastItem === void 0 ? void 0 : setHighlightLastItem(false);
       setHighlightFirstItem === null || setHighlightFirstItem === void 0 ? void 0 : setHighlightFirstItem(false);
       break;
-
     case 'Escape':
       setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(false);
       triggerRef.current.focus();
@@ -25813,7 +24076,6 @@ var navigateOptions$1 = function navigateOptions(direction, focusedOption, setFo
   var index = Array.from(listItems).findIndex(function (item) {
     return item == focusedOption;
   });
-
   if (index === -1) {
     index = direction === 'up' ? listItems.length - 1 : 0;
   } else if (withSearch && index === 0 && direction === 'up' || withSearch && index === listItems.length - 1 && direction === 'down') {
@@ -25832,28 +24094,23 @@ var navigateOptions$1 = function navigateOptions(direction, focusedOption, setFo
 };
 var handleInputKeyDown = function handleInputKeyDown(event, listRef, setFocusedOption, setOpenPopover, triggerRef) {
   var _listRef$current3, _targetOption3, _targetOption4;
-
   var listItems = (_listRef$current3 = listRef.current) === null || _listRef$current3 === void 0 ? void 0 : _listRef$current3.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
   var targetOption;
-
   switch (event.key) {
     case 'ArrowUp':
       event.preventDefault();
       targetOption = listItems[listItems.length - 1];
       break;
-
     case 'ArrowDown':
       event.preventDefault();
       targetOption = listItems[0];
       break;
-
     case 'Escape':
       setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(false);
       triggerRef.current.focus();
       setFocusedOption === null || setFocusedOption === void 0 ? void 0 : setFocusedOption(undefined);
       break;
   }
-
   (_targetOption3 = targetOption) === null || _targetOption3 === void 0 ? void 0 : _targetOption3.focus();
   (_targetOption4 = targetOption) === null || _targetOption4 === void 0 ? void 0 : _targetOption4.scrollIntoView({
     block: 'center'
@@ -25861,53 +24118,49 @@ var handleInputKeyDown = function handleInputKeyDown(event, listRef, setFocusedO
   setFocusedOption && setFocusedOption(targetOption);
 };
 
-var _excluded$9 = ["children", "option", "checkedState", "onClick", "withCheckbox", "disabled"];
+var _excluded$h = ["children", "option", "checkedState", "onClick", "withCheckbox", "disabled"];
 var SelectOption = function SelectOption(props) {
+  var _classNames2;
   var children = props.children,
-      option = props.option,
-      checkedState = props.checkedState,
-      onClick = props.onClick,
-      _props$withCheckbox = props.withCheckbox,
-      withCheckbox = _props$withCheckbox === void 0 ? true : _props$withCheckbox,
-      disabled = props.disabled,
-      rest = _objectWithoutProperties(props, _excluded$9);
-
+    option = props.option,
+    checkedState = props.checkedState,
+    onClick = props.onClick,
+    _props$withCheckbox = props.withCheckbox,
+    withCheckbox = _props$withCheckbox === void 0 ? true : _props$withCheckbox,
+    disabled = props.disabled,
+    rest = _objectWithoutProperties(props, _excluded$h);
   var contextProp = React.useContext(SelectContext);
   var onOptionClick = contextProp.onOptionClick,
-      selectValue = contextProp.selectValue,
-      setSelectValue = contextProp.setSelectValue,
-      multiSelect = contextProp.multiSelect,
-      setIsOptionSelected = contextProp.setIsOptionSelected,
-      focusedOption = contextProp.focusedOption,
-      setFocusedOption = contextProp.setFocusedOption,
-      setHighlightFirstItem = contextProp.setHighlightFirstItem,
-      setHighlightLastItem = contextProp.setHighlightLastItem,
-      listRef = contextProp.listRef,
-      withSearch = contextProp.withSearch,
-      setOpenPopover = contextProp.setOpenPopover,
-      triggerRef = contextProp.triggerRef;
-
+    selectValue = contextProp.selectValue,
+    setSelectValue = contextProp.setSelectValue,
+    multiSelect = contextProp.multiSelect,
+    setIsOptionSelected = contextProp.setIsOptionSelected,
+    focusedOption = contextProp.focusedOption,
+    setFocusedOption = contextProp.setFocusedOption,
+    setHighlightFirstItem = contextProp.setHighlightFirstItem,
+    setHighlightLastItem = contextProp.setHighlightLastItem,
+    listRef = contextProp.listRef,
+    withSearch = contextProp.withSearch,
+    setOpenPopover = contextProp.setOpenPopover,
+    triggerRef = contextProp.triggerRef;
   var onClickHandler = function onClickHandler() {
     if (disabled) return;
-
     if (onClick) {
       onClick(option);
       return;
     }
-
     var newList = multiSelect && Array.isArray(selectValue) ? removeOrAddToList(option, selectValue) : option;
     setIsOptionSelected === null || setIsOptionSelected === void 0 ? void 0 : setIsOptionSelected(Array.isArray(newList) ? newList.length !== 0 : true);
     setSelectValue === null || setSelectValue === void 0 ? void 0 : setSelectValue(newList);
     onOptionClick === null || onOptionClick === void 0 ? void 0 : onOptionClick(newList);
   };
-
   var checked = checkedState === 'checked' || elementExist(option, selectValue) !== -1;
   var indeterminate = checkedState === 'indeterminate';
-
+  var optionItemClass = classnames(_defineProperty$1({}, 'Select-option', true));
+  var textClass = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'Select-option--text', true), _defineProperty$1(_classNames2, 'pt-2', multiSelect), _classNames2));
   var onKeyDownHandler = function onKeyDownHandler(event) {
     handleKeyDown$2(event, focusedOption, setFocusedOption, setHighlightFirstItem, setHighlightLastItem, listRef, withSearch, setOpenPopover, triggerRef);
   };
-
   return /*#__PURE__*/React.createElement(Listbox.Item, _extends$2({
     role: "option",
     onClick: onClickHandler,
@@ -25921,54 +24174,54 @@ var SelectOption = function SelectOption(props) {
     disabled: disabled,
     "data-test": "DesignSystem-Select-Option"
   }, rest), /*#__PURE__*/React.createElement("div", {
-    className: "d-flex align-items-center"
+    className: optionItemClass
   }, multiSelect && withCheckbox && /*#__PURE__*/React.createElement(Checkbox, {
     tabIndex: -1,
     "aria-checked": indeterminate ? 'mixed' : checked,
     checked: checked,
     indeterminate: indeterminate
   }), /*#__PURE__*/React.createElement("div", {
-    className: multiSelect ? 'Select-trigger-text pt-2' : 'Select-trigger-text'
+    className: textClass
   }, children)));
 };
 SelectOption.defaultProps = {
   withCheckbox: true
 };
 
-var _excluded$8 = ["triggerSize", "placeholder", "withClearButton", "icon", "disabled", "inlineLabel", "iconType", "onClear", "setLabel"];
-
+var _excluded$g = ["triggerSize", "placeholder", "withClearButton", "icon", "disabled", "inlineLabel", "iconType", "onClear", "setLabel"];
 var SelectTrigger = function SelectTrigger(props) {
-  var _classNames;
-
+  var _classNames, _classNames2;
   var triggerSize = props.triggerSize,
-      placeholder = props.placeholder,
-      withClearButton = props.withClearButton,
-      icon = props.icon,
-      disabled = props.disabled,
-      inlineLabel = props.inlineLabel,
-      iconType = props.iconType,
-      onClear = props.onClear,
-      setLabel = props.setLabel,
-      rest = _objectWithoutProperties(props, _excluded$8);
-
+    placeholder = props.placeholder,
+    withClearButton = props.withClearButton,
+    icon = props.icon,
+    disabled = props.disabled,
+    inlineLabel = props.inlineLabel,
+    iconType = props.iconType,
+    onClear = props.onClear,
+    setLabel = props.setLabel,
+    rest = _objectWithoutProperties(props, _excluded$g);
   var contextProp = React.useContext(SelectContext);
   var elementRef = React.useRef(null);
   var openPopover = contextProp.openPopover,
-      selectValue = contextProp.selectValue,
-      setSelectValue = contextProp.setSelectValue,
-      isOptionSelected = contextProp.isOptionSelected,
-      setIsOptionSelected = contextProp.setIsOptionSelected,
-      multiSelect = contextProp.multiSelect,
-      setOpenPopover = contextProp.setOpenPopover,
-      setHighlightFirstItem = contextProp.setHighlightFirstItem,
-      setHighlightLastItem = contextProp.setHighlightLastItem,
-      triggerRef = contextProp.triggerRef;
+    selectValue = contextProp.selectValue,
+    setSelectValue = contextProp.setSelectValue,
+    isOptionSelected = contextProp.isOptionSelected,
+    setIsOptionSelected = contextProp.setIsOptionSelected,
+    multiSelect = contextProp.multiSelect,
+    setOpenPopover = contextProp.setOpenPopover,
+    setHighlightFirstItem = contextProp.setHighlightFirstItem,
+    setHighlightLastItem = contextProp.setHighlightLastItem,
+    triggerRef = contextProp.triggerRef,
+    width = contextProp.width;
   var buttonDisabled = disabled ? 'disabled' : 'default';
   var trimmedPlaceholder = placeholder === null || placeholder === void 0 ? void 0 : placeholder.trim();
   var displayValue = computeValue(multiSelect, selectValue, setLabel);
   var value = isOptionSelected && displayValue.length > 0 ? displayValue : trimmedPlaceholder;
   var iconName = openPopover ? 'keyboard_arrow_up' : 'keyboard_arrow_down';
-
+  var triggerStyle = {
+    width: width
+  };
   var onClearHandler = function onClearHandler(event) {
     event.stopPropagation();
     var emptyValue = multiSelect ? [] : {
@@ -25977,14 +24230,12 @@ var SelectTrigger = function SelectTrigger(props) {
     };
     setSelectValue === null || setSelectValue === void 0 ? void 0 : setSelectValue(emptyValue);
     setIsOptionSelected === null || setIsOptionSelected === void 0 ? void 0 : setIsOptionSelected(false);
-
     if (onClear) {
       onClear(event);
     }
   };
-
   var buttonClass = classnames((_classNames = {}, _defineProperty$1(_classNames, 'Button', true), _defineProperty$1(_classNames, 'Select-trigger', true), _defineProperty$1(_classNames, "Select-trigger--".concat(triggerSize), triggerSize), _defineProperty$1(_classNames, 'Select-trigger--placeholder', !isOptionSelected), _defineProperty$1(_classNames, 'Select-trigger--icon', icon), _defineProperty$1(_classNames, 'Select-trigger--open', openPopover), _classNames));
-  var textClass = classnames(_defineProperty$1({}, 'Select-trigger-text', true));
+  var textClass = classnames((_classNames2 = {}, _defineProperty$1(_classNames2, 'Text', true), _defineProperty$1(_classNames2, 'Text--regular', true), _defineProperty$1(_classNames2, 'Select-trigger--text', true), _classNames2));
   return /*#__PURE__*/React.createElement(Tooltip, {
     showOnTruncation: true,
     showTooltip: !openPopover,
@@ -26001,6 +24252,7 @@ var SelectTrigger = function SelectTrigger(props) {
     className: buttonClass,
     disabled: disabled,
     tabIndex: 0,
+    style: triggerStyle,
     "aria-haspopup": "listbox",
     "aria-expanded": openPopover,
     "aria-label": "trigger",
@@ -26015,7 +24267,7 @@ var SelectTrigger = function SelectTrigger(props) {
     className: "d-flex align-items-center mr-4",
     name: icon,
     type: iconType
-  }), value && /*#__PURE__*/React.createElement(Text, {
+  }), value && /*#__PURE__*/React.createElement("span", {
     ref: elementRef,
     className: textClass
   }, value)), isOptionSelected && withClearButton && /*#__PURE__*/React.createElement(Icon, {
@@ -26033,46 +24285,41 @@ var SelectTrigger = function SelectTrigger(props) {
     type: iconType
   })));
 };
-
 SelectTrigger.defaultProps = {
   triggerSize: 'regular',
   placeholder: 'Select',
   withClearButton: true
 };
 
-var _excluded$7 = ["onChange", "onClear"];
+var _excluded$f = ["onChange", "onClear"];
 var SearchInput = function SearchInput(props) {
   var contextProp = React.useContext(SelectContext);
   var setWithSearch = contextProp.setWithSearch,
-      maxHeight = contextProp.maxHeight,
-      listRef = contextProp.listRef,
-      setFocusedOption = contextProp.setFocusedOption,
-      setOpenPopover = contextProp.setOpenPopover,
-      triggerRef = contextProp.triggerRef;
-
+    maxHeight = contextProp.maxHeight,
+    listRef = contextProp.listRef,
+    setFocusedOption = contextProp.setFocusedOption,
+    setOpenPopover = contextProp.setOpenPopover,
+    triggerRef = contextProp.triggerRef;
   var onChange = props.onChange,
-      onClear = props.onClear,
-      rest = _objectWithoutProperties(props, _excluded$7);
-
+    onClear = props.onClear,
+    rest = _objectWithoutProperties(props, _excluded$f);
   React.useEffect(function () {
     setWithSearch === null || setWithSearch === void 0 ? void 0 : setWithSearch(true);
   }, [maxHeight]);
-
   var searchHandler = function searchHandler(event) {
     if (onChange) onChange(event.target.value);
   };
-
   var searchClearHandler = function searchClearHandler(event) {
     if (onClear) onClear(event);
   };
-
   return /*#__PURE__*/React.createElement("div", {
     className: "Select-inputWrapper"
   }, /*#__PURE__*/React.createElement(Input, _extends$2({}, rest, {
     icon: 'search',
     onKeyDown: function onKeyDown(event) {
       return handleInputKeyDown(event, listRef, setFocusedOption, setOpenPopover, triggerRef);
-    } // TODO(a11y): research more on this.
+    }
+    // TODO(a11y): research more on this.
     // eslint-disable-next-line jsx-a11y/no-autofocus
     ,
     autoFocus: true,
@@ -26086,17 +24333,15 @@ var SearchInput = function SearchInput(props) {
   })));
 };
 
-var _excluded$6 = ["title", "description", "children"];
+var _excluded$e = ["title", "description", "children"];
 var SelectEmptyTemplate = function SelectEmptyTemplate(props) {
   var contextProp = React.useContext(SelectContext);
   var maxHeight = contextProp.maxHeight,
-      withSearch = contextProp.withSearch;
-
+    withSearch = contextProp.withSearch;
   var title = props.title,
-      description = props.description,
-      children = props.children,
-      rest = _objectWithoutProperties(props, _excluded$6);
-
+    description = props.description,
+    children = props.children,
+    rest = _objectWithoutProperties(props, _excluded$e);
   var searchInputHeight = 33;
   var wrapperStyle = {
     minHeight: withSearch ? maxHeight - searchInputHeight : maxHeight
@@ -26125,11 +24370,10 @@ var SelectEmptyTemplate = function SelectEmptyTemplate(props) {
   }, description), children && children));
 };
 
-var _excluded$5 = ["children"];
+var _excluded$d = ["children"];
 var SelectFooter = function SelectFooter(props) {
   var children = props.children,
-      rest = _objectWithoutProperties(props, _excluded$5);
-
+    rest = _objectWithoutProperties(props, _excluded$d);
   return /*#__PURE__*/React.createElement("div", _extends$2({
     className: "Select-buttonWrapper"
   }, rest), children);
@@ -26137,78 +24381,79 @@ var SelectFooter = function SelectFooter(props) {
 
 var Select = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var children = props.children,
-      onSelect = props.onSelect,
-      width = props.width,
-      maxHeight = props.maxHeight,
-      minHeight = props.minHeight,
-      value = props.value,
-      boundaryElement = props.boundaryElement,
-      appendToBody = props.appendToBody,
-      _props$multiSelect = props.multiSelect,
-      multiSelect = _props$multiSelect === void 0 ? false : _props$multiSelect,
-      onOutsideClick = props.onOutsideClick,
-      triggerOptions = props.triggerOptions,
-      popoverWidth = props.popoverWidth;
-
+    onSelect = props.onSelect,
+    width = props.width,
+    maxHeight = props.maxHeight,
+    minHeight = props.minHeight,
+    value = props.value,
+    boundaryElement = props.boundaryElement,
+    appendToBody = props.appendToBody,
+    _props$multiSelect = props.multiSelect,
+    multiSelect = _props$multiSelect === void 0 ? false : _props$multiSelect,
+    onOutsideClick = props.onOutsideClick,
+    triggerOptions = props.triggerOptions,
+    popoverWidth = props.popoverWidth,
+    trigger = props.trigger,
+    onToggle = props.onToggle;
   var _React$useState = React.useState(false),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      openPopover = _React$useState2[0],
-      setOpenPopover = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    openPopover = _React$useState2[0],
+    setOpenPopover = _React$useState2[1];
   var mapValue = mapInitialValue(multiSelect, value);
-
   var _React$useState3 = React.useState(mapValue),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      selectValue = _React$useState4[0],
-      setSelectValue = _React$useState4[1];
-
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    selectValue = _React$useState4[0],
+    setSelectValue = _React$useState4[1];
   var _React$useState5 = React.useState(false),
-      _React$useState6 = _slicedToArray(_React$useState5, 2),
-      isOptionSelected = _React$useState6[0],
-      setIsOptionSelected = _React$useState6[1];
-
+    _React$useState6 = _slicedToArray(_React$useState5, 2),
+    isOptionSelected = _React$useState6[0],
+    setIsOptionSelected = _React$useState6[1];
   var triggerRef = /*#__PURE__*/React.createRef();
   var listRef = React.useRef(null);
-
   var _React$useState7 = React.useState(false),
-      _React$useState8 = _slicedToArray(_React$useState7, 2),
-      withSearch = _React$useState8[0],
-      setWithSearch = _React$useState8[1];
-
+    _React$useState8 = _slicedToArray(_React$useState7, 2),
+    withSearch = _React$useState8[0],
+    setWithSearch = _React$useState8[1];
   var _React$useState9 = React.useState(),
-      _React$useState10 = _slicedToArray(_React$useState9, 2),
-      focusedOption = _React$useState10[0],
-      setFocusedOption = _React$useState10[1];
-
+    _React$useState10 = _slicedToArray(_React$useState9, 2),
+    focusedOption = _React$useState10[0],
+    setFocusedOption = _React$useState10[1];
   var _React$useState11 = React.useState(false),
-      _React$useState12 = _slicedToArray(_React$useState11, 2),
-      highlightFirstItem = _React$useState12[0],
-      setHighlightFirstItem = _React$useState12[1];
-
+    _React$useState12 = _slicedToArray(_React$useState11, 2),
+    highlightFirstItem = _React$useState12[0],
+    setHighlightFirstItem = _React$useState12[1];
   var _React$useState13 = React.useState(false),
-      _React$useState14 = _slicedToArray(_React$useState13, 2),
-      highlightLastItem = _React$useState14[0],
-      setHighlightLastItem = _React$useState14[1];
-
+    _React$useState14 = _slicedToArray(_React$useState13, 2),
+    highlightLastItem = _React$useState14[0],
+    setHighlightLastItem = _React$useState14[1];
   var _React$useState15 = React.useState({
-    width: popoverWidth || width
-  }),
-      _React$useState16 = _slicedToArray(_React$useState15, 2),
-      popoverStyle = _React$useState16[0],
-      setPopoverStyle = _React$useState16[1];
-
-  var triggerStyle = {
+      width: popoverWidth || width
+    }),
+    _React$useState16 = _slicedToArray(_React$useState15, 2),
+    popoverStyle = _React$useState16[0],
+    setPopoverStyle = _React$useState16[1];
+  var baseProps = extractBaseProps(props);
+  var WrapperStyle = trigger ? {} : {
     width: width
+  };
+  var getTriggerElement = function getTriggerElement() {
+    if (trigger) {
+      return /*#__PURE__*/React.cloneElement(trigger, {
+        ref: triggerRef
+      });
+    }
+    return /*#__PURE__*/React.createElement(SelectTrigger, _extends$2({
+      "aria-controls": "select-listbox"
+    }, triggerOptions));
   };
   React.useEffect(function () {
     var _triggerRef$current;
-
     // if popover width is not provided explicitly, apply the trigger width to popover width
-    if (!popoverWidth && (_triggerRef$current = triggerRef.current) !== null && _triggerRef$current !== void 0 && _triggerRef$current.clientWidth) {
-      var _triggerRef$current2;
-
+    var MIN_WIDTH = 176;
+    var triggerWidth = (_triggerRef$current = triggerRef.current) === null || _triggerRef$current === void 0 ? void 0 : _triggerRef$current.clientWidth;
+    if (!popoverWidth && triggerWidth) {
       setPopoverStyle(_objectSpread2(_objectSpread2({}, popoverStyle), {}, {
-        width: (_triggerRef$current2 = triggerRef.current) === null || _triggerRef$current2 === void 0 ? void 0 : _triggerRef$current2.clientWidth
+        width: trigger ? Math.max(triggerWidth || 0, MIN_WIDTH) : triggerWidth
       }));
     }
   }, []);
@@ -26258,28 +24503,27 @@ var Select = /*#__PURE__*/React.forwardRef(function (props, ref) {
   React.useEffect(function () {
     if (value) {
       setSelectValue(value);
-      setIsOptionSelected(Array.isArray(value) ? value.length > 0 : value.value.trim().length > 0);
+      setIsOptionSelected(Array.isArray(value) ? value.length > 0 : value && 'value' in value);
     }
   }, [value]);
-
   var onToggleHandler = function onToggleHandler(open) {
+    if (onToggle) {
+      onToggle(open);
+    }
     if (triggerOptions && triggerOptions.disabled) {
       setOpenPopover(false);
     } else {
-      setHighlightFirstItem(open);
       setOpenPopover(open);
+      setHighlightFirstItem(open);
     }
   };
-
   var onOptionClick = function onOptionClick(option) {
     onSelect === null || onSelect === void 0 ? void 0 : onSelect(option);
     !multiSelect && setOpenPopover(false);
   };
-
   var onOutsideClickHandler = function onOutsideClickHandler() {
     onOutsideClick === null || onOutsideClick === void 0 ? void 0 : onOutsideClick();
   };
-
   var contextProp = {
     openPopover: openPopover,
     setOpenPopover: setOpenPopover,
@@ -26303,22 +24547,21 @@ var Select = /*#__PURE__*/React.forwardRef(function (props, ref) {
   };
   return /*#__PURE__*/React.createElement(SelectContext.Provider, {
     value: contextProp
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", _extends$2({
     "data-test": "DesignSystem-Select",
+    style: WrapperStyle,
     "aria-haspopup": "listbox",
-    "aria-expanded": openPopover,
-    style: triggerStyle
-  }, /*#__PURE__*/React.createElement(Popover, {
+    "aria-expanded": openPopover
+  }, baseProps), /*#__PURE__*/React.createElement(Popover, {
     open: openPopover,
     onToggle: onToggleHandler,
     className: "mt-3",
     triggerClass: "d-block",
+    position: "bottom-start",
     customStyle: popoverStyle,
     boundaryElement: boundaryElement,
     appendToBody: appendToBody,
-    trigger: /*#__PURE__*/React.createElement(SelectTrigger, _extends$2({
-      "aria-controls": "select-listbox"
-    }, triggerOptions))
+    trigger: getTriggerElement()
   }, /*#__PURE__*/React.createElement(OutsideClick, {
     onOutsideClick: onOutsideClickHandler
   }, /*#__PURE__*/React.createElement("div", {
@@ -26339,13 +24582,12 @@ Select.SearchInput = SearchInput;
 Select.EmptyTemplate = SelectEmptyTemplate;
 Select.Footer = SelectFooter;
 
-var _excluded$4 = ["label", "children", "showDivider"];
+var _excluded$c = ["label", "children", "showDivider"];
 var MenuGroup = function MenuGroup(props) {
   var label = props.label,
-      children = props.children,
-      showDivider = props.showDivider,
-      rest = _objectWithoutProperties(props, _excluded$4);
-
+    children = props.children,
+    showDivider = props.showDivider,
+    rest = _objectWithoutProperties(props, _excluded$c);
   if (label) {
     return /*#__PURE__*/React__default.createElement("div", _extends$2({
       "data-test": "DesignSystem-Menu-Group",
@@ -26359,7 +24601,6 @@ var MenuGroup = function MenuGroup(props) {
       className: "Menu-Group-Label"
     }, label), children);
   }
-
   return /*#__PURE__*/React__default.createElement("div", _extends$2({
     "data-test": "DesignSystem-Menu-Group",
     role: "group"
@@ -26379,61 +24620,47 @@ var handleKeyDown$1 = function handleKeyDown(event, focusedOption, setFocusedOpt
       event.preventDefault();
       navigateOptions('up', focusedOption, setFocusedOption, listRef);
       break;
-
     case 'ArrowDown':
       event.preventDefault();
       navigateOptions('down', focusedOption, setFocusedOption, listRef);
       break;
-
     case 'Enter':
       focusedOption === null || focusedOption === void 0 ? void 0 : focusedOption.click();
       setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(false);
       break;
-
     case 'Escape':
       setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(false);
-
       if (triggerRef && !isSubMenuTrigger) {
         var _triggerRef$current;
-
         triggerRef === null || triggerRef === void 0 ? void 0 : (_triggerRef$current = triggerRef.current) === null || _triggerRef$current === void 0 ? void 0 : _triggerRef$current.focus();
       } else {
         var _menuTriggerRef$curre;
-
         menuTriggerRef === null || menuTriggerRef === void 0 ? void 0 : (_menuTriggerRef$curre = menuTriggerRef.current) === null || _menuTriggerRef$curre === void 0 ? void 0 : _menuTriggerRef$curre.focus();
       }
-
       setFocusedOption === null || setFocusedOption === void 0 ? void 0 : setFocusedOption(undefined);
       break;
-
     case 'Tab':
       setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(false);
       break;
-
     case 'ArrowRight':
       navigateSubMenu(isSubMenuTrigger, 'right', subListRef, menuID, triggerID, parentListRef);
       break;
-
     case 'ArrowLeft':
       navigateSubMenu(isSubMenuTrigger, 'left', subListRef, menuID, triggerID, parentListRef);
       break;
   }
 };
-
 var navigateOptions = function navigateOptions(direction, focusedOption, setFocusedOption, listRef) {
   var _listRef$current, _targetOption$scrollI;
-
   var listItems = (_listRef$current = listRef.current) === null || _listRef$current === void 0 ? void 0 : _listRef$current.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
   var index = Array.from(listItems).findIndex(function (item) {
     return item == focusedOption;
   });
-
   if (index === -1) {
     index = direction === 'up' ? listItems.length - 1 : 0;
   } else {
     index = direction === 'up' ? (index - 1 + listItems.length) % listItems.length : (index + 1) % listItems.length;
   }
-
   var targetOption = listItems[index];
   targetOption.focus();
   setFocusedOption && setFocusedOption(targetOption);
@@ -26441,21 +24668,17 @@ var navigateOptions = function navigateOptions(direction, focusedOption, setFocu
     block: 'center'
   });
 };
-
 var navigateSubMenu = function navigateSubMenu(isSubMenuTrigger, direction, subListRef, menuID, triggerID, parentListRef) {
   var element = document.querySelector("[data-name=\"".concat(menuID, "\"]"));
   var menuPlacement = element === null || element === void 0 ? void 0 : element.getAttribute('data-placement');
-
   if (isSubMenuTrigger) {
     if (direction === 'right' && menuPlacement !== null && menuPlacement !== void 0 && menuPlacement.includes('right') || direction === 'left' && menuPlacement !== null && menuPlacement !== void 0 && menuPlacement.includes('left')) {
       var _subListRef$current;
-
       var listItems = subListRef === null || subListRef === void 0 ? void 0 : (_subListRef$current = subListRef.current) === null || _subListRef$current === void 0 ? void 0 : _subListRef$current.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
       (listItems === null || listItems === void 0 ? void 0 : listItems[0]).focus();
     }
   } else if (direction === 'left' && menuPlacement !== null && menuPlacement !== void 0 && menuPlacement.includes('right') || direction === 'right' && menuPlacement !== null && menuPlacement !== void 0 && menuPlacement.includes('left')) {
     var _parentListRef$curren, _parentListRef$curren2;
-
     var triggerElement = parentListRef === null || parentListRef === void 0 ? void 0 : (_parentListRef$curren = parentListRef.current) === null || _parentListRef$curren === void 0 ? void 0 : (_parentListRef$curren2 = _parentListRef$curren.querySelector("#".concat(triggerID))) === null || _parentListRef$curren2 === void 0 ? void 0 : _parentListRef$curren2.firstChild;
     triggerElement === null || triggerElement === void 0 ? void 0 : triggerElement.focus();
   }
@@ -26463,43 +24686,39 @@ var navigateSubMenu = function navigateSubMenu(isSubMenuTrigger, direction, subL
 
 var SubMenuContext = /*#__PURE__*/React.createContext({});
 
-var _excluded$3 = ["children", "className", "onClick", "disabled", "onFocus"];
+var _excluded$b = ["children", "className", "onClick", "disabled", "onFocus"];
 var MenuItem = function MenuItem(props) {
   var children = props.children,
-      className = props.className,
-      onClick = props.onClick,
-      disabled = props.disabled,
-      onFocus = props.onFocus,
-      rest = _objectWithoutProperties(props, _excluded$3);
-
+    className = props.className,
+    onClick = props.onClick,
+    disabled = props.disabled,
+    onFocus = props.onFocus,
+    rest = _objectWithoutProperties(props, _excluded$b);
   var contextProp = React__default.useContext(MenuContext);
   var subMenuContextProp = React__default.useContext(SubMenuContext);
   var isSubMenuTrigger = false;
   var subListRef = null;
   var triggerRef = subMenuContextProp.triggerRef,
-      menuID = subMenuContextProp.menuID,
-      setParentOpen = subMenuContextProp.setParentOpen,
-      triggerID = subMenuContextProp.triggerID,
-      parentListRef = subMenuContextProp.parentListRef;
+    menuID = subMenuContextProp.menuID,
+    setParentOpen = subMenuContextProp.setParentOpen,
+    triggerID = subMenuContextProp.triggerID,
+    parentListRef = subMenuContextProp.parentListRef;
   var setOpenPopover = contextProp.setOpenPopover,
-      focusedOption = contextProp.focusedOption,
-      setFocusedOption = contextProp.setFocusedOption,
-      menuTriggerRef = contextProp.menuTriggerRef,
-      listRef = contextProp.listRef;
+    focusedOption = contextProp.focusedOption,
+    setFocusedOption = contextProp.setFocusedOption,
+    menuTriggerRef = contextProp.menuTriggerRef,
+    listRef = contextProp.listRef;
   var MenuItemClassName = classnames({
     'Menu-Item': true
   }, className);
   React__default.useEffect(function () {
     var _parentListRef$curren, _parentListRef$curren2;
-
     var handlePopoverOpen = function handlePopoverOpen() {
       setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(true);
     };
-
     var handlePopoverClose = function handlePopoverClose() {
       setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(false);
     };
-
     var triggerElement = parentListRef === null || parentListRef === void 0 ? void 0 : (_parentListRef$curren = parentListRef.current) === null || _parentListRef$curren === void 0 ? void 0 : (_parentListRef$curren2 = _parentListRef$curren.querySelector("#".concat(triggerID))) === null || _parentListRef$curren2 === void 0 ? void 0 : _parentListRef$curren2.firstChild;
     triggerElement === null || triggerElement === void 0 ? void 0 : triggerElement.addEventListener('focus', handlePopoverOpen);
     triggerElement === null || triggerElement === void 0 ? void 0 : triggerElement.addEventListener('blur', handlePopoverClose);
@@ -26508,27 +24727,22 @@ var MenuItem = function MenuItem(props) {
       triggerElement === null || triggerElement === void 0 ? void 0 : triggerElement.removeEventListener('blur', handlePopoverClose);
     };
   }, [triggerID]);
-
   var onFocusHandler = function onFocusHandler(event) {
     setFocusedOption === null || setFocusedOption === void 0 ? void 0 : setFocusedOption(event.target);
     setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(true);
     onFocus === null || onFocus === void 0 ? void 0 : onFocus(event);
   };
-
   var onKeyDownHandler = function onKeyDownHandler(event) {
     handleKeyDown$1(event, focusedOption, setFocusedOption, setOpenPopover, menuTriggerRef, listRef, subListRef, isSubMenuTrigger, triggerRef, menuID, triggerID, parentListRef);
   };
-
   var onClickHandler = function onClickHandler(event) {
     if (disabled) {
       return;
     }
-
     setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(false);
     onClick === null || onClick === void 0 ? void 0 : onClick(event);
     setParentOpen === null || setParentOpen === void 0 ? void 0 : setParentOpen(false);
   };
-
   return /*#__PURE__*/React__default.createElement(Listbox.Item, _extends$2({
     "data-test": "DesignSystem-Menu-ListItem",
     className: MenuItemClassName,
@@ -26546,11 +24760,10 @@ MenuItem.defaultProps = {
   tagName: 'a'
 };
 
-var _excluded$2 = ["children"];
+var _excluded$a = ["children"];
 var MenuList = function MenuList(props) {
   var children = props.children,
-      rest = _objectWithoutProperties(props, _excluded$2);
-
+    rest = _objectWithoutProperties(props, _excluded$a);
   return /*#__PURE__*/React__default.createElement(Listbox, _extends$2({
     "data-test": "DesignSystem-Menu-List"
   }, rest), children);
@@ -26569,13 +24782,11 @@ var handleKeyDown = function handleKeyDown(event, setOpenPopover, setHighlightFi
       setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(true);
       setHighlightLastItem === null || setHighlightLastItem === void 0 ? void 0 : setHighlightLastItem(true);
       break;
-
     case 'ArrowDown':
       event.preventDefault();
       setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(true);
       setHighlightFirstItem === null || setHighlightFirstItem === void 0 ? void 0 : setHighlightFirstItem(true);
       break;
-
     case 'Escape':
     case 'Tab':
       setOpenPopover === null || setOpenPopover === void 0 ? void 0 : setOpenPopover(false);
@@ -26584,26 +24795,20 @@ var handleKeyDown = function handleKeyDown(event, setOpenPopover, setHighlightFi
 };
 var focusListItem = function focusListItem(position, setFocusedOption, listRef) {
   var _listRef$current, _targetOption;
-
   var listItems = (_listRef$current = listRef.current) === null || _listRef$current === void 0 ? void 0 : _listRef$current.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
   var targetOption;
-
   if (position === 'down') {
     targetOption = listItems === null || listItems === void 0 ? void 0 : listItems[0];
   } else {
     targetOption = listItems === null || listItems === void 0 ? void 0 : listItems[listItems.length - 1];
   }
-
   (_targetOption = targetOption) === null || _targetOption === void 0 ? void 0 : _targetOption.focus();
-
   if (targetOption && typeof targetOption.scrollIntoView === 'function') {
     var _targetOption2;
-
     (_targetOption2 = targetOption) === null || _targetOption2 === void 0 ? void 0 : _targetOption2.scrollIntoView({
       block: 'end'
     });
   }
-
   setFocusedOption && setFocusedOption(targetOption);
 };
 
@@ -26611,18 +24816,16 @@ var MenuTrigger = function MenuTrigger(props) {
   var className = props.className;
   var contextProp = React__default.useContext(MenuContext);
   var openPopover = contextProp.openPopover,
-      setOpenPopover = contextProp.setOpenPopover,
-      setHighlightFirstItem = contextProp.setHighlightFirstItem,
-      setHighlightLastItem = contextProp.setHighlightLastItem,
-      menuTriggerRef = contextProp.menuTriggerRef;
+    setOpenPopover = contextProp.setOpenPopover,
+    setHighlightFirstItem = contextProp.setHighlightFirstItem,
+    setHighlightLastItem = contextProp.setHighlightLastItem,
+    menuTriggerRef = contextProp.menuTriggerRef;
   var triggerClassName = classnames({
     'Menu-Trigger--active': openPopover
   }, className);
-
   var onKeyDownHandler = function onKeyDownHandler(event) {
     handleKeyDown(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem);
   };
-
   return /*#__PURE__*/React__default.createElement(Button, _extends$2({
     "data-test": "DesignSystem-Menu-Trigger",
     icon: "more_horiz",
@@ -26640,27 +24843,23 @@ var SubMenu = function SubMenu(props) {
   var children = props.children;
   var menuID = "DesignSystem-Menu--Popover-".concat(uidGenerator());
   var triggerID = "DesignSystem-Menu--Trigger-".concat(uidGenerator());
-
   var _React$Children$toArr = React__default.Children.toArray(children),
-      _React$Children$toArr2 = _slicedToArray(_React$Children$toArr, 2),
-      submenuTrigger = _React$Children$toArr2[0],
-      submenuContent = _React$Children$toArr2[1];
-
+    _React$Children$toArr2 = _slicedToArray(_React$Children$toArr, 2),
+    submenuTrigger = _React$Children$toArr2[0],
+    submenuContent = _React$Children$toArr2[1];
   var contextProp = React__default.useContext(MenuContext);
   var subListRef = React__default.useRef(null);
   var triggerRef = React__default.useRef(null);
   var isSubMenuTrigger = true;
   var subMenuElement = /*#__PURE__*/React__default.createElement(React__default.Fragment, null);
   var setOpenPopover = contextProp.setOpenPopover,
-      focusedOption = contextProp.focusedOption,
-      setFocusedOption = contextProp.setFocusedOption,
-      menuTriggerRef = contextProp.menuTriggerRef,
-      listRef = contextProp.listRef;
-
+    focusedOption = contextProp.focusedOption,
+    setFocusedOption = contextProp.setFocusedOption,
+    menuTriggerRef = contextProp.menuTriggerRef,
+    listRef = contextProp.listRef;
   var onKeyDownHandler = function onKeyDownHandler(event) {
     handleKeyDown$1(event, focusedOption, setFocusedOption, setOpenPopover, menuTriggerRef, listRef, subListRef, isSubMenuTrigger, triggerRef, menuID);
   };
-
   var subMenuContextProp = {
     triggerRef: triggerRef,
     menuID: menuID,
@@ -26676,12 +24875,10 @@ var SubMenu = function SubMenu(props) {
     'aria-controls': menuID,
     id: triggerID
   }));
-
-  if ( /*#__PURE__*/React__default.isValidElement(submenuContent)) {
+  if (/*#__PURE__*/React__default.isValidElement(submenuContent)) {
     var _submenuContent$props = submenuContent === null || submenuContent === void 0 ? void 0 : submenuContent.props,
-        on = _submenuContent$props.on,
-        _children = _submenuContent$props.children;
-
+      on = _submenuContent$props.on,
+      _children = _submenuContent$props.children;
     subMenuElement = /*#__PURE__*/React__default.cloneElement(submenuContent, _objectSpread2(_objectSpread2({}, submenuContent.props), {}, {
       on: on || 'hover',
       offset: 'small',
@@ -26691,42 +24888,37 @@ var SubMenu = function SubMenu(props) {
       trigger: triggerElement
     }));
   }
-
   return /*#__PURE__*/React__default.createElement(SubMenuContext.Provider, {
     value: subMenuContextProp
   }, subMenuElement);
 };
 
-var _excluded$1 = ["children", "width", "minHeight", "maxHeight", "className", "open"];
+var _excluded$9 = ["children", "width", "minHeight", "maxHeight", "className", "open", "onToggle"];
 var Menu = function Menu(props) {
   var children = props.children,
-      width = props.width,
-      minHeight = props.minHeight,
-      maxHeight = props.maxHeight,
-      className = props.className,
-      open = props.open,
-      rest = _objectWithoutProperties(props, _excluded$1);
-
+    width = props.width,
+    minHeight = props.minHeight,
+    maxHeight = props.maxHeight,
+    className = props.className,
+    open = props.open,
+    onToggle = props.onToggle,
+    rest = _objectWithoutProperties(props, _excluded$9);
   var _React$useState = React__default.useState(open),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      openPopover = _React$useState2[0],
-      setOpenPopover = _React$useState2[1];
-
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    openPopover = _React$useState2[0],
+    setOpenPopover = _React$useState2[1];
   var _React$useState3 = React__default.useState(false),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      highlightFirstItem = _React$useState4[0],
-      setHighlightFirstItem = _React$useState4[1];
-
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    highlightFirstItem = _React$useState4[0],
+    setHighlightFirstItem = _React$useState4[1];
   var _React$useState5 = React__default.useState(false),
-      _React$useState6 = _slicedToArray(_React$useState5, 2),
-      highlightLastItem = _React$useState6[0],
-      setHighlightLastItem = _React$useState6[1];
-
+    _React$useState6 = _slicedToArray(_React$useState5, 2),
+    highlightLastItem = _React$useState6[0],
+    setHighlightLastItem = _React$useState6[1];
   var _React$useState7 = React__default.useState(),
-      _React$useState8 = _slicedToArray(_React$useState7, 2),
-      focusedOption = _React$useState8[0],
-      setFocusedOption = _React$useState8[1];
-
+    _React$useState8 = _slicedToArray(_React$useState7, 2),
+    focusedOption = _React$useState8[0],
+    setFocusedOption = _React$useState8[1];
   var listRef = /*#__PURE__*/React__default.createRef();
   var menuTriggerRef = React__default.useRef(null);
   var subMenuContextProp = React__default.useContext(SubMenuContext);
@@ -26754,12 +24946,11 @@ var Menu = function Menu(props) {
       setHighlightFirstItem(false);
       setHighlightLastItem(false);
     }
+    onToggle === null || onToggle === void 0 ? void 0 : onToggle(openPopover);
   }, [openPopover]);
-
   var onToggleHandler = function onToggleHandler(open) {
     setOpenPopover(open);
   };
-
   var contextProp = {
     openPopover: openPopover,
     setOpenPopover: setOpenPopover,
@@ -26804,17 +24995,93 @@ Menu.defaultProps = {
   position: 'bottom-start'
 };
 
-var img$1 = "data:image/svg+xml,%3csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M10 0C10 5.52285 5.52285 10 0 10C5.52285 10 10 14.4772 10 20C10 14.4772 14.4772 10 20 10C14.4772 10 10 5.52285 10 0ZM20 14C20 17.3137 17.3137 20 14 20C17.3137 20 20 22.6863 20 26C20 22.6863 22.6863 20 26 20C22.6863 20 20 17.3137 20 14Z' fill='%232F2F2F'/%3e%3c/svg%3e";
+var KeyElement = function KeyElement(props) {
+  var children = props.children,
+    icon = props.icon,
+    iconOptions = props.iconOptions,
+    iconAlign = props.iconAlign,
+    label = props.label,
+    className = props.className;
+  var baseProps = extractBaseProps(props);
+  var iconClassNames = classnames('py-2', {
+    'mr-3': iconAlign === 'left',
+    'ml-3': iconAlign === 'right'
+  });
+  var keyClassNames = classnames('d-flex', 'align-items-center', className);
+  if (children) {
+    return /*#__PURE__*/React.createElement("dt", _extends$2({
+      "data-test": "DesignSystem-KeyValuePair-KeyElement"
+    }, baseProps), children);
+  }
+  return /*#__PURE__*/React.createElement("dt", _extends$2({
+    "data-test": "DesignSystem-KeyValuePair-KeyElement"
+  }, baseProps, {
+    className: keyClassNames
+  }), icon && iconAlign === 'left' && /*#__PURE__*/React.createElement(Icon, _extends$2({
+    appearance: "subtle",
+    name: icon,
+    className: iconClassNames,
+    "data-test": "DesignSystem-KeyValuePair-Icon--Left"
+  }, iconOptions)), label && /*#__PURE__*/React.createElement(Text, {
+    weight: "medium",
+    appearance: "subtle"
+  }, label), icon && iconAlign === 'right' && /*#__PURE__*/React.createElement(Icon, _extends$2({
+    appearance: "subtle",
+    name: icon,
+    className: iconClassNames,
+    "data-test": "DesignSystem-KeyValuePair-Icon--Right"
+  }, iconOptions)));
+};
+KeyElement.defaultProps = {
+  iconAlign: 'left'
+};
 
-var img = "data:image/svg+xml,%3csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M10 0C10 5.52285 5.52285 10 0 10C5.52285 10 10 14.4772 10 20C10 14.4772 14.4772 10 20 10C14.4772 10 10 5.52285 10 0ZM20 14C20 17.3137 17.3137 20 14 20C17.3137 20 20 22.6863 20 26C20 22.6863 22.6863 20 26 20C22.6863 20 20 17.3137 20 14Z' fill='white'/%3e%3c/svg%3e";
+var ValueElement = function ValueElement(props) {
+  var children = props.children,
+    value = props.value,
+    className = props.className;
+  var baseProps = extractBaseProps(props);
+  var valueClassNames = classnames('m-0', className);
+  if (children) {
+    return /*#__PURE__*/React.createElement("dd", _extends$2({
+      "data-test": "DesignSystem-KeyValuePair-ValueElement"
+    }, baseProps, {
+      className: valueClassNames
+    }), children);
+  }
+  return /*#__PURE__*/React.createElement("dd", _extends$2({
+    "data-test": "DesignSystem-KeyValuePair-ValueElement"
+  }, baseProps, {
+    className: valueClassNames
+  }), value && /*#__PURE__*/React.createElement(Text, null, value));
+};
 
-var _excluded = ["appearance", "className", "children"];
+var KeyValuePair = function KeyValuePair(props) {
+  var children = props.children,
+    className = props.className;
+  var pairClassNames = classnames('m-0', className);
+  return /*#__PURE__*/React.createElement("dl", _extends$2({
+    "data-test": "DesignSystem-KeyValuePair"
+  }, props, {
+    className: pairClassNames
+  }), children);
+};
+KeyValuePair.Key = KeyElement;
+KeyValuePair.Value = ValueElement;
+
+var img$4 = "data:image/svg+xml,%3csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M10 0C10 5.52285 5.52285 10 0 10C5.52285 10 10 14.4772 10 20C10 14.4772 14.4772 10 20 10C14.4772 10 10 5.52285 10 0ZM20 14C20 17.3137 17.3137 20 14 20C17.3137 20 20 22.6863 20 26C20 22.6863 22.6863 20 26 20C22.6863 20 20 17.3137 20 14Z' fill='%231f1f1f'/%3e%3c/svg%3e";
+
+var img$3 = "data:image/svg+xml,%3csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M10 0C10 5.52285 5.52285 10 0 10C5.52285 10 10 14.4772 10 20C10 14.4772 14.4772 10 20 10C14.4772 10 10 5.52285 10 0ZM20 14C20 17.3137 17.3137 20 14 20C17.3137 20 20 22.6863 20 26C20 22.6863 22.6863 20 26 20C22.6863 20 20 17.3137 20 14Z' fill='%23A6A6A6'/%3e%3c/svg%3e";
+
+var img$2 = "data:image/svg+xml,%3csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M10 0C10 5.52285 5.52285 10 0 10C5.52285 10 10 14.4772 10 20C10 14.4772 14.4772 10 20 10C14.4772 10 10 5.52285 10 0ZM20 14C20 17.3137 17.3137 20 14 20C17.3137 20 20 22.6863 20 26C20 22.6863 22.6863 20 26 20C22.6863 20 20 17.3137 20 14Z' fill='white'/%3e%3c/svg%3e";
+
+var _excluded$8 = ["appearance", "className", "children", "disabled"];
 var AIButton = function AIButton(props) {
   var appearance = props.appearance,
-      className = props.className,
-      children = props.children,
-      rest = _objectWithoutProperties(props, _excluded);
-
+    className = props.className,
+    children = props.children,
+    disabled = props.disabled,
+    rest = _objectWithoutProperties(props, _excluded$8);
   var buttonClassNames = classnames({
     AIButton: true,
     'AIButton--primary': appearance === 'primary',
@@ -26823,10 +25090,11 @@ var AIButton = function AIButton(props) {
   var IconClassNames = classnames({
     'AIButton-Icon': true
   });
-  var buttonIcon = appearance === 'primary' ? img : img$1;
+  var buttonIcon = appearance === 'primary' ? img$2 : disabled ? img$3 : img$4;
   return /*#__PURE__*/React.createElement("button", _extends$2({
     className: buttonClassNames,
-    "data-test": "DesignSystem-AI-Button"
+    "data-test": "DesignSystem-AI-Button",
+    disabled: disabled
   }, rest), /*#__PURE__*/React.createElement("img", {
     src: buttonIcon,
     alt: "Button Icon",
@@ -26841,6 +25109,4343 @@ AIButton.defaultProps = {
   type: 'button'
 };
 
-var version = "2.34.0";
+var img$1 = "data:image/svg+xml,%3csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M18 3C18 11.2843 11.2843 18 3 18C11.2843 18 18 24.7157 18 33C18 24.7157 24.7157 18 33 18C24.7157 18 18 11.2843 18 3ZM33 24C33 28.9706 28.9706 33 24 33C28.9706 33 33 37.0294 33 42C33 37.0294 37.0294 33 42 33C37.0294 33 33 28.9706 33 24Z' fill='url(%23paint0_linear_3166_11159)'/%3e%3cdefs%3e%3clinearGradient id='paint0_linear_3166_11159' x1='16.5' y1='9.75' x2='24.8926' y2='36.3113' gradientUnits='userSpaceOnUse'%3e%3cstop stop-color='%23FFC208'/%3e%3cstop offset='1' stop-color='%23E31C79'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e";
 
-export { AIButton, ActionCard, Avatar, AvatarGroup, AvatarSelection, Backdrop, Badge, Breadcrumbs, Button, Calendar, Caption, Card, CardBody, CardFooter, CardHeader, CardSubdued, ChatMessage, Checkbox, Chip, ChipGroup, ChipInput, ChoiceList, Collapsible, Column, Combobox, DatePicker, DateRangePicker, Dialog, Divider, Dropdown, Dropzone, EditableChipInput, EditableDropdown, EditableInput, EmptyState, FileList, FileUploader, FileUploaderList, FullscreenModal, Grid, GridCell, Heading, HelpText, HorizontalNav, Icon, InlineMessage, Input, X as InputMask, Label, Legend, Link, LinkButton, List, Listbox, Menu, Message, MetaList, MetricInput, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, MultiSlider, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderImage, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Select, SelectionCard, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, Tabs, TabsWrapper, Text, TextField, Textarea, TimePicker, Toast, Tooltip, index as Utils, VerificationCodeInput, VerticalNav, version };
+var v$3 = "4.8.0";
+var meta$3 = {
+	g: "LottieFiles AE 3.5.4",
+	a: "",
+	k: "",
+	d: "",
+	tc: ""
+};
+var fr$3 = 60;
+var ip$3 = 0;
+var op$3 = 120;
+var w$3 = 400;
+var h$3 = 400;
+var nm$3 = "A";
+var assets$3 = [
+	{
+		id: "comp_0",
+		layers: [
+			{
+				ind: 1,
+				ty: 4,
+				nm: "L",
+				sr: 1,
+				ks: {
+					o: {
+						a: 0,
+						k: 100
+					},
+					r: {
+						a: 0,
+						k: 0
+					},
+					p: {
+						a: 1,
+						k: [
+							{
+								i: {
+									x: 0.667,
+									y: 1
+								},
+								o: {
+									x: 0.167,
+									y: 0.167
+								},
+								t: 0,
+								s: [
+									163,
+									163,
+									0
+								],
+								to: [
+									0,
+									0,
+									0
+								],
+								ti: [
+									0,
+									0,
+									0
+								]
+							},
+							{
+								i: {
+									x: 0.667,
+									y: 1
+								},
+								o: {
+									x: 0.333,
+									y: 0
+								},
+								t: 20,
+								s: [
+									163,
+									128,
+									0
+								],
+								to: [
+									0,
+									0,
+									0
+								],
+								ti: [
+									0,
+									0,
+									0
+								]
+							},
+							{
+								i: {
+									x: 0.667,
+									y: 1
+								},
+								o: {
+									x: 0.333,
+									y: 0
+								},
+								t: 45,
+								s: [
+									163,
+									173,
+									0
+								],
+								to: [
+									0,
+									0,
+									0
+								],
+								ti: [
+									0,
+									0,
+									0
+								]
+							},
+							{
+								t: 55,
+								s: [
+									163,
+									163,
+									0
+								]
+							}
+						]
+					},
+					a: {
+						a: 0,
+						k: [
+							-37.5,
+							-37.5,
+							0
+						]
+					},
+					s: {
+						a: 0,
+						k: [
+							100,
+							100,
+							100
+						]
+					}
+				},
+				ao: 0,
+				shapes: [
+					{
+						ind: 0,
+						ty: "sh",
+						ks: {
+							a: 0,
+							k: {
+								i: [
+									[
+										0,
+										69.036
+									],
+									[
+										69.036,
+										0
+									],
+									[
+										0,
+										-69.036
+									],
+									[
+										-69.036,
+										0
+									]
+								],
+								o: [
+									[
+										0,
+										69.036
+									],
+									[
+										69.036,
+										0
+									],
+									[
+										0,
+										-69.036
+									],
+									[
+										-69.036,
+										0
+									]
+								],
+								v: [
+									[
+										-37.5,
+										-162.5
+									],
+									[
+										-162.5,
+										-37.5
+									],
+									[
+										-37.5,
+										87.5
+									],
+									[
+										87.5,
+										-37.5
+									]
+								],
+								c: true
+							}
+						},
+						nm: "P"
+					},
+					{
+						ty: "mm",
+						mm: 1,
+						nm: "M"
+					},
+					{
+						ty: "gf",
+						o: {
+							a: 0,
+							k: 100
+						},
+						r: 1,
+						g: {
+							p: 3,
+							k: {
+								a: 0,
+								k: [
+									0,
+									1,
+									0.761,
+									0.031,
+									0.5,
+									0.945,
+									0.435,
+									0.253,
+									1,
+									0.89,
+									0.11,
+									0.475
+								]
+							}
+						},
+						s: {
+							a: 0,
+							k: [
+								-47.5,
+								-114
+							]
+						},
+						e: {
+							a: 0,
+							k: [
+								49.962,
+								105.608
+							]
+						},
+						t: 1,
+						nm: "G"
+					}
+				],
+				ip: 0,
+				op: 120,
+				st: 0
+			},
+			{
+				ind: 2,
+				ty: 4,
+				nm: "S",
+				sr: 1,
+				ks: {
+					o: {
+						a: 0,
+						k: 100
+					},
+					r: {
+						a: 0,
+						k: 0
+					},
+					p: {
+						a: 1,
+						k: [
+							{
+								i: {
+									x: 0.571,
+									y: 0.571
+								},
+								o: {
+									x: 0.167,
+									y: 0.167
+								},
+								t: 0,
+								s: [
+									287,
+									287,
+									0
+								],
+								to: [
+									0,
+									0,
+									0
+								],
+								ti: [
+									0,
+									0,
+									0
+								]
+							},
+							{
+								i: {
+									x: 0.704,
+									y: 1
+								},
+								o: {
+									x: 0.332,
+									y: 0.152
+								},
+								t: 15,
+								s: [
+									287,
+									287,
+									0
+								],
+								to: [
+									0,
+									0,
+									0
+								],
+								ti: [
+									0,
+									0,
+									0
+								]
+							},
+							{
+								i: {
+									x: 0.667,
+									y: 1
+								},
+								o: {
+									x: 0.333,
+									y: 0
+								},
+								t: 30,
+								s: [
+									287,
+									270,
+									0
+								],
+								to: [
+									0,
+									0,
+									0
+								],
+								ti: [
+									0,
+									0,
+									0
+								]
+							},
+							{
+								i: {
+									x: 0.667,
+									y: 1
+								},
+								o: {
+									x: 0.333,
+									y: 0
+								},
+								t: 60,
+								s: [
+									287,
+									293,
+									0
+								],
+								to: [
+									0,
+									0,
+									0
+								],
+								ti: [
+									0,
+									0,
+									0
+								]
+							},
+							{
+								t: 67,
+								s: [
+									287,
+									287,
+									0
+								]
+							}
+						]
+					},
+					a: {
+						a: 0,
+						k: [
+							87.5,
+							87.5,
+							0
+						]
+					},
+					s: {
+						a: 0,
+						k: [
+							100,
+							100,
+							100
+						]
+					}
+				},
+				ao: 0,
+				shapes: [
+					{
+						ind: 0,
+						ty: "sh",
+						ks: {
+							a: 0,
+							k: {
+								i: [
+									[
+										0,
+										41.421
+									],
+									[
+										41.421,
+										0
+									],
+									[
+										0,
+										-41.421
+									],
+									[
+										-41.421,
+										0
+									]
+								],
+								o: [
+									[
+										0,
+										41.421
+									],
+									[
+										41.421,
+										0
+									],
+									[
+										0,
+										-41.421
+									],
+									[
+										-41.421,
+										0
+									]
+								],
+								v: [
+									[
+										87.5,
+										12.5
+									],
+									[
+										12.5,
+										87.5
+									],
+									[
+										87.5,
+										162.5
+									],
+									[
+										162.5,
+										87.5
+									]
+								],
+								c: true
+							}
+						},
+						nm: "P"
+					},
+					{
+						ty: "mm",
+						mm: 1,
+						nm: "M"
+					},
+					{
+						ty: "gf",
+						o: {
+							a: 0,
+							k: 100
+						},
+						r: 1,
+						g: {
+							p: 3,
+							k: {
+								a: 0,
+								k: [
+									0,
+									1,
+									0.761,
+									0.031,
+									0.5,
+									0.945,
+									0.435,
+									0.253,
+									1,
+									0.89,
+									0.11,
+									0.475
+								]
+							}
+						},
+						s: {
+							a: 0,
+							k: [
+								-47.5,
+								-114
+							]
+						},
+						e: {
+							a: 0,
+							k: [
+								49.962,
+								105.608
+							]
+						},
+						t: 1,
+						nm: "G"
+					}
+				],
+				ip: 0,
+				op: 120,
+				st: 0
+			}
+		]
+	}
+];
+var layers$3 = [
+	{
+		ind: 1,
+		ty: 4,
+		nm: "G",
+		sr: 1,
+		ks: {
+			o: {
+				a: 0,
+				k: 100
+			},
+			r: {
+				a: 0,
+				k: 0
+			},
+			p: {
+				a: 0,
+				k: [
+					200,
+					200,
+					0
+				]
+			},
+			a: {
+				a: 0,
+				k: [
+					0,
+					0,
+					0
+				]
+			},
+			s: {
+				a: 0,
+				k: [
+					140,
+					140,
+					100
+				]
+			}
+		},
+		ao: 0,
+		ef: [
+			{
+				ty: 28,
+				nm: "S",
+				np: 8,
+				en: 1,
+				ef: [
+					{
+						ty: 10,
+						nm: "T",
+						v: {
+							a: 0,
+							k: 2
+						}
+					},
+					{
+						ty: 7,
+						nm: "U",
+						v: {
+							a: 0,
+							k: 4
+						}
+					},
+					{
+						ty: 7,
+						nm: "I",
+						v: {
+							a: 0,
+							k: 0
+						}
+					},
+					{
+						ty: 7,
+						nm: "I",
+						v: {
+							a: 0,
+							k: 1
+						}
+					},
+					{
+						ty: 7,
+						nm: "C",
+						v: {
+							a: 0,
+							k: 1
+						}
+					},
+					{
+						ty: 7,
+						nm: "P",
+						v: {
+							a: 0,
+							k: 1
+						}
+					}
+				]
+			}
+		],
+		shapes: [
+			{
+				ty: "gr",
+				it: [
+					{
+						ty: "rc",
+						d: 1,
+						s: {
+							a: 0,
+							k: [
+								400,
+								400
+							]
+						},
+						p: {
+							a: 0,
+							k: [
+								0,
+								0
+							]
+						},
+						r: {
+							a: 0,
+							k: 0
+						},
+						nm: "R"
+					},
+					{
+						ty: "st",
+						c: {
+							a: 0,
+							k: [
+								1,
+								1,
+								1,
+								1
+							]
+						},
+						o: {
+							a: 0,
+							k: 100
+						},
+						w: {
+							a: 0,
+							k: 2
+						},
+						lc: 1,
+						lj: 1,
+						ml: 4,
+						nm: "S"
+					},
+					{
+						ty: "gf",
+						o: {
+							a: 0,
+							k: 100
+						},
+						r: 1,
+						g: {
+							p: 3,
+							k: {
+								a: 0,
+								k: [
+									0,
+									1,
+									0.761,
+									0.031,
+									0.5,
+									0.945,
+									0.435,
+									0.253,
+									1,
+									0.89,
+									0.11,
+									0.475
+								]
+							}
+						},
+						s: {
+							a: 0,
+							k: [
+								-26,
+								-85
+							]
+						},
+						e: {
+							a: 0,
+							k: [
+								39,
+								45
+							]
+						},
+						t: 1,
+						nm: "G"
+					},
+					{
+						ty: "tr",
+						p: {
+							a: 0,
+							k: [
+								-0.209,
+								0.658
+							]
+						},
+						a: {
+							a: 0,
+							k: [
+								0,
+								0
+							]
+						},
+						s: {
+							a: 0,
+							k: [
+								100,
+								100
+							]
+						},
+						r: {
+							a: 0,
+							k: 0
+						},
+						o: {
+							a: 0,
+							k: 100
+						},
+						sk: {
+							a: 0,
+							k: 0
+						},
+						sa: {
+							a: 0,
+							k: 0
+						},
+						nm: "T"
+					}
+				],
+				nm: "R"
+			}
+		],
+		ip: 0,
+		op: 120,
+		st: 0
+	},
+	{
+		ind: 2,
+		ty: 0,
+		nm: "[",
+		refId: "comp_0",
+		sr: 1,
+		ks: {
+			o: {
+				a: 0,
+				k: 100
+			},
+			r: {
+				a: 0,
+				k: 0
+			},
+			p: {
+				a: 0,
+				k: [
+					200,
+					200,
+					0
+				]
+			},
+			a: {
+				a: 0,
+				k: [
+					200,
+					200,
+					0
+				]
+			},
+			s: {
+				a: 0,
+				k: [
+					100,
+					100,
+					100
+				]
+			}
+		},
+		ao: 0,
+		w: 400,
+		h: 400,
+		ip: 0,
+		op: 120,
+		st: 0
+	}
+];
+var markers$3 = [
+];
+var Listening = {
+	v: v$3,
+	meta: meta$3,
+	fr: fr$3,
+	ip: ip$3,
+	op: op$3,
+	w: w$3,
+	h: h$3,
+	nm: nm$3,
+	assets: assets$3,
+	layers: layers$3,
+	markers: markers$3
+};
+
+var v$2 = "4.8.0";
+var meta$2 = {
+	g: "LottieFiles AE 3.5.4",
+	a: "",
+	k: "",
+	d: "",
+	tc: ""
+};
+var fr$2 = 60;
+var ip$2 = 0;
+var op$2 = 180;
+var w$2 = 400;
+var h$2 = 400;
+var nm$2 = "A";
+var assets$2 = [
+	{
+		id: "comp_0",
+		layers: [
+			{
+				ind: 1,
+				ty: 4,
+				nm: "L",
+				sr: 1,
+				ks: {
+					o: {
+						a: 0,
+						k: 100
+					},
+					r: {
+						a: 0,
+						k: 0
+					},
+					p: {
+						a: 0,
+						k: [
+							163,
+							163,
+							0
+						]
+					},
+					a: {
+						a: 0,
+						k: [
+							-37.5,
+							-37.5,
+							0
+						]
+					},
+					s: {
+						a: 1,
+						k: [
+							{
+								i: {
+									x: [
+										0.667,
+										0.667,
+										0.667
+									],
+									y: [
+										1,
+										1,
+										1
+									]
+								},
+								o: {
+									x: [
+										0.333,
+										0.333,
+										0.333
+									],
+									y: [
+										0,
+										0,
+										0
+									]
+								},
+								t: 0,
+								s: [
+									100,
+									100,
+									100
+								]
+							},
+							{
+								i: {
+									x: [
+										0.667,
+										0.667,
+										0.667
+									],
+									y: [
+										1,
+										1,
+										1
+									]
+								},
+								o: {
+									x: [
+										0.333,
+										0.333,
+										0.333
+									],
+									y: [
+										0,
+										0,
+										0
+									]
+								},
+								t: 15,
+								s: [
+									130,
+									130,
+									100
+								]
+							},
+							{
+								t: 30,
+								s: [
+									100,
+									100,
+									100
+								]
+							}
+						]
+					}
+				},
+				ao: 0,
+				shapes: [
+					{
+						ind: 0,
+						ty: "sh",
+						ks: {
+							a: 0,
+							k: {
+								i: [
+									[
+										0,
+										69.036
+									],
+									[
+										69.036,
+										0
+									],
+									[
+										0,
+										-69.036
+									],
+									[
+										-69.036,
+										0
+									]
+								],
+								o: [
+									[
+										0,
+										69.036
+									],
+									[
+										69.036,
+										0
+									],
+									[
+										0,
+										-69.036
+									],
+									[
+										-69.036,
+										0
+									]
+								],
+								v: [
+									[
+										-37.5,
+										-162.5
+									],
+									[
+										-162.5,
+										-37.5
+									],
+									[
+										-37.5,
+										87.5
+									],
+									[
+										87.5,
+										-37.5
+									]
+								],
+								c: true
+							}
+						},
+						nm: "P"
+					},
+					{
+						ty: "mm",
+						mm: 1,
+						nm: "M"
+					},
+					{
+						ty: "gf",
+						o: {
+							a: 0,
+							k: 100
+						},
+						r: 1,
+						g: {
+							p: 3,
+							k: {
+								a: 0,
+								k: [
+									0,
+									1,
+									0.761,
+									0.031,
+									0.5,
+									0.945,
+									0.435,
+									0.253,
+									1,
+									0.89,
+									0.11,
+									0.475
+								]
+							}
+						},
+						s: {
+							a: 0,
+							k: [
+								-47.5,
+								-114
+							]
+						},
+						e: {
+							a: 0,
+							k: [
+								49.962,
+								105.608
+							]
+						},
+						t: 1,
+						nm: "G"
+					}
+				],
+				ip: 0,
+				op: 187,
+				st: 0
+			},
+			{
+				ind: 2,
+				ty: 4,
+				nm: "S",
+				sr: 1,
+				ks: {
+					o: {
+						a: 0,
+						k: 100
+					},
+					r: {
+						a: 0,
+						k: 0
+					},
+					p: {
+						a: 0,
+						k: [
+							287,
+							287,
+							0
+						]
+					},
+					a: {
+						a: 0,
+						k: [
+							87.5,
+							87.5,
+							0
+						]
+					},
+					s: {
+						a: 1,
+						k: [
+							{
+								i: {
+									x: [
+										0.667,
+										0.667,
+										0.667
+									],
+									y: [
+										1,
+										1,
+										1
+									]
+								},
+								o: {
+									x: [
+										0.333,
+										0.333,
+										0.333
+									],
+									y: [
+										0,
+										0,
+										0
+									]
+								},
+								t: 0,
+								s: [
+									100,
+									100,
+									100
+								]
+							},
+							{
+								i: {
+									x: [
+										0.667,
+										0.667,
+										0.667
+									],
+									y: [
+										1,
+										1,
+										1
+									]
+								},
+								o: {
+									x: [
+										0.333,
+										0.333,
+										0.333
+									],
+									y: [
+										0,
+										0,
+										0
+									]
+								},
+								t: 10,
+								s: [
+									100,
+									100,
+									100
+								]
+							},
+							{
+								i: {
+									x: [
+										0.667,
+										0.667,
+										0.667
+									],
+									y: [
+										1,
+										1,
+										1
+									]
+								},
+								o: {
+									x: [
+										0.333,
+										0.333,
+										0.333
+									],
+									y: [
+										0,
+										0,
+										0
+									]
+								},
+								t: 25,
+								s: [
+									120,
+									120,
+									100
+								]
+							},
+							{
+								t: 40,
+								s: [
+									100,
+									100,
+									100
+								]
+							}
+						]
+					}
+				},
+				ao: 0,
+				shapes: [
+					{
+						ind: 0,
+						ty: "sh",
+						ks: {
+							a: 0,
+							k: {
+								i: [
+									[
+										0,
+										41.421
+									],
+									[
+										41.421,
+										0
+									],
+									[
+										0,
+										-41.421
+									],
+									[
+										-41.421,
+										0
+									]
+								],
+								o: [
+									[
+										0,
+										41.421
+									],
+									[
+										41.421,
+										0
+									],
+									[
+										0,
+										-41.421
+									],
+									[
+										-41.421,
+										0
+									]
+								],
+								v: [
+									[
+										87.5,
+										12.5
+									],
+									[
+										12.5,
+										87.5
+									],
+									[
+										87.5,
+										162.5
+									],
+									[
+										162.5,
+										87.5
+									]
+								],
+								c: true
+							}
+						},
+						nm: "P"
+					},
+					{
+						ty: "mm",
+						mm: 1,
+						nm: "M"
+					},
+					{
+						ty: "gf",
+						o: {
+							a: 0,
+							k: 100
+						},
+						r: 1,
+						g: {
+							p: 3,
+							k: {
+								a: 0,
+								k: [
+									0,
+									1,
+									0.761,
+									0.031,
+									0.5,
+									0.945,
+									0.435,
+									0.253,
+									1,
+									0.89,
+									0.11,
+									0.475
+								]
+							}
+						},
+						s: {
+							a: 0,
+							k: [
+								-47.5,
+								-114
+							]
+						},
+						e: {
+							a: 0,
+							k: [
+								49.962,
+								105.608
+							]
+						},
+						t: 1,
+						nm: "G"
+					}
+				],
+				ip: 0,
+				op: 208,
+				st: 0
+			}
+		]
+	}
+];
+var layers$2 = [
+	{
+		ind: 1,
+		ty: 4,
+		nm: "S",
+		sr: 1,
+		ks: {
+			o: {
+				a: 0,
+				k: 100
+			},
+			r: {
+				a: 0,
+				k: 0
+			},
+			p: {
+				a: 1,
+				k: [
+					{
+						i: {
+							x: 0.667,
+							y: 1
+						},
+						o: {
+							x: 0.333,
+							y: 0
+						},
+						t: 60,
+						s: [
+							200,
+							200,
+							0
+						],
+						to: [
+							0,
+							0,
+							0
+						],
+						ti: [
+							0,
+							0,
+							0
+						]
+					},
+					{
+						t: 90,
+						s: [
+							440,
+							449.5,
+							0
+						]
+					}
+				]
+			},
+			a: {
+				a: 0,
+				k: [
+					0,
+					0,
+					0
+				]
+			},
+			s: {
+				a: 0,
+				k: [
+					100,
+					100,
+					100
+				]
+			}
+		},
+		ao: 0,
+		ef: [
+			{
+				ty: 28,
+				nm: "S",
+				np: 8,
+				en: 1,
+				ef: [
+					{
+						ty: 10,
+						nm: "T",
+						v: {
+							a: 0,
+							k: 3
+						}
+					},
+					{
+						ty: 7,
+						nm: "U",
+						v: {
+							a: 0,
+							k: 4
+						}
+					},
+					{
+						ty: 7,
+						nm: "I",
+						v: {
+							a: 0,
+							k: 0
+						}
+					},
+					{
+						ty: 7,
+						nm: "I",
+						v: {
+							a: 0,
+							k: 1
+						}
+					},
+					{
+						ty: 7,
+						nm: "C",
+						v: {
+							a: 0,
+							k: 1
+						}
+					},
+					{
+						ty: 7,
+						nm: "P",
+						v: {
+							a: 0,
+							k: 1
+						}
+					}
+				]
+			}
+		],
+		shapes: [
+			{
+				ty: "gr",
+				it: [
+					{
+						ind: 0,
+						ty: "sh",
+						ks: {
+							a: 0,
+							k: {
+								i: [
+									[
+										37.834,
+										0
+									],
+									[
+										0,
+										-5.181
+									],
+									[
+										-37.834,
+										0
+									],
+									[
+										0,
+										5.181
+									]
+								],
+								o: [
+									[
+										-37.834,
+										0
+									],
+									[
+										0,
+										5.181
+									],
+									[
+										37.834,
+										0
+									],
+									[
+										0,
+										-5.181
+									]
+								],
+								v: [
+									[
+										0,
+										-9.381
+									],
+									[
+										-68.505,
+										0
+									],
+									[
+										0,
+										9.381
+									],
+									[
+										68.505,
+										0
+									]
+								],
+								c: true
+							}
+						},
+						nm: "P"
+					},
+					{
+						ty: "st",
+						c: {
+							a: 0,
+							k: [
+								1,
+								1,
+								1,
+								1
+							]
+						},
+						o: {
+							a: 0,
+							k: 100
+						},
+						w: {
+							a: 0,
+							k: 0
+						},
+						lc: 1,
+						lj: 1,
+						ml: 4,
+						nm: "S"
+					},
+					{
+						ty: "gf",
+						o: {
+							a: 0,
+							k: 100
+						},
+						r: 1,
+						g: {
+							p: 3,
+							k: {
+								a: 0,
+								k: [
+									0,
+									1,
+									1,
+									1,
+									0.5,
+									1,
+									1,
+									1,
+									1,
+									1,
+									1,
+									1,
+									0,
+									1,
+									0.5,
+									0.5,
+									1,
+									0
+								]
+							}
+						},
+						s: {
+							a: 0,
+							k: [
+								0.249,
+								0.249
+							]
+						},
+						e: {
+							a: 0,
+							k: [
+								91.305,
+								-0.238
+							]
+						},
+						t: 2,
+						h: {
+							a: 0,
+							k: 0
+						},
+						a: {
+							a: 0,
+							k: 90
+						},
+						nm: "G"
+					},
+					{
+						ty: "tr",
+						p: {
+							a: 0,
+							k: [
+								-116.514,
+								-105.125
+							]
+						},
+						a: {
+							a: 0,
+							k: [
+								0,
+								0
+							]
+						},
+						s: {
+							a: 0,
+							k: [
+								124.149,
+								173.892
+							]
+						},
+						r: {
+							a: 0,
+							k: -41.711
+						},
+						o: {
+							a: 0,
+							k: 100
+						},
+						sk: {
+							a: 0,
+							k: 0
+						},
+						sa: {
+							a: 0,
+							k: 0
+						},
+						nm: "T"
+					}
+				],
+				nm: "E"
+			}
+		],
+		ip: 0,
+		op: 180,
+		st: 0
+	},
+	{
+		ind: 2,
+		ty: 4,
+		nm: "G",
+		sr: 1,
+		ks: {
+			o: {
+				a: 0,
+				k: 100
+			},
+			r: {
+				a: 0,
+				k: 0
+			},
+			p: {
+				a: 0,
+				k: [
+					200,
+					200,
+					0
+				]
+			},
+			a: {
+				a: 0,
+				k: [
+					0,
+					0,
+					0
+				]
+			},
+			s: {
+				a: 0,
+				k: [
+					140,
+					140,
+					100
+				]
+			}
+		},
+		ao: 0,
+		ef: [
+			{
+				ty: 28,
+				nm: "S",
+				np: 8,
+				en: 1,
+				ef: [
+					{
+						ty: 10,
+						nm: "T",
+						v: {
+							a: 0,
+							k: 3
+						}
+					},
+					{
+						ty: 7,
+						nm: "U",
+						v: {
+							a: 0,
+							k: 4
+						}
+					},
+					{
+						ty: 7,
+						nm: "I",
+						v: {
+							a: 0,
+							k: 0
+						}
+					},
+					{
+						ty: 7,
+						nm: "I",
+						v: {
+							a: 0,
+							k: 1
+						}
+					},
+					{
+						ty: 7,
+						nm: "C",
+						v: {
+							a: 0,
+							k: 1
+						}
+					},
+					{
+						ty: 7,
+						nm: "P",
+						v: {
+							a: 0,
+							k: 1
+						}
+					}
+				]
+			}
+		],
+		shapes: [
+			{
+				ty: "gr",
+				it: [
+					{
+						ty: "rc",
+						d: 1,
+						s: {
+							a: 0,
+							k: [
+								400,
+								400
+							]
+						},
+						p: {
+							a: 0,
+							k: [
+								0,
+								0
+							]
+						},
+						r: {
+							a: 0,
+							k: 0
+						},
+						nm: "R"
+					},
+					{
+						ty: "st",
+						c: {
+							a: 0,
+							k: [
+								1,
+								1,
+								1,
+								1
+							]
+						},
+						o: {
+							a: 0,
+							k: 100
+						},
+						w: {
+							a: 0,
+							k: 2
+						},
+						lc: 1,
+						lj: 1,
+						ml: 4,
+						nm: "S"
+					},
+					{
+						ty: "gf",
+						o: {
+							a: 0,
+							k: 100
+						},
+						r: 1,
+						g: {
+							p: 3,
+							k: {
+								a: 0,
+								k: [
+									0,
+									1,
+									0.761,
+									0.031,
+									0.5,
+									0.945,
+									0.435,
+									0.253,
+									1,
+									0.89,
+									0.11,
+									0.475
+								]
+							}
+						},
+						s: {
+							a: 0,
+							k: [
+								-26,
+								-85
+							]
+						},
+						e: {
+							a: 0,
+							k: [
+								39,
+								45
+							]
+						},
+						t: 1,
+						nm: "G"
+					},
+					{
+						ty: "tr",
+						p: {
+							a: 0,
+							k: [
+								-0.209,
+								0.658
+							]
+						},
+						a: {
+							a: 0,
+							k: [
+								0,
+								0
+							]
+						},
+						s: {
+							a: 0,
+							k: [
+								100,
+								100
+							]
+						},
+						r: {
+							a: 0,
+							k: 0
+						},
+						o: {
+							a: 0,
+							k: 100
+						},
+						sk: {
+							a: 0,
+							k: 0
+						},
+						sa: {
+							a: 0,
+							k: 0
+						},
+						nm: "T"
+					}
+				],
+				nm: "R"
+			}
+		],
+		ip: 0,
+		op: 180,
+		st: 0
+	},
+	{
+		ind: 3,
+		ty: 0,
+		nm: "[",
+		refId: "comp_0",
+		sr: 1,
+		ks: {
+			o: {
+				a: 0,
+				k: 100
+			},
+			r: {
+				a: 0,
+				k: 0
+			},
+			p: {
+				a: 0,
+				k: [
+					200,
+					200,
+					0
+				]
+			},
+			a: {
+				a: 0,
+				k: [
+					200,
+					200,
+					0
+				]
+			},
+			s: {
+				a: 0,
+				k: [
+					100,
+					100,
+					100
+				]
+			}
+		},
+		ao: 0,
+		w: 400,
+		h: 400,
+		ip: 0,
+		op: 180,
+		st: 0
+	}
+];
+var markers$2 = [
+];
+var AIProcessingLong = {
+	v: v$2,
+	meta: meta$2,
+	fr: fr$2,
+	ip: ip$2,
+	op: op$2,
+	w: w$2,
+	h: h$2,
+	nm: nm$2,
+	assets: assets$2,
+	layers: layers$2,
+	markers: markers$2
+};
+
+var v$1 = "4.8.0";
+var meta$1 = {
+	g: "LottieFiles AE 3.5.4",
+	a: "Anagh Sharma",
+	k: "",
+	d: "Progress indicator to be used for showing AI processing input for a short period of time.",
+	tc: ""
+};
+var fr$1 = 60;
+var ip$1 = 0;
+var op$1 = 120;
+var w$1 = 400;
+var h$1 = 400;
+var nm$1 = "A";
+var assets$1 = [
+	{
+		id: "comp_0",
+		layers: [
+			{
+				ind: 1,
+				ty: 4,
+				nm: "L",
+				sr: 1,
+				ks: {
+					o: {
+						a: 0,
+						k: 100
+					},
+					r: {
+						a: 1,
+						k: [
+							{
+								i: {
+									x: [
+										0.667
+									],
+									y: [
+										1
+									]
+								},
+								o: {
+									x: [
+										0.167
+									],
+									y: [
+										0.167
+									]
+								},
+								t: 0,
+								s: [
+									0
+								]
+							},
+							{
+								t: 90,
+								s: [
+									270
+								]
+							}
+						]
+					},
+					p: {
+						a: 0,
+						k: [
+							163,
+							163,
+							0
+						]
+					},
+					a: {
+						a: 0,
+						k: [
+							-37.5,
+							-37.5,
+							0
+						]
+					},
+					s: {
+						a: 0,
+						k: [
+							100,
+							100,
+							100
+						]
+					}
+				},
+				ao: 0,
+				shapes: [
+					{
+						ind: 0,
+						ty: "sh",
+						ks: {
+							a: 0,
+							k: {
+								i: [
+									[
+										0,
+										69.036
+									],
+									[
+										69.036,
+										0
+									],
+									[
+										0,
+										-69.036
+									],
+									[
+										-69.036,
+										0
+									]
+								],
+								o: [
+									[
+										0,
+										69.036
+									],
+									[
+										69.036,
+										0
+									],
+									[
+										0,
+										-69.036
+									],
+									[
+										-69.036,
+										0
+									]
+								],
+								v: [
+									[
+										-37.5,
+										-162.5
+									],
+									[
+										-162.5,
+										-37.5
+									],
+									[
+										-37.5,
+										87.5
+									],
+									[
+										87.5,
+										-37.5
+									]
+								],
+								c: true
+							}
+						},
+						nm: "P"
+					},
+					{
+						ty: "mm",
+						mm: 1,
+						nm: "M"
+					},
+					{
+						ty: "gf",
+						o: {
+							a: 0,
+							k: 100
+						},
+						r: 1,
+						g: {
+							p: 3,
+							k: {
+								a: 0,
+								k: [
+									0,
+									1,
+									0.761,
+									0.031,
+									0.5,
+									0.945,
+									0.435,
+									0.253,
+									1,
+									0.89,
+									0.11,
+									0.475
+								]
+							}
+						},
+						s: {
+							a: 0,
+							k: [
+								-47.5,
+								-114
+							]
+						},
+						e: {
+							a: 0,
+							k: [
+								49.962,
+								105.608
+							]
+						},
+						t: 1,
+						nm: "G"
+					}
+				],
+				ip: 0,
+				op: 308,
+				st: 0
+			},
+			{
+				ind: 2,
+				ty: 4,
+				nm: "S",
+				sr: 1,
+				ks: {
+					o: {
+						a: 0,
+						k: 100
+					},
+					r: {
+						a: 1,
+						k: [
+							{
+								i: {
+									x: [
+										0.667
+									],
+									y: [
+										1
+									]
+								},
+								o: {
+									x: [
+										0.167
+									],
+									y: [
+										0.167
+									]
+								},
+								t: 0,
+								s: [
+									0
+								]
+							},
+							{
+								t: 90,
+								s: [
+									360
+								]
+							}
+						]
+					},
+					p: {
+						a: 0,
+						k: [
+							287,
+							287,
+							0
+						]
+					},
+					a: {
+						a: 0,
+						k: [
+							87.5,
+							87.5,
+							0
+						]
+					},
+					s: {
+						a: 0,
+						k: [
+							100,
+							100,
+							100
+						]
+					}
+				},
+				ao: 0,
+				shapes: [
+					{
+						ind: 0,
+						ty: "sh",
+						ks: {
+							a: 0,
+							k: {
+								i: [
+									[
+										0,
+										41.421
+									],
+									[
+										41.421,
+										0
+									],
+									[
+										0,
+										-41.421
+									],
+									[
+										-41.421,
+										0
+									]
+								],
+								o: [
+									[
+										0,
+										41.421
+									],
+									[
+										41.421,
+										0
+									],
+									[
+										0,
+										-41.421
+									],
+									[
+										-41.421,
+										0
+									]
+								],
+								v: [
+									[
+										87.5,
+										12.5
+									],
+									[
+										12.5,
+										87.5
+									],
+									[
+										87.5,
+										162.5
+									],
+									[
+										162.5,
+										87.5
+									]
+								],
+								c: true
+							}
+						},
+						nm: "P"
+					},
+					{
+						ty: "mm",
+						mm: 1,
+						nm: "M"
+					},
+					{
+						ty: "gf",
+						o: {
+							a: 0,
+							k: 100
+						},
+						r: 1,
+						g: {
+							p: 3,
+							k: {
+								a: 0,
+								k: [
+									0,
+									1,
+									0.761,
+									0.031,
+									0.5,
+									0.945,
+									0.435,
+									0.253,
+									1,
+									0.89,
+									0.11,
+									0.475
+								]
+							}
+						},
+						s: {
+							a: 0,
+							k: [
+								-47.5,
+								-114
+							]
+						},
+						e: {
+							a: 0,
+							k: [
+								49.962,
+								105.608
+							]
+						},
+						t: 1,
+						nm: "G"
+					}
+				],
+				ip: 0,
+				op: 316,
+				st: 0
+			}
+		]
+	}
+];
+var layers$1 = [
+	{
+		ind: 1,
+		ty: 4,
+		nm: "G",
+		sr: 1,
+		ks: {
+			o: {
+				a: 0,
+				k: 100
+			},
+			r: {
+				a: 0,
+				k: 0
+			},
+			p: {
+				a: 0,
+				k: [
+					200,
+					200,
+					0
+				]
+			},
+			a: {
+				a: 0,
+				k: [
+					0,
+					0,
+					0
+				]
+			},
+			s: {
+				a: 0,
+				k: [
+					140,
+					140,
+					100
+				]
+			}
+		},
+		ao: 0,
+		ef: [
+			{
+				ty: 28,
+				nm: "S",
+				np: 8,
+				en: 1,
+				ef: [
+					{
+						ty: 10,
+						nm: "T",
+						v: {
+							a: 0,
+							k: 2
+						}
+					},
+					{
+						ty: 7,
+						nm: "U",
+						v: {
+							a: 0,
+							k: 4
+						}
+					},
+					{
+						ty: 7,
+						nm: "I",
+						v: {
+							a: 0,
+							k: 0
+						}
+					},
+					{
+						ty: 7,
+						nm: "I",
+						v: {
+							a: 0,
+							k: 1
+						}
+					},
+					{
+						ty: 7,
+						nm: "C",
+						v: {
+							a: 0,
+							k: 1
+						}
+					},
+					{
+						ty: 7,
+						nm: "P",
+						v: {
+							a: 0,
+							k: 1
+						}
+					}
+				]
+			}
+		],
+		shapes: [
+			{
+				ty: "gr",
+				it: [
+					{
+						ty: "rc",
+						d: 1,
+						s: {
+							a: 0,
+							k: [
+								400,
+								400
+							]
+						},
+						p: {
+							a: 0,
+							k: [
+								0,
+								0
+							]
+						},
+						r: {
+							a: 0,
+							k: 0
+						},
+						nm: "R"
+					},
+					{
+						ty: "st",
+						c: {
+							a: 0,
+							k: [
+								1,
+								1,
+								1,
+								1
+							]
+						},
+						o: {
+							a: 0,
+							k: 100
+						},
+						w: {
+							a: 0,
+							k: 2
+						},
+						lc: 1,
+						lj: 1,
+						ml: 4,
+						nm: "S"
+					},
+					{
+						ty: "gf",
+						o: {
+							a: 0,
+							k: 100
+						},
+						r: 1,
+						g: {
+							p: 3,
+							k: {
+								a: 1,
+								k: [
+									{
+										i: {
+											x: 0.667,
+											y: 1
+										},
+										o: {
+											x: 0.333,
+											y: 0
+										},
+										t: 0,
+										s: [
+											0,
+											1,
+											0.761,
+											0.031,
+											0.5,
+											0.945,
+											0.435,
+											0.253,
+											1,
+											0.89,
+											0.11,
+											0.475
+										]
+									},
+									{
+										i: {
+											x: 0.667,
+											y: 1
+										},
+										o: {
+											x: 0.333,
+											y: 0
+										},
+										t: 45,
+										s: [
+											0,
+											0.89,
+											0.11,
+											0.475,
+											0.5,
+											0.945,
+											0.435,
+											0.253,
+											1,
+											1,
+											0.761,
+											0.031
+										]
+									},
+									{
+										t: 90,
+										s: [
+											0,
+											1,
+											0.761,
+											0.031,
+											0.5,
+											0.945,
+											0.435,
+											0.253,
+											1,
+											0.89,
+											0.11,
+											0.475
+										]
+									}
+								]
+							}
+						},
+						s: {
+							a: 0,
+							k: [
+								-26,
+								-85
+							]
+						},
+						e: {
+							a: 0,
+							k: [
+								39,
+								45
+							]
+						},
+						t: 1,
+						nm: "G"
+					},
+					{
+						ty: "tr",
+						p: {
+							a: 0,
+							k: [
+								-0.209,
+								0.658
+							]
+						},
+						a: {
+							a: 0,
+							k: [
+								0,
+								0
+							]
+						},
+						s: {
+							a: 0,
+							k: [
+								100,
+								100
+							]
+						},
+						r: {
+							a: 0,
+							k: 0
+						},
+						o: {
+							a: 0,
+							k: 100
+						},
+						sk: {
+							a: 0,
+							k: 0
+						},
+						sa: {
+							a: 0,
+							k: 0
+						},
+						nm: "T"
+					}
+				],
+				nm: "R"
+			}
+		],
+		ip: 0,
+		op: 125,
+		st: 0
+	},
+	{
+		ind: 2,
+		ty: 0,
+		nm: "[",
+		refId: "comp_0",
+		sr: 1,
+		ks: {
+			o: {
+				a: 0,
+				k: 100
+			},
+			r: {
+				a: 0,
+				k: 0
+			},
+			p: {
+				a: 0,
+				k: [
+					200,
+					200,
+					0
+				]
+			},
+			a: {
+				a: 0,
+				k: [
+					200,
+					200,
+					0
+				]
+			},
+			s: {
+				a: 0,
+				k: [
+					100,
+					100,
+					100
+				]
+			}
+		},
+		ao: 0,
+		w: 400,
+		h: 400,
+		ip: 0,
+		op: 300,
+		st: 0
+	}
+];
+var markers$1 = [
+];
+var AIProcessingShort = {
+	v: v$1,
+	meta: meta$1,
+	fr: fr$1,
+	ip: ip$1,
+	op: op$1,
+	w: w$1,
+	h: h$1,
+	nm: nm$1,
+	assets: assets$1,
+	layers: layers$1,
+	markers: markers$1
+};
+
+var _excluded$7 = ["size", "state", "alt", "className"];
+var SaraSparkle = function SaraSparkle(props) {
+  var size = props.size,
+    state = props.state,
+    alt = props.alt,
+    className = props.className,
+    rest = _objectWithoutProperties(props, _excluded$7);
+  var stateMapping = {
+    listening: Listening,
+    'short-processing': AIProcessingShort,
+    'long-processing': AIProcessingLong
+  };
+  var SaraClassNames = classnames({
+    'align-bottom': state === 'default'
+  }, className);
+  if (state === 'default') {
+    return /*#__PURE__*/React.createElement("div", _extends$2({
+      "data-test": "DesignSystem-AI-Sara-Sparkle"
+    }, rest), /*#__PURE__*/React.createElement("img", {
+      src: img$1,
+      alt: alt,
+      width: size,
+      height: size,
+      className: SaraClassNames
+    }));
+  }
+  return /*#__PURE__*/React.createElement("div", _extends$2({
+    "data-test": "DesignSystem-AI-Sara-Sparkle",
+    className: className
+  }, rest), /*#__PURE__*/React.createElement(Player, {
+    autoplay: true,
+    loop: true,
+    src: state && stateMapping[state] || Listening,
+    style: {
+      height: size,
+      width: size
+    }
+  }));
+};
+SaraSparkle.defaultProps = {
+  size: 24,
+  state: 'default'
+};
+
+var v = "4.8.0";
+var meta = {
+	g: "LottieFiles AE 3.5.4",
+	a: "Anagh Sharma",
+	k: "",
+	d: "Progress indicator to be used for showing Sara when it is idle.",
+	tc: ""
+};
+var fr = 60;
+var ip = 0;
+var op = 360;
+var w = 96;
+var h = 96;
+var nm = "S";
+var assets = [
+	{
+		id: "comp_0",
+		layers: [
+			{
+				ind: 1,
+				ty: 4,
+				nm: "S",
+				sr: 1,
+				ks: {
+					o: {
+						a: 0,
+						k: 100
+					},
+					r: {
+						a: 1,
+						k: [
+							{
+								i: {
+									x: [
+										0.833
+									],
+									y: [
+										0.833
+									]
+								},
+								o: {
+									x: [
+										0.167
+									],
+									y: [
+										0.167
+									]
+								},
+								t: 0,
+								s: [
+									0
+								]
+							},
+							{
+								t: 360,
+								s: [
+									360
+								]
+							}
+						]
+					},
+					p: {
+						a: 0,
+						k: [
+							48,
+							48,
+							0
+						]
+					},
+					a: {
+						a: 0,
+						k: [
+							0,
+							0,
+							0
+						]
+					},
+					s: {
+						a: 0,
+						k: [
+							100,
+							100,
+							100
+						]
+					}
+				},
+				ao: 0,
+				ef: [
+					{
+						ty: 28,
+						nm: "S",
+						np: 8,
+						en: 1,
+						ef: [
+							{
+								ty: 10,
+								nm: "T",
+								v: {
+									a: 0,
+									k: 2
+								}
+							},
+							{
+								ty: 7,
+								nm: "U",
+								v: {
+									a: 0,
+									k: 4
+								}
+							},
+							{
+								ty: 7,
+								nm: "I",
+								v: {
+									a: 0,
+									k: 0
+								}
+							},
+							{
+								ty: 7,
+								nm: "I",
+								v: {
+									a: 0,
+									k: 1
+								}
+							},
+							{
+								ty: 7,
+								nm: "C",
+								v: {
+									a: 0,
+									k: 1
+								}
+							},
+							{
+								ty: 7,
+								nm: "P",
+								v: {
+									a: 0,
+									k: 1
+								}
+							}
+						]
+					}
+				],
+				shapes: [
+					{
+						ty: "gr",
+						it: [
+							{
+								ty: "rc",
+								d: 1,
+								s: {
+									a: 0,
+									k: [
+										128,
+										128.055
+									]
+								},
+								p: {
+									a: 0,
+									k: [
+										0,
+										0
+									]
+								},
+								r: {
+									a: 0,
+									k: 0
+								},
+								nm: "R"
+							},
+							{
+								ty: "st",
+								c: {
+									a: 0,
+									k: [
+										1,
+										1,
+										1,
+										1
+									]
+								},
+								o: {
+									a: 0,
+									k: 100
+								},
+								w: {
+									a: 0,
+									k: 0
+								},
+								lc: 1,
+								lj: 1,
+								ml: 4,
+								nm: "S"
+							},
+							{
+								ty: "gf",
+								o: {
+									a: 0,
+									k: 100
+								},
+								r: 1,
+								g: {
+									p: 3,
+									k: {
+										a: 0,
+										k: [
+											0,
+											1,
+											0.761,
+											0.031,
+											0.5,
+											0.945,
+											0.435,
+											0.253,
+											1,
+											0.89,
+											0.11,
+											0.475
+										]
+									}
+								},
+								s: {
+									a: 0,
+									k: [
+										-19.515,
+										-47.635
+									]
+								},
+								e: {
+									a: 0,
+									k: [
+										13.662,
+										48.644
+									]
+								},
+								t: 1,
+								nm: "G"
+							},
+							{
+								ty: "tr",
+								p: {
+									a: 0,
+									k: [
+										-0.019,
+										-0.248
+									]
+								},
+								a: {
+									a: 0,
+									k: [
+										0,
+										0
+									]
+								},
+								s: {
+									a: 0,
+									k: [
+										100,
+										100
+									]
+								},
+								r: {
+									a: 0,
+									k: 0
+								},
+								o: {
+									a: 0,
+									k: 100
+								},
+								sk: {
+									a: 0,
+									k: 0
+								},
+								sa: {
+									a: 0,
+									k: 0
+								},
+								nm: "T"
+							}
+						],
+						nm: "R"
+					}
+				],
+				ip: 0,
+				op: 480,
+				st: 0
+			},
+			{
+				ind: 2,
+				ty: 4,
+				nm: "F",
+				sr: 1,
+				ks: {
+					o: {
+						a: 0,
+						k: 100
+					},
+					r: {
+						a: 0,
+						k: 0
+					},
+					p: {
+						a: 0,
+						k: [
+							48,
+							47.996,
+							0
+						]
+					},
+					a: {
+						a: 0,
+						k: [
+							0,
+							0,
+							0
+						]
+					},
+					s: {
+						a: 1,
+						k: [
+							{
+								i: {
+									x: [
+										0.833,
+										0.833,
+										0.833
+									],
+									y: [
+										0.833,
+										0.833,
+										0.833
+									]
+								},
+								o: {
+									x: [
+										0.167,
+										0.167,
+										0.167
+									],
+									y: [
+										0.167,
+										0.167,
+										0.167
+									]
+								},
+								t: 0,
+								s: [
+									90,
+									90,
+									100
+								]
+							},
+							{
+								i: {
+									x: [
+										0.833,
+										0.833,
+										0.833
+									],
+									y: [
+										0.833,
+										0.833,
+										0.833
+									]
+								},
+								o: {
+									x: [
+										0.167,
+										0.167,
+										0.167
+									],
+									y: [
+										0.167,
+										0.167,
+										0.167
+									]
+								},
+								t: 25,
+								s: [
+									90,
+									90,
+									100
+								]
+							},
+							{
+								i: {
+									x: [
+										0.833,
+										0.833,
+										0.833
+									],
+									y: [
+										0.833,
+										0.833,
+										0.833
+									]
+								},
+								o: {
+									x: [
+										0.167,
+										0.167,
+										0.167
+									],
+									y: [
+										0.167,
+										0.167,
+										0.167
+									]
+								},
+								t: 110,
+								s: [
+									100,
+									100,
+									100
+								]
+							},
+							{
+								t: 175,
+								s: [
+									90,
+									90,
+									100
+								]
+							}
+						]
+					}
+				},
+				ao: 0,
+				shapes: [
+					{
+						ty: "gr",
+						it: [
+							{
+								ind: 0,
+								ty: "sh",
+								ks: {
+									a: 0,
+									k: {
+										i: [
+											[
+												0,
+												0
+											],
+											[
+												-6.612,
+												1.895
+											],
+											[
+												-7.835,
+												0
+											],
+											[
+												0,
+												0
+											],
+											[
+												-1.663,
+												6.671
+											],
+											[
+												-3.92,
+												6.787
+											],
+											[
+												0,
+												0
+											],
+											[
+												4.945,
+												4.776
+											],
+											[
+												3.915,
+												6.792
+											],
+											[
+												0,
+												0
+											],
+											[
+												6.608,
+												-1.9
+											],
+											[
+												7.84,
+												0
+											],
+											[
+												0,
+												0
+											],
+											[
+												1.663,
+												-6.676
+											],
+											[
+												3.92,
+												-6.787
+											],
+											[
+												0,
+												0
+											],
+											[
+												-4.95,
+												-4.776
+											],
+											[
+												-3.92,
+												-6.787
+											]
+										],
+										o: [
+											[
+												3.92,
+												6.787
+											],
+											[
+												1.663,
+												6.671
+											],
+											[
+												0,
+												0
+											],
+											[
+												7.84,
+												0
+											],
+											[
+												6.608,
+												1.895
+											],
+											[
+												0,
+												0
+											],
+											[
+												3.92,
+												-6.787
+											],
+											[
+												4.945,
+												-4.776
+											],
+											[
+												0,
+												0
+											],
+											[
+												-3.92,
+												-6.787
+											],
+											[
+												-1.663,
+												-6.676
+											],
+											[
+												0,
+												0
+											],
+											[
+												-7.835,
+												0
+											],
+											[
+												-6.612,
+												-1.9
+											],
+											[
+												0,
+												0
+											],
+											[
+												-3.92,
+												6.792
+											],
+											[
+												-4.95,
+												4.776
+											],
+											[
+												0,
+												0
+											]
+										],
+										v: [
+											[
+												-38.919,
+												28.571
+											],
+											[
+												-20.715,
+												35.89
+											],
+											[
+												-5.281,
+												47.996
+											],
+											[
+												5.28,
+												47.996
+											],
+											[
+												20.719,
+												35.89
+											],
+											[
+												38.917,
+												28.571
+											],
+											[
+												44.196,
+												19.425
+											],
+											[
+												41.436,
+												0
+											],
+											[
+												44.2,
+												-19.425
+											],
+											[
+												38.917,
+												-28.571
+											],
+											[
+												20.719,
+												-35.886
+											],
+											[
+												5.28,
+												-47.996
+											],
+											[
+												-5.281,
+												-47.996
+											],
+											[
+												-20.715,
+												-35.886
+											],
+											[
+												-38.919,
+												-28.571
+											],
+											[
+												-44.197,
+												-19.425
+											],
+											[
+												-41.432,
+												0
+											],
+											[
+												-44.197,
+												19.425
+											]
+										],
+										c: true
+									}
+								},
+								nm: "P"
+							},
+							{
+								ty: "gf",
+								o: {
+									a: 0,
+									k: 100
+								},
+								r: 1,
+								g: {
+									p: 3,
+									k: {
+										a: 0,
+										k: [
+											0,
+											1,
+											0.761,
+											0.031,
+											0.5,
+											0.945,
+											0.435,
+											0.253,
+											1,
+											0.89,
+											0.11,
+											0.475
+										]
+									}
+								},
+								s: {
+									a: 0,
+									k: [
+										-19.515,
+										-47.635
+									]
+								},
+								e: {
+									a: 0,
+									k: [
+										13.662,
+										48.644
+									]
+								},
+								t: 1,
+								nm: "G"
+							},
+							{
+								ty: "tr",
+								p: {
+									a: 0,
+									k: [
+										0,
+										0
+									]
+								},
+								a: {
+									a: 0,
+									k: [
+										0,
+										0
+									]
+								},
+								s: {
+									a: 0,
+									k: [
+										100,
+										100
+									]
+								},
+								r: {
+									a: 0,
+									k: 0
+								},
+								o: {
+									a: 0,
+									k: 100
+								},
+								sk: {
+									a: 0,
+									k: 0
+								},
+								sa: {
+									a: 0,
+									k: 0
+								},
+								nm: "T"
+							}
+						],
+						nm: "F"
+					}
+				],
+				ip: 0,
+				op: 496,
+				st: 0
+			}
+		]
+	}
+];
+var layers = [
+	{
+		ind: 1,
+		ty: 4,
+		nm: "S",
+		sr: 1,
+		ks: {
+			o: {
+				a: 0,
+				k: 100
+			},
+			r: {
+				a: 0,
+				k: 0
+			},
+			p: {
+				a: 0,
+				k: [
+					48,
+					48,
+					0
+				]
+			},
+			a: {
+				a: 0,
+				k: [
+					0,
+					0,
+					0
+				]
+			},
+			s: {
+				a: 1,
+				k: [
+					{
+						i: {
+							x: [
+								0.833,
+								0.833,
+								0.833
+							],
+							y: [
+								0.833,
+								0.833,
+								0.833
+							]
+						},
+						o: {
+							x: [
+								0.167,
+								0.167,
+								0.167
+							],
+							y: [
+								0.167,
+								0.167,
+								0.167
+							]
+						},
+						t: 0,
+						s: [
+							34,
+							34,
+							100
+						]
+					},
+					{
+						i: {
+							x: [
+								0.833,
+								0.833,
+								0.833
+							],
+							y: [
+								0.833,
+								0.833,
+								0.833
+							]
+						},
+						o: {
+							x: [
+								0.167,
+								0.167,
+								0.167
+							],
+							y: [
+								0.167,
+								0.167,
+								0.167
+							]
+						},
+						t: 50,
+						s: [
+							41,
+							41,
+							100
+						]
+					},
+					{
+						i: {
+							x: [
+								0.833,
+								0.833,
+								0.833
+							],
+							y: [
+								0.833,
+								0.833,
+								0.833
+							]
+						},
+						o: {
+							x: [
+								0.167,
+								0.167,
+								0.167
+							],
+							y: [
+								0.167,
+								0.167,
+								0.167
+							]
+						},
+						t: 110,
+						s: [
+							40,
+							40,
+							100
+						]
+					},
+					{
+						t: 150,
+						s: [
+							34,
+							34,
+							100
+						]
+					}
+				]
+			}
+		},
+		ao: 0,
+		shapes: [
+			{
+				ty: "gr",
+				it: [
+					{
+						ind: 0,
+						ty: "sh",
+						ks: {
+							a: 0,
+							k: {
+								i: [
+									[
+										0,
+										41.421
+									],
+									[
+										41.421,
+										0
+									],
+									[
+										0,
+										-41.421
+									],
+									[
+										-41.421,
+										0
+									]
+								],
+								o: [
+									[
+										0,
+										41.421
+									],
+									[
+										41.421,
+										0
+									],
+									[
+										0,
+										-41.421
+									],
+									[
+										-41.421,
+										0
+									]
+								],
+								v: [
+									[
+										0,
+										-75
+									],
+									[
+										-75,
+										0
+									],
+									[
+										0,
+										75
+									],
+									[
+										75,
+										0
+									]
+								],
+								c: true
+							}
+						},
+						nm: "P"
+					},
+					{
+						ty: "fl",
+						c: {
+							a: 0,
+							k: [
+								1,
+								1,
+								1,
+								1
+							]
+						},
+						o: {
+							a: 0,
+							k: 100
+						},
+						r: 1,
+						nm: "F"
+					},
+					{
+						ty: "tr",
+						p: {
+							a: 0,
+							k: [
+								0,
+								0
+							]
+						},
+						a: {
+							a: 0,
+							k: [
+								0,
+								0
+							]
+						},
+						s: {
+							a: 0,
+							k: [
+								100,
+								100
+							]
+						},
+						r: {
+							a: 0,
+							k: 0
+						},
+						o: {
+							a: 0,
+							k: 100
+						},
+						sk: {
+							a: 0,
+							k: 0
+						},
+						sa: {
+							a: 0,
+							k: 0
+						},
+						nm: "T"
+					}
+				],
+				nm: "S"
+			}
+		],
+		ip: 0,
+		op: 396,
+		st: 0
+	},
+	{
+		ind: 3,
+		ty: 0,
+		nm: "C",
+		refId: "comp_0",
+		sr: 1,
+		ks: {
+			o: {
+				a: 0,
+				k: 100
+			},
+			r: {
+				a: 0,
+				k: 0
+			},
+			p: {
+				a: 0,
+				k: [
+					48,
+					47.994,
+					0
+				]
+			},
+			a: {
+				a: 0,
+				k: [
+					48,
+					48,
+					0
+				]
+			},
+			s: {
+				a: 0,
+				k: [
+					90,
+					90,
+					100
+				]
+			}
+		},
+		ao: 0,
+		w: 96,
+		h: 96,
+		ip: 0,
+		op: 480,
+		st: 0
+	}
+];
+var markers = [
+];
+var AIResting = {
+	v: v,
+	meta: meta,
+	fr: fr,
+	ip: ip,
+	op: op,
+	w: w,
+	h: h,
+	nm: nm,
+	assets: assets,
+	layers: layers,
+	markers: markers
+};
+
+var img = "data:image/svg+xml,%3csvg width='64' height='64' viewBox='0 0 64 64' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cg clip-path='url(%23clip0_3314_32121)'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M18.1898 55.9227C13.7816 57.1861 8.66759 55.5682 6.05421 51.0432L2.53533 44.9454C-0.0780511 40.4204 1.0788 35.1799 4.37855 31.9957C1.0788 28.8114 -0.0780511 23.5742 2.53533 19.046L6.05421 12.9482C8.66759 8.42323 13.7816 6.80532 18.1898 8.07193C19.2983 3.62107 23.2555 -0.00149536 28.479 -0.00149536H35.52C40.7468 -0.00149536 44.7039 3.62107 45.8124 8.07193C50.2174 6.80532 55.3314 8.42323 57.9448 12.9482L61.4669 19.046C64.0771 23.5742 62.9202 28.8114 59.6237 31.9957C62.9202 35.1799 64.0771 40.4204 61.4637 44.9454L57.9448 51.0432C55.3314 55.5682 50.2174 57.1861 45.8124 55.9227C44.7039 60.3703 40.7468 63.9929 35.52 63.9929H28.479C23.2555 63.9929 19.2983 60.3703 18.1898 55.9227Z' fill='url(%23paint0_linear_3314_32121)'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 32C23.0457 32 32 23.0457 32 12C32 23.0457 40.9543 32 52 32C40.9543 32 32 40.9543 32 52C32 40.9543 23.0457 32 12 32Z' fill='white'/%3e%3c/g%3e%3cdefs%3e%3clinearGradient id='paint0_linear_3314_32121' x1='18.99' y1='0.239091' x2='41.9606' y2='54.7321' gradientUnits='userSpaceOnUse'%3e%3cstop stop-color='%23FFC208'/%3e%3cstop offset='1' stop-color='%23E31C79'/%3e%3c/linearGradient%3e%3cclipPath id='clip0_3314_32121'%3e%3crect width='64' height='64' fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e";
+
+var _excluded$6 = ["size", "state", "alt", "className"];
+var Sara = function Sara(props) {
+  var size = props.size,
+    state = props.state,
+    alt = props.alt,
+    className = props.className,
+    rest = _objectWithoutProperties(props, _excluded$6);
+  var SaraClassNames = classnames({
+    'align-bottom': state === 'default'
+  }, className);
+  if (state === 'default') {
+    return /*#__PURE__*/React.createElement("div", _extends$2({
+      "data-test": "DesignSystem-AI-Sara"
+    }, rest), /*#__PURE__*/React.createElement("img", {
+      src: img,
+      alt: alt,
+      width: size,
+      height: size,
+      className: SaraClassNames
+    }));
+  }
+  return /*#__PURE__*/React.createElement("div", _extends$2({
+    "data-test": "DesignSystem-AI-Sara",
+    className: className
+  }, rest), /*#__PURE__*/React.createElement(Player, {
+    autoplay: true,
+    loop: true,
+    src: AIResting,
+    style: {
+      height: size,
+      width: size
+    }
+  }));
+};
+Sara.defaultProps = {
+  size: 32,
+  state: 'default'
+};
+
+var SaraIconTop = function SaraIconTop(props) {
+  var className = props.className;
+  return /*#__PURE__*/React__default.createElement("svg", {
+    width: "16",
+    height: "16",
+    viewBox: "0 0 16 16",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    className: className,
+    "data-test": "DesignSystem-AI-Icon"
+  }, /*#__PURE__*/React__default.createElement("mask", {
+    id: "path-1-outside-1_3121_1765",
+    maskUnits: "userSpaceOnUse",
+    x: "0",
+    y: "0",
+    width: "15",
+    height: "15",
+    fill: "black"
+  }, /*#__PURE__*/React__default.createElement("rect", {
+    fill: "white",
+    width: "15",
+    height: "15"
+  }), /*#__PURE__*/React__default.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M6 1C6 3.76142 3.76142 6 1 6C3.76142 6 6 8.23858 6 11C6 8.23858 8.23858 6 11 6C8.23858 6 6 3.76142 6 1ZM11 8C11 9.65685 9.65685 11 8 11C9.65685 11 11 12.3431 11 14C11 12.3431 12.3431 11 14 11C12.3431 11 11 9.65685 11 8Z"
+  })), /*#__PURE__*/React__default.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M6 1C6 3.76142 3.76142 6 1 6C3.76142 6 6 8.23858 6 11C6 8.23858 8.23858 6 11 6C8.23858 6 6 3.76142 6 1ZM11 8C11 9.65685 9.65685 11 8 11C9.65685 11 11 12.3431 11 14C11 12.3431 12.3431 11 14 11C12.3431 11 11 9.65685 11 8Z",
+    fill: "url(#paint0_linear_3121_1765)"
+  }), /*#__PURE__*/React__default.createElement("path", {
+    d: "M1 5C0.447715 5 0 5.44772 0 6C0 6.55228 0.447715 7 1 7V5ZM7 1C7 0.447715 6.55228 0 6 0C5.44772 0 5 0.447715 5 1H7ZM5 11C5 11.5523 5.44772 12 6 12C6.55228 12 7 11.5523 7 11H5ZM11 7C11.5523 7 12 6.55228 12 6C12 5.44772 11.5523 5 11 5V7ZM8 10C7.44772 10 7 10.4477 7 11C7 11.5523 7.44772 12 8 12V10ZM12 8C12 7.44772 11.5523 7 11 7C10.4477 7 10 7.44772 10 8H12ZM10 14C10 14.5523 10.4477 15 11 15C11.5523 15 12 14.5523 12 14H10ZM14 12C14.5523 12 15 11.5523 15 11C15 10.4477 14.5523 10 14 10V12ZM1 7C4.31371 7 7 4.31371 7 1H5C5 3.20914 3.20914 5 1 5V7ZM7 11C7 7.68629 4.31371 5 1 5V7C3.20914 7 5 8.79086 5 11H7ZM11 5C7.68629 5 5 7.68629 5 11H7C7 8.79086 8.79086 7 11 7V5ZM5 1C5 4.31371 7.68629 7 11 7V5C8.79086 5 7 3.20914 7 1H5ZM8 12C10.2091 12 12 10.2091 12 8H10C10 9.10457 9.10457 10 8 10V12ZM12 14C12 11.7909 10.2091 10 8 10V12C9.10457 12 10 12.8954 10 14H12ZM14 10C11.7909 10 10 11.7909 10 14H12C12 12.8954 12.8954 12 14 12V10ZM10 8C10 10.2091 11.7909 12 14 12V10C12.8954 10 12 9.10457 12 8H10Z",
+    fill: "currentColor",
+    mask: "url(#path-1-outside-1_3121_1765)"
+  }), /*#__PURE__*/React__default.createElement("defs", null, /*#__PURE__*/React__default.createElement("linearGradient", {
+    id: "paint0_linear_3121_1765",
+    x1: "5.5",
+    y1: "3.25",
+    x2: "8.29755",
+    y2: "12.1038",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React__default.createElement("stop", {
+    stopColor: "#FFC208"
+  }), /*#__PURE__*/React__default.createElement("stop", {
+    offset: "1",
+    stopColor: "#E31C79"
+  }))));
+};
+
+var SaraIconBottom = function SaraIconBottom(props) {
+  var className = props.className;
+  return /*#__PURE__*/React__default.createElement("svg", {
+    width: "16",
+    height: "16",
+    viewBox: "0 0 16 16",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    className: className,
+    "data-test": "DesignSystem-AI-Icon"
+  }, /*#__PURE__*/React__default.createElement("mask", {
+    id: "path-1-outside-1_2094_5789",
+    maskUnits: "userSpaceOnUse",
+    x: "1",
+    y: "0",
+    width: "15",
+    height: "15",
+    fill: "black"
+  }, /*#__PURE__*/React__default.createElement("rect", {
+    fill: "white",
+    x: "1",
+    width: "15",
+    height: "15"
+  }), /*#__PURE__*/React__default.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M15 6C12.2386 6 10 3.76142 10 1C10 3.76142 7.76142 6 5 6C7.76142 6 10 8.23858 10 11C10 8.23858 12.2386 6 15 6ZM8 11C6.34315 11 5 9.65685 5 8C5 9.65685 3.65685 11 2 11C3.65685 11 5 12.3431 5 14C5 12.3431 6.34315 11 8 11Z"
+  })), /*#__PURE__*/React__default.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M15 6C12.2386 6 10 3.76142 10 1C10 3.76142 7.76142 6 5 6C7.76142 6 10 8.23858 10 11C10 8.23858 12.2386 6 15 6ZM8 11C6.34315 11 5 9.65685 5 8C5 9.65685 3.65685 11 2 11C3.65685 11 5 12.3431 5 14C5 12.3431 6.34315 11 8 11Z",
+    fill: "url(#paint0_linear_2094_5789)"
+  }), /*#__PURE__*/React__default.createElement("path", {
+    d: "M11 1C11 0.447715 10.5523 0 10 0C9.44772 0 9 0.447715 9 1L11 1ZM15 7C15.5523 7 16 6.55228 16 6C16 5.44772 15.5523 5 15 5L15 7ZM5 5C4.44771 5 4 5.44772 4 6C4 6.55228 4.44771 7 5 7L5 5ZM9 11C9 11.5523 9.44772 12 10 12C10.5523 12 11 11.5523 11 11L9 11ZM6 8C6 7.44772 5.55229 7 5 7C4.44771 7 4 7.44772 4 8H6ZM8 12C8.55228 12 9 11.5523 9 11C9 10.4477 8.55228 10 8 10V12ZM2 10C1.44771 10 1 10.4477 1 11C1 11.5523 1.44771 12 2 12V10ZM4 14C4 14.5523 4.44771 15 5 15C5.55229 15 6 14.5523 6 14H4ZM9 1C9 4.31371 11.6863 7 15 7L15 5C12.7909 5 11 3.20914 11 1L9 1ZM5 7C8.31371 7 11 4.31371 11 1L9 1C9 3.20914 7.20914 5 5 5L5 7ZM11 11C11 7.68629 8.31371 5 5 5L5 7C7.20914 7 9 8.79086 9 11L11 11ZM15 5C11.6863 5 9 7.68629 9 11L11 11C11 8.79086 12.7909 7 15 7L15 5ZM4 8C4 10.2091 5.79086 12 8 12V10C6.89543 10 6 9.10457 6 8H4ZM2 12C4.20914 12 6 10.2091 6 8H4C4 9.10457 3.10457 10 2 10V12ZM6 14C6 11.7909 4.20914 10 2 10V12C3.10457 12 4 12.8954 4 14H6ZM8 10C5.79086 10 4 11.7909 4 14H6C6 12.8954 6.89543 12 8 12V10Z",
+    fill: "currentColor",
+    mask: "url(#path-1-outside-1_2094_5789)"
+  }), /*#__PURE__*/React__default.createElement("defs", null, /*#__PURE__*/React__default.createElement("linearGradient", {
+    id: "paint0_linear_2094_5789",
+    x1: "12.75",
+    y1: "5.5",
+    x2: "3.89622",
+    y2: "8.29755",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React__default.createElement("stop", {
+    stopColor: "#FFC208"
+  }), /*#__PURE__*/React__default.createElement("stop", {
+    offset: "1",
+    stopColor: "#E31C79"
+  }))));
+};
+
+var SaraDisabledTop = function SaraDisabledTop(props) {
+  var className = props.className;
+  return /*#__PURE__*/React__default.createElement("svg", {
+    width: "16",
+    height: "16",
+    viewBox: "0 0 16 16",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    className: className,
+    "data-test": "DesignSystem-AI-Icon"
+  }, /*#__PURE__*/React__default.createElement("mask", {
+    id: "path-1-outside-1_2094_5659",
+    maskUnits: "userSpaceOnUse",
+    x: "0",
+    y: "0",
+    width: "15",
+    height: "15",
+    fill: "black"
+  }, /*#__PURE__*/React__default.createElement("rect", {
+    fill: "white",
+    width: "15",
+    height: "15"
+  }), /*#__PURE__*/React__default.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M6 1C6 3.76142 3.76142 6 1 6C3.76142 6 6 8.23858 6 11C6 8.23858 8.23858 6 11 6C8.23858 6 6 3.76142 6 1ZM11 8C11 9.65685 9.65685 11 8 11C9.65685 11 11 12.3431 11 14C11 12.3431 12.3431 11 14 11C12.3431 11 11 9.65685 11 8Z"
+  })), /*#__PURE__*/React__default.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M6 1C6 3.76142 3.76142 6 1 6C3.76142 6 6 8.23858 6 11C6 8.23858 8.23858 6 11 6C8.23858 6 6 3.76142 6 1ZM11 8C11 9.65685 9.65685 11 8 11C9.65685 11 11 12.3431 11 14C11 12.3431 12.3431 11 14 11C12.3431 11 11 9.65685 11 8Z",
+    fill: "url(#paint0_linear_2094_5659)"
+  }), /*#__PURE__*/React__default.createElement("path", {
+    d: "M1 5C0.447715 5 0 5.44772 0 6C0 6.55228 0.447715 7 1 7V5ZM7 1C7 0.447715 6.55228 0 6 0C5.44772 0 5 0.447715 5 1H7ZM5 11C5 11.5523 5.44772 12 6 12C6.55228 12 7 11.5523 7 11H5ZM11 7C11.5523 7 12 6.55228 12 6C12 5.44772 11.5523 5 11 5V7ZM8 10C7.44772 10 7 10.4477 7 11C7 11.5523 7.44772 12 8 12V10ZM12 8C12 7.44772 11.5523 7 11 7C10.4477 7 10 7.44772 10 8H12ZM10 14C10 14.5523 10.4477 15 11 15C11.5523 15 12 14.5523 12 14H10ZM14 12C14.5523 12 15 11.5523 15 11C15 10.4477 14.5523 10 14 10V12ZM1 7C4.31371 7 7 4.31371 7 1H5C5 3.20914 3.20914 5 1 5V7ZM7 11C7 7.68629 4.31371 5 1 5V7C3.20914 7 5 8.79086 5 11H7ZM11 5C7.68629 5 5 7.68629 5 11H7C7 8.79086 8.79086 7 11 7V5ZM5 1C5 4.31371 7.68629 7 11 7V5C8.79086 5 7 3.20914 7 1H5ZM8 12C10.2091 12 12 10.2091 12 8H10C10 9.10457 9.10457 10 8 10V12ZM12 14C12 11.7909 10.2091 10 8 10V12C9.10457 12 10 12.8954 10 14H12ZM14 10C11.7909 10 10 11.7909 10 14H12C12 12.8954 12.8954 12 14 12V10ZM10 8C10 10.2091 11.7909 12 14 12V10C12.8954 10 12 9.10457 12 8H10Z",
+    fill: "currentColor",
+    mask: "url(#path-1-outside-1_2094_5659)"
+  }), /*#__PURE__*/React__default.createElement("defs", null, /*#__PURE__*/React__default.createElement("linearGradient", {
+    id: "paint0_linear_2094_5659",
+    x1: "5.5",
+    y1: "3.25",
+    x2: "8.29755",
+    y2: "12.1038",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React__default.createElement("stop", {
+    stopColor: "#FFE79E"
+  }), /*#__PURE__*/React__default.createElement("stop", {
+    offset: "1",
+    stopColor: "#F4A4C9"
+  }))));
+};
+
+var SaraDisabledBottom = function SaraDisabledBottom(props) {
+  var className = props.className;
+  return /*#__PURE__*/React__default.createElement("svg", {
+    width: "16",
+    height: "16",
+    viewBox: "0 0 16 16",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    className: className,
+    "data-test": "DesignSystem-AI-Icon"
+  }, /*#__PURE__*/React__default.createElement("mask", {
+    id: "path-1-outside-1_2094_5854",
+    maskUnits: "userSpaceOnUse",
+    x: "1",
+    y: "0",
+    width: "15",
+    height: "15",
+    fill: "black"
+  }, /*#__PURE__*/React__default.createElement("rect", {
+    fill: "white",
+    x: "1",
+    width: "15",
+    height: "15"
+  }), /*#__PURE__*/React__default.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M15 6C12.2386 6 10 3.76142 10 1C10 3.76142 7.76142 6 5 6C7.76142 6 10 8.23858 10 11C10 8.23858 12.2386 6 15 6ZM8 11C6.34315 11 5 9.65685 5 8C5 9.65685 3.65685 11 2 11C3.65685 11 5 12.3431 5 14C5 12.3431 6.34315 11 8 11Z"
+  })), /*#__PURE__*/React__default.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M15 6C12.2386 6 10 3.76142 10 1C10 3.76142 7.76142 6 5 6C7.76142 6 10 8.23858 10 11C10 8.23858 12.2386 6 15 6ZM8 11C6.34315 11 5 9.65685 5 8C5 9.65685 3.65685 11 2 11C3.65685 11 5 12.3431 5 14C5 12.3431 6.34315 11 8 11Z",
+    fill: "url(#paint0_linear_2094_5854)"
+  }), /*#__PURE__*/React__default.createElement("path", {
+    d: "M11 1C11 0.447715 10.5523 0 10 0C9.44772 0 9 0.447715 9 1L11 1ZM15 7C15.5523 7 16 6.55228 16 6C16 5.44772 15.5523 5 15 5L15 7ZM5 5C4.44771 5 4 5.44772 4 6C4 6.55228 4.44771 7 5 7L5 5ZM9 11C9 11.5523 9.44772 12 10 12C10.5523 12 11 11.5523 11 11L9 11ZM6 8C6 7.44772 5.55229 7 5 7C4.44771 7 4 7.44772 4 8H6ZM8 12C8.55228 12 9 11.5523 9 11C9 10.4477 8.55228 10 8 10V12ZM2 10C1.44771 10 1 10.4477 1 11C1 11.5523 1.44771 12 2 12V10ZM4 14C4 14.5523 4.44771 15 5 15C5.55229 15 6 14.5523 6 14H4ZM9 1C9 4.31371 11.6863 7 15 7L15 5C12.7909 5 11 3.20914 11 1L9 1ZM5 7C8.31371 7 11 4.31371 11 1L9 1C9 3.20914 7.20914 5 5 5L5 7ZM11 11C11 7.68629 8.31371 5 5 5L5 7C7.20914 7 9 8.79086 9 11L11 11ZM15 5C11.6863 5 9 7.68629 9 11L11 11C11 8.79086 12.7909 7 15 7L15 5ZM4 8C4 10.2091 5.79086 12 8 12V10C6.89543 10 6 9.10457 6 8H4ZM2 12C4.20914 12 6 10.2091 6 8H4C4 9.10457 3.10457 10 2 10V12ZM6 14C6 11.7909 4.20914 10 2 10V12C3.10457 12 4 12.8954 4 14H6ZM8 10C5.79086 10 4 11.7909 4 14H6C6 12.8954 6.89543 12 8 12V10Z",
+    fill: "currentColor",
+    mask: "url(#path-1-outside-1_2094_5854)"
+  }), /*#__PURE__*/React__default.createElement("defs", null, /*#__PURE__*/React__default.createElement("linearGradient", {
+    id: "paint0_linear_2094_5854",
+    x1: "12.75",
+    y1: "5.5",
+    x2: "3.89622",
+    y2: "8.29755",
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React__default.createElement("stop", {
+    stopColor: "#FFE79E"
+  }), /*#__PURE__*/React__default.createElement("stop", {
+    offset: "1",
+    stopColor: "#F4A4C9"
+  }))));
+};
+
+var SaraIcon = function SaraIcon(props) {
+  var size = props.size,
+    position = props.position,
+    disabled = props.disabled;
+  var AIIconClassNames = classnames({
+    'AIIconButton-AIIcon': true,
+    'AIIconButton-AIIcon--largeTop': position === 'top' && size === 'large',
+    'AIIconButton-AIIcon--regularTop': position === 'top' && size === 'regular',
+    'AIIconButton-AIIcon--regularBottom': position === 'bottom' && size === 'regular',
+    'AIIconButton-AIIcon--largeBottom': position === 'bottom' && size === 'large'
+  });
+  if (disabled && position === 'bottom') {
+    return /*#__PURE__*/React.createElement(SaraDisabledBottom, {
+      className: AIIconClassNames
+    });
+  }
+  if (disabled && position === 'top') {
+    return /*#__PURE__*/React.createElement(SaraDisabledTop, {
+      className: AIIconClassNames
+    });
+  }
+  if (position === 'bottom') {
+    return /*#__PURE__*/React.createElement(SaraIconBottom, {
+      className: AIIconClassNames
+    });
+  }
+  return /*#__PURE__*/React.createElement(SaraIconTop, {
+    className: AIIconClassNames
+  });
+};
+SaraIcon.defaultProps = {
+  size: 'regular',
+  position: 'top'
+};
+
+var _excluded$5 = ["icon", "position", "className", "size", "strokeColor", "tooltip", "disabled"];
+var AIIconButton = function AIIconButton(props) {
+  var _classNames;
+  var icon = props.icon,
+    position = props.position,
+    className = props.className,
+    size = props.size,
+    strokeColor = props.strokeColor,
+    tooltip = props.tooltip,
+    disabled = props.disabled,
+    rest = _objectWithoutProperties(props, _excluded$5);
+  var buttonClassNames = classnames({
+    AIIconButton: true
+  }, className);
+  var IconClassNames = classnames((_classNames = {
+    'AIIconButton-icon': true
+  }, _defineProperty$1(_classNames, 'material-symbols', true), _defineProperty$1(_classNames, 'material-symbols-rounded', true), _classNames));
+  var sizeMapping = {
+    regular: 16,
+    large: 20
+  };
+  var iconStyles = {
+    fontSize: "".concat(sizeMapping[size], "px"),
+    width: "".concat(sizeMapping[size], "px"),
+    height: "".concat(sizeMapping[size], "px"),
+    color: disabled ? '#A6A6A6' : 'rgb(0, 0, 0)'
+  };
+  var saraIconProps = {
+    disabled: disabled,
+    size: size,
+    position: position
+  };
+  return /*#__PURE__*/React.createElement(Tooltip, {
+    tooltip: tooltip,
+    showTooltip: !!tooltip && !disabled
+  }, /*#__PURE__*/React.createElement("button", _extends$2({
+    className: buttonClassNames,
+    "data-test": "DesignSystem-AI-IconButton",
+    disabled: disabled
+  }, rest, {
+    style: {
+      color: strokeColor
+    }
+  }), /*#__PURE__*/React.createElement("i", {
+    "data-test": "DesignSystem-Icon",
+    className: IconClassNames,
+    style: iconStyles
+  }, icon), /*#__PURE__*/React.createElement(SaraIcon, saraIconProps)));
+};
+AIIconButton.defaultProps = {
+  size: 'regular',
+  position: 'top',
+  strokeColor: '#fff'
+};
+
+var _excluded$4 = ["label", "icon", "disabled", "name", "className"];
+var AIChip = function AIChip(props) {
+  var _classNames;
+  var label = props.label,
+    icon = props.icon,
+    disabled = props.disabled;
+    props.name;
+    var className = props.className,
+    rest = _objectWithoutProperties(props, _excluded$4);
+  var ChipClassNames = classnames({
+    AIChip: true,
+    'AIChip--disabled': disabled
+  }, className);
+  var IconClassNames = classnames((_classNames = {
+    'AIChip-icon': true,
+    'AIChip-icon--disabled': disabled
+  }, _defineProperty$1(_classNames, 'material-symbols', true), _defineProperty$1(_classNames, 'material-symbols-rounded', true), _classNames));
+  var TextClassNames = classnames({
+    'AIChip-text': true,
+    'AIChip-text--disabled': disabled
+  });
+  return /*#__PURE__*/React.createElement("button", _extends$2({
+    type: "button",
+    "data-test": "DesignSystem-AI-Chip",
+    className: ChipClassNames,
+    disabled: disabled
+  }, rest), /*#__PURE__*/React.createElement("i", {
+    "data-test": "DesignSystem-AI-Chip-Icon",
+    className: IconClassNames
+  }, icon), /*#__PURE__*/React.createElement("span", {
+    "data-test": "DesignSystem-AI-Chip-Text",
+    className: TextClassNames
+  }, label));
+};
+
+var _excluded$3 = ["children", "className"];
+var ChatBox = function ChatBox(props) {
+  var children = props.children,
+    className = props.className,
+    rest = _objectWithoutProperties(props, _excluded$3);
+  var chatBoxClassNames = classnames({
+    'AIResponse-box': true
+  }, className);
+  return /*#__PURE__*/React.createElement("div", _extends$2({
+    className: chatBoxClassNames,
+    "data-test": "DesignSystem-AIResponse-Box"
+  }, rest), children);
+};
+
+var _excluded$2 = ["className", "selected"];
+var ChatButton = function ChatButton(props) {
+  var className = props.className,
+    selected = props.selected,
+    rest = _objectWithoutProperties(props, _excluded$2);
+  var chatButtonClassNames = classnames({
+    'AIResponse-button': true,
+    'AIResponse-button--selected': selected
+  }, className);
+  return /*#__PURE__*/React.createElement(Button, _extends$2({
+    "data-test": "DesignSystem-AIResponse-Button"
+  }, rest, {
+    selected: selected,
+    size: "tiny",
+    largeIcon: true,
+    appearance: "transparent",
+    className: chatButtonClassNames
+  }));
+};
+
+var _excluded$1 = ["children", "className"];
+var ChatActionBar = function ChatActionBar(props) {
+  var children = props.children,
+    className = props.className,
+    rest = _objectWithoutProperties(props, _excluded$1);
+  var actionBarClassNames = classnames({
+    'AIResponse-actionBar': true
+  }, className);
+  return /*#__PURE__*/React.createElement("div", _extends$2({
+    className: actionBarClassNames,
+    "data-test": "DesignSystem-AIResponse-ActionBar"
+  }, rest), children);
+};
+
+var _excluded = ["children", "className"];
+var ChatBody = function ChatBody(props) {
+  var children = props.children,
+    className = props.className,
+    rest = _objectWithoutProperties(props, _excluded);
+  var chatBodyClassNames = classnames({
+    'pb-3': true
+  }, className);
+  return /*#__PURE__*/React.createElement("div", _extends$2({
+    className: chatBodyClassNames,
+    "data-test": "DesignSystem-AIResponse-Body"
+  }, rest), children);
+};
+
+var AIResponse = function AIResponse(props) {
+  var children = props.children;
+  return /*#__PURE__*/React.createElement(ChatBox, props, children);
+};
+AIResponse.Button = ChatButton;
+AIResponse.ActionBar = ChatActionBar;
+AIResponse.Body = ChatBody;
+
+var version = "3.5.0";
+
+export { AIButton, AIChip, AIIconButton, AIResponse, ActionCard, Avatar, AvatarGroup, AvatarSelection, Backdrop, Badge, Breadcrumbs, Button, Calendar, Caption, Card, CardBody, CardFooter, CardHeader, CardSubdued, ChatMessage, Checkbox, Chip, ChipGroup, ChipInput, ChoiceList, Collapsible, Column, Combobox, DatePicker, DateRangePicker, Dialog, Divider, Dropdown, Dropzone, EditableChipInput, EditableDropdown, EditableInput, EmptyState, FileList, FileUploader, FileUploaderList, FullscreenModal, Grid, GridCell, Heading, HelpText, HorizontalNav, Icon, InlineMessage, Input, X as InputMask, KeyValuePair, Label, Legend, Link, LinkButton, List, Listbox, Menu, Message, MetaList, MetricInput, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, MultiSlider, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderImage, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Sara, SaraSparkle, Select, SelectionCard, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, Tabs, TabsWrapper, Text, TextField, Textarea, TimePicker, Toast, Tooltip, index as Utils, VerificationCodeInput, VerticalNav, version };
