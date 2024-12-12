@@ -8,6 +8,8 @@ import AvatarIcon from './avatarIcon';
 import AvatarImage from './avatarImage';
 import AvatarProvider from './AvatarProvider';
 
+type TPresence = 'active' | 'away';
+
 export interface AvatarProps extends BaseProps {
   /**
    * Color of the `Avatar`
@@ -57,6 +59,18 @@ export interface AvatarProps extends BaseProps {
    * Defines tabIndex of the `Avatar`
    */
   tabIndex?: number;
+  /**
+   * Show presence indicator for the `Avatar`
+   */
+  presence?: TPresence;
+  /**
+   * Show status indicator for the `Avatar`
+   */
+  status?: React.ReactNode;
+  /**
+   * Stroke color of `Presence indicator` & `Status indicator` in `Avatar`
+   */
+  strokeColor?: string;
 }
 
 const initialsLength = 2;
@@ -77,6 +91,9 @@ export const Avatar = (props: AvatarProps) => {
     disabled,
     tooltipSuffix,
     tabIndex,
+    presence,
+    status,
+    strokeColor,
     role = 'presentation',
   } = props;
 
@@ -99,6 +116,8 @@ export const Avatar = (props: AvatarProps) => {
     appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] || DefaultAppearance;
 
   const darkAppearance = ['secondary', 'success', 'warning', 'accent1', 'accent4'];
+  const showPresence = presence && !disabled && shape === 'round';
+  const showStatus = status && size === 'regular' && shape === 'round';
 
   const AvatarClassNames = classNames(
     {
@@ -126,6 +145,16 @@ export const Avatar = (props: AvatarProps) => {
   const IconClassNames = classNames({
     ['Avatar-content']: darkAppearance.includes(AvatarAppearance),
   });
+
+  const presenceClassNames = classNames({
+    ['Avatar-presence']: presence,
+    ['Avatar-presence--active']: presence === 'active',
+    ['Avatar-presence--away']: presence === 'away',
+  });
+
+  const borderStyle = {
+    boxShadow: `0 0 0 var(--spacing-s) ${strokeColor}`,
+  };
 
   const sharedProp = {
     size,
@@ -180,17 +209,25 @@ export const Avatar = (props: AvatarProps) => {
     );
   };
 
-  const renderTooltip = () => {
-    if (withTooltip && initials) {
-      return (
-        <Tooltip tooltip={getTooltipName()} position={tooltipPosition} triggerClass={'flex-grow-0'}>
+  const renderTooltip = () => (
+    <span className="position-relative d-inline-flex">
+      {withTooltip && initials ? (
+        <Tooltip tooltip={getTooltipName()} position={tooltipPosition} triggerClass="flex-grow-0">
           {renderAvatar()}
         </Tooltip>
-      );
-    }
-
-    return renderAvatar();
-  };
+      ) : (
+        renderAvatar()
+      )}
+      {showPresence && (
+        <span data-test="DesignSystem-Avatar--Presence" className={presenceClassNames} style={borderStyle} />
+      )}
+      {showStatus && (
+        <span data-test="DesignSystem-Avatar--Status" className="Avatar-status" style={borderStyle}>
+          {status}
+        </span>
+      )}
+    </span>
+  );
 
   return renderTooltip();
 };
@@ -205,6 +242,7 @@ Avatar.defaultProps = {
   withTooltip: true,
   size: 'regular',
   shape: 'round',
+  strokeColor: 'var(--white)',
 };
 
 export default Avatar;
