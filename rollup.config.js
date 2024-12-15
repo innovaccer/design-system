@@ -5,13 +5,13 @@ import alias from '@rollup/plugin-alias';
 import json from '@rollup/plugin-json';
 import path from 'path';
 import packageJSON from './package.json';
-import typescript from '@rollup/plugin-typescript';
 import replace from '@rollup/plugin-replace';
 import { uglify } from 'rollup-plugin-uglify';
 import gzipPlugin from 'rollup-plugin-gzip';
 import { compress } from 'brotli';
 import image from '@rollup/plugin-image';
 import postcss from 'rollup-plugin-postcss';
+import esbuild from 'rollup-plugin-esbuild';
 
 const { version, name, license, homepage } = packageJSON;
 const banner = () => {
@@ -183,16 +183,23 @@ const tsConfig = {
     // Allows node_modules resolution
     resolve({ extensions }),
 
-    typescript({
-      typescript: require('ttypescript'),
+    // Use esbuild for TypeScript/JavaScript files
+    esbuild({
+      include: /\.[jt]sx?$/, // Include .ts, .tsx, .js, .jsx files
+      minify: process.env.NODE_ENV === 'production',
+      target: 'es2017', // Specify ECMAScript target
       tsconfig: path.resolve(__dirname, './tsconfig.type.json'),
+      loaders: {
+        '.json': 'json',
+        '.js': 'jsx',
+        '.tsx': 'tsx',
+        '.ts': 'tsx',
+      },
     }),
 
     // Allow bundling cjs modules. Rollup doesn't understand cjs
     commonjs(),
 
-    // Compile TypeScript/JavaScript files
-    babel({ extensions, include: ['core/**/*'] }),
     postcss({
       modules: {
         generateScopedName: (name, fileName) => {
@@ -245,4 +252,4 @@ const gzipConfig = {
   },
 };
 
-export default [jsUmdConfig, jsCjsConfig, jsEsmConfig, brotliConfig, gzipConfig];
+export default [jsUmdConfig, jsCjsConfig, jsEsmConfig, brotliConfig, gzipConfig, tsConfig];
