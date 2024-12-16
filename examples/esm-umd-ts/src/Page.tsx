@@ -1,10 +1,5 @@
 import React from 'react';
-import { Row, Column, PageHeader, Button, Tabs, Card, Table, ButtonProps } from '@innovaccer/design-system';
-
-
-
-    
-
+import { Row, Column, PageHeader, Button, Tabs, Card, Table, ButtonProps, Message } from '@innovaccer/design-system';
 
 // You can now use the Button component and its props in your React components
 const MyComponent: React.FC = () => {
@@ -21,8 +16,6 @@ const MyComponent: React.FC = () => {
     </Button>
   );
 };
-
-
 
 const UserManagementTable: React.FC = () => {
   const tabs = [
@@ -163,6 +156,11 @@ const UserManagementTable: React.FC = () => {
               '<button data-test="DesignSystem-Button" class="Button Button--regular Button--alert Button--iconAlign-left" tabindex="0" aria-label="Delete"><span class="Button-text">Delete</span></button>',
           }}
         ></div>
+        <Message
+          appearance="alert"
+          className="w-50"
+          description="Could not start verification. Please try again later."
+        />
       </Column>
     </Row>
   );

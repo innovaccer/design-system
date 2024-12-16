@@ -22,8 +22,8 @@
     <div id="root"></div>
 
     <script type="text/babel">
-      console.log('InnovaccerDesignSystem', InnovaccerDesignSystem)
-      const { Icon, GridCell, Table } = InnovaccerDesignSystem;
+      console.log('InnovaccerDesignSystem', InnovaccerDesignSystem);
+      const { Icon, GridCell, Table, Message } = InnovaccerDesignSystem;
 
       const MyTable = () => {
         const data = [
@@ -874,38 +874,38 @@
 
         return (
           <div className="vh-75">
-              <Table
-                error={error}
-                data={data}
-                schema={schema}
-                withHeader={true}
-                uniqueColumnName="email"
-                headerOptions={{
-                  withSearch: true,
-                  globalActionRenderer: globalActionTrigger,
-                  allowSelectAll: true,
-                }}
-                onSearch={(currData, searchTerm) => {
-                  console.log('onsearch called', searchTerm);
-                  setError(!error);
-                  return currData.filter(
-                    (d) =>
-                      d.firstName.toLowerCase().match(searchTerm.toLowerCase()) ||
-                      d.lastName.toLowerCase().match(searchTerm.toLowerCase())
-                  );
-                }}
-                withCheckbox={true}
-                onSelect={(rowIndex, selected, selectedList, selectAll) =>
-                  console.log(
-                    `on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(
-                      selectedList
-                    )} selectAll: ${selectAll}`
-                  )
-                }
-                withPagination={true}
-                pageSize={50}
-                onPageChange={(newPage) => console.log(`on-page-change:- ${newPage}`)}
-              />
+            <Table
+              error={error}
+              data={data}
+              schema={schema}
+              withHeader={true}
+              uniqueColumnName="email"
+              headerOptions={{
+                withSearch: true,
+                globalActionRenderer: globalActionTrigger,
+                allowSelectAll: true,
+              }}
+              onSearch={(currData, searchTerm) => {
+                console.log('onsearch called', searchTerm);
+                setError(!error);
+                return currData.filter(
+                  (d) =>
+                    d.firstName.toLowerCase().match(searchTerm.toLowerCase()) ||
+                    d.lastName.toLowerCase().match(searchTerm.toLowerCase())
+                );
+              }}
+              withCheckbox={true}
+              onSelect={(rowIndex, selected, selectedList, selectAll) =>
+                console.log(
+                  `on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(
+                    selectedList
+                  )} selectAll: ${selectAll}`
+                )
+              }
+              withPagination={true}
+              pageSize={50}
+              onPageChange={(newPage) => console.log(`on-page-change:- ${newPage}`)}
+            />
           </div>
         );
       };
@@ -914,6 +914,11 @@
         return (
           <div className="p-8 vh-100 bg-secondary-lighter">
             <MyTable />
+            <Message
+              appearance="alert"
+              className="w-50"
+              description="Could not start verification. Please try again later."
+            />
           </div>
         );
       }
