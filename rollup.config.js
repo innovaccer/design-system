@@ -84,7 +84,8 @@ const commonJsPlugins = [
     modules: {
       generateScopedName: (name, fileName) => {
         const hash = generateHash(fileName + name);
-        return `${name}__v${version}___${hash}`;
+        const updatedVersion = version.replace(/\./g, '-');
+        return `${name}_v${updatedVersion}_${hash}`;
       },
     },
     extensions: ['.css', '.scss', '.sass'],
@@ -204,7 +205,8 @@ const tsConfig = {
       modules: {
         generateScopedName: (name, fileName) => {
           const hash = generateHash(fileName + name);
-          return `${name}__v${version}___${hash}`;
+          const updatedVersion = version.replace(/\./g, '-');
+          return `${name}_v${updatedVersion}_${hash}`;
         },
       },
       extensions: ['.css', '.scss', '.sass'],

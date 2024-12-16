@@ -16,7 +16,7 @@
     <!-- Don't use this in production: -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <!-- <script src="index.js"></script> -->
-    <script src="https://unpkg.com/@innovaccer/design-system@2.36.2/dist/index.umd.js"></script>
+    <!-- <script src="https://unpkg.com/@innovaccer/design-system@2.36.2/dist/index.umd.js"></script> -->
   </head>
 
   <body>
@@ -26,7 +26,7 @@
     <div id="umd"></div>
 
     <script type="text/babel">
-      const { Icon, GridCell, Button, Card, Table } = InnovaccerDesignSystem;
+      const { Icon, GridCell, Button, Card, Table, Message } = InnovaccerDesignSystem;
 
       const MyTable = () => {
         const data = [
@@ -918,6 +918,11 @@
         return (
           <div className="p-8 vh-100 bg-secondary-lighter">
             <MyTable />
+            <Message
+              appearance="alert"
+              className="w-50"
+              description="Could not start verification. Please try again later."
+            />
           </div>
         );
       }
