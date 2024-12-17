@@ -101,8 +101,10 @@ const commonJsPlugins = [
         return `${name}_v${updatedVersion}_${hash}`;
       },
     },
+    extract: true,
     extensions: ['.css', '.scss', '.sass'],
   }),
+  concatTokenCSS(cssSources, cssFiles),
   uglify(),
 ];
 
@@ -223,8 +225,10 @@ const tsConfig = {
           return `${name}_v${updatedVersion}_${hash}`;
         },
       },
+      extract: true,
       extensions: ['.css', '.scss', '.sass'],
     }),
+    concatTokenCSS(cssSources, cssFiles),
   ],
   output: {
     dir: 'dist/ts',
