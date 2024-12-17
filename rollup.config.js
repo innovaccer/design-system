@@ -13,6 +13,8 @@ import image from '@rollup/plugin-image';
 import postcss from 'rollup-plugin-postcss';
 import esbuild from 'rollup-plugin-esbuild';
 import { concatTokenCSS } from './rollupPlugin';
+import colorModFunction from 'postcss-color-mod-function';
+import autoprefixer from 'autoprefixer';
 
 const { version, name, license, homepage } = packageJSON;
 
@@ -47,6 +49,8 @@ const cssSources = [
 const cssFiles = [
   './css/material-design-icons/iconfont/material-icons.css'
 ]
+
+const cssTokenFiles = [path.resolve(__dirname, './css/src/variables/index.css'), path.resolve(__dirname, './css/src/tokens/index.css')];
 
 function globals() {
   return {
@@ -103,6 +107,12 @@ const commonJsPlugins = [
     },
     extract: true,
     extensions: ['.css', '.scss', '.sass'],
+    plugins: [
+      colorModFunction({
+        importFrom: cssTokenFiles,
+      }),
+      autoprefixer(),
+    ],
   }),
   concatTokenCSS(cssSources, cssFiles),
   uglify(),
@@ -135,6 +145,12 @@ const umdPlugins = [
     },
     extract: true,
     extensions: ['.css', '.scss', '.sass'],
+    plugins: [
+      colorModFunction({
+        importFrom: cssTokenFiles,
+      }),
+      autoprefixer(),
+    ],
   }),
   concatTokenCSS(cssSources, cssFiles), // Use the custom plugin
   uglify(),
@@ -227,6 +243,12 @@ const tsConfig = {
       },
       extract: true,
       extensions: ['.css', '.scss', '.sass'],
+      plugins: [
+        colorModFunction({
+          importFrom: cssTokenFiles,
+        }),
+        autoprefixer(),
+      ],
     }),
     concatTokenCSS(cssSources, cssFiles),
   ],
