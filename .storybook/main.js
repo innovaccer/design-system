@@ -17,6 +17,20 @@ module.exports = {
     '@storybook/addon-a11y',
     '@storybook/addon-knobs',
     {
+      name: '@storybook/addon-postcss',
+      options: {
+        postcssLoaderOptions: {
+          implementation: require('postcss'),
+          postcssOptions: {
+            plugins: [
+              require('autoprefixer'),
+              require('postcss-color-mod-function'),
+            ],
+          },
+        },
+      },
+    },
+    {
       name: 'storybook-css-modules',
       options: {
         cssModulesLoaderOptions: {

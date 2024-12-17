@@ -12,8 +12,10 @@ import { compress } from 'brotli';
 import image from '@rollup/plugin-image';
 import postcss from 'rollup-plugin-postcss';
 import esbuild from 'rollup-plugin-esbuild';
+import { concatTokenCSS } from './rollupPlugin';
 
 const { version, name, license, homepage } = packageJSON;
+
 const banner = () => {
   const banner = `
   /**
@@ -34,6 +36,17 @@ const aliasEntries = [
   { find: '@', replacement: path.resolve('./core') },
   { find: '@css', replacement: path.resolve('./css/src') },
 ];
+
+const cssSources = [
+  './css/src/tokens',
+  './css/src/variables',
+  './css/src/core',
+  './css/src/utils',
+];
+
+const cssFiles = [
+  './css/material-design-icons/iconfont/material-icons.css'
+]
 
 function globals() {
   return {
@@ -84,11 +97,14 @@ const commonJsPlugins = [
     modules: {
       generateScopedName: (name, fileName) => {
         const hash = generateHash(fileName + name);
-        return `${name}__v${version}___${hash}`;
+        const updatedVersion = version.replace(/\./g, '-');
+        return `${name}_v${updatedVersion}_${hash}`;
       },
     },
+    extract: true,
     extensions: ['.css', '.scss', '.sass'],
   }),
+  concatTokenCSS(cssSources, cssFiles),
   uglify(),
 ];
 
@@ -120,6 +136,7 @@ const umdPlugins = [
     extract: true,
     extensions: ['.css', '.scss', '.sass'],
   }),
+  concatTokenCSS(cssSources, cssFiles), // Use the custom plugin
   uglify(),
 ];
 
@@ -204,11 +221,14 @@ const tsConfig = {
       modules: {
         generateScopedName: (name, fileName) => {
           const hash = generateHash(fileName + name);
-          return `${name}__v${version}___${hash}`;
+          const updatedVersion = version.replace(/\./g, '-');
+          return `${name}_v${updatedVersion}_${hash}`;
         },
       },
+      extract: true,
       extensions: ['.css', '.scss', '.sass'],
     }),
+    concatTokenCSS(cssSources, cssFiles),
   ],
   output: {
     dir: 'dist/ts',
