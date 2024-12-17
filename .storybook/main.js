@@ -1,5 +1,10 @@
 const path = require('path');
 
+const cssTokenFiles = [
+  path.resolve(__dirname, '../css/src/variables/index.css'),
+  path.resolve(__dirname, '../css/src/tokens/index.css')
+];
+
 module.exports = {
   stories: ['../core/components/**/*.story.@(js|jsx|ts|tsx)', '../core/ai-components/**/*.story.@(js|jsx|ts|tsx)'],
   addons: [
@@ -24,7 +29,9 @@ module.exports = {
           postcssOptions: {
             plugins: [
               require('autoprefixer'),
-              require('postcss-color-mod-function'),
+              require('postcss-color-mod-function')({
+                importFrom: cssTokenFiles,
+              }),
             ],
           },
         },
