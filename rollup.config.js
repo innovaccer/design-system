@@ -150,12 +150,12 @@ const umdPlugins = [
       autoprefixer(),
     ],
   }),
-  concatTokenCSS(cssSources, cssFiles), // Use the custom plugin
+  concatTokenCSS(cssSources, cssFiles),
   uglify(),
 ];
 
 const jsUmdOutputConfig = {
-  file: 'dist/umd/index.js',
+  file: 'dist/index.umd.js',
   format: 'umd',
   name: `InnovaccerDesignSystem`,
   globals: globals(),
