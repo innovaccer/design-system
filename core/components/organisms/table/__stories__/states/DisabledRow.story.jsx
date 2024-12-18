@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Card, Table } from '@/index';
-import { AsyncTable, SyncTable } from './_common_/types';
+import { AsyncTable, SyncTable } from '../_common_/types';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
 import { action } from '@/utils/action';
 
@@ -281,7 +281,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Table/Disabled Row',
+  title: 'Components/Table/States/Disabled Row',
   component: Table,
   parameters: {
     docs: {
