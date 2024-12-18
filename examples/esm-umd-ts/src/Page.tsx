@@ -1,20 +1,24 @@
 import React from 'react';
-import { Row, Column, PageHeader, Button, Tabs, Card, Table, ButtonProps, Message } from '@innovaccer/design-system';
+import {
+  Row,
+  Column,
+  PageHeader,
+  Button,
+  Tabs,
+  Card,
+  Table,
+  ButtonProps,
+  Message,
+  Menu,
+} from '@innovaccer/design-system';
 
-// You can now use the Button component and its props in your React components
 const MyComponent: React.FC = () => {
-  // You can use the ButtonProps type to define the prop structure for custom button components
   const customButtonProps: ButtonProps = {
     appearance: 'primary',
     size: 'large',
-    // other props
   };
 
-  return (
-    <Button {...customButtonProps}>
-      Click Me
-    </Button>
-  );
+  return <Button {...customButtonProps}>Click Me</Button>;
 };
 
 const UserManagementTable: React.FC = () => {
@@ -161,6 +165,13 @@ const UserManagementTable: React.FC = () => {
           className="w-50"
           description="Could not start verification. Please try again later."
         />
+        <Menu trigger={<Menu.Trigger />}>
+          <Menu.List>
+            <Menu.Item>Edit</Menu.Item>
+            <Menu.Item>Export</Menu.Item>
+            <Menu.Item>Copy</Menu.Item>
+          </Menu.List>
+        </Menu>
       </Column>
     </Row>
   );

@@ -23,7 +23,7 @@
 
     <script type="text/babel">
       console.log('InnovaccerDesignSystem', InnovaccerDesignSystem);
-      const { Icon, GridCell, Table, Message } = InnovaccerDesignSystem;
+      const { Icon, GridCell, Table, Message, Menu } = InnovaccerDesignSystem;
 
       const MyTable = () => {
         const data = [
@@ -919,6 +919,13 @@
               className="w-50"
               description="Could not start verification. Please try again later."
             />
+            <Menu trigger={<Menu.Trigger />}>
+              <Menu.List>
+                <Menu.Item>Edit</Menu.Item>
+                <Menu.Item>Export</Menu.Item>
+                <Menu.Item>Copy</Menu.Item>
+              </Menu.List>
+            </Menu>
           </div>
         );
       }
