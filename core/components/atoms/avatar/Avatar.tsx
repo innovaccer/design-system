@@ -148,9 +148,9 @@ export const Avatar = (props: AvatarProps) => {
   });
 
   const presenceClassNames = classNames({
-    ['Avatar-presence']: presence,
-    ['Avatar-presence--active']: presence === 'active',
-    ['Avatar-presence--away']: presence === 'away',
+    [styles['Avatar-presence']]: presence,
+    [styles['Avatar-presence--active']]: presence === 'active',
+    [styles['Avatar-presence--away']]: presence === 'away',
   });
 
   const borderStyle = {
@@ -223,7 +223,11 @@ export const Avatar = (props: AvatarProps) => {
         <span data-test="DesignSystem-Avatar--Presence" className={presenceClassNames} style={borderStyle} />
       )}
       {showStatus && (
+<<<<<<< HEAD
         <span data-test="DesignSystem-Avatar--Status" className="Avatar-status" style={borderStyle}>
+=======
+        <span data-test="DesignSystem-Avatar--Status" className={styles['Avatar-status']} style={borderStyle}>
+>>>>>>> 1a6a3c58 (chore: rebase with master branch)
           {status}
         </span>
       )}
