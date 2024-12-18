@@ -140,10 +140,10 @@ export const Pagination = (props: PaginationProps) => {
         />
       </div>
       {type === 'jump' && (
-        <div className={styles["Pagination-pageIndex"]}>
+        <div className={styles['Pagination-pageIndex']}>
           <MetricInput
             name="page"
-            className={styles["Pagination-MetricInput"]}
+            className={styles['Pagination-MetricInput']}
             onChange={inputChangeHandler}
             value={`${isNaturalNumber(page) ? page : ''}`}
             data-test="DesignSystem-Pagination--Input"

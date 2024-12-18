@@ -60,15 +60,18 @@ export interface ColumnProps extends BaseProps, BaseHtmlProps<HTMLDivElement> {
 export const Column = React.forwardRef<HTMLDivElement, ColumnProps>((props, ref) => {
   const { size, sizeXS, sizeS, sizeM, sizeL, sizeXL, className, children, ...rest } = props;
 
-  const classes = classNames({
-    [styles['Col']]: true,
-    [styles[`Col--${size}`]]: size,
-    [styles[`Col--xs-${sizeXS}`]]: sizeXS,
-    [styles[`Col--s-${sizeS}`]]: sizeS,
-    [styles[`Col--m-${sizeM}`]]: sizeM,
-    [styles[`Col--l-${sizeL}`]]: sizeL,
-    [styles[`Col--xl-${sizeXL}`]]: sizeXL,
-  }, className);
+  const classes = classNames(
+    {
+      [styles['Col']]: true,
+      [styles[`Col--${size}`]]: size,
+      [styles[`Col--xs-${sizeXS}`]]: sizeXS,
+      [styles[`Col--s-${sizeS}`]]: sizeS,
+      [styles[`Col--m-${sizeM}`]]: sizeM,
+      [styles[`Col--l-${sizeL}`]]: sizeL,
+      [styles[`Col--xl-${sizeXL}`]]: sizeXL,
+    },
+    className
+  );
 
   return (
     <div ref={ref} data-test="DesignSystem-Column" {...rest} className={classes}>

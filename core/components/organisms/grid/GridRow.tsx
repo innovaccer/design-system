@@ -124,7 +124,7 @@ export const GridRow = (props: GridRowProps) => {
         {renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length)}
         {renderSchema(rightPinnedSchema, false, 'right')}
       </div>
-      {nestedRows && expanded && <div className={styles["Grid-nestedRow"]}>{nestedRowData}</div>}
+      {nestedRows && expanded && <div className={styles['Grid-nestedRow']}>{nestedRowData}</div>}
     </div>
   );
 };

@@ -155,7 +155,7 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
           )}
           {expanded && (
             <>
-              <span className={styles["Navigation-menuLabel"]}>
+              <span className={styles['Navigation-menuLabel']}>
                 <Text appearance={getTextAppearance(activeMenu, menu.disabled)}>{menu.label}</Text>
               </span>
               {menu.subMenu && menu.subMenu.length > 0 && (
@@ -169,7 +169,7 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
             </>
           )}
         </div>
-        <div className={styles["Navigation-subMenu"]}>
+        <div className={styles['Navigation-subMenu']}>
           {menuState[menu.name] &&
             menu.subMenu &&
             expanded &&

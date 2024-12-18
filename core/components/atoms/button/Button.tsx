@@ -124,15 +124,18 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
     ...rest
   } = props;
 
-  const buttonClass = classNames({
-    [styles['Button']]: true,
-    [styles['Button--expanded']]: expanded,
-    [styles[`Button--${size}`]]: size,
-    [styles[`Button--${size}Square`]]: !children,
-    [styles[`Button--${appearance}`]]: appearance,
-    [styles['Button--selected']]: selected && (appearance === 'basic' || appearance === 'transparent'),
-    [styles[`Button--iconAlign-${iconAlign}`]]: children && iconAlign,
-  }, className);
+  const buttonClass = classNames(
+    {
+      [styles['Button']]: true,
+      [styles['Button--expanded']]: expanded,
+      [styles[`Button--${size}`]]: size,
+      [styles[`Button--${size}Square`]]: !children,
+      [styles[`Button--${appearance}`]]: appearance,
+      [styles['Button--selected']]: selected && (appearance === 'basic' || appearance === 'transparent'),
+      [styles[`Button--iconAlign-${iconAlign}`]]: children && iconAlign,
+    },
+    className
+  );
 
   const iconClass = classNames({
     [styles['Button-icon']]: true,
@@ -142,7 +145,7 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
 
   const buttonTextClass = classNames({
     [styles['Button-text']]: true,
-    [styles['Button-text--hidden']]: true
+    [styles['Button-text--hidden']]: true,
   });
 
   const spinnerSize = size === 'large' && children ? 'small' : 'xsmall';

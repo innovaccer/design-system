@@ -687,7 +687,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const noOfRows = Math.ceil(yearBlockRange / yearsInRow);
 
     return Array.from({ length: noOfRows }, (_y, row) => (
-      <div key={row} className={styles["Calendar-valueRow"]}>
+      <div key={row} className={styles['Calendar-valueRow']}>
         {Array.from({ length: yearsInRow }, (_x, col) => {
           const offset = yearsInRow * row + col;
           if (offset === yearBlockNav) return undefined;
@@ -725,10 +725,12 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             //  TODO(a11y)
             //  eslint-disable-next-line
             <div
+              //  eslint-disable-next-line
               key={`${row}-${col}`}
               data-test="DesignSystem-Calendar--yearValue"
               className={valueClass}
               onClick={this.selectYear(year)}
+              //  eslint-disable-next-line
               onMouseOver={this.yearMouseOverHandler.bind(this, year, isCurrentYear(), disabled)}
             >
               <Text size={size === 'small' ? 'small' : 'regular'} color={getTextColor} className={textClass}>
@@ -751,7 +753,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const noOfRows = Math.ceil(monthBlock / monthsInRow);
 
     return Array.from({ length: noOfRows }, (_y, row) => (
-      <div key={row} className={styles["Calendar-valueRow"]}>
+      <div key={row} className={styles['Calendar-valueRow']}>
         {Array.from({ length: monthsInRow }, (_x, col) => {
           const month = monthsInRow * row + col;
           const disabled =
@@ -790,6 +792,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               data-test="DesignSystem-Calendar--monthValue"
               className={valueClass}
               onClick={this.selectMonth(month)}
+              //  eslint-disable-next-line
               onMouseOver={this.monthMouseOverHandler.bind(this, month, isCurrentMonth(), disabled)}
             >
               <Text size={size === 'small' ? 'small' : 'regular'} color={getTextColor} className={textClass}>
@@ -821,7 +824,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     return (
       <>
-        <div className={styles["Calendar-dayValues"]}>
+        <div className={styles['Calendar-dayValues']}>
           {Array.from({ length: 7 }, (_x, day) => {
             const valueClass = classNames({
               [styles['Calendar-valueWrapper']]: true,
@@ -835,7 +838,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             );
           })}
         </div>
-        <div className={styles["Calendar-dateValues"]} onMouseLeave={this.onDateRowMouseLeaveHandler}>
+        <div className={styles['Calendar-dateValues']} onMouseLeave={this.onDateRowMouseLeaveHandler}>
           {this.renderDateValues(index)}
         </div>
       </>
@@ -939,7 +942,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     return Array.from({ length: noOfRows }, (_y, row) => {
       return (
-        <div key={row} className={styles["Calendar-valueRow"]}>
+        <div key={row} className={styles['Calendar-valueRow']}>
           {Array.from({ length: daysInRow }, (_x, col) => {
             const date = daysInRow * row + col - dummyDays + 1;
             const dummy = date <= 0 || date > dayRange;

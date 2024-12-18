@@ -62,8 +62,8 @@ export const FileUploaderItem = (props: FileUploaderItemProps) => {
       className={FileItemClass}
       onClick={() => onClick && onClick(file, id)}
     >
-      <div className={styles["FileUploaderItem-file"]}>
-        <Text className={styles["FileUploaderItem-text"]} appearance={status === 'completed' ? 'default' : 'subtle'}>
+      <div className={styles['FileUploaderItem-file']}>
+        <Text className={styles['FileUploaderItem-text']} appearance={status === 'completed' ? 'default' : 'subtle'}>
           {name}
         </Text>
         <div className="d-flex align-items-center">

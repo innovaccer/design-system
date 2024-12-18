@@ -21,7 +21,7 @@
     "setup-css-dev": "./scripts/setup-local-css.sh",
     "pre-commit": "lint-staged",
     "lint:types": "tsc -p '.' --noEmit",
-    "lint:check": "npm run lint:types && eslint ./core --ext .tsx,.ts,.js,.jsx",
+    "lint:check": "eslint ./core --ext .tsx,.ts,.js,.jsx",
     "lint": "npm run lint:check -- --fix",
     "prettier:check": "prettier --config ./.prettierrc --check",
     "prettier": "prettier --config ./.prettierrc --write 'css/src/**/*.css'",

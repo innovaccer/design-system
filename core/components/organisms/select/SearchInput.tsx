@@ -34,7 +34,7 @@ export const SearchInput = (props: SelectInputProps) => {
   };
 
   return (
-    <div className={styles["Select-inputWrapper"]}>
+    <div className={styles['Select-inputWrapper']}>
       <Input
         {...rest}
         icon={'search'}
@@ -47,7 +47,7 @@ export const SearchInput = (props: SelectInputProps) => {
         autoComplete={'off'}
         aria-label="Search"
         aria-haspopup="listbox"
-        className={styles["Select-input"]}
+        className={styles['Select-input']}
         data-test="DesignSystem-Select--Input"
       />
     </div>

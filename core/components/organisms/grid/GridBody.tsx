@@ -71,7 +71,7 @@ export const GridBody = (props: GridBodyProps) => {
   };
 
   return (
-    <div className={styles["Grid-body"]}>
+    <div className={styles['Grid-body']}>
       {getArrayList().map((item, i) => {
         return renderRow(i, item);
       })}

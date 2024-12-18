@@ -121,7 +121,7 @@ const HeaderCell = (props: HeaderCellProps) => {
         {schema.displayName}
       </Text>
       {sorting && (
-        <div className={styles["Grid-sortingIcons"]}>
+        <div className={styles['Grid-sortingIcons']}>
           {sorted ? (
             sorted === 'asc' ? (
               <Icon name="arrow_upward" />
@@ -141,7 +141,7 @@ const HeaderCell = (props: HeaderCellProps) => {
       {/* TODO(a11y) */}
       {/* eslint-disable-next-line */}
       <div
-        className={styles["Grid-cellContent"]}
+        className={styles['Grid-cellContent']}
         data-test="DesignSystem-Grid-cellContent"
         onClick={() => {
           if (!loading && sorting) {
@@ -217,7 +217,7 @@ const HeaderCell = (props: HeaderCellProps) => {
         //TODO(a11y)
         //eslint-disable-next-line
         <span
-          className={styles["Grid-cellResize"]}
+          className={styles['Grid-cellResize']}
           onMouseDown={() => {
             resizeCol({ updateColumnSchema }, name, el.current);
             setIsDragged(false);
@@ -247,7 +247,7 @@ const BodyCell = (props: BodyCellProps) => {
   };
 
   return (
-    <div className={styles["Grid-cellContent"]}>
+    <div className={styles['Grid-cellContent']}>
       {colIndex === 0 && nestedRows && (
         <>
           {nestedRowData ? (
@@ -264,7 +264,7 @@ const BodyCell = (props: BodyCellProps) => {
               }}
             />
           ) : (
-            <span className={styles["Grid-nestedRowPlaceholder"]} />
+            <span className={styles['Grid-nestedRowPlaceholder']} />
           )}
         </>
       )}

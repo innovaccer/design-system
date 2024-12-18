@@ -18,10 +18,13 @@ export interface CardProps extends BaseProps, BaseHtmlProps<HTMLDivElement> {
 export const Card = React.forwardRef<HTMLDivElement, CardProps>((props, ref) => {
   const { shadow = 'shadow10', children, className, ...rest } = props;
 
-  const classes = classNames({
-    [styles.Card]: true,
-    [styles[`Card--${shadow}`]]: shadow,
-  }, className);
+  const classes = classNames(
+    {
+      [styles.Card]: true,
+      [styles[`Card--${shadow}`]]: shadow,
+    },
+    className
+  );
 
   return (
     <div data-test="DesignSystem-Card" ref={ref} {...rest} className={classes}>

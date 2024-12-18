@@ -38,7 +38,7 @@ export const ListBody = (props: ListboxItemProps) => {
           size={16}
           appearance="subtle"
           name="drag_indicator"
-          className={styles["Listbox-item--drag-icon"]}
+          className={styles['Listbox-item--drag-icon']}
           data-test="DesignSystem-Listbox-DragIcon"
         />
       )}

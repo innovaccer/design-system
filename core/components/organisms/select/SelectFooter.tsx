@@ -12,7 +12,7 @@ interface SelectFooterProps extends BaseProps {
 export const SelectFooter = (props: SelectFooterProps) => {
   const { children, ...rest } = props;
   return (
-    <div className={styles["Select-buttonWrapper"]} {...rest}>
+    <div className={styles['Select-buttonWrapper']} {...rest}>
       {children}
     </div>
   );

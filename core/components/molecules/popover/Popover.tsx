@@ -24,7 +24,7 @@ const propsList = [
   'offset',
   'closeOnScroll',
 ] as const;
-type PopperProps = typeof propsList[number];
+type PopperProps = (typeof propsList)[number];
 
 export interface PopoverProps extends Pick<PopperWrapperProps, PopperProps>, BaseProps {
   /**

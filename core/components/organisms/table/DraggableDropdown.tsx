@@ -50,7 +50,7 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
   };
 
   return (
-    <div className={dropdownStyles["Dropdown"]}>
+    <div className={dropdownStyles['Dropdown']}>
       <Popover
         open={open}
         onToggle={onToggleHandler}
@@ -74,12 +74,12 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
         customStyle={{
           width: triggerWidth,
         }}
-        className={gridStyles["Header-draggableDropdown"]}
+        className={gridStyles['Header-draggableDropdown']}
       >
-        <div className={dropdownStyles["Dropdown-wrapper"]}>
+        <div className={dropdownStyles['Dropdown-wrapper']}>
           <div className="OptionWrapper">
             <Checkbox
-              className={dropdownStyles["OptionCheckbox"]}
+              className={dropdownStyles['OptionCheckbox']}
               label="Select All"
               checked={tempOptions.every((option) => option.selected)}
               indeterminate={
@@ -107,7 +107,7 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
                 }}
               >
                 <Checkbox
-                  className={dropdownStyles["OptionCheckbox"]}
+                  className={dropdownStyles['OptionCheckbox']}
                   name={option.value as string}
                   label={option.label}
                   checked={tempOptions[index].selected}
@@ -118,7 +118,7 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
             );
           })}
         </div>
-        <div className={dropdownStyles["Dropdown-buttonWrapper"]}>
+        <div className={dropdownStyles['Dropdown-buttonWrapper']}>
           <Button type="button" className="mr-4" size="tiny" onClick={onCancelHandler}>
             Cancel
           </Button>
