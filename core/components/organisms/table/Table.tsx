@@ -151,7 +151,7 @@ interface AsyncProps {
    *      searchTerm?: string;
    *  }
    * </pre>
-   *
+   * 
    * <pre className="DocPage-codeBlock">
    * fetchData returns a promise which
    *  - resolves with data, schema, count and searchTerm
