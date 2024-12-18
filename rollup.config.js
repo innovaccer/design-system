@@ -11,7 +11,6 @@ import gzipPlugin from 'rollup-plugin-gzip';
 import { compress } from 'brotli';
 import image from '@rollup/plugin-image';
 import postcss from 'rollup-plugin-postcss';
-<<<<<<< HEAD
 import esbuild from 'rollup-plugin-esbuild';
 import { concatTokenCSS } from './rollupPlugin';
 import colorModFunction from 'postcss-color-mod-function';
@@ -20,12 +19,6 @@ import autoprefixer from 'autoprefixer';
 const { version, name, license, homepage } = packageJSON;
 
 const banner = () => {
-=======
-
-const banner = () => {
-  const { version, name, license, homepage } = packageJSON;
-
->>>>>>> e61d83d8 (chore: migrate to module css)
   const banner = `
   /**
    * Generated on: ${new Date().toISOString()} 
@@ -46,7 +39,6 @@ const aliasEntries = [
   { find: '@css', replacement: path.resolve('./css/src') },
 ];
 
-<<<<<<< HEAD
 const cssSources = [
   './css/src/tokens',
   './css/src/variables',
@@ -60,8 +52,6 @@ const cssFiles = [
 
 const cssTokenFiles = [path.resolve(__dirname, './css/src/variables/index.css'), path.resolve(__dirname, './css/src/tokens/index.css')];
 
-=======
->>>>>>> e61d83d8 (chore: migrate to module css)
 function globals() {
   return {
     react: 'React',
