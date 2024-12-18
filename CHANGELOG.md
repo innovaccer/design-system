@@ -1,3 +1,49 @@
+## 3.5.0 (2024-12-12)
+
+### Highlights
+
+- feat(avatar): add presence indicator support in avatar component (ce945f26)
+- feat(avatar): add status indicator support in avatar (58857846)
+- fix(input): update cursor position on input type change (8f45613f)
+- fix(table): update table stories structure on storybook (9e3b4d53)
+- feat(statusHint): update color for default appearance (a64c5128)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(avatar): add presence indicator support in avatar component (ce945f26)
+- feat(avatar): add status indicator support in avatar (58857846)
+- feat(statusHint): update color for default appearance (a64c5128)
+
+### Fixes
+
+- fix(input): update cursor position on input type change (8f45613f)
+
+### Improvements
+
+- chore: fix lint error in dropzone component & toast figma connect (9c8a41ec)
+- fix(progressIndicators): update story of spinner and progress ring (506ca9b1)
+- fix(table): update table stories structure on storybook (9e3b4d53)
+- refactor(table): update table props description on storybook (f041f10f)
+
+### Documentation
+
+- docs(docs): add status and presence indicator documentation in avatar (dc14464c)
+- docs(docs): update table preview link in documentation (1df056c2)
+
+---
+
 ## 3.4.0 (2024-11-18)
 
 ### Highlights
