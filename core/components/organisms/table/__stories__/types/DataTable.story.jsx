@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Card, Table } from '@/index';
-import { AsyncTable, SyncTable } from './_common_/types';
+import { AsyncTable, SyncTable } from '../_common_/types';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
 
 export const dataTable = () => {
@@ -410,7 +410,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Table/Data Table',
+  title: 'Components/Table/Types/Data Table',
   component: Table,
   parameters: {
     docs: {

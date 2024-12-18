@@ -315,7 +315,7 @@ export const Header = (props: HeaderProps) => {
                       className="ml-4"
                       onClick={onClearSelection}
                     >
-                      Clear Selection
+                      Clear selection
                     </Button>
                     {selectionActionRenderer && <Divider vertical={true} className={tableDividerClasses} />}
                   </div>

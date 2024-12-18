@@ -1,31 +1,22 @@
 import * as React from 'react';
-import { Card, Heading, Table, Row, Column } from '@/index';
-import { action } from '@/utils/action';
+import { Card, Heading, Table, Column, Row } from '@/index';
 import data from '@/components/organisms/grid/__stories__/_common_/data';
 import schema from '@/components/organisms/grid/__stories__/_common_/schema';
 import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/_common_/types';
 
 // CSF format story
-export const withPagination = () => {
-  const values = ['basic', 'jump'];
-
-  // to freeze the object for typescript
+export const toggleForHeaderRow = () => {
+  const values = [true, false];
 
   return (
     <div className="d-flex flex-wrap">
       <Row>
         {values.map((v, index) => (
-          <Column key={index} className="ml-10" size={5}>
-            <Heading>{`paginationType: ${v}`}</Heading>
+          <Column key={index} size={5} className="ml-10">
+            <Heading>{`showHead: ${v}`}</Heading>
             <div className="vh-75">
               <Card className="h-100 overflow-hidden">
-                <Table
-                  data={data}
-                  schema={schema}
-                  withPagination={true}
-                  paginationType={v}
-                  onPageChange={(newPage) => action(`on-page-change:- ${newPage}`)()}
-                />
+                <Table showHead={v} data={data} schema={schema} />
               </Card>
             </div>
           </Column>
@@ -35,14 +26,14 @@ export const withPagination = () => {
   );
 };
 
-const customCode = `
-() => {
+const customCode = `() => {
   const data = ${JSON.stringify(data, null, 4)};
 
   const schema = [
     {
       name: 'name',
       displayName: 'Name',
+      width: 300,
       resizable: true,
       separator: true,
       tooltip: true,
@@ -81,25 +72,53 @@ const customCode = `
       resizable: true,
       sorting: false,
     },
+    {
+      name: 'gender',
+      displayName: 'Gender',
+      width: 200,
+      resizable: true,
+      comparator: (a, b) => a.gender.localeCompare(b.gender),
+      cellType: 'STATUS_HINT',
+      translate: a => ({
+        title: a.gender,
+        statusAppearance: (a.gender === 'Female') ? 'alert' : 'success'
+      }),
+      filters: [
+        { label: 'Male', value: 'male' },
+        { label: 'Female', value: 'female' },
+      ],
+      onFilterChange: (a, filters) => {
+        for (const filter of filters) {
+          if (a.gender.toLowerCase() === filter) return true;
+        }
+        return false;
+      },
+    },
+    {
+      name: 'icon',
+      displayName: 'Icon',
+      width: 100,
+      resizable: true,
+      align: 'center',
+      cellType: 'ICON',
+      sorting: false,
+      translate: _ => ({
+        icon: 'events'
+      })
+    },
   ];
 
-  const values = ['basic', 'jump'];
+  const values = [true, false];
 
   return (
     <div className="d-flex flex-wrap">
     <Row>
     {values.map((v, index) => (
-      <Column key={index} className="ml-10" size={5}>
-        <Heading>{\`paginationType: \${v}\`}</Heading>
+      <Column key={index} size={5} className="ml-10">
+        <Heading>{\`showHead: \${v}\`}</Heading>
         <div className="vh-75">
           <Card className="h-100 overflow-hidden">
-            <Table
-              data={data}
-              schema={schema}
-              withPagination={true}
-              paginationType={v}
-              onPageChange={newPage => console.log(\`on-page-change:- \${newPage}\`)}
-            />
+            <Table showHead={v} data={data} schema={schema} />
           </Card>
         </div>
       </Column>
@@ -111,12 +130,13 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/Table/Variants/With Pagination',
+  title: 'Components/Table/Toggle For Header Row',
   component: Table,
   parameters: {
     docs: {
       docPage: {
         customCode,
+        title: 'Toggle Option For Header Row',
         props: {
           components: { AsyncTable, SyncTable },
           exclude: ['showHead'],
