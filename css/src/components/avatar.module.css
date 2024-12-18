@@ -106,3 +106,34 @@
   opacity: var(--opacity-20);
   mix-blend-mode: multiply;
 }
+
+.Avatar-presence {
+  position: absolute;
+  border-radius: 50%;
+  width: var(--spacing);
+  height: var(--spacing);
+  right: 0;
+  bottom: 0;
+}
+
+.Avatar-presence--active {
+  background: var(--success);
+}
+
+.Avatar-presence--away {
+  background: var(--secondary-dark);
+}
+
+.Avatar-status {
+  top: calc(-1 * var(--spacing-s));
+  right: calc(-1 * var(--spacing-s));
+  width: var(--spacing-l);
+  height: var(--spacing-l);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  cursor: pointer;
+  overflow: hidden;
+}
