@@ -105,6 +105,7 @@ const commonJsPlugins = [
         return `${name}_v${updatedVersion}_${hash}`;
       },
     },
+    extract: true,
     extensions: ['.css', '.scss', '.sass'],
     plugins: [
       colorModFunction({
@@ -240,6 +241,7 @@ const tsConfig = {
           return `${name}_v${updatedVersion}_${hash}`;
         },
       },
+      extract: true,
       extensions: ['.css', '.scss', '.sass'],
       plugins: [
         colorModFunction({
