@@ -61,7 +61,7 @@ export const FileUploaderButton = (props: FileUploaderButtonProps) => {
         disabled={disabled}
         type="file"
         tabIndex={-1}
-        className={styles["FileUploaderButton-input"]}
+        className={styles['FileUploaderButton-input']}
         onChange={(event) => {
           const fileList = event.target.files ? Array.from(event.target.files) : [];
           if (onChange) onChange(fileList, event);

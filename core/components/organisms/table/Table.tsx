@@ -151,7 +151,7 @@ interface AsyncProps {
    *      searchTerm?: string;
    *  }
    * </pre>
-   * 
+   *
    * <pre className="DocPage-codeBlock">
    * fetchData returns a promise which
    *  - resolves with data, schema, count and searchTerm
@@ -940,7 +940,7 @@ export class Table extends React.Component<TableProps, TableState> {
             </Header>
           </div>
         )}
-        <div className={tableStyles["Table-grid"]}>
+        <div className={tableStyles['Table-grid']}>
           <Grid
             {...this.state}
             key={this.state.searchTerm}
@@ -969,7 +969,7 @@ export class Table extends React.Component<TableProps, TableState> {
           />
         </div>
         {withPagination && !this.state.loading && !this.state.error && totalPages > 1 && (
-          <div className={tableStyles["Table-pagination"]}>
+          <div className={tableStyles['Table-pagination']}>
             <Pagination
               page={this.state.page}
               totalPages={getTotalPages(totalRecords, pageSize)}

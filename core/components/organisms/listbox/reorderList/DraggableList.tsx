@@ -32,7 +32,7 @@ export const DraggableList = (props: ListboxProps) => {
       onChange={onChangeHandler}
       renderItem={({ value, props }) => {
         return (
-          <div {...props} className={styles["Listbox-item--draggable"]}>
+          <div {...props} className={styles['Listbox-item--draggable']}>
             {value}
           </div>
         );

@@ -214,7 +214,7 @@ const VerificationCodeInput = (props: VerificationCodeInputProps) => {
     );
 
   return (
-    <div data-test="DesignSystem-VerificationCodeInput" className={styles["VerificationCodeInput"]}>
+    <div data-test="DesignSystem-VerificationCodeInput" className={styles['VerificationCodeInput']}>
       {values.map((val: string, index: number) => (
         <Input
           key={index}

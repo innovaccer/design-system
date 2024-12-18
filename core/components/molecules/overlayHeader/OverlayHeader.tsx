@@ -62,7 +62,7 @@ export const OverlayHeader = (props: OverlayHeaderProps) => {
 
   return (
     <div data-test="DesignSystem-OverlayHeader" {...baseProps} className={classes}>
-      <div className={styles["OverlayHeader-headerWrapper"]}>
+      <div className={styles['OverlayHeader-headerWrapper']}>
         {(backButton || backIcon) && (
           <Button
             data-test="DesignSystem-OverlayHeader--Button"

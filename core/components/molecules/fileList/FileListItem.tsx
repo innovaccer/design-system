@@ -83,21 +83,21 @@ export const FileListItem = (props: FileListItemProps) => {
     // TODO(a11y)
     //  eslint-disable-next-line
     <div {...baseProps} className={FileItemClass} onClick={onClickHandler} data-test="DesignSystem-FileListItem">
-      <div className={styles["FileItem-file"]}>
-        <div className={styles["FileItem-fileContent"]}>
+      <div className={styles['FileItem-file']}>
+        <div className={styles['FileItem-fileContent']}>
           <FileIcon file={file} status={status} progress={progress} />
           <Text
             data-test="DesignSystem-FileListItem--Name"
-            className={styles["FileItem-text"]}
+            className={styles['FileItem-text']}
             appearance={status === 'completed' ? 'default' : 'subtle'}
             weight="medium"
           >
             {name}
           </Text>
         </div>
-        <div className={styles["FileItem-actions"]}>
+        <div className={styles['FileItem-actions']}>
           <Text
-            className={styles["FileItem-size"]}
+            className={styles['FileItem-size']}
             size="small"
             appearance={'subtle'}
             data-test="DesignSystem-FileListItem--Size"
@@ -108,7 +108,12 @@ export const FileListItem = (props: FileListItemProps) => {
         </div>
       </div>
       {status === 'error' && (
-        <InlineMessage size="small" appearance="alert" description={errorMessage} className={styles['FileItem-error']} />
+        <InlineMessage
+          size="small"
+          appearance="alert"
+          description={errorMessage}
+          className={styles['FileItem-error']}
+        />
       )}
     </div>
   );

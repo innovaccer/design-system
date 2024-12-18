@@ -23,7 +23,6 @@ const errorDescription: Record<string, string> = {
 };
 
 export const ErrorTemplate: React.FC<ErrorTemplateProps> = ({ dropdownStyle, errorType, updateOptions }) => {
-
   const classes = classNames({
     [styles['Dropdown-wrapper']]: true,
     'px-7': true,

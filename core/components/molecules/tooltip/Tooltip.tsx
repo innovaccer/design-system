@@ -30,7 +30,7 @@ const positionValue = {
   right: 'right',
 };
 
-type TooltipPopperProps = typeof tooltipPropsList[number];
+type TooltipPopperProps = (typeof tooltipPropsList)[number];
 
 export interface TooltipProps extends Omit<PopoverProps, TooltipPopperProps>, BaseProps {
   /**
@@ -105,8 +105,8 @@ export const Tooltip = (props: TooltipProps) => {
   }
 
   const tooltipWrapper = (
-    <div className={styles["Tooltip"]}>
-      <Text className={styles["Tooltip-text"]} appearance="white">
+    <div className={styles['Tooltip']}>
+      <Text className={styles['Tooltip-text']} appearance="white">
         {tooltip}
       </Text>
     </div>

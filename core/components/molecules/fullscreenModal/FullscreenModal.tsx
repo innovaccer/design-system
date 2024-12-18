@@ -238,7 +238,7 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
         <div data-test="DesignSystem-FullscreenModal" {...baseProps} className={classes} ref={this.modalRef}>
           <Row className="justify-content-center">
             <Column {...sizeMap[dimension]}>
-              <Row className={styles["FullscreenModal-header"]}>
+              <Row className={styles['FullscreenModal-header']}>
                 <Column>
                   {!header && <OverlayHeader data-test="DesignSystem-FullscreenModal--header" {...headerOptions} />}
 
@@ -257,7 +257,7 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
                   </Tooltip>
                 </Column>
               </Row>
-              <OverlayBody data-test="DesignSystem-FullscreenModal--Body" className={styles["FullscreenModal-body"]}>
+              <OverlayBody data-test="DesignSystem-FullscreenModal--Body" className={styles['FullscreenModal-body']}>
                 {children}
               </OverlayBody>
               {(!!footer || !!footerOptions) && (
@@ -265,7 +265,7 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
                   data-test="DesignSystem-FullscreenModal--footer"
                   {...footerOptions}
                   open={open}
-                  className={styles["FullscreenModal-footer"]}
+                  className={styles['FullscreenModal-footer']}
                 >
                   {footer}
                 </OverlayFooter>

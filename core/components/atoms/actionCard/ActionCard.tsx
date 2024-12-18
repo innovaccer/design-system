@@ -57,7 +57,11 @@ export const ActionCard = (props: ActionCardProps) => {
       {...rest}
     >
       {disabled && (
-        <div style={{ zIndex }} data-test="DesignSystem-ActionCard-Overlay" className={styles['ActionCard-overlay--disabled']} />
+        <div
+          style={{ zIndex }}
+          data-test="DesignSystem-ActionCard-Overlay"
+          className={styles['ActionCard-overlay--disabled']}
+        />
       )}
       {children}
     </div>

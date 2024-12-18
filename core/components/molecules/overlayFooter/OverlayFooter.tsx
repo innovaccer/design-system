@@ -4,7 +4,7 @@ import { Button } from '@/index';
 import { ButtonProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import styles from '@css/components/overlay.module.css';
-import buttonStyles from '@css/components/overlay.module.css';
+import buttonStyles from '@css/components/button.module.css';
 
 export interface OverlayFooterProps extends BaseProps {
   open?: boolean;

@@ -77,7 +77,7 @@ export const MenuItem = (props: MenuItemProps) => {
     const labelClass = classNames({
       [styles['MenuItem-Text']]: true,
       [styles['MenuItem--overflow']]: true,
-      ['mr-5']: !hasSubmenu && menu.count
+      ['mr-5']: !hasSubmenu && menu.count,
     });
 
     return (

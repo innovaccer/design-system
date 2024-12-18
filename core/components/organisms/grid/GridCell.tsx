@@ -129,7 +129,7 @@ const renderMetaList = (props: CellProps) => {
 
   if (metaList) {
     return (
-      <div className={styles["GridCell-metaList"]} data-test="DesignSystem-GridCell-metaList">
+      <div className={styles['GridCell-metaList']} data-test="DesignSystem-GridCell-metaList">
         {metaList.map((list, index) => (
           <Text key={index} className="ellipsis" appearance={'subtle'} size="small">
             {list}
@@ -224,14 +224,20 @@ export const GridCell = (props: GridCellProps) => {
     cellClass
   );
 
-  const avatarWithTextCellClass = classNames({
-    [styles['GridCell--avatarWithText']]: true,
-  }, cellClass);
+  const avatarWithTextCellClass = classNames(
+    {
+      [styles['GridCell--avatarWithText']]: true,
+    },
+    cellClass
+  );
 
-  const iconCellClass = classNames({
-    [styles['GridCell--icon']]: true,
-    [styles[`GridCell--align-${align}`]]: true,
-  }, cellClass);
+  const iconCellClass = classNames(
+    {
+      [styles['GridCell--icon']]: true,
+      [styles[`GridCell--align-${align}`]]: true,
+    },
+    cellClass
+  );
 
   const statusHintCellClass = classNames(
     {
