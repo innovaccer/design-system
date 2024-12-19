@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { Text, Icon, MetaList } from '@/index';
+import styles from '@css/components/chat.module.css';
 
 export type StatusType = 'failed' | 'sending' | 'sent' | 'read' | 'urgent';
 
@@ -27,7 +28,7 @@ export const Status = (props: StatusProps) => {
 
   const TextClass = classNames(
     {
-      ['ChatMessage-status']: true,
+      [styles['ChatMessage-status']]: true,
     },
     className
   );

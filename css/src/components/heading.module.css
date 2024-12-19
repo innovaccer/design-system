@@ -1,0 +1,50 @@
+/* Heading */
+.Heading {
+  margin: 0;
+}
+
+.Heading--s {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-m);
+  line-height: var(--font-height-m);
+}
+
+.Heading--m {
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-l);
+  line-height: var(--font-height-l);
+}
+
+.Heading--l {
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-xl);
+  line-height: var(--font-height-xl);
+}
+
+.Heading--xl {
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-xxl);
+  line-height: var(--font-height-xxl);
+}
+
+.Heading--xxl {
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-xxxl);
+  line-height: var(--font-height-xxl);
+}
+
+.Heading--default {
+  color: var(--text);
+}
+
+.Heading--subtle {
+  color: var(--text-subtle);
+}
+
+.Heading--disabled {
+  color: var(--text-disabled);
+}
+
+.Heading--white {
+  color: var(--text-white);
+}

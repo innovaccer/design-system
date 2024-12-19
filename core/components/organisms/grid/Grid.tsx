@@ -9,6 +9,7 @@ import { NestedRowProps } from './GridNestedRow';
 import classNames from 'classnames';
 import { GridProvider } from './GridContext';
 import defaultProps from './defaultProps';
+import styles from '@css/components/grid.module.css';
 
 export type SortType = 'asc' | 'desc' | 'unsort';
 export type Pinned = 'left' | 'right' | 'unpin';
@@ -337,8 +338,8 @@ export class Grid extends React.Component<GridProps, GridState> {
   }
 
   addScrollListeners() {
-    const gridHeadEl = this.gridRef!.querySelector('.Grid-head');
-    const gridBodyEl = this.gridRef!.querySelector('.Grid-body');
+    const gridHeadEl = this.gridRef!.querySelector(`.${styles['Grid-head']}`);
+    const gridBodyEl = this.gridRef!.querySelector(`.${styles['Grid-body']}`);
 
     if (gridHeadEl && gridBodyEl) {
       gridHeadEl.addEventListener('scroll', this.syncScroll('head'));
@@ -347,8 +348,8 @@ export class Grid extends React.Component<GridProps, GridState> {
   }
 
   removeScrollListeners() {
-    const gridHeadEl = this.gridRef!.querySelector('.Grid-head');
-    const gridBodyEl = this.gridRef!.querySelector('.Grid-body');
+    const gridHeadEl = this.gridRef!.querySelector(`.${styles['Grid-head']}`);
+    const gridBodyEl = this.gridRef!.querySelector(`.${styles['Grid-body']}`);
 
     if (gridHeadEl && gridBodyEl) {
       gridHeadEl.removeEventListener('scroll', this.syncScroll('head'));
@@ -357,8 +358,8 @@ export class Grid extends React.Component<GridProps, GridState> {
   }
 
   syncScroll = (type: string) => () => {
-    const gridHeadEl = this.gridRef!.querySelector('.Grid-head');
-    const gridBodyEl = this.gridRef!.querySelector('.Grid-body');
+    const gridHeadEl = this.gridRef!.querySelector(`.${styles['Grid-head']}`);
+    const gridBodyEl = this.gridRef!.querySelector(`.${styles['Grid-body']}`);
 
     if (type === 'head') {
       if (!this.isHeadSyncing) {
@@ -494,9 +495,9 @@ export class Grid extends React.Component<GridProps, GridState> {
 
     const classes = classNames(
       {
-        Grid: 'true',
-        [`Grid--${type}`]: type,
-        [`Grid--${size}`]: size,
+        [styles.Grid]: 'true',
+        [styles[`Grid--${type}`]]: type,
+        [styles[`Grid--${size}`]]: size,
       },
       className
     );

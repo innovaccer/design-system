@@ -8,6 +8,7 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 import { fileErrorMessages } from './FileErrors';
 import { useAccessibilityProps } from '@/accessibility/utils';
 import DropzoneIcon from './DropzoneIcon';
+import styles from '@css/components/dropzone.module.css';
 
 export type DropZoneType = 'standard' | 'compressed' | 'tight';
 
@@ -39,23 +40,23 @@ export const Dropzone = (props: DropzoneProps) => {
 
   const DropzoneClass = classNames(
     {
-      ['Dropzone']: true,
-      [`Dropzone--${type}`]: type,
-      ['Dropzone--disabled']: disabled,
-      ['Dropzone--active']: isDragActive,
-      ['Dropzone--error']: isDragReject,
-      ['Dropzone-animation']: true,
-      ['Dropzone-animation--default']: !isDragActive && type !== 'standard',
-      ['Dropzone-animation--active']: isDragActive && !isDragReject && type !== 'standard',
-      ['Dropzone-standard--default']: !isDragActive && type === 'standard',
-      ['Dropzone-standard--active']: isDragActive && !isDragReject && type === 'standard',
+      [styles['Dropzone']]: true,
+      [styles[`Dropzone--${type}`]]: type,
+      [styles['Dropzone--disabled']]: disabled,
+      [styles['Dropzone--active']]: isDragActive,
+      [styles['Dropzone--error']]: isDragReject,
+      [styles['Dropzone-animation']]: true,
+      [styles['Dropzone-animation--default']]: !isDragActive && type !== 'standard',
+      [styles['Dropzone-animation--active']]: isDragActive && !isDragReject && type !== 'standard',
+      [styles['Dropzone-standard--default']]: !isDragActive && type === 'standard',
+      [styles['Dropzone-standard--active']]: isDragActive && !isDragReject && type === 'standard',
     },
     className
   );
 
   const WrapperClass = classNames({
-    ['DropzoneWrapper']: true,
-    [`DropzoneWrapper--${type}`]: true,
+    [styles['DropzoneWrapper']]: true,
+    [styles[`DropzoneWrapper--${type}`]]: true,
   });
 
   const renderDropzone = () => {

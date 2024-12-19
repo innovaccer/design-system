@@ -4,7 +4,7 @@ import { DateRangePicker, InputMask } from '@/index';
 const customCode = `
 
 () => {
-   class CustomPopover extends React.Component {
+  class CustomPopover extends React.Component {
     constructor(props) {
       super(props);
       const { startDate, endDate } = DateRangePicker.utils.getCurrentWeek();
@@ -41,7 +41,7 @@ const customCode = `
       return (
         <div className="pt-6 px-5">
           <div className="d-flex align-items-center justify-content-between">
-           <Subheading size="s" className="py-3" appearance="subtle">Range</Subheading>
+            <Subheading size="s" className="py-3" appearance="subtle">Range</Subheading>
             <Icon name="refresh" onClick={this.onReset} />
           </div>
           <div className="pt-5">
@@ -79,7 +79,7 @@ const customCode = `
               label="Last month"
               clearButton={false}
               type="selection"
-              className="mb-5  d-block"
+              className="mb-5 d-block"
               selected={selected === 'prevMonth'}
               name="rangePicker"
               onClick={() => {
@@ -94,7 +94,7 @@ const customCode = `
               label="Last 90 days"
               clearButton={false}
               type="selection"
-              className="mb-5  d-block"
+              className="mb-5 d-block"
               selected={selected === 'prev90Days'}
               name="rangePicker"
               onClick={() => {
@@ -105,11 +105,11 @@ const customCode = `
                 });
               }}
             />
-             <Chip
+            <Chip
               label="Custom"
               clearButton={false}
               type="selection"
-              className="mb-5  d-block"
+              className="mb-5 d-block"
               selected={selected === 'custom'}
               name="rangePicker"
               onClick={() => {

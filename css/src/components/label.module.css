@@ -1,0 +1,37 @@
+/* Label */
+.Label {
+  display: inline-flex;
+}
+
+.Label--withInput {
+  margin-bottom: var(--spacing-m);
+}
+
+.Label--optional {
+  align-items: center;
+}
+
+.Label-text {
+  line-height: var(--font-height-s);
+  font-weight: var(--font-weight-medium);
+  word-break: break-all;
+}
+
+.Label-optionalText {
+  line-height: var(--font-height-s);
+  margin-left: var(--spacing-m);
+}
+
+.Label--disabled {
+  color: var(--text-disabled);
+}
+
+.Label-requiredIndicator {
+  height: var(--spacing-0-75);
+  width: var(--spacing-0-75);
+  border-radius: 50%;
+  background: var(--alert);
+  margin-left: var(--spacing-m);
+  margin-bottom: var(--spacing-0-75);
+  display: inline-flex;
+}

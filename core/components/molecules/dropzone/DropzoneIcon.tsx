@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '@css/components/dropzone.module.css';
 
 type SVGIconProps = {
   /**
@@ -33,14 +34,14 @@ const DropzoneIcon = (props: SVGIconProps) => {
   return (
     <svg
       style={IconStyle}
-      className={`Dropzone-icon--${props.type}`}
+      className={styles[`Dropzone-icon--${props.type}`]}
       viewBox="0 0 64 64"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d={svgCode[props.name]}
-        className={props.disabled ? 'Dropzone-icon--disabled' : `Dropzone-icon--${props.name}`}
+        className={props.disabled ? styles['Dropzone-icon--disabled'] : styles[`Dropzone-icon--${props.name}`]}
       />
     </svg>
   );

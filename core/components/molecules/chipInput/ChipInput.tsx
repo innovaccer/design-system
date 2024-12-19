@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { Chip, Icon } from '@/index';
 import { ChipProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import styles from '@css/components/chipInput.module.css';
 
 const keyCodes = {
   BACKSPACE: 'Backspace',
@@ -113,16 +114,16 @@ export const ChipInput = (props: ChipInputProps) => {
   }, [inputValue]);
 
   const ChipInputBorderClass = classNames({
-    ['ChipInput-border']: true,
-    ['ChipInput-border--error']: error,
+    [styles['ChipInput-border']]: true,
+    [styles['ChipInput-border--error']]: error,
   });
 
   const ChipInputClass = classNames(
     {
-      ChipInput: true,
-      ['ChipInput--disabled']: disabled,
-      ['ChipInput--withChips']: chips && chips.length > 0,
-      ['ChipInput--error']: error,
+      [styles.ChipInput]: true,
+      [styles['ChipInput--disabled']]: disabled,
+      [styles['ChipInput--withChips']]: chips && chips.length > 0,
+      [styles['ChipInput--error']]: error,
     },
     className
   );
@@ -241,12 +242,12 @@ export const ChipInput = (props: ChipInputProps) => {
         onClick={onClickHandler}
         tabIndex={disabled ? -1 : 0}
       >
-        <div className="ChipInput-wrapper" ref={customRef}>
+        <div className={styles['ChipInput-wrapper']} ref={customRef}>
           {chips && chips.length > 0 && chipComponents}
           <input
             data-test="DesignSystem-ChipInput--Input"
             ref={inputRef}
-            className="ChipInput-input"
+            className={styles['ChipInput-input']}
             autoFocus={autoFocus}
             placeholder={chips && chips.length > 0 ? '' : placeholder}
             disabled={disabled}
@@ -263,7 +264,7 @@ export const ChipInput = (props: ChipInputProps) => {
             data-test="DesignSystem-ChipInput--Icon"
             name="close"
             appearance={disabled ? 'disabled' : 'subtle'}
-            className="ChipInput-icon"
+            className={styles['ChipInput-icon']}
             onClick={onDeleteAllHandler}
             tabIndex={disabled ? -1 : 0}
           />

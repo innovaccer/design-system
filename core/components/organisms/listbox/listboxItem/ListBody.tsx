@@ -4,6 +4,7 @@ import { Icon } from '@/index';
 import { ListboxItemProps } from './ListboxItem';
 import { ListboxContext } from '../Listbox';
 import { onKeyDown } from '../utils';
+import styles from '@css/components/listbox.module.css';
 
 export const ListBody = (props: ListboxItemProps) => {
   const { children, className, disabled, selected, activated, tabIndex } = props;
@@ -13,12 +14,12 @@ export const ListBody = (props: ListboxItemProps) => {
 
   const itemClass = classNames(
     {
-      'Listbox-item': true,
-      [`Listbox-item--${size}`]: size,
-      [`Listbox-item--${type}`]: type,
-      'Listbox-item--disabled': disabled,
-      'Listbox-item--selected': selected && type === 'option',
-      'Listbox-item--activated': activated && type === 'resource',
+      [styles['Listbox-item']]: true,
+      [styles[`Listbox-item--${size}`]]: size,
+      [styles[`Listbox-item--${type}`]]: type,
+      [styles['Listbox-item--disabled']]: disabled,
+      [styles['Listbox-item--selected']]: selected && type === 'option',
+      [styles['Listbox-item--activated']]: activated && type === 'resource',
     },
     className
   );
@@ -37,7 +38,7 @@ export const ListBody = (props: ListboxItemProps) => {
           size={16}
           appearance="subtle"
           name="drag_indicator"
-          className="Listbox-item--drag-icon"
+          className={styles['Listbox-item--drag-icon']}
           data-test="DesignSystem-Listbox-DragIcon"
         />
       )}

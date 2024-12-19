@@ -4,6 +4,7 @@ import { Button } from '@/index';
 import MenuContext from '../MenuContext';
 import classNames from 'classnames';
 import { handleKeyDown } from './utils';
+import styles from '@css/components/menu.module.css';
 
 export interface MenuTriggerProps extends BaseProps {
   /**
@@ -23,7 +24,7 @@ export const MenuTrigger = (props: MenuTriggerProps) => {
 
   const triggerClassName = classNames(
     {
-      'Menu-Trigger--active': openPopover,
+      [styles['Menu-Trigger--active']]: openPopover,
     },
     className
   );

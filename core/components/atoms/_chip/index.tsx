@@ -7,6 +7,7 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 import { IconProps, TextProps } from '@/index.type';
 import { Tooltip } from '@/index';
 import { IconType } from '@/common.type';
+import styles from '@css/components/chip.module.css';
 
 export interface GenericChipProps extends BaseProps {
   label: string | React.ReactElement;
@@ -39,11 +40,11 @@ export const GenericChip = (props: GenericChipProps) => {
 
   const iconClass = (align: string) =>
     classNames({
-      ['Chip-icon']: true,
-      [`Chip-icon--${align}`]: align,
-      [`Chip-icon-disabled--right`]: align === 'right' && disabled,
+      [styles['Chip-icon']]: true,
+      [styles[`Chip-icon--${align}`]]: align,
+      [styles[`Chip-icon-disabled--right`]]: align === 'right' && disabled,
       ['cursor-pointer']: align === 'right' && !disabled,
-      ['Chip-icon--selected']: align === 'right' && selected,
+      [styles['Chip-icon--selected']]: align === 'right' && selected,
     });
 
   const onCloseHandler = (e: React.MouseEvent | React.KeyboardEvent) => {
@@ -74,26 +75,38 @@ export const GenericChip = (props: GenericChipProps) => {
       ['inverse']: !selected && align === 'left',
     }) as IconProps['appearance'];
 
+  const chipTextClass = classNames({
+    [styles['Chip-text']]: true,
+    ['mr-3']: true,
+  });
+
   const textColor = classNames({
     ['primary-dark']: selected,
     ['inverse']: !disabled && !selected,
   }) as TextProps['color'];
 
+  const chipWrapperClass = classNames(
+    {
+      [styles['Chip-wrapper']]: true,
+    },
+    className
+  );
+
   const renderLabel = () => {
     if (typeof label === 'string') {
       return (
-        <div className="Chip-text--truncate" ref={contentRef}>
+        <div className={styles['Chip-text--truncate']} ref={contentRef}>
           {labelPrefix && (
             <Text
               data-test="DesignSystem-GenericChip--LabelPrefix"
               weight="medium"
               color={textColor}
-              className="Chip-text mr-3"
+              className={chipTextClass}
             >
               {labelPrefix}
             </Text>
           )}
-          <Text data-test="DesignSystem-GenericChip--Text" color={textColor} className="Chip-text">
+          <Text data-test="DesignSystem-GenericChip--Text" color={textColor} className={styles['Chip-text']}>
             {label}
           </Text>
         </div>
@@ -125,7 +138,7 @@ export const GenericChip = (props: GenericChipProps) => {
         role="button"
         onKeyDown={onChipKeyDownHandler}
         {...baseProps}
-        className={`Chip-wrapper ${className}`}
+        className={chipWrapperClass}
         onClick={onClickHandler}
       >
         {icon && (

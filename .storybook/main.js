@@ -1,5 +1,10 @@
 const path = require('path');
 
+const cssTokenFiles = [
+  path.resolve(__dirname, '../css/src/variables/index.css'),
+  path.resolve(__dirname, '../css/src/tokens/index.css')
+];
+
 module.exports = {
   stories: ['../core/components/**/*.story.@(js|jsx|ts|tsx)', '../core/ai-components/**/*.story.@(js|jsx|ts|tsx)'],
   addons: [
@@ -16,6 +21,33 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-a11y',
     '@storybook/addon-knobs',
+    {
+      name: '@storybook/addon-postcss',
+      options: {
+        postcssLoaderOptions: {
+          implementation: require('postcss'),
+          postcssOptions: {
+            plugins: [
+              require('autoprefixer'),
+              require('postcss-color-mod-function')({
+                importFrom: cssTokenFiles,
+              }),
+            ],
+          },
+        },
+      },
+    },
+    {
+      name: 'storybook-css-modules',
+      options: {
+        cssModulesLoaderOptions: {
+          importLoaders: 1,
+          modules: {
+            localIdentName: '[local]', // Use local class names directly
+          },
+        },
+      },
+    },
   ],
   typescript: {
     check: false,
@@ -33,6 +65,7 @@ module.exports = {
   },
   webpackFinal: async (config, { configType }) => {
     config.resolve.alias['@'] = path.resolve(__dirname, '../core');
+    config.resolve.alias['@css'] = path.resolve(__dirname, '../css/src');
     config.resolve.alias['@innovaccer/mds-images/ui-states'] = path.resolve(__dirname, '../mds-images/ui-states');
     // Return the altered config
     return config;

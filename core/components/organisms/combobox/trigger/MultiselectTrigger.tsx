@@ -4,6 +4,7 @@ import { Chip, Icon } from '@/index';
 import { ChipProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { OptionType } from '@/common.type';
+import styles from '@css/components/chipInput.module.css';
 
 const keyCodes = {
   BACKSPACE: 'Backspace',
@@ -143,16 +144,16 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
   }, [inputValue]);
 
   const ChipInputBorderClass = classNames({
-    ['ChipInput-border']: true,
-    ['ChipInput-border--error']: error,
+    [styles['ChipInput-border']]: true,
+    [styles['ChipInput-border--error']]: error,
   });
 
   const ChipInputClass = classNames(
     {
-      ChipInput: true,
-      ['ChipInput--disabled']: disabled,
-      ['ChipInput--withChips']: chips && chips.length > 0,
-      ['ChipInput--error']: error,
+      [styles.ChipInput]: true,
+      [styles['ChipInput--disabled']]: disabled,
+      [styles['ChipInput--withChips']]: chips && chips.length > 0,
+      [styles['ChipInput--error']]: error,
     },
     className
   );
@@ -284,13 +285,13 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
         onClick={onClickHandler}
         tabIndex={disabled ? -1 : tabIndex || 0}
       >
-        <div className="ChipInput-wrapper" ref={customRef}>
+        <div className={styles["ChipInput-wrapper"]} ref={customRef}>
           {chips && chips.length > 0 && chipComponents}
           <input
             {...rest}
             data-test="DesignSystem-MultiSelectTrigger--Input"
             ref={inputElementRef}
-            className="ChipInput-input"
+            className={styles["ChipInput-input"]}
             autoFocus={autoFocus}
             placeholder={chips && chips.length > 0 ? '' : placeholder}
             disabled={disabled}
@@ -308,7 +309,7 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
             data-test="DesignSystem-MultiSelectTrigger--Icon"
             name="close"
             appearance={disabled ? 'disabled' : 'subtle'}
-            className="ChipInput-icon"
+            className={styles['ChipInput-icon']}
             onClick={onDeleteAllHandler}
             tabIndex={disabled ? -1 : 0}
           />

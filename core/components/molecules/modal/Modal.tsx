@@ -10,6 +10,9 @@ import { ColumnProps } from '@/index.type';
 import { getWrapperElement, getUpdatedZIndex, closeOnEscapeKeypress } from '@/utils/overlayHelper';
 import OverlayManager from '@/utils/OverlayManager';
 import { FooterOptions } from '@/common.type';
+import styles from '@css/components/modal.module.css';
+import rowStyles from '@css/components/column.module.css';
+
 export type ModalDimension = 'small' | 'medium' | 'large';
 
 export interface ModalProps extends BaseProps {
@@ -240,35 +243,35 @@ class Modal extends React.Component<ModalProps, ModalState> {
 
     const classes = classNames(
       {
-        Modal: true,
-        'Modal--open': open,
-        'Modal-animation--open': animate,
-        'Modal-animation--close': !animate,
+        [styles.Modal]: true,
+        [styles['Modal--open']]: open,
+        [styles['Modal-animation--open']]: animate,
+        [styles['Modal-animation--close']]: !animate,
       },
       className
     );
 
     const headerClass = classNames({
-      ['Modal-header']: true,
-      ['Modal-header--withSeperator']: seperator,
+      [styles['Modal-header']]: true,
+      [styles['Modal-header--withSeperator']]: seperator,
     });
 
     const footerClass = classNames({
-      ['Modal-footer']: true,
-      ['Modal-footer--withSeperator']: seperator,
+      [styles['Modal-footer']]: true,
+      [styles['Modal-footer--withSeperator']]: seperator,
     });
 
     const ContainerClass = classNames({
-      ['Row']: true,
+      [rowStyles['Row']]: true,
       ['Overlay-container']: true,
       ['Overlay-container--open']: open,
     });
 
     const isAPINew = headerOptions || footerOptions || footer || header;
     const bodyClass = classNames({
-      ['Modal-body']: true,
-      ['Modal-body--withMargin']: isAPINew ? !!footer : true,
-      ['Modal-body--withPadding']: isAPINew ? !footer : true,
+      [styles['Modal-body']]: true,
+      [styles['Modal-body--withMargin']]: isAPINew ? !!footer : true,
+      [styles['Modal-body--withPadding']]: isAPINew ? !footer : true,
     });
 
     const baseProps = extractBaseProps(this.props);

@@ -23,5 +23,5 @@
       "@/*": ["core/*"]
     }
   },
-  "exclude": ["dist", "build", "node_modules", ".github", ".husky", "docs", "types/types-tests.tsx"]
+  "exclude": ["dist", "build", "node_modules", ".github", ".husky", "docs", "types/types-tests.tsx", "examples", "**/*.d.ts"]
 }

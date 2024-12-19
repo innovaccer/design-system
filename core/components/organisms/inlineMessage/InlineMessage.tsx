@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { Icon, Text } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { MessageAppearance } from '@/common.type';
+import styles from '@css/components/inlineMessage.module.css';
 
 const IconMapping = {
   success: 'check_circle',
@@ -37,19 +38,19 @@ export const InlineMessage = (props: InlineMessageProps) => {
 
   const InlineMessageClass = classNames(
     {
-      ['InlineMessage']: true,
+      [styles['InlineMessage']]: true,
     },
     className
   );
 
   const IconClass = classNames({
-    ['InlineMessage-icon--warning']: appearance === 'warning',
-    ['InlineMessage-icon--small']: size === 'small',
-    ['InlineMessage-icon--regular']: size === 'regular',
+    [styles['InlineMessage-icon--warning']]: appearance === 'warning',
+    [styles['InlineMessage-icon--small']]: size === 'small',
+    [styles['InlineMessage-icon--regular']]: size === 'regular',
   });
 
   const DescriptionClass = classNames({
-    [`InlineMessage-text--${appearance}`]: appearance,
+    [styles[`InlineMessage-text--${appearance}`]]: appearance,
   });
 
   const IconSize = size === 'small' ? 14 : 16;

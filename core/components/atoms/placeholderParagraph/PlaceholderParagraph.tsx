@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import styles from '@css/components/placeholder.module.css';
 
 export type Length = 'small' | 'medium' | 'large';
 export type PlaceholderParagraphSize = 'xxs' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl';
@@ -40,16 +41,16 @@ export const PlaceholderParagraph = (props: PlaceholderParagraphProps) => {
   const baseProps = extractBaseProps(props);
 
   const classes = classNames({
-    'Placeholder--animation': true,
-    PlaceholderParagraph: true,
-    [`PlaceholderParagraph--${size}`]: size,
+    [styles['Placeholder--animation']]: true,
+    [styles.PlaceholderParagraph]: true,
+    [styles[`PlaceholderParagraph--${size}`]]: size,
   });
 
   const wrapperClass = classNames(
     {
-      'PlaceholderParagraph-wrapper': true,
-      [`PlaceholderParagraph-wrapper--length-${length}`]: length,
-      [`PlaceholderParagraph-wrapper--size-${size}`]: size,
+      [styles['PlaceholderParagraph-wrapper']]: true,
+      [styles[`PlaceholderParagraph-wrapper--length-${length}`]]: length,
+      [styles[`PlaceholderParagraph-wrapper--size-${size}`]]: size,
     },
     className
   );

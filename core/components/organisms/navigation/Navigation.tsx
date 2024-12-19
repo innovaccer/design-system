@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { HorizontalNav } from '@/index';
 import { VerticalNavigation, VerticalNavigationProps } from './VerticalNavigation';
+import styles from '@css/components/navigation.module.css';
 
 export type LayoutType = 'vertical' | 'horizontal';
 export type Align = 'left' | 'center';
@@ -45,11 +46,11 @@ export const Navigation = (props: NavigationProps) => {
 
   const classes = classNames(
     {
-      ['Navigation']: true,
-      [`Navigation--${type}`]: type,
+      [styles['Navigation']]: true,
+      [styles[`Navigation--${type}`]]: type,
       ['justify-content-center']: type === 'horizontal' && align === 'center',
       ['justify-content-start']: type === 'horizontal' && align === 'left',
-      ['Navigation--collapsed']: !expanded,
+      [styles['Navigation--collapsed']]: !expanded,
     },
     className
   );

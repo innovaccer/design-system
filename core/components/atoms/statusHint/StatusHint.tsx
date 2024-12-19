@@ -3,6 +3,7 @@ import Text from '@/components/atoms/text';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { MessageAppearance } from '@/common.type';
+import styles from '@css/components/statusHint.module.css';
 
 export interface StatusHintProps extends BaseProps {
   /**
@@ -38,14 +39,14 @@ export const StatusHint = (props: StatusHintProps) => {
 
   const StatusHintClass = classNames(
     {
-      ['StatusHint']: true,
+      [styles.StatusHint]: true,
     },
     className
   );
 
   const StatusHintIconClass = classNames({
-    ['StatusHint-icon']: true,
-    [`StatusHint--${appearance}`]: appearance,
+    [styles['StatusHint-icon']]: true,
+    [styles[`StatusHint--${appearance}`]]: appearance,
   });
 
   const StatusHintTextClass = classNames({
