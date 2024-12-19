@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { BaseProps, extractBaseProps, SingleOrArray } from '@/utils/types';
 import { TTabSize } from '@/common.type';
 import styles from '@css/components/tabs.module.css';
+import pageHeaderStyles from '@css/components/pageHeader.module.css';
 
 export interface TabsWrapperProps extends BaseProps {
   /**
@@ -43,6 +44,11 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
     className
   );
 
+  const headerClass = classNames({
+    [styles['TabsWrapper-header']]: true,
+    [pageHeaderStyles['TabsWrapper-header']]: true,
+  });
+
   const tabClickHandler = (tabIndex: number) => {
     setActiveTab(tabIndex);
     if (onTabChange) onTabChange(tabIndex);
@@ -75,7 +81,7 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
 
   return (
     <div data-test="DesignSystem-TabsWrapper" {...baseProps} className={wrapperClass}>
-      <div className={styles['TabsWrapper-header']}>{TabsHeader}</div>
+      <div className={headerClass}>{TabsHeader}</div>
       <div className={styles['TabsWrapper-content']} data-test="DesignSystem-Tabs--Content">
         {tabs[active]}
       </div>

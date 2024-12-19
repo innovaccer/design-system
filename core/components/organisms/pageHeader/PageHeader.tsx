@@ -117,7 +117,7 @@ export const PageHeader = (props: PageHeaderProps) => {
         <div className="d-flex pl-6">
           <BackButton button={button} />
           <div className={classes}>
-            <Row>
+            <Row className="w-100">
               <Column size={colSize} sizeXL={colSize} sizeM={colSize}>
                 <Title badge={badge} title={title} />
               </Column>

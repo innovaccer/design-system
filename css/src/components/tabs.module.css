@@ -95,16 +95,6 @@
   background-color: transparent;
 }
 
-.Tab-count {
-  display: flex;
-  margin-right: var(--spacing-l);
-}
-
-.Tab-count .Badge {
-  margin-left: 0;
-  margin-right: 0;
-}
-
 .Tab-icon {
   display: flex;
   min-width: inherit;

@@ -131,7 +131,7 @@ const renderMetaList = (props: CellProps) => {
     return (
       <div className={styles['GridCell-metaList']} data-test="DesignSystem-GridCell-metaList">
         {metaList.map((list, index) => (
-          <Text key={index} className="ellipsis" appearance={'subtle'} size="small">
+          <Text key={index} className="ellipsis d-flex align-items-center" appearance={'subtle'} size="small">
             {list}
           </Text>
         ))}
@@ -148,10 +148,10 @@ const renderAvatar = (props: CellProps) => {
   const { firstName, lastName, title } = cellData;
 
   if (firstName || lastName) {
-    return <Avatar className="mr-5" firstName={firstName} lastName={lastName} />;
+    return <Avatar className="m-0 mr-5" firstName={firstName} lastName={lastName} />;
   }
   if (title) {
-    return <Avatar className="mr-5">{title}</Avatar>;
+    return <Avatar className="m-0 mr-5">{title}</Avatar>;
   }
 
   return null;
@@ -177,7 +177,11 @@ const renderStatusHint = (props: CellProps) => {
   const children = cellData.title;
 
   if (children) {
-    return <StatusHint appearance={statusAppearance}>{children}</StatusHint>;
+    return (
+      <StatusHint appearance={statusAppearance} className="overflow-hidden">
+        {children}
+      </StatusHint>
+    );
   }
 
   return null;
