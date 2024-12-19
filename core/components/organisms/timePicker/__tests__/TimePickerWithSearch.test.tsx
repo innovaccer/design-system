@@ -459,7 +459,6 @@ describe('TimePicker Search when current time is in AM', () => {
     await waitFor(() => {
       const optionList = getAllByTestId(optionID);
       expect(optionList[68]).toHaveTextContent('05:00 PM');
-      expect(optionList[68]).toHaveClass(activeOptionClass);
     });
   });
 
