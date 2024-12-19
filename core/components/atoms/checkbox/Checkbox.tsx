@@ -7,6 +7,7 @@ import { ChangeEvent } from '@/common.type';
 import CheckboxIcon from './CheckboxIcon';
 import styles from '@css/components/checkbox.module.css';
 import dropdownStyles from '@css/components/dropdown.module.css';
+import gridStyles from '@css/components/grid.module.css';
 
 export type CheckBoxSize = 'regular' | 'tiny';
 
@@ -131,6 +132,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
 
   const CheckboxWrapper = classNames({
     [styles['Checkbox-wrapper']]: true,
+    [gridStyles['Checkbox-wrapper']]: true,
     [styles['Checkbox-wrapper--default']]: !error,
     [styles['Checkbox-wrapper--error']]: error,
   });

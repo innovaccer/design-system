@@ -254,6 +254,7 @@ export const Header = (props: HeaderProps) => {
                     <Dropdown
                       key={name}
                       withCheckbox={true}
+                      className="my-0 mx-3"
                       showApplyButton={true}
                       inlineLabel={displayName}
                       icon={'filter_list'}
@@ -275,6 +276,7 @@ export const Header = (props: HeaderProps) => {
         <div className={gridStyles['Header-label']}>
           {!showHead && withCheckbox && !loading && (
             <Checkbox
+              className="mr-4"
               {...selectAll}
               onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                 if (onSelectAll) onSelectAll(event.target.checked);
