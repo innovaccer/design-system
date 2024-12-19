@@ -390,9 +390,6 @@
   text-align: center;
 }
 
-.GridCell--default {
-}
-
 .GridCell--metaList {
   display: flex;
   flex-direction: column;

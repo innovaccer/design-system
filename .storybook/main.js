@@ -21,6 +21,7 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-a11y',
     '@storybook/addon-knobs',
+    'storybook-css-modules',
     {
       name: '@storybook/addon-postcss',
       options: {
@@ -37,17 +38,17 @@ module.exports = {
         },
       },
     },
-    {
-      name: 'storybook-css-modules',
-      options: {
-        cssModulesLoaderOptions: {
-          importLoaders: 1,
-          modules: {
-            localIdentName: '[local]', // Use local class names directly
-          },
-        },
-      },
-    },
+    // {
+    //   name: 'storybook-css-modules',
+    //   options: {
+    //     cssModulesLoaderOptions: {
+    //       importLoaders: 1,
+    //       // modules: {
+    //       //   localIdentName: '[local]', // Use local class names directly
+    //       // },
+    //     },
+    //   },
+    // },
   ],
   typescript: {
     check: false,

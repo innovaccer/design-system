@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { BaseHtmlProps, BaseProps } from '@/utils/types';
-import classNames from 'classnames';
 
 export interface OutsideClickProps extends BaseHtmlProps<HTMLDivElement>, BaseProps {
   /**
@@ -39,15 +38,8 @@ export const OutsideClick = React.forwardRef<HTMLDivElement, OutsideClickProps>(
     }
   }, []);
 
-  const classes = classNames(
-    {
-      ['OutsideClick']: true,
-    },
-    className
-  );
-
   return (
-    <div ref={innerRef} {...rest} className={classes}>
+    <div ref={innerRef} {...rest} className={className}>
       {children}
     </div>
   );

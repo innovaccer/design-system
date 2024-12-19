@@ -526,7 +526,7 @@ const DropdownList = (props: OptionsProps) => {
 
     return (
       <div className={SelectAllClass} onMouseEnter={() => updateActiveOption(0, true)}>
-        <label htmlFor={id} className={checkboxStyles['Checkbox-label']}>
+        <label htmlFor={id} className={dropdownStyles['Checkbox-label']}>
           <Checkbox
             label={label}
             onChange={onSelectAll}
