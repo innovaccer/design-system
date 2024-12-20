@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { OverlayBody } from '@/components/molecules/overlayBody';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import styles from '@css/components/modal.module.css';
 
 export interface ModalBodyProps extends BaseProps {
   children: React.ReactNode;
@@ -16,8 +17,8 @@ export const ModalBody = (props: ModalBodyProps) => {
 
   const classes = classNames(
     {
-      'Modal-body': true,
-      'Modal-body--withMargin': true,
+      [styles['Modal-body']]: true,
+      [styles['Modal-body--withMargin']]: true,
     },
     className
   );

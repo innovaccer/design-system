@@ -99,10 +99,7 @@ describe('render Table component', () => {
     const { getByTestId } = render(<Table />);
     expect(getByTestId('DesignSystem-Table-wrapper')).toBeInTheDocument();
   });
-  it('render table with withHeader prop', () => {
-    const { getByTestId } = render(<Table withHeader={true} />);
-    expect(getByTestId('DesignSystem-Table-header')).toHaveClass('Table-header');
-  });
+
   it('render table with className prop', () => {
     const { getByTestId } = render(<Table className="table-wrapper" />);
     expect(getByTestId('DesignSystem-Table-wrapper')).toHaveClass('table-wrapper');

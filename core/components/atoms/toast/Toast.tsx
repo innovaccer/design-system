@@ -6,6 +6,7 @@ import Icon from '@/components/atoms/icon';
 import ActionButton from './ActionButton';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { MessageAppearance } from '@/common.type';
+import styles from '@css/components/toast.module.css';
 
 export type Action = {
   /**
@@ -61,9 +62,9 @@ export const Toast = (props: ToastProps) => {
 
   const wrapperClass = classNames(
     {
-      ['Toast']: true,
-      ['Toast--withMessage']: message,
-      [`Toast--${appearance}`]: appearance,
+      [styles.Toast]: true,
+      [styles['Toast--withMessage']]: message,
+      [styles[`Toast--${appearance}`]]: appearance,
     },
     className
   );
@@ -78,26 +79,26 @@ export const Toast = (props: ToastProps) => {
   const icon = IconMapping[appearance];
 
   const titleClass = classNames({
-    ['Toast-title']: true,
-    ['Toast-title--withMessage']: message,
+    [styles['Toast-title']]: true,
+    [styles['Toast-title--withMessage']]: message,
   });
 
   const iconClass = (align: string) =>
     classNames({
-      ['Toast-icon']: true,
-      [`Toast-icon--${align}`]: align,
-      [`Toast-icon--${appearance}`]: appearance,
-      [`Toast-close-icon--${appearance}`]: appearance && align === 'right',
+      [styles['Toast-icon']]: true,
+      [styles[`Toast-icon--${align}`]]: align,
+      [styles[`Toast-icon--${appearance}`]]: appearance,
+      [styles[`Toast-close-icon--${appearance}`]]: appearance && align === 'right',
     });
 
   const textClass = classNames({
-    ['Toast-text']: true,
-    [`Toast-text--${appearance}`]: appearance,
+    [styles['Toast-text']]: true,
+    [styles[`Toast-text--${appearance}`]]: appearance,
   });
 
   const headingClass = classNames({
-    ['Toast-heading']: true,
-    [`Toast-heading--${appearance}`]: appearance,
+    [styles['Toast-heading']]: true,
+    [styles[`Toast-heading--${appearance}`]]: appearance,
   });
 
   const onCloseHandler = () => {
@@ -107,7 +108,7 @@ export const Toast = (props: ToastProps) => {
   return (
     <div {...baseProps} className={wrapperClass}>
       {icon && <Icon name={icon} className={iconClass('left')} />}
-      <div className="Toast-body">
+      <div className={styles['Toast-body']}>
         <div className={titleClass}>
           <Heading size="s" className={headingClass} appearance={appearance !== 'warning' ? 'white' : 'default'}>
             {title}
@@ -125,7 +126,7 @@ export const Toast = (props: ToastProps) => {
           </Text>
         )}
         {!!actions?.length && (
-          <div className="Toast-actions">
+          <div className={styles['Toast-actions']}>
             {actions.slice(0, 2).map((action, index) => (
               <ActionButton key={index} label={action!.label} appearance={appearance} onClick={action!.onClick} />
             ))}

@@ -9,6 +9,7 @@ import EmptyStateTitle from './EmptyStateTitle';
 import EmptyStateDescription from './EmptyStateDescription';
 import EmptyStateActions from './EmptyStateActions';
 import { TEmptyStateSize } from '@/common.type';
+import styles from '@css/components/emptyState.module.css';
 
 export interface EmptyStateProps extends BaseProps {
   /** @ignore */
@@ -106,21 +107,21 @@ export const EmptyState = (props: EmptyStateProps) => {
 
   const wrapperClasses = classNames(
     {
-      ['EmptyState']: true,
+      [styles['EmptyState']]: true,
     },
     className
   );
 
-  const emptyStateWrapper = classNames({ ['EmptyState-Wrapper']: true }, className);
+  const emptyStateWrapper = classNames({ [styles['EmptyState-Wrapper']]: true }, className);
 
   const headingClasses = classNames({
-    ['EmptyState-title']: true,
-    [`EmptyState-title--${templateSize}`]: true,
+    [styles['EmptyState-title']]: true,
+    [styles[`EmptyState-title--${templateSize}`]]: true,
   });
 
   const textClasses = classNames({
-    ['EmptyState-description']: true,
-    [`EmptyState-description--${templateSize}`]: children !== undefined,
+    [styles['EmptyState-description']]: true,
+    [styles[`EmptyState-description--${templateSize}`]]: children !== undefined,
   });
 
   if (title || description) {

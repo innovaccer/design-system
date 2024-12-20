@@ -8,6 +8,7 @@ import { Trigger } from './Trigger';
 import { SingleInputTrigger } from './SingleInputTrigger';
 import { getDateInfo, convertToDate, compareDate, translateToString } from '../calendar/utility';
 import { Popover, Utils } from '@/index';
+import styles from '@css/components/dateRangePicker.module.css';
 import {
   getCurrentWeek,
   getPreviousWeek,
@@ -404,8 +405,8 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
     const { open } = this.state;
 
     const RangePickerClass = classNames({
-      ['DateRangePicker']: true,
-      [`DateRangePicker--${contentAlign}`]: contentAlign,
+      [styles['DateRangePicker']]: true,
+      [styles[`DateRangePicker--${contentAlign}`]]: contentAlign,
     });
 
     if (withInput) {

@@ -3,6 +3,8 @@ import classNames from 'classnames';
 import { Button, Icon, Text } from '@/index';
 import { BaseHtmlProps, BaseProps, extractBaseProps } from '@/utils/types';
 import { AutoComplete, IconType } from '@/common.type';
+import styles from '@css/components/metricInput.module.css';
+import paginationStyles from '@css/components/pagination.module.css';
 
 export type MetricInputSize = 'regular' | 'large';
 
@@ -165,25 +167,26 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
 
   const classes = classNames(
     {
-      ['MetricInput']: true,
-      [`MetricInput--${size}`]: size,
-      ['MetricInput--disabled']: disabled,
-      ['MetricInput--readOnly']: readOnly,
-      ['MetricInput--error']: error,
+      [styles['MetricInput']]: true,
+      [styles[`MetricInput--${size}`]]: size,
+      [styles['MetricInput--disabled']]: disabled,
+      [styles['MetricInput--readOnly']]: readOnly,
+      [styles['MetricInput--error']]: error,
     },
     className
   );
 
   const inputClass = classNames({
-    ['MetricInput-input']: true,
-    [`MetricInput-input--${size}`]: size,
+    [styles['MetricInput-input']]: true,
+    [paginationStyles['MetricInput-input']]: true,
+    [styles[`MetricInput-input--${size}`]]: size,
     [`mr-4`]: !suffix && !showActionButton && size === 'regular',
     [`mr-6`]: !suffix && !showActionButton && size === 'large',
   });
 
   const iconClass = classNames({
-    ['MetricInput-icon']: true,
-    [`MetricInput-icon--${size}`]: size,
+    [styles['MetricInput-icon']]: true,
+    [styles[`MetricInput-icon--${size}`]]: size,
   });
 
   const prefixClass = classNames({
@@ -198,7 +201,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
 
   const actionButton = classNames({
     ['p-0']: true,
-    [`MetricInput-arrowIcon--${size}`]: size,
+    [styles[`MetricInput-arrowIcon--${size}`]]: size,
     ['ml-3']: true,
   });
 
@@ -304,7 +307,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
         </Text>
       )}
       {showActionButton && (
-        <div className="MetricInput-arrowIcons">
+        <div className={paginationStyles['MetricInput-arrowIcons']}>
           <Button
             type="button"
             icon="keyboard_arrow_up"

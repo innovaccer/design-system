@@ -14,6 +14,8 @@ import { hasSchema, getPluralSuffix } from '../grid/utility';
 import { DraggableDropdown } from './DraggableDropdown';
 import { DropdownProps } from '@/index.type';
 import classNames from 'classnames';
+import tableStyles from '@css/components/table.module.css';
+import gridStyles from '@css/components/grid.module.css';
 
 export interface ExternalHeaderProps {
   children?: React.ReactNode;
@@ -130,13 +132,13 @@ export const Header = (props: HeaderProps) => {
   };
 
   const unselectedRowLabelClass = classNames({
-    'Table-Header-Label--hide': animateUnSelectedLabel && showSelectedRowLabel,
-    'Table-Header-Label--show': animateUnSelectedLabel && !showSelectedRowLabel,
+    [tableStyles['Table-Header-Label--hide']]: animateUnSelectedLabel && showSelectedRowLabel,
+    [tableStyles['Table-Header-Label--show']]: animateUnSelectedLabel && !showSelectedRowLabel,
   });
 
   const selectedRowLabelClass = classNames({
-    'Table-Header-Label--hide': animateSelectedLabel && !showSelectedRowLabel,
-    'Table-Header-Label--show': animateSelectedLabel && showSelectedRowLabel,
+    [tableStyles['Table-Header-Label--hide']]: animateSelectedLabel && !showSelectedRowLabel,
+    [tableStyles['Table-Header-Label--show']]: animateSelectedLabel && showSelectedRowLabel,
   });
 
   React.useEffect(() => {
@@ -213,12 +215,15 @@ export const Header = (props: HeaderProps) => {
     return `Showing ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`;
   };
 
+  const headerClasses = classNames(gridStyles['Header-content'], gridStyles['Header-content--bottom']);
+  const tableDividerClasses = classNames(tableStyles['Table-Header--Divider'], 'mx-4');
+
   return (
-    <div className="Header">
-      <div className="Header-content Header-content--top">
+    <div className={gridStyles['Header']}>
+      <div className={gridStyles['Header-content']}>
         <div className="d-flex w-100">
           {withSearch && (
-            <div className="Header-search">
+            <div className={gridStyles['Header-search']}>
               <Input
                 data-test="DesignSystem-Table-Header--withSearch"
                 name="GridHeader-search"
@@ -233,8 +238,8 @@ export const Header = (props: HeaderProps) => {
             </div>
           )}
           {showFilters && filterSchema.length > 0 && (
-            <div className="Header-dropdown">
-              <div className="Header-filters">
+            <div className={gridStyles['Header-dropdown']}>
+              <div className={gridStyles['Header-filters']}>
                 {filterSchema.map((s) => {
                   const { name, displayName, filters } = s;
 
@@ -249,6 +254,7 @@ export const Header = (props: HeaderProps) => {
                     <Dropdown
                       key={name}
                       withCheckbox={true}
+                      className="my-0 mx-3"
                       showApplyButton={true}
                       inlineLabel={displayName}
                       icon={'filter_list'}
@@ -260,14 +266,17 @@ export const Header = (props: HeaderProps) => {
               </div>
             </div>
           )}
-          {children && <div className="Header-actions">{children}</div>}
+          {children && <div className={gridStyles['Header-actions']}>{children}</div>}
         </div>
-        {globalActionRenderer && <div className="Header-global-actions">{globalActionRenderer(displayData)}</div>}
+        {globalActionRenderer && (
+          <div className={gridStyles['Header-global-actions']}>{globalActionRenderer(displayData)}</div>
+        )}
       </div>
-      <div className="Header-content Header-content--bottom">
-        <div className="Header-label">
+      <div className={headerClasses}>
+        <div className={gridStyles['Header-label']}>
           {!showHead && withCheckbox && !loading && (
             <Checkbox
+              className="mr-4"
               {...selectAll}
               onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                 if (onSelectAll) onSelectAll(event.target.checked);
@@ -310,7 +319,7 @@ export const Header = (props: HeaderProps) => {
                     >
                       Clear selection
                     </Button>
-                    {selectionActionRenderer && <Divider vertical={true} className="mx-4 Table-Header--Divider" />}
+                    {selectionActionRenderer && <Divider vertical={true} className={tableDividerClasses} />}
                   </div>
                 </div>
               )}
@@ -324,7 +333,7 @@ export const Header = (props: HeaderProps) => {
           )}
         </div>
         {dynamicColumn && (
-          <div className="Header-hideColumns">
+          <div>
             <DraggableDropdown options={columnOptions} onChange={onDynamicColumnUpdate} />
           </div>
         )}

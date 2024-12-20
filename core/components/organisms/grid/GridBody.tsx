@@ -4,6 +4,7 @@ import { GridRow } from './GridRow';
 import { GridState, onSelectFn, Schema, updatePrevPageInfoFunction } from './Grid';
 // import { GridProps } from '@/index.type';
 import GridContext from './GridContext';
+import styles from '@css/components/grid.module.css';
 
 export interface GridBodyProps {
   schema: Schema;
@@ -24,7 +25,7 @@ export const GridBody = (props: GridBodyProps) => {
   const { schema, prevPageInfo, updatePrevPageInfo, onSelect } = props;
 
   React.useEffect(() => {
-    const gridBodyEl = ref!.querySelector('.Grid-body');
+    const gridBodyEl = ref!.querySelector(`.${styles['Grid-body']}`);
     if (gridBodyEl) {
       window.requestAnimationFrame(() => {
         if (prevPageInfo.page === page) {
@@ -70,7 +71,7 @@ export const GridBody = (props: GridBodyProps) => {
   };
 
   return (
-    <div className="Grid-body">
+    <div className={styles['Grid-body']}>
       {getArrayList().map((item, i) => {
         return renderRow(i, item);
       })}

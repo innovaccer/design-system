@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Text } from '@/index';
 import { OptionTypeProps } from './index';
+import styles from '@css/components/dropdown.module.css';
 
 const MetaOption = (props: OptionTypeProps) => {
   const { className, textClassName, onClickHandler, optionData, onUpdateActiveOption, renderSubInfo, color, dataTest } =
@@ -19,7 +20,7 @@ const MetaOption = (props: OptionTypeProps) => {
       data-disabled={disabled}
     >
       {/* eslint-enable */}
-      <div className={'Option-label'}>
+      <div className={styles['Option-label']}>
         <Text className={textClassName} color={color}>
           {label}
         </Text>

@@ -1,7 +1,9 @@
-import classNames from 'classnames';
 import * as React from 'react';
+import classNames from 'classnames';
 import * as Keys from '@/utils/Keys';
 import { formatPercentage, clamp } from './SliderUtils';
+import sliderStyles from '@css/components/slider.module.css';
+import tooltipStyles from '@css/components/tooltip.module.css';
 
 export interface HandleProps {
   value: number;
@@ -171,15 +173,15 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
     const style = { left: offsetCalc };
 
     const className = classNames({
-      ['Slider-handle']: true,
-      ['Slider-handle--disabled']: disabled,
-      ['Slider-handle--active']: isHandleMoving,
+      [sliderStyles['Slider-handle']]: true,
+      [sliderStyles['Slider-handle--disabled']]: disabled,
+      [sliderStyles['Slider-handle--active']]: isHandleMoving,
       ['border-0']: disabled,
     });
 
     const TooltipClass = classNames({
-      ['Slider-tooltip']: true,
-      ['Tooltip']: true,
+      [sliderStyles['Slider-tooltip']]: true,
+      [tooltipStyles['Tooltip']]: true,
       ['d-none']: !showTootlip,
     });
 
