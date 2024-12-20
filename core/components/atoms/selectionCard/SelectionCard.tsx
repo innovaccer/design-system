@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, BaseHtmlProps } from '@/utils/types';
 import { useMultiSelect, useSingleSelect } from './hooks';
+import styles from '@css/components/selectionCard.module.css';
 
 type ClickEventType = React.MouseEvent<HTMLDivElement> | React.KeyboardEvent;
 
@@ -41,12 +42,12 @@ export const SelectionCard = (props: SelectionCardProps) => {
 
   const classes = classNames(
     {
-      ['Selection-card']: true,
-      ['Selection-card--default']: !disabled,
-      ['Selection-card--selected']: selected && !disabled,
-      ['Selection-card--disabled']: disabled,
-      ['Selection-card--default-disabled']: disabled && !selected,
-      ['Selection-card--selected-disabled']: disabled && selected,
+      [styles['Selection-card']]: true,
+      [styles['Selection-card--default']]: !disabled,
+      [styles['Selection-card--selected']]: selected && !disabled,
+      [styles['Selection-card--disabled']]: disabled,
+      [styles['Selection-card--default-disabled']]: disabled && !selected,
+      [styles['Selection-card--selected-disabled']]: disabled && selected,
     },
     className
   );
@@ -75,7 +76,7 @@ export const SelectionCard = (props: SelectionCardProps) => {
       {...rest}
     >
       <div
-        className="Selection-card-overlay"
+        className={styles['Selection-card-overlay']}
         style={{ zIndex: overlayZIndex }}
         data-test="DesignSystem-SelectionCard-Overlay"
       />

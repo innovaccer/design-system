@@ -7,7 +7,7 @@
   flex-wrap: wrap;
 }
 
-.Pagination .Button {
+.Pagination-button {
   padding-left: var(--spacing);
   padding-right: var(--spacing);
 }

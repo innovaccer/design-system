@@ -2,6 +2,8 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { AccentAppearance } from '@/common.type';
+import styles from '@css/components/pills.module.css';
+import badgeStyles from '@css/components/badge.module.css';
 
 export interface PillsProps extends BaseProps {
   /**
@@ -25,9 +27,9 @@ export const Pills = (props: PillsProps) => {
 
   const classes = classNames(
     {
-      Pills: true,
-      [`Badge--${appearance}`]: appearance && !subtle,
-      [`Badge--subtle-${appearance}`]: subtle,
+      [styles.Pills]: true,
+      [badgeStyles[`Badge--${appearance}`]]: appearance && !subtle,
+      [badgeStyles[`Badge--subtle-${appearance}`]]: subtle,
     },
     className
   );

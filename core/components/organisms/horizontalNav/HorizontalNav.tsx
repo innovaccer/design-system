@@ -4,6 +4,7 @@ import { Text, Icon, Pills } from '@/index';
 import { VerticalNavProps } from '@/index.type';
 import { extractBaseProps, BaseProps } from '@/utils/types';
 import { getNavItemColor, getPillsAppearance, isMenuActive, Menu } from '@/utils/navigationHelper';
+import styles from '@css/components/horizontalNav.module.css';
 
 export type HorizontalNavProps = BaseProps & Pick<VerticalNavProps, 'menus' | 'active' | 'onClick'>;
 export type Align = 'left' | 'center';
@@ -15,7 +16,7 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
 
   const classes = classNames(
     {
-      ['HorizontalNav']: true,
+      [styles['HorizontalNav']]: true,
     },
     className
   );
@@ -26,9 +27,9 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
 
   const getPillsClass = (disabled?: boolean) =>
     classNames({
-      ['HorizontalNav-pills']: true,
-      ['HorizontalNav-pills--disabled']: disabled,
-      ['HorizontalNav-animate']: true,
+      [styles['HorizontalNav-pills']]: true,
+      [styles['HorizontalNav-pills--disabled']]: disabled,
+      [styles['HorizontalNav-animate']]: true,
     });
 
   const renderIcon = (menu: Menu, isActive: boolean) => {
@@ -46,10 +47,12 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
       );
     }
 
+    const IconClassName = classNames('mr-3', styles['HorizontalNav-animate']);
+
     if (menu.icon) {
       return (
         <Icon
-          className="mr-3 HorizontalNav-animate"
+          className={IconClassName}
           name={menu.icon}
           type={menu.iconType}
           data-test="DesignSystem-HorizontalNav--Icon"
@@ -71,13 +74,15 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
     const itemColor = getNavItemColor(isActive, menu.disabled);
 
     const menuClasses = classNames({
-      'HorizontalNav-menu': true,
-      'HorizontalNav-menu--default': !isActive && !menu.disabled,
-      ['HorizontalNav-menu--active']: isActive,
-      ['HorizontalNav-menu--disabled']: menu.disabled,
-      [`HorizontalNav-animate`]: true,
+      [styles['HorizontalNav-menu']]: true,
+      [styles['HorizontalNav-menu--default']]: !isActive && !menu.disabled,
+      [styles['HorizontalNav-menu--active']]: isActive,
+      [styles['HorizontalNav-menu--disabled']]: menu.disabled,
+      [styles[`HorizontalNav-animate`]]: true,
       [`color-${itemColor}`]: true,
     });
+
+    const textClasses = classNames(styles['HorizontalNav-menuText'], styles['HorizontalNav-animate']);
 
     return (
       // TODO(a11y)
@@ -92,12 +97,7 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
         role="button"
       >
         {renderIcon(menu, isActive)}
-        <Text
-          color={itemColor}
-          weight="medium"
-          data-test="DesignSystem-HorizontalNav--Text"
-          className="HorizontalNav-menuText HorizontalNav-animate"
-        >
+        <Text color={itemColor} weight="medium" data-test="DesignSystem-HorizontalNav--Text" className={textClasses}>
           {menu.label}
         </Text>
       </div>

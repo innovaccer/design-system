@@ -1,14 +1,15 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { Avatar } from '@/index';
+import styles from '@css/components/avatarGroup.module.css';
 
 const Avatars = (props: any) => {
   const { avatarList, avatarStyle, tooltipPosition, size } = props;
 
   const GroupClass = classNames({
-    [`AvatarGroup-item`]: true,
-    [`AvatarGroup-item--tiny`]: size === 'tiny',
-    [`AvatarGroup-item--regular`]: size === 'regular',
+    [styles[`AvatarGroup-item`]]: true,
+    [styles[`AvatarGroup-item--tiny`]]: size === 'tiny',
+    [styles[`AvatarGroup-item--regular`]]: size === 'regular',
   });
 
   const avatars = avatarList.map((item: any, index: any) => {

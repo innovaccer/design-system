@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { OverlayHeader } from '@/components/molecules/overlayHeader';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { Column, Button } from '@/index';
+import styles from '@css/components/modal.module.css';
 
 export interface ModalHeaderProps extends BaseProps {
   heading?: string;
@@ -19,8 +20,8 @@ export const ModalHeader = (props: ModalHeaderProps) => {
 
   const classes = classNames(
     {
-      'Modal-header': true,
-      ['Modal-header--withSeperator']: seperator,
+      [styles['Modal-header']]: true,
+      [styles['Modal-header--withSeperator']]: seperator,
     },
     className
   );

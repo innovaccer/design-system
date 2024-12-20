@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { BaseProps } from '@/utils/types';
 import { Input } from '@/index';
 import { InputProps } from '@/index.type';
+import styles from '@css/components/verificationCodeInput.module.css';
 
 const KEY_CODE = {
   backspace: 'Backspace',
@@ -206,14 +207,14 @@ const VerificationCodeInput = (props: VerificationCodeInputProps) => {
   const wrapperClassNames = (i: number) =>
     classNames(
       {
-        'VerificationCodeInput-Input': true,
+        [styles['VerificationCodeInput-Input']]: true,
         'ml-4': i > 0,
       },
       className
     );
 
   return (
-    <div data-test="DesignSystem-VerificationCodeInput" className="VerificationCodeInput">
+    <div data-test="DesignSystem-VerificationCodeInput" className={styles['VerificationCodeInput']}>
       {values.map((val: string, index: number) => (
         <Input
           key={index}

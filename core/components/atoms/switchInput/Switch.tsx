@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { OmitNativeProps, BaseProps } from '@/utils/types';
 import { isSpaceKey } from '@/accessibility/utils';
 import { ChangeEvent } from '@/common.type';
+import styles from '@css/components/switch.module.css';
 
 export type SwitchSize = 'regular' | 'tiny' | 'large';
 export type SwitchAppearance = 'primary' | 'alert' | 'success' | 'warning';
@@ -75,19 +76,19 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>((props, re
 
   const SwitchClass = classNames(
     {
-      ['Switch']: true,
-      ['Switch--disabled']: disabled,
-      [`Switch--${size}`]: size,
+      [styles.Switch]: true,
+      [styles['Switch--disabled']]: disabled,
+      [styles[`Switch--${size}`]]: size,
     },
     className
   );
 
   const SwitchWrapper = classNames({
-    ['Switch-wrapper']: true,
-    ['Switch-wrapper--disabled']: disabled,
-    [`Switch-wrapper--${size}`]: size,
-    ['Switch-wrapper--checked']: checked,
-    ['Switch-wrapper--checkedDisabled']: checked && disabled,
+    [styles['Switch-wrapper']]: true,
+    [styles['Switch-wrapper--disabled']]: disabled,
+    [styles[`Switch-wrapper--${size}`]]: size,
+    [styles['Switch-wrapper--checked']]: checked,
+    [styles['Switch-wrapper--checkedDisabled']]: checked && disabled,
   });
 
   const onChangeHandler = (event: ChangeEvent | KeyboardEvent) => {
@@ -109,7 +110,7 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>((props, re
         ref={ref}
         name={name}
         value={value}
-        className="Switch-input"
+        className={styles['Switch-input']}
         onKeyUp={onChangeHandler}
       />
       <span className={SwitchWrapper} />

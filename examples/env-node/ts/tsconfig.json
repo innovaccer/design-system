@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["@innovaccer/design-system/core/*"]
+    }
+  },
+  "include": ["src"]
+}

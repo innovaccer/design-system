@@ -47,7 +47,7 @@ exports[`FullscreenModal component
               >
                 <style />
                 <div
-                  class="OutsideClick PopperWrapper-trigger"
+                  class="PopperWrapper-trigger"
                 >
                   <button
                     class="Button Button--regular Button--regularSquare Button--transparent"
@@ -131,7 +131,7 @@ exports[`FullscreenModal component
               >
                 <style />
                 <div
-                  class="OutsideClick PopperWrapper-trigger"
+                  class="PopperWrapper-trigger"
                 >
                   <button
                     class="Button Button--regular Button--regularSquare Button--transparent"
@@ -257,7 +257,7 @@ exports[`FullscreenModal component
               >
                 <style />
                 <div
-                  class="OutsideClick PopperWrapper-trigger"
+                  class="PopperWrapper-trigger"
                 >
                   <button
                     class="Button Button--regular Button--regularSquare Button--transparent"
@@ -348,7 +348,7 @@ exports[`FullscreenModal component
               >
                 <style />
                 <div
-                  class="OutsideClick PopperWrapper-trigger"
+                  class="PopperWrapper-trigger"
                 >
                   <button
                     class="Button Button--regular Button--regularSquare Button--transparent"
@@ -431,7 +431,7 @@ exports[`FullscreenModal component
               >
                 <style />
                 <div
-                  class="OutsideClick PopperWrapper-trigger"
+                  class="PopperWrapper-trigger"
                 >
                   <button
                     class="Button Button--regular Button--regularSquare Button--transparent"
@@ -557,7 +557,7 @@ exports[`FullscreenModal component
               >
                 <style />
                 <div
-                  class="OutsideClick PopperWrapper-trigger"
+                  class="PopperWrapper-trigger"
                 >
                   <button
                     class="Button Button--regular Button--regularSquare Button--transparent"

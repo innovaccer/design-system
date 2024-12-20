@@ -2,6 +2,8 @@ import * as React from 'react';
 import { InputMask, Row, Column, Label, Utils } from '@/index';
 import { compareDate, getDateInfo, translateToDate, translateToString } from '../calendar/utility';
 import { DateRangePickerProps, DateRangePickerState } from './DateRangePicker';
+import styles from '@css/components/dateRangePicker.module.css';
+import classNames from 'classnames';
 
 type TriggerProps = {
   inputFormat: DateRangePickerProps['inputFormat'];
@@ -162,9 +164,19 @@ export const Trigger = (props: TriggerProps) => {
     return Utils.validators.isValid(validators, val, inputFormat);
   };
 
+  const StartInputClassName = classNames({
+    [styles['DateRangePicker-input']]: true,
+    [styles['DateRangePicker-input--startDate']]: true,
+  });
+
+  const EndInputClassName = classNames({
+    [styles['DateRangePicker-input']]: true,
+    [styles['DateRangePicker-input--endDate']]: true,
+  });
+
   return (
     <Row data-test="DesignSystem-DateRangePicker-InputTrigger">
-      <Column size={'6'} sizeXS={'12'} className="DateRangePicker-input DateRangePicker-input--startDate">
+      <Column size={'6'} sizeXS={'12'} className={StartInputClassName}>
         {startLabel && (
           <Label required={startInputOptions.required} withInput={true}>
             {startLabel}
@@ -199,7 +211,7 @@ export const Trigger = (props: TriggerProps) => {
           clearOnEmptyBlur={true}
         />
       </Column>
-      <Column size={'6'} sizeXS={'12'} className="DateRangePicker-input DateRangePicker-input--endDate">
+      <Column size={'6'} sizeXS={'12'} className={EndInputClassName}>
         {endLabel && (
           <Label required={endInputOptions.required} withInput={true}>
             {endLabel}

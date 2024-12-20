@@ -8,6 +8,7 @@ import {
   updateColumnSchemaFunction,
   updateSortingListFunction,
 } from './Grid';
+import styles from '@css/components/grid.module.css';
 
 type resizeColFn = (
   gridInfo: { updateColumnSchema: updateColumnSchemaFunction },
@@ -83,7 +84,7 @@ export function getWidth({ ref, withCheckbox }: { ref: GridRef; withCheckbox?: b
   const isPercent = typeof width === 'string' && width.slice(-1) === '%';
 
   if (isPercent) {
-    const checkboxCell = ref!.querySelector('.Grid-cell--checkbox');
+    const checkboxCell = ref!.querySelector(`.${styles['Grid-cell--checkbox']}`);
     const checkboxWidth = withCheckbox ? checkboxCell?.clientWidth || 28 : 0;
     const gridWidth = ref!.clientWidth - checkboxWidth;
     return gridWidth * (+(width as string).slice(0, -1) / 100);

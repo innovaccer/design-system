@@ -775,7 +775,7 @@ exports[`TS renders children 1`] = `
   >
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger w-100"
+      class="PopperWrapper-trigger w-100"
     >
       <button
         class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -821,7 +821,7 @@ exports[`TS renders children 1`] = `
         >
           <style />
           <div
-            class="OutsideClick PopperWrapper-trigger w-100"
+            class="PopperWrapper-trigger w-100"
           >
             <button
               class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -983,9 +983,7 @@ exports[`TS renders children 1`] = `
     class="MetaList"
     data-test="DesignSystem-MetaList"
   />
-  <div
-    class="OutsideClick"
-  >
+  <div>
     <span
       class="Text Text--default Text--regular"
       data-test="DesignSystem-Text"
@@ -1562,7 +1560,7 @@ exports[`TS renders children 1`] = `
   </div>
   <style />
   <div
-    class="OutsideClick PopperWrapper-trigger"
+    class="PopperWrapper-trigger"
   >
     <span
       class="Text Text--default Text--regular"
@@ -1653,7 +1651,7 @@ exports[`TS renders children 1`] = `
       class="Pagination-buttonWrapper Pagination-buttonWrapper--previous"
     >
       <button
-        class="Button Button--regular Button--regularSquare Button--transparent"
+        class="Button Button--regular Button--regularSquare Button--transparent Pagination-button"
         data-test="DesignSystem-Pagination--FirstButton"
         disabled=""
         tabindex="0"
@@ -1673,7 +1671,7 @@ exports[`TS renders children 1`] = `
         </div>
       </button>
       <button
-        class="Button Button--regular Button--regularSquare Button--basic ml-4 mr-3"
+        class="Button Button--regular Button--regularSquare Button--basic ml-4 mr-3 Pagination-button"
         data-test="DesignSystem-Pagination--PrevButton"
         disabled=""
         tabindex="0"
@@ -1697,7 +1695,7 @@ exports[`TS renders children 1`] = `
       class="Pagination-buttonWrapper Pagination-buttonWrapper--next"
     >
       <button
-        class="Button Button--regular Button--regularSquare Button--basic mr-4 ml-3"
+        class="Button Button--regular Button--regularSquare Button--basic ml-3 mr-4 Pagination-button"
         data-test="DesignSystem-Pagination--NextButton"
         disabled=""
         tabindex="0"
@@ -1717,7 +1715,7 @@ exports[`TS renders children 1`] = `
         </div>
       </button>
       <button
-        class="Button Button--regular Button--regularSquare Button--transparent"
+        class="Button Button--regular Button--regularSquare Button--transparent Pagination-button"
         data-test="DesignSystem-Pagination--LastButton"
         disabled=""
         tabindex="0"
@@ -1782,7 +1780,7 @@ exports[`TS renders children 1`] = `
   </svg>
   <style />
   <div
-    class="OutsideClick PopperWrapper-trigger"
+    class="PopperWrapper-trigger"
   >
     <span
       class="Text Text--default Text--regular"
@@ -2518,7 +2516,7 @@ exports[`TS renders children 1`] = `
           class="PageHeader"
         >
           <div
-            class="Row"
+            class="Row w-100"
             data-test="DesignSystem-Row"
           >
             <div

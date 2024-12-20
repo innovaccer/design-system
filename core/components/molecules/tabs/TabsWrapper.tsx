@@ -2,6 +2,8 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps, SingleOrArray } from '@/utils/types';
 import { TTabSize } from '@/common.type';
+import styles from '@css/components/tabs.module.css';
+import pageHeaderStyles from '@css/components/pageHeader.module.css';
 
 export interface TabsWrapperProps extends BaseProps {
   /**
@@ -37,10 +39,15 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
 
   const wrapperClass = classNames(
     {
-      ['TabsWrapper']: true,
+      [styles['TabsWrapper']]: true,
     },
     className
   );
+
+  const headerClass = classNames({
+    [styles['TabsWrapper-header']]: true,
+    [pageHeaderStyles['TabsWrapper-header']]: true,
+  });
 
   const tabClickHandler = (tabIndex: number) => {
     setActiveTab(tabIndex);
@@ -51,11 +58,11 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
     const { label, disabled } = child.props;
 
     const tabHeaderClass = classNames({
-      ['Tab']: true,
-      ['Tab--disabled']: disabled,
-      ['Tab--active']: !disabled && active === index,
-      ['Tab--regular']: size === 'regular',
-      ['Tab--small']: size === 'small',
+      [styles['Tab']]: true,
+      [styles['Tab--disabled']]: disabled,
+      [styles['Tab--active']]: !disabled && active === index,
+      [styles['Tab--regular']]: size === 'regular',
+      [styles['Tab--small']]: size === 'small',
     });
 
     return (
@@ -74,8 +81,8 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
 
   return (
     <div data-test="DesignSystem-TabsWrapper" {...baseProps} className={wrapperClass}>
-      <div className="TabsWrapper-header">{TabsHeader}</div>
-      <div className="TabsWrapper-content" data-test="DesignSystem-Tabs--Content">
+      <div className={headerClass}>{TabsHeader}</div>
+      <div className={styles['TabsWrapper-content']} data-test="DesignSystem-Tabs--Content">
         {tabs[active]}
       </div>
     </div>

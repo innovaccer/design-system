@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { navigationPositionType } from './PageHeader';
 import { Heading, Column } from '@/index';
+import styles from '@css/components/pageHeader.module.css';
 
 export const Status = (props: {
   status: React.ReactNode;
@@ -13,7 +14,7 @@ export const Status = (props: {
   const { status, meta, navigationPosition, navigation, tabs } = props;
 
   const statusClasses = classNames({
-    'PageHeader-statusWrapper': true,
+    [styles['PageHeader-statusWrapper']]: true,
     'mb-3': (navigationPosition === 'bottom' && navigation) || tabs,
   });
 
@@ -36,12 +37,12 @@ export const Action = (props: { actions: React.ReactNode; navigation: React.Reac
     <>
       {actions ? (
         <Column size="4" sizeXL="4" sizeM="4" data-test="DesignSystem-PageHeader--Actions">
-          <div className="PageHeader-actionsWrapper">{actions}</div>
+          <div className={styles['PageHeader-actionsWrapper']}>{actions}</div>
         </Column>
       ) : (
         (navigation || stepper) && (
           <Column size="4" sizeXL="4" sizeM="4" data-test="DesignSystem-PageHeader--Actions">
-            <div className="PageHeader-actionsWrapper"></div>
+            <div className={styles['PageHeader-actionsWrapper']}></div>
           </Column>
         )
       )}
@@ -56,7 +57,7 @@ export const Nav = (props: { navigation: React.ReactNode; stepper: React.ReactNo
     return null;
   }
   return (
-    <div className="PageHeader-navigationWrapper" data-test="DesignSystem-PageHeader--Nav">
+    <div className={styles['PageHeader-navigationWrapper']} data-test="DesignSystem-PageHeader--Nav">
       {navigation || stepper}
     </div>
   );
@@ -97,8 +98,8 @@ export const BackButton = (props: { button: React.ReactNode }) => {
 export const Title = (props: { badge: React.ReactNode; title: string }) => {
   const { badge, title } = props;
   return (
-    <div className="PageHeader-titleWrapper" data-test="DesignSystem-PageHeader--Title">
-      <Heading className="PageHeader-title">{title}</Heading>
+    <div className={styles['PageHeader-titleWrapper']} data-test="DesignSystem-PageHeader--Title">
+      <Heading className={styles['PageHeader-title']}>{title}</Heading>
       {badge}
     </div>
   );

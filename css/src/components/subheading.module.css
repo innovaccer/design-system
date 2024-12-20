@@ -1,0 +1,25 @@
+/* Subheading */
+.Subheading {
+  margin: 0;
+  font-weight: var(--font-weight-bolder);
+  font-size: var(--spacing-l);
+  line-height: var(--font-height-m);
+  letter-spacing: var(--letter-spacing);
+  text-transform: uppercase;
+}
+
+.Subheading--default {
+  color: var(--text);
+}
+
+.Subheading--subtle {
+  color: var(--text-subtle);
+}
+
+.Subheading--disabled {
+  color: var(--text-disabled);
+}
+
+.Subheading--white {
+  color: var(--text-white);
+}

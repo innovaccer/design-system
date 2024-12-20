@@ -98,7 +98,6 @@ exports[`Modal component
     class="Overlay-wrapper"
   >
     <div
-      class="OutsideClick"
       data-test="DesignSystem-Modal--OutsideClick"
     >
       <div
@@ -221,7 +220,7 @@ exports[`Modal component
           >
             <style />
             <div
-              class="OutsideClick PopperWrapper-trigger"
+              class="PopperWrapper-trigger"
             >
               <button
                 class="Button Button--regular Button--regularSquare Button--transparent"
@@ -355,7 +354,6 @@ exports[`Modal component
     class="Overlay-wrapper"
   >
     <div
-      class="OutsideClick"
       data-test="DesignSystem-Modal--OutsideClick"
     >
       <div
@@ -389,7 +387,7 @@ exports[`Modal component
             >
               <style />
               <div
-                class="OutsideClick PopperWrapper-trigger"
+                class="PopperWrapper-trigger"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -569,7 +567,7 @@ exports[`Modal component
           >
             <style />
             <div
-              class="OutsideClick PopperWrapper-trigger"
+              class="PopperWrapper-trigger"
             >
               <button
                 class="Button Button--regular Button--regularSquare Button--transparent"
@@ -680,7 +678,6 @@ exports[`Modal component
     class="Overlay-wrapper"
   >
     <div
-      class="OutsideClick"
       data-test="DesignSystem-Modal--OutsideClick"
     >
       <div
@@ -729,7 +726,7 @@ exports[`Modal component
             >
               <style />
               <div
-                class="OutsideClick PopperWrapper-trigger"
+                class="PopperWrapper-trigger"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -929,7 +926,6 @@ exports[`Modal component
     class="Overlay-wrapper"
   >
     <div
-      class="OutsideClick"
       data-test="DesignSystem-Modal--OutsideClick"
     >
       <div
@@ -1052,7 +1048,7 @@ exports[`Modal component
           >
             <style />
             <div
-              class="OutsideClick PopperWrapper-trigger"
+              class="PopperWrapper-trigger"
             >
               <button
                 class="Button Button--regular Button--regularSquare Button--transparent"
@@ -1186,7 +1182,6 @@ exports[`Modal component
     class="Overlay-wrapper"
   >
     <div
-      class="OutsideClick"
       data-test="DesignSystem-Modal--OutsideClick"
     >
       <div
@@ -1220,7 +1215,7 @@ exports[`Modal component
             >
               <style />
               <div
-                class="OutsideClick PopperWrapper-trigger"
+                class="PopperWrapper-trigger"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -1400,7 +1395,7 @@ exports[`Modal component
           >
             <style />
             <div
-              class="OutsideClick PopperWrapper-trigger"
+              class="PopperWrapper-trigger"
             >
               <button
                 class="Button Button--regular Button--regularSquare Button--transparent"
@@ -1511,7 +1506,6 @@ exports[`Modal component
     class="Overlay-wrapper"
   >
     <div
-      class="OutsideClick"
       data-test="DesignSystem-Modal--OutsideClick"
     >
       <div
@@ -1560,7 +1554,7 @@ exports[`Modal component
             >
               <style />
               <div
-                class="OutsideClick PopperWrapper-trigger"
+                class="PopperWrapper-trigger"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -1760,7 +1754,6 @@ exports[`Modal component
     class="Overlay-wrapper"
   >
     <div
-      class="OutsideClick"
       data-test="DesignSystem-Modal--OutsideClick"
     >
       <div
@@ -1883,7 +1876,7 @@ exports[`Modal component
           >
             <style />
             <div
-              class="OutsideClick PopperWrapper-trigger"
+              class="PopperWrapper-trigger"
             >
               <button
                 class="Button Button--regular Button--regularSquare Button--transparent"
@@ -2017,7 +2010,6 @@ exports[`Modal component
     class="Overlay-wrapper"
   >
     <div
-      class="OutsideClick"
       data-test="DesignSystem-Modal--OutsideClick"
     >
       <div
@@ -2051,7 +2043,7 @@ exports[`Modal component
             >
               <style />
               <div
-                class="OutsideClick PopperWrapper-trigger"
+                class="PopperWrapper-trigger"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -2231,7 +2223,7 @@ exports[`Modal component
           >
             <style />
             <div
-              class="OutsideClick PopperWrapper-trigger"
+              class="PopperWrapper-trigger"
             >
               <button
                 class="Button Button--regular Button--regularSquare Button--transparent"
@@ -2342,7 +2334,6 @@ exports[`Modal component
     class="Overlay-wrapper"
   >
     <div
-      class="OutsideClick"
       data-test="DesignSystem-Modal--OutsideClick"
     >
       <div
@@ -2391,7 +2382,7 @@ exports[`Modal component
             >
               <style />
               <div
-                class="OutsideClick PopperWrapper-trigger"
+                class="PopperWrapper-trigger"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"

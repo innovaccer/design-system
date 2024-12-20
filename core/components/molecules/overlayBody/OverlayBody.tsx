@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import styles from '@css/components/overlay.module.css';
 
 export interface OverlayBodyProps extends BaseProps {
   children: React.ReactNode;
@@ -13,7 +14,7 @@ export const OverlayBody = (props: OverlayBodyProps) => {
 
   const classes = classNames(
     {
-      OverlayBody: true,
+      [styles.OverlayBody]: true,
     },
     className
   );
