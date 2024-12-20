@@ -129,6 +129,7 @@ export const Pagination = (props: PaginationProps) => {
           disabled={page <= 1}
           appearance="transparent"
           icon="first_page"
+          className={styles['Pagination-button']}
           data-test="DesignSystem-Pagination--FirstButton"
         />
         <Button
@@ -136,7 +137,7 @@ export const Pagination = (props: PaginationProps) => {
           disabled={page <= 1}
           icon="navigate_before"
           data-test="DesignSystem-Pagination--PrevButton"
-          className="ml-4 mr-3"
+          className={`ml-4 mr-3 ${styles['Pagination-button']}`}
         />
       </div>
       {type === 'jump' && (
@@ -158,13 +159,14 @@ export const Pagination = (props: PaginationProps) => {
           disabled={page >= totalPages}
           icon="navigate_next"
           data-test="DesignSystem-Pagination--NextButton"
-          className="mr-4 ml-3"
+          className={`ml-3 mr-4 ${styles['Pagination-button']}`}
         />
         <Button
           onClick={() => onClickHandler('last')}
           disabled={page >= totalPages}
           appearance="transparent"
           icon="last_page"
+          className={styles['Pagination-button']}
           data-test="DesignSystem-Pagination--LastButton"
         />
       </div>

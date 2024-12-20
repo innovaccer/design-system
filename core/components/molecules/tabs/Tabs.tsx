@@ -4,6 +4,7 @@ import { Pills, Icon, Text, Tab, Tooltip } from '@/index';
 import { BaseProps, extractBaseProps, SingleOrArray } from '@/utils/types';
 import { IconType, TTabSize } from '@/common.type';
 import styles from '@css/components/tabs.module.css';
+import pageHeaderStyles from '@css/components/pageHeader.module.css';
 
 type Tab = React.ReactElement | TabConfig;
 type noop = (tabInfo: TabInfo) => void;
@@ -135,6 +136,7 @@ export const Tabs = (props: TabsProps) => {
   const headerClass = classNames(
     {
       [styles['TabsWrapper-header']]: true,
+      [pageHeaderStyles['TabsWrapper-header']]: true,
       [styles['TabsWrapper-header--withSeparator']]: withSeparator,
     },
     className,

@@ -156,7 +156,9 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
           {expanded && (
             <>
               <span className={styles['Navigation-menuLabel']}>
-                <Text appearance={getTextAppearance(activeMenu, menu.disabled)}>{menu.label}</Text>
+                <Text appearance={getTextAppearance(activeMenu, menu.disabled)} className="ellipsis--noWrap">
+                  {menu.label}
+                </Text>
               </span>
               {menu.subMenu && menu.subMenu.length > 0 && (
                 <Icon
@@ -190,7 +192,9 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
                   className={subMenuClasses}
                   onClick={() => onClickHandler(subMenu)}
                 >
-                  <Text appearance={getTextAppearance(isActive, subMenu.disabled)}>{subMenu.label}</Text>
+                  <Text appearance={getTextAppearance(isActive, subMenu.disabled)} className="ellipsis--noWrap">
+                    {subMenu.label}
+                  </Text>
                 </div>
               );
             })}

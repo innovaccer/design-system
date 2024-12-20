@@ -78,6 +78,7 @@ export const MenuItem = (props: MenuItemProps) => {
       [styles['MenuItem-Text']]: true,
       [styles['MenuItem--overflow']]: true,
       ['mr-5']: !hasSubmenu && menu.count,
+      ['ellipsis--noWrap']: true,
     });
 
     return (

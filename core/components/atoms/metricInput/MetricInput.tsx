@@ -178,6 +178,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
 
   const inputClass = classNames({
     [styles['MetricInput-input']]: true,
+    [paginationStyles['MetricInput-input']]: true,
     [styles[`MetricInput-input--${size}`]]: size,
     [`mr-4`]: !suffix && !showActionButton && size === 'regular',
     [`mr-6`]: !suffix && !showActionButton && size === 'large',

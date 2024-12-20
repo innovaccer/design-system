@@ -21,7 +21,7 @@ Object {
           >
             <style />
             <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+              class="PopperWrapper-trigger flex-grow-0"
             >
               <span
                 class=""
@@ -56,7 +56,7 @@ Object {
           >
             <style />
             <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+              class="PopperWrapper-trigger flex-grow-0"
             >
               <span
                 class=""
@@ -99,7 +99,7 @@ Object {
         >
           <style />
           <div
-            class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            class="PopperWrapper-trigger flex-grow-0"
           >
             <span
               class=""
@@ -134,7 +134,7 @@ Object {
         >
           <style />
           <div
-            class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            class="PopperWrapper-trigger flex-grow-0"
           >
             <span
               class=""
@@ -236,7 +236,7 @@ Object {
           >
             <style />
             <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+              class="PopperWrapper-trigger flex-grow-0"
             >
               <span
                 class=""
@@ -271,7 +271,7 @@ Object {
           >
             <style />
             <div
-              class="OutsideClick PopperWrapper-trigger flex-grow-0"
+              class="PopperWrapper-trigger flex-grow-0"
             >
               <span
                 class=""
@@ -314,7 +314,7 @@ Object {
         >
           <style />
           <div
-            class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            class="PopperWrapper-trigger flex-grow-0"
           >
             <span
               class=""
@@ -349,7 +349,7 @@ Object {
         >
           <style />
           <div
-            class="OutsideClick PopperWrapper-trigger flex-grow-0"
+            class="PopperWrapper-trigger flex-grow-0"
           >
             <span
               class=""

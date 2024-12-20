@@ -6,6 +6,7 @@ import { BaseHtmlProps, BaseProps, extractBaseProps } from '@/utils/types';
 import { AutoComplete, IconType } from '@/common.type';
 import ActionButton from './actionButton';
 import styles from '@css/components/input.module.css';
+import verificationCodeStyles from '@css/components/verificationCodeInput.module.css';
 
 export type InputType = 'text' | 'password' | 'number' | 'email' | 'tel' | 'url';
 export type InputSize = 'tiny' | 'regular' | 'large';
@@ -217,6 +218,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
 
   const inputClass = classNames({
     [styles['Input-input']]: true,
+    [verificationCodeStyles['Input-input']]: true,
     [styles[`Input-input--${size}`]]: size,
   });
 

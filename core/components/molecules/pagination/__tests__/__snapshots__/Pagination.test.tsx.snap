@@ -12,7 +12,7 @@ exports[`Pagination component
       class="Pagination-buttonWrapper Pagination-buttonWrapper--previous"
     >
       <button
-        class="Button Button--regular Button--regularSquare Button--transparent"
+        class="Button Button--regular Button--regularSquare Button--transparent Pagination-button"
         data-test="DesignSystem-Pagination--FirstButton"
         tabindex="0"
       >
@@ -31,7 +31,7 @@ exports[`Pagination component
         </div>
       </button>
       <button
-        class="Button Button--regular Button--regularSquare Button--basic ml-4 mr-3"
+        class="Button Button--regular Button--regularSquare Button--basic ml-4 mr-3 Pagination-button"
         data-test="DesignSystem-Pagination--PrevButton"
         tabindex="0"
       >
@@ -54,7 +54,7 @@ exports[`Pagination component
       class="Pagination-buttonWrapper Pagination-buttonWrapper--next"
     >
       <button
-        class="Button Button--regular Button--regularSquare Button--basic mr-4 ml-3"
+        class="Button Button--regular Button--regularSquare Button--basic ml-3 mr-4 Pagination-button"
         data-test="DesignSystem-Pagination--NextButton"
         tabindex="0"
       >
@@ -73,7 +73,7 @@ exports[`Pagination component
         </div>
       </button>
       <button
-        class="Button Button--regular Button--regularSquare Button--transparent"
+        class="Button Button--regular Button--regularSquare Button--transparent Pagination-button"
         data-test="DesignSystem-Pagination--LastButton"
         tabindex="0"
       >
@@ -108,7 +108,7 @@ exports[`Pagination component
       class="Pagination-buttonWrapper Pagination-buttonWrapper--previous"
     >
       <button
-        class="Button Button--regular Button--regularSquare Button--transparent"
+        class="Button Button--regular Button--regularSquare Button--transparent Pagination-button"
         data-test="DesignSystem-Pagination--FirstButton"
         tabindex="0"
       >
@@ -127,7 +127,7 @@ exports[`Pagination component
         </div>
       </button>
       <button
-        class="Button Button--regular Button--regularSquare Button--basic ml-4 mr-3"
+        class="Button Button--regular Button--regularSquare Button--basic ml-4 mr-3 Pagination-button"
         data-test="DesignSystem-Pagination--PrevButton"
         tabindex="0"
       >
@@ -217,7 +217,7 @@ exports[`Pagination component
       class="Pagination-buttonWrapper Pagination-buttonWrapper--next"
     >
       <button
-        class="Button Button--regular Button--regularSquare Button--basic mr-4 ml-3"
+        class="Button Button--regular Button--regularSquare Button--basic ml-3 mr-4 Pagination-button"
         data-test="DesignSystem-Pagination--NextButton"
         tabindex="0"
       >
@@ -236,7 +236,7 @@ exports[`Pagination component
         </div>
       </button>
       <button
-        class="Button Button--regular Button--regularSquare Button--transparent"
+        class="Button Button--regular Button--regularSquare Button--transparent Pagination-button"
         data-test="DesignSystem-Pagination--LastButton"
         tabindex="0"
       >

@@ -76,7 +76,7 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
         }}
         className={gridStyles['Header-draggableDropdown']}
       >
-        <div className={dropdownStyles['Dropdown-wrapper']}>
+        <div className={gridStyles['Dropdown-wrapper']}>
           <div className="OptionWrapper">
             <Checkbox
               className={dropdownStyles['OptionCheckbox']}
