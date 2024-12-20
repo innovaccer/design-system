@@ -12,6 +12,7 @@ import { Cell } from './Cell';
 import classNames from 'classnames';
 import GridContext from './GridContext';
 import { GridProps, CheckboxProps } from '@/index.type';
+import styles from '@css/components/grid.module.css';
 
 export interface GridHeadProps {
   schema: GridProps['schema'];
@@ -33,10 +34,21 @@ export const GridHead = (props: GridHeadProps) => {
   const rightPinnedSchema = pinnedSchema.filter((s) => !s.hidden && s.pinned === 'right');
   const unpinnedSchema = schema.filter((s) => !s.hidden && !s.pinned);
 
+  const CheckboxClass = classNames({
+    [styles['Grid-cell']]: true,
+    [styles['Grid-cell--head']]: true,
+    [styles['Grid-cell--checkbox']]: true,
+  });
+
+  const RowClass = classNames({
+    [styles['Grid-row']]: true,
+    [styles['Grid-row--head']]: true,
+  });
+
   const renderCheckbox = (show: boolean) => {
     if (!show || !withCheckbox) return null;
     return (
-      <div className="Grid-cell Grid-cell--head Grid-cell--checkbox">
+      <div className={CheckboxClass}>
         {loading ? <Placeholder /> : <Checkbox {...selectAll} onChange={onSelectAll} />}
       </div>
     );
@@ -45,10 +57,10 @@ export const GridHead = (props: GridHeadProps) => {
   const renderSchema = (currSchema: Schema, shouldRenderCheckbox: boolean, pinned?: Pinned) => {
     if (currSchema.length) {
       const classes = classNames({
-        'Grid-cellGroup': true,
-        'Grid-cellGroup--pinned': pinned,
-        [`Grid-cellGroup--pinned-${pinned}`]: pinned,
-        'Grid-cellGroup--main': !pinned,
+        [styles['Grid-cellGroup']]: true,
+        [styles['Grid-cellGroup--pinned']]: pinned,
+        [styles[`Grid-cellGroup--pinned-${pinned}`]]: pinned,
+        [styles['Grid-cellGroup--main']]: !pinned,
       });
 
       return (
@@ -81,8 +93,8 @@ export const GridHead = (props: GridHeadProps) => {
   };
 
   return (
-    <div className="Grid-head" data-test="DesignSystem-GridHead-wrapper">
-      <div className="Grid-row Grid-row--head">
+    <div className={styles['Grid-head']} data-test="DesignSystem-GridHead-wrapper">
+      <div className={RowClass}>
         {renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left')}
         {renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length)}
         {renderSchema(rightPinnedSchema, false, 'right')}

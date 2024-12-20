@@ -5,6 +5,9 @@ import { IconType } from '@/common.type';
 import { SelectContext } from './SelectContext';
 import { handleKeyDownTrigger, computeValue } from './utils';
 import { BaseProps } from '@/utils/types';
+import selectStyles from '@css/components/select.module.css';
+import buttonStyles from '@css/components/button.module.css';
+import textStyles from '@css/components/text.module.css';
 
 export type SelectTriggerSize = 'small' | 'regular';
 
@@ -104,19 +107,23 @@ const SelectTrigger = (props: SelectTriggerProps) => {
   };
 
   const buttonClass = classNames({
-    ['Button']: true,
-    ['Select-trigger']: true,
-    [`Select-trigger--${triggerSize}`]: triggerSize,
-    ['Select-trigger--placeholder']: !isOptionSelected,
-    ['Select-trigger--icon']: icon,
-    ['Select-trigger--open']: openPopover,
+    [buttonStyles['Button']]: true,
+    [selectStyles['Select-trigger']]: true,
+    [selectStyles[`Select-trigger--${triggerSize}`]]: triggerSize,
+    [selectStyles['Select-trigger--placeholder']]: !isOptionSelected,
+    [selectStyles['Select-trigger--icon']]: icon,
+    [selectStyles['Select-trigger--open']]: openPopover,
   });
 
   const textClass = classNames({
-    ['Text']: true,
-    ['Text--regular']: true,
-    ['Select-trigger--text']: true,
+    [textStyles['Text']]: true,
+    [textStyles['Text--regular']]: true,
+    [selectStyles['Select-trigger--text']]: true,
   });
+
+  const triggerClass = classNames([selectStyles['Select-trigger-wrapper']], 'ellipsis--noWrap');
+
+  const iconClass = classNames('align-items-center', 'mr-2', 'ml-3', selectStyles['Select-crossButton']);
 
   return (
     <Tooltip
@@ -142,7 +149,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
         {...rest}
       >
         {
-          <div className="Select-trigger-wrapper ellipsis--noWrap">
+          <div className={triggerClass}>
             {inlineLabel && (
               <Text appearance="subtle" className="mr-4 white-space-nowrap">
                 {`${inlineLabel.trim().charAt(0).toUpperCase()}${inlineLabel.trim().slice(1)}`}
@@ -167,7 +174,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
           <Icon
             appearance={buttonDisabled}
             onClick={onClearHandler}
-            className="align-items-center mr-2 ml-3 Select-crossButton"
+            className={iconClass}
             size={12}
             name="close"
             aria-label="clear selected"

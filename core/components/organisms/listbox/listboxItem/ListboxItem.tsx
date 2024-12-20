@@ -5,6 +5,7 @@ import { ListboxContext } from '../Listbox';
 import { ListBody } from './ListBody';
 import { NestedList } from '../nestedList';
 import classNames from 'classnames';
+import styles from '@css/components/listbox.module.css';
 
 export type ItemTagType = 'li' | 'div' | 'a';
 
@@ -68,7 +69,7 @@ export const ListboxItem = (props: ListboxItemProps) => {
   };
 
   const tagClass = classNames({
-    ['Listbox-item-wrapper']: !draggable,
+    [styles['Listbox-item-wrapper']]: !draggable,
   });
 
   return (
@@ -82,7 +83,7 @@ export const ListboxItem = (props: ListboxItemProps) => {
     >
       <ListBody {...props} />
       {nestedBody && <NestedList expanded={expanded} nestedBody={nestedBody} />}
-      {showDivider && <Divider className="Listbox-divider" />}
+      {showDivider && <Divider className={styles['Listbox-divider']} />}
     </Tag>
   );
 };

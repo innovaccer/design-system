@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import PlaceholderImage, { PlaceholderImageSize } from '@/components/atoms/placeholderImage';
 import { PlaceholderParagraphProps } from '@/components/atoms/placeholderParagraph';
+import styles from '@css/components/placeholder.module.css';
 
 export interface PlaceholderProps extends BaseProps {
   /**
@@ -29,13 +30,13 @@ export const Placeholder = (props: PlaceholderProps) => {
   const baseProps = extractBaseProps(props);
 
   const paragraphClasses = classNames({
-    'Placeholder-paragraph': true,
-    ['Placeholder-paragraph--withImage']: withImage,
+    [styles['Placeholder-paragraph']]: true,
+    [styles['Placeholder-paragraph--withImage']]: withImage,
   });
 
   const classes = classNames(
     {
-      ['Placeholder']: true,
+      [styles['Placeholder']]: true,
     },
     className
   );

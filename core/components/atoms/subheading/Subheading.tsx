@@ -3,6 +3,7 @@ import GenericText from '../_text';
 import classNames from 'classnames';
 import { BaseHtmlProps, BaseProps } from '@/utils/types';
 import { HeadingAppearance, TextColor } from '@/common.type';
+import styles from '@css/components/subheading.module.css';
 
 export interface SubheadingProps extends BaseProps, BaseHtmlProps<HTMLHeadingElement> {
   /**
@@ -25,8 +26,8 @@ export const Subheading = (props: SubheadingProps) => {
 
   const classes = classNames(
     {
-      Subheading: true,
-      [`Subheading--${appearance}`]: !color && appearance,
+      [styles.Subheading]: true,
+      [styles[`Subheading--${appearance}`]]: !color && appearance,
       [`color-${color}`]: color,
     },
     className

@@ -7,6 +7,7 @@ import { resizeCol, hasSchema } from './utility';
 import { getCellSize, getWidth } from './columnUtility';
 import { GridHeadProps } from './GridHead';
 import GridContext from './GridContext';
+import styles from '@css/components/grid.module.css';
 
 interface SharedCellProps {
   schema: ColumnSchema;
@@ -103,8 +104,8 @@ const HeaderCell = (props: HeaderCellProps) => {
   if (sorting) options = [...sortOptions, ...options];
 
   const classes = classNames({
-    'Grid-headCell': true,
-    'Grid-headCell--draggable': draggable,
+    [styles['Grid-headCell']]: true,
+    [styles['Grid-headCell--draggable']]: draggable,
   });
 
   const filterOptions = filters
@@ -120,7 +121,7 @@ const HeaderCell = (props: HeaderCellProps) => {
         {schema.displayName}
       </Text>
       {sorting && (
-        <div className="Grid-sortingIcons">
+        <div className={styles['Grid-sortingIcons']}>
           {sorted ? (
             sorted === 'asc' ? (
               <Icon name="arrow_upward" />
@@ -140,7 +141,7 @@ const HeaderCell = (props: HeaderCellProps) => {
       {/* TODO(a11y) */}
       {/* eslint-disable-next-line */}
       <div
-        className="Grid-cellContent"
+        className={styles['Grid-cellContent']}
         data-test="DesignSystem-Grid-cellContent"
         onClick={() => {
           if (!loading && sorting) {
@@ -216,7 +217,7 @@ const HeaderCell = (props: HeaderCellProps) => {
         //TODO(a11y)
         //eslint-disable-next-line
         <span
-          className="Grid-cellResize"
+          className={styles['Grid-cellResize']}
           onMouseDown={() => {
             resizeCol({ updateColumnSchema }, name, el.current);
             setIsDragged(false);
@@ -246,12 +247,12 @@ const BodyCell = (props: BodyCellProps) => {
   };
 
   return (
-    <div className="Grid-cellContent">
+    <div className={styles['Grid-cellContent']}>
       {colIndex === 0 && nestedRows && (
         <>
           {nestedRowData ? (
             <Icon
-              className={'Grid-nestedRowTrigger'}
+              className={styles['Grid-nestedRowTrigger']}
               name={expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
               size={20}
               appearance={'default'}
@@ -263,7 +264,7 @@ const BodyCell = (props: BodyCellProps) => {
               }}
             />
           ) : (
-            <span className="Grid-nestedRowPlaceholder" />
+            <span className={styles['Grid-nestedRowPlaceholder']} />
           )}
         </>
       )}
@@ -303,12 +304,12 @@ export const Cell = (props: CellProps) => {
   const [isDragged, setIsDragged] = React.useState<boolean>(false);
 
   const cellClass = classNames({
-    'Grid-cell': true,
-    'Grid-cell--head': isHead,
-    'Grid-cell--dragged': isDragged && draggable,
-    'Grid-cell--body': !isHead,
-    'Grid-cell--separator': !firstCell && (schema.separator !== undefined ? schema.separator : separator),
-    'Grid-cell--nestedRow': !isHead && colIndex === 0 && nestedRows,
+    [styles['Grid-cell']]: true,
+    [styles['Grid-cell--head']]: isHead,
+    [styles['Grid-cell--dragged']]: isDragged && draggable,
+    [styles['Grid-cell--body']]: !isHead,
+    [styles['Grid-cell--separator']]: !firstCell && (schema.separator !== undefined ? schema.separator : separator),
+    [styles['Grid-cell--nestedRow']]: !isHead && colIndex === 0 && nestedRows,
   });
 
   if (hidden) return null;

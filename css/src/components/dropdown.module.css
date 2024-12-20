@@ -144,6 +144,7 @@
   width: 100%;
   display: flex;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .Option-text,

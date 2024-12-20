@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Button, Checkbox, Popover, Icon } from '@/index';
 import { DropdownProps } from '@/index.type';
 import { moveToIndex, getPluralSuffix } from '../grid/utility';
+import dropdownStyles from '@css/components/dropdown.module.css';
+import gridStyles from '@css/components/grid.module.css';
 
 interface DraggableDropdownProps {
   options: DropdownProps['options'];
@@ -48,7 +50,7 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
   };
 
   return (
-    <div className="Dropdown">
+    <div className={dropdownStyles['Dropdown']}>
       <Popover
         open={open}
         onToggle={onToggleHandler}
@@ -72,12 +74,12 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
         customStyle={{
           width: triggerWidth,
         }}
-        className="Header-draggableDropdown"
+        className={gridStyles['Header-draggableDropdown']}
       >
-        <div className="Dropdown-wrapper">
+        <div className={gridStyles['Dropdown-wrapper']}>
           <div className="OptionWrapper">
             <Checkbox
-              className="OptionCheckbox"
+              className={dropdownStyles['OptionCheckbox']}
               label="Select All"
               checked={tempOptions.every((option) => option.selected)}
               indeterminate={
@@ -105,7 +107,7 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
                 }}
               >
                 <Checkbox
-                  className="OptionCheckbox"
+                  className={dropdownStyles['OptionCheckbox']}
                   name={option.value as string}
                   label={option.label}
                   checked={tempOptions[index].selected}
@@ -116,7 +118,7 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
             );
           })}
         </div>
-        <div className="Dropdown-buttonWrapper">
+        <div className={dropdownStyles['Dropdown-buttonWrapper']}>
           <Button type="button" className="mr-4" size="tiny" onClick={onCancelHandler}>
             Cancel
           </Button>

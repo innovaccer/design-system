@@ -4,6 +4,7 @@ import Meta, { MetaProps } from './Meta';
 import { Icon } from '@/index';
 import { IconProps, TextProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import styles from '@css/components/metaList.module.css';
 
 export type MetaSize = 'small' | 'regular';
 export interface MetaListProps extends BaseProps {
@@ -57,18 +58,18 @@ export const MetaList = (props: MetaListProps) => {
 
   const MetaClass = classNames(
     {
-      ['MetaList']: true,
+      [styles['MetaList']]: true,
     },
     className
   );
 
   const SeperatorClass = classNames({
-    ['MetaList-seperator']: true,
+    [styles['MetaList-seperator']]: true,
   });
 
   const LeftSeperatorClass = classNames({
-    ['MetaList-seperator']: true,
-    ['MetaList-seperator--left']: true,
+    [styles['MetaList-seperator']]: true,
+    [styles['MetaList-seperator--left']]: true,
   });
 
   return (
@@ -88,7 +89,7 @@ export const MetaList = (props: MetaListProps) => {
         const rightSeperator = ind !== list.length - 1;
 
         return (
-          <span key={ind} className="MetaList-item">
+          <span key={ind} className={styles['MetaList-item']}>
             <Meta size={size} label={label} icon={icon} iconType={iconType} />
             {rightSeperator && (
               <Icon
