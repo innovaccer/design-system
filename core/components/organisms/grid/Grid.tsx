@@ -360,14 +360,6 @@ export class Grid extends React.Component<GridProps, GridState> {
     const gridHeadEl = this.gridRef!.querySelector('.Grid-head');
     const gridBodyEl = this.gridRef!.querySelector('.Grid-body');
 
-    if (type === 'head') {
-      if (!this.isHeadSyncing) {
-        this.isBodySyncing = true;
-        gridBodyEl!.scrollLeft = gridHeadEl!.scrollLeft;
-      }
-      this.isHeadSyncing = false;
-    }
-
     if (type === 'body') {
       if (!this.isBodySyncing) {
         this.isHeadSyncing = true;
