@@ -73,7 +73,13 @@ function generateHash(str) {
     hash = (hash << 5) - hash + char;
     hash |= 0; // Convert to 32bit integer
   }
-  return hash.toString(36).substring(0, 5);
+  // Convert to base 36 and filter out non-alphanumeric characters
+  let hashStr = hash.toString(36).replace(/[^a-z0-9]/gi, '');
+  // Ensure the length of the string is at least 5 characters
+  while (hashStr.length < 5) {
+    hashStr += '0';
+  }
+  return hashStr.substring(0, 5);
 }
 
 const commonJsPlugins = [
@@ -102,7 +108,7 @@ const commonJsPlugins = [
       generateScopedName: (name, fileName) => {
         const hash = generateHash(fileName + name);
         const updatedVersion = version.replace(/\./g, '-');
-        return `${name}_v${updatedVersion}_${hash}`;
+        return `${name}-v${updatedVersion}${hash}`;
       },
     },
     extensions: ['.css', '.scss', '.sass'],
@@ -236,7 +242,7 @@ const tsConfig = {
         generateScopedName: (name, fileName) => {
           const hash = generateHash(fileName + name);
           const updatedVersion = version.replace(/\./g, '-');
-          return `${name}_v${updatedVersion}_${hash}`;
+          return `${name}-v${updatedVersion}${hash}`;
         },
       },
       extensions: ['.css', '.scss', '.sass'],
