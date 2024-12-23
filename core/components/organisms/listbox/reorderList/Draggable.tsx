@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { getTranslateOffset, transformItem, setItemTransition, binarySearch, schd, isTouchEvent } from './utils';
 import type { IItemProps, IProps, TEvent } from './types';
+import styles from '@css/components/listbox.module.css';
 
 const AUTOSCROLL_ACTIVE_OFFSET = 200;
 const AUTOSCROLL_SPEED_RATIO = 10;
@@ -116,7 +117,7 @@ class Draggable<Value = string> extends React.Component<IProps<Value>> {
     const index = this.getTargetIndex(e as any);
 
     const listItemTouched = this.getChildren()[index] as HTMLElement;
-    const isValidDragHandle = (e.target as Element)?.classList.contains('Listbox-item--drag-icon');
+    const isValidDragHandle = (e.target as Element)?.classList.contains(styles['Listbox-item--drag-icon']);
     if (!isValidDragHandle) return;
     e.preventDefault();
 

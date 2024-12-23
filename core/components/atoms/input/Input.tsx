@@ -5,6 +5,8 @@ import { IconProps } from '@/index.type';
 import { BaseHtmlProps, BaseProps, extractBaseProps } from '@/utils/types';
 import { AutoComplete, IconType } from '@/common.type';
 import ActionButton from './actionButton';
+import styles from '@css/components/input.module.css';
+import verificationCodeStyles from '@css/components/verificationCodeInput.module.css';
 
 export type InputType = 'text' | 'password' | 'number' | 'email' | 'tel' | 'url';
 export type InputSize = 'tiny' | 'regular' | 'large';
@@ -205,30 +207,31 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
 
   const classes = classNames(
     {
-      ['Input']: true,
-      [`Input--${size}`]: size,
-      ['Input--disabled']: disabled,
-      ['Input--error']: error,
-      ['Input--readOnly']: readOnly,
+      [styles['Input']]: true,
+      [styles[`Input--${size}`]]: size,
+      [styles['Input--disabled']]: disabled,
+      [styles['Input--error']]: error,
+      [styles['Input--readOnly']]: readOnly,
     },
     className
   );
 
   const inputClass = classNames({
-    ['Input-input']: true,
-    [`Input-input--${size}`]: size,
+    [styles['Input-input']]: true,
+    [verificationCodeStyles['Input-input']]: true,
+    [styles[`Input-input--${size}`]]: size,
   });
 
   const leftIconClass = classNames({
-    ['Input-icon']: true,
-    ['Input-icon--left']: true,
-    ['Input-icon--inputBlank']: isInputBlank,
-    ['Input-icon--error']: error,
+    [styles['Input-icon']]: true,
+    [styles['Input-icon--left']]: true,
+    [styles['Input-icon--inputBlank']]: isInputBlank,
+    [styles['Input-icon--error']]: error,
   });
 
   const rightIconClass = classNames({
-    ['Input-icon']: true,
-    ['Input-iconWrapper--right']: true,
+    [styles['Input-icon']]: true,
+    [styles['Input-iconWrapper--right']]: true,
   });
 
   const trigger = (
@@ -236,7 +239,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
       className={rightIconClass} // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
       tabIndex={0}
     >
-      <Icon name={'info'} size={sizeMapping[size]} className="Input-icon--right" />
+      <Icon name={'info'} size={sizeMapping[size]} className={styles['Input-icon--right']} />
     </div>
   );
 
@@ -250,7 +253,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
       onBlur={() => setIsInputBlank(!ref.current?.value)}
     >
       {inlineLabel && (
-        <div className="Input-inlineLabel">
+        <div className={styles['Input-inlineLabel']}>
           <Text appearance="subtle">{inlineLabel}</Text>
         </div>
       )}
@@ -304,7 +307,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
               }}
               name={'close'}
               size={sizeMapping[size]}
-              className="Input-icon--right"
+              className={styles['Input-icon--right']}
             />
           </div>
         )

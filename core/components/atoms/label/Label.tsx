@@ -3,6 +3,7 @@ import GenericText from '../_text';
 import classNames from 'classnames';
 import { Text, Icon, Tooltip } from '@/index';
 import { BaseHtmlProps, BaseProps, extractBaseProps } from '@/utils/types';
+import styles from '@css/components/label.module.css';
 
 export interface LabelProps extends BaseProps, BaseHtmlProps<HTMLLabelElement> {
   /**
@@ -42,26 +43,26 @@ export const Label = (props: LabelProps) => {
 
   const LabelClass = classNames(
     {
-      Label: true,
-      ['Label--withInput']: withInput,
-      ['Label--optional']: optional,
+      [styles.Label]: true,
+      [styles['Label--withInput']]: withInput,
+      [styles['Label--optional']]: optional,
     },
     className
   );
 
   const classes = classNames({
-    'Label-text': true,
-    'Label--disabled': disabled,
+    [styles['Label-text']]: true,
+    [styles['Label--disabled']]: disabled,
   });
 
   const renderInfo = (isRequired = false, isOptional?: boolean) => {
     if (isRequired) {
-      return <span className="Label-requiredIndicator" data-test="DesignSystem-Label--RequiredIndicator" />;
+      return <span className={styles['Label-requiredIndicator']} data-test="DesignSystem-Label--RequiredIndicator" />;
     }
 
     if (isOptional) {
       return (
-        <Text data-test="DesignSystem-Label--OptionalText" appearance="subtle" className="Label-optionalText">
+        <Text data-test="DesignSystem-Label--OptionalText" appearance="subtle" className={styles['Label-optionalText']}>
           (optional)
         </Text>
       );

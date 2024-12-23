@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { Row, Column, Divider } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { BackButton, Title, CenterNav, Nav, Action, Status } from './utils';
+import styles from '@css/components/pageHeader.module.css';
 
 export type navigationPositionType = 'center' | 'bottom';
 
@@ -79,15 +80,13 @@ export const PageHeader = (props: PageHeaderProps) => {
 
   const wrapperClasses = classNames(
     {
-      'PageHeader-wrapper': true,
-      ['PageHeader-wrapper--withTabs']: tabs,
+      [styles['PageHeader-wrapper']]: true,
+      [styles['PageHeader-wrapper--withTabs']]: tabs,
     },
     className
   );
 
-  const classes = classNames({
-    PageHeader: true,
-  });
+  const classes = classNames(styles.PageHeader);
 
   const colSize = (navigation || stepper) && navigationPosition === 'center' ? '4' : actions ? '8' : '12';
 
@@ -118,7 +117,7 @@ export const PageHeader = (props: PageHeaderProps) => {
         <div className="d-flex pl-6">
           <BackButton button={button} />
           <div className={classes}>
-            <Row>
+            <Row className="w-100">
               <Column size={colSize} sizeXL={colSize} sizeM={colSize}>
                 <Title badge={badge} title={title} />
               </Column>

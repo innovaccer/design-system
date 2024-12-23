@@ -3,6 +3,7 @@ import { debounce } from 'throttle-debounce';
 import { Text, MetricInput, Button } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { isNaturalNumber } from '@/utils/validators';
+import styles from '@css/components/pagination.module.css';
 
 import classNames from 'classnames';
 
@@ -50,20 +51,20 @@ export const Pagination = (props: PaginationProps) => {
 
   const wrapperClass = classNames(
     {
-      ['Pagination']: true,
-      [`Pagination--${type}`]: type,
+      [styles['Pagination']]: true,
+      [styles[`Pagination--${type}`]]: type,
     },
     className
   );
 
   const nextButtonWrapperClass = classNames({
-    ['Pagination-buttonWrapper']: true,
-    ['Pagination-buttonWrapper--next']: true,
+    [styles['Pagination-buttonWrapper']]: true,
+    [styles['Pagination-buttonWrapper--next']]: true,
   });
 
   const prevButtonWrapperClass = classNames({
-    ['Pagination-buttonWrapper']: true,
-    ['Pagination-buttonWrapper--previous']: true,
+    [styles['Pagination-buttonWrapper']]: true,
+    [styles['Pagination-buttonWrapper--previous']]: true,
   });
 
   React.useEffect(() => {
@@ -128,6 +129,7 @@ export const Pagination = (props: PaginationProps) => {
           disabled={page <= 1}
           appearance="transparent"
           icon="first_page"
+          className={styles['Pagination-button']}
           data-test="DesignSystem-Pagination--FirstButton"
         />
         <Button
@@ -135,14 +137,14 @@ export const Pagination = (props: PaginationProps) => {
           disabled={page <= 1}
           icon="navigate_before"
           data-test="DesignSystem-Pagination--PrevButton"
-          className="ml-4 mr-3"
+          className={`ml-4 mr-3 ${styles['Pagination-button']}`}
         />
       </div>
       {type === 'jump' && (
-        <div className="Pagination-pageIndex">
+        <div className={styles['Pagination-pageIndex']}>
           <MetricInput
             name="page"
-            className="Pagination-MetricInput"
+            className={styles['Pagination-MetricInput']}
             onChange={inputChangeHandler}
             value={`${isNaturalNumber(page) ? page : ''}`}
             data-test="DesignSystem-Pagination--Input"
@@ -157,13 +159,14 @@ export const Pagination = (props: PaginationProps) => {
           disabled={page >= totalPages}
           icon="navigate_next"
           data-test="DesignSystem-Pagination--NextButton"
-          className="mr-4 ml-3"
+          className={`ml-3 mr-4 ${styles['Pagination-button']}`}
         />
         <Button
           onClick={() => onClickHandler('last')}
           disabled={page >= totalPages}
           appearance="transparent"
           icon="last_page"
+          className={styles['Pagination-button']}
           data-test="DesignSystem-Pagination--LastButton"
         />
       </div>

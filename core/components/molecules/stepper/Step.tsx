@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { Icon, Text } from '@/index';
+import styles from '@css/components/stepper.module.css';
 
 export interface StepProps {
   label: string;
@@ -15,11 +16,21 @@ export const Step = (props: StepProps) => {
   const { label, value, disabled, active, completed, onChange } = props;
 
   const StepClass = classNames({
-    ['Step']: true,
-    ['Stepper-animate']: true,
-    ['Step--active']: active,
-    ['Step--disabled']: disabled,
-    ['Step--completed']: completed,
+    [styles['Step']]: true,
+    [styles['Stepper-animate']]: true,
+    [styles['Step--active']]: active,
+    [styles['Step--disabled']]: disabled,
+    [styles['Step--completed']]: completed,
+  });
+
+  const IconClass = classNames({
+    'mr-3 my-4': true,
+    [styles['Stepper-animate']]: true,
+  });
+
+  const TextClass = classNames({
+    [styles['Stepper-animate']]: true,
+    [styles['Stepper-text']]: true,
   });
 
   const onClickHandle = () => {
@@ -48,11 +59,11 @@ export const Step = (props: StepProps) => {
       <Icon
         data-test="DesignSystem-Step--Icon"
         name={completed ? 'check_circle' : 'radio_button_unchecked'}
-        className="mr-3 my-4 Stepper-animate"
+        className={IconClass}
       />
 
       {label && (
-        <Text weight="medium" color={textColor} className="Stepper-animate Stepper-text">
+        <Text weight="medium" color={textColor} className={TextClass}>
           {label}
         </Text>
       )}

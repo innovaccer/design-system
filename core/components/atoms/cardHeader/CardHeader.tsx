@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import styles from '@css/components/card.module.css';
 
 export interface CardHeaderProps extends BaseProps {
   /**
@@ -15,7 +16,7 @@ export const CardHeader = (props: CardHeaderProps) => {
 
   const classes = classNames(
     {
-      'Card-header': true,
+      [styles['Card-header']]: true,
     },
     className
   );

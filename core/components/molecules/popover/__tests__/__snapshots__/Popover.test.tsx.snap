@@ -6,7 +6,7 @@ exports[`Popover component
 <DocumentFragment>
   <style />
   <div
-    class="OutsideClick PopperWrapper-trigger"
+    class="PopperWrapper-trigger"
   >
     <button
       class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -38,7 +38,7 @@ exports[`Popover component
 <DocumentFragment>
   <style />
   <div
-    class="OutsideClick PopperWrapper-trigger"
+    class="PopperWrapper-trigger"
   >
     <button
       class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -61,7 +61,7 @@ exports[`Popover component
 <DocumentFragment>
   <style />
   <div
-    class="OutsideClick PopperWrapper-trigger"
+    class="PopperWrapper-trigger"
   >
     <button
       class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -93,7 +93,7 @@ exports[`Popover component
 <DocumentFragment>
   <style />
   <div
-    class="OutsideClick PopperWrapper-trigger"
+    class="PopperWrapper-trigger"
   >
     <button
       class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -116,7 +116,7 @@ exports[`Popover component
 <DocumentFragment>
   <style />
   <div
-    class="OutsideClick PopperWrapper-trigger"
+    class="PopperWrapper-trigger"
   >
     <button
       class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -148,7 +148,7 @@ exports[`Popover component
 <DocumentFragment>
   <style />
   <div
-    class="OutsideClick PopperWrapper-trigger"
+    class="PopperWrapper-trigger"
   >
     <button
       class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -180,7 +180,7 @@ exports[`Popover component
 <DocumentFragment>
   <style />
   <div
-    class="OutsideClick PopperWrapper-trigger"
+    class="PopperWrapper-trigger"
   >
     <button
       class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -212,7 +212,7 @@ exports[`Popover component
 <DocumentFragment>
   <style />
   <div
-    class="OutsideClick PopperWrapper-trigger"
+    class="PopperWrapper-trigger"
   >
     <button
       class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -244,7 +244,7 @@ exports[`Popover component
 <DocumentFragment>
   <style />
   <div
-    class="OutsideClick PopperWrapper-trigger"
+    class="PopperWrapper-trigger"
   >
     <button
       class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -276,7 +276,7 @@ exports[`Popover component
 <DocumentFragment>
   <style />
   <div
-    class="OutsideClick PopperWrapper-trigger"
+    class="PopperWrapper-trigger"
   >
     <button
       class="Button Button--regular Button--basic Button--iconAlign-left"

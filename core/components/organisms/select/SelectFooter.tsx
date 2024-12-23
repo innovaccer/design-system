@@ -1,5 +1,6 @@
 import { BaseProps } from '@/utils/types';
 import * as React from 'react';
+import styles from '@css/components/select.module.css';
 
 interface SelectFooterProps extends BaseProps {
   /**
@@ -11,7 +12,7 @@ interface SelectFooterProps extends BaseProps {
 export const SelectFooter = (props: SelectFooterProps) => {
   const { children, ...rest } = props;
   return (
-    <div className="Select-buttonWrapper" {...rest}>
+    <div className={styles['Select-buttonWrapper']} {...rest}>
       {children}
     </div>
   );

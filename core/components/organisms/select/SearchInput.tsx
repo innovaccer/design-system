@@ -3,6 +3,7 @@ import { Input } from '@/index';
 import { SelectContext } from './SelectContext';
 import { handleInputKeyDown } from './utils';
 import { InputProps } from '@/index.type';
+import styles from '@css/components/select.module.css';
 
 export interface SelectInputProps extends Omit<InputProps, 'onChange'> {
   /**
@@ -33,7 +34,7 @@ export const SearchInput = (props: SelectInputProps) => {
   };
 
   return (
-    <div className="Select-inputWrapper">
+    <div className={styles['Select-inputWrapper']}>
       <Input
         {...rest}
         icon={'search'}
@@ -46,7 +47,7 @@ export const SearchInput = (props: SelectInputProps) => {
         autoComplete={'off'}
         aria-label="Search"
         aria-haspopup="listbox"
-        className="Select-input"
+        className={styles['Select-input']}
         data-test="DesignSystem-Select--Input"
       />
     </div>

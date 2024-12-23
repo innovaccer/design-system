@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { Heading, Text, Button } from '@/index';
+import styles from '@css/components/overlay.module.css';
 
 export interface OverlayHeaderProps extends BaseProps {
   /**
@@ -48,20 +49,20 @@ export const OverlayHeader = (props: OverlayHeaderProps) => {
 
   const classes = classNames(
     {
-      OverlayHeader: true,
-      ['OverlayHeader--withBackButton']: backButton || backIcon,
+      [styles.OverlayHeader]: true,
+      [styles['OverlayHeader--withBackButton']]: backButton || backIcon,
     },
     className
   );
 
   const subheadingClass = classNames({
-    ['OverlayHeader-subheading']: true,
-    ['OverlayHeader-subheading--withBackButton']: backButton || backIcon,
+    [styles['OverlayHeader-subheading']]: true,
+    [styles['OverlayHeader-subheading--withBackButton']]: backButton || backIcon,
   });
 
   return (
     <div data-test="DesignSystem-OverlayHeader" {...baseProps} className={classes}>
-      <div className="OverlayHeader-headerWrapper">
+      <div className={styles['OverlayHeader-headerWrapper']}>
         {(backButton || backIcon) && (
           <Button
             data-test="DesignSystem-OverlayHeader--Button"
