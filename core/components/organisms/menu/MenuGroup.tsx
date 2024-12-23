@@ -1,6 +1,7 @@
 import React from 'react';
 import { BaseProps } from '@/utils/types';
 import { Text, Divider } from '@/index';
+import styles from '@css/components/menu.module.css';
 
 export interface MenuGroupProps extends BaseProps {
   /**
@@ -22,13 +23,13 @@ export const MenuGroup = (props: MenuGroupProps) => {
 
   if (label) {
     return (
-      <div data-test="DesignSystem-Menu-Group" role="group" className="Menu-Group" {...rest}>
+      <div data-test="DesignSystem-Menu-Group" role="group" className={styles['Menu-Group']} {...rest}>
         <Text
           data-test="DesignSystem-Menu-Group-Label"
           size="small"
           weight="medium"
           appearance="subtle"
-          className="Menu-Group-Label"
+          className={styles['Menu-Group-Label']}
         >
           {label}
         </Text>

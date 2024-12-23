@@ -2,6 +2,7 @@ import * as React from 'react';
 import { OptionTypeProps } from './index';
 import { Icon, Text } from '@/index';
 import classNames from 'classnames';
+import styles from '@css/components/dropdown.module.css';
 
 const IconWithMetaOption = (props: OptionTypeProps) => {
   const {
@@ -20,7 +21,12 @@ const IconWithMetaOption = (props: OptionTypeProps) => {
 
   const OptionClass = classNames({
     [`${className}`]: true,
-    ['Option--icon']: icon,
+    [styles['Option--icon']]: icon,
+  });
+
+  const IconClass = classNames({
+    [styles['Option-icon']]: true,
+    ['mr-4']: true,
   });
 
   return (
@@ -34,10 +40,8 @@ const IconWithMetaOption = (props: OptionTypeProps) => {
       data-disabled={disabled}
     >
       {/* eslint-enable  */}
-      {icon && (
-        <Icon data-test={`${dataTest}--Icon`} className="Option-icon mr-4" name={icon} appearance={appearance} />
-      )}
-      <div className={'Option-label'}>
+      {icon && <Icon data-test={`${dataTest}--Icon`} className={IconClass} name={icon} appearance={appearance} />}
+      <div className={styles['Option-label']}>
         <Text className={textClassName} color={color}>
           {label}
         </Text>

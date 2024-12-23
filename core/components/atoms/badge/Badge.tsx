@@ -2,6 +2,8 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { AccentAppearance } from '@/common.type';
+import styles from '@css/components/badge.module.css';
+import pageHeaderStyles from '@css/components/pageHeader.module.css';
 
 export interface BadgeProps extends BaseProps {
   /*
@@ -25,9 +27,10 @@ export const Badge = (props: BadgeProps) => {
 
   const classes = classNames(
     {
-      Badge: true,
-      [`Badge--${appearance}`]: appearance && !subtle,
-      [`Badge--subtle-${appearance}`]: subtle,
+      [styles.Badge]: true,
+      [pageHeaderStyles.Badge]: true,
+      [styles[`Badge--${appearance}`]]: appearance && !subtle,
+      [styles[`Badge--subtle-${appearance}`]]: subtle,
     },
     className
   );

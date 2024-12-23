@@ -6,12 +6,10 @@ exports[`Combobox component snapshots
 <body>
   <div>
     <div>
-      <div
-        class="OutsideClick"
-      >
+      <div>
         <style />
         <div
-          class="OutsideClick PopperWrapper-trigger d-block"
+          class="PopperWrapper-trigger d-block"
         >
           <div
             class="Input Input--large"
@@ -45,12 +43,10 @@ exports[`Combobox component snapshots
 <body>
   <div>
     <div>
-      <div
-        class="OutsideClick"
-      >
+      <div>
         <style />
         <div
-          class="OutsideClick PopperWrapper-trigger d-block"
+          class="PopperWrapper-trigger d-block"
         >
           <div
             class="Input Input--regular"
@@ -84,12 +80,10 @@ exports[`Combobox component snapshots
 <body>
   <div>
     <div>
-      <div
-        class="OutsideClick"
-      >
+      <div>
         <style />
         <div
-          class="OutsideClick PopperWrapper-trigger d-block"
+          class="PopperWrapper-trigger d-block"
         >
           <div
             class="Input Input--tiny"
@@ -123,12 +117,10 @@ exports[`Combobox component snapshots
 <body>
   <div>
     <div>
-      <div
-        class="OutsideClick"
-      >
+      <div>
         <style />
         <div
-          class="OutsideClick PopperWrapper-trigger d-block"
+          class="PopperWrapper-trigger d-block"
         >
           <div
             class="ChipInput-border"
@@ -170,12 +162,10 @@ exports[`Combobox component snapshots
 <body>
   <div>
     <div>
-      <div
-        class="OutsideClick"
-      >
+      <div>
         <style />
         <div
-          class="OutsideClick PopperWrapper-trigger d-block"
+          class="PopperWrapper-trigger d-block"
         >
           <div
             class="ChipInput-border"
@@ -217,12 +207,10 @@ exports[`Combobox component snapshots
 <body>
   <div>
     <div>
-      <div
-        class="OutsideClick"
-      >
+      <div>
         <style />
         <div
-          class="OutsideClick PopperWrapper-trigger d-block"
+          class="PopperWrapper-trigger d-block"
         >
           <div
             class="ChipInput-border"

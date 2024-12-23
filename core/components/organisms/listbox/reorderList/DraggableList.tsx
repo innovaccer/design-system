@@ -4,17 +4,13 @@ import Draggable from './Draggable';
 import { arrayMove } from './utils';
 import { ListboxProps } from '@/index.type';
 import classNames from 'classnames';
+import styles from '@css/components/listbox.module.css';
 
 export const DraggableList = (props: ListboxProps) => {
   const { children, className, tagName: Tag } = props;
   const baseProps = extractBaseProps(props);
 
-  const classes = classNames(
-    {
-      Listbox: true,
-    },
-    className
-  );
+  const classes = classNames(styles.Listbox, className);
 
   const renderChildren = React.Children.toArray(children).map((child: any) => {
     const element = React.cloneElement(child, { parentProps: { ...props } });
@@ -36,7 +32,7 @@ export const DraggableList = (props: ListboxProps) => {
       onChange={onChangeHandler}
       renderItem={({ value, props }) => {
         return (
-          <div {...props} className="Listbox-item--draggable">
+          <div {...props} className={styles['Listbox-item--draggable']}>
             {value}
           </div>
         );

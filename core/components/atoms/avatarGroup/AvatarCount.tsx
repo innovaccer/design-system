@@ -1,20 +1,22 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { Text } from '@/index';
+import styles from '@css/components/avatar.module.css';
+import avatarGroupStyles from '@css/components/avatarGroup.module.css';
 
 const AvatarCount = (props: any) => {
   const { hiddenAvatarCount, avatarStyle, size, on } = props;
 
   const ContentClass = classNames({
-    ['Avatar-content']: true,
-    ['Avatar-content--tiny']: size === 'tiny',
+    [styles['Avatar-content']]: true,
+    [styles['Avatar-content--tiny']]: size === 'tiny',
   });
 
   const AvatarVariantsClass = classNames({
-    Avatar: true,
-    [`Avatar--regular`]: size === 'regular',
-    [`Avatar--tiny`]: size === 'tiny',
-    [`Avatar--secondary`]: true,
+    [styles.Avatar]: true,
+    [styles[`Avatar--regular`]]: size === 'regular',
+    [styles[`Avatar--tiny`]]: size === 'tiny',
+    [styles[`Avatar--secondary`]]: true,
     ['cursor-default']: true,
     ['cursor-pointer']: on === 'click',
   });
@@ -22,7 +24,7 @@ const AvatarCount = (props: any) => {
   return (
     <div
       data-test="DesignSystem-AvatarGroup--TriggerAvatar"
-      className="AvatarCount-wrapper"
+      className={avatarGroupStyles['AvatarCount-wrapper']}
       style={avatarStyle}
       tabIndex={0}
       role="button"

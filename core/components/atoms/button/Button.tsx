@@ -3,6 +3,7 @@ import { Text, Icon, Spinner, Tooltip } from '@/index';
 import classNames from 'classnames';
 import { BaseProps, BaseHtmlProps } from '@/utils/types';
 import { IconType } from '@/common.type';
+import styles from '@css/components/button.module.css';
 
 export type ButtonType = 'button' | 'submit' | 'reset';
 export type ButtonAppearance = 'basic' | 'primary' | 'success' | 'alert' | 'transparent';
@@ -123,21 +124,28 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
     ...rest
   } = props;
 
-  const buttonClass = classNames({
-    ['Button']: true,
-    ['Button--expanded']: expanded,
-    [`Button--${size}`]: size,
-    [`Button--${size}Square`]: !children,
-    [`Button--${appearance}`]: appearance,
-    ['Button--selected']: selected && (appearance === 'basic' || appearance === 'transparent'),
-    [`Button--iconAlign-${iconAlign}`]: children && iconAlign,
-    [`${className}`]: className,
-  });
+  const buttonClass = classNames(
+    {
+      [styles['Button']]: true,
+      [styles['Button--expanded']]: expanded,
+      [styles[`Button--${size}`]]: size,
+      [styles[`Button--${size}Square`]]: !children,
+      [styles[`Button--${appearance}`]]: appearance,
+      [styles['Button--selected']]: selected && (appearance === 'basic' || appearance === 'transparent'),
+      [styles[`Button--iconAlign-${iconAlign}`]]: children && iconAlign,
+    },
+    className
+  );
 
   const iconClass = classNames({
-    ['Button-icon']: true,
-    [`Button-icon--${iconAlign}`]: children && iconAlign,
-    [`Button-regularIcon--${iconAlign}`]: children && iconAlign && size === 'regular' && !expanded,
+    [styles['Button-icon']]: true,
+    [styles[`Button-icon--${iconAlign}`]]: children && iconAlign,
+    [styles[`Button-regularIcon--${iconAlign}`]]: children && iconAlign && size === 'regular' && !expanded,
+  });
+
+  const buttonTextClass = classNames({
+    [styles['Button-text']]: true,
+    [styles['Button-text--hidden']]: true,
   });
 
   const spinnerSize = size === 'large' && children ? 'small' : 'xsmall';
@@ -158,9 +166,9 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
             size={spinnerSize}
             appearance={appearance === 'basic' || appearance === 'transparent' ? 'secondary' : 'white'}
             data-test="DesignSystem-Button--Spinner"
-            className="Button-spinner"
+            className={styles['Button-spinner']}
           />
-          <Text className="Button-text Button-text--hidden">{children || ''}</Text>
+          <Text className={buttonTextClass}>{children || ''}</Text>
         </>
       ) : (
         <>
@@ -174,7 +182,7 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
               />
             </div>
           )}
-          {children && <span className="Button-text">{children}</span>}
+          {children && <span className={styles['Button-text']}>{children}</span>}
         </>
       )}
     </button>

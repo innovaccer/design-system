@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, BaseHtmlProps } from '@/utils/types';
+import styles from '@css/components/column.module.css';
 
 type Columns =
   | '1'
@@ -59,16 +60,18 @@ export interface ColumnProps extends BaseProps, BaseHtmlProps<HTMLDivElement> {
 export const Column = React.forwardRef<HTMLDivElement, ColumnProps>((props, ref) => {
   const { size, sizeXS, sizeS, sizeM, sizeL, sizeXL, className, children, ...rest } = props;
 
-  const classes = classNames({
-    ['Col']: true,
-    [`Col--${size}`]: size,
-    [`Col--xs-${sizeXS}`]: sizeXS,
-    [`Col--s-${sizeS}`]: sizeS,
-    [`Col--m-${sizeM}`]: sizeM,
-    [`Col--l-${sizeL}`]: sizeL,
-    [`Col--xl-${sizeXL}`]: sizeXL,
-    [`${className}`]: className,
-  });
+  const classes = classNames(
+    {
+      [styles['Col']]: true,
+      [styles[`Col--${size}`]]: size,
+      [styles[`Col--xs-${sizeXS}`]]: sizeXS,
+      [styles[`Col--s-${sizeS}`]]: sizeS,
+      [styles[`Col--m-${sizeM}`]]: sizeM,
+      [styles[`Col--l-${sizeL}`]]: sizeL,
+      [styles[`Col--xl-${sizeXL}`]]: sizeXL,
+    },
+    className
+  );
 
   return (
     <div ref={ref} data-test="DesignSystem-Column" {...rest} className={classes}>

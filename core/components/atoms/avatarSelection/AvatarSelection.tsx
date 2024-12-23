@@ -15,6 +15,7 @@ import {
   AvatarSelectionList,
   AvatarSelectionInput,
 } from './avatarPopover';
+import styles from '@css/components/avatarSelection.module.css';
 
 export interface AvatarData extends Record<string, any> {
   firstName?: string;
@@ -174,7 +175,7 @@ export const AvatarSelection = (props: AvatarSelectionProps) => {
 
   const AvatarSelectionClass = classNames(
     {
-      ['SelectionAvatarGroup']: true,
+      [styles['SelectionAvatarGroup']]: true,
     },
     className
   );

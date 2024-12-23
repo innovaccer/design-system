@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import MenuContext from './MenuContext';
 import { handleKeyDown } from './utils';
 import SubMenuContext from './SubMenuContext';
+import styles from '@css/components/menu.module.css';
 
 type ItemTagType = 'li' | 'div' | 'a';
 
@@ -46,12 +47,7 @@ export const MenuItem = (props: MenuItemProps) => {
 
   const { setOpenPopover, focusedOption, setFocusedOption, menuTriggerRef, listRef } = contextProp;
 
-  const MenuItemClassName = classNames(
-    {
-      'Menu-Item': true,
-    },
-    className
-  );
+  const MenuItemClassName = classNames(styles['Menu-Item'], className);
 
   React.useEffect(() => {
     const handlePopoverOpen = () => {

@@ -5,6 +5,8 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 import { getNavItemColor, getPillsAppearance, Menu } from '@/utils/navigationHelper';
 import Link from '@/components/atoms/_text';
 import { TextColor } from '@/common.type';
+import styles from '@css/components/verticalNav.module.css';
+
 export interface MenuItemProps extends BaseProps {
   menu: Menu;
   isActive: boolean;
@@ -40,8 +42,8 @@ const MenuPills = (props: MenuPillsProps) => {
   const { disabled, isActive, count } = props;
 
   const PillsClass = classNames({
-    ['MenuItem-count']: true,
-    ['MenuItem-count--disabled']: disabled,
+    [styles['MenuItem-count']]: true,
+    [styles['MenuItem-count--disabled']]: disabled,
   });
 
   return (
@@ -71,13 +73,16 @@ export const MenuItem = (props: MenuItemProps) => {
 
   const MenuLabel = (props: MenuLabelProps) => {
     const { label, labelColor } = props;
+
+    const labelClass = classNames({
+      [styles['MenuItem-Text']]: true,
+      [styles['MenuItem--overflow']]: true,
+      ['mr-5']: !hasSubmenu && menu.count,
+      ['ellipsis--noWrap']: true,
+    });
+
     return (
-      <Text
-        data-test="DesignSystem-VerticalNav--Text"
-        ref={contentRef}
-        color={labelColor}
-        className={`MenuItem-Text MenuItem--overflow ${hasSubmenu || menu.count !== undefined ? '' : 'mr-5'}`}
-      >
+      <Text data-test="DesignSystem-VerticalNav--Text" ref={contentRef} color={labelColor} className={labelClass}>
         {label}
       </Text>
     );
@@ -98,14 +103,14 @@ export const MenuItem = (props: MenuItemProps) => {
   const itemColor = getNavItemColor(isActive, menu.disabled);
 
   const ItemClass = classNames({
-    ['MenuItem']: true,
-    ['MenuItem--vertical']: true,
-    ['MenuItem--collapsed']: !expanded,
-    ['MenuItem--expanded']: expanded,
-    ['MenuItem--active']: isActive,
-    ['MenuItem--disabled']: menu.disabled,
-    ['MenuItem--subMenu']: isChildren && expanded,
-    ['MenuItem--rounded']: rounded && expanded,
+    [styles['MenuItem']]: true,
+    [styles['MenuItem--vertical']]: true,
+    [styles['MenuItem--collapsed']]: !expanded,
+    [styles['MenuItem--expanded']]: expanded,
+    [styles['MenuItem--active']]: isActive,
+    [styles['MenuItem--disabled']]: menu.disabled,
+    [styles['MenuItem--subMenu']]: isChildren && expanded,
+    [styles['MenuItem--rounded']]: rounded && expanded,
     [`color-${itemColor}`]: true,
   });
 

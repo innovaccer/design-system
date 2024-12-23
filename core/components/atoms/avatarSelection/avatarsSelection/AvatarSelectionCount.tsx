@@ -5,6 +5,8 @@ import { AvatarData } from '../AvatarSelection';
 import { AvatarSelectionContext } from '../AvatarSelectionContext';
 import { handleKeyDown } from './utils';
 import { AvatarSize } from '@/common.type';
+import styles from '@css/components/avatarSelection.module.css';
+import avatarStyles from '@css/components/avatar.module.css';
 
 interface CountAvatarProp {
   size?: AvatarSize;
@@ -29,18 +31,28 @@ export const AvatarSelectionCount = (props: CountAvatarProp) => {
 
   const [selectedItemCount, setSelectedItemCount] = React.useState(0);
 
-  const wrapperClassName = classNames({
-    ['SelectionAvatarCount-wrapper']: true,
-    [`SelectionAvatarGroup-item`]: true,
-    ['SelectionAvatarCount--selected']: selectedItemCount > 0,
-  });
-
   React.useEffect(() => {
     const selectedList = hiddenAvatarList.filter((data1: AvatarData) =>
       selectedItems?.some((data2: AvatarData) => data2 === data1)
     );
     setSelectedItemCount(selectedList.length);
   }, [selectedItems]);
+
+  const wrapperClassName = classNames({
+    [styles['SelectionAvatarCount-wrapper']]: true,
+    [styles['SelectionAvatarGroup-item']]: true,
+    [styles['SelectionAvatarCount--selected']]: selectedItemCount > 0,
+  });
+
+  const avatarClassName = classNames({
+    [styles.SelectionAvatarCount]: true,
+    'cursor-pointer': true,
+  });
+
+  const avatarTextClassName = classNames({
+    'overflow-hidden': true,
+    [avatarStyles['Avatar-content']]: true,
+  });
 
   return (
     <div
@@ -55,8 +67,8 @@ export const AvatarSelectionCount = (props: CountAvatarProp) => {
       aria-controls={popoverId}
       ref={triggerRef}
     >
-      <Avatar tabIndex={-1} size={size} appearance="secondary" className="SelectionAvatarCount cursor-pointer">
-        <Text className="overflow-hidden Avatar-content">{`+${hiddenAvatarCount}`}</Text>
+      <Avatar tabIndex={-1} size={size} appearance="secondary" className={avatarClassName}>
+        <Text className={avatarTextClassName}>{`+${hiddenAvatarCount}`}</Text>
       </Avatar>
     </div>
   );

@@ -4,6 +4,7 @@ import { AvatarContext } from '../AvatarProvider';
 import { IconAppearance } from '../../icon';
 import { BaseProps } from '@/utils/types';
 import classNames from 'classnames';
+import styles from '@css/components/avatar.module.css';
 
 export interface AvatarIconProps extends BaseProps {
   /**
@@ -36,7 +37,7 @@ export const AvatarIcon = (props: AvatarIconProps) => {
   const iconAppearance = (appearance && (appearanceMapper[appearance] as IconAppearance)) || 'inverse';
 
   const IconClassNames = classNames({
-    ['Avatar-content']: appearance && darkAppearance.includes(appearance),
+    [styles['Avatar-content']]: appearance && darkAppearance.includes(appearance),
   });
 
   return <Icon {...props} size={iconSize} appearance={iconAppearance} className={IconClassNames} />;

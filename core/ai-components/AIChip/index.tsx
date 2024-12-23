@@ -1,5 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import styles from '@css/ai-components/chip.module.css';
 
 export interface AIChipProps extends React.ComponentProps<'button'> {
   /**
@@ -29,22 +30,22 @@ export const AIChip = (props: AIChipProps) => {
 
   const ChipClassNames = classNames(
     {
-      AIChip: true,
-      'AIChip--disabled': disabled,
+      [styles.AIChip]: true,
+      [styles['AIChip--disabled']]: disabled,
     },
     className
   );
 
   const IconClassNames = classNames({
-    'AIChip-icon': true,
-    'AIChip-icon--disabled': disabled,
+    [styles['AIChip-icon']]: true,
+    [styles['AIChip-icon--disabled']]: disabled,
     ['material-symbols']: true,
     ['material-symbols-rounded']: true,
   });
 
   const TextClassNames = classNames({
-    'AIChip-text': true,
-    'AIChip-text--disabled': disabled,
+    [styles['AIChip-text']]: true,
+    [styles['AIChip-text--disabled']]: disabled,
   });
 
   return (
