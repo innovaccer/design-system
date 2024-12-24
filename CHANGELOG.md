@@ -1,3 +1,39 @@
+## 4.0.0 (2024-12-25)
+
+### Highlights
+
+- feat(CSS): migrate to module CSS for ESM and UMD builds to work together (e91b1cf1)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(CSS): migrate to module CSS for ESM and UMD builds to work together (e91b1cf1)
+
+### Fixes
+
+NA
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 3.5.0 (2024-12-12)
 
 ### Highlights
