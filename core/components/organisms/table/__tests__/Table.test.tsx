@@ -648,3 +648,79 @@ describe('render table with selection action renderer', () => {
     expect(selectionActionTrigger).toBeInTheDocument();
   });
 });
+
+describe('render table with checkboxAlignment', () => {
+  it('check for checkboxAlignment top', () => {
+    const schema = [
+      { name: 'name', displayName: 'Name', width: '50%' },
+      { name: 'gender', displayName: 'Gender', width: '50%' },
+    ];
+
+    const data = [
+      { name: 'Zara', gender: 'f', selected: true },
+      { name: 'Sara', gender: 'm' },
+    ];
+
+    const { getAllByTestId } = render(
+      <Table schema={schema} withCheckbox={true} onSelect={onSelect} data={data} checkboxAlignment="top" />
+    );
+    const checkbox = getAllByTestId('DesignSystem-Grid-cellCheckbox')[1];
+    expect(checkbox).toHaveClass('align-items-start');
+  });
+
+  it('check for checkboxAlignment bottom', () => {
+    const schema = [
+      { name: 'name', displayName: 'Name', width: '50%' },
+      { name: 'gender', displayName: 'Gender', width: '50%' },
+    ];
+
+    const data = [
+      { name: 'Zara', gender: 'f', selected: true },
+      { name: 'Sara', gender: 'm' },
+    ];
+
+    const { getAllByTestId } = render(
+      <Table schema={schema} withCheckbox={true} onSelect={onSelect} data={data} checkboxAlignment="bottom" />
+    );
+    const checkbox = getAllByTestId('DesignSystem-Grid-cellCheckbox')[1];
+    expect(checkbox).toHaveClass('align-items-end');
+  });
+});
+
+describe('render table with verticalAlign', () => {
+  it('check for grid cell alignment verticalAlign:top', () => {
+    const schema = [
+      { name: 'name', displayName: 'Name', width: '50%', verticalAlign: 'top' as const },
+      { name: 'gender', displayName: 'Gender', width: '50%', verticalAlign: 'top' as const },
+    ];
+
+    const data = [
+      { name: 'Zara', gender: 'f', selected: true },
+      { name: 'Sara', gender: 'm' },
+    ];
+
+    const { getAllByTestId } = render(
+      <Table schema={schema} withCheckbox={true} onSelect={onSelect} data={data} checkboxAlignment="bottom" />
+    );
+    const checkbox = getAllByTestId('DesignSystem-Grid-bodyCell')[1];
+    expect(checkbox).toHaveClass('align-items-start');
+  });
+
+  it('check for grid cell alignment verticalAlign:bottom', () => {
+    const schema = [
+      { name: 'name', displayName: 'Name', width: '50%', verticalAlign: 'bottom' as const },
+      { name: 'gender', displayName: 'Gender', width: '50%', verticalAlign: 'bottom' as const },
+    ];
+
+    const data = [
+      { name: 'Zara', gender: 'f', selected: true },
+      { name: 'Sara', gender: 'm' },
+    ];
+
+    const { getAllByTestId } = render(
+      <Table schema={schema} withCheckbox={true} onSelect={onSelect} data={data} checkboxAlignment="bottom" />
+    );
+    const checkbox = getAllByTestId('DesignSystem-Grid-bodyCell')[1];
+    expect(checkbox).toHaveClass('align-items-end');
+  });
+});
