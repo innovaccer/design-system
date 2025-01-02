@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Checkbox, Label, Input, Dropdown, Placeholder, PlaceholderParagraph, Button, Divider } from '@/index';
+import { Checkbox, Label, Input, Dropdown, Button, Divider } from '@/index';
 import {
   updateSchemaFunction,
   ColumnSchema,
@@ -283,11 +283,7 @@ export const Header = (props: HeaderProps) => {
               }}
             />
           )}
-          {loading ? (
-            <Placeholder withImage={!showHead && withCheckbox}>
-              <PlaceholderParagraph length={'small'} size={'s'} />
-            </Placeholder>
-          ) : (
+          {
             <>
               {showSelectedLabel ? (
                 <span className={selectedRowLabelClass} onAnimationEnd={onSelectAnimationEnd}>
@@ -330,7 +326,7 @@ export const Header = (props: HeaderProps) => {
                 </div>
               )}
             </>
-          )}
+          }
         </div>
         {dynamicColumn && (
           <div>
