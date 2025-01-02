@@ -21,6 +21,18 @@ const dateFormat = [currentDate, 1629790081880];
 const inputFormat = ['mm/dd/yyyy', 'dd/mm/yyyy', 'yyyy/mm/dd', 'mm-dd-yyyy', 'dd-mm-yyyy', 'yyyy-mm-dd'];
 const FunctionValue = jest.fn();
 
+let dateNowSpy: any;
+
+beforeAll(() => {
+  // Lock Time
+  dateNowSpy = jest.spyOn(Date, 'now').mockImplementation(() => 1725888000000);
+});
+
+afterAll(() => {
+  // Unlock Time
+  dateNowSpy.mockRestore();
+});
+
 describe('DateRangePicker component', () => {
   const mapper: Record<string, any> = {
     open: valueHelper(booleanValue, { required: true, iterate: true }),
