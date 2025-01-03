@@ -8,7 +8,7 @@
 /* Selection Avatar List */
 
 .SelectionAvatarGroup-item {
-  margin-right: calc(var(--spacing-m) * -1);
+  margin-right: calc(var(--spacing-s) * -1);
   border-radius: 50%;
   display: flex;
   transition: transform var(--duration--fast-01) var(--standard-productive-curve);
