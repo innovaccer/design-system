@@ -25,12 +25,14 @@ export const GridBody = (props: GridBodyProps) => {
   const { schema, prevPageInfo, updatePrevPageInfo, onSelect } = props;
 
   React.useEffect(() => {
-    const gridBodyEl = ref!.querySelector(`.${styles['Grid-body']}`);
-    if (gridBodyEl) {
+    const gridBodyEl = ref!.querySelector('.Grid-body');
+    const gridHeadEl = ref!.querySelector('.Grid-head');
+    if (gridBodyEl && gridHeadEl) {
       window.requestAnimationFrame(() => {
         if (prevPageInfo.page === page) {
           gridBodyEl.scrollTop = prevPageInfo.scrollTop;
         }
+        gridBodyEl.scrollLeft = gridHeadEl.scrollLeft;
       });
     }
 
