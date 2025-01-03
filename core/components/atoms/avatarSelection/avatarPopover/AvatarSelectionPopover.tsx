@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Checkbox, Tooltip } from '@/index';
+import { Checkbox, Tooltip, Avatar, Text } from '@/index';
 import { AvatarData } from '../AvatarSelection';
 import SelectionAvatarInput from './AvatarSelectionInput';
 import classNames from 'classnames';
@@ -27,11 +27,21 @@ const AvatarSelectionItem = (props: AvatarSelectionItemProps) => {
   const [showTooltip, setShowTooltip] = React.useState(false);
   const elementRef = React.useRef(null);
 
-  const { firstName = '', lastName = '', disabled, tooltipSuffix } = avatarData;
+  const { firstName = '', lastName = '', disabled, tooltipSuffix, image, icon } = avatarData;
   const name = `${firstName || ''} ${lastName || ''} ${tooltipSuffix || ''}` || '';
 
+  const triggerClassName = classNames({
+    ['cursor-not-allowed']: disabled,
+  });
+
   return (
-    <Tooltip showOnTruncation={true} tooltip={name} elementRef={elementRef} open={showTooltip}>
+    <Tooltip
+      showOnTruncation={true}
+      tooltip={name}
+      elementRef={elementRef}
+      open={showTooltip}
+      triggerClass={triggerClassName}
+    >
       <AvatarSelectionOption
         value={avatarData}
         disabled={disabled}
@@ -45,13 +55,16 @@ const AvatarSelectionItem = (props: AvatarSelectionItemProps) => {
         <Checkbox
           defaultChecked={isSelected}
           checked={isSelected}
-          label={name}
           size="regular"
           tabIndex={-1}
-          className="ellipsis--noWrap"
           data-test="DesignSystem-AvatarSelection--Checkbox"
-          labelRef={elementRef}
         />
+        <Avatar {...avatarData} className="ml-3 mr-4" withTooltip={false}>
+          {image || icon}
+        </Avatar>
+        <Text className="ellipsis--noWrap" ref={elementRef}>
+          {name}
+        </Text>
       </AvatarSelectionOption>
     </Tooltip>
   );
