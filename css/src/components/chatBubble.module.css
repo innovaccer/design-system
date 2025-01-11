@@ -1,0 +1,53 @@
+.ChatBubble-box--outgoing {
+  background-color: var(--primary-lightest);
+  border-radius: var(--spacing);
+  padding: var(--spacing) var(--spacing-l);
+}
+
+.ChatBubble-separator {
+  width: var(--spacing-m);
+  height: var(--spacing-m);
+  border-radius: 50%;
+  margin: 0 var(--spacing);
+  background: var(--inverse-lightest);
+}
+
+.ChatBubble-box--noSuccess {
+  margin-right: calc(var(--spacing-2) + var(--spacing-m));
+}
+
+.ChatBubble-box {
+  width: 100%;
+}
+
+.ChatBubble-actionBar--outgoing {
+  width: max-content;
+  margin-right: var(--spacing-m);
+  margin-top: var(--spacing-0-75);
+}
+
+.ChatBubble-actionBar--incoming {
+  width: max-content;
+  margin-left: var(--spacing-m);
+  margin-top: var(--spacing-0-75);
+}
+
+.ChatBubble-box--incoming {
+  background-color: var(--secondary-lightest);
+  border-radius: var(--spacing);
+  padding: var(--spacing) var(--spacing-l);
+}
+
+.ChatBubble-metaData--incoming {
+  margin-left: calc(var(--spacing-3) + var(--spacing));
+}
+
+.ChatBubble-boxWrapper {
+  flex: 0 0 auto;
+  display: flex;
+  max-width: 70%;
+}
+
+.ChatBubble-actionBarWrapper {
+  flex: 0 0 auto;
+}
