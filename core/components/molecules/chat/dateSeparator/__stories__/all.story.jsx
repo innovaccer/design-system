@@ -21,9 +21,11 @@ export default {
   title: 'Components/Chat/Separator/Date Separator',
   component: Chat,
   subcomponents: {
+    'Chat.ChatBubble': Chat.ChatBubble,
     'Chat.DateSeparator': Chat.DateSeparator,
     'Chat.NewMessage': Chat.NewMessage,
     'Chat.UnreadMessage': Chat.UnreadMessage,
+    'Chat.TypingIndicator': Chat.TypingIndicator,
   },
   parameters: {
     docs: {
