@@ -8,12 +8,12 @@ export function concatTokenCSS(directories, files) {
       let concatenatedCSSContent = '';
 
       // Iterate over each directory
-      directories.forEach(directory => {
+      directories.forEach((directory) => {
         // Read all files in the specified directory
         const dirFiles = fs.readdirSync(directory);
 
         // Filter and read the contents of CSS files
-        dirFiles.forEach(file => {
+        dirFiles.forEach((file) => {
           if (file.endsWith('.css')) {
             const absolutePath = path.resolve(directory, file);
             const fileContent = fs.readFileSync(absolutePath, 'utf8');
@@ -23,7 +23,7 @@ export function concatTokenCSS(directories, files) {
       });
 
       // Iterate over each file
-      files.forEach(file => {
+      files.forEach((file) => {
         if (file.endsWith('.css')) {
           const absolutePath = path.resolve(file);
           const fileContent = fs.readFileSync(absolutePath, 'utf8');
@@ -38,6 +38,20 @@ export function concatTokenCSS(directories, files) {
           asset.source = `${concatenatedCSSContent}${asset.source}`;
         }
       }
-    }
+    },
   };
 }
+
+// export function removeUndefinedClasses() {
+//   return {
+//     name: 'remove-undefined-classes',
+//     generateBundle(options, bundle) {
+//       for (const fileName of Object.keys(bundle)) {
+//         if (fileName.endsWith('.css')) {
+//           const asset = bundle[fileName];
+//           asset.source = asset.source.replace(/undefined/g, '');
+//         }
+//       }
+//     },
+//   };
+// }

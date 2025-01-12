@@ -43,7 +43,12 @@ module.exports = {
         cssModulesLoaderOptions: {
           importLoaders: 1,
           modules: {
-            localIdentName: '[local]', // Use local class names directly
+            // localIdentName: '[local]', // Use local class names directly
+            getLocalIdent: (context, localIdentName, localName) => {
+              console.log('context', context, 'localIdentName', localIdentName, 'localName', localName);
+              if (!localName) return ''; // Return an empty string for undefined classes
+              return localName;
+            },
           },
         },
       },

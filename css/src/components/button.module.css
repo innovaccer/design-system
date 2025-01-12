@@ -136,7 +136,7 @@
 }
 
 .Button--primary {
-  background: var(--primary);
+  background: orange;
 }
 
 .Button--primary:hover {

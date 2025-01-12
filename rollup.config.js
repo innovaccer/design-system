@@ -12,9 +12,13 @@ import { compress } from 'brotli';
 import image from '@rollup/plugin-image';
 import postcss from 'rollup-plugin-postcss';
 import esbuild from 'rollup-plugin-esbuild';
-import { concatTokenCSS } from './rollupPlugin';
+import { concatTokenCSS, 
+  // removeUndefinedClasses
+ } from './rollupPlugin';
 import colorModFunction from 'postcss-color-mod-function';
 import autoprefixer from 'autoprefixer';
+import removeUndefined from './postcss-remove-undefined';
+
 
 const { version, name, license, homepage } = packageJSON;
 
@@ -66,6 +70,34 @@ const baseConfig = {
   external: ['react', 'react-dom'],
 };
 
+// function removeUndefined() {
+//   return {
+//     postcssPlugin: 'postcss-remove-undefined',
+//     // Once(root) {
+//     //   root.walkRules((rule) => {
+//     //     rule.selectors = rule.selectors.filter((selector) => !selector.includes('undefined'));
+//     //     if (rule.selectors.length === 0) {
+//     //       rule.remove();
+//     //     }
+//     //   });
+//     // },
+
+//     Once(root) {
+//       root.walkRules((rule) => {
+//         rule.walkDecls((decl) => {
+//           if (decl.value.includes('undefined')) {
+//             decl.remove();
+//           }
+//         });
+//         if (rule.nodes.length === 0) {
+//           rule.remove();
+//         }
+//       });
+//     },
+//   };
+// }
+
+
 function generateHash(str) {
   let hash = 0;
   for (let i = 0; i < str.length; i++) {
@@ -106,6 +138,8 @@ const commonJsPlugins = [
   postcss({
     modules: {
       generateScopedName: (name, fileName) => {
+        if (!name) return 'bg-secondary p-5'; // Return an empty string for undefined classes
+
         const hash = generateHash(fileName + name);
         const updatedVersion = version.replace(/\./g, '-');
         return `${name}-v${updatedVersion}${hash}`;
@@ -117,6 +151,7 @@ const commonJsPlugins = [
         importFrom: cssTokenFiles,
       }),
       autoprefixer(),
+      removeUndefined(),
     ],
   }),
   uglify(),
@@ -145,7 +180,10 @@ const umdPlugins = [
   }),
   postcss({
     modules: {
-      generateScopedName: (name) => name, // Use the original class name
+      generateScopedName: (name) => {
+        if (!name) return 'bg-secondary p-5'; // Return an empty string for undefined classes
+        return name; // Use the original class name
+      }
     },
     extract: true,
     extensions: ['.css', '.scss', '.sass'],
@@ -154,6 +192,7 @@ const umdPlugins = [
         importFrom: cssTokenFiles,
       }),
       autoprefixer(),
+      removeUndefined(),
     ],
   }),
   concatTokenCSS(cssSources, cssFiles),
@@ -240,6 +279,8 @@ const tsConfig = {
     postcss({
       modules: {
         generateScopedName: (name, fileName) => {
+          if (!name) return 'bg-secondary p-5'; // Return an empty string for undefined classes
+
           const hash = generateHash(fileName + name);
           const updatedVersion = version.replace(/\./g, '-');
           return `${name}-v${updatedVersion}${hash}`;
@@ -251,6 +292,7 @@ const tsConfig = {
           importFrom: cssTokenFiles,
         }),
         autoprefixer(),
+        removeUndefined(),
       ],
     }),
   ],
