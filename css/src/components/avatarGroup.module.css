@@ -1,15 +1,14 @@
 .AvatarGroup-item {
   border-radius: 50%;
   position: relative;
+  margin-right: calc(var(--spacing-s) * -1);
 }
 
 .AvatarGroup-item--regular {
-  margin-right: calc(var(--spacing-m) * -1);
   height: var(--spacing-3);
 }
 
 .AvatarGroup-item--tiny {
-  margin-right: calc(var(--spacing-s) * -1);
   height: var(--spacing-xl);
 }
 
@@ -34,4 +33,35 @@
 .AvatarCount-wrapper:focus-visible {
   outline: 3px solid var(--primary-shadow);
   outline-offset: 3px;
+}
+
+.AvatarGroup-inputWrapper {
+  border-bottom: var(--spacing-xs) solid var(--secondary-dark);
+}
+
+.AvatarGroup-inputWrapper:focus-within {
+  border-bottom: var(--spacing-xs) solid var(--primary);
+}
+
+.AvatarGroup-input {
+  min-width: unset !important;
+  background: transparent;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0;
+  height: calc(var(--spacing-3) + var(--spacing-m)) !important;
+}
+
+.AvatarGroup-input,
+.AvatarGroup-input:focus-within {
+  border: unset !important;
+  box-shadow: none !important;
+}
+
+.AvatarGroup-input:hover {
+  background-color: var(--secondary-lightest);
+}
+
+.AvatarGroup-listItem--disabled {
+  cursor: not-allowed;
+  pointer-events: auto !important;
 }

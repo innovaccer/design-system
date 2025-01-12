@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AvatarGroup component snapshot 
-  list: [{"firstName":"John","lastName":"Doe","icon":"[ReactNode]"},{"firstName":"Steven","lastName":"Packton","icon":"[ReactNode]"}], size: "regular"
+  list: [{"firstName":"John","lastName":"Doe","icon":"[ReactNode]"},{"firstName":"Steven","lastName":"Packton","icon":"[ReactNode]"}], size: "regular", withSearch: "false"
  1`] = `
 Object {
   "asFragment": [Function],
@@ -14,7 +14,7 @@ Object {
         <div
           class="AvatarGroup-item AvatarGroup-item--regular"
           data-test="DesignSystem-AvatarGroup--Avatar"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 2;"
         >
           <span
             class="position-relative d-inline-flex"
@@ -49,7 +49,7 @@ Object {
         <div
           class="AvatarGroup-item AvatarGroup-item--regular"
           data-test="DesignSystem-AvatarGroup--Avatar"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 1;"
         >
           <span
             class="position-relative d-inline-flex"
@@ -92,7 +92,7 @@ Object {
       <div
         class="AvatarGroup-item AvatarGroup-item--regular"
         data-test="DesignSystem-AvatarGroup--Avatar"
-        style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
+        style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 2;"
       >
         <span
           class="position-relative d-inline-flex"
@@ -127,7 +127,7 @@ Object {
       <div
         class="AvatarGroup-item AvatarGroup-item--regular"
         data-test="DesignSystem-AvatarGroup--Avatar"
-        style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
+        style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 1;"
       >
         <span
           class="position-relative d-inline-flex"
@@ -216,7 +216,222 @@ Object {
 `;
 
 exports[`AvatarGroup component snapshot 
-  list: [{"firstName":"John","lastName":"Doe","icon":"[ReactNode]"},{"firstName":"Steven","lastName":"Packton","icon":"[ReactNode]"}], size: "tiny"
+  list: [{"firstName":"John","lastName":"Doe","icon":"[ReactNode]"},{"firstName":"Steven","lastName":"Packton","icon":"[ReactNode]"}], size: "regular", withSearch: "true"
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="AvatarGroup d-inline-flex"
+        data-test="DesignSystem-AvatarGroup"
+      >
+        <div
+          class="AvatarGroup-item AvatarGroup-item--regular"
+          data-test="DesignSystem-AvatarGroup--Avatar"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 2;"
+        >
+          <span
+            class="position-relative d-inline-flex"
+          >
+            <style />
+            <div
+              class="PopperWrapper-trigger flex-grow-0"
+            >
+              <span
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="presentation"
+              >
+                <span
+                  class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="0"
+                >
+                  <i
+                    class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
+                    data-test="DesignSystem-Icon"
+                    role="button"
+                    style="font-size: 20px; width: 20px;"
+                  >
+                    places
+                  </i>
+                </span>
+              </span>
+            </div>
+          </span>
+        </div>
+        <div
+          class="AvatarGroup-item AvatarGroup-item--regular"
+          data-test="DesignSystem-AvatarGroup--Avatar"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 1;"
+        >
+          <span
+            class="position-relative d-inline-flex"
+          >
+            <style />
+            <div
+              class="PopperWrapper-trigger flex-grow-0"
+            >
+              <span
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="presentation"
+              >
+                <span
+                  class="Avatar Avatar--regular Avatar--alert Avatar--default"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="0"
+                >
+                  <i
+                    class="material-symbols material-symbols-rounded Icon Icon--white"
+                    data-test="DesignSystem-Icon"
+                    role="button"
+                    style="font-size: 20px; width: 20px;"
+                  >
+                    smart_toy
+                  </i>
+                </span>
+              </span>
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="AvatarGroup d-inline-flex"
+      data-test="DesignSystem-AvatarGroup"
+    >
+      <div
+        class="AvatarGroup-item AvatarGroup-item--regular"
+        data-test="DesignSystem-AvatarGroup--Avatar"
+        style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 2;"
+      >
+        <span
+          class="position-relative d-inline-flex"
+        >
+          <style />
+          <div
+            class="PopperWrapper-trigger flex-grow-0"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
+                  data-test="DesignSystem-Icon"
+                  role="button"
+                  style="font-size: 20px; width: 20px;"
+                >
+                  places
+                </i>
+              </span>
+            </span>
+          </div>
+        </span>
+      </div>
+      <div
+        class="AvatarGroup-item AvatarGroup-item--regular"
+        data-test="DesignSystem-AvatarGroup--Avatar"
+        style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 1;"
+      >
+        <span
+          class="position-relative d-inline-flex"
+        >
+          <style />
+          <div
+            class="PopperWrapper-trigger flex-grow-0"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--alert Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon Icon--white"
+                  data-test="DesignSystem-Icon"
+                  role="button"
+                  style="font-size: 20px; width: 20px;"
+                >
+                  smart_toy
+                </i>
+              </span>
+            </span>
+          </div>
+        </span>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`AvatarGroup component snapshot 
+  list: [{"firstName":"John","lastName":"Doe","icon":"[ReactNode]"},{"firstName":"Steven","lastName":"Packton","icon":"[ReactNode]"}], size: "tiny", withSearch: "false"
  1`] = `
 Object {
   "asFragment": [Function],
@@ -229,7 +444,7 @@ Object {
         <div
           class="AvatarGroup-item AvatarGroup-item--tiny"
           data-test="DesignSystem-AvatarGroup--Avatar"
-          style="background-color: white; box-shadow: 0 0 0  var(--spacing-s) white;"
+          style="background-color: white; box-shadow: 0 0 0  var(--spacing-s) white; z-index: 2;"
         >
           <span
             class="position-relative d-inline-flex"
@@ -264,7 +479,7 @@ Object {
         <div
           class="AvatarGroup-item AvatarGroup-item--tiny"
           data-test="DesignSystem-AvatarGroup--Avatar"
-          style="background-color: white; box-shadow: 0 0 0  var(--spacing-s) white;"
+          style="background-color: white; box-shadow: 0 0 0  var(--spacing-s) white; z-index: 1;"
         >
           <span
             class="position-relative d-inline-flex"
@@ -307,7 +522,7 @@ Object {
       <div
         class="AvatarGroup-item AvatarGroup-item--tiny"
         data-test="DesignSystem-AvatarGroup--Avatar"
-        style="background-color: white; box-shadow: 0 0 0  var(--spacing-s) white;"
+        style="background-color: white; box-shadow: 0 0 0  var(--spacing-s) white; z-index: 2;"
       >
         <span
           class="position-relative d-inline-flex"
@@ -342,7 +557,222 @@ Object {
       <div
         class="AvatarGroup-item AvatarGroup-item--tiny"
         data-test="DesignSystem-AvatarGroup--Avatar"
-        style="background-color: white; box-shadow: 0 0 0  var(--spacing-s) white;"
+        style="background-color: white; box-shadow: 0 0 0  var(--spacing-s) white; z-index: 1;"
+      >
+        <span
+          class="position-relative d-inline-flex"
+        >
+          <style />
+          <div
+            class="PopperWrapper-trigger flex-grow-0"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--tiny Avatar--alert Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon Icon--white"
+                  data-test="DesignSystem-Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  smart_toy
+                </i>
+              </span>
+            </span>
+          </div>
+        </span>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`AvatarGroup component snapshot 
+  list: [{"firstName":"John","lastName":"Doe","icon":"[ReactNode]"},{"firstName":"Steven","lastName":"Packton","icon":"[ReactNode]"}], size: "tiny", withSearch: "true"
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="AvatarGroup d-inline-flex"
+        data-test="DesignSystem-AvatarGroup"
+      >
+        <div
+          class="AvatarGroup-item AvatarGroup-item--tiny"
+          data-test="DesignSystem-AvatarGroup--Avatar"
+          style="background-color: white; box-shadow: 0 0 0  var(--spacing-s) white; z-index: 2;"
+        >
+          <span
+            class="position-relative d-inline-flex"
+          >
+            <style />
+            <div
+              class="PopperWrapper-trigger flex-grow-0"
+            >
+              <span
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="presentation"
+              >
+                <span
+                  class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="0"
+                >
+                  <i
+                    class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
+                    data-test="DesignSystem-Icon"
+                    role="button"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    places
+                  </i>
+                </span>
+              </span>
+            </div>
+          </span>
+        </div>
+        <div
+          class="AvatarGroup-item AvatarGroup-item--tiny"
+          data-test="DesignSystem-AvatarGroup--Avatar"
+          style="background-color: white; box-shadow: 0 0 0  var(--spacing-s) white; z-index: 1;"
+        >
+          <span
+            class="position-relative d-inline-flex"
+          >
+            <style />
+            <div
+              class="PopperWrapper-trigger flex-grow-0"
+            >
+              <span
+                class=""
+                data-test="DesignSystem-AvatarWrapper"
+                role="presentation"
+              >
+                <span
+                  class="Avatar Avatar--tiny Avatar--alert Avatar--default"
+                  data-test="DesignSystem-Avatar"
+                  tabindex="0"
+                >
+                  <i
+                    class="material-symbols material-symbols-rounded Icon Icon--white"
+                    data-test="DesignSystem-Icon"
+                    role="button"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    smart_toy
+                  </i>
+                </span>
+              </span>
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="AvatarGroup d-inline-flex"
+      data-test="DesignSystem-AvatarGroup"
+    >
+      <div
+        class="AvatarGroup-item AvatarGroup-item--tiny"
+        data-test="DesignSystem-AvatarGroup--Avatar"
+        style="background-color: white; box-shadow: 0 0 0  var(--spacing-s) white; z-index: 2;"
+      >
+        <span
+          class="position-relative d-inline-flex"
+        >
+          <style />
+          <div
+            class="PopperWrapper-trigger flex-grow-0"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
+                  data-test="DesignSystem-Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  places
+                </i>
+              </span>
+            </span>
+          </div>
+        </span>
+      </div>
+      <div
+        class="AvatarGroup-item AvatarGroup-item--tiny"
+        data-test="DesignSystem-AvatarGroup--Avatar"
+        style="background-color: white; box-shadow: 0 0 0  var(--spacing-s) white; z-index: 1;"
       >
         <span
           class="position-relative d-inline-flex"
