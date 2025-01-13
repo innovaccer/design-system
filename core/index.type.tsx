@@ -99,6 +99,7 @@ export { DateSeparatorProps } from './components/molecules/chat/dateSeparator';
 export { UnreadMessageProps } from './components/molecules/chat/unreadMessage';
 export { NewMessageProps } from './components/molecules/chat/newMessage';
 export { TypingIndicatorProps } from './components/molecules/chat/typingIndicator';
+export { MeterProps } from './components/atoms/meter';
 
 export { SaraSparkleProps } from './ai-components/SaraSparkle';
 export { AIButtonProps } from './ai-components/AIButton';
