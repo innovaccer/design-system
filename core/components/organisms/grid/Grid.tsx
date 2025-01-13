@@ -357,25 +357,37 @@ export class Grid extends React.Component<GridProps, GridState> {
     }
   }
 
+  adjustPaddingRight() {
+    const gridHeadEl = this.gridRef!.querySelector(`.${styles['Grid-head']}`) as HTMLElement;
+    const gridBodyEl = this.gridRef!.querySelector(`.${styles['Grid-body']}`) as HTMLElement;
+
+    if (gridHeadEl && gridBodyEl) {
+      const hasVerticalScrollbar = gridBodyEl.scrollHeight > gridBodyEl.clientHeight;
+      const scrollbarWidth = gridBodyEl.offsetWidth - gridBodyEl.clientWidth;
+      gridHeadEl.style.paddingRight = hasVerticalScrollbar ? `${scrollbarWidth}px` : '0px';
+    }
+  }
+
   syncScroll = (type: string) => () => {
     const gridHeadEl = this.gridRef!.querySelector(`.${styles['Grid-head']}`);
     const gridBodyEl = this.gridRef!.querySelector(`.${styles['Grid-body']}`);
+    this.adjustPaddingRight();
 
     if (type === 'head') {
-      if (!this.isHeadSyncing) {
-        this.isBodySyncing = true;
-        gridBodyEl!.scrollLeft = gridHeadEl!.scrollLeft;
-      }
-      this.isHeadSyncing = false;
-    }
-
-    if (type === 'body') {
       if (!this.isBodySyncing) {
         this.isHeadSyncing = true;
+        gridBodyEl!.scrollLeft = gridHeadEl!.scrollLeft;
+      }
+    } else if (type === 'body') {
+      if (!this.isHeadSyncing) {
+        this.isBodySyncing = true;
         gridHeadEl!.scrollLeft = gridBodyEl!.scrollLeft;
       }
-      this.isBodySyncing = false;
     }
+    setTimeout(() => {
+      this.isHeadSyncing = false;
+      this.isBodySyncing = false;
+    }, 0);
   };
 
   updateRenderedSchema = (newSchema: Schema) => {
