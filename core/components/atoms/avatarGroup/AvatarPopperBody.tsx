@@ -30,6 +30,7 @@ const AvatarPopperBody = (props: AvatarPopperProps) => {
     withSearch,
     searchPlaceholder,
     searchComparator,
+    size,
   } = props;
 
   const [searchValue, setSearchValue] = React.useState<string>('');
@@ -107,7 +108,7 @@ const AvatarPopperBody = (props: AvatarPopperProps) => {
             data-test="DesignSystem-AvatarGroup--List"
           >
             {searchList.map((item: AvatarData, index: number) => {
-              return <AvatarOptionItem key={index} avatarData={item} />;
+              return <AvatarOptionItem key={index} avatarData={{ ...item, size }} />;
             })}
           </Listbox>
         )}
