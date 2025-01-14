@@ -17,6 +17,7 @@ interface AvatarPopperProps {
   withSearch?: boolean;
   searchPlaceholder?: string;
   searchComparator?: (searchValue: string, avatarData: AvatarData) => boolean;
+  size?: AvatarData['size'];
 }
 
 const AvatarPopperBody = (props: AvatarPopperProps) => {

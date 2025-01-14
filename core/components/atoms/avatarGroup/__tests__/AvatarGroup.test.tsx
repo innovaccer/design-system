@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import AvatarGroup, { AvatarGroupProps as Props } from '../AvatarGroup';
+import AvatarGroup, { AvatarGroupProps as Props, AvatarData } from '../AvatarGroup';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { Avatar, Tooltip, Icon } from '@/index';
 
@@ -61,10 +61,12 @@ const statusList = [
   {
     firstName: 'John',
     lastName: 'Doe',
+    presence: 'active' as AvatarData['presence'],
   },
   {
     firstName: 'Steven',
     lastName: 'Packton',
+    presence: 'active' as AvatarData['presence'],
     status: (
       <Tooltip position="top" tooltip="Verified">
         <Icon
@@ -95,6 +97,7 @@ const statusList = [
   {
     firstName: 'Monica',
     lastName: 'Geller',
+    presence: 'away' as AvatarData['presence'],
   },
   {
     firstName: 'Tom',
@@ -246,6 +249,15 @@ describe('AvatarGroup component', () => {
     expect(getByTestId('DesignSystem-AvatarGroup--Status-1')).toBeInTheDocument();
     expect(getByTestId('DesignSystem-AvatarGroup--Status-2')).toBeInTheDocument();
     expect(getByTestId('DesignSystem-AvatarGroup--Status-3')).toBeInTheDocument();
+  });
+
+  it('renders avatars with presence', () => {
+    const { getAllByTestId } = render(<AvatarGroup list={statusList} max={5} />);
+    const avatars = getAllByTestId('DesignSystem-AvatarGroup--Avatar');
+
+    expect(avatars[0].querySelector('.Avatar-presence')).toBeInTheDocument();
+    expect(avatars[1].querySelector('.Avatar-presence')).toBeInTheDocument();
+    expect(avatars[3].querySelector('.Avatar-presence')).toBeInTheDocument();
   });
 });
 

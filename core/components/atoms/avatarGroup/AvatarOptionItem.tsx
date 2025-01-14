@@ -8,7 +8,8 @@ interface AvatarOptionItemProps {
 }
 
 const AvatarOptionItem = (props: AvatarOptionItemProps) => {
-  const { firstName = '', lastName = '', tooltipSuffix = '', disabled, image, icon, ...rest } = props.avatarData;
+  const { avatarData } = props;
+  const { firstName = '', lastName = '', tooltipSuffix = '', disabled, image, icon } = avatarData;
   const name = `${firstName} ${lastName} ${tooltipSuffix}`;
   const elementRef = React.useRef(null);
 
@@ -24,7 +25,7 @@ const AvatarOptionItem = (props: AvatarOptionItemProps) => {
 
   return (
     <Listbox.Item disabled={disabled} className={itemClassName} tagName="li" data-test="DesignSystem-AvatarGroup--Item">
-      <Avatar firstName={firstName} lastName={lastName} withTooltip={false} {...rest}>
+      <Avatar {...avatarData} withTooltip={false}>
         {image || icon}
       </Avatar>
       <Tooltip showOnTruncation={true} tooltip={name} elementRef={elementRef} triggerClass={triggerClassName}>
