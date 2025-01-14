@@ -26,6 +26,8 @@ export interface AvatarData extends Record<string, any> {
   selected?: boolean;
   disabled?: boolean;
   tooltipSuffix?: string;
+  status?: React.ReactNode;
+  presence?: AvatarProps['presence'];
 }
 
 export interface AvatarSelectionProps extends BaseProps {
@@ -42,8 +44,23 @@ export interface AvatarSelectionProps extends BaseProps {
    *  selected?: boolean;
    *  disabled?: boolean;
    *  tooltipSuffix?: string;
+   *  status?: React.ReactNode;
+   *  presence?: 'active' | 'away';
    * }
    * </pre>
+   *
+   * | Name | Description | Default |
+   * | --- | --- | --- |
+   * | `firstName` | First name of the user | - |
+   * | `lastName` | Last name of the user | - |
+   * | `appearance` | Appearance of the avatar | - |
+   * | `icon` | Icon to be rendered | - |
+   * | `image` | Image to be rendered | - |
+   * | `selected` | Determines if the avatar is selected | - |
+   * | `disabled` | Determines if the avatar is disabled | - |
+   * | `tooltipSuffix` | Text to be shown in the tooltip | - |
+   * | `status` | Status to be shown in Regular Round Avatar | - |
+   * | `presence` | Presence of the user | - |
    *
    */
   list: AvatarData[];
@@ -259,7 +276,7 @@ AvatarSelection.defaultProps = {
   tooltipPosition: 'bottom',
   borderColor: 'white',
   size: 'regular',
-  width: 176,
+  width: 256,
   maxHeight: 256,
 };
 
