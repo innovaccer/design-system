@@ -59,10 +59,10 @@ const AvatarSelectionItem = (props: AvatarSelectionItemProps) => {
           tabIndex={-1}
           data-test="DesignSystem-AvatarSelection--Checkbox"
         />
-        <Avatar {...avatarData} className="ml-3 mr-4" withTooltip={false}>
+        <Avatar {...avatarData} className="ml-3" withTooltip={false}>
           {image || icon}
         </Avatar>
-        <Text className="ellipsis--noWrap" ref={elementRef}>
+        <Text className="ellipsis--noWrap ml-4" ref={elementRef}>
           {name}
         </Text>
       </AvatarSelectionOption>
