@@ -236,6 +236,8 @@ const BodyCell = (props: BodyCellProps) => {
 
   const [expanded, setExpanded] = expandedState;
 
+  const { verticalAlign } = schema;
+
   const cellProps: GridCellProps = {
     rowIndex,
     colIndex,
@@ -246,8 +248,14 @@ const BodyCell = (props: BodyCellProps) => {
     expanded,
   };
 
+  const cellClass = classNames({
+    [styles['Grid-cellContent']]: true,
+    ['align-items-start']: verticalAlign === 'top',
+    ['align-items-end']: verticalAlign === 'bottom',
+  });
+
   return (
-    <div className={styles['Grid-cellContent']}>
+    <div className={cellClass} data-test="DesignSystem-Grid-bodyCell">
       {colIndex === 0 && nestedRows && (
         <>
           {nestedRowData ? (

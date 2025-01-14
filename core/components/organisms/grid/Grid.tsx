@@ -132,10 +132,14 @@ export type ColumnSchema = {
    */
   cellRenderer?: React.FC<GridCellProps>;
   /**
-   * Alignment of column
+   * Horizontal Alignment of column
    * @default 'left'
    */
   align?: Alignment;
+  /**
+   * Vertical Alignment of column
+   */
+  verticalAlign?: 'top' | 'center' | 'bottom';
   /**
    * Show tooltip on hover
    */
@@ -233,6 +237,10 @@ export interface GridProps extends BaseProps {
    * Shows checkbox in the left most column
    */
   withCheckbox?: boolean;
+  /***
+   * Defines position of checkbox in the row
+   */
+  checkboxAlignment?: 'top' | 'center' | 'bottom';
   /**
    * Callback on row select
    */

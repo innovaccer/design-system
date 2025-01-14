@@ -64,7 +64,8 @@ interface TableSyncProps {
    *        translate?: (data: RowData) => RowData,
    *        cellType?: CellType;
    *        cellRenderer?: React.FunctionComponent\<GridCellProps\>;
-   *        align?: Alignment;
+   *        align?: 'left' | 'right' | 'center';
+   *        verticalAlign?: 'top' | 'center' | 'bottom';
    *    }
    *
    *    GridCellProps: {
@@ -108,6 +109,7 @@ interface TableSyncProps {
    * | cellType | Cell Type | 'DEFAULT' |
    * | cellRenderer | Custom Cell Renderer | |
    * | align | Align cell content<br>**Align applicable only for following cellTypes:<br>DEFAULT, AVATAR, ICON, STATUS_HINT** | "left" |
+   * | verticalAlign | Vertical align cell content | "center" |
    */
   /* tslint:enable */
   schema: GridProps['schema'];
@@ -372,6 +374,10 @@ interface SharedTableProps extends BaseProps {
    * Provide name of unique column for persistent selection
    */
   uniqueColumnName?: string;
+  /***
+   * Defines position of checkbox in the row
+   */
+  checkboxAlignment?: 'top' | 'center' | 'bottom';
 }
 
 export type SyncTableProps = SharedTableProps & TableSyncProps;
@@ -900,6 +906,7 @@ export class Table extends React.Component<TableProps, TableState> {
       className,
       filterPosition,
       uniqueColumnName,
+      checkboxAlignment,
     } = this.props;
 
     const baseProps = extractBaseProps(this.props);
@@ -949,6 +956,7 @@ export class Table extends React.Component<TableProps, TableState> {
             updateSortingList={this.updateSortingList}
             updateFilterList={this.updateFilterList}
             withCheckbox={withCheckbox}
+            checkboxAlignment={checkboxAlignment}
             onSelect={this.onSelect}
             onSelectAll={this.onSelectAll}
             showMenu={showMenu}

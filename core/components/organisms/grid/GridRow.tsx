@@ -19,7 +19,7 @@ export interface GridRowProps {
 export const GridRow = (props: GridRowProps) => {
   const context = React.useContext(GridContext);
 
-  const { type, onRowClick, loading, withCheckbox, nestedRows } = context;
+  const { type, onRowClick, loading, withCheckbox, nestedRows, checkboxAlignment } = context;
 
   const { schema, data, rowIndex: rI, onSelect, className } = props;
 
@@ -55,12 +55,15 @@ export const GridRow = (props: GridRowProps) => {
   const renderCheckbox = (show: boolean) => {
     if (!show || !withCheckbox) return null;
 
-    const CheckboxClass = classNames(styles['Grid-cell'], styles['Grid-cell--body'], styles['Grid-cell--checkbox']);
+    const CheckboxClass = classNames(styles['Grid-cell'], styles['Grid-cell--body'], styles['Grid-cell--checkbox'], {
+      ['align-items-start']: checkboxAlignment === 'top',
+      ['align-items-end']: checkboxAlignment === 'bottom',
+    });
 
     return (
       // TODO(a11y)
       // eslint-disable-next-line
-      <div className={CheckboxClass} onClick={(e) => e.stopPropagation()}>
+      <div className={CheckboxClass} onClick={(e) => e.stopPropagation()} data-test="DesignSystem-Grid-cellCheckbox">
         {loading ? (
           <Placeholder />
         ) : (
