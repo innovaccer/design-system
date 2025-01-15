@@ -29,6 +29,9 @@ interface AvatarPopoverProps {
   maxHeight?: number | string;
   minHeight?: number | string;
   width?: number | string;
+  withSearch?: boolean;
+  searchPlaceholder?: string;
+  searchComparator?: (searchValue: string, avatarData: AvatarData) => boolean;
 }
 
 export interface AvatarGroupProps extends BaseProps {
@@ -74,6 +77,9 @@ export interface AvatarGroupProps extends BaseProps {
    *   minHeight?: number | string;
    *   width?: number | string;
    *   popperClassName?: string;
+   *   withSearch?: boolean;
+   *   searchPlaceholder?: string;
+   *   searchComparator?: (searchValue: string, avatarData: AvatarData) => boolean;
    * }
    * </pre>
    *
@@ -87,6 +93,9 @@ export interface AvatarGroupProps extends BaseProps {
    * | minHeight | Min height of `Popover Text Wrapper` (does not work in case of custom popperRenderer) |  |
    * | width | width of `Popover Text Wrapper` (does not work in case of custom popperRenderer) | 176 |
    * | popperClassName | Custom className added to `Popover` | |
+   * | withSearch | Adds search input in `Popover` | false | |
+   * | searchPlaceholder | Placeholder for search input |  | |
+   * | searchComparator | Comparator function to search inside popover |  |
    *
    */
   popoverOptions: AvatarPopoverProps;
@@ -107,6 +116,9 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
     position = 'bottom',
     on = 'hover',
     appendToBody = true,
+    withSearch,
+    searchPlaceholder,
+    searchComparator,
     popperClassName = '',
   } = popoverOptions;
 
@@ -135,6 +147,18 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
     className
   );
 
+  const avatarPopperBodyProps = {
+    hiddenAvatarList: [...list].slice(max, list.length),
+    popperRenderer,
+    maxHeight,
+    minHeight,
+    width,
+    popperClassName,
+    withSearch,
+    searchPlaceholder,
+    searchComparator,
+  };
+
   return (
     <div data-test="DesignSystem-AvatarGroup" {...baseProps} className={AvatarGroupClass}>
       <Avatars size={size} avatarList={avatarList} avatarStyle={avatarStyle} tooltipPosition={tooltipPosition} />
@@ -146,14 +170,7 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
           appendToBody={appendToBody}
           offset="medium"
         >
-          <AvatarPopperBody
-            hiddenAvatarList={list.slice(max, list.length)}
-            popperRenderer={popperRenderer}
-            maxHeight={maxHeight}
-            minHeight={minHeight}
-            width={width}
-            popperClassName={popperClassName}
-          />
+          <AvatarPopperBody {...avatarPopperBodyProps} />
         </Popover>
       )}
     </div>

@@ -4,13 +4,14 @@ import { list } from './AvatarList';
 
 export const all = () => {
   const position = 'bottom';
-  const on = 'hover';
   const max = 2;
   const options = {
     max,
     popoverOptions: {
-      on,
       position,
+      withSearch: true,
+      searchPlaceholder: 'Search User',
+      on: 'click',
     },
     list: list.slice(0, 4),
   };
@@ -33,6 +34,16 @@ const customCode = `() => {
       lastName: 'Wheeler'
     },
     {
+      firstName: 'Rachel',
+      lastName: 'Green',
+      icon: <Avatar.Icon name="person" />
+    },
+    {
+      firstName: 'Anuradha',
+      lastName: 'Aggarwal',
+      image: <Avatar.Image src="https://design.innovaccer.com/images/avatar2.jpeg" />,
+    },
+    {
       firstName: 'Monica',
       lastName: 'Geller'
     },
@@ -40,16 +51,8 @@ const customCode = `() => {
       firstName: 'Arya',
       lastName: 'Stark',
     },
-    {
-      firstName: 'Rachel',
-      lastName: 'Green',
-    },
-    {
-      firstName: 'Walter',
-      lastName: 'Wheeler'
-    },
   ];
-  return <AvatarGroup list={list} popoverOptions={{ position: 'bottom'}} />;
+  return <AvatarGroup list={list} popoverOptions={{ position: 'bottom', withSearch: true, on: 'click', searchPlaceholder: 'Search User',}} />;
 }`;
 
 export default {
