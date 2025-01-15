@@ -2,7 +2,7 @@
   "compilerOptions": {
     "sourceMap": true,
     "strict": true,
-    "target": "es5",
+    "target": "ES2019",
     "jsx": "react",
     "module": "commonjs",
     "moduleResolution": "node",
@@ -16,12 +16,13 @@
     "strictNullChecks": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "lib": ["es6", "es7", "es2017", "dom"],
+    "lib": ["es6", "es7", "es2017", "dom", "ES2020", "es2019"],
     "baseUrl": "./",
     "types": [],
     "paths": {
       "@/*": ["core/*"]
     }
   },
+  "include": [ "core/**/*.ts", "core/**/*.tsx", "custom-types.d.ts"],
   "exclude": ["dist", "build", "node_modules", ".github", ".husky", "docs", "types/types-tests.tsx", "examples"]
 }
