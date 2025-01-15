@@ -11,10 +11,11 @@ import gzipPlugin from 'rollup-plugin-gzip';
 import { compress } from 'brotli';
 import image from '@rollup/plugin-image';
 import postcss from 'rollup-plugin-postcss';
-import esbuild from 'rollup-plugin-esbuild';
+// import esbuild from 'rollup-plugin-esbuild';
 import { concatTokenCSS } from './rollupPlugin';
 import colorModFunction from 'postcss-color-mod-function';
 import autoprefixer from 'autoprefixer';
+import typescript from '@rollup/plugin-typescript';
 
 const { version, name, license, homepage } = packageJSON;
 
@@ -32,11 +33,11 @@ const banner = () => {
   return banner;
 };
 
-const extensions = ['.js', '.jsx', '.ts', '.tsx'];
+const extensions = ['.js', '.jsx', '.ts', '.tsx', '.css'];
 
 const aliasEntries = [
   { find: '@', replacement: path.resolve('./core') },
-  { find: '@css', replacement: path.resolve('./css/src') },
+  { find: '@css', replacement: path.resolve(__dirname, './css/src') }
 ];
 
 const cssSources = [
@@ -105,11 +106,7 @@ const commonJsPlugins = [
   }),
   postcss({
     modules: {
-      generateScopedName: (name, fileName) => {
-        const hash = generateHash(fileName + name);
-        const updatedVersion = version.replace(/\./g, '-');
-        return `${name}-v${updatedVersion}${hash}`;
-      },
+      generateScopedName: `[name]-[local]-[hash:base64:5]-${packageJSON.version.replace('.', '-')}`,
     },
     extensions: ['.css', '.scss', '.sass'],
     plugins: [
@@ -221,37 +218,33 @@ const tsConfig = {
     resolve({ extensions }),
 
     // Use esbuild for TypeScript/JavaScript files
-    esbuild({
-      include: /\.[jt]sx?$/, // Include .ts, .tsx, .js, .jsx files
-      minify: process.env.NODE_ENV === 'production',
-      target: 'es2017', // Specify ECMAScript target
+    // esbuild({
+    //   include: /\.[jt]sx?$/, // Include .ts, .tsx, .js, .jsx files
+    //   minify: process.env.NODE_ENV === 'production',
+    //   target: 'es2017', // Specify ECMAScript target
+    //   tsconfig: path.resolve(__dirname, './tsconfig.type.json'),
+    //   loaders: {
+    //     '.json': 'json',
+    //     '.js': 'jsx',
+    //     '.tsx': 'tsx',
+    //     '.ts': 'tsx',
+    //   },
+    // }),
+
+    typescript({
+      typescript: require('ttypescript'),
       tsconfig: path.resolve(__dirname, './tsconfig.type.json'),
-      loaders: {
-        '.json': 'json',
-        '.js': 'jsx',
-        '.tsx': 'tsx',
-        '.ts': 'tsx',
-      },
     }),
 
     // Allow bundling cjs modules. Rollup doesn't understand cjs
     commonjs(),
 
+    // Compile TypeScript/JavaScript files
+    babel({ extensions, include: ['core/**/*'] }),
+
     postcss({
-      modules: {
-        generateScopedName: (name, fileName) => {
-          const hash = generateHash(fileName + name);
-          const updatedVersion = version.replace(/\./g, '-');
-          return `${name}-v${updatedVersion}${hash}`;
-        },
-      },
-      extensions: ['.css', '.scss', '.sass'],
-      plugins: [
-        colorModFunction({
-          importFrom: cssTokenFiles,
-        }),
-        autoprefixer(),
-      ],
+      modules: false,
+      extract: true,
     }),
   ],
   output: {
@@ -272,6 +265,10 @@ const brotliConfig = {
       fileName: '.br',
     }),
     ...commonJsPlugins,
+    postcss({
+      modules: false,
+      extract: true,
+    }),
   ],
 
   output: {
@@ -285,7 +282,13 @@ const brotliConfig = {
 
 const gzipConfig = {
   ...baseConfig,
-  plugins: [gzipPlugin(), ...commonJsPlugins],
+  plugins: [
+    gzipPlugin(),
+    ...commonJsPlugins,
+    postcss({
+      modules: false,
+      extract: true,
+    }),],
 
   output: {
     file: 'dist/gzip/index.js',
@@ -296,4 +299,5 @@ const gzipConfig = {
   },
 };
 
-export default [jsUmdConfig, jsCjsConfig, jsEsmConfig, brotliConfig, gzipConfig, tsConfig];
+// export default [jsUmdConfig, jsCjsConfig, jsEsmConfig, brotliConfig, gzipConfig, tsConfig];
+export default [  tsConfig];
