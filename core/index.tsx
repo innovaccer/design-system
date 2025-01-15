@@ -103,5 +103,3 @@ export { AIChip } from './ai-components/AIChip';
 export { AIResponse } from './ai-components/AIResponse';
 
 export { version } from '../package.json';
-
-/// <reference path="../custom-types.d.ts" />

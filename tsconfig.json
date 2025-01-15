@@ -23,6 +23,6 @@
       "@/*": ["core/*"]
     }
   },
-  "include": [ "core/**/*.ts", "core/**/*.tsx", "custom-types.d.ts"],
+  "include": [ "core/**/*.ts", "core/**/*.tsx"],
   "exclude": ["dist", "build", "node_modules", ".github", ".husky", "docs", "types/types-tests.tsx", "examples"]
 }

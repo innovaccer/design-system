@@ -33,7 +33,6 @@
     "build": "npm run build-css && npm run build-js && npm run build-type",
     "version": "./scripts/version.sh",
     "prepare": "husky install",
-    "postinstall": "sh ./fix-utils-types.sh",
     "generate-types": "node node_modules/.bin/dts-bundle-generator --config dts.config.js"
   },
   "author": "Innovaccer",
