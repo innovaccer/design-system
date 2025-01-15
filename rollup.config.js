@@ -11,10 +11,10 @@ import gzipPlugin from 'rollup-plugin-gzip';
 import { compress } from 'brotli';
 import image from '@rollup/plugin-image';
 import postcss from 'rollup-plugin-postcss';
-import esbuild from 'rollup-plugin-esbuild';
 import { concatTokenCSS } from './rollupPlugin';
 import colorModFunction from 'postcss-color-mod-function';
 import autoprefixer from 'autoprefixer';
+import typescript from 'rollup-plugin-typescript2';
 
 const { version, name, license, homepage } = packageJSON;
 
@@ -220,22 +220,17 @@ const tsConfig = {
     // Allows node_modules resolution
     resolve({ extensions }),
 
-    // Use esbuild for TypeScript/JavaScript files
-    esbuild({
-      include: /\.[jt]sx?$/, // Include .ts, .tsx, .js, .jsx files
-      minify: process.env.NODE_ENV === 'production',
-      target: 'es2017', // Specify ECMAScript target
-      tsconfig: path.resolve(__dirname, './tsconfig.type.json'),
-      loaders: {
-        '.json': 'json',
-        '.js': 'jsx',
-        '.tsx': 'tsx',
-        '.ts': 'tsx',
-      },
+    typescript({
+      typescript: require('typescript'),
+      tsconfig: path.resolve(__dirname, './tsconfig.rollup.json'),
+      useTsconfigDeclarationDir: true,
     }),
 
     // Allow bundling cjs modules. Rollup doesn't understand cjs
     commonjs(),
+
+    // Compile TypeScript/JavaScript files
+    babel({ extensions, include: ['core/**/*'] }),
 
     postcss({
       modules: {
