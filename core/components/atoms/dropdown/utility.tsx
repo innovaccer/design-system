@@ -68,21 +68,19 @@ export const scrollToOptionIndex = (scrollIndex: number, listOptions: any) => {
 };
 
 export const groupListOptions = (listOptions: Option[]): Option[] => {
-  console.log('listOptions:', listOptions);
-  // const groupList = listOptions.reduce((acc, option) => {
-  //   const group = option.group || '';
+  const groupList = listOptions.reduce((acc, option) => {
+    const group = option.group || '';
 
-  //   if (!acc[group]) {
-  //     acc[group] = [];
-  //   }
+    if (!acc[group]) {
+      acc[group] = [];
+    }
 
-  //   acc[group].push(option);
+    acc[group].push(option);
 
-  //   return acc;
-  // }, {} as { [key: string]: Option[] });
+    return acc;
+  }, {} as { [key: string]: Option[] });
 
-  // const flattenedGroupList = Object.values(groupList).flatMap((item: Option[]) => [...item]);
-  // const flattenedGroupList = [];
+  const flattenedGroupList = Object.values(groupList).reduce((acc, item: Option[]) => acc.concat(item), []);
 
-  return [];
+  return flattenedGroupList;
 };
