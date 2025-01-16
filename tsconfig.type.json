@@ -8,22 +8,16 @@
     "emitDeclarationOnly": true,
     "declaration": true,
     "declarationDir": "dist",
-    "lib": [
-      "es6",
-      "es7",
-      "es2017",
-      "dom"
-    ],
+    "lib": ["es6", "es7", "es2017", "dom"],
     "baseUrl": "./",
     "paths": {
-      "@/*": [
-        "core/*"
-      ]
+      "@/*": ["core/*"]
     },
     "plugins": [
       { "transform": "typescript-transform-paths" },
       { "transform": "typescript-transform-paths", "afterDeclarations": true }
-    ]
+    ],
+    "module": "ES6",
   },
   "exclude": [
     "dist",

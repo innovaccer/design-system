@@ -32,7 +32,7 @@ const banner = () => {
   return banner;
 };
 
-const extensions = ['.js', '.jsx', '.ts', '.tsx'];
+const extensions = ['.js', '.jsx', '.ts', '.tsx', '.css'];
 
 const aliasEntries = [
   { find: '@', replacement: path.resolve('./core') },
@@ -66,22 +66,6 @@ const baseConfig = {
   external: ['react', 'react-dom'],
 };
 
-function generateHash(str) {
-  let hash = 0;
-  for (let i = 0; i < str.length; i++) {
-    const char = str.charCodeAt(i);
-    hash = (hash << 5) - hash + char;
-    hash |= 0; // Convert to 32bit integer
-  }
-  // Convert to base 36 and filter out non-alphanumeric characters
-  let hashStr = hash.toString(36).replace(/[^a-z0-9]/gi, '');
-  // Ensure the length of the string is at least 5 characters
-  while (hashStr.length < 5) {
-    hashStr += '0';
-  }
-  return hashStr.substring(0, 5);
-}
-
 const commonJsPlugins = [
   alias({
     entries: aliasEntries,
@@ -105,11 +89,7 @@ const commonJsPlugins = [
   }),
   postcss({
     modules: {
-      generateScopedName: (name, fileName) => {
-        const hash = generateHash(fileName + name);
-        const updatedVersion = version.replace(/\./g, '-');
-        return `${name}-v${updatedVersion}${hash}`;
-      },
+      generateScopedName: `[name]-[local]-[hash:base64:5]-${version.replace('.', '-')}`,
     },
     extensions: ['.css', '.scss', '.sass'],
     plugins: [
@@ -233,20 +213,8 @@ const tsConfig = {
     babel({ extensions, include: ['core/**/*'] }),
 
     postcss({
-      modules: {
-        generateScopedName: (name, fileName) => {
-          const hash = generateHash(fileName + name);
-          const updatedVersion = version.replace(/\./g, '-');
-          return `${name}-v${updatedVersion}${hash}`;
-        },
-      },
-      extensions: ['.css', '.scss', '.sass'],
-      plugins: [
-        colorModFunction({
-          importFrom: cssTokenFiles,
-        }),
-        autoprefixer(),
-      ],
+      modules: false,
+      extract: true,
     }),
   ],
   output: {
@@ -267,6 +235,10 @@ const brotliConfig = {
       fileName: '.br',
     }),
     ...commonJsPlugins,
+    postcss({
+      modules: false,
+      extract: true,
+    }),
   ],
 
   output: {
@@ -280,7 +252,14 @@ const brotliConfig = {
 
 const gzipConfig = {
   ...baseConfig,
-  plugins: [gzipPlugin(), ...commonJsPlugins],
+  plugins: [
+    gzipPlugin(), 
+    ...commonJsPlugins, 
+    postcss({
+      modules: false,
+      extract: true,
+    }),
+  ],
 
   output: {
     file: 'dist/gzip/index.js',
