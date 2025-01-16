@@ -213,8 +213,17 @@ const tsConfig = {
     babel({ extensions, include: ['core/**/*'] }),
 
     postcss({
-      modules: false,
+      modules: {
+        generateScopedName: (name) => name, // Use the original class name
+      },
       extract: true,
+      extensions: ['.css', '.scss', '.sass'],
+      plugins: [
+        colorModFunction({
+          importFrom: cssTokenFiles,
+        }),
+        autoprefixer(),
+      ],
     }),
   ],
   output: {
@@ -235,10 +244,6 @@ const brotliConfig = {
       fileName: '.br',
     }),
     ...commonJsPlugins,
-    postcss({
-      modules: false,
-      extract: true,
-    }),
   ],
 
   output: {
@@ -255,10 +260,6 @@ const gzipConfig = {
   plugins: [
     gzipPlugin(), 
     ...commonJsPlugins, 
-    postcss({
-      modules: false,
-      extract: true,
-    }),
   ],
 
   output: {
