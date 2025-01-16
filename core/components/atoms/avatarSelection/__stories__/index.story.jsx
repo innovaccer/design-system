@@ -29,6 +29,13 @@ export const all = () => {
     {
       firstName: 'Rachel',
       lastName: 'Green',
+      icon: <Avatar.Icon name="person" />,
+    },
+    {
+      firstName: 'Satyam',
+      lastName: 'Yadav',
+      selected: true,
+      image: <Avatar.Image src="https://design.innovaccer.com/images/avatar1.png" />,
     },
     {
       firstName: 'Walter',
@@ -42,15 +49,6 @@ export const all = () => {
     {
       firstName: 'Arya',
       lastName: 'Stark',
-    },
-    {
-      firstName: 'Rachel',
-      lastName: 'Green',
-    },
-    {
-      firstName: 'Walter Paxton',
-      lastName: 'Wheeler',
-      selected: true,
     },
   ];
 
@@ -103,11 +101,26 @@ const customCode = `() => {
     {
       firstName: 'Rachel',
       lastName: 'Green',
+      icon: <Avatar.Icon name="person" />,
     },
     {
-      firstName: 'Walter Paxton',
+      firstName: 'Satyam',
+      lastName: 'Yadav',
+      selected: true,
+      image: <Avatar.Image src="https://design.innovaccer.com/images/avatar1.png" />,
+    },
+    {
+      firstName: 'Walter',
       lastName: 'Wheeler',
       selected: true,
+    },
+    {
+      firstName: 'Monica',
+      lastName: 'Geller',
+    },
+    {
+      firstName: 'Arya',
+      lastName: 'Stark',
     },
   ];
 

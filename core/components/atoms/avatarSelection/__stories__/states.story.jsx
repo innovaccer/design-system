@@ -36,8 +36,8 @@ export const states = () => {
       lastName: 'Green',
     },
     {
-      firstName: 'Walter Paxton',
-      lastName: 'Wheeler',
+      firstName: 'Walter',
+      lastName: 'Paxton',
       selected: true,
     },
   ];
@@ -81,8 +81,8 @@ export const states = () => {
       tooltipSuffix: '(Deactivated)',
     },
     {
-      firstName: 'Walter Paxton',
-      lastName: 'Wheeler',
+      firstName: 'Walter',
+      lastName: 'Paxton',
       selected: true,
     },
   ];
@@ -162,8 +162,8 @@ const customCode = `() => {
       lastName: 'Green',
     },
     {
-      firstName: 'Walter Paxton',
-      lastName: 'Wheeler',
+      firstName: 'Walter',
+      lastName: 'Paxton',
       selected: true,
     },
   ];
@@ -207,8 +207,8 @@ const customCode = `() => {
       tooltipSuffix: '(Deactivated)',
     },
     {
-      firstName: 'Walter Paxton',
-      lastName: 'Wheeler',
+      firstName: 'Walter',
+      lastName: 'Paxton',
       selected: true,
     },
   ];

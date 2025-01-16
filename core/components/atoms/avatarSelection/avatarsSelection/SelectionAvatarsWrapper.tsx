@@ -62,6 +62,8 @@ export const SelectionAvatarsWrapper = (props: SelectionAvatarsWrapperProps) => 
           [styles[`SelectionAvatarGroup-item--selected`]]: selectedItems?.includes(avatarItem),
         });
 
+        const newAvatarStyle = { ...avatarStyle, zIndex: avatarList.length - index };
+
         if (avatarRenderer) {
           return avatarRenderer(avatarItem);
         }
@@ -71,7 +73,7 @@ export const SelectionAvatarsWrapper = (props: SelectionAvatarsWrapperProps) => 
             <div
               tabIndex={-1}
               role="checkbox"
-              style={avatarStyle}
+              style={newAvatarStyle}
               className={GroupClass}
               data-test="DesignSystem-AvatarSelection--Avatar"
               aria-checked={selectedItems && selectedItems.includes(avatarItem)}

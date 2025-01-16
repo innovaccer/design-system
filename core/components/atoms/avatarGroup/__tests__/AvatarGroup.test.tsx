@@ -58,11 +58,14 @@ const iconList = [
 ];
 
 const size = ['tiny', 'regular'];
+const FunctionValue = jest.fn();
+const booleanValue = ['true', 'false'];
 
 describe('AvatarGroup component snapshot', () => {
   const mapper = {
     list: valueHelper(iconList, { required: true }),
     size: valueHelper(size, { required: true, iterate: true }),
+    withSearch: valueHelper(booleanValue, { required: true, iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
@@ -272,5 +275,65 @@ describe('AvatarGroup Component with prop: tooltipSuffix', () => {
 
     const avatarItem = getByTestId('DesignSystem-Avatar');
     expect(avatarItem).toHaveClass('Avatar--disabled');
+  });
+});
+
+describe('AvatarGroup component with prop:withSearch', () => {
+  it('render search input for withSearch:true', () => {
+    const { getByTestId, getAllByTestId } = render(
+      <AvatarGroup list={list} popoverOptions={{ withSearch: true, on: 'click' }} />
+    );
+
+    const trigger = getByTestId('DesignSystem-AvatarGroup--TriggerAvatar');
+
+    fireEvent.click(trigger);
+
+    expect(getByTestId('DesignSystem-AvatarGroup--Popover')).toBeInTheDocument();
+
+    const searchInput = getByTestId('DesignSystem-AvatarGroup--Input');
+    expect(getByTestId('DesignSystem-AvatarGroup--Input')).toBeInTheDocument();
+
+    fireEvent.change(searchInput, { target: { value: 'xyz' } });
+
+    const emptyState = getByTestId('DesignSystem-AvatarGroup--EmptyState');
+    expect(emptyState).toBeInTheDocument();
+
+    const clearIcon = getByTestId('DesignSystem-Input--closeIcon');
+    expect(clearIcon).toBeInTheDocument();
+    fireEvent.click(clearIcon);
+
+    const optionList = getAllByTestId('DesignSystem-AvatarGroup--Item');
+    expect(optionList).toHaveLength(4);
+  });
+
+  it('render search input for searchComparator:true', () => {
+    jest.resetAllMocks();
+    const { getByTestId } = render(
+      <AvatarGroup list={list} popoverOptions={{ withSearch: true, searchComparator: FunctionValue, on: 'click' }} />
+    );
+
+    const trigger = getByTestId('DesignSystem-AvatarGroup--TriggerAvatar');
+
+    fireEvent.click(trigger);
+    expect(getByTestId('DesignSystem-AvatarGroup--Popover')).toBeInTheDocument();
+
+    const searchInput = getByTestId('DesignSystem-AvatarGroup--Input');
+    expect(getByTestId('DesignSystem-AvatarGroup--Input')).toBeInTheDocument();
+
+    fireEvent.change(searchInput, { target: { value: 'xyz' } });
+
+    expect(FunctionValue).toHaveBeenCalled();
+  });
+
+  it('check for search input when withSearch:false', () => {
+    const { getByTestId, queryByTestId } = render(
+      <AvatarGroup list={list} popoverOptions={{ withSearch: false, on: 'click' }} />
+    );
+    const trigger = getByTestId('DesignSystem-AvatarGroup--TriggerAvatar');
+    fireEvent.click(trigger);
+
+    expect(getByTestId('DesignSystem-AvatarGroup--Popover')).toBeInTheDocument();
+    const searchInput = queryByTestId('DesignSystem-AvatarGroup--Input');
+    expect(searchInput).toBeNull();
   });
 });

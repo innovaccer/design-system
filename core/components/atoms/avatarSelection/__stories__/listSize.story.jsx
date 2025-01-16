@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AvatarSelection, Checkbox, Label, Input } from '@/index';
+import { AvatarSelection, Checkbox, Label, Input, Avatar, Text } from '@/index';
 
 export const listItemSize = () => {
   const list = [
@@ -94,7 +94,7 @@ export const listItemSize = () => {
             </Label>
             <br />
             <AvatarSelection size="tiny" list={avatarList} onSelect={onSelectHandler} listRef={listRef}>
-              <AvatarSelection.Input placeholder="search user" onChange={onSearchHandler} />
+              <AvatarSelection.Input placeholder="Search user" onChange={onSearchHandler} />
 
               {searchList.length === 0 && (
                 <AvatarSelection.EmptyState
@@ -112,7 +112,15 @@ export const listItemSize = () => {
 
                   return (
                     <AvatarSelection.Option key={index} value={avatarData} className="d-flex align-items-center">
-                      <Checkbox key={isSelected} checked={isSelected} label={name} size="regular" />
+                      <Checkbox
+                        key={isSelected}
+                        defaultChecked={isSelected}
+                        checked={isSelected}
+                        size="regular"
+                        tabIndex={-1}
+                      />
+                      <Avatar {...avatarData} className="ml-3 mr-4" withTooltip={false} />
+                      <Text className="ellipsis--noWrap">{name}</Text>
                     </AvatarSelection.Option>
                   );
                 })}
@@ -213,7 +221,7 @@ const customCode = `() => {
             </Label>
             <br />
             <AvatarSelection size="tiny" list={avatarList} onSelect={onSelectHandler}>
-              <AvatarSelection.Input placeholder="search user" onChange={onSearchHandler} />
+              <AvatarSelection.Input placeholder="Search user" onChange={onSearchHandler} />
 
               {searchList.length === 0 && (
                 <AvatarSelection.EmptyState
@@ -231,7 +239,15 @@ const customCode = `() => {
 
                   return (
                     <AvatarSelection.Option key={index} value={avatarData} className="d-flex align-items-center">
-                      <Checkbox key={isSelected} checked={isSelected} label={name} size="regular" />
+                      <Checkbox
+                        key={isSelected}
+                        defaultChecked={isSelected}
+                        checked={isSelected}
+                        size="regular"
+                        tabIndex={-1}
+                      />
+                      <Avatar {...avatarData} className="ml-3 mr-4" withTooltip={false} />
+                      <Text className="ellipsis--noWrap">{name}</Text>
                     </AvatarSelection.Option>
                   );
                 })}
