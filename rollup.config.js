@@ -32,7 +32,7 @@ const banner = () => {
   return banner;
 };
 
-const extensions = ['.js', '.jsx', '.ts', '.tsx', '.css'];
+const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 
 const aliasEntries = [
   { find: '@', replacement: path.resolve('./core') },
