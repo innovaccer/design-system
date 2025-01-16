@@ -179,4 +179,14 @@ describe('Radio component', () => {
     fireEvent.change(input, { target: { checked: true } });
     expect(input).toBeChecked();
   });
+
+  it('checks for data-test attribute', () => {
+    const testDataValue = 'DesignSystem-Radio-TestValue';
+    const { getByTestId } = render(
+      <Radio data-test={testDataValue} label={label} name={StringValue} value={StringValue} />
+    );
+
+    const radioElement = getByTestId('DesignSystem-Radio-TestValue');
+    expect(radioElement.getAttribute('data-test')).toBe(testDataValue);
+  });
 });
