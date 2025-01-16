@@ -1,6 +1,6 @@
 import { Tooltip } from '@/index';
 
-export const autoTooltip = () => {};
+export const showOnTruncationStory = () => {};
 
 const customCode = `() => {
   const [showTooltip, setShowTooltip] = React.useState(false);
@@ -40,7 +40,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Tooltip/Auto Tooltip',
+  title: 'Components/Tooltip/Show On Truncation Story',
   component: Tooltip,
   parameters: {
     docs: {

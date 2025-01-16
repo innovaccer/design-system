@@ -1,6 +1,6 @@
 import { Tooltip } from '@/index';
 
-export const showTooltip = () => {};
+export const customTriggerStory = () => {};
 
 const customCode = `() => {
   const [showTooltip, setShowTooltip] = React.useState(false);
@@ -25,7 +25,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Tooltip/Show Tooltip',
+  title: 'Components/Tooltip/Custom Trigger Story',
   component: Tooltip,
   parameters: {
     docs: {

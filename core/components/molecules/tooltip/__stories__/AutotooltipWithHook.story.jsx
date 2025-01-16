@@ -1,6 +1,6 @@
 import { Tooltip } from '@/index';
 
-export const autoTooltipWithHook = () => {};
+export const customTriggerHookStory = () => {};
 
 const customCode = `() => {
   const [isFirstTruncated, setIsFirstTruncated] = React.useState(false);
@@ -44,7 +44,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Tooltip/Auto Tooltip With Hook',
+  title: 'Components/Tooltip/Custom Trigger Hook Story',
   component: Tooltip,
   parameters: {
     docs: {
