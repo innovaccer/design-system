@@ -32,41 +32,42 @@ const AvatarSelectionItem = (props: AvatarSelectionItemProps) => {
 
   const triggerClassName = classNames({
     ['cursor-not-allowed']: disabled,
+    ['ellipsis--noWrap']: true,
   });
 
   return (
-    <Tooltip
-      showOnTruncation={true}
-      tooltip={name}
-      elementRef={elementRef}
-      open={showTooltip}
-      triggerClass={triggerClassName}
+    <AvatarSelectionOption
+      value={avatarData}
+      disabled={disabled}
+      onFocus={() => {
+        setShowTooltip(true);
+      }}
+      onBlur={() => {
+        setShowTooltip(false);
+      }}
     >
-      <AvatarSelectionOption
-        value={avatarData}
-        disabled={disabled}
-        onFocus={() => {
-          setShowTooltip(true);
-        }}
-        onBlur={() => {
-          setShowTooltip(false);
-        }}
+      <Checkbox
+        defaultChecked={isSelected}
+        checked={isSelected}
+        size="regular"
+        tabIndex={-1}
+        data-test="DesignSystem-AvatarSelection--Checkbox"
+      />
+      <Avatar {...avatarData} className="ml-3" withTooltip={false}>
+        {image || icon}
+      </Avatar>
+      <Tooltip
+        showOnTruncation={true}
+        tooltip={name}
+        elementRef={elementRef}
+        open={showTooltip}
+        triggerClass={triggerClassName}
       >
-        <Checkbox
-          defaultChecked={isSelected}
-          checked={isSelected}
-          size="regular"
-          tabIndex={-1}
-          data-test="DesignSystem-AvatarSelection--Checkbox"
-        />
-        <Avatar {...avatarData} className="ml-3" withTooltip={false}>
-          {image || icon}
-        </Avatar>
         <Text className="ellipsis--noWrap ml-4" ref={elementRef}>
           {name}
         </Text>
-      </AvatarSelectionOption>
-    </Tooltip>
+      </Tooltip>
+    </AvatarSelectionOption>
   );
 };
 

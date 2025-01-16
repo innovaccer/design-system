@@ -2,7 +2,7 @@ import * as React from 'react';
 import { action } from '@/utils/action';
 import { AvatarSelection, Avatar, Input, Tooltip, Icon } from '@/index';
 
-export const withStatus = () => {
+export const withPresence = () => {
   const list = [
     {
       firstName: 'John',
@@ -18,6 +18,7 @@ export const withStatus = () => {
       firstName: 'Anuradha',
       lastName: 'Aggarwal',
       image: <Avatar.Image src="https://design.innovaccer.com/images/avatar2.jpeg" />,
+      presence: 'active',
     },
     {
       firstName: 'Nancy',
@@ -45,6 +46,7 @@ export const withStatus = () => {
       firstName: 'Satyam',
       lastName: 'Yadav',
       selected: true,
+      presence: 'away',
       image: <Avatar.Image src="https://design.innovaccer.com/images/avatar1.png" />,
       status: (
         <Tooltip position="top" tooltip="Deactivated">
@@ -57,8 +59,8 @@ export const withStatus = () => {
       lastName: 'Wheeler',
       selected: true,
       status: (
-        <Tooltip position="top" tooltip="Traveling">
-          <Icon appearance="white" className="p-1 bg-secondary" name="water" size={10} />
+        <Tooltip position="top" tooltip="Verified">
+          <Icon appearance="white" className="p-1 bg-success" name="done" size={10} />
         </Tooltip>
       ),
     },
@@ -74,6 +76,7 @@ export const withStatus = () => {
     {
       firstName: 'Arya',
       lastName: 'Stark',
+      presence: 'away',
     },
   ];
 
@@ -115,6 +118,7 @@ const customCode = `() => {
       firstName: 'Anuradha',
       lastName: 'Aggarwal',
       image: <Avatar.Image src="https://design.innovaccer.com/images/avatar2.jpeg" />,
+      presence: 'active',
     },
     {
       firstName: 'Nancy',
@@ -142,6 +146,7 @@ const customCode = `() => {
       firstName: 'Satyam',
       lastName: 'Yadav',
       selected: true,
+      presence: 'away',
       image: <Avatar.Image src="https://design.innovaccer.com/images/avatar1.png" />,
       status: (
         <Tooltip position="top" tooltip="Deactivated">
@@ -154,8 +159,8 @@ const customCode = `() => {
       lastName: 'Wheeler',
       selected: true,
       status: (
-        <Tooltip position="top" tooltip="Traveling">
-          <Icon appearance="white" className="p-1 bg-secondary" name="water" size={10} />
+        <Tooltip position="top" tooltip="Verified">
+          <Icon appearance="white" className="p-1 bg-success" name="done" size={10} />
         </Tooltip>
       ),
     },
@@ -171,6 +176,7 @@ const customCode = `() => {
     {
       firstName: 'Arya',
       lastName: 'Stark',
+      presence: 'away',
     },
   ];
 
@@ -197,7 +203,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Avatar/AvatarSelection/With Status',
+  title: 'Components/Avatar/AvatarSelection/With Presence',
   component: AvatarSelection,
   subcomponents: {
     'AvatarSelection.Input': Input,
