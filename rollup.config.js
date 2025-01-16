@@ -11,10 +11,10 @@ import gzipPlugin from 'rollup-plugin-gzip';
 import { compress } from 'brotli';
 import image from '@rollup/plugin-image';
 import postcss from 'rollup-plugin-postcss';
-import esbuild from 'rollup-plugin-esbuild';
 import { concatTokenCSS } from './rollupPlugin';
 import colorModFunction from 'postcss-color-mod-function';
 import autoprefixer from 'autoprefixer';
+import typescript from '@rollup/plugin-typescript';
 
 const { version, name, license, homepage } = packageJSON;
 
@@ -36,7 +36,7 @@ const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 
 const aliasEntries = [
   { find: '@', replacement: path.resolve('./core') },
-  { find: '@css', replacement: path.resolve('./css/src') },
+  { find: '@css', replacement: path.resolve(__dirname, './css/src') }
 ];
 
 const cssSources = [
@@ -66,22 +66,6 @@ const baseConfig = {
   external: ['react', 'react-dom'],
 };
 
-function generateHash(str) {
-  let hash = 0;
-  for (let i = 0; i < str.length; i++) {
-    const char = str.charCodeAt(i);
-    hash = (hash << 5) - hash + char;
-    hash |= 0; // Convert to 32bit integer
-  }
-  // Convert to base 36 and filter out non-alphanumeric characters
-  let hashStr = hash.toString(36).replace(/[^a-z0-9]/gi, '');
-  // Ensure the length of the string is at least 5 characters
-  while (hashStr.length < 5) {
-    hashStr += '0';
-  }
-  return hashStr.substring(0, 5);
-}
-
 const commonJsPlugins = [
   alias({
     entries: aliasEntries,
@@ -105,11 +89,7 @@ const commonJsPlugins = [
   }),
   postcss({
     modules: {
-      generateScopedName: (name, fileName) => {
-        const hash = generateHash(fileName + name);
-        const updatedVersion = version.replace(/\./g, '-');
-        return `${name}-v${updatedVersion}${hash}`;
-      },
+      generateScopedName: `[name]-[local]-[hash:base64:5]-${version.replace('.', '-')}`,
     },
     extensions: ['.css', '.scss', '.sass'],
     plugins: [
@@ -220,30 +200,20 @@ const tsConfig = {
     // Allows node_modules resolution
     resolve({ extensions }),
 
-    // Use esbuild for TypeScript/JavaScript files
-    esbuild({
-      include: /\.[jt]sx?$/, // Include .ts, .tsx, .js, .jsx files
-      minify: process.env.NODE_ENV === 'production',
-      target: 'es2017', // Specify ECMAScript target
+    typescript({
+      typescript: require('ttypescript'),
       tsconfig: path.resolve(__dirname, './tsconfig.type.json'),
-      loaders: {
-        '.json': 'json',
-        '.js': 'jsx',
-        '.tsx': 'tsx',
-        '.ts': 'tsx',
-      },
     }),
 
     // Allow bundling cjs modules. Rollup doesn't understand cjs
     commonjs(),
 
+    // Compile TypeScript/JavaScript files
+    babel({ extensions, include: ['core/**/*'] }),
+
     postcss({
       modules: {
-        generateScopedName: (name, fileName) => {
-          const hash = generateHash(fileName + name);
-          const updatedVersion = version.replace(/\./g, '-');
-          return `${name}-v${updatedVersion}${hash}`;
-        },
+        generateScopedName: `[name]-[local]-[hash:base64:5]-${version.replace('.', '-')}`,
       },
       extensions: ['.css', '.scss', '.sass'],
       plugins: [
@@ -285,7 +255,10 @@ const brotliConfig = {
 
 const gzipConfig = {
   ...baseConfig,
-  plugins: [gzipPlugin(), ...commonJsPlugins],
+  plugins: [
+    gzipPlugin(),
+    ...commonJsPlugins,
+  ],
 
   output: {
     file: 'dist/gzip/index.js',
