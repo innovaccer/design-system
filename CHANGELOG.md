@@ -1,3 +1,49 @@
+## 4.1.0 (2025-1-17)
+
+### Highlights
+
+- feat(table): add vertical alignment support in table body cell (0dd117e4)
+- feat(avatarSelection): update stacking order and popover design of avatar selection (051093c9)
+- feat(avatarGroup): update popover design & stacking order of avatar group (143c9994)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(table): add vertical alignment support in table body cell (0dd117e4)
+- feat(avatarSelection): update stacking order and popover design of avatar selection (051093c9)
+- feat(avatarGroup): update popover design & stacking order of avatar group (143c9994)
+
+### Fixes
+
+- fix(table): remove loading state from static header (89642c47)
+- fix(table): fix horizontal scroll alignment issue between columns (93fb855d)
+- fix: update tsconfig to fix import error for module css (a8590122)
+- fix(docs): fix overlapping of image with table of content in input component (f324767c)
+- fix(radio): update props order to accept data-test properly in radio component (34f5b3cd)
+- chore: update typescript plugin for ts declaration file bundling (316a461e)
+
+### Improvements
+
+- test(daterangepicker): update test cases for date range picker component (7e2e6d91)
+- chore: update design system esm bundle path in docs script (5c435736)
+
+### Documentation
+
+- docs(avatarGroup): update images and guideline for avatar group component (90d518dd)
+
+---
+
 ## 4.0.0 (2024-12-25)
 
 ### Highlights
