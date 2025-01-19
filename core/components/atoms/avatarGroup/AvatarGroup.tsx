@@ -17,6 +17,7 @@ export interface AvatarData extends Record<string, any> {
   image?: React.ReactNode;
   disabled?: boolean;
   tooltipSuffix?: string;
+  status?: React.ReactNode;
 }
 
 interface AvatarPopoverProps {
@@ -47,6 +48,7 @@ export interface AvatarGroupProps extends BaseProps {
    *  image?: React.ReactNode;
    *  disabled?: boolean;
    *  tooltipSuffix?: string;
+   *  status?: React.ReactNode;
    * }
    * </pre>
    *
@@ -157,6 +159,7 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
     withSearch,
     searchPlaceholder,
     searchComparator,
+    size,
   };
 
   return (

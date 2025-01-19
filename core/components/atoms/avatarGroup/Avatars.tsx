@@ -13,7 +13,7 @@ const Avatars = (props: any) => {
   });
 
   const avatars = avatarList.map((item: any, index: any) => {
-    const { appearance, firstName, lastName, icon, image, disabled, tooltipSuffix } = item;
+    const { appearance, firstName, lastName, icon, image, disabled, tooltipSuffix, status } = item;
 
     const newAvatarStyle = { ...avatarStyle, zIndex: avatarList.length - index };
 
@@ -28,6 +28,7 @@ const Avatars = (props: any) => {
           disabled={disabled}
           tooltipPosition={tooltipPosition}
           tooltipSuffix={tooltipSuffix}
+          status={status}
         >
           {image || icon}
         </Avatar>

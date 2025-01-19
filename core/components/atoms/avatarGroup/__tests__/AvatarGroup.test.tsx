@@ -2,7 +2,7 @@ import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import AvatarGroup, { AvatarGroupProps as Props } from '../AvatarGroup';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
-import { Avatar } from '@/index';
+import { Avatar, Tooltip, Icon } from '@/index';
 
 export const list = [
   {
@@ -54,6 +54,67 @@ const iconList = [
     firstName: 'Steven',
     lastName: 'Packton',
     icon: <Avatar.Icon name="smart_toy" />,
+  },
+];
+
+const statusList = [
+  {
+    firstName: 'John',
+    lastName: 'Doe',
+  },
+  {
+    firstName: 'Steven',
+    lastName: 'Packton',
+    status: (
+      <Tooltip position="top" tooltip="Verified">
+        <Icon
+          appearance="white"
+          className="p-1 bg-success"
+          name="done"
+          size={10}
+          data-test="DesignSystem-AvatarGroup--Status-1"
+        />
+      </Tooltip>
+    ),
+  },
+  {
+    firstName: 'Nancy',
+    lastName: 'Wheeler',
+    status: (
+      <Tooltip position="top" tooltip="On Call">
+        <Icon
+          appearance="white"
+          className="p-1 bg-primary"
+          name="phone"
+          size={10}
+          data-test="DesignSystem-AvatarGroup--Status-2"
+        />
+      </Tooltip>
+    ),
+  },
+  {
+    firstName: 'Monica',
+    lastName: 'Geller',
+  },
+  {
+    firstName: 'Tom',
+    lastName: 'Stark',
+    image: <Avatar.Image src="https://design.innovaccer.com/images/avatar2.jpeg" />,
+    status: (
+      <Tooltip position="top" tooltip="Verified">
+        <Icon
+          appearance="white"
+          className="p-1 bg-success"
+          name="done"
+          size={10}
+          data-test="DesignSystem-AvatarGroup--Status-3"
+        />
+      </Tooltip>
+    ),
+  },
+  {
+    firstName: 'Rachel',
+    lastName: 'Green',
   },
 ];
 
@@ -172,6 +233,19 @@ describe('AvatarGroup component', () => {
 
     expect(listItem[0]).toHaveAttribute('disabled');
     expect(listItem[1]).not.toHaveAttribute('disabled');
+  });
+
+  it('renders avatars with status', () => {
+    const { getAllByTestId, getByTestId } = render(<AvatarGroup list={statusList} max={5} />);
+    const avatars = getAllByTestId('DesignSystem-AvatarGroup--Avatar');
+
+    expect(avatars[1].querySelector('.Avatar-status')).toBeInTheDocument();
+    expect(avatars[2].querySelector('.Avatar-status')).toBeInTheDocument();
+    expect(avatars[4].querySelector('.Avatar-status')).toBeInTheDocument();
+
+    expect(getByTestId('DesignSystem-AvatarGroup--Status-1')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-AvatarGroup--Status-2')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-AvatarGroup--Status-3')).toBeInTheDocument();
   });
 });
 
