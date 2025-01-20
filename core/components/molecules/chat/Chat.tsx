@@ -2,6 +2,7 @@ import * as React from 'react';
 import DateSeparator from './dateSeparator';
 import NewMessage from './newMessage';
 import UnreadMessage from './unreadMessage';
+import TypingIndicator from './typingIndicator';
 import { BaseProps } from '@/utils/types';
 
 export interface ChatProps extends BaseProps {
@@ -18,5 +19,6 @@ export const Chat = (props: ChatProps) => {
 Chat.DateSeparator = DateSeparator;
 Chat.NewMessage = NewMessage;
 Chat.UnreadMessage = UnreadMessage;
+Chat.TypingIndicator = TypingIndicator;
 
 export default Chat;
