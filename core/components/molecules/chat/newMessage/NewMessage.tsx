@@ -1,0 +1,27 @@
+import * as React from 'react';
+import { Text } from '@/index';
+import styles from '@css/components/chatSeparator.module.css';
+import { BaseProps } from '@/utils/types';
+
+export interface NewMessageProps extends BaseProps {
+  text: string;
+}
+
+const NewMessage: React.FC<NewMessageProps> = ({ text }) => {
+  return (
+    <div
+      className="py-6 d-flex justify-content-center align-items-center cursor-pointer"
+      role="button"
+      aria-label={text}
+      aria-live="polite"
+    >
+      <span className={styles['NewMessage-Divider--left']} />
+      <Text appearance="link" weight="strong" size="small">
+        {text}
+      </Text>
+      <span className={styles['NewMessage-Divider--right']} />
+    </div>
+  );
+};
+
+export default NewMessage;
