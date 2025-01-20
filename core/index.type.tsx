@@ -93,6 +93,7 @@ export { ComboboxProps } from './components/organisms/combobox';
 export { SelectProps } from './components/organisms/select';
 export { MenuProps } from './components/organisms/menu';
 export { KeyValuePairProps } from './components/molecules/keyValuePair';
+export { ChatProps } from './components/molecules/chat';
 
 export { SaraSparkleProps } from './ai-components/SaraSparkle';
 export { AIButtonProps } from './ai-components/AIButton';
