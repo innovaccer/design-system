@@ -9,11 +9,20 @@ const cleaner = require('gulp-clean');
 const materialIcons = './material-design-icons/iconfont/material-icons.css';
 const materialFont = './material-design-icons/iconfont/*.{ttf,otf,woff2}';
 
+const typographyCssPath = [
+  './src/components/text.module.css',
+  './src/components/heading.module.css',
+  './src/components/label.module.css',
+  './src/components/caption.module.css',
+  './src/components/subheading.module.css',
+];
+
 const sources = [
   './src/tokens/*.css',
   './src/variables/*.css',
   materialIcons,
   './src/core/*.css',
+  ...typographyCssPath,
   './src/components/*.css',
   './src/ai-components/*.css',
   './src/utils/*.css',
