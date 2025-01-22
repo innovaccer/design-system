@@ -18,6 +18,7 @@ export interface AvatarData extends Record<string, any> {
   disabled?: boolean;
   tooltipSuffix?: string;
   status?: React.ReactNode;
+  presence?: AvatarProps['presence'];
 }
 
 interface AvatarPopoverProps {
@@ -49,9 +50,21 @@ export interface AvatarGroupProps extends BaseProps {
    *  disabled?: boolean;
    *  tooltipSuffix?: string;
    *  status?: React.ReactNode;
+   *  presence?: AvatarProps['presence'];
    * }
    * </pre>
    *
+   * | Name | Description | Default |
+   * | --- | --- | --- |
+   * | firstName | First Name of Avatar | |
+   * | lastName | Last Name of Avatar | |
+   * | appearance | Appearance of Avatar | |
+   * | icon | Icon to be rendered inside Avatar | |
+   * | image | Image to be rendered inside Avatar | |
+   * | disabled | Disables the Avatar | false |
+   * | tooltipSuffix | Suffix to be shown in tooltip | |
+   * | status | Status to be shown in only Regular Round Avatar | |
+   * | presence | Presence of Avatar |
    */
   list: AvatarData[];
   /**
