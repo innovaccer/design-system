@@ -13,7 +13,7 @@ export interface NewMessageProps extends BaseProps {
 
 const NewMessage: React.FC<NewMessageProps> = (props) => {
   const { text, className, ...rest } = props;
-  const classes = classNames('py-6 d-flex justify-content-center align-items-center cursor-pointer', className);
+  const classes = classNames('py-6 d-flex justify-content-center align-items-center', className);
 
   return (
     <div
