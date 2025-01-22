@@ -1,0 +1,9 @@
+.Chat-UnreadMessage {
+  border-radius: var(--spacing-2);
+  padding: var(--spacing-s) var(--spacing-l) var(--spacing-s) var(--spacing);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary);
+  cursor: pointer;
+}

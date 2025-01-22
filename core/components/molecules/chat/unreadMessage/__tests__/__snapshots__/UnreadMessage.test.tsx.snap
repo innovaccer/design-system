@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chat Unread Message component snapshot 
+  text: "2 Unread Messages"
+ 1`] = `
+<body>
+  <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <div
+        class="d-flex align-items-center justify-content-center my-4"
+        data-test="DesignSystem-Chat-UnreadMessage"
+      >
+        <span
+          aria-label="2 Unread Messages"
+          class="Chat-UnreadMessage"
+          role="button"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--white mr-3"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            arrow_Downward
+          </i>
+          <span
+            class="Text Text--white Text--strong Text--regular"
+            data-test="DesignSystem-Chat-UnreadMessage-Text"
+          >
+            2 Unread Messages
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
