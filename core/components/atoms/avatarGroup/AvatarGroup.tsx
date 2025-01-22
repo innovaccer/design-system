@@ -50,7 +50,7 @@ export interface AvatarGroupProps extends BaseProps {
    *  disabled?: boolean;
    *  tooltipSuffix?: string;
    *  status?: React.ReactNode;
-   *  presence?: AvatarProps['presence'];
+   *  presence?: 'active' | 'away';
    * }
    * </pre>
    *
