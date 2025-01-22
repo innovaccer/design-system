@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chat Date Separator component snapshot 
+  date: "01 Jan 2025"
+ 1`] = `
+<body>
+  <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <span
+        aria-label="01 Jan 2025"
+        class="Text Text--subtle Text--regular pt-7 pb-6 d-flex justify-content-center"
+        data-test="DesignSystem-Chat-DateSeparator"
+        role="separator"
+      >
+        01 Jan 2025
+      </span>
+    </div>
+  </div>
+</body>
+`;
