@@ -747,15 +747,14 @@ body {
 .AvatarGroup-item {
   border-radius: 50%;
   position: relative;
+  margin-right: calc(var(--spacing-s) * -1);
 }
 
 .AvatarGroup-item--regular {
-  margin-right: calc(var(--spacing-m) * -1);
   height: var(--spacing-3);
 }
 
 .AvatarGroup-item--tiny {
-  margin-right: calc(var(--spacing-s) * -1);
   height: var(--spacing-xl);
 }
 
@@ -782,6 +781,37 @@ body {
   outline-offset: 3px;
 }
 
+.AvatarGroup-inputWrapper {
+  border-bottom: var(--spacing-xs) solid var(--secondary-dark);
+}
+
+.AvatarGroup-inputWrapper:focus-within {
+  border-bottom: var(--spacing-xs) solid var(--primary);
+}
+
+.AvatarGroup-input {
+  min-width: unset !important;
+  background: transparent;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0;
+  height: calc(var(--spacing-3) + var(--spacing-m)) !important;
+}
+
+.AvatarGroup-input,
+.AvatarGroup-input:focus-within {
+  border: unset !important;
+  box-shadow: none !important;
+}
+
+.AvatarGroup-input:hover {
+  background-color: var(--secondary-lightest);
+}
+
+.AvatarGroup-listItem--disabled {
+  cursor: not-allowed;
+  pointer-events: auto !important;
+}
+
 /* Selection avatar group */
 .SelectionAvatarGroup {
   box-sizing: border-box;
@@ -792,7 +822,7 @@ body {
 /* Selection Avatar List */
 
 .SelectionAvatarGroup-item {
-  margin-right: calc(var(--spacing-m) * -1);
+  margin-right: calc(var(--spacing-s) * -1);
   border-radius: 50%;
   display: flex;
   transition: transform var(--duration--fast-01) var(--standard-productive-curve);
@@ -2984,6 +3014,7 @@ body {
   width: 100%;
   display: flex;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .Option-text,
@@ -4055,9 +4086,6 @@ body {
   text-align: center;
 }
 
-.GridCell--default {
-}
-
 .GridCell--metaList {
   display: flex;
   flex-direction: column;
@@ -4115,20 +4143,6 @@ body {
 .GridCell--metaList ul li:first-child {
   margin-left: 0;
 }
-
-/* .GridCell-image {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: var(--spacing);
-}
-
-.Image {
-    z-index: 0;
-    height: 100%;
-    width: 100%;
-} */
 
 /** Header **/
 
@@ -5721,7 +5735,7 @@ body {
   flex-wrap: wrap;
 }
 
-.Pagination .Button {
+.Pagination-button {
   padding-left: var(--spacing);
   padding-right: var(--spacing);
 }
@@ -7189,16 +7203,6 @@ body {
   background-color: transparent;
 }
 
-.Tab-count {
-  display: flex;
-  margin-right: var(--spacing-l);
-}
-
-.Tab-count .Badge {
-  margin-left: 0;
-  margin-right: 0;
-}
-
 .Tab-icon {
   display: flex;
   min-width: inherit;
@@ -8238,6 +8242,10 @@ body {
 
 .cursor-default {
   cursor: default;
+}
+
+.cursor-not-allowed {
+  cursor: not-allowed;
 }
 
 .d-none {
