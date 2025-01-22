@@ -10,6 +10,7 @@ import {
   ButtonProps,
   Message,
   Menu,
+  InlineMessage
 } from '@innovaccer/design-system';
 
 const MyComponent: React.FC = () => {
@@ -173,6 +174,7 @@ const UserManagementTable: React.FC = () => {
             <Menu.Item>Copy</Menu.Item>
           </Menu.List>
         </Menu>
+        <InlineMessage appearance="alert" description="There are two new referral requests." />
       </Column>
     </Row>
   );

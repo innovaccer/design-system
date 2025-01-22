@@ -23,7 +23,7 @@
 
     <script type="text/babel">
       console.log('InnovaccerDesignSystem', InnovaccerDesignSystem);
-      const { Icon, GridCell, Table, Message, Menu } = InnovaccerDesignSystem;
+      const { Icon, GridCell, Table, Message, Menu, InlineMessage } = InnovaccerDesignSystem;
 
       const MyTable = () => {
         const data = [
@@ -926,6 +926,7 @@
                 <Menu.Item>Copy</Menu.Item>
               </Menu.List>
             </Menu>
+            <InlineMessage appearance="alert" description="There are two new referral requests." />
           </div>
         );
       }
