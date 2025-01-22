@@ -243,7 +243,9 @@ Both avatar group and selection avatar group share the same variants.
   </tbody>
 </table>
 
-#### Popover
+<br />
+
+#### Popover (Avatar Group)
 
 <br />
 <br />
@@ -259,6 +261,37 @@ Both avatar group and selection avatar group share the same variants.
       <td>Width</td>
       <td>&#60;width&#62;</td>
       <td>176px (Customizable)</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Max height</td>
+      <td>&#60;max_height&#62;</td>
+      <td>256px (Customizable)</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Min height</td>
+      <td>&#60;min_height&#62;</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+#### Popover (Selection Avatar Group)
+
+<br />
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Width</td>
+      <td>&#60;width&#62;</td>
+      <td>256px (Customizable)</td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
       <td>Max height</td>
@@ -334,3 +367,23 @@ In an avatar group, you can add a suffix to an entity's name that appears in too
 
 ![Appending a suffix to the name of the disabled entity](./images/tooltip-suffix.png)
 <Caption>Appending a suffix to the name of the disabled entity</Caption>
+
+<br />
+
+#### Presence in Avatar Group
+
+Default and selection avatar groups can include presence indicators that visually represent the user’s availability , such as **"active"** and **"away"**.
+
+![Presence in Avatar Group](./images/presence.png)
+<Caption>Presence in Avatar Group</Caption>
+
+<br />
+
+#### Status in Avatar Group
+
+Regular default avatar group and regular selection avatar group can include status indicators to represent user-defined or system-determined messages, providing context about the user's current activity or situation. A tooltip should be used to define the status.
+
+![Status in Avatar Group](./images/status.png)
+<Caption>Status in Avatar Group</Caption>
+
+<br />
