@@ -3,6 +3,7 @@ import { Popover, Text } from '@/index';
 import { PopoverProps } from '@/index.type';
 import { BaseProps, filterProps } from '@/utils/types';
 import styles from '@css/components/tooltip.module.css';
+import classNames from 'classnames';
 
 type Position = 'top-start' | 'top' | 'top-end' | 'right' | 'bottom-end' | 'bottom' | 'bottom-start' | 'left';
 
@@ -83,7 +84,7 @@ export const detectTruncation = (boundaryRef: React.RefObject<HTMLElement>) => {
 };
 
 export const Tooltip = (props: TooltipProps) => {
-  const { children, tooltip, showTooltip, showOnTruncation, elementRef, ...rest } = props;
+  const { children, tooltip, showTooltip, showOnTruncation, elementRef, className, ...rest } = props;
   const childrenRef = React.useRef(null);
   const [isTruncated, setIsTruncated] = React.useState(false);
 
@@ -112,18 +113,20 @@ export const Tooltip = (props: TooltipProps) => {
     </div>
   );
 
+  const classes = classNames(styles['Tooltip-container'], className);
+
   if (showOnTruncation) {
     return isTruncated ? (
       <Popover
         trigger={renderChildren}
         on={'hover'}
         offset={'medium'}
-        {...rest}
         animationClass={{
           open: styles[`Tooltip-animation-open-${positionValue[props.position]}`],
           close: styles[`Tooltip-animation-close-${positionValue[props.position]}`],
         }}
-        className={styles['Tooltip-container']}
+        className={classes}
+        {...rest}
       >
         {tooltipWrapper}
       </Popover>
@@ -137,12 +140,12 @@ export const Tooltip = (props: TooltipProps) => {
       trigger={children}
       on={'hover'}
       offset={'medium'}
-      {...rest}
       animationClass={{
         open: styles[`Tooltip-animation-open-${positionValue[props.position]}`],
         close: styles[`Tooltip-animation-close-${positionValue[props.position]}`],
       }}
-      className={styles['Tooltip-container']}
+      className={classes}
+      {...rest}
     >
       {tooltipWrapper}
     </Popover>
