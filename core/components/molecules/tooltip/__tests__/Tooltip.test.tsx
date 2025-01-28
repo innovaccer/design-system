@@ -85,4 +85,15 @@ describe('Tooltip component with text overflow', () => {
     const tooltipText = queryByText('A tooltip');
     expect(tooltipText).not.toBeInTheDocument();
   });
+
+  it('should support custom class', () => {
+    const { getByRole, getByTestId } = render(
+      <Tooltip tooltip="A tooltip" className="custom-class">
+        <Button>show me the tooltip on hover</Button>
+      </Tooltip>
+    );
+    const button = getByRole('button');
+    fireEvent.mouseOver(button);
+    getByTestId('DesignSystem-Popover').classList.contains('custom-class');
+  });
 });
