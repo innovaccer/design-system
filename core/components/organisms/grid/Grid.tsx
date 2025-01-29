@@ -156,6 +156,29 @@ export type GridSize = 'comfortable' | 'standard' | 'compressed' | 'tight';
 export type GridType = 'resource' | 'data';
 export type Data = RowData[];
 export type Schema = ColumnSchema[];
+export type thresholdTypes = 'early' | 'balanced' | 'lazy' | 'at-end';
+
+export interface VirtualRowProps {
+  /**
+   * Number of rows to be rendered within the visible viewport.
+   */
+  visibleRows?: number;
+  /**
+   * Number of additional rows to render before and after the visible rows.
+   */
+  buffer?: number;
+}
+
+export interface InfiniteScrollProps {
+  /**
+   * Number of rows to Pre-fetch at a time in case of async table
+   */
+  fetchRowsCount: number;
+  /**
+   * the distance from the end of the scrollable content at which new data should start fetching in case of async table.
+   */
+  fetchThreshold: thresholdTypes;
+}
 
 export interface GridProps extends BaseProps {
   /**
@@ -238,7 +261,7 @@ export interface GridProps extends BaseProps {
    * Shows checkbox in the left most column
    */
   withCheckbox?: boolean;
-  /***
+  /**
    * Defines position of checkbox in the row
    */
   checkboxAlignment?: 'top' | 'center' | 'bottom';
@@ -295,6 +318,30 @@ export interface GridProps extends BaseProps {
    * Show filters in Head Cell
    */
   showFilters: boolean;
+  /**
+   * Enable row virtualization
+   */
+  enableRowVirtualization?: boolean;
+  /**
+   * Virtual Scroll Options
+   */
+  virtualRowOptions: VirtualRowProps;
+  /**
+   * Enable infinite scroll of rows in case of async table & without pagination
+   */
+  enableInfiniteScroll?: boolean;
+  /**
+   * Infinite Scroll Options
+   */
+  infiniteScrollOptions: InfiniteScrollProps;
+  /**
+   * Callback to be triggered on scroll
+   */
+  onScroll?: (event: Event) => void;
+  /**
+   * Fetch Data Function to be called on scroll when threshold is reached in case of async table
+   */
+  fetchDataOnScroll?: (props: { page: number; rowsCount: number }) => Promise<Data>;
 }
 
 export interface GridState {
@@ -510,7 +557,23 @@ export class Grid extends React.Component<GridProps, GridState> {
 
     const { init, prevPageInfo } = this.state;
 
-    const { type, size, showHead, className, page, loading, loaderSchema } = this.props;
+    const {
+      type,
+      size,
+      showHead,
+      className,
+      page,
+      loading,
+      loaderSchema,
+      virtualRowOptions,
+      infiniteScrollOptions,
+      enableInfiniteScroll,
+      enableRowVirtualization,
+      onScroll,
+      fetchDataOnScroll,
+      error,
+      errorTemplate,
+    } = this.props;
 
     const schema = getSchema(this.props.schema, loading, loaderSchema);
 
@@ -548,13 +611,23 @@ export class Grid extends React.Component<GridProps, GridState> {
                 reorderColumn={this.reorderColumn.bind(this)}
               />
             )}
-            <GridBody
-              key={`${page}`}
-              schema={schema}
-              prevPageInfo={prevPageInfo}
-              updatePrevPageInfo={this.updatePrevPageInfo.bind(this)}
-              onSelect={this.onSelect.bind(this)}
-            />
+            {!loading && error ? (
+              errorTemplate && (typeof errorTemplate === 'function' ? errorTemplate({}) : errorTemplate)
+            ) : (
+              <GridBody
+                key={`${page}`}
+                schema={schema}
+                prevPageInfo={prevPageInfo}
+                updatePrevPageInfo={this.updatePrevPageInfo.bind(this)}
+                onSelect={this.onSelect.bind(this)}
+                enableRowVirtualization={enableRowVirtualization}
+                virtualRowOptions={virtualRowOptions}
+                infiniteScrollOptions={infiniteScrollOptions}
+                enableInfiniteScroll={enableInfiniteScroll}
+                onScroll={onScroll}
+                fetchDataOnScroll={fetchDataOnScroll}
+              />
+            )}
           </GridProvider>
         )}
       </div>
