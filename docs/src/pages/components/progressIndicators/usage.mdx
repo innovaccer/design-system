@@ -60,6 +60,15 @@ Progress bar comes in **4 sizes** - extra small, small, regular and large.
 ![Spinner - Size](./images/spinner-size.png)
 <Caption>Spinner - Size</Caption>
 
+### States
+
+#### Progress Bar
+
+Progress bar comes in **2 states** - default and indeterminate
+
+![Progress Bar - States](./images/progress-bar-states.png)
+<Caption>Progress Bar - States</Caption>
+
 ### Shape
 
 #### Skeleton Loaders - Image
@@ -87,9 +96,16 @@ For images, skeleton loaders come in **2 shapes** - round and square.
    </tr>
    <tr style={{verticalAlign: "top"}}>
       <td>Height</td>
-      <td>4 px <em>(Small)</em><br/>
-          8 px <em>(Regular)</em></td>
+      <td>
+        4 px <em>(Small)</em><br/>
+        8 px <em>(Regular)</em>
+      </td>
    </tr>
+   <tr>
+      <td> Progress Percentage (Indeterminate state) </td>
+      <td>32%</td>
+   </tr>
+   
    <tr style={{verticalAlign: "top"}}>
       <td>Corner radius</td>
       <td>4 px</td>
@@ -111,7 +127,7 @@ For images, skeleton loaders come in **2 shapes** - round and square.
      <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
    </tr>
    <tr style={{verticalAlign: "top"}}>
-      <td>Size</td>
+      <td>Height</td>
       <td>16x16 px <em>(Small)</em><br/>
           32x32 px <em>(Regular)</em><br/>
           48x48 px <em>(Large)</em></td>
@@ -133,7 +149,7 @@ For images, skeleton loaders come in **2 shapes** - round and square.
      <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
    </tr>
    <tr style={{verticalAlign: "top"}}>
-      <td>Size</td>
+      <td>Height</td>
       <td>12x12 px <em>(Extra small)</em><br/>
           16x16 px <em>(Small)</em><br/>
           32x32 px <em>(Regular)</em><br/>
@@ -350,7 +366,6 @@ Spinners are used differently depending on their size.
 <br/>
 
 
-
 ##### Skeleton Loader vs Spinner
 
 A typical process starts with loading the app first. Refer to the table below and  the examples to have a better understanding:
@@ -423,5 +438,3 @@ A typical process starts with loading the app first. Refer to the table below an
 ##### Progressive Loading
 
 Progressive loading is a technique that loads the page in chunks i.e. from the simplest view to the most detailed view. Table in the above section demonstrates the step-by-step loading of a page. 
-
-
