@@ -4,11 +4,13 @@ import ProgressBar, { ProgressBarProps as Props, ProgressBarSize } from '../Prog
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const sizeList: ProgressBarSize[] = ['regular', 'small'];
+const stateList = ['default', 'indeterminate'];
 
 describe('ProgressBar component', () => {
   const mapper = {
     value: valueHelper(10, { required: true }),
     size: valueHelper(sizeList, { required: true, iterate: true }),
+    state: valueHelper(stateList, { required: true, iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
@@ -51,7 +53,14 @@ describe('ProgressBar component size variant', () => {
   sizeList.forEach((size) => {
     it(`check for ${size} size of progress bar`, () => {
       const { getByTestId } = render(<ProgressBar size={size} value={50} />);
-      expect(getByTestId('DesignSystem-ProgressBar-Indicator')).toHaveClass(`ProgressBar-indicator--${size}`);
+      expect(getByTestId('DesignSystem-ProgressBar')).toHaveClass(`ProgressBar-indicator--${size}`);
     });
+  });
+});
+
+describe('ProgressBar component state variant', () => {
+  it('check for indeterminate state of progress bar', () => {
+    const { getByTestId } = render(<ProgressBar state="indeterminate" value={50} />);
+    expect(getByTestId('DesignSystem-ProgressBar-Indicator')).toHaveClass('ProgressBar-indicator--indeterminate');
   });
 });
