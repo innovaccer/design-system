@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ProgressBar component 
-  value: 10, size: "regular"
+  value: 10, size: "regular", state: "default"
  1`] = `
 <body>
   <div>
@@ -20,7 +20,26 @@ exports[`ProgressBar component
 `;
 
 exports[`ProgressBar component 
-  value: 10, size: "small"
+  value: 10, size: "regular", state: "indeterminate"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="ProgressBar"
+      data-test="DesignSystem-ProgressBar"
+    >
+      <div
+        class="ProgressBar-indicator ProgressBar-indicator--regular ProgressBar-indicator--indeterminate"
+        data-test="DesignSystem-ProgressBar-Indicator"
+        style="width: 100%;"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ProgressBar component 
+  value: 10, size: "small", state: "default"
  1`] = `
 <body>
   <div>
@@ -32,6 +51,25 @@ exports[`ProgressBar component
         class="ProgressBar-indicator ProgressBar-indicator--small"
         data-test="DesignSystem-ProgressBar-Indicator"
         style="width: 10%;"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ProgressBar component 
+  value: 10, size: "small", state: "indeterminate"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="ProgressBar"
+      data-test="DesignSystem-ProgressBar"
+    >
+      <div
+        class="ProgressBar-indicator ProgressBar-indicator--small ProgressBar-indicator--indeterminate"
+        data-test="DesignSystem-ProgressBar-Indicator"
+        style="width: 100%;"
       />
     </div>
   </div>

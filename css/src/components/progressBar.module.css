@@ -17,3 +17,18 @@
 .ProgressBar-indicator--regular {
   height: var(--spacing);
 }
+
+@keyframes progressBarLoading {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+.ProgressBar-indicator--indeterminate {
+  animation: progressBarLoading 1400ms infinite linear;
+  background: linear-gradient(90deg, var(--primary, #0070dd) 32%, transparent 32%);
+  background-size: 200% 100%;
+}

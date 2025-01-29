@@ -4,6 +4,7 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 import styles from '@css/components/progressBar.module.css';
 
 export type ProgressBarSize = 'small' | 'regular';
+export type ProgressBarState = 'default' | 'indeterminate';
 
 export interface ProgressBarProps extends BaseProps {
   /**
@@ -18,16 +19,23 @@ export interface ProgressBarProps extends BaseProps {
    * Size of `Progress Bar`
    */
   size: ProgressBarSize;
+  /**
+   * State of `Progress Bar`
+   */
+  state?: ProgressBarState;
 }
 
 export const ProgressBar = (props: ProgressBarProps) => {
-  const { max, value, className, size } = props;
+  const { max, value, className, size, state } = props;
 
   const baseProps = extractBaseProps(props);
 
-  const style = {
-    width: value > 0 ? `${(Math.min(value, max) * 100) / max}%` : '0',
-  };
+  const style =
+    state === 'indeterminate'
+      ? { width: '100%' }
+      : {
+          width: value > 0 ? `${(Math.min(value, max) * 100) / max}%` : '0',
+        };
 
   const ProgressBarClass = classNames(
     {
@@ -40,6 +48,7 @@ export const ProgressBar = (props: ProgressBarProps) => {
     [styles['ProgressBar-indicator']]: true,
     [styles['ProgressBar-indicator--small']]: size === 'small',
     [styles['ProgressBar-indicator--regular']]: size === 'regular',
+    [styles['ProgressBar-indicator--indeterminate']]: state === 'indeterminate',
   });
 
   return (
@@ -53,6 +62,7 @@ ProgressBar.displayName = 'ProgressBar';
 ProgressBar.defaultProps = {
   max: 100,
   size: 'regular',
+  state: 'default',
 };
 
 export default ProgressBar;
