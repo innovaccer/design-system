@@ -11,7 +11,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -61,7 +61,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -111,7 +111,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -161,7 +161,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -211,7 +211,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -261,7 +261,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -311,7 +311,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -361,7 +361,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -411,7 +411,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -461,7 +461,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -511,7 +511,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -561,7 +561,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -611,7 +611,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -661,7 +661,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -711,7 +711,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -761,7 +761,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -811,7 +811,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -861,7 +861,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -911,7 +911,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -961,7 +961,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -1011,7 +1011,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -1061,7 +1061,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -1111,7 +1111,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -1161,7 +1161,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -1211,7 +1211,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -1261,7 +1261,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -1311,7 +1311,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -1361,7 +1361,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -1411,7 +1411,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -1461,7 +1461,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -1511,7 +1511,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -1561,7 +1561,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -1611,7 +1611,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -1661,7 +1661,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -1711,7 +1711,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -1761,7 +1761,7 @@ exports[`Select List component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -1811,7 +1811,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -1861,7 +1861,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -1911,7 +1911,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -1961,7 +1961,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -2011,7 +2011,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -2061,7 +2061,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -2111,7 +2111,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -2161,7 +2161,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -2211,7 +2211,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -2261,7 +2261,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -2311,7 +2311,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -2361,7 +2361,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -2411,7 +2411,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -2461,7 +2461,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -2511,7 +2511,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -2561,7 +2561,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -2611,7 +2611,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -2661,7 +2661,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -2711,7 +2711,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -2761,7 +2761,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -2811,7 +2811,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -2861,7 +2861,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -2911,7 +2911,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -2961,7 +2961,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -3011,7 +3011,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -3061,7 +3061,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -3111,7 +3111,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -3161,7 +3161,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -3211,7 +3211,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -3261,7 +3261,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -3311,7 +3311,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -3361,7 +3361,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -3411,7 +3411,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -3461,7 +3461,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -3511,7 +3511,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -3561,7 +3561,7 @@ exports[`Select Option component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -3611,7 +3611,7 @@ exports[`Select component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >
@@ -3661,7 +3661,7 @@ exports[`Select component snapshots
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger d-block"
       >

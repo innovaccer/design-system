@@ -502,7 +502,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
 
     return (
       <Manager>
-        <style>{animationKeyframe}</style>
+        {animationKeyframe && <style>{animationKeyframe}</style>}
         <Reference innerRef={this.triggerRef}>{({ ref }) => this.getTriggerElement(ref)}</Reference>
 
         {isOpen &&
