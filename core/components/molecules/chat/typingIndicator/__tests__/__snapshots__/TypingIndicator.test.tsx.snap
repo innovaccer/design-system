@@ -11,7 +11,7 @@ exports[`Chat Typing Indicator component snapshot
       <span
         aria-atomic="true"
         aria-live="polite"
-        class="Text Text--subtle Text--medium Text--regular"
+        class="Text Text--subtle Text--medium Text--small"
         data-test="DesignSystem-Chat-TypingIndicator"
         role="status"
       >
