@@ -382,7 +382,10 @@ interface SharedTableProps extends BaseProps {
 
 export type SyncTableProps = SharedTableProps & TableSyncProps;
 export type AsyncTableProps = SharedTableProps & AsyncProps;
-export type TableProps = AsyncTableProps & SyncTableProps;
+// export type TableProps = AsyncTableProps & SyncTableProps;
+interface TableProps extends BaseProps, TableSyncProps, AsyncProps {
+  height: number;
+}
 
 interface TableState {
   async: boolean;
@@ -398,6 +401,10 @@ interface TableState {
   loading: TableProps['loading'];
   error: TableProps['error'];
   errorType?: TableProps['errorType'];
+
+  startIndex: number;
+  endIndex: number;
+  rowHeights: number[];
 }
 
 const defaultErrorTemplate = (props: ErrorTemplateProps) => {
@@ -439,6 +446,8 @@ export const defaultProps = {
 
 export class Table extends React.Component<TableProps, TableState> {
   static defaultProps = defaultProps;
+  private containerRef: React.RefObject<HTMLDivElement>;
+
   debounceUpdate: () => void;
   selectedRowsRef: React.MutableRefObject<any> = React.createRef<[] | null>();
   clearSelectionRef: React.MutableRefObject<any> = React.createRef<boolean | null>();
@@ -465,16 +474,26 @@ export class Table extends React.Component<TableProps, TableState> {
       errorType: props.errorType,
       selectAll: getSelectAll([]),
       searchTerm: undefined,
+
+      startIndex: 0,
+      endIndex: 0,
+      rowHeights: [],
     };
+
+    this.containerRef = React.createRef();
 
     this.debounceUpdate = debounce(props.searchDebounceDuration, this.updateDataFn);
   }
 
   componentDidMount() {
     this.updateData();
+    this.calculateVisibleRows();
   }
 
   componentDidUpdate(prevProps: TableProps, prevState: TableState) {
+    if (prevProps.data !== this.props.data) {
+      this.calculateVisibleRows();
+    }
     if (!this.state.async) {
       if (prevProps.error !== this.props.error) {
         const { data = [], schema = [] } = this.props;
@@ -537,6 +556,63 @@ export class Table extends React.Component<TableProps, TableState> {
       }
     }
   }
+
+  calculateVisibleRows = () => {
+    const { height } = this.props;
+    const container = this.containerRef.current;
+    if (container) {
+      const rowHeights = Array.from(container.children).map((child) => child.clientHeight);
+      // const totalHeight = rowHeights.reduce((acc, h) => acc + h, 0);
+      const visibleHeight = height;
+      const startIndex = 0;
+      let endIndex = 0;
+      let accumulatedHeight = 0;
+
+      for (let i = 0; i < rowHeights.length; i++) {
+        accumulatedHeight += rowHeights[i];
+        if (accumulatedHeight >= visibleHeight) {
+          endIndex = i;
+          break;
+        }
+      }
+
+      this.setState({ rowHeights, startIndex, endIndex });
+    }
+  };
+
+  handleScroll = (event: React.UIEvent<HTMLDivElement>) => {
+    const { rowHeights } = this.state;
+    const scrollTop = event.currentTarget.scrollTop;
+    let accumulatedHeight = 0;
+    let startIndex = 0;
+
+    for (let i = 0; i < rowHeights.length; i++) {
+      accumulatedHeight += rowHeights[i];
+      if (accumulatedHeight >= scrollTop) {
+        startIndex = i;
+        break;
+      }
+    }
+
+    let endIndex = startIndex;
+    accumulatedHeight = 0;
+    const visibleHeight = this.props.height;
+
+    for (let i = startIndex; i < rowHeights.length; i++) {
+      accumulatedHeight += rowHeights[i];
+      if (accumulatedHeight >= visibleHeight) {
+        endIndex = i;
+        break;
+      }
+    }
+
+    // Prefetch some rows before and after the visible range
+    const prefetchCount = 5;
+    startIndex = Math.max(0, startIndex - prefetchCount);
+    endIndex = Math.min(rowHeights.length - 1, endIndex + prefetchCount);
+
+    this.setState({ startIndex, endIndex });
+  };
 
   updateData = (searchUpdate?: boolean) => {
     if (this.state.async) {
@@ -919,8 +995,26 @@ export class Table extends React.Component<TableProps, TableState> {
     const totalPages = getTotalPages(totalRecords, pageSize);
     const tableClass = classNames(tableStyles['Table'], classes);
 
+    const { data, schema, height } = this.props;
+    const { startIndex, endIndex, rowHeights } = this.state;
+    const visibleData = data.slice(startIndex, endIndex + 1);
+
+    const spacerHeight = rowHeights.reduce((acc, h, i) => {
+      if (i < startIndex) return acc + h;
+      return acc;
+    }, 0);
+
     return (
-      <div {...baseProps} className={tableClass} data-test="DesignSystem-Table-wrapper">
+      <div
+        {...baseProps}
+        className={tableClass}
+        style={{ height, overflowY: 'auto' }}
+        onScroll={this.handleScroll}
+        ref={this.containerRef}
+        data-test="DesignSystem-Table-wrapper"
+      >
+        <div style={{ height: spacerHeight }} />
+
         {withHeader && (
           <div data-test="DesignSystem-Table-header">
             <Header
@@ -967,6 +1061,8 @@ export class Table extends React.Component<TableProps, TableState> {
             separator={separator}
             draggable={draggable}
             nestedRows={nestedRows}
+            data={visibleData}
+            schema={schema}
             nestedRowRenderer={nestedRowRenderer}
             withPagination={withPagination && totalPages > 1}
             pageSize={pageSize}
@@ -976,6 +1072,8 @@ export class Table extends React.Component<TableProps, TableState> {
             showFilters={filterPosition === 'GRID'}
           />
         </div>
+        <div style={{ height: rowHeights.slice(endIndex + 1).reduce((acc, h) => acc + h, 0) }} />
+
         {withPagination && !this.state.loading && !this.state.error && totalPages > 1 && (
           <div className={tableStyles['Table-pagination']}>
             <Pagination
