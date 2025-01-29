@@ -3,6 +3,7 @@ import DateSeparator from './dateSeparator';
 import UnreadMessage from './unreadMessage';
 import NewMessage from './newMessage';
 import TypingIndicator from './typingIndicator';
+import ChatBubble from './chatBubble';
 import { BaseProps } from '@/utils/types';
 
 export interface ChatProps extends BaseProps {
@@ -25,5 +26,6 @@ Chat.DateSeparator = DateSeparator;
 Chat.UnreadMessage = UnreadMessage;
 Chat.NewMessage = NewMessage;
 Chat.TypingIndicator = TypingIndicator;
+Chat.ChatBubble = ChatBubble;
 
 export default Chat;

@@ -1,24 +1,18 @@
 import * as React from 'react';
-import { Chat } from '@/index';
+import { Text, Chat } from '@/index';
 
-export const unreadMessage = () => {
+export const defaultMessage = () => {
   return (
     <Chat>
-      <Chat.UnreadMessage text="2 Unread Messages" />
+      <Chat.ChatBubble type="incoming">
+        <Text>Hello, I'd like to schedule an appointment with my cardiologist. Can you help me with that ?</Text>
+      </Chat.ChatBubble>
     </Chat>
   );
 };
 
-const customCode = `() => {
-  return (
-    <Chat>
-      <Chat.UnreadMessage text="2 Unread Messages" />
-    </Chat>
-  )
-}`;
-
 export default {
-  title: 'Components/Chat/Separator/Unread Message',
+  title: 'Components/Chat/ChatBubble/Incoming/Default Message',
   component: Chat,
   subcomponents: {
     'Chat.ChatBubble': Chat.ChatBubble,
@@ -30,8 +24,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Chat',
-        customCode,
+        title: 'Incoming Chat Bubble',
       },
     },
   },

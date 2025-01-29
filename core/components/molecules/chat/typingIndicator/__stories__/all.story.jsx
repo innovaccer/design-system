@@ -21,6 +21,7 @@ export default {
   title: 'Components/Chat/Typing Indicator',
   component: Chat,
   subcomponents: {
+    'Chat.ChatBubble': Chat.ChatBubble,
     'Chat.DateSeparator': Chat.DateSeparator,
     'Chat.NewMessage': Chat.NewMessage,
     'Chat.UnreadMessage': Chat.UnreadMessage,
