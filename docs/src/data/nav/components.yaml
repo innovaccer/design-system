@@ -70,6 +70,10 @@ menus:
         label: 'Chat Ancillary Components',
         link: /components/chatAncillaryComponent/usage/
       },
+      {
+        label: Chat Bubble,
+        link: /components/chatBubble/usage/
+      }
     ]
 
   - label: Checkbox
