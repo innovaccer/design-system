@@ -1,6 +1,8 @@
 import * as React from 'react';
+// import VirtualScroll from 'react-dynamic-virtual-scroll';
 import { GridRow } from './GridRow';
 import { GridState, onSelectFn, Schema, updatePrevPageInfoFunction } from './Grid';
+// import { GridProps } from '@/index.type';
 import GridContext from './GridContext';
 import styles from '@css/components/grid.module.css';
 
@@ -26,14 +28,8 @@ export const GridBody = (props: GridBodyProps) => {
       const { scrollTop, scrollHeight, clientHeight } = gridBodyEl;
       if (scrollTop + clientHeight >= scrollHeight - 50 && !isFetching && !loading) {
         setIsFetching(true);
-        fetchMoreData('down').then((newData) => {
+        fetchMoreData().then((newData) => {
           setGridData((prevData) => [...prevData, ...newData]);
-          setIsFetching(false);
-        });
-      } else if (scrollTop <= 50 && !isFetching && !loading) {
-        setIsFetching(true);
-        fetchMoreData('up').then((newData) => {
-          setGridData((prevData) => [...newData, ...prevData]);
           setIsFetching(false);
         });
       }
@@ -69,9 +65,9 @@ export const GridBody = (props: GridBodyProps) => {
   const { schema, onSelect } = props;
 
   return (
-    <div className={styles['Grid-body']}>
-      {gridData.map((item, i) => (
-        <GridRow key={i} rowIndex={i} data={item} schema={schema} onSelect={onSelect} />
+    <div className="Grid-body">
+      {gridData.map((row, index) => (
+        <GridRow key={index} row={row} schema={schema} onSelect={onSelect} />
       ))}
       {isFetching && (
         <div className={styles.progressBar}>
@@ -81,5 +77,3 @@ export const GridBody = (props: GridBodyProps) => {
     </div>
   );
 };
-
-export default GridBody;
