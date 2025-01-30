@@ -14,8 +14,9 @@ export interface GridBodyProps {
 export const GridBody = (props: GridBodyProps) => {
   const context = React.useContext(GridContext);
 
-  const { data, ref, loading, error, withPagination, page, pageSize, totalRecords, errorTemplate, fetchMoreData } =
-    context;
+  const { data, ref, loading, error, page, errorTemplate, fetchMoreData } = context;
+
+  const { prevPageInfo, updatePrevPageInfo } = props;
 
   const [isFetching, setIsFetching] = React.useState(false);
   const [gridData, setGridData] = React.useState(data);
@@ -26,13 +27,13 @@ export const GridBody = (props: GridBodyProps) => {
       const { scrollTop, scrollHeight, clientHeight } = gridBodyEl;
       if (scrollTop + clientHeight >= scrollHeight - 50 && !isFetching && !loading) {
         setIsFetching(true);
-        fetchMoreData('down').then((newData) => {
+        fetchMoreData('down').then((newData: any) => {
           setGridData((prevData) => [...prevData, ...newData]);
           setIsFetching(false);
         });
       } else if (scrollTop <= 50 && !isFetching && !loading) {
         setIsFetching(true);
-        fetchMoreData('up').then((newData) => {
+        fetchMoreData('up').then((newData: any) => {
           setGridData((prevData) => [...newData, ...prevData]);
           setIsFetching(false);
         });
