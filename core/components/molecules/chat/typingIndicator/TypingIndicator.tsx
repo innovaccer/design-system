@@ -16,6 +16,7 @@ export const TypingIndicator: React.FC<TypingIndicatorProps> = (props) => {
       data-test="DesignSystem-Chat-TypingIndicator"
       appearance="subtle"
       weight="medium"
+      size="small"
       role="status"
       aria-live="polite"
       aria-atomic="true"
