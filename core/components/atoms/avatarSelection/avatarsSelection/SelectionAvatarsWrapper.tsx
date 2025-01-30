@@ -55,7 +55,7 @@ export const SelectionAvatarsWrapper = (props: SelectionAvatarsWrapperProps) => 
   return (
     <>
       {avatarList.map((avatarItem: AvatarData, index: any) => {
-        const { appearance, firstName, lastName, icon, image, disabled, tooltipSuffix } = avatarItem;
+        const { appearance, firstName, lastName, icon, image, disabled, tooltipSuffix, ...rest } = avatarItem;
         const GroupClass = classNames({
           [styles[`SelectionAvatarGroup-item`]]: true,
           [styles[`SelectionAvatarGroup-item--active`]]: !disabled,
@@ -91,6 +91,7 @@ export const SelectionAvatarsWrapper = (props: SelectionAvatarsWrapperProps) => 
                 image={image}
                 disabled={disabled}
                 tooltipSuffix={tooltipSuffix}
+                {...rest}
               />
             </div>
           </span>

@@ -6,11 +6,11 @@ figma.connect(Tooltip, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS-
   imports: ["import { Tooltip } from '@innovaccer/design-system'"],
   props: {
     position: figma.enum('Position', {
-      'Bottom': 'bottom',
-      'Top': 'top',
-      'Right': 'right',
-      'Left': 'left'
-    })
+      Bottom: 'bottom',
+      Top: 'top',
+      Right: 'right',
+      Left: 'left',
+    }),
   },
   example: (props) => <Tooltip tooltip="Tooltip" {...props} />,
 });

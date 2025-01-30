@@ -117,7 +117,7 @@ export const Avatar = (props: AvatarProps) => {
     appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] || DefaultAppearance;
 
   const darkAppearance = ['secondary', 'success', 'warning', 'accent1', 'accent4'];
-  const showPresence = presence && !disabled && shape === 'round';
+  const showPresence = presence && !disabled && shape === 'round' && (presence === 'active' || presence === 'away');
   const showStatus = status && size === 'regular' && shape === 'round';
 
   const AvatarClassNames = classNames(

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chat Typing Indicator component snapshot 
+  text: "John Doe is Typing..."
+ 1`] = `
+<body>
+  <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <span
+        aria-atomic="true"
+        aria-live="polite"
+        class="Text Text--subtle Text--medium Text--small"
+        data-test="DesignSystem-Chat-TypingIndicator"
+        role="status"
+      >
+        John Doe is Typing...
+      </span>
+    </div>
+  </div>
+</body>
+`;

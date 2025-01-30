@@ -1,0 +1,23 @@
+.Chat-UnreadMessage {
+  border-radius: var(--spacing-2);
+  padding: var(--spacing-s) var(--spacing-l) var(--spacing-s) var(--spacing);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary);
+  cursor: pointer;
+}
+
+.NewMessage-Divider--left {
+  flex: 1;
+  height: var(--spacing-xs);
+  background-color: var(--primary);
+  margin-right: var(--spacing-2);
+}
+
+.NewMessage-Divider--right {
+  flex: 1;
+  height: var(--spacing-xs);
+  background-color: var(--primary);
+  margin-left: var(--spacing-2);
+}

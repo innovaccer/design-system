@@ -62,6 +62,20 @@ menus:
   - label: Cards
     link: /components/card/usage/
 
+  - label: Chat
+    link: /components/chatAncillaryComponent/usage/
+    hideInMobile: true
+    subMenu: [
+      {
+        label: 'Chat Ancillary Components',
+        link: /components/chatAncillaryComponent/usage/
+      },
+      {
+        label: Chat Bubble,
+        link: /components/chatBubble/usage/
+      }
+    ]
+
   - label: Checkbox
     link: /components/checkbox/usage/
 

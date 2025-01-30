@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chat New Message component snapshot 
+  text: "2 New Messages"
+ 1`] = `
+<body>
+  <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <div
+        aria-label="2 New Messages"
+        aria-live="polite"
+        class="py-6 d-flex justify-content-center align-items-center"
+        data-test="DesignSystem-Chat-NewMessage"
+        role="button"
+      >
+        <span
+          class="NewMessage-Divider--left"
+        />
+        <span
+          class="Text Text--link Text--strong Text--small"
+          data-test="DesignSystem-Text"
+        >
+          2 New Messages
+        </span>
+        <span
+          class="NewMessage-Divider--right"
+        />
+      </div>
+    </div>
+  </div>
+</body>
+`;

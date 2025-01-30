@@ -64,6 +64,13 @@ export const data = [
     image: () => <StaticImage src="./images/Cards.png" alt="Card" imgStyle={imgStyle} />,
   },
   {
+    link: 'chatAncillaryComponent/usage/',
+    name: 'Chat',
+    design: 'Available',
+    code: 'Available',
+    image: () => <StaticImage src="./images/Chat.png" alt="Chat" imgStyle={imgStyle} />,
+  },
+  {
     link: 'checkbox/usage',
     name: 'Checkbox',
     design: 'Available',
