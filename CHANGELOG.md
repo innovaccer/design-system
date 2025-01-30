@@ -1,3 +1,64 @@
+## 4.2.0 (2025-1-30)
+
+### Highlights
+
+- feat(chatBubble): add new chat bubble component (25bf60e0)
+- feat(dateSeparator): add chat date separator component (5ec3f5f1)
+- feat(unreadMessage): add chat unread message separator component (c5fc0f16)
+- feat(newMessage): add chat new message separator component (b6ea6dd4)
+- feat(typingIndicator): add chat typing indicator component (c9f7ef4c)
+- feat(avatarGroup): add status indicator support in avatar group component (828bc9f8)
+- feat(avatarGroup): add presence support in avatar group component (377979d9)
+- feat(avatarSelection): add status & presence support in avatar selection (007425dd)
+- feat(avatarSelection): add figma code connect for avatar selection component (48c4baa3)
+- feat(avatarGroup): add figma code connect for avatar group component (5af38b76)
+- feat(chat): add figma code connect for chat ancillary component (20646dd8)
+- feat(typingIndicator): update size from regular to small in typing indicator component (f5322da4)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(chatBubble): add new chat bubble component (25bf60e0)
+- feat(dateSeparator): add chat date separator component (5ec3f5f1)
+- feat(unreadMessage): add chat unread message separator component (c5fc0f16)
+- feat(newMessage): add chat new message separator component (b6ea6dd4)
+- feat(typingIndicator): add chat typing indicator component (c9f7ef4c)
+- feat(avatarGroup): add status indicator support in avatar group component (828bc9f8)
+- feat(avatarGroup): add presence support in avatar group component (377979d9)
+- feat(avatarSelection): add status & presence support in avatar selection (007425dd)
+- feat(avatarSelection): add figma code connect for avatar selection component (48c4baa3)
+- feat(avatarGroup): add figma code connect for avatar group component (5af38b76)
+- feat(chat): add figma code connect for chat ancillary component (20646dd8)
+- feat(typingIndicator): update size from regular to small in typing indicator component (f5322da4)
+
+### Fixes
+
+- fix(css): update order of typography components css in final bundled css file (b29e3f2c)
+- fix(tooltip): update props order to accept classname in tooltip component (865a0240)
+
+### Improvements
+
+NA
+
+### Documentation
+
+- docs(avatarGroup): add presence & status section in avatar group (085ef5c7)
+- docs(chat): add chat ancillary components documentation (e27e6b32)
+- docs(chatBubble): add new chat bubble component documentation (4253816c)
+
+---
+
 ## 4.1.0 (2025-1-17)
 
 ### Highlights
