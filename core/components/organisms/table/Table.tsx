@@ -538,6 +538,19 @@ export class Table extends React.Component<TableProps, TableState> {
     }
   }
 
+  fetchMoreData = (direction: 'up' | 'down') => {
+    console.log('inside fetch more data>>', direction);
+    // Implement the logic to fetch more data based on the direction
+    // Return a promise that resolves with the new data
+    return new Promise((resolve) => {
+      // Simulate fetching data
+      setTimeout(() => {
+        const newData = []; // Replace with actual data fetching logic
+        resolve(newData);
+      }, 1000);
+    });
+  };
+
   updateData = (searchUpdate?: boolean) => {
     if (this.state.async) {
       this.setState({
@@ -963,6 +976,7 @@ export class Table extends React.Component<TableProps, TableState> {
             showHead={showHead}
             type={type}
             size={size}
+            fetchMoreData={this.fetchMoreData}
             headCellTooltip={headCellTooltip}
             separator={separator}
             draggable={draggable}

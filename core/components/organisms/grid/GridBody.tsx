@@ -27,13 +27,13 @@ export const GridBody = (props: GridBodyProps) => {
       const { scrollTop, scrollHeight, clientHeight } = gridBodyEl;
       if (scrollTop + clientHeight >= scrollHeight - 50 && !isFetching && !loading) {
         setIsFetching(true);
-        fetchMoreData('down').then((newData: any) => {
+        fetchMoreData?.('down').then((newData: any) => {
           setGridData((prevData) => [...prevData, ...newData]);
           setIsFetching(false);
         });
       } else if (scrollTop <= 50 && !isFetching && !loading) {
         setIsFetching(true);
-        fetchMoreData('up').then((newData: any) => {
+        fetchMoreData?.('up').then((newData: any) => {
           setGridData((prevData) => [...newData, ...prevData]);
           setIsFetching(false);
         });

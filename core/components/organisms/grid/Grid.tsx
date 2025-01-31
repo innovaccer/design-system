@@ -294,6 +294,7 @@ export interface GridProps extends BaseProps {
    * Show filters in Head Cell
    */
   showFilters: boolean;
+  fetchMoreData?: (direction: 'up' | 'down') => Promise<any>;
 }
 
 export interface GridState {
@@ -509,7 +510,7 @@ export class Grid extends React.Component<GridProps, GridState> {
 
     const { init, prevPageInfo } = this.state;
 
-    const { type, size, showHead, className, page, loading, loaderSchema } = this.props;
+    const { type, size, showHead, className, page, loading, loaderSchema, fetchMoreData } = this.props;
 
     const schema = getSchema(this.props.schema, loading, loaderSchema);
 
@@ -535,6 +536,7 @@ export class Grid extends React.Component<GridProps, GridState> {
             value={{
               ...this.props,
               ref: this.gridRef,
+              fetchMoreData: fetchMoreData,
             }}
           >
             {showHead && (

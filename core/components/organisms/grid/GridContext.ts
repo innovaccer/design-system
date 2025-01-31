@@ -9,6 +9,7 @@ type ContextProps = GridProps & {
 const context = React.createContext<ContextProps>({
   ...defaultProps,
   ref: null,
+  fetchMoreData: () => Promise.resolve([]),
 });
 
 export const GridProvider = context.Provider;
