@@ -19,11 +19,15 @@ export const GridBody = (props: GridBodyProps) => {
   const { data, ref, loading, error, withPagination, page, pageSize, totalRecords, errorTemplate, size, updateData } =
     context;
 
+  console.log('ttttt grid body', context);
+
   if (!loading && error) {
     return errorTemplate ? (typeof errorTemplate === 'function' ? errorTemplate({}) : errorTemplate) : null;
   }
 
   const { schema, prevPageInfo, updatePrevPageInfo, onSelect } = props;
+
+  const [isLoadingMore, setIsLoadingMore] = React.useState(false);
 
   React.useEffect(() => {
     const gridBodyEl = ref!.querySelector('.Grid-body');
@@ -80,10 +84,13 @@ export const GridBody = (props: GridBodyProps) => {
     tight: 24,
   };
 
-  const handleEndReached = () => {
-    console.log('ttttt end reached!!');
-    if (updateData) {
-      updateData();
+  const handleEndReached = async () => {
+    // if (updateData && !isLoadingMore) {
+    if (!isLoadingMore) {
+      console.log('ttttt update loading more');
+      setIsLoadingMore(true);
+      // await updateData();
+      // setIsLoadingMore(false);
     }
   };
 
@@ -97,6 +104,7 @@ export const GridBody = (props: GridBodyProps) => {
         totalLength={dataLength}
         renderItem={renderRow}
         onEndReached={handleEndReached} // Pass the callback
+        isLoadingMore={isLoadingMore} // Pass the loading state
       />
     </div>
   );

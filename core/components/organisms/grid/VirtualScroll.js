@@ -17,7 +17,8 @@ const VirtualScroll = ({
   totalLength,
   renderItem,
   onScroll,
-  onEndReached, // New callback prop
+  onEndReached,
+  isLoadingMore, // New prop for loading state
   forwardRef,
   ...rest
 }) => {
@@ -40,7 +41,7 @@ const VirtualScroll = ({
 
   useEffect(() => {
     updateOffset(initialOffset);
-  }, [initialOffset, updateOffset]);
+  }, [initialOffset]);
 
   const updateOffset = useCallback(
     (prevOffset) => {
@@ -185,6 +186,7 @@ const VirtualScroll = ({
               height: bottomPadding,
             }}
           />
+          {isLoadingMore && <div style={{ textAlign: 'center', padding: '10px' }}>Loading...</div>}
         </>
       )}
     </div>
