@@ -17,6 +17,7 @@ const VirtualScroll = ({
   totalLength,
   renderItem,
   onScroll,
+  onEndReached, // New callback prop
   forwardRef,
   ...rest
 }) => {
@@ -83,7 +84,7 @@ const VirtualScroll = ({
     (event) => {
       if (listRef.current) {
         const el = listRef.current;
-        const { scrollTop } = el;
+        const { scrollTop, scrollHeight, clientHeight } = el;
         const direction = Math.floor(scrollTop - lastScrollTop.current);
 
         if (direction === 0) return;
@@ -130,11 +131,16 @@ const VirtualScroll = ({
         }
 
         lastScrollTop.current = scrollTop;
+
+        // Check if user has scrolled to the end
+        if (scrollTop + clientHeight >= scrollHeight - minItemHeight) {
+          if (onEndReached) onEndReached();
+        }
       }
 
       if (onScroll) onScroll(event);
     },
-    [offset, avgRowHeight, buffer, length, minItemHeight, totalLength, onScroll]
+    [offset, avgRowHeight, buffer, length, minItemHeight, totalLength, onScroll, onEndReached]
   );
 
   const renderItems = (start, end) => {

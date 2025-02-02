@@ -1,8 +1,6 @@
 import * as React from 'react';
-// import VirtualScroll from 'react-dynamic-virtual-scroll';
 import { GridRow } from './GridRow';
 import { GridState, onSelectFn, Schema, updatePrevPageInfoFunction } from './Grid';
-// import { GridProps } from '@/index.type';
 import GridContext from './GridContext';
 import styles from '@css/components/grid.module.css';
 import { GridProps } from '@/index.type';
@@ -18,7 +16,8 @@ export interface GridBodyProps {
 export const GridBody = (props: GridBodyProps) => {
   const context = React.useContext(GridContext);
 
-  const { data, ref, loading, error, withPagination, page, pageSize, totalRecords, errorTemplate, size } = context;
+  const { data, ref, loading, error, withPagination, page, pageSize, totalRecords, errorTemplate, size, updateData } =
+    context;
 
   if (!loading && error) {
     return errorTemplate ? (typeof errorTemplate === 'function' ? errorTemplate({}) : errorTemplate) : null;
@@ -81,23 +80,25 @@ export const GridBody = (props: GridBodyProps) => {
     tight: 24,
   };
 
+  const handleEndReached = () => {
+    console.log('ttttt end reached!!');
+    if (updateData) {
+      updateData();
+    }
+  };
+
   return (
-    // <div className={styles['Grid-body']}>
-    //   {getArrayList().map((item, i) => {
-    //     return renderRow(i, item);
-    //   })}
-    // </div>
-    <VirtualScroll
-      // className="Grid-body"
-      className={styles['Grid-body']}
-      minItemHeight={minRowHeight[size]}
-      totalLength={dataLength}
-      length={20}
-      buffer={7}
-      // length={dataLength}
-      // buffer={0}
-      renderItem={renderRow}
-    />
+    <div className={styles['Grid-body']} ref={ref}>
+      <VirtualScroll
+        className={styles['Grid-body']}
+        buffer={7}
+        length={20}
+        minItemHeight={minRowHeight[size]}
+        totalLength={dataLength}
+        renderItem={renderRow}
+        onEndReached={handleEndReached} // Pass the callback
+      />
+    </div>
   );
 };
 

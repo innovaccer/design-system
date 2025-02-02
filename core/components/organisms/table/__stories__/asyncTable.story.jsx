@@ -115,7 +115,8 @@ const customCode = `
     return paginatedData;
   };
 
-  const data = ${JSON.stringify(data.slice(0, 10), null, 4)};
+  const datta = ${JSON.stringify(data.slice(0, 10), null, 4)};
+  const data = [...datta, ...datta, ...datta, ...datta, ...datta, ...datta, ...datta, ...datta, ...datta, ...datta];
   const [formattedData, setFormattedData] = React.useState(data);
 
   const schema = [
@@ -292,7 +293,7 @@ const customCode = `
   }
 
   return (
-    <div>
+    <div className="vh-75">
       <Card className="h-100 overflow-hidden">
         <Table
           loaderSchema={loaderSchema}
@@ -307,8 +308,7 @@ const customCode = `
           }}
           withCheckbox={true}
           onSelect={(rowIndex, selected, selectedList, selectAll) => console.log(\`on-select: - rowIndex: \${ rowIndex } selected: \${ selected } selectedList: \${ JSON.stringify(selectedList) } selectAll: \${ selectAll } \`)}
-          withPagination={true}
-          pageSize={5}
+          withPagination={false}
           onPageChange={newPage => console.log(\`on-page-change:- \${newPage}\`)}
         />
       </Card>
