@@ -20,7 +20,7 @@ export const GridBody = (props: GridBodyProps) => {
   const { data, ref, loading, error, withPagination, page, pageSize, totalRecords, errorTemplate, size, updateData } =
     context;
 
-  console.log('ttttt grid body', context);
+  console.log('ttttt grid body', context, 'data', data);
 
   if (!loading && error) {
     return errorTemplate ? (typeof errorTemplate === 'function' ? errorTemplate({}) : errorTemplate) : null;
@@ -60,6 +60,7 @@ export const GridBody = (props: GridBodyProps) => {
     : totalRecords;
 
   const renderRow = (rowIndex: number, item: object) => {
+    console.log('render row', data, 'rowIndex', rowIndex, 'item', item);
     return (
       <GridRow
         key={rowIndex}
@@ -67,9 +68,25 @@ export const GridBody = (props: GridBodyProps) => {
         data={!item ? data[rowIndex] : item}
         schema={schema}
         onSelect={onSelect}
+        // className="VS-item"
       />
     );
   };
+
+  // const renderRow = React.useCallback(
+  //   (rowIndex: number, item: object) => {
+  //     return (
+  //       <GridRow
+  //         key={rowIndex}
+  //         rowIndex={rowIndex}
+  //         data={!item ? data[rowIndex] : item}
+  //         schema={schema}
+  //         onSelect={onSelect}
+  //       />
+  //     );
+  //   },
+  //   [data, schema, onSelect]
+  // );
 
   // const getArrayList = () => {
   //   if (loading && !data.length) {
@@ -90,8 +107,8 @@ export const GridBody = (props: GridBodyProps) => {
       // if (!isLoadingMore) {
       console.log('ttttt update loading more');
       setIsLoadingMore(true);
-      await updateData();
-      setIsLoadingMore(false);
+      // await updateData();
+      // setIsLoadingMore(false);
     }
   };
 
