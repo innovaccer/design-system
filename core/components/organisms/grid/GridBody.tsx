@@ -5,6 +5,7 @@ import GridContext from './GridContext';
 import styles from '@css/components/grid.module.css';
 import { GridProps } from '@/index.type';
 import VirtualScroll from './VirtualScroll';
+import { ProgressBar } from '@/index';
 
 export interface GridBodyProps {
   schema: Schema;
@@ -85,27 +86,31 @@ export const GridBody = (props: GridBodyProps) => {
   };
 
   const handleEndReached = async () => {
-    // if (updateData && !isLoadingMore) {
-    if (!isLoadingMore) {
+    if (updateData && !isLoadingMore) {
+      // if (!isLoadingMore) {
       console.log('ttttt update loading more');
       setIsLoadingMore(true);
-      // await updateData();
-      // setIsLoadingMore(false);
+      await updateData();
+      setIsLoadingMore(false);
     }
   };
 
   return (
     <div className={styles['Grid-body']} ref={ref}>
+      {isLoadingMore && <ProgressBar value={100} className="position-absolute" />}
+
       <VirtualScroll
         className={styles['Grid-body']}
-        buffer={7}
+        buffer={5}
         length={20}
         minItemHeight={minRowHeight[size]}
         totalLength={dataLength}
         renderItem={renderRow}
-        onEndReached={handleEndReached} // Pass the callback
-        isLoadingMore={isLoadingMore} // Pass the loading state
+        onEndReached={handleEndReached}
+        // isLoadingMore={isLoadingMore}
       />
+
+      {isLoadingMore && <ProgressBar className="position-absolute bottom-0" value={50} />}
     </div>
   );
 };

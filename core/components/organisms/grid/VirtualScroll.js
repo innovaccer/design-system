@@ -18,7 +18,6 @@ const VirtualScroll = ({
   renderItem,
   onScroll,
   onEndReached,
-  isLoadingMore, // New prop for loading state
   forwardRef,
   ...rest
 }) => {
@@ -29,15 +28,15 @@ const VirtualScroll = ({
   const lastScrollTop = useRef(0);
 
   // sets the initial scroll position of the list
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.requestAnimationFrame(() => {
-        if (listRef.current) {
-          listRef.current.scrollTop = offset * avgRowHeight;
-        }
-      });
-    }
-  }, [offset, avgRowHeight]);
+  // useEffect(() => {
+  //   if (typeof window !== 'undefined') {
+  //     window.requestAnimationFrame(() => {
+  //       if (listRef.current) {
+  //         // listRef.current.scrollTop = offset * avgRowHeight;
+  //       }
+  //     });
+  //   }
+  // }, [offset, avgRowHeight]);
 
   useEffect(() => {
     updateOffset(initialOffset);
@@ -94,7 +93,7 @@ const VirtualScroll = ({
         let newOffset = offset;
         let newAvgRowHeight = avgRowHeight;
         const start = Math.min(offset, buffer);
-
+        // debugger;
         // cursor scrolls down
         if (direction > 0) {
           if (offset < totalLength - length) {
@@ -158,6 +157,8 @@ const VirtualScroll = ({
   const start = Math.max(0, offset - buffer);
   const end = Math.min(offset + (length + buffer) - 1, totalLength - 1);
 
+  console.log('sssstart>>>', start, 'end', end);
+
   const topPadding = Math.max(0, start * avgRowHeight);
   const bottomPadding = Math.max(0, (totalLength - end - 1) * avgRowHeight);
 
@@ -171,6 +172,7 @@ const VirtualScroll = ({
       }}
       onScroll={onScrollHandler}
     >
+      {/* <ProgressBar value={50} className="position-absolute" /> */}
       {init && (
         <>
           <div
@@ -186,9 +188,10 @@ const VirtualScroll = ({
               height: bottomPadding,
             }}
           />
-          {isLoadingMore && <div style={{ textAlign: 'center', padding: '10px' }}>Loading...</div>}
+          {/* {isLoadingMore && <div style={{ textAlign: 'center', padding: '10px' }}>Loading...</div>} */}
         </>
       )}
+      {/* <ProgressBar className="position-absolute bottom-0" value={50} /> */}
     </div>
   );
 };
