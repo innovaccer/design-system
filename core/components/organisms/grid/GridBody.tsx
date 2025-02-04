@@ -17,8 +17,20 @@ export interface GridBodyProps {
 export const GridBody = (props: GridBodyProps) => {
   const context = React.useContext(GridContext);
 
-  const { data, ref, loading, error, withPagination, page, pageSize, totalRecords, errorTemplate, size, updateData } =
-    context;
+  const {
+    data,
+    ref,
+    loading,
+    error,
+    withPagination,
+    page,
+    pageSize,
+    totalRecords,
+    errorTemplate,
+    size,
+    // updateData,
+    updateVirtualData,
+  } = context;
 
   console.log('ttttt grid body', context, 'data', data);
 
@@ -29,6 +41,7 @@ export const GridBody = (props: GridBodyProps) => {
   const { schema, prevPageInfo, updatePrevPageInfo, onSelect } = props;
 
   const [isLoadingMore, setIsLoadingMore] = React.useState(false);
+  const [currentPage, setCurrentPage] = React.useState(1); // Track the current page
 
   React.useEffect(() => {
     const gridBodyEl = ref!.querySelector('.Grid-body');
@@ -59,19 +72,33 @@ export const GridBody = (props: GridBodyProps) => {
     ? Math.min(totalRecords, pageSize)
     : totalRecords;
 
-  const renderRow = (rowIndex: number, item: object) => {
-    console.log('render row', data, 'rowIndex', rowIndex, 'item', item);
-    return (
-      <GridRow
-        key={rowIndex}
-        rowIndex={rowIndex}
-        data={!item ? data[rowIndex] : item}
-        schema={schema}
-        onSelect={onSelect}
-        // className="VS-item"
-      />
-    );
-  };
+  console.log(
+    'ttttt grid body',
+    data,
+    'dataLength',
+    dataLength,
+    'totalRecords',
+    totalRecords,
+    'page',
+    page,
+    'pageSize',
+    pageSize
+  );
+
+  const renderRow = React.useCallback(
+    (rowIndex: number, item: object) => {
+      return (
+        <GridRow
+          key={rowIndex}
+          rowIndex={rowIndex}
+          data={!item ? data[rowIndex] : item}
+          schema={schema}
+          onSelect={onSelect}
+        />
+      );
+    },
+    [data, schema, onSelect]
+  );
 
   // const renderRow = React.useCallback(
   //   (rowIndex: number, item: object) => {
@@ -103,12 +130,14 @@ export const GridBody = (props: GridBodyProps) => {
   };
 
   const handleEndReached = async () => {
-    if (updateData && !isLoadingMore) {
-      // if (!isLoadingMore) {
-      console.log('ttttt update loading more');
+    console.log('<<<end reached>>>', updateVirtualData, isLoadingMore);
+
+    // await updateVirtualData({ page: currentPage + 1, pageSize });
+    if (updateVirtualData && !isLoadingMore) {
       setIsLoadingMore(true);
-      // await updateData();
-      // setIsLoadingMore(false);
+      await updateVirtualData({ page: currentPage + 1, pageSize });
+      setCurrentPage((prevPage) => prevPage + 1);
+      setIsLoadingMore(false);
     }
   };
 
@@ -124,9 +153,7 @@ export const GridBody = (props: GridBodyProps) => {
         totalLength={dataLength}
         renderItem={renderRow}
         onEndReached={handleEndReached}
-        // isLoadingMore={isLoadingMore}
       />
-
       {isLoadingMore && <ProgressBar className="position-absolute bottom-0" value={50} />}
     </div>
   );
