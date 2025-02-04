@@ -56,13 +56,7 @@ export const syncTable = () => {
 };
 
 const customCode = `() => {
-  const data = ${JSON.stringify(
-    [...Array(100)].map((_, index) => {
-      return data[index % 10];
-    }),
-    null,
-    4
-  )};
+  const data = ${JSON.stringify(data, null, 4)};
 
   const schema = [
     {

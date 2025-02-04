@@ -32,8 +32,6 @@ export const GridBody = (props: GridBodyProps) => {
     updateVirtualData,
   } = context;
 
-  console.log('ttttt grid body', context, 'data', data);
-
   if (!loading && error) {
     return errorTemplate ? (typeof errorTemplate === 'function' ? errorTemplate({}) : errorTemplate) : null;
   }
@@ -41,7 +39,7 @@ export const GridBody = (props: GridBodyProps) => {
   const { schema, prevPageInfo, updatePrevPageInfo, onSelect } = props;
 
   const [isLoadingMore, setIsLoadingMore] = React.useState(false);
-  const [currentPage, setCurrentPage] = React.useState(1); // Track the current page
+  const [currentPage, setCurrentPage] = React.useState(1);
 
   React.useEffect(() => {
     const gridBodyEl = ref!.querySelector('.Grid-body');
@@ -132,12 +130,14 @@ export const GridBody = (props: GridBodyProps) => {
   const handleEndReached = async () => {
     console.log('<<<end reached>>>', updateVirtualData, isLoadingMore);
 
-    // await updateVirtualData({ page: currentPage + 1, pageSize });
     if (updateVirtualData && !isLoadingMore) {
       setIsLoadingMore(true);
-      await updateVirtualData({ page: currentPage + 1, pageSize });
-      setCurrentPage((prevPage) => prevPage + 1);
-      setIsLoadingMore(false);
+      try {
+        await updateVirtualData({ page: currentPage + 1, pageSize });
+        setCurrentPage((prevPage) => prevPage + 1);
+      } finally {
+        setIsLoadingMore(false);
+      }
     }
   };
 
