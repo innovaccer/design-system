@@ -261,6 +261,7 @@ const BodyCell = (props: BodyCellProps) => {
           {nestedRowData ? (
             <Icon
               className={styles['Grid-nestedRowTrigger']}
+              data-test="DesignSystem-Grid-nestedRowTrigger"
               name={expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
               size={20}
               appearance={'default'}

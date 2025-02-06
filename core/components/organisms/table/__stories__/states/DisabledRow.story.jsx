@@ -290,7 +290,6 @@ export default {
         title: 'Disabled Row In Table',
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead'],
         },
       },
     },

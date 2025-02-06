@@ -227,10 +227,20 @@ describe('renders children with nestedRows', () => {
       displayName: 'Name',
     },
   ];
-  const data = [{ name: 'Zara' }];
-  it('renders children with nestedRows', () => {
+
+  it('renders children with nestedRows & _expandNestedRow: true', () => {
+    const data = [{ name: 'Zara', _expandNestedRow: true }];
     render(<Grid schema={schema} data={data} nestedRows={true} nestedRowRenderer={nestedRowRenderer} />);
     expect(nestedRowRenderer).toBeCalled();
+    expect(nestedRowRenderer).toBeCalledWith({ data: data[0], schema, loading: false, rowIndex: 0, expanded: true });
+  });
+
+  it('renders children with nestedRows & _expandNestedRow: false', () => {
+    const data = [{ name: 'Zara' }];
+
+    render(<Grid schema={schema} data={data} nestedRows={true} nestedRowRenderer={nestedRowRenderer} />);
+    expect(nestedRowRenderer).toBeCalled();
+    expect(nestedRowRenderer).toBeCalledWith({ data: data[0], schema, loading: false, rowIndex: 0, expanded: false });
   });
 });
 

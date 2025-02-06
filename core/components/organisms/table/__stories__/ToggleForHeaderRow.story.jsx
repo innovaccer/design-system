@@ -139,7 +139,6 @@ export default {
         title: 'Toggle Option For Header Row',
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead'],
         },
       },
     },

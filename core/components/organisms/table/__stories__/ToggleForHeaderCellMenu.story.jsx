@@ -85,7 +85,6 @@ export default {
         title: 'Toggle Option For Header Cell Menu',
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead'],
         },
       },
     },
