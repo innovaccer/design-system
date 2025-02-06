@@ -40,6 +40,7 @@ export const GridBody = (props: GridBodyProps) => {
 
   const [isLoadingMore, setIsLoadingMore] = React.useState(false);
   const [currentPage, setCurrentPage] = React.useState(1);
+  // const [scrollTop, setScrollTop] = React.useState(0);
 
   React.useEffect(() => {
     const gridBodyEl = ref!.querySelector('.Grid-body');
@@ -131,6 +132,11 @@ export const GridBody = (props: GridBodyProps) => {
     console.log('<<<end reached>>>', updateVirtualData, isLoadingMore);
 
     if (updateVirtualData && !isLoadingMore) {
+      // const gridBodyEl = ref!.querySelector('.Grid-body');
+      // if (gridBodyEl) {
+      //   setScrollTop(gridBodyEl.scrollTop);
+      // }
+
       setIsLoadingMore(true);
       try {
         await updateVirtualData({ page: currentPage + 1, pageSize });
@@ -140,6 +146,13 @@ export const GridBody = (props: GridBodyProps) => {
       }
     }
   };
+
+  // React.useEffect(() => {
+  //   const gridBodyEl = ref!.querySelector('.Grid-body');
+  //   if (gridBodyEl) {
+  //     gridBodyEl.scrollTop = scrollTop;
+  //   }
+  // }, [scrollTop, data]);
 
   return (
     <div className={styles['Grid-body']} ref={ref}>
@@ -153,6 +166,7 @@ export const GridBody = (props: GridBodyProps) => {
         totalLength={dataLength}
         renderItem={renderRow}
         onEndReached={handleEndReached}
+        currentPage={currentPage}
       />
       {isLoadingMore && <ProgressBar className="position-absolute bottom-0" value={50} />}
     </div>

@@ -19,6 +19,7 @@ const VirtualScroll = ({
   onScroll,
   onEndReached,
   forwardRef,
+  currentPage,
   ...rest
 }) => {
   const [offset, setOffset] = useState(initialOffset);
@@ -31,12 +32,31 @@ const VirtualScroll = ({
   // useEffect(() => {
   //   if (typeof window !== 'undefined') {
   //     window.requestAnimationFrame(() => {
+  //       console.log('currentPage>>>', currentPage);
   //       if (listRef.current) {
   //         // listRef.current.scrollTop = offset * avgRowHeight;
+  //         // listRef.current.scrollTop = lastScrollTop.current;
+  //         listRef.current.scrollTop = 500;
   //       }
   //     });
   //   }
-  // }, [offset, avgRowHeight]);
+  //   // }, [offset, avgRowHeight]);
+  // }, [currentPage]);
+
+  // sets the initial scroll position of the list
+  // useEffect(() => {
+  //   if (typeof window !== 'undefined') {
+  //     window.requestAnimationFrame(() => {
+  //       console.log('currentPage>>>', currentPage, 'lastScrollTop.current', lastScrollTop.current);
+  //       if (listRef.current) {
+  //         // listRef.current.scrollTop = offset * avgRowHeight;
+  //         // listRef.current.scrollTop = lastScrollTop.current;
+  //         // listRef.current.scrollTop = 500;
+  //       }
+  //     });
+  //   }
+  //   // }, [offset, avgRowHeight]);
+  // }, [currentPage]);
 
   useEffect(() => {
     updateOffset(initialOffset);
