@@ -296,7 +296,6 @@ export default {
         title: 'Selection Behavior in Table',
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead'],
         },
       },
     },

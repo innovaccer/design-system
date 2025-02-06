@@ -212,7 +212,6 @@ export default {
         title: 'Tight Table',
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead'],
         },
       },
     },

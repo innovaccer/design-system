@@ -5,6 +5,7 @@ export default [
     email: 'bheeran0@altervista.org',
     gender: 'Female',
     status: 'Failed',
+    _expandNestedRow: true,
   },
   {
     firstName: 'Frazer',
@@ -22,6 +23,7 @@ export default [
     },
     gender: 'Male',
     status: 'Completed',
+    _expandNestedRow: true,
   },
   {
     firstName: 'Randy',

@@ -148,7 +148,6 @@ export default {
         title: 'Error State In Table',
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead'],
         },
       },
     },

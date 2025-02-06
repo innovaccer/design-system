@@ -997,9 +997,7 @@ export default {
         imports: {
           debounce: debounce,
         },
-        props: {
-          exclude: ['showHead'],
-        },
+        props: {},
         noProps: true,
         noSandbox: true,
       },

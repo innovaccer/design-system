@@ -423,7 +423,6 @@ export default {
         title: 'States in Data table',
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead'],
         },
       },
     },
