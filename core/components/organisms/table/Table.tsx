@@ -587,7 +587,7 @@ export class Table extends React.Component<TableProps, TableState> {
 
     if (fetchData) {
       fetchData(opts).then((res: any) => {
-        console.log('res', res);
+        console.log('<<<<newList>>>> res', res, 'opts', opts);
         console.log('res data-> ', res.data);
         const newList = [...this.state.data, ...res.data];
         console.log('<<<<newList>>>>', newList);

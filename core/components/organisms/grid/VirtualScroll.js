@@ -27,6 +27,7 @@ const VirtualScroll = ({
   const [init, setInit] = useState(false);
   const listRef = useRef(null);
   const lastScrollTop = useRef(0);
+  const endReached = useRef(false); // Flag to track if end has been reached
 
   // sets the initial scroll position of the list
   // useEffect(() => {
@@ -151,14 +152,26 @@ const VirtualScroll = ({
         }
 
         lastScrollTop.current = scrollTop;
+        if (onScroll) onScroll(event);
+
+        // Check if user has scrolled to the end
+        // if (scrollTop + clientHeight >= scrollHeight - minItemHeight) {
+        //   console.log('>>>enddd reacheddd');
+        //   if (onEndReached) {
+        //     onEndReached();
+        //   }
+        // }
 
         // Check if user has scrolled to the end
         if (scrollTop + clientHeight >= scrollHeight - minItemHeight) {
-          if (onEndReached) onEndReached();
+          if (!endReached.current && onEndReached) {
+            endReached.current = true;
+            onEndReached();
+          }
+        } else {
+          endReached.current = false; // Reset the flag when not at the end
         }
       }
-
-      if (onScroll) onScroll(event);
     },
     [offset, avgRowHeight, buffer, length, minItemHeight, totalLength, onScroll, onEndReached]
   );
