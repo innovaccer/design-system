@@ -206,6 +206,13 @@ export const data = [
     image: () => <StaticImage src="./images/MetaList.png" alt="Meta list" imgStyle={imgStyle} />,
   },
   {
+    link: 'meter/usage',
+    name: 'Meter',
+    design: 'Available',
+    code: 'Available',
+    image: () => <StaticImage src="./images/Meter.png" alt="Meter" imgStyle={imgStyle} />,
+  },
+  {
     link: 'modals/usage',
     name: 'Modals',
     design: 'Available',

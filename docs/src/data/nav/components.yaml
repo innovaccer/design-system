@@ -154,6 +154,10 @@ menus:
   - label: Meta List
     link: /components/metaList/usage/
 
+  - label: Meter
+    link: /components/meter/usage/
+    hideInMobile: true
+
   - label: Modals
     link: /components/modals/usage/
     hideInMobile: true
