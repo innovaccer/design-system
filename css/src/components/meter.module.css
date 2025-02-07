@@ -1,0 +1,39 @@
+.Meter {
+  display: flex;
+  align-items: center;
+}
+
+.Meter-Step {
+  border-radius: 50%;
+}
+
+.Meter-Step--small {
+  width: var(--spacing-m);
+  height: var(--spacing);
+}
+
+.Meter-Step--regular {
+  width: var(--spacing);
+  height: var(--spacing);
+}
+
+.Meter-Step--large {
+  width: var(--spacing-l);
+  height: var(--spacing-l);
+}
+
+.Meter-Step--info {
+  background: var(--primary);
+}
+
+.Meter-Step--warning {
+  background: var(--warning);
+}
+
+.Meter-Step--alert {
+  background: var(--alert);
+}
+
+.Meter-Step--success {
+  background: var(--success);
+}
