@@ -5,9 +5,11 @@ import defaultProps from './defaultProps';
 
 type ContextProps = GridProps & {
   ref: GridRef;
+  updateVirtualData: (data: any) => void;
 };
 const context = React.createContext<ContextProps>({
   ...defaultProps,
+  updateVirtualData: () => {},
   ref: null,
 });
 

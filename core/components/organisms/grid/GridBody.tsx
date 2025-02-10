@@ -142,7 +142,7 @@ export const GridBody = (props: GridBodyProps) => {
         await updateVirtualData({ page: currentPage + 1, pageSize });
         setCurrentPage((prevPage) => prevPage + 1);
       } finally {
-        setIsLoadingMore(false);
+        // setIsLoadingMore(false);
       }
     }
   };
@@ -156,7 +156,7 @@ export const GridBody = (props: GridBodyProps) => {
 
   return (
     <div className={styles['Grid-body']} ref={ref}>
-      {isLoadingMore && <ProgressBar value={100} className="position-absolute" />}
+      {isLoadingMore && <ProgressBar value={100} className="position-absolute" state="indeterminate" size="small" />}
 
       <VirtualScroll
         className={styles['Grid-body']}
@@ -168,7 +168,9 @@ export const GridBody = (props: GridBodyProps) => {
         onEndReached={handleEndReached}
         currentPage={currentPage}
       />
-      {isLoadingMore && <ProgressBar className="position-absolute bottom-0" value={50} />}
+      {isLoadingMore && (
+        <ProgressBar className="position-absolute bottom-0" value={50} state="indeterminate" size="small" />
+      )}
     </div>
   );
 };
