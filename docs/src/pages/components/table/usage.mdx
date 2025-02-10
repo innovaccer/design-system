@@ -449,3 +449,39 @@ Bulk actions in table are used to bring changes to the table and actions in page
 
 ![Bulk actions in table vs Actions in page header](./images/bulk-action-in-table.png)
 <Caption>Bulk actions in table vs Actions in page header</Caption>
+
+#### Infinite Scrolling
+
+Infinite scrolling in tables dynamically loads rows as the user scrolls, improving performance and user experience for large datasets by removing the need for pagination.
+
+**Note:** Always display the count of loaded rows versus total rows to help users track their current position in the dataset.
+
+##### When to use?
+
+Infinite scroll is ideal when:
+
+<ul>
+  <li>Users require a seamless experience.</li>
+  <li>The primary goal is exploration.</li>
+  <li>The dataset is very large.</li>
+  <li>Returning to specific information is not essential.</li>
+  <li>Users need to compare items in an extended list.</li>
+</ul>
+
+![Infinite scroll in tables](./images/infinite-scroll.png)
+<Caption>Infinite scroll in tables</Caption>
+
+#### Pagination
+
+Pagination in tables divides large datasets into smaller chunks across multiple pages, letting users manually navigate through a specific number of rows at a time instead of displaying all rows at once. 
+
+##### When to use?
+
+Pagination is ideal when:
+<ul>
+  <li>Users are searching for a specific item or row.</li>
+  <li>Returning to previously viewed data is important.</li>
+</ul>
+
+![Pagination in tables](./images/pagination.png)
+<Caption>Pagination in tables</Caption>
