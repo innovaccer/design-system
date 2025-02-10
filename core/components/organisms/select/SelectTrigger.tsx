@@ -131,7 +131,6 @@ const SelectTrigger = (props: SelectTriggerProps) => {
       showTooltip={!openPopover}
       tooltip={value}
       elementRef={elementRef}
-      className="w-100"
       triggerClass="w-100"
     >
       <button
