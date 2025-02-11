@@ -1,4 +1,44 @@
-## 4.2.0 (2025-1-30)
+## 4.3.0 (2025-02-11)
+
+### Highlights
+
+- feat(meter): add new meter component (8610ed3d)
+- feat(organisms): add figma code connect for organisms components (e8cfb1c0)
+- feat(table): add support to expand nested rows in table (abf0364e)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(meter): add new meter component (8610ed3d)
+- feat(organisms): add figma code connect for organisms components (e8cfb1c0)
+- feat(table): add support to expand nested rows in table (abf0364e)
+
+### Fixes
+
+- fix(select): update select trigger classes for overflow behavior (543aa6ce)
+
+### Improvements
+
+NA
+
+### Documentation
+
+- docs(meter): add meter component documentation (804ef4dc)
+
+---
+
+## 4.2.0 (2025-01-30)
 
 ### Highlights
 
@@ -59,7 +99,7 @@ NA
 
 ---
 
-## 4.1.0 (2025-1-17)
+## 4.1.0 (2025-01-17)
 
 ### Highlights
 
