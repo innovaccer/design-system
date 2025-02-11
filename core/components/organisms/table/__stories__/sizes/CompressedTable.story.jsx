@@ -249,7 +249,6 @@ export default {
         title: 'Compressed Table',
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead'],
         },
       },
     },

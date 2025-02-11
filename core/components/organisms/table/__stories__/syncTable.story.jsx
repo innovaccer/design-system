@@ -220,7 +220,6 @@ export default {
         title: 'Sync Table',
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead'],
         },
       },
     },

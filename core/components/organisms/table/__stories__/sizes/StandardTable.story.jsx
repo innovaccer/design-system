@@ -210,7 +210,6 @@ export default {
         title: 'Standard Table',
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead'],
         },
       },
     },

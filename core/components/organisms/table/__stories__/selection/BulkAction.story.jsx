@@ -338,7 +338,6 @@ export default {
         title: 'Table with Bulk Actions',
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead'],
         },
       },
     },

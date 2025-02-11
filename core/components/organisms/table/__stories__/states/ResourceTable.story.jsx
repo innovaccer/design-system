@@ -320,7 +320,6 @@ export default {
         title: 'States in Resource Table',
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead'],
         },
       },
     },

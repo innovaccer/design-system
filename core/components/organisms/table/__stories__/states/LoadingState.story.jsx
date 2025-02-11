@@ -38,7 +38,6 @@ export default {
         title: 'Loading State in Table',
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead'],
         },
       },
     },

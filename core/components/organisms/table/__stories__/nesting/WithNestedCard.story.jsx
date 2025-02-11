@@ -180,8 +180,8 @@ const customCode = `() => {
       statusType: "Error",
       errorCode: 2204,
       className: "File not found",
-      errorMessage: "Cannot fetch files"
-
+      errorMessage: "Cannot fetch files",
+      _expandNestedRow: true,
     },
     {
       "firstName": "Frazer",
@@ -202,6 +202,7 @@ const customCode = `() => {
       status: "Completed",
       statusType: "Done",
       className: "Executed",
+      _expandNestedRow: true,
     },
     {
       firstName: 'Randy',
@@ -353,7 +354,6 @@ export default {
         title: 'Nested Table With Nested Cards',
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead'],
         },
       },
     },

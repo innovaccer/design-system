@@ -23,8 +23,10 @@ export const GridRow = (props: GridRowProps) => {
 
   const { schema, data, rowIndex: rI, onSelect, className } = props;
 
+  const { _expandNestedRow } = data;
+
   const rowRef = React.useRef<HTMLDivElement>(null);
-  const [expanded, setExpanded] = React.useState<boolean>(false);
+  const [expanded, setExpanded] = React.useState<boolean>(_expandNestedRow || false);
 
   const rowClasses = classNames(styles['Grid-row'], styles['Grid-row--body'], {
     [styles['Grid-row--selected']]: data._selected,

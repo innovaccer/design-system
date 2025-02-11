@@ -1,14 +1,89 @@
 import * as React from 'react';
 import { Card, Table } from '@/index';
-import { nestedRowRenderer } from '@/components/organisms/grid/__stories__/_common_/nestedRowRenderer';
-import schema from '@/components/organisms/grid/__stories__/_common_/schema';
 import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/_common_/types';
-import data from '@/components/organisms/grid/__stories__/_common_/data';
+import data from '@/components/organisms/grid/__stories__/_common_/nestedData.ts';
 import { action } from '@/utils/action';
 
 // CSF format story
 export const withNestedRows = () => {
-  schema[0].width = 400;
+  const schema = [
+    {
+      name: 'id',
+      displayName: 'Case and Patients',
+      width: '25%',
+    },
+    {
+      name: '',
+      displayName: 'Address',
+      width: '20%',
+    },
+    {
+      name: '',
+      displayName: 'Programs',
+      width: '15%',
+    },
+    {
+      name: 'status',
+      displayName: 'Status',
+      width: '15%',
+      cellType: 'STATUS_HINT',
+      translate: (a) => ({
+        title: a.status,
+        statusAppearance: a.status === 'Enrolled' ? 'warning' : a.status === 'Completed' ? 'success' : 'alert',
+      }),
+    },
+    {
+      name: '',
+      width: '25%',
+      displayName: 'Referred on',
+    },
+  ];
+
+  const nestedRowRenderer = (props) => {
+    const { data, loading } = props;
+
+    const nestedRowSchema = [
+      {
+        name: '',
+        cellType: 'WITH_META_LIST',
+        width: '25%',
+        translate: (a) => ({
+          title: a.name,
+          metaList: [`${a.dob} (${a.age}), ${a.gender}`],
+        }),
+      },
+      {
+        name: 'address',
+        cellType: 'DEFAULT',
+        width: '20%',
+      },
+      {
+        name: 'program',
+        cellType: 'DEFAULT',
+        width: '15%',
+        translate: (a) => ({
+          title: a.program,
+        }),
+      },
+      {
+        name: 'status',
+        displayName: 'Status',
+        width: '15%',
+        cellType: 'STATUS_HINT',
+        translate: (a) => ({
+          title: a.status,
+          statusAppearance: a.status === 'Enrolled' ? 'warning' : a.status === 'Completed' ? 'success' : 'alert',
+        }),
+      },
+      {
+        name: 'referredOn',
+        width: '25%',
+        displayName: 'Referred on',
+      },
+    ];
+
+    return <Table loading={loading} showHead={false} schema={nestedRowSchema} data={data.patientList} />;
+  };
 
   return (
     <div className="vh-75">
@@ -33,139 +108,99 @@ const customCode = `
 
   const schema = [
     {
-      name: 'name',
-      displayName: 'Name',
-      width: 300,
-      resizable: true,
-      separator: true,
-      tooltip: true,
-      translate: a => ({
-        title: \`\${a.firstName} \${a.lastName}\`,
-        firstName: a.firstName,
-        lastName: a.lastName
-      }),
-      filters: [
-        { label: 'A-G', value: 'a-g' },
-        { label: 'H-R', value: 'h-r' },
-        { label: 'S-Z', value: 's-z' },
-      ],
-      onFilterChange: (a, filters) => {
-        for (const filter of filters) {
-          switch (filter) {
-            case 'a-g':
-              if (a.firstName[0].toLowerCase() >= 'a' && a.firstName[0].toLowerCase() <= 'g') return true;
-              break;
-            case 'h-r':
-              if (a.firstName[0].toLowerCase() >= 'h' && a.firstName[0].toLowerCase() <= 'r') return true;
-              break;
-            case 's-z':
-              if (a.firstName[0].toLowerCase() >= 's' && a.firstName[0].toLowerCase() <= 'z') return true;
-              break;
-          }
-        }
-        return false;
-      },
-      cellType: 'AVATAR_WITH_TEXT',
+      name: 'id',
+      displayName: 'Case and Patients',
+      width: '25%',
     },
     {
-      name: 'email',
-      displayName: 'Email',
-      width: 350,
-      resizable: true,
-      sorting: false,
-      cellType: 'WITH_META_LIST'
+      name: '',
+      displayName: 'Address',
+      width: '20%',
     },
     {
-      name: 'gender',
-      displayName: 'Gender',
-      width: 200,
-      resizable: true,
-      comparator: (a, b) => a.gender.localeCompare(b.gender),
+      name: '',
+      displayName: 'Programs',
+      width: '15%',
+    },
+    {
+      name: 'status',
+      displayName: 'Status',
+      width: '15%',
       cellType: 'STATUS_HINT',
-      translate: a => ({
-        title: a.gender,
-        statusAppearance: (a.gender === 'Female') ? 'alert' : 'success'
+      translate: (a) => ({
+        title: a.status,
+        statusAppearance: a.status === 'Enrolled' ? 'warning' : a.status === 'Completed' ? 'success' : 'alert',
       }),
-      filters: [
-        { label: 'Male', value: 'male' },
-        { label: 'Female', value: 'female' },
-      ],
-      onFilterChange: (a, filters) => {
-        for (const filter of filters) {
-          if (a.gender.toLowerCase() === filter) return true;
-        }
-        return false;
-      },
     },
     {
-      name: 'icon',
-      displayName: 'Icon',
-      width: 100,
-      resizable: true,
-      align: 'center',
-      cellType: 'ICON',
-      sorting: false,
-      translate: _ => ({
-        icon: 'events'
-      })
-    },
-    {
-      name: 'customCell',
-      displayName: 'Custom Cell',
-      width: 200,
-      resizable: true,
-      separator: true,
-      sorting: false,
-      cellRenderer: (props) => {
-        const {
-          loading
-        } = props;
-
-        if (loading) return <></>;
-
-        return (
-          <Button appearance={'primary'}>Button</Button>
-        );
-      }
+      name: '',
+      width: '25%',
+      displayName: 'Referred on',
     },
   ];
 
   const nestedRowRenderer = (props) => {
-    const {
-      schema,
-      data,
-      loading,
-      rowIndex,
-      expanded
-    } = props;
+    const { data, loading } = props;
 
-    if (rowIndex % 2) {
-      return false;
-    }
+    const nestedRowSchema = [
+      {
+        name: '',
+        cellType: 'WITH_META_LIST',
+        width: '25%',
+        translate: (a) => ({
+          title: a.name,
+          metaList: [\`\${ a.dob } (\${ a.age }), \${ a.gender } \`],
+        }),
+      },
+      {
+        name: 'address',
+        cellType: 'DEFAULT',
+        width: '20%',
+      },
+      {
+        name: 'program',
+        cellType: 'DEFAULT',
+        width: '15%',
+        translate: (a) => ({
+          title: a.program,
+        }),
+      },
+      {
+        name: 'status',
+        displayName: 'Status',
+        width: '15%',
+        cellType: 'STATUS_HINT',
+        translate: (a) => ({
+          title: a.status,
+          statusAppearance: a.status === 'Enrolled' ? 'warning' : a.status === 'Completed' ? 'success' : 'alert',
+        }),
+      },
+      {
+        name: 'referredOn',
+        width: '25%',
+        displayName: 'Referred on',
+      },
+    ];
+
     return (
-      <div>
-        <Divider className='ml-5' />
-        <List
-          loading={loading}
-          schema={schema}
-          data={[data]}
-        />
-      </div>
+      <Table loading={loading} showHead={false} schema={nestedRowSchema} data={data.patientList} />
     );
-  }
+  };
 
   return (
     <div className="vh-75">
       <Card className="h-100 overflow-hidden">
         <Table
-          data={data}
           schema={schema}
+          data={data}
           nestedRows={true}
           nestedRowRenderer={nestedRowRenderer}
         />
       </Card>
     </div>
   );
+  
+  
 };
 `;
 
@@ -179,7 +214,6 @@ export default {
         title: 'Nested Table With Nested Rows',
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead'],
         },
       },
     },

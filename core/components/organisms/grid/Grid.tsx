@@ -149,6 +149,7 @@ export type ColumnSchema = {
 export type RowData = Record<string, any> & {
   _selected?: boolean;
   disabled?: boolean;
+  _expandNestedRow?: boolean;
 };
 
 export type GridSize = 'comfortable' | 'standard' | 'compressed' | 'tight';

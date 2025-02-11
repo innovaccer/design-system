@@ -145,7 +145,6 @@ export default {
         title: 'Jump Pagination in Table',
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead'],
         },
       },
     },
