@@ -200,7 +200,6 @@ export default {
         title: 'Table without Pagination',
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead'],
         },
       },
     },

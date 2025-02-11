@@ -188,7 +188,6 @@ export default {
         title: 'Custom Body Cell Renderer',
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead'],
         },
       },
     },

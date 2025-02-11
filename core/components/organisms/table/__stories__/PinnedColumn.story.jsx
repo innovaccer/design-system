@@ -240,7 +240,6 @@ export default {
         title: 'Pinned Columns in Table',
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead'],
         },
       },
     },

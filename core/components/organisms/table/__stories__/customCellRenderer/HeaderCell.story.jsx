@@ -413,7 +413,6 @@ export default {
         title: 'Custom Header Cell Renderer',
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead'],
         },
       },
     },

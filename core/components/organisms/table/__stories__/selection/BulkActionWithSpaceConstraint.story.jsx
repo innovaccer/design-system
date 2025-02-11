@@ -336,7 +336,6 @@ export default {
         title: 'Table with Bulk Actions and Space Constraint',
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead'],
         },
       },
     },

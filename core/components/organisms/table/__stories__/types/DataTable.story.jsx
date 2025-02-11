@@ -419,7 +419,6 @@ export default {
         title: 'Data table',
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead'],
         },
       },
     },

@@ -94,7 +94,6 @@ export default {
         noStory: true,
         props: {
           components: { AsyncList, SyncList },
-          exclude: ['showHead'],
         },
       },
     },
