@@ -10,7 +10,7 @@ export interface ProgressBarProps extends BaseProps {
   /**
    * Specifies how much of the task that has been completed. Value should lie between 0 to max,
    */
-  value: number;
+  value?: number;
   /**
    * Describes how much work the task indicated by the `Progress Bar` requires
    */
@@ -34,7 +34,7 @@ export const ProgressBar = (props: ProgressBarProps) => {
     state === 'indeterminate'
       ? { width: '100%' }
       : {
-          width: value > 0 ? `${(Math.min(value, max) * 100) / max}%` : '0',
+          width: value && value > 0 ? `${(Math.min(value, max) * 100) / max}%` : '0',
         };
 
   const ProgressBarClass = classNames(

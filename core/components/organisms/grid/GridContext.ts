@@ -3,13 +3,16 @@ import { GridProps } from '@/index.type';
 import { GridRef } from './Grid';
 import defaultProps from './defaultProps';
 
+type FetchDataFunction = ({ page, pageSize }: { page: number; pageSize: number }) => Promise<[]>;
+
 type ContextProps = GridProps & {
   ref: GridRef;
-  updateVirtualData: (data: any) => void;
+  updateVirtualData: FetchDataFunction;
 };
+
 const context = React.createContext<ContextProps>({
   ...defaultProps,
-  updateVirtualData: () => {},
+  updateVirtualData: async () => [],
   ref: null,
 });
 

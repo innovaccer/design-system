@@ -40,6 +40,7 @@ export const GridBody = (props: GridBodyProps) => {
 
   const [isLoadingMore, setIsLoadingMore] = React.useState(false);
   const [currentPage, setCurrentPage] = React.useState(1);
+  const [hasMoreData, setHasMoreData] = React.useState(true);
   // const [scrollTop, setScrollTop] = React.useState(0);
 
   React.useEffect(() => {
@@ -131,7 +132,7 @@ export const GridBody = (props: GridBodyProps) => {
   const handleEndReached = async () => {
     console.log('<<<end reached>>>', updateVirtualData, isLoadingMore);
 
-    if (updateVirtualData && !isLoadingMore) {
+    if (updateVirtualData && !isLoadingMore && hasMoreData) {
       // const gridBodyEl = ref!.querySelector('.Grid-body');
       // if (gridBodyEl) {
       //   setScrollTop(gridBodyEl.scrollTop);
@@ -139,10 +140,14 @@ export const GridBody = (props: GridBodyProps) => {
 
       setIsLoadingMore(true);
       try {
-        await updateVirtualData({ page: currentPage + 1, pageSize });
+        const dataList = await updateVirtualData({ page: currentPage + 1, pageSize });
+        console.log('<<<dataListaa>>>', dataList);
+        if (dataList.length === 0) {
+          setHasMoreData(false);
+        }
         setCurrentPage((prevPage) => prevPage + 1);
       } finally {
-        // setIsLoadingMore(false);
+        setIsLoadingMore(false);
       }
     }
   };
@@ -156,7 +161,7 @@ export const GridBody = (props: GridBodyProps) => {
 
   return (
     <div className={styles['Grid-body']} ref={ref}>
-      {isLoadingMore && <ProgressBar value={100} className="position-absolute" state="indeterminate" size="small" />}
+      {isLoadingMore && <ProgressBar className="position-absolute" state="indeterminate" size="small" />}
 
       <VirtualScroll
         className={styles['Grid-body']}
@@ -168,9 +173,7 @@ export const GridBody = (props: GridBodyProps) => {
         onEndReached={handleEndReached}
         currentPage={currentPage}
       />
-      {isLoadingMore && (
-        <ProgressBar className="position-absolute bottom-0" value={50} state="indeterminate" size="small" />
-      )}
+      {isLoadingMore && <ProgressBar className="position-absolute bottom-0" state="indeterminate" size="small" />}
     </div>
   );
 };

@@ -558,9 +558,10 @@ export class Table extends React.Component<TableProps, TableState> {
     }
   };
 
-  updateVirtualData = ({ page, pageSize }) => {
+  updateVirtualData = async (props: { page: number; pageSize: number }) => {
     const { sortingList, filterList, searchTerm } = this.state;
     const { fetchData } = this.props;
+    const { page, pageSize } = props;
 
     console.log(
       'virtual data',
@@ -586,7 +587,8 @@ export class Table extends React.Component<TableProps, TableState> {
     };
 
     if (fetchData) {
-      fetchData(opts).then((res: any) => {
+      try {
+        const res = await fetchData(opts);
         console.log('<<<<newList>>>> res', res, 'opts', opts);
         console.log('res data-> ', res.data);
         const newList = [...this.state.data, ...res.data];
@@ -595,8 +597,15 @@ export class Table extends React.Component<TableProps, TableState> {
           data: newList,
           totalRecords: newList.length,
         });
-      });
+        console.log('resssstt data-> ', res.data);
+        return res.data;
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        return [];
+      }
     }
+
+    return [];
   };
 
   updateDataFn = () => {
