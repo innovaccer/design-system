@@ -129,19 +129,34 @@ export const GridBody = (props: GridBodyProps) => {
     tight: 24,
   };
 
-  const handleEndReached = async () => {
-    console.log('<<<end reached>>>', updateVirtualData, isLoadingMore);
+  // const handleEndReached = async () => {
+  //   console.log('<<<end reached>>>', updateVirtualData, isLoadingMore);
 
+  //   if (updateVirtualData && !isLoadingMore && hasMoreData) {
+  //     // const gridBodyEl = ref!.querySelector('.Grid-body');
+  //     // if (gridBodyEl) {
+  //     //   setScrollTop(gridBodyEl.scrollTop);
+  //     // }
+
+  //     setIsLoadingMore(true);
+  //     try {
+  //       const dataList = await updateVirtualData({ page: currentPage + 1, pageSize });
+  //       console.log('<<<dataListaa>>>', dataList);
+  //       if (dataList.length === 0) {
+  //         setHasMoreData(false);
+  //       }
+  //       setCurrentPage((prevPage) => prevPage + 1);
+  //     } finally {
+  //       setIsLoadingMore(false);
+  //     }
+  //   }
+  // };
+
+  const handleEndReached = React.useCallback(async () => {
     if (updateVirtualData && !isLoadingMore && hasMoreData) {
-      // const gridBodyEl = ref!.querySelector('.Grid-body');
-      // if (gridBodyEl) {
-      //   setScrollTop(gridBodyEl.scrollTop);
-      // }
-
       setIsLoadingMore(true);
       try {
         const dataList = await updateVirtualData({ page: currentPage + 1, pageSize });
-        console.log('<<<dataListaa>>>', dataList);
         if (dataList.length === 0) {
           setHasMoreData(false);
         }
@@ -150,7 +165,7 @@ export const GridBody = (props: GridBodyProps) => {
         setIsLoadingMore(false);
       }
     }
-  };
+  }, [updateVirtualData, isLoadingMore, hasMoreData, currentPage, pageSize]);
 
   // React.useEffect(() => {
   //   const gridBodyEl = ref!.querySelector('.Grid-body');
@@ -159,11 +174,10 @@ export const GridBody = (props: GridBodyProps) => {
   //   }
   // }, [scrollTop, data]);
 
-  return (
-    <div className={styles['Grid-body']} ref={ref}>
-      {isLoadingMore && <ProgressBar className="position-absolute" state="indeterminate" size="small" />}
-
+  const memoizedVirtualScroll = React.useMemo(
+    () => (
       <VirtualScroll
+        key="virtual-scroll"
         className={styles['Grid-body']}
         buffer={5}
         length={20}
@@ -171,8 +185,28 @@ export const GridBody = (props: GridBodyProps) => {
         totalLength={dataLength}
         renderItem={renderRow}
         onEndReached={handleEndReached}
-        currentPage={currentPage}
       />
+    ),
+    [dataLength, renderRow, handleEndReached, minRowHeight, size]
+  );
+
+  return (
+    <div className={styles['Grid-body']} ref={ref}>
+      {isLoadingMore && <ProgressBar className="position-absolute" state="indeterminate" size="small" />}
+
+      {/* <VirtualScroll
+        key="virtual-scroll"
+        className={styles['Grid-body']}
+        buffer={5}
+        length={20}
+        minItemHeight={minRowHeight[size]}
+        totalLength={dataLength}
+        renderItem={renderRow}
+        onEndReached={handleEndReached}
+        // currentPage={currentPage}
+      /> */}
+      {memoizedVirtualScroll}
+
       {isLoadingMore && <ProgressBar className="position-absolute bottom-0" state="indeterminate" size="small" />}
     </div>
   );

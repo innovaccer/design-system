@@ -19,7 +19,7 @@ const VirtualScroll = ({
   onScroll,
   onEndReached,
   forwardRef,
-  currentPage,
+  // currentPage,
   ...rest
 }) => {
   const [offset, setOffset] = useState(initialOffset);
@@ -29,6 +29,7 @@ const VirtualScroll = ({
   const lastScrollTop = useRef(0);
   const endReached = useRef(false); // Flag to track if end has been reached
 
+  console.log('lastScrollTop lastScrollTop', lastScrollTop);
   // sets the initial scroll position of the list
   // useEffect(() => {
   //   if (typeof window !== 'undefined') {
@@ -60,11 +61,32 @@ const VirtualScroll = ({
   // }, [currentPage]);
 
   useEffect(() => {
+    // listRef.current.scrollTop = lastScrollTop.current;
+    // listRef.current.scrollTop = 500;
+    window.requestAnimationFrame(() => {
+      console.log('iiinside useEffect', lastScrollTop);
+
+      if (listRef.current) {
+        // const currentScrollPosition = localStorage.getItem('lastScrollTop');
+        // // listRef.current.scrollTop = offset * avgRowHeight;
+        // listRef.current.scrollTop = currentScrollPosition;
+      }
+    }, 0);
+
+    // return () => {
+    //   // cleanup
+    //   // console.log('cleanup');
+    //   localStorage.setItem('lastScrollTop', 0);
+    // };
+  }, []);
+
+  useEffect(() => {
     updateOffset(initialOffset);
   }, [initialOffset]);
 
   const updateOffset = useCallback(
     (prevOffset) => {
+      console.log('iiinside updateOffset', lastScrollTop, 'totalLength', totalLength);
       const offsetDiff = prevOffset - offset;
       if (listRef.current) {
         const el = listRef.current;
@@ -103,6 +125,7 @@ const VirtualScroll = ({
 
   const onScrollHandler = useCallback(
     (event) => {
+      console.log('iiinside onScrollHandler', lastScrollTop);
       if (listRef.current) {
         const el = listRef.current;
         const { scrollTop, scrollHeight, clientHeight } = el;
@@ -152,6 +175,7 @@ const VirtualScroll = ({
         }
 
         lastScrollTop.current = scrollTop;
+        localStorage.setItem('lastScrollTop', scrollTop);
         if (onScroll) onScroll(event);
 
         // Check if user has scrolled to the end
