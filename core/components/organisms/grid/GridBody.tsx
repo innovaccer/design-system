@@ -58,6 +58,8 @@ export const GridBody = (props: GridBodyProps) => {
       });
     }
 
+    handleEndReached();
+
     return () => {
       if (gridBodyEl) {
         updatePrevPageInfo({ page, scrollTop: gridBodyEl.scrollTop });
