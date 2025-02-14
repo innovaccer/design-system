@@ -173,7 +173,7 @@ export interface VirtualScrollProps {
   /**
    * the distance from the end of the scrollable content at which new data should start fetching in case of async table.
    */
-  loadMoreThreshold?: number;
+  loadMoreThreshold: number;
   /**
    * Callback to be called on scroll
    */

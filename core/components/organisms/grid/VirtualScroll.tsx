@@ -19,7 +19,7 @@ interface VirtualScrollProps extends BaseProps {
   renderItem: (index: number, item?: object) => React.ReactElement;
   onScroll?: (event: Event, scrollTop: number) => void;
   onEndReached?: () => void;
-  loadMoreThreshold?: number;
+  loadMoreThreshold: number;
   // forwardRef?: React.RefObject<HTMLDivElement>;
   // currentPage: number;
 }
@@ -34,6 +34,7 @@ const VirtualScroll = (props: VirtualScrollProps) => {
     renderItem,
     onScroll,
     onEndReached,
+    loadMoreThreshold,
     // forwardRef,
     // currentPage,
     ...rest
@@ -192,7 +193,7 @@ const VirtualScroll = (props: VirtualScrollProps) => {
         }
 
         lastScrollTop.current = scrollTop;
-        localStorage.setItem('lastScrollTop', JSON.stringify(scrollTop));
+        // localStorage.setItem('lastScrollTop', JSON.stringify(scrollTop));
         if (onScroll) onScroll(event, scrollTop);
 
         // Check if user has scrolled to the end
@@ -204,13 +205,13 @@ const VirtualScroll = (props: VirtualScrollProps) => {
         // }
 
         // Check if user has scrolled to the end
-        if (scrollTop + clientHeight >= scrollHeight - minItemHeight) {
+        if (scrollTop + clientHeight >= scrollHeight - loadMoreThreshold) {
           if (!endReached.current && onEndReached) {
             endReached.current = true;
             onEndReached();
           }
         } else {
-          endReached.current = false; // Reset the flag when not at the end
+          endReached.current = false;
         }
       }
     },
