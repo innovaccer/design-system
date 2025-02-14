@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { BaseProps } from '@/utils/types';
 
-export const isInView = (container, element) => {
+export const isInView = (container: HTMLElement, element: Element) => {
   const containerTop = container.offsetTop;
   const elementRect = element.getBoundingClientRect();
   const elementTop = elementRect.top;
@@ -9,23 +10,38 @@ export const isInView = (container, element) => {
   return elementHeight - (containerTop - elementTop) > 0;
 };
 
-const VirtualScroll = ({
-  buffer = 10,
-  length = 30,
-  offset: initialOffset = 0,
-  minItemHeight,
-  totalLength,
-  renderItem,
-  onScroll,
-  onEndReached,
-  forwardRef,
-  // currentPage,
-  ...rest
-}) => {
+interface VirtualScrollProps extends BaseProps {
+  buffer?: number;
+  length?: number;
+  offset?: number;
+  minItemHeight: number;
+  totalLength: number;
+  renderItem: (index: number, item?: object) => React.ReactElement;
+  onScroll?: (event: React.UIEvent<HTMLDivElement>) => void;
+  onEndReached?: () => void;
+  // forwardRef?: React.RefObject<HTMLDivElement>;
+  // currentPage: number;
+}
+
+const VirtualScroll = (props: VirtualScrollProps) => {
+  const {
+    buffer = 10,
+    length = 30,
+    offset: initialOffset = 0,
+    minItemHeight,
+    totalLength,
+    renderItem,
+    onScroll,
+    onEndReached,
+    // forwardRef,
+    // currentPage,
+    ...rest
+  } = props;
+
   const [offset, setOffset] = useState(initialOffset);
   const [avgRowHeight, setAvgRowHeight] = useState(minItemHeight);
   const [init, setInit] = useState(false);
-  const listRef = useRef(null);
+  const listRef = useRef<HTMLDivElement | null>(null);
   const lastScrollTop = useRef(0);
   const endReached = useRef(false); // Flag to track if end has been reached
 
@@ -71,7 +87,7 @@ const VirtualScroll = ({
         // // listRef.current.scrollTop = offset * avgRowHeight;
         // listRef.current.scrollTop = currentScrollPosition;
       }
-    }, 0);
+    });
 
     // return () => {
     //   // cleanup
@@ -89,7 +105,7 @@ const VirtualScroll = ({
       console.log('iiinside updateOffset', lastScrollTop, 'totalLength', totalLength);
       const offsetDiff = prevOffset - offset;
       if (listRef.current) {
-        const el = listRef.current;
+        const el = listRef.current as HTMLElement;
         const items = el.querySelectorAll('.VS-item');
 
         let heightAdded = 0;
@@ -127,7 +143,7 @@ const VirtualScroll = ({
     (event) => {
       console.log('iiinside onScrollHandler', lastScrollTop);
       if (listRef.current) {
-        const el = listRef.current;
+        const el = listRef.current as HTMLElement;
         const { scrollTop, scrollHeight, clientHeight } = el;
         const direction = Math.floor(scrollTop - lastScrollTop.current);
 
@@ -175,7 +191,7 @@ const VirtualScroll = ({
         }
 
         lastScrollTop.current = scrollTop;
-        localStorage.setItem('lastScrollTop', scrollTop);
+        localStorage.setItem('lastScrollTop', JSON.stringify(scrollTop));
         if (onScroll) onScroll(event);
 
         // Check if user has scrolled to the end
@@ -200,7 +216,7 @@ const VirtualScroll = ({
     [offset, avgRowHeight, buffer, length, minItemHeight, totalLength, onScroll, onEndReached]
   );
 
-  const renderItems = (start, end) => {
+  const renderItems = (start: number, end: number) => {
     return Array.from({ length: end - start + 1 }, (_, index) => {
       const rowIndex = start + index;
       const component = renderItem(rowIndex);
@@ -222,14 +238,13 @@ const VirtualScroll = ({
   return (
     <div
       {...rest}
-      ref={(el) => {
+      ref={(el: HTMLDivElement) => {
         listRef.current = el;
-        if (forwardRef) forwardRef.current = el;
+        // if (forwardRef) forwardRef.current = el;
         if (!init) setInit(true);
       }}
       onScroll={onScrollHandler}
     >
-      {/* <ProgressBar value={50} className="position-absolute" /> */}
       {init && (
         <>
           <div
@@ -245,12 +260,11 @@ const VirtualScroll = ({
               height: bottomPadding,
             }}
           />
-          {/* {isLoadingMore && <div style={{ textAlign: 'center', padding: '10px' }}>Loading...</div>} */}
         </>
       )}
-      {/* <ProgressBar className="position-absolute bottom-0" value={50} /> */}
     </div>
   );
 };
 
-export default React.forwardRef((props, ref) => <VirtualScroll key={props.totalLength} forwardRef={ref} {...props} />);
+// export default React.forwardRef((props, ref) => <VirtualScroll key={props.totalLength} forwardRef={ref} {...props} />);
+export default VirtualScroll;

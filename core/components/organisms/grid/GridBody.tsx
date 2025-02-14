@@ -86,7 +86,7 @@ export const GridBody = (props: GridBodyProps) => {
   );
 
   const renderRow = React.useCallback(
-    (rowIndex: number, item: object) => {
+    (rowIndex: number, item?: object) => {
       return (
         <GridRow
           key={rowIndex}
@@ -156,7 +156,7 @@ export const GridBody = (props: GridBodyProps) => {
     if (updateVirtualData && !isLoadingMore && hasMoreData) {
       setIsLoadingMore(true);
       try {
-        const dataList = await updateVirtualData({ page: currentPage + 1, pageSize });
+        const dataList = await updateVirtualData({ page: currentPage + 1, preFetchRows: pageSize });
         if (dataList.length === 0) {
           setHasMoreData(false);
         }
@@ -191,7 +191,10 @@ export const GridBody = (props: GridBodyProps) => {
   );
 
   return (
-    <div className={styles['Grid-body']} ref={ref}>
+    <div
+      className={styles['Grid-body']}
+      // ref={ref}
+    >
       {isLoadingMore && <ProgressBar className="position-absolute" state="indeterminate" size="small" />}
 
       {/* <VirtualScroll
