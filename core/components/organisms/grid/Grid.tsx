@@ -157,6 +157,29 @@ export type GridType = 'resource' | 'data';
 export type Data = RowData[];
 export type Schema = ColumnSchema[];
 
+export interface VirtualScrollProps {
+  /**
+   * Number of rows to Pre-fetch at a time in case of async table
+   */
+  preFetchRows?: number;
+  /**
+   * Number of additional rows to render before and after the visible rows.
+   */
+  buffer?: number;
+  /**
+   * Number of rows to be rendered within the visible viewport.
+   */
+  visibleRows: number;
+  /**
+   * the distance from the end of the scrollable content at which new data should start fetching in case of async table.
+   */
+  loadMoreThreshold?: number;
+  /**
+   * Callback to be called on scroll
+   */
+  onScroll?: (event: Event, scrollTop: number) => void;
+}
+
 export interface GridProps extends BaseProps {
   /**
    * Controls spacing of `Grid`
@@ -295,6 +318,18 @@ export interface GridProps extends BaseProps {
    * Show filters in Head Cell
    */
   showFilters: boolean;
+  /**
+   * Enable row virtualization
+   */
+  enableRowVirtualization?: boolean;
+  /**
+   * Fetch Data Function in case of async table to be called on scroll end
+   */
+  updateVirtualData?: (props: { page: number; preFetchRows: number }) => Promise<Data>;
+  /**
+   * Virtual Scroll Options
+   */
+  virtualScrollOptions?: VirtualScrollProps;
 }
 
 export interface GridState {

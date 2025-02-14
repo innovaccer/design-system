@@ -177,7 +177,7 @@ export const GridBody = (props: GridBodyProps) => {
   const memoizedVirtualScroll = React.useMemo(
     () => (
       <VirtualScroll
-        key="virtual-scroll"
+        // key="virtual-scroll"
         className={styles['Grid-body']}
         buffer={5}
         length={20}

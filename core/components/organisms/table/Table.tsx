@@ -383,7 +383,11 @@ interface SharedTableProps extends BaseProps {
   /**
    * Enable row virtualization
    */
-  enableRowVirtualization?: boolean;
+  enableRowVirtualization?: GridProps['enableRowVirtualization'];
+  /**
+   * Virtual Scroll Options
+   */
+  virtualScrollOptions?: GridProps['virtualScrollOptions'];
 }
 
 export type SyncTableProps = SharedTableProps & TableSyncProps;
@@ -441,6 +445,10 @@ export const defaultProps = {
   searchDebounceDuration: 750,
   pageJumpDebounceDuration: 750,
   errorTemplate: defaultErrorTemplate,
+  preFetchRows: 50,
+  buffer: 10,
+  visibleRows: 20,
+  loadMoreThreshold: 0,
 };
 
 export class Table extends React.Component<TableProps, TableState> {
@@ -558,17 +566,17 @@ export class Table extends React.Component<TableProps, TableState> {
     }
   };
 
-  updateVirtualData = async (props: { page: number; pageSize: number }) => {
+  updateVirtualData = async (props: { page: number; preFetchRows: number }) => {
     const { sortingList, filterList, searchTerm } = this.state;
     const { fetchData } = this.props;
-    const { page, pageSize } = props;
+    const { page, preFetchRows } = props;
 
     console.log(
       'virtual data',
       'page',
       page,
-      'pageSize',
-      pageSize,
+      'preFetchRows',
+      preFetchRows,
       'sortinglist',
       sortingList,
       'filterList',
@@ -580,7 +588,7 @@ export class Table extends React.Component<TableProps, TableState> {
     );
     const opts: FetchDataOptions = {
       page,
-      pageSize,
+      pageSize: preFetchRows,
       sortingList,
       filterList,
       searchTerm,
@@ -963,6 +971,7 @@ export class Table extends React.Component<TableProps, TableState> {
       filterPosition,
       uniqueColumnName,
       checkboxAlignment,
+      virtualScrollOptions,
     } = this.props;
 
     const baseProps = extractBaseProps(this.props);
@@ -1031,6 +1040,7 @@ export class Table extends React.Component<TableProps, TableState> {
             onRowClick={onRowClick}
             showFilters={filterPosition === 'GRID'}
             updateVirtualData={this.updateVirtualData}
+            virtualScrollOptions={virtualScrollOptions}
           />
         </div>
         {withPagination && !this.state.loading && !this.state.error && totalPages > 1 && (
