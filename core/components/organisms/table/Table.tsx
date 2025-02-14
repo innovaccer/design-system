@@ -445,10 +445,12 @@ export const defaultProps = {
   searchDebounceDuration: 750,
   pageJumpDebounceDuration: 750,
   errorTemplate: defaultErrorTemplate,
-  preFetchRows: 50,
-  buffer: 10,
-  visibleRows: 20,
-  loadMoreThreshold: 0,
+  virtualScrollOptions: {
+    preFetchRows: 50,
+    buffer: 10,
+    visibleRows: 20,
+    loadMoreThreshold: 0,
+  },
 };
 
 export class Table extends React.Component<TableProps, TableState> {

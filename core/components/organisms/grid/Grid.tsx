@@ -161,7 +161,7 @@ export interface VirtualScrollProps {
   /**
    * Number of rows to Pre-fetch at a time in case of async table
    */
-  preFetchRows?: number;
+  preFetchRows: number;
   /**
    * Number of additional rows to render before and after the visible rows.
    */
@@ -169,7 +169,7 @@ export interface VirtualScrollProps {
   /**
    * Number of rows to be rendered within the visible viewport.
    */
-  visibleRows: number;
+  visibleRows?: number;
   /**
    * the distance from the end of the scrollable content at which new data should start fetching in case of async table.
    */
@@ -329,7 +329,7 @@ export interface GridProps extends BaseProps {
   /**
    * Virtual Scroll Options
    */
-  virtualScrollOptions?: VirtualScrollProps;
+  virtualScrollOptions: VirtualScrollProps;
 }
 
 export interface GridState {
@@ -589,6 +589,7 @@ export class Grid extends React.Component<GridProps, GridState> {
               prevPageInfo={prevPageInfo}
               updatePrevPageInfo={this.updatePrevPageInfo.bind(this)}
               onSelect={this.onSelect.bind(this)}
+              virtualScrollOptions={this.props.virtualScrollOptions}
             />
           </GridProvider>
         )}

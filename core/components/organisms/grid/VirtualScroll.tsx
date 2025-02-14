@@ -17,8 +17,9 @@ interface VirtualScrollProps extends BaseProps {
   minItemHeight: number;
   totalLength: number;
   renderItem: (index: number, item?: object) => React.ReactElement;
-  onScroll?: (event: React.UIEvent<HTMLDivElement>) => void;
+  onScroll?: (event: Event, scrollTop: number) => void;
   onEndReached?: () => void;
+  loadMoreThreshold?: number;
   // forwardRef?: React.RefObject<HTMLDivElement>;
   // currentPage: number;
 }
@@ -192,7 +193,7 @@ const VirtualScroll = (props: VirtualScrollProps) => {
 
         lastScrollTop.current = scrollTop;
         localStorage.setItem('lastScrollTop', JSON.stringify(scrollTop));
-        if (onScroll) onScroll(event);
+        if (onScroll) onScroll(event, scrollTop);
 
         // Check if user has scrolled to the end
         // if (scrollTop + clientHeight >= scrollHeight - minItemHeight) {

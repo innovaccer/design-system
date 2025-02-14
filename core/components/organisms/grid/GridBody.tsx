@@ -12,6 +12,7 @@ export interface GridBodyProps {
   onSelect: onSelectFn;
   prevPageInfo: GridState['prevPageInfo'];
   updatePrevPageInfo: updatePrevPageInfoFunction;
+  virtualScrollOptions: GridProps['virtualScrollOptions'];
 }
 
 export const GridBody = (props: GridBodyProps) => {
@@ -36,7 +37,9 @@ export const GridBody = (props: GridBodyProps) => {
     return errorTemplate ? (typeof errorTemplate === 'function' ? errorTemplate({}) : errorTemplate) : null;
   }
 
-  const { schema, prevPageInfo, updatePrevPageInfo, onSelect } = props;
+  const { schema, prevPageInfo, updatePrevPageInfo, onSelect, virtualScrollOptions } = props;
+
+  const { preFetchRows, buffer, visibleRows, loadMoreThreshold, onScroll } = virtualScrollOptions;
 
   const [isLoadingMore, setIsLoadingMore] = React.useState(false);
   const [currentPage, setCurrentPage] = React.useState(1);
@@ -156,7 +159,7 @@ export const GridBody = (props: GridBodyProps) => {
     if (updateVirtualData && !isLoadingMore && hasMoreData) {
       setIsLoadingMore(true);
       try {
-        const dataList = await updateVirtualData({ page: currentPage + 1, preFetchRows: pageSize });
+        const dataList = await updateVirtualData({ page: currentPage + 1, preFetchRows });
         if (dataList.length === 0) {
           setHasMoreData(false);
         }
@@ -165,7 +168,7 @@ export const GridBody = (props: GridBodyProps) => {
         setIsLoadingMore(false);
       }
     }
-  }, [updateVirtualData, isLoadingMore, hasMoreData, currentPage, pageSize]);
+  }, [updateVirtualData, isLoadingMore, hasMoreData, currentPage, preFetchRows]);
 
   // React.useEffect(() => {
   //   const gridBodyEl = ref!.querySelector('.Grid-body');
@@ -177,13 +180,14 @@ export const GridBody = (props: GridBodyProps) => {
   const memoizedVirtualScroll = React.useMemo(
     () => (
       <VirtualScroll
-        // key="virtual-scroll"
         className={styles['Grid-body']}
-        buffer={5}
-        length={20}
+        buffer={buffer}
+        length={visibleRows}
         minItemHeight={minRowHeight[size]}
         totalLength={dataLength}
         renderItem={renderRow}
+        onScroll={onScroll}
+        loadMoreThreshold={loadMoreThreshold}
         onEndReached={handleEndReached}
       />
     ),
