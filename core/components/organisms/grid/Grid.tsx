@@ -16,7 +16,7 @@ export type Pinned = 'left' | 'right' | 'unpin';
 export type Alignment = 'left' | 'right' | 'center';
 export type Comparator = (a: RowData, b: RowData) => -1 | 0 | 1;
 export type Filter = any[];
-export type GridRef = HTMLDivElement | React.LegacyRef<HTMLDivElement> | null;
+export type GridRef = HTMLDivElement | null;
 export type PageInfo = { page: number; scrollTop: number };
 
 export interface FetchDataOptions {

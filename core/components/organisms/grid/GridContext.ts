@@ -3,11 +3,11 @@ import { GridProps } from '@/index.type';
 import { GridRef } from './Grid';
 import defaultProps from './defaultProps';
 
-type FetchDataFunction = ({ page, pageSize }: { page: number; pageSize: number }) => Promise<[]>;
+// type FetchDataFunction = ({ page, preFetchRows }: { page: number; preFetchRows: number }) => Promise<[]>;
 
 type ContextProps = GridProps & {
   ref: GridRef;
-  updateVirtualData: FetchDataFunction;
+  // updateVirtualData: FetchDataFunction;
 };
 
 const context = React.createContext<ContextProps>({
