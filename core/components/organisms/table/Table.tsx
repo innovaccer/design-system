@@ -386,6 +386,24 @@ interface SharedTableProps extends BaseProps {
   enableRowVirtualization?: GridProps['enableRowVirtualization'];
   /**
    * Virtual Scroll Options
+   * <pre className="DocPage-codeBlock">
+   * VirtualScrollProps: {
+   *   preFetchRows: number;
+   *   buffer: number;
+   *   visibleRows: number;
+   *   loadMoreThreshold: number;
+   *   onScroll: (event: Event, scrollTop: number) => void;
+   * }
+   * </pre>
+   *
+   * | Name | Description | Default |
+   * | --- | --- | --- |
+   * | preFetchRows | Number of rows to be prefetched | 50 |
+   * | buffer | Number of rows to be rendered above and below the visible rows | 10 |
+   * | visibleRows | Number of rows to be visible | 20 |
+   * | loadMoreThreshold | Threshold to call `onScroll` | 0 |
+   * | onScroll | Callback to be called on scroll | |
+   *
    */
   virtualScrollOptions?: GridProps['virtualScrollOptions'];
 }
