@@ -601,7 +601,7 @@ export class Table extends React.Component<TableProps, TableState> {
 
   updateVirtualData = async (props: { page: number; preFetchRows: number }) => {
     const { sortingList, filterList, searchTerm } = this.state;
-    const { fetchData, enableRowVirtualization } = this.props;
+    const { fetchData } = this.props;
     const { page, preFetchRows } = props;
 
     console.log(
@@ -621,7 +621,7 @@ export class Table extends React.Component<TableProps, TableState> {
     );
     const opts: FetchDataOptions = {
       page,
-      pageSize: enableRowVirtualization ? preFetchRows : this.props.pageSize,
+      pageSize: preFetchRows,
       sortingList,
       filterList,
       searchTerm,
@@ -637,7 +637,6 @@ export class Table extends React.Component<TableProps, TableState> {
         this.setState({
           data: newList,
           totalRecords: newList.length,
-          loading: false,
         });
         console.log('resssstt data-> ', res.data);
         return res.data;
