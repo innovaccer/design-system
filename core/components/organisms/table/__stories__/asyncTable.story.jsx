@@ -298,7 +298,7 @@ const customCode = `
           loaderSchema={loaderSchema}
           fetchData={fetchData}
           withHeader={true}
-          uniqueColumnName="firstName"
+          uniqueColumnName="lastName"
           headerOptions={{
             selectionActionRenderer,
             withSearch: true,
@@ -309,6 +309,7 @@ const customCode = `
           pageSize={50}
           page={1}
           enableRowVirtualization={true}
+          virtualScrollOptions={{preFetchRows: 60, buffer: 5, visibleRows: 10}}
           onSelect={(rowIndex, selected, selectedList, selectAll) => console.log(\`on-select: - rowIndex: \${ rowIndex } selected: \${ selected } selectedList: \${ JSON.stringify(selectedList) } selectAll: \${ selectAll } \`)}
           withPagination={false}
           onPageChange={newPage => console.log(\`on-page-change:- \${newPage}\`)}

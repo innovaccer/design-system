@@ -27,14 +27,14 @@ interface VirtualScrollProps extends BaseProps {
 const VirtualScroll = (props: VirtualScrollProps) => {
   const {
     buffer = 10,
-    length = 30,
+    length = 20,
     offset: initialOffset = 0,
     minItemHeight,
     totalLength,
     renderItem,
     onScroll,
     onEndReached,
-    loadMoreThreshold,
+    loadMoreThreshold = 0,
     // forwardRef,
     // currentPage,
     ...rest
@@ -204,6 +204,7 @@ const VirtualScroll = (props: VirtualScrollProps) => {
         //   }
         // }
 
+        console.log('loadMoreThresholdddd', loadMoreThreshold);
         // Check if user has scrolled to the end
         if (scrollTop + clientHeight >= scrollHeight - loadMoreThreshold) {
           if (!endReached.current && onEndReached) {

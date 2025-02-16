@@ -398,10 +398,10 @@ interface SharedTableProps extends BaseProps {
    *
    * | Name | Description | Default |
    * | --- | --- | --- |
-   * | preFetchRows | Number of rows to be prefetched | 50 |
-   * | buffer | Number of rows to be rendered above and below the visible rows | 10 |
-   * | visibleRows | Number of rows to be visible | 20 |
-   * | loadMoreThreshold | Threshold to call `onScroll` | 0 |
+   * | preFetchRows | Number of rows to Pre-fetch at a time in case of async table | 50 |
+   * | buffer | Number of additional rows to render before and after the visible rows | 10 |
+   * | visibleRows | Number of rows to be rendered within the visible viewport | 20 |
+   * | loadMoreThreshold | the distance from the end of the scrollable content at which new data should start fetching in case of async table | 0 |
    * | onScroll | Callback to be called on scroll | |
    *
    */
@@ -579,6 +579,19 @@ export class Table extends React.Component<TableProps, TableState> {
       });
     }
 
+    // if (this.props.enableRowVirtualization) {
+    //   this.updateVirtualData({
+    //     page: this.state.page,
+    //     preFetchRows: this.props.virtualScrollOptions?.preFetchRows || 50,
+    //   });
+    // } else {
+    //   if (searchUpdate) {
+    //     this.debounceUpdate();
+    //   } else {
+    //     this.updateDataFn();
+    //   }
+    // }
+
     if (searchUpdate) {
       this.debounceUpdate();
     } else {
@@ -588,7 +601,7 @@ export class Table extends React.Component<TableProps, TableState> {
 
   updateVirtualData = async (props: { page: number; preFetchRows: number }) => {
     const { sortingList, filterList, searchTerm } = this.state;
-    const { fetchData } = this.props;
+    const { fetchData, enableRowVirtualization } = this.props;
     const { page, preFetchRows } = props;
 
     console.log(
@@ -608,7 +621,7 @@ export class Table extends React.Component<TableProps, TableState> {
     );
     const opts: FetchDataOptions = {
       page,
-      pageSize: preFetchRows,
+      pageSize: enableRowVirtualization ? preFetchRows : this.props.pageSize,
       sortingList,
       filterList,
       searchTerm,
@@ -624,6 +637,7 @@ export class Table extends React.Component<TableProps, TableState> {
         this.setState({
           data: newList,
           totalRecords: newList.length,
+          loading: false,
         });
         console.log('resssstt data-> ', res.data);
         return res.data;
@@ -637,7 +651,19 @@ export class Table extends React.Component<TableProps, TableState> {
   };
 
   updateDataFn = () => {
-    const { fetchData, pageSize, withPagination, data: dataProp, onSearch, uniqueColumnName } = this.props;
+    console.log('updateDataFn>>>>>>>');
+    const {
+      fetchData,
+      pageSize,
+      withPagination,
+      data: dataProp,
+      onSearch,
+      uniqueColumnName,
+      virtualScrollOptions,
+      enableRowVirtualization,
+    } = this.props;
+
+    const { preFetchRows } = virtualScrollOptions || {};
 
     const { async, page, sortingList, filterList, searchTerm } = this.state;
 
@@ -645,13 +671,14 @@ export class Table extends React.Component<TableProps, TableState> {
 
     const opts: FetchDataOptions = {
       page,
-      pageSize,
+      pageSize: enableRowVirtualization ? preFetchRows : pageSize,
       sortingList,
       filterList,
       searchTerm,
     };
 
-    if (!this.props.withPagination && !this.props.enableRowVirtualization) {
+    if (!withPagination && !enableRowVirtualization) {
+      // if (!this.props.withPagination) {
       delete opts.page;
       delete opts.pageSize;
     }
