@@ -178,6 +178,10 @@ export interface VirtualScrollProps {
    * Callback to be called on scroll
    */
   onScroll?: (event: Event, scrollTop: number) => void;
+  /**
+   *
+   */
+  // maxDataLimit: number;
 }
 
 export interface GridProps extends BaseProps {

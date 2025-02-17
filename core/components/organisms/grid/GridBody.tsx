@@ -58,7 +58,7 @@ export const GridBody = (props: GridBodyProps) => {
       });
     }
 
-    handleEndReached();
+    fetchNextRows();
 
     return () => {
       if (gridBodyEl) {
@@ -134,7 +134,7 @@ export const GridBody = (props: GridBodyProps) => {
     tight: 24,
   };
 
-  // const handleEndReached = async () => {
+  // const fetchNextRows = async () => {
   //   console.log('<<<end reached>>>', updateVirtualData, isLoadingMore);
 
   //   if (updateVirtualData && !isLoadingMore && hasMoreData) {
@@ -157,7 +157,7 @@ export const GridBody = (props: GridBodyProps) => {
   //   }
   // };
 
-  const handleEndReached = React.useCallback(async () => {
+  const fetchNextRows = React.useCallback(async () => {
     if (updateVirtualData && !isLoadingMore && hasMoreData) {
       setIsLoadingMore(true);
       try {
@@ -190,10 +190,10 @@ export const GridBody = (props: GridBodyProps) => {
         renderItem={renderRow}
         onScroll={onScroll}
         loadMoreThreshold={loadMoreThreshold}
-        onEndReached={handleEndReached}
+        onEndReached={fetchNextRows}
       />
     ),
-    [dataLength, renderRow, handleEndReached, minRowHeight, size]
+    [dataLength, renderRow, fetchNextRows, minRowHeight, size]
   );
 
   return (
@@ -211,7 +211,7 @@ export const GridBody = (props: GridBodyProps) => {
         minItemHeight={minRowHeight[size]}
         totalLength={dataLength}
         renderItem={renderRow}
-        onEndReached={handleEndReached}
+        onEndReached={fetchNextRows}
         // currentPage={currentPage}
       /> */}
       {memoizedVirtualScroll}

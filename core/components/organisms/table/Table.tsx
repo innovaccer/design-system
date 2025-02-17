@@ -426,7 +426,7 @@ interface TableState {
   loading: TableProps['loading'];
   error: TableProps['error'];
   errorType?: TableProps['errorType'];
-  startOffset?: number;
+  startOffset: number;
 }
 
 const defaultErrorTemplate = (props: ErrorTemplateProps) => {
@@ -606,7 +606,7 @@ export class Table extends React.Component<TableProps, TableState> {
     const { sortingList, filterList, searchTerm, startOffset } = this.state;
 
     const { fetchData, virtualScrollOptions, uniqueColumnName } = this.props;
-    const { maxDataLimit } = virtualScrollOptions || {};
+    // const { maxDataLimit = 1000 } = virtualScrollOptions || {};
 
     const { page, preFetchRows } = props;
 
@@ -627,8 +627,6 @@ export class Table extends React.Component<TableProps, TableState> {
         // add prop for maxDataLimit-> 500
 
         // if (newList.length > maxDataLimit) {
-        //   // remove first n elements
-
         //   this.setState({
         //     startOffset: startOffset + preFetchRows,
         //   });
