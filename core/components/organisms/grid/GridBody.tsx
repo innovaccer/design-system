@@ -158,6 +158,7 @@ export const GridBody = (props: GridBodyProps) => {
   // };
 
   const fetchNextRows = React.useCallback(async () => {
+    console.log('<<<end reached>>>', 'hasMoreData', hasMoreData);
     if (updateVirtualData && !isLoadingMore && hasMoreData) {
       setIsLoadingMore(true);
       try {

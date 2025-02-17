@@ -182,7 +182,7 @@ const VirtualScroll = (props: VirtualScrollProps) => {
             setAvgRowHeight(Math.max(minItemHeight, newAvgRowHeight));
           }
         } else {
-          const scrollDiff = items[start].getBoundingClientRect().y - el.getBoundingClientRect().y;
+          const scrollDiff = items[start]?.getBoundingClientRect().y - el?.getBoundingClientRect().y;
           if (scrollDiff > 0) {
             const offsetDiff = Math.floor(scrollDiff / minItemHeight) || 1;
             const newOffset = offset - offsetDiff;
@@ -208,6 +208,7 @@ const VirtualScroll = (props: VirtualScrollProps) => {
         // Check if user has scrolled to the end
         if (scrollTop + clientHeight >= scrollHeight - loadMoreThreshold) {
           if (!endReached.current && onEndReached) {
+            console.log('>>>enddd reacheddd');
             endReached.current = true;
             onEndReached();
           }
