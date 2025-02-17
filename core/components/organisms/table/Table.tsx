@@ -1106,6 +1106,7 @@ export class Table extends React.Component<TableProps, TableState> {
             showFilters={filterPosition === 'GRID'}
             updateVirtualData={this.updateVirtualData}
             virtualScrollOptions={virtualScrollOptions}
+            enableRowVirtualization={this.props.enableRowVirtualization}
           />
         </div>
         {withPagination && !this.state.loading && !this.state.error && totalPages > 1 && (

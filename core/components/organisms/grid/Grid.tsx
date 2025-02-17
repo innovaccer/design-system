@@ -10,6 +10,7 @@ import classNames from 'classnames';
 import { GridProvider } from './GridContext';
 import defaultProps from './defaultProps';
 import styles from '@css/components/grid.module.css';
+import { GridVirtualizedBody } from './GridVirtualizedBody';
 
 export type SortType = 'asc' | 'desc' | 'unsort';
 export type Pinned = 'left' | 'right' | 'unpin';
@@ -587,14 +588,24 @@ export class Grid extends React.Component<GridProps, GridState> {
                 reorderColumn={this.reorderColumn.bind(this)}
               />
             )}
-            <GridBody
-              key={`${page}`}
-              schema={schema}
-              prevPageInfo={prevPageInfo}
-              updatePrevPageInfo={this.updatePrevPageInfo.bind(this)}
-              onSelect={this.onSelect.bind(this)}
-              virtualScrollOptions={this.props.virtualScrollOptions}
-            />
+            {!this.props.enableRowVirtualization ? (
+              <GridBody
+                key={`${page}`}
+                schema={schema}
+                prevPageInfo={prevPageInfo}
+                updatePrevPageInfo={this.updatePrevPageInfo.bind(this)}
+                onSelect={this.onSelect.bind(this)}
+              />
+            ) : (
+              <GridVirtualizedBody
+                key={`${page}`}
+                schema={schema}
+                prevPageInfo={prevPageInfo}
+                updatePrevPageInfo={this.updatePrevPageInfo.bind(this)}
+                onSelect={this.onSelect.bind(this)}
+                virtualScrollOptions={this.props.virtualScrollOptions}
+              />
+            )}
           </GridProvider>
         )}
       </div>
