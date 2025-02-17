@@ -426,6 +426,7 @@ interface TableState {
   loading: TableProps['loading'];
   error: TableProps['error'];
   errorType?: TableProps['errorType'];
+  startOffset?: number;
 }
 
 const defaultErrorTemplate = (props: ErrorTemplateProps) => {
@@ -468,6 +469,7 @@ export const defaultProps = {
     buffer: 10,
     visibleRows: 20,
     loadMoreThreshold: 0,
+    maxDataLimit: 500,
   },
 };
 
@@ -499,6 +501,7 @@ export class Table extends React.Component<TableProps, TableState> {
       errorType: props.errorType,
       selectAll: getSelectAll([]),
       searchTerm: undefined,
+      startOffset: 0,
     };
 
     this.debounceUpdate = debounce(props.searchDebounceDuration, this.updateDataFn);
@@ -600,25 +603,13 @@ export class Table extends React.Component<TableProps, TableState> {
   };
 
   updateVirtualData = async (props: { page: number; preFetchRows: number }) => {
-    const { sortingList, filterList, searchTerm } = this.state;
-    const { fetchData } = this.props;
+    const { sortingList, filterList, searchTerm, startOffset } = this.state;
+
+    const { fetchData, virtualScrollOptions, uniqueColumnName } = this.props;
+    const { maxDataLimit } = virtualScrollOptions || {};
+
     const { page, preFetchRows } = props;
 
-    console.log(
-      'virtual data',
-      'page',
-      page,
-      'preFetchRows',
-      preFetchRows,
-      'sortinglist',
-      sortingList,
-      'filterList',
-      filterList,
-      'searchTerm',
-      searchTerm,
-      'fetchData',
-      fetchData
-    );
     const opts: FetchDataOptions = {
       page,
       pageSize: preFetchRows,
@@ -630,15 +621,46 @@ export class Table extends React.Component<TableProps, TableState> {
     if (fetchData) {
       try {
         const res = await fetchData(opts);
-        console.log('<<<<newList>>>> res', res, 'opts', opts);
-        console.log('res data-> ', res.data);
+
         const newList = [...this.state.data, ...res.data];
-        console.log('<<<<newList>>>>', newList);
+
+        // add prop for maxDataLimit-> 500
+
+        // if (newList.length > maxDataLimit) {
+        //   // remove first n elements
+
+        //   this.setState({
+        //     startOffset: startOffset + preFetchRows,
+        //   });
+
+        //   newList.splice(0, newList.length - maxDataLimit);
+        //   // newList.splice(preFetchRows, newList.length - preFetchRows);
+        // }
+
+        const data = newList;
+        const dataReplica = JSON.parse(JSON.stringify(data));
+        const preSelectedRows = data.filter((item: RowData) => item._selected);
+
+        if (this.clearSelectionRef.current) {
+          this.selectedRowsRef.current = [];
+        } else {
+          this.selectedRowsRef.current = this.selectedRowsRef.current
+            ? removeDuplicate([...this.selectedRowsRef.current, ...preSelectedRows], uniqueColumnName)
+            : removeDuplicate([...preSelectedRows], uniqueColumnName);
+        }
+
+        const selectedData = getUpdatedData(
+          dataReplica,
+          this.selectedRowsRef.current,
+          uniqueColumnName,
+          this.clearSelectionRef.current,
+          this.selectAllRef.current
+        );
+
         this.setState({
-          data: newList,
-          totalRecords: newList.length,
+          data: selectedData,
+          totalRecords: selectedData.length,
         });
-        console.log('resssstt data-> ', res.data);
         return res.data;
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -650,7 +672,6 @@ export class Table extends React.Component<TableProps, TableState> {
   };
 
   updateDataFn = () => {
-    console.log('updateDataFn>>>>>>>');
     const {
       fetchData,
       pageSize,
