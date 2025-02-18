@@ -13,36 +13,27 @@ export interface GridBodyProps {
   prevPageInfo: GridState['prevPageInfo'];
   updatePrevPageInfo: updatePrevPageInfoFunction;
   virtualScrollOptions: GridProps['virtualScrollOptions'];
+  updateVirtualData: GridProps['updateVirtualData'];
 }
 
 export const GridVirtualizedBody = (props: GridBodyProps) => {
   const context = React.useContext(GridContext);
 
-  const {
-    data,
-    ref,
-    loading,
-    error,
-    withPagination,
-    page,
-    pageSize,
-    totalRecords,
-    errorTemplate,
-    size,
-    updateVirtualData,
-  } = context;
+  const { data, ref, loading, error, withPagination, page, pageSize, totalRecords, errorTemplate, size } = context;
 
   if (!loading && error) {
     return errorTemplate ? (typeof errorTemplate === 'function' ? errorTemplate({}) : errorTemplate) : null;
   }
 
-  const { schema, prevPageInfo, updatePrevPageInfo, onSelect, virtualScrollOptions } = props;
+  const { schema, prevPageInfo, updatePrevPageInfo, onSelect, virtualScrollOptions, updateVirtualData } = props;
 
   const { preFetchRows, buffer, visibleRows, loadMoreThreshold, onScroll } = virtualScrollOptions;
 
   const [isLoadingMore, setIsLoadingMore] = React.useState(false);
   const [currentPage, setCurrentPage] = React.useState(1);
   const [hasMoreData, setHasMoreData] = React.useState(true);
+
+  // const currentPage = React.useRef(1);
 
   React.useEffect(() => {
     const gridBodyEl = ref!.querySelector('.Grid-body');
@@ -56,6 +47,8 @@ export const GridVirtualizedBody = (props: GridBodyProps) => {
       });
     }
 
+    console.log('mounted dd', currentPage, 'hasMoreData', hasMoreData);
+
     fetchNextRows();
 
     return () => {
@@ -64,6 +57,13 @@ export const GridVirtualizedBody = (props: GridBodyProps) => {
       }
     };
   }, []);
+
+  // React.useEffect(() => {
+  //   if (data.length === preFetchRows) {
+  //     console.log('>>>aaaa Fetching next rows', data.length);
+  //     updateVirtualData?.({ page: currentPage.current, preFetchRows: currentPage.current * preFetchRows });
+  //   }
+  // }, [data]);
 
   const totalPages = Math.ceil(totalRecords / pageSize);
   const isLastPage = withPagination && page === totalPages;
@@ -98,15 +98,17 @@ export const GridVirtualizedBody = (props: GridBodyProps) => {
   };
 
   const fetchNextRows = React.useCallback(async () => {
-    console.log('>>> Fetching next rows');
+    console.log('>>>aaa Fetching next rows');
     if (updateVirtualData && !isLoadingMore && hasMoreData) {
       setIsLoadingMore(true);
       try {
+        // const dataList = await updateVirtualData({ page: currentPage.current + 1, preFetchRows });
         const dataList = await updateVirtualData({ page: currentPage + 1, preFetchRows });
         if (dataList.length === 0) {
           setHasMoreData(false);
         }
         setCurrentPage((prevPage) => prevPage + 1);
+        // currentPage.current = currentPage.current + 1;
       } finally {
         setIsLoadingMore(false);
       }

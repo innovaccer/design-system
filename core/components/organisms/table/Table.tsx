@@ -570,18 +570,16 @@ export class Table extends React.Component<TableProps, TableState> {
       prevState.searchTerm !== this.state.searchTerm
     ) {
       if (!this.props.loading) {
-        // let errorType = "";
-        // let errorCount = 0;
-        // if(prevState.page !== this.state.page) errorType = "ON_PAGE_CHANGE", errorCount++;
-        // if(prevState.filterList !== this.state.filterList) errorType = "ON_FILTER_CHANGE", errorCount++;
-        // if(prevState.sortingList !== this.state.sortingList) errorType = "ON_SORTING_CHANGE", errorCount++;
-        // if(prevState.searchTerm !== this.state.searchTerm) errorType = "ON_SEARCH_CHANGE", errorCount++;
-        // this.setState({
-        //   errorType: errorCount > 1 ? "FAILED_TO_FETCH" : errorType
-        // });
         const searchUpdate = prevState.searchTerm !== this.state.searchTerm;
         this.updateData(searchUpdate);
       }
+
+      // else if (this.props.enableRowVirtualization && this.state.searchTerm === '') {
+      //   this.updateVirtualData({
+      //     page: 1,
+      //     preFetchRows: 120,
+      //   });
+      // }
     }
   }
 
@@ -674,6 +672,8 @@ export class Table extends React.Component<TableProps, TableState> {
           this.selectAllRef.current
         );
 
+        console.log('>>>aaaa selectedData>>>', selectedData);
+
         this.setState({
           data: selectedData,
           totalRecords: selectedData.length,
@@ -689,6 +689,8 @@ export class Table extends React.Component<TableProps, TableState> {
   };
 
   updateDataFn = () => {
+    console.log('>>>aaaa updateData');
+
     const {
       fetchData,
       pageSize,

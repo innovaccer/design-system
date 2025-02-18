@@ -605,6 +605,7 @@ export class Grid extends React.Component<GridProps, GridState> {
                 updatePrevPageInfo={this.updatePrevPageInfo.bind(this)}
                 onSelect={this.onSelect.bind(this)}
                 virtualScrollOptions={this.props.virtualScrollOptions}
+                updateVirtualData={this.props.updateVirtualData}
               />
             )}
           </GridProvider>
