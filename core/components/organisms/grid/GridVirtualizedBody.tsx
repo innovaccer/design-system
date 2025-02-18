@@ -29,7 +29,6 @@ export const GridVirtualizedBody = (props: GridBodyProps) => {
     totalRecords,
     errorTemplate,
     size,
-    // updateData,
     updateVirtualData,
   } = context;
 
@@ -44,7 +43,6 @@ export const GridVirtualizedBody = (props: GridBodyProps) => {
   const [isLoadingMore, setIsLoadingMore] = React.useState(false);
   const [currentPage, setCurrentPage] = React.useState(1);
   const [hasMoreData, setHasMoreData] = React.useState(true);
-  // const [scrollTop, setScrollTop] = React.useState(0);
 
   React.useEffect(() => {
     const gridBodyEl = ref!.querySelector('.Grid-body');
@@ -77,19 +75,6 @@ export const GridVirtualizedBody = (props: GridBodyProps) => {
     ? Math.min(totalRecords, pageSize)
     : totalRecords;
 
-  console.log(
-    'ttttt grid body',
-    data,
-    'dataLength',
-    dataLength,
-    'totalRecords',
-    totalRecords,
-    'page',
-    page,
-    'pageSize',
-    pageSize
-  );
-
   const renderRow = React.useCallback(
     (rowIndex: number, item?: object) => {
       return (
@@ -105,28 +90,6 @@ export const GridVirtualizedBody = (props: GridBodyProps) => {
     [data, schema, onSelect]
   );
 
-  // const renderRow = React.useCallback(
-  //   (rowIndex: number, item: object) => {
-  //     return (
-  //       <GridRow
-  //         key={rowIndex}
-  //         rowIndex={rowIndex}
-  //         data={!item ? data[rowIndex] : item}
-  //         schema={schema}
-  //         onSelect={onSelect}
-  //       />
-  //     );
-  //   },
-  //   [data, schema, onSelect]
-  // );
-
-  // const getArrayList = () => {
-  //   if (loading && !data.length) {
-  //     return [...Array(dataLength).map((x) => x)];
-  //   }
-  //   return data;
-  // };
-
   const minRowHeight: Record<GridProps['size'], number> = {
     comfortable: 40,
     standard: 40,
@@ -134,31 +97,8 @@ export const GridVirtualizedBody = (props: GridBodyProps) => {
     tight: 24,
   };
 
-  // const fetchNextRows = async () => {
-  //   console.log('<<<end reached>>>', updateVirtualData, isLoadingMore);
-
-  //   if (updateVirtualData && !isLoadingMore && hasMoreData) {
-  //     // const gridBodyEl = ref!.querySelector('.Grid-body');
-  //     // if (gridBodyEl) {
-  //     //   setScrollTop(gridBodyEl.scrollTop);
-  //     // }
-
-  //     setIsLoadingMore(true);
-  //     try {
-  //       const dataList = await updateVirtualData({ page: currentPage + 1, pageSize });
-  //       console.log('<<<dataListaa>>>', dataList);
-  //       if (dataList.length === 0) {
-  //         setHasMoreData(false);
-  //       }
-  //       setCurrentPage((prevPage) => prevPage + 1);
-  //     } finally {
-  //       setIsLoadingMore(false);
-  //     }
-  //   }
-  // };
-
   const fetchNextRows = React.useCallback(async () => {
-    console.log('<<<end reached>>>', 'hasMoreData', hasMoreData);
+    console.log('>>> Fetching next rows');
     if (updateVirtualData && !isLoadingMore && hasMoreData) {
       setIsLoadingMore(true);
       try {
@@ -173,13 +113,6 @@ export const GridVirtualizedBody = (props: GridBodyProps) => {
     }
   }, [updateVirtualData, isLoadingMore, hasMoreData, currentPage, preFetchRows]);
 
-  // React.useEffect(() => {
-  //   const gridBodyEl = ref!.querySelector('.Grid-body');
-  //   if (gridBodyEl) {
-  //     gridBodyEl.scrollTop = scrollTop;
-  //   }
-  // }, [scrollTop, data]);
-
   const memoizedVirtualScroll = React.useMemo(
     () => (
       <VirtualScroll
@@ -190,33 +123,17 @@ export const GridVirtualizedBody = (props: GridBodyProps) => {
         totalLength={dataLength}
         renderItem={renderRow}
         onScroll={onScroll}
-        loadMoreThreshold={loadMoreThreshold}
-        onEndReached={fetchNextRows}
+        loadMoreThreshold="near-end"
+        fetchNewData={fetchNextRows}
       />
     ),
     [dataLength, renderRow, fetchNextRows, minRowHeight, size]
   );
 
   return (
-    <div
-      className={styles['Grid-body']}
-      // ref={ref}
-    >
+    <div className={styles['Grid-body']}>
       {isLoadingMore && <ProgressBar className="position-absolute" state="indeterminate" size="small" />}
-
-      {/* <VirtualScroll
-        key="virtual-scroll"
-        className={styles['Grid-body']}
-        buffer={5}
-        length={20}
-        minItemHeight={minRowHeight[size]}
-        totalLength={dataLength}
-        renderItem={renderRow}
-        onEndReached={fetchNextRows}
-        // currentPage={currentPage}
-      /> */}
       {memoizedVirtualScroll}
-
       {isLoadingMore && <ProgressBar className="position-absolute bottom-0" state="indeterminate" size="small" />}
     </div>
   );

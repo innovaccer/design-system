@@ -10,6 +10,8 @@ export const isInView = (container: HTMLElement, element: Element) => {
   return elementHeight - (containerTop - elementTop) > 0;
 };
 
+type thresholdTypes = 'early' | 'balanced' | 'lazy' | 'near-end';
+
 interface VirtualScrollProps extends BaseProps {
   buffer?: number;
   length?: number;
@@ -18,10 +20,8 @@ interface VirtualScrollProps extends BaseProps {
   totalLength: number;
   renderItem: (index: number, item?: object) => React.ReactElement;
   onScroll?: (event: Event, scrollTop: number) => void;
-  onEndReached?: () => void;
-  loadMoreThreshold: number;
-  // forwardRef?: React.RefObject<HTMLDivElement>;
-  // currentPage: number;
+  fetchNewData?: () => void;
+  loadMoreThreshold: thresholdTypes;
 }
 
 const VirtualScroll = (props: VirtualScrollProps) => {
@@ -33,10 +33,8 @@ const VirtualScroll = (props: VirtualScrollProps) => {
     totalLength,
     renderItem,
     onScroll,
-    onEndReached,
-    loadMoreThreshold = 0,
-    // forwardRef,
-    // currentPage,
+    fetchNewData,
+    loadMoreThreshold = 'balanced',
     ...rest
   } = props;
 
@@ -47,56 +45,11 @@ const VirtualScroll = (props: VirtualScrollProps) => {
   const lastScrollTop = useRef(0);
   const endReached = useRef(false); // Flag to track if end has been reached
 
-  console.log('lastScrollTop lastScrollTop', lastScrollTop);
-  // sets the initial scroll position of the list
-  // useEffect(() => {
-  //   if (typeof window !== 'undefined') {
-  //     window.requestAnimationFrame(() => {
-  //       console.log('currentPage>>>', currentPage);
-  //       if (listRef.current) {
-  //         // listRef.current.scrollTop = offset * avgRowHeight;
-  //         // listRef.current.scrollTop = lastScrollTop.current;
-  //         listRef.current.scrollTop = 500;
-  //       }
-  //     });
-  //   }
-  //   // }, [offset, avgRowHeight]);
-  // }, [currentPage]);
-
-  // sets the initial scroll position of the list
-  // useEffect(() => {
-  //   if (typeof window !== 'undefined') {
-  //     window.requestAnimationFrame(() => {
-  //       console.log('currentPage>>>', currentPage, 'lastScrollTop.current', lastScrollTop.current);
-  //       if (listRef.current) {
-  //         // listRef.current.scrollTop = offset * avgRowHeight;
-  //         // listRef.current.scrollTop = lastScrollTop.current;
-  //         // listRef.current.scrollTop = 500;
-  //       }
-  //     });
-  //   }
-  //   // }, [offset, avgRowHeight]);
-  // }, [currentPage]);
-
-  useEffect(() => {
-    // listRef.current.scrollTop = lastScrollTop.current;
-    // listRef.current.scrollTop = 500;
-    window.requestAnimationFrame(() => {
-      console.log('iiinside useEffect', lastScrollTop);
-
-      if (listRef.current) {
-        // const currentScrollPosition = localStorage.getItem('lastScrollTop');
-        // // listRef.current.scrollTop = offset * avgRowHeight;
-        // listRef.current.scrollTop = currentScrollPosition;
-      }
-    });
-
-    // return () => {
-    //   // cleanup
-    //   // console.log('cleanup');
-    //   localStorage.setItem('lastScrollTop', 0);
-    // };
-  }, []);
+  const thresholdMapper = {
+    early: 0.5,
+    balanced: 0.75,
+    lazy: 0.9,
+  };
 
   useEffect(() => {
     updateOffset(initialOffset);
@@ -143,7 +96,6 @@ const VirtualScroll = (props: VirtualScrollProps) => {
 
   const onScrollHandler = useCallback(
     (event) => {
-      console.log('iiinside onScrollHandler', lastScrollTop);
       if (listRef.current) {
         const el = listRef.current as HTMLElement;
         const { scrollTop, scrollHeight, clientHeight } = el;
@@ -155,7 +107,6 @@ const VirtualScroll = (props: VirtualScrollProps) => {
         let newOffset = offset;
         let newAvgRowHeight = avgRowHeight;
         const start = Math.min(offset, buffer);
-        // debugger;
         // cursor scrolls down
         if (direction > 0) {
           if (offset < totalLength - length) {
@@ -193,31 +144,26 @@ const VirtualScroll = (props: VirtualScrollProps) => {
         }
 
         lastScrollTop.current = scrollTop;
-        // localStorage.setItem('lastScrollTop', JSON.stringify(scrollTop));
         if (onScroll) onScroll(event, scrollTop);
 
-        // Check if user has scrolled to the end
-        // if (scrollTop + clientHeight >= scrollHeight - minItemHeight) {
-        //   console.log('>>>enddd reacheddd');
-        //   if (onEndReached) {
-        //     onEndReached();
-        //   }
-        // }
+        const hasEndReached = loadMoreThreshold === 'near-end' && scrollTop + clientHeight >= scrollHeight;
+        const hasThresholdReached =
+          loadMoreThreshold !== 'near-end' &&
+          scrollTop + clientHeight >= scrollHeight * thresholdMapper[loadMoreThreshold];
 
-        console.log('loadMoreThresholdddd', loadMoreThreshold);
-        // Check if user has scrolled to the end
-        if (scrollTop + clientHeight >= scrollHeight - loadMoreThreshold) {
-          if (!endReached.current && onEndReached) {
-            console.log('>>>enddd reacheddd');
+        // Check if user has scrolled to the threshold
+        if (hasEndReached || hasThresholdReached) {
+          if (!endReached.current && fetchNewData) {
+            console.log('>>> aaThreshold reached:', loadMoreThreshold);
             endReached.current = true;
-            onEndReached();
+            fetchNewData();
           }
-        } else {
+        } else if (!hasEndReached && !hasThresholdReached) {
           endReached.current = false;
         }
       }
     },
-    [offset, avgRowHeight, buffer, length, minItemHeight, totalLength, onScroll, onEndReached]
+    [offset, avgRowHeight, buffer, length, minItemHeight, totalLength, onScroll, fetchNewData]
   );
 
   const renderItems = (start: number, end: number) => {
@@ -234,8 +180,6 @@ const VirtualScroll = (props: VirtualScrollProps) => {
   const start = Math.max(0, offset - buffer);
   const end = Math.min(offset + (length + buffer) - 1, totalLength - 1);
 
-  console.log('sssstart>>>', start, 'end', end);
-
   const topPadding = Math.max(0, start * avgRowHeight);
   const bottomPadding = Math.max(0, (totalLength - end - 1) * avgRowHeight);
 
@@ -244,7 +188,6 @@ const VirtualScroll = (props: VirtualScrollProps) => {
       {...rest}
       ref={(el: HTMLDivElement) => {
         listRef.current = el;
-        // if (forwardRef) forwardRef.current = el;
         if (!init) setInit(true);
       }}
       onScroll={onScrollHandler}
@@ -270,5 +213,4 @@ const VirtualScroll = (props: VirtualScrollProps) => {
   );
 };
 
-// export default React.forwardRef((props, ref) => <VirtualScroll key={props.totalLength} forwardRef={ref} {...props} />);
 export default VirtualScroll;
