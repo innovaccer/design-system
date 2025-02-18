@@ -123,7 +123,7 @@ export const GridVirtualizedBody = (props: GridBodyProps) => {
         totalLength={dataLength}
         renderItem={renderRow}
         onScroll={onScroll}
-        loadMoreThreshold="near-end"
+        loadMoreThreshold={loadMoreThreshold}
         fetchNewData={fetchNextRows}
       />
     ),

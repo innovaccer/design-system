@@ -157,6 +157,7 @@ export type GridSize = 'comfortable' | 'standard' | 'compressed' | 'tight';
 export type GridType = 'resource' | 'data';
 export type Data = RowData[];
 export type Schema = ColumnSchema[];
+export type thresholdTypes = 'early' | 'balanced' | 'lazy' | 'near-end';
 
 export interface VirtualScrollProps {
   /**
@@ -174,7 +175,7 @@ export interface VirtualScrollProps {
   /**
    * the distance from the end of the scrollable content at which new data should start fetching in case of async table.
    */
-  loadMoreThreshold: number;
+  loadMoreThreshold: thresholdTypes;
   /**
    * Callback to be called on scroll
    */

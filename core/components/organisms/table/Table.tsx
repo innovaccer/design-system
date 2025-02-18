@@ -391,17 +391,27 @@ interface SharedTableProps extends BaseProps {
    *   preFetchRows: number;
    *   buffer: number;
    *   visibleRows: number;
-   *   loadMoreThreshold: number;
+   *   loadMoreThreshold: 'early' | 'balanced' | 'lazy' | 'near-end';
    *   onScroll: (event: Event, scrollTop: number) => void;
    * }
    * </pre>
+   *
+   * | Name | Value |
+   * | --- | --- |
+   * | early | 50% |
+   * | balanced | 75% |
+   * | lazy | 90% |
+   * | near-end | 0 |
+   *
+   * <br />
+   * <br />
    *
    * | Name | Description | Default |
    * | --- | --- | --- |
    * | preFetchRows | Number of rows to Pre-fetch at a time in case of async table | 50 |
    * | buffer | Number of additional rows to render before and after the visible rows | 10 |
    * | visibleRows | Number of rows to be rendered within the visible viewport | 20 |
-   * | loadMoreThreshold | the distance from the end of the scrollable content at which new data should start fetching in case of async table | 0 |
+   * | loadMoreThreshold | the distance from the end of the scrollable content at which new data should start fetching in case of async table | balanced |
    * | onScroll | Callback to be called on scroll | |
    *
    */
@@ -603,9 +613,18 @@ export class Table extends React.Component<TableProps, TableState> {
   };
 
   updateVirtualData = async (props: { page: number; preFetchRows: number }) => {
-    const { sortingList, filterList, searchTerm, startOffset } = this.state;
+    const {
+      sortingList,
+      filterList,
+      searchTerm,
+      // startOffset
+    } = this.state;
 
-    const { fetchData, virtualScrollOptions, uniqueColumnName } = this.props;
+    const {
+      fetchData,
+      // virtualScrollOptions,
+      uniqueColumnName,
+    } = this.props;
     // const { maxDataLimit = 1000 } = virtualScrollOptions || {};
 
     const { page, preFetchRows } = props;
