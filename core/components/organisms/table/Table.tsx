@@ -570,6 +570,7 @@ export class Table extends React.Component<TableProps, TableState> {
       prevState.searchTerm !== this.state.searchTerm
     ) {
       if (!this.props.loading) {
+        console.log('>>>aaaa componentDidUpdate', this.props.loading);
         const searchUpdate = prevState.searchTerm !== this.state.searchTerm;
         this.updateData(searchUpdate);
       }
@@ -608,6 +609,20 @@ export class Table extends React.Component<TableProps, TableState> {
     } else {
       this.updateDataFn();
     }
+
+    // if (searchUpdate && this.props.enableRowVirtualization && this.state.searchTerm === '') {
+    //   console.log('bbbb searchupdate');
+    //   this.updateVirtualData({
+    //     page: 1,
+    //     preFetchRows: 120,
+    //   });
+    // } else {
+    //   if (searchUpdate) {
+    //     this.debounceUpdate();
+    //   } else {
+    //     this.updateDataFn();
+    //   }
+    // }
   };
 
   updateVirtualData = async (props: { page: number; preFetchRows: number }) => {
@@ -672,11 +687,14 @@ export class Table extends React.Component<TableProps, TableState> {
           this.selectAllRef.current
         );
 
-        console.log('>>>aaaa selectedData>>>', selectedData);
+        console.log('>>>aaaa selectedData>>>', selectedData, 'res.data', res.data);
 
         this.setState({
           data: selectedData,
           totalRecords: selectedData.length,
+          loading: false,
+          error: !selectedData.length,
+          // errorType: 'NO_RECORDS_FOUND',
         });
         return res.data;
       } catch (error) {

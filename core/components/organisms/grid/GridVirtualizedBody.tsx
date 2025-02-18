@@ -49,7 +49,7 @@ export const GridVirtualizedBody = (props: GridBodyProps) => {
 
     console.log('mounted dd', currentPage, 'hasMoreData', hasMoreData);
 
-    fetchNextRows();
+    // fetchNextRows();
 
     return () => {
       if (gridBodyEl) {
@@ -58,12 +58,12 @@ export const GridVirtualizedBody = (props: GridBodyProps) => {
     };
   }, []);
 
-  // React.useEffect(() => {
-  //   if (data.length === preFetchRows) {
-  //     console.log('>>>aaaa Fetching next rows', data.length);
-  //     updateVirtualData?.({ page: currentPage.current, preFetchRows: currentPage.current * preFetchRows });
-  //   }
-  // }, [data]);
+  React.useEffect(() => {
+    if (data.length === preFetchRows) {
+      console.log('>>>bbbb aaaa Fetching next rows', data.length);
+      fetchNextRows();
+    }
+  }, [data]);
 
   const totalPages = Math.ceil(totalRecords / pageSize);
   const isLastPage = withPagination && page === totalPages;
