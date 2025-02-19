@@ -1,6 +1,6 @@
 import * as React from 'react';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
-import data from '@/components/organisms/grid/__stories__/_common_/data';
+import data from '@/components/organisms/grid/__stories__/_common_/infiniteList.ts';
 import { Card, Table, Button } from '@/index';
 import { AsyncTable, SyncTable } from './_common_/types';
 import { fetchData } from '@/components/organisms/grid/__stories__/_common_/fetchData';
@@ -115,7 +115,7 @@ const customCode = `
     return paginatedData;
   };
 
-  const data = ${JSON.stringify(data.slice(0, 10), null, 4)};
+  const data = ${JSON.stringify(data, null, 4)};
   const [formattedData, setFormattedData] = React.useState(data);
 
   const schema = [
@@ -252,13 +252,13 @@ const customCode = `
           resolve({
             searchTerm,
             schema,
-            count: sortedData.length,
+            count: slicedData.length,
             data: slicedData,
           });
         }, 2000);
       });
     }
-
+  
     return new Promise(resolve => {
       window.setTimeout(() => {
         resolve({
@@ -292,13 +292,13 @@ const customCode = `
   }
 
   return (
-    <div>
+    <div className="vh-75">
       <Card className="h-100 overflow-hidden">
         <Table
           loaderSchema={loaderSchema}
           fetchData={fetchData}
           withHeader={true}
-          uniqueColumnName="firstName"
+          uniqueColumnName="lastName"
           headerOptions={{
             selectionActionRenderer,
             withSearch: true,
@@ -306,9 +306,12 @@ const customCode = `
             allowSelectAll: true,
           }}
           withCheckbox={true}
+          pageSize={50}
+          page={1}
+          enableRowVirtualization={true}
+          virtualScrollOptions={{preFetchRows: 60, buffer: 5, visibleRows: 10}}
           onSelect={(rowIndex, selected, selectedList, selectAll) => console.log(\`on-select: - rowIndex: \${ rowIndex } selected: \${ selected } selectedList: \${ JSON.stringify(selectedList) } selectAll: \${ selectAll } \`)}
-          withPagination={true}
-          pageSize={5}
+          withPagination={false}
           onPageChange={newPage => console.log(\`on-page-change:- \${newPage}\`)}
         />
       </Card>

@@ -380,6 +380,42 @@ interface SharedTableProps extends BaseProps {
    * Defines position of checkbox in the row
    */
   checkboxAlignment?: 'top' | 'center' | 'bottom';
+  /**
+   * Enable row virtualization
+   */
+  enableRowVirtualization?: GridProps['enableRowVirtualization'];
+  /**
+   * Virtual Scroll Options
+   * <pre className="DocPage-codeBlock">
+   * VirtualScrollProps: {
+   *   preFetchRows: number;
+   *   buffer: number;
+   *   visibleRows: number;
+   *   loadMoreThreshold: 'early' | 'balanced' | 'lazy' | 'near-end';
+   *   onScroll: (event: Event, scrollTop: number) => void;
+   * }
+   * </pre>
+   *
+   * | Name | Value |
+   * | --- | --- |
+   * | early | 50% |
+   * | balanced | 75% |
+   * | lazy | 90% |
+   * | near-end | 0 |
+   *
+   * <br />
+   * <br />
+   *
+   * | Name | Description | Default |
+   * | --- | --- | --- |
+   * | preFetchRows | Number of rows to Pre-fetch at a time in case of async table | 50 |
+   * | buffer | Number of additional rows to render before and after the visible rows | 10 |
+   * | visibleRows | Number of rows to be rendered within the visible viewport | 20 |
+   * | loadMoreThreshold | the distance from the end of the scrollable content at which new data should start fetching in case of async table | balanced |
+   * | onScroll | Callback to be called on scroll | |
+   *
+   */
+  virtualScrollOptions?: GridProps['virtualScrollOptions'];
 }
 
 export type SyncTableProps = SharedTableProps & TableSyncProps;
@@ -400,6 +436,8 @@ interface TableState {
   loading: TableProps['loading'];
   error: TableProps['error'];
   errorType?: TableProps['errorType'];
+  startOffset: number;
+  currentPageIndex?: number;
 }
 
 const defaultErrorTemplate = (props: ErrorTemplateProps) => {
@@ -437,6 +475,13 @@ export const defaultProps = {
   searchDebounceDuration: 750,
   pageJumpDebounceDuration: 750,
   errorTemplate: defaultErrorTemplate,
+  virtualScrollOptions: {
+    preFetchRows: 50,
+    buffer: 10,
+    visibleRows: 20,
+    loadMoreThreshold: 0,
+    maxDataLimit: 500,
+  },
 };
 
 export class Table extends React.Component<TableProps, TableState> {
@@ -445,6 +490,7 @@ export class Table extends React.Component<TableProps, TableState> {
   selectedRowsRef: React.MutableRefObject<any> = React.createRef<[] | null>();
   clearSelectionRef: React.MutableRefObject<any> = React.createRef<boolean | null>();
   selectAllRef: React.MutableRefObject<any> = React.createRef<boolean | null>();
+  currentVirtualPageRef: React.MutableRefObject<any> = React.createRef<number | null>();
 
   constructor(props: TableProps) {
     super(props);
@@ -452,6 +498,7 @@ export class Table extends React.Component<TableProps, TableState> {
     const async = 'fetchData' in this.props;
     const data = props.data || [];
     const schema = props.schema || [];
+    this.currentVirtualPageRef.current = 1;
 
     this.state = {
       async,
@@ -467,6 +514,8 @@ export class Table extends React.Component<TableProps, TableState> {
       errorType: props.errorType,
       selectAll: getSelectAll([]),
       searchTerm: undefined,
+      startOffset: 0,
+      currentPageIndex: 1,
     };
 
     this.debounceUpdate = debounce(props.searchDebounceDuration, this.updateDataFn);
@@ -525,18 +574,17 @@ export class Table extends React.Component<TableProps, TableState> {
       prevState.searchTerm !== this.state.searchTerm
     ) {
       if (!this.props.loading) {
-        // let errorType = "";
-        // let errorCount = 0;
-        // if(prevState.page !== this.state.page) errorType = "ON_PAGE_CHANGE", errorCount++;
-        // if(prevState.filterList !== this.state.filterList) errorType = "ON_FILTER_CHANGE", errorCount++;
-        // if(prevState.sortingList !== this.state.sortingList) errorType = "ON_SORTING_CHANGE", errorCount++;
-        // if(prevState.searchTerm !== this.state.searchTerm) errorType = "ON_SEARCH_CHANGE", errorCount++;
-        // this.setState({
-        //   errorType: errorCount > 1 ? "FAILED_TO_FETCH" : errorType
-        // });
+        console.log('>>>aaaa componentDidUpdate', this.props.loading);
         const searchUpdate = prevState.searchTerm !== this.state.searchTerm;
         this.updateData(searchUpdate);
       }
+
+      // else if (this.props.enableRowVirtualization && this.state.searchTerm === '') {
+      //   this.updateVirtualData({
+      //     page: 1,
+      //     preFetchRows: 120,
+      //   });
+      // }
     }
   }
 
@@ -547,15 +595,154 @@ export class Table extends React.Component<TableProps, TableState> {
       });
     }
 
-    if (searchUpdate) {
-      this.debounceUpdate();
+    // if (this.props.enableRowVirtualization) {
+    //   this.updateVirtualData({
+    //     page: this.state.page,
+    //     preFetchRows: this.props.virtualScrollOptions?.preFetchRows || 50,
+    //   });
+    // } else {
+    //   if (searchUpdate) {
+    //     this.debounceUpdate();
+    //   } else {
+    //     this.updateDataFn();
+    //   }
+    // }
+
+    // if (searchUpdate) {
+    //   this.debounceUpdate();
+    // } else {
+    //   this.updateDataFn();
+    // }
+    const { preFetchRows } = this.props.virtualScrollOptions || {};
+
+    if (searchUpdate && this.props.enableRowVirtualization && this.state.searchTerm === '') {
+      console.log('bbbb searchupdate', this.currentVirtualPageRef.current);
+      this.updateVirtualData({
+        page: 1,
+        rowCount: preFetchRows! * this.currentVirtualPageRef.current,
+      });
     } else {
-      this.updateDataFn();
+      if (searchUpdate) {
+        this.debounceUpdate();
+      } else {
+        this.updateDataFn();
+      }
     }
   };
 
+  updateVirtualData = async (props: { page: number; rowCount: number }) => {
+    const {
+      sortingList,
+      filterList,
+      searchTerm,
+      // startOffset
+    } = this.state;
+
+    const { fetchData, virtualScrollOptions, uniqueColumnName } = this.props;
+    const { preFetchRows } = virtualScrollOptions || {};
+
+    const { page, rowCount } = props;
+
+    // const newPageIndex = this.currentVirtualPageRef.current + 1;
+
+    // this.currentVirtualPageRef.current = newPageIndex;
+
+    const noSearchTerm = searchTerm === '' || !searchTerm;
+    if (fetchData) {
+      try {
+        const opts: FetchDataOptions = {
+          // page: noSearchTerm && page < this.currentVirtualPageRef.current ? this.currentVirtualPageRef.current : page,
+          page,
+          pageSize: rowCount,
+          sortingList,
+          filterList,
+          searchTerm,
+        };
+        const res = await fetchData(opts);
+
+        console.log('zzzsearchTerm', searchTerm, 'page', page);
+        if (noSearchTerm) {
+          console.log('>>>zzz', page);
+          // this.currentVirtualPageRef.current = page;
+          this.setState({
+            currentPageIndex: page,
+          });
+        }
+
+        let newList = [];
+
+        if (rowCount > preFetchRows!) {
+          newList = [...res.data];
+        } else {
+          newList = [...this.state.data, ...res.data];
+        }
+
+        // add prop for maxDataLimit-> 500
+
+        // if (newList.length > maxDataLimit) {
+        //   this.setState({
+        //     startOffset: startOffset + rowCount,
+        //   });
+
+        //   newList.splice(0, newList.length - maxDataLimit);
+        //   // newList.splice(rowCount, newList.length - rowCount);
+        // }
+
+        const data = newList;
+        const dataReplica = JSON.parse(JSON.stringify(data));
+        const preSelectedRows = data.filter((item: RowData) => item._selected);
+
+        if (this.clearSelectionRef.current) {
+          this.selectedRowsRef.current = [];
+        } else {
+          this.selectedRowsRef.current = this.selectedRowsRef.current
+            ? removeDuplicate([...this.selectedRowsRef.current, ...preSelectedRows], uniqueColumnName)
+            : removeDuplicate([...preSelectedRows], uniqueColumnName);
+        }
+
+        const selectedData = getUpdatedData(
+          dataReplica,
+          this.selectedRowsRef.current,
+          uniqueColumnName,
+          this.clearSelectionRef.current,
+          this.selectAllRef.current
+        );
+
+        console.log('>>>aaaa selectedData>>>', selectedData, 'res.data', res.data);
+
+        this.setState({
+          data: selectedData,
+          totalRecords: selectedData.length,
+          loading: false,
+          error: !selectedData.length,
+          // currentPageIndex: page,
+          // errorType: 'NO_RECORDS_FOUND',
+        });
+        return res.data;
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        return [];
+      }
+    }
+
+    return [];
+  };
+
   updateDataFn = () => {
-    const { fetchData, pageSize, withPagination, data: dataProp, onSearch, uniqueColumnName } = this.props;
+    console.log('>>>aaaa updateData');
+
+    const {
+      fetchData,
+      pageSize,
+      withPagination,
+      data: dataProp,
+      onSearch,
+      uniqueColumnName,
+      virtualScrollOptions,
+      enableRowVirtualization,
+    } = this.props;
+
+    const { preFetchRows } = virtualScrollOptions || {};
 
     const { async, page, sortingList, filterList, searchTerm } = this.state;
 
@@ -563,13 +750,14 @@ export class Table extends React.Component<TableProps, TableState> {
 
     const opts: FetchDataOptions = {
       page,
-      pageSize,
+      pageSize: enableRowVirtualization ? preFetchRows : pageSize,
       sortingList,
       filterList,
       searchTerm,
     };
 
-    if (!this.props.withPagination) {
+    if (!withPagination && !enableRowVirtualization) {
+      // if (!this.props.withPagination) {
       delete opts.page;
       delete opts.pageSize;
     }
@@ -857,6 +1045,11 @@ export class Table extends React.Component<TableProps, TableState> {
   };
 
   updateSearchTerm: updateSearchTermFunction = (newSearchTerm) => {
+    if (newSearchTerm === '' || !newSearchTerm) {
+      // console.log('>>>zzz', page);
+      this.currentVirtualPageRef.current = this.state.currentPageIndex;
+    }
+
     this.setState({
       searchTerm: newSearchTerm,
       page: 1,
@@ -909,6 +1102,7 @@ export class Table extends React.Component<TableProps, TableState> {
       filterPosition,
       uniqueColumnName,
       checkboxAlignment,
+      virtualScrollOptions,
     } = this.props;
 
     const baseProps = extractBaseProps(this.props);
@@ -976,6 +1170,10 @@ export class Table extends React.Component<TableProps, TableState> {
             errorTemplate={errorTemplate && errorTemplate({ errorType: this.state.errorType })}
             onRowClick={onRowClick}
             showFilters={filterPosition === 'GRID'}
+            updateVirtualData={this.updateVirtualData}
+            virtualScrollOptions={virtualScrollOptions}
+            enableRowVirtualization={this.props.enableRowVirtualization}
+            currentVirtualPageRef={this.currentVirtualPageRef}
           />
         </div>
         {withPagination && !this.state.loading && !this.state.error && totalPages > 1 && (

@@ -56,13 +56,7 @@ export const syncTable = () => {
 };
 
 const customCode = `() => {
-  const data = ${JSON.stringify(
-    [...Array(100)].map((_, index) => {
-      return data[index % 10];
-    }),
-    null,
-    4
-  )};
+  const data = ${JSON.stringify(data, null, 4)};
 
   const schema = [
     {
@@ -200,8 +194,7 @@ const customCode = `() => {
           }}
           withCheckbox={true}
           onSelect={(rowIndex, selected, selectedList, selectAll) => console.log(\`on-select:- rowIndex: \${rowIndex} selected: \${selected} selectedList: \${JSON.stringify(selectedList)} selectAll: \${selectAll}\`)}
-          withPagination={true}
-          pageSize={50}
+          withPagination={false}
           onPageChange={newPage => console.log(\`on-page-change:- \${newPage}\`)}
         />
       </Card>
