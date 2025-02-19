@@ -14,6 +14,7 @@ export interface GridBodyProps {
   updatePrevPageInfo: updatePrevPageInfoFunction;
   virtualScrollOptions: GridProps['virtualScrollOptions'];
   updateVirtualData: GridProps['updateVirtualData'];
+  currentVirtualPageRef: GridProps['currentVirtualPageRef'];
 }
 
 export const GridVirtualizedBody = (props: GridBodyProps) => {
@@ -25,7 +26,15 @@ export const GridVirtualizedBody = (props: GridBodyProps) => {
     return errorTemplate ? (typeof errorTemplate === 'function' ? errorTemplate({}) : errorTemplate) : null;
   }
 
-  const { schema, prevPageInfo, updatePrevPageInfo, onSelect, virtualScrollOptions, updateVirtualData } = props;
+  const {
+    schema,
+    prevPageInfo,
+    updatePrevPageInfo,
+    onSelect,
+    virtualScrollOptions,
+    updateVirtualData,
+    currentVirtualPageRef,
+  } = props;
 
   const { preFetchRows, buffer, visibleRows, loadMoreThreshold, onScroll } = virtualScrollOptions;
 
@@ -34,6 +43,10 @@ export const GridVirtualizedBody = (props: GridBodyProps) => {
   const [hasMoreData, setHasMoreData] = React.useState(true);
 
   // const currentPage = React.useRef(1);
+
+  console.log('currentVirtualPageRef', currentVirtualPageRef);
+
+  // console.log('mounted ddd', currentPage.current, 'hasMoreData', hasMoreData);
 
   React.useEffect(() => {
     const gridBodyEl = ref!.querySelector('.Grid-body');
@@ -46,8 +59,6 @@ export const GridVirtualizedBody = (props: GridBodyProps) => {
         gridBodyEl.scrollLeft = gridHeadEl.scrollLeft;
       });
     }
-
-    console.log('mounted dd', currentPage, 'hasMoreData', hasMoreData);
 
     // fetchNextRows();
 
@@ -102,18 +113,25 @@ export const GridVirtualizedBody = (props: GridBodyProps) => {
     if (updateVirtualData && !isLoadingMore && hasMoreData) {
       setIsLoadingMore(true);
       try {
-        // const dataList = await updateVirtualData({ page: currentPage.current + 1, preFetchRows });
-        const dataList = await updateVirtualData({ page: currentPage + 1, preFetchRows });
+        // const dataList = await updateVirtualData({ page: currentVirtualPageRef!.current + 1, preFetchRows });
+        const dataList = await updateVirtualData({ page: currentPage + 1, rowCount: preFetchRows });
         if (dataList.length === 0) {
           setHasMoreData(false);
         }
         setCurrentPage((prevPage) => prevPage + 1);
-        // currentPage.current = currentPage.current + 1;
+        // currentVirtualPageRef!.current = currentVirtualPageRef!.current + 1;
       } finally {
         setIsLoadingMore(false);
       }
     }
-  }, [updateVirtualData, isLoadingMore, hasMoreData, currentPage, preFetchRows]);
+  }, [
+    updateVirtualData,
+    isLoadingMore,
+    hasMoreData,
+    // currentVirtualPageRef
+    currentPage,
+    preFetchRows,
+  ]);
 
   const memoizedVirtualScroll = React.useMemo(
     () => (

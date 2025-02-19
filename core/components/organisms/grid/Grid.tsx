@@ -331,11 +331,15 @@ export interface GridProps extends BaseProps {
   /**
    * Fetch Data Function in case of async table to be called on scroll end
    */
-  updateVirtualData?: (props: { page: number; preFetchRows: number }) => Promise<Data>;
+  updateVirtualData?: (props: { page: number; rowCount: number }) => Promise<Data>;
   /**
    * Virtual Scroll Options
    */
   virtualScrollOptions: VirtualScrollProps;
+  /**
+   *
+   */
+  currentVirtualPageRef?: React.MutableRefObject<number>;
 }
 
 export interface GridState {
@@ -606,6 +610,7 @@ export class Grid extends React.Component<GridProps, GridState> {
                 onSelect={this.onSelect.bind(this)}
                 virtualScrollOptions={this.props.virtualScrollOptions}
                 updateVirtualData={this.props.updateVirtualData}
+                currentVirtualPageRef={this.props.currentVirtualPageRef}
               />
             )}
           </GridProvider>
