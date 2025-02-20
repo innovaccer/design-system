@@ -109,17 +109,37 @@ const customCode = `
                   The system automatically creates collection for multiple support.
                 </Text>
                 <div className="w-50 mt-4">
-                  <Dropdown
-                    options={options}
-                    placeholder="Input Collection 1"
+                  <Select 
+                    width="100%"
                     className="mb-4"
-                    onChange={(value) => this.onChangeOutput(value, 'collection1')}
-                  />
-                  <Dropdown
-                    options={options}
-                    placeholder="Input Collection 2"
-                    onChange={(value) => this.onChangeOutput(value, 'collection2')}
-                  />
+                    triggerOptions={{ placeholder: "Input Collection 1" }}
+                    onSelect={(option) => this.onChangeOutput(option.value, 'collection1')}
+                  >
+                    <Select.List>
+                      {options.map((item, key) => {
+                        return (
+                          <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                            {item.label}
+                          </Select.Option>
+                        )
+                      })}
+                    </Select.List>
+                  </Select>
+                  <Select 
+                    width="100%"
+                    triggerOptions={{ placeholder: "Input Collection 2" }}
+                    onSelect={(option) => this.onChangeOutput(option.value, 'collection2')}
+                  >
+                    <Select.List>
+                      {options.map((item, key) => {
+                        return (
+                          <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                            {item.label}
+                          </Select.Option>
+                        )
+                      })}
+                    </Select.List>
+                  </Select>
                 </div>
                 <div className="d-flex mr-3 mt-8 mb-2">
                   <Text weight="strong" className="mr-4">Destination</Text>
@@ -130,11 +150,21 @@ const customCode = `
                 </Text>
                 <div className="w-50 mt-6">
                   <Label withInput={true}>Destination Collection</Label>
-                  <Dropdown
-                    options={options}
-                    placeholder="Select Destination"
-                    onChange={(value) => this.onChangeOutput(value, 'collection')}
-                  />
+                  <Select 
+                    width="100%" 
+                    triggerOptions={{ placeholder: "Select Destination" }}
+                    onSelect={(option) => this.onChangeOutput(option.value, 'collection')}
+                  >
+                    <Select.List>
+                      {options.map((item, key) => {
+                        return (
+                          <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                            {item.label}
+                          </Select.Option>
+                        )
+                      })}
+                    </Select.List>
+                  </Select>
                 </div>
                 <div className="mt-6 w-50">
                   <Label withInput={true} required>Prefix</Label>
@@ -148,9 +178,35 @@ const customCode = `
                 </div>
                 <div className="w-25 mt-6">
                   <Label withInput={true} required>Retention</Label>
-                  <Dropdown options={options} onChange={(value) => this.onChangeOutput(value, 'retention')} />
+                  <Select 
+                    width="100%"
+                    onSelect={(option) => this.onChangeOutput(option.value, 'retention')}
+                  >
+                    <Select.List>
+                      {options.map((item, key) => {
+                        return (
+                          <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                            {item.label}
+                          </Select.Option>
+                        )
+                      })}
+                    </Select.List>
+                  </Select>
                   <Label className="mt-6" withInput={true}>Visibility Clarification</Label>
-                  <Dropdown options={options} onChange={(value) => this.onChangeOutput(value, 'clarification')} />
+                  <Select
+                    width="100%" 
+                    onSelect={(option) => this.onChangeOutput(option.value, 'clarification')}
+                  >
+                    <Select.List>
+                      {options.map((item, key) => {
+                        return (
+                          <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                            {item.label}
+                          </Select.Option>
+                        )
+                      })}
+                    </Select.List>
+                  </Select>
                 </div>
               </div>
               <div className={value !== 'Add_Configuration' ? 'd-none' : ''}>
@@ -165,14 +221,23 @@ const customCode = `
                 </div>
                 <div className="w-25 mt-6">
                   <Label withInput={true} required>Mode</Label>
-                  <Dropdown
-                    options={options}
-                    onChange={(value) => {
+                  <Select
+                    onSelect={(option) => {
                       this.setState({
-                        configuration: { ...this.state.configuration, mode: value }
+                        configuration: { ...this.state.configuration, mode: option.value }
                       });
                     }}
-                  />
+                  >
+                    <Select.List>
+                      {options.map((item, key) => {
+                        return (
+                          <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                            {item.label}
+                          </Select.Option>
+                        )
+                      })}
+                    </Select.List>
+                  </Select>
                 </div>
                 <div className="mt-6 w-50">
                   <Label withInput={true} required>Regex</Label>

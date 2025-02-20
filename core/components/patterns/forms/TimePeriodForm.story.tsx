@@ -32,11 +32,31 @@ const customCode = `
             <div className="d-flex mt-5 mb-4">
               <div className="mr-6" style={{ width: 'var(--spacing-8)' }}>
                 <Label withInput={true}>Region</Label>
-                <Dropdown options={options} />
+                <Select width="100%">
+                  <Select.List>
+                    {options.map((item, key) => {
+                      return (
+                        <Select.Option key={key} option={{ label: item.label, value: item.value }}> 
+                          {item.label} 
+                        </Select.Option>
+                      )
+                    })}
+                  </Select.List>
+                </Select>
               </div>
               <div style={{ width: 'var(--spacing-9)' }}>
                 <Label withInput={true}>Organization</Label>
-                <Dropdown options={options} />
+                <Select width="100%">
+                  <Select.List>
+                    {options.map((item, key) => {
+                      return (
+                        <Select.Option key={key} option={{ label: item.label, value: item.value }}> 
+                          {item.label} 
+                        </Select.Option>
+                      )
+                    })}
+                  </Select.List>
+                </Select>
               </div>
             </div>
             <Link target="_blank" href="#">Add organizations</Link>

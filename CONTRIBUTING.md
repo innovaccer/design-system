@@ -33,7 +33,7 @@ the existing issue to show that it's affecting multiple people.
 ### Check If It's Been Fixed
 
 Check if the issue has been fixed — try to reproduce it using the latest
-`master` or development branch in the repository.
+`master` or `develop` branch in the repository.
 
 ## Request Features
 
@@ -70,7 +70,7 @@ Please provide:
    npm run dev
    ```
 
-The server runs on port 5000 and url is opened automaticaly in browser as the project uses storybook for component developement and documentation.
+The server runs on port 5000 and url is opened automatically in browser as the project uses storybook for component development and documentation.
 
 ### Coding guidelines for a component
 
@@ -131,7 +131,7 @@ mkdir __stories__/variants
     - **Single Story**: Last part of title will be hoisted up to replace their parent component in the sidebar. Example: `All`
   - `component`: Used by addons for automatic prop table generation and display of other component metadata
   - `parameters`: Used to control the behavior of Storybook features and addons.
-  - `subcomponents`: Used to include subcomponents in prop table.
+  - `sub-components`: Used to include sub-components in prop table.
 
 ```tsx
 // Storybook CSF Format
@@ -523,7 +523,7 @@ export const controlledCheckbox = () => {
 };
 ```
 
-- At this point, we will only see JSX in our live code editor. To fix this, we will write cutsom code for docs page.
+- At this point, we will only see JSX in our live code editor. To fix this, we will write custom code for docs page.
 
 ```
 const customCode = `() => {
@@ -712,7 +712,7 @@ For checking prettier issues:
 npm run prettier:check
 ```
 
-For formating prettier issues:
+For formatting prettier issues:
 
 ```bash
 npm run prettier
@@ -724,7 +724,7 @@ For checking lint issues:
 npm run lint:check
 ```
 
-For formating lint issues:
+For formatting lint issues:
 
 ```bash
 npm run lint
@@ -759,8 +759,8 @@ semantic versioning.
 
 For example:
 
-- `feat: A new feature`
-- `fix: A bug fix`
+- `feat(componentName): A new feature`
+- `fix(componentName): A bug fix`
 
 A commit of the type **feat** introduces a new feature to the codebase
 (this correlates with MINOR in semantic versioning).
@@ -768,7 +768,7 @@ A commit of the type **feat** introduces a new feature to the codebase
 e.g.:
 
 ```
-feat: xxxxxxxxxx
+feat(componentName): xxxxxxxxxx
 ```
 
 A commit of the type **fix** patches a bug in your codebase (this correlates with PATCH in semantic versioning).
@@ -776,11 +776,13 @@ A commit of the type **fix** patches a bug in your codebase (this correlates wit
 e.g.:
 
 ```
-fix: xxxxxxxxxx
+fix(componentName): xxxxxxxxxx
 ```
 
-Commits types such as as `docs:`,`style:`,`refactor:`,`perf:`,`test:`
+Commits types such as `docs:`,`style:`,`refactor:`,`perf:`,`test:`
 and `chore:` are valid but have no effect on versioning. **It would be great if you use them.**
+
+Begin your commit message with the type of commit (`feat`, `fix`, `docs`,`style`,`refactor`,`perf`,`test`) followed by the relevant component name.
 
 **PRs that do not follow the commit message guidelines will not be merged.**
 
@@ -829,3 +831,41 @@ To met the above criteria make sure following things are addressed.
 2. All the Storybook Accessibility plugin checks are met.
 3. All the [WCAG 2.0 checks AA are covered](https://docs.google.com/spreadsheets/d/1q7SaO-Bki9RIusQKB01Q8WclHvmERXGU1rdl4ou9s5E/edit#gid=1091897153)
 4. All the [WAI-ARIA Authoring Practices](https://www.w3.org/TR/wai-aria-practices-1.2/) are met.
+
+## New Component Checklist
+
+When developing a new component, please follow these guidelines:
+
+- **Develop the Component**:
+  - Develop the new component following the project's coding standards and best practices.
+  - For more details, refer to the [Component Development Guidelines](#development).
+
+- **Accessibility**:
+  - Ensure the component is accessible by adhering to all accessibility guidelines.
+  - For more details, refer to the [Accessibility Guidelines](#accessibility).
+
+- **Animations**:
+  - Add animations to the component, if necessary, to enhance user experience.
+  - Ensure animations are smooth and do not hinder accessibility.
+
+- **Keyboard Interactions**:
+  - Implement keyboard interactions for the component to ensure it is fully navigable using a keyboard.
+  - Test all keyboard interactions to ensure they work as expected.
+
+- **Storybook Stories**:
+  - Write comprehensive stories in Storybook to showcase all features and props of the component.
+  - Ensure stories cover various use cases and edge cases.
+  - For more details, refer to the [Storybook Guidelines](#docpage).
+
+- **Test Cases**:
+  - Write test cases to verify the component's functionality.
+  - Ensure tests cover all possible scenarios, including edge cases.
+  - For more details, refer to the [Testing Guidelines](#testing).
+
+- **Documentation**:
+  - Document the usage guidelines for the component inside the `docs` directory.
+
+- **Figma Integration**:
+  - Connect the newly added component with Figma using `figma-code-connect` plugin by creating respective component file in the `figma` directory.
+  - Ensure the design in Figma matches the implementation in the codebase.
+  - For more details, refer to the [Figma Integration Guidelines](https://www.figma.com/code-connect-docs/react/).

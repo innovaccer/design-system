@@ -97,10 +97,21 @@ const customCode = `
               </Column>
               <Column sizeXL={4} sizeL={4} sizeM={5} className="mr-6 mb-6">
                 <Label withInput={true}>Gender</Label>
-                <Dropdown
-                  options={genderOptions}
-                  onChange={(value) => this.onChange(value, 'gender')}
-                />
+                <Select 
+                  width="100%"
+                  onSelect={(option) => this.onChange(option.value, 'gender')}
+                  triggerOptions={{ placeholder: "Select Gender", }}
+                >
+                  <Select.List>
+                    {genderOptions.map((item, key) => {
+                      return (
+                        <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                          {item.label}
+                        </Select.Option>
+                      )
+                    })}
+                  </Select.List>
+                </Select>
               </Column>
               <Column sizeXL={4} sizeL={4} sizeM={6} className="mr-6 mb-6">
                 <Label withInput={true}>Date of Birth</Label>
@@ -137,11 +148,21 @@ const customCode = `
               </Column>
               <Column sizeXL={4} sizeL={4} sizeM={5} className="mr-6 mb-6">
                 <Label withInput={true}>User Type</Label>
-                <Dropdown
-                  options={userOptions}
-                  placeholder="Select User Type"
-                  onChange={(value) => this.onChange(value, 'userType')}
-                />
+                <Select 
+                  width="100%"
+                  onSelect={(option) => this.onChange(option.value, 'userType')}
+                  triggerOptions={{ placeholder: "Select User Type", }}
+                >
+                  <Select.List>
+                    {userOptions.map((item, key) => {
+                      return (
+                        <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                          {item.label}
+                        </Select.Option>
+                      )
+                    })}
+                  </Select.List>
+                </Select>
               </Column>
               <Column sizeXL={3} sizeL={3} sizeM={5} className="mr-6 mb-6">
                 <Label withInput={true} >NPI</Label>
