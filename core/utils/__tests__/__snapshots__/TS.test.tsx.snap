@@ -998,11 +998,11 @@ exports[`TS renders children 1`] = `
     Hello World!
   </p>
   <div
-    class="ProgressBar"
+    class="ProgressBar ProgressBar-indicator--regular"
     data-test="DesignSystem-ProgressBar"
   >
     <div
-      class="ProgressBar-indicator ProgressBar-indicator--regular"
+      class="ProgressBar-indicator"
       data-test="DesignSystem-ProgressBar-Indicator"
       style="width: 0px;"
     />

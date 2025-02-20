@@ -514,3 +514,8 @@
   margin-left: auto;
   margin-bottom: var(--spacing-2);
 }
+
+.Grid-progress-bar {
+  position: absolute !important;
+  z-index: 3;
+}

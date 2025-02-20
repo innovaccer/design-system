@@ -10,6 +10,7 @@ import classNames from 'classnames';
 import { GridProvider } from './GridContext';
 import defaultProps from './defaultProps';
 import styles from '@css/components/grid.module.css';
+import { GridVirtualizedBody } from './GridVirtualizedBody';
 
 export type SortType = 'asc' | 'desc' | 'unsort';
 export type Pinned = 'left' | 'right' | 'unpin';
@@ -156,6 +157,34 @@ export type GridSize = 'comfortable' | 'standard' | 'compressed' | 'tight';
 export type GridType = 'resource' | 'data';
 export type Data = RowData[];
 export type Schema = ColumnSchema[];
+export type thresholdTypes = 'early' | 'balanced' | 'lazy' | 'near-end';
+
+export interface VirtualScrollProps {
+  /**
+   * Number of rows to Pre-fetch at a time in case of async table
+   */
+  preFetchRows: number;
+  /**
+   * Number of additional rows to render before and after the visible rows.
+   */
+  buffer?: number;
+  /**
+   * Number of rows to be rendered within the visible viewport.
+   */
+  visibleRows?: number;
+  /**
+   * the distance from the end of the scrollable content at which new data should start fetching in case of async table.
+   */
+  loadMoreThreshold: thresholdTypes;
+  /**
+   * Callback to be called on scroll
+   */
+  onScroll?: (event: Event, scrollTop: number) => void;
+  /**
+   *
+   */
+  // maxDataLimit: number;
+}
 
 export interface GridProps extends BaseProps {
   /**
@@ -238,7 +267,7 @@ export interface GridProps extends BaseProps {
    * Shows checkbox in the left most column
    */
   withCheckbox?: boolean;
-  /***
+  /**
    * Defines position of checkbox in the row
    */
   checkboxAlignment?: 'top' | 'center' | 'bottom';
@@ -295,6 +324,18 @@ export interface GridProps extends BaseProps {
    * Show filters in Head Cell
    */
   showFilters: boolean;
+  /**
+   * Enable row virtualization
+   */
+  enableRowVirtualization?: boolean;
+  /**
+   * Fetch Data Function in case of async table to be called on scroll end
+   */
+  updateVirtualData?: (props: { page: number; preFetchRows: number }) => Promise<Data>;
+  /**
+   * Virtual Scroll Options
+   */
+  virtualScrollOptions: VirtualScrollProps;
 }
 
 export interface GridState {
@@ -548,13 +589,25 @@ export class Grid extends React.Component<GridProps, GridState> {
                 reorderColumn={this.reorderColumn.bind(this)}
               />
             )}
-            <GridBody
-              key={`${page}`}
-              schema={schema}
-              prevPageInfo={prevPageInfo}
-              updatePrevPageInfo={this.updatePrevPageInfo.bind(this)}
-              onSelect={this.onSelect.bind(this)}
-            />
+            {!this.props.enableRowVirtualization ? (
+              <GridBody
+                key={`${page}`}
+                schema={schema}
+                prevPageInfo={prevPageInfo}
+                updatePrevPageInfo={this.updatePrevPageInfo.bind(this)}
+                onSelect={this.onSelect.bind(this)}
+              />
+            ) : (
+              <GridVirtualizedBody
+                key={`${page}`}
+                schema={schema}
+                prevPageInfo={prevPageInfo}
+                updatePrevPageInfo={this.updatePrevPageInfo.bind(this)}
+                onSelect={this.onSelect.bind(this)}
+                virtualScrollOptions={this.props.virtualScrollOptions}
+                updateVirtualData={this.props.updateVirtualData}
+              />
+            )}
           </GridProvider>
         )}
       </div>
