@@ -525,8 +525,9 @@ export class Grid extends React.Component<GridProps, GridState> {
 
     return (
       <div
-        className={classes}
+        data-test="DesignSystem-Grid"
         {...baseProps}
+        className={classes}
         ref={(el) => {
           this.gridRef = el;
         }}
