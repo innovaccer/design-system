@@ -165,6 +165,7 @@ export const GridBody = (props: GridBodyProps) => {
     () => (
       <VirtualScroll
         buffer={buffer}
+        className={styles['Grid-body']}
         length={visibleRows}
         minItemHeight={minRowHeight[size]}
         totalLength={dataLength}
