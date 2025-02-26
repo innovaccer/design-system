@@ -8,7 +8,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
     <div
       class="Dropdown"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger w-100"
       >
@@ -51,7 +51,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
     <div
       class="Dropdown"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger w-100"
       >
@@ -94,7 +94,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
     <div
       class="Dropdown"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger w-100"
       >
@@ -137,7 +137,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
     <div
       class="Dropdown"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger w-100"
       >
@@ -180,7 +180,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
     <div
       class="Dropdown"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger w-100"
       >
@@ -223,7 +223,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
     <div
       class="Dropdown"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger w-100"
       >
@@ -266,7 +266,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
     <div
       class="Dropdown"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger w-100"
       >
@@ -309,7 +309,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
     <div
       class="Dropdown"
     >
-      <style />
+      
       <div
         class="PopperWrapper-trigger w-100"
       >
