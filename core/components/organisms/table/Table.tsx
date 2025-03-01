@@ -686,7 +686,7 @@ export class Table extends React.Component<TableProps, TableState> {
 
     const opts: FetchDataOptions = {
       page,
-      pageSize: enableInfiniteScroll && infiniteScrollOptions ? infiniteScrollOptions.fetchRowsCount : pageSize,
+      pageSize: enableInfiniteScroll && infiniteScrollOptions ? infiniteScrollOptions.fetchRowsCount * 2 : pageSize,
       sortingList,
       filterList,
       searchTerm,

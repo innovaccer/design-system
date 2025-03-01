@@ -42,7 +42,7 @@ export const GridBody = (props: GridBodyProps) => {
   const { buffer, visibleRows } = virtualRowOptions;
 
   const [isLoadingMore, setIsLoadingMore] = React.useState(false);
-  const [currentPage, setCurrentPage] = React.useState(1);
+  const [currentPage, setCurrentPage] = React.useState(2);
   const [hasMoreData, setHasMoreData] = React.useState(true);
   const endReached = React.useRef(false);
   const { fetchRowsCount, fetchThreshold } = infiniteScrollOptions;
@@ -66,11 +66,11 @@ export const GridBody = (props: GridBodyProps) => {
     };
   }, []);
 
-  React.useEffect(() => {
-    if (data.length === fetchRowsCount && enableInfiniteScroll) {
-      fetchNextRows();
-    }
-  }, [data]);
+  // React.useEffect(() => {
+  //   if (data.length === fetchRowsCount && enableInfiniteScroll) {
+  //     fetchNextRows();
+  //   }
+  // }, [data]);
 
   const totalPages = Math.ceil(totalRecords / pageSize);
   const isLastPage = withPagination && page === totalPages;
