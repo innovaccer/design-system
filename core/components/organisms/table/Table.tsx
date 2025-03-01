@@ -145,6 +145,7 @@ interface AsyncProps {
    *      count: number,
    *      data: Data,
    *      schema: Schema
+   *      totalRowsCount?: number
    * }>;
    *
    * FetchDataOptions: {
@@ -458,6 +459,7 @@ interface TableState {
   loading: TableProps['loading'];
   error: TableProps['error'];
   errorType?: TableProps['errorType'];
+  totalRowsCount?: number;
 }
 
 const defaultErrorTemplate = (props: ErrorTemplateProps) => {
@@ -529,6 +531,7 @@ export class Table extends React.Component<TableProps, TableState> {
       errorType: props.errorType,
       selectAll: getSelectAll([]),
       searchTerm: undefined,
+      totalRowsCount: !async ? data.length : 0,
     };
 
     this.debounceUpdate = debounce(props.searchDebounceDuration, this.updateDataFn);
@@ -552,6 +555,7 @@ export class Table extends React.Component<TableProps, TableState> {
           page: 1,
           totalRecords: data.length || 0,
           selectAll: getSelectAll([]),
+          totalRowsCount: data.length || 0,
         });
       }
       if (prevProps.loading !== this.props.loading) {
@@ -567,6 +571,7 @@ export class Table extends React.Component<TableProps, TableState> {
             page: 1,
             totalRecords: data.length || 0,
             selectAll: getSelectAll([]),
+            totalRowsCount: data.length || 0,
           },
           () => {
             this.updateData();
@@ -650,6 +655,7 @@ export class Table extends React.Component<TableProps, TableState> {
           return {
             data: selectedData,
             totalRecords: selectedData.length,
+            totalRowsCount: res.totalRowsCount || this.state.totalRowsCount,
             loading: false,
             error: !selectedData.length,
           };
@@ -728,6 +734,7 @@ export class Table extends React.Component<TableProps, TableState> {
                 schema,
                 selectAll: getSelectAll(selectedData, this.props.selectDisabledRow, this.clearSelectionRef.current),
                 totalRecords: res.count,
+                totalRowsCount: res.totalRowsCount || this.state.totalRowsCount,
                 loading: false,
                 error: !data.length,
                 errorType: 'NO_RECORDS_FOUND',
@@ -783,6 +790,7 @@ export class Table extends React.Component<TableProps, TableState> {
         schema: renderedSchema,
         displayData: sortedData,
         data: selectedData,
+        totalRowsCount: sortedData.length,
       });
     }
   };
@@ -1068,6 +1076,7 @@ export class Table extends React.Component<TableProps, TableState> {
               onSelectAllRows={this.onSelectAllRows}
               selectedAllRef={this.selectAllRef}
               uniqueColumnName={uniqueColumnName}
+              enableInfiniteScroll={enableInfiniteScroll}
               {...headerAttr}
             >
               {headerChildren}

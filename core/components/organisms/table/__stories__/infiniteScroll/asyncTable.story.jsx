@@ -278,6 +278,7 @@ const customCode = `
             schema,
             count: slicedData.length,
             data: slicedData,
+            totalRowsCount: sortedData.length,
           });
         }, 2000);
       });
@@ -290,6 +291,7 @@ const customCode = `
           schema,
           count: sortedData.length,
           data: sortedData,
+          totalRowsCount: sortedData.length,
         });
       }, 2000);
     });

@@ -32,6 +32,7 @@ export type fetchDataFunction = (options: FetchDataOptions) => Promise<{
   count: number;
   data: Data;
   schema: Schema;
+  totalRowsCount?: number;
 }>;
 
 export type updateSortingListFunction = (newSortingList: GridProps['sortingList']) => void;
