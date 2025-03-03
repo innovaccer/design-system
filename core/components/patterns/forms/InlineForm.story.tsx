@@ -126,21 +126,39 @@ const customCode = `
                 </div>
                 <div className="mr-6 mb-6" style={{ width: 'var(--spacing-9)' }}>
                   <Label withInput={true}>Primary Care Physician</Label>
-                  <Dropdown
-                    icon="add_box"
-                    placeholder="00000"
-                    options={options}
-                    onChange={(option) => this.onChange(option, 'pcp')}
-                  />
+                  <Select
+                    width="100%"
+                    onSelect={(option) => this.onChange(option.value, 'pcp')}
+                    triggerOptions={{ placeholder: "00000", icon: "add_box", }}
+                  >
+                    <Select.List>
+                      {options.map((item, key) => {
+                        return (
+                          <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                            {item.label}
+                          </Select.Option>
+                        )
+                      })}
+                    </Select.List>
+                  </Select>
                 </div>
                 <div className="mr-6 mb-6" style={{ width: 'var(--spacing-9)' }}>
                   <Label withInput={true}>Region</Label>
-                  <Dropdown
-                    icon="flag"
-                    placeholder="00000"
-                    options={options}
-                    onChange={(option) => this.onChange(option, 'region')}
-                  />
+                  <Select
+                    width="100%"
+                    onSelect={(option) => this.onChange(option.value, 'region')}
+                    triggerOptions={{ placeholder: "00000", icon: "flag", }}
+                  >
+                    <Select.List>
+                      {options.map((item, key) => {
+                        return (
+                          <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                            {item.label}
+                          </Select.Option>
+                        )
+                      })}
+                    </Select.List>
+                  </Select>
                 </div>
               </div>
               <Button

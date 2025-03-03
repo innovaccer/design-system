@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Listbox, Card, Text, Icon, MetaList, StatusHint, Switch, Dropdown, Button } from '@/index';
+import { Listbox, Card, Text, Icon, MetaList, StatusHint, Switch, Menu } from '@/index';
 import { ListboxItem } from '../listboxItem';
 import './style.css';
 
@@ -97,17 +97,13 @@ export const nestedList = () => {
 
                 <div className="d-flex align-items-center">
                   <StatusHint appearance="info">{record.status}</StatusHint>
-                  <Dropdown
-                    align="right"
-                    className="ml-5"
-                    menu={true}
-                    customTrigger={() => <Button appearance="transparent" aria-label="Menu" icon="more_horiz" />}
-                    options={[
-                      { label: 'Edit', value: 'edit' },
-                      { label: 'Export', value: 'export' },
-                      { label: 'Delete', value: 'delete' },
-                    ]}
-                  />
+                  <Menu trigger={<Menu.Trigger className="ml-5" appearance="transparent" />}>
+                    <Menu.List>
+                      <Menu.Item>Edit</Menu.Item>
+                      <Menu.Item>Export</Menu.Item>
+                      <Menu.Item>Delete</Menu.Item>
+                    </Menu.List>
+                  </Menu>
                 </div>
               </div>
             </Listbox.Item>
@@ -218,17 +214,13 @@ const customCode = `
 
                 <div className="d-flex align-items-center">
                   <StatusHint appearance="info">{record.status}</StatusHint>
-                  <Dropdown
-                    align="right"
-                    className="ml-5"
-                    menu={true}
-                    customTrigger={() => <Button appearance="transparent" aria-label="Menu" icon="more_horiz" />}
-                    options={[
-                      { label: 'Edit', value: 'edit' },
-                      { label: 'Export', value: 'export' },
-                      { label: 'Delete', value: 'delete' },
-                    ]}
-                  />
+                  <Menu trigger={<Menu.Trigger className="ml-5" appearance="transparent" />}>
+                    <Menu.List>
+                      <Menu.Item>Edit</Menu.Item>
+                      <Menu.Item>Export</Menu.Item>
+                      <Menu.Item>Delete</Menu.Item>
+                    </Menu.List>
+                  </Menu>
                 </div>
               </div>
             </Listbox.Item>

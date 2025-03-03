@@ -773,7 +773,6 @@ exports[`TS renders children 1`] = `
   <div
     class="Dropdown"
   >
-    <style />
     <div
       class="PopperWrapper-trigger w-100"
     >
@@ -819,7 +818,6 @@ exports[`TS renders children 1`] = `
           class="Dropdown d-none"
           data-test="DesignSystem-EditableDropdown--Dropdown"
         >
-          <style />
           <div
             class="PopperWrapper-trigger w-100"
           >
@@ -1558,7 +1556,6 @@ exports[`TS renders children 1`] = `
       </div>
     </div>
   </div>
-  <style />
   <div
     class="PopperWrapper-trigger"
   >
@@ -1778,7 +1775,6 @@ exports[`TS renders children 1`] = `
       stroke-width="8"
     />
   </svg>
-  <style />
   <div
     class="PopperWrapper-trigger"
   >
@@ -2437,6 +2433,7 @@ exports[`TS renders children 1`] = `
   </div>
   <div
     class="Grid Grid--data Grid--standard"
+    data-test="DesignSystem-Grid"
   >
     <div
       class="Grid-head"
@@ -2459,6 +2456,7 @@ exports[`TS renders children 1`] = `
     >
       <div
         class="Grid Grid--data Grid--standard"
+        data-test="DesignSystem-Grid"
       >
         <h4
           class="Heading Heading--m Heading--default"
@@ -2478,6 +2476,7 @@ exports[`TS renders children 1`] = `
     >
       <div
         class="Grid Grid--data Grid--standard"
+        data-test="DesignSystem-Grid"
       >
         <div
           class="Grid-head"

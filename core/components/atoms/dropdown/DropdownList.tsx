@@ -257,9 +257,10 @@ const DropdownList = (props: OptionsProps) => {
   const [minHeight, setMinHeight] = React.useState<number | undefined>();
 
   const getMinHeight = () => {
-    const dropdownWrapper = document.querySelector<HTMLElement>(`.${dropdownStyles['Dropdown-wrapper']}`);
-    const minHeight = dropdownWrapper?.offsetHeight;
-    minHeight && setMinHeight(minHeight);
+    if (dropdownRef.current) {
+      const minHeight = dropdownRef.current?.offsetHeight;
+      minHeight && setMinHeight(minHeight);
+    }
   };
 
   const isDropdownListBlank = listOptions.length === 0 && !loadingOptions && selected.length <= 0;
