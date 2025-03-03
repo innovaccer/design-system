@@ -1,0 +1,46 @@
+.chat-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 8px;
+  max-width: 400px;
+  background: white;
+}
+
+.input-box {
+  min-height: 40px;
+  flex-grow: 1;
+  padding: 5px;
+  outline: none;
+  border: none;
+}
+
+.input-box:empty:before {
+  content: attr(placeholder);
+  color: gray;
+}
+
+.mention-list {
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 150px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.mention-list li {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.mention-list li.active {
+  background: #ddd;
+}
