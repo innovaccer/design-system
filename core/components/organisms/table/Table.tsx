@@ -145,6 +145,7 @@ interface AsyncProps {
    *      count: number,
    *      data: Data,
    *      schema: Schema
+   *      totalRowsCount?: number
    * }>;
    *
    * FetchDataOptions: {
@@ -380,6 +381,64 @@ interface SharedTableProps extends BaseProps {
    * Defines position of checkbox in the row
    */
   checkboxAlignment?: 'top' | 'center' | 'bottom';
+  /**
+   * Enable row virtualization
+   */
+  enableRowVirtualization?: GridProps['enableRowVirtualization'];
+  /**
+   * Row Virtualization Options
+   * <pre className="DocPage-codeBlock">
+   * VirtualRowProps: {
+   *   visibleRows: number;
+   *   buffer: number;
+   * }
+   * </pre>
+   *
+   * <br />
+   * <br />
+   *
+   * | Name | Description | Default |
+   * | --- | --- | --- |
+   * | visibleRows | Number of rows to be rendered within the visible viewport | 200 |
+   * | buffer | Number of additional rows to render before and after the visible rows | 10 |
+   *
+   */
+  virtualRowOptions?: GridProps['virtualRowOptions'];
+  /**
+   * Enable infinite scroll of rows in case of async table & without pagination
+   */
+  enableInfiniteScroll?: GridProps['enableInfiniteScroll'];
+  /**
+   * Infinite Scroll Options
+   * <pre className="DocPage-codeBlock">
+   * InfiniteScrollProps: {
+   *   fetchRowsCount: number;
+   *   fetchThreshold: 'early' | 'balanced' | 'lazy' | 'at-end';
+   * }
+   * </pre>
+   *
+   * **fetchThreshold Values:**
+   *
+   * | Name | Value |
+   * | --- | --- |
+   * | early | 50% |
+   * | balanced | 75% |
+   * | lazy | 90% |
+   * | at-end | 0 |
+   *
+   * <br />
+   *
+   * | Name | Description | Default |
+   * | --- | --- | --- |
+   * | fetchRowsCount | Number of rows to Pre-fetch at a time in case of async table | 200 |
+   * | fetchThreshold | the distance from the end of the scrollable content at which new data should start fetching in case of async table | balanced |
+   *
+   */
+  infiniteScrollOptions?: GridProps['infiniteScrollOptions'];
+  /**
+   * Callback to be triggered on scroll
+   */
+  onScroll?: GridProps['onScroll'];
 }
 
 export type SyncTableProps = SharedTableProps & TableSyncProps;
@@ -400,6 +459,7 @@ interface TableState {
   loading: TableProps['loading'];
   error: TableProps['error'];
   errorType?: TableProps['errorType'];
+  totalRowsCount?: number;
 }
 
 const defaultErrorTemplate = (props: ErrorTemplateProps) => {
@@ -437,6 +497,10 @@ export const defaultProps = {
   searchDebounceDuration: 750,
   pageJumpDebounceDuration: 750,
   errorTemplate: defaultErrorTemplate,
+  infiniteScrollOptions: {
+    fetchRowsCount: 50,
+    fetchThreshold: 'balanced',
+  },
 };
 
 export class Table extends React.Component<TableProps, TableState> {
@@ -467,6 +531,7 @@ export class Table extends React.Component<TableProps, TableState> {
       errorType: props.errorType,
       selectAll: getSelectAll([]),
       searchTerm: undefined,
+      totalRowsCount: !async ? data.length : 0,
     };
 
     this.debounceUpdate = debounce(props.searchDebounceDuration, this.updateDataFn);
@@ -490,6 +555,7 @@ export class Table extends React.Component<TableProps, TableState> {
           page: 1,
           totalRecords: data.length || 0,
           selectAll: getSelectAll([]),
+          totalRowsCount: data.length || 0,
         });
       }
       if (prevProps.loading !== this.props.loading) {
@@ -505,6 +571,7 @@ export class Table extends React.Component<TableProps, TableState> {
             page: 1,
             totalRecords: data.length || 0,
             selectAll: getSelectAll([]),
+            totalRowsCount: data.length || 0,
           },
           () => {
             this.updateData();
@@ -525,15 +592,6 @@ export class Table extends React.Component<TableProps, TableState> {
       prevState.searchTerm !== this.state.searchTerm
     ) {
       if (!this.props.loading) {
-        // let errorType = "";
-        // let errorCount = 0;
-        // if(prevState.page !== this.state.page) errorType = "ON_PAGE_CHANGE", errorCount++;
-        // if(prevState.filterList !== this.state.filterList) errorType = "ON_FILTER_CHANGE", errorCount++;
-        // if(prevState.sortingList !== this.state.sortingList) errorType = "ON_SORTING_CHANGE", errorCount++;
-        // if(prevState.searchTerm !== this.state.searchTerm) errorType = "ON_SEARCH_CHANGE", errorCount++;
-        // this.setState({
-        //   errorType: errorCount > 1 ? "FAILED_TO_FETCH" : errorType
-        // });
         const searchUpdate = prevState.searchTerm !== this.state.searchTerm;
         this.updateData(searchUpdate);
       }
@@ -554,8 +612,79 @@ export class Table extends React.Component<TableProps, TableState> {
     }
   };
 
+  fetchDataOnScroll = async (props: { page: number; rowsCount: number }) => {
+    const { sortingList, filterList, searchTerm } = this.state;
+
+    const { fetchData, uniqueColumnName } = this.props;
+
+    const { page, rowsCount } = props;
+
+    const opts: FetchDataOptions = {
+      page,
+      pageSize: rowsCount,
+      sortingList,
+      filterList,
+      searchTerm,
+    };
+
+    if (fetchData) {
+      try {
+        const res = await fetchData(opts);
+
+        this.setState((prevState) => {
+          const newList = [...prevState.data, ...res.data];
+          const dataReplica = JSON.parse(JSON.stringify(newList));
+          const preSelectedRows = newList.filter((item: RowData) => item._selected);
+
+          if (this.clearSelectionRef.current) {
+            this.selectedRowsRef.current = [];
+          } else {
+            this.selectedRowsRef.current = this.selectedRowsRef.current
+              ? removeDuplicate([...this.selectedRowsRef.current, ...preSelectedRows], uniqueColumnName)
+              : removeDuplicate([...preSelectedRows], uniqueColumnName);
+          }
+
+          const selectedData = getUpdatedData(
+            dataReplica,
+            this.selectedRowsRef.current,
+            uniqueColumnName,
+            this.clearSelectionRef.current,
+            this.selectAllRef.current
+          );
+
+          return {
+            data: selectedData,
+            totalRecords: selectedData.length,
+            totalRowsCount: res.totalRowsCount || this.state.totalRowsCount,
+            loading: false,
+            error: !selectedData.length,
+          };
+        });
+        return res.data;
+      } catch (error) {
+        this.setState({
+          loading: false,
+          error: true,
+          errorType: 'FAILED_TO_FETCH',
+        });
+        return [];
+      }
+    }
+
+    return [];
+  };
+
   updateDataFn = () => {
-    const { fetchData, pageSize, withPagination, data: dataProp, onSearch, uniqueColumnName } = this.props;
+    const {
+      fetchData,
+      pageSize,
+      withPagination,
+      data: dataProp,
+      onSearch,
+      uniqueColumnName,
+      enableInfiniteScroll,
+      infiniteScrollOptions,
+    } = this.props;
 
     const { async, page, sortingList, filterList, searchTerm } = this.state;
 
@@ -563,13 +692,13 @@ export class Table extends React.Component<TableProps, TableState> {
 
     const opts: FetchDataOptions = {
       page,
-      pageSize,
+      pageSize: enableInfiniteScroll && infiniteScrollOptions ? infiniteScrollOptions.fetchRowsCount * 2 : pageSize,
       sortingList,
       filterList,
       searchTerm,
     };
 
-    if (!this.props.withPagination) {
+    if (!withPagination && !enableInfiniteScroll) {
       delete opts.page;
       delete opts.pageSize;
     }
@@ -605,6 +734,7 @@ export class Table extends React.Component<TableProps, TableState> {
                 schema,
                 selectAll: getSelectAll(selectedData, this.props.selectDisabledRow, this.clearSelectionRef.current),
                 totalRecords: res.count,
+                totalRowsCount: res.totalRowsCount || this.state.totalRowsCount,
                 loading: false,
                 error: !data.length,
                 errorType: 'NO_RECORDS_FOUND',
@@ -660,6 +790,7 @@ export class Table extends React.Component<TableProps, TableState> {
         schema: renderedSchema,
         displayData: sortedData,
         data: selectedData,
+        totalRowsCount: sortedData.length,
       });
     }
   };
@@ -909,6 +1040,10 @@ export class Table extends React.Component<TableProps, TableState> {
       filterPosition,
       uniqueColumnName,
       checkboxAlignment,
+      virtualRowOptions,
+      enableInfiniteScroll,
+      infiniteScrollOptions,
+      onScroll,
     } = this.props;
 
     const baseProps = extractBaseProps(this.props);
@@ -927,9 +1062,7 @@ export class Table extends React.Component<TableProps, TableState> {
           <div data-test="DesignSystem-Table-header">
             <Header
               {...this.state}
-              // updateData={updateData}
               updateSchema={this.updateSchema}
-              // updateSortingList={updateSortingList}
               updateFilterList={this.updateFilterList}
               updateSearchTerm={this.updateSearchTerm}
               showHead={showHead}
@@ -943,6 +1076,7 @@ export class Table extends React.Component<TableProps, TableState> {
               onSelectAllRows={this.onSelectAllRows}
               selectedAllRef={this.selectAllRef}
               uniqueColumnName={uniqueColumnName}
+              enableInfiniteScroll={enableInfiniteScroll}
               {...headerAttr}
             >
               {headerChildren}
@@ -976,6 +1110,12 @@ export class Table extends React.Component<TableProps, TableState> {
             errorTemplate={errorTemplate && errorTemplate({ errorType: this.state.errorType })}
             onRowClick={onRowClick}
             showFilters={filterPosition === 'GRID'}
+            fetchDataOnScroll={this.fetchDataOnScroll}
+            virtualRowOptions={virtualRowOptions}
+            enableRowVirtualization={this.props.enableRowVirtualization}
+            enableInfiniteScroll={enableInfiniteScroll}
+            infiniteScrollOptions={infiniteScrollOptions}
+            onScroll={onScroll}
           />
         </div>
         {withPagination && !this.state.loading && !this.state.error && totalPages > 1 && (
