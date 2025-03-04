@@ -56,7 +56,7 @@ const ChatInput = () => {
       const textBeforeCursor = text.slice(0, cursorPosition);
 
       const span = document.createElement('span');
-      span.textContent = textBeforeCursor.replace(/ /g, '\u00a0').replace(/\n/g, '\u000A');
+      span.textContent = textBeforeCursor.replace(/ /g, '\u00a0');
       span.style.visibility = 'hidden';
       span.style.whiteSpace = 'pre-wrap';
       span.style.font = window.getComputedStyle(textarea).font;
@@ -78,7 +78,7 @@ const ChatInput = () => {
       const textareaRect = textarea.getBoundingClientRect();
       setMentionPosition({
         top: textareaRect.top + rect.height + window.scrollY,
-        left: textareaRect.left + (rect.width % textarea.clientWidth) + window.scrollX,
+        left: textareaRect.left + rect.width + window.scrollX,
       });
     }
   };

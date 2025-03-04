@@ -16,14 +16,14 @@ const ChatInput = () => {
   };
 
   const handleMentionDetection = (value) => {
-    const cursorPosition = value.length;
+    const cursorPosition = inputRef.current.selectionStart;
     const mentionMatch = value.slice(0, cursorPosition).match(/(^|\s)@([\w]*)$/);
     if (mentionMatch) {
       const query = mentionMatch[2].toLowerCase();
       const filteredUsers = users.filter((user) => user.toLowerCase().startsWith(query));
       setMentionList(filteredUsers.length > 0 ? filteredUsers : users);
       setMentionIndex(0);
-      updateMentionPosition();
+      updateMentionPosition(cursorPosition);
     } else {
       setMentionList([]);
     }
@@ -50,11 +50,18 @@ const ChatInput = () => {
     setMentionList([]);
   };
 
-  const updateMentionPosition = () => {
+  const updateMentionPosition = (cursorPosition) => {
     if (inputRef.current) {
-      const rect = inputRef.current.getBoundingClientRect();
+      const textBeforeCursor = text.slice(0, cursorPosition);
+      const span = document.createElement('span');
+      span.textContent = textBeforeCursor;
+      span.style.visibility = 'hidden';
+      span.style.whiteSpace = 'pre-wrap';
+      document.body.appendChild(span);
+      const rect = span.getBoundingClientRect();
+      document.body.removeChild(span);
       setMentionPosition({
-        top: rect.bottom + window.scrollY,
+        top: rect.top + window.scrollY + 20,
         left: rect.left + window.scrollX,
       });
     }
