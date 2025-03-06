@@ -1,110 +1,135 @@
-import React, { useState, useRef } from 'react';
+import * as React from 'react';
+import classNames from 'classnames';
+import { BaseProps } from '@/utils/types';
+import styles from '@css/components/chatInput.module.css';
+import { Button } from '@/index';
 
-const users = ['Alice', 'Bob', 'Charlie', 'David', 'Eve'];
+export interface ChatInputProps extends BaseProps {
+  disabled?: boolean;
+  placeholder?: string;
+  showStopGeneratingButton?: boolean;
+  value?: string;
+  actionRenderer?: () => JSX.Element;
+  onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  onClick?: (e: React.MouseEvent<HTMLTextAreaElement>) => void;
+  onBlur?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
+  onFocus?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
+  onSend?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, value?: string) => void;
+}
 
-const ChatInput = () => {
-  const [text, setText] = useState('');
-  const [mentionList, setMentionList] = useState([]);
-  const [mentionIndex, setMentionIndex] = useState(0);
-  const [mentionPosition, setMentionPosition] = useState({ top: 0, left: 0 });
-  const inputRef = useRef(null);
+export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
+  const { disabled, placeholder, showStopGeneratingButton, value, className, actionRenderer, onSend, ...rest } = props;
 
-  const handleChange = (e) => {
-    const value = e.target.value;
-    setText(value);
-    handleMentionDetection(value);
-  };
+  const editorRef = React.useRef<HTMLDivElement>(null);
+  const [showMention, setShowMention] = React.useState(false);
+  const [mentionList] = React.useState(['user1', 'user2', 'user3']);
+  const [filteredMentions, setFilteredMentions] = React.useState<string[]>([]);
+  const [mentionPosition, setMentionPosition] = React.useState({ top: 0, left: 0 });
 
-  const handleMentionDetection = (value) => {
-    const cursorPosition = inputRef.current.selectionStart;
-    const mentionMatch = value.slice(0, cursorPosition).match(/(^|\s)@([\w]*)$/);
-    if (mentionMatch) {
-      const query = mentionMatch[2].toLowerCase();
-      const filteredUsers = users.filter((user) => user.toLowerCase().startsWith(query));
-      setMentionList(filteredUsers.length > 0 ? filteredUsers : users);
-      setMentionIndex(0);
-      updateMentionPosition(cursorPosition);
-    } else {
-      setMentionList([]);
+  const handleInput = (e) => {
+    const selection = window.getSelection();
+    if (!selection) return;
+    const text = selection.anchorNode?.textContent;
+    const lastChar = text[text.length - 1];
+    if (lastChar === '@') {
+      setFilteredMentions(mentionList);
+      setShowMention(true);
+      positionMentionPopup();
+    } else if (showMention) {
+      const query = text.split('@').pop();
+      setFilteredMentions(mentionList.filter((u) => u.startsWith(query)));
     }
   };
 
-  const handleKeyDown = (e) => {
-    if (mentionList.length > 0) {
-      if (e.key === 'ArrowDown') {
-        e.preventDefault();
-        setMentionIndex((prev) => (prev + 1) % mentionList.length);
-      } else if (e.key === 'ArrowUp') {
-        e.preventDefault();
-        setMentionIndex((prev) => (prev - 1 + mentionList.length) % mentionList.length);
-      } else if (e.key === 'Enter') {
-        e.preventDefault();
-        insertMention(mentionList[mentionIndex]);
+  const positionMentionPopup = () => {
+    const selection = window.getSelection();
+    if (!selection?.rangeCount) return;
+    const range = selection.getRangeAt(0);
+    const rect = range.getBoundingClientRect();
+    setMentionPosition({ top: rect.bottom + window.scrollY, left: rect.left + window.scrollX });
+  };
+
+  const handleMentionClick = (mention) => {
+    const selection = window.getSelection();
+    if (!selection || !selection.rangeCount) return;
+
+    const range = selection.getRangeAt(0);
+    range.deleteContents();
+
+    // Create mention span
+    const mentionNode = document.createElement('span');
+    mentionNode.textContent = `@${mention} `;
+    mentionNode.className = 'bg-primary';
+    mentionNode.setAttribute('data-type', 'mention');
+    mentionNode.setAttribute('data-id', mention);
+
+    // Insert mention node
+    range.insertNode(mentionNode);
+
+    // Move cursor after the mention
+    const space = document.createTextNode(' '); // Regular space
+    range.collapse(false); // Collapse the range to the end point
+    range.insertNode(space);
+
+    // Create a new range after the mention
+    const newRange = document.createRange();
+    newRange.setStartAfter(space);
+    newRange.setEndAfter(space);
+    selection.removeAllRanges();
+    selection.addRange(newRange);
+
+    setShowMention(false);
+    editorRef.current?.focus(); // Keep focus on editor
+  };
+
+  const extractMessageData = () => {
+    const elements = editorRef.current?.childNodes;
+    const messageParts = [];
+    elements?.forEach((node) => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        messageParts.push({ type: 'text', content: node.textContent });
+      } else if (node.nodeType === Node.ELEMENT_NODE && node.getAttribute('data-type') === 'mention') {
+        messageParts.push({ type: 'mention', content: node.textContent.trim(), id: node.getAttribute('data-id') });
       }
-    }
+    });
+    return messageParts;
   };
 
-  const insertMention = (mention) => {
-    const newText = text.replace(/@([\w]*)$/, `@${mention} `);
-    setText(newText);
-    setMentionList([]);
-  };
-
-  const updateMentionPosition = (cursorPosition) => {
-    if (inputRef.current) {
-      const textarea = inputRef.current;
-      const textBeforeCursor = text.slice(0, cursorPosition);
-
-      const span = document.createElement('span');
-      span.textContent = textBeforeCursor.replace(/ /g, '\u00a0').replace(/\n/g, '\u000A');
-      span.style.visibility = 'hidden';
-      span.style.whiteSpace = 'pre-wrap';
-      span.style.font = window.getComputedStyle(textarea).font;
-      span.style.display = 'inline-block';
-      span.style.padding = window.getComputedStyle(textarea).padding;
-
-      const div = document.createElement('div');
-      div.style.position = 'absolute';
-      div.style.visibility = 'hidden';
-      div.style.whiteSpace = 'pre-wrap';
-      div.style.font = window.getComputedStyle(textarea).font;
-      div.style.width = textarea.clientWidth + 'px';
-      div.appendChild(span);
-      document.body.appendChild(div);
-
-      const rect = span.getBoundingClientRect();
-      document.body.removeChild(div);
-
-      const textareaRect = textarea.getBoundingClientRect();
-      setMentionPosition({
-        top: textareaRect.top + rect.height + window.scrollY,
-        left: textareaRect.left + (rect.width % textarea.clientWidth) + window.scrollX,
-      });
+  const handleSend = () => {
+    const messageData = extractMessageData();
+    onSend?.(messageData);
+    if (editorRef.current) {
+      editorRef.current.innerHTML = '';
     }
   };
 
   return (
-    <div className="chat-input-container">
-      <textarea
-        ref={inputRef}
-        value={text}
-        onChange={handleChange}
-        onKeyDown={handleKeyDown}
-        className="chat-input"
-        placeholder="Type a message..."
-      />
-      {mentionList.length > 0 && (
-        <ul
-          className="mention-list"
-          style={{ position: 'absolute', top: mentionPosition.top, left: mentionPosition.left }}
+    <div className="p-4 border rounded-md w-96 relative">
+      <div
+        ref={editorRef}
+        contentEditable
+        className="border p-2 min-h-[100px] outline-none"
+        onInput={handleInput}
+      ></div>
+      {showMention && (
+        <div
+          className="border mt-2 p-2 bg-white shadow-md absolute"
+          style={{ top: mentionPosition.top, left: mentionPosition.left }}
         >
-          {mentionList.map((user, index) => (
-            <li key={user} className={index === mentionIndex ? 'active' : ''} onMouseDown={() => insertMention(user)}>
-              @{user}
-            </li>
+          {filteredMentions.map((mention) => (
+            <div
+              key={mention}
+              className="p-1 cursor-pointer hover:bg-gray-200"
+              onClick={() => handleMentionClick(mention)}
+            >
+              @{mention}
+            </div>
           ))}
-        </ul>
+        </div>
       )}
+      <Button className="mt-2 w-full" onClick={handleSend}>
+        Send
+      </Button>
     </div>
   );
 };
