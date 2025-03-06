@@ -1,13 +1,39 @@
 import * as React from 'react';
-import { Chat } from '@/index';
+import { Chat, Button } from '@/index';
 
-export const defaultMessage = () => {
+export const all = () => {
+  const customActionRenderer = () => {
+    return (
+      <div className="d-flex">
+        <Button appearance="transparent" className="mr-2" icon="add_circle" />
+        <Button appearance="transparent" icon="attach_file" />
+      </div>
+    );
+  };
+
   return (
     <Chat>
-      <Chat.ChatInput></Chat.ChatInput>
+      <Chat.ChatInput placeholder="Enter Message" actionRenderer={customActionRenderer}></Chat.ChatInput>
     </Chat>
   );
 };
+
+const customCode = `() => {
+  const customActionRenderer = () => {
+    return (
+      <div className="d-flex">
+        <Button appearance="transparent" className="mr-2" icon="add_circle" />
+        <Button appearance="transparent" icon="attach_file" />
+      </div>
+    );
+  };
+
+  return (
+    <Chat>
+      <Chat.ChatInput placeholder="Enter Message" actionRenderer={customActionRenderer}></Chat.ChatInput>
+    </Chat>
+  );
+}`;
 
 export default {
   title: 'Components/Chat/ChatInput/All',
@@ -19,5 +45,12 @@ export default {
     'Chat.UnreadMessage': Chat.UnreadMessage,
     'Chat.TypingIndicator': Chat.TypingIndicator,
     'Chat.ChatInput': Chat.ChatInput,
+  },
+  parameters: {
+    docs: {
+      docPage: {
+        customCode,
+      },
+    },
   },
 };

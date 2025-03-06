@@ -1,0 +1,44 @@
+.chat-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 8px;
+  background: white;
+  max-width: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+/* When expanded, switch to column layout */
+.chat-container.expanded {
+  flex-direction: column;
+}
+
+.chat-textarea {
+  flex: 1;
+  /* min-height: 32px; */
+  height: 32px;
+  resize: none;
+  border: none;
+  outline: none;
+  padding: 8px;
+  /* font-size: 16px; */
+  overflow: hidden;
+  transition: width 0.2s ease-in-out;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.chat-actions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+/* When expanded, buttons take full width */
+.chat-container.expanded .chat-actions {
+  width: 100%;
+  justify-content: flex-end;
+}

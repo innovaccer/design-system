@@ -1,46 +1,72 @@
-.chat-input {
-  position: relative;
+.ChatInput {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #d5d5d5;
   padding: 8px;
-  border-radius: 8px;
-  max-width: 400px;
-  background: white;
-}
-
-.input-box {
-  min-height: 40px;
-  flex-grow: 1;
-  padding: 5px;
-  outline: none;
-  border: none;
-}
-
-.input-box:empty:before {
-  content: attr(placeholder);
-  color: gray;
-}
-
-.mention-list {
-  position: absolute;
-  background: white;
-  border: 1px solid #ccc;
   border-radius: 4px;
-  list-style: none;
+  background: var(--white);
+  max-width: 100%;
+  min-width: 256px;
+  transition: all 0.2s ease-in-out;
+  max-height: 176px;
+}
+
+.ChatInput--expanded {
+  flex-direction: column;
+}
+
+.ChatInput--disabled {
+  pointer-events: none;
+  background: #f4f4f4;
+}
+
+.ChatInput:hover {
+  background: #ececec;
+}
+
+.ChatInput:focus-within,
+.ChatInput:focus,
+.ChatInput:focus-visible {
+  outline: none;
+  border: var(--spacing-xs) solid var(--primary);
+  box-shadow: var(--shadow-spread) var(--primary-shadow);
+}
+
+.ChatInput-textarea {
+  flex: 1;
+  height: 20px;
+  resize: none;
+  border: none;
+  outline: none;
+  transition: width 0.2s ease-in-out;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--font-height);
+  font-size: var(--font-size);
+  box-sizing: border-box;
+  cursor: auto;
   padding: 0;
-  margin: 0;
-  width: 150px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
+  background: none;
 }
 
-.mention-list li {
-  padding: 5px;
-  cursor: pointer;
+.ChatInput-textarea::placeholder {
+  color: #707070;
 }
 
-.mention-list li.active {
-  background: #ddd;
+.ChatInput-actions {
+  display: flex;
+  flex-shrink: 0;
+  transition: all 0.2s ease-in-out;
+  margin-left: 8px;
+  align-items: center;
+}
+
+.ChatInput-actions--expanded {
+  width: 100%;
+  justify-content: flex-end;
+  margin-top: 8px;
+  margin-left: 0;
 }
