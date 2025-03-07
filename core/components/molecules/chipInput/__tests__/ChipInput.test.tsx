@@ -218,3 +218,32 @@ describe('ChipInput component with chipOptions', () => {
     expect(getAllByTestId('DesignSystem-ChipInput--Chip')[0]).toHaveStyle({ maxWidth: '200px' });
   });
 });
+
+describe('ChipInput component validator function', () => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const validatorFn = (chipValue: string) => emailRegex.test(chipValue);
+
+  it('chip should not be added if chip validator function fails', () => {
+    const onChange = jest.fn();
+    const { getByTestId, getAllByTestId } = render(
+      <ChipInput chipValidator={validatorFn} defaultValue={value} onChange={onChange} />
+    );
+    const inputComponent = getByTestId('DesignSystem-ChipInput--Input');
+    fireEvent.change(inputComponent, { target: { value: 'test@gmail' } });
+    fireEvent.keyDown(inputComponent, { key: 'Enter' });
+    expect(getAllByTestId('DesignSystem-ChipInput--Chip')).toHaveLength(value.length);
+    expect(onChange).not.toHaveBeenCalled();
+  });
+
+  it('chip should be added if chip validator function succeeds', () => {
+    const onChange = jest.fn();
+    const { getByTestId, getAllByTestId } = render(
+      <ChipInput chipValidator={validatorFn} defaultValue={value} onChange={onChange} />
+    );
+    const inputComponent = getByTestId('DesignSystem-ChipInput--Input');
+    fireEvent.change(inputComponent, { target: { value: 'test@gmail.com' } });
+    fireEvent.keyDown(inputComponent, { key: 'Enter' });
+    expect(getAllByTestId('DesignSystem-ChipInput--Chip')).toHaveLength(value.length + 1);
+    expect(onChange).toHaveBeenCalled();
+  });
+});
