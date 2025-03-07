@@ -1,3 +1,19 @@
 .ChatBubble--loading {
   opacity: var(--opacity-12);
 }
+
+.container {
+  /* padding: 24px; */
+  container: cta / inline-size;
+}
+
+.custom-chat-bubble {
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+@container cta (width < 768px) {
+  .custom-chat-bubble {
+    padding: 12px;
+  }
+}
