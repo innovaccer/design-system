@@ -268,3 +268,32 @@ describe('Check for disabled row classes', () => {
   const { getByTestId } = render(<Grid schema={schema} data={data} />);
   expect(getByTestId('DesignSystem-Grid-row')).toHaveClass('Grid-row--disabled');
 });
+
+describe('Check for grid custom class', () => {
+  const schema = [
+    {
+      name: 'name',
+      displayName: 'Name',
+    },
+  ];
+  const data = [{ name: 'Zara', disabled: true }];
+  cleanup();
+  const { getByTestId } = render(<Grid schema={schema} data={data} className="grid-custom-class" />);
+  expect(getByTestId('DesignSystem-Grid')).toHaveClass('grid-custom-class');
+  expect(getByTestId('DesignSystem-Grid')).toHaveClass('Grid');
+});
+
+describe('Check for grid data-test attribute', () => {
+  const schema = [
+    {
+      name: 'name',
+      displayName: 'Name',
+    },
+  ];
+  const data = [{ name: 'Zara' }];
+
+  cleanup();
+  const { getByTestId } = render(<Grid schema={schema} data={data} data-test="Custom-grid-data-test" />);
+  const gridElement = getByTestId('Custom-grid-data-test');
+  expect(gridElement).toBeInTheDocument();
+});

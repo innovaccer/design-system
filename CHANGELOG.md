@@ -1,3 +1,45 @@
+## 4.4.0 (2025-03-04)
+
+### Highlights
+
+- fix(dropdown): update min-height for multiple dropdown on same page (2ee15679)
+- fix(tooltip): remove style tag from tooltip component (6509c9da)
+- fix(grid): update props order to accept classname correctly in grid (e17c0704)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+- fix(dropdown): update min-height for multiple dropdown on same page (2ee15679)
+- fix(tooltip): remove style tag from tooltip component (6509c9da)
+- fix(grid): update props order to accept classname correctly in grid (e17c0704)
+
+### Improvements
+
+- chore: add contributing guideline for new components (7600ddb5)
+- refactor(listbox): replace dropdown with select & menu in listbox stories (0db83b81)
+- refactor(patterns): replace dropdown with select in patterns stories (55aaff07)
+
+### Documentation
+
+- docs(chatBubble): update story preview link for chat bubble component (0a099aaf)
+
+---
+
 ## 4.3.0 (2025-02-11)
 
 ### Highlights
