@@ -6,48 +6,15 @@ import { InputProps } from '@/index.type';
 import { getDefaultValue } from './utilites';
 
 export interface MaskProps extends BaseProps {
-  /**
-   * Every value of Array represent either fixed char or regular expression for particular index
-   *
-   * <pre className="DocPage-codeBlock">
-   * Mask: (string | RegExp)[]
-   * </pre>
-   */
   mask: Mask;
-  /**
-   * Character to be used for empty value at particular index in `Mask`
-   * @default '_'
-   */
   placeholderChar?: string;
-  /**
-   * Adds caption to `input` on error
-   */
   caption?: string;
-  /**
-   * custom Validator for `InputMask`
-   *
-   * `ValidatorFn: (val: string) => boolean`
-   * @default []
-   */
   validators?: Validators;
-  /**
-   * <br/>**Second argument will be the masked value**
-   */
   onChange?: (e: React.ChangeEvent<HTMLInputElement>, maskedVal: string) => void;
-  /**
-   * <br/>**Second argument will be the masked value**
-   */
   onBlur?: (e: React.ChangeEvent<HTMLInputElement>, maskedVal: string) => void;
   onClear?: (e: React.MouseEvent<HTMLElement>) => void;
   onPaste?: (e: React.ClipboardEvent<HTMLInputElement>, val?: string) => void;
-  /**
-   * Clear the `Input` on blur if value === defaultPlaceholderValue
-   * @default true
-   */
   clearOnEmptyBlur?: boolean;
-  /**
-   * Add text below `input`
-   */
   helpText?: string;
 }
 export type InputMaskProps = InputProps & MaskProps;
@@ -62,11 +29,6 @@ type InputMaskType = React.ForwardRefExoticComponent<InputProps & MaskProps & Re
   };
 };
 
-/**
- * It works as Uncontrolled Input
- *
- * **Updated value can be passed**
- */
 const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, forwardRef) => {
   const {
     mask: maskProp,
@@ -130,6 +92,7 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
   const newSelectionPos = React.useRef<number>(0);
 
   const [value, setValue] = React.useState<string>(defaultValue || valueProp || '');
+  const [cursorPosition, setCursorPosition] = React.useState<number>(defaultSelection.start);
 
   React.useImperativeHandle(forwardRef, () => ref.current as HTMLInputElement);
 
@@ -138,8 +101,10 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
   }, [valueProp]);
 
   React.useEffect(() => {
-    setCursorPosition(newSelectionPos.current);
-  }, [value]);
+    if (ref.current) {
+      ref.current.setSelectionRange(cursorPosition, cursorPosition);
+    }
+  }, [cursorPosition]);
 
   const getSelectionLength = React.useCallback((val: SelectionPos) => Math.abs(val.end - val.start), []);
 
@@ -170,15 +135,6 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
       }
     },
     [ref.current]
-  );
-
-  const setCursorPosition = React.useCallback(
-    (val: number) => {
-      if (document && document.activeElement === ref.current) {
-        setSelectionPos({ start: val, end: val });
-      }
-    },
-    [setSelectionPos]
   );
 
   const insertAtIndex = React.useCallback(
@@ -251,6 +207,463 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
     }
   };
 
+  // const onChangeHandler = React.useCallback(
+  //   (e: React.ChangeEvent<HTMLInputElement>) => {
+  //     const inputVal = e.currentTarget?.value;
+
+  //     const currSelection = getCurrSelection();
+  //     const start = Math.min(selectionPos.current.start, currSelection.start);
+  //     const end = currSelection.end;
+
+  //     let cursorPosition = start;
+  //     let enteredVal = '';
+  //     let updatedVal = '';
+  //     let removedLength = 0;
+  //     let insertedStringLength = 0;
+
+  //     enteredVal = inputVal.slice(start, end);
+  //     updatedVal = insertAtIndex(enteredVal, start);
+  //     let oldValue = value;
+  //     if (oldValue.length === 0 && (id === 'parent-TimePicker' || id === 'parent-DatePicker')) {
+  //       oldValue = defaultPlaceholderValue;
+  //     }
+  //     insertedStringLength = updatedVal.length;
+  //     if (currSelection.end > selectionPos.current.end) {
+  //       removedLength = insertedStringLength ? getSelectionLength(selectionPos.current) : 0;
+  //     } else if (inputVal.length < oldValue.length) {
+  //       removedLength = oldValue.length - inputVal.length;
+  //     }
+
+  //     const maskedVal = oldValue.split('');
+  //     for (let i = 0; i < insertedStringLength; i++) {
+  //       maskedVal[start + i] = updatedVal[i];
+  //     }
+  //     for (let i = 0; i < removedLength; i++) {
+  //       const index = start + insertedStringLength + i;
+  //       maskedVal[index] = getPlaceholderValue(index, index);
+  //     }
+
+  //     const enteredValue = maskedVal.slice(0, mask.length).join('');
+  //     if (
+  //       updatedVal !== placeholderChar &&
+  //       updatedVal !== '' &&
+  //       !updatedVal.includes(placeholderChar) &&
+  //       Utils.validators.isValid(validators, enteredValue)
+  //     ) {
+  //       cursorPosition += insertedStringLength;
+  //     }
+
+  //     const newCursorPosition = getNewCursorPosition(removedLength ? 'left' : 'right', cursorPosition);
+  //     if (removedLength === 1 && !updatedVal.length && !isEditable(cursorPosition) && newCursorPosition > 0) {
+  //       cursorPosition = newCursorPosition;
+  //       cursorPosition--;
+  //       maskedVal[cursorPosition] = placeholderChar;
+  //     } else if (removedLength !== 1) {
+  //       cursorPosition = newCursorPosition;
+  //     }
+
+  //     const newValue = maskedVal.slice(0, mask.length).join('');
+  //     newSelectionPos.current = cursorPosition;
+  //     if (newValue !== oldValue && Utils.validators.isValid(validators, newValue)) {
+  //       if (defaultPlaceholderValue === '__:__ _M') {
+  //         setValue(newValue.toUpperCase());
+  //         onChange?.(e, newValue.toUpperCase());
+  //       } else {
+  //         setValue(newValue);
+  //         onChange?.(e, newValue);
+  //       }
+  //     } else {
+  //       setValue(newValue);
+  //     }
+
+  //     // Update the cursor position
+  //     setCursorPosition(newSelectionPos.current);
+  //   },
+  //   [
+  //     selectionPos.current,
+  //     validators,
+  //     getCurrSelection,
+  //     insertAtIndex,
+  //     getSelectionLength,
+  //     getPlaceholderValue,
+  //     getNewCursorPosition,
+  //     isEditable,
+  //     setCursorPosition,
+  //     setValue,
+  //     onChange,
+  //   ]
+  // );
+
+  // const onChangeHandler = React.useCallback(
+  //   (e: React.ChangeEvent<HTMLInputElement>) => {
+  //     const inputVal = e.currentTarget?.value;
+
+  //     const currSelection = getCurrSelection();
+  //     const start = Math.min(selectionPos.current.start, currSelection.start);
+  //     const end = currSelection.end;
+
+  //     let cursorPosition = start;
+  //     let enteredVal = '';
+  //     let updatedVal = '';
+  //     let removedLength = 0;
+  //     let insertedStringLength = 0;
+
+  //     enteredVal = inputVal.slice(start, end);
+  //     updatedVal = insertAtIndex(enteredVal, start);
+  //     let oldValue = value;
+  //     if (oldValue.length === 0 && (id === 'parent-TimePicker' || id === 'parent-DatePicker')) {
+  //       oldValue = defaultPlaceholderValue;
+  //     }
+  //     insertedStringLength = updatedVal.length;
+  //     if (currSelection.end > selectionPos.current.end) {
+  //       removedLength = insertedStringLength ? getSelectionLength(selectionPos.current) : 0;
+  //     } else if (inputVal.length < oldValue.length) {
+  //       removedLength = oldValue.length - inputVal.length;
+  //     }
+
+  //     const maskedVal = oldValue.split('');
+  //     for (let i = 0; i < insertedStringLength; i++) {
+  //       maskedVal[start + i] = updatedVal[i];
+  //     }
+  //     for (let i = 0; i < removedLength; i++) {
+  //       const index = start + insertedStringLength + i;
+  //       maskedVal[index] = getPlaceholderValue(index, index);
+  //     }
+
+  //     const enteredValue = maskedVal.slice(0, mask.length).join('');
+  //     if (
+  //       updatedVal !== placeholderChar &&
+  //       updatedVal !== '' &&
+  //       !updatedVal.includes(placeholderChar) &&
+  //       Utils.validators.isValid(validators, enteredValue)
+  //     ) {
+  //       cursorPosition += insertedStringLength;
+  //     } else {
+  //       // If the entered value is invalid, do not move the cursor
+  //       cursorPosition = start;
+  //     }
+
+  //     const newCursorPosition = getNewCursorPosition(removedLength ? 'left' : 'right', cursorPosition);
+  //     if (removedLength === 1 && !updatedVal.length && !isEditable(cursorPosition) && newCursorPosition > 0) {
+  //       cursorPosition = newCursorPosition;
+  //       cursorPosition--;
+  //       maskedVal[cursorPosition] = placeholderChar;
+  //     } else if (removedLength !== 1) {
+  //       cursorPosition = newCursorPosition;
+  //     }
+
+  //     const newValue = maskedVal.slice(0, mask.length).join('');
+  //     newSelectionPos.current = cursorPosition;
+  //     if (newValue !== oldValue && Utils.validators.isValid(validators, newValue)) {
+  //       if (defaultPlaceholderValue === '__:__ _M') {
+  //         setValue(newValue.toUpperCase());
+  //         onChange?.(e, newValue.toUpperCase());
+  //       } else {
+  //         setValue(newValue);
+  //         onChange?.(e, newValue);
+  //       }
+  //     } else {
+  //       setValue(newValue);
+  //     }
+
+  //     // Update the cursor position
+  //     setCursorPosition(newSelectionPos.current);
+  //   },
+  //   [
+  //     selectionPos.current,
+  //     validators,
+  //     getCurrSelection,
+  //     insertAtIndex,
+  //     getSelectionLength,
+  //     getPlaceholderValue,
+  //     getNewCursorPosition,
+  //     isEditable,
+  //     setCursorPosition,
+  //     setValue,
+  //     onChange,
+  //   ]
+  // );
+
+  // const onChangeHandler = React.useCallback(
+  //   (e: React.ChangeEvent<HTMLInputElement>) => {
+  //     const inputVal = e.currentTarget?.value;
+
+  //     const currSelection = getCurrSelection();
+  //     const start = Math.min(selectionPos.current.start, currSelection.start);
+  //     const end = currSelection.end;
+
+  //     let cursorPosition = start;
+  //     let enteredVal = '';
+  //     let updatedVal = '';
+  //     let removedLength = 0;
+  //     let insertedStringLength = 0;
+
+  //     enteredVal = inputVal.slice(start, end);
+  //     updatedVal = insertAtIndex(enteredVal, start);
+  //     let oldValue = value;
+  //     if (oldValue.length === 0 && (id === 'parent-TimePicker' || id === 'parent-DatePicker')) {
+  //       oldValue = defaultPlaceholderValue;
+  //     }
+  //     insertedStringLength = updatedVal.length;
+  //     if (currSelection.end > selectionPos.current.end) {
+  //       removedLength = insertedStringLength ? getSelectionLength(selectionPos.current) : 0;
+  //     } else if (inputVal.length < oldValue.length) {
+  //       removedLength = oldValue.length - inputVal.length;
+  //     }
+
+  //     const maskedVal = oldValue.split('');
+  //     for (let i = 0; i < insertedStringLength; i++) {
+  //       maskedVal[start + i] = updatedVal[i];
+  //     }
+  //     for (let i = 0; i < removedLength; i++) {
+  //       const index = start + insertedStringLength + i;
+  //       maskedVal[index] = getPlaceholderValue(index, index);
+  //     }
+
+  //     const enteredValue = maskedVal.slice(0, mask.length).join('');
+  //     if (
+  //       updatedVal !== placeholderChar &&
+  //       updatedVal !== '' &&
+  //       !updatedVal.includes(placeholderChar) &&
+  //       Utils.validators.isValid(validators, enteredValue)
+  //     ) {
+  //       cursorPosition += insertedStringLength;
+  //     } else {
+  //       // If the entered value is invalid, do not move the cursor
+  //       cursorPosition = start;
+  //     }
+
+  //     const newCursorPosition = getNewCursorPosition(removedLength ? 'left' : 'right', cursorPosition);
+  //     if (removedLength === 1 && !updatedVal.length && !isEditable(cursorPosition) && newCursorPosition > 0) {
+  //       cursorPosition = newCursorPosition;
+  //       cursorPosition--;
+  //       maskedVal[cursorPosition] = placeholderChar;
+  //     } else if (removedLength !== 1) {
+  //       cursorPosition = newCursorPosition;
+  //     }
+
+  //     const newValue = maskedVal.slice(0, mask.length).join('');
+  //     newSelectionPos.current = cursorPosition;
+  //     if (newValue !== oldValue && Utils.validators.isValid(validators, newValue)) {
+  //       if (defaultPlaceholderValue === '__:__ _M') {
+  //         setValue(newValue.toUpperCase());
+  //         onChange?.(e, newValue.toUpperCase());
+  //       } else {
+  //         setValue(newValue);
+  //         onChange?.(e, newValue);
+  //       }
+  //     } else {
+  //       setValue(newValue);
+  //     }
+
+  //     // Update the cursor position only if the value is valid
+  //     if (Utils.validators.isValid(validators, newValue)) {
+  //       setCursorPosition(newSelectionPos.current);
+  //     }
+  //   },
+  //   [
+  //     selectionPos.current,
+  //     validators,
+  //     getCurrSelection,
+  //     insertAtIndex,
+  //     getSelectionLength,
+  //     getPlaceholderValue,
+  //     getNewCursorPosition,
+  //     isEditable,
+  //     setCursorPosition,
+  //     setValue,
+  //     onChange,
+  //   ]
+  // );
+
+  // const onChangeHandler = React.useCallback(
+  //   (e: React.ChangeEvent<HTMLInputElement>) => {
+  //     const inputVal = e.currentTarget?.value;
+
+  //     const currSelection = getCurrSelection();
+  //     const start = Math.min(selectionPos.current.start, currSelection.start);
+  //     const end = currSelection.end;
+
+  //     let cursorPosition = start;
+  //     let enteredVal = '';
+  //     let updatedVal = '';
+  //     let removedLength = 0;
+  //     let insertedStringLength = 0;
+
+  //     enteredVal = inputVal.slice(start, end);
+  //     updatedVal = insertAtIndex(enteredVal, start);
+  //     let oldValue = value;
+  //     if (oldValue.length === 0 && (id === 'parent-TimePicker' || id === 'parent-DatePicker')) {
+  //       oldValue = defaultPlaceholderValue;
+  //     }
+  //     insertedStringLength = updatedVal.length;
+  //     if (currSelection.end > selectionPos.current.end) {
+  //       removedLength = insertedStringLength ? getSelectionLength(selectionPos.current) : 0;
+  //     } else if (inputVal.length < oldValue.length) {
+  //       removedLength = oldValue.length - inputVal.length;
+  //     }
+
+  //     const maskedVal = oldValue.split('');
+  //     for (let i = 0; i < insertedStringLength; i++) {
+  //       maskedVal[start + i] = updatedVal[i];
+  //     }
+  //     for (let i = 0; i < removedLength; i++) {
+  //       const index = start + insertedStringLength + i;
+  //       maskedVal[index] = getPlaceholderValue(index, index);
+  //     }
+
+  //     const enteredValue = maskedVal.slice(0, mask.length).join('');
+  //     const isValid = Utils.validators.isValid(validators, enteredValue);
+
+  //     if (isValid) {
+  //       cursorPosition += insertedStringLength;
+  //     } else {
+  //       // If the entered value is invalid, do not move the cursor
+  //       cursorPosition = start;
+  //     }
+
+  //     const newCursorPosition = getNewCursorPosition(removedLength ? 'left' : 'right', cursorPosition);
+  //     if (removedLength === 1 && !updatedVal.length && !isEditable(cursorPosition) && newCursorPosition > 0) {
+  //       cursorPosition = newCursorPosition;
+  //       cursorPosition--;
+  //       maskedVal[cursorPosition] = placeholderChar;
+  //     } else if (removedLength !== 1) {
+  //       cursorPosition = newCursorPosition;
+  //     }
+
+  //     const newValue = maskedVal.slice(0, mask.length).join('');
+  //     newSelectionPos.current = cursorPosition;
+
+  //     if (isValid) {
+  //       if (newValue !== oldValue) {
+  //         if (defaultPlaceholderValue === '__:__ _M') {
+  //           setValue(newValue.toUpperCase());
+  //           onChange?.(e, newValue.toUpperCase());
+  //         } else {
+  //           setValue(newValue);
+  //           onChange?.(e, newValue);
+  //         }
+  //       } else {
+  //         setValue(newValue);
+  //       }
+
+  //       // Update the cursor position only if the value is valid
+  //       setCursorPosition(newSelectionPos.current);
+  //     } else {
+  //       // Revert to the previous value and cursor position if invalid
+  //       setValue(oldValue);
+  //       setCursorPosition(selectionPos.current.start);
+  //     }
+  //   },
+  //   [
+  //     selectionPos.current,
+  //     validators,
+  //     getCurrSelection,
+  //     insertAtIndex,
+  //     getSelectionLength,
+  //     getPlaceholderValue,
+  //     getNewCursorPosition,
+  //     isEditable,
+  //     setCursorPosition,
+  //     setValue,
+  //     onChange,
+  //   ]
+  // );
+
+  // const onChangeHandler = React.useCallback(
+  //   (e: React.ChangeEvent<HTMLInputElement>) => {
+  //     const inputVal = e.currentTarget?.value;
+
+  //     const currSelection = getCurrSelection();
+  //     const start = Math.min(selectionPos.current.start, currSelection.start);
+  //     const end = currSelection.end;
+
+  //     let cursorPosition = start;
+  //     let enteredVal = '';
+  //     let updatedVal = '';
+  //     let removedLength = 0;
+  //     let insertedStringLength = 0;
+
+  //     enteredVal = inputVal.slice(start, end);
+  //     updatedVal = insertAtIndex(enteredVal, start);
+  //     let oldValue = value;
+  //     if (oldValue.length === 0 && (id === 'parent-TimePicker' || id === 'parent-DatePicker')) {
+  //       oldValue = defaultPlaceholderValue;
+  //     }
+  //     insertedStringLength = updatedVal.length;
+  //     if (currSelection.end > selectionPos.current.end) {
+  //       removedLength = insertedStringLength ? getSelectionLength(selectionPos.current) : 0;
+  //     } else if (inputVal.length < oldValue.length) {
+  //       removedLength = oldValue.length - inputVal.length;
+  //     }
+
+  //     const maskedVal = oldValue.split('');
+  //     for (let i = 0; i < insertedStringLength; i++) {
+  //       maskedVal[start + i] = updatedVal[i];
+  //     }
+  //     for (let i = 0; i < removedLength; i++) {
+  //       const index = start + insertedStringLength + i;
+  //       maskedVal[index] = getPlaceholderValue(index, index);
+  //     }
+
+  //     const enteredValue = maskedVal.slice(0, mask.length).join('');
+  //     const isValid = Utils.validators.isValid(validators, enteredValue);
+
+  //     if (isValid && !enteredValue.includes(placeholderChar)) {
+  //       cursorPosition += insertedStringLength;
+  //     } else {
+  //       // If the entered value is invalid or contains placeholder characters, do not move the cursor
+  //       cursorPosition = start;
+  //     }
+
+  //     const newCursorPosition = getNewCursorPosition(removedLength ? 'left' : 'right', cursorPosition);
+  //     if (removedLength === 1 && !updatedVal.length && !isEditable(cursorPosition) && newCursorPosition > 0) {
+  //       cursorPosition = newCursorPosition;
+  //       cursorPosition--;
+  //       maskedVal[cursorPosition] = placeholderChar;
+  //     } else if (removedLength !== 1) {
+  //       cursorPosition = newCursorPosition;
+  //     }
+
+  //     const newValue = maskedVal.slice(0, mask.length).join('');
+  //     newSelectionPos.current = cursorPosition;
+
+  //     if (isValid && !newValue.includes(placeholderChar)) {
+  //       if (newValue !== oldValue) {
+  //         if (defaultPlaceholderValue === '__:__ _M') {
+  //           setValue(newValue.toUpperCase());
+  //           onChange?.(e, newValue.toUpperCase());
+  //         } else {
+  //           setValue(newValue);
+  //           onChange?.(e, newValue);
+  //         }
+  //       } else {
+  //         setValue(newValue);
+  //       }
+
+  //       // Update the cursor position only if the value is valid and does not contain placeholder characters
+  //       setCursorPosition(newSelectionPos.current);
+  //     } else {
+  //       // Revert to the previous value and cursor position if invalid or contains placeholder characters
+  //       setValue(oldValue);
+  //       setCursorPosition(selectionPos.current.start);
+  //     }
+  //   },
+  //   [
+  //     selectionPos.current,
+  //     validators,
+  //     getCurrSelection,
+  //     insertAtIndex,
+  //     getSelectionLength,
+  //     getPlaceholderValue,
+  //     getNewCursorPosition,
+  //     isEditable,
+  //     setCursorPosition,
+  //     setValue,
+  //     onChange,
+  //   ]
+  // );
+
   const onChangeHandler = React.useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const inputVal = e.currentTarget?.value;
@@ -288,13 +701,13 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
       }
 
       const enteredValue = maskedVal.slice(0, mask.length).join('');
-      if (
-        updatedVal !== placeholderChar &&
-        updatedVal !== '' &&
-        !updatedVal.includes(placeholderChar) &&
-        Utils.validators.isValid(validators, enteredValue)
-      ) {
+      const isValid = Utils.validators.isValid(validators, enteredValue);
+
+      if (isValid && !enteredValue.includes(placeholderChar)) {
         cursorPosition += insertedStringLength;
+      } else {
+        // If the entered value is invalid or contains placeholder characters, do not move the cursor
+        cursorPosition = start;
       }
 
       const newCursorPosition = getNewCursorPosition(removedLength ? 'left' : 'right', cursorPosition);
@@ -308,16 +721,26 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
 
       const newValue = maskedVal.slice(0, mask.length).join('');
       newSelectionPos.current = cursorPosition;
-      if (newValue !== oldValue && Utils.validators.isValid(validators, newValue)) {
-        if (defaultPlaceholderValue === '__:__ _M') {
-          setValue(newValue.toUpperCase());
-          onChange?.(e, newValue.toUpperCase());
+
+      if (isValid && !newValue.includes(placeholderChar)) {
+        if (newValue !== oldValue) {
+          if (defaultPlaceholderValue === '__:__ _M') {
+            setValue(newValue.toUpperCase());
+            onChange?.(e, newValue.toUpperCase());
+          } else {
+            setValue(newValue);
+            onChange?.(e, newValue);
+          }
         } else {
           setValue(newValue);
-          onChange?.(e, newValue);
         }
+
+        // Update the cursor position only if the value is valid and does not contain placeholder characters
+        setCursorPosition(newSelectionPos.current);
       } else {
-        window.requestAnimationFrame(() => setCursorPosition(newSelectionPos.current));
+        // Revert to the previous value and cursor position if invalid or contains placeholder characters
+        setValue(oldValue);
+        setCursorPosition(selectionPos.current.start);
       }
     },
     [
