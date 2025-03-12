@@ -50,36 +50,36 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
   };
 
   const handleMentionClick = (mention) => {
+    // Restore focus to the contenteditable before modifying content
+    editorRef.current.focus();
+
     const selection = window.getSelection();
-    if (!selection || !selection.rangeCount) return;
+    if (!selection) return;
 
     const range = selection.getRangeAt(0);
     range.deleteContents();
 
-    // Create mention span
+    // Create mention node
     const mentionNode = document.createElement('span');
-    mentionNode.textContent = `@${mention} `;
-    mentionNode.className = 'bg-primary';
+    mentionNode.textContent = `${mention} `;
+    mentionNode.className = 'text-blue-500';
     mentionNode.setAttribute('data-type', 'mention');
     mentionNode.setAttribute('data-id', mention);
 
-    // Insert mention node
+    // Insert mention at current cursor position
     range.insertNode(mentionNode);
 
-    // Move cursor after the mention
-    const space = document.createTextNode(' '); // Regular space
-    range.collapse(false); // Collapse the range to the end point
-    range.insertNode(space);
+    // Add a space after the mention to allow further typing
+    const space = document.createTextNode('\u00A0');
+    mentionNode.after(space);
 
-    // Create a new range after the mention
-    const newRange = document.createRange();
-    newRange.setStartAfter(space);
-    newRange.setEndAfter(space);
+    // Move cursor after the mention
+    range.setStartAfter(space);
+    range.setEndAfter(space);
     selection.removeAllRanges();
-    selection.addRange(newRange);
+    selection.addRange(range);
 
     setShowMention(false);
-    editorRef.current?.focus(); // Keep focus on editor
   };
 
   const extractMessageData = () => {
@@ -92,6 +92,8 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
         messageParts.push({ type: 'mention', content: node.textContent.trim(), id: node.getAttribute('data-id') });
       }
     });
+
+    console.log('messageParts>>', messageParts);
     return messageParts;
   };
 
@@ -117,12 +119,22 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
           style={{ top: mentionPosition.top, left: mentionPosition.left }}
         >
           {filteredMentions.map((mention) => (
+            // <div
+            //   key={mention}
+            //   className="p-1 cursor-pointer hover:bg-gray-200"
+            //   onClick={() => handleMentionClick(mention)}
+            // >F
+            //   @{mention}
+            // </div>
             <div
               key={mention}
               className="p-1 cursor-pointer hover:bg-gray-200"
-              onClick={() => handleMentionClick(mention)}
+              onMouseDown={(e) => {
+                e.preventDefault(); // Prevent focus loss
+                handleMentionClick(mention);
+              }}
             >
-              @{mention}
+              {mention}
             </div>
           ))}
         </div>
