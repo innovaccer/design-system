@@ -10,19 +10,15 @@ export const ChatInput: React.FC = () => {
 
   // Handle input event
   const handleInput = () => {
-    const selection = window.getSelection();
-    if (!selection || !selection.rangeCount) return;
+    const text = editorRef.current?.innerText || '';
+    const lastChar = text[text.length - 1];
 
-    const range = selection.getRangeAt(0);
-    const text = range.startContainer.textContent || '';
-    const offset = range.startOffset;
-
-    if (text[offset - 1] === '@') {
+    if (lastChar === '@') {
       setFilteredMentions(mentionList);
       setShowMention(true);
       positionMentionPopup();
     } else if (showMention) {
-      const query = text.slice(0, offset).split('@').pop();
+      const query = text.split('@').pop();
       setFilteredMentions(mentionList.filter((u) => u.startsWith(query)));
       positionMentionPopup();
     }
