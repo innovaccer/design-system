@@ -10,8 +10,8 @@ describe('AIIconButton Component', () => {
 
   test('renders with default props', () => {
     const { getByTestId } = render(<AIIconButton />);
-    expect(getByTestId('DesignSystem-AI-Icon')).toHaveAttribute('width', '16');
-    expect(getByTestId('DesignSystem-AI-Icon')).toHaveAttribute('height', '16');
+    expect(getByTestId('DesignSystem-AI-Icon')).toHaveAttribute('width', '12');
+    expect(getByTestId('DesignSystem-AI-Icon')).toHaveAttribute('height', '12');
     expect(getByTestId('DesignSystem-AI-Icon')).toHaveClass('AIIconButton-AIIcon--regularTop');
   });
 
