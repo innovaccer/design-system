@@ -1,33 +1,7 @@
 import * as React from 'react';
-import { Button } from '@/index';
 
-export const ChatInput: React.FC = () => {
-  const editorRef = React.useRef<HTMLDivElement>(null);
-  const [showMention, setShowMention] = React.useState(false);
-  const [mentionList] = React.useState(['user1', 'user2', 'user3']);
-  const [filteredMentions, setFilteredMentions] = React.useState<string[]>([]);
-
+export const Mention = ({ filteredMentions, showMention, setShowMention, textareaRef }) => {
   const [mentionPosition, setMentionPosition] = React.useState({ top: 0, left: 0 });
-
-  // Handle input event
-  const handleInput = () => {
-    const selection = window.getSelection();
-    if (!selection || !selection.rangeCount) return;
-
-    const range = selection.getRangeAt(0);
-    const text = range.startContainer.textContent || '';
-    const offset = range.startOffset;
-
-    if (text[offset - 1] === '@') {
-      setFilteredMentions(mentionList);
-      setShowMention(true);
-      positionMentionPopup();
-    } else if (showMention) {
-      const query = text.slice(0, offset).split('@').pop();
-      setFilteredMentions(mentionList.filter((u) => u.startsWith(query)));
-      positionMentionPopup();
-    }
-  };
 
   // Position the popover w.r.t the last "@" character
   const positionMentionPopup = () => {
@@ -61,7 +35,7 @@ export const ChatInput: React.FC = () => {
   };
 
   // Insert selected mention at cursor position
-  const handleMentionClick = (mention) => {
+  const handleMentionClick = (mention: string) => {
     if (!editorRef.current) return;
 
     const selection = window.getSelection();
@@ -92,42 +66,8 @@ export const ChatInput: React.FC = () => {
     setShowMention(false);
   };
 
-  // Extract message content to display in chat bubble
-  const extractMessageData = () => {
-    const elements = editorRef.current?.childNodes;
-    const messageParts = [];
-
-    elements?.forEach((node) => {
-      if (node.nodeType === Node.TEXT_NODE) {
-        messageParts.push({ type: 'text', content: node.textContent });
-      } else if (node.nodeType === Node.ELEMENT_NODE && node.getAttribute('data-type') === 'mention') {
-        messageParts.push({
-          type: 'mention',
-          content: node.textContent.trim(),
-          id: node.getAttribute('data-id'),
-        });
-      }
-    });
-
-    return messageParts;
-  };
-
-  // Handle send button click
-  const handleSend = () => {
-    const messageData = extractMessageData();
-    console.log('messageData:', messageData);
-    if (editorRef.current) editorRef.current.innerHTML = '';
-  };
-
   return (
-    <div className="p-4 border rounded-md w-96 position-relative ">
-      <div
-        ref={editorRef}
-        contentEditable
-        className="border p-2 min-h-[100px] outline-none "
-        onInput={handleInput}
-      ></div>
-
+    <>
       {showMention && (
         <div
           className="border mt-2 p-2 bg-white shadow-md position-absolute z-10"
@@ -152,12 +92,6 @@ export const ChatInput: React.FC = () => {
           ))}
         </div>
       )}
-
-      <Button className="mt-2 w-full" onClick={handleSend}>
-        Send
-      </Button>
-    </div>
+    </>
   );
 };
-
-export default ChatInput;

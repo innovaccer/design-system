@@ -13,7 +13,11 @@ export const all = () => {
 
   return (
     <Chat>
-      <Chat.ChatInput placeholder="Enter Message" actionRenderer={customActionRenderer}></Chat.ChatInput>
+      <Chat.ChatInput
+        enableMention={true}
+        placeholder="Enter Message"
+        actionRenderer={customActionRenderer}
+      ></Chat.ChatInput>
     </Chat>
   );
 };
@@ -30,7 +34,7 @@ const customCode = `() => {
 
   return (
     <Chat>
-      <Chat.ChatInput placeholder="Enter Message" actionRenderer={customActionRenderer}></Chat.ChatInput>
+      <Chat.ChatInput enableMention={true} placeholder="Enter Message" actionRenderer={customActionRenderer}></Chat.ChatInput>
     </Chat>
   );
 }`;

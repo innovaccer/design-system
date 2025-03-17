@@ -6,16 +6,49 @@ import { Button } from '@/index';
 import { Mention } from './Mention';
 
 export interface ChatInputProps extends BaseProps {
+  /**
+   * Disables the `ChatInput`, making it unable to type
+   */
   disabled?: boolean;
+  /**
+   * Text to display when `ChatInput` is empty
+   */
   placeholder?: string;
+  /**
+   *
+   */
   showStopGeneratingButton?: boolean;
+  /**
+   * Value of the `ChatInput`
+   */
   value?: string;
+  /**
+   * Enable mention feature in `ChatInput`
+   */
   enableMention?: boolean;
+  /**
+   *
+   */
   actionRenderer?: () => JSX.Element;
+  /**
+   * Callback function when `ChatInput` text changes
+   */
   onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  /**
+   * Handler to be called when `ChatInput` is clicked
+   */
   onClick?: (e: React.MouseEvent<HTMLTextAreaElement>) => void;
+  /**
+   * Handler to be called when `ChatInput` loses focus
+   */
   onBlur?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
+  /**
+   * Handler to be called when `ChatInput` gets focus
+   */
   onFocus?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
+  /**
+   * Handler to be called when `ChatInput` send button is clicked
+   */
   onSend?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, value?: MessageType[]) => void;
 }
 
@@ -41,7 +74,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
   const [filteredMentions, setFilteredMentions] = React.useState<string[]>([]);
   const [mentionPosition, setMentionPosition] = React.useState({ top: 0, left: 0 });
 
-  const textareaRef = React.useRef<HTMLDivElement>(null);
+  const textareaRef = React.useRef<HTMLTextAreaElement>(null);
 
   const containerClassNames = classNames(
     {
@@ -61,36 +94,32 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     [styles['ChatInput-actions--expanded']]: isExpanded,
   });
 
+  // React.useEffect(() => {
+  //   if (textareaRef && textareaRef.current && text) {
+  //     setIsExpanded(textareaRef.current.scrollHeight > 20);
+  //   } else {
+  //     setIsExpanded(false);
+  //   }
+  // }, [text]);
+
   const resizeTextarea = () => {
-    if (textareaRef && textareaRef.current) {
-      const textarea = textareaRef.current;
-      // const newHeight = textarea.scrollHeight; // Get the correct scrollHeight
-      // console.log('Updated scrollHeight:', newHeight);
-      // setIsExpanded(newHeight > 20);
-      // textarea.style.height = `${newHeight}px`; // Set the new height
-      // requestAnimationFrame(() => {
-      //   const newHeight = textarea.scrollHeight; // Get the correct scrollHeight
-      //   console.log('Updated scrollHeight:', newHeight);
-      //   setIsExpanded(newHeight > 20);
-      //   textarea.style.height = `${newHeight}px`; // Set the new height
-      // });
+    const textarea = textareaRef.current;
 
-      requestAnimationFrame(() => {
-        textarea.style.height = 'auto'; // Reset the height
+    if (textareaRef && textarea) {
+      // textarea.style.height = 'auto'; // Reset the height
 
-        const newHeight = textarea.scrollHeight; // Get the correct scrollHeight
-        console.log('Updated scrollHeight:', newHeight, 'textarea.clientHeight:', textarea.offsetHeight);
-        if (newHeight > 20 && !isExpanded) {
-          setIsExpanded(true);
-        } else if (newHeight <= 20 && isExpanded) {
-          setIsExpanded(false);
-        }
-        textarea.style.height = `${newHeight}px`; // Set the new height
-      });
+      console.log('wwwwwwwtrrrruuueeee', textareaRef.current.scrollHeight);
+      setIsExpanded(textareaRef.scrollHeight > 20);
     }
+    // else {
+    //   console.log('wwwwwwwffff');
+    //   setIsExpanded(false);
+    // }
   };
 
+  // Handle input event
   const handleInput = () => {
+    // debugger;
     const selection = window.getSelection();
     if (!selection || !selection.rangeCount) return;
 
@@ -111,6 +140,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     resizeTextarea();
   };
 
+  // Position the popover w.r.t the last "@" character
   const positionMentionPopup = () => {
     if (!textareaRef.current) return;
 
@@ -122,9 +152,11 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     const rect = rects[rects.length - 1]; // Get the last rect to handle multi-line text
     const editorRect = textareaRef.current.getBoundingClientRect();
 
+    // Calculate the position of the mention popover
     let top = rect.bottom + window.scrollY;
     let left = rect.left + window.scrollX;
 
+    // Adjust position to prevent overflow
     if (top + 150 > window.innerHeight) {
       top = rect.top + window.scrollY - 150;
     }
@@ -132,12 +164,14 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
       left = window.innerWidth - 200;
     }
 
+    // Adjust position relative to the editor
     top -= editorRect.top + window.scrollY;
     left -= editorRect.left + window.scrollX;
 
     setMentionPosition({ top, left });
   };
 
+  // Insert selected mention at cursor position
   const handleMentionClick = (mention) => {
     if (!textareaRef.current) return;
 
@@ -147,6 +181,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     const range = selection.getRangeAt(0);
     range.deleteContents();
 
+    // Create a mention node
     const mentionNode = document.createElement('span');
     mentionNode.textContent = `@${mention} `;
     mentionNode.className = 'text-blue-500';
@@ -155,9 +190,11 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
 
     range.insertNode(mentionNode);
 
+    // Add a space after the mention
     const space = document.createTextNode('\u00A0');
     mentionNode.after(space);
 
+    // Move the cursor after the inserted mention
     range.setStartAfter(space);
     range.setEndAfter(space);
     selection.removeAllRanges();
@@ -166,6 +203,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     setShowMention(false);
   };
 
+  // Extract message content to display in chat bubble
   const extractMessageData = () => {
     const elements = textareaRef.current?.childNodes;
     const messageParts: MessageType[] = [];
@@ -195,9 +233,34 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     }
   };
 
+  // const mentionOptions = {
+  //   filteredMentions,
+  //   showMention,
+  //   setShowMention,
+  //   textareaRef,
+  // };
+
   return (
     <div className={containerClassNames}>
-      <div ref={textareaRef} contentEditable className={textareaClassNames} onInput={handleInput}>
+      {/* <textarea
+        ref={textareaRef}
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        className={textareaClassNames}
+        contentEditable={true}
+        placeholder={placeholder}
+        onInput={handleInput}
+        disabled={disabled}
+        {...rest}
+      /> */}
+
+      <div
+        ref={textareaRef}
+        contentEditable
+        className={textareaClassNames}
+        // className="border p-2 min-h-[100px] outline-none w-100"
+        onInput={handleInput}
+      >
         {showMention && (
           <div
             className="border mt-2 p-2 bg-white shadow-md position-absolute z-10"

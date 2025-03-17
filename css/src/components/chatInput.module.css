@@ -10,6 +10,7 @@
   min-width: 256px;
   transition: all 0.2s ease-in-out;
   max-height: 176px;
+  position: relative;
 }
 
 .ChatInput--expanded {
@@ -36,16 +37,19 @@
 .ChatInput-textarea {
   flex: 1;
   height: 20px;
+
+  /* min-height: 20px;
+  height: 100%; */
+
   resize: none;
   border: none;
   outline: none;
   transition: width 0.2s ease-in-out;
   width: 100%;
-  box-sizing: border-box;
-  font-family: var(--font-family);
+  /* font-family: var(--font-family);
   font-weight: var(--font-weight-normal);
   line-height: var(--font-height);
-  font-size: var(--font-size);
+  font-size: var(--font-size); */
   box-sizing: border-box;
   cursor: auto;
   padding: 0;
