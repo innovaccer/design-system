@@ -1,14 +1,37 @@
 ---
 title: AI Response
-description: AI response is used to deliver information from Sara to the user.
+description: AI Response is used to communicate information from Sara to the user.
 tabs: ['Usage', 'Code']
 showMobile: true
 keywords: ['Chat', 'Response', 'AI Chat', 'Chat box']
 ---
 
-AI response is used to deliver information from Sara to the user.
+AI Response is used to communicate information from Sara to the user.
 
 <Preview name="components-ai-ai-response-all--all" />
+
+### Variants
+
+#### Default
+
+This variant comes with just a message bubble.
+
+![Default](./images/default.png)
+<Caption>Default</Caption>
+
+#### With Metadata
+
+This variant includes a message bubble and metadata for showing timestamp, meta item and urgency of the message.
+
+![With Metadata](./images/withMetadata.png)
+<Caption>With Metadata</Caption>
+
+#### With Avatar and Metadata
+
+This variant includes a message bubble, avatar and metadata for showing timestamp, meta item and urgency of the message.
+
+![With Avatar and Metadata](./images/withMetadata-avatar.png)
+<Caption>With Avatar and Metadata</Caption>
 
 ### States
 
@@ -101,7 +124,6 @@ Here is an example showcasing how content is generated inside AI Response.
 
 <Preview name="components-ai-ai-response-generating-content--generating-content" />
 
-
 ### Usage
 
 #### Custom Response
@@ -116,3 +138,10 @@ AI responses are highly customizable and can incorporate a wide range of compone
 Users can share their feedback on the AI response by using the feedback buttons located at the bottom right corner of the response.
 
 <Preview name="components-ai-ai-response-giving-feedback--giving-feedback" />
+
+#### Minimizing Visual Distractions
+
+It is recommended to turn off the AI glow in case of high visual overload as AI has evolved from a key innovation to a standard expectation, we aim to minimize the distraction caused by the bubble's stroke.
+
+![Minimizing Visual Distractions](./images/visual-distraction.png)
+<Caption>Minimizing Visual Distractions</Caption>
