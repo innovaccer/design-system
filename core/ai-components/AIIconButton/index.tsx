@@ -66,6 +66,8 @@ export const AIIconButton = (props: AIIconButtonProps) => {
   const buttonClassNames = classNames(
     {
       [styles.AIIconButton]: true,
+      [styles['AIIconButton--regular']]: size === 'regular',
+      [styles['AIIconButton--large']]: size === 'large',
     },
     className
   );
