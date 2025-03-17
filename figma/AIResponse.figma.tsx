@@ -1,5 +1,5 @@
 import React from 'react';
-import { AIResponse, Text, Sara, PlaceholderParagraph } from '@/index';
+import { AIResponse, Text, PlaceholderParagraph } from '@/index';
 import figma from '@figma/code-connect';
 
 figma.connect(AIResponse, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=49482-18194', {
@@ -15,16 +15,6 @@ figma.connect(AIResponse, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/M
       Default: <Text>Hello, would you like to book an appointment with your cardiologist?</Text>,
       Hover: <Text>Hello, would you like to book an appointment with your cardiologist?</Text>,
     }),
-    avatar: figma.boolean('Avatar', {
-      true: <Sara />,
-    }),
-    metaData: figma.boolean('Metadata', {
-      true: (
-        <Text appearance="subtle" size="small" weight="medium">
-          1:00 PM
-        </Text>
-      ),
-    }),
     actionBar: figma.enum('State', {
       Default: (
         <AIResponse.ActionBar>
@@ -37,19 +27,32 @@ figma.connect(AIResponse, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/M
         </AIResponse.ActionBar>
       ),
     }),
+    showAvatar: figma.enum('Type', {
+      'With Avatar and Metadata': true,
+    }),
+    metaData: figma.enum('Type', {
+      'With Avatar and Metadata': () => {
+        return (
+          <Text appearance="subtle" size="small" weight="medium">
+            1:00 PM
+          </Text>
+        );
+      },
+      'With Metadata': () => {
+        return (
+          <Text appearance="subtle" size="small" weight="medium">
+            1:00 PM
+          </Text>
+        );
+      },
+    }),
   },
-  example: ({ avatar, content, metaData, actionBar }) => {
+  example: ({ content, actionBar, showAvatar }) => {
     return (
-      <div className="d-flex w-50">
-        {avatar}
-        <div className="ml-4">
-          <AIResponse>
-            <AIResponse.Body>{content}</AIResponse.Body>
-            {actionBar}
-          </AIResponse>
-          {metaData}
-        </div>
-      </div>
+      <AIResponse showGlow={true} showAvatar={showAvatar}>
+        <AIResponse.Body>{content}</AIResponse.Body>
+        {actionBar}
+      </AIResponse>
     );
   },
 });
