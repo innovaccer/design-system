@@ -23,14 +23,14 @@ export const ChatBox = (props: ChatBoxProps) => {
 
   const chatBoxClassNames = classNames(
     {
-      [styles['AIResponse-box']]: true,
+      [styles['AIResponse-container']]: true,
     },
     className
   );
 
   return (
     <div className={chatBoxClassNames} data-test="DesignSystem-AIResponse-Box" {...rest}>
-      {children}
+      <div className={styles['AIResponse-box']}>{children}</div>
     </div>
   );
 };
