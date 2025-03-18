@@ -22,6 +22,10 @@ export interface AIResponseProps extends TBaseHtmlProps<HTMLDivElement> {
    */
   metaData?: () => JSX.Element;
   /**
+   * Set as `true` to show glow effect with `AI Response`
+   */
+  showGlow?: boolean;
+  /**
    * Stores custom testing data private to the component.
    */
   'data-test'?: string;
