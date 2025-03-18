@@ -1,12 +1,18 @@
-.AIResponse-container {
+.AIResponse-container--glow {
   background: linear-gradient(white, white) padding-box,
     linear-gradient(to right, rgba(254, 172, 95, 1) 9%, rgba(255, 31, 136, 1) 48%, rgba(227, 28, 121, 0.48) 100%)
       border-box;
-  border: 1px solid transparent;
+  border: var(--spacing-xs) solid transparent;
   border-radius: var(--spacing-l);
 }
 
-.AIResponse-box {
+.AIResponse-container {
+  border-radius: var(--spacing-l);
+  border: var(--spacing-xs) solid var(--secondary);
+  padding: var(--spacing) var(--spacing-l);
+}
+
+.AIResponse-box--glow {
   padding: var(--spacing) var(--spacing-l);
   border-radius: var(--spacing-l);
   background: linear-gradient(to right, rgba(240, 125, 0, 0.04), rgba(227, 28, 121, 0.0192));
@@ -24,7 +30,8 @@
   opacity: var(--opacity-12);
 }
 
-.AIResponse-box:hover .AIResponse-button {
+.AIResponse-box:hover .AIResponse-button,
+.AIResponse-box--glow:hover .AIResponse-button {
   opacity: 1;
 }
 
