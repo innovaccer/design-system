@@ -48,7 +48,9 @@ export const All = () => {
           >
             Pin
           </AIResponse.Button>
-          <AIResponse.Button icon="content_copy">Copy</AIResponse.Button>
+          <AIResponse.Button icon="content_copy" iconType="rounded">
+            Copy
+          </AIResponse.Button>
         </div>
 
         <div className="d-flex align-items-center">
@@ -129,7 +131,7 @@ const customCode = `() => {
           >
             Pin
           </AIResponse.Button>
-          <AIResponse.Button icon="content_copy">Copy</AIResponse.Button>
+          <AIResponse.Button icon="content_copy" iconType="rounded">Copy</AIResponse.Button>
         </div>
 
         <div className="d-flex align-items-center">
