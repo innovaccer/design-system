@@ -23,7 +23,7 @@ export interface ParagraphProps extends BaseProps, BaseHtmlProps<HTMLParagraphEl
   color?: TextColor;
 }
 
-export const Paragraph = (props: ParagraphProps) => {
+export const Paragraph = React.forwardRef<HTMLParagraphElement, ParagraphProps>((props, ref) => {
   const { appearance, children, className, color, ...rest } = props;
 
   const classes = classNames(
@@ -36,11 +36,11 @@ export const Paragraph = (props: ParagraphProps) => {
   );
 
   return (
-    <GenericText data-test="DesignSystem-Paragraph" {...rest} className={classes} componentType="p">
+    <GenericText ref={ref} data-test="DesignSystem-Paragraph" {...rest} className={classes} componentType="p">
       {children}
     </GenericText>
   );
-};
+});
 
 Paragraph.displayName = 'Paragraph';
 Paragraph.defaultProps = {
