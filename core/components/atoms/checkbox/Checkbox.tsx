@@ -70,6 +70,10 @@ export interface CheckboxProps extends BaseProps, OmitNativeProps<HTMLInputEleme
    * Pass ref to the checkbox text
    */
   labelRef?: React.Ref<HTMLSpanElement>;
+  /**
+   *  Wrap checkbox label to the next line
+   */
+  warpLabel?: boolean;
 }
 
 export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props, forwardedRef) => {
@@ -89,6 +93,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     helpText,
     id = `${name}-${label}-${uidGenerator()}`,
     labelRef,
+    warpLabel,
     ...rest
   } = props;
 
@@ -143,6 +148,12 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     [styles['Checkbox-label--tiny']]: size === 'tiny',
   });
 
+  const LabelTextClass = classNames({
+    [styles['mw-100']]: true,
+    [styles['ellipsis']]: warpLabel,
+    [styles['ellipsis--noWrap']]: !warpLabel,
+  });
+
   const setIndeterminate = (indeterminateValue: any) => {
     ref.current!.indeterminate = indeterminateValue;
   };
@@ -191,7 +202,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
               <Text
                 size={size === 'tiny' ? 'small' : 'regular'}
                 appearance={disabled ? 'disabled' : 'default'}
-                className="ellipsis--noWrap mw-100"
+                className={LabelTextClass}
                 ref={labelRef}
               >
                 {label.trim()}
