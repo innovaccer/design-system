@@ -77,6 +77,11 @@ export interface ChoiceListProps extends BaseProps {
    * Callback when the selected choices change
    */
   onChange?: (event: ChangeEvent, selected: string[]) => void;
+
+  /**
+   * Wrap checkbox label to the next line
+   */
+  wrapLabel?: boolean;
 }
 
 const renderCheckbox = (
@@ -85,7 +90,8 @@ const renderCheckbox = (
   ChoiceListDisabled: boolean,
   size: ChoiceListSize,
   alignment: ChoiceListAlignment,
-  selected: string[]
+  selected: string[],
+  wrapLabel: boolean | undefined
 ) => {
   return list.map((item: Choice, checkboxIndex: number) => {
     const { name, value, helpText, disabled, label } = item;
@@ -101,6 +107,7 @@ const renderCheckbox = (
         value={value}
         defaultChecked={selected.length !== 0 && selected.includes(value)}
         className={getCheckboxClassName(alignment, checkboxIndex)}
+        wrapLabel={wrapLabel}
       />
     );
   });
@@ -161,8 +168,8 @@ export const ChoiceList = (props: ChoiceListProps) => {
     disabled = false,
     size = 'regular',
     className,
+    wrapLabel,
   } = props;
-
   const { selected = [] } = props;
   let selectedChoiceValue = (selected && selected) || [];
   const ChoiceListClass = classNames(
@@ -203,7 +210,7 @@ export const ChoiceList = (props: ChoiceListProps) => {
         {title && title.trim() && <Label withInput={true}>{title.trim()}</Label>}
         {allowMultiple ? (
           <div className={`${alignment === 'horizontal' ? ChoiceHorizontalClass : ChoiceListVerticalClass}`}>
-            {renderCheckbox(choices, handleOnChange, disabled, size, alignment, selected)}
+            {renderCheckbox(choices, handleOnChange, disabled, size, alignment, selected, wrapLabel)}
           </div>
         ) : (
           <div className={`${alignment === 'horizontal' ? ChoiceHorizontalClass : ChoiceListVerticalClass}`}>

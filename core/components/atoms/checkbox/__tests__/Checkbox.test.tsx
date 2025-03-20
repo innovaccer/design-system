@@ -60,6 +60,7 @@ describe('Checkbox component', () => {
     name: valueHelper(StringValue, { required: true }),
     value: valueHelper(StringValue, { required: true }),
     onChange: valueHelper(FunctionValue, { required: true }),
+    wrapLabel: valueHelper(BooleanValue, { required: true, iterate: true }),
   };
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
@@ -89,6 +90,16 @@ describe('Checkbox component', () => {
     expect(getByTestId('DesignSystem-Checkbox-InputBox')).toBeInTheDocument();
     expect(getByTestId('DesignSystem-Checkbox-Label')).toBeInTheDocument();
     expect(getByTestId('DesignSystem-Checkbox-Label').textContent).toMatch(StringValue);
+  });
+
+  it('renders label with wrapLabel applied', () => {
+    const { getByTestId } = render(<Checkbox label={StringValue} wrapLabel={true} />);
+    expect(getByTestId('DesignSystem-Checkbox-Label').querySelector('span')).toHaveClass('ellipsis');
+  });
+
+  it('renders label without wrapLabel applied', () => {
+    const { getByTestId } = render(<Checkbox label={StringValue} wrapLabel={false} />);
+    expect(getByTestId('DesignSystem-Checkbox-Label').querySelector('span')).toHaveClass('ellipsis--noWrap');
   });
 
   it('renders children with helpText prop', () => {
