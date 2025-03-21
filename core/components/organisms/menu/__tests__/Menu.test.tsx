@@ -228,3 +228,35 @@ describe('Menu component keyboard interactions', () => {
     expect(popover).toBeInTheDocument();
   });
 });
+
+describe('Menu component with prop:disabled', () => {
+  it('check for disabled menu', () => {
+    const { queryByTestId, getByTestId } = render(
+      <Menu trigger={<Menu.Trigger />} disabled={true}>
+        <Menu.List>
+          <Menu.Item>Menu Item 1</Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+
+    const trigger = getByTestId('DesignSystem-Menu-Trigger');
+    fireEvent.click(trigger);
+    const popover = queryByTestId('DesignSystem-Popover');
+    expect(popover).not.toBeInTheDocument();
+  });
+
+  it('check for popover when disabled:false', () => {
+    const { getByTestId } = render(
+      <Menu trigger={<Menu.Trigger />}>
+        <Menu.List>
+          <Menu.Item>Menu Item 1</Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+
+    const trigger = getByTestId('DesignSystem-Menu-Trigger');
+    fireEvent.click(trigger);
+    const popover = getByTestId('DesignSystem-Popover');
+    expect(popover).toBeInTheDocument();
+  });
+});

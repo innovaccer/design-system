@@ -74,6 +74,10 @@ export interface ChipInputProps extends BaseProps {
    * Handler to be called when `Input` gets focus
    */
   onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  /**
+   * Validator function to validate a chip before it's added.  Return `true` for valid, `false` for invalid.
+   */
+  chipValidator?: (chip: string) => boolean;
 }
 
 export const ChipInput = (props: ChipInputProps) => {
@@ -90,6 +94,7 @@ export const ChipInput = (props: ChipInputProps) => {
     onChange,
     onBlur,
     onFocus,
+    chipValidator,
   } = props;
 
   const inputRef = React.createRef<HTMLInputElement>();
@@ -146,6 +151,11 @@ export const ChipInput = (props: ChipInputProps) => {
     if (!inputValue) return;
 
     const chip = inputValue.trim();
+
+    if (chipValidator && !chipValidator(chip)) {
+      return;
+    }
+
     if ((allowDuplicates || chips.indexOf(chip) === -1) && chip) {
       const updatedChips = [...chips, chip];
 

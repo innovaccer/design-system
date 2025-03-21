@@ -34,7 +34,7 @@ const sizeMap = {
   xxl: 'h1',
 };
 
-export const Heading = (props: HeadingProps) => {
+export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>((props, ref) => {
   const { appearance, size, children, className, color, ...rest } = props;
 
   const classes = classNames(
@@ -48,16 +48,16 @@ export const Heading = (props: HeadingProps) => {
   );
 
   return (
-    <GenericText data-test="DesignSystem-Heading" {...rest} className={classes} componentType={sizeMap[size]}>
+    <GenericText ref={ref} data-test="DesignSystem-Heading" {...rest} className={classes} componentType={sizeMap[size]}>
       {children}
     </GenericText>
   );
-};
+});
 
 Heading.displayName = 'Heading';
 Heading.defaultProps = {
-  appearance: 'default',
-  size: 'm',
+  appearance: 'default' as HeadingAppearance,
+  size: 'm' as HeadingSize,
 };
 
 export default Heading;
