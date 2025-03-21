@@ -36,7 +36,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--default Text--regular ellipsis--noWrap mw-100"
+            class="Text Text--default Text--regular mw-100 ellipsis--noWrap"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -90,7 +90,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--default Text--regular ellipsis--noWrap mw-100"
+            class="Text Text--default Text--regular mw-100 ellipsis--noWrap"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -145,7 +145,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--disabled Text--regular ellipsis--noWrap mw-100"
+            class="Text Text--disabled Text--regular mw-100 ellipsis--noWrap"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -200,7 +200,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--disabled Text--regular ellipsis--noWrap mw-100"
+            class="Text Text--disabled Text--regular mw-100 ellipsis--noWrap"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -270,7 +270,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--default Text--regular ellipsis--noWrap mw-100"
+            class="Text Text--default Text--regular mw-100 ellipsis--noWrap"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -340,7 +340,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--default Text--regular ellipsis--noWrap mw-100"
+            class="Text Text--default Text--regular mw-100 ellipsis--noWrap"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -411,7 +411,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--disabled Text--regular ellipsis--noWrap mw-100"
+            class="Text Text--disabled Text--regular mw-100 ellipsis--noWrap"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -482,7 +482,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--disabled Text--regular ellipsis--noWrap mw-100"
+            class="Text Text--disabled Text--regular mw-100 ellipsis--noWrap"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -501,7 +501,7 @@ exports[`Checkbox component
 `;
 
 exports[`Checkbox component 
-  indeterminate: false, size: "regular", disabled: false, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
+  indeterminate: false, size: "regular", disabled: false, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]", wrapLabel: false
  1`] = `
 <body>
   <div>
@@ -536,7 +536,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--default Text--regular ellipsis--noWrap mw-100"
+            class="Text Text--default Text--regular mw-100 ellipsis--noWrap"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -555,7 +555,61 @@ exports[`Checkbox component
 `;
 
 exports[`Checkbox component 
-  indeterminate: false, size: "regular", disabled: true, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
+  indeterminate: false, size: "regular", disabled: false, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]", wrapLabel: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Checkbox"
+      data-test="DesignSystem-Checkbox"
+    >
+      <div
+        class="Checkbox-outerWrapper Checkbox-outerWrapper--regular"
+        data-test="DesignSystem-Checkbox-OuterWrapper"
+      >
+        <input
+          class="Checkbox-input"
+          data-test="DesignSystem-Checkbox-InputBox"
+          id="Checkbox-Checkbox-Test-uid"
+          name="Checkbox"
+          tabindex="0"
+          type="checkbox"
+          value="Checkbox"
+        />
+        <span
+          class="Checkbox-wrapper Checkbox-wrapper--default"
+          data-test="DesignSystem-Checkbox-Icon"
+        />
+      </div>
+      <div
+        class="Checkbox-labelWrapper"
+      >
+        <label
+          class="Checkbox-label"
+          data-test="DesignSystem-Checkbox-Label"
+          for="Checkbox-Checkbox-Test-uid"
+        >
+          <span
+            class="Text Text--default Text--regular mw-100 ellipsis"
+            data-test="DesignSystem-Text"
+          >
+            Checkbox
+          </span>
+        </label>
+        <span
+          class="Text Text--subtle Text--small"
+          data-test="DesignSystem-Checkbox-HelpText"
+        >
+          Checkbox
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Checkbox component 
+  indeterminate: false, size: "regular", disabled: true, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]", wrapLabel: false
  1`] = `
 <body>
   <div>
@@ -591,7 +645,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--disabled Text--regular ellipsis--noWrap mw-100"
+            class="Text Text--disabled Text--regular mw-100 ellipsis--noWrap"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -610,7 +664,62 @@ exports[`Checkbox component
 `;
 
 exports[`Checkbox component 
-  indeterminate: false, size: "tiny", disabled: false, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
+  indeterminate: false, size: "regular", disabled: true, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]", wrapLabel: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Checkbox Checkbox--disabled"
+      data-test="DesignSystem-Checkbox"
+    >
+      <div
+        class="Checkbox-outerWrapper Checkbox-outerWrapper--regular"
+        data-test="DesignSystem-Checkbox-OuterWrapper"
+      >
+        <input
+          class="Checkbox-input"
+          data-test="DesignSystem-Checkbox-InputBox"
+          disabled=""
+          id="Checkbox-Checkbox-Test-uid"
+          name="Checkbox"
+          tabindex="0"
+          type="checkbox"
+          value="Checkbox"
+        />
+        <span
+          class="Checkbox-wrapper Checkbox-wrapper--default"
+          data-test="DesignSystem-Checkbox-Icon"
+        />
+      </div>
+      <div
+        class="Checkbox-labelWrapper"
+      >
+        <label
+          class="Checkbox-label"
+          data-test="DesignSystem-Checkbox-Label"
+          for="Checkbox-Checkbox-Test-uid"
+        >
+          <span
+            class="Text Text--disabled Text--regular mw-100 ellipsis"
+            data-test="DesignSystem-Text"
+          >
+            Checkbox
+          </span>
+        </label>
+        <span
+          class="Text Text--disabled Text--small"
+          data-test="DesignSystem-Checkbox-HelpText"
+        >
+          Checkbox
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Checkbox component 
+  indeterminate: false, size: "tiny", disabled: false, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]", wrapLabel: false
  1`] = `
 <body>
   <div>
@@ -645,7 +754,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--default Text--small ellipsis--noWrap mw-100"
+            class="Text Text--default Text--small mw-100 ellipsis--noWrap"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -664,7 +773,61 @@ exports[`Checkbox component
 `;
 
 exports[`Checkbox component 
-  indeterminate: false, size: "tiny", disabled: true, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
+  indeterminate: false, size: "tiny", disabled: false, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]", wrapLabel: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Checkbox"
+      data-test="DesignSystem-Checkbox"
+    >
+      <div
+        class="Checkbox-outerWrapper Checkbox-outerWrapper--tiny"
+        data-test="DesignSystem-Checkbox-OuterWrapper"
+      >
+        <input
+          class="Checkbox-input"
+          data-test="DesignSystem-Checkbox-InputBox"
+          id="Checkbox-Checkbox-Test-uid"
+          name="Checkbox"
+          tabindex="0"
+          type="checkbox"
+          value="Checkbox"
+        />
+        <span
+          class="Checkbox-wrapper Checkbox-wrapper--default"
+          data-test="DesignSystem-Checkbox-Icon"
+        />
+      </div>
+      <div
+        class="Checkbox-labelWrapper"
+      >
+        <label
+          class="Checkbox-label Checkbox-label--tiny"
+          data-test="DesignSystem-Checkbox-Label"
+          for="Checkbox-Checkbox-Test-uid"
+        >
+          <span
+            class="Text Text--default Text--small mw-100 ellipsis"
+            data-test="DesignSystem-Text"
+          >
+            Checkbox
+          </span>
+        </label>
+        <span
+          class="Text Text--subtle Text--small"
+          data-test="DesignSystem-Checkbox-HelpText"
+        >
+          Checkbox
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Checkbox component 
+  indeterminate: false, size: "tiny", disabled: true, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]", wrapLabel: false
  1`] = `
 <body>
   <div>
@@ -700,7 +863,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--disabled Text--small ellipsis--noWrap mw-100"
+            class="Text Text--disabled Text--small mw-100 ellipsis--noWrap"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -719,7 +882,62 @@ exports[`Checkbox component
 `;
 
 exports[`Checkbox component 
-  indeterminate: true, size: "regular", disabled: false, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
+  indeterminate: false, size: "tiny", disabled: true, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]", wrapLabel: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Checkbox Checkbox--disabled"
+      data-test="DesignSystem-Checkbox"
+    >
+      <div
+        class="Checkbox-outerWrapper Checkbox-outerWrapper--tiny"
+        data-test="DesignSystem-Checkbox-OuterWrapper"
+      >
+        <input
+          class="Checkbox-input"
+          data-test="DesignSystem-Checkbox-InputBox"
+          disabled=""
+          id="Checkbox-Checkbox-Test-uid"
+          name="Checkbox"
+          tabindex="0"
+          type="checkbox"
+          value="Checkbox"
+        />
+        <span
+          class="Checkbox-wrapper Checkbox-wrapper--default"
+          data-test="DesignSystem-Checkbox-Icon"
+        />
+      </div>
+      <div
+        class="Checkbox-labelWrapper"
+      >
+        <label
+          class="Checkbox-label Checkbox-label--tiny"
+          data-test="DesignSystem-Checkbox-Label"
+          for="Checkbox-Checkbox-Test-uid"
+        >
+          <span
+            class="Text Text--disabled Text--small mw-100 ellipsis"
+            data-test="DesignSystem-Text"
+          >
+            Checkbox
+          </span>
+        </label>
+        <span
+          class="Text Text--disabled Text--small"
+          data-test="DesignSystem-Checkbox-HelpText"
+        >
+          Checkbox
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Checkbox component 
+  indeterminate: true, size: "regular", disabled: false, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]", wrapLabel: false
  1`] = `
 <body>
   <div>
@@ -767,7 +985,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--default Text--regular ellipsis--noWrap mw-100"
+            class="Text Text--default Text--regular mw-100 ellipsis--noWrap"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -786,7 +1004,74 @@ exports[`Checkbox component
 `;
 
 exports[`Checkbox component 
-  indeterminate: true, size: "regular", disabled: true, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
+  indeterminate: true, size: "regular", disabled: false, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]", wrapLabel: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Checkbox"
+      data-test="DesignSystem-Checkbox"
+    >
+      <div
+        class="Checkbox-outerWrapper Checkbox-outerWrapper--regular"
+        data-test="DesignSystem-Checkbox-OuterWrapper"
+      >
+        <input
+          class="Checkbox-input Checkbox-input--indeterminate"
+          data-test="DesignSystem-Checkbox-InputBox"
+          id="Checkbox-Checkbox-Test-uid"
+          name="Checkbox"
+          tabindex="0"
+          type="checkbox"
+          value="Checkbox"
+        />
+        <span
+          class="Checkbox-wrapper Checkbox-wrapper--default"
+          data-test="DesignSystem-Checkbox-Icon"
+        >
+          <svg
+            fill="none"
+            height="2"
+            viewBox="0 0 10 2"
+            width="10"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0H10V2H0V0Z"
+              fill="white"
+            />
+          </svg>
+        </span>
+      </div>
+      <div
+        class="Checkbox-labelWrapper"
+      >
+        <label
+          class="Checkbox-label"
+          data-test="DesignSystem-Checkbox-Label"
+          for="Checkbox-Checkbox-Test-uid"
+        >
+          <span
+            class="Text Text--default Text--regular mw-100 ellipsis"
+            data-test="DesignSystem-Text"
+          >
+            Checkbox
+          </span>
+        </label>
+        <span
+          class="Text Text--subtle Text--small"
+          data-test="DesignSystem-Checkbox-HelpText"
+        >
+          Checkbox
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Checkbox component 
+  indeterminate: true, size: "regular", disabled: true, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]", wrapLabel: false
  1`] = `
 <body>
   <div>
@@ -835,7 +1120,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--disabled Text--regular ellipsis--noWrap mw-100"
+            class="Text Text--disabled Text--regular mw-100 ellipsis--noWrap"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -854,7 +1139,75 @@ exports[`Checkbox component
 `;
 
 exports[`Checkbox component 
-  indeterminate: true, size: "tiny", disabled: false, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
+  indeterminate: true, size: "regular", disabled: true, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]", wrapLabel: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Checkbox Checkbox--disabled"
+      data-test="DesignSystem-Checkbox"
+    >
+      <div
+        class="Checkbox-outerWrapper Checkbox-outerWrapper--regular"
+        data-test="DesignSystem-Checkbox-OuterWrapper"
+      >
+        <input
+          class="Checkbox-input Checkbox-input--indeterminate"
+          data-test="DesignSystem-Checkbox-InputBox"
+          disabled=""
+          id="Checkbox-Checkbox-Test-uid"
+          name="Checkbox"
+          tabindex="0"
+          type="checkbox"
+          value="Checkbox"
+        />
+        <span
+          class="Checkbox-wrapper Checkbox-wrapper--default"
+          data-test="DesignSystem-Checkbox-Icon"
+        >
+          <svg
+            fill="none"
+            height="2"
+            viewBox="0 0 10 2"
+            width="10"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0H10V2H0V0Z"
+              fill="white"
+            />
+          </svg>
+        </span>
+      </div>
+      <div
+        class="Checkbox-labelWrapper"
+      >
+        <label
+          class="Checkbox-label"
+          data-test="DesignSystem-Checkbox-Label"
+          for="Checkbox-Checkbox-Test-uid"
+        >
+          <span
+            class="Text Text--disabled Text--regular mw-100 ellipsis"
+            data-test="DesignSystem-Text"
+          >
+            Checkbox
+          </span>
+        </label>
+        <span
+          class="Text Text--disabled Text--small"
+          data-test="DesignSystem-Checkbox-HelpText"
+        >
+          Checkbox
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Checkbox component 
+  indeterminate: true, size: "tiny", disabled: false, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]", wrapLabel: false
  1`] = `
 <body>
   <div>
@@ -904,7 +1257,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--default Text--small ellipsis--noWrap mw-100"
+            class="Text Text--default Text--small mw-100 ellipsis--noWrap"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -923,7 +1276,76 @@ exports[`Checkbox component
 `;
 
 exports[`Checkbox component 
-  indeterminate: true, size: "tiny", disabled: true, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
+  indeterminate: true, size: "tiny", disabled: false, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]", wrapLabel: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Checkbox"
+      data-test="DesignSystem-Checkbox"
+    >
+      <div
+        class="Checkbox-outerWrapper Checkbox-outerWrapper--tiny"
+        data-test="DesignSystem-Checkbox-OuterWrapper"
+      >
+        <input
+          class="Checkbox-input Checkbox-input--indeterminate"
+          data-test="DesignSystem-Checkbox-InputBox"
+          id="Checkbox-Checkbox-Test-uid"
+          name="Checkbox"
+          tabindex="0"
+          type="checkbox"
+          value="Checkbox"
+        />
+        <span
+          class="Checkbox-wrapper Checkbox-wrapper--default"
+          data-test="DesignSystem-Checkbox-Icon"
+        >
+          <svg
+            fill="none"
+            height="2"
+            viewBox="0 0 8 2"
+            width="8"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M8 0H0V2H8V0Z"
+              fill="white"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+      </div>
+      <div
+        class="Checkbox-labelWrapper"
+      >
+        <label
+          class="Checkbox-label Checkbox-label--tiny"
+          data-test="DesignSystem-Checkbox-Label"
+          for="Checkbox-Checkbox-Test-uid"
+        >
+          <span
+            class="Text Text--default Text--small mw-100 ellipsis"
+            data-test="DesignSystem-Text"
+          >
+            Checkbox
+          </span>
+        </label>
+        <span
+          class="Text Text--subtle Text--small"
+          data-test="DesignSystem-Checkbox-HelpText"
+        >
+          Checkbox
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Checkbox component 
+  indeterminate: true, size: "tiny", disabled: true, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]", wrapLabel: false
  1`] = `
 <body>
   <div>
@@ -974,7 +1396,77 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--disabled Text--small ellipsis--noWrap mw-100"
+            class="Text Text--disabled Text--small mw-100 ellipsis--noWrap"
+            data-test="DesignSystem-Text"
+          >
+            Checkbox
+          </span>
+        </label>
+        <span
+          class="Text Text--disabled Text--small"
+          data-test="DesignSystem-Checkbox-HelpText"
+        >
+          Checkbox
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Checkbox component 
+  indeterminate: true, size: "tiny", disabled: true, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]", wrapLabel: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Checkbox Checkbox--disabled"
+      data-test="DesignSystem-Checkbox"
+    >
+      <div
+        class="Checkbox-outerWrapper Checkbox-outerWrapper--tiny"
+        data-test="DesignSystem-Checkbox-OuterWrapper"
+      >
+        <input
+          class="Checkbox-input Checkbox-input--indeterminate"
+          data-test="DesignSystem-Checkbox-InputBox"
+          disabled=""
+          id="Checkbox-Checkbox-Test-uid"
+          name="Checkbox"
+          tabindex="0"
+          type="checkbox"
+          value="Checkbox"
+        />
+        <span
+          class="Checkbox-wrapper Checkbox-wrapper--default"
+          data-test="DesignSystem-Checkbox-Icon"
+        >
+          <svg
+            fill="none"
+            height="2"
+            viewBox="0 0 8 2"
+            width="8"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M8 0H0V2H8V0Z"
+              fill="white"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </span>
+      </div>
+      <div
+        class="Checkbox-labelWrapper"
+      >
+        <label
+          class="Checkbox-label Checkbox-label--tiny"
+          data-test="DesignSystem-Checkbox-Label"
+          for="Checkbox-Checkbox-Test-uid"
+        >
+          <span
+            class="Text Text--disabled Text--small mw-100 ellipsis"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -1044,7 +1536,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--default Text--regular ellipsis--noWrap mw-100"
+            class="Text Text--default Text--regular mw-100 ellipsis--noWrap"
             data-test="DesignSystem-Text"
           >
             Checkbox
@@ -1112,7 +1604,7 @@ exports[`Checkbox component
           for="Checkbox-Checkbox-Test-uid"
         >
           <span
-            class="Text Text--default Text--small ellipsis--noWrap mw-100"
+            class="Text Text--default Text--small mw-100 ellipsis--noWrap"
             data-test="DesignSystem-Text"
           >
             Checkbox
