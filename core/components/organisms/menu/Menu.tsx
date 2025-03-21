@@ -53,6 +53,10 @@ export interface MenuProps extends BaseProps {
    * Callback after `Menu` is toggled
    */
   onToggle?: (open?: boolean) => void;
+  /**
+   * Disables the `Menu`
+   */
+  disabled?: boolean;
 }
 
 export const Menu = (props: MenuProps) => {
