@@ -61,7 +61,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     [styles['ChatInput-actions--expanded']]: isExpanded,
   });
 
-  const resizeTextarea = () => {
+  const resizeTextarea = (text) => {
     if (textareaRef && textareaRef.current) {
       const textarea = textareaRef.current;
       // const newHeight = textarea.scrollHeight; // Get the correct scrollHeight
@@ -76,16 +76,36 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
       // });
 
       requestAnimationFrame(() => {
-        textarea.style.height = 'auto'; // Reset the height
+        // textarea.style.height = 'auto'; // Reset the height
 
         const newHeight = textarea.scrollHeight; // Get the correct scrollHeight
-        console.log('Updated scrollHeight:', newHeight, 'textarea.clientHeight:', textarea.offsetHeight);
-        if (newHeight > 20 && !isExpanded) {
-          setIsExpanded(true);
-        } else if (newHeight <= 20 && isExpanded) {
-          setIsExpanded(false);
-        }
-        textarea.style.height = `${newHeight}px`; // Set the new height
+        console.log(
+          'text',
+          text,
+          'Updated scrollHeight:',
+          newHeight,
+          'textarea.clientHeight:',
+          textarea.offsetHeight,
+          'textarea.height',
+          textarea.clientHeight,
+          'expanded',
+          isExpanded
+        );
+
+        setIsExpanded((prevIsExpanded) => {
+          if (newHeight > 20 && !prevIsExpanded) {
+            return true;
+          } else if (newHeight <= 20 && prevIsExpanded && text === '') {
+            return false;
+          }
+          return prevIsExpanded;
+        });
+        // if (newHeight > 20 && !isExpanded) {
+        //   setIsExpanded(true);
+        // } else if (newHeight <= 20 && isExpanded) {
+        //   setIsExpanded(false);
+        // }
+        // textarea.style.height = `${newHeight}px`; // Set the new height
       });
     }
   };
@@ -108,7 +128,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
       positionMentionPopup();
     }
 
-    resizeTextarea();
+    resizeTextarea(text);
   };
 
   const positionMentionPopup = () => {
@@ -198,7 +218,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
   return (
     <div className={containerClassNames}>
       <div ref={textareaRef} contentEditable className={textareaClassNames} onInput={handleInput}>
-        {showMention && (
+        {/* {showMention && (
           <div
             className="border mt-2 p-2 bg-white shadow-md position-absolute z-10"
             style={{
@@ -221,7 +241,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
               </div>
             ))}
           </div>
-        )}
+        )} */}
       </div>
 
       <div className={actionsClassNames}>
