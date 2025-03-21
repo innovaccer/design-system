@@ -1,3 +1,45 @@
+## 4.5.0 (2025-03-22)
+
+### Highlights
+
+- feat(Choicelist): add wrapLabel prop (0e97c368)
+- feat(menu): add disabled state in menu (89d1304c)
+- feat(chipInput): add chip validator function support in chip input (08fc94e5)
+- feat(typography): add auto tooltip support in typography component (37ba55ac)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(Choicelist): add wrapLabel prop (0e97c368)
+- feat(menu): add disabled state in menu (89d1304c)
+- feat(chipInput): add chip validator function support in chip input (08fc94e5)
+- feat(typography): add auto tooltip support in typography component (37ba55ac)
+
+### Fixes
+
+NA
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 4.4.0 (2025-03-04)
 
 ### Highlights
