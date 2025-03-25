@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import { BaseProps } from '@/utils/types';
 import styles from '@css/components/chatInput.module.css';
 import { Button } from '@/index';
-import { Mention } from './Mention';
 
 export interface ChatInputProps extends BaseProps {
   disabled?: boolean;
@@ -64,33 +63,9 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
   const resizeTextarea = (text) => {
     if (textareaRef && textareaRef.current) {
       const textarea = textareaRef.current;
-      // const newHeight = textarea.scrollHeight; // Get the correct scrollHeight
-      // console.log('Updated scrollHeight:', newHeight);
-      // setIsExpanded(newHeight > 20);
-      // textarea.style.height = `${newHeight}px`; // Set the new height
-      // requestAnimationFrame(() => {
-      //   const newHeight = textarea.scrollHeight; // Get the correct scrollHeight
-      //   console.log('Updated scrollHeight:', newHeight);
-      //   setIsExpanded(newHeight > 20);
-      //   textarea.style.height = `${newHeight}px`; // Set the new height
-      // });
 
       requestAnimationFrame(() => {
-        // textarea.style.height = 'auto'; // Reset the height
-
-        const newHeight = textarea.scrollHeight; // Get the correct scrollHeight
-        console.log(
-          'text',
-          text,
-          'Updated scrollHeight:',
-          newHeight,
-          'textarea.clientHeight:',
-          textarea.offsetHeight,
-          'textarea.height',
-          textarea.clientHeight,
-          'expanded',
-          isExpanded
-        );
+        const newHeight = textarea.scrollHeight;
 
         setIsExpanded((prevIsExpanded) => {
           if (newHeight > 20 && !prevIsExpanded) {
@@ -100,12 +75,6 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
           }
           return prevIsExpanded;
         });
-        // if (newHeight > 20 && !isExpanded) {
-        //   setIsExpanded(true);
-        // } else if (newHeight <= 20 && isExpanded) {
-        //   setIsExpanded(false);
-        // }
-        // textarea.style.height = `${newHeight}px`; // Set the new height
       });
     }
   };
@@ -169,7 +138,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
 
     const mentionNode = document.createElement('span');
     mentionNode.textContent = `@${mention} `;
-    mentionNode.className = 'text-blue-500';
+    // mentionNode.className = 'text-blue-500';
     mentionNode.setAttribute('data-type', 'mention');
     mentionNode.setAttribute('data-id', mention);
 
@@ -218,9 +187,10 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
   return (
     <div className={containerClassNames}>
       <div ref={textareaRef} contentEditable className={textareaClassNames} onInput={handleInput}>
-        {/* {showMention && (
+        {showMention && (
           <div
-            className="border mt-2 p-2 bg-white shadow-md position-absolute z-10"
+            contentEditable={false}
+            className="border mt-2 p-2 bg-light position-absolute z-10"
             style={{
               top: mentionPosition.top,
               left: mentionPosition.left,
@@ -241,7 +211,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
               </div>
             ))}
           </div>
-        )} */}
+        )}
       </div>
 
       <div className={actionsClassNames}>
