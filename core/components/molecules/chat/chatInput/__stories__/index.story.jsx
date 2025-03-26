@@ -5,8 +5,15 @@ export const all = () => {
   const customActionRenderer = () => {
     return (
       <div className="d-flex">
-        <Button appearance="transparent" className="mr-2" icon="add_circle" />
-        <Button appearance="transparent" icon="attach_file" />
+        <Button
+          appearance="transparent"
+          className="mr-2"
+          icon="add_circle"
+          iconType="outlined"
+          size="tiny"
+          largeIcon={true}
+        />
+        <Button appearance="transparent" className="ml-2" icon="attach_file" size="tiny" largeIcon={true} />
       </div>
     );
   };
@@ -26,8 +33,15 @@ const customCode = `() => {
   const customActionRenderer = () => {
     return (
       <div className="d-flex">
-        <Button appearance="transparent" className="mr-2" icon="add_circle" />
-        <Button appearance="transparent" icon="attach_file" />
+        <Button
+          appearance="transparent"
+          className="mr-2"
+          icon="add_circle"
+          iconType="outlined"
+          size="tiny"
+          largeIcon={true}
+        />
+        <Button appearance="transparent" className="ml-2" icon="attach_file" size="tiny" largeIcon={true} />
       </div>
     );
   };

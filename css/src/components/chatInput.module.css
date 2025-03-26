@@ -51,7 +51,8 @@
   overflow-y: scroll;
 }
 
-.ChatInput-textarea::placeholder {
+[contentEditable='true']:empty:not(:focus):before {
+  content: attr(data-text);
   color: #707070;
 }
 
