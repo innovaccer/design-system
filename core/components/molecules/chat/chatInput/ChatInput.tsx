@@ -11,10 +11,10 @@ export interface ChatInputProps extends BaseProps {
   value?: string;
   enableMention?: boolean;
   actionRenderer?: () => JSX.Element;
-  onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  onClick?: (e: React.MouseEvent<HTMLTextAreaElement>) => void;
-  onBlur?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
-  onFocus?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
+  onChange?: (e: React.ChangeEvent<HTMLDivElement>) => void;
+  onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
+  onBlur?: (e: React.FocusEvent<HTMLDivElement>) => void;
+  onFocus?: (e: React.FocusEvent<HTMLDivElement>) => void;
   onSend?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, value?: MessageType[]) => void;
 }
 
@@ -92,7 +92,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
       setShowMention(true);
       positionMentionPopup();
     } else if (showMention) {
-      const query = text.slice(0, offset).split('@').pop();
+      const query = text.slice(0, offset).split('@').pop() || '';
       setFilteredMentions(mentionList.filter((u) => u.startsWith(query)));
       positionMentionPopup();
     }
@@ -125,8 +125,8 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
       left = window.innerWidth - 200;
     }
 
-    top -= editorRect.top + window.scrollY;
-    left -= editorRect.left + window.scrollX;
+    top -= editorRect.top + window.scrollY - 12;
+    left -= editorRect.left + window.scrollX - 8;
 
     setMentionPosition({ top, left });
   };
@@ -141,7 +141,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     range.deleteContents();
 
     const mentionNode = document.createElement('span');
-    mentionNode.textContent = `@${mention} `;
+    mentionNode.textContent = `${mention} `;
     // mentionNode.className = 'text-blue-500';
     mentionNode.setAttribute('data-type', 'mention');
     mentionNode.setAttribute('data-id', mention);
@@ -166,11 +166,11 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     elements?.forEach((node) => {
       if (node.nodeType === Node.TEXT_NODE) {
         messageParts.push({ type: 'text', content: node.textContent });
-      } else if (node.nodeType === Node.ELEMENT_NODE && node.getAttribute('data-type') === 'mention') {
+      } else if (node.nodeType === Node.ELEMENT_NODE && (node as Element).getAttribute('data-type') === 'mention') {
         messageParts.push({
           type: 'mention',
           content: node.textContent?.trim() || null,
-          id: node.getAttribute('data-id'),
+          id: (node as Element).getAttribute('data-id') || '',
         });
       }
     });
@@ -180,7 +180,6 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
 
   const handleSend = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const messageData = extractMessageData();
-    console.log('messageData:', messageData);
     if (textareaRef.current) textareaRef.current.innerHTML = '';
 
     if (onSend) {
