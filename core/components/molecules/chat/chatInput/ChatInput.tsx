@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps } from '@/utils/types';
 import styles from '@css/components/chatInput.module.css';
-import { Button } from '@/index';
+import { Button, Listbox } from '@/index';
 
 export interface ChatInputProps extends BaseProps {
   disabled?: boolean;
@@ -131,7 +131,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     setMentionPosition({ top, left });
   };
 
-  const handleMentionClick = (mention) => {
+  const handleMentionClick = (mention: string) => {
     if (!textareaRef.current) return;
 
     const selection = window.getSelection();
@@ -203,7 +203,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
       >
         {value}
         {showMention && (
-          <div
+          <Listbox
             contentEditable={false}
             className="border mt-2 p-2 bg-light position-absolute z-10"
             style={{
@@ -214,7 +214,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
             }}
           >
             {filteredMentions.map((mention) => (
-              <div
+              <Listbox.Item
                 key={mention}
                 className="p-1 cursor-pointer"
                 onMouseDown={(e) => {
@@ -223,9 +223,9 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
                 }}
               >
                 {mention}
-              </div>
+              </Listbox.Item>
             ))}
-          </div>
+          </Listbox>
         )}
       </div>
 
