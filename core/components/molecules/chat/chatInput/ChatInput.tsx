@@ -33,7 +33,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     ...rest
   } = props;
 
-  const [text, setText] = React.useState(value);
+  const [text, setText] = React.useState<string | null | undefined>(value);
   const [isExpanded, setIsExpanded] = React.useState(false);
   const [showMention, setShowMention] = React.useState(false);
   const [mentionList] = React.useState(['user1', 'user2', 'user3']);
@@ -60,7 +60,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     [styles['ChatInput-actions--expanded']]: isExpanded,
   });
 
-  const resizeTextarea = (text) => {
+  const resizeTextarea = (text: string) => {
     if (textareaRef && textareaRef.current) {
       const textarea = textareaRef.current;
 
@@ -95,6 +95,10 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
       const query = text.slice(0, offset).split('@').pop();
       setFilteredMentions(mentionList.filter((u) => u.startsWith(query)));
       positionMentionPopup();
+    }
+
+    if (textareaRef.current) {
+      setText(textareaRef.current.textContent);
     }
 
     resizeTextarea(text);
@@ -197,6 +201,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
         onInput={handleInput}
         {...rest}
       >
+        {value}
         {showMention && (
           <div
             contentEditable={false}
@@ -211,7 +216,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
             {filteredMentions.map((mention) => (
               <div
                 key={mention}
-                className="p-1 cursor-pointer hover:bg-gray-200"
+                className="p-1 cursor-pointer"
                 onMouseDown={(e) => {
                   e.preventDefault();
                   handleMentionClick(mention);
