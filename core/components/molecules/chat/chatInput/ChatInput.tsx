@@ -186,7 +186,17 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
 
   return (
     <div className={containerClassNames}>
-      <div ref={textareaRef} contentEditable className={textareaClassNames} onInput={handleInput}>
+      <div
+        ref={textareaRef}
+        data-text={placeholder}
+        contentEditable={!disabled}
+        suppressContentEditableWarning
+        className={textareaClassNames}
+        role="textbox"
+        spellCheck="true"
+        onInput={handleInput}
+        {...rest}
+      >
         {showMention && (
           <div
             contentEditable={false}
@@ -207,7 +217,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
                   handleMentionClick(mention);
                 }}
               >
-                @{mention}
+                {mention}
               </div>
             ))}
           </div>
