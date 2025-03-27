@@ -43,6 +43,68 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
 
   const textareaRef = React.useRef<HTMLDivElement>(null);
 
+  const containerClassNames = classNames(
+    {
+      [styles.ChatInput]: true,
+      [styles['ChatInput--expanded']]: isExpanded,
+      [styles['ChatInput--disabled']]: disabled,
+    },
+    className
+  );
+
+  const textareaClassNames = classNames({
+    [styles['ChatInput-textarea']]: true,
+  });
+
+  const actionsClassNames = classNames({
+    [styles['ChatInput-actions']]: true,
+    [styles['ChatInput-actions--expanded']]: isExpanded,
+  });
+
+  const resizeTextarea = (text: string) => {
+    if (textareaRef && textareaRef.current) {
+      const textarea = textareaRef.current;
+
+      requestAnimationFrame(() => {
+        const newHeight = textarea.scrollHeight;
+
+        setIsExpanded((prevIsExpanded) => {
+          if (newHeight > 20 && !prevIsExpanded) {
+            return true;
+          } else if (newHeight <= 20 && prevIsExpanded && text === '') {
+            return false;
+          }
+          return prevIsExpanded;
+        });
+      });
+    }
+  };
+
+  // const handleInput = () => {
+  //   const selection = window.getSelection();
+  //   if (!selection || !selection.rangeCount) return;
+
+  //   const range = selection.getRangeAt(0);
+  //   const text = range.startContainer.textContent || '';
+  //   const offset = range.startOffset;
+
+  //   if (text[offset - 1] === '@') {
+  //     setFilteredMentions(mentionList);
+  //     setShowMention(true);
+  //     positionMentionPopup();
+  //   } else if (showMention) {
+  //     const query = text.slice(0, offset).split('@').pop() || '';
+  //     setFilteredMentions(mentionList.filter((u) => u.startsWith(query)));
+  //     positionMentionPopup();
+  //   }
+
+  //   if (textareaRef.current) {
+  //     setText(textareaRef.current.textContent);
+  //   }
+
+  //   resizeTextarea(text);
+  // };
+
   const handleInput = () => {
     const selection = window.getSelection();
     if (!selection) return;
@@ -62,6 +124,8 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     if (textareaRef.current) {
       setText(textareaRef.current.textContent);
     }
+
+    resizeTextarea(text);
   };
 
   const positionMentionPopup = () => {
@@ -72,7 +136,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
 
     const range = selection.getRangeAt(0);
     const rects = range.getClientRects();
-    const rect = rects[rects.length - 1];
+    const rect = rects[rects.length - 1]; // Get the last rect to handle multi-line text
     const editorRect = textareaRef.current.getBoundingClientRect();
 
     let top = rect.bottom + window.scrollY;
@@ -91,21 +155,37 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     setMentionPosition({ top, left });
   };
 
+  // const handleMentionClick = (mention: string) => {
+  //   if (!textareaRef.current) return;
+
+  //   const selection = window.getSelection();
+  //   if (!selection || !selection.rangeCount) return;
+
+  //   const range = selection.getRangeAt(0);
+  //   range.deleteContents();
+
+  //   const mentionNode = document.createElement('span');
+  //   mentionNode.textContent = `${mention} `;
+  //   // mentionNode.className = 'text-blue-500';
+  //   mentionNode.setAttribute('data-type', 'mention');
+  //   mentionNode.setAttribute('data-id', mention);
+
+  //   range.insertNode(mentionNode);
+
+  //   const space = document.createTextNode('\u00A0');
+  //   mentionNode.after(space);
+
+  //   range.setStartAfter(space);
+  //   range.setEndAfter(space);
+  //   selection.removeAllRanges();
+  //   selection.addRange(range);
+
+  //   setShowMention(false);
+  // };
+
   const handleMentionClick = (mention) => {
     setContent((prev) => [...prev, { type: 'mention', id: mention }, ' ']);
     setShowMention(false);
-
-    requestAnimationFrame(() => {
-      if (textareaRef.current) {
-        textareaRef.current.focus();
-        const range = document.createRange();
-        const sel = window.getSelection();
-        range.selectNodeContents(textareaRef.current);
-        range.collapse(false);
-        sel?.removeAllRanges();
-        sel?.addRange(range);
-      }
-    });
   };
 
   const extractMessageData = () => {
@@ -116,8 +196,29 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     );
   };
 
+  // const extractMessageData = () => {
+  //   const elements = textareaRef.current?.childNodes;
+  //   const messageParts: MessageType[] = [];
+
+  //   elements?.forEach((node) => {
+  //     if (node.nodeType === Node.TEXT_NODE) {
+  //       messageParts.push({ type: 'text', content: node.textContent });
+  //     } else if (node.nodeType === Node.ELEMENT_NODE && (node as Element).getAttribute('data-type') === 'mention') {
+  //       messageParts.push({
+  //         type: 'mention',
+  //         content: node.textContent?.trim() || null,
+  //         id: (node as Element).getAttribute('data-id') || '',
+  //       });
+  //     }
+  //   });
+
+  //   return messageParts;
+  // };
+
   const handleSend = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const messageData = extractMessageData();
+    // if (textareaRef.current) textareaRef.current.innerHTML = '';
+
     if (onSend) {
       onSend(e, messageData);
     }
@@ -125,34 +226,26 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
   };
 
   return (
-    <div
-      className={classNames(styles.ChatInput, className, {
-        [styles['ChatInput--expanded']]: isExpanded,
-        [styles['ChatInput--disabled']]: disabled,
-      })}
-    >
+    <div className={containerClassNames}>
       <div
         ref={textareaRef}
         data-text={placeholder}
-        contentEditable={!disabled}
+        // contentEditable={!disabled}
+        contentEditable={true} // Prevents direct editing of the content
         suppressContentEditableWarning
-        className={styles['ChatInput-textarea']}
+        className={textareaClassNames}
         role="textbox"
         spellCheck="true"
         onInput={handleInput}
         {...rest}
       >
+        {/* {value} */}
         {content.map((item, index) =>
-          typeof item === 'string' ? (
-            <span key={index}>{item}</span>
-          ) : (
-            <span key={index} contentEditable="false">
-              <Chip key={index} label={`@${item.id}`} />
-            </span>
-          )
+          typeof item === 'string' ? <span key={index}>{item}</span> : <Chip key={index} label={`@${item.id}`} />
         )}
         {showMention && (
           <Listbox
+            contentEditable={false}
             className="border mt-2 p-2 bg-light position-absolute z-10"
             style={{
               top: mentionPosition.top,
@@ -176,14 +269,15 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
           </Listbox>
         )}
       </div>
-      <div className={styles['ChatInput-actions']}>
+
+      <div className={actionsClassNames}>
         {actionRenderer && actionRenderer()}
         <Button
           size="tiny"
           appearance="primary"
           icon="arrow_upward_alt"
           aria-label="Send"
-          largeIcon
+          largeIcon={true}
           disabled={!text}
           className={actionRenderer ? 'ml-3' : ''}
           onClick={handleSend}
