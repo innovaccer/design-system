@@ -121,7 +121,7 @@ export const GridRow = (props: GridRowProps) => {
   });
 
   return (
-    <div className={wrapperClasses}>
+    <div className={wrapperClasses} data-test="DesignSystem-Grid-rowWrapper">
       {/* TODO(a11y)  */}
       {/* eslint-disable-next-line */}
       <div data-test="DesignSystem-Grid-row" className={rowClasses} onClick={onClickHandler} ref={rowRef}>
