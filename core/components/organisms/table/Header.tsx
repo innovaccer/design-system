@@ -56,6 +56,8 @@ export interface HeaderProps extends ExternalHeaderProps {
   onClearSelection?: () => void;
   onSelectAllRows?: () => void;
   uniqueColumnName?: string;
+  totalRowsCount?: number;
+  enableInfiniteScroll?: boolean;
 }
 
 export const Header = (props: HeaderProps) => {
@@ -93,6 +95,8 @@ export const Header = (props: HeaderProps) => {
     onSelectAllRows,
     selectionActionRenderer,
     uniqueColumnName,
+    totalRowsCount,
+    enableInfiniteScroll,
   } = props;
 
   const [selectAllRecords, setSelectAllRecords] = React.useState<boolean>(false);
@@ -200,8 +204,10 @@ export const Header = (props: HeaderProps) => {
       return `Showing 0 ${customLabel}s`;
     } else if (withPagination) {
       return `Showing ${startIndex}-${endIndex} of ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`;
+    } else if (enableInfiniteScroll && totalRowsCount) {
+      return `Showing ${totalRecords} of ${totalRowsCount} ${customLabel}${getPluralSuffix(totalRecords)}`; // here
     }
-    return `Showing ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`;
+    return `Showing ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`; // here
   };
 
   const getSelectedRowLabel = () => {

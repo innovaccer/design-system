@@ -723,4 +723,24 @@ describe('render table with verticalAlign', () => {
     const checkbox = getAllByTestId('DesignSystem-Grid-bodyCell')[1];
     expect(checkbox).toHaveClass('align-items-end');
   });
+
+  it('check for prop:enableRowVirtualization', () => {
+    const schema = [
+      { name: 'name', displayName: 'Name' },
+      { name: 'gender', displayName: 'Gender' },
+    ];
+
+    const data = [
+      { name: 'Zara', gender: 'f', selected: true },
+      { name: 'Sara', gender: 'f' },
+      { name: 'Tony', gender: 'm' },
+      { name: 'Lemmie', gender: 'f' },
+      { name: 'Randy', gender: 'm' },
+      { name: 'Sayres', gender: 'm' },
+    ];
+
+    const { getAllByTestId } = render(<Table schema={schema} data={data} enableRowVirtualization={true} />);
+    const items = getAllByTestId('DesignSystem-Grid-rowWrapper')[1];
+    expect(items).toHaveClass('VS-item');
+  });
 });
