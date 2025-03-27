@@ -160,12 +160,6 @@ const plugins = [
         ]
       },
     },
-    {
-      resolve: `gatsby-source-medium`,
-      options: {
-        username: `innovaccer-tech`,
-      },
-    },
     `gatsby-transformer-json-key-value-to-array`,
     {
       resolve: `gatsby-plugin-nprogress`,
