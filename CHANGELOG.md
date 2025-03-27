@@ -1,3 +1,39 @@
+## 4.6.0 (2025-03-27)
+
+### Highlights
+
+- feat(table): add infinite scroll & virtualization support in table (e41ef371)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(table): add infinite scroll & virtualization support in table (e41ef371)
+
+### Fixes
+
+- fix(docs): replace gatsby-medium-plugin with fetch API for medium latest blogs (9f5224cd)
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 4.5.0 (2025-03-22)
 
 ### Highlights
