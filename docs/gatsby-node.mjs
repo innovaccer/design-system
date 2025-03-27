@@ -5,7 +5,7 @@ import { createFilePath } from 'gatsby-source-filesystem';
 import { compileMDXWithCustomOptions } from "gatsby-plugin-mdx";
 import remarkHeadingsPlugin from "./remark-headings-plugin.mjs";
 
-export const onPreBootstrap = ({ store, reporter }) => {
+export const onPreBootstrap = async ({ store, reporter }) => {
   const { program } = store.getState();
 
   const dirs = [
@@ -19,6 +19,24 @@ export const onPreBootstrap = ({ store, reporter }) => {
       mkdirp.sync(dir);
     }
   });
+
+  try {
+    console.log('Fetching Medium API data...');
+
+    const response = await fetch('https://medium.com/innovaccer-tech?format=json&limit=100');
+    let data = await response.text();
+
+    // Remove Medium's unwanted security prefix before parsing JSON
+    data = data.replace('])}while(1);</x>', '');
+    const jsonData = JSON.parse(data);
+
+    // Save as JSON file in public folder
+    fs.writeFileSync('./public/medium.json', JSON.stringify(jsonData, null, 2));
+
+    console.log('Medium API data saved successfully!');
+  } catch (error) {
+    console.error('Failed to fetch Medium API data:', error);
+  }
 };
 
 export const onCreateNode = ({ node, actions, getNode }) => {

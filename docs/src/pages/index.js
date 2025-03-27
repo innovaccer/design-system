@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { navigate } from 'gatsby';
 import Meta from '../components/Meta';
 import Homepage from '../components/templates/Homepage';
@@ -10,11 +10,21 @@ import { Row, Column, Heading, Button, Card, Badge, Text, Link, Subheading } fro
 import HomeCard from './home/HomeCard';
 
 const Home = () => {
-  const mediumBlogList = MediumBlogs().slice(0, 3);
+  const [mediumBlogList, setMediumBlogList] = useState([]);
   const resourceSection = useHomeResources();
   const changelog = MdsChangelog();
 
   const releaseDate = new Date(changelog.releaseDate).toString().slice(3, 15);
+
+  useEffect(() => {
+    MediumBlogs()
+      .then((blogs) => {
+        setMediumBlogList(blogs);
+      })
+      .catch((error) => {
+        console.error('Error fetching Medium blogs:', error);
+      });
+  }, []);
 
   const getChangelogContent = () => {
     return changelog.updatesList.slice(0, 2).map((updates, updateKey) => {
