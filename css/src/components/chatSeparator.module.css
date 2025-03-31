@@ -1,6 +1,6 @@
 .Chat-UnreadMessage {
-  border-radius: var(--spacing-2);
-  padding: var(--spacing-s) var(--spacing-l) var(--spacing-s) var(--spacing);
+  border-radius: var(--spacing-40);
+  padding: var(--spacing-05) var(--spacing-30) var(--spacing-05) var(--spacing-20);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,14 +10,14 @@
 
 .NewMessage-Divider--left {
   flex: 1;
-  height: var(--spacing-xs);
+  height: var(--spacing-2-5);
   background-color: var(--primary);
-  margin-right: var(--spacing-2);
+  margin-right: var(--spacing-40);
 }
 
 .NewMessage-Divider--right {
   flex: 1;
-  height: var(--spacing-xs);
+  height: var(--spacing-2-5);
   background-color: var(--primary);
-  margin-left: var(--spacing-2);
+  margin-left: var(--spacing-40);
 }

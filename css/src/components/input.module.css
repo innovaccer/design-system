@@ -10,30 +10,30 @@
   flex-direction: row;
   align-items: center;
   box-sizing: border-box;
-  border-radius: var(--spacing-m);
+  border-radius: var(--spacing-10);
   border: var(--border);
-  padding-right: var(--spacing-l);
-  padding-left: var(--spacing-l);
+  padding-right: var(--spacing-30);
+  padding-left: var(--spacing-30);
   background: var(--white);
   transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
 .Input--tiny {
   height: var(--font-height-m);
-  padding-top: var(--spacing-m);
-  padding-bottom: var(--spacing-m);
+  padding-top: var(--spacing-10);
+  padding-bottom: var(--spacing-10);
 }
 
 .Input--regular {
   height: var(--font-height-l);
-  padding-top: var(--spacing-0-75);
-  padding-bottom: var(--spacing-0-75);
+  padding-top: var(--spacing-15);
+  padding-bottom: var(--spacing-15);
 }
 
 .Input--large {
   height: 40px;
-  padding-top: var(--spacing);
-  padding-bottom: var(--spacing);
+  padding-top: var(--spacing-20);
+  padding-bottom: var(--spacing-20);
 }
 
 .Input:hover {
@@ -124,7 +124,7 @@
 }
 
 .Input-icon--left {
-  margin-right: var(--spacing);
+  margin-right: var(--spacing-20);
   color: var(--inverse);
 }
 
@@ -143,11 +143,11 @@
 }
 
 .Input-iconWrapper--right:focus-visible .Input-icon--right {
-  outline: var(--spacing-s) solid var(--secondary-shadow);
+  outline: var(--spacing-05) solid var(--secondary-shadow);
 }
 
 .Input-icon--right:focus-visible {
-  outline: var(--spacing-s) solid var(--secondary-shadow);
+  outline: var(--spacing-05) solid var(--secondary-shadow);
   border-radius: 10px;
 }
 
@@ -160,7 +160,7 @@
 }
 
 .Input-inlineLabel {
-  margin-right: var(--spacing);
+  margin-right: var(--spacing-20);
 }
 
 .Input-iconWrapper--right:focus-visible {

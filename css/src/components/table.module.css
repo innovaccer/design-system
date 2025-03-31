@@ -17,12 +17,12 @@
   display: flex;
   justify-content: center;
   background: var(--white);
-  padding: var(--spacing) 0;
+  padding: var(--spacing-20) 0;
   border-top: var(--border);
 }
 
 .Table-Header--Divider {
-  height: var(--spacing-xl);
+  height: var(--spacing-60);
 }
 
 .Table-Header-Label--hide {

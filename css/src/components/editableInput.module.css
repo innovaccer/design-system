@@ -9,39 +9,39 @@
   position: absolute;
   display: flex;
   justify-content: flex-end;
-  margin-top: var(--spacing-m);
+  margin-top: var(--spacing-10);
   width: 100%;
 }
 
 .EditableInput-actions--regular {
-  top: var(--spacing-3);
+  top: var(--spacing-80);
 }
 
 .EditableInput-actions--tiny {
-  top: var(--spacing-xl);
+  top: var(--spacing-60);
 }
 
 .EditableInput-default {
-  border: var(--spacing-xs) solid transparent;
+  border: var(--spacing-2-5) solid transparent;
   box-sizing: border-box;
   white-space: nowrap;
-  padding-left: var(--spacing-l);
-  padding-right: var(--spacing-l);
+  padding-left: var(--spacing-30);
+  padding-right: var(--spacing-30);
   display: flex;
   align-items: center;
 }
 
 .EditableInput-default--regular {
-  min-width: var(--spacing-9);
-  height: var(--spacing-3);
+  min-width: var(--spacing-640);
+  height: var(--spacing-80);
 }
 
 .EditableInput-default--tiny {
-  min-width: var(--spacing-6);
-  height: var(--spacing-xl);
+  min-width: var(--spacing-240);
+  height: var(--spacing-60);
 }
 
 .EditableInput-Input--tiny {
-  min-width: var(--spacing-6) !important;
+  min-width: var(--spacing-240) !important;
   width: 100%;
 }

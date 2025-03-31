@@ -2,7 +2,7 @@
 
 .Badge {
   /* 160px */
-  max-width: calc(var(--spacing-2) * 10);
+  max-width: calc(var(--spacing-40) * 10);
   /* truncate */
   white-space: nowrap;
   overflow: hidden;
@@ -10,11 +10,11 @@
   font-size: var(--font-size-s);
   line-height: var(--font-height-s);
   text-transform: uppercase;
-  padding-right: var(--spacing-m);
-  padding-left: var(--spacing-m);
-  padding-top: var(--spacing-s);
-  padding-bottom: var(--spacing-s);
-  border-radius: var(--spacing-m);
+  padding-right: var(--spacing-10);
+  padding-left: var(--spacing-10);
+  padding-top: var(--spacing-05);
+  padding-bottom: var(--spacing-05);
+  border-radius: var(--spacing-10);
   display: inline-block;
   box-sizing: border-box;
   font-weight: var(--font-weight-bold);

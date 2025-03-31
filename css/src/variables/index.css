@@ -91,7 +91,7 @@
   --text-white: var(--white);
   --text-success: var(--success);
 
-  /* spacing */
+  /* spacing - DEPRECATED */
   --spacing-xs: 1px;
   --spacing-s: 2px;
   --spacing-m: 4px;
@@ -217,4 +217,20 @@
   --opacity-12: 0.48;
   --opacity-16: 0.64;
   --opacity-20: 0.8;
+
+  --spacing-2-5: 1px;
+  --spacing-05: 2px;
+  --spacing-10: 4px;
+  --spacing-15: 6px;
+  --spacing-20: 8px;
+  --spacing-30: 12px;
+  --spacing-40: 16px;
+  --spacing-60: 24px;
+  --spacing-80: 32px;
+  --spacing-120: 48px;
+  --spacing-160: 64px;
+  --spacing-240: 96px;
+  --spacing-320: 128px;
+  --spacing-440: 176px;
+  --spacing-640: 256px;
 }

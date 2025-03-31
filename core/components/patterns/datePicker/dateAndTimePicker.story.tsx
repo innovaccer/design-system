@@ -51,7 +51,7 @@ const customCode = `
               onDateChange={this.onDateChange.bind(this)}
             />
           </div>
-          <div className="d-flex flex-column ml-5" style={{width: 'var(--spacing-8)'}}>
+          <div className="d-flex flex-column ml-5" style={{width: 'var(--spacing-440)'}}>
             <Label withInput>Time</Label>
             <Dropdown
               open={open}

@@ -1,11 +1,11 @@
 .ActionCard {
-  border-radius: var(--spacing-m);
+  border-radius: var(--spacing-10);
   width: 100%;
 }
 
 .ActionCard--default {
   cursor: pointer;
-  border: var(--spacing-xs) solid var(--secondary-dark);
+  border: var(--spacing-2-5) solid var(--secondary-dark);
 }
 
 .ActionCard--default:hover {
@@ -16,7 +16,7 @@
 .ActionCard--default:focus,
 .ActionCard--default:focus-visible {
   outline: none;
-  border: var(--spacing-xs) solid var(--secondary-dark);
+  border: var(--spacing-2-5) solid var(--secondary-dark);
   box-shadow: var(--shadow-spread) var(--secondary-shadow);
 }
 
@@ -28,7 +28,7 @@
 .ActionCard--disabled {
   cursor: not-allowed;
   position: relative;
-  border: var(--spacing-xs) solid var(--secondary-lighter);
+  border: var(--spacing-2-5) solid var(--secondary-lighter);
 }
 
 .ActionCard-overlay--disabled {

@@ -23,16 +23,16 @@
   flex-direction: row;
   cursor: pointer;
   min-width: 40px;
-  margin-bottom: calc(-1 * var(--spacing-xs));
+  margin-bottom: calc(-1 * var(--spacing-2-5));
   text-align: center;
 }
 
 .Tab--small {
-  padding: var(--spacing) var(--spacing-l) var(--spacing-l);
+  padding: var(--spacing-20) var(--spacing-30) var(--spacing-30);
 }
 
 .Tab--regular {
-  padding: var(--spacing-l) var(--spacing-l) var(--spacing-2);
+  padding: var(--spacing-30) var(--spacing-30) var(--spacing-40);
 }
 
 .Tab:last-child {
@@ -44,12 +44,12 @@
   left: 0;
   bottom: 0;
   content: '';
-  width: calc(100% - 2 * var(--spacing-l));
-  height: var(--spacing-s);
+  width: calc(100% - 2 * var(--spacing-30));
+  height: var(--spacing-05);
   background-color: transparent;
-  margin-left: var(--spacing-l);
-  border-top-left-radius: var(--spacing-xs);
-  border-top-right-radius: var(--spacing-xs);
+  margin-left: var(--spacing-30);
+  border-top-left-radius: var(--spacing-2-5);
+  border-top-right-radius: var(--spacing-2-5);
 }
 
 .Tab:hover::after {
@@ -113,7 +113,7 @@
 
 .Tab-pills {
   cursor: pointer;
-  margin-right: var(--spacing);
+  margin-right: var(--spacing-20);
   overflow: visible;
 }
 
@@ -123,14 +123,14 @@
 }
 
 .DismissibleTab-icon--right {
-  padding: var(--spacing-s);
-  margin-left: var(--spacing-s);
+  padding: var(--spacing-05);
+  margin-left: var(--spacing-05);
   outline: none;
   border-radius: 10px;
 }
 
 .DismissibleTab-icon--default:focus-visible {
-  outline: var(--spacing-s) solid var(--secondary-shadow);
+  outline: var(--spacing-05) solid var(--secondary-shadow);
 }
 
 .DismissibleTab-icon--default:hover {
@@ -142,7 +142,7 @@
 }
 
 .DismissibleTab-icon--selected:focus-visible {
-  outline: var(--spacing-s) solid var(--primary-shadow);
+  outline: var(--spacing-05) solid var(--primary-shadow);
 }
 
 .DismissibleTab-icon--selected:hover {

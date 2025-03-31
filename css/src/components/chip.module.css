@@ -1,19 +1,19 @@
 .Chip {
   display: flex;
   box-sizing: border-box;
-  border-radius: var(--spacing-l);
-  padding-right: var(--spacing);
-  padding-left: var(--spacing);
-  padding-top: var(--spacing-s);
-  padding-bottom: var(--spacing-s);
+  border-radius: var(--spacing-30);
+  padding-right: var(--spacing-20);
+  padding-left: var(--spacing-20);
+  padding-top: var(--spacing-05);
+  padding-bottom: var(--spacing-05);
   width: fit-content;
   justify-content: space-between;
   border-style: solid;
-  border-width: var(--spacing-xs);
+  border-width: var(--spacing-2-5);
   align-items: center;
   flex-direction: row;
   cursor: default;
-  height: var(--spacing-xl);
+  height: var(--spacing-60);
   transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
@@ -23,7 +23,7 @@
 }
 
 .Chip-icon--left {
-  margin-right: var(--spacing-m);
+  margin-right: var(--spacing-10);
   display: flex;
   align-items: center;
 }
@@ -32,7 +32,7 @@
   display: flex;
   align-items: center;
   border-radius: 10px;
-  margin-left: var(--spacing-s);
+  margin-left: var(--spacing-05);
 }
 
 .Chip--action {
@@ -156,7 +156,7 @@
 }
 
 .Chip-icon--right:focus-visible {
-  outline: var(--spacing-s) solid var(--secondary-shadow);
+  outline: var(--spacing-05) solid var(--secondary-shadow);
 }
 
 .Chip-icon--right:hover {
@@ -176,7 +176,7 @@
 }
 
 .Chip-icon--selected:focus-visible {
-  outline: var(--spacing-s) solid var(--primary-shadow);
+  outline: var(--spacing-05) solid var(--primary-shadow);
 }
 
 .Chip-icon--selected:hover {
@@ -195,5 +195,5 @@
 }
 
 .Chip-icon--clear {
-  padding-right: var(--spacing-s);
+  padding-right: var(--spacing-05);
 }

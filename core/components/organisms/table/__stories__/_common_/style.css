@@ -9,8 +9,8 @@
   flex-shrink: 0;
   flex-direction: column;
   height: 100%;
-  width: var(--spacing-9);
-  padding: 0 var(--spacing-l);
+  width: var(--spacing-640);
+  padding: 0 var(--spacing-30);
 }
 
 .Table-filtersHeading {
@@ -20,15 +20,15 @@
 }
 
 .Table-filter {
-  padding: var(--spacing) 0;
+  padding: var(--spacing-20) 0;
 }
 
 .Table-filter:first-of-type {
-  padding-top: var(--spacing-l);
+  padding-top: var(--spacing-30);
 }
 
 .Table-filter:last-of-type {
-  padding-bottom: var(--spacing-l);
+  padding-bottom: var(--spacing-30);
 }
 
 .Table-filter .Input {
@@ -36,5 +36,5 @@
 }
 
 .Table-filter-panel {
-  width: calc(100% - var(--spacing-9));
+  width: calc(100% - var(--spacing-640));
 }

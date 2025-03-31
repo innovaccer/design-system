@@ -60,7 +60,7 @@ const customCode = `() => {
 
   /*
     .Select-Option-label {
-      max-width: var(--spacing-7);
+      max-width: var(--spacing-320);
     }
   */
   const medicineList = [

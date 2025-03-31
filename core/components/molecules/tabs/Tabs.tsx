@@ -351,7 +351,7 @@ Tabs.defaultProps = {
   withSeparator: true,
   tabs: [],
   size: 'regular',
-  maxWidth: 'var(--spacing-9)',
+  maxWidth: 'var(--spacing-640)',
 };
 
 export default Tabs;

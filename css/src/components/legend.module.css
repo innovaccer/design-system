@@ -6,6 +6,6 @@
 }
 
 .Legend-icon {
-  border-radius: var(--spacing-s);
-  margin-right: var(--spacing);
+  border-radius: var(--spacing-05);
+  margin-right: var(--spacing-20);
 }

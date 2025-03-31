@@ -14,7 +14,7 @@ Object {
         <div
           class="AvatarGroup-item AvatarGroup-item--regular"
           data-test="DesignSystem-AvatarGroup--Avatar"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 2;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
         >
           <span
             class="position-relative d-inline-flex"
@@ -49,7 +49,7 @@ Object {
         <div
           class="AvatarGroup-item AvatarGroup-item--regular"
           data-test="DesignSystem-AvatarGroup--Avatar"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 1;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
         >
           <span
             class="position-relative d-inline-flex"
@@ -92,7 +92,7 @@ Object {
       <div
         class="AvatarGroup-item AvatarGroup-item--regular"
         data-test="DesignSystem-AvatarGroup--Avatar"
-        style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 2;"
+        style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
       >
         <span
           class="position-relative d-inline-flex"
@@ -127,7 +127,7 @@ Object {
       <div
         class="AvatarGroup-item AvatarGroup-item--regular"
         data-test="DesignSystem-AvatarGroup--Avatar"
-        style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 1;"
+        style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
       >
         <span
           class="position-relative d-inline-flex"
@@ -229,7 +229,7 @@ Object {
         <div
           class="AvatarGroup-item AvatarGroup-item--regular"
           data-test="DesignSystem-AvatarGroup--Avatar"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 2;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
         >
           <span
             class="position-relative d-inline-flex"
@@ -264,7 +264,7 @@ Object {
         <div
           class="AvatarGroup-item AvatarGroup-item--regular"
           data-test="DesignSystem-AvatarGroup--Avatar"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 1;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
         >
           <span
             class="position-relative d-inline-flex"
@@ -307,7 +307,7 @@ Object {
       <div
         class="AvatarGroup-item AvatarGroup-item--regular"
         data-test="DesignSystem-AvatarGroup--Avatar"
-        style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 2;"
+        style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
       >
         <span
           class="position-relative d-inline-flex"
@@ -342,7 +342,7 @@ Object {
       <div
         class="AvatarGroup-item AvatarGroup-item--regular"
         data-test="DesignSystem-AvatarGroup--Avatar"
-        style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 1;"
+        style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
       >
         <span
           class="position-relative d-inline-flex"
@@ -444,7 +444,7 @@ Object {
         <div
           class="AvatarGroup-item AvatarGroup-item--tiny"
           data-test="DesignSystem-AvatarGroup--Avatar"
-          style="background-color: white; box-shadow: 0 0 0  var(--spacing-s) white; z-index: 2;"
+          style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 2;"
         >
           <span
             class="position-relative d-inline-flex"
@@ -479,7 +479,7 @@ Object {
         <div
           class="AvatarGroup-item AvatarGroup-item--tiny"
           data-test="DesignSystem-AvatarGroup--Avatar"
-          style="background-color: white; box-shadow: 0 0 0  var(--spacing-s) white; z-index: 1;"
+          style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 1;"
         >
           <span
             class="position-relative d-inline-flex"
@@ -522,7 +522,7 @@ Object {
       <div
         class="AvatarGroup-item AvatarGroup-item--tiny"
         data-test="DesignSystem-AvatarGroup--Avatar"
-        style="background-color: white; box-shadow: 0 0 0  var(--spacing-s) white; z-index: 2;"
+        style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 2;"
       >
         <span
           class="position-relative d-inline-flex"
@@ -557,7 +557,7 @@ Object {
       <div
         class="AvatarGroup-item AvatarGroup-item--tiny"
         data-test="DesignSystem-AvatarGroup--Avatar"
-        style="background-color: white; box-shadow: 0 0 0  var(--spacing-s) white; z-index: 1;"
+        style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 1;"
       >
         <span
           class="position-relative d-inline-flex"
@@ -659,7 +659,7 @@ Object {
         <div
           class="AvatarGroup-item AvatarGroup-item--tiny"
           data-test="DesignSystem-AvatarGroup--Avatar"
-          style="background-color: white; box-shadow: 0 0 0  var(--spacing-s) white; z-index: 2;"
+          style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 2;"
         >
           <span
             class="position-relative d-inline-flex"
@@ -694,7 +694,7 @@ Object {
         <div
           class="AvatarGroup-item AvatarGroup-item--tiny"
           data-test="DesignSystem-AvatarGroup--Avatar"
-          style="background-color: white; box-shadow: 0 0 0  var(--spacing-s) white; z-index: 1;"
+          style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 1;"
         >
           <span
             class="position-relative d-inline-flex"
@@ -737,7 +737,7 @@ Object {
       <div
         class="AvatarGroup-item AvatarGroup-item--tiny"
         data-test="DesignSystem-AvatarGroup--Avatar"
-        style="background-color: white; box-shadow: 0 0 0  var(--spacing-s) white; z-index: 2;"
+        style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 2;"
       >
         <span
           class="position-relative d-inline-flex"
@@ -772,7 +772,7 @@ Object {
       <div
         class="AvatarGroup-item AvatarGroup-item--tiny"
         data-test="DesignSystem-AvatarGroup--Avatar"
-        style="background-color: white; box-shadow: 0 0 0  var(--spacing-s) white; z-index: 1;"
+        style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 1;"
       >
         <span
           class="position-relative d-inline-flex"

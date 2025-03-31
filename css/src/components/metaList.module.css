@@ -7,13 +7,13 @@
 }
 
 .MetaList-seperator {
-  margin-left: var(--spacing);
+  margin-left: var(--spacing-20);
 }
 .MetaList-seperator--left {
-  margin-right: var(--spacing-m);
+  margin-right: var(--spacing-10);
 }
 .Meta-icon {
-  padding-right: var(--spacing-m);
+  padding-right: var(--spacing-10);
   display: flex;
   align-items: center;
 }
@@ -25,7 +25,7 @@
   font-size: var(--font-size);
 }
 .MetaList-item {
-  margin: 0 var(--spacing-m);
+  margin: 0 var(--spacing-10);
   display: flex;
   flex-direction: row;
   align-items: center;

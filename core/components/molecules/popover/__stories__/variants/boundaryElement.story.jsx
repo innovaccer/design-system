@@ -56,7 +56,7 @@ export const boundaryElement = () => {
 const customCode = `/*
 // style.css
 .custom-boundaryWrapper {
-    height: var(--spacing-8);
+    height: var(--spacing-440);
     border: 1px dashed;
 }
 

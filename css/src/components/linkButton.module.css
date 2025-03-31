@@ -14,7 +14,7 @@
   background: transparent;
   font-weight: var(--font-weight-medium);
   font-family: var(--font-family);
-  border-radius: var(--spacing-m);
+  border-radius: var(--spacing-10);
   transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
@@ -29,11 +29,11 @@
 }
 
 .LinkButton-icon--left {
-  margin-right: var(--spacing-m);
+  margin-right: var(--spacing-10);
 }
 
 .LinkButton-icon--right {
-  margin-left: var(--spacing-m);
+  margin-left: var(--spacing-10);
 }
 
 .LinkButton--regular {

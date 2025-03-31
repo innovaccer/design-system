@@ -11,7 +11,7 @@
   display: inline-flex;
   flex-direction: column;
   background-color: var(--secondary-lightest);
-  width: var(--spacing-4);
+  width: var(--spacing-120);
   height: 100%;
   transition: width 240ms;
   transition-timing-function: cubic-bezier(0.4, 0.14, 0.3, 1);
@@ -33,8 +33,8 @@
 }
 
 .Collapsible-footer {
-  padding-top: var(--spacing-m);
-  padding-bottom: var(--spacing-m);
+  padding-top: var(--spacing-10);
+  padding-bottom: var(--spacing-10);
   box-sizing: border-box;
   cursor: pointer;
   display: flex;
@@ -55,5 +55,5 @@
 }
 
 .Collapsible-footer--seperator {
-  border-top: var(--spacing-xs) solid var(--secondary-light);
+  border-top: var(--spacing-2-5) solid var(--secondary-light);
 }

@@ -24,7 +24,7 @@ export const selectWithHelptext = () => {
   return (
     <div className="w-25">
       <Label withInput={true}>Area code</Label>
-      <Select width="var(--spacing-9)" onSelect={onSelectHandler}>
+      <Select width="var(--spacing-640)" onSelect={onSelectHandler}>
         <Select.List>
           {areaCode.map((item, key) => {
             return (
@@ -61,7 +61,7 @@ const customCode = `() => {
   return (
     <div className="w-25">
       <Label withInput={true}>Area code</Label>
-      <Select width="var(--spacing-9)" onSelect={onSelectHandler}>
+      <Select width="var(--spacing-640)" onSelect={onSelectHandler}>
         <Select.List>
           {areaCode.map((item, key) => {
             return (
