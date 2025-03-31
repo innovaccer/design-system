@@ -1,5 +1,5 @@
 .Selection-card {
-  border-radius: var(--spacing-10);
+  border-radius: var(--border-radius-10);
   position: relative;
   transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
@@ -68,7 +68,7 @@
   z-index: 2;
   position: absolute;
   pointer-events: none;
-  border-radius: var(--spacing-10);
+  border-radius: var(--border-radius-10);
 }
 
 .Selection-card--default:active .Selection-card-overlay {

@@ -1,6 +1,6 @@
 .Box {
   width: 100%;
-  border-radius: var(--spacing-20);
+  border-radius: var(--border-radius-20);
   padding: var(--spacing-30);
 }
 
@@ -10,7 +10,7 @@
 }
 
 .Box--incoming {
-  border: var(--spacing-2-5) solid var(--secondary-light);
+  border: var(--border-width-2-5) solid var(--secondary-light);
   background-color: var(--white);
 }
 
@@ -19,11 +19,11 @@
 }
 
 .Box-incoming--withStatus {
-  border-bottom-left-radius: 0px;
+  border-bottom-left-radius: 0;
 }
 
 .Box-outgoing--withStatus {
-  border-bottom-right-radius: 0px;
+  border-bottom-right-radius: 0;
 }
 
 .Box--urgent {

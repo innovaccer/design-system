@@ -1,5 +1,5 @@
 .Chat-UnreadMessage {
-  border-radius: var(--spacing-40);
+  border-radius: var(--border-radius-40);
   padding: var(--spacing-05) var(--spacing-30) var(--spacing-05) var(--spacing-20);
   display: flex;
   align-items: center;

@@ -1,8 +1,8 @@
 /* badge */
 
 .Card {
-  border-radius: var(--spacing-10);
-  border: var(--spacing-2-5) solid var(--secondary-light);
+  border-radius: var(--border-radius-10);
+  border: var(--border-width-2-5) solid var(--secondary-light);
   position: relative;
   background-color: var(--white);
 }
@@ -50,5 +50,5 @@
 }
 
 .Card-footer--withSeperator {
-  border-top: var(--spacing-2-5) solid var(--secondary-light);
+  border-top: var(--border-width-2-5) solid var(--secondary-light);
 }

@@ -1,6 +1,6 @@
 .ChatBubble-box--outgoing {
   background-color: var(--primary-lightest);
-  border-radius: var(--spacing-20);
+  border-radius: var(--border-radius-20);
   padding: var(--spacing-20) var(--spacing-30);
 }
 
@@ -34,7 +34,7 @@
 
 .ChatBubble-box--incoming {
   background-color: var(--secondary-lightest);
-  border-radius: var(--spacing-20);
+  border-radius: var(--border-radius-20);
   padding: var(--spacing-20) var(--spacing-30);
 }
 

@@ -1,6 +1,6 @@
 .ChipInput {
   display: flex;
-  border-radius: var(--spacing-10);
+  border-radius: var(--border-radius-10);
   box-shadow: inset 0 0 0 var(--spacing-2-5) var(--secondary);
   padding-left: 10px;
   padding-right: 10px;
@@ -47,7 +47,7 @@
 }
 
 .ChipInput-border:focus-within {
-  border-radius: var(--spacing-10);
+  border-radius: var(--border-radius-10);
   box-shadow: var(--shadow-spread) var(--primary-shadow);
 }
 

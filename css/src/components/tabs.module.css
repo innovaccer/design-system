@@ -48,8 +48,8 @@
   height: var(--spacing-05);
   background-color: transparent;
   margin-left: var(--spacing-30);
-  border-top-left-radius: var(--spacing-2-5);
-  border-top-right-radius: var(--spacing-2-5);
+  border-top-left-radius: var(--border-radius-2-5);
+  border-top-right-radius: var(--border-radius-2-5);
 }
 
 .Tab:hover::after {

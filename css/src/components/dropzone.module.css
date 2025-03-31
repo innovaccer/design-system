@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   background-color: var(--white);
-  border-radius: var(--spacing-10);
+  border-radius: var(--border-radius-10);
   width: 100%;
   background-image: linear-gradient(to right, var(--secondary) 50%, rgba(255, 255, 255, 0) 0%),
     linear-gradient(var(--secondary) 50%, rgba(255, 255, 255, 0) 0%),

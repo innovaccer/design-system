@@ -4,17 +4,17 @@
 }
 
 .CardSubdued--top {
-  border-top: var(--spacing-2-5) solid var(--secondary-light);
+  border-top: var(--border-width-2-5) solid var(--secondary-light);
 }
 
 .CardSubdued--left {
-  border-left: var(--spacing-2-5) solid var(--secondary-light);
+  border-left: var(--border-width-2-5) solid var(--secondary-light);
 }
 
 .CardSubdued--right {
-  border-right: var(--spacing-2-5) solid var(--secondary-light);
+  border-right: var(--border-width-2-5) solid var(--secondary-light);
 }
 
 .CardSubdued--bottom {
-  border-bottom: var(--spacing-2-5) solid var(--secondary-light);
+  border-bottom: var(--border-width-2-5) solid var(--secondary-light);
 }

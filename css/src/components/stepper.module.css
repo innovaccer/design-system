@@ -9,7 +9,7 @@
   padding-right: var(--spacing-30);
   margin-left: var(--spacing-2-5);
   margin-right: var(--spacing-2-5);
-  border-radius: var(--spacing-40);
+  border-radius: var(--border-radius-40);
   cursor: pointer;
 }
 

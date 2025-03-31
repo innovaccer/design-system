@@ -14,7 +14,7 @@
   padding-left: var(--spacing-10);
   padding-top: var(--spacing-05);
   padding-bottom: var(--spacing-05);
-  border-radius: var(--spacing-10);
+  border-radius: var(--border-radius-10);
   display: inline-block;
   box-sizing: border-box;
   font-weight: var(--font-weight-bold);

@@ -57,7 +57,7 @@ const customCode = `/*
 // style.css
 .custom-boundaryWrapper {
     height: var(--spacing-440);
-    border: 1px dashed;
+    border: var(--border-width-2-5) dashed;
 }
 
 */

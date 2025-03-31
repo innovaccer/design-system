@@ -3,9 +3,9 @@
   flex-direction: row;
   overflow: hidden;
   padding: var(--spacing-30) var(--spacing-60) var(--spacing-30) var(--spacing-40);
-  border: var(--spacing-2-5) solid;
+  border: var(--border-width-2-5) solid;
   width: 100%;
-  border-radius: var(--spacing-10);
+  border-radius: var(--border-radius-10);
   box-sizing: border-box;
 }
 

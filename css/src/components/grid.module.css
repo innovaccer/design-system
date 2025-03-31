@@ -38,7 +38,7 @@
   z-index: 5;
   overflow-x: hidden;
   -ms-overflow-style: none;
-  border-right: 3px solid var(--secondary);
+  border-right: var(--border-width-7-5) solid var(--secondary);
 }
 
 .Grid-pinned::-webkit-scrollbar {
@@ -315,7 +315,7 @@
 .Grid-reorderHighlighter {
   position: absolute;
   height: 100%;
-  border: 3px solid var(--primary-light);
+  border: var(--border-width-7-5) solid var(--primary-light);
   z-index: 10;
 }
 
@@ -334,7 +334,7 @@
   left: 0;
   border-style: inset;
   border-right: var(--spacing-2-5) solid rgba(213, 213, 213, var(--opacity-3));
-  border-right-width: 4px;
+  border-right-width: var(--border-width-10);
   border-image: linear-gradient(
       to right,
       var(--secondary-light),
@@ -348,8 +348,8 @@
 .Grid-cellGroup--pinned-right {
   right: 0;
   border-style: inset;
-  border-left: var(--spacing-2-5) solid rgba(213, 213, 213, var(--opacity-3));
-  border-left-width: 4px;
+  border-left: var(--border-width-2-5) solid rgba(213, 213, 213, var(--opacity-3));
+  border-left-width: var(--border-width-10);
   border-image: linear-gradient(
       to left,
       var(--secondary-light),

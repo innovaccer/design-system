@@ -77,13 +77,13 @@
 }
 
 .Radio:hover .Radio-wrapper {
-  border: var(--spacing-2-5) solid var(--secondary-dark);
+  border: var(--border-width-2-5) solid var(--secondary-dark);
   background-color: var(--secondary-lighter);
 }
 
 .Radio:active .Radio-wrapper {
   background-color: var(--secondary-light);
-  border: var(--spacing-2-5) solid var(--inverse-lightest);
+  border: var(--border-width-2-5) solid var(--inverse-lightest);
 }
 
 .Radio:hover .Radio-errorWrapper {
@@ -121,21 +121,21 @@
 }
 
 .Radio--disabled .Radio-wrapper {
-  border: var(--spacing-2-5) solid var(--secondary-light);
+  border: var(--border-width-2-5) solid var(--secondary-light);
   background-color: var(--secondary-lightest);
 }
 
 .Radio--disabled .Radio-errorWrapper {
-  border: var(--spacing-2-5) solid var(--alert-lighter);
+  border: var(--border-width-2-5) solid var(--alert-lighter);
   background-color: var(--secondary-lightest);
 }
 
 .Radio-input:checked ~ .Radio-wrapper {
-  border: var(--spacing-2-5) solid var(--primary);
+  border: var(--border-width-2-5) solid var(--primary);
 }
 
 .Radio-input:checked ~ .Radio-errorWrapper {
-  border: var(--spacing-2-5) solid var(--alert);
+  border: var(--border-width-2-5) solid var(--alert);
 }
 
 .Radio-input:checked ~ .Radio-wrapper:after {
@@ -158,11 +158,11 @@
 .Radio-wrapper--tiny:after {
   width: var(--spacing-10);
   height: var(--spacing-10);
-  border: var(--spacing-2-5) solid var(--primary);
+  border: var(--border-width-2-5) solid var(--primary);
 }
 
 .Radio:hover .Radio-input:checked ~ .Radio-wrapper {
-  border: var(--spacing-2-5) solid var(--primary-dark);
+  border: var(--border-width-2-5) solid var(--primary-dark);
 }
 
 .Radio:hover .Radio-input:checked ~ .Radio-wrapper:after {
@@ -170,22 +170,22 @@
 }
 
 .Radio:hover .Radio-input:checked ~ .Radio-wrapper--tiny:after {
-  border: var(--spacing-2-5) solid var(--primary-dark);
+  border: var(--border-width-2-5) solid var(--primary-dark);
 }
 
 .Radio:active .Radio-input:checked ~ .Radio-wrapper {
   background-color: var(--secondary-light);
-  border: var(--spacing-2-5) solid var(--primary-darker);
+  border: var(--border-width-2-5) solid var(--primary-darker);
 }
 
 .Radio:hover .Radio-input:checked ~ .Radio-errorWrapper {
   background-color: var(--secondary-lighter);
-  border: var(--spacing-2-5) solid var(--alert-dark);
+  border: var(--border-width-2-5) solid var(--alert-dark);
 }
 
 .Radio:active .Radio-input:checked ~ .Radio-errorWrapper {
   background-color: var(--secondary-light);
-  border: var(--spacing-2-5) solid var(--alert-darker);
+  border: var(--border-width-2-5) solid var(--alert-darker);
 }
 
 .Radio:active .Radio-input:checked ~ .Radio-wrapper:after {
@@ -193,16 +193,16 @@
 }
 
 .Radio:active .Radio-input:checked ~ .Radio-wrapper--tiny:after {
-  border: var(--spacing-2-5) solid var(--primary-darker);
+  border: var(--border-width-2-5) solid var(--primary-darker);
 }
 
 .Radio--disabled .Radio-input:checked ~ .Radio-wrapper {
-  border: var(--spacing-2-5) solid var(--primary-lighter);
+  border: var(--border-width-2-5) solid var(--primary-lighter);
   background-color: var(--secondary-lightest);
 }
 
 .Radio--disabled .Radio-input:checked ~ .Radio-errorWrapper {
-  border: var(--spacing-2-5) solid var(--alert-lighter);
+  border: var(--border-width-2-5) solid var(--alert-lighter);
   background-color: var(--secondary-lightest);
 }
 

@@ -10,7 +10,7 @@
   flex-direction: row;
   align-items: center;
   box-sizing: border-box;
-  border-radius: var(--spacing-10);
+  border-radius: var(--border-radius-10);
   border: var(--border);
   padding-right: var(--spacing-30);
   padding-left: var(--spacing-30);
