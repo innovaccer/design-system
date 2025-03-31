@@ -25,7 +25,7 @@ export const preFilledValue = () => {
     <div className="w-25">
       <Label withInput={true}>Area code</Label>
       <Select
-        width="var(--spacing-9)"
+        width="var(--spacing-640)"
         onSelect={onSelectHandler}
         value={{ label: 'Alabama (205)', value: 'Alabama (205)' }}
       >
@@ -65,7 +65,7 @@ const customCode = `() => {
     <div className="w-25">
       <Label withInput={true}>Area code</Label>
       <Select 
-        width="var(--spacing-9)" 
+        width="var(--spacing-640)" 
         onSelect={onSelectHandler} 
         value={{ label: 'Alabama (205)', value: 'Alabama (205)' }}
       >

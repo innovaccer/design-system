@@ -1,5 +1,5 @@
 .Popover {
-  border-radius: var(--spacing-m);
+  border-radius: var(--border-radius-10);
   position: absolute;
   z-index: 500;
   background: var(--white);

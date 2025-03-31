@@ -154,7 +154,7 @@ export const Avatar = (props: AvatarProps) => {
   });
 
   const borderStyle = {
-    boxShadow: `0 0 0 var(--spacing-s) ${strokeColor}`,
+    boxShadow: `0 0 0 var(--spacing-05) ${strokeColor}`,
   };
 
   const sharedProp = {

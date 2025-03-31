@@ -187,7 +187,7 @@ export const AvatarSelection = (props: AvatarSelectionProps) => {
 
   const avatarStyle = {
     backgroundColor: `${borderColor}`,
-    boxShadow: `0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) ${borderColor}`,
+    boxShadow: `0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) ${borderColor}`,
   };
 
   const AvatarSelectionClass = classNames(

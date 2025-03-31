@@ -170,7 +170,7 @@ export const GenericChip = (props: GenericChipProps) => {
 
 GenericChip.displayName = 'GenericChip';
 GenericChip.defaultProps = {
-  maxWidth: 'var(--spacing-9)',
+  maxWidth: 'var(--spacing-640)',
 };
 
 export default GenericChip;

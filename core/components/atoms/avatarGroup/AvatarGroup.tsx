@@ -143,11 +143,11 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
 
   const style = {
     backgroundColor: `${borderColor}`,
-    boxShadow: `0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) ${borderColor}`,
+    boxShadow: `0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) ${borderColor}`,
   };
 
   const tinyAvatarStyle = {
-    boxShadow: `0 0 0  var(--spacing-s) ${borderColor}`,
+    boxShadow: `0 0 0  var(--spacing-05) ${borderColor}`,
   };
 
   const avatarStyle = size === 'tiny' ? { ...style, ...tinyAvatarStyle } : style;

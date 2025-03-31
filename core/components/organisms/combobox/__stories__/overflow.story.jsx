@@ -71,7 +71,7 @@ const customCode = `() => {
 
   /*
     .Combobox-outerWrapper {
-      max-width: var(--spacing-9);
+      max-width: var(--spacing-640);
     }
   */
 

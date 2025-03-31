@@ -269,7 +269,7 @@ describe('Avatar component with prop:presence', () => {
   it('presence should have custom stroke color', () => {
     const { getByTestId } = render(<Avatar firstName="John" lastName="Doe" presence="away" strokeColor="red" />);
     const presenceEle = getByTestId('DesignSystem-Avatar--Presence');
-    expect(presenceEle).toHaveStyle('box-shadow: 0 0 0 var(--spacing-s) red');
+    expect(presenceEle).toHaveStyle('box-shadow: 0 0 0 var(--spacing-05) red');
   });
 });
 
@@ -313,6 +313,6 @@ describe('Avatar component with prop:status', () => {
       <Avatar firstName="John" lastName="Doe" status={statusComponent} strokeColor="red" />
     );
     const statusElement = getByTestId('DesignSystem-Avatar--Status');
-    expect(statusElement).toHaveStyle('box-shadow: 0 0 0 var(--spacing-s) red');
+    expect(statusElement).toHaveStyle('box-shadow: 0 0 0 var(--spacing-05) red');
   });
 });

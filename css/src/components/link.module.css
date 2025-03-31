@@ -29,12 +29,12 @@
 }
 
 .Link--default:hover {
-  border-bottom: var(--spacing-xs) solid var(--primary-dark);
+  border-bottom: var(--border-width-2-5) solid var(--primary-dark);
   color: var(--primary-dark);
 }
 
 .Link--subtle:hover {
-  border-bottom: var(--spacing-xs) solid var(--inverse-light);
+  border-bottom: var(--border-width-2-5) solid var(--inverse-light);
   color: var(--inverse-light);
 }
 
@@ -50,12 +50,12 @@
 
 .Link--default:focus {
   box-shadow: var(--shadow-spread) var(--primary-shadow);
-  border-radius: var(--spacing-m);
+  border-radius: var(--border-radius-10);
 }
 
 .Link--subtle:focus {
   box-shadow: var(--shadow-spread) var(--secondary-shadow);
-  border-radius: var(--spacing-m);
+  border-radius: var(--border-radius-10);
 }
 
 .Link--default-disabled {

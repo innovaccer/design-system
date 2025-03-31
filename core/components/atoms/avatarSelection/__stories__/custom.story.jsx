@@ -149,7 +149,7 @@ const customCode = `() => {
 
   /*
     .AvatarSelection-wrapper {
-      width: var(--spacing-8);
+      width: var(--spacing-440);
     }
   */
   const list = [

@@ -9,8 +9,8 @@
 .Listbox-item {
   display: flex;
   align-items: center;
-  padding-left: var(--spacing-2);
-  padding-right: var(--spacing-2);
+  padding-left: var(--spacing-40);
+  padding-right: var(--spacing-40);
 }
 
 .Listbox-item-wrapper {
@@ -25,18 +25,18 @@
 /* Sizes */
 
 .Listbox-item--tight {
-  padding-top: var(--spacing-m);
-  padding-bottom: var(--spacing-m);
+  padding-top: var(--spacing-10);
+  padding-bottom: var(--spacing-10);
 }
 
 .Listbox-item--compressed {
-  padding-top: var(--spacing);
-  padding-bottom: var(--spacing);
+  padding-top: var(--spacing-20);
+  padding-bottom: var(--spacing-20);
 }
 
 .Listbox-item--standard {
-  padding-top: var(--spacing-l);
-  padding-bottom: var(--spacing-l);
+  padding-top: var(--spacing-30);
+  padding-bottom: var(--spacing-30);
 }
 
 /* Listbox type - option  */
@@ -120,7 +120,7 @@
 
 .Listbox-item--drag-icon {
   cursor: grab;
-  margin-right: var(--spacing);
+  margin-right: var(--spacing-20);
 }
 
 .Listbox-item--drag-icon:hover {

@@ -1,7 +1,7 @@
 .Tooltip {
-  max-width: var(--spacing-9);
-  padding: var(--spacing-m) var(--spacing);
-  border-radius: var(--spacing-m);
+  max-width: var(--spacing-640);
+  padding: var(--spacing-10) var(--spacing-20);
+  border-radius: var(--border-radius-10);
   z-index: 500;
   background: var(--inverse);
   overflow: hidden;

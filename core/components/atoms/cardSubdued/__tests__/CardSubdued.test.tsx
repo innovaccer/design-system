@@ -42,7 +42,7 @@ describe('CardSubdued component', () => {
     it(`renders border-${border}`, () => {
       const { getByTestId } = render(<CardSubdued border={border}>CardSubdued Component</CardSubdued>);
       const component = getByTestId('DesignSystem-CardSubdued');
-      expect(component).toHaveStyle(`border-${border}: var(--spacing-xs) solid var(--secondary-light)`);
+      expect(component).toHaveStyle(`border-${border}: var(--spacing-2-5) solid var(--secondary-light)`);
     });
   });
 });

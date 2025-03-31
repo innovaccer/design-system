@@ -9,10 +9,10 @@
   cursor: pointer;
   user-select: none;
   border: 0;
-  border-radius: var(--spacing-m);
+  border-radius: var(--border-radius-10);
 
-  padding-top: var(--spacing);
-  padding-bottom: var(--spacing);
+  padding-top: var(--spacing-20);
+  padding-bottom: var(--spacing-20);
 
   text-align: center;
   font-family: var(--font-family);
@@ -37,39 +37,39 @@
 }
 
 .Button-regularIcon--left {
-  margin-left: calc(-1 * var(--spacing-s));
+  margin-left: calc(-1 * var(--spacing-05));
 }
 
 .Button-regularIcon--right {
-  margin-right: calc(-1 * var(--spacing-s));
+  margin-right: calc(-1 * var(--spacing-05));
 }
 
 .Button--tiny {
-  height: var(--spacing-xl);
-  padding-right: var(--spacing);
-  padding-left: var(--spacing);
-  padding-top: var(--spacing-m);
-  padding-bottom: var(--spacing-m);
+  height: var(--spacing-60);
+  padding-right: var(--spacing-20);
+  padding-left: var(--spacing-20);
+  padding-top: var(--spacing-10);
+  padding-bottom: var(--spacing-10);
 }
 
 .Button--tinySquare {
-  width: var(--spacing-xl);
+  width: var(--spacing-60);
 }
 
 .Button--regular {
-  height: var(--spacing-3);
-  padding-right: var(--spacing-l);
-  padding-left: var(--spacing-l);
+  height: var(--spacing-80);
+  padding-right: var(--spacing-30);
+  padding-left: var(--spacing-30);
 }
 
 .Button--regularSquare {
-  width: var(--spacing-3);
+  width: var(--spacing-80);
 }
 
 .Button--large {
   height: 40px;
-  padding-right: var(--spacing-2);
-  padding-left: var(--spacing-2);
+  padding-right: var(--spacing-40);
+  padding-left: var(--spacing-40);
 
   line-height: var(--font-height-m);
   font-size: var(--font-size-m);
@@ -83,8 +83,8 @@
 .Button--largeSquare .Button-icon,
 .Button--tinySquare .Spinner,
 .Button--largeSquare .Spinner {
-  padding-left: var(--spacing-s);
-  padding-right: var(--spacing-s);
+  padding-left: var(--spacing-05);
+  padding-right: var(--spacing-05);
 }
 
 .Button--expanded {
@@ -98,18 +98,18 @@
 }
 
 .Button-icon--left {
-  margin-right: var(--spacing-0-75);
+  margin-right: var(--spacing-15);
 }
 
 .Button-icon--right {
-  margin-left: var(--spacing-0-75);
+  margin-left: var(--spacing-15);
 }
 
 .Button--tiny .Button-icon--left {
-  margin-right: var(--spacing-m);
+  margin-right: var(--spacing-10);
 }
 .Button--tiny .Button-icon--right {
-  margin-left: var(--spacing-m);
+  margin-left: var(--spacing-10);
 }
 
 .Button--basic {

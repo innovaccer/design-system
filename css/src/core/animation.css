@@ -42,13 +42,13 @@
 
   to {
     opacity: 0;
-    left: calc(-1 * var(--spacing-2));
+    left: calc(-1 * var(--spacing-40));
   }
 }
 
 @keyframes entryLeftCurve {
   from {
-    left: var(--spacing-2);
+    left: var(--spacing-40);
   }
 
   to {
@@ -64,13 +64,13 @@
 
   to {
     opacity: 0;
-    left: var(--spacing-2);
+    left: var(--spacing-40);
   }
 }
 
 @keyframes entryRightCurve {
   from {
-    left: calc(-1 * var(--spacing-2));
+    left: calc(-1 * var(--spacing-40));
   }
 
   to {

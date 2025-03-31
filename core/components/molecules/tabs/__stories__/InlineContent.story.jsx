@@ -34,10 +34,10 @@ export const inlineContent = () => {
         <div>Inactive User</div>
       </Tab>
       <div className="d-flex justify-content-end flex-grow-1">
-        <div style={{ width: 'var(--spacing-9)' }} className="ml-8">
+        <div style={{ width: 'var(--spacing-640)' }} className="ml-8">
           <Input placeholder="Search by name" icon="search" />
         </div>
-        <div style={{ width: 'var(--spacing-8)' }} className="ml-4">
+        <div style={{ width: 'var(--spacing-440)' }} className="ml-4">
           <Select
             triggerOptions={{
               withClearButton: false,
@@ -94,10 +94,10 @@ const customCode = `() => {
         <div>Inactive User</div>
       </Tab>
       <div className="d-flex justify-content-end flex-grow-1">
-        <div style={{ width: 'var(--spacing-9)' }} className="ml-8">
+        <div style={{ width: 'var(--spacing-640)' }} className="ml-8">
           <Input placeholder="Search by name" icon="search" />
         </div>
-        <div style={{ width: 'var(--spacing-8)' }} className="ml-4">
+        <div style={{ width: 'var(--spacing-440)' }} className="ml-4">
           <Select
             triggerOptions={{ 
               withClearButton: false,

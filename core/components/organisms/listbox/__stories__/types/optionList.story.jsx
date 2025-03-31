@@ -61,7 +61,7 @@ export const optionList = () => {
   return (
     // style.css
     // .Listbox-wrapper {
-    //   height: var(--spacing-9);
+    //   height: var(--spacing-640);
     // }
 
     <Card shadow="none">
@@ -160,7 +160,7 @@ const customCode = `
   return (
     // style.css
     // .Listbox-wrapper {
-    //   height: var(--spacing-9);
+    //   height: var(--spacing-640);
     // }
 
     <Card shadow="none">

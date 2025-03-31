@@ -1,7 +1,7 @@
 /* Textarea */
 
 .Textarea {
-  min-height: var(--spacing-3);
+  min-height: var(--spacing-80);
   width: 100%;
   display: block;
   font-family: var(--font-family);
@@ -9,10 +9,10 @@
   line-height: var(--font-height);
   font-size: var(--font-size);
   box-sizing: border-box;
-  border-radius: var(--spacing-m);
+  border-radius: var(--border-radius-10);
   border: var(--border);
   color: var(--inverse);
-  padding: var(--spacing) var(--spacing-l);
+  padding: var(--spacing-20) var(--spacing-30);
   resize: none;
   cursor: auto; /* this ensures text cursor over text, and pointer cursor over scroll*/
 }
@@ -27,7 +27,7 @@
 
 .Textarea:focus-within {
   outline: none;
-  border: var(--spacing-xs) solid var(--primary);
+  border: var(--border-width-2-5) solid var(--primary);
   box-shadow: var(--shadow-spread) var(--primary-shadow);
 }
 
@@ -44,11 +44,11 @@
 }
 
 .Textarea--error {
-  border: var(--spacing-xs) solid var(--alert);
+  border: var(--border-width-2-5) solid var(--alert);
 }
 
 .Textarea--error:focus-within {
-  border: var(--spacing-xs) solid var(--alert);
+  border: var(--border-width-2-5) solid var(--alert);
   box-shadow: var(--shadow-spread) var(--alert-shadow);
 }
 
