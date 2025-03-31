@@ -8,18 +8,18 @@
 }
 
 .Meter-Step--small {
-  width: var(--spacing-m);
-  height: var(--spacing);
+  width: var(--spacing-10);
+  height: var(--spacing-20);
 }
 
 .Meter-Step--regular {
-  width: var(--spacing);
-  height: var(--spacing);
+  width: var(--spacing-20);
+  height: var(--spacing-20);
 }
 
 .Meter-Step--large {
-  width: var(--spacing-l);
-  height: var(--spacing-l);
+  width: var(--spacing-30);
+  height: var(--spacing-30);
 }
 
 .Meter-Step--info {

@@ -1,6 +1,6 @@
 .AIButton {
-  padding: var(--spacing) var(--spacing-l);
-  border-radius: var(--spacing-m);
+  padding: var(--spacing-20) var(--spacing-30);
+  border-radius: var(--spacing-10);
   cursor: pointer;
   border: 0;
   font-family: var(--font-family);
@@ -70,5 +70,5 @@
 /* Button Icon */
 
 .AIButton-Icon {
-  margin-right: var(--spacing);
+  margin-right: var(--spacing-20);
 }

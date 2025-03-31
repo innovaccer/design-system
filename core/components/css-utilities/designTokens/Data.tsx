@@ -88,21 +88,21 @@ export const tokenColors = [
 ];
 
 export const spacingData = [
-  { token: '--spacing-xs', value: '1px' },
-  { token: '--spacing-s', value: '2px' },
-  { token: '--spacing-m', value: '4px' },
-  { token: '--spacing-0-75', value: '6px' },
-  { token: '--spacing', value: '8px' },
-  { token: '--spacing-l', value: '12px' },
-  { token: '--spacing-2', value: '16px' },
-  { token: '--spacing-xl', value: '24px' },
-  { token: '--spacing-3', value: '32px' },
-  { token: '--spacing-4', value: '48px' },
-  { token: '--spacing-5', value: '64px' },
-  { token: '--spacing-6', value: '96px' },
-  { token: '--spacing-7', value: '128px' },
-  { token: '--spacing-8', value: '176px' },
-  { token: '--spacing-9', value: '256px' },
+  { token: '--spacing-2-5', value: '1px' },
+  { token: '--spacing-05', value: '2px' },
+  { token: '--spacing-10', value: '4px' },
+  { token: '--spacing-15', value: '6px' },
+  { token: '--spacing-20', value: '8px' },
+  { token: '--spacing-30', value: '12px' },
+  { token: '--spacing-40', value: '16px' },
+  { token: '--spacing-60', value: '24px' },
+  { token: '--spacing-80', value: '32px' },
+  { token: '--spacing-120', value: '48px' },
+  { token: '--spacing-160', value: '64px' },
+  { token: '--spacing-240', value: '96px' },
+  { token: '--spacing-320', value: '128px' },
+  { token: '--spacing-440', value: '176px' },
+  { token: '--spacing-640', value: '256px' },
 ];
 
 export const textColors = [

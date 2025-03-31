@@ -16,7 +16,7 @@ exports[`ChipGroup component
           class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-ChipGroup--Chip"
           role="button"
-          style="max-width: var(--spacing-9);"
+          style="max-width: var(--spacing-640);"
           tabindex="0"
         >
           <i
@@ -46,7 +46,7 @@ exports[`ChipGroup component
           class="Chip-wrapper Chip Chip--input Chip-icon--clear"
           data-test="DesignSystem-ChipGroup--Chip"
           role="button"
-          style="max-width: var(--spacing-9);"
+          style="max-width: var(--spacing-640);"
           tabindex="0"
         >
           <i
@@ -91,7 +91,7 @@ exports[`ChipGroup component
           class="Chip-wrapper Chip Chip--selection Chip-selection--selected Chip-icon--clear"
           data-test="DesignSystem-ChipGroup--Chip"
           role="button"
-          style="max-width: var(--spacing-9);"
+          style="max-width: var(--spacing-640);"
           tabindex="0"
         >
           <i
@@ -136,7 +136,7 @@ exports[`ChipGroup component
           class="Chip-wrapper Chip Chip--selection Chip-icon--clear"
           data-test="DesignSystem-ChipGroup--Chip"
           role="button"
-          style="max-width: var(--spacing-9);"
+          style="max-width: var(--spacing-640);"
           tabindex="0"
         >
           <i

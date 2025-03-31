@@ -1,16 +1,16 @@
 .Box {
   width: 100%;
-  border-radius: var(--spacing);
-  padding: var(--spacing-l);
+  border-radius: var(--spacing-20);
+  padding: var(--spacing-30);
 }
 
 .Box--typing {
-  padding-top: var(--spacing);
-  padding-bottom: var(--spacing);
+  padding-top: var(--spacing-20);
+  padding-bottom: var(--spacing-20);
 }
 
 .Box--incoming {
-  border: var(--spacing-xs) solid var(--secondary-light);
+  border: var(--spacing-2-5) solid var(--secondary-light);
   background-color: var(--white);
 }
 
@@ -31,6 +31,6 @@
 }
 
 .ChatMessage-status {
-  margin-top: var(--spacing-m);
+  margin-top: var(--spacing-10);
   display: block;
 }

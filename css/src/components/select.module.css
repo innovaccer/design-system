@@ -51,11 +51,11 @@
 }
 
 .Select-inputWrapper {
-  border-bottom: var(--spacing-xs) solid var(--secondary-dark);
+  border-bottom: var(--spacing-2-5) solid var(--secondary-dark);
 }
 
 .Select-inputWrapper:focus-within {
-  border-bottom: var(--spacing-xs) solid var(--primary);
+  border-bottom: var(--spacing-2-5) solid var(--primary);
 }
 
 .Select-trigger-wrapper {
@@ -67,9 +67,9 @@
 }
 
 .Select-trigger--small {
-  height: var(--spacing-xl);
-  padding-right: var(--spacing);
-  padding-left: var(--spacing);
+  height: var(--spacing-60);
+  padding-right: var(--spacing-20);
+  padding-left: var(--spacing-20);
 }
 
 .Select-trigger--text,
@@ -86,9 +86,9 @@
 }
 
 .Select-trigger--regular {
-  height: var(--spacing-3);
-  padding-right: var(--spacing);
-  padding-left: var(--spacing-l);
+  height: var(--spacing-80);
+  padding-right: var(--spacing-20);
+  padding-left: var(--spacing-30);
 }
 
 .Select-trigger--placeholder {
@@ -96,16 +96,16 @@
 }
 
 .Select-trigger--icon {
-  padding-left: var(--spacing);
+  padding-left: var(--spacing-20);
 }
 
 .Select-buttonWrapper {
   display: flex;
   justify-content: flex-end;
-  padding-top: var(--spacing);
-  padding-right: var(--spacing);
-  padding-bottom: var(--spacing);
-  border-top: var(--spacing-xs) solid var(--secondary-light);
+  padding-top: var(--spacing-20);
+  padding-right: var(--spacing-20);
+  padding-bottom: var(--spacing-20);
+  border-top: var(--spacing-2-5) solid var(--secondary-light);
 }
 
 .Select-crossButton {
@@ -116,12 +116,12 @@
   cursor: pointer;
   color: var(--inverse);
   border-radius: 50%;
-  padding: var(--spacing-s);
+  padding: var(--spacing-05);
 }
 
 .Select-crossButton:focus-visible,
 .Select-crossButton:focus {
-  outline: var(--spacing-s) solid var(--secondary-shadow);
+  outline: var(--spacing-05) solid var(--secondary-shadow);
 }
 
 .Select-crossButton:hover {

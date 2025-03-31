@@ -24,25 +24,25 @@
 }
 
 .DropdownButton--tiny {
-  height: var(--spacing-xl);
-  padding-right: var(--spacing);
-  padding-left: var(--spacing);
+  height: var(--spacing-60);
+  padding-right: var(--spacing-20);
+  padding-left: var(--spacing-20);
 }
 
 .DropdownButton--regular {
-  height: var(--spacing-3);
-  padding-right: var(--spacing);
-  padding-left: var(--spacing-l);
+  height: var(--spacing-80);
+  padding-right: var(--spacing-20);
+  padding-left: var(--spacing-30);
 }
 
 .DropdownButton--tinySquare {
-  padding-left: var(--spacing-m);
-  padding-right: var(--spacing-m);
+  padding-left: var(--spacing-10);
+  padding-right: var(--spacing-10);
 }
 
 .DropdownButton--regularSquare {
-  padding-left: var(--spacing);
-  padding-right: var(--spacing);
+  padding-left: var(--spacing-20);
+  padding-right: var(--spacing-20);
 }
 
 .DropdownButton--placeholder {
@@ -74,9 +74,9 @@
 }
 
 .DropdownButton--icon {
-  padding-left: var(--spacing);
+  padding-left: var(--spacing-20);
 }
 
 .DropdownButton--error {
-  border: var(--spacing-xs) solid var(--alert);
+  border: var(--spacing-2-5) solid var(--alert);
 }

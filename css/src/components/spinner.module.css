@@ -27,23 +27,23 @@
 }
 
 .Spinner--xsmall {
-  height: var(--spacing-l);
-  width: var(--spacing-l);
+  height: var(--spacing-30);
+  width: var(--spacing-30);
 }
 
 .Spinner--small {
-  height: var(--spacing-2);
-  width: var(--spacing-2);
+  height: var(--spacing-40);
+  width: var(--spacing-40);
 }
 
 .Spinner--medium {
-  height: var(--spacing-3);
-  width: var(--spacing-3);
+  height: var(--spacing-80);
+  width: var(--spacing-80);
 }
 
 .Spinner--large {
-  height: var(--spacing-4);
-  width: var(--spacing-4);
+  height: var(--spacing-120);
+  width: var(--spacing-120);
 }
 
 .Circle {

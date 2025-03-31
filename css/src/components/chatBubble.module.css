@@ -1,19 +1,19 @@
 .ChatBubble-box--outgoing {
   background-color: var(--primary-lightest);
-  border-radius: var(--spacing);
-  padding: var(--spacing) var(--spacing-l);
+  border-radius: var(--spacing-20);
+  padding: var(--spacing-20) var(--spacing-30);
 }
 
 .ChatBubble-separator {
-  width: var(--spacing-m);
-  height: var(--spacing-m);
+  width: var(--spacing-10);
+  height: var(--spacing-10);
   border-radius: 50%;
-  margin: 0 var(--spacing);
+  margin: 0 var(--spacing-20);
   background: var(--inverse-lightest);
 }
 
 .ChatBubble-box--noSuccess {
-  margin-right: calc(var(--spacing-2) + var(--spacing-m));
+  margin-right: calc(var(--spacing-40) + var(--spacing-10));
 }
 
 .ChatBubble-box {
@@ -22,24 +22,24 @@
 
 .ChatBubble-actionBar--outgoing {
   width: max-content;
-  margin-right: var(--spacing-m);
-  margin-top: var(--spacing-0-75);
+  margin-right: var(--spacing-10);
+  margin-top: var(--spacing-15);
 }
 
 .ChatBubble-actionBar--incoming {
   width: max-content;
-  margin-left: var(--spacing-m);
-  margin-top: var(--spacing-0-75);
+  margin-left: var(--spacing-10);
+  margin-top: var(--spacing-15);
 }
 
 .ChatBubble-box--incoming {
   background-color: var(--secondary-lightest);
-  border-radius: var(--spacing);
-  padding: var(--spacing) var(--spacing-l);
+  border-radius: var(--spacing-20);
+  padding: var(--spacing-20) var(--spacing-30);
 }
 
 .ChatBubble-metaData--incoming {
-  margin-left: calc(var(--spacing-3) + var(--spacing));
+  margin-left: calc(var(--spacing-80) + var(--spacing-20));
 }
 
 .ChatBubble-boxWrapper {

@@ -46,7 +46,7 @@ export const reorderList = () => {
   return (
     // style.css
     // .Listbox-wrapper {
-    //   height: var(--spacing-9);
+    //   height: var(--spacing-640);
     // }
 
     <Card className="w-50" shadow="none">

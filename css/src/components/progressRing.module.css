@@ -3,18 +3,18 @@
 }
 
 .Ring--small {
-  height: var(--spacing-2);
-  width: var(--spacing-2);
+  height: var(--spacing-40);
+  width: var(--spacing-40);
 }
 
 .Ring--regular {
-  height: var(--spacing-3);
-  width: var(--spacing-3);
+  height: var(--spacing-80);
+  width: var(--spacing-80);
 }
 
 .Ring--large {
-  height: var(--spacing-4);
-  width: var(--spacing-4);
+  height: var(--spacing-120);
+  width: var(--spacing-120);
 }
 
 .Ring Circle {

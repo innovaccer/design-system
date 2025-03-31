@@ -20,7 +20,7 @@ exports[`Tabs component
         <span
           class="Tab--regular Tab--overflow"
           data-test="DesignSystem-Tabs--TextWrapper"
-          style="max-width: var(--spacing-9);"
+          style="max-width: var(--spacing-640);"
         >
           <span
             class="Pills Badge--primary Tab-pills"
@@ -53,7 +53,7 @@ exports[`Tabs component
         <span
           class="Tab--regular Tab--overflow"
           data-test="DesignSystem-Tabs--TextWrapper"
-          style="max-width: var(--spacing-9);"
+          style="max-width: var(--spacing-640);"
         >
           <i
             class="material-symbols material-symbols-rounded Icon Icon--subtle mr-4 "
@@ -79,7 +79,7 @@ exports[`Tabs component
         <span
           class="Tab--regular Tab--overflow"
           data-test="DesignSystem-Tabs--TextWrapper"
-          style="max-width: var(--spacing-9);"
+          style="max-width: var(--spacing-640);"
         >
           <span
             class="Pills Badge--secondary Tab-pills Tab-pills--disabled"
@@ -120,7 +120,7 @@ exports[`Tabs component
         <span
           class="Tab--small Tab--overflow"
           data-test="DesignSystem-Tabs--TextWrapper"
-          style="max-width: var(--spacing-9);"
+          style="max-width: var(--spacing-640);"
         >
           <span
             class="Pills Badge--primary Tab-pills"
@@ -153,7 +153,7 @@ exports[`Tabs component
         <span
           class="Tab--small Tab--overflow"
           data-test="DesignSystem-Tabs--TextWrapper"
-          style="max-width: var(--spacing-9);"
+          style="max-width: var(--spacing-640);"
         >
           <i
             class="material-symbols material-symbols-rounded Icon Icon--subtle mr-4 "
@@ -179,7 +179,7 @@ exports[`Tabs component
         <span
           class="Tab--small Tab--overflow"
           data-test="DesignSystem-Tabs--TextWrapper"
-          style="max-width: var(--spacing-9);"
+          style="max-width: var(--spacing-640);"
         >
           <span
             class="Pills Badge--secondary Tab-pills Tab-pills--disabled"
@@ -220,7 +220,7 @@ exports[`Tabs component
         <span
           class="Tab--regular Tab--overflow"
           data-test="DesignSystem-Tabs--TextWrapper"
-          style="max-width: var(--spacing-9);"
+          style="max-width: var(--spacing-640);"
         >
           <span
             class="Pills Badge--primary Tab-pills"
@@ -253,7 +253,7 @@ exports[`Tabs component
         <span
           class="Tab--regular Tab--overflow"
           data-test="DesignSystem-Tabs--TextWrapper"
-          style="max-width: var(--spacing-9);"
+          style="max-width: var(--spacing-640);"
         >
           <i
             class="material-symbols material-symbols-rounded Icon Icon--subtle mr-4 "
@@ -279,7 +279,7 @@ exports[`Tabs component
         <span
           class="Tab--regular Tab--overflow"
           data-test="DesignSystem-Tabs--TextWrapper"
-          style="max-width: var(--spacing-9);"
+          style="max-width: var(--spacing-640);"
         >
           <span
             class="Pills Badge--secondary Tab-pills Tab-pills--disabled"
@@ -320,7 +320,7 @@ exports[`Tabs component
         <span
           class="Tab--small Tab--overflow"
           data-test="DesignSystem-Tabs--TextWrapper"
-          style="max-width: var(--spacing-9);"
+          style="max-width: var(--spacing-640);"
         >
           <span
             class="Pills Badge--primary Tab-pills"
@@ -353,7 +353,7 @@ exports[`Tabs component
         <span
           class="Tab--small Tab--overflow"
           data-test="DesignSystem-Tabs--TextWrapper"
-          style="max-width: var(--spacing-9);"
+          style="max-width: var(--spacing-640);"
         >
           <i
             class="material-symbols material-symbols-rounded Icon Icon--subtle mr-4 "
@@ -379,7 +379,7 @@ exports[`Tabs component
         <span
           class="Tab--small Tab--overflow"
           data-test="DesignSystem-Tabs--TextWrapper"
-          style="max-width: var(--spacing-9);"
+          style="max-width: var(--spacing-640);"
         >
           <span
             class="Pills Badge--secondary Tab-pills Tab-pills--disabled"

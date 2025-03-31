@@ -1,5 +1,5 @@
 .FileIcon {
-  padding: var(--spacing);
+  padding: var(--spacing-20);
   border-radius: 50%;
 }
 .FileItem:not(:last-child) {
@@ -8,10 +8,10 @@
   box-sizing: border-box;
 }
 .FileItem {
-  padding-top: var(--spacing);
-  padding-bottom: var(--spacing);
-  padding-left: var(--spacing-l);
-  padding-right: var(--spacing);
+  padding-top: var(--spacing-20);
+  padding-bottom: var(--spacing-20);
+  padding-left: var(--spacing-30);
+  padding-right: var(--spacing-20);
 }
 .FileItem-fileContent {
   display: flex;
@@ -31,16 +31,16 @@
   justify-content: space-between;
 }
 .FileItem-size {
-  margin-right: var(--spacing);
-  margin-left: var(--spacing);
+  margin-right: var(--spacing-20);
+  margin-left: var(--spacing-20);
   flex-shrink: 0;
 }
 .FileItem-text {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-right: var(--spacing);
-  margin-left: var(--spacing-l);
+  margin-right: var(--spacing-20);
+  margin-left: var(--spacing-30);
 }
 .FileItem-error {
   margin-left: 40px;

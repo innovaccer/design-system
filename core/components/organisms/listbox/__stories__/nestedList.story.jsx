@@ -127,7 +127,7 @@ const customCode = `
         }
 
         .Listbox-wrapper {
-          height: var(--spacing-9);
+          height: var(--spacing-640);
         }
     */
 

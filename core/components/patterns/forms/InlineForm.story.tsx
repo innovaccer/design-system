@@ -79,7 +79,7 @@ const customCode = `
                     <Button onClick={() => this.onChange('Unknown', 'gender')}>Unknown</Button>
                   </div>
                 </div>
-                <div className="mr-6 mb-6" style={{ width: 'var(--spacing-9)' }}>
+                <div className="mr-6 mb-6" style={{ width: 'var(--spacing-640)' }}>
                   <Label withInput={true}>Date of Birth</Label>
                   <DatePicker
                     withInput={true}
@@ -124,7 +124,7 @@ const customCode = `
                     onChange={(event) => this.onChange(event.target.value, event.target.name)}
                   />
                 </div>
-                <div className="mr-6 mb-6" style={{ width: 'var(--spacing-9)' }}>
+                <div className="mr-6 mb-6" style={{ width: 'var(--spacing-640)' }}>
                   <Label withInput={true}>Primary Care Physician</Label>
                   <Select
                     width="100%"
@@ -142,7 +142,7 @@ const customCode = `
                     </Select.List>
                   </Select>
                 </div>
-                <div className="mr-6 mb-6" style={{ width: 'var(--spacing-9)' }}>
+                <div className="mr-6 mb-6" style={{ width: 'var(--spacing-640)' }}>
                   <Label withInput={true}>Region</Label>
                   <Select
                     width="100%"

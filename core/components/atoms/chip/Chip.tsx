@@ -123,7 +123,7 @@ export const Chip = (props: ChipProps) => {
 Chip.displayName = 'Chip';
 Chip.defaultProps = {
   type: 'input',
-  maxWidth: 'var(--spacing-9)',
+  maxWidth: 'var(--spacing-640)',
 };
 
 export default Chip;

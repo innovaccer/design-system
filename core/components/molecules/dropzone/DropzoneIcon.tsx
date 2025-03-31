@@ -27,8 +27,8 @@ const svgCode = {
 
 const DropzoneIcon = (props: SVGIconProps) => {
   const IconStyle = {
-    height: 'var(--spacing-5)',
-    width: 'var(--spacing-5)',
+    height: 'var(--spacing-160)',
+    width: 'var(--spacing-160)',
   };
 
   return (

@@ -493,7 +493,7 @@ import {
 
 // $ExpectType Element
 <Popover position="bottom" on="click" trigger={<Button appearance="basic">Open Popup</Button>} dark={true} open={true}>
-  <div style={{ width: 'var(--spacing-7)', height: 'var(--spacing-7)' }} />
+  <div style={{ width: 'var(--spacing-320)', height: 'var(--spacing-320)' }} />
 </Popover>;
 
 // $ExpectType Element

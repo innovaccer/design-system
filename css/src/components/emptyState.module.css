@@ -30,24 +30,24 @@
 
 .EmptyState-description {
   text-align: center;
-  margin-top: var(--spacing-m);
+  margin-top: var(--spacing-10);
   max-width: 360px;
 }
 
 .EmptyState-title--large {
-  margin-top: var(--spacing-4);
+  margin-top: var(--spacing-120);
 }
 
 .EmptyState-title--small {
-  margin-top: var(--spacing-xl);
+  margin-top: var(--spacing-60);
 }
 
 .EmptyState-description--large {
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-60);
 }
 
 .EmptyState-description--small {
-  margin-bottom: var(--spacing-2);
+  margin-bottom: var(--spacing-40);
 }
 
 .EmptyState-text {
@@ -62,23 +62,23 @@
 }
 
 .EmptyState-title--compressed {
-  margin-top: var(--spacing-2);
+  margin-top: var(--spacing-40);
 }
 .EmptyState-title--standard {
-  margin-top: var(--spacing-xl);
+  margin-top: var(--spacing-60);
 }
 .EmptyState-title--tight {
-  margin-top: var(--spacing-l);
+  margin-top: var(--spacing-30);
 }
 
 .EmptyState-actions--compressed {
-  margin-top: var(--spacing-2);
+  margin-top: var(--spacing-40);
 }
 
 .EmptyState-actions--standard {
-  margin-top: var(--spacing-xl);
+  margin-top: var(--spacing-60);
 }
 
 .EmptyState-actions--tight {
-  margin-top: var(--spacing-l);
+  margin-top: var(--spacing-30);
 }

@@ -2,7 +2,7 @@
 .Subheading {
   margin: 0;
   font-weight: var(--font-weight-bolder);
-  font-size: var(--spacing-l);
+  font-size: var(--spacing-30);
   line-height: var(--font-height-m);
   letter-spacing: var(--letter-spacing);
   text-transform: uppercase;

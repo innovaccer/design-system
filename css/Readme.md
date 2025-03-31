@@ -96,21 +96,21 @@
 # SPACING
 | token        	| value 	|
 |--------------	|-------	|
-| --spacing-xs 	| 1px   	|
-| --spacing-s  	| 2px   	|
-| --spacing-m  	| 4px   	|
-| --spacing-0-75  	| 6px   	|
-| --spacing    	| 8px   	|
-| --spacing-l  	| 12px  	|
-| --spacing-2  	| 16px  	|
-| --spacing-xl 	| 24px  	|
-| --spacing-3  	| 32px  	|
-| --spacing-4  	| 48px  	|
-| --spacing-5  	| 64px  	|
-| --spacing-6  	| 96px  	|
-| --spacing-7  	| 128px 	|
-| --spacing-8  	| 176px 	|
-| --spacing-9  	| 256px 	|
+| --spacing-2-5 	| 1px   	|
+| --spacing-05  	| 2px   	|
+| --spacing-10  	| 4px   	|
+| --spacing-15  	| 6px   	|
+| --spacing-20    	| 8px   	|
+| --spacing-30  	| 12px  	|
+| --spacing-40  	| 16px  	|
+| --spacing-60 	| 24px  	|
+| --spacing-80  	| 32px  	|
+| --spacing-120  	| 48px  	|
+| --spacing-160  	| 64px  	|
+| --spacing-240  	| 96px  	|
+| --spacing-320  	| 128px 	|
+| --spacing-440  	| 176px 	|
+| --spacing-640  	| 256px 	|
 
 ### Notation
 The classes are named using the format {property}{sides}-{size} 
@@ -132,21 +132,21 @@ Where size is one of:
 | value | properties |
 | ----- | ---------- |         
 | **0** |  0 ; |
-| **1** |  --spacing-xs ;|
-| **2** |  --spacing-s ; |
-| **3** |  --spacing-m ; |
-| **3-5** |  --spacing-0-75 ; |
-| **4** |  --spacing ; |
-| **5** |  --spacing-l ; |
-| **6** |  --spacing-2 ; |
-| **7** |  --spacing-xl ; |
-| **8** |  --spacing-3 ; |
-| **9** |  --spacing-4 ; |
-| **10** |  --spacing-5 ; |
-| **11** |  --spacing-6 ; |
-| **12** |  --spacing-7 ; |
-| **13** |  --spacing-8 ; |
-| **14** |  --spacing-9 ; |
+| **1** |  --spacing-2-5 ;|
+| **2** |  --spacing-05 ; |
+| **3** |  --spacing-10 ; |
+| **3-5** |  --spacing-15 ; |
+| **4** |  --spacing-20 ; |
+| **5** |  --spacing-30 ; |
+| **6** |  --spacing-40 ; |
+| **7** |  --spacing-60 ; |
+| **8** |  --spacing-80 ; |
+| **9** |  --spacing-120 ; |
+| **10** |  --spacing-160 ; |
+| **11** |  --spacing-240 ; |
+| **12** |  --spacing-320 ; |
+| **13** |  --spacing-440 ; |
+| **14** |  --spacing-640 ; |
 | **auto** |  auto ; |
 
 
@@ -474,8 +474,8 @@ Note: For more details [color-mod](https://www.npmjs.com/package/postcss-color-m
 ## border
   | value | properties |
   | ----- | ---------- |
-  | --border |  (--spacing-xs) solid (--secondary); |
-  | --border-s |  (--spacing-s) solid (--secondary); | 
+  | --border |  (--spacing-2-5) solid (--secondary); |
+  | --border-s |  (--spacing-05) solid (--secondary); | 
 
 ## SHADOW
   | value | properties |

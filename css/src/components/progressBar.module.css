@@ -1,27 +1,27 @@
 .ProgressBar {
   width: 100%;
-  border-radius: var(--spacing-m);
+  border-radius: var(--spacing-10);
   background: var(--secondary-lighter);
 }
 
 .ProgressBar-indicator {
   background-color: var(--primary);
-  border-radius: var(--spacing-m);
+  border-radius: var(--spacing-10);
   transition: var(--duration--slow-01) var(--standard-expressive-curve);
   height: 100%;
 }
 
 .ProgressBar-indicator--small {
-  height: var(--spacing-m);
+  height: var(--spacing-10);
 }
 
 .ProgressBar-indicator--regular {
-  height: var(--spacing);
+  height: var(--spacing-20);
 }
 
 .ProgressBar-indicator--indeterminate {
   background-color: var(--primary);
-  border-radius: var(--spacing-m);
+  border-radius: var(--spacing-10);
   position: absolute;
   bottom: 0;
   top: 0;

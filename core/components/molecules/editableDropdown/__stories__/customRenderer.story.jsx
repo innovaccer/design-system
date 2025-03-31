@@ -62,7 +62,7 @@ export const customRender = () => {
 const customCode = `/*
 // style.css
 .EditableDropdown-customTrigger {
-  border-radius: var(--spacing-m);
+  border-radius: var(--spacing-10);
 }
 */
 

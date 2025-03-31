@@ -51,7 +51,7 @@ const customCode = `
 
   /*
     .SubMenu-Text {
-      width: var(--spacing-7);
+      width: var(--spacing-320);
     }
   */
   const [showTooltip, setShowTooltip] = React.useState(false);

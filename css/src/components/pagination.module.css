@@ -8,8 +8,8 @@
 }
 
 .Pagination-button {
-  padding-left: var(--spacing);
-  padding-right: var(--spacing);
+  padding-left: var(--spacing-20);
+  padding-right: var(--spacing-20);
 }
 
 .Pagination-buttonWrapper {
@@ -21,15 +21,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: var(--spacing-l);
-  padding-right: var(--spacing-l);
+  padding-left: var(--spacing-30);
+  padding-right: var(--spacing-30);
 }
 
 .Pagination-MetricInput {
-  width: var(--spacing-4);
-  margin-right: var(--spacing);
-  padding-left: var(--spacing);
-  padding-right: var(--spacing);
+  width: var(--spacing-120);
+  margin-right: var(--spacing-20);
+  padding-left: var(--spacing-20);
+  padding-right: var(--spacing-20);
 }
 
 .Pagination-MetricInput .MetricInput-input {
@@ -45,7 +45,7 @@
     flex-basis: 100%;
   }
   .Pagination-buttonWrapper {
-    margin-top: var(--spacing);
+    margin-top: var(--spacing-20);
     width: 50%;
   }
   .Pagination-buttonWrapper--next {

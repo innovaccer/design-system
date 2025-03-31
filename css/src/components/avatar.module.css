@@ -20,24 +20,24 @@
 }
 
 .Avatar-wrapper--square {
-  padding: var(--spacing-xs);
+  padding: var(--spacing-2-5);
   box-sizing: border-box;
 }
 
 .Avatar--square {
   width: 100%;
   height: 100%;
-  border-radius: var(--spacing-m);
+  border-radius: var(--spacing-10);
 }
 
 .Avatar--regular {
-  height: var(--spacing-3);
-  width: var(--spacing-3);
+  height: var(--spacing-80);
+  width: var(--spacing-80);
 }
 
 .Avatar--tiny {
-  height: var(--spacing-xl);
-  width: var(--spacing-xl);
+  height: var(--spacing-60);
+  width: var(--spacing-60);
 }
 
 .Avatar--noInitials {
@@ -110,8 +110,8 @@
 .Avatar-presence {
   position: absolute;
   border-radius: 50%;
-  width: var(--spacing);
-  height: var(--spacing);
+  width: var(--spacing-20);
+  height: var(--spacing-20);
   right: 0;
   bottom: 0;
 }
@@ -125,10 +125,10 @@
 }
 
 .Avatar-status {
-  top: calc(-1 * var(--spacing-s));
-  right: calc(-1 * var(--spacing-s));
-  width: var(--spacing-l);
-  height: var(--spacing-l);
+  top: calc(-1 * var(--spacing-05));
+  right: calc(-1 * var(--spacing-05));
+  width: var(--spacing-30);
+  height: var(--spacing-30);
   border-radius: 50%;
   display: flex;
   align-items: center;

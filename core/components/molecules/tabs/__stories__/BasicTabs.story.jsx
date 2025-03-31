@@ -41,7 +41,7 @@ export const basicTabs = () => {
         <Heading size="m" className="pl-5">
           Data Gaps
         </Heading>
-        <div style={{ width: 'var(--spacing-8)' }}>
+        <div style={{ width: 'var(--spacing-440)' }}>
           <Select
             value={{ label: options[0].label, value: options[0].value }}
             triggerOptions={{ withClearButton: false }}
@@ -110,7 +110,7 @@ const customCode = `() => {
         <Heading size="m" className="pl-5">
           Data Gaps
         </Heading>
-        <div style={{ width: 'var(--spacing-8)' }}>
+        <div style={{ width: 'var(--spacing-440)' }}>
           <Select
             value={{ label: options[0].label, value: options[0].value }}
             triggerOptions={{ withClearButton: false }}
