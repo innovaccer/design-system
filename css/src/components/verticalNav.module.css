@@ -16,7 +16,7 @@
 }
 
 .VerticalNav-section--border {
-  border-top: var(--spacing-2-5) solid var(--secondary-light);
+  border-top: var(--border-width-2-5) solid var(--secondary-light);
 }
 
 .MenuItem {
@@ -33,7 +33,7 @@
   height: var(--spacing-80);
   padding-right: var(--spacing-30);
   padding-left: var(--spacing-30);
-  border-radius: var(--spacing-40);
+  border-radius: var(--border-radius-40);
   margin: 0 var(--spacing-2-5);
 }
 
@@ -58,7 +58,7 @@
   padding-bottom: var(--spacing-10);
   margin-right: var(--spacing-20);
   justify-content: space-between;
-  border-radius: 0px var(--spacing-40) var(--spacing-40) 0px;
+  border-radius: 0px var(--border-radius-40) var(--border-radius-40) 0px;
 }
 
 .MenuItem--disabled {
@@ -106,7 +106,7 @@
 }
 
 .MenuItem--rounded {
-  border-radius: var(--spacing-40);
+  border-radius: var(--border-radius-40);
 }
 
 .MenuItem--subMenu {

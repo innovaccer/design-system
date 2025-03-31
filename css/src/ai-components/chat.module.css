@@ -1,8 +1,8 @@
 .AIResponse-box {
   background: linear-gradient(white, white) padding-box,
     linear-gradient(to right, rgba(255, 194, 8, 0.64), rgba(227, 28, 121, 0.64)) border-box;
-  border-radius: var(--spacing-30);
-  border: var(--spacing-05) solid transparent;
+  border-radius: var(--border-radius-30);
+  border: var(--border-width-05) solid transparent;
   border-top-left-radius: 0;
   padding: var(--spacing-20) var(--spacing-30);
 }

@@ -193,3 +193,21 @@ export const opacityData = [
   { token: '--opacity-16', value: '0.64' },
   { token: '--opacity-20', value: '0.80' },
 ];
+
+export const borderRadiusData = [
+  { token: '--border-radius-2-5', value: '1px' },
+  { token: '--border-radius-05', value: '2px' },
+  { token: '--border-radius-10', value: '4px' },
+  { token: '--border-radius-15', value: '6px' },
+  { token: '--border-radius-20', value: '8px' },
+  { token: '--border-radius-30', value: '12px' },
+  { token: '--border-radius-40', value: '16px' },
+  { token: '--border-radius-full', value: '9999px' },
+];
+
+export const borderWidthData = [
+  { token: '--border-width-2-5', value: '1px' },
+  { token: '--border-width-05', value: '2px' },
+  { token: '--border-width-7-5', value: '3px' },
+  { token: '--border-width-10', value: '4px' },
+];

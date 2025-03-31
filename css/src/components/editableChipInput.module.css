@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   padding-left: var(--spacing-30);
-  border-left: var(--spacing-2-5) solid transparent;
+  border-left: var(--border-width-2-5) solid transparent;
   min-height: var(--spacing-80);
   flex-wrap: wrap;
 }
@@ -15,7 +15,7 @@
   display: flex;
   align-items: center;
   padding-left: var(--spacing-20);
-  border: var(--spacing-2-5) solid transparent;
+  border: var(--border-width-2-5) solid transparent;
   padding-top: var(--spacing-2-5);
   padding-bottom: var(--spacing-2-5);
   max-width: calc(100% - 28px);

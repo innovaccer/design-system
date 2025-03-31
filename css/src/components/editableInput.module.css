@@ -22,7 +22,7 @@
 }
 
 .EditableInput-default {
-  border: var(--spacing-2-5) solid transparent;
+  border: var(--border-width-2-5) solid transparent;
   box-sizing: border-box;
   white-space: nowrap;
   padding-left: var(--spacing-30);

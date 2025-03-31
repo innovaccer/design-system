@@ -78,5 +78,5 @@
 }
 
 .DropdownButton--error {
-  border: var(--spacing-2-5) solid var(--alert);
+  border: var(--border-width-2-5) solid var(--alert);
 }

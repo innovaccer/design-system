@@ -60,7 +60,7 @@ const customCode = `
               </div>
             </div>
             <Link target="_blank" href="#">Add organizations</Link>
-            <div className="my-6 pt-6" style={{ borderTop: 'var(--spacing-2-5) solid var(--secondary-light)' }}>
+            <div className="my-6 pt-6" style={{ borderTop: 'var(--border-width-2-5) solid var(--secondary-light)' }}>
               <Text weight="strong">Time Period</Text>
               <div className="mt-5">
                 <DateRangePicker withInput />
@@ -91,7 +91,7 @@ const customCode = `
             </div>
             <div
               className="mt-7 pt-5 d-flex justify-content-end"
-              style={{ borderTop: 'var(--spacing-2-5) solid var(--secondary-light)' }}
+              style={{ borderTop: 'var(--border-width-2-5) solid var(--secondary-light)' }}
             >
               <Button appearance="basic" className="mr-4">Cancel</Button>
               <Button appearance="success">Initiate</Button>

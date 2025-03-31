@@ -24,7 +24,7 @@
   max-height: calc(100vh - 128px);
   box-shadow: var(--shadow-m);
   background-color: var(--white);
-  border-radius: var(--spacing-20);
+  border-radius: var(--border-radius-20);
   overflow: auto;
   flex-direction: column;
   display: none;

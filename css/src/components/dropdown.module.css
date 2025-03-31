@@ -9,11 +9,11 @@
 }
 
 .Dropdown-inputWrapper {
-  border-bottom: var(--spacing-2-5) solid var(--secondary-dark);
+  border-bottom: var(--border-width-2-5) solid var(--secondary-dark);
 }
 
 .Dropdown-inputWrapper:focus-within {
-  border-bottom: var(--spacing-2-5) solid var(--primary);
+  border-bottom: var(--border-width-2-5) solid var(--primary);
 }
 
 .Dropdown-input {
@@ -46,7 +46,7 @@
   padding-top: var(--spacing-20);
   padding-right: var(--spacing-20);
   padding-bottom: var(--spacing-20);
-  border-top: var(--spacing-2-5) solid var(--secondary-light);
+  border-top: var(--border-width-2-5) solid var(--secondary-light);
 }
 
 .Dropdown-footer {

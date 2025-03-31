@@ -1,7 +1,7 @@
 .AIIconButton {
   background: transparent;
   padding: var(--spacing-20);
-  border-radius: var(--spacing-10);
+  border-radius: var(--border-radius-10);
   cursor: pointer;
   border: 0;
   font-family: var(--font-family);

@@ -9,7 +9,7 @@
   cursor: pointer;
   user-select: none;
   border: 0;
-  border-radius: var(--spacing-10);
+  border-radius: var(--border-radius-10);
 
   padding-top: var(--spacing-20);
   padding-bottom: var(--spacing-20);

@@ -130,7 +130,7 @@
 
 .Calendar-valueWrapper--start {
   background: linear-gradient(90deg, white 50%, var(--primary-lightest) 50%);
-  border-radius: var(--spacing-10) 0 0 var(--spacing-10);
+  border-radius: var(--border-radius-10) 0 0 var(--border-radius-10);
 }
 
 .Calendar-valueWrapper--startError {
@@ -139,12 +139,12 @@
 
 .Calendar-valueWrapper--end {
   background: linear-gradient(90deg, var(--primary-lightest) 50%, white 50%);
-  border-radius: 0 var(--spacing-10) var(--spacing-10) 0;
+  border-radius: 0 var(--border-radius-10) var(--border-radius-10) 0;
 }
 
 .Calendar-valueWrapper--hoverDate {
   background: linear-gradient(90deg, var(--primary-lightest) 10%, white 50%);
-  border-radius: 0 var(--spacing-10) var(--spacing-10) 0;
+  border-radius: 0 var(--border-radius-10) var(--border-radius-10) 0;
 }
 
 .Calendar-valueWrapper--hoverEndDate {

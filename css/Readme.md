@@ -474,8 +474,8 @@ Note: For more details [color-mod](https://www.npmjs.com/package/postcss-color-m
 ## border
   | value | properties |
   | ----- | ---------- |
-  | --border |  (--spacing-2-5) solid (--secondary); |
-  | --border-s |  (--spacing-05) solid (--secondary); | 
+  | --border |  (--border-width-2-5) solid (--secondary); |
+  | --border-s |  (--border-width-05) solid (--secondary); | 
 
 ## SHADOW
   | value | properties |
