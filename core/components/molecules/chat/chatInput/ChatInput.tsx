@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps } from '@/utils/types';
 import styles from '@css/components/chatInput.module.css';
-import { Button, Listbox, Chip } from '@/index';
+import { Button, Listbox, Chip, Popover } from '@/index';
 import { positionMentionPopup, extractMessageData } from './utils';
 
 export interface ChatInputProps extends BaseProps {
@@ -37,7 +37,17 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
   const [text, setText] = React.useState<string | null | undefined>(value);
   const [isExpanded, setIsExpanded] = React.useState(false);
   const [showMention, setShowMention] = React.useState(false);
-  const [mentionList] = React.useState(['user1', 'user2', 'user3']);
+  const [mentionList] = React.useState([
+    'user1',
+    'user2',
+    'user3',
+    'user3',
+    'user3',
+    'user3',
+    'user3',
+    'user3',
+    'user3',
+  ]);
   const [filteredMentions, setFilteredMentions] = React.useState<string[]>([]);
   const [mentionPosition, setMentionPosition] = React.useState({ top: 0, left: 0 });
   const [content, setContent] = React.useState<(string | { type: 'mention'; id: string })[]>([]);
@@ -129,6 +139,25 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     setContent([]);
   };
 
+  const onToggleHandler = (open: boolean) => {
+    if (!open) {
+      setShowMention(false);
+    }
+  };
+
+  const defaultPopoverStyle = {
+    fn: (data: any) => {
+      return {
+        ...data,
+        styles: {
+          ...data.styles,
+          top: mentionPosition.top,
+          left: mentionPosition.left,
+        },
+      };
+    },
+  };
+
   return (
     <div className={containerClassNames}>
       <div
@@ -152,29 +181,28 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
           )
         )}
         {showMention && (
-          <Listbox
-            contentEditable={false}
-            className="bg-light position-absolute"
-            style={{
-              top: mentionPosition.top,
-              left: mentionPosition.left,
-              maxHeight: '150px',
-              overflowY: 'auto',
-            }}
+          <Popover
+            open={true}
+            position="bottom-start"
+            onToggle={onToggleHandler}
+            appendToBody={true}
+            customStyle={{ minWidth: 176, maxHeight: 256, minHeight: 32, height: '100%' }}
+            computeStyles={defaultPopoverStyle}
           >
-            {filteredMentions.map((mention) => (
-              <Listbox.Item
-                key={mention}
-                className="p-1 cursor-pointer"
-                onMouseDown={(e) => {
-                  e.preventDefault();
-                  handleMentionClick(mention);
-                }}
-              >
-                {mention}
-              </Listbox.Item>
-            ))}
-          </Listbox>
+            <Listbox contentEditable={false} className="bg-light position-absolute w-100">
+              {filteredMentions.map((mention) => (
+                <Listbox.Item
+                  key={mention}
+                  onMouseDown={(e) => {
+                    e.preventDefault();
+                    handleMentionClick(mention);
+                  }}
+                >
+                  {mention}
+                </Listbox.Item>
+              ))}
+            </Listbox>
+          </Popover>
         )}
       </div>
 
