@@ -2,8 +2,9 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps } from '@/utils/types';
 import styles from '@css/components/chatInput.module.css';
-import { Button, Listbox, Chip, Popover } from '@/index';
+import { Button, Chip } from '@/index';
 import { positionMentionPopup, extractMessageData } from './utils';
+import MentionPopup from './MentionPopup';
 
 export interface ChatInputProps extends BaseProps {
   disabled?: boolean;
@@ -45,10 +46,15 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     { label: 'Jane Smith', value: 'Jane Smith' },
     { label: 'John', value: 'John' },
     { label: 'Jane', value: 'Jane' },
+    { label: 'Smith', value: 'Smith' },
+    { label: 'Doe', value: 'Doe' },
+    { label: 'Johny', value: 'Johny' },
+    { label: 'Janey', value: 'Janey' },
+    { label: 'Smithy', value: 'Smithy' },
   ]);
   const [filteredMentions, setFilteredMentions] = React.useState<MentionItemType[]>([]);
   const [mentionPosition, setMentionPosition] = React.useState({ top: 0, left: 0 });
-  const [content, setContent] = React.useState<{ type: 'mention'; data: MentionItemType }[]>([]);
+  const [content, setContent] = React.useState<{ type: string; data: MentionItemType }[]>([]);
 
   const textareaRef = React.useRef<HTMLDivElement>(null);
 
@@ -114,31 +120,14 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     resizeTextarea(text);
   };
 
-  const handleMentionClick = (mention: MentionItemType) => {
-    setContent((prev) => [...prev, { type: 'mention', data: mention }]);
-    setShowMention(false);
+  // const clearChatInput = () => {
+  //   setContent([]);
+  //   setText('');
 
-    requestAnimationFrame(() => {
-      if (textareaRef.current) {
-        textareaRef.current.focus();
-        const range = document.createRange();
-        const sel = window.getSelection();
-        range.selectNodeContents(textareaRef.current);
-        range.collapse(false);
-        sel?.removeAllRanges();
-        sel?.addRange(range);
-      }
-    });
-  };
-
-  const clearChatInput = () => {
-    setContent([]);
-    setText('');
-
-    if (textareaRef.current) {
-      textareaRef.current.innerHTML = '';
-    }
-  };
+  //   if (textareaRef.current) {
+  //     textareaRef.current.innerHTML = '';
+  //   }
+  // };
 
   const handleSend = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const messageData = extractMessageData(textareaRef);
@@ -147,25 +136,6 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     onSend && onSend(e, messageData);
 
     // clearChatInput();
-  };
-
-  const onToggleHandler = (open: boolean) => {
-    if (!open) {
-      setShowMention(false);
-    }
-  };
-
-  const defaultPopoverStyle = {
-    fn: (data: any) => {
-      return {
-        ...data,
-        styles: {
-          ...data.styles,
-          top: mentionPosition.top,
-          left: mentionPosition.left,
-        },
-      };
-    },
   };
 
   return (
@@ -187,28 +157,13 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
           </span>
         ))}
         {showMention && enableMention && (
-          <Popover
-            open={true}
-            position="bottom-start"
-            onToggle={onToggleHandler}
-            appendToBody={true}
-            customStyle={{ minWidth: 176, maxHeight: 256, minHeight: 32, height: '100%' }}
-            computeStyles={defaultPopoverStyle}
-          >
-            <Listbox contentEditable={false} className="bg-light position-absolute w-100">
-              {filteredMentions.map((mention) => (
-                <Listbox.Item
-                  key={mention.value}
-                  onMouseDown={(e) => {
-                    e.preventDefault();
-                    handleMentionClick(mention);
-                  }}
-                >
-                  {mention.label}
-                </Listbox.Item>
-              ))}
-            </Listbox>
-          </Popover>
+          <MentionPopup
+            setContent={setContent}
+            setShowMention={setShowMention}
+            mentionPosition={mentionPosition}
+            filteredMentions={filteredMentions}
+            textareaRef={textareaRef}
+          />
         )}
       </div>
 
