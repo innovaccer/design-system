@@ -20,7 +20,7 @@ export interface ChatInputProps extends BaseProps {
 }
 
 export type MentionItemType = { label: string; value: string };
-export type MessageType = { type: string; content: string | null | MentionItemType; id?: string };
+export type MessageType = { type: string; content: string | null | MentionItemType; nodeName?: string };
 
 export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
   const {
@@ -142,11 +142,11 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
 
   const handleSend = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const messageData = extractMessageData(textareaRef);
-    if (onSend) {
-      onSend(e, messageData);
-    }
 
-    clearChatInput();
+    console.log('messageData>>>', messageData);
+    onSend && onSend(e, messageData);
+
+    // clearChatInput();
   };
 
   const onToggleHandler = (open: boolean) => {
@@ -181,15 +181,11 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
         onInput={handleInput}
         {...rest}
       >
-        {content.map((item, index) =>
-          typeof item === 'string' ? (
-            <span key={index}>{item}</span>
-          ) : (
-            <span key={index} contentEditable="false" data-type="mention" data-content={JSON.stringify(item)}>
-              <Chip name={item.data.value} key={index} label={item.data.label} />
-            </span>
-          )
-        )}
+        {content.map((item, index) => (
+          <span key={index} contentEditable="false" data-type="mention" data-content={JSON.stringify(item)}>
+            <Chip name={item.data.value} key={index} label={item.data.label} />
+          </span>
+        ))}
         {showMention && enableMention && (
           <Popover
             open={true}

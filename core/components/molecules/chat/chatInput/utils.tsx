@@ -1,3 +1,5 @@
+import { MessageType } from './ChatInput';
+
 export const positionMentionPopup = (
   textareaRef: React.RefObject<HTMLDivElement>,
   setMentionPosition: React.Dispatch<React.SetStateAction<{ top: number; left: number }>>
@@ -28,14 +30,27 @@ export const positionMentionPopup = (
   setMentionPosition({ top, left });
 };
 
-export const extractMessageData = (textareaRef: React.RefObject<HTMLDivElement>) => {
+export const extractMessageData = (textareaRef: React.RefObject<HTMLDivElement>): MessageType[] => {
   const elements = textareaRef.current?.childNodes;
+
+  console.log('elements', elements);
 
   return Array.from(elements || []).map((item: any) => {
     if (item?.dataset?.type === 'mention') {
       const mentionValue = JSON.parse(item.dataset.content);
-      return { type: 'mention', content: mentionValue?.data };
+      return { type: 'mention', content: mentionValue?.data, nodeName: item.nodeName };
     }
-    return { type: 'text', content: item.textContent };
+
+    // handles new line by pressing enter
+    else if (item.innerText === '\n' && item.nodeName === 'DIV') {
+      return { type: 'newline', content: '\n', nodeName: item.nodeName };
+    }
+
+    // handles line break by pressing shift + enter
+    else if (item.nodeName === 'BR') {
+      return { type: 'linebreak', content: '<br>', nodeName: item.nodeName };
+    }
+
+    return { type: 'text', content: item.innerText || item.textContent, nodeName: item.nodeName };
   });
 };
