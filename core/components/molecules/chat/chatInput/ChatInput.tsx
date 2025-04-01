@@ -131,14 +131,22 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     });
   };
 
+  const clearChatInput = () => {
+    setContent([]);
+    setText('');
+
+    if (textareaRef.current) {
+      textareaRef.current.innerHTML = '';
+    }
+  };
+
   const handleSend = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const messageData = extractMessageData(textareaRef);
     if (onSend) {
       onSend(e, messageData);
     }
 
-    console.log('content', content, 'messageData', messageData);
-    // setContent([]);
+    clearChatInput();
   };
 
   const onToggleHandler = (open: boolean) => {
