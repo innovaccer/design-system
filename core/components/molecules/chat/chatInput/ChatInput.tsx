@@ -136,6 +136,8 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     if (onSend) {
       onSend(e, messageData);
     }
+
+    console.log('content', content, 'messageData', messageData);
     setContent([]);
   };
 
@@ -180,7 +182,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
             </span>
           )
         )}
-        {showMention && (
+        {showMention && enableMention && (
           <Popover
             open={true}
             position="bottom-start"
