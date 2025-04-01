@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { BaseProps } from '@/utils/types';
 import styles from '@css/components/chatInput.module.css';
 import { Button, Listbox, Chip } from '@/index';
+import { positionMentionPopup, extractMessageData } from './utils';
 
 export interface ChatInputProps extends BaseProps {
   disabled?: boolean;
@@ -69,9 +70,9 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
         const newHeight = textarea.scrollHeight;
 
         setIsExpanded((prevIsExpanded) => {
-          if (newHeight > 20 && !prevIsExpanded) {
+          if (newHeight > 24 && !prevIsExpanded) {
             return true;
-          } else if (newHeight <= 20 && prevIsExpanded && text === '') {
+          } else if (newHeight <= 24 && prevIsExpanded && text === '') {
             return false;
           }
           return prevIsExpanded;
@@ -90,7 +91,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     if (lastChar === '@') {
       setFilteredMentions(mentionList);
       setShowMention(true);
-      positionMentionPopup();
+      positionMentionPopup(textareaRef, setMentionPosition);
     } else if (showMention) {
       const query = text.split('@').pop() || '';
       setFilteredMentions(mentionList.filter((u) => u.startsWith(query)));
@@ -101,33 +102,6 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     }
 
     resizeTextarea(text);
-  };
-
-  const positionMentionPopup = () => {
-    if (!textareaRef.current) return;
-
-    const selection = window.getSelection();
-    if (!selection || !selection.rangeCount) return;
-
-    const range = selection.getRangeAt(0);
-    const rects = range.getClientRects();
-    const rect = rects[rects.length - 1];
-    const editorRect = textareaRef.current.getBoundingClientRect();
-
-    let top = rect.bottom + window.scrollY;
-    let left = rect.left + window.scrollX;
-
-    if (top + 150 > window.innerHeight) {
-      top = rect.top + window.scrollY - 150;
-    }
-    if (left + 200 > window.innerWidth) {
-      left = window.innerWidth - 200;
-    }
-
-    top -= editorRect.top + window.scrollY - 12;
-    left -= editorRect.left + window.scrollX - 8;
-
-    setMentionPosition({ top, left });
   };
 
   const handleMentionClick = (mention: string) => {
@@ -147,16 +121,8 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     });
   };
 
-  const extractMessageData = () => {
-    return content.map((item) =>
-      typeof item === 'string'
-        ? { type: 'text', content: item }
-        : { type: 'mention', content: `@${item.id}`, id: item.id }
-    );
-  };
-
   const handleSend = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    const messageData = extractMessageData();
+    const messageData = extractMessageData(content);
     if (onSend) {
       onSend(e, messageData);
     }
@@ -188,7 +154,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
         {showMention && (
           <Listbox
             contentEditable={false}
-            className="border mt-2 p-2 bg-light position-absolute z-10"
+            className="bg-light position-absolute"
             style={{
               top: mentionPosition.top,
               left: mentionPosition.left,
