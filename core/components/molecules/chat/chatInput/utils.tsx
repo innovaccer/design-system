@@ -28,10 +28,14 @@ export const positionMentionPopup = (
   setMentionPosition({ top, left });
 };
 
-export const extractMessageData = (content: (string | { type: 'mention'; id: string })[]) => {
-  return content.map((item: any) =>
-    typeof item === 'string'
-      ? { type: 'text', content: item }
-      : { type: 'mention', content: `@${item.id}`, id: item.id }
-  );
+export const extractMessageData = (textareaRef: React.RefObject<HTMLDivElement>) => {
+  const elements = textareaRef.current?.childNodes;
+
+  return Array.from(elements || []).map((item: any) => {
+    if (item?.dataset?.type === 'mention') {
+      const mentionValue = JSON.parse(item.dataset.content);
+      return { type: 'mention', content: mentionValue?.data };
+    }
+    return { type: 'text', content: item.textContent };
+  });
 };

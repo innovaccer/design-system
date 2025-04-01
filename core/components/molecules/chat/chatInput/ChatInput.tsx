@@ -19,7 +19,8 @@ export interface ChatInputProps extends BaseProps {
   onSend?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, value?: MessageType[]) => void;
 }
 
-export type MessageType = { type: string; content: string | null; id?: string };
+export type MentionItemType = { label: string; value: string };
+export type MessageType = { type: string; content: string | null | MentionItemType; id?: string };
 
 export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
   const {
@@ -38,19 +39,16 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
   const [showMention, setShowMention] = React.useState(false);
   const [mentionList] = React.useState([
-    'user1',
-    'user2',
-    'user3',
-    'user3',
-    'user3',
-    'user3',
-    'user3',
-    'user3',
-    'user3',
+    { label: 'John Doe', value: 'John Doe' },
+    { label: 'Jane Doe', value: 'Jane Doe' },
+    { label: 'John Smith', value: 'John Smith' },
+    { label: 'Jane Smith', value: 'Jane Smith' },
+    { label: 'John', value: 'John' },
+    { label: 'Jane', value: 'Jane' },
   ]);
-  const [filteredMentions, setFilteredMentions] = React.useState<string[]>([]);
+  const [filteredMentions, setFilteredMentions] = React.useState<MentionItemType[]>([]);
   const [mentionPosition, setMentionPosition] = React.useState({ top: 0, left: 0 });
-  const [content, setContent] = React.useState<(string | { type: 'mention'; id: string })[]>([]);
+  const [content, setContent] = React.useState<{ type: 'mention'; data: MentionItemType }[]>([]);
 
   const textareaRef = React.useRef<HTMLDivElement>(null);
 
@@ -98,13 +96,15 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     const text = selection.anchorNode?.textContent || '';
     const lastChar = text[text.length - 1];
 
+    console.log('text', text, 'lastChar', lastChar);
+
     if (lastChar === '@') {
       setFilteredMentions(mentionList);
       setShowMention(true);
       positionMentionPopup(textareaRef, setMentionPosition);
     } else if (showMention) {
       const query = text.split('@').pop() || '';
-      setFilteredMentions(mentionList.filter((u) => u.startsWith(query)));
+      setFilteredMentions(mentionList.filter((item) => item.label.startsWith(query)));
     }
 
     if (textareaRef.current) {
@@ -114,8 +114,8 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     resizeTextarea(text);
   };
 
-  const handleMentionClick = (mention: string) => {
-    setContent((prev) => [...prev, { type: 'mention', id: mention }, ' ']);
+  const handleMentionClick = (mention: MentionItemType) => {
+    setContent((prev) => [...prev, { type: 'mention', data: mention }]);
     setShowMention(false);
 
     requestAnimationFrame(() => {
@@ -132,13 +132,13 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
   };
 
   const handleSend = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    const messageData = extractMessageData(content);
+    const messageData = extractMessageData(textareaRef);
     if (onSend) {
       onSend(e, messageData);
     }
 
     console.log('content', content, 'messageData', messageData);
-    setContent([]);
+    // setContent([]);
   };
 
   const onToggleHandler = (open: boolean) => {
@@ -177,8 +177,8 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
           typeof item === 'string' ? (
             <span key={index}>{item}</span>
           ) : (
-            <span key={index} contentEditable="false">
-              <Chip name={item.id} key={index} label={item.id} />
+            <span key={index} contentEditable="false" data-type="mention" data-content={JSON.stringify(item)}>
+              <Chip name={item.data.value} key={index} label={item.data.label} />
             </span>
           )
         )}
@@ -194,13 +194,13 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
             <Listbox contentEditable={false} className="bg-light position-absolute w-100">
               {filteredMentions.map((mention) => (
                 <Listbox.Item
-                  key={mention}
+                  key={mention.value}
                   onMouseDown={(e) => {
                     e.preventDefault();
                     handleMentionClick(mention);
                   }}
                 >
-                  {mention}
+                  {mention.label}
                 </Listbox.Item>
               ))}
             </Listbox>
