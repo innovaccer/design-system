@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps } from '@/utils/types';
 import styles from '@css/components/chatInput.module.css';
-import { Button, Listbox, Chip } from '@/index';
+import { Button, Listbox, Chip, OutsideClick } from '@/index';
 
 export interface ChatInputProps extends BaseProps {
   disabled?: boolean;
@@ -43,43 +43,6 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
 
   const textareaRef = React.useRef<HTMLDivElement>(null);
 
-  const containerClassNames = classNames(
-    {
-      [styles.ChatInput]: true,
-      [styles['ChatInput--expanded']]: isExpanded,
-      [styles['ChatInput--disabled']]: disabled,
-    },
-    className
-  );
-
-  const textareaClassNames = classNames({
-    [styles['ChatInput-textarea']]: true,
-  });
-
-  const actionsClassNames = classNames({
-    [styles['ChatInput-actions']]: true,
-    [styles['ChatInput-actions--expanded']]: isExpanded,
-  });
-
-  const resizeTextarea = (text: string) => {
-    if (textareaRef && textareaRef.current) {
-      const textarea = textareaRef.current;
-
-      requestAnimationFrame(() => {
-        const newHeight = textarea.scrollHeight;
-
-        setIsExpanded((prevIsExpanded) => {
-          if (newHeight > 20 && !prevIsExpanded) {
-            return true;
-          } else if (newHeight <= 20 && prevIsExpanded && text === '') {
-            return false;
-          }
-          return prevIsExpanded;
-        });
-      });
-    }
-  };
-
   const handleInput = () => {
     const selection = window.getSelection();
     if (!selection) return;
@@ -94,13 +57,13 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     } else if (showMention) {
       const query = text.split('@').pop() || '';
       setFilteredMentions(mentionList.filter((u) => u.startsWith(query)));
+    } else if (lastChar !== '@') {
+      setShowMention(false);
     }
 
     if (textareaRef.current) {
       setText(textareaRef.current.textContent);
     }
-
-    resizeTextarea(text);
   };
 
   const positionMentionPopup = () => {
@@ -130,7 +93,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     setMentionPosition({ top, left });
   };
 
-  const handleMentionClick = (mention: string) => {
+  const handleMentionClick = (mention) => {
     setContent((prev) => [...prev, { type: 'mention', id: mention }, ' ']);
     setShowMention(false);
 
@@ -163,6 +126,24 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     setContent([]);
   };
 
+  const containerClassNames = classNames(
+    {
+      [styles.ChatInput]: true,
+      [styles['ChatInput--expanded']]: isExpanded,
+      [styles['ChatInput--disabled']]: disabled,
+    },
+    className
+  );
+
+  const textareaClassNames = classNames({
+    [styles['ChatInput-textarea']]: true,
+  });
+
+  const actionsClassNames = classNames({
+    [styles['ChatInput-actions']]: true,
+    [styles['ChatInput-actions--expanded']]: isExpanded,
+  });
+
   return (
     <div className={containerClassNames}>
       <div
@@ -181,37 +162,37 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
             <span key={index}>{item}</span>
           ) : (
             <span key={index} contentEditable="false">
-              <Chip name={item.id} key={index} label={item.id} />
+              <Chip name={item.id} key={index} label={`@${item.id}`} />
             </span>
           )
         )}
         {showMention && (
-          <Listbox
-            contentEditable={false}
-            className="border mt-2 p-2 bg-light position-absolute z-10"
-            style={{
-              top: mentionPosition.top,
-              left: mentionPosition.left,
-              maxHeight: '150px',
-              overflowY: 'auto',
-            }}
-          >
-            {filteredMentions.map((mention) => (
-              <Listbox.Item
-                key={mention}
-                className="p-1 cursor-pointer"
-                onMouseDown={(e) => {
-                  e.preventDefault();
-                  handleMentionClick(mention);
-                }}
-              >
-                {mention}
-              </Listbox.Item>
-            ))}
-          </Listbox>
+          <OutsideClick onOutsideClick={() => setShowMention(false)}>
+            <Listbox
+              className="border mt-2 p-2 bg-light position-absolute z-10"
+              contentEditable="false"
+              style={{
+                top: mentionPosition.top,
+                left: mentionPosition.left,
+                maxHeight: '150px',
+                overflowY: 'auto',
+              }}
+            >
+              {filteredMentions.map((mention) => (
+                <Listbox.Item
+                  key={mention}
+                  onMouseDown={(e) => {
+                    e.preventDefault();
+                    handleMentionClick(mention);
+                  }}
+                >
+                  {mention}
+                </Listbox.Item>
+              ))}
+            </Listbox>
+          </OutsideClick>
         )}
       </div>
-
       <div className={actionsClassNames}>
         {actionRenderer && actionRenderer()}
         <Button
@@ -219,7 +200,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
           appearance="primary"
           icon="arrow_upward_alt"
           aria-label="Send"
-          largeIcon={true}
+          largeIcon
           disabled={!text}
           className={actionRenderer ? 'ml-3' : ''}
           onClick={handleSend}
