@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Listbox, Popover } from '@/index';
-import { MentionItemType } from './ChatInput';
+import { MentionItemType, MentionPopoverProps } from './ChatInput';
 
-interface MentionPopupProps {
+interface MentionPopupProps extends MentionPopoverProps {
   mentionPosition: { top: number; left: number };
   textareaRef: React.RefObject<HTMLDivElement>;
   setShowMention: React.Dispatch<React.SetStateAction<boolean>>;
@@ -11,7 +11,16 @@ interface MentionPopupProps {
 }
 
 export const MentionPopup = (props: MentionPopupProps) => {
-  const { mentionPosition, textareaRef, setShowMention, filteredMentions, setContent } = props;
+  const {
+    mentionPosition,
+    textareaRef,
+    setShowMention,
+    filteredMentions,
+    setContent,
+    customPopoverRenderer,
+    popoverMaxHeight,
+    popoverMinWidth,
+  } = props;
 
   const defaultPopoverStyle = {
     fn: (data: any) => {
@@ -49,23 +58,19 @@ export const MentionPopup = (props: MentionPopupProps) => {
     }
   };
 
-  return (
-    <Popover
-      open={true}
-      position="bottom-start"
-      onToggle={onToggleHandler}
-      appendToBody={true}
-      className="overflow-visible"
-      customStyle={{ minWidth: 176 }}
-      computeStyles={defaultPopoverStyle}
-    >
+  const optionRenderer = () => {
+    if (customPopoverRenderer) {
+      return customPopoverRenderer(filteredMentions);
+    }
+
+    return (
       <Listbox
         type="option"
         size="compressed"
         showDivider={false}
         contentEditable={false}
         className="bg-light position-absolute w-100 my-3 overflow-auto"
-        style={{ maxHeight: 256 }}
+        style={{ maxHeight: popoverMaxHeight }}
       >
         {filteredMentions.map((mention: MentionItemType) => (
           <Listbox.Item
@@ -79,8 +84,28 @@ export const MentionPopup = (props: MentionPopupProps) => {
           </Listbox.Item>
         ))}
       </Listbox>
+    );
+  };
+
+  return (
+    <Popover
+      open={true}
+      position="bottom-start"
+      onToggle={onToggleHandler}
+      appendToBody={true}
+      className="overflow-visible"
+      customStyle={{ minWidth: popoverMinWidth }}
+      computeStyles={defaultPopoverStyle}
+    >
+      {optionRenderer()}
     </Popover>
   );
 };
 
 export default MentionPopup;
+
+MentionPopup.defaultProps = {
+  popoverMaxHeight: 256,
+  popoverMinWidth: 176,
+};
+MentionPopup.displayName = 'MentionPopup';
