@@ -10,8 +10,7 @@ export const positionMentionPopup = (
   if (!selection || !selection.rangeCount) return;
 
   const range = selection.getRangeAt(0);
-  const rects = range.getClientRects();
-  const rect = rects[rects.length - 1];
+  const rect = range.getBoundingClientRect();
   const editorRect = textareaRef.current.getBoundingClientRect();
 
   let top = rect.bottom + window.scrollY;

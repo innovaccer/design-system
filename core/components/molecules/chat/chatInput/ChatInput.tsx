@@ -108,8 +108,10 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
   const [filteredMentions, setFilteredMentions] = React.useState<MentionItemType[]>([]);
   const [mentionPosition, setMentionPosition] = React.useState({ top: 0, left: 0 });
   const [content, setContent] = React.useState<{ type: string; data: MentionItemType }[]>([]);
+  // const [mentionRange, setMentionRange] = React.useState<Range | null>(null);
 
   const textareaRef = React.useRef<HTMLDivElement>(null);
+  const mentionRangeRef = React.useRef<Range | null>(null);
 
   React.useEffect(() => {
     if (textareaRef.current) {
@@ -154,43 +156,77 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     }
   };
 
-  const handleInput = () => {
-    const selection = window.getSelection();
-    if (!selection) return;
+  // const handleInput = () => {
+  //   const selection = window.getSelection();
+  //   if (!selection) return;
 
-    const text = selection.anchorNode?.textContent || '';
-    const lastChar = text[text.length - 1];
+  //   const text = selection.anchorNode?.textContent || '';
+  //   const lastChar = text[text.length - 1];
 
-    console.log(
-      'text',
-      text,
-      'lastChar',
-      lastChar,
-      'showMention',
-      showMention,
-      'enableMention',
-      enableMention,
-      'mentionList',
-      mentionList
-    );
+  //   console.log(
+  //     'text',
+  //     text,
+  //     'lastChar',
+  //     lastChar,
+  //     'showMention',
+  //     showMention,
+  //     'enableMention',
+  //     enableMention,
+  //     'mentionList',
+  //     mentionList
+  //   );
 
-    if (lastChar === trigger && enableMention && mentionList && mentionList.length > 0) {
-      setFilteredMentions(mentionList);
-      setShowMention(true);
-      positionMentionPopup(textareaRef, setMentionPosition);
-    } else if (showMention && enableMention && mentionList) {
-      const query = text.split(trigger).pop() || '';
-      const updatedList = mentionList.filter((item) => item.label.toLowerCase().startsWith(query.toLowerCase()));
-      console.log('updatedList', updatedList);
-      setFilteredMentions(updatedList);
-    }
+  //   // if (lastChar === trigger && enableMention && mentionList && mentionList.length > 0) {
+  //   //   setFilteredMentions(mentionList);
+  //   //   setShowMention(true);
+  //   //   positionMentionPopup(textareaRef, setMentionPosition);
+  //   // } else if (showMention && enableMention && mentionList) {
+  //   //   const query = text.split(trigger).pop() || '';
+  //   //   const updatedList = mentionList.filter((item) => item.label.toLowerCase().startsWith(query.toLowerCase()));
+  //   //   console.log('updatedList', updatedList);
+  //   //   setFilteredMentions(updatedList);
+  //   // }
 
-    if (textareaRef.current) {
-      setText(textareaRef.current.textContent);
-    }
+  //   // if (textareaRef.current) {
+  //   //   setText(textareaRef.current.textContent);
+  //   // }
 
-    resizeTextarea(text);
-  };
+  //   if (lastChar === trigger && enableMention && mentionList && mentionList.length > 0) {
+  //     const selection = window.getSelection();
+  //     if (selection && selection.rangeCount > 0) {
+  //       setMentionRange(selection.getRangeAt(0).cloneRange());
+  //     }
+
+  //     setFilteredMentions(mentionList);
+  //     setShowMention(true);
+  //     positionMentionPopup(textareaRef, setMentionPosition);
+  //   } else if (showMention && enableMention && mentionList) {
+  //     const query = text.split(trigger).pop() || '';
+  //     const updatedList = mentionList.filter((item) => item.label.toLowerCase().startsWith(query.toLowerCase()));
+  //     setFilteredMentions(updatedList);
+
+  //     const selection = window.getSelection();
+  //     if (selection && selection.rangeCount > 0) {
+  //       const range = selection.getRangeAt(0);
+  //       const node = range.startContainer;
+  //       const text = node.textContent || '';
+  //       const atIndex = text.lastIndexOf(trigger);
+
+  //       if (atIndex !== -1) {
+  //         const mentionTextRange = range.cloneRange();
+  //         mentionTextRange.setStart(node, atIndex);
+  //         mentionTextRange.setEnd(node, text.length);
+  //         setMentionRange(mentionTextRange);
+  //       }
+  //     }
+  //   }
+
+  //   if (textareaRef.current) {
+  //     setText(textareaRef.current.textContent);
+  //   }
+
+  //   resizeTextarea(text);
+  // };
 
   // const clearChatInput = () => {
   //   setContent([]);
@@ -200,6 +236,69 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
   //     textareaRef.current.innerHTML = '';
   //   }
   // };
+
+  // const handleInput = () => {
+  //   const selection = window.getSelection();
+  //   if (!selection || !selection.rangeCount) return;
+
+  //   const range = selection.getRangeAt(0);
+  //   const node = range.startContainer;
+  //   const text = node.textContent || '';
+  //   const atIndex = text.lastIndexOf(trigger);
+
+  //   if (atIndex !== -1) {
+  //     const query = text.slice(atIndex + 1);
+  //     const mentionTextRange = range.cloneRange();
+  //     mentionTextRange.setStart(node, atIndex);
+  //     mentionTextRange.setEnd(node, text.length);
+  //     setMentionRange(mentionTextRange);
+  //     const updatedList = mentionList?.filter((item) => item.label.toLowerCase().startsWith(query.toLowerCase())) || [];
+  //     setFilteredMentions(updatedList);
+  //     setShowMention(true);
+  //     positionMentionPopup(textareaRef, setMentionPosition);
+  //   } else {
+  //     setShowMention(false);
+  //   }
+
+  //   if (textareaRef.current) {
+  //     setText(textareaRef.current.textContent);
+  //   }
+
+  //   resizeTextarea(text);
+  // };
+
+  const handleInput = () => {
+    const selection = window.getSelection();
+    if (!selection || !selection.anchorNode) return;
+
+    const anchorNode = selection.anchorNode;
+    const focusOffset = selection.focusOffset;
+    const text = anchorNode.textContent || '';
+
+    const lastAtIndex = text.lastIndexOf(trigger);
+    if (lastAtIndex !== -1) {
+      const query = text.slice(lastAtIndex + 1, focusOffset);
+      const updatedList = mentionList?.filter((item) => item.label.toLowerCase().startsWith(query.toLowerCase())) || [];
+      setFilteredMentions(updatedList);
+      setShowMention(true);
+      positionMentionPopup(textareaRef, setMentionPosition);
+
+      // Create and store mention range
+      const range = document.createRange();
+      range.setStart(anchorNode, lastAtIndex);
+      range.setEnd(anchorNode, focusOffset);
+      mentionRangeRef.current = range;
+    } else {
+      setShowMention(false);
+      mentionRangeRef.current = null;
+    }
+
+    if (textareaRef.current) {
+      setText(textareaRef.current.textContent);
+    }
+
+    resizeTextarea(text);
+  };
 
   const handleSend = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const messageData = extractMessageData(textareaRef);
@@ -271,6 +370,8 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
             mentionPosition={mentionPosition}
             filteredMentions={filteredMentions}
             textareaRef={textareaRef}
+            // mentionRange={mentionRange}
+            mentionRangeRef={mentionRangeRef}
             {...mentionProps}
           />
         )}
