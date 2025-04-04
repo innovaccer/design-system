@@ -78,6 +78,10 @@ export interface ChatInputProps extends BaseProps {
    * Callback function triggered when the `ChatInput` send button is clicked
    */
   onSend?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, value?: MessageType[]) => void;
+  /**
+   * Callback function triggered when the `ChatInput` stop generating button is clicked
+   */
+  onStopGenerating?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
 export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
@@ -91,6 +95,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     onSend,
     enableMention,
     mentionProps,
+    onStopGenerating,
     ...rest
   } = props;
 
@@ -156,7 +161,18 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     const text = selection.anchorNode?.textContent || '';
     const lastChar = text[text.length - 1];
 
-    console.log('text', text, 'lastChar', lastChar);
+    console.log(
+      'text',
+      text,
+      'lastChar',
+      lastChar,
+      'showMention',
+      showMention,
+      'enableMention',
+      enableMention,
+      'mentionList',
+      mentionList
+    );
 
     if (lastChar === trigger && enableMention && mentionList && mentionList.length > 0) {
       setFilteredMentions(mentionList);
@@ -164,7 +180,9 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
       positionMentionPopup(textareaRef, setMentionPosition);
     } else if (showMention && enableMention && mentionList) {
       const query = text.split(trigger).pop() || '';
-      setFilteredMentions(mentionList.filter((item) => item.label.startsWith(query)));
+      const updatedList = mentionList.filter((item) => item.label.toLowerCase().startsWith(query.toLowerCase()));
+      console.log('updatedList', updatedList);
+      setFilteredMentions(updatedList);
     }
 
     if (textareaRef.current) {
@@ -199,6 +217,31 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     return <Chip name={mention.value} label={mention.label} />;
   };
 
+  const sendButtonRenderer = () => {
+    if (showStopGeneratingButton) {
+      <Button
+        appearance="alert"
+        size="tiny"
+        className={actionRenderer ? 'ml-3' : ''}
+        onClick={onStopGenerating}
+        icon="stop"
+      />;
+    }
+
+    return (
+      <Button
+        size="tiny"
+        appearance="primary"
+        icon="arrow_upward_alt"
+        aria-label="Send"
+        largeIcon={true}
+        disabled={!text}
+        className={actionRenderer ? 'ml-3' : ''}
+        onClick={handleSend}
+      />
+    );
+  };
+
   return (
     <div className={containerClassNames}>
       <div
@@ -214,7 +257,6 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
       >
         {content.map((item, index) => (
           <span key={index} contentEditable="false" data-type="mention" data-content={JSON.stringify(item)}>
-            {/* <Chip name={item.data.value} key={index} label={item.data.label} /> */}
             {mentionRenderer(item.data)}
           </span>
         ))}
@@ -232,19 +274,12 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
 
       <div className={actionsClassNames}>
         {actionRenderer && actionRenderer()}
-        <Button
-          size="tiny"
-          appearance="primary"
-          icon="arrow_upward_alt"
-          aria-label="Send"
-          largeIcon={true}
-          disabled={!text}
-          className={actionRenderer ? 'ml-3' : ''}
-          onClick={handleSend}
-        />
+        {sendButtonRenderer()}
       </div>
     </div>
   );
 };
 
 export default ChatInput;
+
+// NotFoundError: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.

@@ -92,6 +92,7 @@ export const MentionPopup = (props: MentionPopupProps) => {
       open={true}
       position="bottom-start"
       onToggle={onToggleHandler}
+      closeOnBackdropClick={false}
       appendToBody={true}
       className="overflow-visible"
       customStyle={{ minWidth: popoverMinWidth }}
