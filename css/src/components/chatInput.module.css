@@ -42,7 +42,7 @@
   resize: none;
   border: none;
   outline: none;
-  transition: width 0.2s ease-in-out;
+  transition: width var(--duration--slow-01) var(--standard-productive-curve);
   box-sizing: border-box;
   cursor: auto;
   padding: 0;
