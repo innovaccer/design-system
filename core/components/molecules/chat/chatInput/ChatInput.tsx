@@ -219,13 +219,17 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
 
   const sendButtonRenderer = () => {
     if (showStopGeneratingButton) {
-      <Button
-        appearance="alert"
-        size="tiny"
-        className={actionRenderer ? 'ml-3' : ''}
-        onClick={onStopGenerating}
-        icon="stop"
-      />;
+      return (
+        <Button
+          size="tiny"
+          appearance="alert"
+          icon="stop"
+          aria-label="Stop Generating"
+          largeIcon={true}
+          className={actionRenderer ? 'ml-3' : ''}
+          onClick={onStopGenerating}
+        />
+      );
     }
 
     return (
