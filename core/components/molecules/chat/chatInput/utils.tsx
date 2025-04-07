@@ -13,9 +13,11 @@ export const positionMentionPopup = (
   const rect = range.getBoundingClientRect();
   const editorRect = textareaRef.current.getBoundingClientRect();
 
+  // Calculate position based on the cursor position
   let top = rect.bottom + window.scrollY;
   let left = rect.left + window.scrollX;
 
+  // Adjust position if it would go off-screen
   if (top + 150 > window.innerHeight) {
     top = rect.top + window.scrollY - 150;
   }
@@ -23,6 +25,7 @@ export const positionMentionPopup = (
     left = window.innerWidth - 200;
   }
 
+  // Adjust position relative to the editor
   top -= editorRect.top + window.scrollY - 12;
   left -= editorRect.left + window.scrollX - 8;
 

@@ -129,29 +129,40 @@ export const MentionPopup = (props: MentionPopupProps) => {
 
         // Make sure the range is still valid and inside textareaRef
         if (textareaRef.current?.contains(range.startContainer) && textareaRef.current?.contains(range.endContainer)) {
+          // Delete the @mention text
           range.deleteContents();
+
+          // Insert a space after the mention
+          const spaceNode = document.createTextNode(' ');
+          range.insertNode(spaceNode);
+
+          // Move the cursor after the space
+          range.setStartAfter(spaceNode);
+          range.setEndAfter(spaceNode);
+
+          // Update the selection
+          const selection = window.getSelection();
+          if (selection) {
+            selection.removeAllRanges();
+            selection.addRange(range);
+          }
         }
 
         mentionRangeRef.current = null; // Clear after use
       }
     } catch (err) {
-      console.error('Error deleting mention range:', err);
+      console.error('Error handling mention click:', err);
       mentionRangeRef.current = null; // Clean up anyway
     }
 
-    // Insert chip and a space
+    // Insert chip and update content state
     setContent((prev) => [...prev, { type: 'mention', data: mention }]);
     setShowMention(false);
 
+    // Focus the input after inserting the mention
     requestAnimationFrame(() => {
       if (textareaRef.current) {
         textareaRef.current.focus();
-        const range = document.createRange();
-        const sel = window.getSelection();
-        range.selectNodeContents(textareaRef.current);
-        range.collapse(false);
-        sel?.removeAllRanges();
-        sel?.addRange(range);
       }
     });
   };
