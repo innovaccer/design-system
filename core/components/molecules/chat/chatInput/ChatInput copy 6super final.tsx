@@ -110,7 +110,6 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
   const [showMention, setShowMention] = React.useState(false);
   const [wasMentionActive, setWasMentionActive] = React.useState(false);
   const [resetKey, setResetKey] = React.useState(0);
-  const [shouldFocus, setShouldFocus] = React.useState(false);
 
   const [filteredMentions, setFilteredMentions] = React.useState<MentionItemType[]>([]);
   const [mentionPosition, setMentionPosition] = React.useState({ top: 0, left: 0 });
@@ -125,14 +124,6 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
       textareaRef.current.innerHTML = value || '';
     }
   }, [value]);
-
-  // Effect to focus the textarea when shouldFocus is true
-  React.useEffect(() => {
-    if (shouldFocus && textareaRef.current) {
-      textareaRef.current.focus();
-      setShouldFocus(false); // Reset the flag after focusing
-    }
-  }, [shouldFocus]);
 
   const containerClassNames = classNames(
     {
@@ -184,8 +175,12 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     // Force a complete re-render by updating the resetKey
     setResetKey((prevKey) => prevKey + 1);
 
-    // Set the flag to focus the textarea after the re-render
-    setShouldFocus(true);
+    // Focus will be handled after the re-render
+    setTimeout(() => {
+      if (textareaRef.current) {
+        textareaRef.current.focus();
+      }
+    }, 0);
   };
 
   const handleInput = () => {

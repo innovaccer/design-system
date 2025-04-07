@@ -109,8 +109,6 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
   const [showMention, setShowMention] = React.useState(false);
   const [wasMentionActive, setWasMentionActive] = React.useState(false);
-  const [resetKey, setResetKey] = React.useState(0);
-  const [shouldFocus, setShouldFocus] = React.useState(false);
 
   const [filteredMentions, setFilteredMentions] = React.useState<MentionItemType[]>([]);
   const [mentionPosition, setMentionPosition] = React.useState({ top: 0, left: 0 });
@@ -125,14 +123,6 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
       textareaRef.current.innerHTML = value || '';
     }
   }, [value]);
-
-  // Effect to focus the textarea when shouldFocus is true
-  React.useEffect(() => {
-    if (shouldFocus && textareaRef.current) {
-      textareaRef.current.focus();
-      setShouldFocus(false); // Reset the flag after focusing
-    }
-  }, [shouldFocus]);
 
   const containerClassNames = classNames(
     {
@@ -172,20 +162,27 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
   };
 
   const clearChatInput = () => {
-    // Reset all state variables related to mentions
+    // Update React state
     setContent([]);
     setText('');
-    setShowMention(false);
-    setWasMentionActive(false);
-    setFilteredMentions([]);
+
+    // Force a re-render by updating a state that affects this component
     setIsExpanded(false);
-    mentionRangeRef.current = null;
 
-    // Force a complete re-render by updating the resetKey
-    setResetKey((prevKey) => prevKey + 1);
+    // Use a combination of React state and controlled DOM manipulation
+    if (textareaRef.current) {
+      // First, let React handle the re-render with empty content
+      setTimeout(() => {
+        if (textareaRef.current) {
+          // After React has updated the DOM, we can safely clear any remaining text
+          // This handles the case where normal text might not be cleared by React alone
+          textareaRef.current.textContent = '';
 
-    // Set the flag to focus the textarea after the re-render
-    setShouldFocus(true);
+          // Focus the input after clearing
+          textareaRef.current.focus();
+        }
+      }, 0);
+    }
   };
 
   const handleInput = () => {
@@ -281,7 +278,6 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
   return (
     <div className={containerClassNames}>
       <div
-        key={resetKey}
         ref={textareaRef}
         data-text={placeholder}
         contentEditable={!disabled}
