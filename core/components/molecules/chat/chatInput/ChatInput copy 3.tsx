@@ -156,29 +156,155 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     }
   };
 
-  const clearChatInput = () => {
-    // Update React state
-    setContent([]);
-    setText('');
+  // const handleInput = () => {
+  //   const selection = window.getSelection();
+  //   if (!selection) return;
 
-    // Force a re-render by updating a state that affects this component
-    setIsExpanded(false);
+  //   const text = selection.anchorNode?.textContent || '';
+  //   const lastChar = text[text.length - 1];
 
-    // Use a combination of React state and controlled DOM manipulation
-    if (textareaRef.current) {
-      // First, let React handle the re-render with empty content
-      setTimeout(() => {
-        if (textareaRef.current) {
-          // After React has updated the DOM, we can safely clear any remaining text
-          // This handles the case where normal text might not be cleared by React alone
-          textareaRef.current.textContent = '';
+  //   console.log(
+  //     'text',
+  //     text,
+  //     'lastChar',
+  //     lastChar,
+  //     'showMention',
+  //     showMention,
+  //     'enableMention',
+  //     enableMention,
+  //     'mentionList',
+  //     mentionList
+  //   );
 
-          // Focus the input after clearing
-          textareaRef.current.focus();
-        }
-      }, 0);
-    }
-  };
+  //   // if (lastChar === trigger && enableMention && mentionList && mentionList.length > 0) {
+  //   //   setFilteredMentions(mentionList);
+  //   //   setShowMention(true);
+  //   //   positionMentionPopup(textareaRef, setMentionPosition);
+  //   // } else if (showMention && enableMention && mentionList) {
+  //   //   const query = text.split(trigger).pop() || '';
+  //   //   const updatedList = mentionList.filter((item) => item.label.toLowerCase().startsWith(query.toLowerCase()));
+  //   //   console.log('updatedList', updatedList);
+  //   //   setFilteredMentions(updatedList);
+  //   // }
+
+  //   // if (textareaRef.current) {
+  //   //   setText(textareaRef.current.textContent);
+  //   // }
+
+  //   if (lastChar === trigger && enableMention && mentionList && mentionList.length > 0) {
+  //     const selection = window.getSelection();
+  //     if (selection && selection.rangeCount > 0) {
+  //       setMentionRange(selection.getRangeAt(0).cloneRange());
+  //     }
+
+  //     setFilteredMentions(mentionList);
+  //     setShowMention(true);
+  //     positionMentionPopup(textareaRef, setMentionPosition);
+  //   } else if (showMention && enableMention && mentionList) {
+  //     const query = text.split(trigger).pop() || '';
+  //     const updatedList = mentionList.filter((item) => item.label.toLowerCase().startsWith(query.toLowerCase()));
+  //     setFilteredMentions(updatedList);
+
+  //     const selection = window.getSelection();
+  //     if (selection && selection.rangeCount > 0) {
+  //       const range = selection.getRangeAt(0);
+  //       const node = range.startContainer;
+  //       const text = node.textContent || '';
+  //       const atIndex = text.lastIndexOf(trigger);
+
+  //       if (atIndex !== -1) {
+  //         const mentionTextRange = range.cloneRange();
+  //         mentionTextRange.setStart(node, atIndex);
+  //         mentionTextRange.setEnd(node, text.length);
+  //         setMentionRange(mentionTextRange);
+  //       }
+  //     }
+  //   }
+
+  //   if (textareaRef.current) {
+  //     setText(textareaRef.current.textContent);
+  //   }
+
+  //   resizeTextarea(text);
+  // };
+
+  // const clearChatInput = () => {
+  //   setContent([]);
+  //   setText('');
+
+  //   if (textareaRef.current) {
+  //     textareaRef.current.innerHTML = '';
+  //   }
+  // };
+
+  // const handleInput = () => {
+  //   const selection = window.getSelection();
+  //   if (!selection || !selection.rangeCount) return;
+
+  //   const range = selection.getRangeAt(0);
+  //   const node = range.startContainer;
+  //   const text = node.textContent || '';
+  //   const atIndex = text.lastIndexOf(trigger);
+
+  //   if (atIndex !== -1) {
+  //     const query = text.slice(atIndex + 1);
+  //     const mentionTextRange = range.cloneRange();
+  //     mentionTextRange.setStart(node, atIndex);
+  //     mentionTextRange.setEnd(node, text.length);
+  //     setMentionRange(mentionTextRange);
+  //     const updatedList = mentionList?.filter((item) => item.label.toLowerCase().startsWith(query.toLowerCase())) || [];
+  //     setFilteredMentions(updatedList);
+  //     setShowMention(true);
+  //     positionMentionPopup(textareaRef, setMentionPosition);
+  //   } else {
+  //     setShowMention(false);
+  //   }
+
+  //   if (textareaRef.current) {
+  //     setText(textareaRef.current.textContent);
+  //   }
+
+  //   resizeTextarea(text);
+  // };
+
+  // const handleInput = () => {
+  //   // debugger;
+  //   const selection = window.getSelection();
+  //   if (!selection || !selection.anchorNode) return;
+
+  //   const anchorNode = selection.anchorNode;
+  //   const focusOffset = selection.focusOffset;
+  //   const text = anchorNode.textContent || '';
+
+  //   const lastAtIndex = text.lastIndexOf(trigger);
+  //   if (lastAtIndex !== -1) {
+  //     const query = text.slice(lastAtIndex + 1, focusOffset);
+  //     const updatedList = mentionList?.filter((item) => item.label.toLowerCase().startsWith(query.toLowerCase())) || [];
+  //     setFilteredMentions(updatedList);
+  //     // setShowMention(true);
+
+  //     if (updatedList.length === 0) {
+  //       // setShowMention(false);
+  //     } else {
+  //       setShowMention(true);
+  //       positionMentionPopup(textareaRef, setMentionPosition);
+  //     }
+  //     // Create and store mention range
+  //     const range = document.createRange();
+  //     range.setStart(anchorNode, lastAtIndex);
+  //     range.setEnd(anchorNode, focusOffset);
+  //     mentionRangeRef.current = range;
+  //   } else {
+  //     // setShowMention(false);
+  //     mentionRangeRef.current = null;
+  //   }
+
+  //   if (textareaRef.current) {
+  //     setText(textareaRef.current.textContent);
+  //   }
+
+  //   resizeTextarea(text);
+  // };
 
   const handleInput = () => {
     const selection = window.getSelection();
@@ -193,8 +319,13 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
       const query = text.slice(lastAtIndex + 1, focusOffset);
       const updatedList = mentionList?.filter((item) => item.label.toLowerCase().startsWith(query.toLowerCase())) || [];
       setFilteredMentions(updatedList);
-      setShowMention(true);
-      positionMentionPopup(textareaRef, setMentionPosition);
+
+      if (updatedList.length === 0) {
+        showMention && setShowMention(false);
+      } else {
+        setShowMention(true);
+        positionMentionPopup(textareaRef, setMentionPosition);
+      }
 
       // Create and store mention range
       const range = document.createRange();
@@ -202,8 +333,16 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
       range.setEnd(anchorNode, focusOffset);
       mentionRangeRef.current = range;
     } else {
-      setShowMention(false);
+      // Reset mention state when "@" is deleted
+      showMention && setShowMention(false);
       mentionRangeRef.current = null;
+
+      // Check if "@" is typed again
+      if (text.endsWith(trigger)) {
+        setFilteredMentions(mentionList || []);
+        setShowMention(true);
+        positionMentionPopup(textareaRef, setMentionPosition);
+      }
     }
 
     if (textareaRef.current) {
@@ -219,7 +358,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     console.log('messageData>>>', messageData);
     onSend && onSend(e, messageData);
 
-    clearChatInput();
+    // clearChatInput();
   };
 
   const mentionRenderer = (mention: MentionItemType) => {
@@ -276,18 +415,23 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
             {mentionRenderer(item.data)}
           </span>
         ))}
+        {/* <> */}
         {showMention && enableMention && (
+          // <>
           <MentionPopup
             setContent={setContent}
             setShowMention={setShowMention}
             mentionPosition={mentionPosition}
             filteredMentions={filteredMentions}
             textareaRef={textareaRef}
+            showMention={showMention}
             // mentionRange={mentionRange}
             mentionRangeRef={mentionRangeRef}
             {...mentionProps}
           />
+          // </>
         )}
+        {/* </> */}
       </div>
 
       <div className={actionsClassNames}>

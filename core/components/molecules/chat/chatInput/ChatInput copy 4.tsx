@@ -156,31 +156,8 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     }
   };
 
-  const clearChatInput = () => {
-    // Update React state
-    setContent([]);
-    setText('');
-
-    // Force a re-render by updating a state that affects this component
-    setIsExpanded(false);
-
-    // Use a combination of React state and controlled DOM manipulation
-    if (textareaRef.current) {
-      // First, let React handle the re-render with empty content
-      setTimeout(() => {
-        if (textareaRef.current) {
-          // After React has updated the DOM, we can safely clear any remaining text
-          // This handles the case where normal text might not be cleared by React alone
-          textareaRef.current.textContent = '';
-
-          // Focus the input after clearing
-          textareaRef.current.focus();
-        }
-      }, 0);
-    }
-  };
-
   const handleInput = () => {
+    console.log('inside input');
     const selection = window.getSelection();
     if (!selection || !selection.anchorNode) return;
 
@@ -197,11 +174,17 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
       positionMentionPopup(textareaRef, setMentionPosition);
 
       // Create and store mention range
-      const range = document.createRange();
-      range.setStart(anchorNode, lastAtIndex);
-      range.setEnd(anchorNode, focusOffset);
-      mentionRangeRef.current = range;
+      try {
+        const range = document.createRange();
+        range.setStart(anchorNode, lastAtIndex);
+        range.setEnd(anchorNode, focusOffset);
+        mentionRangeRef.current = range;
+      } catch (err) {
+        console.error('Error creating mention range:', err);
+        mentionRangeRef.current = null;
+      }
     } else {
+      console.log('11111 inside elsssseeeee');
       setShowMention(false);
       mentionRangeRef.current = null;
     }
@@ -219,7 +202,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
     console.log('messageData>>>', messageData);
     onSend && onSend(e, messageData);
 
-    clearChatInput();
+    // clearChatInput();
   };
 
   const mentionRenderer = (mention: MentionItemType) => {
@@ -276,7 +259,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
             {mentionRenderer(item.data)}
           </span>
         ))}
-        {showMention && enableMention && (
+        {enableMention && (
           <MentionPopup
             setContent={setContent}
             setShowMention={setShowMention}
@@ -284,6 +267,7 @@ export const ChatInput: React.FC<ChatInputProps> = (props: ChatInputProps) => {
             filteredMentions={filteredMentions}
             textareaRef={textareaRef}
             // mentionRange={mentionRange}
+            showMention={showMention}
             mentionRangeRef={mentionRangeRef}
             {...mentionProps}
           />
