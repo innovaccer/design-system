@@ -40,7 +40,47 @@ export const border = () => {
       className: 'border-right-0',
       properties: 'border-right: 0 ;',
     },
+    {
+      className: 'border-left-0',
+      properties: 'border-left: 0 ;',
+    },
   ];
+
+  const radiusData = [
+    {
+      className: 'rounded-2-5',
+      properties: 'border-radius: 1px ;',
+    },
+    {
+      className: 'rounded-05',
+      properties: 'border-radius: 2px ;',
+    },
+    {
+      className: 'rounded-10',
+      properties: 'border-radius: 4px ;',
+    },
+    {
+      className: 'rounded-15',
+      properties: 'border-radius: 6px ;',
+    },
+    {
+      className: 'rounded-20',
+      properties: 'border-radius: 8px ;',
+    },
+    {
+      className: 'rounded-30',
+      properties: 'border-radius: 12px ;',
+    },
+    {
+      className: 'rounded-40',
+      properties: 'border-radius: 16px ;',
+    },
+    {
+      className: 'rounded-full',
+      properties: 'border-radius: 9999px ;',
+    },
+  ];
+
   return (
     <div>
       <Heading size="xxl">Border</Heading>
@@ -68,6 +108,28 @@ export const border = () => {
           />
         </Card>
       </div>
+      <br />
+      <Heading size="m">Border Radius</Heading>
+      <br />
+      <div
+        style={{
+          height: '250px',
+        }}
+        className="mt-5 mb-8"
+      >
+        <Card className="h-100">
+          <Table
+            data={radiusData}
+            schema={utilitiesSchema}
+            size={'standard'}
+            headerOptions={{
+              withSearch: true,
+            }}
+            showMenu={false}
+          />
+        </Card>
+      </div>
+      <br />
       <Heading size="m">Examples</Heading>
       <Paragraph>Here are some representative examples of these classes:</Paragraph>
       &nbsp;

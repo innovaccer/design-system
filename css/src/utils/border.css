@@ -37,3 +37,35 @@
 .border-left-0 {
   border-left: 0 !important;
 }
+
+.rounded-2-5 {
+  border-radius: var(--border-radius-2-5) !important;
+}
+
+.rounded-05 {
+  border-radius: var(--border-radius-05) !important;
+}
+
+.rounded-10 {
+  border-radius: var(--border-radius-10) !important;
+}
+
+.rounded-15 {
+  border-radius: var(--border-radius-15) !important;
+}
+
+.rounded-20 {
+  border-radius: var(--border-radius-20) !important;
+}
+
+.rounded-30 {
+  border-radius: var(--border-radius-30) !important;
+}
+
+.rounded-40 {
+  border-radius: var(--border-radius-40) !important;
+}
+
+.rounded-full {
+  border-radius: var(--border-radius-full) !important;
+}
