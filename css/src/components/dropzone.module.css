@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   background-color: var(--white);
-  border-radius: var(--spacing-m);
+  border-radius: var(--border-radius-10);
   width: 100%;
   background-image: linear-gradient(to right, var(--secondary) 50%, rgba(255, 255, 255, 0) 0%),
     linear-gradient(var(--secondary) 50%, rgba(255, 255, 255, 0) 0%),
@@ -11,7 +11,7 @@
     linear-gradient(var(--secondary) 50%, rgba(255, 255, 255, 0) 0%);
   background-position: top, right, bottom, left;
   background-repeat: repeat-x, repeat-y;
-  background-size: var(--spacing-2) var(--spacing-xs), var(--spacing-xs) var(--spacing-2);
+  background-size: var(--spacing-40) var(--spacing-2-5), var(--spacing-2-5) var(--spacing-40);
   transition: background-color var(--duration--moderate-01) var(--standard-productive-curve);
   box-sizing: border-box;
 }
@@ -24,7 +24,7 @@
     linear-gradient(var(--primary) 50%, rgba(255, 255, 255, 0) 0%);
   background-position: top, right, bottom, left;
   background-repeat: repeat-x, repeat-y;
-  background-size: var(--spacing-2) var(--spacing-xs), var(--spacing-xs) var(--spacing-2);
+  background-size: var(--spacing-40) var(--spacing-2-5), var(--spacing-2-5) var(--spacing-40);
   transition: background-color var(--duration--moderate-01) var(--standard-productive-curve);
   box-sizing: border-box;
 }
@@ -50,7 +50,7 @@
 
   to {
     opacity: 1;
-    padding-top: var(--spacing-l);
+    padding-top: var(--spacing-30);
   }
 }
 
@@ -62,7 +62,7 @@
 
   to {
     opacity: 1;
-    padding-top: var(--spacing-l);
+    padding-top: var(--spacing-30);
   }
 }
 
@@ -77,24 +77,24 @@
 @keyframes dropzoneStandardDefault {
   from {
     opacity: 0;
-    padding-top: var(--spacing-2);
+    padding-top: var(--spacing-40);
   }
 
   to {
     opacity: 1;
-    padding-top: var(--spacing);
+    padding-top: var(--spacing-20);
   }
 }
 
 @keyframes dropzoneStandardActive {
   from {
     opacity: 0;
-    padding-top: var(--spacing-2);
+    padding-top: var(--spacing-40);
   }
 
   to {
     opacity: 1;
-    padding-top: var(--spacing);
+    padding-top: var(--spacing-20);
   }
 }
 
@@ -106,7 +106,7 @@
     linear-gradient(var(--alert) 50%, rgba(255, 255, 255, 0) 0%);
   background-position: top, right, bottom, left;
   background-repeat: repeat-x, repeat-y;
-  background-size: var(--spacing-2) var(--spacing-xs), var(--spacing-xs) var(--spacing-2);
+  background-size: var(--spacing-40) var(--spacing-2-5), var(--spacing-2-5) var(--spacing-40);
 }
 
 .Dropzone--disabled {
@@ -116,27 +116,27 @@
     linear-gradient(var(--secondary) 50%, rgba(255, 255, 255, 0) 0%);
   background-position: top, right, bottom, left;
   background-repeat: repeat-x, repeat-y;
-  background-size: var(--spacing-2) var(--spacing-xs), var(--spacing-xs) var(--spacing-2);
+  background-size: var(--spacing-40) var(--spacing-2-5), var(--spacing-2-5) var(--spacing-40);
 }
 
 .Dropzone--standard {
   flex-direction: column;
   height: 196px;
   min-width: 480px;
-  padding: var(--spacing) var(--spacing-xl) var(--spacing-2) var(--spacing-xl);
+  padding: var(--spacing-20) var(--spacing-60) var(--spacing-40) var(--spacing-60);
 }
 
 .Dropzone--compressed {
   flex-direction: row;
   height: 124px;
   min-width: 400px;
-  padding: var(--spacing-l) var(--spacing-xl) var(--spacing-2) var(--spacing-xl);
+  padding: var(--spacing-30) var(--spacing-60) var(--spacing-40) var(--spacing-60);
 }
 
 .Dropzone--tight {
   height: 124px;
   min-width: 320px;
-  padding: var(--spacing-l) var(--spacing-xl) var(--spacing-2) var(--spacing-xl);
+  padding: var(--spacing-30) var(--spacing-60) var(--spacing-40) var(--spacing-60);
 }
 
 .DropzoneWrapper {
@@ -155,11 +155,11 @@
 }
 
 .Dropzone-icon--standard {
-  margin-bottom: var(--spacing-l);
+  margin-bottom: var(--spacing-30);
 }
 
 .Dropzone-icon--compressed {
-  margin-right: var(--spacing-xl);
+  margin-right: var(--spacing-60);
 }
 
 .Dropzone-icon--disabled {

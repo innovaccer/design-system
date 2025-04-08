@@ -60,7 +60,7 @@ exports[`TS renders children 1`] = `
     class="Chip-wrapper Chip Chip--input"
     data-test="DesignSystem-Chip--GenericChip"
     role="button"
-    style="max-width: var(--spacing-9);"
+    style="max-width: var(--spacing-640);"
     tabindex="0"
   >
     <div
@@ -754,7 +754,7 @@ exports[`TS renders children 1`] = `
         class="Chip-wrapper Chip Chip--action"
         data-test="DesignSystem-Chip--GenericChip"
         role="button"
-        style="max-width: var(--spacing-9);"
+        style="max-width: var(--spacing-640);"
         tabindex="0"
       >
         <div

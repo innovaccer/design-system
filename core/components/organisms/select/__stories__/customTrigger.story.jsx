@@ -103,7 +103,7 @@ export const customTrigger = () => {
       </Select>
 
       <Select
-        popoverWidth="var(--spacing-9)"
+        popoverWidth="var(--spacing-640)"
         onSelect={onRecordSelect}
         onToggle={onToggleRecordSelect}
         trigger={
@@ -257,7 +257,7 @@ const customCode = `() => {
       </Select>
 
       <Select
-        popoverWidth="var(--spacing-9)"
+        popoverWidth="var(--spacing-640)"
         onSelect={onRecordSelect}
         onToggle={onToggleRecordSelect}
         trigger={

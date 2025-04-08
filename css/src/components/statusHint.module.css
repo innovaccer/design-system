@@ -6,11 +6,11 @@
 
 .StatusHint-icon {
   flex-shrink: 0;
-  border-radius: 50%;
-  height: var(--spacing);
-  width: var(--spacing);
-  margin-right: var(--spacing);
-  margin-top: var(--spacing-0-75);
+  border-radius: var(--border-radius-full);
+  height: var(--spacing-20);
+  width: var(--spacing-20);
+  margin-right: var(--spacing-20);
+  margin-top: var(--spacing-15);
 }
 
 .StatusHint--alert {

@@ -13,8 +13,8 @@
 }
 
 .Slider-track {
-  border-radius: var(--spacing-m);
-  height: var(--spacing-2);
+  border-radius: var(--border-radius-10);
+  height: var(--spacing-40);
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -22,9 +22,9 @@
 
 .Slider-progress {
   background: var(--secondary-lighter);
-  height: var(--spacing-s);
+  height: var(--spacing-05);
   box-sizing: border-box;
-  border-radius: var(--spacing-s);
+  border-radius: var(--border-radius-05);
 }
 
 .Slider-progress--inRange {
@@ -36,7 +36,7 @@
 }
 
 .Slider-label {
-  margin-top: var(--spacing-m);
+  margin-top: var(--spacing-10);
   -webkit-transform: translate(-50%, 0px);
   transform: translate(-50%, 0px);
   display: flex;
@@ -49,9 +49,9 @@
 }
 
 .Slider-ticks {
-  width: var(--spacing-s);
-  height: var(--spacing-m);
-  border-radius: var(--spacing-xs);
+  width: var(--spacing-05);
+  height: var(--spacing-10);
+  border-radius: var(--border-radius-2-5);
   background-color: var(--secondary-dark);
 }
 
@@ -72,14 +72,14 @@
 }
 
 .Slider-handle {
-  height: var(--spacing-2);
-  width: var(--spacing-2);
+  height: var(--spacing-40);
+  width: var(--spacing-40);
   position: absolute;
   left: 0;
   top: 0;
-  border-radius: 50%;
+  border-radius: var(--border-radius-full);
   background-color: var(--white);
-  border: var(--spacing-s) solid var(--primary);
+  border: var(--border-width-05) solid var(--primary);
   box-shadow: var(--shadow-s);
   cursor: pointer;
   box-sizing: border-box;

@@ -652,7 +652,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
           class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-Chip--GenericChip"
           role="button"
-          style="max-width: var(--spacing-9);"
+          style="max-width: var(--spacing-640);"
           tabindex="0"
         >
           <div
@@ -1325,7 +1325,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
           class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-Chip--GenericChip"
           role="button"
-          style="max-width: var(--spacing-9);"
+          style="max-width: var(--spacing-640);"
           tabindex="0"
         >
           <div
@@ -1998,7 +1998,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
           class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-Chip--GenericChip"
           role="button"
-          style="max-width: var(--spacing-9);"
+          style="max-width: var(--spacing-640);"
           tabindex="0"
         >
           <div
@@ -2670,7 +2670,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
           class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-Chip--GenericChip"
           role="button"
-          style="max-width: var(--spacing-9);"
+          style="max-width: var(--spacing-640);"
           tabindex="0"
         >
           <div
@@ -3342,7 +3342,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
           class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-Chip--GenericChip"
           role="button"
-          style="max-width: var(--spacing-9);"
+          style="max-width: var(--spacing-640);"
           tabindex="0"
         >
           <div
@@ -4014,7 +4014,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
           class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-Chip--GenericChip"
           role="button"
-          style="max-width: var(--spacing-9);"
+          style="max-width: var(--spacing-640);"
           tabindex="0"
         >
           <div
@@ -4280,7 +4280,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
           class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-Chip--GenericChip"
           role="button"
-          style="max-width: var(--spacing-9);"
+          style="max-width: var(--spacing-640);"
           tabindex="0"
         >
           <div
@@ -4538,7 +4538,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
           class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-Chip--GenericChip"
           role="button"
-          style="max-width: var(--spacing-9);"
+          style="max-width: var(--spacing-640);"
           tabindex="0"
         >
           <div
@@ -5210,7 +5210,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
           class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-Chip--GenericChip"
           role="button"
-          style="max-width: var(--spacing-9);"
+          style="max-width: var(--spacing-640);"
           tabindex="0"
         >
           <div

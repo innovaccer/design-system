@@ -8,7 +8,7 @@
 }
 
 .Placeholder--animation {
-  border-radius: var(--spacing-s);
+  border-radius: var(--border-radius-05);
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
@@ -43,7 +43,7 @@
 }
 
 .Placeholder-paragraph--withImage {
-  margin-left: var(--spacing);
+  margin-left: var(--spacing-20);
 }
 
 .PlaceholderParagraph {
@@ -157,5 +157,5 @@
 }
 
 .PlaceholderImage--round {
-  border-radius: 50%;
+  border-radius: var(--border-radius-full);
 }

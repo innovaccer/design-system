@@ -3,7 +3,7 @@
 }
 
 .PageHeader-wrapper {
-  padding: var(--spacing) var(--spacing-2) var(--spacing) 0;
+  padding: var(--spacing-20) var(--spacing-40) var(--spacing-20) 0;
 }
 
 .PageHeader-wrapper--withTabs {
@@ -22,11 +22,11 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding-right: var(--spacing);
+  padding-right: var(--spacing-20);
 }
 
 .PageHeader-titleWrapper .Badge {
-  margin-left: var(--spacing-l);
+  margin-left: var(--spacing-30);
   flex-shrink: 0;
 }
 
@@ -37,19 +37,19 @@
 }
 
 .PageHeader-statusWrapper .StatusHint {
-  margin-right: var(--spacing);
+  margin-right: var(--spacing-20);
 }
 
 .PageHeader-navigationWrapper {
-  margin-top: var(--spacing-m);
+  margin-top: var(--spacing-10);
 }
 
 .PageHeader .PageHeader-navigationWrapper {
   justify-content: center;
   align-items: center;
   margin-top: 0 !important;
-  padding-right: var(--spacing);
-  padding-left: var(--spacing);
+  padding-right: var(--spacing-20);
+  padding-left: var(--spacing-20);
   display: flex;
 }
 
@@ -62,5 +62,5 @@
 .PageHeader-actionsWrapper {
   display: flex;
   justify-content: flex-end;
-  padding-left: var(--spacing);
+  padding-left: var(--spacing-20);
 }

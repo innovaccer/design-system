@@ -18,7 +18,7 @@
 
 @keyframes shift-right-spacing-3 {
   from {
-    transform: translateX(calc(-1 * var(--spacing-3)));
+    transform: translateX(calc(-1 * var(--spacing-80)));
   }
   to {
     transform: translateX(0);
@@ -27,7 +27,7 @@
 
 @keyframes shift-left-spacing-3 {
   from {
-    transform: translateX(var(--spacing-3));
+    transform: translateX(var(--spacing-80));
   }
   to {
     transform: translateX(0);
@@ -62,17 +62,17 @@
 .Sidesheet-header {
   display: flex;
   justify-content: flex-start;
-  padding-top: var(--spacing-2);
-  padding-bottom: var(--spacing-l);
-  padding-right: var(--spacing-2);
+  padding-top: var(--spacing-40);
+  padding-bottom: var(--spacing-30);
+  padding-right: var(--spacing-40);
 }
 
 .Sidesheet-header--withSeperator {
-  border-bottom: var(--spacing-xs) solid var(--secondary-light);
+  border-bottom: var(--border-width-2-5) solid var(--secondary-light);
 }
 
 .Sidesheet-body {
-  padding: 0 var(--spacing-xl);
+  padding: 0 var(--spacing-60);
 }
 
 .Sidesheet-body--withMargin {
@@ -80,12 +80,12 @@
 }
 
 .Sidesheet-footer {
-  padding-top: var(--spacing-xl);
-  padding-bottom: var(--spacing-xl);
+  padding-top: var(--spacing-60);
+  padding-bottom: var(--spacing-60);
 }
 
 .Sidesheet-footer--withSeperator {
-  border-top: var(--spacing-xs) solid var(--secondary-light);
+  border-top: var(--border-width-2-5) solid var(--secondary-light);
 }
 
 .Sidesheet-footer--stickToBottom {

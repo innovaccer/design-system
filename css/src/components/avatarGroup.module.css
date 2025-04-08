@@ -1,15 +1,15 @@
 .AvatarGroup-item {
-  border-radius: 50%;
+  border-radius: var(--border-radius-full);
   position: relative;
-  margin-right: calc(var(--spacing-s) * -1);
+  margin-right: calc(var(--spacing-05) * -1);
 }
 
 .AvatarGroup-item--regular {
-  height: var(--spacing-3);
+  height: var(--spacing-80);
 }
 
 .AvatarGroup-item--tiny {
-  height: var(--spacing-xl);
+  height: var(--spacing-60);
 }
 
 .AvatarGroup-Popper {
@@ -25,7 +25,7 @@
 }
 
 .AvatarCount-wrapper {
-  border-radius: 50%;
+  border-radius: var(--border-radius-full);
   position: relative;
 }
 
@@ -36,19 +36,19 @@
 }
 
 .AvatarGroup-inputWrapper {
-  border-bottom: var(--spacing-xs) solid var(--secondary-dark);
+  border-bottom: var(--border-width-2-5) solid var(--secondary-dark);
 }
 
 .AvatarGroup-inputWrapper:focus-within {
-  border-bottom: var(--spacing-xs) solid var(--primary);
+  border-bottom: var(--border-width-2-5) solid var(--primary);
 }
 
 .AvatarGroup-input {
   min-width: unset !important;
   background: transparent;
-  border-bottom-left-radius: 0px;
+  border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  height: calc(var(--spacing-3) + var(--spacing-m)) !important;
+  height: calc(var(--spacing-80) + var(--spacing-10)) !important;
 }
 
 .AvatarGroup-input,

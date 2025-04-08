@@ -8,21 +8,21 @@
   flex-direction: row;
   align-items: center;
   box-sizing: border-box;
-  border-radius: var(--spacing-m);
+  border-radius: var(--border-radius-10);
   border: var(--border);
-  padding-right: var(--spacing-m);
+  padding-right: var(--spacing-10);
   background: var(--white);
   transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
 .MetricInput--regular {
-  height: var(--spacing-3);
-  padding-left: var(--spacing-l);
+  height: var(--spacing-80);
+  padding-left: var(--spacing-30);
 }
 
 .MetricInput--large {
   height: 40px;
-  padding-left: var(--spacing-2);
+  padding-left: var(--spacing-40);
 }
 
 .MetricInput:hover {
@@ -102,12 +102,12 @@
 }
 
 .MetricInput-icon--regular {
-  margin-right: var(--spacing);
+  margin-right: var(--spacing-20);
   line-height: var(--font-height-s);
 }
 
 .MetricInput-icon--large {
-  margin-right: var(--spacing-l);
+  margin-right: var(--spacing-30);
   line-height: var(--font-height-m);
 }
 
@@ -120,13 +120,13 @@
 }
 
 .MetricInput-arrowIcon--large {
-  height: var(--spacing-2);
-  width: var(--spacing-2);
-  border-radius: var(--spacing-s);
+  height: var(--spacing-40);
+  width: var(--spacing-40);
+  border-radius: var(--border-radius-05);
 }
 
 .MetricInput-arrowIcon--regular {
-  height: var(--spacing-l);
-  width: var(--spacing-l);
-  border-radius: var(--spacing-s);
+  height: var(--spacing-30);
+  width: var(--spacing-30);
+  border-radius: var(--border-radius-05);
 }

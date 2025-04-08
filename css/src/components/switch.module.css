@@ -4,18 +4,18 @@
 }
 
 .Switch--tiny {
-  height: var(--spacing-2);
-  width: var(--spacing-3);
+  height: var(--spacing-40);
+  width: var(--spacing-80);
 }
 
 .Switch--regular {
-  height: var(--spacing-xl);
-  width: var(--spacing-4);
+  height: var(--spacing-60);
+  width: var(--spacing-120);
 }
 
 .Switch--large {
-  height: var(--spacing-xl);
-  width: var(--spacing-4);
+  height: var(--spacing-60);
+  width: var(--spacing-120);
 }
 
 .Switch-input {
@@ -32,13 +32,13 @@
   display: flex;
   align-items: center;
   line-height: 100%;
-  padding: var(--spacing-s);
+  padding: var(--spacing-05);
   top: 0;
   left: 0;
   width: 100%;
   background-color: var(--secondary-light);
   transition: background 120ms ease;
-  padding-right: var(--spacing-0-75);
+  padding-right: var(--spacing-15);
 }
 
 .Switch-input:focus ~ .Switch-wrapper {
@@ -68,15 +68,15 @@
 }
 
 .Switch-wrapper--tiny {
-  border-radius: 10px;
+  border-radius: var(--border-radius-full);
 }
 
 .Switch-wrapper--regular {
-  border-radius: 34px;
+  border-radius: var(--border-radius-full);
 }
 
 .Switch-wrapper--large {
-  border-radius: 34px;
+  border-radius: var(--border-radius-full);
 }
 
 .Switch-wrapper:before {
@@ -85,7 +85,7 @@
   width: 50%;
   background-color: var(--shadow-0);
   box-shadow: var(--shadow-m);
-  border-radius: 50%;
+  border-radius: var(--border-radius-full);
   box-sizing: border-box;
   transition-duration: 80ms;
 }
@@ -93,7 +93,7 @@
 .Switch-wrapper--checked {
   background-color: var(--primary);
   transition: background 120ms ease;
-  padding-left: var(--spacing-0-75);
+  padding-left: var(--spacing-15);
   padding-right: 2px !important;
 }
 
