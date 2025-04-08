@@ -435,7 +435,7 @@
   justify-content: center;
   width: var(--spacing-10);
   height: var(--spacing-10);
-  border-radius: 50%;
+  border-radius: var(--border-radius-full);
   background: var(--secondary);
   margin: 0 var(--spacing-20);
 }

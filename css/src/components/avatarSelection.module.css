@@ -9,7 +9,7 @@
 
 .SelectionAvatarGroup-item {
   margin-right: calc(var(--spacing-05) * -1);
-  border-radius: 50%;
+  border-radius: var(--border-radius-full);
   display: flex;
   transition: transform var(--duration--fast-01) var(--standard-productive-curve);
   position: relative;
@@ -83,7 +83,7 @@
 /* Selection Avatar Count */
 
 .SelectionAvatarCount-wrapper {
-  border-radius: 50%;
+  border-radius: var(--border-radius-full);
 }
 
 .SelectionAvatarCount:hover {

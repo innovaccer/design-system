@@ -1,6 +1,6 @@
 .FileIcon {
   padding: var(--spacing-20);
-  border-radius: 50%;
+  border-radius: var(--border-radius-full);
 }
 .FileItem:not(:last-child) {
   border-bottom: var(--border);

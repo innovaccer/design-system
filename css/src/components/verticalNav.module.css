@@ -48,7 +48,7 @@
   margin-left: 10px;
   margin-right: 10px;
   justify-content: center;
-  border-radius: 50%;
+  border-radius: var(--border-radius-full);
   cursor: pointer;
 }
 

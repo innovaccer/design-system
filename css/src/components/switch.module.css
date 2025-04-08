@@ -68,15 +68,15 @@
 }
 
 .Switch-wrapper--tiny {
-  border-radius: 10px;
+  border-radius: var(--border-radius-full);
 }
 
 .Switch-wrapper--regular {
-  border-radius: 34px;
+  border-radius: var(--border-radius-full);
 }
 
 .Switch-wrapper--large {
-  border-radius: 34px;
+  border-radius: var(--border-radius-full);
 }
 
 .Switch-wrapper:before {
@@ -85,7 +85,7 @@
   width: 50%;
   background-color: var(--shadow-0);
   box-shadow: var(--shadow-m);
-  border-radius: 50%;
+  border-radius: var(--border-radius-full);
   box-sizing: border-box;
   transition-duration: 80ms;
 }

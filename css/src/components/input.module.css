@@ -139,7 +139,7 @@
 .Input-icon--right {
   cursor: pointer;
   color: var(--inverse-lighter);
-  border-radius: 10px;
+  border-radius: var(--border-radius-full);
 }
 
 .Input-iconWrapper--right:focus-visible .Input-icon--right {
@@ -148,7 +148,7 @@
 
 .Input-icon--right:focus-visible {
   outline: var(--spacing-05) solid var(--secondary-shadow);
-  border-radius: 10px;
+  border-radius: var(--border-radius-full);
 }
 
 .Input-iconWrapper--right:hover .Input-icon--right {

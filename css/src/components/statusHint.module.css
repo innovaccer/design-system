@@ -6,7 +6,7 @@
 
 .StatusHint-icon {
   flex-shrink: 0;
-  border-radius: 50%;
+  border-radius: var(--border-radius-full);
   height: var(--spacing-20);
   width: var(--spacing-20);
   margin-right: var(--spacing-20);

@@ -31,7 +31,7 @@
 .Chip-icon--right {
   display: flex;
   align-items: center;
-  border-radius: 10px;
+  border-radius: var(--border-radius-full);
   margin-left: var(--spacing-05);
 }
 
@@ -172,7 +172,7 @@
 }
 
 .Chip-icon--selected {
-  border-radius: 10px;
+  border-radius: var(--border-radius-full);
 }
 
 .Chip-icon--selected:focus-visible {

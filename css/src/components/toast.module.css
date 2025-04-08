@@ -48,7 +48,7 @@
 .Toast-icon--right {
   cursor: pointer;
   margin-left: var(--spacing-30);
-  border-radius: 50%;
+  border-radius: var(--border-radius-full);
   display: flex;
   align-items: center;
   padding-right: var(--spacing-10);
