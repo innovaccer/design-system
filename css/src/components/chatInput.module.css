@@ -42,6 +42,7 @@
   resize: none;
   border: none;
   outline: none;
+  transition-delay: var(--duration--slow-01);
   transition: width var(--duration--slow-01) var(--standard-productive-curve);
   box-sizing: border-box;
   cursor: auto;
@@ -59,7 +60,7 @@
 .ChatInput-actions {
   display: flex;
   flex-shrink: 0;
-  transition: all 0.2s ease-in-out;
+  transition: all var(--duration--slow-01) var(--standard-productive-curve);
   margin-left: 8px;
   align-items: center;
 }
