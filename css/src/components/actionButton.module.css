@@ -5,7 +5,7 @@
   user-select: none;
   cursor: pointer;
   color: var(--inverse-lighter);
-  border-radius: 50%;
+  border-radius: var(--border-radius-full);
   padding: var(--spacing-05);
 }
 

@@ -66,7 +66,7 @@
 
 .Tab:focus {
   outline: none;
-  border-radius: 4px;
+  border-radius: var(--border-radius-10);
   /* Using box shadow instead of border as border shifts the div down which cuts the Icon & Text of label. */
   box-shadow: var(--shadow-spread) var(--primary-shadow);
 }
@@ -126,7 +126,7 @@
   padding: var(--spacing-05);
   margin-left: var(--spacing-05);
   outline: none;
-  border-radius: 10px;
+  border-radius: var(--border-radius-full);
 }
 
 .DismissibleTab-icon--default:focus-visible {

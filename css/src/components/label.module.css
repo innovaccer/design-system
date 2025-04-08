@@ -29,7 +29,7 @@
 .Label-requiredIndicator {
   height: var(--spacing-15);
   width: var(--spacing-15);
-  border-radius: 50%;
+  border-radius: var(--border-radius-full);
   background: var(--alert);
   margin-left: var(--spacing-10);
   margin-bottom: var(--spacing-15);

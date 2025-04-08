@@ -63,7 +63,7 @@
   height: 100%;
   width: 100%;
   position: absolute;
-  border-radius: 50%;
+  border-radius: var(--border-radius-full);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,13 +101,13 @@
 .Radio:focus-within .Radio-wrapper {
   outline: 0;
   box-shadow: var(--shadow-spread) var(--secondary-shadow);
-  border-radius: 50%;
+  border-radius: var(--border-radius-full);
 }
 
 .Radio:focus-within .Radio-errorWrapper {
   outline: 0;
   box-shadow: var(--shadow-spread) var(--alert-shadow);
-  border-radius: 50%;
+  border-radius: var(--border-radius-full);
 }
 
 .Radio:focus-within .Radio-input:checked ~ .Radio-wrapper {
@@ -146,7 +146,7 @@
 .Radio-wrapper:after {
   content: '';
   display: none;
-  border-radius: 50%;
+  border-radius: var(--border-radius-full);
   background: var(--primary);
 }
 

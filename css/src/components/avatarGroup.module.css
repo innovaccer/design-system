@@ -1,5 +1,5 @@
 .AvatarGroup-item {
-  border-radius: 50%;
+  border-radius: var(--border-radius-full);
   position: relative;
   margin-right: calc(var(--spacing-05) * -1);
 }
@@ -25,7 +25,7 @@
 }
 
 .AvatarCount-wrapper {
-  border-radius: 50%;
+  border-radius: var(--border-radius-full);
   position: relative;
 }
 

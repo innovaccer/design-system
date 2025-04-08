@@ -12,7 +12,7 @@
   padding-left: var(--spacing-15);
   padding-top: var(--spacing-05);
   padding-bottom: var(--spacing-05);
-  border-radius: 20px;
+  border-radius: var(--border-radius-full);
   display: inline-block;
   box-sizing: border-box;
   font-weight: var(--font-weight-bold);

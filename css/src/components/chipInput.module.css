@@ -84,7 +84,7 @@
   margin-left: var(--spacing-20);
   margin-top: var(--spacing-15);
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: var(--border-radius-full);
 }
 
 .ChipInput-icon:hover {
