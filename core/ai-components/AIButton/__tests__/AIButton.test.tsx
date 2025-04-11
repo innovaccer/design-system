@@ -16,22 +16,6 @@ describe('AI Button Component', () => {
     expect(button).toHaveAttribute('data-test', 'DesignSystem-AI-Button');
   });
 
-  it('renders with a `primary` appearance', () => {
-    const { getByTestId } = render(
-      <AIButton {...defaultProps} appearance="primary">
-        'Click me!'
-      </AIButton>
-    );
-    const button = getByTestId('DesignSystem-AI-Button');
-    expect(button).toHaveClass('AIButton--primary');
-  });
-
-  it('renders with a `basic` appearance by default', () => {
-    const { getByTestId } = render(<AIButton {...defaultProps}>'Click me!'</AIButton>);
-    const button = getByTestId('DesignSystem-AI-Button');
-    expect(button).toHaveClass('AIButton--basic');
-  });
-
   it('renders a custom className', () => {
     const customClassName = 'my-custom-class';
     const { getByTestId } = render(
@@ -86,5 +70,25 @@ describe('AI Button Component', () => {
     const { getByTestId } = render(<AIButton>{customLabel}</AIButton>);
     const button = getByTestId('DesignSystem-AI-Button');
     expect(button).toHaveTextContent(customLabel);
+  });
+
+  it('renders with sparkle icon when withSparkle is true', () => {
+    const { getByTestId } = render(
+      <AIButton {...defaultProps} withSparkle>
+        'Click me!'
+      </AIButton>
+    );
+    const sparkleIcon = getByTestId('DesignSystem-AI-Button-Icon');
+    expect(sparkleIcon).toBeInTheDocument();
+  });
+
+  it('renders without sparkle icon when withSparkle is false', () => {
+    const { queryByTestId } = render(
+      <AIButton {...defaultProps} withSparkle={false}>
+        'Click me!'
+      </AIButton>
+    );
+    const sparkleIcon = queryByTestId('DesignSystem-AI-Button-Icon');
+    expect(sparkleIcon).not.toBeInTheDocument();
   });
 });
