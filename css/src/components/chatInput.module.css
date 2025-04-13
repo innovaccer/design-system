@@ -1,0 +1,79 @@
+.ChatInput {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #d5d5d5;
+  padding: 8px;
+  border-radius: 4px;
+  background: var(--white);
+  max-width: 100%;
+  min-width: 256px;
+  transition: all var(--duration--slow-01) var(--standard-productive-curve);
+  max-height: 176px;
+  position: relative;
+  box-sizing: border-box;
+  line-height: var(--font-height-m);
+}
+
+.ChatInput--expanded {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.ChatInput--disabled {
+  pointer-events: none;
+  background: #f4f4f4;
+}
+
+.ChatInput:hover {
+  background: #ececec;
+}
+
+.ChatInput:focus-within,
+.ChatInput:focus,
+.ChatInput:focus-visible {
+  outline: none;
+  border: var(--spacing-xs) solid var(--primary);
+  box-shadow: var(--shadow-spread) var(--primary-shadow);
+}
+
+.ChatInput-textarea {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  resize: none;
+  border: none;
+  outline: none;
+  transition-delay: var(--duration--slow-01);
+  transition: width var(--duration--slow-01) var(--standard-productive-curve);
+  box-sizing: border-box;
+  cursor: auto;
+  padding: 0;
+  background: none;
+  word-break: break-all;
+  overflow-y: scroll;
+}
+
+/* .ChatInput-textarea--expanded {
+  width: 90%;
+} */
+
+[contentEditable='true']:empty:not(:focus):before {
+  content: attr(data-text);
+  color: #707070;
+}
+
+.ChatInput-actions {
+  display: flex;
+  flex-shrink: 0;
+  transition: all var(--duration--slow-01) var(--standard-productive-curve);
+  margin-left: 8px;
+  align-items: center;
+}
+
+.ChatInput-actions--expanded {
+  width: 100%;
+  justify-content: flex-end;
+  margin-top: 8px;
+  margin-left: 0;
+}

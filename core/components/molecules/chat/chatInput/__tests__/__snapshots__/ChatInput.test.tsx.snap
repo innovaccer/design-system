@@ -1,0 +1,4084 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChatInput component snapshot 
+  value: "Test Message", placeholder: "Placeholder Value", onChange: "[Function]", onKeyDown: "[Function]"
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        data-test="DesignSystem-Chat"
+      >
+        <div
+          class="ChatInput"
+        >
+          <div
+            class="ChatInput-textarea"
+            contenteditable="true"
+            data-test="DesignSystem-ChatInput"
+            data-text="Placeholder Value"
+            role="textbox"
+            spellcheck="true"
+            tabindex="0"
+          >
+            Test Message
+          </div>
+          <div
+            class="ChatInput-actions"
+          >
+            <button
+              aria-label="Send"
+              class="Button Button--tiny Button--tinySquare Button--primary"
+              data-test="DesignSystem-SendButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  arrow_upward_alt
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <div
+        class="ChatInput"
+      >
+        <div
+          class="ChatInput-textarea"
+          contenteditable="true"
+          data-test="DesignSystem-ChatInput"
+          data-text="Placeholder Value"
+          role="textbox"
+          spellcheck="true"
+          tabindex="0"
+        >
+          Test Message
+        </div>
+        <div
+          class="ChatInput-actions"
+        >
+          <button
+            aria-label="Send"
+            class="Button Button--tiny Button--tinySquare Button--primary"
+            data-test="DesignSystem-SendButton"
+            tabindex="0"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                arrow_upward_alt
+              </i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ChatInput component snapshot 
+  value: "Test Message", placeholder: "Placeholder Value", onChange: "[Function]", onKeyDown: "[Function]", disabled: false
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        data-test="DesignSystem-Chat"
+      >
+        <div
+          class="ChatInput"
+        >
+          <div
+            class="ChatInput-textarea"
+            contenteditable="true"
+            data-test="DesignSystem-ChatInput"
+            data-text="Placeholder Value"
+            role="textbox"
+            spellcheck="true"
+            tabindex="0"
+          >
+            Test Message
+          </div>
+          <div
+            class="ChatInput-actions"
+          >
+            <button
+              aria-label="Send"
+              class="Button Button--tiny Button--tinySquare Button--primary"
+              data-test="DesignSystem-SendButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  arrow_upward_alt
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <div
+        class="ChatInput"
+      >
+        <div
+          class="ChatInput-textarea"
+          contenteditable="true"
+          data-test="DesignSystem-ChatInput"
+          data-text="Placeholder Value"
+          role="textbox"
+          spellcheck="true"
+          tabindex="0"
+        >
+          Test Message
+        </div>
+        <div
+          class="ChatInput-actions"
+        >
+          <button
+            aria-label="Send"
+            class="Button Button--tiny Button--tinySquare Button--primary"
+            data-test="DesignSystem-SendButton"
+            tabindex="0"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                arrow_upward_alt
+              </i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ChatInput component snapshot 
+  value: "Test Message", placeholder: "Placeholder Value", onChange: "[Function]", onKeyDown: "[Function]", disabled: false, enableMention: false
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        data-test="DesignSystem-Chat"
+      >
+        <div
+          class="ChatInput"
+        >
+          <div
+            class="ChatInput-textarea"
+            contenteditable="true"
+            data-test="DesignSystem-ChatInput"
+            data-text="Placeholder Value"
+            role="textbox"
+            spellcheck="true"
+            tabindex="0"
+          >
+            Test Message
+          </div>
+          <div
+            class="ChatInput-actions"
+          >
+            <button
+              aria-label="Send"
+              class="Button Button--tiny Button--tinySquare Button--primary"
+              data-test="DesignSystem-SendButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  arrow_upward_alt
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <div
+        class="ChatInput"
+      >
+        <div
+          class="ChatInput-textarea"
+          contenteditable="true"
+          data-test="DesignSystem-ChatInput"
+          data-text="Placeholder Value"
+          role="textbox"
+          spellcheck="true"
+          tabindex="0"
+        >
+          Test Message
+        </div>
+        <div
+          class="ChatInput-actions"
+        >
+          <button
+            aria-label="Send"
+            class="Button Button--tiny Button--tinySquare Button--primary"
+            data-test="DesignSystem-SendButton"
+            tabindex="0"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                arrow_upward_alt
+              </i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ChatInput component snapshot 
+  value: "Test Message", placeholder: "Placeholder Value", onChange: "[Function]", onKeyDown: "[Function]", disabled: false, enableMention: true
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        data-test="DesignSystem-Chat"
+      >
+        <div
+          class="ChatInput"
+        >
+          <div
+            class="ChatInput-textarea"
+            contenteditable="true"
+            data-test="DesignSystem-ChatInput"
+            data-text="Placeholder Value"
+            role="textbox"
+            spellcheck="true"
+            tabindex="0"
+          >
+            Test Message
+          </div>
+          <div
+            class="ChatInput-actions"
+          >
+            <button
+              aria-label="Send"
+              class="Button Button--tiny Button--tinySquare Button--primary"
+              data-test="DesignSystem-SendButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  arrow_upward_alt
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <div
+        class="ChatInput"
+      >
+        <div
+          class="ChatInput-textarea"
+          contenteditable="true"
+          data-test="DesignSystem-ChatInput"
+          data-text="Placeholder Value"
+          role="textbox"
+          spellcheck="true"
+          tabindex="0"
+        >
+          Test Message
+        </div>
+        <div
+          class="ChatInput-actions"
+        >
+          <button
+            aria-label="Send"
+            class="Button Button--tiny Button--tinySquare Button--primary"
+            data-test="DesignSystem-SendButton"
+            tabindex="0"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                arrow_upward_alt
+              </i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ChatInput component snapshot 
+  value: "Test Message", placeholder: "Placeholder Value", onChange: "[Function]", onKeyDown: "[Function]", disabled: false, showStopButton: false
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        data-test="DesignSystem-Chat"
+      >
+        <div
+          class="ChatInput"
+        >
+          <div
+            class="ChatInput-textarea"
+            contenteditable="true"
+            data-test="DesignSystem-ChatInput"
+            data-text="Placeholder Value"
+            role="textbox"
+            spellcheck="true"
+            tabindex="0"
+          >
+            Test Message
+          </div>
+          <div
+            class="ChatInput-actions"
+          >
+            <button
+              aria-label="Send"
+              class="Button Button--tiny Button--tinySquare Button--primary"
+              data-test="DesignSystem-SendButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  arrow_upward_alt
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <div
+        class="ChatInput"
+      >
+        <div
+          class="ChatInput-textarea"
+          contenteditable="true"
+          data-test="DesignSystem-ChatInput"
+          data-text="Placeholder Value"
+          role="textbox"
+          spellcheck="true"
+          tabindex="0"
+        >
+          Test Message
+        </div>
+        <div
+          class="ChatInput-actions"
+        >
+          <button
+            aria-label="Send"
+            class="Button Button--tiny Button--tinySquare Button--primary"
+            data-test="DesignSystem-SendButton"
+            tabindex="0"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                arrow_upward_alt
+              </i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ChatInput component snapshot 
+  value: "Test Message", placeholder: "Placeholder Value", onChange: "[Function]", onKeyDown: "[Function]", disabled: false, showStopButton: false, enableMention: false
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        data-test="DesignSystem-Chat"
+      >
+        <div
+          class="ChatInput"
+        >
+          <div
+            class="ChatInput-textarea"
+            contenteditable="true"
+            data-test="DesignSystem-ChatInput"
+            data-text="Placeholder Value"
+            role="textbox"
+            spellcheck="true"
+            tabindex="0"
+          >
+            Test Message
+          </div>
+          <div
+            class="ChatInput-actions"
+          >
+            <button
+              aria-label="Send"
+              class="Button Button--tiny Button--tinySquare Button--primary"
+              data-test="DesignSystem-SendButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  arrow_upward_alt
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <div
+        class="ChatInput"
+      >
+        <div
+          class="ChatInput-textarea"
+          contenteditable="true"
+          data-test="DesignSystem-ChatInput"
+          data-text="Placeholder Value"
+          role="textbox"
+          spellcheck="true"
+          tabindex="0"
+        >
+          Test Message
+        </div>
+        <div
+          class="ChatInput-actions"
+        >
+          <button
+            aria-label="Send"
+            class="Button Button--tiny Button--tinySquare Button--primary"
+            data-test="DesignSystem-SendButton"
+            tabindex="0"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                arrow_upward_alt
+              </i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ChatInput component snapshot 
+  value: "Test Message", placeholder: "Placeholder Value", onChange: "[Function]", onKeyDown: "[Function]", disabled: false, showStopButton: false, enableMention: true
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        data-test="DesignSystem-Chat"
+      >
+        <div
+          class="ChatInput"
+        >
+          <div
+            class="ChatInput-textarea"
+            contenteditable="true"
+            data-test="DesignSystem-ChatInput"
+            data-text="Placeholder Value"
+            role="textbox"
+            spellcheck="true"
+            tabindex="0"
+          >
+            Test Message
+          </div>
+          <div
+            class="ChatInput-actions"
+          >
+            <button
+              aria-label="Send"
+              class="Button Button--tiny Button--tinySquare Button--primary"
+              data-test="DesignSystem-SendButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  arrow_upward_alt
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <div
+        class="ChatInput"
+      >
+        <div
+          class="ChatInput-textarea"
+          contenteditable="true"
+          data-test="DesignSystem-ChatInput"
+          data-text="Placeholder Value"
+          role="textbox"
+          spellcheck="true"
+          tabindex="0"
+        >
+          Test Message
+        </div>
+        <div
+          class="ChatInput-actions"
+        >
+          <button
+            aria-label="Send"
+            class="Button Button--tiny Button--tinySquare Button--primary"
+            data-test="DesignSystem-SendButton"
+            tabindex="0"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                arrow_upward_alt
+              </i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ChatInput component snapshot 
+  value: "Test Message", placeholder: "Placeholder Value", onChange: "[Function]", onKeyDown: "[Function]", disabled: false, showStopButton: true
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        data-test="DesignSystem-Chat"
+      >
+        <div
+          class="ChatInput"
+        >
+          <div
+            class="ChatInput-textarea"
+            contenteditable="true"
+            data-test="DesignSystem-ChatInput"
+            data-text="Placeholder Value"
+            role="textbox"
+            spellcheck="true"
+            tabindex="0"
+          >
+            Test Message
+          </div>
+          <div
+            class="ChatInput-actions"
+          >
+            <button
+              aria-label="Stop Generating"
+              class="Button Button--tiny Button--tinySquare Button--alert"
+              data-test="DesignSystem-StopButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  stop
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <div
+        class="ChatInput"
+      >
+        <div
+          class="ChatInput-textarea"
+          contenteditable="true"
+          data-test="DesignSystem-ChatInput"
+          data-text="Placeholder Value"
+          role="textbox"
+          spellcheck="true"
+          tabindex="0"
+        >
+          Test Message
+        </div>
+        <div
+          class="ChatInput-actions"
+        >
+          <button
+            aria-label="Stop Generating"
+            class="Button Button--tiny Button--tinySquare Button--alert"
+            data-test="DesignSystem-StopButton"
+            tabindex="0"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                stop
+              </i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ChatInput component snapshot 
+  value: "Test Message", placeholder: "Placeholder Value", onChange: "[Function]", onKeyDown: "[Function]", disabled: false, showStopButton: true, enableMention: false
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        data-test="DesignSystem-Chat"
+      >
+        <div
+          class="ChatInput"
+        >
+          <div
+            class="ChatInput-textarea"
+            contenteditable="true"
+            data-test="DesignSystem-ChatInput"
+            data-text="Placeholder Value"
+            role="textbox"
+            spellcheck="true"
+            tabindex="0"
+          >
+            Test Message
+          </div>
+          <div
+            class="ChatInput-actions"
+          >
+            <button
+              aria-label="Stop Generating"
+              class="Button Button--tiny Button--tinySquare Button--alert"
+              data-test="DesignSystem-StopButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  stop
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <div
+        class="ChatInput"
+      >
+        <div
+          class="ChatInput-textarea"
+          contenteditable="true"
+          data-test="DesignSystem-ChatInput"
+          data-text="Placeholder Value"
+          role="textbox"
+          spellcheck="true"
+          tabindex="0"
+        >
+          Test Message
+        </div>
+        <div
+          class="ChatInput-actions"
+        >
+          <button
+            aria-label="Stop Generating"
+            class="Button Button--tiny Button--tinySquare Button--alert"
+            data-test="DesignSystem-StopButton"
+            tabindex="0"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                stop
+              </i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ChatInput component snapshot 
+  value: "Test Message", placeholder: "Placeholder Value", onChange: "[Function]", onKeyDown: "[Function]", disabled: false, showStopButton: true, enableMention: true
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        data-test="DesignSystem-Chat"
+      >
+        <div
+          class="ChatInput"
+        >
+          <div
+            class="ChatInput-textarea"
+            contenteditable="true"
+            data-test="DesignSystem-ChatInput"
+            data-text="Placeholder Value"
+            role="textbox"
+            spellcheck="true"
+            tabindex="0"
+          >
+            Test Message
+          </div>
+          <div
+            class="ChatInput-actions"
+          >
+            <button
+              aria-label="Stop Generating"
+              class="Button Button--tiny Button--tinySquare Button--alert"
+              data-test="DesignSystem-StopButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  stop
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <div
+        class="ChatInput"
+      >
+        <div
+          class="ChatInput-textarea"
+          contenteditable="true"
+          data-test="DesignSystem-ChatInput"
+          data-text="Placeholder Value"
+          role="textbox"
+          spellcheck="true"
+          tabindex="0"
+        >
+          Test Message
+        </div>
+        <div
+          class="ChatInput-actions"
+        >
+          <button
+            aria-label="Stop Generating"
+            class="Button Button--tiny Button--tinySquare Button--alert"
+            data-test="DesignSystem-StopButton"
+            tabindex="0"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                stop
+              </i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ChatInput component snapshot 
+  value: "Test Message", placeholder: "Placeholder Value", onChange: "[Function]", onKeyDown: "[Function]", disabled: true
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        data-test="DesignSystem-Chat"
+      >
+        <div
+          class="ChatInput ChatInput--disabled"
+        >
+          <div
+            class="ChatInput-textarea"
+            contenteditable="false"
+            data-test="DesignSystem-ChatInput"
+            data-text="Placeholder Value"
+            role="textbox"
+            spellcheck="true"
+            tabindex="0"
+          >
+            Test Message
+          </div>
+          <div
+            class="ChatInput-actions"
+          >
+            <button
+              aria-label="Send"
+              class="Button Button--tiny Button--tinySquare Button--primary"
+              data-test="DesignSystem-SendButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  arrow_upward_alt
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <div
+        class="ChatInput ChatInput--disabled"
+      >
+        <div
+          class="ChatInput-textarea"
+          contenteditable="false"
+          data-test="DesignSystem-ChatInput"
+          data-text="Placeholder Value"
+          role="textbox"
+          spellcheck="true"
+          tabindex="0"
+        >
+          Test Message
+        </div>
+        <div
+          class="ChatInput-actions"
+        >
+          <button
+            aria-label="Send"
+            class="Button Button--tiny Button--tinySquare Button--primary"
+            data-test="DesignSystem-SendButton"
+            tabindex="0"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                arrow_upward_alt
+              </i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ChatInput component snapshot 
+  value: "Test Message", placeholder: "Placeholder Value", onChange: "[Function]", onKeyDown: "[Function]", disabled: true, enableMention: false
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        data-test="DesignSystem-Chat"
+      >
+        <div
+          class="ChatInput ChatInput--disabled"
+        >
+          <div
+            class="ChatInput-textarea"
+            contenteditable="false"
+            data-test="DesignSystem-ChatInput"
+            data-text="Placeholder Value"
+            role="textbox"
+            spellcheck="true"
+            tabindex="0"
+          >
+            Test Message
+          </div>
+          <div
+            class="ChatInput-actions"
+          >
+            <button
+              aria-label="Send"
+              class="Button Button--tiny Button--tinySquare Button--primary"
+              data-test="DesignSystem-SendButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  arrow_upward_alt
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <div
+        class="ChatInput ChatInput--disabled"
+      >
+        <div
+          class="ChatInput-textarea"
+          contenteditable="false"
+          data-test="DesignSystem-ChatInput"
+          data-text="Placeholder Value"
+          role="textbox"
+          spellcheck="true"
+          tabindex="0"
+        >
+          Test Message
+        </div>
+        <div
+          class="ChatInput-actions"
+        >
+          <button
+            aria-label="Send"
+            class="Button Button--tiny Button--tinySquare Button--primary"
+            data-test="DesignSystem-SendButton"
+            tabindex="0"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                arrow_upward_alt
+              </i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ChatInput component snapshot 
+  value: "Test Message", placeholder: "Placeholder Value", onChange: "[Function]", onKeyDown: "[Function]", disabled: true, enableMention: true
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        data-test="DesignSystem-Chat"
+      >
+        <div
+          class="ChatInput ChatInput--disabled"
+        >
+          <div
+            class="ChatInput-textarea"
+            contenteditable="false"
+            data-test="DesignSystem-ChatInput"
+            data-text="Placeholder Value"
+            role="textbox"
+            spellcheck="true"
+            tabindex="0"
+          >
+            Test Message
+          </div>
+          <div
+            class="ChatInput-actions"
+          >
+            <button
+              aria-label="Send"
+              class="Button Button--tiny Button--tinySquare Button--primary"
+              data-test="DesignSystem-SendButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  arrow_upward_alt
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <div
+        class="ChatInput ChatInput--disabled"
+      >
+        <div
+          class="ChatInput-textarea"
+          contenteditable="false"
+          data-test="DesignSystem-ChatInput"
+          data-text="Placeholder Value"
+          role="textbox"
+          spellcheck="true"
+          tabindex="0"
+        >
+          Test Message
+        </div>
+        <div
+          class="ChatInput-actions"
+        >
+          <button
+            aria-label="Send"
+            class="Button Button--tiny Button--tinySquare Button--primary"
+            data-test="DesignSystem-SendButton"
+            tabindex="0"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                arrow_upward_alt
+              </i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ChatInput component snapshot 
+  value: "Test Message", placeholder: "Placeholder Value", onChange: "[Function]", onKeyDown: "[Function]", disabled: true, showStopButton: false
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        data-test="DesignSystem-Chat"
+      >
+        <div
+          class="ChatInput ChatInput--disabled"
+        >
+          <div
+            class="ChatInput-textarea"
+            contenteditable="false"
+            data-test="DesignSystem-ChatInput"
+            data-text="Placeholder Value"
+            role="textbox"
+            spellcheck="true"
+            tabindex="0"
+          >
+            Test Message
+          </div>
+          <div
+            class="ChatInput-actions"
+          >
+            <button
+              aria-label="Send"
+              class="Button Button--tiny Button--tinySquare Button--primary"
+              data-test="DesignSystem-SendButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  arrow_upward_alt
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <div
+        class="ChatInput ChatInput--disabled"
+      >
+        <div
+          class="ChatInput-textarea"
+          contenteditable="false"
+          data-test="DesignSystem-ChatInput"
+          data-text="Placeholder Value"
+          role="textbox"
+          spellcheck="true"
+          tabindex="0"
+        >
+          Test Message
+        </div>
+        <div
+          class="ChatInput-actions"
+        >
+          <button
+            aria-label="Send"
+            class="Button Button--tiny Button--tinySquare Button--primary"
+            data-test="DesignSystem-SendButton"
+            tabindex="0"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                arrow_upward_alt
+              </i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ChatInput component snapshot 
+  value: "Test Message", placeholder: "Placeholder Value", onChange: "[Function]", onKeyDown: "[Function]", disabled: true, showStopButton: false, enableMention: false
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        data-test="DesignSystem-Chat"
+      >
+        <div
+          class="ChatInput ChatInput--disabled"
+        >
+          <div
+            class="ChatInput-textarea"
+            contenteditable="false"
+            data-test="DesignSystem-ChatInput"
+            data-text="Placeholder Value"
+            role="textbox"
+            spellcheck="true"
+            tabindex="0"
+          >
+            Test Message
+          </div>
+          <div
+            class="ChatInput-actions"
+          >
+            <button
+              aria-label="Send"
+              class="Button Button--tiny Button--tinySquare Button--primary"
+              data-test="DesignSystem-SendButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  arrow_upward_alt
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <div
+        class="ChatInput ChatInput--disabled"
+      >
+        <div
+          class="ChatInput-textarea"
+          contenteditable="false"
+          data-test="DesignSystem-ChatInput"
+          data-text="Placeholder Value"
+          role="textbox"
+          spellcheck="true"
+          tabindex="0"
+        >
+          Test Message
+        </div>
+        <div
+          class="ChatInput-actions"
+        >
+          <button
+            aria-label="Send"
+            class="Button Button--tiny Button--tinySquare Button--primary"
+            data-test="DesignSystem-SendButton"
+            tabindex="0"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                arrow_upward_alt
+              </i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ChatInput component snapshot 
+  value: "Test Message", placeholder: "Placeholder Value", onChange: "[Function]", onKeyDown: "[Function]", disabled: true, showStopButton: false, enableMention: true
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        data-test="DesignSystem-Chat"
+      >
+        <div
+          class="ChatInput ChatInput--disabled"
+        >
+          <div
+            class="ChatInput-textarea"
+            contenteditable="false"
+            data-test="DesignSystem-ChatInput"
+            data-text="Placeholder Value"
+            role="textbox"
+            spellcheck="true"
+            tabindex="0"
+          >
+            Test Message
+          </div>
+          <div
+            class="ChatInput-actions"
+          >
+            <button
+              aria-label="Send"
+              class="Button Button--tiny Button--tinySquare Button--primary"
+              data-test="DesignSystem-SendButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  arrow_upward_alt
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <div
+        class="ChatInput ChatInput--disabled"
+      >
+        <div
+          class="ChatInput-textarea"
+          contenteditable="false"
+          data-test="DesignSystem-ChatInput"
+          data-text="Placeholder Value"
+          role="textbox"
+          spellcheck="true"
+          tabindex="0"
+        >
+          Test Message
+        </div>
+        <div
+          class="ChatInput-actions"
+        >
+          <button
+            aria-label="Send"
+            class="Button Button--tiny Button--tinySquare Button--primary"
+            data-test="DesignSystem-SendButton"
+            tabindex="0"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                arrow_upward_alt
+              </i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ChatInput component snapshot 
+  value: "Test Message", placeholder: "Placeholder Value", onChange: "[Function]", onKeyDown: "[Function]", disabled: true, showStopButton: true
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        data-test="DesignSystem-Chat"
+      >
+        <div
+          class="ChatInput ChatInput--disabled"
+        >
+          <div
+            class="ChatInput-textarea"
+            contenteditable="false"
+            data-test="DesignSystem-ChatInput"
+            data-text="Placeholder Value"
+            role="textbox"
+            spellcheck="true"
+            tabindex="0"
+          >
+            Test Message
+          </div>
+          <div
+            class="ChatInput-actions"
+          >
+            <button
+              aria-label="Stop Generating"
+              class="Button Button--tiny Button--tinySquare Button--alert"
+              data-test="DesignSystem-StopButton"
+              disabled=""
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  stop
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <div
+        class="ChatInput ChatInput--disabled"
+      >
+        <div
+          class="ChatInput-textarea"
+          contenteditable="false"
+          data-test="DesignSystem-ChatInput"
+          data-text="Placeholder Value"
+          role="textbox"
+          spellcheck="true"
+          tabindex="0"
+        >
+          Test Message
+        </div>
+        <div
+          class="ChatInput-actions"
+        >
+          <button
+            aria-label="Stop Generating"
+            class="Button Button--tiny Button--tinySquare Button--alert"
+            data-test="DesignSystem-StopButton"
+            disabled=""
+            tabindex="0"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                stop
+              </i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ChatInput component snapshot 
+  value: "Test Message", placeholder: "Placeholder Value", onChange: "[Function]", onKeyDown: "[Function]", disabled: true, showStopButton: true, enableMention: false
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        data-test="DesignSystem-Chat"
+      >
+        <div
+          class="ChatInput ChatInput--disabled"
+        >
+          <div
+            class="ChatInput-textarea"
+            contenteditable="false"
+            data-test="DesignSystem-ChatInput"
+            data-text="Placeholder Value"
+            role="textbox"
+            spellcheck="true"
+            tabindex="0"
+          >
+            Test Message
+          </div>
+          <div
+            class="ChatInput-actions"
+          >
+            <button
+              aria-label="Stop Generating"
+              class="Button Button--tiny Button--tinySquare Button--alert"
+              data-test="DesignSystem-StopButton"
+              disabled=""
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  stop
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <div
+        class="ChatInput ChatInput--disabled"
+      >
+        <div
+          class="ChatInput-textarea"
+          contenteditable="false"
+          data-test="DesignSystem-ChatInput"
+          data-text="Placeholder Value"
+          role="textbox"
+          spellcheck="true"
+          tabindex="0"
+        >
+          Test Message
+        </div>
+        <div
+          class="ChatInput-actions"
+        >
+          <button
+            aria-label="Stop Generating"
+            class="Button Button--tiny Button--tinySquare Button--alert"
+            data-test="DesignSystem-StopButton"
+            disabled=""
+            tabindex="0"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                stop
+              </i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ChatInput component snapshot 
+  value: "Test Message", placeholder: "Placeholder Value", onChange: "[Function]", onKeyDown: "[Function]", disabled: true, showStopButton: true, enableMention: true
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        data-test="DesignSystem-Chat"
+      >
+        <div
+          class="ChatInput ChatInput--disabled"
+        >
+          <div
+            class="ChatInput-textarea"
+            contenteditable="false"
+            data-test="DesignSystem-ChatInput"
+            data-text="Placeholder Value"
+            role="textbox"
+            spellcheck="true"
+            tabindex="0"
+          >
+            Test Message
+          </div>
+          <div
+            class="ChatInput-actions"
+          >
+            <button
+              aria-label="Stop Generating"
+              class="Button Button--tiny Button--tinySquare Button--alert"
+              data-test="DesignSystem-StopButton"
+              disabled=""
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  stop
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <div
+        class="ChatInput ChatInput--disabled"
+      >
+        <div
+          class="ChatInput-textarea"
+          contenteditable="false"
+          data-test="DesignSystem-ChatInput"
+          data-text="Placeholder Value"
+          role="textbox"
+          spellcheck="true"
+          tabindex="0"
+        >
+          Test Message
+        </div>
+        <div
+          class="ChatInput-actions"
+        >
+          <button
+            aria-label="Stop Generating"
+            class="Button Button--tiny Button--tinySquare Button--alert"
+            data-test="DesignSystem-StopButton"
+            disabled=""
+            tabindex="0"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                stop
+              </i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ChatInput component snapshot 
+  value: "Test Message", placeholder: "Placeholder Value", onChange: "[Function]", onKeyDown: "[Function]", enableMention: false
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        data-test="DesignSystem-Chat"
+      >
+        <div
+          class="ChatInput"
+        >
+          <div
+            class="ChatInput-textarea"
+            contenteditable="true"
+            data-test="DesignSystem-ChatInput"
+            data-text="Placeholder Value"
+            role="textbox"
+            spellcheck="true"
+            tabindex="0"
+          >
+            Test Message
+          </div>
+          <div
+            class="ChatInput-actions"
+          >
+            <button
+              aria-label="Send"
+              class="Button Button--tiny Button--tinySquare Button--primary"
+              data-test="DesignSystem-SendButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  arrow_upward_alt
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <div
+        class="ChatInput"
+      >
+        <div
+          class="ChatInput-textarea"
+          contenteditable="true"
+          data-test="DesignSystem-ChatInput"
+          data-text="Placeholder Value"
+          role="textbox"
+          spellcheck="true"
+          tabindex="0"
+        >
+          Test Message
+        </div>
+        <div
+          class="ChatInput-actions"
+        >
+          <button
+            aria-label="Send"
+            class="Button Button--tiny Button--tinySquare Button--primary"
+            data-test="DesignSystem-SendButton"
+            tabindex="0"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                arrow_upward_alt
+              </i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ChatInput component snapshot 
+  value: "Test Message", placeholder: "Placeholder Value", onChange: "[Function]", onKeyDown: "[Function]", enableMention: true
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        data-test="DesignSystem-Chat"
+      >
+        <div
+          class="ChatInput"
+        >
+          <div
+            class="ChatInput-textarea"
+            contenteditable="true"
+            data-test="DesignSystem-ChatInput"
+            data-text="Placeholder Value"
+            role="textbox"
+            spellcheck="true"
+            tabindex="0"
+          >
+            Test Message
+          </div>
+          <div
+            class="ChatInput-actions"
+          >
+            <button
+              aria-label="Send"
+              class="Button Button--tiny Button--tinySquare Button--primary"
+              data-test="DesignSystem-SendButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  arrow_upward_alt
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <div
+        class="ChatInput"
+      >
+        <div
+          class="ChatInput-textarea"
+          contenteditable="true"
+          data-test="DesignSystem-ChatInput"
+          data-text="Placeholder Value"
+          role="textbox"
+          spellcheck="true"
+          tabindex="0"
+        >
+          Test Message
+        </div>
+        <div
+          class="ChatInput-actions"
+        >
+          <button
+            aria-label="Send"
+            class="Button Button--tiny Button--tinySquare Button--primary"
+            data-test="DesignSystem-SendButton"
+            tabindex="0"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                arrow_upward_alt
+              </i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ChatInput component snapshot 
+  value: "Test Message", placeholder: "Placeholder Value", onChange: "[Function]", onKeyDown: "[Function]", showStopButton: false
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        data-test="DesignSystem-Chat"
+      >
+        <div
+          class="ChatInput"
+        >
+          <div
+            class="ChatInput-textarea"
+            contenteditable="true"
+            data-test="DesignSystem-ChatInput"
+            data-text="Placeholder Value"
+            role="textbox"
+            spellcheck="true"
+            tabindex="0"
+          >
+            Test Message
+          </div>
+          <div
+            class="ChatInput-actions"
+          >
+            <button
+              aria-label="Send"
+              class="Button Button--tiny Button--tinySquare Button--primary"
+              data-test="DesignSystem-SendButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  arrow_upward_alt
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <div
+        class="ChatInput"
+      >
+        <div
+          class="ChatInput-textarea"
+          contenteditable="true"
+          data-test="DesignSystem-ChatInput"
+          data-text="Placeholder Value"
+          role="textbox"
+          spellcheck="true"
+          tabindex="0"
+        >
+          Test Message
+        </div>
+        <div
+          class="ChatInput-actions"
+        >
+          <button
+            aria-label="Send"
+            class="Button Button--tiny Button--tinySquare Button--primary"
+            data-test="DesignSystem-SendButton"
+            tabindex="0"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                arrow_upward_alt
+              </i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ChatInput component snapshot 
+  value: "Test Message", placeholder: "Placeholder Value", onChange: "[Function]", onKeyDown: "[Function]", showStopButton: false, enableMention: false
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        data-test="DesignSystem-Chat"
+      >
+        <div
+          class="ChatInput"
+        >
+          <div
+            class="ChatInput-textarea"
+            contenteditable="true"
+            data-test="DesignSystem-ChatInput"
+            data-text="Placeholder Value"
+            role="textbox"
+            spellcheck="true"
+            tabindex="0"
+          >
+            Test Message
+          </div>
+          <div
+            class="ChatInput-actions"
+          >
+            <button
+              aria-label="Send"
+              class="Button Button--tiny Button--tinySquare Button--primary"
+              data-test="DesignSystem-SendButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  arrow_upward_alt
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <div
+        class="ChatInput"
+      >
+        <div
+          class="ChatInput-textarea"
+          contenteditable="true"
+          data-test="DesignSystem-ChatInput"
+          data-text="Placeholder Value"
+          role="textbox"
+          spellcheck="true"
+          tabindex="0"
+        >
+          Test Message
+        </div>
+        <div
+          class="ChatInput-actions"
+        >
+          <button
+            aria-label="Send"
+            class="Button Button--tiny Button--tinySquare Button--primary"
+            data-test="DesignSystem-SendButton"
+            tabindex="0"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                arrow_upward_alt
+              </i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ChatInput component snapshot 
+  value: "Test Message", placeholder: "Placeholder Value", onChange: "[Function]", onKeyDown: "[Function]", showStopButton: false, enableMention: true
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        data-test="DesignSystem-Chat"
+      >
+        <div
+          class="ChatInput"
+        >
+          <div
+            class="ChatInput-textarea"
+            contenteditable="true"
+            data-test="DesignSystem-ChatInput"
+            data-text="Placeholder Value"
+            role="textbox"
+            spellcheck="true"
+            tabindex="0"
+          >
+            Test Message
+          </div>
+          <div
+            class="ChatInput-actions"
+          >
+            <button
+              aria-label="Send"
+              class="Button Button--tiny Button--tinySquare Button--primary"
+              data-test="DesignSystem-SendButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  arrow_upward_alt
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <div
+        class="ChatInput"
+      >
+        <div
+          class="ChatInput-textarea"
+          contenteditable="true"
+          data-test="DesignSystem-ChatInput"
+          data-text="Placeholder Value"
+          role="textbox"
+          spellcheck="true"
+          tabindex="0"
+        >
+          Test Message
+        </div>
+        <div
+          class="ChatInput-actions"
+        >
+          <button
+            aria-label="Send"
+            class="Button Button--tiny Button--tinySquare Button--primary"
+            data-test="DesignSystem-SendButton"
+            tabindex="0"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                arrow_upward_alt
+              </i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ChatInput component snapshot 
+  value: "Test Message", placeholder: "Placeholder Value", onChange: "[Function]", onKeyDown: "[Function]", showStopButton: true
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        data-test="DesignSystem-Chat"
+      >
+        <div
+          class="ChatInput"
+        >
+          <div
+            class="ChatInput-textarea"
+            contenteditable="true"
+            data-test="DesignSystem-ChatInput"
+            data-text="Placeholder Value"
+            role="textbox"
+            spellcheck="true"
+            tabindex="0"
+          >
+            Test Message
+          </div>
+          <div
+            class="ChatInput-actions"
+          >
+            <button
+              aria-label="Stop Generating"
+              class="Button Button--tiny Button--tinySquare Button--alert"
+              data-test="DesignSystem-StopButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  stop
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <div
+        class="ChatInput"
+      >
+        <div
+          class="ChatInput-textarea"
+          contenteditable="true"
+          data-test="DesignSystem-ChatInput"
+          data-text="Placeholder Value"
+          role="textbox"
+          spellcheck="true"
+          tabindex="0"
+        >
+          Test Message
+        </div>
+        <div
+          class="ChatInput-actions"
+        >
+          <button
+            aria-label="Stop Generating"
+            class="Button Button--tiny Button--tinySquare Button--alert"
+            data-test="DesignSystem-StopButton"
+            tabindex="0"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                stop
+              </i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ChatInput component snapshot 
+  value: "Test Message", placeholder: "Placeholder Value", onChange: "[Function]", onKeyDown: "[Function]", showStopButton: true, enableMention: false
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        data-test="DesignSystem-Chat"
+      >
+        <div
+          class="ChatInput"
+        >
+          <div
+            class="ChatInput-textarea"
+            contenteditable="true"
+            data-test="DesignSystem-ChatInput"
+            data-text="Placeholder Value"
+            role="textbox"
+            spellcheck="true"
+            tabindex="0"
+          >
+            Test Message
+          </div>
+          <div
+            class="ChatInput-actions"
+          >
+            <button
+              aria-label="Stop Generating"
+              class="Button Button--tiny Button--tinySquare Button--alert"
+              data-test="DesignSystem-StopButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  stop
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <div
+        class="ChatInput"
+      >
+        <div
+          class="ChatInput-textarea"
+          contenteditable="true"
+          data-test="DesignSystem-ChatInput"
+          data-text="Placeholder Value"
+          role="textbox"
+          spellcheck="true"
+          tabindex="0"
+        >
+          Test Message
+        </div>
+        <div
+          class="ChatInput-actions"
+        >
+          <button
+            aria-label="Stop Generating"
+            class="Button Button--tiny Button--tinySquare Button--alert"
+            data-test="DesignSystem-StopButton"
+            tabindex="0"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                stop
+              </i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`ChatInput component snapshot 
+  value: "Test Message", placeholder: "Placeholder Value", onChange: "[Function]", onKeyDown: "[Function]", showStopButton: true, enableMention: true
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        data-test="DesignSystem-Chat"
+      >
+        <div
+          class="ChatInput"
+        >
+          <div
+            class="ChatInput-textarea"
+            contenteditable="true"
+            data-test="DesignSystem-ChatInput"
+            data-text="Placeholder Value"
+            role="textbox"
+            spellcheck="true"
+            tabindex="0"
+          >
+            Test Message
+          </div>
+          <div
+            class="ChatInput-actions"
+          >
+            <button
+              aria-label="Stop Generating"
+              class="Button Button--tiny Button--tinySquare Button--alert"
+              data-test="DesignSystem-StopButton"
+              tabindex="0"
+            >
+              <div
+                class="Button-icon"
+                data-test="DesignSystem-Button--Icon-Wrapper"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Button--Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  stop
+                </i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-test="DesignSystem-Chat"
+    >
+      <div
+        class="ChatInput"
+      >
+        <div
+          class="ChatInput-textarea"
+          contenteditable="true"
+          data-test="DesignSystem-ChatInput"
+          data-text="Placeholder Value"
+          role="textbox"
+          spellcheck="true"
+          tabindex="0"
+        >
+          Test Message
+        </div>
+        <div
+          class="ChatInput-actions"
+        >
+          <button
+            aria-label="Stop Generating"
+            class="Button Button--tiny Button--tinySquare Button--alert"
+            data-test="DesignSystem-StopButton"
+            tabindex="0"
+          >
+            <div
+              class="Button-icon"
+              data-test="DesignSystem-Button--Icon-Wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                stop
+              </i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
