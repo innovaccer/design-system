@@ -4,6 +4,8 @@ menus:
     link: /patterns/overview/all-patterns/
   - label: Browser Tab Title
     link: /patterns/browserTabTitle/usage/
+  - label: Conversation
+    link: /patterns/conversation/usage/
   - label: Email
     link: /patterns/email/usage/
   - label: File Uploader

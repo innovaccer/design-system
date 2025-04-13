@@ -1,0 +1,248 @@
+import statusRolling from "./images/status-rolling.gif";
+import sendingMessage from "./images/sending-message.gif";
+import unreadMessage from "./images/unread-message.gif";
+
+#### Sending a Message
+
+<br />
+
+<img width="100%" height="auto" src={sendingMessage} alt="Opening of Combobox" />
+<Caption>Sending a Message</Caption>
+
+<br />
+
+##### Message Appearing in its Loading State
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"33%",  textAlign: "left"}}>Initial</th>
+      <th style={{width:"33%",  textAlign: "left"}}>Final</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>State</td>
+      <td>Default</td>
+      <td>Loading</td>
+    </tr>
+  </tbody>
+</table>
+
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%",  textAlign: "left"}}>Curve</th>
+      <th style={{width:"33%",  textAlign: "left"}}>Duration</th>
+      <th style={{width:"33%",  textAlign: "left"}}>Delay</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Cubic-bezier (0, 0, 0.3, 1)</td>
+      <td>240ms</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+
+##### Transitioning
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"33%",  textAlign: "left"}}>Initial</th>
+      <th style={{width:"33%",  textAlign: "left"}}>Final</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>State</td>
+      <td>Loading</td>
+      <td>Delivered</td>
+    </tr>
+  </tbody>
+</table>
+
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%",  textAlign: "left"}}>Curve</th>
+      <th style={{width:"33%",  textAlign: "left"}}>Duration</th>
+      <th style={{width:"33%",  textAlign: "left"}}>Delay</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Cubic-bezier (0.2, 0, 0.38, 0.9)</td>
+      <td>80ms</td>
+      <td>640ms</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+
+#### Status Rolling
+
+These are the defined breakpoints for three different parent container sizes:
+
+<br />
+
+<img width="100%" height="auto" src={statusRolling} alt="Opening of Combobox" />
+<Caption>Status Rolling</Caption>
+
+<br />
+
+##### Status Disappearing
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"33%",  textAlign: "left"}}>Initial</th>
+      <th style={{width:"33%",  textAlign: "left"}}>Final</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>State</td>
+      <td>Initial</td>
+      <td>Final</td>
+    </tr>
+  </tbody>
+</table>
+
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%",  textAlign: "left"}}>Curve</th>
+      <th style={{width:"33%",  textAlign: "left"}}>Duration</th>
+      <th style={{width:"33%",  textAlign: "left"}}>Delay</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Cubic-bezier (0, 0, 0.3, 1)</td>
+      <td>160ms</td>
+      <td>80ms</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+
+
+##### Second Message Appearing
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"33%",  textAlign: "left"}}>Initial</th>
+      <th style={{width:"33%",  textAlign: "left"}}>Final</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>State</td>
+      <td>Initial</td>
+      <td>Final</td>
+    </tr>
+  </tbody>
+</table>
+
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%",  textAlign: "left"}}>Curve</th>
+      <th style={{width:"33%",  textAlign: "left"}}>Duration</th>
+      <th style={{width:"33%",  textAlign: "left"}}>Delay</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Cubic-bezier (0, 0, 0.38, 0.9)</td>
+      <td>160ms</td>
+      <td>240ms</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+
+
+##### Status Appearing for The Second Message
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"33%",  textAlign: "left"}}>Initial</th>
+      <th style={{width:"33%",  textAlign: "left"}}>Final</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>State</td>
+      <td>Initial</td>
+      <td>Final</td>
+    </tr>
+  </tbody>
+</table>
+
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%",  textAlign: "left"}}>Curve</th>
+      <th style={{width:"33%",  textAlign: "left"}}>Duration</th>
+      <th style={{width:"33%",  textAlign: "left"}}>Delay</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Cubic-bezier (0, 0, 0.38, 0.9)</td>
+      <td>80ms</td>
+      <td>80ms</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+
+#### Unread Message
+
+<br />
+
+<img width="100%" height="auto" src={unreadMessage} alt="Opening of Combobox" />
+<Caption>Unread Message Animation</Caption>
+
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"33%",  textAlign: "left"}}>Initial</th>
+      <th style={{width:"33%",  textAlign: "left"}}>Final</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>State</td>
+      <td>Initial</td>
+      <td>Final</td>
+    </tr>
+  </tbody>
+</table>
+
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%",  textAlign: "left"}}>Curve</th>
+      <th style={{width:"33%",  textAlign: "left"}}>Duration</th>
+      <th style={{width:"33%",  textAlign: "left"}}>Delay</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Cubic-bezier (0, 0, 0.3, 1)</td>
+      <td>160ms</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
