@@ -149,6 +149,7 @@
   box-sizing: border-box;
   padding-left: var(--spacing-l);
   padding-right: var(--spacing-l);
+  flex-grow: 1;
 }
 
 .Grid-cell--body {

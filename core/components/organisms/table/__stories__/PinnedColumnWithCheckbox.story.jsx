@@ -3,7 +3,7 @@ import { Card, Table } from '@/index';
 import { AsyncTable, SyncTable } from './_common_/types';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
 
-export const pinnedColumns = () => {
+export const pinnedColumnsWithCheckbox = () => {
   const data = [
     {
       s_no: 1,
@@ -171,45 +171,46 @@ const customCode = `() => {
     {
       name: 's_no',
       displayName: 'S.no.',
-      width: '5%',
+      width: '20px',
       sorting: false,
       pinned: 'left'
     },
     {
       name: 'empi',
       displayName: 'EMPI',
-      width: '10%',
+      width: '20px',
       sorting: false,
       pinned: 'left'
     },
     {
       name: 'first_name',
       displayName: 'First Name',
-      width: '20%',
+      width: '20px',
       sorting: false
     },
     {
       name: 'last_name',
       displayName: 'Last Name',
-      width: '20%',
+      width: '20px',
       sorting: false
     },
     {
       name: 'dob',
       displayName: 'DOB',
-      width: '20%',
+      width: '20px',
       sorting: false
     },
     {
       name: 'gender',
       displayName: 'Gender',
-      width: '20%',
+      width: '20px',
       sorting: false
     },
     {
       name: 'facility',
       displayName: 'Facility',
-      sorting: false
+      sorting: false,
+      width: '20px',
     },
   ];
 
@@ -233,7 +234,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Table/Pinned Columns',
+  title: 'Components/Table/Pinned Columns With Checkbox',
   component: Table,
   parameters: {
     docs: {

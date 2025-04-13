@@ -90,6 +90,7 @@ export const GridRow = (props: GridRowProps) => {
       });
 
       const pinnedClasses = classNames({
+        'w-100': !pinned,
         'bg-light': pinned,
         [styles['Grid-cellGroup--pinned']]: pinned,
         [styles[`Grid-cellGroup--pinned-${pinned}`]]: pinned,
