@@ -1,5 +1,5 @@
 import React from 'react';
-import { AIResponse, Text, Sara, PlaceholderParagraph } from '@/index';
+import { AIResponse, Text, PlaceholderParagraph } from '@/index';
 import figma from '@figma/code-connect';
 
 figma.connect(AIResponse, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=49482-18194', {
@@ -14,9 +14,6 @@ figma.connect(AIResponse, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/M
       ),
       Default: <Text>Hello, would you like to book an appointment with your cardiologist?</Text>,
       Hover: <Text>Hello, would you like to book an appointment with your cardiologist?</Text>,
-    }),
-    avatar: figma.boolean('Avatar', {
-      true: <Sara />,
     }),
     metaData: figma.boolean('Metadata', {
       true: (
@@ -38,10 +35,9 @@ figma.connect(AIResponse, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/M
       ),
     }),
   },
-  example: ({ avatar, content, metaData, actionBar }) => {
+  example: ({ content, metaData, actionBar }) => {
     return (
       <div className="d-flex w-50">
-        {avatar}
         <div className="ml-4">
           <AIResponse>
             <AIResponse.Body>{content}</AIResponse.Body>
