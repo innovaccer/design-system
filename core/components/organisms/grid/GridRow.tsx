@@ -35,6 +35,7 @@ export const GridRow = (props: GridRowProps) => {
   const rowClasses = classNames(styles['Grid-row'], styles['Grid-row--body'], {
     [styles['Grid-row--selected']]: data._selected,
     [styles['Grid-row--disabled']]: data.disabled,
+    [styles['Grid-row--activated']]: data._activated,
   });
 
   const onClickHandler = React.useCallback(() => {
@@ -88,31 +89,40 @@ export const GridRow = (props: GridRowProps) => {
     if (currSchema.length) {
       const classes = classNames({
         [styles['Grid-cellGroup']]: true,
-        [styles['Grid-cellGroup--pinned']]: pinned,
-        [styles[`Grid-cellGroup--pinned-${pinned}`]]: pinned,
+        [styles['Grid-cellWrapper--pinned']]: pinned,
+        [styles[`Grid-cellWrapper--pinned-${pinned}`]]: pinned,
         [styles['Grid-cellGroup--main']]: !pinned,
       });
 
-      return (
-        <div className={classes} data-test="DesignSystem-Grid-cellGroup">
-          {renderCheckbox(shouldRenderCheckbox)}
-          {currSchema.map((s, index) => {
-            let cI = pinned === 'left' ? index : leftPinnedSchema.length + index;
-            if (pinned === 'right') cI += unpinnedSchema.length;
+      const pinnedClasses = classNames({
+        'w-100': !pinned,
+        'bg-light': pinned,
+        [styles['Grid-cellGroup--pinned']]: pinned,
+        [styles[`Grid-cellGroup--pinned-${pinned}`]]: pinned,
+      });
 
-            return (
-              <Cell
-                key={`${rI}-${cI}`}
-                rowIndex={rI}
-                colIndex={cI}
-                firstCell={!index}
-                schema={s}
-                data={data}
-                expandedState={[expanded, setExpanded]}
-                nestedRowData={nestedRowData}
-              />
-            );
-          })}
+      return (
+        <div className={pinnedClasses}>
+          <div className={classes} data-test="DesignSystem-Grid-cellGroup">
+            {renderCheckbox(shouldRenderCheckbox)}
+            {currSchema.map((s, index) => {
+              let cI = pinned === 'left' ? index : leftPinnedSchema.length + index;
+              if (pinned === 'right') cI += unpinnedSchema.length;
+
+              return (
+                <Cell
+                  key={`${rI}-${cI}`}
+                  rowIndex={rI}
+                  colIndex={cI}
+                  firstCell={!index}
+                  schema={s}
+                  data={data}
+                  expandedState={[expanded, setExpanded]}
+                  nestedRowData={nestedRowData}
+                />
+              );
+            })}
+          </div>
         </div>
       );
     }

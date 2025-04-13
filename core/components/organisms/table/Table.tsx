@@ -36,11 +36,13 @@ interface TableSyncProps {
    *      _selected?: boolean,
    *      disabled?: boolean,
    *      _expandNestedRow?: boolean,
+   *      _activated?: boolean,
    *    }
    *
    *    `_selected`  Denotes row selection
    *    `disabled` Denotes disabled row
    *    `_expandNestedRow` Denotes whether to default expand the nested row
+   *    `_activated` Denotes row activation
    * </pre>
    */
   data: GridProps['data'];
@@ -582,6 +584,27 @@ export class Table extends React.Component<TableProps, TableState> {
           }
         );
       }
+    }
+
+    if (prevProps.data !== this.props.data) {
+      const { data = [], schema = [] } = this.props;
+      this.setState(
+        {
+          data,
+          displayData: data,
+          schema,
+          loading: this.props.loading || false,
+          error: this.props.error || false,
+          errorType: this.props.errorType,
+          page: 1,
+          totalRecords: data.length || 0,
+          selectAll: getSelectAll([]),
+          totalRowsCount: data.length || 0,
+        },
+        () => {
+          this.updateData();
+        }
+      );
     }
 
     if (prevState.page !== this.state.page) {
