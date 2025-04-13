@@ -36,11 +36,13 @@ interface TableSyncProps {
    *      _selected?: boolean,
    *      disabled?: boolean,
    *      _expandNestedRow?: boolean,
+   *      _activated?: boolean,
    *    }
    *
    *    `_selected`  Denotes row selection
    *    `disabled` Denotes disabled row
    *    `_expandNestedRow` Denotes whether to default expand the nested row
+   *    `_activated` Denotes row activation
    * </pre>
    */
   data: GridProps['data'];

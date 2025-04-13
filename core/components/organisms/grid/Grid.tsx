@@ -151,6 +151,7 @@ export type RowData = Record<string, any> & {
   _selected?: boolean;
   disabled?: boolean;
   _expandNestedRow?: boolean;
+  _activated?: boolean;
 };
 
 export type GridSize = 'comfortable' | 'standard' | 'compressed' | 'tight';

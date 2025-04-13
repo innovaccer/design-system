@@ -493,6 +493,12 @@
   box-shadow: var(--shadow-spread) color-mod(var(--primary) a(var(--opacity-4)));
 }
 
+/* Activated States */
+
+.Grid-row--activated {
+  background: var(--primary-lightest);
+}
+
 /* Pinned Columns Default State */
 
 .Grid--resource .Grid-row--body:hover .Grid-cellWrapper--pinned {

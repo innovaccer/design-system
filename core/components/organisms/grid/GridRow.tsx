@@ -31,6 +31,7 @@ export const GridRow = (props: GridRowProps) => {
   const rowClasses = classNames(styles['Grid-row'], styles['Grid-row--body'], {
     [styles['Grid-row--selected']]: data._selected,
     [styles['Grid-row--disabled']]: data.disabled,
+    [styles['Grid-row--activated']]: data._activated,
   });
 
   const onClickHandler = React.useCallback(() => {
