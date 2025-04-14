@@ -586,6 +586,27 @@ export class Table extends React.Component<TableProps, TableState> {
       }
     }
 
+    if (prevProps.data !== this.props.data) {
+      const { data = [], schema = [] } = this.props;
+      this.setState(
+        {
+          data,
+          displayData: data,
+          schema,
+          loading: this.props.loading || false,
+          error: this.props.error || false,
+          errorType: this.props.errorType,
+          page: 1,
+          totalRecords: data.length || 0,
+          selectAll: getSelectAll([]),
+          totalRowsCount: data.length || 0,
+        },
+        () => {
+          this.updateData();
+        }
+      );
+    }
+
     if (prevState.page !== this.state.page) {
       const { onPageChange } = this.props;
       if (onPageChange) onPageChange(this.state.page);

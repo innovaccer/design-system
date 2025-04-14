@@ -1,6 +1,6 @@
 import * as React from 'react';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
-import { Card, Table, Menu, Avatar, Text } from '@/index';
+import { Card, Table, Menu, Avatar, Text, Sidesheet, Listbox, Button } from '@/index';
 import { AsyncTable, SyncTable } from '../_common_/types';
 import { action } from '@/utils/action';
 
@@ -12,8 +12,6 @@ const data = [
     status: 'In Progress',
     lastUpdated: 'June 20, 2020',
     recipients: 11846,
-    _selected: true,
-    _activated: true,
   },
   {
     firstName: 'Frazer',
@@ -22,7 +20,6 @@ const data = [
     lastUpdated: 'June 19, 2020',
     name: 'HbA1c Test due',
     recipients: 12846,
-    _activated: true,
   },
   {
     firstName: 'Lemmie',
@@ -31,7 +28,6 @@ const data = [
     status: 'Draft',
     lastUpdated: 'May 19, 2020',
     recipients: 118467,
-    _selected: true,
   },
   {
     firstName: 'Randy',
@@ -76,6 +72,20 @@ const data = [
 ];
 
 export const activatedState = () => {
+  const [tableData, setTableData] = React.useState(data);
+  const [selectedRow, setSelectedRow] = React.useState(null);
+  const [isSidesheetOpen, setIsSidesheetOpen] = React.useState(false);
+
+  const handleRowClick = (rowData, rowIndex) => {
+    const updatedData = tableData.map((row, index) => ({
+      ...row,
+      _activated: index === rowIndex,
+    }));
+    setTableData(updatedData);
+    setSelectedRow(rowData);
+    setIsSidesheetOpen(true);
+  };
+
   const statusAppearance = {
     'In Progress': 'info',
     Scheduled: 'warning',
@@ -153,43 +163,92 @@ export const activatedState = () => {
   ];
 
   return (
-    <Card className="overflow-hidden">
-      <Table
-        loaderSchema={loaderSchema}
-        showMenu={false}
-        type="resource"
-        data={data}
-        schema={schema}
-        withHeader={true}
-        withCheckbox={true}
-        filterPosition="HEADER"
-        filterList={{
-          status: ['In Progress', 'Scheduled', 'Draft', 'Failed'],
-        }}
-        onSelect={(rowIndex, selected, selectedList, selectAll) =>
-          action(
-            `on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(
-              selectedList
-            )} selectAll: ${selectAll}`
-          )()
-        }
-        headerOptions={{
-          withSearch: true,
-        }}
-        onSearch={(currData, searchTerm) => {
-          return currData.filter(
-            (d) =>
-              d.firstName.toLowerCase().match(searchTerm.toLowerCase()) ||
-              d.lastName.toLowerCase().match(searchTerm.toLowerCase()) ||
-              d.name.toLowerCase().match(searchTerm.toLowerCase())
-          );
-        }}
-        withPagination={true}
-        paginationType="basic"
-        pageSize={4}
-        onPageChange={(newPage) => action(`on-page-change:- ${newPage}`)()}
-      />
-    </Card>
+    <>
+      <Card className="overflow-hidden">
+        <Table
+          loaderSchema={loaderSchema}
+          showMenu={false}
+          type="resource"
+          data={tableData}
+          schema={schema}
+          withHeader={true}
+          withCheckbox={true}
+          filterPosition="HEADER"
+          filterList={{
+            status: ['In Progress', 'Scheduled', 'Draft', 'Failed'],
+          }}
+          onRowClick={handleRowClick}
+          headerOptions={{
+            withSearch: true,
+          }}
+          onSearch={(currData, searchTerm) => {
+            return currData.filter(
+              (d) =>
+                d.firstName.toLowerCase().match(searchTerm.toLowerCase()) ||
+                d.lastName.toLowerCase().match(searchTerm.toLowerCase()) ||
+                d.name.toLowerCase().match(searchTerm.toLowerCase())
+            );
+          }}
+          withPagination={true}
+          paginationType="basic"
+          pageSize={4}
+          onPageChange={(newPage) => action(`on-page-change:- ${newPage}`)()}
+        />
+      </Card>
+      {isSidesheetOpen && (
+        <Sidesheet
+          open={isSidesheetOpen}
+          onClose={() => setIsSidesheetOpen(false)}
+          headerOptions={{
+            heading: `${selectedRow.firstName} ${selectedRow.lastName} `,
+            subHeading: selectedRow.name,
+          }}
+        >
+          <div>
+            <Listbox type="resource" size="standard" showDivider={true} className="border mt-6">
+              <Listbox.Item>
+                <div className="d-flex align-items-center">
+                  <Text weight="strong" className="mr-4">
+                    Name:
+                  </Text>
+                  <Text>{selectedRow.name}</Text>
+                </div>
+              </Listbox.Item>
+              <Listbox.Item>
+                <div className="d-flex align-items-center">
+                  <Text weight="strong" className="mr-4">
+                    Status:
+                  </Text>
+                  <Text>{selectedRow.status}</Text>
+                </div>
+              </Listbox.Item>
+              <Listbox.Item>
+                <div className="d-flex align-items-center">
+                  <Text weight="strong" className="mr-4">
+                    Last Updated:
+                  </Text>
+                  <Text>{selectedRow.lastUpdated}</Text>
+                </div>
+              </Listbox.Item>
+              <Listbox.Item>
+                <div className="d-flex align-items-center">
+                  <Text weight="strong" className="mr-4">
+                    Recipients:
+                  </Text>
+                  <Text>{selectedRow.recipients}</Text>
+                </div>
+              </Listbox.Item>
+            </Listbox>
+            <div className="mt-8 d-flex justify-content-end">
+              <Button appearance="primary" className="mr-4">
+                Edit
+              </Button>
+              <Button appearance="alert">Delete</Button>
+            </div>
+          </div>
+        </Sidesheet>
+      )}
+    </>
   );
 };
 
@@ -197,11 +256,25 @@ const customCode = `
 () => {
   const data = ${JSON.stringify(data.slice(0, 10), null, 4)};
 
+  const [tableData, setTableData] = React.useState(data);
+  const [selectedRow, setSelectedRow] = React.useState(null);
+  const [isSidesheetOpen, setIsSidesheetOpen] = React.useState(false);
+
+  const handleRowClick = (rowData, rowIndex) => {
+    const updatedData = tableData.map((row, index) => ({
+      ...row,
+      _activated: index === rowIndex,
+    }));
+    setTableData(updatedData);
+    setSelectedRow(rowData);
+    setIsSidesheetOpen(true);
+  };
+
   const statusAppearance = {
     'In Progress': 'info',
-    'Scheduled': 'warning',
-    'Draft': 'default',
-    'Failed': 'alert'
+    Scheduled: 'warning',
+    Draft: 'default',
+    Failed: 'alert',
   };
 
   const schema = [
@@ -210,11 +283,11 @@ const customCode = `
       displayName: 'Name',
       width: '30%',
       cellType: 'WITH_META_LIST',
-      sorting: false,
-      translate: a => ({
+      translate: (a) => ({
         title: a.name,
-        metaList: [\`\${a.recipients} recipients\`]
+        metaList: [\`\${ a.recipients } recipients\`],
       }),
+      sorting: false,
     },
     {
       name: 'status',
@@ -226,7 +299,7 @@ const customCode = `
         { label: 'In Progress', value: 'In Progress' },
         { label: 'Scheduled', value: 'Scheduled' },
         { label: 'Draft', value: 'Draft' },
-        { label: 'Failed', value: 'Failed' }
+        { label: 'Failed', value: 'Failed' },
       ],
       onFilterChange: (a, filters) => {
         for (const filter of filters) {
@@ -234,13 +307,13 @@ const customCode = `
         }
         return false;
       },
-      translate: a => {
+      translate: (a) => {
         const status = a.status;
-        return ({
+        return {
           title: status,
-          statusAppearance: statusAppearance[status]
-        });
-      }
+          statusAppearance: statusAppearance[status],
+        };
+      },
     },
     {
       name: 'lastUpdated',
@@ -253,63 +326,120 @@ const customCode = `
       displayName: '',
       sorting: false,
       width: '20%',
-      cellRenderer: (props) => {
-        const { data } = props;
-        return (
-          <div className="d-flex align-items-center justify-content-end flex-grow-1">
-            <Avatar firstName={data.firstName} lastName={data.lastName} />
-            <div className="ml-6">
-              <Menu trigger={<Menu.Trigger appearance="transparent" />}>
-                <Menu.List>
-                  <Menu.Item>
-                    <Text>Edit</Text>
-                  </Menu.Item>
-                  <Menu.Item>
-                    <Text>Delete</Text>
-                  </Menu.Item>
-                </Menu.List>
-              </Menu>
-            </div>
+      cellRenderer: (props) => (
+        <div className="d-flex align-items-center justify-content-end flex-grow-1">
+          <Avatar firstName={props.data.firstName} lastName={props.data.lastName} />
+          <div className="ml-6">
+            <Menu trigger={<Menu.Trigger appearance="transparent" />}>
+              <Menu.List>
+                <Menu.Item>
+                  <Text>Edit</Text>
+                </Menu.Item>
+                <Menu.Item>
+                  <Text>Delete</Text>
+                </Menu.Item>
+              </Menu.List>
+            </Menu>
           </div>
-        );
-      }
-    }
+        </div>
+      ),
+    },
   ];
 
   return (
-    <Card className="overflow-hidden">
-      <Table
-        showMenu={false}
-        type="resource"
-        data={data}
-        schema={schema}
-        withHeader={true}
-        withCheckbox={true}
-        filterPosition="HEADER"
-        onSelect={(rowIndex, selected, selectedList, selectAll) =>
+    <>
+      <Card className="overflow-hidden">
+        <Table
+          showMenu={false}
+          type="resource"
+          data={tableData}
+          schema={schema}
+          withHeader={true}
+          withCheckbox={true}
+          filterPosition="HEADER"
+          onSelect={(rowIndex, selected, selectedList, selectAll) =>
           console.log(\`on-select:- rowIndex: \${rowIndex} selected: \${selected} selectedList: \${JSON.stringify(selectedList)} selectAll: \${selectAll}\`)
         }
-        headerOptions={{
-          withSearch: true
-        }}
-        filterList={{
-          status: ['In Progress', 'Scheduled', 'Draft', 'Failed']
-        }}
-        onSearch={(currData, searchTerm) => {
-          return currData.filter(d =>
-            d.firstName.toLowerCase().match(searchTerm.toLowerCase())
-            || d.lastName.toLowerCase().match(searchTerm.toLowerCase())
-            || d.name.toLowerCase().match(searchTerm.toLowerCase())
-          );
-        }}
-        withPagination={true}
-        paginationType="basic"
-        pageSize={4}
-        onPageChange={newPage => console.log(\`on-page-change:- \${newPage}\`)}
-      />
-    </Card>
+          
+          onRowClick={handleRowClick}
+          headerOptions={{
+            withSearch: true,
+          }}
+          filterList={{
+            status: ['In Progress', 'Scheduled', 'Draft', 'Failed'],
+          }}
+          onSearch={(currData, searchTerm) => {
+            return currData.filter(
+              (d) =>
+                d.firstName.toLowerCase().match(searchTerm.toLowerCase()) ||
+                d.lastName.toLowerCase().match(searchTerm.toLowerCase()) ||
+                d.name.toLowerCase().match(searchTerm.toLowerCase())
+            );
+          }}
+          withPagination={true}
+          paginationType="basic"
+          pageSize={4}
+          onPageChange={(newPage) => action(\`on - page - change: - \${ newPage }\`)()}
+        />
+      </Card>
+      {isSidesheetOpen && (
+        <Sidesheet
+          open={isSidesheetOpen}
+          onClose={() => setIsSidesheetOpen(false)}
+          headerOptions={{
+            heading: \`\${selectedRow.firstName} \${selectedRow.lastName} \`,
+            subHeading: selectedRow.name,
+          }}
+        >
+          <div>
+            <Listbox type="resource" size="standard" showDivider={true} className="border mt-6">
+              <Listbox.Item>
+                <div className="d-flex align-items-center">
+                  <Text weight="strong" className="mr-4">
+                    Name:
+                  </Text>
+                  <Text>{selectedRow.name}</Text>
+                </div>
+              </Listbox.Item>
+              <Listbox.Item>
+                <div className="d-flex align-items-center">
+                  <Text weight="strong" className="mr-4">
+                    Status:
+                  </Text>
+                  <Text>{selectedRow.status}</Text>
+                </div>
+              </Listbox.Item>
+              <Listbox.Item>
+                <div className="d-flex align-items-center">
+                  <Text weight="strong" className="mr-4">
+                    Last Updated:
+                  </Text>
+                  <Text>{selectedRow.lastUpdated}</Text>
+                </div>
+              </Listbox.Item>
+              <Listbox.Item>
+                <div className="d-flex align-items-center">
+                  <Text weight="strong" className="mr-4">
+                    Recipients:
+                  </Text>
+                  <Text>{selectedRow.recipients}</Text>
+                </div>
+              </Listbox.Item>
+            </Listbox>
+            <div className="mt-8 d-flex justify-content-end">
+              <Button appearance="primary" className="mr-4" onClick={() => alert('Edit action triggered')}>
+                Edit
+              </Button>
+              <Button appearance="alert" onClick={() => alert('Delete action triggered')}>
+                Delete
+              </Button>
+            </div>
+          </div>
+        </Sidesheet>
+      )}
+    </>
   );
-};
+}
 `;
 
 export default {

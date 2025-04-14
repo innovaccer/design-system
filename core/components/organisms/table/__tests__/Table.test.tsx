@@ -492,8 +492,8 @@ describe('render Table with selectAll Row option', () => {
   });
 });
 
-describe('render table with selection persistance', () => {
-  it('check for table selection persistance across pages when uniqueColumnName is provided', () => {
+describe('render table with selection persistence', () => {
+  it('check for table selection persistence across pages when uniqueColumnName is provided', () => {
     const schema = [
       { name: 'name', displayName: 'Name', width: '50%' },
       { name: 'gender', displayName: 'Gender', width: '50%' },
