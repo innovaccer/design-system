@@ -38,6 +38,7 @@
 
 .AIButton:disabled {
   cursor: not-allowed;
+  opacity: var(--opacity-10);
   background: linear-gradient(
     277deg,
     rgba(227, 28, 121, 0.15) 0%,
