@@ -104,6 +104,23 @@ This size is typically suited for information-dense data tables
 
 <br/>
 
+### States
+
+The rows in the Resource Table can have various states, including hover, focus, active, activated, disabled, selected, selected-hover, selected-activated, and selected-disabled.
+
+**Note:** Since the Data Table is designed to display data rather than facilitate interaction, it does not have any interactive states.
+
+![States of Resource Table](./images/states-resource-table.png)
+<Caption>States of Resource Table</Caption>
+
+<ul>
+  <li>**Activated State:** When the view associated with the row is currently displayed.</li>
+  <li>**Selected State:** When the row is selected</li>
+  <li>**Selected - Activated State:** When the view associated to a selected row is currently displayed.</li>
+</ul>
+
+For more information, please refer to the [states](https://design.innovaccer.com/foundations/states/) page.
+
 ### Usage
 #### Table Background
 ##### Default Card
@@ -153,9 +170,20 @@ To indicate a row is not interactive, the opacity of the row should be reduced t
 <br/>
 
 ![Disabled row in a table](./images/table-disabled-row.png)
-
 <Caption> Disabled row in a table</Caption>
+
 <br/>
+
+#### Opening Child View Using Table Row
+
+Table rows can open an associated view either by default or when clicked. The row item will appear in activated state to show that its associated view is currently open.
+
+**Note:** A row can be both selected and in an activated state simultaneously.
+
+![Clicking on table row opens up a child view](./images/child-view.png)
+<Caption>Clicking on table row opens up a child view</Caption>
+
+<br />
 
 #### Exception in a Row
 An exception may be added to a specific row such as a failure or a warning. In that case, use the **Subtle badge component** and resize the list to have **8px** padding from the bottom. 
