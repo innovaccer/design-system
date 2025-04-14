@@ -11,23 +11,42 @@
   position: relative;
 }
 
+.AIIconButton--large {
+  padding: var(--spacing-0-75);
+}
+
+.AIIconButton--regular {
+  padding: var(--spacing);
+}
+
 .AIIconButton:hover {
-  background: var(--secondary);
+  background: linear-gradient(
+    315deg,
+    rgba(227, 28, 121, 0.2) 0%,
+    rgba(231, 56, 79, 0.32) 19.79%,
+    rgba(240, 125, 0, 0.32) 100%
+  );
   color: var(--secondary) !important;
 }
 
 .AIIconButton:active {
-  background: var(--secondary-dark);
+  background: linear-gradient(
+    315deg,
+    rgba(227, 28, 121, 0.31) 0%,
+    rgba(231, 56, 79, 0.48) 19.79%,
+    rgba(240, 125, 0, 0.48) 100%
+  );
   color: var(--secondary-dark) !important;
 }
 
-.AIIconButton:focus {
+.AIIconButton:focus,
+.AIIconButton:focus-visible {
   box-shadow: var(--shadow-spread) var(--secondary-shadow);
+  outline: none;
 }
 
 .AIIconButton:disabled {
   cursor: not-allowed;
-  pointer-events: none;
   background: transparent;
   color: var(--inverse-lightest);
 }
@@ -47,21 +66,21 @@
 }
 
 .AIIconButton-AIIcon--regularTop {
-  bottom: calc(var(--spacing-l) + var(--spacing-s)); /* 14px */
-  left: calc(var(--spacing-l) + var(--spacing-xs)); /* 13px */
+  bottom: calc(var(--spacing-2) + var(--spacing-s));
+  left: calc(var(--spacing-2) + var(--spacing-s));
 }
 
 .AIIconButton-AIIcon--largeTop {
-  bottom: calc(var(--spacing-2) + var(--spacing-s)); /* 18px */
-  left: calc(var(--spacing-2) + var(--spacing-xs)); /* 17px */
+  bottom: calc(var(--spacing-2) + var(--spacing-m));
+  left: calc(var(--spacing-2) + var(--spacing-m));
 }
 
 .AIIconButton-AIIcon--regularBottom {
-  top: calc(var(--spacing-l) + var(--spacing-xs)); /* 13px */
-  left: calc(var(--spacing-l) + var(--spacing-s)); /* 14px */
+  top: calc(var(--spacing-2) + var(--spacing-s));
+  left: calc(var(--spacing-2) + var(--spacing-s));
 }
 
 .AIIconButton-AIIcon--largeBottom {
-  top: calc(var(--spacing-2) + var(--spacing-xs)); /* 17px */
-  left: calc(var(--spacing-2) + var(--spacing-s)); /* 18px */
+  top: calc(var(--spacing-2) + var(--spacing-m));
+  left: calc(var(--spacing-2) + var(--spacing-m));
 }
