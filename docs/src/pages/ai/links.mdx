@@ -1,0 +1,133 @@
+---
+title: Link
+description: Link is used to navigate to a destination.
+tabs: ['Usage', 'Code']
+showMobile: true
+keywords: ['Anchor', 'Hyperlink']
+---
+
+Link is used to navigate to a destination which can be on the same page or a different one.
+
+
+```tsx
+const href = 'http://innovaccer.com';
+  const target = '_blank';
+  const size = 'regular';
+  const disabled = false;
+
+  const options = {
+    href,
+    target,
+    size,
+    disabled,
+  };
+
+  return (
+    <Link {...options} onClick={action('link click')}>
+      Read more
+    </Link>
+  )
+```
+
+
+### Sizes
+Link comes in **2 sizes** - regular and small.
+
+```tsx
+return (
+    <div className="d-flex">
+      <Link href="http://innovaccer.com" size="regular">
+        Regular Link
+      </Link>
+      <Link href="http://innovaccer.com" size="tiny" className="ml-7 mt-2">
+        Tiny Link
+      </Link>
+    </div>
+  )
+```
+
+
+
+### States
+Link comes in **5 states** - default, hover, active, focus and disabled.
+
+![States of a link](./images/links-states.png)
+<br/>
+<br/>
+
+
+### Structure
+A link consist of just a text. It does not contain any padding.
+
+![Structure of link](./images/links-structure.png)
+
+<br/>
+<br/>
+
+<table style={{width: "100%"}}>
+ <tbody>
+   <tr>
+     <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+     <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+   </tr>
+   <tr style={{verticalAlign: "top"}}>
+     <td>Height</td>
+     <td>
+         <ul>
+            <li>16 px <em>(Small)</em></li>
+            <li>20 px <em>(Regular)</em></li>
+         </ul>
+     </td>
+   </tr>
+ </tbody>
+</table>
+<br/>
+
+### Configurations
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Subtle</td>
+      <td>
+          <ul>
+              <li>True</li>
+              <li>False</li>
+          </ul>
+      </td>
+      <td>False</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Size</td>
+      <td>
+          <ul>
+              <li>Small</li>
+              <li>Regular</li>
+          </ul>
+      </td>
+      <td>Regular</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+### Usage
+#### Standard vs. Subtle Link
+##### Standard Link
+It is the default link component and comes in the primary color. It is used to draw attention and hence it is not recommended to have many links on a single page.
+
+![‘Forgot password?’ as primary link, being used for navigating to a new screen](./images/links-2.png)
+<Caption> ‘Forgot password?’ as primary link, being used for navigating to a new screen </Caption>
+<br/>
+
+##### Subtle Link
+This is the subtle variant of link and hence uses a lighter color. It is primarily used in the breadcrumb component. Use it sparingly such as times when the default link can be too overwhelming to use (too much primary color on the screen).
+
+![Breadcrumbs as subtle link being used for navigating to previous screens](./images/links-3.png)
+<Caption> Breadcrumbs as subtle link being used for navigating to previous screens </Caption>
+
+<br/>

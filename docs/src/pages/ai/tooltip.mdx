@@ -1,0 +1,158 @@
+---
+title: Tooltip
+description: Tooltip is used to display content in relation to a target when that target is hovered.
+tabs: ['Usage', 'Code', 'Interactions']
+showMobile: true
+---
+
+
+```tsx
+const position = 'bottom';
+  const appendToBody = true;
+  const hoverable = false;
+  const tooltip = 'An awesome tooltip';
+
+  const options = {
+    tooltip,
+    hoverable,
+    position,
+    appendToBody,
+  };
+
+  return (
+    <div className="mb-8 ml-14">
+      <Tooltip {...options}>
+        <Button>Hover over me</Button>
+      </Tooltip>
+    </div>
+  )
+```
+
+
+### Structure
+
+<br />
+<br />
+
+![Structure of tooltip](./images/tooltip-structure.png)
+
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>
+        Padding
+        <br />
+        <em>(top, right, bottom, left)</em>
+      </td>
+      <td>4 px, 8 px, 4 px, 8 px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Spacing from trigger</td>
+      <td>4 px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Maximum width</td>
+      <td>256 px</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+### Configurations
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Position</td>
+      <td>
+        <ul>
+          <li>Top</li>
+          <li>Right</li>
+          <li>Bottom</li>
+          <li>Left</li>
+        </ul>
+      </td>
+      <td>Bottom</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+### Usage
+
+<br />
+
+#### Positioning
+
+
+```tsx
+const positions = ['top', 'top-start', 'bottom', 'top-end', 'bottom-start', 'bottom-end', 'right', 'left'];
+  const appendToBody = false;
+  const tooltip = 'An awesome tooltip';
+
+  const options = {
+    tooltip,
+    appendToBody,
+  };
+
+  return (
+    <div className="pb-6 Row">
+      {positions.map((pos, ind) => {
+        return (
+          <div key={ind} className="mr-13 mt-8">
+            <Tooltip position={pos} {...options}>
+              <Button>{pos}</Button>
+            </Tooltip>
+          </div>
+        );
+      })}
+    </div>
+  )
+```
+
+<br />
+
+#### Default Position
+
+The preferred and default side of tooltip is the bottom of the trigger.
+
+![Default position](./images/Tooltip-1.png)
+
+<Caption> Default position </Caption>
+<br />
+
+#### Tooltip Overflow
+
+Tooltips should be as concise and clear as possible. Exceeding the max width will make it wrap to form another line.
+
+![Tooltip overflow](./images/tooltip-overflow.png)
+
+<Caption>Tooltip overflow</Caption>
+<br />
+
+#### Tooltip vs Popover
+
+Tooltip is used to display concise information in relation to a target whereas popover is an overlay container used for displaying links, interactive elements, avatars, text formatting (bullets etc), meta data.
+
+![Tooltip vs Popover](./images/tooltip-vs-popover.png)
+
+<Caption>Tooltip vs Popover</Caption>
+<br />
+
+#### Avoid Errors in Tooltips
+
+Tooltip should not be used to provide essential information and collective feedback like errors, warnings, etc that require the immediate attention of the users.
+
+<br />
+<br />

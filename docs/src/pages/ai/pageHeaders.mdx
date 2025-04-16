@@ -1,0 +1,1059 @@
+---
+title: Page Headers
+description: Page headers act as the entry point for a page and house few key points for navigation.
+tabs: ["Usage", "Code"]
+showMobile: true
+---
+
+Page headers act as the entry point for a page and house few key points for navigation. They help users know what the entire page is all about and what actions can be taken. They also help the users become aware of their current location with respect to the rest of the application using breadcrumbs.
+
+### Type
+Page header comes in **2 types** basis on what level of navigation they are being used -
+
+#### Level 0
+Level 0 page header is used at the topmost level in the hierarchy of pages where a resource table or a list generally exists. This table or list is usually a guiding path to go inside a particular page, navigating down the hierarchy.
+
+```tsx
+const navigationData = [
+    {
+      name: 'menu_1',
+      label: 'Virtual Visits',
+    },
+    {
+      name: 'menu_2',
+      label: 'Assesments',
+    },
+  ];
+
+  const [active, setActive] = React.useState({
+    name: 'menu_1',
+  });
+
+  const onClickHandler = (menu) => {
+    setActive(menu);
+  };
+
+  const navigation = <HorizontalNav menus={navigationData} onClick={onClickHandler} active={active} />;
+  const actions = (
+    <div className="d-flex justify-content-end align-items-center">
+      <Button className="mr-4">Reorganize</Button>
+      <Button icon="get_app">Export to PDF</Button>
+    </div>
+  );
+
+  return (
+    <Row>
+      <Column size={11}>
+        <div className="bg-secondary-lightest">
+          <PageHeader title="Dashboard" separator={false} navigation={navigation} actions={actions} />
+        </div>
+      </Column>
+    </Row>
+  )
+```
+
+
+#### Level 1
+Level 1 header comes next in the navigation hierarchy. Users typically arrive here from a table or list present in Level 0. Hence, this header replaces the Level 0 header in the view.
+
+This header stays the same in structure when a user navigates further down to subsequent levels i.e. Level 2, Level 3, and so on.
+
+##### Level 1 With Back Button
+The back button in header takes you to the previous page.
+
+
+```tsx
+const options = [
+    {
+      label: 'Option 1',
+      value: 'Option 1',
+    },
+    {
+      label: 'Option 2',
+      value: 'Option 2',
+    },
+    {
+      label: 'Option 3',
+      value: 'Option 3',
+    },
+  ];
+
+  const list = [
+    {
+      firstName: 'John',
+      lastName: 'Doe',
+    },
+    {
+      firstName: 'Steven',
+      lastName: 'Packton',
+    },
+    {
+      firstName: 'Nancy',
+      lastName: 'Wheeler',
+    },
+    {
+      firstName: 'Monica',
+      lastName: 'Geller',
+    },
+  ];
+
+  const navigationData = [
+    {
+      name: 'menu_1',
+      label: 'Virtual Visits',
+    },
+    {
+      name: 'menu_2',
+      label: 'Assesments',
+    },
+  ];
+
+  const [active, setActive] = React.useState({
+    name: 'menu_1',
+  });
+
+  const onClickHandler = (menu) => {
+    setActive(menu);
+  };
+
+  const navigation = <HorizontalNav menus={navigationData} onClick={onClickHandler} active={active} />;
+
+  const actions = (
+    <div className="d-flex justify-content-end align-items-center">
+      <Text appearance="subtle" className="mr-4">
+        Few minutes ago
+      </Text>
+      <AvatarGroup
+        className="mr-4"
+        list={list}
+        borderColor="var(--secondary-lightest)"
+        popoverOptions={{ dark: true, on: 'hover', position: 'bottom' }}
+      />
+      <div className="mr-4">
+        <Menu trigger={<Menu.Trigger />}>
+          <Menu.List>
+            {options.map((item, key) => {
+              const { label } = item;
+              return <Menu.Item key={key}>{label}</Menu.Item>;
+            })}
+          </Menu.List>
+        </Menu>
+      </div>
+      <Button className="mr-4">Finish later</Button>
+      <Button appearance="primary" onClick={onClickHandler}>
+        Next
+      </Button>
+    </div>
+  );
+
+  const badge = (
+    <Badge appearance="success" subtle={true}>
+      Sent
+    </Badge>
+  );
+  const button = <Button icon="arrow_back" size="tiny" largeIcon={true} />;
+  const status = <StatusHint appearance="info">Ongoing</StatusHint>;
+
+  return (
+    <div className="bg-secondary-lightest Pageheader-longWrapper">
+      <PageHeader
+        title="Annual Wellness"
+        separator={false}
+        navigationPosition="center"
+        navigation={navigation}
+        actions={actions}
+        badge={badge}
+        status={status}
+        button={button}
+      />
+    </div>
+  )
+```
+
+
+##### Level 1 With Breadcrumb
+The breadcrumb in header helps you traverse across different levels of page hierarchy.
+
+
+```tsx
+const stepperData = [
+    {
+      value: 'step_1',
+      label: 'Recipients',
+    },
+    {
+      value: 'step_2',
+      label: 'Message',
+    },
+    {
+      value: 'step_3',
+      label: 'Schedule',
+    },
+  ];
+
+  const options = [
+    {
+      label: 'Option 1',
+      value: 'Option 1',
+    },
+    {
+      label: 'Option 2',
+      value: 'Option 2',
+    },
+    {
+      label: 'Option 3',
+      value: 'Option 3',
+    },
+  ];
+
+  const avatarList = [
+    {
+      firstName: 'John',
+      lastName: 'Doe',
+    },
+    {
+      firstName: 'Steven',
+      lastName: 'Packton',
+    },
+    {
+      firstName: 'Nancy',
+      lastName: 'Wheeler',
+    },
+    {
+      firstName: 'Monica',
+      lastName: 'Geller',
+    },
+    {
+      firstName: 'Arya',
+      lastName: 'Stark',
+    },
+    {
+      firstName: 'Rachel',
+      lastName: 'Green',
+    },
+    {
+      firstName: 'Walter',
+      lastName: 'Wheeler',
+    },
+  ];
+
+  const [active, setActive] = React.useState(2);
+
+  const onChangeHandler = (activeStep) => {
+    setActive(activeStep);
+  };
+
+  const stepper = <Stepper steps={stepperData} onChange={onChangeHandler} active={active} completed={1} />;
+  const actions = (
+    <div className="d-flex justify-content-end align-items-center">
+      <Text appearance="subtle" className="mr-4">
+        Few minutes ago
+      </Text>
+      <AvatarGroup
+        className="mr-4"
+        list={avatarList}
+        borderColor="var(--secondary-lightest)"
+        popoverOptions={{ dark: true, on: 'hover', position: 'bottom' }}
+      />
+
+      <div className="mr-4">
+        <Menu trigger={<Menu.Trigger />}>
+          <Menu.List>
+            {options.map((item, key) => {
+              const { label } = item;
+              return <Menu.Item key={key}>{label}</Menu.Item>;
+            })}
+          </Menu.List>
+        </Menu>
+      </div>
+      <Button className="mr-4">Finish later</Button>
+    </div>
+  );
+  const breadcrumbs = (
+    <Breadcrumbs
+      list={[
+        {
+          label: 'Campaigns',
+          link: '/Campaigns',
+        },
+      ]}
+      onClick={(link) => action(`on-click: ${link}`)}
+    />
+  );
+  const badge = <Badge appearance="secondary">Message</Badge>;
+  const meta = <MetaList list={[{ label: 'Draft' }]} seperator={false} />;
+
+  return (
+    <div className="w-100 bg-secondary-lightest">
+      <PageHeader
+        title="Annual Wellness Visit"
+        separator={false}
+        navigationPosition="center"
+        stepper={stepper}
+        actions={actions}
+        breadcrumbs={breadcrumbs}
+        badge={badge}
+        meta={meta}
+      />
+    </div>
+  )
+```
+
+
+### Variants
+Page header comes in **3 variants** - with navigation, with tabs and with steppers. Steppers are not required in Level 0 typically since the process of creating an entity lies in Level 1 and beyond.
+
+#### With Navigation
+Level 0, level 1 and level 1 and beyond page headers can accommodate horizontal navigation which allows users to navigate through the different sub-pages easily. Any variant of horizontal navigation (with icon & with count) can be used here.
+
+##### Level 0
+
+```tsx
+const navigationData = [
+    {
+      name: 'menu_1',
+      label: 'Virtual Visits',
+    },
+    {
+      name: 'menu_2',
+      label: 'Assesments',
+    },
+  ];
+
+  const [active, setActive] = React.useState({
+    name: 'menu_1',
+  });
+
+  const onClickHandler = (menu) => {
+    setActive(menu);
+  };
+
+  const navigation = <HorizontalNav menus={navigationData} onClick={onClickHandler} active={active} />;
+  const actions = (
+    <div className="d-flex justify-content-end align-items-center">
+      <Button className="mr-4">Reorganize</Button>
+      <Button icon="get_app">Export to PDF</Button>
+    </div>
+  );
+
+  return (
+    <Row>
+      <Column size={11}>
+        <div className="bg-secondary-lightest">
+          <PageHeader title="Dashboard" separator={false} navigation={navigation} actions={actions} />
+        </div>
+      </Column>
+    </Row>
+  )
+```
+
+
+##### Level 1
+
+**Level 1 with back button**
+
+```tsx
+const options = [
+    {
+      label: 'Option 1',
+      value: 'Option 1',
+    },
+    {
+      label: 'Option 2',
+      value: 'Option 2',
+    },
+    {
+      label: 'Option 3',
+      value: 'Option 3',
+    },
+  ];
+
+  const list = [
+    {
+      firstName: 'John',
+      lastName: 'Doe',
+    },
+    {
+      firstName: 'Steven',
+      lastName: 'Packton',
+    },
+    {
+      firstName: 'Nancy',
+      lastName: 'Wheeler',
+    },
+    {
+      firstName: 'Monica',
+      lastName: 'Geller',
+    },
+  ];
+
+  const navigationData = [
+    {
+      name: 'menu_1',
+      label: 'Virtual Visits',
+    },
+    {
+      name: 'menu_2',
+      label: 'Assesments',
+    },
+  ];
+
+  const [active, setActive] = React.useState({
+    name: 'menu_1',
+  });
+
+  const onClickHandler = (menu) => {
+    setActive(menu);
+  };
+
+  const navigation = <HorizontalNav menus={navigationData} onClick={onClickHandler} active={active} />;
+
+  const actions = (
+    <div className="d-flex justify-content-end align-items-center">
+      <Text appearance="subtle" className="mr-4">
+        Few minutes ago
+      </Text>
+      <AvatarGroup
+        className="mr-4"
+        list={list}
+        borderColor="var(--secondary-lightest)"
+        popoverOptions={{ dark: true, on: 'hover', position: 'bottom' }}
+      />
+      <div className="mr-4">
+        <Menu trigger={<Menu.Trigger />}>
+          <Menu.List>
+            {options.map((item, key) => {
+              const { label } = item;
+              return <Menu.Item key={key}>{label}</Menu.Item>;
+            })}
+          </Menu.List>
+        </Menu>
+      </div>
+      <Button className="mr-4">Finish later</Button>
+      <Button appearance="primary" onClick={onClickHandler}>
+        Next
+      </Button>
+    </div>
+  );
+
+  const badge = (
+    <Badge appearance="success" subtle={true}>
+      Sent
+    </Badge>
+  );
+  const button = <Button icon="arrow_back" size="tiny" largeIcon={true} />;
+  const status = <StatusHint appearance="info">Ongoing</StatusHint>;
+
+  return (
+    <div className="bg-secondary-lightest Pageheader-longWrapper">
+      <PageHeader
+        title="Annual Wellness"
+        separator={false}
+        navigationPosition="center"
+        navigation={navigation}
+        actions={actions}
+        badge={badge}
+        status={status}
+        button={button}
+      />
+    </div>
+  )
+```
+
+
+**Level 1 with breadcrumb**
+
+```tsx
+const navigationData = [
+    {
+      name: 'menu_1',
+      label: 'Performance',
+    },
+    {
+      name: 'menu_2',
+      label: 'Recipients',
+    },
+  ];
+
+  const [active, setActive] = React.useState({
+    name: 'menu_1',
+  });
+
+  const onClickHandler = (menu) => {
+    setActive(menu);
+  };
+
+  const navigation = <HorizontalNav menus={navigationData} onClick={onClickHandler} active={active} />;
+  const actions = <div className="d-flex justify-content-end align-items-center" />;
+  const breadcrumbs = (
+    <Breadcrumbs
+      list={[
+        {
+          label: 'Outreach',
+          link: '/Outreach',
+        },
+      ]}
+      onClick={(link) => action(`on-click: ${link}`)}
+    />
+  );
+  const badge = (
+    <Badge subtle={true} appearance="success">
+      Sent
+    </Badge>
+  );
+  const meta = <MetaList list={[{ label: 'Text' }, { label: 'Email' }]} />;
+
+  const status = <StatusHint appearance="info">Ongoing</StatusHint>;
+
+  return (
+    <Row>
+      <Column size={11}>
+        <div className="bg-secondary-lightest">
+          <PageHeader
+            title="Covid-19"
+            separator={false}
+            navigationPosition="center"
+            navigation={navigation}
+            actions={actions}
+            breadcrumbs={breadcrumbs}
+            badge={badge}
+            status={status}
+            meta={meta}
+          />
+        </div>
+      </Column>
+    </Row>
+  )
+```
+
+
+#### With Tabs
+Level 0, level 1 and level 1 and beyond page headers can accommodate tabs right beneath the page title to segregate the related content.
+
+##### Level 0
+
+```tsx
+const tabs = [
+    {
+      count: 4,
+      label: 'Current',
+    },
+    {
+      count: 4,
+      label: 'Invited',
+    },
+    {
+      count: 4,
+      label: 'Inactive',
+    },
+  ];
+
+  const [activeIndex, setActiveIndex] = React.useState(0);
+
+  const tab = <Tabs tabs={tabs} activeIndex={activeIndex} onTabChange={setActiveIndex} />;
+
+  const actions = (
+    <div className="d-flex justify-content-end align-items-center">
+      <Button icon="get_app" className="mr-4">
+        Download Records
+      </Button>
+      <Button appearance="primary">Invite users</Button>
+    </div>
+  );
+
+  return (
+    <Row>
+      <Column size={11}>
+        <div className="bg-secondary-lightest">
+          <PageHeader title="Users" separator={true} tabs={tab} actions={actions} />
+        </div>
+      </Column>
+    </Row>
+  )
+```
+
+
+##### Level 1
+
+**Level 1 with back button**
+
+```tsx
+const options = [
+    {
+      label: 'Option 1',
+      value: 'Option 1',
+    },
+    {
+      label: 'Option 2',
+      value: 'Option 2',
+    },
+    {
+      label: 'Option 3',
+      value: 'Option 3',
+    },
+  ];
+
+  const list = [
+    {
+      firstName: 'John',
+      lastName: 'Doe',
+    },
+    {
+      firstName: 'Steven',
+      lastName: 'Packton',
+    },
+    {
+      firstName: 'Nancy',
+      lastName: 'Wheeler',
+    },
+    {
+      firstName: 'Monica',
+      lastName: 'Geller',
+    },
+  ];
+
+  const tabs = [
+    {
+      count: 32,
+      label: 'New',
+    },
+    {
+      count: 4,
+      label: 'Invalid',
+    },
+    {
+      count: 2,
+      label: 'Duplicate',
+    },
+  ];
+
+  const [activeIndex, setActiveIndex] = React.useState(0);
+
+  const tab = <Tabs tabs={tabs} activeIndex={activeIndex} onTabChange={setActiveIndex} />;
+
+  const actions = (
+    <div className="d-flex justify-content-end align-items-center">
+      <Text className="mr-4">Few minutes ago</Text>
+      <AvatarGroup
+        borderColor="var(--secondary-lightest)"
+        className="mr-4"
+        list={list}
+        popoverOptions={{ dark: true, on: 'hover', position: 'bottom' }}
+      />
+      <div className="mr-4">
+        <Menu>
+          <Menu.List>
+            {options.map((item, key) => {
+              const { label } = item;
+              return <Menu.Item key={key}>{label}</Menu.Item>;
+            })}
+          </Menu.List>
+        </Menu>
+      </div>
+      <Button appearance="subtle" className="mr-4">
+        Finish later
+      </Button>
+      <Button appearance="primary">Next</Button>
+    </div>
+  );
+
+  const button = <Button icon="arrow_back" size="tiny" largeIcon={true} />;
+
+  return (
+    <div className="bg-secondary-lightest Pageheader-longWrapper">
+      <PageHeader title="Sender creation report" tabs={tab} actions={actions} button={button} />
+    </div>
+  )
+```
+
+
+**Level 1 with breadcrumb**
+
+```tsx
+const tabs = [
+    {
+      count: 32,
+      label: 'New',
+    },
+    {
+      count: 4,
+      label: 'Invalid',
+    },
+    {
+      count: 2,
+      label: 'Duplicate',
+    },
+  ];
+
+  const [activeIndex, setActiveIndex] = React.useState(0);
+
+  const tab = <Tabs tabs={tabs} activeIndex={activeIndex} onTabChange={setActiveIndex} />;
+
+  const breadcrumbs = (
+    <Breadcrumbs
+      list={[
+        {
+          label: 'Senders',
+          link: '/Senders',
+        },
+      ]}
+      onClick={(link) => action(`on-click: ${link}`)}
+    />
+  );
+
+  return (
+    <Row>
+      <Column size={11}>
+        <div className="bg-secondary-lightest">
+          <PageHeader title="Sender creation report" separator={true} tabs={tab} breadcrumbs={breadcrumbs} />
+        </div>
+      </Column>
+    </Row>
+  )
+```
+
+
+#### With Steppers
+In order to show a multi-step process, page headers can accommodate steppers inside them.  
+
+When using steppers, the primary action is typically positioned within the body, while if there is any action that is for the whole process it will be accommodated in the page header itself. 
+
+Generally, steppers are not required at Level 0 since the process of creating an entity lies in Level 1 and beyond. But if needed, steppers can replace the center-aligned navigation tabs in headers in Level 0 as well.
+
+##### Level 1
+
+**Level 1 with back button**
+
+```tsx
+const stepperData = [
+    {
+      value: 'step_1',
+      label: 'Recipients',
+    },
+    {
+      value: 'step_2',
+      label: 'Message',
+    },
+    {
+      value: 'step_3',
+      label: 'Schedule',
+    },
+  ];
+
+  const options = [
+    {
+      label: 'Option 1',
+      value: 'Option 1',
+    },
+    {
+      label: 'Option 2',
+      value: 'Option 2',
+    },
+    {
+      label: 'Option 3',
+      value: 'Option 3',
+    },
+  ];
+
+  const list = [
+    {
+      firstName: 'John',
+      lastName: 'Doe',
+    },
+    {
+      firstName: 'Steven',
+      lastName: 'Packton',
+    },
+    {
+      firstName: 'Nancy',
+      lastName: 'Wheeler',
+    },
+    {
+      firstName: 'Monica',
+      lastName: 'Geller',
+    },
+    {
+      firstName: 'Arya',
+      lastName: 'Stark',
+    },
+    {
+      firstName: 'Rachel',
+      lastName: 'Green',
+    },
+    {
+      firstName: 'Walter',
+      lastName: 'Wheeler',
+    },
+  ];
+
+  const [active, setActive] = React.useState(2);
+
+  const onChangeHandler = (activeStep) => {
+    setActive(activeStep);
+  };
+
+  const stepper = <Stepper steps={stepperData} onChange={onChangeHandler} active={active} completed={1} />;
+  const actions = (
+    <div className="d-flex justify-content-end align-items-center">
+      <Text appearance="subtle" className="mr-4">
+        Few minutes ago
+      </Text>
+      <AvatarGroup
+        className="mr-4"
+        list={list}
+        borderColor="var(--secondary-lightest)"
+        popoverOptions={{ dark: true, on: 'hover', position: 'bottom' }}
+      />
+      <div className="mr-4">
+        <Menu trigger={<Menu.Trigger />}>
+          <Menu.List>
+            {options.map((item, key) => {
+              const { label } = item;
+              return <Menu.Item key={key}>{label}</Menu.Item>;
+            })}
+          </Menu.List>
+        </Menu>
+      </div>
+      <Button className="mr-4">Finish later</Button>
+    </div>
+  );
+
+  const badge = <Badge appearance="secondary">Message</Badge>;
+  const meta = <MetaList list={[{ label: 'Draft' }]} seperator={false} />;
+  const button = <Button icon="arrow_back" size="tiny" largeIcon={true} />;
+
+  return (
+    <div className="bg-secondary-lightest Pageheader-longWrapper">
+      <PageHeader
+        title="Annual Wellness Visit"
+        separator={false}
+        navigationPosition="center"
+        stepper={stepper}
+        actions={actions}
+        badge={badge}
+        meta={meta}
+        button={button}
+      />
+    </div>
+  )
+```
+
+
+**Level 1 with breadcrumb**
+
+```tsx
+const stepperData = [
+    {
+      value: 'step_1',
+      label: 'Recipients',
+    },
+    {
+      value: 'step_2',
+      label: 'Message',
+    },
+    {
+      value: 'step_3',
+      label: 'Schedule',
+    },
+  ];
+
+  const options = [
+    {
+      label: 'Option 1',
+      value: 'Option 1',
+    },
+    {
+      label: 'Option 2',
+      value: 'Option 2',
+    },
+    {
+      label: 'Option 3',
+      value: 'Option 3',
+    },
+  ];
+
+  const avatarList = [
+    {
+      firstName: 'John',
+      lastName: 'Doe',
+    },
+    {
+      firstName: 'Steven',
+      lastName: 'Packton',
+    },
+    {
+      firstName: 'Nancy',
+      lastName: 'Wheeler',
+    },
+    {
+      firstName: 'Monica',
+      lastName: 'Geller',
+    },
+    {
+      firstName: 'Arya',
+      lastName: 'Stark',
+    },
+    {
+      firstName: 'Rachel',
+      lastName: 'Green',
+    },
+    {
+      firstName: 'Walter',
+      lastName: 'Wheeler',
+    },
+  ];
+
+  const [active, setActive] = React.useState(2);
+
+  const onChangeHandler = (activeStep) => {
+    setActive(activeStep);
+  };
+
+  const stepper = <Stepper steps={stepperData} onChange={onChangeHandler} active={active} completed={1} />;
+  const actions = (
+    <div className="d-flex justify-content-end align-items-center">
+      <Text appearance="subtle" className="mr-4">
+        Few minutes ago
+      </Text>
+      <AvatarGroup
+        className="mr-4"
+        list={avatarList}
+        borderColor="var(--secondary-lightest)"
+        popoverOptions={{ dark: true, on: 'hover', position: 'bottom' }}
+      />
+
+      <div className="mr-4">
+        <Menu trigger={<Menu.Trigger />}>
+          <Menu.List>
+            {options.map((item, key) => {
+              const { label } = item;
+              return <Menu.Item key={key}>{label}</Menu.Item>;
+            })}
+          </Menu.List>
+        </Menu>
+      </div>
+      <Button className="mr-4">Finish later</Button>
+    </div>
+  );
+  const breadcrumbs = (
+    <Breadcrumbs
+      list={[
+        {
+          label: 'Campaigns',
+          link: '/Campaigns',
+        },
+      ]}
+      onClick={(link) => action(`on-click: ${link}`)}
+    />
+  );
+  const badge = <Badge appearance="secondary">Message</Badge>;
+  const meta = <MetaList list={[{ label: 'Draft' }]} seperator={false} />;
+
+  return (
+    <div className="w-100 bg-secondary-lightest">
+      <PageHeader
+        title="Annual Wellness Visit"
+        separator={false}
+        navigationPosition="center"
+        stepper={stepper}
+        actions={actions}
+        breadcrumbs={breadcrumbs}
+        badge={badge}
+        meta={meta}
+      />
+    </div>
+  )
+```
+
+
+### Configurations
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Page title</td>
+      <td>&#60;title&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Add-on<br/><em>(optional)</em></td>
+      <td>
+          <ul>
+              <li>Navigation</li>
+              <li>Tabs</li>
+              <li>Steppers</li>
+          </ul>
+      </td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Divider<br/><em>(optional)</em></td>
+      <td>Horizontal divider</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Back button</td>
+      <td>True, False</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+### Usage
+#### Level 1 and Beyond
+Page header can show multiple levels of hierarchy using different levels of breadcrumbs within the header in Level 1.
+
+![A Level 1 page header with steppers](./images/pageHeaders-1.png)
+<Caption> A Level 1 page header with steppers </Caption>
+
+<br/>
+
+#### Header With Back Button
+It is recommended to use a back button in the header for less than 3 levels to save space.
+
+![Header with back button](./images/header-with-back-button.png)
+<Caption>Header with back button</Caption>
+
+<br/>
+
+#### Tooltip on Back Button
+Back button displays the title of the previous page in a tooltip on hover.
+
+![Tooltip on back button](./images/tooltip-on-back-button.png)
+<Caption>Tooltip on back button</Caption>
+
+<br/>
+
+#### Dividers
+Divider in a page header is optional to use.
+
+However, it is recommended to not use a divider if the content below is in a card like container stretching to the full width of the page header as it is already creating an optical division in this case.
+
+![Full width card below page header. Divider should not be used in such cases](./images/pageHeaders-4.png)
+<Caption> Full width card below page header. Divider should not be used in such cases </Caption>
+
+<br/>
+
+#### Spacing With and Without Divider
+Spacing of 12px is given below header when a divider is present, otherwise no spacing required.
+
+![Spacing with and without header](./images/spacing-with-and-without-header.png)
+<Caption>Spacing with and without header</Caption>
+
+<br/>
+
+#### Responsiveness
+By default, only the tabs appear beneath the page title. But if there is a width constraint, navigation can also be adjusted beneath the page title as well.
+
+**Note**: Avoid using steppers when there is a width constraint as entity creation doesn’t usually take place in such conditions.
+
+#### Recommended Navigation Items
+It is recommended to use less than three navigation items when there are numerous actions on the right side of header.
+
+![Recommended navigation items](./images/recommended-navigation-items.png)
+<Caption>Recommended navigation items</Caption>

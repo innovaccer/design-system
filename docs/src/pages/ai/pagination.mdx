@@ -1,0 +1,122 @@
+---
+title: Pagination
+description: Pagination is used to split a list of items into pages and jump to the next/previous or a specific page for ease of navigation.
+tabs: ['Usage', 'Code']
+showMobile: true
+keywords: ['Content pagination', 'Infinite scroll']
+---
+
+### Variants
+
+<br/>
+
+#### Basic
+
+The simplest form of pagination which lets the user jump to the previous or the next page on demand.
+
+
+```tsx
+return (
+    <Pagination type="basic" page={1} totalPages={50} onPageChange={(pageNo) => action(`Page changed: ${pageNo}`)()} />
+  )
+```
+
+
+#### With Jump
+
+Jump pagination lets the users jump to a specific page by entering the page number. Use this type when the users can have a rough estimate of finding the required data on a certain page.
+
+
+```tsx
+return (
+    <div className="d-flex">
+      <div className="d-flex flex-column align-items-center">
+        <Pagination
+          type="jump"
+          page={1}
+          totalPages={50}
+          onPageChange={(pageNo) => action(`Page changed: ${pageNo}`)()}
+        />
+      </div>
+    </div>
+  )
+```
+
+
+### Structure
+<br/>
+<br/>
+
+![Structure of pagination](./images/pagination-structure.png)
+<br/>
+
+<table style={{width: "100%"}}>
+ <tbody>
+   <tr>
+     <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+     <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+   </tr>
+   <tr style={{verticalAlign: "top"}}>
+      <td>Height</td>
+      <td>32 px</td>
+   </tr>
+ </tbody>
+</table>
+<br/>
+
+### Configurations
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Current page</td>
+      <td>&#60;current page&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Total pages</td>
+      <td>&#60;total pages&#62;</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+### Usage
+
+<br/>
+
+#### Position of Pagination
+
+Pagination control usually appears inside a card with a table or list. It is horizontally aligned to the center of the container. It is fixed at the bottom of the card.
+
+![Pagination control is centrally aligned](./images/pagination-1.png)
+<Caption> Pagination control is centrally aligned </Caption>
+
+<br/>
+
+#### Pagination vs Infinite Scroll
+
+Use pagination over infinite scroll so that the user can navigate to an item’s detail page and return back to the same page.
+
+#### Selection With Pagination
+
+When using pagination, the "Select all" control should select only the visible items. 
+
+![Selection with pagination](./images/pagination-2.png)
+<Caption> Selection with pagination </Caption>
+
+<br/>
+
+However, there is an option present to select all the items.
+
+![Selection with pagination](./images/pagination-3.png)
+<Caption> Selection with pagination </Caption>
+
+<br/>
+
+For more info - check selection in a Table.

@@ -1,0 +1,60 @@
+---
+title: Time Picker
+description: Time picker is used for selecting or entering a time value.
+tabs: ['Usage', 'Code']
+showMobile: true
+---
+
+Time picker is used for selecting/entering value for time input. It can either be a dropdown from where you can select preset time values or a specialized input where the user can enter the time using keyboard.
+
+### Types
+
+<br/>
+
+#### Using Dropdown
+
+
+```tsx
+<></>
+```
+
+
+#### Using Input
+
+This way users can directly enter the time they want. This method does not limit the time values to specific intervals (15 minutes, 30 minutes, etc.). The colon appears itself.
+
+
+```tsx
+const inputFormat = 'hh:mm AM';
+
+  const outputFormat = 'hh:mm';
+
+  const onTimeChange = (val) => {
+    return action(`updated time: ${val}`)();
+  };
+
+  return (
+    <div className="w-25">
+      <TimePicker
+        key={`${inputFormat}${outputFormat}`}
+        inputFormat={inputFormat}
+        outputFormat={outputFormat}
+        onTimeChange={onTimeChange}
+      />
+    </div>
+  )
+```
+
+
+### Usage
+
+<br/>
+
+#### Using Date and Time Picker Together
+
+As soon as a date or date range is selected, time picker dropdown should be triggered so that users can select the time without any additional click.
+
+![Using date and time picker together](./images/timepicker-1.png)
+<Caption>Using date and time picker together</Caption>
+<br/>
+<br/>

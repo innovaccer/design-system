@@ -1,0 +1,562 @@
+---
+title: Inputs
+description: Inputs allow users to type in a value.
+tabs: ['Usage', 'Code']
+showMobile: true
+keywords: ['Textbox', 'Text field', 'Form field', 'Free text area']
+---
+
+Inputs allow users to type in a value. They can be used anywhere, though they mostly appear in conjunction with other input components to create a form.
+
+### Types
+
+<br />
+
+#### Basic Input
+
+Basic input contains the input box, value or placeholder text, and an optional icon on the right.
+
+
+```tsx
+const [value, setValue] = React.useState('Joy Lawson');
+
+  const onChange = React.useCallback((e) => {
+    setValue(e.target.value);
+  }, []);
+
+  const onClear = React.useCallback(() => {
+    setValue('');
+  }, []);
+
+  return <Input placeholder="Name" name="input" className="w-25" value={value} onChange={onChange} onClear={onClear} />
+```
+
+
+#### Metric Input
+
+Metric input takes numerical data as input. It can either have a **prefix** e.g. currency symbols such as $, €, ₹, etc., or **suffix** e.g.units such as kg, mm, in, etc. to provide additional information about the data being input.
+
+
+```tsx
+const size = 'regular';
+
+  const placeholder = 'Placeholder';
+
+  const disabled = false;
+
+  const readOnly = false;
+
+  const icon = '';
+
+  const prefix = '';
+
+  const suffix = '';
+
+  const error = false;
+
+  return (
+    <div className="w-25">
+      <MetricInput
+        name="input"
+        disabled={disabled}
+        readOnly={readOnly}
+        onChange={action('on-change')}
+        onClick={action('on-click')}
+        placeholder={placeholder}
+        aria-label="Metric input example"
+        prefix={prefix}
+        suffix={suffix}
+        size={size}
+        icon={icon}
+        error={error}
+      />
+    </div>
+  )
+```
+
+
+#### Verification Code Input
+
+Verification code input allows users to enter the code sent to their systems to verify themselves. These codes can be either 4 or 6 digits long.
+
+
+```tsx
+const inputType = 'number';
+
+  const fields = undefined;
+
+  const value = '6543';
+
+  const placeholder = '-';
+
+  const disabled = false;
+
+  const autoFocus = true;
+
+  const readOnly = false;
+
+  const error = false;
+
+  const pattern = '';
+
+  return (
+    <>
+      <Label withInput={true}>Verification code</Label>
+      <VerificationCodeInput
+        fields={fields}
+        type={inputType}
+        value={value}
+        disabled={disabled}
+        readOnly={readOnly}
+        onChange={action('on-change')}
+        onComplete={action('on-complete')}
+        onFocus={action('on-focus')}
+        onBlur={action('on-blur')}
+        placeholder={placeholder}
+        error={error}
+        pattern={pattern}
+        // TODO(a11y)
+        
+        autoFocus={autoFocus}
+      />
+    </>
+  )
+```
+
+
+#### Free Text Area
+
+Free text area lets users enter data much longer than a basic input. It can have a scrollbar and a resize action at the bottom right. Just like the basic input, it can also have help text beneath it.
+
+
+```tsx
+(
+  <div className="w-50">
+    <Label withInput={true} htmlFor="comments">
+      Comments
+    </Label>
+    <Textarea name="comments" id="comments" aria-labelledby="Comments" placeholder="Enter your comments here" />
+  </div>
+)
+```
+
+
+### Variants
+
+<br />
+
+#### With Icon
+
+Basic inputs can have an icon on the left of text in the input box along with an optional icon on the right. This variant comes in 2 sizes i.e. regular and large as accomodating such icons is not possible in the tiny size.
+
+
+```tsx
+(
+  <Input name="input" placeholder="Search" className="w-25" onChange={action('on-change')} icon="search" />
+)
+```
+
+
+#### Prefix/Suffix
+
+Metric inputs can have prefix or suffix to provide additional information about the data being input.
+
+![Metric input with prefix and suffix](./images/inputs-1.png)
+
+<br />
+
+### Sizes
+
+Inputs come in **3 sizes** - small, regular and large with a few exceptions. Basic input with icon in the left, metric input and verification code input do not support the tiny size. Free text area comes in a single default size as it is resizeable.
+
+
+```tsx
+const sizes = ['tiny', 'regular', 'large'];
+
+  const placeholder = 'Placeholder';
+
+  return (
+    <div>
+      {sizes.map((InputSize, ind) => {
+        return (
+          <div key={ind} className="mb-8 w-25">
+            <Label htmlFor={InputSize} withInput={true}>
+              {InputSize.charAt(0).toUpperCase() + InputSize.slice(1)}
+            </Label>
+            <Input name="input" onChange={action('on-change')} placeholder={placeholder} size={InputSize} />
+          </div>
+        );
+      })}
+    </div>
+  )
+```
+
+
+### States
+
+Inputs come in **6 states** - default, hover, focus, error, read only and disabled.
+
+![Input states](./images/input-states.png)
+
+<br />
+<br />
+
+### Structure
+
+<br />
+<br />
+
+![Structure of inputs](./images/input-structure.png)
+
+<br />
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Height</td>
+      <td>
+        <ul>
+          <li>
+            24 px <em>(Small)</em>
+          </li>
+          <li>
+            32 px <em>(Regular)</em>
+          </li>
+          <li>
+            40 px <em>(Large)</em>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Padding (right, left)</td>
+      <td>12 px, 12 px</td>
+    </tr>
+  </tbody>
+</table>
+
+<br />
+
+### Configurations
+
+#### Input
+
+<br />
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Size</td>
+      <td>
+        <ul>
+          <li>Small</li>
+          <li>Regular</li>
+          <li>Large</li>
+        </ul>
+      </td>
+      <td>Regular</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Placeholder</td>
+      <td>&#60;placeholder&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>
+        Icon left
+        <br />
+        <em>(optional)</em>
+      </td>
+      <td>&#60;icon name&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>
+        Action icon
+        <br />
+        <em>(optional)</em>
+      </td>
+      <td>&#60;icon name&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>
+        Help text
+        <br />
+        <em>(optional)</em>
+      </td>
+      <td>&#60;help text&#62;</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+#### Label
+
+<br />
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Required</td>
+      <td>
+        <ul>
+          <li>True</li>
+          <li>False</li>
+        </ul>
+      </td>
+      <td>False</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Optional</td>
+      <td>
+        <ul>
+          <li>True</li>
+          <li>False</li>
+        </ul>
+      </td>
+      <td>False</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>
+        Info
+        <br />
+      </td>
+      <td>
+        <ul>
+          <li>True</li>
+          <li>False</li>
+        </ul>
+      </td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+### Usage
+
+<br />
+
+#### Label
+
+Labels help users understand what sort of information is required. Labels should be short and to the point. Effective labeling improves usability.
+The label comes with an optional required indicator (\*).
+
+
+```tsx
+const [value, setValue] = React.useState('lawsonjoy@gmail.com');
+
+  const onChange = React.useCallback((e) => {
+    setValue(e.target.value);
+  }, []);
+
+  return (
+    <>
+      <Label htmlFor="email" withInput={true}>
+        Email
+      </Label>
+      <Input id="email" placeholder="Email" className="w-25" value={value} onChange={onChange} />
+    </>
+  )
+```
+
+
+#### Label Position
+
+Label can be placed either on the top of the input field or at the left of it. It is not advised to place label on the left until there are some height constraints, as this type of placement causes a lot of eye movement. Top labels are responsive and also maintain the vertical rhythm in case of long forms.
+
+
+```tsx
+return (
+    <div className="d-flex align-items-end">
+      <div>
+        <Label htmlFor="fullName" withInput={true}>
+          Full Name
+        </Label>
+        <Input placeholder="Full name" id="fullName" value="Joy Lawson" />
+      </div>
+      <div className="d-flex align-items-center ml-9">
+        <Label htmlFor="fullName2" className="mr-6">
+          Full Name
+        </Label>
+        <Input placeholder="Full name" id="fullName2" value="Joy Lawson" />
+      </div>
+    </div>
+  )
+```
+
+
+#### Help Text
+
+Help text can be added beneath the input box to provide additional information. In case of an error that needs to be explained, inline message is used at the same place.
+
+
+```tsx
+const [visibility, setVisibility] = React.useState(false);
+  const [visibility2, setVisibility2] = React.useState(false);
+  return (
+    <div className="d-flex">
+      <div>
+        <Label htmlFor="password-1" withInput={true}>
+          Password
+        </Label>
+        <Input
+          id="password-1"
+          placeholder="Password"
+          value="Value"
+          type={visibility ? 'text' : 'password'}
+          actionIcon={
+            <Input.ActionButton
+              onClick={() => setVisibility((x) => !x)}
+              name={visibility ? 'visibility_on' : 'visibility_off'}
+              className="cursor-pointer"
+            />
+          }
+        />
+        <HelpText message={'Create a string, unique password'} />
+      </div>
+      <div className="ml-6">
+        <Label htmlFor="password-2" withInput={true}>
+          Password
+        </Label>
+        <Input
+          id="password-2"
+          placeholder="Password"
+          value="Value"
+          type={visibility2 ? 'text' : 'password'}
+          actionIcon={
+            <Input.ActionButton
+              onClick={() => setVisibility2((x) => !x)}
+              name={visibility2 ? 'visibility_on' : 'visibility_off'}
+              className="cursor-pointer"
+            />
+          }
+        />
+        <HelpText error={true} message={'Create a password with at least 8 characters'} />
+      </div>
+    </div>
+  )
+```
+
+
+#### Required vs. Optional
+
+Inputs can be marked as optional or required depending upon the context. To avoid unnecessary clutter, mark only the minority fields as optional or required.
+
+**When no. of required fields < no. of optional fields**
+
+![Number of required fields < number of optional fields](./images/inputs-3.png)
+
+<Caption> Number of required fields is less than number of optional fields </Caption>
+
+<br />
+
+**When no. of required fields > no. of optional fields**
+
+![Number of required fields > no. of optional fields](./images/inputs-4.png)
+
+<Caption> Number of required fields is more than no. of optional fields </Caption>
+<br />
+
+It is recommended to keep the notations of required and optional fields consistent throughout the app as different notations can confuse users.
+<br />
+
+#### Input Character Limit
+
+Input can have a character count to display both the characters being entered and the total number of characters allowed. it is recommended to allow the users to type past the character limit, but they shouldn't be allowed to submit until they have brought the characters under the character limit.
+
+![Input with character limit](./images/inputs-5.png)
+
+<br />
+<br />
+
+#### Input Masking
+
+Input masks are helpful for the data fields that have a specific input format, as they provide the formatting cues to help users know the format in which the data is expected for the field.
+
+
+```tsx
+const ref = React.useRef(null);
+  const [error, setError] = React.useState(false);
+
+  const onChangeHandler = () => {
+    setError(ref.current?.value[1] === '0');
+  };
+
+  return (
+    <Row className="w-25 d-flex">
+      <div>
+        <Label withInput={true}>Phone Number</Label>
+        <InputMask
+          icon="call"
+          name="primary_phone"
+          placeholder="(___) ___-____"
+          helpText="Enter your phone number"
+          mask={['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+        />
+      </div>
+
+      <div className="mt-8">
+        <Label withInput={true}>Phone Number</Label>
+        <InputMask
+          ref={ref}
+          icon="call"
+          error={error}
+          onChange={onChangeHandler}
+          name="primary_phone"
+          placeholder="(___) ___-____"
+          helpText="Enter a phone number starting 0 to see the error mode"
+          caption="Phone number cannot start with 0"
+          mask={['(', /\d/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+        />
+      </div>
+    </Row>
+  )
+```
+
+
+#### Input With Chips
+
+Inputs can also be used to create filters in the field values by using input chips. To embed a chip, press **enter** after typing. To remove all the chips at once, click on the clear icon of the input box.
+
+![Input with chips](./images/inputs-6.png)
+
+<br />
+
+![Multi line behavior in input with chips](./images/inputs-7.png)
+
+<Caption> Multi line behavior in input with chips </Caption>
+
+<br />
+<br />
+
+#### Verification Code Input Behaviour
+
+<br />
+
+<iframe
+  style={{ border: "1px solid rgba(0, 0, 0, 0.1)" }}
+  width="100%"
+  height="600"
+  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FYOxwh18LLa34NQIahcozOz%2FVerification-Code-Input-Expected-Flow%3Fkind%3D%26node-id%3D122%253A0%26page-id%3D0%253A1%26scaling%3Dscale-down-width%26viewport%3D163%252C286%252C0.05311004817485809&hide-ui=1"
+  allowfullscreen
+></iframe>

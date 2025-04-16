@@ -1,0 +1,81 @@
+---
+title: AI Chip
+description: AI Chip, based on Action Chips, enables contextual and dynamic AI actions. It has a distinct appearance to signal users that the action utilizes AI capabilities.
+tabs: ['Usage', 'Code']
+showMobile: true
+keywords: ['Toggle', 'Action Chip', 'Chip']
+---
+
+
+```tsx
+return <AIChip icon="edit_note" label="AI chip" />
+```
+
+
+### States
+
+AI Chip supports **5 states** - default, hover, active, focus and disabled.
+
+![States - AI chip](./images/states.png)
+<Caption>States - AI chip</Caption>
+
+### Structure
+
+#### AI Chip
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Height</td>
+      <td>24px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Corner radius</td>
+      <td>12px</td>
+    </tr>
+  </tbody>
+</table>
+
+<br />
+
+![ Structure - AI chip](./images/structure.png)
+<Caption> Structure - AI chip</Caption>
+
+### Configurations
+
+#### AI Chip
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Label<br/></td>
+      <td>&#60;label&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Left icon<br/><em>(optional)</em></td>
+      <td>&#60;icon name&#62;</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+
+<br />
+
+### Usage
+
+#### AI Chip for AI Assisted Actions
+
+AI Chip should be used where there are actions that are assisted/powered by AI. 
+
+![AI Chip for AI assisted actions](./images/ai-action.png)
+<Caption>AI Chip for AI assisted actions</Caption>

@@ -1,0 +1,147 @@
+---
+title: Sliders
+description: A slider lets user select a value (or range) from a given range of values.
+tabs: ['Usage', 'Code', 'Interactions']
+showMobile: true
+keywords: ['Range', 'Rangeinput']
+---
+
+### Types
+
+Based on usage, sliders are of two types -
+
+#### Default Slider
+
+The default slider can be used whenever selection of a single value is required out of a range.
+
+
+```tsx
+return (
+    <Slider
+      min={1}
+      max={10}
+      label="Uncontrolled Slider"
+      stepSize={0.1}
+      labelStepSize={1}
+      defaultValue={4}
+      className="my-8"
+    />
+  )
+```
+
+
+#### Range Slider
+
+Range slider is used if the user wants to select a range instead of a single value.
+
+
+```tsx
+return (
+    <RangeSlider
+      min={1}
+      max={10}
+      label="Uncontrolled Slider"
+      stepSize={0.1}
+      labelStepSize={1}
+      defaultValue={[2, 4]}
+      className="my-8"
+    />
+  )
+```
+
+
+### Variants
+
+Based on selection, sliders have two variants -
+
+#### Discrete Slider
+
+In the case of discrete slier, while dragging slider knob will snap from one tick mark to the other.
+No values between two tick marks can be selected.
+
+
+```tsx
+return (
+    <Slider min={1} max={10} label="Discrete Slider" stepSize={1} labelStepSize={1} defaultValue={4} className="my-8" />
+  )
+```
+
+
+#### Free Slider
+
+In the case of free slider, while dragging slider knob can move to each and every intermediate value possible. 
+Values between tick marks can also be selected.
+
+
+```tsx
+return (
+    <Slider min={1} max={10} label="Free Slider" stepSize={0.1} labelStepSize={1} defaultValue={4} className="my-8" />
+  )
+```
+
+
+### Structure
+<br/>
+<br/>
+
+![Structure of slider](./images/slider-structure.png)
+<br/>
+
+<table style={{width: "100%"}}>
+ <tbody>
+   <tr>
+     <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+     <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+   </tr>
+   <tr style={{verticalAlign: "top"}}>
+      <td>Size (knob)</td>
+      <td>16x16 px</td>
+   </tr>
+ </tbody>
+</table>
+<br/>
+
+### Configurations
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Label<br/><em>(optional)</em></td>
+      <td>&#60;label&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Ticks</td>
+      <td>&#60;ticks&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Numbers<br/><em>(optional)</em></td>
+      <td>&#60;numbers&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Step size</td>
+      <td>&#60;size&#62;</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+### Usage
+
+#### Pairing With Metric Inputs
+
+Use slider with metric inputs for better accessibility in the case where **choosing a specific value** is important. 
+
+![Slider paired with metric inputs](./images/slider-1.png)
+<Caption> Slider paired with metric inputs </Caption>
+
+
+<br/>
+<br/>

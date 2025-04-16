@@ -1,0 +1,215 @@
+---
+title: Empty state
+description: The empty state indicates the absence of data and helps guide users on expected content and next steps.
+tabs: ['Usage', 'Code']
+keywords: ['Empty state', 'Empty template', 'Error state', 'Error template']
+showMobile: true
+---
+
+Empty state shows that there is no data to display on the page/section. Such states can be utilized to educate users about the kind of content they can expect and the next steps that they can take. 
+
+
+```tsx
+return (
+    <EmptyState>
+      <EmptyState.Image src="https://mds.innovaccer.com/static/media/no-files-empty-files.442ee36a.svg"></EmptyState.Image>
+      <EmptyState.Title>Title goes here</EmptyState.Title>
+      <EmptyState.Description>Description goes here</EmptyState.Description>
+      <EmptyState.Actions>
+        <Button className="mr-4">Secondary action</Button>
+        <Button appearance="primary">Primary action</Button>
+      </EmptyState.Actions>
+    </EmptyState>
+  )
+```
+
+
+### Sizes
+
+Empty states come in 3 different sizes ie. standard, compressed and tight. 
+
+<br/>
+
+#### Standard
+
+This is the largest size of empty states, making them ideal for use at the page level or within large cards. The illustrations used, can be resized according to the height available. 
+
+![Standard Size](./images/StandardSize.png)
+
+<Caption>Standard size of empty state</Caption>
+
+<br/>
+
+#### Compressed
+
+This size is suitable for use within medium-sized cards.
+
+![Compressed Size](./images/CompressedSize.png)
+
+<Caption>Compressed size of empty state</Caption>
+
+<br/>
+
+#### Tight
+
+This size is best suited for use within compact cards or smaller components such as selects, etc.
+
+**Note:** If space is constrained, use icons instead of illustrations, or omit illustrations altogether.
+
+![Tight Size](./images/TightSize.png)
+
+<Caption>Tight size of empty state</Caption>
+
+<br />
+
+### Configurations
+
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>
+      Illustration (optional)
+      </td>
+      <td>
+        &#60;illustration&#62;
+      </td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>
+        Title
+        <br />
+      </td>
+      <td>&#60;title&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>
+        Description (optional)
+      </td>
+      <td>&#60;description&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>
+        Actions (optional)
+      </td>
+      <td>
+      <ul>
+        <li>Primary action</li>
+        <li>Secondary action</li>
+      </ul>
+      </td>
+      <td>Secondary button</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>
+        Size
+      </td>
+      <td>
+      <ul>
+        <li>Standard</li>
+        <li>Compressed</li>
+        <li>Tight</li>
+      </ul>
+      </td>
+      <td>Standard</td>
+    </tr>
+     <tr style={{verticalAlign: "top"}}>
+      <td>Max width of component</td>
+      <td>&#60;max_width&#62;</td>
+      <td>
+       <ul>
+        <li>Standard - 480px</li>
+        <li>Compressed - 400px</li>
+        <li>Tight - 320px</li>
+      </ul>
+      </td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Max height of component</td>
+      <td>&#60;max_height&#62;</td>
+      <td>
+       <ul>
+        <li>Standard - 200px</li>
+        <li>Compressed - 150px</li>
+        <li>Tight - 100px</li>
+      </ul>
+      </td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Maximum no. of actions</td>
+      <td>2</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+<br />
+
+### Usage
+
+#### Illustrations
+
+Illustrations provide valuable visual context for users. Therefore, always ensure that the illustration used is relevant to the context. In limited space, opt for icons or omit illustrations entirely.
+
+**Note:** Illustrations have a maximum height limit, and they will be resized based on the available space within the container, up to the defined maximum height.
+
+#### Title and Description
+
+The title should succinctly describe the page's current state, followed by a description elaborating on the empty state and available user actions. 
+
+**Note:** A title is necessary, regardless of space constraints.
+
+
+#### Actions
+
+Ensure that action buttons clearly indicate the available next steps for users, limiting them to two actions at most to prevent confusion. 
+
+Guidelines to use each action type: 
+- **Primary action:** Suggests the optimal next step when no other primary actions are available on the page.
+- **Secondary action:** Proposes an alternative step for the user, and can also suggest the best next step if a primary button is unavailable.
+
+
+**Note:** Be cautious about the number of primary actions displayed on a single page.
+
+
+#### Where to Use
+
+Empty states can arise due to various factors, each requiring distinct approaches. These include:
+
+**1. No Data State:** Occurs, for instance, during first-time use.
+
+**2. User Action Based State:** Such as when there are no filter or search results. 
+
+**3. Error States:** Arising from system issues, permission issues, server maintenance, etc.
+
+
+**Note:** Please refer these comprehensive guidelines for addressing different empty states.
+
+#### Using Empty States in Larger Spaces
+
+For page-wide spaces or large containers, it's best to utilize large-sized empty states. Ensure that the contents of the empty state are center-aligned, and let the space size determine the image size as well.
+
+![Large Cards](./images/LargeCards.png)
+
+<Caption>Empty state usage in large cards</Caption>
+
+#### Using Empty States in Smaller Spaces
+
+In spaces smaller than others, opting for a standard-sized empty state might clutter the UI unnecessarily. Instead, consider using a compressed or tight-sized empty state. Let the space size dictate the illustration size, and if space is limited, opt for text only.
+
+![Small Cards](./images/SmallCard.png)
+
+<Caption>Empty state usage in small cards</Caption>
+
+##### Multiple Smaller Spaces
+
+In situations such as dashboards with multiple smaller cards, employing repetitive illustrations may clutter the UI. Thus, it's more suitable to use an empty state with only text and an action. In these instances, consider using a secondary button rather than the primary call-to-action button.

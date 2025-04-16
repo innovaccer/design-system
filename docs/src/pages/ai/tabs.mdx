@@ -1,0 +1,685 @@
+---
+title: Tabs
+description: Tabs segregate similar kind of content and allow users to navigate between them without switching the context.
+tabs: ['Usage', 'Code', 'Interactions']
+showMobile: true
+keywords: ['Pivot', 'Scoped tabs']
+---
+
+Tabs segregate similar kind of content and allow users to navigate between them without switching the context.
+
+
+```tsx
+const [activeIndex, setActiveIndex] = React.useState(0);
+
+  const onTabChangeHandler = (tabIndex) => {
+    setActiveIndex(tabIndex);
+    return action(`tab-change: ${tabIndex}`)();
+  };
+
+  return (
+    <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6" headerClassName="pl-3">
+      <Tab label="All" count={15} className="pl-6">
+        <div>All</div>
+      </Tab>
+      <Tab label="Pending" count={5} className="pl-6">
+        <div>Pending</div>
+      </Tab>
+      <Tab label="Transferred" count={3} className="pl-6">
+        <div>Transferred</div>
+      </Tab>
+      <Tab label="Successful" count={2} className="pl-6">
+        <div>Successful</div>
+      </Tab>
+      <Tab label="Declined" disabled={true} count={5}>
+        <div>Declined</div>
+      </Tab>
+    </Tabs>
+  )
+```
+
+
+### Variants
+
+#### Basic Tabs
+
+This variation consists of only a label.
+
+
+```tsx
+const options = [
+    {
+      label: 'Feb 9, 2019 (recent)',
+      value: 'Feb 9, 2019 (recent)',
+      selected: true,
+    },
+    {
+      label: 'Feb 10, 2019',
+      value: 'Feb 10, 2019',
+    },
+    {
+      label: 'Feb 11, 2019',
+      value: 'Feb 11, 2019',
+    },
+    {
+      label: 'Feb 12, 2019',
+      value: 'Feb 12, 2019',
+    },
+    {
+      label: 'Feb 13, 2019',
+      value: 'Feb 13, 2019',
+    },
+  ];
+
+  const [activeIndex, setActiveIndex] = React.useState(0);
+
+  const onTabChangeHandler = (tabIndex) => {
+    setActiveIndex(tabIndex);
+    return action(`tab-change: ${tabIndex}`)();
+  };
+
+  return (
+    <div>
+      <div className="d-flex justify-content-between">
+        <Heading size="m" className="pl-5">
+          Data Gaps
+        </Heading>
+        <div style={{ width: 'var(--spacing-8)' }}>
+          <Select
+            value={{ label: options[0].label, value: options[0].value }}
+            triggerOptions={{ withClearButton: false }}
+          >
+            <Select.List>
+              {options.map((item, key) => {
+                return (
+                  <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                    {item.label}
+                  </Select.Option>
+                );
+              })}
+            </Select.List>
+          </Select>
+        </div>
+      </div>
+      <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6">
+        <Tab label="Clinical Gaps" className="pl-5">
+          <div>Clinical Gaps</div>
+        </Tab>
+        <Tab label="Billing Gaps" className="pl-5">
+          <div>Billing Gaps</div>
+        </Tab>
+        <Tab label="Claim Gaps" disabled={true}>
+          <div>Claim Gaps</div>
+        </Tab>
+      </Tabs>
+    </div>
+  )
+```
+
+
+#### Tabs With Count
+
+This variation uses the Pill component to display the count along with the label.
+
+
+```tsx
+const [activeIndex, setActiveIndex] = React.useState(0);
+
+  const options = [
+    {
+      label: 'Increasing',
+      value: 'Increasing',
+    },
+    {
+      label: 'Decreasing',
+      value: 'Decreasing',
+    },
+  ];
+
+  const onTabChangeHandler = (tabIndex) => {
+    setActiveIndex(tabIndex);
+    return action(`tab-change: ${tabIndex}`)();
+  };
+
+  return (
+    <div>
+      <div className="d-flex justify-content-between">
+        <Heading size="m" className="pl-5">
+          Strategy
+        </Heading>
+        <Button appearance="primary">New Strategy</Button>
+      </div>
+      <div className="d-flex align-items-center mt-3">
+        <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6">
+          <Tab label="All" count={12} className="pl-5">
+            <div>All</div>
+          </Tab>
+          <Tab label="Active User" count={3} className="pl-5">
+            <div>Active User</div>
+          </Tab>
+          <Tab label="Inactive User" count={9} className="pl-5">
+            <div>Inactive User</div>
+          </Tab>
+          <div className="d-flex align-items-center">
+            <div style={{ width: 'var(--spacing-9)' }} className="ml-8">
+              <Input placeholder="Search by name" icon="search" />
+            </div>
+            <div style={{ width: 'var(--spacing-8)' }} className="ml-4">
+              <Select
+                triggerOptions={{
+                  withClearButton: false,
+                  placeholder: 'Sort by',
+                }}
+              >
+                <Select.List>
+                  {options.map((item, key) => {
+                    return (
+                      <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                        {item.label}
+                      </Select.Option>
+                    );
+                  })}
+                </Select.List>
+              </Select>
+            </div>
+          </div>
+        </Tabs>
+      </div>
+    </div>
+  )
+```
+
+
+#### Tabs With Icon
+
+This variant consists of an icon along with the label. Icons should only be used when they add additional value to the label.
+For example, with the help of icons, one can easily see the status without actually navigating to each and every tab.
+
+
+```tsx
+const [activeIndex, setActiveIndex] = React.useState(0);
+
+  const onTabChangeHandler = (tabIndex) => {
+    setActiveIndex(tabIndex);
+    return action(`tab-change: ${tabIndex}`)();
+  };
+
+  return (
+    <div>
+      <div className="d-flex align-items-center">
+        <Heading size="s" className="pl-5">
+          Diabetes: Hemoglobin A1c Poor Control
+        </Heading>
+        <Link className="ml-4">Measure definition</Link>
+      </div>
+      <Tabs onTabChange={onTabChangeHandler} className="mb-6" activeIndex={activeIndex}>
+        <Tab label="2020" icon="warning" className="pl-5">
+          <div>2020</div>
+        </Tab>
+        <Tab label="2019" icon="check_circle" className="pl-5">
+          <div>2019</div>
+        </Tab>
+        <Tab label="2018" icon="warning" className="pl-5">
+          <div>2018</div>
+        </Tab>
+        <Tab label="2017" icon="check_circle" className="pl-5">
+          <div>2017</div>
+        </Tab>
+      </Tabs>
+    </div>
+  )
+```
+
+
+#### Dismissible Tabs
+
+This variant consists of a Close Icon Button along with the label. It supports the dismissal of the tabs. These tabs can be triggered through an action button. In case the tab is already open on the screen, the action to re-open the tab should be known to the user.
+
+![Dismissible tabs](./images/tabs-1.png)
+
+<Caption>Dismissible tabs</Caption>
+<br />
+
+### Sizes
+
+Tabs come in **2 sizes** - regular and small.
+
+![Sizes](./images/sizes.png)
+
+<Caption>Regular vs Small Tabs</Caption>
+<br />
+
+### Structure
+
+<br />
+<br />
+
+#### Basic Tabs
+
+<br/>
+
+##### Regular
+
+<br/>
+
+![Structure of Regular Tab](./images/tabs-structure.png)
+
+<Caption>Structure of Regular Tab</Caption>
+
+<br />
+
+<table style={{ width: '100%' }}>
+  <tbody>
+    <tr>
+      <th style={{ width: '50%', textAlign: 'left' }}>Property</th>
+      <th style={{ width: '50%', textAlign: 'left' }}>Value(s)</th>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Height (of active indicator)</td>
+      <td>2 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Padding (top, right, bottom, left)</td>
+      <td>12 px, 12 px, 16 px, 12 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Spacing between tabs</td>
+      <td>0 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Minimum width (of a tab item)</td>
+      <td>64 px</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+##### Small
+
+![Structure of Small Tab](./images/tab-structure-small.png)
+
+<Caption>Structure of Small Tab</Caption>
+
+<br />
+
+<table style={{ width: '100%' }}>
+  <tbody>
+    <tr>
+      <th style={{ width: '50%', textAlign: 'left' }}>Property</th>
+      <th style={{ width: '50%', textAlign: 'left' }}>Value(s)</th>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Height (of active indicator)</td>
+      <td>2 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Padding (top, right, bottom, left)</td>
+      <td>8 px, 12 px, 12 px, 12 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Spacing between tabs</td>
+      <td>0 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Minimum width (of a tab item)</td>
+      <td>64 px</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+#### Tabs With Count
+
+##### Regular
+
+![Structure of tabs](./images/tabs-with-count-structure.png)
+
+<br />
+
+<table style={{ width: '100%' }}>
+  <tbody>
+    <tr>
+      <th style={{ width: '50%', textAlign: 'left' }}>Property</th>
+      <th style={{ width: '50%', textAlign: 'left' }}>Value(s)</th>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Padding (top, right, bottom, left)</td>
+      <td>12 px, 12 px, 16 px, 12 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Spacing between pill and label</td>
+      <td>8 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Spacing between tabs</td>
+      <td>0 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Minimum width (of a tab item)</td>
+      <td>64 px</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+##### Small
+
+![With count- Small](./images/tab-count-small.png)
+
+<br />
+
+<table style={{ width: '100%' }}>
+  <tbody>
+    <tr>
+      <th style={{ width: '50%', textAlign: 'left' }}>Property</th>
+      <th style={{ width: '50%', textAlign: 'left' }}>Value(s)</th>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Padding (top, right, bottom, left)</td>
+      <td>8 px, 12 px, 12 px, 12 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Spacing between pill and label</td>
+      <td>8 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Spacing between tabs</td>
+      <td>0 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Minimum width (of a tab item)</td>
+      <td>64 px</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+#### Tabs With Icon
+
+##### Regular
+
+![Structure of tabs](./images/tabs-with-icon-structure.png)
+
+<br />
+
+<table style={{ width: '100%' }}>
+  <tbody>
+    <tr>
+      <th style={{ width: '50%', textAlign: 'left' }}>Property</th>
+      <th style={{ width: '50%', textAlign: 'left' }}>Value(s)</th>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Padding (top, right, bottom, left)</td>
+      <td>12 px, 12 px, 16 px, 12 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Size of icon</td>
+      <td>16x16 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Spacing between icon and label</td>
+      <td>8 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Spacing between tabs</td>
+      <td>0 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Minimum width (of a tab item)</td>
+      <td>64 px</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+##### Small
+
+![With icon - Small](./images/tab-icon-small.png)
+
+<br />
+
+<table style={{ width: '100%' }}>
+  <tbody>
+    <tr>
+      <th style={{ width: '50%', textAlign: 'left' }}>Property</th>
+      <th style={{ width: '50%', textAlign: 'left' }}>Value(s)</th>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Padding (top, right, bottom, left)</td>
+      <td>8 px, 12 px, 12 px, 12 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Size of icon</td>
+      <td>16x16 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Spacing between tabs</td>
+      <td>0 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Minimum width (of a tab item)</td>
+      <td>64 px</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+#### Dismissible Tabs
+
+##### Regular
+
+![Structure of tabs](./images/dismissible-tabs-structure.png)
+
+<br />
+
+<table style={{ width: '100%' }}>
+  <tbody>
+    <tr>
+      <th style={{ width: '50%', textAlign: 'left' }}>Property</th>
+      <th style={{ width: '50%', textAlign: 'left' }}>Value(s)</th>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Padding (top, right, bottom, left)</td>
+      <td>12 px, 12 px, 16 px, 0 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Size of drag indicator</td>
+      <td>16x16 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Size of close button</td>
+      <td>20x20 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Spacing between drag indicator and label</td>
+      <td>2 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Spacing between label and close button</td>
+      <td>2 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Spacing between tabs</td>
+      <td>0 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Minimum width (of a tab item)</td>
+      <td>64 px</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+##### Small
+
+![Structure of tabs](./images/dismissible-tab-small.png)
+
+<br />
+
+<table style={{ width: '100%' }}>
+  <tbody>
+    <tr>
+      <th style={{ width: '50%', textAlign: 'left' }}>Property</th>
+      <th style={{ width: '50%', textAlign: 'left' }}>Value(s)</th>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Padding (top, right, bottom, left)</td>
+      <td>8 px, 12 px, 12 px, 0 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Size of drag indicator</td>
+      <td>16x16 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Size of close button</td>
+      <td>20x20 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Spacing between drag indicator and label</td>
+      <td>2 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Spacing between label and close button</td>
+      <td>2 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Spacing between tabs</td>
+      <td>0 px</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Minimum width (of a tab item)</td>
+      <td>64 px</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+### Configurations
+
+<table style={{ width: '100%' }}>
+  <tbody>
+    <tr>
+      <th style={{ width: '33%', textAlign: 'left' }}>Property</th>
+      <th style={{ width: '33%', textAlign: 'left' }}>Value(s)</th>
+      <th style={{ width: '33%', textAlign: 'left' }}>Default value</th>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Size</td>
+      <td>
+        <ul>
+          <li>Regular</li>
+          <li>Small</li>
+        </ul>
+      </td>
+      <td>Regular</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Label</td>
+      <td>&#60;label&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>
+        Add-on <br />
+        <em>(optional)</em>
+      </td>
+      <td>
+        <ul>
+          <li>Leading pill</li>
+          <li>Leading icon</li>
+        </ul>
+      </td>
+      <td>-</td>
+    </tr>
+    <tr style={{ verticalAlign: 'top' }}>
+      <td>Dismissible tab</td>
+      <td>
+        <ul>
+          <li>True</li>
+          <li>False</li>
+        </ul>
+      </td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+### Usage
+
+<br />
+
+#### Tabs vs Navigation
+
+Tabs have similar kind of content and act as filters. Don’t use tabs to group content that is dissimilar.
+
+![Tabs have similar kind of content and act as filters](./images/tabs-2.png)
+
+<Caption>Tabs have similar kind of content and act as filters</Caption>
+<br />
+
+On the other hand, navigation menu items are generally used to group independent pages.
+
+![Navigation represents independent pages](./images/tabs-3.png)
+
+<Caption>Navigation represents independent pages</Caption>
+<br />
+
+If **navigation items and tabs** are used on the same page make sure to use them in such a way that while switching between multiple tabs, the user stays on the same page and sees relative data whereas while switching between multiple navigation items, the user is taken to a new page which may or may not be relative.
+
+![Tabs and navigation on the same page](./images/tabs-4.png)
+
+<Caption>Tabs and navigation on the same page</Caption>
+<br />
+
+#### Tabs Within Other Components
+
+Tabs are usually paired with components like headers or nested in components like cards, modals, and sidesheets.
+
+![Tabs in a page header](./images/tabs-5.png)
+
+<Caption>Tabs in a page header</Caption>
+<br />
+
+![Tabs in a modal](./images/tabs-6.png)
+
+<Caption>Tabs in a modal</Caption>
+<br />
+
+![Tabs in a card](./images/tabs-7.png)
+
+<Caption>Tabs in a card</Caption>
+<br />
+
+#### Maximum Width of a Tab
+
+Tabs should have short, scannable labels, typically a single word. If labels are too long, the tabs will be truncated after a maximum width of 256px.
+
+![Maximum width of a tab, i.e. 256px](./images/max-label-width.png)
+<Caption>Maximum width of a tab, i.e. 256px</Caption>
+
+#### Maximum Tabs
+
+Too many tabs can unnecessarily clutter the UI. Hence it is recommended **not to use more than 5 tabs** at once.
+
+#### When to Use Small Tabs
+
+It is recommended to use small tabs in case of a space constraint or high data density.
+
+![When to use small tabs](./images/small-tab-usage.png)
+<Caption>When to use small tabs</Caption>
+
+#### Opening Behavior of Dismissible Tabs
+
+Dismissible tabs are opened as the right-most tab in a tab group. They stack up towards the right in the order they are opened.
+
+![Dismissible tabs are opened as the right-most tab in a tab group](./images/tabs-9.png)
+
+<Caption>Dismissible tabs are opened as the right-most tab in a tab group</Caption>
+<br />
+
+#### Closing Behavior of Dismissible Tabs
+
+All tabs can be dismissible if they are used inside a container like card, modal, sidesheet, etc. Closing the last tab will close the container.
+
+Though in most of the cases, the dismissible tabs are opened from basic tabs and hence there is no need for closing the container in those cases.

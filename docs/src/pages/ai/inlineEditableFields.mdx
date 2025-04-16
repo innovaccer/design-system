@@ -1,0 +1,364 @@
+---
+title: Inline Editable Fields
+description: Inline editable fields help users to directly jump from read mode to edit mode.
+tabs: ['Usage', 'Code']
+showMobile: true
+keywords: ['Inline edit', 'editable input']
+---
+
+Inline editable fields enable users to edit the data right where they see it. They come handy when the users want to update a field or two without losing context and editing is not the primary intent of the page. 
+
+### Types
+<br/>
+
+#### Basic Input
+Inline editable input comes with two small action buttons to confirm or discard the changes.
+
+```tsx
+const placeholder = 'First Name';
+  const error = false;
+  const errorMessage = 'Error Message Description';
+
+  const [value, setValue] = React.useState('');
+
+  const size = 'regular';
+
+  const onChange = (updatedValue) => {
+    setValue(updatedValue);
+  };
+
+  const options = {
+    placeholder,
+    errorMessage,
+    onChange,
+    error,
+    size,
+    value,
+  };
+
+  return (
+    <div className="vw-25">
+      <EditableInput {...options} />
+    </div>
+  )
+```
+
+
+#### Input With Chips
+Chips can be used as tags in inputs. **Enter/return** key is used to input the tags.
+
+```tsx
+const [value, setValue] = React.useState();
+
+  const onChange = (updatedValue) => {
+    setValue(updatedValue);
+  };
+  const onClick = (item) => action(`onClick: ${item}`);
+
+  const placeholder = 'Add Value';
+  const chipOptions = {
+    onClick,
+    clearButton: true,
+    maxWidth: 'var(--spacing-8)',
+  };
+  const chipInputOptions = {
+    chipOptions,
+    allowDuplicates: false,
+    defaultValue: [],
+    autoFocus: true,
+  };
+
+  const options = {
+    placeholder,
+    value,
+    onChange,
+    chipInputOptions,
+  };
+  return (
+    <div className="w-25">
+      <EditableChipInput {...options} />
+    </div>
+  )
+```
+
+
+#### Dropdown
+Dropdown type does not require explicit save/discard actions, as the result is saved immediately.
+
+```tsx
+const placeholder = 'Select Option';
+
+  const getSearchedOptions = (options, searchTerm) => {
+    const result = options.filter((option) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));
+    return result;
+  };
+
+  const fetchOptions = (searchTerm) => {
+    const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;
+    return new Promise((resolve) => {
+      this.window.setTimeout(() => {
+        resolve({
+          options: searchedOptions,
+          count: searchedOptions.length,
+        });
+      }, 1000);
+    });
+  };
+
+  const onChange = (selectedValues) => {
+    return action(`selected values length: ${selectedValues}`)();
+  };
+
+  return (
+    <div className="w-25">
+      <Label withInput={true} className="ml-5">
+        Editable Dropdown
+      </Label>
+      <EditableDropdown
+        placeholder={placeholder}
+        dropdownOptions={{
+          fetchOptions,
+          onChange,
+        }}
+      />
+    </div>
+  )
+```
+
+
+### Sizes
+Inline editable input comes in **2 sizes** - regular and small. On the other hand, inline editable dropdown comes just in the regular size.
+
+```tsx
+const [name, setName] = React.useState('');
+  const [weight, setWeight] = React.useState('');
+
+  const onChangeName = (value) => {
+    setName(value);
+  };
+
+  const onChangeWeight = (value) => {
+    setWeight(value);
+  };
+
+  return (
+    <Row>
+      <div className="d-flex flex-column vw-25">
+        <Label withInput={true} className="ml-5">
+          Regular
+        </Label>
+        <EditableInput placeholder="First Name" value={name} onChange={onChangeName} className="mr-5" />
+      </div>
+      <Column size={2}>
+        <div className="d-flex ml-8 flex-column">
+          <Label withInput={true} className="ml-5">
+            Tiny
+          </Label>
+          <EditableInput placeholder="Add Weight" value={weight} onChange={onChangeWeight} size="tiny" />
+        </div>
+      </Column>
+    </Row>
+  )
+```
+
+
+### States
+<br/>
+
+#### Input
+
+![States of Inline editable input](./images/inlineEditable-inputStates.png)
+<Caption> States of inline editable input</Caption>
+
+<br/>
+
+#### Input With Chips
+
+![States of Inline editable input with chips](./images/inlineEditable-chipsStates.png)
+<Caption> States of inline editable input with chips</Caption>
+
+<br/>
+
+#### Dropdown
+
+![States of Inline editable dropdown](./images/inlineEditable-dropdownStates.png)
+<Caption> States of inline editable dropdown</Caption>
+
+<br/>
+<br/>
+
+### Structure
+![Structure of Inline editable dropdown](./images/inlineEditable-structure.png)
+<Caption> A regular sized inline editable input</Caption>
+
+<br/>
+<br/>
+
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Height</td>
+      <td>
+            <ul>
+              <li>32 px <em>(Regular input, dropdown)</em></li>
+              <li>24 px <em>(Small input)</em></li>
+            </ul>
+      </td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Padding (right, left)</td>
+      <td>12 px, 12 px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Spacing between input and actions</td>
+      <td>4 px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Spacing between actions</td>
+      <td>4 px</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+
+### Configurations
+
+#### Input
+<br/>
+<br/>
+
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Size</td>
+      <td>
+          <ul>
+              <li>Regular</li>
+              <li>Small</li>
+          </ul>
+      </td>
+      <td>Regular</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Width<br/></td>
+      <td>&#60;width&#62;</td>
+      <td>256 px</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+#### Dropdown
+<br/>
+<br/>
+
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Width<br/></td>
+      <td>&#60;width&#62;</td>
+      <td>256 px</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+#### Label
+<br/>
+<br/>
+
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Required</td>
+      <td>
+          <ul>
+              <li>True</li>
+              <li>False</li>
+          </ul>
+      </td>
+      <td>False</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Optional</td>
+      <td>
+          <ul>
+              <li>True</li>
+              <li>False</li>
+          </ul>
+      </td>
+      <td>False</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Info</td>
+      <td>
+          <ul>
+              <li>True</li>
+              <li>False</li>
+          </ul>
+      </td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+
+### Usage
+<br/>
+
+#### Intent
+Inline editable fields are used when the users want to update a field or two without losing context and editing is not the primary intent of the page.
+
+![Using Inline editable fields](./images/inlineEditable-intent.png)
+
+#### Showing Error
+Errors are shown using popovers alongside the inline editable field.
+
+![Showing error in inline editable fields](./images/inlineEditable-error.png)
+<Caption> Showing error in inline editable fields </Caption>
+
+<br/>
+
+#### Overflow Behavior in Inline Editable Chip Input
+In case of overflow the chip gets wrapped into the next line.
+
+![Overflow behavior of inline editable fields](./images/inlineEditable-overflow.png)
+<Caption>Overflow behavior in inline editable chip input </Caption>
+
+<br/>
+
+#### Horizontal Spacing Between Label and Field
+It is recommended to have a minimum spacing of 4px between the label and the inline editable field when placed horizontally.
+
+> This spacing is recommended so that the focus ring doesn’t overlap with the label. 
+
+<br/>
+
+![Recommended minimum spacing between the label and field](./images/inlineEditable-spacing.png)
+<Caption> Recommended minimum spacing between the label and field </Caption>
+<br/>

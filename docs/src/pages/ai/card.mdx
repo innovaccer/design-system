@@ -1,0 +1,245 @@
+---
+title: Cards
+description: Cards act as containers to group related information together.
+tabs: ['Usage', 'Code']
+showMobile: true
+keywords: ['Container']
+---
+
+Cards make it easy to scan for relevant and actionable information by grouping them. Elements, like text and images, should be placed inside them in a way that clearly indicates hierarchy. This way multiple different sections can be created within a page.
+
+Cards can be arranged vertically, horizontally or in a grid.
+<br/>
+
+### Types
+<br/>
+
+#### Default
+
+Default card is the most used type of card. It consists of a shadow, `Shadow 10` by default.
+
+```tsx
+return (
+    <Card>
+      <div className="p-8" />
+    </Card>
+  )
+```
+
+
+#### Subdued
+
+Subdued card is used to highlight a section inside a card. The condition is that this section must be at the edges (top, right, bottom, left) and not somewhere in between.
+
+```tsx
+return (
+    <CardSubdued>
+      <div className="p-8" />
+    </CardSubdued>
+  )
+```
+
+
+#### Flat
+
+Flat card is used to create sections within a default card i.e. card inside a card.
+
+```tsx
+return (
+    <Card shadow="none">
+      <div className="p-8" />
+    </Card>
+  )
+```
+
+<br/>
+
+### Structure
+<br/>
+<br/>
+
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Corner radius</td>
+      <td>4 px</td>
+    </tr>
+    
+  </tbody>
+</table>
+<br/>
+
+### Configurations
+<br/>
+<br/>
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Style</td>
+      <td>
+          <ul>
+              <li>Shadow 10</li>
+              <li>Shadow 20</li>
+              <li>Shadow 30</li>
+              <li>Subdued</li>
+              <li>No shadow</li>
+          </ul>
+      </td>
+      <td>Shadow 10</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+### Usage
+<br/>
+
+#### Scrolling Inside a Card
+To indicate that the content is scrollable within a card, use a scrollbar. The dividers in the header and the footer should only be shown when the content is scrollable.
+
+
+```tsx
+return (
+    <Card>
+      <div className="p-8" />
+    </Card>
+  )
+```
+
+
+#### Highlighting a Section
+Subdued card is used to highlight a section inside a card. The condition is that this section must be at the edges (bottom, right, etc.) and not somewhere in between.
+
+
+```tsx
+return (
+    <CardSubdued>
+      <div className="p-8" />
+    </CardSubdued>
+  )
+```
+
+
+#### Card Within a Default Card
+Flat card is used when there is a need to create sections within a default card i.e. card inside a card.
+
+
+```tsx
+const withSeperator = false;
+
+  return (
+    <Row>
+      <Column size="8">
+        <Card>
+          <CardHeader>
+            <Heading size="s">Managed Plans</Heading>
+          </CardHeader>
+          <CardBody>
+            <Card shadow="none" className="mb-6">
+              <CardHeader className="d-flex justify-content-between">
+                <Text weight="strong">PRIMARY</Text>
+                <Badge appearance="accent4">ACTIVE</Badge>
+              </CardHeader>
+              <CardBody>
+                <Text appearance="disabled">MSSP - Track 3</Text>
+                <br />
+                <Text small={true}>Medicare</Text>
+                <br />
+                <div className="py-6">
+                  <Text small={true} appearance="disabled">
+                    Subscriber
+                  </Text>
+                  <br />
+                  <Text appearance="disabled">LAWSON, JOY (Self)</Text>
+                  <br />
+                  <Text weight="medium">ZGP123456789</Text>
+                </div>
+              </CardBody>
+
+              <CardFooter className="position-relative" withSeperator={withSeperator}>
+                <div>
+                  <Text appearance="disabled" small={true}>
+                    Last attr:
+                  </Text>
+                  <Text small={true} className="ml-3">
+                    04/19
+                  </Text>
+                  <Text appearance="disabled" small={true} className="ml-7">
+                    Payer ID:
+                  </Text>
+                  <Text small={true} className="ml-3">
+                    001
+                  </Text>
+                </div>
+              </CardFooter>
+            </Card>
+
+            <Card shadow="none" className="mb-6">
+              <CardHeader className="d-flex justify-content-between">
+                <Text weight="strong" appearance="disabled">
+                  SECONDARY
+                </Text>
+                <Badge>INACTIVE</Badge>
+              </CardHeader>
+              <CardBody>
+                <Text appearance="disabled">Community Plan</Text>
+                <br />
+                <Text small={true}>Blue Shield of California</Text>
+                <br />
+                <div className="py-6">
+                  <Text small={true} appearance="disabled">
+                    Subscriber
+                  </Text>
+                  <br />
+                  <Text appearance="disabled">LAWSON, MICHAEL (Spouse)</Text>
+                  <br />
+                  <Text weight="medium">HKA987654321</Text>
+                </div>
+              </CardBody>
+              <CardFooter className="position-relative" withSeperator={withSeperator}>
+                <div>
+                  <Text appearance="disabled" small={true}>
+                    Last attr:
+                  </Text>
+                  <Text small={true} className="ml-3">
+                    11/18
+                  </Text>
+                  <Text appearance="disabled" small={true} className="ml-7">
+                    Payer ID:
+                  </Text>
+                  <Text small={true} className="ml-3">
+                    042
+                  </Text>
+                </div>
+              </CardFooter>
+            </Card>
+          </CardBody>
+        </Card>
+      </Column>
+    </Row>
+  )
+```
+
+
+#### Empty Card
+When data is not available, the card remains empty. In that case, an illustration and/or an error message is displayed.
+
+
+```tsx
+return (
+    <Card>
+      <div className="p-8" />
+    </Card>
+  )
+```

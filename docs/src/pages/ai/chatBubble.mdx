@@ -1,0 +1,631 @@
+---
+title: Chat Bubble
+description: Chat bubble facilitates fluid exchange of information.
+tabs: ['Usage', 'Code']
+showMobile: true
+keywords: ['Chat', 'Chat Bubble', 'Conversation']
+---
+
+Chat bubble facilitates fluid exchange of information.
+
+
+```tsx
+return (
+    <div className="d-flex">
+      <Chat>
+        <Chat.ChatBubble type="incoming">
+          <Text>Hello, I'd like to schedule an appointment with my cardiologist. Can you help me with that ?</Text>
+        </Chat.ChatBubble>
+      </Chat>
+
+      <Chat>
+        <Chat.ChatBubble type="outgoing">
+          <Text>I am happy to provide you with an appointment tomorrow afternoon.</Text>
+        </Chat.ChatBubble>
+      </Chat>
+    </div>
+  )
+```
+
+
+### Types
+
+There are two types of chat messages: Outgoing Message and Incoming Message.
+
+#### Outgoing Message
+
+An outgoing message is sent by the user, right-aligned and styled to differentiate from incoming messages, often including a timestamp and status indicator.
+
+
+```tsx
+const actionBar = () => {
+    return (
+      <div className="d-flex">
+        <Button appearance="transparent" icon="edit" tooltip="Edit" className="mr-3" size="tiny" largeIcon={true} />
+        <Button
+          appearance="transparent"
+          icon="forward"
+          tooltip="Forward"
+          className="mr-3"
+          size="tiny"
+          largeIcon={true}
+        />
+        <Button appearance="transparent" icon="more_vert" tooltip="More Options" size="tiny" largeIcon={true} />
+      </div>
+    );
+  };
+
+  const outgoingOptions = {
+    status: true,
+    time: '1:00 AM',
+    metaData: 'Meta Data',
+    actionBar,
+    urgentMessage: () => {
+      return (
+        <div className="d-flex align-items-center">
+          <Icon name="notifications" size={14} appearance="alert" />
+          <Text size="small" appearance="destructive" className="ml-2" weight="medium">
+            Urgent
+          </Text>
+        </div>
+      );
+    },
+  };
+
+  return (
+    <Chat>
+      <Chat.ChatBubble type="outgoing" outgoingOptions={outgoingOptions}>
+        <Text>Hello, I'd like to schedule an appointment with my cardiologist. Can you help me with that ? </Text>
+      </Chat.ChatBubble>
+    </Chat>
+  )
+```
+
+
+#### Incoming Message
+
+An incoming message is received by the user, typically left-aligned and styled to distinguish it from outgoing messages, often including a timestamp and sender information.
+
+
+```tsx
+const actionBar = () => {
+    return (
+      <div className="d-flex">
+        <Button appearance="transparent" icon="edit" tooltip="Edit" className="mr-3" size="tiny" largeIcon={true} />
+        <Button
+          appearance="transparent"
+          icon="forward"
+          tooltip="Forward"
+          className="mr-3"
+          size="tiny"
+          largeIcon={true}
+        />
+        <Button appearance="transparent" icon="more_vert" tooltip="More Options" size="tiny" largeIcon={true} />
+      </div>
+    );
+  };
+
+  const incomingOptions = {
+    time: '1:00 AM',
+    metaData: 'Meta Data',
+    avatarData: {
+      firstName: 'Anuradha',
+      lastName: 'Aggarwal',
+      image: <Avatar.Image src="https://design.innovaccer.com/images/avatar2.jpeg" />,
+    },
+    showAvatar: true,
+    actionBar,
+    urgentMessage: () => {
+      return (
+        <div className="d-flex align-items-center">
+          <Icon name="notifications" size={14} appearance="alert" />
+          <Text size="small" appearance="destructive" className="ml-2" weight="medium">
+            Urgent
+          </Text>
+        </div>
+      );
+    },
+  };
+
+  return (
+    <Chat>
+      <Chat.ChatBubble type="incoming" incomingOptions={incomingOptions}>
+        <Text>Hello, I'd like to schedule an appointment with my cardiologist. Can you help me with that ? </Text>
+      </Chat.ChatBubble>
+    </Chat>
+  )
+```
+
+
+### Variants
+
+#### Outgoing Message
+
+##### Default
+
+This variant comes with just a message bubble.
+
+
+```tsx
+return (
+    <Chat>
+      <Chat.ChatBubble type="outgoing">
+        <Text>Hello, I'd like to schedule an appointment with my cardiologist. Can you help me with that ?</Text>
+      </Chat.ChatBubble>
+    </Chat>
+  )
+```
+
+
+##### With Metadata
+
+This variant includes a message bubble and metadata for showing timestamp, meta item and urgency of the message.
+
+
+```tsx
+const actionBar = () => {
+    return (
+      <div className="d-flex">
+        <Button appearance="transparent" icon="edit" tooltip="Edit" className="mr-3" size="tiny" largeIcon={true} />
+        <Button
+          appearance="transparent"
+          icon="forward"
+          tooltip="Forward"
+          className="mr-3"
+          size="tiny"
+          largeIcon={true}
+        />
+        <Button appearance="transparent" icon="more_vert" tooltip="More Options" size="tiny" largeIcon={true} />
+      </div>
+    );
+  };
+
+  const outgoingOptions = {
+    status: true,
+    time: '1:00 AM',
+    metaData: 'Meta Data',
+    actionBar,
+    urgentMessage: () => {
+      return (
+        <div className="d-flex align-items-center">
+          <Icon name="notifications" size={14} appearance="alert" />
+          <Text size="small" appearance="destructive" className="ml-2" weight="medium">
+            Urgent
+          </Text>
+        </div>
+      );
+    },
+  };
+
+  return (
+    <Chat>
+      <Chat.ChatBubble type="outgoing" outgoingOptions={outgoingOptions}>
+        <Text>Hello, I'd like to schedule an appointment with my cardiologist. Can you help me with that ? </Text>
+      </Chat.ChatBubble>
+    </Chat>
+  )
+```
+
+
+#### Incoming Message
+
+##### Default
+
+This variant comes with just a message bubble.
+
+
+```tsx
+return (
+    <Chat>
+      <Chat.ChatBubble type="incoming">
+        <Text>Hello, I'd like to schedule an appointment with my cardiologist. Can you help me with that ?</Text>
+      </Chat.ChatBubble>
+    </Chat>
+  )
+```
+
+
+##### With Metadata
+
+This variant includes a message bubble and metadata for showing timestamp, meta item and urgency of the message.
+
+
+```tsx
+const incomingOptions = {
+    time: '1:00 AM',
+    metaData: 'Meta Data',
+    urgentMessage: () => {
+      return (
+        <div className="d-flex align-items-center">
+          <Icon name="notifications" size={14} appearance="alert" />
+          <Text size="small" appearance="destructive" className="ml-2" weight="medium">
+            Urgent
+          </Text>
+        </div>
+      );
+    },
+  };
+
+  return (
+    <Chat>
+      <Chat.ChatBubble type="incoming" incomingOptions={incomingOptions}>
+        <Text>Hello, I'd like to schedule an appointment with my cardiologist. Can you help me with that ? </Text>
+      </Chat.ChatBubble>
+    </Chat>
+  )
+```
+
+
+##### With Avatar and Metadata
+
+This variant includes a message bubble, avatar and metadata for showing timestamp, meta item and urgency of the message.
+
+
+```tsx
+const actionBar = () => {
+    return (
+      <div className="d-flex">
+        <Button appearance="transparent" icon="edit" tooltip="Edit" className="mr-3" size="tiny" largeIcon={true} />
+        <Button
+          appearance="transparent"
+          icon="forward"
+          tooltip="Forward"
+          className="mr-3"
+          size="tiny"
+          largeIcon={true}
+        />
+        <Button appearance="transparent" icon="more_vert" tooltip="More Options" size="tiny" largeIcon={true} />
+      </div>
+    );
+  };
+
+  const incomingOptions = {
+    time: '1:00 AM',
+    metaData: 'Meta Data',
+    avatarData: {
+      firstName: 'Anuradha',
+      lastName: 'Aggarwal',
+      image: <Avatar.Image src="https://design.innovaccer.com/images/avatar2.jpeg" />,
+    },
+    showAvatar: true,
+    actionBar,
+    urgentMessage: () => {
+      return (
+        <div className="d-flex align-items-center">
+          <Icon name="notifications" size={14} appearance="alert" />
+          <Text size="small" appearance="destructive" className="ml-2" weight="medium">
+            Urgent
+          </Text>
+        </div>
+      );
+    },
+  };
+
+  return (
+    <Chat>
+      <Chat.ChatBubble type="incoming" incomingOptions={incomingOptions}>
+        <Text>Hello, I'd like to schedule an appointment with my cardiologist. Can you help me with that ? </Text>
+      </Chat.ChatBubble>
+    </Chat>
+  )
+```
+
+
+### Structure
+
+#### Outgoing Message
+
+##### Default
+
+![Structure - Outgoing Message - Default](./images/structure-outgoing-msg-default.png)
+<Caption>Structure - Outgoing Message - Default</Caption>
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Padding (left, right)</td>
+      <td>12px, 12px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Padding (top, bottom)</td>
+      <td>8px, 8px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Spacing between status and bubble</td>
+      <td>4px</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+##### With Metadata
+
+![Structure - Outgoing Message - With Metadata](./images/structure-outgoing-message-with-metadata.png)
+<Caption>Structure - Outgoing Message - With Metadata</Caption>
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Padding (left, right)</td>
+      <td>12px, 12px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Padding (top, bottom)</td>
+      <td>8px, 8px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Spacing between metadata and bubble</td>
+      <td>4px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Spacing between status and bubble</td>
+      <td>4px</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+#### Incoming Message
+
+##### Default
+
+![Structure - Incoming Message - Default](./images/structure-incoming-message-default.png)
+<Caption>Structure - Incoming Message - Default</Caption>
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Padding (left, right)</td>
+      <td>12px, 12px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Padding (top, bottom)</td>
+      <td>8px, 8px</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+##### With Metadata
+
+![Structure - Incoming Message - With Metadata](./images/structure-incoming-message-with-metadata.png)
+<Caption>Structure - Incoming Message - With Metadata</Caption>
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Padding (left, right)</td>
+      <td>12px, 12px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Padding (top, bottom)</td>
+      <td>8px, 8px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Spacing between metadata and bubble</td>
+      <td>4px</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+##### With Avatar and Metadata
+
+![Structure - Incoming Message - With Avatar and Metadata](./images/structure-incoming-message-with-avatar.png)
+<Caption>Structure - Incoming Message - With Avatar and Metadata</Caption>
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Padding (left, right)</td>
+      <td>12px, 12px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Padding (top, bottom)</td>
+      <td>8px, 8px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Spacing between metadata and bubble</td>
+      <td>4px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Spacing between avatar and bubble</td>
+      <td>8px</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+### Configurations
+
+#### Outgoing Message
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Actions (optional)</td>
+      <td>
+        <ul>
+          <li>True</li>
+          <li>False</li>
+        </ul>
+      </td>
+      <td>True</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Status (optional)</td>
+      <td>
+        <ul>
+          <li>True</li>
+          <li>False</li>
+        </ul>
+      </td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+#### Incoming Message
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Actions (optional)</td>
+      <td>
+        <ul>
+          <li>True</li>
+          <li>False</li>
+        </ul>
+      </td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+### Behaviour
+
+#### Sending State of Outgoing Message
+
+While in the sending state, the outgoing message displays an opacity of 48% to indicate that it has not yet been delivered.
+
+![Sending State of Outgoing Message](./images/sending-state-outgoing-message.png)
+<Caption>Sending State of Outgoing Message</Caption>
+
+#### Error State of Outgoing Message
+
+If the outgoing message fails, you can attempt to resend it by retrying.
+
+![Error State of Outgoing Message](./images/error-state.png)
+<Caption>Error State of Outgoing Message</Caption>
+
+#### Urgent Message
+
+It is recommended to tag a message urgent to bring attention to it. An urgent message within a thread will interrupt the conversation flow, categorizing it as a distinct entity separate from the ongoing discussion.
+
+![Urgent Message](./images/urgent-message.png)
+<Caption>Urgent Message</Caption>
+
+#### Showing Actions on Hover
+
+You can show actions relevant to a chat bubble on hover.
+
+
+```tsx
+const actionBar = () => {
+    return (
+      <div className="d-flex">
+        <Button appearance="transparent" icon="edit" tooltip="Edit" className="mr-3" size="tiny" largeIcon={true} />
+        <Button
+          appearance="transparent"
+          icon="forward"
+          tooltip="Forward"
+          className="mr-3"
+          size="tiny"
+          largeIcon={true}
+        />
+        <Button appearance="transparent" icon="more_vert" tooltip="More Options" size="tiny" largeIcon={true} />
+      </div>
+    );
+  };
+
+  const incomingOptions = {
+    actionBar,
+  };
+
+  return (
+    <Chat>
+      <Chat.ChatBubble type="incoming" incomingOptions={incomingOptions}>
+        <Text>Hello, I'd like to schedule an appointment with my cardiologist. Can you help me with that ? </Text>
+      </Chat.ChatBubble>
+    </Chat>
+  )
+```
+
+
+#### Message Entry Guideline for Chat Bubble
+
+**Message Grouping Logic**
+
+<ul>
+  <li>Messages sent within **less than 5 minutes** of each other will be grouped together and treated as a single conversation thread.</li>
+  <li>If the time interval between consecutive messages is **5 minutes or more**, it will be considered a new entry. </li>
+</ul>
+
+**Timestamp Display**
+
+<ul>
+  <li>For messages grouped in the same thread, display the timestamp only for the first message.</li>
+  <li>For new message entries, display a timestamp at the start of the entry to indicate the time gap.</li>
+</ul>
+
+**Note:** In both the cases, the status is shown for the last message, indicating that all previous messages in the thread have been delivered.
+
+![New Message Interval](./images/new-message-interval.png)
+<Caption>New Message Interval</Caption>
+
+### Usage
+
+#### Custom Chat Message
+
+Chat messages are highly customizable and can incorporate a wide range of components to meet diverse use cases.
+
+![Custom Chat Message](./images/custom-chat-message.png)
+<Caption>Custom Chat Message</Caption>
+
+<br />
+
+#### Forwarding Messages
+
+It is recommended to use a modal for forwarding messages.
+
+![Forwarding Messages using a modal](./images/forwarding-message.png)
+<Caption>Forwarding Messages using a modal</Caption>
+
+<br />
+
+#### Avatars and Status in Case of a Space Constraint
+
+It is recommended to avoid showing avatars and status in case of a space constraint.
+
+![Avoid Showing Avatars and Status in Case of a Space Constraint](./images/avatar-status-space-constraint.png)
+<Caption>Avoid Showing Avatars and Status in Case of a Space Constraint</Caption>
+
+<br />
+
+<br />
+
+#### Timestamp for Time Critical Events
+
+It is recommended to display the message timestamp for handling time critical scenarios effectively.

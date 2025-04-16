@@ -1,0 +1,361 @@
+---
+title: Checkbox
+description: Checkbox lets users select one or more values.
+tabs: ['Usage', 'Code']
+showMobile: true
+---
+
+Checkboxes lets users select one or more values from a list of options. Options are not mutually exclusive here so the selection of any option won’t affect the other.
+
+### Variants
+
+<br />
+
+#### Default
+
+The default variant comes with a checkbox control and a label, to cater most of the use cases. This entire combination of checkbox control and label is clickable to change the checkbox selection.
+
+
+```tsx
+<Checkbox label="Emergency contact" defaultChecked={true} />
+```
+
+
+#### With Help Text
+
+A checkbox can have a help text below the label to provide additional information about that particular option. The help text will always be aligned to the label. Clicking over the help text will not change the state of checkbox.
+
+
+```tsx
+return (
+    <Checkbox
+      label={'Guardian'}
+      helpText={'A member legally responsible for the care of the patient.'}
+      className="w-50"
+    />
+  )
+```
+
+
+### Sizes
+
+Checkbox comes in **two sizes** - small and regular.
+
+
+```tsx
+const sizes = ['tiny', 'regular'];
+  const label = 'Checkbox';
+  return (
+    <div className="d-flex">
+      {sizes.map((CheckboxSize, ind) => {
+        return (
+          <div key={ind} className="mr-7">
+            <Label withInput={true}>{CheckboxSize.charAt(0).toUpperCase() + CheckboxSize.slice(1)}</Label>
+            <Checkbox disabled={false} size={CheckboxSize} label={label} />
+          </div>
+        );
+      })}
+    </div>
+  )
+```
+
+
+### States
+
+<br />
+
+#### Selection States
+
+Checkbox has three selection states - checked, unchecked and indeterminate.
+
+![Selection states of a checkbox](./images/checkbox-1.png)
+
+<br />
+
+#### Interactive States
+
+Checkbox has five interactive states - default, hover, active, focus and disabled.
+
+![Interactive states of a checkbox](./images/checkbox-2.png)
+
+<br />
+<br />
+
+### Structure
+
+<br />
+<br />
+
+![Structure of checkbox](./images/checkbox-structure.png)
+
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Spacing between checkbox control and label</td>
+      <td>8 px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Size</td>
+      <td>
+        <ul>
+          <li>
+            12x12 px <em>(Small)</em>
+          </li>
+          <li>
+            16x16 px <em>(Regular)</em>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+### Configurations
+
+<br />
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Size</td>
+      <td>
+        <ul>
+          <li>Small</li>
+          <li>Regular</li>
+        </ul>
+      </td>
+      <td>Regular</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>
+        Label
+        <br />
+        <em>(optional)</em>
+      </td>
+      <td>&#60;label&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>
+        Help text
+        <br />
+        <em>(optional)</em>
+      </td>
+      <td>&#60;help text&#62;</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+### Usage
+
+<br />
+
+#### Checkbox Group
+
+Checkbox group is a list of multiple standalone checkboxes with a group label on the top.
+
+**Note**: Multiple checkboxes should have a minimum of 4px spacing in between.
+
+
+```tsx
+const labelVertical = 'Vertical Alignment';
+  const alignmentVertical = 'vertical';
+  const days = [
+    { label: 'Mon', name: 'days', value: 'mon' },
+    { label: 'Tue', name: 'days', value: 'tue' },
+    { label: 'Wed', name: 'days', value: 'wed' },
+    { label: 'Thu', name: 'days', value: 'thu' },
+    { label: 'Fri', name: 'days', value: 'fri' },
+    { label: 'Sat', name: 'days', value: 'sat' },
+    { label: 'Sun', name: 'days', value: 'sun' },
+  ];
+
+  return (
+    <ChoiceList
+      choices={days}
+      selected={['mon', 'tue']}
+      allowMultiple={true}
+      title={labelVertical}
+      alignment={alignmentVertical}
+      onChange={() => {}}
+    />
+  )
+```
+
+
+#### Alignment
+
+A group of checkboxes can be aligned either **vertically** or **horizontally**. However, it is advisable to stack the checkboxes vertically with one option in a line for easier reading and scanning. If you need to use them horizontally, make sure to space the options appropriately so that it is clear which control goes with which label.
+
+
+```tsx
+const labelVertical = 'Vertical Alignment';
+  const alignmentVertical = 'vertical';
+  const days = [
+    { label: 'Mon', name: 'days', value: 'mon' },
+    { label: 'Tue', name: 'days', value: 'tue' },
+    { label: 'Wed', name: 'days', value: 'wed' },
+    { label: 'Thu', name: 'days', value: 'thu' },
+    { label: 'Fri', name: 'days', value: 'fri' },
+    { label: 'Sat', name: 'days', value: 'sat' },
+    { label: 'Sun', name: 'days', value: 'sun' },
+  ];
+
+  return (
+    <ChoiceList
+      choices={days}
+      selected={['mon', 'tue']}
+      allowMultiple={true}
+      title={labelVertical}
+      alignment={alignmentVertical}
+      onChange={() => {}}
+    />
+  )
+```
+
+<br />
+
+```tsx
+const labelHorizontal = 'Horizontal Alignment';
+  const alignmentHorizontal = 'horizontal';
+  const days = [
+    { label: 'Mon', name: 'days', value: 'mon' },
+    { label: 'Tue', name: 'days', value: 'tue' },
+    { label: 'Wed', name: 'days', value: 'wed' },
+    { label: 'Thu', name: 'days', value: 'thu' },
+    { label: 'Fri', name: 'days', value: 'fri' },
+    { label: 'Sat', name: 'days', value: 'sat' },
+    { label: 'Sun', name: 'days', value: 'sun' },
+  ];
+
+  return (
+    <ChoiceList
+      choices={days}
+      selected={['mon', 'tue']}
+      allowMultiple={true}
+      title={labelHorizontal}
+      alignment={alignmentHorizontal}
+      onChange={() => {}}
+    />
+  )
+```
+
+
+#### Nesting
+
+Checkboxes can be nested in case of a list having sub-sections. The parent remains unchecked if no child is checked.
+
+Indeterminate state of the parent shows a partially checked state when there is a nested relationship. The parent checkbox will remain indeterminate until some of its children checkboxes are checked.
+
+
+```tsx
+const parentObj = { checked: false, indeterminate: true };
+  const labels = ['Diabetes Eye Exam', 'HbA1c Test in last 12 months', 'Falls Risk Assessment'];
+  const childArray = [true, true, false];
+
+  const [checked, setChecked] = React.useState(childArray);
+  const [parentStatus, setParentStatus] = React.useState(parentObj);
+
+  const handleParentChange = (event) => {
+    const updatedArray = [...childArray].fill(event.target.checked);
+    setChecked(updatedArray);
+    setParentStatus({ indeterminate: event.target.indeterminate, checked: event.target.checked });
+  };
+
+  const handleChildChange = (event, index) => {
+    const updateCheck = [...checked];
+    updateCheck[index] = event.target.checked;
+    const totalCount = labels.length;
+    const countT = updateCheck.filter(Boolean).length;
+    const status = countT < totalCount;
+    const obj = countT > 0 ? { checked: !status, indeterminate: status } : { checked: !status, indeterminate: false };
+    setChecked(updateCheck);
+    setParentStatus(obj);
+  };
+
+  return (
+    <div>
+      <Checkbox
+        checked={parentStatus.checked}
+        indeterminate={parentStatus.indeterminate}
+        label={'Measures'}
+        onChange={handleParentChange}
+        value={'Measures'}
+      />
+      <div className="d-flex flex-column pl-7">
+        {labels.map((label, ind) => {
+          return (
+            <Checkbox
+              key={`checkbox-${ind}`}
+              label={label}
+              checked={checked[ind]}
+              value={label}
+              onChange={(c) => handleChildChange(c, ind)}
+              defaultChecked={ind < 2}
+              className="mt-3"
+            />
+          );
+        })}
+      </div>
+    </div>
+  )
+```
+
+
+#### Overflow Behavior
+
+If the label or the help text with the checkbox overflows, wrap it to the next line but make sure that the control and the label are top aligned.
+
+
+```tsx
+(
+  <div className="d-flex flex-column">
+    <div className="mb-5">
+      <Label>Wrap Enabled:</Label>
+      <Checkbox className="w-25" label="Patient with impaired physical mobility and care deficits." wrapLabel={true} />
+    </div>
+    <div>
+      <Label>Wrap Disabled (Truncate):</Label>
+      <Checkbox className="w-25" label="Patient with impaired physical mobility and care deficits." />
+    </div>
+  </div>
+)
+```
+
+
+#### Checkbox vs. Radio
+
+Radio buttons allow only one selection from a list of mutually exclusive options whereas checkboxes allow users to select multiple options.
+
+#### Checkbox vs. Switch
+
+Checkbox should be considered instead of a switch when a confirmation action is required to apply the changes. For example in forms etc.
+
+![Checkbox vs. switch](./images/checkbox-3.png)
+
+<br />
+
+#### Checkbox vs. Dropdown
+
+Checkboxes should be used when there are fewer than 5 options as they are easy to scan and save an additional click of opening a dropdown.
+
+However, if the number of options exceeds 5 or if the space is limited then it is recommended to use dropdowns.
+
+![Checkbox vs. dropdown](./images/checkbox-4.png)
+
+<br />

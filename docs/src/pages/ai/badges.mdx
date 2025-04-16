@@ -1,0 +1,175 @@
+---
+title: Badge
+description: Badge is used to tag entities with concise and relevant information.
+tabs: ["Usage", "Code"]
+showMobile: true
+keywords: ['Tag', 'Label', 'Lozenge', 'Flag', 'Stamp']
+---
+
+Badges help the users to understand the difference between multiple entities by displaying concise metadata of that entity as a label.
+
+### Variants
+
+#### Solid Badge
+
+Solid style is used to highlight important information on the page so that they can be recognized easily. Solid style helps the badge to easily pop out in a page.
+
+
+```tsx
+return <Badge appearance="warning">Pending</Badge>
+```
+
+
+#### Subtle Badge
+
+Subtle style is used when a lot of entities on a single page need tagging/labelling. In that case, using solid badges becomes a bit overwhelming e.g. tags in a list. This is why subtle badges use the lightest shade of the colors.
+
+
+```tsx
+return (
+    <Badge appearance="warning" subtle={true}>
+      Pending
+    </Badge>
+  )
+```
+
+
+### Appearance
+
+A badge comes in 9 appearances -
+
+
+```tsx
+const appearances = [
+    'primary',
+    'secondary',
+    'alert',
+    'warning',
+    'success',
+    'accent1',
+    'accent2',
+    'accent3',
+    'accent4',
+  ];
+
+  return (
+    <div className="d-flex justify-content-between">
+      {appearances.map((appear, ind) => {
+        return (
+          <Badge key={ind} appearance={appear}>
+            {appear}
+          </Badge>
+        );
+      })}
+    </div>
+  )
+```
+ 
+
+### Structure
+<br/>
+<br/>
+
+ 
+![Structure of badge](./images/badge-structure.png)
+<br/>
+ 
+<table style={{width: "100%"}}>
+ <tbody>
+  <tr>
+    <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+    <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+  </tr>
+  <tr style={{verticalAlign: "top"}}>
+    <td>Height</td>
+    <td>20 px</td>
+  </tr>
+  <tr style={{verticalAlign: "top"}}>
+      <td>Max width</td>
+      <td>160 px</td>
+  </tr>
+  <tr style={{verticalAlign: "top"}}>
+      <td>Corner radius</td>
+      <td>4 px</td>
+  </tr>
+  <tr style={{verticalAlign: "top"}}>
+      <td>Padding<br/><em>(top, right, bottom, left)</em></td>
+      <td>2 px, 4 px, 2 px, 4 px</td>
+  </tr>
+ </tbody>
+</table>
+
+<br/>
+
+
+### Configurations
+<br/>
+<br/>
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Appearance</td>
+      <td>
+          <ul>
+              <li>Stone</li>
+              <li>Jal</li>
+              <li>Neem</li>
+              <li>Haldi</li>
+              <li>Mirch</li>
+              <li>Tawak</li>
+              <li>Nimbu</li>
+              <li>Neel</li>
+              <li>Jamun</li>
+          </ul>
+      </td>
+      <td>Stone</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Subtle<br/></td>
+      <td>
+          <ul>
+              <li>True</li>
+              <li>False</li>
+          </ul>
+      </td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+### Usage
+<br/>
+
+#### Spacing Between Badges
+Badges should maintain a **minimum spacing of 8px** from the content on either side.
+
+![Spacing between badges](./images/badges-1.png)
+<Caption> Spacing between badges </Caption>
+<br/>
+
+#### Badges vs Pills
+Badges are used for tagging entities while pills are used to display count of entities.
+
+![When to use badges vs pills](./images/badges-2.png)
+<Caption>Badges vs Pills</Caption>
+<br/>
+
+#### Hover on Badge
+Badges can be used to display related information when hovered.
+
+![Hover on badge](./images/hover-on-badge.png)
+<Caption>Hover on badge</Caption>
+<br/>
+
+#### Badge vs Status Hint
+Badge is used as a label to tag entities while status hint is used to display the status of a resource.
+
+![Badge vs Status hint](./images/badge-vs-statusHint.png)
+<Caption>Badge vs Status hint</Caption>

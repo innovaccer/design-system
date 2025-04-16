@@ -1,0 +1,415 @@
+---
+title: Avatar
+description: Avatar is used to identify an entity through display pictures, icons or their initials.
+tabs: ['Usage', 'Code']
+showMobile: true
+keywords: ['Profile', 'Avatarpair', 'Groupavatar', 'Avatargroup', 'AvatarSelection']
+---
+
+### Appearances
+
+Avatar comes in 9 appearances -
+
+
+```tsx
+const weight = 'strong';
+
+  const appearances = [
+    'primary',
+    'secondary',
+    'alert',
+    'warning',
+    'success',
+    'accent1',
+    'accent2',
+    'accent3',
+    'accent4',
+  ];
+
+  return (
+    <div className="d-flex">
+      {appearances.map((appear, ind) => {
+        return (
+          <div key={ind} className="mr-9">
+            <Text weight={weight}>{appear.charAt(0).toUpperCase() + appear.slice(1)}</Text>
+            <br />
+            <br />
+            <Avatar firstName="John" lastName="Doe" appearance={appear} />
+          </div>
+        );
+      })}
+    </div>
+  )
+```
+
+
+### Shapes
+Avatar comes in **2 shapes** - round and square.
+
+#### Round Avatar
+Round avatar represents a single entity i.e a user, bot or app.
+
+![Shapes](./images/round-avatar.png)
+<Caption>A round avatar</Caption>
+
+#### Square Avatar
+Square avatar represents a group of entities or organization.
+
+![Shapes](./images/square-avatar.png)
+<Caption>A square avatar</Caption>
+
+### Sizes
+
+Avatar comes in **2 sizes** - small and regular.
+
+
+```tsx
+return (
+    <div>
+      <Row>
+        <Column>
+          <Text weight="strong">Regular</Text>
+          <div className="d-flex mt-7">
+            <Avatar firstName="John" lastName="Doe" className="mr-8" />
+            <Avatar appearance="accent4" firstName="John" lastName="Doe" shape="square" />
+          </div>
+        </Column>
+        <Column>
+          <Text weight="strong">Tiny</Text>
+          <div className="d-flex mt-7">
+            <Avatar firstName="John" lastName="Doe" size="tiny" className="mr-8" />
+            <Avatar appearance="accent4" firstName="John" lastName="Doe" shape="square" size="tiny" />
+          </div>
+        </Column>
+      </Row>
+    </div>
+  )
+```
+
+
+### States
+
+Avatar comes in **3 states** - default, focus and disabled.
+
+![Default, Focus and Disabled states in Avatar](./images/states.png)
+<Caption>Default, Focus and Disabled states in Avatar</Caption>
+
+### Variants
+
+#### With Initials
+
+![With Initials](./images/with-initials.png)
+<Caption>Avatars with initials</Caption>
+
+#### With Icon
+
+![With Icon](./images/with-icon.png)
+<Caption>Avatars with icon</Caption>
+
+#### With Image
+
+![With Image](./images/with-image.png)
+<Caption>Avatars with image</Caption>
+
+### Structure
+#### Round Avatar
+
+<br />
+<br />
+
+![Structure of avatar](./images/avatar-structure.png)
+<Caption>Structure of round avatar</Caption>
+
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Height</td>
+      <td>
+        <ul>
+          <li>
+            24px <em>(Small)</em>
+          </li>
+          <li>
+            32px <em>(Regular)</em>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Width</td>
+      <td>
+        <ul>
+          <li>
+            24px <em>(Small)</em>
+          </li>
+          <li>
+            32px <em>(Regular)</em>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+#### Square Avatar
+
+<br />
+<br />
+
+![Structure of avatar](./images/square-avatar-structure.png)
+<Caption>Structure of square avatar</Caption>
+
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Height</td>
+      <td>
+        <ul>
+          <li>
+            24px <em>(Small)</em>
+          </li>
+          <li>
+            32px <em>(Regular)</em>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Width</td>
+      <td>
+        <ul>
+          <li>
+            24px <em>(Small)</em>
+          </li>
+          <li>
+            32px <em>(Regular)</em>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Corner radius</td>
+      <td>4 px</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+### Configurations
+
+<br />
+<br />
+
+#### Round Avatar
+
+<br />
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Appearance</td>
+      <td>
+        <ul>
+          <li>Jal</li>
+          <li>Stone</li>
+          <li>Neem</li>
+          <li>Haldi</li>
+          <li>Mirch</li>
+          <li>Tawak</li>
+          <li>Nimbu</li>
+          <li>Neel</li>
+          <li>Jamun</li>
+        </ul>
+      </td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Size</td>
+      <td>
+        <ul>
+          <li>Small</li>
+          <li>Regular</li>
+        </ul>
+      </td>
+      <td>Regular</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Image</td>
+      <td>Image sub-component</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Icon</td>
+      <td>Icon sub-component</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>First name</td>
+      <td>&#60;first_name&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Last name</td>
+      <td>&#60;last_name&#62;</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+#### Square Avatar
+
+<br />
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Appearance</td>
+      <td>
+        <ul>
+          <li>Jal</li>
+          <li>Stone</li>
+          <li>Neem</li>
+          <li>Haldi</li>
+          <li>Mirch</li>
+          <li>Tawak</li>
+          <li>Nimbu</li>
+          <li>Neel</li>
+          <li>Jamun</li>
+        </ul>
+      </td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Size</td>
+      <td>
+        <ul>
+          <li>Small</li>
+          <li>Regular</li>
+        </ul>
+      </td>
+      <td>Regular</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Image</td>
+      <td>Image sub-component</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Icon</td>
+      <td>Icon sub-component</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>First name</td>
+      <td>&#60;first_name&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Last name</td>
+      <td>&#60;last_name&#62;</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+### Usage
+
+<br />
+
+#### Color Assignment
+
+The background color of an avatar should be generated dynamically in such a way that at the time of its creation a random color (from the available options) is assigned. Once assigned, the color should stay the same as long as that particular avatar is in use.
+
+For example, an avatar generated for a user - Franklin Clinton, can look like following and it should look the same wherever it is used.
+
+![Color assignment](./images/avatar-1.png)
+<Caption>Color assignment in avatars</Caption>
+
+<br />
+
+#### Displaying Name
+
+Since an avatar can either show an image, icon or the initials, there should be an option to show the full name of the entity. This is achieved by hovering over on the avatar to display a tooltip containing the full name.
+
+![Hovering on an avatar](./images/displaying-name.png)
+<Caption>Hovering on an avatar</Caption>
+<br />
+
+#### Square Avatar vs Round Avatar Group
+
+Square avatars and round avatar group are both used to group entities. Square avatar is ideal for presenting a group as a unified entity, while round avatar group facilitates an interactive and visually cohesive representation of individual members within the group.
+
+#### Fallback Hierarchy
+
+This is the fallback order defined for avatars:
+
+![With Image](./images/fallback-hierarchy.png)
+<Caption>Fallback hierarchy</Caption>
+
+#### Avoid Square Avatar With Icon Button
+
+It is recommended to not use square avatar in conjunction with an icon button as users may mistake the avatar for a button.
+
+![Square avatar with icon button](./images/square-avatar-with-icon-button.png)
+<Caption>Not able to identify the square avatar clearly when used with icon button</Caption>
+
+#### Using PNG and SVG in Avatar
+
+It is recommended to use stone light or a suitable background color that ensures enough contrast between the image and its backdrop when using PNG or SVG formats without a background. 
+
+![Using PNG and SVG in avatar](./images/image-guideline.png)
+<Caption>Using PNG and SVG in avatar</Caption>
+
+#### Appending Suffix to the Name of an Entity
+
+In an avatar group, you can add a suffix to an entity's name that appears in tooltips and popovers. 
+
+**Note:** Adding a suffix for disabled states is recommended to keep users informed.
+
+![Appending a suffix to the name of the disabled entity](./images/tooltip-suffix.png)
+<Caption>Appending a suffix to the name of the disabled entity</Caption>
+
+#### Presence in Round Avatar
+
+Regular and small round avatars can include presence indicators that visually represent the user’s availability , such as **"active"** and **"away"**.
+
+**Note:** Disabled avatars can’t have a presence indicator.
+
+![Presence in Round Avatar ](./images/presence.png)
+<Caption>Presence in Round Avatar </Caption>
+
+#### Status in Regular Round Avatar 
+
+Regular round avatars can include status indicators to represent user-defined or system-determined messages, providing context about the user's current activity or situation. A tooltip should be used to define the status.
+
+**Note:** Status is a slot component which can be replaced to add an image or icon with a stroke of 2px.
+
+![Status in Regular Round Avatar ](./images/status.png)
+<Caption>Status in Regular Round Avatar </Caption>

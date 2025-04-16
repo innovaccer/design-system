@@ -1,0 +1,495 @@
+---
+title: AI Response
+description: AI response is used to deliver information from Sara to the user.
+tabs: ['Usage', 'Code']
+showMobile: true
+keywords: ['Chat', 'Response', 'AI Chat', 'Chat box']
+---
+
+AI response is used to deliver information from Sara to the user.
+
+
+```tsx
+/**
+   *
+   *  .AIResponse-menu-button {
+   *    opacity: var(--opacity-12);
+   *  }
+   *
+   *  .AIResponse-box:hover .AIResponse-menu-button {
+   *    opacity: 1;
+   *  }
+   *
+   *  .AIResponse-box .Menu-Trigger--active {
+   *    opacity: 1;
+   *  }
+   */
+
+  const [selectedList, setSelectedList] = React.useState({
+    pin: false,
+    like: false,
+    dislike: false,
+  });
+
+  return (
+    <div className="d-flex w-50">
+      <Sara />
+      <div className="ml-4">
+        <AIResponse>
+          <AIResponse.Body>
+            <Text>Hello, would you like to book an appointment with your cardiologist?</Text>
+          </AIResponse.Body>
+
+          <AIResponse.ActionBar>
+            <div className="d-flex">
+              <AIResponse.Button
+                icon="push_pin"
+                className="mr-3"
+                selected={selectedList.pin}
+                onClick={() => setSelectedList({ ...selectedList, pin: !selectedList.pin })}
+              >
+                Pin
+              </AIResponse.Button>
+              <AIResponse.Button icon="content_copy">Copy</AIResponse.Button>
+            </div>
+
+            <div className="d-flex align-items-center">
+              <AIResponse.Button icon="sync" className="mr-3" tooltip="Regenerate" />
+              <AIResponse.Button
+                icon="thumb_up"
+                iconType="outlined"
+                className="mr-3"
+                tooltip="Good Response"
+                selected={selectedList.like && !selectedList.dislike}
+                onClick={() => setSelectedList({ ...selectedList, like: !selectedList.like, dislike: false })}
+              />
+              <AIResponse.Button
+                icon="thumb_down"
+                iconType="outlined"
+                className="mr-3"
+                tooltip="Bad Response"
+                selected={selectedList.dislike && !selectedList.like}
+                onClick={() => setSelectedList({ ...selectedList, dislike: !selectedList.dislike, like: false })}
+              />
+
+              <Menu trigger={<Menu.Trigger className="AIResponse-menu-button" appearance="transparent" size="tiny" />}>
+                <Menu.List>
+                  <Menu.Item>Share</Menu.Item>
+                  <Menu.Item>View source</Menu.Item>
+                  <Menu.Item>Report a problem</Menu.Item>
+                </Menu.List>
+              </Menu>
+            </div>
+          </AIResponse.ActionBar>
+        </AIResponse>
+        <Text appearance="subtle" size="small" weight="medium">
+          1:00 PM
+        </Text>
+      </div>
+    </div>
+  )
+```
+
+
+### States
+
+AI Response has **2 states** - default and generating.
+
+![States](./images/states.png)
+<Caption>States</Caption>
+
+### Structure
+
+![Structure - AI Response](./images/structure.png)
+<Caption>Structure - AI Response</Caption>
+
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"50%",  textAlign: "left"}}>Padding and Spacing</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Top and Bottom</td>
+      <td>8px, 12px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Left and Right</td>
+      <td>12px, 12px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Spacing between Avatar and Bubble</td>
+      <td>8px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Spacing between Metadata and Bubble</td>
+      <td>2px</td>
+    </tr>
+  </tbody>
+</table>
+
+<br />
+
+### Configurations
+
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"33%",  textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%",  textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Avatar (optional)</td>
+      <td>
+          <ul>
+              <li>True</li>
+              <li>False</li>
+          </ul>
+      </td>
+      <td>True</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Action Bar (optional)</td>
+      <td>
+          <ul>
+              <li>True</li>
+              <li>False</li>
+          </ul>
+      </td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+### Behavior
+
+#### Tooltip on Actions
+
+It is recommended to display a tooltip when hovering over icon buttons within an AI response.
+
+![Tooltip on Icon Buttons](./images/tooltip.png)
+<Caption>Tooltip on Icon Buttons</Caption>
+
+#### Generating Content
+
+Here is an example showcasing how content is generated inside AI Response.
+
+
+```tsx
+/**
+   *
+   *  .AIResponse-menu-button {
+   *    opacity: var(--opacity-12);
+   *  }
+   *
+   *  .AIResponse-box:hover .AIResponse-menu-button {
+   *    opacity: 1;
+   *  }
+   *
+   *  .AIResponse-box .Menu-Trigger--active {
+   *    opacity: 1;
+   *  }
+   *
+   *  .AIResponse-text {
+   *    animation: fadeIn var(--duration--moderate-02) var(--standard-productive-curve);
+   *  }
+   *
+   */
+
+  const [loading, setLoading] = React.useState(true);
+  const [visibleSentences, setVisibleSentences] = React.useState([]);
+  const [showActionBar, setShowActionBar] = React.useState(false);
+  const [selectedList, setSelectedList] = React.useState({
+    pin: false,
+    like: false,
+    dislike: false,
+  });
+
+  React.useEffect(() => {
+    if (visibleSentences.length === 3 && !loading) {
+      setShowActionBar(true);
+    }
+  }, [visibleSentences]);
+
+  const handleRegenerate = () => {
+    setLoading(true);
+    setShowActionBar(false);
+    setVisibleSentences([]);
+  };
+
+  return (
+    <div className="d-flex w-50">
+      <Sara />
+      <div className="ml-4 w-100">
+        <AIResponse>
+          <AIResponse.Body>
+            {
+              <ChatMessage
+                loading={loading}
+                setVisibleSentences={setVisibleSentences}
+                visibleSentences={visibleSentences}
+                setLoading={setLoading}
+              />
+            }
+          </AIResponse.Body>
+
+          {showActionBar && (
+            <AIResponse.ActionBar>
+              <div className="d-flex">
+                <AIResponse.Button
+                  icon="push_pin"
+                  className="mr-3"
+                  selected={selectedList.pin}
+                  onClick={() => setSelectedList({ ...selectedList, pin: !selectedList.pin })}
+                >
+                  Pin
+                </AIResponse.Button>
+                <AIResponse.Button icon="content_copy">Copy</AIResponse.Button>
+              </div>
+
+              <div className="d-flex align-items-center">
+                <AIResponse.Button icon="sync" className="mr-3" tooltip="Regenerate" onClick={handleRegenerate} />
+                <AIResponse.Button
+                  icon="thumb_up"
+                  iconType="outlined"
+                  className="mr-3"
+                  tooltip="Good Response"
+                  selected={selectedList.like && !selectedList.dislike}
+                  onClick={() => setSelectedList({ ...selectedList, like: !selectedList.like, dislike: false })}
+                />
+                <AIResponse.Button
+                  icon="thumb_down"
+                  iconType="outlined"
+                  className="mr-3"
+                  tooltip="Bad Response"
+                  selected={selectedList.dislike && !selectedList.like}
+                  onClick={() => setSelectedList({ ...selectedList, dislike: !selectedList.dislike, like: false })}
+                />
+
+                <Menu
+                  trigger={<Menu.Trigger className="AIResponse-menu-button" appearance="transparent" size="tiny" />}
+                >
+                  <Menu.List>
+                    <Menu.Item>Share</Menu.Item>
+                    <Menu.Item>View source</Menu.Item>
+                    <Menu.Item>Report a problem</Menu.Item>
+                  </Menu.List>
+                </Menu>
+              </div>
+            </AIResponse.ActionBar>
+          )}
+        </AIResponse>
+        <Text appearance="subtle" size="small" weight="medium">
+          1:00 PM
+        </Text>
+      </div>
+    </div>
+  )
+```
+
+
+
+### Usage
+
+#### Custom Response
+
+AI responses are highly customizable and can incorporate a wide range of components to meet diverse use cases.
+
+![Custom Content inside AI Response](./images/custom.png)
+<Caption>Custom Content inside AI Response</Caption>
+
+#### Taking Feedback From Users
+
+Users can share their feedback on the AI response by using the feedback buttons located at the bottom right corner of the response.
+
+
+```tsx
+const [showComment, setShowComment] = React.useState(false);
+  const [isFormSubmitted, setIsFormSubmitted] = React.useState(false);
+  const [selectedChipList, setSelectedChipList] = React.useState([]);
+  const [showClosingAnimation, setShowClosingAnimation] = React.useState(false);
+  const [selectedList, setSelectedList] = React.useState({
+    like: false,
+    dislike: false,
+  });
+
+  const positiveChipOptions = [
+    { label: 'Accurate', name: '1', type: 'selection', selected: selectedChipList.includes('1') },
+    { label: 'Appropriate', name: '2', type: 'selection', selected: selectedChipList.includes('2') },
+    { label: 'Easy to understand', name: '3', type: 'selection', selected: selectedChipList.includes('3') },
+  ];
+
+  const negativeChipOptions = [
+    { label: 'Inaccurate', name: '4', type: 'selection', selected: selectedChipList.includes('4') },
+    { label: 'Inappropriate', name: '5', type: 'selection', selected: selectedChipList.includes('5') },
+    { label: 'Offensive', name: '6', type: 'selection', selected: selectedChipList.includes('6') },
+  ];
+
+  React.useEffect(() => {
+    if (!selectedList.like && !selectedList.dislike) {
+      setShowComment(false);
+    }
+  }, [selectedList]);
+
+  const handleChipSelection = (selectedChip) => {
+    const name = selectedChip.name;
+    if (selectedChipList.includes(name)) {
+      const newList = selectedChipList.filter((chipName) => chipName !== name);
+      setSelectedChipList(newList);
+    } else {
+      setSelectedChipList([...selectedChipList, name]);
+    }
+  };
+
+  const onSubmitClick = () => {
+    setIsFormSubmitted(true);
+    setShowClosingAnimation(true);
+  };
+
+  const cardClassNames = classNames({
+    ['mt-5 py-4 px-5']: true,
+    ['feedback-form-animate--open']: showComment && !showClosingAnimation,
+    ['feedback-form-animate--close']: showComment && showClosingAnimation,
+  });
+
+  const contentClassNames = classNames({
+    ['feedback-content-animate--open']: showComment && !showClosingAnimation,
+    ['feedback-content-animate--close']: showComment && showClosingAnimation,
+  });
+
+  const onAnimationEnd = () => {
+    if (showClosingAnimation) {
+      setShowComment(false);
+      setShowClosingAnimation(false);
+    }
+  };
+
+  return (
+    <Card shadow="none" className="w-50 vh-100">
+      <CardHeader className="d-flex justify-content-between align-items-center">
+        <Text weight="strong" size="regular">
+          Smart assist
+        </Text>
+        <Button appearance="transparent" aria-label="Close" icon="close" />
+      </CardHeader>
+      <Divider />
+      <CardBody className="mt-6">
+        <div className="d-flex">
+          <SaraSparkle />
+          <div className="ml-4">
+            <Text weight="strong">Suggest available slots for follow-up appointment with the PCP</Text>
+
+            <AIResponse className="mt-5">
+              <AIResponse.Body>
+                <Text>It looks like Dr.Smith is available next month on 5th November at 10am, 11am and 2pm EST.</Text>
+              </AIResponse.Body>
+
+              <AIResponse.ActionBar className="justify-content-end">
+                <div className="d-flex align-items-center">
+                  <AIResponse.Button
+                    icon="sync"
+                    className="mr-3"
+                    tooltip="Regenerate"
+                    onClick={() => {
+                      setSelectedList({ ...selectedList, like: false, dislike: false });
+                      setShowComment(false);
+                      setIsFormSubmitted(false);
+                    }}
+                  />
+                  <AIResponse.Button
+                    icon="thumb_up"
+                    iconType="outlined"
+                    className="mr-3"
+                    tooltip="Good Response"
+                    selected={selectedList.like && !selectedList.dislike}
+                    onClick={() => setSelectedList({ ...selectedList, like: !selectedList.like, dislike: false })}
+                  />
+                  <AIResponse.Button
+                    icon="thumb_down"
+                    iconType="outlined"
+                    className="mr-3"
+                    tooltip="Bad Response"
+                    selected={selectedList.dislike && !selectedList.like}
+                    onClick={() => setSelectedList({ ...selectedList, dislike: !selectedList.dislike, like: false })}
+                  />
+
+                  <Menu
+                    trigger={<Menu.Trigger className="AIResponse-menu-button" appearance="transparent" size="tiny" />}
+                  >
+                    <Menu.List>
+                      <Menu.Item>Share</Menu.Item>
+                      <Menu.Item>View source</Menu.Item>
+                      <Menu.Item>Report a problem</Menu.Item>
+                    </Menu.List>
+                  </Menu>
+                </div>
+              </AIResponse.ActionBar>
+            </AIResponse>
+            <Text appearance="subtle" size="small" weight="medium">
+              1:00 PM
+            </Text>
+
+            {(selectedList.like || selectedList.dislike) && !showComment && (
+              <Card shadow="none" className="mt-5">
+                <div className="d-flex justify-content-between py-4 px-5 align-items-center feedback-card-animate">
+                  <Text weight="medium">Thanks for sharing your feedback</Text>
+                  <div className="d-flex align-items-center">
+                    {isFormSubmitted ? (
+                      <Icon name="check_circle" size={16} appearance="success" />
+                    ) : (
+                      <LinkButton onClick={() => setShowComment(true)}>Tell us more</LinkButton>
+                    )}
+                  </div>
+                </div>
+              </Card>
+            )}
+
+            {showComment && (selectedList.like || selectedList.dislike) && (
+              <Card shadow="none" className={cardClassNames} onAnimationEnd={onAnimationEnd}>
+                <div className={contentClassNames}>
+                  <Text weight="medium">Tell us more</Text>
+                  <div className="mt-7">
+                    <ChipGroup
+                      list={selectedList.like ? positiveChipOptions : negativeChipOptions}
+                      onClick={handleChipSelection}
+                    />
+
+                    <Textarea
+                      aria-labelledby="Textarea"
+                      name="Textarea"
+                      placeholder="Additional comments"
+                      resize={false}
+                      rows={3}
+                      className="mt-5"
+                    />
+
+                    <div className="d-flex justify-content-end mt-6">
+                      <Button className="mr-4" size="tiny" onClick={() => setShowClosingAnimation(true)}>
+                        Skip
+                      </Button>
+                      <Button
+                        appearance="primary"
+                        size="tiny"
+                        onClick={onSubmitClick}
+                        disabled={selectedChipList.length <= 0}
+                      >
+                        Submit
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            )}
+          </div>
+        </div>
+      </CardBody>
+    </Card>
+  )
+```
+

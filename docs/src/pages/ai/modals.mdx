@@ -1,0 +1,1213 @@
+---
+title: Modals
+description: Modals are used to present information, critical alerts, and confirmations requiring user input or interaction.
+tabs: ['Usage', 'Code', 'Interactions']
+showMobile: true
+keywords: ['Dialog', 'Alert', 'Prompt']
+---
+
+Modals are used to present information, critical alerts, and confirmations to the users. Occasionally they can contain short forms to input data from users.
+They are presented on top of a translucent overlay to maintain context with the background content and hence preventing users from interacting with the background.
+
+If the information or interactions are more complex, consider using a side sheet.
+
+### Types
+
+<br />
+
+#### Standard Modal
+
+Standard modals appear in the center of the screen along with an overlay which prevents users from interacting with the background.
+
+
+```tsx
+const [open, setOpen] = React.useState(false);
+  const backdropClose = false;
+  const dimension = 'medium';
+
+  const onClose = () => {
+    setOpen(false);
+    action('on close triggered')();
+  };
+
+  return (
+    <div>
+      <Button appearance="primary" onClick={() => setOpen(true)}>
+        Open Modal
+      </Button>
+      <Modal
+        open={open}
+        dimension={dimension}
+        backdropClose={backdropClose}
+        onClose={onClose}
+        headerOptions={{
+          heading: 'Heading',
+          subHeading: 'Subheading',
+        }}
+        footer={
+          <>
+            <Button appearance="basic" onClick={action('Basic button click')}>
+              Basic
+            </Button>
+            <Button appearance="primary" className="ml-4" onClick={action('Primary button click')}>
+              Primary
+            </Button>
+          </>
+        }
+      >
+        <Text>Modal Body</Text>
+        <ModalDescription
+          title="Description Title"
+          description="Adding a subheading clearly indicates the hierarchy of the information."
+        />
+        <ModalDescription description="Card Sections include supporting text like an article summary or a healthcare service description." />
+      </Modal>
+    </div>
+  )
+```
+
+
+#### Full Screen Modal
+
+Full screen modals cover the entire screen. They are used when you want the complete undivided attention of users. The prime use case is when the users create a new entity because in such cases the context with the content behind the modal is typically not required.
+
+They should not be used for confirmations, critical alerts or to present information.
+
+
+```tsx
+const [open, setOpen] = React.useState(false);
+
+  const onClose = () => {
+    setOpen(!open);
+  };
+
+  return (
+    <div>
+      <Button appearance="primary" onClick={() => setOpen(true)}>
+        Open Full screen modal
+      </Button>
+
+      <FullscreenModal
+        open={open}
+        dimension="medium"
+        onClose={onClose}
+        headerOptions={{
+          heading: 'New group',
+        }}
+        footer={
+          <>
+            <Button onClick={action('Cancel button click')}>Cancel</Button>
+            <Button appearance="primary" className="ml-4" onClick={action('Next button click')}>
+              Create
+            </Button>
+          </>
+        }
+      >
+        <Label withInput={true} required={true}>
+          Name
+        </Label>
+        <Input placeholder="Admin" className="mb-5" />
+        <Label withInput={true}>Description</Label>
+        <Textarea placeholder="Write a description" />
+      </FullscreenModal>
+    </div>
+  )
+```
+
+
+### Variants
+
+#### Standard Modal
+
+##### Dialogs
+
+Dialogs are used to convey information to users where interaction with that information is not required.
+
+
+```tsx
+const [open, setOpen] = React.useState(false);
+  const backdropClose = true;
+  const dimension = 'medium';
+  const onClose = () => {
+    setOpen(!open);
+    action('on close triggered')();
+  };
+
+  const data = [
+    { Name: 'ER Education' },
+    { Name: 'HbA1c Test Due' },
+    { Name: 'Flu Vaccination' },
+    { Name: 'Well-Child Visit' },
+    { Name: 'Cervical Screening' },
+    { Name: 'HbA1c Test Due' },
+    { Name: 'Flu Vaccination' },
+    { Name: 'Well-Child Visit' },
+    { Name: 'Cervical Screening' },
+    { Name: 'HbA1c Test Due' },
+    { Name: 'Flu Vaccination' },
+    { Name: 'Well-Child Visit' },
+  ];
+
+  const schema = [
+    {
+      name: 'data',
+      displayName: 'data',
+      cellRenderer: (props) => {
+        return <Text className=" ml-4">{`${props.data.Name}`}</Text>;
+      },
+    },
+  ];
+
+  return (
+    <div>
+      <Button appearance="primary" onClick={() => setOpen(true)}>
+        Open Modal
+      </Button>
+      <Modal
+        open={open}
+        dimension={dimension}
+        backdropClose={backdropClose}
+        onClose={onClose}
+        headerOptions={{
+          heading: 'Cannot delete Leona Lucas',
+        }}
+        footer={
+          <>
+            <Button className="ml-4" onClick={action('Close button click')}>
+              Close
+            </Button>
+          </>
+        }
+      >
+        <div>
+          <Message
+            appearance="warning"
+            description="Following 11 outreaches are currently scheduled using this sender's details."
+          />
+        </div>
+        <div className="my-5 overflow-auto border Modal-list">
+          <List data={data} schema={schema} size="compressed" />
+        </div>
+        <Text weight="strong" className="mt-2">
+          What to do next?
+        </Text>
+        <br />
+        <Text>You cannot delete this sender until the scheduled outreaches have been completed or cancelled.</Text>
+      </Modal>
+    </div>
+  )
+```
+
+
+##### Alerts
+
+Alerts are used to convey critical information before taking a destructive action such as delete, discard, deactivate, etc.
+
+
+```tsx
+const [open, setOpen] = React.useState(false);
+  const backdropClose = false;
+  const dimension = 'small';
+
+  const onClose = () => {
+    setOpen(!open);
+    action('on close triggered')();
+  };
+
+  return (
+    <div>
+      <Button appearance="primary" onClick={() => setOpen(true)}>
+        Open Modal
+      </Button>
+      <Modal
+        open={open}
+        dimension={dimension}
+        backdropClose={backdropClose}
+        onClose={onClose}
+        headerOptions={{
+          heading: 'Discard Changes',
+        }}
+        footer={
+          <>
+            <Button appearance="basic" onClick={action('Cancel button click')}>
+              Cancel
+            </Button>
+            <Button appearance="alert" className="ml-4" onClick={action('Discard button click')}>
+              Discard
+            </Button>
+          </>
+        }
+      >
+        <Paragraph>
+          You are about to discard all the saved filters. Once discarded, this action cannot be undone. Please be sure
+          of it.
+        </Paragraph>
+      </Modal>
+    </div>
+  )
+```
+
+
+##### Confirmations
+
+Confirmation dialogs are used to take confirmation from users before taking any important action.
+
+
+```tsx
+const [open, setOpen] = React.useState(false);
+  const backdropClose = false;
+  const dimension = 'medium';
+
+  const onClose = () => {
+    setOpen(!open);
+    action('on close triggered')();
+  };
+
+  return (
+    <div>
+      <Button appearance="primary" onClick={() => setOpen(true)}>
+        Open Modal
+      </Button>
+      <Modal
+        open={open}
+        dimension={dimension}
+        backdropClose={backdropClose}
+        onClose={onClose}
+        headerOptions={{
+          heading: 'Edit filters',
+        }}
+        footer={
+          <>
+            <Button appearance="basic" onClick={action('Cancel button click')}>
+              Cancel
+            </Button>
+            <Button appearance="primary" className="ml-4" onClick={action('Discard button click')}>
+              Create version
+            </Button>
+          </>
+        }
+      >
+        <Paragraph>
+          Currently, Version 1.0 is published. This will create a new version of the registry which will be saved as
+          draft untill published.
+          <br />
+        </Paragraph>
+        <br />
+        <Text>Do you want to continue?</Text>
+      </Modal>
+    </div>
+  )
+```
+
+
+##### Input Modals
+
+Input modals are used to present forms to users such as input fields, dropdowns, etc.
+
+
+```tsx
+const [open, setOpen] = React.useState(false);
+  const backdropClose = false;
+
+  const onClose = () => {
+    setOpen(!open);
+  };
+
+  const options = [
+    {
+      label: 'Option1',
+      value: 'Option1',
+    },
+    {
+      label: 'Option2',
+      value: 'Option2',
+    },
+  ];
+
+  const data = [
+    {
+      label: 'Medicine',
+      name: 'Tab1',
+    },
+    {
+      label: 'Period',
+      name: 'Tab2',
+    },
+    {
+      label: 'Alias',
+      name: 'Tab3',
+    },
+    {
+      label: 'Priority',
+      name: 'Tab4',
+    },
+  ];
+
+  const [active, setActive] = React.useState({
+    name: 'Tab1',
+  });
+
+  const onClickHandler = (menu) => {
+    setActive(menu);
+  };
+
+  const subHeading = (
+    <Navigation align="left" menus={data} active={active} onClick={onClickHandler} className="ml-5 mt-4" />
+  );
+
+  const header = (
+    <div>
+      <Heading className="ml-7 mb-3">Medication</Heading>
+      {subHeading}
+    </div>
+  );
+
+  return (
+    <div>
+      <Button appearance="primary" onClick={() => setOpen(true)}>
+        Open Modal
+      </Button>
+      <Modal
+        open={open}
+        dimension="large"
+        backdropClose={backdropClose}
+        onClose={onClose}
+        header={header}
+        footer={
+          <>
+            <Button appearance="basic" onClick={action('Cancel button click')}>
+              Discard
+            </Button>
+            <Button appearance="primary" className="ml-4" onClick={action('Discard button click')}>
+              Create operand
+            </Button>
+          </>
+        }
+      >
+        <div className="my-5">
+          <Label withInput={true} required={true}>
+            Type
+          </Label>
+          <Select triggerOptions={{ withClearButton: false }}>
+            <Select.List>
+              {options.map((item, key) => {
+                return (
+                  <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                    {item.label}
+                  </Select.Option>
+                );
+              })}
+            </Select.List>
+          </Select>
+          <Label withInput={true} className="mt-5">
+            Active Date
+          </Label>
+          <Select triggerOptions={{ withClearButton: false }}>
+            <Select.List>
+              {options.map((item, key) => {
+                return (
+                  <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                    {item.label}
+                  </Select.Option>
+                );
+              })}
+            </Select.List>
+          </Select>
+          <div className="d-flex pb-4">
+            <div className="d-block w-75">
+              <Label withInput={true} required={true} className="mt-5">
+                Diagnosis Diseases
+              </Label>
+              <Select triggerOptions={{ withClearButton: false }} width="100%">
+                <Select.List>
+                  {options.map((item, key) => {
+                    return (
+                      <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                        {item.label}
+                      </Select.Option>
+                    );
+                  })}
+                </Select.List>
+              </Select>
+            </div>
+            <div className="ml-5 d-block w-25">
+              <Label withInput={true} required={true} className="mt-5">
+                Version
+              </Label>
+              <Select triggerOptions={{ withClearButton: false }} width="100%">
+                <Select.List>
+                  {options.map((item, key) => {
+                    return (
+                      <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                        {item.label}
+                      </Select.Option>
+                    );
+                  })}
+                </Select.List>
+              </Select>
+            </div>
+          </div>
+        </div>
+      </Modal>
+    </div>
+  )
+```
+
+
+### Sizes
+
+#### Standard Modal
+
+Standard modal comes in **3 sizes** basis on the breakpoints -
+
+<table style={{width: "100%"}}>
+  <thead>
+    <tr>
+      <th align="left">Size</th>
+      <th align="left">Breakpoint &#60; = small</th>
+      <th align="left">Breakpoint = medium</th>
+      <th align="left">Breakpoint = &#62; large</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Small</td>
+      <td>10 columns</td>
+      <td>4 columns</td>
+      <td>3 columns</td>
+    </tr>
+    <tr>
+      <td>Medium</td>
+      <td>10 columns</td>
+      <td>6 columns</td>
+      <td>4 columns</td>
+    </tr>
+    <tr>
+      <td>Large</td>
+      <td>10 columns</td>
+      <td>8 columns</td>
+      <td>6 columns</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+**Note**: While designing, only design as per the large breakpoint case (width >= 992 pixels).
+
+##### Small
+
+<br />
+
+![Small size modal](./images/modals-1.png)
+
+<br />
+<br />
+
+##### Medium
+
+<br />
+
+![Medium size modal](./images/modals-2.png)
+
+<br />
+<br />
+
+##### Large
+
+<br />
+
+![Large size modal](./images/modals-3.png)
+
+<br />
+<br />
+
+#### Full Screen Modal
+
+The content of a full screen modal comes in **2 sizes** basis on the breakpoints -
+
+<table style={{width: "100%"}}>
+  <thead>
+    <tr>
+      <th align="left">Size</th>
+      <th align="left">Breakpoint &#60; = small</th>
+      <th align="left">Breakpoint = medium</th>
+      <th align="left">Breakpoint = &#62; large</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Default</td>
+      <td>12 columns</td>
+      <td>6 columns</td>
+      <td>4 columns</td>
+    </tr>
+    <tr>
+      <td>Large</td>
+      <td>12 columns</td>
+      <td>8 columns</td>
+      <td>6 columns</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+**Note**: Content here refers to the section appearing in the center of the full screen modal.
+
+##### Default
+
+<br />
+
+![Default size full screen modal](./images/modals-4.jpg)
+
+<br />
+<br />
+
+##### Large
+
+<br />
+
+![Large size full screen modal](./images/modals-5.jpg)
+
+<br />
+<br />
+
+### Structure
+
+<br />
+<br />
+
+##### Standard Modal
+
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Minimum height</td>
+      <td>200px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>
+        Minimum margin
+        <br />
+        <em>(top,bottom)</em>
+      </td>
+      <td>64px, 64px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Corner radius</td>
+      <td>8px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>
+        Padding
+        <br />
+        <em>(top,right,bottom,left)</em>
+      </td>
+      <td>16px, 24px, 24px, 24px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Background color</td>
+      <td>Namak</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Shadow</td>
+      <td>Shadow 30</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+##### Full-Screen Modal
+
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Padding-top</td>
+      <td>64px</td>
+    </tr>
+    <tr>
+      <td>Background color</td>
+      <td>Namak</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+### Configurations
+
+#### Standard Modal
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Size</td>
+      <td>
+        <ul>
+          <li>Small</li>
+          <li>Regular</li>
+          <li>Large</li>
+        </ul>
+      </td>
+      <td>Regular</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+#### Full-Screen Modal
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Size</td>
+      <td>
+        <ul>
+          <li>Regular</li>
+          <li>Large</li>
+        </ul>
+      </td>
+      <td>Regular</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+### Usage
+
+<br />
+
+#### Positioning and Scaling of Modals
+
+Modals are vertically center-aligned. They scale vertically in case the content is long enough, until reaching 64px from the screen’s top and bottom edge. In those cases, a scroll is introduced as well.
+
+> A top and bottom margin of 64px allows to best utilize the space on the viewport and maximize the content area of the modal.
+
+<br />
+
+![Positioning and scaling of modals](./images/modals-6.png)
+
+<Caption> Positioning and scaling of modals </Caption>
+<br />
+<br />
+
+#### Default Focus on Secondary Action
+
+By default, the **secondary** action should be in its focused state when the modal appears. This helps to avoid the trigger of primary action (especially the delete action) by accidental pressing of Enter key.
+
+![Default focus on secondary action](./images/modals-7.png)
+
+<Caption> Default focus on secondary action </Caption>
+
+<br />
+<br />
+
+#### The Order of the Action Buttons
+
+The primary and secondary actions appear at the bottom right in a modal. However, the order in which they appear has to be the same regardless of the nature of the primary action (create, delete, etc.). Listing primary actions last improves the flow, because the modal then [“ends” with its conclusion](https://www.nngroup.com/articles/ok-cancel-or-cancel-ok/). Also, keeping the order the same makes the position of actions predictable.
+
+![Order of the action buttons](./images/modals-8.png)
+
+<br />
+<br />
+
+#### Using in Conjunction With the Message Component
+
+Message component can be used in the body of the modal in case the need arises. It should always **appear at the top** in the body section.
+
+For example, this can be helpful when you want -
+
+1. The users to be aware of the consequences their actions can have
+2. To show a critical error, etc.
+
+![Message component in modals](./images/modals-2.png)
+
+<Caption> Message component in modals </Caption>
+
+<br />
+<br />
+
+#### Dividers
+
+The dividers in the header and the footer should **only** be shown when the content is scrollable.
+
+![Without dividers](./images/modals-9.png)
+
+<br />
+
+![With dividers](./images/modals-10.png)
+
+<Caption> With dividers </Caption>
+
+<br />
+<br />
+
+#### Scrollable Content
+
+You should avoid adding scrollable content in a modal as they are meant to be used to convey concise information, alerts, and confirmations. But there can be cases when scrolling is unavoidable.
+
+Few points to keep in mind then -
+
+- Scrolling becomes active only when the content overflows the modal i.e. the max height of the modal is achieved. Max height of a modal is the height of the screen with a margin of 64px from top and bottom.
+- To indicate that the content can be scrolled, use a scrollbar and show the dividers in both the header and the footer component. This helps to convey that the header and the footer are fixed.
+  
+```tsx
+const [open, setOpen] = React.useState(false);
+  const backdropClose = false;
+
+  const onClose = () => {
+    setOpen(!open);
+    action('on close triggered')();
+  };
+
+  const data = [
+    {
+      question: 'Do you experience any of the following in your current place of residence? [Select all that apply]',
+      options: [
+        'Deteriorating appearance',
+        'Inoperable plumbing',
+        'Inadequate wining',
+        'Leaking roofs',
+        'Crumbling foundations',
+        'Unsafe steps',
+        'Porches in poor condition',
+        'None of the above',
+      ],
+    },
+    {
+      question: 'In last 12 months, were you worried that your food would run out before you got money to buy more?',
+      options: ['Yes', 'No'],
+    },
+    {
+      question:
+        'Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual',
+      options: ['Not at all', 'Several Days', 'More than half the days', 'Nearly every day'],
+    },
+    {
+      question: 'Feeling tired or having little energy?',
+      options: ['Yes', 'No'],
+    },
+    {
+      question:
+        'Which of the following refers to a programme that aims to enable patients to make better use of information and communication technology for health and health care?',
+      options: ['Patient informatics', 'ICT health', 'Health-tech', 'None of these'],
+    },
+    {
+      question:
+        'The way messages are framed influences people’s intentions and willingness to change their behaviour. Which of the following refers to the type of message framing that gives information about a health behaviour that emphasizes the costs of failing to take action?',
+      options: ['Gain-framed messages', 'Loss-framed messages', 'Neutrally-framed messages', 'None of these'],
+    },
+    {
+      question:
+        'Which of the following refers to the capacity to access, understand, appraise and apply health information and services, and to make appropriate health decisions to promote and maintain health?',
+      options: ['health accessibility', 'health appraisal', 'health literacy', 'health promotion'],
+    },
+    {
+      question:
+        'Frederich Engels’ book entitled The Condition of the Working Class in England in 1844 provided a detailed description of the appalling living and working conditions and the limited health care of working-class residents in which of the following English cities?',
+      options: ['London', 'Manchester', 'Liverpool', 'None of these'],
+    },
+    {
+      question:
+        'Which of the following explanations for health inequalities focus on the individual as the unit of analysis, emphasizing unthinking, reckless or irresponsible behaviour or incautious lifestyle as the moving determinant?',
+      options: [
+        'Individualist explanations',
+        'Natural and social selection',
+        'Materialist and structuralist explanations',
+        'Cultural and/or behavioural differences',
+      ],
+    },
+    {
+      question:
+        'This approach to health promotion is based on the assumption that humans are rational decision-makers, this approach relies heavily upon the provision of information about risks and benefits of certain behaviours.',
+      options: ['Behaviour change approach', 'Community development approach', 'Biomedical approach', 'None of these'],
+    },
+  ];
+
+  return (
+    <div>
+      <Button appearance="primary" onClick={() => setOpen(true)}>
+        Open Modal
+      </Button>
+      <Modal
+        open={open}
+        dimension="large"
+        backdropClose={backdropClose}
+        onClose={onClose}
+        headerOptions={{
+          heading: 'Survey',
+        }}
+        footer={
+          <>
+            <Button onClick={() => action('Cancel button click')}>Cancel</Button>
+            <Button appearance="primary" className="ml-4" onClick={() => action('Next button click')}>
+              Next
+            </Button>
+          </>
+        }
+        seperator={true}
+      >
+        <div className="mt-5">
+          <Text weight="strong">All questions must be answered, unless marked</Text>
+          <br />
+          {data.map((object, index) => {
+            return (
+              <div key={index} className="mt-5 d-flex">
+                <div>
+                  <Text size="regular" className="mr-4">
+                    {`${index + 1}.`}
+                  </Text>
+                </div>
+                <div className="d-inline-block ml-2">
+                  <Text size="regular">{object.question}</Text>
+                  <div className="mb-5 mt-3">
+                    {object.options.map((option, ind) => {
+                      return <Chip key={ind} type="selection" label={option} className="mr-4 mt-4" />;
+                    })}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </Modal>
+    </div>
+  )
+```
+
+
+#### Closing the Modal
+
+Clicking outside the modal should **not** cancel the current process and close the modal by default. However, this behavior is configurable and can be turned **on** for dialogs only since they just present information and any sort of user interaction is not required there. Pressing **ESC** key on the keyboard does the same.
+
+<br />
+
+#### Using Forms
+
+Forms with simple inputs can be used inside a modal. For more complex forms and interactions, **side sheets** should be considered.
+
+<br />
+
+#### Steppers
+
+Steppers can also be used in a modal as long as the content is concise and short. The rule of thumb is to use side sheets when the content is large and complex.
+
+![Steppers in a modal](./images/modals-11.png)
+
+<Caption> Steppers in a modal </Caption>
+
+<br />
+<br />
+
+#### Full Screen Modals
+
+<br />
+
+##### Lifetime of a Full Screen Modal
+
+Full screen modal is initialized and displayed when a user clicks on a “Create …” entity button. It is de-initialized and closed as soon as that entity is created.
+**DO NOT** use full screen modals for workflows involving multiple steps.
+
+##### Two Steps Workflow - Back Button
+
+To maintain simplicity, full screen modals are only supposed to have 1 step. But even then, there can be cases when a two steps workflow is required in order to create an entity. In that case, the header of the full screen modal can be updated to include a back button.
+
+
+```tsx
+const [open, setOpen] = React.useState(false);
+  const [page, setPage] = React.useState(0);
+
+  const onClose = () => {
+    setOpen(!open);
+  };
+
+  const openModal = () => {
+    setOpen(true);
+  };
+
+  const headerOptions = () => {
+    if (page === 0) {
+      return {
+        heading: 'New Care Plan',
+      };
+    }
+    return {
+      heading: 'Name the care plan',
+      backButton: true,
+      backButtonCallback: () => setPage(0),
+    };
+  };
+
+  const data = [
+    { name: 'Cultural and language barriers', icon: 'close' },
+    { name: 'Patient does not show emotion', icon: 'close' },
+  ];
+
+  const schema = [
+    {
+      name: 'name',
+      displayName: 'name',
+      width: '80%',
+    },
+    {
+      name: 'icon',
+      displayName: 'icon',
+      width: '20%',
+      minWidth: '10',
+      cellType: 'ICON',
+      align: 'right',
+    },
+  ];
+
+  return (
+    <div>
+      <Button appearance="primary" onClick={openModal}>
+        Open Full screen modal
+      </Button>
+
+      <FullscreenModal
+        open={open}
+        dimension="medium"
+        onClose={onClose}
+        headerOptions={headerOptions()}
+        footer={
+          <>
+            {page === 0 && (
+              <>
+                <Button>Cancel</Button>
+                <Button appearance="primary" onClick={() => setPage(1)} className="ml-4">
+                  Continue
+                </Button>
+              </>
+            )}
+            {page === 1 && (
+              <>
+                <Button>Cancel</Button>
+                <Button appearance="primary" className="ml-4">
+                  Submit
+                </Button>
+              </>
+            )}
+          </>
+        }
+      >
+        {page === 0 && (
+          <div>
+            <Text weight="strong" size="regular">
+              Identify patient needs
+            </Text>
+            <br />
+            <Text size="small">Identify the patient needs to create a care plan for the patient</Text>
+            <Input placeholder="Add patient needs" size="regular" className="my-5" />
+            <Label withInput={true}>2 selected</Label>
+            <br />
+            <Card className="w-100 " shadow="none">
+              <List data={data} schema={schema} size="tight" />
+            </Card>
+          </div>
+        )}
+        {page === 1 && (
+          <div>
+            <Text size="regular">Give a meaningful and easy to understand name to the care plan.</Text>
+            <br />
+            <Label required={true} className="mt-5">
+              Name
+            </Label>
+            <Input placeholder="Name" size="regular" className="mt-2" />
+          </div>
+        )}
+      </FullscreenModal>
+    </div>
+  )
+```
+
+
+##### Action Buttons
+
+Just like the default modals, the action buttons appear at the bottom right and follows the same order rules.
+
+![Action buttons in a full screen modal](./images/modals-12.jpg)
+
+<Caption> Action buttons in a full screen modal </Caption>
+
+<br />
+<br />
+
+#### Scrolling Behavior
+
+Unlike default modals, the header and footer are **not fixed** in the full screen modals. So the content goes beneath the fold like this -
+
+
+```tsx
+const [open, setOpen] = React.useState(false);
+
+  const onClose = () => {
+    setOpen(!open);
+  };
+
+  const data = [
+    {
+      question: 'Do you experience any of the following in your current place of residence? [Select all that apply]',
+      options: [
+        'Deteriorating appearance',
+        'Inoperable plumbing',
+        'Inadequate wining',
+        'Leaking roofs',
+        'Crumbling foundations',
+        'Unsafe steps',
+        'in poor condition',
+        'None of the above',
+      ],
+    },
+    {
+      question: 'In last 12 months, were you worried that your food would run out before you got money to buy more?',
+      options: ['Yes', 'No'],
+    },
+    {
+      question:
+        'Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual',
+      options: ['Not at all', 'Several Days', 'More than half the days', 'Nearly every day'],
+    },
+    { question: 'Feeling tired or having little energy?', options: ['Yes', 'No'] },
+    {
+      question:
+        'Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual',
+      options: ['Not at all', 'Several Days', 'More than half the days', 'Nearly every day'],
+    },
+    {
+      question:
+        'Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual',
+      options: ['Not at all', 'Several Days', 'More than half the days', 'Nearly every day'],
+    },
+    {
+      question:
+        'Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual',
+      options: ['Not at all', 'Several Days', 'More than half the days', 'Nearly every day'],
+    },
+  ];
+
+  return (
+    <div>
+      <Button appearance="primary" onClick={() => setOpen(true)}>
+        Open Full screen modal
+      </Button>
+      <FullscreenModal
+        open={open}
+        dimension="large"
+        onClose={onClose}
+        headerOptions={{
+          heading: 'Survey',
+        }}
+        footer={
+          <>
+            <Button onClick={action('Cancel button click')}>Cancel</Button>
+            <Button appearance="primary" className="ml-4" onClick={action('Submit button click')}>
+              Submit
+            </Button>
+          </>
+        }
+      >
+        <div className="mt-5">
+          <Text weight="strong">All questions must be answered, unless marked</Text>
+          <br />
+          {data.map((object, index) => {
+            return (
+              <div key={index} className="mt-5 d-flex">
+                <div>
+                  <Text size="regular" className="mr-4">
+                    {`${index + 1}.`}
+                  </Text>
+                </div>
+                <div className="d-inline-block ml-2">
+                  <Text size="regular">{object.question}</Text>
+                  <div className="mb-5 mt-3">
+                    {object.options.map((option, ind) => {
+                      return <Chip key={ind} type="selection" label={option} className="mr-4 mt-4" />;
+                    })}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </FullscreenModal>
+    </div>
+  )
+```
+
+
+
+<br />
+<br />
+
+#### Modal vs Message vs Toast
+
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"25%", textAlign: "left"}}>Factors</th>
+      <th style={{width:"25%", textAlign: "left"}}>Toast</th>
+      <th style={{width:"25%", textAlign: "left"}}>Message</th>
+      <th style={{width:"25%", textAlign: "left"}}>Modal</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Severity</td>
+      <td><Badge appearance="warning" subtle={true}>LOW</Badge></td>
+      <td><Badge appearance="accent1" subtle={true}>MEDIUM</Badge></td>
+      <td><Badge appearance="alert" subtle={true}>CRITICAL</Badge></td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Feedback</td>
+      <td>Feedback or update after an action has taken place</td>
+      <td>Information or feedback that aids users in completing their action or flow</td>
+      <td>Critical information that requires user input or interaction</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>When to use</td>
+      <td>After an action has taken place</td>
+      <td>Before or after an action has taken place</td>
+      <td>Before an action has taken place</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Information detail</td>
+      <td>Concise</td>
+      <td>Concise</td>
+      <td>In-depth</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Intrusiveness</td>
+      <td>Unobtrusive</td>
+      <td>Attention demanding</td>
+      <td>Disruptive</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Duration</td>
+      <td>Persists for 5 seconds (Default), can be customized in case of a critical notification</td>
+      <td>Persists but can be removed from the view upon resolution of the error.</td>
+      <td>Persists until user interaction or input is received.</td>
+    </tr>
+  </tbody>
+</table>
+<br />

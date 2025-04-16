@@ -1,0 +1,383 @@
+---
+title: Date Pickers
+description: Date picker is used for selecting or entering a date value.
+tabs: ['Usage', 'Code']
+showMobile: true
+keywords: ['Daterange']
+---
+
+Date picker lets users select or directly enter date values. It can either be a single date or a date range.
+
+
+```tsx
+const dateValue = undefined;
+
+  const inputFormat = 'mm/dd/yyyy';
+
+  const outputFormat = 'yyyy/mm/dd';
+
+  const view = 'date';
+
+  const firstDayOfWeek = 'saturday';
+
+  const disabledBefore = new Date('Jan 20 2015');
+
+  const disabledAfter = new Date('Jan 20 2028');
+
+  const jumpView = true;
+
+  const yearNav = -1;
+
+  const monthNav = -1;
+
+  const closeOnSelect = true;
+
+  const attr = {};
+  if (disabledBefore) attr.disabledBefore = disabledBefore;
+  if (disabledAfter) attr.disabledAfter = disabledAfter;
+  if (yearNav !== -1) attr.yearNav = yearNav;
+  if (monthNav !== -1) attr.monthNav = monthNav;
+
+  return (
+    <div className="w-25">
+      <DatePicker
+        withInput={true}
+        closeOnSelect={closeOnSelect}
+        inputFormat={inputFormat}
+        outputFormat={outputFormat}
+        jumpView={jumpView}
+        date={dateValue}
+        onDateChange={(currDate, currValue) => {
+          action(`on date change : ${currDate} --- ${currValue}`)();
+        }}
+        view={view}
+        firstDayOfWeek={firstDayOfWeek}
+        inputOptions={{
+          required: true,
+        }}
+        {...attr}
+      />
+    </div>
+  )
+```
+
+
+### Types
+Date picker comes in two types - one for selecting single date value called date picker and another for selecting a date range aptly called date range picker.
+
+#### Date Picker
+For selecting single date value.
+
+![Date picker](./images/datePicker-1.png)
+
+<Caption> Date picker </Caption>
+
+<br/>
+
+#### Date Range Picker
+For selecting a date range.
+
+![Date range picker](./images/datePicker-2.png)
+
+<Caption>Date range picker</Caption>
+
+<br/>
+<br/>
+
+### Structure
+<br/>
+<br/>
+Date picker is built up using calendar and popover components. Unlike calendar, which can be displayed upfront, a trigger is always needed for the date picker such as inputs.
+<br/>
+<br/>
+
+
+![Structure of date picker](./images/datePicker-structure.png)
+<br/>
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Size</td>
+      <td>
+          <ul>
+              <li>212x292 px <em>(Small)</em></li>
+              <li>316x372 px <em>(Regular)</em></li>
+          </ul>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<br/>
+
+
+
+### Configurations
+<br/>
+<br/>
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>View</td>
+      <td>
+          <ul>
+              <li>Month</li>
+              <li>Year</li>
+              <li>Decade</li>
+          </ul>
+      </td>
+      <td>Month</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Size</td>
+      <td>
+          <ul>
+              <li>Small</li>
+              <li>Regular</li>
+          </ul>
+      </td>
+      <td>Regular</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+### Usage
+<br/>
+
+#### Triggers
+One obvious expectation from a date picker is the ability to input values using a keyboard e.g. when a user has to enter the date of birth. Getting the desired date is much quicker this way as users do not have to go through the calendar select the desired value. Therefore, use **inputs** to trigger the date picker.
+
+```tsx
+const dateValue = undefined;
+
+  const inputFormat = 'mm/dd/yyyy';
+
+  const outputFormat = 'yyyy/mm/dd';
+
+  const view = 'date';
+
+  const firstDayOfWeek = 'saturday';
+
+  const disabledBefore = new Date('Jan 20 2015');
+
+  const disabledAfter = new Date('Jan 20 2028');
+
+  const jumpView = true;
+
+  const yearNav = -1;
+
+  const monthNav = -1;
+
+  const closeOnSelect = true;
+
+  const attr = {};
+  if (disabledBefore) attr.disabledBefore = disabledBefore;
+  if (disabledAfter) attr.disabledAfter = disabledAfter;
+  if (yearNav !== -1) attr.yearNav = yearNav;
+  if (monthNav !== -1) attr.monthNav = monthNav;
+
+  return (
+    <div className="w-25">
+      <DatePicker
+        withInput={true}
+        closeOnSelect={closeOnSelect}
+        inputFormat={inputFormat}
+        outputFormat={outputFormat}
+        jumpView={jumpView}
+        date={dateValue}
+        onDateChange={(currDate, currValue) => {
+          action(`on date change : ${currDate} --- ${currValue}`)();
+        }}
+        view={view}
+        firstDayOfWeek={firstDayOfWeek}
+        inputOptions={{
+          required: true,
+        }}
+        {...attr}
+      />
+    </div>
+  )
+```
+
+
+#### Using Preset Values
+Use selection chips to give quick selection of preset date/date-range values.
+
+![Using preset values](./images/datePicker-3.png)
+<Caption>Using preset values</Caption>
+<br/>
+
+If there is a space crunch, you can have these preset values in the popover itself. But this defeats the purpose of quick selection since the users will have to open the popover to access them. Hence, make sure to use this only when there is no option left.
+
+![Preset values inside popover](./images/datePicker-4.png)
+<Caption>Preset values inside popover</Caption>
+
+<br/>
+
+#### Using Single Input for a Date Range
+If there is a space crunch, you can have a single input for entering/selecting a date range.
+
+```tsx
+const monthsInView = 2;
+
+  const startDate = new Date('Jan 20 2023');
+
+  const endDate = new Date('Jan 28 2023');
+
+  const inputFormat = 'dd/mm/yyyy';
+
+  const outputFormat = 'mm-dd-yyyy';
+
+  const view = 'date';
+
+  const firstDayOfWeek = 'monday';
+
+  const disabledBefore = new Date('Jan 20 2015');
+
+  const disabledAfter = new Date('Jan 20 2028');
+
+  const jumpView = true;
+
+  const yearNav = -1;
+
+  const monthNav = -1;
+
+  const open = false;
+
+  const attr = {};
+  if (disabledBefore) attr.disabledBefore = disabledBefore;
+  if (disabledAfter) attr.disabledAfter = disabledAfter;
+  if (yearNav !== -1) attr.yearNav = yearNav;
+  if (monthNav !== -1) attr.monthNav = monthNav;
+
+  return (
+    <div className="w-50">
+      <DateRangePicker
+        withInput={true}
+        singleInput={true}
+        startDate={startDate}
+        endDate={endDate}
+        inputFormat={inputFormat}
+        outputFormat={outputFormat}
+        jumpView={jumpView}
+        onRangeChange={(sDate, eDate, sValue, eValue) =>
+          action(`on range change: ${sDate} - ${eDate} ---- ${sValue} - ${eValue}`)()
+        }
+        view={view}
+        firstDayOfWeek={firstDayOfWeek}
+        monthsInView={monthsInView}
+        inputOptions={{
+          required: true,
+          label: 'Date',
+        }}
+        {...attr}
+        open={open}
+      />
+    </div>
+  )
+```
+
+
+#### Using Date and Time Picker Together
+As soon as a date or date range is selected, time picker dropdown should be triggered so that users can select the time without any additional click.
+
+![Date and time picker together](./images/datePicker-5.png)
+<Caption>Date and time picker together</Caption>
+
+<br/>
+
+#### Selecting Day of the Week or Time of Day
+Use selection chips for selecting day of the week or time of day.
+
+![Selection chips to select day of the week or time of day](./images/datePicker-6.png)
+<Caption>Selection chips to select day of the week or time of day</Caption>
+
+#### Reverse Selection in Date Range Picker
+Users are allowed to choose the end date first and subsequently select the first date.
+
+![Reverse selection in date range picker](./images/datePicker-7.png)
+<Caption>Reverse selection in date range picker</Caption>
+
+#### Selecting the Same Date Twice
+Users are allowed to select the same date twice making the first and last date the same.
+
+![Selecting the same date twice](./images/datePicker-8.png)
+<Caption>Selecting the same date twice</Caption>
+
+#### Updating a Selected Date Range
+In case of any update to the selected range, the selection will reset with the newly selected date becoming the new first date.
+
+```tsx
+const monthsInView = 2;
+
+  const startDate = new Date('Jan 12 2023');
+
+  const endDate = new Date('Jan 20 2023');
+
+  const inputFormat = 'mm-dd-yyyy';
+
+  const outputFormat = 'yyyy-mm-dd';
+
+  const view = 'year';
+
+  const firstDayOfWeek = 'monday';
+
+  const disabledBefore = new Date('Jan 20 2015');
+
+  const disabledAfter = new Date('Jan 20 2028');
+
+  const jumpView = true;
+
+  const yearNav = -1;
+
+  const monthNav = -1;
+
+  const attr = {};
+  if (disabledBefore) attr.disabledBefore = disabledBefore;
+  if (disabledAfter) attr.disabledAfter = disabledAfter;
+  if (yearNav !== -1) attr.yearNav = yearNav;
+  if (monthNav !== -1) attr.monthNav = monthNav;
+
+  return (
+    <div className="w-75">
+      <DateRangePicker
+        withInput={true}
+        startDate={startDate}
+        endDate={endDate}
+        inputFormat={inputFormat}
+        outputFormat={outputFormat}
+        jumpView={jumpView}
+        onRangeChange={(sDate, eDate, sValue, eValue) =>
+          action(`on range change: ${sDate} - ${eDate} ---- ${sValue} - ${eValue}`)()
+        }
+        view={view}
+        firstDayOfWeek={firstDayOfWeek}
+        monthsInView={monthsInView}
+        startInputOptions={{
+          required: true,
+        }}
+        endInputOptions={{
+          required: true,
+        }}
+        {...attr}
+      />
+    </div>
+  )
+```
+
+
+ 
+
+

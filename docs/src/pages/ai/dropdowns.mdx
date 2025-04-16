@@ -1,0 +1,1102 @@
+---
+title: Dropdowns
+description: Dropdowns offer multiple choices in a compact way.
+tabs: ['Usage', 'Code', 'Interactions']
+showMobile: true
+keywords: ['Menu', 'Select', 'Listbox', 'Context menu']
+---
+
+Dropdowns display a list of options for users to choose from. They provide the option to let users select a single option or multiple.
+
+### Types
+
+Dropdowns can be categorized into **2 types** basis on their uses -
+
+#### Standard
+
+This is the typical custom button + popover combination of dropdowns.
+
+
+```tsx
+const options = [
+    {
+      label: 'Draft',
+      value: 'draft',
+    },
+    {
+      label: 'In Progress',
+      value: 'in_progress',
+    },
+    {
+      label: 'Sent',
+      value: 'sent',
+    },
+    {
+      label: 'Scheduled',
+      value: 'scheduled',
+    },
+    {
+      label: 'Partially Failed',
+      value: 'partially_failed',
+    },
+    {
+      label: 'Completely Failed',
+      value: 'completely_failed',
+    },
+  ];
+  return <Dropdown options={options} className="w-25" placeholder="Status" />
+```
+
+
+#### Menu
+
+This is the icon button + popover combination of dropdowns which is used only for menu commands e.g. edit, export, delete, etc. This is **not used** for selecting options. The menu can open in either direction i.e towards left or towards the right.
+
+
+```tsx
+const options = [
+    {
+      label: 'Edit',
+      value: 'edit',
+    },
+    {
+      label: 'Export',
+      value: 'export',
+    },
+    {
+      label: 'Delete',
+      value: 'delete',
+    },
+  ];
+  return (
+    <div className="d-flex w-50">
+      <Dropdown options={options} menu={true} className="mr-5" align="right" maxWidth={130} />
+      <Dropdown options={options} menu={true} align="left" className="mr-5" maxWidth={130} />
+    </div>
+  )
+```
+
+
+### Variants
+
+<br />
+
+#### Button Variants
+
+The custom button for dropdowns comes with a few variants -
+
+##### Standard
+
+The standard variant consists of just text which changes its state when one or more options are selected.
+
+
+```tsx
+const options = [
+    {
+      label: 'Draft',
+      value: 'draft',
+    },
+    {
+      label: 'In Progress',
+      value: 'in_progress',
+    },
+    {
+      label: 'Sent',
+      value: 'sent',
+    },
+    {
+      label: 'Scheduled',
+      value: 'scheduled',
+    },
+    {
+      label: 'Partially Failed',
+      value: 'partially_failed',
+    },
+    {
+      label: 'Completely Failed',
+      value: 'completely_failed',
+    },
+  ];
+  return <Dropdown options={options} className="w-25" placeholder="Status" />
+```
+
+
+##### With Icon
+
+This variant comes with an icon in the left preceding the text to provide additional cues regarding the type of the options.
+
+
+```tsx
+const options = [
+    {
+      label: 'Alabama',
+      value: 'AL',
+    },
+    {
+      label: 'Alaska',
+      value: 'AK',
+    },
+    {
+      label: 'Arizona',
+      value: 'AZ',
+    },
+    {
+      label: 'Arkansas',
+      value: 'AR',
+    },
+    {
+      label: 'California',
+      value: 'CO',
+    },
+    {
+      label: 'Connecticut',
+      value: 'CT',
+    },
+    {
+      label: 'Delaware',
+      value: 'DE',
+    },
+    {
+      label: 'Florida',
+      value: 'FL',
+    },
+    {
+      label: 'Georgia',
+      value: 'GA',
+    },
+    {
+      label: 'Hawaii',
+      value: 'HI',
+    },
+    {
+      label: 'Idaho',
+      value: 'ID',
+    },
+    {
+      label: 'Illinois',
+      value: 'IL',
+    },
+    {
+      label: 'Indiana',
+      value: 'IN',
+    },
+    {
+      label: 'Iowa',
+      value: 'IA',
+    },
+    {
+      label: 'Kansas',
+      value: 'KS',
+    },
+    {
+      label: 'Kentucky',
+      value: 'KY',
+    },
+    {
+      label: 'Louisiana',
+      value: 'LA',
+    },
+    {
+      label: 'Maine',
+      value: 'ME',
+    },
+    {
+      label: 'Maryland',
+      value: 'KY',
+    },
+    {
+      label: 'Massachusetts',
+      value: 'MA',
+    },
+    {
+      label: 'Michigan',
+      value: 'MI',
+    },
+    {
+      label: 'Minnesota',
+      value: 'MN',
+    },
+    {
+      label: 'Mississippi',
+      value: 'MS',
+    },
+    {
+      label: 'Missouri',
+      value: 'MO',
+    },
+    {
+      label: 'Montana',
+      value: 'MT',
+    },
+    {
+      label: 'Nebraska',
+      value: 'NE',
+    },
+    {
+      label: 'Nevada',
+      value: 'NV',
+    },
+    {
+      label: 'New Hampshire',
+      value: 'NT',
+    },
+    {
+      label: 'New Jersey',
+      value: 'NJ',
+    },
+    {
+      label: 'New Mexico',
+      value: 'NM',
+    },
+    {
+      label: 'New York',
+      value: 'NY',
+    },
+    {
+      label: 'North Carolina',
+      value: 'NC',
+    },
+    {
+      label: 'North Dakota',
+      value: 'ND',
+    },
+    {
+      label: 'Ohio',
+      value: 'OH',
+    },
+    {
+      label: 'Oklahoma',
+      value: 'OK',
+    },
+    {
+      label: 'Oregon',
+      value: 'OR',
+    },
+    {
+      label: 'Pennsylvania',
+      value: 'PA',
+    },
+    {
+      label: 'Rhode Island',
+      value: 'RI',
+    },
+    {
+      label: 'South Carolina',
+      value: 'SC',
+    },
+    {
+      label: 'South Dakota',
+      value: 'SD',
+    },
+    {
+      label: 'Tennessee',
+      value: 'TN',
+    },
+    {
+      label: 'Texas',
+      value: 'TX',
+    },
+    {
+      label: 'Utah',
+      value: 'UT',
+    },
+    {
+      label: 'Vermont',
+      value: 'VT',
+    },
+    {
+      label: 'Virginia',
+      value: 'VA',
+    },
+    {
+      label: 'Washington',
+      value: 'WA',
+    },
+    {
+      label: 'West Virginia',
+      value: 'WV',
+    },
+    {
+      label: 'Wisconsin',
+      value: 'WI',
+    },
+    {
+      label: 'Wyoming',
+      value: 'WY',
+    },
+  ];
+  return (
+    <Dropdown options={options} icon="location_on" className="w-25" placeholder="Select state" staticLimit={100} />
+  )
+```
+
+
+##### Inline Label
+
+This variant comes with a label preceding the text and can be used at places where there is a space crunch.
+
+
+```tsx
+const options = [
+    {
+      label: 'All',
+      value: 'all',
+      selected: true,
+    },
+    {
+      label: 'Draft',
+      value: 'draft',
+    },
+    {
+      label: 'In Progress',
+      value: 'in_progress',
+    },
+    {
+      label: 'Sent',
+      value: 'sent',
+    },
+    {
+      label: 'Scheduled',
+      value: 'scheduled',
+    },
+    {
+      label: 'Partially Failed',
+      value: 'partially_failed',
+    },
+    {
+      label: 'Completely Failed',
+      value: 'completely_failed',
+    },
+  ];
+  return (
+    <div>
+      <Dropdown options={options} className="w-25" inlineLabel="Status" withCheckbox={true} />
+    </div>
+  )
+```
+
+
+#### Options Variants
+
+The options in a dropdown can be single select or multi-select. They come with a few variants -
+
+##### Standard
+
+This variant comes with just text.
+
+
+```tsx
+const options = [
+    {
+      label: 'Draft',
+      value: 'draft',
+    },
+    {
+      label: 'In Progress',
+      value: 'in_progress',
+    },
+    {
+      label: 'Sent',
+      value: 'sent',
+    },
+    {
+      label: 'Scheduled',
+      value: 'scheduled',
+    },
+    {
+      label: 'Partially Failed',
+      value: 'partially_failed',
+    },
+    {
+      label: 'Completely Failed',
+      value: 'completely_failed',
+    },
+  ];
+  return <Dropdown options={options} className="w-25" placeholder="Status" />
+```
+
+
+##### With Icon
+
+This variant comes with an icon preceding the text.
+
+
+```tsx
+const options = [
+    {
+      label: 'Not yet helped',
+      value: 'not_yet_helped',
+      icon: 'more_horiz',
+    },
+    {
+      label: 'Eligible',
+      value: 'eligible',
+      icon: 'add',
+    },
+    {
+      label: 'Not Eligible',
+      value: 'not_eligible',
+      icon: 'horizontal_rule',
+    },
+    {
+      label: 'Got help',
+      value: 'got_help',
+      icon: 'check',
+    },
+  ];
+  return <Dropdown options={options} optionType="WITH_ICON" className="w-25" placeholder="Select status" />
+```
+
+
+##### With Sub Info
+
+This variant comes with sub-info beneath the text.
+
+
+```tsx
+const options = [
+    {
+      label: 'Lawson, Joy',
+      value: 'Lawson_Joy',
+      subInfo: 'Patient',
+    },
+    {
+      label: 'West, Sarah',
+      value: 'West_Sarah',
+      subInfo: 'Primary Care Physician',
+    },
+    {
+      label: 'Powell, Lauren',
+      value: 'Powell_Lauren',
+      subInfo: 'Care Manager',
+    },
+  ];
+
+  return <Dropdown options={options} optionType="WITH_META" className="w-25" placeholder="Select Recipient" />
+```
+
+
+##### With Checkbox
+
+This variant comes with the support of checkboxes to select single or multiple options. The options here can also have sub info just like the previous variant.
+
+
+```tsx
+const options = [
+    {
+      label: 'Below 18',
+      value: 'below_18',
+    },
+    {
+      label: '19 - 35',
+      value: '19-35',
+    },
+    {
+      label: '36 - 55',
+      value: '36-55',
+    },
+    {
+      label: '56 and above',
+      value: '56_above',
+    },
+  ];
+  return <Dropdown options={options} withCheckbox={true} className="w-25" placeholder="Select" />
+```
+
+
+### Sizes
+
+Dropdowns come in **2 sizes** - small and regular.
+
+
+```tsx
+const sizes = ['tiny', 'regular'];
+
+  return (
+    <div className="d-flex">
+      {sizes.map((dropdownSize, ind) => {
+        return (
+          <div key={ind} className="mr-8 w-25">
+            <Text weight="strong">{dropdownSize.charAt(0).toUpperCase() + dropdownSize.slice(1)}</Text> <br />
+            <br />
+            <Dropdown triggerSize={dropdownSize} options={storyOptions} placeholder={'Select'} />
+          </div>
+        );
+      })}
+    </div>
+  )
+```
+
+
+### States
+
+<br />
+
+#### Button States
+
+The custom button comes in **5 states** - default, hover, focus, active and disabled.
+
+![States of the custom dropdown button](./images/dropdowns-2.png)
+
+<br />
+<br />
+
+#### Options States
+
+The options come in **3 states** - default, hover and selected. Users can also use the up/down arrow key to traverse the options. In that case, the highlighted option has the same state as hover.
+
+![States of options](./images/options-states.png)
+
+<br />
+<br />
+
+### Structure
+
+<br />
+
+Dropdown is made up of 2 key components - a custom **button** which acts as a trigger and a **popover** which acts as a container for the options.
+
+![Dropdown structure](./images/dropdowns-1.png)
+
+<br />
+<br />
+
+#### Trigger (Dropdown Button)
+
+<br />
+<br />
+
+![Structure of dropdown button](./images/dropdownbutton-structure.png)
+
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Height</td>
+      <td>
+        <ul>
+          <li>
+            24 px <em>(Small)</em>
+          </li>
+          <li>
+            32 px <em>(Regular)</em>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Corner radius</td>
+      <td>4 px</td>
+    </tr>
+  </tbody>
+</table>
+
+<br />
+
+#### Options
+
+<br />
+<br />
+
+![Structure of dropdown options](./images/dropdownoptions-structure.png)
+
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>
+        Padding
+        <br />
+        <em>(top, right, bottom, left)</em>
+      </td>
+      <td>6 px, 8 px, 6 px, 12 px</td>
+    </tr>
+  </tbody>
+</table>
+
+<br />
+
+### Configurations
+
+<br />
+<br />
+
+#### Trigger (Dropdown Button)
+
+<br />
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Size</td>
+      <td>
+        <ul>
+          <li>Small</li>
+          <li>Regular</li>
+        </ul>
+      </td>
+      <td>Regular</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>
+        Placeholder
+        <br />
+      </td>
+      <td>&#60;placeholder&#62;</td>
+      <td>Select</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>
+        Icon
+        <br />
+        <em>(optional)</em>
+      </td>
+      <td>&#60;icon name&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>
+        Inline label
+        <br />
+        <em>(optional)</em>
+      </td>
+      <td>&#60;label&#62;</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+#### Options
+
+<br />
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>
+        Label
+        <br />
+      </td>
+      <td>&#60;label&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>
+        Icon
+        <br />
+        <em>(optional)</em>
+      </td>
+      <td>&#60;icon name&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>
+        Sub info
+        <br />
+        <em>(optional)</em>
+      </td>
+      <td>&#60;sub info&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>
+        Checkbox
+        <br />
+        <em>(optional)</em>
+      </td>
+      <td>Checkbox</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+### Usage
+
+<br />
+
+#### Search
+
+Dropdown can be offered with a search functionality. In that case, the search input appears at the top.
+
+
+```tsx
+const options = [
+    {
+      label: 'Financial',
+      value: 'financial',
+    },
+    {
+      label: 'Homeless',
+      value: 'homeless',
+    },
+    {
+      label: 'Lack of Benefits',
+      value: 'lack_of_benefits',
+    },
+    {
+      label: 'Lack of Employment',
+      value: 'lack_of_employment',
+    },
+    {
+      label: 'Lack of Understanding',
+      value: 'lack_of_understanding',
+    },
+  ];
+  return <Dropdown options={options} withSearch={true} className="w-25" placeholder="Select barriers" />
+```
+
+
+#### Multi Select
+
+The multi-select behavior in a dropdown is divided into **2 categories** as following.
+
+##### For Options Less Than or Equal to a Threshold
+
+
+```tsx
+const options = [];
+  for (let i = 1; i <= 50; i++) {
+    options.push({
+      label: `Option ${i}`,
+      value: `Option${i}`,
+    });
+  }
+  return <Dropdown options={options} withCheckbox={true} withSearch={true} className="w-25" placeholder="Select" />
+```
+
+
+![Multi-select behavior of dropdown for options less than or equal to a threshold](./images/dropdowns-4.png)
+
+<Caption> Multi-select behavior of dropdown for options less than or equal to a threshold </Caption>
+
+<br />
+<br />
+
+##### For Options More Than the Threshold
+
+
+```tsx
+const getSearchedOptions = (opts, searchTerm) => {
+    const result = opts.filter((option) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));
+    return result;
+  };
+
+  const fetchOptions = (searchTerm) => {
+    const searchedOptions = searchTerm ? getSearchedOptions(options, searchTerm) : options;
+    return new Promise((resolve) => {
+      this.window.setTimeout(() => {
+        resolve({
+          searchTerm,
+          options: searchedOptions,
+          count: searchedOptions.length,
+        });
+      }, 1000);
+    });
+  };
+
+  return <Dropdown fetchOptions={fetchOptions} withCheckbox={true} className="w-25" placeholder="Select" />
+```
+
+
+![Multi-select behavior of dropdown for options more than the threshold](./images/dropdowns-5.png)
+
+<Caption> Multi-select behavior of dropdown for options more than the threshold </Caption>
+
+<br />
+
+**Note:** 50 is the default threshold and it can be changed to any number between 50 to 100.
+
+<br />
+
+#### Grouping Options
+
+Dropdown options can be grouped under a section using a sub header, if needed.
+
+![Grouping options under a sub heading](./images/dropdowns-6.png)
+
+<Caption> Grouping options under a sub heading </Caption>
+
+<br />
+<br />
+
+#### Label Position
+
+The label provides a better understanding of what kind of selection is expected. Labels can be placed either on the top of the dropdown or can be placed inline with the value or placeholder of the dropdown.
+
+
+```tsx
+const options = [
+    {
+      label: 'All',
+      value: 'all',
+      selected: true,
+    },
+    {
+      label: 'Draft',
+      value: 'draft',
+    },
+    {
+      label: 'In Progress',
+      value: 'in_progress',
+    },
+    {
+      label: 'Sent',
+      value: 'sent',
+    },
+    {
+      label: 'Scheduled',
+      value: 'scheduled',
+    },
+    {
+      label: 'Partially Failed',
+      value: 'partially_failed',
+    },
+    {
+      label: 'Completely Failed',
+      value: 'completely_failed',
+    },
+  ];
+  return (
+    <div>
+      <div className="w-25 mb-9">
+        <Label withInput={true}>Status</Label>
+        <Dropdown options={options} className="w-100" withCheckbox={true} />
+      </div>
+    </div>
+  )
+```
+
+
+<br />
+
+
+```tsx
+const options = [
+    {
+      label: 'All',
+      value: 'all',
+      selected: true,
+    },
+    {
+      label: 'Draft',
+      value: 'draft',
+    },
+    {
+      label: 'In Progress',
+      value: 'in_progress',
+    },
+    {
+      label: 'Sent',
+      value: 'sent',
+    },
+    {
+      label: 'Scheduled',
+      value: 'scheduled',
+    },
+    {
+      label: 'Partially Failed',
+      value: 'partially_failed',
+    },
+    {
+      label: 'Completely Failed',
+      value: 'completely_failed',
+    },
+  ];
+  return (
+    <div>
+      <Dropdown options={options} className="w-25" inlineLabel="Status" withCheckbox={true} />
+    </div>
+  )
+```
+
+
+<br />
+
+#### Help Text
+
+Help text can be provided beneath a dropdown to add context regarding the type of input required just like the input fields.
+
+
+```tsx
+const options = [
+    {
+      label: 'Alabama (205)',
+      value: 'Alabama (205)',
+    },
+    {
+      label: 'Alabama (251)',
+      value: 'Alabama (251)',
+    },
+    {
+      label: 'Alabama (256)',
+      value: 'Alabama (256)',
+    },
+    {
+      label: 'Alabama (334)',
+      value: 'Alabama (334)',
+    },
+    {
+      label: 'Alabama (938)',
+      value: 'Alabama (938)',
+    },
+    {
+      label: 'Arizona (520)',
+      value: 'Arizona (520)',
+    },
+    {
+      label: 'California (209)',
+      value: 'California (209)',
+    },
+    {
+      label: 'California (408)',
+      value: 'California (408)',
+    },
+    {
+      label: 'Colorado (719)',
+      value: 'Colorado (719)',
+    },
+    {
+      label: 'Connecticut (860)',
+      value: 'Connecticut (860)',
+    },
+  ];
+  return (
+    <>
+      <Label withInput={true}>Area code</Label>
+      <div className="w-25">
+        <Dropdown options={options} withSearch={true} placeholder="Select an area code" />
+        <HelpText message={'If the number with this code is not available, we will use the next best match'} />
+      </div>
+    </>
+  )
+```
+
+
+#### Actions in Footer
+
+Using network resources on each checkbox selection in a dropdown can be quite expensive. To avoid sending api calls at every selection, the dropdown with multi-select comes with an option of having actions in the footer. This helps in sending the api call just once i.e. on click of Add/Apply button.
+
+
+```tsx
+const options = [
+    {
+      label: 'Cardiovascular',
+      value: 'Cardiovascular',
+    },
+    {
+      label: 'Communication impediments: hearing and vision loss, low literacy',
+      value: 'Communication impediments: hearing and vision loss, low literacy',
+    },
+    {
+      label: 'Community resource availability',
+      value: 'Community resource availability',
+    },
+    {
+      label: 'Depression and anxiety screenings',
+      value: 'Depression and anxiety screenings',
+    },
+    {
+      label: 'Obesity',
+      value: 'Obesity',
+    },
+    {
+      label: 'Diabetes',
+      value: 'Diabetes',
+    },
+    {
+      label: 'Gastrointestinal system',
+      value: 'Gastrointestinal system',
+    },
+    {
+      label: 'Patient has suicidal thoughts',
+      value: 'Patient has suicidal thoughts',
+    },
+    {
+      label: 'LTSS needs',
+      value: 'LTSS needs',
+    },
+    {
+      label: 'Medication regimen',
+      value: 'Medication regimen',
+    },
+  ];
+  return (
+    <Dropdown
+      options={options}
+      withSearch={true}
+      className="w-25"
+      placeholder="Select problem"
+      withCheckbox={true}
+      showApplyButton={true}
+    />
+  )
+```
+
+
+#### Custom Trigger
+
+Dropdowns can also be triggered by other components, primarily by buttons and icon buttons. The basic behavior of the dropdown remains the same.
+
+![Custom triggers to open a dropdown](./images/dropdowns-7.png)
+
+<Caption> Custom triggers to open a dropdown </Caption>
+
+<br />
+<br />
+
+#### Dropdown vs. Radio
+
+It is recommended to use dropdowns if the number of single-select options exceeds 5 or if the space is limited, to better utilize the space. Radios should be used if the options are fewer than 5 and there are no space restrictions.
+
+![Dropdown vs. radio](./images/dropdowns-8.png)
+
+<br />
+<br />
+
+#### Dropdown vs. Checkbox
+
+It is recommended to use dropdowns if the number of multi-select options exceeds 5 or if the space is limited, to better utilize the space. Checkboxes should be used if the options are fewer than 5 and there are no space restrictions.
+
+![Dropdown vs. checkbox](./images/dropdowns-9.png)
+
+<br />
+<br />
+
+#### Error & Empty States
+
+These states are used to inform users about the status of the data that is being loaded in the dropdown.
+**Note:** It is recommended to avoid using an image or illustration in these states due to the limited real estate available within the dropdown.
+
+![Dropdown having error in loading the options](./images/dropdowns-13.png)
+
+<Caption> Dropdown having error in loading the options </Caption>
+
+<br />
+
+![Dropdown having error in loading the options](./images/dropdowns-14.png)
+
+<Caption> No options vs No results found after search </Caption>

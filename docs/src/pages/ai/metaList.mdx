@@ -1,0 +1,122 @@
+---
+title: Meta List
+description: Meta list is a short horizontal list of meta/secondary information.
+tabs: ['Usage', 'Code']
+showMobile: true
+---
+
+Meta list is a short horizontal list that helps in displaying secondary or meta-information separated by dots.
+
+### Variants
+#### Default
+The default variant includes just text.
+
+![Default meta list](./images/metaList-1.png)
+<Caption> Default meta list</Caption>
+
+<br/>
+
+#### With Icon
+This variant comes with an icon in the left preceding the text to provide additional cues regarding the meta/secondary information.
+
+![Meta list with icon in the left](./images/metaList-2.png)
+<Caption> Meta list with icon in the left</Caption>
+
+<br/>
+<br/>
+
+### Sizes
+Meta list comes in **two sizes** - small and regular.
+
+```tsx
+const list = [
+    {
+      label: 'Meta data',
+      icon: 'assessment',
+    },
+    {
+      label: 'Meta data',
+      icon: 'assessment',
+    },
+  ];
+
+  return <MetaList list={list} />
+```
+
+
+### Structure
+<br/>
+<br/>
+
+![Structure of metalist](./images/metalist-structure.png)
+<br/>
+
+<table style={{width: "100%"}}>
+ <tbody>
+   <tr>
+     <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+     <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+   </tr>
+   <tr style={{verticalAlign: "top"}}>
+      <td>Padding<br/><em>(top, right, bottom, left)</em></td>
+      <td>12 px, 24 px, 12 px, 16 px</td>
+   </tr>
+ </tbody>
+</table>
+<br/>
+
+### Configurations
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Size</td>
+      <td>
+          <ul>
+              <li>Small</li>
+              <li>Regular</li>
+          </ul>
+      </td>
+      <td>Regular</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Label</td>
+      <td>&#60;label&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Icon left<br/><em>(optional)</em></td>
+      <td>&#60;icon name&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Separator</td>
+      <td>
+          <ul>
+              <li>True</li>
+              <li>False</li>
+          </ul>
+      </td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+### Usage
+#### In the Page Header
+Page headers use meta list to provide secondary/meta information just below the title.
+
+![Meta list in the page header](./images/metaList-3.png)
+<Caption> Meta list in the page header </Caption>
+<br/>
+
+#### In a Table Cell
+There is a cell variant in the table which uses meta list to show secondary/meta information.
+
+![Meta list in a table](./images/metaList-4.png)
+<Caption> Meta list in a table </Caption>

@@ -1,0 +1,206 @@
+---
+title: Stepper
+description: Steppers are used to help users keep track in a multi-step workflow
+tabs: ['Usage', 'Code', 'Interactions']
+showMobile: true
+keywords: ['Path', 'Steps', 'Multistep', 'Wizard', 'Onboarding']
+---
+
+import stepper1 from './images/stepper-1.gif'
+
+Steppers are used to help users keep track of their progress in a multi-step workflow. It is recommended to break down a long process into multiple steps using steppers to help users keep track of their progress while completing a task.
+
+
+```tsx
+const [active, setActive] = React.useState(2);
+
+  const onChange = (index) => {
+    setActive(index);
+    return action(`Active Index: ${index}`)();
+  };
+
+  return <Stepper steps={steps} active={active} completed={1} onChange={onChange} />
+```
+
+
+<br/>
+
+### Structure
+
+The stepper can be used at different places to serve different purposes. The stepper component is a subset of the Horizontal Navigation component with its icons fixed.
+
+![Structure of stepper](./images/stepper-structure.png)
+
+<br/>
+
+<table style={{width: "100%"}}>
+ <tbody>
+   <tr>
+     <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+     <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+   </tr>
+   <tr style={{verticalAlign: "top"}}>
+      <td>Height (of a stepper item)</td>
+      <td>32 px</td>
+   </tr>
+   <tr style={{verticalAlign: "top"}}>
+     <td>Corner radius (of the active stepper item)</td>
+     <td>16 px</td>
+   </tr>
+   <tr style={{verticalAlign: "top"}}>
+     <td>Margin (of a stepper item)<br/><em>(top, right, bottom, left)</em></td>
+     <td>0 px, 1 px, 0 px, 1 px</td>
+   </tr>
+   <tr style={{verticalAlign: "top"}}>
+     <td>Spacing between stepper items</td>
+     <td>0 px</td>
+   </tr>
+ </tbody>
+</table>
+<br/>
+
+
+### Configurations
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Leading icon</td>
+      <td>
+        <ul>
+            <li>check_circle</li>
+            <li>radio_button_unchecked</li>
+        </ul>
+      </td>
+      <td>radio_button_unchecked</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Label</td>
+      <td>&#60;label&#62;</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+### Usage
+
+<br/>
+
+#### Navigating Through Steps
+
+Users cannot visit any upcoming steps however they can visit any previous steps given the step was done or skipped.
+
+<img src={stepper1} width='100%' height='auto'/>
+
+<br/>
+<br/>
+<br/>
+
+#### Placement
+
+<br/>
+
+##### In Page Headers
+
+Steppers are commonly used in page headers. Any action which is used collectively for the whole process e.g. Finish Later etc. should be accommodated in the header while the step related actions such as Next, Skip, etc. should be accommodated in the body.
+
+![Steppers in level 1 page header](./images/stepper-2.png)
+<Caption> Steppers in level 1 page header </Caption>
+
+<br/>
+<br/>
+
+##### Standalone
+
+Steppers can also be used separately without the page header. The actions will be at the bottom of the layout. This variant is commonly used for onboarding.
+
+![Standalone steppers](./images/stepper-3.png)
+<Caption> Standalone steppers </Caption>
+
+<br/>
+<br/>
+
+#### Actions Placement
+
+The actions specific to any step will be located at the bottom of the content of that step, while if there is any action that is for the whole process it will be accommodated in the page header itself. 
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Property: 'Step specific action',
+        Value: 'Next, Cancel, Previous, Finish or Skip',
+        Configurable: 'in Body',
+      },
+      {
+        Property: 'Collective action',
+        Value: 'Finish later, Save as draft',
+        Configurable: 'in Page Header',
+      },
+    ]}
+    schema={[
+      {
+        name: 'Property',
+        displayName: 'Action',
+        width: '34%',
+        sorting: false,
+        separator: true,
+        cellType: 'DEFAULT'
+      },
+      {
+        name: 'Value',
+        displayName: 'Examples',
+        width: '33%',
+        sorting: false,
+        separator: true
+        
+      },
+      {
+        name: 'Configurable',
+        displayName: 'Position',
+        width: '33%',
+        sorting: false,
+        separator: true
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+
+![Actions placement](./images/stepper-4.png)
+<Caption> Actions placement </Caption>
+
+
+<br/>
+<br/>
+
+#### Skipping a Step
+
+A stepper can also have a skippable/optional step. Users can skip the step for the time being and can navigate back to it, to fill it again before completing the progress. 
+
+In case of an optional step, an additional step-specific action "Skip" gets added on the left of the primary action. 
+
+![Skipping a step](./images/stepper-5.png)
+<Caption> Skipping a step </Caption>
+
+<br/>
+<br/>
+
+##### Skipping the Last Step
+
+In case the last step is supposed to be optional, relabel the Skip button to **Skip and Finish**.
+
+![When the last step of the row is skippable](./images/stepper-6.png)
+<Caption> When the last step of the row is skippable </Caption>
+
+<br/>
+<br/>
+

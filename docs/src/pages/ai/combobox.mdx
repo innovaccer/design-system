@@ -1,0 +1,420 @@
+---
+title: Combobox
+description: A combobox displays an input box combined with the option list.
+tabs: ['Usage', 'Code', 'Interactions']
+showMobile: true
+keywords: ['Autocomplete']
+---
+
+A combobox displays an input box combined with the option list enabling the users to select items from the list or type a new value of their choice.
+
+The users can navigate through the options using the arrow keys and then press ‘Enter/Return’ to select the value.
+
+**Note:** By default the combobox shows an option list as the input is in focus and filters out the options as the user starts typing.
+
+
+```tsx
+const { fetchOptions } = useFetchOption();
+  const [loading, setLoading] = React.useState(false);
+  const [optionList, setOptionList] = React.useState([]);
+
+  React.useEffect(() => {
+    setLoading(true);
+    fetchOptions().then((res) => {
+      const { options } = res;
+      setLoading(false);
+      setOptionList(options);
+    });
+  }, []);
+
+  const onChangeHandler = (item) => {
+    action('selected option', item)();
+
+    setLoading(true);
+    fetchOptions(item.label).then((res) => {
+      const { options } = res;
+      setLoading(false);
+      setOptionList(options);
+    });
+  };
+
+  const PopoverContent = ({ loading, optionList }) => {
+    if (loading) {
+      return (
+        <div className="d-flex align-items-center justify-content-center py-6">
+          <Spinner />
+        </div>
+      );
+    }
+
+    if (optionList.length === 0) {
+      return <></>;
+    }
+
+    return (
+      <Combobox.List>
+        {optionList.map((item, key) => {
+          return (
+            <Combobox.Option key={key} option={{ label: item.label, value: item.value }}>
+              {item.label}
+            </Combobox.Option>
+          );
+        })}
+      </Combobox.List>
+    );
+  };
+
+  return (
+    <div className="w-50">
+      <Label withInput={true}>Drug Name</Label>
+      <Combobox onChange={onChangeHandler} icon="search" placeholder="Enter drug name">
+        <PopoverContent loading={loading} optionList={optionList} />
+      </Combobox>
+    </div>
+  )
+```
+
+
+### Sizes
+
+Just like the inputs, combobox also comes in **3 sizes** - small, regular and large.
+
+![Different sizes of combobox](./images/size.png)
+<Caption>Different sizes of combobox</Caption>
+
+### States
+
+#### Single and Multiple Input States
+
+The input has following states - default, hover, focus, typing, error and disabled.
+
+![States of input box](./images/states.png)
+<Caption>States of input box</Caption>
+
+#### Option States
+
+The items in the option list come in following states - default, hover, active and selected. Users can also use the up/down arrow key on their keyboard to traverse the options.
+
+![States of option items](./images/state-option-list.png)
+<Caption>States of option items</Caption>
+
+<br />
+
+### Structure
+
+#### Single Input Trigger
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Height</td>
+      <td>
+        <ul>
+          <li>Regular - 32px</li>
+          <li>Small - 24px</li>
+          <li>Large - 40px</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br />
+
+#### Popover
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Appearance</td>
+      <td>
+        <ul>
+          <li>Light</li>
+          <li>Dark</li>
+        </ul>
+      </td>
+      <td>Light</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+
+### Configurations
+
+#### Input Trigger
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Size</td>
+      <td>
+        <ul>
+          <li>Small</li>
+          <li>Regular</li>
+          <li>Large</li>
+        </ul>
+      </td>
+      <td>Regular</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Left icon <br /> (optional)</td>
+      <td>&#60;icon name&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Action icon <br /> (optional)</td>
+      <td>&#60;icon name&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Help text <br /> (optional)</td>
+      <td>&#60;help text&#62;</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+
+<br />
+
+#### Option Items
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Icon <br /> (optional)</td>
+      <td>&#60;icon name&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Sub Info <br /> (optional)</td>
+      <td>&#60;sub info&#62;</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+
+<br />
+
+#### Popover
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Width</td>
+      <td>&#60;width&#62;</td>
+      <td>Width of Input</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Max Height</td>
+      <td>&#60;max height&#62;</td>
+      <td>256px</td>
+    </tr>
+  </tbody>
+</table>
+
+**Note:** It is recommended to align the width of the popover with the width of the trigger input to maintain a visually pleasing appearance.
+
+<br />
+
+### Usage
+
+#### Triggers for Opening the Popover
+
+The popover is by default collapsed when the combobox is in its default state. 
+<br/>
+The popover can be opened when: 
+
+<ul>
+  <li>
+    The user clicks on the input.
+  </li>
+  <li>
+    The user starts typing in the input.
+  </li>
+  <li>
+    The input is in focus and the user hits down arrow key.
+  </li>
+</ul>
+
+<br />
+
+![Examples with different triggers ](./images/option-list-trigger.png)
+<Caption>Examples with different triggers </Caption>
+
+#### Single Input
+
+Single input combobox allows users to input or select only one value. 
+
+
+```tsx
+const barrierList = [
+    { label: 'Health issues', value: 'Health issues' },
+    { label: 'Lack of employment', value: 'Lack of employment' },
+    { label: 'Lack of readiness to change', value: 'Lack of readiness to change' },
+    { label: 'Lack of understanding', value: 'Lack of understanding' },
+    { label: 'Lack of benefits', value: 'Lack of benefits' },
+    { label: 'No housing', value: 'No housing' },
+  ];
+
+  const [filterList, setFilterList] = React.useState(barrierList);
+
+  const onChangeHandler = (inputValue) => {
+    action(' inputValue', inputValue)();
+    const updatedList = barrierList.filter((medicine) =>
+      medicine.label.toLowerCase().startsWith(inputValue.label?.toLowerCase())
+    );
+
+    setFilterList(updatedList);
+  };
+
+  return (
+    <div>
+      <Label withInput={true}>Barriers</Label>
+      <Combobox onChange={onChangeHandler} className="w-50" placeholder="Enter barriers">
+        {filterList.length > 0 && (
+          <Combobox.List>
+            {filterList.map((item, key) => {
+              return (
+                <Combobox.Option key={key} option={{ label: item.label, value: item.value }}>
+                  {item.label}
+                </Combobox.Option>
+              );
+            })}
+          </Combobox.List>
+        )}
+      </Combobox>
+    </div>
+  )
+```
+
+
+#### Multiple Input
+
+Multiple input combobox allows users to input or select multiple values as chips. 
+
+The users can hit ‘Enter/Return’ to add the input value or the focused item as an input chip.  
+<br />
+
+**Note:** The selected option gets removed form the options list. 
+
+
+```tsx
+const medicineList = [
+    { label: 'Acetaminophen', value: 'Acetaminophen' },
+    { label: 'Ibuprofen', value: 'Ibuprofen' },
+    { label: 'Penicillin G', value: 'Penicillin G' },
+    { label: 'Penbutolol', value: 'Penbutolol' },
+    { label: 'Aminophenol', value: 'Aminophenol' },
+    { label: 'Vancomycin', value: 'Vancomycin' },
+  ];
+
+  const [filterList, setFilterList] = React.useState([]);
+
+  const onSearchHandler = (value) => {
+    const newList = medicineList.filter((medicine) => medicine.label.toLowerCase().startsWith(value.toLowerCase()));
+    setFilterList(newList);
+    action('searchOption', value, newList)();
+  };
+
+  const onChangeHandler = (selectedOption) => {
+    const newList = medicineList.filter((medicine) => !isElementPresent(selectedOption, medicine.label));
+    setFilterList(newList);
+    action('input value', selectedOption)();
+  };
+
+  const isElementPresent = (list, value) => {
+    let result = false;
+    list &&
+      list.forEach((listItem) => {
+        if (listItem.label === value) {
+          result = true;
+        }
+      });
+    return result;
+  };
+
+  return (
+    <div>
+      <Label withInput={true}>Drug Name</Label>
+      <Combobox onSearch={onSearchHandler} onChange={onChangeHandler} multiSelect={true} clearButton={true}>
+        {filterList.length > 0 && (
+          <Combobox.List>
+            {filterList.map((item, key) => {
+              return (
+                <Combobox.Option key={key} option={{ label: item.label, value: item.value }}>
+                  {item.label}
+                </Combobox.Option>
+              );
+            })}
+          </Combobox.List>
+        )}
+      </Combobox>
+    </div>
+  )
+```
+
+
+<br />
+
+#### Overflow Behavior of Option Item
+
+If the text exceeds the available space, it will be truncated and can be seen in a tooltip upon hovering.
+
+![Overflowed Option Item](./images/overflow-behaviour.png)
+<Caption>Overflowed Option Item</Caption>
+
+<br />
+
+#### Recent/Top Searches
+
+The combobox can be used for cases where there is a need to display either the top or the recent searches.
+
+**Note:** In such instances, the Combobox may also include an optional section heading to convey the intent or purpose of the presented options.
+
+![Example for Top and recent searches with an optional section heading](./images/recent-search.png)
+<Caption>Example for Top and recent searches with an optional section heading</Caption>
+
+<br />
+
+#### Custom Options
+
+An option in a combobox can be any combination of text, checkbox, icon, badge, etc. Such type of options are referred as custom options.
+
+**Note:** A combobox can also have options that follow different option templates e.g. few options can just be text while the others can be a combination of text and badge. 
+
+![Examples with custom options in combobox](./images/custom-option.png)
+<Caption>Examples with custom options in combobox</Caption>
+
+<br />
+
+#### Combobox vs Select
+
+In combobox, apart from the options, users can freely input their values without any obstruction, but with select they are encouraged to exercise caution and be mindful when adding options. 
+
+![Combobox vs Select](./images/combobox-vs-select.png)
+<Caption>Combobox vs Select</Caption>

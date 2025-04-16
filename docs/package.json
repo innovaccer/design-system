@@ -23,7 +23,8 @@
     "prettier": "prettier --config ./.prettierrc --write 'src/**/*.css'",
     "prettier:check": "prettier --config ./.prettierrc --check",
     "serve": "gatsby serve",
-    "test": "CYPRESS_HOST_URL='http://localhost:9000' start-server-and-test serve http://localhost:9000 cypress"
+    "test": "CYPRESS_HOST_URL='http://localhost:9000' start-server-and-test serve http://localhost:9000 cypress",
+    "generate-ai-docs": "node tools/generate-ai-docs.js"
   },
   "dependencies": {
     "@docsearch/css": "^3.3.3",

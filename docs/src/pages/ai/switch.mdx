@@ -1,0 +1,161 @@
+---
+title: Switch
+description: Switches are used to toggle between two states in a user interface - ON and OFF, hence resembling the real-life switches used to turn something ON or OFF.
+tabs: ['Usage', 'Code', 'Interactions']
+showMobile: true
+keywords: ['Toggle', 'Settings']
+---
+
+
+```tsx
+<Switch aria-label="Default Checked Switch" defaultChecked={true} size="regular" />
+```
+
+
+### Sizes
+
+Switch comes in **2 sizes** based on height and width - small and regular.
+
+```tsx
+const sizes = ['tiny', 'regular'];
+
+  return (
+    <>
+      <div className="d-flex mb-7">
+        {sizes.map((switchSize, ind) => {
+          return (
+            <Switch
+              key={ind}
+              aria-label={`Switch ${switchSize}`}
+              defaultChecked={true}
+              size={switchSize}
+              className="mr-9"
+            />
+          );
+        })}
+      </div>
+      <div className="d-flex">
+        {sizes.map((switchSize, ind) => {
+          return (
+            <Text key={ind} weight="strong" className="mr-9">
+              {switchSize.charAt(0).toUpperCase() + switchSize.slice(1)}
+            </Text>
+          );
+        })}
+      </div>
+    </>
+  )
+```
+
+
+### Structure
+<br/>
+<br/>
+
+![Structure of switch](./images/switch-structure.png)
+<br/>
+
+<table style={{width: "100%"}}>
+ <tbody>
+   <tr>
+     <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+     <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+   </tr>
+   <tr style={{verticalAlign: "top"}}>
+     <td>Size</td>
+     <td>
+         <ul>
+             <li>24x48 px <em>(Small)</em></li>
+             <li>16x32 px <em>(Regular)</em></li>
+         </ul>
+     </td>
+   </tr>
+   <tr style={{verticalAlign: "top"}}>
+     <td>Size of knob</td>
+     <td>
+         <ul>
+             <li>12x12 px px <em>(Small)</em></li>
+             <li>20x20 px <em>(Regular)</em></li>
+         </ul>
+     </td>
+   </tr>
+   <tr style={{verticalAlign: "top"}}>
+     <td>Padding <br/><em>(top, right, bottom, left)</em></td>
+     <td>2 px, 2px, 2 px, 2 px </td>
+   </tr>
+ </tbody>
+</table>
+<br/>
+
+
+### Configurations
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Size</td>
+      <td>
+        <ul>
+            <li>Regular</li>
+            <li>Tiny</li>
+        </ul>
+      </td>
+      <td>Regular</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+### Usage
+
+<br/>
+
+#### Switch Size
+
+The size of the switch depends on the other components appearing around it. If other components are regular in size, then the regular variant of switch should be used. The same goes for the tiny variant.
+
+![Switch size](./images/switch-3.png)
+<Caption> Switch size </Caption>
+
+<br/>
+
+#### Switch vs Checkbox
+
+<br/>
+
+<ul>
+<li> Tapping a switch is a two-step action: selection and execution. </li>
+<li> Whereas checkbox is just a selection of an option(s) and its execution requires another control, usually a button. </li>
+</ul>
+
+##### Instant Response
+
+The options that require an instant response are best selected using a switch.
+
+![Instant response](./images/switch-4.png)
+<Caption> Instant response </Caption>
+
+<br/>
+
+##### Multiple Choices
+
+Checkboxes are preferred over switches when multiple options are available and the user has to select one or more options from them. Clicking multiple switches one by one and waiting to see results after each click takes extra time.
+
+![Multiple choices](./images/switch-5.png)
+<Caption> Multiple choices </Caption>
+
+<br/>
+
+##### Confirmation
+
+Checkboxes are preferred when an explicit action is required to confirm settings.
+
+![Confirmation](./images/switch-6.png)
+<Caption> Confirmation </Caption>
+
+<br/>
+<br/>

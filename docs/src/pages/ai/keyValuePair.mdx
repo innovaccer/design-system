@@ -1,0 +1,320 @@
+---
+title: Key Value Pair
+description: Key value pairs consist of properties (keys) each paired with their respective values.
+tabs: ['Usage',  'Code']
+showMobile: true
+keywords: ['key value pair', 'keyElement', 'valueElement', 'data item']
+---
+
+Key-value pairs help present a pair of data in a structured way. They are useful for displaying data in an organized manner, making it easier to understand and process information on the screen.
+
+
+```tsx
+return (
+    <div className="d-flex justify-content-between w-75">
+      <div>
+        <Text weight="strong">Left Right Arrangement</Text>
+        <KeyValuePair className="d-flex mt-8">
+          <KeyValuePair.Key className="mr-7" icon="call" label="Phone" />
+          <KeyValuePair.Value value="(555) 555-5555" />
+        </KeyValuePair>
+      </div>
+      <div>
+        <Text weight="strong">Top Bottom Arrangement</Text>
+        <KeyValuePair className="mt-8">
+          <KeyValuePair.Key label="Name" />
+          <KeyValuePair.Value value="Joy Lawson" />
+        </KeyValuePair>
+      </div>
+    </div>
+  )
+```
+
+
+### Key
+
+A key acts as an identifier of the value. It should be short and easy to understand. 
+
+#### Variants
+
+Following can be the variants of key: 
+
+<ul>
+  <li>Icon</li>
+  <li>Text</li>
+  <li>Icon and text</li>
+</ul>
+
+![ [1] Textual Key, [2] Textual key with icon on left, [3] Textual key with icon on right, [4] Icon as key](./images/1-Variants-Key.png)
+<Caption>[1] Textual Key, [2] Textual key with icon on left, [3] Textual key with icon on right, [4] Icon as key</Caption>
+
+<br/>
+
+### Value
+
+A value represents the actual content corresponding to the key. Values can be more varied in type and length than keys.
+
+#### Variants
+
+Here are the common variants:
+
+<ul>
+  <li>Text</li>
+  <li>Icon and text</li>
+  <li>Avatar and text</li>
+  <li>Status</li>
+  <li>Link</li>
+  <li>Array of items</li>
+  <li>Custom</li>
+</ul>
+
+![Various variants of value](./images/2-Variants-Value.png)
+<Caption>Various variants of value</Caption>
+
+<br/>
+
+### Arrangement
+
+Key-value pairs can be arranged in two ways: Top-Bottom and Left-Right.
+
+#### Top-Bottom
+
+In a Top-Bottom arrangement, the key is positioned above the value, creating a strong visual connection between the two. This layout is suitable for narrow containers or vertical layouts, providing ample space for both keys and values. 
+
+<ul>
+  <li>**Length of Key:** If the keys are long, a top-bottom arrangement can accommodate longer keys in a single line without truncation.</li> <br/>
+  <li>**Length of Value:** When values are lengthy or require more space, a vertical layout handles this well without disrupting the flow.</li> <br/>
+  <li>**Scannability:** Users tend to scan content from top to bottom, especially in narrower containers. A top-bottom arrangement aligns with this natural scanning pattern, making it easier for users to quickly locate the information they need.</li> <br/>
+</ul>
+
+![Top bottom arrangement of key value pairs](./images/3-Top-Bottom-Arrangement.png)
+<Caption>Top bottom arrangement of key value pairs</Caption>
+
+<br/>
+
+#### Left-Right
+
+In a Left-Right key-value pair arrangement, the key is positioned on the left, while the corresponding value is placed on the right. This layout is typically suitable for wider containers or horizontal layouts, maximizing the utilization of horizontal space and minimizing the need for vertical scrolling.
+
+<ul>
+  <li>**Comparison of Similar Items:** This arrangement facilitates quick scanning across rows, allowing for easy comparison of similar pieces of information.</li> <br/>
+  <li>**Variation in Values:** It preserves visual hierarchy, especially when there is significant variation in the lengths of the values.</li> <br/>
+  <li>**Emphasis on Values:** If the values hold more importance than the keys, a left-right arrangement can draw attention to the values by positioning them prominently on the right side of the keys.</li> <br/>
+  <li>**Compact Design:** The layout conserves vertical space, making it suitable for interfaces where space is limited and extensive information needs to be displayed without excessive scrolling.</li> <br/>
+</ul>
+
+![Left right arrangement of key value pairs](./images/4-Left-Right-Arrangement.png)
+<Caption>Left right arrangement of key value pairs</Caption>
+
+<br/>
+
+### Structure
+
+#### Key
+
+<table style={{width: "100%"}}>
+ <tbody>
+   <tr>
+     <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+     <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+   </tr>
+   <tr style={{verticalAlign: "top"}}>
+     <td>Text</td>
+     <td>Night Lighter (#707070)</td>
+   </tr>
+   <tr style={{verticalAlign: "top"}}>
+     <td>Icon</td>
+     <td>Night Lighter (#707070)</td>
+   </tr>
+ </tbody>
+</table>
+<br/>
+
+#### Value
+
+<table style={{width: "100%"}}>
+ <tbody>
+   <tr>
+     <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+     <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+   </tr>
+   <tr style={{verticalAlign: "top"}}>
+     <td>Text</td>
+     <td>Night (#1F1F1F)</td>
+   </tr>
+ </tbody>
+</table>
+<br/>
+
+### Usage
+
+#### Top-Bottom vs Left-Right Arrangement
+
+Choosing between a left-right and a top-bottom arrangement often depends on the context, user preferences, and the amount of information to be presented. Here are some points to consider while doing so:
+
+<br />
+
+<table style={{width: "100%"}}>
+ <tbody>
+   <tr>
+     <th style={{width:"50%",  textAlign: "left"}}>Top-Bottom</th>
+     <th style={{width:"50%",  textAlign: "left"}}>Left-Right</th>
+   </tr>
+   <tr style={{verticalAlign: "top"}}>
+     <td>Suitable for narrow containers</td>
+     <td>Suitable for wider containers</td>
+   </tr>
+   <tr style={{verticalAlign: "top"}}>
+     <td>Strong visual connection between key and value</td>
+     <td>Key and value may seem unrelated at times. </td>
+   </tr>
+   <tr style={{verticalAlign: "top"}}>
+     <td>Easier to focus on individual pairs</td>
+     <td>Easier to compare multiple items</td>
+   </tr>
+   <tr style={{verticalAlign: "top"}}>
+     <td>Best for longer keys and values</td>
+     <td>Best for shorter keys and values</td>
+   </tr>
+   <tr style={{verticalAlign: "top"}}>
+     <td>Not suitable for multiple variation of values.</td>
+     <td>Best for multiple variation of values</td>
+   </tr>
+ </tbody>
+</table>
+
+<br/>
+<br/>
+
+#### Width Guidelines and Overflow Behavior
+
+##### Top-Bottom Arrangement
+
+Both the key and the values can share the same width. Keep the key short to prevent it from spanning multiple lines and disrupting the layout. The value can wrap to the next line to ensure all information is visible.
+
+![Key and value has same width](./images/5-Width-KV-Top-Bottom.png)
+<Caption>Key and value has same width</Caption>
+
+<br/>
+
+##### Left-Right Arrangement
+
+The key should occupy about 40% of the available width, with the remaining 60% allocated to the value. 
+
+For wide containers, if 40% makes the keys too wide, adjust the width to suit the use case, and allocate the remaining width to the values. 
+
+If only one or two keys are too wide, adjust the width of the key column to suit the remaining keys and wrap the wider keys to the next line.
+
+**Note:** Both the key and the values can span multiple lines if needed. 
+
+![Key occupying 40% of the space, including padding, and value occupying 60%.](./images/6-Width-KV-Left-Right.png)
+<Caption>Key occupying 40% of the space, including padding, and value occupying 60%.</Caption>
+
+<br/>
+
+#### Arranging Key Value Pairs Based on Container Sizes
+
+Below are guidelines for utilizing various key-value pair arrangements based on the available container size. 
+
+**Note:** These are our recommendations; feel free to adjust the layouts as needed.
+
+##### Small Containers
+
+For containers around 200px, opt for Top-Bottom key-value pairs to maintain most content within a single line.
+
+![Top bottom alignment in small containers](./images/7-Small-Containers.png)
+<Caption>Top bottom alignment in small containers</Caption>
+
+<br/>
+
+##### Medium Containers
+
+For widths around 400px, Left-Right key-value pairs are advisable, as keys and values can now have ample space.
+
+![Left right alignment in medium containers](./images/8-Medium-containers.png)
+<Caption>Left right alignment in medium containers</Caption>
+
+<br/>
+
+##### Large Containers
+
+Widths exceeding 400px allow for the utilization of single or multiple column layouts.
+
+**Single column layouts**
+
+When dealing with complex values or array of multiple values where scanning is a priority, opt for Left-Right key-value pairs.
+
+**Note:** Avoid the use of multiple columns for key-value pairs in this context.
+
+![Left right alignment in a single column layout](./images/9-Single-column-layouts.png)
+<Caption>Left right alignment in a single column layout</Caption>
+
+<br/>
+
+**Multiple column layouts**
+
+For simple and mostly similar values, the top-bottom arrangement is ideal as it occupies minimal space. <br />
+In such layouts, key-value pairs can align to either fixed or variable width columns. <br/>
+**Note:** In a row, the keys should always be top aligned. 
+
+**1. Column with fixed width**
+
+This approach is most effective when displaying multiple rows, either within the same container or across multiple vertically stacked containers.
+
+![Key value pairs aligned to fixed width columns](./images/10-Column-with-fixed-width.png)
+<Caption>Key value pairs aligned to fixed width columns</Caption>
+
+<br/>
+
+**2. Column with variable width**
+
+This approach is most efficient when you only need to display a single row, as it occupies the least horizontal space.
+
+![Key value pairs aligned to variable width columns](./images/11-Column-with-variable-width.png)
+<Caption>Key value pairs aligned to variable width columns</Caption>
+
+<br/>
+
+#### Spacing Guidelines
+
+Ensure adequate spacing between entities to maintain readability and avoid a cluttered UI.
+
+##### Top-Bottom Arrangement
+
+**Minimum Padding**
+
+![Recommended minimum padding between key and [left] textual value vs [right] complex value](./images/12-Minimum-padding-Top-Bottom.png)
+<Caption>Recommended minimum padding between key and [left] textual value vs [right] complex value</Caption>
+
+<br/>
+
+**Minimum Margin**
+
+![Recommended minimum horizontal and vertical margin between two key-value pairs](./images/13-Minimum-margin-Top-Bottom.png)
+<Caption>Recommended minimum horizontal and vertical margin between two key-value pairs</Caption>
+
+<br/>
+
+**Other Layouts**
+
+Here are some recommended layouts to make sure users can scan the information easily. Feel free to go beyond these suggestions to best suit your use case.
+
+![Other recommended layouts for top-bottom arrangement](./images/14-Other-Recommended-Layouts-Top-Bottom.png)
+<Caption>Other recommended layouts for top-bottom arrangement</Caption>
+
+<br/>
+
+##### Left-Right Arrangement
+
+**Minimum Padding**
+
+![Recommended minimum padding between key and value](./images/15-Minimum-padding-Left-Right.png)
+<Caption>Recommended minimum padding between key and value</Caption>
+
+<br/>
+
+**Minimum Margin**
+
+![Recommended minimum vertical margin between two key-value pairs](./images/16-Minimum-margin-Left-Right.png)
+<Caption>Recommended minimum vertical margin between two key-value pairs</Caption>
+

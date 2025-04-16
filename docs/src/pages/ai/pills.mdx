@@ -1,0 +1,128 @@
+---
+title: Pill
+description: Pill is used to highlight the count of an item.
+tabs: ['Usage', 'Code']
+showMobile: true
+keywords: ['Lozenge', 'Capsule', 'Count']
+---
+
+Pill is used to highlight number of items. For status and text, use a Badge. 
+
+### Appearances
+
+<br/>
+
+#### Solid
+
+Solid Pill is used to highlight number of items in reference to a particular component so that the component gets recognized easily. eg Pill over the notification icon.
+
+
+```tsx
+<Pills appearance="alert">10</Pills>
+```
+
+
+#### Subtle
+
+Subtle Pill is used when many pills are used in reference to a group of components. In that case, solid pills become a bit overwhelming. eg Pills in vertical navigation items.
+
+#### Subtle Style
+Subtle style is favorable when a lot of pills have to be used to show count against entities. In that case, solid style becomes a bit overwhelming e.g. count in vertical navigation items.
+
+```tsx
+return (
+    <Pills appearance="alert" subtle={true}>
+      10
+    </Pills>
+  )
+```
+
+<br/>
+
+### Structure
+<br/>
+<br/>
+
+![Structure of pill](./images/pill-structure.png)
+<br/>
+
+<table style={{width: "100%"}}>
+ <tbody>
+   <tr>
+     <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+     <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+   </tr>
+   <tr style={{verticalAlign: "top"}}>
+      <td>Height</td>
+      <td>20 px</td>
+   </tr>
+   <tr style={{verticalAlign: "top"}}>
+      <td>Max width</td>
+      <td>160 px</td>
+   </tr>
+   <tr style={{verticalAlign: "top"}}>
+      <td>Corner radius</td>
+      <td>10 px</td>
+   </tr>
+   <tr style={{verticalAlign: "top"}}>
+      <td>Padding<br/><em>(top, right, bottom, left)</em></td>
+      <td>2px, 6px, 2px, 6px</td>
+   </tr>
+ </tbody>
+</table>
+<br/>
+
+### Configurations
+
+<br/>
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Appearance</td>
+      <td>
+        <ul>
+            <li>Jal</li>
+            <li>Stone</li>
+            <li>Neem</li>
+            <li>Haldi</li>
+            <li>Mirch</li>
+            <li>Tawak</li>
+            <li>Nimbu</li>
+            <li>Neel</li>
+            <li>Jamun</li>
+        </ul>
+      </td>
+      <td>Stone</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Subtle</td>
+      <td>
+          <ul>
+              <li>True</li>
+              <li>False</li>
+          </ul>
+      </td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+### Usage
+
+<br/>
+
+#### Pills vs Badges
+
+Pills are used to display count of entities while badges are used for tagging entities.
+
+![Pills vs Badges](./images/pills-1.png)
+
+<br/>
+<br/>

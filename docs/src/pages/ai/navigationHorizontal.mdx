@@ -1,0 +1,357 @@
+---
+title: Navigation - Horizontal
+description: Horizontal navigation helps the users to quickly move among different pages in a module.
+tabs: ['Usage', 'Code', 'Interactions']
+showMobile: true
+keywords: ['Navbar']
+---
+
+Horizontal navigation helps the users to quickly move among different pages in a module. It is typically found at the top of a section/page e.g. in the page header.
+
+### Variants
+<br/>
+
+#### Default
+
+This variant consists only of a label.
+
+
+```tsx
+const data = [
+    {
+      name: 'engagements',
+      label: 'Engagements',
+    },
+    {
+      name: 'no_linked_activities',
+      label: 'No Linked Activities',
+    },
+  ];
+
+  const [active, setActive] = React.useState({
+    name: 'engagements',
+  });
+
+  const onClickHandler = (menu) => {
+    action(`menu-clicked: ${JSON.stringify(menu)}`)();
+    setActive(menu);
+  };
+
+  return (
+    <div className="d-flex align-items-center py-6 bg-secondary-lightest">
+      <HorizontalNav className="w-100 justify-content-center" menus={data} active={active} onClick={onClickHandler} />
+    </div>
+  )
+```
+
+
+#### With Icon
+
+This variant consists of an icon and a label.
+
+
+```tsx
+const data = [
+    {
+      name: 'text',
+      label: 'Text',
+      icon: 'message',
+    },
+    {
+      name: 'voice',
+      label: 'Voice',
+      icon: 'mic',
+    },
+    {
+      name: 'mail',
+      label: 'Mail',
+      icon: 'email',
+    },
+  ];
+
+  const [active, setActive] = React.useState({
+    name: 'text',
+  });
+
+  const onClickHandler = (menu) => {
+    action(`menu-clicked: ${JSON.stringify(menu)}`)();
+    setActive(menu);
+  };
+
+  return (
+    <div className="d-flex align-items-center py-6 bg-secondary-lightest">
+      <HorizontalNav className="w-100 justify-content-center" menus={data} active={active} onClick={onClickHandler} />
+    </div>
+  )
+```
+
+
+#### With Count
+
+This variant consists of the pill component and a label. The pill component helps display the count involved in a navigation item.
+
+
+```tsx
+const data = [
+    {
+      name: 'to-dos',
+      label: 'To-dos',
+      count: 15,
+    },
+    {
+      name: 'activity_received',
+      label: 'Activity received',
+      count: 7,
+    },
+    {
+      name: 'activity_sent',
+      label: 'Activity sent',
+      count: 9,
+    },
+  ];
+
+  const [active, setActive] = React.useState({
+    name: 'to-dos',
+  });
+
+  const onClickHandler = (menu) => {
+    action(`menu-clicked: ${JSON.stringify(menu)}`)();
+    setActive(menu);
+  };
+
+  return (
+    <div className="d-flex align-items-center py-6 bg-secondary-lightest">
+      <HorizontalNav className="w-100 justify-content-center" menus={data} active={active} onClick={onClickHandler} />
+    </div>
+  )
+```
+
+
+### Structure
+<br/>
+<br/>
+
+![Structure of horizontal navigation](./images/horizontalnav-structure.png)
+<br/>
+
+<table style={{width: "100%"}}>
+ <tbody>
+   <tr>
+     <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+     <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+   </tr>
+   <tr style={{verticalAlign: "top"}}>
+     <td>Height</td>
+     <td> 32 px </td>
+   </tr>
+   <tr style={{verticalAlign: "top"}}>
+     <td>Corner radius</td>
+     <td> 16 px </td>
+   </tr>
+   <tr style={{verticalAlign: "top"}}>
+     <td>Padding (right, left)</td>
+     <td> 12 px, 12 px</td>
+   </tr>
+   <tr style={{verticalAlign: "top"}}>
+     <td>Margin (right, left)</td>
+     <td> 1 px, 1 px</td>
+   </tr>
+   <tr style={{verticalAlign: "top"}}>
+      <td>Spacing between nav items</td>
+      <td>0px</td>
+   </tr>
+ </tbody>
+</table>
+<br/>
+
+### Properties
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Label</td>
+      <td>&#60;label&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Link</td>
+      <td>&#60;link&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Icon left</td>
+      <td>&#60;icon name&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Pill</td>
+      <td>&#60;count&#62;</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+### Usage
+
+<br/>
+
+#### Alignment
+
+Horizontal navigation at the top of a section or page can have one of the following two alignment options:
+
+-   Center Aligned
+-   Left Aligned
+
+<br/>
+
+##### Center Aligned
+
+Use this type of alignment when there are no space constraints.
+
+![Center aligned](./images/navigationhoriz-1.png)
+<Caption> Center aligned </Caption>
+
+<br/>
+<br/>
+
+##### Left Aligned
+
+Use this type of alignment when there is a space constraint. Often times there is not much space available in a component e.g. in modals, side sheets, etc. In such cases, horizontal navigation comes just below the header.
+
+
+```tsx
+const options = [];
+  for (let i = 1; i <= 10; i++) {
+    options.push({
+      label: `Option ${i}`,
+      value: `Option ${i}`,
+    });
+  }
+
+  const data = [
+    {
+      name: 'medicine',
+      label: 'Medicine',
+    },
+    {
+      name: 'period',
+      label: 'Period',
+    },
+    {
+      name: 'alias',
+      label: 'Alias',
+    },
+    {
+      name: 'priority',
+      label: 'Priority',
+    },
+  ];
+
+  const [open, setOpen] = React.useState(false);
+  const [active, setActive] = React.useState({
+    name: 'medicine',
+  });
+
+  const onClose = () => {
+    setOpen(!open);
+  };
+
+  const onClickHandler = (menu) => {
+    action(`menu-clicked: ${JSON.stringify(menu)}`)();
+    setActive(menu);
+  };
+
+  const subHeading = <HorizontalNav menus={data} active={active} onClick={onClickHandler} className="ml-5 mt-4" />;
+
+  const header = (
+    <div>
+      <Heading className="ml-7 mb-3">Medication</Heading>
+      {subHeading}
+    </div>
+  );
+
+  return (
+    <div>
+      <Button
+        appearance="primary"
+        className="mt-3"
+        onClick={() => {
+          setOpen(true);
+        }}
+      >
+        Open Modal
+      </Button>
+      <Modal
+        open={open}
+        dimension="large"
+        onClose={onClose}
+        header={header}
+        footer={
+          <>
+            <Button appearance="basic">Discard</Button>
+            <Button appearance="primary" className="ml-4">
+              Create
+            </Button>
+          </>
+        }
+      >
+        <div className="py-5 w-50">
+          <Label withInput={true} required={true}>
+            Type
+          </Label>
+          <Select triggerOptions={{ withClearButton: false }} width="100%">
+            <Select.List>
+              {options.map((item, key) => {
+                return (
+                  <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                    {item.label}
+                  </Select.Option>
+                );
+              })}
+            </Select.List>
+          </Select>
+          <Label withInput={true} className="mt-6">
+            Active Date
+          </Label>
+          <Select triggerOptions={{ withClearButton: false }} width="100%">
+            <Select.List>
+              {options.map((item, key) => {
+                return (
+                  <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                    {item.label}
+                  </Select.Option>
+                );
+              })}
+            </Select.List>
+          </Select>
+          <Label withInput={true} className="mt-6" required={true}>
+            Diagnosis Diseases
+          </Label>
+          <Select triggerOptions={{ withClearButton: false }} width="100%">
+            <Select.List>
+              {options.map((item, key) => {
+                return (
+                  <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                    {item.label}
+                  </Select.Option>
+                );
+              })}
+            </Select.List>
+          </Select>
+        </div>
+      </Modal>
+    </div>
+  )
+```
+
+
+![Left aligned](./images/navigationhoriz-2.png)
+<Caption> Left aligned </Caption>
+
+<br/>
+<br/>

@@ -1,0 +1,346 @@
+---
+title: Toast
+description: Toasts are used to notify users about the outcome of their actions without disrupting the ongoing user workflow.
+tabs: ['Usage', 'Code', 'Interactions']
+showMobile: true
+keywords: ['Toaster', 'Notification', 'Snackbar', 'Banner']
+---
+
+import toast6 from "./images/toast-6.gif"
+
+
+```tsx
+(
+  <Toast
+    appearance="success"
+    title="Review requested successfully"
+    message="Automatically redirecting to the next Prior Auth of Joy Lawson in 10s"
+    actions={[
+      {
+        label: 'Need Prior Auth',
+        onClick: () => {},
+      },
+      {
+        label: 'Go To Worklist',
+        onClick: () => {},
+      },
+    ]}
+  />
+)
+```
+
+
+### Appearances
+
+The appearances of our toast are goal oriented.
+
+<br />
+
+#### Alert
+
+Alert variant is used to convey an error state or failure which blocks a process. It should be used when the goal of the user hasn't been met.
+
+The error may be generic like - ‘User not found', or failure of a process like - ‘Could
+not create users’, ‘File items could not be uploaded’, and more.
+
+
+```tsx
+(
+  <Toast
+    appearance="alert"
+    title="Campaign failed to run"
+    message="Try to run again. If it continues to fail, please raise a ticket."
+  />
+)
+```
+
+
+#### Info
+
+Info variant is used to convey information to the users. This information is neutral in tone and is not associated with a connotation.
+
+This info may be generic like - ‘In progress’, or ‘new updates available’, and more.
+
+
+```tsx
+(
+  <Toast
+    appearance="info"
+    title="Sophie sent you a task"
+    message="Schedule Appointment for 'Joy Lawson'. It's due on Aug 31."
+  />
+)
+```
+
+
+#### Success
+
+Success variant is used to convey the success state of a task/process. It should be used when the goal of the user has been met.
+
+Successful completion may be in the form of - ‘Mail sent successfuly’, ‘User deleted successfully’, ‘Mobile number verified successfully’, ‘Meeting scheduled successfully’, and more.
+
+
+```tsx
+(
+  <Toast
+    appearance="success"
+    title="Outreach successfully sent"
+    message="2,340 outreach messages have been successfully sent."
+  />
+)
+```
+
+
+#### Warning
+
+Warning variant is used to convey an interrupted state which delays or partially prevents a process from completion.
+
+The warning may be generic like - ‘1 file could not be downloaded out of 50’, or ‘80 assignments uploaded out of 100’, and more.
+
+
+```tsx
+(
+  <Toast
+    appearance="warning"
+    title="Chat response is delayed"
+    message="'Memorial Clinic' has been running for more that 2 hours."
+  />
+)
+```
+
+
+<br />
+
+### Structure
+
+<br />
+<br />
+
+![Structure of toast](./images/toast-structure.png)
+
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Width</td>
+      <td>360 px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Corner radius</td>
+      <td>4 px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>
+        Padding
+        <br />
+        <em>(top, right, bottom, left)</em>
+      </td>
+      <td>12 px, 8 px, 16 px, 16 px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Spacing between actions</td>
+      <td>8 px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>
+        Margin
+        <br />
+        <em>(bottom, left)</em>
+      </td>
+      <td>32 px, 32 px</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+### Configurations
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Property</th>
+      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
+      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Appearance</td>
+      <td>
+        <ul>
+          <li>Info</li>
+          <li>Success</li>
+          <li>Warning</li>
+          <li>Alert</li>
+        </ul>
+      </td>
+      <td>Info</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Title</td>
+      <td>&#60;title&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>
+        Description
+        <br />
+        <em>(optional)</em>
+      </td>
+      <td>&#60;description&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>
+        Actions
+        <br />
+        <em>(optional)</em>
+      </td>
+      <td>
+        <ul>
+          <li>Action 1</li>
+          <li>Action 2</li>
+        </ul>
+      </td>
+      <td>-</td>
+    </tr>
+        <tr style={{verticalAlign: "top"}}>
+      <td>Timeout</td>
+      <td>
+        <ul>
+          <li>5 seconds</li>
+          <li>Customizable</li>
+        </ul>
+      </td>
+      <td>5 seconds</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+### Usage
+
+<br />
+
+#### Positioning of Toast
+
+They appear at the bottom left of the screen and overlay any content.
+
+![Positioning of toast](./images/toast-1.png)
+
+<Caption>Positioning of toast</Caption>
+<br />
+<br />
+
+#### Timeout
+
+Toasts will close when the close button is clicked, or after a timeout – the default is 5 seconds. It can be Customized through in case of critical notification to ensure the user has enough time to read and acknowledge the message. 
+
+<br />
+
+#### Toasts With Actions
+
+Use toast with actions when you want the users to take an action after reading the message. Also, make sure the same actions are also available elsewhere on the page.
+
+![Toast with actions](./images/toasts_with_actions.png)
+
+<Caption>
+  Here the action in the toast is also available in the table row so that users can take the action comfortably even if
+  they clone the toast.
+</Caption>
+
+#### Toast Without Description
+
+
+```tsx
+(
+  <Toast appearance="success" title="Message sent successfully" message="Description goes here" />
+)
+```
+
+
+#### Multiple Toasts
+
+Only one toast is displayed at a time. Subsequent toasts get stacked with a **margin of 16px** with the latest one on top.
+
+<img src={toast6} width="100%" height="auto" />
+
+<br />
+<br />
+
+#### Overuse of Toasts
+
+It is recommended to not use toasts when the user interface is enough to provide feedback.
+
+![Overuse of toasts](./images/overuse_of_toasts.png)
+
+<Caption>Toast is not needed here because users can already see the updated note in the right section.</Caption>
+
+<br />
+<br />
+
+#### Toasts vs Messages
+
+Toasts are temporary notifications that appear on the screen to provide brief, unobtrusive feedback to the user whereas messages are used for important information and are integrated directly into the content of the interface. 
+
+![Toasts vs Messages](./images/toasts-7.png)
+
+<Caption>Toasts vs Messages</Caption>
+
+<br />
+<br />
+
+#### Toast vs Message vs Modal
+
+<br />
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"25%", textAlign: "left"}}>Factors</th>
+      <th style={{width:"25%", textAlign: "left"}}>Toast</th>
+      <th style={{width:"25%", textAlign: "left"}}>Message</th>
+      <th style={{width:"25%", textAlign: "left"}}>Modal</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Severity</td>
+      <td><Badge appearance="warning" subtle={true}>LOW</Badge></td>
+      <td><Badge appearance="accent1" subtle={true}>MEDIUM</Badge></td>
+      <td><Badge appearance="alert" subtle={true}>CRITICAL</Badge></td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Feedback</td>
+      <td>Feedback or update after an action has taken place</td>
+      <td>Information or feedback that aids users in completing their action or flow</td>
+      <td>Critical information that requires user input or interaction</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>When to use</td>
+      <td>After an action has taken place</td>
+      <td>Before or after an action has taken place</td>
+      <td>Before an action has taken place</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Information detail</td>
+      <td>Concise</td>
+      <td>Concise</td>
+      <td>In-depth</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Intrusiveness</td>
+      <td>Unobtrusive</td>
+      <td>Attention demanding</td>
+      <td>Disruptive</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Duration</td>
+      <td>Persists for 5 seconds (Default), can be customized in case of a critical notification</td>
+      <td>Persists but can be removed from the view upon resolution of the error.</td>
+      <td>Persists until user interaction or input is received.</td>
+    </tr>
+  </tbody>
+</table>
+<br />

@@ -1,0 +1,1496 @@
+---
+title: Table
+description: Tables are used for arranging information in a tabular format by laying out resource items, displaying data heavily based on numbers, or a list of homogenous items in their simplest form.
+tabs: ['Usage', 'Code', 'Interactions']
+showMobile: true
+keywords: ['Datagrid', 'Grid', 'List']
+---
+
+import table11 from './images/table-11.gif'
+
+### Types
+#### Resource Table
+
+A table of resources where **a resource is an object in itself and has a detailed view linked to it.** 
+
+Usually, there is only one resource table on a page. Think of a resource as - a campaign, a measure, a workspace, etc.
+
+To reduce noise, a resource table doesn’t have column dividers.
+
+```tsx
+const statusAppearance = {
+    'In Progress': 'info',
+    Scheduled: 'warning',
+    Draft: 'default',
+    Failed: 'alert',
+  };
+
+  const schema = [
+    {
+      name: 'name',
+      displayName: 'Name',
+      width: '30%',
+      cellType: 'WITH_META_LIST',
+      translate: (a) => ({
+        title: a.name,
+        metaList: [`${a.recipients} recipients`],
+      }),
+      sorting: false,
+    },
+    {
+      name: 'status',
+      displayName: 'Status',
+      width: '20%',
+      cellType: 'STATUS_HINT',
+      sorting: false,
+      filters: [
+        { label: 'In Progress', value: 'In Progress' },
+        { label: 'Scheduled', value: 'Scheduled' },
+        { label: 'Draft', value: 'Draft' },
+        { label: 'Failed', value: 'Failed' },
+      ],
+      onFilterChange: (a, filters) => {
+        for (const filter of filters) {
+          if (a.status === filter) return true;
+        }
+        return false;
+      },
+      translate: (a) => {
+        const status = a.status;
+        return {
+          title: status,
+          statusAppearance: statusAppearance[status],
+        };
+      },
+    },
+    {
+      name: 'lastUpdated',
+      displayName: 'Last Updated on',
+      width: '30%',
+      sorting: false,
+    },
+    {
+      name: 'user',
+      displayName: '',
+      sorting: false,
+      width: '20%',
+      cellRenderer: (props) => (
+        <div className="d-flex align-items-center justify-content-end flex-grow-1">
+          <Avatar firstName={props.data.firstName} lastName={props.data.lastName} />
+          <div className="ml-6">
+            <Menu trigger={<Menu.Trigger appearance="transparent" />}>
+              <Menu.List>
+                <Menu.Item>
+                  <Text>Edit</Text>
+                </Menu.Item>
+                <Menu.Item>
+                  <Text>Delete</Text>
+                </Menu.Item>
+              </Menu.List>
+            </Menu>
+          </div>
+        </div>
+      ),
+    },
+  ];
+
+  return (
+    <Card className="overflow-hidden">
+      <Table
+        loaderSchema={loaderSchema}
+        showMenu={false}
+        type="resource"
+        data={data}
+        schema={schema}
+        withHeader={true}
+        filterPosition="HEADER"
+        filterList={{
+          status: ['In Progress', 'Scheduled', 'Draft', 'Failed'],
+        }}
+        onSelect={(rowIndex, selected, selectedList, selectAll) =>
+          action(
+            `on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(
+              selectedList
+            )} selectAll: ${selectAll}`
+          )()
+        }
+        headerOptions={{
+          withSearch: true,
+        }}
+        onSearch={(currData, searchTerm) => {
+          return currData.filter(
+            (d) =>
+              d.firstName.toLowerCase().match(searchTerm.toLowerCase()) ||
+              d.lastName.toLowerCase().match(searchTerm.toLowerCase()) ||
+              d.name.toLowerCase().match(searchTerm.toLowerCase())
+          );
+        }}
+        withPagination={true}
+        paginationType="basic"
+        pageSize={4}
+        onPageChange={(newPage) => action(`on-page-change:- ${newPage}`)()}
+      />
+    </Card>
+  )
+```
+
+
+#### Data Table
+A data table is only meant for information consumption. It can occasionally contain minor actions such as copy, edit, remove, etc. Since the data can be dense, it can also have column dividers for subtle distinctions among columns. This way a data table also resembles spreadsheet-like tools which users are already familiar with.
+
+If in some rare cases the data in a cell needs to be edited, it is recommended to use inline editable fields in those cases.
+
+
+```tsx
+const data = [
+    {
+      claim_id: 'Q10000101',
+      claim_type: 'Professional',
+      plan_name: 'MSSP Track 3',
+      insurance_name: 'Medicare',
+      first_dos: '03/27/2020',
+      last_dos: '03/30/2020',
+      firstName: 'Brooke',
+      lastName: 'Heeran',
+    },
+    {
+      claim_id: 'Q10000102',
+      claim_type: 'Professional',
+      plan_name: 'MSSP Track 1',
+      insurance_name: 'Medicare',
+      first_dos: '03/24/2020',
+      last_dos: '04/30/2020',
+      firstName: 'Frazer',
+      lastName: 'Cathro',
+    },
+    {
+      claim_id: 'Q10000103',
+      claim_type: 'Professional',
+      plan_name: 'MSSP Track 3',
+      insurance_name: 'Medicare',
+      first_dos: '05/16/2020',
+      last_dos: '05/30/2020',
+      firstName: 'Lemmie',
+      lastName: 'Ciric',
+    },
+    {
+      claim_id: 'Q10000104',
+      claim_type: 'Institutional',
+      plan_name: 'MSSP Track 3',
+      insurance_name: 'Medicare',
+      first_dos: '12/27/2020',
+      last_dos: '12/30/2020',
+      firstName: 'Randy',
+      lastName: 'Boatwright',
+    },
+    {
+      claim_id: 'Q10000105',
+      claim_type: 'Professional',
+      plan_name: 'MSSP Track 3',
+      insurance_name: 'Medicare',
+      first_dos: '05/04/2020',
+      last_dos: '05/28/2020',
+      firstName: 'Rolando',
+      lastName: 'Cyples',
+    },
+    {
+      claim_id: 'Q10000106',
+      claim_type: 'Institutional',
+      plan_name: 'MSSP Track 3',
+      insurance_name: 'Medicare',
+      first_dos: '01/27/2020',
+      last_dos: '03/30/2020',
+      firstName: 'Lem',
+      lastName: 'Males',
+    },
+    {
+      claim_id: 'Q10000107',
+      claim_type: 'Professional',
+      plan_name: 'MSSP Track 3',
+      insurance_name: 'Medicare',
+      first_dos: '03/30/2020',
+      last_dos: '04/30/2020',
+      firstName: 'Sayres',
+      lastName: 'Adelberg',
+    },
+    {
+      claim_id: 'Q10000108',
+      claim_type: 'Professional',
+      plan_name: 'MSSP Track 3',
+      insurance_name: 'Medicare',
+      first_dos: '02/27/2020',
+      last_dos: '03/30/2020',
+      firstName: 'Murray',
+      lastName: 'Bravington',
+    },
+    {
+      claim_id: 'Q10000109',
+      claim_type: 'Institutional',
+      plan_name: 'MSSP Track 5',
+      insurance_name: 'Medicare',
+      first_dos: '03/17/2020',
+      last_dos: '03/30/2020',
+      firstName: 'Carin',
+      lastName: 'Robiou',
+    },
+    {
+      claim_id: 'Q100001010',
+      claim_type: 'Institutional',
+      plan_name: 'MSSP Track 6',
+      insurance_name: 'Medicare',
+      first_dos: '09/27/2020',
+      last_dos: '12/27/2020',
+      firstName: 'Brina',
+      lastName: 'Pirie',
+    },
+  ];
+
+  const schema = [
+    {
+      name: 'claim_id',
+      displayName: 'Claim Id',
+      width: '12%',
+      separator: true,
+    },
+    {
+      name: 'claim_type',
+      displayName: 'Claim Type',
+      width: '15%',
+      separator: true,
+      cellType: 'DEFAULT',
+    },
+    {
+      name: 'insurance_name',
+      displayName: 'Insurance Name',
+      width: '15%',
+      separator: true,
+    },
+    {
+      name: 'plan_name',
+      displayName: 'Plan Name',
+      width: '15%',
+      separator: true,
+    },
+    {
+      name: 'first_dos',
+      displayName: 'First Date of Service',
+      width: '18%',
+      separator: true,
+    },
+    {
+      name: 'last_dos',
+      displayName: 'Last Date of Service',
+      width: '18%',
+      separator: true,
+    },
+    {
+      name: 'provider_name',
+      displayName: 'Provider Name',
+      separator: true,
+      filters: [
+        { label: 'A-G', value: 'a-g' },
+        { label: 'H-R', value: 'h-r' },
+        { label: 'S-Z', value: 's-z' },
+      ],
+      onFilterChange: (a, filters) => {
+        for (const filter of filters) {
+          switch (filter) {
+            case 'a-g':
+              if (a.firstName[0].toLowerCase() >= 'a' && a.firstName[0].toLowerCase() <= 'g') return true;
+              break;
+            case 'h-r':
+              if (a.firstName[0].toLowerCase() >= 'h' && a.firstName[0].toLowerCase() <= 'r') return true;
+              break;
+            case 's-z':
+              if (a.firstName[0].toLowerCase() >= 's' && a.firstName[0].toLowerCase() <= 'z') return true;
+              break;
+          }
+        }
+        return false;
+      },
+      translate: (a) => ({
+        title: `${a.firstName} ${a.lastName}`,
+        firstName: a.firstName,
+        lastName: a.lastName,
+      }),
+    },
+  ];
+
+  return (
+    <Card className="overflow-hidden">
+      <Table
+        loaderSchema={loaderSchema}
+        showMenu={false}
+        separator={true}
+        data={data}
+        schema={schema}
+        withHeader={true}
+        headerOptions={{
+          withSearch: true,
+        }}
+        onSearch={(currData, searchTerm) => {
+          return currData.filter(
+            (d) =>
+              d.firstName.toLowerCase().match(searchTerm.toLowerCase()) ||
+              d.lastName.toLowerCase().match(searchTerm.toLowerCase()) ||
+              d.claim_id.toLowerCase().match(searchTerm.toLowerCase())
+          );
+        }}
+        withPagination={true}
+        pageSize={5}
+      />
+    </Card>
+  )
+```
+
+
+
+### Sizes
+There are 3 types of sizes available for use which differ in the vertical padding and header row height -
+<br/>
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        type: 'Standard',
+        header: '40px',
+        bodyv: '12px',
+        bodyh:'12px',
+      },
+      {
+        type: 'Compressed',
+        header: '32px',
+        bodyv: '8px',
+        bodyh:'12px',
+      },
+      {
+        type: 'Tight',
+        header: '32px',
+        bodyv: '4px',
+        bodyh:'12px',
+      },
+    ]}
+    schema={[
+      {
+        name: 'type',
+        displayName: 'Type',
+        width: '20%',
+        sorting: false,
+        separator: true,
+        cellType: 'DEFAULT'
+      },
+      {
+        name: 'header',
+        displayName: 'Header row height',
+        width: '20%',
+        sorting: false,
+        separator: true
+        
+      },
+      {
+        name: 'bodyv',
+        displayName: 'Body row padding (vertical)',
+        width: '30%',
+        sorting: false,
+        separator: true
+      },
+      {
+        name: 'bodyh',
+        displayName: 'Body row padding (horizontal)',
+        width: '30%',
+        sorting: false,
+        separator: true
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
+
+#### Standard Table
+
+```tsx
+const data = [
+    {
+      name: 'MSSP Track 1 Urban',
+      status: 'Active',
+      measures: '9',
+      current_period: 'March 2017 - Feb 2018',
+      added_in: 'March 2014',
+    },
+    {
+      name: 'MSSP Track 1 Rural',
+      status: 'Active',
+      measures: '9',
+      current_period: 'March 2017 - Feb 201',
+      added_in: 'March 2015',
+    },
+    {
+      name: 'MSSP Track 2',
+      status: 'Inactive',
+      measures: '14',
+      current_period: 'March 2017 - Feb 201',
+      added_in: 'March 2016',
+    },
+    {
+      name: 'Aetna',
+      status: 'Active',
+      measures: '20',
+      current_period: 'March 2017 - Feb 201',
+      added_in: 'March 2019',
+    },
+    {
+      name: 'BCBS',
+      status: 'Active',
+      measures: '16',
+      current_period: 'March 2017 - Feb 201',
+      added_in: 'March 2017',
+    },
+  ];
+
+  const schema = [
+    {
+      name: 'name',
+      displayName: 'Name',
+      width: '20%',
+      sorting: false,
+    },
+    {
+      name: 'status',
+      displayName: 'Status',
+      width: '20%',
+      translate: (a) => ({
+        title: a.status,
+        statusAppearance: a.status === 'Inactive' ? 'default' : 'success',
+      }),
+      cellType: 'STATUS_HINT',
+      sorting: false,
+    },
+    {
+      name: 'measures',
+      displayName: 'No. of Measures',
+      width: '20%',
+      sorting: false,
+    },
+    {
+      name: 'current_period',
+      displayName: 'Current Period',
+      width: '20%',
+      sorting: false,
+    },
+    {
+      name: 'added_in',
+      displayName: 'Added in',
+      width: '20%',
+      sorting: false,
+    },
+  ];
+
+  return (
+    <Card className="overflow-hidden">
+      <Table
+        loaderSchema={loaderSchema}
+        showMenu={false}
+        separator={false}
+        data={data}
+        schema={schema}
+        withHeader={true}
+        headerOptions={{
+          withSearch: true,
+        }}
+        onSearch={(currData, searchTerm) => {
+          return currData.filter((d) => d.name.toLowerCase().match(searchTerm.toLowerCase()));
+        }}
+        withPagination={false}
+      />
+    </Card>
+  )
+```
+
+
+#### Compressed Table
+
+```tsx
+const data = [
+    {
+      name: 'MSSP Track 1 Urban',
+      status: 'Active',
+      measures: 9,
+      current_period: 'March 2017 - Feb 2018',
+      added_in: 'March 2014',
+    },
+    {
+      name: 'MSSP Track 1 Rural',
+      status: 'Active',
+      measures: 9,
+      current_period: 'March 2017 - Feb 201',
+      added_in: 'March 2015',
+    },
+    {
+      name: 'MSSP Track 2',
+      status: 'Inactive',
+      measures: 14,
+      current_period: 'March 2017 - Feb 201',
+      added_in: 'March 2016',
+    },
+    {
+      name: 'Aetna',
+      status: 'Active',
+      measures: 20,
+      current_period: 'March 2017 - Feb 201',
+      added_in: 'March 2019',
+    },
+    {
+      name: 'BCBS',
+      status: 'Active',
+      measures: 16,
+      current_period: 'March 2017 - Feb 201',
+      added_in: 'March 2017',
+    },
+  ];
+
+  const schema = [
+    {
+      name: 'name',
+      displayName: 'Name',
+      width: '20%',
+      sorting: false,
+    },
+    {
+      name: 'status',
+      displayName: 'Status',
+      width: '20%',
+      translate: (a) => ({
+        title: a.status,
+        statusAppearance: a.status === 'Inactive' ? 'default' : 'success',
+      }),
+      cellType: 'STATUS_HINT',
+      sorting: false,
+    },
+    {
+      name: 'measures',
+      displayName: 'No. of Measures',
+      width: '20%',
+      comparator: (a, b) => {
+        if (a.measures < b.measures) {
+          return -1;
+        } else if (a.measures === b.measures) {
+          return 0;
+        } else {
+          return 1;
+        }
+      },
+      sorting: true,
+    },
+    {
+      name: 'current_period',
+      displayName: 'Current Period',
+      width: '20%',
+      sorting: false,
+    },
+    {
+      name: 'added_in',
+      displayName: 'Added in',
+      width: '20%',
+      sorting: false,
+    },
+  ];
+
+  const onDataExport = () => {
+    action('Exporting data', data)();
+  };
+
+  const globalActionTrigger = (data) => {
+    return <Button onClick={() => onDataExport(data)}>Export</Button>;
+  };
+
+  return (
+    <Card className="overflow-hidden">
+      <Table
+        loaderSchema={loaderSchema}
+        size="compressed"
+        showMenu={false}
+        separator={false}
+        data={data}
+        schema={schema}
+        withHeader={true}
+        headerOptions={{
+          withSearch: true,
+          globalActionRenderer: globalActionTrigger,
+        }}
+        onSearch={(currData, searchTerm) => {
+          return currData.filter((d) => d.name.toLowerCase().match(searchTerm.toLowerCase()));
+        }}
+        withPagination={false}
+      />
+    </Card>
+  )
+```
+
+
+#### Tight Table
+This size is typically suited for information-dense data tables
+
+```tsx
+const data = [
+    {
+      name: 'MSSP Track 1 Urban',
+      status: 'Active',
+      measures: '9',
+      current_period: 'March 2017 - Feb 2018',
+      added_in: 'March 2014',
+    },
+    {
+      name: 'MSSP Track 1 Rural',
+      status: 'Active',
+      measures: '9',
+      current_period: 'March 2017 - Feb 2019',
+      added_in: 'March 2015',
+    },
+    {
+      name: 'MSSP Track 2',
+      status: 'Inactive',
+      measures: '14',
+      current_period: 'March 2017 - Feb 2018',
+      added_in: 'March 2016',
+    },
+    {
+      name: 'Aetna',
+      status: 'Active',
+      measures: '20',
+      current_period: 'March 2017 - Feb 2019',
+      added_in: 'March 2019',
+    },
+    {
+      name: 'BCBS',
+      status: 'Active',
+      measures: '16',
+      current_period: 'March 2017 - Feb 2018',
+      added_in: 'March 2017',
+    },
+  ];
+
+  const schema = [
+    {
+      name: 'name',
+      displayName: 'Name',
+      width: '20%',
+      sorting: false,
+    },
+    {
+      name: 'status',
+      displayName: 'Status',
+      width: '20%',
+      translate: (a) => ({
+        title: a.status,
+        statusAppearance: a.status === 'Inactive' ? 'default' : 'success',
+      }),
+      cellType: 'STATUS_HINT',
+      sorting: false,
+    },
+    {
+      name: 'measures',
+      displayName: 'No. of Measures',
+      width: '20%',
+      sorting: false,
+    },
+    {
+      name: 'current_period',
+      displayName: 'Current Period',
+      width: '20%',
+      sorting: false,
+    },
+    {
+      name: 'added_in',
+      displayName: 'Added in',
+      width: '20%',
+      sorting: false,
+    },
+  ];
+
+  return (
+    <Card className="overflow-hidden">
+      <Table
+        loaderSchema={loaderSchema}
+        size="tight"
+        showMenu={false}
+        separator={false}
+        data={data}
+        schema={schema}
+        withHeader={true}
+        headerOptions={{
+          withSearch: true,
+        }}
+        onSearch={(currData, searchTerm) => {
+          return currData.filter((d) => d.name.toLowerCase().match(searchTerm.toLowerCase()));
+        }}
+        withPagination={false}
+      />
+    </Card>
+  )
+```
+
+
+<br/>
+
+### Usage
+#### Table Background
+##### Default Card
+The table is typically laid out on the default card, which helps in differentiating it from the background gray color.
+
+![Table on a default card](./images/table-1.png)
+<Caption>Table on a default card</Caption>
+<br/>
+
+##### Flat Card
+There can be cases when the table has to be used on a side sheet or a full-screen modal where the background is white. In that case, flat card should be used instead of the default card.
+
+![Flat card should be used in case of table on a white background](./images/table-2.png)
+<Caption>Flat card should be used in case of table on a white background</Caption>
+<br/>
+
+#### Nested Table
+##### With Column Extension
+
+```tsx
+const schema = [
+    {
+      name: 'id',
+      displayName: 'Case and Patients',
+      width: '25%',
+    },
+    {
+      name: '',
+      displayName: 'Address',
+      width: '20%',
+    },
+    {
+      name: '',
+      displayName: 'Programs',
+      width: '15%',
+    },
+    {
+      name: 'status',
+      displayName: 'Status',
+      width: '15%',
+      cellType: 'STATUS_HINT',
+      translate: (a) => ({
+        title: a.status,
+        statusAppearance: a.status === 'Enrolled' ? 'warning' : a.status === 'Completed' ? 'success' : 'alert',
+      }),
+    },
+    {
+      name: '',
+      width: '25%',
+      displayName: 'Referred on',
+    },
+  ];
+
+  const nestedRowRenderer = (props) => {
+    const { data, loading } = props;
+
+    const nestedRowSchema = [
+      {
+        name: '',
+        cellType: 'WITH_META_LIST',
+        width: '25%',
+        translate: (a) => ({
+          title: a.name,
+          metaList: [`${a.dob} (${a.age}), ${a.gender}`],
+        }),
+      },
+      {
+        name: 'address',
+        cellType: 'DEFAULT',
+        width: '20%',
+      },
+      {
+        name: 'program',
+        cellType: 'DEFAULT',
+        width: '15%',
+        translate: (a) => ({
+          title: a.program,
+        }),
+      },
+      {
+        name: 'status',
+        displayName: 'Status',
+        width: '15%',
+        cellType: 'STATUS_HINT',
+        translate: (a) => ({
+          title: a.status,
+          statusAppearance: a.status === 'Enrolled' ? 'warning' : a.status === 'Completed' ? 'success' : 'alert',
+        }),
+      },
+      {
+        name: 'referredOn',
+        width: '25%',
+        displayName: 'Referred on',
+      },
+    ];
+
+    return <Table loading={loading} showHead={false} schema={nestedRowSchema} data={data.patientList} />;
+  };
+
+  return (
+    <div className="vh-75">
+      <Card className="h-100 overflow-hidden">
+        <Table
+          schema={schema}
+          data={data}
+          nestedRows={true}
+          nestedRowRenderer={nestedRowRenderer}
+          onRowClick={(rowData, rowIndex) =>
+            action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()
+          }
+        />
+      </Card>
+    </div>
+  )
+```
+
+
+##### With Nested Card
+
+```tsx
+const data = [
+    {
+      firstName: 'Brooke',
+      lastName: 'Heeran',
+      lastRun: 'Yesterday 3:14 PM',
+      name: 'Risk Analysis',
+      type: 'Batch Execution',
+      status: 'Failed',
+      statusType: 'Error',
+      errorCode: 2204,
+      className: 'File not found',
+      errorMessage: 'Cannot fetch files',
+    },
+    {
+      firstName: 'Frazer',
+      lastName: 'Cathro',
+      lastRun: 'Yesterday 11:15 AM',
+      name: 'Quality',
+      type: 'Batch Execution',
+      status: 'Completed',
+      statusType: 'Done',
+      className: 'Executed',
+    },
+    {
+      firstName: 'Lemmie',
+      lastName: 'Ciric',
+      lastRun: 'Yesterday 9:17 PM',
+      name: 'Claims',
+      type: 'Test Function',
+      status: 'Completed',
+      statusType: 'Done',
+      className: 'Executed',
+    },
+    {
+      firstName: 'Randy',
+      lastName: 'Boatwright',
+      lastRun: 'Yesterday 4:26 PM',
+      name: 'Risk Analysis',
+      type: 'Batch Execution',
+      status: 'Completed',
+      statusType: 'Done',
+      className: 'Executed',
+    },
+    {
+      firstName: 'Rolando',
+      lastName: 'Cyples',
+      lastRun: 'Yesterday 7:34 AM',
+      name: 'Quality',
+      type: 'Test Function',
+      status: 'Failed',
+      statusType: 'Error',
+      errorCode: 2204,
+      className: 'File not found',
+      errorMessage: 'Cannot fetch files',
+    },
+  ];
+
+  const schema = [
+    {
+      name: 'lastRun',
+      displayName: 'Last Run',
+      width: '25%',
+    },
+    {
+      name: 'name',
+      displayName: 'Name',
+      width: '15%',
+    },
+    {
+      name: 'type',
+      displayName: 'Type',
+      width: '20%',
+    },
+    {
+      name: 'status',
+      displayName: 'Status',
+      width: '20%',
+      cellType: 'STATUS_HINT',
+      translate: (a) => ({
+        title: a.status,
+        statusAppearance: a.status === 'Failed' ? 'alert' : 'success',
+      }),
+      filters: [
+        { label: 'Failed', value: 'failed' },
+        { label: 'Completed', value: 'completed' },
+      ],
+      onFilterChange: (a, filters) => {
+        for (const filter of filters) {
+          if (a.status.toLowerCase() === filter) return true;
+        }
+        return false;
+      },
+    },
+    {
+      name: 'user',
+      displayName: 'User',
+      width: '20%',
+      translate: (a) => ({
+        title: `${a.lastName}, ${a.firstName}`,
+        firstName: a.firstName,
+        lastName: a.lastName,
+      }),
+      cellType: 'AVATAR_WITH_TEXT',
+    },
+  ];
+
+  const nestedRowRenderer = (props) => (
+    <CardSubdued className="mb-4 mt-3 mr-4 ml-9">
+      <Row>
+        <Column size={2}>
+          <Text weight="medium">Type</Text> <br />
+          <Text weight="medium">Error code</Text> <br />
+          <Text weight="medium">Class name</Text> <br />
+          <Text weight="medium">Error message</Text>
+        </Column>
+        <Column>
+          <Text>{props.data.type}</Text> <br />
+          <Text>{props.data.errorCode}</Text> <br />
+          <Text>{props.data.className}</Text> <br />
+          <Text>{props.data.errorMessage}</Text>
+        </Column>
+      </Row>
+    </CardSubdued>
+  );
+
+  const onDataExport = (data) => {
+    action('Exporting data', data)();
+  };
+
+  const globalActionTrigger = (data) => {
+    return (
+      <div className="d-flex">
+        <Button onClick={() => onDataExport(data)}>Export</Button>
+        <Button className="ml-4" appearance="primary" onClick={() => onDataExport(data)}>
+          Add to simulation
+        </Button>
+      </div>
+    );
+  };
+
+  return (
+    <Card className="overflow-hidden">
+      <Table
+        data={data}
+        schema={schema}
+        withHeader={true}
+        headerOptions={{
+          withSearch: true,
+          dynamicColumn: false,
+          globalActionRenderer: globalActionTrigger,
+        }}
+        separator={false}
+        showMenu={false}
+        nestedRows={true}
+        filterPosition="HEADER"
+        nestedRowRenderer={nestedRowRenderer}
+        filterList={{
+          status: ['failed', 'completed'],
+        }}
+      />
+    </Card>
+  )
+```
+
+
+#### Table Header
+The position of the header is fixed at the top so that the rows scroll between the header and footer.
+
+##### Resource and Data Table
+The headers for these tables have a ‘Showing x items’ label and optional ‘Search’ input, filtering options.
+
+![Table header in resource and data table](./images/table-3.png)
+<Caption>Table header in resource and data table</Caption>
+<br/>
+
+##### Table as a List
+Checkbox precedes the 'Showing x items' label in the header row when using the table as a list since it doesn't have the column header row.
+As there are no columns, hence there is no option to Sort. In that case, use the Search + Sort variant of the header where there is a dropdown for sorting following the search input.
+
+![Table header in table as a list](./images/table-4.png)
+<Caption>Table header in table as a list</Caption>
+<br/>
+
+#### Disabled Row in a Table
+To indicate a row is not interactive, the opacity of the row should be reduced to 40%.
+
+> Disabled state is kept at 40% opacity since it is closest to the disabled state of other components.
+
+<br/>
+
+![Disabled row in a table](./images/table-disabled-row.png)
+
+<Caption> Disabled row in a table</Caption>
+<br/>
+
+#### Exception in a Row
+An exception may be added to a specific row such as a failure or a warning. In that case, use the **Subtle badge component** and resize the list to have **8px** padding from the bottom. 
+
+This behavior is not available out of the box and hence a custom cell should be used to design and build this.
+
+![Showing exception in a row using the badge component](./images/table-5.png)
+<Caption>Showing exception in a row using the badge component</Caption>
+<br/>
+
+#### Custom Cell
+Standard table cells cover the most frequent use cases. For the other use cases, a custom cell can be created by using the **Emply Cell component**. Minimum padding of **12px** from either side of the empty cell is maintained.
+
+![Custom cell in the table](./images/table-6.png)
+<Caption>Custom cell in the table</Caption>
+<br/>
+
+#### Alignment in Table Cells
+##### Center Aligned
+Table cell content should be center-aligned when the content is short and uniform or when all cells in the row have similar heights.
+
+![Content aligned centrally in a row](./images/table-7.png)
+<Caption>Content aligned centrally in a row</Caption>
+<br/>
+
+##### Top Aligned
+Table cell content should be top-aligned when cells in the same row have varying content heights or when a cell includes multiple lines of text or a combination of text and visuals.
+
+![Content aligned to the top in a row](./images/table-8.png)
+<Caption>Content aligned to the top in a row</Caption>
+<br/>
+
+#### Column Actions
+##### Show/Hide Columns
+This action appears in the extreme right just above the header row.
+
+![Show/hide and reorder options for columns](./images/table-9.png)
+<Caption>Show/hide and reorder options for columns</Caption>
+<br/>
+
+##### Sorting a Column
+
+![Sorting and pinning options in a column](./images/table-10.png)
+<Caption>Sorting and pinning options column</Caption>
+<br/>
+
+Another way to offer column sorting is by clicking on the column name.
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        click: 'On 1st click',
+        sort: 'sort ascending',
+      },
+      {
+        click: 'On 2nd click',
+        sort: 'sort descending',
+      },
+      {
+        click: 'On 3rd click',
+        sort: 'reset sorting',
+      },
+    ]}
+    schema={[
+      {
+        name: 'click',
+        displayName: 'Number of clicks',
+        width: '50%',
+        sorting: false,
+        separator: true,
+        cellType: 'DEFAULT'
+      },
+      {
+        name: 'sort',
+        displayName: 'Sorting behaviour',
+        width: '50%',
+        sorting: false,
+        separator: true
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
+
+<img src={table11} width='100%' height='auto'/>
+
+<br/>
+<br/>
+
+##### Filtering a Column
+Although filters in a table are applied using dropdowns, there is a provision to apply filters in a specific column.
+
+![Filtering a column](./images/table-12.png)
+<Caption>Filtering a column</Caption>
+<br/>
+
+##### Reordering a Column
+The cursor changes to Pointing Hand when hovering on a header cell indicating that the column can be picked and moved.
+
+![Reordering a column](./images/table-13.png)
+<Caption>Reordering a column</Caption>
+<br/>
+
+#### Pinned Column(s)
+**Pinned column divider** is used to pin columns to the left so that they get fixed and do not scroll along with the rest of the columns. It is quite handy when the no. of columns is too many and all of them are not visible without scrolling. In that case, the pinning can help freeze the crucial columns in order to maintain the context.
+
+```tsx
+const data = [
+    {
+      s_no: 1,
+      empi: 'P087636',
+      first_name: 'Joy',
+      last_name: 'Lawson',
+      dob: '01/12/1982',
+      gender: 'Female',
+      facility: 'Charity Medical Clinic',
+    },
+    {
+      s_no: 2,
+      empi: 'P087637',
+      first_name: 'Hannah',
+      last_name: 'Pop',
+      dob: '01/11/1982',
+      gender: 'Female',
+      facility: 'Bancroft Medical Clinic',
+    },
+    {
+      s_no: 3,
+      empi: 'P087638',
+      first_name: 'Lisa',
+      last_name: 'Sanchez',
+      dob: '02/12/1981',
+      gender: 'Female',
+      facility: 'Lullaby Medical Clinic',
+    },
+    {
+      s_no: 4,
+      empi: 'P087639',
+      first_name: 'Kathy',
+      last_name: 'Powell',
+      dob: '01/10/1972',
+      gender: 'Female',
+      facility: 'Charity Medical Clinic',
+    },
+    {
+      s_no: 5,
+      empi: 'P087631',
+      first_name: 'Dennis',
+      last_name: 'Lane',
+      dob: '01/10/1982',
+      gender: 'Male',
+      facility: 'Lullaby Medical Clinic',
+    },
+  ];
+
+  const schema = [
+    {
+      name: 's_no',
+      displayName: 'S.no.',
+      width: '5%',
+      sorting: false,
+      pinned: 'left',
+    },
+    {
+      name: 'empi',
+      displayName: 'EMPI',
+      width: '10%',
+      sorting: false,
+      pinned: 'left',
+    },
+    {
+      name: 'first_name',
+      displayName: 'First Name',
+      width: '20%',
+      sorting: false,
+    },
+    {
+      name: 'last_name',
+      displayName: 'Last Name',
+      width: '20%',
+      sorting: false,
+    },
+    {
+      name: 'dob',
+      displayName: 'DOB',
+      width: '20%',
+      sorting: false,
+    },
+    {
+      name: 'gender',
+      displayName: 'Gender',
+      width: '20%',
+      sorting: false,
+    },
+    {
+      name: 'facility',
+      displayName: 'Facility',
+      sorting: false,
+    },
+  ];
+
+  return (
+    <Card className="overflow-hidden">
+      <Table
+        loaderSchema={loaderSchema}
+        size="compressed"
+        showMenu={false}
+        separator={false}
+        data={data}
+        schema={schema}
+        withHeader={true}
+        headerOptions={{
+          withSearch: false,
+        }}
+        withPagination={false}
+      />
+    </Card>
+  )
+```
+
+
+#### Selection
+
+##### Default Selection
+
+**No items selected**
+
+![When no item is selected](./images/no-item-selected.png)
+<Caption>When no item is selected</Caption>
+
+**A few items selected**
+
+When a row is selected, the number of selected items is shown in the header.
+The selection is **preserved** in case of - pagination, filters and search.
+
+![When a few items are selected](./images/few-items-selected.png)
+<Caption>When a few items are selected</Caption>
+
+**All items selected**
+
+An option to select all the items across all pages is presented in the header.
+
+![When all items are selected](./images/all-items-selected.png)
+<Caption>When all items are selected</Caption>
+
+**Clear selection**
+
+An option to clear selection is presented in the header.
+
+![Clear Selection](./images/clear-selection.png)
+<Caption>Clear Selection</Caption>
+
+#### Scrolling
+Table header remains fixed when scrolling so as to maintain the connection of the values in the cells with the column headers which helps easy understanding of data.
+
+![Table header should remain fixed while scrolling](./images/table-18.png)
+<Caption>Table header should remain fixed while scrolling</Caption>
+<br/>
+
+#### Pagination vs. Infinite Scroll
+Use pagination over infinite scroll so that the user can navigate to an item’s detail page and return back to the same page. Retaining the scroll position in a long list of items can be resource-intensive and hence infinite scroll is avoided and Pagination is used.
+
+#### Filtering
+##### 1. When Filters Are Frequently Used
+
+Since the filters are frequently used, there is a dedicated fixed section alongside the table to apply those filters. The applied filters are added as chips just below the search bar to quickly enable/disable an already applied filter.
+Please note that there is no filtering option in the table itself.
+
+![When filters are frequently used](./images/table-19.png)
+<Caption>When filters are frequently used</Caption>
+<br/>
+
+##### 2. When Filters Are Sparingly Used
+In the case of 4 or fewer filters, all the filters are available in the table card for quick access.
+
+![When filters are sparingly used](./images/table-20.png)
+<Caption>When filters are sparingly used</Caption>
+<br/>
+
+In case the need arises to use more than 3 filters, the top 3 filters are available inside the table card as they should be. There is an additional button to add more filters. When clicked, a side panel appears in the right just like the case where filters are frequently used.
+
+The only difference is that this panel can be closed/opened on demand unlike case 1.
+
+![Filter panel can be closed in this case](./images/table-21.png)
+<Caption>Filter panel can be closed in this case</Caption>
+<br/>
+
+#### Data Alignment
+![Data alignment in tables](./images/data-alignment.png)
+<Caption>Data alignment in tables</Caption>
+
+##### Textual Data
+Textual data is easier to read when aligned to the **left**.
+
+**Note:** For cases where the content can span across multiple lines( description, subtitle, etc.), align the content at the top for better readability.
+<br/>
+
+##### Numerical Data
+**Right align** <br/>
+Numerical data indicating size or quantity of an entity (such as count, score, percent, etc) is easier to read and compare when aligned to the **right**.
+
+**Note:** In case of decimal numbers, use the same number of decimal places( append/ remove trailing zeros after decimal place if needed) and align on the decimal point.
+<br/>
+
+**Left align**<br/>
+Numerical data indicating non-quantitative data (such as zip-code, id, version number, etc) should align to the **left**.
+<br/>
+
+#### Selection With Search/Filters
+
+##### No Selection Before Search/Filters
+
+In case of no previous selection, the “Showing x items” displays the number of the search or filter results. 
+
+![When no item is selected before applying filters](./images/no-selection-before-filters.png)
+<Caption>When no item is selected before applying filters</Caption>
+
+<br/>
+<br/>
+
+##### A Few Items Selected Before Search/Filters
+
+In this case, the previous selection is preserved and ‘Selected n items’ persists, while “Select x items” button updates to show the number of search or filter results. 
+
+![When a few items item are selected before applying filters](./images/few-selection-before-filters.png)
+<Caption>When a few items item are selected before applying filters</Caption>
+
+<br/>
+<br/>
+
+##### A Few Items Selected After Search/Filters
+
+When a row is selected, “Selected n items” is updated to display the number of selected items.
+
+![When a few items are selected with applied filters](./images/items-selected-with-filters.png)
+<Caption>When a few items are selected with applied filters</Caption>
+
+<br/>
+<br/>
+
+##### All Items Selected After Search/Filters
+
+When all the search and filter results are selected, the “Select x items” button is disabled until the selection is modified. 
+
+**Note:** The “Select x items” displays the count of search or filter results, hence clicking that will only select the search or filter results. 
+
+![When all items are selected with applied filters](./images/all-items-with-filters.png)
+<Caption>When all items are selected with applied filters</Caption>
+
+<br/>
+<br/>
+
+#### Bulk Actions In Table
+
+##### Global Bulk Actions
+
+Global bulk actions are used to perform actions on all the items of a table at once, they are a permanent part of the interface and aligned with the search input and filters. It is recommended to use **basic button** and **icon button** to display global bulk actions in a table. 
+
+**Note:** In case of filtering in table, global bulk actions only impact the result that matches the applied filters. 
+
+![Global bulk actions in table](./images/global-bulk-action.png)
+<Caption>Global bulk actions in table</Caption>
+
+<br/>
+<br/>
+
+##### Selection Bulk Actions
+
+Selection bulk actions allow users to perform the same operation on multiple selected items at once. They appear right next to the selection options with a divider in between separating the two. It is recommended to use **basic button** and **basic icon button** to display selection bulk actions in a table.
+
+![Selection bulk actions in table](./images/selection-bulk-action.png)
+<Caption>Selection bulk actions in table</Caption>
+
+<br/>
+<br/>
+
+#### Primary Button As A Bulk Action
+
+It is recommended to use primary button as a bulk action only when it serves as the primary action on the page.
+
+![Primary button as a bulk action](./images/primary-bulk-action.png)
+<Caption>Primary button as a bulk action</Caption>
+
+<br/>
+<br/>
+
+#### Bulk Actions In Case of A Space Constraint
+
+It is recommended to use **basic icon buttons** or **menu** for showing bulk actions in case of a space constraint. 
+
+![Bulk actions in case of a space constraint](./images/bulk-action-in-space-constraint.png)
+<Caption>Bulk actions in case of a space constraint</Caption>
+
+<br/>
+<br/>
+
+#### Bulk Actions In Table vs Actions In Page Header
+
+Bulk actions in table are used to bring changes to the table and actions in page header are used for prominent page actions like creating a new entity, etc . 
+
+![Bulk actions in table vs Actions in page header](./images/bulk-action-in-table.png)
+<Caption>Bulk actions in table vs Actions in page header</Caption>
+
+#### Infinite Scrolling
+
+Infinite scrolling in tables dynamically loads rows as the user scrolls, improving performance and user experience for large datasets by removing the need for pagination.
+
+**Note:** Always display the count of loaded rows versus total rows to help users track their current position in the dataset.
+
+##### When to use?
+
+Infinite scroll is ideal when:
+
+<ul>
+  <li>Users require a seamless experience.</li>
+  <li>The primary goal is exploration.</li>
+  <li>The dataset is very large.</li>
+  <li>Returning to specific information is not essential.</li>
+  <li>Users need to compare items in an extended list.</li>
+</ul>
+
+![Infinite scroll in tables](./images/infinite-scroll.png)
+<Caption>Infinite scroll in tables</Caption>
+
+#### Pagination
+
+Pagination in tables divides large datasets into smaller chunks across multiple pages, letting users manually navigate through a specific number of rows at a time instead of displaying all rows at once. 
+
+##### When to use?
+
+Pagination is ideal when:
+<ul>
+  <li>Users are searching for a specific item or row.</li>
+  <li>Returning to previously viewed data is important.</li>
+</ul>
+
+![Pagination in tables](./images/pagination.png)
+<Caption>Pagination in tables</Caption>
