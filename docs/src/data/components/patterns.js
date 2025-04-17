@@ -19,7 +19,14 @@ export const data = [
     design: 'Available',
     name: 'Browser Tab Title',
     code: 'Available',
-    image: () => <StaticImage src="./images/patterns/fileUploader.png" alt="File uploader" imgStyle={imgStyle} />,
+    image: () => <StaticImage src="./images/patterns/BrowserTitle.png" alt="File uploader" imgStyle={imgStyle} />,
+  },
+  {
+    link: 'conversation/usage',
+    design: 'Available',
+    name: 'Conversation',
+    code: 'Available',
+    image: () => <StaticImage src="./images/patterns/Chat.png" alt="Chat" imgStyle={imgStyle} />,
   },
   {
     link: 'fileUploader/usage',
