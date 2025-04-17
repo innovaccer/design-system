@@ -19,7 +19,7 @@ Object {
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 5;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
             tabindex="-1"
           >
             <span
@@ -59,7 +59,7 @@ Object {
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 4;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
             tabindex="-1"
           >
             <span
@@ -99,7 +99,7 @@ Object {
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 3;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
             tabindex="-1"
           >
             <span
@@ -139,7 +139,7 @@ Object {
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 2;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
             tabindex="-1"
           >
             <span
@@ -179,7 +179,7 @@ Object {
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 1;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
             tabindex="-1"
           >
             <span
@@ -222,7 +222,7 @@ Object {
             class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
             data-test="DesignSystem-AvatarSelection--TriggerAvatar"
             role="button"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
             tabindex="0"
           >
             <span
@@ -265,7 +265,7 @@ Object {
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 5;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
           tabindex="-1"
         >
           <span
@@ -305,7 +305,7 @@ Object {
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 4;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
           tabindex="-1"
         >
           <span
@@ -345,7 +345,7 @@ Object {
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 3;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
           tabindex="-1"
         >
           <span
@@ -385,7 +385,7 @@ Object {
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 2;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
           tabindex="-1"
         >
           <span
@@ -425,7 +425,7 @@ Object {
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 1;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
           tabindex="-1"
         >
           <span
@@ -468,7 +468,7 @@ Object {
           class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
           data-test="DesignSystem-AvatarSelection--TriggerAvatar"
           role="button"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
           tabindex="0"
         >
           <span
@@ -570,7 +570,7 @@ Object {
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 5;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
             tabindex="-1"
           >
             <span
@@ -610,7 +610,7 @@ Object {
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 4;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
             tabindex="-1"
           >
             <span
@@ -650,7 +650,7 @@ Object {
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 3;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
             tabindex="-1"
           >
             <span
@@ -690,7 +690,7 @@ Object {
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 2;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
             tabindex="-1"
           >
             <span
@@ -730,7 +730,7 @@ Object {
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 1;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
             tabindex="-1"
           >
             <span
@@ -773,7 +773,7 @@ Object {
             class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
             data-test="DesignSystem-AvatarSelection--TriggerAvatar"
             role="button"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
             tabindex="0"
           >
             <span
@@ -816,7 +816,7 @@ Object {
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 5;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
           tabindex="-1"
         >
           <span
@@ -856,7 +856,7 @@ Object {
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 4;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
           tabindex="-1"
         >
           <span
@@ -896,7 +896,7 @@ Object {
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 3;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
           tabindex="-1"
         >
           <span
@@ -936,7 +936,7 @@ Object {
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 2;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
           tabindex="-1"
         >
           <span
@@ -976,7 +976,7 @@ Object {
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 1;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
           tabindex="-1"
         >
           <span
@@ -1019,7 +1019,7 @@ Object {
           class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
           data-test="DesignSystem-AvatarSelection--TriggerAvatar"
           role="button"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
           tabindex="0"
         >
           <span
@@ -1121,7 +1121,7 @@ Object {
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 5;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
             tabindex="-1"
           >
             <span
@@ -1161,7 +1161,7 @@ Object {
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 4;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
             tabindex="-1"
           >
             <span
@@ -1201,7 +1201,7 @@ Object {
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 3;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
             tabindex="-1"
           >
             <span
@@ -1241,7 +1241,7 @@ Object {
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 2;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
             tabindex="-1"
           >
             <span
@@ -1281,7 +1281,7 @@ Object {
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 1;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
             tabindex="-1"
           >
             <span
@@ -1324,7 +1324,7 @@ Object {
             class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
             data-test="DesignSystem-AvatarSelection--TriggerAvatar"
             role="button"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
             tabindex="0"
           >
             <span
@@ -1367,7 +1367,7 @@ Object {
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 5;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
           tabindex="-1"
         >
           <span
@@ -1407,7 +1407,7 @@ Object {
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 4;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
           tabindex="-1"
         >
           <span
@@ -1447,7 +1447,7 @@ Object {
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 3;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
           tabindex="-1"
         >
           <span
@@ -1487,7 +1487,7 @@ Object {
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 2;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
           tabindex="-1"
         >
           <span
@@ -1527,7 +1527,7 @@ Object {
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 1;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
           tabindex="-1"
         >
           <span
@@ -1570,7 +1570,7 @@ Object {
           class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
           data-test="DesignSystem-AvatarSelection--TriggerAvatar"
           role="button"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
           tabindex="0"
         >
           <span
@@ -1672,7 +1672,7 @@ Object {
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 5;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
             tabindex="-1"
           >
             <span
@@ -1712,7 +1712,7 @@ Object {
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 4;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
             tabindex="-1"
           >
             <span
@@ -1752,7 +1752,7 @@ Object {
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 3;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
             tabindex="-1"
           >
             <span
@@ -1792,7 +1792,7 @@ Object {
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 2;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
             tabindex="-1"
           >
             <span
@@ -1832,7 +1832,7 @@ Object {
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 1;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
             tabindex="-1"
           >
             <span
@@ -1875,7 +1875,7 @@ Object {
             class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
             data-test="DesignSystem-AvatarSelection--TriggerAvatar"
             role="button"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
             tabindex="0"
           >
             <span
@@ -1960,7 +1960,7 @@ Object {
             class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
             data-test="DesignSystem-AvatarSelection--TriggerAvatar"
             role="button"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
             tabindex="0"
           >
             <span
@@ -2002,7 +2002,7 @@ Object {
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 5;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
             tabindex="-1"
           >
             <span
@@ -2042,7 +2042,7 @@ Object {
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 4;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
             tabindex="-1"
           >
             <span
@@ -2082,7 +2082,7 @@ Object {
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 3;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
             tabindex="-1"
           >
             <span
@@ -2122,7 +2122,7 @@ Object {
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 2;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
             tabindex="-1"
           >
             <span
@@ -2162,7 +2162,7 @@ Object {
             class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 1;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
             tabindex="-1"
           >
             <span
@@ -2205,7 +2205,7 @@ Object {
             class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
             data-test="DesignSystem-AvatarSelection--TriggerAvatar"
             role="button"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
             tabindex="0"
           >
             <span
@@ -2248,7 +2248,7 @@ Object {
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 5;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
           tabindex="-1"
         >
           <span
@@ -2288,7 +2288,7 @@ Object {
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 4;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
           tabindex="-1"
         >
           <span
@@ -2328,7 +2328,7 @@ Object {
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 3;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
           tabindex="-1"
         >
           <span
@@ -2368,7 +2368,7 @@ Object {
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 2;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
           tabindex="-1"
         >
           <span
@@ -2408,7 +2408,7 @@ Object {
           class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white; z-index: 1;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
           tabindex="-1"
         >
           <span
@@ -2451,7 +2451,7 @@ Object {
           class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
           data-test="DesignSystem-AvatarSelection--TriggerAvatar"
           role="button"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
           tabindex="0"
         >
           <span

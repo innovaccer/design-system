@@ -12,8 +12,8 @@
 
 .Breadcrumbs-link {
   /* 160px */
-  max-width: calc(var(--spacing-2) * 10);
-  margin: var(--spacing-m) 0;
+  max-width: calc(var(--spacing-40) * 10);
+  margin: var(--spacing-10) 0;
 }
 
 .Breadcrumbs-link:active {
@@ -28,8 +28,8 @@
   color: var(--secondary);
   font-size: var(--font-size-s);
   line-height: var(--font-height-s);
-  width: var(--spacing-m);
-  margin: 0 var(--spacing-m);
+  width: var(--spacing-10);
+  margin: 0 var(--spacing-10);
 }
 
 .Breadcrumbs-dropdown {

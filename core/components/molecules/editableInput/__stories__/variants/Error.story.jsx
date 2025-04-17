@@ -26,7 +26,7 @@ export const error = () => {
 const customCode = `/*
 // style.css
 .EditableInput-wrapper--error {
-  width: var(--spacing-9);
+  width: var(--spacing-640);
 }
 
 */

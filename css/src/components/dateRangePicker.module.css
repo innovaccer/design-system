@@ -15,11 +15,11 @@
 }
 
 .DateRangePicker-input--startDate {
-  padding-right: var(--spacing-m);
+  padding-right: var(--spacing-10);
 }
 
 .DateRangePicker-input--endDate {
-  padding-left: var(--spacing-m);
+  padding-left: var(--spacing-10);
 }
 
 @media (max-width: 576px) {
@@ -28,6 +28,6 @@
   }
 
   .DateRangePicker-input--endDate {
-    padding-top: var(--spacing);
+    padding-top: var(--spacing-20);
   }
 }

@@ -15,7 +15,7 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
 
   const [open, setOpen] = React.useState<boolean>(false);
   const [tempOptions, setTempOptions] = React.useState(options);
-  const [triggerWidth, setTriggerWidth] = React.useState('var(--spacing-8)');
+  const [triggerWidth, setTriggerWidth] = React.useState('var(--spacing-440)');
 
   React.useEffect(() => {
     setTempOptions(options);

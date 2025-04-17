@@ -1,10 +1,10 @@
 .OverlayHeader {
   box-sizing: border-box;
-  margin-left: var(--spacing-xl);
+  margin-left: var(--spacing-60);
 }
 
 .OverlayHeader--withBackButton {
-  margin-left: var(--spacing-2);
+  margin-left: var(--spacing-40);
 }
 
 .OverlayHeader-headerWrapper {
@@ -13,11 +13,11 @@
 }
 
 .OverlayHeader-subheading {
-  margin-top: var(--spacing-s);
+  margin-top: var(--spacing-05);
 }
 
 .OverlayHeader-subheading--withBackButton {
-  margin-left: var(--spacing);
+  margin-left: var(--spacing-20);
 }
 
 .OverlayBody {
@@ -33,6 +33,6 @@
   align-items: center;
   width: 100%;
   box-sizing: border-box;
-  padding-left: var(--spacing-xl);
-  padding-right: var(--spacing-xl);
+  padding-left: var(--spacing-60);
+  padding-right: var(--spacing-60);
 }

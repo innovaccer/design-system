@@ -4,16 +4,16 @@
 }
 
 .Dropdown-wrapper {
-  margin-top: var(--spacing-m);
-  margin-bottom: var(--spacing-m);
+  margin-top: var(--spacing-10);
+  margin-bottom: var(--spacing-10);
 }
 
 .Dropdown-inputWrapper {
-  border-bottom: var(--spacing-xs) solid var(--secondary-dark);
+  border-bottom: var(--border-width-2-5) solid var(--secondary-dark);
 }
 
 .Dropdown-inputWrapper:focus-within {
-  border-bottom: var(--spacing-xs) solid var(--primary);
+  border-bottom: var(--border-width-2-5) solid var(--primary);
 }
 
 .Dropdown-input {
@@ -30,29 +30,29 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: var(--spacing-l);
-  margin-top: var(--spacing-l);
-  margin-bottom: var(--spacing-0-75);
+  margin-left: var(--spacing-30);
+  margin-top: var(--spacing-30);
+  margin-bottom: var(--spacing-15);
 }
 
 .Dropdown-section--withClear {
-  margin-top: var(--spacing);
-  margin-bottom: var(--spacing-s);
+  margin-top: var(--spacing-20);
+  margin-bottom: var(--spacing-05);
 }
 
 .Dropdown-buttonWrapper {
   display: flex;
   justify-content: flex-end;
-  padding-top: var(--spacing);
-  padding-right: var(--spacing);
-  padding-bottom: var(--spacing);
-  border-top: var(--spacing-xs) solid var(--secondary-light);
+  padding-top: var(--spacing-20);
+  padding-right: var(--spacing-20);
+  padding-bottom: var(--spacing-20);
+  border-top: var(--border-width-2-5) solid var(--secondary-light);
 }
 
 .Dropdown-footer {
-  padding-left: var(--spacing-l);
-  padding-bottom: var(--spacing-m);
-  padding-top: var(--spacing);
+  padding-left: var(--spacing-30);
+  padding-bottom: var(--spacing-10);
+  padding-top: var(--spacing-20);
   box-sizing: border-box;
 }
 
@@ -63,10 +63,10 @@
 
 .Option,
 .Option-loading {
-  padding-top: var(--spacing-0-75);
-  padding-bottom: var(--spacing-0-75);
-  padding-left: var(--spacing-l);
-  padding-right: var(--spacing);
+  padding-top: var(--spacing-15);
+  padding-bottom: var(--spacing-15);
+  padding-left: var(--spacing-30);
+  padding-right: var(--spacing-20);
 }
 
 .Option-checkbox .Checkbox-outerWrapper {
@@ -79,9 +79,9 @@
 
 .OptionCheckbox {
   width: 100%;
-  padding-left: var(--spacing-l);
-  padding-top: var(--spacing-0-75);
-  padding-bottom: var(--spacing-0-75);
+  padding-left: var(--spacing-30);
+  padding-top: var(--spacing-15);
+  padding-bottom: var(--spacing-15);
 }
 
 .Option--active,
@@ -140,7 +140,7 @@
 }
 
 .OptionCheckbox .Checkbox-label {
-  padding-right: var(--spacing-l);
+  padding-right: var(--spacing-30);
   width: 100%;
   display: flex;
   overflow: hidden;
@@ -160,7 +160,7 @@
 }
 
 .Option--icon {
-  padding-left: var(--spacing);
+  padding-left: var(--spacing-20);
 }
 
 .Option-icon {

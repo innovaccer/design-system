@@ -6,13 +6,13 @@
 }
 
 .Caption--withInput {
-  margin-top: var(--spacing-m);
+  margin-top: var(--spacing-10);
 }
 
 .Caption-icon {
   display: flex;
   align-content: center;
-  margin-right: var(--spacing-m);
+  margin-right: var(--spacing-10);
 }
 
 .Caption--hidden {

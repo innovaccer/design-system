@@ -197,7 +197,7 @@ export const Combobox = (props: ComboboxProps) => {
     };
 
     const wrapperStyle = {
-      maxHeight: maxHeight || 'var(--spacing-9)',
+      maxHeight: maxHeight || 'var(--spacing-640)',
       minHeight: minHeight,
       overflowY: 'auto',
       boxSizing: 'border-box',

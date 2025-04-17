@@ -4,7 +4,7 @@ html, body {
 }
 
 .DocPage-editorTabs .TabsWrapper-header {
-  margin-left: var(--spacing-l)
+  margin-left: var(--spacing-30)
 }
 
 .DocPage-codeBlock {
@@ -12,18 +12,18 @@ html, body {
   font-family: monospace !important;
   font-size: 13px !important;
   background: #f8f8f8 !important;
-  margin-top: var(--spacing) !important;
-  margin-bottom: var(--spacing) !important;
-  padding: var(--spacing) !important;
+  margin-top: var(--spacing-20) !important;
+  margin-bottom: var(--spacing-20) !important;
+  padding: var(--spacing-20) !important;
   white-space: break-spaces !important;
-  border-radius: var(--spacing-m)
+  border-radius: var(--border-radius-10);
 }
 
 .Utilities-example {
-  padding:var(--spacing-xl);
+  padding:var(--spacing-60);
   margin-right: 0;
   margin-left: 0;
-  border-width:var(--spacing-s) ;
+  border-width:var(--border-width-05) ;
   font-size:var(--font-size-m);
   background-color: var(--inverse-lightest);
 }
@@ -44,7 +44,7 @@ html, body {
   background-color:var(--inverse-lightest);
   width: 200px;
   height: 100px;
-  border: var(--spacing-xs) dotted black;
+  border: var(--border-width-2-5) dotted black;
 }
 
 .sbdocs.sbdocs-wrapper {
@@ -53,12 +53,12 @@ html, body {
 
 table.docblock-argstable {
   border-collapse: collapse;
-  border-radius: 4px;
+  border-radius: var(--border-radius-10);
   border-style: hidden; 
   box-shadow: 0 0 0 1px var(--secondary-light);
 }
 
 table.docblock-argstable tbody {
   box-shadow: none !important;
-  border-top: var(--spacing-xs) solid var(--secondary-light);
+  border-top: var(--border-width-2-5) solid var(--secondary-light);
 }

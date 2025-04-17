@@ -9,7 +9,7 @@ exports[`Chip component
       class="Chip-wrapper"
       data-test="DesignSystem-GenericChip--Wrapper"
       role="button"
-      style="max-width: var(--spacing-9);"
+      style="max-width: var(--spacing-640);"
       tabindex="0"
     >
       <i
@@ -44,7 +44,7 @@ exports[`Chip component
       class="Chip-wrapper"
       data-test="DesignSystem-GenericChip--Wrapper"
       role="button"
-      style="max-width: var(--spacing-9);"
+      style="max-width: var(--spacing-640);"
       tabindex="0"
     >
       <i
@@ -79,7 +79,7 @@ exports[`Chip component
       class="Chip-wrapper"
       data-test="DesignSystem-GenericChip--Wrapper"
       role="button"
-      style="max-width: var(--spacing-9);"
+      style="max-width: var(--spacing-640);"
       tabindex="-1"
     >
       <i
@@ -114,7 +114,7 @@ exports[`Chip component
       class="Chip-wrapper"
       data-test="DesignSystem-GenericChip--Wrapper"
       role="button"
-      style="max-width: var(--spacing-9);"
+      style="max-width: var(--spacing-640);"
       tabindex="-1"
     >
       <i
@@ -149,7 +149,7 @@ exports[`Chip component
       class="Chip-wrapper"
       data-test="DesignSystem-GenericChip--Wrapper"
       role="button"
-      style="max-width: var(--spacing-9);"
+      style="max-width: var(--spacing-640);"
       tabindex="0"
     >
       <i
@@ -199,7 +199,7 @@ exports[`Chip component
       class="Chip-wrapper"
       data-test="DesignSystem-GenericChip--Wrapper"
       role="button"
-      style="max-width: var(--spacing-9);"
+      style="max-width: var(--spacing-640);"
       tabindex="0"
     >
       <i
@@ -249,7 +249,7 @@ exports[`Chip component
       class="Chip-wrapper"
       data-test="DesignSystem-GenericChip--Wrapper"
       role="button"
-      style="max-width: var(--spacing-9);"
+      style="max-width: var(--spacing-640);"
       tabindex="-1"
     >
       <i
@@ -299,7 +299,7 @@ exports[`Chip component
       class="Chip-wrapper"
       data-test="DesignSystem-GenericChip--Wrapper"
       role="button"
-      style="max-width: var(--spacing-9);"
+      style="max-width: var(--spacing-640);"
       tabindex="-1"
     >
       <i
