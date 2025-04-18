@@ -139,9 +139,6 @@ export const GivingFeedback = () => {
                 </div>
               </AIResponse.ActionBar>
             </AIResponse>
-            <Text appearance="subtle" size="small" weight="medium">
-              1:00 PM
-            </Text>
 
             {(selectedList.like || selectedList.dislike) && !showComment && (
               <Card shadow="none" className="mt-5">
@@ -371,9 +368,6 @@ const customCode = `() => {
                 </div>
               </AIResponse.ActionBar>
             </AIResponse>
-            <Text appearance="subtle" size="small" weight="medium">
-              1:00 PM
-            </Text>
 
             {(selectedList.like || selectedList.dislike) && !showComment && (
               <Card shadow="none" className="mt-5">
