@@ -9,6 +9,10 @@ export interface ChatBoxProps extends TBaseHtmlProps<HTMLDivElement> {
    */
   children: React.ReactNode;
   /**
+   * Set as `true` to show glow effect with `AI Response`
+   */
+  showGlow?: boolean;
+  /**
    * Stores custom testing data private to the component.
    */
   'data-test'?: string;
@@ -19,20 +23,32 @@ export interface ChatBoxProps extends TBaseHtmlProps<HTMLDivElement> {
 }
 
 export const ChatBox = (props: ChatBoxProps) => {
-  const { children, className, ...rest } = props;
+  const { children, className, showGlow, ...rest } = props;
 
-  const chatBoxClassNames = classNames(
+  const chatContainerClassNames = classNames(
     {
-      [styles['AIResponse-box']]: true,
+      [styles['AIResponse-container']]: !showGlow,
+      [styles['AIResponse-container--glow']]: showGlow,
     },
     className
   );
 
+  const chatBoxClassNames = classNames({
+    [styles['AIResponse-box--glow']]: showGlow,
+    [styles['AIResponse-box']]: !showGlow,
+  });
+
   return (
-    <div className={chatBoxClassNames} data-test="DesignSystem-AIResponse-Box" {...rest}>
-      {children}
+    <div className={chatContainerClassNames} data-test="DesignSystem-AIResponse-Container" {...rest}>
+      <div className={chatBoxClassNames} data-test="DesignSystem-AIResponse-Box">
+        {children}
+      </div>
     </div>
   );
+};
+
+ChatBox.defaultProps = {
+  showGlow: true,
 };
 
 export default ChatBox;
