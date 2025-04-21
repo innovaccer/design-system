@@ -1,3 +1,51 @@
+## 4.7.0 (2025-04-21)
+
+### Highlights
+
+- feat(AIChip): update design of AI Chip component (12fdeaa2)
+- feat(AIIconButton): update AI Icon Button design (3fb05f00)
+- feat(tokens): update spacing tokens (ae97d17f)
+- feat(tokens): update border width and border radius tokens (188fbba4)
+- feat(tokens): update border-radius 50% with tokens (e17bed87)
+- feat(border): add border radius classes (94d31067)
+- feat(AIResponse): update AI Response component design and API (e1ab2c30)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(AIChip): update design of AI Chip component (12fdeaa2)
+- feat(AIIconButton): update AI Icon Button design (3fb05f00)
+- feat(tokens): update spacing tokens (ae97d17f)
+- feat(tokens): update border width and border radius tokens (188fbba4)
+- feat(tokens): update border-radius 50% with tokens (e17bed87)
+- feat(border): add border radius classes (94d31067)
+- feat(AIResponse): update AI Response component design and API (e1ab2c30)
+
+### Fixes
+
+- fix(heading): fix default props size & appearance issue (e0353ea1)
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 4.6.0 (2025-03-27)
 
 ### Highlights
