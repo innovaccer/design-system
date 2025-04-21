@@ -1,5 +1,5 @@
 import React from 'react';
-import { AIResponse, Text, Sara, Menu, PlaceholderParagraph } from '@/index';
+import { AIResponse, Text, Menu, PlaceholderParagraph } from '@/index';
 import './style.css';
 
 const ChatMessage = (props) => {
@@ -95,73 +95,73 @@ export const GeneratingContent = () => {
     setVisibleSentences([]);
   };
 
+  const metaDataRenderer = () => {
+    return (
+      <Text appearance="subtle" size="small" weight="medium">
+        1:00 PM
+      </Text>
+    );
+  };
+
   return (
-    <div className="d-flex w-50">
-      <Sara />
-      <div className="ml-4 w-100">
-        <AIResponse>
-          <AIResponse.Body>
-            {
-              <ChatMessage
-                loading={loading}
-                setVisibleSentences={setVisibleSentences}
-                visibleSentences={visibleSentences}
-                setLoading={setLoading}
-              />
-            }
-          </AIResponse.Body>
+    <AIResponse className="w-50" showAvatar={true} metaData={metaDataRenderer}>
+      <AIResponse.Body>
+        {
+          <ChatMessage
+            loading={loading}
+            setVisibleSentences={setVisibleSentences}
+            visibleSentences={visibleSentences}
+            setLoading={setLoading}
+          />
+        }
+      </AIResponse.Body>
 
-          {showActionBar && (
-            <AIResponse.ActionBar>
-              <div className="d-flex">
-                <AIResponse.Button
-                  icon="push_pin"
-                  className="mr-3"
-                  selected={selectedList.pin}
-                  onClick={() => setSelectedList({ ...selectedList, pin: !selectedList.pin })}
-                >
-                  Pin
-                </AIResponse.Button>
-                <AIResponse.Button icon="content_copy">Copy</AIResponse.Button>
-              </div>
+      {showActionBar && (
+        <AIResponse.ActionBar>
+          <div className="d-flex">
+            <AIResponse.Button
+              icon="push_pin"
+              className="mr-3"
+              selected={selectedList.pin}
+              onClick={() => setSelectedList({ ...selectedList, pin: !selectedList.pin })}
+            >
+              Pin
+            </AIResponse.Button>
+            <AIResponse.Button icon="content_copy" iconType="rounded">
+              Copy
+            </AIResponse.Button>
+          </div>
 
-              <div className="d-flex align-items-center">
-                <AIResponse.Button icon="sync" className="mr-3" tooltip="Regenerate" onClick={handleRegenerate} />
-                <AIResponse.Button
-                  icon="thumb_up"
-                  iconType="outlined"
-                  className="mr-3"
-                  tooltip="Good Response"
-                  selected={selectedList.like && !selectedList.dislike}
-                  onClick={() => setSelectedList({ ...selectedList, like: !selectedList.like, dislike: false })}
-                />
-                <AIResponse.Button
-                  icon="thumb_down"
-                  iconType="outlined"
-                  className="mr-3"
-                  tooltip="Bad Response"
-                  selected={selectedList.dislike && !selectedList.like}
-                  onClick={() => setSelectedList({ ...selectedList, dislike: !selectedList.dislike, like: false })}
-                />
+          <div className="d-flex align-items-center">
+            <AIResponse.Button icon="sync" className="mr-3" tooltip="Regenerate" onClick={handleRegenerate} />
+            <AIResponse.Button
+              icon="thumb_up"
+              iconType="outlined"
+              className="mr-3"
+              tooltip="Good Response"
+              selected={selectedList.like && !selectedList.dislike}
+              onClick={() => setSelectedList({ ...selectedList, like: !selectedList.like, dislike: false })}
+            />
+            <AIResponse.Button
+              icon="thumb_down"
+              iconType="outlined"
+              className="mr-3"
+              tooltip="Bad Response"
+              selected={selectedList.dislike && !selectedList.like}
+              onClick={() => setSelectedList({ ...selectedList, dislike: !selectedList.dislike, like: false })}
+            />
 
-                <Menu
-                  trigger={<Menu.Trigger className="AIResponse-menu-button" appearance="transparent" size="tiny" />}
-                >
-                  <Menu.List>
-                    <Menu.Item>Share</Menu.Item>
-                    <Menu.Item>View source</Menu.Item>
-                    <Menu.Item>Report a problem</Menu.Item>
-                  </Menu.List>
-                </Menu>
-              </div>
-            </AIResponse.ActionBar>
-          )}
-        </AIResponse>
-        <Text appearance="subtle" size="small" weight="medium">
-          1:00 PM
-        </Text>
-      </div>
-    </div>
+            <Menu trigger={<Menu.Trigger className="AIResponse-menu-button" appearance="transparent" size="tiny" />}>
+              <Menu.List>
+                <Menu.Item>Share</Menu.Item>
+                <Menu.Item>View source</Menu.Item>
+                <Menu.Item>Report a problem</Menu.Item>
+              </Menu.List>
+            </Menu>
+          </div>
+        </AIResponse.ActionBar>
+      )}
+    </AIResponse>
   );
 };
 
@@ -252,69 +252,69 @@ const customCode = `() => {
       setVisibleSentences([]);
     };
 
+    const metaDataRenderer = () => {
+      return (
+        <Text appearance="subtle" size="small" weight="medium">
+          1:00 PM
+        </Text>
+      );
+    };
+
     return (
-      <div className="d-flex w-50">
-        <Sara />
-        <div className="ml-4 w-100">
-          <AIResponse>
-            <AIResponse.Body>
-              {
-                <ChatMessage
-                  loading={loading}
-                  setVisibleSentences={setVisibleSentences}
-                  visibleSentences={visibleSentences}
-                  setLoading={setLoading}
-                />
-              }
-            </AIResponse.Body>
+      <AIResponse showAvatar={true} className="w-50" metaData={metaDataRenderer}>
+        <AIResponse.Body>
+          {
+            <ChatMessage
+              loading={loading}
+              setVisibleSentences={setVisibleSentences}
+              visibleSentences={visibleSentences}
+              setLoading={setLoading}
+            />
+          }
+        </AIResponse.Body>
 
-            <AIResponse.ActionBar>
-              <div className="d-flex">
-                <AIResponse.Button
-                  icon="push_pin"
-                  className="mr-3"
-                  selected={selectedList.pin}
-                  onClick={() => setSelectedList({ ...selectedList, pin: !selectedList.pin })}
-                >
-                  Pin
-                </AIResponse.Button>
-                <AIResponse.Button icon="content_copy">Copy</AIResponse.Button>
-              </div>
+        <AIResponse.ActionBar>
+          <div className="d-flex">
+            <AIResponse.Button
+              icon="push_pin"
+              className="mr-3"
+              selected={selectedList.pin}
+              onClick={() => setSelectedList({ ...selectedList, pin: !selectedList.pin })}
+            >
+              Pin
+            </AIResponse.Button>
+            <AIResponse.Button icon="content_copy" iconType="rounded">Copy</AIResponse.Button>
+          </div>
 
-              <div className="d-flex align-items-center">
-                <AIResponse.Button icon="sync" className="mr-3" tooltip="Regenerate" onClick={handleRegenerate} />
-                <AIResponse.Button
-                  icon="thumb_up"
-                  iconType="outlined"
-                  className="mr-3"
-                  tooltip="Good Response"
-                  selected={selectedList.like && !selectedList.dislike}
-                  onClick={() => setSelectedList({ ...selectedList, like: !selectedList.like, dislike: false })}
-                />
-                <AIResponse.Button
-                  icon="thumb_down"
-                  iconType="outlined"
-                  className="mr-3"
-                  tooltip="Bad Response"
-                  selected={selectedList.dislike && !selectedList.like}
-                  onClick={() => setSelectedList({ ...selectedList, dislike: !selectedList.dislike, like: false })}
-                />
+          <div className="d-flex align-items-center">
+            <AIResponse.Button icon="sync" className="mr-3" tooltip="Regenerate" onClick={handleRegenerate} />
+            <AIResponse.Button
+              icon="thumb_up"
+              iconType="outlined"
+              className="mr-3"
+              tooltip="Good Response"
+              selected={selectedList.like && !selectedList.dislike}
+              onClick={() => setSelectedList({ ...selectedList, like: !selectedList.like, dislike: false })}
+            />
+            <AIResponse.Button
+              icon="thumb_down"
+              iconType="outlined"
+              className="mr-3"
+              tooltip="Bad Response"
+              selected={selectedList.dislike && !selectedList.like}
+              onClick={() => setSelectedList({ ...selectedList, dislike: !selectedList.dislike, like: false })}
+            />
 
-                <Menu trigger={<Menu.Trigger className="AIResponse-menu-button" appearance="transparent" size="tiny" />}>
-                  <Menu.List>
-                    <Menu.Item>Share</Menu.Item>
-                    <Menu.Item>View source</Menu.Item>
-                    <Menu.Item>Report a problem</Menu.Item>
-                  </Menu.List>
-                </Menu>
-              </div>
-            </AIResponse.ActionBar>
-          </AIResponse>
-          <Text appearance="subtle" size="small" weight="medium">
-            1:00 PM
-          </Text>
-        </div>
-      </div>
+            <Menu trigger={<Menu.Trigger className="AIResponse-menu-button" appearance="transparent" size="tiny" />}>
+              <Menu.List>
+                <Menu.Item>Share</Menu.Item>
+                <Menu.Item>View source</Menu.Item>
+                <Menu.Item>Report a problem</Menu.Item>
+              </Menu.List>
+            </Menu>
+          </div>
+        </AIResponse.ActionBar>
+      </AIResponse>
     );
   }
 

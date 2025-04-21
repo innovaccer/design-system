@@ -80,7 +80,7 @@ export const dialogs = () => {
 const customCode = `/*
 // styles.css
 .Modal-list {
-    height: var(--spacing-8);
+    height: var(--spacing-440);
 }
 */
 

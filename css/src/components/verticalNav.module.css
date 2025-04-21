@@ -9,14 +9,14 @@
 
 .VerticalNav-section {
   text-transform: uppercase;
-  padding-left: var(--spacing-2);
-  padding-top: var(--spacing-l);
-  padding-bottom: var(--spacing-0-75);
-  margin-top: var(--spacing);
+  padding-left: var(--spacing-40);
+  padding-top: var(--spacing-30);
+  padding-bottom: var(--spacing-15);
+  margin-top: var(--spacing-20);
 }
 
 .VerticalNav-section--border {
-  border-top: var(--spacing-xs) solid var(--secondary-light);
+  border-top: var(--border-width-2-5) solid var(--secondary-light);
 }
 
 .MenuItem {
@@ -30,16 +30,16 @@
 }
 
 .MenuItem--horizontal {
-  height: var(--spacing-3);
-  padding-right: var(--spacing-l);
-  padding-left: var(--spacing-l);
-  border-radius: var(--spacing-2);
-  margin: 0 var(--spacing-xs);
+  height: var(--spacing-80);
+  padding-right: var(--spacing-30);
+  padding-left: var(--spacing-30);
+  border-radius: var(--border-radius-40);
+  margin: 0 var(--spacing-2-5);
 }
 
 .MenuItem--vertical {
-  margin-top: var(--spacing-m);
-  margin-bottom: var(--spacing-m);
+  margin-top: var(--spacing-10);
+  margin-bottom: var(--spacing-10);
 }
 
 .MenuItem--collapsed {
@@ -48,17 +48,17 @@
   margin-left: 10px;
   margin-right: 10px;
   justify-content: center;
-  border-radius: 50%;
+  border-radius: var(--border-radius-full);
   cursor: pointer;
 }
 
 .MenuItem--expanded {
-  padding-left: var(--spacing-2);
-  padding-top: var(--spacing-m);
-  padding-bottom: var(--spacing-m);
-  margin-right: var(--spacing);
+  padding-left: var(--spacing-40);
+  padding-top: var(--spacing-10);
+  padding-bottom: var(--spacing-10);
+  margin-right: var(--spacing-20);
   justify-content: space-between;
-  border-radius: 0px var(--spacing-2) var(--spacing-2) 0px;
+  border-radius: 0px var(--border-radius-40) var(--border-radius-40) 0px;
 }
 
 .MenuItem--disabled {
@@ -106,7 +106,7 @@
 }
 
 .MenuItem--rounded {
-  border-radius: var(--spacing-2);
+  border-radius: var(--border-radius-40);
 }
 
 .MenuItem--subMenu {
@@ -126,7 +126,7 @@
 }
 
 .MenuItem-count {
-  margin-right: var(--spacing-m);
+  margin-right: var(--spacing-10);
 }
 
 .MenuItem-count--disabled {

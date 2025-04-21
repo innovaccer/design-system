@@ -5,13 +5,13 @@
   user-select: none;
   cursor: pointer;
   color: var(--inverse-lighter);
-  border-radius: 50%;
-  padding: var(--spacing-s);
+  border-radius: var(--border-radius-full);
+  padding: var(--spacing-05);
 }
 
 .ActionButton:focus-visible,
 .ActionButton:focus {
-  outline: var(--spacing-s) solid var(--secondary-shadow);
+  outline: var(--spacing-05) solid var(--secondary-shadow);
 }
 
 .ActionButton:hover {

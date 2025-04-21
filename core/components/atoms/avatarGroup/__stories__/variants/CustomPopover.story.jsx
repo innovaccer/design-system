@@ -31,7 +31,7 @@ export const customPopover = () => {
 const customCode = `/*
 // style.css
 .UserAvatars-popover {
-    max-height: var(--spacing-7);
+    max-height: var(--spacing-320);
 }
 */
 

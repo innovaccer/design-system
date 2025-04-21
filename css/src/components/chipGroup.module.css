@@ -3,7 +3,7 @@
 }
 
 .ChipGroup-item {
-  margin: 0 var(--spacing-m);
+  margin: 0 var(--spacing-10);
 }
 
 .ChipGroup-item:first-child {

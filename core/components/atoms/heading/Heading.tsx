@@ -15,11 +15,11 @@ export interface HeadingProps extends BaseProps, BaseHtmlProps<HTMLHeadingElemen
   /**
    * State of `Heading`
    */
-  appearance: HeadingAppearance;
+  appearance?: HeadingAppearance;
   /**
    * Size of `Heading`
    */
-  size: HeadingSize;
+  size?: HeadingSize;
   /**
    * Color of `Text`
    */
@@ -35,7 +35,7 @@ const sizeMap = {
 };
 
 export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>((props, ref) => {
-  const { appearance, size, children, className, color, ...rest } = props;
+  const { appearance = 'default', size = 'm', children, className, color, ...rest } = props;
 
   const classes = classNames(
     {
@@ -55,9 +55,5 @@ export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>((props
 });
 
 Heading.displayName = 'Heading';
-Heading.defaultProps = {
-  appearance: 'default' as HeadingAppearance,
-  size: 'm' as HeadingSize,
-};
 
 export default Heading;

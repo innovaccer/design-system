@@ -8,8 +8,8 @@
 /* Selection Avatar List */
 
 .SelectionAvatarGroup-item {
-  margin-right: calc(var(--spacing-s) * -1);
-  border-radius: 50%;
+  margin-right: calc(var(--spacing-05) * -1);
+  border-radius: var(--border-radius-full);
   display: flex;
   transition: transform var(--duration--fast-01) var(--standard-productive-curve);
   position: relative;
@@ -22,8 +22,8 @@
 }
 
 .SelectionAvatarGroup-item--active:active {
-  outline: var(--spacing-s) solid #00509f;
-  outline-offset: var(--spacing-xs);
+  outline: var(--spacing-05) solid #00509f;
+  outline-offset: var(--spacing-2-5);
 }
 
 .SelectionAvatarGroup-wrapper:hover .SelectionAvatarGroup-item--active {
@@ -33,18 +33,18 @@
 /* Selected Avatar Group Item */
 
 .SelectionAvatarGroup-item--selected {
-  outline-offset: var(--spacing-xs);
-  outline: var(--spacing-s) solid var(--primary-dark);
+  outline-offset: var(--spacing-2-5);
+  outline: var(--spacing-05) solid var(--primary-dark);
 }
 
 .SelectionAvatarGroup-item--selected:active {
-  outline-offset: var(--spacing-xs);
-  outline: var(--spacing-s) solid var(--primary-darker);
+  outline-offset: var(--spacing-2-5);
+  outline: var(--spacing-05) solid var(--primary-darker);
 }
 
 .SelectionAvatarGroup-item--selected:focus,
 .SelectionAvatarGroup-item--selected:focus-visible {
-  box-shadow: 0 0 0 var(--spacing-xs) white, 0 0 0 3px var(--primary-dark), 0 0 0 3px var(--primary-shadow) !important;
+  box-shadow: 0 0 0 var(--spacing-2-5) white, 0 0 0 3px var(--primary-dark), 0 0 0 3px var(--primary-shadow) !important;
 }
 
 /* Selection Avatar Popover */
@@ -55,11 +55,11 @@
 }
 
 .SelectionAvatar-inputWrapper {
-  border-bottom: var(--spacing-xs) solid var(--secondary-dark);
+  border-bottom: var(--border-width-2-5) solid var(--secondary-dark);
 }
 
 .SelectionAvatar-inputWrapper:focus-within {
-  border-bottom: var(--spacing-xs) solid var(--primary);
+  border-bottom: var(--border-width-2-5) solid var(--primary);
 }
 
 .SelectionAvatar-input {
@@ -83,7 +83,7 @@
 /* Selection Avatar Count */
 
 .SelectionAvatarCount-wrapper {
-  border-radius: 50%;
+  border-radius: var(--border-radius-full);
 }
 
 .SelectionAvatarCount:hover {
@@ -101,11 +101,11 @@
 }
 
 .SelectionAvatarCount--selected {
-  outline-offset: var(--spacing-xs);
-  outline: var(--spacing-s) solid var(--primary-dark);
+  outline-offset: var(--spacing-2-5);
+  outline: var(--spacing-05) solid var(--primary-dark);
 }
 
 .SelectionAvatarCount--selected:focus,
 .SelectionAvatarCount--selected:focus-visible {
-  box-shadow: 0 0 0 var(--spacing-xs) white, 0 0 0 3px var(--primary-dark), 0 0 0 3px var(--primary-shadow) !important;
+  box-shadow: 0 0 0 var(--spacing-2-5) white, 0 0 0 3px var(--primary-dark), 0 0 0 3px var(--primary-shadow) !important;
 }

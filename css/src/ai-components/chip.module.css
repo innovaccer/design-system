@@ -2,20 +2,35 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: var(--spacing-l);
-  padding: var(--spacing-s) var(--spacing);
-  background: var(--secondary-light);
+  border-radius: var(--border-radius-30);
+  padding: var(--spacing-05) var(--spacing-20);
   cursor: pointer;
   width: fit-content;
   border: 0;
+  background: linear-gradient(
+    274deg,
+    rgba(231, 56, 79, 0.24) 0%,
+    rgba(231, 56, 79, 0.24) 19.79%,
+    rgba(240, 125, 0, 0.24) 100%
+  );
 }
 
 .AIChip:hover {
-  background: var(--secondary);
+  background: linear-gradient(
+    274deg,
+    rgba(231, 56, 79, 0.32) 0%,
+    rgba(231, 56, 79, 0.32) 19.79%,
+    rgba(240, 125, 0, 0.32) 100%
+  );
 }
 
 .AIChip:active {
-  background: var(--secondary-dark);
+  background: linear-gradient(
+    274deg,
+    rgba(231, 56, 79, 0.48) 0%,
+    rgba(231, 56, 79, 0.48) 19.79%,
+    rgba(240, 125, 0, 0.48) 100%
+  );
 }
 
 .AIChip:focus,
@@ -25,13 +40,12 @@
 }
 
 .AIChip-icon {
-  width: var(--spacing-2);
-  height: var(--spacing-2);
-  font-size: var(--spacing-2) !important;
-  margin-right: var(--spacing-m);
-  background: linear-gradient(to bottom, #ffc208 0%, #e31c79 100%);
+  width: var(--spacing-40);
+  height: var(--spacing-40);
+  font-size: var(--spacing-40) !important;
+  margin-right: var(--spacing-10);
   background-clip: text;
-  color: transparent;
+  color: var(--inverse);
 }
 
 .AIChip-text {
@@ -44,13 +58,17 @@
 /* Disabled Chip */
 
 .AIChip--disabled {
-  background: var(--secondary-lighter);
+  background: linear-gradient(
+    274deg,
+    rgba(231, 56, 79, 0.24) 0%,
+    rgba(231, 56, 79, 0.24) 19.79%,
+    rgba(240, 125, 0, 0.24) 100%
+  );
 }
 
 .AIChip-icon--disabled {
-  background: linear-gradient(to bottom, #ffe79e 0%, #f4a4c9 100%);
   background-clip: text;
-  color: transparent;
+  color: var(--inverse-lightest);
 }
 
 .AIChip-text--disabled {
@@ -59,5 +77,10 @@
 
 .AIChip:disabled {
   cursor: not-allowed;
-  pointer-events: none;
+  background: linear-gradient(
+    274deg,
+    rgba(231, 56, 79, 0.24) 0%,
+    rgba(231, 56, 79, 0.24) 19.79%,
+    rgba(240, 125, 0, 0.24) 100%
+  );
 }

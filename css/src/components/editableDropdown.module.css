@@ -6,6 +6,6 @@
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  height: var(--spacing-3);
-  padding-left: var(--spacing-l);
+  height: var(--spacing-80);
+  padding-left: var(--spacing-30);
 }

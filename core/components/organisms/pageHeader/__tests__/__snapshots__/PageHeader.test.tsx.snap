@@ -238,7 +238,7 @@ exports[`Navigation component
                   <span
                     class="Tab--regular Tab--overflow"
                     data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                    style="max-width: var(--spacing-640);"
                   >
                     <span
                       class="Pills Badge--primary Tab-pills"
@@ -262,7 +262,7 @@ exports[`Navigation component
                   <span
                     class="Tab--regular Tab--overflow"
                     data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                    style="max-width: var(--spacing-640);"
                   >
                     <span
                       class="Pills Badge--secondary Tab-pills"
@@ -286,7 +286,7 @@ exports[`Navigation component
                   <span
                     class="Tab--regular Tab--overflow"
                     data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                    style="max-width: var(--spacing-640);"
                   >
                     <span
                       class="Pills Badge--secondary Tab-pills"
@@ -555,7 +555,7 @@ exports[`Navigation component
                   <span
                     class="Tab--regular Tab--overflow"
                     data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                    style="max-width: var(--spacing-640);"
                   >
                     <span
                       class="Pills Badge--primary Tab-pills"
@@ -579,7 +579,7 @@ exports[`Navigation component
                   <span
                     class="Tab--regular Tab--overflow"
                     data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                    style="max-width: var(--spacing-640);"
                   >
                     <span
                       class="Pills Badge--secondary Tab-pills"
@@ -603,7 +603,7 @@ exports[`Navigation component
                   <span
                     class="Tab--regular Tab--overflow"
                     data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                    style="max-width: var(--spacing-640);"
                   >
                     <span
                       class="Pills Badge--secondary Tab-pills"
@@ -867,7 +867,7 @@ exports[`Navigation component
                   <span
                     class="Tab--regular Tab--overflow"
                     data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                    style="max-width: var(--spacing-640);"
                   >
                     <span
                       class="Pills Badge--primary Tab-pills"
@@ -891,7 +891,7 @@ exports[`Navigation component
                   <span
                     class="Tab--regular Tab--overflow"
                     data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                    style="max-width: var(--spacing-640);"
                   >
                     <span
                       class="Pills Badge--secondary Tab-pills"
@@ -915,7 +915,7 @@ exports[`Navigation component
                   <span
                     class="Tab--regular Tab--overflow"
                     data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                    style="max-width: var(--spacing-640);"
                   >
                     <span
                       class="Pills Badge--secondary Tab-pills"
@@ -1007,7 +1007,7 @@ exports[`Navigation component
                   <span
                     class="Tab--regular Tab--overflow"
                     data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                    style="max-width: var(--spacing-640);"
                   >
                     <span
                       class="Pills Badge--primary Tab-pills"
@@ -1031,7 +1031,7 @@ exports[`Navigation component
                   <span
                     class="Tab--regular Tab--overflow"
                     data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                    style="max-width: var(--spacing-640);"
                   >
                     <span
                       class="Pills Badge--secondary Tab-pills"
@@ -1055,7 +1055,7 @@ exports[`Navigation component
                   <span
                     class="Tab--regular Tab--overflow"
                     data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                    style="max-width: var(--spacing-640);"
                   >
                     <span
                       class="Pills Badge--secondary Tab-pills"
@@ -1758,7 +1758,7 @@ exports[`Navigation component
                   <span
                     class="Tab--regular Tab--overflow"
                     data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                    style="max-width: var(--spacing-640);"
                   >
                     <span
                       class="Pills Badge--primary Tab-pills"
@@ -1782,7 +1782,7 @@ exports[`Navigation component
                   <span
                     class="Tab--regular Tab--overflow"
                     data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                    style="max-width: var(--spacing-640);"
                   >
                     <span
                       class="Pills Badge--secondary Tab-pills"
@@ -1806,7 +1806,7 @@ exports[`Navigation component
                   <span
                     class="Tab--regular Tab--overflow"
                     data-test="DesignSystem-Tabs--TextWrapper"
-                    style="max-width: var(--spacing-9);"
+                    style="max-width: var(--spacing-640);"
                   >
                     <span
                       class="Pills Badge--secondary Tab-pills"

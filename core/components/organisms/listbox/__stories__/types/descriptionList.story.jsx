@@ -82,7 +82,7 @@ export const descriptionList = () => {
   return (
     // style.css
     // .Listbox-wrapper {
-    //   height: var(--spacing-9);
+    //   height: var(--spacing-640);
     // }
     <Card shadow="none">
       <CardHeader className="pb-4">

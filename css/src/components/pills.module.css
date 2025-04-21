@@ -1,6 +1,6 @@
 .Pills {
   /* 160px */
-  max-width: calc(var(--spacing-2) * 10);
+  max-width: calc(var(--spacing-40) * 10);
   /* truncate */
   white-space: nowrap;
   overflow: hidden;
@@ -8,11 +8,11 @@
   font-size: var(--font-size-s);
   line-height: var(--font-height-s);
   text-transform: uppercase;
-  padding-right: var(--spacing-0-75);
-  padding-left: var(--spacing-0-75);
-  padding-top: var(--spacing-s);
-  padding-bottom: var(--spacing-s);
-  border-radius: 20px;
+  padding-right: var(--spacing-15);
+  padding-left: var(--spacing-15);
+  padding-top: var(--spacing-05);
+  padding-bottom: var(--spacing-05);
+  border-radius: var(--border-radius-full);
   display: inline-block;
   box-sizing: border-box;
   font-weight: var(--font-weight-bold);

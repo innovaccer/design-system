@@ -16,7 +16,7 @@ export const all = () => {
   const chipOptions = {
     onClick,
     clearButton: true,
-    maxWidth: 'var(--spacing-8)',
+    maxWidth: 'var(--spacing-440)',
   };
   const chipInputOptions = {
     chipOptions,
@@ -50,7 +50,7 @@ const customCode = `() => {
   const chipOptions = {
     onClick,
     clearButton: true,
-    maxWidth: 'var(--spacing-8)',
+    maxWidth: 'var(--spacing-440)',
   };
   const chipInputOptions = {
     chipOptions,

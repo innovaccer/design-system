@@ -74,7 +74,7 @@ export const getSchema = (property: string, text: string, classnames?: string, c
       cellRenderer: (props: any) => {
         const styleObj: object = Object.assign(
           {
-            [`${property}`]: `${`var(${props.data.token})`}`,
+            [`${property}`]: `${`var(${props.data.token}) !important`}`,
           },
           css
         );
