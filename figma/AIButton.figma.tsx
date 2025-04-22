@@ -9,6 +9,7 @@ figma.connect(AIButton, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS
       Disabled: true,
       Default: false,
     }),
+    withSparkle: figma.boolean('Sparkle'),
   },
   example: (props) => <AIButton {...props}>Button</AIButton>,
 });
