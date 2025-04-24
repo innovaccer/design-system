@@ -22,7 +22,11 @@ export const disabled = () => {
   };
 
   return (
-    <Select triggerOptions={{ disabled: true }} onSelect={onSelectHandler}>
+    <Select
+      triggerOptions={{ disabled: true }}
+      onSelect={onSelectHandler}
+      value={{ label: 'Alabama (205)', value: 'Alabama (205)' }}
+    >
       <Select.List>
         {medicineList.map((item, key) => {
           return (
@@ -56,16 +60,20 @@ const customCode = `() => {
   };
 
   return (
-    <Select triggerOptions={{ disabled: true }} onSelect={onSelectHandler} >
-        <Select.List>
-          {medicineList.map((item, key) => {
-            return (
-              <Select.Option key={key} option={{ label: item.label, value: item.value }}>
-                {item.label}
-              </Select.Option>
-            );
-          })}
-        </Select.List>
+    <Select
+      triggerOptions={{ disabled: true }}
+      onSelect={onSelectHandler}
+      value={{ label: 'Alabama (205)', value: 'Alabama (205)' }}
+    >
+      <Select.List>
+        {medicineList.map((item, key) => {
+          return (
+            <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+              {item.label}
+            </Select.Option>
+          );
+        })}
+      </Select.List>
     </Select>
   );
 }`;
