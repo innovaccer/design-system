@@ -4,14 +4,14 @@ import { action } from '@/utils/action';
 import ActionButton from '../../actionButton';
 
 export const actionIcon = () => {
-  const customIcon = <Input.ActionButton name="events" onClick={action('Custom action icon')} />;
+  const customIcon = <Input.ActionButton name="event" onClick={action('Custom action icon')} />;
 
   return <Input name="input" defaultValue="Custom action icon" actionIcon={customIcon} />;
 };
 
 const customCode = `() => {
   const actionIcon = (
-    <Input.ActionButton name="events" onClick={() => console.log("Custom action icon")} />
+    <Input.ActionButton name="event" onClick={() => console.log("Custom action icon")} />
   );
 
   return (

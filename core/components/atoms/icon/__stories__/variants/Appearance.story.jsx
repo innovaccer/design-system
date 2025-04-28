@@ -15,7 +15,7 @@ export const Appearance = () => {
     ['inverse', 'subtle', 'disabled'],
   ];
 
-  const name = 'events';
+  const name = 'event';
   return (
     <div>
       {appearances.map((appearance, ind) => {

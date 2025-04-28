@@ -41,7 +41,7 @@ export const transparent = () => {
           onClick={action('button-clicked')}
           appearance={'transparent'}
           selected={true}
-          icon="events"
+          icon="event"
           aria-label="Events"
         />
         <br />

@@ -109,7 +109,7 @@ const customCode = `() => {
     align: 'center',
     cellType: 'ICON',
     translate: () => ({
-      icon: 'events',
+      icon: 'event',
     }),
   }
 ];

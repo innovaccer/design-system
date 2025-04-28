@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { VerticalNav, Icon, Tooltip, Text } from '@/index';
+import { VerticalNav } from '@/index';
 
-export const CustomItemsRenderer = () => {
-  const data = [
+export const nonCollapsibleNavigation = () => {
+  const data1 = [
     {
       name: 'clinical_data',
       label: 'Clinical Data',
@@ -22,16 +22,6 @@ export const CustomItemsRenderer = () => {
           name: 'care_management.care_protocol',
           label: 'Care Protocol',
           icon: 'fact_check',
-        },
-        {
-          name: 'care_management.assessments',
-          label: 'Assessments',
-          icon: 'assessment',
-        },
-        {
-          name: 'care_management.tasks',
-          label: 'Tasks',
-          icon: 'alarm',
         },
       ],
     },
@@ -77,39 +67,86 @@ export const CustomItemsRenderer = () => {
     },
   ];
 
+  const data2 = [
+    {
+      name: 'clinical_data',
+      label: 'Clinical Data',
+    },
+    {
+      name: 'care_management',
+      label: 'Care Management',
+      subMenu: [
+        {
+          name: 'care_management.timeline',
+          label: 'Timeline',
+        },
+        {
+          name: 'care_management.care_protocol',
+          label: 'Care Protocol',
+        },
+      ],
+    },
+    {
+      name: 'episodes',
+      label: 'Episodes',
+    },
+    {
+      name: 'risk',
+      label: 'Risk',
+    },
+    {
+      name: 'preventive_health',
+      label: 'Preventive Health',
+    },
+    {
+      name: 'profile',
+      label: 'Profile',
+    },
+    {
+      name: 'claims',
+      label: 'Claims',
+    },
+    {
+      name: 'manual_entry',
+      label: 'Manual Entry',
+    },
+    {
+      name: 'patient_notes',
+      label: 'Patient Notes',
+    },
+    {
+      name: 'documents',
+      label: 'Documents',
+    },
+  ];
+
   const [active, setActive] = React.useState({
     name: 'care_management.timeline',
   });
 
-  const customItemRenderer = (props) => {
-    const { menu, expanded, isChildren } = props;
-    return (
-      <div className={`p-5 d-flex align-items-center cursor-pointer ${isChildren ? 'ml-7' : ''}`}>
-        {menu.icon && (
-          <Icon data-test="DesignSystem-VerticalNav--Icon" className={expanded ? 'mr-4' : ''} name={menu.icon} />
-        )}
-        <Tooltip tooltip={menu.label} position="right">
-          <Text weight="medium">{menu.label}</Text>
-        </Tooltip>
-      </div>
-    );
-  };
-
   return (
-    <div className="bg-secondary-lightest vh-100">
+    <div className="d-flex vh-75">
       <VerticalNav
-        menus={data}
-        expanded={true}
+        menus={data1}
         active={active}
+        expanded={true}
         onClick={setActive}
-        customItemRenderer={customItemRenderer}
+        className="mr-14 bg-secondary-lightest"
+      />
+
+      <VerticalNav
+        menus={data2}
+        active={active}
+        expanded={true}
+        onClick={setActive}
+        className="bg-secondary-lightest"
       />
     </div>
   );
 };
 
 const customCode = `() => {
-  const data = [
+  const data1 = [
     {
       name: 'clinical_data',
       label: 'Clinical Data',
@@ -129,16 +166,6 @@ const customCode = `() => {
           name: 'care_management.care_protocol',
           label: 'Care Protocol',
           icon: 'fact_check'
-        },
-        {
-          name: 'care_management.assessments',
-          label: 'Assessments',
-          icon: 'assessment'
-        },
-        {
-          name: 'care_management.tasks',
-          label: 'Tasks',
-          icon: 'alarm'
         },
       ]
     },
@@ -184,48 +211,86 @@ const customCode = `() => {
     },
   ];
 
+  const data2 = [
+    {
+      name: 'clinical_data',
+      label: 'Clinical Data',
+    },
+    {
+      name: 'care_management',
+      label: 'Care Management',
+      subMenu: [
+        {
+          name: 'care_management.timeline',
+          label: 'Timeline',
+        },
+        {
+          name: 'care_management.care_protocol',
+          label: 'Care Protocol',
+        },
+      ]
+    },
+    {
+      name: 'episodes',
+      label: 'Episodes',
+    },
+    {
+      name: 'risk',
+      label: 'Risk',
+    },
+    {
+      name: 'preventive_health',
+      label: 'Preventive Health',
+    },
+    {
+      name: 'profile',
+      label: 'Profile',
+    },
+    {
+      name: 'claims',
+      label: 'Claims',
+    },
+    {
+      name: 'manual_entry',
+      label: 'Manual Entry',
+    },
+    {
+      name: 'patient_notes',
+      label: 'Patient Notes',
+    },
+    {
+      name: 'documents',
+      label: 'Documents',
+    },
+  ];
+
   const [active, setActive] = React.useState({
     name: 'care_management.timeline'
   });
 
-  const customItemRenderer = (props) => {
-    const {menu, onClick, expanded, isChildren} = props;
-    return ( 
-      <div 
-        onClick={() => onClick(menu)}
-        className={\`p-5 d-flex align-items-center cursor-pointer \${isChildren ? 'ml-7' : ''}\`}
-      >
-        {menu.icon && 
-            <Icon
-              data-test="DesignSystem-VerticalNav--Icon"
-              className={expanded ? 'mr-4' : ''}
-              name={menu.icon}
-            />
-        }
-        <Tooltip tooltip={menu.label} position="right">
-          <Text weight="medium">
-            {menu.label}
-          </Text>
-        </Tooltip>
-      </div>
-    );
-  };
-  
   return (
-    <div className="bg-secondary-lightest vh-100">
+    <div className="d-flex vh-75">
       <VerticalNav
-        menus={data}
-        expanded={true}
+        menus={data1}
         active={active}
+        expanded={true}
         onClick={setActive}
-        customItemRenderer={customItemRenderer}
+        className="mr-14 bg-secondary-lightest"
+      />
+
+      <VerticalNav
+        menus={data2}
+        active={active}
+        expanded={true}
+        onClick={setActive}
+        className="bg-secondary-lightest"
       />
     </div>
   );
 }`;
 
 export default {
-  title: 'Components/VerticalNav/VerticalNav/Custom Items Renderer',
+  title: 'Components/VerticalNav/VerticalNav/Variants/Non Collapsible Navigation',
   component: VerticalNav,
   parameters: {
     docs: {

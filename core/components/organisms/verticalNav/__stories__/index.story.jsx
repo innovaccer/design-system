@@ -7,74 +7,52 @@ export const all = () => {
 
   const data = [
     {
-      name: 'patient_360',
-      label: 'Patient 360',
-      icon: 'assignment_ind',
-      link: '/patient360',
+      name: 'home',
+      label: 'Home',
+      icon: 'home',
+      link: '/home',
       count: 10,
-    },
-    {
-      name: 'care_management',
-      label: 'Care Management and Resources',
-      icon: 'forum',
-      count: 2,
-      subMenu: [
-        {
-          name: 'care_management.timeline',
-          label: 'Timeline',
-        },
-        {
-          name: 'care_management.care_plans',
-          label: 'Care Plans',
-        },
-      ],
-    },
-    {
-      name: 'episodes',
-      label: 'Episodes',
-      disabled: true,
-      icon: 'airline_seat_flat_angled',
-      count: 5,
-    },
-    {
-      name: 'risk',
-      label: 'Risk',
-      icon: 'favorite',
-      subMenu: [
-        {
-          name: 'risk.timeline',
-          label: 'Timeline',
-        },
-        {
-          name: 'risk.care_plans',
-          label: 'Care Plans',
-        },
-      ],
-    },
-    {
-      name: 'claims',
-      label: 'Claims',
-      icon: 'receipt',
     },
     {
       name: 'profile',
       label: 'Profile',
-      icon: 'account_circle',
+      icon: 'event',
+      link: '/profile',
     },
     {
-      name: 'manual_entry',
-      label: 'Manual Entry',
-      icon: 'border_color',
+      name: 'medical_records',
+      label: 'Medical Records',
+      icon: 'local_hospital',
+      link: '/medical_records',
+      subMenu: [
+        {
+          name: 'medical_records.allergies',
+          label: 'Allergies',
+        },
+        {
+          name: 'medical_records.conditions',
+          label: 'Conditions',
+        },
+        {
+          name: 'medical_records.diabetes',
+          label: 'Medical records diabetes history',
+        },
+        {
+          name: 'medical_records.devices',
+          label: 'Devices',
+        },
+      ],
     },
     {
-      name: 'documents',
-      label: 'Documents',
-      icon: 'assignment',
+      name: 'formulary',
+      label: 'Formulary',
+      icon: 'list',
+      link: '/formulary',
     },
   ];
 
   const [active, setActive] = React.useState({
-    name: 'care_management.timeline',
+    name: 'medical_records.allergies',
   });
 
   const onClickHandler = (menu) => {
@@ -84,7 +62,7 @@ export const all = () => {
   };
 
   return (
-    <div className="bg-secondary-lightest vh-100">
+    <div className="bg-secondary-lightest vh-75">
       <VerticalNav menus={data} expanded={true} autoCollapse={autoCollapse} active={active} onClick={onClickHandler} />
     </div>
   );
@@ -93,78 +71,52 @@ export const all = () => {
 const customCode = `() => {
   const data = [
     {
-      name: 'patient_360',
-      label: 'Patient 360',
-      icon: 'assignment_ind',
-      link: '/patient360',
+      name: 'home',
+      label: 'Home',
+      icon: 'home',
+      link: '/home',
       count: 10,
-    },
-    {
-      name: 'care_management',
-      label: 'Care Management and Resources',
-      icon: 'forum',
-      count: 2,
-      subMenu: [
-        {
-          name: 'care_management.timeline',
-          label: 'Timeline',
-          icon: 'events'
-        },
-        {
-          name: 'care_management.care_plans',
-          label: 'Care Plans',
-          icon: 'events'
-        }
-      ]
-    },
-    {
-      name: 'episodes',
-      label: 'Episodes',
-      disabled: true,
-      icon: 'airline_seat_flat_angled',
-      count: 5,
-    },
-    {
-      name: 'risk',
-      label: 'Risk',
-      icon: 'favorite',
-      subMenu: [
-        {
-          name: 'risk.timeline',
-          label: 'Timeline',
-          icon: 'events'
-        },
-        {
-          name: 'risk.care_plans',
-          label: 'Care Plans',
-          icon: 'events'
-        }
-      ]
-    },
-    {
-      name: 'claims',
-      label: 'Claims',
-      icon: 'receipt'
     },
     {
       name: 'profile',
       label: 'Profile',
-      icon: 'account_circle'
+      icon: 'event',
+      link: '/profile',
     },
     {
-      name: 'manual_entry',
-      label: 'Manual Entry',
-      icon: 'border_color'
+      name: 'medical_records',
+      label: 'Medical Records',
+      icon: 'local_hospital',
+      link: '/medical_records',
+      subMenu: [
+        {
+          name: 'medical_records.allergies',
+          label: 'Allergies',
+        },
+        {
+          name: 'medical_records.conditions',
+          label: 'Conditions',
+        },
+        {
+          name: 'medical_records.diabetes',
+          label: 'Medical records diabetes history',
+        },
+        {
+          name: 'medical_records.devices',
+          label: 'Devices',
+        },
+      ],
     },
     {
-      name: 'documents',
-      label: 'Documents',
-      icon: 'assignment'
-    }
+      name: 'formulary',
+      label: 'Formulary',
+      icon: 'list',
+      link: '/formulary',
+    },
   ];
 
   const [active, setActive] = React.useState({
-    name: 'care_management.timeline'
+    name: 'medical_records.allergies'
   });
 
   const onClickHandler = (menu) => {
@@ -173,7 +125,7 @@ const customCode = `() => {
   };
 
   return (
-    <div className="bg-secondary-lightest vh-100">
+    <div className="bg-secondary-lightest vh-75">
       <VerticalNav
         menus={data}
         expanded={true}
