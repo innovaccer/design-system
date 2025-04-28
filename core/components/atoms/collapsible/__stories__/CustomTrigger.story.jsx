@@ -1,44 +1,118 @@
 import * as React from 'react';
 import Collapsible from '@/components/atoms/collapsible';
-import { Icon, Text, Heading } from '@/index';
+import { DatePicker, VerticalNav, Button } from '@/index';
 
 // CSF format story
 export const CustomTrigger = () => {
+  const data = [
+    {
+      name: 'to_dos',
+      label: 'To-dos',
+      icon: 'check_circle_outline',
+      subMenu: [
+        {
+          name: 'to_dos.due',
+          label: 'Due',
+          count: 10,
+        },
+        {
+          name: 'to_dos.completed',
+          label: 'Completed',
+          count: 7,
+        },
+      ],
+    },
+    {
+      name: 'received',
+      label: 'Received',
+      icon: 'call_received',
+    },
+    {
+      name: 'sent',
+      label: 'Sent',
+      icon: 'call_made',
+    },
+  ];
+
   const [expanded, setExpanded] = React.useState(false);
+  const [active, setActive] = React.useState({
+    name: 'data_exchange.reports',
+  });
 
   return (
     <div>
-      <div className="d-flex align-items-center mb-3">
-        <Icon name="menu" className="cursor-pointer" onClick={() => setExpanded(!expanded)}></Icon>
-        <Heading size="s" className="ml-4">
-          Click to Open
-        </Heading>
-      </div>
-      <Collapsible withTrigger={false} expanded={expanded} height="100vh">
-        <div className="d-flex pt-4">
-          <Icon name="events" className="d-flex align-items-center px-6 Text--regular" />
-          {expanded && <Text className="mr-6">Collapsible</Text>}
-        </div>
+      <Button appearance="primary" onClick={() => setExpanded(!expanded)} className="mb-6">
+        Click here
+      </Button>
+      <Collapsible withTrigger={false} expanded={expanded} onToggle={setExpanded} hoverable={false} className="vh-50">
+        <>
+          {expanded && (
+            <div className="mt-5 d-flex justify-content-center border-bottom">
+              <DatePicker date={new Date()} size="small" />
+            </div>
+          )}
+          <VerticalNav menus={data} expanded={expanded} active={active} onClick={setActive} />
+        </>
       </Collapsible>
     </div>
   );
 };
 
 const customCode = `() => {
+  const data = [
+    {
+      name: 'to_dos',
+      label: 'To-dos',
+      icon: 'check_circle_outline',
+      subMenu: [
+        {
+          name: 'to_dos.due',
+          label: 'Due',
+          count: 10
+        },
+        {
+          name: 'to_dos.completed',
+          label: 'Completed',
+          count: 7
+        },
+      ]
+    },
+    {
+      name: 'received',
+      label: 'Received',
+      icon: 'call_received'
+    },
+    {
+      name: 'sent',
+      label: 'Sent',
+      icon: 'call_made'
+    },
+  ];
+
   const [expanded, setExpanded] = React.useState(false);
+  const [active, setActive] = React.useState({
+    name: 'data_exchange.reports'
+  });
+
 
   return (
     <div>
-      <div className='d-flex align-items-center mb-3'>
-        <Icon name="menu" className="cursor-pointer" onClick={() => setExpanded(!expanded) }></Icon>
-        <Heading size='s' className="ml-4">Click to Open</Heading>
-      </div>
-      <Collapsible withTrigger={false} expanded={expanded} height="100vh">
-        <div className="d-flex pt-4">
-          <Icon name="events" className="d-flex align-items-center px-6 Text--regular" />
-          {expanded && <Text className="mr-6">Collapsible</Text>}
-        </div>
-        </Collapsible>
+      <Button appearance="primary" onClick={() => setExpanded(!expanded)} className="mb-6">Click here</Button>
+      <Collapsible withTrigger={false} expanded={expanded} onToggle={setExpanded} hoverable={false} className="vh-50">
+        <>
+        {expanded && (
+          <div className="mt-5 d-flex justify-content-center border-bottom">
+          <DatePicker date={new Date()} size="small" />
+          </div>
+          )}
+          <VerticalNav
+            menus={data}
+            expanded={expanded}
+            active={active}
+            onClick={setActive}
+          />
+        </>
+      </Collapsible>
     </div>
   );
 }`;

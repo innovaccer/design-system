@@ -32,7 +32,7 @@ export const Grid_Cell = () => {
             name: {
               title: 'Schreiber Brynn',
               metaList: ['Meta Item 1', 'Meta Item 2'],
-              icon: 'events',
+              icon: 'event',
             },
           }}
           schema={{

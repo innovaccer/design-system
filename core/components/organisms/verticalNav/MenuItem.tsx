@@ -111,6 +111,7 @@ export const MenuItem = (props: MenuItemProps) => {
     [styles['MenuItem--disabled']]: menu.disabled,
     [styles['MenuItem--subMenu']]: isChildren && expanded,
     [styles['MenuItem--rounded']]: rounded && expanded,
+    ['pr-5']: !hasSubmenu && menu.count === undefined && expanded,
     [`color-${itemColor}`]: true,
   });
 

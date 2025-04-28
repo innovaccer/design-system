@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { VerticalNav, Collapsible } from '@/index';
 
-export const flatEdgedVerticalNavigation = () => {
+export const flat = () => {
   const data = [
     {
       name: 'home',
@@ -72,7 +72,7 @@ export const flatEdgedVerticalNavigation = () => {
         },
         {
           name: 'medical_records.smoking_history',
-          label: 'medical_records.Smoking History',
+          label: 'Medical Records Smoking History',
         },
         {
           name: 'devices',
@@ -132,7 +132,7 @@ export const flatEdgedVerticalNavigation = () => {
   };
 
   return (
-    <div className="bg-secondary-lightest vh-100">
+    <div className="bg-secondary-lightest vh-75">
       <Collapsible expanded={expanded} onToggle={setExpanded} hoverable={false}>
         <VerticalNav menus={data} expanded={expanded} active={active} onClick={onClickHandler} />
       </Collapsible>
@@ -211,7 +211,7 @@ const customCode = `() => {
         },
         {
           name: 'medical_records.smoking_history',
-          label: 'medical_records.Smoking History'
+          label: 'Medical Records Smoking History'
         },
         {
           name: 'devices',
@@ -272,7 +272,7 @@ const customCode = `() => {
   };
 
   return (
-    <div className="bg-secondary-lightest vh-100">
+    <div className="bg-secondary-lightest vh-75">
       <Collapsible expanded={expanded} onToggle={setExpanded} hoverable={false}>
         <VerticalNav
           menus={data}
@@ -286,7 +286,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/VerticalNav/VerticalNav/Flat Edged Vertical Navigation',
+  title: 'Components/VerticalNav/VerticalNav/Types/Flat',
   component: VerticalNav,
   parameters: {
     docs: {

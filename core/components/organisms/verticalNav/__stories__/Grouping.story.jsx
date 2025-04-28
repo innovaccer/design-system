@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { VerticalNav } from '@/index';
+import { VerticalNav, Collapsible } from '@/index';
 
 export const grouping = () => {
   const data = [
@@ -7,38 +7,46 @@ export const grouping = () => {
       name: 'customer_information',
       label: 'Customer Information',
       group: 'General',
+      icon: 'assignment_ind',
     },
     {
       name: 'organizational_structure',
       label: 'Organizational Structure',
       group: 'General',
+      icon: 'forum',
     },
     {
       name: 'contacts',
       label: 'Contacts',
       group: 'General',
+      icon: 'people',
     },
     {
       name: 'empi',
       label: 'EMPI',
       group: 'Platform',
+      icon: 'assignment',
     },
     {
       name: 'data_exchange',
       label: 'Data Exchange',
       group: 'Platform',
+      icon: 'fact_check',
       subMenu: [
         {
           name: 'data_exchange.reports',
           label: 'Reports',
+          icon: 'beenhere',
         },
         {
           name: 'data_exchange.destinations',
           label: 'Destinations',
+          icon: 'accessibility_new',
         },
         {
           name: 'data_exchange.validation',
           label: 'Validation',
+          icon: 'local_pharmacy',
         },
       ],
     },
@@ -46,21 +54,26 @@ export const grouping = () => {
       name: 'import_export_settings',
       label: 'Import/Export Settings',
       group: 'Platform',
+      icon: 'golf_course',
     },
     {
       name: 'pipelines',
       label: 'Pipelines',
       group: 'Apps',
+      icon: 'businesses',
     },
   ];
 
+  const [expanded, setExpanded] = React.useState(false);
   const [active, setActive] = React.useState({
     name: 'data_exchange.reports',
   });
 
   return (
-    <div className="bg-secondary-lightest vh-100">
-      <VerticalNav menus={data} expanded={true} active={active} onClick={setActive} />
+    <div className="bg-secondary-lightest vh-75">
+      <Collapsible expanded={expanded} onToggle={setExpanded}>
+        <VerticalNav menus={data} expanded={expanded} active={active} onClick={setActive} />
+      </Collapsible>
     </div>
   );
 };
@@ -70,39 +83,47 @@ const customCode = `() => {
     {
       name: 'customer_information',
       label: 'Customer Information',
-      group: 'General'
+      group: 'General',
+      icon: 'assignment_ind'
     },
     {
       name: 'organizational_structure',
       label: 'Organizational Structure',
-      group: 'General'
+      group: 'General',
+      icon: 'forum',
     },
     {
       name: 'contacts',
       label: 'Contacts',
       group: 'General',
+      icon: 'people',
     },
     {
       name: 'empi',
       label: 'EMPI',
       group: 'Platform',
+      icon: 'assignment',
     },
     {
       name: 'data_exchange',
       label: 'Data Exchange',
       group: 'Platform',
+      icon: 'fact_check',
       subMenu: [
         {
           name: 'data_exchange.reports',
-          label: 'Reports'
+          label: 'Reports',
+          icon: 'beenhere',
         },
         {
           name: 'data_exchange.destinations',
-          label: 'Destinations'
+          label: 'Destinations',
+          icon: 'accessibility_new'
         },
         {
           name: 'data_exchange.validation',
-          label: 'Validation'
+          label: 'Validation',
+          icon: 'local_pharmacy',
         },
       ]
     },
@@ -110,26 +131,31 @@ const customCode = `() => {
       name: 'import_export_settings',
       label: 'Import/Export Settings',
       group: 'Platform',
+      icon: 'golf_course',
     },
     {
       name: 'pipelines',
       label: 'Pipelines',
       group: 'Apps',
+      icon: 'businesses',
     },
   ];
 
+  const [expanded, setExpanded] = React.useState(false);
   const [active, setActive] = React.useState({
     name: 'data_exchange.reports'
   });
 
   return (
-    <div className="bg-secondary-lightest vh-100">
-      <VerticalNav
-        menus={data}
-        expanded={true}
-        active={active}
-        onClick={setActive}
-      />
+    <div className="bg-secondary-lightest vh-75">
+      <Collapsible expanded={expanded} onToggle={setExpanded}>
+        <VerticalNav
+          menus={data}
+          expanded={expanded}
+          active={active}
+          onClick={setActive}
+        />
+      </Collapsible>
     </div>
   );
 }`;
