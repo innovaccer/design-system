@@ -7,18 +7,17 @@ const customCode = `
   class CustomPopover extends React.Component {
     constructor(props) {
       super(props);
-      const { startDate, endDate } = DateRangePicker.utils.getCurrentWeek();
-
       this.state = {
-        startDate,
-        endDate,
-        selected: 'currWeek',
+        startDate: null,
+        endDate: null,
+        selected: 'custom',
         monthNav: DateRangePicker.utils.getCurrentMonth(),
       };
 
       this.renderChildren = this.renderChildren.bind(this);
       this.setDate = this.setDate.bind(this);
       this.onReset = this.onReset.bind(this);
+      this.checkAndUpdateChipSelection = this.checkAndUpdateChipSelection.bind(this);
     }
 
     setDate(date) {
@@ -27,12 +26,57 @@ const customCode = `
     }
 
     onReset() {
+      const today = new Date();
       this.setState({
-        startDate:null,
-        endDate:null,
-        selected: "",
+        startDate: today,
+        endDate: today,
+        selected: "custom",
         monthNav: DateRangePicker.utils.getCurrentMonth()
       });
+    }
+
+    checkAndUpdateChipSelection(startDate, endDate) {
+      if (!startDate || !endDate) {
+        this.setState({ selected: 'custom' });
+        return;
+      }
+
+      const currentWeek = DateRangePicker.utils.getCurrentWeek();
+      const previousWeek = DateRangePicker.utils.getPreviousWeek();
+      const previousMonth = DateRangePicker.utils.getPreviousMonth();
+      const previous90Days = DateRangePicker.utils.getPrevious90Days();
+
+      let selected = 'custom';
+
+      if (this.areDateRangesEqual(startDate, endDate, currentWeek.startDate, currentWeek.endDate)) {
+        selected = 'currWeek';
+      } else if (this.areDateRangesEqual(startDate, endDate, previousWeek.startDate, previousWeek.endDate)) {
+        selected = 'prevWeek';
+      } else if (this.areDateRangesEqual(startDate, endDate, previousMonth.startDate, previousMonth.endDate)) {
+        selected = 'prevMonth';
+      } else if (this.areDateRangesEqual(startDate, endDate, previous90Days.startDate, previous90Days.endDate)) {
+        selected = 'prev90Days';
+      }
+
+      this.setState({ selected });
+    }
+
+    areDateRangesEqual(start1, end1, start2, end2) {
+      if (!start1 || !end1 || !start2 || !end2) return false;
+      
+      // Normalize dates to start of day for comparison
+      const normalizeDate = (date) => {
+        const d = new Date(date);
+        d.setHours(0, 0, 0, 0);
+        return d;
+      };
+
+      const s1 = normalizeDate(start1);
+      const e1 = normalizeDate(end1);
+      const s2 = normalizeDate(start2);
+      const e2 = normalizeDate(end2);
+
+      return s1.getTime() === s2.getTime() && e1.getTime() === e2.getTime();
     }
 
     renderChildren() {
@@ -42,7 +86,7 @@ const customCode = `
         <div className="pt-6 px-5">
           <div className="d-flex align-items-center justify-content-between">
             <Subheading size="s" className="py-3" appearance="subtle">Range</Subheading>
-            <Icon name="refresh" onClick={this.onReset} />
+            <Button appearance="transparent" onClick={this.onReset} icon="refresh" />
           </div>
           <div className="pt-5">
             <Chip
@@ -53,10 +97,12 @@ const customCode = `
               selected={selected === "currWeek"}
               name="rangePicker"
               onClick={() => {
+                const { startDate, endDate } = DateRangePicker.utils.getCurrentWeek();
                 this.setState({
                   selected: "currWeek",
                   monthNav: DateRangePicker.utils.getCurrentMonth(),
-                  ...DateRangePicker.utils.getCurrentWeek()
+                  startDate,
+                  endDate
                 });
               }}
             />
@@ -66,12 +112,14 @@ const customCode = `
               type="selection"
               className="mb-5 d-block"
               selected={selected === 'prevWeek'}
-              name={"chip"}
+              name="rangePicker"
               onClick={() => {
+                const { startDate, endDate } = DateRangePicker.utils.getPreviousWeek();
                 this.setState({
                   selected: "prevWeek",
                   monthNav: DateRangePicker.utils.getCurrentMonth(),
-                  ...DateRangePicker.utils.getPreviousWeek()
+                  startDate,
+                  endDate
                 });
               }}
             />
@@ -83,10 +131,12 @@ const customCode = `
               selected={selected === 'prevMonth'}
               name="rangePicker"
               onClick={() => {
+                const { startDate, endDate } = DateRangePicker.utils.getPreviousMonth();
                 this.setState({
                   selected: "prevMonth",
                   monthNav: DateRangePicker.utils.getCurrentMonth() - 1,
-                  ...DateRangePicker.utils.getPreviousMonth()
+                  startDate,
+                  endDate
                 });
               }}
             />
@@ -98,10 +148,12 @@ const customCode = `
               selected={selected === 'prev90Days'}
               name="rangePicker"
               onClick={() => {
+                const { startDate, endDate } = DateRangePicker.utils.getPrevious90Days();
                 this.setState({
                   selected: "prev90Days",
                   monthNav: DateRangePicker.utils.getCurrentMonth(),
-                  ...DateRangePicker.utils.getPrevious90Days()
+                  startDate,
+                  endDate
                 });
               }}
             />
@@ -113,17 +165,19 @@ const customCode = `
               selected={selected === 'custom'}
               name="rangePicker"
               onClick={() => {
+                const today = new Date();
                 this.setState({
                   selected: "custom",
                   monthNav: DateRangePicker.utils.getCurrentMonth(),
-                  ...DateRangePicker.utils.getCustomDates()
+                  startDate: today,
+                  endDate: null
                 });
               }}
             />
           </div>
         </div>
       );
-    };
+    }
 
     render() {
       const { startDate, endDate, monthNav } = this.state;
@@ -136,7 +190,8 @@ const customCode = `
             startDate={startDate}
             endDate={endDate}
             onRangeChange={(sDate, eDate, sValue, eValue) => {
-              console.log(sDate, eDate);
+              this.setState({ startDate: sDate, endDate: eDate });
+              this.checkAndUpdateChipSelection(sDate, eDate);
             }}
             monthsInView={1}
             monthNav={monthNav}
