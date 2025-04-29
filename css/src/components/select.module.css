@@ -114,7 +114,6 @@
   overflow: hidden;
   user-select: none;
   cursor: pointer;
-  color: var(--inverse);
   border-radius: var(--border-radius-full);
   padding: var(--spacing-05);
 }
