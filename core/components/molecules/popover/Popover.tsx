@@ -37,6 +37,8 @@ export interface PopoverProps extends Pick<PopperWrapperProps, PopperProps>, Bas
    * @param Position -  | 'top-start'  | 'top'  | 'top-end'  | 'right-start'
    *  | 'right'  | 'right-end'  | 'bottom-end'  | 'bottom'  | 'bottom-start'
    *  | 'left-end'  | 'left'  | 'left-start'  | 'auto-start'  | 'auto'  | 'auto-end';
+   *
+   * @default bottom
    */
   position: Position;
   /**
@@ -70,6 +72,7 @@ export interface PopoverProps extends Pick<PopperWrapperProps, PopperProps>, Bas
   triggerClass?: string;
   /**
    * Hides the `Popover` when its reference element is outside of the `Popover` boundaries
+   * @default true
    */
   hideOnReferenceEscape?: boolean;
   /**
@@ -132,7 +135,7 @@ export const Popover = (props: PopoverProps) => {
     if (props.open !== undefined) setOpen(props.open);
   }, [props.open]);
 
-  const defaultOnToggle = React.useCallback((newOpen) => {
+  const defaultOnToggle = React.useCallback((newOpen: boolean) => {
     setOpen(newOpen);
   }, []);
 
@@ -176,7 +179,18 @@ export const Popover = (props: PopoverProps) => {
 
 Popover.displayName = 'Popover';
 
-Popover.defaultProps = Object.assign({}, filterProps(PopperWrapper.defaultProps, propsList, true), {
+// Define default props separately since React.FC doesn't support defaultProps in React 19
+const defaultPopperWrapperProps = {
+  on: 'click',
+  offset: 'medium',
+  closeOnBackdropClick: true,
+  hoverable: true,
+  appendToBody: true,
+  style: {},
+  disabled: false,
+};
+
+Popover.defaultProps = Object.assign({}, filterProps(defaultPopperWrapperProps, propsList, true), {
   offset: 'large',
   position: 'bottom',
   hideOnReferenceEscape: true,

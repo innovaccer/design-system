@@ -20,7 +20,7 @@ export interface AIResponseProps extends TBaseHtmlProps<HTMLDivElement> {
   /**
    * Pass metadata to `AI Response`
    */
-  metaData?: () => JSX.Element;
+  metaData?: () => React.ReactNode;
   /**
    * Set as `true` to show glow effect with `AI Response`
    */

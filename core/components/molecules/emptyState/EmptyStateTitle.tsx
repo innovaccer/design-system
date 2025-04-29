@@ -11,7 +11,7 @@ export interface EmptyDescriptionProps extends BaseProps {
    * The content to be displayed within the component
    * Can be any renderable React Text.
    */
-  children: React.ReactText;
+  children: string | number;
 }
 
 const EmptyStateTitle = (props: EmptyDescriptionProps) => {

@@ -41,6 +41,9 @@ const config = {
   },
   testPathIgnorePatterns: [
     '<rootDir>/examples/',
+    '<rootDir>/.rollup.cache/',
+    '<rootDir>/dist/',
+    '<rootDir>/node_modules/',
   ],
 };
 

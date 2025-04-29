@@ -56,7 +56,7 @@ export interface DropdownListProps extends TriggerAndOptionProps {
   /**
    * Template to be rendered when **error: true**
    */
-  errorTemplate?: React.FunctionComponent<ErrorTemplateProps>;
+  errorTemplate?: (props: ErrorTemplateProps) => React.ReactElement;
   /**
    * Label of Select All checkbox
    * @default "Select All"
@@ -183,7 +183,7 @@ interface OptionsProps extends DropdownListProps, BaseProps {
   tempSelected: OptionSchema[];
   previousSelected: OptionSchema[];
   selectAll: SelectAll;
-  inputRef: React.RefObject<HTMLInputElement>;
+  inputRef: React.RefObject<HTMLInputElement | null>;
   customTrigger?: (label: string) => React.ReactElement;
   applyOptions: () => void;
   cancelOptions: () => void;
@@ -195,11 +195,11 @@ interface OptionsProps extends DropdownListProps, BaseProps {
   onSelect: (option: OptionSchema, checked: boolean) => void;
   updateOptions: () => void;
   errorType: ErrorType;
-  errorTemplate?: React.FunctionComponent<ErrorTemplateProps>;
+  errorTemplate?: (props: ErrorTemplateProps) => React.ReactElement;
 }
 
 export const usePrevious = (value: any) => {
-  const ref = React.useRef();
+  const ref = React.useRef<any>(undefined);
   React.useEffect(() => {
     ref.current = value;
   }, [value]);

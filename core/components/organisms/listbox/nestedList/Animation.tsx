@@ -9,20 +9,20 @@ const getHeight = (listItemRef: React.RefObject<HTMLDivElement>) => {
   return scrollHeight;
 };
 
-export const menuItemAnimation = (listItemRef: React.RefObject<HTMLDivElement>, uniqueKey: string) => {
+export const menuItemAnimation = (listItemRef: React.RefObject<HTMLDivElement | null>, uniqueKey: string) => {
   return `
       @keyframes nestedList-open-${uniqueKey} {
       from {
         height: 0px;
       }
       to {
-        height: ${getHeight(listItemRef)}px;
+        height: ${getHeight(listItemRef as React.RefObject<HTMLDivElement>)}px;
       }
     }
 
     @keyframes nestedList-close-${uniqueKey} {
       from {
-        height: ${getHeight(listItemRef)}px;
+        height: ${getHeight(listItemRef as React.RefObject<HTMLDivElement>)}px;
       }
       to {
         height: 0px;

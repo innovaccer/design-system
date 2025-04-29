@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import * as ReactDOM from 'react-dom';
-import { Manager, Reference, Popper } from 'react-popper';
+import { useFloating, offset, flip, shift, Placement } from '@floating-ui/react';
 import { OutsideClick } from '@/index';
 import classNames from 'classnames';
 import { PositionType } from '@/common.type';
@@ -8,12 +8,6 @@ import { flushSync } from 'react-dom';
 
 type ActionType = 'click' | 'hover';
 type Offset = 'small' | 'medium' | 'large';
-type PopperChildrenProps = {
-  ref: React.Ref<any>;
-  placement: PositionType;
-  style: React.CSSProperties;
-  outOfBoundaries: boolean | null;
-};
 
 export interface PopperWrapperProps {
   init?: boolean;
@@ -102,250 +96,213 @@ export interface PopperWrapperProps {
   openDelay?: number;
 }
 
-interface PopperWrapperState {
-  zIndex?: number;
-  animationKeyframe: string;
-  isOpen: boolean;
-  uniqueKey: string;
-}
+export const PopperWrapper: React.FC<PopperWrapperProps> = (props: PopperWrapperProps) => {
+  const {
+    placement,
+    appendToBody = true,
+    boundaryElement,
+    triggerCoordinates,
+    offset: offsetProp = 'medium',
+    children,
+    open,
+    animationClass,
+    trigger,
+    on = 'click',
+    triggerClass,
+    disabled = false,
+    closeOnBackdropClick = true,
+    onToggle,
+    style = {},
+    hoverable = true,
+    openDelay,
+    closeOnScroll,
+  } = props;
 
-export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWrapperState> {
-  triggerRef: React.RefObject<HTMLElement>;
-  popupRef: React.RefObject<HTMLDivElement>;
-  hoverableDelay?: number;
-  _timer?: number;
-  _throttleWait?: boolean;
-  offsetMapping: Record<Offset, string>;
+  const [zIndex, setZIndex] = useState<number>();
+  const [animationKeyframe, setAnimationKeyframe] = useState<string>('');
+  const [isOpen, setIsOpen] = useState<boolean>((open && !disabled) || false);
+  const [uniqueKey, setUniqueKey] = useState<string>('');
 
-  static defaultProps = {
-    on: 'click',
-    offset: 'medium',
-    closeOnBackdropClick: true,
-    hoverable: true,
-    appendToBody: true,
-    style: {},
-    disabled: false,
+  const triggerRef = useRef<HTMLElement>(null);
+  const popupRef = useRef<HTMLDivElement>(null);
+  const timerRef = useRef<number | undefined>(undefined);
+  const throttleWaitRef = useRef<boolean>(false);
+
+  const hoverableDelay = 100;
+  const offsetMapping: Record<Offset, string> = {
+    small: '2px',
+    medium: '4px',
+    large: '8px',
   };
 
-  constructor(props: PopperWrapperProps) {
-    super(props);
-
-    this.state = {
-      animationKeyframe: '',
-      isOpen: (this.props.open && !this.props.disabled) || false,
-      uniqueKey: '',
-    };
-
-    this.hoverableDelay = 100;
-    this.offsetMapping = {
-      small: '2px',
-      medium: '4px',
-      large: '8px',
-    };
-
-    this.triggerRef = React.createRef();
-    this.popupRef = React.createRef();
-
-    this.getPopperChildren = this.getPopperChildren.bind(this);
-    this.mouseMoveHandler = this.mouseMoveHandler.bind(this);
-    this.handleMouseEnter = this.handleMouseEnter.bind(this);
-    this.handleMouseLeave = this.handleMouseLeave.bind(this);
-    this.boundaryScrollHandler = this.boundaryScrollHandler.bind(this);
-  }
-
-  componentDidMount() {
-    this.addBoundaryScrollHandler();
-    const triggerElement = this.triggerRef.current;
-    const zIndex = this.getZIndexForLayer(triggerElement);
-    this.setState({
-      zIndex: zIndex === undefined ? zIndex : zIndex + 1,
-    });
-  }
-
-  componentDidUpdate(prevProps: PopperWrapperProps) {
-    if (!prevProps.boundaryElement && this.props.boundaryElement) {
-      this.removeBoundaryScrollHandler();
-      this.addBoundaryScrollHandler();
-    }
-    if (prevProps.open !== this.props.open) {
-      this._throttleWait = false;
-      this.setState({
-        animationKeyframe: '',
-      });
-      if (this.props.open && !this.props.disabled) {
-        const triggerElement = this.triggerRef.current;
-        const zIndex = this.getZIndexForLayer(triggerElement);
-
-        this.setState({
-          zIndex: zIndex === undefined ? zIndex : zIndex + 1,
-          isOpen: true,
-        });
-      } else if (!this.props.open && this.props.animationClass) {
-        this.setState({
-          isOpen: false,
-        });
-      }
-    }
-  }
-
-  componentWillUnmount() {
-    this.removeBoundaryScrollHandler();
-  }
-
-  boundaryScrollHandler() {
-    const { open, on, closeOnScroll } = this.props;
-    if (on === 'click' && closeOnScroll) {
-      if (open) {
-        if (!this._throttleWait) {
-          this.togglePopper('onScroll', false);
-          this._throttleWait = true;
-        }
-      }
-    }
-  }
-
-  addBoundaryScrollHandler() {
-    if (this.props.boundaryElement && this.props.boundaryElement.addEventListener) {
-      this.props.boundaryElement.addEventListener('scroll', this.boundaryScrollHandler);
-    }
-  }
-
-  removeBoundaryScrollHandler() {
-    if (this.props.boundaryElement && this.props.boundaryElement.removeEventListener) {
-      this.props.boundaryElement.removeEventListener('scroll', this.boundaryScrollHandler);
-    }
-  }
-
-  mouseMoveHandler() {
-    if (this._timer) clearTimeout(this._timer);
-
-    this._timer = window.setTimeout(() => {
-      const { onToggle } = this.props;
-      onToggle(false, 'mouseLeave');
-    }, this.hoverableDelay);
-  }
-
-  handleMouseEnter() {
-    const { on, openDelay, onToggle } = this.props;
-    if (on === 'hover') {
-      if (this._timer) clearTimeout(this._timer);
-
-      if (openDelay) {
-        this._timer = window.setTimeout(() => {
-          this.setState(() => {
-            return { isOpen: true };
-          });
-          this.togglePopper('mouseEnter', true);
-        }, openDelay);
-      } else {
-        onToggle(true, 'mouseEnter');
-        this.setState(() => {
-          return { isOpen: true };
-        });
-      }
-    }
-  }
-
-  handleMouseLeave() {
-    const { on } = this.props;
-    if (on === 'hover') {
-      const { hoverable, onToggle } = this.props;
-      if (hoverable) {
-        this.mouseMoveHandler();
-      } else {
-        onToggle(false, 'mouseLeave');
-        this.setState({
-          isOpen: false,
-        });
-      }
-    }
-  }
-
-  togglePopper = (type: string, newValue?: boolean) => {
-    const { open, onToggle } = this.props;
-    onToggle(newValue === undefined ? !open : newValue, type);
+  // Convert PositionType to Placement for @floating-ui
+  const getFloatingPlacement = (pos: PositionType): Placement => {
+    return pos as Placement;
   };
 
-  doesEventContainsElement = (event: Event, ref: React.RefObject<any>) => {
-    const el = ref.current;
-    return el && el.contains(event.target as HTMLElement);
-  };
+  const { refs, floatingStyles } = useFloating({
+    placement: getFloatingPlacement(placement),
+    middleware: [offset(parseInt(offsetMapping[offsetProp as Offset])), flip(), shift()],
+  });
 
-  getZIndexForLayer(node: Element | null) {
+  const getZIndexForLayer = (node: Element | null) => {
     if (node === null) {
       return;
     }
 
     const layerNode = node.closest('[data-layer]') || document.body;
-    const zIndex =
+    const zIndexValue =
       layerNode === document.body ? 'auto' : parseInt(window.getComputedStyle(layerNode).zIndex || '0', 10);
-    return zIndex === 'auto' || isNaN(zIndex) ? 500 : zIndex;
-  }
+    return zIndexValue === 'auto' || isNaN(zIndexValue) ? 500 : zIndexValue;
+  };
 
-  getUpdatedStyle = (oldStyle: React.CSSProperties, placement: PositionType, offset: Offset) => {
-    const { style } = this.props;
+  const getUpdatedStyle = (oldStyle: React.CSSProperties, placement: PositionType, offset: Offset) => {
     const newStyle = { ...style, ...oldStyle };
     const position = placement ? placement.split('-')[0] : placement;
     switch (position) {
       case 'top':
-        newStyle.marginBottom = this.offsetMapping[offset];
+        newStyle.marginBottom = offsetMapping[offset];
         break;
 
       case 'bottom':
-        newStyle.marginTop = this.offsetMapping[offset];
+        newStyle.marginTop = offsetMapping[offset];
         break;
 
       case 'left':
-        newStyle.marginRight = this.offsetMapping[offset];
+        newStyle.marginRight = offsetMapping[offset];
         break;
 
       case 'right':
-        newStyle.marginLeft = this.offsetMapping[offset];
+        newStyle.marginLeft = offsetMapping[offset];
         break;
     }
-    if (this.props.triggerCoordinates) {
+    if (triggerCoordinates) {
       newStyle.position = 'absolute';
-      newStyle.transform = `translate(${this.props.triggerCoordinates.x}px, ${this.props.triggerCoordinates.y}px)`;
+      newStyle.transform = `translate(${triggerCoordinates.x}px, ${triggerCoordinates.y}px)`;
     }
     return newStyle;
   };
 
-  onClickHandler = () => {
-    const { openDelay } = this.props;
+  const togglePopper = (type: string, newValue?: boolean) => {
+    onToggle(newValue === undefined ? !open : newValue, type);
+  };
 
+  const doesEventContainsElement = (event: Event, ref: React.RefObject<any>) => {
+    const el = ref.current;
+    return el && el.contains(event.target as HTMLElement);
+  };
+
+  const onClickHandler = () => {
     // to add delay only while opening
-    if (openDelay && !this.state.isOpen) {
+    if (openDelay && !isOpen) {
       window.setTimeout(() => {
-        this.togglePopper('onClick');
+        togglePopper('onClick');
       }, openDelay);
     } else {
-      this.togglePopper('onClick');
+      togglePopper('onClick');
     }
   };
 
-  getTriggerElement(ref: React.Ref<any>) {
-    const { trigger, on, triggerClass, disabled } = this.props;
+  const handleMouseEnter = () => {
+    if (on === 'hover') {
+      if (timerRef.current) clearTimeout(timerRef.current);
+
+      if (openDelay) {
+        timerRef.current = window.setTimeout(() => {
+          setIsOpen(true);
+          togglePopper('mouseEnter', true);
+        }, openDelay);
+      } else {
+        onToggle(true, 'mouseEnter');
+        setIsOpen(true);
+      }
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (on === 'hover') {
+      if (hoverable) {
+        if (timerRef.current) clearTimeout(timerRef.current);
+
+        timerRef.current = window.setTimeout(() => {
+          onToggle(false, 'mouseLeave');
+        }, hoverableDelay);
+      } else {
+        onToggle(false, 'mouseLeave');
+        setIsOpen(false);
+      }
+    }
+  };
+
+  const boundaryScrollHandler = () => {
+    if (on === 'click' && closeOnScroll) {
+      if (open) {
+        if (!throttleWaitRef.current) {
+          togglePopper('onScroll', false);
+          throttleWaitRef.current = true;
+        }
+      }
+    }
+  };
+
+  const addBoundaryScrollHandler = () => {
+    if (boundaryElement && boundaryElement.addEventListener) {
+      boundaryElement.addEventListener('scroll', boundaryScrollHandler);
+    }
+  };
+
+  const removeBoundaryScrollHandler = () => {
+    if (boundaryElement && boundaryElement.removeEventListener) {
+      boundaryElement.removeEventListener('scroll', boundaryScrollHandler);
+    }
+  };
+
+  useEffect(() => {
+    addBoundaryScrollHandler();
+    const triggerElement = triggerRef.current;
+    const zIndexValue = getZIndexForLayer(triggerElement);
+    setZIndex(zIndexValue === undefined ? zIndexValue : zIndexValue + 1);
+
+    return () => {
+      removeBoundaryScrollHandler();
+    };
+  }, [boundaryElement]);
+
+  useEffect(() => {
+    throttleWaitRef.current = false;
+    setAnimationKeyframe('');
+    if (open && !disabled) {
+      const triggerElement = triggerRef.current;
+      const zIndexValue = getZIndexForLayer(triggerElement);
+      setZIndex(zIndexValue === undefined ? zIndexValue : zIndexValue + 1);
+      setIsOpen(true);
+    } else if (!open && animationClass) {
+      setIsOpen(false);
+    }
+  }, [open, disabled, animationClass]);
+
+  const getTriggerElement = (ref: React.Ref<any>) => {
     const options =
       on === 'hover' && !disabled
         ? {
             ref,
-            onMouseEnter: this.handleMouseEnter,
-            onMouseLeave: this.handleMouseLeave,
-            onFocus: this.handleMouseEnter,
-            onBlur: this.handleMouseLeave,
+            onMouseEnter: handleMouseEnter,
+            onMouseLeave: handleMouseLeave,
+            onFocus: handleMouseEnter,
+            onBlur: handleMouseLeave,
           }
         : {
             ref,
             onClick: (ev: React.MouseEvent<HTMLDivElement>) => {
               ev.stopPropagation();
-              !disabled && this.onClickHandler();
+              !disabled && onClickHandler();
             },
           };
 
     const classes = classNames('PopperWrapper-trigger', triggerClass);
 
     const shouldPopoverClose = (clicked: HTMLElement): boolean => {
-      const popover = this.popupRef.current as HTMLElement;
+      const popover = popupRef.current as HTMLElement;
       const container = document.body;
       const popoverIndex = popover && parseInt(window.getComputedStyle(popover).zIndex);
       let clickInsideLayer = false;
@@ -370,10 +327,9 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     };
 
     const onOutsideClickHandler = (event: Event) => {
-      const { open, closeOnBackdropClick } = this.props;
       if (open && shouldPopoverClose(event.target as HTMLElement) && closeOnBackdropClick) {
-        if (!this.doesEventContainsElement(event, this.popupRef)) {
-          this.togglePopper('outsideClick');
+        if (!doesEventContainsElement(event, popupRef)) {
+          togglePopper('outsideClick');
         }
       }
     };
@@ -383,12 +339,10 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
         {trigger}
       </OutsideClick>
     );
-  }
+  };
 
-  getPopperChildren({ ref, style, placement, outOfBoundaries }: PopperChildrenProps) {
-    const { offset, children, open, animationClass } = this.props;
-    const { zIndex, animationKeyframe, uniqueKey } = this.state;
-    const newStyle = offset ? this.getUpdatedStyle(style, placement, offset) : style;
+  const getPopperChildren = () => {
+    const newStyle = offsetProp ? getUpdatedStyle(floatingStyles, placement, offsetProp as Offset) : floatingStyles;
     let childrenStyles = {
       ...newStyle,
       zIndex,
@@ -396,15 +350,15 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     let classes = '';
 
     if (!animationClass) {
-      const maxHeight = this.popupRef.current?.offsetHeight;
+      const maxHeight = popupRef.current?.offsetHeight;
       // we need to check for transformStyles so that we open the popover at correct position (left/right)
-      const transformStyles = this.popupRef.current?.style.getPropertyValue('transform');
+      const transformStyles = popupRef.current?.style.getPropertyValue('transform');
       if (transformStyles && maxHeight && placement && !animationKeyframe) {
-        const uniqueKey = Math.random().toString(36).substring(2, 6);
+        const newUniqueKey = Math.random().toString(36).substring(2, 6);
         const isTop = placement.includes('top');
 
         const popperAnimation = `
-        @keyframes popper-open-${uniqueKey} {
+        @keyframes popper-open-${newUniqueKey} {
           from { 
             max-height: 0;
             ${isTop ? `margin-top: ${maxHeight}px` : ''};
@@ -414,7 +368,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
             ${isTop ? `margin-top: 0px` : ''};
           }
         }
-        @keyframes popper-close-${uniqueKey} {
+        @keyframes popper-close-${newUniqueKey} {
           from {
             max-height: ${maxHeight}px;
             ${isTop ? `margin-top: 0px` : ''};
@@ -426,10 +380,8 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
         }
         `;
 
-        this.setState({
-          animationKeyframe: popperAnimation,
-          uniqueKey,
-        });
+        setAnimationKeyframe(popperAnimation);
+        setUniqueKey(newUniqueKey);
       }
 
       // defining popper-fade-in custom keyframe as it is specific to popover usecase.
@@ -447,24 +399,23 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     } else {
       classes = classNames(
         {
-          [`${animationClass.open}`]: this.state.isOpen,
-          [`${animationClass.close}`]: !this.state.isOpen,
+          [`${animationClass.open}`]: isOpen,
+          [`${animationClass.close}`]: !isOpen,
         },
         children.props.className
       );
     }
 
     const childProps = {
-      ref,
+      ref: popupRef,
       style: childrenStyles,
       'data-placement': placement,
-      'data-hide': outOfBoundaries,
-      onMouseEnter: this.handleMouseEnter,
-      onMouseLeave: this.handleMouseLeave,
+      onMouseEnter: handleMouseEnter,
+      onMouseLeave: handleMouseLeave,
       onAnimationEnd: () => {
         if (!open) {
           flushSync(() => {
-            this.setState({ isOpen: false });
+            setIsOpen(false);
           });
         }
       },
@@ -475,64 +426,46 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
       animationClass ? { ...childProps, className: classes } : { ...childProps }
     );
     return element;
-  }
+  };
 
-  render() {
-    const { placement, appendToBody, hide, boundaryElement, triggerCoordinates, computeStyles } = this.props;
-    const { animationKeyframe, isOpen } = this.state;
+  // Set refs for floating-ui
+  useEffect(() => {
+    refs.setReference(triggerRef.current);
+    refs.setFloating(popupRef.current);
+  }, [refs]);
 
-    const coordinatesPopper = (
-      <Popper
-        placement={placement}
-        innerRef={this.popupRef}
-        modifiers={{
-          preventOverflow: { boundariesElement: boundaryElement || document.body },
-          hide: { enabled: hide },
-          computeStyles: computeStyles,
-          ...(triggerCoordinates && {
-            offset: {
-              offset: `${triggerCoordinates.x}px, ${triggerCoordinates.y}px`,
-            },
-          }),
-        }}
-      >
-        {this.getPopperChildren}
-      </Popper>
-    );
+  return (
+    <>
+      {animationKeyframe && <style>{animationKeyframe}</style>}
+      {getTriggerElement(triggerRef)}
 
-    return (
-      <Manager>
-        {animationKeyframe && <style>{animationKeyframe}</style>}
-        <Reference innerRef={this.triggerRef}>{({ ref }) => this.getTriggerElement(ref)}</Reference>
-
-        {isOpen &&
-          appendToBody &&
-          !triggerCoordinates &&
-          ReactDOM.createPortal(
-            <Popper
-              placement={placement}
-              innerRef={this.popupRef}
-              modifiers={{
-                preventOverflow: { boundariesElement: boundaryElement || document.body },
-                hide: { enabled: hide },
-                computeStyles: computeStyles,
-              }}
-            >
-              {this.getPopperChildren}
-            </Popper>,
-            document.body
-          )}
-
-        {isOpen && appendToBody && triggerCoordinates && ReactDOM.createPortal(coordinatesPopper, document.body)}
-
-        {isOpen && !appendToBody && !triggerCoordinates && (
-          <Popper placement={placement} innerRef={this.popupRef} modifiers={{ computeStyles: computeStyles }}>
-            {this.getPopperChildren}
-          </Popper>
+      {isOpen &&
+        appendToBody &&
+        !triggerCoordinates &&
+        ReactDOM.createPortal(
+          <div ref={refs.setFloating} style={floatingStyles}>
+            {getPopperChildren()}
+          </div>,
+          document.body
         )}
-      </Manager>
-    );
-  }
-}
+
+      {isOpen &&
+        appendToBody &&
+        triggerCoordinates &&
+        ReactDOM.createPortal(
+          <div ref={refs.setFloating} style={floatingStyles}>
+            {getPopperChildren()}
+          </div>,
+          document.body
+        )}
+
+      {isOpen && !appendToBody && !triggerCoordinates && (
+        <div ref={refs.setFloating} style={floatingStyles}>
+          {getPopperChildren()}
+        </div>
+      )}
+    </>
+  );
+};
 
 export default PopperWrapper;

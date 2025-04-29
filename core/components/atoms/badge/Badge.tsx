@@ -17,7 +17,7 @@ export interface BadgeProps extends BaseProps {
   /**
    * Text to be added inside `Badge`
    */
-  children: React.ReactText;
+  children: string | number;
 }
 
 export const Badge = (props: BadgeProps) => {

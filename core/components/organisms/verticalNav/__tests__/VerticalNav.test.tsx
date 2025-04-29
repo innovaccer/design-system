@@ -171,6 +171,48 @@ describe('Vertical Navigation component with prop: menus', () => {
     expect(getAllByTestId('DesignSystem-VerticalNav--Pills')[1]).toHaveTextContent('99+');
   });
 
+  it('displays 99+ when count is greater than 99', () => {
+    const menusWithLargeCount = [
+      {
+        name: 'test_menu',
+        label: 'Test Menu',
+        icon: 'test_icon',
+        count: 150,
+        group: 'Section 1',
+      },
+    ];
+    const { getAllByTestId } = render(<VerticalNav menus={menusWithLargeCount} expanded={true} />);
+    expect(getAllByTestId('DesignSystem-VerticalNav--Pills')[0]).toHaveTextContent('99+');
+  });
+
+  it('displays exact count when count is less than or equal to 99', () => {
+    const menusWithExactCount = [
+      {
+        name: 'test_menu',
+        label: 'Test Menu',
+        icon: 'test_icon',
+        count: 99,
+        group: 'Section 1',
+      },
+    ];
+    const { getAllByTestId } = render(<VerticalNav menus={menusWithExactCount} expanded={true} />);
+    expect(getAllByTestId('DesignSystem-VerticalNav--Pills')[0]).toHaveTextContent('99');
+  });
+
+  it('displays exact count when count is string', () => {
+    const menusWithExactCount = [
+      {
+        name: 'test_menu',
+        label: 'Test Menu',
+        icon: 'test_icon',
+        count: '100',
+        group: 'Section 1',
+      },
+    ];
+    const { getAllByTestId } = render(<VerticalNav menus={menusWithExactCount} expanded={true} />);
+    expect(getAllByTestId('DesignSystem-VerticalNav--Pills')[0]).toHaveTextContent('100');
+  });
+
   it('renders menus with sections', () => {
     const { getAllByTestId } = render(<VerticalNav menus={menus} expanded={true} />);
 

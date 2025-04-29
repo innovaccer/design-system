@@ -38,7 +38,9 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
 
   handleElement: HTMLElement | null = null;
   refHandlers = {
-    handle: (el: HTMLDivElement) => (this.handleElement = el),
+    handle: (el: HTMLDivElement | null) => {
+      this.handleElement = el;
+    },
   };
 
   componentWillUnmount() {

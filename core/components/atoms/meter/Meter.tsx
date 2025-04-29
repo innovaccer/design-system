@@ -89,7 +89,7 @@ export interface MeterProps extends BaseProps, React.HTMLAttributes<HTMLDivEleme
    * `percentage`: Percentage of the Meter filled <br />
    *
    */
-  renderLabel?: (props: RenderLabelProps) => React.ReactText;
+  renderLabel?: (props: RenderLabelProps) => string | number;
   /**
    * Determines whether to show default value label in percentage
    */

@@ -34,7 +34,7 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
 
   const renderIcon = (menu: Menu, isActive: boolean) => {
     if (menu.count !== undefined) {
-      const count = menu.count > 99 ? '99+' : menu.count;
+      const count = (menu.count as number) > 99 ? '99+' : menu.count;
       return (
         <Pills
           subtle={menu.disabled}

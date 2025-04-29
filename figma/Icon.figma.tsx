@@ -1,6 +1,7 @@
 import React from 'react';
 import { Icon } from '@/index';
 import figma from '@figma/code-connect';
+import { IconProps } from '@/index.type';
 
 figma.connect(Icon, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=6-135', {
   imports: ["import { Icon } from '@innovaccer/design-system'"],
@@ -14,7 +15,7 @@ figma.connect(Icon, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---W
       Nimbu: 'accent4',
       Neel: 'accent3',
       Jamun: 'accent2',
-      Namak: 'white'
+      Namak: 'white',
     }),
     size: figma.enum('Size', {
       '12x12': 12,
@@ -23,10 +24,10 @@ figma.connect(Icon, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---W
       '20x20': 20,
       '24x24': 24,
     }),
-    type: figma.enum('Style' , {
+    type: figma.enum('Style', {
       Rounded: 'rounded',
-      Outline: 'outlined'
-    })
+      Outline: 'outlined',
+    }),
   },
-  example: (props) => <Icon name="event" {...props} />,
+  example: (props) => <Icon name="event" {...(props as IconProps)} />,
 });

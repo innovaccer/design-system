@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Tooltip, Text, Avatar } from '@/index';
 
 export const autoTooltip = () => {
-  const [showTooltip, setShowTooltip] = React.useState(false);
   const elementRef = React.useRef(null);
   return (
     <div className="d-flex justify-content-around">

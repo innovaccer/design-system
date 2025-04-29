@@ -83,7 +83,7 @@ export interface AvatarSelectionProps extends BaseProps {
   /**
    * Callback function to create custom avatar content
    */
-  avatarRenderer?: (data: AvatarData) => JSX.Element;
+  avatarRenderer?: (data: AvatarData) => React.JSX.Element;
   /**
    * Callback function for avatar selection
    */
@@ -115,7 +115,7 @@ export interface AvatarSelectionProps extends BaseProps {
   /**
    * Element to be render inside popover
    */
-  children?: React.ReactNode;
+  children?: React.JSX.Element;
   /**
    * Adds custom class to avatar wrapper
    */

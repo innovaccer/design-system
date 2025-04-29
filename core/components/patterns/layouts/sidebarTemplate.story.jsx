@@ -108,12 +108,12 @@ const customCode = `() => {
         {
           name: 'care_management.timeline',
           label: 'Timeline',
-          icon: 'events'
+          icon: 'event'
         },
         {
           name: 'care_management.care_plans',
           label: 'Care Plans',
-          icon: 'events'
+          icon: 'event'
         }
       ]
     },
@@ -131,12 +131,12 @@ const customCode = `() => {
         {
           name: 'risk.timeline',
           label: 'Timeline',
-          icon: 'events'
+          icon: 'event'
         },
         {
           name: 'risk.care_plans',
           label: 'Care Plans',
-          icon: 'events'
+          icon: 'event'
         }
       ]
     },

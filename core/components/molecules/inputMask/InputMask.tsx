@@ -125,7 +125,7 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
   const defaultSelection = React.useMemo(() => getDefaultSelection(), [getDefaultSelection]);
 
   const ref = React.useRef<HTMLInputElement>(null);
-  const deferId = React.useRef<number | undefined>();
+  const deferId = React.useRef<number | undefined>(undefined);
   const selectionPos = React.useRef<SelectionPos>(defaultSelection);
   const newSelectionPos = React.useRef<number>(0);
 

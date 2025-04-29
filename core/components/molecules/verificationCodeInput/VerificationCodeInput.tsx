@@ -39,7 +39,7 @@ interface VerificationProps extends BaseProps {
   onChange?: (value: string) => void;
 }
 
-type Refs = RefObject<HTMLInputElement>[];
+type Refs = RefObject<HTMLInputElement | null>[];
 
 export type VerificationCodeInputProps = VerificationProps &
   Omit<

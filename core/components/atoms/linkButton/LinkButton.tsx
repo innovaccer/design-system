@@ -12,11 +12,12 @@ export type IconAlignment = 'left' | 'right';
 export interface LinkButtonProps extends BaseProps, BaseHtmlProps<HTMLButtonElement> {
   /**
    * Type of `Link Button`
+   * @default button
    */
   type?: ButtonType;
   /**
    * The size of `Link Button`
-   * @default "regular"
+   * @default regular
    */
   size?: LinkButtonSize;
   /**
@@ -30,7 +31,7 @@ export interface LinkButtonProps extends BaseProps, BaseHtmlProps<HTMLButtonElem
   icon?: string;
   /**
    * Align icon left or right
-   * @default "left"
+   * @default left
    */
   iconAlign?: IconAlignment;
   /**
@@ -40,7 +41,7 @@ export interface LinkButtonProps extends BaseProps, BaseHtmlProps<HTMLButtonElem
   /**
    * Text to be added inside `Button`
    */
-  children: React.ReactText;
+  children?: string | number;
   /**
    * Specifies tab index of `Button`
    * @default 0
@@ -74,7 +75,19 @@ const sizeMapping: Record<LinkButtonSize, number> = {
 };
 
 export const LinkButton = React.forwardRef<HTMLButtonElement, LinkButtonProps>((props, ref) => {
-  const { children, type, className, disabled, tabIndex, icon, subtle, size, iconAlign, iconType, ...rest } = props;
+  const {
+    children,
+    size = 'regular',
+    type = 'button',
+    iconAlign = 'left',
+    disabled,
+    className,
+    tabIndex,
+    icon,
+    subtle,
+    iconType,
+    ...rest
+  } = props;
 
   const buttonClass = classNames({
     [styles['LinkButton']]: true,
@@ -118,10 +131,5 @@ export const LinkButton = React.forwardRef<HTMLButtonElement, LinkButtonProps>((
 });
 
 LinkButton.displayName = 'LinkButton';
-LinkButton.defaultProps = {
-  size: 'regular',
-  type: 'button',
-  iconAlign: 'left',
-};
 
 export default LinkButton;

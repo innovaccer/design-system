@@ -12,7 +12,7 @@ export interface TextProps extends BaseProps, BaseHtmlProps<HTMLSpanElement> {
   /**
    * Text to be rendered
    */
-  children: React.ReactText;
+  children: string | number;
   /**
    * Denotes weight of `Text`
    */
@@ -23,10 +23,12 @@ export interface TextProps extends BaseProps, BaseHtmlProps<HTMLSpanElement> {
   small?: boolean;
   /**
    * State of `Text`
+   * @default default
    */
   appearance?: TextAppearance;
   /**
    * Size of `Text`
+   * @default regular
    */
   size?: TextSize;
   /**
@@ -59,10 +61,5 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, ref) =>
 });
 
 Text.displayName = 'Text';
-
-Text.defaultProps = {
-  appearance: 'default',
-  size: 'regular',
-};
 
 export default Text;

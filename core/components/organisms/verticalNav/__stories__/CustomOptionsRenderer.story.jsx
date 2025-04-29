@@ -35,7 +35,7 @@ export const CustomOptionsRenderer = () => {
         {
           name: 'care_management.tasks',
           label: 'Tasks',
-          icon: 'alarm',
+          icon: 'alarm_filled',
           count: 10,
         },
       ],
@@ -55,16 +55,6 @@ export const CustomOptionsRenderer = () => {
       name: 'preventive_health',
       label: 'Preventive Health',
       icon: 'beenhere',
-    },
-    {
-      name: 'profile',
-      label: 'Profile',
-      icon: 'receipt',
-    },
-    {
-      name: 'claims',
-      label: 'Claims',
-      icon: 'account_circle',
     },
     {
       name: 'manual_entry',
@@ -106,7 +96,7 @@ export const CustomOptionsRenderer = () => {
   };
 
   return (
-    <div className="bg-secondary-lightest vh-100">
+    <div className="bg-secondary-lightest vh-75">
       <VerticalNav
         menus={data}
         expanded={true}
@@ -152,7 +142,7 @@ const customCode = `() => {
         {
           name: 'care_management.tasks',
           label: 'Tasks',
-          icon: 'alarm',
+          icon: 'alarm_filled',
           count: 10
         },
       ]
@@ -172,16 +162,6 @@ const customCode = `() => {
       name: 'preventive_health',
       label: 'Preventive Health',
       icon: 'beenhere'
-    },
-    {
-      name: 'profile',
-      label: 'Profile',
-      icon: 'receipt'
-    },
-    {
-      name: 'claims',
-      label: 'Claims',
-      icon: 'account_circle'
     },
     {
       name: 'manual_entry',
@@ -234,7 +214,7 @@ const customCode = `() => {
   };
   
   return (
-    <div className="bg-secondary-lightest vh-100">
+    <div className="bg-secondary-lightest vh-75">
       <VerticalNav
         menus={data}
         expanded={true}
