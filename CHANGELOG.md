@@ -1,3 +1,40 @@
+## 4.8.0 (2025-05-01)
+
+### Highlights
+
+- feat(aibutton): update appearance with sparkle variant in AI Button component (f8b613b4)
+- fix(select): update disabled state for select trigger cross icon (c1dbad7f)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(aibutton): update appearance with sparkle variant in AI Button component (f8b613b4)
+
+### Fixes
+
+- fix(select): update disabled state for select trigger cross icon (c1dbad7f)
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 4.7.0 (2025-04-21)
 
 ### Highlights
