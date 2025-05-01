@@ -9,62 +9,47 @@
   line-height: var(--font-height-s);
   display: flex;
   align-items: center;
+  color: var(--inverse);
+  background: linear-gradient(
+    277deg,
+    rgba(227, 28, 121, 0.15) 0%,
+    rgba(231, 56, 79, 0.24) 28%,
+    rgba(240, 125, 0, 0.15) 100%
+  );
+}
+
+.AIButton:hover {
+  background: linear-gradient(
+    277deg,
+    rgba(227, 28, 121, 0.2) 0%,
+    rgba(231, 56, 79, 0.32) 28%,
+    rgba(240, 125, 0, 0.2) 100%
+  );
+}
+
+.AIButton:active {
+  background: linear-gradient(
+    277deg,
+    rgba(227, 28, 121, 0.31) 0%,
+    rgba(231, 56, 79, 0.48) 28%,
+    rgba(240, 125, 0, 0.31) 100%
+  );
 }
 
 .AIButton:disabled {
   cursor: not-allowed;
-  pointer-events: none;
+  opacity: var(--opacity-10);
+  background: linear-gradient(
+    277deg,
+    rgba(227, 28, 121, 0.15) 0%,
+    rgba(231, 56, 79, 0.24) 28%,
+    rgba(240, 125, 0, 0.15) 100%
+  );
 }
 
 .AIButton:focus {
   outline: 0;
-}
-
-/* Primary Button */
-
-.AIButton--primary {
-  background: var(--primary);
-  color: var(--white);
-}
-
-.AIButton--primary:hover {
-  background: var(--primary-dark);
-}
-
-.AIButton--primary:active {
-  background: var(--primary-darker);
-}
-
-.AIButton--primary:disabled {
-  background: var(--primary-lighter);
-}
-
-.AIButton--primary:focus {
   box-shadow: var(--shadow-spread) var(--primary-shadow);
-}
-
-/* Basic Button */
-
-.AIButton--basic {
-  background: var(--secondary-light);
-  color: var(--inverse);
-}
-
-.AIButton--basic:hover {
-  background: var(--secondary);
-}
-
-.AIButton--basic:active {
-  background: var(--secondary-dark);
-}
-
-.AIButton--basic:disabled {
-  background: var(--secondary-lighter);
-  color: var(--inverse-lightest);
-}
-
-.AIButton--basic:focus {
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
 }
 
 /* Button Icon */
