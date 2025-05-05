@@ -160,6 +160,14 @@ export const GridBody = (props: GridBodyProps) => {
     }
   };
 
+  const virtualScrollHandler = (event: Event, element: HTMLElement) => {
+    const gridHeadEl = ref!.querySelector('.Grid-head') as HTMLElement;
+    if (gridHeadEl) {
+      gridHeadEl.scrollLeft = element.scrollLeft;
+    }
+    onScrollHandler(event, element);
+  };
+
   const memoizedVirtualScroll = React.useMemo(
     () => (
       <VirtualList
@@ -169,7 +177,7 @@ export const GridBody = (props: GridBodyProps) => {
         minItemHeight={minRowHeight[size]}
         totalLength={dataLength}
         renderItem={renderRow}
-        onScroll={onScrollHandler}
+        onScroll={virtualScrollHandler}
       />
     ),
     [dataLength, renderRow, minRowHeight, size]
