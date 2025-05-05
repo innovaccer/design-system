@@ -34,3 +34,202 @@
 .bottom-0 {
   bottom: 0;
 }
+
+/** New utility classes **/
+
+/* Visibility */
+.visible {
+  visibility: visible !important;
+}
+
+.invisible {
+  visibility: hidden !important;
+}
+
+/* User select */
+.user-select-none {
+  user-select: none !important;
+}
+
+.user-select-all {
+  user-select: all !important;
+}
+
+.user-select-auto {
+  user-select: auto !important;
+}
+
+.user-select-text {
+  user-select: text !important;
+}
+
+/* Word break */
+.word-break-normal {
+  word-break: normal !important;
+}
+
+.word-break-all {
+  word-break: break-all !important;
+}
+
+.word-break-word {
+  word-break: break-word !important;
+}
+
+.word-wrap-break {
+  word-wrap: break-word !important;
+}
+
+/* List style */
+.list-style-none {
+  list-style: none !important;
+}
+
+.list-style-disc {
+  list-style: disc !important;
+}
+
+.list-style-circle {
+  list-style: circle !important;
+}
+
+.list-style-square {
+  list-style: square !important;
+}
+
+/* Pointer events */
+.pointer-events-none {
+  pointer-events: none !important;
+}
+
+.pointer-events-auto {
+  pointer-events: auto !important;
+}
+
+/* Object fit */
+.object-fit-contain {
+  object-fit: contain !important;
+}
+
+.object-fit-cover {
+  object-fit: cover !important;
+}
+
+.object-fit-fill {
+  object-fit: fill !important;
+}
+
+.object-fit-scale-down {
+  object-fit: scale-down !important;
+}
+
+.object-fit-none {
+  object-fit: none !important;
+}
+
+/* Resize */
+.resize-none {
+  resize: none !important;
+}
+
+.resize-both {
+  resize: both !important;
+}
+
+.resize-horizontal {
+  resize: horizontal !important;
+}
+
+.resize-vertical {
+  resize: vertical !important;
+}
+
+/* Box decoration */
+.box-decoration-clone {
+  box-decoration-break: clone !important;
+}
+
+.box-decoration-slice {
+  box-decoration-break: slice !important;
+}
+
+/* Mix blend mode */
+.mix-blend-normal {
+  mix-blend-mode: normal !important;
+}
+
+.mix-blend-multiply {
+  mix-blend-mode: multiply !important;
+}
+
+.mix-blend-screen {
+  mix-blend-mode: screen !important;
+}
+
+.mix-blend-overlay {
+  mix-blend-mode: overlay !important;
+}
+
+.mix-blend-darken {
+  mix-blend-mode: darken !important;
+}
+
+.mix-blend-lighten {
+  mix-blend-mode: lighten !important;
+}
+
+/* Backface visibility */
+.backface-visible {
+  backface-visibility: visible !important;
+}
+
+.backface-hidden {
+  backface-visibility: hidden !important;
+}
+
+/* Filter */
+.filter-none {
+  filter: none !important;
+}
+
+.filter-blur-sm {
+  filter: blur(4px) !important;
+}
+
+.filter-blur {
+  filter: blur(8px) !important;
+}
+
+.filter-blur-lg {
+  filter: blur(12px) !important;
+}
+
+/* Writing mode */
+.writing-mode-horizontal-tb {
+  writing-mode: horizontal-tb !important;
+}
+
+.writing-mode-vertical-rl {
+  writing-mode: vertical-rl !important;
+}
+
+.writing-mode-vertical-lr {
+  writing-mode: vertical-lr !important;
+}
+
+/* Aspect ratio */
+.aspect-ratio-1x1 {
+  aspect-ratio: 1 / 1 !important;
+}
+
+.aspect-ratio-4x3 {
+  aspect-ratio: 4 / 3 !important;
+}
+
+.aspect-ratio-16x9 {
+  aspect-ratio: 16 / 9 !important;
+}
+
+.aspect-ratio-21x9 {
+  aspect-ratio: 21 / 9 !important;
+}
