@@ -1,6 +1,46 @@
-import { Tooltip } from '@/index';
+import * as React from 'react';
+import { Tooltip, Avatar, Text } from '@/index';
 
-export const autoTooltipWithHook = () => {};
+export const autoTooltipWithHook = () => {
+  const [isFirstTruncated, setIsFirstTruncated] = React.useState(false);
+  const [isSecondTruncated, setIsSecondTruncated] = React.useState(false);
+
+  const { detectTruncation } = Tooltip.useAutoTooltip();
+  const firstContentRef = React.useRef(null);
+  const SecondContentRef = React.useRef(null);
+
+  React.useEffect(() => {
+    const isFirstTruncated = detectTruncation(firstContentRef);
+    const isSecondTruncated = detectTruncation(SecondContentRef);
+    setIsFirstTruncated(isFirstTruncated);
+    setIsSecondTruncated(isSecondTruncated);
+  }, [firstContentRef, SecondContentRef]);
+
+  return (
+    <div className="d-flex justify-content-around">
+      <div>
+        <Tooltip showTooltip={isFirstTruncated} tooltip="John Doe: Passionate Innovator and Visionary Leader">
+          <div className="d-flex ellipsis--noWrap">
+            <Avatar appearance="primary" withTooltip={false} firstName="John" lastName="Doe" size="tiny" />
+            <Text ref={firstContentRef} style={{ maxWidth: 150 }} className="ellipsis--noWrap w-100 ml-3 mt-2">
+              John Doe: Passionate Innovator and Visionary Leader
+            </Text>
+          </div>
+        </Tooltip>
+      </div>
+      <div>
+        <Tooltip showTooltip={isSecondTruncated} tooltip="John Doe: Passionate Innovator and Visionary Leader">
+          <div className="d-flex ellipsis--noWrap">
+            <Avatar appearance="primary" withTooltip={false} firstName="John" lastName="Doe" size="tiny" />
+            <Text ref={SecondContentRef} className="ellipsis--noWrap w-100 ml-3 mt-2">
+              John Doe: Passionate Innovator and Visionary Leader
+            </Text>
+          </div>
+        </Tooltip>
+      </div>
+    </div>
+  );
+};
 
 const customCode = `() => {
   const [isFirstTruncated, setIsFirstTruncated] = React.useState(false);

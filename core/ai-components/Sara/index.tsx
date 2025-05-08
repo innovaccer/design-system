@@ -33,7 +33,7 @@ export interface SaraProps extends TBaseHtmlProps<HTMLDivElement> {
 }
 
 export const Sara = (props: SaraProps) => {
-  const { size, state, alt, className, ...rest } = props;
+  const { size = 32, state = 'default', alt, className, ...rest } = props;
 
   const SaraClassNames = classNames(
     {
@@ -55,11 +55,6 @@ export const Sara = (props: SaraProps) => {
       <Player autoplay={true} loop src={AIResting} style={{ height: size, width: size }} />
     </div>
   );
-};
-
-Sara.defaultProps = {
-  size: 32,
-  state: 'default',
 };
 
 export default Sara;

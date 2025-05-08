@@ -7,7 +7,7 @@ import styles from '@css/components/text.module.css';
 
 export type ParagraphAppearance = 'default' | 'white' | 'destructive' | 'subtle' | 'disabled';
 
-export interface ParagraphProps extends BaseProps, BaseHtmlProps<HTMLParagraphElement> {
+export type ParagraphProps = {
   /**
    * Text to be rendered
    * @type {React.ReactNode}
@@ -15,13 +15,15 @@ export interface ParagraphProps extends BaseProps, BaseHtmlProps<HTMLParagraphEl
   children: React.ReactNode;
   /**
    * State of `Paragraph`
+   * @default default
    */
   appearance?: ParagraphAppearance;
   /**
    * Color of `Paragraph`
    */
   color?: TextColor;
-}
+} & BaseProps &
+  BaseHtmlProps<HTMLParagraphElement>;
 
 export const Paragraph = React.forwardRef<HTMLParagraphElement, ParagraphProps>((props, ref) => {
   const { appearance = 'default', children, className, color, ...rest } = props;
@@ -43,8 +45,5 @@ export const Paragraph = React.forwardRef<HTMLParagraphElement, ParagraphProps>(
 });
 
 Paragraph.displayName = 'Paragraph';
-Paragraph.defaultProps = {
-  appearance: 'default',
-};
 
 export default Paragraph;

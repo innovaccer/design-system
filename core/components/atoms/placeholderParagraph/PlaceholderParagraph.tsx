@@ -6,11 +6,11 @@ import styles from '@css/components/placeholder.module.css';
 export type Length = 'small' | 'medium' | 'large';
 export type PlaceholderParagraphSize = 'xxs' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl';
 
-export interface PlaceholderParagraphProps extends BaseProps {
+export type PlaceholderParagraphProps = {
   /**
    * Length of `Placeholder`
    */
-  length: Length;
+  length?: Length;
   /**
    * Height of `Placeholder`
    *
@@ -33,10 +33,10 @@ export interface PlaceholderParagraphProps extends BaseProps {
    * xxxl: `Heading` size: xxl
    */
   size?: PlaceholderParagraphSize;
-}
+} & BaseProps;
 
 export const PlaceholderParagraph = (props: PlaceholderParagraphProps) => {
-  const { length, size, className } = props;
+  const { length = 'medium', size, className } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -63,8 +63,5 @@ export const PlaceholderParagraph = (props: PlaceholderParagraphProps) => {
 };
 
 PlaceholderParagraph.displayName = 'PlaceholderParagraph';
-PlaceholderParagraph.defaultProps = {
-  length: 'medium',
-};
 
 export default PlaceholderParagraph;

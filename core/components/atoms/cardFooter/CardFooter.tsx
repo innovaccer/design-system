@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import styles from '@css/components/card.module.css';
 
-export interface CardFooterProps extends BaseProps {
+export type CardFooterProps = {
   /**
    * Button/Button Group to be rendered inside `Card Footer`
    */
@@ -11,11 +11,11 @@ export interface CardFooterProps extends BaseProps {
   /**
    * Determines if seperator is visible
    */
-  withSeperator: boolean;
-}
+  withSeperator?: boolean;
+} & BaseProps;
 
 export const CardFooter = (props: CardFooterProps) => {
-  const { className, children, withSeperator } = props;
+  const { children, withSeperator = true, className } = props;
   const baseProps = extractBaseProps(props);
 
   const classes = classNames(
@@ -34,9 +34,5 @@ export const CardFooter = (props: CardFooterProps) => {
 };
 
 CardFooter.displayName = 'CardFooter';
-
-CardFooter.defaultProps = {
-  withSeperator: true,
-};
 
 export default CardFooter;

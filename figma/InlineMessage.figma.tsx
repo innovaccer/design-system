@@ -1,5 +1,6 @@
 import React from 'react';
 import { InlineMessage } from '@/index';
+import { InlineMessageProps } from '@/index.type';
 import figma from '@figma/code-connect';
 
 figma.connect(InlineMessage, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=2584-28807', {
@@ -16,5 +17,5 @@ figma.connect(InlineMessage, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0
       Small: 'small',
     }),
   },
-  example: (props) => <InlineMessage description="InlineMessage goes here" {...props} />,
+  example: (props) => <InlineMessage {...(props as InlineMessageProps)} description="InlineMessage goes here" />,
 });

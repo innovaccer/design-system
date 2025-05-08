@@ -9,7 +9,7 @@ type SVGIconProps = {
   /**
    * Variant for the dropzone
    */
-  type: 'standard' | 'compressed' | 'tight';
+  type?: 'standard' | 'compressed' | 'tight';
   /**
    * If true, dropzone icon appears disabled
    */

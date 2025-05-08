@@ -3,7 +3,7 @@ import '@innovaccer/design-system/css';
 import { renderToStaticMarkup } from 'react-dom/server';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import openSandbox from './sandbox.tsx';
-import vsDark from 'prism-react-renderer/themes/vsDark';
+import { themes } from 'prism-react-renderer';
 import generateImports from './generateImports';
 import * as DS from '@innovaccer/design-system';
 import './card.css';
@@ -17,14 +17,16 @@ import ErrorBoundary from '../ErrorBoundary';
 
 const getRawPreviewCode = (customCode, dataProvider) => {
   if (dataProvider) {
-    return `() => <div><Spinner /></div>`;
+    return `// Import components from design system
+import { Spinner } from '@innovaccer/design-system';
+
+export default function LoadingComponent() {
+  return <div><Spinner /></div>;
+}`;
   }
 
   if (customCode) {
-    return `${generateImports(customCode, DS, '@innovaccer/design-system')}
-
-${customCode}
-    `;
+    return customCode;
   }
 };
 
@@ -145,7 +147,7 @@ const StoryComp = ({ componentData, dataProvider }) => {
     if (activeButton === 'React') {
       return (
         <div className="px-4" id="react-tab">
-          <LiveEditor theme={vsDark} />
+          <LiveEditor theme={themes.vsDark} />
         </div>
       );
     } else {

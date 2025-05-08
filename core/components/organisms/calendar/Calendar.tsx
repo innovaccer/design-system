@@ -44,7 +44,7 @@ interface hoveredYearProps {
   isCurrentYear: boolean;
   isDisabled: boolean;
 }
-export interface SharedProps extends BaseProps {
+export type SharedProps = {
   /**
    * Size of `Calendar`
    */
@@ -94,7 +94,7 @@ export interface SharedProps extends BaseProps {
    * Should be use to allow reverse selection in the daterangepicker
    */
   allowReverseSelection?: boolean;
-}
+} & BaseProps;
 
 export type CalendarProps = {
   /**
@@ -981,15 +981,15 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                   ? monthNavVal + monthBlock
                   : ((monthNavVal - 1) % monthBlock) + 1
                 : date > dayRange
-                ? ((monthNavVal + 1) % monthBlock) + 1
-                : monthNavVal + 1
+                  ? ((monthNavVal + 1) % monthBlock) + 1
+                  : monthNavVal + 1
             }`;
             const yearInString = `${
               date <= 0 && monthNavVal + 1 === 1
                 ? yearNavVal - 1
                 : date > dayRange && monthNavVal + 1 === 12
-                ? yearNavVal + 1
-                : yearNavVal
+                  ? yearNavVal + 1
+                  : yearNavVal
             }`;
             const completeDateString = `${monthInString.length === 2 ? monthInString : `0${monthInString}`}/${
               dateInString.length === 2 ? dateInString : `0${dateInString}`

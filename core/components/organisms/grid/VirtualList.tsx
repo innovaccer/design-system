@@ -70,7 +70,7 @@ const VirtualList = (props: VirtualScrollProps) => {
   }, []);
 
   const updateOffset = useCallback(
-    (prevOffset) => {
+    (prevOffset: number) => {
       const offsetDiff = prevOffset - offset;
       if (listRef.current) {
         const el = listRef.current as HTMLElement;
@@ -174,8 +174,8 @@ const VirtualList = (props: VirtualScrollProps) => {
       const component = renderItem(rowIndex);
       return React.cloneElement(component, {
         key: rowIndex,
-        className: ['VS-item', component.props.className].join(' ').trim(),
-      });
+        className: ['VS-item', (component.props as any)?.className].join(' ').trim(),
+      } as any);
     });
   };
 

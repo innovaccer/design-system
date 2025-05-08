@@ -155,13 +155,13 @@ export const Combobox = (props: ComboboxProps) => {
     onSearch,
     onKeyDown,
     onKeyUp,
-    computeStyles,
+    // computeStyles,
   } = props;
 
   const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>();
   const [wrapperStyle, setWrapperStyle] = React.useState({});
   const triggerRef = React.createRef<HTMLDivElement>();
-  const listRef = React.createRef<HTMLDivElement>();
+  const listRef = React.createRef<HTMLDivElement | null>();
   const [openPopover, setOpenPopover] = React.useState(false);
 
   const [isOptionSelected, setIsOptionSelected] = React.useState(false);
@@ -173,21 +173,21 @@ export const Combobox = (props: ComboboxProps) => {
   const [highlightFirstItem, setHighlightFirstItem] = React.useState<boolean>(false);
   const [highlightLastItem, setHighlightLastItem] = React.useState<boolean>(false);
 
-  const inputTriggerRef = React.useRef<HTMLInputElement>();
+  const inputTriggerRef = React.useRef<HTMLInputElement>(null);
   const popoverId = `DesignSystem-Combobox--Popover-${uidGenerator()}`;
-  const defaultPopoverStyle = {
-    fn: (data: any) => {
-      return {
-        ...data,
-        styles: {
-          ...data.styles,
-          position: 'fixed',
-        },
-      };
-    },
-  };
+  // const defaultPopoverStyle = {
+  //   fn: (data: any) => {
+  //     return {
+  //       ...data,
+  //       styles: {
+  //         ...data.styles,
+  //         position: 'fixed',
+  //       },
+  //     };
+  //   },
+  // };
 
-  const popoverComputeStyle = computeStyles ?? defaultPopoverStyle;
+  // const popoverComputeStyle = computeStyles ?? defaultPopoverStyle;
 
   React.useEffect(() => {
     const popperWidth = triggerRef.current?.clientWidth;
@@ -310,7 +310,7 @@ export const Combobox = (props: ComboboxProps) => {
             customStyle={popoverStyle}
             onToggle={onToggleHandler}
             trigger={<ComboboxTrigger {...triggerProps} />}
-            computeStyles={popoverComputeStyle}
+            // computeStyles={popoverComputeStyle}
           >
             <div style={wrapperStyle} ref={listRef} id={popoverId}>
               {children && typeof children === 'function' ? children(contextProp) : children}

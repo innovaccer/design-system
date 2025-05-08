@@ -3,7 +3,7 @@
 exports[`AvatarGroup component snapshot 
   list: [{"firstName":"John","lastName":"Doe","icon":"[ReactNode]"},{"firstName":"Steven","lastName":"Packton","icon":"[ReactNode]"}], size: "regular", withSearch: "false"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -19,7 +19,6 @@ Object {
           <span
             class="position-relative d-inline-flex"
           >
-            
             <div
               class="PopperWrapper-trigger flex-grow-0"
             >
@@ -54,7 +53,6 @@ Object {
           <span
             class="position-relative d-inline-flex"
           >
-            
             <div
               class="PopperWrapper-trigger flex-grow-0"
             >
@@ -97,7 +95,6 @@ Object {
         <span
           class="position-relative d-inline-flex"
         >
-          
           <div
             class="PopperWrapper-trigger flex-grow-0"
           >
@@ -132,7 +129,6 @@ Object {
         <span
           class="position-relative d-inline-flex"
         >
-          
           <div
             class="PopperWrapper-trigger flex-grow-0"
           >
@@ -218,7 +214,7 @@ Object {
 exports[`AvatarGroup component snapshot 
   list: [{"firstName":"John","lastName":"Doe","icon":"[ReactNode]"},{"firstName":"Steven","lastName":"Packton","icon":"[ReactNode]"}], size: "regular", withSearch: "true"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -234,7 +230,6 @@ Object {
           <span
             class="position-relative d-inline-flex"
           >
-            
             <div
               class="PopperWrapper-trigger flex-grow-0"
             >
@@ -269,7 +264,6 @@ Object {
           <span
             class="position-relative d-inline-flex"
           >
-            
             <div
               class="PopperWrapper-trigger flex-grow-0"
             >
@@ -312,7 +306,6 @@ Object {
         <span
           class="position-relative d-inline-flex"
         >
-          
           <div
             class="PopperWrapper-trigger flex-grow-0"
           >
@@ -347,7 +340,6 @@ Object {
         <span
           class="position-relative d-inline-flex"
         >
-          
           <div
             class="PopperWrapper-trigger flex-grow-0"
           >
@@ -433,7 +425,7 @@ Object {
 exports[`AvatarGroup component snapshot 
   list: [{"firstName":"John","lastName":"Doe","icon":"[ReactNode]"},{"firstName":"Steven","lastName":"Packton","icon":"[ReactNode]"}], size: "tiny", withSearch: "false"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -449,7 +441,6 @@ Object {
           <span
             class="position-relative d-inline-flex"
           >
-            
             <div
               class="PopperWrapper-trigger flex-grow-0"
             >
@@ -484,7 +475,6 @@ Object {
           <span
             class="position-relative d-inline-flex"
           >
-            
             <div
               class="PopperWrapper-trigger flex-grow-0"
             >
@@ -527,7 +517,6 @@ Object {
         <span
           class="position-relative d-inline-flex"
         >
-          
           <div
             class="PopperWrapper-trigger flex-grow-0"
           >
@@ -562,7 +551,6 @@ Object {
         <span
           class="position-relative d-inline-flex"
         >
-          
           <div
             class="PopperWrapper-trigger flex-grow-0"
           >
@@ -648,7 +636,7 @@ Object {
 exports[`AvatarGroup component snapshot 
   list: [{"firstName":"John","lastName":"Doe","icon":"[ReactNode]"},{"firstName":"Steven","lastName":"Packton","icon":"[ReactNode]"}], size: "tiny", withSearch: "true"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -664,7 +652,6 @@ Object {
           <span
             class="position-relative d-inline-flex"
           >
-            
             <div
               class="PopperWrapper-trigger flex-grow-0"
             >
@@ -699,7 +686,6 @@ Object {
           <span
             class="position-relative d-inline-flex"
           >
-            
             <div
               class="PopperWrapper-trigger flex-grow-0"
             >
@@ -742,7 +728,6 @@ Object {
         <span
           class="position-relative d-inline-flex"
         >
-          
           <div
             class="PopperWrapper-trigger flex-grow-0"
           >
@@ -777,7 +762,6 @@ Object {
         <span
           class="position-relative d-inline-flex"
         >
-          
           <div
             class="PopperWrapper-trigger flex-grow-0"
           >

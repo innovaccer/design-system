@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import styles from '@css/components/chipGroup.module.css';
 
-export interface ChipGroupProps extends BaseProps {
+export type ChipGroupProps = {
   /**
    * Handler to be called when Chip is closed
    */
@@ -32,7 +32,7 @@ export interface ChipGroupProps extends BaseProps {
    * </pre>
    */
   list: ChipProps[];
-}
+} & BaseProps;
 
 export const ChipGroup = (props: ChipGroupProps) => {
   const { list, onClick, onClose, className } = props;

@@ -825,8 +825,8 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     const firstEnabledOption = tabIndex
       ? tabIndex
       : _isSelectAllPresent(searchTerm, remainingOptionsLen, withSelectAll, withCheckbox)
-      ? 0
-      : options.findIndex((option) => !option.disabled);
+        ? 0
+        : options.findIndex((option) => !option.disabled);
 
     return (
       <DropdownList

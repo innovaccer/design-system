@@ -7,7 +7,7 @@ import styles from '@css/components/pageHeader.module.css';
 
 export type navigationPositionType = 'center' | 'bottom';
 
-export interface PageHeaderProps extends BaseProps {
+export type PageHeaderProps = {
   /**
    * Page title
    */
@@ -53,12 +53,12 @@ export interface PageHeaderProps extends BaseProps {
   /**
    * Page header layout type
    */
-  navigationPosition: navigationPositionType;
+  navigationPosition?: navigationPositionType;
   /**
    * provides a border at bottom
    */
-  separator: boolean;
-}
+  separator?: boolean;
+} & BaseProps;
 
 export const PageHeader = (props: PageHeaderProps) => {
   const {
@@ -69,10 +69,10 @@ export const PageHeader = (props: PageHeaderProps) => {
     tabs,
     breadcrumbs,
     badge,
-    separator,
+    separator = true,
     status,
     meta,
-    navigationPosition,
+    navigationPosition = 'center',
     className,
     button,
   } = props;
@@ -136,11 +136,6 @@ export const PageHeader = (props: PageHeaderProps) => {
       {separator && <Divider appearance="header" />}
     </div>
   );
-};
-
-PageHeader.defaultProps = {
-  navigationPosition: 'center',
-  separator: true,
 };
 
 export default PageHeader;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Spinner } from '@/index';
+import { SpinnerProps } from '@/index.type';
 import figma from '@figma/code-connect';
 
 figma.connect(Spinner, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=441-1582&m=dev', {
@@ -12,5 +13,5 @@ figma.connect(Spinner, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS-
       Large: 'large',
     }),
   },
-  example: (props) => <Spinner {...props} />,
+  example: (props) => <Spinner {...(props as SpinnerProps)} />,
 });

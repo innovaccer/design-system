@@ -1,4 +1,10 @@
 {
-  "presets": ["@babel/env", "@babel/typescript", "@babel/react"],
-  "plugins": ["@babel/proposal-class-properties"]
+  "presets": [
+    ["@babel/preset-env", { "targets": { "node": "current" } }],
+    "@babel/preset-typescript",
+    ["@babel/preset-react", { "runtime": "classic" }]
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties"
+  ]
 }

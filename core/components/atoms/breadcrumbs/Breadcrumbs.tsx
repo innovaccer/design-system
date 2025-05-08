@@ -9,7 +9,7 @@ interface Breadcrumb {
   link: string;
 }
 
-export interface BreadcrumbsProps extends BaseProps {
+export type BreadcrumbsProps = {
   /**
    * List of `Breadcrumb` props
    *
@@ -29,7 +29,7 @@ export interface BreadcrumbsProps extends BaseProps {
    * Determines whether to show tooltip for label
    */
   showTooltip?: boolean;
-}
+} & BaseProps;
 
 interface renderLinkProps {
   item: Breadcrumb;

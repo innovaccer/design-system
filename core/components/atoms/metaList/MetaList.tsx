@@ -7,7 +7,7 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 import styles from '@css/components/metaList.module.css';
 
 export type MetaSize = 'small' | 'regular';
-export interface MetaListProps extends BaseProps {
+export type MetaListProps = {
   /**
    * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
    * MetaProps:
@@ -34,25 +34,25 @@ export interface MetaListProps extends BaseProps {
    * **SOON TO BE DEPRECATED**
    * Color of seperator
    */
-  seperatorAppearance: IconProps['appearance'];
+  seperatorAppearance?: IconProps['appearance'];
   /**
    * **SOON TO BE DEPRECATED**
    * Appearance of icon in `Meta` component
    */
-  iconAppearance: IconProps['appearance'];
+  iconAppearance?: IconProps['appearance'];
   /**
    * **SOON TO BE DEPRECATED**
    * Appearance of label in `Meta` component
    */
-  labelAppearance: TextProps['appearance'];
+  labelAppearance?: TextProps['appearance'];
   /**
    * Size of Meta List
    */
   size?: MetaSize;
-}
+} & BaseProps;
 
 export const MetaList = (props: MetaListProps) => {
-  const { list, seperator, className, size } = props;
+  const { list, seperator, size = 'regular', className } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -108,12 +108,5 @@ export const MetaList = (props: MetaListProps) => {
 };
 
 MetaList.displayName = 'MetaList';
-
-MetaList.defaultProps = {
-  seperatorAppearance: 'disabled',
-  iconAppearance: 'subtle',
-  labelAppearance: 'subtle',
-  size: 'regular',
-};
 
 export default MetaList;

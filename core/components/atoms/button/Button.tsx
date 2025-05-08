@@ -10,7 +10,7 @@ export type ButtonAppearance = 'basic' | 'primary' | 'success' | 'alert' | 'tran
 export type ButtonSize = 'tiny' | 'regular' | 'large';
 export type ButtonAlignment = 'left' | 'right';
 
-export interface ButtonProps extends BaseProps, BaseHtmlProps<HTMLButtonElement> {
+export type ButtonProps = {
   /**
    * Type of `Button`
    */
@@ -73,7 +73,7 @@ export interface ButtonProps extends BaseProps, BaseHtmlProps<HTMLButtonElement>
   /**
    * Text to be added inside `Button`
    */
-  children?: React.ReactText;
+  children?: string | number;
   /**
    * Specifies tab index of `Button`
    * @default 0
@@ -95,7 +95,8 @@ export interface ButtonProps extends BaseProps, BaseHtmlProps<HTMLButtonElement>
    * Handler to be called when mouse pointer leaves `Button`.
    */
   onMouseLeave?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-}
+} & BaseProps &
+  BaseHtmlProps<HTMLButtonElement>;
 
 const sizeMapping: Record<ButtonSize, number> = {
   tiny: 12,

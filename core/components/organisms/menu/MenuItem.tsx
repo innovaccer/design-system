@@ -37,7 +37,7 @@ export interface MenuItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement | 
 }
 
 export const MenuItem = (props: MenuItemProps) => {
-  const { children, className, onClick, disabled, onFocus, ...rest } = props;
+  const { children, className, onClick, disabled, onFocus, tagName = 'a', ...rest } = props;
   const contextProp = React.useContext(MenuContext);
   const subMenuContextProp = React.useContext(SubMenuContext);
   const isSubMenuTrigger = false;
@@ -112,6 +112,7 @@ export const MenuItem = (props: MenuItemProps) => {
       disabled={disabled}
       role="menuitem"
       aria-disabled={disabled}
+      tagName={tagName}
       {...rest}
     >
       {children}
@@ -120,9 +121,5 @@ export const MenuItem = (props: MenuItemProps) => {
 };
 
 MenuItem.displayName = 'MenuItem';
-
-MenuItem.defaultProps = {
-  tagName: 'a',
-};
 
 export default MenuItem;

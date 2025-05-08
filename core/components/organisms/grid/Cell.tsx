@@ -160,7 +160,7 @@ const HeaderCell = (props: HeaderCellProps) => {
             {renderLabel()}
           </Tooltip>
         ) : schema.headerCellRenderer && !headCellTooltip ? (
-          schema.headerCellRenderer(headProps)
+          (schema.headerCellRenderer(headProps) as React.ReactNode)
         ) : (
           renderLabel()
         )}
@@ -282,7 +282,7 @@ const BodyCell = (props: BodyCellProps) => {
         <>{nestedRowData ? <NestedRowTrigger /> : <span className={styles['Grid-nestedRowPlaceholder']} />}</>
       )}
       {schema.cellRenderer ? (
-        schema.cellRenderer(cellProps)
+        (schema.cellRenderer(cellProps) as React.ReactNode)
       ) : (
         <GridCell key={`${rowIndex}-${colIndex}`} {...cellProps} />
       )}

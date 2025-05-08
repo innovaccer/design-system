@@ -7,11 +7,11 @@ import styles from '@css/components/heading.module.css';
 
 export type HeadingSize = 's' | 'm' | 'l' | 'xl' | 'xxl';
 
-export interface HeadingProps extends BaseProps, BaseHtmlProps<HTMLHeadingElement> {
+export type HeadingProps = {
   /**
    * Text to be rendered
    */
-  children: React.ReactText;
+  children: string | number;
   /**
    * State of `Heading`
    */
@@ -24,7 +24,8 @@ export interface HeadingProps extends BaseProps, BaseHtmlProps<HTMLHeadingElemen
    * Color of `Text`
    */
   color?: TextColor;
-}
+} & BaseProps &
+  BaseHtmlProps<HTMLHeadingElement>;
 
 const sizeMap = {
   s: 'h5',

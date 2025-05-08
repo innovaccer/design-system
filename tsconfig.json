@@ -2,7 +2,7 @@
   "compilerOptions": {
     "sourceMap": true,
     "strict": true,
-    "target": "es5",
+    "target": "es2019",
     "jsx": "react",
     "module": "commonjs",
     "moduleResolution": "node",
@@ -16,9 +16,9 @@
     "strictNullChecks": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "lib": ["es6", "es7", "es2017", "dom"],
+    "lib": ["es6", "es7", "es2017", "es2019", "es2020", "es2021", "dom"],
     "baseUrl": "./",
-    "types": [],
+    "types": ["node"],
     "paths": {
       "@/*": ["core/*"]
     }

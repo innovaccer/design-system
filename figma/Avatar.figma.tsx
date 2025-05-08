@@ -1,6 +1,7 @@
 import React from 'react';
 import { Avatar, Icon, Tooltip } from '@/index';
 import figma from '@figma/code-connect';
+import { AvatarProps } from '@/index.type';
 
 figma.connect(Avatar, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=37-592', {
   imports: ["import { Avatar } from '@innovaccer/design-system'"],
@@ -48,7 +49,7 @@ figma.connect(Avatar, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS--
     }),
   },
   example: ({ icon, image, ...rest }) => (
-    <Avatar {...rest} withTooltip={true}>
+    <Avatar {...(rest as AvatarProps)} withTooltip={true}>
       {icon}
       {image}
     </Avatar>

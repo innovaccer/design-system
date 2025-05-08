@@ -8,7 +8,6 @@ exports[`Vertical Navigation component
     <div
       class="VerticalNav"
     >
-      
       <div
         class="PopperWrapper-trigger"
       >
@@ -32,7 +31,6 @@ exports[`Vertical Navigation component
           </div>
         </a>
       </div>
-      
       <div
         class="PopperWrapper-trigger"
       >
@@ -55,7 +53,6 @@ exports[`Vertical Navigation component
           </div>
         </a>
       </div>
-      
       <div
         class="PopperWrapper-trigger"
       >
@@ -77,7 +74,6 @@ exports[`Vertical Navigation component
           </div>
         </a>
       </div>
-      
       <div
         class="PopperWrapper-trigger"
       >
@@ -99,7 +95,6 @@ exports[`Vertical Navigation component
           </div>
         </a>
       </div>
-      
       <div
         class="PopperWrapper-trigger"
       >
@@ -122,7 +117,6 @@ exports[`Vertical Navigation component
           </div>
         </a>
       </div>
-      
       <div
         class="PopperWrapper-trigger"
       >

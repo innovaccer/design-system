@@ -52,7 +52,7 @@ export interface AIButtonProps extends TBaseHtmlProps<HTMLButtonElement> {
 }
 
 export const AIButton = (props: AIButtonProps) => {
-  const { appearance, className, children, disabled, withSparkle, ...rest } = props;
+  const { appearance, withSparkle = true, type = 'button', disabled, children, className, ...rest } = props;
 
   const buttonClassNames = classNames(
     {
@@ -66,7 +66,7 @@ export const AIButton = (props: AIButtonProps) => {
   });
 
   return (
-    <button className={buttonClassNames} data-test="DesignSystem-AI-Button" disabled={disabled} {...rest}>
+    <button className={buttonClassNames} data-test="DesignSystem-AI-Button" disabled={disabled} type={type} {...rest}>
       {withSparkle && (
         <img
           src={AISparkle}
@@ -80,11 +80,6 @@ export const AIButton = (props: AIButtonProps) => {
       {children}
     </button>
   );
-};
-
-AIButton.defaultProps = {
-  type: 'button',
-  withSparkle: true,
 };
 
 export default AIButton;

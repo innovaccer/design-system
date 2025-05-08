@@ -6,7 +6,7 @@ import styles from '@css/components/progressBar.module.css';
 export type ProgressBarSize = 'small' | 'regular';
 export type ProgressBarState = 'default' | 'indeterminate';
 
-export interface ProgressBarProps extends BaseProps {
+export type ProgressBarProps = {
   /**
    * Specifies how much of the task that has been completed. Value should lie between 0 to max,
    */
@@ -14,19 +14,19 @@ export interface ProgressBarProps extends BaseProps {
   /**
    * Describes how much work the task indicated by the `Progress Bar` requires
    */
-  max: number;
+  max?: number;
   /**
    * Size of `Progress Bar`
    */
-  size: ProgressBarSize;
+  size?: ProgressBarSize;
   /**
    * State of `Progress Bar`
    */
   state?: ProgressBarState;
-}
+} & BaseProps;
 
 export const ProgressBar = (props: ProgressBarProps) => {
-  const { max, value, className, size, state } = props;
+  const { value, max = 100, size = 'regular', state = 'default', className } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -60,10 +60,5 @@ export const ProgressBar = (props: ProgressBarProps) => {
 };
 
 ProgressBar.displayName = 'ProgressBar';
-ProgressBar.defaultProps = {
-  max: 100,
-  size: 'regular',
-  state: 'default',
-};
 
 export default ProgressBar;

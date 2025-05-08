@@ -7,17 +7,17 @@ export interface MessageTextProps extends BaseProps {
   /**
    * Text Message
    */
-  text: string;
+  text?: string;
   /**
    * Message to be shown while user is typing
    */
-  typingText: string;
+  typingText?: string;
 }
 
 export type InternalTextProps = MessageTextProps & SharedProps;
 
 export const MessageText = (props: InternalTextProps) => {
-  const { text, type, isTyping, typingText, statusType, className } = props;
+  const { text = '', typingText = 'Typing..', statusType, type, isTyping, className } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -34,11 +34,6 @@ export const MessageText = (props: InternalTextProps) => {
       {text}
     </Text>
   );
-};
-
-MessageText.defaultProps = {
-  text: '',
-  typingText: 'Typing..',
 };
 
 MessageText.displayName = 'MessageText';

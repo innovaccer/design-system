@@ -15,12 +15,12 @@ const IconMapping: { [key: string]: string } = {
 
 export interface FileIconProps {
   file: FileListItemProps['file'];
-  progress: FileListItemProps['progress'];
-  status: FileListItemProps['status'];
+  progress?: FileListItemProps['progress'];
+  status?: FileListItemProps['status'];
 }
 
 export const FileIcon = (props: FileIconProps) => {
-  const { progress, status, file } = props;
+  const { file, progress = 0, status = 'completed' } = props;
 
   const [animate, setAnimate] = useState<boolean>(false);
   const type = file.type.split('/')[0] || 'others';
@@ -60,10 +60,5 @@ export const FileIcon = (props: FileIconProps) => {
 };
 
 FileIcon.displayName = 'FileIcon';
-
-FileIcon.defaultProps = {
-  progress: 0,
-  status: 'completed',
-};
 
 export default FileIcon;

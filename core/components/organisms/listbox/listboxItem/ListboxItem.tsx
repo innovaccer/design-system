@@ -89,8 +89,5 @@ export const ListboxItem = (props: ListboxItemProps) => {
 };
 
 ListboxItem.displayName = 'Listbox.Item';
-ListboxItem.defaultProps = {
-  tagName: 'li',
-};
 
 export default ListboxItem;

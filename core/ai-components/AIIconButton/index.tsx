@@ -61,7 +61,16 @@ export interface AIIconButtonProps extends Omit<TBaseHtmlProps<HTMLButtonElement
 }
 
 export const AIIconButton = (props: AIIconButtonProps) => {
-  const { icon, position, className, size, strokeColor, tooltip, disabled, ...rest } = props;
+  const {
+    icon,
+    size = 'regular',
+    position = 'top',
+    tooltip,
+    disabled,
+    strokeColor = '#fff',
+    className,
+    ...rest
+  } = props;
 
   const buttonClassNames = classNames(
     {
@@ -112,12 +121,6 @@ export const AIIconButton = (props: AIIconButtonProps) => {
       </button>
     </Tooltip>
   );
-};
-
-AIIconButton.defaultProps = {
-  size: 'regular',
-  position: 'top',
-  strokeColor: '#fff',
 };
 
 export default AIIconButton;

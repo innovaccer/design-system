@@ -8,7 +8,7 @@ import styles from '@css/components/radio.module.css';
 
 export type RadioSize = 'regular' | 'tiny';
 
-export interface RadioProps extends BaseProps, OmitNativeProps<HTMLInputElement, 'onChange'> {
+export type RadioProps = {
   /**
    * Size of `Radio`
    * @default "regular"
@@ -50,7 +50,8 @@ export interface RadioProps extends BaseProps, OmitNativeProps<HTMLInputElement,
    * Callback function called when user the selects an option
    */
   onChange?: (event: ChangeEvent) => void;
-}
+} & BaseProps &
+  OmitNativeProps<HTMLInputElement, 'onChange'>;
 
 export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forwardedRef) => {
   const {

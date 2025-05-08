@@ -3,7 +3,7 @@ import { Button, Modal, ModalDescription } from '@/index';
 import { ModalProps, ModalHeaderProps, ButtonProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
-export interface DialogProps extends BaseProps {
+export type DialogProps = {
   /**
    * Callback for `Dialog` close event
    */
@@ -11,7 +11,7 @@ export interface DialogProps extends BaseProps {
   /**
    * Dimension of `Dialog`
    */
-  dimension: ModalProps['dimension'];
+  dimension?: ModalProps['dimension'];
   /**
    * Handles open/close
    */
@@ -35,7 +35,7 @@ export interface DialogProps extends BaseProps {
   /**
    * Color of second button inside `Dialog`
    */
-  primaryButtonAppearance: ButtonProps['appearance'];
+  primaryButtonAppearance?: ButtonProps['appearance'];
   /**
    * Handler to be called when first button is clicked
    */
@@ -47,12 +47,12 @@ export interface DialogProps extends BaseProps {
   /**
    * Color of second button inside `Dialog`
    */
-  secondaryButtonAppearance: ButtonProps['appearance'];
+  secondaryButtonAppearance?: ButtonProps['appearance'];
   /**
    * Handler to be called when second button is clicked
    */
   secondaryButtonCallback: () => void;
-}
+} & BaseProps;
 
 /**
  *
@@ -62,9 +62,9 @@ export interface DialogProps extends BaseProps {
 
 const Dialog = (props: DialogProps) => {
   const {
-    dimension,
-    primaryButtonAppearance,
-    secondaryButtonAppearance,
+    dimension = 'small',
+    primaryButtonAppearance = 'primary',
+    secondaryButtonAppearance = 'basic',
     open,
     onClose,
     heading,
@@ -116,10 +116,5 @@ const Dialog = (props: DialogProps) => {
 };
 
 Dialog.displayName = 'Dialog';
-Dialog.defaultProps = {
-  dimension: 'small',
-  primaryButtonAppearance: 'primary',
-  secondaryButtonAppearance: 'basic',
-};
 
 export default Dialog;

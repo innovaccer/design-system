@@ -9,7 +9,7 @@ import styles from '@css/components/listbox.module.css';
 type ListboxType = 'option' | 'description' | 'resource';
 export type TagType = 'ul' | 'ol' | 'div' | 'nav';
 
-export interface ListboxProps extends BaseProps, BaseHtmlProps<HTMLUListElement | HTMLDivElement> {
+export type ListboxProps = {
   /**
    * React Element to be added inside `list`
    */
@@ -17,11 +17,11 @@ export interface ListboxProps extends BaseProps, BaseHtmlProps<HTMLUListElement 
   /**
    * List size
    */
-  size: TListboxSize;
+  size?: TListboxSize;
   /**
    * Type of List
    */
-  type: ListboxType;
+  type?: ListboxType;
   /**
    * Allows list item re-ordering
    */
@@ -29,12 +29,13 @@ export interface ListboxProps extends BaseProps, BaseHtmlProps<HTMLUListElement 
   /**
    * Set a custom element for Listbox
    */
-  tagName: TagType;
+  tagName?: TagType;
   /**
    * Add divider below all list item
    */
-  showDivider: boolean;
-}
+  showDivider?: boolean;
+} & BaseProps &
+  BaseHtmlProps<HTMLUListElement | HTMLDivElement>;
 
 export const ListboxContext = React.createContext<Omit<ListboxProps, 'children' | 'tagName'>>({
   size: 'standard',
@@ -46,7 +47,16 @@ export const ListboxContext = React.createContext<Omit<ListboxProps, 'children' 
 const { Provider } = ListboxContext;
 
 export const Listbox = (props: ListboxProps) => {
-  const { children, className, draggable, size, type, showDivider, tagName: Tag, ...rest } = props;
+  const {
+    children,
+    size = 'standard',
+    type = 'resource',
+    draggable = false,
+    tagName: Tag = 'ul',
+    showDivider = true,
+    className,
+    ...rest
+  } = props;
   const baseProps = extractBaseProps(props);
 
   const classes = classNames(styles.Listbox, className);
@@ -72,14 +82,6 @@ export const Listbox = (props: ListboxProps) => {
 };
 
 Listbox.displayName = 'Listbox';
-
-Listbox.defaultProps = {
-  tagName: 'ul',
-  size: 'standard',
-  type: 'resource',
-  draggable: false,
-  showDivider: true,
-};
 
 Listbox.Item = ListboxItem;
 

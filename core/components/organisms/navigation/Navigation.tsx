@@ -24,7 +24,7 @@ export interface NavigationProps extends BaseProps, VerticalNavigationProps {
    *
    * `LayoutType: 'horizontal' | 'vertical'`
    */
-  type: LayoutType;
+  type?: LayoutType;
   /**
    * Alignment of `Navigation` component
    *
@@ -32,7 +32,7 @@ export interface NavigationProps extends BaseProps, VerticalNavigationProps {
    *
    * `Align: 'left' | 'center'`
    */
-  align: Align;
+  align?: Align;
 }
 
 /**
@@ -40,7 +40,19 @@ export interface NavigationProps extends BaseProps, VerticalNavigationProps {
  */
 
 export const Navigation = (props: NavigationProps) => {
-  const { type, align, menus, active, onClick, expanded, rounded, onToggle, footer, autoCollapse, className } = props;
+  const {
+    type = 'horizontal',
+    align = 'center',
+    expanded = true,
+    autoCollapse = true,
+    rounded = false,
+    menus,
+    active,
+    onClick,
+    onToggle,
+    footer,
+    className,
+  } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -77,14 +89,6 @@ export const Navigation = (props: NavigationProps) => {
       {renderNavigation()}
     </div>
   );
-};
-
-Navigation.defaultProps = {
-  type: 'horizontal',
-  align: 'center',
-  expanded: true,
-  autoCollapse: true,
-  rounded: false,
 };
 
 export default Navigation;

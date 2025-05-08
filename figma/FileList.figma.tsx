@@ -1,5 +1,6 @@
 import React from 'react';
 import { FileList } from '@/index';
+import { FileListProps } from '@/index.type';
 import figma from '@figma/code-connect';
 
 figma.connect(FileList, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=952-121', {
@@ -19,15 +20,11 @@ figma.connect(FileList, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS
   },
   example: ({ fileType, fileStatus, ...rest }) => (
     <FileList
-      {...rest}
+      {...(rest as FileListProps)}
       fileList={[
         {
-          file: {
-            type: fileType,
-            name: 'file name',
-            size: '2 MB',
-          },
-          status: fileStatus,
+          file: { type: fileType, name: 'file name', size: '2 MB' },
+          status: fileStatus as any,
           progress: 100,
           id: 1,
         },

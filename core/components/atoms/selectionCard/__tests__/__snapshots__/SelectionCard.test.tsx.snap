@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`selection card item component snapshot 
-  children: "Selection Card", disabled: false, onClick: [null]
+  children: "Selection Card", disabled: false, onClick: [null,"[Function]"]
  1`] = `
 <body>
   <div>
@@ -23,7 +23,7 @@ exports[`selection card item component snapshot
 `;
 
 exports[`selection card item component snapshot 
-  children: "Selection Card", disabled: false, selected: false, onClick: [null]
+  children: "Selection Card", disabled: false, selected: false, onClick: [null,"[Function]"]
  1`] = `
 <body>
   <div>
@@ -46,7 +46,7 @@ exports[`selection card item component snapshot
 `;
 
 exports[`selection card item component snapshot 
-  children: "Selection Card", disabled: false, selected: true, onClick: [null]
+  children: "Selection Card", disabled: false, selected: true, onClick: [null,"[Function]"]
  1`] = `
 <body>
   <div>
@@ -69,7 +69,7 @@ exports[`selection card item component snapshot
 `;
 
 exports[`selection card item component snapshot 
-  children: "Selection Card", disabled: true, onClick: [null]
+  children: "Selection Card", disabled: true, onClick: [null,"[Function]"]
  1`] = `
 <body>
   <div>
@@ -91,7 +91,7 @@ exports[`selection card item component snapshot
 `;
 
 exports[`selection card item component snapshot 
-  children: "Selection Card", disabled: true, selected: false, onClick: [null]
+  children: "Selection Card", disabled: true, selected: false, onClick: [null,"[Function]"]
  1`] = `
 <body>
   <div>
@@ -114,7 +114,7 @@ exports[`selection card item component snapshot
 `;
 
 exports[`selection card item component snapshot 
-  children: "Selection Card", disabled: true, selected: true, onClick: [null]
+  children: "Selection Card", disabled: true, selected: true, onClick: [null,"[Function]"]
  1`] = `
 <body>
   <div>
@@ -137,7 +137,7 @@ exports[`selection card item component snapshot
 `;
 
 exports[`selection card item component snapshot 
-  children: "Selection Card", onClick: [null]
+  children: "Selection Card", onClick: [null,"[Function]"]
  1`] = `
 <body>
   <div>
@@ -159,7 +159,7 @@ exports[`selection card item component snapshot
 `;
 
 exports[`selection card item component snapshot 
-  children: "Selection Card", selected: false, onClick: [null]
+  children: "Selection Card", selected: false, onClick: [null,"[Function]"]
  1`] = `
 <body>
   <div>
@@ -182,7 +182,7 @@ exports[`selection card item component snapshot
 `;
 
 exports[`selection card item component snapshot 
-  children: "Selection Card", selected: true, onClick: [null]
+  children: "Selection Card", selected: true, onClick: [null,"[Function]"]
  1`] = `
 <body>
   <div>
