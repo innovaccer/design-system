@@ -23,7 +23,7 @@ jobs:
         run: git checkout -b preparing-module-for-npm-publish && git config --global user.email "release-bot@innovaccer.com" && git config --global user.name "release-bot"
       
       - name: bump module version
-        run: node release.js
+        run: npm version --no-commit-hooks prerelease -m "Released %s [skip ci]"
 
       - name: generate .npmrc
         run: cp .npmrc.stub .npmrc
@@ -35,7 +35,11 @@ jobs:
 
       - name: remove .npmrc
         run: rm -rf .npmrc
-        
+
+
+      - name: push tag to github
+        run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git $(node ./getVersion.js)
+
       - name: remove css/dist dist/ from commit
         run: |
           git reset HEAD~1
@@ -44,11 +48,6 @@ jobs:
 
       - name: push version to github
         run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git HEAD:next
-
-      - name: create and push tag
-        run: |
-          git tag -a $(node ./getVersion.js) -m "Released $(node ./getVersion.js) [skip ci]"
-          git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git $(node ./getVersion.js)
     
       - name: deploy storybook
         run: npm run deploy-storybook -- --bucket-path=webui-mds-sb-next --aws-profile=NONE --ci
