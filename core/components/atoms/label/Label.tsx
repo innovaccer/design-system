@@ -40,7 +40,6 @@ export type LabelProps = {
 } & BaseProps &
   BaseHtmlProps<HTMLLabelElement>;
 
-
 /**
  * *NOTE: Extends props with HTMLProps<HTMLLabelElement>*
  */
