@@ -16,7 +16,10 @@ exports[`Avatar Image component
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+<<<<<<< HEAD
             class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
             data-state="closed"
             triggerclass="flex-grow-0"
           >

@@ -31,7 +31,10 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+<<<<<<< HEAD
                   class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -78,7 +81,10 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+<<<<<<< HEAD
                   class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -125,7 +131,10 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+<<<<<<< HEAD
                   class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -172,7 +181,10 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+<<<<<<< HEAD
                   class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -219,7 +231,10 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+<<<<<<< HEAD
                   class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -252,7 +267,10 @@ exports[`AvatarSelection component snapshot
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+<<<<<<< HEAD
             class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -293,6 +311,7 @@ exports[`AvatarSelection component snapshot
         </div>
       </div>
     </div>
+<<<<<<< HEAD
     <div
       data-floating-ui-portal=""
       id=":r2d:"
@@ -317,6 +336,8 @@ exports[`AvatarSelection component snapshot
       data-floating-ui-portal=""
       id=":r2s:"
     />
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
   </body>,
   "container": <div>
     <div
@@ -343,7 +364,10 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+<<<<<<< HEAD
                 class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -390,7 +414,10 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+<<<<<<< HEAD
                 class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -437,7 +464,10 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+<<<<<<< HEAD
                 class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -484,7 +514,10 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+<<<<<<< HEAD
                 class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -531,7 +564,10 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+<<<<<<< HEAD
                 class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -564,7 +600,10 @@ exports[`AvatarSelection component snapshot
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -690,7 +729,10 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+<<<<<<< HEAD
                   class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -737,7 +779,10 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+<<<<<<< HEAD
                   class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -784,7 +829,10 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+<<<<<<< HEAD
                   class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -831,7 +879,10 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+<<<<<<< HEAD
                   class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -878,7 +929,10 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+<<<<<<< HEAD
                   class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -911,7 +965,10 @@ exports[`AvatarSelection component snapshot
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+<<<<<<< HEAD
             class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -952,6 +1009,7 @@ exports[`AvatarSelection component snapshot
         </div>
       </div>
     </div>
+<<<<<<< HEAD
     <div
       data-floating-ui-portal=""
       id=":r1r:"
@@ -976,6 +1034,8 @@ exports[`AvatarSelection component snapshot
       data-floating-ui-portal=""
       id=":r2a:"
     />
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
   </body>,
   "container": <div>
     <div
@@ -1002,7 +1062,10 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+<<<<<<< HEAD
                 class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -1049,7 +1112,10 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+<<<<<<< HEAD
                 class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -1096,7 +1162,10 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+<<<<<<< HEAD
                 class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -1143,7 +1212,10 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+<<<<<<< HEAD
                 class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -1190,7 +1262,10 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+<<<<<<< HEAD
                 class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -1223,7 +1298,10 @@ exports[`AvatarSelection component snapshot
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -1349,7 +1427,10 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+<<<<<<< HEAD
                   class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -1396,7 +1477,10 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+<<<<<<< HEAD
                   class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -1443,7 +1527,10 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+<<<<<<< HEAD
                   class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -1490,7 +1577,10 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+<<<<<<< HEAD
                   class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -1537,7 +1627,10 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+<<<<<<< HEAD
                   class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -1570,7 +1663,10 @@ exports[`AvatarSelection component snapshot
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+<<<<<<< HEAD
             class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -1611,6 +1707,7 @@ exports[`AvatarSelection component snapshot
         </div>
       </div>
     </div>
+<<<<<<< HEAD
     <div
       data-floating-ui-portal=""
       id=":r19:"
@@ -1635,6 +1732,8 @@ exports[`AvatarSelection component snapshot
       data-floating-ui-portal=""
       id=":r1o:"
     />
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
   </body>,
   "container": <div>
     <div
@@ -1661,7 +1760,10 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+<<<<<<< HEAD
                 class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -1708,7 +1810,10 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+<<<<<<< HEAD
                 class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -1755,7 +1860,10 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+<<<<<<< HEAD
                 class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -1802,7 +1910,10 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+<<<<<<< HEAD
                 class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -1849,7 +1960,10 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+<<<<<<< HEAD
                 class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -1882,7 +1996,10 @@ exports[`AvatarSelection component snapshot
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -1983,7 +2100,9 @@ exports[`AvatarSelection component snapshot
 {
   "asFragment": [Function],
   "baseElement": <body>
-    <div>
+    <div
+      data-floating-ui-inert=""
+    >
       <div
         class="SelectionAvatarGroup"
         data-test="DesignSystem-AvatarSelection"
@@ -2008,7 +2127,10 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+<<<<<<< HEAD
                   class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -2055,7 +2177,10 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+<<<<<<< HEAD
                   class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -2102,7 +2227,10 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+<<<<<<< HEAD
                   class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -2149,7 +2277,10 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+<<<<<<< HEAD
                   class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -2196,7 +2327,10 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+<<<<<<< HEAD
                   class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -2227,16 +2361,26 @@ exports[`AvatarSelection component snapshot
           class="flex-grow-0"
         >
           <div
+<<<<<<< HEAD
             aria-controls=":rf:"
             aria-expanded="true"
             aria-haspopup="dialog"
             class="flex-grow-0"
+=======
+            aria-controls=":ra:"
+            aria-expanded="true"
+            aria-haspopup="dialog"
+>>>>>>> b67de59a (feat: migration to react 19)
             data-state="open"
             triggerclass="flex-grow-0"
           >
             <div
               aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
+<<<<<<< HEAD
               aria-expanded="true"
+=======
+              aria-expanded="false"
+>>>>>>> b67de59a (feat: migration to react 19)
               aria-haspopup="listbox"
               class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
               data-test="DesignSystem-AvatarSelection--TriggerAvatar"
@@ -2268,11 +2412,35 @@ exports[`AvatarSelection component snapshot
               </span>
             </div>
           </div>
+          <span
+            aria-hidden="true"
+            style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: fixed; white-space: nowrap; width: 1px; top: 0px; left: 0px;"
+            tabindex="-1"
+          />
         </div>
+        <span
+          data-floating-ui-focus-guard=""
+          data-type="outside"
+          role="button"
+          style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: fixed; white-space: nowrap; width: 1px; top: 0px; left: 0px;"
+          tabindex="0"
+        />
+        <span
+          aria-owns=":rc:"
+          style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: fixed; white-space: nowrap; width: 1px; top: 0px; left: 0px;"
+        />
+        <span
+          data-floating-ui-focus-guard=""
+          data-type="outside"
+          role="button"
+          style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: fixed; white-space: nowrap; width: 1px; top: 0px; left: 0px;"
+          tabindex="0"
+        />
       </div>
     </div>
     <div
       data-floating-ui-portal=""
+<<<<<<< HEAD
       id=":r2:"
     />
     <div
@@ -2294,17 +2462,37 @@ exports[`AvatarSelection component snapshot
     <div
       data-floating-ui-portal=""
       id=":rh:"
+=======
+      id=":rc:"
+>>>>>>> b67de59a (feat: migration to react 19)
     >
+      <span
+        data-floating-ui-focus-guard=""
+        data-floating-ui-inert=""
+        data-type="inside"
+        role="button"
+        style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: fixed; white-space: nowrap; width: 1px; top: 0px; left: 0px;"
+        tabindex="0"
+      />
       <div
         class="Popover"
         data-floating-ui-focusable=""
         data-layer="true"
+<<<<<<< HEAD
         data-opened="true"
         data-test="DesignSystem-Popover"
         id=":rf:"
         role="dialog"
         style="position: absolute; left: 0px; top: 0px; visibility: hidden; transform: translate(0px, 0px);"
         tabindex="-1"
+=======
+        data-opened="false"
+        data-test="DesignSystem-Popover"
+        id=":ra:"
+        role="dialog"
+        style="position: absolute; left: 0px; top: 0px; visibility: visible; transform: translate(0px, 0px);"
+        tabindex="0"
+>>>>>>> b67de59a (feat: migration to react 19)
       >
         <div
           style="opacity: 0;"
@@ -2316,6 +2504,14 @@ exports[`AvatarSelection component snapshot
           </div>
         </div>
       </div>
+      <span
+        data-floating-ui-focus-guard=""
+        data-floating-ui-inert=""
+        data-type="inside"
+        role="button"
+        style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: fixed; white-space: nowrap; width: 1px; top: 0px; left: 0px;"
+        tabindex="0"
+      />
     </div>
     <div>
       <div
@@ -2353,7 +2549,10 @@ exports[`AvatarSelection component snapshot
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+<<<<<<< HEAD
             class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -2423,7 +2622,10 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+<<<<<<< HEAD
                   class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -2470,7 +2672,10 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+<<<<<<< HEAD
                   class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -2517,7 +2722,10 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+<<<<<<< HEAD
                   class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -2564,7 +2772,10 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+<<<<<<< HEAD
                   class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -2611,7 +2822,10 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+<<<<<<< HEAD
                   class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -2644,7 +2858,10 @@ exports[`AvatarSelection component snapshot
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+<<<<<<< HEAD
             class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -2685,6 +2902,7 @@ exports[`AvatarSelection component snapshot
         </div>
       </div>
     </div>
+<<<<<<< HEAD
     <div
       data-floating-ui-portal=""
       id=":rn:"
@@ -2709,6 +2927,8 @@ exports[`AvatarSelection component snapshot
       data-floating-ui-portal=""
       id=":r16:"
     />
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
   </body>,
   "container": <div>
     <div
@@ -2735,7 +2955,10 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+<<<<<<< HEAD
                 class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -2782,7 +3005,10 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+<<<<<<< HEAD
                 class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -2829,7 +3055,10 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+<<<<<<< HEAD
                 class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -2876,7 +3105,10 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+<<<<<<< HEAD
                 class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -2923,7 +3155,10 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+<<<<<<< HEAD
                 class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -2956,7 +3191,10 @@ exports[`AvatarSelection component snapshot
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="flex-grow-0"
         >

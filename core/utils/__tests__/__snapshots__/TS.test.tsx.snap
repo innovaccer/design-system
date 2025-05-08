@@ -775,7 +775,10 @@ exports[`TS renders children 1`] = `
       <div
         aria-expanded="false"
         aria-haspopup="dialog"
+<<<<<<< HEAD
         class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
         data-state="closed"
         triggerclass="w-100"
       >
@@ -828,7 +831,10 @@ exports[`TS renders children 1`] = `
             <div
               aria-expanded="false"
               aria-haspopup="dialog"
+<<<<<<< HEAD
               class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
               data-state="closed"
               triggerclass="w-100"
             >
@@ -1566,6 +1572,7 @@ exports[`TS renders children 1`] = `
       </div>
     </div>
   </div>
+<<<<<<< HEAD
   <div
     class="w-fit-content"
   >
@@ -1575,6 +1582,13 @@ exports[`TS renders children 1`] = `
       class="w-fit-content"
       data-state="closed"
       triggerclass="w-fit-content"
+=======
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="dialog"
+      data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
     >
       <span
         class="Text Text--default Text--regular"

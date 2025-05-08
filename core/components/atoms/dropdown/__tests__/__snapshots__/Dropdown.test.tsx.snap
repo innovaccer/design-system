@@ -14,7 +14,10 @@ exports[`Dropdown component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -68,7 +71,10 @@ exports[`Dropdown component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -122,7 +128,10 @@ exports[`Dropdown component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -176,7 +185,10 @@ exports[`Dropdown component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -230,7 +242,10 @@ exports[`Dropdown component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -292,7 +307,10 @@ exports[`Dropdown component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -352,7 +370,10 @@ exports[`Dropdown component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -406,7 +427,10 @@ exports[`Dropdown component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -469,7 +493,10 @@ exports[`Dropdown component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -530,7 +557,10 @@ exports[`Dropdown component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -585,7 +615,10 @@ exports[`Dropdown component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -639,7 +672,10 @@ exports[`Dropdown component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -693,7 +729,10 @@ exports[`Dropdown component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -747,7 +786,10 @@ exports[`Dropdown component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -801,7 +843,10 @@ exports[`Dropdown component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -850,14 +895,23 @@ exports[`Dropdown component
       class="Dropdown"
     >
       <div
+<<<<<<< HEAD
         class="w-fit-content"
+=======
+        class=""
+>>>>>>> b67de59a (feat: migration to react 19)
       >
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-fit-content"
           data-state="closed"
           triggerclass="w-fit-content"
+=======
+          data-state="closed"
+          triggerclass=""
+>>>>>>> b67de59a (feat: migration to react 19)
         >
           <button
             class="Button DropdownButton DropdownButton--regular DropdownButton--regularSquare"
@@ -900,7 +954,10 @@ exports[`Dropdown component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -954,7 +1011,10 @@ exports[`Dropdown component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -1008,7 +1068,10 @@ exports[`Dropdown component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -1062,7 +1125,10 @@ exports[`Dropdown component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -1116,7 +1182,10 @@ exports[`Dropdown component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -1170,7 +1239,10 @@ exports[`Dropdown component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -1224,7 +1296,10 @@ exports[`Dropdown component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -1278,7 +1353,10 @@ exports[`Dropdown component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -1332,7 +1410,10 @@ exports[`Dropdown component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -1386,7 +1467,10 @@ exports[`Dropdown component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -1440,7 +1524,10 @@ exports[`Dropdown component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >

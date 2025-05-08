@@ -25,7 +25,10 @@ exports[`EditableDropdown component
             <div
               aria-expanded="false"
               aria-haspopup="dialog"
+<<<<<<< HEAD
               class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
               data-state="closed"
               triggerclass="w-100"
             >
