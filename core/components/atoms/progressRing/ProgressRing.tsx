@@ -5,11 +5,11 @@ import styles from '@css/components/progressRing.module.css';
 
 export type ProgressRingSize = 'small' | 'regular' | 'large';
 
-export interface ProgressRingProps extends BaseProps {
+export type ProgressRingProps = {
   /**
    * Size of `Progress Ring`
    */
-  size: ProgressRingSize;
+  size?: ProgressRingSize;
   /**
    * Specifies how much of the task that has been completed. Value should lie between 0 to max.
    */
@@ -17,11 +17,11 @@ export interface ProgressRingProps extends BaseProps {
   /**
    * Describes how much work the task indicated by the `Progress Ring` requires.
    */
-  max: number;
-}
+  max?: number;
+} & BaseProps;
 
 export const ProgressRing = (props: ProgressRingProps) => {
-  const { size, max, value, className } = props;
+  const { size = 'regular', value, max = 100, className } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -65,9 +65,5 @@ export const ProgressRing = (props: ProgressRingProps) => {
 };
 
 ProgressRing.displayName = 'ProgressRing';
-ProgressRing.defaultProps = {
-  size: 'regular',
-  max: 100,
-};
 
 export default ProgressRing;

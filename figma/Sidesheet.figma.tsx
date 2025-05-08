@@ -1,5 +1,6 @@
 import React from 'react';
 import { Sidesheet, Button, Text } from '@/index';
+import { SidesheetProps } from '@/index.type';
 import figma from '@figma/code-connect';
 
 figma.connect(Sidesheet, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=1922-12538', {
@@ -12,7 +13,7 @@ figma.connect(Sidesheet, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MD
   },
   example: (props) => (
     <Sidesheet
-      {...props}
+      {...(props as SidesheetProps)}
       open={true}
       headerOptions={{
         heading: 'Heading',

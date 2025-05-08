@@ -8,23 +8,23 @@ import styles from '@css/components/editableDropdown.module.css';
 
 type DropdownOptions = MakeOptional<DropdownProps, keyof (typeof Dropdown)['defaultProps']>;
 
-export interface EditableDropdownProps extends BaseProps {
+export type EditableDropdownProps = {
   /**
    * String to show inside `Editable Dropdown` when no options are selected
    */
-  placeholder: string;
+  placeholder?: string;
   /**
    * Props to be used for `Dropdown`
    */
-  dropdownOptions: Omit<DropdownOptions, 'getLabel' | 'placeholder'>;
+  dropdownOptions?: Omit<DropdownOptions, 'getLabel' | 'placeholder'>;
   /**
    * Adds custom component
    */
   customTriggerRenderer?: (label: string) => React.ReactNode;
-}
+} & BaseProps;
 
 export const EditableDropdown = (props: EditableDropdownProps) => {
-  const { placeholder, dropdownOptions, className, customTriggerRenderer } = props;
+  const { placeholder = '', dropdownOptions = {}, className, customTriggerRenderer } = props;
 
   const { onChange: onDropdownChange, onClose: onDropdownClose, ...rest } = dropdownOptions;
 
@@ -104,11 +104,6 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
       </Editable>
     </div>
   );
-};
-
-EditableDropdown.defaultProps = {
-  placeholder: '',
-  dropdownOptions: {},
 };
 
 export default EditableDropdown;

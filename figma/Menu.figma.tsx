@@ -12,7 +12,7 @@ figma.connect(Menu, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---W
   },
   example: ({ size, ...rest }) => {
     return (
-      <Menu {...rest} trigger={<Menu.Trigger size={size} />}>
+      <Menu {...(rest as any)} trigger={<Menu.Trigger size={size as any} />}>
         <Menu.List>
           <Menu.Item>Edit</Menu.Item>
           <Menu.Item>Export</Menu.Item>

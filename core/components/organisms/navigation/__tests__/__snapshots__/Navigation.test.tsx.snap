@@ -3,7 +3,7 @@
 exports[`Navigation component 
   type: "horizontal", align: "center", menus: [{"name":"tab1","label":"Tab #1","count":1,"icon":"event"},{"name":"tab2","label":"Tab #2","count":2,"subMenu":[{"name":"tab2child1","label":"tab2child1"},{"name":"tab2child2","label":"tab2child2"}]},{"name":"tab3","label":"Tab #3","count":3,"subMenu":[{"name":"tab3child1","label":"tab3child1"}]}], active: true, onClick: "[Function]", onToggle: "[Function]"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -198,7 +198,7 @@ Object {
 exports[`Navigation component 
   type: "horizontal", align: "left", menus: [{"name":"tab1","label":"Tab #1","count":1,"icon":"event"},{"name":"tab2","label":"Tab #2","count":2,"subMenu":[{"name":"tab2child1","label":"tab2child1"},{"name":"tab2child2","label":"tab2child2"}]},{"name":"tab3","label":"Tab #3","count":3,"subMenu":[{"name":"tab3child1","label":"tab3child1"}]}], active: true, onClick: "[Function]", onToggle: "[Function]"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -393,7 +393,7 @@ Object {
 exports[`Navigation component 
   type: "vertical", menus: [{"name":"tab1","label":"Tab #1","count":1,"icon":"event"},{"name":"tab2","label":"Tab #2","count":2,"subMenu":[{"name":"tab2child1","label":"tab2child1"},{"name":"tab2child2","label":"tab2child2"}]},{"name":"tab3","label":"Tab #3","count":3,"subMenu":[{"name":"tab3child1","label":"tab3child1"}]}], autoCollapse: false, expanded: false, rounded: true, onClick: "[Function]", onToggle: "[Function]"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>

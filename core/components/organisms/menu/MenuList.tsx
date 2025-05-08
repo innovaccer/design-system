@@ -23,20 +23,20 @@ export interface MenuListProps extends BaseProps {
 export const MenuListContext = React.createContext<{ size?: TListboxSize }>({});
 
 export const MenuList = (props: MenuListProps) => {
-  const { children, ...rest } = props;
+  const { size = 'compressed', tagName = 'nav', children, ...rest } = props;
 
   return (
-    <Listbox data-test="DesignSystem-Menu-List" {...rest}>
+    <Listbox
+      type="option"
+      size={size}
+      tagName={tagName}
+      showDivider={false}
+      data-test="DesignSystem-Menu-List"
+      {...rest}
+    >
       <MenuListContext.Provider value={{ size: props.size }}>{children}</MenuListContext.Provider>
     </Listbox>
   );
-};
-
-MenuList.defaultProps = {
-  type: 'option',
-  showDivider: false,
-  tagName: 'nav',
-  size: 'compressed',
 };
 
 export default MenuList;

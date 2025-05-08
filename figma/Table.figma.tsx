@@ -1,5 +1,6 @@
 import React from 'react';
 import { Table } from '@/index';
+import { TableProps } from '@/index.type';
 import figma from '@figma/code-connect';
 
 figma.connect(Table, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=2088-14395', {
@@ -13,7 +14,7 @@ figma.connect(Table, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---
   },
   example: (props) => (
     <Table
-      {...props}
+      {...(props as TableProps)}
       type="resource"
       schema={[
         {
@@ -86,7 +87,7 @@ figma.connect(Table, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---
   },
   example: (props) => (
     <Table
-      {...props}
+      {...(props as TableProps)}
       type="data"
       schema={[
         {

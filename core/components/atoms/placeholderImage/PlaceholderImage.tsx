@@ -5,7 +5,7 @@ import styles from '@css/components/placeholder.module.css';
 
 export type PlaceholderImageSize = 'small' | 'medium' | 'large';
 
-export interface PlaceholderImageProps extends BaseProps {
+export type PlaceholderImageProps = {
   /**
    * Changes shape of `Placeholder` to circle
    */
@@ -13,11 +13,11 @@ export interface PlaceholderImageProps extends BaseProps {
   /**
    * Specifies dimension of `Placeholder`
    */
-  size: PlaceholderImageSize;
-}
+  size?: PlaceholderImageSize;
+} & BaseProps;
 
 export const PlaceholderImage = (props: PlaceholderImageProps) => {
-  const { size = 'small', round, className } = props;
+  const { round, size = 'small', className } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -35,8 +35,5 @@ export const PlaceholderImage = (props: PlaceholderImageProps) => {
 };
 
 PlaceholderImage.displayName = 'PlaceholderImage';
-PlaceholderImage.defaultProps = {
-  size: 'small',
-};
 
 export default PlaceholderImage;

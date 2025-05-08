@@ -9,7 +9,7 @@ export type ChipType = 'action' | 'selection' | 'input';
 export type Name = number | string | object;
 export type ChipSize = 'regular' | 'small';
 
-export interface ChipProps extends BaseProps {
+export type ChipProps = {
   /**
    * Label of chip
    */
@@ -45,7 +45,7 @@ export interface ChipProps extends BaseProps {
   /**
    * Type of chip
    */
-  type: ChipType;
+  type?: ChipType;
   /**
    * Handler to be called when Chip is closed
    */
@@ -62,24 +62,24 @@ export interface ChipProps extends BaseProps {
    * Maximum width of the chip
    */
   maxWidth?: string | number;
-}
+} & BaseProps;
 
 export const Chip = (props: ChipProps) => {
   const {
     label,
+    labelPrefix,
     icon,
+    iconType,
     clearButton,
     size = 'regular',
-    type,
     disabled,
     selected,
+    type = 'input',
     onClose,
     onClick,
     name,
+    maxWidth = 'var(--spacing-640)',
     className,
-    labelPrefix,
-    iconType,
-    maxWidth,
   } = props;
 
   const baseProps = extractBaseProps(props);
@@ -129,9 +129,5 @@ export const Chip = (props: ChipProps) => {
 };
 
 Chip.displayName = 'Chip';
-Chip.defaultProps = {
-  type: 'input',
-  maxWidth: 'var(--spacing-640)',
-};
 
 export default Chip;

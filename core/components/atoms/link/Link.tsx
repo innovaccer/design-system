@@ -8,7 +8,7 @@ type LinkTarget = '_blank' | '_self' | '_parent' | '_top';
 type LinkAppearance = 'default' | 'subtle';
 type LinkSize = 'regular' | 'tiny';
 
-export interface LinkProps extends BaseProps, OmitNativeProps<HTMLLinkElement, 'onClick'> {
+export type LinkProps = {
   /**
    * HTML ID of `Link`
    */
@@ -16,15 +16,15 @@ export interface LinkProps extends BaseProps, OmitNativeProps<HTMLLinkElement, '
   /**
    * Color of `Link`
    */
-  appearance: LinkAppearance;
+  appearance?: LinkAppearance;
   /**
    * Size of `Link`
    */
-  size: LinkSize;
+  size?: LinkSize;
   /**
    * Disables the `Link`, making it unable to be clicked
    */
-  disabled: boolean;
+  disabled?: boolean;
   /**
    * The URL to navigate to when the `Link` is clicked
    */
@@ -53,7 +53,8 @@ export interface LinkProps extends BaseProps, OmitNativeProps<HTMLLinkElement, '
    * Element to be rendered
    */
   children: React.ReactNode;
-}
+} & BaseProps &
+  OmitNativeProps<HTMLLinkElement, 'onClick'>;
 
 /**
  *
@@ -63,7 +64,7 @@ export interface LinkProps extends BaseProps, OmitNativeProps<HTMLLinkElement, '
  */
 
 export const Link = (props: LinkProps) => {
-  const { children, className, appearance, size, disabled, ...rest } = props;
+  const { appearance = 'default', size = 'regular', disabled = false, children, className, ...rest } = props;
 
   const classes = classNames(
     {
@@ -89,11 +90,5 @@ export const Link = (props: LinkProps) => {
 };
 
 Link.displayName = 'Link';
-
-Link.defaultProps = {
-  appearance: 'default',
-  size: 'regular',
-  disabled: false,
-};
 
 export default Link;

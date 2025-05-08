@@ -20,7 +20,7 @@ export interface TextFieldWithInputProps extends BaseProps {
 export type TextFieldInputProps = TextFieldWithInputProps & InputProps;
 
 export const TextFieldWithInput = (props: TextFieldInputProps) => {
-  const { label, minWidth, required, error, onChange, value = '', max = 200, helpText = ' ', size = 'regular' } = props;
+  const { label, minWidth = 256, required, error, onChange, value = '', max = 200, helpText = ' ', size = 'regular' } = props;
 
   const [inputText, setInputText] = React.useState<string>(value);
 
@@ -47,10 +47,6 @@ export const TextFieldWithInput = (props: TextFieldInputProps) => {
       </div>
     </div>
   );
-};
-
-TextFieldWithInput.defaultProps = {
-  minWidth: 256,
 };
 
 export default TextFieldWithInput;

@@ -12,7 +12,7 @@ import styles from '@css/components/dropzone.module.css';
 
 export type DropZoneType = 'standard' | 'compressed' | 'tight';
 
-export interface DropzoneProps extends BaseProps, DropzoneBaseProps {
+export type DropzoneProps = {
   /**
    * Description of accepted formats in `FileUploader`
    */
@@ -20,7 +20,7 @@ export interface DropzoneProps extends BaseProps, DropzoneBaseProps {
   /**
    * Size of `Dropzone`
    */
-  type: DropZoneType;
+  type?: DropZoneType;
   /**
    * Description of maximum size in `FileUploader`
    */
@@ -29,10 +29,11 @@ export interface DropzoneProps extends BaseProps, DropzoneBaseProps {
    * Link component to download sample file
    */
   sampleFileLink?: React.ReactNode;
-}
+} & BaseProps &
+  DropzoneBaseProps;
 
 export const Dropzone = (props: DropzoneProps) => {
-  const { type, sizeLabel, className, formatLabel, sampleFileLink, disabled } = props;
+  const { type = 'standard', sizeLabel, className, formatLabel, sampleFileLink, disabled } = props;
 
   const { open, getRootProps, getInputProps, isDragActive, isDragReject, fileError } = DropzoneBase(props);
 
@@ -105,10 +106,5 @@ export const Dropzone = (props: DropzoneProps) => {
 };
 
 Dropzone.displayName = 'Dropzone';
-
-Dropzone.defaultProps = {
-  ...DropzoneBase.defaultProps,
-  type: 'standard',
-};
 
 export default Dropzone;

@@ -5,11 +5,11 @@ import PlaceholderImage, { PlaceholderImageSize } from '@/components/atoms/place
 import { PlaceholderParagraphProps } from '@/components/atoms/placeholderParagraph';
 import styles from '@css/components/placeholder.module.css';
 
-export interface PlaceholderProps extends BaseProps {
+export type PlaceholderProps = {
   /**
    * Shows `Placeholder` along with image
    */
-  withImage: boolean;
+  withImage?: boolean;
   /**
    * Changes shape of `Placeholder` to circle
    */
@@ -17,15 +17,15 @@ export interface PlaceholderProps extends BaseProps {
   /**
    * Specifies dimension of `Placeholder`
    */
-  imageSize: PlaceholderImageSize;
+  imageSize?: PlaceholderImageSize;
   /**
    * To be rendered in `Placeholder` wrapper
    */
   children?: React.ReactElement<PlaceholderParagraphProps> | React.ReactElement<PlaceholderParagraphProps>[];
-}
+} & BaseProps;
 
 export const Placeholder = (props: PlaceholderProps) => {
-  const { imageSize, withImage, round, children, className } = props;
+  const { withImage = true, imageSize = 'small', round, children, className } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -54,9 +54,5 @@ export const Placeholder = (props: PlaceholderProps) => {
 };
 
 Placeholder.displayName = 'Placeholder';
-Placeholder.defaultProps = {
-  withImage: true,
-  imageSize: 'small',
-};
 
 export default Placeholder;

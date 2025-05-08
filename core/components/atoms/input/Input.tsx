@@ -11,7 +11,7 @@ import verificationCodeStyles from '@css/components/verificationCodeInput.module
 export type InputType = 'text' | 'password' | 'number' | 'email' | 'tel' | 'url';
 export type InputSize = 'tiny' | 'regular' | 'large';
 
-export interface InputProps extends BaseProps, BaseHtmlProps<HTMLInputElement> {
+export type InputProps = {
   /**
    * Name of the `Input`
    */
@@ -138,7 +138,8 @@ export interface InputProps extends BaseProps, BaseHtmlProps<HTMLInputElement> {
    * Custom Icon Component to be passed to Input to replace Clear Icon in the right
    */
   actionIcon?: React.ReactElement<IconProps>;
-}
+} & BaseProps &
+  BaseHtmlProps<HTMLInputElement>;
 
 const sizeMapping = {
   tiny: 12,

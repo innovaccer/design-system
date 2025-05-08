@@ -6,13 +6,13 @@ import buttonStyles from '@css/components/button.module.css';
 import toastStyles from '@css/components/toast.module.css';
 
 export interface Props {
-  appearance: MessageAppearance;
+  appearance?: MessageAppearance;
   label: string;
   onClick?: (e: React.MouseEvent) => void;
 }
 
 const ActionButton = (props: Props) => {
-  const { appearance, label, onClick } = props;
+  const { appearance = 'default', label, onClick } = props;
 
   const buttonClass = classNames({
     [buttonStyles['Button']]: true,
@@ -34,8 +34,5 @@ const ActionButton = (props: Props) => {
 };
 
 ActionButton.displayName = 'ActionButton';
-ActionButton.defaultProps = {
-  appearance: 'default',
-};
 
 export default ActionButton;

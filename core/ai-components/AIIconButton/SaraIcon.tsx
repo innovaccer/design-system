@@ -6,13 +6,13 @@ import SaraIconDisabled from './icons/SaraIconDisabled';
 import styles from '@css/ai-components/iconButton.module.css';
 
 interface SaraIconProp {
-  size: TSize2Hierarchy;
-  position: TIconPosition;
+  size?: TSize2Hierarchy;
+  position?: TIconPosition;
   disabled?: boolean;
 }
 
 export const SaraIcon = (props: SaraIconProp) => {
-  const { size, position, disabled } = props;
+  const { size = 'regular', position = 'top', disabled } = props;
 
   const AIIconClassNames = classNames({
     [styles['AIIconButton-AIIcon']]: true,
@@ -27,11 +27,6 @@ export const SaraIcon = (props: SaraIconProp) => {
   }
 
   return <SaraIconDefault className={AIIconClassNames} />;
-};
-
-SaraIcon.defaultProps = {
-  size: 'regular',
-  position: 'top',
 };
 
 export default SaraIcon;

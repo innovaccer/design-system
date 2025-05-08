@@ -22,11 +22,11 @@ type ChipOptions = {
 
 export type ChipInputSize = 'regular' | 'small';
 
-export interface ChipInputProps extends BaseProps {
+export type ChipInputProps = {
   /**
    * Allows duplicate chips if set to true.
    */
-  allowDuplicates: boolean;
+  allowDuplicates?: boolean;
   /**
    * <pre className="DocPage-codeBlock">
    *  ChipOptions: {
@@ -39,7 +39,7 @@ export interface ChipInputProps extends BaseProps {
    *  }
    * </pre>
    */
-  chipOptions: ChipOptions;
+  chipOptions?: ChipOptions;
   /**
    * The size of the chip input.
    */
@@ -63,11 +63,11 @@ export interface ChipInputProps extends BaseProps {
   /**
    * The chips to display by default (for uncontrolled mode).
    */
-  defaultValue: string[];
+  defaultValue?: string[];
   /**
    * Adds autoFocus to input
    */
-  autoFocus: boolean;
+  autoFocus?: boolean;
   /**
    * Callback function that is called when the chips change.
    */
@@ -84,20 +84,20 @@ export interface ChipInputProps extends BaseProps {
    * Validator function to validate a chip before it's added.  Return `true` for valid, `false` for invalid.
    */
   chipValidator?: (chip: string) => boolean;
-}
+} & BaseProps;
 
 export const ChipInput = (props: ChipInputProps) => {
   const {
-    chipOptions,
-    allowDuplicates,
     size = 'regular',
+    chipOptions = {},
+    allowDuplicates = false,
     disabled,
     error,
     placeholder,
-    defaultValue,
+    defaultValue = [],
     value,
     className,
-    autoFocus,
+    autoFocus = false,
     onChange,
     onBlur,
     onFocus,
@@ -105,7 +105,7 @@ export const ChipInput = (props: ChipInputProps) => {
   } = props;
 
   const inputRef = React.createRef<HTMLInputElement>();
-  const customRef = React.useRef<any>();
+  const customRef = React.useRef<any>(null);
 
   const [chips, setChips] = React.useState(value || defaultValue);
   const [inputValue, setInputValue] = React.useState('');
@@ -314,11 +314,5 @@ export const ChipInput = (props: ChipInputProps) => {
 };
 
 ChipInput.displayName = 'ChipInput';
-ChipInput.defaultProps = {
-  chipOptions: {},
-  defaultValue: [],
-  allowDuplicates: false,
-  autoFocus: false,
-};
 
 export default ChipInput;

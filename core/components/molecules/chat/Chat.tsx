@@ -7,12 +7,12 @@ import ChatBubble from './chatBubble';
 import ChatInput from './chatInput/ChatInput';
 import { BaseProps } from '@/utils/types';
 
-export interface ChatProps extends BaseProps {
+export type ChatProps = {
   /**
    * React Node to be rendered inside `Chat`
    */
   children: React.ReactNode;
-}
+} & BaseProps;
 
 export const Chat = (props: ChatProps) => {
   const { children, ...rest } = props;

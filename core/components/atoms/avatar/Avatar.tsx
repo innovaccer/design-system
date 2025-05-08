@@ -11,7 +11,7 @@ import styles from '@css/components/avatar.module.css';
 
 type TPresence = 'active' | 'away';
 
-export interface AvatarProps extends BaseProps {
+export type AvatarProps = {
   /**
    * Color of the `Avatar`
    */
@@ -31,11 +31,11 @@ export interface AvatarProps extends BaseProps {
   /**
    * Determines if tooltip is visible
    */
-  withTooltip: boolean;
+  withTooltip?: boolean;
   /**
    * Position to place the tooltip
    */
-  tooltipPosition: TooltipProps['position'];
+  tooltipPosition?: TooltipProps['position'];
   /**
    * Label to be displayed inside tooltip after name
    */
@@ -43,11 +43,11 @@ export interface AvatarProps extends BaseProps {
   /**
    * Determines size of `Avatar`
    */
-  size: AvatarSize;
+  size?: AvatarSize;
   /**
    * Determines the shape of `Avatar`
    */
-  shape: AvatarShape;
+  shape?: AvatarShape;
   /**
    * Disables the `Avatar`
    */
@@ -72,7 +72,7 @@ export interface AvatarProps extends BaseProps {
    * Stroke color of `Presence indicator` & `Status indicator` in `Avatar`
    */
   strokeColor?: string;
-}
+} & BaseProps;
 
 const initialsLength = 2;
 const DefaultAppearance = 'secondary';
@@ -80,21 +80,21 @@ const colors = ['accent4', 'primary', 'accent3', 'alert', 'accent2', 'warning', 
 
 export const Avatar = (props: AvatarProps) => {
   const {
-    withTooltip,
-    tooltipPosition,
-    size,
+    withTooltip = true,
+    tooltipPosition = 'bottom',
+    size = 'regular',
     children,
     firstName,
     lastName,
     className,
     appearance,
-    shape,
+    shape = 'round',
     disabled,
     tooltipSuffix,
     tabIndex,
     presence,
     status,
-    strokeColor,
+    strokeColor = 'var(--white)',
     role = 'presentation',
   } = props;
 
@@ -237,13 +237,5 @@ Avatar.displayName = 'Avatar';
 
 Avatar.Icon = AvatarIcon;
 Avatar.Image = AvatarImage;
-
-Avatar.defaultProps = {
-  tooltipPosition: 'bottom',
-  withTooltip: true,
-  size: 'regular',
-  shape: 'round',
-  strokeColor: 'var(--white)',
-};
 
 export default Avatar;

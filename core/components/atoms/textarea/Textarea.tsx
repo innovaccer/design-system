@@ -4,7 +4,8 @@ import { BaseHtmlProps, BaseProps } from '@/utils/types';
 import styles from '@css/components/textarea.module.css';
 
 type TextareaSize = 'small' | 'regular';
-export interface TextareaProps extends BaseProps, BaseHtmlProps<HTMLTextAreaElement> {
+
+export type TextareaProps = {
   /**
    * Name of the `Textarea`
    */
@@ -68,7 +69,8 @@ export interface TextareaProps extends BaseProps, BaseHtmlProps<HTMLTextAreaElem
    * Handler to be called when `Textarea` gets focus
    */
   onFocus?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
-}
+} & BaseProps &
+  BaseHtmlProps<HTMLTextAreaElement>;
 
 export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((props, ref) => {
   const {

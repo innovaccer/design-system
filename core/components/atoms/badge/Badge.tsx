@@ -5,11 +5,11 @@ import { AccentAppearance } from '@/common.type';
 import styles from '@css/components/badge.module.css';
 import pageHeaderStyles from '@css/components/pageHeader.module.css';
 
-export interface BadgeProps extends BaseProps, BaseHtmlProps<HTMLSpanElement> {
+export type BadgeProps = {
   /*
    * Color of the `Badge`
    */
-  appearance: AccentAppearance;
+  appearance?: AccentAppearance;
   /**
    * Makes `Badge` appearance subtle
    */
@@ -17,11 +17,11 @@ export interface BadgeProps extends BaseProps, BaseHtmlProps<HTMLSpanElement> {
   /**
    * Text to be added inside `Badge`
    */
-  children: React.ReactText;
-}
+  children: string | number;
+} & BaseProps & BaseHtmlProps<HTMLSpanElement>;
 
 export const Badge = (props: BadgeProps) => {
-  const { appearance, children, subtle, className, ...rest } = props;
+  const { appearance = 'secondary', children, subtle, className, ...rest } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -43,8 +43,5 @@ export const Badge = (props: BadgeProps) => {
 };
 
 Badge.displayName = 'Badge';
-Badge.defaultProps = {
-  appearance: 'secondary',
-};
 
 export default Badge;

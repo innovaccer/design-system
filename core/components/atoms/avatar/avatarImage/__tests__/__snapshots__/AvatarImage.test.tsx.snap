@@ -3,36 +3,42 @@
 exports[`Avatar Image component 
   src: "https://design.innovaccer.com/images/withoutType.png"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <span
         class="position-relative d-inline-flex"
       >
-        
         <div
-          class="PopperWrapper-trigger flex-grow-0"
+          class="flex-grow-0"
         >
-          <span
-            class=""
-            data-test="DesignSystem-AvatarWrapper"
-            role="presentation"
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="flex-grow-0"
           >
             <span
-              class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
-              data-test="DesignSystem-Avatar"
-              tabindex="0"
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
             >
-              <img
-                alt="John"
-                data-test="DesignSystem-Image"
-                height="32"
-                src="https://design.innovaccer.com/images/withoutType.png"
-                width="32"
-              />
+              <span
+                class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <img
+                  alt="John"
+                  data-test="DesignSystem-Image"
+                  height="32"
+                  src="https://design.innovaccer.com/images/withoutType.png"
+                  width="32"
+                />
+              </span>
             </span>
-          </span>
+          </div>
         </div>
       </span>
     </div>
@@ -142,7 +148,7 @@ Object {
 exports[`Avatar Image component with svg 
   svg: "[ReactNode]"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>

@@ -6,7 +6,7 @@ import { BaseHtmlProps, BaseProps, extractBaseProps } from '@/utils/types';
 import styles from '@css/components/label.module.css';
 
 type LabelSize = 'small' | 'regular';
-export interface LabelProps extends BaseProps, BaseHtmlProps<HTMLLabelElement> {
+export type LabelProps = {
   /**
    * Text to be rendered
    * @type {React.ReactNode}
@@ -36,7 +36,8 @@ export interface LabelProps extends BaseProps, BaseHtmlProps<HTMLLabelElement> {
    * Size of `Label`
    */
   size?: LabelSize;
-}
+} & BaseProps &
+  BaseHtmlProps<HTMLLabelElement>;
 
 /**
  * *NOTE: Extends props with HTMLProps<HTMLLabelElement>*

@@ -13,26 +13,24 @@ export interface SelectionListProps extends BaseProps {
   /**
    * List size
    */
-  size: TListboxSize;
+  size?: TListboxSize;
   /**
    * Set a custom element for Listbox
    */
-  tagName: TagType;
+  tagName?: TagType;
   /**
    * Add divider below all list item
    */
-  showDivider: boolean;
+  showDivider?: boolean;
 }
 
 export const AvatarSelectionList = (props: SelectionListProps) => {
-  return <Listbox {...props}>{props.children}</Listbox>;
-};
-
-AvatarSelectionList.defaultProps = {
-  type: 'option',
-  showDivider: false,
-  size: 'compressed',
-  tagName: 'ul',
+  const { children, size = 'compressed', tagName = 'ul', showDivider = false, ...rest } = props;
+  return (
+    <Listbox {...rest} size={size} tagName={tagName} showDivider={showDivider} type="option">
+      {children}
+    </Listbox>
+  );
 };
 
 export default AvatarSelectionList;

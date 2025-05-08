@@ -127,82 +127,83 @@ interface TriggerProps {
   customTrigger?: (label: string) => React.ReactElement;
 }
 
-interface SharedDropdownProps extends DropdownListProps, BaseProps {
-  /**
-   * Unique name of `Dropdown`
-   */
-  name?: string | number;
-  /**
-   * Count of options in `Dropdown`
-   */
-  totalOptions?: number;
-  /**
-   * Determines if dropdown closes on option selection (works in case of single select)
-   */
-  closeOnSelect: boolean;
-  /**
-   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
-   * TriggerProps:
-   * {
-   *    labelLimit?: number;
-   *    customLabel?: (selected: number, totalOptions?: number, selectedOptions?: Option[]) => string;
-   *    customTrigger?: (label: string) => React.ReactElement;
-   * }
-   * </pre>
-   *
-   * | Name | Description | Default |
-   * | --- | --- | --- |
-   * | labelLimit | Number of selected options <br />to be shown on `Dropdown trigger` | 2 |
-   * | customLabel | Callback function to change <br/>the label of trigger when options are selected | |
-   * | customTrigger | Adds custom trigger | |
-   *
-   */
-  triggerOptions: TriggerProps;
-  /**
-   * Determines if the `Dropdown Popover` is open <br/>
-   */
-  open?: boolean;
-  /**
-   * Static limit of options to be rendered in the Dropdown List
-   *
-   * **Max value supported: 100**
-   */
-  staticLimit: number;
-  /**
-   * Debounce duration to call updateData in case of search term update
-   * @default 300
-   */
-  searchDebounceDuration: number;
-  /**
-   * Callback function called to toggle the `Dropdown Popover`
-   *
-   * type: 'onClick' | 'outsideClick' | 'optionClick' | 'applyClick' | 'cancelClick'
-   *
-   * **Works with `open` prop**
-   *
-   * **Type `optionClick` works in case of single select (closeOnSelect = true)**
-   */
-  onPopperToggle?: (open: boolean, type?: string) => void;
-  /**
-   * Callback to get the updated label of `Dropdown trigger`
-   */
-  getLabel?: (label: string) => void;
-  /**
-   * Callback function called when selected options are updated. <br/>
-   * **In case of uncontrolled dropdown, it is called when user `clicks on option` /**
-   * **`clicks on Clear,or Apply button` while in case of controlled dropdown,**
-   * **it is called when selected options are updated**
-   */
-  onChange?: (selected: any[] | any, name?: string | number) => void;
-  /**
-   * Callback function called when dropdown is closed
-   */
-  onClose?: (selected: any[], name?: string | number) => void;
-  /**
-   * Specify the option index which needs to be focused
-   */
-  tabIndex?: number;
-}
+type SharedDropdownProps = DropdownListProps &
+  BaseProps & {
+    /**
+     * Unique name of `Dropdown`
+     */
+    name?: string | number;
+    /**
+     * Count of options in `Dropdown`
+     */
+    totalOptions?: number;
+    /**
+     * Determines if dropdown closes on option selection (works in case of single select)
+     */
+    closeOnSelect: boolean;
+    /**
+     * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
+     * TriggerProps:
+     * {
+     *    labelLimit?: number;
+     *    customLabel?: (selected: number, totalOptions?: number, selectedOptions?: Option[]) => string;
+     *    customTrigger?: (label: string) => React.ReactElement;
+     * }
+     * </pre>
+     *
+     * | Name | Description | Default |
+     * | --- | --- | --- |
+     * | labelLimit | Number of selected options <br />to be shown on `Dropdown trigger` | 2 |
+     * | customLabel | Callback function to change <br/>the label of trigger when options are selected | |
+     * | customTrigger | Adds custom trigger | |
+     *
+     */
+    triggerOptions: TriggerProps;
+    /**
+     * Determines if the `Dropdown Popover` is open <br/>
+     */
+    open?: boolean;
+    /**
+     * Static limit of options to be rendered in the Dropdown List
+     *
+     * **Max value supported: 100**
+     */
+    staticLimit: number;
+    /**
+     * Debounce duration to call updateData in case of search term update
+     * @default 300
+     */
+    searchDebounceDuration: number;
+    /**
+     * Callback function called to toggle the `Dropdown Popover`
+     *
+     * type: 'onClick' | 'outsideClick' | 'optionClick' | 'applyClick' | 'cancelClick'
+     *
+     * **Works with `open` prop**
+     *
+     * **Type `optionClick` works in case of single select (closeOnSelect = true)**
+     */
+    onPopperToggle?: (open: boolean, type?: string) => void;
+    /**
+     * Callback to get the updated label of `Dropdown trigger`
+     */
+    getLabel?: (label: string) => void;
+    /**
+     * Callback function called when selected options are updated. <br/>
+     * **In case of uncontrolled dropdown, it is called when user `clicks on option` /**
+     * **`clicks on Clear,or Apply button` while in case of controlled dropdown,**
+     * **it is called when selected options are updated**
+     */
+    onChange?: (selected: any[] | any, name?: string | number) => void;
+    /**
+     * Callback function called when dropdown is closed
+     */
+    onClose?: (selected: any[], name?: string | number) => void;
+    /**
+     * Specify the option index which needs to be focused
+     */
+    tabIndex?: number;
+  };
 
 type SyncDropdownProps = SyncProps & SharedDropdownProps;
 type AsyncDropdownProps = AsyncProps & SharedDropdownProps;
@@ -825,8 +826,8 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     const firstEnabledOption = tabIndex
       ? tabIndex
       : _isSelectAllPresent(searchTerm, remainingOptionsLen, withSelectAll, withCheckbox)
-      ? 0
-      : options.findIndex((option) => !option.disabled);
+        ? 0
+        : options.findIndex((option) => !option.disabled);
 
     return (
       <DropdownList

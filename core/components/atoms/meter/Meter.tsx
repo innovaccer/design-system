@@ -33,23 +33,23 @@ export type MeterValueProps = {
   getFilledSteps?: (props: FillStepProps) => number;
 };
 
-export interface MeterProps extends BaseProps, React.HTMLAttributes<HTMLDivElement> {
+export type MeterProps = {
   /**
    * Value of the `Meter`
    */
-  value: number;
+  value?: number;
   /**
    * Minimum range of the `Meter`
    */
-  min: number;
+  min?: number;
   /**
    * Maximum range of the `Meter`
    */
-  max: number;
+  max?: number;
   /**
    * Total number of steps in the `Meter`
    */
-  stepCount: number;
+  stepCount?: number;
   /**
    * Color of the empty `Step`
    */
@@ -61,7 +61,7 @@ export interface MeterProps extends BaseProps, React.HTMLAttributes<HTMLDivEleme
   /**
    * Size of the Meter
    */
-  meterSize: MeterSize;
+  meterSize?: MeterSize;
   /**
    * Size of the Meter `Label`
    */
@@ -89,7 +89,7 @@ export interface MeterProps extends BaseProps, React.HTMLAttributes<HTMLDivEleme
    * `percentage`: Percentage of the Meter filled <br />
    *
    */
-  renderLabel?: (props: RenderLabelProps) => React.ReactText;
+  renderLabel?: (props: RenderLabelProps) => string | number;
   /**
    * Determines whether to show default value label in percentage
    */
@@ -114,7 +114,8 @@ export interface MeterProps extends BaseProps, React.HTMLAttributes<HTMLDivEleme
    * Aria label for the Meter
    */
   ariaLabel?: string;
-}
+} & BaseProps &
+  React.HTMLAttributes<HTMLDivElement>;
 
 /**
  * **Note:**
@@ -126,19 +127,19 @@ export interface MeterProps extends BaseProps, React.HTMLAttributes<HTMLDivEleme
 
 export const Meter = (props: MeterProps) => {
   const {
-    value,
-    min,
-    max,
-    stepCount,
-    emptyColor,
-    fillColor,
+    value = 0,
+    min = 0,
+    max = 100,
+    stepCount = 5,
+    emptyColor = 'var(--secondary-light)',
+    fillColor = 'info',
     getFilledSteps,
-    meterSize,
+    meterSize = 'regular',
     className,
     renderLabel,
     labelSize,
     ariaLabel,
-    showLabel,
+    showLabel = true,
     ...rest
   } = props;
 
@@ -196,17 +197,6 @@ export const Meter = (props: MeterProps) => {
 };
 
 Meter.displayName = 'Meter';
-Meter.defaultProps = {
-  value: 0,
-  min: 0,
-  max: 100,
-  stepCount: 5,
-  fillColor: 'info',
-  meterSize: 'regular',
-  type: 'empty',
-  showLabel: true,
-  emptyColor: 'var(--secondary-light)',
-};
 
 Meter.useMeterValues = useMeterValues;
 

@@ -7,11 +7,12 @@ import { ChipInputProps } from '@/index.type';
 import styles from '@css/components/editableChipInput.module.css';
 
 export type EditableChipInputSize = 'regular' | 'small';
-export interface EditableChipInputProps extends BaseProps {
+
+export type EditableChipInputProps = {
   /**
    * String to show inside `EditableChipInput` when value is not defined
    */
-  placeholder: string;
+  placeholder?: string;
   /**
    * The chip labels to display.
    */
@@ -31,11 +32,11 @@ export interface EditableChipInputProps extends BaseProps {
   /**
    * Props to be used for `ChipInput`
    */
-  chipInputOptions: Omit<ChipInputProps, 'placeholder' | 'value' | 'defaultValue'>;
-}
+  chipInputOptions?: Omit<ChipInputProps, 'placeholder' | 'value' | 'defaultValue'>;
+} & BaseProps;
 
 export const EditableChipInput = (props: EditableChipInputProps) => {
-  const { placeholder, onChange, className, disableSaveAction, chipInputOptions, size = 'regular' } = props;
+  const { placeholder = '', onChange, className, disableSaveAction, chipInputOptions = {}, size = 'regular' } = props;
 
   const { onChange: onChipInputChange, chipOptions = {}, ...rest } = chipInputOptions;
   const { onClick, ...chipObject } = chipOptions;
@@ -193,10 +194,6 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
       )}
     </div>
   );
-};
-EditableChipInput.defaultProps = {
-  placeholder: '',
-  chipInputOptions: {},
 };
 
 export default EditableChipInput;

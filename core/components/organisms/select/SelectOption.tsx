@@ -132,8 +132,6 @@ export const SelectOption = (props: SelectOptionProps) => {
   );
 };
 
-SelectOption.defaultProps = {
-  withCheckbox: true,
-};
+SelectOption.displayName = 'SelectOption';
 
 export default SelectOption;
