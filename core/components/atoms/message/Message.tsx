@@ -48,6 +48,7 @@ export const Message = (props: MessageProps) => {
   const { actions, title, className, size = 'regular' } = props;
   let { appearance = 'info' } = props;
   const { description = '' } = props;
+
   appearance = appearance === 'default' ? 'info' : appearance;
 
   const baseProps = extractBaseProps(props);

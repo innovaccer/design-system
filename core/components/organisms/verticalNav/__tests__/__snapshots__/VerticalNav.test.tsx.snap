@@ -8,6 +8,7 @@ exports[`Vertical Navigation component
     <div
       class="VerticalNav"
     >
+<<<<<<< HEAD
       <div
         class="w-fit-content"
       >
@@ -17,6 +18,13 @@ exports[`Vertical Navigation component
           class="w-fit-content"
           data-state="closed"
           triggerclass="w-fit-content"
+=======
+      <div>
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
         >
           <a
             class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
@@ -39,6 +47,7 @@ exports[`Vertical Navigation component
           </a>
         </div>
       </div>
+<<<<<<< HEAD
       <div
         class="w-fit-content"
       >
@@ -48,6 +57,13 @@ exports[`Vertical Navigation component
           class="w-fit-content"
           data-state="closed"
           triggerclass="w-fit-content"
+=======
+      <div>
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
         >
           <a
             class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
@@ -69,6 +85,7 @@ exports[`Vertical Navigation component
           </a>
         </div>
       </div>
+<<<<<<< HEAD
       <div
         class="w-fit-content"
       >
@@ -78,6 +95,13 @@ exports[`Vertical Navigation component
           class="w-fit-content"
           data-state="closed"
           triggerclass="w-fit-content"
+=======
+      <div>
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
         >
           <a
             class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--active color-primary-dark"
@@ -98,6 +122,7 @@ exports[`Vertical Navigation component
           </a>
         </div>
       </div>
+<<<<<<< HEAD
       <div
         class="w-fit-content"
       >
@@ -107,6 +132,13 @@ exports[`Vertical Navigation component
           class="w-fit-content"
           data-state="closed"
           triggerclass="w-fit-content"
+=======
+      <div>
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
         >
           <a
             class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
@@ -127,6 +159,7 @@ exports[`Vertical Navigation component
           </a>
         </div>
       </div>
+<<<<<<< HEAD
       <div
         class="w-fit-content"
       >
@@ -136,6 +169,13 @@ exports[`Vertical Navigation component
           class="w-fit-content"
           data-state="closed"
           triggerclass="w-fit-content"
+=======
+      <div>
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
         >
           <a
             class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--disabled color-inverse-lightest"
@@ -157,6 +197,7 @@ exports[`Vertical Navigation component
           </a>
         </div>
       </div>
+<<<<<<< HEAD
       <div
         class="w-fit-content"
       >
@@ -166,6 +207,13 @@ exports[`Vertical Navigation component
           class="w-fit-content"
           data-state="closed"
           triggerclass="w-fit-content"
+=======
+      <div>
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
         >
           <a
             class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"

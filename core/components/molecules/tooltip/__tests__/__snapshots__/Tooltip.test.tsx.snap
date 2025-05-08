@@ -5,6 +5,7 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
+<<<<<<< HEAD
     <div
       class="w-fit-content"
     >
@@ -14,6 +15,13 @@ exports[`Tooltip component
         class="w-fit-content"
         data-state="closed"
         triggerclass="w-fit-content"
+=======
+    <div>
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
       >
         <button
           class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -41,6 +49,7 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
+<<<<<<< HEAD
     <div
       class="w-fit-content"
     >
@@ -50,6 +59,13 @@ exports[`Tooltip component
         class="w-fit-content"
         data-state="closed"
         triggerclass="w-fit-content"
+=======
+    <div>
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
       >
         <button
           class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -77,6 +93,7 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
+<<<<<<< HEAD
     <div
       class="w-fit-content"
     >
@@ -86,6 +103,13 @@ exports[`Tooltip component
         class="w-fit-content"
         data-state="closed"
         triggerclass="w-fit-content"
+=======
+    <div>
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
       >
         <button
           class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -113,6 +137,7 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
+<<<<<<< HEAD
     <div
       class="w-fit-content"
     >
@@ -122,6 +147,13 @@ exports[`Tooltip component
         class="w-fit-content"
         data-state="closed"
         triggerclass="w-fit-content"
+=======
+    <div>
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
       >
         <button
           class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -149,6 +181,7 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
+<<<<<<< HEAD
     <div
       class="w-fit-content"
     >
@@ -158,6 +191,13 @@ exports[`Tooltip component
         class="w-fit-content"
         data-state="closed"
         triggerclass="w-fit-content"
+=======
+    <div>
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
       >
         <button
           class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -185,6 +225,7 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
+<<<<<<< HEAD
     <div
       class="w-fit-content"
     >
@@ -194,6 +235,13 @@ exports[`Tooltip component
         class="w-fit-content"
         data-state="closed"
         triggerclass="w-fit-content"
+=======
+    <div>
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
       >
         <button
           class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -221,6 +269,7 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
+<<<<<<< HEAD
     <div
       class="w-fit-content"
     >
@@ -230,6 +279,13 @@ exports[`Tooltip component
         class="w-fit-content"
         data-state="closed"
         triggerclass="w-fit-content"
+=======
+    <div>
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
       >
         <button
           class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -457,6 +513,7 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
+<<<<<<< HEAD
     <div
       class="w-fit-content"
     >
@@ -466,6 +523,13 @@ exports[`Tooltip component
         class="w-fit-content"
         data-state="closed"
         triggerclass="w-fit-content"
+=======
+    <div>
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
       >
         <button
           class="Button Button--regular Button--basic Button--iconAlign-left"

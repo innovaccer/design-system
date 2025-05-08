@@ -34,7 +34,10 @@ exports[`TimePicker component snapshots renders snapshot for all props
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -108,7 +111,10 @@ exports[`TimePicker component snapshots renders snapshot for all props
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -194,7 +200,10 @@ exports[`TimePicker component snapshots renders snapshot for all props
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -276,7 +285,10 @@ exports[`TimePicker component snapshots renders snapshot for all props
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -338,7 +350,10 @@ exports[`TimePicker component snapshots renders snapshot for all props
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -396,7 +411,10 @@ exports[`TimePicker component snapshots renders snapshot for all props
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -466,7 +484,10 @@ exports[`TimePicker component snapshots renders snapshot for all props
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -532,7 +553,10 @@ exports[`TimePicker component snapshots renders snapshot for all props
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="w-100"
         >

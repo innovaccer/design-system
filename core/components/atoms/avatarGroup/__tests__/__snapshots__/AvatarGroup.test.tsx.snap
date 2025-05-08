@@ -25,7 +25,10 @@ exports[`AvatarGroup component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+<<<<<<< HEAD
                 class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -67,7 +70,10 @@ exports[`AvatarGroup component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+<<<<<<< HEAD
                 class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -97,6 +103,7 @@ exports[`AvatarGroup component snapshot
         </div>
       </div>
     </div>
+<<<<<<< HEAD
     <div
       data-floating-ui-portal=""
       id=":rk:"
@@ -105,6 +112,8 @@ exports[`AvatarGroup component snapshot
       data-floating-ui-portal=""
       id=":rn:"
     />
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
   </body>,
   "container": <div>
     <div
@@ -125,7 +134,10 @@ exports[`AvatarGroup component snapshot
             <div
               aria-expanded="false"
               aria-haspopup="dialog"
+<<<<<<< HEAD
               class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
               data-state="closed"
               triggerclass="flex-grow-0"
             >
@@ -167,7 +179,10 @@ exports[`AvatarGroup component snapshot
             <div
               aria-expanded="false"
               aria-haspopup="dialog"
+<<<<<<< HEAD
               class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
               data-state="closed"
               triggerclass="flex-grow-0"
             >
@@ -276,7 +291,10 @@ exports[`AvatarGroup component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+<<<<<<< HEAD
                 class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -318,7 +336,10 @@ exports[`AvatarGroup component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+<<<<<<< HEAD
                 class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -348,6 +369,7 @@ exports[`AvatarGroup component snapshot
         </div>
       </div>
     </div>
+<<<<<<< HEAD
     <div
       data-floating-ui-portal=""
       id=":re:"
@@ -356,6 +378,8 @@ exports[`AvatarGroup component snapshot
       data-floating-ui-portal=""
       id=":rh:"
     />
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
   </body>,
   "container": <div>
     <div
@@ -376,7 +400,10 @@ exports[`AvatarGroup component snapshot
             <div
               aria-expanded="false"
               aria-haspopup="dialog"
+<<<<<<< HEAD
               class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
               data-state="closed"
               triggerclass="flex-grow-0"
             >
@@ -418,7 +445,10 @@ exports[`AvatarGroup component snapshot
             <div
               aria-expanded="false"
               aria-haspopup="dialog"
+<<<<<<< HEAD
               class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
               data-state="closed"
               triggerclass="flex-grow-0"
             >
@@ -527,7 +557,10 @@ exports[`AvatarGroup component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+<<<<<<< HEAD
                 class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -569,7 +602,10 @@ exports[`AvatarGroup component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+<<<<<<< HEAD
                 class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -599,6 +635,7 @@ exports[`AvatarGroup component snapshot
         </div>
       </div>
     </div>
+<<<<<<< HEAD
     <div
       data-floating-ui-portal=""
       id=":r8:"
@@ -607,6 +644,8 @@ exports[`AvatarGroup component snapshot
       data-floating-ui-portal=""
       id=":rb:"
     />
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
   </body>,
   "container": <div>
     <div
@@ -627,7 +666,10 @@ exports[`AvatarGroup component snapshot
             <div
               aria-expanded="false"
               aria-haspopup="dialog"
+<<<<<<< HEAD
               class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
               data-state="closed"
               triggerclass="flex-grow-0"
             >
@@ -669,7 +711,10 @@ exports[`AvatarGroup component snapshot
             <div
               aria-expanded="false"
               aria-haspopup="dialog"
+<<<<<<< HEAD
               class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
               data-state="closed"
               triggerclass="flex-grow-0"
             >
@@ -778,7 +823,10 @@ exports[`AvatarGroup component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+<<<<<<< HEAD
                 class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -820,7 +868,10 @@ exports[`AvatarGroup component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+<<<<<<< HEAD
                 class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -850,6 +901,7 @@ exports[`AvatarGroup component snapshot
         </div>
       </div>
     </div>
+<<<<<<< HEAD
     <div
       data-floating-ui-portal=""
       id=":r2:"
@@ -858,6 +910,8 @@ exports[`AvatarGroup component snapshot
       data-floating-ui-portal=""
       id=":r5:"
     />
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
   </body>,
   "container": <div>
     <div
@@ -878,7 +932,10 @@ exports[`AvatarGroup component snapshot
             <div
               aria-expanded="false"
               aria-haspopup="dialog"
+<<<<<<< HEAD
               class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
               data-state="closed"
               triggerclass="flex-grow-0"
             >
@@ -920,7 +977,10 @@ exports[`AvatarGroup component snapshot
             <div
               aria-expanded="false"
               aria-haspopup="dialog"
+<<<<<<< HEAD
               class="flex-grow-0"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
               data-state="closed"
               triggerclass="flex-grow-0"
             >
