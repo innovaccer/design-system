@@ -1,5 +1,9 @@
 import * as React from 'react';
+<<<<<<< HEAD
 import { render } from '@testing-library/react';
+=======
+import { render, fireEvent } from '@testing-library/react';
+>>>>>>> b67de59a (feat: migration to react 19)
 import Label, { LabelProps as Props } from '../Label';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
