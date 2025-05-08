@@ -242,7 +242,7 @@ exports[`Vertical Navigation component
         </i>
       </a>
       <a
-        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--active MenuItem--subMenu MenuItem--rounded color-primary-dark"
+        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--active MenuItem--subMenu MenuItem--rounded pr-5 color-primary-dark"
         tabindex="0"
       >
         <div
@@ -265,7 +265,7 @@ exports[`Vertical Navigation component
         </div>
       </a>
       <a
-        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--subMenu MenuItem--rounded color-inverse"
+        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--subMenu MenuItem--rounded pr-5 color-inverse"
         tabindex="0"
       >
         <div

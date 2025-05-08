@@ -1,37 +1,114 @@
 import * as React from 'react';
 import Collapsible from '@/components/atoms/collapsible';
-import { Icon, Text } from '@/index';
+import { DatePicker, VerticalNav } from '@/index';
 
 // CSF format story
 export const all = () => {
-  const hoverable = true;
-  const [expanded, setExpanded] = React.useState(false);
+  const data = [
+    {
+      name: 'to_dos',
+      label: 'To-dos',
+      icon: 'check_circle_outline',
+      subMenu: [
+        {
+          name: 'to_dos.due',
+          label: 'Due',
+          count: 10,
+        },
+        {
+          name: 'to_dos.completed',
+          label: 'Completed',
+          count: 7,
+        },
+      ],
+    },
+    {
+      name: 'received',
+      label: 'Received',
+      icon: 'call_received',
+    },
+    {
+      name: 'sent',
+      label: 'Sent',
+      icon: 'call_made',
+    },
+  ];
+
+  const [expanded, setExpanded] = React.useState(true);
+  const [active, setActive] = React.useState({
+    name: 'data_exchange.reports',
+  });
 
   return (
-    <Collapsible expanded={expanded} hoverable={hoverable} height="100vh" onToggle={setExpanded}>
-      <div className="d-flex pt-4">
-        <Icon name="events" className="d-flex align-items-center px-6 Text--regular" />
-        {expanded && <Text className="mr-6">Collapsible</Text>}
-      </div>
-    </Collapsible>
+    <div className="bg-secondary-lightest vh-75">
+      <Collapsible expanded={expanded} onToggle={setExpanded} hoverable={false}>
+        <>
+          {expanded && (
+            <div className="mt-5 d-flex justify-content-center border-bottom">
+              <DatePicker date={new Date()} size="small" />
+            </div>
+          )}
+          <VerticalNav menus={data} expanded={expanded} active={active} onClick={setActive} />
+        </>
+      </Collapsible>
+    </div>
   );
 };
 
 const customCode = `() => {
-  const [expanded, setExpanded] = React.useState(false);
+  const data = [
+    {
+      name: 'to_dos',
+      label: 'To-dos',
+      icon: 'check_circle_outline',
+      subMenu: [
+        {
+          name: 'to_dos.due',
+          label: 'Due',
+          count: 10
+        },
+        {
+          name: 'to_dos.completed',
+          label: 'Completed',
+          count: 7
+        },
+      ]
+    },
+    {
+      name: 'received',
+      label: 'Received',
+      icon: 'call_received'
+    },
+    {
+      name: 'sent',
+      label: 'Sent',
+      icon: 'call_made'
+    },
+  ];
+
+  const [expanded, setExpanded] = React.useState(true);
+  const [active, setActive] = React.useState({
+    name: 'data_exchange.reports'
+  });
+
   return (
-      <Collapsible
-        expanded={expanded}
-        height="100vh"
-        onToggle={setExpanded}
-      >
-        <div className="d-flex pt-4">
-          <Icon name="events" className="d-flex align-items-center px-6 Text--regular" />
-          {expanded && (
-            <Text className="mr-6">Collapsible</Text>
+    <div className="bg-secondary-lightest vh-75">
+      <Collapsible expanded={expanded} onToggle={setExpanded} hoverable={false}>
+        <>
+        {expanded && (
+          <div className="mt-5 d-flex justify-content-center border-bottom">
+          <DatePicker date={new Date()} size="small" />
+          </div>
           )}
-        </div>
+          <VerticalNav
+            menus={data}
+            expanded={expanded}
+            active={active}
+            onClick={setActive}
+          />
+        </>
       </Collapsible>
+    </div>
   );
 }`;
 

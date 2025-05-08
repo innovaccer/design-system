@@ -201,7 +201,7 @@ const customCode = `
       cellType: 'ICON',
       sorting: false,
       translate: _ => ({
-        icon: 'events'
+        icon: 'event'
       })
     },
     {
@@ -214,7 +214,7 @@ const customCode = `
       cellRenderer: props => {
         return (
           <>
-            <Icon className="mr-5" name="events" />
+            <Icon className="mr-5" name="event" />
             <GridCell
               {...props}
               schema={{
