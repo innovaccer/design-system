@@ -19,7 +19,7 @@ export interface MenuGroupProps extends BaseProps {
 }
 
 export const MenuGroup = (props: MenuGroupProps) => {
-  const { label, children, showDivider, ...rest } = props;
+  const { label, children, showDivider = true, ...rest } = props;
 
   if (label) {
     return (
@@ -44,10 +44,6 @@ export const MenuGroup = (props: MenuGroupProps) => {
       {showDivider && <Divider className="my-3" />}
     </div>
   );
-};
-
-MenuGroup.defaultProps = {
-  showDivider: true,
 };
 
 export default MenuGroup;

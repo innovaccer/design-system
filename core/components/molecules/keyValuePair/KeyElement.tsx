@@ -6,7 +6,7 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 
 type IconPosition = 'left' | 'right';
 
-export interface KeyElementProps extends BaseProps {
+export type KeyElementProps = {
   /**
    * React Element to be added inside `KeyElement`
    */
@@ -14,7 +14,7 @@ export interface KeyElementProps extends BaseProps {
   /**
    * Specify label to be displayed in `KeyElement`
    */
-  label?: React.ReactText;
+  label?: string | number;
   /**
    * Specify Icon name to displayed in `KeyElement`
    */
@@ -40,10 +40,10 @@ export interface KeyElementProps extends BaseProps {
    * Align icon left or right
    */
   iconAlign?: IconPosition;
-}
+} & BaseProps;
 
 export const KeyElement = (props: KeyElementProps) => {
-  const { children, icon, iconOptions, iconAlign, label, className } = props;
+  const { children, icon, iconOptions, iconAlign = 'left', label, className } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -89,10 +89,6 @@ export const KeyElement = (props: KeyElementProps) => {
       )}
     </dt>
   );
-};
-
-KeyElement.defaultProps = {
-  iconAlign: 'left',
 };
 
 export default KeyElement;

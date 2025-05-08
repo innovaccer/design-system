@@ -4,12 +4,12 @@ import styles from '@css/components/chatSeparator.module.css';
 import { BaseProps } from '@/utils/types';
 import classNames from 'classnames';
 
-export interface UnreadMessageProps extends BaseProps {
+export type UnreadMessageProps = {
   /**
    * Text to be rendered inside `UnreadMessage`
    */
   text: string;
-}
+} & BaseProps;
 
 const UnreadMessage: React.FC<UnreadMessageProps> = (props) => {
   const { text, className, ...rest } = props;

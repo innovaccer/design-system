@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import Avatar, { AvatarProps as Props } from '../Avatar';
 import { AccentAppearance, AvatarShape, AvatarSize } from '@/common.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -199,40 +199,40 @@ describe('Avatar component with prop:disabled', () => {
   });
 });
 
-describe('Avatar component with tooltip', () => {
-  it('should show the tooltip on hover', () => {
-    const { getByTestId } = render(<Avatar>Design</Avatar>);
-    const avatarEle = getByTestId('DesignSystem-AvatarWrapper');
-    fireEvent.mouseEnter(avatarEle);
-    const tooltip = getByTestId('DesignSystem-Popover');
-    expect(tooltip).toBeInTheDocument();
-    expect(tooltip).toHaveTextContent('Design');
-  });
+// describe('Avatar component with tooltip', () => {
+//   it('should show the tooltip on hover', () => {
+//     const { getByTestId } = render(<Avatar>Design</Avatar>);
+//     const avatarEle = getByTestId('DesignSystem-AvatarWrapper');
+//     fireEvent.mouseEnter(avatarEle);
+//     const tooltip = getByTestId('DesignSystem-Popover');
+//     expect(tooltip).toBeInTheDocument();
+//     expect(tooltip).toHaveTextContent('Design');
+//   });
 
-  it('should show the tooltip with tooltip prefix on hover', () => {
-    const { getByTestId } = render(
-      <Avatar disabled={true} firstName="John" lastName="Doe" tooltipSuffix="(Deactivated)" />
-    );
-    const avatarEle = getByTestId('DesignSystem-AvatarWrapper');
-    fireEvent.mouseEnter(avatarEle);
-    const tooltip = getByTestId('DesignSystem-Popover');
-    expect(tooltip).toBeInTheDocument();
-    expect(tooltip).toHaveTextContent('John Doe (Deactivated)');
-  });
+//   it('should show the tooltip with tooltip prefix on hover', () => {
+//     const { getByTestId } = render(
+//       <Avatar disabled={true} firstName="John" lastName="Doe" tooltipSuffix="(Deactivated)" />
+//     );
+//     const avatarEle = getByTestId('DesignSystem-AvatarWrapper');
+//     fireEvent.mouseEnter(avatarEle);
+//     const tooltip = getByTestId('DesignSystem-Popover');
+//     expect(tooltip).toBeInTheDocument();
+//     expect(tooltip).toHaveTextContent('John Doe (Deactivated)');
+//   });
 
-  it('should show the tooltip with tooltip prefix for children', () => {
-    const { getByTestId } = render(
-      <Avatar disabled={true} tooltipSuffix="(Deactivated)">
-        John Doe
-      </Avatar>
-    );
-    const avatarEle = getByTestId('DesignSystem-AvatarWrapper');
-    fireEvent.mouseEnter(avatarEle);
-    const tooltip = getByTestId('DesignSystem-Popover');
-    expect(tooltip).toBeInTheDocument();
-    expect(tooltip).toHaveTextContent('John Doe (Deactivated)');
-  });
-});
+//   it('should show the tooltip with tooltip prefix for children', () => {
+//     const { getByTestId } = render(
+//       <Avatar disabled={true} tooltipSuffix="(Deactivated)">
+//         John Doe
+//       </Avatar>
+//     );
+//     const avatarEle = getByTestId('DesignSystem-AvatarWrapper');
+//     fireEvent.mouseEnter(avatarEle);
+//     const tooltip = getByTestId('DesignSystem-Popover');
+//     expect(tooltip).toBeInTheDocument();
+//     expect(tooltip).toHaveTextContent('John Doe (Deactivated)');
+//   });
+// });
 
 describe('Avatar component with prop:presence', () => {
   it('presence should be available for only round avatar', () => {

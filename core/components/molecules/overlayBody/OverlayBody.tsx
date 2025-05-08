@@ -26,11 +26,6 @@ export const OverlayBody = (props: OverlayBodyProps) => {
   );
 };
 
-OverlayBody.defaultProps = {
-  stickFooter: true,
-  withFooter: true,
-};
-
 OverlayBody.displayName = 'OverlayBody';
 
 export default OverlayBody;

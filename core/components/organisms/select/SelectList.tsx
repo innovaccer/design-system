@@ -14,21 +14,21 @@ export interface SelectListProps extends BaseProps {
   /**
    * List size
    */
-  size: TListboxSize;
+  size?: TListboxSize;
   /**
    * Set a custom element for Listbox
    */
-  tagName: TagType;
+  tagName?: TagType;
   /**
    * Add divider below all list item
    */
-  showDivider: boolean;
+  showDivider?: boolean;
 }
 
 export const SelectList = (props: SelectListProps) => {
+  const { children, size = 'compressed', tagName = 'ul', showDivider = false, ...rest } = props;
   const contextProp = React.useContext(SelectContext);
   const { withSearch, minHeight, maxHeight, multiSelect } = contextProp;
-  const { children, ...rest } = props;
   const searchInputHeight = 33;
 
   const wrapperStyle: React.CSSProperties = {
@@ -43,18 +43,15 @@ export const SelectList = (props: SelectListProps) => {
       aria-label="Options item list"
       aria-multiselectable={multiSelect}
       className="my-3"
+      tagName={tagName}
+      showDivider={showDivider}
+      size={size}
+      type="option"
       {...rest}
     >
       {children}
     </Listbox>
   );
-};
-
-SelectList.defaultProps = {
-  type: 'option',
-  showDivider: false,
-  size: 'compressed',
-  tagName: 'ul',
 };
 
 export default SelectList;

@@ -3,12 +3,12 @@ import { Text } from '@/index';
 import { BaseProps } from '@/utils/types';
 import classNames from 'classnames';
 
-export interface DateSeparatorProps extends BaseProps {
+export type DateSeparatorProps = {
   /**
    * Specifies the date to be displayed
    */
-  date: React.ReactText;
-}
+  date: string | number;
+} & BaseProps;
 
 const DateSeparator: React.FC<DateSeparatorProps> = (props) => {
   const { date, className, ...rest } = props;

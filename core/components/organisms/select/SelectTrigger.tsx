@@ -58,9 +58,9 @@ export interface SelectTriggerProps extends BaseProps {
 
 const SelectTrigger = (props: SelectTriggerProps) => {
   const {
-    triggerSize,
-    placeholder,
-    withClearButton,
+    triggerSize = 'regular',
+    placeholder = 'Select',
+    withClearButton = true,
     icon,
     disabled,
     inlineLabel,
@@ -194,10 +194,6 @@ const SelectTrigger = (props: SelectTriggerProps) => {
   );
 };
 
-SelectTrigger.defaultProps = {
-  triggerSize: 'regular',
-  placeholder: 'Select',
-  withClearButton: true,
-};
+SelectTrigger.displayName = 'SelectTrigger';
 
 export default SelectTrigger;

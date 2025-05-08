@@ -108,7 +108,13 @@ export const filterUndefined = (props: Record<string, any>) =>
 
 export const valueHelper = (props: any, options: IValueHelper = {}): Record<string, any> => {
   const { required, iterate } = options;
-  if (!required) props = [undefined, ...props];
+  if (!required) {
+    const propsArray = Array.isArray(props) ? props : [props];
+    props = [undefined, ...propsArray];
+  } else if (iterate && !Array.isArray(props)) {
+    // When iterate is true, ensure props is always an array
+    props = [props];
+  }
   return { required, iterate, value: props };
 };
 

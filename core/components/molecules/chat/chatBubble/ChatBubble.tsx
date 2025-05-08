@@ -5,7 +5,7 @@ import { BaseProps } from '@/utils/types';
 
 export type ChatBubbleType = 'incoming' | 'outgoing';
 
-export interface ChatBubbleProps extends BaseProps {
+export type ChatBubbleProps = {
   /**
    * Type of ChatBubble
    */
@@ -59,7 +59,7 @@ export interface ChatBubbleProps extends BaseProps {
    * Elements to be rendered inside ChatBubble
    */
   children?: React.ReactNode;
-}
+} & BaseProps;
 
 export const ChatBubble = (props: ChatBubbleProps) => {
   const { type, incomingOptions, outgoingOptions, children, ...rest } = props;

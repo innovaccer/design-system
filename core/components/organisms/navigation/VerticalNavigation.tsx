@@ -54,11 +54,11 @@ export interface VerticalNavigationProps {
   /**
    * Makes active menu rounded **(applicable only for type: `vertical` and `expanded` menu)**
    */
-  rounded: boolean;
+  rounded?: boolean;
   /**
    * Set expanded state of `Navigation`**(applicable only for type: `vertical`)**
    */
-  expanded: boolean;
+  expanded?: boolean;
   /**
    * Shows footer**(applicable only for type: `vertical`)**
    */
@@ -70,11 +70,11 @@ export interface VerticalNavigationProps {
   /**
    * Only one SubMenu visible at a time**(applicable only for type: `vertical`)**
    */
-  autoCollapse: boolean;
+  autoCollapse?: boolean;
 }
 
 export const VerticalNavigation = (props: VerticalNavigationProps) => {
-  const { menus, active, onClick, expanded, rounded, onToggle, footer, autoCollapse } = props;
+  const { menus, active, onClick, expanded = true, rounded = false, onToggle, footer, autoCollapse = true } = props;
 
   const [menuState, setMenuState] = useState<Record<string, boolean>>({});
 
@@ -217,12 +217,6 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
       )}
     </>
   );
-};
-
-VerticalNavigation.defaultProps = {
-  expanded: true,
-  autoCollapse: true,
-  rounded: false,
 };
 
 export default VerticalNavigation;

@@ -3,7 +3,7 @@
 exports[`AvatarSelection component snapshot 
   list: [{"firstName":"John","lastName":"Doe"},{"firstName":"Steven","lastName":"Packton"},{"firstName":"Nancy","lastName":"Wheeler"},{"firstName":"Monica","lastName":"Geller"},{"firstName":"Arya","lastName":"Stark"},{"firstName":"Rachel","lastName":"Green"}], size: "regular", withSearch: "false"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -25,9 +25,296 @@ Object {
             <span
               class="position-relative d-inline-flex"
             >
-              
               <div
-                class="PopperWrapper-trigger flex-grow-0"
+                class="flex-grow-0"
+              >
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="dialog"
+                  data-state="closed"
+                  triggerclass="flex-grow-0"
+                >
+                  <span
+                    class=""
+                    data-test="DesignSystem-AvatarWrapper"
+                    role="checkbox"
+                  >
+                    <span
+                      class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
+                      data-test="DesignSystem-Avatar"
+                      tabindex="0"
+                    >
+                      <span
+                        class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                        data-test="DesignSystem-Text"
+                      >
+                        JD
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </span>
+          </div>
+        </span>
+        <span
+          class="SelectionAvatarGroup-wrapper"
+        >
+          <div
+            aria-checked="false"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
+            tabindex="-1"
+          >
+            <span
+              class="position-relative d-inline-flex"
+            >
+              <div
+                class="flex-grow-0"
+              >
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="dialog"
+                  data-state="closed"
+                  triggerclass="flex-grow-0"
+                >
+                  <span
+                    class=""
+                    data-test="DesignSystem-AvatarWrapper"
+                    role="checkbox"
+                  >
+                    <span
+                      class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
+                      data-test="DesignSystem-Avatar"
+                      tabindex="0"
+                    >
+                      <span
+                        class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                        data-test="DesignSystem-Text"
+                      >
+                        SP
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </span>
+          </div>
+        </span>
+        <span
+          class="SelectionAvatarGroup-wrapper"
+        >
+          <div
+            aria-checked="false"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
+            tabindex="-1"
+          >
+            <span
+              class="position-relative d-inline-flex"
+            >
+              <div
+                class="flex-grow-0"
+              >
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="dialog"
+                  data-state="closed"
+                  triggerclass="flex-grow-0"
+                >
+                  <span
+                    class=""
+                    data-test="DesignSystem-AvatarWrapper"
+                    role="checkbox"
+                  >
+                    <span
+                      class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
+                      data-test="DesignSystem-Avatar"
+                      tabindex="0"
+                    >
+                      <span
+                        class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                        data-test="DesignSystem-Text"
+                      >
+                        NW
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </span>
+          </div>
+        </span>
+        <span
+          class="SelectionAvatarGroup-wrapper"
+        >
+          <div
+            aria-checked="false"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
+            tabindex="-1"
+          >
+            <span
+              class="position-relative d-inline-flex"
+            >
+              <div
+                class="flex-grow-0"
+              >
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="dialog"
+                  data-state="closed"
+                  triggerclass="flex-grow-0"
+                >
+                  <span
+                    class=""
+                    data-test="DesignSystem-AvatarWrapper"
+                    role="checkbox"
+                  >
+                    <span
+                      class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
+                      data-test="DesignSystem-Avatar"
+                      tabindex="0"
+                    >
+                      <span
+                        class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                        data-test="DesignSystem-Text"
+                      >
+                        MG
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </span>
+          </div>
+        </span>
+        <span
+          class="SelectionAvatarGroup-wrapper"
+        >
+          <div
+            aria-checked="false"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
+            tabindex="-1"
+          >
+            <span
+              class="position-relative d-inline-flex"
+            >
+              <div
+                class="flex-grow-0"
+              >
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="dialog"
+                  data-state="closed"
+                  triggerclass="flex-grow-0"
+                >
+                  <span
+                    class=""
+                    data-test="DesignSystem-AvatarWrapper"
+                    role="checkbox"
+                  >
+                    <span
+                      class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
+                      data-test="DesignSystem-Avatar"
+                      tabindex="0"
+                    >
+                      <span
+                        class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                        data-test="DesignSystem-Text"
+                      >
+                        AS
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </span>
+          </div>
+        </span>
+        <div
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="flex-grow-0"
+          >
+            <div
+              aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
+              aria-expanded="false"
+              aria-haspopup="listbox"
+              class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
+              data-test="DesignSystem-AvatarSelection--TriggerAvatar"
+              role="button"
+              style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
+              tabindex="0"
+            >
+              <span
+                class="position-relative d-inline-flex"
+              >
+                <span
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="presentation"
+                >
+                  <span
+                    class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="-1"
+                  >
+                    <span
+                      class="Text Text--default Text--regular overflow-hidden Avatar-content"
+                      data-test="DesignSystem-Text"
+                    >
+                      +1
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="SelectionAvatarGroup"
+      data-test="DesignSystem-AvatarSelection"
+    >
+      <span
+        class="SelectionAvatarGroup-wrapper"
+      >
+        <div
+          aria-checked="false"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
+          tabindex="-1"
+        >
+          <span
+            class="position-relative d-inline-flex"
+          >
+            <div
+              class="flex-grow-0"
+            >
+              <div
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -48,26 +335,32 @@ Object {
                   </span>
                 </span>
               </div>
-            </span>
-          </div>
-        </span>
-        <span
-          class="SelectionAvatarGroup-wrapper"
+            </div>
+          </span>
+        </div>
+      </span>
+      <span
+        class="SelectionAvatarGroup-wrapper"
+      >
+        <div
+          aria-checked="false"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
+          tabindex="-1"
         >
-          <div
-            aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-            data-test="DesignSystem-AvatarSelection--Avatar"
-            role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
-            tabindex="-1"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class="position-relative d-inline-flex"
+            <div
+              class="flex-grow-0"
             >
-              
               <div
-                class="PopperWrapper-trigger flex-grow-0"
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -88,26 +381,32 @@ Object {
                   </span>
                 </span>
               </div>
-            </span>
-          </div>
-        </span>
-        <span
-          class="SelectionAvatarGroup-wrapper"
+            </div>
+          </span>
+        </div>
+      </span>
+      <span
+        class="SelectionAvatarGroup-wrapper"
+      >
+        <div
+          aria-checked="false"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
+          tabindex="-1"
         >
-          <div
-            aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-            data-test="DesignSystem-AvatarSelection--Avatar"
-            role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
-            tabindex="-1"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class="position-relative d-inline-flex"
+            <div
+              class="flex-grow-0"
             >
-              
               <div
-                class="PopperWrapper-trigger flex-grow-0"
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -128,26 +427,32 @@ Object {
                   </span>
                 </span>
               </div>
-            </span>
-          </div>
-        </span>
-        <span
-          class="SelectionAvatarGroup-wrapper"
+            </div>
+          </span>
+        </div>
+      </span>
+      <span
+        class="SelectionAvatarGroup-wrapper"
+      >
+        <div
+          aria-checked="false"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
+          tabindex="-1"
         >
-          <div
-            aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-            data-test="DesignSystem-AvatarSelection--Avatar"
-            role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
-            tabindex="-1"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class="position-relative d-inline-flex"
+            <div
+              class="flex-grow-0"
             >
-              
               <div
-                class="PopperWrapper-trigger flex-grow-0"
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -168,26 +473,32 @@ Object {
                   </span>
                 </span>
               </div>
-            </span>
-          </div>
-        </span>
-        <span
-          class="SelectionAvatarGroup-wrapper"
+            </div>
+          </span>
+        </div>
+      </span>
+      <span
+        class="SelectionAvatarGroup-wrapper"
+      >
+        <div
+          aria-checked="false"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
+          tabindex="-1"
         >
-          <div
-            aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-            data-test="DesignSystem-AvatarSelection--Avatar"
-            role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
-            tabindex="-1"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class="position-relative d-inline-flex"
+            <div
+              class="flex-grow-0"
             >
-              
               <div
-                class="PopperWrapper-trigger flex-grow-0"
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -208,12 +519,18 @@ Object {
                   </span>
                 </span>
               </div>
-            </span>
-          </div>
-        </span>
-        
+            </div>
+          </span>
+        </div>
+      </span>
+      <div
+        class="flex-grow-0"
+      >
         <div
-          class="PopperWrapper-trigger flex-grow-0"
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="flex-grow-0"
         >
           <div
             aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -248,251 +565,6 @@ Object {
               </span>
             </span>
           </div>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="SelectionAvatarGroup"
-      data-test="DesignSystem-AvatarSelection"
-    >
-      <span
-        class="SelectionAvatarGroup-wrapper"
-      >
-        <div
-          aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-          data-test="DesignSystem-AvatarSelection--Avatar"
-          role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
-          tabindex="-1"
-        >
-          <span
-            class="position-relative d-inline-flex"
-          >
-            
-            <div
-              class="PopperWrapper-trigger flex-grow-0"
-            >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
-              >
-                <span
-                  class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
-                >
-                  <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-                    data-test="DesignSystem-Text"
-                  >
-                    JD
-                  </span>
-                </span>
-              </span>
-            </div>
-          </span>
-        </div>
-      </span>
-      <span
-        class="SelectionAvatarGroup-wrapper"
-      >
-        <div
-          aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-          data-test="DesignSystem-AvatarSelection--Avatar"
-          role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
-          tabindex="-1"
-        >
-          <span
-            class="position-relative d-inline-flex"
-          >
-            
-            <div
-              class="PopperWrapper-trigger flex-grow-0"
-            >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
-              >
-                <span
-                  class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
-                >
-                  <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    SP
-                  </span>
-                </span>
-              </span>
-            </div>
-          </span>
-        </div>
-      </span>
-      <span
-        class="SelectionAvatarGroup-wrapper"
-      >
-        <div
-          aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-          data-test="DesignSystem-AvatarSelection--Avatar"
-          role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
-          tabindex="-1"
-        >
-          <span
-            class="position-relative d-inline-flex"
-          >
-            
-            <div
-              class="PopperWrapper-trigger flex-grow-0"
-            >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
-              >
-                <span
-                  class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
-                >
-                  <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-                    data-test="DesignSystem-Text"
-                  >
-                    NW
-                  </span>
-                </span>
-              </span>
-            </div>
-          </span>
-        </div>
-      </span>
-      <span
-        class="SelectionAvatarGroup-wrapper"
-      >
-        <div
-          aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-          data-test="DesignSystem-AvatarSelection--Avatar"
-          role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
-          tabindex="-1"
-        >
-          <span
-            class="position-relative d-inline-flex"
-          >
-            
-            <div
-              class="PopperWrapper-trigger flex-grow-0"
-            >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
-              >
-                <span
-                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
-                >
-                  <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    MG
-                  </span>
-                </span>
-              </span>
-            </div>
-          </span>
-        </div>
-      </span>
-      <span
-        class="SelectionAvatarGroup-wrapper"
-      >
-        <div
-          aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-          data-test="DesignSystem-AvatarSelection--Avatar"
-          role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
-          tabindex="-1"
-        >
-          <span
-            class="position-relative d-inline-flex"
-          >
-            
-            <div
-              class="PopperWrapper-trigger flex-grow-0"
-            >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
-              >
-                <span
-                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
-                >
-                  <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    AS
-                  </span>
-                </span>
-              </span>
-            </div>
-          </span>
-        </div>
-      </span>
-      
-      <div
-        class="PopperWrapper-trigger flex-grow-0"
-      >
-        <div
-          aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
-          data-test="DesignSystem-AvatarSelection--TriggerAvatar"
-          role="button"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
-          tabindex="0"
-        >
-          <span
-            class="position-relative d-inline-flex"
-          >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="presentation"
-            >
-              <span
-                class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="-1"
-              >
-                <span
-                  class="Text Text--default Text--regular overflow-hidden Avatar-content"
-                  data-test="DesignSystem-Text"
-                >
-                  +1
-                </span>
-              </span>
-            </span>
-          </span>
         </div>
       </div>
     </div>
@@ -554,7 +626,7 @@ Object {
 exports[`AvatarSelection component snapshot 
   list: [{"firstName":"John","lastName":"Doe"},{"firstName":"Steven","lastName":"Packton"},{"firstName":"Nancy","lastName":"Wheeler"},{"firstName":"Monica","lastName":"Geller"},{"firstName":"Arya","lastName":"Stark"},{"firstName":"Rachel","lastName":"Green"}], size: "regular", withSearch: "true"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -576,9 +648,296 @@ Object {
             <span
               class="position-relative d-inline-flex"
             >
-              
               <div
-                class="PopperWrapper-trigger flex-grow-0"
+                class="flex-grow-0"
+              >
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="dialog"
+                  data-state="closed"
+                  triggerclass="flex-grow-0"
+                >
+                  <span
+                    class=""
+                    data-test="DesignSystem-AvatarWrapper"
+                    role="checkbox"
+                  >
+                    <span
+                      class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
+                      data-test="DesignSystem-Avatar"
+                      tabindex="0"
+                    >
+                      <span
+                        class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                        data-test="DesignSystem-Text"
+                      >
+                        JD
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </span>
+          </div>
+        </span>
+        <span
+          class="SelectionAvatarGroup-wrapper"
+        >
+          <div
+            aria-checked="false"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
+            tabindex="-1"
+          >
+            <span
+              class="position-relative d-inline-flex"
+            >
+              <div
+                class="flex-grow-0"
+              >
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="dialog"
+                  data-state="closed"
+                  triggerclass="flex-grow-0"
+                >
+                  <span
+                    class=""
+                    data-test="DesignSystem-AvatarWrapper"
+                    role="checkbox"
+                  >
+                    <span
+                      class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
+                      data-test="DesignSystem-Avatar"
+                      tabindex="0"
+                    >
+                      <span
+                        class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                        data-test="DesignSystem-Text"
+                      >
+                        SP
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </span>
+          </div>
+        </span>
+        <span
+          class="SelectionAvatarGroup-wrapper"
+        >
+          <div
+            aria-checked="false"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
+            tabindex="-1"
+          >
+            <span
+              class="position-relative d-inline-flex"
+            >
+              <div
+                class="flex-grow-0"
+              >
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="dialog"
+                  data-state="closed"
+                  triggerclass="flex-grow-0"
+                >
+                  <span
+                    class=""
+                    data-test="DesignSystem-AvatarWrapper"
+                    role="checkbox"
+                  >
+                    <span
+                      class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
+                      data-test="DesignSystem-Avatar"
+                      tabindex="0"
+                    >
+                      <span
+                        class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                        data-test="DesignSystem-Text"
+                      >
+                        NW
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </span>
+          </div>
+        </span>
+        <span
+          class="SelectionAvatarGroup-wrapper"
+        >
+          <div
+            aria-checked="false"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
+            tabindex="-1"
+          >
+            <span
+              class="position-relative d-inline-flex"
+            >
+              <div
+                class="flex-grow-0"
+              >
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="dialog"
+                  data-state="closed"
+                  triggerclass="flex-grow-0"
+                >
+                  <span
+                    class=""
+                    data-test="DesignSystem-AvatarWrapper"
+                    role="checkbox"
+                  >
+                    <span
+                      class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
+                      data-test="DesignSystem-Avatar"
+                      tabindex="0"
+                    >
+                      <span
+                        class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                        data-test="DesignSystem-Text"
+                      >
+                        MG
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </span>
+          </div>
+        </span>
+        <span
+          class="SelectionAvatarGroup-wrapper"
+        >
+          <div
+            aria-checked="false"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
+            tabindex="-1"
+          >
+            <span
+              class="position-relative d-inline-flex"
+            >
+              <div
+                class="flex-grow-0"
+              >
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="dialog"
+                  data-state="closed"
+                  triggerclass="flex-grow-0"
+                >
+                  <span
+                    class=""
+                    data-test="DesignSystem-AvatarWrapper"
+                    role="checkbox"
+                  >
+                    <span
+                      class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
+                      data-test="DesignSystem-Avatar"
+                      tabindex="0"
+                    >
+                      <span
+                        class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                        data-test="DesignSystem-Text"
+                      >
+                        AS
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </span>
+          </div>
+        </span>
+        <div
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="flex-grow-0"
+          >
+            <div
+              aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
+              aria-expanded="false"
+              aria-haspopup="listbox"
+              class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
+              data-test="DesignSystem-AvatarSelection--TriggerAvatar"
+              role="button"
+              style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
+              tabindex="0"
+            >
+              <span
+                class="position-relative d-inline-flex"
+              >
+                <span
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="presentation"
+                >
+                  <span
+                    class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="-1"
+                  >
+                    <span
+                      class="Text Text--default Text--regular overflow-hidden Avatar-content"
+                      data-test="DesignSystem-Text"
+                    >
+                      +1
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="SelectionAvatarGroup"
+      data-test="DesignSystem-AvatarSelection"
+    >
+      <span
+        class="SelectionAvatarGroup-wrapper"
+      >
+        <div
+          aria-checked="false"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
+          tabindex="-1"
+        >
+          <span
+            class="position-relative d-inline-flex"
+          >
+            <div
+              class="flex-grow-0"
+            >
+              <div
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -599,26 +958,32 @@ Object {
                   </span>
                 </span>
               </div>
-            </span>
-          </div>
-        </span>
-        <span
-          class="SelectionAvatarGroup-wrapper"
+            </div>
+          </span>
+        </div>
+      </span>
+      <span
+        class="SelectionAvatarGroup-wrapper"
+      >
+        <div
+          aria-checked="false"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
+          tabindex="-1"
         >
-          <div
-            aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-            data-test="DesignSystem-AvatarSelection--Avatar"
-            role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
-            tabindex="-1"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class="position-relative d-inline-flex"
+            <div
+              class="flex-grow-0"
             >
-              
               <div
-                class="PopperWrapper-trigger flex-grow-0"
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -639,26 +1004,32 @@ Object {
                   </span>
                 </span>
               </div>
-            </span>
-          </div>
-        </span>
-        <span
-          class="SelectionAvatarGroup-wrapper"
+            </div>
+          </span>
+        </div>
+      </span>
+      <span
+        class="SelectionAvatarGroup-wrapper"
+      >
+        <div
+          aria-checked="false"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
+          tabindex="-1"
         >
-          <div
-            aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-            data-test="DesignSystem-AvatarSelection--Avatar"
-            role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
-            tabindex="-1"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class="position-relative d-inline-flex"
+            <div
+              class="flex-grow-0"
             >
-              
               <div
-                class="PopperWrapper-trigger flex-grow-0"
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -679,26 +1050,32 @@ Object {
                   </span>
                 </span>
               </div>
-            </span>
-          </div>
-        </span>
-        <span
-          class="SelectionAvatarGroup-wrapper"
+            </div>
+          </span>
+        </div>
+      </span>
+      <span
+        class="SelectionAvatarGroup-wrapper"
+      >
+        <div
+          aria-checked="false"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
+          tabindex="-1"
         >
-          <div
-            aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-            data-test="DesignSystem-AvatarSelection--Avatar"
-            role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
-            tabindex="-1"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class="position-relative d-inline-flex"
+            <div
+              class="flex-grow-0"
             >
-              
               <div
-                class="PopperWrapper-trigger flex-grow-0"
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -719,26 +1096,32 @@ Object {
                   </span>
                 </span>
               </div>
-            </span>
-          </div>
-        </span>
-        <span
-          class="SelectionAvatarGroup-wrapper"
+            </div>
+          </span>
+        </div>
+      </span>
+      <span
+        class="SelectionAvatarGroup-wrapper"
+      >
+        <div
+          aria-checked="false"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
+          tabindex="-1"
         >
-          <div
-            aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-            data-test="DesignSystem-AvatarSelection--Avatar"
-            role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
-            tabindex="-1"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class="position-relative d-inline-flex"
+            <div
+              class="flex-grow-0"
             >
-              
               <div
-                class="PopperWrapper-trigger flex-grow-0"
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -759,12 +1142,18 @@ Object {
                   </span>
                 </span>
               </div>
-            </span>
-          </div>
-        </span>
-        
+            </div>
+          </span>
+        </div>
+      </span>
+      <div
+        class="flex-grow-0"
+      >
         <div
-          class="PopperWrapper-trigger flex-grow-0"
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="flex-grow-0"
         >
           <div
             aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -799,251 +1188,6 @@ Object {
               </span>
             </span>
           </div>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="SelectionAvatarGroup"
-      data-test="DesignSystem-AvatarSelection"
-    >
-      <span
-        class="SelectionAvatarGroup-wrapper"
-      >
-        <div
-          aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-          data-test="DesignSystem-AvatarSelection--Avatar"
-          role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
-          tabindex="-1"
-        >
-          <span
-            class="position-relative d-inline-flex"
-          >
-            
-            <div
-              class="PopperWrapper-trigger flex-grow-0"
-            >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
-              >
-                <span
-                  class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
-                >
-                  <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-                    data-test="DesignSystem-Text"
-                  >
-                    JD
-                  </span>
-                </span>
-              </span>
-            </div>
-          </span>
-        </div>
-      </span>
-      <span
-        class="SelectionAvatarGroup-wrapper"
-      >
-        <div
-          aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-          data-test="DesignSystem-AvatarSelection--Avatar"
-          role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
-          tabindex="-1"
-        >
-          <span
-            class="position-relative d-inline-flex"
-          >
-            
-            <div
-              class="PopperWrapper-trigger flex-grow-0"
-            >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
-              >
-                <span
-                  class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
-                >
-                  <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    SP
-                  </span>
-                </span>
-              </span>
-            </div>
-          </span>
-        </div>
-      </span>
-      <span
-        class="SelectionAvatarGroup-wrapper"
-      >
-        <div
-          aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-          data-test="DesignSystem-AvatarSelection--Avatar"
-          role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
-          tabindex="-1"
-        >
-          <span
-            class="position-relative d-inline-flex"
-          >
-            
-            <div
-              class="PopperWrapper-trigger flex-grow-0"
-            >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
-              >
-                <span
-                  class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
-                >
-                  <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-                    data-test="DesignSystem-Text"
-                  >
-                    NW
-                  </span>
-                </span>
-              </span>
-            </div>
-          </span>
-        </div>
-      </span>
-      <span
-        class="SelectionAvatarGroup-wrapper"
-      >
-        <div
-          aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-          data-test="DesignSystem-AvatarSelection--Avatar"
-          role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
-          tabindex="-1"
-        >
-          <span
-            class="position-relative d-inline-flex"
-          >
-            
-            <div
-              class="PopperWrapper-trigger flex-grow-0"
-            >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
-              >
-                <span
-                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
-                >
-                  <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    MG
-                  </span>
-                </span>
-              </span>
-            </div>
-          </span>
-        </div>
-      </span>
-      <span
-        class="SelectionAvatarGroup-wrapper"
-      >
-        <div
-          aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-          data-test="DesignSystem-AvatarSelection--Avatar"
-          role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
-          tabindex="-1"
-        >
-          <span
-            class="position-relative d-inline-flex"
-          >
-            
-            <div
-              class="PopperWrapper-trigger flex-grow-0"
-            >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
-              >
-                <span
-                  class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
-                >
-                  <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    AS
-                  </span>
-                </span>
-              </span>
-            </div>
-          </span>
-        </div>
-      </span>
-      
-      <div
-        class="PopperWrapper-trigger flex-grow-0"
-      >
-        <div
-          aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
-          data-test="DesignSystem-AvatarSelection--TriggerAvatar"
-          role="button"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
-          tabindex="0"
-        >
-          <span
-            class="position-relative d-inline-flex"
-          >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="presentation"
-            >
-              <span
-                class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="-1"
-              >
-                <span
-                  class="Text Text--default Text--regular overflow-hidden Avatar-content"
-                  data-test="DesignSystem-Text"
-                >
-                  +1
-                </span>
-              </span>
-            </span>
-          </span>
         </div>
       </div>
     </div>
@@ -1105,7 +1249,7 @@ Object {
 exports[`AvatarSelection component snapshot 
   list: [{"firstName":"John","lastName":"Doe"},{"firstName":"Steven","lastName":"Packton"},{"firstName":"Nancy","lastName":"Wheeler"},{"firstName":"Monica","lastName":"Geller"},{"firstName":"Arya","lastName":"Stark"},{"firstName":"Rachel","lastName":"Green"}], size: "tiny", withSearch: "false"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -1127,9 +1271,296 @@ Object {
             <span
               class="position-relative d-inline-flex"
             >
-              
               <div
-                class="PopperWrapper-trigger flex-grow-0"
+                class="flex-grow-0"
+              >
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="dialog"
+                  data-state="closed"
+                  triggerclass="flex-grow-0"
+                >
+                  <span
+                    class=""
+                    data-test="DesignSystem-AvatarWrapper"
+                    role="checkbox"
+                  >
+                    <span
+                      class="Avatar Avatar--tiny Avatar--accent1 Avatar--default cursor-pointer"
+                      data-test="DesignSystem-Avatar"
+                      tabindex="0"
+                    >
+                      <span
+                        class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
+                        data-test="DesignSystem-Text"
+                      >
+                        JD
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </span>
+          </div>
+        </span>
+        <span
+          class="SelectionAvatarGroup-wrapper"
+        >
+          <div
+            aria-checked="false"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
+            tabindex="-1"
+          >
+            <span
+              class="position-relative d-inline-flex"
+            >
+              <div
+                class="flex-grow-0"
+              >
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="dialog"
+                  data-state="closed"
+                  triggerclass="flex-grow-0"
+                >
+                  <span
+                    class=""
+                    data-test="DesignSystem-AvatarWrapper"
+                    role="checkbox"
+                  >
+                    <span
+                      class="Avatar Avatar--tiny Avatar--alert Avatar--default cursor-pointer"
+                      data-test="DesignSystem-Avatar"
+                      tabindex="0"
+                    >
+                      <span
+                        class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                        data-test="DesignSystem-Text"
+                      >
+                        SP
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </span>
+          </div>
+        </span>
+        <span
+          class="SelectionAvatarGroup-wrapper"
+        >
+          <div
+            aria-checked="false"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
+            tabindex="-1"
+          >
+            <span
+              class="position-relative d-inline-flex"
+            >
+              <div
+                class="flex-grow-0"
+              >
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="dialog"
+                  data-state="closed"
+                  triggerclass="flex-grow-0"
+                >
+                  <span
+                    class=""
+                    data-test="DesignSystem-AvatarWrapper"
+                    role="checkbox"
+                  >
+                    <span
+                      class="Avatar Avatar--tiny Avatar--warning Avatar--default cursor-pointer"
+                      data-test="DesignSystem-Avatar"
+                      tabindex="0"
+                    >
+                      <span
+                        class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
+                        data-test="DesignSystem-Text"
+                      >
+                        NW
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </span>
+          </div>
+        </span>
+        <span
+          class="SelectionAvatarGroup-wrapper"
+        >
+          <div
+            aria-checked="false"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
+            tabindex="-1"
+          >
+            <span
+              class="position-relative d-inline-flex"
+            >
+              <div
+                class="flex-grow-0"
+              >
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="dialog"
+                  data-state="closed"
+                  triggerclass="flex-grow-0"
+                >
+                  <span
+                    class=""
+                    data-test="DesignSystem-AvatarWrapper"
+                    role="checkbox"
+                  >
+                    <span
+                      class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
+                      data-test="DesignSystem-Avatar"
+                      tabindex="0"
+                    >
+                      <span
+                        class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                        data-test="DesignSystem-Text"
+                      >
+                        MG
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </span>
+          </div>
+        </span>
+        <span
+          class="SelectionAvatarGroup-wrapper"
+        >
+          <div
+            aria-checked="false"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
+            tabindex="-1"
+          >
+            <span
+              class="position-relative d-inline-flex"
+            >
+              <div
+                class="flex-grow-0"
+              >
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="dialog"
+                  data-state="closed"
+                  triggerclass="flex-grow-0"
+                >
+                  <span
+                    class=""
+                    data-test="DesignSystem-AvatarWrapper"
+                    role="checkbox"
+                  >
+                    <span
+                      class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
+                      data-test="DesignSystem-Avatar"
+                      tabindex="0"
+                    >
+                      <span
+                        class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                        data-test="DesignSystem-Text"
+                      >
+                        AS
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </span>
+          </div>
+        </span>
+        <div
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="flex-grow-0"
+          >
+            <div
+              aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
+              aria-expanded="false"
+              aria-haspopup="listbox"
+              class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
+              data-test="DesignSystem-AvatarSelection--TriggerAvatar"
+              role="button"
+              style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
+              tabindex="0"
+            >
+              <span
+                class="position-relative d-inline-flex"
+              >
+                <span
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="presentation"
+                >
+                  <span
+                    class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="-1"
+                  >
+                    <span
+                      class="Text Text--default Text--regular overflow-hidden Avatar-content"
+                      data-test="DesignSystem-Text"
+                    >
+                      +1
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="SelectionAvatarGroup"
+      data-test="DesignSystem-AvatarSelection"
+    >
+      <span
+        class="SelectionAvatarGroup-wrapper"
+      >
+        <div
+          aria-checked="false"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
+          tabindex="-1"
+        >
+          <span
+            class="position-relative d-inline-flex"
+          >
+            <div
+              class="flex-grow-0"
+            >
+              <div
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -1150,26 +1581,32 @@ Object {
                   </span>
                 </span>
               </div>
-            </span>
-          </div>
-        </span>
-        <span
-          class="SelectionAvatarGroup-wrapper"
+            </div>
+          </span>
+        </div>
+      </span>
+      <span
+        class="SelectionAvatarGroup-wrapper"
+      >
+        <div
+          aria-checked="false"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
+          tabindex="-1"
         >
-          <div
-            aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-            data-test="DesignSystem-AvatarSelection--Avatar"
-            role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
-            tabindex="-1"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class="position-relative d-inline-flex"
+            <div
+              class="flex-grow-0"
             >
-              
               <div
-                class="PopperWrapper-trigger flex-grow-0"
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -1190,26 +1627,32 @@ Object {
                   </span>
                 </span>
               </div>
-            </span>
-          </div>
-        </span>
-        <span
-          class="SelectionAvatarGroup-wrapper"
+            </div>
+          </span>
+        </div>
+      </span>
+      <span
+        class="SelectionAvatarGroup-wrapper"
+      >
+        <div
+          aria-checked="false"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
+          tabindex="-1"
         >
-          <div
-            aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-            data-test="DesignSystem-AvatarSelection--Avatar"
-            role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
-            tabindex="-1"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class="position-relative d-inline-flex"
+            <div
+              class="flex-grow-0"
             >
-              
               <div
-                class="PopperWrapper-trigger flex-grow-0"
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -1230,26 +1673,32 @@ Object {
                   </span>
                 </span>
               </div>
-            </span>
-          </div>
-        </span>
-        <span
-          class="SelectionAvatarGroup-wrapper"
+            </div>
+          </span>
+        </div>
+      </span>
+      <span
+        class="SelectionAvatarGroup-wrapper"
+      >
+        <div
+          aria-checked="false"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
+          tabindex="-1"
         >
-          <div
-            aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-            data-test="DesignSystem-AvatarSelection--Avatar"
-            role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
-            tabindex="-1"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class="position-relative d-inline-flex"
+            <div
+              class="flex-grow-0"
             >
-              
               <div
-                class="PopperWrapper-trigger flex-grow-0"
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -1270,26 +1719,32 @@ Object {
                   </span>
                 </span>
               </div>
-            </span>
-          </div>
-        </span>
-        <span
-          class="SelectionAvatarGroup-wrapper"
+            </div>
+          </span>
+        </div>
+      </span>
+      <span
+        class="SelectionAvatarGroup-wrapper"
+      >
+        <div
+          aria-checked="false"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
+          tabindex="-1"
         >
-          <div
-            aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-            data-test="DesignSystem-AvatarSelection--Avatar"
-            role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
-            tabindex="-1"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class="position-relative d-inline-flex"
+            <div
+              class="flex-grow-0"
             >
-              
               <div
-                class="PopperWrapper-trigger flex-grow-0"
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -1310,12 +1765,18 @@ Object {
                   </span>
                 </span>
               </div>
-            </span>
-          </div>
-        </span>
-        
+            </div>
+          </span>
+        </div>
+      </span>
+      <div
+        class="flex-grow-0"
+      >
         <div
-          class="PopperWrapper-trigger flex-grow-0"
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="flex-grow-0"
         >
           <div
             aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -1350,251 +1811,6 @@ Object {
               </span>
             </span>
           </div>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="SelectionAvatarGroup"
-      data-test="DesignSystem-AvatarSelection"
-    >
-      <span
-        class="SelectionAvatarGroup-wrapper"
-      >
-        <div
-          aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-          data-test="DesignSystem-AvatarSelection--Avatar"
-          role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
-          tabindex="-1"
-        >
-          <span
-            class="position-relative d-inline-flex"
-          >
-            
-            <div
-              class="PopperWrapper-trigger flex-grow-0"
-            >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
-              >
-                <span
-                  class="Avatar Avatar--tiny Avatar--accent1 Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
-                >
-                  <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
-                    data-test="DesignSystem-Text"
-                  >
-                    JD
-                  </span>
-                </span>
-              </span>
-            </div>
-          </span>
-        </div>
-      </span>
-      <span
-        class="SelectionAvatarGroup-wrapper"
-      >
-        <div
-          aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-          data-test="DesignSystem-AvatarSelection--Avatar"
-          role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
-          tabindex="-1"
-        >
-          <span
-            class="position-relative d-inline-flex"
-          >
-            
-            <div
-              class="PopperWrapper-trigger flex-grow-0"
-            >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
-              >
-                <span
-                  class="Avatar Avatar--tiny Avatar--alert Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
-                >
-                  <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
-                    data-test="DesignSystem-Text"
-                  >
-                    SP
-                  </span>
-                </span>
-              </span>
-            </div>
-          </span>
-        </div>
-      </span>
-      <span
-        class="SelectionAvatarGroup-wrapper"
-      >
-        <div
-          aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-          data-test="DesignSystem-AvatarSelection--Avatar"
-          role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
-          tabindex="-1"
-        >
-          <span
-            class="position-relative d-inline-flex"
-          >
-            
-            <div
-              class="PopperWrapper-trigger flex-grow-0"
-            >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
-              >
-                <span
-                  class="Avatar Avatar--tiny Avatar--warning Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
-                >
-                  <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
-                    data-test="DesignSystem-Text"
-                  >
-                    NW
-                  </span>
-                </span>
-              </span>
-            </div>
-          </span>
-        </div>
-      </span>
-      <span
-        class="SelectionAvatarGroup-wrapper"
-      >
-        <div
-          aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-          data-test="DesignSystem-AvatarSelection--Avatar"
-          role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
-          tabindex="-1"
-        >
-          <span
-            class="position-relative d-inline-flex"
-          >
-            
-            <div
-              class="PopperWrapper-trigger flex-grow-0"
-            >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
-              >
-                <span
-                  class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
-                >
-                  <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
-                    data-test="DesignSystem-Text"
-                  >
-                    MG
-                  </span>
-                </span>
-              </span>
-            </div>
-          </span>
-        </div>
-      </span>
-      <span
-        class="SelectionAvatarGroup-wrapper"
-      >
-        <div
-          aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-          data-test="DesignSystem-AvatarSelection--Avatar"
-          role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
-          tabindex="-1"
-        >
-          <span
-            class="position-relative d-inline-flex"
-          >
-            
-            <div
-              class="PopperWrapper-trigger flex-grow-0"
-            >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
-              >
-                <span
-                  class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
-                >
-                  <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
-                    data-test="DesignSystem-Text"
-                  >
-                    AS
-                  </span>
-                </span>
-              </span>
-            </div>
-          </span>
-        </div>
-      </span>
-      
-      <div
-        class="PopperWrapper-trigger flex-grow-0"
-      >
-        <div
-          aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
-          data-test="DesignSystem-AvatarSelection--TriggerAvatar"
-          role="button"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
-          tabindex="0"
-        >
-          <span
-            class="position-relative d-inline-flex"
-          >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="presentation"
-            >
-              <span
-                class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="-1"
-              >
-                <span
-                  class="Text Text--default Text--regular overflow-hidden Avatar-content"
-                  data-test="DesignSystem-Text"
-                >
-                  +1
-                </span>
-              </span>
-            </span>
-          </span>
         </div>
       </div>
     </div>
@@ -1656,10 +1872,12 @@ Object {
 exports[`AvatarSelection component snapshot 
   list: [{"firstName":"John","lastName":"Doe"},{"firstName":"Steven","lastName":"Packton"},{"firstName":"Nancy","lastName":"Wheeler"},{"firstName":"Monica","lastName":"Geller"},{"firstName":"Arya","lastName":"Stark"},{"firstName":"Rachel","lastName":"Green"}], size: "tiny", withSearch: "true"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
-    <div>
+    <div
+      data-floating-ui-inert=""
+    >
       <div
         class="SelectionAvatarGroup"
         data-test="DesignSystem-AvatarSelection"
@@ -1678,28 +1896,34 @@ Object {
             <span
               class="position-relative d-inline-flex"
             >
-              
               <div
-                class="PopperWrapper-trigger flex-grow-0"
+                class="flex-grow-0"
               >
-                <span
-                  class=""
-                  data-test="DesignSystem-AvatarWrapper"
-                  role="checkbox"
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="dialog"
+                  data-state="closed"
+                  triggerclass="flex-grow-0"
                 >
                   <span
-                    class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
-                    data-test="DesignSystem-Avatar"
-                    tabindex="0"
+                    class=""
+                    data-test="DesignSystem-AvatarWrapper"
+                    role="checkbox"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-                      data-test="DesignSystem-Text"
+                      class="Avatar Avatar--regular Avatar--accent1 Avatar--default cursor-pointer"
+                      data-test="DesignSystem-Avatar"
+                      tabindex="0"
                     >
-                      JD
+                      <span
+                        class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                        data-test="DesignSystem-Text"
+                      >
+                        JD
+                      </span>
                     </span>
                   </span>
-                </span>
+                </div>
               </div>
             </span>
           </div>
@@ -1718,28 +1942,34 @@ Object {
             <span
               class="position-relative d-inline-flex"
             >
-              
               <div
-                class="PopperWrapper-trigger flex-grow-0"
+                class="flex-grow-0"
               >
-                <span
-                  class=""
-                  data-test="DesignSystem-AvatarWrapper"
-                  role="checkbox"
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="dialog"
+                  data-state="closed"
+                  triggerclass="flex-grow-0"
                 >
                   <span
-                    class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
-                    data-test="DesignSystem-Avatar"
-                    tabindex="0"
+                    class=""
+                    data-test="DesignSystem-AvatarWrapper"
+                    role="checkbox"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-                      data-test="DesignSystem-Text"
+                      class="Avatar Avatar--regular Avatar--alert Avatar--default cursor-pointer"
+                      data-test="DesignSystem-Avatar"
+                      tabindex="0"
                     >
-                      SP
+                      <span
+                        class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                        data-test="DesignSystem-Text"
+                      >
+                        SP
+                      </span>
                     </span>
                   </span>
-                </span>
+                </div>
               </div>
             </span>
           </div>
@@ -1758,28 +1988,34 @@ Object {
             <span
               class="position-relative d-inline-flex"
             >
-              
               <div
-                class="PopperWrapper-trigger flex-grow-0"
+                class="flex-grow-0"
               >
-                <span
-                  class=""
-                  data-test="DesignSystem-AvatarWrapper"
-                  role="checkbox"
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="dialog"
+                  data-state="closed"
+                  triggerclass="flex-grow-0"
                 >
                   <span
-                    class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
-                    data-test="DesignSystem-Avatar"
-                    tabindex="0"
+                    class=""
+                    data-test="DesignSystem-AvatarWrapper"
+                    role="checkbox"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-                      data-test="DesignSystem-Text"
+                      class="Avatar Avatar--regular Avatar--warning Avatar--default cursor-pointer"
+                      data-test="DesignSystem-Avatar"
+                      tabindex="0"
                     >
-                      NW
+                      <span
+                        class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                        data-test="DesignSystem-Text"
+                      >
+                        NW
+                      </span>
                     </span>
                   </span>
-                </span>
+                </div>
               </div>
             </span>
           </div>
@@ -1798,28 +2034,34 @@ Object {
             <span
               class="position-relative d-inline-flex"
             >
-              
               <div
-                class="PopperWrapper-trigger flex-grow-0"
+                class="flex-grow-0"
               >
-                <span
-                  class=""
-                  data-test="DesignSystem-AvatarWrapper"
-                  role="checkbox"
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="dialog"
+                  data-state="closed"
+                  triggerclass="flex-grow-0"
                 >
                   <span
-                    class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
-                    data-test="DesignSystem-Avatar"
-                    tabindex="0"
+                    class=""
+                    data-test="DesignSystem-AvatarWrapper"
+                    role="checkbox"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-                      data-test="DesignSystem-Text"
+                      class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
+                      data-test="DesignSystem-Avatar"
+                      tabindex="0"
                     >
-                      MG
+                      <span
+                        class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                        data-test="DesignSystem-Text"
+                      >
+                        MG
+                      </span>
                     </span>
                   </span>
-                </span>
+                </div>
               </div>
             </span>
           </div>
@@ -1838,86 +2080,149 @@ Object {
             <span
               class="position-relative d-inline-flex"
             >
-              
               <div
-                class="PopperWrapper-trigger flex-grow-0"
+                class="flex-grow-0"
               >
-                <span
-                  class=""
-                  data-test="DesignSystem-AvatarWrapper"
-                  role="checkbox"
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="dialog"
+                  data-state="closed"
+                  triggerclass="flex-grow-0"
                 >
                   <span
-                    class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
-                    data-test="DesignSystem-Avatar"
-                    tabindex="0"
+                    class=""
+                    data-test="DesignSystem-AvatarWrapper"
+                    role="checkbox"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-                      data-test="DesignSystem-Text"
+                      class="Avatar Avatar--regular Avatar--accent2 Avatar--default cursor-pointer"
+                      data-test="DesignSystem-Avatar"
+                      tabindex="0"
                     >
-                      AS
+                      <span
+                        class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                        data-test="DesignSystem-Text"
+                      >
+                        AS
+                      </span>
                     </span>
                   </span>
-                </span>
+                </div>
               </div>
             </span>
           </div>
         </span>
-        
         <div
-          class="PopperWrapper-trigger flex-grow-0"
+          class="flex-grow-0"
         >
           <div
-            aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
+            aria-controls=":ra:"
             aria-expanded="true"
-            aria-haspopup="listbox"
-            class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
-            data-test="DesignSystem-AvatarSelection--TriggerAvatar"
-            role="button"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
-            tabindex="0"
+            aria-haspopup="dialog"
+            data-state="open"
+            triggerclass="flex-grow-0"
           >
-            <span
-              class="position-relative d-inline-flex"
+            <div
+              aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
+              aria-expanded="false"
+              aria-haspopup="listbox"
+              class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
+              data-test="DesignSystem-AvatarSelection--TriggerAvatar"
+              role="button"
+              style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
+              tabindex="0"
             >
               <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="presentation"
+                class="position-relative d-inline-flex"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="-1"
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="presentation"
                 >
                   <span
-                    class="Text Text--default Text--regular overflow-hidden Avatar-content"
-                    data-test="DesignSystem-Text"
+                    class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="-1"
                   >
-                    +1
+                    <span
+                      class="Text Text--default Text--regular overflow-hidden Avatar-content"
+                      data-test="DesignSystem-Text"
+                    >
+                      +1
+                    </span>
                   </span>
                 </span>
               </span>
-            </span>
+            </div>
           </div>
+          <span
+            aria-hidden="true"
+            style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: fixed; white-space: nowrap; width: 1px; top: 0px; left: 0px;"
+            tabindex="-1"
+          />
         </div>
+        <span
+          data-floating-ui-focus-guard=""
+          data-type="outside"
+          role="button"
+          style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: fixed; white-space: nowrap; width: 1px; top: 0px; left: 0px;"
+          tabindex="0"
+        />
+        <span
+          aria-owns=":rc:"
+          style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: fixed; white-space: nowrap; width: 1px; top: 0px; left: 0px;"
+        />
+        <span
+          data-floating-ui-focus-guard=""
+          data-type="outside"
+          role="button"
+          style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: fixed; white-space: nowrap; width: 1px; top: 0px; left: 0px;"
+          tabindex="0"
+        />
       </div>
     </div>
     <div
-      class="Popover"
-      data-hide="false"
-      data-layer="true"
-      data-opened="true"
-      data-placement="bottom-end"
-      data-test="DesignSystem-Popover"
-      style="position: absolute; z-index: 501; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; top: 0px; left: 0px; transform: translate3d(NaNpx, NaNpx, 0); will-change: transform; margin-top: 8px;"
+      data-floating-ui-portal=""
+      id=":rc:"
     >
+      <span
+        data-floating-ui-focus-guard=""
+        data-floating-ui-inert=""
+        data-type="inside"
+        role="button"
+        style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: fixed; white-space: nowrap; width: 1px; top: 0px; left: 0px;"
+        tabindex="0"
+      />
       <div
-        data-test="DesignSystem-Custom-Children"
+        class="Popover"
+        data-floating-ui-focusable=""
+        data-layer="true"
+        data-opened="false"
+        data-test="DesignSystem-Popover"
+        id=":ra:"
+        role="dialog"
+        style="position: absolute; left: 0px; top: 0px; visibility: visible; transform: translate(0px, 0px);"
+        tabindex="0"
       >
-        test custom children
+        <div
+          style="opacity: 0;"
+        >
+          <div
+            data-test="DesignSystem-Custom-Children"
+          >
+            test custom children
+          </div>
+        </div>
       </div>
+      <span
+        data-floating-ui-focus-guard=""
+        data-floating-ui-inert=""
+        data-type="inside"
+        role="button"
+        style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: fixed; white-space: nowrap; width: 1px; top: 0px; left: 0px;"
+        tabindex="0"
+      />
     </div>
     <div>
       <div
@@ -1949,42 +2254,48 @@ Object {
         >
           Avatar Selection Custom Renderer
         </div>
-        
         <div
-          class="PopperWrapper-trigger flex-grow-0"
+          class="flex-grow-0"
         >
           <div
-            aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
             aria-expanded="false"
-            aria-haspopup="listbox"
-            class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
-            data-test="DesignSystem-AvatarSelection--TriggerAvatar"
-            role="button"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
-            tabindex="0"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="flex-grow-0"
           >
-            <span
-              class="position-relative d-inline-flex"
+            <div
+              aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
+              aria-expanded="false"
+              aria-haspopup="listbox"
+              class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
+              data-test="DesignSystem-AvatarSelection--TriggerAvatar"
+              role="button"
+              style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
+              tabindex="0"
             >
               <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="presentation"
+                class="position-relative d-inline-flex"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="-1"
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="presentation"
                 >
                   <span
-                    class="Text Text--default Text--regular overflow-hidden Avatar-content"
-                    data-test="DesignSystem-Text"
+                    class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="-1"
                   >
-                    +1
+                    <span
+                      class="Text Text--default Text--regular overflow-hidden Avatar-content"
+                      data-test="DesignSystem-Text"
+                    >
+                      +1
+                    </span>
                   </span>
                 </span>
               </span>
-            </span>
+            </div>
           </div>
         </div>
       </div>
@@ -2008,9 +2319,296 @@ Object {
             <span
               class="position-relative d-inline-flex"
             >
-              
               <div
-                class="PopperWrapper-trigger flex-grow-0"
+                class="flex-grow-0"
+              >
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="dialog"
+                  data-state="closed"
+                  triggerclass="flex-grow-0"
+                >
+                  <span
+                    class=""
+                    data-test="DesignSystem-AvatarWrapper"
+                    role="checkbox"
+                  >
+                    <span
+                      class="Avatar Avatar--tiny Avatar--accent1 Avatar--default cursor-pointer"
+                      data-test="DesignSystem-Avatar"
+                      tabindex="0"
+                    >
+                      <span
+                        class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
+                        data-test="DesignSystem-Text"
+                      >
+                        JD
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </span>
+          </div>
+        </span>
+        <span
+          class="SelectionAvatarGroup-wrapper"
+        >
+          <div
+            aria-checked="false"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
+            tabindex="-1"
+          >
+            <span
+              class="position-relative d-inline-flex"
+            >
+              <div
+                class="flex-grow-0"
+              >
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="dialog"
+                  data-state="closed"
+                  triggerclass="flex-grow-0"
+                >
+                  <span
+                    class=""
+                    data-test="DesignSystem-AvatarWrapper"
+                    role="checkbox"
+                  >
+                    <span
+                      class="Avatar Avatar--tiny Avatar--alert Avatar--default cursor-pointer"
+                      data-test="DesignSystem-Avatar"
+                      tabindex="0"
+                    >
+                      <span
+                        class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                        data-test="DesignSystem-Text"
+                      >
+                        SP
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </span>
+          </div>
+        </span>
+        <span
+          class="SelectionAvatarGroup-wrapper"
+        >
+          <div
+            aria-checked="false"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
+            tabindex="-1"
+          >
+            <span
+              class="position-relative d-inline-flex"
+            >
+              <div
+                class="flex-grow-0"
+              >
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="dialog"
+                  data-state="closed"
+                  triggerclass="flex-grow-0"
+                >
+                  <span
+                    class=""
+                    data-test="DesignSystem-AvatarWrapper"
+                    role="checkbox"
+                  >
+                    <span
+                      class="Avatar Avatar--tiny Avatar--warning Avatar--default cursor-pointer"
+                      data-test="DesignSystem-Avatar"
+                      tabindex="0"
+                    >
+                      <span
+                        class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
+                        data-test="DesignSystem-Text"
+                      >
+                        NW
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </span>
+          </div>
+        </span>
+        <span
+          class="SelectionAvatarGroup-wrapper"
+        >
+          <div
+            aria-checked="false"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
+            tabindex="-1"
+          >
+            <span
+              class="position-relative d-inline-flex"
+            >
+              <div
+                class="flex-grow-0"
+              >
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="dialog"
+                  data-state="closed"
+                  triggerclass="flex-grow-0"
+                >
+                  <span
+                    class=""
+                    data-test="DesignSystem-AvatarWrapper"
+                    role="checkbox"
+                  >
+                    <span
+                      class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
+                      data-test="DesignSystem-Avatar"
+                      tabindex="0"
+                    >
+                      <span
+                        class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                        data-test="DesignSystem-Text"
+                      >
+                        MG
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </span>
+          </div>
+        </span>
+        <span
+          class="SelectionAvatarGroup-wrapper"
+        >
+          <div
+            aria-checked="false"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            data-test="DesignSystem-AvatarSelection--Avatar"
+            role="checkbox"
+            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
+            tabindex="-1"
+          >
+            <span
+              class="position-relative d-inline-flex"
+            >
+              <div
+                class="flex-grow-0"
+              >
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="dialog"
+                  data-state="closed"
+                  triggerclass="flex-grow-0"
+                >
+                  <span
+                    class=""
+                    data-test="DesignSystem-AvatarWrapper"
+                    role="checkbox"
+                  >
+                    <span
+                      class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
+                      data-test="DesignSystem-Avatar"
+                      tabindex="0"
+                    >
+                      <span
+                        class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                        data-test="DesignSystem-Text"
+                      >
+                        AS
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </span>
+          </div>
+        </span>
+        <div
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="flex-grow-0"
+          >
+            <div
+              aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
+              aria-expanded="false"
+              aria-haspopup="listbox"
+              class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
+              data-test="DesignSystem-AvatarSelection--TriggerAvatar"
+              role="button"
+              style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
+              tabindex="0"
+            >
+              <span
+                class="position-relative d-inline-flex"
+              >
+                <span
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="presentation"
+                >
+                  <span
+                    class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="-1"
+                  >
+                    <span
+                      class="Text Text--default Text--regular overflow-hidden Avatar-content"
+                      data-test="DesignSystem-Text"
+                    >
+                      +1
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="SelectionAvatarGroup"
+      data-test="DesignSystem-AvatarSelection"
+    >
+      <span
+        class="SelectionAvatarGroup-wrapper"
+      >
+        <div
+          aria-checked="false"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
+          tabindex="-1"
+        >
+          <span
+            class="position-relative d-inline-flex"
+          >
+            <div
+              class="flex-grow-0"
+            >
+              <div
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -2031,26 +2629,32 @@ Object {
                   </span>
                 </span>
               </div>
-            </span>
-          </div>
-        </span>
-        <span
-          class="SelectionAvatarGroup-wrapper"
+            </div>
+          </span>
+        </div>
+      </span>
+      <span
+        class="SelectionAvatarGroup-wrapper"
+      >
+        <div
+          aria-checked="false"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
+          tabindex="-1"
         >
-          <div
-            aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-            data-test="DesignSystem-AvatarSelection--Avatar"
-            role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
-            tabindex="-1"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class="position-relative d-inline-flex"
+            <div
+              class="flex-grow-0"
             >
-              
               <div
-                class="PopperWrapper-trigger flex-grow-0"
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -2071,26 +2675,32 @@ Object {
                   </span>
                 </span>
               </div>
-            </span>
-          </div>
-        </span>
-        <span
-          class="SelectionAvatarGroup-wrapper"
+            </div>
+          </span>
+        </div>
+      </span>
+      <span
+        class="SelectionAvatarGroup-wrapper"
+      >
+        <div
+          aria-checked="false"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
+          tabindex="-1"
         >
-          <div
-            aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-            data-test="DesignSystem-AvatarSelection--Avatar"
-            role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
-            tabindex="-1"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class="position-relative d-inline-flex"
+            <div
+              class="flex-grow-0"
             >
-              
               <div
-                class="PopperWrapper-trigger flex-grow-0"
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -2111,26 +2721,32 @@ Object {
                   </span>
                 </span>
               </div>
-            </span>
-          </div>
-        </span>
-        <span
-          class="SelectionAvatarGroup-wrapper"
+            </div>
+          </span>
+        </div>
+      </span>
+      <span
+        class="SelectionAvatarGroup-wrapper"
+      >
+        <div
+          aria-checked="false"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
+          tabindex="-1"
         >
-          <div
-            aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-            data-test="DesignSystem-AvatarSelection--Avatar"
-            role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
-            tabindex="-1"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class="position-relative d-inline-flex"
+            <div
+              class="flex-grow-0"
             >
-              
               <div
-                class="PopperWrapper-trigger flex-grow-0"
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -2151,26 +2767,32 @@ Object {
                   </span>
                 </span>
               </div>
-            </span>
-          </div>
-        </span>
-        <span
-          class="SelectionAvatarGroup-wrapper"
+            </div>
+          </span>
+        </div>
+      </span>
+      <span
+        class="SelectionAvatarGroup-wrapper"
+      >
+        <div
+          aria-checked="false"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          data-test="DesignSystem-AvatarSelection--Avatar"
+          role="checkbox"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
+          tabindex="-1"
         >
-          <div
-            aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-            data-test="DesignSystem-AvatarSelection--Avatar"
-            role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
-            tabindex="-1"
+          <span
+            class="position-relative d-inline-flex"
           >
-            <span
-              class="position-relative d-inline-flex"
+            <div
+              class="flex-grow-0"
             >
-              
               <div
-                class="PopperWrapper-trigger flex-grow-0"
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -2191,12 +2813,18 @@ Object {
                   </span>
                 </span>
               </div>
-            </span>
-          </div>
-        </span>
-        
+            </div>
+          </span>
+        </div>
+      </span>
+      <div
+        class="flex-grow-0"
+      >
         <div
-          class="PopperWrapper-trigger flex-grow-0"
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="flex-grow-0"
         >
           <div
             aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -2231,251 +2859,6 @@ Object {
               </span>
             </span>
           </div>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="SelectionAvatarGroup"
-      data-test="DesignSystem-AvatarSelection"
-    >
-      <span
-        class="SelectionAvatarGroup-wrapper"
-      >
-        <div
-          aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-          data-test="DesignSystem-AvatarSelection--Avatar"
-          role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
-          tabindex="-1"
-        >
-          <span
-            class="position-relative d-inline-flex"
-          >
-            
-            <div
-              class="PopperWrapper-trigger flex-grow-0"
-            >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
-              >
-                <span
-                  class="Avatar Avatar--tiny Avatar--accent1 Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
-                >
-                  <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
-                    data-test="DesignSystem-Text"
-                  >
-                    JD
-                  </span>
-                </span>
-              </span>
-            </div>
-          </span>
-        </div>
-      </span>
-      <span
-        class="SelectionAvatarGroup-wrapper"
-      >
-        <div
-          aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-          data-test="DesignSystem-AvatarSelection--Avatar"
-          role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
-          tabindex="-1"
-        >
-          <span
-            class="position-relative d-inline-flex"
-          >
-            
-            <div
-              class="PopperWrapper-trigger flex-grow-0"
-            >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
-              >
-                <span
-                  class="Avatar Avatar--tiny Avatar--alert Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
-                >
-                  <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
-                    data-test="DesignSystem-Text"
-                  >
-                    SP
-                  </span>
-                </span>
-              </span>
-            </div>
-          </span>
-        </div>
-      </span>
-      <span
-        class="SelectionAvatarGroup-wrapper"
-      >
-        <div
-          aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-          data-test="DesignSystem-AvatarSelection--Avatar"
-          role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
-          tabindex="-1"
-        >
-          <span
-            class="position-relative d-inline-flex"
-          >
-            
-            <div
-              class="PopperWrapper-trigger flex-grow-0"
-            >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
-              >
-                <span
-                  class="Avatar Avatar--tiny Avatar--warning Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
-                >
-                  <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
-                    data-test="DesignSystem-Text"
-                  >
-                    NW
-                  </span>
-                </span>
-              </span>
-            </div>
-          </span>
-        </div>
-      </span>
-      <span
-        class="SelectionAvatarGroup-wrapper"
-      >
-        <div
-          aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-          data-test="DesignSystem-AvatarSelection--Avatar"
-          role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
-          tabindex="-1"
-        >
-          <span
-            class="position-relative d-inline-flex"
-          >
-            
-            <div
-              class="PopperWrapper-trigger flex-grow-0"
-            >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
-              >
-                <span
-                  class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
-                >
-                  <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
-                    data-test="DesignSystem-Text"
-                  >
-                    MG
-                  </span>
-                </span>
-              </span>
-            </div>
-          </span>
-        </div>
-      </span>
-      <span
-        class="SelectionAvatarGroup-wrapper"
-      >
-        <div
-          aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
-          data-test="DesignSystem-AvatarSelection--Avatar"
-          role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
-          tabindex="-1"
-        >
-          <span
-            class="position-relative d-inline-flex"
-          >
-            
-            <div
-              class="PopperWrapper-trigger flex-grow-0"
-            >
-              <span
-                class=""
-                data-test="DesignSystem-AvatarWrapper"
-                role="checkbox"
-              >
-                <span
-                  class="Avatar Avatar--tiny Avatar--accent2 Avatar--default cursor-pointer"
-                  data-test="DesignSystem-Avatar"
-                  tabindex="0"
-                >
-                  <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
-                    data-test="DesignSystem-Text"
-                  >
-                    AS
-                  </span>
-                </span>
-              </span>
-            </div>
-          </span>
-        </div>
-      </span>
-      
-      <div
-        class="PopperWrapper-trigger flex-grow-0"
-      >
-        <div
-          aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
-          data-test="DesignSystem-AvatarSelection--TriggerAvatar"
-          role="button"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
-          tabindex="0"
-        >
-          <span
-            class="position-relative d-inline-flex"
-          >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="presentation"
-            >
-              <span
-                class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
-                data-test="DesignSystem-Avatar"
-                tabindex="-1"
-              >
-                <span
-                  class="Text Text--default Text--regular overflow-hidden Avatar-content"
-                  data-test="DesignSystem-Text"
-                >
-                  +1
-                </span>
-              </span>
-            </span>
-          </span>
         </div>
       </div>
     </div>

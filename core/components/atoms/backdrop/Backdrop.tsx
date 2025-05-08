@@ -6,7 +6,7 @@ import styles from '@css/components/backdrop.module.css';
 
 const { useEffect, useState } = React;
 
-export interface BackdropProps extends BaseProps {
+export type BackdropProps = {
   /**
    * Handles open/close state
    */
@@ -15,7 +15,7 @@ export interface BackdropProps extends BaseProps {
    * Specify zIndex Value
    */
   zIndex?: number;
-}
+} & BaseProps;
 
 /**
  * ### Note:

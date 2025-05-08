@@ -10,7 +10,7 @@ const config = {
   setupFilesAfterEnv: ['./scripts/setupTest.ts', 'jest-canvas-mock'],
   globalSetup: './scripts/setupGlobalJest.ts',
   transformIgnorePatterns: [`/node_modules/(?!${esModules})`],
-  testEnvironment: 'jest-environment-jsdom-fifteen',
+  testEnvironment: 'jsdom',
   collectCoverage: true,
   coverageReporters: ['json', 'lcov', 'text', 'text-summary', 'html'],
   verbose: true,
@@ -41,6 +41,9 @@ const config = {
   },
   testPathIgnorePatterns: [
     '<rootDir>/examples/',
+    '<rootDir>/.rollup.cache/',
+    '<rootDir>/dist/',
+    '<rootDir>/node_modules/',
   ],
 };
 

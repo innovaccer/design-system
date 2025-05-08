@@ -3,16 +3,57 @@
 exports[`Avatar component 
   appearance: "accent1", disabled: false
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <span
         class="position-relative d-inline-flex"
       >
-        
         <div
-          class="PopperWrapper-trigger flex-grow-0"
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="flex-grow-0"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <span
+                  class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="flex-grow-0"
         >
           <span
             class=""
@@ -33,35 +74,6 @@ Object {
             </span>
           </span>
         </div>
-      </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="position-relative d-inline-flex"
-    >
-      
-      <div
-        class="PopperWrapper-trigger flex-grow-0"
-      >
-        <span
-          class=""
-          data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
-        >
-          <span
-            class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
-            data-test="DesignSystem-Avatar"
-            tabindex="0"
-          >
-            <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-              data-test="DesignSystem-Text"
-            >
-              JD
-            </span>
-          </span>
-        </span>
       </div>
     </span>
   </div>,
@@ -122,16 +134,57 @@ Object {
 exports[`Avatar component 
   appearance: "accent1", disabled: true
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <span
         class="position-relative d-inline-flex"
       >
-        
         <div
-          class="PopperWrapper-trigger flex-grow-0"
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="flex-grow-0"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--accent1 Avatar--disabled"
+                data-test="DesignSystem-Avatar"
+                tabindex="-1"
+              >
+                <span
+                  class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="flex-grow-0"
         >
           <span
             class=""
@@ -152,35 +205,6 @@ Object {
             </span>
           </span>
         </div>
-      </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="position-relative d-inline-flex"
-    >
-      
-      <div
-        class="PopperWrapper-trigger flex-grow-0"
-      >
-        <span
-          class=""
-          data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
-        >
-          <span
-            class="Avatar Avatar--regular Avatar--accent1 Avatar--disabled"
-            data-test="DesignSystem-Avatar"
-            tabindex="-1"
-          >
-            <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-              data-test="DesignSystem-Text"
-            >
-              JD
-            </span>
-          </span>
-        </span>
       </div>
     </span>
   </div>,
@@ -241,16 +265,57 @@ Object {
 exports[`Avatar component 
   appearance: "accent2", disabled: false
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <span
         class="position-relative d-inline-flex"
       >
-        
         <div
-          class="PopperWrapper-trigger flex-grow-0"
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="flex-grow-0"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--accent2 Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <span
+                  class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="flex-grow-0"
         >
           <span
             class=""
@@ -271,35 +336,6 @@ Object {
             </span>
           </span>
         </div>
-      </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="position-relative d-inline-flex"
-    >
-      
-      <div
-        class="PopperWrapper-trigger flex-grow-0"
-      >
-        <span
-          class=""
-          data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
-        >
-          <span
-            class="Avatar Avatar--regular Avatar--accent2 Avatar--default"
-            data-test="DesignSystem-Avatar"
-            tabindex="0"
-          >
-            <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-              data-test="DesignSystem-Text"
-            >
-              JD
-            </span>
-          </span>
-        </span>
       </div>
     </span>
   </div>,
@@ -360,16 +396,57 @@ Object {
 exports[`Avatar component 
   appearance: "accent2", disabled: true
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <span
         class="position-relative d-inline-flex"
       >
-        
         <div
-          class="PopperWrapper-trigger flex-grow-0"
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="flex-grow-0"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--accent2 Avatar--disabled"
+                data-test="DesignSystem-Avatar"
+                tabindex="-1"
+              >
+                <span
+                  class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="flex-grow-0"
         >
           <span
             class=""
@@ -390,35 +467,6 @@ Object {
             </span>
           </span>
         </div>
-      </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="position-relative d-inline-flex"
-    >
-      
-      <div
-        class="PopperWrapper-trigger flex-grow-0"
-      >
-        <span
-          class=""
-          data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
-        >
-          <span
-            class="Avatar Avatar--regular Avatar--accent2 Avatar--disabled"
-            data-test="DesignSystem-Avatar"
-            tabindex="-1"
-          >
-            <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-              data-test="DesignSystem-Text"
-            >
-              JD
-            </span>
-          </span>
-        </span>
       </div>
     </span>
   </div>,
@@ -479,16 +527,57 @@ Object {
 exports[`Avatar component 
   appearance: "accent3", disabled: false
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <span
         class="position-relative d-inline-flex"
       >
-        
         <div
-          class="PopperWrapper-trigger flex-grow-0"
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="flex-grow-0"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--accent3 Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <span
+                  class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="flex-grow-0"
         >
           <span
             class=""
@@ -509,35 +598,6 @@ Object {
             </span>
           </span>
         </div>
-      </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="position-relative d-inline-flex"
-    >
-      
-      <div
-        class="PopperWrapper-trigger flex-grow-0"
-      >
-        <span
-          class=""
-          data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
-        >
-          <span
-            class="Avatar Avatar--regular Avatar--accent3 Avatar--default"
-            data-test="DesignSystem-Avatar"
-            tabindex="0"
-          >
-            <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-              data-test="DesignSystem-Text"
-            >
-              JD
-            </span>
-          </span>
-        </span>
       </div>
     </span>
   </div>,
@@ -598,16 +658,57 @@ Object {
 exports[`Avatar component 
   appearance: "accent3", disabled: true
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <span
         class="position-relative d-inline-flex"
       >
-        
         <div
-          class="PopperWrapper-trigger flex-grow-0"
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="flex-grow-0"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--accent3 Avatar--disabled"
+                data-test="DesignSystem-Avatar"
+                tabindex="-1"
+              >
+                <span
+                  class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="flex-grow-0"
         >
           <span
             class=""
@@ -628,35 +729,6 @@ Object {
             </span>
           </span>
         </div>
-      </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="position-relative d-inline-flex"
-    >
-      
-      <div
-        class="PopperWrapper-trigger flex-grow-0"
-      >
-        <span
-          class=""
-          data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
-        >
-          <span
-            class="Avatar Avatar--regular Avatar--accent3 Avatar--disabled"
-            data-test="DesignSystem-Avatar"
-            tabindex="-1"
-          >
-            <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-              data-test="DesignSystem-Text"
-            >
-              JD
-            </span>
-          </span>
-        </span>
       </div>
     </span>
   </div>,
@@ -717,16 +789,57 @@ Object {
 exports[`Avatar component 
   appearance: "accent4", disabled: false
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <span
         class="position-relative d-inline-flex"
       >
-        
         <div
-          class="PopperWrapper-trigger flex-grow-0"
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="flex-grow-0"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--accent4 Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <span
+                  class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="flex-grow-0"
         >
           <span
             class=""
@@ -747,35 +860,6 @@ Object {
             </span>
           </span>
         </div>
-      </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="position-relative d-inline-flex"
-    >
-      
-      <div
-        class="PopperWrapper-trigger flex-grow-0"
-      >
-        <span
-          class=""
-          data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
-        >
-          <span
-            class="Avatar Avatar--regular Avatar--accent4 Avatar--default"
-            data-test="DesignSystem-Avatar"
-            tabindex="0"
-          >
-            <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-              data-test="DesignSystem-Text"
-            >
-              JD
-            </span>
-          </span>
-        </span>
       </div>
     </span>
   </div>,
@@ -836,16 +920,57 @@ Object {
 exports[`Avatar component 
   appearance: "accent4", disabled: true
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <span
         class="position-relative d-inline-flex"
       >
-        
         <div
-          class="PopperWrapper-trigger flex-grow-0"
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="flex-grow-0"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--accent4 Avatar--disabled"
+                data-test="DesignSystem-Avatar"
+                tabindex="-1"
+              >
+                <span
+                  class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="flex-grow-0"
         >
           <span
             class=""
@@ -866,35 +991,6 @@ Object {
             </span>
           </span>
         </div>
-      </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="position-relative d-inline-flex"
-    >
-      
-      <div
-        class="PopperWrapper-trigger flex-grow-0"
-      >
-        <span
-          class=""
-          data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
-        >
-          <span
-            class="Avatar Avatar--regular Avatar--accent4 Avatar--disabled"
-            data-test="DesignSystem-Avatar"
-            tabindex="-1"
-          >
-            <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-              data-test="DesignSystem-Text"
-            >
-              JD
-            </span>
-          </span>
-        </span>
       </div>
     </span>
   </div>,
@@ -955,16 +1051,57 @@ Object {
 exports[`Avatar component 
   appearance: "alert", disabled: false
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <span
         class="position-relative d-inline-flex"
       >
-        
         <div
-          class="PopperWrapper-trigger flex-grow-0"
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="flex-grow-0"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--alert Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <span
+                  class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="flex-grow-0"
         >
           <span
             class=""
@@ -985,35 +1122,6 @@ Object {
             </span>
           </span>
         </div>
-      </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="position-relative d-inline-flex"
-    >
-      
-      <div
-        class="PopperWrapper-trigger flex-grow-0"
-      >
-        <span
-          class=""
-          data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
-        >
-          <span
-            class="Avatar Avatar--regular Avatar--alert Avatar--default"
-            data-test="DesignSystem-Avatar"
-            tabindex="0"
-          >
-            <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-              data-test="DesignSystem-Text"
-            >
-              JD
-            </span>
-          </span>
-        </span>
       </div>
     </span>
   </div>,
@@ -1074,16 +1182,57 @@ Object {
 exports[`Avatar component 
   appearance: "alert", disabled: true
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <span
         class="position-relative d-inline-flex"
       >
-        
         <div
-          class="PopperWrapper-trigger flex-grow-0"
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="flex-grow-0"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--alert Avatar--disabled"
+                data-test="DesignSystem-Avatar"
+                tabindex="-1"
+              >
+                <span
+                  class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="flex-grow-0"
         >
           <span
             class=""
@@ -1104,35 +1253,6 @@ Object {
             </span>
           </span>
         </div>
-      </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="position-relative d-inline-flex"
-    >
-      
-      <div
-        class="PopperWrapper-trigger flex-grow-0"
-      >
-        <span
-          class=""
-          data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
-        >
-          <span
-            class="Avatar Avatar--regular Avatar--alert Avatar--disabled"
-            data-test="DesignSystem-Avatar"
-            tabindex="-1"
-          >
-            <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-              data-test="DesignSystem-Text"
-            >
-              JD
-            </span>
-          </span>
-        </span>
       </div>
     </span>
   </div>,
@@ -1193,16 +1313,57 @@ Object {
 exports[`Avatar component 
   appearance: "primary", disabled: false
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <span
         class="position-relative d-inline-flex"
       >
-        
         <div
-          class="PopperWrapper-trigger flex-grow-0"
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="flex-grow-0"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--primary Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <span
+                  class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="flex-grow-0"
         >
           <span
             class=""
@@ -1223,35 +1384,6 @@ Object {
             </span>
           </span>
         </div>
-      </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="position-relative d-inline-flex"
-    >
-      
-      <div
-        class="PopperWrapper-trigger flex-grow-0"
-      >
-        <span
-          class=""
-          data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
-        >
-          <span
-            class="Avatar Avatar--regular Avatar--primary Avatar--default"
-            data-test="DesignSystem-Avatar"
-            tabindex="0"
-          >
-            <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-              data-test="DesignSystem-Text"
-            >
-              JD
-            </span>
-          </span>
-        </span>
       </div>
     </span>
   </div>,
@@ -1312,16 +1444,57 @@ Object {
 exports[`Avatar component 
   appearance: "primary", disabled: true
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <span
         class="position-relative d-inline-flex"
       >
-        
         <div
-          class="PopperWrapper-trigger flex-grow-0"
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="flex-grow-0"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--primary Avatar--disabled"
+                data-test="DesignSystem-Avatar"
+                tabindex="-1"
+              >
+                <span
+                  class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="flex-grow-0"
         >
           <span
             class=""
@@ -1342,35 +1515,6 @@ Object {
             </span>
           </span>
         </div>
-      </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="position-relative d-inline-flex"
-    >
-      
-      <div
-        class="PopperWrapper-trigger flex-grow-0"
-      >
-        <span
-          class=""
-          data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
-        >
-          <span
-            class="Avatar Avatar--regular Avatar--primary Avatar--disabled"
-            data-test="DesignSystem-Avatar"
-            tabindex="-1"
-          >
-            <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular"
-              data-test="DesignSystem-Text"
-            >
-              JD
-            </span>
-          </span>
-        </span>
       </div>
     </span>
   </div>,
@@ -1431,16 +1575,57 @@ Object {
 exports[`Avatar component 
   appearance: "success", disabled: false
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <span
         class="position-relative d-inline-flex"
       >
-        
         <div
-          class="PopperWrapper-trigger flex-grow-0"
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="flex-grow-0"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--success Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <span
+                  class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="flex-grow-0"
         >
           <span
             class=""
@@ -1461,35 +1646,6 @@ Object {
             </span>
           </span>
         </div>
-      </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="position-relative d-inline-flex"
-    >
-      
-      <div
-        class="PopperWrapper-trigger flex-grow-0"
-      >
-        <span
-          class=""
-          data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
-        >
-          <span
-            class="Avatar Avatar--regular Avatar--success Avatar--default"
-            data-test="DesignSystem-Avatar"
-            tabindex="0"
-          >
-            <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-              data-test="DesignSystem-Text"
-            >
-              JD
-            </span>
-          </span>
-        </span>
       </div>
     </span>
   </div>,
@@ -1550,16 +1706,57 @@ Object {
 exports[`Avatar component 
   appearance: "success", disabled: true
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <span
         class="position-relative d-inline-flex"
       >
-        
         <div
-          class="PopperWrapper-trigger flex-grow-0"
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="flex-grow-0"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--success Avatar--disabled"
+                data-test="DesignSystem-Avatar"
+                tabindex="-1"
+              >
+                <span
+                  class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="flex-grow-0"
         >
           <span
             class=""
@@ -1580,35 +1777,6 @@ Object {
             </span>
           </span>
         </div>
-      </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="position-relative d-inline-flex"
-    >
-      
-      <div
-        class="PopperWrapper-trigger flex-grow-0"
-      >
-        <span
-          class=""
-          data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
-        >
-          <span
-            class="Avatar Avatar--regular Avatar--success Avatar--disabled"
-            data-test="DesignSystem-Avatar"
-            tabindex="-1"
-          >
-            <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-              data-test="DesignSystem-Text"
-            >
-              JD
-            </span>
-          </span>
-        </span>
       </div>
     </span>
   </div>,
@@ -1669,16 +1837,57 @@ Object {
 exports[`Avatar component 
   appearance: "warning", disabled: false
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <span
         class="position-relative d-inline-flex"
       >
-        
         <div
-          class="PopperWrapper-trigger flex-grow-0"
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="flex-grow-0"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--warning Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <span
+                  class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="flex-grow-0"
         >
           <span
             class=""
@@ -1699,35 +1908,6 @@ Object {
             </span>
           </span>
         </div>
-      </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="position-relative d-inline-flex"
-    >
-      
-      <div
-        class="PopperWrapper-trigger flex-grow-0"
-      >
-        <span
-          class=""
-          data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
-        >
-          <span
-            class="Avatar Avatar--regular Avatar--warning Avatar--default"
-            data-test="DesignSystem-Avatar"
-            tabindex="0"
-          >
-            <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-              data-test="DesignSystem-Text"
-            >
-              JD
-            </span>
-          </span>
-        </span>
       </div>
     </span>
   </div>,
@@ -1788,16 +1968,57 @@ Object {
 exports[`Avatar component 
   appearance: "warning", disabled: true
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <span
         class="position-relative d-inline-flex"
       >
-        
         <div
-          class="PopperWrapper-trigger flex-grow-0"
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="flex-grow-0"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--warning Avatar--disabled"
+                data-test="DesignSystem-Avatar"
+                tabindex="-1"
+              >
+                <span
+                  class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="flex-grow-0"
         >
           <span
             class=""
@@ -1818,35 +2039,6 @@ Object {
             </span>
           </span>
         </div>
-      </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="position-relative d-inline-flex"
-    >
-      
-      <div
-        class="PopperWrapper-trigger flex-grow-0"
-      >
-        <span
-          class=""
-          data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
-        >
-          <span
-            class="Avatar Avatar--regular Avatar--warning Avatar--disabled"
-            data-test="DesignSystem-Avatar"
-            tabindex="-1"
-          >
-            <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-              data-test="DesignSystem-Text"
-            >
-              JD
-            </span>
-          </span>
-        </span>
       </div>
     </span>
   </div>,
@@ -1907,16 +2099,57 @@ Object {
 exports[`Avatar component 
   shape: "round"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <span
         class="position-relative d-inline-flex"
       >
-        
         <div
-          class="PopperWrapper-trigger flex-grow-0"
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="flex-grow-0"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <span
+                  class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="flex-grow-0"
         >
           <span
             class=""
@@ -1937,35 +2170,6 @@ Object {
             </span>
           </span>
         </div>
-      </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="position-relative d-inline-flex"
-    >
-      
-      <div
-        class="PopperWrapper-trigger flex-grow-0"
-      >
-        <span
-          class=""
-          data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
-        >
-          <span
-            class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
-            data-test="DesignSystem-Avatar"
-            tabindex="0"
-          >
-            <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-              data-test="DesignSystem-Text"
-            >
-              JD
-            </span>
-          </span>
-        </span>
       </div>
     </span>
   </div>,
@@ -2026,16 +2230,57 @@ Object {
 exports[`Avatar component 
   shape: "square"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <span
         class="position-relative d-inline-flex"
       >
-        
         <div
-          class="PopperWrapper-trigger flex-grow-0"
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="flex-grow-0"
+          >
+            <span
+              class="Avatar-wrapper--square Avatar--regular"
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--square Avatar--accent1 Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <span
+                  class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="flex-grow-0"
         >
           <span
             class="Avatar-wrapper--square Avatar--regular"
@@ -2056,35 +2301,6 @@ Object {
             </span>
           </span>
         </div>
-      </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="position-relative d-inline-flex"
-    >
-      
-      <div
-        class="PopperWrapper-trigger flex-grow-0"
-      >
-        <span
-          class="Avatar-wrapper--square Avatar--regular"
-          data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
-        >
-          <span
-            class="Avatar Avatar--square Avatar--accent1 Avatar--default"
-            data-test="DesignSystem-Avatar"
-            tabindex="0"
-          >
-            <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-              data-test="DesignSystem-Text"
-            >
-              JD
-            </span>
-          </span>
-        </span>
       </div>
     </span>
   </div>,
@@ -2145,16 +2361,57 @@ Object {
 exports[`Avatar component 
   size: "regular"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <span
         class="position-relative d-inline-flex"
       >
-        
         <div
-          class="PopperWrapper-trigger flex-grow-0"
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="flex-grow-0"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <span
+                  class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="flex-grow-0"
         >
           <span
             class=""
@@ -2175,35 +2432,6 @@ Object {
             </span>
           </span>
         </div>
-      </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="position-relative d-inline-flex"
-    >
-      
-      <div
-        class="PopperWrapper-trigger flex-grow-0"
-      >
-        <span
-          class=""
-          data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
-        >
-          <span
-            class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
-            data-test="DesignSystem-Avatar"
-            tabindex="0"
-          >
-            <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
-              data-test="DesignSystem-Text"
-            >
-              JD
-            </span>
-          </span>
-        </span>
       </div>
     </span>
   </div>,
@@ -2264,16 +2492,57 @@ Object {
 exports[`Avatar component 
   size: "tiny"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <span
         class="position-relative d-inline-flex"
       >
-        
         <div
-          class="PopperWrapper-trigger flex-grow-0"
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="flex-grow-0"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <span
+                  class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="flex-grow-0"
         >
           <span
             class=""
@@ -2294,35 +2563,6 @@ Object {
             </span>
           </span>
         </div>
-      </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="position-relative d-inline-flex"
-    >
-      
-      <div
-        class="PopperWrapper-trigger flex-grow-0"
-      >
-        <span
-          class=""
-          data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
-        >
-          <span
-            class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
-            data-test="DesignSystem-Avatar"
-            tabindex="0"
-          >
-            <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
-              data-test="DesignSystem-Text"
-            >
-              JD
-            </span>
-          </span>
-        </span>
       </div>
     </span>
   </div>,

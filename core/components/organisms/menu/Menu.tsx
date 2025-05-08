@@ -13,7 +13,7 @@ import { focusListItem } from './trigger/utils';
 import SubMenuContext from './SubMenuContext';
 import styles from '@css/components/menu.module.css';
 
-export interface MenuProps extends BaseProps {
+export type MenuProps = BaseProps & {
   /**
    * Element to be rendered inside `Menu`
    */
@@ -25,7 +25,7 @@ export interface MenuProps extends BaseProps {
   /**
    * Defines position of `Menu`
    */
-  position: PopoverProps['position'];
+  position?: PopoverProps['position'];
   /**
    * Defines trigger for the `Menu`
    */
@@ -57,10 +57,20 @@ export interface MenuProps extends BaseProps {
    * Disables the `Menu`
    */
   disabled?: boolean;
-}
+};
 
 export const Menu = (props: MenuProps) => {
-  const { children, width, minHeight, maxHeight, className, open, onToggle, ...rest } = props;
+  const {
+    children,
+    width = 176,
+    minHeight,
+    maxHeight = 256,
+    className,
+    open,
+    onToggle,
+    position = 'bottom-start',
+    ...rest
+  } = props;
   const [openPopover, setOpenPopover] = React.useState(open);
   const [highlightFirstItem, setHighlightFirstItem] = React.useState<boolean>(false);
   const [highlightLastItem, setHighlightLastItem] = React.useState<boolean>(false);
@@ -118,6 +128,7 @@ export const Menu = (props: MenuProps) => {
         data-test="DesignSystem-Menu"
         name={menuID}
         offset="medium"
+        position={position}
         {...rest}
         open={openPopover}
         customStyle={{ width }}
@@ -142,11 +153,5 @@ Menu.Item = MenuItem;
 Menu.List = MenuList;
 Menu.Trigger = MenuTrigger;
 Menu.SubMenu = SubMenu;
-
-Menu.defaultProps = {
-  width: 176,
-  maxHeight: 256,
-  position: 'bottom-start',
-};
 
 export default Menu;

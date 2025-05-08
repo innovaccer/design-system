@@ -23,7 +23,7 @@ export interface SelectionOptionProps extends BaseProps {
   /**
    * Set a custom element for list item
    */
-  tagName: ItemTagType;
+  tagName?: ItemTagType;
   /**
    * Handler to be called when `AvatarSelectionOption` is in focus
    */
@@ -35,7 +35,7 @@ export interface SelectionOptionProps extends BaseProps {
 }
 
 export const AvatarSelectionOption = (props: SelectionOptionProps) => {
-  const { children, value, disabled, ...rest } = props;
+  const { children, value, disabled, tagName = 'li', ...rest } = props;
 
   const contextProp = React.useContext(AvatarSelectionContext);
 
@@ -95,15 +95,12 @@ export const AvatarSelectionOption = (props: SelectionOptionProps) => {
       data-test="DesignSystem-AvatarSelection--Option"
       disabled={disabled}
       tabIndex={-1}
+      tagName={tagName}
       {...rest}
     >
       {children}
     </Listbox.Item>
   );
-};
-
-AvatarSelectionOption.defaultProps = {
-  tagName: 'li',
 };
 
 export default AvatarSelectionOption;

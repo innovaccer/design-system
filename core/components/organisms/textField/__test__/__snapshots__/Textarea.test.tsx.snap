@@ -82,27 +82,35 @@ exports[`TextField component matches snapshot when input exceeds maximum charact
 `;
 
 exports[`textfield component 
-  
+  label: "description", name: "name", defaultValue: "default value", disabled: false, helpText: "i am the helptext", withTextarea: true, onChange: "[Function]"
  1`] = `
 <body>
   <div>
     <div>
       <div
-        class="Input Input--regular"
-        data-test="DesignSystem-InputWrapper"
-        role="presentation"
-        style="min-width: 256px;"
+        class="Label Label--withInput"
+        data-test="DesignSystem-Label"
       >
-        <input
-          class="Input-input Input-input--regular"
-          data-test="DesignSystem-Input"
-          type="text"
-          value=""
-        />
+        <label
+          class="Label-text"
+          data-test="DesignSystem-Label--Text"
+        >
+          description
+        </label>
       </div>
+      <textarea
+        class="Textarea Textarea--resize"
+        data-test="DesignSystem-Textarea"
+        helptext="i am the helptext"
+        label="description"
+        name="name"
+        rows="3"
+      >
+        default value
+      </textarea>
       <div
         class="d-flex justify-content-between"
-        style="min-width: 256px;"
+        style="width: 0px;"
       >
         <div
           class="mt-3 d-flex"
@@ -111,7 +119,7 @@ exports[`textfield component
             class="Text Text--subtle Text--medium Text--small"
             data-test="DesignSystem-Text"
           >
-             
+            i am the helptext
           </span>
         </div>
         <div
@@ -143,27 +151,36 @@ exports[`textfield component
 `;
 
 exports[`textfield component 
-  
- 2`] = `
+  label: "description", name: "name", defaultValue: "default value", disabled: true, helpText: "i am the helptext", withTextarea: true, onChange: "[Function]"
+ 1`] = `
 <body>
   <div>
     <div>
       <div
-        class="Input Input--regular"
-        data-test="DesignSystem-InputWrapper"
-        role="presentation"
-        style="min-width: 256px;"
+        class="Label Label--withInput"
+        data-test="DesignSystem-Label"
       >
-        <input
-          class="Input-input Input-input--regular"
-          data-test="DesignSystem-Input"
-          type="text"
-          value=""
-        />
+        <label
+          class="Label-text"
+          data-test="DesignSystem-Label--Text"
+        >
+          description
+        </label>
       </div>
+      <textarea
+        class="Textarea Textarea--resize"
+        data-test="DesignSystem-Textarea"
+        disabled=""
+        helptext="i am the helptext"
+        label="description"
+        name="name"
+        rows="3"
+      >
+        default value
+      </textarea>
       <div
         class="d-flex justify-content-between"
-        style="min-width: 256px;"
+        style="width: 0px;"
       >
         <div
           class="mt-3 d-flex"
@@ -172,7 +189,7 @@ exports[`textfield component
             class="Text Text--subtle Text--medium Text--small"
             data-test="DesignSystem-Text"
           >
-             
+            i am the helptext
           </span>
         </div>
         <div
@@ -234,7 +251,6 @@ exports[`textfield component
           max="50"
           name="name"
           type="text"
-          value=""
         />
       </div>
       <div
@@ -315,6 +331,153 @@ exports[`textfield component
           <span
             class="Text Text--subtle Text--medium Text--small"
             data-test="DesignSystem-Text"
+          >
+            i am the helptext
+          </span>
+        </div>
+        <div
+          class="mt-3 d-flex"
+        >
+          <span
+            class="Text Text--subtle Text--medium Text--small pr-2"
+            data-test="DesignSystem-Text"
+          >
+            0
+          </span>
+          <span
+            class="Text Text--subtle Text--medium Text--small pr-2"
+            data-test="DesignSystem-Text"
+          >
+            /
+          </span>
+          <span
+            class="Text Text--subtle Text--medium Text--small"
+            data-test="DesignSystem-Text"
+          >
+            50
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`textfield component 
+  label: "description", name: "name", max: 50, placeholder: "helptext", error: false, helpText: "i am the helptext", withTextarea: true, onChange: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div>
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-Label"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-Label--Text"
+        >
+          description
+        </label>
+      </div>
+      <textarea
+        class="Textarea Textarea--resize"
+        data-test="DesignSystem-Textarea"
+        helptext="i am the helptext"
+        label="description"
+        max="50"
+        name="name"
+        placeholder="helptext"
+        rows="3"
+      />
+      <div
+        class="d-flex justify-content-between"
+        style="width: 0px;"
+      >
+        <div
+          class="mt-3 d-flex"
+        >
+          <span
+            class="Text Text--subtle Text--medium Text--small"
+            data-test="DesignSystem-Text"
+          >
+            i am the helptext
+          </span>
+        </div>
+        <div
+          class="mt-3 d-flex"
+        >
+          <span
+            class="Text Text--subtle Text--medium Text--small pr-2"
+            data-test="DesignSystem-Text"
+          >
+            0
+          </span>
+          <span
+            class="Text Text--subtle Text--medium Text--small pr-2"
+            data-test="DesignSystem-Text"
+          >
+            /
+          </span>
+          <span
+            class="Text Text--subtle Text--medium Text--small"
+            data-test="DesignSystem-Text"
+          >
+            50
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`textfield component 
+  label: "description", name: "name", max: 50, placeholder: "helptext", error: true, helpText: "i am the helptext", withTextarea: true, onChange: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div>
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-Label"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-Label--Text"
+        >
+          description
+        </label>
+      </div>
+      <textarea
+        class="Textarea Textarea--resize Textarea--error"
+        data-test="DesignSystem-Textarea"
+        helptext="i am the helptext"
+        label="description"
+        max="50"
+        name="name"
+        placeholder="helptext"
+        rows="3"
+      />
+      <div
+        class="d-flex justify-content-between"
+        style="width: 0px;"
+      >
+        <div
+          class="InlineMessage mt-3 d-flex"
+          data-test="DesignSystem-InlineMessage"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--alert InlineMessage-icon--small"
+            data-test="DesignSystem-InlineMessage--Icon"
+            role="button"
+            style="font-size: 14px; width: 14px;"
+          >
+            error
+          </i>
+          <span
+            class="Text Text--default Text--medium Text--small InlineMessage-text--alert"
+            data-test="DesignSystem-InlineMessage--Description"
           >
             i am the helptext
           </span>

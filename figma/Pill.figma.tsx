@@ -1,5 +1,6 @@
 import React from 'react';
 import { Pills } from '@/index';
+import { PillsProps } from '@/index.type';
 import figma from '@figma/code-connect';
 
 figma.connect(Pills, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=39-763&m=dev', {
@@ -18,5 +19,5 @@ figma.connect(Pills, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---
     }),
     subtle: figma.boolean('Subtle'),
   },
-  example: (props) => <Pills {...props}>PILL</Pills>,
+  example: (props) => <Pills {...(props as PillsProps)}>PILL</Pills>,
 });

@@ -127,7 +127,7 @@ const getReverseTimeList = (startTime: string, endTime: string, interval: number
   return result;
 };
 
-const getTimeListIn24HourFormat = (startTime: string, endTime: string, interval: number) => {
+const getTimeListIn24HourFormat = (startTime: string, endTime: string, interval = 15) => {
   if (endTime === '' || checkTimeDifference(startTime, endTime)) {
     return getReverseTimeList(startTime, endTime, interval);
   }
@@ -176,7 +176,7 @@ const isOptionDisabled = (time: string, timeFormat: TimeFormat, disabledSlotList
 
 const convertTimeToOptionList = (
   timeList: string[],
-  timeFormat: TimeFormat,
+  timeFormat: TimeFormat = '12-Hour',
   id = 'TimePicker-Option-key',
   showDuration?: boolean,
   referenceTime?: string,

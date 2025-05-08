@@ -9,7 +9,7 @@ import { Tooltip } from '@/index';
 import { IconType } from '@/common.type';
 import styles from '@css/components/chip.module.css';
 
-export interface GenericChipProps extends BaseProps {
+export type GenericChipProps = {
   label: string | React.ReactElement;
   labelPrefix?: string;
   icon?: string;
@@ -20,12 +20,23 @@ export interface GenericChipProps extends BaseProps {
   onClick?: () => void;
   iconType?: IconType;
   name: Name;
-  maxWidth: string | number;
-}
+  maxWidth?: string | number;
+} & BaseProps;
 
 export const GenericChip = (props: GenericChipProps) => {
-  const { label, icon, clearButton, disabled, className, selected, onClose, onClick, labelPrefix, iconType, maxWidth } =
-    props;
+  const {
+    label,
+    labelPrefix,
+    icon,
+    clearButton,
+    disabled,
+    selected,
+    onClose,
+    onClick,
+    iconType,
+    maxWidth = 'var(--spacing-640)',
+    className,
+  } = props;
   const wrapperStyle = { maxWidth: maxWidth };
   const [isTextTruncated, setIsTextTruncated] = React.useState(false);
   const { detectTruncation } = Tooltip.useAutoTooltip();
@@ -169,8 +180,5 @@ export const GenericChip = (props: GenericChipProps) => {
 };
 
 GenericChip.displayName = 'GenericChip';
-GenericChip.defaultProps = {
-  maxWidth: 'var(--spacing-640)',
-};
 
 export default GenericChip;

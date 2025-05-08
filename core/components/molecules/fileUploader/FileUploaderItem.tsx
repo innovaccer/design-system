@@ -33,14 +33,25 @@ export interface FileItem {
   errorMessage?: string;
 }
 
-export interface FileUploaderItemProps extends BaseProps, FileItem {
+export type FileUploaderItemProps = {
   onDelete?: (file: File, id?: any) => void;
   onRetry?: (file: File, id?: any) => void;
   onClick?: (file: File, id?: any) => void;
-}
+} & BaseProps &
+  FileItem;
 
 export const FileUploaderItem = (props: FileUploaderItemProps) => {
-  const { file, id, status, errorMessage, progress, onClick, onDelete, onRetry, className } = props;
+  const {
+    file,
+    id,
+    status = 'completed',
+    errorMessage = 'Network Error',
+    progress = 0,
+    onClick,
+    onDelete,
+    onRetry,
+    className,
+  } = props;
 
   const { name } = file;
 
@@ -86,12 +97,6 @@ export const FileUploaderItem = (props: FileUploaderItemProps) => {
       {status === 'error' && <InlineMessage size="small" appearance="alert" description={errorMessage} />}
     </div>
   );
-};
-
-FileUploaderItem.defaultProps = {
-  status: 'completed',
-  progress: 0,
-  errorMessage: 'Network Error',
 };
 
 FileUploaderItem.displayName = 'FileUploaderItem';

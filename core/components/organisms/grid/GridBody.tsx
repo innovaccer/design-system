@@ -94,10 +94,10 @@ export const GridBody = (props: GridBodyProps) => {
   const dataLength = isLastPage
     ? totalRecords - (page - 1) * pageSize
     : loading
-    ? pageSize
-    : withPagination
-    ? Math.min(totalRecords, pageSize)
-    : totalRecords;
+      ? pageSize
+      : withPagination
+        ? Math.min(totalRecords, pageSize)
+        : totalRecords;
 
   const renderRow = React.useCallback(
     (rowIndex: number, item?: object) => {

@@ -13,30 +13,32 @@ export interface ComboboxListProps extends BaseProps {
   /**
    * List size
    */
-  size: TListboxSize;
+  size?: TListboxSize;
   /**
    * Set a custom element for Listbox
    */
-  tagName: TagType;
+  tagName?: TagType;
   /**
    * Add divider below all list item
    */
-  showDivider: boolean;
+  showDivider?: boolean;
 }
 
 export const ComboboxList = (props: ComboboxListProps) => {
+  const { children, size = 'compressed', tagName = 'ul', showDivider = false, ...rest } = props;
   return (
-    <Listbox className="py-3" {...props} role="listbox">
-      {props.children}
+    <Listbox
+      type="option"
+      showDivider={showDivider}
+      tagName={tagName}
+      size={size}
+      className="py-3"
+      {...rest}
+      role="listbox"
+    >
+      {children}
     </Listbox>
   );
-};
-
-ComboboxList.defaultProps = {
-  type: 'option',
-  showDivider: false,
-  tagName: 'ul',
-  size: 'compressed',
 };
 
 export default ComboboxList;

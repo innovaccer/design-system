@@ -191,8 +191,8 @@ export const Trigger = (props: TriggerProps) => {
             startDate
               ? translateToString(inputFormat, startDate)
               : init
-              ? InputMask.utils.getDefaultValue(mask, startPlaceholderChar)
-              : ''
+                ? InputMask.utils.getDefaultValue(mask, startPlaceholderChar)
+                : ''
           }
           onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
             onChangeHandler(e, val || '', 'start');
@@ -226,8 +226,8 @@ export const Trigger = (props: TriggerProps) => {
             endDate
               ? translateToString(inputFormat, endDate)
               : init
-              ? InputMask.utils.getDefaultValue(mask, endPlaceholderChar)
-              : ''
+                ? InputMask.utils.getDefaultValue(mask, endPlaceholderChar)
+                : ''
           }
           onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
             onChangeHandler(e, val || '', 'end');

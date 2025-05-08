@@ -20,27 +20,34 @@ exports[`EditableDropdown component
           data-test="DesignSystem-EditableDropdown--Dropdown"
         >
           <div
-            class="PopperWrapper-trigger w-100"
+            class="w-100"
           >
-            <button
-              class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
-              data-test="DesignSystem-DropdownTrigger"
-              tabindex="0"
-              type="button"
-              value=""
+            <div
+              aria-expanded="false"
+              aria-haspopup="dialog"
+              data-state="closed"
+              triggerclass="w-100"
             >
-              <div
-                class="DropdownButton-wrapper"
-              />
-              <i
-                class="material-symbols material-symbols-rounded Icon Icon--default"
-                data-test="DesignSystem-Icon"
-                role="button"
-                style="font-size: 16px; width: 16px;"
+              <button
+                class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+                data-test="DesignSystem-DropdownTrigger"
+                tabindex="0"
+                type="button"
+                value=""
               >
-                keyboard_arrow_down
-              </i>
-            </button>
+                <div
+                  class="DropdownButton-wrapper"
+                />
+                <i
+                  class="material-symbols material-symbols-rounded Icon Icon--default"
+                  data-test="DesignSystem-Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  keyboard_arrow_down
+                </i>
+              </button>
+            </div>
           </div>
         </div>
         <div

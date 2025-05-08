@@ -1,5 +1,6 @@
 import React from 'react';
 import { Badge } from '@/index';
+import { BadgeProps } from '@/index.type';
 import figma from '@figma/code-connect';
 
 figma.connect(Badge, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=41-0&m=dev', {
@@ -18,5 +19,5 @@ figma.connect(Badge, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---
     }),
     subtle: figma.boolean('Subtle'),
   },
-  example: (props) => <Badge {...props}>badge</Badge>,
+  example: (props) => <Badge {...(props as BadgeProps)}>badge</Badge>,
 });

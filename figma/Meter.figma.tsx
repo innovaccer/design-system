@@ -1,5 +1,6 @@
 import React from 'react';
 import { Meter } from '@/index';
+import { MeterProps } from '@/index.type';
 import figma from '@figma/code-connect';
 
 figma.connect(Meter, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=53851-1643', {
@@ -11,5 +12,5 @@ figma.connect(Meter, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---
       Large: 'large',
     }),
   },
-  example: (props) => <Meter {...props} />,
+  example: (props) => <Meter {...(props as MeterProps)} />,
 });

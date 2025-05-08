@@ -3,7 +3,7 @@ import { InlineMessage, Text } from '@/index';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
-export interface HelpTextProps extends BaseProps {
+export type HelpTextProps = {
   /**
    * Text to be rendered
    */
@@ -12,7 +12,7 @@ export interface HelpTextProps extends BaseProps {
    * Shows error state in case of failed validation
    */
   error?: boolean;
-}
+} & BaseProps;
 
 export const HelpText = (props: HelpTextProps) => {
   const { error, message, className } = props;
