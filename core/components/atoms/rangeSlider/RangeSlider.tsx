@@ -7,11 +7,12 @@ enum RangeIndex {
   END = 1,
 }
 
-export interface RangeSliderProps extends MultiSliderProps {
+export interface RangeSliderProps
+  extends Omit<MultiSliderProps, 'labelStepSize' | 'max' | 'min' | 'stepSize' | 'labelRenderer'> {
   /**
    * Gives default value to `RangeSlider` (Used in case of uncontrolled `RangeSlider`).
    */
-  defaultValue: NumberRange;
+  defaultValue?: NumberRange;
   /**
    * Denotes range value of slider. Handles will be rendered at each position in the range. <br/>
    * (Used in case of controlled `RangeSlider`)
@@ -25,10 +26,32 @@ export interface RangeSliderProps extends MultiSliderProps {
    * Callback invoked when a handle is released.
    */
   onRelease?: (value: NumberRange) => void;
+  /**
+   * Indicates increment between successive labels (Must be greater than zero).
+   */
+  labelStepSize?: number;
+  /**
+   * Maximum value of the `Slider`.
+   */
+  max?: number;
+  /**
+   * Minimum value of the `Slider`.
+   */
+  min?: number;
+  /**
+   * Indicates the amount by which the handle moves (Must be greater than zero).
+   */
+  stepSize?: number;
+  /**
+   * Callback to render a custom label.
+   * If `true`, labels will use number value formatted to `labelPrecision` decimal places.
+   * If `false`, labels will not be shown.
+   */
+  labelRenderer?: boolean | ((value: number) => string);
 }
 
 export const RangeSlider = (props: RangeSliderProps) => {
-  const { value: valueProp, defaultValue, onChange, onRelease, ...rest } = props;
+  const { value: valueProp, defaultValue = [0, 10], onChange, onRelease, ...rest } = props;
 
   const [value, setValue] = React.useState(valueProp === undefined ? defaultValue : valueProp);
 
@@ -54,9 +77,5 @@ export const RangeSlider = (props: RangeSliderProps) => {
 };
 
 RangeSlider.displayName = 'RangeSlider';
-RangeSlider.defaultProps = {
-  ...MultiSlider.defaultProps,
-  defaultValue: [0, 10],
-};
 
 export default RangeSlider;

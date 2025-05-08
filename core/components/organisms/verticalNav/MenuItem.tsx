@@ -16,7 +16,7 @@ export interface MenuItemProps extends BaseProps {
   isChildren?: boolean;
   isChildrenVisible?: boolean;
   onClick?: (menu: Menu) => void;
-  customItemRenderer?: (props: MenuItemProps) => JSX.Element;
+  customItemRenderer?: (props: MenuItemProps) => React.JSX.Element;
 }
 interface MenuPillsProps {
   isActive: boolean;
@@ -59,8 +59,17 @@ const MenuPills = (props: MenuPillsProps) => {
 };
 
 export const MenuItem = (props: MenuItemProps) => {
-  const { menu, isActive, expanded, rounded, hasSubmenu, isChildren, isChildrenVisible, onClick, customItemRenderer } =
-    props;
+  const {
+    menu,
+    isActive = false,
+    expanded,
+    rounded,
+    hasSubmenu,
+    isChildren,
+    isChildrenVisible,
+    onClick,
+    customItemRenderer,
+  } = props;
 
   const [isTextTruncated, setIsTextTruncated] = React.useState(false);
   const { detectTruncation } = Tooltip.useAutoTooltip();
@@ -162,8 +171,6 @@ export const MenuItem = (props: MenuItemProps) => {
   );
 };
 
-MenuItem.defaultProps = {
-  isActive: false,
-};
+MenuItem.displayName = 'MenuItem';
 
 export default MenuItem;

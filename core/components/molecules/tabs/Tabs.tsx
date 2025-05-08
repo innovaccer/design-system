@@ -24,7 +24,7 @@ export interface TabConfig {
   onDismiss?: (tabInfo: TabInfo) => void;
   iconType?: IconType;
 }
-export interface TabsProps extends BaseProps {
+export type TabsProps = {
   /**
    * Index of desired selected `Tab`
    */
@@ -59,7 +59,7 @@ export interface TabsProps extends BaseProps {
    * | onDismiss | Called with tab info when a tab is being removed | |
    * | iconType | Set type of Icon | |
    */
-  tabs: TabConfig[];
+  tabs?: TabConfig[];
   /**
    * `Tab` Component will be wrapped in `Tabs` container
    */
@@ -80,7 +80,7 @@ export interface TabsProps extends BaseProps {
    * Adds maxWidth to the `Tab` component
    */
   maxWidth?: string | number;
-}
+} & BaseProps;
 
 const getChildrenArray = (children: SingleOrArray<React.ReactElement>) => {
   return Array.isArray(children) ? children : [children];
@@ -107,12 +107,21 @@ const filterInlineComponent = (children: SingleOrArray<React.ReactElement>) => {
 };
 
 export const Tabs = (props: TabsProps) => {
-  const { children, withSeparator, onTabChange, className, headerClassName, size, maxWidth } = props;
+  const {
+    children,
+    withSeparator = true,
+    onTabChange,
+    className,
+    headerClassName,
+    size = 'regular',
+    maxWidth = 'var(--spacing-640)',
+    tabs: tabsProp = [],
+  } = props;
 
   const baseProps = extractBaseProps(props);
   const tabRefs: HTMLDivElement[] = [];
 
-  const tabs: Tab[] = children ? filterTabs(children) : props.tabs;
+  const tabs: Tab[] = children ? filterTabs(children) : tabsProp;
   const inlineComponent = children ? filterInlineComponent(children) : <></>;
   const totalTabs = tabs.length;
 
@@ -155,7 +164,7 @@ export const Tabs = (props: TabsProps) => {
 
     if (tabs && tabs.length && tabs[activeIndex] && 'props' in tabs[activeIndex]) {
       activeTab = tabs[activeIndex] as React.ReactElement;
-      activeTabClass = activeTab.props?.className;
+      activeTabClass = (activeTab.props as any)?.className;
     } else {
       activeTab = tabs[activeIndex] as TabConfig;
       activeTabClass = activeTab && activeTab.className;
@@ -302,7 +311,7 @@ export const Tabs = (props: TabsProps) => {
 
   const renderTabs = tabs.map((tab: Tab, index) => {
     const currentTabProp = children && 'props' in tab ? tab.props : tab;
-    const { disabled, label } = currentTabProp;
+    const { disabled, label } = currentTabProp as TabConfig;
 
     const tabHeaderClass = classNames({
       [styles['Tab']]: true,
@@ -318,7 +327,11 @@ export const Tabs = (props: TabsProps) => {
       // TODO(a11y)
       //  eslint-disable-next-line
       <div
-        ref={(element) => element && !disabled && tabRefs.push(element)}
+        ref={(element) => {
+          if (element && !disabled) {
+            tabRefs.push(element);
+          }
+        }}
         data-test="DesignSystem-Tabs--Tab"
         key={index}
         className={tabHeaderClass}
@@ -326,7 +339,7 @@ export const Tabs = (props: TabsProps) => {
         onKeyDown={(event: React.KeyboardEvent) => tabKeyDownHandler(event, index)}
         tabIndex={disabled ? -1 : 0}
       >
-        {renderTab(currentTabProp, index)}
+        {renderTab(currentTabProp as Tab, index)}
       </div>
     );
   });
@@ -339,7 +352,7 @@ export const Tabs = (props: TabsProps) => {
       </div>
       {children && (
         <div className={tabContentClass} data-test="DesignSystem-Tabs--Content">
-          {tabs[activeIndex]}
+          {React.isValidElement(tabs[activeIndex]) ? tabs[activeIndex] : null}
         </div>
       )}
     </div>
@@ -347,11 +360,5 @@ export const Tabs = (props: TabsProps) => {
 };
 
 Tabs.displayName = 'Tabs';
-Tabs.defaultProps = {
-  withSeparator: true,
-  tabs: [],
-  size: 'regular',
-  maxWidth: 'var(--spacing-640)',
-};
 
 export default Tabs;

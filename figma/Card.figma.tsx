@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, CardHeader, CardBody, CardFooter, CardSubdued } from '@/index';
+import { CardProps } from '@/index.type';
 import figma from '@figma/code-connect';
 
 figma.connect(Card, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=39-315', {
@@ -13,7 +14,7 @@ figma.connect(Card, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---W
     }),
   },
   example: (props) => (
-    <Card shadow={props.shadow}>
+    <Card shadow={props.shadow as CardProps['shadow']}>
       <CardHeader>Card Header</CardHeader>
       <CardBody>Card Body</CardBody>
       <CardFooter>Card Footer</CardFooter>

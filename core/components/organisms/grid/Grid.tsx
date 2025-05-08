@@ -9,6 +9,7 @@ import { NestedRowProps } from './GridNestedRow';
 import classNames from 'classnames';
 import { GridProvider } from './GridContext';
 import defaultProps from './defaultProps';
+
 import styles from '@css/components/grid.module.css';
 
 export type SortType = 'asc' | 'desc' | 'unsort';
@@ -71,17 +72,17 @@ export type ColumnSchema = {
   /**
    * width of the column(px/%)
    */
-  width?: React.ReactText;
+  width?: string | number;
   /**
    * min-width of the column(px/%)
    * @default 96
    */
-  minWidth?: React.ReactText;
+  minWidth?: string | number;
   /**
    * max-width of the column(px/%)
    * @default 800
    */
-  maxWidth?: React.ReactText;
+  maxWidth?: string | number;
   /**
    * Denotes if column is resizable
    */
@@ -194,7 +195,7 @@ export interface InfiniteScrollProps {
   retryFetchRenderer?: () => React.ReactNode;
 }
 
-export interface GridProps extends BaseProps {
+export type GridProps = BaseProps & {
   /**
    * Controls spacing of `Grid`
    */
@@ -371,7 +372,7 @@ export interface GridProps extends BaseProps {
    * Show nested row trigger
    */
   showNestedRowTrigger?: boolean;
-}
+};
 
 export interface GridState {
   init: boolean;
@@ -657,7 +658,8 @@ export class Grid extends React.Component<GridProps, GridState> {
               />
             )}
             {!loading && error ? (
-              errorTemplate && (typeof errorTemplate === 'function' ? errorTemplate({}) : errorTemplate)
+              errorTemplate &&
+              ((typeof errorTemplate === 'function' ? errorTemplate({}) : errorTemplate) as React.ReactNode)
             ) : (
               <GridBody
                 key={`${page}`}

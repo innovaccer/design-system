@@ -9,7 +9,7 @@ export interface AvatarEmptyStateProps {
   /**
    * Describe title for empty state
    */
-  title?: React.ReactText;
+  title?: string | number;
   /**
    * Specify description for empty state
    */

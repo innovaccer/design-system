@@ -4,23 +4,23 @@ import { Icon } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import styles from '@css/components/collapsible.module.css';
 
-export interface CollapsibleProps extends BaseProps {
+export type CollapsibleProps = {
   /**
    * Set expanded state of `Collapsible`
    */
-  expanded: boolean;
+  expanded?: boolean;
   /**
    * Determines if `Collapsible Panel` expands on hover
    */
-  hoverable: boolean;
+  hoverable?: boolean;
   /**
    * Height of `Collapsible`
    */
-  height: React.ReactText;
+  height?: string | number;
   /**
    * Width of expanded `Collapsible`
    */
-  expandedWidth: number;
+  expandedWidth?: number;
   /**
    * Callback to be called on footer click
    */
@@ -28,15 +28,24 @@ export interface CollapsibleProps extends BaseProps {
   /**
    * Components to render inside `Collapsible`
    */
-  children: React.ReactChild;
+  children: React.ReactNode;
   /**
    * Determines whether to show trigger at bottom of `Collapsible`
    */
-  withTrigger: boolean;
-}
+  withTrigger?: boolean;
+} & BaseProps;
 
 export const Collapsible = (props: CollapsibleProps) => {
-  const { expanded, hoverable, expandedWidth, height, children, className, onToggle, withTrigger } = props;
+  const {
+    expanded = false,
+    hoverable = true,
+    height = '100%',
+    expandedWidth = 240,
+    onToggle,
+    children,
+    withTrigger = true,
+    className,
+  } = props;
 
   const [isClicked, setIsClicked] = React.useState(true);
   const [seperator, setSeperator] = React.useState(false);
@@ -126,13 +135,5 @@ export const Collapsible = (props: CollapsibleProps) => {
 };
 
 Collapsible.displayName = 'Collapsible';
-
-Collapsible.defaultProps = {
-  expanded: false,
-  hoverable: true,
-  height: '100%',
-  expandedWidth: '240px',
-  withTrigger: true,
-};
 
 export default Collapsible;

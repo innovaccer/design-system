@@ -5,7 +5,7 @@ import { Text, Icon, Tooltip } from '@/index';
 import { BaseHtmlProps, BaseProps, extractBaseProps } from '@/utils/types';
 import styles from '@css/components/label.module.css';
 
-export interface LabelProps extends BaseProps, BaseHtmlProps<HTMLLabelElement> {
+export type LabelProps = {
   /**
    * Text to be rendered
    * @type {React.ReactNode}
@@ -31,7 +31,8 @@ export interface LabelProps extends BaseProps, BaseHtmlProps<HTMLLabelElement> {
    * Text to show inside tooltip when hover on **info** icon
    */
   info?: string;
-}
+} & BaseProps &
+  BaseHtmlProps<HTMLLabelElement>;
 
 /**
  * *NOTE: Extends props with HTMLProps<HTMLLabelElement>*

@@ -19,7 +19,7 @@ export type Action = {
   onClick: (e: React.MouseEvent) => void;
 };
 
-export interface ToastProps extends BaseProps {
+export type ToastProps = {
   /**
    * Title of `Toast`
    */
@@ -31,7 +31,7 @@ export interface ToastProps extends BaseProps {
    *
    * @default "info"
    */
-  appearance: MessageAppearance;
+  appearance?: MessageAppearance;
   /**
    * Message to be rendered inside `Toast`
    */
@@ -51,11 +51,11 @@ export interface ToastProps extends BaseProps {
    * Callback for `Toast` close event
    */
   onClose?: () => void;
-}
+} & BaseProps;
 
 export const Toast = (props: ToastProps) => {
   const { title, message, actions, onClose, className } = props;
-  let { appearance } = props;
+  let { appearance = 'info' } = props;
   appearance = appearance === 'default' ? 'info' : appearance;
 
   const baseProps = extractBaseProps(props);
@@ -138,8 +138,5 @@ export const Toast = (props: ToastProps) => {
 };
 
 Toast.displayName = 'Toast';
-Toast.defaultProps = {
-  appearance: 'info',
-};
 
 export default Toast;

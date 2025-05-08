@@ -23,6 +23,7 @@ type ChipOptions = {
 export interface MultiSelectTriggerProps extends BaseProps {
   /**
    * Allows duplicate chips if set to true.
+   * @default false
    */
   allowDuplicates?: boolean;
   /**
@@ -35,6 +36,8 @@ export interface MultiSelectTriggerProps extends BaseProps {
    *   iconType?: 'rounded' | 'outlined'
    *  }
    * </pre>
+   *
+   * @default {}
    */
   chipOptions: ChipOptions;
   /**
@@ -55,10 +58,12 @@ export interface MultiSelectTriggerProps extends BaseProps {
   value?: OptionType[];
   /**
    * The chips to display by default (for uncontrolled mode).
+   * @default []
    */
   defaultValue: OptionType[];
   /**
    * Adds autoFocus to input
+   * @default false
    */
   autoFocus?: boolean;
   /**
@@ -101,15 +106,15 @@ export interface MultiSelectTriggerProps extends BaseProps {
 
 export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTriggerProps>((props, forwardedInputRef) => {
   const {
-    chipOptions,
-    allowDuplicates,
+    chipOptions = {},
+    allowDuplicates = false,
     disabled,
     error,
     placeholder,
-    defaultValue,
+    defaultValue = [],
     value,
     className,
-    autoFocus,
+    autoFocus = false,
     onChange,
     onBlur,
     onFocus,
@@ -120,8 +125,8 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
     ...rest
   } = props;
 
-  const localInputRef = React.useRef<HTMLInputElement>();
-  const customRef = React.useRef<any>();
+  const localInputRef = React.useRef<HTMLInputElement>(null);
+  const customRef = React.useRef<any>(null);
   const inputElementRef = (forwardedInputRef || localInputRef) as React.RefObject<HTMLInputElement>;
 
   const [chips, setChips] = React.useState<OptionType[]>(value || defaultValue);
@@ -320,11 +325,5 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
 });
 
 MultiSelectTrigger.displayName = 'MultiSelectTrigger';
-MultiSelectTrigger.defaultProps = {
-  chipOptions: {},
-  defaultValue: [],
-  allowDuplicates: false,
-  autoFocus: false,
-};
 
 export default MultiSelectTrigger;

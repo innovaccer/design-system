@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import { handleKeyDown } from './utils';
 import styles from '@css/components/menu.module.css';
 
-export interface MenuTriggerProps extends BaseProps {
+export type MenuTriggerProps = BaseProps & {
   /**
    * Defines size of the `Trigger`
    */
@@ -15,7 +15,7 @@ export interface MenuTriggerProps extends BaseProps {
    * Defines appearance of the `Trigger`
    */
   appearance?: 'transparent' | 'basic';
-}
+};
 
 export const MenuTrigger = (props: MenuTriggerProps) => {
   const { className } = props;

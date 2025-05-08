@@ -1,5 +1,6 @@
 import React from 'react';
 import { Modal, Button, Text } from '@/index';
+import { ModalProps } from '@/index.type';
 import figma from '@figma/code-connect';
 
 figma.connect(Modal, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=1878-14714', {
@@ -13,7 +14,6 @@ figma.connect(Modal, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---
   },
   example: (props) => (
     <Modal
-      open={true}
       headerOptions={{
         heading: 'Heading',
         subHeading: 'Subheading',
@@ -28,7 +28,8 @@ figma.connect(Modal, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---
           </Button>
         </>
       }
-      {...props}
+      {...(props as ModalProps)}
+      open={true}
     >
       <Text>Modal Body</Text>
     </Modal>

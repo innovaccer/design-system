@@ -6,7 +6,7 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 import { getMenu, isMenuActive, ActiveMenu, Menu, getExpandedMenus } from '@/utils/navigationHelper';
 import styles from '@css/components/verticalNav.module.css';
 
-export interface VerticalNavProps extends BaseProps {
+export type VerticalNavProps = {
   /**
    * List of menus to be rendered
    *
@@ -50,34 +50,43 @@ export interface VerticalNavProps extends BaseProps {
   /**
    * Makes active menu rounded **(applicable only for type: `vertical` and `expanded` menu)**
    */
-  rounded: boolean;
+  rounded?: boolean;
   /**
    * Set expanded state of `Navigation`**(applicable only for type: `vertical`)**
    */
-  expanded: boolean;
+  expanded?: boolean;
   /**
    * Only one SubMenu visible at a time**(applicable only for type: `vertical`)**
    */
-  autoCollapse: boolean;
+  autoCollapse?: boolean;
   /**
    * Option to pass Custom Item Renderer
    */
-  customItemRenderer?: (props: MenuItemProps) => JSX.Element;
+  customItemRenderer?: (props: MenuItemProps) => React.JSX.Element;
   /**
    * Determines whether to show tooltip for menu label
    * **This prop is DEPRECATED now,**
    * **Auto tooltip feature is enable now on text truncation,**
    * **Please don't use this prop.**
    */
-  showTooltip: boolean;
-}
+  showTooltip?: boolean;
+} & BaseProps;
 
 /**
  * ####NOTE: VerticalNav sets first subMenu(if present) active if the Navigation is collapsed.
  */
 
 export const VerticalNav = (props: VerticalNavProps) => {
-  const { menus, active, onClick, expanded, rounded, autoCollapse, className, customItemRenderer } = props;
+  const {
+    menus,
+    active,
+    onClick,
+    expanded = true,
+    rounded = false,
+    autoCollapse = true,
+    className,
+    customItemRenderer,
+  } = props;
 
   const [subMenuExpandedState, setSubMenuExpandedState] = React.useState<Record<string, boolean>>({});
   const [menuState, setMenuState] = React.useState<Record<string, boolean>>({});
@@ -206,9 +215,6 @@ export const VerticalNav = (props: VerticalNavProps) => {
 };
 
 VerticalNav.defaultProps = {
-  expanded: true,
-  autoCollapse: true,
-  rounded: false,
   showTooltip: false,
 };
 

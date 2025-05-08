@@ -1,5 +1,6 @@
 import React from 'react';
 import { Message, LinkButton } from '@/index';
+import { MessageProps } from '@/index.type';
 import figma from '@figma/code-connect';
 
 figma.connect(Message, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=444-1446&m=dev', {
@@ -25,5 +26,5 @@ figma.connect(Message, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS-
       false: undefined,
     }),
   },
-  example: (props) => <Message description="Message goes here" {...props} />,
+  example: (props) => <Message {...(props as MessageProps)} description="Message goes here" />,
 });

@@ -9,35 +9,42 @@ import classNames from 'classnames';
 
 export type PaginationType = 'basic' | 'jump';
 
-export interface PaginationProps extends BaseProps {
+export type PaginationProps = {
   /**
    * `Pagination` component type
    */
-  type: PaginationType;
+  type?: PaginationType;
   /**
    * Total number of pages
    */
-  totalPages: number;
+  totalPages?: number;
   /**
    * Current page
    */
-  page: number;
+  page?: number;
   /**
    * Debounce duration to call in case of page jump
    */
-  pageJumpDebounceDuration: number;
+  pageJumpDebounceDuration?: number;
   /**
    *  Callback when page is changed
    */
   onPageChange: (page: number) => void;
-}
+} & BaseProps;
 
 export const Pagination = (props: PaginationProps) => {
-  const { type, totalPages, onPageChange, className, pageJumpDebounceDuration } = props;
+  const {
+    type = 'basic',
+    totalPages = 1,
+    page: pageProp = 1,
+    pageJumpDebounceDuration = 750,
+    onPageChange,
+    className,
+  } = props;
 
   const baseProps = extractBaseProps(props);
 
-  const [page, setPage] = React.useState<number>(props.page);
+  const [page, setPage] = React.useState<number>(pageProp || 1);
   const [init, setInit] = React.useState<boolean>(false);
   const [debounceCancelCounter, setDebounceCancelCounter] = React.useState<number>(0);
 
@@ -46,8 +53,8 @@ export const Pagination = (props: PaginationProps) => {
   ]);
 
   React.useEffect(() => {
-    setPage(props.page);
-  }, [props.page]);
+    setPage(pageProp);
+  }, [pageProp]);
 
   const wrapperClass = classNames(
     {
@@ -175,11 +182,5 @@ export const Pagination = (props: PaginationProps) => {
 };
 
 Pagination.displayName = 'Pagination';
-Pagination.defaultProps = {
-  type: 'basic',
-  page: 1,
-  totalPages: 1,
-  pageJumpDebounceDuration: 750,
-};
 
 export default Pagination;

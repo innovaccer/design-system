@@ -8,7 +8,7 @@ import AvatarInput from './AvatarInput';
 import AvatarOptionItem from './AvatarOptionItem';
 
 interface AvatarPopperProps {
-  popperRenderer?: (names: AvatarData[]) => JSX.Element;
+  popperRenderer?: (names: AvatarData[]) => React.JSX.Element;
   maxHeight?: number | string;
   minHeight?: number | string;
   width?: number | string;

@@ -3,12 +3,12 @@ import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import styles from '@css/components/card.module.css';
 
-export interface CardHeaderProps extends BaseProps {
+export type CardHeaderProps = {
   /**
    * React component to be rendered inside `CardHeader`
    */
   children: React.ReactNode;
-}
+} & BaseProps;
 
 export const CardHeader = (props: CardHeaderProps) => {
   const { className, children } = props;

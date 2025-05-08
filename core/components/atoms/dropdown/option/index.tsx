@@ -27,7 +27,7 @@ export interface OptionRendererProps {
    * }
    * </pre>
    */
-  optionRenderer?: (props: OptionProps) => React.ReactElement;
+  optionRenderer?: (props: OptionProps) => React.JSX.Element;
   /**
    * Type of option
    */
@@ -36,7 +36,7 @@ export interface OptionRendererProps {
 
 export interface OptionSchema extends Record<string, any> {
   label: string;
-  value: React.ReactText;
+  value: string | number;
   icon?: string;
   subInfo?: string | MetaListProps;
   optionType?: OptionType;
@@ -58,7 +58,7 @@ export interface OptionTypeProps {
   onUpdateActiveOption: () => void;
   onClickHandler?: (event: ClickEvent) => void;
   onChangeHandler?: (event: ChangeEvent) => void;
-  renderSubInfo: (subInfo: string | MetaListProps) => React.ReactElement;
+  renderSubInfo: (subInfo: string | MetaListProps) => React.JSX.Element;
   id?: string;
 }
 
@@ -76,7 +76,7 @@ interface OptionProps extends OptionRendererProps {
   id?: string;
 }
 
-const OptionTypeMapping: { [key: string]: (props: OptionTypeProps) => JSX.Element } = {
+const OptionTypeMapping: { [key: string]: (props: OptionTypeProps) => React.JSX.Element } = {
   ['DEFAULT']: DefaultOption,
   ['WITH_ICON']: IconOption,
   ['WITH_META']: MetaOption,

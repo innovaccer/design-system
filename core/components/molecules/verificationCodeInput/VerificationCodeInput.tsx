@@ -39,7 +39,7 @@ interface VerificationProps extends BaseProps {
   onChange?: (value: string) => void;
 }
 
-type Refs = RefObject<HTMLInputElement>[];
+type Refs = RefObject<HTMLInputElement | null>[];
 
 export type VerificationCodeInputProps = VerificationProps &
   Omit<
@@ -238,9 +238,5 @@ const VerificationCodeInput = (props: VerificationCodeInputProps) => {
 };
 
 VerificationCodeInput.displayName = 'VerificationCodeInput';
-VerificationCodeInput.defaultProps = {
-  type: 'number',
-  fields: 4,
-};
 
 export default VerificationCodeInput;

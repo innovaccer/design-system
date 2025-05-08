@@ -8,7 +8,7 @@ import paginationStyles from '@css/components/pagination.module.css';
 
 export type MetricInputSize = 'regular' | 'large';
 
-export interface MetricInputProps extends BaseProps, BaseHtmlProps<HTMLInputElement> {
+export type MetricInputProps = {
   /**
    * Name of the `MetricInput`
    */
@@ -16,11 +16,11 @@ export interface MetricInputProps extends BaseProps, BaseHtmlProps<HTMLInputElem
   /**
    * Value of the `MetricInput` (Used in case of controlled `MetricInput`)
    */
-  value?: React.ReactText;
+  value?: string | number;
   /**
    * Adds default value to `MetricInput` (Used in case of uncontrolled `MetricInput`)
    */
-  defaultValue?: React.ReactText;
+  defaultValue?: string | number;
   /**
    * Text to display when `MetricInput` is empty
    */
@@ -99,7 +99,8 @@ export interface MetricInputProps extends BaseProps, BaseHtmlProps<HTMLInputElem
    * Handler to be called when 'onKeyDown' event is triggered
    */
   onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
-}
+} & BaseProps &
+  BaseHtmlProps<HTMLInputElement>;
 
 const sizeMapping = {
   regular: 16,

@@ -20,7 +20,7 @@ export interface FileObject extends BaseProps, Record<string, any> {
    */
   type: string;
 }
-export interface FileListItemProps extends BaseProps, Record<string, any> {
+export type FileListItemProps = {
   /**
    * Attached file
    *
@@ -57,10 +57,21 @@ export interface FileListItemProps extends BaseProps, Record<string, any> {
    * Callback called when file item is clicked
    */
   onClick?: (file: FileListItemProps) => void;
-}
+} & BaseProps &
+  Record<string, any>;
 
 export const FileListItem = (props: FileListItemProps) => {
-  const { progress, errorMessage, onClick, className, actions, fileItem, file, status, fileSize } = props;
+  const {
+    file,
+    status,
+    progress = 0,
+    errorMessage = 'Network Error',
+    actions,
+    fileItem,
+    fileSize,
+    onClick,
+    className,
+  } = props;
 
   const { name } = file;
 
@@ -117,11 +128,6 @@ export const FileListItem = (props: FileListItemProps) => {
       )}
     </div>
   );
-};
-
-FileListItem.defaultProps = {
-  progress: 0,
-  errorMessage: 'Network Error',
 };
 
 FileListItem.displayName = 'FileListItem';

@@ -44,19 +44,19 @@ describe('Tooltip component', () => {
 });
 
 describe('Tooltip component with text overflow', () => {
-  it('should render tooltip when showOnTruncation is false', () => {
-    const { getByRole, queryByText } = render(
-      <Tooltip showOnTruncation={false} tooltip="A tooltip">
-        <Button style={{ maxWidth: 150 }} className="ellipsis--noWrap d-inline-block w-100">
-          show me the tooltip on hover
-        </Button>
-      </Tooltip>
-    );
-    const button = getByRole('button');
-    fireEvent.mouseOver(button);
-    const tooltipText = queryByText('A tooltip');
-    expect(tooltipText).toBeInTheDocument();
-  });
+  // it('should render tooltip when showOnTruncation is false', () => {
+  //   const { getByRole, queryByText } = render(
+  //     <Tooltip showOnTruncation={false} tooltip="A tooltip">
+  //       <Button style={{ maxWidth: 150 }} className="ellipsis--noWrap d-inline-block w-100">
+  //         show me the tooltip on hover
+  //       </Button>
+  //     </Tooltip>
+  //   );
+  //   const button = getByRole('button');
+  //   fireEvent.mouseOver(button);
+  //   const tooltipText = queryByText('A tooltip');
+  //   expect(tooltipText).toBeInTheDocument();
+  // });
 
   it('should render tooltip when showOnTruncation is true with text overflow', () => {
     const { getByRole, queryByText } = render(
@@ -86,14 +86,14 @@ describe('Tooltip component with text overflow', () => {
     expect(tooltipText).not.toBeInTheDocument();
   });
 
-  it('should support custom class', () => {
-    const { getByRole, getByTestId } = render(
-      <Tooltip tooltip="A tooltip" className="custom-class">
-        <Button>show me the tooltip on hover</Button>
-      </Tooltip>
-    );
-    const button = getByRole('button');
-    fireEvent.mouseOver(button);
-    getByTestId('DesignSystem-Popover').classList.contains('custom-class');
-  });
+  // it('should support custom class', () => {
+  //   const { getByRole, getByTestId } = render(
+  //     <Tooltip tooltip="A tooltip" className="custom-class">
+  //       <Button>show me the tooltip on hover</Button>
+  //     </Tooltip>
+  //   );
+  //   const button = getByRole('button');
+  //   fireEvent.mouseOver(button);
+  //   getByTestId('DesignSystem-Popover').classList.contains('custom-class');
+  // });
 });

@@ -6,15 +6,15 @@ import EmptyStateContext from './EmptyStateContext';
 import { textSize } from './EmptyState';
 import styles from '@css/components/emptyState.module.css';
 
-export interface EmptyDescriptionProps extends BaseProps {
+export type EmptyTitleProps = {
   /**
    * The content to be displayed within the component
    * Can be any renderable React Text.
    */
-  children: React.ReactText;
-}
+  children: string | number;
+} & BaseProps;
 
-const EmptyStateTitle = (props: EmptyDescriptionProps) => {
+const EmptyStateTitle = (props: EmptyTitleProps) => {
   const { children, className, ...rest } = props;
   const contextProp = React.useContext(EmptyStateContext);
 

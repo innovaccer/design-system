@@ -11,7 +11,7 @@ import EmptyStateActions from './EmptyStateActions';
 import { TEmptyStateSize } from '@/common.type';
 import styles from '@css/components/emptyState.module.css';
 
-export interface EmptyStateProps extends BaseProps {
+export type EmptyStateProps = {
   /** @ignore */
   imageSrc?: string;
   /** @ignore */
@@ -45,7 +45,7 @@ export interface EmptyStateProps extends BaseProps {
    * child component to be added inside `EmptyState`
    */
   children?: React.ReactNode;
-}
+} & BaseProps;
 
 export const imageHeight = {
   large: '256px',
@@ -186,9 +186,5 @@ EmptyState.Title = EmptyStateTitle;
 EmptyState.Description = EmptyStateDescription;
 EmptyState.Image = EmptyStateImage;
 EmptyState.Actions = EmptyStateActions;
-
-EmptyState.defaultProps = {
-  size: 'standard',
-};
 
 export default EmptyState;
