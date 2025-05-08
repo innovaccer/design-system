@@ -27,6 +27,7 @@ exports[`Menu component snapshot
   <div>
     <div>
       <div
+<<<<<<< HEAD
         aria-controls=":r0:"
         aria-expanded="true"
         aria-haspopup="dialog"
@@ -249,6 +250,59 @@ exports[`Menu component with Trigger snapshot
         aria-expanded="false"
         aria-haspopup="dialog"
         data-state="closed"
+=======
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        data-state="closed"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Menu component with Nesting snapshot 
+  open: false
+ 1`] = `
+<body>
+  <div>
+    <div>
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        data-state="closed"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Menu component with Nesting snapshot 
+  open: true
+ 1`] = `
+<body>
+  <div>
+    <div>
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        data-state="closed"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Menu component with Trigger snapshot 
+  open: false
+ 1`] = `
+<body>
+  <div>
+    <div>
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
       >
         <button
           aria-expanded="false"
@@ -289,10 +343,16 @@ exports[`Menu component with Trigger snapshot
   <div>
     <div>
       <div
+<<<<<<< HEAD
         aria-controls=":rf:"
         aria-expanded="true"
         aria-haspopup="dialog"
         data-state="open"
+=======
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
       >
         <button
           aria-expanded="true"
@@ -301,6 +361,7 @@ exports[`Menu component with Trigger snapshot
           class="Button Button--regular Button--regularSquare Button--basic Menu-Trigger--active"
           data-test="DesignSystem-Menu-Trigger"
           tabindex="0"
+<<<<<<< HEAD
         >
           <div
             class="Button-icon"
@@ -379,6 +440,23 @@ exports[`Menu component with Trigger snapshot
             </a>
           </nav>
         </div>
+=======
+        >
+          <div
+            class="Button-icon"
+            data-test="DesignSystem-Button--Icon-Wrapper"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon"
+              data-test="DesignSystem-Button--Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              more_horiz
+            </i>
+          </div>
+        </button>
+>>>>>>> b67de59a (feat: migration to react 19)
       </div>
     </div>
   </div>

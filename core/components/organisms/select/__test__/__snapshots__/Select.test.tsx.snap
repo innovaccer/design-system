@@ -17,7 +17,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -78,7 +81,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -139,7 +145,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -200,7 +209,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -261,7 +273,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -322,7 +337,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -383,7 +401,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -444,7 +465,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -505,7 +529,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -566,7 +593,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -627,7 +657,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -688,7 +721,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -749,7 +785,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -810,7 +849,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -871,7 +913,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -932,7 +977,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -993,7 +1041,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1054,7 +1105,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1115,7 +1169,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1176,7 +1233,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1237,7 +1297,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1298,7 +1361,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1359,7 +1425,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1420,7 +1489,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1481,7 +1553,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1542,7 +1617,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1603,7 +1681,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1664,7 +1745,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1725,7 +1809,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1786,7 +1873,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1847,7 +1937,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1908,7 +2001,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1969,7 +2065,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2030,7 +2129,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2091,7 +2193,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2152,7 +2257,10 @@ exports[`Select List component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2213,7 +2321,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2274,7 +2385,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2335,7 +2449,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2396,7 +2513,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2457,7 +2577,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2518,7 +2641,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2579,7 +2705,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2640,7 +2769,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2701,7 +2833,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2762,7 +2897,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2823,7 +2961,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2884,7 +3025,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2945,7 +3089,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3006,7 +3153,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3067,7 +3217,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3128,7 +3281,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3189,7 +3345,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3250,7 +3409,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3311,7 +3473,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3372,7 +3537,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3433,7 +3601,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3494,7 +3665,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3555,7 +3729,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3616,7 +3793,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3677,7 +3857,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3738,7 +3921,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3799,7 +3985,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3860,7 +4049,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3921,7 +4113,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3982,7 +4177,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -4043,7 +4241,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -4104,7 +4305,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -4165,7 +4369,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -4226,7 +4433,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -4287,7 +4497,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -4348,7 +4561,10 @@ exports[`Select Option component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -4409,7 +4625,10 @@ exports[`Select component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -4470,7 +4689,10 @@ exports[`Select component snapshots
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
           class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
           data-state="closed"
           triggerclass="d-block"
         >

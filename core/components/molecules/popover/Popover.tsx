@@ -176,7 +176,7 @@ export type PopoverProps = {
    */
   disabled?: boolean;
   /**
-   * Defines coordinates where you need to position a popover
+   * Hides the `Popover` when its reference element is outside of the `Popover` boundaries
    */
   triggerCoordinates?: {
     x: number;

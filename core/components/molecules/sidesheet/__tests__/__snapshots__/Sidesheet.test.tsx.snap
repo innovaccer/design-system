@@ -53,6 +53,7 @@ exports[`Sidesheet component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
+<<<<<<< HEAD
             <div
               class="w-fit-content"
             >
@@ -62,6 +63,13 @@ exports[`Sidesheet component
                 class="w-fit-content"
                 data-state="closed"
                 triggerclass="w-fit-content"
+=======
+            <div>
+              <div
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -162,6 +170,7 @@ exports[`Sidesheet component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
+<<<<<<< HEAD
             <div
               class="w-fit-content"
             >
@@ -171,6 +180,13 @@ exports[`Sidesheet component
                 class="w-fit-content"
                 data-state="closed"
                 triggerclass="w-fit-content"
+=======
+            <div>
+              <div
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"

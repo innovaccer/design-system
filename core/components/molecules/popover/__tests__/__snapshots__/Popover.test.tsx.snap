@@ -6,10 +6,16 @@ exports[`Popover component
 <DocumentFragment>
   <div>
     <div
+<<<<<<< HEAD
       aria-controls=":rr:"
       aria-expanded="true"
       aria-haspopup="dialog"
       data-state="open"
+=======
+      aria-expanded="false"
+      aria-haspopup="dialog"
+      data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -59,10 +65,16 @@ exports[`Popover component
 <DocumentFragment>
   <div>
     <div
+<<<<<<< HEAD
       aria-controls=":rl:"
       aria-expanded="true"
       aria-haspopup="dialog"
       data-state="open"
+=======
+      aria-expanded="false"
+      aria-haspopup="dialog"
+      data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -112,10 +124,16 @@ exports[`Popover component
 <DocumentFragment>
   <div>
     <div
+<<<<<<< HEAD
       aria-controls=":r9:"
       aria-expanded="true"
       aria-haspopup="dialog"
       data-state="open"
+=======
+      aria-expanded="false"
+      aria-haspopup="dialog"
+      data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -139,10 +157,16 @@ exports[`Popover component
 <DocumentFragment>
   <div>
     <div
+<<<<<<< HEAD
       aria-controls=":rf:"
       aria-expanded="true"
       aria-haspopup="dialog"
       data-state="open"
+=======
+      aria-expanded="false"
+      aria-haspopup="dialog"
+      data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -166,10 +190,16 @@ exports[`Popover component
 <DocumentFragment>
   <div>
     <div
+<<<<<<< HEAD
       aria-controls=":rc:"
       aria-expanded="true"
       aria-haspopup="dialog"
       data-state="open"
+=======
+      aria-expanded="false"
+      aria-haspopup="dialog"
+      data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -193,10 +223,16 @@ exports[`Popover component
 <DocumentFragment>
   <div>
     <div
+<<<<<<< HEAD
       aria-controls=":r0:"
       aria-expanded="true"
       aria-haspopup="dialog"
       data-state="open"
+=======
+      aria-expanded="false"
+      aria-haspopup="dialog"
+      data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -220,10 +256,16 @@ exports[`Popover component
 <DocumentFragment>
   <div>
     <div
+<<<<<<< HEAD
       aria-controls=":r6:"
       aria-expanded="true"
       aria-haspopup="dialog"
       data-state="open"
+=======
+      aria-expanded="false"
+      aria-haspopup="dialog"
+      data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -247,10 +289,16 @@ exports[`Popover component
 <DocumentFragment>
   <div>
     <div
+<<<<<<< HEAD
       aria-controls=":r3:"
       aria-expanded="true"
       aria-haspopup="dialog"
       data-state="open"
+=======
+      aria-expanded="false"
+      aria-haspopup="dialog"
+      data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"

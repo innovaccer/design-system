@@ -13,7 +13,10 @@ exports[`Combobox component snapshots
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+<<<<<<< HEAD
             class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
             data-state="closed"
             triggerclass="d-block"
           >
@@ -41,10 +44,13 @@ exports[`Combobox component snapshots
       </div>
     </div>
   </div>
+<<<<<<< HEAD
   <div
     data-floating-ui-portal=""
     id=":rh:"
   />
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
 </body>
 `;
 
@@ -61,7 +67,10 @@ exports[`Combobox component snapshots
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+<<<<<<< HEAD
             class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
             data-state="closed"
             triggerclass="d-block"
           >
@@ -89,10 +98,13 @@ exports[`Combobox component snapshots
       </div>
     </div>
   </div>
+<<<<<<< HEAD
   <div
     data-floating-ui-portal=""
     id=":re:"
   />
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
 </body>
 `;
 
@@ -109,7 +121,10 @@ exports[`Combobox component snapshots
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+<<<<<<< HEAD
             class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
             data-state="closed"
             triggerclass="d-block"
           >
@@ -137,10 +152,13 @@ exports[`Combobox component snapshots
       </div>
     </div>
   </div>
+<<<<<<< HEAD
   <div
     data-floating-ui-portal=""
     id=":rb:"
   />
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
 </body>
 `;
 
@@ -157,7 +175,10 @@ exports[`Combobox component snapshots
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+<<<<<<< HEAD
             class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
             data-state="closed"
             triggerclass="d-block"
           >
@@ -213,7 +234,10 @@ exports[`Combobox component snapshots
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+<<<<<<< HEAD
             class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
             data-state="closed"
             triggerclass="d-block"
           >
@@ -269,7 +293,10 @@ exports[`Combobox component snapshots
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+<<<<<<< HEAD
             class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
             data-state="closed"
             triggerclass="d-block"
           >

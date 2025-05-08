@@ -39954,7 +39954,10 @@ exports[`DateRangePicker component
       <div
         aria-expanded="false"
         aria-haspopup="dialog"
+<<<<<<< HEAD
         class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
         data-state="closed"
         triggerclass="w-100"
       >
@@ -40108,7 +40111,10 @@ exports[`DateRangePicker component
       <div
         aria-expanded="false"
         aria-haspopup="dialog"
+<<<<<<< HEAD
         class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
         data-state="closed"
         triggerclass="w-100"
       >
@@ -40262,7 +40268,10 @@ exports[`DateRangePicker component
       <div
         aria-expanded="false"
         aria-haspopup="dialog"
+<<<<<<< HEAD
         class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
         data-state="closed"
         triggerclass="w-100"
       >
@@ -41501,7 +41510,10 @@ exports[`DateRangePicker component
       <div
         aria-expanded="false"
         aria-haspopup="dialog"
+<<<<<<< HEAD
         class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
         data-state="closed"
         triggerclass="w-100"
       >
@@ -41655,7 +41667,10 @@ exports[`DateRangePicker component
       <div
         aria-expanded="false"
         aria-haspopup="dialog"
+<<<<<<< HEAD
         class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
         data-state="closed"
         triggerclass="w-100"
       >
@@ -41809,7 +41824,10 @@ exports[`DateRangePicker component
       <div
         aria-expanded="false"
         aria-haspopup="dialog"
+<<<<<<< HEAD
         class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
         data-state="closed"
         triggerclass="w-100"
       >
@@ -43046,11 +43064,17 @@ exports[`DateRangePicker component
       class="w-100"
     >
       <div
+<<<<<<< HEAD
         aria-controls=":r6:"
         aria-expanded="true"
         aria-haspopup="dialog"
         class="w-100"
         data-state="open"
+=======
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
         triggerclass="w-100"
       >
         <div
@@ -43126,6 +43150,7 @@ exports[`DateRangePicker component
             <div
               class="Label Label--withInput"
               data-test="DesignSystem-Label"
+<<<<<<< HEAD
             >
               <label
                 class="Label-text"
@@ -44179,6 +44204,60 @@ exports[`DateRangePicker component
                     </span>
                   </div>
                 </div>
+=======
+            >
+              <label
+                class="Label-text"
+                data-test="DesignSystem-Label--Text"
+              >
+                End Date
+              </label>
+            </div>
+            <div
+              class="d-flex flex-column flex-grow-1"
+              data-test="DesignSystem-InputMask--Wrapper"
+            >
+              <div
+                class="Input Input--regular"
+                data-test="DesignSystem-InputWrapper"
+                role="presentation"
+                style="min-width: 256px;"
+              >
+                <div
+                  class="Input-icon Input-icon--left"
+                >
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    role="button"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    events
+                  </i>
+                </div>
+                <input
+                  autocomplete="off"
+                  class="Input-input Input-input--regular"
+                  data-test="DesignSystem-Input"
+                  label="End Date"
+                  placeholder="mm/dd/yyyy"
+                  type="text"
+                  value="06/08/2021"
+                />
+                <div
+                  class="Input-icon Input-iconWrapper--right"
+                >
+                  <i
+                    class="material-symbols material-symbols-rounded Icon Input-icon--right"
+                    data-test="DesignSystem-Input--closeIcon"
+                    role="button"
+                    style="font-size: 16px; width: 16px;"
+                    tabindex="0"
+                  >
+                    close
+                  </i>
+                </div>
+>>>>>>> b67de59a (feat: migration to react 19)
               </div>
             </div>
           </div>
@@ -44198,11 +44277,17 @@ exports[`DateRangePicker component
       class="w-100"
     >
       <div
+<<<<<<< HEAD
         aria-controls=":r3:"
         aria-expanded="true"
         aria-haspopup="dialog"
         class="w-100"
         data-state="open"
+=======
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
         triggerclass="w-100"
       >
         <div
@@ -44278,6 +44363,7 @@ exports[`DateRangePicker component
             <div
               class="Label Label--withInput"
               data-test="DesignSystem-Label"
+<<<<<<< HEAD
             >
               <label
                 class="Label-text"
@@ -45331,6 +45417,60 @@ exports[`DateRangePicker component
                     </span>
                   </div>
                 </div>
+=======
+            >
+              <label
+                class="Label-text"
+                data-test="DesignSystem-Label--Text"
+              >
+                End Date
+              </label>
+            </div>
+            <div
+              class="d-flex flex-column flex-grow-1"
+              data-test="DesignSystem-InputMask--Wrapper"
+            >
+              <div
+                class="Input Input--regular"
+                data-test="DesignSystem-InputWrapper"
+                role="presentation"
+                style="min-width: 256px;"
+              >
+                <div
+                  class="Input-icon Input-icon--left"
+                >
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    role="button"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    events
+                  </i>
+                </div>
+                <input
+                  autocomplete="off"
+                  class="Input-input Input-input--regular"
+                  data-test="DesignSystem-Input"
+                  label="End Date"
+                  placeholder="mm/dd/yyyy"
+                  type="text"
+                  value="06/08/2021"
+                />
+                <div
+                  class="Input-icon Input-iconWrapper--right"
+                >
+                  <i
+                    class="material-symbols material-symbols-rounded Icon Input-icon--right"
+                    data-test="DesignSystem-Input--closeIcon"
+                    role="button"
+                    style="font-size: 16px; width: 16px;"
+                    tabindex="0"
+                  >
+                    close
+                  </i>
+                </div>
+>>>>>>> b67de59a (feat: migration to react 19)
               </div>
             </div>
           </div>
@@ -45350,11 +45490,17 @@ exports[`DateRangePicker component
       class="w-100"
     >
       <div
+<<<<<<< HEAD
         aria-controls=":r0:"
         aria-expanded="true"
         aria-haspopup="dialog"
         class="w-100"
         data-state="open"
+=======
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
         triggerclass="w-100"
       >
         <div
@@ -45430,6 +45576,7 @@ exports[`DateRangePicker component
             <div
               class="Label Label--withInput"
               data-test="DesignSystem-Label"
+<<<<<<< HEAD
             >
               <label
                 class="Label-text"
@@ -46483,6 +46630,60 @@ exports[`DateRangePicker component
                     </span>
                   </div>
                 </div>
+=======
+            >
+              <label
+                class="Label-text"
+                data-test="DesignSystem-Label--Text"
+              >
+                End Date
+              </label>
+            </div>
+            <div
+              class="d-flex flex-column flex-grow-1"
+              data-test="DesignSystem-InputMask--Wrapper"
+            >
+              <div
+                class="Input Input--regular"
+                data-test="DesignSystem-InputWrapper"
+                role="presentation"
+                style="min-width: 256px;"
+              >
+                <div
+                  class="Input-icon Input-icon--left"
+                >
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    role="button"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    events
+                  </i>
+                </div>
+                <input
+                  autocomplete="off"
+                  class="Input-input Input-input--regular"
+                  data-test="DesignSystem-Input"
+                  label="End Date"
+                  placeholder="mm/dd/yyyy"
+                  type="text"
+                  value="06/08/2021"
+                />
+                <div
+                  class="Input-icon Input-iconWrapper--right"
+                >
+                  <i
+                    class="material-symbols material-symbols-rounded Icon Input-icon--right"
+                    data-test="DesignSystem-Input--closeIcon"
+                    role="button"
+                    style="font-size: 16px; width: 16px;"
+                    tabindex="0"
+                  >
+                    close
+                  </i>
+                </div>
+>>>>>>> b67de59a (feat: migration to react 19)
               </div>
             </div>
           </div>
@@ -47587,11 +47788,17 @@ exports[`DateRangePicker component
       class="w-100"
     >
       <div
+<<<<<<< HEAD
         aria-controls=":rf:"
         aria-expanded="true"
         aria-haspopup="dialog"
         class="w-100"
         data-state="open"
+=======
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
         triggerclass="w-100"
       >
         <div
@@ -47667,6 +47874,7 @@ exports[`DateRangePicker component
             <div
               class="Label Label--withInput"
               data-test="DesignSystem-Label"
+<<<<<<< HEAD
             >
               <label
                 class="Label-text"
@@ -47684,6 +47892,12 @@ exports[`DateRangePicker component
                 data-test="DesignSystem-InputWrapper"
                 role="presentation"
                 style="min-width: 256px;"
+=======
+            >
+              <label
+                class="Label-text"
+                data-test="DesignSystem-Label--Text"
+>>>>>>> b67de59a (feat: migration to react 19)
               >
                 <div
                   class="Input-icon Input-icon--left"
@@ -47783,6 +47997,7 @@ exports[`DateRangePicker component
               </span>
             </div>
             <div
+<<<<<<< HEAD
               class="ml-4 d-flex justify-content-center align-items-center"
             >
               <span
@@ -47829,6 +48044,40 @@ exports[`DateRangePicker component
               >
                 <div
                   class="d-flex justify-content-center align-items-center"
+=======
+              class="d-flex flex-column flex-grow-1"
+              data-test="DesignSystem-InputMask--Wrapper"
+            >
+              <div
+                class="Input Input--regular"
+                data-test="DesignSystem-InputWrapper"
+                role="presentation"
+                style="min-width: 256px;"
+              >
+                <div
+                  class="Input-icon Input-icon--left"
+                >
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    role="button"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    events
+                  </i>
+                </div>
+                <input
+                  autocomplete="off"
+                  class="Input-input Input-input--regular"
+                  data-test="DesignSystem-Input"
+                  label="End Date"
+                  placeholder="mm/dd/yyyy"
+                  type="text"
+                  value="06/08/2021"
+                />
+                <div
+                  class="Input-icon Input-iconWrapper--right"
+>>>>>>> b67de59a (feat: migration to react 19)
                 >
                   <span
                     class="Text Text--default Text--strong Text--regular"
@@ -49507,11 +49756,17 @@ exports[`DateRangePicker component
       class="w-100"
     >
       <div
+<<<<<<< HEAD
         aria-controls=":rc:"
         aria-expanded="true"
         aria-haspopup="dialog"
         class="w-100"
         data-state="open"
+=======
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
         triggerclass="w-100"
       >
         <div
@@ -49587,6 +49842,7 @@ exports[`DateRangePicker component
             <div
               class="Label Label--withInput"
               data-test="DesignSystem-Label"
+<<<<<<< HEAD
             >
               <label
                 class="Label-text"
@@ -49604,6 +49860,12 @@ exports[`DateRangePicker component
                 data-test="DesignSystem-InputWrapper"
                 role="presentation"
                 style="min-width: 256px;"
+=======
+            >
+              <label
+                class="Label-text"
+                data-test="DesignSystem-Label--Text"
+>>>>>>> b67de59a (feat: migration to react 19)
               >
                 <div
                   class="Input-icon Input-icon--left"
@@ -49703,6 +49965,7 @@ exports[`DateRangePicker component
               </span>
             </div>
             <div
+<<<<<<< HEAD
               class="ml-4 d-flex justify-content-center align-items-center"
             >
               <span
@@ -49749,6 +50012,40 @@ exports[`DateRangePicker component
               >
                 <div
                   class="d-flex justify-content-center align-items-center"
+=======
+              class="d-flex flex-column flex-grow-1"
+              data-test="DesignSystem-InputMask--Wrapper"
+            >
+              <div
+                class="Input Input--regular"
+                data-test="DesignSystem-InputWrapper"
+                role="presentation"
+                style="min-width: 256px;"
+              >
+                <div
+                  class="Input-icon Input-icon--left"
+                >
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    role="button"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    events
+                  </i>
+                </div>
+                <input
+                  autocomplete="off"
+                  class="Input-input Input-input--regular"
+                  data-test="DesignSystem-Input"
+                  label="End Date"
+                  placeholder="mm/dd/yyyy"
+                  type="text"
+                  value="06/08/2021"
+                />
+                <div
+                  class="Input-icon Input-iconWrapper--right"
+>>>>>>> b67de59a (feat: migration to react 19)
                 >
                   <span
                     class="Text Text--default Text--strong Text--regular"
@@ -51427,11 +51724,17 @@ exports[`DateRangePicker component
       class="w-100"
     >
       <div
+<<<<<<< HEAD
         aria-controls=":r9:"
         aria-expanded="true"
         aria-haspopup="dialog"
         class="w-100"
         data-state="open"
+=======
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        data-state="closed"
+>>>>>>> b67de59a (feat: migration to react 19)
         triggerclass="w-100"
       >
         <div
@@ -51507,6 +51810,7 @@ exports[`DateRangePicker component
             <div
               class="Label Label--withInput"
               data-test="DesignSystem-Label"
+<<<<<<< HEAD
             >
               <label
                 class="Label-text"
@@ -51524,6 +51828,12 @@ exports[`DateRangePicker component
                 data-test="DesignSystem-InputWrapper"
                 role="presentation"
                 style="min-width: 256px;"
+=======
+            >
+              <label
+                class="Label-text"
+                data-test="DesignSystem-Label--Text"
+>>>>>>> b67de59a (feat: migration to react 19)
               >
                 <div
                   class="Input-icon Input-icon--left"
@@ -51623,6 +51933,7 @@ exports[`DateRangePicker component
               </span>
             </div>
             <div
+<<<<<<< HEAD
               class="ml-4 d-flex justify-content-center align-items-center"
             >
               <span
@@ -51669,6 +51980,40 @@ exports[`DateRangePicker component
               >
                 <div
                   class="d-flex justify-content-center align-items-center"
+=======
+              class="d-flex flex-column flex-grow-1"
+              data-test="DesignSystem-InputMask--Wrapper"
+            >
+              <div
+                class="Input Input--regular"
+                data-test="DesignSystem-InputWrapper"
+                role="presentation"
+                style="min-width: 256px;"
+              >
+                <div
+                  class="Input-icon Input-icon--left"
+                >
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    role="button"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    events
+                  </i>
+                </div>
+                <input
+                  autocomplete="off"
+                  class="Input-input Input-input--regular"
+                  data-test="DesignSystem-Input"
+                  label="End Date"
+                  placeholder="mm/dd/yyyy"
+                  type="text"
+                  value="06/08/2021"
+                />
+                <div
+                  class="Input-icon Input-iconWrapper--right"
+>>>>>>> b67de59a (feat: migration to react 19)
                 >
                   <span
                     class="Text Text--default Text--strong Text--regular"
