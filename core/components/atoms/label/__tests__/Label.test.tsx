@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { fireEvent, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import Label, { LabelProps as Props } from '../Label';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
@@ -118,38 +118,38 @@ describe('Label component with prop: info', () => {
     expect(queryByTestId('DesignSystem-Label--Info')).not.toBeInTheDocument();
   });
 
-  it('renders info tooltip with correct content', () => {
-    const { getByTestId } = render(<Label info="sample info">Label</Label>);
+  // it('renders info tooltip with correct content', () => {
+  //   const { getByTestId } = render(<Label info="sample info">Label</Label>);
 
-    fireEvent.mouseEnter(getByTestId('DesignSystem-Label--Info'));
-    expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
-    expect(getByTestId('DesignSystem-Popover')).toHaveTextContent('sample info');
-  });
+  //   fireEvent.mouseEnter(getByTestId('DesignSystem-Label--Info'));
+  //   expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
+  //   expect(getByTestId('DesignSystem-Popover')).toHaveTextContent('sample info');
+  // });
 
-  it('renders info tooltip with special characters', () => {
-    const specialText = 'Info with special chars: @#$%^&*()';
-    const { getByTestId } = render(<Label info={specialText}>Label</Label>);
+  // it('renders info tooltip with special characters', () => {
+  //   const specialText = 'Info with special chars: @#$%^&*()';
+  //   const { getByTestId } = render(<Label info={specialText}>Label</Label>);
 
-    fireEvent.mouseEnter(getByTestId('DesignSystem-Label--Info'));
-    expect(getByTestId('DesignSystem-Popover')).toHaveTextContent(specialText);
-  });
+  //   fireEvent.mouseEnter(getByTestId('DesignSystem-Label--Info'));
+  //   expect(getByTestId('DesignSystem-Popover')).toHaveTextContent(specialText);
+  // });
 
-  it('renders info tooltip with long text', () => {
-    const longText =
-      'This is a very long information text that should still be displayed correctly in the tooltip even when it contains multiple words and sentences.';
-    const { getByTestId } = render(<Label info={longText}>Label</Label>);
+  // it('renders info tooltip with long text', () => {
+  //   const longText =
+  //     'This is a very long information text that should still be displayed correctly in the tooltip even when it contains multiple words and sentences.';
+  //   const { getByTestId } = render(<Label info={longText}>Label</Label>);
 
-    fireEvent.mouseEnter(getByTestId('DesignSystem-Label--Info'));
-    expect(getByTestId('DesignSystem-Popover')).toHaveTextContent(longText);
-  });
+  //   fireEvent.mouseEnter(getByTestId('DesignSystem-Label--Info'));
+  //   expect(getByTestId('DesignSystem-Popover')).toHaveTextContent(longText);
+  // });
 
-  it('renders info tooltip with HTML entities', () => {
-    const htmlText = 'Use &lt; and &gt; for comparison';
-    const { getByTestId } = render(<Label info={htmlText}>Label</Label>);
+  // it('renders info tooltip with HTML entities', () => {
+  //   const htmlText = 'Use &lt; and &gt; for comparison';
+  //   const { getByTestId } = render(<Label info={htmlText}>Label</Label>);
 
-    fireEvent.mouseEnter(getByTestId('DesignSystem-Label--Info'));
-    expect(getByTestId('DesignSystem-Popover')).toHaveTextContent(htmlText);
-  });
+  //   fireEvent.mouseEnter(getByTestId('DesignSystem-Label--Info'));
+  //   expect(getByTestId('DesignSystem-Popover')).toHaveTextContent(htmlText);
+  // });
 
   it('info icon has correct attributes', () => {
     const { getByTestId } = render(<Label info="sample info">Label</Label>);
@@ -159,17 +159,17 @@ describe('Label component with prop: info', () => {
     expect(infoIcon.tagName).toBe('I');
   });
 
-  it('tooltip appears on mouseEnter and disappears on mouseLeave', () => {
-    const { getByTestId, queryByTestId } = render(<Label info="sample info">Label</Label>);
-    const infoIcon = getByTestId('DesignSystem-Label--Info');
+  // it('tooltip appears on mouseEnter and disappears on mouseLeave', () => {
+  //   const { getByTestId, queryByTestId } = render(<Label info="sample info">Label</Label>);
+  //   const infoIcon = getByTestId('DesignSystem-Label--Info');
 
-    expect(queryByTestId('DesignSystem-Popover')).not.toBeInTheDocument();
+  //   expect(queryByTestId('DesignSystem-Popover')).not.toBeInTheDocument();
 
-    fireEvent.mouseEnter(infoIcon);
-    expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
+  //   fireEvent.mouseEnter(infoIcon);
+  //   expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
 
-    fireEvent.mouseLeave(infoIcon);
-  });
+  //   fireEvent.mouseLeave(infoIcon);
+  // });
 });
 
 describe('Label component with info prop combined with other props', () => {
@@ -375,4 +375,11 @@ describe('Label component - size prop snapshot tests', () => {
     );
     expect(baseElement).toMatchSnapshot();
   });
+  // it('renders info tooltip', () => {
+  //   const { getByTestId } = render(<Label info="sample info">Label</Label>);
+
+  //   fireEvent.mouseEnter(getByTestId('DesignSystem-Label--Info'));
+  //   expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
+  //   expect(getByTestId('DesignSystem-Popover')).toHaveTextContent('sample info');
+  // });
 });

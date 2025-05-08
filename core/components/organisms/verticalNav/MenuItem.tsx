@@ -16,8 +16,8 @@ export interface MenuItemProps extends BaseProps {
   isChildren?: boolean;
   isChildrenVisible?: boolean;
   onClick?: (menu: Menu) => void;
-  customItemRenderer?: (props: MenuItemProps) => JSX.Element;
-  customOptionRenderer?: (props: MenuItemProps) => JSX.Element;
+  customItemRenderer?: (props: MenuItemProps) => React.JSX.Element;
+  customOptionRenderer?: (props: MenuItemProps) => React.JSX.Element;
 }
 interface MenuPillsProps {
   isActive: boolean;
@@ -75,7 +75,7 @@ const MenuWrapper = (props?: any) => {
 export const MenuItem = (props: MenuItemProps) => {
   const {
     menu,
-    isActive,
+    isActive = false,
     expanded,
     rounded,
     hasSubmenu,
@@ -193,8 +193,6 @@ export const MenuItem = (props: MenuItemProps) => {
   );
 };
 
-MenuItem.defaultProps = {
-  isActive: false,
-};
+MenuItem.displayName = 'MenuItem';
 
 export default MenuItem;

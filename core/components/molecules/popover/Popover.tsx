@@ -1,9 +1,10 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { PopperWrapper, PopperWrapperProps } from '@/components/atoms/popperWrapper';
-import { BaseProps, filterProps } from '@/utils/types';
+import { BaseProps } from '@/utils/types';
 import { PositionType as Position } from '@/common.type';
 import styles from '@css/components/popover.module.css';
+import { PopperWrapper, PopoverTrigger, PopoverContent } from '@/components/atoms/popperWrapper';
+import { mapPositionToPlacement } from './utils';
 
 export interface CustomStyle {
   height?: number | string;
@@ -14,19 +15,54 @@ export interface CustomStyle {
   maxWidth?: number | string;
 }
 
-const propsList = [
-  'appendToBody',
-  'trigger',
-  'hoverable',
-  'on',
-  'open',
-  'closeOnBackdropClick',
-  'offset',
-  'closeOnScroll',
-] as const;
-type PopperProps = (typeof propsList)[number];
+type ActionType = 'click' | 'hover';
+type Offset = 'small' | 'medium' | 'large';
 
-export interface PopoverProps extends Pick<PopperWrapperProps, PopperProps>, BaseProps {
+// Helper function to generate dynamic animation classes
+// const generateDynamicAnimationClasses = (placement: Placement, maxHeight?: number | string) => {
+//   if (!maxHeight) return null;
+
+//   const uniqueKey = Math.random().toString(36).substring(2, 6);
+//   const isTop = placement.includes('top');
+//   const maxHeightValue = typeof maxHeight === 'number' ? `${maxHeight}px` : maxHeight;
+
+//   // Create dynamic keyframes
+//   const keyframes = `
+//     @keyframes popper-open-${uniqueKey} {
+//       from {
+//         max-height: 0;
+//         ${isTop ? `margin-top: ${maxHeightValue}` : ''};
+//       }
+//       to {
+//         max-height: ${maxHeightValue};
+//         ${isTop ? `margin-top: 0px` : ''};
+//       }
+//     }
+//     @keyframes popper-close-${uniqueKey} {
+//       from {
+//         max-height: ${maxHeightValue};
+//         ${isTop ? `margin-top: 0px` : ''};
+//       }
+//       to {
+//         max-height: 0;
+//         ${isTop ? `margin-top: ${maxHeightValue}` : ''};
+//       }
+//     }
+//   `;
+
+//   // Inject the keyframes into the document
+//   const styleElement = document.createElement('style');
+//   styleElement.textContent = keyframes;
+//   document.head.appendChild(styleElement);
+
+//   // Return animation classes
+//   return {
+//     open: `popper-open-${uniqueKey} 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms`,
+//     close: `popper-close-${uniqueKey} 120ms cubic-bezier(0.2, 0, 1, 0.9), fadeOut 100ms`,
+//   };
+// };
+
+export type PopoverProps = {
   /**
    * To be rendered in `Popover` component
    */
@@ -36,19 +72,33 @@ export interface PopoverProps extends Pick<PopperWrapperProps, PopperProps>, Bas
    *
    * @param Position -  | 'top-start'  | 'top'  | 'top-end'  | 'right-start'
    *  | 'right'  | 'right-end'  | 'bottom-end'  | 'bottom'  | 'bottom-start'
-   *  | 'left-end'  | 'left'  | 'left-start'  | 'auto-start'  | 'auto'  | 'auto-end';
+   *  | 'left-end'  | 'left'  | 'left-start'
+   *
+   * @default bottom
    */
-  position: Position;
+  position?: Position;
+  /**
+   * Changes background of `Popover`
+   */
+  dark?: boolean;
+  /**
+   * Handles open/close
+   */
+  open?: boolean;
+  /**
+   * Element triggering the `Popover`
+   */
+  trigger?: React.ReactNode;
+  /**
+   * Defines unique name to the popover
+   */
+  name?: string;
   /**
    * Callback after `Popover` is toggled
    *
    * @param type - 'onMouseLeave' | 'onMouseEnter' | 'outsideClick' | 'onClick'
    */
   onToggle?: (open: boolean, type?: string) => void;
-  /**
-   * Changes background of `Popover`
-   */
-  dark?: boolean;
   /**
    * Adds custom CSS to `Popover` element
    *
@@ -63,19 +113,31 @@ export interface PopoverProps extends Pick<PopperWrapperProps, PopperProps>, Bas
    * }
    * </pre>
    */
-  customStyle: CustomStyle;
+  customStyle?: CustomStyle;
   /**
    * Class to be added to PopperWrapper trigger
    */
   triggerClass?: string;
   /**
-   * Hides the `Popover` when its reference element is outside of the `Popover` boundaries
+   * Closes the `Popover` when the escape key is pressed
    */
-  hideOnReferenceEscape?: boolean;
+  closeOnEscape?: boolean;
   /**
-   * BoundaryElement for `Popover`
+   * Close on `boundaryElement` scroll
    */
-  boundaryElement: React.RefObject<HTMLElement> | Element;
+  closeOnScroll?: boolean;
+  /**
+   * Close on Backdrop click
+   */
+  closeOnBackdropClick?: boolean;
+  /**
+   * Event triggering the `Popover`
+   */
+  on?: ActionType;
+  /**
+   * Add delay to the popover opening event
+   */
+  openDelay?: number;
   /*
    * animationClass is for providing custom animations for open/close of the popover
    * animationClass.open - takes animation class when popover is open
@@ -86,101 +148,151 @@ export interface PopoverProps extends Pick<PopperWrapperProps, PopperProps>, Bas
     close: string;
   };
   /**
-   * Defines unique name to the popover
+   * Vertical offset from trigger
+   *
+   * <pre className="DocPage-codeBlock">
+   * {
+   *    small: '2px',
+   *    medium: '4px',
+   *    large: '8px'
+   * }
+   * </pre>
    */
-  name?: string;
+  offset?: Offset;
   /**
-   * Defines coordinates where you need to position a popover
+   * Hides the `Popover` when its reference element is outside of the `Popover` boundaries
    */
-  triggerCoordinates?: {
-    x: number;
-    y: number;
-  };
+  hideOnReferenceEscape?: boolean;
   /**
-   * Describe the style that will be applied to the popper element
-   * Refer to [this](https://popper.js.org/docs/v1/#modifierscomputestyle)
+   * BoundaryElement for `Popover`
    */
-  computeStyles?: object;
+  boundaryElement?: HTMLElement | null | React.RefObject<HTMLElement | null>;
   /**
-   * Defines whether to show popover or not
+   * Appends `trigger` wrapper inside body
    */
-  disabled?: boolean;
+  appendToBody?: boolean;
   /**
-   * Add delay to the popover opening event
+   * When true, uses the trigger element as-is without cloning.
+   * Useful for components that manage their own refs internally.
    */
-  openDelay?: number;
-}
+  // useTriggerAsIs?: boolean;
+  /**
+   * External reference element to use instead of the trigger element.
+   * Useful when the actual reference element is inside the trigger component.
+   */
+  // referenceElement?: React.RefObject<HTMLElement | HTMLInputElement | HTMLDivElement | null> | HTMLElement | HTMLInputElement | HTMLDivElement | null;
+} & BaseProps;
 
 export const Popover = (props: PopoverProps) => {
   const {
-    position,
-    customStyle,
-    dark,
+    trigger,
     children,
-    onToggle,
+    dark,
     className,
-    hideOnReferenceEscape,
-    boundaryElement = document.body,
+    position = 'bottom',
+    customStyle,
     name,
-    ...rest
+    triggerClass,
+    closeOnEscape,
+    closeOnScroll,
+    on = 'click',
+    openDelay = 0,
+    closeOnBackdropClick,
+    animationClass,
+    offset = 'large',
+    'data-test': dataTest,
+    hideOnReferenceEscape,
+    boundaryElement,
+    appendToBody = true,
+    // useTriggerAsIs,
+    // referenceElement,
+    // onToggle
   } = props;
-
   const [open, setOpen] = React.useState<boolean>(!!props.open);
-  const [init, setInit] = React.useState(false);
 
   React.useEffect(() => {
     if (props.open !== undefined) setOpen(props.open);
   }, [props.open]);
 
-  const defaultOnToggle = React.useCallback((newOpen) => {
-    setOpen(newOpen);
-  }, []);
+  // const defaultOnToggle = React.useCallback((newOpen: boolean) => {
+  //   setOpen(newOpen);
+  // }, []);
 
-  React.useEffect(() => {
-    if (!init) {
-      if ('current' in boundaryElement && boundaryElement.current) {
-        setInit(true);
-      }
-    }
-  }, [boundaryElement]);
+  const offsetMapping = {
+    small: 2,
+    medium: 4,
+    large: 8,
+  };
 
   const classes = classNames(
     {
-      [styles.Popover]: true,
+      [styles['Popover']]: true,
       [styles['Popover--dark']]: dark,
     },
     className
   );
 
-  const PopoverWrapper = (
-    <div data-test="DesignSystem-Popover" className={classes} data-layer={true} data-opened={open} data-name={name}>
-      {children}
-    </div>
-  );
+  // const onToggleHandler = (isOpen: boolean, event?: Event, reason?: string) => {
+
+  //   if(onToggle){
+  //     const reasonMapping = {
+  //       click: 'onClick',
+  //       hover: 'onMouseEnter',
+  //       'outside-press': 'outsideClick',
+  //     } as const;
+
+  //     const type = (reasonMapping as Record<string, string>)[reason || 'click'] || 'onClick';
+  //     onToggle && onToggle(isOpen, type);
+  //   } else {
+  //     defaultOnToggle && defaultOnToggle(isOpen);
+  //   }
+  // }
+
+  // Generate dynamic animation classes if customStyle has maxHeight
+  // const dynamicAnimationClass = React.useMemo(() => {
+  //   if (customStyle?.maxHeight) {
+  //     return generateDynamicAnimationClasses(mapPositionToPlacement(position), customStyle.maxHeight);
+  //   }
+  //   return null;
+  // }, [position, customStyle?.maxHeight]);
+
+  // // Use dynamic animation if available, otherwise use the provided animationClass
+  // const finalAnimationClass = dynamicAnimationClass || animationClass;
 
   return (
     <PopperWrapper
-      {...rest}
-      init={init}
-      boundaryElement={'current' in boundaryElement ? boundaryElement.current : boundaryElement}
-      open={open}
-      hide={hideOnReferenceEscape}
-      style={customStyle}
-      onToggle={onToggle || defaultOnToggle}
-      placement={position}
+      placement={mapPositionToPlacement(position)}
+      closeOnEscape={closeOnEscape}
+      closeOnScroll={closeOnScroll}
+      triggerMethod={on}
+      openDelay={openDelay}
+      closeOnBackdropClick={closeOnBackdropClick}
+      animationClass={animationClass}
+      offset={offsetMapping[offset]}
+      hideOnReferenceEscape={hideOnReferenceEscape}
+      portalRoot={boundaryElement}
+      appendToBody={appendToBody}
+      // useTriggerAsIs={useTriggerAsIs}
+      // referenceElement={referenceElement}
+      // initialOpen={open} open={open} onOpenChange={onToggleHandler}
     >
-      {PopoverWrapper}
+      <PopoverTrigger asChild triggerClass={triggerClass}>
+        <div>{trigger}</div>
+      </PopoverTrigger>
+      <PopoverContent
+        style={customStyle}
+        className={classes}
+        data-test={dataTest || 'DesignSystem-Popover'}
+        data-layer={true}
+        data-opened={open}
+        data-name={name}
+      >
+        {children}
+      </PopoverContent>
     </PopperWrapper>
   );
 };
 
 Popover.displayName = 'Popover';
-
-Popover.defaultProps = Object.assign({}, filterProps(PopperWrapper.defaultProps, propsList, true), {
-  offset: 'large',
-  position: 'bottom',
-  hideOnReferenceEscape: true,
-  customStyle: {},
-});
 
 export default Popover;

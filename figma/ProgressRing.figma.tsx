@@ -1,5 +1,6 @@
 import React from 'react';
 import { ProgressRing } from '@/index';
+import { ProgressRingProps } from '@/index.type';
 import figma from '@figma/code-connect';
 
 figma.connect(ProgressRing, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=441-1502&m=dev', {
@@ -17,5 +18,5 @@ figma.connect(ProgressRing, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T
       '100%': 100,
     }),
   },
-  example: (props) => <ProgressRing {...props} />,
+  example: (props) => <ProgressRing {...(props as ProgressRingProps)} />,
 });

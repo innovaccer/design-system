@@ -8,142 +8,160 @@ exports[`Vertical Navigation component
     <div
       class="VerticalNav"
     >
-      
-      <div
-        class="PopperWrapper-trigger"
-      >
-        <a
-          class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
-          data-test="DesignSystem-VerticalNav--Item"
-          href="/patient360"
-          tabindex="0"
+      <div>
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
         >
-          <div
-            class="d-flex align-items-center overflow-hidden"
+          <a
+            class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
+            data-test="DesignSystem-VerticalNav--Item"
+            href="/patient360"
+            tabindex="0"
           >
-            <i
-              class="material-symbols material-symbols-rounded Icon"
-              data-test="DesignSystem-VerticalNav--Icon"
-              role="button"
-              style="font-size: 16px; width: 16px;"
+            <div
+              class="d-flex align-items-center overflow-hidden"
             >
-              assignment_ind
-            </i>
-          </div>
-        </a>
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-VerticalNav--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                assignment_ind
+              </i>
+            </div>
+          </a>
+        </div>
       </div>
-      
-      <div
-        class="PopperWrapper-trigger"
-      >
-        <a
-          class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
-          data-test="DesignSystem-VerticalNav--Item"
-          tabindex="0"
+      <div>
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
         >
-          <div
-            class="d-flex align-items-center overflow-hidden"
+          <a
+            class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
+            data-test="DesignSystem-VerticalNav--Item"
+            tabindex="0"
           >
-            <i
-              class="material-symbols material-symbols-rounded Icon"
-              data-test="DesignSystem-VerticalNav--Icon"
-              role="button"
-              style="font-size: 16px; width: 16px;"
+            <div
+              class="d-flex align-items-center overflow-hidden"
             >
-              forum
-            </i>
-          </div>
-        </a>
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-VerticalNav--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                forum
+              </i>
+            </div>
+          </a>
+        </div>
       </div>
-      
-      <div
-        class="PopperWrapper-trigger"
-      >
-        <a
-          class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--active color-primary-dark"
-          tabindex="0"
+      <div>
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
         >
-          <div
-            class="d-flex align-items-center overflow-hidden"
+          <a
+            class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--active color-primary-dark"
+            tabindex="0"
           >
-            <i
-              class="material-symbols material-symbols-rounded Icon"
-              data-test="DesignSystem-VerticalNav--Icon"
-              role="button"
-              style="font-size: 16px; width: 16px;"
+            <div
+              class="d-flex align-items-center overflow-hidden"
             >
-              assignment_ind
-            </i>
-          </div>
-        </a>
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-VerticalNav--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                assignment_ind
+              </i>
+            </div>
+          </a>
+        </div>
       </div>
-      
-      <div
-        class="PopperWrapper-trigger"
-      >
-        <a
-          class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
-          tabindex="0"
+      <div>
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
         >
-          <div
-            class="d-flex align-items-center overflow-hidden"
+          <a
+            class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
+            tabindex="0"
           >
-            <i
-              class="material-symbols material-symbols-rounded Icon"
-              data-test="DesignSystem-VerticalNav--Icon"
-              role="button"
-              style="font-size: 16px; width: 16px;"
+            <div
+              class="d-flex align-items-center overflow-hidden"
             >
-              events
-            </i>
-          </div>
-        </a>
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-VerticalNav--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                events
+              </i>
+            </div>
+          </a>
+        </div>
       </div>
-      
-      <div
-        class="PopperWrapper-trigger"
-      >
-        <a
-          class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--disabled color-inverse-lightest"
-          data-test="DesignSystem-VerticalNav--Item"
-          tabindex="0"
+      <div>
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
         >
-          <div
-            class="d-flex align-items-center overflow-hidden"
+          <a
+            class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--disabled color-inverse-lightest"
+            data-test="DesignSystem-VerticalNav--Item"
+            tabindex="0"
           >
-            <i
-              class="material-symbols material-symbols-rounded Icon"
-              data-test="DesignSystem-VerticalNav--Icon"
-              role="button"
-              style="font-size: 16px; width: 16px;"
+            <div
+              class="d-flex align-items-center overflow-hidden"
             >
-              airline_seat_flat_angled
-            </i>
-          </div>
-        </a>
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-VerticalNav--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                airline_seat_flat_angled
+              </i>
+            </div>
+          </a>
+        </div>
       </div>
-      
-      <div
-        class="PopperWrapper-trigger"
-      >
-        <a
-          class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
-          data-test="DesignSystem-VerticalNav--Item"
-          tabindex="0"
+      <div>
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
         >
-          <div
-            class="d-flex align-items-center overflow-hidden"
+          <a
+            class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
+            data-test="DesignSystem-VerticalNav--Item"
+            tabindex="0"
           >
-            <i
-              class="material-symbols material-symbols-rounded Icon"
-              data-test="DesignSystem-VerticalNav--Icon"
-              role="button"
-              style="font-size: 16px; width: 16px;"
+            <div
+              class="d-flex align-items-center overflow-hidden"
             >
-              favorite
-            </i>
-          </div>
-        </a>
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-VerticalNav--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                favorite
+              </i>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </div>

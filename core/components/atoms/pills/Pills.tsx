@@ -5,11 +5,11 @@ import { AccentAppearance } from '@/common.type';
 import styles from '@css/components/pills.module.css';
 import badgeStyles from '@css/components/badge.module.css';
 
-export interface PillsProps extends BaseProps {
+export type PillsProps = {
   /**
    * Color of the `Pills`
    */
-  appearance: AccentAppearance;
+  appearance?: AccentAppearance;
   /**
    * Makes `Pills` appearance subtle
    */
@@ -17,11 +17,11 @@ export interface PillsProps extends BaseProps {
   /**
    * Text to be added inside `Pills`
    */
-  children: React.ReactText;
-}
+  children?: string | number;
+} & BaseProps;
 
 export const Pills = (props: PillsProps) => {
-  const { appearance, children, subtle, className } = props;
+  const { appearance = 'secondary', children, subtle, className } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -42,8 +42,5 @@ export const Pills = (props: PillsProps) => {
 };
 
 Pills.displayName = 'Pills';
-Pills.defaultProps = {
-  appearance: 'secondary',
-};
 
 export default Pills;

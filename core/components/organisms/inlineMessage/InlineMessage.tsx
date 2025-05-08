@@ -14,25 +14,25 @@ const IconMapping = {
 
 export type MessageSize = 'regular' | 'small';
 
-export interface InlineMessageProps extends BaseProps {
+export type InlineMessageProps = {
   /**
    * Color of `Inline Message`
    *
    * `default` appearance is soon to be deprecated
    */
-  appearance: MessageAppearance;
+  appearance?: MessageAppearance;
   /**
    * Description of `Inline Message`
    */
-  description: string;
+  description?: string;
   /**
    * Size of `Inline Message`
    */
-  size: MessageSize;
-}
+  size?: MessageSize;
+} & BaseProps;
 
 export const InlineMessage = (props: InlineMessageProps) => {
-  const { appearance, className, description, size } = props;
+  const { appearance = 'default', description = '', size = 'regular', className } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -80,10 +80,5 @@ export const InlineMessage = (props: InlineMessageProps) => {
 };
 
 InlineMessage.displayName = 'InlineMessage';
-InlineMessage.defaultProps = {
-  appearance: 'default',
-  description: '',
-  size: 'regular',
-};
 
 export default InlineMessage;

@@ -92,7 +92,6 @@ exports[`TS renders children 1`] = `
         id="undefined-undefined-Test-uid"
         tabindex="0"
         type="checkbox"
-        value=""
       />
       <span
         class="Checkbox-wrapper Checkbox-wrapper--default"
@@ -771,33 +770,40 @@ exports[`TS renders children 1`] = `
     class="Dropdown"
   >
     <div
-      class="PopperWrapper-trigger w-100"
+      class="w-100"
     >
-      <button
-        class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
-        data-test="DesignSystem-DropdownTrigger"
-        tabindex="0"
-        type="button"
-        value=""
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        data-state="closed"
+        triggerclass="w-100"
       >
-        <div
-          class="DropdownButton-wrapper"
+        <button
+          class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+          data-test="DesignSystem-DropdownTrigger"
+          tabindex="0"
+          type="button"
+          value=""
         >
-          <span
-            class="Text Text--regular DropdownButton-text"
+          <div
+            class="DropdownButton-wrapper"
           >
-            Select
-          </span>
-        </div>
-        <i
-          class="material-symbols material-symbols-rounded Icon Icon--default"
-          data-test="DesignSystem-Icon"
-          role="button"
-          style="font-size: 16px; width: 16px;"
-        >
-          keyboard_arrow_down
-        </i>
-      </button>
+            <span
+              class="Text Text--regular DropdownButton-text"
+            >
+              Select
+            </span>
+          </div>
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </button>
+      </div>
     </div>
   </div>
   <div
@@ -816,27 +822,34 @@ exports[`TS renders children 1`] = `
           data-test="DesignSystem-EditableDropdown--Dropdown"
         >
           <div
-            class="PopperWrapper-trigger w-100"
+            class="w-100"
           >
-            <button
-              class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
-              data-test="DesignSystem-DropdownTrigger"
-              tabindex="0"
-              type="button"
-              value=""
+            <div
+              aria-expanded="false"
+              aria-haspopup="dialog"
+              data-state="closed"
+              triggerclass="w-100"
             >
-              <div
-                class="DropdownButton-wrapper"
-              />
-              <i
-                class="material-symbols material-symbols-rounded Icon Icon--default"
-                data-test="DesignSystem-Icon"
-                role="button"
-                style="font-size: 16px; width: 16px;"
+              <button
+                class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+                data-test="DesignSystem-DropdownTrigger"
+                tabindex="0"
+                type="button"
+                value=""
               >
-                keyboard_arrow_down
-              </i>
-            </button>
+                <div
+                  class="DropdownButton-wrapper"
+                />
+                <i
+                  class="material-symbols material-symbols-rounded Icon Icon--default"
+                  data-test="DesignSystem-Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  keyboard_arrow_down
+                </i>
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -888,7 +901,6 @@ exports[`TS renders children 1`] = `
       class="Input-input Input-input--regular"
       data-test="DesignSystem-Input"
       type="text"
-      value=""
     />
   </div>
   <div
@@ -1501,7 +1513,6 @@ exports[`TS renders children 1`] = `
     <input
       class="Switch-input"
       type="checkbox"
-      value=""
     />
     <span
       class="Switch-wrapper Switch-wrapper--regular"
@@ -1553,15 +1564,19 @@ exports[`TS renders children 1`] = `
       </div>
     </div>
   </div>
-  <div
-    class="PopperWrapper-trigger"
-  >
-    <span
-      class="Text Text--default Text--regular"
-      data-test="DesignSystem-Text"
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="dialog"
+      data-state="closed"
     >
-      Hello World!
-    </span>
+      <span
+        class="Text Text--default Text--regular"
+        data-test="DesignSystem-Text"
+      >
+        Hello World!
+      </span>
+    </div>
   </div>
   <div
     class="Modal-header"
@@ -1772,15 +1787,19 @@ exports[`TS renders children 1`] = `
       stroke-width="8"
     />
   </svg>
-  <div
-    class="PopperWrapper-trigger"
-  >
-    <span
-      class="Text Text--default Text--regular"
-      data-test="DesignSystem-Text"
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="dialog"
+      data-state="closed"
     >
-      Hello World!
-    </span>
+      <span
+        class="Text Text--default Text--regular"
+        data-test="DesignSystem-Text"
+      >
+        Hello World!
+      </span>
+    </div>
   </div>
   <div
     class="Stepper"

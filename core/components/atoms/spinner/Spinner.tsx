@@ -6,19 +6,19 @@ import styles from '@css/components/spinner.module.css';
 export type SpinnerAppearance = 'primary' | 'secondary' | 'white';
 export type SpinnerSize = 'xsmall' | 'small' | 'medium' | 'large';
 
-export interface SpinnerProps extends BaseProps {
+export type SpinnerProps = {
   /**
    * Color of `Spinner`
    */
-  appearance: SpinnerAppearance;
+  appearance?: SpinnerAppearance;
   /**
    * Size of `Spinner`
    */
-  size: SpinnerSize;
-}
+  size?: SpinnerSize;
+} & BaseProps;
 
 export const Spinner = (props: SpinnerProps) => {
-  const { appearance, size, className } = props;
+  const { appearance = 'primary', size = 'medium', className } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -63,9 +63,5 @@ export const Spinner = (props: SpinnerProps) => {
 };
 
 Spinner.displayName = 'Spinner';
-Spinner.defaultProps = {
-  appearance: 'primary',
-  size: 'medium',
-};
 
 export default Spinner;

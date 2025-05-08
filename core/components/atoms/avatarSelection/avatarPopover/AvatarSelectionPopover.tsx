@@ -25,7 +25,7 @@ interface AvatarSelectionItemProps {
 const AvatarSelectionItem = (props: AvatarSelectionItemProps) => {
   const { avatarData, isSelected } = props;
   const [showTooltip, setShowTooltip] = React.useState(false);
-  const elementRef = React.useRef(null);
+  const elementRef = React.useRef<HTMLElement | null>(null);
 
   const { firstName = '', lastName = '', disabled, tooltipSuffix, image, icon } = avatarData;
   const name = `${firstName || ''} ${lastName || ''} ${tooltipSuffix || ''}` || '';

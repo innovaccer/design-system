@@ -17,10 +17,10 @@ export interface ChatAvatarProps {
 
 export interface IncomingOptionProps extends BaseProps {
   children?: React.ReactNode;
-  time?: string | React.ReactText;
+  time?: string | number;
   metaData?: string;
-  actionBar?: () => JSX.Element;
-  urgentMessage?: () => JSX.Element;
+  actionBar?: () => React.ReactElement;
+  urgentMessage?: () => React.ReactElement;
   avatarData?: ChatAvatarProps;
   showAvatar?: boolean;
 }

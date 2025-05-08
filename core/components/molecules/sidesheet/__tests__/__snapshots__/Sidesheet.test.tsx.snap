@@ -53,29 +53,32 @@ exports[`Sidesheet component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            
-            <div
-              class="PopperWrapper-trigger"
-            >
-              <button
-                class="Button Button--regular Button--regularSquare Button--transparent"
-                data-test="DesignSystem-Sidesheet--CloseButton"
-                tabindex="0"
+            <div>
+              <div
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  class="Button Button--regular Button--regularSquare Button--transparent"
+                  data-test="DesignSystem-Sidesheet--CloseButton"
+                  tabindex="0"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    role="button"
-                    style="font-size: 20px; width: 20px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    close
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      role="button"
+                      style="font-size: 20px; width: 20px;"
+                    >
+                      close
+                    </i>
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -151,29 +154,32 @@ exports[`Sidesheet component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            
-            <div
-              class="PopperWrapper-trigger"
-            >
-              <button
-                class="Button Button--regular Button--regularSquare Button--transparent"
-                data-test="DesignSystem-Sidesheet--CloseButton"
-                tabindex="0"
+            <div>
+              <div
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  class="Button Button--regular Button--regularSquare Button--transparent"
+                  data-test="DesignSystem-Sidesheet--CloseButton"
+                  tabindex="0"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    role="button"
-                    style="font-size: 20px; width: 20px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    close
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      role="button"
+                      style="font-size: 20px; width: 20px;"
+                    >
+                      close
+                    </i>
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
         </div>

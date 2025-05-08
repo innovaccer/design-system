@@ -1,5 +1,6 @@
 import React from 'react';
 import { MetaList } from '@/index';
+import { MetaListProps } from '@/index.type';
 import figma from '@figma/code-connect';
 
 figma.connect(MetaList, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=4384-30464&m=dev', {
@@ -17,5 +18,5 @@ figma.connect(MetaList, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS
       False: [{ label: 'Meta data' }, { label: 'Meta data' }],
     }),
   },
-  example: (props) => <MetaList {...props} />,
+  example: (props) => <MetaList {...(props as MetaListProps)} />,
 });

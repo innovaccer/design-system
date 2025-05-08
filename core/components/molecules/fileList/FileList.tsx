@@ -2,7 +2,7 @@ import * as React from 'react';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { FileListItem, FileListItemProps } from './FileListItem';
 import { Card } from '@/index';
-export interface FileListProps extends BaseProps {
+export type FileListProps = {
   /**
    * <pre className="DocPage-codeBlock">
    * Array containing the list of file objects
@@ -25,7 +25,7 @@ export interface FileListProps extends BaseProps {
    * | errorMessage | Error Message to be shown when status is `error` | 'Network Error' |
    *
    */
-  fileList: Omit<FileListItemProps[], 'onClick'>;
+  fileList?: Omit<FileListItemProps[], 'onClick'>;
   /**
    * Callback called when file item is clicked
    */
@@ -33,11 +33,11 @@ export interface FileListProps extends BaseProps {
   /**
    * Actions to be rendered inside the file item
    */
-  actionRenderer?: React.FC<FileListItemProps>;
-}
+  actionRenderer?: (fileItem: FileListItemProps) => React.ReactNode;
+} & BaseProps;
 
 export const FileList = (props: FileListProps) => {
-  const { fileList, onClick, actionRenderer, className } = props;
+  const { fileList = [], onClick, actionRenderer, className } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -49,17 +49,13 @@ export const FileList = (props: FileListProps) => {
         <FileListItem
           key={index}
           onClick={onClick}
-          actions={actionRenderer && actionRenderer(fileItem)}
+          actions={actionRenderer ? actionRenderer(fileItem) : undefined}
           fileItem={fileItem}
           {...fileItem}
         />
       ))}
     </Card>
   );
-};
-
-FileList.defaultProps = {
-  fileList: [],
 };
 
 FileList.displayName = 'FileList';

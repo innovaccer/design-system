@@ -35,7 +35,7 @@ export interface SaraSparkleProps extends TBaseHtmlProps<HTMLDivElement> {
 }
 
 export const SaraSparkle = (props: SaraSparkleProps) => {
-  const { size, state, alt, className, ...rest } = props;
+  const { size = 24, state = 'default', alt, className, ...rest } = props;
 
   const stateMapping: Record<string, TSaraSparkleStates> = {
     listening: Listening,
@@ -63,11 +63,6 @@ export const SaraSparkle = (props: SaraSparkleProps) => {
       <Player autoplay loop src={(state && stateMapping[state]) || Listening} style={{ height: size, width: size }} />
     </div>
   );
-};
-
-SaraSparkle.defaultProps = {
-  size: 24,
-  state: 'default',
 };
 
 export default SaraSparkle;

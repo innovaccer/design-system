@@ -37,7 +37,7 @@ export interface HeaderProps extends ExternalHeaderProps {
   error?: boolean;
   data: Data;
   displayData: Data;
-  schema: Schema;
+  schema?: Schema;
   selectAll?: GridProps['selectAll'];
   totalRecords: number;
   withPagination?: boolean;
@@ -48,7 +48,7 @@ export interface HeaderProps extends ExternalHeaderProps {
   // updateData?: updateDataFunction;
   updateSchema?: updateSchemaFunction;
   filterList?: GridProps['filterList'];
-  showFilters: boolean;
+  showFilters?: boolean;
   updateFilterList?: updateFilterListFunction;
   onSelectAll?: onSelectAllFunction;
   searchTerm?: string;
@@ -66,9 +66,9 @@ export const Header = (props: HeaderProps) => {
   const {
     loading,
     error,
-    data,
+    data = [],
     displayData,
-    schema,
+    schema = [],
     withSearch,
     showHead,
     withPagination,
@@ -82,14 +82,14 @@ export const Header = (props: HeaderProps) => {
     updateFilterList,
     totalRecords = 0,
     onSelectAll,
-    searchPlaceholder,
+    searchPlaceholder = 'Search',
     selectAll,
     searchTerm,
     updateSearchTerm,
     globalActionRenderer,
-    dynamicColumn,
+    dynamicColumn = true,
     allowSelectAll,
-    showFilters,
+    showFilters = true,
     customSelectionLabel,
     selectedRowsRef,
     selectedAllRef,
@@ -221,7 +221,7 @@ export const Header = (props: HeaderProps) => {
           ...schema.find((colSchema) => colSchema.name === option.value),
           hidden: !option.selected,
           /* tslint:disable:no-object-literal-type-assertion */
-        } as ColumnSchema)
+        }) as ColumnSchema
     );
     /* tslint:enable:no-object-literal-type-assertion */
 
@@ -372,13 +372,3 @@ export const Header = (props: HeaderProps) => {
     </div>
   );
 };
-
-Header.defaultProps = {
-  schema: [],
-  data: [],
-  searchPlaceholder: 'Search',
-  dynamicColumn: true,
-  showFilters: true,
-};
-
-export default Header;

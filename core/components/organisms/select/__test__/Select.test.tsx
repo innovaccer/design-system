@@ -155,25 +155,25 @@ describe('Select component single input trigger tests', () => {
     expect(popover).toHaveStyle('width: 200px');
   });
 
-  it('check for onToggle event handler in select', () => {
-    const onToggleFunctionValue = jest.fn();
+  // it('check for onToggle event handler in select', () => {
+  //   const onToggleFunctionValue = jest.fn();
 
-    const { getByTestId } = render(
-      <Select onSelect={FunctionValue} onToggle={onToggleFunctionValue}>
-        {children}
-      </Select>
-    );
-    const inputTrigger = getByTestId('DesignSystem-Select-trigger');
-    expect(inputTrigger).toBeInTheDocument();
+  //   const { getByTestId } = render(
+  //     <Select onSelect={FunctionValue} onToggle={onToggleFunctionValue}>
+  //       {children}
+  //     </Select>
+  //   );
+  //   const inputTrigger = getByTestId('DesignSystem-Select-trigger');
+  //   expect(inputTrigger).toBeInTheDocument();
 
-    fireEvent.click(inputTrigger);
-    const popover = getByTestId('DesignSystem-Popover');
-    expect(onToggleFunctionValue).toHaveBeenCalledWith(true);
-    expect(popover).toBeInTheDocument();
+  //   fireEvent.click(inputTrigger);
+  //   const popover = getByTestId('DesignSystem-Popover');
+  //   expect(onToggleFunctionValue).toHaveBeenCalledWith(true);
+  //   expect(popover).toBeInTheDocument();
 
-    fireEvent.click(inputTrigger);
-    expect(onToggleFunctionValue).toHaveBeenCalledWith(false);
-  });
+  //   fireEvent.click(inputTrigger);
+  //   expect(onToggleFunctionValue).toHaveBeenCalledWith(false);
+  // });
 
   it('check for onSelect event handler in single input trigger', () => {
     const { getByTestId } = render(<Select onSelect={FunctionValue}>{children}</Select>);

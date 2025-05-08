@@ -5,11 +5,11 @@ import styles from '@css/components/stepper.module.css';
 
 export interface StepProps {
   label: string;
-  value?: React.ReactText;
+  value?: string | number;
   disabled: boolean;
   active: boolean;
   completed: boolean;
-  onChange?: (label: string, value?: React.ReactText) => void;
+  onChange?: (label: string, value?: string | number) => void;
 }
 
 export const Step = (props: StepProps) => {

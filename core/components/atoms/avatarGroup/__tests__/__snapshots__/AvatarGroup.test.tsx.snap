@@ -3,7 +3,7 @@
 exports[`AvatarGroup component snapshot 
   list: [{"firstName":"John","lastName":"Doe","icon":"[ReactNode]"},{"firstName":"Steven","lastName":"Packton","icon":"[ReactNode]"}], size: "regular", withSearch: "false"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -19,9 +19,104 @@ Object {
           <span
             class="position-relative d-inline-flex"
           >
-            
             <div
-              class="PopperWrapper-trigger flex-grow-0"
+              class="flex-grow-0"
+            >
+              <div
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+                triggerclass="flex-grow-0"
+              >
+                <span
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="presentation"
+                >
+                  <span
+                    class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
+                  >
+                    <i
+                      class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
+                      data-test="DesignSystem-Icon"
+                      role="button"
+                      style="font-size: 20px; width: 20px;"
+                    >
+                      places
+                    </i>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </span>
+        </div>
+        <div
+          class="AvatarGroup-item AvatarGroup-item--regular"
+          data-test="DesignSystem-AvatarGroup--Avatar"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
+        >
+          <span
+            class="position-relative d-inline-flex"
+          >
+            <div
+              class="flex-grow-0"
+            >
+              <div
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+                triggerclass="flex-grow-0"
+              >
+                <span
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="presentation"
+                >
+                  <span
+                    class="Avatar Avatar--regular Avatar--alert Avatar--default"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
+                  >
+                    <i
+                      class="material-symbols material-symbols-rounded Icon Icon--white"
+                      data-test="DesignSystem-Icon"
+                      role="button"
+                      style="font-size: 20px; width: 20px;"
+                    >
+                      smart_toy
+                    </i>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="AvatarGroup d-inline-flex"
+      data-test="DesignSystem-AvatarGroup"
+    >
+      <div
+        class="AvatarGroup-item AvatarGroup-item--regular"
+        data-test="DesignSystem-AvatarGroup--Avatar"
+        style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
+      >
+        <span
+          class="position-relative d-inline-flex"
+        >
+          <div
+            class="flex-grow-0"
+          >
+            <div
+              aria-expanded="false"
+              aria-haspopup="dialog"
+              data-state="closed"
+              triggerclass="flex-grow-0"
             >
               <span
                 class=""
@@ -44,19 +139,25 @@ Object {
                 </span>
               </span>
             </div>
-          </span>
-        </div>
-        <div
-          class="AvatarGroup-item AvatarGroup-item--regular"
-          data-test="DesignSystem-AvatarGroup--Avatar"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
+          </div>
+        </span>
+      </div>
+      <div
+        class="AvatarGroup-item AvatarGroup-item--regular"
+        data-test="DesignSystem-AvatarGroup--Avatar"
+        style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
+      >
+        <span
+          class="position-relative d-inline-flex"
         >
-          <span
-            class="position-relative d-inline-flex"
+          <div
+            class="flex-grow-0"
           >
-            
             <div
-              class="PopperWrapper-trigger flex-grow-0"
+              aria-expanded="false"
+              aria-haspopup="dialog"
+              data-state="closed"
+              triggerclass="flex-grow-0"
             >
               <span
                 class=""
@@ -79,83 +180,6 @@ Object {
                 </span>
               </span>
             </div>
-          </span>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="AvatarGroup d-inline-flex"
-      data-test="DesignSystem-AvatarGroup"
-    >
-      <div
-        class="AvatarGroup-item AvatarGroup-item--regular"
-        data-test="DesignSystem-AvatarGroup--Avatar"
-        style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
-      >
-        <span
-          class="position-relative d-inline-flex"
-        >
-          
-          <div
-            class="PopperWrapper-trigger flex-grow-0"
-          >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="presentation"
-            >
-              <span
-                class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
-                data-test="DesignSystem-Avatar"
-                tabindex="0"
-              >
-                <i
-                  class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
-                  data-test="DesignSystem-Icon"
-                  role="button"
-                  style="font-size: 20px; width: 20px;"
-                >
-                  places
-                </i>
-              </span>
-            </span>
-          </div>
-        </span>
-      </div>
-      <div
-        class="AvatarGroup-item AvatarGroup-item--regular"
-        data-test="DesignSystem-AvatarGroup--Avatar"
-        style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
-      >
-        <span
-          class="position-relative d-inline-flex"
-        >
-          
-          <div
-            class="PopperWrapper-trigger flex-grow-0"
-          >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="presentation"
-            >
-              <span
-                class="Avatar Avatar--regular Avatar--alert Avatar--default"
-                data-test="DesignSystem-Avatar"
-                tabindex="0"
-              >
-                <i
-                  class="material-symbols material-symbols-rounded Icon Icon--white"
-                  data-test="DesignSystem-Icon"
-                  role="button"
-                  style="font-size: 20px; width: 20px;"
-                >
-                  smart_toy
-                </i>
-              </span>
-            </span>
           </div>
         </span>
       </div>
@@ -218,7 +242,7 @@ Object {
 exports[`AvatarGroup component snapshot 
   list: [{"firstName":"John","lastName":"Doe","icon":"[ReactNode]"},{"firstName":"Steven","lastName":"Packton","icon":"[ReactNode]"}], size: "regular", withSearch: "true"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -234,9 +258,104 @@ Object {
           <span
             class="position-relative d-inline-flex"
           >
-            
             <div
-              class="PopperWrapper-trigger flex-grow-0"
+              class="flex-grow-0"
+            >
+              <div
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+                triggerclass="flex-grow-0"
+              >
+                <span
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="presentation"
+                >
+                  <span
+                    class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
+                  >
+                    <i
+                      class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
+                      data-test="DesignSystem-Icon"
+                      role="button"
+                      style="font-size: 20px; width: 20px;"
+                    >
+                      places
+                    </i>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </span>
+        </div>
+        <div
+          class="AvatarGroup-item AvatarGroup-item--regular"
+          data-test="DesignSystem-AvatarGroup--Avatar"
+          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
+        >
+          <span
+            class="position-relative d-inline-flex"
+          >
+            <div
+              class="flex-grow-0"
+            >
+              <div
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+                triggerclass="flex-grow-0"
+              >
+                <span
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="presentation"
+                >
+                  <span
+                    class="Avatar Avatar--regular Avatar--alert Avatar--default"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
+                  >
+                    <i
+                      class="material-symbols material-symbols-rounded Icon Icon--white"
+                      data-test="DesignSystem-Icon"
+                      role="button"
+                      style="font-size: 20px; width: 20px;"
+                    >
+                      smart_toy
+                    </i>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="AvatarGroup d-inline-flex"
+      data-test="DesignSystem-AvatarGroup"
+    >
+      <div
+        class="AvatarGroup-item AvatarGroup-item--regular"
+        data-test="DesignSystem-AvatarGroup--Avatar"
+        style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
+      >
+        <span
+          class="position-relative d-inline-flex"
+        >
+          <div
+            class="flex-grow-0"
+          >
+            <div
+              aria-expanded="false"
+              aria-haspopup="dialog"
+              data-state="closed"
+              triggerclass="flex-grow-0"
             >
               <span
                 class=""
@@ -259,19 +378,25 @@ Object {
                 </span>
               </span>
             </div>
-          </span>
-        </div>
-        <div
-          class="AvatarGroup-item AvatarGroup-item--regular"
-          data-test="DesignSystem-AvatarGroup--Avatar"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
+          </div>
+        </span>
+      </div>
+      <div
+        class="AvatarGroup-item AvatarGroup-item--regular"
+        data-test="DesignSystem-AvatarGroup--Avatar"
+        style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
+      >
+        <span
+          class="position-relative d-inline-flex"
         >
-          <span
-            class="position-relative d-inline-flex"
+          <div
+            class="flex-grow-0"
           >
-            
             <div
-              class="PopperWrapper-trigger flex-grow-0"
+              aria-expanded="false"
+              aria-haspopup="dialog"
+              data-state="closed"
+              triggerclass="flex-grow-0"
             >
               <span
                 class=""
@@ -294,83 +419,6 @@ Object {
                 </span>
               </span>
             </div>
-          </span>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="AvatarGroup d-inline-flex"
-      data-test="DesignSystem-AvatarGroup"
-    >
-      <div
-        class="AvatarGroup-item AvatarGroup-item--regular"
-        data-test="DesignSystem-AvatarGroup--Avatar"
-        style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
-      >
-        <span
-          class="position-relative d-inline-flex"
-        >
-          
-          <div
-            class="PopperWrapper-trigger flex-grow-0"
-          >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="presentation"
-            >
-              <span
-                class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
-                data-test="DesignSystem-Avatar"
-                tabindex="0"
-              >
-                <i
-                  class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
-                  data-test="DesignSystem-Icon"
-                  role="button"
-                  style="font-size: 20px; width: 20px;"
-                >
-                  places
-                </i>
-              </span>
-            </span>
-          </div>
-        </span>
-      </div>
-      <div
-        class="AvatarGroup-item AvatarGroup-item--regular"
-        data-test="DesignSystem-AvatarGroup--Avatar"
-        style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
-      >
-        <span
-          class="position-relative d-inline-flex"
-        >
-          
-          <div
-            class="PopperWrapper-trigger flex-grow-0"
-          >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="presentation"
-            >
-              <span
-                class="Avatar Avatar--regular Avatar--alert Avatar--default"
-                data-test="DesignSystem-Avatar"
-                tabindex="0"
-              >
-                <i
-                  class="material-symbols material-symbols-rounded Icon Icon--white"
-                  data-test="DesignSystem-Icon"
-                  role="button"
-                  style="font-size: 20px; width: 20px;"
-                >
-                  smart_toy
-                </i>
-              </span>
-            </span>
           </div>
         </span>
       </div>
@@ -433,7 +481,7 @@ Object {
 exports[`AvatarGroup component snapshot 
   list: [{"firstName":"John","lastName":"Doe","icon":"[ReactNode]"},{"firstName":"Steven","lastName":"Packton","icon":"[ReactNode]"}], size: "tiny", withSearch: "false"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -449,9 +497,104 @@ Object {
           <span
             class="position-relative d-inline-flex"
           >
-            
             <div
-              class="PopperWrapper-trigger flex-grow-0"
+              class="flex-grow-0"
+            >
+              <div
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+                triggerclass="flex-grow-0"
+              >
+                <span
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="presentation"
+                >
+                  <span
+                    class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
+                  >
+                    <i
+                      class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
+                      data-test="DesignSystem-Icon"
+                      role="button"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      places
+                    </i>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </span>
+        </div>
+        <div
+          class="AvatarGroup-item AvatarGroup-item--tiny"
+          data-test="DesignSystem-AvatarGroup--Avatar"
+          style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 1;"
+        >
+          <span
+            class="position-relative d-inline-flex"
+          >
+            <div
+              class="flex-grow-0"
+            >
+              <div
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+                triggerclass="flex-grow-0"
+              >
+                <span
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="presentation"
+                >
+                  <span
+                    class="Avatar Avatar--tiny Avatar--alert Avatar--default"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
+                  >
+                    <i
+                      class="material-symbols material-symbols-rounded Icon Icon--white"
+                      data-test="DesignSystem-Icon"
+                      role="button"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      smart_toy
+                    </i>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="AvatarGroup d-inline-flex"
+      data-test="DesignSystem-AvatarGroup"
+    >
+      <div
+        class="AvatarGroup-item AvatarGroup-item--tiny"
+        data-test="DesignSystem-AvatarGroup--Avatar"
+        style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 2;"
+      >
+        <span
+          class="position-relative d-inline-flex"
+        >
+          <div
+            class="flex-grow-0"
+          >
+            <div
+              aria-expanded="false"
+              aria-haspopup="dialog"
+              data-state="closed"
+              triggerclass="flex-grow-0"
             >
               <span
                 class=""
@@ -474,19 +617,25 @@ Object {
                 </span>
               </span>
             </div>
-          </span>
-        </div>
-        <div
-          class="AvatarGroup-item AvatarGroup-item--tiny"
-          data-test="DesignSystem-AvatarGroup--Avatar"
-          style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 1;"
+          </div>
+        </span>
+      </div>
+      <div
+        class="AvatarGroup-item AvatarGroup-item--tiny"
+        data-test="DesignSystem-AvatarGroup--Avatar"
+        style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 1;"
+      >
+        <span
+          class="position-relative d-inline-flex"
         >
-          <span
-            class="position-relative d-inline-flex"
+          <div
+            class="flex-grow-0"
           >
-            
             <div
-              class="PopperWrapper-trigger flex-grow-0"
+              aria-expanded="false"
+              aria-haspopup="dialog"
+              data-state="closed"
+              triggerclass="flex-grow-0"
             >
               <span
                 class=""
@@ -509,83 +658,6 @@ Object {
                 </span>
               </span>
             </div>
-          </span>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="AvatarGroup d-inline-flex"
-      data-test="DesignSystem-AvatarGroup"
-    >
-      <div
-        class="AvatarGroup-item AvatarGroup-item--tiny"
-        data-test="DesignSystem-AvatarGroup--Avatar"
-        style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 2;"
-      >
-        <span
-          class="position-relative d-inline-flex"
-        >
-          
-          <div
-            class="PopperWrapper-trigger flex-grow-0"
-          >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="presentation"
-            >
-              <span
-                class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
-                data-test="DesignSystem-Avatar"
-                tabindex="0"
-              >
-                <i
-                  class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
-                  data-test="DesignSystem-Icon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
-                >
-                  places
-                </i>
-              </span>
-            </span>
-          </div>
-        </span>
-      </div>
-      <div
-        class="AvatarGroup-item AvatarGroup-item--tiny"
-        data-test="DesignSystem-AvatarGroup--Avatar"
-        style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 1;"
-      >
-        <span
-          class="position-relative d-inline-flex"
-        >
-          
-          <div
-            class="PopperWrapper-trigger flex-grow-0"
-          >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="presentation"
-            >
-              <span
-                class="Avatar Avatar--tiny Avatar--alert Avatar--default"
-                data-test="DesignSystem-Avatar"
-                tabindex="0"
-              >
-                <i
-                  class="material-symbols material-symbols-rounded Icon Icon--white"
-                  data-test="DesignSystem-Icon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
-                >
-                  smart_toy
-                </i>
-              </span>
-            </span>
           </div>
         </span>
       </div>
@@ -648,7 +720,7 @@ Object {
 exports[`AvatarGroup component snapshot 
   list: [{"firstName":"John","lastName":"Doe","icon":"[ReactNode]"},{"firstName":"Steven","lastName":"Packton","icon":"[ReactNode]"}], size: "tiny", withSearch: "true"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -664,9 +736,104 @@ Object {
           <span
             class="position-relative d-inline-flex"
           >
-            
             <div
-              class="PopperWrapper-trigger flex-grow-0"
+              class="flex-grow-0"
+            >
+              <div
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+                triggerclass="flex-grow-0"
+              >
+                <span
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="presentation"
+                >
+                  <span
+                    class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
+                  >
+                    <i
+                      class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
+                      data-test="DesignSystem-Icon"
+                      role="button"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      places
+                    </i>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </span>
+        </div>
+        <div
+          class="AvatarGroup-item AvatarGroup-item--tiny"
+          data-test="DesignSystem-AvatarGroup--Avatar"
+          style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 1;"
+        >
+          <span
+            class="position-relative d-inline-flex"
+          >
+            <div
+              class="flex-grow-0"
+            >
+              <div
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
+                triggerclass="flex-grow-0"
+              >
+                <span
+                  class=""
+                  data-test="DesignSystem-AvatarWrapper"
+                  role="presentation"
+                >
+                  <span
+                    class="Avatar Avatar--tiny Avatar--alert Avatar--default"
+                    data-test="DesignSystem-Avatar"
+                    tabindex="0"
+                  >
+                    <i
+                      class="material-symbols material-symbols-rounded Icon Icon--white"
+                      data-test="DesignSystem-Icon"
+                      role="button"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      smart_toy
+                    </i>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="AvatarGroup d-inline-flex"
+      data-test="DesignSystem-AvatarGroup"
+    >
+      <div
+        class="AvatarGroup-item AvatarGroup-item--tiny"
+        data-test="DesignSystem-AvatarGroup--Avatar"
+        style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 2;"
+      >
+        <span
+          class="position-relative d-inline-flex"
+        >
+          <div
+            class="flex-grow-0"
+          >
+            <div
+              aria-expanded="false"
+              aria-haspopup="dialog"
+              data-state="closed"
+              triggerclass="flex-grow-0"
             >
               <span
                 class=""
@@ -689,19 +856,25 @@ Object {
                 </span>
               </span>
             </div>
-          </span>
-        </div>
-        <div
-          class="AvatarGroup-item AvatarGroup-item--tiny"
-          data-test="DesignSystem-AvatarGroup--Avatar"
-          style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 1;"
+          </div>
+        </span>
+      </div>
+      <div
+        class="AvatarGroup-item AvatarGroup-item--tiny"
+        data-test="DesignSystem-AvatarGroup--Avatar"
+        style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 1;"
+      >
+        <span
+          class="position-relative d-inline-flex"
         >
-          <span
-            class="position-relative d-inline-flex"
+          <div
+            class="flex-grow-0"
           >
-            
             <div
-              class="PopperWrapper-trigger flex-grow-0"
+              aria-expanded="false"
+              aria-haspopup="dialog"
+              data-state="closed"
+              triggerclass="flex-grow-0"
             >
               <span
                 class=""
@@ -724,83 +897,6 @@ Object {
                 </span>
               </span>
             </div>
-          </span>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="AvatarGroup d-inline-flex"
-      data-test="DesignSystem-AvatarGroup"
-    >
-      <div
-        class="AvatarGroup-item AvatarGroup-item--tiny"
-        data-test="DesignSystem-AvatarGroup--Avatar"
-        style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 2;"
-      >
-        <span
-          class="position-relative d-inline-flex"
-        >
-          
-          <div
-            class="PopperWrapper-trigger flex-grow-0"
-          >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="presentation"
-            >
-              <span
-                class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
-                data-test="DesignSystem-Avatar"
-                tabindex="0"
-              >
-                <i
-                  class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
-                  data-test="DesignSystem-Icon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
-                >
-                  places
-                </i>
-              </span>
-            </span>
-          </div>
-        </span>
-      </div>
-      <div
-        class="AvatarGroup-item AvatarGroup-item--tiny"
-        data-test="DesignSystem-AvatarGroup--Avatar"
-        style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 1;"
-      >
-        <span
-          class="position-relative d-inline-flex"
-        >
-          
-          <div
-            class="PopperWrapper-trigger flex-grow-0"
-          >
-            <span
-              class=""
-              data-test="DesignSystem-AvatarWrapper"
-              role="presentation"
-            >
-              <span
-                class="Avatar Avatar--tiny Avatar--alert Avatar--default"
-                data-test="DesignSystem-Avatar"
-                tabindex="0"
-              >
-                <i
-                  class="material-symbols material-symbols-rounded Icon Icon--white"
-                  data-test="DesignSystem-Icon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
-                >
-                  smart_toy
-                </i>
-              </span>
-            </span>
           </div>
         </span>
       </div>

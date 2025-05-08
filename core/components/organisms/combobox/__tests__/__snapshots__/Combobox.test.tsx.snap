@@ -1,15 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Combobox component snapshots 
-  multiSelect: false, onChange: "[Function]", onSelect: "[Function]", size: "large", placeholder: [null,"s","e","l","e","c","t"," ","a","n"," ","o","p","t","i","o","n"]
+  multiSelect: false, onChange: "[Function]", onSelect: "[Function]", size: "large", placeholder: [null,"select an option"]
  1`] = `
 <body>
   <div>
     <div>
       <div>
-        
         <div
-          class="PopperWrapper-trigger d-block"
+          class="d-block"
         >
           <div
             class="Input Input--large"
@@ -127,25 +126,159 @@ exports[`Combobox component snapshots
             data-test="DesignSystem-MultiSelectTrigger--Border"
           >
             <div
-              class="ChipInput"
-              data-test="DesignSystem-Combobox-ChipInput"
-              tabindex="-1"
+              class="Input Input--large"
+              data-test="DesignSystem-InputWrapper"
+              role="presentation"
+              style="min-width: 256px;"
+            >
+              <input
+                aria-controls="DesignSystem-Combobox--Popover-Test-uid"
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-label=",select an option"
+                class="Input-input Input-input--large"
+                data-test="DesignSystem-Combobox-Input"
+                placeholder=",select an option"
+                role="combobox"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Combobox component snapshots 
+  multiSelect: false, onChange: "[Function]", onSelect: "[Function]", size: "regular", placeholder: [null,"select an option"]
+ 1`] = `
+<body>
+  <div>
+    <div>
+      <div>
+        <div
+          class="d-block"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="d-block"
+          >
+            <div
+              class="Input Input--regular"
+              data-test="DesignSystem-InputWrapper"
+              role="presentation"
+              style="min-width: 256px;"
+            >
+              <input
+                aria-controls="DesignSystem-Combobox--Popover-Test-uid"
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-label=",select an option"
+                class="Input-input Input-input--regular"
+                data-test="DesignSystem-Combobox-Input"
+                placeholder=",select an option"
+                role="combobox"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Combobox component snapshots 
+  multiSelect: false, onChange: "[Function]", onSelect: "[Function]", size: "tiny", placeholder: [null,"select an option"]
+ 1`] = `
+<body>
+  <div>
+    <div>
+      <div>
+        <div
+          class="d-block"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="d-block"
+          >
+            <div
+              class="Input Input--tiny"
+              data-test="DesignSystem-InputWrapper"
+              role="presentation"
+              style="min-width: 256px;"
+            >
+              <input
+                aria-controls="DesignSystem-Combobox--Popover-Test-uid"
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-label=",select an option"
+                class="Input-input Input-input--tiny"
+                data-test="DesignSystem-Combobox-Input"
+                placeholder=",select an option"
+                role="combobox"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Combobox component snapshots 
+  multiSelect: true, onChange: "[Function]", onSelect: "[Function]", size: "large", placeholder: [null,"select an option"]
+ 1`] = `
+<body>
+  <div>
+    <div>
+      <div>
+        <div
+          class="d-block"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="d-block"
+          >
+            <div
+              class="ChipInput-border"
+              data-test="DesignSystem-MultiSelectTrigger--Border"
             >
               <div
-                class="ChipInput-wrapper"
+                class="ChipInput"
+                data-test="DesignSystem-Combobox-ChipInput"
+                tabindex="-1"
               >
-                <input
-                  aria-controls="DesignSystem-Combobox--Popover-Test-uid"
-                  aria-expanded="false"
-                  aria-haspopup="listbox"
-                  aria-label=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
-                  class="ChipInput-input"
-                  data-test="DesignSystem-MultiSelectTrigger--Input"
-                  placeholder=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
-                  role="combobox"
-                  style="flex-basis: 0px;"
-                  value=""
-                />
+                <div
+                  class="ChipInput-wrapper"
+                >
+                  <input
+                    aria-controls="DesignSystem-Combobox--Popover-Test-uid"
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-label=",select an option"
+                    class="ChipInput-input"
+                    data-test="DesignSystem-MultiSelectTrigger--Input"
+                    placeholder=",select an option"
+                    role="combobox"
+                    style="flex-basis: 0px;"
+                    value=""
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -157,40 +290,46 @@ exports[`Combobox component snapshots
 `;
 
 exports[`Combobox component snapshots 
-  multiSelect: true, onChange: "[Function]", onSelect: "[Function]", size: "regular", placeholder: [null,"s","e","l","e","c","t"," ","a","n"," ","o","p","t","i","o","n"]
+  multiSelect: true, onChange: "[Function]", onSelect: "[Function]", size: "regular", placeholder: [null,"select an option"]
  1`] = `
 <body>
   <div>
     <div>
       <div>
-        
         <div
-          class="PopperWrapper-trigger d-block"
+          class="d-block"
         >
           <div
-            class="ChipInput-border"
-            data-test="DesignSystem-MultiSelectTrigger--Border"
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="d-block"
           >
             <div
-              class="ChipInput"
-              data-test="DesignSystem-Combobox-ChipInput"
-              tabindex="-1"
+              class="ChipInput-border"
+              data-test="DesignSystem-MultiSelectTrigger--Border"
             >
               <div
-                class="ChipInput-wrapper"
+                class="ChipInput"
+                data-test="DesignSystem-Combobox-ChipInput"
+                tabindex="-1"
               >
-                <input
-                  aria-controls="DesignSystem-Combobox--Popover-Test-uid"
-                  aria-expanded="false"
-                  aria-haspopup="listbox"
-                  aria-label=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
-                  class="ChipInput-input"
-                  data-test="DesignSystem-MultiSelectTrigger--Input"
-                  placeholder=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
-                  role="combobox"
-                  style="flex-basis: 0px;"
-                  value=""
-                />
+                <div
+                  class="ChipInput-wrapper"
+                >
+                  <input
+                    aria-controls="DesignSystem-Combobox--Popover-Test-uid"
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-label=",select an option"
+                    class="ChipInput-input"
+                    data-test="DesignSystem-MultiSelectTrigger--Input"
+                    placeholder=",select an option"
+                    role="combobox"
+                    style="flex-basis: 0px;"
+                    value=""
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -202,40 +341,46 @@ exports[`Combobox component snapshots
 `;
 
 exports[`Combobox component snapshots 
-  multiSelect: true, onChange: "[Function]", onSelect: "[Function]", size: "tiny", placeholder: [null,"s","e","l","e","c","t"," ","a","n"," ","o","p","t","i","o","n"]
+  multiSelect: true, onChange: "[Function]", onSelect: "[Function]", size: "tiny", placeholder: [null,"select an option"]
  1`] = `
 <body>
   <div>
     <div>
       <div>
-        
         <div
-          class="PopperWrapper-trigger d-block"
+          class="d-block"
         >
           <div
-            class="ChipInput-border"
-            data-test="DesignSystem-MultiSelectTrigger--Border"
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            triggerclass="d-block"
           >
             <div
-              class="ChipInput"
-              data-test="DesignSystem-Combobox-ChipInput"
-              tabindex="-1"
+              class="ChipInput-border"
+              data-test="DesignSystem-MultiSelectTrigger--Border"
             >
               <div
-                class="ChipInput-wrapper"
+                class="ChipInput"
+                data-test="DesignSystem-Combobox-ChipInput"
+                tabindex="-1"
               >
-                <input
-                  aria-controls="DesignSystem-Combobox--Popover-Test-uid"
-                  aria-expanded="false"
-                  aria-haspopup="listbox"
-                  aria-label=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
-                  class="ChipInput-input"
-                  data-test="DesignSystem-MultiSelectTrigger--Input"
-                  placeholder=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
-                  role="combobox"
-                  style="flex-basis: 0px;"
-                  value=""
-                />
+                <div
+                  class="ChipInput-wrapper"
+                >
+                  <input
+                    aria-controls="DesignSystem-Combobox--Popover-Test-uid"
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-label=",select an option"
+                    class="ChipInput-input"
+                    data-test="DesignSystem-MultiSelectTrigger--Input"
+                    placeholder=",select an option"
+                    role="combobox"
+                    style="flex-basis: 0px;"
+                    value=""
+                  />
+                </div>
               </div>
             </div>
           </div>

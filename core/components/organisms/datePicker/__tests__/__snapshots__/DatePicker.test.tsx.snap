@@ -5235,28 +5235,27 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
  1`] = `
 <body>
   <div>
-    
     <div
-      class="PopperWrapper-trigger w-100"
+      class="w-100"
     >
       <div
-        class="d-flex flex-column flex-grow-1"
-        data-test="DesignSystem-InputMask--Wrapper"
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        data-state="closed"
+        triggerclass="w-100"
       >
         <div
-          class="Input Input--regular"
-          data-test="DesignSystem-InputWrapper"
-          role="presentation"
-          style="min-width: 256px;"
+          class="d-flex flex-column flex-grow-1"
+          data-test="DesignSystem-InputMask--Wrapper"
         >
           <div
-            class="Input-icon Input-icon--left"
+            class="Input Input--regular"
+            data-test="DesignSystem-InputWrapper"
+            role="presentation"
+            style="min-width: 256px;"
           >
-            <i
-              class="material-symbols material-symbols-rounded Icon"
-              data-test="DesignSystem-Icon"
-              role="button"
-              style="font-size: 16px; width: 16px;"
+            <div
+              class="Input-icon Input-icon--left"
             >
               events
             </i>
@@ -5279,8 +5278,16 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
               style="font-size: 16px; width: 16px;"
               tabindex="0"
             >
-              close
-            </i>
+              <i
+                class="material-symbols material-symbols-rounded Icon Input-icon--right"
+                data-test="DesignSystem-Input--closeIcon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+                tabindex="0"
+              >
+                close
+              </i>
+            </div>
           </div>
         </div>
       </div>

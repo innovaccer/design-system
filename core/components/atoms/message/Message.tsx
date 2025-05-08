@@ -14,11 +14,11 @@ const IconMapping = {
 
 type MessageSize = 'small' | 'regular';
 
-export interface MessageProps extends BaseProps {
+export type MessageProps = {
   /**
    * Color of `Message`
    */
-  appearance: MessageAppearance;
+  appearance?: MessageAppearance;
   /**
    * Title of the `Message`
    */
@@ -37,16 +37,17 @@ export interface MessageProps extends BaseProps {
   /**
    * Description of `Message`
    */
-  description: string;
+  description?: string;
   /**
    * Action links to be added inside `Message`
    */
   actions?: React.ReactNode;
-}
+} & BaseProps;
 
 export const Message = (props: MessageProps) => {
   const { actions, title, className, size = 'regular' } = props;
-  let { appearance } = props;
+  let { appearance = 'info' } = props;
+  const { description = '' } = props;
   appearance = appearance === 'default' ? 'info' : appearance;
 
   const baseProps = extractBaseProps(props);
@@ -116,7 +117,7 @@ export const Message = (props: MessageProps) => {
             {title}
           </Heading>
         )}
-        {renderDescription(props.description, props.children)}
+        {renderDescription(description, props.children)}
         {actions && (
           <div data-test="DesignSystem-Message--actions" className={ActionsClass}>
             {actions}
@@ -128,9 +129,5 @@ export const Message = (props: MessageProps) => {
 };
 
 Message.displayName = 'Message';
-Message.defaultProps = {
-  appearance: 'info',
-  description: '',
-};
 
 export default Message;

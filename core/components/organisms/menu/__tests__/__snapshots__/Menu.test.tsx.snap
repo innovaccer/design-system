@@ -5,10 +5,13 @@ exports[`Menu component snapshot
  1`] = `
 <body>
   <div>
-    
-    <div
-      class="PopperWrapper-trigger"
-    />
+    <div>
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        data-state="closed"
+      />
+    </div>
   </div>
 </body>
 `;
@@ -18,203 +21,83 @@ exports[`Menu component snapshot
  1`] = `
 <body>
   <div>
-    
-    <div
-      class="PopperWrapper-trigger"
-    />
-  </div>
-  <div
-    class="Popover"
-    data-layer="true"
-    data-opened="true"
-    data-test="DesignSystem-Popover"
-    style="width: 176px; position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
-  >
-    <div
-      class="Menu"
-      data-test="DesignSystem-Menu-Wrapper"
-      role="menu"
-      style="max-height: 256px;"
-    >
-      <nav
-        class="Listbox"
-        data-test="DesignSystem-Menu-List"
-      >
-        <a
-          class="Listbox-item-wrapper"
-          data-test="DesignSystem-Menu-ListItem"
-          role="menuitem"
-          tabindex="-1"
-        >
-          <div
-            class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
-            data-test="DesignSystem-Listbox-ItemWrapper"
-            role="tablist"
-            tabindex="-1"
-          >
-            Menu Item 1
-          </div>
-        </a>
-        <a
-          class="Listbox-item-wrapper"
-          data-test="DesignSystem-Menu-ListItem"
-          role="menuitem"
-          tabindex="-1"
-        >
-          <div
-            class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
-            data-test="DesignSystem-Listbox-ItemWrapper"
-            role="tablist"
-            tabindex="-1"
-          >
-            Menu Item 2
-          </div>
-        </a>
-      </nav>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`Menu component with Nesting snapshot 
-  open: false
- 1`] = `
-<body>
-  <div>
-    
-    <div
-      class="PopperWrapper-trigger"
-    />
-  </div>
-</body>
-`;
-
-exports[`Menu component with Nesting snapshot 
-  open: true
- 1`] = `
-<body>
-  <div>
-    
-    <div
-      class="PopperWrapper-trigger"
-    />
-  </div>
-  <div
-    class="Popover"
-    data-layer="true"
-    data-opened="true"
-    data-test="DesignSystem-Popover"
-    style="width: 176px; position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
-  >
-    <div
-      class="Menu"
-      data-test="DesignSystem-Menu-Wrapper"
-      role="menu"
-      style="max-height: 256px;"
-    >
-      <nav
-        class="Listbox"
-        data-test="DesignSystem-Menu-List"
-      >
-        <a
-          class="Listbox-item-wrapper"
-          data-test="DesignSystem-Menu-ListItem"
-          role="menuitem"
-          tabindex="-1"
-        >
-          <div
-            class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
-            data-test="DesignSystem-Listbox-ItemWrapper"
-            role="tablist"
-            tabindex="-1"
-          >
-            Menu Item 1
-          </div>
-        </a>
-        <a
-          class="Listbox-item-wrapper"
-          data-test="DesignSystem-Menu-ListItem"
-          role="menuitem"
-          tabindex="-1"
-        >
-          <div
-            class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
-            data-test="DesignSystem-Listbox-ItemWrapper"
-            role="tablist"
-            tabindex="-1"
-          >
-            Menu Item 2
-          </div>
-        </a>
-        
-        <div
-          class="PopperWrapper-trigger"
-        >
-          <a
-            aria-controls="DesignSystem-Menu--Popover-Test-uid"
-            aria-expanded="false"
-            aria-haspopup="menu"
-            class="Listbox-item-wrapper"
-            data-test="DesignSystem-Menu-ListItem"
-            id="DesignSystem-Menu--Trigger-Test-uid"
-            role="menuitem"
-            tabindex="-1"
-          >
-            <div
-              class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item d-flex align-items-center justify-content-between w-100"
-              data-test="DesignSystem-Listbox-ItemWrapper"
-              role="tablist"
-              tabindex="-1"
-            >
-              Menu Item 3
-              <i
-                class="material-symbols material-symbols-rounded Icon"
-                data-test="DesignSystem-Icon"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                chevron_right
-              </i>
-            </div>
-          </a>
-        </div>
-      </nav>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`Menu component with Trigger snapshot 
-  open: false
- 1`] = `
-<body>
-  <div>
-    
-    <div
-      class="PopperWrapper-trigger"
-    >
-      <button
+    <div>
+      <div
         aria-expanded="false"
-        aria-haspopup="true"
-        aria-label="Open menu"
-        class="Button Button--regular Button--regularSquare Button--basic"
-        data-test="DesignSystem-Menu-Trigger"
-        tabindex="0"
+        aria-haspopup="dialog"
+        data-state="closed"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Menu component with Nesting snapshot 
+  open: false
+ 1`] = `
+<body>
+  <div>
+    <div>
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        data-state="closed"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Menu component with Nesting snapshot 
+  open: true
+ 1`] = `
+<body>
+  <div>
+    <div>
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        data-state="closed"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Menu component with Trigger snapshot 
+  open: false
+ 1`] = `
+<body>
+  <div>
+    <div>
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        data-state="closed"
       >
-        <div
-          class="Button-icon"
-          data-test="DesignSystem-Button--Icon-Wrapper"
+        <button
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-label="Open menu"
+          class="Button Button--regular Button--regularSquare Button--basic"
+          data-test="DesignSystem-Menu-Trigger"
+          tabindex="0"
         >
-          <i
-            class="material-symbols material-symbols-rounded Icon"
-            data-test="DesignSystem-Button--Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
+          <div
+            class="Button-icon"
+            data-test="DesignSystem-Button--Icon-Wrapper"
           >
-            more_horiz
-          </i>
-        </div>
-      </button>
+            <i
+              class="material-symbols material-symbols-rounded Icon"
+              data-test="DesignSystem-Button--Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              more_horiz
+            </i>
+          </div>
+        </button>
+      </div>
     </div>
   </div>
 </body>
@@ -225,82 +108,35 @@ exports[`Menu component with Trigger snapshot
  1`] = `
 <body>
   <div>
-    
-    <div
-      class="PopperWrapper-trigger"
-    >
-      <button
-        aria-expanded="true"
-        aria-haspopup="true"
-        aria-label="Open menu"
-        class="Button Button--regular Button--regularSquare Button--basic Menu-Trigger--active"
-        data-test="DesignSystem-Menu-Trigger"
-        tabindex="0"
+    <div>
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        data-state="closed"
       >
-        <div
-          class="Button-icon"
-          data-test="DesignSystem-Button--Icon-Wrapper"
-        >
-          <i
-            class="material-symbols material-symbols-rounded Icon"
-            data-test="DesignSystem-Button--Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
-          >
-            more_horiz
-          </i>
-        </div>
-      </button>
-    </div>
-  </div>
-  <div
-    class="Popover"
-    data-layer="true"
-    data-opened="true"
-    data-test="DesignSystem-Popover"
-    style="width: 176px; position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
-  >
-    <div
-      class="Menu"
-      data-test="DesignSystem-Menu-Wrapper"
-      role="menu"
-      style="max-height: 256px;"
-    >
-      <nav
-        class="Listbox"
-        data-test="DesignSystem-Menu-List"
-      >
-        <a
-          class="Listbox-item-wrapper"
-          data-test="DesignSystem-Menu-ListItem"
-          role="menuitem"
-          tabindex="-1"
+        <button
+          aria-expanded="true"
+          aria-haspopup="true"
+          aria-label="Open menu"
+          class="Button Button--regular Button--regularSquare Button--basic Menu-Trigger--active"
+          data-test="DesignSystem-Menu-Trigger"
+          tabindex="0"
         >
           <div
-            class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
-            data-test="DesignSystem-Listbox-ItemWrapper"
-            role="tablist"
-            tabindex="-1"
+            class="Button-icon"
+            data-test="DesignSystem-Button--Icon-Wrapper"
           >
-            Menu Item 1
+            <i
+              class="material-symbols material-symbols-rounded Icon"
+              data-test="DesignSystem-Button--Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              more_horiz
+            </i>
           </div>
-        </a>
-        <a
-          class="Listbox-item-wrapper"
-          data-test="DesignSystem-Menu-ListItem"
-          role="menuitem"
-          tabindex="-1"
-        >
-          <div
-            class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
-            data-test="DesignSystem-Listbox-ItemWrapper"
-            role="tablist"
-            tabindex="-1"
-          >
-            Menu Item 2
-          </div>
-        </a>
-      </nav>
+        </button>
+      </div>
     </div>
   </div>
 </body>

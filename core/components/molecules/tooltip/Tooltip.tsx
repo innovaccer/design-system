@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Popover, Text } from '@/index';
 import { PopoverProps } from '@/index.type';
-import { BaseProps, filterProps } from '@/utils/types';
+import { BaseProps } from '@/utils/types';
 import styles from '@css/components/tooltip.module.css';
 import classNames from 'classnames';
 
@@ -39,7 +39,7 @@ export interface TooltipProps extends Omit<PopoverProps, TooltipPopperProps>, Ba
   /**
    * Text to be rendered in `Tooltip`
    */
-  tooltip: string;
+  tooltip?: string;
   /**
    * Size of the `Tooltip`
    */
@@ -59,7 +59,7 @@ export interface TooltipProps extends Omit<PopoverProps, TooltipPopperProps>, Ba
    * @param Position -  | 'top-start'  | 'top'  | 'top-end'
    *  | 'right'  | 'bottom-end'  | 'bottom'  | 'bottom-start'  | 'left';
    */
-  position: Position;
+  position?: Position;
   /**
    * Render tooltip conditionally when text element
    * of `elementRef` is truncated
@@ -71,7 +71,7 @@ export interface TooltipProps extends Omit<PopoverProps, TooltipPopperProps>, Ba
    * of text in case when `showOnTruncation` is true otherwise
    * it will refer to the rendered children
    */
-  elementRef?: React.RefObject<HTMLElement>;
+  elementRef?: React.RefObject<HTMLElement | null>;
   /**
    * Handles open/close
    */
@@ -82,7 +82,7 @@ export interface TooltipProps extends Omit<PopoverProps, TooltipPopperProps>, Ba
   openDelay?: number;
 }
 
-export const detectTruncation = (boundaryRef: React.RefObject<HTMLElement>) => {
+export const detectTruncation = (boundaryRef: React.RefObject<HTMLElement | null>) => {
   const element = boundaryRef?.current;
   const isTruncated = element ? element.scrollWidth > element.clientWidth : false;
 
@@ -90,7 +90,17 @@ export const detectTruncation = (boundaryRef: React.RefObject<HTMLElement>) => {
 };
 
 export const Tooltip = (props: TooltipProps) => {
-  const { children, tooltip, showTooltip, showOnTruncation, elementRef, className, size = 'regular', ...rest } = props;
+  const {
+    children,
+    tooltip,
+    showTooltip = true,
+    position = 'bottom',
+    showOnTruncation = false,
+    elementRef,
+    className,
+    size = 'regular',
+    ...rest
+  } = props;
   const childrenRef = React.useRef(null);
   const [isTruncated, setIsTruncated] = React.useState(false);
 
@@ -118,9 +128,11 @@ export const Tooltip = (props: TooltipProps) => {
 
   const tooltipWrapper = (
     <div className={tooltipClass} data-test="DesignSystem-Tooltip-Wrapper">
-      <Text className={styles['Tooltip-text']} appearance="white" size={size}>
-        {tooltip}
-      </Text>
+      {tooltip && (
+        <Text className={styles['Tooltip-text']} appearance="white" size={size}>
+          {tooltip}
+        </Text>
+      )}
     </div>
   );
 
@@ -133,8 +145,8 @@ export const Tooltip = (props: TooltipProps) => {
         on={'hover'}
         offset={'medium'}
         animationClass={{
-          open: styles[`Tooltip-animation-open-${positionValue[props.position]}`],
-          close: styles[`Tooltip-animation-close-${positionValue[props.position]}`],
+          open: styles[`Tooltip-animation-open-${positionValue[position]}`],
+          close: styles[`Tooltip-animation-close-${positionValue[position]}`],
         }}
         className={classes}
         {...rest}
@@ -152,8 +164,8 @@ export const Tooltip = (props: TooltipProps) => {
       on={'hover'}
       offset={'medium'}
       animationClass={{
-        open: styles[`Tooltip-animation-open-${positionValue[props.position]}`],
-        close: styles[`Tooltip-animation-close-${positionValue[props.position]}`],
+        open: styles[`Tooltip-animation-open-${positionValue[position]}`],
+        close: styles[`Tooltip-animation-close-${positionValue[position]}`],
       }}
       className={classes}
       {...rest}
@@ -169,10 +181,8 @@ Tooltip.useAutoTooltip = function () {
   };
 };
 
-Tooltip.defaultProps = Object.assign({}, filterProps(Popover.defaultProps, tooltipPropsList), {
+Tooltip.defaultProps = {
   hoverable: false,
-  showTooltip: true,
-  showOnTruncation: false,
-});
+};
 
 export default Tooltip;

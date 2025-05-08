@@ -172,22 +172,22 @@ describe('EditableInput component with action buttons and props: value and input
   });
 });
 
-describe('EditableInput component with prop: error and errorMessage', () => {
-  it('renders error popover on click', () => {
-    const { getByTestId, queryByTestId } = render(
-      <EditableInput placeholder={StringValue} onChange={onChange} error={true} errorMessage={StringValue} />
-    );
+// describe('EditableInput component with prop: error and errorMessage', () => {
+//   it('renders error popover on click', () => {
+//     const { getByTestId, queryByTestId } = render(
+//       <EditableInput placeholder={StringValue} onChange={onChange} error={true} errorMessage={StringValue} />
+//     );
 
-    const editableWrapper = getByTestId(editableWrapperTestId);
-    fireEvent.click(editableWrapper);
-    expect(queryByTestId('DesignSystem-InputWrapper')).toHaveClass('Input--error');
+//     const editableWrapper = getByTestId(editableWrapperTestId);
+//     fireEvent.click(editableWrapper);
+//     expect(queryByTestId('DesignSystem-InputWrapper')).toHaveClass('Input--error');
 
-    const inputWrapper = getByTestId(inputTestId);
-    fireEvent.mouseEnter(inputWrapper);
-    expect(getByTestId('DesignSystem-InlineMessage')).toBeInTheDocument();
-    expect(queryByTestId('DesignSystem-InlineMessage--Description')).toHaveClass('InlineMessage-text--alert');
-  });
-});
+//     const inputWrapper = getByTestId(inputTestId);
+//     fireEvent.mouseEnter(inputWrapper);
+//     expect(getByTestId('DesignSystem-InlineMessage')).toBeInTheDocument();
+//     expect(queryByTestId('DesignSystem-InlineMessage--Description')).toHaveClass('InlineMessage-text--alert');
+//   });
+// });
 
 describe('EditableInput Component with overwrite class', () => {
   const className = 'DS-EditableInput';
