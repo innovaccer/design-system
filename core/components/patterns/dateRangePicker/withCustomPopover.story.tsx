@@ -26,9 +26,10 @@ const customCode = `
     }
 
     onReset() {
+      const today = new Date();
       this.setState({
-        startDate: null,
-        endDate: null,
+        startDate: today,
+        endDate: today,
         selected: "custom",
         monthNav: DateRangePicker.utils.getCurrentMonth()
       });
