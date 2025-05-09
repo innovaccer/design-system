@@ -38,6 +38,64 @@
   border-left: 0 !important;
 }
 
+/* Border color utilities */
+.border-primary {
+  border-color: var(--primary) !important;
+}
+
+.border-secondary {
+  border-color: var(--secondary) !important;
+}
+
+.border-success {
+  border-color: var(--success) !important;
+}
+
+.border-warning {
+  border-color: var(--warning) !important;
+}
+
+.border-alert {
+  border-color: var(--alert) !important;
+}
+
+.border-accent1 {
+  border-color: var(--accent1) !important;
+}
+
+.border-accent2 {
+  border-color: var(--accent2) !important;
+}
+
+.border-accent3 {
+  border-color: var(--accent3) !important;
+}
+
+.border-accent4 {
+  border-color: var(--accent4) !important;
+}
+
+/* Border style utilities */
+.border-dashed {
+  border-style: dashed !important;
+}
+
+.border-solid {
+  border-style: solid !important;
+}
+
+.border-dotted {
+  border-style: dotted !important;
+}
+
+.border-inset {
+  border-style: inset !important;
+}
+
+.border-outset {
+  border-style: outset !important;
+}
+
 .rounded-2-5 {
   border-radius: var(--border-radius-2-5) !important;
 }
