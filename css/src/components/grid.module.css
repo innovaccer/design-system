@@ -1,12 +1,3 @@
-/** Grid **/
-
-.Grid-wrapper {
-  display: flex;
-  position: relative;
-  overflow: hidden;
-  height: 100%;
-}
-
 .Grid {
   display: flex;
   flex-direction: column;
@@ -16,20 +7,11 @@
   background: var(--white);
 }
 
-.Grid--resource .Grid-row--body:hover,
-.Grid--resource .Grid-row--body:hover .Grid-cellGroup {
-  cursor: pointer;
-  background: var(--secondary-lightest);
-}
-
-.Grid--resource .Grid-row--body:active,
-.Grid--resource .Grid-row--body:active .Grid-cellGroup {
-  background: var(--secondary-lighter);
-}
-
-.Grid--resource .Grid-row--body:focus {
-  box-shadow: var(--shadow-spread) color-mod(var(--secondary) a(var(--opacity-4)));
-  outline: none;
+.Grid-wrapper {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
 }
 
 .Grid--pinned {
@@ -131,42 +113,6 @@
   border-bottom: var(--border);
 }
 
-.Grid-row {
-  display: flex;
-  flex-grow: 1;
-  flex-shrink: 0;
-  box-sizing: border-box;
-  background: var(--white);
-  transition: var(--duration--fast-02) var(--standard-productive-curve);
-  transition-delay: var(--duration--fast-01);
-}
-
-.Grid-row--body {
-  border-color: var(--secondary-light);
-}
-
-.Grid-row--selected,
-.Grid-row--selected .Grid-cellGroup {
-  background: color-mod(var(--primary-lightest) a(var(--opacity-12)));
-  transition: var(--duration--fast-02) var(--standard-productive-curve);
-}
-
-.Grid-row--selected:hover,
-.Grid-row--selected .Grid-cellGroup:hover {
-  background: color-mod(var(--primary-lighter) a(var(--opacity-12))) !important;
-}
-
-.Grid-row--selected:active,
-.Grid-row--selected .Grid-cellGroup:active {
-  background: var(--primary-lighter) !important;
-}
-
-.Grid-row--selected:focus,
-.Grid-row--selected .Grid-cellGroup:focus {
-  outline: none;
-  box-shadow: var(--shadow-spread) color-mod(var(--primary) a(var(--opacity-4)));
-}
-
 .Grid-rowWrapper:last-child .Grid-row--body {
   border-bottom: 0;
 }
@@ -203,6 +149,7 @@
   box-sizing: border-box;
   padding-left: var(--spacing-30);
   padding-right: var(--spacing-30);
+  flex-grow: 1;
 }
 
 .Grid-cell--body {
@@ -238,15 +185,6 @@
   border-left: none;
 }
 
-/* .Grid .Grid-cellGroup--main .Grid-cell--head.Grid-cell:last-child {
-    border-right: var(--border);
-} */
-
-.Grid-row--disabled {
-  opacity: var(--opacity-10);
-  pointer-events: none;
-}
-
 .Grid-cell--head.Grid-cell--selected {
   background: var(--primary-light);
 }
@@ -259,6 +197,15 @@
   z-index: 1;
   padding-right: 0 !important;
   overflow: visible !important;
+}
+
+.Grid-cell--separator {
+  border-left: var(--border);
+  border-color: var(--secondary-light);
+}
+
+.Grid-cell--selected {
+  background: var(--primary-lightest);
 }
 
 .Grid-sortingIcons {
@@ -322,7 +269,7 @@
 .Grid-cellGroup {
   display: flex;
   box-sizing: border-box;
-  background: var(--white);
+  height: 100%;
 }
 
 .Grid-cellGroup--pinned {
@@ -332,32 +279,10 @@
 
 .Grid-cellGroup--pinned-left {
   left: 0;
-  border-style: inset;
-  border-right: var(--spacing-2-5) solid rgba(213, 213, 213, var(--opacity-3));
-  border-right-width: var(--border-width-10);
-  border-image: linear-gradient(
-      to right,
-      var(--secondary-light),
-      var(--secondary-light) 25%,
-      color-mod(var(--secondary) a(0.1)) 25%,
-      color-mod(var(--secondary) a(0.1))
-    )
-    1 100%;
 }
 
 .Grid-cellGroup--pinned-right {
   right: 0;
-  border-style: inset;
-  border-left: var(--border-width-2-5) solid rgba(213, 213, 213, var(--opacity-3));
-  border-left-width: var(--border-width-10);
-  border-image: linear-gradient(
-      to left,
-      var(--secondary-light),
-      var(--secondary-light) 25%,
-      color-mod(var(--secondary) a(0.1)) 25%,
-      color-mod(var(--secondary) a(0.1))
-    )
-    1 100%;
 }
 
 .Grid .Checkbox-wrapper {
@@ -374,13 +299,11 @@
 }
 
 .GridCell--align-left {
-  /* flex-direction: row; */
   justify-content: flex-start;
   text-align: left;
 }
 
 .GridCell--align-right {
-  /* flex-direction: row-reverse; */
   justify-content: flex-end;
   text-align: right;
 }
@@ -388,6 +311,9 @@
 .GridCell--align-center {
   justify-content: center;
   text-align: center;
+}
+
+.GridCell--default {
 }
 
 .GridCell--metaList {
@@ -513,4 +439,160 @@
   justify-content: flex-end;
   margin-left: auto;
   margin-bottom: var(--spacing-40);
+}
+
+/* Grid row */
+
+.Grid-row--disabled {
+  opacity: var(--opacity-10);
+  pointer-events: none;
+}
+
+.Grid-row {
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  background: var(--white);
+}
+
+.Grid-row--body {
+  border-color: var(--secondary-light);
+}
+
+.Grid--resource .Grid-row--body:hover {
+  cursor: pointer;
+  background: var(--secondary-lightest);
+}
+
+.Grid--resource .Grid-row--body:active {
+  background: var(--secondary-lighter);
+}
+
+.Grid--resource .Grid-row--body:focus {
+  box-shadow: var(--shadow-spread) color-mod(var(--secondary) a(var(--opacity-4)));
+  outline: none;
+}
+
+/* Selected States */
+
+.Grid-row--selected {
+  background: color-mod(var(--primary-lightest) a(var(--opacity-12)));
+}
+
+.Grid-row--selected:hover {
+  background: color-mod(var(--primary-lighter) a(var(--opacity-12))) !important;
+}
+
+.Grid-row--selected:active {
+  background: var(--primary-lighter) !important;
+}
+
+.Grid-row--selected:focus {
+  outline: none;
+  box-shadow: var(--shadow-spread) color-mod(var(--primary) a(var(--opacity-4)));
+}
+
+/* Activated States */
+
+.Grid-row--activated {
+  background: var(--primary-lightest);
+}
+
+/* Pinned Columns Default State */
+
+.Grid--resource .Grid-row--body:hover .Grid-cellWrapper--pinned {
+  cursor: pointer;
+  background: var(--secondary-lightest);
+}
+
+.Grid--resource .Grid-row--body:active .Grid-cellWrapper--pinned {
+  background: var(--secondary-lighter);
+}
+
+.Grid--resource .Grid-row--body:focus .Grid-cellWrapper--pinned {
+  box-shadow: var(--shadow-spread) color-mod(var(--secondary) a(var(--opacity-4)));
+  outline: none;
+}
+
+/* Pinned Columns Selected State */
+
+.Grid-row--selected .Grid-cellWrapper--pinned {
+  background: color-mod(var(--primary-lightest) a(var(--opacity-12)));
+}
+
+.Grid-row--selected:hover .Grid-cellWrapper--pinned {
+  background: color-mod(var(--primary-lighter) a(var(--opacity-12))) !important;
+}
+
+.Grid-row--selected:active .Grid-cellWrapper--pinned {
+  background: var(--primary-lighter) !important;
+}
+
+.Grid-row--selected:focus .Grid-cellWrapper--pinned {
+  outline: none;
+  box-shadow: var(--shadow-spread) color-mod(var(--primary) a(var(--opacity-4)));
+}
+
+/* Grid header */
+.Grid-row--head .Grid-cellGroup--pinned {
+  background: var(--white);
+}
+
+.Grid-row--head .Grid-cellGroup--pinned-left {
+  border-style: inset;
+  border-right: var(--spacing-xs) solid rgba(213, 213, 213, var(--opacity-3));
+  border-right-width: 4px;
+  border-image: linear-gradient(
+      to right,
+      var(--secondary-light),
+      var(--secondary-light) 25%,
+      color-mod(var(--secondary) a(0.1)) 25%,
+      color-mod(var(--secondary) a(0.1))
+    )
+    1 100%;
+}
+
+.Grid-row--head .Grid-cellGroup--pinned-right {
+  border-style: inset;
+  border-left: var(--spacing-xs) solid rgba(213, 213, 213, var(--opacity-3));
+  border-left-width: 4px;
+  border-image: linear-gradient(
+      to left,
+      var(--secondary-light),
+      var(--secondary-light) 25%,
+      color-mod(var(--secondary) a(0.1)) 25%,
+      color-mod(var(--secondary) a(0.1))
+    )
+    1 100%;
+}
+
+/* Pinned Column Border */
+
+.Grid-cellWrapper--pinned-left {
+  border-style: inset;
+  border-right: var(--spacing-xs) solid rgba(213, 213, 213, var(--opacity-3));
+  border-right-width: 4px;
+  border-image: linear-gradient(
+      to right,
+      var(--secondary-light),
+      var(--secondary-light) 25%,
+      color-mod(var(--secondary) a(0.1)) 25%,
+      color-mod(var(--secondary) a(0.1))
+    )
+    1 100%;
+}
+
+.Grid-cellWrapper--pinned-right {
+  border-style: inset;
+  border-left: var(--spacing-xs) solid rgba(213, 213, 213, var(--opacity-3));
+  border-left-width: 4px;
+  border-image: linear-gradient(
+      to left,
+      var(--secondary-light),
+      var(--secondary-light) 25%,
+      color-mod(var(--secondary) a(0.1)) 25%,
+      color-mod(var(--secondary) a(0.1))
+    )
+    1 100%;
 }
