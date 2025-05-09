@@ -1,0 +1,204 @@
+.Box {
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+/* Display variants */
+.Box-display--inline {
+  display: inline;
+}
+
+.Box-display--inline-block {
+  display: inline-block;
+}
+
+.Box-display--block {
+  display: block;
+}
+
+.Box-display--flex {
+  display: flex;
+}
+
+.Box-display--inline-flex {
+  display: inline-flex;
+}
+
+.Box-display--grid {
+  display: grid;
+}
+
+.Box-display--inline-grid {
+  display: inline-grid;
+}
+
+/* Shadow variants */
+.Box-shadow--none {
+  box-shadow: none;
+}
+
+.Box-shadow--s {
+  box-shadow: var(--shadow-s);
+}
+
+.Box-shadow--m {
+  box-shadow: var(--shadow-m);
+}
+
+.Box-shadow--l {
+  box-shadow: var(--shadow-l);
+}
+
+/* Border radius variants */
+.Box-borderRadius--none {
+  border-radius: 0;
+}
+
+.Box-borderRadius--2-5 {
+  border-radius: var(--border-radius-2-5);
+}
+
+.Box-borderRadius--05 {
+  border-radius: var(--border-radius-05);
+}
+
+.Box-borderRadius--10 {
+  border-radius: var(--border-radius-10);
+}
+
+.Box-borderRadius--15 {
+  border-radius: var(--border-radius-15);
+}
+
+.Box-borderRadius--20 {
+  border-radius: var(--border-radius-20);
+}
+
+.Box-borderRadius--30 {
+  border-radius: var(--border-radius-30);
+}
+
+.Box-borderRadius--40 {
+  border-radius: var(--border-radius-40);
+}
+
+.Box-borderRadius--full {
+  border-radius: var(--border-radius-full);
+}
+
+/* Background variants */
+.Box-background--transparent {
+  background-color: transparent;
+}
+
+.Box-background--light {
+  background-color: var(--white);
+}
+
+.Box-background--secondary-lightest {
+  background-color: var(--secondary-lightest);
+}
+
+.Box-background--primary {
+  background-color: var(--primary);
+}
+
+.Box-background--secondary {
+  background-color: var(--secondary);
+}
+
+.Box-background--success {
+  background-color: var(--success);
+}
+
+.Box-background--warning {
+  background-color: var(--warning);
+}
+
+.Box-background--danger {
+  background-color: var(--alert);
+}
+
+/* Border color variants */
+.Box-borderColor--none {
+  border: none;
+}
+
+.Box-borderColor--default {
+  border: var(--spacing-xs) solid var(--secondary-light);
+}
+
+.Box-borderColor--primary {
+  border: var(--spacing-xs) solid var(--primary);
+}
+
+.Box-borderColor--secondary {
+  border: var(--spacing-xs) solid var(--secondary);
+}
+
+.Box-borderColor--success {
+  border: var(--spacing-xs) solid var(--success);
+}
+
+.Box-borderColor--warning {
+  border: var(--spacing-xs) solid var(--warning);
+}
+
+.Box-borderColor--danger {
+  border: var(--spacing-xs) solid var(--alert);
+}
+
+/* Position variants */
+.Box-position--static {
+  position: static;
+}
+
+.Box-position--relative {
+  position: relative;
+}
+
+.Box-position--absolute {
+  position: absolute;
+}
+
+.Box-position--fixed {
+  position: fixed;
+}
+
+.Box-position--sticky {
+  position: sticky;
+}
+
+/* Gap variants */
+.Box-gap--xs {
+  gap: var(--spacing-xs);
+}
+
+.Box-gap--s {
+  gap: var(--spacing-s);
+}
+
+.Box-gap--m {
+  gap: var(--spacing-m);
+}
+
+.Box-gap--l {
+  gap: var(--spacing-l);
+}
+
+/* Flex variants */
+.Box-flex--1 {
+  flex-grow: 1;
+}
+
+.Box-flex--2 {
+  flex-grow: 2;
+}
+
+.Box-flex--3 {
+  flex-grow: 3;
+}
+
+.Box-flex--4 {
+  flex-grow: 4;
+}
