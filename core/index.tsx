@@ -4,6 +4,7 @@ export { Avatar } from './components/atoms/avatar';
 export { AvatarGroup } from './components/atoms/avatarGroup';
 export { Backdrop } from './components/atoms/backdrop';
 export { Badge } from './components/atoms/badge';
+export { Box } from './components/atoms/box';
 export { Breadcrumbs } from './components/atoms/breadcrumbs';
 export { Button } from './components/atoms/button';
 export { Calendar } from './components/organisms/calendar';

@@ -3,6 +3,7 @@ export { AvatarProps } from './components/atoms/avatar';
 export { AvatarGroupProps } from './components/atoms/avatarGroup';
 export { BackdropProps } from './components/atoms/backdrop';
 export { BadgeProps } from './components/atoms/badge';
+export { BoxProps } from './components/atoms/box';
 export { BreadcrumbsProps } from './components/atoms/breadcrumbs';
 export { ButtonProps } from './components/atoms/button';
 export { CalendarProps } from './components/organisms/calendar';
