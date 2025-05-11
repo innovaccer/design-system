@@ -1,0 +1,181 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MdsGrid component 
+  templateColumns: "1fr"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="MdsGrid MdsGrid-justifyItems--stretch MdsGrid-alignItems--stretch MdsGrid-autoFlow--row MdsGrid-templateColumns--1fr"
+      data-test="DesignSystem-MdsGrid"
+    >
+      <div>
+        Grid Item 1
+      </div>
+      <div>
+        Grid Item 2
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`MdsGrid component 
+  templateColumns: "2fr 1fr 1fr"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="MdsGrid MdsGrid-justifyItems--stretch MdsGrid-alignItems--stretch MdsGrid-autoFlow--row MdsGrid-templateColumns--2fr 1fr 1fr"
+      data-test="DesignSystem-MdsGrid"
+    >
+      <div>
+        Grid Item 1
+      </div>
+      <div>
+        Grid Item 2
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`MdsGrid component 
+  templateColumns: "200px 1fr 1fr"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="MdsGrid MdsGrid-justifyItems--stretch MdsGrid-alignItems--stretch MdsGrid-autoFlow--row MdsGrid-templateColumns--200px 1fr 1fr"
+      data-test="DesignSystem-MdsGrid"
+    >
+      <div>
+        Grid Item 1
+      </div>
+      <div>
+        Grid Item 2
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`MdsGrid component 
+  templateColumns: "repeat(3, 1fr)"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="MdsGrid MdsGrid-justifyItems--stretch MdsGrid-alignItems--stretch MdsGrid-autoFlow--row MdsGrid-templateColumns--repeat(3, 1fr)"
+      data-test="DesignSystem-MdsGrid"
+    >
+      <div>
+        Grid Item 1
+      </div>
+      <div>
+        Grid Item 2
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`MdsGrid component 
+  templateColumns: "repeat(12, 1fr)"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="MdsGrid MdsGrid-justifyItems--stretch MdsGrid-alignItems--stretch MdsGrid-autoFlow--row MdsGrid-templateColumns--repeat(12, 1fr)"
+      data-test="DesignSystem-MdsGrid"
+    >
+      <div>
+        Grid Item 1
+      </div>
+      <div>
+        Grid Item 2
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`MdsGrid component with gap 
+  gap: "spacing-10"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="MdsGrid MdsGrid-gap--spacing-10 MdsGrid-justifyItems--stretch MdsGrid-alignItems--stretch MdsGrid-autoFlow--row"
+      data-test="DesignSystem-MdsGrid"
+    >
+      <div>
+        Grid Item 1
+      </div>
+      <div>
+        Grid Item 2
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`MdsGrid component with gap 
+  gap: "spacing-20"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="MdsGrid MdsGrid-gap--spacing-20 MdsGrid-justifyItems--stretch MdsGrid-alignItems--stretch MdsGrid-autoFlow--row"
+      data-test="DesignSystem-MdsGrid"
+    >
+      <div>
+        Grid Item 1
+      </div>
+      <div>
+        Grid Item 2
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`MdsGrid component with gap 
+  gap: "spacing-40"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="MdsGrid MdsGrid-gap--spacing-40 MdsGrid-justifyItems--stretch MdsGrid-alignItems--stretch MdsGrid-autoFlow--row"
+      data-test="DesignSystem-MdsGrid"
+    >
+      <div>
+        Grid Item 1
+      </div>
+      <div>
+        Grid Item 2
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`MdsGrid component with gap 
+  gap: "spacing-80"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="MdsGrid MdsGrid-gap--spacing-80 MdsGrid-justifyItems--stretch MdsGrid-alignItems--stretch MdsGrid-autoFlow--row"
+      data-test="DesignSystem-MdsGrid"
+    >
+      <div>
+        Grid Item 1
+      </div>
+      <div>
+        Grid Item 2
+      </div>
+    </div>
+  </div>
+</body>
+`;
