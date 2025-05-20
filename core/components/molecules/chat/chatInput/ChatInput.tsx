@@ -166,16 +166,17 @@ const ChatInput: React.FC<ChatInputProps> = (props) => {
   };
 
   return (
-    <div className={containerClassNames} ref={containerRef}>
+    <div className={containerClassNames} ref={containerRef} data-test="DesignSystem-ChatInput">
       <textarea
         value={value}
         ref={textareaRef}
         onChange={onChangeHandler}
         className={textareaClassNames}
         disabled={disabled}
+        data-test="DesignSystem-ChatInput-textarea"
         {...rest}
       />
-      <div className={actionsClassNames}>
+      <div className={actionsClassNames} data-test="DesignSystem-ChatInput-actions">
         {actionRenderer && actionRenderer()}
         {sendButtonRenderer()}
       </div>
