@@ -94,6 +94,7 @@ export { SelectProps } from './components/organisms/select';
 export { MenuProps } from './components/organisms/menu';
 export { KeyValuePairProps } from './components/molecules/keyValuePair';
 export { ChatProps } from './components/molecules/chat';
+export { ChatInputProps } from './components/molecules/chat/chatInput';
 export { ChatBubbleProps } from './components/molecules/chat/chatBubble';
 export { DateSeparatorProps } from './components/molecules/chat/dateSeparator';
 export { UnreadMessageProps } from './components/molecules/chat/unreadMessage';

@@ -73,6 +73,10 @@ menus:
       {
         label: Chat Bubble,
         link: /components/chatBubble/usage/
+      },
+      {
+        label: Chat Input,
+        link: /components/chatInput/usage/
       }
     ]
 
