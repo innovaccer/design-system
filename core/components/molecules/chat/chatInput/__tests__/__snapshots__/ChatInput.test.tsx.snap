@@ -1,0 +1,189 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChatInput component 
+  placeholder: "Custom placeholder", defaultValue: "Sample message", disabled: false, showStopButton: false, onChange: "[Function]", onClick: "[Function]", onBlur: "[Function]", onFocus: "[Function]", onKeyDown: "[Function]", onSend: "[Function]", onStopGenerating: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="ChatInput"
+      data-test="DesignSystem-ChatInput"
+    >
+      <textarea
+        class="ChatInput-textarea"
+        data-test="DesignSystem-ChatInput-textarea"
+        placeholder="Custom placeholder"
+      >
+        Sample message
+      </textarea>
+      <div
+        class="ChatInput-actions"
+        data-test="DesignSystem-ChatInput-actions"
+      >
+        <button
+          aria-label="Send"
+          class="Button Button--tiny Button--tinySquare Button--primary"
+          data-test="DesignSystem-SendButton"
+          tabindex="0"
+        >
+          <div
+            class="Button-icon"
+            data-test="DesignSystem-Button--Icon-Wrapper"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon"
+              data-test="DesignSystem-Button--Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              arrow_upward_alt
+            </i>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ChatInput component 
+  placeholder: "Custom placeholder", defaultValue: "Sample message", disabled: false, showStopButton: true, onChange: "[Function]", onClick: "[Function]", onBlur: "[Function]", onFocus: "[Function]", onKeyDown: "[Function]", onSend: "[Function]", onStopGenerating: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="ChatInput"
+      data-test="DesignSystem-ChatInput"
+    >
+      <textarea
+        class="ChatInput-textarea"
+        data-test="DesignSystem-ChatInput-textarea"
+        placeholder="Custom placeholder"
+      >
+        Sample message
+      </textarea>
+      <div
+        class="ChatInput-actions"
+        data-test="DesignSystem-ChatInput-actions"
+      >
+        <button
+          aria-label="Stop Generating"
+          class="Button Button--tiny Button--tinySquare Button--alert"
+          data-test="DesignSystem-StopButton"
+          tabindex="0"
+        >
+          <div
+            class="Button-icon"
+            data-test="DesignSystem-Button--Icon-Wrapper"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon"
+              data-test="DesignSystem-Button--Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              stop
+            </i>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ChatInput component 
+  placeholder: "Custom placeholder", defaultValue: "Sample message", disabled: true, showStopButton: false, onChange: "[Function]", onClick: "[Function]", onBlur: "[Function]", onFocus: "[Function]", onKeyDown: "[Function]", onSend: "[Function]", onStopGenerating: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="ChatInput ChatInput--disabled"
+      data-test="DesignSystem-ChatInput"
+    >
+      <textarea
+        class="ChatInput-textarea"
+        data-test="DesignSystem-ChatInput-textarea"
+        disabled=""
+        placeholder="Custom placeholder"
+      >
+        Sample message
+      </textarea>
+      <div
+        class="ChatInput-actions"
+        data-test="DesignSystem-ChatInput-actions"
+      >
+        <button
+          aria-label="Send"
+          class="Button Button--tiny Button--tinySquare Button--primary"
+          data-test="DesignSystem-SendButton"
+          disabled=""
+          tabindex="0"
+        >
+          <div
+            class="Button-icon"
+            data-test="DesignSystem-Button--Icon-Wrapper"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon"
+              data-test="DesignSystem-Button--Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              arrow_upward_alt
+            </i>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ChatInput component 
+  placeholder: "Custom placeholder", defaultValue: "Sample message", disabled: true, showStopButton: true, onChange: "[Function]", onClick: "[Function]", onBlur: "[Function]", onFocus: "[Function]", onKeyDown: "[Function]", onSend: "[Function]", onStopGenerating: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="ChatInput ChatInput--disabled"
+      data-test="DesignSystem-ChatInput"
+    >
+      <textarea
+        class="ChatInput-textarea"
+        data-test="DesignSystem-ChatInput-textarea"
+        disabled=""
+        placeholder="Custom placeholder"
+      >
+        Sample message
+      </textarea>
+      <div
+        class="ChatInput-actions"
+        data-test="DesignSystem-ChatInput-actions"
+      >
+        <button
+          aria-label="Stop Generating"
+          class="Button Button--tiny Button--tinySquare Button--alert"
+          data-test="DesignSystem-StopButton"
+          disabled=""
+          tabindex="0"
+        >
+          <div
+            class="Button-icon"
+            data-test="DesignSystem-Button--Icon-Wrapper"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon"
+              data-test="DesignSystem-Button--Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              stop
+            </i>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;

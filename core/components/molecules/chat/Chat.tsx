@@ -4,6 +4,7 @@ import UnreadMessage from './unreadMessage';
 import NewMessage from './newMessage';
 import TypingIndicator from './typingIndicator';
 import ChatBubble from './chatBubble';
+import ChatInput from './chatInput/ChatInput';
 import { BaseProps } from '@/utils/types';
 
 export interface ChatProps extends BaseProps {
@@ -27,5 +28,6 @@ Chat.UnreadMessage = UnreadMessage;
 Chat.NewMessage = NewMessage;
 Chat.TypingIndicator = TypingIndicator;
 Chat.ChatBubble = ChatBubble;
+Chat.ChatInput = ChatInput;
 
 export default Chat;
