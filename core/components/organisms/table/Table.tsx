@@ -1014,6 +1014,14 @@ export class Table extends React.Component<TableProps, TableState> {
     this.onSelectAll(true, true);
   };
 
+  public selectAllRows = () => {
+    this.onSelectAllRows();
+  };
+
+  public clearAllSelection = () => {
+    this.onClearSelection();
+  };
+
   render() {
     const {
       showHead,
