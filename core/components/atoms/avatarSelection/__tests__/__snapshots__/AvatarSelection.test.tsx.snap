@@ -3,7 +3,7 @@
 exports[`AvatarSelection component snapshot 
   list: [{"firstName":"John","lastName":"Doe"},{"firstName":"Steven","lastName":"Packton"},{"firstName":"Nancy","lastName":"Wheeler"},{"firstName":"Monica","lastName":"Geller"},{"firstName":"Arya","lastName":"Stark"},{"firstName":"Rachel","lastName":"Green"}], size: "regular", withSearch: "false"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -554,7 +554,7 @@ Object {
 exports[`AvatarSelection component snapshot 
   list: [{"firstName":"John","lastName":"Doe"},{"firstName":"Steven","lastName":"Packton"},{"firstName":"Nancy","lastName":"Wheeler"},{"firstName":"Monica","lastName":"Geller"},{"firstName":"Arya","lastName":"Stark"},{"firstName":"Rachel","lastName":"Green"}], size: "regular", withSearch: "true"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -1105,7 +1105,7 @@ Object {
 exports[`AvatarSelection component snapshot 
   list: [{"firstName":"John","lastName":"Doe"},{"firstName":"Steven","lastName":"Packton"},{"firstName":"Nancy","lastName":"Wheeler"},{"firstName":"Monica","lastName":"Geller"},{"firstName":"Arya","lastName":"Stark"},{"firstName":"Rachel","lastName":"Green"}], size: "tiny", withSearch: "false"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -1656,7 +1656,7 @@ Object {
 exports[`AvatarSelection component snapshot 
   list: [{"firstName":"John","lastName":"Doe"},{"firstName":"Steven","lastName":"Packton"},{"firstName":"Nancy","lastName":"Wheeler"},{"firstName":"Monica","lastName":"Geller"},{"firstName":"Arya","lastName":"Stark"},{"firstName":"Rachel","lastName":"Green"}], size: "tiny", withSearch: "true"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>

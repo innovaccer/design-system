@@ -1801,7 +1801,7 @@ exports[`Select List component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  checkedState: "checked", onClick: [null]
+  checkedState: "checked", onClick: [null,"[Function]"]
  1`] = `
 <body>
   <div>
@@ -1851,7 +1851,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  checkedState: "checked", onClick: [null], disabled: false
+  checkedState: "checked", onClick: [null,"[Function]"], disabled: false
  1`] = `
 <body>
   <div>
@@ -1901,7 +1901,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  checkedState: "checked", onClick: [null], disabled: true
+  checkedState: "checked", onClick: [null,"[Function]"], disabled: true
  1`] = `
 <body>
   <div>
@@ -1951,7 +1951,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  checkedState: "checked", onClick: [null], withCheckbox: false
+  checkedState: "checked", onClick: [null,"[Function]"], withCheckbox: false
  1`] = `
 <body>
   <div>
@@ -2001,7 +2001,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  checkedState: "checked", onClick: [null], withCheckbox: false, disabled: false
+  checkedState: "checked", onClick: [null,"[Function]"], withCheckbox: false, disabled: false
  1`] = `
 <body>
   <div>
@@ -2051,7 +2051,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  checkedState: "checked", onClick: [null], withCheckbox: false, disabled: true
+  checkedState: "checked", onClick: [null,"[Function]"], withCheckbox: false, disabled: true
  1`] = `
 <body>
   <div>
@@ -2101,7 +2101,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  checkedState: "checked", onClick: [null], withCheckbox: true
+  checkedState: "checked", onClick: [null,"[Function]"], withCheckbox: true
  1`] = `
 <body>
   <div>
@@ -2151,7 +2151,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  checkedState: "checked", onClick: [null], withCheckbox: true, disabled: false
+  checkedState: "checked", onClick: [null,"[Function]"], withCheckbox: true, disabled: false
  1`] = `
 <body>
   <div>
@@ -2201,7 +2201,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  checkedState: "checked", onClick: [null], withCheckbox: true, disabled: true
+  checkedState: "checked", onClick: [null,"[Function]"], withCheckbox: true, disabled: true
  1`] = `
 <body>
   <div>
@@ -2251,7 +2251,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  checkedState: "indeterminate", onClick: [null]
+  checkedState: "indeterminate", onClick: [null,"[Function]"]
  1`] = `
 <body>
   <div>
@@ -2301,7 +2301,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  checkedState: "indeterminate", onClick: [null], disabled: false
+  checkedState: "indeterminate", onClick: [null,"[Function]"], disabled: false
  1`] = `
 <body>
   <div>
@@ -2351,7 +2351,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  checkedState: "indeterminate", onClick: [null], disabled: true
+  checkedState: "indeterminate", onClick: [null,"[Function]"], disabled: true
  1`] = `
 <body>
   <div>
@@ -2401,7 +2401,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  checkedState: "indeterminate", onClick: [null], withCheckbox: false
+  checkedState: "indeterminate", onClick: [null,"[Function]"], withCheckbox: false
  1`] = `
 <body>
   <div>
@@ -2451,7 +2451,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  checkedState: "indeterminate", onClick: [null], withCheckbox: false, disabled: false
+  checkedState: "indeterminate", onClick: [null,"[Function]"], withCheckbox: false, disabled: false
  1`] = `
 <body>
   <div>
@@ -2501,7 +2501,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  checkedState: "indeterminate", onClick: [null], withCheckbox: false, disabled: true
+  checkedState: "indeterminate", onClick: [null,"[Function]"], withCheckbox: false, disabled: true
  1`] = `
 <body>
   <div>
@@ -2551,7 +2551,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  checkedState: "indeterminate", onClick: [null], withCheckbox: true
+  checkedState: "indeterminate", onClick: [null,"[Function]"], withCheckbox: true
  1`] = `
 <body>
   <div>
@@ -2601,7 +2601,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  checkedState: "indeterminate", onClick: [null], withCheckbox: true, disabled: false
+  checkedState: "indeterminate", onClick: [null,"[Function]"], withCheckbox: true, disabled: false
  1`] = `
 <body>
   <div>
@@ -2651,7 +2651,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  checkedState: "indeterminate", onClick: [null], withCheckbox: true, disabled: true
+  checkedState: "indeterminate", onClick: [null,"[Function]"], withCheckbox: true, disabled: true
  1`] = `
 <body>
   <div>
@@ -2701,7 +2701,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  checkedState: "unchecked", onClick: [null]
+  checkedState: "unchecked", onClick: [null,"[Function]"]
  1`] = `
 <body>
   <div>
@@ -2751,7 +2751,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  checkedState: "unchecked", onClick: [null], disabled: false
+  checkedState: "unchecked", onClick: [null,"[Function]"], disabled: false
  1`] = `
 <body>
   <div>
@@ -2801,7 +2801,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  checkedState: "unchecked", onClick: [null], disabled: true
+  checkedState: "unchecked", onClick: [null,"[Function]"], disabled: true
  1`] = `
 <body>
   <div>
@@ -2851,7 +2851,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  checkedState: "unchecked", onClick: [null], withCheckbox: false
+  checkedState: "unchecked", onClick: [null,"[Function]"], withCheckbox: false
  1`] = `
 <body>
   <div>
@@ -2901,7 +2901,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  checkedState: "unchecked", onClick: [null], withCheckbox: false, disabled: false
+  checkedState: "unchecked", onClick: [null,"[Function]"], withCheckbox: false, disabled: false
  1`] = `
 <body>
   <div>
@@ -2951,7 +2951,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  checkedState: "unchecked", onClick: [null], withCheckbox: false, disabled: true
+  checkedState: "unchecked", onClick: [null,"[Function]"], withCheckbox: false, disabled: true
  1`] = `
 <body>
   <div>
@@ -3001,7 +3001,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  checkedState: "unchecked", onClick: [null], withCheckbox: true
+  checkedState: "unchecked", onClick: [null,"[Function]"], withCheckbox: true
  1`] = `
 <body>
   <div>
@@ -3051,7 +3051,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  checkedState: "unchecked", onClick: [null], withCheckbox: true, disabled: false
+  checkedState: "unchecked", onClick: [null,"[Function]"], withCheckbox: true, disabled: false
  1`] = `
 <body>
   <div>
@@ -3101,7 +3101,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  checkedState: "unchecked", onClick: [null], withCheckbox: true, disabled: true
+  checkedState: "unchecked", onClick: [null,"[Function]"], withCheckbox: true, disabled: true
  1`] = `
 <body>
   <div>
@@ -3151,7 +3151,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  onClick: [null]
+  onClick: [null,"[Function]"]
  1`] = `
 <body>
   <div>
@@ -3201,7 +3201,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  onClick: [null], disabled: false
+  onClick: [null,"[Function]"], disabled: false
  1`] = `
 <body>
   <div>
@@ -3251,7 +3251,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  onClick: [null], disabled: true
+  onClick: [null,"[Function]"], disabled: true
  1`] = `
 <body>
   <div>
@@ -3301,7 +3301,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  onClick: [null], withCheckbox: false
+  onClick: [null,"[Function]"], withCheckbox: false
  1`] = `
 <body>
   <div>
@@ -3351,7 +3351,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  onClick: [null], withCheckbox: false, disabled: false
+  onClick: [null,"[Function]"], withCheckbox: false, disabled: false
  1`] = `
 <body>
   <div>
@@ -3401,7 +3401,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  onClick: [null], withCheckbox: false, disabled: true
+  onClick: [null,"[Function]"], withCheckbox: false, disabled: true
  1`] = `
 <body>
   <div>
@@ -3451,7 +3451,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  onClick: [null], withCheckbox: true
+  onClick: [null,"[Function]"], withCheckbox: true
  1`] = `
 <body>
   <div>
@@ -3501,7 +3501,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  onClick: [null], withCheckbox: true, disabled: false
+  onClick: [null,"[Function]"], withCheckbox: true, disabled: false
  1`] = `
 <body>
   <div>
@@ -3551,7 +3551,7 @@ exports[`Select Option component snapshots
 `;
 
 exports[`Select Option component snapshots 
-  onClick: [null], withCheckbox: true, disabled: true
+  onClick: [null,"[Function]"], withCheckbox: true, disabled: true
  1`] = `
 <body>
   <div>

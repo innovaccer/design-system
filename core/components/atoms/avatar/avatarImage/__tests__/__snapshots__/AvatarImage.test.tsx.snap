@@ -3,7 +3,7 @@
 exports[`Avatar Image component 
   src: "https://design.innovaccer.com/images/withoutType.png"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -142,7 +142,7 @@ Object {
 exports[`Avatar Image component with svg 
   svg: "[ReactNode]"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>

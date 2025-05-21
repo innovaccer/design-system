@@ -1,15 +1,27 @@
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "jsx-a11y", "prettier"],
+  "plugins": [
+    "@typescript-eslint",
+    "jsx-a11y",
+    "prettier"
+  ],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended"
+    "plugin:jsx-a11y/recommended",
+    "plugin:storybook/recommended"
   ],
-  "settings": { "react": { "version": "detect" } },
-  "globals": { "_": "readonly", "__": "readonly" },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "globals": {
+    "_": "readonly",
+    "__": "readonly"
+  },
   "rules": {
     "prettier/prettier": "error",
     "no-unused-vars": "off",
@@ -48,7 +60,12 @@
     "@typescript-eslint/ban-types": "error",
     "@typescript-eslint/no-inferrable-types": "error",
     "@typescript-eslint/no-empty-function": "off",
-    "@typescript-eslint/no-unused-vars": ["error", { "ignoreRestSiblings": true }],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "ignoreRestSiblings": true
+      }
+    ],
     "@typescript-eslint/no-non-null-assertion": "off"
   }
 }

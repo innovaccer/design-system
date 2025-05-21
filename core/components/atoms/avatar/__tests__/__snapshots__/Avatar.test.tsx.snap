@@ -3,7 +3,7 @@
 exports[`Avatar component 
   appearance: "accent1", disabled: false
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -122,7 +122,7 @@ Object {
 exports[`Avatar component 
   appearance: "accent1", disabled: true
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -241,7 +241,7 @@ Object {
 exports[`Avatar component 
   appearance: "accent2", disabled: false
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -360,7 +360,7 @@ Object {
 exports[`Avatar component 
   appearance: "accent2", disabled: true
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -479,7 +479,7 @@ Object {
 exports[`Avatar component 
   appearance: "accent3", disabled: false
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -598,7 +598,7 @@ Object {
 exports[`Avatar component 
   appearance: "accent3", disabled: true
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -717,7 +717,7 @@ Object {
 exports[`Avatar component 
   appearance: "accent4", disabled: false
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -836,7 +836,7 @@ Object {
 exports[`Avatar component 
   appearance: "accent4", disabled: true
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -955,7 +955,7 @@ Object {
 exports[`Avatar component 
   appearance: "alert", disabled: false
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -1074,7 +1074,7 @@ Object {
 exports[`Avatar component 
   appearance: "alert", disabled: true
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -1193,7 +1193,7 @@ Object {
 exports[`Avatar component 
   appearance: "primary", disabled: false
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -1312,7 +1312,7 @@ Object {
 exports[`Avatar component 
   appearance: "primary", disabled: true
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -1431,7 +1431,7 @@ Object {
 exports[`Avatar component 
   appearance: "success", disabled: false
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -1550,7 +1550,7 @@ Object {
 exports[`Avatar component 
   appearance: "success", disabled: true
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -1669,7 +1669,7 @@ Object {
 exports[`Avatar component 
   appearance: "warning", disabled: false
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -1788,7 +1788,7 @@ Object {
 exports[`Avatar component 
   appearance: "warning", disabled: true
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -1907,7 +1907,7 @@ Object {
 exports[`Avatar component 
   shape: "round"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -2026,7 +2026,7 @@ Object {
 exports[`Avatar component 
   shape: "square"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -2145,7 +2145,7 @@ Object {
 exports[`Avatar component 
   size: "regular"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -2264,7 +2264,7 @@ Object {
 exports[`Avatar component 
   size: "tiny"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>

@@ -3,7 +3,7 @@
 exports[`AvatarGroup component snapshot 
   list: [{"firstName":"John","lastName":"Doe","icon":"[ReactNode]"},{"firstName":"Steven","lastName":"Packton","icon":"[ReactNode]"}], size: "regular", withSearch: "false"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -218,7 +218,7 @@ Object {
 exports[`AvatarGroup component snapshot 
   list: [{"firstName":"John","lastName":"Doe","icon":"[ReactNode]"},{"firstName":"Steven","lastName":"Packton","icon":"[ReactNode]"}], size: "regular", withSearch: "true"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -433,7 +433,7 @@ Object {
 exports[`AvatarGroup component snapshot 
   list: [{"firstName":"John","lastName":"Doe","icon":"[ReactNode]"},{"firstName":"Steven","lastName":"Packton","icon":"[ReactNode]"}], size: "tiny", withSearch: "false"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -648,7 +648,7 @@ Object {
 exports[`AvatarGroup component snapshot 
   list: [{"firstName":"John","lastName":"Doe","icon":"[ReactNode]"},{"firstName":"Steven","lastName":"Packton","icon":"[ReactNode]"}], size: "tiny", withSearch: "true"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>

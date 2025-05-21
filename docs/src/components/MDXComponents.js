@@ -40,8 +40,8 @@ function getJsxCode(name) {
   return useGetStorybookData(name).then((componentData) => {
     const jsxCode =
       componentData && componentData.parameters
-        ? componentData.parameters.docs.docPage?.customCode ||
-          componentData.parameters.storySource?.source
+      ? componentData.parameters.docs.docPage?.customCode ||
+          componentData.parameters.docs.source?.originalSource
         : '';
     return jsxCode;
   });
@@ -57,7 +57,7 @@ const Preview = ({ name }) => {
 
 function getPropTableData(name) {
   return useGetStorybookData(name).then((componentData) => {
-    const jsxCode = componentData ? componentData.parameters.argTypes : '';
+    const jsxCode = componentData ? componentData.argTypes : '';
     return jsxCode;
   });
 }
@@ -89,7 +89,6 @@ const PreviewWithPropTable = ({ name, embed }) => {
   const [error, setError] = React.useState(null);
 
   React.useEffect(() => {
-    if (!embed) {
       getPropTableData(name)
         .then((data) => {
           setData(data);
@@ -99,7 +98,6 @@ const PreviewWithPropTable = ({ name, embed }) => {
           setError(`Could not get details for id: ${name}`);
           setLoading(false);
         });
-    }
   }, []);
 
   if (loading && !embed) {
@@ -119,7 +117,7 @@ const PreviewWithPropTable = ({ name, embed }) => {
   }
 
   return (
-    <div className="overflow-x-scroll">{embed ? <FrameWrapper componentName={name} /> : <ArgsTable rows={data} />}</div>
+    <div className="overflow-x-scroll"><ArgsTable rows={data} /></div>
   );
 };
 
