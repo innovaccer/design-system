@@ -17,13 +17,20 @@ import ErrorBoundary from '../ErrorBoundary';
 
 const getRawPreviewCode = (customCode, dataProvider) => {
   if (dataProvider) {
-    return `() => <div><Spinner /></div>`;
+    return `// Import components from design system
+import { Spinner } from '@innovaccer/design-system';
+
+export default function LoadingComponent() {
+  return <div><Spinner /></div>;
+}`;
   }
 
   if (customCode) {
     return `${generateImports(customCode, DS, '@innovaccer/design-system')}
 
+export default function CustomComponent() {
 ${customCode}
+}
     `;
   }
 };
