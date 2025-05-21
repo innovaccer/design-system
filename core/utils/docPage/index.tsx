@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Description, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Title, Subtitle, Description, Primary, Controls, Unstyled, useOf } from '@storybook/addon-docs/blocks';
 import { renderToStaticMarkup } from 'react-dom/server';
 import reactElementToJSXString from 'react-element-to-jsx-string';
 import SyntaxHighlighter from 'react-syntax-highlighter';
@@ -105,12 +105,6 @@ const renderCodeBlock = (val: string, shouldShowMore: boolean, showMoreHTML: boo
   </>
 );
 
-const getStory = () => {
-  const { storyId } = __STORYBOOK_STORY_STORE__.getSelection();
-  const story = __STORYBOOK_STORY_STORE__.fromId(storyId);
-  return { storyId, story };
-};
-
 const getRawPreviewCode = (customCode: string, comp: React.ReactNode) => {
   if (customCode) {
     return `${generateImports(customCode, componentLib, '@innovaccer/design-system')}
@@ -140,9 +134,10 @@ const StoryComp = (props: {
   noSandbox: boolean;
   isEmbed: boolean;
   imports: string[];
+  story: any;
 }) => {
-  const { customCode, noHtml, noSandbox } = props;
-  const { story } = getStory();
+  const { customCode, noHtml, noSandbox, story } = props;
+  // const { story } = getStory();
   // const comp = sp.storySource.source;
   const comp = story.originalStoryFn();
   const html = !noHtml ? renderToStaticMarkup(comp) : '';
@@ -316,8 +311,23 @@ const StoryComp = (props: {
   );
 };
 
-export const docPage = () => {
-  const { story, storyId } = getStory();
+export const docPage = ({ of }: any) => {
+  const resolvedOf = useOf(of || 'story', ['story', 'meta']);
+  let story;
+  switch (resolvedOf.type) {
+    case 'story': {
+      console.log('resolvedOf.story', resolvedOf.story);
+      story = resolvedOf.story;
+      break;
+    }
+    case 'meta': {
+      console.log('resolvedOf.meta', resolvedOf.preparedMeta);
+      story = resolvedOf.preparedMeta;
+      break;
+    }
+  }
+
+  console.log('story', story);
   const sp = story.parameters;
   const isEmbed = window.location.search.includes('embed=min');
   const isEmbedWithProp = window.location.search.includes('embed=prop');
@@ -346,64 +356,67 @@ export const docPage = () => {
   const docPageTitle: string = title || displayName;
 
   return (
-    <div className={pageClassnames}>
-      {!isEmbed && !isEmbedWithProp && (
-        <>
-          <div className="d-flex align-items-center mb-5">
-            <Heading size="xl">{docPageTitle}</Heading>
-            {isDeprecated && (
-              <Badge appearance="alert" subtle={true} className="ml-4">
-                Deprecated
-              </Badge>
-            )}
-          </div>
-          <Description>{description}</Description>
-        </>
-      )}
+    <Unstyled>
+      <div className={pageClassnames}>
+        {!isEmbed && !isEmbedWithProp && (
+          <>
+            <div className="d-flex align-items-center mb-5">
+              <Heading size="xl">{docPageTitle}</Heading>
+              {isDeprecated && (
+                <Badge appearance="alert" subtle={true} className="ml-4">
+                  Deprecated
+                </Badge>
+              )}
+            </div>
+            <Description>{description}</Description>
+          </>
+        )}
 
-      {!noStory && !isEmbedOnlyProp && (
-        <StoryComp
-          key={storyId}
-          customCode={customCode}
-          noHtml={noHtml}
-          noSandbox={noSandbox}
-          imports={imports}
-          isEmbed={isEmbed || isEmbedWithProp}
-        />
-      )}
-
-      {a11yProps && (
-        <>
-          <br />
-          <br />
-          <Heading appearance="subtle">Accessibility</Heading>
-          <Description>{a11yProps}</Description>
-        </>
-      )}
-
-      {!noProps && (
-        <>
-          <br />
-          <br />
-          <Heading appearance="subtle">Prop table</Heading>
-          <ArgsTable {...propsAttr} />
-          {propDescription && <Text weight="strong">{propDescription}</Text>}
-        </>
-      )}
-
-      {!!sandboxTitle && (
-        <div className="border-right" style={{ borderRadius: '4px' }}>
-          <iframe
-            src={`https://codesandbox.io/embed/${sandboxTitle}?autoresize=1&fontsize=14&hidenavigation=1&theme=dark&view=preview`}
-            className="w-100 vh-100 overflow-hidden"
-            style={{ border: '4px', borderRadius: '4px' }}
-            title={sandboxTitle}
-            allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-            sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+        {!noStory && !isEmbedOnlyProp && (
+          <StoryComp
+            story={story}
+            key={story.id}
+            customCode={customCode}
+            noHtml={noHtml}
+            noSandbox={noSandbox}
+            imports={imports}
+            isEmbed={isEmbed || isEmbedWithProp}
           />
-        </div>
-      )}
-    </div>
+        )}
+
+        {a11yProps && (
+          <>
+            <br />
+            <br />
+            <Heading appearance="subtle">Accessibility</Heading>
+            <Description>{a11yProps}</Description>
+          </>
+        )}
+
+        {!noProps && (
+          <>
+            <br />
+            <br />
+            <Heading appearance="subtle">Prop table</Heading>
+            <Controls />
+            {propDescription && <Text weight="strong">{propDescription}</Text>}
+          </>
+        )}
+
+        {!!sandboxTitle && (
+          <div className="border-right" style={{ borderRadius: '4px' }}>
+            <iframe
+              src={`https://codesandbox.io/embed/${sandboxTitle}?autoresize=1&fontsize=14&hidenavigation=1&theme=dark&view=preview`}
+              className="w-100 vh-100 overflow-hidden"
+              style={{ border: '4px', borderRadius: '4px' }}
+              title={sandboxTitle}
+              allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+              sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+            />
+          </div>
+        )}
+      </div>
+    </Unstyled>
   );
 };
 

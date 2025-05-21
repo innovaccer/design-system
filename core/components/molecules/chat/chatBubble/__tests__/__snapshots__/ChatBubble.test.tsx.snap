@@ -3,7 +3,7 @@
 exports[`ChatBubble component snapshot 
   type: "incoming", incomingOptions: {"time":"1:00 AM","metaData":"Meta Data","avatarData":{"firstName":"John","lastName":"Doe"},"showAvatar":true,"urgentMessage":"[Function]"}, outgoingOptions: {"status":true,"time":"1:00 AM","metaData":"Meta Data","urgentMessage":"[Function]"}, children: "[ReactNode]"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -264,7 +264,7 @@ Object {
 exports[`ChatBubble component snapshot 
   type: "outgoing", incomingOptions: {"time":"1:00 AM","metaData":"Meta Data","avatarData":{"firstName":"John","lastName":"Doe"},"showAvatar":true,"urgentMessage":"[Function]"}, outgoingOptions: {"status":true,"time":"1:00 AM","metaData":"Meta Data","urgentMessage":"[Function]"}, children: "[ReactNode]"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>

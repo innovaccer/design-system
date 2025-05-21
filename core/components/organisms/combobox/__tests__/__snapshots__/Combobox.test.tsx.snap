@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Combobox component snapshots 
-  multiSelect: false, onChange: "[Function]", onSelect: "[Function]", size: "large", placeholder: [null,"s","e","l","e","c","t"," ","a","n"," ","o","p","t","i","o","n"]
+  multiSelect: false, onChange: "[Function]", onSelect: "[Function]", size: "large", placeholder: [null,"select an option"]
  1`] = `
 <body>
   <div>
@@ -21,10 +21,10 @@ exports[`Combobox component snapshots
               aria-controls="DesignSystem-Combobox--Popover-Test-uid"
               aria-expanded="false"
               aria-haspopup="listbox"
-              aria-label=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
+              aria-label=",select an option"
               class="Input-input Input-input--large"
               data-test="DesignSystem-Combobox-Input"
-              placeholder=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
+              placeholder=",select an option"
               role="combobox"
               type="text"
               value=""
@@ -38,7 +38,7 @@ exports[`Combobox component snapshots
 `;
 
 exports[`Combobox component snapshots 
-  multiSelect: false, onChange: "[Function]", onSelect: "[Function]", size: "regular", placeholder: [null,"s","e","l","e","c","t"," ","a","n"," ","o","p","t","i","o","n"]
+  multiSelect: false, onChange: "[Function]", onSelect: "[Function]", size: "regular", placeholder: [null,"select an option"]
  1`] = `
 <body>
   <div>
@@ -58,10 +58,10 @@ exports[`Combobox component snapshots
               aria-controls="DesignSystem-Combobox--Popover-Test-uid"
               aria-expanded="false"
               aria-haspopup="listbox"
-              aria-label=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
+              aria-label=",select an option"
               class="Input-input Input-input--regular"
               data-test="DesignSystem-Combobox-Input"
-              placeholder=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
+              placeholder=",select an option"
               role="combobox"
               type="text"
               value=""
@@ -75,7 +75,7 @@ exports[`Combobox component snapshots
 `;
 
 exports[`Combobox component snapshots 
-  multiSelect: false, onChange: "[Function]", onSelect: "[Function]", size: "tiny", placeholder: [null,"s","e","l","e","c","t"," ","a","n"," ","o","p","t","i","o","n"]
+  multiSelect: false, onChange: "[Function]", onSelect: "[Function]", size: "tiny", placeholder: [null,"select an option"]
  1`] = `
 <body>
   <div>
@@ -95,10 +95,10 @@ exports[`Combobox component snapshots
               aria-controls="DesignSystem-Combobox--Popover-Test-uid"
               aria-expanded="false"
               aria-haspopup="listbox"
-              aria-label=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
+              aria-label=",select an option"
               class="Input-input Input-input--tiny"
               data-test="DesignSystem-Combobox-Input"
-              placeholder=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
+              placeholder=",select an option"
               role="combobox"
               type="text"
               value=""
@@ -112,7 +112,7 @@ exports[`Combobox component snapshots
 `;
 
 exports[`Combobox component snapshots 
-  multiSelect: true, onChange: "[Function]", onSelect: "[Function]", size: "large", placeholder: [null,"s","e","l","e","c","t"," ","a","n"," ","o","p","t","i","o","n"]
+  multiSelect: true, onChange: "[Function]", onSelect: "[Function]", size: "large", placeholder: [null,"select an option"]
  1`] = `
 <body>
   <div>
@@ -138,10 +138,10 @@ exports[`Combobox component snapshots
                   aria-controls="DesignSystem-Combobox--Popover-Test-uid"
                   aria-expanded="false"
                   aria-haspopup="listbox"
-                  aria-label=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
+                  aria-label=",select an option"
                   class="ChipInput-input"
                   data-test="DesignSystem-MultiSelectTrigger--Input"
-                  placeholder=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
+                  placeholder=",select an option"
                   role="combobox"
                   style="flex-basis: 0px;"
                   value=""
@@ -157,7 +157,7 @@ exports[`Combobox component snapshots
 `;
 
 exports[`Combobox component snapshots 
-  multiSelect: true, onChange: "[Function]", onSelect: "[Function]", size: "regular", placeholder: [null,"s","e","l","e","c","t"," ","a","n"," ","o","p","t","i","o","n"]
+  multiSelect: true, onChange: "[Function]", onSelect: "[Function]", size: "regular", placeholder: [null,"select an option"]
  1`] = `
 <body>
   <div>
@@ -183,10 +183,10 @@ exports[`Combobox component snapshots
                   aria-controls="DesignSystem-Combobox--Popover-Test-uid"
                   aria-expanded="false"
                   aria-haspopup="listbox"
-                  aria-label=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
+                  aria-label=",select an option"
                   class="ChipInput-input"
                   data-test="DesignSystem-MultiSelectTrigger--Input"
-                  placeholder=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
+                  placeholder=",select an option"
                   role="combobox"
                   style="flex-basis: 0px;"
                   value=""
@@ -202,7 +202,7 @@ exports[`Combobox component snapshots
 `;
 
 exports[`Combobox component snapshots 
-  multiSelect: true, onChange: "[Function]", onSelect: "[Function]", size: "tiny", placeholder: [null,"s","e","l","e","c","t"," ","a","n"," ","o","p","t","i","o","n"]
+  multiSelect: true, onChange: "[Function]", onSelect: "[Function]", size: "tiny", placeholder: [null,"select an option"]
  1`] = `
 <body>
   <div>
@@ -228,10 +228,10 @@ exports[`Combobox component snapshots
                   aria-controls="DesignSystem-Combobox--Popover-Test-uid"
                   aria-expanded="false"
                   aria-haspopup="listbox"
-                  aria-label=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
+                  aria-label=",select an option"
                   class="ChipInput-input"
                   data-test="DesignSystem-MultiSelectTrigger--Input"
-                  placeholder=",s,e,l,e,c,t, ,a,n, ,o,p,t,i,o,n"
+                  placeholder=",select an option"
                   role="combobox"
                   style="flex-basis: 0px;"
                   value=""
