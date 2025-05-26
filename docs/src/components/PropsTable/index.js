@@ -26,12 +26,7 @@ export default function LoadingComponent() {
   }
 
   if (customCode) {
-    return `${generateImports(customCode, DS, '@innovaccer/design-system')}
-
-export default function CustomComponent() {
-${customCode}
-}
-    `;
+    return customCode;
   }
 };
 
