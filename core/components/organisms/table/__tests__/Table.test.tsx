@@ -744,3 +744,148 @@ describe('render table with verticalAlign', () => {
     expect(items).toHaveClass('VS-item');
   });
 });
+
+describe('render table with highlightCell feature', () => {
+  const schema = [
+    { name: 'name', displayName: 'Name', width: '50%', highlightCell: true },
+    { name: 'status', displayName: 'Status', width: '50%', highlightCell: true },
+  ];
+
+  const data = [
+    { name: 'Zara', status: 'Active' },
+    { name: 'Sara', status: 'Inactive' },
+  ];
+
+  it('should highlight matched text in cells when search term is entered', () => {
+    const { getByTestId, getAllByTestId } = render(
+      <Table withHeader={true} headerOptions={{ withSearch: true }} data={data} schema={schema} />
+    );
+
+    const searchInput = getByTestId('DesignSystem-Table-Header--withSearch');
+    fireEvent.change(searchInput, { target: { value: 'za' } });
+    fireEvent.keyDown(searchInput, { key: 'Enter' });
+
+    const highlightedMarks = getAllByTestId('DesignSystem-GridCell-mark');
+    expect(highlightedMarks[0]).toHaveTextContent('Za');
+  });
+
+  it('should highlight matched text in multiple cells when search term matches multiple values', () => {
+    const { getByTestId, getAllByTestId } = render(
+      <Table withHeader={true} headerOptions={{ withSearch: true }} data={data} schema={schema} />
+    );
+
+    const searchInput = getByTestId('DesignSystem-Table-Header--withSearch');
+    fireEvent.change(searchInput, { target: { value: 'a' } });
+    fireEvent.keyDown(searchInput, { key: 'Enter' });
+
+    const highlightedMarks = getAllByTestId('DesignSystem-GridCell-mark');
+    expect(highlightedMarks.length).toBeGreaterThan(1);
+  });
+
+  it('should not highlight text when search term does not match', () => {
+    const { getByTestId, queryByTestId } = render(
+      <Table withHeader={true} headerOptions={{ withSearch: true }} data={data} schema={schema} />
+    );
+
+    const searchInput = getByTestId('DesignSystem-Table-Header--withSearch');
+    fireEvent.change(searchInput, { target: { value: 'xyz' } });
+    fireEvent.keyDown(searchInput, { key: 'Enter' });
+
+    const highlightedMarks = queryByTestId('DesignSystem-GridCell-mark');
+    expect(highlightedMarks).not.toBeInTheDocument();
+  });
+
+  it('should highlight text case-insensitively', () => {
+    const { getByTestId, getAllByTestId } = render(
+      <Table withHeader={true} headerOptions={{ withSearch: true }} data={data} schema={schema} />
+    );
+
+    const searchInput = getByTestId('DesignSystem-Table-Header--withSearch');
+    fireEvent.change(searchInput, { target: { value: 'ZARA' } });
+    fireEvent.keyDown(searchInput, { key: 'Enter' });
+
+    const highlightedMarks = getAllByTestId('DesignSystem-GridCell-mark');
+    expect(highlightedMarks[0]).toHaveTextContent('Zara');
+  });
+
+  it('should highlight text in cells with different cell types', () => {
+    const complexSchema = [
+      { name: 'name', displayName: 'Name', width: '50%', highlightCell: true, cellType: 'WITH_META_LIST' as const },
+      { name: 'status', displayName: 'Status', width: '50%', highlightCell: true, cellType: 'STATUS_HINT' as const },
+    ];
+
+    const complexData = [
+      { name: 'Zara', status: 'Active', metaList: ['Info 1'] },
+      { name: 'Sara', status: 'Inactive', metaList: ['Info 2'] },
+    ];
+
+    const { getByTestId, getAllByTestId } = render(
+      <Table withHeader={true} headerOptions={{ withSearch: true }} data={complexData} schema={complexSchema} />
+    );
+
+    const searchInput = getByTestId('DesignSystem-Table-Header--withSearch');
+    fireEvent.change(searchInput, { target: { value: 'za' } });
+    fireEvent.keyDown(searchInput, { key: 'Enter' });
+
+    const highlightedMarks = getAllByTestId('DesignSystem-GridCell-mark');
+    expect(highlightedMarks.length).toBeGreaterThan(0);
+  });
+
+  it('should use custom highlight regex when provided', () => {
+    const customRegex = (searchTerm: string) => new RegExp(`^(${searchTerm})`, 'gi');
+
+    const { getByTestId, getAllByTestId } = render(
+      <Table
+        withHeader={true}
+        headerOptions={{ withSearch: true }}
+        data={data}
+        schema={schema}
+        highlightRegex={customRegex}
+      />
+    );
+
+    const searchInput = getByTestId('DesignSystem-Table-Header--withSearch');
+    fireEvent.change(searchInput, { target: { value: 'za' } });
+    fireEvent.keyDown(searchInput, { key: 'Enter' });
+
+    const highlightedMarks = getAllByTestId('DesignSystem-GridCell-mark');
+    expect(highlightedMarks[0]).toHaveTextContent('Za');
+  });
+
+  it('should not highlight text in cells where highlightCell is false', () => {
+    const mixedSchema = [
+      { name: 'name', displayName: 'Name', width: '50%', highlightCell: true },
+      { name: 'status', displayName: 'Status', width: '50%', highlightCell: false },
+    ];
+
+    const { getByTestId, queryByTestId } = render(
+      <Table withHeader={true} headerOptions={{ withSearch: true }} data={data} schema={mixedSchema} />
+    );
+
+    const searchInput = getByTestId('DesignSystem-Table-Header--withSearch');
+    fireEvent.change(searchInput, { target: { value: 'active' } });
+    fireEvent.keyDown(searchInput, { key: 'Enter' });
+
+    const highlightedMarks = queryByTestId('DesignSystem-GridCell-mark');
+    expect(highlightedMarks).not.toBeInTheDocument();
+  });
+
+  it('should clear highlights when search term is cleared', () => {
+    const { getByTestId, queryByTestId } = render(
+      <Table withHeader={true} headerOptions={{ withSearch: true }} data={data} schema={schema} />
+    );
+
+    const searchInput = getByTestId('DesignSystem-Table-Header--withSearch');
+
+    // First search
+    fireEvent.change(searchInput, { target: { value: 'za' } });
+    fireEvent.keyDown(searchInput, { key: 'Enter' });
+
+    // Clear search
+    fireEvent.change(searchInput, { target: { value: '' } });
+    fireEvent.keyDown(searchInput, { key: 'Enter' });
+
+    const highlightedMarks = queryByTestId('DesignSystem-GridCell-mark');
+    expect(highlightedMarks).not.toBeInTheDocument();
+  });
+});

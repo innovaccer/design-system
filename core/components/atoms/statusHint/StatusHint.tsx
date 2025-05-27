@@ -10,7 +10,7 @@ export interface StatusHintProps extends BaseProps {
   /**
    * Describes label of the `Status Hint`
    */
-  children: React.ReactText;
+  children: React.ReactText | React.ReactNode;
   /**
    * Color of Icon
    */
@@ -55,6 +55,17 @@ export const StatusHint = (props: StatusHintProps) => {
     ['ellipsis--noWrap']: truncateLabel,
   });
 
+  const renderChildren = () => {
+    if (typeof children === 'string' || typeof children === 'number') {
+      return (
+        <Text data-test="DesignSystem-StatusHint--Text" weight={'medium'} className={StatusHintTextClass}>
+          {children}
+        </Text>
+      );
+    }
+    return children;
+  };
+
   return (
     // TODO(a11y): fix accessibility
     /* eslint-disable */
@@ -68,9 +79,7 @@ export const StatusHint = (props: StatusHintProps) => {
     >
       {/* eslint-enable */}
       <span data-test="DesignSystem-StatusHint--Icon" className={StatusHintIconClass} />
-      <Text data-test="DesignSystem-StatusHint--Text" weight={'medium'} className={StatusHintTextClass}>
-        {children}
-      </Text>
+      {renderChildren()}
     </div>
   );
 };
