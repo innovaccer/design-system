@@ -21,7 +21,6 @@
 }
 
 .Checkbox-labelWrapper {
-  padding-left: var(--spacing-20);
   display: flex;
   flex-direction: column;
   min-width: 0;
@@ -39,6 +38,7 @@
 .Checkbox-outerWrapper {
   position: relative;
   margin-top: var(--spacing-05);
+  margin-right: var(--spacing-20);
 }
 
 .Checkbox-outerWrapper--regular {
