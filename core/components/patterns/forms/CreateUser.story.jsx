@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Card, Text, Label, Select, Button, Input, DatePicker, Row, Column } from '@/index';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 
 export const createUser = () => {
   const genderOptions = [

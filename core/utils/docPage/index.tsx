@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Title, Subtitle, Description, Primary, Controls, Unstyled, useOf } from '@storybook/blocks';
+import { Title, Subtitle, Description, Primary, Controls, Unstyled, useOf } from '@storybook/addon-docs/blocks';
 import { renderToStaticMarkup } from 'react-dom/server';
 import reactElementToJSXString from 'react-element-to-jsx-string';
 import SyntaxHighlighter from 'react-syntax-highlighter';
@@ -311,7 +311,7 @@ const StoryComp = (props: {
   );
 };
 
-export const docPage = ({ of }) => {
+export const docPage = ({ of }: any) => {
   const resolvedOf = useOf(of || 'story', ['story', 'meta']);
   let story;
   switch (resolvedOf.type) {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import { Row, Column, Card, Text, Icon, Select, Checkbox, Button, InputMask, Radio } from '@/index';
 export const InlineLabelForm = () => {
   const languages = [

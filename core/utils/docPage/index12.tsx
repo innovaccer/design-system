@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Heading } from '@/index';
-import { Title, Subtitle, Description, Primary, Controls, Unstyled, useOf } from '@storybook/blocks';
+import { Title, Subtitle, Description, Primary, Controls, Unstyled, useOf } from '@storybook/addon-docs/blocks';
 
 /**
  * Modern docPage component for Storybook v8
