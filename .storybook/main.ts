@@ -10,24 +10,15 @@ const cssTokenFiles = [
 
 const config: StorybookConfig = {
   stories: ['../core/components/**/*.story.@(js|jsx|ts|tsx)', '../core/ai-components/**/*.story.@(js|jsx|ts|tsx)'],
+
   addons: [
-    '@storybook/addon-webpack5-compiler-swc',
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@chromatic-com/storybook',
-    '@storybook/addon-interactions',
-    '@storybook/addon-storysource',
     '@storybook/addon-docs',
-    '@storybook/addon-a11y',
+    '@storybook/addon-a11y'
   ],
 
   framework: {
     name: '@storybook/react-webpack5',
     options: {},
-  },
-
-  docs: {
-    autodocs: true
   },
 
   // Webpack configuration

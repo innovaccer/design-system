@@ -1,22 +1,24 @@
-import type { Preview } from '@storybook/react';
+import type { Preview } from '@storybook/react-webpack5';
 import '../css';
-import { DocsContainer } from '@storybook/blocks';
+import { DocsContainer } from '@storybook/addon-docs/blocks';
 import { docPage } from '../core/utils/docPage';
 import { primary } from './themes';
 import './docPage.css';
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { INITIAL_VIEWPORTS } from 'storybook/viewport';
 
 
 const preview: Preview = {
-  
   parameters: {
     docs: {
       container: DocsContainer,
       page: docPage,
-      theme: primary,
+
       // story: { inline: true }, // render the story in an iframe
       // canvas: { sourceState: 'shown' }, // start with the source open
       // source: { type: 'code' }, // forces the raw source code (rather than the rendered JSX).
+      theme: primary,
+
+      codePanel: true
     },
     controls: {
       expanded: true,
@@ -26,7 +28,7 @@ const preview: Preview = {
       },
     },
     a11y: {
-      element: '#root',
+      context: '#root',
       manual: false,
     },
     viewport: {
@@ -39,7 +41,9 @@ const preview: Preview = {
         method: 'alphabetical',
       },
     }
-  }
+  },
+
+  tags: ['autodocs']
 };
 
 export default preview;

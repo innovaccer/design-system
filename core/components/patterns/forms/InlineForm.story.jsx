@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Card, Label, Input, Button, Select, DatePicker } from '@/index';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 
 export const inlineForm = () => {
   class InlineForm extends React.Component {

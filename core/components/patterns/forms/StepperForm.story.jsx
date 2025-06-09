@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Card, Text, Label, Select, Button, Stepper, Badge, Avatar, InputMask, Switch, Textarea } from '@/index';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 
 export const stepperForm = () => {
   const steps = [
