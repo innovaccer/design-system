@@ -14,7 +14,7 @@ export interface SubheadingProps extends BaseProps, BaseHtmlProps<HTMLHeadingEle
   /**
    * State of `Subheading`
    */
-  appearance: HeadingAppearance;
+  appearance?: HeadingAppearance;
   /**
    * Color of `Subheading`
    */
@@ -22,7 +22,7 @@ export interface SubheadingProps extends BaseProps, BaseHtmlProps<HTMLHeadingEle
 }
 
 export const Subheading = React.forwardRef<HTMLHeadingElement, SubheadingProps>((props, ref) => {
-  const { appearance, children, className, color, ...rest } = props;
+  const { appearance = 'default', children, className, color, ...rest } = props;
 
   const classes = classNames(
     {
