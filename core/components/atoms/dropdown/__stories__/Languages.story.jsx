@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Dropdown from '../Dropdown';
 import Label from '@/components/atoms/label';
 import { Uncontrolled, Controlled } from './_common_/types';

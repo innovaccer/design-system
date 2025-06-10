@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render } from '@testing-library/react';
 import { Message, Text } from '@/index';
 import { MessageProps as Props } from '@/index.type';

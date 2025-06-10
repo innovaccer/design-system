@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Input } from '@/index';
 import { InputProps } from '@/index.type';
 import styles from '@css/components/avatarGroup.module.css';

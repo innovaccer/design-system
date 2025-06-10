@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { VerticalNav } from '@/index';
 import { action } from '@/utils/action';
 
@@ -73,7 +73,7 @@ export const all = () => {
     },
   ];
 
-  const [active, setActive] = React.useState({
+  const [active, setActive] = useState({
     name: 'care_management.timeline',
   });
 

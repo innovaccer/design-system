@@ -1,4 +1,3 @@
-import * as React from 'react';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/infiniteData/infiniteSchema';
 import data from '@/components/organisms/grid/__stories__/_common_/infiniteData/infiniteList.ts';
 import { Card, Table, Button } from '@/index';

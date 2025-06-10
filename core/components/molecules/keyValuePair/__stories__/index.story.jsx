@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { KeyValuePair, Text } from '@/index';
 
 export const all = () => {

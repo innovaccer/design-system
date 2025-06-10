@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { HorizontalNavProps as Props } from '@/index.type';
 import { HorizontalNav } from '@/index';

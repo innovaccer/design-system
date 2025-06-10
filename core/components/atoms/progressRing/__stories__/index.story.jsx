@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { ProgressRing } from '@/index';
 
 // CSF format story

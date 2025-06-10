@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Button } from '@/index';
 
 export const LoaderInButton = () => <Button loading={true} aria-label="loading" />;

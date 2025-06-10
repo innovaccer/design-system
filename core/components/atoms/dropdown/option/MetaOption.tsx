@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Text } from '@/index';
 import { OptionTypeProps } from './index';
 import styles from '@css/components/dropdown.module.css';

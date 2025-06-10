@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { createRef, useState, useEffect } from 'react';
 import { AvatarSelection, Checkbox, Label, Input, Avatar, Text } from '@/index';
 
 export const listItemSize = () => {
@@ -35,12 +35,12 @@ export const listItemSize = () => {
     },
   ];
 
-  const listRef = React.createRef();
+  const listRef = createRef();
 
   const listSize = ['standard', 'compressed', 'tight'];
-  const [avatarList, setAvatarList] = React.useState(list);
-  const [searchList, setSearchList] = React.useState(list.slice(5, list.length));
-  const [selectedItems, setSelectedItems] = React.useState([
+  const [avatarList, setAvatarList] = useState(list);
+  const [searchList, setSearchList] = useState(list.slice(5, list.length));
+  const [selectedItems, setSelectedItems] = useState([
     {
       firstName: 'John',
       lastName: 'Doe',
@@ -57,7 +57,7 @@ export const listItemSize = () => {
     },
   ]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const updatedList = avatarList.map((avatar) => {
       if (selectedItems.includes(avatar)) {
         avatar.selected = true;

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { KeyValuePair, Card, Row, Column, StatusHint, LinkButton } from '@/index';
 
 export const columnWithFixedWidth = () => {

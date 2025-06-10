@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { action } from '@/utils/action';
 import { Button, FullscreenModal, Label, Input, Textarea } from '@/index';
 
 export const medium = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const onClose = () => {
     setOpen(!open);

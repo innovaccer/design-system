@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render } from '@testing-library/react';
 import { CardSubdued } from '@/index';
 import { CardSubduedProps as Props } from '@/index.type';

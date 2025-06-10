@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Card, Table } from '@/index';
 import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/_common_/types';
 import data from '@/components/organisms/grid/__stories__/_common_/nestedData.ts';

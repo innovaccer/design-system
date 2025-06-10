@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import ActionButton, { ActionButtonProps as Props, ActionButtonType } from '../ActionButton';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';

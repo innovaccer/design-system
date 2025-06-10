@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { MetricInput, Label, Row, Column } from '@/index';
 
 // CSF format story
 export const withSuffix = () => {
-  const [value, setValue] = React.useState(65);
+  const [value, setValue] = useState(65);
 
   return (
     <Row className="align-items-center">

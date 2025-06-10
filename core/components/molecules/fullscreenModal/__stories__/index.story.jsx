@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { action } from '@/utils/action';
 import { Button, Paragraph, FullscreenModal } from '@/index';
 import Heading from '@/components/atoms/heading';
 
 export const all = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const dimension = 'medium';
   const knobOpen = open;
 

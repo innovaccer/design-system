@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { BaseProps } from '@/utils/types';
 import { Popover } from '@/index';
 import { PopoverProps } from '@/index.type';

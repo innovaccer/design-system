@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Card, Heading, Table, Column, Row } from '@/index';
 import data from '@/components/organisms/grid/__stories__/_common_/data';
 import schema from '@/components/organisms/grid/__stories__/_common_/schema';

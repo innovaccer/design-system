@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Sidesheet, Button, Label, Input, InputMask, Utils, Radio, Textarea, Slider } from '@/index';
 
 export const Scrolling = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const dateMask = Utils.masks.date['mm/dd/yyyy'];
   const dateValidator = (val) => Utils.validators.date(val, 'mm/dd/yyyy');
 

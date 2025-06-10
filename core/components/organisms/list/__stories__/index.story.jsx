@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Card } from '@/index';
 import List from '../List';
 import schema from '../../grid/__stories__/_common_/schema';

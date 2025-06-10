@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { HorizontalNav, Breadcrumbs, Badge, MetaList, PageHeader, StatusHint, Row, Column } from '@/index';
 import { action } from '@/utils/action';
 
@@ -14,7 +14,7 @@ export const withNavigation = () => {
     },
   ];
 
-  const [active, setActive] = React.useState({
+  const [active, setActive] = useState({
     name: 'menu_1',
   });
 

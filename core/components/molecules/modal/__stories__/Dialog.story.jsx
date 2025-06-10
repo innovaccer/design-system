@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { action } from '@/utils/action';
 import { Modal, Button, Text, Message, List } from '@/index';
 import './style.css';
 
 export const dialogs = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const backdropClose = true;
   const dimension = 'medium';
   const onClose = () => {

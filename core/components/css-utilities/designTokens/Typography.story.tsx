@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useEffect } from 'react';
 
 import { Card, Column, Heading, Table, Text, Paragraph, Row } from '@/index';
 import { getSchema } from './Schema';
@@ -6,7 +6,7 @@ import { textColors, fontSize, fontWeight, fontHeight } from './Data';
 import { giveBgColor } from './Utilities';
 
 export const typography = () => {
-  React.useEffect(() => {
+  useEffect(() => {
     const collection = document.getElementsByClassName('setBgColor');
     giveBgColor(collection);
   });

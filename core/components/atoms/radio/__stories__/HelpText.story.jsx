@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Radio } from '@/index';
 
 // CSF format story

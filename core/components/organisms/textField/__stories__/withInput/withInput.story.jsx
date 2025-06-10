@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { TextField } from '@/index';
 import { TextFieldWithInput } from '../../TextFieldWithInput';
 

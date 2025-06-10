@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { InputMaskProps as Props } from '@/index.type';
 import { InputMask } from '@/index';

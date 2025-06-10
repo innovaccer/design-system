@@ -1,4 +1,3 @@
-import * as React from 'react';
 import classNames from 'classnames';
 import { Avatar, Text, Placeholder, PlaceholderParagraph, Icon, StatusHint, Tooltip } from '@/index';
 import { StatusHintProps } from '@/index.type';

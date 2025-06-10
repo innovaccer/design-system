@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { TimePicker } from '@/index';
 import { action } from '@/utils/action';
 import { TimePickerWithInput } from '../TimePickerWithInput';

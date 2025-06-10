@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Fragment } from 'react';
 import { Text } from '@/index';
 import { DropzoneProps } from '@/index.type';
 import DropzoneIcon from './DropzoneIcon';
@@ -11,12 +11,12 @@ export const DropzoneActive = (props: DropzoneActiveProps) => {
   const { type } = props;
 
   return (
-    <React.Fragment>
+    <Fragment>
       {type !== 'tight' && <DropzoneIcon name="active" type={type} />}
       <Text appearance="link" size="large" weight="strong">
         Drop your files here
       </Text>
-    </React.Fragment>
+    </Fragment>
   );
 };
 

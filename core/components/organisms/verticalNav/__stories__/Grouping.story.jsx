@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { VerticalNav } from '@/index';
 
 export const grouping = () => {
@@ -54,7 +54,7 @@ export const grouping = () => {
     },
   ];
 
-  const [active, setActive] = React.useState({
+  const [active, setActive] = useState({
     name: 'data_exchange.reports',
   });
 

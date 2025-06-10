@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Paragraph } from '@/index';
 import { action } from '@/utils/action';
 import Dialog from '../Dialog';
 
 export const all = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const dimension = 'small';
   const primaryButtonAppearance = 'primary';
   const secondaryButtonAppearance = 'basic';

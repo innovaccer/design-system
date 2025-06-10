@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Input, Text } from '@/index';
 import { action } from '@/utils/action';
 

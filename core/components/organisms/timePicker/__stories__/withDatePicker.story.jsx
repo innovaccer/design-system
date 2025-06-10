@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { TimePicker, DatePicker, Row, Label } from '@/index';
 import { TimePickerWithSearch } from '../TimePickerWithSearch';
 
 // CSF format story
 export const withDatePicker = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleDateChange = (date) => {
     if (date) {

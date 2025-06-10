@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Menu, Text } from '@/index';
 
 // CSF format story
 export const rightClick = () => {
-  const [popoverVisible, setPopoverVisible] = React.useState(false);
-  const [popoverPosition, setPopoverPosition] = React.useState({ x: 0, y: 0 });
+  const [popoverVisible, setPopoverVisible] = useState(false);
+  const [popoverPosition, setPopoverPosition] = useState({ x: 0, y: 0 });
 
   const handleContextMenu = (event) => {
     event.preventDefault();

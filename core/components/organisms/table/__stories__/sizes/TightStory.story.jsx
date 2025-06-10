@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Card, Table } from '@/index';
 import { AsyncTable, SyncTable } from '../_common_/types';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';

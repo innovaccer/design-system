@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import { ActionCard } from '@/index';
 import { ActionCardProps as Props } from '@/index.type';

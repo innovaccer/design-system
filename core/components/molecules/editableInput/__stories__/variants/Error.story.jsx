@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { EditableInput } from '@/index';
 import './style.css';
 
 // CSF format story
 export const error = () => {
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = useState('');
 
   const onChange = (updatedValue) => {
     setValue(updatedValue);

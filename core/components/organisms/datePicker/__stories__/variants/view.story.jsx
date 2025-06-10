@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { DatePicker, Card } from '@/index';
 
 // CSF format story

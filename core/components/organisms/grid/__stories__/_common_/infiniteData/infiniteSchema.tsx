@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Icon, GridCell } from '@/index';
 import { ColumnSchema } from '../../../Grid';
 

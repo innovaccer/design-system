@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { useState, useCallback } from 'react';
 import { Input, Label } from '@/index';
 
 export const inputWithLabel = () => {
-  const [value, setValue] = React.useState('lawsonjoy@gmail.com');
+  const [value, setValue] = useState('lawsonjoy@gmail.com');
 
-  const onChange = React.useCallback((e) => {
+  const onChange = useCallback((e) => {
     setValue(e.target.value);
   }, []);
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import { Children, cloneElement, useState } from 'react';
 import { extractBaseProps } from '@/utils/types';
 import Draggable from './Draggable';
 import { arrayMove } from './utils';
@@ -12,12 +12,12 @@ export const DraggableList = (props: ListboxProps) => {
 
   const classes = classNames(styles.Listbox, className);
 
-  const renderChildren = React.Children.toArray(children).map((child: any) => {
-    const element = React.cloneElement(child, { parentProps: { ...props } });
+  const renderChildren = Children.toArray(children).map((child: any) => {
+    const element = cloneElement(child, { parentProps: { ...props } });
     return element;
   });
 
-  const [childList, setChildList] = React.useState(renderChildren);
+  const [childList, setChildList] = useState(renderChildren);
 
   const onChangeHandler = (props: any) => {
     const { oldIndex, newIndex } = props;

@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import { Card, Heading, Table, Text } from '@/index';
 import { getSchema, spaceSchema } from './Schema';
 import { shadowData, gridBreakpointData } from './Data';

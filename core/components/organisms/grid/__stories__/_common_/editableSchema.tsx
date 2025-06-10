@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { PlaceholderParagraph, EditableInput } from '@/index';
 import { ColumnSchema } from '../../Grid';
 
@@ -48,7 +48,7 @@ const schema: ColumnSchema[] = [
 
       if (loading) return <PlaceholderParagraph length="medium" />;
 
-      const [weight, setWeight] = React.useState('');
+      const [weight, setWeight] = useState('');
 
       const onChangeWeight = (value: string) => {
         setWeight(value);

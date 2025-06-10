@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { action } from '@/utils/action';
 import { Modal, ModalHeader, ModalBody, ModalFooter, ModalDescription, Button, Text } from '@/index';
 
 export const old = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const backdropClose = false;
   const dimension = 'medium';
 

@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Select, Button } from '@/index';
 import { action } from '@/utils/action';
 
 // CSF format story
 export const fetchErrorTemplate = () => {
   const medicineList = [];
-  const [searchTerm, setSearchTerm] = React.useState('');
+  const [searchTerm, setSearchTerm] = useState('');
 
   const onChangeHandler = (value) => {
     setSearchTerm(value);

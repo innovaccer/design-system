@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Checkbox } from '@/index';
 
 export const defaultChecked = () => <Checkbox label="Emergency contact" defaultChecked={true} />;

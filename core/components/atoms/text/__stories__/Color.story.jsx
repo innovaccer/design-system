@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Row, Column, Text } from '@/index';
 
 // CSF format story

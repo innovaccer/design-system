@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Checkbox } from '@/index';
 
 // CSF format story
@@ -7,8 +7,8 @@ export const Nested = () => {
   const labels = ['Diabetes Eye Exam', 'HbA1c Test in last 12 months', 'Falls Risk Assessment'];
   const childArray = [true, true, false];
 
-  const [checked, setChecked] = React.useState(childArray);
-  const [parentStatus, setParentStatus] = React.useState(parentObj);
+  const [checked, setChecked] = useState(childArray);
+  const [parentStatus, setParentStatus] = useState(parentObj);
 
   const handleParentChange = (event) => {
     const updatedArray = [...childArray].fill(event.target.checked);

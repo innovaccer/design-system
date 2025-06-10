@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Listbox, Card, Text, Icon, MetaList, Badge, CardHeader, Heading, StatusHint } from '@/index';
 import { ListboxItem } from '../../listboxItem';
 

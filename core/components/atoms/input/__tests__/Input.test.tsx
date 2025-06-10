@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import Input, { InputProps as Props } from '../Input';
@@ -177,7 +177,7 @@ describe('Input component', () => {
 describe('Input component selection range is set correctly on input type change', () => {
   it('through Action Button', () => {
     const InputComponent = () => {
-      const [visibility, setVisibility] = React.useState(false);
+      const [visibility, setVisibility] = useState(false);
 
       return (
         <Input

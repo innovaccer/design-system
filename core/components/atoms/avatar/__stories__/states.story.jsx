@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Avatar, Row, Column, Text } from '@/index';
 
 export const states = () => {

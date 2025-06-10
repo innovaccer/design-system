@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Card, Row, Column, CardHeader, CardBody, Heading, Text, Badge, CardFooter } from '@/index';
 
 export const CardWithinACard = () => {

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Combobox, Label, HelpText } from '@/index';
 import { action } from '@/utils/action';
 
@@ -13,7 +13,7 @@ export const withError = () => {
     { label: 'No housing', value: 'No housing' },
   ];
 
-  const [filterList, setFilterList] = React.useState(barrierList);
+  const [filterList, setFilterList] = useState(barrierList);
 
   const onChangeHandler = (inputValue) => {
     action(' inputValue', inputValue)();

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Button, Popover, Label, Textarea, LinkButton, Input } from '@/index';
 
 // CSF format story

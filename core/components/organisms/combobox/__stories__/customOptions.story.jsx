@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Combobox, Label, Text, Badge } from '@/index';
 import { action } from '@/utils/action';
 
@@ -22,7 +22,7 @@ export const customOptions = () => {
     },
   ];
 
-  const [filterList, setFilterList] = React.useState(providerList);
+  const [filterList, setFilterList] = useState(providerList);
 
   const onChangeHandler = (inputValue) => {
     action('inputValue', inputValue)();

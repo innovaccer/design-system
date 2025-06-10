@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component } from 'react';
 import { Card, Text, Label, Select, Button, Input, DatePicker, Row, Column } from '@/index';
 import { action } from 'storybook/actions';
 
@@ -25,7 +25,7 @@ export const createUser = () => {
     },
   ];
 
-  class CreateUser extends React.Component {
+  class CreateUser extends Component {
     constructor(props = {}) {
       super(props);
 

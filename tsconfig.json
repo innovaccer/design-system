@@ -2,9 +2,9 @@
   "compilerOptions": {
     "sourceMap": true,
     "strict": true,
-    "target": "es5",
-    "jsx": "react",
-    "module": "commonjs",
+    "target": "es2020",
+    "jsx": "react-jsx",
+    "module": "esnext",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -16,7 +16,7 @@
     "strictNullChecks": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "lib": ["es6", "es7", "es2017", "dom"],
+    "lib": ["es2020", "dom", "dom.iterable"],
     "baseUrl": "./",
     "types": [],
     "paths": {

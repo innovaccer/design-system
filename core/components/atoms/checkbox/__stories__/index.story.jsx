@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { action } from '@/utils/action';
 import { Checkbox } from '@/index';
 
@@ -8,9 +8,9 @@ export const all = () => {
 
   const label = 'Checkbox';
 
-  const [checked, setChecked] = React.useState(false);
+  const [checked, setChecked] = useState(false);
 
-  const [indeterminate, setIndeterminate] = React.useState(false);
+  const [indeterminate, setIndeterminate] = useState(false);
 
   const disabled = false;
 

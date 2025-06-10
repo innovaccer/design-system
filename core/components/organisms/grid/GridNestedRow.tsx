@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useContext } from 'react';
 import { GridProps } from '@/index.type';
 import { RowData } from './Grid';
 import GridContext from './GridContext';
@@ -18,7 +18,7 @@ export interface NestedRowProps {
 }
 
 export const GridNestedRow = (props: GridNestedRowProps) => {
-  const context = React.useContext(GridContext);
+  const context = useContext(GridContext);
 
   const { schema, loading, nestedRowRenderer } = context;
 

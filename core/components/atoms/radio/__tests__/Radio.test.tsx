@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import Radio, { RadioProps as Props } from '../Radio';

@@ -1,13 +1,13 @@
 /* global setTimeout */
-import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { Text, Chat, LinkButton, Button } from '@/index';
 import '../styles.css';
 
 export const failedResponse = () => {
-  const [loading, setLoading] = React.useState(false);
-  const [showSuccess, setShowSuccess] = React.useState(false);
+  const [loading, setLoading] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (loading) {
       setTimeout(() => {
         setLoading(false);

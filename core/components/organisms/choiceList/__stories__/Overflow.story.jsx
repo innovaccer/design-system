@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Label, ChoiceList } from '@/index';
 
 export const OverflowForCheckbox = () => {

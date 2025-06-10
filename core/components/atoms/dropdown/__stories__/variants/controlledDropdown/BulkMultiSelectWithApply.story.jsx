@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { action } from '@/utils/action';
 import Dropdown from '@/components/atoms/dropdown';
 import { Uncontrolled, Controlled } from '../../_common_/types';
@@ -7,8 +7,8 @@ import { dropdownOptions } from '../../Options';
 
 // CSF format story
 export const bulkMultiSelectWithApplyButton = () => {
-  const [selected, setSelected] = React.useState([dropdownOptions[3]]);
-  const [open, setOpen] = React.useState(false);
+  const [selected, setSelected] = useState([dropdownOptions[3]]);
+  const [open, setOpen] = useState(false);
 
   const getSearchedOptions = (options, searchTerm) => {
     const result = options.filter((option) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));

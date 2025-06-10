@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { handleKeyDown } from './utils';
 import { OptionType } from '@/common.type';
 import { ComboboxContext } from '../ComboboxContext';

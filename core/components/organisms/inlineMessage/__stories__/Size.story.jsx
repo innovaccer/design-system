@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { InlineMessage, Text } from '@/index';
 
 // CSF format story

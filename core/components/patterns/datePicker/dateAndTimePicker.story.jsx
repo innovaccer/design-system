@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { Component } from 'react';
 import { action } from '@/utils/action';
 import { Label, DatePicker, Dropdown } from '@/index';
 
 export const dateAndTimePicker = () => {
-  class DateTimePicker extends React.Component {
+  class DateTimePicker extends Component {
     constructor(props) {
       super(props);
       this.state = {

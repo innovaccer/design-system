@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Tooltip, Label, Switch, Button } from '@/index';
 
 export const showTooltip = () => {
-  const [showTooltip, setShowTooltip] = React.useState(false);
+  const [showTooltip, setShowTooltip] = useState(false);
 
   return (
     <div>

@@ -1,12 +1,12 @@
-import * as React from 'react';
+import { useRef, useState } from 'react';
 import InputMask from '../InputMask';
 import Label from '@/components/atoms/label';
 import { Row } from '@/index';
 
 // CSF format story
 export const helpText = () => {
-  const ref = React.useRef(null);
-  const [error, setError] = React.useState(false);
+  const ref = useRef(null);
+  const [error, setError] = useState(false);
 
   const onChangeHandler = () => {
     setError(ref.current?.value[1] === '0');

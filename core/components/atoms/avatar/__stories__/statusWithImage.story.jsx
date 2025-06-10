@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Avatar, Tooltip } from '@/index';
 import StatusImage from './assets/status-image.png';
 

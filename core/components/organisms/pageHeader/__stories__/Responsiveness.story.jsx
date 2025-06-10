@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Breadcrumbs, Text, StatusHint, HorizontalNav, AvatarGroup, PageHeader, Dropdown } from '@/index';
 import { action } from '@/utils/action';
 
@@ -40,7 +40,7 @@ export const Responsiveness = () => {
     },
   ];
 
-  const [active, setActive] = React.useState({
+  const [active, setActive] = useState({
     name: 'menu_1',
   });
 

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render } from '@testing-library/react';
 import Legend, { LegendProps as IProps } from '../Legend';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';

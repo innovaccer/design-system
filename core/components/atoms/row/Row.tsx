@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { forwardRef } from 'react';
 import classNames from 'classnames';
 import { BaseProps, BaseHtmlProps } from '@/utils/types';
 import styles from '@css/components/column.module.css';
 
 export type RowProps = BaseProps & BaseHtmlProps<HTMLDivElement>;
 
-export const Row = React.forwardRef<HTMLDivElement, RowProps>((props, ref) => {
+export const Row = forwardRef<HTMLDivElement, RowProps>((props, ref) => {
   const { className, children, ...rest } = props;
 
   const classes = classNames(

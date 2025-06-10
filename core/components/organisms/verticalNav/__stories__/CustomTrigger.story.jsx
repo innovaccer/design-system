@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { useState } from 'react';
 import Collapsible from '@/components/atoms/collapsible';
 import { Icon, VerticalNav, Heading } from '@/index';
 
 // CSF format story
 export const CustomTrigger = () => {
-  const [expanded, setExpanded] = React.useState(false);
-  const [active, setActive] = React.useState({
+  const [expanded, setExpanded] = useState(false);
+  const [active, setActive] = useState({
     name: "To-do's.Due",
   });
 

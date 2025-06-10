@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useRef, useState } from 'react';
 import { Select, Text, Tooltip } from '@/index';
 import { action } from '@/utils/action';
 import './style.css';
@@ -23,8 +23,8 @@ export const overflowBehavior = () => {
   };
 
   const SelectItem = ({ item }) => {
-    const elementRef = React.useRef(null);
-    const [showTooltip, setShowTooltip] = React.useState(false);
+    const elementRef = useRef(null);
+    const [showTooltip, setShowTooltip] = useState(false);
 
     return (
       <Tooltip showOnTruncation={true} tooltip={item.label} elementRef={elementRef} open={showTooltip}>

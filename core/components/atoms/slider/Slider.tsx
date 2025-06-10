@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState, useEffect } from 'react';
 import MultiSlider, { MultiSliderProps } from '@/components/atoms/multiSlider';
 
 export interface SliderProps extends MultiSliderProps {
@@ -23,9 +23,9 @@ export interface SliderProps extends MultiSliderProps {
 export const Slider = (props: SliderProps) => {
   const { value: valueProp, defaultValue, onRelease, onChange, ...rest } = props;
 
-  const [value, setValue] = React.useState(valueProp === undefined ? defaultValue : valueProp);
+  const [value, setValue] = useState(valueProp === undefined ? defaultValue : valueProp);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (valueProp !== undefined) {
       setValue(valueProp);
     }

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { Select } from '@/index';
 import { action } from '@/utils/action';
 
@@ -20,11 +20,11 @@ export const withSearch = () => {
     { label: 'Metformin', value: 'Metformin' },
   ];
 
-  const [searchTerm, setSearchTerm] = React.useState('');
-  const [filteredMedicines, setFilteredMedicines] = React.useState(medicineList);
-  const [error, setError] = React.useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredMedicines, setFilteredMedicines] = useState(medicineList);
+  const [error, setError] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (searchTerm.trim() === '') {
       setFilteredMedicines(medicineList);
     }

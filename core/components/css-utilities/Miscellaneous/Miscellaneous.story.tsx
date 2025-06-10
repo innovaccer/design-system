@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Card, Table } from '@/index';
 import utilitiesSchema from '../Schema';
 

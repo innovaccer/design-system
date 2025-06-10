@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { AvatarGroup, Text } from '@/index';
 import { list, disabledList } from '../AvatarList';
 

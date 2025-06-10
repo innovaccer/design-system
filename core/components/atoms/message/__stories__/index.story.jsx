@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Message, LinkButton } from '@/index';
 
 // CSF format story

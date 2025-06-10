@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Divider, Row, Column, Text } from '@/index';
 
 export const all = () => {

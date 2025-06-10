@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Stepper, Button, AvatarGroup, Badge, Text, MetaList, PageHeader, Menu } from '@/index';
 import '../../style.css';
 
@@ -64,7 +64,7 @@ export const withStepper = () => {
     },
   ];
 
-  const [active, setActive] = React.useState(2);
+  const [active, setActive] = useState(2);
 
   const onChangeHandler = (activeStep) => {
     setActive(activeStep);

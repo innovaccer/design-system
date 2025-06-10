@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Heading, Card, Text, Column, Row, Button } from '@/index';
 
 type ContainerProp = {

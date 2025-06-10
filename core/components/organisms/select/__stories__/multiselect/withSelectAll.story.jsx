@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { Select } from '@/index';
 import { action } from '@/utils/action';
 
@@ -17,8 +17,8 @@ export const withSelectAll = () => {
     { label: 'Levothyroxine', value: 'Levothyroxine' },
   ];
 
-  const [selectedValue, setSelectedValue] = React.useState([]);
-  const [checkedState, setCheckedState] = React.useState('unchecked');
+  const [selectedValue, setSelectedValue] = useState([]);
+  const [checkedState, setCheckedState] = useState('unchecked');
 
   const onSelectHandler = (selectedOption) => {
     action('selectedOption', selectedOption);
@@ -41,7 +41,7 @@ export const withSelectAll = () => {
     setSelectedValue([]);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (selectedValue.length === medicineList.length) {
       setCheckedState('checked');
     } else if (selectedValue.length === 0) {

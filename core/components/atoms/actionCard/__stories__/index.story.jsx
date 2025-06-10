@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { ActionCard, Icon, Text } from '@/index';
 
 export const all = () => {

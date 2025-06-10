@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState, Fragment } from 'react';
 import { Select, Text } from '@/index';
 import { action } from '@/utils/action';
 
@@ -19,7 +19,7 @@ export const withSections = () => {
     { label: 'Metoprolol', value: 'Metoprolol', group: 'Hypertension' },
   ];
 
-  const [selectedOptions, setSelectedOptions] = React.useState([]);
+  const [selectedOptions, setSelectedOptions] = useState([]);
 
   const groupedMedicine = medicineList.reduce((acc, item) => {
     const groupKey = item.group;
@@ -48,7 +48,7 @@ export const withSections = () => {
     >
       <Select.List>
         {Object.keys(groupedMedicine).map((group) => (
-          <React.Fragment key={group}>
+          <Fragment key={group}>
             <Text className="d-flex ml-6 mt-5 mr-5 mb-4" size="small" appearance={'subtle'}>
               {group}
             </Text>
@@ -57,7 +57,7 @@ export const withSections = () => {
                 {item.label}
               </Select.Option>
             ))}
-          </React.Fragment>
+          </Fragment>
         ))}
       </Select.List>
     </Select>

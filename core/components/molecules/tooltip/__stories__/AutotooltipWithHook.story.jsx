@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Tooltip, Avatar, Text } from '@/index';
 
 export const autoTooltipWithHook = () => {
-  const [isFirstTruncated, setIsFirstTruncated] = React.useState(false);
-  const [isSecondTruncated, setIsSecondTruncated] = React.useState(false);
+  const [isFirstTruncated, setIsFirstTruncated] = useState(false);
+  const [isSecondTruncated, setIsSecondTruncated] = useState(false);
 
   const { detectTruncation } = Tooltip.useAutoTooltip();
-  const firstContentRef = React.useRef(null);
-  const SecondContentRef = React.useRef(null);
+  const firstContentRef = useRef(null);
+  const SecondContentRef = useRef(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const isFirstTruncated = detectTruncation(firstContentRef);
     const isSecondTruncated = detectTruncation(SecondContentRef);
     setIsFirstTruncated(isFirstTruncated);

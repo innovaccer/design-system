@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Select, Button } from '@/index';
 import { action } from '@/utils/action';
 
@@ -17,11 +17,11 @@ export const withSelectAllAndActionButton = () => {
     { label: 'Levothyroxine', value: 'Levothyroxine' },
   ];
 
-  const selectRef = React.useRef(null);
-  const [selectedOptions, setSelectedOptions] = React.useState([]);
-  const [previousSelectedOptions, setPreviousSelectedOptions] = React.useState([]);
-  const [checkedState, setCheckedState] = React.useState('unchecked');
-  const [isDisabled, setIsDisabled] = React.useState(true);
+  const selectRef = useRef(null);
+  const [selectedOptions, setSelectedOptions] = useState([]);
+  const [previousSelectedOptions, setPreviousSelectedOptions] = useState([]);
+  const [checkedState, setCheckedState] = useState('unchecked');
+  const [isDisabled, setIsDisabled] = useState(true);
 
   const handleSelect = (selectedOption) => {
     setIsDisabled(false);
@@ -63,11 +63,11 @@ export const withSelectAllAndActionButton = () => {
     setSelectedOptions(previousSelectedOptions);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     setSelectedOptions(previousSelectedOptions);
   }, [previousSelectedOptions]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (selectedOptions.length === medicineList.length) {
       setCheckedState('checked');
     } else if (selectedOptions.length === 0) {

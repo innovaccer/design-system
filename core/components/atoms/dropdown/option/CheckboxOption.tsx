@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { OptionTypeProps } from './index';
 import Checkbox from '@/components/atoms/checkbox';
 import { Text, MetaList } from '@/index';

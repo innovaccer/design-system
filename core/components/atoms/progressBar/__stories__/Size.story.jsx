@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { ProgressBar, Text } from '@/index';
 
 // CSF format story

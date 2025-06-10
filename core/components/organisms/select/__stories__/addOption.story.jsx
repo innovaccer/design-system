@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Select, Text } from '@/index';
 import { action } from '@/utils/action';
 
 // CSF format story
 export const addOption = () => {
-  const [medicineList, setMedicineList] = React.useState([
+  const [medicineList, setMedicineList] = useState([
     { label: 'Acetaminophen', value: 'Acetaminophen' },
     { label: 'Ibuprofen', value: 'Ibuprofen' },
     { label: 'Penicillin G', value: 'Penicillin G' },
@@ -20,12 +20,12 @@ export const addOption = () => {
     { label: 'Metformin', value: 'Metformin' },
   ]);
 
-  const [searchTerm, setSearchTerm] = React.useState('');
-  const [filteredMedicines, setFilteredMedicines] = React.useState(medicineList);
-  const [showAddOption, setShowAddOption] = React.useState(false);
-  const selectRef = React.useRef(null);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredMedicines, setFilteredMedicines] = useState(medicineList);
+  const [showAddOption, setShowAddOption] = useState(false);
+  const selectRef = useRef(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (searchTerm.trim() === '') {
       setFilteredMedicines(medicineList);
       setShowAddOption(false);

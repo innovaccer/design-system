@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import AvatarGroup, { AvatarGroupProps as Props, AvatarData } from '../AvatarGroup';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';

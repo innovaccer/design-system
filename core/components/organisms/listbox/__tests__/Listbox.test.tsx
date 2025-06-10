@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { Listbox, Text } from '@/index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';

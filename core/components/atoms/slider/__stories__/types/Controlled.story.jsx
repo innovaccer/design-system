@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Slider } from '@/index';
 
 // CSF format story
 export const controlledSlider = () => {
-  const [value, setValue] = React.useState(4);
+  const [value, setValue] = useState(4);
 
   const onChange = (newValue) => {
     setValue(newValue);

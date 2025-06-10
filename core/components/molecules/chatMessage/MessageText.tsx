@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Text } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { SharedProps } from './ChatMessage';

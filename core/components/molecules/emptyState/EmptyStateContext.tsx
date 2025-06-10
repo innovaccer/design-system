@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { createContext } from 'react';
 import { TEmptyStateSize } from '@/common.type';
 
 export type ContextProps = {
@@ -6,6 +6,6 @@ export type ContextProps = {
   maxWidth?: number | string;
 };
 
-export const EmptyStateContext = React.createContext<ContextProps>({});
+export const EmptyStateContext = createContext<ContextProps>({});
 
 export default EmptyStateContext;

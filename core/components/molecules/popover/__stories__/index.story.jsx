@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Text, Button, Popover } from '@/index';
 
 // CSF format story
 export const all = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const position = 'bottom';
   const on = 'hover';
   const appendToBody = true;

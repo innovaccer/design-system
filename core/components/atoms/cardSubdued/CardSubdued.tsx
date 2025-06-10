@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef } from 'react';
 import classNames from 'classnames';
 import { BaseHtmlProps, BaseProps } from '@/utils/types';
 import styles from '@css/components/cardSubdued.module.css';
@@ -12,7 +12,7 @@ export interface CardSubduedProps extends BaseProps, BaseHtmlProps<HTMLDivElemen
   border?: Border;
 }
 
-export const CardSubdued = React.forwardRef<HTMLDivElement, CardSubduedProps>((props, ref) => {
+export const CardSubdued = forwardRef<HTMLDivElement, CardSubduedProps>((props, ref) => {
   const { border, children, className, ...rest } = props;
 
   const classes = classNames(

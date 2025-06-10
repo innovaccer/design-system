@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { VerificationCodeInput, Label } from '@/index';
 
 // CSF format story

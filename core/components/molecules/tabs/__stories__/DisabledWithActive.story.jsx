@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { action } from '@/utils/action';
 import { Tabs, Tab, EmptyState } from '@/index';
 
 // CSF format story
 export const disabledWithActivated = () => {
-  const [activeIndex, setActiveIndex] = React.useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const onTabChangeHandler = (tabIndex) => {
     setActiveIndex(tabIndex);

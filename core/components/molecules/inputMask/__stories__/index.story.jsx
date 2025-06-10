@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { InputMask, Utils } from '@/index';
 
 export const all = () => {

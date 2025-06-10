@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Combobox, Label } from '@/index';
 import { action } from '@/utils/action';
 
@@ -13,8 +13,8 @@ export const preFilledValues = () => {
     { label: 'Vancomycin', value: 'Vancomycin' },
   ];
 
-  const [filterList, setFilterList] = React.useState([]);
-  const [selectedOption, setSelectedOption] = React.useState([
+  const [filterList, setFilterList] = useState([]);
+  const [selectedOption, setSelectedOption] = useState([
     { label: 'Penicillin G', value: 'Penicillin G' },
     { label: 'Penbutolol', value: 'Penbutolol' },
   ]);

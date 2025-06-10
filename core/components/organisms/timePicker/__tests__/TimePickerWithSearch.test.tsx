@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { TimePicker } from '@/index';
 import { render, fireEvent, waitFor } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';

@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { useState } from 'react';
 
 export function useSingleSelect() {
-  const [selectedCardIds, setSelectedCardIds] = React.useState<string[]>([]);
-  const [selectedCardValues, setSelectedCardValues] = React.useState<object[]>([]);
+  const [selectedCardIds, setSelectedCardIds] = useState<string[]>([]);
+  const [selectedCardValues, setSelectedCardValues] = useState<object[]>([]);
 
   const isCardSelected = (id: string) => {
     return selectedCardIds.includes(id);

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { AsyncTable, SyncTable } from './_common_/types';
 import { Table } from '@/index';
 

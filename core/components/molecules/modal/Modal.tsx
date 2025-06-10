@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import classNames from 'classnames';
@@ -111,271 +112,229 @@ export interface ModalProps extends BaseProps {
   closeOnEscape?: boolean;
 }
 
-interface ModalState {
-  open: boolean;
-  animate: boolean;
-  zIndex?: number;
-}
+export const Modal: React.FC<ModalProps> = (props) => {
+  const {
+    open,
+    onClose,
+    backdropClose,
+    closeOnEscape,
+    dimension = 'medium',
+    header,
+    headerOptions,
+    footer,
+    footerOptions,
+    children,
+    className,
+  } = props;
 
-/**
- * ** NOTE: Use `headerOptions`, `header`, `footerOptions`, `footer`, `onClose` and `backdropClose`(boolean). **
- * ** Support for composition using `ModalHeader`, `ModalBody` and `ModalFooter` will be deprecated soon. **
- */
-class Modal extends React.Component<ModalProps, ModalState> {
-  modalRef = React.createRef<HTMLDivElement>();
+  const [state, setState] = useState({
+    open: open || false,
+    animate: open || false,
+    zIndex: 1001,
+  });
 
-  element: Element;
+  const modalRef = useRef<HTMLDivElement>(null);
+  const element = useRef(getWrapperElement());
 
-  static defaultProps = {
-    dimension: 'medium',
-  };
-
-  constructor(props: ModalProps) {
-    super(props);
-
-    this.element = getWrapperElement();
-
-    this.state = {
-      open: props.open,
-      animate: props.open,
+  useEffect(() => {
+    if (closeOnEscape) {
+      document.addEventListener('keydown', onCloseHandler);
+    }
+    return () => {
+      if (closeOnEscape) {
+        document.removeEventListener('keydown', onCloseHandler);
+      }
     };
+  }, [closeOnEscape]);
 
-    this.onOutsideClickHandler = this.onOutsideClickHandler.bind(this);
-  }
-
-  onCloseHandler = (event: KeyboardEvent) => {
-    const isTopOverlay = OverlayManager.isTopOverlay(this.modalRef.current);
-    closeOnEscapeKeypress(event, isTopOverlay, this.onOutsideClickHandler);
-  };
-
-  componentDidMount() {
-    if (this.props.closeOnEscape) {
-      if (this.state.open) {
-        OverlayManager.add(this.modalRef.current);
-      }
-      document.addEventListener('keydown', this.onCloseHandler);
-    }
-
-    if (this.props.backdropClose) {
-      if (this.state.open) {
-        OverlayManager.add(this.modalRef.current);
-      }
-    }
-
-    const zIndex = getUpdatedZIndex({
-      element: this.element,
-      containerClassName: '.Overlay-container',
-      elementRef: this.modalRef,
-    });
-    this.setState({
-      zIndex,
-    });
-  }
-
-  componentWillUnmount() {
-    if (this.props.closeOnEscape) {
-      document.removeEventListener('keydown', this.onCloseHandler);
-    }
-  }
-
-  componentDidUpdate(prevProps: ModalProps) {
-    if (prevProps.open !== this.props.open) {
-      if (this.props.open) {
+  useEffect(() => {
+    if (props.open !== state.open) {
+      if (props.open) {
         const zIndex = getUpdatedZIndex({
-          element: this.element,
+          element: element.current,
           containerClassName: '.Overlay-container--open',
-          elementRef: this.modalRef,
+          elementRef: modalRef,
         });
 
-        this.setState({
+        setState({
           zIndex,
           open: true,
           animate: true,
         });
 
-        if (this.props.closeOnEscape || this.props.backdropClose) OverlayManager.add(this.modalRef.current);
+        if (closeOnEscape || backdropClose) OverlayManager.add(modalRef.current);
       } else {
-        this.setState(
-          {
-            animate: false,
-          },
-          () => {
-            window.setTimeout(() => {
-              this.setState({
-                open: false,
-              });
-            }, 120);
-          }
-        );
+        setState(prev => ({
+          ...prev,
+          animate: false,
+        }));
 
-        if (this.props.closeOnEscape || this.props.backdropClose) OverlayManager.remove(this.modalRef.current);
+        setTimeout(() => {
+          setState(prev => ({
+            ...prev,
+            open: false,
+          }));
+        }, 120);
+
+        if (closeOnEscape || backdropClose) OverlayManager.remove(modalRef.current);
       }
     }
-  }
+  }, [props.open, closeOnEscape, backdropClose]);
 
-  onOutsideClickHandler(event: Event) {
-    const { closeOnEscape, backdropClose, onClose } = this.props;
-    const { open } = this.state;
-    if (open && OverlayManager.isTopOverlay(this.modalRef.current)) {
-      if (closeOnEscape || backdropClose) OverlayManager.remove(this.modalRef.current);
+  const onCloseHandler = (event: KeyboardEvent) => {
+    const isTopOverlay = OverlayManager.isTopOverlay(modalRef.current);
+    closeOnEscapeKeypress(event, isTopOverlay, onOutsideClickHandler);
+  };
+
+  const onOutsideClickHandler = (event: Event) => {
+    const { closeOnEscape, backdropClose, onClose } = props;
+    const { open } = state;
+    if (open && OverlayManager.isTopOverlay(modalRef.current)) {
+      if (closeOnEscape || backdropClose) OverlayManager.remove(modalRef.current);
 
       if (onClose) onClose(event, 'OutsideClick');
       else if (typeof backdropClose === 'function') backdropClose(event, 'OutsideClick');
     }
-  }
+  };
 
-  render() {
-    const { animate, open, zIndex } = this.state;
-    const {
-      className,
-      backdropClose,
-      dimension,
-      children,
-      headerOptions,
-      header,
-      footerOptions,
-      seperator,
-      footer,
-      onClose,
-    } = this.props;
+  const { animate, open: stateOpen, zIndex } = state;
 
-    const BackdropZIndex: number = zIndex ? zIndex - 1 : 1000;
+  const BackdropZIndex: number = zIndex ? zIndex - 1 : 1000;
 
-    const classes = classNames(
-      {
-        [styles.Modal]: true,
-        [styles['Modal--open']]: open,
-        [styles['Modal-animation--open']]: animate,
-        [styles['Modal-animation--close']]: !animate,
-      },
-      className
-    );
+  const classes = classNames(
+    {
+      [styles.Modal]: true,
+      [styles['Modal--open']]: stateOpen,
+      [styles['Modal-animation--open']]: animate,
+      [styles['Modal-animation--close']]: !animate,
+    },
+    className
+  );
 
-    const headerClass = classNames({
-      [styles['Modal-header']]: true,
-      [styles['Modal-header--withSeperator']]: seperator,
-    });
+  const headerClass = classNames({
+    [styles['Modal-header']]: true,
+    [styles['Modal-header--withSeperator']]: props.seperator,
+  });
 
-    const footerClass = classNames({
-      [styles['Modal-footer']]: true,
-      [styles['Modal-footer--withSeperator']]: seperator,
-    });
+  const footerClass = classNames({
+    [styles['Modal-footer']]: true,
+    [styles['Modal-footer--withSeperator']]: props.seperator,
+  });
 
-    const ContainerClass = classNames({
-      [rowStyles['Row']]: true,
-      ['Overlay-container']: true,
-      ['Overlay-container--open']: open,
-    });
+  const ContainerClass = classNames({
+    [rowStyles['Row']]: true,
+    ['Overlay-container']: true,
+    ['Overlay-container--open']: stateOpen,
+  });
 
-    const isAPINew = headerOptions || footerOptions || footer || header;
-    const bodyClass = classNames({
-      [styles['Modal-body']]: true,
-      [styles['Modal-body--withMargin']]: isAPINew ? !!footer : true,
-      [styles['Modal-body--withPadding']]: isAPINew ? !footer : true,
-    });
+  const isAPINew = headerOptions || footerOptions || footer || header;
+  const bodyClass = classNames({
+    [styles['Modal-body']]: true,
+    [styles['Modal-body--withMargin']]: isAPINew ? !!footer : true,
+    [styles['Modal-body--withPadding']]: isAPINew ? !footer : true,
+  });
 
-    const baseProps = extractBaseProps(this.props);
-    const sizeMap: Record<ModalProps['dimension'], Partial<ColumnProps>> = {
-      small: {
-        size: '3',
-        sizeL: '4',
-        sizeM: '4',
-        sizeXS: '10',
-      },
-      medium: {
-        size: '4',
-        sizeL: '6',
-        sizeM: '6',
-        sizeXS: '10',
-      },
-      large: {
-        size: '6',
-        sizeL: '8',
-        sizeM: '8',
-        sizeXS: '10',
-      },
-    };
+  const baseProps = extractBaseProps(props);
+  const sizeMap: Record<ModalProps['dimension'], Partial<ColumnProps>> = {
+    small: {
+      size: '3',
+      sizeL: '4',
+      sizeM: '4',
+      sizeXS: '10',
+    },
+    medium: {
+      size: '4',
+      sizeL: '6',
+      sizeM: '6',
+      sizeXS: '10',
+    },
+    large: {
+      size: '6',
+      sizeL: '8',
+      sizeM: '8',
+      sizeXS: '10',
+    },
+  };
 
-    const ModalContainer = (
-      <Row
-        data-test="DesignSystem-ModalContainer"
-        className={ContainerClass}
-        data-layer={true}
-        data-opened={open}
-        style={{ zIndex: zIndex ? zIndex : 1001 }}
+  const ModalContainer = (
+    <Row
+      data-test="DesignSystem-ModalContainer"
+      className={ContainerClass}
+      data-layer={true}
+      data-opened={stateOpen}
+      style={{ zIndex: zIndex ? zIndex : 1001 }}
+    >
+      <Column
+        data-test="DesignSystem-Modal"
+        {...baseProps}
+        className={classes}
+        {...sizeMap[dimension]}
+        ref={modalRef}
       >
-        <Column
-          data-test="DesignSystem-Modal"
-          {...baseProps}
-          className={classes}
-          {...sizeMap[dimension]}
-          ref={this.modalRef}
-        >
-          {(headerOptions || header) && (
-            <div className={headerClass}>
-              <Column>
-                {!header && <OverlayHeader data-test="DesignSystem-Modal--header" {...headerOptions} />}
+        {(headerOptions || header) && (
+          <div className={headerClass}>
+            <Column>
+              {!header && <OverlayHeader data-test="DesignSystem-Modal--header" {...headerOptions} />}
 
-                {!!header && header}
-              </Column>
-              <Column className="flex-grow-0">
-                <Tooltip tooltip="Close" position="bottom">
-                  <Button
-                    icon="close"
-                    appearance="transparent"
-                    data-test="DesignSystem-Modal--CloseButton"
-                    onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-                      if (onClose) onClose(event, 'IconClick');
-                    }}
-                  />
-                </Tooltip>
-              </Column>
-            </div>
-          )}
-          {open && children && (
-            <>
-              {headerOptions || footerOptions || footer || header ? (
-                <OverlayBody className={bodyClass}>{this.props.children}</OverlayBody>
-              ) : (
-                children
-              )}
-            </>
-          )}
-          {(!!footer || !!footerOptions) && (
-            <OverlayFooter
-              data-test="DesignSystem-Modal--footer"
-              {...footerOptions}
-              open={open}
-              className={footerClass}
-            >
-              {footer}
-            </OverlayFooter>
-          )}
-        </Column>
-      </Row>
-    );
+              {!!header && header}
+            </Column>
+            <Column className="flex-grow-0">
+              <Tooltip tooltip="Close" position="bottom">
+                <Button
+                  icon="close"
+                  appearance="transparent"
+                  data-test="DesignSystem-Modal--CloseButton"
+                  onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+                    if (onClose) onClose(event, 'IconClick');
+                  }}
+                />
+              </Tooltip>
+            </Column>
+          </div>
+        )}
+        {stateOpen && children && (
+          <>
+            {headerOptions || footerOptions || footer || header ? (
+              <OverlayBody className={bodyClass}>{props.children}</OverlayBody>
+            ) : (
+              children
+            )}
+          </>
+        )}
+        {(!!footer || !!footerOptions) && (
+          <OverlayFooter
+            data-test="DesignSystem-Modal--footer"
+            {...footerOptions}
+            open={stateOpen}
+            className={footerClass}
+          >
+            {footer}
+          </OverlayFooter>
+        )}
+      </Column>
+    </Row>
+  );
 
-    const ModalWrapper = backdropClose ? (
-      <OutsideClick
-        ref={this.modalRef}
-        data-test="DesignSystem-Modal--OutsideClick"
-        onOutsideClick={this.onOutsideClickHandler}
-      >
-        {ModalContainer}
-      </OutsideClick>
-    ) : (
-      ModalContainer
-    );
+  const ModalWrapper = backdropClose ? (
+    <OutsideClick
+      ref={modalRef}
+      data-test="DesignSystem-Modal--OutsideClick"
+      onOutsideClick={onOutsideClickHandler}
+    >
+      {ModalContainer}
+    </OutsideClick>
+  ) : (
+    ModalContainer
+  );
 
-    const WrapperElement = ReactDOM.createPortal(ModalWrapper, this.element);
+  const WrapperElement = ReactDOM.createPortal(ModalWrapper, element.current);
 
-    return (
-      <>
-        {WrapperElement}
-        <Backdrop open={this.state.animate} zIndex={BackdropZIndex} />
-      </>
-    );
-  }
-}
+  return (
+    <>
+      {WrapperElement}
+      <Backdrop open={animate} zIndex={BackdropZIndex} />
+    </>
+  );
+};
 
 export default Modal;

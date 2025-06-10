@@ -1,4 +1,3 @@
-import * as React from 'react';
 import schema from '@/components/organisms/grid/__stories__/_common_/schema';
 import data from '@/components/organisms/grid/__stories__/_common_/data';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';

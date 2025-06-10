@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render } from '@testing-library/react';
 import { CardHeader, Text } from '@/index';
 import { CardHeaderProps as Props } from '@/index.type';

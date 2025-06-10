@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { BaseProps } from '@/utils/types';
 import { Button } from '@/index';
 import MenuContext from '../MenuContext';

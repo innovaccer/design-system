@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Uncontrolled, Controlled } from './_common_/types';
 import { action } from '@/utils/action';
 import Dropdown from '../Dropdown';

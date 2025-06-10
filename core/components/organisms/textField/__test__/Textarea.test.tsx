@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';

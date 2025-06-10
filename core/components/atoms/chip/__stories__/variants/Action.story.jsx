@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Chip, Text } from '@/index';
 
 const BooleanValue = [false, true];

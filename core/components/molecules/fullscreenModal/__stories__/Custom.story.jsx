@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Button, Paragraph, Text, FullscreenModal } from '@/index';
 import Heading from '@/components/atoms/heading';
 import { action } from '@/utils/action';
 
 export const customized = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const onClose = () => {
     setOpen(!open);

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { FileUploader } from '@/index';
 
 export const all = () => <></>;

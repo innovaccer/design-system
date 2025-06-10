@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { action } from '@/utils/action';
 import { Tabs, Tab } from '@/index';
 
 // CSF format story
 export const dismissibleTab = () => {
-  const [activeIndex, setActiveIndex] = React.useState(0);
-  const [dismissList, setDismissList] = React.useState([]);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [dismissList, setDismissList] = useState([]);
 
   const onTabChangeHandler = (tabIndex) => {
     setActiveIndex(tabIndex);

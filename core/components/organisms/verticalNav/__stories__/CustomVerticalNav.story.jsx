@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { VerticalNav, Collapsible, DatePicker } from '@/index';
 
 export const customVerticalNavigation = () => {
@@ -32,8 +32,8 @@ export const customVerticalNavigation = () => {
     },
   ];
 
-  const [expanded, setExpanded] = React.useState(true);
-  const [active, setActive] = React.useState({
+  const [expanded, setExpanded] = useState(true);
+  const [active, setActive] = useState({
     name: 'data_exchange.reports',
   });
 

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { VerticalNav, Collapsible } from '@/index';
 
 export const childItemsWithIcons = () => {
@@ -97,8 +97,8 @@ export const childItemsWithIcons = () => {
     },
   ];
 
-  const [expanded, setExpanded] = React.useState(false);
-  const [active, setActive] = React.useState({
+  const [expanded, setExpanded] = useState(false);
+  const [active, setActive] = useState({
     name: 'care_management.timeline',
   });
 

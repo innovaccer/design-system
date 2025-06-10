@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Button, Menu } from '@/index';
 
 export const splitButton = () => {

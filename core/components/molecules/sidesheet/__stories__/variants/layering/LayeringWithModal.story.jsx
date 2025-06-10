@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { action } from '@/utils/action';
 import { Sidesheet, Button, ModalDescription, Label, Text } from '@/index';
 import Modal from '@/components/molecules/modal';
 
 export const layeringWithModal = () => {
-  const [open, setOpen] = React.useState(false);
-  const [openSecond, setOpenSecond] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [openSecond, setOpenSecond] = useState(false);
   const backdropClose = true;
 
   const onClose = () => {

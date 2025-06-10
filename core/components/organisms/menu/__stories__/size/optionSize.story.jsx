@@ -1,4 +1,3 @@
-import React from 'react';
 import { Menu, Label, Row, Column } from '@/index';
 
 export const optionSize = () => {

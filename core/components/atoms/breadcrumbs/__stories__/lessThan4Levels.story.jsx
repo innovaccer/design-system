@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Breadcrumbs } from '@/index';
 import { action } from '@/utils/action';
 

@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { RangeSlider } from '@/index';
 
 // CSF format story
 export const controlledSlider = () => {
-  const [value, setValue] = React.useState([2, 4]);
+  const [value, setValue] = useState([2, 4]);
 
   const onChange = (newValue) => {
     setValue(newValue);

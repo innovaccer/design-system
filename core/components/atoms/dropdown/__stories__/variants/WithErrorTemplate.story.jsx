@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Dropdown, Icon, Text } from '@/index';
 import { Uncontrolled, Controlled } from '../_common_/types';
 

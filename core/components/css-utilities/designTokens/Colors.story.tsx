@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useEffect } from 'react';
 
 import { Card, Heading, Table } from '@/index';
 import { getSchema } from './Schema';
@@ -6,7 +6,7 @@ import { tokenColors } from './Data';
 import { giveBgColor } from './Utilities';
 
 export const colors = () => {
-  React.useEffect(() => {
+  useEffect(() => {
     const collection = document.getElementsByClassName('setBgColor');
     giveBgColor(collection);
   });

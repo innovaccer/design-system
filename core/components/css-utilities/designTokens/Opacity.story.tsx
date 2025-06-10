@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Card, Heading, Table } from '@/index';
 import { opacityData } from './Data';
 import { spaceSchema } from './Schema';

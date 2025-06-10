@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Text, PlaceholderParagraph, Placeholder } from '@/index';
 
 export const length = () => {

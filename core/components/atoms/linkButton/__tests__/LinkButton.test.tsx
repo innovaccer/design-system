@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import { LinkButton } from '@/index';
 import { LinkButtonProps as Props } from '@/index.type';

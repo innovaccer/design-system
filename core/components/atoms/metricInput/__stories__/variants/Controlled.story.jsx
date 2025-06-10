@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { MetricInput, Row, Column } from '@/index';
 
 // CSF format story
 export const controlledMetricInput = () => {
-  const [value, setValue] = React.useState(10);
+  const [value, setValue] = useState(10);
 
   return (
     <Row>

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState, useRef } from 'react';
 import { Combobox, Label, Tooltip, Text } from '@/index';
 import { action } from '@/utils/action';
 import './style.css';
@@ -17,7 +17,7 @@ export const overflowBehavior = () => {
     { label: 'No housing', value: 'No housing' },
   ];
 
-  const [filterList, setFilterList] = React.useState(barrierList);
+  const [filterList, setFilterList] = useState(barrierList);
 
   const onChangeHandler = (inputValue) => {
     action('inputValue', inputValue)();
@@ -29,8 +29,8 @@ export const overflowBehavior = () => {
   };
 
   const ComboboxItem = ({ item }) => {
-    const [showTooltip, setShowTooltip] = React.useState(false);
-    const elementRef = React.useRef(null);
+    const [showTooltip, setShowTooltip] = useState(false);
+    const elementRef = useRef(null);
 
     return (
       <Tooltip showOnTruncation={true} tooltip={item.label} elementRef={elementRef} open={showTooltip}>

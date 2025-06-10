@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { EmptyState, Button } from '@/index';
 import searchState from '@innovaccer/mds-images/ui-states/search-1.svg';
 

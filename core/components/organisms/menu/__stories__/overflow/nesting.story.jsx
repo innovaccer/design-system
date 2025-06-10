@@ -1,10 +1,10 @@
-import React from 'react';
+import { useState, useRef } from 'react';
 import { Menu, Text, Tooltip, Icon } from '@/index';
 import '../style.css';
 
 export const overflowBehaviorOfNestedItems = () => {
-  const [showTooltip, setShowTooltip] = React.useState(false);
-  const elementRef = React.useRef(null);
+  const [showTooltip, setShowTooltip] = useState(false);
+  const elementRef = useRef(null);
 
   return (
     <Menu trigger={<Menu.Trigger />}>

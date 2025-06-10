@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Select, Button, AIIconButton, Text } from '@/index';
 import { action } from '@/utils/action';
 import './style.css';
@@ -21,10 +21,10 @@ export const customTrigger = () => {
    *  }
    */
 
-  const [isStatusSelectOpen, setStatusSelectOpen] = React.useState(false);
-  const [isRecordSelectOpen, setRecordSelectOpen] = React.useState(false);
-  const [isOverviewSelectOpen, setOverviewSelectOpen] = React.useState(false);
-  const [selectedDevelopmentStatus, setSelectedDevelopmentStatus] = React.useState({
+  const [isStatusSelectOpen, setStatusSelectOpen] = useState(false);
+  const [isRecordSelectOpen, setRecordSelectOpen] = useState(false);
+  const [isOverviewSelectOpen, setOverviewSelectOpen] = useState(false);
+  const [selectedDevelopmentStatus, setSelectedDevelopmentStatus] = useState({
     label: 'Development',
     value: 'Development',
   });

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component } from 'react';
 import { action } from '@/utils/action';
 import { DateRangePicker, InputMask, Subheading, Chip, Divider, Icon } from '@/index';
 
@@ -154,7 +154,7 @@ const customCode = `
 }`;
 
 export const withCustomPopover = () => {
-  class CustomPopover extends React.Component {
+  class CustomPopover extends Component {
     constructor(props) {
       super(props);
       const { startDate, endDate } = DateRangePicker.utils.getCurrentWeek();

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { MetricInput, Text, Row, Column } from '@/index';
 
 // CSF format story

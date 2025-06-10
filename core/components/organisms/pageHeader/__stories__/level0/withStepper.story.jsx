@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { PageHeader, Stepper, Button } from '@/index';
 
 export const withStepper = () => {
@@ -21,7 +21,7 @@ export const withStepper = () => {
 
   const separator = false;
 
-  const [active, setActive] = React.useState(2);
+  const [active, setActive] = useState(2);
 
   const onChangeHandler = (activeStep) => {
     setActive(activeStep);

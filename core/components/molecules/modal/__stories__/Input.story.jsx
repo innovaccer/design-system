@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { action } from '@/utils/action';
 import { Modal, Button, Navigation, Heading, Label, Select } from '@/index';
 
 export const inputModals = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const backdropClose = false;
 
   const onClose = () => {
@@ -40,7 +40,7 @@ export const inputModals = () => {
     },
   ];
 
-  const [active, setActive] = React.useState({
+  const [active, setActive] = useState({
     name: 'Tab1',
   });
 

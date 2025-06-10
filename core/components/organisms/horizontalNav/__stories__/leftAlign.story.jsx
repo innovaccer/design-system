@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { action } from '@/utils/action';
 import { Modal, Button, HorizontalNav, Select, Label, Heading } from '@/index';
 
@@ -30,8 +30,8 @@ export const leftAligned = () => {
     },
   ];
 
-  const [open, setOpen] = React.useState(false);
-  const [active, setActive] = React.useState({
+  const [open, setOpen] = useState(false);
+  const [active, setActive] = useState({
     name: 'medicine',
   });
 

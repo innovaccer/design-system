@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Card, CardBody, CardHeader, Heading, Row, Column, Button, EmptyState } from '@/index';
 import image from './assets/empty.png';
 

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Card, Table, Badge, Icon } from '@/index';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
 import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/_common_/types';

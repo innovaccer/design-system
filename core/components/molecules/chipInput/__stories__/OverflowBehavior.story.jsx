@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { ChipInput, Label, Row, Column } from '@/index';
 
 export const overflowBehavior = () => {
-  const [value, setValue] = React.useState([
+  const [value, setValue] = useState([
     'Anyone',
     'Person with disability',
     'Retired person from the armed forces',

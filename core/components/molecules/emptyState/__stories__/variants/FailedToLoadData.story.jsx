@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { EmptyState, Button } from '@/index';
 import noContent from '@innovaccer/mds-images/ui-states/404-nothing-here-3.svg';
 

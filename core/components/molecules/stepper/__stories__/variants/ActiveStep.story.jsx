@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Stepper } from '@/index';
 import { action } from '@/utils/action';
 import { steps } from '../Steps';
 
 export const activeStep = () => {
-  const [active, setActive] = React.useState(0);
+  const [active, setActive] = useState(0);
 
   const onChange = (index) => {
     setActive(index);

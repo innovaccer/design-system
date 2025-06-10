@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Dropdown } from '@/index';
 import { Uncontrolled, Controlled } from './_common_/types';
 import Label from '../../label';

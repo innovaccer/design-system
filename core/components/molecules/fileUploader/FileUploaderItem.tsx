@@ -1,4 +1,3 @@
-import * as React from 'react';
 import classNames from 'classnames';
 import { Text, InlineMessage, Button } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';

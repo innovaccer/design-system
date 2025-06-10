@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { useState, useRef, HTMLDivElement } from 'react';
 import { action } from '@/utils/action';
 import { Text, Button, Popover } from '@/index';
 import '../style.css';
 
 // CSF format story
 export const boundaryElement = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const position = 'bottom';
   const on = 'hover';
   const appendToBody = true;
@@ -36,7 +36,7 @@ export const boundaryElement = () => {
   };
   if (on === 'hover') delete options.onToggle;
 
-  const ref = React.useRef < React.HTMLDivElement > null;
+  const ref = useRef < HTMLDivElement > null;
 
   return (
     <div ref={ref.current} className="overflow-auto p-7 custom-boundaryWrapper">

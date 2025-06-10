@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { action } from '@/utils/action';
 import { Tabs, Heading, Select, Tab } from '@/index';
 
@@ -28,7 +28,7 @@ export const basicTabs = () => {
     },
   ];
 
-  const [activeIndex, setActiveIndex] = React.useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const onTabChangeHandler = (tabIndex) => {
     setActiveIndex(tabIndex);

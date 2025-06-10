@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { Component } from 'react';
 import { VerificationCodeInput, Text, Label, Card, Message, Spinner } from '@/index';
 
 /* global setTimeout */
 
 export const verificationCodeInput = () => {
-  class VerificationCodeInputCard extends React.Component {
+  class VerificationCodeInputCard extends Component {
     constructor(props) {
       super(props);
 

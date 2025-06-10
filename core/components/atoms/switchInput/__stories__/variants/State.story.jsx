@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Switch, Text } from '@/index';
 
 // CSF format story

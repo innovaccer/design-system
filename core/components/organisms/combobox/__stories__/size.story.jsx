@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Combobox, Label } from '@/index';
 import { action } from '@/utils/action';
 
@@ -13,7 +13,7 @@ export const sizes = () => {
     { label: 'Vancomycin', value: 'Vancomycin' },
   ];
 
-  const [filterList, setFilterList] = React.useState(medicineList);
+  const [filterList, setFilterList] = useState(medicineList);
   const sizes = ['tiny', 'regular', 'large'];
 
   const onChangeHandler = (inputValue) => {

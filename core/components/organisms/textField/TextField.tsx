@@ -1,4 +1,3 @@
-import * as React from 'react';
 import TextFieldWithTextarea, { TextFieldTextareaProps } from './TextFieldWithTextarea';
 import TextFieldWithInput, { TextFieldInputProps } from './TextFieldWithInput';
 

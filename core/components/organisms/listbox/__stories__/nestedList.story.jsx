@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Listbox, Card, Text, Icon, MetaList, StatusHint, Switch, Menu } from '@/index';
 import { ListboxItem } from '../listboxItem';
 import './style.css';
@@ -29,7 +29,7 @@ const SubList = () => {
 };
 
 export const nestedList = () => {
-  const [expandList, setExpandList] = React.useState([]);
+  const [expandList, setExpandList] = useState([]);
 
   const dataList = [
     {

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Heading } from '@/index';
 
 // CSF format story

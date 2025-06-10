@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render } from '@testing-library/react';
 import Icon, { IconProps as Props } from '../Icon';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';

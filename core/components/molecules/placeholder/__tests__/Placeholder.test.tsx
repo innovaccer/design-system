@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render } from '@testing-library/react';
 import Placeholder, { PlaceholderProps as Props } from '../Placeholder';
 import { PlaceholderParagraph } from '@/index';

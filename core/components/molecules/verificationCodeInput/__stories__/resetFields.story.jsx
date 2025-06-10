@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Button, VerificationCodeInput, Label } from '@/index';
 import { action } from '@/utils/action';
 
@@ -19,8 +19,8 @@ export const WithResetButton = () => {
   const error = false;
 
   const pattern = '';
-  const [counter, setCounter] = React.useState(0);
-  const [value, setValue] = React.useState('1234');
+  const [counter, setCounter] = useState(0);
+  const [value, setValue] = useState('1234');
   const handleClick = () => {
     setCounter(counter + 1);
     setValue('----');

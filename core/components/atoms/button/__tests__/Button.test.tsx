@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import { Button } from '@/index';
 import { ButtonProps as Props } from '@/index.type';

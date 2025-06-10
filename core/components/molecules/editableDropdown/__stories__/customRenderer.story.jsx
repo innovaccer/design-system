@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { action } from '@/utils/action';
 import { EditableDropdown, Label, StatusHint, Icon } from '@/index';
 import './style.css';

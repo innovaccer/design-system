@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Chat } from '@/index';
 
 export const dateSeparator = () => {

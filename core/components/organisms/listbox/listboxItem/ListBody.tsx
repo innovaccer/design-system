@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useContext } from 'react';
 import classNames from 'classnames';
 import { Icon } from '@/index';
 import { ListboxItemProps } from './ListboxItem';
@@ -9,7 +9,7 @@ import styles from '@css/components/listbox.module.css';
 export const ListBody = (props: ListboxItemProps) => {
   const { children, className, disabled, selected, activated, tabIndex } = props;
 
-  const contextProp = React.useContext(ListboxContext);
+  const contextProp = useContext(ListboxContext);
   const { size, type, draggable } = contextProp;
 
   const itemClass = classNames(

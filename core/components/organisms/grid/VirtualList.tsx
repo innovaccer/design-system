@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
+import * as React from 'react';
 import { BaseProps } from '@/utils/types';
 
 export const isElementInView = (container: HTMLElement, element: Element) => {

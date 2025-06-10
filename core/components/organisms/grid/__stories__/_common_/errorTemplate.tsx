@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Heading } from '@/index';
 
 export const errorTemplate = () => {

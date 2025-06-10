@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { Tooltip, Button } from '@/index';
 import { TooltipProps as Props } from '@/index.type';

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import TimePickerWithSearch, { TimePickerDropdownProps } from './TimePickerWithSearch';
 import TimePickerWithInput, { TimePickerInputProps } from './TimePickerWithInput';
 

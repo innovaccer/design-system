@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Card, Table, Button } from '@/index';
 import { AsyncTable, SyncTable } from '../_common_/types';
 import { action } from '@/utils/action';

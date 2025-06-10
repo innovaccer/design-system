@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Icon, Text } from '@/index';
 import { MetaSize } from './MetaList';
 import { IconType } from '@/common.type';

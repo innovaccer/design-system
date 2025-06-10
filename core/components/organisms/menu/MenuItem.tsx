@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { BaseProps, BaseHtmlProps } from '@/utils/types';
 import { Listbox } from '@/index';
 import classNames from 'classnames';

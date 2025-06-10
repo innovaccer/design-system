@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Pills } from '@/index';
 
 export const subtleAlert = () => {

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { action } from '@/utils/action';
 import Dropdown from '@/components/atoms/dropdown';
 import { Uncontrolled, Controlled } from '../../_common_/types';
@@ -7,8 +7,8 @@ import { dropdownOptions } from '../../Options';
 
 // CSF format story
 export const multiSelect = () => {
-  const [selectedMoreThan50, setSelectedMoreThan50] = React.useState([dropdownOptions[3]]);
-  const [selectedLessThan50, setSelectedLessThan50] = React.useState([dropdownOptions[3]]);
+  const [selectedMoreThan50, setSelectedMoreThan50] = useState([dropdownOptions[3]]);
+  const [selectedLessThan50, setSelectedLessThan50] = useState([dropdownOptions[3]]);
 
   const getSearchedOptions = (options, searchTerm) => {
     const result = options.filter((option) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));

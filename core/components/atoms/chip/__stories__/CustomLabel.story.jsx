@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Chip } from '@/index';
 
 export const customLabel = () => {

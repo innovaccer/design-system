@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render } from '@testing-library/react';
 import Caption, { CaptionProps as Props } from '../Caption';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';

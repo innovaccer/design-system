@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Stepper, Button, Breadcrumbs, Badge, Text, MetaList, Avatar, PageHeader, Menu } from '@/index';
 import { action } from '@/utils/action';
 
@@ -18,7 +18,7 @@ export const stepperInPageHeader = () => {
     },
   ];
 
-  const [active, setActive] = React.useState(2);
+  const [active, setActive] = useState(2);
 
   const onChangeHandler = (activeStep) => {
     setActive(activeStep);

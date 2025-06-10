@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { createContext } from 'react';
 
 type ContextProps = {
   size?: string;
@@ -8,7 +8,7 @@ type ContextProps = {
   darkAppearance: string[];
 };
 
-export const AvatarContext = React.createContext<ContextProps>({
+export const AvatarContext = createContext<ContextProps>({
   size: 'regular',
   appearance: 'secondary',
   firstName: '',

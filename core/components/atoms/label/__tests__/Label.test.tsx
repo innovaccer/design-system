@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import Label, { LabelProps as Props } from '../Label';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';

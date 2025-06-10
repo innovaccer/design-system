@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { ChipInput, Label } from '@/index';
 
 export const chipValidation = () => {

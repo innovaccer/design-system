@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { action } from '@/utils/action';
 import { Sidesheet, Button, Label, Text } from '@/index';
 
 export const layeringWithSidesheet = () => {
-  const [open, setOpen] = React.useState(false);
-  const [openSecond, setOpenSecond] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [openSecond, setOpenSecond] = useState(false);
   const backdropClose = true;
 
   const onClose = () => {

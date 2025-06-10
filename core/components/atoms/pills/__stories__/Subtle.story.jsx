@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Pills, Text } from '@/index';
 
 // CSF format story

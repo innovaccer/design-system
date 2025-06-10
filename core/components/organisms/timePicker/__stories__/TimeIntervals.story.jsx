@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { TimePicker, Label, Row } from '@/index';
 import { TimePickerWithSearch } from '../TimePickerWithSearch';
 

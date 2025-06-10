@@ -1,4 +1,13 @@
-import React, { useState, useEffect, RefObject, ChangeEvent, KeyboardEvent, FocusEvent, useMemo } from 'react';
+import {
+  createRef,
+  useState,
+  useEffect,
+  RefObject,
+  ChangeEvent,
+  KeyboardEvent,
+  FocusEvent,
+  useMemo,
+} from 'react';
 import classNames from 'classnames';
 import { BaseProps } from '@/utils/types';
 import { Input } from '@/index';
@@ -85,7 +94,7 @@ const VerificationCodeInput = (props: VerificationCodeInputProps) => {
 
   const initialRefs = useMemo(() => {
     return [...Array(fields)].map(() => {
-      return React.createRef<HTMLInputElement>();
+      return createRef<HTMLInputElement>();
     });
   }, []);
 

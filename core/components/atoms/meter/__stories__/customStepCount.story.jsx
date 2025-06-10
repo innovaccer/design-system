@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Meter } from '@/index';
 
 // CSF format story

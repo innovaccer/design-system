@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { VerticalNav, Collapsible, Heading, Card, Table } from '@/index';
 import tableData from '@/components/organisms/grid/__stories__/_common_/data';
 import schema from './schema';
@@ -99,8 +99,8 @@ export const hoverableVerticalNavigation = () => {
     },
   ];
 
-  const [expanded, setExpanded] = React.useState(false);
-  const [active, setActive] = React.useState({
+  const [expanded, setExpanded] = useState(false);
+  const [active, setActive] = useState({
     name: 'care_management.timeline',
   });
 

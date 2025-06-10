@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { HorizontalNav, Button, PageHeader, Row, Column } from '@/index';
 
 export const withNavigation = () => {
@@ -13,7 +13,7 @@ export const withNavigation = () => {
     },
   ];
 
-  const [active, setActive] = React.useState({
+  const [active, setActive] = useState({
     name: 'menu_1',
   });
 

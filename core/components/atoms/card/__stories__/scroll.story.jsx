@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Card, Text, List, CardHeader, Heading, Paragraph } from '@/index';
 import { data } from './data';
 import './style.css';

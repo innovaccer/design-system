@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import { Chat } from '@/index';
 import { ChatBubbleProps as Props } from '../ChatBubble';

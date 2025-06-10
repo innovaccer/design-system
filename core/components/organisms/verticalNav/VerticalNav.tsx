@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState, useEffect, Fragment } from 'react';
 import classNames from 'classnames';
 import { Text } from '@/index';
 import { MenuItem, MenuItemProps } from './MenuItem';
@@ -79,18 +79,18 @@ export interface VerticalNavProps extends BaseProps {
 export const VerticalNav = (props: VerticalNavProps) => {
   const { menus, active, onClick, expanded, rounded, autoCollapse, className, customItemRenderer } = props;
 
-  const [subMenuExpandedState, setSubMenuExpandedState] = React.useState<Record<string, boolean>>({});
-  const [menuState, setMenuState] = React.useState<Record<string, boolean>>({});
+  const [subMenuExpandedState, setSubMenuExpandedState] = useState<Record<string, boolean>>({});
+  const [menuState, setMenuState] = useState<Record<string, boolean>>({});
   const baseProps = extractBaseProps(props);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (props.active) {
       const currMenu = getMenu(menus, props.active);
       if (currMenu) updateMenuState(currMenu, true);
     }
   }, [props.active]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const expandedMenus = getExpandedMenus(menus, active);
     setSubMenuExpandedState(expandedMenus);
   }, []);
@@ -145,7 +145,7 @@ export const VerticalNav = (props: VerticalNavProps) => {
       });
 
       return (
-        <React.Fragment key={index}>
+        <Fragment key={index}>
           {hasGroup && menu.group && expanded && (
             <div className={sectionClass}>
               <Text data-test="DesignSystem-VerticalNav--Section" size="small" weight="strong" appearance="subtle">
@@ -183,7 +183,7 @@ export const VerticalNav = (props: VerticalNavProps) => {
                 />
               );
             })}
-        </React.Fragment>
+        </Fragment>
       );
     });
 

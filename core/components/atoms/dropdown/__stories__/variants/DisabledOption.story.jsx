@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Dropdown from '../../Dropdown';
 import { action } from '@/utils/action';
 import Text from '@/components/atoms/text';

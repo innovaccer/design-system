@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import Editable, { EditableProps as Props } from '../Editable';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';

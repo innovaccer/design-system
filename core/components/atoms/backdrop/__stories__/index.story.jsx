@@ -1,11 +1,11 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import * as React from 'react';
+import { useState } from 'react';
 import Backdrop from '../Backdrop';
 import { Button } from '@/index';
 
 export const all = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const onKeyDown = (event) => {
     if (event.key === 'Escape') {

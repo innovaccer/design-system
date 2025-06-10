@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { KeyValuePair, Card, Heading, Avatar, Text } from '@/index';
 
 export const topBottomArrangement = () => {

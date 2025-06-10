@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Select, Button } from '@/index';
 import { action } from '@/utils/action';
 
@@ -17,10 +17,10 @@ export const withActionButton = () => {
     { label: 'Levothyroxine', value: 'Levothyroxine' },
   ];
 
-  const selectRef = React.useRef(null);
-  const [selectedOptions, setSelectedOptions] = React.useState([]);
-  const [previousSelectedOptions, setPreviousSelectedOptions] = React.useState([]);
-  const [isDisabled, setIsDisabled] = React.useState(true);
+  const selectRef = useRef(null);
+  const [selectedOptions, setSelectedOptions] = useState([]);
+  const [previousSelectedOptions, setPreviousSelectedOptions] = useState([]);
+  const [isDisabled, setIsDisabled] = useState(true);
 
   const handleSelect = (selectedOption) => {
     setIsDisabled(false);
@@ -49,7 +49,7 @@ export const withActionButton = () => {
     setSelectedOptions(previousSelectedOptions);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     setSelectedOptions(previousSelectedOptions);
   }, [previousSelectedOptions]);
 

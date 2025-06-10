@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Row, Column, PageHeader, Navigation, Breadcrumbs, Button, Badge } from '@/index';
 import { action } from '@/utils/action';
 

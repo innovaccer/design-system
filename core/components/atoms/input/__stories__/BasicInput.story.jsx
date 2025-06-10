@@ -1,14 +1,14 @@
-import * as React from 'react';
+import { useState, useCallback } from 'react';
 import { Input } from '@/index';
 
 export const basicInput = () => {
-  const [value, setValue] = React.useState('Joy Lawson');
+  const [value, setValue] = useState('Joy Lawson');
 
-  const onChange = React.useCallback((e) => {
+  const onChange = useCallback((e) => {
     setValue(e.target.value);
   }, []);
 
-  const onClear = React.useCallback(() => {
+  const onClear = useCallback(() => {
     setValue('');
   }, []);
 

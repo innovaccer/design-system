@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { SelectionCard, Row, Column, Icon, Text } from '@/index';
 
 // CSF format story

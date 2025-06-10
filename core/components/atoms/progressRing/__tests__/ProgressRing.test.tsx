@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render } from '@testing-library/react';
 import ProgressRing, { ProgressRingProps as Props } from '../ProgressRing';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';

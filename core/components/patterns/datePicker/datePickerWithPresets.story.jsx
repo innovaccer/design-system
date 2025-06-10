@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Card, Label, Subheading, Chip, Divider, DatePicker } from '@/index';
 
 const customCode = `() => {
@@ -118,8 +118,8 @@ export const WithPresets = () => {
   const getThirtyDaysLaterDate = setDate.bind(null, 30);
 
   const DatePickerPreset = ({ size, withInput = false }) => {
-    const [date, setDate] = React.useState(new Date());
-    const [selectedChip, setSelectedChip] = React.useState('today');
+    const [date, setDate] = useState(new Date());
+    const [selectedChip, setSelectedChip] = useState('today');
 
     const classNames = size === 'small' ? 'd-flex mb-4' : 'd-flex mb-5';
     return (

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render } from '@testing-library/react';
 import { Avatar } from '@/index';
 import { AvatarProps as Props } from '@/index.type';

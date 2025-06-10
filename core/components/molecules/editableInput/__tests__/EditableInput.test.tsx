@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { EditableInput } from '@/index';
 import { EditableInputProps as Props } from '@/index.type';

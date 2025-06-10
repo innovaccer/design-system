@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { TimePicker, Label } from '@/index';
 import { TimePickerWithSearch } from '../TimePickerWithSearch';
 
 // CSF format story
 export const FromTo = () => {
-  const [startTime, setStartTime] = React.useState('00:00');
+  const [startTime, setStartTime] = useState('00:00');
 
   const onFromChangeHandler = (props) => {
     setStartTime(props);

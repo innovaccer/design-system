@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { EmptyState, Button } from '@/index';
 import historyTime from '@innovaccer/mds-images/ui-states/history-time.svg';
 

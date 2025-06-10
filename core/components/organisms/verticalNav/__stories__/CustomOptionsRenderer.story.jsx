@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { VerticalNav, Icon } from '@/index';
 
 export const CustomOptionsRenderer = () => {
@@ -83,7 +83,7 @@ export const CustomOptionsRenderer = () => {
     },
   ];
 
-  const [active, setActive] = React.useState({
+  const [active, setActive] = useState({
     name: 'care_management.timeline',
   });
 

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { List } from '@/index';
 import { NestedRowProps } from '../../GridNestedRow';
 

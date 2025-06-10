@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Input, Label, HelpText } from '@/index';
 import ActionButton from '../actionButton';
 
 export const inputWithHelpText = () => {
-  const [visibility, setVisibility] = React.useState(false);
-  const [visibility2, setVisibility2] = React.useState(false);
+  const [visibility, setVisibility] = useState(false);
+  const [visibility2, setVisibility2] = useState(false);
   return (
     <div className="d-flex">
       <div>

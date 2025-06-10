@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { useState } from 'react';
 import Collapsible from '@/components/atoms/collapsible';
 import { Icon, Text, Heading } from '@/index';
 
 // CSF format story
 export const CustomTrigger = () => {
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   return (
     <div>

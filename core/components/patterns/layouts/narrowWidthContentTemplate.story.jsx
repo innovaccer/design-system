@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Collapsible, VerticalNav, PageHeader, Row, Column } from '@/index';
 import { action } from '@/utils/action';
 
@@ -67,8 +67,8 @@ export const narrowWidthContentTemplate = () => {
     },
   ];
 
-  const [expanded, setExpanded] = React.useState(false);
-  const [active, setActive] = React.useState({
+  const [expanded, setExpanded] = useState(false);
+  const [active, setActive] = useState({
     name: 'care_management.timeline',
   });
 

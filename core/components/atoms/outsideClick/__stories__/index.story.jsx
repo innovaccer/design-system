@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { OutsideClick, Card, Heading } from '@/index';
 import { action } from '@/utils/action';
 

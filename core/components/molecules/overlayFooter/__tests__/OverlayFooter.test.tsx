@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render } from '@testing-library/react';
 import OverlayFooter, { OverlayFooterProps as Props } from '../OverlayFooter';
 import { Button } from '@/index';

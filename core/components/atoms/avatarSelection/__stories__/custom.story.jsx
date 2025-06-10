@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { AvatarSelection, Checkbox, Input, Tooltip } from '@/index';
 import './style.css';
 
@@ -41,9 +41,9 @@ export const custom = () => {
     },
   ];
 
-  const [avatarList, setAvatarList] = React.useState(list);
-  const [searchList, setSearchList] = React.useState(list.slice(5, list.length));
-  const [selectedItems, setSelectedItems] = React.useState([
+  const [avatarList, setAvatarList] = useState(list);
+  const [searchList, setSearchList] = useState(list.slice(5, list.length));
+  const [selectedItems, setSelectedItems] = useState([
     {
       firstName: 'John',
       lastName: 'Doe',
@@ -60,7 +60,7 @@ export const custom = () => {
     },
   ]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const updatedList = avatarList.map((avatar) => {
       if (selectedItems.includes(avatar)) {
         avatar.selected = true;
@@ -89,8 +89,8 @@ export const custom = () => {
 
   const AvatarSelectionItem = (props) => {
     const { avatarData, isSelected } = props;
-    const [showTooltip, setShowTooltip] = React.useState(false);
-    const elementRef = React.useRef(null);
+    const [showTooltip, setShowTooltip] = useState(false);
+    const elementRef = useRef(null);
 
     const { firstName = '', lastName = '', email } = avatarData;
     const name = `${firstName} ${lastName}`;

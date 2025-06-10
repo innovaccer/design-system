@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { Dropdown } from '@/index';
 import { BaseProps } from '@/utils/types';
 import { getScrollIndex } from './utility/searchUtils';
@@ -107,18 +107,18 @@ export const TimePickerWithSearch = (props: TimePickerDropdownProps) => {
     error,
   } = props;
 
-  const [tabIndex, setTabIndex] = React.useState(0);
-  const [openPopover, setOpenPopover] = React.useState(false);
-  const [selectedIndex, setSelectedIndex] = React.useState(-1);
-  const [counter, setCounter] = React.useState(0);
+  const [tabIndex, setTabIndex] = useState(0);
+  const [openPopover, setOpenPopover] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(-1);
+  const [counter, setCounter] = useState(0);
 
   const dropdownOptionList = getDropdownOptionList(props);
 
-  React.useEffect(() => {
+  useEffect(() => {
     open !== undefined && setOpenPopover(open);
   }, [open]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     let timer: any;
 
     if (openPopover && selectedIndex != -1) {
@@ -134,7 +134,7 @@ export const TimePickerWithSearch = (props: TimePickerDropdownProps) => {
   }, [openPopover]);
 
   // Required to re-render dropdown forcefully whenever props changes
-  React.useEffect(() => {
+  useEffect(() => {
     setCounter(counter + 1);
   }, [startTime, endTime, interval, showDuration, disabledSlotList]);
 

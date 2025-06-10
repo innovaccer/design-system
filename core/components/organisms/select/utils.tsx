@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { OptionType } from '@/common.type';
 
 export const mapInitialValue = (multiSelect: boolean, selectedValue: OptionType | OptionType[] | undefined) => {

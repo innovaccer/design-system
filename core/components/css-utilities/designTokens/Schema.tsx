@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Schema } from '../../organisms/grid';
 import { GridCell, Button } from '@/index';
 

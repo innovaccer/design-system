@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useRef } from 'react';
 import { Text, Avatar, Tooltip, Listbox } from '@/index';
 import { AvatarData } from './AvatarGroup';
 import classNames from 'classnames';
@@ -11,7 +11,7 @@ const AvatarOptionItem = (props: AvatarOptionItemProps) => {
   const { avatarData } = props;
   const { firstName = '', lastName = '', tooltipSuffix = '', disabled, image, icon } = avatarData;
   const name = `${firstName} ${lastName} ${tooltipSuffix}`;
-  const elementRef = React.useRef(null);
+  const elementRef = useRef(null);
 
   const triggerClassName = classNames({
     ['cursor-not-allowed']: disabled,

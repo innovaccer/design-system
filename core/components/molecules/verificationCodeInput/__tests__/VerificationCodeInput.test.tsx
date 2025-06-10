@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { VerificationCodeInput } from '@/index';
 import { VerificationCodeInputProps as Props } from '@/index.type';

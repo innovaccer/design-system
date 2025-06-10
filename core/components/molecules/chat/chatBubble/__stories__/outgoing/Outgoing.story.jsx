@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Icon, Text, Chat, Button } from '@/index';
 
 export const all = () => {

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render } from '@testing-library/react';
 import { CardFooter, Button } from '@/index';
 import { CardFooterProps as Props } from '@/index.type';

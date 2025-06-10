@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { ChipInput } from '@/index';
 
 export const all = () => {

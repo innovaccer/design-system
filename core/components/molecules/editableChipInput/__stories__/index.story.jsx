@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { action } from '@/utils/action';
 import { EditableChipInput } from '@/index';
 
 // CSF format story
 
 export const all = () => {
-  const [value, setValue] = React.useState();
+  const [value, setValue] = useState();
 
   const onChange = (updatedValue) => {
     setValue(updatedValue);

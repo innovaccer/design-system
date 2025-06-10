@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { EditableInput, Label, Row, Column } from '@/index';
 
 // CSF format story
 export const size = () => {
-  const [name, setName] = React.useState('');
-  const [weight, setWeight] = React.useState('');
+  const [name, setName] = useState('');
+  const [weight, setWeight] = useState('');
 
   const onChangeName = (value) => {
     setName(value);

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { EmptyState, Button } from '@/index';
 import fileBroken from '@innovaccer/mds-images/ui-states/file-broken-or-not-found.svg';
 

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Divider, Row, Column, Card, CardBody, Radio, Heading, Text } from '@/index';
 
 export const HeaderDividerInCard = () => {

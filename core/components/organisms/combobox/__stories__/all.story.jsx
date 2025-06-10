@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { Combobox, Spinner, Label } from '@/index';
 import { action } from '@/utils/action';
 
@@ -34,10 +34,10 @@ function useFetchOption() {
 
 export const all = () => {
   const { fetchOptions } = useFetchOption();
-  const [loading, setLoading] = React.useState(false);
-  const [optionList, setOptionList] = React.useState([]);
+  const [loading, setLoading] = useState(false);
+  const [optionList, setOptionList] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setLoading(true);
     fetchOptions().then((res) => {
       const { options } = res;

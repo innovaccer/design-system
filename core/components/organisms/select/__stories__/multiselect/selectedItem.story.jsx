@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState, useRef, Fragment } from 'react';
 import { Select, Text } from '@/index';
 import { action } from '@/utils/action';
 
@@ -19,8 +19,8 @@ export const selectedItem = () => {
     { label: 'Metoprolol', value: 'Metoprolol', group: 'Hypertension' },
   ];
 
-  const [selectedOptions, setSelectedOptions] = React.useState([]);
-  const selectRef = React.useRef(null);
+  const [selectedOptions, setSelectedOptions] = useState([]);
+  const selectRef = useRef(null);
 
   const handleSelect = (selectedOption) => {
     action('selectedOption', selectedOption);
@@ -51,7 +51,7 @@ export const selectedItem = () => {
     >
       <Select.List>
         {selectedOptions.length > 0 && (
-          <React.Fragment>
+          <Fragment>
             <Text className="d-flex ml-6 mt-5 mr-5 mb-4" size="small" appearance="subtle">
               Selected Items
             </Text>
@@ -60,13 +60,13 @@ export const selectedItem = () => {
                 {option.label}
               </Select.Option>
             ))}
-          </React.Fragment>
+          </Fragment>
         )}
         {Object.keys(groupedMedicine).map(
           (group) =>
             group !== 'Selected Items' &&
             groupedMedicine[group].length > 0 && (
-              <React.Fragment key={group}>
+              <Fragment key={group}>
                 <Text className="d-flex ml-6 mt-5 mr-5 mb-4" size="small" appearance={'subtle'}>
                   {group}
                 </Text>
@@ -75,7 +75,7 @@ export const selectedItem = () => {
                     {item.label}
                   </Select.Option>
                 ))}
-              </React.Fragment>
+              </Fragment>
             )
         )}
       </Select.List>

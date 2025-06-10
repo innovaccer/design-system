@@ -1,4 +1,3 @@
-import React from 'react';
 import { Menu, Text } from '@/index';
 
 export const withSubInfo = () => {

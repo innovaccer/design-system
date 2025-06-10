@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render } from '@testing-library/react';
 import Subheading, { SubheadingProps as Props } from '../Subheading';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';

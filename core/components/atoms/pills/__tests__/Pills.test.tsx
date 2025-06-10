@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render } from '@testing-library/react';
 import Pills, { PillsProps as Props } from '../Pills';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { VerticalNav, Card, Heading } from '@/index';
 
 export const secondaryVerticalNavigation = () => {
@@ -135,11 +135,11 @@ export const secondaryVerticalNavigation = () => {
     },
   ];
 
-  const [primaryActive, setPrimaryActive] = React.useState({
+  const [primaryActive, setPrimaryActive] = useState({
     name: 'care_management.timeline',
   });
 
-  const [secondaryActive, setSecondaryActive] = React.useState({
+  const [secondaryActive, setSecondaryActive] = useState({
     name: '19/01/20',
   });
 

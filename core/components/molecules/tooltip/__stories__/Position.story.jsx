@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Tooltip, Button } from '@/index';
 
 // CSF format story

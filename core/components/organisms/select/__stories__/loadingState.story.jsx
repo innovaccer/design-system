@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { Select, Spinner } from '@/index';
 import { action } from '@/utils/action';
 
@@ -17,10 +17,10 @@ export const loadingState = () => {
     { label: 'Levothyroxine', value: 'Levothyroxine' },
   ];
 
-  const [loading, setLoading] = React.useState(true);
-  const [searchTerm, setSearchTerm] = React.useState('');
-  const [filteredMedicines, setFilteredMedicines] = React.useState(medicineList);
-  const [error, setError] = React.useState(false);
+  const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredMedicines, setFilteredMedicines] = useState(medicineList);
+  const [error, setError] = useState(false);
 
   const fetchOptions = (searchTerm) => {
     const searchedOptions =
@@ -34,7 +34,7 @@ export const loadingState = () => {
     });
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     setLoading(true);
     fetchOptions(searchTerm).then((res) => {
       const { option } = res;

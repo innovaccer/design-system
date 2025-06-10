@@ -1,4 +1,3 @@
-import * as React from 'react';
 import classNames from 'classnames';
 import { Icon, Text } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';

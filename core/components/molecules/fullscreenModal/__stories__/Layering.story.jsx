@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { action } from '@/utils/action';
 import { Button, Paragraph, FullscreenModal } from '@/index';
 import Heading from '@/components/atoms/heading';
 
 export const layering = () => {
-  const [open, setOpen] = React.useState(false);
-  const [openSecondOverlay, setOpenSecondOverlay] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [openSecondOverlay, setOpenSecondOverlay] = useState(false);
   const dimension = 'medium';
   const knobOpen = open;
   const knobSecondOpen = openSecondOverlay;

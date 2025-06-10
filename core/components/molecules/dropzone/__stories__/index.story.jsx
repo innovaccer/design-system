@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { useState, Fragment } from 'react';
 import { Dropzone, FileList, Button, LinkButton } from '@/index';
 
 export const all = () => {
-  const [files, setFiles] = React.useState([]);
+  const [files, setFiles] = useState([]);
   const getSize = (size) => `${(size / (1024 * 1024)).toFixed(2)} MB`;
 
   const onDelete = (id) => {
@@ -38,7 +38,7 @@ export const all = () => {
 
   const actionRenderer = (fileItem) => {
     return (
-      <React.Fragment>
+      <Fragment>
         {fileItem.networkError && (
           <Button
             aria-label={`Remove ${fileItem.file.name}`}
@@ -57,7 +57,7 @@ export const all = () => {
           onClick={() => onDelete(fileItem.id)}
           className={'cursor-pointer'}
         />
-      </React.Fragment>
+      </Fragment>
     );
   };
 
@@ -72,7 +72,7 @@ export const all = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Dropzone
         accept="image/jpeg, image/png"
         formatLabel="Accepted formats: jpeg, png"
@@ -84,7 +84,7 @@ export const all = () => {
         sampleFileLink={<LinkButton onClick={handleDownloadClick}>Download sample file</LinkButton>}
       />
       <FileList fileList={files.map(({ file, metadata }) => ({ file, ...metadata }))} actionRenderer={actionRenderer} />
-    </React.Fragment>
+    </Fragment>
   );
 };
 

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useContext } from 'react';
 import {
   Schema,
   Pinned,
@@ -24,7 +24,7 @@ export interface GridHeadProps {
 }
 
 export const GridHead = (props: GridHeadProps) => {
-  const context = React.useContext(GridContext);
+  const context = useContext(GridContext);
   const { schema, onSelectAll, onMenuChange, onFilterChange, updateColumnSchema, reorderColumn } = props;
 
   const { withCheckbox, loading, selectAll } = context;

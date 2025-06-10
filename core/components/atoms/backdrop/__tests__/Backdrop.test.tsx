@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render } from '@testing-library/react';
 import Backdrop, { BackdropProps as Props } from '../Backdrop';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';

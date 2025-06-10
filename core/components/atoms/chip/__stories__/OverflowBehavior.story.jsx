@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Chip, Row, Column } from '@/index';
 
 export const overflowBehavior = () => {

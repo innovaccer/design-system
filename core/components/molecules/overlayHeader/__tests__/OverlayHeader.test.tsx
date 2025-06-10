@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import OverlayHeader, { OverlayHeaderProps as Props } from '../OverlayHeader';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';

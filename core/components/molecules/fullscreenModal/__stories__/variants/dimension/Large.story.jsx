@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { action } from '@/utils/action';
 import { Button, FullscreenModal, Label, Input, Radio, Icon, Text, Card } from '@/index';
 
 export const large = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const onClose = () => {
     setOpen(!open);

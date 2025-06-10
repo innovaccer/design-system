@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { DateRangePicker, InputMask, Card } from '@/index';
 import { action } from '@/utils/action';
 

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Avatar, Icon, Tooltip } from '@/index';
 
 // CSF format story

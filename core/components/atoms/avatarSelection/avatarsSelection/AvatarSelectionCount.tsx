@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { Text, Avatar } from '@/index';
 import classNames from 'classnames';
 import { AvatarData } from '../AvatarSelection';
@@ -18,7 +18,7 @@ interface CountAvatarProp {
 export const AvatarSelectionCount = (props: CountAvatarProp) => {
   const { hiddenAvatarCount, avatarStyle, size, hiddenAvatarList } = props;
 
-  const contextProp = React.useContext(AvatarSelectionContext);
+  const contextProp = useContext(AvatarSelectionContext);
   const {
     selectedItems,
     setHighlightFirstItem,
@@ -29,9 +29,9 @@ export const AvatarSelectionCount = (props: CountAvatarProp) => {
     popoverId,
   } = contextProp;
 
-  const [selectedItemCount, setSelectedItemCount] = React.useState(0);
+  const [selectedItemCount, setSelectedItemCount] = useState(0);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const selectedList = hiddenAvatarList.filter((data1: AvatarData) =>
       selectedItems?.some((data2: AvatarData) => data2 === data1)
     );

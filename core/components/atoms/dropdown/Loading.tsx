@@ -1,4 +1,3 @@
-import * as React from 'react';
 import PlaceholderParagraph from '@/components/atoms/placeholderParagraph';
 import Placeholder from '@/components/molecules/placeholder';
 import { PlaceholderParagraphProps } from '@/index.type';

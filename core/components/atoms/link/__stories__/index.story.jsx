@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Link } from '@/index';
 import { action } from '@/utils/action';
 

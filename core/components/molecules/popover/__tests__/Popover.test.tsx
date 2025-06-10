@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, fireEvent, cleanup } from '@testing-library/react';
 import { Button, Popover } from '@/index';
 import { PopoverProps as Props } from '@/index.type';

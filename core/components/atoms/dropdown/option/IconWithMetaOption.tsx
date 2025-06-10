@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { OptionTypeProps } from './index';
 import { Icon, Text } from '@/index';
 import classNames from 'classnames';

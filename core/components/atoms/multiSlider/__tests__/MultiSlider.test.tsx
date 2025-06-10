@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { MultiSlider } from '@/index';
 import { MultiSliderProps as Props } from '../index';

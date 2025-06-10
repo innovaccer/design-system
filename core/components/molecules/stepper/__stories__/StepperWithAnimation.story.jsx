@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { action } from '@/utils/action';
 import {
   Stepper,
@@ -34,13 +34,13 @@ export const stepperWithAnimation = () => {
       value: 'Step3',
     },
   ];
-  const [active, setActive] = React.useState(0);
-  const [completed, setCompleted] = React.useState(-1);
-  const [activeCard, setActiveCard] = React.useState(0);
-  const [step, setStep] = React.useState(0);
+  const [active, setActive] = useState(0);
+  const [completed, setCompleted] = useState(-1);
+  const [activeCard, setActiveCard] = useState(0);
+  const [step, setStep] = useState(0);
   const maxSteps = steps.length;
-  const [tab, setTab] = React.useState(1);
-  const [skipIndices, setSkipIndices] = React.useState([]);
+  const [tab, setTab] = useState(1);
+  const [skipIndices, setSkipIndices] = useState([]);
 
   const handleAnimationEnd = () => {
     if (step === activeCard) {

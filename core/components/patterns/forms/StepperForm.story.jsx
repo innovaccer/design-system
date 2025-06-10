@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component } from 'react';
 import { Card, Text, Label, Select, Button, Stepper, Badge, Avatar, InputMask, Switch, Textarea } from '@/index';
 import { action } from 'storybook/actions';
 
@@ -23,7 +23,7 @@ export const stepperForm = () => {
     });
   }
 
-  class StepperForm extends React.Component {
+  class StepperForm extends Component {
     constructor(props = {}) {
       super(props);
 

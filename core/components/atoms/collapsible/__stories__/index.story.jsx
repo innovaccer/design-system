@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { useState } from 'react';
 import Collapsible from '@/components/atoms/collapsible';
 import { Icon, Text } from '@/index';
 
 // CSF format story
 export const all = () => {
   const hoverable = true;
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   return (
     <Collapsible expanded={expanded} hoverable={hoverable} height="100vh" onToggle={setExpanded}>

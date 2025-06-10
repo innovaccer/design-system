@@ -1,4 +1,3 @@
-import React from 'react';
 import { Menu, Icon, Text } from '@/index';
 
 export const withIcon = () => {

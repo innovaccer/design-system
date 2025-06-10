@@ -1,8 +1,8 @@
-import React from 'react';
+import { useState } from 'react';
 import { Menu, Icon } from '@/index';
 
 export const withCheck = () => {
-  const [itemList, setItemList] = React.useState([]);
+  const [itemList, setItemList] = useState([]);
   const actionList = ['Edit', 'Export', 'Copy'];
 
   const onClickHandler = (action) => {

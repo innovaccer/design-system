@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState, createRef, useEffect } from 'react';
 import classNames from 'classnames';
 import { Text, Icon, Pills, Tooltip } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
@@ -62,11 +62,11 @@ export const MenuItem = (props: MenuItemProps) => {
   const { menu, isActive, expanded, rounded, hasSubmenu, isChildren, isChildrenVisible, onClick, customItemRenderer } =
     props;
 
-  const [isTextTruncated, setIsTextTruncated] = React.useState(false);
+  const [isTextTruncated, setIsTextTruncated] = useState(false);
   const { detectTruncation } = Tooltip.useAutoTooltip();
-  const contentRef = React.createRef<HTMLElement>();
+  const contentRef = createRef<HTMLElement>();
 
-  React.useEffect(() => {
+  useEffect(() => {
     const isTruncated = detectTruncation(contentRef);
     setIsTextTruncated(isTruncated);
   }, [contentRef]);

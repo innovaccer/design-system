@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import Avatar, { AvatarProps as Props } from '../Avatar';
 import { AccentAppearance, AvatarShape, AvatarSize } from '@/common.type';

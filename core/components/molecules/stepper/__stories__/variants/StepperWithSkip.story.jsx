@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { action } from '@/utils/action';
 import { Stepper, Button } from '@/index';
 
@@ -17,10 +17,10 @@ export const stepperWithSkip = () => {
       value: 'Step3',
     },
   ];
-  const [active, setActive] = React.useState(0);
-  const [completed, setCompleted] = React.useState(-1);
+  const [active, setActive] = useState(0);
+  const [completed, setCompleted] = useState(-1);
   const maxSteps = steps.length;
-  const [skipIndices, setSkipIndices] = React.useState([]);
+  const [skipIndices, setSkipIndices] = useState([]);
 
   const onChange = (activeStep) => {
     return action(`Active Index: ${activeStep}`)();

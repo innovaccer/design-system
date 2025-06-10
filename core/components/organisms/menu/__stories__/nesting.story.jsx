@@ -1,4 +1,3 @@
-import React from 'react';
 import { Menu, Icon } from '@/index';
 
 export const nesting = () => {

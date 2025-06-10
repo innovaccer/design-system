@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { Collapsible, CollapsibleProps as Props } from '@/components/atoms/collapsible';
 import { Icon, Text } from '@/index';

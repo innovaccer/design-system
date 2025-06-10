@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, fireEvent, waitFor, screen, cleanup } from '@testing-library/react';
 import { Table, Button } from '@/index';
 import { TableProps as Props } from '@/index.type';

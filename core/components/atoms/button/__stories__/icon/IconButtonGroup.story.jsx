@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Button from '@/components/atoms/button';
 
 export const iconButtonGroup = () => (

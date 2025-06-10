@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Heading, Card, Table, Text } from '@/index';
 import utilitiesSchema from '../Schema';
 import Paragraph from '@/components/atoms/paragraph';

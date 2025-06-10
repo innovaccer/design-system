@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Tabs, Button, AvatarGroup, Text, PageHeader, Menu } from '@/index';
 import '../../style.css';
 
@@ -52,7 +52,7 @@ export const withTabs = () => {
     },
   ];
 
-  const [activeIndex, setActiveIndex] = React.useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const tab = <Tabs tabs={tabs} activeIndex={activeIndex} onTabChange={setActiveIndex} />;
 

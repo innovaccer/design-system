@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import Status, { StatusProps, StatusType } from './Status';
 import Box, { BoxProps } from './Box';

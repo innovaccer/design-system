@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Card, Table, InlineMessage } from '@/index';
 
 const data = [

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { PlaceholderParagraph, Placeholder } from '@/index';
 
 export const all = () => {

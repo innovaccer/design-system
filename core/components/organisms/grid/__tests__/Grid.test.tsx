@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, fireEvent, cleanup } from '@testing-library/react';
 import { Grid } from '@/index';
 import { GridProps as Props } from '@/index.type';

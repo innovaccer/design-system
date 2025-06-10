@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { StatusHint } from '@/index';
 
 export const info = () => <StatusHint appearance="info">{'Info'}</StatusHint>;

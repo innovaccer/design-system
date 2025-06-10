@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { ChipInput, Label } from '@/index';
 
 export const chipsInSingleLine = () => {
-  const [value, setValue] = React.useState(['Anyone', 'Person with disability']);
+  const [value, setValue] = useState(['Anyone', 'Person with disability']);
 
   return (
     <>

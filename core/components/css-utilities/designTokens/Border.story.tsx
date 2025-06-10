@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import { Card, Heading, Table } from '@/index';
 import { getSchema } from './Schema';
 import { borderData, borderRadiusData, borderWidthData } from './Data';

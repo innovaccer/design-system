@@ -1,4 +1,3 @@
-import * as React from 'react';
 import InputMask from '../InputMask';
 import Label from '@/components/atoms/label';
 // CSF format story

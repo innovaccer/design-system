@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { useState } from 'react';
 
 const selectedCardValues = new Map();
 
 export function useMultiSelect() {
-  const [selectedCardIds, setSelectedCardIds] = React.useState<string[]>([]);
+  const [selectedCardIds, setSelectedCardIds] = useState<string[]>([]);
 
   const isCardSelected = (id: string) => {
     return selectedCardIds.includes(id);

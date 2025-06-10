@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Heading, Text } from '@/index';
 import './style.css';
 

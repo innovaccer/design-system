@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import { ColumnProps as Props } from '@/index.type';
 import { Column } from '@/index';

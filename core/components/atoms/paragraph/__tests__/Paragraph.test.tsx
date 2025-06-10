@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render } from '@testing-library/react';
 import Paragraph, { ParagraphProps as Props, ParagraphAppearance } from '../Paragraph';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';

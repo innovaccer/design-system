@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { action } from '@/utils/action';
 import { Collapsible, VerticalNav } from '@/index';
 
@@ -72,8 +72,8 @@ export const sideNav = () => {
     },
   ];
 
-  const [expanded, setExpanded] = React.useState(false);
-  const [active, setActive] = React.useState({
+  const [expanded, setExpanded] = useState(false);
+  const [active, setActive] = useState({
     name: 'care_management.timeline',
   });
 

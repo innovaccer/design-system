@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { HelpText, Label, Select } from '@/index';
 
 // CSF format story

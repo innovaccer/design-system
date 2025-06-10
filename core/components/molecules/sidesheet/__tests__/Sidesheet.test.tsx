@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { SidesheetProps as Props } from '@/index.type';
 import { Button, Sidesheet, Text } from '@/index';

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { EmptyState, Button } from '@/index';
 import errorState from '@innovaccer/mds-images/ui-states/error.svg';
 

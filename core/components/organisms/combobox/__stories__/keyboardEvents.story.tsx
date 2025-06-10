@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Combobox, Spinner, Label } from '@/index';
 import { OptionType } from '@/common.type';
 

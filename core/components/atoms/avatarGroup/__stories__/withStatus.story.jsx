@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { AvatarGroup, Tooltip, Icon, Avatar } from '@/index';
 
 export const withStatus = () => {

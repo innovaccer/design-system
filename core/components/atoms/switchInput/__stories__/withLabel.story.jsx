@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { action } from '@/utils/action';
 import { Label, Switch } from '@/index';
 
 // CSF format story
 export const withLabel = () => {
-  const [checked, setChecked] = React.useState(false);
+  const [checked, setChecked] = useState(false);
 
   const onChangeHandler = (_event, checkedValue) => {
     setChecked(!checked);

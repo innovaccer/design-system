@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { AvatarGroup, Avatar } from '@/index';
 
 export const withImage = () => {

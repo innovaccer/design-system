@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useContext } from 'react';
 import { Input } from '@/index';
 import { InputProps } from '@/index.type';
 import { handleInputKeyDown } from './utils';
@@ -7,7 +7,7 @@ import styles from '@css/components/avatarSelection.module.css';
 import classNames from 'classnames';
 
 export const AvatarSelectionInput = (props: InputProps) => {
-  const contextProp = React.useContext(AvatarSelectionContext);
+  const contextProp = useContext(AvatarSelectionContext);
 
   const { listRef, setFocusedOption, setOpenPopover, triggerRef } = contextProp;
 

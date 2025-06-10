@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { ChoiceList, Radio } from '@/index';
 
 // CSF format story

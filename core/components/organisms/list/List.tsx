@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Table } from '@/index';
 import { TableProps } from '@/index.type';
 import { defaultProps, SyncTableProps, AsyncTableProps } from '@/components/organisms/table';

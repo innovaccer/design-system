@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Toast from '../../Toast';
 
 // CSF format story

@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Button, Text, Card, FullscreenModal, Input, Label } from '@/index';
 import { List } from '@/index.type';
 
 export const twoStepsWorkflow = () => {
-  const [open, setOpen] = React.useState(false);
-  const [page, setPage] = React.useState(0);
+  const [open, setOpen] = useState(false);
+  const [page, setPage] = useState(0);
 
   const onClose = () => {
     setOpen(!open);

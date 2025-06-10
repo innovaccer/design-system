@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { VerticalNav } from '@/index';
 
 export const nonCollapsibleVerticalNavigation = () => {
@@ -25,7 +25,7 @@ export const nonCollapsibleVerticalNavigation = () => {
     },
   ];
 
-  const [active, setActive] = React.useState({
+  const [active, setActive] = useState({
     name: 'users',
   });
 

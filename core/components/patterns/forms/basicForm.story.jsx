@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { Component } from 'react';
 import { action } from '@/utils/action';
 import { Card, Label, Heading, Input, Button, Link, Icon } from '@/index';
 
 export const basicForm = () => {
-  class BasicForm extends React.Component {
+  class BasicForm extends Component {
     constructor(props) {
       super(props);
 

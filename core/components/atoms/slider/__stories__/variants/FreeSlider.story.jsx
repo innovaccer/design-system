@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Slider } from '@/index';
 
 // CSF format story

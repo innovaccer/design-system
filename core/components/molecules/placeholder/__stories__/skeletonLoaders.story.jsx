@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { PlaceholderParagraph, Placeholder, PlaceholderImage, Card } from '@/index';
 
 export const skeletonLoaders = () => {

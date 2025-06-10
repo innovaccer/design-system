@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useEffect } from 'react';
 import { SelectionCard, Row, Column, Icon, Text } from '@/index';
 import { action } from '@/utils/action';
 
@@ -21,7 +21,7 @@ export const all = () => {
     },
   ];
 
-  React.useEffect(() => {
+  useEffect(() => {
     action(selectedCardIds, selectedCardValues)();
   }, [selectedCardIds]);
 

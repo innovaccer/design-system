@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useContext } from 'react';
 import { Icon } from '@/index';
 import { AvatarContext } from '../AvatarProvider';
 import { IconAppearance } from '../../icon';
@@ -30,7 +30,7 @@ const appearanceMapper: Record<string, string> = {
 };
 
 export const AvatarIcon = (props: AvatarIconProps) => {
-  const contextProp = React.useContext(AvatarContext);
+  const contextProp = useContext(AvatarContext);
   const { size, appearance, darkAppearance = [] } = contextProp;
   const iconSize = size === 'regular' ? 20 : 16;
 

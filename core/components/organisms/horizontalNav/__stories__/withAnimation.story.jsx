@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Card, Table, List, Text, Button } from '@/index';
 import HorizontalNav from '../HorizontalNav';
 import { action } from '@/utils/action';
@@ -230,10 +230,10 @@ export const withAnimation = () => {
     },
   ];
 
-  const [menu, setActiveMenu] = React.useState({
+  const [menu, setActiveMenu] = useState({
     name: 'menu_1',
   });
-  const [active, setActive] = React.useState({
+  const [active, setActive] = useState({
     name: 'menu_1',
   });
 

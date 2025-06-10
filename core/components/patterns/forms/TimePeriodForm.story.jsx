@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { Component } from 'react';
 import { Card, Heading, Text, Label, Select, Link, Button, DateRangePicker, Slider, Paragraph } from '@/index';
 
 export const timePeriodForm = () => {
-  class TimePeriodForm extends React.Component {
+  class TimePeriodForm extends Component {
     constructor(props = {}) {
       super(props);
 

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { SaraSparkle, Text } from '@/index';
 
 export const Horizontal = () => {

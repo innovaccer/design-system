@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { EditableInput } from '@/index';
 
 // CSF format story
@@ -7,7 +7,7 @@ export const all = () => {
   const error = false;
   const errorMessage = 'Error Message Description';
 
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = useState('');
 
   const size = 'regular';
 

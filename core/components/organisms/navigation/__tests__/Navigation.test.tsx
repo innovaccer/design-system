@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import Navigation, { NavigationProps as Props, Align, Menu } from '../Navigation';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Label, Textarea } from '@/index';
 
 export const Disabled = () => {

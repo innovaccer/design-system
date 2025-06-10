@@ -1,16 +1,16 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Column, Input, Row } from '@/index';
 import ActionButton from '../../actionButton';
 
 export const controlledInput = () => {
-  const [value, setValue] = React.useState('Value');
+  const [value, setValue] = useState('Value');
   const handleParentChange = (event) => {
     const updatedValue = event.target.value;
     this.window.setTimeout(() => {
       setValue(updatedValue);
     }, 1000);
   };
-  const [value1, setValue1] = React.useState('Value');
+  const [value1, setValue1] = useState('Value');
   const onChangeHandler = (event) => {
     const updatedValue = event.target.value;
     this.window.setTimeout(() => {

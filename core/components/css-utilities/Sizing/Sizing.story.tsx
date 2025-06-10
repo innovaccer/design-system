@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Heading, Paragraph, Card, Table, Text } from '@/index';
 import utilitiesSchema from '../Schema';
 

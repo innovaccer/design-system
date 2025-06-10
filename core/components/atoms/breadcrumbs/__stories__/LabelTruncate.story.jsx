@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Breadcrumbs, PageHeader } from '@/index';
 import { action } from '@/utils/action';
 

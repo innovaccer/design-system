@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState, useEffect } from 'react';
 import classNames from 'classnames';
 import Editable from '@/components/atoms/editable';
 import { ChipInput, Button, Chip, Text } from '@/index';
@@ -35,15 +35,15 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
   const { onChange: onChipInputChange, chipOptions = {}, ...rest } = chipInputOptions;
   const { onClick, ...chipObject } = chipOptions;
 
-  const [inputValue, setInputValue] = React.useState(props.value);
-  const [value, setValue] = React.useState(props.value);
-  const [showComponent, setShowComponent] = React.useState(false);
+  const [inputValue, setInputValue] = useState(props.value);
+  const [value, setValue] = useState(props.value);
+  const [showComponent, setShowComponent] = useState(false);
 
   const baseProps = extractBaseProps(props);
   const isWithChips = inputValue && inputValue.length;
   const isControlled = props.value !== undefined;
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (isControlled) {
       setInputValue(props.value);
       setValue(props.value);

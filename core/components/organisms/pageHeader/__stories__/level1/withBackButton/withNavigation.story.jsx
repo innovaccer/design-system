@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { HorizontalNav, Button, AvatarGroup, Badge, Text, StatusHint, PageHeader, Menu } from '@/index';
 import '../../style.css';
 
@@ -48,7 +48,7 @@ export const withNavigation = () => {
     },
   ];
 
-  const [active, setActive] = React.useState({
+  const [active, setActive] = useState({
     name: 'menu_1',
   });
 

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { RangeSlider } from '@/index';
 
 // CSF format story

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Select, Row, Column, Label } from '@/index';
 import { action } from '@/utils/action';
 

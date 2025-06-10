@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { ChipInput } from '@/index';
 
 export const controlled = () => {
-  const [value, setValue] = React.useState(['1024', '80']);
+  const [value, setValue] = useState(['1024', '80']);
 
   return <ChipInput value={value} placeholder="Add value" chipOptions={{ clearButton: true }} onChange={setValue} />;
 };

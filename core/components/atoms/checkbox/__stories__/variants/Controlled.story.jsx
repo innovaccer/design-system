@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Checkbox } from '@/index';
 
 // CSF format story
 export const controlledCheckbox = () => {
-  const [checked, setChecked] = React.useState(false);
+  const [checked, setChecked] = useState(false);
 
   const handleParentChange = (event) => {
     const updatedChecked = event.target.checked;

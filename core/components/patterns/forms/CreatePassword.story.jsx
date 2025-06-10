@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component } from 'react';
 import { action } from '@/utils/action';
 import { Card, Label, Text, Input, Button, Icon } from '@/index';
 
@@ -19,7 +19,7 @@ export const createPassword = () => {
     numericChar: '/\\d/',
   };
 
-  class CreatePassword extends React.Component {
+  class CreatePassword extends Component {
     constructor(props = {}) {
       super(props);
 

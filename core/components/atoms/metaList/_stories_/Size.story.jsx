@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Text, MetaList } from '@/index';
 
 // CSF format story

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { GridCell, Grid } from '@/index';
 import './style.css';
 

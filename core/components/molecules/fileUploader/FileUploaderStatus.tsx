@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { ProgressRing, Button } from '@/index';
 import { FileStatus } from '@/common.type';
 

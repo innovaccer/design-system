@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render } from '@testing-library/react';
 import PlaceholderImage, { PlaceholderImageProps as Props } from '../PlaceholderImage';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';

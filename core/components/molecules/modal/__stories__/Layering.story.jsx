@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { action } from '@/utils/action';
 import { Modal, ModalDescription, ModalHeader, ModalBody, ModalFooter, Button, Text } from '@/index';
 
 export const layering = () => {
-  const [open, setOpen] = React.useState(false);
-  const [openSecondOverlay, setOpenSecondOverlay] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [openSecondOverlay, setOpenSecondOverlay] = useState(false);
   const backdropClose = true;
   const dimension = 'medium';
 

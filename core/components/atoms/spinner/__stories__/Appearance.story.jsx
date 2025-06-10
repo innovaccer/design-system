@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Spinner, Text } from '@/index';
 
 // CSF format story

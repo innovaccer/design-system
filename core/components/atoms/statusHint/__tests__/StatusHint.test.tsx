@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render } from '@testing-library/react';
 import StatusHint, { StatusHintProps as IProps } from '../StatusHint';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';

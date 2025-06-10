@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { DateRangePicker } from '@/index';
 import Card from '@/components/atoms/card';
 

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState, useEffect } from 'react';
 import MultiSlider, { MultiSliderProps } from '@/components/atoms/multiSlider';
 import { NumberRange } from '@/common.type';
 
@@ -30,9 +30,9 @@ export interface RangeSliderProps extends MultiSliderProps {
 export const RangeSlider = (props: RangeSliderProps) => {
   const { value: valueProp, defaultValue, onChange, onRelease, ...rest } = props;
 
-  const [value, setValue] = React.useState(valueProp === undefined ? defaultValue : valueProp);
+  const [value, setValue] = useState(valueProp === undefined ? defaultValue : valueProp);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (valueProp !== undefined) {
       setValue(valueProp);
     }

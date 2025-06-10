@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { BaseProps } from '@/utils/types';
 import { Text, Divider } from '@/index';
 import styles from '@css/components/menu.module.css';

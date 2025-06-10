@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Legend from '../Legend';
 
 // CSF format story

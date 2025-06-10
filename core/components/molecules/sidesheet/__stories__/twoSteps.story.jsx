@@ -1,13 +1,13 @@
-import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { action } from '@/utils/action';
 import { Heading, Sidesheet, Button, Label, Text } from '@/index';
 
 export const twoSteps = () => {
-  const [page, setPage] = React.useState(1);
-  const [animate, setAnimate] = React.useState(true);
-  const [open, setOpen] = React.useState(false);
+  const [page, setPage] = useState(1);
+  const [animate, setAnimate] = useState(true);
+  const [open, setOpen] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setAnimate(true);
     return () => {
       setAnimate(false);

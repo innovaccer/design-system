@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Card, CardSubdued } from '@/index';
 
 // CSF format story

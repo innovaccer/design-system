@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Textarea } from '@/index';
 import { action } from '@/utils/action';
 

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Avatar } from '@/index';
 import Text from '@/components/atoms/text';
 

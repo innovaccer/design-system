@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Input } from '@/index';
 import { action } from '@/utils/action';
 import ActionButton from '../../actionButton';

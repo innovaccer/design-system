@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef } from 'react';
 import classNames from 'classnames';
 import { BaseHtmlProps, BaseProps } from '@/utils/types';
 import styles from '@css/components/card.module.css';
@@ -15,7 +15,7 @@ export interface CardProps extends BaseProps, BaseHtmlProps<HTMLDivElement> {
   shadow?: Shadow;
 }
 
-export const Card = React.forwardRef<HTMLDivElement, CardProps>((props, ref) => {
+export const Card = forwardRef<HTMLDivElement, CardProps>((props, ref) => {
   const { shadow = 'shadow10', children, className, ...rest } = props;
 
   const classes = classNames(

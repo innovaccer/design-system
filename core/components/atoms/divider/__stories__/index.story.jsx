@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Divider, Row, Column, Card, CardBody, Text, Heading } from '@/index';
 
 export const All = () => {

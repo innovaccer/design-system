@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { EditableDropdown } from '@/index';
 import { DropdownProps, EditableDropdownProps as Props } from '@/index.type';

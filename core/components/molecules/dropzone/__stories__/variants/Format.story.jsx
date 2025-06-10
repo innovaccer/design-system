@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Dropzone, LinkButton } from '@/index';
 import { action } from '@/utils/action';
 

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Chip, { ChipProps } from '../chip/Chip';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';

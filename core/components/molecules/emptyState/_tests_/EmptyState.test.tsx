@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render } from '@testing-library/react';
 import { EmptyState, Button, Icon } from '@/index';
 import { EmptyStateProps as Props, HeadingProps } from '@/index.type';

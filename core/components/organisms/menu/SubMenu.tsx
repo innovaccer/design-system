@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import MenuContext from './MenuContext';
 import { handleKeyDown } from './utils';
 import uidGenerator from '@/utils/uidGenerator';

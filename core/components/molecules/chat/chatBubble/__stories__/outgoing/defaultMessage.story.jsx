@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Text, Chat } from '@/index';
 
 export const defaultMessage = () => {

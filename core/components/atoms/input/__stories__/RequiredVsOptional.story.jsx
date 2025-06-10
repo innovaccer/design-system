@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Input, Label, Text } from '@/index';
 
 export const requiredVsOptionalMarking = () => {

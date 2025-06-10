@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { useState, Fragment } from 'react';
 import { Button, Modal, Grid, Text, GridCell } from '@/index';
 
 export const Grid_In_Modal = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const backdropClose = false;
 
   const onClose = () => {
@@ -38,10 +38,10 @@ export const Grid_In_Modal = () => {
           heading: 'Patients',
         }}
         footer={
-          <React.Fragment>
+          <Fragment>
             <Button>Cancel</Button>
             <Button className="ml-4">Next</Button>
-          </React.Fragment>
+          </Fragment>
         }
         seperator={true}
       >

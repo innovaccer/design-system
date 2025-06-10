@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef } from 'react';
 import classNames from 'classnames';
 import { BaseProps, BaseHtmlProps } from '@/utils/types';
 import styles from '@css/components/column.module.css';
@@ -57,7 +57,7 @@ export interface ColumnProps extends BaseProps, BaseHtmlProps<HTMLDivElement> {
   sizeXL?: Columns;
 }
 
-export const Column = React.forwardRef<HTMLDivElement, ColumnProps>((props, ref) => {
+export const Column = forwardRef<HTMLDivElement, ColumnProps>((props, ref) => {
   const { size, sizeXS, sizeS, sizeM, sizeL, sizeXL, className, children, ...rest } = props;
 
   const classes = classNames(

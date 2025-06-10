@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Combobox, Label } from '@/index';
 import { action } from '@/utils/action';
 
@@ -13,7 +13,7 @@ export const all = () => {
     { label: 'Vancomycin', value: 'Vancomycin' },
   ];
 
-  const [filterList, setFilterList] = React.useState([]);
+  const [filterList, setFilterList] = useState([]);
 
   const onSearchHandler = (value) => {
     const newList = medicineList.filter((medicine) => medicine.label.toLowerCase().startsWith(value.toLowerCase()));

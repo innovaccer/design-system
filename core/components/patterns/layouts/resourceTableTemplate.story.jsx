@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { PageHeader, Row, Column } from '@/index';
 
 export const resourceTableTemplate = () => {

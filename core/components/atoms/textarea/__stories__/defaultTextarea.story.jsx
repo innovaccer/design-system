@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Textarea, Label } from '@/index';
 
 export const defaultTextarea = () => (

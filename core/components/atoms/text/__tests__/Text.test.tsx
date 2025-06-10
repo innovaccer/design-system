@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Text, { TextProps as Props, TextAppearance, TextSize } from '../Text';
 import { render } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';

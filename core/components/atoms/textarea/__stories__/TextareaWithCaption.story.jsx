@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { Textarea, Label, Caption } from '@/index';
 
 export const textareaWithCaption = () => {
-  const [value, setValue] = React.useState('Patient moved out of country last week.');
+  const [value, setValue] = useState('Patient moved out of country last week.');
 
   return (
     <div className="w-50">

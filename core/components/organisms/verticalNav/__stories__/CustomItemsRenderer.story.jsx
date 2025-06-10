@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { VerticalNav, Icon, Tooltip, Text } from '@/index';
 
 export const CustomItemsRenderer = () => {
@@ -77,7 +77,7 @@ export const CustomItemsRenderer = () => {
     },
   ];
 
-  const [active, setActive] = React.useState({
+  const [active, setActive] = useState({
     name: 'care_management.timeline',
   });
 

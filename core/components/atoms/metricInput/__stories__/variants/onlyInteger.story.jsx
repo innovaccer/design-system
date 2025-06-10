@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { MetricInput, Label, Row, Column } from '@/index';
 
 // CSF format story
 export const OnlyInteger = () => {
-  const [value, setValue] = React.useState(2000);
+  const [value, setValue] = useState(2000);
 
   const onKeyDownHandler = (e) => {
     if (/[.]/.test(e.key)) {

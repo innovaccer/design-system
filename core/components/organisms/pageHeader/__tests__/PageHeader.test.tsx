@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render } from '@testing-library/react';
 import PageHeader, { PageHeaderProps as Props } from '../PageHeader';
 import { Stepper, Button, Tabs, Breadcrumbs, Badge, MetaList, StatusHint, HorizontalNav } from '@/index';

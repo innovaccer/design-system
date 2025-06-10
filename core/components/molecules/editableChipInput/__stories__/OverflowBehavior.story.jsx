@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { action } from '@/utils/action';
 import { EditableChipInput, Label } from '@/index';
 
 // CSF format story
 
 export const overflowBehavior = () => {
-  const [value, setValue] = React.useState(['John', 'Eric', 'Martin', 'Joy']);
+  const [value, setValue] = useState(['John', 'Eric', 'Martin', 'Joy']);
 
   const onChange = (updatedValue) => {
     setValue(updatedValue);

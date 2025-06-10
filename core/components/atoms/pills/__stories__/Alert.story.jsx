@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Pills } from '@/index';
 
 export const alert = () => <Pills appearance="alert">10</Pills>;

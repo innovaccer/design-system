@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Message } from '@/index';
 // CSF format story
 export const warning = () => (

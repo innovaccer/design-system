@@ -1,4 +1,3 @@
-import * as React from 'react';
 import classNames from 'classnames';
 import { Avatar } from '@/index';
 import styles from '@css/components/avatarGroup.module.css';

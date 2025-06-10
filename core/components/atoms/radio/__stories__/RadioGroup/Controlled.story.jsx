@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { ChoiceList, Radio } from '@/index';
 
 export const Controlled = () => {

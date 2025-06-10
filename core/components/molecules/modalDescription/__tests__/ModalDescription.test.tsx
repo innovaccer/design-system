@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render } from '@testing-library/react';
 import ModalDescription, { ModalDescriptionProps as Props } from '../ModalDescription';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';

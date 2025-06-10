@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { forwardRef, useRef, useImperativeHandle } from 'react';
 import classNames from 'classnames';
 import Text from '@/components/atoms/text';
 import { BaseProps, OmitNativeProps } from '@/utils/types';
@@ -52,7 +52,7 @@ export interface RadioProps extends BaseProps, OmitNativeProps<HTMLInputElement,
   onChange?: (event: ChangeEvent) => void;
 }
 
-export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forwardedRef) => {
+export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, forwardedRef) => {
   const {
     size = 'regular',
     label,
@@ -68,9 +68,9 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
     ...rest
   } = props;
 
-  const ref = React.useRef<HTMLInputElement>(null);
+  const ref = useRef<HTMLInputElement>(null);
 
-  React.useImperativeHandle(forwardedRef, (): HTMLInputElement => {
+  useImperativeHandle(forwardedRef, (): HTMLInputElement => {
     return ref.current as HTMLInputElement;
   });
 

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import classNames from 'classnames';
 import Meta, { MetaProps } from './Meta';
 import { Icon } from '@/index';

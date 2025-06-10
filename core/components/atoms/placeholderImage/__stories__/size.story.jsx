@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Text, PlaceholderImage, Placeholder } from '@/index';
 
 export const size = () => {

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { VerticalNav, Collapsible } from '@/index';
 
 export const flatEdgedVerticalNavigation = () => {
@@ -122,8 +122,8 @@ export const flatEdgedVerticalNavigation = () => {
     },
   ];
 
-  const [expanded, setExpanded] = React.useState(true);
-  const [active, setActive] = React.useState({
+  const [expanded, setExpanded] = useState(true);
+  const [active, setActive] = useState({
     name: 'medical_records.allergies',
   });
 

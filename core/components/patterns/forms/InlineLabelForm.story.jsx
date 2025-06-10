@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component } from 'react';
 import { action } from 'storybook/actions';
 import { Row, Column, Card, Text, Icon, Select, Checkbox, Button, InputMask, Radio } from '@/index';
 export const InlineLabelForm = () => {
@@ -18,7 +18,7 @@ export const InlineLabelForm = () => {
     },
   ];
 
-  class InlineLabelForm extends React.Component {
+  class InlineLabelForm extends Component {
     constructor(props = {}) {
       super(props);
 

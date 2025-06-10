@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import ChoiceList, { ChoiceListProps as Props } from '../ChoiceList';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';

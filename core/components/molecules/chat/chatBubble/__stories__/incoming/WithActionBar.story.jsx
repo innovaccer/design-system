@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Text, Chat, Button } from '@/index';
 
 export const withActionBar = () => {

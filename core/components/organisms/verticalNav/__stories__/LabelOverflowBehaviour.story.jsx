@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { VerticalNav } from '@/index';
 
 export const LabelOverflowBehaviour = () => {
@@ -42,7 +42,7 @@ export const LabelOverflowBehaviour = () => {
     },
   ];
 
-  const [active, setActive] = React.useState({
+  const [active, setActive] = useState({
     name: 'care_management.timeline',
   });
 

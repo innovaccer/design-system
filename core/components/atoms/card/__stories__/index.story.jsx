@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Card, CardHeader, CardBody, CardFooter, Button, Text, CardSubdued } from '@/index';
 import './style.css';
 
