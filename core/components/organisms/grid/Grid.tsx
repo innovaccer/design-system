@@ -376,9 +376,14 @@ export class Grid extends React.Component<GridProps, GridState> {
   }
 
   componentDidMount() {
-    this.setState({
-      init: true,
-    });
+    this.setState(
+      {
+        init: true,
+      },
+      () => {
+        this.adjustPaddingRight();
+      }
+    );
     window.addEventListener('resize', this.forceRerender.bind(this));
   }
 
@@ -394,11 +399,17 @@ export class Grid extends React.Component<GridProps, GridState> {
   componentDidUpdate(prevProps: GridProps, prevState: GridState) {
     if (prevState.init !== this.state.init) {
       this.addScrollListeners();
+      this.adjustPaddingRight();
     }
 
     if (prevProps.page !== this.props.page || prevProps.error !== this.props.error) {
       this.removeScrollListeners();
       this.addScrollListeners();
+      this.adjustPaddingRight();
+    }
+
+    if (prevProps.data !== this.props.data) {
+      this.adjustPaddingRight();
     }
   }
 
