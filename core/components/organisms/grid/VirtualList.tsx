@@ -37,10 +37,21 @@ const VirtualList = (props: VirtualScrollProps) => {
   const [init, setInit] = useState(false);
   const listRef = useRef<HTMLDivElement | null>(null);
   const lastScrollTop = useRef(0);
+  const prevTotalLength = useRef(totalLength);
 
   useEffect(() => {
     updateOffset(initialOffset);
   }, [initialOffset]);
+
+  // Reset virtualization state only when data length decreases (e.g. during sorting)
+  // but not when it increases (e.g. during infinite scroll)
+  useEffect(() => {
+    if (totalLength < prevTotalLength.current) {
+      setOffset(0);
+      setAvgRowHeight(minItemHeight);
+    }
+    prevTotalLength.current = totalLength;
+  }, [totalLength, minItemHeight]);
 
   // Add effect to handle external scroll events
   useEffect(() => {

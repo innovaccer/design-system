@@ -23,7 +23,7 @@ export interface GridBodyProps {
 export const GridBody = (props: GridBodyProps) => {
   const context = React.useContext(GridContext);
 
-  const { data, ref, loading, withPagination, page, pageSize, totalRecords, size } = context;
+  const { data, ref, loading, withPagination, page, pageSize, totalRecords, size, sortingList } = context;
   const listRef = React.useRef<HTMLDivElement | null>(null);
 
   const {
@@ -67,6 +67,15 @@ export const GridBody = (props: GridBodyProps) => {
       }
     };
   }, []);
+
+  // Reset infinite scroll state when sorting changes
+  React.useEffect(() => {
+    setCurrentPage(2);
+    setHasMoreData(true);
+    setError(false);
+    setIsLoadingMore(false);
+    endReached.current = false;
+  }, [sortingList]);
 
   const totalPages = Math.ceil(totalRecords / pageSize);
   const isLastPage = withPagination && page === totalPages;
