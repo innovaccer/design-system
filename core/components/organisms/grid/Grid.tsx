@@ -435,7 +435,11 @@ export class Grid extends React.Component<GridProps, GridState> {
 
   adjustPaddingRight() {
     const gridHeadEl = this.gridRef!.querySelector(`.${styles['Grid-head']}`) as HTMLElement;
-    const gridBodyEl = this.gridRef!.querySelector(`.${styles['Grid-body']}`) as HTMLElement;
+    let gridBodyEl = this.gridRef!.querySelector(`.${styles['Grid-body']}`) as HTMLElement;
+
+    if (this.props.enableRowVirtualization) {
+      gridBodyEl = this.gridRef!.querySelector(`.VS-container`) as HTMLElement;
+    }
 
     if (gridHeadEl && gridBodyEl) {
       const hasVerticalScrollbar = gridBodyEl.scrollHeight > gridBodyEl.clientHeight;

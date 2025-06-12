@@ -177,11 +177,13 @@ export const GridBody = (props: GridBodyProps) => {
     onScrollHandler(event, element);
   };
 
+  const virtualListClassName = styles['Grid-body'] + ' VS-container';
+
   const memoizedVirtualScroll = React.useMemo(
     () => (
       <VirtualList
         buffer={buffer}
-        className={styles['Grid-body']}
+        className={virtualListClassName}
         length={visibleRows}
         minItemHeight={minRowHeight[size]}
         totalLength={dataLength}
