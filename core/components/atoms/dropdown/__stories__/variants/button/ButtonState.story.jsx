@@ -17,7 +17,7 @@ export const state = () => {
               <div className="mr-8" key={ind}>
                 <Text weight="strong">{buttonState ? 'Disabled' : 'Enabled'}</Text> <br />
                 <br />
-                <Dropdown icon={'events'} disabled={buttonState} options={storyOptions} placeholder={'Select'} />
+                <Dropdown icon={'event'} disabled={buttonState} options={storyOptions} placeholder={'Select'} />
               </div>
             );
           })}
@@ -50,7 +50,7 @@ const customCode = `() => {
     storyOptions.push({
       label: \`Option \${i}\`,
       value: \`Option \${i}\`,
-      icon: 'events',
+      icon: 'event',
       subInfo: 'subInfo'
     });
   }
@@ -61,11 +61,11 @@ const customCode = `() => {
     <div className='d-flex'>
       <div className='mr-8 w-25'>
         <Text weight="strong">Icon Disabled</Text> <br /><br />
-        <Dropdown icon={'events'} disabled={true} options={storyOptions} />
+        <Dropdown icon={'event'} disabled={true} options={storyOptions} />
       </div>
       <div className='mr-8 w-25'>
         <Text weight="strong">Icon Enabled</Text> <br /><br />
-        <Dropdown icon={'events'} disabled={false} options={storyOptions} />
+        <Dropdown icon={'event'} disabled={false} options={storyOptions} />
       </div>
       <div className='mr-8 w-25'>
         <Text weight="strong">Label Disabled</Text> <br /><br />

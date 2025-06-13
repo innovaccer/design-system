@@ -47,7 +47,7 @@ export const basic = () => {
           onClick={action('button-clicked')}
           appearance={'basic'}
           selected={true}
-          icon="events"
+          icon="event"
           aria-label="Selected"
         />
         <br />
