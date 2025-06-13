@@ -36,9 +36,6 @@ jobs:
       - name: remove .npmrc
         run: rm -rf .npmrc
         
-      - name: push tag to github
-        run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git $(node ./getVersion.js)
-
       - name: remove css/dist dist/ from commit
         run: |
           git reset HEAD~1
@@ -47,6 +44,11 @@ jobs:
 
       - name: push version to github
         run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git HEAD:next
+
+      - name: create and push tag
+        run: |
+          git tag -a $(node ./getVersion.js) -m "Released $(node ./getVersion.js) [skip ci]"
+          git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git $(node ./getVersion.js)
     
       - name: deploy storybook
         run: npm run deploy-storybook -- --bucket-path=webui-mds-sb-next --aws-profile=NONE --ci
