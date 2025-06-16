@@ -1,3 +1,52 @@
+## 4.9.0 (2025-06-16)
+
+### Highlights
+
+- feat(chatInput): add new chatInput component (f441d91b)
+- feat(table): update states of table component (a22f2008)
+- feat(table): implement  public data selection methods (fd4735d1)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(chatInput): add new chatInput component (f441d91b)
+- feat(table): update states of table component (a22f2008)
+- feat(table): implement  public data selection methods (fd4735d1)
+
+### Fixes
+
+- fix(table): update table filtering section in docs (794066c2)
+- fix(checkbox): improve DOM structure and spacing (6f1a21d1)
+- fix(verticalNav): add string type for pills in vertical nav component (939f67af)
+- fix(table): fix grid head & body sync issue on scroll in virtualized table (9ed6b109)
+- fix(table): fix grid head & body sync issue in pinned columns (04bf2b4b)
+- fix(table): fix blank state on sorting issue for virtualized table (69e0d813)
+- fix(table): update right padding for columns (1f00360a)
+- fix(table): fix grid head & body alignment issue in pinned virtualized table (1e97f9a9)
+- fix(table): update expanded state of nested row for virtualized table (ff0cc553)
+- fix(typography): fix default props appearance issue (40872de4)
+
+### Improvements
+
+- feat(verticalNav): update stories structure for vertical nav (370e1954)
+
+### Documentation
+
+NA
+
+---
+
 ## 4.8.0 (2025-05-01)
 
 ### Highlights
