@@ -6,7 +6,7 @@ export type Menu = {
   link?: string;
   icon?: string;
   group?: string;
-  count?: number;
+  count?: number | string;
   disabled?: boolean;
   subMenu?: Menu[];
   iconType?: IconType;

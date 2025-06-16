@@ -121,7 +121,7 @@ export const MenuItem = (props: MenuItemProps) => {
     }
 
     if (menu.count !== undefined) {
-      const count = menu.count > 99 ? '99+' : menu.count;
+      const count = menu.count && typeof menu.count === 'number' && menu.count > 99 ? '99+' : menu.count;
       return <MenuPills disabled={menu.disabled} isActive={isActive} count={count} />;
     }
     return null;

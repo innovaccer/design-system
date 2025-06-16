@@ -17,7 +17,7 @@ export interface VerticalNavProps extends BaseProps {
    *    link?: string;
    *    group?: string;
    *    disabled?: boolean;
-   *    count?: number;
+   *    count?: number | string;
    *    subMenu?: Menu[];
    *    icon?: string;
    *    iconType?: 'rounded' | 'outlined';
