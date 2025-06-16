@@ -3,7 +3,7 @@
 exports[`Avatar Icon component 
   size: "regular", appearance: "accent1"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -116,7 +116,7 @@ Object {
 exports[`Avatar Icon component 
   size: "regular", appearance: "accent2"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -229,7 +229,7 @@ Object {
 exports[`Avatar Icon component 
   size: "regular", appearance: "accent3"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -342,7 +342,7 @@ Object {
 exports[`Avatar Icon component 
   size: "regular", appearance: "accent4"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -455,7 +455,7 @@ Object {
 exports[`Avatar Icon component 
   size: "regular", appearance: "alert"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -568,7 +568,7 @@ Object {
 exports[`Avatar Icon component 
   size: "regular", appearance: "primary"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -681,7 +681,7 @@ Object {
 exports[`Avatar Icon component 
   size: "regular", appearance: "secondary"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -794,7 +794,7 @@ Object {
 exports[`Avatar Icon component 
   size: "regular", appearance: "success"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -907,7 +907,7 @@ Object {
 exports[`Avatar Icon component 
   size: "regular", appearance: "warning"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -1020,7 +1020,7 @@ Object {
 exports[`Avatar Icon component 
   size: "tiny", appearance: "accent1"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -1133,7 +1133,7 @@ Object {
 exports[`Avatar Icon component 
   size: "tiny", appearance: "accent2"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -1246,7 +1246,7 @@ Object {
 exports[`Avatar Icon component 
   size: "tiny", appearance: "accent3"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -1359,7 +1359,7 @@ Object {
 exports[`Avatar Icon component 
   size: "tiny", appearance: "accent4"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -1472,7 +1472,7 @@ Object {
 exports[`Avatar Icon component 
   size: "tiny", appearance: "alert"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -1585,7 +1585,7 @@ Object {
 exports[`Avatar Icon component 
   size: "tiny", appearance: "primary"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -1698,7 +1698,7 @@ Object {
 exports[`Avatar Icon component 
   size: "tiny", appearance: "secondary"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -1811,7 +1811,7 @@ Object {
 exports[`Avatar Icon component 
   size: "tiny", appearance: "success"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -1924,7 +1924,7 @@ Object {
 exports[`Avatar Icon component 
   size: "tiny", appearance: "warning"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
