@@ -32,6 +32,11 @@ jobs:
         run: npm publish --access public --tag=next
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+      
+      - name: Unpublish to npmjs (for testing)
+        run: npm unpublish @innovaccer/design-system@6.0.0-0
+        env:
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
 
       - name: remove .npmrc
         run: rm -rf .npmrc
