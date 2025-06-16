@@ -108,6 +108,7 @@ export const pinnedColumns = () => {
         data={data}
         schema={schema}
         withHeader={true}
+        withCheckbox={true}
         headerOptions={{
           withSearch: false,
         }}
@@ -221,6 +222,7 @@ const customCode = `() => {
           data={data}
           schema={schema}
           withHeader={true}
+          withCheckbox={true}
           headerOptions={{
             withSearch: false
           }}
