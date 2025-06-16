@@ -28,6 +28,10 @@ export const GridRow = (props: GridRowProps) => {
   const rowRef = React.useRef<HTMLDivElement>(null);
   const [expanded, setExpanded] = React.useState<boolean>(_expandNestedRow || false);
 
+  React.useEffect(() => {
+    setExpanded(_expandNestedRow || false);
+  }, [_expandNestedRow]);
+
   const rowClasses = classNames(styles['Grid-row'], styles['Grid-row--body'], {
     [styles['Grid-row--selected']]: data._selected,
     [styles['Grid-row--disabled']]: data.disabled,

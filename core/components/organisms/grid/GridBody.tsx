@@ -23,7 +23,7 @@ export interface GridBodyProps {
 export const GridBody = (props: GridBodyProps) => {
   const context = React.useContext(GridContext);
 
-  const { data, ref, loading, withPagination, page, pageSize, totalRecords, size } = context;
+  const { data, ref, loading, withPagination, page, pageSize, totalRecords, size, sortingList } = context;
   const listRef = React.useRef<HTMLDivElement | null>(null);
 
   const {
@@ -67,6 +67,15 @@ export const GridBody = (props: GridBodyProps) => {
       }
     };
   }, []);
+
+  // Reset infinite scroll state when sorting changes
+  React.useEffect(() => {
+    setCurrentPage(2);
+    setHasMoreData(true);
+    setError(false);
+    setIsLoadingMore(false);
+    endReached.current = false;
+  }, [sortingList]);
 
   const totalPages = Math.ceil(totalRecords / pageSize);
   const isLastPage = withPagination && page === totalPages;
@@ -160,16 +169,26 @@ export const GridBody = (props: GridBodyProps) => {
     }
   };
 
+  const virtualScrollHandler = (event: Event, element: HTMLElement) => {
+    const gridHeadEl = ref!.querySelector('.Grid-head') as HTMLElement;
+    if (gridHeadEl) {
+      gridHeadEl.scrollLeft = element.scrollLeft;
+    }
+    onScrollHandler(event, element);
+  };
+
+  const virtualListClassName = styles['Grid-body'] + ' VS-container';
+
   const memoizedVirtualScroll = React.useMemo(
     () => (
       <VirtualList
         buffer={buffer}
-        className={styles['Grid-body']}
+        className={virtualListClassName}
         length={visibleRows}
         minItemHeight={minRowHeight[size]}
         totalLength={dataLength}
         renderItem={renderRow}
-        onScroll={onScrollHandler}
+        onScroll={virtualScrollHandler}
       />
     ),
     [dataLength, renderRow, minRowHeight, size]
