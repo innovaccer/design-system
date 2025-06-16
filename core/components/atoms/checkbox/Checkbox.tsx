@@ -196,25 +196,31 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
             {IconMapper && <CheckboxIcon name={IconMapper} />}
           </span>
         </div>
-        <div className={styles['Checkbox-labelWrapper']}>
-          {label && label.trim() && (
-            <label htmlFor={id} className={CheckboxLabelClass} data-test="DesignSystem-Checkbox-Label">
+        {(label || helpText) && (
+          <div className={styles['Checkbox-labelWrapper']}>
+            {label && label.trim() && (
+              <label htmlFor={id} className={CheckboxLabelClass} data-test="DesignSystem-Checkbox-Label">
+                <Text
+                  size={size === 'tiny' ? 'small' : 'regular'}
+                  appearance={disabled ? 'disabled' : 'default'}
+                  className={LabelTextClass}
+                  ref={labelRef}
+                >
+                  {label.trim()}
+                </Text>
+              </label>
+            )}
+            {helpText && (
               <Text
-                size={size === 'tiny' ? 'small' : 'regular'}
-                appearance={disabled ? 'disabled' : 'default'}
-                className={LabelTextClass}
-                ref={labelRef}
+                data-test="DesignSystem-Checkbox-HelpText"
+                size="small"
+                appearance={disabled ? 'disabled' : 'subtle'}
               >
-                {label.trim()}
+                {helpText.trim()}
               </Text>
-            </label>
-          )}
-          {helpText && (
-            <Text data-test="DesignSystem-Checkbox-HelpText" size="small" appearance={disabled ? 'disabled' : 'subtle'}>
-              {helpText.trim()}
-            </Text>
-          )}
-        </div>
+            )}
+          </div>
+        )}
       </div>
     </>
   );
