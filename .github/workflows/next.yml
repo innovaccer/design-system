@@ -32,11 +32,6 @@ jobs:
         run: npm publish --access public --tag=next
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
-      
-      - name: Unpublish to npmjs (for testing)
-        run: npm unpublish @innovaccer/design-system@6.0.0-0
-        env:
-          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
 
       - name: remove .npmrc
         run: rm -rf .npmrc
@@ -56,7 +51,9 @@ jobs:
           git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git $(node ./getVersion.js)
     
       - name: deploy storybook
-        run: npm run deploy-storybook -- --bucket-path=webui-mds-sb-next --aws-profile=NONE --ci
+        run: |
+          echo "Starting storybook deployment..."
+          npm run deploy-storybook -- --bucket-path=webui-mds-sb-next --aws-profile=NONE --ci --verbose
         env:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.DOCS_KEY }}
           AWS_ACCESS_KEY_ID: ${{ secrets.DOCS_KEY_ID }}
