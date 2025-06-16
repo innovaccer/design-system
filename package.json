@@ -27,7 +27,7 @@
     "build-css": "gulp --gulpfile css/gulpfile.js build",
     "clean-css": "gulp --gulpfile css/gulpfile.js clean",
     "watch-css": "gulp --gulpfile css/gulpfile.js build && gulp --gulpfile css/gulpfile.js watch",
-    "build-js": "rm -rf dist/* && rollup -c",
+    "build-js": "rm -rf dist/* && rollup -c rollup.config.mjs",
     "build-type": "rm -rf .lib && tsc -b tsconfig.type.json",
     "build": "npm run build-css && npm run build-js",
     "version": "./scripts/version.sh",

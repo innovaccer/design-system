@@ -1,20 +1,25 @@
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
-import babel from 'rollup-plugin-babel';
+import babel from '@rollup/plugin-babel';
 import alias from '@rollup/plugin-alias';
 import json from '@rollup/plugin-json';
 import path from 'path';
-import packageJSON from './package.json';
+import { fileURLToPath } from 'url';
+import packageJSON from './package.json' assert { type: 'json' };
 import replace from '@rollup/plugin-replace';
-import { uglify } from 'rollup-plugin-uglify';
+import terser from '@rollup/plugin-terser';
 import gzipPlugin from 'rollup-plugin-gzip';
 import { compress } from 'brotli';
 import image from '@rollup/plugin-image';
 import postcss from 'rollup-plugin-postcss';
-import { concatTokenCSS } from './rollupPlugin';
+import { concatTokenCSS } from './rollupPlugin.mjs';
 import colorModFunction from 'postcss-color-mod-function';
 import autoprefixer from 'autoprefixer';
 import typescript from '@rollup/plugin-typescript';
+import ts from 'typescript';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const { version, name, license, homepage } = packageJSON;
 
@@ -99,7 +104,7 @@ const commonJsPlugins = [
       autoprefixer(),
     ],
   }),
-  uglify(),
+  terser(),
 ];
 
 const umdPlugins = [
@@ -137,7 +142,7 @@ const umdPlugins = [
     ],
   }),
   concatTokenCSS(cssSources, cssFiles),
-  uglify(),
+  terser(),
 ];
 
 const jsUmdOutputConfig = {
@@ -172,7 +177,7 @@ const jsUmdConfig = {
 
 const jsCjsConfig = {
   ...baseConfig,
-  plugins: [...commonJsPlugins, uglify()],
+  plugins: [...commonJsPlugins, terser()],
   output: jsCjsOutputConfig,
 };
 
@@ -201,7 +206,7 @@ const tsConfig = {
     resolve({ extensions }),
 
     typescript({
-      typescript: require('ttypescript'),
+      typescript: ts,
       tsconfig: path.resolve(__dirname, './tsconfig.type.json'),
     }),
 
