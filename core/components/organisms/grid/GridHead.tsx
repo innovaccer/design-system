@@ -58,6 +58,7 @@ export const GridHead = (props: GridHeadProps) => {
     if (currSchema.length) {
       const classes = classNames({
         [styles['Grid-cellGroup']]: true,
+        'w-100': !pinned,
         [styles['Grid-cellGroup--pinned']]: pinned,
         [styles[`Grid-cellGroup--pinned-${pinned}`]]: pinned,
         [styles['Grid-cellGroup--main']]: !pinned,

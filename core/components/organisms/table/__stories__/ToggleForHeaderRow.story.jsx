@@ -103,7 +103,7 @@ const customCode = `() => {
       cellType: 'ICON',
       sorting: false,
       translate: _ => ({
-        icon: 'events'
+        icon: 'event'
       })
     },
   ];

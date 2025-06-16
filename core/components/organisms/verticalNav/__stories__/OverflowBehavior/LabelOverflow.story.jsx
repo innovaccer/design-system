@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { VerticalNav } from '@/index';
 
-export const LabelOverflowBehaviour = () => {
+export const LabelOverflow = () => {
   const data = [
     {
       name: 'clinical_data',
@@ -39,6 +39,7 @@ export const LabelOverflowBehaviour = () => {
       name: 'preventive_health',
       label: 'Preventive Health Precautions Template',
       icon: 'beenhere',
+      count: 10,
     },
   ];
 
@@ -47,7 +48,7 @@ export const LabelOverflowBehaviour = () => {
   });
 
   return (
-    <div className="bg-secondary-lightest vh-100">
+    <div className="bg-secondary-lightest vh-75">
       <VerticalNav menus={data} expanded={true} active={active} onClick={setActive} />
     </div>
   );
@@ -90,7 +91,8 @@ const customCode = `() => {
     {
       name: 'preventive_health',
       label: 'Preventive Health Precautions Template',
-      icon: 'beenhere'
+      icon: 'beenhere',
+      count: 10,
     },
   ];
 
@@ -99,7 +101,7 @@ const customCode = `() => {
   });
   
   return (
-    <div className="bg-secondary-lightest vh-100">
+    <div className="bg-secondary-lightest vh-75">
       <VerticalNav
         menus={data}
         expanded={true}
@@ -111,7 +113,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/VerticalNav/VerticalNav/Label Overflow Behaviour',
+  title: 'Components/VerticalNav/VerticalNav/Overflow Behavior/Label Overflow',
   component: VerticalNav,
   parameters: {
     docs: {

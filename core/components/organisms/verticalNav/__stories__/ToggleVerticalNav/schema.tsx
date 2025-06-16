@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Icon, GridCell } from '@/index';
-import { ColumnSchema } from '../../grid';
+import { ColumnSchema } from '../../../grid';
 
 const schema: ColumnSchema[] = [
   {

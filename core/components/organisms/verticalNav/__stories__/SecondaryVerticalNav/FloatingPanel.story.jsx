@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { VerticalNav, Card, Heading } from '@/index';
+import { VerticalNav } from '@/index';
 
-export const secondaryVerticalNavigation = () => {
+export const floatingPanel = () => {
   const primaryNavdata = [
     {
       name: 'clinical_data',
@@ -71,67 +71,32 @@ export const secondaryVerticalNavigation = () => {
       icon: 'beenhere',
     },
     {
-      name: 'profile',
-      label: 'Profile',
-      icon: 'receipt',
-    },
-    {
-      name: 'claims',
-      label: 'Claims',
-      icon: 'account_circle',
-    },
-    {
       name: 'manual_entry',
       label: 'Manual Entry',
       icon: 'edit',
-    },
-    {
-      name: 'patient_notes',
-      label: 'Patient Notes',
-      icon: 'note_add',
-    },
-    {
-      name: 'documents',
-      label: 'Documents',
-      icon: 'assignment',
     },
   ];
 
   const secondaryNavdata = [
     {
-      name: '19/01/20',
-      label: '19 Jan, 2020',
-      group: 'Completed',
-    },
-    {
-      name: '16/01/20',
-      label: '16 Jan, 2020',
-      group: 'Completed',
-    },
-    {
-      name: '11/11/20',
-      label: '11 Nov, 2020',
-      group: 'Ongoing',
+      name: '11/12/20',
+      label: '11 Dec, 2020',
     },
     {
       name: '17/11/20',
       label: '17 Nov, 2020',
-      group: 'Ongoing',
     },
     {
       name: '07/11/20',
       label: '7 Nov, 2020',
-      group: 'Ongoing',
     },
     {
       name: '09/10/20',
       label: '9 Oct, 2020',
-      group: 'Ongoing',
     },
     {
       name: '23/08/20',
       label: '23 Aug, 2020',
-      group: 'Ongoing',
     },
   ];
 
@@ -140,18 +105,19 @@ export const secondaryVerticalNavigation = () => {
   });
 
   const [secondaryActive, setSecondaryActive] = React.useState({
-    name: '19/01/20',
+    name: '11/12/20',
   });
 
   return (
-    <div className="d-flex bg-secondary-lightest vh-100">
+    <div className="d-flex bg-secondary-lightest vh-75">
       <VerticalNav menus={primaryNavdata} active={primaryActive} onClick={setPrimaryActive} />
-      <div className="w-100 ml-6">
-        <Heading className="my-5">Assessments</Heading>
-        <Card shadow="none pb-12">
-          <VerticalNav menus={secondaryNavdata} active={secondaryActive} onClick={setSecondaryActive} />
-        </Card>
-      </div>
+      <VerticalNav
+        menus={secondaryNavdata}
+        active={secondaryActive}
+        rounded={true}
+        className="mt-10 ml-5"
+        onClick={setSecondaryActive}
+      />
     </div>
   );
 };
@@ -227,67 +193,32 @@ const customCode = `() => {
       icon: 'beenhere'
     },
     {
-      name: 'profile',
-      label: 'Profile',
-      icon: 'receipt'
-    },
-    {
-      name: 'claims',
-      label: 'Claims',
-      icon: 'account_circle'
-    },
-    {
       name: 'manual_entry',
       label: 'Manual Entry',
       icon: 'edit'
-    },
-    {
-      name: 'patient_notes',
-      label: 'Patient Notes',
-      icon: 'note_add'
-    },
-    {
-      name: 'documents',
-      label: 'Documents',
-      icon: 'assignment'
     },
   ];
 
   const secondaryNavdata = [
     {
-      name: '19/01/20',
-      label: '19 Jan, 2020',
-      group: 'Completed'
-    },
-    {
-      name: '16/01/20',
-      label: '16 Jan, 2020',
-      group: 'Completed'
-    },
-    {
-      name: '11/11/20',
-      label: '11 Nov, 2020',
-      group: 'Ongoing'
+      name: '11/12/20',
+      label: '11 Dec, 2020',
     },
     {
       name: '17/11/20',
       label: '17 Nov, 2020',
-      group: 'Ongoing'
     },
     {
       name: '07/11/20',
       label: '7 Nov, 2020',
-      group: 'Ongoing'
     },
     {
       name: '09/10/20',
       label: '9 Oct, 2020',
-      group: 'Ongoing'
     },
     {
       name: '23/08/20',
       label: '23 Aug, 2020',
-      group: 'Ongoing'
     },
   ];
 
@@ -296,32 +227,29 @@ const customCode = `() => {
   });
 
   const [secondaryActive, setSecondaryActive] = React.useState({
-    name: '19/01/20'
+    name: '11/12/20'
   });
 
   return (
-    <div className="d-flex bg-secondary-lightest vh-100">
+    <div className="d-flex bg-secondary-lightest vh-75">
       <VerticalNav
         menus={primaryNavdata}
         active={primaryActive}
         onClick={setPrimaryActive}
       />
-      <div className="w-100 ml-6">
-        <Heading className="my-5">Assessments</Heading>
-        <Card shadow="none pb-12">
-          <VerticalNav
-            menus={secondaryNavdata}
-            active={secondaryActive}
-            onClick={setSecondaryActive}
-          />
-        </Card>
-      </div>
+      <VerticalNav
+        menus={secondaryNavdata}
+        active={secondaryActive}
+        rounded={true}
+        className="mt-10 ml-5"
+        onClick={setSecondaryActive}
+      />
     </div>
   );
 }`;
 
 export default {
-  title: 'Components/VerticalNav/VerticalNav/Secondary Vertical Navigation',
+  title: 'Components/VerticalNav/VerticalNav/Secondary Vertical Navigation/Floating Panel',
   component: VerticalNav,
   parameters: {
     docs: {

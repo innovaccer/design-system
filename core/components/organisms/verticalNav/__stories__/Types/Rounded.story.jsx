@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { VerticalNav } from '@/index';
 
-export const roundEdgedVerticalNavigation = () => {
+export const rounded = () => {
   const primaryNavdata = [
     {
       name: 'clinical_data',
@@ -75,26 +75,6 @@ export const roundEdgedVerticalNavigation = () => {
       label: 'Profile',
       icon: 'receipt',
     },
-    {
-      name: 'claims',
-      label: 'Claims',
-      icon: 'account_circle',
-    },
-    {
-      name: 'manual_entry',
-      label: 'Manual Entry',
-      icon: 'edit',
-    },
-    {
-      name: 'patient_notes',
-      label: 'Patient Notes',
-      icon: 'note_add',
-    },
-    {
-      name: 'documents',
-      label: 'Documents',
-      icon: 'assignment',
-    },
   ];
 
   const secondaryNavdata = [
@@ -129,7 +109,7 @@ export const roundEdgedVerticalNavigation = () => {
   });
 
   return (
-    <div className="d-flex bg-secondary-lightest vh-100">
+    <div className="d-flex bg-secondary-lightest vh-75">
       <VerticalNav menus={primaryNavdata} active={primaryActive} onClick={setPrimaryActive} />
       <VerticalNav
         menus={secondaryNavdata}
@@ -217,26 +197,6 @@ const customCode = `() => {
       label: 'Profile',
       icon: 'receipt'
     },
-    {
-      name: 'claims',
-      label: 'Claims',
-      icon: 'account_circle'
-    },
-    {
-      name: 'manual_entry',
-      label: 'Manual Entry',
-      icon: 'edit'
-    },
-    {
-      name: 'patient_notes',
-      label: 'Patient Notes',
-      icon: 'note_add'
-    },
-    {
-      name: 'documents',
-      label: 'Documents',
-      icon: 'assignment'
-    },
   ];
 
   const secondaryNavdata = [
@@ -271,7 +231,7 @@ const customCode = `() => {
   });
 
   return (
-    <div className="d-flex bg-secondary-lightest vh-100">
+    <div className="d-flex bg-secondary-lightest vh-75">
       <VerticalNav
         menus={primaryNavdata}
         active={primaryActive}
@@ -289,7 +249,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/VerticalNav/VerticalNav/Round Edged Vertical Navigation',
+  title: 'Components/VerticalNav/VerticalNav/Types/Rounded',
   component: VerticalNav,
   parameters: {
     docs: {

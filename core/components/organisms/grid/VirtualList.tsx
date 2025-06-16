@@ -37,10 +37,36 @@ const VirtualList = (props: VirtualScrollProps) => {
   const [init, setInit] = useState(false);
   const listRef = useRef<HTMLDivElement | null>(null);
   const lastScrollTop = useRef(0);
+  const prevTotalLength = useRef(totalLength);
 
   useEffect(() => {
     updateOffset(initialOffset);
   }, [initialOffset]);
+
+  // Reset virtualization state only when data length decreases (e.g. during sorting)
+  // but not when it increases (e.g. during infinite scroll)
+  useEffect(() => {
+    if (totalLength < prevTotalLength.current) {
+      setOffset(0);
+      setAvgRowHeight(minItemHeight);
+    }
+    prevTotalLength.current = totalLength;
+  }, [totalLength, minItemHeight]);
+
+  // Add effect to handle external scroll events
+  useEffect(() => {
+    const handleExternalScroll = (e: Event) => {
+      const target = e.target as HTMLElement;
+      if (target && target.classList.contains('Grid-head') && listRef.current) {
+        listRef.current.scrollLeft = target.scrollLeft;
+      }
+    };
+
+    document.addEventListener('scroll', handleExternalScroll, true);
+    return () => {
+      document.removeEventListener('scroll', handleExternalScroll, true);
+    };
+  }, []);
 
   const updateOffset = useCallback(
     (prevOffset) => {
@@ -80,15 +106,14 @@ const VirtualList = (props: VirtualScrollProps) => {
     [offset, buffer, avgRowHeight, minItemHeight]
   );
 
-  const onScrollHandler = useCallback(
-    (event) => {
-      if (listRef.current) {
-        const el = listRef.current as HTMLElement;
-        const { scrollTop } = el;
-        const direction = Math.floor(scrollTop - lastScrollTop.current);
+  const onScrollHandler = useCallback(() => {
+    if (listRef.current) {
+      const el = listRef.current as HTMLElement;
+      const { scrollTop } = el;
+      const direction = Math.floor(scrollTop - lastScrollTop.current);
 
-        if (direction === 0) return;
-
+      // Handle vertical scroll
+      if (direction !== 0) {
         const items = el.querySelectorAll('.VS-item');
         let newOffset = offset;
         let newAvgRowHeight = avgRowHeight;
@@ -131,11 +156,16 @@ const VirtualList = (props: VirtualScrollProps) => {
         }
 
         lastScrollTop.current = scrollTop;
-        if (onScroll) onScroll(event, el);
       }
-    },
-    [offset, avgRowHeight, buffer, length, minItemHeight, totalLength, onScroll]
-  );
+
+      // Always trigger scroll event for horizontal sync
+      if (onScroll) {
+        const syntheticEvent = new Event('scroll');
+        Object.defineProperty(syntheticEvent, 'target', { value: el });
+        onScroll(syntheticEvent, el);
+      }
+    }
+  }, [offset, avgRowHeight, buffer, length, minItemHeight, totalLength, onScroll]);
 
   const renderItems = (start: number, end: number) => {
     return Array.from({ length: end - start + 1 }, (_, index) => {

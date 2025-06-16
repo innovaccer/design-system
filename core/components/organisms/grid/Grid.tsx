@@ -151,6 +151,7 @@ export type RowData = Record<string, any> & {
   _selected?: boolean;
   disabled?: boolean;
   _expandNestedRow?: boolean;
+  _activated?: boolean;
 };
 
 export type GridSize = 'comfortable' | 'standard' | 'compressed' | 'tight';
@@ -376,9 +377,14 @@ export class Grid extends React.Component<GridProps, GridState> {
   }
 
   componentDidMount() {
-    this.setState({
-      init: true,
-    });
+    this.setState(
+      {
+        init: true,
+      },
+      () => {
+        this.adjustPaddingRight();
+      }
+    );
     window.addEventListener('resize', this.forceRerender.bind(this));
   }
 
@@ -394,11 +400,17 @@ export class Grid extends React.Component<GridProps, GridState> {
   componentDidUpdate(prevProps: GridProps, prevState: GridState) {
     if (prevState.init !== this.state.init) {
       this.addScrollListeners();
+      this.adjustPaddingRight();
     }
 
     if (prevProps.page !== this.props.page || prevProps.error !== this.props.error) {
       this.removeScrollListeners();
       this.addScrollListeners();
+      this.adjustPaddingRight();
+    }
+
+    if (prevProps.data !== this.props.data) {
+      this.adjustPaddingRight();
     }
   }
 
@@ -424,12 +436,16 @@ export class Grid extends React.Component<GridProps, GridState> {
 
   adjustPaddingRight() {
     const gridHeadEl = this.gridRef!.querySelector(`.${styles['Grid-head']}`) as HTMLElement;
-    const gridBodyEl = this.gridRef!.querySelector(`.${styles['Grid-body']}`) as HTMLElement;
+    let gridBodyEl = this.gridRef!.querySelector(`.${styles['Grid-body']}`) as HTMLElement;
+
+    if (this.props.enableRowVirtualization) {
+      gridBodyEl = this.gridRef!.querySelector(`.VS-container`) as HTMLElement;
+    }
 
     if (gridHeadEl && gridBodyEl) {
       const hasVerticalScrollbar = gridBodyEl.scrollHeight > gridBodyEl.clientHeight;
       const scrollbarWidth = gridBodyEl.offsetWidth - gridBodyEl.clientWidth;
-      gridHeadEl.style.paddingRight = hasVerticalScrollbar ? `${scrollbarWidth}px` : '0px';
+      gridHeadEl.style.paddingRight = hasVerticalScrollbar ? `${scrollbarWidth}px` : '';
     }
   }
 

@@ -16,7 +16,7 @@ export interface ParagraphProps extends BaseProps, BaseHtmlProps<HTMLParagraphEl
   /**
    * State of `Paragraph`
    */
-  appearance: ParagraphAppearance;
+  appearance?: ParagraphAppearance;
   /**
    * Color of `Paragraph`
    */
@@ -24,7 +24,7 @@ export interface ParagraphProps extends BaseProps, BaseHtmlProps<HTMLParagraphEl
 }
 
 export const Paragraph = React.forwardRef<HTMLParagraphElement, ParagraphProps>((props, ref) => {
-  const { appearance, children, className, color, ...rest } = props;
+  const { appearance = 'default', children, className, color, ...rest } = props;
 
   const classes = classNames(
     {

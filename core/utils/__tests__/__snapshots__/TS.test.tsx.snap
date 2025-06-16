@@ -99,9 +99,6 @@ exports[`TS renders children 1`] = `
         data-test="DesignSystem-Checkbox-Icon"
       />
     </div>
-    <div
-      class="Checkbox-labelWrapper"
-    />
   </div>
   <div
     class="Col"

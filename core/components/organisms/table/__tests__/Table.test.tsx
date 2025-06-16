@@ -298,7 +298,7 @@ describe('render Table without headerOptions', () => {
     const dropdownOption = getAllByTestId('DesignSystem-DropdownOption--WITH_ICON')[3];
     fireEvent.click(dropdownOption);
     const cellGroup = getAllByTestId('DesignSystem-Grid-cellGroup')[1];
-    expect(cellGroup).toHaveClass('Grid-cellGroup--pinned-right');
+    expect(cellGroup).toHaveClass('Grid-cellWrapper--pinned-right');
   });
 
   it('render Table: call onSelectAll ', () => {
@@ -492,8 +492,8 @@ describe('render Table with selectAll Row option', () => {
   });
 });
 
-describe('render table with selection persistance', () => {
-  it('check for table selection persistance across pages when uniqueColumnName is provided', () => {
+describe('render table with selection persistence', () => {
+  it('check for table selection persistence across pages when uniqueColumnName is provided', () => {
     const schema = [
       { name: 'name', displayName: 'Name', width: '50%' },
       { name: 'gender', displayName: 'Gender', width: '50%' },

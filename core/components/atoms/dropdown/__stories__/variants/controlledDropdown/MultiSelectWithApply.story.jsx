@@ -58,7 +58,7 @@ const customCode = `() => {
       label: \`Option \${i}\`,
       value: \`Option \${i}\`,
       group: i >= 1 && i <= 40 ? 'Group 1' : 'Group 2',
-      icon: 'events',
+      icon: 'event',
       subInfo: 'subInfo',
     });
   }
