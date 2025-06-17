@@ -1,0 +1,21 @@
+import * as React from 'react';
+import { MultiSliderProps } from '@/components/atoms/multiSlider';
+export interface SliderProps extends MultiSliderProps {
+    defaultValue: number;
+    value?: number;
+    onChange?: (value: number) => void;
+    onRelease?: (value: number) => void;
+}
+export declare const Slider: {
+    (props: SliderProps): React.JSX.Element;
+    displayName: string;
+    defaultProps: {
+        defaultValue: number;
+        labelStepSize: number;
+        max: number;
+        min: number;
+        stepSize: number;
+        labelRenderer: boolean;
+    };
+};
+export default Slider;

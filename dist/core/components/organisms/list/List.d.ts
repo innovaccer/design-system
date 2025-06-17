@@ -1,0 +1,40 @@
+import * as React from 'react';
+import { TableProps } from '@/index.type';
+import { SyncTableProps, AsyncTableProps } from '@/components/organisms/table';
+type ExcludeTypes = 'showHead' | 'draggable' | 'showMenu' | 'headCellTooltip' | 'filterPosition';
+export type ListProps = Omit<TableProps, ExcludeTypes>;
+export type SyncListProps = Omit<SyncTableProps, ExcludeTypes>;
+export type AsyncListProps = Omit<AsyncTableProps, ExcludeTypes>;
+export declare const List: {
+    (props: ListProps): React.JSX.Element;
+    defaultProps: {
+        type: string;
+        size: string;
+        showHead: boolean;
+        showMenu: boolean;
+        multipleSorting: boolean;
+        headerOptions: {};
+        withPagination: boolean;
+        paginationType: string;
+        page: number;
+        pageSize: number;
+        draggable: boolean;
+        data: never[];
+        displayData: never[];
+        schema: never[];
+        loading: boolean;
+        error: boolean;
+        loaderSchema: never[];
+        sortingList: never[];
+        filterList: {};
+        filterPosition: string;
+        searchDebounceDuration: number;
+        pageJumpDebounceDuration: number;
+        errorTemplate: (props: import("@/components/organisms/table").ErrorTemplateProps) => React.JSX.Element;
+        infiniteScrollOptions: {
+            fetchRowsCount: number;
+            fetchThreshold: string;
+        };
+    };
+};
+export default List;

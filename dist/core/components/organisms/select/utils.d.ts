@@ -1,0 +1,12 @@
+import React from 'react';
+import { OptionType } from '@/common.type';
+export declare const mapInitialValue: (multiSelect: boolean, selectedValue: OptionType | OptionType[] | undefined) => OptionType | OptionType[];
+export declare const elementExist: (targetObject: OptionType, mainList: OptionType | OptionType[] | undefined) => number;
+export declare const removeOrAddToList: (targetObject: OptionType, prevList: OptionType[]) => OptionType[];
+export declare const computeValue: (multiSelect: boolean | undefined, selectValue: any, setLabel?: (count: number) => string | undefined) => any;
+export declare const handleKeyDownTrigger: (event: React.KeyboardEvent, setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>, setHighlightFirstItem?: React.Dispatch<React.SetStateAction<boolean>>, setHighlightLastItem?: React.Dispatch<React.SetStateAction<boolean>>) => void;
+export declare const focusListItem: (position: string, setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>, listRef?: any) => void;
+export declare const handleKeyDown: (event: React.KeyboardEvent, focusedOption: Element | undefined, setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>, setHighlightFirstItem?: React.Dispatch<React.SetStateAction<boolean>>, setHighlightLastItem?: React.Dispatch<React.SetStateAction<boolean>>, listRef?: any, withSearch?: boolean, setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>, triggerRef?: any) => void;
+export declare const handleEnterKey: (focusedOption: Element | undefined) => void;
+export declare const navigateOptions: (direction: string, focusedOption: Element | undefined, setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>, listRef?: any, withSearch?: boolean) => void;
+export declare const handleInputKeyDown: (event: React.KeyboardEvent, listRef: any, setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>, setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>, triggerRef?: any) => void;
