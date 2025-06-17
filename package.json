@@ -1,6 +1,6 @@
 {
   "name": "@innovaccer/design-system",
-  "version": "5.0.0-8",
+  "version": "5.0.0-9",
   "description": "React components library project for Innovaccer Design System",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -136,6 +136,7 @@
   },
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.5.3",
+    "@storybook/storybook-deployer": "^2.8.16",
     "classnames": "^2.3.1",
     "core-js": "^3.9.1",
     "react-dom": "^16.8.6",
