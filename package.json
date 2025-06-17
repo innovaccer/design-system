@@ -136,6 +136,7 @@
   },
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.5.3",
+    "@storybook/storybook-deployer": "^2.8.16",
     "classnames": "^2.3.1",
     "core-js": "^3.9.1",
     "react-dom": "^16.8.6",
