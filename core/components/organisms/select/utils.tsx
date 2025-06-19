@@ -11,9 +11,9 @@ export const mapInitialValue = (multiSelect: boolean, selectedValue: OptionType 
 
 export const elementExist = (targetObject: OptionType, mainList: OptionType | OptionType[] | undefined) => {
   if (!Array.isArray(mainList)) {
-    return targetObject.value === mainList?.value ? 0 : -1;
+    return targetObject.label === mainList?.label ? 0 : -1;
   }
-  return mainList.findIndex((item) => item.value === targetObject.value);
+  return mainList.findIndex((item) => item.label === targetObject.label);
 };
 
 export const removeOrAddToList = (targetObject: OptionType, prevList: OptionType[]) => {
