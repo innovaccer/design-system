@@ -170,7 +170,7 @@ export const GridBody = (props: GridBodyProps) => {
   };
 
   const virtualScrollHandler = (event: Event, element: HTMLElement) => {
-    const gridHeadEl = ref!.querySelector('.Grid-head') as HTMLElement;
+    const gridHeadEl = ref!.querySelector(`.${styles['Grid-head']}`) as HTMLElement;
     if (gridHeadEl) {
       gridHeadEl.scrollLeft = element.scrollLeft;
     }
