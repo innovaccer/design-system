@@ -6,7 +6,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { vs2015 } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import * as DS from '@';
 import { Button, Card, Heading, CardHeader, Row, Column, Tooltip, Text, Badge } from '@/index';
-import vsDark from 'prism-react-renderer/themes/vsDark';
+// import vsDark from 'prism-react-renderer/themes/vsDark';
 import { LiveProvider, LiveEditor, LiveError, LivePreview, withLive } from 'react-live';
 import openSandbox from './sandbox';
 import generateImports from './generateImports';
@@ -294,7 +294,9 @@ const StoryComp = (props: {
                           if (editor) copyCode(editor.value);
                         }}
                       />
-                      <LiveEditor theme={vsDark} onChange={onChangeCode} />
+                      <LiveEditor 
+                      // theme={vsDark} 
+                      onChange={onChangeCode} />
                     </div>
                   )}
                   {activeTab == 1 && !noHtml && renderCodeBlock(htmlCode, shouldShowMore, showMore)}
