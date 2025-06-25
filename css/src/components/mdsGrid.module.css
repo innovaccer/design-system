@@ -1,0 +1,401 @@
+/* MdsGrid */
+.MdsGrid {
+  display: grid;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Gap variations */
+.MdsGrid-gap--spacing-10 {
+  gap: var(--spacing-10);
+}
+
+.MdsGrid-gap--spacing-20 {
+  gap: var(--spacing-20);
+}
+
+.MdsGrid-gap--spacing-30 {
+  gap: var(--spacing-30);
+}
+
+.MdsGrid-gap--spacing-40 {
+  gap: var(--spacing-40);
+}
+
+.MdsGrid-gap--spacing-60 {
+  gap: var(--spacing-60);
+}
+
+.MdsGrid-gap--spacing-80 {
+  gap: var(--spacing-80);
+}
+
+.MdsGrid-gap--spacing-120 {
+  gap: var(--spacing-120);
+}
+
+.MdsGrid-gap--spacing-160 {
+  gap: var(--spacing-160);
+}
+
+/* Column gap variations */
+.MdsGrid-columnGap--spacing-10 {
+  column-gap: var(--spacing-10);
+}
+
+.MdsGrid-columnGap--spacing-20 {
+  column-gap: var(--spacing-20);
+}
+
+.MdsGrid-columnGap--spacing-30 {
+  column-gap: var(--spacing-30);
+}
+
+.MdsGrid-columnGap--spacing-40 {
+  column-gap: var(--spacing-40);
+}
+
+.MdsGrid-columnGap--spacing-60 {
+  column-gap: var(--spacing-60);
+}
+
+.MdsGrid-columnGap--spacing-80 {
+  column-gap: var(--spacing-80);
+}
+
+.MdsGrid-columnGap--spacing-120 {
+  column-gap: var(--spacing-120);
+}
+
+.MdsGrid-columnGap--spacing-160 {
+  column-gap: var(--spacing-160);
+}
+
+/* Row gap variations */
+.MdsGrid-rowGap--spacing-10 {
+  row-gap: var(--spacing-10);
+}
+
+.MdsGrid-rowGap--spacing-20 {
+  row-gap: var(--spacing-20);
+}
+
+.MdsGrid-rowGap--spacing-30 {
+  row-gap: var(--spacing-30);
+}
+
+.MdsGrid-rowGap--spacing-40 {
+  row-gap: var(--spacing-40);
+}
+
+.MdsGrid-rowGap--spacing-60 {
+  row-gap: var(--spacing-60);
+}
+
+.MdsGrid-rowGap--spacing-80 {
+  row-gap: var(--spacing-80);
+}
+
+.MdsGrid-rowGap--spacing-120 {
+  row-gap: var(--spacing-120);
+}
+
+.MdsGrid-rowGap--spacing-160 {
+  row-gap: var(--spacing-160);
+}
+
+/* Justify items variations */
+.MdsGrid-justifyItems--start {
+  justify-items: start;
+}
+
+.MdsGrid-justifyItems--end {
+  justify-items: end;
+}
+
+.MdsGrid-justifyItems--center {
+  justify-items: center;
+}
+
+.MdsGrid-justifyItems--stretch {
+  justify-items: stretch;
+}
+
+/* Align items variations */
+.MdsGrid-alignItems--start {
+  align-items: start;
+}
+
+.MdsGrid-alignItems--end {
+  align-items: end;
+}
+
+.MdsGrid-alignItems--center {
+  align-items: center;
+}
+
+.MdsGrid-alignItems--stretch {
+  align-items: stretch;
+}
+
+/* Auto flow variations */
+.MdsGrid-autoFlow--row {
+  grid-auto-flow: row;
+}
+
+.MdsGrid-autoFlow--column {
+  grid-auto-flow: column;
+}
+
+.MdsGrid-autoFlow--row\ dense {
+  grid-auto-flow: row dense;
+}
+
+.MdsGrid-autoFlow--column\ dense {
+  grid-auto-flow: column dense;
+}
+
+/* Template columns variations */
+.MdsGrid-templateColumns--repeat\(1\,\ 1fr\) {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.MdsGrid-templateColumns--repeat\(2\,\ 1fr\) {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.MdsGrid-templateColumns--repeat\(3\,\ 1fr\) {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.MdsGrid-templateColumns--repeat\(4\,\ 1fr\) {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.MdsGrid-templateColumns--repeat\(12\,\ 1fr\) {
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.MdsGrid-templateColumns--1fr\ 1fr\ 1fr {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.MdsGrid-templateColumns--1fr\ 2fr {
+  grid-template-columns: 1fr 2fr;
+}
+
+.MdsGrid-templateColumns--2fr\ 1fr {
+  grid-template-columns: 2fr 1fr;
+}
+
+.MdsGrid-templateColumns--2fr\ 1fr\ 1fr {
+  grid-template-columns: 2fr 1fr 1fr;
+}
+
+.MdsGrid-templateColumns--200px\ 1fr\ 2fr {
+  grid-template-columns: 200px 1fr 2fr;
+}
+
+/* Template rows variations */
+.MdsGrid-templateRows--auto\ auto\ auto {
+  grid-template-rows: auto auto auto;
+}
+
+.MdsGrid-templateRows--100px\ 200px {
+  grid-template-rows: 100px 200px;
+}
+
+.MdsGrid-templateRows--1fr\ 2fr {
+  grid-template-rows: 1fr 2fr;
+}
+
+.MdsGrid-templateRows--auto\ 1fr {
+  grid-template-rows: auto 1fr;
+}
+
+/* MdsGridItem */
+.MdsGridItem {
+  box-sizing: border-box;
+}
+
+/* Justify self variations */
+.MdsGridItem-justifySelf--start {
+  justify-self: start;
+}
+
+.MdsGridItem-justifySelf--end {
+  justify-self: end;
+}
+
+.MdsGridItem-justifySelf--center {
+  justify-self: center;
+}
+
+.MdsGridItem-justifySelf--stretch {
+  justify-self: stretch;
+}
+
+/* Align self variations */
+.MdsGridItem-alignSelf--start {
+  align-self: start;
+}
+
+.MdsGridItem-alignSelf--end {
+  align-self: end;
+}
+
+.MdsGridItem-alignSelf--center {
+  align-self: center;
+}
+
+.MdsGridItem-alignSelf--stretch {
+  align-self: stretch;
+}
+
+/* Column span variations */
+.MdsGridItem-columnSpan--1 {
+  grid-column: span 1;
+}
+
+.MdsGridItem-columnSpan--2 {
+  grid-column: span 2;
+}
+
+.MdsGridItem-columnSpan--3 {
+  grid-column: span 3;
+}
+
+.MdsGridItem-columnSpan--4 {
+  grid-column: span 4;
+}
+
+.MdsGridItem-columnSpan--5 {
+  grid-column: span 5;
+}
+
+.MdsGridItem-columnSpan--6 {
+  grid-column: span 6;
+}
+
+.MdsGridItem-columnSpan--7 {
+  grid-column: span 7;
+}
+
+.MdsGridItem-columnSpan--8 {
+  grid-column: span 8;
+}
+
+.MdsGridItem-columnSpan--9 {
+  grid-column: span 9;
+}
+
+.MdsGridItem-columnSpan--10 {
+  grid-column: span 10;
+}
+
+.MdsGridItem-columnSpan--11 {
+  grid-column: span 11;
+}
+
+.MdsGridItem-columnSpan--12 {
+  grid-column: span 12;
+}
+
+/* Row span variations */
+.MdsGridItem-rowSpan--1 {
+  grid-row: span 1;
+}
+
+.MdsGridItem-rowSpan--2 {
+  grid-row: span 2;
+}
+
+.MdsGridItem-rowSpan--3 {
+  grid-row: span 3;
+}
+
+.MdsGridItem-rowSpan--4 {
+  grid-row: span 4;
+}
+
+.MdsGridItem-rowSpan--5 {
+  grid-row: span 5;
+}
+
+.MdsGridItem-rowSpan--6 {
+  grid-row: span 6;
+}
+
+/* Column start variations */
+.MdsGridItem-columnStart--1 {
+  grid-column-start: 1;
+}
+
+.MdsGridItem-columnStart--2 {
+  grid-column-start: 2;
+}
+
+.MdsGridItem-columnStart--3 {
+  grid-column-start: 3;
+}
+
+.MdsGridItem-columnStart--4 {
+  grid-column-start: 4;
+}
+
+.MdsGridItem-columnStart--5 {
+  grid-column-start: 5;
+}
+
+.MdsGridItem-columnStart--6 {
+  grid-column-start: 6;
+}
+
+.MdsGridItem-columnStart--7 {
+  grid-column-start: 7;
+}
+
+.MdsGridItem-columnStart--8 {
+  grid-column-start: 8;
+}
+
+.MdsGridItem-columnStart--9 {
+  grid-column-start: 9;
+}
+
+.MdsGridItem-columnStart--10 {
+  grid-column-start: 10;
+}
+
+.MdsGridItem-columnStart--11 {
+  grid-column-start: 11;
+}
+
+.MdsGridItem-columnStart--12 {
+  grid-column-start: 12;
+}
+
+/* Row start variations */
+.MdsGridItem-rowStart--1 {
+  grid-row-start: 1;
+}
+
+.MdsGridItem-rowStart--2 {
+  grid-row-start: 2;
+}
+
+.MdsGridItem-rowStart--3 {
+  grid-row-start: 3;
+}
+
+.MdsGridItem-rowStart--4 {
+  grid-row-start: 4;
+}
+
+.MdsGridItem-rowStart--5 {
+  grid-row-start: 5;
+}
+
+.MdsGridItem-rowStart--6 {
+  grid-row-start: 6;
+}
