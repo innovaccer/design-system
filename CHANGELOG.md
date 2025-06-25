@@ -1,3 +1,44 @@
+## 4.10.0 (2025-06-25)
+
+### Highlights
+
+- feat(table): add highlight search term feature in table (591abcca)
+- fix(table): fix grid head and body sync issue on scroll event (e3255270)
+- fix(select): fix auto position update for select popover (42734e64)
+- fix(select): fix selection state of pre-selected option (f7aca262)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(table): add highlight search term feature in table (591abcca)
+
+### Fixes
+
+- fix(table): fix grid head and body sync issue on scroll event (e3255270)
+- fix(select): fix auto position update for select popover (42734e64)
+- fix(select): fix selection state of pre-selected option (f7aca262)
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 4.9.0 (2025-06-16)
 
 ### Highlights
