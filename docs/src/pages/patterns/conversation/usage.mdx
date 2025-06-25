@@ -1,0 +1,97 @@
+---
+title: Conversation
+description: Conversation framework helps in fluid exchange of information.
+tabs: ["Usage", "Interactions"]
+keywords: ['Conversation', 'Chat', 'Chat Input', 'Chat Bubble']
+---
+
+Conversation framework helps in fluid exchange of information.
+
+#### Responsive Breakpoints for Chat Container and Bubble
+
+These are the defined breakpoints for three different parent container sizes:
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"20%",  textAlign: "left"}}>Parent Container</th>
+      <th style={{width:"20%",  textAlign: "left"}}>Chat Container</th>
+      <th style={{width:"20%",  textAlign: "left"}}>Chat Bubble <br/> (Without Media)</th>
+      <th style={{width:"20%",  textAlign: "left"}}>Spacing between outgoing and incoming bubbles</th>
+      <th style={{width:"20%",  textAlign: "left"}}>Spacing between same bubbles</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Up to 480px</td>
+      <td>12px left- right padding from parent container</td>
+      <td>84px spacing from chat container edges</td>
+      <td>16px</td>
+      <td>8px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>481px-768px</td>
+      <td>56px left-right padding from parent container</td>
+      <td>160px spacing from chat container edges</td>
+      <td>24px</td>
+      <td>8px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>769px and above</td>
+      <td>Fixed at 640px, center aligned</td>
+      <td>160px spacing from chat container edges</td>
+      <td>24px</td>
+      <td>8px</td>
+    </tr>
+  </tbody>
+</table>
+
+<br />
+
+##### Up to 480px
+
+![Up to 480px](./images/upto-480px.png)
+<Caption>Up to 480px</Caption>
+
+##### 480px-768px
+
+![480px-768px](./images/upto-768px.png)
+<Caption>480px-768px</Caption>
+
+##### 769px and above
+
+![769px and above](./images/above-768px.png)
+<Caption>769px and above</Caption>
+
+#### Working with Chat Input
+
+##### With and Without Typing Indicator
+
+![With typing indicator [Left], Without Typing Indicator [Right]](./images/typing-indicator.png)
+<Caption>With typing indicator [Left], Without Typing Indicator [Right]</Caption>
+
+##### Overflow behavior
+
+In case of numerous chat bubbles, scrolling down moves content beneath the chat input, with a gradient overlay ensuring a smooth transition and indicating hidden content.
+
+![Overflow behavior](./images/overflow-behavior.png)
+<Caption>Overflow behavior</Caption>
+
+#### Working with Chat Separators
+
+##### Chat Separator - Date
+
+![Chat Separator - Date](./images/date.png)
+<Caption>Chat Separator - Date</Caption>
+
+##### Chat Separator - Unread Messages
+
+![Chat Separator - Unread Messages](./images/unread-msg.png)
+<Caption>Chat Separator - Unread Messages</Caption>
+
+##### Chat Separator - New Messages
+
+![Chat Separator - New Messages](./images/new-msg.png)
+<Caption>Chat Separator - New Messages</Caption>
+
+![Chat Separator - New Messages](./images/new-msg-2.png)
+<Caption>Chat Separator - New Messages</Caption>
+
