@@ -144,11 +144,7 @@ export const PopperWrapper: React.FC<PopperWrapperProps> = (props: PopperWrapper
 
   const { refs, floatingStyles } = useFloating({
     placement: getFloatingPlacement(placement),
-    middleware: [
-      offset(parseInt(offsetMapping[offsetProp as Offset])),
-      flip(),
-      shift(),
-    ],
+    middleware: [offset(parseInt(offsetMapping[offsetProp as Offset])), flip(), shift()],
   });
 
   const getZIndexForLayer = (node: Element | null) => {
@@ -455,7 +451,9 @@ export const PopperWrapper: React.FC<PopperWrapperProps> = (props: PopperWrapper
           document.body
         )}
 
-      {isOpen && appendToBody && triggerCoordinates && 
+      {isOpen &&
+        appendToBody &&
+        triggerCoordinates &&
         ReactDOM.createPortal(
           <div ref={refs.setFloating} style={floatingStyles}>
             {getPopperChildren({})}

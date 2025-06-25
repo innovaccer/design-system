@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Title, Subtitle, Description, Primary, Controls, Unstyled, useOf } from '@storybook/addon-docs/blocks';
+import { Description, Controls, Unstyled, useOf } from '@storybook/addon-docs/blocks';
 import { renderToStaticMarkup } from 'react-dom/server';
 import reactElementToJSXString from 'react-element-to-jsx-string';
 import SyntaxHighlighter from 'react-syntax-highlighter';
@@ -294,9 +294,10 @@ const StoryComp = (props: {
                           if (editor) copyCode(editor.value);
                         }}
                       />
-                      <LiveEditor 
-                      // theme={vsDark} 
-                      onChange={onChangeCode} />
+                      <LiveEditor
+                        // theme={vsDark}
+                        onChange={onChangeCode}
+                      />
                     </div>
                   )}
                   {activeTab == 1 && !noHtml && renderCodeBlock(htmlCode, shouldShowMore, showMore)}
@@ -338,7 +339,6 @@ export const docPage = ({ of }: any) => {
   const {
     title,
     description,
-    props: propsAttr,
     customCode,
     noHtml,
     noStory,

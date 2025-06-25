@@ -162,8 +162,8 @@ export function toFileWithPath(file: FileWithPath, path?: string): FileWithPath 
         typeof path === 'string'
           ? path
           : typeof webkitRelativePath === 'string' && webkitRelativePath.length > 0
-          ? webkitRelativePath
-          : file.name,
+            ? webkitRelativePath
+            : file.name,
       writable: false,
       configurable: false,
       enumerable: true,
