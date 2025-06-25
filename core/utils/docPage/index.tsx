@@ -194,7 +194,7 @@ const StoryComp = (props: {
     return null;
   });
 
-  const onChangeCode = React.useCallback((updatedCode) => {
+  const onChangeCode = React.useCallback((updatedCode: string) => {
     setJsxCode(updatedCode);
   }, []);
 

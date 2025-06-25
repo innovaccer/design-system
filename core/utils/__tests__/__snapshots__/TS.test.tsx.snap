@@ -92,7 +92,6 @@ exports[`TS renders children 1`] = `
         id="undefined-undefined-Test-uid"
         tabindex="0"
         type="checkbox"
-        value=""
       />
       <span
         class="Checkbox-wrapper Checkbox-wrapper--default"
@@ -888,7 +887,6 @@ exports[`TS renders children 1`] = `
       class="Input-input Input-input--regular"
       data-test="DesignSystem-Input"
       type="text"
-      value=""
     />
   </div>
   <div
@@ -1501,7 +1499,6 @@ exports[`TS renders children 1`] = `
     <input
       class="Switch-input"
       type="checkbox"
-      value=""
     />
     <span
       class="Switch-wrapper Switch-wrapper--regular"
