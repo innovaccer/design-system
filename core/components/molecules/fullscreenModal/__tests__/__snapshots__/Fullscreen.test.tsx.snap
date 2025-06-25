@@ -45,7 +45,6 @@ exports[`FullscreenModal component
                 class="Col flex-grow-0"
                 data-test="DesignSystem-Column"
               >
-                
                 <div
                   class="PopperWrapper-trigger"
                 >
@@ -129,7 +128,6 @@ exports[`FullscreenModal component
                 class="Col flex-grow-0"
                 data-test="DesignSystem-Column"
               >
-                
                 <div
                   class="PopperWrapper-trigger"
                 >
@@ -255,7 +253,6 @@ exports[`FullscreenModal component
                 class="Col flex-grow-0"
                 data-test="DesignSystem-Column"
               >
-                
                 <div
                   class="PopperWrapper-trigger"
                 >
@@ -346,7 +343,6 @@ exports[`FullscreenModal component
                 class="Col flex-grow-0"
                 data-test="DesignSystem-Column"
               >
-                
                 <div
                   class="PopperWrapper-trigger"
                 >
@@ -429,7 +425,6 @@ exports[`FullscreenModal component
                 class="Col flex-grow-0"
                 data-test="DesignSystem-Column"
               >
-                
                 <div
                   class="PopperWrapper-trigger"
                 >
@@ -555,7 +550,6 @@ exports[`FullscreenModal component
                 class="Col flex-grow-0"
                 data-test="DesignSystem-Column"
               >
-                
                 <div
                   class="PopperWrapper-trigger"
                 >

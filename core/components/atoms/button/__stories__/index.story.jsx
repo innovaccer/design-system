@@ -3,7 +3,7 @@ import { action } from '@/utils/action';
 import { Button } from '@/index';
 
 // CSF format story
-export const all = () => {
+export const All = () => {
   const type = 'button';
   const children = 'Open';
 

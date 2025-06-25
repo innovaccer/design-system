@@ -68,17 +68,20 @@ export const scrollToOptionIndex = (scrollIndex: number, listOptions: any) => {
 };
 
 export const groupListOptions = (listOptions: Option[]): Option[] => {
-  const groupList = listOptions.reduce((acc, option) => {
-    const group = option.group || '';
+  const groupList = listOptions.reduce(
+    (acc, option) => {
+      const group = option.group || '';
 
-    if (!acc[group]) {
-      acc[group] = [];
-    }
+      if (!acc[group]) {
+        acc[group] = [];
+      }
 
-    acc[group].push(option);
+      acc[group].push(option);
 
-    return acc;
-  }, {} as { [key: string]: Option[] });
+      return acc;
+    },
+    {} as { [key: string]: Option[] }
+  );
 
   const flattenedGroupList = Object.values(groupList).flatMap((item) => [...item]);
 

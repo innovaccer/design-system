@@ -120,8 +120,8 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
     ...rest
   } = props;
 
-  const localInputRef = React.useRef<HTMLInputElement>();
-  const customRef = React.useRef<any>();
+  const localInputRef = React.useRef<HTMLInputElement>(null);
+  const customRef = React.useRef<any>(null);
   const inputElementRef = (forwardedInputRef || localInputRef) as React.RefObject<HTMLInputElement>;
 
   const [chips, setChips] = React.useState<OptionType[]>(value || defaultValue);

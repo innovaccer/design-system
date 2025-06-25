@@ -192,7 +192,7 @@ export const Header = (props: HeaderProps) => {
           ...schema.find((colSchema) => colSchema.name === option.value),
           hidden: !option.selected,
           /* tslint:disable:no-object-literal-type-assertion */
-        } as ColumnSchema)
+        }) as ColumnSchema
     );
     /* tslint:enable:no-object-literal-type-assertion */
 

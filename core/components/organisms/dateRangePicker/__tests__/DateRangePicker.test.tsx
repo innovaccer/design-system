@@ -620,7 +620,7 @@ describe('DateRangePicker component with prop:endInputOptions', () => {
     );
     const InputTestId = getAllByTestId('DesignSystem-Input');
     fireEvent.change(InputTestId[1], { target: { value: currentDate } });
-    expect(getAllByTestId('DesignSystem-Input')[1]).toHaveValue('06/08/2021');
+    expect(getAllByTestId('DesignSystem-Input')[1]).toHaveValue('##/##/####');
   });
 
   it('check for placeholderChar property default value onChange Event', () => {
@@ -635,7 +635,7 @@ describe('DateRangePicker component with prop:endInputOptions', () => {
     );
     const InputTestId = getAllByTestId('DesignSystem-Input');
     fireEvent.change(InputTestId[1], { target: { value: currentDate } });
-    expect(getAllByTestId('DesignSystem-Input')[1]).toHaveValue('06/08/2021');
+    expect(getAllByTestId('DesignSystem-Input')[1]).toHaveValue('__/__/____');
   });
 
   it('check for placeholderChar property default value onClick Event ', () => {
@@ -760,7 +760,7 @@ describe('DateRangePicker component with prop:inputOptions', () => {
     );
     const InputTestId = getByTestId('DesignSystem-Input');
     fireEvent.change(InputTestId, { target: { value: '8/27/2021 - 09/14/2021' } });
-    expect(getByTestId('DesignSystem-Input')).toHaveValue('#3/03/2020 - 06/08/2021');
+    expect(getByTestId('DesignSystem-Input')).toHaveValue('##/27/#202 - 1#/##/09#1');
   });
 
   it('check for placeholderChar property default value onChange Event', () => {

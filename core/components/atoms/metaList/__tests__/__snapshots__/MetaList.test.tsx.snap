@@ -3,7 +3,7 @@
 exports[`MetaList component prop:seperator options 
   seperator: false, size: "regular"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -124,7 +124,7 @@ Object {
 exports[`MetaList component prop:seperator options 
   seperator: false, size: "small"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -245,7 +245,7 @@ Object {
 exports[`MetaList component prop:seperator options 
   seperator: true, size: "regular"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
@@ -382,7 +382,7 @@ Object {
 exports[`MetaList component prop:seperator options 
   seperator: true, size: "small"
  1`] = `
-Object {
+{
   "asFragment": [Function],
   "baseElement": <body>
     <div>
