@@ -12,7 +12,7 @@ export interface AIResponseProps extends TBaseHtmlProps<HTMLDivElement> {
   /**
    * Pass children to `AI Response`
    */
-  children: React.ReactNode;
+  children: React.JSX.Element;
   /**
    * Set as `true` to show avatar with `AI Response`
    */
@@ -20,7 +20,7 @@ export interface AIResponseProps extends TBaseHtmlProps<HTMLDivElement> {
   /**
    * Pass metadata to `AI Response`
    */
-  metaData?: () => JSX.Element;
+  metaData?: () => React.JSX.Element;
   /**
    * Set as `true` to show glow effect with `AI Response`
    */

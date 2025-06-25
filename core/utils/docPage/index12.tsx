@@ -9,7 +9,7 @@ import { Title, Subtitle, Description, Primary, Controls, Unstyled, useOf } from
  * for components, including props tables and stories.
  */
 
-export const StoryName = ({ of }) => {
+export const StoryName = ({ of }: { of: any }) => {
   const resolvedOf = useOf(of || 'story', ['story', 'meta']);
   switch (resolvedOf.type) {
     case 'story': {
@@ -22,7 +22,7 @@ export const StoryName = ({ of }) => {
   return null;
 };
 
-export const docPage = ({ of }) => {
+export const docPage = ({ of }: { of: any }) => {
   const resolvedOf = useOf(of || 'story', ['story', 'meta']);
   switch (resolvedOf.type) {
     case 'story': {

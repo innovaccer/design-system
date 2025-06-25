@@ -62,7 +62,7 @@ export interface VerticalNavProps extends BaseProps {
   /**
    * Option to pass Custom Item Renderer
    */
-  customItemRenderer?: (props: MenuItemProps) => JSX.Element;
+  customItemRenderer?: (props: MenuItemProps) => React.JSX.Element;
   /**
    * Determines whether to show tooltip for menu label
    * **This prop is DEPRECATED now,**

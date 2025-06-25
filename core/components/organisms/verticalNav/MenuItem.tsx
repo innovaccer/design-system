@@ -16,7 +16,7 @@ export interface MenuItemProps extends BaseProps {
   isChildren?: boolean;
   isChildrenVisible?: boolean;
   onClick?: (menu: Menu) => void;
-  customItemRenderer?: (props: MenuItemProps) => JSX.Element;
+  customItemRenderer?: (props: MenuItemProps) => React.JSX.Element;
 }
 interface MenuPillsProps {
   isActive: boolean;

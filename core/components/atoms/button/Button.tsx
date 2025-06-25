@@ -73,7 +73,7 @@ export interface ButtonProps extends BaseProps, BaseHtmlProps<HTMLButtonElement>
   /**
    * Text to be added inside `Button`
    */
-  children?: React.ReactText;
+  children?: string | number;
   /**
    * Specifies tab index of `Button`
    * @default 0

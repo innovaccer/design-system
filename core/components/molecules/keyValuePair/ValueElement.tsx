@@ -11,7 +11,7 @@ export interface ValueElementProps extends BaseProps {
   /**
    * Specify value to be displayed in `ValueElement`
    */
-  value?: React.ReactText;
+  value?: string | number;
 }
 
 export const ValueElement = (props: ValueElementProps) => {

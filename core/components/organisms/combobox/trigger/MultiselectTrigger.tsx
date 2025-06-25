@@ -101,15 +101,15 @@ export interface MultiSelectTriggerProps extends BaseProps {
 
 export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTriggerProps>((props, forwardedInputRef) => {
   const {
-    chipOptions,
-    allowDuplicates,
+    chipOptions = {},
+    allowDuplicates = false,
     disabled,
     error,
     placeholder,
-    defaultValue,
+    defaultValue = [],
     value,
     className,
-    autoFocus,
+    autoFocus = false,
     onChange,
     onBlur,
     onFocus,
@@ -320,11 +320,5 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
 });
 
 MultiSelectTrigger.displayName = 'MultiSelectTrigger';
-MultiSelectTrigger.defaultProps = {
-  chipOptions: {},
-  defaultValue: [],
-  allowDuplicates: false,
-  autoFocus: false,
-};
 
 export default MultiSelectTrigger;

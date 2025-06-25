@@ -11,7 +11,7 @@ const AvatarOptionItem = (props: AvatarOptionItemProps) => {
   const { avatarData } = props;
   const { firstName = '', lastName = '', tooltipSuffix = '', disabled, image, icon } = avatarData;
   const name = `${firstName} ${lastName} ${tooltipSuffix}`;
-  const elementRef = React.useRef(null);
+  const elementRef = React.useRef<HTMLElement>(null);
 
   const triggerClassName = classNames({
     ['cursor-not-allowed']: disabled,

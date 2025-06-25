@@ -132,7 +132,7 @@ export const Popover = (props: PopoverProps) => {
     if (props.open !== undefined) setOpen(props.open);
   }, [props.open]);
 
-  const defaultOnToggle = React.useCallback((newOpen) => {
+  const defaultOnToggle = React.useCallback((newOpen: boolean) => {
     setOpen(newOpen);
   }, []);
 
@@ -176,8 +176,18 @@ export const Popover = (props: PopoverProps) => {
 
 Popover.displayName = 'Popover';
 
-Popover.defaultProps = Object.assign({}, filterProps(PopperWrapper.defaultProps, propsList, true), {
-  offset: 'large',
+// Define default props separately since React.FC doesn't support defaultProps in React 19
+const defaultPopperWrapperProps = {
+  on: 'click',
+  offset: 'medium',
+  closeOnBackdropClick: true,
+  hoverable: true,
+  appendToBody: true,
+  style: {},
+  disabled: false,
+};
+
+Popover.defaultProps = Object.assign({}, filterProps(defaultPopperWrapperProps, propsList, true), {
   position: 'bottom',
   hideOnReferenceEscape: true,
   customStyle: {},

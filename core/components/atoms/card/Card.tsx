@@ -34,8 +34,5 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>((props, ref) => 
 });
 
 Card.displayName = 'Card';
-Card.defaultProps = {
-  shadow: 'shadow10',
-};
 
 export default Card;

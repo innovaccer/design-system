@@ -24,7 +24,7 @@ export interface ChatInputProps extends BaseProps {
   /**
    * Action renderer for the `ChatInput`
    */
-  actionRenderer?: () => JSX.Element;
+  actionRenderer?: () => React.JSX.Element;
   /**
    * Callback function triggered when the value of `ChatInput` changes
    */
@@ -65,6 +65,7 @@ const ChatInput: React.FC<ChatInputProps> = (props) => {
     actionRenderer,
     onStopGenerating,
     className,
+    placeholder = 'Start typing...',
     ...rest
   } = props;
 
@@ -180,6 +181,7 @@ const ChatInput: React.FC<ChatInputProps> = (props) => {
         className={textareaClassNames}
         disabled={disabled}
         data-test="DesignSystem-ChatInput-textarea"
+        placeholder={placeholder}
         {...rest}
       />
       <div className={actionsClassNames} data-test="DesignSystem-ChatInput-actions">
@@ -191,8 +193,5 @@ const ChatInput: React.FC<ChatInputProps> = (props) => {
 };
 
 ChatInput.displayName = 'ChatInput';
-ChatInput.defaultProps = {
-  placeholder: 'Start typing...',
-};
 
 export default ChatInput;

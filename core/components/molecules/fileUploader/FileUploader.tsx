@@ -18,7 +18,7 @@ export interface FileUploaderProps extends FileUploaderButtonProps, FileUploader
   /**
    * Link component to download sample file
    */
-  sampleFileLink?: JSX.Element;
+  sampleFileLink?: React.JSX.Element;
 }
 
 export const FileUploader = (props: FileUploaderProps) => {
