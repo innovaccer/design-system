@@ -145,6 +145,10 @@ export type ColumnSchema = {
    * Show tooltip on hover
    */
   tooltip?: boolean;
+  /**
+   * Highlight Cell
+   */
+  highlightCell?: boolean;
 };
 
 export type RowData = Record<string, any> & {
@@ -352,6 +356,17 @@ export interface GridProps extends BaseProps {
    * Fetch Data Function to be called on scroll when threshold is reached in case of async table
    */
   fetchDataOnScroll?: (props: { page: number; rowsCount: number }) => Promise<Data>;
+  /**
+   * Search term to highlight in cells
+   */
+  searchTerm?: string;
+  /**
+   * Function to create custom regex pattern for highlighting matched text in cells.
+   * If not provided, will use default case-insensitive match.
+   * @param searchTerm - The current search term
+   * @returns RegExp to use for highlighting
+   */
+  highlightRegex?: (searchTerm: string) => RegExp;
 }
 
 export interface GridState {

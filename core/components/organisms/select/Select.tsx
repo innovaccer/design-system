@@ -283,8 +283,8 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
         <Popover
           open={openPopover}
           onToggle={onToggleHandler}
-          className="mt-3"
           triggerClass="d-block"
+          offset="medium"
           position="bottom-start"
           customStyle={popoverStyle}
           boundaryElement={boundaryElement}

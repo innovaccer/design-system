@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { BaseProps } from '@/utils/types';
+import styles from '@css/components/grid.module.css';
 
 export const isElementInView = (container: HTMLElement, element: Element) => {
   const containerTop = container.offsetTop;
@@ -57,7 +58,7 @@ const VirtualList = (props: VirtualScrollProps) => {
   useEffect(() => {
     const handleExternalScroll = (e: Event) => {
       const target = e.target as HTMLElement;
-      if (target && target.classList.contains('Grid-head') && listRef.current) {
+      if (target && target.classList.contains(styles['Grid-head']) && listRef.current) {
         listRef.current.scrollLeft = target.scrollLeft;
       }
     };

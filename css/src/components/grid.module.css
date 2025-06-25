@@ -354,7 +354,7 @@
   align-items: center;
 }
 
-.GridCell-metaList .Text::before {
+.GridCell-metaSeparator {
   content: '';
   display: inline-flex;
   align-items: center;
@@ -362,12 +362,21 @@
   width: var(--spacing-10);
   height: var(--spacing-10);
   border-radius: var(--border-radius-full);
-  background: var(--secondary);
+  background: var(--inverse-lightest);
   margin: 0 var(--spacing-20);
 }
 
-.GridCell-metaList .Text:first-child::before {
-  display: none;
+.GridCell-mark--default {
+  background: var(--warning-light);
+  border-radius: var(--border-radius-05);
+}
+
+.GridCell-mark--metaList {
+  font-size: var(--font-size-s);
+  line-height: var(--font-height-normal);
+  color: var(--text-subtle);
+  background: var(--warning-light);
+  border-radius: var(--border-radius-05);
 }
 
 .GridCell--metaList ul li:first-child {
