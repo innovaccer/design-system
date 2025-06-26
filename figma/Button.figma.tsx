@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@/index';
+import { ButtonProps } from '@/index.type';
 import figma from '@figma/code-connect';
 
 // Basic Button
@@ -28,7 +29,7 @@ figma.connect(Button, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS--
     }),
   },
   example: (props) => (
-    <Button appearance="basic" {...props}>
+    <Button appearance="basic" {...(props as ButtonProps)}>
       {props.size}
     </Button>
   ),
@@ -59,7 +60,7 @@ figma.connect(Button, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS--
     }),
   },
   example: (props) => (
-    <Button appearance="primary" {...props}>
+    <Button appearance="primary" {...(props as ButtonProps)}>
       {props.size}
     </Button>
   ),
@@ -90,7 +91,7 @@ figma.connect(Button, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS--
     }),
   },
   example: (props) => (
-    <Button appearance="alert" {...props}>
+    <Button appearance="alert" {...(props as ButtonProps)}>
       {props.size}
     </Button>
   ),
@@ -122,7 +123,7 @@ figma.connect(Button, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS--
     }),
   },
   example: (props) => (
-    <Button appearance="transparent" {...props}>
+    <Button appearance="transparent" {...(props as ButtonProps)}>
       {props.size}
     </Button>
   ),
@@ -152,7 +153,7 @@ figma.connect(Button, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS--
       Loading: true,
     }),
   },
-  example: (props) => <Button icon="more_horiz" {...props} />,
+  example: (props) => <Button icon="more_horiz" {...(props as ButtonProps)} />,
 });
 
 // Expanded Button
@@ -179,7 +180,7 @@ figma.connect(Button, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS--
     }),
   },
   example: (props) => (
-    <Button expanded={true} {...props}>
+    <Button expanded={true} {...(props as ButtonProps)}>
       {props.size}
     </Button>
   ),

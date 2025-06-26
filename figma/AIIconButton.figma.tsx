@@ -1,7 +1,7 @@
 import React from 'react';
 import { AIIconButton } from '@/index';
-import figma from '@figma/code-connect';
 import { AIIconButtonProps } from '@/index.type';
+import figma from '@figma/code-connect';
 
 figma.connect(AIIconButton, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=48860-174507', {
   imports: ["import { AIIconButton } from '@innovaccer/design-system'"],

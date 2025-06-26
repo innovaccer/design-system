@@ -1,5 +1,6 @@
 import React from 'react';
 import { DateRangePicker } from '@/index';
+import { DateRangePickerProps } from '@/index.type';
 import figma from '@figma/code-connect';
 
 figma.connect(DateRangePicker, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=1321-6336', {
@@ -14,5 +15,5 @@ figma.connect(DateRangePicker, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7g
       'Within a month': 1,
     }),
   },
-  example: (props) => <DateRangePicker {...props} />,
+  example: (props) => <DateRangePicker {...(props as DateRangePickerProps)} />,
 });

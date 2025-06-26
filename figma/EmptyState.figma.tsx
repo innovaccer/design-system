@@ -1,5 +1,6 @@
 import React from 'react';
 import { EmptyState, Button } from '@/index';
+import { EmptyStateProps } from '@/index.type';
 import figma from '@figma/code-connect';
 
 figma.connect(EmptyState, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=46322-5927', {
@@ -26,7 +27,7 @@ figma.connect(EmptyState, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/M
     }),
   },
   example: ({ illustration, description, primaryAction, secondaryAction, ...rest }) => (
-    <EmptyState {...rest}>
+    <EmptyState {...(rest as EmptyStateProps)}>
       {illustration}
       <EmptyState.Title>Title goes here</EmptyState.Title>
       {description}
