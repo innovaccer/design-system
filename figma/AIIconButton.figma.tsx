@@ -1,6 +1,7 @@
 import React from 'react';
 import { AIIconButton } from '@/index';
 import figma from '@figma/code-connect';
+import { AIIconButtonProps } from '@/index.type';
 
 figma.connect(AIIconButton, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=48860-174507', {
   imports: ["import { AIIconButton } from '@innovaccer/design-system'"],
@@ -18,5 +19,7 @@ figma.connect(AIIconButton, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T
       Bottom: 'bottom',
     }),
   },
-  example: (props) => <AIIconButton {...props} icon="import_contacts" tooltip="Import Contacts" />,
+  example: (props) => (
+    <AIIconButton {...(props as AIIconButtonProps)} icon="import_contacts" tooltip="Import Contacts" />
+  ),
 });

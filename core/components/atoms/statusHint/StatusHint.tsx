@@ -10,7 +10,7 @@ export interface StatusHintProps extends BaseProps {
   /**
    * Describes label of the `Status Hint`
    */
-  children: React.ReactText | React.ReactNode;
+  children: string | number | React.ReactNode;
   /**
    * Color of Icon
    */

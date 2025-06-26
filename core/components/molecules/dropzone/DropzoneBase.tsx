@@ -191,8 +191,8 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
 
   // Cb to open the file dialog when SPACE/ENTER occurs on the dropzone
   const onKeyDownCb = useCallback(
-    (event) => {
-      if (!rootRef.current || !rootRef.current.isEqualNode(event.target)) {
+    (event: React.KeyboardEvent<HTMLDivElement>) => {
+      if (!rootRef.current || !rootRef.current.isEqualNode(event.target as Node)) {
         return;
       }
 
@@ -217,7 +217,8 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
 
   const onDocumentDrop = (event: DragEvent) => {
     // Not every event target type is element so we have to check if it is.
-    if (event.target instanceof HTMLDivElement && rootRef.current && rootRef.current.contains(event.target)) {
+    const target = event.target as Node;
+    if (rootRef.current && rootRef.current.contains(target)) {
       return;
     }
     event.preventDefault();
@@ -239,7 +240,7 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
   }, [rootRef, preventDropOnDocument]);
 
   const onDragEnterCb = useCallback(
-    (event) => {
+    (event: any) => {
       event.preventDefault();
       event.persist();
 
@@ -267,7 +268,7 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
   );
 
   const onDragOverCb = useCallback(
-    (event) => {
+    (event: any) => {
       event.preventDefault();
       event.persist();
 
@@ -287,7 +288,7 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
   );
 
   const onDragLeaveCb = useCallback(
-    (event) => {
+    (event: any) => {
       event.preventDefault();
       event.persist();
 
@@ -315,7 +316,7 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
   );
 
   const onDropCb = useCallback(
-    (event) => {
+    (event: any) => {
       event.preventDefault();
       // Persist here because we need the event later after getFilesFromEvent() is done
       event.persist();
@@ -376,7 +377,7 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
     [multiple, accept, minSize, maxSize, getFilesFromEvent, onDrop, onDropAccepted, onDropRejected]
   );
 
-  const composeDragHandler = (fn: (event: DragEvent) => void) => {
+  const composeDragHandler = (fn: (event: Event) => void) => {
     return disabled ? null : fn;
   };
 
@@ -394,17 +395,17 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
         onDropCallback,
         ...rest
       }: any = {}) => ({
-        onDragEnter: composeDragHandler(composeEventHandlers(onDragEnterCallback, onDragEnterCb)),
-        onDragOver: composeDragHandler(composeEventHandlers(onDragOverCallback, onDragOverCb)),
-        onDragLeave: composeDragHandler(composeEventHandlers(onDragLeaveCallback, onDragLeaveCb)),
-        onDrop: composeDragHandler(composeEventHandlers(onDropCallback, onDropCb)),
+        onDragEnter: composeDragHandler(composeEventHandlers(onDragEnterCallback, onDragEnterCb as any)),
+        onDragOver: composeDragHandler(composeEventHandlers(onDragOverCallback, onDragOverCb as any)),
+        onDragLeave: composeDragHandler(composeEventHandlers(onDragLeaveCallback, onDragLeaveCb as any)),
+        onDrop: composeDragHandler(composeEventHandlers(onDropCallback, onDropCb as any)),
         [refKey]: rootRef,
         ...rest,
       }),
     [rootRef, onKeyDownCb, onFocusCb, onBlurCb, onDragEnterCb, onDragOverCb, onDragLeaveCb, onDropCb, disabled]
   );
 
-  const onInputElementClick = useCallback((event) => {
+  const onInputElementClick = useCallback((event: React.MouseEvent<HTMLInputElement>) => {
     event.stopPropagation();
   }, []);
 
@@ -416,8 +417,8 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
           multiple,
           type: 'file',
           style: { display: 'none' },
-          onChange: composeDragHandler(composeEventHandlers(onChange, onDropCb)),
-          onClick: composeDragHandler(composeEventHandlers(onClick, onInputElementClick)),
+          onChange: composeDragHandler(composeEventHandlers(onChange, onDropCb as any)),
+          onClick: composeDragHandler(composeEventHandlers(onClick, onInputElementClick as any)),
           autoComplete: 'off',
           tabIndex: -1,
           [refKey]: inputRef,

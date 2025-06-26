@@ -8,9 +8,9 @@ import styles from '@css/components/subheading.module.css';
 export interface SubheadingProps extends BaseProps, BaseHtmlProps<HTMLHeadingElement> {
   /**
    * Text to be rendered
-   * @type {string}
+   * @type {string | number}
    */
-  children: React.ReactText;
+  children: string | number;
   /**
    * State of `Subheading`
    */
@@ -41,8 +41,5 @@ export const Subheading = React.forwardRef<HTMLHeadingElement, SubheadingProps>(
 });
 
 Subheading.displayName = 'Subheading';
-Subheading.defaultProps = {
-  appearance: 'default',
-};
 
 export default Subheading;

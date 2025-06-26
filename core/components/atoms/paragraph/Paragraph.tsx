@@ -43,8 +43,5 @@ export const Paragraph = React.forwardRef<HTMLParagraphElement, ParagraphProps>(
 });
 
 Paragraph.displayName = 'Paragraph';
-Paragraph.defaultProps = {
-  appearance: 'default',
-};
 
 export default Paragraph;

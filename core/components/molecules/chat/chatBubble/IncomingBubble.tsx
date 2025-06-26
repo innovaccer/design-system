@@ -16,11 +16,11 @@ export interface ChatAvatarProps {
 }
 
 export interface IncomingOptionProps extends BaseProps {
-  children?: React.JSX.Element;
-  time?: string | React.JSX.Element;
+  children?: React.ReactNode;
+  time?: string | number;
   metaData?: string;
-  actionBar?: () => React.JSX.Element;
-  urgentMessage?: () => React.JSX.Element;
+  actionBar?: () => React.ReactElement;
+  urgentMessage?: () => React.ReactElement;
   avatarData?: ChatAvatarProps;
   showAvatar?: boolean;
 }

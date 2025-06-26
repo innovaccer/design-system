@@ -332,7 +332,7 @@ interface SharedTableProps extends BaseProps {
    * }
    * </pre>
    */
-  errorTemplate?: React.FunctionComponent<ErrorTemplateProps>;
+  errorTemplate?: (props: ErrorTemplateProps) => React.ReactNode;
   /**
    * Debounce duration to call updateData in case of search term update
    * @default 750

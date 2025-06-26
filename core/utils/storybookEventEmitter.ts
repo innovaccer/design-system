@@ -1,3 +1,4 @@
+// @ts-expect-error - Missing type declarations for @storybook/addons
 import addons from '@storybook/addons';
 
 const emitter = (type: any, options: any) => addons.getChannel().emit(type, options);

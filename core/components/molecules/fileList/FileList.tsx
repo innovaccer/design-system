@@ -33,7 +33,7 @@ export interface FileListProps extends BaseProps {
   /**
    * Actions to be rendered inside the file item
    */
-  actionRenderer?: React.FC<FileListItemProps>;
+  actionRenderer?: (fileItem: FileListItemProps) => React.ReactNode;
 }
 
 export const FileList = (props: FileListProps) => {
@@ -49,7 +49,7 @@ export const FileList = (props: FileListProps) => {
         <FileListItem
           key={index}
           onClick={onClick}
-          actions={actionRenderer && actionRenderer(fileItem)}
+          actions={actionRenderer ? actionRenderer(fileItem) : undefined}
           fileItem={fileItem}
           {...fileItem}
         />

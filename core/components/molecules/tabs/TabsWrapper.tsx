@@ -55,7 +55,7 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
   };
 
   const TabsHeader = tabs.map((child, index) => {
-    const { label, disabled } = child.props;
+    const { label, disabled } = child.props as { label: string; disabled?: boolean };
 
     const tabHeaderClass = classNames({
       [styles['Tab']]: true,
