@@ -1,5 +1,6 @@
 import React from 'react';
 import { Toast } from '@/index';
+import { ToastProps } from '@/index.type';
 import figma from '@figma/code-connect';
 import { Action } from '@/components/atoms/toast';
 
@@ -24,5 +25,5 @@ figma.connect(Toast, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---
       false: undefined,
     }),
   },
-  example: (props) => <Toast title="Title goes here" {...props} actions={props.actions as Action[]} />,
+  example: (props) => <Toast {...(props as ToastProps)} title="Title goes here" actions={props.actions as Action[]} />,
 });
