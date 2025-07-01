@@ -6,7 +6,7 @@ import styles from '@css/components/stepper.module.css';
 
 export interface StepProp {
   label: string;
-  value?: React.ReactText;
+  value?: string | number;
 }
 
 export interface StepperProps extends BaseProps {
@@ -40,7 +40,7 @@ export interface StepperProps extends BaseProps {
   /**
    * Callback function called when user clicks on a non-disabled step.
    */
-  onChange?: (active: number, completed: number, label?: string, value?: React.ReactText) => void;
+  onChange?: (active: number, completed: number, label?: string, value?: string | number) => void;
 
   skipIndexes: number[];
 }
@@ -50,7 +50,7 @@ export const Stepper = (props: StepperProps) => {
 
   const baseProps = extractBaseProps(props);
 
-  const onChangeHandler = (index: number, stepLabel: string, stepValue?: React.ReactText) => {
+  const onChangeHandler = (index: number, stepLabel: string, stepValue?: string | number) => {
     if (onChange) onChange(index, completed, stepLabel, stepValue);
   };
 

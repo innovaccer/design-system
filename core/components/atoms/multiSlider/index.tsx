@@ -71,7 +71,7 @@ interface MultiSliderState {
   hoveredLabelValue?: number;
 }
 
-type InternalMultiSliderProps = SliderBaserProps & RangeSliderBaseProps;
+type InternalMultiSliderProps = SliderBaserProps & RangeSliderBaseProps & { children?: React.ReactNode };
 
 const MultiSliderHandle: React.FunctionComponent<HandleProps> = () => null;
 
@@ -129,14 +129,14 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
     }
   };
 
-  getHandleValues = (props: React.PropsWithChildren<InternalMultiSliderProps>) => {
+  getHandleValues = (props: React.PropsWithChildren<InternalMultiSliderProps>): HandleProps[] => {
     const maybeHandles = React.Children.map(props.children as React.ReactElement, (child) =>
-      isElementOfType(child) ? child.props : null
+      isElementOfType(child) ? (child.props as HandleProps) : null
     );
 
     let handles = maybeHandles != null ? maybeHandles : [];
-    handles = handles.filter((handle) => handle !== null);
-    handles.sort((left, right) => left.value - right.value);
+    handles = handles.filter((handle): handle is HandleProps => handle !== null);
+    handles.sort((left: HandleProps, right: HandleProps) => left.value - right.value);
     return handles;
   };
 
@@ -296,10 +296,10 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
     });
   };
 
-  renderLabels = () => {
+  renderLabels = (): React.ReactElement[] => {
     const { labelStepSize, max, min, labelRenderer, disabled } = this.props;
 
-    const labels = [];
+    const labels: React.ReactElement[] = [];
     const stepSizeRatio = this.state.tickSizeRatio * labelStepSize;
     const handles = this.getHandleValues(this.props);
     const activeLabels = handles.map((handle) => handle.value.toFixed(this.state.labelPrecision));
@@ -381,7 +381,7 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
     trackStops.push({ value: this.props.max });
 
     let previous: HandleProps = { value: this.props.min || 0 };
-    const handles: JSX.Element[] = [];
+    const handles: React.ReactElement[] = [];
 
     trackStops.forEach((track, index) => {
       const current = track;
@@ -428,7 +428,9 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
           {/* eslint-disable */}
           <div
             className={styles['Slider-track']}
-            ref={(ref) => (this.trackElement = ref)}
+            ref={(ref) => {
+              this.trackElement = ref;
+            }}
             onMouseDown={this.maybeHandleTrackClick}
             data-test="DesignSystem-MultiSlider-Slider-Track"
           >

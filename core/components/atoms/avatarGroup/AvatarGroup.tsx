@@ -22,7 +22,7 @@ export interface AvatarData extends Record<string, any> {
 }
 
 interface AvatarPopoverProps {
-  popperRenderer?: (names: AvatarData[]) => JSX.Element;
+  popperRenderer?: (names: AvatarData[]) => React.JSX.Element;
   appendToBody?: PopoverProps['appendToBody'];
   dark?: PopoverProps['dark'];
   position?: PopoverProps['position'];

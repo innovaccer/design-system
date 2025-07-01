@@ -16,7 +16,7 @@ export interface CollapsibleProps extends BaseProps {
   /**
    * Height of `Collapsible`
    */
-  height: React.ReactText;
+  height: string | number;
   /**
    * Width of expanded `Collapsible`
    */
@@ -28,7 +28,7 @@ export interface CollapsibleProps extends BaseProps {
   /**
    * Components to render inside `Collapsible`
    */
-  children: React.ReactChild;
+  children: React.ReactNode;
   /**
    * Determines whether to show trigger at bottom of `Collapsible`
    */

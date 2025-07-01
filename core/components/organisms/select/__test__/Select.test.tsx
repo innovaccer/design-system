@@ -339,6 +339,433 @@ describe('Check for default value in single select', () => {
   });
 });
 
+describe('Pre-selected value shows as selected in option list', () => {
+  it('should show pre-selected option as selected in single select', () => {
+    const preSelectedValue = { label: 'Option 2', value: 'Option 2' };
+
+    const { getByTestId, getAllByTestId } = render(
+      <Select onSelect={FunctionValue} value={preSelectedValue}>
+        <Select.List>
+          <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+          <Select.Option option={{ label: 'Option 3', value: 'Option 3' }}>Option 3</Select.Option>
+        </Select.List>
+      </Select>
+    );
+
+    const inputTrigger = getByTestId('DesignSystem-Select-trigger');
+    expect(inputTrigger).toBeInTheDocument();
+    expect(inputTrigger).toHaveTextContent('Option 2');
+
+    fireEvent.click(inputTrigger);
+    const popover = getByTestId('DesignSystem-Popover');
+    expect(popover).toBeInTheDocument();
+
+    const optionElements = getAllByTestId('DesignSystem-Select-Option');
+    const itemElements = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+
+    expect(optionElements).toHaveLength(3);
+
+    const selectedOption = optionElements[1];
+    expect(selectedOption).toHaveAttribute('aria-selected', 'true');
+    expect(itemElements[1]).toHaveClass('Listbox-item--selected');
+  });
+
+  it('should show pre-selected options as selected in multi select', () => {
+    const preSelectedValues = [
+      { label: 'Option 1', value: 'Option 1' },
+      { label: 'Option 3', value: 'Option 3' },
+    ];
+
+    const { getByTestId, getAllByTestId } = render(
+      <Select multiSelect={true} onSelect={FunctionValue} value={preSelectedValues}>
+        <Select.List>
+          <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+          <Select.Option option={{ label: 'Option 3', value: 'Option 3' }}>Option 3</Select.Option>
+        </Select.List>
+      </Select>
+    );
+
+    const inputTrigger = getByTestId('DesignSystem-Select-trigger');
+    expect(inputTrigger).toBeInTheDocument();
+    expect(inputTrigger).toHaveTextContent('Option 1, Option 3');
+
+    fireEvent.click(inputTrigger);
+    const popover = getByTestId('DesignSystem-Popover');
+    expect(popover).toBeInTheDocument();
+
+    const optionElements = getAllByTestId('DesignSystem-Select-Option');
+    const itemElements = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+
+    expect(optionElements).toHaveLength(3);
+
+    const firstSelectedOption = optionElements[0];
+    expect(firstSelectedOption).toHaveAttribute('aria-selected', 'true');
+    expect(itemElements[0]).toHaveClass('Listbox-item--selected');
+
+    const unselectedOption = optionElements[1];
+    expect(unselectedOption).toHaveAttribute('aria-selected', 'false');
+    expect(itemElements[1]).not.toHaveClass('Listbox-item--selected');
+
+    const secondSelectedOption = optionElements[2];
+    expect(secondSelectedOption).toHaveAttribute('aria-selected', 'true');
+    expect(itemElements[2]).toHaveClass('Listbox-item--selected');
+  });
+
+  it('should show pre-selected option with checkbox as checked in multi select', () => {
+    const preSelectedValue = [{ label: 'Option 2', value: 'Option 2' }];
+
+    const { getByTestId, getAllByTestId } = render(
+      <Select multiSelect={true} onSelect={FunctionValue} value={preSelectedValue}>
+        <Select.List>
+          <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+          <Select.Option option={{ label: 'Option 3', value: 'Option 3' }}>Option 3</Select.Option>
+        </Select.List>
+      </Select>
+    );
+
+    const inputTrigger = getByTestId('DesignSystem-Select-trigger');
+    expect(inputTrigger).toBeInTheDocument();
+    expect(inputTrigger).toHaveTextContent('Option 2');
+
+    fireEvent.click(inputTrigger);
+    const popover = getByTestId('DesignSystem-Popover');
+    expect(popover).toBeInTheDocument();
+
+    const optionElements = getAllByTestId('DesignSystem-Select-Option');
+    const itemElements = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+
+    expect(optionElements).toHaveLength(3);
+
+    const selectedOption = optionElements[1];
+    expect(selectedOption).toHaveAttribute('aria-selected', 'true');
+    expect(itemElements[1]).toHaveClass('Listbox-item--selected');
+
+    const checkbox = selectedOption.querySelector('input[type="checkbox"]');
+    expect(checkbox).toBeChecked();
+  });
+
+  it('should handle pre-selected value with different value types', () => {
+    const preSelectedValue = { label: 'Option 2', value: 123 };
+
+    const { getByTestId, getAllByTestId } = render(
+      <Select onSelect={FunctionValue} value={preSelectedValue}>
+        <Select.List>
+          <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          <Select.Option option={{ label: 'Option 2', value: 123 }}>Option 2</Select.Option>
+          <Select.Option option={{ label: 'Option 3', value: 'Option 3' }}>Option 3</Select.Option>
+        </Select.List>
+      </Select>
+    );
+
+    const inputTrigger = getByTestId('DesignSystem-Select-trigger');
+    expect(inputTrigger).toBeInTheDocument();
+    expect(inputTrigger).toHaveTextContent('Option 2');
+
+    fireEvent.click(inputTrigger);
+    const popover = getByTestId('DesignSystem-Popover');
+    expect(popover).toBeInTheDocument();
+
+    const optionElements = getAllByTestId('DesignSystem-Select-Option');
+    const itemElements = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+    expect(optionElements).toHaveLength(3);
+
+    const selectedOption = optionElements[1];
+    expect(selectedOption).toHaveAttribute('aria-selected', 'true');
+    expect(itemElements[1]).toHaveClass('Listbox-item--selected');
+  });
+});
+
+describe('Pre-selected value with nested object values', () => {
+  it('should show pre-selected option as selected when value is a nested object', () => {
+    const preSelectedValue = {
+      label: 'Option 1',
+      value: { label: '1', value: '1' },
+    };
+
+    const { getByTestId, getAllByTestId } = render(
+      <Select onSelect={FunctionValue} value={preSelectedValue}>
+        <Select.List>
+          <Select.Option
+            option={{
+              label: 'Option 1',
+              value: { label: '1', value: '1' },
+            }}
+          >
+            Option 1
+          </Select.Option>
+          <Select.Option
+            option={{
+              label: 'Option 2',
+              value: { label: '2', value: '2' },
+            }}
+          >
+            Option 2
+          </Select.Option>
+          <Select.Option
+            option={{
+              label: 'Option 3',
+              value: { label: '3', value: '3' },
+            }}
+          >
+            Option 3
+          </Select.Option>
+        </Select.List>
+      </Select>
+    );
+
+    const inputTrigger = getByTestId('DesignSystem-Select-trigger');
+    expect(inputTrigger).toBeInTheDocument();
+    expect(inputTrigger).toHaveTextContent('Option 1');
+
+    fireEvent.click(inputTrigger);
+    const popover = getByTestId('DesignSystem-Popover');
+    expect(popover).toBeInTheDocument();
+
+    const optionElements = getAllByTestId('DesignSystem-Select-Option');
+    const itemElements = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+
+    expect(optionElements).toHaveLength(3);
+
+    const selectedOption = optionElements[0];
+    expect(selectedOption).toHaveAttribute('aria-selected', 'true');
+    expect(itemElements[0]).toHaveClass('Listbox-item--selected');
+  });
+
+  it('should show pre-selected options as selected in multi select with nested object values', () => {
+    const preSelectedValues = [
+      { label: 'Option 1', value: { label: '1', value: '1' } },
+      { label: 'Option 3', value: { label: '3', value: '3' } },
+    ];
+
+    const { getByTestId, getAllByTestId } = render(
+      <Select multiSelect={true} onSelect={FunctionValue} value={preSelectedValues}>
+        <Select.List>
+          <Select.Option
+            option={{
+              label: 'Option 1',
+              value: { label: '1', value: '1' },
+            }}
+          >
+            Option 1
+          </Select.Option>
+          <Select.Option
+            option={{
+              label: 'Option 2',
+              value: { label: '2', value: '2' },
+            }}
+          >
+            Option 2
+          </Select.Option>
+          <Select.Option
+            option={{
+              label: 'Option 3',
+              value: { label: '3', value: '3' },
+            }}
+          >
+            Option 3
+          </Select.Option>
+        </Select.List>
+      </Select>
+    );
+
+    const inputTrigger = getByTestId('DesignSystem-Select-trigger');
+    expect(inputTrigger).toBeInTheDocument();
+    expect(inputTrigger).toHaveTextContent('Option 1, Option 3');
+
+    fireEvent.click(inputTrigger);
+    const popover = getByTestId('DesignSystem-Popover');
+    expect(popover).toBeInTheDocument();
+
+    const optionElements = getAllByTestId('DesignSystem-Select-Option');
+    const itemElements = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+
+    expect(optionElements).toHaveLength(3);
+
+    const firstSelectedOption = optionElements[0];
+    expect(firstSelectedOption).toHaveAttribute('aria-selected', 'true');
+    expect(itemElements[0]).toHaveClass('Listbox-item--selected');
+
+    const unselectedOption = optionElements[1];
+    expect(unselectedOption).toHaveAttribute('aria-selected', 'false');
+    expect(itemElements[1]).not.toHaveClass('Listbox-item--selected');
+
+    const secondSelectedOption = optionElements[2];
+    expect(secondSelectedOption).toHaveAttribute('aria-selected', 'true');
+    expect(itemElements[2]).toHaveClass('Listbox-item--selected');
+  });
+
+  it('should handle mixed value types in the same select', () => {
+    const preSelectedValue = {
+      label: 'Option 2',
+      value: { label: '2', value: '2' },
+    };
+
+    const { getByTestId, getAllByTestId } = render(
+      <Select onSelect={FunctionValue} value={preSelectedValue}>
+        <Select.List>
+          <Select.Option option={{ label: 'Option 1', value: 'simple-string' }}>Option 1</Select.Option>
+          <Select.Option
+            option={{
+              label: 'Option 2',
+              value: { label: '2', value: '2' },
+            }}
+          >
+            Option 2
+          </Select.Option>
+          <Select.Option option={{ label: 'Option 3', value: 123 }}>Option 3</Select.Option>
+        </Select.List>
+      </Select>
+    );
+
+    const inputTrigger = getByTestId('DesignSystem-Select-trigger');
+    expect(inputTrigger).toBeInTheDocument();
+    expect(inputTrigger).toHaveTextContent('Option 2');
+
+    fireEvent.click(inputTrigger);
+    const popover = getByTestId('DesignSystem-Popover');
+    expect(popover).toBeInTheDocument();
+
+    const optionElements = getAllByTestId('DesignSystem-Select-Option');
+    const itemElements = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+
+    expect(optionElements).toHaveLength(3);
+
+    const selectedOption = optionElements[1];
+    expect(selectedOption).toHaveAttribute('aria-selected', 'true');
+    expect(itemElements[1]).toHaveClass('Listbox-item--selected');
+  });
+
+  it('should handle deeply nested object values', () => {
+    const preSelectedValue = {
+      label: 'Option 1',
+      value: {
+        id: 1,
+        data: {
+          label: '1',
+          value: '1',
+          metadata: { type: 'user', category: 'admin' },
+        },
+      },
+    };
+
+    const { getByTestId, getAllByTestId } = render(
+      <Select onSelect={FunctionValue} value={preSelectedValue}>
+        <Select.List>
+          <Select.Option
+            option={{
+              label: 'Option 1',
+              value: {
+                id: 1,
+                data: {
+                  label: '1',
+                  value: '1',
+                  metadata: { type: 'user', category: 'admin' },
+                },
+              },
+            }}
+          >
+            Option 1
+          </Select.Option>
+          <Select.Option
+            option={{
+              label: 'Option 2',
+              value: {
+                id: 2,
+                data: {
+                  label: '2',
+                  value: '2',
+                  metadata: { type: 'user', category: 'user' },
+                },
+              },
+            }}
+          >
+            Option 2
+          </Select.Option>
+        </Select.List>
+      </Select>
+    );
+
+    const inputTrigger = getByTestId('DesignSystem-Select-trigger');
+    expect(inputTrigger).toBeInTheDocument();
+    expect(inputTrigger).toHaveTextContent('Option 1');
+
+    fireEvent.click(inputTrigger);
+    const popover = getByTestId('DesignSystem-Popover');
+    expect(popover).toBeInTheDocument();
+
+    const optionElements = getAllByTestId('DesignSystem-Select-Option');
+    const itemElements = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+
+    expect(optionElements).toHaveLength(2);
+
+    const selectedOption = optionElements[0];
+    expect(selectedOption).toHaveAttribute('aria-selected', 'true');
+    expect(itemElements[0]).toHaveClass('Listbox-item--selected');
+  });
+
+  it('should handle array values within nested objects', () => {
+    const preSelectedValue = {
+      label: 'Option 1',
+      value: {
+        label: '1',
+        value: '1',
+        tags: ['tag1', 'tag2', 'tag3'],
+      },
+    };
+
+    const { getByTestId, getAllByTestId } = render(
+      <Select onSelect={FunctionValue} value={preSelectedValue}>
+        <Select.List>
+          <Select.Option
+            option={{
+              label: 'Option 1',
+              value: {
+                label: '1',
+                value: '1',
+                tags: ['tag1', 'tag2', 'tag3'],
+              },
+            }}
+          >
+            Option 1
+          </Select.Option>
+          <Select.Option
+            option={{
+              label: 'Option 2',
+              value: {
+                label: '2',
+                value: '2',
+                tags: ['tag4', 'tag5'],
+              },
+            }}
+          >
+            Option 2
+          </Select.Option>
+        </Select.List>
+      </Select>
+    );
+
+    const inputTrigger = getByTestId('DesignSystem-Select-trigger');
+    expect(inputTrigger).toBeInTheDocument();
+    expect(inputTrigger).toHaveTextContent('Option 1');
+
+    fireEvent.click(inputTrigger);
+    const popover = getByTestId('DesignSystem-Popover');
+    expect(popover).toBeInTheDocument();
+
+    const optionElements = getAllByTestId('DesignSystem-Select-Option');
+    const itemElements = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+
+    expect(optionElements).toHaveLength(2);
+
+    const selectedOption = optionElements[0];
+    expect(selectedOption).toHaveAttribute('aria-selected', 'true');
+    expect(itemElements[0]).toHaveClass('Listbox-item--selected');
+  });
+});
+
 describe('Render custom trigger in select', () => {
   const customTrigger = <AIIconButton data-test="AIIconButton-trigger" icon="import_contacts" type="button" />;
 

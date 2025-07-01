@@ -127,6 +127,7 @@
 
 .MenuItem-count {
   margin-right: var(--spacing-10);
+  flex-shrink: 0;
 }
 
 .MenuItem-count--disabled {

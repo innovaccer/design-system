@@ -65,7 +65,7 @@ export interface TooltipProps extends Omit<PopoverProps, TooltipPopperProps>, Ba
    * of text in case when `showOnTruncation` is true otherwise
    * it will refer to the rendered children
    */
-  elementRef?: React.RefObject<HTMLElement>;
+  elementRef?: React.RefObject<HTMLElement | null>;
   /**
    * Handles open/close
    */
@@ -76,7 +76,7 @@ export interface TooltipProps extends Omit<PopoverProps, TooltipPopperProps>, Ba
   openDelay?: number;
 }
 
-export const detectTruncation = (boundaryRef: React.RefObject<HTMLElement>) => {
+export const detectTruncation = (boundaryRef: React.RefObject<HTMLElement | null>) => {
   const element = boundaryRef?.current;
   const isTruncated = element ? element.scrollWidth > element.clientWidth : false;
 

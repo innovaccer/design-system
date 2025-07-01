@@ -14,7 +14,7 @@ export interface KeyElementProps extends BaseProps {
   /**
    * Specify label to be displayed in `KeyElement`
    */
-  label?: React.ReactText;
+  label?: string | number;
   /**
    * Specify Icon name to displayed in `KeyElement`
    */

@@ -98,7 +98,7 @@ export const ChipInput = (props: ChipInputProps) => {
   } = props;
 
   const inputRef = React.createRef<HTMLInputElement>();
-  const customRef = React.useRef<any>();
+  const customRef = React.useRef<any>(null);
 
   const [chips, setChips] = React.useState(value || defaultValue);
   const [inputValue, setInputValue] = React.useState('');

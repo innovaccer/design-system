@@ -36,11 +36,13 @@ interface TableSyncProps {
    *      _selected?: boolean,
    *      disabled?: boolean,
    *      _expandNestedRow?: boolean,
+   *      _activated?: boolean,
    *    }
    *
    *    `_selected`  Denotes row selection
    *    `disabled` Denotes disabled row
    *    `_expandNestedRow` Denotes whether to default expand the nested row
+   *    `_activated` Denotes row activation
    * </pre>
    */
   data: GridProps['data'];
@@ -68,6 +70,7 @@ interface TableSyncProps {
    *        cellRenderer?: React.FunctionComponent\<GridCellProps\>;
    *        align?: 'left' | 'right' | 'center';
    *        verticalAlign?: 'top' | 'center' | 'bottom';
+   *        highlightCell?: boolean;
    *    }
    *
    *    GridCellProps: {
@@ -112,6 +115,7 @@ interface TableSyncProps {
    * | cellRenderer | Custom Cell Renderer | |
    * | align | Align cell content<br>**Align applicable only for following cellTypes:<br>DEFAULT, AVATAR, ICON, STATUS_HINT** | "left" |
    * | verticalAlign | Vertical align cell content | "center" |
+   * | highlightCell | Highlight cell content on search | |
    */
   /* tslint:enable */
   schema: GridProps['schema'];
@@ -328,7 +332,7 @@ interface SharedTableProps extends BaseProps {
    * }
    * </pre>
    */
-  errorTemplate?: React.FunctionComponent<ErrorTemplateProps>;
+  errorTemplate?: (props: ErrorTemplateProps) => React.ReactNode;
   /**
    * Debounce duration to call updateData in case of search term update
    * @default 750
@@ -443,6 +447,13 @@ interface SharedTableProps extends BaseProps {
    * Callback to be triggered on scroll
    */
   onScroll?: GridProps['onScroll'];
+  /**
+   * Function to create custom regex pattern for highlighting matched text in cells.
+   * If not provided, will use default case-insensitive match.
+   * @param searchTerm - The current search term
+   * @returns RegExp to use for highlighting
+   */
+  highlightRegex?: (searchTerm: string) => RegExp;
 }
 
 export type SyncTableProps = SharedTableProps & TableSyncProps;
@@ -582,6 +593,27 @@ export class Table extends React.Component<TableProps, TableState> {
           }
         );
       }
+    }
+
+    if (prevProps.data !== this.props.data) {
+      const { data = [], schema = [] } = this.props;
+      this.setState(
+        {
+          data,
+          displayData: data,
+          schema,
+          loading: this.props.loading || false,
+          error: this.props.error || false,
+          errorType: this.props.errorType,
+          page: 1,
+          totalRecords: data.length || 0,
+          selectAll: getSelectAll([]),
+          totalRowsCount: data.length || 0,
+        },
+        () => {
+          this.updateData();
+        }
+      );
     }
 
     if (prevState.page !== this.state.page) {
@@ -1014,6 +1046,14 @@ export class Table extends React.Component<TableProps, TableState> {
     this.onSelectAll(true, true);
   };
 
+  public selectAllRows = () => {
+    this.onSelectAllRows();
+  };
+
+  public clearAllSelection = () => {
+    this.onClearSelection();
+  };
+
   render() {
     const {
       showHead,
@@ -1043,6 +1083,7 @@ export class Table extends React.Component<TableProps, TableState> {
       enableInfiniteScroll,
       infiniteScrollOptions,
       onScroll,
+      highlightRegex,
     } = this.props;
 
     const baseProps = extractBaseProps(this.props);
@@ -1051,7 +1092,7 @@ export class Table extends React.Component<TableProps, TableState> {
 
     const classes = className ? ` ${className}` : '';
 
-    const { totalRecords } = this.state;
+    const { totalRecords, searchTerm } = this.state;
     const totalPages = getTotalPages(totalRecords, pageSize);
     const tableClass = classNames(tableStyles['Table'], classes);
 
@@ -1115,6 +1156,8 @@ export class Table extends React.Component<TableProps, TableState> {
             enableInfiniteScroll={enableInfiniteScroll}
             infiniteScrollOptions={infiniteScrollOptions}
             onScroll={onScroll}
+            searchTerm={searchTerm}
+            highlightRegex={highlightRegex}
           />
         </div>
         {withPagination && !this.state.loading && !this.state.error && totalPages > 1 && (

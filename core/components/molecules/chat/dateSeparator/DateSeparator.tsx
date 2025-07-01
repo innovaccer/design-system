@@ -7,7 +7,7 @@ export interface DateSeparatorProps extends BaseProps {
   /**
    * Specifies the date to be displayed
    */
-  date: React.ReactText;
+  date: string | number;
 }
 
 const DateSeparator: React.FC<DateSeparatorProps> = (props) => {

@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { Title, Subtitle, Description, Primary, Controls, Unstyled, useOf } from '@storybook/addon-docs/blocks';
+import { Controls, Unstyled, useOf } from '@storybook/addon-docs/blocks';
 import { renderToStaticMarkup } from 'react-dom/server';
 import reactElementToJSXString from 'react-element-to-jsx-string';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { vs2015 } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import * as DS from '@';
 import { Button, Card, Heading, CardHeader, Row, Column, Tooltip, Text, Badge } from '@/index';
-import vsDark from 'prism-react-renderer/themes/vsDark';
+import { themes } from 'prism-react-renderer';
 import { LiveProvider, LiveEditor, LiveError, LivePreview, withLive } from 'react-live';
 import openSandbox from './sandbox';
 import generateImports from './generateImports';
@@ -194,7 +194,7 @@ const StoryComp = (props: {
     return null;
   });
 
-  const onChangeCode = React.useCallback((updatedCode) => {
+  const onChangeCode = React.useCallback((updatedCode: string) => {
     setJsxCode(updatedCode);
   }, []);
 
@@ -294,7 +294,7 @@ const StoryComp = (props: {
                           if (editor) copyCode(editor.value);
                         }}
                       />
-                      <LiveEditor theme={vsDark} onChange={onChangeCode} />
+                      <LiveEditor theme={themes.vsDark} onChange={onChangeCode} />
                     </div>
                   )}
                   {activeTab == 1 && !noHtml && renderCodeBlock(htmlCode, shouldShowMore, showMore)}
@@ -336,7 +336,6 @@ export const docPage = ({ of }: any) => {
   const {
     title,
     description,
-    props: propsAttr,
     customCode,
     noHtml,
     noStory,
@@ -368,7 +367,7 @@ export const docPage = ({ of }: any) => {
                 </Badge>
               )}
             </div>
-            <Description>{description}</Description>
+            <Text>{description}</Text>
           </>
         )}
 
@@ -389,7 +388,7 @@ export const docPage = ({ of }: any) => {
             <br />
             <br />
             <Heading appearance="subtle">Accessibility</Heading>
-            <Description>{a11yProps}</Description>
+            <Text>{a11yProps}</Text>
           </>
         )}
 

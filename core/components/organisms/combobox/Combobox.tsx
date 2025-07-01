@@ -161,7 +161,7 @@ export const Combobox = (props: ComboboxProps) => {
   const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>();
   const [wrapperStyle, setWrapperStyle] = React.useState({});
   const triggerRef = React.createRef<HTMLDivElement>();
-  const listRef = React.createRef<HTMLDivElement>();
+  const listRef = React.createRef<HTMLDivElement | null>();
   const [openPopover, setOpenPopover] = React.useState(false);
 
   const [isOptionSelected, setIsOptionSelected] = React.useState(false);
@@ -173,7 +173,7 @@ export const Combobox = (props: ComboboxProps) => {
   const [highlightFirstItem, setHighlightFirstItem] = React.useState<boolean>(false);
   const [highlightLastItem, setHighlightLastItem] = React.useState<boolean>(false);
 
-  const inputTriggerRef = React.useRef<HTMLInputElement>();
+  const inputTriggerRef = React.useRef<HTMLInputElement>(null);
   const popoverId = `DesignSystem-Combobox--Popover-${uidGenerator()}`;
   const defaultPopoverStyle = {
     fn: (data: any) => {

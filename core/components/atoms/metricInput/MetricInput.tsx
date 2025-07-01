@@ -16,11 +16,11 @@ export interface MetricInputProps extends BaseProps, BaseHtmlProps<HTMLInputElem
   /**
    * Value of the `MetricInput` (Used in case of controlled `MetricInput`)
    */
-  value?: React.ReactText;
+  value?: string | number;
   /**
    * Adds default value to `MetricInput` (Used in case of uncontrolled `MetricInput`)
    */
-  defaultValue?: React.ReactText;
+  defaultValue?: string | number;
   /**
    * Text to display when `MetricInput` is empty
    */

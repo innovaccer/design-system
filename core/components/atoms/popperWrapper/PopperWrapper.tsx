@@ -110,8 +110,8 @@ interface PopperWrapperState {
 }
 
 export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWrapperState> {
-  triggerRef: React.RefObject<HTMLElement>;
-  popupRef: React.RefObject<HTMLDivElement>;
+  triggerRef: React.RefObject<HTMLElement | null>;
+  popupRef: React.RefObject<HTMLDivElement | null>;
   hoverableDelay?: number;
   _timer?: number;
   _throttleWait?: boolean;
@@ -284,7 +284,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
 
   getUpdatedStyle = (oldStyle: React.CSSProperties, placement: PositionType, offset: Offset) => {
     const { style } = this.props;
-    const newStyle = { ...style, ...oldStyle };
+    const newStyle: React.CSSProperties & Record<string, any> = { ...style, ...oldStyle };
     const position = placement ? placement.split('-')[0] : placement;
     switch (position) {
       case 'top':
@@ -389,7 +389,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     const { offset, children, open, animationClass } = this.props;
     const { zIndex, animationKeyframe, uniqueKey } = this.state;
     const newStyle = offset ? this.getUpdatedStyle(style, placement, offset) : style;
-    let childrenStyles = {
+    let childrenStyles: React.CSSProperties & Record<string, any> = {
       ...newStyle,
       zIndex,
     };
@@ -503,7 +503,9 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     return (
       <Manager>
         {animationKeyframe && <style>{animationKeyframe}</style>}
-        <Reference innerRef={this.triggerRef}>{({ ref }) => this.getTriggerElement(ref)}</Reference>
+        <Reference innerRef={this.triggerRef}>
+          {(props: { ref: React.Ref<any> }) => this.getTriggerElement(props.ref)}
+        </Reference>
 
         {isOpen &&
           appendToBody &&

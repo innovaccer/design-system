@@ -66,7 +66,7 @@ const customCode = `() => {
     storyOptions.push({
       label: \`Option \${i}\`,
       value: \`Option \${i}\`,
-      icon: 'events',
+      icon: 'event',
       subInfo: 'subInfo'
     });
   }

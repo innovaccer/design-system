@@ -5235,7 +5235,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
  1`] = `
 <body>
   <div>
-    
     <div
       class="PopperWrapper-trigger w-100"
     >

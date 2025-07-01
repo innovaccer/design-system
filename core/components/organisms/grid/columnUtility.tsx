@@ -80,7 +80,7 @@ export const hideColumn: hideColumnFn = ({ updateColumnSchema }, name, value) =>
   updateColumnSchema(name, schemaUpdate);
 };
 
-export function getWidth({ ref, withCheckbox }: { ref: GridRef; withCheckbox?: boolean }, width: React.ReactText) {
+export function getWidth({ ref, withCheckbox }: { ref: GridRef; withCheckbox?: boolean }, width: string | number) {
   const isPercent = typeof width === 'string' && width.slice(-1) === '%';
 
   if (isPercent) {

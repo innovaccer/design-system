@@ -11,7 +11,7 @@ export interface HeadingProps extends BaseProps, BaseHtmlProps<HTMLHeadingElemen
   /**
    * Text to be rendered
    */
-  children: React.ReactText;
+  children: string | number;
   /**
    * State of `Heading`
    */

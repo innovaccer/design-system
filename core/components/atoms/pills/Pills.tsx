@@ -17,7 +17,7 @@ export interface PillsProps extends BaseProps {
   /**
    * Text to be added inside `Pills`
    */
-  children: React.ReactText;
+  children?: string | number;
 }
 
 export const Pills = (props: PillsProps) => {

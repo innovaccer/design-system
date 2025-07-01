@@ -186,7 +186,7 @@ export const withCustomPopover = () => {
     }
 
     renderChildren() {
-      const { startDate, endDate, selected } = this.state;
+      const { selected } = this.state;
 
       return (
         <div className="pt-6 px-5">
@@ -287,7 +287,7 @@ export const withCustomPopover = () => {
             singleInput={true}
             startDate={startDate}
             endDate={endDate}
-            onRangeChange={(sDate, eDate, sValue, eValue) => {
+            onRangeChange={(sDate, eDate) => {
               action(sDate, eDate);
             }}
             monthsInView={1}

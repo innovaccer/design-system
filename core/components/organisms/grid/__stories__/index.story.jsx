@@ -8,7 +8,7 @@ import { nestedRowRenderer } from '../../grid/__stories__/_common_/nestedRowRend
 import { errorTemplate } from '../../grid/__stories__/_common_/errorTemplate';
 import './style.css';
 
-export const all = () => {
+export const All = () => {
   const applyLoaderSchema = true;
 
   const loading = false;

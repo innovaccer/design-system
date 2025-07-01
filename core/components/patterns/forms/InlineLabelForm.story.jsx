@@ -35,8 +35,6 @@ export const InlineLabelForm = () => {
     }
 
     onChange(value, name) {
-      const { defaultLanguage = '' } = this.state.data;
-
       const updatedData = {
         ...this.state.data,
         [name]: value,

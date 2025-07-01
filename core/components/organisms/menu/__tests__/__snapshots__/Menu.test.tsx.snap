@@ -5,7 +5,6 @@ exports[`Menu component snapshot
  1`] = `
 <body>
   <div>
-    
     <div
       class="PopperWrapper-trigger"
     />
@@ -18,7 +17,6 @@ exports[`Menu component snapshot
  1`] = `
 <body>
   <div>
-    
     <div
       class="PopperWrapper-trigger"
     />
@@ -81,7 +79,6 @@ exports[`Menu component with Nesting snapshot
  1`] = `
 <body>
   <div>
-    
     <div
       class="PopperWrapper-trigger"
     />
@@ -94,7 +91,6 @@ exports[`Menu component with Nesting snapshot
  1`] = `
 <body>
   <div>
-    
     <div
       class="PopperWrapper-trigger"
     />
@@ -146,7 +142,6 @@ exports[`Menu component with Nesting snapshot
             Menu Item 2
           </div>
         </a>
-        
         <div
           class="PopperWrapper-trigger"
         >
@@ -189,7 +184,6 @@ exports[`Menu component with Trigger snapshot
  1`] = `
 <body>
   <div>
-    
     <div
       class="PopperWrapper-trigger"
     >
@@ -225,7 +219,6 @@ exports[`Menu component with Trigger snapshot
  1`] = `
 <body>
   <div>
-    
     <div
       class="PopperWrapper-trigger"
     >

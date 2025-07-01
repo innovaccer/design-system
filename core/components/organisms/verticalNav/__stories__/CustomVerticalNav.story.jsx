@@ -38,11 +38,11 @@ export const customVerticalNavigation = () => {
   });
 
   return (
-    <div className="bg-secondary-lightest vh-100">
+    <div className="bg-secondary-lightest vh-75">
       <Collapsible expanded={expanded} onToggle={setExpanded} hoverable={false}>
         <>
           {expanded && (
-            <div className="mt-5 d-flex justify-content-center border-top">
+            <div className="mt-5 d-flex justify-content-center border-bottom">
               <DatePicker date={new Date()} size="small" />
             </div>
           )}
@@ -90,11 +90,11 @@ const customCode = `() => {
   });
 
   return (
-    <div className="bg-secondary-lightest vh-100">
+    <div className="bg-secondary-lightest vh-75">
       <Collapsible expanded={expanded} onToggle={setExpanded} hoverable={false}>
         <>
         {expanded && (
-          <div className="mt-5 d-flex justify-content-center border-top">
+          <div className="mt-5 d-flex justify-content-center border-bottom">
           <DatePicker date={new Date()} size="small" />
           </div>
           )}

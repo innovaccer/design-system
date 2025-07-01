@@ -1,9 +1,9 @@
 import * as React from 'react';
 import Collapsible from '@/components/atoms/collapsible';
-import { Icon, VerticalNav, Heading } from '@/index';
+import { VerticalNav, Button } from '@/index';
 
 // CSF format story
-export const CustomTrigger = () => {
+export const usingExternalTrigger = () => {
   const [expanded, setExpanded] = React.useState(false);
   const [active, setActive] = React.useState({
     name: "To-do's.Due",
@@ -42,13 +42,10 @@ export const CustomTrigger = () => {
 
   return (
     <div>
-      <div className="d-flex align-items-center mb-3">
-        <Icon name="menu" className="cursor-pointer" onClick={() => setExpanded(!expanded)}></Icon>
-        <Heading size="s" className="ml-4">
-          My Worklist
-        </Heading>
-      </div>
-      <Collapsible withTrigger={false} expanded={expanded} height="100vh">
+      <Button appearance="primary" className="mb-6" onClick={() => setExpanded(!expanded)}>
+        Click here
+      </Button>
+      <Collapsible withTrigger={false} expanded={expanded} height="75vh">
         <VerticalNav menus={data} active={active} expanded={expanded} onClick={setActive} />
       </Collapsible>
     </div>
@@ -94,11 +91,10 @@ const customCode = `() => {
 
   return (
     <div>
-      <div className='d-flex align-items-center mb-3'>
-        <Icon name="menu" className="cursor-pointer" onClick={() => setExpanded(!expanded) }></Icon>
-        <Heading size='s' className="ml-4">My Worklist</Heading>
-      </div>
-      <Collapsible withTrigger={false} expanded={expanded} height="100vh">
+      <Button appearance="primary" className="mb-6" onClick={() => setExpanded(!expanded)}>
+        Click here
+      </Button>
+      <Collapsible withTrigger={false} expanded={expanded} height="75vh">
         <VerticalNav menus={data} active={active} expanded={expanded} onClick={setActive} />
       </Collapsible>
     </div>
@@ -106,7 +102,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/VerticalNav/VerticalNav/Custom Trigger',
+  title: 'Components/VerticalNav/VerticalNav/Toggle Vertical Nav/Using External Trigger',
   component: VerticalNav,
   parameters: {
     docs: {

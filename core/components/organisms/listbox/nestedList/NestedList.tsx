@@ -7,7 +7,7 @@ export interface NestedListProp {
 }
 
 function usePrevious(value?: boolean) {
-  const ref = React.useRef<boolean>();
+  const ref = React.useRef<boolean>(false);
   React.useEffect(() => {
     if (value != undefined) {
       ref.current = value;

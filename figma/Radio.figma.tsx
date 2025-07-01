@@ -1,5 +1,6 @@
 import React from 'react';
 import { Radio } from '@/index';
+import { RadioProps } from '@/index.type';
 import figma from '@figma/code-connect';
 
 figma.connect(Radio, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=1614-9820', {
@@ -23,5 +24,7 @@ figma.connect(Radio, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---
       False: undefined,
     }),
   },
-  example: (props) => <Radio name="name of radio" value="value of radio" label="label of radio" {...props} />,
+  example: (props) => (
+    <Radio {...(props as RadioProps)} name="name of radio" value="value of radio" label="label of radio" />
+  ),
 });

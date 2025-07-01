@@ -1,5 +1,6 @@
 import React from 'react';
 import { MetricInput } from '@/index';
+import { MetricInputProps } from '@/index.type';
 import figma from '@figma/code-connect';
 
 figma.connect(MetricInput, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=572-1969&m=dev', {
@@ -19,5 +20,5 @@ figma.connect(MetricInput, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/
     }),
     showActionButton: figma.boolean('Actions'),
   },
-  example: (props) => <MetricInput {...props} />,
+  example: (props) => <MetricInput {...(props as MetricInputProps)} />,
 });
