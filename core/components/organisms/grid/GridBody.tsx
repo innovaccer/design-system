@@ -123,7 +123,7 @@ export const GridBody = (props: GridBodyProps) => {
       setIsLoadingMore(true);
       try {
         const dataList = await fetchDataOnScroll?.({ page: currentPage + 1, rowsCount: fetchRowsCount });
-        if (dataList?.length === 0) {
+        if (dataList?.length === 0 || (dataList?.length && dataList?.length < fetchRowsCount)) {
           setHasMoreData(false);
         }
         setCurrentPage((prevPage) => prevPage + 1);
@@ -207,7 +207,7 @@ export const GridBody = (props: GridBodyProps) => {
 
     try {
       const dataList = await fetchDataOnScroll?.({ page: currentPage + 1, rowsCount: fetchRowsCount });
-      if (dataList?.length === 0) {
+      if (dataList?.length === 0 || (dataList?.length && dataList?.length < fetchRowsCount)) {
         setHasMoreData(false);
       }
       setCurrentPage((prevPage) => prevPage + 1);
