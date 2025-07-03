@@ -232,7 +232,7 @@ const BodyCell = (props: BodyCellProps) => {
   const context = React.useContext(GridContext);
   const { data, schema, expandedState, rowIndex, colIndex, nestedRowData } = props;
 
-  const { size, loading, nestedRows } = context;
+  const { size, loading, nestedRows, showNestedRowTrigger } = context;
 
   const [expanded, setExpanded] = expandedState;
 
@@ -254,28 +254,32 @@ const BodyCell = (props: BodyCellProps) => {
     ['align-items-end']: verticalAlign === 'bottom',
   });
 
+  const NestedRowTrigger = () => {
+    if (showNestedRowTrigger) {
+      return (
+        <Icon
+          className={styles['Grid-nestedRowTrigger']}
+          data-test="DesignSystem-Grid-nestedRowTrigger"
+          name={expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
+          size={20}
+          appearance={'default'}
+          onClick={(e) => {
+            if (nestedRowData) {
+              e.stopPropagation();
+              setExpanded(!expanded);
+            }
+          }}
+        />
+      );
+    }
+
+    return null;
+  };
+
   return (
     <div className={cellClass} data-test="DesignSystem-Grid-bodyCell">
       {colIndex === 0 && nestedRows && (
-        <>
-          {nestedRowData ? (
-            <Icon
-              className={styles['Grid-nestedRowTrigger']}
-              data-test="DesignSystem-Grid-nestedRowTrigger"
-              name={expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
-              size={20}
-              appearance={'default'}
-              onClick={(e) => {
-                if (nestedRowData) {
-                  e.stopPropagation();
-                  setExpanded(!expanded);
-                }
-              }}
-            />
-          ) : (
-            <span className={styles['Grid-nestedRowPlaceholder']} />
-          )}
-        </>
+        <>{nestedRowData ? <NestedRowTrigger /> : <span className={styles['Grid-nestedRowPlaceholder']} />}</>
       )}
       {schema.cellRenderer ? (
         schema.cellRenderer(cellProps)
