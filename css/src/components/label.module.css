@@ -14,7 +14,7 @@
 .Label-text {
   line-height: var(--font-height-s);
   font-weight: var(--font-weight-medium);
-  word-break: break-all;
+  word-break: break-word;
 }
 
 .Label-optionalText {
