@@ -269,4 +269,17 @@ const gzipConfig = {
   },
 };
 
-export default [jsUmdConfig, jsCjsConfig, jsEsmConfig, brotliConfig, gzipConfig, tsConfig];
+const ssrConfig = {
+  ...baseConfig,
+  external: [...baseConfig.external, '@lottiefiles/react-lottie-player'],
+  plugins: umdPlugins,
+  output: {
+    file: 'dist/ssr/index.js',
+    format: 'umd',
+    name: `InnovaccerDesignSystem`,
+    globals: globals(),
+    banner: banner(),
+  },
+};
+
+export default [jsUmdConfig, jsCjsConfig, jsEsmConfig, brotliConfig, gzipConfig, tsConfig, ssrConfig];
