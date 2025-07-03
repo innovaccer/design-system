@@ -297,3 +297,339 @@ describe('Check for grid data-test attribute', () => {
   const gridElement = getByTestId('Custom-grid-data-test');
   expect(gridElement).toBeInTheDocument();
 });
+
+describe('showNestedRowTrigger flag behavior', () => {
+  const schema = [
+    {
+      name: 'name',
+      displayName: 'Name',
+    },
+  ];
+
+  // Create a proper nested row renderer that returns content
+  const mockNestedRowRenderer = jest.fn(() => <div>Nested Content</div>);
+
+  describe('when showNestedRowTrigger is true (default)', () => {
+    it('renders nested row trigger icon when nestedRows is true and data has nested content', () => {
+      const data = [{ name: 'Zara' }];
+      const { getByTestId } = render(
+        <Grid
+          schema={schema}
+          data={data}
+          nestedRows={true}
+          nestedRowRenderer={mockNestedRowRenderer}
+          showNestedRowTrigger={true}
+        />
+      );
+
+      expect(getByTestId('DesignSystem-Grid-nestedRowTrigger')).toBeInTheDocument();
+    });
+
+    it('renders placeholder when nestedRows is true but no nested content', () => {
+      const data = [{ name: 'Zara' }];
+      const { container } = render(<Grid schema={schema} data={data} nestedRows={true} showNestedRowTrigger={true} />);
+
+      expect(container.querySelector('.Grid-nestedRowPlaceholder')).toBeInTheDocument();
+    });
+
+    it('shows expanded state when _expandNestedRow is true', () => {
+      const data = [{ name: 'Zara', _expandNestedRow: true }];
+      render(
+        <Grid
+          schema={schema}
+          data={data}
+          nestedRows={true}
+          nestedRowRenderer={mockNestedRowRenderer}
+          showNestedRowTrigger={true}
+        />
+      );
+
+      expect(mockNestedRowRenderer).toBeCalledWith({
+        data: data[0],
+        schema,
+        loading: false,
+        rowIndex: 0,
+        expanded: true,
+      });
+    });
+
+    it('shows collapsed state when _expandNestedRow is false', () => {
+      const data = [{ name: 'Zara', _expandNestedRow: false }];
+      render(
+        <Grid
+          schema={schema}
+          data={data}
+          nestedRows={true}
+          nestedRowRenderer={mockNestedRowRenderer}
+          showNestedRowTrigger={true}
+        />
+      );
+
+      expect(mockNestedRowRenderer).toBeCalledWith({
+        data: data[0],
+        schema,
+        loading: false,
+        rowIndex: 0,
+        expanded: false,
+      });
+    });
+
+    it('shows collapsed state when _expandNestedRow is undefined', () => {
+      const data = [{ name: 'Zara' }];
+      render(
+        <Grid
+          schema={schema}
+          data={data}
+          nestedRows={true}
+          nestedRowRenderer={mockNestedRowRenderer}
+          showNestedRowTrigger={true}
+        />
+      );
+
+      expect(mockNestedRowRenderer).toBeCalledWith({
+        data: data[0],
+        schema,
+        loading: false,
+        rowIndex: 0,
+        expanded: false,
+      });
+    });
+
+    it('does not render trigger when nestedRows is false', () => {
+      const data = [{ name: 'Zara' }];
+      const { queryByTestId } = render(
+        <Grid schema={schema} data={data} nestedRows={false} showNestedRowTrigger={true} />
+      );
+
+      expect(queryByTestId('DesignSystem-Grid-nestedRowTrigger')).not.toBeInTheDocument();
+    });
+  });
+
+  describe('when showNestedRowTrigger is false', () => {
+    it('does not render nested row trigger icon', () => {
+      const data = [{ name: 'Zara' }];
+      const { queryByTestId } = render(
+        <Grid
+          schema={schema}
+          data={data}
+          nestedRows={true}
+          nestedRowRenderer={mockNestedRowRenderer}
+          showNestedRowTrigger={false}
+        />
+      );
+
+      expect(queryByTestId('DesignSystem-Grid-nestedRowTrigger')).not.toBeInTheDocument();
+    });
+
+    it('always shows expanded state regardless of _expandNestedRow value', () => {
+      const data = [{ name: 'Zara', _expandNestedRow: false }];
+      render(
+        <Grid
+          schema={schema}
+          data={data}
+          nestedRows={true}
+          nestedRowRenderer={mockNestedRowRenderer}
+          showNestedRowTrigger={false}
+        />
+      );
+
+      expect(mockNestedRowRenderer).toBeCalledWith({
+        data: data[0],
+        schema,
+        loading: false,
+        rowIndex: 0,
+        expanded: true,
+      });
+    });
+
+    it('always shows expanded state when _expandNestedRow is true', () => {
+      const data = [{ name: 'Zara', _expandNestedRow: true }];
+      render(
+        <Grid
+          schema={schema}
+          data={data}
+          nestedRows={true}
+          nestedRowRenderer={mockNestedRowRenderer}
+          showNestedRowTrigger={false}
+        />
+      );
+
+      expect(mockNestedRowRenderer).toBeCalledWith({
+        data: data[0],
+        schema,
+        loading: false,
+        rowIndex: 0,
+        expanded: true,
+      });
+    });
+
+    it('always shows expanded state when _expandNestedRow is undefined', () => {
+      const data = [{ name: 'Zara' }];
+      render(
+        <Grid
+          schema={schema}
+          data={data}
+          nestedRows={true}
+          nestedRowRenderer={mockNestedRowRenderer}
+          showNestedRowTrigger={false}
+        />
+      );
+
+      expect(mockNestedRowRenderer).toBeCalledWith({
+        data: data[0],
+        schema,
+        loading: false,
+        rowIndex: 0,
+        expanded: true,
+      });
+    });
+  });
+
+  describe('default behavior (showNestedRowTrigger not specified)', () => {
+    it('defaults to true and renders trigger', () => {
+      const data = [{ name: 'Zara' }];
+      const { getByTestId } = render(
+        <Grid schema={schema} data={data} nestedRows={true} nestedRowRenderer={mockNestedRowRenderer} />
+      );
+
+      expect(getByTestId('DesignSystem-Grid-nestedRowTrigger')).toBeInTheDocument();
+    });
+
+    it('defaults to true and shows collapsed state when _expandNestedRow is false', () => {
+      const data = [{ name: 'Zara', _expandNestedRow: false }];
+      render(<Grid schema={schema} data={data} nestedRows={true} nestedRowRenderer={mockNestedRowRenderer} />);
+
+      expect(mockNestedRowRenderer).toBeCalledWith({
+        data: data[0],
+        schema,
+        loading: false,
+        rowIndex: 0,
+        expanded: false,
+      });
+    });
+  });
+
+  describe('edge cases', () => {
+    it('handles multiple rows with different _expandNestedRow values when trigger is enabled', () => {
+      const data = [
+        { name: 'Zara', _expandNestedRow: true },
+        { name: 'John', _expandNestedRow: false },
+        { name: 'Jane' }, // undefined _expandNestedRow
+      ];
+
+      render(
+        <Grid
+          schema={schema}
+          data={data}
+          nestedRows={true}
+          nestedRowRenderer={mockNestedRowRenderer}
+          showNestedRowTrigger={true}
+        />
+      );
+
+      expect(mockNestedRowRenderer).toBeCalledWith({
+        data: data[0],
+        schema,
+        loading: false,
+        rowIndex: 0,
+        expanded: true,
+      });
+      expect(mockNestedRowRenderer).toBeCalledWith({
+        data: data[1],
+        schema,
+        loading: false,
+        rowIndex: 1,
+        expanded: false,
+      });
+      expect(mockNestedRowRenderer).toBeCalledWith({
+        data: data[2],
+        schema,
+        loading: false,
+        rowIndex: 2,
+        expanded: false,
+      });
+    });
+
+    it('handles multiple rows with different _expandNestedRow values when trigger is disabled', () => {
+      const data = [
+        { name: 'Zara', _expandNestedRow: true },
+        { name: 'John', _expandNestedRow: false },
+        { name: 'Jane' }, // undefined _expandNestedRow
+      ];
+
+      render(
+        <Grid
+          schema={schema}
+          data={data}
+          nestedRows={true}
+          nestedRowRenderer={mockNestedRowRenderer}
+          showNestedRowTrigger={false}
+        />
+      );
+
+      expect(mockNestedRowRenderer).toBeCalledWith({
+        data: data[0],
+        schema,
+        loading: false,
+        rowIndex: 0,
+        expanded: true,
+      });
+      expect(mockNestedRowRenderer).toBeCalledWith({
+        data: data[1],
+        schema,
+        loading: false,
+        rowIndex: 1,
+        expanded: true,
+      });
+      expect(mockNestedRowRenderer).toBeCalledWith({
+        data: data[2],
+        schema,
+        loading: false,
+        rowIndex: 2,
+        expanded: true,
+      });
+    });
+
+    it('prevents event propagation when trigger is clicked', () => {
+      const data = [{ name: 'Zara' }];
+      const onRowClick = jest.fn();
+      const { getByTestId } = render(
+        <Grid
+          schema={schema}
+          data={data}
+          nestedRows={true}
+          nestedRowRenderer={mockNestedRowRenderer}
+          showNestedRowTrigger={true}
+          type="resource"
+          onRowClick={onRowClick}
+        />
+      );
+
+      const trigger = getByTestId('DesignSystem-Grid-nestedRowTrigger');
+      fireEvent.click(trigger);
+
+      // onRowClick should not be called because stopPropagation is called
+      expect(onRowClick).not.toHaveBeenCalled();
+    });
+
+    it('handles loading state correctly with trigger enabled', () => {
+      const data = [{ name: 'Zara' }];
+      const { queryByTestId } = render(
+        <Grid schema={schema} data={data} nestedRows={true} loading={true} showNestedRowTrigger={true} />
+      );
+
+      // Should not render trigger during loading
+      expect(queryByTestId('DesignSystem-Grid-nestedRowTrigger')).not.toBeInTheDocument();
+    });
+
+    it('handles loading state correctly with trigger disabled', () => {
+      const data = [{ name: 'Zara' }];
+      const { queryByTestId } = render(
+        <Grid schema={schema} data={data} nestedRows={true} loading={true} showNestedRowTrigger={false} />
+      );
+
+      // Should not render trigger during loading
+      expect(queryByTestId('DesignSystem-Grid-nestedRowTrigger')).not.toBeInTheDocument();
+    });
+  });
+});

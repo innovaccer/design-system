@@ -367,6 +367,10 @@ export interface GridProps extends BaseProps {
    * @returns RegExp to use for highlighting
    */
   highlightRegex?: (searchTerm: string) => RegExp;
+  /**
+   * Show nested row trigger
+   */
+  showNestedRowTrigger?: boolean;
 }
 
 export interface GridState {

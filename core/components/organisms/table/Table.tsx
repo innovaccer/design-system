@@ -212,6 +212,10 @@ interface SharedTableProps extends BaseProps {
    */
   nestedRowRenderer?: GridProps['nestedRowRenderer'];
   /**
+   * Show nested row expand/collapse icon trigger
+   */
+  showNestedRowTrigger?: boolean;
+  /**
    * Set to use `Header`
    */
   withHeader?: boolean;
@@ -512,6 +516,7 @@ export const defaultProps = {
   searchDebounceDuration: 750,
   pageJumpDebounceDuration: 750,
   errorTemplate: defaultErrorTemplate,
+  showNestedRowTrigger: true,
   infiniteScrollOptions: {
     fetchRowsCount: 50,
     fetchThreshold: 'balanced',
@@ -1084,6 +1089,7 @@ export class Table extends React.Component<TableProps, TableState> {
       infiniteScrollOptions,
       onScroll,
       highlightRegex,
+      showNestedRowTrigger,
     } = this.props;
 
     const baseProps = extractBaseProps(this.props);
@@ -1158,6 +1164,7 @@ export class Table extends React.Component<TableProps, TableState> {
             onScroll={onScroll}
             searchTerm={searchTerm}
             highlightRegex={highlightRegex}
+            showNestedRowTrigger={showNestedRowTrigger}
           />
         </div>
         {withPagination && !this.state.loading && !this.state.error && totalPages > 1 && (
