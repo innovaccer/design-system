@@ -15,6 +15,7 @@ export const defaultProps: GridProps = {
   sortingList: [],
   filterList: {},
   showFilters: true,
+  showNestedRowTrigger: true,
   infiniteScrollOptions: {
     fetchRowsCount: 200,
     fetchThreshold: 'balanced',

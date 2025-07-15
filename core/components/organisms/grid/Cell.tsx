@@ -232,7 +232,7 @@ const BodyCell = (props: BodyCellProps) => {
   const context = React.useContext(GridContext);
   const { data, schema, expandedState, rowIndex, colIndex, nestedRowData } = props;
 
-  const { size, loading, nestedRows } = context;
+  const { size, loading, nestedRows, showNestedRowTrigger } = context;
 
   const [expanded, setExpanded] = expandedState;
 
@@ -254,28 +254,32 @@ const BodyCell = (props: BodyCellProps) => {
     ['align-items-end']: verticalAlign === 'bottom',
   });
 
+  const NestedRowTrigger = () => {
+    if (showNestedRowTrigger) {
+      return (
+        <Icon
+          className={styles['Grid-nestedRowTrigger']}
+          data-test="DesignSystem-Grid-nestedRowTrigger"
+          name={expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
+          size={20}
+          appearance={'default'}
+          onClick={(e) => {
+            if (nestedRowData) {
+              e.stopPropagation();
+              setExpanded(!expanded);
+            }
+          }}
+        />
+      );
+    }
+
+    return null;
+  };
+
   return (
     <div className={cellClass} data-test="DesignSystem-Grid-bodyCell">
       {colIndex === 0 && nestedRows && (
-        <>
-          {nestedRowData ? (
-            <Icon
-              className={styles['Grid-nestedRowTrigger']}
-              data-test="DesignSystem-Grid-nestedRowTrigger"
-              name={expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
-              size={20}
-              appearance={'default'}
-              onClick={(e) => {
-                if (nestedRowData) {
-                  e.stopPropagation();
-                  setExpanded(!expanded);
-                }
-              }}
-            />
-          ) : (
-            <span className={styles['Grid-nestedRowPlaceholder']} />
-          )}
-        </>
+        <>{nestedRowData ? <NestedRowTrigger /> : <span className={styles['Grid-nestedRowPlaceholder']} />}</>
       )}
       {schema.cellRenderer ? (
         schema.cellRenderer(cellProps)
@@ -304,7 +308,7 @@ export const Cell = (props: CellProps) => {
     nestedRowData,
   } = props as CellProps;
 
-  const { draggable, separator, nestedRows, ref, withCheckbox } = context;
+  const { draggable, separator, nestedRows, ref, withCheckbox, showNestedRowTrigger } = context;
 
   const { name, hidden, pinned, cellType = 'DEFAULT' } = schema;
 
@@ -318,7 +322,7 @@ export const Cell = (props: CellProps) => {
     [styles['Grid-cell--dragged']]: isDragged && draggable,
     [styles['Grid-cell--body']]: !isHead,
     [styles['Grid-cell--separator']]: !firstCell && (schema.separator !== undefined ? schema.separator : separator),
-    [styles['Grid-cell--nestedRow']]: !isHead && colIndex === 0 && nestedRows,
+    [styles['Grid-cell--nestedRow']]: !isHead && colIndex === 0 && nestedRows && showNestedRowTrigger,
   });
 
   if (hidden) return null;
