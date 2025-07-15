@@ -1,3 +1,42 @@
+## 4.11.0 (2025-07-15)
+
+### Highlights
+
+- feat(table): add prop to hide nested row trigger icon in table (0b7c18c9)
+- fix(table): remove extra api call for infinite scroll in table (e150f784)
+- fix(label): update label overflow behaviour (dfa340c2)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(table): add prop to hide nested row trigger icon in table (0b7c18c9)
+
+### Fixes
+
+- fix(table): remove extra api call for infinite scroll in table (e150f784)
+- fix(label): update label overflow behaviour (dfa340c2)
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 4.10.0 (2025-06-25)
 
 ### Highlights
