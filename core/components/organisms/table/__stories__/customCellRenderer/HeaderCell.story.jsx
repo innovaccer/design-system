@@ -140,6 +140,61 @@ export const headerCell = () => {
       displayName: 'Plan Name',
       width: '15%',
       separator: true,
+      sorting: true,
+      headerCellRenderer: (props) => {
+        // eslint-disable-next-line react/prop-types
+        const { schema, onMenuChange, sortingList = [], loading } = props;
+        // eslint-disable-next-line react/prop-types
+        const { sorting, name } = schema;
+
+        // Find current sort state
+        const listIndex = sortingList.findIndex((l) => l.name === name);
+        const sorted = listIndex !== -1 ? sortingList[listIndex].type : null;
+
+        const handleSort = () => {
+          if (!loading && sorting && onMenuChange) {
+            if (sorted === 'asc') onMenuChange(name, 'sortDesc');
+            else if (sorted === 'desc') onMenuChange(name, 'unsort');
+            else onMenuChange(name, 'sortAsc');
+          }
+        };
+
+        return (
+          <button
+            type="button"
+            onClick={handleSort}
+            style={{
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              background: 'none',
+              border: 'none',
+              padding: 0,
+              width: '100%',
+              textAlign: 'left',
+            }}
+            tabIndex={0}
+            aria-label="Sort Plan Name"
+          >
+            <Icon name="business" />
+            <Badge appearance="success">Plan</Badge>
+            {sorting && (
+              <div style={{ marginLeft: 'auto' }}>
+                {sorted ? (
+                  sorted === 'asc' ? (
+                    <Icon name="arrow_upward" />
+                  ) : (
+                    <Icon name="arrow_downward" />
+                  )
+                ) : (
+                  <Icon name="unfold_more" />
+                )}
+              </div>
+            )}
+          </button>
+        );
+      },
     },
     {
       name: 'first_dos',

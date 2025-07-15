@@ -6,7 +6,7 @@ import { DropdownProps, GridCellProps } from '@/index.type';
 import { resizeCol, hasSchema } from './utility';
 import { getCellSize, getWidth } from './columnUtility';
 import { GridHeadProps } from './GridHead';
-import GridContext from './GridContext';
+import GridContext, { ContextProps } from './GridContext';
 import styles from '@css/components/grid.module.css';
 
 interface SharedCellProps {
@@ -30,7 +30,7 @@ type BodyCellProps = SharedCellProps & {
   expandedState: [boolean, React.Dispatch<React.SetStateAction<boolean>>];
 };
 
-export type HeaderCellRendererProps = HeaderCellProps & SharedCellProps;
+export type HeaderCellRendererProps = HeaderCellProps & SharedCellProps & Omit<ContextProps, 'schema' | 'onSelectAll'>;
 
 export type CellProps = Partial<HeaderCellProps> &
   Partial<BodyCellProps> &
@@ -52,17 +52,6 @@ const HeaderCell = (props: HeaderCellProps) => {
     reorderColumn,
   } = props;
 
-  const headProps: HeaderCellRendererProps = {
-    schema,
-    colIndex,
-    onSelectAll,
-    onMenuChange,
-    onFilterChange,
-    updateColumnSchema,
-    reorderColumn,
-    setIsDragged,
-  };
-
   const {
     loading,
     draggable,
@@ -72,7 +61,28 @@ const HeaderCell = (props: HeaderCellProps) => {
     headCellTooltip,
     showFilters,
     schema: schemaProp,
+    onSelectAll: contextSelectAll,
+    ...restContext
   } = context;
+
+  const headProps: HeaderCellRendererProps = {
+    schema,
+    colIndex,
+    onSelectAll,
+    onMenuChange,
+    onFilterChange,
+    updateColumnSchema,
+    reorderColumn,
+    setIsDragged,
+    loading,
+    draggable,
+    showMenu,
+    sortingList,
+    filterList,
+    headCellTooltip,
+    showFilters,
+    ...restContext,
+  };
 
   const { sorting = true, name, filters, pinned } = schema;
 
