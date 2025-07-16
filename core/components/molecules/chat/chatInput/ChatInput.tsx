@@ -22,6 +22,13 @@ export interface ChatInputProps extends BaseProps {
    */
   showStopButton?: boolean;
   /**
+   * Custom submit button renderer. If provided, it will be rendered instead of the default send button.
+   * After the custom button's onClick is executed, ChatInput will clear the textarea.
+   */
+  customSubmitRenderer?: React.ComponentType<{
+    onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  }>;
+  /**
    * Action renderer for the `ChatInput`
    */
   actionRenderer?: () => JSX.Element;
@@ -64,6 +71,7 @@ const ChatInput: React.FC<ChatInputProps> = (props) => {
     disabled,
     actionRenderer,
     onStopGenerating,
+    customSubmitRenderer: CustomSubmitRenderer,
     className,
     ...rest
   } = props;
@@ -132,6 +140,14 @@ const ChatInput: React.FC<ChatInputProps> = (props) => {
   };
 
   const sendButtonRenderer = () => {
+    if (CustomSubmitRenderer) {
+      return (
+        <div className={actionRenderer ? 'ml-3' : ''}>
+          <CustomSubmitRenderer onClick={clearChatInput} />
+        </div>
+      );
+    }
+
     if (showStopButton) {
       return (
         <Button

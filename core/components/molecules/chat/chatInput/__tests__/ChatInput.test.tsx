@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Button } from '@/index';
 import { render, fireEvent } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import ChatInput, { ChatInputProps as Props } from '../ChatInput';
@@ -99,6 +100,71 @@ describe('ChatInput component', () => {
     fireEvent.change(input, { target: { value: 'Test message' } });
     fireEvent.click(sendButton);
     expect(input).toHaveValue('');
+  });
+
+  describe('customSubmitRenderer', () => {
+    it('Should render custom submit renderer when provided', () => {
+      const CustomSubmitRenderer = ({ onClick }: { onClick: (e: React.MouseEvent<HTMLButtonElement>) => void }) => (
+        <button data-test="DesignSystem-CustomSubmit" onClick={onClick}>
+          Custom Submit
+        </button>
+      );
+
+      const { getByTestId, queryByTestId } = render(<ChatInput customSubmitRenderer={CustomSubmitRenderer} />);
+
+      expect(getByTestId('DesignSystem-CustomSubmit')).toBeInTheDocument();
+      expect(queryByTestId('DesignSystem-SendButton')).not.toBeInTheDocument();
+    });
+
+    it('Should clear input when custom submit renderer is clicked', () => {
+      const CustomSubmitRenderer = ({ onClick }: { onClick: (e: React.MouseEvent<HTMLButtonElement>) => void }) => (
+        <Button data-test="DesignSystem-CustomSubmit" onClick={onClick}>
+          Custom Submit
+        </Button>
+      );
+
+      const { getByTestId, getByPlaceholderText } = render(<ChatInput customSubmitRenderer={CustomSubmitRenderer} />);
+
+      const input = getByPlaceholderText('Start typing...');
+      const customButton = getByTestId('DesignSystem-CustomSubmit');
+
+      fireEvent.change(input, { target: { value: 'Test message' } });
+      expect(input).toHaveValue('Test message');
+
+      fireEvent.click(customButton);
+      expect(input).toHaveValue('');
+    });
+
+    it('Should maintain proper spacing with actionRenderer', () => {
+      const CustomSubmitRenderer = ({ onClick }: { onClick: (e: React.MouseEvent<HTMLButtonElement>) => void }) => (
+        <button data-test="DesignSystem-CustomSubmit" onClick={onClick}>
+          Custom Submit
+        </button>
+      );
+
+      const actionRenderer = () => <button data-test="DesignSystem-CustomAction">Action</button>;
+
+      const { container } = render(
+        <ChatInput customSubmitRenderer={CustomSubmitRenderer} actionRenderer={actionRenderer} />
+      );
+
+      const customSubmitWrapper = container.querySelector('.ml-3');
+      expect(customSubmitWrapper).toBeInTheDocument();
+    });
+
+    it('Should take precedence over showStopButton', () => {
+      const CustomSubmitRenderer = ({ onClick }: { onClick: (e: React.MouseEvent<HTMLButtonElement>) => void }) => (
+        <button data-test="DesignSystem-CustomSubmit" onClick={onClick}>
+          Custom Submit
+        </button>
+      );
+
+      const { queryByTestId } = render(<ChatInput customSubmitRenderer={CustomSubmitRenderer} showStopButton={true} />);
+
+      expect(queryByTestId('DesignSystem-CustomSubmit')).toBeInTheDocument();
+      expect(queryByTestId('DesignSystem-StopButton')).not.toBeInTheDocument();
+      expect(queryByTestId('DesignSystem-SendButton')).not.toBeInTheDocument();
+    });
   });
 
   describe('className and data-test attributes', () => {
