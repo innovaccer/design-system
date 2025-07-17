@@ -33,6 +33,7 @@ export { Message } from './components/atoms/message';
 export { MetaList } from './components/atoms/metaList';
 export { MultiSlider } from './components/atoms/multiSlider';
 export { OutsideClick } from './components/atoms/outsideClick';
+export { Page } from './components/atoms/page';
 export { Paragraph } from './components/atoms/paragraph';
 export { ProgressBar } from './components/atoms/progressBar';
 export { Radio } from './components/atoms/radio';
