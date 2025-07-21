@@ -526,6 +526,23 @@ export class Grid extends React.Component<GridProps, GridState> {
     if (updateSortingList) {
       updateSortingList(sortingList);
     }
+
+    this.scrollToTop();
+  };
+
+  scrollToTop = () => {
+    // Find the correct scrollable element
+    let scrollableElement: HTMLElement | null = null;
+    
+    if (this.props.enableRowVirtualization) {
+      scrollableElement = this.gridRef?.querySelector('.VS-container') as HTMLElement;
+    } else {
+      scrollableElement = this.gridRef?.querySelector(`.${styles['Grid-body']}`) as HTMLElement;
+    }
+
+    if (scrollableElement) {
+      scrollableElement.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   updateFilterList = (filterList: GridProps['filterList']) => {

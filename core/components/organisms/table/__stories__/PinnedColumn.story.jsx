@@ -173,7 +173,7 @@ const customCode = `() => {
       displayName: 'S.no.',
       width: '5%',
       sorting: false,
-      pinned: 'left'
+      pinned: 'right'
     },
     {
       name: 'empi',
@@ -204,22 +204,25 @@ const customCode = `() => {
       name: 'gender',
       displayName: 'Gender',
       width: '20%',
-      sorting: false
+      sorting: false,
+      pinned: 'left'
     },
     {
       name: 'facility',
-      displayName: 'Facility',
+      displayName: 'facilityttttrgrtg',
       sorting: false
     },
   ];
 
   return (
-      <Card className="overflow-hidden">
+      <div className="vh-50">
+
+      <Card className="h-100 overflow-hidden">
         <Table
           showMenu={false}
           size="compressed"
           separator={false}
-          data={data}
+          data={[...data, ...data]}
           schema={schema}
           withHeader={true}
           withCheckbox={true}
@@ -229,6 +232,7 @@ const customCode = `() => {
           withPagination={false}
         />
       </Card>
+      </div>
   );
 }`;
 
