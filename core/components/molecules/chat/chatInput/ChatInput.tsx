@@ -18,6 +18,10 @@ export interface ChatInputProps extends BaseProps {
    */
   disabled?: boolean;
   /**
+   * Makes the `ChatInput` read-only
+   */
+  readOnly?: boolean;
+  /**
    * Show stop generating button instead of send button
    */
   showStopButton?: boolean;
@@ -62,6 +66,7 @@ const ChatInput: React.FC<ChatInputProps> = (props) => {
     onChange,
     onSend,
     disabled,
+    readOnly,
     actionRenderer,
     onStopGenerating,
     className,
@@ -164,7 +169,7 @@ const ChatInput: React.FC<ChatInputProps> = (props) => {
   };
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    if (!disabled) {
+    if (!disabled && !readOnly) {
       setValue(e.target.value);
       onChange && onChange(e);
       resizeTextarea(e.target.value);
@@ -179,6 +184,7 @@ const ChatInput: React.FC<ChatInputProps> = (props) => {
         onChange={onChangeHandler}
         className={textareaClassNames}
         disabled={disabled}
+        readOnly={readOnly}
         data-test="DesignSystem-ChatInput-textarea"
         {...rest}
       />

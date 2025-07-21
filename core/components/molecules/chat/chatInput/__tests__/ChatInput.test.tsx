@@ -12,6 +12,7 @@ describe('ChatInput component', () => {
     placeholder: valueHelper('Custom placeholder', { required: true }),
     defaultValue: valueHelper(StringValue, { required: true }),
     disabled: valueHelper(BooleanValue, { required: true, iterate: true }),
+    readOnly: valueHelper(BooleanValue, { required: true, iterate: true }),
     showStopButton: valueHelper(BooleanValue, { required: true, iterate: true }),
     onChange: valueHelper(FunctionValue, { required: true }),
     onClick: valueHelper(FunctionValue, { required: true }),
@@ -101,6 +102,34 @@ describe('ChatInput component', () => {
     expect(input).toHaveValue('');
   });
 
+  it('Should make input read-only when readOnly prop is true', () => {
+    const defaultValue = 'Read only text';
+    const { getByPlaceholderText } = render(<ChatInput readOnly={true} defaultValue={defaultValue} />);
+    const input = getByPlaceholderText('Start typing...');
+
+    expect(input).toHaveAttribute('readOnly');
+    expect(input).toHaveValue(defaultValue);
+
+    fireEvent.change(input, { target: { value: 'New message' } });
+    expect(input).toHaveValue(defaultValue);
+  });
+
+  it('Should allow sending message when readOnly but prevent editing', () => {
+    const onSend = jest.fn();
+    const defaultValue = 'Read only message';
+    const { getByPlaceholderText, getByTestId } = render(
+      <ChatInput readOnly={true} defaultValue={defaultValue} onSend={onSend} />
+    );
+    const input = getByPlaceholderText('Start typing...');
+    const sendButton = getByTestId('DesignSystem-SendButton');
+
+    fireEvent.change(input, { target: { value: 'New message' } });
+    expect(input).toHaveValue(defaultValue);
+
+    fireEvent.click(sendButton);
+    expect(onSend).toHaveBeenCalledWith(expect.any(Object), defaultValue);
+  });
+
   describe('className and data-test attributes', () => {
     it('applies custom className to the container', () => {
       const customClass = 'custom-chat-input';
@@ -119,11 +148,8 @@ describe('ChatInput component', () => {
       const { getByTestId } = render(<ChatInput />);
 
       expect(getByTestId('DesignSystem-ChatInput')).toBeInTheDocument();
-
       expect(getByTestId('DesignSystem-ChatInput-textarea')).toBeInTheDocument();
-
       expect(getByTestId('DesignSystem-ChatInput-actions')).toBeInTheDocument();
-
       expect(getByTestId('DesignSystem-SendButton')).toBeInTheDocument();
 
       const { getByTestId: getByTestIdWithStop } = render(<ChatInput showStopButton={true} />);
