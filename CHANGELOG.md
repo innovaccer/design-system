@@ -1,3 +1,41 @@
+## 4.11.1 (2025-07-22)
+
+### Highlights
+
+- feat(chatInput): add readOnly prop for chatInput (f9dcd789)
+- docs(chatInput): add readOnly state in chat input docs (841730d6)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(chatInput): add readOnly prop for chatInput (f9dcd789)
+- docs(chatInput): add readOnly state in chat input docs (841730d6)
+
+### Fixes
+
+NA
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 4.11.0 (2025-07-15)
 
 ### Highlights
