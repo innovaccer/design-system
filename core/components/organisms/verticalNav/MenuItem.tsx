@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Text, Icon, Pills, Tooltip } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import { getNavItemColor, getPillsAppearance, Menu } from '@/utils/navigationHelper';
+import { getNavItemColor, getPillsAppearance, Menu, formatCount } from '@/utils/navigationHelper';
 import Link from '@/components/atoms/_text';
 import { TextColor } from '@/common.type';
 import styles from '@css/components/verticalNav.module.css';
@@ -121,7 +121,7 @@ export const MenuItem = (props: MenuItemProps) => {
     }
 
     if (menu.count !== undefined) {
-      const count = menu.count && typeof menu.count === 'number' && menu.count > 99 ? '99+' : menu.count;
+      const count = formatCount(menu.count);
       return <MenuPills disabled={menu.disabled} isActive={isActive} count={count} />;
     }
     return null;

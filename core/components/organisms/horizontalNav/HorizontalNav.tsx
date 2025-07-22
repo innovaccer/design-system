@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Text, Icon, Pills } from '@/index';
 import { VerticalNavProps } from '@/index.type';
 import { extractBaseProps, BaseProps } from '@/utils/types';
-import { getNavItemColor, getPillsAppearance, isMenuActive, Menu } from '@/utils/navigationHelper';
+import { getNavItemColor, getPillsAppearance, isMenuActive, Menu, formatCount } from '@/utils/navigationHelper';
 import styles from '@css/components/horizontalNav.module.css';
 
 export type HorizontalNavProps = BaseProps & Pick<VerticalNavProps, 'menus' | 'active' | 'onClick'>;
@@ -34,7 +34,7 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
 
   const renderIcon = (menu: Menu, isActive: boolean) => {
     if (menu.count !== undefined) {
-      const count = menu.count > 99 ? '99+' : menu.count;
+      const count = formatCount(menu.count);
       return (
         <Pills
           subtle={menu.disabled}
