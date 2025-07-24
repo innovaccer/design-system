@@ -62,6 +62,11 @@ export const countMenus = [
   {
     name: 'tab3',
     label: 'Tab #3',
+    count: '...',
+  },
+  {
+    name: 'tab3',
+    label: 'Tab #3',
     count: 100,
     disabled: true,
   },
@@ -90,8 +95,6 @@ describe('Horizontal Navigation component', () => {
 });
 
 describe('Horizontal Navigation component with prop: menus', () => {
-  const disabledIndex = 2;
-
   it('renders menus', () => {
     const { getAllByTestId } = render(<HorizontalNav menus={menus} />);
     expect(getAllByTestId(HorizontalNavDataKey)).toHaveLength(menus.length);
@@ -120,27 +123,38 @@ describe('Horizontal Navigation component with prop: menus', () => {
   });
 
   it('renders disabled menu', () => {
+    const disabledIndex = menus.findIndex((menu) => menu.disabled);
     const { getAllByTestId } = render(<HorizontalNav menus={menus} />);
     const disabledMenu = getAllByTestId('DesignSystem-HorizontalNav')[disabledIndex];
     expect(disabledMenu).toHaveClass('color-inverse-lightest');
   });
 
   it('renders menus with disabled menu', () => {
+    const disabledIndex = menus.findIndex((menu) => menu.disabled);
     const { getAllByTestId } = render(<HorizontalNav menus={menus} />);
     const disabledMenu = getAllByTestId('DesignSystem-HorizontalNav--Text')[disabledIndex];
     expect(disabledMenu).toHaveClass('color-inverse-lightest');
   });
 
   it('renders iconMenus with disabled menu', () => {
+    const disabledIndex = iconMenus.findIndex((menu) => menu.disabled);
     const { getAllByTestId } = render(<HorizontalNav menus={iconMenus} />);
     const disabledMenu = getAllByTestId('DesignSystem-HorizontalNav--Icon')[disabledIndex];
     expect(disabledMenu).toHaveStyle('color: var(--inverse-lightest)');
   });
 
   it('renders countMenus with disabled menu', () => {
+    const disabledIndex = countMenus.findIndex((menu) => menu.disabled);
     const { getAllByTestId } = render(<HorizontalNav menus={countMenus} />);
     const disabledMenu = getAllByTestId('DesignSystem-HorizontalNav--Pills')[disabledIndex];
     expect(disabledMenu).toHaveClass('Badge--subtle-secondary');
+  });
+
+  it('renders countMenus with a string count menu item', () => {
+    const stringCountMenuItemIndex = countMenus.findIndex((menu) => typeof menu.count === 'string');
+    const { getAllByTestId } = render(<HorizontalNav menus={countMenus} />);
+    const menuItemWithStringCount = getAllByTestId('DesignSystem-HorizontalNav--Pills')[stringCountMenuItemIndex];
+    expect(menuItemWithStringCount).toHaveTextContent(countMenus[stringCountMenuItemIndex].count as string);
   });
 });
 

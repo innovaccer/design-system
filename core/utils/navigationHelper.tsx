@@ -73,3 +73,15 @@ export const isMenuActive = (menus: Menu[], menu: Menu, active?: ActiveMenu): bo
 export const getNavItemColor = (isActive: boolean, disabled?: boolean) => {
   return disabled ? 'inverse-lightest' : isActive ? 'primary-dark' : 'inverse';
 };
+
+export const formatCount = (count: number | string): string => {
+  if (typeof count === 'string') {
+    return count;
+  }
+
+  if (typeof count === 'number') {
+    return count > 99 ? '99+' : count.toString();
+  }
+
+  return '';
+};
