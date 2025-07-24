@@ -7,6 +7,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       
       <div
@@ -50,6 +51,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       
       <div
@@ -93,6 +95,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       
       <div
@@ -136,6 +139,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       
       <div
@@ -179,6 +183,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       
       <div
@@ -222,6 +227,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       
       <div
@@ -265,6 +271,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       
       <div
@@ -308,6 +315,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       
       <div

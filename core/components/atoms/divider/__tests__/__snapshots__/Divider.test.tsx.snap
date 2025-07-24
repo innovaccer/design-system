@@ -6,6 +6,7 @@ exports[`Divider component snapshots
 <body>
   <div>
     <hr
+      aria-orientation="horizontal"
       class="Divider Divider--horizontal Divider--basic"
       data-test="DesignSystem-Divider"
     />
@@ -19,6 +20,7 @@ exports[`Divider component snapshots
 <body>
   <div>
     <hr
+      aria-orientation="horizontal"
       class="Divider Divider--horizontal Divider--header"
       data-test="DesignSystem-Divider"
     />
@@ -32,6 +34,7 @@ exports[`Divider component snapshots
 <body>
   <div>
     <hr
+      aria-orientation="vertical"
       class="Divider Divider--vertical"
       data-test="DesignSystem-Divider"
     />
@@ -45,6 +48,7 @@ exports[`Divider component snapshots
 <body>
   <div>
     <hr
+      aria-orientation="vertical"
       class="Divider Divider--vertical"
       data-test="DesignSystem-Divider"
     />
