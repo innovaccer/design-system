@@ -22,6 +22,15 @@ export const Box = (props: InternalBoxProps) => {
   const { children, type, isTyping, statusType, withStatus, onClick, className } = props;
 
   const baseProps = extractBaseProps(props);
+  const isClickable = Boolean(onClick);
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (!isClickable) return;
+
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      onClick?.(event as unknown as React.MouseEvent<HTMLDivElement>);
+    }
+  };
 
   const MessageClass = classNames(
     {
@@ -34,10 +43,16 @@ export const Box = (props: InternalBoxProps) => {
     className
   );
 
-  /* TODO(a11y): fix accessibility  */
-  /* eslint-disable  */
   return (
-    <div {...baseProps} className={MessageClass} onClick={onClick} data-test="DesignSystem-ChatMessage--Box">
+    <div
+      {...baseProps}
+      className={MessageClass}
+      onClick={onClick}
+      onKeyDown={handleKeyDown}
+      data-test="DesignSystem-ChatMessage--Box"
+      role={isClickable ? 'button' : undefined}
+      tabIndex={isClickable ? 0 : undefined}
+    >
       {children}
     </div>
   );

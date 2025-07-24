@@ -45,6 +45,15 @@ export const FileUploaderItem = (props: FileUploaderItemProps) => {
   const { name } = file;
 
   const baseProps = extractBaseProps(props);
+  const isClickable = Boolean(onClick);
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (!isClickable) return;
+
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      onClick?.(file, id);
+    }
+  };
 
   const FileItemClass = classNames(
     {
@@ -54,13 +63,14 @@ export const FileUploaderItem = (props: FileUploaderItemProps) => {
   );
 
   return (
-    // TODO(a11y)
-    //  eslint-disable-next-line
     <div
       {...baseProps}
       data-test="DesignSystem-FileUploader--Item"
       className={FileItemClass}
       onClick={() => onClick && onClick(file, id)}
+      onKeyDown={handleKeyDown}
+      role={isClickable ? 'button' : undefined}
+      tabIndex={isClickable ? 0 : undefined}
     >
       <div className={styles['FileUploaderItem-file']}>
         <Text className={styles['FileUploaderItem-text']} appearance={status === 'completed' ? 'default' : 'subtle'}>

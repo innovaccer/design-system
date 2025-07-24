@@ -17,11 +17,12 @@ Object {
           <span
             class=""
             data-test="DesignSystem-AvatarWrapper"
-            role="presentation"
           >
             <span
+              aria-label="JD"
               class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
               data-test="DesignSystem-Avatar"
+              role="img"
               tabindex="0"
             >
               <span
@@ -47,11 +48,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="JD"
             class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <span
@@ -136,11 +138,12 @@ Object {
           <span
             class=""
             data-test="DesignSystem-AvatarWrapper"
-            role="presentation"
           >
             <span
+              aria-label="JD"
               class="Avatar Avatar--regular Avatar--accent1 Avatar--disabled"
               data-test="DesignSystem-Avatar"
+              role="img"
               tabindex="-1"
             >
               <span
@@ -166,11 +169,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="JD"
             class="Avatar Avatar--regular Avatar--accent1 Avatar--disabled"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="-1"
           >
             <span
@@ -255,11 +259,12 @@ Object {
           <span
             class=""
             data-test="DesignSystem-AvatarWrapper"
-            role="presentation"
           >
             <span
+              aria-label="JD"
               class="Avatar Avatar--regular Avatar--accent2 Avatar--default"
               data-test="DesignSystem-Avatar"
+              role="img"
               tabindex="0"
             >
               <span
@@ -285,11 +290,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="JD"
             class="Avatar Avatar--regular Avatar--accent2 Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <span
@@ -374,11 +380,12 @@ Object {
           <span
             class=""
             data-test="DesignSystem-AvatarWrapper"
-            role="presentation"
           >
             <span
+              aria-label="JD"
               class="Avatar Avatar--regular Avatar--accent2 Avatar--disabled"
               data-test="DesignSystem-Avatar"
+              role="img"
               tabindex="-1"
             >
               <span
@@ -404,11 +411,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="JD"
             class="Avatar Avatar--regular Avatar--accent2 Avatar--disabled"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="-1"
           >
             <span
@@ -493,11 +501,12 @@ Object {
           <span
             class=""
             data-test="DesignSystem-AvatarWrapper"
-            role="presentation"
           >
             <span
+              aria-label="JD"
               class="Avatar Avatar--regular Avatar--accent3 Avatar--default"
               data-test="DesignSystem-Avatar"
+              role="img"
               tabindex="0"
             >
               <span
@@ -523,11 +532,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="JD"
             class="Avatar Avatar--regular Avatar--accent3 Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <span
@@ -612,11 +622,12 @@ Object {
           <span
             class=""
             data-test="DesignSystem-AvatarWrapper"
-            role="presentation"
           >
             <span
+              aria-label="JD"
               class="Avatar Avatar--regular Avatar--accent3 Avatar--disabled"
               data-test="DesignSystem-Avatar"
+              role="img"
               tabindex="-1"
             >
               <span
@@ -642,11 +653,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="JD"
             class="Avatar Avatar--regular Avatar--accent3 Avatar--disabled"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="-1"
           >
             <span
@@ -731,11 +743,12 @@ Object {
           <span
             class=""
             data-test="DesignSystem-AvatarWrapper"
-            role="presentation"
           >
             <span
+              aria-label="JD"
               class="Avatar Avatar--regular Avatar--accent4 Avatar--default"
               data-test="DesignSystem-Avatar"
+              role="img"
               tabindex="0"
             >
               <span
@@ -761,11 +774,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="JD"
             class="Avatar Avatar--regular Avatar--accent4 Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <span
@@ -850,11 +864,12 @@ Object {
           <span
             class=""
             data-test="DesignSystem-AvatarWrapper"
-            role="presentation"
           >
             <span
+              aria-label="JD"
               class="Avatar Avatar--regular Avatar--accent4 Avatar--disabled"
               data-test="DesignSystem-Avatar"
+              role="img"
               tabindex="-1"
             >
               <span
@@ -880,11 +895,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="JD"
             class="Avatar Avatar--regular Avatar--accent4 Avatar--disabled"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="-1"
           >
             <span
@@ -969,11 +985,12 @@ Object {
           <span
             class=""
             data-test="DesignSystem-AvatarWrapper"
-            role="presentation"
           >
             <span
+              aria-label="JD"
               class="Avatar Avatar--regular Avatar--alert Avatar--default"
               data-test="DesignSystem-Avatar"
+              role="img"
               tabindex="0"
             >
               <span
@@ -999,11 +1016,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="JD"
             class="Avatar Avatar--regular Avatar--alert Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <span
@@ -1088,11 +1106,12 @@ Object {
           <span
             class=""
             data-test="DesignSystem-AvatarWrapper"
-            role="presentation"
           >
             <span
+              aria-label="JD"
               class="Avatar Avatar--regular Avatar--alert Avatar--disabled"
               data-test="DesignSystem-Avatar"
+              role="img"
               tabindex="-1"
             >
               <span
@@ -1118,11 +1137,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="JD"
             class="Avatar Avatar--regular Avatar--alert Avatar--disabled"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="-1"
           >
             <span
@@ -1207,11 +1227,12 @@ Object {
           <span
             class=""
             data-test="DesignSystem-AvatarWrapper"
-            role="presentation"
           >
             <span
+              aria-label="JD"
               class="Avatar Avatar--regular Avatar--primary Avatar--default"
               data-test="DesignSystem-Avatar"
+              role="img"
               tabindex="0"
             >
               <span
@@ -1237,11 +1258,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="JD"
             class="Avatar Avatar--regular Avatar--primary Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <span
@@ -1326,11 +1348,12 @@ Object {
           <span
             class=""
             data-test="DesignSystem-AvatarWrapper"
-            role="presentation"
           >
             <span
+              aria-label="JD"
               class="Avatar Avatar--regular Avatar--primary Avatar--disabled"
               data-test="DesignSystem-Avatar"
+              role="img"
               tabindex="-1"
             >
               <span
@@ -1356,11 +1379,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="JD"
             class="Avatar Avatar--regular Avatar--primary Avatar--disabled"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="-1"
           >
             <span
@@ -1445,11 +1469,12 @@ Object {
           <span
             class=""
             data-test="DesignSystem-AvatarWrapper"
-            role="presentation"
           >
             <span
+              aria-label="JD"
               class="Avatar Avatar--regular Avatar--success Avatar--default"
               data-test="DesignSystem-Avatar"
+              role="img"
               tabindex="0"
             >
               <span
@@ -1475,11 +1500,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="JD"
             class="Avatar Avatar--regular Avatar--success Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <span
@@ -1564,11 +1590,12 @@ Object {
           <span
             class=""
             data-test="DesignSystem-AvatarWrapper"
-            role="presentation"
           >
             <span
+              aria-label="JD"
               class="Avatar Avatar--regular Avatar--success Avatar--disabled"
               data-test="DesignSystem-Avatar"
+              role="img"
               tabindex="-1"
             >
               <span
@@ -1594,11 +1621,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="JD"
             class="Avatar Avatar--regular Avatar--success Avatar--disabled"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="-1"
           >
             <span
@@ -1683,11 +1711,12 @@ Object {
           <span
             class=""
             data-test="DesignSystem-AvatarWrapper"
-            role="presentation"
           >
             <span
+              aria-label="JD"
               class="Avatar Avatar--regular Avatar--warning Avatar--default"
               data-test="DesignSystem-Avatar"
+              role="img"
               tabindex="0"
             >
               <span
@@ -1713,11 +1742,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="JD"
             class="Avatar Avatar--regular Avatar--warning Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <span
@@ -1802,11 +1832,12 @@ Object {
           <span
             class=""
             data-test="DesignSystem-AvatarWrapper"
-            role="presentation"
           >
             <span
+              aria-label="JD"
               class="Avatar Avatar--regular Avatar--warning Avatar--disabled"
               data-test="DesignSystem-Avatar"
+              role="img"
               tabindex="-1"
             >
               <span
@@ -1832,11 +1863,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="JD"
             class="Avatar Avatar--regular Avatar--warning Avatar--disabled"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="-1"
           >
             <span
@@ -1921,11 +1953,12 @@ Object {
           <span
             class=""
             data-test="DesignSystem-AvatarWrapper"
-            role="presentation"
           >
             <span
+              aria-label="JD"
               class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
               data-test="DesignSystem-Avatar"
+              role="img"
               tabindex="0"
             >
               <span
@@ -1951,11 +1984,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="JD"
             class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <span
@@ -2040,11 +2074,12 @@ Object {
           <span
             class="Avatar-wrapper--square Avatar--regular"
             data-test="DesignSystem-AvatarWrapper"
-            role="presentation"
           >
             <span
+              aria-label="JD"
               class="Avatar Avatar--square Avatar--accent1 Avatar--default"
               data-test="DesignSystem-Avatar"
+              role="img"
               tabindex="0"
             >
               <span
@@ -2070,11 +2105,12 @@ Object {
         <span
           class="Avatar-wrapper--square Avatar--regular"
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="JD"
             class="Avatar Avatar--square Avatar--accent1 Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <span
@@ -2159,11 +2195,12 @@ Object {
           <span
             class=""
             data-test="DesignSystem-AvatarWrapper"
-            role="presentation"
           >
             <span
+              aria-label="JD"
               class="Avatar Avatar--micro Avatar--accent1 Avatar--default"
               data-test="DesignSystem-Avatar"
+              role="img"
               tabindex="0"
             >
               <span
@@ -2189,11 +2226,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="JD"
             class="Avatar Avatar--micro Avatar--accent1 Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <span
@@ -2278,11 +2316,12 @@ Object {
           <span
             class=""
             data-test="DesignSystem-AvatarWrapper"
-            role="presentation"
           >
             <span
+              aria-label="JD"
               class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
               data-test="DesignSystem-Avatar"
+              role="img"
               tabindex="0"
             >
               <span
@@ -2308,11 +2347,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="JD"
             class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <span
@@ -2397,11 +2437,12 @@ Object {
           <span
             class=""
             data-test="DesignSystem-AvatarWrapper"
-            role="presentation"
           >
             <span
+              aria-label="JD"
               class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
               data-test="DesignSystem-Avatar"
+              role="img"
               tabindex="0"
             >
               <span
@@ -2427,11 +2468,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="JD"
             class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <span

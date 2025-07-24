@@ -14,10 +14,13 @@ exports[`EditableDropdown component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
+        role="button"
+        tabindex="0"
       >
         <div
           class="Dropdown d-none"
           data-test="DesignSystem-EditableDropdown--Dropdown"
+          role="presentation"
         >
           <div
             class="PopperWrapper-trigger w-100"

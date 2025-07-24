@@ -135,15 +135,25 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
       [styles['Navigation-menuIcon']]: true,
       [styles['Navigation-menuIcon--active']]: activeMenuIcon,
     });
+    const handleMenuKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+      if (menu.disabled) return;
+
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        onClickHandler(menu);
+      }
+    };
 
     return (
       <div key={index} data-test="DesignSystem-Navigation-VerticalNavigation--menuWrapper">
-        {/* TODO(a11y) */}
-        {/* eslint-disable-next-line */}
         <div
           data-test="DesignSystem-Navigation-VerticalNavigation--menuItem"
           className={menuClasses}
           onClick={() => onClickHandler(menu)}
+          onKeyDown={handleMenuKeyDown}
+          role="button"
+          tabIndex={menu.disabled ? -1 : 0}
+          aria-disabled={menu.disabled || undefined}
         >
           {menu.icon && (
             <Icon
@@ -182,15 +192,25 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
                 [styles['Navigation-menu--subMenu']]: true,
                 [styles['Navigation-menu--active']]: isActive,
               });
+              const handleSubMenuKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+                if (subMenu.disabled) return;
+
+                if (event.key === 'Enter' || event.key === ' ') {
+                  event.preventDefault();
+                  onClickHandler(subMenu);
+                }
+              };
 
               return (
-                // TODO(a11y)
-                // eslint-disable-next-line
                 <div
                   data-test="DesignSystem-Navigation-VerticalNavigation--subMenu"
                   key={ind}
                   className={subMenuClasses}
                   onClick={() => onClickHandler(subMenu)}
+                  onKeyDown={handleSubMenuKeyDown}
+                  role="button"
+                  tabIndex={subMenu.disabled ? -1 : 0}
+                  aria-disabled={subMenu.disabled || undefined}
                 >
                   <Text appearance={getTextAppearance(isActive, subMenu.disabled)} className="ellipsis--noWrap">
                     {subMenu.label}

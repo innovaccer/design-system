@@ -329,17 +329,26 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
         ['bg-dark']: active,
       });
 
-      // TODO(a11y): fix accessibility
-      /* eslint-disable */
       labels.push(
         <div
           onClick={onClickHandler}
+          onKeyDown={(event: React.KeyboardEvent<HTMLDivElement>) => {
+            if (!this.props.disabled && (event.key === 'Enter' || event.key === ' ')) {
+              event.preventDefault();
+              onClickHandler(event as unknown as React.MouseEvent<HTMLElement>);
+            }
+          }}
           className={styles['Slider-label']}
           key={i}
           style={style}
           onMouseOver={() => this.handleLabelMouseOver(i)}
+          onFocus={() => this.handleLabelMouseOver(i)}
           onMouseLeave={this.handleLabelMouseLeave}
+          onBlur={this.handleLabelMouseLeave}
           data-test="DesignSystem-MultiSlider-Label"
+          role="button"
+          tabIndex={disabled ? -1 : 0}
+          aria-disabled={disabled || undefined}
         >
           {/* eslint-enable  */}
           <span className={SliderTicksClass} />
@@ -424,13 +433,20 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
       <div {...baseProps} className={SliderClass} data-test="DesignSystem-MultiSlider">
         {label && <Label withInput={true}>{label}</Label>}
         <div className={WrapperClass}>
-          {/* TODO(a11y): fix accessibility  */}
-          {/* eslint-disable */}
           <div
             className={styles['Slider-track']}
             ref={(ref) => (this.trackElement = ref)}
             onMouseDown={this.maybeHandleTrackClick}
+            onKeyDown={(event: React.KeyboardEvent<HTMLDivElement>) => {
+              if (!this.props.disabled && (event.key === 'Enter' || event.key === ' ')) {
+                event.preventDefault();
+                this.maybeHandleTrackClick(event as unknown as React.MouseEvent<HTMLDivElement>);
+              }
+            }}
             data-test="DesignSystem-MultiSlider-Slider-Track"
+            role="button"
+            tabIndex={this.props.disabled ? -1 : 0}
+            aria-disabled={this.props.disabled || undefined}
           >
             {/* eslint-enable */}
             {this.renderTracks()}

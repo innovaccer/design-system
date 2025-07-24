@@ -12,6 +12,7 @@ exports[`ChipInput component
       <div
         class="ChipInput ChipInput--withChips ChipInput--regular"
         data-test="DesignSystem-ChipInput"
+        role="button"
         tabindex="0"
       >
         <div
@@ -35,6 +36,7 @@ exports[`ChipInput component
               </span>
             </div>
             <div
+              aria-label="Remove"
               class="Chip-icon Chip-icon--right cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -68,6 +70,7 @@ exports[`ChipInput component
               </span>
             </div>
             <div
+              aria-label="Remove"
               class="Chip-icon Chip-icon--right cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -116,8 +119,10 @@ exports[`ChipInput component
       data-test="DesignSystem-ChipInput--Border"
     >
       <div
+        aria-disabled="true"
         class="ChipInput ChipInput--disabled ChipInput--withChips ChipInput--regular"
         data-test="DesignSystem-ChipInput"
+        role="button"
         tabindex="-1"
       >
         <div
@@ -141,6 +146,7 @@ exports[`ChipInput component
               </span>
             </div>
             <div
+              aria-label="Remove"
               class="Chip-icon Chip-icon--right Chip-icon-disabled--right"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -174,6 +180,7 @@ exports[`ChipInput component
               </span>
             </div>
             <div
+              aria-label="Remove"
               class="Chip-icon Chip-icon--right Chip-icon-disabled--right"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -225,6 +232,7 @@ exports[`ChipInput component
       <div
         class="ChipInput ChipInput--withChips ChipInput--error ChipInput--regular"
         data-test="DesignSystem-ChipInput"
+        role="button"
         tabindex="0"
       >
         <div
@@ -248,6 +256,7 @@ exports[`ChipInput component
               </span>
             </div>
             <div
+              aria-label="Remove"
               class="Chip-icon Chip-icon--right cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -281,6 +290,7 @@ exports[`ChipInput component
               </span>
             </div>
             <div
+              aria-label="Remove"
               class="Chip-icon Chip-icon--right cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
