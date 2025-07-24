@@ -140,6 +140,36 @@ export const headerCell = () => {
       displayName: 'Plan Name',
       width: '15%',
       separator: true,
+      sorting: true,
+      headerCellRenderer: (props) => {
+        // eslint-disable-next-line react/prop-types
+        const { schema, sortingList = [] } = props;
+        // eslint-disable-next-line react/prop-types
+        const { sorting, name } = schema;
+
+        // Find current sort state
+        const listIndex = sortingList.findIndex((l) => l.name === name);
+        const sorted = listIndex !== -1 ? sortingList[listIndex].type : null;
+
+        return (
+          <>
+            <Badge>Plan</Badge>
+            {sorting && (
+              <div style={{ marginLeft: 'auto' }}>
+                {sorted ? (
+                  sorted === 'asc' ? (
+                    <Icon name="arrow_upward" />
+                  ) : (
+                    <Icon name="arrow_downward" />
+                  )
+                ) : (
+                  <Icon name="unfold_more" />
+                )}
+              </div>
+            )}
+          </>
+        );
+      },
     },
     {
       name: 'first_dos',
@@ -339,6 +369,36 @@ const customCode = `() => {
       displayName: 'Plan Name',
       width: '15%',
       separator: true,
+      sorting: true,
+      headerCellRenderer: (props) => {
+        // eslint-disable-next-line react/prop-types
+        const { schema, sortingList = [] } = props;
+        // eslint-disable-next-line react/prop-types
+        const { sorting, name } = schema;
+
+        // Find current sort state
+        const listIndex = sortingList.findIndex((l) => l.name === name);
+        const sorted = listIndex !== -1 ? sortingList[listIndex].type : null;
+
+        return (
+          <>
+            <Badge>Plan</Badge>
+            {sorting && (
+              <div style={{ marginLeft: 'auto' }}>
+                {sorted ? (
+                  sorted === 'asc' ? (
+                    <Icon name="arrow_upward" />
+                  ) : (
+                    <Icon name="arrow_downward" />
+                  )
+                ) : (
+                  <Icon name="unfold_more" />
+                )}
+              </div>
+            )}
+          </>
+        )
+      },
     },
     {
       name: 'first_dos',
