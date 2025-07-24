@@ -11,6 +11,7 @@ exports[`Switch component
       <input
         checked=""
         class="Switch-input"
+        role="switch"
         type="checkbox"
         value=""
       />
@@ -33,6 +34,7 @@ exports[`Switch component
       <input
         checked=""
         class="Switch-input"
+        role="switch"
         type="checkbox"
         value=""
       />
@@ -56,6 +58,7 @@ exports[`Switch component
         checked=""
         class="Switch-input"
         disabled=""
+        role="switch"
         type="checkbox"
         value=""
       />
@@ -78,6 +81,7 @@ exports[`Switch component
       <input
         checked=""
         class="Switch-input"
+        role="switch"
         type="checkbox"
         value=""
       />
@@ -100,6 +104,7 @@ exports[`Switch component
       <input
         checked=""
         class="Switch-input"
+        role="switch"
         type="checkbox"
         value=""
       />
