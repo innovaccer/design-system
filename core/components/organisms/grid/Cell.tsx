@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { RowData, ColumnSchema } from './Grid';
+import { RowData, ColumnSchema, SortType } from './Grid';
 import { Dropdown, Placeholder, PlaceholderParagraph, Text, Icon, Button, Tooltip, GridCell } from '@/index';
 import { DropdownProps, GridCellProps } from '@/index.type';
 import { resizeCol, hasSchema } from './utility';
@@ -30,7 +30,13 @@ type BodyCellProps = SharedCellProps & {
   expandedState: [boolean, React.Dispatch<React.SetStateAction<boolean>>];
 };
 
-export type HeaderCellRendererProps = HeaderCellProps & SharedCellProps;
+export type HeaderCellRendererProps = HeaderCellProps &
+  SharedCellProps & {
+    sortingList: {
+      name: ColumnSchema['name'];
+      type: SortType;
+    }[];
+  };
 
 export type CellProps = Partial<HeaderCellProps> &
   Partial<BodyCellProps> &
@@ -41,6 +47,18 @@ export type CellProps = Partial<HeaderCellProps> &
 
 const HeaderCell = (props: HeaderCellProps) => {
   const context = React.useContext(GridContext);
+
+  const {
+    loading,
+    draggable,
+    showMenu,
+    sortingList,
+    filterList,
+    headCellTooltip,
+    showFilters,
+    schema: schemaProp,
+  } = context;
+
   const {
     schema,
     setIsDragged,
@@ -61,18 +79,8 @@ const HeaderCell = (props: HeaderCellProps) => {
     updateColumnSchema,
     reorderColumn,
     setIsDragged,
-  };
-
-  const {
-    loading,
-    draggable,
-    showMenu,
     sortingList,
-    filterList,
-    headCellTooltip,
-    showFilters,
-    schema: schemaProp,
-  } = context;
+  };
 
   const { sorting = true, name, filters, pinned } = schema;
 
