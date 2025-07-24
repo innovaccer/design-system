@@ -24,6 +24,7 @@ exports[`Navigation component
               data-test="DesignSystem-Breadcrumbs-item"
             >
               <a
+                aria-disabled="false"
                 class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
                 data-test="DesignSystem-Breadcrumbs-link"
                 href="/Senders"
@@ -125,6 +126,7 @@ exports[`Navigation component
                 data-test="DesignSystem-StatusHint"
               >
                 <span
+                  aria-hidden="true"
                   class="StatusHint-icon StatusHint--default mr-4"
                   data-test="DesignSystem-StatusHint--Icon"
                 />
@@ -233,6 +235,7 @@ exports[`Navigation component
                 <div
                   class="Tab Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span
@@ -257,6 +260,7 @@ exports[`Navigation component
                 <div
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span
@@ -281,6 +285,7 @@ exports[`Navigation component
                 <div
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span
@@ -336,6 +341,7 @@ exports[`Navigation component
               data-test="DesignSystem-Breadcrumbs-item"
             >
               <a
+                aria-disabled="false"
                 class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
                 data-test="DesignSystem-Breadcrumbs-link"
                 href="/Senders"
@@ -477,6 +483,7 @@ exports[`Navigation component
                 data-test="DesignSystem-StatusHint"
               >
                 <span
+                  aria-hidden="true"
                   class="StatusHint-icon StatusHint--default mr-4"
                   data-test="DesignSystem-StatusHint--Icon"
                 />
@@ -550,6 +557,7 @@ exports[`Navigation component
                 <div
                   class="Tab Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span
@@ -574,6 +582,7 @@ exports[`Navigation component
                 <div
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span
@@ -598,6 +607,7 @@ exports[`Navigation component
                 <div
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span
@@ -653,6 +663,7 @@ exports[`Navigation component
               data-test="DesignSystem-Breadcrumbs-item"
             >
               <a
+                aria-disabled="false"
                 class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
                 data-test="DesignSystem-Breadcrumbs-link"
                 href="/Senders"
@@ -754,6 +765,7 @@ exports[`Navigation component
                 data-test="DesignSystem-StatusHint"
               >
                 <span
+                  aria-hidden="true"
                   class="StatusHint-icon StatusHint--default mr-4"
                   data-test="DesignSystem-StatusHint--Icon"
                 />
@@ -862,6 +874,7 @@ exports[`Navigation component
                 <div
                   class="Tab Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span
@@ -886,6 +899,7 @@ exports[`Navigation component
                 <div
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span
@@ -910,6 +924,7 @@ exports[`Navigation component
                 <div
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span
@@ -937,6 +952,7 @@ exports[`Navigation component
         </div>
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1002,6 +1018,7 @@ exports[`Navigation component
                 <div
                   class="Tab Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span
@@ -1026,6 +1043,7 @@ exports[`Navigation component
                 <div
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span
@@ -1050,6 +1068,7 @@ exports[`Navigation component
                 <div
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span
@@ -1077,6 +1096,7 @@ exports[`Navigation component
         </div>
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1130,6 +1150,7 @@ exports[`Navigation component
                     <div
                       class="Step Stepper-animate Step--active"
                       data-test="DesignSystem-Step"
+                      role="button"
                       tabindex="0"
                     >
                       <i
@@ -1148,8 +1169,10 @@ exports[`Navigation component
                       </span>
                     </div>
                     <div
+                      aria-disabled="true"
                       class="Step Stepper-animate Step--disabled"
                       data-test="DesignSystem-Step"
+                      role="button"
                       tabindex="-1"
                     >
                       <i
@@ -1168,8 +1191,10 @@ exports[`Navigation component
                       </span>
                     </div>
                     <div
+                      aria-disabled="true"
                       class="Step Stepper-animate Step--disabled"
                       data-test="DesignSystem-Step"
+                      role="button"
                       tabindex="-1"
                     >
                       <i
@@ -1206,6 +1231,7 @@ exports[`Navigation component
         />
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1272,6 +1298,7 @@ exports[`Navigation component
         />
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1297,6 +1324,7 @@ exports[`Navigation component
               data-test="DesignSystem-Breadcrumbs-item"
             >
               <a
+                aria-disabled="false"
                 class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
                 data-test="DesignSystem-Breadcrumbs-link"
                 href="/Senders"
@@ -1346,6 +1374,7 @@ exports[`Navigation component
         />
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1398,6 +1427,7 @@ exports[`Navigation component
         />
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1444,6 +1474,7 @@ exports[`Navigation component
         />
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1514,6 +1545,7 @@ exports[`Navigation component
         />
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1539,6 +1571,7 @@ exports[`Navigation component
               data-test="DesignSystem-Breadcrumbs-item"
             >
               <a
+                aria-disabled="false"
                 class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
                 data-test="DesignSystem-Breadcrumbs-link"
                 href="/Senders"
@@ -1680,6 +1713,7 @@ exports[`Navigation component
                 data-test="DesignSystem-StatusHint"
               >
                 <span
+                  aria-hidden="true"
                   class="StatusHint-icon StatusHint--default mr-4"
                   data-test="DesignSystem-StatusHint--Icon"
                 />
@@ -1753,6 +1787,7 @@ exports[`Navigation component
                 <div
                   class="Tab Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span
@@ -1777,6 +1812,7 @@ exports[`Navigation component
                 <div
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span
@@ -1801,6 +1837,7 @@ exports[`Navigation component
                 <div
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span
@@ -1828,6 +1865,7 @@ exports[`Navigation component
         </div>
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />

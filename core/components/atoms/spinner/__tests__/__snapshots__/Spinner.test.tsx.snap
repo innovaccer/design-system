@@ -1,12 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Spinner component 
+  appearance: "alert"
+ 1`] = `
+<body>
+  <div>
+    <svg
+      aria-label="Loading"
+      aria-live="polite"
+      class="Spinner Spinner--medium"
+      role="status"
+      viewBox="0 0 50 50"
+    >
+      <circle
+        class="Circle Circle--alert"
+        cx="25"
+        cy="25"
+        fill="none"
+        r="20"
+        stroke-miterlimit="10"
+        stroke-width="4"
+      />
+    </svg>
+  </div>
+</body>
+`;
+
+exports[`Spinner component 
   appearance: "primary"
  1`] = `
 <body>
   <div>
     <svg
+      aria-label="Loading"
+      aria-live="polite"
       class="Spinner Spinner--medium"
+      role="status"
       viewBox="0 0 50 50"
     >
       <circle
@@ -29,7 +58,10 @@ exports[`Spinner component
 <body>
   <div>
     <svg
+      aria-label="Loading"
+      aria-live="polite"
       class="Spinner Spinner--medium"
+      role="status"
       viewBox="0 0 50 50"
     >
       <circle
@@ -52,7 +84,10 @@ exports[`Spinner component
 <body>
   <div>
     <svg
+      aria-label="Loading"
+      aria-live="polite"
       class="Spinner Spinner--medium"
+      role="status"
       viewBox="0 0 50 50"
     >
       <circle
@@ -75,7 +110,10 @@ exports[`Spinner component
 <body>
   <div>
     <svg
+      aria-label="Loading"
+      aria-live="polite"
       class="Spinner Spinner--large"
+      role="status"
       viewBox="0 0 50 50"
     >
       <circle
@@ -98,7 +136,10 @@ exports[`Spinner component
 <body>
   <div>
     <svg
+      aria-label="Loading"
+      aria-live="polite"
       class="Spinner Spinner--medium"
+      role="status"
       viewBox="0 0 50 50"
     >
       <circle
@@ -121,7 +162,10 @@ exports[`Spinner component
 <body>
   <div>
     <svg
+      aria-label="Loading"
+      aria-live="polite"
       class="Spinner Spinner--small"
+      role="status"
       viewBox="0 0 50 50"
     >
       <circle
@@ -144,7 +188,10 @@ exports[`Spinner component
 <body>
   <div>
     <svg
+      aria-label="Loading"
+      aria-live="polite"
       class="Spinner Spinner--xsmall"
+      role="status"
       viewBox="0 0 50 50"
     >
       <circle

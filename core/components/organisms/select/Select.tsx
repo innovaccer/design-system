@@ -10,6 +10,7 @@ import SelectEmptyTemplate from './SelectEmptyTemplate';
 import { focusListItem, mapInitialValue } from './utils';
 import SelectFooter from './SelectFooter';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import uidGenerator from '@/utils/uidGenerator';
 import { PopoverProps } from '@/index.type';
 
 export type SelectStyleType = 'filled' | 'outlined';
@@ -179,6 +180,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
   const [highlightFirstItem, setHighlightFirstItem] = React.useState<boolean>(false);
   const [highlightLastItem, setHighlightLastItem] = React.useState<boolean>(false);
   const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>({ width: popoverWidth || width });
+  const listboxId = React.useRef(`select-listbox-${uidGenerator()}`).current;
 
   const baseProps = extractBaseProps(props);
   const WrapperStyle = trigger ? {} : { width: width };
@@ -187,7 +189,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     if (trigger) {
       return React.cloneElement(trigger, { ref: triggerRef });
     }
-    return <SelectTrigger aria-controls="select-listbox" {...triggerOptions} />;
+    return <SelectTrigger aria-controls={listboxId} {...triggerOptions} />;
   };
 
   React.useEffect(() => {
@@ -314,7 +316,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
           trigger={getTriggerElement()}
         >
           <OutsideClick onOutsideClick={onOutsideClickHandler}>
-            <div role="listbox" id="select-listbox" tabIndex={0} ref={listRef}>
+            <div role="listbox" id={listboxId} tabIndex={0} ref={listRef}>
               {children}
             </div>
           </OutsideClick>

@@ -78,11 +78,25 @@ export const FileListItem = (props: FileListItemProps) => {
       onClick(fileItem);
     }
   };
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (!onClick) return;
+
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      onClickHandler();
+    }
+  };
 
   return (
-    // TODO(a11y)
-    //  eslint-disable-next-line
-    <div {...baseProps} className={FileItemClass} onClick={onClickHandler} data-test="DesignSystem-FileListItem">
+    <div
+      {...baseProps}
+      className={FileItemClass}
+      onClick={onClickHandler}
+      onKeyDown={handleKeyDown}
+      data-test="DesignSystem-FileListItem"
+      role="button"
+      tabIndex={0}
+    >
       <div className={styles['FileItem-file']}>
         <div className={styles['FileItem-fileContent']}>
           <FileIcon file={file} status={status} progress={progress} />
