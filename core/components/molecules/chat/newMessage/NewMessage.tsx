@@ -4,12 +4,12 @@ import styles from '@css/components/chatSeparator.module.css';
 import { BaseProps } from '@/utils/types';
 import classNames from 'classnames';
 
-export interface NewMessageProps extends BaseProps {
+export type NewMessageProps = {
   /**
    * Text to be rendered inside `NewMessage`
    */
   text: string;
-}
+} & BaseProps;
 
 const NewMessage: React.FC<NewMessageProps> = (props) => {
   const { text, className, ...rest } = props;

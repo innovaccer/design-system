@@ -9,10 +9,10 @@ export interface OutgoingOptionProps extends BaseProps {
   status?: boolean;
   failed?: boolean;
   children?: React.ReactNode;
-  time?: string | React.ReactText;
-  actionBar?: () => JSX.Element;
-  urgentMessage?: () => JSX.Element;
-  failedMessage?: () => JSX.Element;
+  time?: string | number;
+  actionBar?: () => React.ReactElement;
+  urgentMessage?: () => React.ReactElement;
+  failedMessage?: () => React.ReactElement;
 }
 
 const ChatBox = (props: { children: React.ReactNode }) => {

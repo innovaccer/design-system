@@ -6,7 +6,7 @@ import { BaseProps } from '@/utils/types';
 import classNames from 'classnames';
 import styles from '@css/components/avatar.module.css';
 
-export interface AvatarIconProps extends BaseProps {
+export type AvatarIconProps = {
   /**
    * Material icon name
    */
@@ -15,7 +15,7 @@ export interface AvatarIconProps extends BaseProps {
    * Type of material `Icon`
    */
   type?: 'outlined' | 'rounded';
-}
+} & BaseProps;
 
 const appearanceMapper: Record<string, string> = {
   secondary: 'inverse',

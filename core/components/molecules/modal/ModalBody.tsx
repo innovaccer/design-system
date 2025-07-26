@@ -6,8 +6,8 @@ import styles from '@css/components/modal.module.css';
 
 export interface ModalBodyProps extends BaseProps {
   children: React.ReactNode;
-  stickFooter: boolean;
-  withFooter: boolean;
+  stickFooter?: boolean;
+  withFooter?: boolean;
 }
 
 export const ModalBody = (props: ModalBodyProps) => {
@@ -24,7 +24,7 @@ export const ModalBody = (props: ModalBodyProps) => {
   );
 
   return (
-    <OverlayBody {...baseProps} stickFooter={true} className={classes}>
+    <OverlayBody {...baseProps} className={classes}>
       {children}
     </OverlayBody>
   );

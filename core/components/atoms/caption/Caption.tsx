@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import styles from '@css/components/caption.module.css';
 
-export interface CaptionProps extends BaseProps {
+export type CaptionProps = {
   /**
    * Text to be rendered
    */
@@ -22,7 +22,7 @@ export interface CaptionProps extends BaseProps {
    * Adds default top margin of 4px
    */
   withInput?: boolean;
-}
+} & BaseProps;
 
 export const Caption = (props: CaptionProps) => {
   const { error, hide, withInput, children, className } = props;

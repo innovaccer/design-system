@@ -52,9 +52,8 @@ export const SubMenu = (props: SubMenuProps) => {
     parentListRef: listRef,
     triggerID,
   };
-
-  const triggerElement = React.cloneElement(submenuTrigger as React.ReactElement, {
-    ...(submenuTrigger as React.ReactElement)?.props,
+  const triggerElement = React.cloneElement(submenuTrigger as React.ReactElement<any>, {
+    ...((submenuTrigger as React.ReactElement).props || {}),
     onKeyDown: onKeyDownHandler,
     ref: triggerRef,
     'aria-haspopup': 'menu',
@@ -62,16 +61,24 @@ export const SubMenu = (props: SubMenuProps) => {
     'aria-controls': menuID,
     id: triggerID,
   });
-
   if (React.isValidElement(submenuContent)) {
-    const { on, children } = submenuContent?.props;
-    subMenuElement = React.cloneElement(submenuContent as React.ReactElement, {
-      ...submenuContent.props,
-      on: on || 'hover',
-      offset: 'small',
-      children: <div ref={subListRef}>{children}</div>,
-      trigger: triggerElement,
-    });
+    const submenuProps = submenuContent.props as { on?: string; children?: React.ReactNode };
+    const { on, children } = submenuProps;
+    subMenuElement = React.cloneElement(
+      submenuContent as React.ReactElement<{
+        on?: string;
+        children?: React.ReactNode;
+        offset?: string;
+        trigger?: React.ReactElement;
+      }>,
+      {
+        ...submenuProps,
+        on: on || 'hover',
+        offset: 'small',
+        children: <div ref={subListRef}>{children}</div>,
+        trigger: triggerElement,
+      }
+    );
   }
 
   return <SubMenuContext.Provider value={subMenuContextProp}>{subMenuElement}</SubMenuContext.Provider>;

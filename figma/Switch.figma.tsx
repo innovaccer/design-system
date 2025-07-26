@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch } from '@/index';
+import { SwitchProps } from '@/index.type';
 import figma from '@figma/code-connect';
 
 figma.connect(Switch, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=47-469&m=dev', {
@@ -18,5 +19,5 @@ figma.connect(Switch, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS--
     }),
     checked: figma.boolean('On'),
   },
-  example: (props) => <Switch name="Name of switch" value="Value of switch" {...props} />,
+  example: (props) => <Switch name="Name of switch" value="Value of switch" {...(props as SwitchProps)} />,
 });

@@ -14,7 +14,7 @@ import styles from '@css/components/fullscreenModal.module.css';
 
 export type FullScreenDimension = 'medium' | 'large';
 
-export interface FullscreenModalProps extends BaseProps {
+export type FullscreenModalProps = {
   /**
    * Dimension of `Fullscreen Modal`
    */
@@ -93,7 +93,7 @@ export interface FullscreenModalProps extends BaseProps {
    * Closes `FullScreenModal` when `Escape` key is pressed
    */
   closeOnEscape?: boolean;
-}
+} & BaseProps;
 
 interface ModalState {
   open: boolean;

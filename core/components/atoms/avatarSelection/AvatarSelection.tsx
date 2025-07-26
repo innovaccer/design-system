@@ -67,23 +67,23 @@ export interface AvatarSelectionProps extends BaseProps {
   /**
    * Max `Avatars` to show before +x.
    */
-  max: number;
+  max?: number;
   /**
    * Border color of `Avatars`.
    */
-  borderColor: string;
+  borderColor?: string;
   /**
    * Determines size of `Avatar`
    */
-  size: AvatarSize;
+  size?: AvatarSize;
   /**
    * Position to place the tooltip on `Avatars` shown before +x
    */
-  tooltipPosition: TooltipProps['position'];
+  tooltipPosition?: TooltipProps['position'];
   /**
    * Callback function to create custom avatar content
    */
-  avatarRenderer?: (data: AvatarData) => JSX.Element;
+  avatarRenderer?: (data: AvatarData) => React.JSX.Element;
   /**
    * Callback function for avatar selection
    */
@@ -115,7 +115,7 @@ export interface AvatarSelectionProps extends BaseProps {
   /**
    * Element to be render inside popover
    */
-  children?: React.ReactNode;
+  children?: React.JSX.Element;
   /**
    * Adds custom class to avatar wrapper
    */
@@ -124,21 +124,21 @@ export interface AvatarSelectionProps extends BaseProps {
 
 export const AvatarSelection = (props: AvatarSelectionProps) => {
   const {
-    max,
-    borderColor,
-    tooltipPosition,
     list,
-    className,
-    size,
+    max = 5,
+    tooltipPosition = 'bottom',
+    borderColor = 'white',
+    size = 'regular',
+    width = 256,
+    maxHeight = 256,
+    minHeight,
     avatarRenderer,
     onSelect,
-    width,
-    maxHeight,
-    minHeight,
-    searchPlaceholder,
     withSearch,
+    searchPlaceholder,
     searchComparator,
     children,
+    className,
   } = props;
 
   const [selectedItems, setSelectedItems] = React.useState<AvatarData[]>([]);
@@ -271,15 +271,6 @@ export const AvatarSelection = (props: AvatarSelectionProps) => {
 };
 
 AvatarSelection.displayName = 'AvatarSelection';
-AvatarSelection.defaultProps = {
-  max: 5,
-  tooltipPosition: 'bottom',
-  borderColor: 'white',
-  size: 'regular',
-  width: 256,
-  maxHeight: 256,
-};
-
 AvatarSelection.Input = AvatarSelectionInput;
 AvatarSelection.List = AvatarSelectionList;
 AvatarSelection.Option = AvatarSelectionOption;

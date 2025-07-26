@@ -47,7 +47,7 @@ export type IconAppearance =
 
 export type IconType = 'filled' | 'outlined' | 'outline' | 'rounded' | 'round' | 'two-tone' | 'sharp'; // 'outline', 'rounded' to be deprecated soon.
 
-export interface IconProps extends BaseProps {
+export type IconProps = {
   /**
    * Material icon name
    */
@@ -55,7 +55,7 @@ export interface IconProps extends BaseProps {
   /**
    * Size of `Icon`
    */
-  size: number;
+  size?: number;
   /**
    * Type of material `Icon`
    *
@@ -85,7 +85,7 @@ export interface IconProps extends BaseProps {
    * where it participates in sequential keyboard navigation.
    */
   tabIndex?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>['tabIndex'];
-}
+} & BaseProps;
 
 const iconTypeMapper: Record<string, string> = {
   timelapse: 'outlined',
@@ -128,7 +128,7 @@ const iconTypeMapper: Record<string, string> = {
  */
 
 export const Icon = (props: IconProps) => {
-  const { appearance, className, name, size, children } = props;
+  const { appearance, className, name, size = 16, children } = props;
   const accessibilityProps = useAccessibilityProps(props);
 
   const baseProps = extractBaseProps(props);
@@ -180,8 +180,5 @@ export const Icon = (props: IconProps) => {
 };
 
 Icon.displayName = 'Icon';
-Icon.defaultProps = {
-  size: 16,
-};
 
 export default Icon;

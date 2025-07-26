@@ -1,15 +1,17 @@
-import { OptionSchema as Option } from './option';
+import { OptionSchema } from './option';
 
 export const getSearchedOptions = (options: any, searchTerm: string) => {
-  const result = options.filter((option: Option) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));
+  const result = options.filter((option: OptionSchema) =>
+    option.label.toLowerCase().includes(searchTerm.toLowerCase())
+  );
   return result;
 };
 
-const sortList = (arr: Option[]) => {
+const sortList = (arr: OptionSchema[]) => {
   return arr.sort((a, b) => (a.value > b.value ? 1 : b.value > a.value ? -1 : 0));
 };
 
-export const _isEqual = (firstList: Option[], secondList: Option[]) => {
+export const _isEqual = (firstList: OptionSchema[], secondList: OptionSchema[]) => {
   const firstSortedList = sortList([...firstList]);
   const secondSortedList = sortList([...secondList]);
   return (
@@ -18,7 +20,7 @@ export const _isEqual = (firstList: Option[], secondList: Option[]) => {
   );
 };
 
-export const _isControlled = (selected?: Option[]) => selected !== undefined;
+export const _isControlled = (selected?: OptionSchema[]) => selected !== undefined;
 
 export const _isOpenControlled = (open?: boolean) => open !== undefined;
 
@@ -48,7 +50,7 @@ export const scrollIntoView = (menuElement: HTMLDivElement | null, focusedElemen
   }
 };
 
-export const getSelectAll = (selected: Option[], optionsLength: number, disabledOptionsLength: number) => {
+export const getSelectAll = (selected: OptionSchema[], optionsLength: number, disabledOptionsLength: number) => {
   if (selected.length) {
     if (selected.length > 0 && disabledOptionsLength > 0 && selected.length === optionsLength - disabledOptionsLength) {
       return { indeterminate: true, checked: true }; //
@@ -67,18 +69,21 @@ export const scrollToOptionIndex = (scrollIndex: number, listOptions: any) => {
   targetOption && targetOption.scrollIntoView && targetOption.scrollIntoView({ block: 'center' });
 };
 
-export const groupListOptions = (listOptions: Option[]): Option[] => {
-  const groupList = listOptions.reduce((acc, option) => {
-    const group = option.group || '';
+export const groupListOptions = (listOptions: OptionSchema[]): OptionSchema[] => {
+  const groupList = listOptions.reduce(
+    (acc, option) => {
+      const group = option.group || '';
 
-    if (!acc[group]) {
-      acc[group] = [];
-    }
+      if (!acc[group]) {
+        acc[group] = [];
+      }
 
-    acc[group].push(option);
+      acc[group].push(option);
 
-    return acc;
-  }, {} as { [key: string]: Option[] });
+      return acc;
+    },
+    {} as { [key: string]: OptionSchema[] }
+  );
 
   const flattenedGroupList = Object.values(groupList).flatMap((item) => [...item]);
 

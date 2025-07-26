@@ -12,7 +12,7 @@ import SelectFooter from './SelectFooter';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { PopoverProps } from '@/index.type';
 
-export interface SelectProps extends BaseProps {
+export type SelectProps = {
   /**
    * Whether multiple options can be selected.
    */
@@ -33,6 +33,7 @@ export interface SelectProps extends BaseProps {
   children?: React.ReactNode;
   /**
    * width of the trigger.
+   * @default 176
    */
   width?: number | string;
   /**
@@ -41,6 +42,7 @@ export interface SelectProps extends BaseProps {
   popoverWidth?: number;
   /**
    * The maximum height of the popover before scroll is enabled.
+   * @default 256
    */
   maxHeight?: number;
   /**
@@ -60,7 +62,7 @@ export interface SelectProps extends BaseProps {
   /**
    * BoundaryElement for `Popover`
    */
-  boundaryElement?: React.RefObject<HTMLElement> | Element;
+  boundaryElement?: React.RefObject<HTMLElement> | Element | null;
   /**
    * Appends `trigger` wrapper inside body
    */
@@ -109,7 +111,7 @@ export interface SelectProps extends BaseProps {
    */
 
   triggerOptions?: SelectTriggerProps;
-}
+} & BaseProps;
 
 export interface SelectMethods {
   setOpen: (open: boolean) => void;
@@ -130,8 +132,8 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
   const {
     children,
     onSelect,
-    width,
-    maxHeight,
+    width = 176,
+    maxHeight = 256,
     minHeight,
     value,
     boundaryElement,
@@ -165,7 +167,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
 
   const getTriggerElement = () => {
     if (trigger) {
-      return React.cloneElement(trigger, { ref: triggerRef });
+      return React.cloneElement(trigger, { ref: triggerRef } as any);
     }
     return <SelectTrigger aria-controls="select-listbox" {...triggerOptions} />;
   };
@@ -287,7 +289,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
           offset="medium"
           position="bottom-start"
           customStyle={popoverStyle}
-          boundaryElement={boundaryElement}
+          boundaryElement={(boundaryElement as HTMLElement | null | React.RefObject<HTMLElement | null>) || null}
           appendToBody={appendToBody}
           trigger={getTriggerElement()}
         >
@@ -303,11 +305,6 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
 }) as SelectComponent;
 
 Select.displayName = 'Select';
-
-Select.defaultProps = {
-  maxHeight: 256,
-  width: 176,
-};
 
 Select.Option = SelectOption;
 Select.List = SelectList;

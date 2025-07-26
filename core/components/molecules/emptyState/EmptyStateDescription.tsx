@@ -2,17 +2,17 @@ import React from 'react';
 import classNames from 'classnames';
 import { BaseProps } from '@/utils/types';
 import { Text } from '@/index';
-import { TextSize } from 'types';
+import { TextSize } from '@/components/atoms/text';
 import EmptyStateContext from './EmptyStateContext';
 import styles from '@css/components/emptyState.module.css';
 
-export interface EmptyDescriptionProps extends BaseProps {
+export type EmptyDescriptionProps = {
   /**
    * The content to be displayed within the component
    * Can be any renderable React Text.
    */
-  children: React.ReactText;
-}
+  children: string | number;
+} & BaseProps;
 
 const EmptyStateDescription = (props: EmptyDescriptionProps) => {
   const { children, className, ...rest } = props;

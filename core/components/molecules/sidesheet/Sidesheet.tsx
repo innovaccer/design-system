@@ -14,7 +14,7 @@ import styles from '@css/components/sidesheet.module.css';
 
 export type SidesheetDimension = 'regular' | 'large';
 
-export interface SidesheetProps extends BaseProps {
+export type SidesheetProps = {
   /**
    * Header options (doesn't work if `header` prop is used)
    *
@@ -99,7 +99,7 @@ export interface SidesheetProps extends BaseProps {
    * Callback called `Sidesheet` is closed
    */
   onClose?: (event?: Event | React.MouseEvent<HTMLElement, MouseEvent>, reason?: string) => void;
-}
+} & BaseProps;
 
 interface SidesheetState {
   open: boolean;

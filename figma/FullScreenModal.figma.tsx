@@ -1,5 +1,6 @@
 import React from 'react';
 import { FullscreenModal, Button, Text } from '@/index';
+import { FullscreenModalProps } from '@/index.type';
 import figma from '@figma/code-connect';
 
 figma.connect(FullscreenModal, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=7777-38161', {
@@ -12,7 +13,7 @@ figma.connect(FullscreenModal, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7g
   },
   example: (props) => (
     <FullscreenModal
-      {...props}
+      {...(props as FullscreenModalProps)}
       open={true}
       headerOptions={{
         heading: 'Heading',

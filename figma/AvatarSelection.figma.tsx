@@ -1,6 +1,7 @@
 import React from 'react';
 import { Avatar, AvatarSelection } from '@/index';
 import figma from '@figma/code-connect';
+import { AvatarSelectionProps } from '@/index.type';
 
 figma.connect(AvatarSelection, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=32683-7747', {
   imports: ["import { AvatarSelection } from '@innovaccer/design-system'"],
@@ -60,5 +61,5 @@ figma.connect(AvatarSelection, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7g
       ],
     }),
   },
-  example: (props) => <AvatarSelection {...props} />,
+  example: (props) => <AvatarSelection {...(props as AvatarSelectionProps)} />,
 });

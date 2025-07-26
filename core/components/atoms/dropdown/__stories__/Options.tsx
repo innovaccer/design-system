@@ -4,7 +4,7 @@ type OptionType = 'DEFAULT' | 'WITH_ICON' | 'WITH_META' | 'ICON_WITH_META';
 
 interface OptionSchema extends Record<string, any> {
   label: string;
-  value: React.ReactText;
+  value: string | number;
   icon: string;
   subInfo: string;
   optionType?: OptionType;
@@ -15,13 +15,13 @@ interface OptionSchema extends Record<string, any> {
 
 interface SelectedOptionSchema extends Record<string, any> {
   label: string;
-  value: React.ReactText;
+  value: string | number;
   selected?: boolean;
 }
 
 interface AllSelectedOptionSchema extends Record<string, any> {
   label: string;
-  value: React.ReactText;
+  value: string | number;
   selected?: boolean;
   icon: string;
   subInfo: string;

@@ -21,22 +21,22 @@ export interface TimePickerInputProps {
   /**
    * Props to be used for `InputMask`
    */
-  inputOptions: Omit<InputMaskProps, 'mask' | 'value' | 'validators'>;
+  inputOptions?: Omit<InputMaskProps, 'mask' | 'value' | 'validators'>;
   /**
    * Should be used if `time` is of type `string`
    *
    * Also determines mask format
    */
-  inputFormat: InputFormat;
+  inputFormat?: InputFormat;
   /**
    * Should be used to translate `time` to desired format for `onTimeChange` callback
    */
-  outputFormat: InputFormat;
+  outputFormat?: InputFormat;
   /**
    * custom Validator for `TimePicker`
    * `boolean | ((val?: string) => boolean)`
    */
-  validators: Validators;
+  validators?: Validators;
   /**
    * Callback function called when input field is blurred
    */
@@ -48,7 +48,15 @@ export interface TimePickerInputProps {
 }
 
 export const TimePickerWithInput = (props: TimePickerInputProps) => {
-  const { validators, inputOptions, inputFormat, outputFormat, onTimeChange, time: timeProp, error } = props;
+  const {
+    validators = [Utils.validators.time],
+    inputOptions = {},
+    inputFormat = 'hh:mm AM',
+    outputFormat = 'hh:mm AM',
+    onTimeChange,
+    time: timeProp,
+    error,
+  } = props;
 
   const [time, setTime] = React.useState(timeProp);
   const [init, setInit] = React.useState(false);
@@ -116,13 +124,6 @@ export const TimePickerWithInput = (props: TimePickerInputProps) => {
       id="parent-TimePicker"
     />
   );
-};
-
-TimePickerWithInput.defaultProps = {
-  inputFormat: 'hh:mm AM',
-  outputFormat: 'hh:mm AM',
-  inputOptions: {},
-  validators: [Utils.validators.time],
 };
 
 TimePickerWithInput.displayName = 'TimePickerWithInput';

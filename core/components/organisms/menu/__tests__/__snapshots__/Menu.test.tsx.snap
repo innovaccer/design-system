@@ -5,7 +5,6 @@ exports[`Menu component snapshot
  1`] = `
 <body>
   <div>
-    
     <div
       class="PopperWrapper-trigger"
     />
@@ -18,59 +17,63 @@ exports[`Menu component snapshot
  1`] = `
 <body>
   <div>
-    
     <div
       class="PopperWrapper-trigger"
     />
   </div>
   <div
-    class="Popover"
-    data-layer="true"
-    data-opened="true"
-    data-test="DesignSystem-Popover"
-    style="width: 176px; position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
+    style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);"
   >
     <div
-      class="Menu"
-      data-test="DesignSystem-Menu-Wrapper"
-      role="menu"
-      style="max-height: 256px;"
+      class="Popover"
+      data-layer="true"
+      data-opened="true"
+      data-placement="bottom-start"
+      data-test="DesignSystem-Popover"
+      style="width: 176px; position: absolute; left: 0px; top: 0px; margin-top: 4px; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; transform: translate(0px, 0px); z-index: 501;"
     >
-      <nav
-        class="Listbox"
-        data-test="DesignSystem-Menu-List"
+      <div
+        class="Menu"
+        data-test="DesignSystem-Menu-Wrapper"
+        role="menu"
+        style="max-height: 256px;"
       >
-        <a
-          class="Listbox-item-wrapper"
-          data-test="DesignSystem-Menu-ListItem"
-          role="menuitem"
-          tabindex="-1"
+        <nav
+          class="Listbox"
+          data-test="DesignSystem-Menu-List"
         >
-          <div
-            class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
-            data-test="DesignSystem-Listbox-ItemWrapper"
-            role="tablist"
+          <a
+            class="Listbox-item-wrapper"
+            data-test="DesignSystem-Menu-ListItem"
+            role="menuitem"
             tabindex="-1"
           >
-            Menu Item 1
-          </div>
-        </a>
-        <a
-          class="Listbox-item-wrapper"
-          data-test="DesignSystem-Menu-ListItem"
-          role="menuitem"
-          tabindex="-1"
-        >
-          <div
-            class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
-            data-test="DesignSystem-Listbox-ItemWrapper"
-            role="tablist"
+            <div
+              class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
+              data-test="DesignSystem-Listbox-ItemWrapper"
+              role="tablist"
+              tabindex="-1"
+            >
+              Menu Item 1
+            </div>
+          </a>
+          <a
+            class="Listbox-item-wrapper"
+            data-test="DesignSystem-Menu-ListItem"
+            role="menuitem"
             tabindex="-1"
           >
-            Menu Item 2
-          </div>
-        </a>
-      </nav>
+            <div
+              class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
+              data-test="DesignSystem-Listbox-ItemWrapper"
+              role="tablist"
+              tabindex="-1"
+            >
+              Menu Item 2
+            </div>
+          </a>
+        </nav>
+      </div>
     </div>
   </div>
 </body>
@@ -81,7 +84,6 @@ exports[`Menu component with Nesting snapshot
  1`] = `
 <body>
   <div>
-    
     <div
       class="PopperWrapper-trigger"
     />
@@ -94,91 +96,94 @@ exports[`Menu component with Nesting snapshot
  1`] = `
 <body>
   <div>
-    
     <div
       class="PopperWrapper-trigger"
     />
   </div>
   <div
-    class="Popover"
-    data-layer="true"
-    data-opened="true"
-    data-test="DesignSystem-Popover"
-    style="width: 176px; position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
+    style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);"
   >
     <div
-      class="Menu"
-      data-test="DesignSystem-Menu-Wrapper"
-      role="menu"
-      style="max-height: 256px;"
+      class="Popover"
+      data-layer="true"
+      data-opened="true"
+      data-placement="bottom-start"
+      data-test="DesignSystem-Popover"
+      style="width: 176px; position: absolute; left: 0px; top: 0px; margin-top: 4px; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; transform: translate(0px, 0px); z-index: 501;"
     >
-      <nav
-        class="Listbox"
-        data-test="DesignSystem-Menu-List"
+      <div
+        class="Menu"
+        data-test="DesignSystem-Menu-Wrapper"
+        role="menu"
+        style="max-height: 256px;"
       >
-        <a
-          class="Listbox-item-wrapper"
-          data-test="DesignSystem-Menu-ListItem"
-          role="menuitem"
-          tabindex="-1"
-        >
-          <div
-            class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
-            data-test="DesignSystem-Listbox-ItemWrapper"
-            role="tablist"
-            tabindex="-1"
-          >
-            Menu Item 1
-          </div>
-        </a>
-        <a
-          class="Listbox-item-wrapper"
-          data-test="DesignSystem-Menu-ListItem"
-          role="menuitem"
-          tabindex="-1"
-        >
-          <div
-            class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
-            data-test="DesignSystem-Listbox-ItemWrapper"
-            role="tablist"
-            tabindex="-1"
-          >
-            Menu Item 2
-          </div>
-        </a>
-        
-        <div
-          class="PopperWrapper-trigger"
+        <nav
+          class="Listbox"
+          data-test="DesignSystem-Menu-List"
         >
           <a
-            aria-controls="DesignSystem-Menu--Popover-Test-uid"
-            aria-expanded="false"
-            aria-haspopup="menu"
             class="Listbox-item-wrapper"
             data-test="DesignSystem-Menu-ListItem"
-            id="DesignSystem-Menu--Trigger-Test-uid"
             role="menuitem"
             tabindex="-1"
           >
             <div
-              class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item d-flex align-items-center justify-content-between w-100"
+              class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
               data-test="DesignSystem-Listbox-ItemWrapper"
               role="tablist"
               tabindex="-1"
             >
-              Menu Item 3
-              <i
-                class="material-symbols material-symbols-rounded Icon"
-                data-test="DesignSystem-Icon"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                chevron_right
-              </i>
+              Menu Item 1
             </div>
           </a>
-        </div>
-      </nav>
+          <a
+            class="Listbox-item-wrapper"
+            data-test="DesignSystem-Menu-ListItem"
+            role="menuitem"
+            tabindex="-1"
+          >
+            <div
+              class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
+              data-test="DesignSystem-Listbox-ItemWrapper"
+              role="tablist"
+              tabindex="-1"
+            >
+              Menu Item 2
+            </div>
+          </a>
+          <div
+            class="PopperWrapper-trigger"
+          >
+            <a
+              aria-controls="DesignSystem-Menu--Popover-Test-uid"
+              aria-expanded="false"
+              aria-haspopup="menu"
+              class="Listbox-item-wrapper"
+              data-test="DesignSystem-Menu-ListItem"
+              id="DesignSystem-Menu--Trigger-Test-uid"
+              role="menuitem"
+              tabindex="-1"
+            >
+              <div
+                class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item d-flex align-items-center justify-content-between w-100"
+                data-test="DesignSystem-Listbox-ItemWrapper"
+                role="tablist"
+                tabindex="-1"
+              >
+                Menu Item 3
+                <i
+                  class="material-symbols material-symbols-rounded Icon"
+                  data-test="DesignSystem-Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  chevron_right
+                </i>
+              </div>
+            </a>
+          </div>
+        </nav>
+      </div>
     </div>
   </div>
 </body>
@@ -189,7 +194,6 @@ exports[`Menu component with Trigger snapshot
  1`] = `
 <body>
   <div>
-    
     <div
       class="PopperWrapper-trigger"
     >
@@ -225,7 +229,6 @@ exports[`Menu component with Trigger snapshot
  1`] = `
 <body>
   <div>
-    
     <div
       class="PopperWrapper-trigger"
     >
@@ -254,53 +257,58 @@ exports[`Menu component with Trigger snapshot
     </div>
   </div>
   <div
-    class="Popover"
-    data-layer="true"
-    data-opened="true"
-    data-test="DesignSystem-Popover"
-    style="width: 176px; position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
+    style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);"
   >
     <div
-      class="Menu"
-      data-test="DesignSystem-Menu-Wrapper"
-      role="menu"
-      style="max-height: 256px;"
+      class="Popover"
+      data-layer="true"
+      data-opened="true"
+      data-placement="bottom-start"
+      data-test="DesignSystem-Popover"
+      style="width: 176px; position: absolute; left: 0px; top: 0px; margin-top: 4px; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; transform: translate(0px, 0px); z-index: 501;"
     >
-      <nav
-        class="Listbox"
-        data-test="DesignSystem-Menu-List"
+      <div
+        class="Menu"
+        data-test="DesignSystem-Menu-Wrapper"
+        role="menu"
+        style="max-height: 256px;"
       >
-        <a
-          class="Listbox-item-wrapper"
-          data-test="DesignSystem-Menu-ListItem"
-          role="menuitem"
-          tabindex="-1"
+        <nav
+          class="Listbox"
+          data-test="DesignSystem-Menu-List"
         >
-          <div
-            class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
-            data-test="DesignSystem-Listbox-ItemWrapper"
-            role="tablist"
+          <a
+            class="Listbox-item-wrapper"
+            data-test="DesignSystem-Menu-ListItem"
+            role="menuitem"
             tabindex="-1"
           >
-            Menu Item 1
-          </div>
-        </a>
-        <a
-          class="Listbox-item-wrapper"
-          data-test="DesignSystem-Menu-ListItem"
-          role="menuitem"
-          tabindex="-1"
-        >
-          <div
-            class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
-            data-test="DesignSystem-Listbox-ItemWrapper"
-            role="tablist"
+            <div
+              class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
+              data-test="DesignSystem-Listbox-ItemWrapper"
+              role="tablist"
+              tabindex="-1"
+            >
+              Menu Item 1
+            </div>
+          </a>
+          <a
+            class="Listbox-item-wrapper"
+            data-test="DesignSystem-Menu-ListItem"
+            role="menuitem"
             tabindex="-1"
           >
-            Menu Item 2
-          </div>
-        </a>
-      </nav>
+            <div
+              class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
+              data-test="DesignSystem-Listbox-ItemWrapper"
+              role="tablist"
+              tabindex="-1"
+            >
+              Menu Item 2
+            </div>
+          </a>
+        </nav>
+      </div>
     </div>
   </div>
 </body>

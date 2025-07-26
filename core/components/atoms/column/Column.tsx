@@ -30,7 +30,7 @@ type Columns =
   | 11
   | 12;
 
-export interface ColumnProps extends BaseProps, BaseHtmlProps<HTMLDivElement> {
+export type ColumnProps = {
   /**
    * Default size of Column
    */
@@ -55,7 +55,12 @@ export interface ColumnProps extends BaseProps, BaseHtmlProps<HTMLDivElement> {
    * Size of Column if the viewport is 1200 pixels wide or wider.
    */
   sizeXL?: Columns;
-}
+  /**
+   * React Node to be rendered inside `Column`
+   */
+  children?: React.ReactNode;
+} & BaseProps &
+  BaseHtmlProps<HTMLDivElement>;
 
 export const Column = React.forwardRef<HTMLDivElement, ColumnProps>((props, ref) => {
   const { size, sizeXS, sizeS, sizeM, sizeL, sizeXL, className, children, ...rest } = props;

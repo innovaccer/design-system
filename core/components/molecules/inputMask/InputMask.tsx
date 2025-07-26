@@ -5,7 +5,7 @@ import { Input, Utils, HelpText } from '@/index';
 import { InputProps } from '@/index.type';
 import { getDefaultValue } from './utilites';
 
-export interface MaskProps extends BaseProps {
+export type MaskProps = {
   /**
    * Every value of Array represent either fixed char or regular expression for particular index
    *
@@ -49,7 +49,7 @@ export interface MaskProps extends BaseProps {
    * Add text below `input`
    */
   helpText?: string;
-}
+} & BaseProps;
 export type InputMaskProps = InputProps & MaskProps;
 type SelectionPos = {
   start: number;
@@ -125,7 +125,7 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
   const defaultSelection = React.useMemo(() => getDefaultSelection(), [getDefaultSelection]);
 
   const ref = React.useRef<HTMLInputElement>(null);
-  const deferId = React.useRef<number | undefined>();
+  const deferId = React.useRef<number | undefined>(undefined);
   const selectionPos = React.useRef<SelectionPos>(defaultSelection);
   const newSelectionPos = React.useRef<number>(0);
 

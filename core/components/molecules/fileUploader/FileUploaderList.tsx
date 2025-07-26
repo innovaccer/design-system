@@ -4,7 +4,7 @@ import FileUploaderItem, { FileItem } from './FileUploaderItem';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import styles from '@css/components/fileUploader.module.css';
 
-export interface FileUploaderListProps extends BaseProps {
+export type FileUploaderListProps = {
   /**
    * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
    * Array of FileItem object.
@@ -26,7 +26,7 @@ export interface FileUploaderListProps extends BaseProps {
    * | errorMessage | Error Message to be shown when status is `error` | 'Network Error' |
    * </pre>
    */
-  fileList: FileItem[];
+  fileList?: FileItem[];
   /**
    * Callback called when file item is clicked
    */
@@ -39,10 +39,10 @@ export interface FileUploaderListProps extends BaseProps {
    * Callback called when retry icon is clicked
    */
   onRetry?: (file: File, id?: any) => void;
-}
+} & BaseProps;
 
 export const FileUploaderList = (props: FileUploaderListProps) => {
-  const { fileList, onClick, onDelete, onRetry, className } = props;
+  const { fileList = [], onClick, onDelete, onRetry, className } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -62,10 +62,6 @@ export const FileUploaderList = (props: FileUploaderListProps) => {
       ))}
     </div>
   );
-};
-
-FileUploaderList.defaultProps = {
-  fileList: [],
 };
 
 FileUploaderList.displayName = 'FileUploaderList';

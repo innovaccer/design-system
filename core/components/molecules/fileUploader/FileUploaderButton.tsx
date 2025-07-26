@@ -4,7 +4,7 @@ import { Button } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import styles from '@css/components/fileUploader.module.css';
 
-export interface FileUploaderButtonProps extends BaseProps {
+export type FileUploaderButtonProps = {
   /**
    * Name of the `FileUploaderInput`
    */
@@ -20,23 +20,32 @@ export interface FileUploaderButtonProps extends BaseProps {
   /**
    * Describes if `FileUploader` should accept multiple files to upload
    */
-  multiple: boolean;
+  multiple?: boolean;
   /**
    * Label of `FileUploaderButton`
    */
-  uploadButtonLabel: string;
+  uploadButtonLabel?: string;
   /**
    * Specify whether file input is disabled
    */
-  disabled: boolean;
+  disabled?: boolean;
   /**
    * Callback called when file is selected
    */
   onChange?: (fileList: File[], event: React.ChangeEvent<HTMLInputElement>) => void;
-}
+} & BaseProps;
 
 export const FileUploaderButton = (props: FileUploaderButtonProps) => {
-  const { accept, multiple, uploadButtonLabel, disabled, name, className, id, onChange } = props;
+  const {
+    accept,
+    multiple = false,
+    uploadButtonLabel = 'Upload files',
+    disabled = false,
+    name,
+    className,
+    id,
+    onChange,
+  } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -69,12 +78,6 @@ export const FileUploaderButton = (props: FileUploaderButtonProps) => {
       />
     </div>
   );
-};
-
-FileUploaderButton.defaultProps = {
-  uploadButtonLabel: 'Upload files',
-  disabled: false,
-  multiple: false,
 };
 
 FileUploaderButton.displayName = 'FileUploaderButton';

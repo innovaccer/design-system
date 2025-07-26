@@ -5,15 +5,21 @@ import styles from '@css/components/card.module.css';
 
 export type Shadow = 'none' | 'default' | 'light' | 'medium' | 'dark' | 'shadow10' | 'shadow20' | 'shadow30';
 
-export interface CardProps extends BaseProps, BaseHtmlProps<HTMLDivElement> {
+export type CardProps = {
   /**
    * Shadow of the `Card`
    *
    * **Shadow `default`, `light`, `medium` and `dark` will be soon deprecated and it will map to `shadow10` automatically.**
+   * @default shadow10
    *
    */
   shadow?: Shadow;
-}
+  /**
+   * React Node to be rendered inside `Card`
+   */
+  children?: React.ReactNode;
+} & BaseProps &
+  BaseHtmlProps<HTMLDivElement>;
 
 export const Card = React.forwardRef<HTMLDivElement, CardProps>((props, ref) => {
   const { shadow = 'shadow10', children, className, ...rest } = props;
@@ -34,8 +40,5 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>((props, ref) => 
 });
 
 Card.displayName = 'Card';
-Card.defaultProps = {
-  shadow: 'shadow10',
-};
 
 export default Card;

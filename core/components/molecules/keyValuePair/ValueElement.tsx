@@ -3,7 +3,7 @@ import { Text } from '@/index';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
-export interface ValueElementProps extends BaseProps {
+export type ValueElementProps = {
   /**
    * React Element to be added inside `ValueElement`
    */
@@ -11,8 +11,8 @@ export interface ValueElementProps extends BaseProps {
   /**
    * Specify value to be displayed in `ValueElement`
    */
-  value?: React.ReactText;
-}
+  value?: string | number;
+} & BaseProps;
 
 export const ValueElement = (props: ValueElementProps) => {
   const { children, value, className } = props;

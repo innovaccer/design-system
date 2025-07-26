@@ -7,15 +7,15 @@ export type StepSize = 'small' | 'regular' | 'large';
 export type StepType = 'filled' | 'empty';
 export type StepColor = 'info' | 'success' | 'warning' | 'alert';
 
-export interface StepProps extends BaseProps {
+export type StepProps = {
   /**
    * Size of the `Step`
    */
-  stepSize: StepSize;
+  stepSize?: StepSize;
   /**
    * Type of the `Step`
    */
-  type: StepType;
+  type?: StepType;
   /**
    * Color of the empty `Step`
    */
@@ -24,10 +24,10 @@ export interface StepProps extends BaseProps {
    * Color of the filled `Step`
    */
   fillColor?: StepColor;
-}
+} & BaseProps;
 
 export const Step = (props: StepProps) => {
-  const { stepSize, type, fillColor, className, emptyColor } = props;
+  const { stepSize = 'regular', type = 'empty', emptyColor = 'var(--secondary-light)', fillColor, className } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -56,10 +56,5 @@ export const Step = (props: StepProps) => {
 };
 
 Step.displayName = 'Step';
-Step.defaultProps = {
-  stepSize: 'regular',
-  type: 'empty',
-  emptyColor: 'var(--secondary-light)',
-};
 
 export default Step;

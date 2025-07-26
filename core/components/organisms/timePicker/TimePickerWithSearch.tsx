@@ -15,7 +15,7 @@ type fetchOptionsFunction = (searchTerm: string) => Promise<{
 
 export type TimeFormat = '12-Hour' | '24-Hour';
 
-export interface TimePickerDropdownProps extends BaseProps {
+export type TimePickerDropdownProps = {
   /**
    * Set as `true` to show timePicker with search
    */
@@ -31,11 +31,11 @@ export interface TimePickerDropdownProps extends BaseProps {
   /**
    * Depicts the time interval in `minutes` between options
    */
-  interval: number;
+  interval?: number;
   /**
    * Indicates time format for options list
    */
-  timeFormat: TimeFormat;
+  timeFormat?: TimeFormat;
   /**
    * Determines if the `TimePicker Popover` is open
    */
@@ -90,16 +90,16 @@ export interface TimePickerDropdownProps extends BaseProps {
    * Shows error state in case of failed validation
    */
   error?: boolean;
-}
+} & BaseProps;
 
 export const TimePickerWithSearch = (props: TimePickerDropdownProps) => {
   const {
     open,
     endTime,
-    interval,
+    interval = 15,
     onChange,
     startTime,
-    timeFormat,
+    timeFormat = '12-Hour',
     showDuration,
     noResultMessage,
     disabledSlotList,
@@ -193,11 +193,6 @@ export const TimePickerWithSearch = (props: TimePickerDropdownProps) => {
       error={error}
     />
   );
-};
-
-TimePickerWithSearch.defaultProps = {
-  timeFormat: '12-Hour',
-  interval: 15,
 };
 
 TimePickerWithSearch.displayName = 'TimePickerWithSearch';

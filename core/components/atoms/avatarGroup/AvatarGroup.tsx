@@ -22,7 +22,7 @@ export interface AvatarData extends Record<string, any> {
 }
 
 interface AvatarPopoverProps {
-  popperRenderer?: (names: AvatarData[]) => JSX.Element;
+  popperRenderer?: (names: AvatarData[]) => React.JSX.Element;
   appendToBody?: PopoverProps['appendToBody'];
   dark?: PopoverProps['dark'];
   position?: PopoverProps['position'];
@@ -36,7 +36,7 @@ interface AvatarPopoverProps {
   searchComparator?: (searchValue: string, avatarData: AvatarData) => boolean;
 }
 
-export interface AvatarGroupProps extends BaseProps {
+export type AvatarGroupProps = {
   /**
    * List of `Avatars`
    *
@@ -70,15 +70,15 @@ export interface AvatarGroupProps extends BaseProps {
   /**
    * Max `Avatars` to show before +x.
    */
-  max: number;
+  max?: number;
   /**
    * Border color of `Avatars`.
    */
-  borderColor: string;
+  borderColor?: string;
   /**
    * Determines size of `Avatar`
    */
-  size: AvatarSize;
+  size?: AvatarSize;
   /**
    * **Popover for +x avatar**
    *
@@ -113,15 +113,23 @@ export interface AvatarGroupProps extends BaseProps {
    * | searchComparator | Comparator function to search inside popover |  |
    *
    */
-  popoverOptions: AvatarPopoverProps;
+  popoverOptions?: AvatarPopoverProps;
   /**
    * Position to place the tooltip on `Avatars` shown before +x
    */
-  tooltipPosition: PopoverProps['position'];
-}
+  tooltipPosition?: PopoverProps['position'];
+} & BaseProps;
 
 export const AvatarGroup = (props: AvatarGroupProps) => {
-  const { max, borderColor, popoverOptions, tooltipPosition, list, className, size } = props;
+  const {
+    max = 2,
+    borderColor = 'white',
+    popoverOptions = {},
+    tooltipPosition = 'bottom',
+    list,
+    className,
+    size = 'regular',
+  } = props;
 
   const {
     popperRenderer,
@@ -135,7 +143,7 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
     searchPlaceholder,
     searchComparator,
     popperClassName = '',
-  } = popoverOptions;
+  } = popoverOptions || {};
 
   const baseProps = extractBaseProps(props);
 
@@ -194,12 +202,5 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
 };
 
 AvatarGroup.displayName = 'AvatarGroup';
-AvatarGroup.defaultProps = {
-  max: 2,
-  tooltipPosition: 'bottom',
-  borderColor: 'white',
-  popoverOptions: {},
-  size: 'regular',
-};
 
 export default AvatarGroup;

@@ -4,14 +4,14 @@ import { FileStatus } from '@/common.type';
 
 export interface FileUploaderStatusProps {
   file: File;
-  progress: number;
+  progress?: number;
   id?: any;
-  status: FileStatus;
+  status?: FileStatus;
   onRetry?: () => void;
 }
 
 export const FileUploaderStatus = (props: FileUploaderStatusProps) => {
-  const { progress, status, onRetry } = props;
+  const { progress = 0, status = 'completed', onRetry } = props;
 
   switch (status) {
     case 'uploading':
@@ -26,10 +26,5 @@ export const FileUploaderStatus = (props: FileUploaderStatusProps) => {
 };
 
 FileUploaderStatus.displayName = 'FileUploaderStatus';
-
-FileUploaderStatus.defaultProps = {
-  status: 'completed',
-  progress: 0,
-};
 
 export default FileUploaderStatus;

@@ -5,20 +5,20 @@ import styles from '@css/components/divider.module.css';
 
 type DividerType = 'basic' | 'header';
 
-export interface DividerProps extends BaseProps {
+export type DividerProps = {
   /**
    * Determines if orientation of `Divider` is vertical
    */
-  vertical: boolean;
+  vertical?: boolean;
   /**
    * Types of `Divider`
    * @default "basic"
    */
-  appearance: DividerType;
-}
+  appearance?: DividerType;
+} & BaseProps;
 
 export const Divider = (props: DividerProps) => {
-  const { vertical, appearance, className } = props;
+  const { appearance = 'basic', vertical = false, className } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -37,9 +37,5 @@ export const Divider = (props: DividerProps) => {
 };
 
 Divider.displayName = 'Divider';
-Divider.defaultProps = {
-  appearance: 'basic',
-  vertical: false,
-};
 
 export default Divider;

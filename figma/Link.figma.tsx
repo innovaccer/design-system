@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from '@/index';
+import { LinkProps } from '@/index.type';
 import figma from '@figma/code-connect';
 
 figma.connect(Link, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=28-6', {
@@ -18,7 +19,7 @@ figma.connect(Link, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---W
     }),
   },
   example: (props) => (
-    <Link {...props} href="">
+    <Link {...(props as LinkProps)} href="">
       {props.size} link
     </Link>
   ),

@@ -3,7 +3,7 @@ import { BaseHtmlProps, BaseProps } from '@/utils/types';
 import classNames from 'classnames';
 import styles from '@css/components/actionCard.module.css';
 
-export interface ActionCardProps extends BaseProps, BaseHtmlProps<HTMLDivElement> {
+export type ActionCardProps = {
   /**
    * Element to be rendered inside card
    */
@@ -20,7 +20,8 @@ export interface ActionCardProps extends BaseProps, BaseHtmlProps<HTMLDivElement
    * Handler to be called when Action card is clicked
    */
   onClick?: (e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent) => void;
-}
+} & BaseProps &
+  BaseHtmlProps<HTMLDivElement>;
 
 export const ActionCard = (props: ActionCardProps) => {
   const { children, disabled, className, zIndex, onClick, ...rest } = props;

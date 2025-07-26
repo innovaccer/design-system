@@ -2,7 +2,7 @@ import * as React from 'react';
 import { AvatarData } from './AvatarSelection';
 
 export type ContextProps = {
-  listRef?: React.RefObject<HTMLDivElement>;
+  listRef?: React.RefObject<HTMLDivElement | null>;
   onSelect?: (data?: AvatarData) => void;
   withSearch?: boolean;
   triggerRef?: React.LegacyRef<HTMLDivElement>;

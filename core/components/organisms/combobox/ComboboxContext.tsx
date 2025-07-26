@@ -16,7 +16,7 @@ export type ContextProps = {
   setHighlightFirstItem?: React.Dispatch<React.SetStateAction<boolean>>;
   setHighlightLastItem?: React.Dispatch<React.SetStateAction<boolean>>;
   inputTriggerRef?: any;
-  listRef?: React.RefObject<HTMLDivElement>;
+  listRef?: React.RefObject<HTMLDivElement | null>;
   multiSelect?: boolean;
   popoverId?: string;
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import { ProgressBar } from '@/index';
+import { ProgressBarProps } from '@/index.type';
 import figma from '@figma/code-connect';
 
 figma.connect(ProgressBar, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=441-1443&m=dev', {
@@ -22,5 +23,5 @@ figma.connect(ProgressBar, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/
       '100%': 100,
     }),
   },
-  example: (props) => <ProgressBar {...props} />,
+  example: (props) => <ProgressBar {...(props as ProgressBarProps)} />,
 });

@@ -20,13 +20,18 @@ exports[`Popover component
     </button>
   </div>
   <div
-    class="Popover"
-    data-layer="true"
-    data-opened="true"
-    data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
+    style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);"
   >
-    Popover
+    <div
+      class="Popover"
+      data-layer="true"
+      data-opened="true"
+      data-placement="bottom"
+      data-test="DesignSystem-Popover"
+      style="position: absolute; left: 0px; top: 0px; margin-top: 8px; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; transform: translate(0px, 0px); z-index: 501;"
+    >
+      Popover
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -73,13 +78,18 @@ exports[`Popover component
     </button>
   </div>
   <div
-    class="Popover Popover--dark"
-    data-layer="true"
-    data-opened="true"
-    data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
+    style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);"
   >
-    Popover
+    <div
+      class="Popover Popover--dark"
+      data-layer="true"
+      data-opened="true"
+      data-placement="bottom"
+      data-test="DesignSystem-Popover"
+      style="position: absolute; left: 0px; top: 0px; margin-top: 8px; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; transform: translate(0px, 0px); z-index: 501;"
+    >
+      Popover
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -126,13 +136,18 @@ exports[`Popover component
     </button>
   </div>
   <div
-    class="Popover"
-    data-layer="true"
-    data-opened="true"
-    data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
+    style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);"
   >
-    Popover
+    <div
+      class="Popover"
+      data-layer="true"
+      data-opened="true"
+      data-placement="bottom"
+      data-test="DesignSystem-Popover"
+      style="position: absolute; left: 0px; top: 0px; margin-top: 8px; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; transform: translate(0px, 0px); z-index: 501;"
+    >
+      Popover
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -157,13 +172,18 @@ exports[`Popover component
     </button>
   </div>
   <div
-    class="Popover"
-    data-layer="true"
-    data-opened="true"
-    data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
+    style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);"
   >
-    Popover
+    <div
+      class="Popover"
+      data-layer="true"
+      data-opened="true"
+      data-placement="bottom-end"
+      data-test="DesignSystem-Popover"
+      style="position: absolute; left: 0px; top: 0px; margin-top: 8px; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; transform: translate(0px, 0px); z-index: 501;"
+    >
+      Popover
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -188,13 +208,18 @@ exports[`Popover component
     </button>
   </div>
   <div
-    class="Popover"
-    data-layer="true"
-    data-opened="true"
-    data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
+    style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);"
   >
-    Popover
+    <div
+      class="Popover"
+      data-layer="true"
+      data-opened="true"
+      data-placement="bottom-start"
+      data-test="DesignSystem-Popover"
+      style="position: absolute; left: 0px; top: 0px; margin-top: 8px; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; transform: translate(0px, 0px); z-index: 501;"
+    >
+      Popover
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -219,13 +244,18 @@ exports[`Popover component
     </button>
   </div>
   <div
-    class="Popover"
-    data-layer="true"
-    data-opened="true"
-    data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
+    style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);"
   >
-    Popover
+    <div
+      class="Popover"
+      data-layer="true"
+      data-opened="true"
+      data-placement="top"
+      data-test="DesignSystem-Popover"
+      style="position: absolute; left: 0px; top: 0px; margin-bottom: 8px; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; transform: translate(0px, 0px); z-index: 501;"
+    >
+      Popover
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -250,13 +280,18 @@ exports[`Popover component
     </button>
   </div>
   <div
-    class="Popover"
-    data-layer="true"
-    data-opened="true"
-    data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
+    style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);"
   >
-    Popover
+    <div
+      class="Popover"
+      data-layer="true"
+      data-opened="true"
+      data-placement="top-end"
+      data-test="DesignSystem-Popover"
+      style="position: absolute; left: 0px; top: 0px; margin-bottom: 8px; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; transform: translate(0px, 0px); z-index: 501;"
+    >
+      Popover
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -281,13 +316,18 @@ exports[`Popover component
     </button>
   </div>
   <div
-    class="Popover"
-    data-layer="true"
-    data-opened="true"
-    data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
+    style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);"
   >
-    Popover
+    <div
+      class="Popover"
+      data-layer="true"
+      data-opened="true"
+      data-placement="top-start"
+      data-test="DesignSystem-Popover"
+      style="position: absolute; left: 0px; top: 0px; margin-bottom: 8px; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; transform: translate(0px, 0px); z-index: 501;"
+    >
+      Popover
+    </div>
   </div>
 </DocumentFragment>
 `;

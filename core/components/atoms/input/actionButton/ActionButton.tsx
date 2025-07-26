@@ -7,7 +7,7 @@ import styles from '@css/components/actionButton.module.css';
 
 export type ActionButtonType = 'outlined' | 'rounded';
 
-export interface ActionButtonProps extends BaseProps {
+export type ActionButtonProps = {
   /**
    * Material icon name
    */
@@ -15,7 +15,7 @@ export interface ActionButtonProps extends BaseProps {
   /**
    * Size of `ActionButton`
    */
-  size: number;
+  size?: number;
   /**
    * Type of material `ActionButton`
    */
@@ -41,23 +41,27 @@ export interface ActionButtonProps extends BaseProps {
    * where it participates in sequential keyboard navigation.
    */
   tabIndex?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>['tabIndex'];
-}
+} & BaseProps;
 
 export const ActionButton = (props: ActionButtonProps) => {
-  const { className, iconType, ...rest } = props;
+  const { size = 16, type = 'rounded', iconType, className, ...rest } = props;
 
   const iconClass = classNames({
     [styles['ActionButton']]: true,
     [`${className}`]: className,
   });
 
-  return <Icon className={iconClass} type={iconType} data-test="DesignSystem-Input-ActionButton" {...rest} />;
+  return (
+    <Icon
+      size={size}
+      className={iconClass}
+      type={iconType || type}
+      data-test="DesignSystem-Input-ActionButton"
+      {...rest}
+    />
+  );
 };
 
 ActionButton.displayName = 'ActionButton';
-ActionButton.defaultProps = {
-  size: 16,
-  type: 'rounded',
-};
 
 export default ActionButton;

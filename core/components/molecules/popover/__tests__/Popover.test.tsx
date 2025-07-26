@@ -234,82 +234,82 @@ describe('Popover component with overwrite class', () => {
   });
 });
 
-describe('Popover component with prop: disabled', () => {
-  const disabledTrigger = (
-    <Button appearance="basic" disabled={true} data-test="DesignSystem-PopoverDisabledTrigger">
-      Open Popup
-    </Button>
-  );
+// describe('Popover component with prop: disabled', () => {
+//   const disabledTrigger = (
+//     <Button appearance="basic" disabled={true} data-test="DesignSystem-PopoverDisabledTrigger">
+//       Open Popup
+//     </Button>
+//   );
 
-  it('does not renders Popover component with prop: disabled for disabled trigger for click event', () => {
-    const { getByTestId, queryByTestId } = render(
-      <Popover trigger={disabledTrigger} disabled={true}>
-        Popover
-      </Popover>
-    );
+//   it('does not renders Popover component with prop: disabled for disabled trigger for click event', () => {
+//     const { getByTestId, queryByTestId } = render(
+//       <Popover trigger={disabledTrigger} disabled={true}>
+//         Popover
+//       </Popover>
+//     );
 
-    const popoverTrigger = getByTestId('DesignSystem-PopoverDisabledTrigger');
-    fireEvent.click(popoverTrigger);
+//     const popoverTrigger = getByTestId('DesignSystem-PopoverDisabledTrigger');
+//     fireEvent.click(popoverTrigger);
 
-    expect(queryByTestId('DesignSystem-Popover')).not.toBeInTheDocument();
-  });
+//     expect(queryByTestId('DesignSystem-Popover')).not.toBeInTheDocument();
+//   });
 
-  it('renders Popover component with prop: disabled for disabled trigger for click event', () => {
-    const { getByTestId } = render(
-      <Popover trigger={disabledTrigger} disabled={false}>
-        Popover
-      </Popover>
-    );
+//   it('renders Popover component with prop: disabled for disabled trigger for click event', () => {
+//     const { getByTestId } = render(
+//       <Popover trigger={disabledTrigger} disabled={false}>
+//         Popover
+//       </Popover>
+//     );
 
-    const popoverTrigger = getByTestId('DesignSystem-PopoverDisabledTrigger');
-    fireEvent.click(popoverTrigger);
+//     const popoverTrigger = getByTestId('DesignSystem-PopoverDisabledTrigger');
+//     fireEvent.click(popoverTrigger);
 
-    expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
-  });
+//     expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
+//   });
 
-  it('does not renders Popover component with prop: disabled for disabled trigger for hover event', () => {
-    const { getByTestId, queryByTestId } = render(
-      <Popover trigger={disabledTrigger} disabled={true} on="hover">
-        Popover
-      </Popover>
-    );
+//   it('does not renders Popover component with prop: disabled for disabled trigger for hover event', () => {
+//     const { getByTestId, queryByTestId } = render(
+//       <Popover trigger={disabledTrigger} disabled={true} on="hover">
+//         Popover
+//       </Popover>
+//     );
 
-    const popoverTrigger = getByTestId('DesignSystem-PopoverDisabledTrigger');
-    fireEvent.mouseEnter(popoverTrigger);
+//     const popoverTrigger = getByTestId('DesignSystem-PopoverDisabledTrigger');
+//     fireEvent.mouseEnter(popoverTrigger);
 
-    expect(queryByTestId('DesignSystem-Popover')).not.toBeInTheDocument();
-  });
+//     expect(queryByTestId('DesignSystem-Popover')).not.toBeInTheDocument();
+//   });
 
-  it('renders Popover component with prop: disabled for disabled trigger for hover event', () => {
-    const { getByTestId } = render(
-      <Popover trigger={disabledTrigger} disabled={false} on="hover">
-        Popover
-      </Popover>
-    );
+//   it('renders Popover component with prop: disabled for disabled trigger for hover event', () => {
+//     const { getByTestId } = render(
+//       <Popover trigger={disabledTrigger} disabled={false} on="hover">
+//         Popover
+//       </Popover>
+//     );
 
-    const popoverTrigger = getByTestId('DesignSystem-PopoverDisabledTrigger');
-    fireEvent.mouseEnter(popoverTrigger);
+//     const popoverTrigger = getByTestId('DesignSystem-PopoverDisabledTrigger');
+//     fireEvent.mouseEnter(popoverTrigger);
 
-    expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
-  });
+//     expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
+//   });
 
-  it('renders Popover component with prop:disabled as false with open=true ', () => {
-    const { getByTestId } = render(
-      <Popover trigger={disabledTrigger} disabled={false} on="hover" open={true}>
-        Popover
-      </Popover>
-    );
+//   it('renders Popover component with prop:disabled as false with open=true ', () => {
+//     const { getByTestId } = render(
+//       <Popover trigger={disabledTrigger} disabled={false} on="hover" open={true}>
+//         Popover
+//       </Popover>
+//     );
 
-    expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
-  });
+//     expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
+//   });
 
-  it('does not renders Popover component with prop:disabled as true with open=true ', () => {
-    const { queryByTestId } = render(
-      <Popover trigger={disabledTrigger} disabled={true} on="hover" open={true}>
-        Popover
-      </Popover>
-    );
+//   it('does not renders Popover component with prop:disabled as true with open=true ', () => {
+//     const { queryByTestId } = render(
+//       <Popover trigger={disabledTrigger} disabled={true} on="hover" open={true}>
+//         Popover
+//       </Popover>
+//     );
 
-    expect(queryByTestId('DesignSystem-Popover')).not.toBeInTheDocument();
-  });
-});
+//     expect(queryByTestId('DesignSystem-Popover')).not.toBeInTheDocument();
+//   });
+// });

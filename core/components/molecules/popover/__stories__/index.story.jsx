@@ -43,16 +43,25 @@ export const all = () => {
 };
 
 const customCode = `() => {
+  const [portalElement, setPortalElement] = React.useState<HTMLElement | null>(null);
+
+  React.useEffect(() => {
+    const element = document.getElementById('my-portal-container');
+    setPortalElement(element);
+  }, []);
+
   return(
     <div className='mb-11'>
       <Popover
+        boundaryElement={portalElement}
         position="bottom-start"
+        appendToBody={false}
         on="click"
-        trigger={<Button appearance="basic">Open Popover</Button>}
+        trigger={<Button id="my-portal-container"  appearance="basic">Open Popover</Button>}
       >
         <div className='p-5'>
         <Text>
-          I am a popover, you can use me to display links,<br/> 
+          I am a popover, you can use me to display links,<br/>
           interactive elements, avatars, text formatting, meta data
           etc.
         </Text>
@@ -60,6 +69,7 @@ const customCode = `() => {
       </Popover>
     </div>
   );
+
 }`;
 
 export default {

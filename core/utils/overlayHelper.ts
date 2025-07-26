@@ -11,7 +11,7 @@ export const getWrapperElement = (): Element => {
 interface elementData {
   element: Element;
   containerClassName: string;
-  elementRef: React.RefObject<HTMLDivElement>;
+  elementRef: React.RefObject<HTMLDivElement | null>;
 }
 
 export const getUpdatedZIndex = (ele: elementData): number | undefined => {

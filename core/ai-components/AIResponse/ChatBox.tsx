@@ -23,7 +23,7 @@ export interface ChatBoxProps extends TBaseHtmlProps<HTMLDivElement> {
 }
 
 export const ChatBox = (props: ChatBoxProps) => {
-  const { children, className, showGlow, ...rest } = props;
+  const { children, showGlow = true, className, ...rest } = props;
 
   const chatContainerClassNames = classNames(
     {
@@ -45,10 +45,6 @@ export const ChatBox = (props: ChatBoxProps) => {
       </div>
     </div>
   );
-};
-
-ChatBox.defaultProps = {
-  showGlow: true,
 };
 
 export default ChatBox;

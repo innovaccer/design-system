@@ -6,15 +6,15 @@ import { MessageAppearance } from '@/common.type';
 import styles from '@css/components/statusHint.module.css';
 import pageHeaderStyles from '@css/components/pageHeader.module.css';
 
-export interface StatusHintProps extends BaseProps {
+export type StatusHintProps = {
   /**
    * Describes label of the `Status Hint`
    */
-  children: React.ReactText | React.ReactNode;
+  children: string | number | React.ReactNode;
   /**
    * Color of Icon
    */
-  appearance: MessageAppearance;
+  appearance?: MessageAppearance;
   /**
    * Trims label if it is too long
    */
@@ -31,10 +31,10 @@ export interface StatusHintProps extends BaseProps {
    * Handler to be called when mouse pointer leaves `Status Hint`.
    */
   onMouseLeave?: (e: React.MouseEvent<HTMLDivElement>) => void;
-}
+} & BaseProps;
 
 export const StatusHint = (props: StatusHintProps) => {
-  const { appearance, children, onMouseEnter, onMouseLeave, onClick, truncateLabel, className } = props;
+  const { appearance = 'default', children, onMouseEnter, onMouseLeave, onClick, truncateLabel, className } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -85,8 +85,5 @@ export const StatusHint = (props: StatusHintProps) => {
 };
 
 StatusHint.displayName = 'StatusHint';
-StatusHint.defaultProps = {
-  appearance: 'default',
-};
 
 export default StatusHint;

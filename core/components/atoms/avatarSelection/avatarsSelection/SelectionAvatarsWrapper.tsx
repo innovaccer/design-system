@@ -10,7 +10,7 @@ import styles from '@css/components/avatarSelection.module.css';
 interface SelectionAvatarsWrapperProps {
   size?: AvatarSize;
   avatarList: AvatarData[];
-  avatarRenderer?: (data: AvatarData) => JSX.Element;
+  avatarRenderer?: (data: AvatarData) => React.JSX.Element;
   tooltipPosition?: TooltipProps['position'];
   avatarStyle?: { backgroundColor?: string; boxShadow?: string };
 }

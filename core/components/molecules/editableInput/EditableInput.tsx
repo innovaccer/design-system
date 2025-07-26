@@ -6,7 +6,7 @@ import { InputProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import styles from '@css/components/editableInput.module.css';
 
-export interface EditableInputProps extends BaseProps {
+export type EditableInputProps = {
   /**
    * Value of the `Editable Input`
    */
@@ -18,7 +18,7 @@ export interface EditableInputProps extends BaseProps {
   /**
    * Size of `Editable Input`
    */
-  size: 'tiny' | 'regular';
+  size?: 'tiny' | 'regular';
   /**
    * Determines if save action button is disabled
    */
@@ -34,15 +34,24 @@ export interface EditableInputProps extends BaseProps {
   /**
    * Props to be used for `Input`
    */
-  inputOptions: Omit<InputProps, 'error' | 'value' | 'defaultValue' | 'size' | 'placeholder'>;
+  inputOptions?: Omit<InputProps, 'error' | 'value' | 'defaultValue' | 'size' | 'placeholder'>;
   /**
    * Callback function called on save action click
    */
   onChange?: (value: string) => void;
-}
+} & BaseProps;
 
 export const EditableInput = (props: EditableInputProps) => {
-  const { error, size, errorMessage, placeholder, inputOptions, disableSaveAction, onChange, className } = props;
+  const {
+    error,
+    size = 'regular',
+    errorMessage,
+    placeholder = '',
+    inputOptions = {},
+    disableSaveAction,
+    onChange,
+    className,
+  } = props;
 
   const { onChange: onInputChange, ...rest } = inputOptions;
 
@@ -195,12 +204,6 @@ export const EditableInput = (props: EditableInputProps) => {
       )}
     </div>
   );
-};
-
-EditableInput.defaultProps = {
-  size: 'regular',
-  placeholder: '',
-  inputOptions: {},
 };
 
 export default EditableInput;

@@ -7,7 +7,7 @@ import classNames from 'classnames';
 import styles from '@css/components/listbox.module.css';
 
 export const DraggableList = (props: ListboxProps) => {
-  const { children, className, tagName: Tag } = props;
+  const { children, className, tagName: Tag = 'ul' } = props;
   const baseProps = extractBaseProps(props);
 
   const classes = classNames(styles.Listbox, className);

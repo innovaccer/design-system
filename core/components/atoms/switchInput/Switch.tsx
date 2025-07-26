@@ -10,7 +10,7 @@ export type SwitchAppearance = 'primary' | 'alert' | 'success' | 'warning';
 
 type KeyboardEvent = React.KeyboardEvent<HTMLInputElement>;
 
-export interface SwitchProps extends BaseProps, OmitNativeProps<HTMLInputElement, 'onChange'> {
+export type SwitchProps = {
   /**
    * Size of `Switch`
    *
@@ -47,7 +47,8 @@ export interface SwitchProps extends BaseProps, OmitNativeProps<HTMLInputElement
    * Callback function called when `Switch` is toggled
    */
   onChange?: (event: ChangeEvent | KeyboardEvent, selected: boolean) => void;
-}
+} & BaseProps &
+  OmitNativeProps<HTMLInputElement, 'onChange'>;
 
 /**
  * ######Switch has two types:

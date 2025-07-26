@@ -15,7 +15,7 @@ import rowStyles from '@css/components/column.module.css';
 
 export type ModalDimension = 'small' | 'medium' | 'large';
 
-export interface ModalProps extends BaseProps {
+export type ModalProps = {
   /**
    * Callback for `Modal` close event on backdrop click
    *
@@ -109,7 +109,7 @@ export interface ModalProps extends BaseProps {
    * Closes `Modal` when `Escape` key is pressed
    */
   closeOnEscape?: boolean;
-}
+} & BaseProps;
 
 interface ModalState {
   open: boolean;

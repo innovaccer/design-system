@@ -8,11 +8,11 @@ import styles from '@css/components/text.module.css';
 export type TextSize = 'small' | 'regular' | 'large';
 export type TextAppearance = 'default' | 'white' | 'destructive' | 'subtle' | 'disabled' | 'success' | 'link';
 
-export interface TextProps extends BaseProps, BaseHtmlProps<HTMLSpanElement> {
+export type TextProps = {
   /**
    * Text to be rendered
    */
-  children: React.ReactText;
+  children: string | number;
   /**
    * Denotes weight of `Text`
    */
@@ -23,17 +23,20 @@ export interface TextProps extends BaseProps, BaseHtmlProps<HTMLSpanElement> {
   small?: boolean;
   /**
    * State of `Text`
+   * @default default
    */
   appearance?: TextAppearance;
   /**
    * Size of `Text`
+   * @default regular
    */
   size?: TextSize;
   /**
    * Color of `Text`
    */
   color?: TextColor;
-}
+} & BaseProps &
+  BaseHtmlProps<HTMLSpanElement>;
 
 export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, ref) => {
   const { appearance = 'default', size = 'regular', children, weight, small, className, color, ...rest } = props;
@@ -59,10 +62,5 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, ref) =>
 });
 
 Text.displayName = 'Text';
-
-Text.defaultProps = {
-  appearance: 'default',
-  size: 'regular',
-};
 
 export default Text;

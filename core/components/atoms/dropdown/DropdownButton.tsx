@@ -47,7 +47,7 @@ export interface TriggerProps {
 }
 
 export interface DropdownButtonProps extends TriggerProps {
-  children?: React.ReactText;
+  children?: string | number;
   open?: boolean;
 }
 

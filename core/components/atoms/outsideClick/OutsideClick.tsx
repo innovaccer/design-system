@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { BaseHtmlProps, BaseProps } from '@/utils/types';
 
-export interface OutsideClickProps extends BaseHtmlProps<HTMLDivElement>, BaseProps {
+export type OutsideClickProps = {
   /**
    * Trigger the function on outside click
    */
@@ -10,7 +10,8 @@ export interface OutsideClickProps extends BaseHtmlProps<HTMLDivElement>, BasePr
    * Element to be rendered
    */
   children: React.ReactElement<any>;
-}
+} & BaseHtmlProps<HTMLDivElement> &
+  BaseProps;
 
 export const OutsideClick = React.forwardRef<HTMLDivElement, OutsideClickProps>((props, ref) => {
   const { children, className, onOutsideClick, ...rest } = props;

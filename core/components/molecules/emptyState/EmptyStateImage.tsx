@@ -4,7 +4,7 @@ import EmptyStateContext from './EmptyStateContext';
 import classNames from 'classnames';
 import styles from '@css/components/emptyState.module.css';
 
-export interface EmptyImageProps extends BaseProps, React.ImgHTMLAttributes<HTMLImageElement> {
+export type EmptyImageProps = {
   /**
    * The content to be displayed within the component.
    * Can be any renderable React Node as Image or Icon.
@@ -41,7 +41,8 @@ export interface EmptyImageProps extends BaseProps, React.ImgHTMLAttributes<HTML
    * The maximum height of the image.
    */
   maxHeight?: string | number;
-}
+} & BaseProps &
+  React.ImgHTMLAttributes<HTMLImageElement>;
 
 export const imageHeight = {
   standard: '200px',
