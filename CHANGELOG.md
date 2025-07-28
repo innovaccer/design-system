@@ -1,3 +1,41 @@
+## 4.11.2 (2025-07-28)
+
+### Highlights
+
+- feat(Navigation): add extended support for count prop in VerticalNav & HorizontalNav component (06ca0737)
+- test(HorizontalNav): add test cases for menu count formatting support (cd6d54aa)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(Navigation): add extended support for count prop in VerticalNav & HorizontalNav component (06ca0737)
+- test(HorizontalNav): add test cases for menu count formatting support (cd6d54aa)
+
+### Fixes
+
+NA
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 4.11.1 (2025-07-22)
 
 ### Highlights
