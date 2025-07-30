@@ -1,0 +1,42 @@
+import * as React from 'react';
+import { OverlayHeaderProps } from '@/components/molecules/overlayHeader';
+import { BaseProps } from '@/utils/types';
+import { FooterOptions } from '@/common.type';
+export type SidesheetDimension = 'regular' | 'large';
+export type SidesheetProps = {
+    headerOptions: Omit<OverlayHeaderProps, 'onClose'>;
+    header?: React.ReactNode;
+    dimension: SidesheetDimension;
+    open: boolean;
+    stickFooter?: boolean;
+    seperator?: boolean;
+    children?: React.ReactNode;
+    footer?: React.ReactNode;
+    footerOptions?: FooterOptions;
+    backdropClose?: boolean;
+    closeOnEscape?: boolean;
+    onClose?: (event?: Event | React.MouseEvent<HTMLElement, MouseEvent>, reason?: string) => void;
+} & BaseProps;
+interface SidesheetState {
+    open: boolean;
+    animate: boolean;
+    zIndex?: number;
+}
+declare class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
+    sidesheetRef: React.RefObject<HTMLDivElement | null>;
+    element: Element;
+    static defaultProps: {
+        dimension: string;
+        stickFooter: boolean;
+        headerOptions: {};
+    };
+    constructor(props: SidesheetProps);
+    onCloseHandler: (event: KeyboardEvent) => void;
+    componentDidMount(): void;
+    componentWillUnmount(): void;
+    componentDidUpdate(prevProps: SidesheetProps): void;
+    onOutsideClickHandler(event: Event): void;
+    handleAnimationEnd(): void;
+    render(): React.JSX.Element;
+}
+export default Sidesheet;
