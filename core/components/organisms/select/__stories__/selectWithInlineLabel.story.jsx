@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Select } from '@/index';
+import { Select, Label, Row, Column } from '@/index';
 import { action } from '@/utils/action';
 
 // CSF format story
@@ -21,18 +21,35 @@ export const withInlineLabel = () => {
     action('selectedOption', selectedOption);
   };
 
+  const list = [
+    { label: 'Small', value: 'small' },
+    { label: 'Regular', value: 'regular' },
+  ];
+
   return (
-    <Select triggerOptions={{ inlineLabel: 'colour', placeholder: 'Select' }} onSelect={onSelectHandler}>
-      <Select.List>
-        {colourList.map((item, key) => {
-          return (
-            <Select.Option key={key} option={{ label: item.label, value: item.value }}>
-              {item.label}
-            </Select.Option>
-          );
-        })}
-      </Select.List>
-    </Select>
+    <Row>
+      {list.map((size, key) => {
+        return (
+          <Column key={key} size={4}>
+            <Label withInput={true}>{size.label}</Label>
+            <Select
+              triggerOptions={{ triggerSize: size.value, inlineLabel: 'color', placeholder: 'Select' }}
+              onSelect={onSelectHandler}
+            >
+              <Select.List>
+                {colourList.map((item, key) => {
+                  return (
+                    <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                      {item.label}
+                    </Select.Option>
+                  );
+                })}
+              </Select.List>
+            </Select>
+          </Column>
+        );
+      })}
+    </Row>
   );
 };
 
@@ -54,19 +71,32 @@ const customCode = `() => {
     console.log('selectedOption', selectedOption);
   };
 
+  const list = [
+    { label: 'Small', value: 'small' },
+    { label: 'Regular', value: 'regular' },
+  ];
 
   return (
-    <Select triggerOptions={{ inlineLabel: 'colour', placeholder: 'Select' }} onSelect={onSelectHandler}>
-      <Select.List>
-        {colourList.map((item, key) => {
-          return (
-            <Select.Option key={key} option={{ label: item.label, value: item.value }}>
-              {item.label}
-            </Select.Option>
-          );
-        })}
-      </Select.List>
-    </Select>
+    <Row>
+      {list.map((size, key) => {
+        return (
+          <Column key={key} size={4}>
+            <Label withInput={true}>{size.label}</Label>
+            <Select triggerOptions={{ triggerSize: size.value, inlineLabel: 'color', placeholder: 'Select' }} onSelect={onSelectHandler}>
+              <Select.List>
+                {colourList.map((item, key) => {
+                  return (
+                    <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                      {item.label}
+                    </Select.Option>
+                  );
+                })}
+              </Select.List>
+            </Select>
+          </Column>
+        );
+      })}
+    </Row>
   );
 }`;
 
