@@ -82,7 +82,7 @@ export interface SelectProps extends BaseProps {
    *
    * TriggerProps:
    * {
-   *  triggerSize?: SelectTriggerSize;
+   *  triggerSize?: 'small' | 'regular';
    *  icon?: string;
    *  placeholder?: string;
    *  inlineLabel?: string;
