@@ -6,7 +6,7 @@ import styles from '@css/components/selectionCard.module.css';
 
 type ClickEventType = React.MouseEvent<HTMLDivElement> | React.KeyboardEvent;
 
-export interface SelectionCardProps extends BaseProps, BaseHtmlProps<HTMLDivElement> {
+export type SelectionCardProps = {
   /**
    * Element to be render inside card
    */
@@ -35,10 +35,11 @@ export interface SelectionCardProps extends BaseProps, BaseHtmlProps<HTMLDivElem
    * Defines if card is selected
    */
   selected?: boolean;
-}
+} & BaseProps &
+  BaseHtmlProps<HTMLDivElement>;
 
 export const SelectionCard = (props: SelectionCardProps) => {
-  const { children, onClick, disabled, id, cardValue, overlayZIndex, selected, className, ...rest } = props;
+  const { children, id, cardValue, disabled = false, onClick, overlayZIndex = 2, selected, className, ...rest } = props;
 
   const classes = classNames(
     {
@@ -83,11 +84,6 @@ export const SelectionCard = (props: SelectionCardProps) => {
       {children}
     </div>
   );
-};
-
-SelectionCard.defaultProps = {
-  disabled: false,
-  overlayZIndex: 2,
 };
 
 SelectionCard.useMultiSelect = useMultiSelect;

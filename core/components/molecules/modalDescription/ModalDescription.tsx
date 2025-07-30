@@ -4,10 +4,10 @@ import Text from '@/components/atoms/text';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import styles from '@css/components/modal.module.css';
 
-export interface ModalDescriptionProps extends BaseProps {
+export type ModalDescriptionProps = {
   title?: string;
   description?: string;
-}
+} & BaseProps;
 
 export const ModalDescription = (props: ModalDescriptionProps) => {
   const { title, description, className } = props;

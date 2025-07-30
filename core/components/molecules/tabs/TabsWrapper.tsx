@@ -25,7 +25,7 @@ export interface TabsWrapperProps extends BaseProps {
 }
 
 export const TabsWrapper = (props: TabsWrapperProps) => {
-  const { children, onTabChange, className, size } = props;
+  const { children, onTabChange, className, size = 'regular' } = props;
 
   const baseProps = extractBaseProps(props);
   const tabs = Array.isArray(children) ? children : [children];
@@ -55,7 +55,7 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
   };
 
   const TabsHeader = tabs.map((child, index) => {
-    const { label, disabled } = child.props;
+    const { label, disabled } = child.props as { label: string; disabled?: boolean };
 
     const tabHeaderClass = classNames({
       [styles['Tab']]: true,
@@ -90,8 +90,5 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
 };
 
 TabsWrapper.displayName = 'TabsWrapper';
-TabsWrapper.defaultProps = {
-  size: 'regular',
-};
 
 export default TabsWrapper;

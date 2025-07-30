@@ -4,13 +4,13 @@ import { BaseProps } from '@/utils/types';
 import EmptyStateContext from './EmptyStateContext';
 import styles from '@css/components/emptyState.module.css';
 
-export interface EmptyActionProps extends BaseProps {
+export type EmptyActionProps = {
   /**
    * The content to be displayed within the component
    * Can be any renderable React Node.
    */
   children: React.ReactNode;
-}
+} & BaseProps;
 
 const EmptyStateActions = (props: EmptyActionProps) => {
   const { children, className, ...rest } = props;

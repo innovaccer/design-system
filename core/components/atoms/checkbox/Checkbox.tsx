@@ -11,7 +11,7 @@ import gridStyles from '@css/components/grid.module.css';
 
 export type CheckBoxSize = 'regular' | 'tiny';
 
-export interface CheckboxProps extends BaseProps, OmitNativeProps<HTMLInputElement, 'onChange'> {
+export type CheckboxProps = {
   /**
    * Size of the `Checkbox`
    * @default "regular"
@@ -74,7 +74,8 @@ export interface CheckboxProps extends BaseProps, OmitNativeProps<HTMLInputEleme
    *  Wrap checkbox label to the next line
    */
   wrapLabel?: boolean;
-}
+} & BaseProps &
+  OmitNativeProps<HTMLInputElement, 'onChange'>;
 
 export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props, forwardedRef) => {
   const {

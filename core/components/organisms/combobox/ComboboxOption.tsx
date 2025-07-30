@@ -27,7 +27,7 @@ export interface ComboboxOptionProps extends BaseProps {
   /**
    * Set a custom element for `Option Item`
    */
-  tagName: ItemTagType;
+  tagName?: ItemTagType;
   /**
    * Shows `Option Item` in selected state <br />
    */
@@ -47,7 +47,7 @@ export interface ComboboxOptionProps extends BaseProps {
 }
 
 export const ComboboxOption = (props: ComboboxOptionProps) => {
-  const { children, option, onClick, ...rest } = props;
+  const { children, option, tagName = 'li', onClick, ...rest } = props;
 
   const contextProp = React.useContext(ComboboxContext);
 
@@ -93,16 +93,13 @@ export const ComboboxOption = (props: ComboboxOptionProps) => {
       onKeyDown={onKeyDownHandler}
       tabIndex={-1}
       role="option"
+      tagName={tagName}
       data-test="DesignSystem-Combobox-Option"
       {...rest}
     >
       {children}
     </Listbox.Item>
   );
-};
-
-ComboboxOption.defaultProps = {
-  tagName: 'li',
 };
 
 export default ComboboxOption;

@@ -105,3 +105,10 @@ docs/static/sb/
 docs/cypress/videos
 docs/cypress/screenshots
 .env
+
+# --------------------
+# TypeScript Build Files
+# --------------------
+*.tsbuildinfo
+tsconfig.type.tsbuildinfo
+dist/**/*.tsbuildinfo

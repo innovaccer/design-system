@@ -69,7 +69,7 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
     }
   };
 
-  const list = menus.map((menu, index) => {
+  const list = menus?.map((menu, index) => {
     const isActive = isMenuActive(menus, menu, active);
     const itemColor = getNavItemColor(isActive, menu.disabled);
 

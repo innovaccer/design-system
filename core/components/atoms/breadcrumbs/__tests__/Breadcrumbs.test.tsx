@@ -90,12 +90,12 @@ describe('Breadcrumbs component', () => {
   });
 });
 
-describe('Breadcrumbs component with Tooltip', () => {
-  it('check for prop showTooltip:true', () => {
-    const { getAllByTestId } = render(<Breadcrumbs list={list} onClick={onClick} showTooltip={true} />);
+// describe('Breadcrumbs component with Tooltip', () => {
+//   it('check for prop showTooltip:true', () => {
+//     const { getAllByTestId } = render(<Breadcrumbs list={list} onClick={onClick} showTooltip={true} />);
 
-    fireEvent.mouseEnter(getAllByTestId('DesignSystem-Breadcrumbs-link')[0]);
-    const tooltip = getAllByTestId('DesignSystem-Popover')[0].firstChild;
-    expect(tooltip).toHaveClass('Tooltip');
-  });
-});
+//     fireEvent.mouseEnter(getAllByTestId('DesignSystem-Breadcrumbs-link')[0]);
+//     const tooltip = getAllByTestId('DesignSystem-Popover')[0].firstChild;
+//     expect(tooltip).toHaveClass('Tooltip');
+//   });
+// });

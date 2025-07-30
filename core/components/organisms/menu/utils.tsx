@@ -5,14 +5,14 @@ export const handleKeyDown = (
   focusedOption: Element | undefined,
   setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>,
   setOpenPopover?: React.Dispatch<React.SetStateAction<boolean | undefined>>,
-  menuTriggerRef?: React.RefObject<HTMLButtonElement>,
-  listRef?: React.RefObject<HTMLDivElement>,
-  subListRef?: React.RefObject<HTMLDivElement> | null,
+  menuTriggerRef?: React.RefObject<HTMLButtonElement | null>,
+  listRef?: React.RefObject<HTMLDivElement | null>,
+  subListRef?: React.RefObject<HTMLDivElement | null> | null,
   isSubMenuTrigger?: boolean,
-  triggerRef?: React.RefObject<HTMLDivElement> | React.MutableRefObject<HTMLDivElement>,
+  triggerRef?: React.RefObject<HTMLDivElement | null> | React.MutableRefObject<HTMLDivElement | null>,
   menuID?: string,
   triggerID?: string,
-  parentListRef?: React.RefObject<HTMLDivElement> | null
+  parentListRef?: React.RefObject<HTMLDivElement | null> | null
 ) => {
   switch (event.key) {
     case 'ArrowUp':
@@ -76,10 +76,10 @@ const navigateOptions = (
 const navigateSubMenu = (
   isSubMenuTrigger?: boolean,
   direction?: string,
-  subListRef?: React.RefObject<HTMLDivElement> | null,
+  subListRef?: React.RefObject<HTMLDivElement | null> | null,
   menuID?: string,
   triggerID?: string,
-  parentListRef?: React.RefObject<HTMLDivElement> | null
+  parentListRef?: React.RefObject<HTMLDivElement | null> | null
 ) => {
   const element = document.querySelector(`[data-name="${menuID}"]`);
   const menuPlacement = element?.getAttribute('data-placement');

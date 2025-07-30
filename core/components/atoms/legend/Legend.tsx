@@ -4,15 +4,15 @@ import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import legendStyles from '@css/components/legend.module.css';
 
-export interface LegendProps extends BaseProps {
+export type LegendProps = {
   /**
    * Describes label of the `Legend`
    */
-  children: React.ReactText;
+  children: string | number;
   /**
    * Color of Icon
    */
-  iconAppearance: string;
+  iconAppearance?: string;
   /**
    * Color of label
    */
@@ -20,7 +20,7 @@ export interface LegendProps extends BaseProps {
   /**
    * Size of Icon
    */
-  iconSize: number;
+  iconSize?: number;
   /**
    * Denotes weight of `text`
    */
@@ -37,18 +37,18 @@ export interface LegendProps extends BaseProps {
    * Handler to be called when mouse pointer leaves `Legend`.
    */
   onMouseLeave?: (e: React.MouseEvent<HTMLDivElement>) => void;
-}
+} & BaseProps;
 
 export const Legend = (props: LegendProps) => {
   const {
-    iconAppearance,
-    iconSize,
-    labelAppearance,
     children,
+    iconAppearance = 'inverse',
+    labelAppearance,
+    iconSize = 16,
     labelWeight,
+    onClick,
     onMouseEnter,
     onMouseLeave,
-    onClick,
     className,
   } = props;
 
@@ -87,9 +87,5 @@ export const Legend = (props: LegendProps) => {
 };
 
 Legend.displayName = 'Legend';
-Legend.defaultProps = {
-  iconAppearance: 'inverse',
-  iconSize: 16,
-};
 
 export default Legend;

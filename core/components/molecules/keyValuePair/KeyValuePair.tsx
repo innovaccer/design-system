@@ -4,12 +4,12 @@ import ValueElement from './ValueElement';
 import { BaseProps } from '@/utils/types';
 import classNames from 'classnames';
 
-export interface KeyValuePairProps extends BaseProps {
+export type KeyValuePairProps = {
   /**
    * React Element to be added inside `KeyValuePair`
    */
   children: React.ReactNode;
-}
+} & BaseProps;
 
 export const KeyValuePair = (props: KeyValuePairProps) => {
   const { children, className } = props;

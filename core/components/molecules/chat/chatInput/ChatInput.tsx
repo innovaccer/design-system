@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { Button } from '@/index';
 import styles from '@css/components/chatInput.module.css';
 
-export interface ChatInputProps extends BaseProps {
+export type ChatInputProps = {
   /**
    * Placeholder for the `ChatInput`
    */
@@ -28,7 +28,7 @@ export interface ChatInputProps extends BaseProps {
   /**
    * Action renderer for the `ChatInput`
    */
-  actionRenderer?: () => JSX.Element;
+  actionRenderer?: () => React.JSX.Element;
   /**
    * Callback function triggered when the value of `ChatInput` changes
    */
@@ -57,7 +57,7 @@ export interface ChatInputProps extends BaseProps {
    * Callback function triggered when the `ChatInput` stop generating button is clicked
    */
   onStopGenerating?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-}
+} & BaseProps;
 
 const ChatInput: React.FC<ChatInputProps> = (props) => {
   const {
@@ -70,6 +70,7 @@ const ChatInput: React.FC<ChatInputProps> = (props) => {
     actionRenderer,
     onStopGenerating,
     className,
+    placeholder = 'Start typing...',
     ...rest
   } = props;
 
@@ -186,6 +187,7 @@ const ChatInput: React.FC<ChatInputProps> = (props) => {
         disabled={disabled}
         readOnly={readOnly}
         data-test="DesignSystem-ChatInput-textarea"
+        placeholder={placeholder}
         {...rest}
       />
       <div className={actionsClassNames} data-test="DesignSystem-ChatInput-actions">
@@ -197,8 +199,5 @@ const ChatInput: React.FC<ChatInputProps> = (props) => {
 };
 
 ChatInput.displayName = 'ChatInput';
-ChatInput.defaultProps = {
-  placeholder: 'Start typing...',
-};
 
 export default ChatInput;

@@ -2,12 +2,12 @@ import * as React from 'react';
 import { Text } from '@/index';
 import { BaseProps } from '@/utils/types';
 
-export interface TypingIndicatorProps extends BaseProps {
+export type TypingIndicatorProps = {
   /**
    * Text to be rendered in `TypingIndicator`
    */
   text: string;
-}
+} & BaseProps;
 
 export const TypingIndicator: React.FC<TypingIndicatorProps> = (props) => {
   const { text, ...rest } = props;

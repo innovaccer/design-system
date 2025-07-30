@@ -47,29 +47,32 @@ exports[`Dialog component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            
-            <div
-              class="PopperWrapper-trigger"
-            >
-              <button
-                class="Button Button--regular Button--regularSquare Button--transparent"
-                data-test="DesignSystem-Modal--CloseButton"
-                tabindex="0"
+            <div>
+              <div
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  class="Button Button--regular Button--regularSquare Button--transparent"
+                  data-test="DesignSystem-Modal--CloseButton"
+                  tabindex="0"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    role="button"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    close
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      role="button"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      close
+                    </i>
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -187,29 +190,32 @@ exports[`Dialog component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            
-            <div
-              class="PopperWrapper-trigger"
-            >
-              <button
-                class="Button Button--regular Button--regularSquare Button--transparent"
-                data-test="DesignSystem-Modal--CloseButton"
-                tabindex="0"
+            <div>
+              <div
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  class="Button Button--regular Button--regularSquare Button--transparent"
+                  data-test="DesignSystem-Modal--CloseButton"
+                  tabindex="0"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    role="button"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    close
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      role="button"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      close
+                    </i>
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -325,29 +331,32 @@ exports[`Dialog component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            
-            <div
-              class="PopperWrapper-trigger"
-            >
-              <button
-                class="Button Button--regular Button--regularSquare Button--transparent"
-                data-test="DesignSystem-Modal--CloseButton"
-                tabindex="0"
+            <div>
+              <div
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  class="Button Button--regular Button--regularSquare Button--transparent"
+                  data-test="DesignSystem-Modal--CloseButton"
+                  tabindex="0"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    role="button"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    close
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      role="button"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      close
+                    </i>
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -464,29 +473,32 @@ exports[`Dialog component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            
-            <div
-              class="PopperWrapper-trigger"
-            >
-              <button
-                class="Button Button--regular Button--regularSquare Button--transparent"
-                data-test="DesignSystem-Modal--CloseButton"
-                tabindex="0"
+            <div>
+              <div
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  class="Button Button--regular Button--regularSquare Button--transparent"
+                  data-test="DesignSystem-Modal--CloseButton"
+                  tabindex="0"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    role="button"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    close
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      role="button"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      close
+                    </i>
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -603,29 +615,32 @@ exports[`Dialog component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            
-            <div
-              class="PopperWrapper-trigger"
-            >
-              <button
-                class="Button Button--regular Button--regularSquare Button--transparent"
-                data-test="DesignSystem-Modal--CloseButton"
-                tabindex="0"
+            <div>
+              <div
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  class="Button Button--regular Button--regularSquare Button--transparent"
+                  data-test="DesignSystem-Modal--CloseButton"
+                  tabindex="0"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    role="button"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    close
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      role="button"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      close
+                    </i>
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -742,29 +757,32 @@ exports[`Dialog component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            
-            <div
-              class="PopperWrapper-trigger"
-            >
-              <button
-                class="Button Button--regular Button--regularSquare Button--transparent"
-                data-test="DesignSystem-Modal--CloseButton"
-                tabindex="0"
+            <div>
+              <div
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  class="Button Button--regular Button--regularSquare Button--transparent"
+                  data-test="DesignSystem-Modal--CloseButton"
+                  tabindex="0"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    role="button"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    close
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      role="button"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      close
+                    </i>
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -881,29 +899,32 @@ exports[`Dialog component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            
-            <div
-              class="PopperWrapper-trigger"
-            >
-              <button
-                class="Button Button--regular Button--regularSquare Button--transparent"
-                data-test="DesignSystem-Modal--CloseButton"
-                tabindex="0"
+            <div>
+              <div
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  class="Button Button--regular Button--regularSquare Button--transparent"
+                  data-test="DesignSystem-Modal--CloseButton"
+                  tabindex="0"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    role="button"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    close
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      role="button"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      close
+                    </i>
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -1020,29 +1041,32 @@ exports[`Dialog component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            
-            <div
-              class="PopperWrapper-trigger"
-            >
-              <button
-                class="Button Button--regular Button--regularSquare Button--transparent"
-                data-test="DesignSystem-Modal--CloseButton"
-                tabindex="0"
+            <div>
+              <div
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  class="Button Button--regular Button--regularSquare Button--transparent"
+                  data-test="DesignSystem-Modal--CloseButton"
+                  tabindex="0"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    role="button"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    close
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      role="button"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      close
+                    </i>
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -1159,29 +1183,32 @@ exports[`Dialog component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            
-            <div
-              class="PopperWrapper-trigger"
-            >
-              <button
-                class="Button Button--regular Button--regularSquare Button--transparent"
-                data-test="DesignSystem-Modal--CloseButton"
-                tabindex="0"
+            <div>
+              <div
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  class="Button Button--regular Button--regularSquare Button--transparent"
+                  data-test="DesignSystem-Modal--CloseButton"
+                  tabindex="0"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    role="button"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    close
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      role="button"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      close
+                    </i>
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -1298,29 +1325,32 @@ exports[`Dialog component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            
-            <div
-              class="PopperWrapper-trigger"
-            >
-              <button
-                class="Button Button--regular Button--regularSquare Button--transparent"
-                data-test="DesignSystem-Modal--CloseButton"
-                tabindex="0"
+            <div>
+              <div
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  class="Button Button--regular Button--regularSquare Button--transparent"
+                  data-test="DesignSystem-Modal--CloseButton"
+                  tabindex="0"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    role="button"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    close
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      role="button"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      close
+                    </i>
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -1437,29 +1467,32 @@ exports[`Dialog component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            
-            <div
-              class="PopperWrapper-trigger"
-            >
-              <button
-                class="Button Button--regular Button--regularSquare Button--transparent"
-                data-test="DesignSystem-Modal--CloseButton"
-                tabindex="0"
+            <div>
+              <div
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  class="Button Button--regular Button--regularSquare Button--transparent"
+                  data-test="DesignSystem-Modal--CloseButton"
+                  tabindex="0"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    role="button"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    close
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      role="button"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      close
+                    </i>
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -1576,29 +1609,32 @@ exports[`Dialog component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            
-            <div
-              class="PopperWrapper-trigger"
-            >
-              <button
-                class="Button Button--regular Button--regularSquare Button--transparent"
-                data-test="DesignSystem-Modal--CloseButton"
-                tabindex="0"
+            <div>
+              <div
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  class="Button Button--regular Button--regularSquare Button--transparent"
+                  data-test="DesignSystem-Modal--CloseButton"
+                  tabindex="0"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    role="button"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    close
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      role="button"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      close
+                    </i>
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -1715,29 +1751,32 @@ exports[`Dialog component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            
-            <div
-              class="PopperWrapper-trigger"
-            >
-              <button
-                class="Button Button--regular Button--regularSquare Button--transparent"
-                data-test="DesignSystem-Modal--CloseButton"
-                tabindex="0"
+            <div>
+              <div
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-state="closed"
               >
-                <div
-                  class="Button-icon"
-                  data-test="DesignSystem-Button--Icon-Wrapper"
+                <button
+                  class="Button Button--regular Button--regularSquare Button--transparent"
+                  data-test="DesignSystem-Modal--CloseButton"
+                  tabindex="0"
                 >
-                  <i
-                    class="material-symbols material-symbols-rounded Icon"
-                    data-test="DesignSystem-Button--Icon"
-                    role="button"
-                    style="font-size: 16px; width: 16px;"
+                  <div
+                    class="Button-icon"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
                   >
-                    close
-                  </i>
-                </div>
-              </button>
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      role="button"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      close
+                    </i>
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
         </div>

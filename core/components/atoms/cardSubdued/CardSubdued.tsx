@@ -5,12 +5,17 @@ import styles from '@css/components/cardSubdued.module.css';
 
 type Border = 'top' | 'left' | 'right' | 'bottom';
 
-export interface CardSubduedProps extends BaseProps, BaseHtmlProps<HTMLDivElement> {
+export type CardSubduedProps = {
   /**
    * Border of the `Subdued Card`
    */
   border?: Border;
-}
+  /**
+   * React Node to be rendered inside `CardSubdued`
+   */
+  children?: React.ReactNode;
+} & BaseProps &
+  BaseHtmlProps<HTMLDivElement>;
 
 export const CardSubdued = React.forwardRef<HTMLDivElement, CardSubduedProps>((props, ref) => {
   const { border, children, className, ...rest } = props;

@@ -171,7 +171,7 @@ interface AsyncProps {
   fetchData?: fetchDataFunction;
 }
 
-interface SharedTableProps extends BaseProps {
+type SharedTableProps = BaseProps & {
   /**
    * Controls Table Head display
    */
@@ -336,7 +336,7 @@ interface SharedTableProps extends BaseProps {
    * }
    * </pre>
    */
-  errorTemplate?: React.FunctionComponent<ErrorTemplateProps>;
+  errorTemplate?: (props: ErrorTemplateProps) => React.ReactNode;
   /**
    * Debounce duration to call updateData in case of search term update
    * @default 750
@@ -458,7 +458,7 @@ interface SharedTableProps extends BaseProps {
    * @returns RegExp to use for highlighting
    */
   highlightRegex?: (searchTerm: string) => RegExp;
-}
+};
 
 export type SyncTableProps = SharedTableProps & TableSyncProps;
 export type AsyncTableProps = SharedTableProps & AsyncProps;

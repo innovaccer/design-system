@@ -1,5 +1,6 @@
 import React from 'react';
 import { Avatar, AvatarGroup } from '@/index';
+import { AvatarGroupProps } from '@/index.type';
 import figma from '@figma/code-connect';
 
 figma.connect(AvatarGroup, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=37-593', {
@@ -50,5 +51,5 @@ figma.connect(AvatarGroup, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/
       ],
     }),
   },
-  example: (props) => <AvatarGroup {...props} />,
+  example: (props) => <AvatarGroup {...(props as AvatarGroupProps)} />,
 });

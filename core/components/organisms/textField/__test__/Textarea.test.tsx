@@ -75,7 +75,7 @@ describe('textfield component', () => {
     placeholder: valueHelper('helptext', { required: true }),
     error: valueHelper(error, { required: true, iterate: true }),
     helpText: valueHelper('i am the helptext', { required: true }),
-    withTextarea: valueHelper(true, { required: true, iterate: true }),
+    withTextarea: valueHelper(true, { required: true }),
     onChange: valueHelper(FunctionValue, { required: true }),
   };
 
@@ -98,7 +98,7 @@ describe('textfield component', () => {
     defaultValue: valueHelper('default value', { required: true }),
     disabled: valueHelper([true, false], { required: true, iterate: true }),
     helpText: valueHelper('i am the helptext', { required: true }),
-    withTextarea: valueHelper(true, { required: true, iterate: true }),
+    withTextarea: valueHelper(true, { required: true }),
     onChange: valueHelper(FunctionValue, { required: true }),
   };
 

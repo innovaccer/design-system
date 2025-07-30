@@ -31,7 +31,7 @@ export interface Choice {
    */
   name: string;
 }
-export interface ChoiceListProps extends BaseProps {
+export type ChoiceListProps = {
   /**
    * Describes title of the `ChoiceList`
    */
@@ -82,7 +82,7 @@ export interface ChoiceListProps extends BaseProps {
    * Wrap checkbox label to the next line for checkbox
    */
   wrapLabel?: boolean;
-}
+} & BaseProps;
 
 const renderCheckbox = (
   list: Choice[],
@@ -223,11 +223,5 @@ export const ChoiceList = (props: ChoiceListProps) => {
 };
 
 ChoiceList.displayName = 'ChoiceList';
-ChoiceList.defaultProps = {
-  alignment: 'vertical',
-  size: 'regular',
-  allowMultiple: false,
-  disabled: false,
-};
 
 export default ChoiceList;

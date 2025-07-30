@@ -12,7 +12,6 @@ exports[`Switch component
         checked=""
         class="Switch-input"
         type="checkbox"
-        value=""
       />
       <span
         class="Switch-wrapper Switch-wrapper--regular Switch-wrapper--checked"
@@ -34,7 +33,6 @@ exports[`Switch component
         checked=""
         class="Switch-input"
         type="checkbox"
-        value=""
       />
       <span
         class="Switch-wrapper Switch-wrapper--regular Switch-wrapper--checked"
@@ -57,7 +55,6 @@ exports[`Switch component
         class="Switch-input"
         disabled=""
         type="checkbox"
-        value=""
       />
       <span
         class="Switch-wrapper Switch-wrapper--disabled Switch-wrapper--regular Switch-wrapper--checked Switch-wrapper--checkedDisabled"
@@ -79,7 +76,6 @@ exports[`Switch component
         checked=""
         class="Switch-input"
         type="checkbox"
-        value=""
       />
       <span
         class="Switch-wrapper Switch-wrapper--regular Switch-wrapper--checked"
@@ -101,7 +97,6 @@ exports[`Switch component
         checked=""
         class="Switch-input"
         type="checkbox"
-        value=""
       />
       <span
         class="Switch-wrapper Switch-wrapper--tiny Switch-wrapper--checked"

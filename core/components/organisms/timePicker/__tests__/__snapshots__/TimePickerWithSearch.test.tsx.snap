@@ -8,35 +8,41 @@ exports[`TimePicker component snapshots renders snapshot for all props
     <div
       class="Dropdown"
     >
-      
       <div
-        class="PopperWrapper-trigger w-100"
+        class="w-100"
       >
-        <button
-          class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
-          data-test="DesignSystem-DropdownTrigger"
-          tabindex="0"
-          type="button"
-          value=""
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="w-100"
         >
-          <div
-            class="DropdownButton-wrapper"
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
           >
-            <span
-              class="Text Text--regular DropdownButton-text"
+            <div
+              class="DropdownButton-wrapper"
             >
-              Select
-            </span>
-          </div>
-          <i
-            class="material-symbols material-symbols-rounded Icon Icon--default"
-            data-test="DesignSystem-Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
-          >
-            keyboard_arrow_down
-          </i>
-        </button>
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -51,35 +57,41 @@ exports[`TimePicker component snapshots renders snapshot for all props
     <div
       class="Dropdown"
     >
-      
       <div
-        class="PopperWrapper-trigger w-100"
+        class="w-100"
       >
-        <button
-          class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--error"
-          data-test="DesignSystem-DropdownTrigger"
-          tabindex="0"
-          type="button"
-          value=""
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="w-100"
         >
-          <div
-            class="DropdownButton-wrapper"
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--error"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
           >
-            <span
-              class="Text Text--regular DropdownButton-text"
+            <div
+              class="DropdownButton-wrapper"
             >
-              Select
-            </span>
-          </div>
-          <i
-            class="material-symbols material-symbols-rounded Icon Icon--default"
-            data-test="DesignSystem-Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
-          >
-            keyboard_arrow_down
-          </i>
-        </button>
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -94,35 +106,41 @@ exports[`TimePicker component snapshots renders snapshot for all props
     <div
       class="Dropdown"
     >
-      
       <div
-        class="PopperWrapper-trigger w-100"
+        class="w-100"
       >
-        <button
-          class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
-          data-test="DesignSystem-DropdownTrigger"
-          tabindex="0"
-          type="button"
-          value=""
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="w-100"
         >
-          <div
-            class="DropdownButton-wrapper"
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
           >
-            <span
-              class="Text Text--regular DropdownButton-text"
+            <div
+              class="DropdownButton-wrapper"
             >
-              Select
-            </span>
-          </div>
-          <i
-            class="material-symbols material-symbols-rounded Icon Icon--default"
-            data-test="DesignSystem-Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
-          >
-            keyboard_arrow_down
-          </i>
-        </button>
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -137,35 +155,41 @@ exports[`TimePicker component snapshots renders snapshot for all props
     <div
       class="Dropdown"
     >
-      
       <div
-        class="PopperWrapper-trigger w-100"
+        class="w-100"
       >
-        <button
-          class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--error"
-          data-test="DesignSystem-DropdownTrigger"
-          tabindex="0"
-          type="button"
-          value=""
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="w-100"
         >
-          <div
-            class="DropdownButton-wrapper"
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--error"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
           >
-            <span
-              class="Text Text--regular DropdownButton-text"
+            <div
+              class="DropdownButton-wrapper"
             >
-              Select
-            </span>
-          </div>
-          <i
-            class="material-symbols material-symbols-rounded Icon Icon--default"
-            data-test="DesignSystem-Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
-          >
-            keyboard_arrow_down
-          </i>
-        </button>
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -180,35 +204,41 @@ exports[`TimePicker component snapshots renders snapshot for all props
     <div
       class="Dropdown"
     >
-      
       <div
-        class="PopperWrapper-trigger w-100"
+        class="w-100"
       >
-        <button
-          class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
-          data-test="DesignSystem-DropdownTrigger"
-          tabindex="0"
-          type="button"
-          value=""
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="w-100"
         >
-          <div
-            class="DropdownButton-wrapper"
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
           >
-            <span
-              class="Text Text--regular DropdownButton-text"
+            <div
+              class="DropdownButton-wrapper"
             >
-              Select
-            </span>
-          </div>
-          <i
-            class="material-symbols material-symbols-rounded Icon Icon--default"
-            data-test="DesignSystem-Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
-          >
-            keyboard_arrow_down
-          </i>
-        </button>
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -223,35 +253,41 @@ exports[`TimePicker component snapshots renders snapshot for all props
     <div
       class="Dropdown"
     >
-      
       <div
-        class="PopperWrapper-trigger w-100"
+        class="w-100"
       >
-        <button
-          class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--error"
-          data-test="DesignSystem-DropdownTrigger"
-          tabindex="0"
-          type="button"
-          value=""
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="w-100"
         >
-          <div
-            class="DropdownButton-wrapper"
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--error"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
           >
-            <span
-              class="Text Text--regular DropdownButton-text"
+            <div
+              class="DropdownButton-wrapper"
             >
-              Select
-            </span>
-          </div>
-          <i
-            class="material-symbols material-symbols-rounded Icon Icon--default"
-            data-test="DesignSystem-Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
-          >
-            keyboard_arrow_down
-          </i>
-        </button>
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -266,35 +302,41 @@ exports[`TimePicker component snapshots renders snapshot for all props
     <div
       class="Dropdown"
     >
-      
       <div
-        class="PopperWrapper-trigger w-100"
+        class="w-100"
       >
-        <button
-          class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
-          data-test="DesignSystem-DropdownTrigger"
-          tabindex="0"
-          type="button"
-          value=""
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="w-100"
         >
-          <div
-            class="DropdownButton-wrapper"
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
           >
-            <span
-              class="Text Text--regular DropdownButton-text"
+            <div
+              class="DropdownButton-wrapper"
             >
-              Select
-            </span>
-          </div>
-          <i
-            class="material-symbols material-symbols-rounded Icon Icon--default"
-            data-test="DesignSystem-Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
-          >
-            keyboard_arrow_down
-          </i>
-        </button>
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -309,35 +351,41 @@ exports[`TimePicker component snapshots renders snapshot for all props
     <div
       class="Dropdown"
     >
-      
       <div
-        class="PopperWrapper-trigger w-100"
+        class="w-100"
       >
-        <button
-          class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--error"
-          data-test="DesignSystem-DropdownTrigger"
-          tabindex="0"
-          type="button"
-          value=""
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          data-state="closed"
+          triggerclass="w-100"
         >
-          <div
-            class="DropdownButton-wrapper"
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--error"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
           >
-            <span
-              class="Text Text--regular DropdownButton-text"
+            <div
+              class="DropdownButton-wrapper"
             >
-              Select
-            </span>
-          </div>
-          <i
-            class="material-symbols material-symbols-rounded Icon Icon--default"
-            data-test="DesignSystem-Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
-          >
-            keyboard_arrow_down
-          </i>
-        </button>
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
       </div>
     </div>
   </div>

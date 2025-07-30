@@ -1,5 +1,6 @@
 import React from 'react';
 import { LinkButton } from '@/index';
+import { LinkButtonProps } from '@/index.type';
 import figma from '@figma/code-connect';
 
 figma.connect(LinkButton, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=24439-128447', {
@@ -20,7 +21,7 @@ figma.connect(LinkButton, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/M
     iconAlign: figma.enum('Icon', {
       'Icon Left': 'left',
       'Icon Right': 'right',
-    })
+    }),
   },
-  example: (props) => <LinkButton {...props}>Link Button</LinkButton>,
+  example: (props) => <LinkButton {...(props as LinkButtonProps)}>Link Button</LinkButton>,
 });

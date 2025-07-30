@@ -6,29 +6,31 @@ import FileUploaderButton, { FileUploaderButtonProps } from './FileUploaderButto
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import styles from '@css/components/fileUploader.module.css';
 
-export interface FileUploaderProps extends FileUploaderButtonProps, FileUploaderFormatProps, BaseProps {
+export type FileUploaderProps = {
   /**
    * Describes the heading of `FileUploader`
    */
-  title: string;
+  title?: string;
   /**
    * Description of maximum size in `FileUploader`
    */
-  sizeLabel: string;
+  sizeLabel?: string;
   /**
    * Link component to download sample file
    */
-  sampleFileLink?: JSX.Element;
-}
+  sampleFileLink?: React.JSX.Element;
+} & FileUploaderButtonProps &
+  FileUploaderFormatProps &
+  BaseProps;
 
 export const FileUploader = (props: FileUploaderProps) => {
   const {
     accept,
     multiple,
     disabled,
-    title,
+    title = 'Upload files',
     uploadButtonLabel,
-    sizeLabel,
+    sizeLabel = 'Maximum size: 25 MB',
     formatLabel,
     sampleFileLink,
     className,
@@ -67,11 +69,6 @@ export const FileUploader = (props: FileUploaderProps) => {
     </div>
   );
 };
-
-FileUploader.defaultProps = Object.assign({}, FileUploaderButton.defaultProps, {
-  title: 'Upload files',
-  sizeLabel: 'Maximum size: 25 MB',
-});
 
 FileUploader.displayName = 'FileUploader';
 

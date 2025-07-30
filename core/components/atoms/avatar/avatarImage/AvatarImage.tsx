@@ -5,7 +5,7 @@ import { AvatarContext } from '../AvatarProvider';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import styles from '@css/components/avatar.module.css';
 
-export interface AvatarImageProps extends BaseProps {
+export type AvatarImageProps = {
   /**
    * Provide svg to be rendered
    */
@@ -14,7 +14,7 @@ export interface AvatarImageProps extends BaseProps {
    * Provide src of image
    */
   src?: string;
-}
+} & BaseProps;
 
 const sizeMapper: Record<string, number> = {
   regular: 32,

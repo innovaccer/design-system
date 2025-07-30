@@ -1,5 +1,6 @@
 import React from 'react';
 import { Combobox } from '@/index';
+import { ComboboxProps } from '@/index.type';
 import figma from '@figma/code-connect';
 
 figma.connect(Combobox, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS---Web?node-id=14373-48206', {
@@ -13,7 +14,7 @@ figma.connect(Combobox, 'https://www.figma.com/design/w8sqBtJpvq86D06UE7gN0T/MDS
   },
   example: (props) => {
     return (
-      <Combobox {...props}>
+      <Combobox {...(props as ComboboxProps)}>
         <Combobox.List>
           <Combobox.Option option={{ label: 'label 1', value: 'value 1' }}>label 1</Combobox.Option>
           <Combobox.Option option={{ label: 'label 2', value: 'value 1' }}>label 2</Combobox.Option>

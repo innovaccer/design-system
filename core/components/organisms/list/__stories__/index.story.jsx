@@ -9,7 +9,7 @@ import { action } from '@/utils/action';
 import { SyncList, AsyncList } from './_common_/types';
 import './style.css';
 
-export const all = () => {
+export const All = () => {
   const async = true;
 
   const applyLoaderSchema = true;

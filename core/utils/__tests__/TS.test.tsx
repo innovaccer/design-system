@@ -35,7 +35,7 @@ export const TS = () => {
       <DS.Message>{string}</DS.Message>
       <DS.MetaList list={[]} />
       <DS.OutsideClick onOutsideClick={noop}>{dummyComp}</DS.OutsideClick>
-      <DS.Paragraph>{string}</DS.Paragraph>
+      <DS.Paragraph appearance="default">{string}</DS.Paragraph>
       <DS.ProgressBar value={0} />
       <DS.Radio name={string} value={string} />
       <DS.Row />
@@ -44,7 +44,7 @@ export const TS = () => {
       <DS.Spinner />
       <DS.Slider />
       <DS.RangeSlider />
-      <DS.Subheading>{string}</DS.Subheading>
+      <DS.Subheading appearance="default">{string}</DS.Subheading>
       <DS.Switch />
       <DS.Text>{string}</DS.Text>
       <DS.Textarea />

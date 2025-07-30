@@ -6,22 +6,22 @@ import styles from '@css/components/stepper.module.css';
 
 export interface StepProp {
   label: string;
-  value?: React.ReactText;
+  value?: string | number;
 }
 
-export interface StepperProps extends BaseProps {
+export type StepperProps = {
   /**
    * Set the active step (zero based index).
    *
    * Set to -1 to disable all the steps.
    */
-  active: number;
+  active?: number;
   /**
    * Set the completed steps (zero based index).
    *
    * **Number of completed steps <= completed index**
    */
-  completed: number;
+  completed?: number;
   /**
    * <pre className="docPage-codeBlock">
    * StepProp {
@@ -40,17 +40,17 @@ export interface StepperProps extends BaseProps {
   /**
    * Callback function called when user clicks on a non-disabled step.
    */
-  onChange?: (active: number, completed: number, label?: string, value?: React.ReactText) => void;
+  onChange?: (active: number, completed: number, label?: string, value?: string | number) => void;
 
-  skipIndexes: number[];
-}
+  skipIndexes?: number[];
+} & BaseProps;
 
 export const Stepper = (props: StepperProps) => {
-  const { steps, active, completed, onChange, className, skipIndexes } = props;
+  const { active = 0, completed = -1, steps, onChange, skipIndexes = [], className } = props;
 
   const baseProps = extractBaseProps(props);
 
-  const onChangeHandler = (index: number, stepLabel: string, stepValue?: React.ReactText) => {
+  const onChangeHandler = (index: number, stepLabel: string, stepValue?: string | number) => {
     if (onChange) onChange(index, completed, stepLabel, stepValue);
   };
 
@@ -88,10 +88,5 @@ export const Stepper = (props: StepperProps) => {
 };
 
 Stepper.displayName = 'Stepper';
-Stepper.defaultProps = {
-  completed: -1,
-  active: 0,
-  skipIndexes: [],
-};
 
 export default Stepper;

@@ -3,12 +3,12 @@ import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import styles from '@css/components/card.module.css';
 
-export interface CardBodyProps extends BaseProps {
+export type CardBodyProps = {
   /**
    * React Node to be rendered inside `Card Body`
    */
   children: React.ReactNode;
-}
+} & BaseProps;
 
 export const CardBody = (props: CardBodyProps) => {
   const { className, children } = props;
