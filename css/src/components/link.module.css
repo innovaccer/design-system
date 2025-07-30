@@ -3,6 +3,7 @@
   font-weight: var(--font-weight-medium);
   transition: var(--duration--fast-01) var(--standard-productive-curve);
   box-sizing: border-box;
+  display: inline;
 }
 
 .Link:focus-visible {
@@ -66,4 +67,31 @@
 .Link--subtle-disabled {
   color: var(--inverse-lightest);
   pointer-events: none;
+}
+
+.Link--withIcon {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-10);
+  line-height: 1;
+  border-bottom: none !important;
+}
+
+.Link--withIcon .Icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.Link--withIcon .Link-text {
+  border-bottom: 2px solid transparent;
+}
+
+.Link--withIcon:hover .Link-text {
+  border-bottom-color: var(--primary-dark);
+}
+
+.Link--withIcon.Link--subtle:hover .Link-text {
+  border-bottom-color: var(--inverse-light);
 }

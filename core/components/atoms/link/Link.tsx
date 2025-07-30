@@ -2,6 +2,7 @@ import * as React from 'react';
 import GenericText from '../_text';
 import classNames from 'classnames';
 import { BaseProps, OmitNativeProps } from '@/utils/types';
+import { Icon } from '@/index';
 import styles from '@css/components/link.module.css';
 
 type LinkTarget = '_blank' | '_self' | '_parent' | '_top';
@@ -50,6 +51,10 @@ export interface LinkProps extends BaseProps, OmitNativeProps<HTMLLinkElement, '
    */
   onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
   /**
+   * Name of icon to display alongside the link text
+   */
+  icon?: string;
+  /**
    * Element to be rendered
    */
   children: React.ReactNode;
@@ -63,7 +68,7 @@ export interface LinkProps extends BaseProps, OmitNativeProps<HTMLLinkElement, '
  */
 
 export const Link = (props: LinkProps) => {
-  const { children, className, appearance, size, disabled, ...rest } = props;
+  const { children, className, appearance, size, disabled, icon, ...rest } = props;
 
   const classes = classNames(
     {
@@ -71,8 +76,18 @@ export const Link = (props: LinkProps) => {
       [styles[`Link--${size}`]]: size,
       [styles[`Link--${appearance}`]]: appearance,
       [styles[`Link--${appearance}-disabled`]]: disabled,
+      [styles['Link--withIcon']]: icon,
     },
     className
+  );
+
+  const content = icon ? (
+    <>
+      <Icon name={icon} size={size === 'tiny' ? 12 : 16} />
+      <span className={styles['Link-text']}>{children}</span>
+    </>
+  ) : (
+    children
   );
 
   return (
@@ -83,7 +98,7 @@ export const Link = (props: LinkProps) => {
       tabIndex={disabled ? -1 : 0}
       {...rest}
     >
-      {children}
+      {content}
     </GenericText>
   );
 };

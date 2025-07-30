@@ -17,8 +17,12 @@ export const all = () => {
   };
 
   return (
-    <Link {...options} onClick={action('link click')}>
-      Read more
+    <Link 
+      {...options} 
+      icon="calendar_view_month"
+      onClick={action('link click')}
+    >
+      Regular link
     </Link>
   );
 };
