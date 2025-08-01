@@ -58,7 +58,7 @@ export const pinnedColumns = () => {
       displayName: 'S.no.',
       width: '5%',
       sorting: false,
-      pinned: 'left',
+      pinned: 'right',
     },
     {
       name: 'empi',
@@ -99,22 +99,24 @@ export const pinnedColumns = () => {
   ];
 
   return (
-    <Card className="overflow-hidden">
-      <Table
-        loaderSchema={loaderSchema}
-        size="compressed"
-        showMenu={false}
-        separator={false}
-        data={data}
-        schema={schema}
-        withHeader={true}
-        withCheckbox={true}
-        headerOptions={{
-          withSearch: false,
-        }}
-        withPagination={false}
-      />
-    </Card>
+    <div className="vh-50">
+      <Card className="h-100 overflow-hidden">
+        <Table
+          loaderSchema={loaderSchema}
+          size="compressed"
+          showMenu={false}
+          separator={false}
+          data={data}
+          schema={schema}
+          withHeader={true}
+          withCheckbox={true}
+          headerOptions={{
+            withSearch: false,
+          }}
+          withPagination={false}
+        />
+      </Card>
+    </div>
   );
 };
 
@@ -173,7 +175,7 @@ const customCode = `() => {
       displayName: 'S.no.',
       width: '5%',
       sorting: false,
-      pinned: 'left'
+      pinned: 'right'
     },
     {
       name: 'empi',
@@ -208,27 +210,29 @@ const customCode = `() => {
     },
     {
       name: 'facility',
-      displayName: 'Facility',
+      displayName: 'Facility Section',
       sorting: false
     },
   ];
 
   return (
-      <Card className="overflow-hidden">
+    <div className="vh-50">
+      <Card className="h-100 overflow-hidden">
         <Table
           showMenu={false}
           size="compressed"
           separator={false}
-          data={data}
+          data={[...data,...data]}
           schema={schema}
           withHeader={true}
           withCheckbox={true}
           headerOptions={{
-            withSearch: false
+            withSearch: false,
           }}
           withPagination={false}
         />
       </Card>
+    </div>
   );
 }`;
 
