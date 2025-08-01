@@ -3,6 +3,7 @@
   font-weight: var(--font-weight-medium);
   transition: var(--duration--fast-01) var(--standard-productive-curve);
   box-sizing: border-box;
+  border-bottom: var(--border-width-2-5) solid transparent;
 }
 
 .Link:focus-visible {
@@ -11,12 +12,11 @@
 
 .Link--regular {
   font-size: var(--font-size);
-  height: var(--font-height);
+  line-height: var(--font-height);
 }
 
 .Link--tiny {
   font-size: var(--font-size-s);
-  height: var(--font-height-s);
   line-height: var(--font-height-s);
 }
 
