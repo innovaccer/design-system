@@ -253,6 +253,8 @@ const customCode = `
       searchTerm
     } = options;
 
+    console.log('aaa fetchData call', options);
+
     const onSearch = (d, searchTerm = '') => {
       return (
         d.firstName.toLowerCase().match(searchTerm.toLowerCase())

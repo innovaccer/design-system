@@ -48,6 +48,9 @@ export const GridBody = (props: GridBodyProps) => {
   const [retryDataFetch, setRetryDataFetch] = React.useState(false);
   const endReached = React.useRef(false);
   const { fetchRowsCount, fetchThreshold, fetchErrorRenderer, retryFetchRenderer } = infiniteScrollOptions;
+  
+  // Simple flag to track programmatic scrolls
+  const isProgrammaticScroll = React.useRef(false);
 
   React.useEffect(() => {
     const gridBodyEl = ref!.querySelector('.Grid-body');
@@ -75,6 +78,16 @@ export const GridBody = (props: GridBodyProps) => {
     setError(false);
     setIsLoadingMore(false);
     endReached.current = false;
+    
+    // Set flag to prevent infinite scroll during programmatic scroll to top
+    isProgrammaticScroll.current = true;
+    
+    // Reset the flag after a longer delay to ensure scroll completes
+    const timer = setTimeout(() => {
+      isProgrammaticScroll.current = false;
+    }, 300); // Increased delay to ensure smooth scroll completes
+    
+    return () => clearTimeout(timer);
   }, [sortingList]);
 
   const totalPages = Math.ceil(totalRecords / pageSize);
@@ -144,6 +157,12 @@ export const GridBody = (props: GridBodyProps) => {
   };
 
   const onScrollHandler = (event: Event, listRef: HTMLElement) => {
+    // Prevent infinite scroll during programmatic scrolls
+    if (isProgrammaticScroll.current) {
+      event.preventDefault();
+      return;
+    }
+
     if (enableInfiniteScroll && infiniteScrollOptions && !withPagination) {
       const { fetchThreshold } = infiniteScrollOptions;
 
