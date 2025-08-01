@@ -466,7 +466,7 @@ export class Grid extends React.Component<GridProps, GridState> {
     if (gridHeadEl && gridBodyEl) {
       const hasVerticalScrollbar = gridBodyEl.scrollHeight > gridBodyEl.clientHeight;
       const scrollbarWidth = gridBodyEl.offsetWidth - gridBodyEl.clientWidth;
-      gridHeadEl.style.paddingRight = hasVerticalScrollbar ? `${scrollbarWidth}px` : '';
+      gridHeadEl.style.marginRight = hasVerticalScrollbar ? `${scrollbarWidth}px` : '';
     }
   }
 
