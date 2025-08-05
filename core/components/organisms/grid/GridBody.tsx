@@ -6,7 +6,7 @@ import styles from '@css/components/grid.module.css';
 import { GridProps } from '@/index.type';
 import VirtualList from './VirtualList';
 import { ProgressBar, Button, Text } from '@/index';
-
+import { isScrollAtTop } from './utility';
 export interface GridBodyProps {
   schema: Schema;
   onSelect: onSelectFn;
@@ -23,7 +23,19 @@ export interface GridBodyProps {
 export const GridBody = (props: GridBodyProps) => {
   const context = React.useContext(GridContext);
 
-  const { data, ref, loading, withPagination, page, pageSize, totalRecords, size, sortingList } = context;
+  const {
+    data,
+    ref,
+    loading,
+    withPagination,
+    page,
+    pageSize,
+    totalRecords,
+    size,
+    sortingList,
+    isSortingListUpdated,
+    updateIsSortingListUpdated,
+  } = context;
   const listRef = React.useRef<HTMLDivElement | null>(null);
 
   const {
@@ -144,7 +156,7 @@ export const GridBody = (props: GridBodyProps) => {
   };
 
   const onScrollHandler = (event: Event, listRef: HTMLElement) => {
-    if (enableInfiniteScroll && infiniteScrollOptions && !withPagination) {
+    if (enableInfiniteScroll && infiniteScrollOptions && !withPagination && !isSortingListUpdated) {
       const { fetchThreshold } = infiniteScrollOptions;
 
       const { scrollTop, scrollHeight, clientHeight } = listRef;
@@ -166,6 +178,10 @@ export const GridBody = (props: GridBodyProps) => {
 
     if (onScroll) {
       onScroll(event);
+    }
+
+    if (isSortingListUpdated && isScrollAtTop(enableRowVirtualization, ref!)) {
+      updateIsSortingListUpdated();
     }
   };
 
