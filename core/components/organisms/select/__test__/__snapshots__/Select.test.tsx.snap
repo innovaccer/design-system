@@ -1,0 +1,5036 @@
+<<<<<<< HEAD
+=======
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select List component snapshots 
+  size: "compressed", tagName: "div"
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":rq:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "compressed", tagName: "div", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r10:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "compressed", tagName: "div", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":rt:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "compressed", tagName: "nav"
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r13:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "compressed", tagName: "nav", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r19:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "compressed", tagName: "nav", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r16:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "compressed", tagName: "ol"
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":rh:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "compressed", tagName: "ol", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":rn:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "compressed", tagName: "ol", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":rk:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "compressed", tagName: "ul"
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r8:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "compressed", tagName: "ul", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":re:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "compressed", tagName: "ul", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":rb:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "standard", tagName: "div"
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r1u:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "standard", tagName: "div", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r24:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "standard", tagName: "div", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r21:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "standard", tagName: "nav"
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r27:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "standard", tagName: "nav", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r2d:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "standard", tagName: "nav", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r2a:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "standard", tagName: "ol"
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r1l:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "standard", tagName: "ol", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r1r:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "standard", tagName: "ol", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r1o:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "standard", tagName: "ul"
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r1c:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "standard", tagName: "ul", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r1i:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "standard", tagName: "ul", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r1f:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "tight", tagName: "div"
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r32:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "tight", tagName: "div", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r38:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "tight", tagName: "div", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r35:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "tight", tagName: "nav"
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r3b:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "tight", tagName: "nav", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r3h:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "tight", tagName: "nav", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r3e:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "tight", tagName: "ol"
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r2p:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "tight", tagName: "ol", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r2v:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "tight", tagName: "ol", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r2s:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "tight", tagName: "ul"
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r2g:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "tight", tagName: "ul", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r2m:"
+  />
+</body>
+`;
+
+exports[`Select List component snapshots 
+  size: "tight", tagName: "ul", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r2j:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  checkedState: "checked", onClick: [null,"[Function]"]
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r4f:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  checkedState: "checked", onClick: [null,"[Function]"], disabled: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r4l:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  checkedState: "checked", onClick: [null,"[Function]"], disabled: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r4i:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  checkedState: "checked", onClick: [null,"[Function]"], withCheckbox: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r51:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  checkedState: "checked", onClick: [null,"[Function]"], withCheckbox: false, disabled: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r57:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  checkedState: "checked", onClick: [null,"[Function]"], withCheckbox: false, disabled: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r54:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  checkedState: "checked", onClick: [null,"[Function]"], withCheckbox: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r4o:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  checkedState: "checked", onClick: [null,"[Function]"], withCheckbox: true, disabled: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r4u:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  checkedState: "checked", onClick: [null,"[Function]"], withCheckbox: true, disabled: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r4r:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  checkedState: "indeterminate", onClick: [null,"[Function]"]
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r65:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  checkedState: "indeterminate", onClick: [null,"[Function]"], disabled: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r6b:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  checkedState: "indeterminate", onClick: [null,"[Function]"], disabled: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r68:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  checkedState: "indeterminate", onClick: [null,"[Function]"], withCheckbox: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r6n:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  checkedState: "indeterminate", onClick: [null,"[Function]"], withCheckbox: false, disabled: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r6t:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  checkedState: "indeterminate", onClick: [null,"[Function]"], withCheckbox: false, disabled: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r6q:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  checkedState: "indeterminate", onClick: [null,"[Function]"], withCheckbox: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r6e:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  checkedState: "indeterminate", onClick: [null,"[Function]"], withCheckbox: true, disabled: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r6k:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  checkedState: "indeterminate", onClick: [null,"[Function]"], withCheckbox: true, disabled: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r6h:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  checkedState: "unchecked", onClick: [null,"[Function]"]
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r5a:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  checkedState: "unchecked", onClick: [null,"[Function]"], disabled: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r5g:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  checkedState: "unchecked", onClick: [null,"[Function]"], disabled: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r5d:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  checkedState: "unchecked", onClick: [null,"[Function]"], withCheckbox: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r5s:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  checkedState: "unchecked", onClick: [null,"[Function]"], withCheckbox: false, disabled: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r62:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  checkedState: "unchecked", onClick: [null,"[Function]"], withCheckbox: false, disabled: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r5v:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  checkedState: "unchecked", onClick: [null,"[Function]"], withCheckbox: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r5j:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  checkedState: "unchecked", onClick: [null,"[Function]"], withCheckbox: true, disabled: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r5p:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  checkedState: "unchecked", onClick: [null,"[Function]"], withCheckbox: true, disabled: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r5m:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  onClick: [null,"[Function]"]
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r3k:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  onClick: [null,"[Function]"], disabled: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r3q:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  onClick: [null,"[Function]"], disabled: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r3n:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  onClick: [null,"[Function]"], withCheckbox: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r46:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  onClick: [null,"[Function]"], withCheckbox: false, disabled: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r4c:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  onClick: [null,"[Function]"], withCheckbox: false, disabled: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r49:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  onClick: [null,"[Function]"], withCheckbox: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r3t:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  onClick: [null,"[Function]"], withCheckbox: true, disabled: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r43:"
+  />
+</body>
+`;
+
+exports[`Select Option component snapshots 
+  onClick: [null,"[Function]"], withCheckbox: true, disabled: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r40:"
+  />
+</body>
+`;
+
+exports[`Select component snapshots 
+  multiSelect: false, onSelect: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r5:"
+  />
+</body>
+`;
+
+exports[`Select component snapshots 
+  multiSelect: true, onSelect: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 176px;"
+    >
+      <div
+        class="d-block"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="d-block"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="d-block"
+        >
+          <button
+            aria-controls="select-listbox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-label="trigger"
+            class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder"
+            data-test="DesignSystem-Select-trigger"
+            style="width: 176px;"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Select-trigger-wrapper ellipsis--noWrap"
+            >
+              <span
+                class="Text Text--regular Select-trigger--text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r2:"
+  />
+</body>
+`;
+>>>>>>> e56ca8cd (feat(popover): add new popover component)
