@@ -9,6 +9,7 @@ exports[`Vertical Navigation component
       class="VerticalNav"
     >
 <<<<<<< HEAD
+<<<<<<< HEAD
       <div
         class="w-fit-content"
       >
@@ -20,11 +21,21 @@ exports[`Vertical Navigation component
           triggerclass="w-fit-content"
 =======
       <div>
+=======
+      <div
+        class="w-fit-content"
+      >
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="w-fit-content"
           data-state="closed"
+<<<<<<< HEAD
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          triggerclass="w-fit-content"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
         >
           <a
             class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
@@ -48,6 +59,7 @@ exports[`Vertical Navigation component
         </div>
       </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <div
         class="w-fit-content"
       >
@@ -59,11 +71,21 @@ exports[`Vertical Navigation component
           triggerclass="w-fit-content"
 =======
       <div>
+=======
+      <div
+        class="w-fit-content"
+      >
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="w-fit-content"
           data-state="closed"
+<<<<<<< HEAD
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          triggerclass="w-fit-content"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
         >
           <a
             class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
@@ -86,6 +108,7 @@ exports[`Vertical Navigation component
         </div>
       </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <div
         class="w-fit-content"
       >
@@ -97,11 +120,21 @@ exports[`Vertical Navigation component
           triggerclass="w-fit-content"
 =======
       <div>
+=======
+      <div
+        class="w-fit-content"
+      >
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="w-fit-content"
           data-state="closed"
+<<<<<<< HEAD
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          triggerclass="w-fit-content"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
         >
           <a
             class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--active color-primary-dark"
@@ -123,6 +156,7 @@ exports[`Vertical Navigation component
         </div>
       </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <div
         class="w-fit-content"
       >
@@ -134,11 +168,21 @@ exports[`Vertical Navigation component
           triggerclass="w-fit-content"
 =======
       <div>
+=======
+      <div
+        class="w-fit-content"
+      >
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="w-fit-content"
           data-state="closed"
+<<<<<<< HEAD
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          triggerclass="w-fit-content"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
         >
           <a
             class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
@@ -160,6 +204,7 @@ exports[`Vertical Navigation component
         </div>
       </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <div
         class="w-fit-content"
       >
@@ -171,11 +216,21 @@ exports[`Vertical Navigation component
           triggerclass="w-fit-content"
 =======
       <div>
+=======
+      <div
+        class="w-fit-content"
+      >
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="w-fit-content"
           data-state="closed"
+<<<<<<< HEAD
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          triggerclass="w-fit-content"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
         >
           <a
             class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--disabled color-inverse-lightest"
@@ -198,6 +253,7 @@ exports[`Vertical Navigation component
         </div>
       </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <div
         class="w-fit-content"
       >
@@ -209,11 +265,21 @@ exports[`Vertical Navigation component
           triggerclass="w-fit-content"
 =======
       <div>
+=======
+      <div
+        class="w-fit-content"
+      >
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="w-fit-content"
           data-state="closed"
+<<<<<<< HEAD
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          triggerclass="w-fit-content"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
         >
           <a
             class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"

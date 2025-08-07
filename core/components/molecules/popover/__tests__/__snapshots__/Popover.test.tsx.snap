@@ -7,6 +7,7 @@ exports[`Popover component
   <div>
     <div
 <<<<<<< HEAD
+<<<<<<< HEAD
       aria-controls=":rr:"
       aria-expanded="true"
       aria-haspopup="dialog"
@@ -16,6 +17,12 @@ exports[`Popover component
       aria-haspopup="dialog"
       data-state="closed"
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+      aria-controls=":rr:"
+      aria-expanded="true"
+      aria-haspopup="dialog"
+      data-state="open"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -66,6 +73,7 @@ exports[`Popover component
   <div>
     <div
 <<<<<<< HEAD
+<<<<<<< HEAD
       aria-controls=":rl:"
       aria-expanded="true"
       aria-haspopup="dialog"
@@ -75,6 +83,12 @@ exports[`Popover component
       aria-haspopup="dialog"
       data-state="closed"
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+      aria-controls=":rl:"
+      aria-expanded="true"
+      aria-haspopup="dialog"
+      data-state="open"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -125,6 +139,7 @@ exports[`Popover component
   <div>
     <div
 <<<<<<< HEAD
+<<<<<<< HEAD
       aria-controls=":r9:"
       aria-expanded="true"
       aria-haspopup="dialog"
@@ -134,6 +149,12 @@ exports[`Popover component
       aria-haspopup="dialog"
       data-state="closed"
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+      aria-controls=":r9:"
+      aria-expanded="true"
+      aria-haspopup="dialog"
+      data-state="open"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -158,6 +179,7 @@ exports[`Popover component
   <div>
     <div
 <<<<<<< HEAD
+<<<<<<< HEAD
       aria-controls=":rf:"
       aria-expanded="true"
       aria-haspopup="dialog"
@@ -167,6 +189,12 @@ exports[`Popover component
       aria-haspopup="dialog"
       data-state="closed"
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+      aria-controls=":rf:"
+      aria-expanded="true"
+      aria-haspopup="dialog"
+      data-state="open"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -191,6 +219,7 @@ exports[`Popover component
   <div>
     <div
 <<<<<<< HEAD
+<<<<<<< HEAD
       aria-controls=":rc:"
       aria-expanded="true"
       aria-haspopup="dialog"
@@ -200,6 +229,12 @@ exports[`Popover component
       aria-haspopup="dialog"
       data-state="closed"
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+      aria-controls=":rc:"
+      aria-expanded="true"
+      aria-haspopup="dialog"
+      data-state="open"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -224,6 +259,7 @@ exports[`Popover component
   <div>
     <div
 <<<<<<< HEAD
+<<<<<<< HEAD
       aria-controls=":r0:"
       aria-expanded="true"
       aria-haspopup="dialog"
@@ -233,6 +269,12 @@ exports[`Popover component
       aria-haspopup="dialog"
       data-state="closed"
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+      aria-controls=":r0:"
+      aria-expanded="true"
+      aria-haspopup="dialog"
+      data-state="open"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -257,6 +299,7 @@ exports[`Popover component
   <div>
     <div
 <<<<<<< HEAD
+<<<<<<< HEAD
       aria-controls=":r6:"
       aria-expanded="true"
       aria-haspopup="dialog"
@@ -266,6 +309,12 @@ exports[`Popover component
       aria-haspopup="dialog"
       data-state="closed"
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+      aria-controls=":r6:"
+      aria-expanded="true"
+      aria-haspopup="dialog"
+      data-state="open"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -290,6 +339,7 @@ exports[`Popover component
   <div>
     <div
 <<<<<<< HEAD
+<<<<<<< HEAD
       aria-controls=":r3:"
       aria-expanded="true"
       aria-haspopup="dialog"
@@ -299,6 +349,12 @@ exports[`Popover component
       aria-haspopup="dialog"
       data-state="closed"
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+      aria-controls=":r3:"
+      aria-expanded="true"
+      aria-haspopup="dialog"
+      data-state="open"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"

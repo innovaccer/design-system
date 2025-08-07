@@ -18,9 +18,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -82,9 +86,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -146,9 +154,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -210,9 +222,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -274,9 +290,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -338,9 +358,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -402,9 +426,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -466,9 +494,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -530,9 +562,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -594,9 +630,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -658,9 +698,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -722,9 +766,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -786,9 +834,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -850,9 +902,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -914,9 +970,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -978,9 +1038,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1042,9 +1106,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1106,9 +1174,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1170,9 +1242,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1234,9 +1310,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1298,9 +1378,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1362,9 +1446,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1426,9 +1514,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1490,9 +1582,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1554,9 +1650,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1618,9 +1718,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1682,9 +1786,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1746,9 +1854,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1810,9 +1922,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1874,9 +1990,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -1938,9 +2058,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2002,9 +2126,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2066,9 +2194,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2130,9 +2262,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2194,9 +2330,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2258,9 +2398,13 @@ exports[`Select List component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2322,9 +2466,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2386,9 +2534,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2450,9 +2602,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2514,9 +2670,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2578,9 +2738,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2642,9 +2806,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2706,9 +2874,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2770,9 +2942,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2834,9 +3010,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2898,9 +3078,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -2962,9 +3146,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3026,9 +3214,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3090,9 +3282,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3154,9 +3350,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3218,9 +3418,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3282,9 +3486,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3346,9 +3554,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3410,9 +3622,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3474,9 +3690,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3538,9 +3758,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3602,9 +3826,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3666,9 +3894,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3730,9 +3962,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3794,9 +4030,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3858,9 +4098,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3922,9 +4166,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -3986,9 +4234,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -4050,9 +4302,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -4114,9 +4370,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -4178,9 +4438,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -4242,9 +4506,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -4306,9 +4574,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -4370,9 +4642,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -4434,9 +4710,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -4498,9 +4778,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -4562,9 +4846,13 @@ exports[`Select Option component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -4626,9 +4914,13 @@ exports[`Select component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >
@@ -4690,9 +4982,13 @@ exports[`Select component snapshots
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="d-block"
         >

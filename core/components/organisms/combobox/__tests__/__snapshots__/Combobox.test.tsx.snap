@@ -14,9 +14,13 @@ exports[`Combobox component snapshots
             aria-expanded="false"
             aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
             class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+            class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="d-block"
           >
@@ -45,12 +49,18 @@ exports[`Combobox component snapshots
     </div>
   </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
   <div
     data-floating-ui-portal=""
     id=":rh:"
   />
+<<<<<<< HEAD
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
 </body>
 `;
 
@@ -68,9 +78,13 @@ exports[`Combobox component snapshots
             aria-expanded="false"
             aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
             class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+            class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="d-block"
           >
@@ -99,12 +113,18 @@ exports[`Combobox component snapshots
     </div>
   </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
   <div
     data-floating-ui-portal=""
     id=":re:"
   />
+<<<<<<< HEAD
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
 </body>
 `;
 
@@ -122,9 +142,13 @@ exports[`Combobox component snapshots
             aria-expanded="false"
             aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
             class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+            class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="d-block"
           >
@@ -153,12 +177,18 @@ exports[`Combobox component snapshots
     </div>
   </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
   <div
     data-floating-ui-portal=""
     id=":rb:"
   />
+<<<<<<< HEAD
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
 </body>
 `;
 
@@ -176,9 +206,13 @@ exports[`Combobox component snapshots
             aria-expanded="false"
             aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
             class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+            class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="d-block"
           >
@@ -235,9 +269,13 @@ exports[`Combobox component snapshots
             aria-expanded="false"
             aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
             class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+            class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="d-block"
           >
@@ -294,9 +332,13 @@ exports[`Combobox component snapshots
             aria-expanded="false"
             aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
             class="d-block"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+            class="d-block"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="d-block"
           >
