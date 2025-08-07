@@ -15,9 +15,13 @@ exports[`Dropdown component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="w-100"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -72,9 +76,13 @@ exports[`Dropdown component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="w-100"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -129,9 +137,13 @@ exports[`Dropdown component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="w-100"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -186,9 +198,13 @@ exports[`Dropdown component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="w-100"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -243,9 +259,13 @@ exports[`Dropdown component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="w-100"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -308,9 +328,13 @@ exports[`Dropdown component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="w-100"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -371,9 +395,13 @@ exports[`Dropdown component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="w-100"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -428,9 +456,13 @@ exports[`Dropdown component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="w-100"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -494,9 +526,13 @@ exports[`Dropdown component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="w-100"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -558,9 +594,13 @@ exports[`Dropdown component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="w-100"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -616,9 +656,13 @@ exports[`Dropdown component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="w-100"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -673,9 +717,13 @@ exports[`Dropdown component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="w-100"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -730,9 +778,13 @@ exports[`Dropdown component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="w-100"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -787,9 +839,13 @@ exports[`Dropdown component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="w-100"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -844,9 +900,13 @@ exports[`Dropdown component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="w-100"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -896,14 +956,19 @@ exports[`Dropdown component
     >
       <div
 <<<<<<< HEAD
+<<<<<<< HEAD
         class="w-fit-content"
 =======
         class=""
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+        class="w-fit-content"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
       >
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+<<<<<<< HEAD
 <<<<<<< HEAD
           class="w-fit-content"
           data-state="closed"
@@ -912,6 +977,11 @@ exports[`Dropdown component
           data-state="closed"
           triggerclass=""
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-fit-content"
+          data-state="closed"
+          triggerclass="w-fit-content"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
         >
           <button
             class="Button DropdownButton DropdownButton--regular DropdownButton--regularSquare"
@@ -955,9 +1025,13 @@ exports[`Dropdown component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="w-100"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -1012,9 +1086,13 @@ exports[`Dropdown component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="w-100"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -1069,9 +1147,13 @@ exports[`Dropdown component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="w-100"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -1126,9 +1208,13 @@ exports[`Dropdown component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="w-100"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -1183,9 +1269,13 @@ exports[`Dropdown component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="w-100"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -1240,9 +1330,13 @@ exports[`Dropdown component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="w-100"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -1297,9 +1391,13 @@ exports[`Dropdown component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="w-100"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -1354,9 +1452,13 @@ exports[`Dropdown component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="w-100"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -1411,9 +1513,13 @@ exports[`Dropdown component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="w-100"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -1468,9 +1574,13 @@ exports[`Dropdown component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="w-100"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="w-100"
         >
@@ -1525,9 +1635,13 @@ exports[`Dropdown component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="w-100"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="w-100"
         >
