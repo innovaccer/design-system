@@ -6,7 +6,6 @@ import { Popover, OutsideClick } from '@/index';
 import { ComboboxOption } from './ComboboxOption';
 import ComboboxContext, { ContextProps } from './ComboboxContext';
 import { PopoverProps } from '@/index.type';
-import { focusListItem } from './trigger/utils';
 import { ComboboxTrigger } from './trigger/ComboboxTrigger';
 import uidGenerator from '@/utils/uidGenerator';
 
@@ -170,8 +169,6 @@ export const Combobox = (props: ComboboxProps) => {
   const [inputValue, setInputValue] = React.useState<OptionType | undefined>(value || { label: '', value: '' });
   const [chipInputValue, setChipInputValue] = React.useState<OptionType[] | undefined>(chipValue);
   const [chipInputText, setChipInputText] = React.useState<string | undefined>('');
-  const [highlightFirstItem, setHighlightFirstItem] = React.useState<boolean>(false);
-  const [highlightLastItem, setHighlightLastItem] = React.useState<boolean>(false);
 
   const inputTriggerRef = React.useRef<HTMLInputElement>(null);
   const popoverId = `DesignSystem-Combobox--Popover-${uidGenerator()}`;
@@ -217,21 +214,9 @@ export const Combobox = (props: ComboboxProps) => {
   }, [inputValue, chipInputValue]);
 
   React.useEffect(() => {
-    if (highlightFirstItem && openPopover) {
-      requestAnimationFrame(() => focusListItem('down', setFocusedOption, listRef));
-    }
-  }, [highlightFirstItem]);
-
-  React.useEffect(() => {
-    if (highlightLastItem && openPopover) {
-      requestAnimationFrame(() => focusListItem('up', setFocusedOption, listRef));
-    }
-  }, [highlightLastItem]);
-
-  React.useEffect(() => {
     if (!openPopover) {
-      setHighlightFirstItem(false);
-      setHighlightLastItem(false);
+      // Reset focused option when popover closes
+      setFocusedOption(undefined);
     }
   }, [openPopover]);
 
@@ -292,8 +277,6 @@ export const Combobox = (props: ComboboxProps) => {
     chipInputText,
     setChipInputText,
     inputTriggerRef,
-    setHighlightFirstItem,
-    setHighlightLastItem,
     multiSelect,
     listRef,
     onSearch,

@@ -13,6 +13,7 @@ exports[`Combobox component snapshots
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="d-block"
             data-state="closed"
             triggerclass="d-block"
           >
@@ -40,6 +41,10 @@ exports[`Combobox component snapshots
       </div>
     </div>
   </div>
+  <div
+    data-floating-ui-portal=""
+    id=":rh:"
+  />
 </body>
 `;
 
@@ -56,6 +61,7 @@ exports[`Combobox component snapshots
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="d-block"
             data-state="closed"
             triggerclass="d-block"
           >
@@ -83,6 +89,10 @@ exports[`Combobox component snapshots
       </div>
     </div>
   </div>
+  <div
+    data-floating-ui-portal=""
+    id=":re:"
+  />
 </body>
 `;
 
@@ -99,6 +109,7 @@ exports[`Combobox component snapshots
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="d-block"
             data-state="closed"
             triggerclass="d-block"
           >
@@ -126,6 +137,10 @@ exports[`Combobox component snapshots
       </div>
     </div>
   </div>
+  <div
+    data-floating-ui-portal=""
+    id=":rb:"
+  />
 </body>
 `;
 
@@ -142,6 +157,7 @@ exports[`Combobox component snapshots
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="d-block"
             data-state="closed"
             triggerclass="d-block"
           >
@@ -177,6 +193,10 @@ exports[`Combobox component snapshots
       </div>
     </div>
   </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r8:"
+  />
 </body>
 `;
 
@@ -193,6 +213,7 @@ exports[`Combobox component snapshots
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="d-block"
             data-state="closed"
             triggerclass="d-block"
           >
@@ -228,6 +249,10 @@ exports[`Combobox component snapshots
       </div>
     </div>
   </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r5:"
+  />
 </body>
 `;
 
@@ -244,6 +269,7 @@ exports[`Combobox component snapshots
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="d-block"
             data-state="closed"
             triggerclass="d-block"
           >
@@ -279,5 +305,9 @@ exports[`Combobox component snapshots
       </div>
     </div>
   </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r2:"
+  />
 </body>
 `;

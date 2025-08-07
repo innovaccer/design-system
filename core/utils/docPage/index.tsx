@@ -316,18 +316,15 @@ export const docPage = ({ of }: any) => {
   let story;
   switch (resolvedOf.type) {
     case 'story': {
-      console.log('resolvedOf.story', resolvedOf.story);
       story = resolvedOf.story;
       break;
     }
     case 'meta': {
-      console.log('resolvedOf.meta', resolvedOf.preparedMeta);
       story = resolvedOf.preparedMeta;
       break;
     }
   }
 
-  console.log('story', story);
   const sp = story.parameters;
   const isEmbed = window.location.search.includes('embed=min');
   const isEmbedWithProp = window.location.search.includes('embed=prop');

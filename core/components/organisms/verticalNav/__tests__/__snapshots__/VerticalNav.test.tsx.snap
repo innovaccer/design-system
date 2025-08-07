@@ -8,11 +8,15 @@ exports[`Vertical Navigation component
     <div
       class="VerticalNav"
     >
-      <div>
+      <div
+        class="w-fit-content"
+      >
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="w-fit-content"
           data-state="closed"
+          triggerclass="w-fit-content"
         >
           <a
             class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
@@ -35,11 +39,15 @@ exports[`Vertical Navigation component
           </a>
         </div>
       </div>
-      <div>
+      <div
+        class="w-fit-content"
+      >
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="w-fit-content"
           data-state="closed"
+          triggerclass="w-fit-content"
         >
           <a
             class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
@@ -61,11 +69,15 @@ exports[`Vertical Navigation component
           </a>
         </div>
       </div>
-      <div>
+      <div
+        class="w-fit-content"
+      >
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="w-fit-content"
           data-state="closed"
+          triggerclass="w-fit-content"
         >
           <a
             class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--active color-primary-dark"
@@ -86,11 +98,15 @@ exports[`Vertical Navigation component
           </a>
         </div>
       </div>
-      <div>
+      <div
+        class="w-fit-content"
+      >
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="w-fit-content"
           data-state="closed"
+          triggerclass="w-fit-content"
         >
           <a
             class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
@@ -111,11 +127,15 @@ exports[`Vertical Navigation component
           </a>
         </div>
       </div>
-      <div>
+      <div
+        class="w-fit-content"
+      >
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="w-fit-content"
           data-state="closed"
+          triggerclass="w-fit-content"
         >
           <a
             class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--disabled color-inverse-lightest"
@@ -137,11 +157,15 @@ exports[`Vertical Navigation component
           </a>
         </div>
       </div>
-      <div>
+      <div
+        class="w-fit-content"
+      >
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="w-fit-content"
           data-state="closed"
+          triggerclass="w-fit-content"
         >
           <a
             class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
@@ -165,6 +189,30 @@ exports[`Vertical Navigation component
       </div>
     </div>
   </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r2:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":r5:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":r8:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":rb:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":re:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":rh:"
+  />
 </body>
 `;
 
