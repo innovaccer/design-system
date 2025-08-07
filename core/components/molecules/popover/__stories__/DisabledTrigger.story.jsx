@@ -6,7 +6,7 @@ export const disabledTrigger = () => {
   const booleanValues = [false, true];
 
   return (
-    <div className="mb-10 d-flex align-items-center w-100">
+    <div className="mb-10 d-flex align-items-center justify-content-between w-50">
       {booleanValues.map((toggleValue) => {
         return (
           <Popover
@@ -36,7 +36,7 @@ const customCode = `() => {
   const booleanValues = [false, true];
 
   return (
-    <div className="mb-10 d-flex align-items-center w-100">
+    <div className="mb-10 d-flex align-items-center justify-content-between w-50">
       {booleanValues.map((toggleValue) => {
         return (
           <Popover

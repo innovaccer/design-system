@@ -47,11 +47,15 @@ exports[`Dialog component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            <div>
+            <div
+              class="w-fit-content"
+            >
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="w-fit-content"
                 data-state="closed"
+                triggerclass="w-fit-content"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -139,6 +143,10 @@ exports[`Dialog component
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
   />
+  <div
+    data-floating-ui-portal=""
+    id=":rb:"
+  />
 </body>
 `;
 
@@ -190,11 +198,15 @@ exports[`Dialog component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            <div>
+            <div
+              class="w-fit-content"
+            >
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="w-fit-content"
                 data-state="closed"
+                triggerclass="w-fit-content"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -281,6 +293,10 @@ exports[`Dialog component
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
   />
+  <div
+    data-floating-ui-portal=""
+    id=":r2:"
+  />
 </body>
 `;
 
@@ -331,11 +347,15 @@ exports[`Dialog component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            <div>
+            <div
+              class="w-fit-content"
+            >
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="w-fit-content"
                 data-state="closed"
+                triggerclass="w-fit-content"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -423,6 +443,10 @@ exports[`Dialog component
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
   />
+  <div
+    data-floating-ui-portal=""
+    id=":r5:"
+  />
 </body>
 `;
 
@@ -473,11 +497,15 @@ exports[`Dialog component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            <div>
+            <div
+              class="w-fit-content"
+            >
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="w-fit-content"
                 data-state="closed"
+                triggerclass="w-fit-content"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -565,6 +593,10 @@ exports[`Dialog component
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
   />
+  <div
+    data-floating-ui-portal=""
+    id=":r8:"
+  />
 </body>
 `;
 
@@ -615,11 +647,15 @@ exports[`Dialog component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            <div>
+            <div
+              class="w-fit-content"
+            >
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="w-fit-content"
                 data-state="closed"
+                triggerclass="w-fit-content"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -707,6 +743,10 @@ exports[`Dialog component
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
   />
+  <div
+    data-floating-ui-portal=""
+    id=":re:"
+  />
 </body>
 `;
 
@@ -757,11 +797,15 @@ exports[`Dialog component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            <div>
+            <div
+              class="w-fit-content"
+            >
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="w-fit-content"
                 data-state="closed"
+                triggerclass="w-fit-content"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -848,6 +892,10 @@ exports[`Dialog component
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":r16:"
   />
 </body>
 `;
@@ -899,11 +947,15 @@ exports[`Dialog component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            <div>
+            <div
+              class="w-fit-content"
+            >
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="w-fit-content"
                 data-state="closed"
+                triggerclass="w-fit-content"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -990,6 +1042,10 @@ exports[`Dialog component
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":r13:"
   />
 </body>
 `;
@@ -1041,11 +1097,15 @@ exports[`Dialog component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            <div>
+            <div
+              class="w-fit-content"
+            >
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="w-fit-content"
                 data-state="closed"
+                triggerclass="w-fit-content"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -1133,6 +1193,10 @@ exports[`Dialog component
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
   />
+  <div
+    data-floating-ui-portal=""
+    id=":r10:"
+  />
 </body>
 `;
 
@@ -1183,11 +1247,15 @@ exports[`Dialog component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            <div>
+            <div
+              class="w-fit-content"
+            >
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="w-fit-content"
                 data-state="closed"
+                triggerclass="w-fit-content"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -1275,6 +1343,10 @@ exports[`Dialog component
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
   />
+  <div
+    data-floating-ui-portal=""
+    id=":rq:"
+  />
 </body>
 `;
 
@@ -1325,11 +1397,15 @@ exports[`Dialog component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            <div>
+            <div
+              class="w-fit-content"
+            >
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="w-fit-content"
                 data-state="closed"
+                triggerclass="w-fit-content"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -1417,6 +1493,10 @@ exports[`Dialog component
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
   />
+  <div
+    data-floating-ui-portal=""
+    id=":rh:"
+  />
 </body>
 `;
 
@@ -1467,11 +1547,15 @@ exports[`Dialog component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            <div>
+            <div
+              class="w-fit-content"
+            >
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="w-fit-content"
                 data-state="closed"
+                triggerclass="w-fit-content"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -1559,6 +1643,10 @@ exports[`Dialog component
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
   />
+  <div
+    data-floating-ui-portal=""
+    id=":rk:"
+  />
 </body>
 `;
 
@@ -1609,11 +1697,15 @@ exports[`Dialog component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            <div>
+            <div
+              class="w-fit-content"
+            >
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="w-fit-content"
                 data-state="closed"
+                triggerclass="w-fit-content"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -1701,6 +1793,10 @@ exports[`Dialog component
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
   />
+  <div
+    data-floating-ui-portal=""
+    id=":rn:"
+  />
 </body>
 `;
 
@@ -1751,11 +1847,15 @@ exports[`Dialog component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            <div>
+            <div
+              class="w-fit-content"
+            >
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="w-fit-content"
                 data-state="closed"
+                triggerclass="w-fit-content"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -1842,6 +1942,10 @@ exports[`Dialog component
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1010;"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":rt:"
   />
 </body>
 `;

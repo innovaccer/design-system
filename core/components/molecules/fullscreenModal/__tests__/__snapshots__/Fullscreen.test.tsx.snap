@@ -45,11 +45,15 @@ exports[`FullscreenModal component
                 class="Col flex-grow-0"
                 data-test="DesignSystem-Column"
               >
-                <div>
+                <div
+                  class="w-fit-content"
+                >
                   <div
                     aria-expanded="false"
                     aria-haspopup="dialog"
+                    class="w-fit-content"
                     data-state="closed"
+                    triggerclass="w-fit-content"
                   >
                     <button
                       class="Button Button--regular Button--regularSquare Button--transparent"
@@ -86,6 +90,10 @@ exports[`FullscreenModal component
     </div>
   </div>
   <div />
+  <div
+    data-floating-ui-portal=""
+    id=":r5:"
+  />
 </body>
 `;
 
@@ -132,11 +140,15 @@ exports[`FullscreenModal component
                 class="Col flex-grow-0"
                 data-test="DesignSystem-Column"
               >
-                <div>
+                <div
+                  class="w-fit-content"
+                >
                   <div
                     aria-expanded="false"
                     aria-haspopup="dialog"
+                    class="w-fit-content"
                     data-state="closed"
+                    triggerclass="w-fit-content"
                   >
                     <button
                       class="Button Button--regular Button--regularSquare Button--transparent"
@@ -200,6 +212,10 @@ exports[`FullscreenModal component
     </div>
   </div>
   <div />
+  <div
+    data-floating-ui-portal=""
+    id=":rb:"
+  />
 </body>
 `;
 
@@ -261,11 +277,15 @@ exports[`FullscreenModal component
                 class="Col flex-grow-0"
                 data-test="DesignSystem-Column"
               >
-                <div>
+                <div
+                  class="w-fit-content"
+                >
                   <div
                     aria-expanded="false"
                     aria-haspopup="dialog"
+                    class="w-fit-content"
                     data-state="closed"
+                    triggerclass="w-fit-content"
                   >
                     <button
                       class="Button Button--regular Button--regularSquare Button--transparent"
@@ -306,6 +326,10 @@ exports[`FullscreenModal component
     </div>
   </div>
   <div />
+  <div
+    data-floating-ui-portal=""
+    id=":rh:"
+  />
 </body>
 `;
 
@@ -355,11 +379,15 @@ exports[`FullscreenModal component
                 class="Col flex-grow-0"
                 data-test="DesignSystem-Column"
               >
-                <div>
+                <div
+                  class="w-fit-content"
+                >
                   <div
                     aria-expanded="false"
                     aria-haspopup="dialog"
+                    class="w-fit-content"
                     data-state="closed"
+                    triggerclass="w-fit-content"
                   >
                     <button
                       class="Button Button--regular Button--regularSquare Button--transparent"
@@ -395,6 +423,10 @@ exports[`FullscreenModal component
       </div>
     </div>
   </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r2:"
+  />
 </body>
 `;
 
@@ -441,11 +473,15 @@ exports[`FullscreenModal component
                 class="Col flex-grow-0"
                 data-test="DesignSystem-Column"
               >
-                <div>
+                <div
+                  class="w-fit-content"
+                >
                   <div
                     aria-expanded="false"
                     aria-haspopup="dialog"
+                    class="w-fit-content"
                     data-state="closed"
+                    triggerclass="w-fit-content"
                   >
                     <button
                       class="Button Button--regular Button--regularSquare Button--transparent"
@@ -509,6 +545,10 @@ exports[`FullscreenModal component
     </div>
   </div>
   <div />
+  <div
+    data-floating-ui-portal=""
+    id=":r8:"
+  />
 </body>
 `;
 
@@ -570,11 +610,15 @@ exports[`FullscreenModal component
                 class="Col flex-grow-0"
                 data-test="DesignSystem-Column"
               >
-                <div>
+                <div
+                  class="w-fit-content"
+                >
                   <div
                     aria-expanded="false"
                     aria-haspopup="dialog"
+                    class="w-fit-content"
                     data-state="closed"
+                    triggerclass="w-fit-content"
                   >
                     <button
                       class="Button Button--regular Button--regularSquare Button--transparent"
@@ -615,5 +659,9 @@ exports[`FullscreenModal component
     </div>
   </div>
   <div />
+  <div
+    data-floating-ui-portal=""
+    id=":re:"
+  />
 </body>
 `;

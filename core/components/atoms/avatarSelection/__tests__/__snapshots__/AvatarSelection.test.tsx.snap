@@ -31,6 +31,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="flex-grow-0"
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -77,6 +78,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="flex-grow-0"
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -123,6 +125,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="flex-grow-0"
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -169,6 +172,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="flex-grow-0"
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -215,6 +219,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="flex-grow-0"
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -247,6 +252,7 @@ exports[`AvatarSelection component snapshot
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="flex-grow-0"
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -287,6 +293,30 @@ exports[`AvatarSelection component snapshot
         </div>
       </div>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r2d:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":r2g:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":r2j:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":r2m:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":r2p:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":r2s:"
+    />
   </body>,
   "container": <div>
     <div
@@ -313,6 +343,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="flex-grow-0"
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -359,6 +390,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="flex-grow-0"
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -405,6 +437,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="flex-grow-0"
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -451,6 +484,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="flex-grow-0"
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -497,6 +531,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="flex-grow-0"
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -529,6 +564,7 @@ exports[`AvatarSelection component snapshot
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="flex-grow-0"
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -654,6 +690,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="flex-grow-0"
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -700,6 +737,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="flex-grow-0"
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -746,6 +784,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="flex-grow-0"
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -792,6 +831,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="flex-grow-0"
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -838,6 +878,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="flex-grow-0"
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -870,6 +911,7 @@ exports[`AvatarSelection component snapshot
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="flex-grow-0"
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -910,6 +952,30 @@ exports[`AvatarSelection component snapshot
         </div>
       </div>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r1r:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":r1u:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":r21:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":r24:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":r27:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":r2a:"
+    />
   </body>,
   "container": <div>
     <div
@@ -936,6 +1002,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="flex-grow-0"
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -982,6 +1049,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="flex-grow-0"
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -1028,6 +1096,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="flex-grow-0"
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -1074,6 +1143,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="flex-grow-0"
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -1120,6 +1190,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="flex-grow-0"
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -1152,6 +1223,7 @@ exports[`AvatarSelection component snapshot
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="flex-grow-0"
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -1277,6 +1349,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="flex-grow-0"
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -1323,6 +1396,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="flex-grow-0"
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -1369,6 +1443,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="flex-grow-0"
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -1415,6 +1490,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="flex-grow-0"
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -1461,6 +1537,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="flex-grow-0"
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -1493,6 +1570,7 @@ exports[`AvatarSelection component snapshot
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="flex-grow-0"
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -1533,6 +1611,30 @@ exports[`AvatarSelection component snapshot
         </div>
       </div>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r19:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":r1c:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":r1f:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":r1i:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":r1l:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":r1o:"
+    />
   </body>,
   "container": <div>
     <div
@@ -1559,6 +1661,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="flex-grow-0"
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -1605,6 +1708,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="flex-grow-0"
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -1651,6 +1755,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="flex-grow-0"
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -1697,6 +1802,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="flex-grow-0"
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -1743,6 +1849,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="flex-grow-0"
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -1775,6 +1882,7 @@ exports[`AvatarSelection component snapshot
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="flex-grow-0"
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -1875,9 +1983,7 @@ exports[`AvatarSelection component snapshot
 {
   "asFragment": [Function],
   "baseElement": <body>
-    <div
-      data-floating-ui-inert=""
-    >
+    <div>
       <div
         class="SelectionAvatarGroup"
         data-test="DesignSystem-AvatarSelection"
@@ -1902,6 +2008,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="flex-grow-0"
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -1948,6 +2055,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="flex-grow-0"
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -1994,6 +2102,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="flex-grow-0"
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -2040,6 +2149,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="flex-grow-0"
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -2086,6 +2196,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="flex-grow-0"
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -2116,15 +2227,16 @@ exports[`AvatarSelection component snapshot
           class="flex-grow-0"
         >
           <div
-            aria-controls=":ra:"
+            aria-controls=":rf:"
             aria-expanded="true"
             aria-haspopup="dialog"
+            class="flex-grow-0"
             data-state="open"
             triggerclass="flex-grow-0"
           >
             <div
               aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
-              aria-expanded="false"
+              aria-expanded="true"
               aria-haspopup="listbox"
               class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
               data-test="DesignSystem-AvatarSelection--TriggerAvatar"
@@ -2156,54 +2268,43 @@ exports[`AvatarSelection component snapshot
               </span>
             </div>
           </div>
-          <span
-            aria-hidden="true"
-            style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: fixed; white-space: nowrap; width: 1px; top: 0px; left: 0px;"
-            tabindex="-1"
-          />
         </div>
-        <span
-          data-floating-ui-focus-guard=""
-          data-type="outside"
-          role="button"
-          style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: fixed; white-space: nowrap; width: 1px; top: 0px; left: 0px;"
-          tabindex="0"
-        />
-        <span
-          aria-owns=":rc:"
-          style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: fixed; white-space: nowrap; width: 1px; top: 0px; left: 0px;"
-        />
-        <span
-          data-floating-ui-focus-guard=""
-          data-type="outside"
-          role="button"
-          style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: fixed; white-space: nowrap; width: 1px; top: 0px; left: 0px;"
-          tabindex="0"
-        />
       </div>
     </div>
     <div
       data-floating-ui-portal=""
-      id=":rc:"
+      id=":r2:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":r5:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":r8:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":rb:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":re:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":rh:"
     >
-      <span
-        data-floating-ui-focus-guard=""
-        data-floating-ui-inert=""
-        data-type="inside"
-        role="button"
-        style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: fixed; white-space: nowrap; width: 1px; top: 0px; left: 0px;"
-        tabindex="0"
-      />
       <div
         class="Popover"
         data-floating-ui-focusable=""
         data-layer="true"
-        data-opened="false"
+        data-opened="true"
         data-test="DesignSystem-Popover"
-        id=":ra:"
+        id=":rf:"
         role="dialog"
-        style="position: absolute; left: 0px; top: 0px; visibility: visible; transform: translate(0px, 0px);"
-        tabindex="0"
+        style="position: absolute; left: 0px; top: 0px; visibility: hidden; transform: translate(0px, 0px);"
+        tabindex="-1"
       >
         <div
           style="opacity: 0;"
@@ -2215,14 +2316,6 @@ exports[`AvatarSelection component snapshot
           </div>
         </div>
       </div>
-      <span
-        data-floating-ui-focus-guard=""
-        data-floating-ui-inert=""
-        data-type="inside"
-        role="button"
-        style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: fixed; white-space: nowrap; width: 1px; top: 0px; left: 0px;"
-        tabindex="0"
-      />
     </div>
     <div>
       <div
@@ -2260,6 +2353,7 @@ exports[`AvatarSelection component snapshot
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="flex-grow-0"
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -2300,6 +2394,10 @@ exports[`AvatarSelection component snapshot
         </div>
       </div>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":rk:"
+    />
     <div>
       <div
         class="SelectionAvatarGroup"
@@ -2325,6 +2423,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="flex-grow-0"
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -2371,6 +2470,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="flex-grow-0"
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -2417,6 +2517,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="flex-grow-0"
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -2463,6 +2564,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="flex-grow-0"
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -2509,6 +2611,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="flex-grow-0"
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -2541,6 +2644,7 @@ exports[`AvatarSelection component snapshot
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="flex-grow-0"
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -2581,6 +2685,30 @@ exports[`AvatarSelection component snapshot
         </div>
       </div>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":rn:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":rq:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":rt:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":r10:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":r13:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":r16:"
+    />
   </body>,
   "container": <div>
     <div
@@ -2607,6 +2735,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="flex-grow-0"
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -2653,6 +2782,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="flex-grow-0"
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -2699,6 +2829,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="flex-grow-0"
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -2745,6 +2876,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="flex-grow-0"
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -2791,6 +2923,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="flex-grow-0"
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -2823,6 +2956,7 @@ exports[`AvatarSelection component snapshot
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="flex-grow-0"
           data-state="closed"
           triggerclass="flex-grow-0"
         >

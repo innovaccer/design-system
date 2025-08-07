@@ -14,6 +14,10 @@
   width: 100% !important;
 }
 
+.w-fit-content {
+  width: fit-content !important;
+}
+
 .w-auto {
   width: auto !important;
 }

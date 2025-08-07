@@ -223,7 +223,7 @@ function Test() {
       lastName: 'Doe',
     },
     {
-      firstName: 'Steven',
+      firstName: 'Steven John',
       lastName: 'Packton',
     },
     {
@@ -241,7 +241,7 @@ function Test() {
       image: <Avatar.Image src="https://design.innovaccer.com/images/avatar2.jpeg" />,
     },
     {
-      firstName: 'Monica',
+      firstName: 'Monica Johnny lever',
       lastName: 'Geller',
     },
     {
@@ -1140,8 +1140,8 @@ function Test() {
 
           {/* Card */}
           <div className="mb-4">
-            <div className="w-50">
-              <Card>
+            <div>
+              <Card className="w-50 vh-25">
                 <CardHeader>
                   <Text weight="strong" size="large">
                     Card Heading

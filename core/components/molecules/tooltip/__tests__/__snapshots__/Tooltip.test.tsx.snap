@@ -5,11 +5,15 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
-    <div>
+    <div
+      class="w-fit-content"
+    >
       <div
         aria-expanded="false"
         aria-haspopup="dialog"
+        class="w-fit-content"
         data-state="closed"
+        triggerclass="w-fit-content"
       >
         <button
           class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -25,6 +29,10 @@ exports[`Tooltip component
       </div>
     </div>
   </div>
+  <div
+    data-floating-ui-portal=""
+    id=":rb:"
+  />
 </body>
 `;
 
@@ -33,11 +41,15 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
-    <div>
+    <div
+      class="w-fit-content"
+    >
       <div
         aria-expanded="false"
         aria-haspopup="dialog"
+        class="w-fit-content"
         data-state="closed"
+        triggerclass="w-fit-content"
       >
         <button
           class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -53,6 +65,10 @@ exports[`Tooltip component
       </div>
     </div>
   </div>
+  <div
+    data-floating-ui-portal=""
+    id=":rh:"
+  />
 </body>
 `;
 
@@ -61,11 +77,15 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
-    <div>
+    <div
+      class="w-fit-content"
+    >
       <div
         aria-expanded="false"
         aria-haspopup="dialog"
+        class="w-fit-content"
         data-state="closed"
+        triggerclass="w-fit-content"
       >
         <button
           class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -81,6 +101,10 @@ exports[`Tooltip component
       </div>
     </div>
   </div>
+  <div
+    data-floating-ui-portal=""
+    id=":re:"
+  />
 </body>
 `;
 
@@ -89,11 +113,15 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
-    <div>
+    <div
+      class="w-fit-content"
+    >
       <div
         aria-expanded="false"
         aria-haspopup="dialog"
+        class="w-fit-content"
         data-state="closed"
+        triggerclass="w-fit-content"
       >
         <button
           class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -109,6 +137,10 @@ exports[`Tooltip component
       </div>
     </div>
   </div>
+  <div
+    data-floating-ui-portal=""
+    id=":rk:"
+  />
 </body>
 `;
 
@@ -117,11 +149,15 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
-    <div>
+    <div
+      class="w-fit-content"
+    >
       <div
         aria-expanded="false"
         aria-haspopup="dialog"
+        class="w-fit-content"
         data-state="closed"
+        triggerclass="w-fit-content"
       >
         <button
           class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -137,6 +173,10 @@ exports[`Tooltip component
       </div>
     </div>
   </div>
+  <div
+    data-floating-ui-portal=""
+    id=":rn:"
+  />
 </body>
 `;
 
@@ -145,11 +185,15 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
-    <div>
+    <div
+      class="w-fit-content"
+    >
       <div
         aria-expanded="false"
         aria-haspopup="dialog"
+        class="w-fit-content"
         data-state="closed"
+        triggerclass="w-fit-content"
       >
         <button
           class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -165,6 +209,10 @@ exports[`Tooltip component
       </div>
     </div>
   </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r2:"
+  />
 </body>
 `;
 
@@ -173,11 +221,15 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
-    <div>
+    <div
+      class="w-fit-content"
+    >
       <div
         aria-expanded="false"
         aria-haspopup="dialog"
+        class="w-fit-content"
         data-state="closed"
+        triggerclass="w-fit-content"
       >
         <button
           class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -193,6 +245,10 @@ exports[`Tooltip component
       </div>
     </div>
   </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r8:"
+  />
 </body>
 `;
 
@@ -401,11 +457,15 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
-    <div>
+    <div
+      class="w-fit-content"
+    >
       <div
         aria-expanded="false"
         aria-haspopup="dialog"
+        class="w-fit-content"
         data-state="closed"
+        triggerclass="w-fit-content"
       >
         <button
           class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -421,6 +481,10 @@ exports[`Tooltip component
       </div>
     </div>
   </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r5:"
+  />
 </body>
 `;
 
