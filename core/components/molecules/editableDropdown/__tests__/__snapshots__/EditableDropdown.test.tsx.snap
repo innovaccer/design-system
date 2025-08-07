@@ -25,6 +25,7 @@ exports[`EditableDropdown component
             <div
               aria-expanded="false"
               aria-haspopup="dialog"
+              class="w-100"
               data-state="closed"
               triggerclass="w-100"
             >

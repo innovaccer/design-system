@@ -44,48 +44,54 @@ describe('Combobox component focusListItem utility test', () => {
 
 describe('Combobox component focusListItem utility test', () => {
   let setOpenPopover: jest.Mock;
-  let setHighlightFirstItem: jest.Mock;
-  let setHighlightLastItem: jest.Mock;
+  let listRef: any;
+  let setFocusedOption: jest.Mock;
 
   beforeEach(() => {
     setOpenPopover = jest.fn();
-    setHighlightFirstItem = jest.fn();
-    setHighlightLastItem = jest.fn();
+    setFocusedOption = jest.fn();
+    listRef = { current: document.createElement('div') };
   });
 
-  it('should set popover open and highlight last item when "ArrowUp" is pressed', () => {
+  it('should set popover open and focus last item when "ArrowUp" is pressed', () => {
     const event: any = new KeyboardEvent('keydown', { key: 'ArrowUp' });
-    handleKeyDown(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem);
+    jest.useFakeTimers();
+
+    handleKeyDown(event, setOpenPopover, listRef, setFocusedOption);
 
     expect(setOpenPopover).toHaveBeenCalledWith(true);
-    expect(setHighlightLastItem).toHaveBeenCalledWith(true);
-    expect(setHighlightFirstItem).not.toHaveBeenCalled();
+    jest.runAllTimers();
+    expect(setFocusedOption).toHaveBeenCalled();
+
+    jest.useRealTimers();
   });
 
-  it('should set popover open and highlight first item when "ArrowDown" is pressed', () => {
+  it('should set popover open and focus first item when "ArrowDown" is pressed', () => {
     const event: any = new KeyboardEvent('keydown', { key: 'ArrowDown' });
-    handleKeyDown(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem);
+    jest.useFakeTimers();
+
+    handleKeyDown(event, setOpenPopover, listRef, setFocusedOption);
 
     expect(setOpenPopover).toHaveBeenCalledWith(true);
-    expect(setHighlightFirstItem).toHaveBeenCalledWith(true);
-    expect(setHighlightLastItem).not.toHaveBeenCalled();
+    jest.runAllTimers();
+    expect(setFocusedOption).toHaveBeenCalled();
+
+    jest.useRealTimers();
   });
 
   it('should close popover when "Escape" is pressed', () => {
     const event: any = new KeyboardEvent('keydown', { key: 'Escape' });
-    handleKeyDown(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem);
+    handleKeyDown(event, setOpenPopover, listRef, setFocusedOption);
 
     expect(setOpenPopover).toHaveBeenCalledWith(false);
-    expect(setHighlightFirstItem).not.toHaveBeenCalled();
-    expect(setHighlightLastItem).not.toHaveBeenCalled();
+    expect(setFocusedOption).not.toHaveBeenCalled();
   });
 
   it('should not call any setters when a irrelevant key is pressed', () => {
     const event: any = new KeyboardEvent('keydown', { key: 'Enter' });
-    handleKeyDown(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem);
+    handleKeyDown(event, setOpenPopover, listRef, setFocusedOption);
 
     expect(setOpenPopover).not.toHaveBeenCalled();
-    expect(setHighlightFirstItem).not.toHaveBeenCalled();
-    expect(setHighlightLastItem).not.toHaveBeenCalled();
+    expect(setFocusedOption).not.toHaveBeenCalled();
   });
 });

@@ -775,6 +775,7 @@ exports[`TS renders children 1`] = `
       <div
         aria-expanded="false"
         aria-haspopup="dialog"
+        class="w-100"
         data-state="closed"
         triggerclass="w-100"
       >
@@ -827,6 +828,7 @@ exports[`TS renders children 1`] = `
             <div
               aria-expanded="false"
               aria-haspopup="dialog"
+              class="w-100"
               data-state="closed"
               triggerclass="w-100"
             >
@@ -1564,11 +1566,15 @@ exports[`TS renders children 1`] = `
       </div>
     </div>
   </div>
-  <div>
+  <div
+    class="w-fit-content"
+  >
     <div
       aria-expanded="false"
       aria-haspopup="dialog"
+      class="w-fit-content"
       data-state="closed"
+      triggerclass="w-fit-content"
     >
       <span
         class="Text Text--default Text--regular"

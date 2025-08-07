@@ -15,7 +15,8 @@ import {
   useMergeRefs,
   Placement,
   FloatingPortal,
-  FloatingFocusManager,
+  // FloatingFocusManager,
+  useClientPoint,
   safePolygon,
 } from '@floating-ui/react';
 import { createStyleFromClass } from './utils';
@@ -39,21 +40,11 @@ export interface PopperWrapperProps {
   };
   portalRoot?: HTMLElement | null | React.RefObject<HTMLElement | null>;
   appendToBody?: boolean;
-  /**
-   * When true, uses the trigger element as-is without cloning.
-   * Useful for components that manage their own refs internally.
-   */
-  // useTriggerAsIs?: boolean;
-  /**
-   * External reference element to use instead of the trigger element.
-   * Useful when the actual reference element is inside the trigger component.
-   */
-  referenceElement?:
-    | React.RefObject<HTMLElement | HTMLInputElement | HTMLDivElement | null>
-    | HTMLElement
-    | HTMLInputElement
-    | HTMLDivElement
-    | null;
+  disabled?: boolean;
+  triggerCoordinates?: {
+    x: number;
+    y: number;
+  };
 }
 
 export function usePopover({
@@ -68,6 +59,7 @@ export function usePopover({
   triggerMethod = 'click',
   openDelay = 0,
   offset: offsetNumber,
+  disabled = false,
   hideOnReferenceEscape,
   animationClass = {
     open: '',
@@ -75,12 +67,11 @@ export function usePopover({
   },
   portalRoot,
   appendToBody,
-  // useTriggerAsIs,
-  referenceElement,
+  triggerCoordinates,
 }: PopperWrapperProps = {}) {
   const [uncontrolledOpen, setUncontrolledOpen] = React.useState(initialOpen);
 
-  const open = controlledOpen ?? uncontrolledOpen;
+  const open = (controlledOpen && !disabled) ?? uncontrolledOpen;
   const setOpen = setControlledOpen ?? setUncontrolledOpen;
 
   const data = useFloating({
@@ -100,15 +91,12 @@ export function usePopover({
         strategy: hideOnReferenceEscape ? 'escaped' : 'referenceHidden',
       }),
     ],
-    // elements: referenceElement ? {
-    //   reference: 'current' in referenceElement ? referenceElement.current : referenceElement
-    // } : undefined,
   });
 
   const context = data.context;
 
   const click = useClick(context, {
-    enabled: controlledOpen == null && triggerMethod === 'click',
+    // enabled: controlledOpen == null && triggerMethod === 'click',
   });
   const dismiss = useDismiss(context, {
     escapeKey: closeOnEscape,
@@ -125,6 +113,12 @@ export function usePopover({
     },
   });
 
+  const clientPoint = useClientPoint(context, {
+    x: triggerCoordinates?.x,
+    y: triggerCoordinates?.y,
+    enabled: !!triggerCoordinates,
+  });
+
   // Convert CSS class names to style objects for useTransitionStyles
   const openStyle = React.useMemo(() => createStyleFromClass(animationClass.open), [animationClass.open]);
   const closeStyle = React.useMemo(() => createStyleFromClass(animationClass.close), [animationClass.close]);
@@ -134,7 +128,7 @@ export function usePopover({
     close: closeStyle,
   });
 
-  const interactions = useInteractions([click, dismiss, role, hover]);
+  const interactions = useInteractions([click, dismiss, role, hover, clientPoint]);
 
   return React.useMemo(
     () => ({
@@ -148,23 +142,8 @@ export function usePopover({
       animationClass,
       portalRoot,
       appendToBody,
-      // useTriggerAsIs,
-      referenceElement,
     }),
-    [
-      open,
-      setOpen,
-      interactions,
-      data,
-      modal,
-      isMounted,
-      styles,
-      animationClass,
-      portalRoot,
-      appendToBody,
-      // useTriggerAsIs,
-      referenceElement,
-    ]
+    [open, setOpen, interactions, data, modal, isMounted, styles, animationClass, portalRoot, appendToBody]
   );
 }
 
@@ -192,7 +171,6 @@ export function PopperWrapper({
   // This can accept any props as options, e.g. `placement`,
   // or other positioning options.
   const popover = usePopover({ modal, ...restOptions });
-  console.log('popoverpopover', popover);
   return <PopoverContext.Provider value={popover}>{children}</PopoverContext.Provider>;
 }
 
@@ -225,27 +203,8 @@ export const PopoverTrigger = React.forwardRef<HTMLElement, React.HTMLProps<HTML
       return <></>;
     };
 
-    // If useTriggerAsIs is true, clone the element but preserve its existing ref
-    // if (context.useTriggerAsIs && React.isValidElement(children)) {
-    //   // For components that manage their own refs internally (like Combobox),
-    //   // we need to set the floating-ui ref on the actual input element
-    //   // The context ref (like inputTriggerRef) should be used by floating-ui
-    //   return React.cloneElement(
-    //     children,
-    //     context.getReferenceProps({
-    //       ...props,
-    //       ...(children.props as object),
-    //       'data-state': context.open ? 'open' : 'closed',
-    //     } as any)
-    //   );
-    // }
-
     if (asChild) {
-      return (
-        <div className={props.triggerClass} style={{ width: 'fit-content' }}>
-          {getClonedElement()}
-        </div>
-      );
+      return <div className={props.triggerClass}>{getClonedElement()}</div>;
     }
 
     return (
@@ -269,31 +228,34 @@ export const PopoverContent = React.forwardRef<HTMLDivElement, React.HTMLProps<H
   const { context: floatingContext, ...context } = usePopoverContext();
   const ref = useMergeRefs([context.refs.setFloating, propRef]);
 
-  if (!floatingContext.open) return null;
+  // if (!floatingContext.open) return null;
 
   const { isMounted, styles, portalRoot, appendToBody } = context;
 
   const boundaryElement = appendToBody && document ? document.body : portalRoot;
 
+  const isValidPosition = context.x !== 0 && context.y !== 0;
+  const showVisibility =
+    context.middlewareData.hide?.referenceHidden || context.middlewareData.hide?.escaped || !isValidPosition;
+
   return (
     <FloatingPortal root={boundaryElement}>
       {isMounted && (
-        <FloatingFocusManager context={floatingContext} modal={context.modal}>
-          <div
-            ref={ref}
-            style={{
-              ...context.floatingStyles,
-              ...style,
-              visibility:
-                context.middlewareData.hide?.referenceHidden || context.middlewareData.hide?.escaped
-                  ? 'hidden'
-                  : 'visible',
-            }}
-            {...context.getFloatingProps(props)}
-          >
-            <div style={styles}>{props.children}</div>
-          </div>
-        </FloatingFocusManager>
+        // <FloatingFocusManager context={floatingContext}
+        // // modal={context.modal}
+        // initialFocus={-1}>
+        <div
+          ref={ref}
+          style={{
+            ...context.floatingStyles,
+            ...style,
+            visibility: showVisibility ? 'hidden' : 'visible',
+          }}
+          {...context.getFloatingProps(props)}
+        >
+          <div style={styles}>{props.children}</div>
+        </div>
+        // </FloatingFocusManager>
       )}
     </FloatingPortal>
   );
