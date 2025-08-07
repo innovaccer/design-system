@@ -47,11 +47,10 @@ const customCode = `() => {
   return(
     <div className='mb-11'>
       <Popover
-        boundaryElement={portalElement}
         position="bottom-start"
         appendToBody={false}
         on="click"
-        trigger={<Button id="my-portal-container"  appearance="basic">Open Popover</Button>}
+        trigger={<Button appearance="basic">Open Popover</Button>}
       >
         <div className='p-5'>
           <Text>

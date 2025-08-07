@@ -219,6 +219,7 @@ exports[`Modal component
             data-test="DesignSystem-Column"
           >
 <<<<<<< HEAD
+<<<<<<< HEAD
             <div
               class="w-fit-content"
             >
@@ -230,11 +231,21 @@ exports[`Modal component
                 triggerclass="w-fit-content"
 =======
             <div>
+=======
+            <div
+              class="w-fit-content"
+            >
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="w-fit-content"
                 data-state="closed"
+<<<<<<< HEAD
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+                triggerclass="w-fit-content"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -405,6 +416,7 @@ exports[`Modal component
               data-test="DesignSystem-Column"
             >
 <<<<<<< HEAD
+<<<<<<< HEAD
               <div
                 class="w-fit-content"
               >
@@ -416,11 +428,21 @@ exports[`Modal component
                   triggerclass="w-fit-content"
 =======
               <div>
+=======
+              <div
+                class="w-fit-content"
+              >
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="w-fit-content"
                   data-state="closed"
+<<<<<<< HEAD
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+                  triggerclass="w-fit-content"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 >
                   <button
                     class="Button Button--regular Button--regularSquare Button--transparent"
@@ -604,6 +626,7 @@ exports[`Modal component
             data-test="DesignSystem-Column"
           >
 <<<<<<< HEAD
+<<<<<<< HEAD
             <div
               class="w-fit-content"
             >
@@ -615,11 +638,21 @@ exports[`Modal component
                 triggerclass="w-fit-content"
 =======
             <div>
+=======
+            <div
+              class="w-fit-content"
+            >
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="w-fit-content"
                 data-state="closed"
+<<<<<<< HEAD
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+                triggerclass="w-fit-content"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -782,6 +815,7 @@ exports[`Modal component
               data-test="DesignSystem-Column"
             >
 <<<<<<< HEAD
+<<<<<<< HEAD
               <div
                 class="w-fit-content"
               >
@@ -793,11 +827,21 @@ exports[`Modal component
                   triggerclass="w-fit-content"
 =======
               <div>
+=======
+              <div
+                class="w-fit-content"
+              >
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="w-fit-content"
                   data-state="closed"
+<<<<<<< HEAD
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+                  triggerclass="w-fit-content"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 >
                   <button
                     class="Button Button--regular Button--regularSquare Button--transparent"
@@ -1123,6 +1167,7 @@ exports[`Modal component
             data-test="DesignSystem-Column"
           >
 <<<<<<< HEAD
+<<<<<<< HEAD
             <div
               class="w-fit-content"
             >
@@ -1134,11 +1179,21 @@ exports[`Modal component
                 triggerclass="w-fit-content"
 =======
             <div>
+=======
+            <div
+              class="w-fit-content"
+            >
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="w-fit-content"
                 data-state="closed"
+<<<<<<< HEAD
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+                triggerclass="w-fit-content"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -1309,6 +1364,7 @@ exports[`Modal component
               data-test="DesignSystem-Column"
             >
 <<<<<<< HEAD
+<<<<<<< HEAD
               <div
                 class="w-fit-content"
               >
@@ -1320,11 +1376,21 @@ exports[`Modal component
                   triggerclass="w-fit-content"
 =======
               <div>
+=======
+              <div
+                class="w-fit-content"
+              >
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="w-fit-content"
                   data-state="closed"
+<<<<<<< HEAD
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+                  triggerclass="w-fit-content"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 >
                   <button
                     class="Button Button--regular Button--regularSquare Button--transparent"
@@ -1508,6 +1574,7 @@ exports[`Modal component
             data-test="DesignSystem-Column"
           >
 <<<<<<< HEAD
+<<<<<<< HEAD
             <div
               class="w-fit-content"
             >
@@ -1519,11 +1586,21 @@ exports[`Modal component
                 triggerclass="w-fit-content"
 =======
             <div>
+=======
+            <div
+              class="w-fit-content"
+            >
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="w-fit-content"
                 data-state="closed"
+<<<<<<< HEAD
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+                triggerclass="w-fit-content"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -1686,6 +1763,7 @@ exports[`Modal component
               data-test="DesignSystem-Column"
             >
 <<<<<<< HEAD
+<<<<<<< HEAD
               <div
                 class="w-fit-content"
               >
@@ -1697,11 +1775,21 @@ exports[`Modal component
                   triggerclass="w-fit-content"
 =======
               <div>
+=======
+              <div
+                class="w-fit-content"
+              >
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="w-fit-content"
                   data-state="closed"
+<<<<<<< HEAD
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+                  triggerclass="w-fit-content"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 >
                   <button
                     class="Button Button--regular Button--regularSquare Button--transparent"
@@ -2027,6 +2115,7 @@ exports[`Modal component
             data-test="DesignSystem-Column"
           >
 <<<<<<< HEAD
+<<<<<<< HEAD
             <div
               class="w-fit-content"
             >
@@ -2038,11 +2127,21 @@ exports[`Modal component
                 triggerclass="w-fit-content"
 =======
             <div>
+=======
+            <div
+              class="w-fit-content"
+            >
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="w-fit-content"
                 data-state="closed"
+<<<<<<< HEAD
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+                triggerclass="w-fit-content"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -2213,6 +2312,7 @@ exports[`Modal component
               data-test="DesignSystem-Column"
             >
 <<<<<<< HEAD
+<<<<<<< HEAD
               <div
                 class="w-fit-content"
               >
@@ -2224,11 +2324,21 @@ exports[`Modal component
                   triggerclass="w-fit-content"
 =======
               <div>
+=======
+              <div
+                class="w-fit-content"
+              >
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="w-fit-content"
                   data-state="closed"
+<<<<<<< HEAD
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+                  triggerclass="w-fit-content"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 >
                   <button
                     class="Button Button--regular Button--regularSquare Button--transparent"
@@ -2412,6 +2522,7 @@ exports[`Modal component
             data-test="DesignSystem-Column"
           >
 <<<<<<< HEAD
+<<<<<<< HEAD
             <div
               class="w-fit-content"
             >
@@ -2423,11 +2534,21 @@ exports[`Modal component
                 triggerclass="w-fit-content"
 =======
             <div>
+=======
+            <div
+              class="w-fit-content"
+            >
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="w-fit-content"
                 data-state="closed"
+<<<<<<< HEAD
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+                triggerclass="w-fit-content"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -2590,6 +2711,7 @@ exports[`Modal component
               data-test="DesignSystem-Column"
             >
 <<<<<<< HEAD
+<<<<<<< HEAD
               <div
                 class="w-fit-content"
               >
@@ -2601,11 +2723,21 @@ exports[`Modal component
                   triggerclass="w-fit-content"
 =======
               <div>
+=======
+              <div
+                class="w-fit-content"
+              >
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
+                  class="w-fit-content"
                   data-state="closed"
+<<<<<<< HEAD
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+                  triggerclass="w-fit-content"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 >
                   <button
                     class="Button Button--regular Button--regularSquare Button--transparent"

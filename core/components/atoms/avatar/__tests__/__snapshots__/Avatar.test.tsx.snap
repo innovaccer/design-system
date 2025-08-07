@@ -17,9 +17,13 @@ exports[`Avatar component
             aria-expanded="false"
             aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
             class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+            class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -46,12 +50,18 @@ exports[`Avatar component
       </span>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
     <div
       data-floating-ui-portal=""
       id=":rt:"
     />
+<<<<<<< HEAD
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
   </body>,
   "container": <div>
     <span
@@ -64,9 +74,13 @@ exports[`Avatar component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -163,9 +177,13 @@ exports[`Avatar component
             aria-expanded="false"
             aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
             class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+            class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -192,12 +210,18 @@ exports[`Avatar component
       </span>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
     <div
       data-floating-ui-portal=""
       id=":rq:"
     />
+<<<<<<< HEAD
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
   </body>,
   "container": <div>
     <span
@@ -210,9 +234,13 @@ exports[`Avatar component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -309,9 +337,13 @@ exports[`Avatar component
             aria-expanded="false"
             aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
             class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+            class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -338,12 +370,18 @@ exports[`Avatar component
       </span>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
     <div
       data-floating-ui-portal=""
       id=":r13:"
     />
+<<<<<<< HEAD
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
   </body>,
   "container": <div>
     <span
@@ -356,9 +394,13 @@ exports[`Avatar component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -455,9 +497,13 @@ exports[`Avatar component
             aria-expanded="false"
             aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
             class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+            class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -484,12 +530,18 @@ exports[`Avatar component
       </span>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
     <div
       data-floating-ui-portal=""
       id=":r10:"
     />
+<<<<<<< HEAD
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
   </body>,
   "container": <div>
     <span
@@ -502,9 +554,13 @@ exports[`Avatar component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -601,9 +657,13 @@ exports[`Avatar component
             aria-expanded="false"
             aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
             class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+            class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -630,12 +690,18 @@ exports[`Avatar component
       </span>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
     <div
       data-floating-ui-portal=""
       id=":r19:"
     />
+<<<<<<< HEAD
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
   </body>,
   "container": <div>
     <span
@@ -648,9 +714,13 @@ exports[`Avatar component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -747,9 +817,13 @@ exports[`Avatar component
             aria-expanded="false"
             aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
             class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+            class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -776,12 +850,18 @@ exports[`Avatar component
       </span>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
     <div
       data-floating-ui-portal=""
       id=":r16:"
     />
+<<<<<<< HEAD
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
   </body>,
   "container": <div>
     <span
@@ -794,9 +874,13 @@ exports[`Avatar component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -893,9 +977,13 @@ exports[`Avatar component
             aria-expanded="false"
             aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
             class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+            class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -922,12 +1010,18 @@ exports[`Avatar component
       </span>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
     <div
       data-floating-ui-portal=""
       id=":r1f:"
     />
+<<<<<<< HEAD
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
   </body>,
   "container": <div>
     <span
@@ -940,9 +1034,13 @@ exports[`Avatar component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -1039,9 +1137,13 @@ exports[`Avatar component
             aria-expanded="false"
             aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
             class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+            class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -1068,12 +1170,18 @@ exports[`Avatar component
       </span>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
     <div
       data-floating-ui-portal=""
       id=":r1c:"
     />
+<<<<<<< HEAD
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
   </body>,
   "container": <div>
     <span
@@ -1086,9 +1194,13 @@ exports[`Avatar component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -1185,9 +1297,13 @@ exports[`Avatar component
             aria-expanded="false"
             aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
             class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+            class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -1214,12 +1330,18 @@ exports[`Avatar component
       </span>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
     <div
       data-floating-ui-portal=""
       id=":rb:"
     />
+<<<<<<< HEAD
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
   </body>,
   "container": <div>
     <span
@@ -1232,9 +1354,13 @@ exports[`Avatar component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -1331,9 +1457,13 @@ exports[`Avatar component
             aria-expanded="false"
             aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
             class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+            class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -1360,12 +1490,18 @@ exports[`Avatar component
       </span>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
     <div
       data-floating-ui-portal=""
       id=":r8:"
     />
+<<<<<<< HEAD
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
   </body>,
   "container": <div>
     <span
@@ -1378,9 +1514,13 @@ exports[`Avatar component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -1477,9 +1617,13 @@ exports[`Avatar component
             aria-expanded="false"
             aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
             class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+            class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -1506,12 +1650,18 @@ exports[`Avatar component
       </span>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
     <div
       data-floating-ui-portal=""
       id=":r5:"
     />
+<<<<<<< HEAD
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
   </body>,
   "container": <div>
     <span
@@ -1524,9 +1674,13 @@ exports[`Avatar component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -1623,9 +1777,13 @@ exports[`Avatar component
             aria-expanded="false"
             aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
             class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+            class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -1652,12 +1810,18 @@ exports[`Avatar component
       </span>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
     <div
       data-floating-ui-portal=""
       id=":r2:"
     />
+<<<<<<< HEAD
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
   </body>,
   "container": <div>
     <span
@@ -1670,9 +1834,13 @@ exports[`Avatar component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -1769,9 +1937,13 @@ exports[`Avatar component
             aria-expanded="false"
             aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
             class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+            class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -1798,12 +1970,18 @@ exports[`Avatar component
       </span>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
     <div
       data-floating-ui-portal=""
       id=":rn:"
     />
+<<<<<<< HEAD
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
   </body>,
   "container": <div>
     <span
@@ -1816,9 +1994,13 @@ exports[`Avatar component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -1915,9 +2097,13 @@ exports[`Avatar component
             aria-expanded="false"
             aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
             class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+            class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -1944,12 +2130,18 @@ exports[`Avatar component
       </span>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
     <div
       data-floating-ui-portal=""
       id=":rk:"
     />
+<<<<<<< HEAD
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
   </body>,
   "container": <div>
     <span
@@ -1962,9 +2154,13 @@ exports[`Avatar component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -2061,9 +2257,13 @@ exports[`Avatar component
             aria-expanded="false"
             aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
             class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+            class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -2090,12 +2290,18 @@ exports[`Avatar component
       </span>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
     <div
       data-floating-ui-portal=""
       id=":rh:"
     />
+<<<<<<< HEAD
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
   </body>,
   "container": <div>
     <span
@@ -2108,9 +2314,13 @@ exports[`Avatar component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -2207,9 +2417,13 @@ exports[`Avatar component
             aria-expanded="false"
             aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
             class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+            class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -2236,12 +2450,18 @@ exports[`Avatar component
       </span>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
     <div
       data-floating-ui-portal=""
       id=":re:"
     />
+<<<<<<< HEAD
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
   </body>,
   "container": <div>
     <span
@@ -2254,9 +2474,13 @@ exports[`Avatar component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -2353,9 +2577,13 @@ exports[`Avatar component
             aria-expanded="false"
             aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
             class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+            class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -2382,12 +2610,18 @@ exports[`Avatar component
       </span>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
     <div
       data-floating-ui-portal=""
       id=":r1o:"
     />
+<<<<<<< HEAD
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
   </body>,
   "container": <div>
     <span
@@ -2400,9 +2634,13 @@ exports[`Avatar component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -2499,9 +2737,13 @@ exports[`Avatar component
             aria-expanded="false"
             aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
             class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+            class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -2528,12 +2770,18 @@ exports[`Avatar component
       </span>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
     <div
       data-floating-ui-portal=""
       id=":r1r:"
     />
+<<<<<<< HEAD
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
   </body>,
   "container": <div>
     <span
@@ -2546,9 +2794,13 @@ exports[`Avatar component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -2645,9 +2897,13 @@ exports[`Avatar component
             aria-expanded="false"
             aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
             class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+            class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -2674,12 +2930,18 @@ exports[`Avatar component
       </span>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
     <div
       data-floating-ui-portal=""
       id=":r1i:"
     />
+<<<<<<< HEAD
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
   </body>,
   "container": <div>
     <span
@@ -2692,9 +2954,13 @@ exports[`Avatar component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -2791,9 +3057,13 @@ exports[`Avatar component
             aria-expanded="false"
             aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
             class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+            class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -2820,12 +3090,18 @@ exports[`Avatar component
       </span>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
     <div
       data-floating-ui-portal=""
       id=":r1l:"
     />
+<<<<<<< HEAD
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
   </body>,
   "container": <div>
     <span
@@ -2838,9 +3114,13 @@ exports[`Avatar component
           aria-expanded="false"
           aria-haspopup="dialog"
 <<<<<<< HEAD
+<<<<<<< HEAD
           class="flex-grow-0"
 =======
 >>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="flex-grow-0"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="flex-grow-0"
         >
