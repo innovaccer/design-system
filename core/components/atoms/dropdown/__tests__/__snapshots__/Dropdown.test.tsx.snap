@@ -1,0 +1,1685 @@
+<<<<<<< HEAD
+=======
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown component 
+  align: "left", options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], onChange: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <div
+        class="w-100"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="w-100"
+        >
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
+          >
+            <div
+              class="DropdownButton-wrapper"
+            >
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r8:"
+  />
+</body>
+`;
+
+exports[`Dropdown component 
+  align: "right", options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], onChange: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <div
+        class="w-100"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="w-100"
+        >
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
+          >
+            <div
+              class="DropdownButton-wrapper"
+            >
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":rb:"
+  />
+</body>
+`;
+
+exports[`Dropdown component 
+  checkboxes: true, showApplyButton: false, options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], onChange: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <div
+        class="w-100"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="w-100"
+        >
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
+          >
+            <div
+              class="DropdownButton-wrapper"
+            >
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r13:"
+  />
+</body>
+`;
+
+exports[`Dropdown component 
+  checkboxes: true, showApplyButton: true, options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], onChange: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <div
+        class="w-100"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="w-100"
+        >
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
+          >
+            <div
+              class="DropdownButton-wrapper"
+            >
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r10:"
+  />
+</body>
+`;
+
+exports[`Dropdown component 
+  disabled: false, icon: "events", options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], onChange: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <div
+        class="w-100"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="w-100"
+        >
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--icon"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
+          >
+            <div
+              class="DropdownButton-wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon Icon--default d-flex align-items-center mr-4"
+                data-test="DesignSystem-Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                events
+              </i>
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r1o:"
+  />
+</body>
+`;
+
+exports[`Dropdown component 
+  disabled: false, inlineLabel: "Label", options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], onChange: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <div
+        class="w-100"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="w-100"
+        >
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
+          >
+            <div
+              class="DropdownButton-wrapper"
+            >
+              <span
+                class="Text Text--subtle Text--regular mr-4 white-space-nowrap"
+                data-test="DesignSystem-Text"
+              >
+                Label
+              </span>
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r1u:"
+  />
+</body>
+`;
+
+exports[`Dropdown component 
+  disabled: false, options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], onChange: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <div
+        class="w-100"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="w-100"
+        >
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
+          >
+            <div
+              class="DropdownButton-wrapper"
+            >
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":rh:"
+  />
+</body>
+`;
+
+exports[`Dropdown component 
+  disabled: true, icon: "events", options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], onChange: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <div
+        class="w-100"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="w-100"
+        >
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--icon"
+            data-test="DesignSystem-DropdownTrigger"
+            disabled=""
+            tabindex="0"
+            type="button"
+            value=""
+          >
+            <div
+              class="DropdownButton-wrapper"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon Icon--disabled d-flex align-items-center mr-4"
+                data-test="DesignSystem-Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                events
+              </i>
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--disabled"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r1l:"
+  />
+</body>
+`;
+
+exports[`Dropdown component 
+  disabled: true, inlineLabel: "Label", options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], onChange: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <div
+        class="w-100"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="w-100"
+        >
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+            data-test="DesignSystem-DropdownTrigger"
+            disabled=""
+            tabindex="0"
+            type="button"
+            value=""
+          >
+            <div
+              class="DropdownButton-wrapper"
+            >
+              <span
+                class="Text Text--subtle Text--regular mr-4 white-space-nowrap"
+                data-test="DesignSystem-Text"
+              >
+                Label
+              </span>
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--disabled"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r1r:"
+  />
+</body>
+`;
+
+exports[`Dropdown component 
+  disabled: true, options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], onChange: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <div
+        class="w-100"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="w-100"
+        >
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+            data-test="DesignSystem-DropdownTrigger"
+            disabled=""
+            tabindex="0"
+            type="button"
+            value=""
+          >
+            <div
+              class="DropdownButton-wrapper"
+            >
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--disabled"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":re:"
+  />
+</body>
+`;
+
+exports[`Dropdown component 
+  options: [{"label":"Option 1","value":"Option 1","group":"Group"},{"label":"Option 2","value":"Option 2","group":"Group"},{"label":"Option 3","value":"Option 3","group":"Group"},{"label":"Option 4","value":"Option 4","group":"Group"},{"label":"Option 5","value":"Option 5","group":"Group"},{"label":"Option 6","value":"Option 6","group":"Group"},{"label":"Option 7","value":"Option 7","group":"Group"},{"label":"Option 8","value":"Option 8","group":"Group"},{"label":"Option 9","value":"Option 9","group":"Group"},{"label":"Option 10","value":"Option 10","group":"Group"}], onChange: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <div
+        class="w-100"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="w-100"
+        >
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
+          >
+            <div
+              class="DropdownButton-wrapper"
+            >
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r16:"
+  />
+</body>
+`;
+
+exports[`Dropdown component 
+  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo","optionType":"ICON_WITH_META"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo","optionType":"ICON_WITH_META"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo","optionType":"ICON_WITH_META"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo","optionType":"ICON_WITH_META"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo","optionType":"ICON_WITH_META"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo","optionType":"ICON_WITH_META"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo","optionType":"ICON_WITH_META"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo","optionType":"ICON_WITH_META"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo","optionType":"ICON_WITH_META"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo","optionType":"ICON_WITH_META"}], onChange: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <div
+        class="w-100"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="w-100"
+        >
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
+          >
+            <div
+              class="DropdownButton-wrapper"
+            >
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":rt:"
+  />
+</body>
+`;
+
+exports[`Dropdown component 
+  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo","optionType":"WITH_ICON"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo","optionType":"WITH_ICON"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo","optionType":"WITH_ICON"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo","optionType":"WITH_ICON"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo","optionType":"WITH_ICON"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo","optionType":"WITH_ICON"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo","optionType":"WITH_ICON"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo","optionType":"WITH_ICON"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo","optionType":"WITH_ICON"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo","optionType":"WITH_ICON"}], onChange: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <div
+        class="w-100"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="w-100"
+        >
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
+          >
+            <div
+              class="DropdownButton-wrapper"
+            >
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":rn:"
+  />
+</body>
+`;
+
+exports[`Dropdown component 
+  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo","optionType":"WITH_META"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo","optionType":"WITH_META"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo","optionType":"WITH_META"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo","optionType":"WITH_META"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo","optionType":"WITH_META"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo","optionType":"WITH_META"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo","optionType":"WITH_META"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo","optionType":"WITH_META"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo","optionType":"WITH_META"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo","optionType":"WITH_META"}], onChange: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <div
+        class="w-100"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="w-100"
+        >
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
+          >
+            <div
+              class="DropdownButton-wrapper"
+            >
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":rq:"
+  />
+</body>
+`;
+
+exports[`Dropdown component 
+  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], menu: false, onChange: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <div
+        class="w-100"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="w-100"
+        >
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
+          >
+            <div
+              class="DropdownButton-wrapper"
+            >
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r1i:"
+  />
+</body>
+`;
+
+exports[`Dropdown component 
+  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], menu: true, onChange: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <div
+<<<<<<< HEAD
+<<<<<<< HEAD
+        class="w-fit-content"
+=======
+        class=""
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+        class="w-fit-content"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="w-fit-content"
+          data-state="closed"
+          triggerclass="w-fit-content"
+=======
+          data-state="closed"
+          triggerclass=""
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-fit-content"
+          data-state="closed"
+          triggerclass="w-fit-content"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+        >
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--regularSquare"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              more_horiz
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r1f:"
+  />
+</body>
+`;
+
+exports[`Dropdown component 
+  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], onChange: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <div
+        class="w-100"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="w-100"
+        >
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
+          >
+            <div
+              class="DropdownButton-wrapper"
+            >
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":rk:"
+  />
+</body>
+`;
+
+exports[`Dropdown component 
+  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], optionType: "DEFAULT", loading: true, onChange: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <div
+        class="w-100"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="w-100"
+        >
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
+          >
+            <div
+              class="DropdownButton-wrapper"
+            >
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r27:"
+  />
+</body>
+`;
+
+exports[`Dropdown component 
+  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], optionType: "ICON_WITH_META", loading: true, onChange: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <div
+        class="w-100"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="w-100"
+        >
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
+          >
+            <div
+              class="DropdownButton-wrapper"
+            >
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r2g:"
+  />
+</body>
+`;
+
+exports[`Dropdown component 
+  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], optionType: "WITH_ICON", loading: true, onChange: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <div
+        class="w-100"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="w-100"
+        >
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
+          >
+            <div
+              class="DropdownButton-wrapper"
+            >
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r2a:"
+  />
+</body>
+`;
+
+exports[`Dropdown component 
+  options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], optionType: "WITH_META", loading: true, onChange: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <div
+        class="w-100"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="w-100"
+        >
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
+          >
+            <div
+              class="DropdownButton-wrapper"
+            >
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r2d:"
+  />
+</body>
+`;
+
+exports[`Dropdown component 
+  search: true, loading: false, options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], onChange: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <div
+        class="w-100"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="w-100"
+        >
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
+          >
+            <div
+              class="DropdownButton-wrapper"
+            >
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r1c:"
+  />
+</body>
+`;
+
+exports[`Dropdown component 
+  search: true, loading: true, options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], onChange: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <div
+        class="w-100"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="w-100"
+        >
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
+          >
+            <div
+              class="DropdownButton-wrapper"
+            >
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r19:"
+  />
+</body>
+`;
+
+exports[`Dropdown component 
+  triggerSize: "regular", options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], onChange: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <div
+        class="w-100"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="w-100"
+        >
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
+          >
+            <div
+              class="DropdownButton-wrapper"
+            >
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r5:"
+  />
+</body>
+`;
+
+exports[`Dropdown component 
+  triggerSize: "tiny", options: [{"label":"Option 1","value":"Option 1","icon":"events","subInfo":"subInfo"},{"label":"Option 2","value":"Option 2","icon":"events","subInfo":"subInfo"},{"label":"Option 3","value":"Option 3","icon":"events","subInfo":"subInfo"},{"label":"Option 4","value":"Option 4","icon":"events","subInfo":"subInfo"},{"label":"Option 5","value":"Option 5","icon":"events","subInfo":"subInfo"},{"label":"Option 6","value":"Option 6","icon":"events","subInfo":"subInfo"},{"label":"Option 7","value":"Option 7","icon":"events","subInfo":"subInfo"},{"label":"Option 8","value":"Option 8","icon":"events","subInfo":"subInfo"},{"label":"Option 9","value":"Option 9","icon":"events","subInfo":"subInfo"},{"label":"Option 10","value":"Option 10","icon":"events","subInfo":"subInfo"}], onChange: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <div
+        class="w-100"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="w-100"
+        >
+          <button
+            class="Button DropdownButton DropdownButton--tiny DropdownButton--placeholder"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
+          >
+            <div
+              class="DropdownButton-wrapper"
+            >
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r2:"
+  />
+</body>
+`;
+
+exports[`Dropdown component 
+  truncateOptions: false, options: [{"label":"Design System Dropdown","value":"Design System Dropdown"},{"label":"UI Kit Dropdown","value":"UI Kit Dropdown"},{"label":"Innovaccer Analytics","value":"Innovaccer Analytics"}], onChange: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <div
+        class="w-100"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="w-100"
+        >
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
+          >
+            <div
+              class="DropdownButton-wrapper"
+            >
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r24:"
+  />
+</body>
+`;
+
+exports[`Dropdown component 
+  truncateOptions: true, options: [{"label":"Design System Dropdown","value":"Design System Dropdown"},{"label":"UI Kit Dropdown","value":"UI Kit Dropdown"},{"label":"Innovaccer Analytics","value":"Innovaccer Analytics"}], onChange: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <div
+        class="w-100"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          class="w-100"
+=======
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          class="w-100"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+          data-state="closed"
+          triggerclass="w-100"
+        >
+          <button
+            class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+            data-test="DesignSystem-DropdownTrigger"
+            tabindex="0"
+            type="button"
+            value=""
+          >
+            <div
+              class="DropdownButton-wrapper"
+            >
+              <span
+                class="Text Text--regular DropdownButton-text"
+              >
+                Select
+              </span>
+            </div>
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--default"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_down
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r21:"
+  />
+</body>
+`;
+>>>>>>> e56ca8cd (feat(popover): add new popover component)

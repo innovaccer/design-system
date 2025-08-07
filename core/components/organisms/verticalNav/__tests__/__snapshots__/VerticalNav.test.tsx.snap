@@ -1,0 +1,538 @@
+<<<<<<< HEAD
+=======
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Vertical Navigation component 
+  expanded: false, menus: [{"name":"patient_360","label":"Patient 360","icon":"assignment_ind","link":"/patient360","count":10,"group":"Section 1"},{"name":"care_management","label":"Care Management and Resources","icon":"forum","group":"Section 2","subMenu":[{"name":"care_management.timeline","label":"Timeline","icon":"assignment_ind"},{"name":"care_management.care_plans","label":"Care Plans","icon":"events"}]},{"name":"episodes","label":"Episodes","disabled":true,"icon":"airline_seat_flat_angled","group":"Section 2","count":100},{"name":"risk","label":"Risk","icon":"favorite","group":"Section 2","subMenu":[{"name":"risk.timeline","label":"Timeline"},{"name":"risk.care_plans","label":"Care Plans"}]}], active: {"name":"care_management.timeline"}, onClick: "[Function]", onToggle: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="VerticalNav"
+    >
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <div
+        class="w-fit-content"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="w-fit-content"
+          data-state="closed"
+          triggerclass="w-fit-content"
+=======
+      <div>
+=======
+      <div
+        class="w-fit-content"
+      >
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="w-fit-content"
+          data-state="closed"
+<<<<<<< HEAD
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          triggerclass="w-fit-content"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+        >
+          <a
+            class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
+            data-test="DesignSystem-VerticalNav--Item"
+            href="/patient360"
+            tabindex="0"
+          >
+            <div
+              class="d-flex align-items-center overflow-hidden"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-VerticalNav--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                assignment_ind
+              </i>
+            </div>
+          </a>
+        </div>
+      </div>
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <div
+        class="w-fit-content"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="w-fit-content"
+          data-state="closed"
+          triggerclass="w-fit-content"
+=======
+      <div>
+=======
+      <div
+        class="w-fit-content"
+      >
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="w-fit-content"
+          data-state="closed"
+<<<<<<< HEAD
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          triggerclass="w-fit-content"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+        >
+          <a
+            class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
+            data-test="DesignSystem-VerticalNav--Item"
+            tabindex="0"
+          >
+            <div
+              class="d-flex align-items-center overflow-hidden"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-VerticalNav--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                forum
+              </i>
+            </div>
+          </a>
+        </div>
+      </div>
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <div
+        class="w-fit-content"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="w-fit-content"
+          data-state="closed"
+          triggerclass="w-fit-content"
+=======
+      <div>
+=======
+      <div
+        class="w-fit-content"
+      >
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="w-fit-content"
+          data-state="closed"
+<<<<<<< HEAD
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          triggerclass="w-fit-content"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+        >
+          <a
+            class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--active color-primary-dark"
+            tabindex="0"
+          >
+            <div
+              class="d-flex align-items-center overflow-hidden"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-VerticalNav--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                assignment_ind
+              </i>
+            </div>
+          </a>
+        </div>
+      </div>
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <div
+        class="w-fit-content"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="w-fit-content"
+          data-state="closed"
+          triggerclass="w-fit-content"
+=======
+      <div>
+=======
+      <div
+        class="w-fit-content"
+      >
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="w-fit-content"
+          data-state="closed"
+<<<<<<< HEAD
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          triggerclass="w-fit-content"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+        >
+          <a
+            class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
+            tabindex="0"
+          >
+            <div
+              class="d-flex align-items-center overflow-hidden"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-VerticalNav--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                events
+              </i>
+            </div>
+          </a>
+        </div>
+      </div>
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <div
+        class="w-fit-content"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="w-fit-content"
+          data-state="closed"
+          triggerclass="w-fit-content"
+=======
+      <div>
+=======
+      <div
+        class="w-fit-content"
+      >
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="w-fit-content"
+          data-state="closed"
+<<<<<<< HEAD
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          triggerclass="w-fit-content"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+        >
+          <a
+            class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--disabled color-inverse-lightest"
+            data-test="DesignSystem-VerticalNav--Item"
+            tabindex="0"
+          >
+            <div
+              class="d-flex align-items-center overflow-hidden"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-VerticalNav--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                airline_seat_flat_angled
+              </i>
+            </div>
+          </a>
+        </div>
+      </div>
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <div
+        class="w-fit-content"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="w-fit-content"
+          data-state="closed"
+          triggerclass="w-fit-content"
+=======
+      <div>
+=======
+      <div
+        class="w-fit-content"
+      >
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="w-fit-content"
+          data-state="closed"
+<<<<<<< HEAD
+>>>>>>> b67de59a (feat: migration to react 19)
+=======
+          triggerclass="w-fit-content"
+>>>>>>> 4a84ed17 (feat(popover): add new popover component)
+        >
+          <a
+            class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
+            data-test="DesignSystem-VerticalNav--Item"
+            tabindex="0"
+          >
+            <div
+              class="d-flex align-items-center overflow-hidden"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-VerticalNav--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                favorite
+              </i>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r2:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":r5:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":r8:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":rb:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":re:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":rh:"
+  />
+</body>
+`;
+
+exports[`Vertical Navigation component 
+  expanded: true, rounded: [true,false], menus: [{"name":"patient_360","label":"Patient 360","icon":"assignment_ind","link":"/patient360","count":10,"group":"Section 1"},{"name":"care_management","label":"Care Management and Resources","icon":"forum","group":"Section 2","subMenu":[{"name":"care_management.timeline","label":"Timeline","icon":"assignment_ind"},{"name":"care_management.care_plans","label":"Care Plans","icon":"events"}]},{"name":"episodes","label":"Episodes","disabled":true,"icon":"airline_seat_flat_angled","group":"Section 2","count":100},{"name":"risk","label":"Risk","icon":"favorite","group":"Section 2","subMenu":[{"name":"risk.timeline","label":"Timeline"},{"name":"risk.care_plans","label":"Care Plans"}]}], active: {"name":"care_management.timeline"}, onClick: "[Function]", onToggle: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="VerticalNav VerticalNav--expanded"
+    >
+      <div
+        class="VerticalNav-section"
+      >
+        <span
+          class="Text Text--subtle Text--strong Text--small"
+          data-test="DesignSystem-VerticalNav--Section"
+        >
+          Section 1
+        </span>
+      </div>
+      <a
+        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--rounded color-inverse"
+        data-test="DesignSystem-VerticalNav--Item"
+        href="/patient360"
+        tabindex="0"
+      >
+        <div
+          class="d-flex align-items-center overflow-hidden"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon mr-4"
+            data-test="DesignSystem-VerticalNav--Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            assignment_ind
+          </i>
+          <span
+            class="Text Text--regular color-inverse MenuItem-Text MenuItem--overflow mr-5 ellipsis--noWrap"
+            data-test="DesignSystem-VerticalNav--Text"
+          >
+            Patient 360
+          </span>
+        </div>
+        <span
+          class="Pills Badge--secondary MenuItem-count"
+          data-test="DesignSystem-VerticalNav--Pills"
+        >
+          10
+        </span>
+      </a>
+      <div
+        class="VerticalNav-section VerticalNav-section--border"
+      >
+        <span
+          class="Text Text--subtle Text--strong Text--small"
+          data-test="DesignSystem-VerticalNav--Section"
+        >
+          Section 2
+        </span>
+      </div>
+      <a
+        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--rounded color-inverse"
+        data-test="DesignSystem-VerticalNav--Item"
+        tabindex="0"
+      >
+        <div
+          class="d-flex align-items-center overflow-hidden"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon mr-4"
+            data-test="DesignSystem-VerticalNav--Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            forum
+          </i>
+          <span
+            class="Text Text--regular color-inverse MenuItem-Text MenuItem--overflow ellipsis--noWrap"
+            data-test="DesignSystem-VerticalNav--Text"
+          >
+            Care Management and Resources
+          </span>
+        </div>
+        <i
+          class="material-symbols material-symbols-rounded Icon mx-4"
+          data-test="DesignSystem-Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          keyboard_arrow_up
+        </i>
+      </a>
+      <a
+        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--active MenuItem--subMenu MenuItem--rounded pr-5 color-primary-dark"
+        tabindex="0"
+      >
+        <div
+          class="d-flex align-items-center overflow-hidden"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon mr-4"
+            data-test="DesignSystem-VerticalNav--Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            assignment_ind
+          </i>
+          <span
+            class="Text Text--regular color-primary-dark MenuItem-Text MenuItem--overflow ellipsis--noWrap"
+            data-test="DesignSystem-VerticalNav--Text"
+          >
+            Timeline
+          </span>
+        </div>
+      </a>
+      <a
+        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--subMenu MenuItem--rounded pr-5 color-inverse"
+        tabindex="0"
+      >
+        <div
+          class="d-flex align-items-center overflow-hidden"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon mr-4"
+            data-test="DesignSystem-VerticalNav--Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            events
+          </i>
+          <span
+            class="Text Text--regular color-inverse MenuItem-Text MenuItem--overflow ellipsis--noWrap"
+            data-test="DesignSystem-VerticalNav--Text"
+          >
+            Care Plans
+          </span>
+        </div>
+      </a>
+      <a
+        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--disabled MenuItem--rounded color-inverse-lightest"
+        data-test="DesignSystem-VerticalNav--Item"
+        tabindex="0"
+      >
+        <div
+          class="d-flex align-items-center overflow-hidden"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon mr-4"
+            data-test="DesignSystem-VerticalNav--Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            airline_seat_flat_angled
+          </i>
+          <span
+            class="Text Text--regular color-inverse-lightest MenuItem-Text MenuItem--overflow mr-5 ellipsis--noWrap"
+            data-test="DesignSystem-VerticalNav--Text"
+          >
+            Episodes
+          </span>
+        </div>
+        <span
+          class="Pills Badge--subtle-secondary MenuItem-count MenuItem-count--disabled"
+          data-test="DesignSystem-VerticalNav--Pills"
+        >
+          99+
+        </span>
+      </a>
+      <a
+        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--rounded color-inverse"
+        data-test="DesignSystem-VerticalNav--Item"
+        tabindex="0"
+      >
+        <div
+          class="d-flex align-items-center overflow-hidden"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon mr-4"
+            data-test="DesignSystem-VerticalNav--Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            favorite
+          </i>
+          <span
+            class="Text Text--regular color-inverse MenuItem-Text MenuItem--overflow ellipsis--noWrap"
+            data-test="DesignSystem-VerticalNav--Text"
+          >
+            Risk
+          </span>
+        </div>
+        <i
+          class="material-symbols material-symbols-rounded Icon mx-4"
+          data-test="DesignSystem-Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          keyboard_arrow_down
+        </i>
+      </a>
+    </div>
+  </div>
+</body>
+`;
+>>>>>>> e56ca8cd (feat(popover): add new popover component)
