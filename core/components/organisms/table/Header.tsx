@@ -26,6 +26,8 @@ export interface ExternalHeaderProps {
   customSelectionLabel?: string;
   globalActionRenderer?: (data: Data) => React.ReactNode;
   selectionActionRenderer?: (selectedRows: RowData[], selectAll?: boolean) => React.ReactNode;
+  selectedLabelRenderer?: (context: Record<string, any>) => string;
+  unSelectedLabelRenderer?: (context: Record<string, any>) => string;
 }
 
 export type updateSearchTermFunction = (newSearchTerm: string) => void;
@@ -97,6 +99,8 @@ export const Header = (props: HeaderProps) => {
     uniqueColumnName,
     totalRowsCount,
     enableInfiniteScroll,
+    selectedLabelRenderer,
+    unSelectedLabelRenderer,
   } = props;
 
   const [selectAllRecords, setSelectAllRecords] = React.useState<boolean>(false);
@@ -106,6 +110,31 @@ export const Header = (props: HeaderProps) => {
   const startIndex = (page - 1) * pageSize + 1;
   const endIndex = Math.min(page * pageSize, totalRecords);
   const selectedRowsCount = selectedAllRef?.current === true ? totalRecords : selectedRowsRef?.current?.length || 0;
+
+  const customSelectedRowLabel = selectedLabelRenderer
+    ? selectedLabelRenderer({
+        selectedRowsCount,
+        uniqueColumnName,
+        withCheckbox,
+        selectedCount,
+        withPagination,
+        startIndex,
+        endIndex,
+        totalRecords,
+      })
+    : undefined;
+
+  const customUnSelectedRowLabel = unSelectedLabelRenderer
+    ? unSelectedLabelRenderer({
+        error,
+        withPagination,
+        enableInfiniteScroll,
+        startIndex,
+        endIndex,
+        totalRecords,
+        totalRowsCount,
+      })
+    : undefined;
 
   const showSelectedRowLabel = withCheckbox && (selectedCount || selectedRowsCount > 0);
 
@@ -293,11 +322,11 @@ export const Header = (props: HeaderProps) => {
             <>
               {showSelectedLabel ? (
                 <span className={selectedRowLabelClass} onAnimationEnd={onSelectAnimationEnd}>
-                  <Label>{getSelectedRowLabel()}</Label>
+                  <Label>{customSelectedRowLabel ?? getSelectedRowLabel()}</Label>
                 </span>
               ) : (
                 <span className={unselectedRowLabelClass} onAnimationEnd={onUnSelectAnimationEnd}>
-                  <Label>{getUnSelectedRowLabel()}</Label>
+                  <Label>{customUnSelectedRowLabel ?? getUnSelectedRowLabel()}</Label>
                 </span>
               )}
 
