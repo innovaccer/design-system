@@ -370,3 +370,13 @@ describe('Vertical Navigation component prop: menus with expanded subMenu', () =
     expect(getAllByTestId('DesignSystem-VerticalNav--Text')[2].textContent).toMatch('Timeline');
   });
 });
+
+describe('Vertical Navigation component prop: customOptionRenderer', () => {
+  it('should render custom option renderer', () => {
+    const customOptionRenderer = jest.fn();
+    const { getAllByTestId } = render(
+      <VerticalNav menus={menus} active={active} customOptionRenderer={customOptionRenderer} />
+    );
+    expect(getAllByTestId('DesignSystem-VerticalNav--Item')).toHaveLength(menus.length);
+  });
+});

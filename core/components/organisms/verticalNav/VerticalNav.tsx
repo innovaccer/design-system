@@ -60,9 +60,13 @@ export interface VerticalNavProps extends BaseProps {
    */
   autoCollapse: boolean;
   /**
-   * Option to pass Custom Item Renderer
+   * Option to pass Custom Item Renderer for each menu item without any pre-defined styles
    */
   customItemRenderer?: (props: MenuItemProps) => JSX.Element;
+  /**
+   * Option to pass Custom Menu Items with pre-defined styles
+   */
+  customOptionRenderer?: (props: MenuItemProps) => JSX.Element;
   /**
    * Determines whether to show tooltip for menu label
    * **This prop is DEPRECATED now,**
@@ -77,7 +81,17 @@ export interface VerticalNavProps extends BaseProps {
  */
 
 export const VerticalNav = (props: VerticalNavProps) => {
-  const { menus, active, onClick, expanded, rounded, autoCollapse, className, customItemRenderer } = props;
+  const {
+    menus,
+    active,
+    onClick,
+    expanded,
+    rounded,
+    autoCollapse,
+    className,
+    customItemRenderer,
+    customOptionRenderer,
+  } = props;
 
   const [subMenuExpandedState, setSubMenuExpandedState] = React.useState<Record<string, boolean>>({});
   const [menuState, setMenuState] = React.useState<Record<string, boolean>>({});
@@ -165,6 +179,7 @@ export const VerticalNav = (props: VerticalNavProps) => {
               isChildrenVisible={isChildrenVisible}
               onClick={onClickHandler}
               customItemRenderer={customItemRenderer}
+              customOptionRenderer={customOptionRenderer}
             />
           }
           {isChildrenVisible &&
@@ -180,6 +195,7 @@ export const VerticalNav = (props: VerticalNavProps) => {
                   onClick={onClickHandler}
                   isActive={isMenuActive(menus, subMenu, active)}
                   customItemRenderer={customItemRenderer}
+                  customOptionRenderer={customOptionRenderer}
                 />
               );
             })}

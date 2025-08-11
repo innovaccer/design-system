@@ -17,6 +17,7 @@ export interface MenuItemProps extends BaseProps {
   isChildrenVisible?: boolean;
   onClick?: (menu: Menu) => void;
   customItemRenderer?: (props: MenuItemProps) => JSX.Element;
+  customOptionRenderer?: (props: MenuItemProps) => JSX.Element;
 }
 interface MenuPillsProps {
   isActive: boolean;
@@ -58,9 +59,32 @@ const MenuPills = (props: MenuPillsProps) => {
   );
 };
 
+const MenuWrapper = (props?: any) => {
+  const { children } = props;
+  return (
+    <div
+      data-test="DesignSystem-VerticalNav--MenuWrapper"
+      className="d-flex align-items-center overflow-hidden"
+      {...props}
+    >
+      {children}
+    </div>
+  );
+};
+
 export const MenuItem = (props: MenuItemProps) => {
-  const { menu, isActive, expanded, rounded, hasSubmenu, isChildren, isChildrenVisible, onClick, customItemRenderer } =
-    props;
+  const {
+    menu,
+    isActive,
+    expanded,
+    rounded,
+    hasSubmenu,
+    isChildren,
+    isChildrenVisible,
+    onClick,
+    customItemRenderer,
+    customOptionRenderer,
+  } = props;
 
   const [isTextTruncated, setIsTextTruncated] = React.useState(false);
   const { detectTruncation } = Tooltip.useAutoTooltip();
@@ -134,6 +158,7 @@ export const MenuItem = (props: MenuItemProps) => {
     contentRef,
     MenuIcon: () => MenuIcon({ isChildrenVisible }),
     MenuLabel: () => MenuLabel({ label: menu.label, labelColor: itemColor }),
+    MenuWrapper: (props: any) => MenuWrapper(props),
     MenuPills: () =>
       menu.count !== undefined ? MenuPills({ disabled: menu.disabled, isActive: isActive, count: menu.count }) : <></>,
   };
@@ -145,18 +170,24 @@ export const MenuItem = (props: MenuItemProps) => {
     // eslint-disable-next-line
     <Tooltip showTooltip={expanded ? isTextTruncated : true} tooltip={menu.label} position="right">
       <Link componentType="a" className={ItemClass} {...baseProps}>
-        <div className="d-flex align-items-center overflow-hidden">
-          {menu.icon && (
-            <Icon
-              data-test="DesignSystem-VerticalNav--Icon"
-              className={expanded ? 'mr-4' : ''}
-              name={menu.icon}
-              type={menu.iconType}
-            />
-          )}
-          {expanded && <MenuLabel label={menu.label} labelColor={itemColor} />}
-        </div>
-        {expanded && renderSubMenu()}
+        {customOptionRenderer ? (
+          customOptionRenderer(customItemProps)
+        ) : (
+          <>
+            <div className="d-flex align-items-center overflow-hidden">
+              {menu.icon && (
+                <Icon
+                  data-test="DesignSystem-VerticalNav--Icon"
+                  className={expanded ? 'mr-4' : ''}
+                  name={menu.icon}
+                  type={menu.iconType}
+                />
+              )}
+              {expanded && <MenuLabel label={menu.label} labelColor={itemColor} />}
+            </div>
+            {expanded && renderSubMenu()}
+          </>
+        )}
       </Link>
     </Tooltip>
   );
