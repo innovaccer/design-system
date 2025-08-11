@@ -3,7 +3,7 @@ import { DropdownProps, CheckboxProps, GridCellProps } from '@/index.type';
 import { GridHead } from './GridHead';
 import { GridBody } from './GridBody';
 import { HeaderCellRendererProps } from './Cell';
-import { sortColumn, pinColumn, hideColumn, moveToIndex, getSchema } from './utility';
+import { sortColumn, pinColumn, hideColumn, moveToIndex, getSchema, isScrollAtTop } from './utility';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { NestedRowProps } from './GridNestedRow';
 import classNames from 'classnames';
@@ -376,6 +376,7 @@ export interface GridProps extends BaseProps {
 export interface GridState {
   init: boolean;
   prevPageInfo: PageInfo;
+  isSortingListUpdated: boolean;
 }
 
 export class Grid extends React.Component<GridProps, GridState> {
@@ -392,6 +393,7 @@ export class Grid extends React.Component<GridProps, GridState> {
     this.state = {
       init: false,
       prevPageInfo: pageInfo,
+      isSortingListUpdated: false,
     };
   }
 
@@ -523,9 +525,34 @@ export class Grid extends React.Component<GridProps, GridState> {
   updateSortingList = (sortingList: GridProps['sortingList']) => {
     const { updateSortingList } = this.props;
 
+    const shouldScrollToTop =
+      !isScrollAtTop(this.props.enableRowVirtualization, this.gridRef!) && this.props.enableInfiniteScroll;
+
+    if (shouldScrollToTop) {
+      this.scrollToTop();
+    }
     if (updateSortingList) {
       updateSortingList(sortingList);
     }
+  };
+
+  scrollToTop = () => {
+    // Find the correct scrollable element
+    let scrollableElement: HTMLElement | null = null;
+    if (this.props.enableRowVirtualization) {
+      scrollableElement = this.gridRef?.querySelector('.VS-container') as HTMLElement;
+    } else {
+      scrollableElement = this.gridRef?.querySelector(`.${styles['Grid-body']}`) as HTMLElement;
+    }
+
+    if (scrollableElement) {
+      scrollableElement.scrollTo({ top: 0, behavior: 'smooth' });
+      this.setState({ isSortingListUpdated: true });
+    }
+  };
+
+  updateIsSortingListUpdated = () => {
+    this.setState({ isSortingListUpdated: false });
   };
 
   updateFilterList = (filterList: GridProps['filterList']) => {
@@ -644,6 +671,8 @@ export class Grid extends React.Component<GridProps, GridState> {
             value={{
               ...this.props,
               ref: this.gridRef,
+              isSortingListUpdated: this.state.isSortingListUpdated,
+              updateIsSortingListUpdated: this.updateIsSortingListUpdated.bind(this),
             }}
           >
             {showHead && (

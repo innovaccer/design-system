@@ -5,10 +5,14 @@ import defaultProps from './defaultProps';
 
 type ContextProps = GridProps & {
   ref: GridRef;
+  isSortingListUpdated: boolean;
+  updateIsSortingListUpdated: () => void;
 };
 const context = React.createContext<ContextProps>({
   ...defaultProps,
   ref: null,
+  isSortingListUpdated: false,
+  updateIsSortingListUpdated: () => {},
 });
 
 export const GridProvider = context.Provider;
