@@ -40,7 +40,16 @@ export type StatusHintProps = {
 } & BaseProps;
 
 export const StatusHint = (props: StatusHintProps) => {
-  const { appearance = 'default', children, onMouseEnter, onMouseLeave, onClick, truncateLabel, className, size = 'regular' } = props;
+  const {
+    appearance = 'default',
+    children,
+    onMouseEnter,
+    onMouseLeave,
+    onClick,
+    truncateLabel,
+    className,
+    size = 'regular',
+  } = props;
 
   const baseProps = extractBaseProps(props);
 
