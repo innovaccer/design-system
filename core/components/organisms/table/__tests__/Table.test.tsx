@@ -889,3 +889,56 @@ describe('render table with highlightCell feature', () => {
     expect(highlightedMarks).not.toBeInTheDocument();
   });
 });
+
+describe('render table with custom selection/unselection label renderers', () => {
+  it('uses selectedLabelRenderer when rows are selected', () => {
+    const schema = [{ name: 'name', displayName: 'Name', width: '50%' }];
+
+    const selectedLabelRenderer = (context: Record<string, any>) => {
+      return `Picked ${context.selectedRowsCount} rows`;
+    };
+
+    const { getAllByTestId, getByTestId } = render(
+      <Table
+        withHeader={true}
+        withCheckbox={true}
+        withPagination={true}
+        data={tableData}
+        schema={schema}
+        headerOptions={{ allowSelectAll: true, selectedLabelRenderer }}
+      />
+    );
+
+    const checkbox = getAllByTestId('DesignSystem-Checkbox-InputBox')[0];
+    fireEvent.click(checkbox);
+
+    const selectionLabel = getByTestId('DesignSystem-Label--Text');
+    expect(selectionLabel).toHaveTextContent('Picked 2 rows');
+  });
+
+  it('uses unSelectedLabelRenderer when no rows are selected', () => {
+    const schema = [{ name: 'name', displayName: 'Name', width: '50%' }];
+
+    const unSelectedLabelRenderer = () => {
+      return 'Custom unselected label';
+    };
+
+    const { getByTestId } = render(
+      <Table
+        withHeader={true}
+        withCheckbox={true}
+        withPagination={true}
+        data={tableData}
+        schema={schema}
+        headerOptions={{ allowSelectAll: true, unSelectedLabelRenderer }}
+      />
+    );
+
+    const selectionLabel = getByTestId('DesignSystem-Label--Text');
+
+    // Trigger animation end to switch to unselected label span
+    fireEvent.animationEnd(selectionLabel);
+
+    expect(selectionLabel).toHaveTextContent('Custom unselected label');
+  });
+});
