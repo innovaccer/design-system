@@ -7,10 +7,11 @@ import { MessageAppearance } from '@/common.type';
 const label = 'StatusHint';
 const appearances: MessageAppearance[] = ['default', 'alert', 'info', 'warning', 'success'];
 const text = 'Status hint is used to highlight the status of an item.';
-
+const size = ['small', 'regular'];
 describe('StatusHint component', () => {
   const mapper = {
     appearance: valueHelper(appearances, { required: true, iterate: true }),
+    size: valueHelper(size, { required: true, iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
@@ -72,5 +73,39 @@ describe('StatusHint component with prop:truncateLabel', () => {
     );
 
     expect(getByTestId('DesignSystem-StatusHint--Text')).not.toHaveClass('ellipsis--noWrap');
+  });
+
+  it('should render status hint icon with small size', () => {
+    const { getByTestId } = render(
+      <StatusHint size="small" appearance="info">
+        {text}
+      </StatusHint>
+    );
+    const statusHint = getByTestId('DesignSystem-StatusHint--Icon');
+    expect(statusHint).toHaveClass('mr-3-5');
+  });
+
+  it('should render status hint icon with regular size', () => {
+    const { getByTestId } = render(<StatusHint appearance="info">{text}</StatusHint>);
+    const statusHint = getByTestId('DesignSystem-StatusHint--Icon');
+    expect(statusHint).not.toHaveClass('mr-3-5');
+    expect(statusHint).toHaveClass('mr-4');
+  });
+
+  it('should render status hint text with small size', () => {
+    const { getByTestId } = render(
+      <StatusHint size="small" appearance="info">
+        {text}
+      </StatusHint>
+    );
+    const statusHint = getByTestId('DesignSystem-StatusHint--Text');
+    expect(statusHint).toHaveClass('Text--small');
+  });
+
+  it('should render status hint text with regular size', () => {
+    const { getByTestId } = render(<StatusHint appearance="info">{text}</StatusHint>);
+    const statusHint = getByTestId('DesignSystem-StatusHint--Text');
+    expect(statusHint).not.toHaveClass('Text--small');
+    expect(statusHint).toHaveClass('Text--regular');
   });
 });
