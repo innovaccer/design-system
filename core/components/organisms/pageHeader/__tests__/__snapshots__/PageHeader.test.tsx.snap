@@ -125,7 +125,7 @@ exports[`Navigation component
                 data-test="DesignSystem-StatusHint"
               >
                 <span
-                  class="StatusHint-icon StatusHint--default"
+                  class="StatusHint-icon StatusHint--default mr-4"
                   data-test="DesignSystem-StatusHint--Icon"
                 />
                 <span
@@ -477,7 +477,7 @@ exports[`Navigation component
                 data-test="DesignSystem-StatusHint"
               >
                 <span
-                  class="StatusHint-icon StatusHint--default"
+                  class="StatusHint-icon StatusHint--default mr-4"
                   data-test="DesignSystem-StatusHint--Icon"
                 />
                 <span
@@ -754,7 +754,7 @@ exports[`Navigation component
                 data-test="DesignSystem-StatusHint"
               >
                 <span
-                  class="StatusHint-icon StatusHint--default"
+                  class="StatusHint-icon StatusHint--default mr-4"
                   data-test="DesignSystem-StatusHint--Icon"
                 />
                 <span
@@ -1680,7 +1680,7 @@ exports[`Navigation component
                 data-test="DesignSystem-StatusHint"
               >
                 <span
-                  class="StatusHint-icon StatusHint--default"
+                  class="StatusHint-icon StatusHint--default mr-4"
                   data-test="DesignSystem-StatusHint--Icon"
                 />
                 <span

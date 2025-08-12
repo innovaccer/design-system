@@ -1051,7 +1051,7 @@ exports[`TS renders children 1`] = `
     data-test="DesignSystem-StatusHint"
   >
     <span
-      class="StatusHint-icon StatusHint--default"
+      class="StatusHint-icon StatusHint--default mr-4"
       data-test="DesignSystem-StatusHint--Icon"
     />
     <span
