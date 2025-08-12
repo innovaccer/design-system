@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tooltip component 
-  position: "bottom", tooltip: "Sample string"
+  position: "bottom", size: "regular", tooltip: "Sample string"
  1`] = `
 <body>
   <div>
@@ -26,7 +26,7 @@ exports[`Tooltip component
 `;
 
 exports[`Tooltip component 
-  position: "bottom-end", tooltip: "Sample string"
+  position: "bottom", size: "small", tooltip: "Sample string"
  1`] = `
 <body>
   <div>
@@ -51,7 +51,7 @@ exports[`Tooltip component
 `;
 
 exports[`Tooltip component 
-  position: "bottom-start", tooltip: "Sample string"
+  position: "bottom-end", size: "regular", tooltip: "Sample string"
  1`] = `
 <body>
   <div>
@@ -76,7 +76,7 @@ exports[`Tooltip component
 `;
 
 exports[`Tooltip component 
-  position: "left", tooltip: "Sample string"
+  position: "bottom-end", size: "small", tooltip: "Sample string"
  1`] = `
 <body>
   <div>
@@ -101,7 +101,7 @@ exports[`Tooltip component
 `;
 
 exports[`Tooltip component 
-  position: "right", tooltip: "Sample string"
+  position: "bottom-start", size: "regular", tooltip: "Sample string"
  1`] = `
 <body>
   <div>
@@ -126,7 +126,7 @@ exports[`Tooltip component
 `;
 
 exports[`Tooltip component 
-  position: "top", tooltip: "Sample string"
+  position: "bottom-start", size: "small", tooltip: "Sample string"
  1`] = `
 <body>
   <div>
@@ -151,7 +151,7 @@ exports[`Tooltip component
 `;
 
 exports[`Tooltip component 
-  position: "top-end", tooltip: "Sample string"
+  position: "left", size: "regular", tooltip: "Sample string"
  1`] = `
 <body>
   <div>
@@ -176,7 +176,207 @@ exports[`Tooltip component
 `;
 
 exports[`Tooltip component 
-  position: "top-start", tooltip: "Sample string"
+  position: "left", size: "small", tooltip: "Sample string"
+ 1`] = `
+<body>
+  <div>
+    
+    <div
+      class="PopperWrapper-trigger"
+    >
+      <button
+        class="Button Button--regular Button--basic Button--iconAlign-left"
+        data-test="DesignSystem-Button"
+        tabindex="0"
+      >
+        <span
+          class="Button-text"
+        >
+          Button
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Tooltip component 
+  position: "right", size: "regular", tooltip: "Sample string"
+ 1`] = `
+<body>
+  <div>
+    
+    <div
+      class="PopperWrapper-trigger"
+    >
+      <button
+        class="Button Button--regular Button--basic Button--iconAlign-left"
+        data-test="DesignSystem-Button"
+        tabindex="0"
+      >
+        <span
+          class="Button-text"
+        >
+          Button
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Tooltip component 
+  position: "right", size: "small", tooltip: "Sample string"
+ 1`] = `
+<body>
+  <div>
+    
+    <div
+      class="PopperWrapper-trigger"
+    >
+      <button
+        class="Button Button--regular Button--basic Button--iconAlign-left"
+        data-test="DesignSystem-Button"
+        tabindex="0"
+      >
+        <span
+          class="Button-text"
+        >
+          Button
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Tooltip component 
+  position: "top", size: "regular", tooltip: "Sample string"
+ 1`] = `
+<body>
+  <div>
+    
+    <div
+      class="PopperWrapper-trigger"
+    >
+      <button
+        class="Button Button--regular Button--basic Button--iconAlign-left"
+        data-test="DesignSystem-Button"
+        tabindex="0"
+      >
+        <span
+          class="Button-text"
+        >
+          Button
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Tooltip component 
+  position: "top", size: "small", tooltip: "Sample string"
+ 1`] = `
+<body>
+  <div>
+    
+    <div
+      class="PopperWrapper-trigger"
+    >
+      <button
+        class="Button Button--regular Button--basic Button--iconAlign-left"
+        data-test="DesignSystem-Button"
+        tabindex="0"
+      >
+        <span
+          class="Button-text"
+        >
+          Button
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Tooltip component 
+  position: "top-end", size: "regular", tooltip: "Sample string"
+ 1`] = `
+<body>
+  <div>
+    
+    <div
+      class="PopperWrapper-trigger"
+    >
+      <button
+        class="Button Button--regular Button--basic Button--iconAlign-left"
+        data-test="DesignSystem-Button"
+        tabindex="0"
+      >
+        <span
+          class="Button-text"
+        >
+          Button
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Tooltip component 
+  position: "top-end", size: "small", tooltip: "Sample string"
+ 1`] = `
+<body>
+  <div>
+    
+    <div
+      class="PopperWrapper-trigger"
+    >
+      <button
+        class="Button Button--regular Button--basic Button--iconAlign-left"
+        data-test="DesignSystem-Button"
+        tabindex="0"
+      >
+        <span
+          class="Button-text"
+        >
+          Button
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Tooltip component 
+  position: "top-start", size: "regular", tooltip: "Sample string"
+ 1`] = `
+<body>
+  <div>
+    
+    <div
+      class="PopperWrapper-trigger"
+    >
+      <button
+        class="Button Button--regular Button--basic Button--iconAlign-left"
+        data-test="DesignSystem-Button"
+        tabindex="0"
+      >
+        <span
+          class="Button-text"
+        >
+          Button
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Tooltip component 
+  position: "top-start", size: "small", tooltip: "Sample string"
  1`] = `
 <body>
   <div>
