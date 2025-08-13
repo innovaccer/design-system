@@ -16,6 +16,7 @@ exports[`Avatar Image component
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="flex-grow-0"
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -42,6 +43,10 @@ exports[`Avatar Image component
         </div>
       </span>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r2:"
+    />
     <div>
       <span
         class="position-relative d-inline-flex"

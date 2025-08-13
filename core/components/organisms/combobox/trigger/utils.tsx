@@ -3,17 +3,23 @@ import React from 'react';
 export const handleKeyDown = (
   event: React.KeyboardEvent,
   setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>,
-  setHighlightFirstItem?: React.Dispatch<React.SetStateAction<boolean>>,
-  setHighlightLastItem?: React.Dispatch<React.SetStateAction<boolean>>
+  listRef?: any,
+  setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>
 ) => {
   switch (event.key) {
     case 'ArrowUp':
       setOpenPopover?.(true);
-      setHighlightLastItem?.(true);
+      // Use requestAnimationFrame to ensure popover is rendered before focusing
+      requestAnimationFrame(() => {
+        focusListItem('up', setFocusedOption, listRef);
+      });
       break;
     case 'ArrowDown':
       setOpenPopover?.(true);
-      setHighlightFirstItem?.(true);
+      // Use requestAnimationFrame to ensure popover is rendered before focusing
+      requestAnimationFrame(() => {
+        focusListItem('down', setFocusedOption, listRef);
+      });
       break;
     case 'Escape':
     case 'Tab':

@@ -16,6 +16,7 @@ exports[`Avatar component
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="flex-grow-0"
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -41,6 +42,10 @@ exports[`Avatar component
         </div>
       </span>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":rt:"
+    />
   </body>,
   "container": <div>
     <span
@@ -52,6 +57,7 @@ exports[`Avatar component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="flex-grow-0"
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -147,6 +153,7 @@ exports[`Avatar component
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="flex-grow-0"
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -172,6 +179,10 @@ exports[`Avatar component
         </div>
       </span>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":rq:"
+    />
   </body>,
   "container": <div>
     <span
@@ -183,6 +194,7 @@ exports[`Avatar component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="flex-grow-0"
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -278,6 +290,7 @@ exports[`Avatar component
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="flex-grow-0"
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -303,6 +316,10 @@ exports[`Avatar component
         </div>
       </span>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r13:"
+    />
   </body>,
   "container": <div>
     <span
@@ -314,6 +331,7 @@ exports[`Avatar component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="flex-grow-0"
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -409,6 +427,7 @@ exports[`Avatar component
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="flex-grow-0"
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -434,6 +453,10 @@ exports[`Avatar component
         </div>
       </span>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r10:"
+    />
   </body>,
   "container": <div>
     <span
@@ -445,6 +468,7 @@ exports[`Avatar component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="flex-grow-0"
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -540,6 +564,7 @@ exports[`Avatar component
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="flex-grow-0"
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -565,6 +590,10 @@ exports[`Avatar component
         </div>
       </span>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r19:"
+    />
   </body>,
   "container": <div>
     <span
@@ -576,6 +605,7 @@ exports[`Avatar component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="flex-grow-0"
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -671,6 +701,7 @@ exports[`Avatar component
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="flex-grow-0"
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -696,6 +727,10 @@ exports[`Avatar component
         </div>
       </span>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r16:"
+    />
   </body>,
   "container": <div>
     <span
@@ -707,6 +742,7 @@ exports[`Avatar component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="flex-grow-0"
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -802,6 +838,7 @@ exports[`Avatar component
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="flex-grow-0"
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -827,6 +864,10 @@ exports[`Avatar component
         </div>
       </span>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r1f:"
+    />
   </body>,
   "container": <div>
     <span
@@ -838,6 +879,7 @@ exports[`Avatar component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="flex-grow-0"
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -933,6 +975,7 @@ exports[`Avatar component
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="flex-grow-0"
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -958,6 +1001,10 @@ exports[`Avatar component
         </div>
       </span>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r1c:"
+    />
   </body>,
   "container": <div>
     <span
@@ -969,6 +1016,7 @@ exports[`Avatar component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="flex-grow-0"
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -1064,6 +1112,7 @@ exports[`Avatar component
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="flex-grow-0"
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -1089,6 +1138,10 @@ exports[`Avatar component
         </div>
       </span>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":rb:"
+    />
   </body>,
   "container": <div>
     <span
@@ -1100,6 +1153,7 @@ exports[`Avatar component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="flex-grow-0"
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -1195,6 +1249,7 @@ exports[`Avatar component
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="flex-grow-0"
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -1220,6 +1275,10 @@ exports[`Avatar component
         </div>
       </span>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r8:"
+    />
   </body>,
   "container": <div>
     <span
@@ -1231,6 +1290,7 @@ exports[`Avatar component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="flex-grow-0"
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -1326,6 +1386,7 @@ exports[`Avatar component
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="flex-grow-0"
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -1351,6 +1412,10 @@ exports[`Avatar component
         </div>
       </span>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r5:"
+    />
   </body>,
   "container": <div>
     <span
@@ -1362,6 +1427,7 @@ exports[`Avatar component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="flex-grow-0"
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -1457,6 +1523,7 @@ exports[`Avatar component
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="flex-grow-0"
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -1482,6 +1549,10 @@ exports[`Avatar component
         </div>
       </span>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r2:"
+    />
   </body>,
   "container": <div>
     <span
@@ -1493,6 +1564,7 @@ exports[`Avatar component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="flex-grow-0"
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -1588,6 +1660,7 @@ exports[`Avatar component
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="flex-grow-0"
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -1613,6 +1686,10 @@ exports[`Avatar component
         </div>
       </span>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":rn:"
+    />
   </body>,
   "container": <div>
     <span
@@ -1624,6 +1701,7 @@ exports[`Avatar component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="flex-grow-0"
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -1719,6 +1797,7 @@ exports[`Avatar component
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="flex-grow-0"
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -1744,6 +1823,10 @@ exports[`Avatar component
         </div>
       </span>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":rk:"
+    />
   </body>,
   "container": <div>
     <span
@@ -1755,6 +1838,7 @@ exports[`Avatar component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="flex-grow-0"
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -1850,6 +1934,7 @@ exports[`Avatar component
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="flex-grow-0"
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -1875,6 +1960,10 @@ exports[`Avatar component
         </div>
       </span>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":rh:"
+    />
   </body>,
   "container": <div>
     <span
@@ -1886,6 +1975,7 @@ exports[`Avatar component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="flex-grow-0"
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -1981,6 +2071,7 @@ exports[`Avatar component
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="flex-grow-0"
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -2006,6 +2097,10 @@ exports[`Avatar component
         </div>
       </span>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":re:"
+    />
   </body>,
   "container": <div>
     <span
@@ -2017,6 +2112,7 @@ exports[`Avatar component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="flex-grow-0"
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -2112,6 +2208,7 @@ exports[`Avatar component
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="flex-grow-0"
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -2137,6 +2234,10 @@ exports[`Avatar component
         </div>
       </span>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r1o:"
+    />
   </body>,
   "container": <div>
     <span
@@ -2148,6 +2249,7 @@ exports[`Avatar component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="flex-grow-0"
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -2243,6 +2345,7 @@ exports[`Avatar component
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="flex-grow-0"
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -2268,6 +2371,10 @@ exports[`Avatar component
         </div>
       </span>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r1r:"
+    />
   </body>,
   "container": <div>
     <span
@@ -2279,6 +2386,7 @@ exports[`Avatar component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="flex-grow-0"
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -2374,6 +2482,7 @@ exports[`Avatar component
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="flex-grow-0"
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -2399,6 +2508,10 @@ exports[`Avatar component
         </div>
       </span>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r1i:"
+    />
   </body>,
   "container": <div>
     <span
@@ -2410,6 +2523,7 @@ exports[`Avatar component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="flex-grow-0"
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -2505,6 +2619,7 @@ exports[`Avatar component
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
+            class="flex-grow-0"
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -2530,6 +2645,10 @@ exports[`Avatar component
         </div>
       </span>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r1l:"
+    />
   </body>,
   "container": <div>
     <span
@@ -2541,6 +2660,7 @@ exports[`Avatar component
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="flex-grow-0"
           data-state="closed"
           triggerclass="flex-grow-0"
         >

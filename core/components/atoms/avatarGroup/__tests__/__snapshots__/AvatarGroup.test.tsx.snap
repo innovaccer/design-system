@@ -25,6 +25,7 @@ exports[`AvatarGroup component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="flex-grow-0"
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -66,6 +67,7 @@ exports[`AvatarGroup component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="flex-grow-0"
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -95,6 +97,14 @@ exports[`AvatarGroup component snapshot
         </div>
       </div>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":rk:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":rn:"
+    />
   </body>,
   "container": <div>
     <div
@@ -115,6 +125,7 @@ exports[`AvatarGroup component snapshot
             <div
               aria-expanded="false"
               aria-haspopup="dialog"
+              class="flex-grow-0"
               data-state="closed"
               triggerclass="flex-grow-0"
             >
@@ -156,6 +167,7 @@ exports[`AvatarGroup component snapshot
             <div
               aria-expanded="false"
               aria-haspopup="dialog"
+              class="flex-grow-0"
               data-state="closed"
               triggerclass="flex-grow-0"
             >
@@ -264,6 +276,7 @@ exports[`AvatarGroup component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="flex-grow-0"
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -305,6 +318,7 @@ exports[`AvatarGroup component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="flex-grow-0"
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -334,6 +348,14 @@ exports[`AvatarGroup component snapshot
         </div>
       </div>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":re:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":rh:"
+    />
   </body>,
   "container": <div>
     <div
@@ -354,6 +376,7 @@ exports[`AvatarGroup component snapshot
             <div
               aria-expanded="false"
               aria-haspopup="dialog"
+              class="flex-grow-0"
               data-state="closed"
               triggerclass="flex-grow-0"
             >
@@ -395,6 +418,7 @@ exports[`AvatarGroup component snapshot
             <div
               aria-expanded="false"
               aria-haspopup="dialog"
+              class="flex-grow-0"
               data-state="closed"
               triggerclass="flex-grow-0"
             >
@@ -503,6 +527,7 @@ exports[`AvatarGroup component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="flex-grow-0"
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -544,6 +569,7 @@ exports[`AvatarGroup component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="flex-grow-0"
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -573,6 +599,14 @@ exports[`AvatarGroup component snapshot
         </div>
       </div>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r8:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":rb:"
+    />
   </body>,
   "container": <div>
     <div
@@ -593,6 +627,7 @@ exports[`AvatarGroup component snapshot
             <div
               aria-expanded="false"
               aria-haspopup="dialog"
+              class="flex-grow-0"
               data-state="closed"
               triggerclass="flex-grow-0"
             >
@@ -634,6 +669,7 @@ exports[`AvatarGroup component snapshot
             <div
               aria-expanded="false"
               aria-haspopup="dialog"
+              class="flex-grow-0"
               data-state="closed"
               triggerclass="flex-grow-0"
             >
@@ -742,6 +778,7 @@ exports[`AvatarGroup component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="flex-grow-0"
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -783,6 +820,7 @@ exports[`AvatarGroup component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="flex-grow-0"
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -812,6 +850,14 @@ exports[`AvatarGroup component snapshot
         </div>
       </div>
     </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r2:"
+    />
+    <div
+      data-floating-ui-portal=""
+      id=":r5:"
+    />
   </body>,
   "container": <div>
     <div
@@ -832,6 +878,7 @@ exports[`AvatarGroup component snapshot
             <div
               aria-expanded="false"
               aria-haspopup="dialog"
+              class="flex-grow-0"
               data-state="closed"
               triggerclass="flex-grow-0"
             >
@@ -873,6 +920,7 @@ exports[`AvatarGroup component snapshot
             <div
               aria-expanded="false"
               aria-haspopup="dialog"
+              class="flex-grow-0"
               data-state="closed"
               triggerclass="flex-grow-0"
             >

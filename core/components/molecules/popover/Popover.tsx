@@ -98,7 +98,7 @@ export type PopoverProps = {
    *
    * @param type - 'onMouseLeave' | 'onMouseEnter' | 'outsideClick' | 'onClick'
    */
-  onToggle?: (open: boolean, type?: string) => void;
+  onToggle?: (open: boolean, type?: string, event?: Event) => void;
   /**
    * Adds custom CSS to `Popover` element
    *
@@ -172,15 +172,16 @@ export type PopoverProps = {
    */
   appendToBody?: boolean;
   /**
-   * When true, uses the trigger element as-is without cloning.
-   * Useful for components that manage their own refs internally.
+   * Defines whether to show popover or not
    */
-  // useTriggerAsIs?: boolean;
+  disabled?: boolean;
   /**
-   * External reference element to use instead of the trigger element.
-   * Useful when the actual reference element is inside the trigger component.
+   * Defines coordinates where you need to position a popover
    */
-  // referenceElement?: React.RefObject<HTMLElement | HTMLInputElement | HTMLDivElement | null> | HTMLElement | HTMLInputElement | HTMLDivElement | null;
+  triggerCoordinates?: {
+    x: number;
+    y: number;
+  };
 } & BaseProps;
 
 export const Popover = (props: PopoverProps) => {
@@ -198,15 +199,15 @@ export const Popover = (props: PopoverProps) => {
     on = 'click',
     openDelay = 0,
     closeOnBackdropClick,
-    animationClass,
+    // animationClass,
     offset = 'large',
     'data-test': dataTest,
     hideOnReferenceEscape,
     boundaryElement,
     appendToBody = true,
-    // useTriggerAsIs,
-    // referenceElement,
-    // onToggle
+    onToggle,
+    disabled,
+    triggerCoordinates,
   } = props;
   const [open, setOpen] = React.useState<boolean>(!!props.open);
 
@@ -214,9 +215,9 @@ export const Popover = (props: PopoverProps) => {
     if (props.open !== undefined) setOpen(props.open);
   }, [props.open]);
 
-  // const defaultOnToggle = React.useCallback((newOpen: boolean) => {
-  //   setOpen(newOpen);
-  // }, []);
+  const defaultOnToggle = React.useCallback((newOpen: boolean) => {
+    setOpen(newOpen);
+  }, []);
 
   const offsetMapping = {
     small: 2,
@@ -232,21 +233,20 @@ export const Popover = (props: PopoverProps) => {
     className
   );
 
-  // const onToggleHandler = (isOpen: boolean, event?: Event, reason?: string) => {
+  const onToggleHandler = (isOpen: boolean, event?: Event, reason?: string) => {
+    if (onToggle) {
+      const reasonMapping = {
+        click: 'onClick',
+        hover: 'onMouseEnter',
+        'outside-press': 'outsideClick',
+      } as const;
 
-  //   if(onToggle){
-  //     const reasonMapping = {
-  //       click: 'onClick',
-  //       hover: 'onMouseEnter',
-  //       'outside-press': 'outsideClick',
-  //     } as const;
-
-  //     const type = (reasonMapping as Record<string, string>)[reason || 'click'] || 'onClick';
-  //     onToggle && onToggle(isOpen, type);
-  //   } else {
-  //     defaultOnToggle && defaultOnToggle(isOpen);
-  //   }
-  // }
+      const type = (reasonMapping as Record<string, string>)[reason || 'click'] || 'onClick';
+      onToggle && onToggle(isOpen, type, event);
+    } else {
+      defaultOnToggle && defaultOnToggle(isOpen);
+    }
+  };
 
   // Generate dynamic animation classes if customStyle has maxHeight
   // const dynamicAnimationClass = React.useMemo(() => {
@@ -267,17 +267,19 @@ export const Popover = (props: PopoverProps) => {
       triggerMethod={on}
       openDelay={openDelay}
       closeOnBackdropClick={closeOnBackdropClick}
-      animationClass={animationClass}
+      // animationClass={animationClass}
       offset={offsetMapping[offset]}
       hideOnReferenceEscape={hideOnReferenceEscape}
       portalRoot={boundaryElement}
       appendToBody={appendToBody}
-      // useTriggerAsIs={useTriggerAsIs}
-      // referenceElement={referenceElement}
-      // initialOpen={open} open={open} onOpenChange={onToggleHandler}
+      // initialOpen={open}
+      disabled={disabled}
+      triggerCoordinates={triggerCoordinates}
+      open={open}
+      onOpenChange={onToggleHandler}
     >
       <PopoverTrigger asChild triggerClass={triggerClass}>
-        <div>{trigger}</div>
+        <div className={triggerClass}>{trigger}</div>
       </PopoverTrigger>
       <PopoverContent
         style={customStyle}

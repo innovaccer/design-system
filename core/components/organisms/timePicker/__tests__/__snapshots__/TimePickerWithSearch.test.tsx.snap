@@ -4,6 +4,26 @@ exports[`TimePicker component snapshots renders snapshot for all props
   startTime: "05:00 AM", endTime: "11:00 PM", showDuration: false, timeFormat: "12-Hour", error: false
  1`] = `
 <body>
+  <div
+    data-floating-ui-portal=""
+    id=":r2:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":r8:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":re:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":rk:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":rq:"
+  />
   <div>
     <div
       class="Dropdown"
@@ -14,6 +34,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="w-100"
           data-state="closed"
           triggerclass="w-100"
         >
@@ -46,6 +67,14 @@ exports[`TimePicker component snapshots renders snapshot for all props
       </div>
     </div>
   </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r10:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":r13:"
+  />
 </body>
 `;
 
@@ -53,6 +82,22 @@ exports[`TimePicker component snapshots renders snapshot for all props
   startTime: "05:00 AM", endTime: "11:00 PM", showDuration: false, timeFormat: "12-Hour", error: true
  1`] = `
 <body>
+  <div
+    data-floating-ui-portal=""
+    id=":r2:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":r8:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":re:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":rk:"
+  />
   <div>
     <div
       class="Dropdown"
@@ -63,6 +108,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="w-100"
           data-state="closed"
           triggerclass="w-100"
         >
@@ -95,6 +141,14 @@ exports[`TimePicker component snapshots renders snapshot for all props
       </div>
     </div>
   </div>
+  <div
+    data-floating-ui-portal=""
+    id=":rq:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":rt:"
+  />
 </body>
 `;
 
@@ -102,6 +156,34 @@ exports[`TimePicker component snapshots renders snapshot for all props
   startTime: "05:00 AM", endTime: "11:00 PM", showDuration: false, timeFormat: "24-Hour", error: false
  1`] = `
 <body>
+  <div
+    data-floating-ui-portal=""
+    id=":r2:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":r8:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":re:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":rk:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":rq:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":r10:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":r16:"
+  />
   <div>
     <div
       class="Dropdown"
@@ -112,6 +194,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="w-100"
           data-state="closed"
           triggerclass="w-100"
         >
@@ -144,6 +227,14 @@ exports[`TimePicker component snapshots renders snapshot for all props
       </div>
     </div>
   </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r1c:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":r1f:"
+  />
 </body>
 `;
 
@@ -151,6 +242,30 @@ exports[`TimePicker component snapshots renders snapshot for all props
   startTime: "05:00 AM", endTime: "11:00 PM", showDuration: false, timeFormat: "24-Hour", error: true
  1`] = `
 <body>
+  <div
+    data-floating-ui-portal=""
+    id=":r2:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":r8:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":re:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":rk:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":rq:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":r10:"
+  />
   <div>
     <div
       class="Dropdown"
@@ -161,6 +276,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="w-100"
           data-state="closed"
           triggerclass="w-100"
         >
@@ -193,6 +309,14 @@ exports[`TimePicker component snapshots renders snapshot for all props
       </div>
     </div>
   </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r16:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":r19:"
+  />
 </body>
 `;
 
@@ -200,6 +324,10 @@ exports[`TimePicker component snapshots renders snapshot for all props
   startTime: "05:00 AM", endTime: "11:00 PM", showDuration: true, timeFormat: "12-Hour", error: false
  1`] = `
 <body>
+  <div
+    data-floating-ui-portal=""
+    id=":r2:"
+  />
   <div>
     <div
       class="Dropdown"
@@ -210,6 +338,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="w-100"
           data-state="closed"
           triggerclass="w-100"
         >
@@ -242,6 +371,14 @@ exports[`TimePicker component snapshots renders snapshot for all props
       </div>
     </div>
   </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r8:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":rb:"
+  />
 </body>
 `;
 
@@ -259,6 +396,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="w-100"
           data-state="closed"
           triggerclass="w-100"
         >
@@ -291,6 +429,14 @@ exports[`TimePicker component snapshots renders snapshot for all props
       </div>
     </div>
   </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r2:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":r5:"
+  />
 </body>
 `;
 
@@ -298,6 +444,18 @@ exports[`TimePicker component snapshots renders snapshot for all props
   startTime: "05:00 AM", endTime: "11:00 PM", showDuration: true, timeFormat: "24-Hour", error: false
  1`] = `
 <body>
+  <div
+    data-floating-ui-portal=""
+    id=":r2:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":r8:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":re:"
+  />
   <div>
     <div
       class="Dropdown"
@@ -308,6 +466,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="w-100"
           data-state="closed"
           triggerclass="w-100"
         >
@@ -340,6 +499,14 @@ exports[`TimePicker component snapshots renders snapshot for all props
       </div>
     </div>
   </div>
+  <div
+    data-floating-ui-portal=""
+    id=":rk:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":rn:"
+  />
 </body>
 `;
 
@@ -347,6 +514,14 @@ exports[`TimePicker component snapshots renders snapshot for all props
   startTime: "05:00 AM", endTime: "11:00 PM", showDuration: true, timeFormat: "24-Hour", error: true
  1`] = `
 <body>
+  <div
+    data-floating-ui-portal=""
+    id=":r2:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":r8:"
+  />
   <div>
     <div
       class="Dropdown"
@@ -357,6 +532,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
+          class="w-100"
           data-state="closed"
           triggerclass="w-100"
         >
@@ -389,5 +565,13 @@ exports[`TimePicker component snapshots renders snapshot for all props
       </div>
     </div>
   </div>
+  <div
+    data-floating-ui-portal=""
+    id=":re:"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":rh:"
+  />
 </body>
 `;

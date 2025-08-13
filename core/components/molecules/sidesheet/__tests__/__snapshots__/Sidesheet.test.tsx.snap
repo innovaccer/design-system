@@ -53,11 +53,15 @@ exports[`Sidesheet component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            <div>
+            <div
+              class="w-fit-content"
+            >
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="w-fit-content"
                 data-state="closed"
+                triggerclass="w-fit-content"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -96,6 +100,10 @@ exports[`Sidesheet component
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1000;"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":r5:"
   />
 </body>
 `;
@@ -154,11 +162,15 @@ exports[`Sidesheet component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            <div>
+            <div
+              class="w-fit-content"
+            >
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
+                class="w-fit-content"
                 data-state="closed"
+                triggerclass="w-fit-content"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -196,6 +208,10 @@ exports[`Sidesheet component
     data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1000;"
+  />
+  <div
+    data-floating-ui-portal=""
+    id=":r2:"
   />
 </body>
 `;

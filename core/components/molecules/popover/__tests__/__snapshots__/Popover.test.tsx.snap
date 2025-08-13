@@ -6,9 +6,10 @@ exports[`Popover component
 <DocumentFragment>
   <div>
     <div
-      aria-expanded="false"
+      aria-controls=":rr:"
+      aria-expanded="true"
       aria-haspopup="dialog"
-      data-state="closed"
+      data-state="open"
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -58,9 +59,10 @@ exports[`Popover component
 <DocumentFragment>
   <div>
     <div
-      aria-expanded="false"
+      aria-controls=":rl:"
+      aria-expanded="true"
       aria-haspopup="dialog"
-      data-state="closed"
+      data-state="open"
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -110,9 +112,10 @@ exports[`Popover component
 <DocumentFragment>
   <div>
     <div
-      aria-expanded="false"
+      aria-controls=":r9:"
+      aria-expanded="true"
       aria-haspopup="dialog"
-      data-state="closed"
+      data-state="open"
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -136,9 +139,10 @@ exports[`Popover component
 <DocumentFragment>
   <div>
     <div
-      aria-expanded="false"
+      aria-controls=":rf:"
+      aria-expanded="true"
       aria-haspopup="dialog"
-      data-state="closed"
+      data-state="open"
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -162,9 +166,10 @@ exports[`Popover component
 <DocumentFragment>
   <div>
     <div
-      aria-expanded="false"
+      aria-controls=":rc:"
+      aria-expanded="true"
       aria-haspopup="dialog"
-      data-state="closed"
+      data-state="open"
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -188,9 +193,10 @@ exports[`Popover component
 <DocumentFragment>
   <div>
     <div
-      aria-expanded="false"
+      aria-controls=":r0:"
+      aria-expanded="true"
       aria-haspopup="dialog"
-      data-state="closed"
+      data-state="open"
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -214,9 +220,10 @@ exports[`Popover component
 <DocumentFragment>
   <div>
     <div
-      aria-expanded="false"
+      aria-controls=":r6:"
+      aria-expanded="true"
       aria-haspopup="dialog"
-      data-state="closed"
+      data-state="open"
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -240,9 +247,10 @@ exports[`Popover component
 <DocumentFragment>
   <div>
     <div
-      aria-expanded="false"
+      aria-controls=":r3:"
+      aria-expanded="true"
       aria-haspopup="dialog"
-      data-state="closed"
+      data-state="open"
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"

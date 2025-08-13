@@ -151,6 +151,7 @@ export const Tooltip = (props: TooltipProps) => {
       trigger={children}
       on={'hover'}
       offset={'medium'}
+      triggerClass="w-fit-content"
       animationClass={{
         open: styles[`Tooltip-animation-open-${positionValue[position]}`],
         close: styles[`Tooltip-animation-close-${positionValue[position]}`],
