@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, waitFor } from '@testing-library/react';
 import { ChipInput } from '@/index';
 import { ChipInputProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -91,7 +91,10 @@ describe('ChipInput component', () => {
     const { getByTestId, getAllByTestId } = render(<ChipInput value={value} disabled={true} />);
 
     expect(getByTestId('DesignSystem-ChipInput')).toHaveClass('ChipInput--disabled');
-    expect(getAllByTestId('DesignSystem-ChipInput--Chip')[0]).toHaveClass('Chip-input--disabled');
+    const disabledChip = getAllByTestId('DesignSystem-ChipInput--Chip')[0].querySelector(
+      '[data-test="DesignSystem-Chip--GenericChip"]'
+    );
+    expect(disabledChip).toHaveClass('Chip-input--disabled');
   });
 
   it('ChipInput with prop: placeholder', () => {
@@ -125,6 +128,41 @@ describe('ChipInput component', () => {
 
     expect(getByTestId('DesignSystem-ChipInput')).toHaveClass('ChipInput--error');
     expect(getByTestId('DesignSystem-ChipInput--Border')).toHaveClass('ChipInput-border--error');
+  });
+});
+
+describe('ChipInput keyboard navigation and deletion', () => {
+  it('moves focus between chips and input using arrow keys', async () => {
+    const { getByTestId, getAllByTestId } = render(<ChipInput defaultValue={value} />);
+    const inputComponent = getByTestId('DesignSystem-ChipInput--Input');
+    const container = getByTestId('DesignSystem-ChipInput');
+
+    inputComponent.focus();
+    fireEvent.keyDown(container, { key: 'ArrowLeft' });
+
+    const chips = getAllByTestId('DesignSystem-ChipInput--Chip');
+    await waitFor(() => expect(document.activeElement).toBe(chips[chips.length - 1]));
+
+    fireEvent.keyDown(container, { key: 'ArrowRight' });
+    await waitFor(() => expect(document.activeElement).toBe(inputComponent));
+  });
+
+  it('deletes focused chip with backspace and clears with escape', async () => {
+    const { getByTestId, getAllByTestId, queryAllByTestId } = render(<ChipInput defaultValue={value} />);
+
+    const inputComponent = getByTestId('DesignSystem-ChipInput--Input');
+    inputComponent.focus();
+    fireEvent.keyDown(inputComponent, { key: 'ArrowLeft' });
+
+    const focusedChip = document.activeElement as Element;
+    fireEvent.keyDown(focusedChip, { key: 'Backspace' });
+
+    await waitFor(() => {
+      expect(getAllByTestId('DesignSystem-ChipInput--Chip')).toHaveLength(value.length - 1);
+    });
+
+    fireEvent.keyDown(inputComponent, { key: 'Escape' });
+    expect(queryAllByTestId('DesignSystem-ChipInput--Chip')).toHaveLength(0);
   });
 });
 
@@ -215,7 +253,10 @@ describe('ChipInput component with chipOptions', () => {
     const { getAllByTestId } = render(
       <ChipInput value={['this is very very very  long text']} chipOptions={chipOptions} />
     );
-    expect(getAllByTestId('DesignSystem-ChipInput--Chip')[0]).toHaveStyle({ maxWidth: '200px' });
+    const chip = getAllByTestId('DesignSystem-ChipInput--Chip')[0].querySelector(
+      '[data-test="DesignSystem-Chip--GenericChip"]'
+    );
+    expect(chip).toHaveStyle({ maxWidth: '200px' });
   });
 });
 
