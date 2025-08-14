@@ -1,0 +1,31 @@
+### Keyboard Interactions
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Initial state</th>
+      <th style={{width:"33%", textAlign: "left"}}>Keyboard Interaction</th>
+      <th style={{width:"33%", textAlign: "left"}}>Final state</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Input is focused</td>
+      <td>&lt;left arrow&gt;</td>
+      <td>Focus shifts to the last chip.</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Chip is focused</td>
+      <td>&lt;left arrow&gt; / &lt;right arrow&gt;</td>
+      <td>Move focus to the previous or next chip. When focus is on the last chip and the right arrow is pressed, focus moves to the input.</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Chip is focused</td>
+      <td>&lt;Backspace&gt; / &lt;Delete&gt;</td>
+      <td>Remove the focused chip.</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Component has chips</td>
+      <td>&lt;Escape&gt;</td>
+      <td>Clear all chips and focus the input.</td>
+    </tr>
+  </tbody>
+</table>
