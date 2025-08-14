@@ -114,6 +114,7 @@ export const MenuItem = (props: MenuItemProps) => {
 
   const onClickHandler = (ev: { preventDefault: () => void }) => {
     ev.preventDefault();
+    if (isActive) return;
     if (onClick) onClick(menu);
   };
 

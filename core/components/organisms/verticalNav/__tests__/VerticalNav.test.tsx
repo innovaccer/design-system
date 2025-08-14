@@ -304,6 +304,16 @@ describe('Vertical Navigation component active menu', () => {
 });
 
 describe('Vertical Navigation component prop: onClick', () => {
+  it('does not call onClick callback when active menu item is clicked', () => {
+    const menuClicked = 0;
+    onClick.mockReset();
+    const { getAllByTestId } = render(<VerticalNav menus={menus} active={{ name: 'patient_360' }} onClick={onClick} />);
+
+    const activeMenu = getAllByTestId('DesignSystem-VerticalNav--Item')[menuClicked];
+    fireEvent.click(activeMenu);
+    expect(onClick).not.toHaveBeenCalled();
+  });
+
   it('calls onClick callback', () => {
     const menuClicked = 0;
     const { getAllByTestId } = render(<VerticalNav menus={menus} active={active} onClick={onClick} />);
