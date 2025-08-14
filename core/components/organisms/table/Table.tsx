@@ -655,6 +655,10 @@ export class Table extends React.Component<TableProps, TableState> {
     }
   };
 
+  public refresh = () => {
+    this.updateData();
+  };
+
   fetchDataOnScroll = async (props: { page: number; rowsCount: number }) => {
     const { sortingList, filterList, searchTerm } = this.state;
 

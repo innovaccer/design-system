@@ -351,11 +351,15 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
       let clickInsideLayer = false;
       let shouldClose = false;
 
-      const openedLayers = container.querySelectorAll('[data-opened="true"]');
+      const openedLayers = Array.from(container.querySelectorAll('[data-opened="true"]')) as Element[];
+      if (popover) {
+        openedLayers.push(popover);
+      }
+
       openedLayers.forEach((layer) => {
-        if (layer && layer.contains(clicked)) {
+        if (layer && (layer as HTMLElement).contains(clicked)) {
           clickInsideLayer = true;
-          const clickedIndex = parseInt(window.getComputedStyle(layer).zIndex);
+          const clickedIndex = parseInt(window.getComputedStyle(layer as HTMLElement).zIndex);
           if (popoverIndex > clickedIndex) {
             shouldClose = true;
             return;
@@ -370,7 +374,12 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     };
 
     const onOutsideClickHandler = (event: Event) => {
-      const { open, closeOnBackdropClick } = this.props;
+      const { open, closeOnBackdropClick, on } = this.props;
+
+      if (on === 'hover' && this.doesEventContainsElement(event, this.popupRef)) {
+        return;
+      }
+
       if (open && shouldPopoverClose(event.target as HTMLElement) && closeOnBackdropClick) {
         if (!this.doesEventContainsElement(event, this.popupRef)) {
           this.togglePopper('outsideClick');

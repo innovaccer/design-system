@@ -68,7 +68,7 @@ export interface InputProps extends BaseProps, BaseHtmlProps<HTMLInputElement> {
    */
   autoComplete?: AutoComplete;
   /**
-   * Disables the `Input`, making it unable to type
+   * Prevents editing while keeping the input focusable.
    */
   readOnly?: boolean;
   /**

@@ -9,6 +9,9 @@ const keyCodes = {
   BACKSPACE: 'Backspace',
   DELETE: 'Delete',
   ENTER: 'Enter',
+  LEFT: 'ArrowLeft',
+  RIGHT: 'ArrowRight',
+  ESCAPE: 'Escape',
 };
 
 type ChipOptions = {
@@ -100,6 +103,8 @@ export const ChipInput = (props: ChipInputProps) => {
   const inputRef = React.createRef<HTMLInputElement>();
   const customRef = React.useRef<any>();
 
+  const [focusedChipIndex, setFocusedChipIndex] = React.useState<number | null>(null);
+
   const [chips, setChips] = React.useState(value || defaultValue);
   const [inputValue, setInputValue] = React.useState('');
 
@@ -137,6 +142,12 @@ export const ChipInput = (props: ChipInputProps) => {
     if (onChange) onChange(updatedChips);
   };
 
+  const focusChip = (index: number) => {
+    const chipElements = customRef.current?.querySelectorAll('[data-chip-index]');
+    const el = chipElements?.[index] as HTMLElement | undefined;
+    el && el.focus();
+  };
+
   const onChipDeleteHandler = (index: number) => {
     const updatedChips = [...chips];
     updatedChips.splice(index, 1);
@@ -145,6 +156,19 @@ export const ChipInput = (props: ChipInputProps) => {
     }
 
     onUpdateChips(updatedChips);
+
+    const newLength = updatedChips.length;
+    if (focusedChipIndex !== null) {
+      const newIndex = index >= newLength ? newLength - 1 : index;
+      setFocusedChipIndex(newLength ? newIndex : null);
+      setTimeout(() => {
+        if (newLength) {
+          focusChip(newIndex);
+        } else {
+          inputRef.current?.focus();
+        }
+      }, 0);
+    }
   };
 
   const onChipAddHandler = () => {
@@ -176,21 +200,60 @@ export const ChipInput = (props: ChipInputProps) => {
     }
 
     onUpdateChips(updatedChips);
+    setFocusedChipIndex(null);
   };
 
-  const onKeyDownHandler = (event: any) => {
+  const onKeyDownHandler = (event: React.KeyboardEvent<HTMLDivElement>) => {
     const chipsLength = chips.length;
 
     switch (event.key) {
+      case keyCodes.LEFT:
+        if (focusedChipIndex === null) {
+          if (chipsLength > 0) {
+            const newIndex = chipsLength - 1;
+            setFocusedChipIndex(newIndex);
+            setTimeout(() => focusChip(newIndex), 0);
+            event.preventDefault();
+          }
+        } else if (focusedChipIndex > 0) {
+          const newIndex = focusedChipIndex - 1;
+          setFocusedChipIndex(newIndex);
+          setTimeout(() => focusChip(newIndex), 0);
+          event.preventDefault();
+        }
+        break;
+      case keyCodes.RIGHT:
+        if (focusedChipIndex !== null) {
+          if (focusedChipIndex < chipsLength - 1) {
+            const newIndex = focusedChipIndex + 1;
+            setFocusedChipIndex(newIndex);
+            setTimeout(() => focusChip(newIndex), 0);
+          } else {
+            setFocusedChipIndex(null);
+            inputRef.current?.focus();
+          }
+          event.preventDefault();
+        }
+        break;
       case keyCodes.DELETE:
       case keyCodes.BACKSPACE:
-        if (inputValue === '' && chipsLength > 0) {
+        if (focusedChipIndex !== null) {
+          onChipDeleteHandler(focusedChipIndex);
+          event.preventDefault();
+        } else if (event.target === inputRef.current && inputValue === '' && chipsLength > 0) {
           onChipDeleteHandler(chipsLength - 1);
+          event.preventDefault();
         }
         break;
       case keyCodes.ENTER:
-        event.preventDefault();
-        onChipAddHandler();
+        if (event.target === inputRef.current) {
+          event.preventDefault();
+          onChipAddHandler();
+        }
+        break;
+      case keyCodes.ESCAPE:
+        onDeleteAllHandler();
+        inputRef.current?.focus();
         break;
       default:
         break;
@@ -226,18 +289,24 @@ export const ChipInput = (props: ChipInputProps) => {
     const { type = 'input', onClick, ...rest } = chipOptions;
 
     return (
-      <Chip
-        data-test="DesignSystem-ChipInput--Chip"
-        label={chip}
-        name={chip}
-        type={type}
-        disabled={disabled}
+      <div
         key={index}
-        className="my-3 mx-2"
-        onClick={() => onClick && onClick(chip, index)}
-        onClose={() => onChipDeleteHandler(index)}
-        {...rest}
-      />
+        data-test="DesignSystem-ChipInput--Chip"
+        data-chip-index={index}
+        className="my-3 mx-2 d-inline-block"
+        tabIndex={focusedChipIndex === index ? 0 : -1}
+        onFocus={() => setFocusedChipIndex(index)}
+      >
+        <Chip
+          label={chip}
+          name={chip}
+          type={type}
+          disabled={disabled}
+          onClick={() => onClick && onClick(chip, index)}
+          onClose={() => onChipDeleteHandler(index)}
+          {...rest}
+        />
+      </div>
     );
   });
 
@@ -250,6 +319,7 @@ export const ChipInput = (props: ChipInputProps) => {
         {...baseProps}
         className={ChipInputClass}
         onClick={onClickHandler}
+        onKeyDown={onKeyDownHandler}
         tabIndex={disabled ? -1 : 0}
       >
         <div className={styles['ChipInput-wrapper']} ref={customRef}>
@@ -263,9 +333,11 @@ export const ChipInput = (props: ChipInputProps) => {
             disabled={disabled}
             value={inputValue}
             onBlur={onBlur}
-            onFocus={onFocus}
+            onFocus={(e) => {
+              setFocusedChipIndex(null);
+              if (onFocus) onFocus(e);
+            }}
             onChange={onInputChangeHandler}
-            onKeyDown={onKeyDownHandler}
           />
           {/* eslint-enable */}
         </div>

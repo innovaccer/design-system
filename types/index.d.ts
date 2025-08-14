@@ -1388,9 +1388,9 @@ export declare const Collapsible: {
 	defaultProps: {
 		expanded: boolean;
 		hoverable: boolean;
-		height: string;
-		expandedWidth: string;
-	};
+                height: string;
+                expandedWidth: number;
+        };
 };
 export declare type StatusType = "failed" | "sending" | "sent" | "read" | "urgent";
 export interface StatusProps extends BaseProps {

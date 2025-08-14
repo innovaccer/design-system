@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, fireEvent, waitFor, screen, cleanup } from '@testing-library/react';
+import { render, fireEvent, waitFor, screen, cleanup, act } from '@testing-library/react';
 import { Table, Button } from '@/index';
 import { TableProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -940,5 +940,28 @@ describe('render table with custom selection/unselection label renderers', () =>
     fireEvent.animationEnd(selectionLabel);
 
     expect(selectionLabel).toHaveTextContent('Custom unselected label');
+  });
+});
+
+describe('Table refresh', () => {
+  it('re-fetches data on refresh', async () => {
+    const fetchDataMock = jest.fn(() =>
+      Promise.resolve({
+        schema: tableSchema,
+        data: tableData,
+        count: tableData.length,
+        searchTerm: '',
+      })
+    );
+    const tableRef = React.createRef<any>();
+    render(<Table ref={tableRef} fetchData={fetchDataMock} />);
+
+    await waitFor(() => expect(fetchDataMock).toHaveBeenCalledTimes(1));
+
+    act(() => {
+      tableRef.current.refresh();
+    });
+
+    await waitFor(() => expect(fetchDataMock).toHaveBeenCalledTimes(2));
   });
 });

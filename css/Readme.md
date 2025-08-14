@@ -29,7 +29,7 @@
 | --success-lighter 	| `#A5D8AA` 	| ![#A5D8AA](https://via.placeholder.com/15/A5D8AA/000000?text=+) 	|
 | --success-lightest 	| `#D7EFDF` 	| ![#D7EFDF](https://via.placeholder.com/15/D7EFDF/000000?text=+) 	|
 
-## WARNNING
+## WARNING
 | Token 	| value 	| preview 	|
 |-	|-	|-	|
 | --warning 	| `#FFC208` 	| ![#FFC208](https://via.placeholder.com/15/FFC208/000000?text=+) 	|

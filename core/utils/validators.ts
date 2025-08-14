@@ -74,9 +74,10 @@ export const date = (val: string, format: string): boolean => {
 
 export const time = (val: string, format: string): boolean => {
   const { hours, minutes } = getTimeObjFromStr(format, val);
-  const hoursCond = isFormat12hour(format) ? hours <= 12 : hours < 24;
+  const hoursCond = isFormat12hour(format) ? hours >= 1 && hours <= 12 : hours >= 0 && hours < 24;
+  const minutesCond = minutes >= 0 && minutes < 60;
 
-  return hoursCond && minutes <= 60;
+  return hoursCond && minutesCond;
 };
 
 export const isNaturalNumber = (val: number | string): boolean => {

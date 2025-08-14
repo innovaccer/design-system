@@ -162,6 +162,25 @@ describe('renders Popover component with prop: closeOnBackdropClick', () => {
   });
 });
 
+describe('Popover stays open on hover when clicked inside', () => {
+  it('does not close popover when clicked inside after hover', () => {
+    const { getByTestId } = render(
+      <Popover trigger={trigger} on="hover" appendToBody={false}>
+        <div data-test="DesignSystem-Popover--Inner">Content</div>
+      </Popover>
+    );
+
+    const popoverTrigger = getByTestId('DesignSystem-PopoverTrigger');
+    fireEvent.mouseEnter(popoverTrigger);
+
+    const inner = getByTestId('DesignSystem-Popover--Inner');
+    fireEvent.click(inner);
+
+    expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
+    cleanup();
+  });
+});
+
 describe('renders Popover component with prop: open and onToggle', () => {
   it('Popover component with open: false', () => {
     const { queryByTestId } = render(
