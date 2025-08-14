@@ -7,10 +7,11 @@ import { MessageAppearance } from '@/common.type';
 const label = 'StatusHint';
 const appearances: MessageAppearance[] = ['default', 'alert', 'info', 'warning', 'success'];
 const text = 'Status hint is used to highlight the status of an item.';
-
+const size = ['small', 'regular'];
 describe('StatusHint component', () => {
   const mapper = {
     appearance: valueHelper(appearances, { required: true, iterate: true }),
+    size: valueHelper(size, { required: true, iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
