@@ -123,6 +123,12 @@ const SelectTrigger = (props: SelectTriggerProps) => {
 
   const triggerClass = classNames([selectStyles['Select-trigger-wrapper']], 'ellipsis--noWrap');
 
+  const inlineLabelClass = classNames({
+    'mr-4': triggerSize === 'regular',
+    'mr-5': triggerSize === 'small',
+    'white-space-nowrap': true,
+  });
+
   const iconClass = classNames('align-items-center', 'mr-2', 'ml-3', selectStyles['Select-crossButton']);
 
   return (
@@ -150,7 +156,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
         {
           <div className={triggerClass}>
             {inlineLabel && (
-              <Text appearance="subtle" className="mr-4 white-space-nowrap">
+              <Text appearance="subtle" className={inlineLabelClass}>
                 {`${inlineLabel.trim().charAt(0).toUpperCase()}${inlineLabel.trim().slice(1)}`}
               </Text>
             )}

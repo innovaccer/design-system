@@ -232,6 +232,8 @@ interface SharedTableProps extends BaseProps {
    *    customSelectionLabel?: string;
    *    globalActionRenderer?: (data: Data) => React.ReactNode;
    *    selectionActionRenderer?: (selectedRows: RowData[], selectAll?: boolean) => React.ReactNode;
+   *    selectedLabelRenderer?: (context: Record<string, any>) => string;
+   *    unSelectedLabelRenderer?: (context: Record<string, any>) => string;
    * }
    * </pre>
    *

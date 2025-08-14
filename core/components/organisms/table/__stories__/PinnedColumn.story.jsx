@@ -50,6 +50,24 @@ export const pinnedColumns = () => {
       gender: 'Male',
       facility: 'Lullaby Medical Clinic',
     },
+    {
+      s_no: 6,
+      empi: 'P087632',
+      first_name: 'Rachel',
+      last_name: 'Lane',
+      dob: '01/10/1982',
+      gender: 'Female',
+      facility: 'Lullaby Medical Clinic',
+    },
+    {
+      s_no: 7,
+      empi: 'P087633',
+      first_name: 'Chandler',
+      last_name: 'Bing',
+      dob: '01/10/1982',
+      gender: 'Male',
+      facility: 'Lullaby Medical Clinic',
+    },
   ];
 
   const schema = [
@@ -58,7 +76,7 @@ export const pinnedColumns = () => {
       displayName: 'S.no.',
       width: '5%',
       sorting: false,
-      pinned: 'left',
+      pinned: 'right',
     },
     {
       name: 'empi',
@@ -99,22 +117,24 @@ export const pinnedColumns = () => {
   ];
 
   return (
-    <Card className="overflow-hidden">
-      <Table
-        loaderSchema={loaderSchema}
-        size="compressed"
-        showMenu={false}
-        separator={false}
-        data={data}
-        schema={schema}
-        withHeader={true}
-        withCheckbox={true}
-        headerOptions={{
-          withSearch: false,
-        }}
-        withPagination={false}
-      />
-    </Card>
+    <div className="vh-50">
+      <Card className="h-100 overflow-hidden">
+        <Table
+          loaderSchema={loaderSchema}
+          size="compressed"
+          showMenu={false}
+          separator={false}
+          data={data}
+          schema={schema}
+          withHeader={true}
+          withCheckbox={true}
+          headerOptions={{
+            withSearch: false,
+          }}
+          withPagination={false}
+        />
+      </Card>
+    </div>
   );
 };
 
@@ -165,6 +185,24 @@ const customCode = `() => {
       gender: 'Male',
       facility: 'Lullaby Medical Clinic'
     },
+    {
+      s_no: 6,
+      empi: "P087632",
+      first_name: "Rachel",
+      last_name: "Lane",
+      dob: "01/10/1982",
+      gender: 'Female',
+      facility: 'Lullaby Medical Clinic'
+    },
+    {
+      s_no: 7,
+      empi: "P087633",
+      first_name: "Chandler",
+      last_name: "Bing",
+      dob: "01/10/1982",
+      gender: 'Male',
+      facility: 'Lullaby Medical Clinic'
+    }
   ];
 
   const schema = [
@@ -173,7 +211,7 @@ const customCode = `() => {
       displayName: 'S.no.',
       width: '5%',
       sorting: false,
-      pinned: 'left'
+      pinned: 'right'
     },
     {
       name: 'empi',
@@ -208,13 +246,14 @@ const customCode = `() => {
     },
     {
       name: 'facility',
-      displayName: 'Facility',
+      displayName: 'Facility Section',
       sorting: false
     },
   ];
 
   return (
-      <Card className="overflow-hidden">
+    <div className="vh-50">
+      <Card className="h-100 overflow-hidden">
         <Table
           showMenu={false}
           size="compressed"
@@ -224,11 +263,12 @@ const customCode = `() => {
           withHeader={true}
           withCheckbox={true}
           headerOptions={{
-            withSearch: false
+            withSearch: false,
           }}
           withPagination={false}
         />
       </Card>
+    </div>
   );
 }`;
 

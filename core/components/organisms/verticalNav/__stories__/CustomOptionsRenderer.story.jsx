@@ -5,14 +5,13 @@ export const CustomOptionsRenderer = () => {
   const data = [
     {
       name: 'clinical_data',
-      label: 'Clinical Data',
+      label: 'Clinical Assessment Management',
       icon: 'assignment_ind',
     },
     {
       name: 'care_management',
-      label: 'Care Management',
+      label: 'Care Management Policies',
       icon: 'forum',
-      count: 40,
       subMenu: [
         {
           name: 'care_management.timeline',
@@ -24,13 +23,11 @@ export const CustomOptionsRenderer = () => {
           name: 'care_management.care_protocol',
           label: 'Care Protocol',
           icon: 'fact_check',
-          count: 10,
         },
         {
           name: 'care_management.assessments',
           label: 'Assessments',
           icon: 'assessment',
-          count: 10,
         },
         {
           name: 'care_management.tasks',
@@ -55,6 +52,7 @@ export const CustomOptionsRenderer = () => {
       name: 'preventive_health',
       label: 'Preventive Health',
       icon: 'beenhere',
+      count: 20,
     },
     {
       name: 'manual_entry',
@@ -77,21 +75,23 @@ export const CustomOptionsRenderer = () => {
     name: 'care_management.timeline',
   });
 
-  const customItemRenderer = (props) => {
-    const { menu, onClick, hasSubmenu, expanded, isChildren, MenuIcon, MenuLabel, MenuPills } = props;
+  const customOptionRenderer = (props) => {
+    const { menu, onClick, hasSubmenu, expanded, MenuIcon, MenuLabel, MenuPills } = props;
     return (
-      <div
-        aria-hidden="true"
-        onClick={() => onClick(menu)}
-        className={`p-5 d-flex align-items-center cursor-pointer ${isChildren ? 'ml-7' : ''}`}
-      >
-        {menu.icon && (
-          <Icon data-test="DesignSystem-VerticalNav--Icon" className={expanded ? 'mr-4' : ''} name={menu.icon} />
-        )}
-        {MenuLabel()}
-        <div className="ml-5 d-flex">{MenuPills()}</div>
+      <>
+        <div
+          aria-hidden="true"
+          onClick={() => onClick(menu)}
+          className={'d-flex align-items-center cursor-pointer overflow-hidden'}
+        >
+          {menu.icon && (
+            <Icon data-test="DesignSystem-VerticalNav--Icon" className={expanded ? 'mr-4' : ''} name={menu.icon} />
+          )}
+          {MenuLabel()}
+        </div>
+        {MenuPills()}
         {hasSubmenu && MenuIcon()}
-      </div>
+      </>
     );
   };
 
@@ -102,7 +102,7 @@ export const CustomOptionsRenderer = () => {
         expanded={true}
         active={active}
         onClick={setActive}
-        customItemRenderer={customItemRenderer}
+        customOptionRenderer={customOptionRenderer}
       />
     </div>
   );
@@ -112,14 +112,13 @@ const customCode = `() => {
   const data = [
     {
       name: 'clinical_data',
-      label: 'Clinical Data',
+      label: 'Clinical Assessment Management',
       icon: 'assignment_ind'
     },
     {
       name: 'care_management',
-      label: 'Care Management policies',
+      label: 'Care Management Policies',
       icon: 'forum',
-      count: 40,
       subMenu: [
         {
           name: 'care_management.timeline',
@@ -131,13 +130,11 @@ const customCode = `() => {
           name: 'care_management.care_protocol',
           label: 'Care Protocol',
           icon: 'fact_check',
-          count: 10
         },
         {
           name: 'care_management.assessments',
           label: 'Assessments',
           icon: 'assessment',
-          count: 10
         },
         {
           name: 'care_management.tasks',
@@ -161,7 +158,8 @@ const customCode = `() => {
     {
       name: 'preventive_health',
       label: 'Preventive Health',
-      icon: 'beenhere'
+      icon: 'beenhere',
+      count: 20
     },
     {
       name: 'manual_entry',
@@ -184,32 +182,19 @@ const customCode = `() => {
     name: 'care_management.timeline'
   });
 
-  const customItemRenderer = (props) => {
-    const {menu, onClick, hasSubmenu, expanded, contentRef, isChildren, MenuIcon, MenuLabel, MenuPills} = props;
-    const [isTextTruncated, setIsTextTruncated] = React.useState(false);
-    const { detectTruncation } = Tooltip.useAutoTooltip();
-  
-    React.useEffect(() => {
-      const isTruncated = detectTruncation(contentRef);
-      setIsTextTruncated(isTruncated);
-      console.log(isTruncated);
-    }, []);
-
-    return ( 
-      <Tooltip showTooltip={isTextTruncated} tooltip={menu.label} position="right">
-      <div 
-        onClick={() => onClick(menu)}
-        style={{width: '232px'}}
-        className={\`p-5 d-flex align-items-center cursor-pointer \${isChildren ? 'ml-7' : ''}\`}
-      >
-        {menu.icon && (
-          <Icon data-test="DesignSystem-VerticalNav--Icon" className={expanded ? 'mr-4' : ''} name={menu.icon} />
-        )}
-        {MenuLabel()}
-        <div className="ml-5 d-flex">{MenuPills()}</div>
+  const customOptionRenderer = (props) => {
+    const { menu, onClick, hasSubmenu, expanded, MenuIcon, MenuLabel, MenuPills, MenuWrapper, isActive } = props;
+    return (
+      <>
+        <MenuWrapper>
+          {menu.icon && (
+            <Icon className={expanded ? 'mr-4' : ''} name={menu.icon} />
+          )}
+          {MenuLabel()}
+        </MenuWrapper>
+        {MenuPills()}
         {hasSubmenu && MenuIcon()}
-      </div>
-      </Tooltip>
+      </>
     );
   };
   
@@ -220,7 +205,7 @@ const customCode = `() => {
         expanded={true}
         active={active}
         onClick={setActive}
-        customItemRenderer={customItemRenderer}
+        customOptionRenderer={customOptionRenderer}
       />
     </div>
   );

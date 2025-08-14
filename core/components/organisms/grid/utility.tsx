@@ -2,6 +2,7 @@ import { Data, Schema } from './Grid';
 import { GridProps } from '@/index.type';
 export * from './columnUtility';
 export * from './rowUtility';
+import styles from '@css/components/grid.module.css';
 
 export const moveToIndex = (arr: any[], from: number, to: number) => {
   if (from === to) return arr;
@@ -53,3 +54,22 @@ export const getSchema = (
 };
 
 export const getPluralSuffix = (count: number) => (count > 1 ? 's' : '');
+
+export const isScrollAtTop = (enableRowVirtualization?: boolean, ref?: HTMLDivElement): boolean => {
+  // Find the correct scrollable element
+  let scrollableElement: HTMLElement | null = null;
+
+  if (enableRowVirtualization) {
+    scrollableElement = ref?.querySelector('.VS-container') as HTMLElement;
+  } else {
+    scrollableElement = ref?.querySelector(`.${styles['Grid-body']}`) as HTMLElement;
+  }
+
+  if (!scrollableElement) {
+    return false;
+  }
+
+  // Check if scrollTop is 0 (at the very top)
+  const isScrollAtTop = scrollableElement.scrollTop === 0;
+  return isScrollAtTop;
+};
