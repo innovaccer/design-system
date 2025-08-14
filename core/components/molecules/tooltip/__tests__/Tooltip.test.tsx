@@ -6,9 +6,11 @@ import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/u
 
 const Position = ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'right'];
 const StringValue = 'Sample string';
+const Size = ['small', 'regular'];
 
 const mapper = {
   position: valueHelper(Position, { required: true, iterate: true }),
+  size: valueHelper(Size, { required: true, iterate: true }),
   tooltip: valueHelper(StringValue, { required: true }),
 };
 
