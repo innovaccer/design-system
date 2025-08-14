@@ -131,7 +131,7 @@ Collapsible.defaultProps = {
   expanded: false,
   hoverable: true,
   height: '100%',
-  expandedWidth: '240px',
+  expandedWidth: 240,
   withTrigger: true,
 };
 
