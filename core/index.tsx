@@ -96,6 +96,7 @@ export { Menu } from './components/organisms/menu';
 export { KeyValuePair } from './components/molecules/keyValuePair';
 export { Chat } from './components/molecules/chat';
 export { Meter } from './components/atoms/meter';
+export { InsightsCard } from './components/molecules/insightsCard';
 
 export { AIButton } from './ai-components/AIButton';
 export { SaraSparkle } from './ai-components/SaraSparkle';
