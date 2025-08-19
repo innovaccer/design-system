@@ -35,6 +35,7 @@ export default {
     docs: {
       docPage: {
         title: 'Badge',
+        propDescription: `Note: All the valid properties of HTML SPAN elements are acceptable as a prop`,
       },
     },
   },
