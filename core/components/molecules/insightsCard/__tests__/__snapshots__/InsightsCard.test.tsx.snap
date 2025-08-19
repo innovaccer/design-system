@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InsightsCard component 
+  data: {"title":"Test Title","titleDescription":"Test Description","subtitles":[{"id":"1","title":"Test Subtitle","insights":[{"id":"1-1","selected":false,"title":"Test Insight","iconName":"info","iconAppearance":"subtle","borderColor":"#000000","backgroundColor":"#ffffff"}]}]}, description: "[ReactNode]"
+ 1`] = `
+<DocumentFragment>
+  <div
+    data-test="DesignSystem-InsightsCard"
+  >
+    <div
+      class="Card Card--none insightsCard-border"
+      data-test="DesignSystem-InsightsCard--Card"
+    >
+      <div
+        class="inner-content"
+        data-test="DesignSystem-InsightsCard--InnerContent"
+      >
+        <div
+          class="Card-header"
+          data-test="DesignSystem-InsightsCard--Header"
+        >
+          <div
+            class="d-flex align-items-center"
+            data-test="DesignSystem-InsightsCard--HeaderContent"
+          >
+            <img
+              alt="Button Icon"
+              data-test="DesignSystem-InsightsCard--AISparkle"
+              height="24"
+              src="test-file-stub"
+              width="24"
+            />
+            <h5
+              class="Heading Heading--s Heading--default d-flex align-items-center mb-4 ml-4 pt-4"
+              data-test="DesignSystem-InsightsCard--Title"
+            >
+              Test Title
+            </h5>
+          </div>
+        </div>
+        <div
+          class="Card-body"
+          data-test="DesignSystem-InsightsCard--Body"
+        >
+          <span
+            class="Text Text--default Text--regular"
+            data-test="DesignSystem-InsightsCard--Description"
+          >
+            Test Description
+          </span>
+          <div
+            class="Row d-flex justify-content-evenly"
+            data-test="DesignSystem-InsightsCard--ContentRow"
+          >
+            <div
+              class="Col Col--4"
+              data-test="DesignSystem-InsightsCard--NavigationColumn"
+            >
+              <div
+                class="Row d-flex flex-column mb-4"
+                data-test="DesignSystem-InsightsCard--SubtitleRow-1"
+              >
+                <h4
+                  class="Subheading Subheading--subtle insightCard-title mt-5"
+                  data-test="DesignSystem-InsightsCard--Subtitle-1"
+                >
+                  Test Subtitle
+                </h4>
+                <div
+                  class="Col"
+                  data-test="DesignSystem-InsightsCard--InsightColumn-1-1"
+                >
+                  <div
+                    class="d-flex align-items-center"
+                    data-test="DesignSystem-InsightsCard--Insight-1-1"
+                    style="border-top-right-radius: 10px; border-bottom-right-radius: 10px;"
+                  >
+                    <i
+                      class="material-symbols material-symbols-rounded Icon Icon--subtle ml-4"
+                      data-test="DesignSystem-InsightsCard--InsightIcon-1-1"
+                      role="button"
+                      style="font-size: 18px; width: 18px;"
+                    >
+                      info
+                    </i>
+                    <span
+                      class="Text Text--default Text--regular ml-4"
+                      data-test="DesignSystem-InsightsCard--InsightText-1-1"
+                    >
+                      Test Insight
+                    </span>
+                    <button
+                      class="Button Button--regular Button--regularSquare Button--transparent ml-auto insightCard--subtle"
+                      data-test="DesignSystem-InsightsCard--InsightButton-1-1"
+                      tabindex="0"
+                    >
+                      <div
+                        class="Button-icon"
+                        data-test="DesignSystem-Button--Icon-Wrapper"
+                      >
+                        <i
+                          class="material-symbols material-symbols-rounded Icon"
+                          data-test="DesignSystem-Button--Icon"
+                          role="button"
+                          style="font-size: 16px; width: 16px;"
+                        >
+                          keyboard_arrow_right
+                        </i>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="Col mt-8 p-4 ml-4"
+              data-test="DesignSystem-InsightsCard--DescriptionColumn"
+              style="border-radius: 10px;"
+            >
+              <div
+                data-test="DesignSystem-InsightsCard--DescriptionContent"
+              >
+                <div>
+                  Test Description Content
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
