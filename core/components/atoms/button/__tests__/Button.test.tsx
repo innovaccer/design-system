@@ -185,29 +185,59 @@ describe('Button component with icon', () => {
     expect(getByTestId('DesignSystem-Button--Icon').textContent).toMatch('events');
   });
 
-  sizes.forEach((s = 'regular') => {
-    it(`renders icon of fontSize = ${sizeMapping[s]} for button size = ${s}`, () => {
-      const { getByTestId } = render(
-        <Button icon="events" size={s}>
-          Button
-        </Button>
-      );
-      expect(getByTestId('DesignSystem-Button--Icon')).toHaveStyle(`fontSize: ${sizeMapping[s]}px`);
+  sizes
+    .filter((s) => s !== 'tiny')
+    .forEach((s = 'regular') => {
+      it(`renders icon of fontSize = ${sizeMapping[s]} for button size = ${s}`, () => {
+        const { getByTestId } = render(
+          <Button icon="events" size={s}>
+            Button
+          </Button>
+        );
+        expect(getByTestId('DesignSystem-Button--Icon')).toHaveStyle(`fontSize: ${sizeMapping[s]}px`);
+      });
+
+      it(`renders large icon inside button size = ${s}`, () => {
+        const { getByTestId } = render(<Button icon="events" size={s} largeIcon={true} />);
+        expect(getByTestId('DesignSystem-Button--Icon')).toHaveStyle(`fontSize: ${sizeMapping[s] + 4}px`);
+      });
+
+      it('does not render large icon when button has label', () => {
+        const { getByTestId } = render(
+          <Button icon="events" size={s} largeIcon={true}>
+            Button
+          </Button>
+        );
+        expect(getByTestId('DesignSystem-Button--Icon')).toHaveStyle(`fontSize: ${sizeMapping[s]}px`);
+      });
     });
 
-    it(`renders large icon inside button size = ${s}`, () => {
-      const { getByTestId } = render(<Button icon="events" size={s} largeIcon={true} />);
-      expect(getByTestId('DesignSystem-Button--Icon')).toHaveStyle(`fontSize: ${sizeMapping[s] + 4}px`);
-    });
+  it('renders icon of fontSize = 14px for button size = tiny (custom size)', () => {
+    const { getByTestId } = render(
+      <Button icon="events" size="tiny">
+        Button
+      </Button>
+    );
+    expect(getByTestId('DesignSystem-Button--Icon')).toHaveStyle('fontSize: 14px');
+  });
 
-    it('does not render large icon when button has label', () => {
-      const { getByTestId } = render(
-        <Button icon="events" size={s} largeIcon={true}>
-          Button
-        </Button>
-      );
-      expect(getByTestId('DesignSystem-Button--Icon')).toHaveStyle(`fontSize: ${sizeMapping[s]}px`);
-    });
+  it('renders icon of fontSize = 14px for tiny icon-only button (overrides sizeMapping)', () => {
+    const { getByTestId } = render(<Button icon="events" size="tiny" />);
+    expect(getByTestId('DesignSystem-Button--Icon')).toHaveStyle('fontSize: 14px');
+  });
+
+  it('renders icon of fontSize = 14px for tiny button with largeIcon=true and no children (overrides largeIcon logic)', () => {
+    const { getByTestId } = render(<Button icon="events" size="tiny" largeIcon={true} />);
+    expect(getByTestId('DesignSystem-Button--Icon')).toHaveStyle('fontSize: 14px');
+  });
+
+  it('renders icon of fontSize = 14px for tiny button with largeIcon=true and children (overrides both largeIcon and sizeMapping)', () => {
+    const { getByTestId } = render(
+      <Button icon="events" size="tiny" largeIcon={true}>
+        Button
+      </Button>
+    );
+    expect(getByTestId('DesignSystem-Button--Icon')).toHaveStyle('fontSize: 14px');
   });
 
   describe('Button with spinner', () => {
