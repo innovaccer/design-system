@@ -972,7 +972,7 @@ exports[`TS renders children 1`] = `
     data-test="DesignSystem-Message"
   >
     <i
-      class="material-symbols material-symbols-rounded Icon Icon--info Message-icon Message-icon--info"
+      class="material-symbols material-symbols-rounded Icon Icon--info Message-icon--info Message-icon--regular"
       data-test="DesignSystem-Message--Icon"
       role="button"
       style="font-size: 16px; width: 16px;"
@@ -981,7 +981,7 @@ exports[`TS renders children 1`] = `
     </i>
     <div>
       <span
-        class="Text Text--default Text--regular Message-text Message-text--info"
+        class="Text Text--default Text--regular Message-text--info Message-text--regular"
         data-test="DesignSystem-Message--Description"
       >
         Hello World!
