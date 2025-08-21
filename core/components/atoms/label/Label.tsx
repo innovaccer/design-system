@@ -6,6 +6,7 @@ import { BaseHtmlProps, BaseProps, extractBaseProps } from '@/utils/types';
 import styles from '@css/components/label.module.css';
 
 type LabelSize = 'small' | 'regular';
+
 export type LabelProps = {
   /**
    * Text to be rendered
