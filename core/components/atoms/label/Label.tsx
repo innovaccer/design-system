@@ -5,6 +5,8 @@ import { Text, Icon, Tooltip } from '@/index';
 import { BaseHtmlProps, BaseProps, extractBaseProps } from '@/utils/types';
 import styles from '@css/components/label.module.css';
 
+type LabelSize = 'small' | 'regular';
+
 export type LabelProps = {
   /**
    * Text to be rendered
@@ -31,6 +33,10 @@ export type LabelProps = {
    * Text to show inside tooltip when hover on **info** icon
    */
   info?: string;
+  /**
+   * Size of `Label`
+   */
+  size?: LabelSize;
 } & BaseProps &
   BaseHtmlProps<HTMLLabelElement>;
 
@@ -38,7 +44,7 @@ export type LabelProps = {
  * *NOTE: Extends props with HTMLProps<HTMLLabelElement>*
  */
 export const Label = (props: LabelProps) => {
-  const { required, optional, withInput, disabled, children, className, info, ...rest } = props;
+  const { required, optional, withInput, disabled, children, className, info, size = 'regular', ...rest } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -54,6 +60,12 @@ export const Label = (props: LabelProps) => {
   const classes = classNames({
     [styles['Label-text']]: true,
     [styles['Label--disabled']]: disabled,
+    [styles['Label--small']]: size && size === 'small',
+  });
+
+  const OptionalClasses = classNames({
+    [styles['Label-optionalText']]: true,
+    [styles['Label-optionalText--small']]: size && size === 'small',
   });
 
   const renderInfo = (isRequired = false, isOptional?: boolean) => {
@@ -63,7 +75,7 @@ export const Label = (props: LabelProps) => {
 
     if (isOptional) {
       return (
-        <Text data-test="DesignSystem-Label--OptionalText" appearance="subtle" className={styles['Label-optionalText']}>
+        <Text data-test="DesignSystem-Label--OptionalText" appearance="subtle" className={OptionalClasses}>
           (optional)
         </Text>
       );
