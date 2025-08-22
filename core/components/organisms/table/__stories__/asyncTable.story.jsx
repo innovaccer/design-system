@@ -7,6 +7,7 @@ import { fetchData } from '@/components/organisms/grid/__stories__/_common_/fetc
 import { action } from '@/utils/action';
 
 export const asyncTable = () => {
+  const tableRef = React.useRef(null);
   const selectionActionRenderer = (selectedData, selectAll) => {
     action('selectedData', selectedData, 'selectAll', selectAll)();
     return (
@@ -21,8 +22,12 @@ export const asyncTable = () => {
 
   return (
     <div>
+      <Button className="mb-4" onClick={() => tableRef.current.refresh()}>
+        Refresh
+      </Button>
       <Card className="h-100 overflow-hidden">
         <Table
+          ref={tableRef}
           loaderSchema={loaderSchema}
           fetchData={fetchData}
           withHeader={true}
@@ -51,6 +56,7 @@ export const asyncTable = () => {
 
 const customCode = `
 () => {
+  const tableRef = React.useRef(null);
   const translateData = (schema, data) => {
     let newData = data;
 
@@ -293,8 +299,12 @@ const customCode = `
 
   return (
     <div>
+      <Button className="mb-4" onClick={() => tableRef.current.refresh()}>
+        Refresh
+      </Button>
       <Card className="h-100 overflow-hidden">
         <Table
+          ref={tableRef}
           loaderSchema={loaderSchema}
           fetchData={fetchData}
           withHeader={true}
