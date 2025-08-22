@@ -149,6 +149,7 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
   });
 
   const spinnerSize = size === 'large' && children ? 'small' : 'xsmall';
+  const iconSize = size === 'tiny' ? 14 : largeIcon && !children ? sizeMapping[size] + 4 : sizeMapping[size];
 
   return (
     <button
@@ -174,12 +175,7 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
         <>
           {icon && (
             <div className={iconClass} data-test="DesignSystem-Button--Icon-Wrapper">
-              <Icon
-                data-test="DesignSystem-Button--Icon"
-                name={icon}
-                type={iconType}
-                size={largeIcon && !children ? sizeMapping[size] + 4 : sizeMapping[size]}
-              />
+              <Icon data-test="DesignSystem-Button--Icon" name={icon} type={iconType} size={iconSize} />
             </div>
           )}
           {children && <span className={styles['Button-text']}>{children}</span>}

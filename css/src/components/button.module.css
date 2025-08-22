@@ -50,6 +50,8 @@
   padding-left: var(--spacing-20);
   padding-top: var(--spacing-10);
   padding-bottom: var(--spacing-10);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-medium);
 }
 
 .Button--tinySquare {

@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: row;
   width: fit-content;
+  align-items: center;
 }
 
 .StatusHint-icon {
@@ -9,8 +10,6 @@
   border-radius: var(--border-radius-full);
   height: var(--spacing-20);
   width: var(--spacing-20);
-  margin-right: var(--spacing-20);
-  margin-top: var(--spacing-15);
 }
 
 .StatusHint--alert {

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`StatusHint component 
-  appearance: "alert"
+  appearance: "alert", size: "regular"
  1`] = `
 <body>
   <div>
@@ -10,7 +10,7 @@ exports[`StatusHint component
       data-test="DesignSystem-StatusHint"
     >
       <span
-        class="StatusHint-icon StatusHint--alert"
+        class="StatusHint-icon StatusHint--alert mr-4"
         data-test="DesignSystem-StatusHint--Icon"
       />
       <span
@@ -25,7 +25,7 @@ exports[`StatusHint component
 `;
 
 exports[`StatusHint component 
-  appearance: "default"
+  appearance: "alert", size: "small"
  1`] = `
 <body>
   <div>
@@ -34,7 +34,31 @@ exports[`StatusHint component
       data-test="DesignSystem-StatusHint"
     >
       <span
-        class="StatusHint-icon StatusHint--default"
+        class="StatusHint-icon StatusHint--alert mr-3-5"
+        data-test="DesignSystem-StatusHint--Icon"
+      />
+      <span
+        class="Text Text--default Text--medium Text--small"
+        data-test="DesignSystem-StatusHint--Text"
+      >
+        StatusHint
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`StatusHint component 
+  appearance: "default", size: "regular"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="StatusHint"
+      data-test="DesignSystem-StatusHint"
+    >
+      <span
+        class="StatusHint-icon StatusHint--default mr-4"
         data-test="DesignSystem-StatusHint--Icon"
       />
       <span
@@ -49,7 +73,7 @@ exports[`StatusHint component
 `;
 
 exports[`StatusHint component 
-  appearance: "info"
+  appearance: "default", size: "small"
  1`] = `
 <body>
   <div>
@@ -58,7 +82,31 @@ exports[`StatusHint component
       data-test="DesignSystem-StatusHint"
     >
       <span
-        class="StatusHint-icon StatusHint--info"
+        class="StatusHint-icon StatusHint--default mr-3-5"
+        data-test="DesignSystem-StatusHint--Icon"
+      />
+      <span
+        class="Text Text--default Text--medium Text--small"
+        data-test="DesignSystem-StatusHint--Text"
+      >
+        StatusHint
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`StatusHint component 
+  appearance: "info", size: "regular"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="StatusHint"
+      data-test="DesignSystem-StatusHint"
+    >
+      <span
+        class="StatusHint-icon StatusHint--info mr-4"
         data-test="DesignSystem-StatusHint--Icon"
       />
       <span
@@ -73,7 +121,7 @@ exports[`StatusHint component
 `;
 
 exports[`StatusHint component 
-  appearance: "success"
+  appearance: "info", size: "small"
  1`] = `
 <body>
   <div>
@@ -82,7 +130,31 @@ exports[`StatusHint component
       data-test="DesignSystem-StatusHint"
     >
       <span
-        class="StatusHint-icon StatusHint--success"
+        class="StatusHint-icon StatusHint--info mr-3-5"
+        data-test="DesignSystem-StatusHint--Icon"
+      />
+      <span
+        class="Text Text--default Text--medium Text--small"
+        data-test="DesignSystem-StatusHint--Text"
+      >
+        StatusHint
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`StatusHint component 
+  appearance: "success", size: "regular"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="StatusHint"
+      data-test="DesignSystem-StatusHint"
+    >
+      <span
+        class="StatusHint-icon StatusHint--success mr-4"
         data-test="DesignSystem-StatusHint--Icon"
       />
       <span
@@ -97,7 +169,7 @@ exports[`StatusHint component
 `;
 
 exports[`StatusHint component 
-  appearance: "warning"
+  appearance: "success", size: "small"
  1`] = `
 <body>
   <div>
@@ -106,11 +178,59 @@ exports[`StatusHint component
       data-test="DesignSystem-StatusHint"
     >
       <span
-        class="StatusHint-icon StatusHint--warning"
+        class="StatusHint-icon StatusHint--success mr-3-5"
+        data-test="DesignSystem-StatusHint--Icon"
+      />
+      <span
+        class="Text Text--default Text--medium Text--small"
+        data-test="DesignSystem-StatusHint--Text"
+      >
+        StatusHint
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`StatusHint component 
+  appearance: "warning", size: "regular"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="StatusHint"
+      data-test="DesignSystem-StatusHint"
+    >
+      <span
+        class="StatusHint-icon StatusHint--warning mr-4"
         data-test="DesignSystem-StatusHint--Icon"
       />
       <span
         class="Text Text--default Text--medium Text--regular"
+        data-test="DesignSystem-StatusHint--Text"
+      >
+        StatusHint
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`StatusHint component 
+  appearance: "warning", size: "small"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="StatusHint"
+      data-test="DesignSystem-StatusHint"
+    >
+      <span
+        class="StatusHint-icon StatusHint--warning mr-3-5"
+        data-test="DesignSystem-StatusHint--Icon"
+      />
+      <span
+        class="Text Text--default Text--medium Text--small"
         data-test="DesignSystem-StatusHint--Text"
       >
         StatusHint

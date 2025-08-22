@@ -11441,7 +11441,7 @@ exports[`Calendar component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_back
               </i>
@@ -11501,7 +11501,7 @@ exports[`Calendar component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_forward
               </i>
@@ -12084,7 +12084,7 @@ exports[`Calendar component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_back
               </i>
@@ -12624,7 +12624,7 @@ exports[`Calendar component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_forward
               </i>
@@ -13105,7 +13105,7 @@ exports[`Calendar component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_back
               </i>
@@ -14118,7 +14118,7 @@ exports[`Calendar component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_forward
               </i>
@@ -14666,7 +14666,7 @@ exports[`Calendar component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_back
               </i>
@@ -14726,7 +14726,7 @@ exports[`Calendar component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_forward
               </i>
@@ -15309,7 +15309,7 @@ exports[`Calendar component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_back
               </i>
@@ -15351,7 +15351,7 @@ exports[`Calendar component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_forward
               </i>
@@ -15546,7 +15546,7 @@ exports[`Calendar component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_back
               </i>
@@ -15580,7 +15580,7 @@ exports[`Calendar component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_forward
               </i>

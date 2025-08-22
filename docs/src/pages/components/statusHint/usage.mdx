@@ -31,6 +31,13 @@ Status hint comes in 5 Appearances -
 
 <Preview name='components-statushint-variants-default-status-hint--default-status-hint'/>
 
+### Sizes
+
+Status hint comes in **2 sizes** - regular and small.
+
+![Sizes in status hint](./images/sizes.png)
+<Caption>Sizes in status hint</Caption>
+
 ### Structure
 <br/>
 <br/>
@@ -46,8 +53,22 @@ Status hint comes in 5 Appearances -
      <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
    </tr>
    <tr style={{verticalAlign: "top"}}>
+      <td>Label Size</td>
+      <td>
+        <ul>
+          <li>14px (Regular)</li>
+          <li>12px (Small)</li>
+        </ul>
+      </td>
+   </tr>
+   <tr style={{verticalAlign: "top"}}>
       <td>Spacing between Indicator and Label</td>
-      <td>10 px</td>
+      <td>
+        <ul>
+          <li>8px (Regular)</li>
+          <li>6px (Small)</li>
+        </ul>
+      </td>
    </tr>
    <tr style={{verticalAlign: "top"}}>
       <td>Size of indicator</td>
@@ -103,4 +124,11 @@ Status hint is used to display the status of a resource while a badge is used as
 <Caption> Status hint vs Badge </Caption>
 
 <br/>
+
+#### Overflow Behavior in Status Hint
+
+In case of overflow, the items will get truncated and can be viewed inside a tooltip on hover.  
+
+<Preview name="components-statushint-label-wrap--label-wrap" />
+
 <br/>

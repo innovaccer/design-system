@@ -9,6 +9,10 @@
   box-sizing: border-box;
 }
 
+.Message--small {
+  padding: var(--spacing-20);
+}
+
 .Message--alert {
   border-color: var(--alert);
   background-color: color-mod(var(--alert) a(var(--opacity-1)));
@@ -29,9 +33,14 @@
   background-color: color-mod(var(--accent1) a(var(--opacity-1)));
 }
 
-.Message-icon {
+.Message-icon--regular {
   margin-right: var(--spacing-40);
   padding-top: var(--spacing-05);
+}
+
+.Message-icon--small {
+  margin-right: var(--spacing-20);
+  padding-top: var(--spacing-05) !important;
 }
 
 .Message-icon--withTitle {
@@ -42,8 +51,20 @@
   color: var(--accent1);
 }
 
-.Message-heading {
+.Message-heading--regular {
   margin-bottom: var(--spacing-10);
+}
+
+.Message-heading--small {
+  font-size: var(--font-size);
+  line-height: var(--font-height);
+  margin-bottom: var(--spacing-05);
+}
+
+.Message-text--small {
+  font-size: var(--font-size-s);
+  line-height: var(--font-height-s);
+  font-weight: var(--font-weight-medium);
 }
 
 .Message-heading--alert,
@@ -69,5 +90,12 @@
 .Message-actions {
   display: flex;
   align-items: center;
+}
+
+.Message-actions--regular {
   margin-top: var(--spacing-30);
+}
+
+.Message-actions--small {
+  margin-top: var(--spacing-10);
 }

@@ -6,9 +6,11 @@ import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/u
 
 const Position = ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'right'];
 const StringValue = 'Sample string';
+const Size = ['small', 'regular'];
 
 const mapper = {
   position: valueHelper(Position, { required: true, iterate: true }),
+  size: valueHelper(Size, { required: true, iterate: true }),
   tooltip: valueHelper(StringValue, { required: true }),
 };
 
@@ -95,5 +97,32 @@ describe('Tooltip component with text overflow', () => {
     const button = getByRole('button');
     fireEvent.mouseOver(button);
     getByTestId('DesignSystem-Popover').classList.contains('custom-class');
+  });
+});
+
+describe('Tooltip component with size prop', () => {
+  it('should render tooltip with small size', () => {
+    const { getByRole, getByTestId } = render(
+      <Tooltip size="small" tooltip="A tooltip">
+        <Button>show me the tooltip on hover</Button>
+      </Tooltip>
+    );
+    const button = getByRole('button');
+    fireEvent.mouseOver(button);
+    const tooltipWrapper = getByTestId('DesignSystem-Tooltip-Wrapper');
+    expect(tooltipWrapper).toHaveClass('Tooltip--small');
+  });
+
+  it('should render tooltip with regular size', () => {
+    const { getByRole, getByTestId } = render(
+      <Tooltip size="regular" tooltip="A tooltip">
+        <Button>show me the tooltip on hover</Button>
+      </Tooltip>
+    );
+    const button = getByRole('button');
+    fireEvent.mouseOver(button);
+    const tooltipWrapper = getByTestId('DesignSystem-Tooltip-Wrapper');
+    expect(tooltipWrapper).not.toHaveClass('Tooltip--small');
+    expect(tooltipWrapper).toHaveClass('Tooltip');
   });
 });

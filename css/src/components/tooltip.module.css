@@ -10,6 +10,10 @@
   transition-timing-function: cubic-bezier(0, 0, 0.38, 0.9);
 }
 
+.Tooltip--small {
+  line-height: var(--font-height-s);
+}
+
 .Tooltip-text {
   word-break: break-word;
   hyphens: auto;
