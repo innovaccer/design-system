@@ -10,7 +10,7 @@ exports[`Message component
       data-test="DesignSystem-Message"
     >
       <i
-        class="material-symbols material-symbols-rounded Icon Icon--alert Message-icon Message-icon--alert Message-icon--withTitle"
+        class="material-symbols material-symbols-rounded Icon Icon--alert Message-icon--alert Message-icon--regular Message-icon--withTitle"
         data-test="DesignSystem-Message--Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -19,19 +19,125 @@ exports[`Message component
       </i>
       <div>
         <h5
-          class="Heading Heading--s Heading--default Message-heading Message-heading--alert"
+          class="Heading Heading--s Heading--default Message-heading--alert Message-heading--regular"
           data-test="DesignSystem-Message--Title"
         >
           Title goes here
         </h5>
         <span
-          class="Text Text--default Text--regular Message-text Message-text--alert"
+          class="Text Text--default Text--regular Message-text--alert Message-text--regular"
           data-test="DesignSystem-Message--Description"
         >
           Description goes here
         </span>
         <div
-          class="Message-actions"
+          class="Message-actions Message-actions--regular"
+          data-test="DesignSystem-Message--actions"
+        >
+          <span
+            class="Text Text--link Text--regular mr-5 cursor-pointer"
+            data-test="DesignSystem-Text"
+          >
+            Action 1
+          </span>
+          <span
+            class="Text Text--link Text--regular cursor-pointer"
+            data-test="DesignSystem-Text"
+          >
+            Action 2
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Message component 
+  appearance: "alert", title: "Title goes here", description: "Description goes here", actions: "[ReactNode]", size: "regular"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Message Message--alert"
+      data-test="DesignSystem-Message"
+    >
+      <i
+        class="material-symbols material-symbols-rounded Icon Icon--alert Message-icon--alert Message-icon--regular Message-icon--withTitle"
+        data-test="DesignSystem-Message--Icon"
+        role="button"
+        style="font-size: 16px; width: 16px;"
+      >
+        error
+      </i>
+      <div>
+        <h5
+          class="Heading Heading--s Heading--default Message-heading--alert Message-heading--regular"
+          data-test="DesignSystem-Message--Title"
+        >
+          Title goes here
+        </h5>
+        <span
+          class="Text Text--default Text--regular Message-text--alert Message-text--regular"
+          data-test="DesignSystem-Message--Description"
+        >
+          Description goes here
+        </span>
+        <div
+          class="Message-actions Message-actions--regular"
+          data-test="DesignSystem-Message--actions"
+        >
+          <span
+            class="Text Text--link Text--regular mr-5 cursor-pointer"
+            data-test="DesignSystem-Text"
+          >
+            Action 1
+          </span>
+          <span
+            class="Text Text--link Text--regular cursor-pointer"
+            data-test="DesignSystem-Text"
+          >
+            Action 2
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Message component 
+  appearance: "alert", title: "Title goes here", description: "Description goes here", actions: "[ReactNode]", size: "small"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Message Message--alert Message--small"
+      data-test="DesignSystem-Message"
+    >
+      <i
+        class="material-symbols material-symbols-rounded Icon Icon--alert Message-icon--alert Message-icon--small Message-icon--withTitle"
+        data-test="DesignSystem-Message--Icon"
+        role="button"
+        style="font-size: 14px; width: 14px;"
+      >
+        error
+      </i>
+      <div>
+        <h5
+          class="Heading Heading--s Heading--default Message-heading--alert Message-heading--small"
+          data-test="DesignSystem-Message--Title"
+        >
+          Title goes here
+        </h5>
+        <span
+          class="Text Text--default Text--regular Message-text--alert Message-text--small"
+          data-test="DesignSystem-Message--Description"
+        >
+          Description goes here
+        </span>
+        <div
+          class="Message-actions Message-actions--small"
           data-test="DesignSystem-Message--actions"
         >
           <span
@@ -63,7 +169,7 @@ exports[`Message component
       data-test="DesignSystem-Message"
     >
       <i
-        class="material-symbols material-symbols-rounded Icon Icon--info Message-icon Message-icon--info Message-icon--withTitle"
+        class="material-symbols material-symbols-rounded Icon Icon--info Message-icon--info Message-icon--regular Message-icon--withTitle"
         data-test="DesignSystem-Message--Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -72,19 +178,125 @@ exports[`Message component
       </i>
       <div>
         <h5
-          class="Heading Heading--s Heading--default Message-heading Message-heading--info"
+          class="Heading Heading--s Heading--default Message-heading--info Message-heading--regular"
           data-test="DesignSystem-Message--Title"
         >
           Title goes here
         </h5>
         <span
-          class="Text Text--default Text--regular Message-text Message-text--info"
+          class="Text Text--default Text--regular Message-text--info Message-text--regular"
           data-test="DesignSystem-Message--Description"
         >
           Description goes here
         </span>
         <div
-          class="Message-actions"
+          class="Message-actions Message-actions--regular"
+          data-test="DesignSystem-Message--actions"
+        >
+          <span
+            class="Text Text--link Text--regular mr-5 cursor-pointer"
+            data-test="DesignSystem-Text"
+          >
+            Action 1
+          </span>
+          <span
+            class="Text Text--link Text--regular cursor-pointer"
+            data-test="DesignSystem-Text"
+          >
+            Action 2
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Message component 
+  appearance: "info", title: "Title goes here", description: "Description goes here", actions: "[ReactNode]", size: "regular"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Message Message--info"
+      data-test="DesignSystem-Message"
+    >
+      <i
+        class="material-symbols material-symbols-rounded Icon Icon--info Message-icon--info Message-icon--regular Message-icon--withTitle"
+        data-test="DesignSystem-Message--Icon"
+        role="button"
+        style="font-size: 16px; width: 16px;"
+      >
+        info
+      </i>
+      <div>
+        <h5
+          class="Heading Heading--s Heading--default Message-heading--info Message-heading--regular"
+          data-test="DesignSystem-Message--Title"
+        >
+          Title goes here
+        </h5>
+        <span
+          class="Text Text--default Text--regular Message-text--info Message-text--regular"
+          data-test="DesignSystem-Message--Description"
+        >
+          Description goes here
+        </span>
+        <div
+          class="Message-actions Message-actions--regular"
+          data-test="DesignSystem-Message--actions"
+        >
+          <span
+            class="Text Text--link Text--regular mr-5 cursor-pointer"
+            data-test="DesignSystem-Text"
+          >
+            Action 1
+          </span>
+          <span
+            class="Text Text--link Text--regular cursor-pointer"
+            data-test="DesignSystem-Text"
+          >
+            Action 2
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Message component 
+  appearance: "info", title: "Title goes here", description: "Description goes here", actions: "[ReactNode]", size: "small"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Message Message--info Message--small"
+      data-test="DesignSystem-Message"
+    >
+      <i
+        class="material-symbols material-symbols-rounded Icon Icon--info Message-icon--info Message-icon--small Message-icon--withTitle"
+        data-test="DesignSystem-Message--Icon"
+        role="button"
+        style="font-size: 14px; width: 14px;"
+      >
+        info
+      </i>
+      <div>
+        <h5
+          class="Heading Heading--s Heading--default Message-heading--info Message-heading--small"
+          data-test="DesignSystem-Message--Title"
+        >
+          Title goes here
+        </h5>
+        <span
+          class="Text Text--default Text--regular Message-text--info Message-text--small"
+          data-test="DesignSystem-Message--Description"
+        >
+          Description goes here
+        </span>
+        <div
+          class="Message-actions Message-actions--small"
           data-test="DesignSystem-Message--actions"
         >
           <span
@@ -116,7 +328,7 @@ exports[`Message component
       data-test="DesignSystem-Message"
     >
       <i
-        class="material-symbols material-symbols-rounded Icon Icon--success Message-icon Message-icon--success Message-icon--withTitle"
+        class="material-symbols material-symbols-rounded Icon Icon--success Message-icon--success Message-icon--regular Message-icon--withTitle"
         data-test="DesignSystem-Message--Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -125,19 +337,125 @@ exports[`Message component
       </i>
       <div>
         <h5
-          class="Heading Heading--s Heading--default Message-heading Message-heading--success"
+          class="Heading Heading--s Heading--default Message-heading--success Message-heading--regular"
           data-test="DesignSystem-Message--Title"
         >
           Title goes here
         </h5>
         <span
-          class="Text Text--default Text--regular Message-text Message-text--success"
+          class="Text Text--default Text--regular Message-text--success Message-text--regular"
           data-test="DesignSystem-Message--Description"
         >
           Description goes here
         </span>
         <div
-          class="Message-actions"
+          class="Message-actions Message-actions--regular"
+          data-test="DesignSystem-Message--actions"
+        >
+          <span
+            class="Text Text--link Text--regular mr-5 cursor-pointer"
+            data-test="DesignSystem-Text"
+          >
+            Action 1
+          </span>
+          <span
+            class="Text Text--link Text--regular cursor-pointer"
+            data-test="DesignSystem-Text"
+          >
+            Action 2
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Message component 
+  appearance: "success", title: "Title goes here", description: "Description goes here", actions: "[ReactNode]", size: "regular"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Message Message--success"
+      data-test="DesignSystem-Message"
+    >
+      <i
+        class="material-symbols material-symbols-rounded Icon Icon--success Message-icon--success Message-icon--regular Message-icon--withTitle"
+        data-test="DesignSystem-Message--Icon"
+        role="button"
+        style="font-size: 16px; width: 16px;"
+      >
+        check_circle
+      </i>
+      <div>
+        <h5
+          class="Heading Heading--s Heading--default Message-heading--success Message-heading--regular"
+          data-test="DesignSystem-Message--Title"
+        >
+          Title goes here
+        </h5>
+        <span
+          class="Text Text--default Text--regular Message-text--success Message-text--regular"
+          data-test="DesignSystem-Message--Description"
+        >
+          Description goes here
+        </span>
+        <div
+          class="Message-actions Message-actions--regular"
+          data-test="DesignSystem-Message--actions"
+        >
+          <span
+            class="Text Text--link Text--regular mr-5 cursor-pointer"
+            data-test="DesignSystem-Text"
+          >
+            Action 1
+          </span>
+          <span
+            class="Text Text--link Text--regular cursor-pointer"
+            data-test="DesignSystem-Text"
+          >
+            Action 2
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Message component 
+  appearance: "success", title: "Title goes here", description: "Description goes here", actions: "[ReactNode]", size: "small"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Message Message--success Message--small"
+      data-test="DesignSystem-Message"
+    >
+      <i
+        class="material-symbols material-symbols-rounded Icon Icon--success Message-icon--success Message-icon--small Message-icon--withTitle"
+        data-test="DesignSystem-Message--Icon"
+        role="button"
+        style="font-size: 14px; width: 14px;"
+      >
+        check_circle
+      </i>
+      <div>
+        <h5
+          class="Heading Heading--s Heading--default Message-heading--success Message-heading--small"
+          data-test="DesignSystem-Message--Title"
+        >
+          Title goes here
+        </h5>
+        <span
+          class="Text Text--default Text--regular Message-text--success Message-text--small"
+          data-test="DesignSystem-Message--Description"
+        >
+          Description goes here
+        </span>
+        <div
+          class="Message-actions Message-actions--small"
           data-test="DesignSystem-Message--actions"
         >
           <span
@@ -169,7 +487,7 @@ exports[`Message component
       data-test="DesignSystem-Message"
     >
       <i
-        class="material-symbols material-symbols-rounded Icon Icon--warning Message-icon Message-icon--warning Message-icon--withTitle"
+        class="material-symbols material-symbols-rounded Icon Icon--warning Message-icon--warning Message-icon--regular Message-icon--withTitle"
         data-test="DesignSystem-Message--Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -178,19 +496,125 @@ exports[`Message component
       </i>
       <div>
         <h5
-          class="Heading Heading--s Heading--default Message-heading Message-heading--warning"
+          class="Heading Heading--s Heading--default Message-heading--warning Message-heading--regular"
           data-test="DesignSystem-Message--Title"
         >
           Title goes here
         </h5>
         <span
-          class="Text Text--default Text--regular Message-text Message-text--warning"
+          class="Text Text--default Text--regular Message-text--warning Message-text--regular"
           data-test="DesignSystem-Message--Description"
         >
           Description goes here
         </span>
         <div
-          class="Message-actions"
+          class="Message-actions Message-actions--regular"
+          data-test="DesignSystem-Message--actions"
+        >
+          <span
+            class="Text Text--link Text--regular mr-5 cursor-pointer"
+            data-test="DesignSystem-Text"
+          >
+            Action 1
+          </span>
+          <span
+            class="Text Text--link Text--regular cursor-pointer"
+            data-test="DesignSystem-Text"
+          >
+            Action 2
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Message component 
+  appearance: "warning", title: "Title goes here", description: "Description goes here", actions: "[ReactNode]", size: "regular"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Message Message--warning"
+      data-test="DesignSystem-Message"
+    >
+      <i
+        class="material-symbols material-symbols-rounded Icon Icon--warning Message-icon--warning Message-icon--regular Message-icon--withTitle"
+        data-test="DesignSystem-Message--Icon"
+        role="button"
+        style="font-size: 16px; width: 16px;"
+      >
+        warning
+      </i>
+      <div>
+        <h5
+          class="Heading Heading--s Heading--default Message-heading--warning Message-heading--regular"
+          data-test="DesignSystem-Message--Title"
+        >
+          Title goes here
+        </h5>
+        <span
+          class="Text Text--default Text--regular Message-text--warning Message-text--regular"
+          data-test="DesignSystem-Message--Description"
+        >
+          Description goes here
+        </span>
+        <div
+          class="Message-actions Message-actions--regular"
+          data-test="DesignSystem-Message--actions"
+        >
+          <span
+            class="Text Text--link Text--regular mr-5 cursor-pointer"
+            data-test="DesignSystem-Text"
+          >
+            Action 1
+          </span>
+          <span
+            class="Text Text--link Text--regular cursor-pointer"
+            data-test="DesignSystem-Text"
+          >
+            Action 2
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Message component 
+  appearance: "warning", title: "Title goes here", description: "Description goes here", actions: "[ReactNode]", size: "small"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Message Message--warning Message--small"
+      data-test="DesignSystem-Message"
+    >
+      <i
+        class="material-symbols material-symbols-rounded Icon Icon--warning Message-icon--warning Message-icon--small Message-icon--withTitle"
+        data-test="DesignSystem-Message--Icon"
+        role="button"
+        style="font-size: 14px; width: 14px;"
+      >
+        warning
+      </i>
+      <div>
+        <h5
+          class="Heading Heading--s Heading--default Message-heading--warning Message-heading--small"
+          data-test="DesignSystem-Message--Title"
+        >
+          Title goes here
+        </h5>
+        <span
+          class="Text Text--default Text--regular Message-text--warning Message-text--small"
+          data-test="DesignSystem-Message--Description"
+        >
+          Description goes here
+        </span>
+        <div
+          class="Message-actions Message-actions--small"
           data-test="DesignSystem-Message--actions"
         >
           <span
