@@ -41,7 +41,7 @@ exports[`MetricInput component
               class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Button--Icon"
               role="button"
-              style="font-size: 12px; width: 12px;"
+              style="font-size: 14px; width: 14px;"
             >
               keyboard_arrow_up
             </i>
@@ -61,7 +61,7 @@ exports[`MetricInput component
               class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Button--Icon"
               role="button"
-              style="font-size: 12px; width: 12px;"
+              style="font-size: 14px; width: 14px;"
             >
               keyboard_arrow_down
             </i>
@@ -114,7 +114,7 @@ exports[`MetricInput component
               class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Button--Icon"
               role="button"
-              style="font-size: 12px; width: 12px;"
+              style="font-size: 14px; width: 14px;"
             >
               keyboard_arrow_up
             </i>
@@ -134,7 +134,7 @@ exports[`MetricInput component
               class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Button--Icon"
               role="button"
-              style="font-size: 12px; width: 12px;"
+              style="font-size: 14px; width: 14px;"
             >
               keyboard_arrow_down
             </i>
@@ -270,7 +270,7 @@ exports[`MetricInput component
               class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Button--Icon"
               role="button"
-              style="font-size: 12px; width: 12px;"
+              style="font-size: 14px; width: 14px;"
             >
               keyboard_arrow_up
             </i>
@@ -290,7 +290,7 @@ exports[`MetricInput component
               class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Button--Icon"
               role="button"
-              style="font-size: 12px; width: 12px;"
+              style="font-size: 14px; width: 14px;"
             >
               keyboard_arrow_down
             </i>
