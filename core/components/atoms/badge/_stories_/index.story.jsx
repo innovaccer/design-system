@@ -9,4 +9,12 @@ export const all = () => {
 export default {
   title: 'Components/Badge/All',
   component: Badge,
+  parameters: {
+    docs: {
+      docPage: {
+        title: 'Badge',
+        propDescription: `Note: All the valid properties of HTML SPAN elements are acceptable as a prop`,
+      },
+    },
+  },
 };

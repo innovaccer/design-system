@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import Badge, { BadgeProps as Props } from '../Badge';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { AccentAppearance } from '@/common.type';
@@ -86,5 +86,34 @@ describe('Badge component', () => {
         expect(getByTestId('DesignSystem-Badge')).toHaveClass(`Badge--subtle-${appearance}`);
       });
     });
+  });
+});
+
+describe('Badge component hover event', () => {
+  it('should handle mouse enter event', () => {
+    const onMouseEnter = jest.fn();
+    const { getByTestId } = render(
+      <Badge appearance="primary" onMouseEnter={onMouseEnter}>
+        Hover Badge
+      </Badge>
+    );
+
+    const badge = getByTestId('DesignSystem-Badge');
+    fireEvent.mouseEnter(badge);
+    expect(onMouseEnter).toHaveBeenCalledTimes(1);
+  });
+
+  it('should handle mouse leave event', () => {
+    const onMouseLeave = jest.fn();
+    const { getByTestId } = render(
+      <Badge appearance="primary" onMouseLeave={onMouseLeave}>
+        Hover Badge
+      </Badge>
+    );
+
+    const badge = getByTestId('DesignSystem-Badge');
+    fireEvent.mouseEnter(badge);
+    fireEvent.mouseLeave(badge);
+    expect(onMouseLeave).toHaveBeenCalledTimes(1);
   });
 });
