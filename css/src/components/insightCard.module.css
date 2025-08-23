@@ -1,0 +1,27 @@
+.insightCard--subtle {
+  color: var(--inverse-lighter);
+}
+
+.insightCard--subtle:hover {
+  color: var(--inverse-light);
+}
+
+.insightCard--subtle:active {
+  color: var(--inverse);
+}
+
+.insightCard-title {
+  color: var(--text-subtle);
+}
+
+.insightsCard-border {
+  background: linear-gradient(90deg, var(--tawak-light) 0%, #ff1f88 48%, #e31c79 100%);
+  padding: 2px;
+  border-radius: 10px;
+}
+
+.insightsCard-border .inner-content {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+}
