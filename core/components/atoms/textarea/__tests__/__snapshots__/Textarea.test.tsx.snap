@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Textarea component 
-  name: "Textarea", placeholder: "Write something..", disabled: false, onChange: "[Function]", value: "Design System"
+  name: "Textarea", placeholder: "Write something..", disabled: false, onChange: "[Function]", value: "Design System", size: "regular"
  1`] = `
 <DocumentFragment>
   <textarea
@@ -17,11 +17,44 @@ exports[`Textarea component
 `;
 
 exports[`Textarea component 
-  name: "Textarea", placeholder: "Write something..", disabled: true, onChange: "[Function]", value: "Design System"
+  name: "Textarea", placeholder: "Write something..", disabled: false, onChange: "[Function]", value: "Design System", size: "small"
+ 1`] = `
+<DocumentFragment>
+  <textarea
+    class="Textarea Textarea--resize Textarea--small"
+    data-test="DesignSystem-Textarea"
+    name="Textarea"
+    placeholder="Write something.."
+    rows="3"
+  >
+    Design System
+  </textarea>
+</DocumentFragment>
+`;
+
+exports[`Textarea component 
+  name: "Textarea", placeholder: "Write something..", disabled: true, onChange: "[Function]", value: "Design System", size: "regular"
  1`] = `
 <DocumentFragment>
   <textarea
     class="Textarea Textarea--resize"
+    data-test="DesignSystem-Textarea"
+    disabled=""
+    name="Textarea"
+    placeholder="Write something.."
+    rows="3"
+  >
+    Design System
+  </textarea>
+</DocumentFragment>
+`;
+
+exports[`Textarea component 
+  name: "Textarea", placeholder: "Write something..", disabled: true, onChange: "[Function]", value: "Design System", size: "small"
+ 1`] = `
+<DocumentFragment>
+  <textarea
+    class="Textarea Textarea--resize Textarea--small"
     data-test="DesignSystem-Textarea"
     disabled=""
     name="Textarea"
