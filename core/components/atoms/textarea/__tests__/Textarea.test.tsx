@@ -17,6 +17,7 @@ describe('Textarea component', () => {
     disabled: valueHelper(BooleanValue, { required: true, iterate: true }),
     onChange: valueHelper(FunctionValue, { required: true }),
     value: valueHelper(value, { required: true }),
+    size: valueHelper(['small', 'regular'], { required: true, iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
@@ -80,9 +81,240 @@ describe('Textarea component with prop: resize', () => {
   });
 });
 
+describe('Textarea component with prop: size', () => {
+  it('renders with default size (regular)', () => {
+    const { getByTestId } = render(<Textarea />);
+    expect(getByTestId(dataTestId)).not.toHaveClass('Textarea--small');
+  });
+
+  it('renders with regular size', () => {
+    const { getByTestId } = render(<Textarea size="regular" />);
+    expect(getByTestId(dataTestId)).not.toHaveClass('Textarea--small');
+  });
+
+  it('renders with small size', () => {
+    const { getByTestId } = render(<Textarea size="small" />);
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--small');
+  });
+});
+
+describe('Textarea component with size prop combinations', () => {
+  it('renders small size with error state', () => {
+    const { getByTestId } = render(<Textarea size="small" error={true} />);
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--small');
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--error');
+  });
+
+  it('renders regular size with error state', () => {
+    const { getByTestId } = render(<Textarea size="regular" error={true} />);
+    expect(getByTestId(dataTestId)).not.toHaveClass('Textarea--small');
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--error');
+  });
+
+  it('renders small size with disabled state', () => {
+    const { getByTestId } = render(<Textarea size="small" disabled={true} />);
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--small');
+    expect(getByTestId(dataTestId)).toHaveAttribute('disabled');
+  });
+
+  it('renders small size with readonly state', () => {
+    const { getByTestId } = render(<Textarea size="small" readOnly={true} />);
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--small');
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--readOnly');
+  });
+
+  it('renders small size with resize disabled', () => {
+    const { getByTestId } = render(<Textarea size="small" resize={false} />);
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--small');
+    expect(getByTestId(dataTestId)).not.toHaveClass('Textarea--resize');
+  });
+
+  it('renders small size with custom rows', () => {
+    const customRows = 5;
+    const { getByTestId } = render(<Textarea size="small" rows={customRows} />);
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--small');
+    expect(getByTestId(dataTestId)).toHaveAttribute('rows', `${customRows}`);
+  });
+
+  it('renders all modifier classes together', () => {
+    const { getByTestId } = render(<Textarea size="small" error={true} readOnly={true} resize={true} />);
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--small');
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--error');
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--readOnly');
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--resize');
+  });
+});
+
+describe('Textarea component with size prop edge cases', () => {
+  it('handles undefined size prop gracefully', () => {
+    const { getByTestId } = render(<Textarea size={undefined as any} />);
+    expect(getByTestId(dataTestId)).not.toHaveClass('Textarea--small');
+  });
+
+  it('handles null size prop gracefully', () => {
+    const { getByTestId } = render(<Textarea size={null as any} />);
+    expect(getByTestId(dataTestId)).not.toHaveClass('Textarea--small');
+  });
+
+  it('handles empty string size prop gracefully', () => {
+    const { getByTestId } = render(<Textarea size={'' as any} />);
+    expect(getByTestId(dataTestId)).not.toHaveClass('Textarea--small');
+  });
+
+  it('handles invalid size prop gracefully', () => {
+    const { getByTestId } = render(<Textarea size={'invalid' as any} />);
+    expect(getByTestId(dataTestId)).not.toHaveClass('Textarea--small');
+  });
+
+  it('works with long placeholder text and small size', () => {
+    const longPlaceholder = 'This is a very long placeholder text that should work properly with small size';
+    const { getByTestId } = render(<Textarea size="small" placeholder={longPlaceholder} />);
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--small');
+    expect(getByTestId(dataTestId)).toHaveAttribute('placeholder', longPlaceholder);
+  });
+
+  it('works with long value and small size', () => {
+    const longValue =
+      'This is a very long value that should be displayed properly in a small textarea component without any issues';
+    const { getByTestId } = render(<Textarea size="small" value={longValue} />);
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--small');
+    expect(getByTestId(dataTestId)).toHaveValue(longValue);
+  });
+});
+
+describe('Textarea component with size prop accessibility', () => {
+  it('preserves accessibility attributes with small size', () => {
+    const ariaLabel = 'Description';
+    const { getByTestId } = render(
+      <Textarea size="small" aria-label={ariaLabel} aria-required={true} aria-invalid={true} />
+    );
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--small');
+    expect(getByTestId(dataTestId)).toHaveAttribute('aria-label', ariaLabel);
+    expect(getByTestId(dataTestId)).toHaveAttribute('aria-required', 'true');
+    expect(getByTestId(dataTestId)).toHaveAttribute('aria-invalid', 'true');
+  });
+
+  it('preserves aria-labelledby with different sizes', () => {
+    const labelId = 'textarea-label';
+    const { getByTestId, rerender } = render(<Textarea size="small" aria-labelledby={labelId} />);
+    expect(getByTestId(dataTestId)).toHaveAttribute('aria-labelledby', labelId);
+
+    rerender(<Textarea size="regular" aria-labelledby={labelId} />);
+    expect(getByTestId(dataTestId)).toHaveAttribute('aria-labelledby', labelId);
+  });
+});
+
+describe('Textarea component with size prop behavior', () => {
+  it('handles size changes after initial render', () => {
+    const { getByTestId, rerender } = render(<Textarea size="regular" />);
+    expect(getByTestId(dataTestId)).not.toHaveClass('Textarea--small');
+
+    rerender(<Textarea size="small" />);
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--small');
+
+    rerender(<Textarea size="regular" />);
+    expect(getByTestId(dataTestId)).not.toHaveClass('Textarea--small');
+  });
+
+  it('maintains focus during size changes', () => {
+    const { getByTestId, rerender } = render(<Textarea size="regular" />);
+    const textarea = getByTestId(dataTestId);
+
+    textarea.focus();
+    expect(document.activeElement).toBe(textarea);
+
+    rerender(<Textarea size="small" />);
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--small');
+  });
+
+  it('preserves value during size changes', () => {
+    const testValue = 'Test value';
+    const { getByTestId, rerender } = render(<Textarea size="regular" value={testValue} />);
+    expect(getByTestId(dataTestId)).toHaveValue(testValue);
+
+    rerender(<Textarea size="small" value={testValue} />);
+    expect(getByTestId(dataTestId)).toHaveValue(testValue);
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--small');
+  });
+});
+
+describe('Textarea component event handling with size prop', () => {
+  const onChange = jest.fn();
+  const onFocus = jest.fn();
+  const onBlur = jest.fn();
+  const onClick = jest.fn();
+
+  beforeEach(() => {
+    onChange.mockClear();
+    onFocus.mockClear();
+    onBlur.mockClear();
+    onClick.mockClear();
+  });
+
+  it('triggers onChange event properly with small size', () => {
+    const newValue = 'New text content';
+    const { getByTestId } = render(<Textarea size="small" onChange={onChange} />);
+    const textarea = getByTestId(dataTestId);
+
+    fireEvent.change(textarea, { target: { value: newValue } });
+    expect(onChange).toHaveBeenCalledTimes(1);
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--small');
+  });
+
+  it('triggers focus and blur events properly with small size', () => {
+    const { getByTestId } = render(<Textarea size="small" onFocus={onFocus} onBlur={onBlur} />);
+    const textarea = getByTestId(dataTestId);
+
+    fireEvent.focus(textarea);
+    expect(onFocus).toHaveBeenCalledTimes(1);
+
+    fireEvent.blur(textarea);
+    expect(onBlur).toHaveBeenCalledTimes(1);
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--small');
+  });
+
+  it('triggers click event properly with small size', () => {
+    const { getByTestId } = render(<Textarea size="small" onClick={onClick} />);
+    const textarea = getByTestId(dataTestId);
+
+    fireEvent.click(textarea);
+    expect(onClick).toHaveBeenCalledTimes(1);
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--small');
+  });
+
+  it('handles multiple events with different sizes', () => {
+    const { getByTestId, rerender } = render(
+      <Textarea size="regular" onChange={onChange} onFocus={onFocus} onClick={onClick} />
+    );
+    let textarea = getByTestId(dataTestId);
+
+    fireEvent.click(textarea);
+    fireEvent.focus(textarea);
+    fireEvent.change(textarea, { target: { value: 'test' } });
+
+    expect(onClick).toHaveBeenCalledTimes(1);
+    expect(onFocus).toHaveBeenCalledTimes(1);
+    expect(onChange).toHaveBeenCalledTimes(1);
+
+    rerender(<Textarea size="small" onChange={onChange} onFocus={onFocus} onClick={onClick} />);
+    textarea = getByTestId(dataTestId);
+
+    fireEvent.click(textarea);
+    fireEvent.change(textarea, { target: { value: 'test2' } });
+
+    expect(onClick).toHaveBeenCalledTimes(2);
+    expect(onChange).toHaveBeenCalledTimes(2);
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--small');
+  });
+});
+
 describe('Textarea component with prop: onChange', () => {
   const onChange = jest.fn();
   const newValue = 'Textarea-test';
+
+  beforeEach(() => {
+    onChange.mockClear();
+  });
 
   it('renders textarea as uncontrolled component', () => {
     const { getByTestId } = render(<Textarea defaultValue={value} onChange={onChange} />);
@@ -115,5 +347,32 @@ describe('Textarea component with prop: onChange', () => {
 
     rerender(<Textarea value={newValue} onChange={onChange} />);
     expect(getByTestId(dataTestId)).toHaveValue(newValue);
+  });
+
+  it('works with uncontrolled component and small size', () => {
+    const { getByTestId } = render(<Textarea size="small" defaultValue={value} onChange={onChange} />);
+    const textarea = getByTestId(dataTestId);
+
+    expect(getByTestId(dataTestId)).toHaveValue(value);
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--small');
+
+    fireEvent.change(textarea, { target: { value: newValue } });
+    expect(getByTestId(dataTestId)).toHaveValue(newValue);
+    expect(onChange).toHaveBeenCalledTimes(1);
+  });
+
+  it('works with controlled component and small size', () => {
+    const { getByTestId, rerender } = render(<Textarea size="small" value={value} onChange={onChange} />);
+    const textarea = getByTestId(dataTestId);
+
+    expect(getByTestId(dataTestId)).toHaveValue(value);
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--small');
+
+    fireEvent.change(textarea, { target: { value: newValue } });
+    expect(onChange).toHaveBeenCalled();
+
+    rerender(<Textarea size="small" value={newValue} onChange={onChange} />);
+    expect(getByTestId(dataTestId)).toHaveValue(newValue);
+    expect(getByTestId(dataTestId)).toHaveClass('Textarea--small');
   });
 });

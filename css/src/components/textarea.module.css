@@ -55,3 +55,8 @@
 .Textarea--resize {
   resize: both;
 }
+
+.Textarea--small {
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-medium);
+}
