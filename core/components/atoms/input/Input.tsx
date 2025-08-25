@@ -212,6 +212,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
       [styles['Input--disabled']]: disabled,
       [styles['Input--error']]: error,
       [styles['Input--readOnly']]: readOnly,
+      [styles['Input-size--tiny']]: size && size === 'tiny' && icon,
     },
     className
   );
@@ -227,6 +228,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     [styles['Input-icon--left']]: true,
     [styles['Input-icon--inputBlank']]: isInputBlank,
     [styles['Input-icon--error']]: error,
+    [styles['Input-iconLeft--tiny']]: size && size === 'tiny',
   });
 
   const rightIconClass = classNames({
@@ -257,9 +259,9 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
           <Text appearance="subtle">{inlineLabel}</Text>
         </div>
       )}
-      {size !== 'tiny' && icon && (
+      {icon && (
         <div className={leftIconClass}>
-          <Icon name={icon} size={sizeMapping[size]} type={iconType} />
+          <Icon name={icon} size={size === 'tiny' ? 14 : sizeMapping[size]} type={iconType} />
         </div>
       )}
       <input
