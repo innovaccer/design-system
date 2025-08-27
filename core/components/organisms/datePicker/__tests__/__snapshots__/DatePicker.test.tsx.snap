@@ -5241,14 +5241,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
       <div
         aria-expanded="false"
         aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
         class="w-100"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-        class="w-100"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
         data-state="closed"
         triggerclass="w-100"
       >
