@@ -777,14 +777,7 @@ exports[`TS renders children 1`] = `
       <div
         aria-expanded="false"
         aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
         class="w-100"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-        class="w-100"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
         data-state="closed"
         triggerclass="w-100"
       >
@@ -837,14 +830,7 @@ exports[`TS renders children 1`] = `
             <div
               aria-expanded="false"
               aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
               class="w-100"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-              class="w-100"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
               data-state="closed"
               triggerclass="w-100"
             >
@@ -1582,8 +1568,6 @@ exports[`TS renders children 1`] = `
       </div>
     </div>
   </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
   <div
     class="w-fit-content"
   >
@@ -1593,23 +1577,6 @@ exports[`TS renders children 1`] = `
       class="w-fit-content"
       data-state="closed"
       triggerclass="w-fit-content"
-=======
-  <div>
-=======
-  <div
-    class="w-fit-content"
-  >
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
-    <div
-      aria-expanded="false"
-      aria-haspopup="dialog"
-      class="w-fit-content"
-      data-state="closed"
-<<<<<<< HEAD
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-      triggerclass="w-fit-content"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
     >
       <span
         class="Text Text--default Text--regular"

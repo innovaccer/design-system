@@ -27,8 +27,6 @@ exports[`Menu component snapshot
   <div>
     <div>
       <div
-<<<<<<< HEAD
-<<<<<<< HEAD
         aria-controls=":r0:"
         aria-expanded="true"
         aria-haspopup="dialog"
@@ -251,233 +249,6 @@ exports[`Menu component with Trigger snapshot
         aria-expanded="false"
         aria-haspopup="dialog"
         data-state="closed"
-=======
-        aria-expanded="false"
-=======
-        aria-controls=":r0:"
-        aria-expanded="true"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
-        aria-haspopup="dialog"
-        data-state="open"
-      />
-    </div>
-  </div>
-  <div
-    data-floating-ui-portal=""
-    id=":r2:"
-  >
-    <div
-      class="Popover"
-      data-floating-ui-focusable=""
-      data-layer="true"
-      data-opened="true"
-      data-test="DesignSystem-Menu"
-      id=":r0:"
-      role="dialog"
-      style="position: absolute; left: 0px; top: 0px; width: 176px; visibility: hidden; transform: translate(0px, 0px);"
-      tabindex="-1"
-    >
-      <div
-        style="opacity: 0;"
-      >
-        <div
-          class="Menu"
-          data-test="DesignSystem-Menu-Wrapper"
-          role="menu"
-          style="max-height: 256px;"
-        >
-          <nav
-            class="Listbox"
-            data-test="DesignSystem-Menu-List"
-          >
-            <a
-              class="Listbox-item-wrapper"
-              data-test="DesignSystem-Menu-ListItem"
-              role="menuitem"
-              tabindex="-1"
-            >
-              <div
-                class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
-                data-test="DesignSystem-Listbox-ItemWrapper"
-                role="tablist"
-                tabindex="-1"
-              >
-                Menu Item 1
-              </div>
-            </a>
-            <a
-              class="Listbox-item-wrapper"
-              data-test="DesignSystem-Menu-ListItem"
-              role="menuitem"
-              tabindex="-1"
-            >
-              <div
-                class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
-                data-test="DesignSystem-Listbox-ItemWrapper"
-                role="tablist"
-                tabindex="-1"
-              >
-                Menu Item 2
-              </div>
-            </a>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`Menu component with Nesting snapshot 
-  open: false
- 1`] = `
-<body>
-  <div>
-    <div>
-      <div
-        aria-expanded="false"
-        aria-haspopup="dialog"
-        data-state="closed"
-      />
-    </div>
-  </div>
-  <div
-    data-floating-ui-portal=""
-    id=":re:"
-  />
-</body>
-`;
-
-exports[`Menu component with Nesting snapshot 
-  open: true
- 1`] = `
-<body>
-  <div>
-    <div>
-      <div
-        aria-controls=":r6:"
-        aria-expanded="true"
-        aria-haspopup="dialog"
-        data-state="open"
-      />
-    </div>
-  </div>
-  <div
-    data-floating-ui-portal=""
-    id=":r8:"
-  >
-    <div
-      class="Popover"
-      data-floating-ui-focusable=""
-      data-layer="true"
-      data-opened="true"
-      data-test="DesignSystem-Menu"
-      id=":r6:"
-      role="dialog"
-      style="position: absolute; left: 0px; top: 0px; width: 176px; visibility: hidden; transform: translate(0px, 0px);"
-      tabindex="-1"
-    >
-      <div
-        style="opacity: 0;"
-      >
-        <div
-          class="Menu"
-          data-test="DesignSystem-Menu-Wrapper"
-          role="menu"
-          style="max-height: 256px;"
-        >
-          <nav
-            class="Listbox"
-            data-test="DesignSystem-Menu-List"
-          >
-            <a
-              class="Listbox-item-wrapper"
-              data-test="DesignSystem-Menu-ListItem"
-              role="menuitem"
-              tabindex="-1"
-            >
-              <div
-                class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
-                data-test="DesignSystem-Listbox-ItemWrapper"
-                role="tablist"
-                tabindex="-1"
-              >
-                Menu Item 1
-              </div>
-            </a>
-            <a
-              class="Listbox-item-wrapper"
-              data-test="DesignSystem-Menu-ListItem"
-              role="menuitem"
-              tabindex="-1"
-            >
-              <div
-                class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
-                data-test="DesignSystem-Listbox-ItemWrapper"
-                role="tablist"
-                tabindex="-1"
-              >
-                Menu Item 2
-              </div>
-            </a>
-            <div>
-              <div
-                aria-expanded="false"
-                aria-haspopup="dialog"
-                data-state="closed"
-              >
-                <a
-                  aria-controls="DesignSystem-Menu--Popover-Test-uid"
-                  aria-expanded="false"
-                  aria-haspopup="menu"
-                  class="Listbox-item-wrapper"
-                  data-test="DesignSystem-Menu-ListItem"
-                  id="DesignSystem-Menu--Trigger-Test-uid"
-                  role="menuitem"
-                  tabindex="-1"
-                >
-                  <div
-                    class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item d-flex align-items-center justify-content-between w-100"
-                    data-test="DesignSystem-Listbox-ItemWrapper"
-                    role="tablist"
-                    tabindex="-1"
-                  >
-                    Menu Item 3
-                    <i
-                      class="material-symbols material-symbols-rounded Icon"
-                      data-test="DesignSystem-Icon"
-                      role="button"
-                      style="font-size: 16px; width: 16px;"
-                    >
-                      chevron_right
-                    </i>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    data-floating-ui-portal=""
-    id=":rb:"
-  />
-</body>
-`;
-
-exports[`Menu component with Trigger snapshot 
-  open: false
- 1`] = `
-<body>
-  <div>
-    <div>
-      <div
-        aria-expanded="false"
-        aria-haspopup="dialog"
-        data-state="closed"
->>>>>>> b67de59a (feat: migration to react 19)
       >
         <button
           aria-expanded="false"
@@ -518,23 +289,10 @@ exports[`Menu component with Trigger snapshot
   <div>
     <div>
       <div
-<<<<<<< HEAD
-<<<<<<< HEAD
         aria-controls=":rf:"
         aria-expanded="true"
         aria-haspopup="dialog"
         data-state="open"
-=======
-        aria-expanded="false"
-        aria-haspopup="dialog"
-        data-state="closed"
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-        aria-controls=":rf:"
-        aria-expanded="true"
-        aria-haspopup="dialog"
-        data-state="open"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
       >
         <button
           aria-expanded="true"
@@ -543,7 +301,6 @@ exports[`Menu component with Trigger snapshot
           class="Button Button--regular Button--regularSquare Button--basic Menu-Trigger--active"
           data-test="DesignSystem-Menu-Trigger"
           tabindex="0"
-<<<<<<< HEAD
         >
           <div
             class="Button-icon"
@@ -622,26 +379,6 @@ exports[`Menu component with Trigger snapshot
             </a>
           </nav>
         </div>
-<<<<<<< HEAD
-=======
-        >
-          <div
-            class="Button-icon"
-            data-test="DesignSystem-Button--Icon-Wrapper"
-          >
-            <i
-              class="material-symbols material-symbols-rounded Icon"
-              data-test="DesignSystem-Button--Icon"
-              role="button"
-              style="font-size: 16px; width: 16px;"
-            >
-              more_horiz
-            </i>
-          </div>
-        </button>
->>>>>>> b67de59a (feat: migration to react 19)
-=======
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
       </div>
     </div>
   </div>

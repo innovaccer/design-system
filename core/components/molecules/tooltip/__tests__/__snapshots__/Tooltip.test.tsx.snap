@@ -7,8 +7,6 @@ exports[`Tooltip component
  1`] = `
 <body>
   <div>
-<<<<<<< HEAD
-<<<<<<< HEAD
     <div
       class="w-fit-content"
     >
@@ -18,243 +16,6 @@ exports[`Tooltip component
         class="w-fit-content"
         data-state="closed"
         triggerclass="w-fit-content"
-=======
-    <div>
-=======
-    <div
-      class="w-fit-content"
-    >
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
-      <div
-        aria-expanded="false"
-        aria-haspopup="dialog"
-        class="w-fit-content"
-        data-state="closed"
-<<<<<<< HEAD
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-        triggerclass="w-fit-content"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
-      >
-        <button
-          class="Button Button--regular Button--basic Button--iconAlign-left"
-          data-test="DesignSystem-Button"
-          tabindex="0"
-        >
-          <span
-            class="Button-text"
-          >
-            Button
-          </span>
-        </button>
-      </div>
-    </div>
-  </div>
-  <div
-    data-floating-ui-portal=""
-    id=":rb:"
-  />
-</body>
-`;
-
-exports[`Tooltip component 
-  position: "bottom", size: "small", tooltip: "Sample string"
- 1`] = `
-<body>
-  <div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <div
-      class="w-fit-content"
-    >
-      <div
-        aria-expanded="false"
-        aria-haspopup="dialog"
-        class="w-fit-content"
-        data-state="closed"
-        triggerclass="w-fit-content"
-=======
-    <div>
-=======
-    <div
-      class="w-fit-content"
-    >
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
-      <div
-        aria-expanded="false"
-        aria-haspopup="dialog"
-        class="w-fit-content"
-        data-state="closed"
-<<<<<<< HEAD
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-        triggerclass="w-fit-content"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
-      >
-        <button
-          class="Button Button--regular Button--basic Button--iconAlign-left"
-          data-test="DesignSystem-Button"
-          tabindex="0"
-        >
-          <span
-            class="Button-text"
-          >
-            Button
-          </span>
-        </button>
-      </div>
-    </div>
-  </div>
-  <div
-    data-floating-ui-portal=""
-    id=":rh:"
-  />
-</body>
-`;
-
-exports[`Tooltip component 
-  position: "bottom-end", size: "regular", tooltip: "Sample string"
- 1`] = `
-<body>
-  <div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <div
-      class="w-fit-content"
-    >
-      <div
-        aria-expanded="false"
-        aria-haspopup="dialog"
-        class="w-fit-content"
-        data-state="closed"
-        triggerclass="w-fit-content"
-=======
-    <div>
-=======
-    <div
-      class="w-fit-content"
-    >
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
-      <div
-        aria-expanded="false"
-        aria-haspopup="dialog"
-        class="w-fit-content"
-        data-state="closed"
-<<<<<<< HEAD
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-        triggerclass="w-fit-content"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
-      >
-        <button
-          class="Button Button--regular Button--basic Button--iconAlign-left"
-          data-test="DesignSystem-Button"
-          tabindex="0"
-        >
-          <span
-            class="Button-text"
-          >
-            Button
-          </span>
-        </button>
-      </div>
-    </div>
-  </div>
-  <div
-    data-floating-ui-portal=""
-    id=":re:"
-  />
-</body>
-`;
-
-exports[`Tooltip component 
-  position: "bottom-end", size: "small", tooltip: "Sample string"
- 1`] = `
-<body>
-  <div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <div
-      class="w-fit-content"
-    >
-      <div
-        aria-expanded="false"
-        aria-haspopup="dialog"
-        class="w-fit-content"
-        data-state="closed"
-        triggerclass="w-fit-content"
-=======
-    <div>
-=======
-    <div
-      class="w-fit-content"
-    >
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
-      <div
-        aria-expanded="false"
-        aria-haspopup="dialog"
-        class="w-fit-content"
-        data-state="closed"
-<<<<<<< HEAD
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-        triggerclass="w-fit-content"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
-      >
-        <button
-          class="Button Button--regular Button--basic Button--iconAlign-left"
-          data-test="DesignSystem-Button"
-          tabindex="0"
-        >
-          <span
-            class="Button-text"
-          >
-            Button
-          </span>
-        </button>
-      </div>
-    </div>
-  </div>
-  <div
-    data-floating-ui-portal=""
-    id=":rk:"
-  />
-</body>
-`;
-
-exports[`Tooltip component 
-  position: "bottom-start", size: "regular", tooltip: "Sample string"
- 1`] = `
-<body>
-  <div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <div
-      class="w-fit-content"
-    >
-      <div
-        aria-expanded="false"
-        aria-haspopup="dialog"
-        class="w-fit-content"
-        data-state="closed"
-        triggerclass="w-fit-content"
-=======
-    <div>
-=======
-    <div
-      class="w-fit-content"
-    >
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
-      <div
-        aria-expanded="false"
-        aria-haspopup="dialog"
-        class="w-fit-content"
-        data-state="closed"
-<<<<<<< HEAD
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-        triggerclass="w-fit-content"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
       >
         <button
           class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -278,12 +39,154 @@ exports[`Tooltip component
 `;
 
 exports[`Tooltip component 
+  position: "bottom", size: "small", tooltip: "Sample string"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="w-fit-content"
+    >
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        class="w-fit-content"
+        data-state="closed"
+        triggerclass="w-fit-content"
+      >
+        <button
+          class="Button Button--regular Button--basic Button--iconAlign-left"
+          data-test="DesignSystem-Button"
+          tabindex="0"
+        >
+          <span
+            class="Button-text"
+          >
+            Button
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":rk:"
+  />
+</body>
+`;
+
+exports[`Tooltip component 
+  position: "bottom-end", size: "regular", tooltip: "Sample string"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="w-fit-content"
+    >
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        class="w-fit-content"
+        data-state="closed"
+        triggerclass="w-fit-content"
+      >
+        <button
+          class="Button Button--regular Button--basic Button--iconAlign-left"
+          data-test="DesignSystem-Button"
+          tabindex="0"
+        >
+          <span
+            class="Button-text"
+          >
+            Button
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r13:"
+  />
+</body>
+`;
+
+exports[`Tooltip component 
+  position: "bottom-end", size: "small", tooltip: "Sample string"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="w-fit-content"
+    >
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        class="w-fit-content"
+        data-state="closed"
+        triggerclass="w-fit-content"
+      >
+        <button
+          class="Button Button--regular Button--basic Button--iconAlign-left"
+          data-test="DesignSystem-Button"
+          tabindex="0"
+        >
+          <span
+            class="Button-text"
+          >
+            Button
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r10:"
+  />
+</body>
+`;
+
+exports[`Tooltip component 
+  position: "bottom-start", size: "regular", tooltip: "Sample string"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="w-fit-content"
+    >
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        class="w-fit-content"
+        data-state="closed"
+        triggerclass="w-fit-content"
+      >
+        <button
+          class="Button Button--regular Button--basic Button--iconAlign-left"
+          data-test="DesignSystem-Button"
+          tabindex="0"
+        >
+          <span
+            class="Button-text"
+          >
+            Button
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":rt:"
+  />
+</body>
+`;
+
+exports[`Tooltip component 
   position: "bottom-start", size: "small", tooltip: "Sample string"
  1`] = `
 <body>
   <div>
-<<<<<<< HEAD
-<<<<<<< HEAD
     <div
       class="w-fit-content"
     >
@@ -293,23 +196,222 @@ exports[`Tooltip component
         class="w-fit-content"
         data-state="closed"
         triggerclass="w-fit-content"
-=======
-    <div>
-=======
+      >
+        <button
+          class="Button Button--regular Button--basic Button--iconAlign-left"
+          data-test="DesignSystem-Button"
+          tabindex="0"
+        >
+          <span
+            class="Button-text"
+          >
+            Button
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":rq:"
+  />
+</body>
+`;
+
+exports[`Tooltip component 
+  position: "left", size: "regular", tooltip: "Sample string"
+ 1`] = `
+<body>
+  <div>
     <div
       class="w-fit-content"
     >
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
       <div
         aria-expanded="false"
         aria-haspopup="dialog"
         class="w-fit-content"
         data-state="closed"
-<<<<<<< HEAD
->>>>>>> b67de59a (feat: migration to react 19)
-=======
         triggerclass="w-fit-content"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
+      >
+        <button
+          class="Button Button--regular Button--basic Button--iconAlign-left"
+          data-test="DesignSystem-Button"
+          tabindex="0"
+        >
+          <span
+            class="Button-text"
+          >
+            Button
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r19:"
+  />
+</body>
+`;
+
+exports[`Tooltip component 
+  position: "left", size: "small", tooltip: "Sample string"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="w-fit-content"
+    >
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        class="w-fit-content"
+        data-state="closed"
+        triggerclass="w-fit-content"
+      >
+        <button
+          class="Button Button--regular Button--basic Button--iconAlign-left"
+          data-test="DesignSystem-Button"
+          tabindex="0"
+        >
+          <span
+            class="Button-text"
+          >
+            Button
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r16:"
+  />
+</body>
+`;
+
+exports[`Tooltip component 
+  position: "right", size: "regular", tooltip: "Sample string"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="w-fit-content"
+    >
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        class="w-fit-content"
+        data-state="closed"
+        triggerclass="w-fit-content"
+      >
+        <button
+          class="Button Button--regular Button--basic Button--iconAlign-left"
+          data-test="DesignSystem-Button"
+          tabindex="0"
+        >
+          <span
+            class="Button-text"
+          >
+            Button
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r1f:"
+  />
+</body>
+`;
+
+exports[`Tooltip component 
+  position: "right", size: "small", tooltip: "Sample string"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="w-fit-content"
+    >
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        class="w-fit-content"
+        data-state="closed"
+        triggerclass="w-fit-content"
+      >
+        <button
+          class="Button Button--regular Button--basic Button--iconAlign-left"
+          data-test="DesignSystem-Button"
+          tabindex="0"
+        >
+          <span
+            class="Button-text"
+          >
+            Button
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r1c:"
+  />
+</body>
+`;
+
+exports[`Tooltip component 
+  position: "top", size: "regular", tooltip: "Sample string"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="w-fit-content"
+    >
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        class="w-fit-content"
+        data-state="closed"
+        triggerclass="w-fit-content"
+      >
+        <button
+          class="Button Button--regular Button--basic Button--iconAlign-left"
+          data-test="DesignSystem-Button"
+          tabindex="0"
+        >
+          <span
+            class="Button-text"
+          >
+            Button
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r5:"
+  />
+</body>
+`;
+
+exports[`Tooltip component 
+  position: "top", size: "small", tooltip: "Sample string"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="w-fit-content"
+    >
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        class="w-fit-content"
+        data-state="closed"
+        triggerclass="w-fit-content"
       >
         <button
           class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -333,12 +435,10 @@ exports[`Tooltip component
 `;
 
 exports[`Tooltip component 
-  position: "left", size: "regular", tooltip: "Sample string"
+  position: "top-end", size: "regular", tooltip: "Sample string"
  1`] = `
 <body>
   <div>
-<<<<<<< HEAD
-<<<<<<< HEAD
     <div
       class="w-fit-content"
     >
@@ -348,23 +448,114 @@ exports[`Tooltip component
         class="w-fit-content"
         data-state="closed"
         triggerclass="w-fit-content"
-=======
-    <div>
-=======
+      >
+        <button
+          class="Button Button--regular Button--basic Button--iconAlign-left"
+          data-test="DesignSystem-Button"
+          tabindex="0"
+        >
+          <span
+            class="Button-text"
+          >
+            Button
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":rh:"
+  />
+</body>
+`;
+
+exports[`Tooltip component 
+  position: "top-end", size: "small", tooltip: "Sample string"
+ 1`] = `
+<body>
+  <div>
     <div
       class="w-fit-content"
     >
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
       <div
         aria-expanded="false"
         aria-haspopup="dialog"
         class="w-fit-content"
         data-state="closed"
-<<<<<<< HEAD
->>>>>>> b67de59a (feat: migration to react 19)
-=======
         triggerclass="w-fit-content"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
+      >
+        <button
+          class="Button Button--regular Button--basic Button--iconAlign-left"
+          data-test="DesignSystem-Button"
+          tabindex="0"
+        >
+          <span
+            class="Button-text"
+          >
+            Button
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":re:"
+  />
+</body>
+`;
+
+exports[`Tooltip component 
+  position: "top-start", size: "regular", tooltip: "Sample string"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="w-fit-content"
+    >
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        class="w-fit-content"
+        data-state="closed"
+        triggerclass="w-fit-content"
+      >
+        <button
+          class="Button Button--regular Button--basic Button--iconAlign-left"
+          data-test="DesignSystem-Button"
+          tabindex="0"
+        >
+          <span
+            class="Button-text"
+          >
+            Button
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":rb:"
+  />
+</body>
+`;
+
+exports[`Tooltip component 
+  position: "top-start", size: "small", tooltip: "Sample string"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="w-fit-content"
+    >
+      <div
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        class="w-fit-content"
+        data-state="closed"
+        triggerclass="w-fit-content"
       >
         <button
           class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -383,261 +574,6 @@ exports[`Tooltip component
   <div
     data-floating-ui-portal=""
     id=":r8:"
-  />
-</body>
-`;
-
-exports[`Tooltip component 
-  position: "left", size: "small", tooltip: "Sample string"
- 1`] = `
-<body>
-  <div>
-    
-    <div
-      class="PopperWrapper-trigger"
-    >
-      <button
-        class="Button Button--regular Button--basic Button--iconAlign-left"
-        data-test="DesignSystem-Button"
-        tabindex="0"
-      >
-        <span
-          class="Button-text"
-        >
-          Button
-        </span>
-      </button>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`Tooltip component 
-  position: "right", size: "regular", tooltip: "Sample string"
- 1`] = `
-<body>
-  <div>
-    
-    <div
-      class="PopperWrapper-trigger"
-    >
-      <button
-        class="Button Button--regular Button--basic Button--iconAlign-left"
-        data-test="DesignSystem-Button"
-        tabindex="0"
-      >
-        <span
-          class="Button-text"
-        >
-          Button
-        </span>
-      </button>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`Tooltip component 
-  position: "right", size: "small", tooltip: "Sample string"
- 1`] = `
-<body>
-  <div>
-    
-    <div
-      class="PopperWrapper-trigger"
-    >
-      <button
-        class="Button Button--regular Button--basic Button--iconAlign-left"
-        data-test="DesignSystem-Button"
-        tabindex="0"
-      >
-        <span
-          class="Button-text"
-        >
-          Button
-        </span>
-      </button>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`Tooltip component 
-  position: "top", size: "regular", tooltip: "Sample string"
- 1`] = `
-<body>
-  <div>
-    
-    <div
-      class="PopperWrapper-trigger"
-    >
-      <button
-        class="Button Button--regular Button--basic Button--iconAlign-left"
-        data-test="DesignSystem-Button"
-        tabindex="0"
-      >
-        <span
-          class="Button-text"
-        >
-          Button
-        </span>
-      </button>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`Tooltip component 
-  position: "top", size: "small", tooltip: "Sample string"
- 1`] = `
-<body>
-  <div>
-    
-    <div
-      class="PopperWrapper-trigger"
-    >
-      <button
-        class="Button Button--regular Button--basic Button--iconAlign-left"
-        data-test="DesignSystem-Button"
-        tabindex="0"
-      >
-        <span
-          class="Button-text"
-        >
-          Button
-        </span>
-      </button>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`Tooltip component 
-  position: "top-end", size: "regular", tooltip: "Sample string"
- 1`] = `
-<body>
-  <div>
-    
-    <div
-      class="PopperWrapper-trigger"
-    >
-      <button
-        class="Button Button--regular Button--basic Button--iconAlign-left"
-        data-test="DesignSystem-Button"
-        tabindex="0"
-      >
-        <span
-          class="Button-text"
-        >
-          Button
-        </span>
-      </button>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`Tooltip component 
-  position: "top-end", size: "small", tooltip: "Sample string"
- 1`] = `
-<body>
-  <div>
-    
-    <div
-      class="PopperWrapper-trigger"
-    >
-      <button
-        class="Button Button--regular Button--basic Button--iconAlign-left"
-        data-test="DesignSystem-Button"
-        tabindex="0"
-      >
-        <span
-          class="Button-text"
-        >
-          Button
-        </span>
-      </button>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`Tooltip component 
-  position: "top-start", size: "regular", tooltip: "Sample string"
- 1`] = `
-<body>
-  <div>
-    
-    <div
-      class="PopperWrapper-trigger"
-    >
-      <button
-        class="Button Button--regular Button--basic Button--iconAlign-left"
-        data-test="DesignSystem-Button"
-        tabindex="0"
-      >
-        <span
-          class="Button-text"
-        >
-          Button
-        </span>
-      </button>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`Tooltip component 
-  position: "top-start", size: "small", tooltip: "Sample string"
- 1`] = `
-<body>
-  <div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <div
-      class="w-fit-content"
-    >
-      <div
-        aria-expanded="false"
-        aria-haspopup="dialog"
-        class="w-fit-content"
-        data-state="closed"
-        triggerclass="w-fit-content"
-=======
-    <div>
-=======
-    <div
-      class="w-fit-content"
-    >
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
-      <div
-        aria-expanded="false"
-        aria-haspopup="dialog"
-        class="w-fit-content"
-        data-state="closed"
-<<<<<<< HEAD
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-        triggerclass="w-fit-content"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
-      >
-        <button
-          class="Button Button--regular Button--basic Button--iconAlign-left"
-          data-test="DesignSystem-Button"
-          tabindex="0"
-        >
-          <span
-            class="Button-text"
-          >
-            Button
-          </span>
-        </button>
-      </div>
-    </div>
-  </div>
-  <div
-    data-floating-ui-portal=""
-    id=":r5:"
   />
 </body>
 `;
