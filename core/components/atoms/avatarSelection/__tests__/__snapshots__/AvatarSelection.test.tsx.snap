@@ -31,14 +31,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                   class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                  class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -85,14 +78,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                   class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                  class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -139,14 +125,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                   class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                  class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -193,14 +172,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                   class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                  class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -247,14 +219,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                   class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                  class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -287,14 +252,7 @@ exports[`AvatarSelection component snapshot
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
             class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-            class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -335,10 +293,6 @@ exports[`AvatarSelection component snapshot
         </div>
       </div>
     </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
     <div
       data-floating-ui-portal=""
       id=":r2d:"
@@ -363,11 +317,6 @@ exports[`AvatarSelection component snapshot
       data-floating-ui-portal=""
       id=":r2s:"
     />
-<<<<<<< HEAD
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
   </body>,
   "container": <div>
     <div
@@ -394,14 +343,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                 class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -448,14 +390,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                 class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -502,14 +437,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                 class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -556,14 +484,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                 class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -610,14 +531,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                 class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -650,14 +564,7 @@ exports[`AvatarSelection component snapshot
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
           class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-          class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -783,14 +690,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                   class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                  class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -837,14 +737,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                   class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                  class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -891,14 +784,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                   class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                  class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -945,14 +831,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                   class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                  class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -999,14 +878,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                   class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                  class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -1039,14 +911,7 @@ exports[`AvatarSelection component snapshot
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
             class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-            class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -1087,10 +952,6 @@ exports[`AvatarSelection component snapshot
         </div>
       </div>
     </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
     <div
       data-floating-ui-portal=""
       id=":r1r:"
@@ -1115,11 +976,6 @@ exports[`AvatarSelection component snapshot
       data-floating-ui-portal=""
       id=":r2a:"
     />
-<<<<<<< HEAD
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
   </body>,
   "container": <div>
     <div
@@ -1146,14 +1002,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                 class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -1200,14 +1049,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                 class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -1254,14 +1096,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                 class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -1308,14 +1143,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                 class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -1362,14 +1190,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                 class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -1402,14 +1223,7 @@ exports[`AvatarSelection component snapshot
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
           class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-          class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -1535,14 +1349,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                   class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                  class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -1589,14 +1396,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                   class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                  class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -1643,14 +1443,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                   class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                  class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -1697,14 +1490,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                   class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                  class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -1751,14 +1537,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                   class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                  class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -1791,14 +1570,7 @@ exports[`AvatarSelection component snapshot
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
             class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-            class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -1839,10 +1611,6 @@ exports[`AvatarSelection component snapshot
         </div>
       </div>
     </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
     <div
       data-floating-ui-portal=""
       id=":r19:"
@@ -1867,11 +1635,6 @@ exports[`AvatarSelection component snapshot
       data-floating-ui-portal=""
       id=":r1o:"
     />
-<<<<<<< HEAD
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
   </body>,
   "container": <div>
     <div
@@ -1898,14 +1661,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                 class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -1952,14 +1708,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                 class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -2006,14 +1755,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                 class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -2060,14 +1802,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                 class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -2114,14 +1849,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                 class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -2154,14 +1882,7 @@ exports[`AvatarSelection component snapshot
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
           class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-          class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="flex-grow-0"
         >
@@ -2287,14 +2008,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                   class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                  class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -2341,14 +2055,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                   class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                  class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -2395,14 +2102,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                   class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                  class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -2449,14 +2149,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                   class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                  class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -2503,14 +2196,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                   class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                  class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -2541,37 +2227,16 @@ exports[`AvatarSelection component snapshot
           class="flex-grow-0"
         >
           <div
-<<<<<<< HEAD
-<<<<<<< HEAD
             aria-controls=":rf:"
             aria-expanded="true"
             aria-haspopup="dialog"
             class="flex-grow-0"
-=======
-            aria-controls=":ra:"
-            aria-expanded="true"
-            aria-haspopup="dialog"
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-            aria-controls=":rf:"
-            aria-expanded="true"
-            aria-haspopup="dialog"
-            class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="open"
             triggerclass="flex-grow-0"
           >
             <div
               aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
-<<<<<<< HEAD
-<<<<<<< HEAD
               aria-expanded="true"
-=======
-              aria-expanded="false"
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-              aria-expanded="true"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
               aria-haspopup="listbox"
               class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
               data-test="DesignSystem-AvatarSelection--TriggerAvatar"
@@ -2608,10 +2273,6 @@ exports[`AvatarSelection component snapshot
     </div>
     <div
       data-floating-ui-portal=""
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
       id=":r2:"
     />
     <div
@@ -2633,41 +2294,17 @@ exports[`AvatarSelection component snapshot
     <div
       data-floating-ui-portal=""
       id=":rh:"
-<<<<<<< HEAD
-=======
-      id=":rc:"
->>>>>>> b67de59a (feat: migration to react 19)
-=======
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
     >
       <div
         class="Popover"
         data-floating-ui-focusable=""
         data-layer="true"
-<<<<<<< HEAD
-<<<<<<< HEAD
         data-opened="true"
         data-test="DesignSystem-Popover"
         id=":rf:"
         role="dialog"
         style="position: absolute; left: 0px; top: 0px; visibility: hidden; transform: translate(0px, 0px);"
         tabindex="-1"
-=======
-        data-opened="false"
-=======
-        data-opened="true"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
-        data-test="DesignSystem-Popover"
-        id=":rf:"
-        role="dialog"
-<<<<<<< HEAD
-        style="position: absolute; left: 0px; top: 0px; visibility: visible; transform: translate(0px, 0px);"
-        tabindex="0"
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-        style="position: absolute; left: 0px; top: 0px; visibility: hidden; transform: translate(0px, 0px);"
-        tabindex="-1"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
       >
         <div
           style="opacity: 0;"
@@ -2716,14 +2353,7 @@ exports[`AvatarSelection component snapshot
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
             class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-            class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -2793,14 +2423,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                   class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                  class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -2847,14 +2470,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                   class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                  class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -2901,14 +2517,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                   class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                  class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -2955,14 +2564,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                   class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                  class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -3009,14 +2611,7 @@ exports[`AvatarSelection component snapshot
                 <div
                   aria-expanded="false"
                   aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                   class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                  class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                   data-state="closed"
                   triggerclass="flex-grow-0"
                 >
@@ -3049,14 +2644,7 @@ exports[`AvatarSelection component snapshot
           <div
             aria-expanded="false"
             aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
             class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-            class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
             data-state="closed"
             triggerclass="flex-grow-0"
           >
@@ -3097,10 +2685,6 @@ exports[`AvatarSelection component snapshot
         </div>
       </div>
     </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
     <div
       data-floating-ui-portal=""
       id=":rn:"
@@ -3125,11 +2709,6 @@ exports[`AvatarSelection component snapshot
       data-floating-ui-portal=""
       id=":r16:"
     />
-<<<<<<< HEAD
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
   </body>,
   "container": <div>
     <div
@@ -3156,14 +2735,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                 class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -3210,14 +2782,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                 class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -3264,14 +2829,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                 class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -3318,14 +2876,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                 class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -3372,14 +2923,7 @@ exports[`AvatarSelection component snapshot
               <div
                 aria-expanded="false"
                 aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
                 class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-                class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
                 data-state="closed"
                 triggerclass="flex-grow-0"
               >
@@ -3412,14 +2956,7 @@ exports[`AvatarSelection component snapshot
         <div
           aria-expanded="false"
           aria-haspopup="dialog"
-<<<<<<< HEAD
-<<<<<<< HEAD
           class="flex-grow-0"
-=======
->>>>>>> b67de59a (feat: migration to react 19)
-=======
-          class="flex-grow-0"
->>>>>>> 4a84ed17 (feat(popover): add new popover component)
           data-state="closed"
           triggerclass="flex-grow-0"
         >
