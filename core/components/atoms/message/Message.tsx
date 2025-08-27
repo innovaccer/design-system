@@ -12,6 +12,8 @@ const IconMapping = {
   alert: 'error',
 };
 
+type MessageSize = 'small' | 'regular';
+
 export type MessageProps = {
   /**
    * Color of `Message`
@@ -21,6 +23,10 @@ export type MessageProps = {
    * Title of the `Message`
    */
   title?: string;
+  /**
+   * Size of `Message`
+   */
+  size?: MessageSize;
   /**
    * Element to be rendered
    *
@@ -39,9 +45,10 @@ export type MessageProps = {
 } & BaseProps;
 
 export const Message = (props: MessageProps) => {
-  const { actions, title, className } = props;
   let { appearance = 'info' } = props;
   const { description = '' } = props;
+  const { actions, title, className, size = 'regular' } = props;
+
   appearance = appearance === 'default' ? 'info' : appearance;
 
   const baseProps = extractBaseProps(props);
@@ -50,24 +57,30 @@ export const Message = (props: MessageProps) => {
     {
       [styles['Message']]: true,
       [styles[`Message--${appearance}`]]: appearance,
+      [styles[`Message--${size}`]]: size && size === 'small',
     },
     className
   );
 
   const IconClass = classNames({
-    [styles['Message-icon']]: true,
     [styles[`Message-icon--${appearance}`]]: appearance,
+    [styles[`Message-icon--${size}`]]: size,
     [styles['Message-icon--withTitle']]: title,
   });
 
   const TitleClass = classNames({
-    [styles['Message-heading']]: true,
     [styles[`Message-heading--${appearance}`]]: appearance,
+    [styles[`Message-heading--${size}`]]: size,
   });
 
   const DescriptionClass = classNames({
-    [styles['Message-text']]: true,
     [styles[`Message-text--${appearance}`]]: appearance,
+    [styles[`Message-text--${size}`]]: size,
+  });
+
+  const ActionsClass = classNames({
+    [styles['Message-actions']]: true,
+    [styles[`Message-actions--${size}`]]: size,
   });
 
   const renderDescription = (description: string, children: React.ReactNode) => {
@@ -95,6 +108,7 @@ export const Message = (props: MessageProps) => {
       <Icon
         data-test="DesignSystem-Message--Icon"
         name={IconMapping[appearance]}
+        size={size === 'small' ? 14 : 16}
         appearance={appearance}
         className={IconClass}
       />
@@ -106,7 +120,7 @@ export const Message = (props: MessageProps) => {
         )}
         {renderDescription(description, props.children)}
         {actions && (
-          <div data-test="DesignSystem-Message--actions" className={styles['Message-actions']}>
+          <div data-test="DesignSystem-Message--actions" className={ActionsClass}>
             {actions}
           </div>
         )}

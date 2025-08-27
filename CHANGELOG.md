@@ -1,3 +1,49 @@
+## 4.12.0 (2025-08-14)
+
+### Highlights
+
+- feat(table): add custom header cell renderer with sorting state support (9fb78957)
+- feat(verticalNav): add support for custom option renderer in vertical nav (fcbcb87f)
+- feat(select): add inline label support for small size select trigger (9f476ce7)
+- feat(table): add support for custom label in table header (404b440b)
+- feat(link): add story for icon support in link component (01d658b2)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(table): add custom header cell renderer with sorting state support (9fb78957)
+- feat(verticalNav): add support for custom option renderer in vertical nav (fcbcb87f)
+- feat(select): add inline label support for small size select trigger (9f476ce7)
+- feat(table): add support for custom label in table header (404b440b)
+- feat(link): add story for icon support in link component (01d658b2)
+
+### Fixes
+
+- fix(table): fix extra api call on sorting in infinite scroll (00f3a26b)
+- fix(table): fix visibility of background cell for pinned columns (29d91d9b)
+- fix(table): update spacing of checkbox for loading state (45109d69)
+
+### Improvements
+
+NA
+
+### Documentation
+
+- docs(icon): update appearance section for the Icon component (d9c04fa6)
+
+---
+
 ## 4.11.2 (2025-07-28)
 
 ### Highlights

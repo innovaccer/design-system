@@ -1,14 +1,31 @@
 ---
 title: Link
-description: Link is used to navigate to a destination.
+description: Links enable navigation within the product or to external destinations.
 tabs: ['Usage', 'Code']
 showMobile: true
 keywords: ['Anchor', 'Hyperlink']
 ---
 
-Link is used to navigate to a destination which can be on the same page or a different one.
+Links are used to navigate to a destination which can be on the same page or a different one. They should be used for navigation only not for actions.
 
 <Preview name="components-link-all--all" />
+
+### Variants
+
+#### Default
+
+Default link button is blue in color. It is used when just enough attention of users is required.
+
+![Default](./images/default.png)
+<Caption>Default</Caption>
+
+#### With Icon
+
+Link can have an optional icon on the left or right.
+
+![With icon](./images/withIcon.png)
+<Caption>With icon</Caption>
+
 
 ### Sizes
 Link comes in **2 sizes** - regular and small.
@@ -46,6 +63,15 @@ A link consist of just a text. It does not contain any padding.
          </ul>
      </td>
    </tr>
+   <tr style={{verticalAlign: "top"}}>
+     <td>Icon size</td>
+     <td>
+         <ul>
+            <li>12 px <em>(Small)</em></li>
+            <li>16 px <em>(Regular)</em></li>
+         </ul>
+     </td>
+   </tr>
  </tbody>
 </table>
 <br/>
@@ -59,6 +85,16 @@ A link consist of just a text. It does not contain any padding.
       <th style={{width:"33%", textAlign: "left"}}>Default value</th>
     </tr>
     <tr style={{verticalAlign: "top"}}>
+      <td>Size</td>
+      <td>
+          <ul>
+              <li>Regular</li>
+              <li>Small</li>
+          </ul>
+      </td>
+      <td>Regular</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
       <td>Subtle</td>
       <td>
           <ul>
@@ -69,32 +105,48 @@ A link consist of just a text. It does not contain any padding.
       <td>False</td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
-      <td>Size</td>
+      <td>Icon <br/> (optional)</td>
+      <td>
+          icon name
+      </td>
+      <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Icon alignment</td>
       <td>
           <ul>
-              <li>Small</li>
-              <li>Regular</li>
+              <li>Left</li>
+              <li>Right</li>
           </ul>
       </td>
-      <td>Regular</td>
+      <td>Left</td>
     </tr>
   </tbody>
 </table>
 <br/>
 
 ### Usage
-#### Standard vs. Subtle Link
-##### Standard Link
+#### Primary Link vs. Subtle Link
+
+##### Primary Link
 It is the default link component and comes in the primary color. It is used to draw attention and hence it is not recommended to have many links on a single page.
 
-![‘Forgot password?’ as primary link, being used for navigating to a new screen](./images/links-2.png)
-<Caption> ‘Forgot password?’ as primary link, being used for navigating to a new screen </Caption>
+![Primary Link](./images/links-2.png)
+<Caption>Primary Link</Caption>
 <br/>
 
 ##### Subtle Link
 This is the subtle variant of link and hence uses a lighter color. It is primarily used in the breadcrumb component. Use it sparingly such as times when the default link can be too overwhelming to use (too much primary color on the screen).
 
-![Breadcrumbs as subtle link being used for navigating to previous screens](./images/links-3.png)
-<Caption> Breadcrumbs as subtle link being used for navigating to previous screens </Caption>
+![Subtle Link](./images/links-3.png)
+<Caption> Subtle Link </Caption>
 
 <br/>
+
+#### Link vs Link button
+
+Link is used for navigation whereas link button is used for performing actions.
+
+![Link vs Link button](./images/link-vs-link-button.png)
+<Caption>Link vs Link button</Caption>
+

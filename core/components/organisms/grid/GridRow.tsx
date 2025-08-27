@@ -87,7 +87,7 @@ export const GridRow = (props: GridRowProps) => {
       // eslint-disable-next-line
       <div className={CheckboxClass} onClick={(e) => e.stopPropagation()} data-test="DesignSystem-Grid-cellCheckbox">
         {loading ? (
-          <Placeholder />
+          <Placeholder className="mr-4" />
         ) : (
           <Checkbox
             checked={!!data._selected}

@@ -79,3 +79,135 @@ exports[`Label component
   </div>
 </body>
 `;
+
+exports[`Label component - info prop tests 
+  info: "long information text"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Label"
+      data-test="DesignSystem-Label"
+    >
+      <label
+        class="Label-text"
+        data-test="DesignSystem-Label--Text"
+      >
+        Label
+        <div
+          class="w-fit-content"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            class="w-fit-content"
+            data-state="closed"
+            triggerclass="w-fit-content"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle ml-3 cursor-pointer d-flex align-items-center"
+              data-test="DesignSystem-Label--Info"
+              role="button"
+              style="font-size: 12px; width: 12px;"
+            >
+              info
+            </i>
+          </div>
+        </div>
+      </label>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r8:"
+  />
+</body>
+`;
+
+exports[`Label component - info prop tests 
+  info: "sample info"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Label"
+      data-test="DesignSystem-Label"
+    >
+      <label
+        class="Label-text"
+        data-test="DesignSystem-Label--Text"
+      >
+        Label
+        <div
+          class="w-fit-content"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            class="w-fit-content"
+            data-state="closed"
+            triggerclass="w-fit-content"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle ml-3 cursor-pointer d-flex align-items-center"
+              data-test="DesignSystem-Label--Info"
+              role="button"
+              style="font-size: 12px; width: 12px;"
+            >
+              info
+            </i>
+          </div>
+        </div>
+      </label>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r2:"
+  />
+</body>
+`;
+
+exports[`Label component - info prop tests 
+  info: "tooltip text"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Label"
+      data-test="DesignSystem-Label"
+    >
+      <label
+        class="Label-text"
+        data-test="DesignSystem-Label--Text"
+      >
+        Label
+        <div
+          class="w-fit-content"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            class="w-fit-content"
+            data-state="closed"
+            triggerclass="w-fit-content"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle ml-3 cursor-pointer d-flex align-items-center"
+              data-test="DesignSystem-Label--Info"
+              role="button"
+              style="font-size: 12px; width: 12px;"
+            >
+              info
+            </i>
+          </div>
+        </div>
+      </label>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r5:"
+  />
+</body>
+`;

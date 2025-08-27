@@ -33,11 +33,17 @@ const positionValue = {
 
 type TooltipPopperProps = (typeof tooltipPropsList)[number];
 
+type TooltipSize = 'small' | 'regular';
+
 export interface TooltipProps extends Omit<PopoverProps, TooltipPopperProps>, BaseProps {
   /**
    * Text to be rendered in `Tooltip`
    */
   tooltip?: string;
+  /**
+   * Size of the `Tooltip`
+   */
+  size?: TooltipSize;
   /**
    * Render tooltip conditionally
    * @default true
@@ -92,6 +98,7 @@ export const Tooltip = (props: TooltipProps) => {
     showOnTruncation = false,
     elementRef,
     className,
+    size = 'regular',
     ...rest
   } = props;
   const childrenRef = React.useRef(null);
@@ -114,10 +121,15 @@ export const Tooltip = (props: TooltipProps) => {
     return children;
   }
 
+  const tooltipClass = classNames({
+    [styles['Tooltip']]: true,
+    [styles[`Tooltip--small`]]: size === 'small',
+  });
+
   const tooltipWrapper = (
-    <div className={styles['Tooltip']}>
+    <div className={tooltipClass} data-test="DesignSystem-Tooltip-Wrapper">
       {tooltip && (
-        <Text className={styles['Tooltip-text']} appearance="white">
+        <Text className={styles['Tooltip-text']} appearance="white" size={size}>
           {tooltip}
         </Text>
       )}

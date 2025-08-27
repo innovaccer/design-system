@@ -6,11 +6,17 @@ import { MessageAppearance } from '@/common.type';
 import styles from '@css/components/statusHint.module.css';
 import pageHeaderStyles from '@css/components/pageHeader.module.css';
 
+type StatusHintSize = 'small' | 'regular';
+
 export type StatusHintProps = {
   /**
    * Describes label of the `Status Hint`
    */
   children: string | number | React.ReactNode;
+  /**
+   * Size of `Status Hint`
+   */
+  size?: StatusHintSize;
   /**
    * Color of Icon
    */
@@ -34,7 +40,16 @@ export type StatusHintProps = {
 } & BaseProps;
 
 export const StatusHint = (props: StatusHintProps) => {
-  const { appearance = 'default', children, onMouseEnter, onMouseLeave, onClick, truncateLabel, className } = props;
+  const {
+    appearance = 'default',
+    children,
+    onMouseEnter,
+    onMouseLeave,
+    onClick,
+    truncateLabel,
+    className,
+    size = 'regular',
+  } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -49,6 +64,8 @@ export const StatusHint = (props: StatusHintProps) => {
   const StatusHintIconClass = classNames({
     [styles['StatusHint-icon']]: true,
     [styles[`StatusHint--${appearance}`]]: appearance,
+    'mr-3-5': size === 'small',
+    'mr-4': size === 'regular',
   });
 
   const StatusHintTextClass = classNames({
@@ -58,7 +75,7 @@ export const StatusHint = (props: StatusHintProps) => {
   const renderChildren = () => {
     if (typeof children === 'string' || typeof children === 'number') {
       return (
-        <Text data-test="DesignSystem-StatusHint--Text" weight={'medium'} className={StatusHintTextClass}>
+        <Text data-test="DesignSystem-StatusHint--Text" weight={'medium'} className={StatusHintTextClass} size={size}>
           {children}
         </Text>
       );
