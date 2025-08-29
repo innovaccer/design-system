@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { BaseHtmlProps, BaseProps } from '@/utils/types';
 import styles from '@css/components/textarea.module.css';
 
+type TextareaSize = 'small' | 'regular';
 export type TextareaProps = {
   /**
    * Name of the `Textarea`
@@ -12,6 +13,10 @@ export type TextareaProps = {
    * Value of the `Textarea`
    */
   value?: string;
+  /**
+   * Size of `Textarea`
+   */
+  size?: TextareaSize;
   /**
    * Adds default value to `Input`
    */
@@ -68,6 +73,7 @@ export type TextareaProps = {
 
 export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((props, ref) => {
   const {
+    size = 'regular',
     rows = 3,
     resize = true,
     disabled,
@@ -92,6 +98,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((pr
       [styles['Textarea--resize']]: resize,
       [styles['Textarea--error']]: error,
       [styles['Textarea--readOnly']]: readOnly,
+      [styles['Textarea--small']]: size && size === 'small',
     },
     className
   );
