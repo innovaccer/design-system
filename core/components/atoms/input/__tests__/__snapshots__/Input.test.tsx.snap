@@ -426,7 +426,7 @@ exports[`Input component
 </body>
 `;
 
-exports[`Input component 
+exports[`Input Component - Disabled State with Icon Snapshot Tests 
   name: "name", value: "value", disabled: true, onChangeHandler: "[Function]", icon: "events"
  1`] = `
 <body>
@@ -462,7 +462,69 @@ exports[`Input component
 </body>
 `;
 
-exports[`Input component 
+exports[`Input Component - Disabled State without Change Handler Snapshot Tests 
+  name: "name", value: "value", disabled: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Input Input--regular Input--disabled"
+      data-test="DesignSystem-InputWrapper"
+      role="presentation"
+      style="min-width: 256px;"
+    >
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        disabled=""
+        name="name"
+        type="text"
+        value="value"
+      />
+      
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Input Component - Disabled State without Change Handler Snapshot Tests 
+  name: "name", value: "value", disabled: true, icon: "events"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Input Input--regular Input--disabled"
+      data-test="DesignSystem-InputWrapper"
+      role="presentation"
+      style="min-width: 256px;"
+    >
+      <div
+        class="Input-icon Input-icon--left"
+      >
+        <i
+          class="material-symbols material-symbols-rounded Icon"
+          data-test="DesignSystem-Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events
+        </i>
+      </div>
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        disabled=""
+        name="name"
+        type="text"
+        value="value"
+      />
+      
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Input Component - Error State with Icon Snapshot Tests 
   name: "name", value: "value", error: true, onChangeHandler: "[Function]"
  1`] = `
 <body>
@@ -485,7 +547,7 @@ exports[`Input component
 </body>
 `;
 
-exports[`Input component 
+exports[`Input Component - Error State with Icon Snapshot Tests 
   name: "name", value: "value", error: true, onChangeHandler: "[Function]", icon: "events"
  1`] = `
 <body>
@@ -520,7 +582,291 @@ exports[`Input component
 </body>
 `;
 
-exports[`Input component 
+exports[`Input Component - Icon and Placeholder Variants Snapshot Tests 
+  name: "name", placeholder: "Placeholder", onChangeHandler: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Input Input--regular"
+      data-test="DesignSystem-InputWrapper"
+      role="presentation"
+      style="min-width: 256px;"
+    >
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        name="name"
+        placeholder="Placeholder"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Input Component - Icon and Placeholder Variants Snapshot Tests 
+  name: "name", placeholder: "Placeholder", onChangeHandler: "[Function]", icon: "events"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Input Input--regular"
+      data-test="DesignSystem-InputWrapper"
+      role="presentation"
+      style="min-width: 256px;"
+    >
+      <div
+        class="Input-icon Input-icon--left Input-icon--inputBlank"
+      >
+        <i
+          class="material-symbols material-symbols-rounded Icon"
+          data-test="DesignSystem-Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events
+        </i>
+      </div>
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        name="name"
+        placeholder="Placeholder"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Input Component - Icon and Placeholder Variants Snapshot Tests 
+  name: "name", placeholder: "Placeholder", onChangeHandler: "[Function]", value: "value"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Input Input--regular"
+      data-test="DesignSystem-InputWrapper"
+      role="presentation"
+      style="min-width: 256px;"
+    >
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        name="name"
+        placeholder="Placeholder"
+        type="text"
+        value="value"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Input Component - Icon and Placeholder Variants Snapshot Tests 
+  name: "name", placeholder: "Placeholder", onChangeHandler: "[Function]", value: "value", icon: "events"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Input Input--regular"
+      data-test="DesignSystem-InputWrapper"
+      role="presentation"
+      style="min-width: 256px;"
+    >
+      <div
+        class="Input-icon Input-icon--left"
+      >
+        <i
+          class="material-symbols material-symbols-rounded Icon"
+          data-test="DesignSystem-Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events
+        </i>
+      </div>
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        name="name"
+        placeholder="Placeholder"
+        type="text"
+        value="value"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Input Component - Input Type Variants Snapshot Tests 
+  name: "name", type: "number", onChangeHandler: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Input Input--regular"
+      data-test="DesignSystem-InputWrapper"
+      role="presentation"
+    >
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        name="name"
+        type="number"
+        value=""
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Input Component - Input Type Variants Snapshot Tests 
+  name: "name", type: "password", onChangeHandler: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Input Input--regular"
+      data-test="DesignSystem-InputWrapper"
+      role="presentation"
+      style="min-width: 256px;"
+    >
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        name="name"
+        type="password"
+        value=""
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Input Component - Input Type Variants Snapshot Tests 
+  name: "name", type: "text", onChangeHandler: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Input Input--regular"
+      data-test="DesignSystem-InputWrapper"
+      role="presentation"
+      style="min-width: 256px;"
+    >
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        name="name"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Input Component - Number Type with Inline Label Snapshot Tests 
+  name: "name", size: "large", type: "number", inlineLabel: "USD", onChangeHandler: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Input Input--large"
+      data-test="DesignSystem-InputWrapper"
+      role="presentation"
+    >
+      <div
+        class="Input-inlineLabel"
+      >
+        <span
+          class="Text Text--subtle Text--regular"
+          data-test="DesignSystem-Text"
+        >
+          USD
+        </span>
+      </div>
+      <input
+        class="Input-input Input-input--large"
+        data-test="DesignSystem-Input"
+        name="name"
+        type="number"
+        value=""
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Input Component - Number Type with Inline Label Snapshot Tests 
+  name: "name", size: "regular", type: "number", inlineLabel: "USD", onChangeHandler: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Input Input--regular"
+      data-test="DesignSystem-InputWrapper"
+      role="presentation"
+    >
+      <div
+        class="Input-inlineLabel"
+      >
+        <span
+          class="Text Text--subtle Text--regular"
+          data-test="DesignSystem-Text"
+        >
+          USD
+        </span>
+      </div>
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        name="name"
+        type="number"
+        value=""
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Input Component - Number Type with Inline Label Snapshot Tests 
+  name: "name", size: "tiny", type: "number", inlineLabel: "USD", onChangeHandler: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Input Input--tiny"
+      data-test="DesignSystem-InputWrapper"
+      role="presentation"
+    >
+      <div
+        class="Input-inlineLabel"
+      >
+        <span
+          class="Text Text--subtle Text--regular"
+          data-test="DesignSystem-Text"
+        >
+          USD
+        </span>
+      </div>
+      <input
+        class="Input-input Input-input--tiny"
+        data-test="DesignSystem-Input"
+        name="name"
+        type="number"
+        value=""
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Input Component - ReadOnly State with Icon Snapshot Tests 
   name: "name", value: "value", readOnly: true
  1`] = `
 <body>
@@ -545,7 +891,7 @@ exports[`Input component
 </body>
 `;
 
-exports[`Input component 
+exports[`Input Component - ReadOnly State with Icon Snapshot Tests 
   name: "name", value: "value", readOnly: true, icon: "events"
  1`] = `
 <body>
@@ -576,6 +922,75 @@ exports[`Input component
         tabindex="-1"
         type="text"
         value="value"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Input Component - Size Variants Snapshot Tests 
+  name: "name", size: "large", onChangeHandler: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Input Input--large"
+      data-test="DesignSystem-InputWrapper"
+      role="presentation"
+      style="min-width: 256px;"
+    >
+      <input
+        class="Input-input Input-input--large"
+        data-test="DesignSystem-Input"
+        name="name"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Input Component - Size Variants Snapshot Tests 
+  name: "name", size: "regular", onChangeHandler: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Input Input--regular"
+      data-test="DesignSystem-InputWrapper"
+      role="presentation"
+      style="min-width: 256px;"
+    >
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        name="name"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Input Component - Size Variants Snapshot Tests 
+  name: "name", size: "tiny", onChangeHandler: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Input Input--tiny"
+      data-test="DesignSystem-InputWrapper"
+      role="presentation"
+      style="min-width: 256px;"
+    >
+      <input
+        class="Input-input Input-input--tiny"
+        data-test="DesignSystem-Input"
+        name="name"
+        type="text"
+        value=""
       />
     </div>
   </div>
