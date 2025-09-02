@@ -220,6 +220,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     [styles['Input-input']]: true,
     [verificationCodeStyles['Input-input']]: true,
     [styles[`Input-input--${size}`]]: size,
+    [`mr-4`]: actionIcon || onClear || info,
   });
 
   const leftIconClass = classNames({
@@ -227,6 +228,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     [styles['Input-icon--left']]: true,
     [styles['Input-icon--inputBlank']]: isInputBlank,
     [styles['Input-icon--error']]: error,
+    ['mr-3']: size && size === 'tiny',
   });
 
   const rightIconClass = classNames({
@@ -243,6 +245,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     </div>
   );
 
+  const iconSize = size === 'tiny' ? 14 : sizeMapping[size];
+
   return (
     <div
       data-test="DesignSystem-InputWrapper"
@@ -257,9 +261,9 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
           <Text appearance="subtle">{inlineLabel}</Text>
         </div>
       )}
-      {size !== 'tiny' && icon && (
+      {icon && (
         <div className={leftIconClass}>
-          <Icon name={icon} size={sizeMapping[size]} type={iconType} />
+          <Icon name={icon} size={iconSize} type={iconType} />
         </div>
       )}
       <input

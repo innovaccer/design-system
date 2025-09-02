@@ -5263,7 +5263,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
           </div>
           <input
             autocomplete="off"
-            class="Input-input Input-input--regular"
+            class="Input-input Input-input--regular mr-4"
             data-test="DesignSystem-Input"
             placeholder="mm/dd/yyyy"
             type="text"
