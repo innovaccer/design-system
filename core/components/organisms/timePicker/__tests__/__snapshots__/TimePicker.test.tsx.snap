@@ -17,7 +17,7 @@ exports[`TimePicker component prop:error snapshot
       >
         <input
           autocomplete="off"
-          class="Input-input Input-input--regular"
+          class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
           placeholder="--:-- AM"
           type="text"
@@ -46,7 +46,7 @@ exports[`TimePicker component prop:error snapshot
       >
         <input
           autocomplete="off"
-          class="Input-input Input-input--regular"
+          class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
           placeholder="--:-- AM"
           type="text"
@@ -75,7 +75,7 @@ exports[`TimePicker component prop:inputFormat snapshot
       >
         <input
           autocomplete="off"
-          class="Input-input Input-input--regular"
+          class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
           placeholder="--:-- AM"
           type="text"
@@ -104,7 +104,7 @@ exports[`TimePicker component prop:inputFormat snapshot
       >
         <input
           autocomplete="off"
-          class="Input-input Input-input--regular"
+          class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
           placeholder="--:--"
           type="text"
@@ -133,7 +133,7 @@ exports[`TimePicker component prop:outputFormat snapshot
       >
         <input
           autocomplete="off"
-          class="Input-input Input-input--regular"
+          class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
           placeholder="--:-- AM"
           type="text"
@@ -162,7 +162,7 @@ exports[`TimePicker component prop:outputFormat snapshot
       >
         <input
           autocomplete="off"
-          class="Input-input Input-input--regular"
+          class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
           placeholder="--:-- AM"
           type="text"
@@ -191,7 +191,7 @@ exports[`TimePicker component prop:time snapshot
       >
         <input
           autocomplete="off"
-          class="Input-input Input-input--regular"
+          class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
           placeholder="--:-- AM"
           type="text"
@@ -233,7 +233,7 @@ exports[`TimePicker component prop:time snapshot
       >
         <input
           autocomplete="off"
-          class="Input-input Input-input--regular"
+          class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
           placeholder="--:-- AM"
           type="text"
@@ -275,7 +275,7 @@ exports[`TimePicker component prop:validators snapshot
       >
         <input
           autocomplete="off"
-          class="Input-input Input-input--regular"
+          class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
           placeholder="--:-- AM"
           type="text"
@@ -304,7 +304,7 @@ exports[`TimePicker component prop:validators snapshot
       >
         <input
           autocomplete="off"
-          class="Input-input Input-input--regular"
+          class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
           placeholder="--:-- AM"
           type="text"
