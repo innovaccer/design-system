@@ -1,12 +1,12 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Button, Icon, Text } from '@/index';
+import { Icon, Text } from '@/index';
 import { BaseHtmlProps, BaseProps, extractBaseProps } from '@/utils/types';
 import { AutoComplete, IconType } from '@/common.type';
 import styles from '@css/components/metricInput.module.css';
 import paginationStyles from '@css/components/pagination.module.css';
 
-export type MetricInputSize = 'regular' | 'large';
+export type MetricInputSize = 'small' | 'regular' | 'large';
 
 export type MetricInputProps = {
   /**
@@ -103,8 +103,15 @@ export type MetricInputProps = {
   BaseHtmlProps<HTMLInputElement>;
 
 const sizeMapping = {
+  small: 14,
   regular: 16,
   large: 20,
+};
+
+const actionButtonIconSizeMapping = {
+  small: 12,
+  regular: 14,
+  large: 16,
 };
 
 const capMin = (min = -Infinity, value: number) =>
@@ -181,8 +188,9 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
     [styles['MetricInput-input']]: true,
     [paginationStyles['MetricInput-input']]: true,
     [styles[`MetricInput-input--${size}`]]: size,
-    [`mr-4`]: !suffix && !showActionButton && size === 'regular',
-    [`mr-6`]: !suffix && !showActionButton && size === 'large',
+    ['mr-4']: !suffix && !showActionButton && size === 'small',
+    ['mr-5']: !suffix && !showActionButton && size === 'regular',
+    ['mr-6']: !suffix && !showActionButton && size === 'large',
   });
 
   const iconClass = classNames({
@@ -191,20 +199,26 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
   });
 
   const prefixClass = classNames({
-    ['mr-4']: size === 'regular',
-    ['mr-5']: size !== 'regular',
+    ['mr-4']: size === 'regular' || size === 'small',
+    ['mr-5']: size === 'large',
   });
 
   const suffixClass = classNames({
-    ['ml-4 mr-3']: size === 'regular',
-    ['mx-5']: size !== 'regular',
+    ['ml-4 mr-4']: size === 'regular' || size === 'small',
+    ['mx-5']: size === 'large',
   });
 
-  const actionButton = classNames({
-    ['p-0']: true,
-    [styles[`MetricInput-arrowIcon--${size}`]]: size,
-    ['ml-3']: true,
+  const arrowIconsClass = classNames({
+    [styles['MetricInput-arrowIcons']]: true,
+    [styles[`MetricInput-arrowIcons--${size}`]]: size,
+    ['ml-3']: showActionButton && !suffix,
   });
+
+  const arrowButtonClass = classNames({
+    [styles['MetricInput-arrowButton']]: true,
+  });
+
+  const actionButtonIconSize = actionButtonIconSizeMapping[size];
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (isUncontrolled) {
@@ -264,8 +278,6 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
     }
   };
 
-  const actionButtonSize = size === 'large' ? 'regular' : 'tiny';
-
   return (
     <div data-test="DesignSystem-MetricInputWrapper" className={classes} onKeyDown={onKeyDown} role="presentation">
       {icon && (
@@ -308,23 +320,25 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
         </Text>
       )}
       {showActionButton && (
-        <div className={paginationStyles['MetricInput-arrowIcons']}>
-          <Button
+        <div className={arrowIconsClass}>
+          <button
             type="button"
-            icon="keyboard_arrow_up"
-            size={actionButtonSize}
-            className={`${actionButton} mb-2`}
+            className={`${arrowButtonClass} border-bottom`}
             onClick={(e) => onArrowClick(e, 'up')}
+            aria-label="Increment value"
             data-test="DesignSystem-MetricInput--upIcon"
-          />
-          <Button
+          >
+            <Icon name="keyboard_arrow_up" size={actionButtonIconSize} />
+          </button>
+          <button
             type="button"
-            icon="keyboard_arrow_down"
-            size={actionButtonSize}
-            className={actionButton}
+            className={`${arrowButtonClass} border-bottom-0`}
             onClick={(e) => onArrowClick(e, 'down')}
+            aria-label="Decrement value"
             data-test="DesignSystem-MetricInput--downIcon"
-          />
+          >
+            <Icon name="keyboard_arrow_down" size={actionButtonIconSize} />
+          </button>
         </div>
       )}
     </div>
