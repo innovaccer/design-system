@@ -4,7 +4,11 @@ import { MetricInput, Text, Row, Column } from '@/index';
 // CSF format story
 export const size = () => (
   <Row>
-    <Column size={2} className="d-flex">
+    <Column size={8} className="d-flex">
+      <div className="flex-column align-items-center mr-8">
+        <MetricInput aria-label="Metric input small size" size="small" className="mb-3" />
+        <Text>Small</Text>
+      </div>
       <div className="flex-column align-items-center mr-8">
         <MetricInput aria-label="Metric input regular size" size="regular" className="mb-3" />
         <Text>Regular</Text>

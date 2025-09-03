@@ -10,8 +10,8 @@
   box-sizing: border-box;
   border-radius: var(--border-radius-10);
   border: var(--border);
-  padding-right: var(--spacing-10);
   background: var(--white);
+  overflow: hidden;
   transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
@@ -23,6 +23,11 @@
 .MetricInput--large {
   height: 40px;
   padding-left: var(--spacing-40);
+}
+
+.MetricInput--small {
+  height: var(--spacing-60);
+  padding-left: var(--spacing-20);
 }
 
 .MetricInput:hover {
@@ -89,6 +94,17 @@
   font-size: var(--font-size-m);
 }
 
+.MetricInput-input--regular {
+  line-height: var(--font-height);
+  font-size: var(--font-size);
+}
+
+.MetricInput-input--small {
+  line-height: var(--font-height-s);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-medium);
+}
+
 .MetricInput-input::placeholder {
   color: var(--inverse-lighter);
 }
@@ -111,6 +127,10 @@
   line-height: var(--font-height-m);
 }
 
+.MetricInput-icon--small {
+  margin-right: var(--spacing-10);
+}
+
 .MetricInput-input::-webkit-inner-spin-button,
 .MetricInput-input::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -119,14 +139,51 @@
   margin: 0;
 }
 
-.MetricInput-arrowIcon--large {
-  height: var(--spacing-40);
-  width: var(--spacing-40);
-  border-radius: var(--border-radius-05);
+.MetricInput-arrowIcons {
+  border-left: var(--border);
+  box-sizing: border-box;
+  border-radius: 0;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-shrink: 0;
+  overflow: hidden;
 }
 
-.MetricInput-arrowIcon--regular {
-  height: var(--spacing-30);
-  width: var(--spacing-30);
-  border-radius: var(--border-radius-05);
+.MetricInput-arrowButton {
+  height: 50%;
+  border: none;
+  background: var(--secondary-light);
+  color: var(--inverse);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  user-select: none;
+  overflow: hidden;
+}
+
+.MetricInput-arrowButton:hover {
+  background: var(--secondary);
+}
+
+.MetricInput-arrowButton:active {
+  background: var(--secondary-dark);
+}
+
+.MetricInput-arrowButton:focus {
+  outline: 0;
+  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+}
+
+.MetricInput-arrowIcons--small,
+.MetricInput-arrowIcons--regular {
+  width: 20px;
+}
+
+.MetricInput-arrowIcons--large {
+  width: var(--spacing-60);
 }
