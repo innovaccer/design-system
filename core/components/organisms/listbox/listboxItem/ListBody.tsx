@@ -24,6 +24,8 @@ export const ListBody = (props: ListboxItemProps) => {
     className
   );
 
+  const iconSize = size === 'tight' ? 14 : 16;
+
   return (
     <div
       data-disabled={disabled}
@@ -35,7 +37,7 @@ export const ListBody = (props: ListboxItemProps) => {
     >
       {draggable && (
         <Icon
-          size={16}
+          size={iconSize}
           appearance="subtle"
           name="drag_indicator"
           className={styles['Listbox-item--drag-icon']}

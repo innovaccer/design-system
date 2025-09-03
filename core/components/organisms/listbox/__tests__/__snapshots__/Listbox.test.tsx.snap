@@ -4046,72 +4046,6 @@ exports[`Listbox component snapshot
  1`] = `
 <body>
   <div>
-    <li
-      class="Listbox-item-wrapper"
-      data-test="DesignSystem-Listbox-Item"
-      disabled=""
-      id="list-item-id"
-    >
-      <div
-        class="Listbox-item Listbox-item--standard Listbox-item--resource Listbox-item--disabled"
-        data-disabled="true"
-        data-test="DesignSystem-Listbox-ItemWrapper"
-        role="tablist"
-        tabindex="0"
-      >
-        <div>
-          list item element
-        </div>
-      </div>
-      <hr
-        class="Divider Divider--horizontal Divider--basic Listbox-divider"
-        data-test="DesignSystem-Divider"
-      />
-    </li>
-  </div>
-  <div>
-    <ul
-      class="Listbox"
-      data-test="DesignSystem-Listbox"
-    >
-      <div
-        class="Listbox-item--draggable"
-        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
-        tabindex="0"
-      >
-        <li
-          class=""
-          data-test="DesignSystem-Listbox-Item"
-          id="list-item-id"
-          parentprops="[object Object]"
-        >
-          <div
-            class="Listbox-item Listbox-item--standard Listbox-item--resource"
-            data-test="DesignSystem-Listbox-ItemWrapper"
-            role="tablist"
-            tabindex="-1"
-          >
-            <i
-              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
-              data-test="DesignSystem-Listbox-DragIcon"
-              role="button"
-              style="font-size: 16px; width: 16px;"
-            >
-              drag_indicator
-            </i>
-            <div>
-              list item element
-            </div>
-          </div>
-          <hr
-            class="Divider Divider--horizontal Divider--basic Listbox-divider"
-            data-test="DesignSystem-Divider"
-          />
-        </li>
-      </div>
-    </ul>
-  </div>
-  <div>
     <ol
       class="Listbox"
       data-test="DesignSystem-Listbox"
@@ -4656,7 +4590,7 @@ exports[`Listbox component snapshot
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 14px; width: 14px;"
             >
               drag_indicator
             </i>
@@ -4701,7 +4635,7 @@ exports[`Listbox component snapshot
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 14px; width: 14px;"
             >
               drag_indicator
             </i>
@@ -4750,7 +4684,7 @@ exports[`Listbox component snapshot
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 14px; width: 14px;"
             >
               drag_indicator
             </i>
@@ -4795,7 +4729,7 @@ exports[`Listbox component snapshot
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 14px; width: 14px;"
             >
               drag_indicator
             </i>
@@ -4844,7 +4778,7 @@ exports[`Listbox component snapshot
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 14px; width: 14px;"
             >
               drag_indicator
             </i>
@@ -4889,7 +4823,7 @@ exports[`Listbox component snapshot
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 14px; width: 14px;"
             >
               drag_indicator
             </i>
@@ -4938,7 +4872,7 @@ exports[`Listbox component snapshot
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 14px; width: 14px;"
             >
               drag_indicator
             </i>
@@ -4983,7 +4917,7 @@ exports[`Listbox component snapshot
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 14px; width: 14px;"
             >
               drag_indicator
             </i>
@@ -5032,7 +4966,7 @@ exports[`Listbox component snapshot
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 14px; width: 14px;"
             >
               drag_indicator
             </i>
@@ -5077,7 +5011,7 @@ exports[`Listbox component snapshot
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 14px; width: 14px;"
             >
               drag_indicator
             </i>
@@ -5126,7 +5060,7 @@ exports[`Listbox component snapshot
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 14px; width: 14px;"
             >
               drag_indicator
             </i>
@@ -5171,7 +5105,7 @@ exports[`Listbox component snapshot
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 14px; width: 14px;"
             >
               drag_indicator
             </i>
@@ -5220,7 +5154,7 @@ exports[`Listbox component snapshot
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 14px; width: 14px;"
             >
               drag_indicator
             </i>
@@ -5265,7 +5199,7 @@ exports[`Listbox component snapshot
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 14px; width: 14px;"
             >
               drag_indicator
             </i>
@@ -5314,7 +5248,7 @@ exports[`Listbox component snapshot
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 14px; width: 14px;"
             >
               drag_indicator
             </i>
@@ -5359,7 +5293,7 @@ exports[`Listbox component snapshot
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 14px; width: 14px;"
             >
               drag_indicator
             </i>
@@ -5408,7 +5342,7 @@ exports[`Listbox component snapshot
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 14px; width: 14px;"
             >
               drag_indicator
             </i>
@@ -5453,7 +5387,7 @@ exports[`Listbox component snapshot
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 14px; width: 14px;"
             >
               drag_indicator
             </i>
@@ -5502,7 +5436,7 @@ exports[`Listbox component snapshot
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 14px; width: 14px;"
             >
               drag_indicator
             </i>
@@ -5547,7 +5481,7 @@ exports[`Listbox component snapshot
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 14px; width: 14px;"
             >
               drag_indicator
             </i>
@@ -5596,7 +5530,7 @@ exports[`Listbox component snapshot
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 14px; width: 14px;"
             >
               drag_indicator
             </i>
@@ -5641,7 +5575,7 @@ exports[`Listbox component snapshot
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 14px; width: 14px;"
             >
               drag_indicator
             </i>
@@ -5690,7 +5624,7 @@ exports[`Listbox component snapshot
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 14px; width: 14px;"
             >
               drag_indicator
             </i>
@@ -5735,7 +5669,7 @@ exports[`Listbox component snapshot
               class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
               data-test="DesignSystem-Listbox-DragIcon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 14px; width: 14px;"
             >
               drag_indicator
             </i>

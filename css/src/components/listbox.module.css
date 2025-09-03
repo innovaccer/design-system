@@ -9,8 +9,6 @@
 .Listbox-item {
   display: flex;
   align-items: center;
-  padding-left: var(--spacing-40);
-  padding-right: var(--spacing-40);
 }
 
 .Listbox-item-wrapper {
@@ -25,18 +23,18 @@
 /* Sizes */
 
 .Listbox-item--tight {
-  padding-top: var(--spacing-10);
-  padding-bottom: var(--spacing-10);
+  padding: var(--spacing-10) var(--spacing-20);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--font-height-s);
 }
 
 .Listbox-item--compressed {
-  padding-top: var(--spacing-20);
-  padding-bottom: var(--spacing-20);
+  padding: var(--spacing-20) var(--spacing-40);
 }
 
 .Listbox-item--standard {
-  padding-top: var(--spacing-30);
-  padding-bottom: var(--spacing-30);
+  padding: var(--spacing-30) var(--spacing-40);
 }
 
 /* Listbox type - option  */

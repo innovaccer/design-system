@@ -168,13 +168,17 @@ describe('Listbox Item component test for list type: description', () => {
 });
 
 describe('Listbox Item component test for disabled classes', () => {
-  const { getByTestId } = render(
-    <Listbox.Item id={listItemId} disabled={true}>
-      {children}
-    </Listbox.Item>
-  );
-  const listItem = getByTestId('DesignSystem-Listbox-ItemWrapper');
-  expect(listItem).toHaveClass('Listbox-item--disabled');
+  it('check for disabled class', () => {
+    const { getByTestId } = render(
+      <Listbox>
+        <Listbox.Item id={listItemId} disabled={true}>
+          {children}
+        </Listbox.Item>
+      </Listbox>
+    );
+    const listItem = getByTestId('DesignSystem-Listbox-ItemWrapper');
+    expect(listItem).toHaveClass('Listbox-item--disabled');
+  });
 });
 
 describe('Listbox Item component test for custom classes', () => {
@@ -245,14 +249,16 @@ describe('Listbox component test for custom class', () => {
 });
 
 describe('Listbox component test for drag icon', () => {
-  const { getByTestId } = render(
-    <Listbox draggable={true}>
-      <Listbox.Item id={listItemId}>{children}</Listbox.Item>
-    </Listbox>
-  );
+  it('check for drag icon presence and class', () => {
+    const { getByTestId } = render(
+      <Listbox draggable={true}>
+        <Listbox.Item id={listItemId}>{children}</Listbox.Item>
+      </Listbox>
+    );
 
-  expect(getByTestId('DesignSystem-Listbox-DragIcon')).toBeInTheDocument();
-  expect(getByTestId('DesignSystem-Listbox-DragIcon')).toHaveClass('Listbox-item--drag-icon');
+    expect(getByTestId('DesignSystem-Listbox-DragIcon')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Listbox-DragIcon')).toHaveClass('Listbox-item--drag-icon');
+  });
 });
 
 describe('Listbox component test for TagName', () => {
@@ -441,5 +447,212 @@ describe('Listbox component test for Nested Row', () => {
     );
     const nestedBody = screen.queryByText('DesignSystem-Nested-Row');
     expect(nestedBody).not.toBeInTheDocument();
+  });
+});
+
+describe('ListBody component - accessibility and interaction attributes', () => {
+  it('renders with correct role attribute for accessibility', () => {
+    const { getByTestId } = render(
+      <Listbox>
+        <Listbox.Item id={listItemId}>{children}</Listbox.Item>
+      </Listbox>
+    );
+    const listBodyWrapper = getByTestId('DesignSystem-Listbox-ItemWrapper');
+    expect(listBodyWrapper).toHaveAttribute('role', 'tablist');
+  });
+
+  it('sets tabIndex to -1 when parent listbox is draggable', () => {
+    const { getByTestId } = render(
+      <Listbox draggable={true}>
+        <Listbox.Item id={listItemId}>{children}</Listbox.Item>
+      </Listbox>
+    );
+    const listBodyWrapper = getByTestId('DesignSystem-Listbox-ItemWrapper');
+    expect(listBodyWrapper).toHaveAttribute('tabIndex', '-1');
+  });
+
+  it('sets tabIndex to 0 when parent listbox is not draggable', () => {
+    const { getByTestId } = render(
+      <Listbox draggable={false}>
+        <Listbox.Item id={listItemId}>{children}</Listbox.Item>
+      </Listbox>
+    );
+    const listBodyWrapper = getByTestId('DesignSystem-Listbox-ItemWrapper');
+    expect(listBodyWrapper).toHaveAttribute('tabIndex', '0');
+  });
+
+  it('respects custom tabIndex when provided and listbox is not draggable', () => {
+    const { getByTestId } = render(
+      <Listbox draggable={false}>
+        <Listbox.Item id={listItemId} tabIndex={-1}>
+          {children}
+        </Listbox.Item>
+      </Listbox>
+    );
+    const listBodyWrapper = getByTestId('DesignSystem-Listbox-ItemWrapper');
+    expect(listBodyWrapper).toHaveAttribute('tabIndex', '-1');
+  });
+
+  it('sets data-disabled attribute to true for disabled items', () => {
+    const { getByTestId } = render(
+      <Listbox>
+        <Listbox.Item id={listItemId} disabled={true}>
+          {children}
+        </Listbox.Item>
+      </Listbox>
+    );
+    const listBodyWrapper = getByTestId('DesignSystem-Listbox-ItemWrapper');
+    expect(listBodyWrapper).toHaveAttribute('data-disabled', 'true');
+  });
+
+  it('sets data-disabled attribute to false for enabled items', () => {
+    const { getByTestId } = render(
+      <Listbox>
+        <Listbox.Item id={listItemId} disabled={false}>
+          {children}
+        </Listbox.Item>
+      </Listbox>
+    );
+    const listBodyWrapper = getByTestId('DesignSystem-Listbox-ItemWrapper');
+    expect(listBodyWrapper).toHaveAttribute('data-disabled', 'false');
+  });
+});
+
+describe('Listbox component - drag icon rendering and behavior', () => {
+  it('renders drag icon with size 16 for standard and compressed listbox sizes', () => {
+    const { getByTestId } = render(
+      <Listbox draggable={true} size="standard">
+        <Listbox.Item id={listItemId}>{children}</Listbox.Item>
+      </Listbox>
+    );
+    const dragIcon = getByTestId('DesignSystem-Listbox-DragIcon');
+    expect(dragIcon).toHaveAttribute('data-test', 'DesignSystem-Listbox-DragIcon');
+  });
+
+  it('renders drag icon with size 14 for tight listbox size', () => {
+    const { getByTestId } = render(
+      <Listbox draggable={true} size="tight">
+        <Listbox.Item id={listItemId}>{children}</Listbox.Item>
+      </Listbox>
+    );
+    const dragIcon = getByTestId('DesignSystem-Listbox-DragIcon');
+    expect(dragIcon).toHaveAttribute('data-test', 'DesignSystem-Listbox-DragIcon');
+  });
+
+  it('applies correct CSS classes to drag icon', () => {
+    const { getByTestId } = render(
+      <Listbox draggable={true}>
+        <Listbox.Item id={listItemId}>{children}</Listbox.Item>
+      </Listbox>
+    );
+    const dragIcon = getByTestId('DesignSystem-Listbox-DragIcon');
+    expect(dragIcon).toHaveClass('Listbox-item--drag-icon');
+  });
+
+  it('does not render drag icon when listbox is not draggable', () => {
+    render(
+      <Listbox draggable={false}>
+        <Listbox.Item id={listItemId}>{children}</Listbox.Item>
+      </Listbox>
+    );
+    const dragIcon = screen.queryByTestId('DesignSystem-Listbox-DragIcon');
+    expect(dragIcon).not.toBeInTheDocument();
+  });
+});
+
+describe('Listbox component - CSS class application logic', () => {
+  it('applies wrapper class to list items when listbox is not draggable', () => {
+    const { getByTestId } = render(
+      <Listbox draggable={false}>
+        <Listbox.Item id={listItemId}>{children}</Listbox.Item>
+      </Listbox>
+    );
+    const listItem = getByTestId('DesignSystem-Listbox-Item');
+    expect(listItem).toHaveClass('Listbox-item-wrapper');
+  });
+
+  it('does not apply wrapper class to list items when listbox is draggable', () => {
+    const { getByTestId } = render(
+      <Listbox draggable={true}>
+        <Listbox.Item id={listItemId}>{children}</Listbox.Item>
+      </Listbox>
+    );
+    const listItem = getByTestId('DesignSystem-Listbox-Item');
+    expect(listItem).not.toHaveClass('Listbox-item-wrapper');
+  });
+
+  it('applies selected class only to option type listbox items when selected', () => {
+    const { getByTestId } = render(
+      <Listbox type="option">
+        <Listbox.Item id={listItemId} selected={true}>
+          {children}
+        </Listbox.Item>
+      </Listbox>
+    );
+    const listBodyWrapper = getByTestId('DesignSystem-Listbox-ItemWrapper');
+    expect(listBodyWrapper).toHaveClass('Listbox-item--selected');
+  });
+
+  it('does not apply selected class to resource type listbox items when selected', () => {
+    const { getByTestId } = render(
+      <Listbox type="resource">
+        <Listbox.Item id={listItemId} selected={true}>
+          {children}
+        </Listbox.Item>
+      </Listbox>
+    );
+    const listBodyWrapper = getByTestId('DesignSystem-Listbox-ItemWrapper');
+    expect(listBodyWrapper).not.toHaveClass('Listbox-item--selected');
+  });
+
+  it('applies activated class only to resource type listbox items when activated', () => {
+    const { getByTestId } = render(
+      <Listbox type="resource">
+        <Listbox.Item id={listItemId} activated={true}>
+          {children}
+        </Listbox.Item>
+      </Listbox>
+    );
+    const listBodyWrapper = getByTestId('DesignSystem-Listbox-ItemWrapper');
+    expect(listBodyWrapper).toHaveClass('Listbox-item--activated');
+  });
+
+  it('does not apply activated class to option type listbox items when activated', () => {
+    const { getByTestId } = render(
+      <Listbox type="option">
+        <Listbox.Item id={listItemId} activated={true}>
+          {children}
+        </Listbox.Item>
+      </Listbox>
+    );
+    const listBodyWrapper = getByTestId('DesignSystem-Listbox-ItemWrapper');
+    expect(listBodyWrapper).not.toHaveClass('Listbox-item--activated');
+  });
+});
+
+describe('Listbox component - keyboard navigation and event handling', () => {
+  it('handles keyboard events on listbox item wrapper elements', () => {
+    const { getAllByTestId } = render(
+      <Listbox>
+        <Listbox.Item id={listItemId}>{children}</Listbox.Item>
+        <Listbox.Item id="item-2">Second item</Listbox.Item>
+      </Listbox>
+    );
+    const listBodyWrappers = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+    fireEvent.keyDown(listBodyWrappers[0], { key: 'ArrowDown' });
+  });
+
+  it('integrates with keyboard navigation utilities for arrow key handling', () => {
+    const { getAllByTestId } = render(
+      <Listbox>
+        <Listbox.Item id="item-1">First item</Listbox.Item>
+        <Listbox.Item id="item-2">Second item</Listbox.Item>
+      </Listbox>
+    );
+    const firstItem = getAllByTestId('DesignSystem-Listbox-ItemWrapper')[0];
+
+    const secondItem = getAllByTestId('DesignSystem-Listbox-ItemWrapper')[1];
+    fireEvent.keyDown(firstItem, { key: 'ArrowDown' });
+    expect(secondItem).toBeInTheDocument();
   });
 });
