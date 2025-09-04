@@ -31,7 +31,18 @@ export interface TextFieldWithTextareaProps extends BaseProps {
 export type TextFieldTextareaProps = TextFieldWithTextareaProps & TextareaProps;
 
 export const TextFieldWithTextarea = (props: TextFieldTextareaProps) => {
-  const { label, rows = 3, resize = true, required, error, onChange, value = '', max = 200, helpText = ' ' } = props;
+  const {
+    label,
+    rows = 3,
+    resize = true,
+    required,
+    error,
+    onChange,
+    value = '',
+    max = 200,
+    helpText = ' ',
+    size = 'regular',
+  } = props;
 
   const textareaRef = React.useRef(null);
   const [inputText, setInputText] = React.useState<string>(value);
@@ -64,7 +75,7 @@ export const TextFieldWithTextarea = (props: TextFieldTextareaProps) => {
   return (
     <div>
       {label && (
-        <Label required={required} withInput={true}>
+        <Label required={required} withInput={true} size={size}>
           {label}
         </Label>
       )}
