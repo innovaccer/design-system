@@ -1,0 +1,625 @@
+/* DocumentPreview Component Styles */
+
+/* CSS Custom Properties for theming - using MDS design tokens */
+.DocumentPreview {
+  /* Colors - using MDS design tokens */
+  --document-preview-bg: var(--white);
+  --document-preview-border: var(--secondary-light);
+  --document-preview-shadow: var(--shadow-m);
+  --document-preview-header-bg: var(--white);
+  --document-preview-content-bg: var(--secondary-lightest);
+  --document-preview-nav-button-bg: rgba(255, 255, 255, 0.95);
+  --document-preview-zoom-bg: rgba(255, 255, 255, 0.98);
+  --document-preview-text: var(--text);
+  --document-preview-text-subtle: var(--text-subtle);
+  --document-preview-border-light: var(--secondary-light);
+  --document-preview-success: var(--success);
+  --document-preview-error: var(--alert);
+  --document-preview-warning: var(--warning);
+
+  /* Spacing system - using MDS spacing tokens */
+  --spacing-xs: var(--spacing-10);
+  --spacing-s: var(--spacing-15);
+  --spacing-m: var(--spacing-20);
+  --spacing-l: var(--spacing-30);
+  --spacing-xl: var(--spacing-40);
+  --spacing-2xl: var(--spacing-60);
+
+  /* Typography - using MDS typography tokens */
+  --font-weight-normal: var(--font-weight-normal);
+  --font-weight-medium: var(--font-weight-medium);
+  --font-weight-strong: var(--font-weight-bold);
+  --line-height-s: var(--font-height-s);
+  --line-height-m: var(--font-height);
+  --line-height-l: var(--font-height-m);
+
+  /* Border radius - using MDS border radius tokens */
+  --border-radius-s: var(--border-radius-10);
+  --border-radius-m: var(--border-radius-20);
+  --border-radius-l: var(--border-radius-30);
+  --border-radius-xl: var(--border-radius-40);
+
+  /* Shadows - using MDS shadow tokens */
+  --shadow-small: var(--shadow-s);
+  --shadow-medium: var(--shadow-m);
+  --shadow-large: var(--shadow-l);
+
+  /* Z-index scale */
+  --z-index-base: 1;
+  --z-index-overlay: 10;
+  --z-index-dropdown: 100;
+  --z-index-modal: 1000;
+  --z-index-fullscreen: 9999;
+}
+
+/* Base DocumentPreview Component */
+.DocumentPreview {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--document-preview-bg);
+  border: var(--border-width-2-5) solid var(--document-preview-border);
+  border-radius: var(--border-radius-m);
+  box-shadow: var(--document-preview-shadow);
+  height: 100%;
+  min-height: 600px;
+  overflow: hidden;
+  position: relative;
+  font-family: var(--font-family);
+  color: var(--document-preview-text);
+}
+
+/* Fullscreen Mode */
+.DocumentPreview--fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-index-fullscreen);
+  border-radius: 0;
+  border: none;
+  min-height: 100vh;
+  max-height: 100vh;
+  box-shadow: none;
+}
+
+/* Loading State */
+.DocumentPreview--loading {
+  pointer-events: none;
+  opacity: var(--opacity-8);
+}
+
+.DocumentPreview-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: var(--spacing-2xl);
+  background-color: var(--document-preview-content-bg);
+  border-radius: var(--border-radius-m);
+}
+
+.DocumentPreview-loading::before {
+  content: '';
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--document-preview-border);
+  border-top-color: var(--document-preview-success);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: var(--spacing-m);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error State */
+.DocumentPreview--error .DocumentPreview-content {
+  justify-content: center;
+  align-items: center;
+}
+
+.DocumentPreview-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: var(--spacing-2xl);
+  color: var(--document-preview-error);
+  text-align: center;
+  background-color: var(--document-preview-content-bg);
+  border-radius: var(--border-radius-m);
+}
+
+/* Header Styles */
+.DocumentPreview-headerContent {
+  display: flex;
+  gap: var(--spacing-m);
+  padding: var(--spacing-xl);
+  background-color: var(--document-preview-header-bg);
+  border-bottom: var(--border-width-2-5) solid var(--document-preview-border);
+}
+
+.DocumentPreview-titleContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex: 1;
+  min-width: 0;
+  gap: var(--spacing-l);
+}
+
+.DocumentPreview-title {
+  margin: 0;
+  color: var(--document-preview-text);
+  font-weight: var(--font-weight-strong);
+  font-size: var(--font-size-l);
+  line-height: var(--line-height-s);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
+}
+
+.DocumentPreview-subtitle {
+  margin: 0;
+  color: var(--document-preview-text-subtle);
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-m);
+  font-weight: var(--font-weight-normal);
+}
+
+/* Main Content Area */
+.DocumentPreview-carouselWrapper {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  min-height: 0;
+  background-color: var(--document-preview-content-bg);
+}
+
+.DocumentPreview-mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 0;
+}
+
+/* Document Viewer */
+.DocumentPreview-viewer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl);
+  overflow: auto;
+  position: relative;
+  background-color: var(--document-preview-content-bg);
+}
+
+.DocumentPreview-document {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: var(--border-radius-s);
+  box-shadow: var(--shadow-medium);
+  background-color: var(--white);
+  transform-origin: center;
+  transition: transform var(--duration--moderate-01) var(--standard-productive-curve);
+  border: var(--border-width-2-5) solid var(--document-preview-border-light);
+}
+
+/* File Type Specific Styles */
+.DocumentPreview-iframe {
+  width: 100%;
+  height: 750px;
+  border: var(--border-width-2-5) solid var(--document-preview-border-light);
+  border-radius: var(--border-radius-s);
+  display: block;
+  background-color: var(--white);
+}
+
+.DocumentPreview-image {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  border-radius: var(--border-radius-s);
+  display: block;
+  object-fit: contain;
+}
+
+.DocumentPreview-textContent {
+  padding: var(--spacing-xl);
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-l);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background-color: var(--white);
+  border: var(--border-width-2-5) solid var(--document-preview-border-light);
+  border-radius: var(--border-radius-s);
+  max-width: 800px;
+  max-height: 600px;
+  overflow: auto;
+}
+
+.DocumentPreview-linkContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-l);
+  padding: var(--spacing-2xl);
+  text-align: center;
+  background-color: var(--white);
+  border: var(--border-width-05) dashed var(--document-preview-border);
+  border-radius: var(--border-radius-m);
+  color: var(--document-preview-text-subtle);
+}
+
+.DocumentPreview-fallbackContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-l);
+  padding: var(--spacing-2xl);
+  text-align: center;
+  background-color: var(--white);
+  border: var(--border-width-05) dashed var(--document-preview-border);
+  border-radius: var(--border-radius-m);
+  color: var(--document-preview-text-subtle);
+}
+
+/* Navigation Controls */
+.DocumentPreview-leftNavigation,
+.DocumentPreview-rightNavigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: var(--spacing-l);
+  z-index: var(--z-index-overlay);
+}
+
+.DocumentPreview-leftNavigation {
+  padding-right: var(--spacing-s);
+}
+
+.DocumentPreview-rightNavigation {
+  padding-left: var(--spacing-s);
+}
+
+.DocumentPreview-carouselNavButton {
+  background-color: var(--document-preview-nav-button-bg);
+  backdrop-filter: blur(8px);
+  border: var(--border-width-2-5) solid var(--document-preview-border-light);
+  box-shadow: var(--shadow-medium);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--duration--fast-02) var(--standard-productive-curve);
+  cursor: pointer;
+  color: var(--document-preview-text);
+}
+
+.DocumentPreview-carouselNavButton:hover:not(:disabled) {
+  background-color: var(--white);
+  box-shadow: var(--shadow-large);
+  transform: scale(1.05);
+}
+
+.DocumentPreview-carouselNavButton:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.DocumentPreview-carouselNavButton:disabled {
+  opacity: var(--opacity-6);
+  cursor: not-allowed;
+  transform: none;
+}
+
+.DocumentPreview-carouselNavButton:disabled:hover {
+  background-color: var(--document-preview-nav-button-bg);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Zoom Controls */
+.DocumentPreview-zoomControls {
+  position: absolute;
+  bottom: var(--spacing-l);
+  right: var(--spacing-l);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-s);
+  background-color: var(--document-preview-zoom-bg);
+  border: var(--border-width-2-5) solid var(--document-preview-border-light);
+  border-radius: var(--border-radius-xl);
+  padding: var(--spacing-s) var(--spacing-m);
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-medium);
+  z-index: var(--z-index-overlay);
+}
+
+.DocumentPreview-zoomControls button {
+  background: transparent;
+  border: none;
+  padding: var(--spacing-s);
+  border-radius: var(--border-radius-s);
+  cursor: pointer;
+  transition: background-color var(--duration--fast-02) ease;
+  color: var(--document-preview-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.DocumentPreview-zoomControls button:hover:not(:disabled) {
+  background-color: var(--document-preview-border-light);
+}
+
+.DocumentPreview-zoomControls button:disabled {
+  opacity: var(--opacity-10);
+  cursor: not-allowed;
+}
+
+.DocumentPreview-zoomLevel {
+  min-width: 50px;
+  text-align: center;
+  font-weight: var(--font-weight-medium);
+  color: var(--document-preview-text);
+  font-size: var(--font-size-s);
+  user-select: none;
+}
+
+/* Focus and Accessibility */
+.DocumentPreview-carouselNavButton:focus,
+.DocumentPreview-zoomControls button:focus {
+  outline: var(--border-width-05) solid var(--document-preview-success);
+  outline-offset: var(--spacing-10);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .DocumentPreview {
+    border-width: var(--border-width-05);
+    border-color: var(--inverse);
+  }
+
+  .DocumentPreview-carouselNavButton,
+  .DocumentPreview-zoomControls {
+    border-width: var(--border-width-05);
+    border-color: var(--inverse);
+  }
+
+  .DocumentPreview-document {
+    border-width: var(--border-width-05);
+    border-color: var(--inverse);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .DocumentPreview-document,
+  .DocumentPreview-carouselNavButton {
+    transition: none;
+  }
+
+  .DocumentPreview-loading::before {
+    animation: none;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .DocumentPreview {
+    --document-preview-bg: var(--inverse);
+    --document-preview-border: var(--inverse-light);
+    --document-preview-header-bg: var(--inverse);
+    --document-preview-content-bg: var(--inverse-darker);
+    --document-preview-nav-button-bg: rgba(31, 41, 55, 0.95);
+    --document-preview-zoom-bg: rgba(31, 41, 55, 0.98);
+    --document-preview-text: var(--white);
+    --document-preview-text-subtle: var(--inverse-lightest);
+    --document-preview-border-light: var(--inverse-light);
+  }
+
+  .DocumentPreview-document,
+  .DocumentPreview-textContent,
+  .DocumentPreview-linkContent,
+  .DocumentPreview-fallbackContent {
+    background-color: var(--inverse);
+    border-color: var(--inverse-light);
+    color: var(--white);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 100%) {
+  .DocumentPreview-headerContent {
+    padding: var(--spacing-l);
+  }
+
+  .DocumentPreview-titleContainer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--spacing-m);
+  }
+
+  .DocumentPreview-title {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+  }
+
+  .DocumentPreview-carouselWrapper {
+    flex-direction: column;
+  }
+
+  .DocumentPreview-leftNavigation,
+  .DocumentPreview-rightNavigation {
+    flex-direction: row;
+    justify-content: center;
+    padding: var(--spacing-m);
+  }
+
+  .DocumentPreview-leftNavigation {
+    order: -1;
+    padding-bottom: var(--spacing-s);
+  }
+
+  .DocumentPreview-rightNavigation {
+    order: 1;
+    padding-top: var(--spacing-s);
+  }
+
+  .DocumentPreview-carouselNavButton {
+    width: auto;
+    height: auto;
+    border-radius: var(--border-radius-m);
+    padding: var(--spacing-s) var(--spacing-l);
+    min-width: 120px;
+  }
+
+  .DocumentPreview-viewer {
+    padding: var(--spacing-l);
+  }
+
+  .DocumentPreview-zoomControls {
+    position: static;
+    margin: var(--spacing-l);
+    justify-content: center;
+    width: fit-content;
+    align-self: center;
+  }
+
+  .DocumentPreview-iframe {
+    height: 500px;
+  }
+
+  .DocumentPreview-textContent {
+    max-height: 400px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 100%) {
+  .DocumentPreview {
+    min-height: 400px;
+  }
+
+  .DocumentPreview-headerContent {
+    padding: var(--spacing-m);
+  }
+
+  .DocumentPreview-viewer {
+    padding: var(--spacing-m);
+  }
+
+  .DocumentPreview-carouselNavButton {
+    min-width: 100px;
+    padding: var(--spacing-s);
+  }
+
+  .DocumentPreview-iframe {
+    height: 350px;
+  }
+
+  .DocumentPreview-textContent {
+    padding: var(--spacing-l);
+    max-height: 300px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .DocumentPreview {
+    box-shadow: none;
+    border: none;
+    background: var(--white);
+  }
+
+  .DocumentPreview-zoomControls,
+  .DocumentPreview-leftNavigation,
+  .DocumentPreview-rightNavigation {
+    display: none !important;
+  }
+
+  .DocumentPreview-document {
+    max-width: 100% !important;
+    max-height: none !important;
+    transform: none !important;
+    box-shadow: none;
+  }
+}
+
+/* Animation for smooth transitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.DocumentPreview-document {
+  animation: fadeIn var(--duration--moderate-01) var(--entrance-productive-curve);
+}
+
+/* Utility classes for common states */
+.DocumentPreview--hidden {
+  display: none;
+}
+
+.DocumentPreview--disabled {
+  pointer-events: none;
+  opacity: var(--opacity-16);
+}
+
+/* Custom scrollbar for webkit browsers */
+.DocumentPreview-viewer::-webkit-scrollbar,
+.DocumentPreview-textContent::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.DocumentPreview-viewer::-webkit-scrollbar-track,
+.DocumentPreview-textContent::-webkit-scrollbar-track {
+  background: var(--document-preview-border-light);
+  border-radius: var(--border-radius-s);
+}
+
+.DocumentPreview-viewer::-webkit-scrollbar-thumb,
+.DocumentPreview-textContent::-webkit-scrollbar-thumb {
+  background: var(--document-preview-text-subtle);
+  border-radius: var(--border-radius-s);
+}
+
+.DocumentPreview-viewer::-webkit-scrollbar-thumb:hover,
+.DocumentPreview-textContent::-webkit-scrollbar-thumb:hover {
+  background: var(--document-preview-text);
+}
+
+/* Sidesheet styling for DocumentPreview */
+.DocumentPreview-sidesheet :global(.Backdrop--open) {
+  visibility: hidden !important;
+}
+
+.DocumentPreview-sidesheet :global(.Modal-body) {
+  height: 100%;
+}
+
+.DocumentPreview-sidesheet :global(h4) {
+  width: 100%;
+}

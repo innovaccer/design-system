@@ -1,0 +1,491 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DocumentPreview component 
+  dimension: "large", open: [true], onClose: ["[Function]"]
+ 1`] = `
+<body
+  style="overflow: hidden;"
+>
+  <div
+    class="Overlay-wrapper"
+  >
+    <div
+      class="Row Overlay-container fade-in Overlay-container--open"
+      data-layer="true"
+      data-open="true"
+      data-test="DesignSystem-SidesheetContainer"
+      style="z-index: 1001;"
+    >
+      <div
+        class="Col Col--6 Sidesheet Sidesheet--open Sidesheet-animation--open DocumentPreview-sidesheet Col--l-12"
+        data-test="DocumentPreview"
+      >
+        <div
+          class="Sidesheet-header Sidesheet-header--withSeperator"
+        >
+          <div
+            class="Col"
+            data-test="DesignSystem-Sidesheet--Header"
+          >
+            <div
+              class="OverlayHeader"
+              data-test="DesignSystem-OverlayHeader"
+            >
+              <div
+                class="OverlayHeader-headerWrapper"
+              >
+                <h4
+                  class="Heading Heading--m Heading--default Sidesheet-header--shiftLeft"
+                  data-test="DesignSystem-OverlayHeader--heading"
+                >
+                  <div
+                    class="ABC"
+                    style="display: flex; justify-content: space-between;"
+                  >
+                    <div
+                      class="d-flex"
+                    >
+                      
+                      <div
+                        class="PopperWrapper-trigger"
+                      >
+                        <h4
+                          class="Heading Heading--m Heading--default DocumentPreview-title"
+                          data-test="DesignSystem-Heading"
+                        >
+                          Test
+                        </h4>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex"
+                      style="gap: 8px;"
+                    >
+                      
+                      <div
+                        class="PopperWrapper-trigger"
+                      >
+                        <div>
+                          <button
+                            class="Button Button--regular Button--regularSquare Button--basic"
+                            data-test="DocumentPreview--Print-Sidesheet"
+                            disabled=""
+                            tabindex="0"
+                          >
+                            <div
+                              class="Button-icon"
+                              data-test="DesignSystem-Button--Icon-Wrapper"
+                            >
+                              <i
+                                class="material-symbols material-symbols-rounded Icon"
+                                data-test="DesignSystem-Button--Icon"
+                                role="button"
+                                style="font-size: 16px; width: 16px;"
+                              >
+                                print
+                              </i>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                      
+                      <div
+                        class="PopperWrapper-trigger"
+                      >
+                        <div>
+                          <button
+                            class="Button Button--regular Button--regularSquare Button--basic"
+                            data-test="DocumentPreview--Download-Sidesheet"
+                            disabled=""
+                            tabindex="0"
+                          >
+                            <div
+                              class="Button-icon"
+                              data-test="DesignSystem-Button--Icon-Wrapper"
+                            >
+                              <i
+                                class="material-symbols material-symbols-rounded Icon"
+                                data-test="DesignSystem-Button--Icon"
+                                role="button"
+                                style="font-size: 16px; width: 16px;"
+                              >
+                                get_app
+                              </i>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                      <button
+                        class="Button Button--regular Button--regularSquare Button--basic"
+                        data-test="DocumentPreview--Fullscreen"
+                        tabindex="0"
+                      >
+                        <div
+                          class="Button-icon"
+                          data-test="DesignSystem-Button--Icon-Wrapper"
+                        >
+                          <i
+                            class="material-symbols material-symbols-rounded Icon"
+                            data-test="DesignSystem-Button--Icon"
+                            role="button"
+                            style="font-size: 16px; width: 16px;"
+                          >
+                            fullscreen
+                          </i>
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="d-flex"
+                  >
+                    <span
+                      class="Text Text--subtle Text--regular"
+                      data-test="DesignSystem-Text"
+                    >
+                      PDF Document • Document 1 of 1 • 2025-09-04
+                    </span>
+                  </div>
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div
+            class="Col flex-grow-0"
+            data-test="DesignSystem-Column"
+          >
+            
+            <div
+              class="PopperWrapper-trigger"
+            >
+              <button
+                class="Button Button--regular Button--regularSquare Button--transparent"
+                data-test="DesignSystem-Sidesheet--CloseButton"
+                tabindex="0"
+              >
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
+                >
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    role="button"
+                    style="font-size: 20px; width: 20px;"
+                  >
+                    close
+                  </i>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="OverlayBody Sidesheet-body Sidesheet-body--firstPage"
+          data-test="DesignSystem-Sidesheet--OverlayBody"
+        >
+          <div
+            class="DocumentPreview"
+            data-test="DocumentPreview--Content"
+            id="filePreviewParent"
+            style="position: relative; text-align: center; width: 100%; height: 100%; min-height: 85vh; display: inline-table; background-color: rgb(248, 249, 250);"
+          >
+            <div
+              style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; overflow: auto;"
+            >
+              <div
+                style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; text-align: center; min-height: 200px;"
+              >
+                <span
+                  class="Text Text--default Text--regular"
+                  data-test="DesignSystem-Text"
+                  style="margin-bottom: 16px;"
+                >
+                  Please download the file to view its contents.
+                </span>
+                <button
+                  class="Button Button--regular Button--basic Button--iconAlign-left"
+                  data-test="FilePreview--DownloadFallback"
+                  tabindex="0"
+                >
+                  <div
+                    class="Button-icon Button-icon--left Button-regularIcon--left"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
+                  >
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      role="button"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      get_app
+                    </i>
+                  </div>
+                  <span
+                    class="Button-text"
+                  >
+                    Download
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div />
+  <div
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
+    data-opened="true"
+    data-test="DesignSystem-Backdrop"
+    style="z-index: 1000;"
+  />
+</body>
+`;
+
+exports[`DocumentPreview component 
+  dimension: "regular", open: [true], onClose: ["[Function]"]
+ 1`] = `
+<body
+  style="overflow: hidden;"
+>
+  <div />
+  <div
+    class="Overlay-wrapper"
+  >
+    <div
+      class="Row Overlay-container fade-in Overlay-container--open"
+      data-layer="true"
+      data-open="true"
+      data-test="DesignSystem-SidesheetContainer"
+      style="z-index: 1001;"
+    >
+      <div
+        class="Col Col--6 Sidesheet Sidesheet--open Sidesheet-animation--open DocumentPreview-sidesheet Col--l-8"
+        data-test="DocumentPreview"
+      >
+        <div
+          class="Sidesheet-header Sidesheet-header--withSeperator"
+        >
+          <div
+            class="Col"
+            data-test="DesignSystem-Sidesheet--Header"
+          >
+            <div
+              class="OverlayHeader"
+              data-test="DesignSystem-OverlayHeader"
+            >
+              <div
+                class="OverlayHeader-headerWrapper"
+              >
+                <h4
+                  class="Heading Heading--m Heading--default Sidesheet-header--shiftLeft"
+                  data-test="DesignSystem-OverlayHeader--heading"
+                >
+                  <div
+                    class="ABC"
+                    style="display: flex; justify-content: space-between;"
+                  >
+                    <div
+                      class="d-flex"
+                    >
+                      
+                      <div
+                        class="PopperWrapper-trigger"
+                      >
+                        <h4
+                          class="Heading Heading--m Heading--default DocumentPreview-title"
+                          data-test="DesignSystem-Heading"
+                        >
+                          Test
+                        </h4>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex"
+                      style="gap: 8px;"
+                    >
+                      
+                      <div
+                        class="PopperWrapper-trigger"
+                      >
+                        <div>
+                          <button
+                            class="Button Button--regular Button--regularSquare Button--basic"
+                            data-test="DocumentPreview--Print-Sidesheet"
+                            disabled=""
+                            tabindex="0"
+                          >
+                            <div
+                              class="Button-icon"
+                              data-test="DesignSystem-Button--Icon-Wrapper"
+                            >
+                              <i
+                                class="material-symbols material-symbols-rounded Icon"
+                                data-test="DesignSystem-Button--Icon"
+                                role="button"
+                                style="font-size: 16px; width: 16px;"
+                              >
+                                print
+                              </i>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                      
+                      <div
+                        class="PopperWrapper-trigger"
+                      >
+                        <div>
+                          <button
+                            class="Button Button--regular Button--regularSquare Button--basic"
+                            data-test="DocumentPreview--Download-Sidesheet"
+                            disabled=""
+                            tabindex="0"
+                          >
+                            <div
+                              class="Button-icon"
+                              data-test="DesignSystem-Button--Icon-Wrapper"
+                            >
+                              <i
+                                class="material-symbols material-symbols-rounded Icon"
+                                data-test="DesignSystem-Button--Icon"
+                                role="button"
+                                style="font-size: 16px; width: 16px;"
+                              >
+                                get_app
+                              </i>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                      <button
+                        class="Button Button--regular Button--regularSquare Button--basic"
+                        data-test="DocumentPreview--Fullscreen"
+                        tabindex="0"
+                      >
+                        <div
+                          class="Button-icon"
+                          data-test="DesignSystem-Button--Icon-Wrapper"
+                        >
+                          <i
+                            class="material-symbols material-symbols-rounded Icon"
+                            data-test="DesignSystem-Button--Icon"
+                            role="button"
+                            style="font-size: 16px; width: 16px;"
+                          >
+                            fullscreen
+                          </i>
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="d-flex"
+                  >
+                    <span
+                      class="Text Text--subtle Text--regular"
+                      data-test="DesignSystem-Text"
+                    >
+                      PDF Document • Document 1 of 1 • 2025-09-04
+                    </span>
+                  </div>
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div
+            class="Col flex-grow-0"
+            data-test="DesignSystem-Column"
+          >
+            
+            <div
+              class="PopperWrapper-trigger"
+            >
+              <button
+                class="Button Button--regular Button--regularSquare Button--transparent"
+                data-test="DesignSystem-Sidesheet--CloseButton"
+                tabindex="0"
+              >
+                <div
+                  class="Button-icon"
+                  data-test="DesignSystem-Button--Icon-Wrapper"
+                >
+                  <i
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Button--Icon"
+                    role="button"
+                    style="font-size: 20px; width: 20px;"
+                  >
+                    close
+                  </i>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="OverlayBody Sidesheet-body Sidesheet-body--firstPage"
+          data-test="DesignSystem-Sidesheet--OverlayBody"
+        >
+          <div
+            class="DocumentPreview"
+            data-test="DocumentPreview--Content"
+            id="filePreviewParent"
+            style="position: relative; text-align: center; width: 100%; height: 100%; min-height: 85vh; display: inline-table; background-color: rgb(248, 249, 250);"
+          >
+            <div
+              style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; overflow: auto;"
+            >
+              <div
+                style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; text-align: center; min-height: 200px;"
+              >
+                <span
+                  class="Text Text--default Text--regular"
+                  data-test="DesignSystem-Text"
+                  style="margin-bottom: 16px;"
+                >
+                  Please download the file to view its contents.
+                </span>
+                <button
+                  class="Button Button--regular Button--basic Button--iconAlign-left"
+                  data-test="FilePreview--DownloadFallback"
+                  tabindex="0"
+                >
+                  <div
+                    class="Button-icon Button-icon--left Button-regularIcon--left"
+                    data-test="DesignSystem-Button--Icon-Wrapper"
+                  >
+                    <i
+                      class="material-symbols material-symbols-rounded Icon"
+                      data-test="DesignSystem-Button--Icon"
+                      role="button"
+                      style="font-size: 16px; width: 16px;"
+                    >
+                      get_app
+                    </i>
+                  </div>
+                  <span
+                    class="Button-text"
+                  >
+                    Download
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="Backdrop Backdrop--open Backdrop-animation--open"
+    data-layer="true"
+    data-opened="true"
+    data-test="DesignSystem-Backdrop"
+    style="z-index: 1000;"
+  />
+</body>
+`;

@@ -18,6 +18,7 @@ export { ColumnProps } from './components/atoms/column';
 export { DatePickerProps } from './components/organisms/datePicker';
 export { TimePickerProps } from './components/organisms/timePicker';
 export { DropdownProps } from './components/atoms/dropdown';
+export { DocumentPreviewProps } from './components/organisms/documentPreview';
 export { HeadingProps } from './components/atoms/heading';
 export { IconProps } from './components/atoms/icon';
 export { InputProps } from './components/atoms/input';
