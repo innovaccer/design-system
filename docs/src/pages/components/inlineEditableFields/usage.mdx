@@ -19,18 +19,18 @@ Inline editable input comes with two small action buttons to confirm or discard 
 Chips can be used as tags in inputs. **Enter/return** key is used to input the tags.
 <Preview name="components-inline-editable-fields-editablechipinput-all--all" />
 
-#### Dropdown
-Dropdown type does not require explicit save/discard actions, as the result is saved immediately.
+#### Select
+Select type does not require explicit save/discard actions, as the result is saved immediately.
 <Preview name="components-inline-editable-fields-editabledropdown-all--all" />
 
 ### Sizes
-Inline editable input comes in **2 sizes** - regular and small. On the other hand, inline editable dropdown comes just in the regular size.
+Inline editable field comes in **2 sizes** - regular and small.
 <Preview name="components-inline-editable-fields-editableinput-variants-size--size" />
 
 ### States
 <br/>
 
-#### Input
+#### Basic Input
 
 ![States of Inline editable input](./images/inlineEditable-inputStates.png)
 <Caption> States of inline editable input</Caption>
@@ -44,17 +44,18 @@ Inline editable input comes in **2 sizes** - regular and small. On the other han
 
 <br/>
 
-#### Dropdown
+#### Select
 
 ![States of Inline editable dropdown](./images/inlineEditable-dropdownStates.png)
-<Caption> States of inline editable dropdown</Caption>
+<Caption> States of inline editable select</Caption>
 
 <br/>
 <br/>
 
 ### Structure
-![Structure of Inline editable dropdown](./images/inlineEditable-structure.png)
-<Caption> A regular sized inline editable input</Caption>
+
+#### Basic Input and Select
+![Structure of Inline editable dropdown](./images/basic-inputs-structures.png)
 
 <br/>
 <br/>
@@ -69,15 +70,64 @@ Inline editable input comes in **2 sizes** - regular and small. On the other han
     <tr style={{verticalAlign: "top"}}>
       <td>Height</td>
       <td>
-            <ul>
-              <li>32 px <em>(Regular input, dropdown)</em></li>
-              <li>24 px <em>(Small input)</em></li>
-            </ul>
+        <ul>
+          <li>32 px <em>(Regular)</em></li>
+          <li>24 px <em>(Small)</em></li>
+        </ul>
       </td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
       <td>Padding (right, left)</td>
-      <td>12 px, 12 px</td>
+      <td>
+        <ul>
+          <li>12 px <em>(Regular)</em></li>
+          <li>8 px <em>(Small)</em></li>
+        </ul>
+      </td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Spacing between input and actions</td>
+      <td>4 px</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Spacing between actions</td>
+      <td>4 px</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+
+#### Input With Chips
+![Structure of Inline editable dropdown](./images/input-with-chips-structure.png)
+
+<br/>
+<br/>
+
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"50%",  textAlign: "left"}}>Property</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Value(s)</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Height</td>
+      <td>
+        <ul>
+          <li>32 px <em>(Regular)</em></li>
+          <li>28 px <em>(Small)</em></li>
+        </ul>
+      </td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Padding (right, left)</td>
+      <td>
+        <ul>
+          <li>12 px <em>(Regular)</em></li>
+          <li>8 px <em>(Small)</em></li>
+        </ul>
+      </td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
       <td>Spacing between input and actions</td>
@@ -94,7 +144,7 @@ Inline editable input comes in **2 sizes** - regular and small. On the other han
 
 ### Configurations
 
-#### Input
+#### Inline Editable Field
 <br/>
 <br/>
 
@@ -125,7 +175,7 @@ Inline editable input comes in **2 sizes** - regular and small. On the other han
 </table>
 <br/>
 
-#### Dropdown
+#### Label
 <br/>
 <br/>
 
@@ -138,25 +188,14 @@ Inline editable input comes in **2 sizes** - regular and small. On the other han
       <th style={{width:"33%", textAlign: "left"}}>Default value</th>
     </tr>
     <tr style={{verticalAlign: "top"}}>
-      <td>Width<br/></td>
-      <td>&#60;width&#62;</td>
-      <td>256 px</td>
-    </tr>
-  </tbody>
-</table>
-<br/>
-
-#### Label
-<br/>
-<br/>
-
-
-<table style={{width: "100%"}}>
-  <tbody>
-    <tr>
-      <th style={{width:"33%", textAlign: "left"}}>Property</th>
-      <th style={{width:"33%", textAlign: "left"}}>Value(s)</th>
-      <th style={{width:"33%", textAlign: "left"}}>Default value</th>
+      <td>Size</td>
+      <td>
+          <ul>
+              <li>Regular</li>
+              <li>Small</li>
+          </ul>
+      </td>
+      <td>Regular</td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
       <td>Required</td>

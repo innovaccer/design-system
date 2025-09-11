@@ -199,3 +199,152 @@ describe('EditableInput Component with overwrite class', () => {
     expect(getByTestId('DesignSystem-EditableInput')).toHaveClass(className);
   });
 });
+
+describe('EditableInput Component CSS Styling Tests - Size-specific Padding and Styling Changes', () => {
+  describe('CSS class application for size-specific styling', () => {
+    it('applies correct CSS classes for regular size variant', () => {
+      const { getByTestId } = render(<EditableInput placeholder={StringValue} onChange={onChange} size="regular" />);
+
+      const defaultElement = getByTestId(defaultCompTestId);
+
+      expect(defaultElement).toHaveClass('EditableInput-default--regular');
+      expect(defaultElement).toHaveClass('EditableInput-default');
+      expect(defaultElement.textContent).toBe(StringValue);
+    });
+
+    it('applies correct CSS classes for tiny size variant', () => {
+      const { getByTestId } = render(<EditableInput placeholder={StringValue} onChange={onChange} size="tiny" />);
+
+      const defaultElement = getByTestId(defaultCompTestId);
+
+      expect(defaultElement).toHaveClass('EditableInput-default--tiny');
+      expect(defaultElement).toHaveClass('EditableInput-default');
+      expect(defaultElement.textContent).toBe(StringValue);
+    });
+
+    it('ensures both size variants have the base EditableInput-default class', () => {
+      const { getByTestId, rerender } = render(
+        <EditableInput placeholder={StringValue} onChange={onChange} size="regular" />
+      );
+
+      let defaultElement = getByTestId(defaultCompTestId);
+
+      expect(defaultElement).toHaveClass('EditableInput-default');
+      expect(defaultElement).toHaveClass('EditableInput-default--regular');
+
+      rerender(<EditableInput placeholder={StringValue} onChange={onChange} size="tiny" />);
+      defaultElement = getByTestId(defaultCompTestId);
+
+      expect(defaultElement).toHaveClass('EditableInput-default');
+      expect(defaultElement).toHaveClass('EditableInput-default--tiny');
+    });
+  });
+
+  describe('Input component styling consistency across component states', () => {
+    it('maintains consistent size prop when transitioning from default to input state for regular size', () => {
+      const { getByTestId } = render(<EditableInput placeholder={StringValue} onChange={onChange} size="regular" />);
+
+      const defaultElement = getByTestId(defaultCompTestId);
+      expect(defaultElement).toHaveClass('EditableInput-default--regular');
+
+      const editableWrapper = getByTestId(editableWrapperTestId);
+      fireEvent.mouseEnter(editableWrapper);
+
+      const inputWrapper = getByTestId(inputTestId);
+      expect(inputWrapper).toBeInTheDocument();
+      expect(inputWrapper).not.toHaveClass('EditableInput-Input--tiny');
+    });
+
+    it('maintains consistent size prop when transitioning from default to input state for tiny size', () => {
+      const { getByTestId } = render(<EditableInput placeholder={StringValue} onChange={onChange} size="tiny" />);
+
+      const defaultElement = getByTestId(defaultCompTestId);
+      expect(defaultElement).toHaveClass('EditableInput-default--tiny');
+
+      const editableWrapper = getByTestId(editableWrapperTestId);
+      fireEvent.mouseEnter(editableWrapper);
+
+      const inputWrapper = getByTestId(inputTestId);
+      expect(inputWrapper).toBeInTheDocument();
+      expect(inputWrapper).toHaveClass('EditableInput-Input--tiny');
+    });
+
+    it('applies correct action button positioning classes for different sizes', () => {
+      const { getByTestId, rerender } = render(
+        <EditableInput placeholder={StringValue} onChange={onChange} size="regular" />
+      );
+
+      const editableWrapper = getByTestId(editableWrapperTestId);
+      fireEvent.click(editableWrapper);
+
+      const actionsElement = getByTestId('DesignSystem-EditableInput--Actions');
+      expect(actionsElement).toHaveClass('EditableInput-actions');
+      expect(actionsElement).toHaveClass('EditableInput-actions--regular');
+
+      rerender(<EditableInput placeholder={StringValue} onChange={onChange} size="tiny" />);
+
+      const editableWrapperTiny = getByTestId(editableWrapperTestId);
+      fireEvent.click(editableWrapperTiny);
+
+      const actionsElementTiny = getByTestId('DesignSystem-EditableInput--Actions');
+      expect(actionsElementTiny).toHaveClass('EditableInput-actions');
+      expect(actionsElementTiny).toHaveClass('EditableInput-actions--tiny');
+    });
+  });
+
+  describe('Size-specific styling verification for CSS changes', () => {
+    it('verifies that tiny size variant has all required CSS classes for the new styling', () => {
+      const { getByTestId } = render(
+        <EditableInput placeholder="Tiny variant test" onChange={onChange} size="tiny" value="Test Value" />
+      );
+
+      const defaultElement = getByTestId(defaultCompTestId);
+
+      expect(defaultElement).toHaveClass('EditableInput-default');
+      expect(defaultElement).toHaveClass('EditableInput-default--tiny');
+      expect(defaultElement.textContent).toBe('Test Value');
+
+      const editableWrapper = getByTestId(editableWrapperTestId);
+      fireEvent.mouseEnter(editableWrapper);
+
+      const inputWrapper = getByTestId(inputTestId);
+      expect(inputWrapper).toHaveClass('EditableInput-Input--tiny');
+    });
+
+    it('verifies that regular size variant maintains correct CSS classes after the changes', () => {
+      const { getByTestId } = render(
+        <EditableInput placeholder="Regular variant test" onChange={onChange} size="regular" value="Test Value" />
+      );
+
+      const defaultElement = getByTestId(defaultCompTestId);
+
+      expect(defaultElement).toHaveClass('EditableInput-default');
+      expect(defaultElement).toHaveClass('EditableInput-default--regular');
+      expect(defaultElement.textContent).toBe('Test Value');
+
+      const editableWrapper = getByTestId(editableWrapperTestId);
+      fireEvent.mouseEnter(editableWrapper);
+
+      const inputWrapper = getByTestId(inputTestId);
+      expect(inputWrapper).toBeInTheDocument();
+      expect(inputWrapper).not.toHaveClass('EditableInput-Input--tiny');
+    });
+
+    it('ensures size-specific padding changes are reflected in class structure', () => {
+      const { getByTestId, rerender } = render(
+        <EditableInput placeholder={StringValue} onChange={onChange} size="regular" />
+      );
+
+      let defaultElement = getByTestId(defaultCompTestId);
+      expect(defaultElement).toHaveClass('EditableInput-default');
+      expect(defaultElement).toHaveClass('EditableInput-default--regular');
+      expect(defaultElement).not.toHaveClass('EditableInput-default--tiny');
+
+      rerender(<EditableInput placeholder={StringValue} onChange={onChange} size="tiny" />);
+      defaultElement = getByTestId(defaultCompTestId);
+      expect(defaultElement).toHaveClass('EditableInput-default');
+      expect(defaultElement).toHaveClass('EditableInput-default--tiny');
+      expect(defaultElement).not.toHaveClass('EditableInput-default--regular');
+    });
+  });
+});
