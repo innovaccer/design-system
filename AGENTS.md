@@ -48,10 +48,10 @@ Design tokens are the source of truth for colors, spacing, radius, elevation, et
 ---
 
 ## Styling
-CSS Module has been used to define the class names.
-Create a CSS file inside **css** directory with the file extension `module.css` (e.g avatar.module.css)
-Use **ClassNames**, a utility for conditionally joining CSS classNames together.
-Follow the **BEM Convention** & use CSS Modules for naming CSS classes.
+- CSS Module has been used to define the class names.
+- Create a CSS file inside **css** directory with the file extension `module.css` (e.g avatar.module.css)
+- Use **ClassNames**, a utility for conditionally joining CSS classNames together.
+- Follow the **BEM Convention** & use CSS Modules for naming CSS classes.
 
 ___
 
