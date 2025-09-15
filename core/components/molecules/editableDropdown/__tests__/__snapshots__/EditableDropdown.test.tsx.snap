@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`EditableDropdown component 
@@ -62,4 +60,3 @@ exports[`EditableDropdown component
   </div>
 </DocumentFragment>
 `;
->>>>>>> e56ca8cd (feat(popover): add new popover component)

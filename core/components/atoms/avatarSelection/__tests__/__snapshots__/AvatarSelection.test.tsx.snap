@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AvatarSelection component snapshot 
@@ -3052,4 +3050,3 @@ exports[`AvatarSelection component snapshot
   "unmount": [Function],
 }
 `;
->>>>>>> e56ca8cd (feat(popover): add new popover component)

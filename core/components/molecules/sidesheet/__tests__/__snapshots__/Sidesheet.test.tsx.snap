@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Sidesheet component 
@@ -217,4 +215,3 @@ exports[`Sidesheet component
   />
 </body>
 `;
->>>>>>> e56ca8cd (feat(popover): add new popover component)
