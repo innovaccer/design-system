@@ -18,7 +18,8 @@ export type BadgeProps = {
    * Text to be added inside `Badge`
    */
   children: string | number;
-} & BaseProps & BaseHtmlProps<HTMLSpanElement>;
+} & BaseProps &
+  BaseHtmlProps<HTMLSpanElement>;
 
 export const Badge = (props: BadgeProps) => {
   const { appearance = 'secondary', children, subtle, className, ...rest } = props;
