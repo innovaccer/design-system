@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Select List component snapshots 
@@ -4515,4 +4513,3 @@ exports[`Select component snapshots
   />
 </body>
 `;
->>>>>>> e56ca8cd (feat(popover): add new popover component)
