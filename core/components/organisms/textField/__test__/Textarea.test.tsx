@@ -281,3 +281,182 @@ describe('TextField Component', () => {
     expect(searchError).toBeInTheDocument();
   });
 });
+
+describe('TextField Components - Size Functionality Tests', () => {
+  describe('TextField Component with Input - Size Props and Label Mapping', () => {
+    test('should render input field with appropriate size styling', () => {
+      const { container } = render(
+        <TextField label="Input Field" placeholder="Input placeholder" helpText="This is sized input field" />
+      );
+
+      const input = screen.getByPlaceholderText('Input placeholder');
+      expect(input).toBeInTheDocument();
+      expect(input.tagName.toLowerCase()).toBe('input');
+
+      const label = screen.getByText('Input Field');
+      expect(label).toBeInTheDocument();
+
+      expect(container.querySelector('[data-test="DesignSystem-Input"]')).toHaveAttribute(
+        'placeholder',
+        'Input placeholder'
+      );
+    });
+
+    test('should verify label size mapping logic for input fields', () => {
+      render(<TextField label="Label Test" placeholder="Test placeholder" />);
+
+      const label = screen.getByText('Label Test');
+      expect(label).toBeInTheDocument();
+
+      const input = screen.getByPlaceholderText('Test placeholder');
+      expect(input).toBeInTheDocument();
+      expect(input.tagName.toLowerCase()).toBe('input');
+    });
+
+    test('should default to input when no withTextarea prop is provided', () => {
+      render(<TextField label="Default Test" placeholder="Default placeholder" />);
+
+      const input = screen.getByPlaceholderText('Default placeholder');
+      expect(input).toBeInTheDocument();
+      expect(input.tagName.toLowerCase()).toBe('input');
+    });
+  });
+
+  describe('TextField Component with Textarea - Size Props and Direct Label Mapping', () => {
+    test('should render textarea field with appropriate size styling', () => {
+      render(
+        <TextField
+          withTextarea={true}
+          label="Textarea Field"
+          placeholder="Textarea placeholder"
+          helpText="This is sized textarea field"
+        />
+      );
+
+      const textarea = screen.getByPlaceholderText('Textarea placeholder');
+      expect(textarea).toBeInTheDocument();
+      expect(textarea.tagName.toLowerCase()).toBe('textarea');
+
+      const label = screen.getByText('Textarea Field');
+      expect(label).toBeInTheDocument();
+    });
+
+    test('should verify direct size pass-through for textarea fields', () => {
+      render(<TextField withTextarea={true} label="Size Pass Through Test" placeholder="Test placeholder" />);
+
+      const label = screen.getByText('Size Pass Through Test');
+      expect(label).toBeInTheDocument();
+
+      const textarea = screen.getByPlaceholderText('Test placeholder');
+      expect(textarea).toBeInTheDocument();
+      expect(textarea.tagName.toLowerCase()).toBe('textarea');
+    });
+
+    test('should default to regular size when no size prop is provided for textarea', () => {
+      render(
+        <TextField withTextarea={true} label="Default Textarea Test" placeholder="Default textarea placeholder" />
+      );
+
+      const textarea = screen.getByPlaceholderText('Default textarea placeholder');
+      expect(textarea).toBeInTheDocument();
+      expect(textarea.tagName.toLowerCase()).toBe('textarea');
+    });
+  });
+
+  describe('Size Props Integration - Interaction with Other Component States', () => {
+    test('should maintain size behavior when TextField input has error state', () => {
+      render(
+        <TextField label="Error with Size" placeholder="Error size test" error={true} helpText="Error help text" />
+      );
+
+      const input = screen.getByPlaceholderText('Error size test');
+      expect(input).toBeInTheDocument();
+      expect(input.tagName.toLowerCase()).toBe('input');
+
+      const label = screen.getByText('Error with Size');
+      expect(label).toBeInTheDocument();
+    });
+
+    test('should maintain size behavior when TextField input is disabled', () => {
+      render(
+        <TextField
+          label="Disabled with Size"
+          placeholder="Disabled size test"
+          disabled={true}
+          helpText="Disabled help text"
+        />
+      );
+
+      const input = screen.getByPlaceholderText('Disabled size test');
+      expect(input).toBeInTheDocument();
+      expect(input).toBeDisabled();
+      expect(input.tagName.toLowerCase()).toBe('input');
+    });
+
+    test('should maintain size behavior when TextField input has character limit', () => {
+      render(
+        <TextField
+          label="Size with Limit"
+          placeholder="Size limit test"
+          max={50}
+          helpText="Character limit help text"
+        />
+      );
+
+      const input = screen.getByPlaceholderText('Size limit test');
+      expect(input).toBeInTheDocument();
+      expect(input.tagName.toLowerCase()).toBe('input');
+
+      expect(screen.getByText('50')).toBeInTheDocument();
+    });
+
+    test('should maintain size behavior when TextField textarea has character limit', () => {
+      render(
+        <TextField
+          withTextarea={true}
+          label="Textarea Size with Limit"
+          placeholder="Textarea limit test"
+          max={100}
+          helpText="Textarea character limit help text"
+        />
+      );
+
+      const textarea = screen.getByPlaceholderText('Textarea limit test');
+      expect(textarea).toBeInTheDocument();
+      expect(textarea.tagName.toLowerCase()).toBe('textarea');
+
+      expect(screen.getByText('100')).toBeInTheDocument();
+    });
+  });
+
+  describe('TextField Component - Routing Logic Verification', () => {
+    test('should route to TextFieldWithTextarea when withTextarea prop is true', () => {
+      render(
+        <TextField
+          withTextarea={true}
+          label="Textarea Routing Test"
+          placeholder="Textarea routing placeholder"
+          helpText="Textarea routing help text"
+        />
+      );
+
+      const textarea = screen.getByPlaceholderText('Textarea routing placeholder');
+      expect(textarea).toBeInTheDocument();
+      expect(textarea.tagName.toLowerCase()).toBe('textarea');
+    });
+
+    test('should route to TextFieldWithInput when withTextarea prop is false/undefined', () => {
+      render(
+        <TextField
+          label="Input Routing Test"
+          placeholder="Input routing placeholder"
+          helpText="Input routing help text"
+        />
+      );
+
+      const input = screen.getByPlaceholderText('Input routing placeholder');
+      expect(input).toBeInTheDocument();
+      expect(input.tagName.toLowerCase()).toBe('input');
+    });
+  });
+});

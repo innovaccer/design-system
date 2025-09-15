@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { BaseProps, extractBaseProps, BaseHtmlProps } from '@/utils/types';
 import { AccentAppearance } from '@/common.type';
 import styles from '@css/components/badge.module.css';
 import pageHeaderStyles from '@css/components/pageHeader.module.css';
@@ -18,10 +18,11 @@ export type BadgeProps = {
    * Text to be added inside `Badge`
    */
   children: string | number;
-} & BaseProps;
+} & BaseProps &
+  BaseHtmlProps<HTMLSpanElement>;
 
 export const Badge = (props: BadgeProps) => {
-  const { appearance = 'secondary', children, subtle, className } = props;
+  const { appearance = 'secondary', children, subtle, className, ...rest } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -36,7 +37,7 @@ export const Badge = (props: BadgeProps) => {
   );
 
   return (
-    <span data-test="DesignSystem-Badge" {...baseProps} className={classes}>
+    <span data-test="DesignSystem-Badge" {...baseProps} className={classes} {...rest}>
       {children}
     </span>
   );
