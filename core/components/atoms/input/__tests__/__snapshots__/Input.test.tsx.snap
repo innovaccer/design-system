@@ -481,7 +481,6 @@ exports[`Input Component - Disabled State without Change Handler Snapshot Tests
         type="text"
         value="value"
       />
-      
     </div>
   </div>
 </body>
@@ -518,7 +517,6 @@ exports[`Input Component - Disabled State without Change Handler Snapshot Tests
         type="text"
         value="value"
       />
-      
     </div>
   </div>
 </body>
@@ -599,7 +597,6 @@ exports[`Input Component - Icon and Placeholder Variants Snapshot Tests
         name="name"
         placeholder="Placeholder"
         type="text"
-        value=""
       />
     </div>
   </div>
@@ -635,7 +632,6 @@ exports[`Input Component - Icon and Placeholder Variants Snapshot Tests
         name="name"
         placeholder="Placeholder"
         type="text"
-        value=""
       />
     </div>
   </div>
@@ -717,7 +713,6 @@ exports[`Input Component - Input Type Variants Snapshot Tests
         data-test="DesignSystem-Input"
         name="name"
         type="number"
-        value=""
       />
     </div>
   </div>
@@ -740,7 +735,6 @@ exports[`Input Component - Input Type Variants Snapshot Tests
         data-test="DesignSystem-Input"
         name="name"
         type="password"
-        value=""
       />
     </div>
   </div>
@@ -763,7 +757,6 @@ exports[`Input Component - Input Type Variants Snapshot Tests
         data-test="DesignSystem-Input"
         name="name"
         type="text"
-        value=""
       />
     </div>
   </div>
@@ -795,7 +788,6 @@ exports[`Input Component - Number Type with Inline Label Snapshot Tests
         data-test="DesignSystem-Input"
         name="name"
         type="number"
-        value=""
       />
     </div>
   </div>
@@ -827,7 +819,6 @@ exports[`Input Component - Number Type with Inline Label Snapshot Tests
         data-test="DesignSystem-Input"
         name="name"
         type="number"
-        value=""
       />
     </div>
   </div>
@@ -859,7 +850,6 @@ exports[`Input Component - Number Type with Inline Label Snapshot Tests
         data-test="DesignSystem-Input"
         name="name"
         type="number"
-        value=""
       />
     </div>
   </div>
@@ -944,7 +934,6 @@ exports[`Input Component - Size Variants Snapshot Tests
         data-test="DesignSystem-Input"
         name="name"
         type="text"
-        value=""
       />
     </div>
   </div>
@@ -967,7 +956,6 @@ exports[`Input Component - Size Variants Snapshot Tests
         data-test="DesignSystem-Input"
         name="name"
         type="text"
-        value=""
       />
     </div>
   </div>
@@ -990,7 +978,6 @@ exports[`Input Component - Size Variants Snapshot Tests
         data-test="DesignSystem-Input"
         name="name"
         type="text"
-        value=""
       />
     </div>
   </div>
