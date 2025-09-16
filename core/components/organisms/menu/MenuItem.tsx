@@ -6,6 +6,7 @@ import MenuContext from './MenuContext';
 import { handleKeyDown } from './utils';
 import SubMenuContext from './SubMenuContext';
 import styles from '@css/components/menu.module.css';
+import { MenuListContext } from './MenuList';
 
 type ItemTagType = 'li' | 'div' | 'a';
 
@@ -40,6 +41,7 @@ export const MenuItem = (props: MenuItemProps) => {
   const { children, className, onClick, disabled, onFocus, ...rest } = props;
   const contextProp = React.useContext(MenuContext);
   const subMenuContextProp = React.useContext(SubMenuContext);
+  const { size } = React.useContext(MenuListContext);
   const isSubMenuTrigger = false;
   const subListRef = null;
 
@@ -47,7 +49,13 @@ export const MenuItem = (props: MenuItemProps) => {
 
   const { setOpenPopover, focusedOption, setFocusedOption, menuTriggerRef, listRef } = contextProp;
 
-  const MenuItemClassName = classNames(styles['Menu-Item'], className);
+  const MenuItemClassName = classNames(
+    styles['Menu-Item'],
+    {
+      [styles['Menu-Item--tight']]: size === 'tight',
+    },
+    className
+  );
 
   React.useEffect(() => {
     const handlePopoverOpen = () => {
