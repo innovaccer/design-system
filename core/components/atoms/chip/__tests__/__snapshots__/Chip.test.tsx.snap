@@ -6,7 +6,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip-wrapper Chip Chip--Action"
+      class="Chip-wrapper Chip Chip--Action Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
       role="button"
       style="max-width: var(--spacing-640);"
@@ -22,7 +22,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip-wrapper Chip Chip--Action"
+      class="Chip-wrapper Chip Chip--Action Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
       role="button"
       style="max-width: var(--spacing-640);"
@@ -38,7 +38,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip-wrapper Chip Chip-Action--disabled"
+      class="Chip-wrapper Chip Chip-Action--disabled Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
       role="button"
       style="max-width: var(--spacing-640);"
@@ -54,7 +54,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip-wrapper Chip Chip--Input"
+      class="Chip-wrapper Chip Chip--Input Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
       role="button"
       style="max-width: var(--spacing-640);"
@@ -70,7 +70,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip-wrapper Chip Chip--Input"
+      class="Chip-wrapper Chip Chip--Input Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
       role="button"
       style="max-width: var(--spacing-640);"
@@ -86,7 +86,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip-wrapper Chip Chip-Input--disabled"
+      class="Chip-wrapper Chip Chip-Input--disabled Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
       role="button"
       style="max-width: var(--spacing-640);"
@@ -102,7 +102,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip-wrapper Chip Chip--Selection"
+      class="Chip-wrapper Chip Chip--Selection Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
       role="button"
       style="max-width: var(--spacing-640);"
@@ -118,7 +118,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip-wrapper Chip Chip--Selection"
+      class="Chip-wrapper Chip Chip--Selection Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
       role="button"
       style="max-width: var(--spacing-640);"
@@ -134,7 +134,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip-wrapper Chip Chip-Selection--disabled"
+      class="Chip-wrapper Chip Chip-Selection--disabled Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
       role="button"
       style="max-width: var(--spacing-640);"
@@ -150,7 +150,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip-wrapper Chip Chip--Selection"
+      class="Chip-wrapper Chip Chip--Selection Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
       role="button"
       style="max-width: var(--spacing-640);"
@@ -166,7 +166,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip-wrapper Chip Chip--Selection Chip-Selection--selected"
+      class="Chip-wrapper Chip Chip--Selection Chip-Selection--selected Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
       role="button"
       style="max-width: var(--spacing-640);"

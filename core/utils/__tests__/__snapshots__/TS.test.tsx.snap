@@ -57,7 +57,7 @@ exports[`TS renders children 1`] = `
     </span>
   </div>
   <div
-    class="Chip-wrapper Chip Chip--input"
+    class="Chip-wrapper Chip Chip--input Chip-size--regular"
     data-test="DesignSystem-Chip--GenericChip"
     role="button"
     style="max-width: var(--spacing-640);"
@@ -748,7 +748,7 @@ exports[`TS renders children 1`] = `
       data-test="DesignSystem-Select--TodaysDate-wrapper"
     >
       <div
-        class="Chip-wrapper Chip Chip--action"
+        class="Chip-wrapper Chip Chip--action Chip-size--regular"
         data-test="DesignSystem-Chip--GenericChip"
         role="button"
         style="max-width: var(--spacing-640);"

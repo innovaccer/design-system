@@ -20,7 +20,7 @@ exports[`EditableChipInput component
           data-test="DesignSystem-EditableChipInput--Default"
         >
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular my-2 mx-2"
             data-test="DesignSystem-EditableChipInput--Chip"
             role="button"
             style="max-width: 256px;"
@@ -43,7 +43,7 @@ exports[`EditableChipInput component
               tabindex="0"
             >
               <i
-                class="material-symbols material-symbols-rounded Icon Icon--subtle p-2"
+                class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
@@ -53,7 +53,7 @@ exports[`EditableChipInput component
             </div>
           </div>
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular my-2 mx-2"
             data-test="DesignSystem-EditableChipInput--Chip"
             role="button"
             style="max-width: 256px;"
@@ -76,7 +76,7 @@ exports[`EditableChipInput component
               tabindex="0"
             >
               <i
-                class="material-symbols material-symbols-rounded Icon Icon--subtle p-2"
+                class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
@@ -112,7 +112,7 @@ exports[`EditableChipInput component
           data-test="DesignSystem-EditableChipInput--Default"
         >
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular my-2 mx-2"
             data-test="DesignSystem-EditableChipInput--Chip"
             role="button"
             style="max-width: 256px;"
@@ -135,7 +135,7 @@ exports[`EditableChipInput component
               tabindex="0"
             >
               <i
-                class="material-symbols material-symbols-rounded Icon Icon--subtle p-2"
+                class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
@@ -145,7 +145,7 @@ exports[`EditableChipInput component
             </div>
           </div>
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular my-2 mx-2"
             data-test="DesignSystem-EditableChipInput--Chip"
             role="button"
             style="max-width: 256px;"
@@ -168,7 +168,7 @@ exports[`EditableChipInput component
               tabindex="0"
             >
               <i
-                class="material-symbols material-symbols-rounded Icon Icon--subtle p-2"
+                class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"

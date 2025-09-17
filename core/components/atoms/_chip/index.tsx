@@ -6,7 +6,7 @@ import { Name } from '../chip/Chip';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { IconProps, TextProps } from '@/index.type';
 import { Tooltip } from '@/index';
-import { IconType } from '@/common.type';
+import { IconType, TChipSize } from '@/common.type';
 import styles from '@css/components/chip.module.css';
 
 export interface GenericChipProps extends BaseProps {
@@ -21,15 +21,31 @@ export interface GenericChipProps extends BaseProps {
   iconType?: IconType;
   name: Name;
   maxWidth: string | number;
+  size?: TChipSize;
 }
 
 export const GenericChip = (props: GenericChipProps) => {
-  const { label, icon, clearButton, disabled, className, selected, onClose, onClick, labelPrefix, iconType, maxWidth } =
-    props;
+  const {
+    label,
+    icon,
+    clearButton,
+    disabled,
+    className,
+    selected,
+    onClose,
+    onClick,
+    labelPrefix,
+    iconType,
+    maxWidth,
+    size = 'regular',
+  } = props;
   const wrapperStyle = { maxWidth: maxWidth };
   const [isTextTruncated, setIsTextTruncated] = React.useState(false);
   const { detectTruncation } = Tooltip.useAutoTooltip();
   const contentRef = React.createRef<HTMLDivElement>();
+
+  const IconSize = size === 'small' ? 14 : 16;
+  const ClearIconSize = size === 'small' ? 12 : 16;
 
   React.useEffect(() => {
     const isTruncated = detectTruncation(contentRef);
@@ -106,7 +122,12 @@ export const GenericChip = (props: GenericChipProps) => {
               {labelPrefix}
             </Text>
           )}
-          <Text data-test="DesignSystem-GenericChip--Text" color={textColor} className={styles['Chip-text']}>
+          <Text
+            data-test="DesignSystem-GenericChip--Text"
+            size={size}
+            color={textColor}
+            className={styles['Chip-text']}
+          >
             {label}
           </Text>
         </div>
@@ -146,6 +167,7 @@ export const GenericChip = (props: GenericChipProps) => {
             data-test="DesignSystem-GenericChip--Icon"
             name={icon}
             type={iconType}
+            size={IconSize}
             appearance={iconAppearance('left')}
             className={iconClass('left')}
           />
@@ -160,7 +182,7 @@ export const GenericChip = (props: GenericChipProps) => {
             className={iconClass('right')}
             data-test="DesignSystem-GenericChip--clearButton"
           >
-            <Icon name="clear" appearance={iconAppearance('right')} className="p-2" />
+            <Icon name="clear" appearance={iconAppearance('right')} size={ClearIconSize} />
           </div>
         )}
       </div>

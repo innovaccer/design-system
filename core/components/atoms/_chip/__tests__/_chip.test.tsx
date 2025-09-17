@@ -109,3 +109,74 @@ describe('Chip component with keyboard interaction', () => {
     expect(onClick).toHaveBeenCalledTimes(1);
   });
 });
+
+describe('GenericChip component size prop functionality', () => {
+  it('renders GenericChip with default size as regular', () => {
+    const { getByTestId } = render(<GenericChip label="Test" name="test" />);
+    const wrapper = getByTestId('DesignSystem-GenericChip--Wrapper');
+    expect(wrapper).toBeInTheDocument();
+    // Default size should be regular, no size class is applied to wrapper
+  });
+
+  it('renders GenericChip with size prop set to small', () => {
+    const { getByTestId } = render(<GenericChip label="Test" name="test" size="small" />);
+    const text = getByTestId('DesignSystem-GenericChip--Text');
+    expect(text).toHaveClass('Text--small');
+  });
+
+  it('renders GenericChip with size prop set to regular', () => {
+    const { getByTestId } = render(<GenericChip label="Test" name="test" size="regular" />);
+    const text = getByTestId('DesignSystem-GenericChip--Text');
+    expect(text).toHaveClass('Text--regular');
+  });
+
+  it('passes correct size to Text component based on size prop', () => {
+    const { getByTestId } = render(<GenericChip label="Test" name="test" size="small" />);
+    const text = getByTestId('DesignSystem-GenericChip--Text');
+    expect(text).toHaveClass('Text--small');
+  });
+});
+
+describe('GenericChip component icon size functionality based on chip size', () => {
+  it('renders left icon with size 16px for regular chip size', () => {
+    const { getByTestId } = render(<GenericChip label="Test" name="test" icon="events" size="regular" />);
+    const icon = getByTestId('DesignSystem-GenericChip--Icon');
+    expect(icon).toHaveStyle('font-size: 16px');
+    expect(icon).toHaveStyle('width: 16px');
+  });
+
+  it('renders left icon with size 14px for small chip size', () => {
+    const { getByTestId } = render(<GenericChip label="Test" name="test" icon="events" size="small" />);
+    const icon = getByTestId('DesignSystem-GenericChip--Icon');
+    expect(icon).toHaveStyle('font-size: 14px');
+    expect(icon).toHaveStyle('width: 14px');
+  });
+
+  it('renders clear button icon with size 16px for regular chip size', () => {
+    const { getByTestId } = render(<GenericChip label="Test" name="test" clearButton={true} size="regular" />);
+    const clearButton = getByTestId('DesignSystem-GenericChip--clearButton');
+    const clearIcon = clearButton.querySelector('[data-test="DesignSystem-Icon"]');
+    expect(clearIcon).toHaveStyle('font-size: 16px');
+    expect(clearIcon).toHaveStyle('width: 16px');
+  });
+
+  it('renders clear button icon with size 12px for small chip size', () => {
+    const { getByTestId } = render(<GenericChip label="Test" name="test" clearButton={true} size="small" />);
+    const clearButton = getByTestId('DesignSystem-GenericChip--clearButton');
+    const clearIcon = clearButton.querySelector('[data-test="DesignSystem-Icon"]');
+    expect(clearIcon).toHaveStyle('font-size: 12px');
+    expect(clearIcon).toHaveStyle('width: 12px');
+  });
+
+  it('defaults to regular size icon sizes when size prop is not provided', () => {
+    const { getByTestId } = render(<GenericChip label="Test" name="test" icon="events" clearButton={true} />);
+    const leftIcon = getByTestId('DesignSystem-GenericChip--Icon');
+    const clearButton = getByTestId('DesignSystem-GenericChip--clearButton');
+    const clearIcon = clearButton.querySelector('[data-test="DesignSystem-Icon"]');
+
+    expect(leftIcon).toHaveStyle('font-size: 16px');
+    expect(leftIcon).toHaveStyle('width: 16px');
+    expect(clearIcon).toHaveStyle('font-size: 16px');
+    expect(clearIcon).toHaveStyle('width: 16px');
+  });
+});

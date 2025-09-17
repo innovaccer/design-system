@@ -7,6 +7,7 @@ import styles from '@css/components/chip.module.css';
 
 export type ChipType = 'action' | 'selection' | 'input';
 export type Name = number | string | object;
+export type ChipSize = 'regular' | 'small';
 
 export interface ChipProps extends BaseProps {
   /**
@@ -25,6 +26,10 @@ export interface ChipProps extends BaseProps {
    * Set type of Icon
    */
   iconType?: IconType;
+  /**
+   * Size of chip
+   */
+  size?: ChipSize;
   /**
    * Shows the 'clear' icon if value is not empty
    */
@@ -64,6 +69,7 @@ export const Chip = (props: ChipProps) => {
     label,
     icon,
     clearButton,
+    size = 'regular',
     type,
     disabled,
     selected,
@@ -96,6 +102,7 @@ export const Chip = (props: ChipProps) => {
       [styles[`Chip-${type}--selected`]]: selected && !disabled,
       [styles[`Chip-selection--selectedDisabled`]]: type === 'selection' && selected && disabled,
       [styles['Chip-icon--clear']]: clearbutton,
+      [styles[`Chip-size--${size}`]]: size,
     },
     className
   );
@@ -107,6 +114,7 @@ export const Chip = (props: ChipProps) => {
       label={label}
       selected={select}
       icon={icon}
+      size={size}
       iconType={iconType}
       clearButton={clearbutton}
       disabled={disabled}

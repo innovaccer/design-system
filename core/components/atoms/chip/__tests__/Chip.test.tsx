@@ -228,3 +228,34 @@ describe('Chip component', () => {
     expect(customLabel).not.toHaveClass('Chip-text');
   });
 });
+
+describe('Chip component size functionality', () => {
+  it('renders chip component with default size prop as regular', () => {
+    const { queryByTestId } = render(<Chip label="Chip" name="Chip" />);
+    expect(queryByTestId('DesignSystem-Chip--GenericChip')).toHaveClass('Chip-size--regular');
+  });
+
+  it('renders chip component with size prop set to regular', () => {
+    const { queryByTestId } = render(<Chip label="Chip" name="Chip" size="regular" />);
+    expect(queryByTestId('DesignSystem-Chip--GenericChip')).toHaveClass('Chip-size--regular');
+  });
+
+  it('renders chip component with size prop set to small', () => {
+    const { queryByTestId } = render(<Chip label="Chip" name="Chip" size="small" />);
+    expect(queryByTestId('DesignSystem-Chip--GenericChip')).toHaveClass('Chip-size--small');
+  });
+
+  it('passes size prop to GenericChip component correctly', () => {
+    const { getByTestId } = render(<Chip label="Test" name="test" size="small" icon="events" />);
+    const icon = getByTestId('DesignSystem-GenericChip--Icon');
+    // Icon size should be 14px for small size chips
+    expect(icon).toHaveStyle('font-size: 14px');
+    expect(icon).toHaveStyle('width: 14px');
+  });
+
+  it('renders chip with small size and proper text size', () => {
+    const { getByTestId } = render(<Chip label="Test" name="test" size="small" />);
+    const text = getByTestId('DesignSystem-GenericChip--Text');
+    expect(text).toHaveClass('Text--small');
+  });
+});
