@@ -13,7 +13,7 @@ exports[`ChipGroup component
         class="ChipGroup-item"
       >
         <div
-          class="Chip-wrapper Chip Chip--action"
+          class="Chip-wrapper Chip Chip--action Chip-size--regular"
           data-test="DesignSystem-ChipGroup--Chip"
           role="button"
           style="max-width: var(--spacing-640);"
@@ -43,7 +43,7 @@ exports[`ChipGroup component
         class="ChipGroup-item"
       >
         <div
-          class="Chip-wrapper Chip Chip--input Chip-icon--clear"
+          class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular"
           data-test="DesignSystem-ChipGroup--Chip"
           role="button"
           style="max-width: var(--spacing-640);"
@@ -74,7 +74,7 @@ exports[`ChipGroup component
             tabindex="0"
           >
             <i
-              class="material-symbols material-symbols-rounded Icon Icon--subtle p-2"
+              class="material-symbols material-symbols-rounded Icon Icon--subtle"
               data-test="DesignSystem-Icon"
               role="button"
               style="font-size: 16px; width: 16px;"
@@ -88,7 +88,7 @@ exports[`ChipGroup component
         class="ChipGroup-item"
       >
         <div
-          class="Chip-wrapper Chip Chip--selection Chip-selection--selected Chip-icon--clear"
+          class="Chip-wrapper Chip Chip--selection Chip-selection--selected Chip-icon--clear Chip-size--regular"
           data-test="DesignSystem-ChipGroup--Chip"
           role="button"
           style="max-width: var(--spacing-640);"
@@ -119,7 +119,7 @@ exports[`ChipGroup component
             tabindex="0"
           >
             <i
-              class="material-symbols material-symbols-rounded Icon Icon--primaryDark p-2"
+              class="material-symbols material-symbols-rounded Icon Icon--primaryDark"
               data-test="DesignSystem-Icon"
               role="button"
               style="font-size: 16px; width: 16px;"
@@ -133,7 +133,7 @@ exports[`ChipGroup component
         class="ChipGroup-item"
       >
         <div
-          class="Chip-wrapper Chip Chip--selection Chip-icon--clear"
+          class="Chip-wrapper Chip Chip--selection Chip-icon--clear Chip-size--regular"
           data-test="DesignSystem-ChipGroup--Chip"
           role="button"
           style="max-width: var(--spacing-640);"
@@ -164,7 +164,7 @@ exports[`ChipGroup component
             tabindex="0"
           >
             <i
-              class="material-symbols material-symbols-rounded Icon Icon--subtle p-2"
+              class="material-symbols material-symbols-rounded Icon Icon--subtle"
               data-test="DesignSystem-Icon"
               role="button"
               style="font-size: 16px; width: 16px;"

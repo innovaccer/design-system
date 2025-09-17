@@ -3,7 +3,6 @@
   box-sizing: border-box;
   border-radius: var(--border-radius-30);
   padding-right: var(--spacing-20);
-  padding-left: var(--spacing-20);
   padding-top: var(--spacing-05);
   padding-bottom: var(--spacing-05);
   width: fit-content;
@@ -13,8 +12,16 @@
   align-items: center;
   flex-direction: row;
   cursor: default;
-  height: var(--spacing-60);
   transition: var(--duration--fast-01) var(--standard-productive-curve);
+}
+
+.Chip-size--regular {
+  height: var(--spacing-60);
+  padding-left: var(--spacing-20);
+}
+.Chip-size--small {
+  height: 20px;
+  padding-left: var(--spacing-15);
 }
 
 .Chip-wrapper {
@@ -31,6 +38,7 @@
 .Chip-icon--right {
   display: flex;
   align-items: center;
+  justify-content: center;
   border-radius: var(--border-radius-full);
   margin-left: var(--spacing-05);
 }
