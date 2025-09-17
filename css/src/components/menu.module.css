@@ -13,6 +13,13 @@
   box-sizing: border-box;
 }
 
+.Menu-Item--tight {
+  padding: var(--spacing-10) var(--spacing-20);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--font-height-s);
+}
+
 .Menu-Group-Label {
   display: flex;
   align-items: center;

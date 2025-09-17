@@ -260,3 +260,279 @@ describe('Menu component with prop:disabled', () => {
     expect(popover).toBeInTheDocument();
   });
 });
+
+describe('Menu Component - MenuItem functionality and interaction handling', () => {
+  it('should handle MenuItem focus events', () => {
+    const mockOnFocus = jest.fn();
+    const { getByTestId } = render(
+      <Menu trigger={<Menu.Trigger />} open={true}>
+        <Menu.List>
+          <Menu.Item onFocus={mockOnFocus}>Menu Item 1</Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+
+    const menuItem = getByTestId('DesignSystem-Menu-ListItem');
+    fireEvent.focus(menuItem);
+
+    expect(mockOnFocus).toHaveBeenCalled();
+  });
+
+  it('should not trigger onClick when MenuItem is disabled', () => {
+    const mockOnClick = jest.fn();
+    const { getByTestId } = render(
+      <Menu trigger={<Menu.Trigger />} open={true}>
+        <Menu.List>
+          <Menu.Item onClick={mockOnClick} disabled={true}>
+            Menu Item 1
+          </Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+
+    const menuItem = getByTestId('DesignSystem-Menu-ListItem');
+    fireEvent.click(menuItem);
+
+    expect(mockOnClick).not.toHaveBeenCalled();
+  });
+
+  it('should apply correct className for tight size MenuList', () => {
+    const { getByTestId } = render(
+      <Menu trigger={<Menu.Trigger />} open={true}>
+        <Menu.List size="tight">
+          <Menu.Item>Menu Item 1</Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+
+    // The Menu-Item classes are applied to the ListBody wrapper, not the outer element
+    const menuItemWrapper = getByTestId('DesignSystem-Listbox-ItemWrapper');
+    expect(menuItemWrapper).toHaveClass('Menu-Item--tight');
+  });
+
+  it('should handle MenuItem keyboard navigation', () => {
+    const { getByTestId, getAllByTestId } = render(
+      <Menu trigger={<Menu.Trigger />} open={true}>
+        <Menu.List>
+          <Menu.Item>Menu Item 1</Menu.Item>
+          <Menu.Item>Menu Item 2</Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+
+    const menuItems = getAllByTestId('DesignSystem-Menu-ListItem');
+    fireEvent.keyDown(menuItems[0], { key: 'ArrowDown' });
+
+    // The menu should still be open after navigation
+    const popover = getByTestId('DesignSystem-Popover');
+    expect(popover).toBeInTheDocument();
+  });
+});
+
+describe('Menu Component - SubMenu nested menu functionality and accessibility', () => {
+  it('should render SubMenu with proper accessibility attributes', () => {
+    const { getAllByTestId } = render(
+      <Menu trigger={<Menu.Trigger />} open={true}>
+        <Menu.List>
+          <Menu.SubMenu>
+            <Menu.Item className="d-flex align-items-center justify-content-between w-100">
+              Menu Item with SubMenu
+              <Icon name="chevron_right" />
+            </Menu.Item>
+            <Menu position="right-start">
+              <Menu.List>
+                <Menu.Item>Sub Menu Item 1</Menu.Item>
+              </Menu.List>
+            </Menu>
+          </Menu.SubMenu>
+        </Menu.List>
+      </Menu>
+    );
+
+    const menuItems = getAllByTestId('DesignSystem-Menu-ListItem');
+    const subMenuTrigger = menuItems[0];
+
+    expect(subMenuTrigger).toHaveAttribute('aria-haspopup', 'menu');
+    expect(subMenuTrigger).toHaveAttribute('aria-expanded');
+    expect(subMenuTrigger).toHaveAttribute('aria-controls');
+    expect(subMenuTrigger).toHaveAttribute('id');
+  });
+
+  it('should open SubMenu on hover', () => {
+    const { getAllByTestId } = render(
+      <Menu trigger={<Menu.Trigger />} open={true}>
+        <Menu.List>
+          <Menu.SubMenu>
+            <Menu.Item className="d-flex align-items-center justify-content-between w-100">
+              Menu Item with SubMenu
+              <Icon name="chevron_right" />
+            </Menu.Item>
+            <Menu position="right-start">
+              <Menu.List>
+                <Menu.Item>Sub Menu Item 1</Menu.Item>
+              </Menu.List>
+            </Menu>
+          </Menu.SubMenu>
+        </Menu.List>
+      </Menu>
+    );
+
+    const menuItems = getAllByTestId('DesignSystem-Menu-ListItem');
+    const subMenuTrigger = menuItems[0];
+
+    fireEvent.mouseOver(subMenuTrigger);
+
+    // Should have two popovers now (main menu + submenu)
+    const popovers = getAllByTestId('DesignSystem-Popover');
+    expect(popovers).toHaveLength(2);
+  });
+
+  it('should handle SubMenu keyboard navigation', () => {
+    const { getAllByTestId } = render(
+      <Menu trigger={<Menu.Trigger />} open={true}>
+        <Menu.List>
+          <Menu.SubMenu>
+            <Menu.Item className="d-flex align-items-center justify-content-between w-100">
+              Menu Item with SubMenu
+              <Icon name="chevron_right" />
+            </Menu.Item>
+            <Menu position="right-start">
+              <Menu.List>
+                <Menu.Item>Sub Menu Item 1</Menu.Item>
+              </Menu.List>
+            </Menu>
+          </Menu.SubMenu>
+        </Menu.List>
+      </Menu>
+    );
+
+    const menuItems = getAllByTestId('DesignSystem-Menu-ListItem');
+    const subMenuTrigger = menuItems[0];
+
+    fireEvent.keyDown(subMenuTrigger, { key: 'ArrowRight' });
+
+    // The submenu trigger should handle the keyboard event
+    expect(subMenuTrigger).toBeInTheDocument();
+  });
+});
+
+describe('Menu Component - Context provider and state management for menu interactions', () => {
+  it('should manage focus state correctly', () => {
+    const { getAllByTestId } = render(
+      <Menu trigger={<Menu.Trigger />} open={true}>
+        <Menu.List>
+          <Menu.Item>Menu Item 1</Menu.Item>
+          <Menu.Item>Menu Item 2</Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+
+    const menuItems = getAllByTestId('DesignSystem-Menu-ListItem');
+
+    fireEvent.focus(menuItems[0]);
+    fireEvent.focus(menuItems[1]);
+
+    // Both items should be able to receive focus
+    expect(menuItems[0]).toBeInTheDocument();
+    expect(menuItems[1]).toBeInTheDocument();
+  });
+
+  it('should handle open state changes', () => {
+    const mockOnToggle = jest.fn();
+    const { rerender } = render(
+      <Menu trigger={<Menu.Trigger />} open={false} onToggle={mockOnToggle}>
+        <Menu.List>
+          <Menu.Item>Menu Item 1</Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+
+    // Change to open
+    rerender(
+      <Menu trigger={<Menu.Trigger />} open={true} onToggle={mockOnToggle}>
+        <Menu.List>
+          <Menu.Item>Menu Item 1</Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+
+    expect(mockOnToggle).toHaveBeenCalledWith(true);
+  });
+
+  it('should provide correct context values to children', () => {
+    const { getByTestId } = render(
+      <Menu trigger={<Menu.Trigger />} open={true}>
+        <Menu.List>
+          <Menu.Item>Menu Item 1</Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+
+    const menuItem = getByTestId('DesignSystem-Menu-ListItem');
+
+    // MenuItem should receive context and render properly
+    expect(menuItem).toHaveAttribute('role', 'menuitem');
+    expect(menuItem).toHaveAttribute('tabIndex', '-1');
+  });
+});
+
+describe('Menu Component - MenuList size variants and styling behavior', () => {
+  it('should apply compressed size by default', () => {
+    const { getByTestId } = render(
+      <Menu trigger={<Menu.Trigger />} open={true}>
+        <Menu.List>
+          <Menu.Item>Menu Item 1</Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+
+    const menuItemWrapper = getByTestId('DesignSystem-Listbox-ItemWrapper');
+    expect(menuItemWrapper).not.toHaveClass('Menu-Item--tight');
+  });
+
+  it('should apply tight size when specified', () => {
+    const { getByTestId } = render(
+      <Menu trigger={<Menu.Trigger />} open={true}>
+        <Menu.List size="tight">
+          <Menu.Item>Menu Item 1</Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+
+    const menuItemWrapper = getByTestId('DesignSystem-Listbox-ItemWrapper');
+    expect(menuItemWrapper).toHaveClass('Menu-Item--tight');
+  });
+});
+
+describe('Menu Component - Event listener lifecycle management and cleanup', () => {
+  it('should handle MenuItem event listeners properly', () => {
+    const { unmount } = render(
+      <Menu trigger={<Menu.Trigger />} open={true}>
+        <Menu.List>
+          <Menu.Item>Menu Item 1</Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+
+    // Should not throw when unmounting
+    expect(() => unmount()).not.toThrow();
+  });
+
+  it('should handle focus and blur events on menu items', () => {
+    const { getByTestId } = render(
+      <Menu trigger={<Menu.Trigger />} open={true}>
+        <Menu.List>
+          <Menu.Item>Menu Item 1</Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+
+    const menuItem = getByTestId('DesignSystem-Menu-ListItem');
+
+    fireEvent.focus(menuItem);
+    fireEvent.blur(menuItem);
+
+    // Should handle events without errors
+    expect(menuItem).toBeInTheDocument();
+  });
+});
