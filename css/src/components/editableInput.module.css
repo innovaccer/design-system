@@ -25,8 +25,6 @@
   border: var(--border-width-2-5) solid transparent;
   box-sizing: border-box;
   white-space: nowrap;
-  padding-left: var(--spacing-30);
-  padding-right: var(--spacing-30);
   display: flex;
   align-items: center;
 }
@@ -34,11 +32,18 @@
 .EditableInput-default--regular {
   min-width: var(--spacing-640);
   height: var(--spacing-80);
+  padding-left: var(--spacing-30);
+  padding-right: var(--spacing-30);
 }
 
 .EditableInput-default--tiny {
   min-width: var(--spacing-240);
   height: var(--spacing-60);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--font-height-s);
+  padding-left: var(--spacing-20);
+  padding-right: var(--spacing-20);
 }
 
 .EditableInput-Input--tiny {
