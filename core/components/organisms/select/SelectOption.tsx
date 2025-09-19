@@ -53,6 +53,7 @@ export const SelectOption = (props: SelectOptionProps) => {
     withSearch,
     setOpenPopover,
     triggerRef,
+    size,
   } = contextProp;
 
   const onClickHandler = () => {
@@ -80,7 +81,12 @@ export const SelectOption = (props: SelectOptionProps) => {
 
   const textClass = classNames({
     [styles['Select-option--text']]: true,
+    [styles['Select-option--textTight']]: size === 'tight',
     'pt-2': multiSelect,
+  });
+
+  const SelectOptionClass = classNames({
+    [styles['Select-option--tight']]: size === 'tight',
   });
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
@@ -108,6 +114,7 @@ export const SelectOption = (props: SelectOptionProps) => {
       tabIndex={-1}
       disabled={disabled}
       data-test="DesignSystem-Select-Option"
+      className={SelectOptionClass}
       {...rest}
     >
       <div className={optionItemClass}>

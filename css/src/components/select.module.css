@@ -68,7 +68,7 @@
 
 .Select-trigger--small {
   height: var(--spacing-60);
-  padding-right: var(--spacing-20);
+  padding-right: var(--spacing-10);
   padding-left: var(--spacing-20);
 }
 
@@ -135,4 +135,25 @@
   display: flex;
   align-items: flex-start;
   width: 100%;
+}
+
+.Select-trigger--textSmall {
+  font-size: var(--font-size-s);
+  line-height: var(--font-height-s);
+  font-weight: var(--font-weight-medium);
+}
+
+.Select-option--tight {
+  padding: var(--spacing-10) var(--spacing-20);
+}
+
+.Select-input--tiny {
+  padding-right: var(--spacing-10);
+  height: var(--spacing-60);
+}
+
+.Select-option--textTight {
+  font-size: var(--font-size-s);
+  line-height: var(--font-height-s);
+  font-weight: var(--font-weight-medium);
 }
