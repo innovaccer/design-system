@@ -4,6 +4,7 @@ import { SelectContext } from './SelectContext';
 import { handleInputKeyDown } from './utils';
 import { InputProps } from '@/index.type';
 import styles from '@css/components/select.module.css';
+import classNames from 'classnames';
 
 export interface SelectInputProps extends Omit<InputProps, 'onChange'> {
   /**
@@ -19,7 +20,7 @@ export interface SelectInputProps extends Omit<InputProps, 'onChange'> {
 export const SearchInput = (props: SelectInputProps) => {
   const contextProp = React.useContext(SelectContext);
   const { setWithSearch, maxHeight, listRef, setFocusedOption, setOpenPopover, triggerRef } = contextProp;
-  const { onChange, onClear, ...rest } = props;
+  const { onChange, onClear, size = 'regular', ...rest } = props;
 
   React.useEffect(() => {
     setWithSearch?.(true);
@@ -33,11 +34,17 @@ export const SearchInput = (props: SelectInputProps) => {
     if (onClear) onClear(event);
   };
 
+  const inputClass = classNames({
+    [styles['Select-input']]: true,
+    [styles['Select-input--tiny']]: size === 'tiny',
+  });
+
   return (
     <div className={styles['Select-inputWrapper']}>
       <Input
         {...rest}
         icon={'search'}
+        size={size}
         onKeyDown={(event) => handleInputKeyDown(event, listRef, setFocusedOption, setOpenPopover, triggerRef)}
         // TODO(a11y): research more on this.
         // eslint-disable-next-line jsx-a11y/no-autofocus
@@ -47,7 +54,7 @@ export const SearchInput = (props: SelectInputProps) => {
         autoComplete={'off'}
         aria-label="Search"
         aria-haspopup="listbox"
-        className={styles['Select-input']}
+        className={inputClass}
         data-test="DesignSystem-Select--Input"
       />
     </div>

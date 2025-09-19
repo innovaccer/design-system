@@ -58,7 +58,7 @@ export interface SelectTriggerProps extends BaseProps {
 
 const SelectTrigger = (props: SelectTriggerProps) => {
   const {
-    triggerSize,
+    triggerSize = 'regular',
     placeholder,
     withClearButton,
     icon,
@@ -119,18 +119,18 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     [textStyles['Text']]: true,
     [textStyles['Text--regular']]: true,
     [selectStyles['Select-trigger--text']]: true,
+    [selectStyles['Select-trigger--textSmall']]: triggerSize === 'small',
   });
 
   const triggerClass = classNames([selectStyles['Select-trigger-wrapper']], 'ellipsis--noWrap');
 
   const inlineLabelClass = classNames({
-    'mr-4': triggerSize === 'regular',
-    'mr-5': triggerSize === 'small',
     'white-space-nowrap': true,
   });
 
   const iconClass = classNames('align-items-center', 'mr-2', 'ml-3', selectStyles['Select-crossButton']);
-
+  const iconSize = triggerSize === 'small' ? 14 : 16;
+  const triggerTextSize = triggerSize === 'small' ? 'small' : 'regular';
   return (
     <Tooltip
       showOnTruncation={true}
@@ -156,7 +156,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
         {
           <div className={triggerClass}>
             {inlineLabel && (
-              <Text appearance="subtle" className={inlineLabelClass}>
+              <Text appearance="subtle" className={`${inlineLabelClass} mr-4`} size={triggerTextSize}>
                 {`${inlineLabel.trim().charAt(0).toUpperCase()}${inlineLabel.trim().slice(1)}`}
               </Text>
             )}
@@ -166,6 +166,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
                 className="d-flex align-items-center mr-4"
                 name={icon}
                 type={iconType}
+                size={iconSize}
               />
             )}
             {value && (
