@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { OptionType } from '@/common.type';
+import { OptionType, TListboxSize } from '@/common.type';
 
 export type ContextProps = {
   openPopover?: boolean;
@@ -21,6 +21,7 @@ export type ContextProps = {
   setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>;
   setHighlightFirstItem?: React.Dispatch<React.SetStateAction<boolean>>;
   setHighlightLastItem?: React.Dispatch<React.SetStateAction<boolean>>;
+  size?: TListboxSize;
 };
 
 export const SelectContext = React.createContext<ContextProps>({});

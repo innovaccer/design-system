@@ -10,7 +10,7 @@ exports[`ChipInput component
       data-test="DesignSystem-ChipInput--Border"
     >
       <div
-        class="ChipInput ChipInput--withChips"
+        class="ChipInput ChipInput--withChips ChipInput--regular"
         data-test="DesignSystem-ChipInput"
         tabindex="0"
       >
@@ -18,7 +18,7 @@ exports[`ChipInput component
           class="ChipInput-wrapper"
         >
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear my-3 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular mr-3 my-3"
             data-test="DesignSystem-ChipInput--Chip"
             role="button"
             style="max-width: 256px;"
@@ -41,7 +41,7 @@ exports[`ChipInput component
               tabindex="0"
             >
               <i
-                class="material-symbols material-symbols-rounded Icon Icon--subtle p-2"
+                class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
@@ -51,7 +51,7 @@ exports[`ChipInput component
             </div>
           </div>
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear my-3 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular mr-3 my-3"
             data-test="DesignSystem-ChipInput--Chip"
             role="button"
             style="max-width: 256px;"
@@ -74,7 +74,7 @@ exports[`ChipInput component
               tabindex="0"
             >
               <i
-                class="material-symbols material-symbols-rounded Icon Icon--subtle p-2"
+                class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
@@ -84,7 +84,7 @@ exports[`ChipInput component
             </div>
           </div>
           <input
-            class="ChipInput-input"
+            class="ChipInput-input ChipInput-input--regular p-0"
             data-test="DesignSystem-ChipInput--Input"
             placeholder=""
             style="flex-basis: 0px;"
@@ -92,7 +92,7 @@ exports[`ChipInput component
           />
         </div>
         <i
-          class="material-symbols material-symbols-rounded Icon Icon--subtle ChipInput-icon"
+          class="material-symbols material-symbols-rounded Icon Icon--subtle ChipInput-icon ChipInput-icon--regular"
           data-test="DesignSystem-ChipInput--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -116,7 +116,7 @@ exports[`ChipInput component
       data-test="DesignSystem-ChipInput--Border"
     >
       <div
-        class="ChipInput ChipInput--disabled ChipInput--withChips"
+        class="ChipInput ChipInput--disabled ChipInput--withChips ChipInput--regular"
         data-test="DesignSystem-ChipInput"
         tabindex="-1"
       >
@@ -124,7 +124,7 @@ exports[`ChipInput component
           class="ChipInput-wrapper"
         >
           <div
-            class="Chip-wrapper Chip Chip-input--disabled Chip-icon--clear my-3 mx-2"
+            class="Chip-wrapper Chip Chip-input--disabled Chip-icon--clear Chip-size--regular mr-3 my-3"
             data-test="DesignSystem-ChipInput--Chip"
             role="button"
             style="max-width: 256px;"
@@ -147,7 +147,7 @@ exports[`ChipInput component
               tabindex="-1"
             >
               <i
-                class="material-symbols material-symbols-rounded Icon Icon--subtle p-2"
+                class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
@@ -157,7 +157,7 @@ exports[`ChipInput component
             </div>
           </div>
           <div
-            class="Chip-wrapper Chip Chip-input--disabled Chip-icon--clear my-3 mx-2"
+            class="Chip-wrapper Chip Chip-input--disabled Chip-icon--clear Chip-size--regular mr-3 my-3"
             data-test="DesignSystem-ChipInput--Chip"
             role="button"
             style="max-width: 256px;"
@@ -180,7 +180,7 @@ exports[`ChipInput component
               tabindex="-1"
             >
               <i
-                class="material-symbols material-symbols-rounded Icon Icon--subtle p-2"
+                class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
@@ -190,7 +190,7 @@ exports[`ChipInput component
             </div>
           </div>
           <input
-            class="ChipInput-input"
+            class="ChipInput-input ChipInput-input--regular p-0"
             data-test="DesignSystem-ChipInput--Input"
             disabled=""
             placeholder=""
@@ -199,7 +199,7 @@ exports[`ChipInput component
           />
         </div>
         <i
-          class="material-symbols material-symbols-rounded Icon Icon--disabled ChipInput-icon"
+          class="material-symbols material-symbols-rounded Icon Icon--disabled ChipInput-icon ChipInput-icon--regular"
           data-test="DesignSystem-ChipInput--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -223,7 +223,7 @@ exports[`ChipInput component
       data-test="DesignSystem-ChipInput--Border"
     >
       <div
-        class="ChipInput ChipInput--withChips ChipInput--error"
+        class="ChipInput ChipInput--withChips ChipInput--error ChipInput--regular"
         data-test="DesignSystem-ChipInput"
         tabindex="0"
       >
@@ -231,7 +231,7 @@ exports[`ChipInput component
           class="ChipInput-wrapper"
         >
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear my-3 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular mr-3 my-3"
             data-test="DesignSystem-ChipInput--Chip"
             role="button"
             style="max-width: 256px;"
@@ -254,7 +254,7 @@ exports[`ChipInput component
               tabindex="0"
             >
               <i
-                class="material-symbols material-symbols-rounded Icon Icon--subtle p-2"
+                class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
@@ -264,7 +264,7 @@ exports[`ChipInput component
             </div>
           </div>
           <div
-            class="Chip-wrapper Chip Chip--input Chip-icon--clear my-3 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear Chip-size--regular mr-3 my-3"
             data-test="DesignSystem-ChipInput--Chip"
             role="button"
             style="max-width: 256px;"
@@ -287,7 +287,7 @@ exports[`ChipInput component
               tabindex="0"
             >
               <i
-                class="material-symbols material-symbols-rounded Icon Icon--subtle p-2"
+                class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
@@ -297,7 +297,7 @@ exports[`ChipInput component
             </div>
           </div>
           <input
-            class="ChipInput-input"
+            class="ChipInput-input ChipInput-input--regular p-0"
             data-test="DesignSystem-ChipInput--Input"
             placeholder=""
             style="flex-basis: 0px;"
@@ -305,7 +305,7 @@ exports[`ChipInput component
           />
         </div>
         <i
-          class="material-symbols material-symbols-rounded Icon Icon--subtle ChipInput-icon"
+          class="material-symbols material-symbols-rounded Icon Icon--subtle ChipInput-icon ChipInput-icon--regular"
           data-test="DesignSystem-ChipInput--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"

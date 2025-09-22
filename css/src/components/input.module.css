@@ -22,6 +22,8 @@
   height: var(--font-height-m);
   padding-top: var(--spacing-10);
   padding-bottom: var(--spacing-10);
+  padding-left: var(--spacing-20);
+  padding-right: var(--spacing-20);
 }
 
 .Input--regular {
@@ -115,6 +117,12 @@
 .Input-input--large {
   line-height: var(--font-height-m);
   font-size: var(--font-size-m);
+}
+
+.Input-input--tiny {
+  line-height: var(--font-height-s);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-medium);
 }
 
 .Input-icon {

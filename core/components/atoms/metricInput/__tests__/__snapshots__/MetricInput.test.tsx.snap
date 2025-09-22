@@ -25,47 +25,37 @@ exports[`MetricInput component
         value="10"
       />
       <div
-        class="MetricInput-arrowIcons"
+        class="MetricInput-arrowIcons MetricInput-arrowIcons--regular ml-3"
       >
         <button
-          class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular ml-3 mb-2"
+          aria-label="Increment value"
+          class="MetricInput-arrowButton border-bottom"
           data-test="DesignSystem-MetricInput--upIcon"
-          tabindex="0"
           type="button"
         >
-          <div
-            class="Button-icon"
-            data-test="DesignSystem-Button--Icon-Wrapper"
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 14px; width: 14px;"
           >
-            <i
-              class="material-symbols material-symbols-rounded Icon"
-              data-test="DesignSystem-Button--Icon"
-              role="button"
-              style="font-size: 12px; width: 12px;"
-            >
-              keyboard_arrow_up
-            </i>
-          </div>
+            keyboard_arrow_up
+          </i>
         </button>
         <button
-          class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular ml-3"
+          aria-label="Decrement value"
+          class="MetricInput-arrowButton border-bottom-0"
           data-test="DesignSystem-MetricInput--downIcon"
-          tabindex="0"
           type="button"
         >
-          <div
-            class="Button-icon"
-            data-test="DesignSystem-Button--Icon-Wrapper"
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 14px; width: 14px;"
           >
-            <i
-              class="material-symbols material-symbols-rounded Icon"
-              data-test="DesignSystem-Button--Icon"
-              role="button"
-              style="font-size: 12px; width: 12px;"
-            >
-              keyboard_arrow_down
-            </i>
-          </div>
+            keyboard_arrow_down
+          </i>
         </button>
       </div>
     </div>
@@ -98,47 +88,37 @@ exports[`MetricInput component
         value="10"
       />
       <div
-        class="MetricInput-arrowIcons"
+        class="MetricInput-arrowIcons MetricInput-arrowIcons--regular ml-3"
       >
         <button
-          class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular ml-3 mb-2"
+          aria-label="Increment value"
+          class="MetricInput-arrowButton border-bottom"
           data-test="DesignSystem-MetricInput--upIcon"
-          tabindex="0"
           type="button"
         >
-          <div
-            class="Button-icon"
-            data-test="DesignSystem-Button--Icon-Wrapper"
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 14px; width: 14px;"
           >
-            <i
-              class="material-symbols material-symbols-rounded Icon"
-              data-test="DesignSystem-Button--Icon"
-              role="button"
-              style="font-size: 12px; width: 12px;"
-            >
-              keyboard_arrow_up
-            </i>
-          </div>
+            keyboard_arrow_up
+          </i>
         </button>
         <button
-          class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular ml-3"
+          aria-label="Decrement value"
+          class="MetricInput-arrowButton border-bottom-0"
           data-test="DesignSystem-MetricInput--downIcon"
-          tabindex="0"
           type="button"
         >
-          <div
-            class="Button-icon"
-            data-test="DesignSystem-Button--Icon-Wrapper"
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 14px; width: 14px;"
           >
-            <i
-              class="material-symbols material-symbols-rounded Icon"
-              data-test="DesignSystem-Button--Icon"
-              role="button"
-              style="font-size: 12px; width: 12px;"
-            >
-              keyboard_arrow_down
-            </i>
-          </div>
+            keyboard_arrow_down
+          </i>
         </button>
       </div>
     </div>
@@ -176,47 +156,37 @@ exports[`MetricInput component
         kg
       </span>
       <div
-        class="MetricInput-arrowIcons"
+        class="MetricInput-arrowIcons MetricInput-arrowIcons--large"
       >
         <button
-          class="Button Button--regular Button--regularSquare Button--basic p-0 MetricInput-arrowIcon--large ml-3 mb-2"
+          aria-label="Increment value"
+          class="MetricInput-arrowButton border-bottom"
           data-test="DesignSystem-MetricInput--upIcon"
-          tabindex="0"
           type="button"
         >
-          <div
-            class="Button-icon"
-            data-test="DesignSystem-Button--Icon-Wrapper"
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
           >
-            <i
-              class="material-symbols material-symbols-rounded Icon"
-              data-test="DesignSystem-Button--Icon"
-              role="button"
-              style="font-size: 16px; width: 16px;"
-            >
-              keyboard_arrow_up
-            </i>
-          </div>
+            keyboard_arrow_up
+          </i>
         </button>
         <button
-          class="Button Button--regular Button--regularSquare Button--basic p-0 MetricInput-arrowIcon--large ml-3"
+          aria-label="Decrement value"
+          class="MetricInput-arrowButton border-bottom-0"
           data-test="DesignSystem-MetricInput--downIcon"
-          tabindex="0"
           type="button"
         >
-          <div
-            class="Button-icon"
-            data-test="DesignSystem-Button--Icon-Wrapper"
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
           >
-            <i
-              class="material-symbols material-symbols-rounded Icon"
-              data-test="DesignSystem-Button--Icon"
-              role="button"
-              style="font-size: 16px; width: 16px;"
-            >
-              keyboard_arrow_down
-            </i>
-          </div>
+            keyboard_arrow_down
+          </i>
         </button>
       </div>
     </div>
@@ -248,53 +218,111 @@ exports[`MetricInput component
         value="10"
       />
       <span
-        class="Text Text--subtle Text--regular ml-4 mr-3"
+        class="Text Text--subtle Text--regular ml-4 mr-4"
         data-test="DesignSystem-MetricInput--suffix"
       >
         kg
       </span>
       <div
-        class="MetricInput-arrowIcons"
+        class="MetricInput-arrowIcons MetricInput-arrowIcons--regular"
       >
         <button
-          class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular ml-3 mb-2"
+          aria-label="Increment value"
+          class="MetricInput-arrowButton border-bottom"
           data-test="DesignSystem-MetricInput--upIcon"
-          tabindex="0"
           type="button"
         >
-          <div
-            class="Button-icon"
-            data-test="DesignSystem-Button--Icon-Wrapper"
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 14px; width: 14px;"
           >
-            <i
-              class="material-symbols material-symbols-rounded Icon"
-              data-test="DesignSystem-Button--Icon"
-              role="button"
-              style="font-size: 12px; width: 12px;"
-            >
-              keyboard_arrow_up
-            </i>
-          </div>
+            keyboard_arrow_up
+          </i>
         </button>
         <button
-          class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular ml-3"
+          aria-label="Decrement value"
+          class="MetricInput-arrowButton border-bottom-0"
           data-test="DesignSystem-MetricInput--downIcon"
-          tabindex="0"
           type="button"
         >
-          <div
-            class="Button-icon"
-            data-test="DesignSystem-Button--Icon-Wrapper"
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 14px; width: 14px;"
           >
-            <i
-              class="material-symbols material-symbols-rounded Icon"
-              data-test="DesignSystem-Button--Icon"
-              role="button"
-              style="font-size: 12px; width: 12px;"
-            >
-              keyboard_arrow_down
-            </i>
-          </div>
+            keyboard_arrow_down
+          </i>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`MetricInput component 
+  name: "name", size: "small", value: 10, prefix: "USD", suffix: "kg", min: 0, max: 100, onChange: "[Function]", onBlur: "[Function]", onFocus: "[Function]", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="MetricInput MetricInput--small"
+      data-test="DesignSystem-MetricInputWrapper"
+      role="presentation"
+    >
+      <span
+        class="Text Text--subtle Text--small mr-4"
+        data-test="DesignSystem-MetricInput--prefix"
+      >
+        USD
+      </span>
+      <input
+        class="MetricInput-input MetricInput-input--small"
+        data-test="DesignSystem-MetricInput"
+        name="name"
+        type="number"
+        value="10"
+      />
+      <span
+        class="Text Text--subtle Text--small ml-4 mr-4"
+        data-test="DesignSystem-MetricInput--suffix"
+      >
+        kg
+      </span>
+      <div
+        class="MetricInput-arrowIcons MetricInput-arrowIcons--small"
+      >
+        <button
+          aria-label="Increment value"
+          class="MetricInput-arrowButton border-bottom"
+          data-test="DesignSystem-MetricInput--upIcon"
+          type="button"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 12px; width: 12px;"
+          >
+            keyboard_arrow_up
+          </i>
+        </button>
+        <button
+          aria-label="Decrement value"
+          class="MetricInput-arrowButton border-bottom-0"
+          data-test="DesignSystem-MetricInput--downIcon"
+          type="button"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 12px; width: 12px;"
+          >
+            keyboard_arrow_down
+          </i>
         </button>
       </div>
     </div>

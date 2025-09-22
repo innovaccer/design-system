@@ -162,47 +162,37 @@ exports[`Pagination component
           value="10"
         />
         <div
-          class="MetricInput-arrowIcons"
+          class="MetricInput-arrowIcons MetricInput-arrowIcons--regular ml-3"
         >
           <button
-            class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular ml-3 mb-2"
+            aria-label="Increment value"
+            class="MetricInput-arrowButton border-bottom"
             data-test="DesignSystem-MetricInput--upIcon"
-            tabindex="0"
             type="button"
           >
-            <div
-              class="Button-icon"
-              data-test="DesignSystem-Button--Icon-Wrapper"
+            <i
+              class="material-symbols material-symbols-rounded Icon"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 14px; width: 14px;"
             >
-              <i
-                class="material-symbols material-symbols-rounded Icon"
-                data-test="DesignSystem-Button--Icon"
-                role="button"
-                style="font-size: 12px; width: 12px;"
-              >
-                keyboard_arrow_up
-              </i>
-            </div>
+              keyboard_arrow_up
+            </i>
           </button>
           <button
-            class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular ml-3"
+            aria-label="Decrement value"
+            class="MetricInput-arrowButton border-bottom-0"
             data-test="DesignSystem-MetricInput--downIcon"
-            tabindex="0"
             type="button"
           >
-            <div
-              class="Button-icon"
-              data-test="DesignSystem-Button--Icon-Wrapper"
+            <i
+              class="material-symbols material-symbols-rounded Icon"
+              data-test="DesignSystem-Icon"
+              role="button"
+              style="font-size: 14px; width: 14px;"
             >
-              <i
-                class="material-symbols material-symbols-rounded Icon"
-                data-test="DesignSystem-Button--Icon"
-                role="button"
-                style="font-size: 12px; width: 12px;"
-              >
-                keyboard_arrow_down
-              </i>
-            </div>
+              keyboard_arrow_down
+            </i>
           </button>
         </div>
       </div>

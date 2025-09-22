@@ -57,7 +57,7 @@ exports[`TS renders children 1`] = `
     </span>
   </div>
   <div
-    class="Chip-wrapper Chip Chip--input"
+    class="Chip-wrapper Chip Chip--input Chip-size--regular"
     data-test="DesignSystem-Chip--GenericChip"
     role="button"
     style="max-width: var(--spacing-640);"
@@ -748,7 +748,7 @@ exports[`TS renders children 1`] = `
       data-test="DesignSystem-Select--TodaysDate-wrapper"
     >
       <div
-        class="Chip-wrapper Chip Chip--action"
+        class="Chip-wrapper Chip Chip--action Chip-size--regular"
         data-test="DesignSystem-Chip--GenericChip"
         role="button"
         style="max-width: var(--spacing-640);"
@@ -958,7 +958,7 @@ exports[`TS renders children 1`] = `
     data-test="DesignSystem-Message"
   >
     <i
-      class="material-symbols material-symbols-rounded Icon Icon--info Message-icon Message-icon--info"
+      class="material-symbols material-symbols-rounded Icon Icon--info Message-icon--info Message-icon--regular"
       data-test="DesignSystem-Message--Icon"
       role="button"
       style="font-size: 16px; width: 16px;"
@@ -967,7 +967,7 @@ exports[`TS renders children 1`] = `
     </i>
     <div>
       <span
-        class="Text Text--default Text--regular Message-text Message-text--info"
+        class="Text Text--default Text--regular Message-text--info Message-text--regular"
         data-test="DesignSystem-Message--Description"
       >
         Hello World!
@@ -1037,7 +1037,7 @@ exports[`TS renders children 1`] = `
     data-test="DesignSystem-StatusHint"
   >
     <span
-      class="StatusHint-icon StatusHint--default"
+      class="StatusHint-icon StatusHint--default mr-4"
       data-test="DesignSystem-StatusHint--Icon"
     />
     <span

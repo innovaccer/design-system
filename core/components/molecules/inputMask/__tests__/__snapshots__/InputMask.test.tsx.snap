@@ -17,7 +17,7 @@ exports[`Input Mask component
       >
         <input
           autocomplete="off"
-          class="Input-input Input-input--regular"
+          class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
           type="text"
           value=""

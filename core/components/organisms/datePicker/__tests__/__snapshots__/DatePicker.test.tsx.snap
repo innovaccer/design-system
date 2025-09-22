@@ -649,7 +649,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
         <div
-          class="Chip-wrapper Chip Chip--action"
+          class="Chip-wrapper Chip Chip--action Chip-size--regular"
           data-test="DesignSystem-Chip--GenericChip"
           role="button"
           style="max-width: var(--spacing-640);"
@@ -1322,7 +1322,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
         <div
-          class="Chip-wrapper Chip Chip--action"
+          class="Chip-wrapper Chip Chip--action Chip-size--regular"
           data-test="DesignSystem-Chip--GenericChip"
           role="button"
           style="max-width: var(--spacing-640);"
@@ -1995,7 +1995,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
         <div
-          class="Chip-wrapper Chip Chip--action"
+          class="Chip-wrapper Chip Chip--action Chip-size--regular"
           data-test="DesignSystem-Chip--GenericChip"
           role="button"
           style="max-width: var(--spacing-640);"
@@ -2667,7 +2667,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
         <div
-          class="Chip-wrapper Chip Chip--action"
+          class="Chip-wrapper Chip Chip--action Chip-size--regular"
           data-test="DesignSystem-Chip--GenericChip"
           role="button"
           style="max-width: var(--spacing-640);"
@@ -3339,7 +3339,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
         <div
-          class="Chip-wrapper Chip Chip--action"
+          class="Chip-wrapper Chip Chip--action Chip-size--regular"
           data-test="DesignSystem-Chip--GenericChip"
           role="button"
           style="max-width: var(--spacing-640);"
@@ -4011,7 +4011,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
         <div
-          class="Chip-wrapper Chip Chip--action"
+          class="Chip-wrapper Chip Chip--action Chip-size--regular"
           data-test="DesignSystem-Chip--GenericChip"
           role="button"
           style="max-width: var(--spacing-640);"
@@ -4277,7 +4277,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
         <div
-          class="Chip-wrapper Chip Chip--action"
+          class="Chip-wrapper Chip Chip--action Chip-size--regular"
           data-test="DesignSystem-Chip--GenericChip"
           role="button"
           style="max-width: var(--spacing-640);"
@@ -4535,7 +4535,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
         <div
-          class="Chip-wrapper Chip Chip--action"
+          class="Chip-wrapper Chip Chip--action Chip-size--regular"
           data-test="DesignSystem-Chip--GenericChip"
           role="button"
           style="max-width: var(--spacing-640);"
@@ -5207,7 +5207,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
         <div
-          class="Chip-wrapper Chip Chip--action"
+          class="Chip-wrapper Chip Chip--action Chip-size--regular"
           data-test="DesignSystem-Chip--GenericChip"
           role="button"
           style="max-width: var(--spacing-640);"
@@ -5263,7 +5263,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
           </div>
           <input
             autocomplete="off"
-            class="Input-input Input-input--regular"
+            class="Input-input Input-input--regular mr-4"
             data-test="DesignSystem-Input"
             placeholder="mm/dd/yyyy"
             type="text"

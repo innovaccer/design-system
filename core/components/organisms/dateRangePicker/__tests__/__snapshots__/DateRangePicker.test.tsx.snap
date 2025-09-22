@@ -39995,7 +39995,7 @@ exports[`DateRangePicker component
               </div>
               <input
                 autocomplete="off"
-                class="Input-input Input-input--regular"
+                class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
                 label="Start Date"
                 placeholder="mm/dd/yyyy"
@@ -40057,7 +40057,7 @@ exports[`DateRangePicker component
               </div>
               <input
                 autocomplete="off"
-                class="Input-input Input-input--regular"
+                class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
                 label="End Date"
                 placeholder="mm/dd/yyyy"
@@ -40138,7 +40138,7 @@ exports[`DateRangePicker component
               </div>
               <input
                 autocomplete="off"
-                class="Input-input Input-input--regular"
+                class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
                 label="Start Date"
                 placeholder="mm/dd/yyyy"
@@ -40200,7 +40200,7 @@ exports[`DateRangePicker component
               </div>
               <input
                 autocomplete="off"
-                class="Input-input Input-input--regular"
+                class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
                 label="End Date"
                 placeholder="mm/dd/yyyy"
@@ -40281,7 +40281,7 @@ exports[`DateRangePicker component
               </div>
               <input
                 autocomplete="off"
-                class="Input-input Input-input--regular"
+                class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
                 label="Start Date"
                 placeholder="mm/dd/yyyy"
@@ -40343,7 +40343,7 @@ exports[`DateRangePicker component
               </div>
               <input
                 autocomplete="off"
-                class="Input-input Input-input--regular"
+                class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
                 label="End Date"
                 placeholder="mm/dd/yyyy"
@@ -40402,7 +40402,7 @@ exports[`DateRangePicker component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_back
               </i>
@@ -40446,7 +40446,7 @@ exports[`DateRangePicker component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_forward
               </i>
@@ -41029,7 +41029,7 @@ exports[`DateRangePicker component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_back
               </i>
@@ -41063,7 +41063,7 @@ exports[`DateRangePicker component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_forward
               </i>
@@ -41258,7 +41258,7 @@ exports[`DateRangePicker component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_back
               </i>
@@ -41292,7 +41292,7 @@ exports[`DateRangePicker component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_forward
               </i>
@@ -41509,7 +41509,7 @@ exports[`DateRangePicker component
               </div>
               <input
                 autocomplete="off"
-                class="Input-input Input-input--regular"
+                class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
                 label="Start Date"
                 placeholder="mm/dd/yyyy"
@@ -41571,7 +41571,7 @@ exports[`DateRangePicker component
               </div>
               <input
                 autocomplete="off"
-                class="Input-input Input-input--regular"
+                class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
                 label="End Date"
                 placeholder="mm/dd/yyyy"
@@ -41652,7 +41652,7 @@ exports[`DateRangePicker component
               </div>
               <input
                 autocomplete="off"
-                class="Input-input Input-input--regular"
+                class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
                 label="Start Date"
                 placeholder="mm/dd/yyyy"
@@ -41714,7 +41714,7 @@ exports[`DateRangePicker component
               </div>
               <input
                 autocomplete="off"
-                class="Input-input Input-input--regular"
+                class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
                 label="End Date"
                 placeholder="mm/dd/yyyy"
@@ -41795,7 +41795,7 @@ exports[`DateRangePicker component
               </div>
               <input
                 autocomplete="off"
-                class="Input-input Input-input--regular"
+                class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
                 label="Start Date"
                 placeholder="mm/dd/yyyy"
@@ -41857,7 +41857,7 @@ exports[`DateRangePicker component
               </div>
               <input
                 autocomplete="off"
-                class="Input-input Input-input--regular"
+                class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
                 label="End Date"
                 placeholder="mm/dd/yyyy"
@@ -43023,7 +43023,7 @@ exports[`DateRangePicker component
               </div>
               <input
                 autocomplete="off"
-                class="Input-input Input-input--regular"
+                class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
                 label="Start Date"
                 placeholder="mm/dd/yyyy"
@@ -43085,7 +43085,7 @@ exports[`DateRangePicker component
               </div>
               <input
                 autocomplete="off"
-                class="Input-input Input-input--regular"
+                class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
                 label="End Date"
                 placeholder="mm/dd/yyyy"
@@ -44154,7 +44154,7 @@ exports[`DateRangePicker component
               </div>
               <input
                 autocomplete="off"
-                class="Input-input Input-input--regular"
+                class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
                 label="Start Date"
                 placeholder="mm/dd/yyyy"
@@ -44216,7 +44216,7 @@ exports[`DateRangePicker component
               </div>
               <input
                 autocomplete="off"
-                class="Input-input Input-input--regular"
+                class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
                 label="End Date"
                 placeholder="mm/dd/yyyy"
@@ -45285,7 +45285,7 @@ exports[`DateRangePicker component
               </div>
               <input
                 autocomplete="off"
-                class="Input-input Input-input--regular"
+                class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
                 label="Start Date"
                 placeholder="mm/dd/yyyy"
@@ -45347,7 +45347,7 @@ exports[`DateRangePicker component
               </div>
               <input
                 autocomplete="off"
-                class="Input-input Input-input--regular"
+                class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
                 label="End Date"
                 placeholder="mm/dd/yyyy"
@@ -46394,7 +46394,7 @@ exports[`DateRangePicker component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_back
               </i>
@@ -46438,7 +46438,7 @@ exports[`DateRangePicker component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_forward
               </i>
@@ -47021,7 +47021,7 @@ exports[`DateRangePicker component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_back
               </i>
@@ -47055,7 +47055,7 @@ exports[`DateRangePicker component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_forward
               </i>
@@ -47250,7 +47250,7 @@ exports[`DateRangePicker component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_back
               </i>
@@ -47284,7 +47284,7 @@ exports[`DateRangePicker component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_forward
               </i>
@@ -47501,7 +47501,7 @@ exports[`DateRangePicker component
               </div>
               <input
                 autocomplete="off"
-                class="Input-input Input-input--regular"
+                class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
                 label="Start Date"
                 placeholder="mm/dd/yyyy"
@@ -47563,7 +47563,7 @@ exports[`DateRangePicker component
               </div>
               <input
                 autocomplete="off"
-                class="Input-input Input-input--regular"
+                class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
                 label="End Date"
                 placeholder="mm/dd/yyyy"
@@ -47621,7 +47621,7 @@ exports[`DateRangePicker component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_back
               </i>
@@ -48136,7 +48136,7 @@ exports[`DateRangePicker component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_forward
               </i>
@@ -48632,7 +48632,7 @@ exports[`DateRangePicker component
               </div>
               <input
                 autocomplete="off"
-                class="Input-input Input-input--regular"
+                class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
                 label="Start Date"
                 placeholder="mm/dd/yyyy"
@@ -48694,7 +48694,7 @@ exports[`DateRangePicker component
               </div>
               <input
                 autocomplete="off"
-                class="Input-input Input-input--regular"
+                class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
                 label="End Date"
                 placeholder="mm/dd/yyyy"
@@ -48752,7 +48752,7 @@ exports[`DateRangePicker component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_back
               </i>
@@ -49267,7 +49267,7 @@ exports[`DateRangePicker component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_forward
               </i>
@@ -49763,7 +49763,7 @@ exports[`DateRangePicker component
               </div>
               <input
                 autocomplete="off"
-                class="Input-input Input-input--regular"
+                class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
                 label="Start Date"
                 placeholder="mm/dd/yyyy"
@@ -49825,7 +49825,7 @@ exports[`DateRangePicker component
               </div>
               <input
                 autocomplete="off"
-                class="Input-input Input-input--regular"
+                class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
                 label="End Date"
                 placeholder="mm/dd/yyyy"
@@ -49883,7 +49883,7 @@ exports[`DateRangePicker component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_back
               </i>
@@ -50398,7 +50398,7 @@ exports[`DateRangePicker component
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 14px; width: 14px;"
               >
                 arrow_forward
               </i>

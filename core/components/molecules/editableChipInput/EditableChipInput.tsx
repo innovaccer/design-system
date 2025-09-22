@@ -6,6 +6,7 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 import { ChipInputProps } from '@/index.type';
 import styles from '@css/components/editableChipInput.module.css';
 
+export type EditableChipInputSize = 'regular' | 'small';
 export interface EditableChipInputProps extends BaseProps {
   /**
    * String to show inside `EditableChipInput` when value is not defined
@@ -15,6 +16,10 @@ export interface EditableChipInputProps extends BaseProps {
    * The chip labels to display.
    */
   value?: string[];
+  /**
+   * Size of `EditableChipInput`
+   */
+  size?: 'regular' | 'small';
   /**
    * Callback function that is called when the chips change.  Callback function called on save action click
    */
@@ -30,7 +35,7 @@ export interface EditableChipInputProps extends BaseProps {
 }
 
 export const EditableChipInput = (props: EditableChipInputProps) => {
-  const { placeholder, onChange, className, disableSaveAction, chipInputOptions } = props;
+  const { placeholder, onChange, className, disableSaveAction, chipInputOptions, size = 'regular' } = props;
 
   const { onChange: onChipInputChange, chipOptions = {}, ...rest } = chipInputOptions;
   const { onClick, ...chipObject } = chipOptions;
@@ -124,6 +129,7 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
             key={index}
             name={val}
             label={val}
+            size={size}
             className="my-2 mx-2"
             {...chipObject}
             onClose={() => onChipDelete(index)}
@@ -144,6 +150,7 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
             placeholder={placeholder}
             onChange={onChipInputChangeHandler}
             value={inputValue}
+            size={size}
             chipOptions={chipOptions}
             {...rest}
             className={inputClass}

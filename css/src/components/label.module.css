@@ -2,6 +2,9 @@
 .Label {
   display: inline-flex;
 }
+.Label--small {
+  font-size: var(--font-size-s);
+}
 
 .Label--withInput {
   margin-bottom: var(--spacing-10);
@@ -20,6 +23,10 @@
 .Label-optionalText {
   line-height: var(--font-height-s);
   margin-left: var(--spacing-10);
+}
+
+.Label-optionalText--small {
+  font-size: var(--font-size-s);
 }
 
 .Label--disabled {

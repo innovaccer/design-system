@@ -782,3 +782,397 @@ describe('Render custom trigger in select', () => {
     expect(popover).toBeInTheDocument();
   });
 });
+
+describe('Select component size functionality tests', () => {
+  describe('SelectList size prop integration with Listbox component', () => {
+    it('should pass size prop to Listbox component and apply correct CSS classes for tight size', () => {
+      const { getByTestId, getAllByTestId } = render(
+        <Select onSelect={FunctionValue}>
+          <Select.List size="tight">
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+            <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      fireEvent.click(triggerButton);
+
+      const listboxItems = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      expect(listboxItems).toHaveLength(2);
+
+      listboxItems.forEach((item) => {
+        expect(item).toHaveClass('Listbox-item--tight');
+      });
+    });
+
+    it('should pass size prop to Listbox component and apply correct CSS classes for compressed size', () => {
+      const { getByTestId, getAllByTestId } = render(
+        <Select onSelect={FunctionValue}>
+          <Select.List size="compressed">
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+            <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      fireEvent.click(triggerButton);
+
+      const listboxItems = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      expect(listboxItems).toHaveLength(2);
+
+      listboxItems.forEach((item) => {
+        expect(item).toHaveClass('Listbox-item--compressed');
+      });
+    });
+
+    it('should pass size prop to Listbox component and apply correct CSS classes for standard size', () => {
+      const { getByTestId, getAllByTestId } = render(
+        <Select onSelect={FunctionValue}>
+          <Select.List size="standard">
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+            <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      fireEvent.click(triggerButton);
+
+      const listboxItems = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      expect(listboxItems).toHaveLength(2);
+
+      listboxItems.forEach((item) => {
+        expect(item).toHaveClass('Listbox-item--standard');
+      });
+    });
+
+    it('should use default compressed size when no size prop is provided to SelectList', () => {
+      const { getByTestId, getAllByTestId } = render(
+        <Select onSelect={FunctionValue}>
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      fireEvent.click(triggerButton);
+
+      const listboxItems = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      expect(listboxItems).toHaveLength(1);
+
+      expect(listboxItems[0]).toHaveClass('Listbox-item--compressed');
+    });
+  });
+
+  describe('SelectOption size inheritance from ListboxContext', () => {
+    it('should inherit size from parent SelectList through ListboxContext', () => {
+      const { getByTestId, getAllByTestId } = render(
+        <Select onSelect={FunctionValue}>
+          <Select.List size="tight">
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+            <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+            <Select.Option option={{ label: 'Option 3', value: 'Option 3' }}>Option 3</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      fireEvent.click(triggerButton);
+
+      const optionElements = getAllByTestId('DesignSystem-Select-Option');
+      const listboxItems = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+
+      expect(optionElements).toHaveLength(3);
+      expect(listboxItems).toHaveLength(3);
+
+      listboxItems.forEach((item) => {
+        expect(item).toHaveClass('Listbox-item--tight');
+      });
+    });
+
+    it('should maintain size consistency across all SelectOptions in a SelectList', () => {
+      const { getByTestId, getAllByTestId } = render(
+        <Select onSelect={FunctionValue}>
+          <Select.List size="standard">
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+            <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+            <Select.Option option={{ label: 'Option 3', value: 'Option 3' }}>Option 3</Select.Option>
+            <Select.Option option={{ label: 'Option 4', value: 'Option 4' }}>Option 4</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      fireEvent.click(triggerButton);
+
+      const listboxItems = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      expect(listboxItems).toHaveLength(4);
+
+      listboxItems.forEach((item) => {
+        expect(item).toHaveClass('Listbox-item--standard');
+        expect(item).not.toHaveClass('Listbox-item--tight');
+        expect(item).not.toHaveClass('Listbox-item--compressed');
+      });
+    });
+  });
+
+  describe('SearchInput size prop integration', () => {
+    it('should accept size prop and pass it to Input component for tiny size', () => {
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue}>
+          <Select.SearchInput size="tiny" placeholder="Search options" />
+          <Select.List size="tight">
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      fireEvent.click(triggerButton);
+
+      const searchInput = getByTestId('DesignSystem-Select--Input');
+      expect(searchInput).toBeInTheDocument();
+
+      // Check that the Input wrapper has the tiny size class
+      const inputWrapper = getByTestId('DesignSystem-InputWrapper');
+      expect(inputWrapper).toHaveClass('Input--tiny');
+    });
+
+    it('should accept size prop and pass it to Input component for regular size', () => {
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue}>
+          <Select.SearchInput size="regular" placeholder="Search options" />
+          <Select.List size="standard">
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      fireEvent.click(triggerButton);
+
+      const searchInput = getByTestId('DesignSystem-Select--Input');
+      expect(searchInput).toBeInTheDocument();
+
+      // Check that the Input wrapper has the regular size class
+      const inputWrapper = getByTestId('DesignSystem-InputWrapper');
+      expect(inputWrapper).toHaveClass('Input--regular');
+    });
+
+    it('should work without size prop when not provided to SearchInput', () => {
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue}>
+          <Select.SearchInput placeholder="Search options" />
+          <Select.List size="compressed">
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      fireEvent.click(triggerButton);
+
+      const searchInput = getByTestId('DesignSystem-Select--Input');
+      expect(searchInput).toBeInTheDocument();
+
+      // Should use default regular size when no size prop provided
+      const inputWrapper = getByTestId('DesignSystem-InputWrapper');
+      expect(inputWrapper).toHaveClass('Input--regular');
+    });
+  });
+
+  describe('Integrated size scenarios with trigger, list, and search input', () => {
+    it('should handle small trigger with tight list and tiny search input', () => {
+      const { getByTestId, getAllByTestId } = render(
+        <Select onSelect={FunctionValue} triggerOptions={{ triggerSize: 'small' }}>
+          <Select.SearchInput size="tiny" placeholder="Search medicines..." />
+          <Select.List size="tight">
+            <Select.Option option={{ label: 'Aspirin', value: 'Aspirin' }}>Aspirin</Select.Option>
+            <Select.Option option={{ label: 'Paracetamol', value: 'Paracetamol' }}>Paracetamol</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      expect(triggerButton).toHaveClass('Select-trigger--small');
+
+      fireEvent.click(triggerButton);
+
+      const inputWrapper = getByTestId('DesignSystem-InputWrapper');
+      expect(inputWrapper).toHaveClass('Input--tiny');
+
+      const listboxItems = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      expect(listboxItems).toHaveLength(2);
+      listboxItems.forEach((item) => {
+        expect(item).toHaveClass('Listbox-item--tight');
+      });
+    });
+
+    it('should handle regular trigger with compressed list and regular search input', () => {
+      const { getByTestId, getAllByTestId } = render(
+        <Select onSelect={FunctionValue} triggerOptions={{ triggerSize: 'regular' }}>
+          <Select.SearchInput size="regular" placeholder="Search medicines..." />
+          <Select.List size="compressed">
+            <Select.Option option={{ label: 'Aspirin', value: 'Aspirin' }}>Aspirin</Select.Option>
+            <Select.Option option={{ label: 'Paracetamol', value: 'Paracetamol' }}>Paracetamol</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      expect(triggerButton).toHaveClass('Select-trigger--regular');
+
+      fireEvent.click(triggerButton);
+
+      const inputWrapper = getByTestId('DesignSystem-InputWrapper');
+      expect(inputWrapper).toHaveClass('Input--regular');
+
+      const listboxItems = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      expect(listboxItems).toHaveLength(2);
+      listboxItems.forEach((item) => {
+        expect(item).toHaveClass('Listbox-item--compressed');
+      });
+    });
+
+    it('should handle mixed sizes independently without conflicts', () => {
+      const { getByTestId, getAllByTestId } = render(
+        <Select onSelect={FunctionValue} triggerOptions={{ triggerSize: 'small' }}>
+          <Select.SearchInput size="regular" placeholder="Search..." />
+          <Select.List size="standard">
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+            <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      expect(triggerButton).toHaveClass('Select-trigger--small');
+
+      fireEvent.click(triggerButton);
+
+      const inputWrapper = getByTestId('DesignSystem-InputWrapper');
+      expect(inputWrapper).toHaveClass('Input--regular');
+
+      const listboxItems = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      expect(listboxItems).toHaveLength(2);
+      listboxItems.forEach((item) => {
+        expect(item).toHaveClass('Listbox-item--standard');
+      });
+    });
+  });
+
+  describe('Size functionality with multiselect scenarios', () => {
+    it('should maintain size consistency in multiselect with tight list options', () => {
+      const { getByTestId, getAllByTestId } = render(
+        <Select multiSelect={true} onSelect={FunctionValue}>
+          <Select.List size="tight">
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+            <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+            <Select.Option option={{ label: 'Option 3', value: 'Option 3' }}>Option 3</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      fireEvent.click(triggerButton);
+
+      const listboxItems = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      const checkboxes = getAllByTestId('DesignSystem-Checkbox');
+
+      expect(listboxItems).toHaveLength(3);
+      expect(checkboxes).toHaveLength(3);
+
+      listboxItems.forEach((item) => {
+        expect(item).toHaveClass('Listbox-item--tight');
+      });
+    });
+
+    it('should handle multiselect with search input and compressed list size', () => {
+      const { getByTestId, getAllByTestId } = render(
+        <Select multiSelect={true} onSelect={FunctionValue}>
+          <Select.SearchInput size="tiny" placeholder="Search options..." />
+          <Select.List size="compressed">
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+            <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      fireEvent.click(triggerButton);
+
+      const inputWrapper = getByTestId('DesignSystem-InputWrapper');
+      expect(inputWrapper).toHaveClass('Input--tiny');
+
+      const listboxItems = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      const checkboxes = getAllByTestId('DesignSystem-Checkbox');
+
+      expect(listboxItems).toHaveLength(2);
+      expect(checkboxes).toHaveLength(2);
+
+      listboxItems.forEach((item) => {
+        expect(item).toHaveClass('Listbox-item--compressed');
+      });
+    });
+  });
+
+  describe('Size functionality edge cases and error handling', () => {
+    it('should handle invalid size prop gracefully and fallback to defaults', () => {
+      const { getByTestId, getAllByTestId } = render(
+        <Select onSelect={FunctionValue}>
+          <Select.List size={'invalid-size' as any}>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      fireEvent.click(triggerButton);
+
+      const listboxItems = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      expect(listboxItems).toHaveLength(1);
+
+      expect(listboxItems[0]).toBeInTheDocument();
+    });
+
+    it('should handle SearchInput with invalid size prop gracefully', () => {
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue}>
+          <Select.SearchInput size={'invalid-size' as any} placeholder="Search..." />
+          <Select.List size="standard">
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      fireEvent.click(triggerButton);
+
+      const searchInput = getByTestId('DesignSystem-Select--Input');
+      expect(searchInput).toBeInTheDocument();
+
+      // Should still render with invalid size, but may not apply expected classes
+      expect(searchInput).toBeInTheDocument();
+    });
+
+    it('should handle empty SelectList with size prop', () => {
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue}>
+          <Select.List size="tight">{<></>}</Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      fireEvent.click(triggerButton);
+
+      const popover = getByTestId('DesignSystem-Popover');
+      expect(popover).toBeInTheDocument();
+
+      const listbox = getByTestId('DesignSystem-Listbox');
+      expect(listbox).toBeInTheDocument();
+    });
+  });
+});

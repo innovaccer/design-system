@@ -177,7 +177,7 @@ exports[`Chip component
         tabindex="0"
       >
         <i
-          class="material-symbols material-symbols-rounded Icon Icon--subtle p-2"
+          class="material-symbols material-symbols-rounded Icon Icon--subtle"
           data-test="DesignSystem-Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -227,7 +227,7 @@ exports[`Chip component
         tabindex="0"
       >
         <i
-          class="material-symbols material-symbols-rounded Icon Icon--primaryDark p-2"
+          class="material-symbols material-symbols-rounded Icon Icon--primaryDark"
           data-test="DesignSystem-Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -277,7 +277,7 @@ exports[`Chip component
         tabindex="-1"
       >
         <i
-          class="material-symbols material-symbols-rounded Icon Icon--subtle p-2"
+          class="material-symbols material-symbols-rounded Icon Icon--subtle"
           data-test="DesignSystem-Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -327,7 +327,7 @@ exports[`Chip component
         tabindex="-1"
       >
         <i
-          class="material-symbols material-symbols-rounded Icon Icon--primaryDark p-2"
+          class="material-symbols material-symbols-rounded Icon Icon--primaryDark"
           data-test="DesignSystem-Icon"
           role="button"
           style="font-size: 16px; width: 16px;"

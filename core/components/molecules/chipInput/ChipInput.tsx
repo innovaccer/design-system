@@ -20,6 +20,8 @@ type ChipOptions = {
   onClick?: (value: string, index: number) => void;
 };
 
+export type ChipInputSize = 'regular' | 'small';
+
 export interface ChipInputProps extends BaseProps {
   /**
    * Allows duplicate chips if set to true.
@@ -38,6 +40,10 @@ export interface ChipInputProps extends BaseProps {
    * </pre>
    */
   chipOptions: ChipOptions;
+  /**
+   * The size of the chip input.
+   */
+  size?: ChipInputSize;
   /**
    * Disables the chip input if set to true.
    */
@@ -84,6 +90,7 @@ export const ChipInput = (props: ChipInputProps) => {
   const {
     chipOptions,
     allowDuplicates,
+    size = 'regular',
     disabled,
     error,
     placeholder,
@@ -129,9 +136,27 @@ export const ChipInput = (props: ChipInputProps) => {
       [styles['ChipInput--disabled']]: disabled,
       [styles['ChipInput--withChips']]: chips && chips.length > 0,
       [styles['ChipInput--error']]: error,
+      [styles[`ChipInput--${size}`]]: size,
     },
     className
   );
+
+  const InputClass = classNames({
+    [styles['ChipInput-input']]: true,
+    [styles[`ChipInput-input--${size}`]]: size,
+    ['p-0']: true,
+  });
+
+  const ChipClass = classNames({
+    ['mr-3']: true,
+    ['my-2']: size === 'small',
+    ['my-3']: size === 'regular',
+  });
+
+  const IconClass = classNames({
+    [styles['ChipInput-icon']]: true,
+    [styles[`ChipInput-icon--${size}`]]: size,
+  });
 
   const onUpdateChips = (updatedChips: string[]) => {
     if (onChange) onChange(updatedChips);
@@ -231,15 +256,18 @@ export const ChipInput = (props: ChipInputProps) => {
         label={chip}
         name={chip}
         type={type}
+        size={size}
         disabled={disabled}
         key={index}
-        className="my-3 mx-2"
+        className={ChipClass}
         onClick={() => onClick && onClick(chip, index)}
         onClose={() => onChipDeleteHandler(index)}
         {...rest}
       />
     );
   });
+
+  const iconSize = size === 'small' ? 12 : 16;
 
   return (
     /* TODO(a11y): fix accessibility  */
@@ -257,7 +285,7 @@ export const ChipInput = (props: ChipInputProps) => {
           <input
             data-test="DesignSystem-ChipInput--Input"
             ref={inputRef}
-            className={styles['ChipInput-input']}
+            className={InputClass}
             autoFocus={autoFocus}
             placeholder={chips && chips.length > 0 ? '' : placeholder}
             disabled={disabled}
@@ -273,8 +301,9 @@ export const ChipInput = (props: ChipInputProps) => {
           <Icon
             data-test="DesignSystem-ChipInput--Icon"
             name="close"
+            size={iconSize}
             appearance={disabled ? 'disabled' : 'subtle'}
-            className={styles['ChipInput-icon']}
+            className={IconClass}
             onClick={onDeleteAllHandler}
             tabIndex={disabled ? -1 : 0}
           />

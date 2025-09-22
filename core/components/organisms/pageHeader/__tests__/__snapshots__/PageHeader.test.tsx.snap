@@ -59,7 +59,7 @@ exports[`Navigation component
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   role="button"
-                  style="font-size: 12px; width: 12px;"
+                  style="font-size: 14px; width: 14px;"
                 >
                   arrow_back
                 </i>
@@ -125,7 +125,7 @@ exports[`Navigation component
                 data-test="DesignSystem-StatusHint"
               >
                 <span
-                  class="StatusHint-icon StatusHint--default"
+                  class="StatusHint-icon StatusHint--default mr-4"
                   data-test="DesignSystem-StatusHint--Icon"
                 />
                 <span
@@ -371,7 +371,7 @@ exports[`Navigation component
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   role="button"
-                  style="font-size: 12px; width: 12px;"
+                  style="font-size: 14px; width: 14px;"
                 >
                   arrow_back
                 </i>
@@ -477,7 +477,7 @@ exports[`Navigation component
                 data-test="DesignSystem-StatusHint"
               >
                 <span
-                  class="StatusHint-icon StatusHint--default"
+                  class="StatusHint-icon StatusHint--default mr-4"
                   data-test="DesignSystem-StatusHint--Icon"
                 />
                 <span
@@ -688,7 +688,7 @@ exports[`Navigation component
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   role="button"
-                  style="font-size: 12px; width: 12px;"
+                  style="font-size: 14px; width: 14px;"
                 >
                   arrow_back
                 </i>
@@ -754,7 +754,7 @@ exports[`Navigation component
                 data-test="DesignSystem-StatusHint"
               >
                 <span
-                  class="StatusHint-icon StatusHint--default"
+                  class="StatusHint-icon StatusHint--default mr-4"
                   data-test="DesignSystem-StatusHint--Icon"
                 />
                 <span
@@ -1476,7 +1476,7 @@ exports[`Navigation component
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   role="button"
-                  style="font-size: 12px; width: 12px;"
+                  style="font-size: 14px; width: 14px;"
                 >
                   arrow_back
                 </i>
@@ -1574,7 +1574,7 @@ exports[`Navigation component
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   role="button"
-                  style="font-size: 12px; width: 12px;"
+                  style="font-size: 14px; width: 14px;"
                 >
                   arrow_back
                 </i>
@@ -1680,7 +1680,7 @@ exports[`Navigation component
                 data-test="DesignSystem-StatusHint"
               >
                 <span
-                  class="StatusHint-icon StatusHint--default"
+                  class="StatusHint-icon StatusHint--default mr-4"
                   data-test="DesignSystem-StatusHint--Icon"
                 />
                 <span
