@@ -1,3 +1,58 @@
+## 4.13.0 (2025-09-22)
+
+### Highlights
+
+- feat(editableChipInput): add small variant support in editableChipInput component (cbb07d28)
+- feat(chipInput): add small variant support in chipInput component (48b9b85d)
+- feat(select): add small variant support in select component (4c72ae07)
+- feat(chip): add small variant support in chip component (e7829052)
+- feat(button): add small variant support in button component (38052c54)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(editableChipInput): add small variant support in editableChipInput component (cbb07d28)
+- feat(chipInput): add small variant support in chipInput component (48b9b85d)
+- feat(select): add small variant support in select component (4c72ae07)
+- feat(chip): add small variant support in chip component (e7829052)
+- feat(editableInput): add small variant support in editableInput component (6e720070)
+- feat(menu): add small variant support in menu component (f3bace0c)
+- feat(textField): add small variant support in textField component (6a76f7aa)
+- feat(metricInput): add small variant support in metric input component (3fa029f7)
+- feat(input): add small variant support in input component (77730a3f)
+- feat(textarea): add small variant support in textarea component (508e2872)
+- feat(badge): add hover event support in badge component (10831bd1)
+- feat(statusHint): add new small variant support in status hint (0216d7b0)
+- feat(tooltip): add small size support in tooltip component (e0b4da4d)
+- feat(message): add small variant support in message (8d523382)
+- feat(button): add small variant support in button component (38052c54)
+- feat(label): add small variant support in label component (d29c11a8)
+
+### Fixes
+
+NA
+
+### Improvements
+
+- chore: add AGENTS.md file (fbc14017)
+
+### Documentation
+
+NA
+
+---
+
 ## 4.12.0 (2025-08-14)
 
 ### Highlights
