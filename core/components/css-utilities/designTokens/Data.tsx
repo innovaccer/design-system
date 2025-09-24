@@ -6,6 +6,7 @@ export const tokenColors = [
     { token: '--primary-light', value: '#4F9DE7' },
     { token: '--primary-lighter', value: '#97C5F0' },
     { token: '--primary-lightest', value: '#DCECF9' },
+    { token: '--primary-ultra-light', value: '#EEF6FC' },
     { token: '--primary-shadow', value: 'rgba(0, 112, 221, 0.16)' },
   ],
   [
@@ -15,6 +16,7 @@ export const tokenColors = [
     { token: '--alert-light', value: '#EB776C' },
     { token: '--alert-lighter', value: '#F7ADA5' },
     { token: '--alert-lightest', value: '#F9E2E2' },
+    { token: '--alert-ultra-light', value: '#FCF1F1' },
     { token: '--alert-shadow', value: 'rgba(217, 55, 55, 0.16)' },
   ],
   [
@@ -24,6 +26,7 @@ export const tokenColors = [
     { token: '--success-light', value: '#71C077' },
     { token: '--success-lighter', value: '#A5D8AA' },
     { token: '--success-lightest', value: '#D7EFDF' },
+    { token: '--success-ultra-light', value: '#ECF7F0' },
     { token: '--success-shadow', value: 'rgba(46, 168, 67, 0.16)' },
   ],
   [
@@ -33,6 +36,7 @@ export const tokenColors = [
     { token: '--warning-light', value: '#FFD462' },
     { token: '--warning-lighter', value: '#FFE597' },
     { token: '--warning-lightest', value: '#FFF5C7' },
+    { token: '--warning-ultra-light', value: '#FFFAE4' },
     { token: '--warning-shadow', value: 'rgba(255, 194, 8, 0.16)' },
   ],
   [
@@ -55,6 +59,7 @@ export const tokenColors = [
     { token: '--accent1-light', value: '#FEAC5F' },
     { token: '--accent1-lighter', value: '#FFC998' },
     { token: '--accent1-lightest', value: '#FDE6CE' },
+    { token: '--accent1-ultra-light', value: '#FEF3E7' },
     { token: '--accent1-shadow', value: 'rgba(240, 125, 0, 0.16)' },
   ],
   [
@@ -64,6 +69,7 @@ export const tokenColors = [
     { token: '--accent2-light', value: '#9D7EC6' },
     { token: '--accent2-lighter', value: '#BFAADA' },
     { token: '--accent2-lightest', value: '#E0D8EE' },
+    { token: '--accent2-ultra-light', value: '#F0ECF7' },
     { token: '--accent2-shadow', value: 'rgba(122, 83, 178, 0.16)' },
   ],
   [
@@ -73,6 +79,7 @@ export const tokenColors = [
     { token: '--accent3-light', value: '#7583E1' },
     { token: '--accent3-lighter', value: '#ABB4ED' },
     { token: '--accent3-lightest', value: '#E2E5F9' },
+    { token: '--accent3-ultra-light', value: '#F1F3FC' },
     { token: '--accent3-shadow', value: 'rgba(61, 81, 212, 0.16)' },
   ],
   [
@@ -82,6 +89,7 @@ export const tokenColors = [
     { token: '--accent4-light', value: '#A6D763' },
     { token: '--accent4-lighter', value: '#C6E599' },
     { token: '--accent4-lightest', value: '#E3F3CE' },
+    { token: '--accent4-ultra-light', value: '#F2F9E7' },
     { token: '--accent4-shadow', value: 'rgba(130, 201, 30, 0.16)' },
   ],
   [{ token: '--white', value: '#FFFFFF', setBgColor: true }],

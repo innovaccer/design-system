@@ -70,6 +70,16 @@
   --accent4-lightest: var(--nimbu-lightest);
   --inverse-lightest: var(--night-lightest);
 
+  /* Ultra Light */
+  --primary-ultra-light: #eef6fc;
+  --success-ultra-light: #ecf7f0;
+  --alert-ultra-light: #fcf1f1;
+  --warning-ultra-light: #fffae4;
+  --accent1-ultra-light: #fef3e7;
+  --accent2-ultra-light: #f0ecf7;
+  --accent3-ultra-light: #f1f3fc;
+  --accent4-ultra-light: #f2f9e7;
+
   /* shadow */
   --primary-shadow: color-mod(var(--primary) a(var(--opacity-4)));
   --secondary-shadow: color-mod(var(--secondary) a(var(--opacity-4)));
