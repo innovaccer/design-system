@@ -1,3 +1,40 @@
+## 4.14.0 (2025-09-30)
+
+### Highlights
+
+- feat(tokens): add ultra light tokens in the css (967398fa)
+- fix(metricInput): fix metric input arrowbutton while ESM build (3de747c6)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(tokens): add ultra light tokens in the css (967398fa)
+
+### Fixes
+
+- fix(metricInput): fix metric input arrowbutton while ESM build (3de747c6)
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 4.13.0 (2025-09-22)
 
 ### Highlights
