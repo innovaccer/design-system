@@ -208,7 +208,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
   });
 
   const arrowIconsClass = classNames({
-    [styles['MetricInput-arrowIcons']]: true,
+    [paginationStyles['MetricInput-arrowIcons']]: true,
     [styles[`MetricInput-arrowIcons--${size}`]]: size,
     ['ml-3']: showActionButton && !suffix,
   });
