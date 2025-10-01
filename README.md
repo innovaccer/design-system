@@ -182,6 +182,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/aman2000verma"><img src="https://avatars.githubusercontent.com/u/45339091?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Aman Verma</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=aman2000verma" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/samyak3009"><img src="https://avatars.githubusercontent.com/u/56395892?v=4?s=100" width="100px;" alt=""/><br /><sub><b>SAMYAK JAIN</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=samyak3009" title="Code">💻</a></td>
   </tr>
+  <tr>
+    <td align="center" valign="top" width="14.28%"><a href="https://github.com/abhishekjha209"><img src="https://avatars.githubusercontent.com/u/71664104?v=4?s=100" width="100px;" alt="Abhishek Jha"/><br /><sub><b>Abhishek Jha</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=abhishekjha209" title="Code">💻</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-restore -->

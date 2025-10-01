@@ -17,6 +17,7 @@ export { ChipGroup } from './components/atoms/chipGroup';
 export { Checkbox } from './components/atoms/checkbox';
 export { Column } from './components/atoms/column';
 export { DatePicker } from './components/organisms/datePicker';
+export { DocumentPreview } from './components/organisms/documentPreview';
 export { TimePicker } from './components/organisms/timePicker';
 export { Dropdown } from './components/atoms/dropdown';
 export { Heading } from './components/atoms/heading';
