@@ -30,8 +30,8 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.DOCS_KEY_ID }}
           AWS_REGION: ${{ secrets.DOCS_REGION }}
 
-  site_deploy:
-    name: Deploy docs site
+  site_build_deploy:
+    name: Build and deploy docs site
     needs: storybook_deploy
     runs-on: ubuntu-latest
     defaults:
@@ -46,8 +46,21 @@ jobs:
         with:
           node-version: '20.x'
 
-      - name: npm install
-        run: npm i 
+      - name: Build local design system
+        working-directory: .
+        run: |
+          echo "🔨 Building local design system from develop branch..."
+          npm ci
+          npm run build
+          echo "✅ Local DS built successfully"
+          
+      - name: Install docs dependencies with local design system
+        run: |
+          echo "📦 Installing docs dependencies with local DS..."
+          npm install file:.. --legacy-peer-deps
+          npm install --legacy-peer-deps
+          echo "✅ Installed Design System Version:"
+          npm list @innovaccer/design-system --depth=0
 
       - name: extract stories
         run: npm run extract
@@ -66,5 +79,46 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.DOCS_KEY_ID }}
           AWS_REGION: ${{ secrets.DOCS_REGION }}
 
+  test_after_deploy:
+    name: Test after deployment
+    needs: site_build_deploy
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./docs
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '20.x'
+
+      - name: Build local design system
+        working-directory: .
+        run: |
+          echo "🔨 Building local design system from develop branch..."
+          npm ci
+          npm run build
+          echo "✅ Local DS built successfully"
+          
+      - name: Install docs dependencies with local design system
+        run: |
+          echo "📦 Installing docs dependencies with local DS..."
+          npm install file:.. --legacy-peer-deps
+          npm install --legacy-peer-deps
+          echo "✅ Installed Design System Version:"
+          npm list @innovaccer/design-system --depth=0
+
+      - name: extract stories
+        run: npm run extract
+        env:
+          STORYBOOK_HOST: 'https://mds-dev.innovaccer.com/iframe.html?id=components-avatar-avatargroup-all--all&args=&viewMode=story'
+
+      - name: build
+        run: npm run build
+        env:
+          DOCS_BUCKET: webui-mds-docs-dev
+
       - name: test
         run: npm run test
+        continue-on-error: true

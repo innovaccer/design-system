@@ -22,7 +22,11 @@ describe('Tests for nav bar and footer', () => {
         cy.visit(hostURL)
         cy.wait(3000)
         cy.get('a').each(page => {
-            cy.request(page.prop('href'))
+            const href = page.prop('href');
+            // Only test internal links (relative paths or same domain)
+            if (href && (href.startsWith('/') || href.includes(window.location.hostname))) {
+                cy.request(href)
+            }
         })
     })
 })

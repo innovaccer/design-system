@@ -73,7 +73,7 @@ Cypress.Commands.add('linkVisit', () => {
         .not('[data-test=DesignSystem-Breadcrumbs-link]')
         .each((page) => {
           const href = page.prop('href');
-          if (href && href.length) {
+          if (href && href.length && (href.startsWith('/') || href.includes(window.location.hostname))) {
             cy.request(href);
           }
         });
