@@ -265,3 +265,121 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/* outlined button styles */
+
+.Button-outlined--basic {
+  border: var(--border);
+  color: var(--inverse);
+  background: transparent;
+}
+
+.Button-outlined--basic:hover {
+  background: var(--secondary-lighter);
+  border: var(--border-width-2-5) solid var(--inverse-lightest);
+}
+
+.Button-outlined--basic:active {
+  background: var(--secondary);
+  border: var(--border-width-2-5) solid var(--inverse-lightest);
+}
+
+.Button-outlined--basic:focus {
+  border: var(--border-width-2-5) solid var(--primary);
+  box-shadow: var(--shadow-spread) var(--primary-shadow);
+}
+
+.Button-outlined--basic:disabled {
+  color: var(--inverse-lightest);
+  background: transparent;
+  border: var(--border-width-2-5) solid var(--secondary);
+}
+
+.Button-outlined--selected {
+  background: var(--primary-ultra-light);
+  color: var(--primary-dark);
+  border: var(--border-width-2-5) solid var(--primary-lighter);
+}
+
+.Button-outlined--selected:hover {
+  background: var(--primary-lightest);
+  border: var(--border-width-2-5) solid var(--primary-lighter);
+}
+
+.Button-outlined--selected:active {
+  background: var(--primary-lighter);
+  color: var(--primary-darker);
+  border: var(--border-width-2-5) solid var(--primary);
+}
+
+.Button-outlined--selected:focus {
+  color: var(--primary-dark);
+  border: var(--border-width-2-5) solid var(--primary);
+  box-shadow: var(--shadow-spread) var(--primary-shadow);
+}
+
+.Button-outlined--selected:disabled {
+  background: var(--primary-ultra-light);
+  color: var(--primary-lighter);
+  border: var(--border-width-2-5) solid var(--primary-lightest);
+}
+
+.Button-outlined--primary {
+  background: transparent;
+  border: var(--border-width-2-5) solid var(--primary);
+  color: var(--primary);
+  mix-blend-mode: multiply;
+}
+
+.Button-outlined--primary:hover {
+  background: var(--primary-ultra-light);
+  border: var(--border-width-2-5) solid var(--primary-dark);
+  color: var(--primary-dark);
+}
+
+.Button-outlined--primary:active {
+  background: var(--primary-lightest);
+  border: var(--border-width-2-5) solid var(--primary-dark);
+  color: var(--primary-dark);
+}
+
+.Button-outlined--primary:focus {
+  border: var(--border-width-2-5) solid var(--primary);
+  box-shadow: var(--shadow-spread) var(--primary-shadow);
+}
+
+.Button-outlined--primary:disabled {
+  background: transparent;
+  color: var(--primary-lighter);
+  border: var(--border-width-2-5) solid var(--primary-lighter);
+}
+
+.Button-outlined--alert {
+  background: transparent;
+  border: var(--border-width-2-5) solid var(--alert);
+  color: var(--alert);
+  mix-blend-mode: multiply;
+}
+
+.Button-outlined--alert:hover {
+  background: var(--alert-ultra-light);
+  border: var(--border-width-2-5) solid var(--alert-dark);
+  color: var(--alert-dark);
+}
+
+.Button-outlined--alert:active {
+  background: var(--alert-lightest);
+  border: var(--border-width-2-5) solid var(--alert-dark);
+  color: var(--alert-dark);
+}
+
+.Button-outlined--alert:focus {
+  border: var(--border-width-2-5) solid var(--alert);
+  box-shadow: var(--shadow-spread) var(--alert-shadow);
+}
+
+.Button-outlined--alert:disabled {
+  background: transparent;
+  color: var(--alert-lighter);
+  border: var(--border-width-2-5) solid var(--alert-lighter);
+}

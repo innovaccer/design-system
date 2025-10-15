@@ -359,3 +359,146 @@ describe('Button component with Icon', () => {
     expect(getByTestId('DesignSystem-Button--Icon-Wrapper')).not.toHaveClass('Button-regularIcon--right');
   });
 });
+
+describe('Button component with styleType prop', () => {
+  describe('Outlined buttons - CSS class generation', () => {
+    it('should apply outlined class for basic appearance', () => {
+      const { getByTestId } = render(
+        <Button appearance="basic" styleType="outlined">
+          Button
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button')).toHaveClass('Button-outlined--basic');
+    });
+
+    it('should apply outlined class for primary appearance', () => {
+      const { getByTestId } = render(
+        <Button appearance="primary" styleType="outlined">
+          Button
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button')).toHaveClass('Button-outlined--primary');
+    });
+
+    it('should apply outlined class for alert appearance', () => {
+      const { getByTestId } = render(
+        <Button appearance="alert" styleType="outlined">
+          Button
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button')).toHaveClass('Button-outlined--alert');
+    });
+
+    it('should NOT apply outlined class for transparent appearance (restriction)', () => {
+      const { getByTestId } = render(
+        <Button appearance="transparent" styleType="outlined">
+          Button
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button')).toHaveClass('Button--transparent');
+      expect(getByTestId('DesignSystem-Button')).not.toHaveClass('Button-outlined--transparent');
+    });
+  });
+
+  describe('Filled buttons - backward compatibility', () => {
+    it('should apply filled class when styleType is not provided (default)', () => {
+      const { getByTestId } = render(<Button appearance="primary">Button</Button>);
+      expect(getByTestId('DesignSystem-Button')).toHaveClass('Button--primary');
+    });
+
+    it('should apply filled class when styleType is explicitly filled', () => {
+      const { getByTestId } = render(
+        <Button appearance="primary" styleType="filled">
+          Button
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button')).toHaveClass('Button--primary');
+    });
+  });
+
+  describe('Selected state with styleType', () => {
+    it('should apply outlined selected class for basic outlined button', () => {
+      const { getByTestId } = render(
+        <Button appearance="basic" styleType="outlined" selected={true}>
+          Button
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button')).toHaveClass('Button-outlined--selected');
+    });
+
+    it('should apply filled selected class for basic filled button', () => {
+      const { getByTestId } = render(
+        <Button appearance="basic" selected={true}>
+          Button
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button')).toHaveClass('Button--selected');
+    });
+
+    it('should apply filled selected class for transparent button (cannot be outlined)', () => {
+      const { getByTestId } = render(
+        <Button appearance="transparent" styleType="outlined" selected={true}>
+          Button
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button')).toHaveClass('Button--selected');
+      expect(getByTestId('DesignSystem-Button')).not.toHaveClass('Button-outlined--selected');
+    });
+
+    it('should NOT apply selected class for non-basic/transparent appearances', () => {
+      const { getByTestId } = render(
+        <Button appearance="primary" styleType="outlined" selected={true}>
+          Button
+        </Button>
+      );
+      expect(getByTestId('DesignSystem-Button')).not.toHaveClass('Button--selected');
+      expect(getByTestId('DesignSystem-Button')).not.toHaveClass('Button-outlined--selected');
+    });
+  });
+
+  describe('Spinner appearance with styleType', () => {
+    it('should use secondary spinner for outlined basic button', () => {
+      const { getByTestId } = render(
+        <Button appearance="basic" styleType="outlined" loading={true}>
+          Button
+        </Button>
+      );
+      const spinner = getByTestId('DesignSystem-Button--Spinner');
+      const circle = spinner.querySelector('circle');
+      expect(circle).toHaveClass('Circle--secondary');
+    });
+
+    it('should use alert spinner for outlined alert button', () => {
+      const { getByTestId } = render(
+        <Button appearance="alert" styleType="outlined" loading={true}>
+          Button
+        </Button>
+      );
+      const spinner = getByTestId('DesignSystem-Button--Spinner');
+      const circle = spinner.querySelector('circle');
+      expect(circle).toHaveClass('Circle--alert');
+    });
+
+    it('should use primary spinner for outlined primary button', () => {
+      const { getByTestId } = render(
+        <Button appearance="primary" styleType="outlined" loading={true}>
+          Button
+        </Button>
+      );
+      const spinner = getByTestId('DesignSystem-Button--Spinner');
+      const circle = spinner.querySelector('circle');
+      expect(circle).toHaveClass('Circle--primary');
+    });
+
+    it('should use white spinner for filled primary button (backward compatibility)', () => {
+      const { getByTestId } = render(
+        <Button appearance="primary" loading={true}>
+          Button
+        </Button>
+      );
+      const spinner = getByTestId('DesignSystem-Button--Spinner');
+      const circle = spinner.querySelector('circle');
+      expect(circle).toHaveClass('Circle--white');
+    });
+  });
+});
