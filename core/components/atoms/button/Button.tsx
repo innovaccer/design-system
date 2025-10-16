@@ -9,6 +9,7 @@ export type ButtonType = 'button' | 'submit' | 'reset';
 export type ButtonAppearance = 'basic' | 'primary' | 'success' | 'alert' | 'transparent';
 export type ButtonSize = 'tiny' | 'regular' | 'large';
 export type ButtonAlignment = 'left' | 'right';
+export type ButtonStyleType = 'filled' | 'outlined';
 
 export interface ButtonProps extends BaseProps, BaseHtmlProps<HTMLButtonElement> {
   /**
@@ -28,6 +29,11 @@ export interface ButtonProps extends BaseProps, BaseHtmlProps<HTMLButtonElement>
    * @default "basic"
    */
   appearance?: ButtonAppearance;
+  /**
+   * Style type of the `Button`
+   * @default "filled"
+   */
+  styleType?: ButtonStyleType;
   /**
    * Disables the `Button`, making it unable to be pressed
    */
@@ -108,6 +114,7 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
   const {
     size = 'regular',
     appearance = 'basic',
+    styleType = 'filled',
     iconAlign = 'left',
     tabIndex = 0,
     largeIcon,
@@ -124,14 +131,33 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
     ...rest
   } = props;
 
+  const isOutlined = styleType === 'outlined' && appearance !== 'transparent';
+  const isBasicOrTransparent = appearance === 'basic' || appearance === 'transparent';
+
+  const appearanceClass = isOutlined ? `Button-outlined--${appearance}` : `Button--${appearance}`;
+
+  const getSpinnerAppearance = () => {
+    if (isOutlined) {
+      if (appearance === 'basic') return 'secondary';
+      if (appearance === 'alert') return 'alert';
+      return 'primary';
+    }
+    return isBasicOrTransparent ? 'secondary' : 'white';
+  };
+
+  const spinnerAppearance = getSpinnerAppearance();
+
+  const selectedClass =
+    selected && isBasicOrTransparent ? (isOutlined ? 'Button-outlined--selected' : 'Button--selected') : '';
+
   const buttonClass = classNames(
     {
       [styles['Button']]: true,
       [styles['Button--expanded']]: expanded,
       [styles[`Button--${size}`]]: size,
       [styles[`Button--${size}Square`]]: !children,
-      [styles[`Button--${appearance}`]]: appearance,
-      [styles['Button--selected']]: selected && (appearance === 'basic' || appearance === 'transparent'),
+      [styles[appearanceClass]]: appearance,
+      [styles[selectedClass]]: selectedClass !== '',
       [styles[`Button--iconAlign-${iconAlign}`]]: children && iconAlign,
     },
     className
@@ -165,7 +191,7 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
         <>
           <Spinner
             size={spinnerSize}
-            appearance={appearance === 'basic' || appearance === 'transparent' ? 'secondary' : 'white'}
+            appearance={spinnerAppearance}
             data-test="DesignSystem-Button--Spinner"
             className={styles['Button-spinner']}
           />
