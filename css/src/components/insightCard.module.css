@@ -1,0 +1,126 @@
+/* Base insights card */
+.insightsCard {
+  position: relative;
+}
+
+/* Size variants */
+.insightsCard--regular {
+  /* Default size styling */
+}
+
+.insightsCard--large {
+  /* Larger size styling */
+}
+
+/* Appearance variants */
+.insightsCard--default {
+  /* Default appearance */
+}
+
+.insightsCard--bordered {
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
+}
+
+.insightsCard--elevated {
+  box-shadow: var(--shadow-m);
+  border-radius: var(--border-radius);
+}
+
+/* Gradient border styling */
+.insightsCard-border {
+  background: linear-gradient(90deg, var(--tawak-light) 0%, #ff1f88 48%, #e31c79 100%);
+  padding: 2px;
+  border-radius: 10px;
+}
+
+.insightsCard-border .inner-content {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+/* Category title styling */
+.insightCard-title {
+  color: var(--text-subtle);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Insight item base styling */
+.insightCard-item {
+  padding: var(--spacing-xs) 0;
+  margin: var(--spacing-xs) 0;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  transition: all var(--motion-duration-moderate) var(--motion-easing-standard);
+}
+
+.insightCard-item:hover {
+  background-color: var(--secondary-lightest);
+}
+
+.insightCard-item--selected {
+  /* Selected state handled via inline styles for dynamic colors */
+}
+
+/* Size variants for insight items */
+.insightCard-item--regular {
+  padding: var(--spacing-xs) 0;
+}
+
+.insightCard-item--large {
+  padding: var(--spacing-s) 0;
+}
+
+/* Base insights container */
+.insights-container {
+  /* Base styling for all insights containers */
+  overflow: visible;
+}
+
+/* Scrollable insights container */
+.insights-scrollable-container {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: var(--spacing-xs);
+}
+
+.insights-scrollable-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.insights-scrollable-container::-webkit-scrollbar-track {
+  background: var(--secondary-lightest);
+  border-radius: 3px;
+}
+
+.insights-scrollable-container::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 3px;
+}
+
+.insights-scrollable-container::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-dark);
+}
+
+/* Button subtle styling */
+.insightCard--subtle {
+  color: var(--inverse-lighter);
+  transition: color var(--motion-duration-moderate) var(--motion-easing-standard);
+}
+
+.insightCard--subtle:hover {
+  color: var(--inverse-light);
+}
+
+.insightCard--subtle:active {
+  color: var(--inverse);
+}
+
+/* Selected insight button styling */
+.insightCard--selected {
+  transition: all var(--motion-duration-moderate) var(--motion-easing-standard);
+}
+
+.insightCard--selected:hover {
+  opacity: 0.8;
+}
