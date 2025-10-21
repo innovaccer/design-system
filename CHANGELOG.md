@@ -1,3 +1,40 @@
+## 4.15.0 (2025-10-21)
+
+### Highlights
+
+- feat(button): add outlined styleType in existing button (15ef566b)
+- test: update CI to test deployed site with latest DS (16af6a7b)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(button): add outlined styleType in existing button (15ef566b)
+
+### Fixes
+
+NA
+
+### Improvements
+
+- test: update CI to test deployed site with latest DS (16af6a7b)
+
+### Documentation
+
+NA
+
+---
+
 ## 4.14.0 (2025-09-30)
 
 ### Highlights
