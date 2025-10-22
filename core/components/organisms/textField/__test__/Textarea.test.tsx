@@ -280,6 +280,47 @@ describe('TextField Component', () => {
     const searchError = getByTestId('DesignSystem-InlineMessage--Icon');
     expect(searchError).toBeInTheDocument();
   });
+
+  test('shows error when input text is shorter than the minimum characters', () => {
+    const onChangeMock = jest.fn();
+    const { getByTestId } = render(
+      <TextField
+        label="Test Label"
+        name="test-name"
+        placeholder="Test Placeholder"
+        helpText="here is the helptext"
+        min={5}
+        onChange={onChangeMock}
+      />
+    );
+
+    const input = screen.getByPlaceholderText('Test Placeholder');
+    fireEvent.change(input, { target: { value: 'abc' } });
+
+    const searchError = getByTestId('DesignSystem-InlineMessage--Icon');
+    expect(searchError).toBeInTheDocument();
+  });
+
+  test('shows error when textarea text is shorter than the minimum characters', () => {
+    const onChangeMock = jest.fn();
+    const { getByTestId } = render(
+      <TextField
+        label="Test Label"
+        name="test-name"
+        placeholder="Test Placeholder"
+        helpText="here is the helptext"
+        withTextarea={true}
+        minLength={5}
+        onChange={onChangeMock}
+      />
+    );
+
+    const textarea = screen.getByPlaceholderText('Test Placeholder');
+    fireEvent.change(textarea, { target: { value: 'abc' } });
+
+    const searchError = getByTestId('DesignSystem-InlineMessage--Icon');
+    expect(searchError).toBeInTheDocument();
+  });
 });
 
 describe('TextField Components - Size Functionality Tests', () => {
