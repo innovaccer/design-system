@@ -20,7 +20,20 @@ export interface TextFieldWithInputProps extends BaseProps {
 export type TextFieldInputProps = TextFieldWithInputProps & InputProps;
 
 export const TextFieldWithInput = (props: TextFieldInputProps) => {
-  const { label, minWidth, required, error, onChange, value = '', max = 200, helpText = ' ', size = 'regular' } = props;
+  const {
+    label,
+    minWidth,
+    required,
+    error,
+    onChange,
+    value = '',
+    max = 200,
+    helpText = ' ',
+    size = 'regular',
+    min,
+    minLength,
+    type = 'text',
+  } = props;
 
   const [inputText, setInputText] = React.useState<string>(value);
 
@@ -29,7 +42,11 @@ export const TextFieldWithInput = (props: TextFieldInputProps) => {
     if (onChange) onChange(event);
   };
 
-  const inputError = error || inputText.length > max;
+  const minCharacterLimit =
+    minLength !== undefined ? minLength : typeof min === 'number' && type !== 'number' ? min : undefined;
+
+  const inputError =
+    error || inputText.length > max || (minCharacterLimit !== undefined && inputText.length < minCharacterLimit);
 
   const labelSize = size === 'tiny' ? 'small' : 'regular';
 
