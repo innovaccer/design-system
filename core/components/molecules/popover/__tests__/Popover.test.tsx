@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, fireEvent, cleanup } from '@testing-library/react';
+import { render, fireEvent, cleanup, act } from '@testing-library/react';
 import { Button, Popover } from '@/index';
 import { PopoverProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -119,6 +119,36 @@ describe('renders Popover component with prop: on', () => {
     fireEvent.mouseEnter(popoverTrigger);
 
     expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
+  });
+});
+
+describe('hover Popover interactions', () => {
+  it('keeps hover popover open when interacting with its content', () => {
+    jest.useFakeTimers();
+    try {
+      const onToggle = jest.fn();
+      const { getByTestId, queryByTestId } = render(
+        <Popover trigger={trigger} on="hover" hoverable={true} appendToBody={false} onToggle={onToggle}>
+          <button data-test="DesignSystem-PopoverContentButton">Content action</button>
+        </Popover>
+      );
+
+      const popoverTrigger = getByTestId('DesignSystem-PopoverTrigger');
+      fireEvent.mouseEnter(popoverTrigger);
+
+      const contentButton = getByTestId('DesignSystem-PopoverContentButton');
+      fireEvent.blur(popoverTrigger, { relatedTarget: contentButton });
+      fireEvent.click(contentButton);
+
+      act(() => {
+        jest.advanceTimersByTime(500);
+      });
+
+      expect(onToggle).not.toHaveBeenCalledWith(false, 'mouseLeave');
+      expect(queryByTestId('DesignSystem-Popover')).toBeInTheDocument();
+    } finally {
+      jest.useRealTimers();
+    }
   });
 });
 
