@@ -246,10 +246,18 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     }
   }
 
-  handleMouseLeave() {
+  handleMouseLeave(event?: React.MouseEvent<HTMLElement> | React.FocusEvent<HTMLElement>) {
     const { on } = this.props;
     if (on === 'hover') {
       const { hoverable, onToggle } = this.props;
+      const relatedTarget = (event?.relatedTarget as HTMLElement | null) || null;
+
+      if (
+        relatedTarget &&
+        (this.popupRef.current?.contains(relatedTarget) || this.triggerRef.current?.contains(relatedTarget))
+      ) {
+        return;
+      }
       if (hoverable) {
         this.mouseMoveHandler();
       } else {
