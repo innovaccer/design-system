@@ -19,7 +19,8 @@ export interface GridRowProps {
 export const GridRow = (props: GridRowProps) => {
   const context = React.useContext(GridContext);
 
-  const { type, onRowClick, loading, withCheckbox, nestedRows, checkboxAlignment, showNestedRowTrigger } = context;
+  const { type, onRowClick, loading, withCheckbox, nestedRows, checkboxAlignment, showNestedRowTrigger, sortingList } =
+    context;
 
   const { schema, data, rowIndex: rI, onSelect, className } = props;
 
@@ -41,7 +42,7 @@ export const GridRow = (props: GridRowProps) => {
     } else {
       setExpanded(_expandNestedRow || false);
     }
-  }, [_expandNestedRow]);
+  }, [_expandNestedRow, showNestedRowTrigger, sortingList]);
 
   const rowClasses = classNames(styles['Grid-row'], styles['Grid-row--body'], {
     [styles['Grid-row--selected']]: data._selected,
