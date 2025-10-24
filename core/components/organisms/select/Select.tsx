@@ -12,6 +12,8 @@ import SelectFooter from './SelectFooter';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { PopoverProps } from '@/index.type';
 
+export type SelectStyleType = 'filled' | 'outlined';
+
 export interface SelectProps extends BaseProps {
   /**
    * Whether multiple options can be selected.
@@ -36,6 +38,11 @@ export interface SelectProps extends BaseProps {
    */
   width?: number | string;
   /**
+   * Style type of the `Select`
+   * @default "filled"
+   */
+  styleType?: SelectStyleType;
+  /**
    * width of the popover by default it will be equal to the width of trigger.
    */
   popoverWidth?: number;
@@ -57,6 +64,11 @@ export interface SelectProps extends BaseProps {
    * </pre>
    */
   value?: OptionType | OptionType[];
+  /**
+   * Determines if `Select` has error
+   * @default false
+   */
+  error?: boolean;
   /**
    * BoundaryElement for `Popover`
    */
@@ -142,6 +154,8 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     popoverWidth,
     trigger,
     onToggle,
+    styleType = 'filled',
+    error = false,
   } = props;
 
   const [openPopover, setOpenPopover] = React.useState(false);
@@ -269,6 +283,8 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     setFocusedOption,
     setHighlightFirstItem,
     setHighlightLastItem,
+    styleType,
+    error,
   };
 
   return (
@@ -307,6 +323,7 @@ Select.displayName = 'Select';
 Select.defaultProps = {
   maxHeight: 256,
   width: 176,
+  styleType: 'filled',
 };
 
 Select.Option = SelectOption;

@@ -85,6 +85,8 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     setHighlightLastItem,
     triggerRef,
     width,
+    styleType,
+    error,
   } = contextProp;
 
   const buttonDisabled = disabled ? 'disabled' : 'default';
@@ -111,8 +113,11 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     [selectStyles['Select-trigger']]: true,
     [selectStyles[`Select-trigger--${triggerSize}`]]: triggerSize,
     [selectStyles['Select-trigger--placeholder']]: !isOptionSelected,
+    [selectStyles[`Select-trigger--${styleType}Placeholder`]]: !isOptionSelected && !!styleType,
     [selectStyles['Select-trigger--icon']]: icon,
-    [selectStyles['Select-trigger--open']]: openPopover,
+    [selectStyles[`Select-trigger--${styleType}Open`]]: openPopover && !!styleType,
+    [selectStyles[`Select-trigger--${styleType}`]]: !!styleType,
+    [selectStyles['Select-trigger--error']]: !!error,
   });
 
   const textClass = classNames({
