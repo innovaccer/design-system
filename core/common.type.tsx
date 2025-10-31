@@ -127,3 +127,5 @@ export type TEmptyStateSize = 'standard' | 'compressed' | 'tight' | 'large' | 's
 export type TTabSize = 'regular' | 'small';
 
 export type TChipSize = 'regular' | 'small';
+
+export type SelectStyleType = 'filled' | 'outlined';
