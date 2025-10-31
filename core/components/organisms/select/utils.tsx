@@ -10,6 +10,9 @@ export const mapInitialValue = (multiSelect: boolean, selectedValue: OptionType 
 };
 
 export const elementExist = (targetObject: OptionType, mainList: OptionType | OptionType[] | undefined) => {
+  if (!targetObject || !targetObject.label) {
+    return -1;
+  }
   if (!Array.isArray(mainList)) {
     return targetObject.label === mainList?.label ? 0 : -1;
   }
