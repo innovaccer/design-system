@@ -21,33 +21,71 @@
   justify-content: space-between;
   padding-top: unset;
   padding-bottom: unset;
-  background: var(--secondary-light);
-  color: var(--text);
   transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
-.Select-trigger:disabled {
+.Select-trigger--filled {
+  background: var(--secondary-light);
+  color: var(--text);
+}
+
+.Select-trigger--filled:disabled {
   background: var(--secondary-lighter);
   color: var(--text-disabled);
   pointer-events: none;
 }
 
-.Select-trigger:active,
-.Select-trigger--open {
+.Select-trigger--filled:active,
+.Select-trigger--filledOpen {
   background-color: var(--secondary-dark) !important;
   color: var(--text) !important;
   animation-timing-function: cubic-bezier(0, 0, 0.38, 0.9);
   animation-duration: 120ms;
 }
 
-.Select-trigger:hover {
+.Select-trigger--filled:hover {
   background: var(--secondary);
   color: var(--text);
 }
 
-.Select-trigger:focus {
+.Select-trigger--filled:focus {
+  border: var(--border-width-2-5) solid var(--primary);
   background-color: var(--secondary-light);
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+  box-shadow: var(--shadow-spread) var(--primary-shadow);
+}
+
+/* styleType Outlined */
+
+.Select-trigger--outlined {
+  background: var(--white);
+  color: var(--text);
+  border: var(--border);
+}
+
+.Select-trigger--outlined:hover {
+  background: var(--secondary-lighter);
+  color: var(--inverse);
+  border: var(--border-width-2-5) solid var(--secondary-dark);
+}
+
+.Select-trigger--outlined:focus {
+  border: var(--border-width-2-5) solid var(--primary);
+  box-shadow: var(--shadow-spread) var(--primary-shadow);
+}
+
+.Select-trigger--outlined:active,
+.Select-trigger--outlinedOpen {
+  color: var(--inverse) !important;
+  background: var(--secondary) !important;
+  border: var(--border-width-2-5) solid var(--inverse-lightest) !important;
+  animation-timing-function: var(--entrance-productive-curve);
+  animation-duration: var(--duration--fast-02);
+}
+
+.Select-trigger--outlined:disabled {
+  color: var(--inverse-lightest) !important;
+  background: var(--secondary-lightest) !important;
+  border: var(--border-width-2-5) solid var(--secondary-lighter) !important;
 }
 
 .Select-inputWrapper {
@@ -91,8 +129,12 @@
   padding-left: var(--spacing-30);
 }
 
-.Select-trigger--placeholder {
+.Select-trigger--filledPlaceholder {
   color: var(--text);
+}
+
+.Select-trigger--outlinedPlaceholder {
+  color: var(--inverse-lighter);
 }
 
 .Select-trigger--icon {
@@ -156,4 +198,9 @@
   font-size: var(--font-size-s);
   line-height: var(--font-height-s);
   font-weight: var(--font-weight-medium);
+}
+
+.Select-trigger--error {
+  border: var(--border-width-2-5) solid var(--alert) !important;
+  box-shadow: var(--shadow-spread) var(--alert-shadow);
 }

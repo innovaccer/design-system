@@ -84,10 +84,10 @@ Select trigger comes in 2 sizes - small and regular.
 
 ### States
 
-#### Button States
-The custom button comes in 5 states - default, hover, focus, active and disabled.
+#### Select Trigger
+The select trigger comes in 6 states - default, hover, focus, active, error and disabled.
 
-![Button states](./images/select-1.png)
+![Select states](./images/select-trigger.png)
 
 <br />
 
@@ -98,6 +98,25 @@ Option items come in 5 states - default, hover, active, focus and disabled. In a
 **Note:** Users can also use the up/down arrow key to traverse the options. 
 
 ![Option item states](./images/select-2.png)
+
+<br />
+<br />
+
+### StyleType
+
+The select trigger comes in **2 Style Types** - Fill & Outline.
+It’s recommended to use Fill and Outline selects based on visual emphasis.
+Their prominence shifts with the background — what draws attention in one setup may fade in another.
+- A Fill Select (like grey) stands out clearly on white but blends into grey surfaces.
+- An Outline Select (like white) pops nicely on grey but softens on white.
+
+#### Fill
+
+<Preview name="components-select-styletype-filled--filled" />
+
+#### Outline
+
+<Preview name="components-select-styletype-outlined--outlined" />
 
 <br />
 <br />
@@ -216,6 +235,16 @@ Select is made up of 2 key components - a custom **button** which acts as a trig
       <td>Inline label <br /> (optional)</td>
       <td>&#60;label&#62;</td>
       <td>-</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>StyleType</td>
+      <td>
+        <ul>
+          <li>Fill</li>
+          <li>Outline</li>
+        </ul>
+      </td>
+      <td>Fill</td>
     </tr>
   </tbody>
 </table>
