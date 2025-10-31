@@ -181,7 +181,7 @@ interface PopoverTriggerProps {
 }
 
 export const PopoverTrigger = React.forwardRef<HTMLElement, React.HTMLProps<HTMLElement> & PopoverTriggerProps>(
-  function PopoverTrigger({ children, asChild = false, ...props }, propRef) {
+  function PopoverTrigger({ children, asChild = false, triggerClass, ...props }, propRef) {
     const context = usePopoverContext();
     const childrenRef = (children as any).ref;
     const ref = useMergeRefs([context.refs.setReference, propRef, childrenRef]);
@@ -204,7 +204,7 @@ export const PopoverTrigger = React.forwardRef<HTMLElement, React.HTMLProps<HTML
     };
 
     if (asChild) {
-      return <div className={props.triggerClass}>{getClonedElement()}</div>;
+      return <div className={triggerClass}>{getClonedElement()}</div>;
     }
 
     return (
@@ -232,33 +232,36 @@ export const PopoverContent = React.forwardRef<HTMLDivElement, React.HTMLProps<H
 
   const { isMounted, styles, portalRoot, appendToBody } = context;
 
-  const boundaryElement = appendToBody && document ? document.body : portalRoot;
+  const boundaryElement = appendToBody !== false && document ? document.body : portalRoot;
 
   const isValidPosition = context.x !== 0 && context.y !== 0;
   const showVisibility =
     context.middlewareData.hide?.referenceHidden || context.middlewareData.hide?.escaped || !isValidPosition;
 
-  return (
-    <FloatingPortal root={boundaryElement}>
-      {isMounted && (
-        // <FloatingFocusManager context={floatingContext}
-        // // modal={context.modal}
-        // initialFocus={-1}>
-        <div
-          ref={ref}
-          style={{
-            ...context.floatingStyles,
-            ...style,
-            visibility: showVisibility ? 'hidden' : 'visible',
-          }}
-          {...context.getFloatingProps(props)}
-        >
-          <div style={styles}>{props.children}</div>
-        </div>
-        // </FloatingFocusManager>
-      )}
-    </FloatingPortal>
+  const content = isMounted && (
+    // <FloatingFocusManager context={floatingContext}
+    // // modal={context.modal}
+    // initialFocus={-1}>
+    <div
+      ref={ref}
+      style={{
+        ...context.floatingStyles,
+        ...style,
+        visibility: showVisibility ? 'hidden' : 'visible',
+      }}
+      {...context.getFloatingProps(props)}
+    >
+      <div style={styles}>{props.children}</div>
+    </div>
+    // </FloatingFocusManager>
   );
+
+  // If appendToBody is explicitly false and no portalRoot is provided, don't use portal
+  if (appendToBody === false && !portalRoot) {
+    return content;
+  }
+
+  return <FloatingPortal root={boundaryElement}>{content}</FloatingPortal>;
 });
 
 export default PopperWrapper;
