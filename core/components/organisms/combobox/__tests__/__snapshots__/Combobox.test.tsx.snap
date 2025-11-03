@@ -15,7 +15,6 @@ exports[`Combobox component snapshots
             aria-haspopup="dialog"
             class="d-block"
             data-state="closed"
-            triggerclass="d-block"
           >
             <div
               class="Input Input--large"
@@ -63,7 +62,6 @@ exports[`Combobox component snapshots
             aria-haspopup="dialog"
             class="d-block"
             data-state="closed"
-            triggerclass="d-block"
           >
             <div
               class="Input Input--regular"
@@ -111,7 +109,6 @@ exports[`Combobox component snapshots
             aria-haspopup="dialog"
             class="d-block"
             data-state="closed"
-            triggerclass="d-block"
           >
             <div
               class="Input Input--tiny"
@@ -159,7 +156,6 @@ exports[`Combobox component snapshots
             aria-haspopup="dialog"
             class="d-block"
             data-state="closed"
-            triggerclass="d-block"
           >
             <div
               class="ChipInput-border"
@@ -215,7 +211,6 @@ exports[`Combobox component snapshots
             aria-haspopup="dialog"
             class="d-block"
             data-state="closed"
-            triggerclass="d-block"
           >
             <div
               class="ChipInput-border"
@@ -271,7 +266,6 @@ exports[`Combobox component snapshots
             aria-haspopup="dialog"
             class="d-block"
             data-state="closed"
-            triggerclass="d-block"
           >
             <div
               class="ChipInput-border"

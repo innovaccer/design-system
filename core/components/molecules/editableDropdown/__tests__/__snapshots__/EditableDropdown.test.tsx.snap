@@ -27,7 +27,6 @@ exports[`EditableDropdown component
               aria-haspopup="dialog"
               class="w-100"
               data-state="closed"
-              triggerclass="w-100"
             >
               <button
                 class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"

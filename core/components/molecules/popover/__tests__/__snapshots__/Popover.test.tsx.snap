@@ -6,7 +6,7 @@ exports[`Popover component
 <DocumentFragment>
   <div>
     <div
-      aria-controls=":rr:"
+      aria-controls=":ri:"
       aria-expanded="true"
       aria-haspopup="dialog"
       data-state="open"
@@ -22,6 +22,23 @@ exports[`Popover component
           Open Popup
         </span>
       </button>
+    </div>
+  </div>
+  <div
+    class="Popover"
+    data-floating-ui-focusable=""
+    data-layer="true"
+    data-opened="true"
+    data-test="DesignSystem-Popover"
+    id=":ri:"
+    role="dialog"
+    style="position: absolute; left: 0px; top: 0px; visibility: hidden; transform: translate(0px, 0px);"
+    tabindex="-1"
+  >
+    <div
+      style="opacity: 0;"
+    >
+      Popover
     </div>
   </div>
 </DocumentFragment>
@@ -59,7 +76,7 @@ exports[`Popover component
 <DocumentFragment>
   <div>
     <div
-      aria-controls=":rl:"
+      aria-controls=":re:"
       aria-expanded="true"
       aria-haspopup="dialog"
       data-state="open"
@@ -75,6 +92,23 @@ exports[`Popover component
           Open Popup
         </span>
       </button>
+    </div>
+  </div>
+  <div
+    class="Popover Popover--dark"
+    data-floating-ui-focusable=""
+    data-layer="true"
+    data-opened="true"
+    data-test="DesignSystem-Popover"
+    id=":re:"
+    role="dialog"
+    style="position: absolute; left: 0px; top: 0px; visibility: hidden; transform: translate(0px, 0px);"
+    tabindex="-1"
+  >
+    <div
+      style="opacity: 0;"
+    >
+      Popover
     </div>
   </div>
 </DocumentFragment>
@@ -112,7 +146,7 @@ exports[`Popover component
 <DocumentFragment>
   <div>
     <div
-      aria-controls=":r9:"
+      aria-controls=":r6:"
       aria-expanded="true"
       aria-haspopup="dialog"
       data-state="open"
@@ -128,6 +162,23 @@ exports[`Popover component
           Open Popup
         </span>
       </button>
+    </div>
+  </div>
+  <div
+    class="Popover"
+    data-floating-ui-focusable=""
+    data-layer="true"
+    data-opened="true"
+    data-test="DesignSystem-Popover"
+    id=":r6:"
+    role="dialog"
+    style="position: absolute; left: 0px; top: 0px; visibility: hidden; transform: translate(0px, 0px);"
+    tabindex="-1"
+  >
+    <div
+      style="opacity: 0;"
+    >
+      Popover
     </div>
   </div>
 </DocumentFragment>
@@ -139,7 +190,7 @@ exports[`Popover component
 <DocumentFragment>
   <div>
     <div
-      aria-controls=":rf:"
+      aria-controls=":ra:"
       aria-expanded="true"
       aria-haspopup="dialog"
       data-state="open"
@@ -157,6 +208,23 @@ exports[`Popover component
       </button>
     </div>
   </div>
+  <div
+    class="Popover"
+    data-floating-ui-focusable=""
+    data-layer="true"
+    data-opened="true"
+    data-test="DesignSystem-Popover"
+    id=":ra:"
+    role="dialog"
+    style="position: absolute; left: 0px; top: 0px; visibility: hidden; transform: translate(0px, 0px);"
+    tabindex="-1"
+  >
+    <div
+      style="opacity: 0;"
+    >
+      Popover
+    </div>
+  </div>
 </DocumentFragment>
 `;
 
@@ -166,7 +234,7 @@ exports[`Popover component
 <DocumentFragment>
   <div>
     <div
-      aria-controls=":rc:"
+      aria-controls=":r8:"
       aria-expanded="true"
       aria-haspopup="dialog"
       data-state="open"
@@ -182,6 +250,23 @@ exports[`Popover component
           Open Popup
         </span>
       </button>
+    </div>
+  </div>
+  <div
+    class="Popover"
+    data-floating-ui-focusable=""
+    data-layer="true"
+    data-opened="true"
+    data-test="DesignSystem-Popover"
+    id=":r8:"
+    role="dialog"
+    style="position: absolute; left: 0px; top: 0px; visibility: hidden; transform: translate(0px, 0px);"
+    tabindex="-1"
+  >
+    <div
+      style="opacity: 0;"
+    >
+      Popover
     </div>
   </div>
 </DocumentFragment>
@@ -211,6 +296,23 @@ exports[`Popover component
       </button>
     </div>
   </div>
+  <div
+    class="Popover"
+    data-floating-ui-focusable=""
+    data-layer="true"
+    data-opened="true"
+    data-test="DesignSystem-Popover"
+    id=":r0:"
+    role="dialog"
+    style="position: absolute; left: 0px; top: 0px; visibility: hidden; transform: translate(0px, 0px);"
+    tabindex="-1"
+  >
+    <div
+      style="opacity: 0;"
+    >
+      Popover
+    </div>
+  </div>
 </DocumentFragment>
 `;
 
@@ -220,7 +322,7 @@ exports[`Popover component
 <DocumentFragment>
   <div>
     <div
-      aria-controls=":r6:"
+      aria-controls=":r4:"
       aria-expanded="true"
       aria-haspopup="dialog"
       data-state="open"
@@ -238,6 +340,23 @@ exports[`Popover component
       </button>
     </div>
   </div>
+  <div
+    class="Popover"
+    data-floating-ui-focusable=""
+    data-layer="true"
+    data-opened="true"
+    data-test="DesignSystem-Popover"
+    id=":r4:"
+    role="dialog"
+    style="position: absolute; left: 0px; top: 0px; visibility: hidden; transform: translate(0px, 0px);"
+    tabindex="-1"
+  >
+    <div
+      style="opacity: 0;"
+    >
+      Popover
+    </div>
+  </div>
 </DocumentFragment>
 `;
 
@@ -247,7 +366,7 @@ exports[`Popover component
 <DocumentFragment>
   <div>
     <div
-      aria-controls=":r3:"
+      aria-controls=":r2:"
       aria-expanded="true"
       aria-haspopup="dialog"
       data-state="open"
@@ -263,6 +382,23 @@ exports[`Popover component
           Open Popup
         </span>
       </button>
+    </div>
+  </div>
+  <div
+    class="Popover"
+    data-floating-ui-focusable=""
+    data-layer="true"
+    data-opened="true"
+    data-test="DesignSystem-Popover"
+    id=":r2:"
+    role="dialog"
+    style="position: absolute; left: 0px; top: 0px; visibility: hidden; transform: translate(0px, 0px);"
+    tabindex="-1"
+  >
+    <div
+      style="opacity: 0;"
+    >
+      Popover
     </div>
   </div>
 </DocumentFragment>

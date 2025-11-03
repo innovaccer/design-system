@@ -27,7 +27,6 @@ exports[`AvatarGroup component snapshot
                 aria-haspopup="dialog"
                 class="flex-grow-0"
                 data-state="closed"
-                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -69,7 +68,6 @@ exports[`AvatarGroup component snapshot
                 aria-haspopup="dialog"
                 class="flex-grow-0"
                 data-state="closed"
-                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -127,7 +125,6 @@ exports[`AvatarGroup component snapshot
               aria-haspopup="dialog"
               class="flex-grow-0"
               data-state="closed"
-              triggerclass="flex-grow-0"
             >
               <span
                 class=""
@@ -169,7 +166,6 @@ exports[`AvatarGroup component snapshot
               aria-haspopup="dialog"
               class="flex-grow-0"
               data-state="closed"
-              triggerclass="flex-grow-0"
             >
               <span
                 class=""
@@ -278,7 +274,6 @@ exports[`AvatarGroup component snapshot
                 aria-haspopup="dialog"
                 class="flex-grow-0"
                 data-state="closed"
-                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -320,7 +315,6 @@ exports[`AvatarGroup component snapshot
                 aria-haspopup="dialog"
                 class="flex-grow-0"
                 data-state="closed"
-                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -378,7 +372,6 @@ exports[`AvatarGroup component snapshot
               aria-haspopup="dialog"
               class="flex-grow-0"
               data-state="closed"
-              triggerclass="flex-grow-0"
             >
               <span
                 class=""
@@ -420,7 +413,6 @@ exports[`AvatarGroup component snapshot
               aria-haspopup="dialog"
               class="flex-grow-0"
               data-state="closed"
-              triggerclass="flex-grow-0"
             >
               <span
                 class=""
@@ -529,7 +521,6 @@ exports[`AvatarGroup component snapshot
                 aria-haspopup="dialog"
                 class="flex-grow-0"
                 data-state="closed"
-                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -571,7 +562,6 @@ exports[`AvatarGroup component snapshot
                 aria-haspopup="dialog"
                 class="flex-grow-0"
                 data-state="closed"
-                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -629,7 +619,6 @@ exports[`AvatarGroup component snapshot
               aria-haspopup="dialog"
               class="flex-grow-0"
               data-state="closed"
-              triggerclass="flex-grow-0"
             >
               <span
                 class=""
@@ -671,7 +660,6 @@ exports[`AvatarGroup component snapshot
               aria-haspopup="dialog"
               class="flex-grow-0"
               data-state="closed"
-              triggerclass="flex-grow-0"
             >
               <span
                 class=""
@@ -780,7 +768,6 @@ exports[`AvatarGroup component snapshot
                 aria-haspopup="dialog"
                 class="flex-grow-0"
                 data-state="closed"
-                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -822,7 +809,6 @@ exports[`AvatarGroup component snapshot
                 aria-haspopup="dialog"
                 class="flex-grow-0"
                 data-state="closed"
-                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -880,7 +866,6 @@ exports[`AvatarGroup component snapshot
               aria-haspopup="dialog"
               class="flex-grow-0"
               data-state="closed"
-              triggerclass="flex-grow-0"
             >
               <span
                 class=""
@@ -922,7 +907,6 @@ exports[`AvatarGroup component snapshot
               aria-haspopup="dialog"
               class="flex-grow-0"
               data-state="closed"
-              triggerclass="flex-grow-0"
             >
               <span
                 class=""
