@@ -7,7 +7,7 @@ import { Popover, OutsideClick } from '@/index';
 import SelectTrigger, { SelectTriggerProps } from './SelectTrigger';
 import SearchInput from './SearchInput';
 import SelectEmptyTemplate from './SelectEmptyTemplate';
-import { focusListItem, mapInitialValue } from './utils';
+import { focusListItem, mapInitialValue, isValueEqual } from './utils';
 import SelectFooter from './SelectFooter';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { PopoverProps } from '@/index.type';
@@ -168,6 +168,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
 
   const triggerRef = React.createRef<HTMLButtonElement>();
   const listRef = React.useRef<HTMLDivElement | null>(null);
+  const prevValueRef = React.useRef<OptionType | OptionType[] | undefined>(value);
 
   const [withSearch, setWithSearch] = React.useState(false);
 
@@ -237,9 +238,13 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
   }, [highlightLastItem]);
 
   React.useEffect(() => {
-    if (value) {
-      setSelectValue(value);
-      setIsOptionSelected(Array.isArray(value) ? value.length > 0 : value && 'value' in value);
+    // Only update if the value has actually changed (deep comparison)
+    if (!isValueEqual(prevValueRef.current, value)) {
+      prevValueRef.current = value;
+      if (value) {
+        setSelectValue(value);
+        setIsOptionSelected(Array.isArray(value) ? value.length > 0 : value && 'value' in value);
+      }
     }
   }, [value]);
 

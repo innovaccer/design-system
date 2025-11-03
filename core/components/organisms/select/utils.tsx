@@ -9,6 +9,32 @@ export const mapInitialValue = (multiSelect: boolean, selectedValue: OptionType 
   }
 };
 
+export const isValueEqual = (
+  value1: OptionType | OptionType[] | undefined,
+  value2: OptionType | OptionType[] | undefined
+): boolean => {
+  // Both undefined or null
+  if (!value1 && !value2) return true;
+  if (!value1 || !value2) return false;
+
+  // Both are arrays
+  if (Array.isArray(value1) && Array.isArray(value2)) {
+    if (value1.length !== value2.length) return false;
+    return value1.every((item, index) => {
+      const item2 = value2[index];
+      return item.label === item2.label && item.value === item2.value;
+    });
+  }
+
+  // Both are single objects
+  if (!Array.isArray(value1) && !Array.isArray(value2)) {
+    return value1.label === value2.label && value1.value === value2.value;
+  }
+
+  // One is array, other is not
+  return false;
+};
+
 export const elementExist = (targetObject: OptionType, mainList: OptionType | OptionType[] | undefined) => {
   if (!targetObject || !targetObject.label) {
     return -1;
