@@ -1,3 +1,39 @@
+## 4.16.0 (2025-11-03)
+
+### Highlights
+
+- feat(select): add outlined styleType in select (b88c025d)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(select): add outlined styleType in select (b88c025d)
+
+### Fixes
+
+NA
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 4.15.0 (2025-10-21)
 
 ### Highlights
