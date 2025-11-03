@@ -113,8 +113,8 @@ export const Tooltip = (props: TooltipProps) => {
     elementRef || !React.isValidElement(children)
       ? children
       : React.cloneElement(children as React.ReactElement<any>, {
-        ref: childrenRef,
-      });
+          ref: childrenRef,
+        });
 
   if (!showTooltip) {
     // If showTooltip is false skip the Popover and return the children directly

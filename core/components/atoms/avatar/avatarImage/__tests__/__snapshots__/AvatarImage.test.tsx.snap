@@ -18,7 +18,6 @@ exports[`Avatar Image component
             aria-haspopup="dialog"
             class="flex-grow-0"
             data-state="closed"
-            triggerclass="flex-grow-0"
           >
             <span
               class=""

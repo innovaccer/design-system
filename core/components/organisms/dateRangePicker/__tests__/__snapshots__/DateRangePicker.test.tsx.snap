@@ -39956,7 +39956,6 @@ exports[`DateRangePicker component
         aria-haspopup="dialog"
         class="w-100"
         data-state="closed"
-        triggerclass="w-100"
       >
         <div
           class="Row"
@@ -40110,7 +40109,6 @@ exports[`DateRangePicker component
         aria-haspopup="dialog"
         class="w-100"
         data-state="closed"
-        triggerclass="w-100"
       >
         <div
           class="Row"
@@ -40264,7 +40262,6 @@ exports[`DateRangePicker component
         aria-haspopup="dialog"
         class="w-100"
         data-state="closed"
-        triggerclass="w-100"
       >
         <div
           class="Row"
@@ -41503,7 +41500,6 @@ exports[`DateRangePicker component
         aria-haspopup="dialog"
         class="w-100"
         data-state="closed"
-        triggerclass="w-100"
       >
         <div
           class="Row"
@@ -41657,7 +41653,6 @@ exports[`DateRangePicker component
         aria-haspopup="dialog"
         class="w-100"
         data-state="closed"
-        triggerclass="w-100"
       >
         <div
           class="Row"
@@ -41811,7 +41806,6 @@ exports[`DateRangePicker component
         aria-haspopup="dialog"
         class="w-100"
         data-state="closed"
-        triggerclass="w-100"
       >
         <div
           class="Row"
@@ -43051,7 +43045,6 @@ exports[`DateRangePicker component
         aria-haspopup="dialog"
         class="w-100"
         data-state="open"
-        triggerclass="w-100"
       >
         <div
           class="Row"
@@ -44203,7 +44196,6 @@ exports[`DateRangePicker component
         aria-haspopup="dialog"
         class="w-100"
         data-state="open"
-        triggerclass="w-100"
       >
         <div
           class="Row"
@@ -45355,7 +45347,6 @@ exports[`DateRangePicker component
         aria-haspopup="dialog"
         class="w-100"
         data-state="open"
-        triggerclass="w-100"
       >
         <div
           class="Row"
@@ -47592,7 +47583,6 @@ exports[`DateRangePicker component
         aria-haspopup="dialog"
         class="w-100"
         data-state="open"
-        triggerclass="w-100"
       >
         <div
           class="Row"
@@ -48744,7 +48734,6 @@ exports[`DateRangePicker component
         aria-haspopup="dialog"
         class="w-100"
         data-state="open"
-        triggerclass="w-100"
       >
         <div
           class="Row"
@@ -49896,7 +49885,6 @@ exports[`DateRangePicker component
         aria-haspopup="dialog"
         class="w-100"
         data-state="open"
-        triggerclass="w-100"
       >
         <div
           class="Row"

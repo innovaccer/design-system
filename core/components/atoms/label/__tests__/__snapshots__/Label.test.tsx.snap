@@ -102,7 +102,6 @@ exports[`Label component - info prop tests
             aria-haspopup="dialog"
             class="w-fit-content"
             data-state="closed"
-            triggerclass="w-fit-content"
           >
             <i
               class="material-symbols material-symbols-rounded Icon Icon--subtle ml-3 cursor-pointer d-flex align-items-center"
@@ -146,7 +145,6 @@ exports[`Label component - info prop tests
             aria-haspopup="dialog"
             class="w-fit-content"
             data-state="closed"
-            triggerclass="w-fit-content"
           >
             <i
               class="material-symbols material-symbols-rounded Icon Icon--subtle ml-3 cursor-pointer d-flex align-items-center"
@@ -190,7 +188,6 @@ exports[`Label component - info prop tests
             aria-haspopup="dialog"
             class="w-fit-content"
             data-state="closed"
-            triggerclass="w-fit-content"
           >
             <i
               class="material-symbols material-symbols-rounded Icon Icon--subtle ml-3 cursor-pointer d-flex align-items-center"
@@ -230,6 +227,24 @@ exports[`Label component - size prop snapshot tests renders correctly with size=
 </body>
 `;
 
+exports[`Label component - size prop snapshot tests renders correctly with size="default" 2`] = `
+<body>
+  <div>
+    <div
+      class="Label"
+      data-test="DesignSystem-Label"
+    >
+      <label
+        class="Label-text"
+        data-test="DesignSystem-Label--Text"
+      >
+        Default Label
+      </label>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`Label component - size prop snapshot tests renders correctly with size="regular" 1`] = `
 <body>
   <div>
@@ -248,7 +263,43 @@ exports[`Label component - size prop snapshot tests renders correctly with size=
 </body>
 `;
 
+exports[`Label component - size prop snapshot tests renders correctly with size="regular" 2`] = `
+<body>
+  <div>
+    <div
+      class="Label"
+      data-test="DesignSystem-Label"
+    >
+      <label
+        class="Label-text"
+        data-test="DesignSystem-Label--Text"
+      >
+        Regular Label
+      </label>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`Label component - size prop snapshot tests renders correctly with size="small" 1`] = `
+<body>
+  <div>
+    <div
+      class="Label"
+      data-test="DesignSystem-Label"
+    >
+      <label
+        class="Label-text Label--small"
+        data-test="DesignSystem-Label--Text"
+      >
+        Small Label
+      </label>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Label component - size prop snapshot tests renders correctly with size="small" 2`] = `
 <body>
   <div>
     <div
@@ -290,7 +341,6 @@ exports[`Label component - size prop snapshot tests renders correctly with size=
             aria-haspopup="dialog"
             class="w-fit-content"
             data-state="closed"
-            triggerclass="w-fit-content"
           >
             <i
               class="material-symbols material-symbols-rounded Icon Icon--subtle ml-3 cursor-pointer d-flex align-items-center"
@@ -307,7 +357,52 @@ exports[`Label component - size prop snapshot tests renders correctly with size=
   </div>
   <div
     data-floating-ui-portal=""
-    id=":r1l:"
+    id=":r13:"
+  />
+</body>
+`;
+
+exports[`Label component - size prop snapshot tests renders correctly with size="small" and all props 2`] = `
+<body>
+  <div>
+    <div
+      class="Label Label--withInput Label--optional"
+      data-test="DesignSystem-Label"
+    >
+      <label
+        class="Label-text Label--disabled Label--small"
+        data-test="DesignSystem-Label--Text"
+      >
+        Complex Small Label
+        <span
+          class="Label-requiredIndicator"
+          data-test="DesignSystem-Label--RequiredIndicator"
+        />
+        <div
+          class="w-fit-content"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            class="w-fit-content"
+            data-state="closed"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle ml-3 cursor-pointer d-flex align-items-center"
+              data-test="DesignSystem-Label--Info"
+              role="button"
+              style="font-size: 12px; width: 12px;"
+            >
+              info
+            </i>
+          </div>
+        </div>
+      </label>
+    </div>
+  </div>
+  <div
+    data-floating-ui-portal=""
+    id=":r2d:"
   />
 </body>
 `;
@@ -336,7 +431,53 @@ exports[`Label component - size prop snapshot tests renders correctly with size=
 </body>
 `;
 
+exports[`Label component - size prop snapshot tests renders correctly with size="small" and optional 2`] = `
+<body>
+  <div>
+    <div
+      class="Label Label--optional"
+      data-test="DesignSystem-Label"
+    >
+      <label
+        class="Label-text Label--small"
+        data-test="DesignSystem-Label--Text"
+      >
+        Small Optional Label
+        <span
+          class="Text Text--subtle Text--regular Label-optionalText Label-optionalText--small"
+          data-test="DesignSystem-Label--OptionalText"
+        >
+          (optional)
+        </span>
+      </label>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`Label component - size prop snapshot tests renders correctly with size="small" and required 1`] = `
+<body>
+  <div>
+    <div
+      class="Label"
+      data-test="DesignSystem-Label"
+    >
+      <label
+        class="Label-text Label--small"
+        data-test="DesignSystem-Label--Text"
+      >
+        Small Required Label
+        <span
+          class="Label-requiredIndicator"
+          data-test="DesignSystem-Label--RequiredIndicator"
+        />
+      </label>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Label component - size prop snapshot tests renders correctly with size="small" and required 2`] = `
 <body>
   <div>
     <div

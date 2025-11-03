@@ -226,7 +226,6 @@ exports[`Modal component
                 aria-haspopup="dialog"
                 class="w-fit-content"
                 data-state="closed"
-                triggerclass="w-fit-content"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -404,7 +403,6 @@ exports[`Modal component
                   aria-haspopup="dialog"
                   class="w-fit-content"
                   data-state="closed"
-                  triggerclass="w-fit-content"
                 >
                   <button
                     class="Button Button--regular Button--regularSquare Button--transparent"
@@ -595,7 +593,6 @@ exports[`Modal component
                 aria-haspopup="dialog"
                 class="w-fit-content"
                 data-state="closed"
-                triggerclass="w-fit-content"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -765,7 +762,6 @@ exports[`Modal component
                   aria-haspopup="dialog"
                   class="w-fit-content"
                   data-state="closed"
-                  triggerclass="w-fit-content"
                 >
                   <button
                     class="Button Button--regular Button--regularSquare Button--transparent"
@@ -1098,7 +1094,6 @@ exports[`Modal component
                 aria-haspopup="dialog"
                 class="w-fit-content"
                 data-state="closed"
-                triggerclass="w-fit-content"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -1276,7 +1271,6 @@ exports[`Modal component
                   aria-haspopup="dialog"
                   class="w-fit-content"
                   data-state="closed"
-                  triggerclass="w-fit-content"
                 >
                   <button
                     class="Button Button--regular Button--regularSquare Button--transparent"
@@ -1467,7 +1461,6 @@ exports[`Modal component
                 aria-haspopup="dialog"
                 class="w-fit-content"
                 data-state="closed"
-                triggerclass="w-fit-content"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -1637,7 +1630,6 @@ exports[`Modal component
                   aria-haspopup="dialog"
                   class="w-fit-content"
                   data-state="closed"
-                  triggerclass="w-fit-content"
                 >
                   <button
                     class="Button Button--regular Button--regularSquare Button--transparent"
@@ -1970,7 +1962,6 @@ exports[`Modal component
                 aria-haspopup="dialog"
                 class="w-fit-content"
                 data-state="closed"
-                triggerclass="w-fit-content"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -2148,7 +2139,6 @@ exports[`Modal component
                   aria-haspopup="dialog"
                   class="w-fit-content"
                   data-state="closed"
-                  triggerclass="w-fit-content"
                 >
                   <button
                     class="Button Button--regular Button--regularSquare Button--transparent"
@@ -2339,7 +2329,6 @@ exports[`Modal component
                 aria-haspopup="dialog"
                 class="w-fit-content"
                 data-state="closed"
-                triggerclass="w-fit-content"
               >
                 <button
                   class="Button Button--regular Button--regularSquare Button--transparent"
@@ -2509,7 +2498,6 @@ exports[`Modal component
                   aria-haspopup="dialog"
                   class="w-fit-content"
                   data-state="closed"
-                  triggerclass="w-fit-content"
                 >
                   <button
                     class="Button Button--regular Button--regularSquare Button--transparent"

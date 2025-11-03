@@ -20,7 +20,7 @@ export type GenericChipProps = {
   onClick?: () => void;
   iconType?: IconType;
   name: Name;
-  maxWidth: string | number;
+  maxWidth?: string | number;
   size?: TChipSize;
 } & BaseProps;
 

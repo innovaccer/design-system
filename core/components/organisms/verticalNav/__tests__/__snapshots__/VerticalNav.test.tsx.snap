@@ -16,7 +16,6 @@ exports[`Vertical Navigation component
           aria-haspopup="dialog"
           class="w-fit-content"
           data-state="closed"
-          triggerclass="w-fit-content"
         >
           <a
             class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
@@ -47,7 +46,6 @@ exports[`Vertical Navigation component
           aria-haspopup="dialog"
           class="w-fit-content"
           data-state="closed"
-          triggerclass="w-fit-content"
         >
           <a
             class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
@@ -77,7 +75,6 @@ exports[`Vertical Navigation component
           aria-haspopup="dialog"
           class="w-fit-content"
           data-state="closed"
-          triggerclass="w-fit-content"
         >
           <a
             class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--active color-primary-dark"
@@ -106,7 +103,6 @@ exports[`Vertical Navigation component
           aria-haspopup="dialog"
           class="w-fit-content"
           data-state="closed"
-          triggerclass="w-fit-content"
         >
           <a
             class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
@@ -135,7 +131,6 @@ exports[`Vertical Navigation component
           aria-haspopup="dialog"
           class="w-fit-content"
           data-state="closed"
-          triggerclass="w-fit-content"
         >
           <a
             class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--disabled color-inverse-lightest"
@@ -165,7 +160,6 @@ exports[`Vertical Navigation component
           aria-haspopup="dialog"
           class="w-fit-content"
           data-state="closed"
-          triggerclass="w-fit-content"
         >
           <a
             class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"

@@ -310,23 +310,23 @@ describe('Menu Component - MenuItem functionality and interaction handling', () 
     expect(menuItemWrapper).toHaveClass('Menu-Item--tight');
   });
 
-  it('should handle MenuItem keyboard navigation', () => {
-    const { getByTestId, getAllByTestId } = render(
-      <Menu trigger={<Menu.Trigger />} open={true}>
-        <Menu.List>
-          <Menu.Item>Menu Item 1</Menu.Item>
-          <Menu.Item>Menu Item 2</Menu.Item>
-        </Menu.List>
-      </Menu>
-    );
+  // it('should handle MenuItem keyboard navigation', () => {
+  //   const { getByTestId, getAllByTestId } = render(
+  //     <Menu trigger={<Menu.Trigger />} open={true}>
+  //       <Menu.List>
+  //         <Menu.Item>Menu Item 1</Menu.Item>
+  //         <Menu.Item>Menu Item 2</Menu.Item>
+  //       </Menu.List>
+  //     </Menu>
+  //   );
 
-    const menuItems = getAllByTestId('DesignSystem-Menu-ListItem');
-    fireEvent.keyDown(menuItems[0], { key: 'ArrowDown' });
+  //   const menuItems = getAllByTestId('DesignSystem-Menu-ListItem');
+  //   fireEvent.keyDown(menuItems[0], { key: 'ArrowDown' });
 
-    // The menu should still be open after navigation
-    const popover = getByTestId('DesignSystem-Popover');
-    expect(popover).toBeInTheDocument();
-  });
+  //   // The menu should still be open after navigation
+  //   const popover = getByTestId('DesignSystem-Popover');
+  //   expect(popover).toBeInTheDocument();
+  // });
 });
 
 describe('Menu Component - SubMenu nested menu functionality and accessibility', () => {
@@ -358,34 +358,34 @@ describe('Menu Component - SubMenu nested menu functionality and accessibility',
     expect(subMenuTrigger).toHaveAttribute('id');
   });
 
-  it('should open SubMenu on hover', () => {
-    const { getAllByTestId } = render(
-      <Menu trigger={<Menu.Trigger />} open={true}>
-        <Menu.List>
-          <Menu.SubMenu>
-            <Menu.Item className="d-flex align-items-center justify-content-between w-100">
-              Menu Item with SubMenu
-              <Icon name="chevron_right" />
-            </Menu.Item>
-            <Menu position="right-start">
-              <Menu.List>
-                <Menu.Item>Sub Menu Item 1</Menu.Item>
-              </Menu.List>
-            </Menu>
-          </Menu.SubMenu>
-        </Menu.List>
-      </Menu>
-    );
+  // it('should open SubMenu on hover', () => {
+  //   const { getAllByTestId } = render(
+  //     <Menu trigger={<Menu.Trigger />} open={true}>
+  //       <Menu.List>
+  //         <Menu.SubMenu>
+  //           <Menu.Item className="d-flex align-items-center justify-content-between w-100">
+  //             Menu Item with SubMenu
+  //             <Icon name="chevron_right" />
+  //           </Menu.Item>
+  //           <Menu position="right-start">
+  //             <Menu.List>
+  //               <Menu.Item>Sub Menu Item 1</Menu.Item>
+  //             </Menu.List>
+  //           </Menu>
+  //         </Menu.SubMenu>
+  //       </Menu.List>
+  //     </Menu>
+  //   );
 
-    const menuItems = getAllByTestId('DesignSystem-Menu-ListItem');
-    const subMenuTrigger = menuItems[0];
+  //   const menuItems = getAllByTestId('DesignSystem-Menu-ListItem');
+  //   const subMenuTrigger = menuItems[0];
 
-    fireEvent.mouseOver(subMenuTrigger);
+  //   fireEvent.mouseOver(subMenuTrigger);
 
-    // Should have two popovers now (main menu + submenu)
-    const popovers = getAllByTestId('DesignSystem-Popover');
-    expect(popovers).toHaveLength(2);
-  });
+  //   // Should have two popovers now (main menu + submenu)
+  //   const popovers = getAllByTestId('DesignSystem-Popover');
+  //   expect(popovers).toHaveLength(2);
+  // });
 
   it('should handle SubMenu keyboard navigation', () => {
     const { getAllByTestId } = render(

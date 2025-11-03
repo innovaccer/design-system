@@ -36,7 +36,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
           aria-haspopup="dialog"
           class="w-100"
           data-state="closed"
-          triggerclass="w-100"
         >
           <button
             class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -110,7 +109,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
           aria-haspopup="dialog"
           class="w-100"
           data-state="closed"
-          triggerclass="w-100"
         >
           <button
             class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--error"
@@ -196,7 +194,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
           aria-haspopup="dialog"
           class="w-100"
           data-state="closed"
-          triggerclass="w-100"
         >
           <button
             class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -278,7 +275,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
           aria-haspopup="dialog"
           class="w-100"
           data-state="closed"
-          triggerclass="w-100"
         >
           <button
             class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--error"
@@ -340,7 +336,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
           aria-haspopup="dialog"
           class="w-100"
           data-state="closed"
-          triggerclass="w-100"
         >
           <button
             class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -398,7 +393,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
           aria-haspopup="dialog"
           class="w-100"
           data-state="closed"
-          triggerclass="w-100"
         >
           <button
             class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--error"
@@ -468,7 +462,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
           aria-haspopup="dialog"
           class="w-100"
           data-state="closed"
-          triggerclass="w-100"
         >
           <button
             class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
@@ -534,7 +527,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
           aria-haspopup="dialog"
           class="w-100"
           data-state="closed"
-          triggerclass="w-100"
         >
           <button
             class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--error"

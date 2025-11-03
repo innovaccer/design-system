@@ -33,7 +33,6 @@ exports[`AvatarSelection component snapshot
                   aria-haspopup="dialog"
                   class="flex-grow-0"
                   data-state="closed"
-                  triggerclass="flex-grow-0"
                 >
                   <span
                     class=""
@@ -80,7 +79,6 @@ exports[`AvatarSelection component snapshot
                   aria-haspopup="dialog"
                   class="flex-grow-0"
                   data-state="closed"
-                  triggerclass="flex-grow-0"
                 >
                   <span
                     class=""
@@ -127,7 +125,6 @@ exports[`AvatarSelection component snapshot
                   aria-haspopup="dialog"
                   class="flex-grow-0"
                   data-state="closed"
-                  triggerclass="flex-grow-0"
                 >
                   <span
                     class=""
@@ -174,7 +171,6 @@ exports[`AvatarSelection component snapshot
                   aria-haspopup="dialog"
                   class="flex-grow-0"
                   data-state="closed"
-                  triggerclass="flex-grow-0"
                 >
                   <span
                     class=""
@@ -221,7 +217,6 @@ exports[`AvatarSelection component snapshot
                   aria-haspopup="dialog"
                   class="flex-grow-0"
                   data-state="closed"
-                  triggerclass="flex-grow-0"
                 >
                   <span
                     class=""
@@ -254,7 +249,6 @@ exports[`AvatarSelection component snapshot
             aria-haspopup="dialog"
             class="flex-grow-0"
             data-state="closed"
-            triggerclass="flex-grow-0"
           >
             <div
               aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -345,7 +339,6 @@ exports[`AvatarSelection component snapshot
                 aria-haspopup="dialog"
                 class="flex-grow-0"
                 data-state="closed"
-                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -392,7 +385,6 @@ exports[`AvatarSelection component snapshot
                 aria-haspopup="dialog"
                 class="flex-grow-0"
                 data-state="closed"
-                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -439,7 +431,6 @@ exports[`AvatarSelection component snapshot
                 aria-haspopup="dialog"
                 class="flex-grow-0"
                 data-state="closed"
-                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -486,7 +477,6 @@ exports[`AvatarSelection component snapshot
                 aria-haspopup="dialog"
                 class="flex-grow-0"
                 data-state="closed"
-                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -533,7 +523,6 @@ exports[`AvatarSelection component snapshot
                 aria-haspopup="dialog"
                 class="flex-grow-0"
                 data-state="closed"
-                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -566,7 +555,6 @@ exports[`AvatarSelection component snapshot
           aria-haspopup="dialog"
           class="flex-grow-0"
           data-state="closed"
-          triggerclass="flex-grow-0"
         >
           <div
             aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -692,7 +680,6 @@ exports[`AvatarSelection component snapshot
                   aria-haspopup="dialog"
                   class="flex-grow-0"
                   data-state="closed"
-                  triggerclass="flex-grow-0"
                 >
                   <span
                     class=""
@@ -739,7 +726,6 @@ exports[`AvatarSelection component snapshot
                   aria-haspopup="dialog"
                   class="flex-grow-0"
                   data-state="closed"
-                  triggerclass="flex-grow-0"
                 >
                   <span
                     class=""
@@ -786,7 +772,6 @@ exports[`AvatarSelection component snapshot
                   aria-haspopup="dialog"
                   class="flex-grow-0"
                   data-state="closed"
-                  triggerclass="flex-grow-0"
                 >
                   <span
                     class=""
@@ -833,7 +818,6 @@ exports[`AvatarSelection component snapshot
                   aria-haspopup="dialog"
                   class="flex-grow-0"
                   data-state="closed"
-                  triggerclass="flex-grow-0"
                 >
                   <span
                     class=""
@@ -880,7 +864,6 @@ exports[`AvatarSelection component snapshot
                   aria-haspopup="dialog"
                   class="flex-grow-0"
                   data-state="closed"
-                  triggerclass="flex-grow-0"
                 >
                   <span
                     class=""
@@ -913,7 +896,6 @@ exports[`AvatarSelection component snapshot
             aria-haspopup="dialog"
             class="flex-grow-0"
             data-state="closed"
-            triggerclass="flex-grow-0"
           >
             <div
               aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -1004,7 +986,6 @@ exports[`AvatarSelection component snapshot
                 aria-haspopup="dialog"
                 class="flex-grow-0"
                 data-state="closed"
-                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -1051,7 +1032,6 @@ exports[`AvatarSelection component snapshot
                 aria-haspopup="dialog"
                 class="flex-grow-0"
                 data-state="closed"
-                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -1098,7 +1078,6 @@ exports[`AvatarSelection component snapshot
                 aria-haspopup="dialog"
                 class="flex-grow-0"
                 data-state="closed"
-                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -1145,7 +1124,6 @@ exports[`AvatarSelection component snapshot
                 aria-haspopup="dialog"
                 class="flex-grow-0"
                 data-state="closed"
-                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -1192,7 +1170,6 @@ exports[`AvatarSelection component snapshot
                 aria-haspopup="dialog"
                 class="flex-grow-0"
                 data-state="closed"
-                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -1225,7 +1202,6 @@ exports[`AvatarSelection component snapshot
           aria-haspopup="dialog"
           class="flex-grow-0"
           data-state="closed"
-          triggerclass="flex-grow-0"
         >
           <div
             aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -1351,7 +1327,6 @@ exports[`AvatarSelection component snapshot
                   aria-haspopup="dialog"
                   class="flex-grow-0"
                   data-state="closed"
-                  triggerclass="flex-grow-0"
                 >
                   <span
                     class=""
@@ -1398,7 +1373,6 @@ exports[`AvatarSelection component snapshot
                   aria-haspopup="dialog"
                   class="flex-grow-0"
                   data-state="closed"
-                  triggerclass="flex-grow-0"
                 >
                   <span
                     class=""
@@ -1445,7 +1419,6 @@ exports[`AvatarSelection component snapshot
                   aria-haspopup="dialog"
                   class="flex-grow-0"
                   data-state="closed"
-                  triggerclass="flex-grow-0"
                 >
                   <span
                     class=""
@@ -1492,7 +1465,6 @@ exports[`AvatarSelection component snapshot
                   aria-haspopup="dialog"
                   class="flex-grow-0"
                   data-state="closed"
-                  triggerclass="flex-grow-0"
                 >
                   <span
                     class=""
@@ -1539,7 +1511,6 @@ exports[`AvatarSelection component snapshot
                   aria-haspopup="dialog"
                   class="flex-grow-0"
                   data-state="closed"
-                  triggerclass="flex-grow-0"
                 >
                   <span
                     class=""
@@ -1572,7 +1543,6 @@ exports[`AvatarSelection component snapshot
             aria-haspopup="dialog"
             class="flex-grow-0"
             data-state="closed"
-            triggerclass="flex-grow-0"
           >
             <div
               aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -1663,7 +1633,6 @@ exports[`AvatarSelection component snapshot
                 aria-haspopup="dialog"
                 class="flex-grow-0"
                 data-state="closed"
-                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -1710,7 +1679,6 @@ exports[`AvatarSelection component snapshot
                 aria-haspopup="dialog"
                 class="flex-grow-0"
                 data-state="closed"
-                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -1757,7 +1725,6 @@ exports[`AvatarSelection component snapshot
                 aria-haspopup="dialog"
                 class="flex-grow-0"
                 data-state="closed"
-                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -1804,7 +1771,6 @@ exports[`AvatarSelection component snapshot
                 aria-haspopup="dialog"
                 class="flex-grow-0"
                 data-state="closed"
-                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -1851,7 +1817,6 @@ exports[`AvatarSelection component snapshot
                 aria-haspopup="dialog"
                 class="flex-grow-0"
                 data-state="closed"
-                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -1884,7 +1849,6 @@ exports[`AvatarSelection component snapshot
           aria-haspopup="dialog"
           class="flex-grow-0"
           data-state="closed"
-          triggerclass="flex-grow-0"
         >
           <div
             aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -2010,7 +1974,6 @@ exports[`AvatarSelection component snapshot
                   aria-haspopup="dialog"
                   class="flex-grow-0"
                   data-state="closed"
-                  triggerclass="flex-grow-0"
                 >
                   <span
                     class=""
@@ -2057,7 +2020,6 @@ exports[`AvatarSelection component snapshot
                   aria-haspopup="dialog"
                   class="flex-grow-0"
                   data-state="closed"
-                  triggerclass="flex-grow-0"
                 >
                   <span
                     class=""
@@ -2104,7 +2066,6 @@ exports[`AvatarSelection component snapshot
                   aria-haspopup="dialog"
                   class="flex-grow-0"
                   data-state="closed"
-                  triggerclass="flex-grow-0"
                 >
                   <span
                     class=""
@@ -2151,7 +2112,6 @@ exports[`AvatarSelection component snapshot
                   aria-haspopup="dialog"
                   class="flex-grow-0"
                   data-state="closed"
-                  triggerclass="flex-grow-0"
                 >
                   <span
                     class=""
@@ -2198,7 +2158,6 @@ exports[`AvatarSelection component snapshot
                   aria-haspopup="dialog"
                   class="flex-grow-0"
                   data-state="closed"
-                  triggerclass="flex-grow-0"
                 >
                   <span
                     class=""
@@ -2232,7 +2191,6 @@ exports[`AvatarSelection component snapshot
             aria-haspopup="dialog"
             class="flex-grow-0"
             data-state="open"
-            triggerclass="flex-grow-0"
           >
             <div
               aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -2355,7 +2313,6 @@ exports[`AvatarSelection component snapshot
             aria-haspopup="dialog"
             class="flex-grow-0"
             data-state="closed"
-            triggerclass="flex-grow-0"
           >
             <div
               aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -2425,7 +2382,6 @@ exports[`AvatarSelection component snapshot
                   aria-haspopup="dialog"
                   class="flex-grow-0"
                   data-state="closed"
-                  triggerclass="flex-grow-0"
                 >
                   <span
                     class=""
@@ -2472,7 +2428,6 @@ exports[`AvatarSelection component snapshot
                   aria-haspopup="dialog"
                   class="flex-grow-0"
                   data-state="closed"
-                  triggerclass="flex-grow-0"
                 >
                   <span
                     class=""
@@ -2519,7 +2474,6 @@ exports[`AvatarSelection component snapshot
                   aria-haspopup="dialog"
                   class="flex-grow-0"
                   data-state="closed"
-                  triggerclass="flex-grow-0"
                 >
                   <span
                     class=""
@@ -2566,7 +2520,6 @@ exports[`AvatarSelection component snapshot
                   aria-haspopup="dialog"
                   class="flex-grow-0"
                   data-state="closed"
-                  triggerclass="flex-grow-0"
                 >
                   <span
                     class=""
@@ -2613,7 +2566,6 @@ exports[`AvatarSelection component snapshot
                   aria-haspopup="dialog"
                   class="flex-grow-0"
                   data-state="closed"
-                  triggerclass="flex-grow-0"
                 >
                   <span
                     class=""
@@ -2646,7 +2598,6 @@ exports[`AvatarSelection component snapshot
             aria-haspopup="dialog"
             class="flex-grow-0"
             data-state="closed"
-            triggerclass="flex-grow-0"
           >
             <div
               aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
@@ -2737,7 +2688,6 @@ exports[`AvatarSelection component snapshot
                 aria-haspopup="dialog"
                 class="flex-grow-0"
                 data-state="closed"
-                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -2784,7 +2734,6 @@ exports[`AvatarSelection component snapshot
                 aria-haspopup="dialog"
                 class="flex-grow-0"
                 data-state="closed"
-                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -2831,7 +2780,6 @@ exports[`AvatarSelection component snapshot
                 aria-haspopup="dialog"
                 class="flex-grow-0"
                 data-state="closed"
-                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -2878,7 +2826,6 @@ exports[`AvatarSelection component snapshot
                 aria-haspopup="dialog"
                 class="flex-grow-0"
                 data-state="closed"
-                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -2925,7 +2872,6 @@ exports[`AvatarSelection component snapshot
                 aria-haspopup="dialog"
                 class="flex-grow-0"
                 data-state="closed"
-                triggerclass="flex-grow-0"
               >
                 <span
                   class=""
@@ -2958,7 +2904,6 @@ exports[`AvatarSelection component snapshot
           aria-haspopup="dialog"
           class="flex-grow-0"
           data-state="closed"
-          triggerclass="flex-grow-0"
         >
           <div
             aria-controls="DesignSystem-AvatarSelection-Popover-Test-uid"
