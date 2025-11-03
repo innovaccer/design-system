@@ -89,7 +89,7 @@ export const detectTruncation = (boundaryRef: React.RefObject<HTMLElement | null
   return isTruncated;
 };
 
-export const Tooltip = (props: TooltipProps) => {
+export const Tooltip = (props: TooltipProps): React.ReactElement => {
   const {
     children,
     tooltip,
@@ -118,7 +118,7 @@ export const Tooltip = (props: TooltipProps) => {
 
   if (!showTooltip) {
     // If showTooltip is false skip the Popover and return the children directly
-    return children;
+    return <>{children}</>;
   }
 
   const tooltipClass = classNames({
@@ -154,7 +154,7 @@ export const Tooltip = (props: TooltipProps) => {
         {tooltipWrapper}
       </Popover>
     ) : (
-      renderChildren
+      <>{renderChildren}</>
     );
   }
 
