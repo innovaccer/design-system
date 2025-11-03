@@ -1175,4 +1175,411 @@ describe('Select component size functionality tests', () => {
       expect(listbox).toBeInTheDocument();
     });
   });
+
+  describe('Select component with styleType prop - Tests for filled and outlined variants', () => {
+    it('should render Select with default styleType as "filled" and apply correct CSS class to trigger', () => {
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue}>
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      expect(triggerButton).toHaveClass('Select-trigger--filled');
+    });
+
+    it('should render Select with styleType="filled" and apply Select-trigger--filled class', () => {
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue} styleType="filled">
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      expect(triggerButton).toHaveClass('Select-trigger--filled');
+    });
+
+    it('should render Select with styleType="outlined" and apply Select-trigger--outlined class', () => {
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue} styleType="outlined">
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      expect(triggerButton).toHaveClass('Select-trigger--outlined');
+    });
+
+    it('should apply Select-trigger--filledPlaceholder class when no option is selected in filled variant', () => {
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue} styleType="filled">
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      expect(triggerButton).toHaveClass('Select-trigger--filledPlaceholder');
+    });
+
+    it('should apply Select-trigger--outlinedPlaceholder class when no option is selected in outlined variant', () => {
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue} styleType="outlined">
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      expect(triggerButton).toHaveClass('Select-trigger--outlinedPlaceholder');
+    });
+
+    it('should apply Select-trigger--filledOpen class when filled Select is opened', () => {
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue} styleType="filled">
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      fireEvent.click(triggerButton);
+
+      expect(triggerButton).toHaveClass('Select-trigger--filledOpen');
+    });
+
+    it('should apply Select-trigger--outlinedOpen class when outlined Select is opened', () => {
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue} styleType="outlined">
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      fireEvent.click(triggerButton);
+
+      expect(triggerButton).toHaveClass('Select-trigger--outlinedOpen');
+    });
+
+    it('should work correctly with styleType="outlined" and different trigger sizes', () => {
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue} styleType="outlined" triggerOptions={{ triggerSize: 'small' }}>
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      expect(triggerButton).toHaveClass('Select-trigger--outlined');
+      expect(triggerButton).toHaveClass('Select-trigger--small');
+    });
+
+    it('should work correctly with styleType="filled" and different trigger sizes', () => {
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue} styleType="filled" triggerOptions={{ triggerSize: 'regular' }}>
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      expect(triggerButton).toHaveClass('Select-trigger--filled');
+      expect(triggerButton).toHaveClass('Select-trigger--regular');
+    });
+
+    it('should maintain styleType classes after selecting an option', () => {
+      const { getByTestId, getAllByTestId } = render(
+        <Select onSelect={FunctionValue} styleType="outlined">
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+            <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      fireEvent.click(triggerButton);
+
+      const options = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      fireEvent.click(options[0]);
+
+      expect(triggerButton).toHaveClass('Select-trigger--outlined');
+      expect(triggerButton).not.toHaveClass('Select-trigger--outlinedPlaceholder');
+    });
+
+    it('should work with multiSelect and styleType="outlined"', () => {
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue} multiSelect={true} styleType="outlined">
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+            <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      expect(triggerButton).toHaveClass('Select-trigger--outlined');
+    });
+  });
+
+  describe('Select component with error prop - Tests for error state styling', () => {
+    it('should not apply error class by default when error prop is not provided', () => {
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue}>
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      expect(triggerButton).not.toHaveClass('Select-trigger--error');
+    });
+
+    it('should not apply error class when error={false}', () => {
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue} error={false}>
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      expect(triggerButton).not.toHaveClass('Select-trigger--error');
+    });
+
+    it('should apply Select-trigger--error class when error={true}', () => {
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue} error={true}>
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      expect(triggerButton).toHaveClass('Select-trigger--error');
+    });
+
+    it('should apply error class along with styleType="filled" class', () => {
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue} error={true} styleType="filled">
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      expect(triggerButton).toHaveClass('Select-trigger--error');
+      expect(triggerButton).toHaveClass('Select-trigger--filled');
+    });
+
+    it('should apply error class along with styleType="outlined" class', () => {
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue} error={true} styleType="outlined">
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      expect(triggerButton).toHaveClass('Select-trigger--error');
+      expect(triggerButton).toHaveClass('Select-trigger--outlined');
+    });
+
+    it('should maintain error class when Select is opened', () => {
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue} error={true}>
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      fireEvent.click(triggerButton);
+
+      expect(triggerButton).toHaveClass('Select-trigger--error');
+    });
+
+    it('should maintain error class after selecting an option', () => {
+      const { getByTestId, getAllByTestId } = render(
+        <Select onSelect={FunctionValue} error={true}>
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+            <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      fireEvent.click(triggerButton);
+
+      const options = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      fireEvent.click(options[0]);
+
+      expect(triggerButton).toHaveClass('Select-trigger--error');
+    });
+
+    it('should work with error prop, multiSelect, and styleType together', () => {
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue} error={true} multiSelect={true} styleType="outlined">
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+            <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      expect(triggerButton).toHaveClass('Select-trigger--error');
+      expect(triggerButton).toHaveClass('Select-trigger--outlined');
+    });
+
+    it('should work with error prop and different trigger sizes', () => {
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue} error={true} triggerOptions={{ triggerSize: 'small' }}>
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      expect(triggerButton).toHaveClass('Select-trigger--error');
+      expect(triggerButton).toHaveClass('Select-trigger--small');
+    });
+
+    it('should apply error class along with placeholder class when no option is selected', () => {
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue} error={true}>
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      expect(triggerButton).toHaveClass('Select-trigger--error');
+      expect(triggerButton).toHaveClass('Select-trigger--filledPlaceholder');
+    });
+  });
+
+  describe('Select component integration tests - styleType and error prop combinations', () => {
+    it('should correctly apply all classes when using filled styleType with error and small size', () => {
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue} styleType="filled" error={true} triggerOptions={{ triggerSize: 'small' }}>
+          <Select.List size="tight">
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      expect(triggerButton).toHaveClass('Select-trigger--filled');
+      expect(triggerButton).toHaveClass('Select-trigger--error');
+      expect(triggerButton).toHaveClass('Select-trigger--small');
+      expect(triggerButton).toHaveClass('Select-trigger--filledPlaceholder');
+    });
+
+    it('should correctly apply all classes when using outlined styleType with error and regular size', () => {
+      const { getByTestId } = render(
+        <Select onSelect={FunctionValue} styleType="outlined" error={true} triggerOptions={{ triggerSize: 'regular' }}>
+          <Select.List size="compressed">
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      expect(triggerButton).toHaveClass('Select-trigger--outlined');
+      expect(triggerButton).toHaveClass('Select-trigger--error');
+      expect(triggerButton).toHaveClass('Select-trigger--regular');
+      expect(triggerButton).toHaveClass('Select-trigger--outlinedPlaceholder');
+    });
+
+    it('should handle dynamic changes to error prop correctly', () => {
+      const { getByTestId, rerender } = render(
+        <Select onSelect={FunctionValue} error={false}>
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      expect(triggerButton).not.toHaveClass('Select-trigger--error');
+
+      rerender(
+        <Select onSelect={FunctionValue} error={true}>
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      expect(triggerButton).toHaveClass('Select-trigger--error');
+    });
+
+    it('should handle styleType change from filled to outlined correctly', () => {
+      const { getByTestId, rerender } = render(
+        <Select onSelect={FunctionValue} styleType="filled">
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      expect(triggerButton).toHaveClass('Select-trigger--filled');
+
+      rerender(
+        <Select onSelect={FunctionValue} styleType="outlined">
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      expect(triggerButton).toHaveClass('Select-trigger--outlined');
+      expect(triggerButton).not.toHaveClass('Select-trigger--filled');
+    });
+
+    it('should work correctly with pre-selected value, styleType, and error prop', () => {
+      const { getByTestId } = render(
+        <Select
+          onSelect={FunctionValue}
+          styleType="outlined"
+          error={true}
+          value={{ label: 'Option 1', value: 'Option 1' }}
+        >
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+            <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+          </Select.List>
+        </Select>
+      );
+
+      const triggerButton = getByTestId('DesignSystem-Select-trigger');
+      expect(triggerButton).toHaveClass('Select-trigger--outlined');
+      expect(triggerButton).toHaveClass('Select-trigger--error');
+      expect(triggerButton).not.toHaveClass('Select-trigger--outlinedPlaceholder');
+    });
+  });
 });
