@@ -42,6 +42,7 @@ export const TextFieldWithTextarea = (props: TextFieldTextareaProps) => {
     max = 200,
     helpText = ' ',
     size = 'regular',
+    minLength,
   } = props;
 
   const textareaRef = React.useRef(null);
@@ -53,7 +54,7 @@ export const TextFieldWithTextarea = (props: TextFieldTextareaProps) => {
     if (onChange) onChange(e);
   };
 
-  const inputError = error || inputText.length > max;
+  const inputError = error || inputText.length > max || (minLength !== undefined && inputText.length < minLength);
 
   React.useEffect(() => {
     const textarea = textareaRef.current;
