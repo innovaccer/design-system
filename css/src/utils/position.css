@@ -18,3 +18,165 @@
   position: -webkit-sticky !important;
   position: sticky !important;
 }
+
+/* Top positioning utilities */
+.top-0 {
+  top: 0 !important;
+}
+
+.top-25 {
+  top: 25% !important;
+}
+
+.top-50 {
+  top: 50% !important;
+}
+
+.top-75 {
+  top: 75% !important;
+}
+
+.top-100 {
+  top: 100% !important;
+}
+
+.top-auto {
+  top: auto !important;
+}
+
+/* Right positioning utilities */
+.right-0 {
+  right: 0 !important;
+}
+
+.right-25 {
+  right: 25% !important;
+}
+
+.right-50 {
+  right: 50% !important;
+}
+
+.right-75 {
+  right: 75% !important;
+}
+
+.right-100 {
+  right: 100% !important;
+}
+
+.right-auto {
+  right: auto !important;
+}
+
+/* Bottom positioning utilities */
+.bottom-0 {
+  bottom: 0 !important;
+}
+
+.bottom-25 {
+  bottom: 25% !important;
+}
+
+.bottom-50 {
+  bottom: 50% !important;
+}
+
+.bottom-75 {
+  bottom: 75% !important;
+}
+
+.bottom-100 {
+  bottom: 100% !important;
+}
+
+.bottom-auto {
+  bottom: auto !important;
+}
+
+/* Left positioning utilities */
+.left-0 {
+  left: 0 !important;
+}
+
+.left-25 {
+  left: 25% !important;
+}
+
+.left-50 {
+  left: 50% !important;
+}
+
+.left-75 {
+  left: 75% !important;
+}
+
+.left-100 {
+  left: 100% !important;
+}
+
+.left-auto {
+  left: auto !important;
+}
+
+/* Translate positioning utilities */
+.translate-middle {
+  transform: translate(-50%, -50%) !important;
+}
+
+.translate-middle-x {
+  transform: translateX(-50%) !important;
+}
+
+.translate-middle-y {
+  transform: translateY(-50%) !important;
+}
+
+/* Z-index utilities */
+.z-index-n1 {
+  z-index: -1 !important;
+}
+
+.z-index-0 {
+  z-index: 0 !important;
+}
+
+.z-index-1 {
+  z-index: 1 !important;
+}
+
+.z-index-2 {
+  z-index: 2 !important;
+}
+
+.z-index-3 {
+  z-index: 3 !important;
+}
+
+.z-index-4 {
+  z-index: 4 !important;
+}
+
+.z-index-5 {
+  z-index: 5 !important;
+}
+
+.z-index-10 {
+  z-index: 10 !important;
+}
+
+.z-index-50 {
+  z-index: 50 !important;
+}
+
+.z-index-100 {
+  z-index: 100 !important;
+}
+
+.z-index-1000 {
+  z-index: 1000 !important;
+}
+
+.z-index-auto {
+  z-index: auto !important;
+}
