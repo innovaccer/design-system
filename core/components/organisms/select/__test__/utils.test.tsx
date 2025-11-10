@@ -56,6 +56,54 @@ describe('elementExist function', () => {
     const newOption = { label: 'Option 3', value: '3' };
     expect(elementExist(newOption, dummyOption)).toBe(-1);
   });
+
+  it('should use the optionID when provided to distinguish options with the same label', () => {
+    const duplicateLabelOption: OptionType = { label: 'Option 1', value: 'alternate', optionID: 'option-1b' };
+    const options: OptionType[] = [dummyOption, duplicateLabelOption];
+
+    expect(elementExist(duplicateLabelOption, options)).toBe(0);
+  });
+
+  it('should fall back to the label when optionIDs are not provided', () => {
+    const duplicateWithoutId: OptionType = { label: 'Option 1', value: 'alternate' };
+    const options: OptionType[] = [dummyOption, duplicateWithoutId];
+
+    expect(elementExist(duplicateWithoutId, options)).toBe(0);
+  });
+
+  it('should prioritize optionID comparison when both options have optionIDs, otherwise compare by label', () => {
+    // Case 1: Both have optionIDs - should compare by optionID
+    const option1: OptionType = { label: 'Aspirin', value: 'aspirin', optionID: 'asp-123' };
+    const option2: OptionType = { label: 'Different Label', value: 'aspirin', optionID: 'asp-123' };
+    const optionsWithIds: OptionType[] = [option2];
+
+    expect(elementExist(option1, optionsWithIds)).toBe(0); // Match by optionID despite different labels
+
+    // Case 2: Target has optionID, option in list doesn't - should compare by label
+    const targetWithId: OptionType = { label: 'Aspirin', value: 'aspirin', optionID: 'asp-123' };
+    const optionWithoutId: OptionType = { label: 'Aspirin', value: 'aspirin' };
+    const optionsArray: OptionType[] = [optionWithoutId];
+
+    expect(elementExist(targetWithId, optionsArray)).toBe(0); // Match by label
+
+    // Case 3: Target doesn't have optionID, option in list does - should compare by label
+    const targetWithoutId: OptionType = { label: 'Aspirin', value: 'aspirin' };
+    const optionWithId: OptionType = { label: 'Aspirin', value: 'aspirin', optionID: 'asp-123' };
+    const optionsArrayWithId: OptionType[] = [optionWithId];
+
+    expect(elementExist(targetWithoutId, optionsArrayWithId)).toBe(0); // Match by label
+
+    // Case 4: Different labels should not match even if one has optionID
+    const targetDifferentLabel: OptionType = { label: 'Ibuprofen', value: 'ibuprofen', optionID: 'ibu-123' };
+    expect(elementExist(targetDifferentLabel, optionsArray)).toBe(-1); // No match
+
+    // Case 5: Same optionIDs should match even with different labels
+    const sameIdOption1: OptionType = { label: 'Label A', value: 'value1', optionID: 'same-id' };
+    const sameIdOption2: OptionType = { label: 'Label B', value: 'value2', optionID: 'same-id' };
+    const sameIdArray: OptionType[] = [sameIdOption2];
+
+    expect(elementExist(sameIdOption1, sameIdArray)).toBe(0); // Match by optionID
+  });
 });
 
 describe('removeOrAddToList function', () => {
