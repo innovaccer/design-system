@@ -16,6 +16,13 @@ export interface SelectOptionProps extends BaseProps {
   children: React.ReactNode;
   /**
    * The data associated with the option.
+   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
+   * OptionType: {
+   *   label: string;
+   *   value: any;
+   *   id?: string | number;
+   * }
+   * </pre>
    */
   option: OptionType;
   /**

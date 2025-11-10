@@ -117,6 +117,10 @@ export type PositionType =
 export type OptionType = {
   label: string;
   value: any;
+  /**
+   * Optional unique identifier for distinguishing options when labels repeat.
+   */
+  id?: string | number;
   isSelectedOption?: boolean;
 };
 
