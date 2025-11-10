@@ -9,11 +9,29 @@ export const mapInitialValue = (multiSelect: boolean, selectedValue: OptionType 
   }
 };
 
+const compareOptions = (option1?: OptionType, option2?: OptionType): boolean => {
+  if (!option1 || !option2) {
+    return false;
+  }
+
+  // If both options have optionIDs, compare by optionID
+  if (option1.optionID && option2.optionID) {
+    return option1.optionID === option2.optionID;
+  }
+
+  // Otherwise, always compare by label for backward compatibility
+  // This handles cases where:
+  // - Both have no optionID (legacy behavior)
+  // - One has optionID and other doesn't (mixed legacy/new code)
+  return option1.label === option2.label;
+};
+
 export const elementExist = (targetObject: OptionType, mainList: OptionType | OptionType[] | undefined) => {
   if (!Array.isArray(mainList)) {
-    return targetObject.label === mainList?.label ? 0 : -1;
+    return compareOptions(targetObject, mainList) ? 0 : -1;
   }
-  return mainList.findIndex((item) => item.label === targetObject.label);
+
+  return mainList.findIndex((item) => compareOptions(targetObject, item));
 };
 
 export const removeOrAddToList = (targetObject: OptionType, prevList: OptionType[]) => {
