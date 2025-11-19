@@ -25,6 +25,7 @@ export interface SelectProps extends BaseProps {
    * OptionType: {
    *   label: string;
    *   value: any;
+   *   id?: string | number;
    * }
    * </pre>
    */
@@ -60,6 +61,7 @@ export interface SelectProps extends BaseProps {
    * OptionType: {
    *   label: string;
    *   value: any;
+   *   id?: string | number;
    * }
    * </pre>
    */
