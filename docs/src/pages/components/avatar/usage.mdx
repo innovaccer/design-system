@@ -1,6 +1,6 @@
 ---
 title: Avatar
-description: Avatar is used to identify an entity through display pictures, icons or their initials.
+description: An avatar is a thumbnail representation of a person or a group
 tabs: ['Usage', 'Code']
 showMobile: true
 keywords: ['Profile', 'Avatarpair', 'Groupavatar', 'Avatargroup', 'AvatarSelection']
@@ -16,20 +16,20 @@ Avatar comes in 9 appearances -
 Avatar comes in **2 shapes** - round and square.
 
 #### Round Avatar
-Round avatar represents a single entity i.e a user, bot or app.
+The circular shape conveys approachability and subtly resembles a face. Use this avatar for an individual, an AI agent, or a bot.
 
 ![Shapes](./images/round-avatar.png)
 <Caption>A round avatar</Caption>
 
 #### Square Avatar
-Square avatar represents a group of entities or organization.
+The angular shape communicates structure and formality. Use this avatar to represent a group, for example, a team, organization, user role, etc.
 
 ![Shapes](./images/square-avatar.png)
 <Caption>A square avatar</Caption>
 
 ### Sizes
 
-Avatar comes in **2 sizes** - small and regular.
+Avatar comes in **3 sizes** - regular, small and extra small.
 
 <Preview name="components-avatar-avatar-variants-size--size" />
 
@@ -48,6 +48,8 @@ Avatar comes in **3 states** - default, focus and disabled.
 <Caption>Avatars with initials</Caption>
 
 #### With Icon
+
+For bots, teams, and similar entities, use an icon or image instead of initials to clearly differentiate them from a person.
 
 ![With Icon](./images/with-icon.png)
 <Caption>Avatars with icon</Caption>
@@ -79,6 +81,9 @@ Avatar comes in **3 states** - default, focus and disabled.
       <td>
         <ul>
           <li>
+            20px <em>(Extra Small)</em>
+          </li>
+          <li>
             24px <em>(Small)</em>
           </li>
           <li>
@@ -91,6 +96,9 @@ Avatar comes in **3 states** - default, focus and disabled.
       <td>Width</td>
       <td>
         <ul>
+          <li>
+            20px <em>(Extra Small)</em>
+          </li>
           <li>
             24px <em>(Small)</em>
           </li>
@@ -125,6 +133,9 @@ Avatar comes in **3 states** - default, focus and disabled.
       <td>
         <ul>
           <li>
+            20px <em>(Extra Small)</em>
+          </li>
+          <li>
             24px <em>(Small)</em>
           </li>
           <li>
@@ -137,6 +148,9 @@ Avatar comes in **3 states** - default, focus and disabled.
       <td>Width</td>
       <td>
         <ul>
+          <li>
+            20px <em>(Extra Small)</em>
+          </li>
           <li>
             24px <em>(Small)</em>
           </li>
@@ -192,6 +206,7 @@ Avatar comes in **3 states** - default, focus and disabled.
       <td>Size</td>
       <td>
         <ul>
+          <li>Extra Small</li>
           <li>Small</li>
           <li>Regular</li>
         </ul>
@@ -255,6 +270,7 @@ Avatar comes in **3 states** - default, focus and disabled.
       <td>Size</td>
       <td>
         <ul>
+          <li>Extra Small</li>
           <li>Small</li>
           <li>Regular</li>
         </ul>
@@ -289,13 +305,37 @@ Avatar comes in **3 states** - default, focus and disabled.
 
 <br />
 
+#### Use Icons for Bots, AI, and Groups
+
+For bots, AI agents, and groups, avoid using initials to help users easily distinguish real people.
+
+![Icons for Bots](./images/icons-for-bots.png)
+<Caption>Avoid using initials for AI agents, bots, and groups</Caption>
+
+<br />
+
+#### Representing Applications and Abstract entities
+
+Avatars are primarily used to represent people. Avoid using avatars to represent apps, files, or steps in a workflow.
+
+![Avoid representing files as avatars](./images/avoid-representing.png)
+<Caption>Avoid using avatars to represent apps, files, or steps in a workflow</Caption>
+
+<br />
+
+#### Neutral Color Avatar Usage
+
+Neutral colors are reserved for states like fallback state or excessive state. Avoid using neutral avatars to represent real people.
+
+<br />
+
 #### Color Assignment
 
 The background color of an avatar should be generated dynamically in such a way that at the time of its creation a random color (from the available options) is assigned. Once assigned, the color should stay the same as long as that particular avatar is in use.
 
 For example, an avatar generated for a user - Franklin Clinton, can look like following and it should look the same wherever it is used.
 
-![Color assignment](./images/avatar-1.png)
+![Color assignment](./images/color-assignment.png)
 <Caption>Color assignment in avatars</Caption>
 
 <br />
@@ -308,9 +348,11 @@ Since an avatar can either show an image, icon or the initials, there should be 
 <Caption>Hovering on an avatar</Caption>
 <br />
 
-#### Square Avatar vs Round Avatar Group
+#### Square Avatar vs Avatar Group
 
-Square avatars and round avatar group are both used to group entities. Square avatar is ideal for presenting a group as a unified entity, while round avatar group facilitates an interactive and visually cohesive representation of individual members within the group.
+Square Avatar is useful to represent the group as a single unit. Also works well when space is limited.
+
+Avatar Group is better when individual group members need to be visible upfront.
 
 #### Fallback Hierarchy
 
@@ -351,7 +393,7 @@ Regular and small round avatars can include presence indicators that visually re
 ![Presence in Round Avatar ](./images/presence.png)
 <Caption>Presence in Round Avatar </Caption>
 
-#### Status in Regular Round Avatar 
+#### Status in Regular Round Avatar
 
 Regular round avatars can include status indicators to represent user-defined or system-determined messages, providing context about the user's current activity or situation. A tooltip should be used to define the status.
 

@@ -192,6 +192,7 @@ Both avatar group and selection avatar group share the same variants.
       <td>Size</td>
       <td>
         <ul>
+          <li>Extra Small</li>
           <li>Small</li>
           <li>Regular</li>
         </ul>
@@ -337,9 +338,11 @@ Selection avatar group is limited to six entities to facilitate data filtering a
 ![Popover displays hidden entities upon clicking](./images/count-more-than-6.png)
 <Caption>Popover displays hidden entities upon clicking</Caption>
 
-#### Round Avatar Group vs Square Avatar
+#### Square Avatar vs Avatar Group
 
-Round avatar groups are designed to facilitate an interactive and visually cohesive representation of individual members within a group. In contrast, square avatars are ideal for presenting the group as a unified entity.
+Square Avatar is useful to represent the group as a single unit. Also works well when space is limited.
+
+Avatar Group is better when individual group members need to be visible upfront.
 
 #### Selection Avatar Group vs Select
 
@@ -358,32 +361,3 @@ In case of overflow, the items will get truncated and can be viewed inside a too
 
 ![Overflow behavior of items](./images/overflow-behavior.png)
 <Caption>Overflow behavior of items inside popover</Caption>
-
-#### Appending Suffix to the Name of an Entity
-
-In an avatar group, you can add a suffix to an entity's name that appears in tooltips and popovers. 
-
-**Note:** Adding a suffix for disabled states is recommended to keep users informed.
-
-![Appending a suffix to the name of the disabled entity](./images/tooltip-suffix.png)
-<Caption>Appending a suffix to the name of the disabled entity</Caption>
-
-<br />
-
-#### Presence in Avatar Group
-
-Default and selection avatar groups can include presence indicators that visually represent the user’s availability , such as **"active"** and **"away"**.
-
-![Presence in Avatar Group](./images/presence.png)
-<Caption>Presence in Avatar Group</Caption>
-
-<br />
-
-#### Status in Avatar Group
-
-Regular default avatar group and regular selection avatar group can include status indicators to represent user-defined or system-determined messages, providing context about the user's current activity or situation. A tooltip should be used to define the status.
-
-![Status in Avatar Group](./images/status.png)
-<Caption>Status in Avatar Group</Caption>
-
-<br />
