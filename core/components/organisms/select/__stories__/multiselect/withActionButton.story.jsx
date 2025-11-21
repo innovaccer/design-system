@@ -5,16 +5,16 @@ import { action } from '@/utils/action';
 // CSF format story
 export const withActionButton = () => {
   const medicineList = [
-    { label: 'Aspirin', value: 'Aspirin' },
-    { label: 'Paracetamol', value: 'Paracetamol' },
-    { label: 'Lisinopril', value: 'Lisinopril' },
-    { label: 'Simvastatin', value: 'Simvastatin' },
-    { label: 'Amoxicillin', value: 'Amoxicillin' },
-    { label: 'Ciprofloxacin', value: 'Ciprofloxacin' },
-    { label: 'Metformin', value: 'Metformin' },
-    { label: 'Omeprazole', value: 'Omeprazole' },
-    { label: 'Diazepam', value: 'Diazepam' },
-    { label: 'Levothyroxine', value: 'Levothyroxine' },
+    { id: 'aspirin', label: 'Aspirin', value: 'Aspirin' },
+    { id: 'paracetamol', label: 'Paracetamol', value: 'Paracetamol' },
+    { id: 'lisinopril', label: 'Lisinopril', value: 'Lisinopril' },
+    { id: 'simvastatin', label: 'Simvastatin', value: 'Simvastatin' },
+    { id: 'amoxicillin', label: 'Amoxicillin', value: 'Amoxicillin' },
+    { id: 'ciprofloxacin', label: 'Ciprofloxacin', value: 'Ciprofloxacin' },
+    { id: 'metformin', label: 'Metformin', value: 'Metformin' },
+    { id: 'omeprazole', label: 'Omeprazole', value: 'Omeprazole' },
+    { id: 'diazepam', label: 'Diazepam', value: 'Diazepam' },
+    { id: 'levothyroxine', label: 'Levothyroxine', value: 'Levothyroxine' },
   ];
 
   const selectRef = React.useRef(null);
@@ -63,9 +63,9 @@ export const withActionButton = () => {
       triggerOptions={{ onClear: onClearHandler }}
     >
       <Select.List>
-        {medicineList.map((item, key) => {
+        {medicineList.map((item) => {
           return (
-            <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+            <Select.Option key={item.id} option={{ label: item.label, value: item.value, id: item.id }}>
               {item.label}
             </Select.Option>
           );
@@ -99,16 +99,16 @@ export const withActionButton = () => {
 
 const customCode = `() => {
   const medicineList = [
-    { label: 'Aspirin', value: 'Aspirin' },
-    { label: 'Paracetamol', value: 'Paracetamol' },
-    { label: 'Lisinopril', value: 'Lisinopril' },
-    { label: 'Simvastatin', value: 'Simvastatin' },
-    { label: 'Amoxicillin', value: 'Amoxicillin' },
-    { label: 'Ciprofloxacin', value: 'Ciprofloxacin' },
-    { label: 'Metformin', value: 'Metformin' },
-    { label: 'Omeprazole', value: 'Omeprazole' },
-    { label: 'Diazepam', value: 'Diazepam' },
-    { label: 'Levothyroxine', value: 'Levothyroxine' },
+    { id: 'aspirin', label: 'Aspirin', value: 'Aspirin' },
+    { id: 'paracetamol', label: 'Paracetamol', value: 'Paracetamol' },
+    { id: 'lisinopril', label: 'Lisinopril', value: 'Lisinopril' },
+    { id: 'simvastatin', label: 'Simvastatin', value: 'Simvastatin' },
+    { id: 'amoxicillin', label: 'Amoxicillin', value: 'Amoxicillin' },
+    { id: 'ciprofloxacin', label: 'Ciprofloxacin', value: 'Ciprofloxacin' },
+    { id: 'metformin', label: 'Metformin', value: 'Metformin' },
+    { id: 'omeprazole', label: 'Omeprazole', value: 'Omeprazole' },
+    { id: 'diazepam', label: 'Diazepam', value: 'Diazepam' },
+    { id: 'levothyroxine', label: 'Levothyroxine', value: 'Levothyroxine' },
   ];
 
   const selectRef = React.useRef(null);
@@ -157,9 +157,9 @@ const customCode = `() => {
       triggerOptions={{ onClear: onClearHandler }}
     >
       <Select.List>
-        {medicineList.map((item, key) => {
+        {medicineList.map((item) => {
           return (
-            <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+            <Select.Option key={item.id} option={{ label: item.label, value: item.value, id: item.id }}>
               {item.label}
             </Select.Option>
           );
