@@ -1,3 +1,39 @@
+## 4.16.1 (2025-11-23)
+
+### Highlights
+
+- fix(select): fix duplicate selection of options with same label (ffb5654b)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+- fix(select): fix duplicate selection of options with same label (ffb5654b)
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 4.16.0 (2025-11-03)
 
 ### Highlights
