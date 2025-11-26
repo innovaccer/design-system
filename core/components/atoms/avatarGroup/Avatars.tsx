@@ -6,20 +6,22 @@ import styles from '@css/components/avatarGroup.module.css';
 const Avatars = (props: any) => {
   const { avatarList, avatarStyle, tooltipPosition, size } = props;
 
-  const GroupClass = classNames({
-    [styles[`AvatarGroup-item`]]: true,
-    [styles[`AvatarGroup-item--tiny`]]: size === 'tiny',
-    [styles[`AvatarGroup-item--regular`]]: size === 'regular',
-  });
-
   const avatars = avatarList.map((item: any, index: any) => {
-    const { icon, image } = item;
+    const { icon, image, shape } = item;
+    const avatarShape = shape === 'square' ? 'square' : 'round';
+
+    const GroupClass = classNames({
+      [styles[`AvatarGroup-item`]]: true,
+      [styles[`AvatarGroup-item--square`]]: avatarShape === 'square',
+      [styles[`AvatarGroup-item--tiny`]]: size === 'tiny',
+      [styles[`AvatarGroup-item--regular`]]: size === 'regular',
+    });
 
     const newAvatarStyle = { ...avatarStyle, zIndex: avatarList.length - index };
 
     return (
       <div data-test="DesignSystem-AvatarGroup--Avatar" className={GroupClass} style={newAvatarStyle} key={index}>
-        <Avatar size={size} withTooltip={true} tooltipPosition={tooltipPosition} {...item}>
+        <Avatar size={size} shape={avatarShape} withTooltip={true} tooltipPosition={tooltipPosition} {...item}>
           {image || icon}
         </Avatar>
       </div>

@@ -5,17 +5,17 @@ import styles from '@css/components/avatar.module.css';
 import avatarGroupStyles from '@css/components/avatarGroup.module.css';
 
 const AvatarCount = (props: any) => {
-  const { hiddenAvatarCount, avatarStyle, size, on } = props;
+  const { hiddenAvatarCount, avatarStyle, size = 'regular', on } = props;
 
   const ContentClass = classNames({
     [styles['Avatar-content']]: true,
     [styles['Avatar-content--tiny']]: size === 'tiny',
+    [styles['Avatar-content--micro']]: size === 'micro',
   });
 
   const AvatarVariantsClass = classNames({
     [styles.Avatar]: true,
-    [styles[`Avatar--regular`]]: size === 'regular',
-    [styles[`Avatar--tiny`]]: size === 'tiny',
+    [styles[`Avatar--${size}`]]: size,
     [styles[`Avatar--secondary`]]: true,
     ['cursor-default']: true,
     ['cursor-pointer']: on === 'click',

@@ -13,10 +13,16 @@ export const Size = () => {
           <AvatarGroup size="regular" list={list.slice(0, 4)} popoverOptions={popoverOptions} />
         </div>
       </div>
-      <div className="flex-column">
+      <div className="flex-column mr-9">
         <Text weight="strong">Tiny</Text>
         <div className="mt-4">
           <AvatarGroup size="tiny" list={list.slice(0, 4)} popoverOptions={popoverOptions} />
+        </div>
+      </div>
+      <div className="flex-column">
+        <Text weight="strong">Micro</Text>
+        <div className="mt-4">
+          <AvatarGroup size="micro" list={list.slice(0, 4)} popoverOptions={popoverOptions} />
         </div>
       </div>
     </div>
@@ -53,10 +59,16 @@ const customCode = `() => {
           <AvatarGroup size="regular" list={list.slice(0, 4)} popoverOptions={popoverOptions}/>
         </div>
       </div>
-      <div className="flex-column">
+      <div className="flex-column mr-9">
         <Text weight="strong">Tiny</Text>
         <div className="mt-4">
           <AvatarGroup size="tiny" list={list.slice(0, 4)} popoverOptions={popoverOptions}/>
+        </div>
+      </div>
+      <div className="flex-column">
+        <Text weight="strong">Micro</Text>
+        <div className="mt-4">
+          <AvatarGroup size="micro" list={list.slice(0, 4)} popoverOptions={popoverOptions} />
         </div>
       </div>
     </div>

@@ -105,7 +105,7 @@ export const listItemSize = () => {
 
               <AvatarSelection.List size={size} ref={listRef}>
                 {searchList.map((avatarData, index) => {
-                  const { firstName = '', lastName = '' } = avatarData;
+                  const { firstName = '', lastName = '', size: avatarSize, ...restAvatarData } = avatarData;
                   const name = `${firstName} ${lastName}`;
 
                   const isSelected = selectedItems.find((item) => item.firstName === avatarData.firstName);
@@ -119,8 +119,15 @@ export const listItemSize = () => {
                         size="regular"
                         tabIndex={-1}
                       />
-                      <Avatar {...avatarData} className="ml-3 mr-4" withTooltip={false} />
-                      <Text className="ellipsis--noWrap">{name}</Text>
+                      <Avatar
+                        {...restAvatarData}
+                        firstName={firstName}
+                        lastName={lastName}
+                        size="tiny"
+                        className="ml-3"
+                        withTooltip={false}
+                      />
+                      <Text className="ellipsis--noWrap ml-4">{name}</Text>
                     </AvatarSelection.Option>
                   );
                 })}
@@ -232,7 +239,7 @@ const customCode = `() => {
 
               <AvatarSelection.List size={size}>
                 {searchList.map((avatarData, index) => {
-                  const { firstName = '', lastName = '' } = avatarData;
+                  const { firstName = '', lastName = '', size: avatarSize, ...restAvatarData } = avatarData;
                   const name = \`\${firstName} \${lastName}\`;
 
                   const isSelected = selectedItems.find((item) => item.firstName === avatarData.firstName);
@@ -246,8 +253,15 @@ const customCode = `() => {
                         size="regular"
                         tabIndex={-1}
                       />
-                      <Avatar {...avatarData} className="ml-3 mr-4" withTooltip={false} />
-                      <Text className="ellipsis--noWrap">{name}</Text>
+                      <Avatar
+                        {...restAvatarData}
+                        firstName={firstName}
+                        lastName={lastName}
+                        size="tiny"
+                        className="ml-3"
+                        withTooltip={false}
+                      />
+                      <Text className="ellipsis--noWrap ml-4">{name}</Text>
                     </AvatarSelection.Option>
                   );
                 })}

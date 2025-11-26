@@ -55,11 +55,16 @@ export const SelectionAvatarsWrapper = (props: SelectionAvatarsWrapperProps) => 
   return (
     <>
       {avatarList.map((avatarItem: AvatarData, index: any) => {
-        const { appearance, firstName, lastName, icon, image, disabled, tooltipSuffix, ...rest } = avatarItem;
+        const { appearance, firstName, lastName, icon, image, disabled, tooltipSuffix, shape } = avatarItem;
+        const avatarShape = shape === 'square' ? 'square' : 'round';
+        const isSelected = selectedItems?.includes(avatarItem);
         const GroupClass = classNames({
           [styles[`SelectionAvatarGroup-item`]]: true,
+          [styles[`SelectionAvatarGroup-item--square`]]: avatarShape === 'square',
           [styles[`SelectionAvatarGroup-item--active`]]: !disabled,
-          [styles[`SelectionAvatarGroup-item--selected`]]: selectedItems?.includes(avatarItem),
+          [styles[`SelectionAvatarGroup-item--active-${size}`]]: !disabled && size,
+          [styles[`SelectionAvatarGroup-item--selected`]]: isSelected,
+          [styles[`SelectionAvatarGroup-item--selected-${size}`]]: isSelected && size,
         });
 
         const newAvatarStyle = { ...avatarStyle, zIndex: avatarList.length - index };
@@ -82,6 +87,7 @@ export const SelectionAvatarsWrapper = (props: SelectionAvatarsWrapperProps) => 
             >
               <SelectionAvatar
                 size={size}
+                shape={avatarShape}
                 appearance={appearance}
                 firstName={firstName}
                 lastName={lastName}
@@ -91,7 +97,7 @@ export const SelectionAvatarsWrapper = (props: SelectionAvatarsWrapperProps) => 
                 image={image}
                 disabled={disabled}
                 tooltipSuffix={tooltipSuffix}
-                {...rest}
+                {...avatarItem}
               />
             </div>
           </span>

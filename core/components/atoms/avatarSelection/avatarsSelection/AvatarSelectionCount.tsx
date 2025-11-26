@@ -42,16 +42,20 @@ export const AvatarSelectionCount = (props: CountAvatarProp) => {
     [styles['SelectionAvatarCount-wrapper']]: true,
     [styles['SelectionAvatarGroup-item']]: true,
     [styles['SelectionAvatarCount--selected']]: selectedItemCount > 0,
+    [styles[`SelectionAvatarCount--selected-${size}`]]: selectedItemCount > 0 && size,
   });
 
   const avatarClassName = classNames({
     [styles.SelectionAvatarCount]: true,
+    [styles['SelectionAvatarCount--open']]: openPopover,
     'cursor-pointer': true,
   });
 
   const avatarTextClassName = classNames({
     'overflow-hidden': true,
     [avatarStyles['Avatar-content']]: true,
+    [avatarStyles['Avatar-content--tiny']]: size === 'tiny',
+    [avatarStyles['Avatar-content--micro']]: size === 'micro',
   });
 
   return (

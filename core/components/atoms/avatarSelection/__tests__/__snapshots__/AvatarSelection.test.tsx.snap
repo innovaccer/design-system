@@ -16,7 +16,7 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
@@ -40,7 +40,7 @@ Object {
                     tabindex="0"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                      class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
                       data-test="DesignSystem-Text"
                     >
                       JD
@@ -56,7 +56,7 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
@@ -80,7 +80,7 @@ Object {
                     tabindex="0"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                      class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
                       data-test="DesignSystem-Text"
                     >
                       SP
@@ -96,7 +96,7 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
@@ -120,7 +120,7 @@ Object {
                     tabindex="0"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                      class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
                       data-test="DesignSystem-Text"
                     >
                       NW
@@ -136,7 +136,7 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
@@ -160,7 +160,7 @@ Object {
                     tabindex="0"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                      class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
                       data-test="DesignSystem-Text"
                     >
                       MG
@@ -176,7 +176,7 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
@@ -200,7 +200,7 @@ Object {
                     tabindex="0"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                      class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
                       data-test="DesignSystem-Text"
                     >
                       AS
@@ -262,7 +262,7 @@ Object {
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
@@ -286,7 +286,7 @@ Object {
                   tabindex="0"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                    class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
                     data-test="DesignSystem-Text"
                   >
                     JD
@@ -302,7 +302,7 @@ Object {
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
@@ -326,7 +326,7 @@ Object {
                   tabindex="0"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                    class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
                     data-test="DesignSystem-Text"
                   >
                     SP
@@ -342,7 +342,7 @@ Object {
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
@@ -366,7 +366,7 @@ Object {
                   tabindex="0"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                    class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
                     data-test="DesignSystem-Text"
                   >
                     NW
@@ -382,7 +382,7 @@ Object {
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
@@ -406,7 +406,7 @@ Object {
                   tabindex="0"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                    class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
                     data-test="DesignSystem-Text"
                   >
                     MG
@@ -422,7 +422,7 @@ Object {
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
@@ -446,7 +446,7 @@ Object {
                   tabindex="0"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                    class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
                     data-test="DesignSystem-Text"
                   >
                     AS
@@ -567,7 +567,7 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
@@ -591,7 +591,7 @@ Object {
                     tabindex="0"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                      class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
                       data-test="DesignSystem-Text"
                     >
                       JD
@@ -607,7 +607,7 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
@@ -631,7 +631,7 @@ Object {
                     tabindex="0"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                      class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
                       data-test="DesignSystem-Text"
                     >
                       SP
@@ -647,7 +647,7 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
@@ -671,7 +671,7 @@ Object {
                     tabindex="0"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                      class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
                       data-test="DesignSystem-Text"
                     >
                       NW
@@ -687,7 +687,7 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
@@ -711,7 +711,7 @@ Object {
                     tabindex="0"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                      class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
                       data-test="DesignSystem-Text"
                     >
                       MG
@@ -727,7 +727,7 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
@@ -751,7 +751,7 @@ Object {
                     tabindex="0"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                      class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
                       data-test="DesignSystem-Text"
                     >
                       AS
@@ -813,7 +813,7 @@ Object {
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
@@ -837,7 +837,7 @@ Object {
                   tabindex="0"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                    class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
                     data-test="DesignSystem-Text"
                   >
                     JD
@@ -853,7 +853,7 @@ Object {
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
@@ -877,7 +877,7 @@ Object {
                   tabindex="0"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                    class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
                     data-test="DesignSystem-Text"
                   >
                     SP
@@ -893,7 +893,7 @@ Object {
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
@@ -917,7 +917,7 @@ Object {
                   tabindex="0"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                    class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
                     data-test="DesignSystem-Text"
                   >
                     NW
@@ -933,7 +933,7 @@ Object {
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
@@ -957,7 +957,7 @@ Object {
                   tabindex="0"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                    class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
                     data-test="DesignSystem-Text"
                   >
                     MG
@@ -973,7 +973,7 @@ Object {
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
           style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
@@ -997,7 +997,7 @@ Object {
                   tabindex="0"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                    class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
                     data-test="DesignSystem-Text"
                   >
                     AS
@@ -1118,10 +1118,10 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
+            style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 5;"
             tabindex="-1"
           >
             <span
@@ -1142,7 +1142,7 @@ Object {
                     tabindex="0"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
+                      class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"
                       data-test="DesignSystem-Text"
                     >
                       JD
@@ -1158,10 +1158,10 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
+            style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 4;"
             tabindex="-1"
           >
             <span
@@ -1182,7 +1182,7 @@ Object {
                     tabindex="0"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                      class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--alert"
                       data-test="DesignSystem-Text"
                     >
                       SP
@@ -1198,10 +1198,10 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
+            style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 3;"
             tabindex="-1"
           >
             <span
@@ -1222,7 +1222,7 @@ Object {
                     tabindex="0"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
+                      class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--warning"
                       data-test="DesignSystem-Text"
                     >
                       NW
@@ -1238,10 +1238,10 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
+            style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 2;"
             tabindex="-1"
           >
             <span
@@ -1262,7 +1262,7 @@ Object {
                     tabindex="0"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                      class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--accent2"
                       data-test="DesignSystem-Text"
                     >
                       MG
@@ -1278,10 +1278,10 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
+            style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 1;"
             tabindex="-1"
           >
             <span
@@ -1302,7 +1302,7 @@ Object {
                     tabindex="0"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                      class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--accent2"
                       data-test="DesignSystem-Text"
                     >
                       AS
@@ -1324,7 +1324,7 @@ Object {
             class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
             data-test="DesignSystem-AvatarSelection--TriggerAvatar"
             role="button"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
+            style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white;"
             tabindex="0"
           >
             <span
@@ -1341,7 +1341,7 @@ Object {
                   tabindex="-1"
                 >
                   <span
-                    class="Text Text--default Text--regular overflow-hidden Avatar-content"
+                    class="Text Text--default Text--regular overflow-hidden Avatar-content Avatar-content--tiny"
                     data-test="DesignSystem-Text"
                   >
                     +1
@@ -1364,10 +1364,10 @@ Object {
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
+          style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 5;"
           tabindex="-1"
         >
           <span
@@ -1388,7 +1388,7 @@ Object {
                   tabindex="0"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
+                    class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"
                     data-test="DesignSystem-Text"
                   >
                     JD
@@ -1404,10 +1404,10 @@ Object {
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
+          style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 4;"
           tabindex="-1"
         >
           <span
@@ -1428,7 +1428,7 @@ Object {
                   tabindex="0"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                    class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--alert"
                     data-test="DesignSystem-Text"
                   >
                     SP
@@ -1444,10 +1444,10 @@ Object {
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
+          style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 3;"
           tabindex="-1"
         >
           <span
@@ -1468,7 +1468,7 @@ Object {
                   tabindex="0"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
+                    class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--warning"
                     data-test="DesignSystem-Text"
                   >
                     NW
@@ -1484,10 +1484,10 @@ Object {
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
+          style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 2;"
           tabindex="-1"
         >
           <span
@@ -1508,7 +1508,7 @@ Object {
                   tabindex="0"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                    class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--accent2"
                     data-test="DesignSystem-Text"
                   >
                     MG
@@ -1524,10 +1524,10 @@ Object {
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
+          style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 1;"
           tabindex="-1"
         >
           <span
@@ -1548,7 +1548,7 @@ Object {
                   tabindex="0"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                    class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--accent2"
                     data-test="DesignSystem-Text"
                   >
                     AS
@@ -1570,7 +1570,7 @@ Object {
           class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
           data-test="DesignSystem-AvatarSelection--TriggerAvatar"
           role="button"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
+          style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white;"
           tabindex="0"
         >
           <span
@@ -1587,7 +1587,7 @@ Object {
                 tabindex="-1"
               >
                 <span
-                  class="Text Text--default Text--regular overflow-hidden Avatar-content"
+                  class="Text Text--default Text--regular overflow-hidden Avatar-content Avatar-content--tiny"
                   data-test="DesignSystem-Text"
                 >
                   +1
@@ -1669,7 +1669,7 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
@@ -1693,7 +1693,7 @@ Object {
                     tabindex="0"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                      class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
                       data-test="DesignSystem-Text"
                     >
                       JD
@@ -1709,7 +1709,7 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
@@ -1733,7 +1733,7 @@ Object {
                     tabindex="0"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                      class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
                       data-test="DesignSystem-Text"
                     >
                       SP
@@ -1749,7 +1749,7 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
@@ -1773,7 +1773,7 @@ Object {
                     tabindex="0"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                      class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
                       data-test="DesignSystem-Text"
                     >
                       NW
@@ -1789,7 +1789,7 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
@@ -1813,7 +1813,7 @@ Object {
                     tabindex="0"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                      class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
                       data-test="DesignSystem-Text"
                     >
                       MG
@@ -1829,7 +1829,7 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-regular"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
             style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
@@ -1853,7 +1853,7 @@ Object {
                     tabindex="0"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--regular"
+                      class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
                       data-test="DesignSystem-Text"
                     >
                       AS
@@ -1887,7 +1887,7 @@ Object {
                 role="presentation"
               >
                 <span
-                  class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount cursor-pointer"
+                  class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default SelectionAvatarCount SelectionAvatarCount--open cursor-pointer"
                   data-test="DesignSystem-Avatar"
                   tabindex="-1"
                 >
@@ -1999,10 +1999,10 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
+            style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 5;"
             tabindex="-1"
           >
             <span
@@ -2023,7 +2023,7 @@ Object {
                     tabindex="0"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
+                      class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"
                       data-test="DesignSystem-Text"
                     >
                       JD
@@ -2039,10 +2039,10 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
+            style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 4;"
             tabindex="-1"
           >
             <span
@@ -2063,7 +2063,7 @@ Object {
                     tabindex="0"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                      class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--alert"
                       data-test="DesignSystem-Text"
                     >
                       SP
@@ -2079,10 +2079,10 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
+            style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 3;"
             tabindex="-1"
           >
             <span
@@ -2103,7 +2103,7 @@ Object {
                     tabindex="0"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
+                      class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--warning"
                       data-test="DesignSystem-Text"
                     >
                       NW
@@ -2119,10 +2119,10 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
+            style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 2;"
             tabindex="-1"
           >
             <span
@@ -2143,7 +2143,7 @@ Object {
                     tabindex="0"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                      class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--accent2"
                       data-test="DesignSystem-Text"
                     >
                       MG
@@ -2159,10 +2159,10 @@ Object {
         >
           <div
             aria-checked="false"
-            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+            class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
             data-test="DesignSystem-AvatarSelection--Avatar"
             role="checkbox"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
+            style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 1;"
             tabindex="-1"
           >
             <span
@@ -2183,7 +2183,7 @@ Object {
                     tabindex="0"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                      class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--accent2"
                       data-test="DesignSystem-Text"
                     >
                       AS
@@ -2205,7 +2205,7 @@ Object {
             class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
             data-test="DesignSystem-AvatarSelection--TriggerAvatar"
             role="button"
-            style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
+            style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white;"
             tabindex="0"
           >
             <span
@@ -2222,7 +2222,7 @@ Object {
                   tabindex="-1"
                 >
                   <span
-                    class="Text Text--default Text--regular overflow-hidden Avatar-content"
+                    class="Text Text--default Text--regular overflow-hidden Avatar-content Avatar-content--tiny"
                     data-test="DesignSystem-Text"
                   >
                     +1
@@ -2245,10 +2245,10 @@ Object {
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 5;"
+          style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 5;"
           tabindex="-1"
         >
           <span
@@ -2269,7 +2269,7 @@ Object {
                   tabindex="0"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
+                    class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"
                     data-test="DesignSystem-Text"
                   >
                     JD
@@ -2285,10 +2285,10 @@ Object {
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 4;"
+          style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 4;"
           tabindex="-1"
         >
           <span
@@ -2309,7 +2309,7 @@ Object {
                   tabindex="0"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                    class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--alert"
                     data-test="DesignSystem-Text"
                   >
                     SP
@@ -2325,10 +2325,10 @@ Object {
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 3;"
+          style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 3;"
           tabindex="-1"
         >
           <span
@@ -2349,7 +2349,7 @@ Object {
                   tabindex="0"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content"
+                    class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--warning"
                     data-test="DesignSystem-Text"
                   >
                     NW
@@ -2365,10 +2365,10 @@ Object {
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 2;"
+          style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 2;"
           tabindex="-1"
         >
           <span
@@ -2389,7 +2389,7 @@ Object {
                   tabindex="0"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                    class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--accent2"
                     data-test="DesignSystem-Text"
                   >
                     MG
@@ -2405,10 +2405,10 @@ Object {
       >
         <div
           aria-checked="false"
-          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active"
+          class="SelectionAvatarGroup-item SelectionAvatarGroup-item--active SelectionAvatarGroup-item--active-tiny"
           data-test="DesignSystem-AvatarSelection--Avatar"
           role="checkbox"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white; z-index: 1;"
+          style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white; z-index: 1;"
           tabindex="-1"
         >
           <span
@@ -2429,7 +2429,7 @@ Object {
                   tabindex="0"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--tiny"
+                    class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--accent2"
                     data-test="DesignSystem-Text"
                   >
                     AS
@@ -2451,7 +2451,7 @@ Object {
           class="SelectionAvatarCount-wrapper SelectionAvatarGroup-item"
           data-test="DesignSystem-AvatarSelection--TriggerAvatar"
           role="button"
-          style="background-color: white; box-shadow: 0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) white;"
+          style="background-color: white; box-shadow: 0 0 0  var(--spacing-05) white;"
           tabindex="0"
         >
           <span
@@ -2468,7 +2468,7 @@ Object {
                 tabindex="-1"
               >
                 <span
-                  class="Text Text--default Text--regular overflow-hidden Avatar-content"
+                  class="Text Text--default Text--regular overflow-hidden Avatar-content Avatar-content--tiny"
                   data-test="DesignSystem-Text"
                 >
                   +1

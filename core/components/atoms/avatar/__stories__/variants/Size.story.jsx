@@ -20,6 +20,13 @@ export const size = () => {
             <Avatar appearance="accent4" firstName="John" lastName="Doe" shape="square" size="tiny" />
           </div>
         </Column>
+        <Column>
+          <Text weight="strong">Micro</Text>
+          <div className="d-flex mt-7">
+            <Avatar firstName="John" lastName="Doe" size="micro" className="mr-8" />
+            <Avatar appearance="accent4" firstName="John" lastName="Doe" shape="square" size="micro" />
+          </div>
+        </Column>
       </Row>
     </div>
   );

@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { Popover } from '@/index';
 import { AvatarProps, TooltipProps } from '@/index.type';
-import { AvatarSize } from '@/common.type';
+import { AvatarSize, AvatarShape } from '@/common.type';
 import { SelectionAvatarsWrapper, AvatarSelectionCount } from './avatarsSelection';
 import AvatarSelectionContext from './AvatarSelectionContext';
 import { focusListItem } from './avatarsSelection/utils';
@@ -28,6 +28,7 @@ export interface AvatarData extends Record<string, any> {
   tooltipSuffix?: string;
   status?: React.ReactNode;
   presence?: AvatarProps['presence'];
+  shape?: AvatarShape;
 }
 
 export interface AvatarSelectionProps extends BaseProps {
@@ -46,6 +47,7 @@ export interface AvatarSelectionProps extends BaseProps {
    *  tooltipSuffix?: string;
    *  status?: React.ReactNode;
    *  presence?: 'active' | 'away';
+   *  shape?: 'round' | 'square';
    * }
    * </pre>
    *
@@ -61,6 +63,7 @@ export interface AvatarSelectionProps extends BaseProps {
    * | `tooltipSuffix` | Text to be shown in the tooltip | - |
    * | `status` | Status to be shown in Regular Round Avatar | - |
    * | `presence` | Presence of the user | - |
+   * | `shape` | Shape of Avatar ('square' renders square, otherwise round) | 'round' |
    *
    */
   list: AvatarData[];
@@ -185,10 +188,16 @@ export const AvatarSelection = (props: AvatarSelectionProps) => {
 
   const hiddenAvatarCount = list.length - max;
 
-  const avatarStyle = {
+  const style = {
     backgroundColor: `${borderColor}`,
     boxShadow: `0 0 0  calc(var(--spacing-2-5) + var(--spacing-05)) ${borderColor}`,
   };
+
+  const tinyAvatarStyle = {
+    boxShadow: `0 0 0  var(--spacing-05) ${borderColor}`,
+  };
+
+  const avatarStyle = size !== 'regular' ? { ...style, ...tinyAvatarStyle } : style;
 
   const AvatarSelectionClass = classNames(
     {
@@ -215,6 +224,7 @@ export const AvatarSelection = (props: AvatarSelectionProps) => {
     searchPlaceholder,
     searchComparator,
     children,
+    size,
   };
 
   const triggerProps = {
