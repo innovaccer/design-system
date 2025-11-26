@@ -80,6 +80,16 @@
   --accent3-ultra-light: #f1f3fc;
   --accent4-ultra-light: #f2f9e7;
 
+  /* Avatar specific color for the time being */
+  --primary-300: #c9e1f5;
+  --success-300: #caeacd;
+  --alert-300: #fad1cd;
+  --warning-300: #ffebad;
+  --accent1-300: #fcd9b6;
+  --accent2-300: #d7cae8;
+  --accent3-300: #cbd1f5;
+  --accent4-300: #d3ebb2;
+
   /* shadow */
   --primary-shadow: color-mod(var(--primary) a(var(--opacity-4)));
   --secondary-shadow: color-mod(var(--secondary) a(var(--opacity-4)));

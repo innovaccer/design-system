@@ -105,7 +105,7 @@ const AvatarPopperBody = (props: AvatarPopperProps) => {
             tagName="ul"
             showDivider={false}
             type="description"
-            size="compressed"
+            size={size === 'micro' ? 'tight' : 'compressed'}
             data-test="DesignSystem-AvatarGroup--List"
           >
             {searchList.map((item: AvatarData, index: number) => {

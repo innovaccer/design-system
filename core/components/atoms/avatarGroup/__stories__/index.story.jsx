@@ -11,7 +11,6 @@ export const all = () => {
       position,
       withSearch: true,
       searchPlaceholder: 'Search User',
-      on: 'click',
     },
     list: list.slice(0, 4),
   };
@@ -52,7 +51,7 @@ const customCode = `() => {
       lastName: 'Stark',
     },
   ];
-  return <AvatarGroup list={list} popoverOptions={{ position: 'bottom', withSearch: true, on: 'click', searchPlaceholder: 'Search User',}} />;
+  return <AvatarGroup list={list} popoverOptions={{ position: 'bottom', withSearch: true, searchPlaceholder: 'Search User',}} />;
 }`;
 
 export default {

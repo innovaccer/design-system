@@ -40,6 +40,11 @@
   width: var(--spacing-60);
 }
 
+.Avatar--micro {
+  height: 20px;
+  width: 20px;
+}
+
 .Avatar--noInitials {
   cursor: default;
 }
@@ -49,7 +54,7 @@
 }
 
 .Avatar--disabled::after {
-  opacity: var(--opacity-20);
+  opacity: var(--opacity-16);
   top: 0;
   right: 0;
   bottom: 0;
@@ -61,7 +66,7 @@
 }
 
 .Avatar--primary {
-  background: var(--primary);
+  background: var(--primary-300);
 }
 
 .Avatar--secondary {
@@ -69,31 +74,31 @@
 }
 
 .Avatar--success {
-  background: var(--success);
+  background: var(--success-300);
 }
 
 .Avatar--alert {
-  background: var(--alert);
+  background: var(--alert-300);
 }
 
 .Avatar--warning {
-  background: var(--warning);
+  background: var(--warning-300);
 }
 
 .Avatar--accent1 {
-  background: var(--accent1);
+  background: var(--accent1-300);
 }
 
 .Avatar--accent2 {
-  background: var(--accent2);
+  background: var(--accent2-300);
 }
 
 .Avatar--accent3 {
-  background: var(--accent3);
+  background: var(--accent3-300);
 }
 
 .Avatar--accent4 {
-  background: var(--accent4);
+  background: var(--accent4-300);
 }
 
 .Avatar-content--tiny {
@@ -101,10 +106,45 @@
   font-size: 10px !important;
 }
 
-.Avatar-content {
+.Avatar-content--micro {
+  line-height: var(--font-height-s) !important;
+  font-size: 10px !important;
+}
+
+.Avatar-content--primary {
+  color: var(--primary-darker) !important;
+}
+
+.Avatar-content--secondary {
   color: var(--inverse) !important;
-  opacity: var(--opacity-20);
-  mix-blend-mode: multiply;
+}
+
+.Avatar-content--success {
+  color: var(--success-darker) !important;
+}
+
+.Avatar-content--alert {
+  color: var(--alert-darker) !important;
+}
+
+.Avatar-content--warning {
+  color: var(--warning-darker) !important;
+}
+
+.Avatar-content--accent1 {
+  color: var(--accent1-darker) !important;
+}
+
+.Avatar-content--accent2 {
+  color: var(--accent2-darker) !important;
+}
+
+.Avatar-content--accent3 {
+  color: var(--accent3-darker) !important;
+}
+
+.Avatar-content--accent4 {
+  color: var(--accent4-darker) !important;
 }
 
 .Avatar-presence {
