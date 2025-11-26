@@ -631,5 +631,40 @@ describe('showNestedRowTrigger flag behavior', () => {
       // Should not render trigger during loading
       expect(queryByTestId('DesignSystem-Grid-nestedRowTrigger')).not.toBeInTheDocument();
     });
+
+    it('collapses expanded nested rows when sorting changes', () => {
+      const data = [{ name: 'Zara' }];
+      const { getByTestId, rerender } = render(
+        <Grid
+          schema={schema}
+          data={data}
+          nestedRows={true}
+          nestedRowRenderer={mockNestedRowRenderer}
+          showNestedRowTrigger={true}
+        />
+      );
+
+      const trigger = getByTestId('DesignSystem-Grid-nestedRowTrigger');
+      fireEvent.click(trigger);
+
+      let lastCall = mockNestedRowRenderer.mock.calls[mockNestedRowRenderer.mock.calls.length - 1][0];
+      expect(lastCall.expanded).toBe(true);
+
+      mockNestedRowRenderer.mockClear();
+
+      rerender(
+        <Grid
+          schema={schema}
+          data={data}
+          nestedRows={true}
+          nestedRowRenderer={mockNestedRowRenderer}
+          showNestedRowTrigger={true}
+          sortingList={[{ name: 'name', type: 'asc' }]}
+        />
+      );
+
+      lastCall = mockNestedRowRenderer.mock.calls[mockNestedRowRenderer.mock.calls.length - 1][0];
+      expect(lastCall.expanded).toBe(false);
+    });
   });
 });
