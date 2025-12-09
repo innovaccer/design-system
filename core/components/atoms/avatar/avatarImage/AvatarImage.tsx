@@ -19,6 +19,7 @@ export interface AvatarImageProps extends BaseProps {
 const sizeMapper: Record<string, number> = {
   regular: 32,
   tiny: 24,
+  micro: 20,
 };
 
 export const AvatarImage = (props: AvatarImageProps) => {

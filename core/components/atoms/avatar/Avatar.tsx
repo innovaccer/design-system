@@ -7,7 +7,9 @@ import { AccentAppearance, AvatarSize, AvatarShape } from '@/common.type';
 import AvatarIcon from './avatarIcon';
 import AvatarImage from './avatarImage';
 import AvatarProvider from './AvatarProvider';
+import { iconAppearanceMapper } from './constants';
 import styles from '@css/components/avatar.module.css';
+import { IconAppearance } from 'types';
 
 type TPresence = 'active' | 'away';
 
@@ -117,8 +119,9 @@ export const Avatar = (props: AvatarProps) => {
     appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] || DefaultAppearance;
 
   const darkAppearance = ['secondary', 'success', 'warning', 'accent1', 'accent4'];
-  const showPresence = presence && !disabled && shape === 'round' && (presence === 'active' || presence === 'away');
-  const showStatus = status && size === 'regular' && shape === 'round';
+  const showPresence =
+    presence && !disabled && size !== 'micro' && shape === 'round' && (presence === 'active' || presence === 'away');
+  const showStatus = status && size !== 'micro' && size === 'regular' && shape === 'round';
 
   const AvatarClassNames = classNames(
     {
@@ -140,11 +143,7 @@ export const Avatar = (props: AvatarProps) => {
 
   const TextClassNames = classNames({
     [styles[`Avatar-content--${size}`]]: size,
-    [styles['Avatar-content']]: darkAppearance.includes(AvatarAppearance),
-  });
-
-  const IconClassNames = classNames({
-    [styles['Avatar-content']]: darkAppearance.includes(AvatarAppearance),
+    [styles[`Avatar-content--${AvatarAppearance}`]]: AvatarAppearance,
   });
 
   const presenceClassNames = classNames({
@@ -163,6 +162,19 @@ export const Avatar = (props: AvatarProps) => {
     lastName,
     appearance: AvatarAppearance,
     darkAppearance,
+  };
+
+  const renderFallbackIcon = () => {
+    const iconName = shape === 'square' ? 'groups' : 'person';
+    const iconAppearance = iconAppearanceMapper[AvatarAppearance] || 'inverse';
+    return (
+      <Icon
+        data-test="DesignSystem-Avatar--Icon"
+        name={iconName}
+        size={size === 'regular' ? 20 : 16}
+        appearance={iconAppearance as IconAppearance}
+      />
+    );
   };
 
   const renderAvatar = () => {
@@ -191,20 +203,14 @@ export const Avatar = (props: AvatarProps) => {
           className={AvatarClassNames}
           tabIndex={tabIndex || disabled ? -1 : 0}
         >
-          {initials && (
-            <Text weight="medium" appearance={'white'} className={TextClassNames}>
-              {initials}
-            </Text>
-          )}
-          {!initials && (
-            <Icon
-              data-test="DesignSystem-Avatar--Icon"
-              name="person"
-              size={size === 'regular' ? 20 : 16}
-              appearance={'white'}
-              className={IconClassNames}
-            />
-          )}
+          <>
+            {initials && (
+              <Text weight="medium" className={TextClassNames}>
+                {initials}
+              </Text>
+            )}
+            {!initials && renderFallbackIcon()}
+          </>
         </span>
       </span>
     );

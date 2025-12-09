@@ -91,7 +91,7 @@ export type TextColor =
   | 'accent4-shadow'
   | 'inverse-shadow';
 
-export type AvatarSize = 'regular' | 'tiny';
+export type AvatarSize = 'regular' | 'tiny' | 'micro';
 
 export type AvatarShape = 'round' | 'square';
 
