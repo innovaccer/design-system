@@ -83,7 +83,7 @@ Object {
                     tabindex="0"
                   >
                     <span
-                      class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                      class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
                       data-test="DesignSystem-Text"
                     >
                       JD
@@ -184,7 +184,7 @@ Object {
                   tabindex="0"
                 >
                   <span
-                    class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content"
+                    class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
                     data-test="DesignSystem-Text"
                   >
                     JD

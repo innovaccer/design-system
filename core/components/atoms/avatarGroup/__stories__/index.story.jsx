@@ -1,22 +1,51 @@
 import * as React from 'react';
-import { AvatarGroup } from '@/index';
-import { list } from './AvatarList';
+import { AvatarGroup, Avatar } from '@/index';
 
 export const all = () => {
-  const position = 'bottom';
-  const max = 2;
-  const options = {
-    max,
-    popoverOptions: {
-      position,
-      withSearch: true,
-      searchPlaceholder: 'Search User',
-      on: 'click',
+  const list = [
+    {
+      firstName: 'John',
+      lastName: 'Doe',
     },
-    list: list.slice(0, 4),
-  };
+    {
+      firstName: 'Steven',
+      lastName: 'Packton',
+    },
+    {
+      firstName: 'Nancy',
+      lastName: 'Wheeler',
+    },
+    {
+      firstName: 'Rachel',
+      lastName: 'Green',
+      icon: <Avatar.Icon name="person" />,
+    },
+    {
+      firstName: 'Anuradha',
+      lastName: 'Aggarwal',
+      image: <Avatar.Image src="https://design.innovaccer.com/images/avatar2.jpeg" />,
+    },
+    {
+      firstName: 'Monica',
+      lastName: 'Geller',
+    },
+    {
+      firstName: 'Arya',
+      lastName: 'Stark',
+    },
+  ];
 
-  return <AvatarGroup {...options} />;
+  return (
+    <AvatarGroup
+      list={list}
+      max={2}
+      popoverOptions={{
+        position: 'bottom',
+        withSearch: true,
+        searchPlaceholder: 'Search User',
+      }}
+    />
+  );
 };
 
 const customCode = `() => {
@@ -31,12 +60,12 @@ const customCode = `() => {
     },
     {
       firstName: 'Nancy',
-      lastName: 'Wheeler'
+      lastName: 'Wheeler',
     },
     {
       firstName: 'Rachel',
       lastName: 'Green',
-      icon: <Avatar.Icon name="person" />
+      icon: <Avatar.Icon name="person" />,
     },
     {
       firstName: 'Anuradha',
@@ -45,14 +74,25 @@ const customCode = `() => {
     },
     {
       firstName: 'Monica',
-      lastName: 'Geller'
+      lastName: 'Geller',
     },
     {
       firstName: 'Arya',
       lastName: 'Stark',
     },
   ];
-  return <AvatarGroup list={list} popoverOptions={{ position: 'bottom', withSearch: true, on: 'click', searchPlaceholder: 'Search User',}} />;
+
+  return (
+    <AvatarGroup
+      list={list}
+      max={2}
+      popoverOptions={{
+        position: 'bottom',
+        withSearch: true,
+        searchPlaceholder: 'Search User',
+      }}
+    />
+  );
 }`;
 
 export default {
