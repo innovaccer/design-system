@@ -1,3 +1,41 @@
+## 4.17.1 (2025-12-11)
+
+### Highlights
+
+- fix(avatar): update avatar fallback appearance and text color (f20339b8)
+- docs(Avatars): update the docs for the avatar and avatarGroups (9e3b9273)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+- fix(avatar): update avatar fallback appearance and text color (f20339b8)
+
+### Improvements
+
+NA
+
+### Documentation
+
+- docs(Avatars): update the docs for the avatar and avatarGroups (9e3b9273)
+- docs(avatar): update docs for avatar and avatarGroups (c7dc4be9)
+
+---
+
 ## 4.17.0 (2025-12-10)
 
 ### Highlights
