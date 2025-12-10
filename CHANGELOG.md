@@ -1,3 +1,39 @@
+## 4.17.0 (2025-12-10)
+
+### Highlights
+
+- feat(Avatar): update new color and update shape for avatarGroups and avatarSelection (3a6c626f)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(Avatar): update new color and update shape for avatarGroups and avatarSelection (3a6c626f)
+
+### Fixes
+
+NA
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 4.16.1 (2025-11-23)
 
 ### Highlights
