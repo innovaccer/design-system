@@ -3,6 +3,8 @@ import { Text, Icon } from '@/index';
 import classNames from 'classnames';
 import { AvatarContext } from '../AvatarProvider';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import { iconAppearanceMapper } from '../constants';
+import { IconAppearance } from 'types';
 import styles from '@css/components/avatar.module.css';
 
 export interface AvatarImageProps extends BaseProps {
@@ -32,15 +34,18 @@ export const AvatarImage = (props: AvatarImageProps) => {
 
   const initials = `${firstName ? firstName.trim()[0] : ''}${lastName ? lastName.trim()[0] : ''}`;
   const imgSize = size && sizeMapper[size];
+  const avatarAppearance = appearance || 'secondary';
 
   const TextClassNames = classNames({
     [styles[`Avatar-content--${size}`]]: size,
-    [styles['Avatar-content']]: appearance && darkAppearance.includes(appearance),
+    [styles[`Avatar-content--${avatarAppearance}`]]: avatarAppearance,
   });
 
   const IconClassNames = classNames({
-    [styles['Avatar-content']]: appearance && darkAppearance.includes(appearance),
+    [styles['Avatar-content']]: avatarAppearance && darkAppearance.includes(avatarAppearance),
   });
+
+  const iconAppearance = (iconAppearanceMapper[avatarAppearance] as IconAppearance) || 'inverse';
 
   const onError = () => {
     setError(true);
@@ -53,7 +58,7 @@ export const AvatarImage = (props: AvatarImageProps) => {
   if (error) {
     if (initials) {
       return (
-        <Text weight="medium" appearance={'white'} className={TextClassNames} {...baseProps}>
+        <Text weight="medium" className={TextClassNames} {...baseProps}>
           {initials}
         </Text>
       );
@@ -64,7 +69,7 @@ export const AvatarImage = (props: AvatarImageProps) => {
         data-test="DesignSystem-Avatar--Icon"
         name="person"
         size={size === 'regular' ? 20 : 16}
-        appearance="white"
+        appearance={iconAppearance}
         className={IconClassNames}
       />
     );

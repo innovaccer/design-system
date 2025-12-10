@@ -71,6 +71,38 @@ describe('Avatar Image component with fallback', () => {
     });
   });
 
+  it('check for fallback text with appearance class', async () => {
+    const { getByTestId } = render(
+      <Avatar firstName="John" lastName="Doe" appearance="primary">
+        <Avatar.Image src="https://design.innovaccer.com/images/witType.png" />
+      </Avatar>
+    );
+    const imgEle = getByTestId('DesignSystem-Image');
+    fireEvent.error(imgEle, { target: imgEle });
+    await waitFor(() => {
+      const textElement = getByTestId('DesignSystem-Text');
+      expect(textElement).toHaveTextContent('JD');
+      expect(textElement).toHaveClass('Avatar-content--regular');
+      expect(textElement).toHaveClass('Avatar-content--primary');
+    });
+  });
+
+  it('check for fallback text with secondary appearance (explicit)', async () => {
+    const { getByTestId } = render(
+      <Avatar firstName="John" lastName="Doe" appearance="secondary">
+        <Avatar.Image src="https://design.innovaccer.com/images/witType.png" />
+      </Avatar>
+    );
+    const imgEle = getByTestId('DesignSystem-Image');
+    fireEvent.error(imgEle, { target: imgEle });
+    await waitFor(() => {
+      const textElement = getByTestId('DesignSystem-Text');
+      expect(textElement).toHaveTextContent('JD');
+      expect(textElement).toHaveClass('Avatar-content--regular');
+      expect(textElement).toHaveClass('Avatar-content--secondary');
+    });
+  });
+
   it('check for fallback icon', async () => {
     const { getByTestId } = render(
       <Avatar>
@@ -81,6 +113,36 @@ describe('Avatar Image component with fallback', () => {
     fireEvent.error(imgEle, { target: imgEle });
     await waitFor(() => {
       expect(getByTestId('DesignSystem-Avatar--Icon')).toBeInTheDocument();
+    });
+  });
+
+  it('check for fallback icon with appearance', async () => {
+    const { getByTestId } = render(
+      <Avatar appearance="primary">
+        <Avatar.Image src="https://design.innovaccer.com/images/witType.png" />
+      </Avatar>
+    );
+    const imgEle = getByTestId('DesignSystem-Image');
+    fireEvent.error(imgEle, { target: imgEle });
+    await waitFor(() => {
+      const iconElement = getByTestId('DesignSystem-Avatar--Icon');
+      expect(iconElement).toBeInTheDocument();
+      expect(iconElement).toHaveClass('Icon--primaryDarker');
+    });
+  });
+
+  it('check for fallback icon with secondary appearance (explicit)', async () => {
+    const { getByTestId } = render(
+      <Avatar appearance="secondary">
+        <Avatar.Image src="https://design.innovaccer.com/images/witType.png" />
+      </Avatar>
+    );
+    const imgEle = getByTestId('DesignSystem-Image');
+    fireEvent.error(imgEle, { target: imgEle });
+    await waitFor(() => {
+      const iconElement = getByTestId('DesignSystem-Avatar--Icon');
+      expect(iconElement).toBeInTheDocument();
+      expect(iconElement).toHaveClass('Icon--inverse');
     });
   });
 });
@@ -116,5 +178,46 @@ describe('Avatar Image component with avatar sizes', () => {
     const imgEle = getByTestId('DesignSystem-Image');
     expect(imgEle).toHaveAttribute('height', '24');
     expect(imgEle).toHaveAttribute('width', '24');
+  });
+
+  it('image should have height and width of 20px for micro avatar', () => {
+    const { getByTestId } = render(
+      <Avatar firstName="John" lastName="Doe" size="micro">
+        <Avatar.Image src={imgSrc} />
+      </Avatar>
+    );
+    const imgEle = getByTestId('DesignSystem-Image');
+    expect(imgEle).toHaveAttribute('height', '20');
+    expect(imgEle).toHaveAttribute('width', '20');
+  });
+
+  it('fallback text should have correct size class for tiny avatar', async () => {
+    const { getByTestId } = render(
+      <Avatar firstName="John" lastName="Doe" size="tiny" appearance="primary">
+        <Avatar.Image src="https://design.innovaccer.com/images/witType.png" />
+      </Avatar>
+    );
+    const imgEle = getByTestId('DesignSystem-Image');
+    fireEvent.error(imgEle, { target: imgEle });
+    await waitFor(() => {
+      const textElement = getByTestId('DesignSystem-Text');
+      expect(textElement).toHaveClass('Avatar-content--tiny');
+      expect(textElement).toHaveClass('Avatar-content--primary');
+    });
+  });
+
+  it('fallback text should have correct size class for micro avatar', async () => {
+    const { getByTestId } = render(
+      <Avatar firstName="John" lastName="Doe" size="micro" appearance="primary">
+        <Avatar.Image src="https://design.innovaccer.com/images/witType.png" />
+      </Avatar>
+    );
+    const imgEle = getByTestId('DesignSystem-Image');
+    fireEvent.error(imgEle, { target: imgEle });
+    await waitFor(() => {
+      const textElement = getByTestId('DesignSystem-Text');
+      expect(textElement).toHaveClass('Avatar-content--micro');
+      expect(textElement).toHaveClass('Avatar-content--primary');
+    });
   });
 });
