@@ -7,6 +7,7 @@ import AvatarSelectionList from './AvatarSelectionList';
 import AvatarSelectionOption from './AvatarSelectionOption';
 import AvatarSelectionEmptyState from './AvatarSelectionEmptyState';
 import { AvatarSelectionContext } from '../AvatarSelectionContext';
+import { AvatarSize } from '@/common.type';
 import styles from '@css/components/avatarSelection.module.css';
 
 interface AvatarPopoverProps {
@@ -15,15 +16,19 @@ interface AvatarPopoverProps {
   searchComparator?: (searchValue: string, avatarData: AvatarData) => boolean;
   children?: React.ReactNode;
   customStyle: { width?: number; minHeight?: number; maxHeight?: number };
+  size?: AvatarSize;
 }
 
 interface AvatarSelectionItemProps {
   avatarData: AvatarData;
   isSelected?: boolean;
+  size?: AvatarSize;
 }
 
 const AvatarSelectionItem = (props: AvatarSelectionItemProps) => {
-  const { avatarData, isSelected } = props;
+  const { avatarData, isSelected, size } = props;
+  const { shape } = avatarData;
+  const avatarShape = shape === 'square' ? 'square' : 'round';
   const [showTooltip, setShowTooltip] = React.useState(false);
   const elementRef = React.useRef(null);
 
@@ -53,7 +58,7 @@ const AvatarSelectionItem = (props: AvatarSelectionItemProps) => {
         tabIndex={-1}
         data-test="DesignSystem-AvatarSelection--Checkbox"
       />
-      <Avatar {...avatarData} className="ml-3" withTooltip={false}>
+      <Avatar {...avatarData} shape={avatarShape} size={size} className="ml-3" withTooltip={false}>
         {image || icon}
       </Avatar>
       <Tooltip
@@ -72,7 +77,7 @@ const AvatarSelectionItem = (props: AvatarSelectionItemProps) => {
 };
 
 export const AvatarSelectionPopover = (props: AvatarPopoverProps) => {
-  const { hiddenAvatarList, customStyle, searchPlaceholder, searchComparator, children } = props;
+  const { hiddenAvatarList, customStyle, searchPlaceholder, searchComparator, children, size } = props;
 
   const [searchList, setSearchList] = React.useState(hiddenAvatarList);
   const [searchValue, setSearchValue] = React.useState('');
@@ -140,11 +145,11 @@ export const AvatarSelectionPopover = (props: AvatarPopoverProps) => {
           />
         )}
 
-        <AvatarSelectionList>
+        <AvatarSelectionList size={size === 'micro' ? 'tight' : 'compressed'}>
           {searchList.map((avatarData: AvatarData, index: number) => {
             const isSelected = selectedItems?.includes(avatarData);
 
-            return <AvatarSelectionItem key={index} avatarData={avatarData} isSelected={isSelected} />;
+            return <AvatarSelectionItem key={index} avatarData={avatarData} isSelected={isSelected} size={size} />;
           })}
         </AvatarSelectionList>
       </div>

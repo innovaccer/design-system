@@ -423,3 +423,45 @@ describe('AvatarGroup component with prop:withSearch', () => {
     expect(searchInput).toBeNull();
   });
 });
+
+describe('AvatarGroup component with shape in data', () => {
+  it('should render avatars with square shape when shape is square in data', () => {
+    const squareList = list.map((item, index) => (index === 0 ? { ...item, shape: 'square' as const } : item));
+    const { getAllByTestId } = render(<AvatarGroup list={squareList} max={3} />);
+    const avatars = getAllByTestId('DesignSystem-AvatarGroup--Avatar');
+    const firstAvatarElement = avatars[0].querySelector('[data-test="DesignSystem-Avatar"]');
+    expect(firstAvatarElement).toHaveClass('Avatar--square');
+    const secondAvatarElement = avatars[1].querySelector('[data-test="DesignSystem-Avatar"]');
+    expect(secondAvatarElement).not.toHaveClass('Avatar--square');
+  });
+
+  it('should render avatars with round shape by default when shape is not provided', () => {
+    const { getAllByTestId } = render(<AvatarGroup list={list} max={3} />);
+    const avatars = getAllByTestId('DesignSystem-AvatarGroup--Avatar');
+    avatars.forEach((avatar) => {
+      const avatarElement = avatar.querySelector('[data-test="DesignSystem-Avatar"]');
+      expect(avatarElement).not.toHaveClass('Avatar--square');
+    });
+  });
+
+  it('should render count avatar as round always', () => {
+    const squareList = list.map((item) => ({ ...item, shape: 'square' as const }));
+    const { getByTestId } = render(<AvatarGroup list={squareList} max={3} />);
+    const countAvatar = getByTestId('DesignSystem-AvatarGroup--TriggerAvatarVariants');
+    expect(countAvatar).not.toHaveClass('Avatar--square');
+  });
+
+  it('should pass shape from data to popover avatars', () => {
+    const squareList = list.map((item, index) => (index >= 3 ? { ...item, shape: 'square' as const } : item));
+    const { getByTestId, getAllByTestId } = render(
+      <AvatarGroup list={squareList} max={3} popoverOptions={{ on: 'click' }} />
+    );
+    const trigger = getByTestId('DesignSystem-AvatarGroup--TriggerAvatar');
+    fireEvent.click(trigger);
+    const popoverAvatars = getAllByTestId('DesignSystem-AvatarGroup--Item');
+    popoverAvatars.forEach((item) => {
+      const avatarElement = item.querySelector('[data-test="DesignSystem-Avatar"]');
+      expect(avatarElement).toHaveClass('Avatar--square');
+    });
+  });
+});

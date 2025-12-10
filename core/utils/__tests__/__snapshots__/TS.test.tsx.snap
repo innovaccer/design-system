@@ -16,7 +16,7 @@ exports[`TS renders children 1`] = `
         tabindex="0"
       >
         <i
-          class="material-symbols material-symbols-rounded Icon Icon--white Avatar-content"
+          class="material-symbols material-symbols-rounded Icon Icon--inverse"
           data-test="DesignSystem-Avatar--Icon"
           role="button"
           style="font-size: 20px; width: 20px;"

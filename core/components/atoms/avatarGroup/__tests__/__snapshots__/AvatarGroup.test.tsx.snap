@@ -69,7 +69,7 @@ Object {
                   tabindex="0"
                 >
                   <i
-                    class="material-symbols material-symbols-rounded Icon Icon--white"
+                    class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                     data-test="DesignSystem-Icon"
                     role="button"
                     style="font-size: 20px; width: 20px;"
@@ -147,7 +147,7 @@ Object {
                 tabindex="0"
               >
                 <i
-                  class="material-symbols material-symbols-rounded Icon Icon--white"
+                  class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                   data-test="DesignSystem-Icon"
                   role="button"
                   style="font-size: 20px; width: 20px;"
@@ -284,7 +284,7 @@ Object {
                   tabindex="0"
                 >
                   <i
-                    class="material-symbols material-symbols-rounded Icon Icon--white"
+                    class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                     data-test="DesignSystem-Icon"
                     role="button"
                     style="font-size: 20px; width: 20px;"
@@ -362,7 +362,7 @@ Object {
                 tabindex="0"
               >
                 <i
-                  class="material-symbols material-symbols-rounded Icon Icon--white"
+                  class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                   data-test="DesignSystem-Icon"
                   role="button"
                   style="font-size: 20px; width: 20px;"
@@ -499,7 +499,7 @@ Object {
                   tabindex="0"
                 >
                   <i
-                    class="material-symbols material-symbols-rounded Icon Icon--white"
+                    class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                     data-test="DesignSystem-Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
@@ -577,7 +577,7 @@ Object {
                 tabindex="0"
               >
                 <i
-                  class="material-symbols material-symbols-rounded Icon Icon--white"
+                  class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                   data-test="DesignSystem-Icon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -714,7 +714,7 @@ Object {
                   tabindex="0"
                 >
                   <i
-                    class="material-symbols material-symbols-rounded Icon Icon--white"
+                    class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                     data-test="DesignSystem-Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
@@ -792,7 +792,7 @@ Object {
                 tabindex="0"
               >
                 <i
-                  class="material-symbols material-symbols-rounded Icon Icon--white"
+                  class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                   data-test="DesignSystem-Icon"
                   role="button"
                   style="font-size: 16px; width: 16px;"

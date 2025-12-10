@@ -15,6 +15,10 @@
   position: relative;
 }
 
+.SelectionAvatarGroup-item--square {
+  border-radius: var(--border-radius-10);
+}
+
 .SelectionAvatarGroup-item--active:focus,
 .SelectionAvatarGroup-item--active:focus-visible {
   outline: 3px solid var(--primary-shadow);
@@ -22,7 +26,17 @@
 }
 
 .SelectionAvatarGroup-item--active:active {
-  outline: var(--spacing-05) solid #00509f;
+  outline: var(--border-width-2-5) solid var(--primary-dark);
+  outline-offset: var(--spacing-2-5);
+}
+
+.SelectionAvatarGroup-item--active-tiny:active,
+.SelectionAvatarGroup-item--active-micro:active {
+  outline-offset: var(--spacing-05);
+}
+
+.SelectionAvatarGroup-item--active-regular:active {
+  outline: var(--border-width-05) solid var(--primary-dark);
   outline-offset: var(--spacing-2-5);
 }
 
@@ -34,12 +48,31 @@
 
 .SelectionAvatarGroup-item--selected {
   outline-offset: var(--spacing-2-5);
-  outline: var(--spacing-05) solid var(--primary-dark);
+  outline: var(--border-width-2-5) solid var(--primary-dark);
+}
+
+.SelectionAvatarGroup-item--selected-tiny,
+.SelectionAvatarGroup-item--selected-micro {
+  outline-offset: var(--spacing-05);
+}
+
+.SelectionAvatarGroup-item--selected-regular {
+  outline: var(--border-width-05) solid var(--primary-dark);
 }
 
 .SelectionAvatarGroup-item--selected:active {
   outline-offset: var(--spacing-2-5);
-  outline: var(--spacing-05) solid var(--primary-darker);
+  outline: var(--border-width-2-5) solid var(--primary-darker);
+}
+
+.SelectionAvatarGroup-item--selected-tiny:active,
+.SelectionAvatarGroup-item--selected-micro:active {
+  outline-offset: var(--spacing-05);
+}
+
+.SelectionAvatarGroup-item--selected-regular:active {
+  outline-offset: var(--spacing-2-5);
+  outline: var(--border-width-05) solid var(--primary-darker);
 }
 
 .SelectionAvatarGroup-item--selected:focus,
@@ -94,6 +127,10 @@
   background: var(--secondary-dark);
 }
 
+.SelectionAvatarCount--open {
+  background: var(--secondary-dark) !important;
+}
+
 .SelectionAvatarCount-wrapper:focus,
 .SelectionAvatarCount-wrapper:focus-visible {
   outline: 3px solid var(--primary-shadow);
@@ -102,7 +139,31 @@
 
 .SelectionAvatarCount--selected {
   outline-offset: var(--spacing-2-5);
-  outline: var(--spacing-05) solid var(--primary-dark);
+  outline: var(--border-width-2-5) solid var(--primary-dark);
+}
+
+.SelectionAvatarCount--selected-tiny,
+.SelectionAvatarCount--selected-micro {
+  outline-offset: var(--spacing-05);
+}
+
+.SelectionAvatarCount--selected-regular {
+  outline: var(--border-width-05) solid var(--primary-dark);
+}
+
+.SelectionAvatarCount--selected:active {
+  outline-offset: var(--spacing-2-5);
+  outline: var(--border-width-2-5) solid var(--primary-darker);
+}
+
+.SelectionAvatarCount--selected-tiny:active,
+.SelectionAvatarCount--selected-micro:active {
+  outline-offset: var(--spacing-05);
+}
+
+.SelectionAvatarCount--selected-regular:active {
+  outline-offset: var(--spacing-2-5);
+  outline: var(--border-width-05) solid var(--primary-darker);
 }
 
 .SelectionAvatarCount--selected:focus,

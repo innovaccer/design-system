@@ -4,6 +4,10 @@
   margin-right: calc(var(--spacing-05) * -1);
 }
 
+.AvatarGroup-item--square {
+  border-radius: var(--border-radius-10);
+}
+
 .AvatarGroup-item--regular {
   height: var(--spacing-80);
 }
