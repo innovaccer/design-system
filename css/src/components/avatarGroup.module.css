@@ -31,6 +31,8 @@
 .AvatarCount-wrapper {
   border-radius: var(--border-radius-full);
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .AvatarCount-wrapper:focus,
