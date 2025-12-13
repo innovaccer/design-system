@@ -204,6 +204,10 @@ menus:
     link: /components/select/usage/
     hideInMobile: true
 
+  - label: Segmented Control
+    link: /components/segmentedControl/usage/
+    hideInMobile: true
+
   - label: Sidesheet
     link: /components/sidesheet/usage/
     hideInMobile: true
