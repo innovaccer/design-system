@@ -169,3 +169,195 @@
 .order-last {
   order: 6 !important;
 }
+
+/* Gap utilities */
+.gap-0 {
+  gap: 0 !important;
+}
+
+.gap-2-5 {
+  gap: var(--spacing-2-5) !important;
+}
+
+.gap-05 {
+  gap: var(--spacing-05) !important;
+}
+
+.gap-10 {
+  gap: var(--spacing-10) !important;
+}
+
+.gap-15 {
+  gap: var(--spacing-15) !important;
+}
+
+.gap-20 {
+  gap: var(--spacing-20) !important;
+}
+
+.gap-30 {
+  gap: var(--spacing-30) !important;
+}
+
+/* Row Gap utilities */
+.row-gap-0 {
+  row-gap: 0 !important;
+}
+
+.row-gap-2-5 {
+  row-gap: var(--spacing-2-5) !important;
+}
+
+.row-gap-05 {
+  row-gap: var(--spacing-05) !important;
+}
+
+.row-gap-10 {
+  row-gap: var(--spacing-10) !important;
+}
+
+.row-gap-15 {
+  row-gap: var(--spacing-15) !important;
+}
+
+.row-gap-20 {
+  row-gap: var(--spacing-20) !important;
+}
+
+.row-gap-30 {
+  row-gap: var(--spacing-30) !important;
+}
+
+/* Column Gap utilities */
+.column-gap-0 {
+  column-gap: 0 !important;
+}
+
+.column-gap-2-5 {
+  column-gap: var(--spacing-2-5) !important;
+}
+
+.column-gap-05 {
+  column-gap: var(--spacing-05) !important;
+}
+
+.column-gap-10 {
+  column-gap: var(--spacing-10) !important;
+}
+
+.column-gap-15 {
+  column-gap: var(--spacing-15) !important;
+}
+
+.column-gap-20 {
+  column-gap: var(--spacing-20) !important;
+}
+
+.column-gap-30 {
+  column-gap: var(--spacing-30) !important;
+}
+
+/* Justify Items utilities */
+.justify-items-start {
+  justify-items: start !important;
+}
+
+.justify-items-end {
+  justify-items: end !important;
+}
+
+.justify-items-center {
+  justify-items: center !important;
+}
+
+.justify-items-stretch {
+  justify-items: stretch !important;
+}
+
+/* Justify Self utilities */
+.justify-self-auto {
+  justify-self: auto !important;
+}
+
+.justify-self-start {
+  justify-self: start !important;
+}
+
+.justify-self-end {
+  justify-self: end !important;
+}
+
+.justify-self-center {
+  justify-self: center !important;
+}
+
+.justify-self-stretch {
+  justify-self: stretch !important;
+}
+
+/* Place Content utilities */
+.place-content-center {
+  place-content: center !important;
+}
+
+.place-content-start {
+  place-content: start !important;
+}
+
+.place-content-end {
+  place-content: end !important;
+}
+
+.place-content-between {
+  place-content: space-between !important;
+}
+
+.place-content-around {
+  place-content: space-around !important;
+}
+
+.place-content-evenly {
+  place-content: space-evenly !important;
+}
+
+.place-content-stretch {
+  place-content: stretch !important;
+}
+
+/* Place Items utilities */
+.place-items-start {
+  place-items: start !important;
+}
+
+.place-items-end {
+  place-items: end !important;
+}
+
+.place-items-center {
+  place-items: center !important;
+}
+
+.place-items-stretch {
+  place-items: stretch !important;
+}
+
+/* Place Self utilities */
+.place-self-auto {
+  place-self: auto !important;
+}
+
+.place-self-start {
+  place-self: start !important;
+}
+
+.place-self-end {
+  place-self: end !important;
+}
+
+.place-self-center {
+  place-self: center !important;
+}
+
+.place-self-stretch {
+  place-self: stretch !important;
+}
