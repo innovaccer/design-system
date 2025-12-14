@@ -1,0 +1,190 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GridItem component 
+  columnSpan: 1
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="MdsGrid MdsGrid-justifyItems--stretch MdsGrid-alignItems--stretch MdsGrid-autoFlow--row"
+      data-test="DesignSystem-MdsGrid"
+      style="grid-template-columns: repeat(12, 1fr);"
+    >
+      <div
+        class="MdsGridItem MdsGridItem-columnSpan--1 MdsGridItem-rowSpan--1"
+        data-test="DesignSystem-MdsGridItem"
+      >
+        Grid Item Content
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`GridItem component 
+  columnSpan: 2
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="MdsGrid MdsGrid-justifyItems--stretch MdsGrid-alignItems--stretch MdsGrid-autoFlow--row"
+      data-test="DesignSystem-MdsGrid"
+      style="grid-template-columns: repeat(12, 1fr);"
+    >
+      <div
+        class="MdsGridItem MdsGridItem-columnSpan--2 MdsGridItem-rowSpan--1"
+        data-test="DesignSystem-MdsGridItem"
+      >
+        Grid Item Content
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`GridItem component 
+  columnSpan: 3
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="MdsGrid MdsGrid-justifyItems--stretch MdsGrid-alignItems--stretch MdsGrid-autoFlow--row"
+      data-test="DesignSystem-MdsGrid"
+      style="grid-template-columns: repeat(12, 1fr);"
+    >
+      <div
+        class="MdsGridItem MdsGridItem-columnSpan--3 MdsGridItem-rowSpan--1"
+        data-test="DesignSystem-MdsGridItem"
+      >
+        Grid Item Content
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`GridItem component 
+  columnSpan: 4
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="MdsGrid MdsGrid-justifyItems--stretch MdsGrid-alignItems--stretch MdsGrid-autoFlow--row"
+      data-test="DesignSystem-MdsGrid"
+      style="grid-template-columns: repeat(12, 1fr);"
+    >
+      <div
+        class="MdsGridItem MdsGridItem-columnSpan--4 MdsGridItem-rowSpan--1"
+        data-test="DesignSystem-MdsGridItem"
+      >
+        Grid Item Content
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`GridItem component 
+  columnSpan: 6
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="MdsGrid MdsGrid-justifyItems--stretch MdsGrid-alignItems--stretch MdsGrid-autoFlow--row"
+      data-test="DesignSystem-MdsGrid"
+      style="grid-template-columns: repeat(12, 1fr);"
+    >
+      <div
+        class="MdsGridItem MdsGridItem-columnSpan--6 MdsGridItem-rowSpan--1"
+        data-test="DesignSystem-MdsGridItem"
+      >
+        Grid Item Content
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`GridItem component 
+  columnSpan: 12
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="MdsGrid MdsGrid-justifyItems--stretch MdsGrid-alignItems--stretch MdsGrid-autoFlow--row"
+      data-test="DesignSystem-MdsGrid"
+      style="grid-template-columns: repeat(12, 1fr);"
+    >
+      <div
+        class="MdsGridItem MdsGridItem-columnSpan--12 MdsGridItem-rowSpan--1"
+        data-test="DesignSystem-MdsGridItem"
+      >
+        Grid Item Content
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`GridItem component with rowSpan 
+  rowSpan: 1
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="MdsGrid MdsGrid-justifyItems--stretch MdsGrid-alignItems--stretch MdsGrid-autoFlow--row"
+      data-test="DesignSystem-MdsGrid"
+      style="grid-template-columns: repeat(12, 1fr); grid-template-rows: repeat(3, auto);"
+    >
+      <div
+        class="MdsGridItem MdsGridItem-columnSpan--1 MdsGridItem-rowSpan--1"
+        data-test="DesignSystem-MdsGridItem"
+      >
+        Grid Item Content
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`GridItem component with rowSpan 
+  rowSpan: 2
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="MdsGrid MdsGrid-justifyItems--stretch MdsGrid-alignItems--stretch MdsGrid-autoFlow--row"
+      data-test="DesignSystem-MdsGrid"
+      style="grid-template-columns: repeat(12, 1fr); grid-template-rows: repeat(3, auto);"
+    >
+      <div
+        class="MdsGridItem MdsGridItem-columnSpan--1 MdsGridItem-rowSpan--2"
+        data-test="DesignSystem-MdsGridItem"
+      >
+        Grid Item Content
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`GridItem component with rowSpan 
+  rowSpan: 3
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="MdsGrid MdsGrid-justifyItems--stretch MdsGrid-alignItems--stretch MdsGrid-autoFlow--row"
+      data-test="DesignSystem-MdsGrid"
+      style="grid-template-columns: repeat(12, 1fr); grid-template-rows: repeat(3, auto);"
+    >
+      <div
+        class="MdsGridItem MdsGridItem-columnSpan--1 MdsGridItem-rowSpan--3"
+        data-test="DesignSystem-MdsGridItem"
+      >
+        Grid Item Content
+      </div>
+    </div>
+  </div>
+</body>
+`;
