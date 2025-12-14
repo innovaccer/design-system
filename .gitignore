@@ -105,3 +105,4 @@ docs/static/sb/
 docs/cypress/videos
 docs/cypress/screenshots
 .env
+.vscode
