@@ -19,6 +19,7 @@ export { Column } from './components/atoms/column';
 export { DatePicker } from './components/organisms/datePicker';
 export { TimePicker } from './components/organisms/timePicker';
 export { Dropdown } from './components/atoms/dropdown';
+export { Flex } from './components/atoms/flex';
 export { Heading } from './components/atoms/heading';
 export { Icon } from './components/atoms/icon';
 export { Input } from './components/atoms/input';
