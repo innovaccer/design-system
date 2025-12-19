@@ -19,7 +19,16 @@ export interface GridRowProps {
 export const GridRow = (props: GridRowProps) => {
   const context = React.useContext(GridContext);
 
-  const { type, onRowClick, loading, withCheckbox, nestedRows, checkboxAlignment, showNestedRowTrigger } = context;
+  const {
+    type,
+    onRowClick,
+    loading,
+    withCheckbox,
+    nestedRows,
+    checkboxAlignment,
+    showNestedRowTrigger,
+    isCheckboxDisabled,
+  } = context;
 
   const { schema, data, rowIndex: rI, onSelect, className } = props;
 
@@ -87,6 +96,7 @@ export const GridRow = (props: GridRowProps) => {
         ) : (
           <Checkbox
             checked={!!data._selected}
+            disabled={isCheckboxDisabled ? isCheckboxDisabled(data) : false}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
               onSelect(rI, event.target.checked);
             }}

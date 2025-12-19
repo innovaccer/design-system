@@ -19,12 +19,21 @@ export const moveToIndex = (arr: any[], from: number, to: number) => {
 
 export const getTotalPages = (totalRecords: number, pageSize: number) => Math.ceil(totalRecords / pageSize);
 
-export const getSelectAll = (tableData: Data, selectDisabledRow?: boolean, clearSelection?: boolean) => {
+export const getSelectAll = (
+  tableData: Data,
+  selectDisabledRow?: boolean,
+  clearSelection?: boolean,
+  isCheckboxDisabled?: (rowData: any) => boolean
+) => {
   if (clearSelection) {
     return { indeterminate: false, checked: false };
   }
 
-  const data = tableData.filter((d) => (d.disabled && selectDisabledRow) || !d.disabled);
+  const data = tableData.filter((d) => {
+    const isRowDisabled = d.disabled && !selectDisabledRow;
+    const isCheckboxDisabledForRow = isCheckboxDisabled ? isCheckboxDisabled(d) : false;
+    return !isRowDisabled && !isCheckboxDisabledForRow;
+  });
 
   if (data.length) {
     const anyUnSelected = data.some((d) => !d._selected);
