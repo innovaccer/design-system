@@ -778,7 +778,8 @@ export class Table extends React.Component<TableProps, TableState> {
                 this.selectedRowsRef.current,
                 uniqueColumnName,
                 this.clearSelectionRef.current,
-                this.selectAllRef.current
+                this.selectAllRef.current,
+                this.props.isCheckboxDisabled
               );
               this.setState({
                 data: selectedData,
