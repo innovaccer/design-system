@@ -371,6 +371,13 @@ export interface GridProps extends BaseProps {
    * Show nested row trigger
    */
   showNestedRowTrigger?: boolean;
+  /**
+   * Function to determine if checkbox should be disabled for a row.
+   * Checkbox will be disabled but row actions will work normally.
+   * @param rowData - The row data
+   * @returns true if checkbox should be disabled
+   */
+  isCheckboxDisabled?: (rowData: RowData) => boolean;
 }
 
 export interface GridState {

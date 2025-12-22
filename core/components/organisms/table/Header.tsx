@@ -60,6 +60,7 @@ export interface HeaderProps extends ExternalHeaderProps {
   uniqueColumnName?: string;
   totalRowsCount?: number;
   enableInfiniteScroll?: boolean;
+  isCheckboxDisabled?: (rowData: RowData) => boolean;
 }
 
 export const Header = (props: HeaderProps) => {
@@ -101,6 +102,7 @@ export const Header = (props: HeaderProps) => {
     enableInfiniteScroll,
     selectedLabelRenderer,
     unSelectedLabelRenderer,
+    isCheckboxDisabled,
   } = props;
 
   const [selectAllRecords, setSelectAllRecords] = React.useState<boolean>(false);
@@ -110,6 +112,12 @@ export const Header = (props: HeaderProps) => {
   const startIndex = (page - 1) * pageSize + 1;
   const endIndex = Math.min(page * pageSize, totalRecords);
   const selectedRowsCount = selectedAllRef?.current === true ? totalRecords : selectedRowsRef?.current?.length || 0;
+
+  // Calculate selectable records count (excluding rows with disabled checkboxes)
+  const selectableRecordsCount = React.useMemo(() => {
+    if (!isCheckboxDisabled) return totalRecords;
+    return displayData.filter((d) => !isCheckboxDisabled(d)).length;
+  }, [displayData, totalRecords, isCheckboxDisabled]);
 
   const customSelectedRowLabel = selectedLabelRenderer
     ? selectedLabelRenderer({
@@ -336,10 +344,10 @@ export const Header = (props: HeaderProps) => {
                     <Button
                       data-test="DesignSystem-Table-Header--selectAllItemsButton"
                       size="tiny"
-                      disabled={selectedRowsCount === totalRecords}
+                      disabled={selectedRowsCount === selectableRecordsCount}
                       onClick={onSelectAllRows}
                     >
-                      {`Select ${totalRecords} ${customLabel}s`}
+                      {`Select ${selectableRecordsCount} ${customLabel}s`}
                     </Button>
 
                     <Button

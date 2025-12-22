@@ -460,6 +460,13 @@ interface SharedTableProps extends BaseProps {
    * @returns RegExp to use for highlighting
    */
   highlightRegex?: (searchTerm: string) => RegExp;
+  /**
+   * Function to determine if checkbox should be disabled for a row.
+   * Checkbox will be disabled but row actions will work normally.
+   * @param rowData - The row data
+   * @returns true if checkbox should be disabled
+   */
+  isCheckboxDisabled?: (rowData: RowData) => boolean;
 }
 
 export type SyncTableProps = SharedTableProps & TableSyncProps;
@@ -677,7 +684,10 @@ export class Table extends React.Component<TableProps, TableState> {
         this.setState((prevState) => {
           const newList = [...prevState.data, ...res.data];
           const dataReplica = JSON.parse(JSON.stringify(newList));
-          const preSelectedRows = newList.filter((item: RowData) => item._selected);
+          const preSelectedRows = newList.filter(
+            (item: RowData) =>
+              item._selected && (!this.props.isCheckboxDisabled || !this.props.isCheckboxDisabled(item))
+          );
 
           if (this.clearSelectionRef.current) {
             this.selectedRowsRef.current = [];
@@ -692,7 +702,8 @@ export class Table extends React.Component<TableProps, TableState> {
             this.selectedRowsRef.current,
             uniqueColumnName,
             this.clearSelectionRef.current,
-            this.selectAllRef.current
+            this.selectAllRef.current,
+            this.props.isCheckboxDisabled
           );
 
           return {
@@ -749,7 +760,10 @@ export class Table extends React.Component<TableProps, TableState> {
               const data = res.data;
               const dataReplica = JSON.parse(JSON.stringify(data));
               const schema = this.state.schema.length ? this.state.schema : res.schema;
-              const preSelectedRows = data.filter((item: RowData) => item._selected);
+              const preSelectedRows = data.filter(
+                (item: RowData) =>
+                  item._selected && (!this.props.isCheckboxDisabled || !this.props.isCheckboxDisabled(item))
+              );
 
               if (this.clearSelectionRef.current) {
                 this.selectedRowsRef.current = [];
@@ -764,13 +778,19 @@ export class Table extends React.Component<TableProps, TableState> {
                 this.selectedRowsRef.current,
                 uniqueColumnName,
                 this.clearSelectionRef.current,
-                this.selectAllRef.current
+                this.selectAllRef.current,
+                this.props.isCheckboxDisabled
               );
               this.setState({
                 data: selectedData,
                 displayData: data,
                 schema,
-                selectAll: getSelectAll(selectedData, this.props.selectDisabledRow, this.clearSelectionRef.current),
+                selectAll: getSelectAll(
+                  selectedData,
+                  this.props.selectDisabledRow,
+                  this.clearSelectionRef.current,
+                  this.props.isCheckboxDisabled
+                ),
                 totalRecords: res.count,
                 totalRowsCount: res.totalRowsCount || this.state.totalRowsCount,
                 loading: false,
@@ -801,7 +821,9 @@ export class Table extends React.Component<TableProps, TableState> {
       }
 
       const renderedSchema = this.state.schema.length ? this.state.schema : schema;
-      const preSelectedRows = renderedData.filter((item: RowData) => item._selected);
+      const preSelectedRows = renderedData.filter(
+        (item: RowData) => item._selected && (!this.props.isCheckboxDisabled || !this.props.isCheckboxDisabled(item))
+      );
       const renderedDataReplica = JSON.parse(JSON.stringify(renderedData));
 
       if (this.clearSelectionRef.current) {
@@ -817,14 +839,20 @@ export class Table extends React.Component<TableProps, TableState> {
         this.selectedRowsRef.current,
         uniqueColumnName,
         this.clearSelectionRef.current,
-        this.selectAllRef.current
+        this.selectAllRef.current,
+        this.props.isCheckboxDisabled
       );
 
       this.setState({
         totalRecords,
         error: !renderedData.length,
         errorType: 'NO_RECORDS_FOUND',
-        selectAll: getSelectAll(renderedData, this.props.selectDisabledRow, this.clearSelectionRef.current),
+        selectAll: getSelectAll(
+          renderedData,
+          this.props.selectDisabledRow,
+          this.clearSelectionRef.current,
+          this.props.isCheckboxDisabled
+        ),
         schema: renderedSchema,
         displayData: sortedData,
         data: selectedData,
@@ -836,7 +864,12 @@ export class Table extends React.Component<TableProps, TableState> {
   onSelect: onSelectFn = (rowIndexes, selected) => {
     const { data } = this.state;
 
-    const { onSelect, uniqueColumnName } = this.props;
+    const { onSelect, uniqueColumnName, isCheckboxDisabled } = this.props;
+
+    // Skip selection if checkbox is disabled for this row
+    if (rowIndexes >= 0 && isCheckboxDisabled && isCheckboxDisabled(data[rowIndexes])) {
+      return;
+    }
 
     if (this.selectAllRef.current && rowIndexes !== -1 && !selected) {
       this.selectAllRef.current = false;
@@ -889,7 +922,12 @@ export class Table extends React.Component<TableProps, TableState> {
 
       this.setState({
         data: newData,
-        selectAll: getSelectAll(newData, this.props.selectDisabledRow, this.clearSelectionRef.current),
+        selectAll: getSelectAll(
+          newData,
+          this.props.selectDisabledRow,
+          this.clearSelectionRef.current,
+          isCheckboxDisabled
+        ),
       });
 
       if (this.selectedRowsRef.current && selected) {
@@ -922,11 +960,14 @@ export class Table extends React.Component<TableProps, TableState> {
   };
 
   onSelectAll: onSelectAllFunction = (selected, selectAll, headerCheckbox) => {
-    const { onSelect, uniqueColumnName } = this.props;
+    const { onSelect, uniqueColumnName, isCheckboxDisabled } = this.props;
 
     const { data } = this.state;
 
-    const indexes = Array.from({ length: data.length }, (_, i) => i);
+    // Filter out rows with disabled checkboxes
+    const indexes = Array.from({ length: data.length }, (_, i) => i).filter(
+      (i) => !isCheckboxDisabled || !isCheckboxDisabled(data[i])
+    );
 
     const newData = updateBatchData(
       data,
@@ -993,7 +1034,7 @@ export class Table extends React.Component<TableProps, TableState> {
 
     this.setState({
       data: newData,
-      selectAll: getSelectAll(newData, this.props.selectDisabledRow),
+      selectAll: getSelectAll(newData, this.props.selectDisabledRow, undefined, isCheckboxDisabled),
     });
   };
 
@@ -1040,7 +1081,12 @@ export class Table extends React.Component<TableProps, TableState> {
     this.onSelectAll(false);
 
     this.setState({
-      selectAll: getSelectAll([], this.props.selectDisabledRow, this.clearSelectionRef.current),
+      selectAll: getSelectAll(
+        [],
+        this.props.selectDisabledRow,
+        this.clearSelectionRef.current,
+        this.props.isCheckboxDisabled
+      ),
     });
   };
 
@@ -1092,6 +1138,7 @@ export class Table extends React.Component<TableProps, TableState> {
       onScroll,
       highlightRegex,
       showNestedRowTrigger,
+      isCheckboxDisabled,
     } = this.props;
 
     const baseProps = extractBaseProps(this.props);
@@ -1125,6 +1172,7 @@ export class Table extends React.Component<TableProps, TableState> {
               selectedAllRef={this.selectAllRef}
               uniqueColumnName={uniqueColumnName}
               enableInfiniteScroll={enableInfiniteScroll}
+              isCheckboxDisabled={isCheckboxDisabled}
               {...headerAttr}
             >
               {headerChildren}
@@ -1167,6 +1215,7 @@ export class Table extends React.Component<TableProps, TableState> {
             searchTerm={searchTerm}
             highlightRegex={highlightRegex}
             showNestedRowTrigger={showNestedRowTrigger}
+            isCheckboxDisabled={isCheckboxDisabled}
           />
         </div>
         {withPagination && !this.state.loading && !this.state.error && totalPages > 1 && (
