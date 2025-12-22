@@ -890,6 +890,485 @@ describe('render table with highlightCell feature', () => {
   });
 });
 
+describe('render Table with filterType feature', () => {
+  const testData = [
+    { name: 'Asthma Outreach', status: 'In Progress', category: 'Health' },
+    { name: 'HbA1c Test due', status: 'Scheduled', category: 'Health' },
+    { name: 'ER Education', status: 'Draft', category: 'Education' },
+    { name: 'Flu Vaccination', status: 'Failed', category: 'Health' },
+    { name: 'Well-child Visit', status: 'In Progress', category: 'Health' },
+  ];
+
+  describe('singleSelect filterType', () => {
+    const singleSelectSchema = [
+      {
+        name: 'name',
+        displayName: 'Name',
+        width: '40%',
+        filterType: 'singleSelect' as const,
+        filters: [
+          { label: 'Asthma Outreach', value: 'Asthma Outreach' },
+          { label: 'HbA1c Test due', value: 'HbA1c Test due' },
+          { label: 'ER Education', value: 'ER Education' },
+        ],
+        onFilterChange: (a: any, filters: any) => {
+          for (const filter of filters) {
+            if (a.name === filter) return true;
+          }
+          return false;
+        },
+      },
+      {
+        name: 'status',
+        displayName: 'Status',
+        width: '30%',
+        filterType: 'singleSelect' as const,
+        filters: [
+          { label: 'In Progress', value: 'In Progress' },
+          { label: 'Scheduled', value: 'Scheduled' },
+          { label: 'Draft', value: 'Draft' },
+          { label: 'Failed', value: 'Failed' },
+        ],
+        onFilterChange: (a: any, filters: any) => {
+          for (const filter of filters) {
+            if (a.status === filter) return true;
+          }
+          return false;
+        },
+      },
+      { name: 'category', displayName: 'Category', width: '30%' },
+    ];
+
+    it('should render dropdown without apply button for singleSelect', () => {
+      const { getAllByTestId, queryByTestId } = render(
+        <Table
+          withHeader={true}
+          filterPosition="HEADER"
+          data={testData}
+          schema={singleSelectSchema}
+          headerOptions={{ withSearch: true }}
+        />
+      );
+
+      const dropdownTriggers = getAllByTestId('DesignSystem-DropdownTrigger');
+      fireEvent.click(dropdownTriggers[0]);
+
+      // Apply button should not be present in singleSelect
+      const applyButton = queryByTestId('DesignSystem-Dropdown-ApplyButton');
+      expect(applyButton).not.toBeInTheDocument();
+    });
+
+    it('should render dropdown without checkboxes for singleSelect', () => {
+      const { getAllByTestId, queryByTestId } = render(
+        <Table
+          withHeader={true}
+          filterPosition="HEADER"
+          data={testData}
+          schema={singleSelectSchema}
+          headerOptions={{ withSearch: true }}
+        />
+      );
+
+      const dropdownTriggers = getAllByTestId('DesignSystem-DropdownTrigger');
+      fireEvent.click(dropdownTriggers[0]);
+
+      // Checkboxes should not be present in singleSelect
+      const checkbox = queryByTestId('DesignSystem-Checkbox-InputBox');
+      expect(checkbox).not.toBeInTheDocument();
+    });
+
+    it('should apply filter immediately on option click for singleSelect', () => {
+      const { getAllByTestId } = render(
+        <Table
+          withHeader={true}
+          filterPosition="HEADER"
+          data={testData}
+          schema={singleSelectSchema}
+          headerOptions={{ withSearch: true }}
+        />
+      );
+
+      // Check initial data count
+      let tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(5);
+
+      const dropdownTriggers = getAllByTestId('DesignSystem-DropdownTrigger');
+      fireEvent.click(dropdownTriggers[0]);
+
+      // Click on first filter option
+      const dropdownOptions = getAllByTestId('DesignSystem-DropdownOption--DEFAULT');
+      fireEvent.click(dropdownOptions[0]);
+
+      // Check that data is filtered immediately (should show only 'Asthma Outreach')
+      tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(1);
+    });
+
+    it('should allow switching between different singleSelect options', () => {
+      const { getAllByTestId } = render(
+        <Table
+          withHeader={true}
+          filterPosition="HEADER"
+          data={testData}
+          schema={singleSelectSchema}
+          headerOptions={{ withSearch: true }}
+        />
+      );
+
+      const dropdownTriggers = getAllByTestId('DesignSystem-DropdownTrigger');
+
+      // Select first option
+      fireEvent.click(dropdownTriggers[0]);
+      const dropdownOptions = getAllByTestId('DesignSystem-DropdownOption--DEFAULT');
+      fireEvent.click(dropdownOptions[0]);
+
+      let tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(1);
+
+      // Select second option
+      fireEvent.click(dropdownTriggers[0]);
+      const newDropdownOptions = getAllByTestId('DesignSystem-DropdownOption--DEFAULT');
+      fireEvent.click(newDropdownOptions[1]);
+
+      tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(1);
+    });
+
+    it('should handle empty selection in singleSelect', () => {
+      const { getAllByTestId } = render(
+        <Table
+          withHeader={true}
+          filterPosition="HEADER"
+          data={testData}
+          schema={singleSelectSchema}
+          headerOptions={{ withSearch: true }}
+        />
+      );
+
+      // Initially all rows should be visible
+      let tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(5);
+
+      const dropdownTriggers = getAllByTestId('DesignSystem-DropdownTrigger');
+      fireEvent.click(dropdownTriggers[0]);
+
+      // Select an option to filter
+      const dropdownOptions = getAllByTestId('DesignSystem-DropdownOption--DEFAULT');
+      fireEvent.click(dropdownOptions[0]);
+
+      tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(1);
+
+      // Click again to deselect (if supported)
+      fireEvent.click(dropdownTriggers[0]);
+      const newOptions = getAllByTestId('DesignSystem-DropdownOption--DEFAULT');
+      fireEvent.click(newOptions[0]);
+    });
+  });
+
+  describe('multiSelect filterType', () => {
+    const multiSelectSchema = [
+      {
+        name: 'name',
+        displayName: 'Name',
+        width: '40%',
+        filterType: 'multiSelect' as const,
+        filters: [
+          { label: 'Asthma Outreach', value: 'Asthma Outreach' },
+          { label: 'HbA1c Test due', value: 'HbA1c Test due' },
+          { label: 'ER Education', value: 'ER Education' },
+        ],
+        onFilterChange: (a: any, filters: any) => {
+          if (filters.length === 0) return true;
+          for (const filter of filters) {
+            if (a.name === filter) return true;
+          }
+          return false;
+        },
+      },
+      {
+        name: 'status',
+        displayName: 'Status',
+        width: '30%',
+        filterType: 'multiSelect' as const,
+        filters: [
+          { label: 'In Progress', value: 'In Progress' },
+          { label: 'Scheduled', value: 'Scheduled' },
+          { label: 'Draft', value: 'Draft' },
+          { label: 'Failed', value: 'Failed' },
+        ],
+        onFilterChange: (a: any, filters: any) => {
+          if (filters.length === 0) return true;
+          for (const filter of filters) {
+            if (a.status === filter) return true;
+          }
+          return false;
+        },
+      },
+      { name: 'category', displayName: 'Category', width: '30%' },
+    ];
+
+    it('should render dropdown with apply button for multiSelect', () => {
+      const { getAllByTestId, getByTestId } = render(
+        <Table
+          withHeader={true}
+          filterPosition="HEADER"
+          data={testData}
+          schema={multiSelectSchema}
+          headerOptions={{ withSearch: true }}
+        />
+      );
+
+      const dropdownTriggers = getAllByTestId('DesignSystem-DropdownTrigger');
+      fireEvent.click(dropdownTriggers[0]);
+
+      // Apply button should be present in multiSelect
+      const applyButton = getByTestId('DesignSystem-Dropdown-ApplyButton');
+      expect(applyButton).toBeInTheDocument();
+    });
+
+    it('should render dropdown with checkboxes for multiSelect', () => {
+      const { getAllByTestId } = render(
+        <Table
+          withHeader={true}
+          filterPosition="HEADER"
+          data={testData}
+          schema={multiSelectSchema}
+          headerOptions={{ withSearch: true }}
+        />
+      );
+
+      const dropdownTriggers = getAllByTestId('DesignSystem-DropdownTrigger');
+      fireEvent.click(dropdownTriggers[0]);
+
+      // Checkboxes should be present in multiSelect
+      const checkboxes = getAllByTestId('DesignSystem-Checkbox-InputBox');
+      expect(checkboxes.length).toBeGreaterThan(0);
+    });
+
+    it('should not apply filter immediately on checkbox click for multiSelect', () => {
+      const { getAllByTestId } = render(
+        <Table
+          withHeader={true}
+          filterPosition="HEADER"
+          data={testData}
+          schema={multiSelectSchema}
+          headerOptions={{ withSearch: true }}
+        />
+      );
+
+      // Check initial data count
+      let tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(5);
+
+      const dropdownTriggers = getAllByTestId('DesignSystem-DropdownTrigger');
+      fireEvent.click(dropdownTriggers[0]);
+
+      // Click on first checkbox
+      const checkboxes = getAllByTestId('DesignSystem-Checkbox-InputBox');
+      fireEvent.click(checkboxes[1]); // Skip the "select all" checkbox if present
+
+      // Data should not be filtered yet (still 5 rows)
+      tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(5);
+    });
+
+    it('should apply filter only after clicking apply button for multiSelect', () => {
+      const { getAllByTestId, getByTestId } = render(
+        <Table
+          withHeader={true}
+          filterPosition="HEADER"
+          data={testData}
+          schema={multiSelectSchema}
+          headerOptions={{ withSearch: true }}
+        />
+      );
+
+      const dropdownTriggers = getAllByTestId('DesignSystem-DropdownTrigger');
+      fireEvent.click(dropdownTriggers[0]);
+
+      // Select first option
+      const checkboxes = getAllByTestId('DesignSystem-Checkbox-InputBox');
+      fireEvent.click(checkboxes[1]); // Skip the "select all" checkbox if present
+
+      // Click apply button
+      const applyButton = getByTestId('DesignSystem-Dropdown-ApplyButton');
+      fireEvent.click(applyButton);
+
+      // Now data should be filtered
+      const tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(1);
+    });
+
+    it('should allow selecting multiple options for multiSelect', () => {
+      const { getAllByTestId, getByTestId } = render(
+        <Table
+          withHeader={true}
+          filterPosition="HEADER"
+          data={testData}
+          schema={multiSelectSchema}
+          headerOptions={{ withSearch: true }}
+        />
+      );
+
+      const dropdownTriggers = getAllByTestId('DesignSystem-DropdownTrigger');
+      fireEvent.click(dropdownTriggers[0]);
+
+      // Select multiple options
+      const checkboxes = getAllByTestId('DesignSystem-Checkbox-InputBox');
+      fireEvent.click(checkboxes[1]);
+      fireEvent.click(checkboxes[2]);
+
+      // Click apply button
+      const applyButton = getByTestId('DesignSystem-Dropdown-ApplyButton');
+      fireEvent.click(applyButton);
+
+      // Should show filtered results (2 items selected should show 2 rows)
+      const tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(2);
+    });
+
+    it('should handle empty multiSelect filter correctly', () => {
+      const { getAllByTestId, getByTestId } = render(
+        <Table
+          withHeader={true}
+          filterPosition="HEADER"
+          data={testData}
+          schema={multiSelectSchema}
+          headerOptions={{ withSearch: true }}
+        />
+      );
+
+      // Initially all rows should be visible
+      let tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(5);
+
+      const dropdownTriggers = getAllByTestId('DesignSystem-DropdownTrigger');
+      fireEvent.click(dropdownTriggers[0]);
+
+      // Don't select any options, just click apply
+      const applyButton = getByTestId('DesignSystem-Dropdown-ApplyButton');
+      fireEvent.click(applyButton);
+
+      // All rows should still be visible when no filter is applied
+      tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(5);
+    });
+  });
+
+  describe('default filterType behavior', () => {
+    const defaultFilterSchema = [
+      {
+        name: 'name',
+        displayName: 'Name',
+        width: '40%',
+        // No filterType specified - should default to multiSelect
+        filters: [
+          { label: 'Asthma Outreach', value: 'Asthma Outreach' },
+          { label: 'HbA1c Test due', value: 'HbA1c Test due' },
+          { label: 'ER Education', value: 'ER Education' },
+        ],
+        onFilterChange: (a: any, filters: any) => {
+          if (filters.length === 0) return true;
+          for (const filter of filters) {
+            if (a.name === filter) return true;
+          }
+          return false;
+        },
+      },
+      { name: 'status', displayName: 'Status', width: '30%' },
+      { name: 'category', displayName: 'Category', width: '30%' },
+    ];
+
+    it('should default to multiSelect behavior when filterType is not specified', () => {
+      const { getAllByTestId, getByTestId } = render(
+        <Table
+          withHeader={true}
+          filterPosition="HEADER"
+          data={testData}
+          schema={defaultFilterSchema}
+          headerOptions={{ withSearch: true }}
+        />
+      );
+
+      const dropdownTriggers = getAllByTestId('DesignSystem-DropdownTrigger');
+      fireEvent.click(dropdownTriggers[0]);
+
+      // Should have apply button (multiSelect behavior)
+      const applyButton = getByTestId('DesignSystem-Dropdown-ApplyButton');
+      expect(applyButton).toBeInTheDocument();
+    });
+  });
+
+  describe('mixed filterType scenario', () => {
+    const mixedFilterSchema = [
+      {
+        name: 'name',
+        displayName: 'Name',
+        width: '40%',
+        filterType: 'singleSelect' as const,
+        filters: [
+          { label: 'Asthma Outreach', value: 'Asthma Outreach' },
+          { label: 'HbA1c Test due', value: 'HbA1c Test due' },
+        ],
+        onFilterChange: (a: any, filters: any) => {
+          for (const filter of filters) {
+            if (a.name === filter) return true;
+          }
+          return false;
+        },
+      },
+      {
+        name: 'status',
+        displayName: 'Status',
+        width: '30%',
+        filterType: 'multiSelect' as const,
+        filters: [
+          { label: 'In Progress', value: 'In Progress' },
+          { label: 'Scheduled', value: 'Scheduled' },
+        ],
+        onFilterChange: (a: any, filters: any) => {
+          if (filters.length === 0) return true;
+          for (const filter of filters) {
+            if (a.status === filter) return true;
+          }
+          return false;
+        },
+      },
+      { name: 'category', displayName: 'Category', width: '30%' },
+    ];
+
+    it('should handle mixed filterType columns correctly', () => {
+      const { getAllByTestId } = render(
+        <Table
+          withHeader={true}
+          filterPosition="HEADER"
+          data={testData}
+          schema={mixedFilterSchema}
+          headerOptions={{ withSearch: true }}
+        />
+      );
+
+      const dropdownTriggers = getAllByTestId('DesignSystem-DropdownTrigger');
+      expect(dropdownTriggers).toHaveLength(2); // Name and Status columns
+
+      // Test singleSelect dropdown (Name column)
+      fireEvent.click(dropdownTriggers[0]);
+      // Should not have apply button for singleSelect
+      expect(() => getAllByTestId('DesignSystem-Dropdown-ApplyButton')[0]).toThrow();
+
+      // Close first dropdown and open second
+      fireEvent.click(dropdownTriggers[0]);
+      fireEvent.click(dropdownTriggers[1]);
+
+      // Test multiSelect dropdown (Status column)
+      // Should have apply button for multiSelect
+      const applyButton = getAllByTestId('DesignSystem-Dropdown-ApplyButton');
+      expect(applyButton.length).toBeGreaterThan(0);
+    });
+  });
+});
+
 describe('render table with custom selection/unselection label renderers', () => {
   it('uses selectedLabelRenderer when rows are selected', () => {
     const schema = [{ name: 'name', displayName: 'Name', width: '50%' }];
