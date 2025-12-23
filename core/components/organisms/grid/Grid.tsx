@@ -112,6 +112,11 @@ export type ColumnSchema = {
    */
   filters?: DropdownProps['options'];
   /**
+   * Filter Type
+   * @default 'multiSelect'
+   */
+  filterType?: 'singleSelect' | 'multiSelect';
+  /**
    * Callback onFilterChange
    */
   onFilterChange?: onFilterChangeFunction;
