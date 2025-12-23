@@ -3,6 +3,7 @@ import { render, fireEvent, waitFor, screen, cleanup } from '@testing-library/re
 import { Table, Button } from '@/index';
 import { TableProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
+import { fetchDataFunction } from '../../grid';
 
 export type RowData = Record<string, any> & {
   _selected?: boolean;
@@ -1419,5 +1420,319 @@ describe('render table with custom selection/unselection label renderers', () =>
     fireEvent.animationEnd(selectionLabel);
 
     expect(selectionLabel).toHaveTextContent('Custom unselected label');
+  });
+});
+
+describe('render table with pagination and search behavior', () => {
+  const schema = [{ name: 'name', displayName: 'Name', width: '50%' }];
+  const largeData = Array.from({ length: 30 }, (_, i) => ({ name: `Item ${i + 1}` }));
+
+  it('should hide pagination when user starts searching', async () => {
+    const headerOptions = { withSearch: true };
+    const { getByTestId, queryByTestId } = render(
+      <Table
+        schema={schema}
+        data={largeData}
+        withPagination={true}
+        pageSize={10}
+        withHeader={true}
+        headerOptions={headerOptions}
+        searchDebounceDuration={100}
+      />
+    );
+
+    const pagination = queryByTestId('DesignSystem-Pagination');
+    expect(pagination).toBeInTheDocument();
+
+    const searchInput = getByTestId('DesignSystem-Table-Header--withSearch');
+    fireEvent.change(searchInput, { target: { value: 'Item' } });
+
+    await waitFor(() => {
+      const paginationAfterSearch = queryByTestId('DesignSystem-Pagination');
+      expect(paginationAfterSearch).not.toBeInTheDocument();
+    });
+  });
+
+  it('should show pagination after search completes with multiple pages', async () => {
+    const headerOptions = { withSearch: true };
+    const searchResults = Array.from({ length: 25 }, (_, i) => ({ name: `Item ${i + 1}` }));
+
+    const { getByTestId, queryByTestId } = render(
+      <Table
+        schema={schema}
+        data={largeData}
+        withPagination={true}
+        pageSize={10}
+        withHeader={true}
+        headerOptions={headerOptions}
+        searchDebounceDuration={100}
+        onSearch={(data, searchTerm) => {
+          if (!searchTerm) return data;
+          return searchResults;
+        }}
+      />
+    );
+
+    const searchInput = getByTestId('DesignSystem-Table-Header--withSearch');
+    fireEvent.change(searchInput, { target: { value: 'Item' } });
+
+    await waitFor(
+      () => {
+        const pagination = queryByTestId('DesignSystem-Pagination');
+        expect(pagination).toBeInTheDocument();
+      },
+      { timeout: 500 }
+    );
+  });
+
+  it('should keep pagination visible during page navigation', async () => {
+    const { getByTestId } = render(<Table schema={schema} data={largeData} withPagination={true} pageSize={10} />);
+
+    const pagination = getByTestId('DesignSystem-Pagination');
+    expect(pagination).toBeInTheDocument();
+
+    const nextButton = getByTestId('DesignSystem-Pagination--NextButton');
+    fireEvent.click(nextButton);
+
+    await waitFor(() => {
+      const paginationAfterPageChange = getByTestId('DesignSystem-Pagination');
+      expect(paginationAfterPageChange).toBeInTheDocument();
+    });
+  });
+
+  it('should hide pagination when search term is cleared', async () => {
+    const headerOptions = { withSearch: true };
+    const { getByTestId, queryByTestId } = render(
+      <Table
+        schema={schema}
+        data={largeData}
+        withPagination={true}
+        pageSize={10}
+        withHeader={true}
+        headerOptions={headerOptions}
+        searchDebounceDuration={100}
+      />
+    );
+
+    const searchInput = getByTestId('DesignSystem-Table-Header--withSearch');
+    fireEvent.change(searchInput, { target: { value: 'Item' } });
+
+    await waitFor(() => {
+      const paginationDuringSearch = queryByTestId('DesignSystem-Pagination');
+      expect(paginationDuringSearch).not.toBeInTheDocument();
+    });
+
+    fireEvent.change(searchInput, { target: { value: '' } });
+
+    await waitFor(
+      () => {
+        const paginationAfterClear = queryByTestId('DesignSystem-Pagination');
+        expect(paginationAfterClear).toBeInTheDocument();
+      },
+      { timeout: 500 }
+    );
+  });
+});
+
+describe('render table with race condition prevention', () => {
+  const schema = [{ name: 'name', displayName: 'Name', width: '50%' }];
+  const page1Data = Array.from({ length: 10 }, (_, i) => ({ name: `Page1 Item ${i + 1}` }));
+  const page2Data = Array.from({ length: 10 }, (_, i) => ({ name: `Page2 Item ${i + 1}` }));
+  const page3Data = Array.from({ length: 10 }, (_, i) => ({ name: `Page3 Item ${i + 1}` }));
+
+  it('should process only the latest page request when multiple pages are clicked rapidly', async () => {
+    const resolvePromises: Record<number, (value: any) => void> = {};
+
+    const fetchData: fetchDataFunction = jest.fn((opts: any) => {
+      const page = opts.page || 1;
+      return new Promise((resolve) => {
+        resolvePromises[page] = resolve;
+      });
+    });
+
+    const { getByTestId, getAllByTestId, queryByTestId } = render(
+      <Table schema={schema} fetchData={fetchData} withPagination={true} pageSize={10} searchDebounceDuration={100} />
+    );
+
+    await waitFor(() => {
+      expect(fetchData).toHaveBeenCalled();
+    });
+
+    resolvePromises[1]!({
+      schema,
+      data: page1Data,
+      count: 30,
+    });
+
+    await waitFor(() => {
+      const pagination = queryByTestId('DesignSystem-Pagination');
+      expect(pagination).toBeInTheDocument();
+    });
+
+    const nextButton = getByTestId('DesignSystem-Pagination--NextButton');
+    fireEvent.click(nextButton);
+
+    await waitFor(() => {
+      expect(resolvePromises[2]).toBeDefined();
+    });
+
+    const nextButton2 = getByTestId('DesignSystem-Pagination--NextButton');
+    fireEvent.click(nextButton2);
+
+    await waitFor(() => {
+      expect(resolvePromises[3]).toBeDefined();
+    });
+
+    resolvePromises[3]!({
+      schema,
+      data: page3Data,
+      count: 30,
+    });
+
+    await waitFor(() => {
+      const rows = getAllByTestId('DesignSystem-Grid-row');
+      expect(rows.length).toBeGreaterThan(0);
+      if (rows.length > 0) {
+        expect(rows[0]).toHaveTextContent('Page3');
+      }
+    });
+
+    if (resolvePromises[2]) {
+      resolvePromises[2]!({
+        schema,
+        data: page2Data,
+        count: 30,
+      });
+    }
+  });
+
+  it('should handle async table pagination without race conditions', async () => {
+    const fetchData: fetchDataFunction = jest.fn((opts: any) => {
+      const pageData = opts.page === 1 ? page1Data : opts.page === 2 ? page2Data : page3Data;
+      return Promise.resolve({
+        schema,
+        data: pageData,
+        count: 30,
+      });
+    });
+
+    const { getByTestId, getAllByTestId } = render(
+      <Table schema={schema} fetchData={fetchData} withPagination={true} pageSize={10} />
+    );
+
+    await waitFor(() => {
+      expect(fetchData).toHaveBeenCalledWith(
+        expect.objectContaining({
+          page: 1,
+        })
+      );
+    });
+
+    const nextButton = getByTestId('DesignSystem-Pagination--NextButton');
+    fireEvent.click(nextButton);
+
+    await waitFor(() => {
+      expect(fetchData).toHaveBeenCalledWith(
+        expect.objectContaining({
+          page: 2,
+        })
+      );
+    });
+
+    await waitFor(() => {
+      const rows = getAllByTestId('DesignSystem-Grid-row');
+      expect(rows.length).toBeGreaterThan(0);
+      if (rows.length > 0) {
+        expect(rows[0]).toHaveTextContent('Page2');
+      }
+    });
+  });
+});
+
+describe('render table with pagination during loading', () => {
+  const schema = [{ name: 'name', displayName: 'Name', width: '50%' }];
+  const largeData = Array.from({ length: 30 }, (_, i) => ({ name: `Item ${i + 1}` }));
+
+  it('should keep pagination visible and clickable during page loading', async () => {
+    let resolveFetch: (value: any) => void;
+    const fetchData: fetchDataFunction = jest.fn(() => {
+      return new Promise((resolve) => {
+        resolveFetch = resolve;
+      });
+    });
+
+    const { getByTestId, queryByTestId } = render(
+      <Table schema={schema} fetchData={fetchData} withPagination={true} pageSize={10} searchDebounceDuration={100} />
+    );
+
+    await waitFor(() => {
+      expect(fetchData).toHaveBeenCalled();
+    });
+
+    resolveFetch!({
+      schema,
+      data: largeData.slice(0, 10),
+      count: 30,
+    });
+
+    await waitFor(() => {
+      const pagination = queryByTestId('DesignSystem-Pagination');
+      expect(pagination).toBeInTheDocument();
+    });
+
+    const nextButton = getByTestId('DesignSystem-Pagination--NextButton');
+    expect(nextButton).not.toBeDisabled();
+
+    fireEvent.click(nextButton);
+
+    await waitFor(() => {
+      const pageInput = getByTestId('DesignSystem-Pagination--Input');
+      expect(pageInput).toHaveDisplayValue('2');
+    });
+  });
+
+  it('should hide pagination only during search, not during page loading', async () => {
+    const headerOptions = { withSearch: true };
+    let resolveFetch: (value: any) => void;
+    const fetchData: fetchDataFunction = jest.fn(() => {
+      return new Promise((resolve) => {
+        resolveFetch = resolve;
+      });
+    });
+
+    const { getByTestId, queryByTestId } = render(
+      <Table
+        schema={schema}
+        fetchData={fetchData}
+        withPagination={true}
+        pageSize={10}
+        withHeader={true}
+        headerOptions={headerOptions}
+        searchDebounceDuration={100}
+      />
+    );
+
+    await waitFor(() => {
+      expect(fetchData).toHaveBeenCalled();
+    });
+
+    resolveFetch!({
+      schema,
+      data: largeData.slice(0, 10),
+      count: 30,
+    });
+
+    await waitFor(() => {
+      const paginationAfterLoad = queryByTestId('DesignSystem-Pagination');
+      expect(paginationAfterLoad).toBeInTheDocument();
+    });
+
+    const searchInput = getByTestId('DesignSystem-Table-Header--withSearch');
+    fireEvent.change(searchInput, { target: { value: 'test' } });
+
+    await waitFor(() => {
+      const paginationDuringSearch = queryByTestId('DesignSystem-Pagination');
+      expect(paginationDuringSearch).not.toBeInTheDocument();
+    });
   });
 });

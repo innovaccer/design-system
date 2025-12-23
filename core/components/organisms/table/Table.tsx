@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Header, ExternalHeaderProps, updateSearchTermFunction, HeaderProps } from './Header';
-import { Grid, Pagination, Heading } from '@/index';
+import { Grid, Pagination, EmptyState } from '@/index';
 import {
   Data,
   onSelectFn,
@@ -483,17 +483,35 @@ interface TableState {
   error: TableProps['error'];
   errorType?: TableProps['errorType'];
   totalRowsCount?: number;
+  isSearching: boolean;
 }
 
 const defaultErrorTemplate = (props: ErrorTemplateProps) => {
   const { errorType = 'DEFAULT' } = props;
 
-  const errorMessages: Record<string, string> = {
-    FAILED_TO_FETCH: 'Failed to fetch data',
-    NO_RECORDS_FOUND: 'No results found',
-    DEFAULT: 'No results found',
+  const errorConfig: Record<string, { title: string; description: string }> = {
+    FAILED_TO_FETCH: {
+      title: 'Failed to fetch data',
+      description: 'We are unable to fetch the data. Try again.',
+    },
+    NO_RECORDS_FOUND: {
+      title: 'No results found',
+      description: 'Try adjusting your search or filters to find what you are looking for.',
+    },
+    DEFAULT: {
+      title: 'No results found',
+      description: 'Try adjusting your search or filters to find what you are looking for.',
+    },
   };
-  return <Heading>{errorMessages[errorType]}</Heading>;
+
+  const config = errorConfig[errorType] || errorConfig.DEFAULT;
+
+  return (
+    <EmptyState>
+      <EmptyState.Title>{config.title}</EmptyState.Title>
+      <EmptyState.Description>{config.description}</EmptyState.Description>
+    </EmptyState>
+  );
 };
 
 export const defaultProps = {
@@ -533,6 +551,7 @@ export class Table extends React.Component<TableProps, TableState> {
   selectedRowsRef: React.MutableRefObject<any> = React.createRef<[] | null>();
   clearSelectionRef: React.MutableRefObject<any> = React.createRef<boolean | null>();
   selectAllRef: React.MutableRefObject<any> = React.createRef<boolean | null>();
+  currentRequestPageRef: React.MutableRefObject<number | null> = React.createRef<number | null>();
 
   constructor(props: TableProps) {
     super(props);
@@ -556,9 +575,11 @@ export class Table extends React.Component<TableProps, TableState> {
       selectAll: getSelectAll([]),
       searchTerm: undefined,
       totalRowsCount: !async ? data.length : 0,
+      isSearching: false,
     };
 
     this.debounceUpdate = debounce(props.searchDebounceDuration, this.updateDataFn);
+    this.currentRequestPageRef.current = props.page;
   }
 
   componentDidMount() {
@@ -745,8 +766,17 @@ export class Table extends React.Component<TableProps, TableState> {
 
     if (async) {
       if (fetchData) {
+        const requestPage = page;
+        this.currentRequestPageRef.current = requestPage;
+
         fetchData(opts)
           .then((res: any) => {
+            if (this.currentRequestPageRef.current !== requestPage) {
+              return;
+            }
+
+            const shouldClearSearching = !this.state.searchTerm || this.state.searchTerm.trim() === '';
+
             if (!res.searchTerm || (res.searchTerm && res.searchTerm === this.state.searchTerm)) {
               const data = res.data;
               const dataReplica = JSON.parse(JSON.stringify(data));
@@ -778,15 +808,23 @@ export class Table extends React.Component<TableProps, TableState> {
                 loading: false,
                 error: !data.length,
                 errorType: 'NO_RECORDS_FOUND',
+                isSearching: false,
+              });
+            } else if (shouldClearSearching) {
+              this.setState({
+                isSearching: false,
               });
             }
           })
           .catch(() => {
-            this.setState({
-              loading: false,
-              error: true,
-              errorType: 'FAILED_TO_FETCH',
-            });
+            if (this.currentRequestPageRef.current === requestPage) {
+              this.setState({
+                loading: false,
+                error: true,
+                errorType: 'FAILED_TO_FETCH',
+                isSearching: false,
+              });
+            }
           });
       }
     } else {
@@ -831,6 +869,7 @@ export class Table extends React.Component<TableProps, TableState> {
         displayData: sortedData,
         data: selectedData,
         totalRowsCount: sortedData.length,
+        isSearching: false,
       });
     }
   };
@@ -1028,9 +1067,11 @@ export class Table extends React.Component<TableProps, TableState> {
   };
 
   updateSearchTerm: updateSearchTermFunction = (newSearchTerm) => {
+    const isSearching = !!newSearchTerm && newSearchTerm.trim() !== '';
     this.setState({
       searchTerm: newSearchTerm,
       page: 1,
+      isSearching,
     });
   };
 
@@ -1171,7 +1212,7 @@ export class Table extends React.Component<TableProps, TableState> {
             showNestedRowTrigger={showNestedRowTrigger}
           />
         </div>
-        {withPagination && !this.state.loading && !this.state.error && totalPages > 1 && (
+        {withPagination && !this.state.error && !this.state.isSearching && totalPages > 1 && (
           <div className={tableStyles['Table-pagination']}>
             <Pagination
               page={this.state.page}
