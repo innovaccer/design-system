@@ -10,10 +10,16 @@ export const getUpdatedData = (
   selectedList: [],
   uniqueColumnName?: string,
   isCancelSelection?: boolean,
-  isSelectAll?: boolean
+  isSelectAll?: boolean,
+  isCheckboxDisabled?: (rowData: RowData) => boolean
 ) => {
   const updatedData = data.map((item: RowData) => {
-    if (
+    const checkboxDisabled = isCheckboxDisabled ? isCheckboxDisabled(item) : false;
+
+    if (checkboxDisabled) {
+      // If checkbox is disabled, don't allow selection
+      item._selected = false;
+    } else if (
       isSelectAll ||
       (item._selected && !isCancelSelection) ||
       (uniqueColumnName &&
