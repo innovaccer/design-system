@@ -174,6 +174,7 @@ export const Combobox = (props: ComboboxProps) => {
   const [highlightLastItem, setHighlightLastItem] = React.useState<boolean>(false);
 
   const inputTriggerRef = React.useRef<HTMLInputElement>();
+  const isInitialRender = React.useRef<boolean>(true);
   const popoverId = `DesignSystem-Combobox--Popover-${uidGenerator()}`;
   const defaultPopoverStyle = {
     fn: (data: any) => {
@@ -212,6 +213,13 @@ export const Combobox = (props: ComboboxProps) => {
       multiSelect ? setOpenPopover(true) : setOpenPopover(false);
       setIsOptionSelected(false);
     }
+
+    // Skip onChange on initial render to prevent unwanted calls
+    if (isInitialRender.current) {
+      isInitialRender.current = false;
+      return;
+    }
+
     const value = multiSelect ? chipInputValue : inputValue;
     onChange && !isOptionSelected && onChange(value);
   }, [inputValue, chipInputValue]);
