@@ -20,7 +20,7 @@ export const asyncTable = () => {
   };
 
   return (
-    <div>
+    <div className="vh-75">
       <Card className="h-100 overflow-hidden">
         <Table
           loaderSchema={loaderSchema}
@@ -292,7 +292,7 @@ const customCode = `
   }
 
   return (
-    <div>
+    <div className="vh-75">
       <Card className="h-100 overflow-hidden">
         <Table
           loaderSchema={loaderSchema}

@@ -284,7 +284,7 @@ export const Header = (props: HeaderProps) => {
             <div className={gridStyles['Header-dropdown']}>
               <div className={gridStyles['Header-filters']}>
                 {filterSchema.map((s) => {
-                  const { name, displayName, filters } = s;
+                  const { name, displayName, filters, filterType = 'multiSelect' } = s;
 
                   const filterOptions = filters
                     ? filters.map((f) => ({
@@ -296,13 +296,17 @@ export const Header = (props: HeaderProps) => {
                   return (
                     <Dropdown
                       key={name}
-                      withCheckbox={true}
                       className="my-0 mx-3"
-                      showApplyButton={true}
+                      showApplyButton={filterType === 'singleSelect' ? false : true}
                       inlineLabel={displayName}
                       icon={'filter_list'}
                       options={filterOptions}
-                      onChange={(selected) => onFilterChange(name, selected)}
+                      withCheckbox={filterType === 'singleSelect' ? false : true}
+                      onChange={(selected) => {
+                        // Normalize selected to always be an array for consistency
+                        const selectedArray = Array.isArray(selected) ? selected : selected != null ? [selected] : [];
+                        onFilterChange(name, selectedArray);
+                      }}
                     />
                   );
                 })}

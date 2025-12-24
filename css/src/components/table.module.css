@@ -9,8 +9,10 @@
 
 .Table-grid {
   height: 100%;
+  min-height: 0;
   overflow: hidden;
   z-index: 1;
+  flex: 1 1 auto;
 }
 
 .Table-pagination {
