@@ -1340,7 +1340,7 @@ describe('render Table with filterType feature', () => {
     ];
 
     it('should handle mixed filterType columns correctly', () => {
-      const { getAllByTestId } = render(
+      const { getAllByTestId, queryByTestId } = render(
         <Table
           withHeader={true}
           filterPosition="HEADER"
@@ -1356,7 +1356,8 @@ describe('render Table with filterType feature', () => {
       // Test singleSelect dropdown (Name column)
       fireEvent.click(dropdownTriggers[0]);
       // Should not have apply button for singleSelect
-      expect(() => getAllByTestId('DesignSystem-Dropdown-ApplyButton')[0]).toThrow();
+      const applyButton1 = queryByTestId('DesignSystem-Dropdown-ApplyButton');
+      expect(applyButton1).not.toBeInTheDocument();
 
       // Close first dropdown and open second
       fireEvent.click(dropdownTriggers[0]);
