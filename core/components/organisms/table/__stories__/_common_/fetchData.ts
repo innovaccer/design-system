@@ -98,7 +98,7 @@ export const fetchUsersData: fetchDataFunction = async (options: FetchDataOption
 
     return {
       searchTerm,
-      count: paginatedData.length,
+      count: totalCount,
       data: paginatedData,
       schema: [],
       totalRowsCount: totalCount,
