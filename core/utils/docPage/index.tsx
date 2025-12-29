@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Description, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Description, ArgsTable, Primary } from '@storybook/addon-docs/blocks';
 import { renderToStaticMarkup } from 'react-dom/server';
 import reactElementToJSXString from 'react-element-to-jsx-string';
 import SyntaxHighlighter from 'react-syntax-highlighter';
@@ -135,13 +135,14 @@ ${jsx
 };
 
 const StoryComp = (props: {
+  isTsxStory: boolean;
   noHtml: boolean;
   customCode: string;
   noSandbox: boolean;
   isEmbed: boolean;
   imports: string[];
 }) => {
-  const { customCode, noHtml, noSandbox } = props;
+  const { customCode, noHtml, noSandbox, isTsxStory } = props;
   const { story } = getStory();
   // const comp = sp.storySource.source;
   const comp = story.originalStoryFn();
@@ -209,6 +210,10 @@ const StoryComp = (props: {
     setActiveTab(tab);
     setShouldShowMore(false);
   };
+
+  if (isTsxStory) {
+    return <Primary />;
+  }
 
   return (
     <LiveProvider code={jsxCode} scope={imports}>
@@ -337,6 +342,8 @@ export const docPage = () => {
     propDescription,
     sandboxTitle,
     isDeprecated,
+    isPattern,
+    tsxStory,
   } = sp.docs.docPage || {};
   const { component: { displayName = '' } = {} } = story;
   const pageClassnames = classNames({
@@ -356,6 +363,11 @@ export const docPage = () => {
                 Deprecated
               </Badge>
             )}
+            {isPattern && (
+              <Badge appearance="secondary" subtle={true} className="ml-4">
+                Pattern
+              </Badge>
+            )}
           </div>
           <Description>{description}</Description>
         </>
@@ -369,6 +381,7 @@ export const docPage = () => {
           noSandbox={noSandbox}
           imports={imports}
           isEmbed={isEmbed || isEmbedWithProp}
+          isTsxStory={tsxStory}
         />
       )}
 

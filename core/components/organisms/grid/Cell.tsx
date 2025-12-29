@@ -82,7 +82,7 @@ const HeaderCell = (props: HeaderCellProps) => {
     sortingList,
   };
 
-  const { sorting = true, name, filters, pinned } = schema;
+  const { sorting = true, name, filters, pinned, filterType = 'multiSelect' } = schema;
 
   const isValidSchema = hasSchema(schemaProp);
 
@@ -183,14 +183,18 @@ const HeaderCell = (props: HeaderCellProps) => {
             <div>
               <Dropdown
                 menu={true}
-                showApplyButton={true}
-                withCheckbox={true}
+                showApplyButton={filterType === 'singleSelect' ? false : true}
+                withCheckbox={filterType === 'singleSelect' ? false : true}
                 triggerOptions={{
                   customTrigger: () => <Button icon="filter_list" appearance="transparent" />,
                 }}
                 options={filterOptions}
                 align={'left'}
-                onChange={(selected: any) => onFilterChange(name, selected)}
+                onChange={(selected) => {
+                  // Normalize selected to always be an array for consistency
+                  const selectedArray = Array.isArray(selected) ? selected : selected != null ? [selected] : [];
+                  onFilterChange(name, selectedArray);
+                }}
                 minWidth={176}
               />
             </div>
