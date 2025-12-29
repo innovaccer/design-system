@@ -1,3 +1,46 @@
+## 4.18.0 (2025-12-29)
+
+### Highlights
+
+- feat(grid): add grid component (1698445c)
+- feat(flex): add flex component (3ae8b0d4)
+- feat(table): add single select filter option in table header (e810b7c8)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(grid): add grid component (1698445c)
+- feat(flex): add flex component (3ae8b0d4)
+- feat(table): add single select filter option in table header (e810b7c8)
+
+### Fixes
+
+- fix(pagination): update table pagination while searching and page change (5b7e1bb6)
+- fix(combobox): fix onchange handler call on initial render (159bf17b)
+
+### Improvements
+
+- feat(table): add filter pattern story (11c1a616)
+- feat(table): add filtertype prop and update stories (a745f210)
+- feat(table): add test cases (6079f23f)
+
+### Documentation
+
+- docs(avatar): update avatar docs usage (8302d34a)
+
+---
+
 ## 4.17.1 (2025-12-11)
 
 ### Highlights
