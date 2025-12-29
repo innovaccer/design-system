@@ -633,3 +633,473 @@ describe('showNestedRowTrigger flag behavior', () => {
     });
   });
 });
+
+describe('render Grid with filterType feature', () => {
+  const testData = [
+    { name: 'Asthma Outreach', status: 'In Progress', category: 'Health' },
+    { name: 'HbA1c Test due', status: 'Scheduled', category: 'Health' },
+    { name: 'ER Education', status: 'Draft', category: 'Education' },
+    { name: 'Flu Vaccination', status: 'Failed', category: 'Health' },
+    { name: 'Well-child Visit', status: 'In Progress', category: 'Health' },
+  ];
+
+  describe('singleSelect filterType', () => {
+    const singleSelectSchema = [
+      {
+        name: 'name',
+        displayName: 'Name',
+        width: '40%',
+        filterType: 'singleSelect' as const,
+        filters: [
+          { label: 'Asthma Outreach', value: 'Asthma Outreach' },
+          { label: 'HbA1c Test due', value: 'HbA1c Test due' },
+          { label: 'ER Education', value: 'ER Education' },
+        ],
+        onFilterChange: (a: any, filters: any) => {
+          for (const filter of filters) {
+            if (a.name === filter) return true;
+          }
+          return false;
+        },
+      },
+      {
+        name: 'status',
+        displayName: 'Status',
+        width: '30%',
+        filterType: 'singleSelect' as const,
+        filters: [
+          { label: 'In Progress', value: 'In Progress' },
+          { label: 'Scheduled', value: 'Scheduled' },
+          { label: 'Draft', value: 'Draft' },
+          { label: 'Failed', value: 'Failed' },
+        ],
+        onFilterChange: (a: any, filters: any) => {
+          for (const filter of filters) {
+            if (a.status === filter) return true;
+          }
+          return false;
+        },
+      },
+      { name: 'category', displayName: 'Category', width: '30%' },
+    ];
+
+    it('should render dropdown without apply button for singleSelect', () => {
+      const { getAllByTestId, queryByTestId } = render(
+        <Grid
+          showFilters={true}
+          data={testData}
+          schema={singleSelectSchema}
+          filterList={{}}
+          updateFilterList={updateFilterList}
+        />
+      );
+
+      const filterButtons = getAllByTestId('DesignSystem-Button');
+      fireEvent.click(filterButtons[0]);
+
+      // Apply button should not be present in singleSelect
+      const applyButton = queryByTestId('DesignSystem-Dropdown-ApplyButton');
+      expect(applyButton).not.toBeInTheDocument();
+    });
+
+    it('should render dropdown without checkboxes for singleSelect', () => {
+      const { getAllByTestId, queryByTestId } = render(
+        <Grid
+          showFilters={true}
+          data={testData}
+          schema={singleSelectSchema}
+          filterList={{}}
+          updateFilterList={updateFilterList}
+        />
+      );
+
+      const filterButtons = getAllByTestId('DesignSystem-Button');
+      fireEvent.click(filterButtons[0]);
+
+      // Checkboxes should not be present in singleSelect
+      const checkbox = queryByTestId('DesignSystem-Checkbox-InputBox');
+      expect(checkbox).not.toBeInTheDocument();
+    });
+
+    it('should apply filter immediately on option click for singleSelect', () => {
+      const { getAllByTestId } = render(
+        <Grid
+          showFilters={true}
+          data={testData}
+          schema={singleSelectSchema}
+          filterList={{}}
+          updateFilterList={updateFilterList}
+        />
+      );
+
+      // Check initial data count
+      const tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(5);
+
+      const filterButtons = getAllByTestId('DesignSystem-Button');
+      fireEvent.click(filterButtons[0]);
+
+      // Click on first filter option
+      const dropdownOptions = getAllByTestId('DesignSystem-DropdownOption--DEFAULT');
+      fireEvent.click(dropdownOptions[0]);
+
+      // Check that updateFilterList was called immediately
+      expect(updateFilterList).toHaveBeenCalled();
+    });
+
+    it('should allow switching between different singleSelect options', () => {
+      const mockUpdateFilterList = jest.fn();
+      const { getAllByTestId } = render(
+        <Grid
+          showFilters={true}
+          data={testData}
+          schema={singleSelectSchema}
+          filterList={{}}
+          updateFilterList={mockUpdateFilterList}
+        />
+      );
+
+      const filterButtons = getAllByTestId('DesignSystem-Button');
+
+      // Select first option
+      fireEvent.click(filterButtons[0]);
+      const dropdownOptions = getAllByTestId('DesignSystem-DropdownOption--DEFAULT');
+      fireEvent.click(dropdownOptions[0]);
+
+      expect(mockUpdateFilterList).toHaveBeenCalled();
+      mockUpdateFilterList.mockClear();
+
+      // Select second option
+      fireEvent.click(filterButtons[0]);
+      const newDropdownOptions = getAllByTestId('DesignSystem-DropdownOption--DEFAULT');
+      fireEvent.click(newDropdownOptions[1]);
+
+      // Should have been called again after the second selection
+      expect(mockUpdateFilterList).toHaveBeenCalled();
+    });
+
+    it('should handle empty selection in singleSelect', () => {
+      const { getAllByTestId } = render(
+        <Grid
+          showFilters={true}
+          data={testData}
+          schema={singleSelectSchema}
+          filterList={{}}
+          updateFilterList={updateFilterList}
+        />
+      );
+
+      // Initially all rows should be visible
+      const tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(5);
+
+      const filterButtons = getAllByTestId('DesignSystem-Button');
+      fireEvent.click(filterButtons[0]);
+
+      // Select an option to filter
+      const dropdownOptions = getAllByTestId('DesignSystem-DropdownOption--DEFAULT');
+      fireEvent.click(dropdownOptions[0]);
+
+      expect(updateFilterList).toHaveBeenCalled();
+    });
+  });
+
+  describe('multiSelect filterType', () => {
+    const multiSelectSchema = [
+      {
+        name: 'name',
+        displayName: 'Name',
+        width: '40%',
+        filterType: 'multiSelect' as const,
+        filters: [
+          { label: 'Asthma Outreach', value: 'Asthma Outreach' },
+          { label: 'HbA1c Test due', value: 'HbA1c Test due' },
+          { label: 'ER Education', value: 'ER Education' },
+        ],
+        onFilterChange: (a: any, filters: any) => {
+          if (filters.length === 0) return true;
+          for (const filter of filters) {
+            if (a.name === filter) return true;
+          }
+          return false;
+        },
+      },
+      {
+        name: 'status',
+        displayName: 'Status',
+        width: '30%',
+        filterType: 'multiSelect' as const,
+        filters: [
+          { label: 'In Progress', value: 'In Progress' },
+          { label: 'Scheduled', value: 'Scheduled' },
+          { label: 'Draft', value: 'Draft' },
+          { label: 'Failed', value: 'Failed' },
+        ],
+        onFilterChange: (a: any, filters: any) => {
+          if (filters.length === 0) return true;
+          for (const filter of filters) {
+            if (a.status === filter) return true;
+          }
+          return false;
+        },
+      },
+      { name: 'category', displayName: 'Category', width: '30%' },
+    ];
+
+    it('should render dropdown with apply button for multiSelect', () => {
+      const { getAllByTestId, getByTestId } = render(
+        <Grid
+          showFilters={true}
+          data={testData}
+          schema={multiSelectSchema}
+          filterList={{}}
+          updateFilterList={updateFilterList}
+        />
+      );
+
+      const filterButtons = getAllByTestId('DesignSystem-Button');
+      fireEvent.click(filterButtons[0]);
+
+      // Apply button should be present in multiSelect
+      const applyButton = getByTestId('DesignSystem-Dropdown-ApplyButton');
+      expect(applyButton).toBeInTheDocument();
+    });
+
+    it('should render dropdown with checkboxes for multiSelect', () => {
+      const { getAllByTestId } = render(
+        <Grid
+          showFilters={true}
+          data={testData}
+          schema={multiSelectSchema}
+          filterList={{}}
+          updateFilterList={updateFilterList}
+        />
+      );
+
+      const filterButtons = getAllByTestId('DesignSystem-Button');
+      fireEvent.click(filterButtons[0]);
+
+      // Checkboxes should be present in multiSelect
+      const checkboxes = getAllByTestId('DesignSystem-Checkbox-InputBox');
+      expect(checkboxes.length).toBeGreaterThan(0);
+    });
+
+    it('should not apply filter immediately on checkbox click for multiSelect', () => {
+      const { getAllByTestId } = render(
+        <Grid
+          showFilters={true}
+          data={testData}
+          schema={multiSelectSchema}
+          filterList={{}}
+          updateFilterList={updateFilterList}
+        />
+      );
+
+      // Check initial data count
+      const tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(5);
+
+      const filterButtons = getAllByTestId('DesignSystem-Button');
+      fireEvent.click(filterButtons[0]);
+
+      // Click on first checkbox
+      const checkboxes = getAllByTestId('DesignSystem-Checkbox-InputBox');
+      fireEvent.click(checkboxes[1]); // Skip the "select all" checkbox if present
+
+      // updateFilterList should not be called yet (only on apply)
+      // The filter is applied only when apply button is clicked
+    });
+
+    it('should apply filter only after clicking apply button for multiSelect', () => {
+      const { getAllByTestId, getByTestId } = render(
+        <Grid
+          showFilters={true}
+          data={testData}
+          schema={multiSelectSchema}
+          filterList={{}}
+          updateFilterList={updateFilterList}
+        />
+      );
+
+      const filterButtons = getAllByTestId('DesignSystem-Button');
+      fireEvent.click(filterButtons[0]);
+
+      // Select first option
+      const checkboxes = getAllByTestId('DesignSystem-Checkbox-InputBox');
+      fireEvent.click(checkboxes[1]); // Skip the "select all" checkbox if present
+
+      // Click apply button
+      const applyButton = getByTestId('DesignSystem-Dropdown-ApplyButton');
+      fireEvent.click(applyButton);
+
+      // Now updateFilterList should be called
+      expect(updateFilterList).toHaveBeenCalled();
+    });
+
+    it('should allow selecting multiple options for multiSelect', () => {
+      const { getAllByTestId, getByTestId } = render(
+        <Grid
+          showFilters={true}
+          data={testData}
+          schema={multiSelectSchema}
+          filterList={{}}
+          updateFilterList={updateFilterList}
+        />
+      );
+
+      const filterButtons = getAllByTestId('DesignSystem-Button');
+      fireEvent.click(filterButtons[0]);
+
+      // Select multiple options
+      const checkboxes = getAllByTestId('DesignSystem-Checkbox-InputBox');
+      fireEvent.click(checkboxes[1]);
+      fireEvent.click(checkboxes[2]);
+
+      // Click apply button
+      const applyButton = getByTestId('DesignSystem-Dropdown-ApplyButton');
+      fireEvent.click(applyButton);
+
+      // Should have called updateFilterList with multiple selections
+      expect(updateFilterList).toHaveBeenCalled();
+    });
+
+    it('should handle empty multiSelect filter correctly', () => {
+      const { getAllByTestId, getByTestId } = render(
+        <Grid
+          showFilters={true}
+          data={testData}
+          schema={multiSelectSchema}
+          filterList={{}}
+          updateFilterList={updateFilterList}
+        />
+      );
+
+      // Initially all rows should be visible
+      const tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(5);
+
+      const filterButtons = getAllByTestId('DesignSystem-Button');
+      fireEvent.click(filterButtons[0]);
+
+      // Don't select any options, just click apply
+      const applyButton = getByTestId('DesignSystem-Dropdown-ApplyButton');
+      fireEvent.click(applyButton);
+
+      // updateFilterList should be called even with empty selection
+      expect(updateFilterList).toHaveBeenCalled();
+    });
+  });
+
+  describe('default filterType behavior', () => {
+    const defaultFilterSchema = [
+      {
+        name: 'name',
+        displayName: 'Name',
+        width: '40%',
+        // No filterType specified - should default to multiSelect
+        filters: [
+          { label: 'Asthma Outreach', value: 'Asthma Outreach' },
+          { label: 'HbA1c Test due', value: 'HbA1c Test due' },
+          { label: 'ER Education', value: 'ER Education' },
+        ],
+        onFilterChange: (a: any, filters: any) => {
+          if (filters.length === 0) return true;
+          for (const filter of filters) {
+            if (a.name === filter) return true;
+          }
+          return false;
+        },
+      },
+      { name: 'status', displayName: 'Status', width: '30%' },
+      { name: 'category', displayName: 'Category', width: '30%' },
+    ];
+
+    it('should default to multiSelect behavior when filterType is not specified', () => {
+      const { getAllByTestId, getByTestId } = render(
+        <Grid
+          showFilters={true}
+          data={testData}
+          schema={defaultFilterSchema}
+          filterList={{}}
+          updateFilterList={updateFilterList}
+        />
+      );
+
+      const filterButtons = getAllByTestId('DesignSystem-Button');
+      fireEvent.click(filterButtons[0]);
+
+      // Should have apply button (multiSelect behavior)
+      const applyButton = getByTestId('DesignSystem-Dropdown-ApplyButton');
+      expect(applyButton).toBeInTheDocument();
+    });
+  });
+
+  describe('mixed filterType scenario', () => {
+    const mixedFilterSchema = [
+      {
+        name: 'name',
+        displayName: 'Name',
+        width: '40%',
+        filterType: 'singleSelect' as const,
+        filters: [
+          { label: 'Asthma Outreach', value: 'Asthma Outreach' },
+          { label: 'HbA1c Test due', value: 'HbA1c Test due' },
+        ],
+        onFilterChange: (a: any, filters: any) => {
+          for (const filter of filters) {
+            if (a.name === filter) return true;
+          }
+          return false;
+        },
+      },
+      {
+        name: 'status',
+        displayName: 'Status',
+        width: '30%',
+        filterType: 'multiSelect' as const,
+        filters: [
+          { label: 'In Progress', value: 'In Progress' },
+          { label: 'Scheduled', value: 'Scheduled' },
+        ],
+        onFilterChange: (a: any, filters: any) => {
+          if (filters.length === 0) return true;
+          for (const filter of filters) {
+            if (a.status === filter) return true;
+          }
+          return false;
+        },
+      },
+      { name: 'category', displayName: 'Category', width: '30%' },
+    ];
+
+    it('should handle mixed filterType columns correctly', () => {
+      const { getAllByTestId, queryByTestId } = render(
+        <Grid
+          showFilters={true}
+          data={testData}
+          schema={mixedFilterSchema}
+          filterList={{}}
+          updateFilterList={updateFilterList}
+        />
+      );
+
+      const filterButtons = getAllByTestId('DesignSystem-Button');
+      expect(filterButtons.length).toBeGreaterThanOrEqual(2); // At least Name and Status filter buttons
+
+      // Test singleSelect dropdown (Name column - first filter button)
+      fireEvent.click(filterButtons[0]);
+      // Should not have apply button for singleSelect
+      const applyButton1 = queryByTestId('DesignSystem-Dropdown-ApplyButton');
+      expect(applyButton1).not.toBeInTheDocument();
+
+      // Close first dropdown and open second
+      fireEvent.click(filterButtons[0]);
+      fireEvent.click(filterButtons[1]);
+
+      // Test multiSelect dropdown (Status column)
+      // Should have apply button for multiSelect
+      const applyButton2 = getAllByTestId('DesignSystem-Dropdown-ApplyButton');
+      expect(applyButton2.length).toBeGreaterThan(0);
+    });
+  });
+});

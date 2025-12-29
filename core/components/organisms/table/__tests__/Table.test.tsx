@@ -3,6 +3,7 @@ import { render, fireEvent, waitFor, screen, cleanup } from '@testing-library/re
 import { Table, Button } from '@/index';
 import { TableProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
+import { fetchDataFunction } from '../../grid';
 
 export type RowData = Record<string, any> & {
   _selected?: boolean;
@@ -890,6 +891,486 @@ describe('render table with highlightCell feature', () => {
   });
 });
 
+describe('render Table with filterType feature', () => {
+  const testData = [
+    { name: 'Asthma Outreach', status: 'In Progress', category: 'Health' },
+    { name: 'HbA1c Test due', status: 'Scheduled', category: 'Health' },
+    { name: 'ER Education', status: 'Draft', category: 'Education' },
+    { name: 'Flu Vaccination', status: 'Failed', category: 'Health' },
+    { name: 'Well-child Visit', status: 'In Progress', category: 'Health' },
+  ];
+
+  describe('singleSelect filterType', () => {
+    const singleSelectSchema = [
+      {
+        name: 'name',
+        displayName: 'Name',
+        width: '40%',
+        filterType: 'singleSelect' as const,
+        filters: [
+          { label: 'Asthma Outreach', value: 'Asthma Outreach' },
+          { label: 'HbA1c Test due', value: 'HbA1c Test due' },
+          { label: 'ER Education', value: 'ER Education' },
+        ],
+        onFilterChange: (a: any, filters: any) => {
+          for (const filter of filters) {
+            if (a.name === filter) return true;
+          }
+          return false;
+        },
+      },
+      {
+        name: 'status',
+        displayName: 'Status',
+        width: '30%',
+        filterType: 'singleSelect' as const,
+        filters: [
+          { label: 'In Progress', value: 'In Progress' },
+          { label: 'Scheduled', value: 'Scheduled' },
+          { label: 'Draft', value: 'Draft' },
+          { label: 'Failed', value: 'Failed' },
+        ],
+        onFilterChange: (a: any, filters: any) => {
+          for (const filter of filters) {
+            if (a.status === filter) return true;
+          }
+          return false;
+        },
+      },
+      { name: 'category', displayName: 'Category', width: '30%' },
+    ];
+
+    it('should render dropdown without apply button for singleSelect', () => {
+      const { getAllByTestId, queryByTestId } = render(
+        <Table
+          withHeader={true}
+          filterPosition="HEADER"
+          data={testData}
+          schema={singleSelectSchema}
+          headerOptions={{ withSearch: true }}
+        />
+      );
+
+      const dropdownTriggers = getAllByTestId('DesignSystem-DropdownTrigger');
+      fireEvent.click(dropdownTriggers[0]);
+
+      // Apply button should not be present in singleSelect
+      const applyButton = queryByTestId('DesignSystem-Dropdown-ApplyButton');
+      expect(applyButton).not.toBeInTheDocument();
+    });
+
+    it('should render dropdown without checkboxes for singleSelect', () => {
+      const { getAllByTestId, queryByTestId } = render(
+        <Table
+          withHeader={true}
+          filterPosition="HEADER"
+          data={testData}
+          schema={singleSelectSchema}
+          headerOptions={{ withSearch: true }}
+        />
+      );
+
+      const dropdownTriggers = getAllByTestId('DesignSystem-DropdownTrigger');
+      fireEvent.click(dropdownTriggers[0]);
+
+      // Checkboxes should not be present in singleSelect
+      const checkbox = queryByTestId('DesignSystem-Checkbox-InputBox');
+      expect(checkbox).not.toBeInTheDocument();
+    });
+
+    it('should apply filter immediately on option click for singleSelect', () => {
+      const { getAllByTestId } = render(
+        <Table
+          withHeader={true}
+          filterPosition="HEADER"
+          data={testData}
+          schema={singleSelectSchema}
+          headerOptions={{ withSearch: true }}
+        />
+      );
+
+      // Check initial data count
+      let tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(5);
+
+      const dropdownTriggers = getAllByTestId('DesignSystem-DropdownTrigger');
+      fireEvent.click(dropdownTriggers[0]);
+
+      // Click on first filter option
+      const dropdownOptions = getAllByTestId('DesignSystem-DropdownOption--DEFAULT');
+      fireEvent.click(dropdownOptions[0]);
+
+      // Check that data is filtered immediately (should show only 'Asthma Outreach')
+      tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(1);
+    });
+
+    it('should allow switching between different singleSelect options', () => {
+      const { getAllByTestId } = render(
+        <Table
+          withHeader={true}
+          filterPosition="HEADER"
+          data={testData}
+          schema={singleSelectSchema}
+          headerOptions={{ withSearch: true }}
+        />
+      );
+
+      const dropdownTriggers = getAllByTestId('DesignSystem-DropdownTrigger');
+
+      // Select first option
+      fireEvent.click(dropdownTriggers[0]);
+      const dropdownOptions = getAllByTestId('DesignSystem-DropdownOption--DEFAULT');
+      fireEvent.click(dropdownOptions[0]);
+
+      let tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(1);
+
+      // Select second option
+      fireEvent.click(dropdownTriggers[0]);
+      const newDropdownOptions = getAllByTestId('DesignSystem-DropdownOption--DEFAULT');
+      fireEvent.click(newDropdownOptions[1]);
+
+      tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(1);
+    });
+
+    it('should handle empty selection in singleSelect', () => {
+      const { getAllByTestId } = render(
+        <Table
+          withHeader={true}
+          filterPosition="HEADER"
+          data={testData}
+          schema={singleSelectSchema}
+          headerOptions={{ withSearch: true }}
+        />
+      );
+
+      // Initially all rows should be visible
+      let tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(5);
+
+      const dropdownTriggers = getAllByTestId('DesignSystem-DropdownTrigger');
+      fireEvent.click(dropdownTriggers[0]);
+
+      // Select an option to filter
+      const dropdownOptions = getAllByTestId('DesignSystem-DropdownOption--DEFAULT');
+      fireEvent.click(dropdownOptions[0]);
+
+      tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(1);
+
+      // Click again to deselect (if supported)
+      fireEvent.click(dropdownTriggers[0]);
+      const newOptions = getAllByTestId('DesignSystem-DropdownOption--DEFAULT');
+      fireEvent.click(newOptions[0]);
+    });
+  });
+
+  describe('multiSelect filterType', () => {
+    const multiSelectSchema = [
+      {
+        name: 'name',
+        displayName: 'Name',
+        width: '40%',
+        filterType: 'multiSelect' as const,
+        filters: [
+          { label: 'Asthma Outreach', value: 'Asthma Outreach' },
+          { label: 'HbA1c Test due', value: 'HbA1c Test due' },
+          { label: 'ER Education', value: 'ER Education' },
+        ],
+        onFilterChange: (a: any, filters: any) => {
+          if (filters.length === 0) return true;
+          for (const filter of filters) {
+            if (a.name === filter) return true;
+          }
+          return false;
+        },
+      },
+      {
+        name: 'status',
+        displayName: 'Status',
+        width: '30%',
+        filterType: 'multiSelect' as const,
+        filters: [
+          { label: 'In Progress', value: 'In Progress' },
+          { label: 'Scheduled', value: 'Scheduled' },
+          { label: 'Draft', value: 'Draft' },
+          { label: 'Failed', value: 'Failed' },
+        ],
+        onFilterChange: (a: any, filters: any) => {
+          if (filters.length === 0) return true;
+          for (const filter of filters) {
+            if (a.status === filter) return true;
+          }
+          return false;
+        },
+      },
+      { name: 'category', displayName: 'Category', width: '30%' },
+    ];
+
+    it('should render dropdown with apply button for multiSelect', () => {
+      const { getAllByTestId, getByTestId } = render(
+        <Table
+          withHeader={true}
+          filterPosition="HEADER"
+          data={testData}
+          schema={multiSelectSchema}
+          headerOptions={{ withSearch: true }}
+        />
+      );
+
+      const dropdownTriggers = getAllByTestId('DesignSystem-DropdownTrigger');
+      fireEvent.click(dropdownTriggers[0]);
+
+      // Apply button should be present in multiSelect
+      const applyButton = getByTestId('DesignSystem-Dropdown-ApplyButton');
+      expect(applyButton).toBeInTheDocument();
+    });
+
+    it('should render dropdown with checkboxes for multiSelect', () => {
+      const { getAllByTestId } = render(
+        <Table
+          withHeader={true}
+          filterPosition="HEADER"
+          data={testData}
+          schema={multiSelectSchema}
+          headerOptions={{ withSearch: true }}
+        />
+      );
+
+      const dropdownTriggers = getAllByTestId('DesignSystem-DropdownTrigger');
+      fireEvent.click(dropdownTriggers[0]);
+
+      // Checkboxes should be present in multiSelect
+      const checkboxes = getAllByTestId('DesignSystem-Checkbox-InputBox');
+      expect(checkboxes.length).toBeGreaterThan(0);
+    });
+
+    it('should not apply filter immediately on checkbox click for multiSelect', () => {
+      const { getAllByTestId } = render(
+        <Table
+          withHeader={true}
+          filterPosition="HEADER"
+          data={testData}
+          schema={multiSelectSchema}
+          headerOptions={{ withSearch: true }}
+        />
+      );
+
+      // Check initial data count
+      let tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(5);
+
+      const dropdownTriggers = getAllByTestId('DesignSystem-DropdownTrigger');
+      fireEvent.click(dropdownTriggers[0]);
+
+      // Click on first checkbox
+      const checkboxes = getAllByTestId('DesignSystem-Checkbox-InputBox');
+      fireEvent.click(checkboxes[1]); // Skip the "select all" checkbox if present
+
+      // Data should not be filtered yet (still 5 rows)
+      tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(5);
+    });
+
+    it('should apply filter only after clicking apply button for multiSelect', () => {
+      const { getAllByTestId, getByTestId } = render(
+        <Table
+          withHeader={true}
+          filterPosition="HEADER"
+          data={testData}
+          schema={multiSelectSchema}
+          headerOptions={{ withSearch: true }}
+        />
+      );
+
+      const dropdownTriggers = getAllByTestId('DesignSystem-DropdownTrigger');
+      fireEvent.click(dropdownTriggers[0]);
+
+      // Select first option
+      const checkboxes = getAllByTestId('DesignSystem-Checkbox-InputBox');
+      fireEvent.click(checkboxes[1]); // Skip the "select all" checkbox if present
+
+      // Click apply button
+      const applyButton = getByTestId('DesignSystem-Dropdown-ApplyButton');
+      fireEvent.click(applyButton);
+
+      // Now data should be filtered
+      const tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(1);
+    });
+
+    it('should allow selecting multiple options for multiSelect', () => {
+      const { getAllByTestId, getByTestId } = render(
+        <Table
+          withHeader={true}
+          filterPosition="HEADER"
+          data={testData}
+          schema={multiSelectSchema}
+          headerOptions={{ withSearch: true }}
+        />
+      );
+
+      const dropdownTriggers = getAllByTestId('DesignSystem-DropdownTrigger');
+      fireEvent.click(dropdownTriggers[0]);
+
+      // Select multiple options
+      const checkboxes = getAllByTestId('DesignSystem-Checkbox-InputBox');
+      fireEvent.click(checkboxes[1]);
+      fireEvent.click(checkboxes[2]);
+
+      // Click apply button
+      const applyButton = getByTestId('DesignSystem-Dropdown-ApplyButton');
+      fireEvent.click(applyButton);
+
+      // Should show filtered results (2 items selected should show 2 rows)
+      const tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(2);
+    });
+
+    it('should handle empty multiSelect filter correctly', () => {
+      const { getAllByTestId, getByTestId } = render(
+        <Table
+          withHeader={true}
+          filterPosition="HEADER"
+          data={testData}
+          schema={multiSelectSchema}
+          headerOptions={{ withSearch: true }}
+        />
+      );
+
+      // Initially all rows should be visible
+      let tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(5);
+
+      const dropdownTriggers = getAllByTestId('DesignSystem-DropdownTrigger');
+      fireEvent.click(dropdownTriggers[0]);
+
+      // Don't select any options, just click apply
+      const applyButton = getByTestId('DesignSystem-Dropdown-ApplyButton');
+      fireEvent.click(applyButton);
+
+      // All rows should still be visible when no filter is applied
+      tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(5);
+    });
+  });
+
+  describe('default filterType behavior', () => {
+    const defaultFilterSchema = [
+      {
+        name: 'name',
+        displayName: 'Name',
+        width: '40%',
+        // No filterType specified - should default to multiSelect
+        filters: [
+          { label: 'Asthma Outreach', value: 'Asthma Outreach' },
+          { label: 'HbA1c Test due', value: 'HbA1c Test due' },
+          { label: 'ER Education', value: 'ER Education' },
+        ],
+        onFilterChange: (a: any, filters: any) => {
+          if (filters.length === 0) return true;
+          for (const filter of filters) {
+            if (a.name === filter) return true;
+          }
+          return false;
+        },
+      },
+      { name: 'status', displayName: 'Status', width: '30%' },
+      { name: 'category', displayName: 'Category', width: '30%' },
+    ];
+
+    it('should default to multiSelect behavior when filterType is not specified', () => {
+      const { getAllByTestId, getByTestId } = render(
+        <Table
+          withHeader={true}
+          filterPosition="HEADER"
+          data={testData}
+          schema={defaultFilterSchema}
+          headerOptions={{ withSearch: true }}
+        />
+      );
+
+      const dropdownTriggers = getAllByTestId('DesignSystem-DropdownTrigger');
+      fireEvent.click(dropdownTriggers[0]);
+
+      // Should have apply button (multiSelect behavior)
+      const applyButton = getByTestId('DesignSystem-Dropdown-ApplyButton');
+      expect(applyButton).toBeInTheDocument();
+    });
+  });
+
+  describe('mixed filterType scenario', () => {
+    const mixedFilterSchema = [
+      {
+        name: 'name',
+        displayName: 'Name',
+        width: '40%',
+        filterType: 'singleSelect' as const,
+        filters: [
+          { label: 'Asthma Outreach', value: 'Asthma Outreach' },
+          { label: 'HbA1c Test due', value: 'HbA1c Test due' },
+        ],
+        onFilterChange: (a: any, filters: any) => {
+          for (const filter of filters) {
+            if (a.name === filter) return true;
+          }
+          return false;
+        },
+      },
+      {
+        name: 'status',
+        displayName: 'Status',
+        width: '30%',
+        filterType: 'multiSelect' as const,
+        filters: [
+          { label: 'In Progress', value: 'In Progress' },
+          { label: 'Scheduled', value: 'Scheduled' },
+        ],
+        onFilterChange: (a: any, filters: any) => {
+          if (filters.length === 0) return true;
+          for (const filter of filters) {
+            if (a.status === filter) return true;
+          }
+          return false;
+        },
+      },
+      { name: 'category', displayName: 'Category', width: '30%' },
+    ];
+
+    it('should handle mixed filterType columns correctly', () => {
+      const { getAllByTestId, queryByTestId } = render(
+        <Table
+          withHeader={true}
+          filterPosition="HEADER"
+          data={testData}
+          schema={mixedFilterSchema}
+          headerOptions={{ withSearch: true }}
+        />
+      );
+
+      const dropdownTriggers = getAllByTestId('DesignSystem-DropdownTrigger');
+      expect(dropdownTriggers).toHaveLength(2); // Name and Status columns
+
+      // Test singleSelect dropdown (Name column)
+      fireEvent.click(dropdownTriggers[0]);
+      // Should not have apply button for singleSelect
+      const applyButton1 = queryByTestId('DesignSystem-Dropdown-ApplyButton');
+      expect(applyButton1).not.toBeInTheDocument();
+
+      // Close first dropdown and open second
+      fireEvent.click(dropdownTriggers[0]);
+      fireEvent.click(dropdownTriggers[1]);
+
+      // Test multiSelect dropdown (Status column)
+      // Should have apply button for multiSelect
+      const applyButton = getAllByTestId('DesignSystem-Dropdown-ApplyButton');
+      expect(applyButton.length).toBeGreaterThan(0);
+    });
+  });
+});
+
 describe('render table with custom selection/unselection label renderers', () => {
   it('uses selectedLabelRenderer when rows are selected', () => {
     const schema = [{ name: 'name', displayName: 'Name', width: '50%' }];
@@ -940,5 +1421,319 @@ describe('render table with custom selection/unselection label renderers', () =>
     fireEvent.animationEnd(selectionLabel);
 
     expect(selectionLabel).toHaveTextContent('Custom unselected label');
+  });
+});
+
+describe('render table with pagination and search behavior', () => {
+  const schema = [{ name: 'name', displayName: 'Name', width: '50%' }];
+  const largeData = Array.from({ length: 30 }, (_, i) => ({ name: `Item ${i + 1}` }));
+
+  it('should hide pagination when user starts searching', async () => {
+    const headerOptions = { withSearch: true };
+    const { getByTestId, queryByTestId } = render(
+      <Table
+        schema={schema}
+        data={largeData}
+        withPagination={true}
+        pageSize={10}
+        withHeader={true}
+        headerOptions={headerOptions}
+        searchDebounceDuration={100}
+      />
+    );
+
+    const pagination = queryByTestId('DesignSystem-Pagination');
+    expect(pagination).toBeInTheDocument();
+
+    const searchInput = getByTestId('DesignSystem-Table-Header--withSearch');
+    fireEvent.change(searchInput, { target: { value: 'Item' } });
+
+    await waitFor(() => {
+      const paginationAfterSearch = queryByTestId('DesignSystem-Pagination');
+      expect(paginationAfterSearch).not.toBeInTheDocument();
+    });
+  });
+
+  it('should show pagination after search completes with multiple pages', async () => {
+    const headerOptions = { withSearch: true };
+    const searchResults = Array.from({ length: 25 }, (_, i) => ({ name: `Item ${i + 1}` }));
+
+    const { getByTestId, queryByTestId } = render(
+      <Table
+        schema={schema}
+        data={largeData}
+        withPagination={true}
+        pageSize={10}
+        withHeader={true}
+        headerOptions={headerOptions}
+        searchDebounceDuration={100}
+        onSearch={(data, searchTerm) => {
+          if (!searchTerm) return data;
+          return searchResults;
+        }}
+      />
+    );
+
+    const searchInput = getByTestId('DesignSystem-Table-Header--withSearch');
+    fireEvent.change(searchInput, { target: { value: 'Item' } });
+
+    await waitFor(
+      () => {
+        const pagination = queryByTestId('DesignSystem-Pagination');
+        expect(pagination).toBeInTheDocument();
+      },
+      { timeout: 500 }
+    );
+  });
+
+  it('should keep pagination visible during page navigation', async () => {
+    const { getByTestId } = render(<Table schema={schema} data={largeData} withPagination={true} pageSize={10} />);
+
+    const pagination = getByTestId('DesignSystem-Pagination');
+    expect(pagination).toBeInTheDocument();
+
+    const nextButton = getByTestId('DesignSystem-Pagination--NextButton');
+    fireEvent.click(nextButton);
+
+    await waitFor(() => {
+      const paginationAfterPageChange = getByTestId('DesignSystem-Pagination');
+      expect(paginationAfterPageChange).toBeInTheDocument();
+    });
+  });
+
+  it('should hide pagination when search term is cleared', async () => {
+    const headerOptions = { withSearch: true };
+    const { getByTestId, queryByTestId } = render(
+      <Table
+        schema={schema}
+        data={largeData}
+        withPagination={true}
+        pageSize={10}
+        withHeader={true}
+        headerOptions={headerOptions}
+        searchDebounceDuration={100}
+      />
+    );
+
+    const searchInput = getByTestId('DesignSystem-Table-Header--withSearch');
+    fireEvent.change(searchInput, { target: { value: 'Item' } });
+
+    await waitFor(() => {
+      const paginationDuringSearch = queryByTestId('DesignSystem-Pagination');
+      expect(paginationDuringSearch).not.toBeInTheDocument();
+    });
+
+    fireEvent.change(searchInput, { target: { value: '' } });
+
+    await waitFor(
+      () => {
+        const paginationAfterClear = queryByTestId('DesignSystem-Pagination');
+        expect(paginationAfterClear).toBeInTheDocument();
+      },
+      { timeout: 500 }
+    );
+  });
+});
+
+describe('render table with race condition prevention', () => {
+  const schema = [{ name: 'name', displayName: 'Name', width: '50%' }];
+  const page1Data = Array.from({ length: 10 }, (_, i) => ({ name: `Page1 Item ${i + 1}` }));
+  const page2Data = Array.from({ length: 10 }, (_, i) => ({ name: `Page2 Item ${i + 1}` }));
+  const page3Data = Array.from({ length: 10 }, (_, i) => ({ name: `Page3 Item ${i + 1}` }));
+
+  it('should process only the latest page request when multiple pages are clicked rapidly', async () => {
+    const resolvePromises: Record<number, (value: any) => void> = {};
+
+    const fetchData: fetchDataFunction = jest.fn((opts: any) => {
+      const page = opts.page || 1;
+      return new Promise((resolve) => {
+        resolvePromises[page] = resolve;
+      });
+    });
+
+    const { getByTestId, getAllByTestId, queryByTestId } = render(
+      <Table schema={schema} fetchData={fetchData} withPagination={true} pageSize={10} searchDebounceDuration={100} />
+    );
+
+    await waitFor(() => {
+      expect(fetchData).toHaveBeenCalled();
+    });
+
+    resolvePromises[1]!({
+      schema,
+      data: page1Data,
+      count: 30,
+    });
+
+    await waitFor(() => {
+      const pagination = queryByTestId('DesignSystem-Pagination');
+      expect(pagination).toBeInTheDocument();
+    });
+
+    const nextButton = getByTestId('DesignSystem-Pagination--NextButton');
+    fireEvent.click(nextButton);
+
+    await waitFor(() => {
+      expect(resolvePromises[2]).toBeDefined();
+    });
+
+    const nextButton2 = getByTestId('DesignSystem-Pagination--NextButton');
+    fireEvent.click(nextButton2);
+
+    await waitFor(() => {
+      expect(resolvePromises[3]).toBeDefined();
+    });
+
+    resolvePromises[3]!({
+      schema,
+      data: page3Data,
+      count: 30,
+    });
+
+    await waitFor(() => {
+      const rows = getAllByTestId('DesignSystem-Grid-row');
+      expect(rows.length).toBeGreaterThan(0);
+      if (rows.length > 0) {
+        expect(rows[0]).toHaveTextContent('Page3');
+      }
+    });
+
+    if (resolvePromises[2]) {
+      resolvePromises[2]!({
+        schema,
+        data: page2Data,
+        count: 30,
+      });
+    }
+  });
+
+  it('should handle async table pagination without race conditions', async () => {
+    const fetchData: fetchDataFunction = jest.fn((opts: any) => {
+      const pageData = opts.page === 1 ? page1Data : opts.page === 2 ? page2Data : page3Data;
+      return Promise.resolve({
+        schema,
+        data: pageData,
+        count: 30,
+      });
+    });
+
+    const { getByTestId, getAllByTestId } = render(
+      <Table schema={schema} fetchData={fetchData} withPagination={true} pageSize={10} />
+    );
+
+    await waitFor(() => {
+      expect(fetchData).toHaveBeenCalledWith(
+        expect.objectContaining({
+          page: 1,
+        })
+      );
+    });
+
+    const nextButton = getByTestId('DesignSystem-Pagination--NextButton');
+    fireEvent.click(nextButton);
+
+    await waitFor(() => {
+      expect(fetchData).toHaveBeenCalledWith(
+        expect.objectContaining({
+          page: 2,
+        })
+      );
+    });
+
+    await waitFor(() => {
+      const rows = getAllByTestId('DesignSystem-Grid-row');
+      expect(rows.length).toBeGreaterThan(0);
+      if (rows.length > 0) {
+        expect(rows[0]).toHaveTextContent('Page2');
+      }
+    });
+  });
+});
+
+describe('render table with pagination during loading', () => {
+  const schema = [{ name: 'name', displayName: 'Name', width: '50%' }];
+  const largeData = Array.from({ length: 30 }, (_, i) => ({ name: `Item ${i + 1}` }));
+
+  it('should keep pagination visible and clickable during page loading', async () => {
+    let resolveFetch: (value: any) => void;
+    const fetchData: fetchDataFunction = jest.fn(() => {
+      return new Promise((resolve) => {
+        resolveFetch = resolve;
+      });
+    });
+
+    const { getByTestId, queryByTestId } = render(
+      <Table schema={schema} fetchData={fetchData} withPagination={true} pageSize={10} searchDebounceDuration={100} />
+    );
+
+    await waitFor(() => {
+      expect(fetchData).toHaveBeenCalled();
+    });
+
+    resolveFetch!({
+      schema,
+      data: largeData.slice(0, 10),
+      count: 30,
+    });
+
+    await waitFor(() => {
+      const pagination = queryByTestId('DesignSystem-Pagination');
+      expect(pagination).toBeInTheDocument();
+    });
+
+    const nextButton = getByTestId('DesignSystem-Pagination--NextButton');
+    expect(nextButton).not.toBeDisabled();
+
+    fireEvent.click(nextButton);
+
+    await waitFor(() => {
+      const pageInput = getByTestId('DesignSystem-Pagination--Input');
+      expect(pageInput).toHaveDisplayValue('2');
+    });
+  });
+
+  it('should hide pagination only during search, not during page loading', async () => {
+    const headerOptions = { withSearch: true };
+    let resolveFetch: (value: any) => void;
+    const fetchData: fetchDataFunction = jest.fn(() => {
+      return new Promise((resolve) => {
+        resolveFetch = resolve;
+      });
+    });
+
+    const { getByTestId, queryByTestId } = render(
+      <Table
+        schema={schema}
+        fetchData={fetchData}
+        withPagination={true}
+        pageSize={10}
+        withHeader={true}
+        headerOptions={headerOptions}
+        searchDebounceDuration={100}
+      />
+    );
+
+    await waitFor(() => {
+      expect(fetchData).toHaveBeenCalled();
+    });
+
+    resolveFetch!({
+      schema,
+      data: largeData.slice(0, 10),
+      count: 30,
+    });
+
+    await waitFor(() => {
+      const paginationAfterLoad = queryByTestId('DesignSystem-Pagination');
+      expect(paginationAfterLoad).toBeInTheDocument();
+    });
+
+    const searchInput = getByTestId('DesignSystem-Table-Header--withSearch');
+    fireEvent.change(searchInput, { target: { value: 'test' } });
+
+    await waitFor(() => {
+      const paginationDuringSearch = queryByTestId('DesignSystem-Pagination');
+      expect(paginationDuringSearch).not.toBeInTheDocument();
+    });
   });
 });
