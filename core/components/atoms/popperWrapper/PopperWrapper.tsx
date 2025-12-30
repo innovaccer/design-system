@@ -234,11 +234,35 @@ export const PopoverContent = React.forwardRef<HTMLDivElement, React.HTMLProps<H
 
   const boundaryElement = appendToBody !== false && document ? document.body : portalRoot;
 
+  // Check if reference element exists and position is valid
+  const hasReference = context.refs.reference.current != null;
   const isValidPosition = context.x !== 0 && context.y !== 0;
-  const showVisibility =
-    context.middlewareData.hide?.referenceHidden || context.middlewareData.hide?.escaped || !isValidPosition;
 
-  const content = isMounted && (
+  // Check if transform is at (0,0) - floating-ui uses transform for positioning
+  const floatingStyles = context.floatingStyles || {};
+  const transform = floatingStyles.transform || '';
+  // Check if transform is matrix(1, 0, 0, 1, 0, 0) or translate(0px, 0px) which means at origin
+  const isAtOrigin =
+    transform.includes('matrix(1, 0, 0, 1, 0, 0)') ||
+    transform.includes('translate(0px, 0px)') ||
+    transform.includes('translate(0, 0)');
+  const hasCalculatedPosition = !isAtOrigin && transform !== '';
+
+  // Track if we've had a valid position at least once - use ref for synchronous updates
+  const hasValidPositionRef = React.useRef(false);
+
+  // Update ref synchronously when position becomes valid
+  if (context.open && isValidPosition && hasReference && hasCalculatedPosition) {
+    hasValidPositionRef.current = true;
+  } else if (!context.open) {
+    hasValidPositionRef.current = false;
+  }
+
+  // Determine if we should show the content
+  const canShow = hasReference && ((isValidPosition && hasCalculatedPosition) || hasValidPositionRef.current);
+  const shouldHide = context.middlewareData.hide?.referenceHidden || context.middlewareData.hide?.escaped || !canShow;
+
+  const content = isMounted && hasReference && (
     // <FloatingFocusManager context={floatingContext}
     // // modal={context.modal}
     // initialFocus={-1}>
@@ -247,7 +271,10 @@ export const PopoverContent = React.forwardRef<HTMLDivElement, React.HTMLProps<H
       style={{
         ...context.floatingStyles,
         ...style,
-        visibility: showVisibility ? 'hidden' : 'visible',
+        visibility: shouldHide ? 'hidden' : 'visible',
+        // Completely hide when position is not ready to prevent (0,0) flash
+        opacity: canShow ? undefined : 0,
+        pointerEvents: canShow ? undefined : 'none',
       }}
       {...context.getFloatingProps(props)}
     >
