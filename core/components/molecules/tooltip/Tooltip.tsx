@@ -118,7 +118,7 @@ export const Tooltip = (props: TooltipProps): React.ReactElement => {
 
   if (!showTooltip) {
     // If showTooltip is false skip the Popover and return the children directly
-    return <>{children}</>;
+    return (<>{children}</>) as React.ReactElement;
   }
 
   const tooltipClass = classNames({
@@ -154,7 +154,7 @@ export const Tooltip = (props: TooltipProps): React.ReactElement => {
         {tooltipWrapper}
       </Popover>
     ) : (
-      <>{renderChildren}</>
+      ((<>{renderChildren}</>) as React.ReactElement)
     );
   }
 
