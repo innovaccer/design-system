@@ -54,6 +54,14 @@ export interface SelectTriggerProps extends BaseProps {
    * representing the label to be displayed.
    * */
   setLabel?: (count: number) => string | undefined;
+  /**
+   * Minimum width of the Select trigger button.
+   */
+  minWidth?: number | string;
+  /**
+   * Maximum width of the Select trigger button.
+   */
+  maxWidth?: number | string;
 }
 
 const SelectTrigger = (props: SelectTriggerProps) => {
@@ -67,6 +75,8 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     iconType,
     onClear,
     setLabel,
+    minWidth,
+    maxWidth,
     ...rest
   } = props;
 
@@ -96,6 +106,8 @@ const SelectTrigger = (props: SelectTriggerProps) => {
   const iconName = openPopover ? 'keyboard_arrow_up' : 'keyboard_arrow_down';
   const triggerStyle = {
     width: width,
+    ...(minWidth !== undefined && { minWidth }),
+    ...(maxWidth !== undefined && { maxWidth }),
   };
 
   const onClearHandler = (event: React.MouseEvent<HTMLElement>) => {

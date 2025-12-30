@@ -22,7 +22,7 @@ export const selectedItem = () => {
   const [selectedOptions, setSelectedOptions] = React.useState([]);
   const selectRef = React.useRef(null);
 
-  const getOptionIdentifier = (option) => option?.id ?? option?.value;
+  const getOptionIdentifier = (option) => (option && option.id) || (option && option.label) || '';
 
   const handleSelect = (selectedOption) => {
     action('selectedOption', selectedOption);
@@ -120,7 +120,7 @@ const customCode = `() => {
     setSelectedOptions([]);
   };
 
-  const getOptionIdentifier = (option) => option?.id ?? option?.value;
+  const getOptionIdentifier = (option) => (option && option.id) || (option && option.label) || '';
 
   const groupedMedicine = medicineList.reduce((acc, item) => {
     const itemIdentifier = getOptionIdentifier(item);
