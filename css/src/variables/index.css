@@ -270,4 +270,7 @@
   --border-width-05: 2px;
   --border-width-7-5: 3px;
   --border-width-10: 4px;
+
+  /**** Layout ****/
+  --nav-height: 47px;
 }
