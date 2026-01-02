@@ -105,6 +105,8 @@ export interface SelectProps extends BaseProps {
    *  withClearButton?: boolean;
    *  setLabel?: (count: number) => string | undefined;
    *  onClear?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
+   *  minWidth?: number | string;
+   *  maxWidth?: number | string;
    * }
    * </pre>
    *
@@ -119,6 +121,8 @@ export interface SelectProps extends BaseProps {
    * | withClearButton |  Determines whether the clear icon should be displayed in the trigger | true |
    * | setLabel | A function used to customize the label displayed when multiple options are selected. | - |
    * | onClear | Handler called when the clear button within the Select trigger is clicked | - |
+   * | minWidth | Minimum width of the Select trigger button | - |
+   * | maxWidth | Maximum width of the Select trigger button | - |
    *
    */
 
