@@ -292,6 +292,13 @@ export const data = [
     image: () => <StaticImage src="./images/Select.png" alt="Select" imgStyle={imgStyle} />,
   },
   {
+    link: 'segmentedControl/usage',
+    name: 'Segmented Control',
+    design: 'Available',
+    code: 'Available',
+    image: () => <StaticImage src="./images/SegmentedControl.png" alt="Segmented Control" imgStyle={imgStyle} />,
+  },
+  {
     link: 'sidesheet/usage',
     name: 'Sidesheet',
     design: 'Available',

@@ -1,0 +1,262 @@
+.SegmentedControl {
+  display: inline-flex;
+  align-items: stretch;
+  position: relative;
+  border-radius: var(--border-radius-10);
+  max-width: 100%;
+  box-sizing: border-box;
+  box-shadow: inset 0 0 0 var(--border-width-2-5) var(--secondary);
+  overflow: visible;
+}
+
+.SegmentedControl--expanded {
+  width: 100%;
+  display: flex;
+}
+
+.SegmentedControl-segment--expanded {
+  flex: 1 1 0;
+  min-width: 0;
+  width: 0;
+}
+
+.SegmentedControl-segment--equalWidth {
+  width: var(--segment-equal-width, max-content);
+  flex: 0 0 auto;
+  min-width: var(--segment-equal-width, max-content);
+}
+
+.SegmentedControl-segment--equalWidth .SegmentedControl-segmentLabel {
+  overflow: visible;
+  text-overflow: clip;
+}
+
+.SegmentedControl-segmentLabel--constrained {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.SegmentedControl--disabled {
+  opacity: var(--opacity-16);
+  cursor: not-allowed;
+}
+
+.SegmentedControl-indicator {
+  position: absolute;
+  left: 0;
+  box-sizing: border-box;
+  background-color: var(--primary-ultra-light);
+  border: var(--border-width-2-5) solid var(--primary-lighter);
+  border-radius: var(--border-radius-10);
+  pointer-events: none;
+  z-index: 2;
+  transition: transform var(--duration--moderate-02) var(--standard-productive-curve),
+    width var(--duration--moderate-02) var(--standard-productive-curve),
+    top var(--duration--moderate-02) var(--standard-productive-curve),
+    height var(--duration--moderate-02) var(--standard-productive-curve);
+}
+
+.SegmentedControl-segment {
+  appearance: none;
+  border: var(--border-width-2-5) solid transparent;
+  background-clip: padding-box;
+  border-radius: 0;
+  background-color: transparent;
+  position: relative;
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-15) var(--spacing-30);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: var(--font-size);
+  line-height: var(--font-height);
+  font-weight: var(--font-weight-normal);
+  text-decoration: none;
+  max-width: var(--segment-max-width, none);
+  min-width: 0;
+  z-index: 3;
+  transition: color var(--duration--moderate-02) var(--standard-productive-curve),
+    background-color var(--duration--moderate-02) var(--standard-productive-curve),
+    box-shadow var(--duration--moderate-02) var(--standard-productive-curve),
+    font-weight var(--duration--moderate-02) var(--standard-productive-curve);
+}
+
+.SegmentedControl-segment:nth-of-type(1) {
+  border-top-left-radius: var(--border-radius-10);
+  border-bottom-left-radius: var(--border-radius-10);
+}
+
+.SegmentedControl-segment:last-child {
+  border-top-right-radius: var(--border-radius-10);
+  border-bottom-right-radius: var(--border-radius-10);
+}
+
+.SegmentedControl-segment:focus {
+  outline: none;
+}
+
+.SegmentedControl-segment:focus-visible:not(.SegmentedControl-segment--selected) {
+  border-color: var(--primary);
+  border-radius: var(--border-radius-10);
+  box-shadow: var(--shadow-spread) var(--primary-shadow);
+  z-index: 100;
+  position: relative;
+}
+
+.SegmentedControl-segment:hover:not(.SegmentedControl-segment--disabled):not(.SegmentedControl-segment--selected) {
+  background-color: var(--secondary-lighter);
+}
+
+.SegmentedControl-segment:active:not(.SegmentedControl-segment--disabled):not(.SegmentedControl-segment--selected) {
+  color: var(--primary-dark);
+}
+
+.SegmentedControl-segment--selected {
+  color: var(--primary-dark);
+  cursor: default;
+}
+
+.SegmentedControl-segment--selected.SegmentedControl-segment--disabled {
+  color: var(--primary-dark);
+  cursor: not-allowed;
+}
+
+.SegmentedControl-segment--selected.SegmentedControl-segment--disabled::after {
+  content: '';
+  position: absolute;
+  top: var(--border-width-2-5);
+  left: var(--border-width-2-5);
+  right: var(--border-width-2-5);
+  bottom: var(--border-width-2-5);
+  background-color: var(--white);
+  opacity: var(--opacity-12);
+  border-radius: calc(var(--border-radius-10) - var(--border-width-2-5));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.SegmentedControl:has(.SegmentedControl-segment--selected.SegmentedControl-segment--disabled)
+  .SegmentedControl-indicator {
+  opacity: calc(1 - var(--opacity-12));
+}
+
+.SegmentedControl-segment--twoSegmentsSelected {
+  cursor: pointer;
+}
+
+.SegmentedControl-segment--small {
+  padding: var(--spacing-10) var(--spacing-20);
+  min-height: var(--spacing-60);
+  font-size: var(--font-size-s);
+  line-height: var(--font-height-s);
+  font-weight: var(--font-weight-medium);
+}
+
+.SegmentedControl-segment--regular {
+  padding: var(--spacing-15) var(--spacing-30);
+  min-height: var(--spacing-80);
+  line-height: var(--font-height);
+}
+
+.SegmentedControl-segment--large {
+  padding: var(--spacing-20) var(--spacing-40);
+  min-height: 40px;
+  font-size: var(--font-size-m);
+  line-height: var(--font-height-m);
+}
+
+.SegmentedControl-segment--disabled {
+  cursor: not-allowed;
+  color: var(--text-disabled);
+  background-color: transparent;
+}
+
+.SegmentedControl-segment--iconOnly {
+  height: var(--spacing-80);
+  width: var(--spacing-80);
+  padding: var(--spacing-15) var(--spacing-20);
+  box-sizing: border-box;
+}
+
+.SegmentedControl-segment--smallIconOnly {
+  height: var(--spacing-60);
+  width: var(--spacing-60);
+  padding: var(--spacing-10) var(--spacing-15);
+  box-sizing: border-box;
+}
+
+.SegmentedControl-segment--largeIconOnly {
+  height: 40px;
+  width: 40px;
+  padding: var(--spacing-20) var(--spacing-30);
+  box-sizing: border-box;
+}
+
+.SegmentedControl-segmentIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  transition: color var(--duration--moderate-02) var(--standard-productive-curve);
+}
+
+.SegmentedControl-segmentIcon--only {
+  margin: 0;
+}
+
+.SegmentedControl-segmentIcon--small {
+  margin-right: var(--spacing-10);
+}
+
+.SegmentedControl-segmentIcon--regular {
+  margin-right: var(--spacing-15);
+}
+
+.SegmentedControl-segmentIcon--large {
+  margin-right: var(--spacing-20);
+}
+
+.SegmentedControl-segmentLabel {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color var(--duration--moderate-02) var(--standard-productive-curve);
+}
+
+.SegmentedControl-divider {
+  width: var(--border-width-2-5);
+  background-color: var(--secondary);
+  align-self: center;
+  flex-shrink: 0;
+  transition: opacity var(--duration--moderate-02) var(--standard-productive-curve);
+}
+
+.SegmentedControl-divider--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.SegmentedControl-divider--small {
+  height: 10px;
+}
+
+.SegmentedControl-divider--regular {
+  height: var(--spacing-30);
+}
+
+.SegmentedControl-divider--large {
+  height: 14px;
+}
+
+@media (prefers-contrast: high) {
+  .SegmentedControl-segment:focus-visible {
+    outline-width: var(--border-width-10);
+    outline-offset: var(--spacing-05);
+  }
+
+  .SegmentedControl-segment--selected {
+    border-color: var(--primary);
+  }
+}
