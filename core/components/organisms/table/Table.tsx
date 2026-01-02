@@ -65,6 +65,7 @@ interface TableSyncProps {
    *        hidden?: boolean;
    *        filterType?: 'singleSelect' | 'multiSelect';
    *        filters?: DropdownProps['options'];
+   *        filterOptions?: { selectionType?: 'singleSelect' | 'multiSelect'; minWidth?: number | string; maxWidth?: number | string; maxVisibleSelection?: number; };
    *        onFilterChange?: (data: RowData, filters: Filter) => boolean;
    *        translate?: (data: RowData) => RowData,
    *        cellType?: CellType;
@@ -110,7 +111,8 @@ interface TableSyncProps {
    * | pinned | Pin column | |
    * | hidden | Denotes if column is hidden | |
    * | filters | Filter options for the column | |
-   * | filterType | Enable single select or multi select filter | 'multiSelect' |
+   * | filterType | Enable single select or multi select filter (deprecated, use filterOptions.selectionType) | 'multiSelect' |
+   * | filterOptions | Filter configuration object with selectionType, minWidth, maxWidth, and maxVisibleSelection | |
    * | onFilterChange | Callback to be called on Filter Change | |
    * | translate | Translate Cell Data | |
    * | cellType | Cell Type | 'DEFAULT' |
