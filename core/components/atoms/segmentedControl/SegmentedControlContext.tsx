@@ -1,0 +1,19 @@
+import * as React from 'react';
+
+export type SegmentedControlValue = React.ReactText;
+export type SegmentedControlSize = 'small' | 'regular' | 'large';
+
+export interface SegmentedControlContextValue {
+  size: SegmentedControlSize;
+  selectedIndex: number;
+  onSelect: (index: number, value?: SegmentedControlValue) => void;
+  index: number;
+  registerButtonRef?: (index: number, node: HTMLButtonElement | null) => void;
+  expanded?: boolean;
+  isEqualWidth?: boolean;
+  disabled?: boolean;
+  isTwoSegments?: boolean;
+  isConstrained?: boolean;
+}
+
+export const SegmentedControlContext = React.createContext<SegmentedControlContextValue | null>(null);

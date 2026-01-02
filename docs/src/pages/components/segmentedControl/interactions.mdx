@@ -1,0 +1,69 @@
+### Changing selection
+
+On changing a selection surface smoothly slides over
+
+
+![On changing a selection surface smoothly slides over](./images/changing-selections.gif)
+
+<Caption>On changing a selection surface smoothly slides over</Caption>
+
+### Keyboard Interactions
+
+<br/>
+<br/>
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"33%", textAlign: "left"}}>Initial state</th>
+      <th style={{width:"33%", textAlign: "left"}}>Keyboard Interaction</th>
+      <th style={{width:"33%", textAlign: "left"}}>Final state</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Any segment is selected</td>
+      <td>&#60;Tab&#62;</td>
+      <td>
+        <ul>
+          <li>Focus on first segment in index.</li>
+          <li>Thereafter cycle through the segments until the last segment.</li>
+          <li>Skip the active and disabled segments</li>
+        </ul>
+      </td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td></td>
+      <td>&#60;Enter&#62;</td>
+      <td>
+        Activates that segment
+      </td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td></td>
+      <td>&#60;Esc&#62;</td>
+      <td>Remove focus state</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+<br/>
+
+### Animation Curve
+
+<br/>
+<br/>
+
+<table style={{width: "100%"}}>
+  <tbody>
+    <tr>
+      <th style={{width:"50%",  textAlign: "left"}}>Curve</th>
+      <th style={{width:"50%",  textAlign: "left"}}>Duration</th>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>cubic-bezier(0.2, 0, 0.38, 0.9)</td>
+      <td>240ms</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
