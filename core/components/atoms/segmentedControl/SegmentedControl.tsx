@@ -147,13 +147,15 @@ export const SegmentedControl = (props: SegmentedControlProps) => {
     });
 
     setIndicatorStyle(dimensions);
-
-    // Re-enable transition after first render
     if (isInitialRender.current) {
-      // Force a reflow to ensure transition is disabled before re-enabling
-      void indicator.offsetHeight;
-      indicator.style.transition = '';
-      isInitialRender.current = false;
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          if (indicator) {
+            indicator.style.transition = '';
+          }
+          isInitialRender.current = false;
+        });
+      });
     }
   }, [selectedIndex, size, expanded, isEqualWidth, equalWidth, maxWidth, totalChildren]);
 

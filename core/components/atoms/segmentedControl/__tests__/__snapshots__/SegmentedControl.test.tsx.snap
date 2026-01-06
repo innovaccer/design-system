@@ -10,10 +10,10 @@ exports[`SegmentedControl Component - Custom Content Snapshot Tests matches snap
     >
       <div
         class="SegmentedControl-indicator"
-        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px;"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
-        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth SegmentedControl-segment--twoSegmentsSelected"
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth SegmentedControl-segment--twoSegmentsSelected SegmentedControl-segment--customContent"
         data-test="DesignSystem-SegmentedControl-Item"
         tabindex="-1"
         type="button"
@@ -52,7 +52,7 @@ exports[`SegmentedControl Component - Disabled States Snapshot Tests matches sna
     >
       <div
         class="SegmentedControl-indicator"
-        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px;"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--disabled SegmentedControl-segment--equalWidth"
@@ -114,7 +114,7 @@ exports[`SegmentedControl Component - Disabled States Snapshot Tests matches sna
     >
       <div
         class="SegmentedControl-indicator"
-        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px;"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
@@ -174,7 +174,7 @@ exports[`SegmentedControl Component - Disabled States Snapshot Tests matches sna
     >
       <div
         class="SegmentedControl-indicator"
-        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px;"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
@@ -236,7 +236,7 @@ exports[`SegmentedControl Component - Expanded Prop Snapshot Tests
     >
       <div
         class="SegmentedControl-indicator"
-        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px;"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
@@ -297,7 +297,7 @@ exports[`SegmentedControl Component - Expanded Prop Snapshot Tests
     >
       <div
         class="SegmentedControl-indicator"
-        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px;"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--expanded"
@@ -356,7 +356,7 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
     >
       <div
         class="SegmentedControl-indicator"
-        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px;"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
         class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
@@ -451,7 +451,7 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
     >
       <div
         class="SegmentedControl-indicator"
-        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px;"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
@@ -546,7 +546,7 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
     >
       <div
         class="SegmentedControl-indicator"
-        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px;"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
         class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
@@ -641,7 +641,7 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
     >
       <div
         class="SegmentedControl-indicator"
-        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px;"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
         class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--selected SegmentedControl-segment--iconOnly SegmentedControl-segment--equalWidth SegmentedControl-segment--largeIconOnly"
@@ -721,7 +721,7 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
     >
       <div
         class="SegmentedControl-indicator"
-        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px;"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--iconOnly SegmentedControl-segment--equalWidth SegmentedControl-segment--regularIconOnly"
@@ -801,7 +801,7 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
     >
       <div
         class="SegmentedControl-indicator"
-        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px;"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
         class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--selected SegmentedControl-segment--iconOnly SegmentedControl-segment--equalWidth SegmentedControl-segment--smallIconOnly"
@@ -881,7 +881,7 @@ exports[`SegmentedControl Component - Label Only Snapshot Tests matches snapshot
     >
       <div
         class="SegmentedControl-indicator"
-        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px;"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
         class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
@@ -940,7 +940,7 @@ exports[`SegmentedControl Component - Label Only Snapshot Tests matches snapshot
     >
       <div
         class="SegmentedControl-indicator"
-        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px;"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
@@ -999,7 +999,7 @@ exports[`SegmentedControl Component - Label Only Snapshot Tests matches snapshot
     >
       <div
         class="SegmentedControl-indicator"
-        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px;"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
         class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
@@ -1060,7 +1060,7 @@ exports[`SegmentedControl Component - Size Variants Snapshot Tests
     >
       <div
         class="SegmentedControl-indicator"
-        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px;"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
         class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
@@ -1121,7 +1121,7 @@ exports[`SegmentedControl Component - Size Variants Snapshot Tests
     >
       <div
         class="SegmentedControl-indicator"
-        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px;"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
@@ -1182,7 +1182,7 @@ exports[`SegmentedControl Component - Size Variants Snapshot Tests
     >
       <div
         class="SegmentedControl-indicator"
-        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px;"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
         class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
@@ -1241,7 +1241,7 @@ exports[`SegmentedControl Component - Two Segments Snapshot Tests matches snapsh
     >
       <div
         class="SegmentedControl-indicator"
-        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px;"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth SegmentedControl-segment--twoSegmentsSelected"
@@ -1285,7 +1285,7 @@ exports[`SegmentedControl Component - isEqualWidth Snapshot Tests matches snapsh
     >
       <div
         class="SegmentedControl-indicator"
-        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px;"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected"
@@ -1344,7 +1344,7 @@ exports[`SegmentedControl Component - isEqualWidth Snapshot Tests matches snapsh
     >
       <div
         class="SegmentedControl-indicator"
-        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px;"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
@@ -1403,7 +1403,7 @@ exports[`SegmentedControl Component - maxWidth Snapshot Tests matches snapshot w
     >
       <div
         class="SegmentedControl-indicator"
-        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px;"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
       />
       <button
         class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"

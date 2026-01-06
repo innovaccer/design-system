@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
-import { SegmentedControl } from '@/index';
+import { SegmentedControl, Heading, Text } from '@/index';
 import { SegmentedControlProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
@@ -657,6 +657,107 @@ describe('SegmentedControl Component - Custom Content Tests', () => {
     );
     expect(screen.getByText('Custom Content')).toBeInTheDocument();
     expect(screen.queryByText('Ignored Label')).not.toBeInTheDocument();
+  });
+
+  it('applies customContent class when segment has children', () => {
+    const { container } = render(
+      <SegmentedControl>
+        <SegmentedControl.Item>
+          <div>Custom Content</div>
+        </SegmentedControl.Item>
+        <SegmentedControl.Item label="Regular Label" />
+      </SegmentedControl>
+    );
+
+    const segments = container.querySelectorAll('[data-test="DesignSystem-SegmentedControl-Item"]');
+    expect(segments[0]).toHaveClass('SegmentedControl-segment--customContent');
+    expect(segments[1]).not.toHaveClass('SegmentedControl-segment--customContent');
+  });
+
+  it('applies customContent class for all sizes when children are present', () => {
+    sizes.forEach((size) => {
+      const { container } = render(
+        <SegmentedControl size={size}>
+          <SegmentedControl.Item>
+            <div>Custom Content</div>
+          </SegmentedControl.Item>
+        </SegmentedControl>
+      );
+
+      const segment = container.querySelector('[data-test="DesignSystem-SegmentedControl-Item"]');
+      expect(segment).toHaveClass('SegmentedControl-segment--customContent');
+      expect(segment).toHaveClass(`SegmentedControl-segment--${size}`);
+    });
+  });
+
+  it('does not apply customContent class when segment has label only', () => {
+    const { container } = render(
+      <SegmentedControl>
+        <SegmentedControl.Item label="Regular Label" />
+      </SegmentedControl>
+    );
+
+    const segment = container.querySelector('[data-test="DesignSystem-SegmentedControl-Item"]');
+    expect(segment).not.toHaveClass('SegmentedControl-segment--customContent');
+  });
+
+  it('does not apply customContent class when segment has icon only', () => {
+    const { container } = render(
+      <SegmentedControl>
+        <SegmentedControl.Item icon="home" />
+      </SegmentedControl>
+    );
+
+    const segment = container.querySelector('[data-test="DesignSystem-SegmentedControl-Item"]');
+    expect(segment).not.toHaveClass('SegmentedControl-segment--customContent');
+  });
+
+  it('does not apply customContent class when segment has icon and label', () => {
+    const { container } = render(
+      <SegmentedControl>
+        <SegmentedControl.Item label="Label" icon="home" />
+      </SegmentedControl>
+    );
+
+    const segment = container.querySelector('[data-test="DesignSystem-SegmentedControl-Item"]');
+    expect(segment).not.toHaveClass('SegmentedControl-segment--customContent');
+  });
+
+  it('handles mixed custom content and regular segments', () => {
+    const { container } = render(
+      <SegmentedControl>
+        <SegmentedControl.Item>
+          <div>Custom Content 1</div>
+        </SegmentedControl.Item>
+        <SegmentedControl.Item label="Regular Label" />
+        <SegmentedControl.Item>
+          <div>Custom Content 2</div>
+        </SegmentedControl.Item>
+      </SegmentedControl>
+    );
+
+    const segments = container.querySelectorAll('[data-test="DesignSystem-SegmentedControl-Item"]');
+    expect(segments[0]).toHaveClass('SegmentedControl-segment--customContent');
+    expect(segments[1]).not.toHaveClass('SegmentedControl-segment--customContent');
+    expect(segments[2]).toHaveClass('SegmentedControl-segment--customContent');
+  });
+
+  it('renders complex custom content with Heading and Text', () => {
+    render(
+      <SegmentedControl>
+        <SegmentedControl.Item>
+          <div>
+            <Heading size="s">Upload File</Heading>
+            <Text appearance="subtle" size="small">
+              Import data from an existing file
+            </Text>
+          </div>
+        </SegmentedControl.Item>
+      </SegmentedControl>
+    );
+
+    expect(screen.getByText('Upload File')).toBeInTheDocument();
+    expect(screen.getByText('Import data from an existing file')).toBeInTheDocument();
   });
 });
 

@@ -85,6 +85,7 @@ export const SegmentedControlItem = (props: SegmentedControlItemProps) => {
       [styles['SegmentedControl-segment--equalWidth']]: isEqualWidth,
       [styles['SegmentedControl-segment--twoSegmentsSelected']]: isTwoSegments && isSelected,
       [styles[`SegmentedControl-segment--${size}IconOnly`]]: isIconOnly,
+      [styles['SegmentedControl-segment--customContent']]: hasChildren,
     },
     className
   );

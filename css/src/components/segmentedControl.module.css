@@ -148,7 +148,7 @@
 
 .SegmentedControl-segment--small {
   padding: var(--spacing-10) var(--spacing-20);
-  min-height: var(--spacing-60);
+  height: var(--spacing-60);
   font-size: var(--font-size-s);
   line-height: var(--font-height-s);
   font-weight: var(--font-weight-medium);
@@ -156,15 +156,19 @@
 
 .SegmentedControl-segment--regular {
   padding: var(--spacing-15) var(--spacing-30);
-  min-height: var(--spacing-80);
+  height: var(--spacing-80);
   line-height: var(--font-height);
 }
 
 .SegmentedControl-segment--large {
   padding: var(--spacing-20) var(--spacing-40);
-  min-height: 40px;
+  height: 40px;
   font-size: var(--font-size-m);
   line-height: var(--font-height-m);
+}
+
+.SegmentedControl-segment--customContent {
+  height: auto;
 }
 
 .SegmentedControl-segment--disabled {
