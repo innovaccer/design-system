@@ -99,7 +99,17 @@ export const filtering = (): React.ReactElement => {
         filters: [
           { label: 'Admin', value: 'Admin' },
           { label: 'User', value: 'User' },
+          { label: 'Moderator', value: 'Moderator' },
+          { label: 'Editor', value: 'Editor' },
+          { label: 'Viewer', value: 'Viewer' },
+          { label: 'Subscriber', value: 'Subscriber' },
+          { label: 'Regional Operations Manager', value: 'Regional Operations Manager' },
         ],
+        filterOptions: {
+          minWidth: '176px',
+          maxWidth: '256px',
+          maxVisibleSelection: 4,
+        },
       },
       {
         name: 'status',
@@ -111,7 +121,11 @@ export const filtering = (): React.ReactElement => {
           { label: 'Active', value: 'Active' },
           { label: 'Inactive', value: 'Inactive' },
         ],
-        filterType: 'singleSelect' as const,
+        filterOptions: {
+          minWidth: '150px',
+          maxWidth: '256px',
+          selectionType: 'singleSelect',
+        },
         translate: (a: TableProps['data'][number]) => {
           const rowData = a as TableRowData;
           const status = rowData.status as keyof StatusAppearance;
