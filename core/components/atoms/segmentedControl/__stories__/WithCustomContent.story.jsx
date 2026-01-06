@@ -1,26 +1,28 @@
 import * as React from 'react';
-import { SegmentedControl, Avatar, Text } from '@/index';
+import { SegmentedControl, Heading, Text } from '@/index';
 import { action } from '@/utils/action';
 
 export const withCustomContent = () => {
   return (
     <SegmentedControl onChange={action('on-change')}>
       <SegmentedControl.Item>
-        <div className="d-flex align-items-center">
-          <Avatar firstName="John" lastName="Doe" size="tiny" withTooltip={false} className="mr-3" />
-          <Text>John Doe</Text>
+        <div>
+          <Heading size="s" className="mb-2">
+            Upload File
+          </Heading>
+          <Text appearance="subtle" size="small">
+            Import data from an existing file or document
+          </Text>
         </div>
       </SegmentedControl.Item>
       <SegmentedControl.Item>
-        <div className="d-flex align-items-center">
-          <Avatar firstName="Jane" lastName="Smith" size="tiny" withTooltip={false} className="mr-3" />
-          <Text>Jane Smith</Text>
-        </div>
-      </SegmentedControl.Item>
-      <SegmentedControl.Item>
-        <div className="d-flex align-items-center">
-          <Avatar firstName="Bob" lastName="Johnson" size="tiny" withTooltip={false} className="mr-3" />
-          <Text>Bob Johnson</Text>
+        <div>
+          <Heading size="s" className="mb-2">
+            Create manually
+          </Heading>
+          <Text appearance="subtle" size="small">
+            Start from scratch and build your content step by step
+          </Text>
         </div>
       </SegmentedControl.Item>
     </SegmentedControl>
@@ -33,21 +35,23 @@ const customCode = `() => {
       console.log('Selected index:', index);
     }}>
       <SegmentedControl.Item>
-        <div className="d-flex align-items-center">
-          <Avatar firstName="John" lastName="Doe" size="tiny" withTooltip={false} className="mr-3" />
-          <Text>John Doe</Text>
+        <div>
+          <Heading size="s" className="mb-2">
+            Upload File
+          </Heading>
+          <Text appearance="subtle" size="small">
+            Import data from an existing file or document
+          </Text>
         </div>
       </SegmentedControl.Item>
       <SegmentedControl.Item>
-        <div className="d-flex align-items-center">
-          <Avatar firstName="Jane" lastName="Smith" size="tiny" withTooltip={false} className="mr-3" />
-          <Text>Jane Smith</Text>
-        </div>
-      </SegmentedControl.Item>
-      <SegmentedControl.Item>
-        <div className="d-flex align-items-center">
-          <Avatar firstName="Bob" lastName="Johnson" size="tiny" withTooltip={false} className="mr-3" />
-          <Text>Bob Johnson</Text>
+        <div>
+          <Heading size="s" className="mb-2">
+            Create manually
+          </Heading>
+          <Text appearance="subtle" size="small">
+            Start from scratch and build your content step by step
+          </Text>
         </div>
       </SegmentedControl.Item>
     </SegmentedControl>
