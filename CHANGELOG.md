@@ -1,3 +1,44 @@
+## 4.19.0 (2025-01-07)
+
+### Highlights
+
+- feat(segmentedControl): add new segmented control component (847a58fa)
+- feat(selectTrigger): add minWidth maxWidth support (9931c6e9)
+- feat(table): replace dropdown with select in table and grid (d0b33355)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(segmentedControl): add new segmented control component (847a58fa)
+- feat(selectTrigger): add minWidth maxWidth support (9931c6e9)
+- feat(table): replace dropdown with select in table and grid (d0b33355)
+
+### Fixes
+
+- fix(segmentedControl): fix size issue and restrict first render animation (27b86d1c)
+
+### Improvements
+
+NA
+
+### Documentation
+
+- docs(segmentedControl): add docs of the new component segmented control (3cf558d6)
+- docs(segmentedControl): update interaction tab content and basic button content (389a8a11)
+
+---
+
 ## 4.18.0 (2025-12-29)
 
 ### Highlights
