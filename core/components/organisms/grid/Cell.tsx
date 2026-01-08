@@ -7,6 +7,7 @@ import { resizeCol, hasSchema } from './utility';
 import { getCellSize, getWidth } from './columnUtility';
 import { GridHeadProps } from './GridHead';
 import GridContext from './GridContext';
+import { FilterSelect } from '../table/FilterSelect';
 import styles from '@css/components/grid.module.css';
 
 interface SharedCellProps {
@@ -82,7 +83,7 @@ const HeaderCell = (props: HeaderCellProps) => {
     sortingList,
   };
 
-  const { sorting = true, name, filters, pinned } = schema;
+  const { sorting = true, name, filters, pinned, filterType = 'multiSelect', filterOptions } = schema;
 
   const isValidSchema = hasSchema(schemaProp);
 
@@ -116,10 +117,11 @@ const HeaderCell = (props: HeaderCellProps) => {
     [styles['Grid-headCell--draggable']]: draggable,
   });
 
-  const filterOptions = filters
+  const selectFilterOptions = filters
     ? filters.map((f) => ({
-        ...f,
-        selected: filterList[name] && filterList[name].findIndex((fl) => fl === f.value) !== -1,
+        label: f.label,
+        value: f.value,
+        id: f.value,
       }))
     : [];
 
@@ -181,17 +183,21 @@ const HeaderCell = (props: HeaderCellProps) => {
             </span>
           ) : (
             <div>
-              <Dropdown
-                menu={true}
-                showApplyButton={true}
-                withCheckbox={true}
-                triggerOptions={{
-                  customTrigger: () => <Button icon="filter_list" appearance="transparent" />,
+              <FilterSelect
+                name={name}
+                displayName=""
+                filters={selectFilterOptions}
+                filterList={filterList}
+                onChange={(filterName, selected) => onFilterChange(filterName, selected)}
+                filterOptions={{
+                  selectionType: filterOptions?.selectionType || filterType,
+                  minWidth: filterOptions?.minWidth,
+                  maxWidth: filterOptions?.maxWidth,
+                  maxVisibleSelection: filterOptions?.maxVisibleSelection,
                 }}
-                options={filterOptions}
-                align={'left'}
-                onChange={(selected: any) => onFilterChange(name, selected)}
-                minWidth={176}
+                filterType={filterType}
+                className="m-0"
+                customTrigger={<Button icon="filter_list" appearance="transparent" />}
               />
             </div>
           )}

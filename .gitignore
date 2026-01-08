@@ -112,3 +112,4 @@ docs/cypress/screenshots
 *.tsbuildinfo
 tsconfig.type.tsbuildinfo
 dist/**/*.tsbuildinfo
+.vscode

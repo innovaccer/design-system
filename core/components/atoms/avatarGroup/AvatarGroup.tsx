@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { Popover } from '@/index';
 import { AvatarProps, PopoverProps } from '@/index.type';
-import { AvatarSize } from '@/common.type';
+import { AvatarSize, AvatarShape } from '@/common.type';
 import AvatarCount from './AvatarCount';
 import Avatars from './Avatars';
 import AvatarPopperBody from './AvatarPopperBody';
@@ -19,6 +19,7 @@ export interface AvatarData extends Record<string, any> {
   tooltipSuffix?: string;
   status?: React.ReactNode;
   presence?: AvatarProps['presence'];
+  shape?: AvatarShape;
 }
 
 interface AvatarPopoverProps {
@@ -51,6 +52,7 @@ export type AvatarGroupProps = {
    *  tooltipSuffix?: string;
    *  status?: React.ReactNode;
    *  presence?: 'active' | 'away';
+   *  shape?: 'round' | 'square';
    * }
    * </pre>
    *
@@ -64,7 +66,8 @@ export type AvatarGroupProps = {
    * | disabled | Disables the Avatar | false |
    * | tooltipSuffix | Suffix to be shown in tooltip | |
    * | status | Status to be shown in only Regular Round Avatar | |
-   * | presence | Presence of Avatar |
+   * | presence | Presence of Avatar | |
+   * | shape | Shape of Avatar ('square' renders square, otherwise round) | 'round' |
    */
   list: AvatarData[];
   /**
@@ -158,7 +161,7 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
     boxShadow: `0 0 0  var(--spacing-05) ${borderColor}`,
   };
 
-  const avatarStyle = size === 'tiny' ? { ...style, ...tinyAvatarStyle } : style;
+  const avatarStyle = size !== 'regular' ? { ...style, ...tinyAvatarStyle } : style;
 
   const avatarList = list?.length === 3 ? list : list?.slice(0, max);
 

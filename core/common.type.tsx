@@ -91,7 +91,7 @@ export type TextColor =
   | 'accent4-shadow'
   | 'inverse-shadow';
 
-export type AvatarSize = 'regular' | 'tiny';
+export type AvatarSize = 'regular' | 'tiny' | 'micro';
 
 export type AvatarShape = 'round' | 'square';
 
@@ -117,6 +117,10 @@ export type PositionType =
 export type OptionType = {
   label: string;
   value: any;
+  /**
+   * Optional unique identifier for distinguishing options when labels repeat.
+   */
+  id?: string | number;
   isSelectedOption?: boolean;
 };
 
@@ -129,3 +133,36 @@ export type TTabSize = 'regular' | 'small';
 export type TChipSize = 'regular' | 'small';
 
 export type SelectStyleType = 'filled' | 'outlined';
+
+export type IconAppearance =
+  | 'default'
+  | 'destructive'
+  | 'white'
+  | 'subtle'
+  | 'disabled'
+  | 'info'
+  | 'alert'
+  | 'warning'
+  | 'success'
+  | 'primary_lighter'
+  | 'primary'
+  | 'primary_dark'
+  | 'alert_lighter'
+  | 'alert_dark'
+  | 'warning_lighter'
+  | 'warning_dark'
+  | 'success_lighter'
+  | 'success_dark'
+  | 'accent1'
+  | 'accent1_lighter'
+  | 'accent1_dark'
+  | 'accent2'
+  | 'accent2_lighter'
+  | 'accent2_dark'
+  | 'accent3'
+  | 'accent3_lighter'
+  | 'accent3_dark'
+  | 'accent4'
+  | 'accent4_lighter'
+  | 'accent4_dark'
+  | 'inverse';

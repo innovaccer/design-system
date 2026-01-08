@@ -535,3 +535,104 @@ describe('AvatarSelection component with status and presence', () => {
     expect(avatars[3].querySelector('.Avatar-presence')).toBeInTheDocument();
   });
 });
+
+describe('AvatarSelection component with shape in data', () => {
+  it('should render avatars with square shape when shape is square in data', () => {
+    const squareList = list.map((item, index) => (index === 0 ? { ...item, shape: 'square' as const } : item));
+    const { getAllByTestId } = render(<AvatarSelection list={squareList} max={3} />);
+    const avatars = getAllByTestId('DesignSystem-AvatarSelection--Avatar');
+    const firstAvatarElement = avatars[0].querySelector('[data-test="DesignSystem-Avatar"]');
+    expect(firstAvatarElement).toHaveClass('Avatar--square');
+    const secondAvatarElement = avatars[1].querySelector('[data-test="DesignSystem-Avatar"]');
+    expect(secondAvatarElement).not.toHaveClass('Avatar--square');
+  });
+
+  it('should render avatars with round shape by default when shape is not provided', () => {
+    const { getAllByTestId } = render(<AvatarSelection list={list} max={3} />);
+    const avatars = getAllByTestId('DesignSystem-AvatarSelection--Avatar');
+    avatars.forEach((avatar) => {
+      const avatarElement = avatar.querySelector('[data-test="DesignSystem-Avatar"]');
+      expect(avatarElement).not.toHaveClass('Avatar--square');
+    });
+  });
+
+  it('should pass shape from data to popover avatars', () => {
+    const squareList = list.map((item, index) => (index >= 3 ? { ...item, shape: 'square' as const } : item));
+    const { getByTestId } = render(<AvatarSelection list={squareList} max={3} withSearch={true} />);
+    const trigger = getByTestId('DesignSystem-AvatarSelection--TriggerAvatar');
+    fireEvent.click(trigger);
+    const popover = getByTestId('DesignSystem-AvatarSelection--Popover');
+    expect(popover).toBeInTheDocument();
+    const avatarElements = popover.querySelectorAll('[data-test="DesignSystem-Avatar"]');
+    expect(avatarElements.length).toBeGreaterThan(0);
+    avatarElements.forEach((avatar) => {
+      expect(avatar).toHaveClass('Avatar--square');
+    });
+  });
+});
+
+describe('AvatarSelection component with prop:size in popover', () => {
+  it('should pass size prop to popover avatars', () => {
+    const { getByTestId } = render(<AvatarSelection list={list} size="tiny" max={3} withSearch={true} />);
+    const trigger = getByTestId('DesignSystem-AvatarSelection--TriggerAvatar');
+    fireEvent.click(trigger);
+    const popover = getByTestId('DesignSystem-AvatarSelection--Popover');
+    expect(popover).toBeInTheDocument();
+    const avatarElements = popover.querySelectorAll('[data-test="DesignSystem-Avatar"]');
+    expect(avatarElements.length).toBeGreaterThan(0);
+    avatarElements.forEach((avatar) => {
+      expect(avatar).toHaveClass('Avatar--tiny');
+    });
+  });
+
+  it('should pass micro size prop to popover avatars', () => {
+    const { getByTestId } = render(<AvatarSelection list={list} size="micro" max={3} withSearch={true} />);
+    const trigger = getByTestId('DesignSystem-AvatarSelection--TriggerAvatar');
+    fireEvent.click(trigger);
+    const popover = getByTestId('DesignSystem-AvatarSelection--Popover');
+    expect(popover).toBeInTheDocument();
+    const avatarElements = popover.querySelectorAll('[data-test="DesignSystem-Avatar"]');
+    expect(avatarElements.length).toBeGreaterThan(0);
+    avatarElements.forEach((avatar) => {
+      expect(avatar).toHaveClass('Avatar--micro');
+    });
+  });
+});
+
+describe('AvatarSelection component with prop:size and selected state outline', () => {
+  it('should have 2px outline when size is regular and avatar is selected', () => {
+    const { getAllByTestId } = render(<AvatarSelection list={selectedList} size="regular" max={3} />);
+    const selectedAvatar = getAllByTestId('DesignSystem-AvatarSelection--Avatar')[0];
+    expect(selectedAvatar).toHaveClass('SelectionAvatarGroup-item--selected-regular');
+  });
+
+  it('should have 1px outline when size is tiny and avatar is selected', () => {
+    const { getAllByTestId } = render(<AvatarSelection list={selectedList} size="tiny" max={3} />);
+    const selectedAvatar = getAllByTestId('DesignSystem-AvatarSelection--Avatar')[0];
+    expect(selectedAvatar).toHaveClass('SelectionAvatarGroup-item--selected');
+    expect(selectedAvatar).not.toHaveClass('SelectionAvatarGroup-item--selected-regular');
+  });
+
+  it('should have 1px outline when size is micro and avatar is selected', () => {
+    const { getAllByTestId } = render(<AvatarSelection list={selectedList} size="micro" max={3} />);
+    const selectedAvatar = getAllByTestId('DesignSystem-AvatarSelection--Avatar')[0];
+    expect(selectedAvatar).toHaveClass('SelectionAvatarGroup-item--selected');
+    expect(selectedAvatar).not.toHaveClass('SelectionAvatarGroup-item--selected-regular');
+  });
+});
+
+describe('AvatarSelection component with prop:size micro in count', () => {
+  it('should apply micro size classes to count avatar text', () => {
+    const { getByTestId } = render(<AvatarSelection list={list} size="micro" max={3} />);
+    const countAvatar = getByTestId('DesignSystem-AvatarSelection--TriggerAvatar');
+    const textElement = countAvatar.querySelector('[data-test="DesignSystem-Text"]');
+    expect(textElement).toHaveClass('Avatar-content--micro');
+  });
+
+  it('should apply tiny size classes to count avatar text', () => {
+    const { getByTestId } = render(<AvatarSelection list={list} size="tiny" max={3} />);
+    const countAvatar = getByTestId('DesignSystem-AvatarSelection--TriggerAvatar');
+    const textElement = countAvatar.querySelector('[data-test="DesignSystem-Text"]');
+    expect(textElement).toHaveClass('Avatar-content--tiny');
+  });
+});

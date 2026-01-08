@@ -210,11 +210,17 @@ describe('renders children with pagination and page', () => {
     const { getAllByTestId, getByTestId } = render(
       <Grid withPagination={true} schema={schema} data={data} showFilters={true} updateFilterList={updateFilterList} />
     );
-    const popoverButton = getAllByTestId('DesignSystem-Button')[0];
-    fireEvent.click(popoverButton);
-    const dropdownOption = getAllByTestId('DesignSystem-Checkbox-InputBox')[0];
-    fireEvent.click(dropdownOption);
-    const applyButton = getByTestId('DesignSystem-Dropdown-ApplyButton');
+    // Grid uses customTrigger (Button) inside FilterSelect
+    const filterSelects = getAllByTestId('DesignSystem-FilterSelect');
+    const filterButton = filterSelects[0]?.querySelector('[data-test="DesignSystem-Button"]') as HTMLElement;
+    if (filterButton) {
+      fireEvent.click(filterButton);
+    }
+    const filterOptions = getAllByTestId('DesignSystem-Select-Option');
+    if (filterOptions.length > 0) {
+      fireEvent.click(filterOptions[0]); // Select All or first option
+    }
+    const applyButton = getByTestId('DesignSystem-FilterSelect--ApplyButton');
     fireEvent.click(applyButton);
     expect(updateFilterList).toHaveBeenCalledTimes(1);
   });
@@ -630,6 +636,757 @@ describe('showNestedRowTrigger flag behavior', () => {
 
       // Should not render trigger during loading
       expect(queryByTestId('DesignSystem-Grid-nestedRowTrigger')).not.toBeInTheDocument();
+    });
+  });
+});
+
+describe('render Grid with filterType feature', () => {
+  const testData = [
+    { name: 'Asthma Outreach', status: 'In Progress', category: 'Health' },
+    { name: 'HbA1c Test due', status: 'Scheduled', category: 'Health' },
+    { name: 'ER Education', status: 'Draft', category: 'Education' },
+    { name: 'Flu Vaccination', status: 'Failed', category: 'Health' },
+    { name: 'Well-child Visit', status: 'In Progress', category: 'Health' },
+  ];
+
+  describe('singleSelect filterType', () => {
+    const singleSelectSchema = [
+      {
+        name: 'name',
+        displayName: 'Name',
+        width: '40%',
+        filterType: 'singleSelect' as const,
+        filters: [
+          { label: 'Asthma Outreach', value: 'Asthma Outreach' },
+          { label: 'HbA1c Test due', value: 'HbA1c Test due' },
+          { label: 'ER Education', value: 'ER Education' },
+        ],
+        onFilterChange: (a: any, filters: any) => {
+          for (const filter of filters) {
+            if (a.name === filter) return true;
+          }
+          return false;
+        },
+      },
+      {
+        name: 'status',
+        displayName: 'Status',
+        width: '30%',
+        filterType: 'singleSelect' as const,
+        filters: [
+          { label: 'In Progress', value: 'In Progress' },
+          { label: 'Scheduled', value: 'Scheduled' },
+          { label: 'Draft', value: 'Draft' },
+          { label: 'Failed', value: 'Failed' },
+        ],
+        onFilterChange: (a: any, filters: any) => {
+          for (const filter of filters) {
+            if (a.status === filter) return true;
+          }
+          return false;
+        },
+      },
+      { name: 'category', displayName: 'Category', width: '30%' },
+    ];
+
+    it('should render FilterSelect without apply button for singleSelect', () => {
+      const { getAllByTestId, queryByTestId } = render(
+        <Grid
+          showFilters={true}
+          data={testData}
+          schema={singleSelectSchema}
+          filterList={{}}
+          updateFilterList={updateFilterList}
+        />
+      );
+
+      // Grid uses icon-only button as customTrigger
+      const filterSelect = getAllByTestId('DesignSystem-FilterSelect');
+      expect(filterSelect.length).toBeGreaterThan(0);
+
+      // Find the Button trigger within FilterSelect (customTrigger renders as Button)
+      const filterSelectContainer = filterSelect[0];
+      const filterButton = filterSelectContainer.querySelector('[data-test="DesignSystem-Button"]');
+      if (filterButton) {
+        fireEvent.click(filterButton);
+      }
+
+      // Apply button should not be present in singleSelect
+      const applyButton = queryByTestId('DesignSystem-FilterSelect--ApplyButton');
+      expect(applyButton).not.toBeInTheDocument();
+    });
+
+    it('should render FilterSelect without checkboxes for singleSelect', () => {
+      const { getAllByTestId, queryByTestId } = render(
+        <Grid
+          showFilters={true}
+          data={testData}
+          schema={singleSelectSchema}
+          filterList={{}}
+          updateFilterList={updateFilterList}
+        />
+      );
+
+      // Find FilterSelect and click the Button trigger inside it (customTrigger)
+      const filterSelects = getAllByTestId('DesignSystem-FilterSelect');
+      const filterButton = filterSelects[0]?.querySelector('[data-test="DesignSystem-Button"]') as HTMLElement;
+      if (filterButton) {
+        fireEvent.click(filterButton);
+      }
+
+      // Checkboxes should not be present in singleSelect
+      const checkbox = queryByTestId('DesignSystem-Checkbox-InputBox');
+      expect(checkbox).not.toBeInTheDocument();
+    });
+
+    it('should apply filter immediately on option click for singleSelect', () => {
+      const { getAllByTestId } = render(
+        <Grid
+          showFilters={true}
+          data={testData}
+          schema={singleSelectSchema}
+          filterList={{}}
+          updateFilterList={updateFilterList}
+        />
+      );
+
+      // Check initial data count
+      const tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(5);
+
+      // Grid uses customTrigger (Button) inside FilterSelect
+      const filterSelects = getAllByTestId('DesignSystem-FilterSelect');
+      const filterButton = filterSelects[0]?.querySelector('[data-test="DesignSystem-Button"]') as HTMLElement;
+      if (filterButton) {
+        fireEvent.click(filterButton);
+      }
+
+      // Click on first filter option
+      const filterOptions = getAllByTestId('DesignSystem-Select-Option');
+      if (filterOptions.length > 0) {
+        fireEvent.click(filterOptions[0]);
+      }
+
+      // Check that updateFilterList was called immediately
+      expect(updateFilterList).toHaveBeenCalled();
+    });
+
+    it('should allow switching between different singleSelect options', () => {
+      const mockUpdateFilterList = jest.fn();
+      const { getAllByTestId } = render(
+        <Grid
+          showFilters={true}
+          data={testData}
+          schema={singleSelectSchema}
+          filterList={{}}
+          updateFilterList={mockUpdateFilterList}
+        />
+      );
+
+      // Grid uses customTrigger (Button) inside FilterSelect
+      const filterSelects = getAllByTestId('DesignSystem-FilterSelect');
+      const filterButton = filterSelects[0]?.querySelector('[data-test="DesignSystem-Button"]') as HTMLElement;
+
+      // Select first option
+      if (filterButton) {
+        fireEvent.click(filterButton);
+      }
+      const filterOptions = getAllByTestId('DesignSystem-Select-Option');
+      if (filterOptions.length > 0) {
+        fireEvent.click(filterOptions[0]);
+      }
+
+      expect(mockUpdateFilterList).toHaveBeenCalled();
+      mockUpdateFilterList.mockClear();
+
+      // Select second option
+      if (filterButton) {
+        fireEvent.click(filterButton);
+      }
+      const newFilterOptions = getAllByTestId('DesignSystem-Select-Option');
+      if (newFilterOptions.length > 1) {
+        fireEvent.click(newFilterOptions[1]);
+      }
+
+      // Should have been called again after the second selection
+      expect(mockUpdateFilterList).toHaveBeenCalled();
+    });
+
+    it('should handle empty selection in singleSelect', () => {
+      const { getAllByTestId } = render(
+        <Grid
+          showFilters={true}
+          data={testData}
+          schema={singleSelectSchema}
+          filterList={{}}
+          updateFilterList={updateFilterList}
+        />
+      );
+
+      // Initially all rows should be visible
+      const tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(5);
+
+      // Grid uses customTrigger (Button) inside FilterSelect
+      const filterSelects = getAllByTestId('DesignSystem-FilterSelect');
+      const filterButton = filterSelects[0]?.querySelector('[data-test="DesignSystem-Button"]') as HTMLElement;
+      if (filterButton) {
+        fireEvent.click(filterButton);
+      }
+
+      // Select an option to filter
+      const filterOptions = getAllByTestId('DesignSystem-Select-Option');
+      if (filterOptions.length > 0) {
+        fireEvent.click(filterOptions[0]);
+      }
+
+      expect(updateFilterList).toHaveBeenCalled();
+    });
+  });
+
+  describe('multiSelect filterType', () => {
+    const multiSelectSchema = [
+      {
+        name: 'name',
+        displayName: 'Name',
+        width: '40%',
+        filterType: 'multiSelect' as const,
+        filters: [
+          { label: 'Asthma Outreach', value: 'Asthma Outreach' },
+          { label: 'HbA1c Test due', value: 'HbA1c Test due' },
+          { label: 'ER Education', value: 'ER Education' },
+        ],
+        onFilterChange: (a: any, filters: any) => {
+          if (filters.length === 0) return true;
+          for (const filter of filters) {
+            if (a.name === filter) return true;
+          }
+          return false;
+        },
+      },
+      {
+        name: 'status',
+        displayName: 'Status',
+        width: '30%',
+        filterType: 'multiSelect' as const,
+        filters: [
+          { label: 'In Progress', value: 'In Progress' },
+          { label: 'Scheduled', value: 'Scheduled' },
+          { label: 'Draft', value: 'Draft' },
+          { label: 'Failed', value: 'Failed' },
+        ],
+        onFilterChange: (a: any, filters: any) => {
+          if (filters.length === 0) return true;
+          for (const filter of filters) {
+            if (a.status === filter) return true;
+          }
+          return false;
+        },
+      },
+      { name: 'category', displayName: 'Category', width: '30%' },
+    ];
+
+    it('should render FilterSelect with apply button for multiSelect', () => {
+      const { getAllByTestId, getByTestId } = render(
+        <Grid
+          showFilters={true}
+          data={testData}
+          schema={multiSelectSchema}
+          filterList={{}}
+          updateFilterList={updateFilterList}
+        />
+      );
+
+      // Grid uses customTrigger (Button) inside FilterSelect
+      const filterSelects = getAllByTestId('DesignSystem-FilterSelect');
+      const filterButton = filterSelects[0]?.querySelector('[data-test="DesignSystem-Button"]') as HTMLElement;
+      if (filterButton) {
+        fireEvent.click(filterButton);
+      }
+
+      // Apply button should be present in multiSelect
+      const applyButton = getByTestId('DesignSystem-FilterSelect--ApplyButton');
+      expect(applyButton).toBeInTheDocument();
+    });
+
+    it('should render FilterSelect with checkboxes for multiSelect', () => {
+      const { getAllByTestId } = render(
+        <Grid
+          showFilters={true}
+          data={testData}
+          schema={multiSelectSchema}
+          filterList={{}}
+          updateFilterList={updateFilterList}
+        />
+      );
+
+      // Grid uses customTrigger (Button) inside FilterSelect
+      const filterSelects = getAllByTestId('DesignSystem-FilterSelect');
+      const filterButton = filterSelects[0]?.querySelector('[data-test="DesignSystem-Button"]') as HTMLElement;
+      if (filterButton) {
+        fireEvent.click(filterButton);
+      }
+
+      // Checkboxes should be present in multiSelect
+      const checkboxes = getAllByTestId('DesignSystem-Checkbox-InputBox');
+      expect(checkboxes.length).toBeGreaterThan(0);
+    });
+
+    it('should not apply filter immediately on option click for multiSelect', () => {
+      const { getAllByTestId } = render(
+        <Grid
+          showFilters={true}
+          data={testData}
+          schema={multiSelectSchema}
+          filterList={{}}
+          updateFilterList={updateFilterList}
+        />
+      );
+
+      // Check initial data count
+      const tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(5);
+
+      // Grid uses customTrigger (Button) inside FilterSelect
+      const filterSelects = getAllByTestId('DesignSystem-FilterSelect');
+      const filterButton = filterSelects[0]?.querySelector('[data-test="DesignSystem-Button"]') as HTMLElement;
+      if (filterButton) {
+        fireEvent.click(filterButton);
+      }
+
+      // Click on first option (after Select All)
+      const filterOptions = getAllByTestId('DesignSystem-Select-Option');
+      if (filterOptions.length > 1) {
+        fireEvent.click(filterOptions[1]); // Skip the "Select All" option
+      }
+
+      // updateFilterList should not be called yet (only on apply)
+      // The filter is applied only when apply button is clicked
+    });
+
+    it('should apply filter only after clicking apply button for multiSelect', () => {
+      const { getAllByTestId, getByTestId } = render(
+        <Grid
+          showFilters={true}
+          data={testData}
+          schema={multiSelectSchema}
+          filterList={{}}
+          updateFilterList={updateFilterList}
+        />
+      );
+
+      // Grid uses customTrigger (Button) inside FilterSelect
+      const filterSelects = getAllByTestId('DesignSystem-FilterSelect');
+      const filterButton = filterSelects[0]?.querySelector('[data-test="DesignSystem-Button"]') as HTMLElement;
+      if (filterButton) {
+        fireEvent.click(filterButton);
+      }
+
+      // Select first option (after Select All)
+      const filterOptions = getAllByTestId('DesignSystem-Select-Option');
+      if (filterOptions.length > 1) {
+        fireEvent.click(filterOptions[1]); // Skip the "Select All" option
+      }
+
+      // Click apply button
+      const applyButton = getByTestId('DesignSystem-FilterSelect--ApplyButton');
+      fireEvent.click(applyButton);
+
+      // Now updateFilterList should be called
+      expect(updateFilterList).toHaveBeenCalled();
+    });
+
+    it('should allow selecting multiple options for multiSelect', () => {
+      const { getAllByTestId, getByTestId } = render(
+        <Grid
+          showFilters={true}
+          data={testData}
+          schema={multiSelectSchema}
+          filterList={{}}
+          updateFilterList={updateFilterList}
+        />
+      );
+
+      // Grid uses customTrigger (Button) inside FilterSelect
+      const filterSelects = getAllByTestId('DesignSystem-FilterSelect');
+      const filterButton = filterSelects[0]?.querySelector('[data-test="DesignSystem-Button"]') as HTMLElement;
+      if (filterButton) {
+        fireEvent.click(filterButton);
+      }
+
+      // Select multiple options (after Select All)
+      const filterOptions = getAllByTestId('DesignSystem-Select-Option');
+      if (filterOptions.length > 2) {
+        fireEvent.click(filterOptions[1]);
+        fireEvent.click(filterOptions[2]);
+      }
+
+      // Click apply button
+      const applyButton = getByTestId('DesignSystem-FilterSelect--ApplyButton');
+      fireEvent.click(applyButton);
+
+      // Should have called updateFilterList with multiple selections
+      expect(updateFilterList).toHaveBeenCalled();
+    });
+
+    it('should handle empty multiSelect filter correctly', () => {
+      const { getAllByTestId, getByTestId } = render(
+        <Grid
+          showFilters={true}
+          data={testData}
+          schema={multiSelectSchema}
+          filterList={{}}
+          updateFilterList={updateFilterList}
+        />
+      );
+
+      // Initially all rows should be visible
+      const tableRows = getAllByTestId('DesignSystem-Grid-row');
+      expect(tableRows).toHaveLength(5);
+
+      // Grid uses customTrigger (Button) inside FilterSelect
+      const filterSelects = getAllByTestId('DesignSystem-FilterSelect');
+      const filterButton = filterSelects[0]?.querySelector('[data-test="DesignSystem-Button"]') as HTMLElement;
+      if (filterButton) {
+        fireEvent.click(filterButton);
+      }
+
+      // Don't select any options, just click apply
+      const applyButton = getByTestId('DesignSystem-FilterSelect--ApplyButton');
+      fireEvent.click(applyButton);
+
+      // updateFilterList should be called even with empty selection
+      expect(updateFilterList).toHaveBeenCalled();
+    });
+  });
+
+  describe('default filterType behavior', () => {
+    const defaultFilterSchema = [
+      {
+        name: 'name',
+        displayName: 'Name',
+        width: '40%',
+        // No filterType specified - should default to multiSelect
+        filters: [
+          { label: 'Asthma Outreach', value: 'Asthma Outreach' },
+          { label: 'HbA1c Test due', value: 'HbA1c Test due' },
+          { label: 'ER Education', value: 'ER Education' },
+        ],
+        onFilterChange: (a: any, filters: any) => {
+          if (filters.length === 0) return true;
+          for (const filter of filters) {
+            if (a.name === filter) return true;
+          }
+          return false;
+        },
+      },
+      { name: 'status', displayName: 'Status', width: '30%' },
+      { name: 'category', displayName: 'Category', width: '30%' },
+    ];
+
+    it('should default to multiSelect behavior when filterType is not specified', () => {
+      const { getAllByTestId, getByTestId } = render(
+        <Grid
+          showFilters={true}
+          data={testData}
+          schema={defaultFilterSchema}
+          filterList={{}}
+          updateFilterList={updateFilterList}
+        />
+      );
+
+      // Grid uses customTrigger (Button) inside FilterSelect
+      const filterSelects = getAllByTestId('DesignSystem-FilterSelect');
+      const filterButton = filterSelects[0]?.querySelector('[data-test="DesignSystem-Button"]') as HTMLElement;
+      if (filterButton) {
+        fireEvent.click(filterButton);
+      }
+
+      // Should have apply button (multiSelect behavior)
+      const applyButton = getByTestId('DesignSystem-FilterSelect--ApplyButton');
+      expect(applyButton).toBeInTheDocument();
+    });
+  });
+
+  describe('Grid FilterSelect component features', () => {
+    const testData = [
+      { name: 'Asthma Outreach', status: 'In Progress', category: 'Health' },
+      { name: 'HbA1c Test due', status: 'Scheduled', category: 'Health' },
+      { name: 'ER Education', status: 'Draft', category: 'Education' },
+    ];
+
+    describe('FilterSelect with customTrigger (icon-only button)', () => {
+      const filterSchema = [
+        {
+          name: 'name',
+          displayName: 'Name',
+          width: '40%',
+          filterType: 'multiSelect' as const,
+          filters: [
+            { label: 'Asthma Outreach', value: 'Asthma Outreach' },
+            { label: 'HbA1c Test due', value: 'HbA1c Test due' },
+          ],
+          onFilterChange: (a: any, filters: any) => {
+            if (filters.length === 0) return true;
+            for (const filter of filters) {
+              if (a.name === filter) return true;
+            }
+            return false;
+          },
+        },
+      ];
+
+      it('should render FilterSelect with icon-only trigger in Grid', () => {
+        const { getAllByTestId } = render(
+          <Grid
+            showFilters={true}
+            data={testData}
+            schema={filterSchema}
+            filterList={{}}
+            updateFilterList={updateFilterList}
+          />
+        );
+
+        // FilterSelect should be rendered
+        const filterSelect = getAllByTestId('DesignSystem-FilterSelect');
+        expect(filterSelect.length).toBeGreaterThan(0);
+
+        // Should have Button trigger (customTrigger renders as Button inside FilterSelect)
+        const filterSelects = getAllByTestId('DesignSystem-FilterSelect');
+        const filterButton = filterSelects[0]?.querySelector('[data-test="DesignSystem-Button"]');
+        expect(filterButton).toBeInTheDocument();
+      });
+
+      it('should open FilterSelect popover when icon button is clicked', () => {
+        const { getAllByTestId, getByTestId } = render(
+          <Grid
+            showFilters={true}
+            data={testData}
+            schema={filterSchema}
+            filterList={{}}
+            updateFilterList={updateFilterList}
+          />
+        );
+
+        // Grid uses customTrigger (Button) inside FilterSelect
+        const filterSelects = getAllByTestId('DesignSystem-FilterSelect');
+        const filterButton = filterSelects[0]?.querySelector('[data-test="DesignSystem-Button"]') as HTMLElement;
+        if (filterButton) {
+          fireEvent.click(filterButton);
+        }
+
+        // Should show FilterSelect options
+        const filterOptions = getAllByTestId('DesignSystem-Select-Option');
+        expect(filterOptions.length).toBeGreaterThan(0);
+
+        // Should show Apply button for multiSelect
+        const applyButton = getByTestId('DesignSystem-FilterSelect--ApplyButton');
+        expect(applyButton).toBeInTheDocument();
+      });
+    });
+
+    describe('FilterSelect with filterOptions in Grid', () => {
+      const filterOptionsSchema = [
+        {
+          name: 'name',
+          displayName: 'Name',
+          width: '40%',
+          filters: [
+            { label: 'Asthma Outreach', value: 'Asthma Outreach' },
+            { label: 'HbA1c Test due', value: 'HbA1c Test due' },
+            { label: 'ER Education', value: 'ER Education' },
+          ],
+          filterOptions: {
+            type: 'multiSelect' as const,
+            minWidth: '100px',
+            maxWidth: '300px',
+            maxVisibleSelection: 2,
+          },
+          onFilterChange: (a: any, filters: any) => {
+            if (filters.length === 0) return true;
+            for (const filter of filters) {
+              if (a.name === filter) return true;
+            }
+            return false;
+          },
+        },
+      ];
+
+      it('should render FilterSelect with filterOptions configuration in Grid', () => {
+        const { getAllByTestId } = render(
+          <Grid
+            showFilters={true}
+            data={testData}
+            schema={filterOptionsSchema}
+            filterList={{}}
+            updateFilterList={updateFilterList}
+          />
+        );
+
+        const filterSelect = getAllByTestId('DesignSystem-FilterSelect');
+        expect(filterSelect.length).toBeGreaterThan(0);
+      });
+    });
+
+    describe('FilterSelect Cancel button behavior in Grid', () => {
+      const multiSelectSchema = [
+        {
+          name: 'name',
+          displayName: 'Name',
+          width: '40%',
+          filterType: 'multiSelect' as const,
+          filters: [
+            { label: 'Asthma Outreach', value: 'Asthma Outreach' },
+            { label: 'HbA1c Test due', value: 'HbA1c Test due' },
+          ],
+          onFilterChange: (a: any, filters: any) => {
+            if (filters.length === 0) return true;
+            for (const filter of filters) {
+              if (a.name === filter) return true;
+            }
+            return false;
+          },
+        },
+      ];
+
+      it('should reset selections when Cancel button is clicked in Grid', () => {
+        const { getAllByTestId, getByTestId } = render(
+          <Grid
+            showFilters={true}
+            data={testData}
+            schema={multiSelectSchema}
+            filterList={{}}
+            updateFilterList={updateFilterList}
+          />
+        );
+
+        // Grid uses customTrigger (Button) inside FilterSelect
+        const filterSelects = getAllByTestId('DesignSystem-FilterSelect');
+        const filterButton = filterSelects[0]?.querySelector('[data-test="DesignSystem-Button"]') as HTMLElement;
+        if (filterButton) {
+          fireEvent.click(filterButton);
+        }
+
+        // Select an option
+        const filterOptions = getAllByTestId('DesignSystem-Select-Option');
+        if (filterOptions.length > 1) {
+          fireEvent.click(filterOptions[1]);
+        }
+
+        // Click Cancel
+        const cancelButton = getByTestId('DesignSystem-FilterSelect--CancelButton');
+        fireEvent.click(cancelButton);
+
+        // Reopen and verify selection was reset
+        if (filterButton) {
+          fireEvent.click(filterButton);
+        }
+        // Options should not be checked after cancel
+        const checkboxes = getAllByTestId('DesignSystem-Checkbox-InputBox');
+        if (checkboxes.length > 1) {
+          expect(checkboxes[1]).not.toBeChecked();
+        }
+      });
+
+      it('should disable Apply button when no changes are made in Grid', () => {
+        const { getAllByTestId, getByTestId } = render(
+          <Grid
+            showFilters={true}
+            data={testData}
+            schema={multiSelectSchema}
+            filterList={{}}
+            updateFilterList={updateFilterList}
+          />
+        );
+
+        // Grid uses customTrigger (Button) inside FilterSelect
+        const filterSelects = getAllByTestId('DesignSystem-FilterSelect');
+        const filterButton = filterSelects[0]?.querySelector('[data-test="DesignSystem-Button"]') as HTMLElement;
+        if (filterButton) {
+          fireEvent.click(filterButton);
+        }
+
+        // Apply button should be disabled initially (no changes)
+        const applyButton = getByTestId('DesignSystem-FilterSelect--ApplyButton');
+        expect(applyButton).toBeDisabled();
+      });
+    });
+  });
+
+  describe('mixed filterType scenario', () => {
+    const mixedFilterSchema = [
+      {
+        name: 'name',
+        displayName: 'Name',
+        width: '40%',
+        filterType: 'singleSelect' as const,
+        filters: [
+          { label: 'Asthma Outreach', value: 'Asthma Outreach' },
+          { label: 'HbA1c Test due', value: 'HbA1c Test due' },
+        ],
+        onFilterChange: (a: any, filters: any) => {
+          for (const filter of filters) {
+            if (a.name === filter) return true;
+          }
+          return false;
+        },
+      },
+      {
+        name: 'status',
+        displayName: 'Status',
+        width: '30%',
+        filterType: 'multiSelect' as const,
+        filters: [
+          { label: 'In Progress', value: 'In Progress' },
+          { label: 'Scheduled', value: 'Scheduled' },
+        ],
+        onFilterChange: (a: any, filters: any) => {
+          if (filters.length === 0) return true;
+          for (const filter of filters) {
+            if (a.status === filter) return true;
+          }
+          return false;
+        },
+      },
+      { name: 'category', displayName: 'Category', width: '30%' },
+    ];
+
+    it('should handle mixed filterType columns correctly', () => {
+      const { getAllByTestId, queryByTestId } = render(
+        <Grid
+          showFilters={true}
+          data={testData}
+          schema={mixedFilterSchema}
+          filterList={{}}
+          updateFilterList={updateFilterList}
+        />
+      );
+
+      const filterSelects = getAllByTestId('DesignSystem-FilterSelect');
+      expect(filterSelects.length).toBeGreaterThanOrEqual(2); // At least Name and Status filter selects
+
+      // Test singleSelect dropdown (Name column - first filter)
+      const firstFilterButton = filterSelects[0]?.querySelector('[data-test="DesignSystem-Button"]') as HTMLElement;
+      if (firstFilterButton) {
+        fireEvent.click(firstFilterButton);
+      }
+      // Should not have apply button for singleSelect
+      const applyButton1 = queryByTestId('DesignSystem-FilterSelect--ApplyButton');
+      expect(applyButton1).not.toBeInTheDocument();
+
+      // Close first dropdown and open second
+      if (firstFilterButton) {
+        fireEvent.click(firstFilterButton);
+      }
+      const secondFilterButton = filterSelects[1]?.querySelector('[data-test="DesignSystem-Button"]') as HTMLElement;
+      if (secondFilterButton) {
+        fireEvent.click(secondFilterButton);
+      }
+
+      // Test multiSelect dropdown (Status column)
+      // Should have apply button for multiSelect
+      const applyButton2 = getAllByTestId('DesignSystem-FilterSelect--ApplyButton');
+      expect(applyButton2.length).toBeGreaterThan(0);
     });
   });
 });

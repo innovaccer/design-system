@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Checkbox, Label, Input, Dropdown, Button, Divider } from '@/index';
+import { Checkbox, Label, Input, Button, Divider } from '@/index';
 import {
   updateSchemaFunction,
   ColumnSchema,
@@ -13,6 +13,7 @@ import {
 import { hasSchema, getPluralSuffix } from '../grid/utility';
 import { DraggableDropdown } from './DraggableDropdown';
 import { DropdownProps } from '@/index.type';
+import { FilterSelect } from './FilterSelect';
 import classNames from 'classnames';
 import tableStyles from '@css/components/table.module.css';
 import gridStyles from '@css/components/grid.module.css';
@@ -276,25 +277,26 @@ export const Header = (props: HeaderProps) => {
             <div className={gridStyles['Header-dropdown']}>
               <div className={gridStyles['Header-filters']}>
                 {filterSchema.map((s) => {
-                  const { name, displayName, filters } = s;
+                  const { name, displayName, filters, filterType, filterOptions } = s;
 
-                  const filterOptions = filters
+                  const selectFilters = filters
                     ? filters.map((f) => ({
-                        ...f,
-                        selected: filterList[name] && filterList[name].findIndex((fl) => fl === f.value) !== -1,
+                        label: f.label,
+                        value: f.value,
+                        id: f.value,
                       }))
                     : [];
 
                   return (
-                    <Dropdown
+                    <FilterSelect
                       key={name}
-                      withCheckbox={true}
-                      className="my-0 mx-3"
-                      showApplyButton={true}
-                      inlineLabel={displayName}
-                      icon={'filter_list'}
-                      options={filterOptions}
-                      onChange={(selected) => onFilterChange(name, selected)}
+                      name={name}
+                      displayName={displayName}
+                      filters={selectFilters}
+                      filterList={filterList}
+                      filterType={filterType}
+                      filterOptions={filterOptions}
+                      onChange={onFilterChange}
                     />
                   );
                 })}

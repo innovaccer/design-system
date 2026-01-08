@@ -5,16 +5,16 @@ import { action } from '@/utils/action';
 // CSF format story
 export const withSelectAll = () => {
   const medicineList = [
-    { label: 'Aspirin', value: 'Aspirin' },
-    { label: 'Paracetamol', value: 'Paracetamol' },
-    { label: 'Lisinopril', value: 'Lisinopril' },
-    { label: 'Simvastatin', value: 'Simvastatin' },
-    { label: 'Amoxicillin', value: 'Amoxicillin' },
-    { label: 'Ciprofloxacin', value: 'Ciprofloxacin' },
-    { label: 'Metformin', value: 'Metformin' },
-    { label: 'Omeprazole', value: 'Omeprazole' },
-    { label: 'Diazepam', value: 'Diazepam' },
-    { label: 'Levothyroxine', value: 'Levothyroxine' },
+    { id: 'aspirin', label: 'Aspirin', value: 'Aspirin' },
+    { id: 'paracetamol', label: 'Paracetamol', value: 'Paracetamol' },
+    { id: 'lisinopril', label: 'Lisinopril', value: 'Lisinopril' },
+    { id: 'simvastatin', label: 'Simvastatin', value: 'Simvastatin' },
+    { id: 'amoxicillin', label: 'Amoxicillin', value: 'Amoxicillin' },
+    { id: 'ciprofloxacin', label: 'Ciprofloxacin', value: 'Ciprofloxacin' },
+    { id: 'metformin', label: 'Metformin', value: 'Metformin' },
+    { id: 'omeprazole', label: 'Omeprazole', value: 'Omeprazole' },
+    { id: 'diazepam', label: 'Diazepam', value: 'Diazepam' },
+    { id: 'levothyroxine', label: 'Levothyroxine', value: 'Levothyroxine' },
   ];
 
   const [selectedValue, setSelectedValue] = React.useState([]);
@@ -63,13 +63,13 @@ export const withSelectAll = () => {
         <Select.Option
           checkedState={checkedState}
           onClick={onClickHandler}
-          option={{ label: 'SelectAll', value: 'SelectAll' }}
+          option={{ id: 'select-all', label: 'SelectAll', value: 'SelectAll' }}
         >
           Select All
         </Select.Option>
-        {medicineList.map((item, key) => {
+        {medicineList.map((item) => {
           return (
-            <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+            <Select.Option key={item.id} option={{ label: item.label, value: item.value, id: item.id }}>
               {item.label}
             </Select.Option>
           );
@@ -81,16 +81,16 @@ export const withSelectAll = () => {
 
 const customCode = `() => {
     const medicineList = [
-        { label: 'Aspirin', value: 'Aspirin' },
-        { label: 'Paracetamol', value: 'Paracetamol' },
-        { label: 'Lisinopril', value: 'Lisinopril' },
-        { label: 'Simvastatin', value: 'Simvastatin' },
-        { label: 'Amoxicillin', value: 'Amoxicillin' },
-        { label: 'Ciprofloxacin', value: 'Ciprofloxacin' },
-        { label: 'Metformin', value: 'Metformin' },
-        { label: 'Omeprazole', value: 'Omeprazole' },
-        { label: 'Diazepam', value: 'Diazepam' },
-        { label: 'Levothyroxine', value: 'Levothyroxine' },
+        { id: 'aspirin', label: 'Aspirin', value: 'Aspirin' },
+        { id: 'paracetamol', label: 'Paracetamol', value: 'Paracetamol' },
+        { id: 'lisinopril', label: 'Lisinopril', value: 'Lisinopril' },
+        { id: 'simvastatin', label: 'Simvastatin', value: 'Simvastatin' },
+        { id: 'amoxicillin', label: 'Amoxicillin', value: 'Amoxicillin' },
+        { id: 'ciprofloxacin', label: 'Ciprofloxacin', value: 'Ciprofloxacin' },
+        { id: 'metformin', label: 'Metformin', value: 'Metformin' },
+        { id: 'omeprazole', label: 'Omeprazole', value: 'Omeprazole' },
+        { id: 'diazepam', label: 'Diazepam', value: 'Diazepam' },
+        { id: 'levothyroxine', label: 'Levothyroxine', value: 'Levothyroxine' },
     ];
 
     const [selectedValue, setSelectedValue] = React.useState([]);
@@ -136,12 +136,12 @@ const customCode = `() => {
         triggerOptions={{ onClear: onClearHandler }}
         >
             <Select.List>
-                <Select.Option checkedState={checkedState} onClick={onClickHandler} option={{ label: 'SelectAll', value: 'SelectAll' }}>
+                <Select.Option checkedState={checkedState} onClick={onClickHandler} option={{ id: 'select-all', label: 'SelectAll', value: 'SelectAll' }}>
                     Select All
                 </Select.Option>
-            {medicineList.map((item, key) => {
+            {medicineList.map((item) => {
                 return (
-                <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                <Select.Option key={item.id} option={{ label: item.label, value: item.value, id: item.id }}>
                     {item.label}
                 </Select.Option>
                 );

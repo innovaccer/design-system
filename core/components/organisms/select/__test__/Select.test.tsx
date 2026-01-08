@@ -225,6 +225,45 @@ describe('Select component single input trigger tests', () => {
     expect(FunctionValue).toHaveBeenCalled();
     expect(inputTrigger).toHaveTextContent(placeholder);
   });
+
+  it('should apply minWidth and maxWidth styles on the trigger when provided via triggerOptions as numbers', () => {
+    const { getByTestId } = render(
+      <Select onSelect={FunctionValue} triggerOptions={{ minWidth: 120, maxWidth: 240 }}>
+        {children}
+      </Select>
+    );
+
+    const triggerButton = getByTestId('DesignSystem-Select-trigger');
+    expect(triggerButton).toBeInTheDocument();
+    expect(triggerButton).toHaveStyle('min-width: 120px');
+    expect(triggerButton).toHaveStyle('max-width: 240px');
+  });
+
+  it('should apply minWidth and maxWidth styles on the trigger when provided via triggerOptions as strings', () => {
+    const { getByTestId } = render(
+      <Select onSelect={FunctionValue} triggerOptions={{ minWidth: '176px', maxWidth: '256px' }}>
+        {children}
+      </Select>
+    );
+
+    const triggerButton = getByTestId('DesignSystem-Select-trigger');
+    expect(triggerButton).toBeInTheDocument();
+    expect(triggerButton).toHaveStyle('min-width: 176px');
+    expect(triggerButton).toHaveStyle('max-width: 256px');
+  });
+
+  it('should work with width="auto" and triggerOptions minWidth/maxWidth together', () => {
+    const { getByTestId } = render(
+      <Select onSelect={FunctionValue} width="auto" triggerOptions={{ minWidth: '176px', maxWidth: '256px' }}>
+        {children}
+      </Select>
+    );
+
+    const triggerButton = getByTestId('DesignSystem-Select-trigger');
+    expect(triggerButton).toBeInTheDocument();
+    expect(triggerButton).toHaveStyle('min-width: 176px');
+    expect(triggerButton).toHaveStyle('max-width: 256px');
+  });
 });
 
 describe('Select component multiple select trigger tests', () => {

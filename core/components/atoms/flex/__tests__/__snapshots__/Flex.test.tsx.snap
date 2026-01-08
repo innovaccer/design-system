@@ -1,0 +1,673 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Flex component 
+  direction: "column"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--column Flex--justifyStart Flex--alignStretch Flex--nowrap"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: column; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component 
+  direction: "column-reverse"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--columnReverse Flex--justifyStart Flex--alignStretch Flex--nowrap"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: column-reverse; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component 
+  direction: "row"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--nowrap"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component 
+  direction: "row-reverse"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--rowReverse Flex--justifyStart Flex--alignStretch Flex--nowrap"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row-reverse; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with alignItems 
+  alignItems: "baseline"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignBaseline Flex--nowrap"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: baseline; flex-wrap: nowrap;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with alignItems 
+  alignItems: "center"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignCenter Flex--nowrap"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: center; flex-wrap: nowrap;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with alignItems 
+  alignItems: "flex-end"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignEnd Flex--nowrap"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: flex-end; flex-wrap: nowrap;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with alignItems 
+  alignItems: "flex-start"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStart Flex--nowrap"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: flex-start; flex-wrap: nowrap;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with alignItems 
+  alignItems: "stretch"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--nowrap"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with columnGap 
+  columnGap: "spacing-10"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--nowrap Flex--columnGap--spacing-10"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap; column-gap: spacing-10;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with columnGap 
+  columnGap: "spacing-20"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--nowrap Flex--columnGap--spacing-20"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap; column-gap: spacing-20;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with columnGap 
+  columnGap: "spacing-30"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--nowrap Flex--columnGap--spacing-30"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap; column-gap: spacing-30;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with columnGap 
+  columnGap: "spacing-40"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--nowrap Flex--columnGap--spacing-40"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap; column-gap: spacing-40;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with columnGap 
+  columnGap: "spacing-60"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--nowrap Flex--columnGap--spacing-60"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap; column-gap: spacing-60;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with columnGap 
+  columnGap: "spacing-80"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--nowrap Flex--columnGap--spacing-80"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap; column-gap: spacing-80;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with columnGap 
+  columnGap: "spacing-120"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--nowrap Flex--columnGap--spacing-120"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap; column-gap: spacing-120;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with columnGap 
+  columnGap: "spacing-160"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--nowrap Flex--columnGap--spacing-160"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap; column-gap: spacing-160;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with gap 
+  gap: "spacing-10"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--nowrap Flex--gap--spacing-10"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap; gap: var(--spacing-10);"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with gap 
+  gap: "spacing-20"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--nowrap Flex--gap--spacing-20"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap; gap: var(--spacing-20);"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with gap 
+  gap: "spacing-30"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--nowrap Flex--gap--spacing-30"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap; gap: var(--spacing-30);"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with gap 
+  gap: "spacing-40"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--nowrap Flex--gap--spacing-40"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap; gap: var(--spacing-40);"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with gap 
+  gap: "spacing-60"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--nowrap Flex--gap--spacing-60"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap; gap: var(--spacing-60);"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with gap 
+  gap: "spacing-80"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--nowrap Flex--gap--spacing-80"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap; gap: var(--spacing-80);"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with gap 
+  gap: "spacing-120"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--nowrap Flex--gap--spacing-120"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap; gap: var(--spacing-120);"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with gap 
+  gap: "spacing-160"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--nowrap Flex--gap--spacing-160"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap; gap: var(--spacing-160);"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with justifyContent 
+  justifyContent: "center"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyCenter Flex--alignStretch Flex--nowrap"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: center; align-items: stretch; flex-wrap: nowrap;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with justifyContent 
+  justifyContent: "flex-end"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyEnd Flex--alignStretch Flex--nowrap"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-end; align-items: stretch; flex-wrap: nowrap;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with justifyContent 
+  justifyContent: "flex-start"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--nowrap"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with justifyContent 
+  justifyContent: "space-around"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyAround Flex--alignStretch Flex--nowrap"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: space-around; align-items: stretch; flex-wrap: nowrap;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with justifyContent 
+  justifyContent: "space-between"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyBetween Flex--alignStretch Flex--nowrap"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: space-between; align-items: stretch; flex-wrap: nowrap;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with justifyContent 
+  justifyContent: "space-evenly"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyEvenly Flex--alignStretch Flex--nowrap"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: space-evenly; align-items: stretch; flex-wrap: nowrap;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with rowGap 
+  rowGap: "spacing-10"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--nowrap Flex--rowGap--spacing-10"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap; row-gap: spacing-10;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with rowGap 
+  rowGap: "spacing-20"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--nowrap Flex--rowGap--spacing-20"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap; row-gap: spacing-20;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with rowGap 
+  rowGap: "spacing-30"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--nowrap Flex--rowGap--spacing-30"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap; row-gap: spacing-30;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with rowGap 
+  rowGap: "spacing-40"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--nowrap Flex--rowGap--spacing-40"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap; row-gap: spacing-40;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with rowGap 
+  rowGap: "spacing-60"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--nowrap Flex--rowGap--spacing-60"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap; row-gap: spacing-60;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with rowGap 
+  rowGap: "spacing-80"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--nowrap Flex--rowGap--spacing-80"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap; row-gap: spacing-80;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with rowGap 
+  rowGap: "spacing-120"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--nowrap Flex--rowGap--spacing-120"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap; row-gap: spacing-120;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with rowGap 
+  rowGap: "spacing-160"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--nowrap Flex--rowGap--spacing-160"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap; row-gap: spacing-160;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with wrap 
+  wrap: "nowrap"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--nowrap"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: nowrap;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with wrap 
+  wrap: "wrap"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--wrap"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: wrap;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flex component with wrap 
+  wrap: "wrap-reverse"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Flex Flex--row Flex--justifyStart Flex--alignStretch Flex--wrapReverse"
+      data-test="DesignSystem-Flex"
+      style="flex-direction: row; justify-content: flex-start; align-items: stretch; flex-wrap: wrap-reverse;"
+    >
+      Flex Content
+    </div>
+  </div>
+</body>
+`;

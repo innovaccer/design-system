@@ -1,0 +1,1453 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SegmentedControl Component - Custom Content Snapshot Tests matches snapshot with custom children 1`] = `
+<body>
+  <div>
+    <div
+      class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth SegmentedControl--twoSegments"
+      data-test="DesignSystem-SegmentedControl"
+      style="max-width: 100%; --segment-max-width: 256px;"
+    >
+      <div
+        class="SegmentedControl-indicator"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth SegmentedControl-segment--twoSegmentsSelected SegmentedControl-segment--customContent"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="-1"
+        type="button"
+      >
+        <div>
+          Custom Content
+        </div>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Option 2
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SegmentedControl Component - Disabled States Snapshot Tests matches snapshot with disabled control 1`] = `
+<body>
+  <div>
+    <div
+      class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth SegmentedControl--disabled"
+      data-test="DesignSystem-SegmentedControl"
+      style="max-width: 100%; --segment-max-width: 256px;"
+    >
+      <div
+        class="SegmentedControl-indicator"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--disabled SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        disabled=""
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Day
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--disabled SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        disabled=""
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Week
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--regular"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--disabled SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        disabled=""
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Month
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SegmentedControl Component - Disabled States Snapshot Tests matches snapshot with disabled item 1`] = `
+<body>
+  <div>
+    <div
+      class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth"
+      data-test="DesignSystem-SegmentedControl"
+      style="max-width: 100%; --segment-max-width: 256px;"
+    >
+      <div
+        class="SegmentedControl-indicator"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Day
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--disabled SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        disabled=""
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Week
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--regular"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Month
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SegmentedControl Component - Disabled States Snapshot Tests matches snapshot with selected disabled item 1`] = `
+<body>
+  <div>
+    <div
+      class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth"
+      data-test="DesignSystem-SegmentedControl"
+      style="max-width: 100%; --segment-max-width: 256px;"
+    >
+      <div
+        class="SegmentedControl-indicator"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Day
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--disabled SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        disabled=""
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Week
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Month
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SegmentedControl Component - Expanded Prop Snapshot Tests 
+  expanded: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth"
+      data-test="DesignSystem-SegmentedControl"
+      style="max-width: 100%; --segment-max-width: 256px;"
+    >
+      <div
+        class="SegmentedControl-indicator"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Day
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Week
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--regular"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Month
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SegmentedControl Component - Expanded Prop Snapshot Tests 
+  expanded: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="SegmentedControl SegmentedControl--regular SegmentedControl--expanded"
+      data-test="DesignSystem-SegmentedControl"
+      style="max-width: 100%;"
+    >
+      <div
+        class="SegmentedControl-indicator"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--expanded"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Day
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--expanded"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Week
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--regular"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--expanded"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Month
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapshot for large size with icon and label 1`] = `
+<body>
+  <div>
+    <div
+      class="SegmentedControl SegmentedControl--large SegmentedControl--equalWidth"
+      data-test="DesignSystem-SegmentedControl"
+      style="max-width: 100%; --segment-max-width: 256px;"
+    >
+      <div
+        class="SegmentedControl-indicator"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="-1"
+        type="button"
+      >
+        <div
+          class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--large"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 20px; width: 20px;"
+          >
+            home
+          </i>
+        </div>
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Day
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--large SegmentedControl-divider--hidden"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--large"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 20px; width: 20px;"
+          >
+            settings
+          </i>
+        </div>
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Week
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--large"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--large"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 20px; width: 20px;"
+          >
+            person
+          </i>
+        </div>
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Month
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapshot for regular size with icon and label 1`] = `
+<body>
+  <div>
+    <div
+      class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth"
+      data-test="DesignSystem-SegmentedControl"
+      style="max-width: 100%; --segment-max-width: 256px;"
+    >
+      <div
+        class="SegmentedControl-indicator"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="-1"
+        type="button"
+      >
+        <div
+          class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--regular"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            home
+          </i>
+        </div>
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Day
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--regular"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            settings
+          </i>
+        </div>
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Week
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--regular"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--regular"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            person
+          </i>
+        </div>
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Month
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapshot for small size with icon and label 1`] = `
+<body>
+  <div>
+    <div
+      class="SegmentedControl SegmentedControl--small SegmentedControl--equalWidth"
+      data-test="DesignSystem-SegmentedControl"
+      style="max-width: 100%; --segment-max-width: 256px;"
+    >
+      <div
+        class="SegmentedControl-indicator"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="-1"
+        type="button"
+      >
+        <div
+          class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--small"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 14px; width: 14px;"
+          >
+            home
+          </i>
+        </div>
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Day
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--small SegmentedControl-divider--hidden"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--small"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 14px; width: 14px;"
+          >
+            settings
+          </i>
+        </div>
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Week
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--small"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--small"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 14px; width: 14px;"
+          >
+            person
+          </i>
+        </div>
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Month
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot for large size with icon only 1`] = `
+<body>
+  <div>
+    <div
+      class="SegmentedControl SegmentedControl--large SegmentedControl--equalWidth"
+      data-test="DesignSystem-SegmentedControl"
+      style="max-width: 100%; --segment-max-width: 256px;"
+    >
+      <div
+        class="SegmentedControl-indicator"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--selected SegmentedControl-segment--iconOnly SegmentedControl-segment--equalWidth SegmentedControl-segment--largeIconOnly"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="-1"
+        type="button"
+      >
+        <div
+          class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--only"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 20px; width: 20px;"
+          >
+            home
+          </i>
+        </div>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--large SegmentedControl-divider--hidden"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--iconOnly SegmentedControl-segment--equalWidth SegmentedControl-segment--largeIconOnly"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--only"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 20px; width: 20px;"
+          >
+            settings
+          </i>
+        </div>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--large"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--iconOnly SegmentedControl-segment--equalWidth SegmentedControl-segment--largeIconOnly"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--only"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 20px; width: 20px;"
+          >
+            person
+          </i>
+        </div>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot for regular size with icon only 1`] = `
+<body>
+  <div>
+    <div
+      class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth"
+      data-test="DesignSystem-SegmentedControl"
+      style="max-width: 100%; --segment-max-width: 256px;"
+    >
+      <div
+        class="SegmentedControl-indicator"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--iconOnly SegmentedControl-segment--equalWidth SegmentedControl-segment--regularIconOnly"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="-1"
+        type="button"
+      >
+        <div
+          class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--only"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            home
+          </i>
+        </div>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--iconOnly SegmentedControl-segment--equalWidth SegmentedControl-segment--regularIconOnly"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--only"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            settings
+          </i>
+        </div>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--regular"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--iconOnly SegmentedControl-segment--equalWidth SegmentedControl-segment--regularIconOnly"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--only"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            person
+          </i>
+        </div>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot for small size with icon only 1`] = `
+<body>
+  <div>
+    <div
+      class="SegmentedControl SegmentedControl--small SegmentedControl--equalWidth"
+      data-test="DesignSystem-SegmentedControl"
+      style="max-width: 100%; --segment-max-width: 256px;"
+    >
+      <div
+        class="SegmentedControl-indicator"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--selected SegmentedControl-segment--iconOnly SegmentedControl-segment--equalWidth SegmentedControl-segment--smallIconOnly"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="-1"
+        type="button"
+      >
+        <div
+          class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--only"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 14px; width: 14px;"
+          >
+            home
+          </i>
+        </div>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--small SegmentedControl-divider--hidden"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--iconOnly SegmentedControl-segment--equalWidth SegmentedControl-segment--smallIconOnly"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--only"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 14px; width: 14px;"
+          >
+            settings
+          </i>
+        </div>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--small"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--iconOnly SegmentedControl-segment--equalWidth SegmentedControl-segment--smallIconOnly"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class="SegmentedControl-segmentIcon SegmentedControl-segmentIcon--only"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 14px; width: 14px;"
+          >
+            person
+          </i>
+        </div>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SegmentedControl Component - Label Only Snapshot Tests matches snapshot for large size with label only 1`] = `
+<body>
+  <div>
+    <div
+      class="SegmentedControl SegmentedControl--large SegmentedControl--equalWidth"
+      data-test="DesignSystem-SegmentedControl"
+      style="max-width: 100%; --segment-max-width: 256px;"
+    >
+      <div
+        class="SegmentedControl-indicator"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Day
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--large SegmentedControl-divider--hidden"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Week
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--large"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Month
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SegmentedControl Component - Label Only Snapshot Tests matches snapshot for regular size with label only 1`] = `
+<body>
+  <div>
+    <div
+      class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth"
+      data-test="DesignSystem-SegmentedControl"
+      style="max-width: 100%; --segment-max-width: 256px;"
+    >
+      <div
+        class="SegmentedControl-indicator"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Day
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Week
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--regular"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Month
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SegmentedControl Component - Label Only Snapshot Tests matches snapshot for small size with label only 1`] = `
+<body>
+  <div>
+    <div
+      class="SegmentedControl SegmentedControl--small SegmentedControl--equalWidth"
+      data-test="DesignSystem-SegmentedControl"
+      style="max-width: 100%; --segment-max-width: 256px;"
+    >
+      <div
+        class="SegmentedControl-indicator"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Day
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--small SegmentedControl-divider--hidden"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Week
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--small"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Month
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SegmentedControl Component - Size Variants Snapshot Tests 
+  size: "large"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="SegmentedControl SegmentedControl--large SegmentedControl--equalWidth"
+      data-test="DesignSystem-SegmentedControl"
+      style="max-width: 100%; --segment-max-width: 256px;"
+    >
+      <div
+        class="SegmentedControl-indicator"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Day
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--large SegmentedControl-divider--hidden"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Week
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--large"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--large SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Month
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SegmentedControl Component - Size Variants Snapshot Tests 
+  size: "regular"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth"
+      data-test="DesignSystem-SegmentedControl"
+      style="max-width: 100%; --segment-max-width: 256px;"
+    >
+      <div
+        class="SegmentedControl-indicator"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Day
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Week
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--regular"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Month
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SegmentedControl Component - Size Variants Snapshot Tests 
+  size: "small"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="SegmentedControl SegmentedControl--small SegmentedControl--equalWidth"
+      data-test="DesignSystem-SegmentedControl"
+      style="max-width: 100%; --segment-max-width: 256px;"
+    >
+      <div
+        class="SegmentedControl-indicator"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Day
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--small SegmentedControl-divider--hidden"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Week
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--small"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--small SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Month
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SegmentedControl Component - Two Segments Snapshot Tests matches snapshot with two segments 1`] = `
+<body>
+  <div>
+    <div
+      class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth SegmentedControl--twoSegments"
+      data-test="DesignSystem-SegmentedControl"
+      style="max-width: 100%; --segment-max-width: 256px;"
+    >
+      <div
+        class="SegmentedControl-indicator"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth SegmentedControl-segment--twoSegmentsSelected"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Option 1
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Option 2
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SegmentedControl Component - isEqualWidth Snapshot Tests matches snapshot with isEqualWidth={false} 1`] = `
+<body>
+  <div>
+    <div
+      class="SegmentedControl SegmentedControl--regular"
+      data-test="DesignSystem-SegmentedControl"
+      style="max-width: 100%; --segment-max-width: 256px;"
+    >
+      <div
+        class="SegmentedControl-indicator"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Very Long Option Label
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Short
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--regular"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Medium Label
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SegmentedControl Component - isEqualWidth Snapshot Tests matches snapshot with isEqualWidth={true} 1`] = `
+<body>
+  <div>
+    <div
+      class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth"
+      data-test="DesignSystem-SegmentedControl"
+      style="max-width: 100%; --segment-max-width: 256px;"
+    >
+      <div
+        class="SegmentedControl-indicator"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Very Long Option Label
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Short
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--regular"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Medium Label
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SegmentedControl Component - maxWidth Snapshot Tests matches snapshot with maxWidth prop 1`] = `
+<body>
+  <div>
+    <div
+      class="SegmentedControl SegmentedControl--regular SegmentedControl--equalWidth"
+      data-test="DesignSystem-SegmentedControl"
+      style="max-width: 100%; --segment-max-width: 150px;"
+    >
+      <div
+        class="SegmentedControl-indicator"
+        style="transform: translateX(0px); width: 0px; top: 0px; height: 0px; transition: none;"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--selected SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Very Long Option Label That Should Truncate
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--regular SegmentedControl-divider--hidden"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Short
+        </span>
+      </button>
+      <span
+        class="SegmentedControl-divider SegmentedControl-divider--regular"
+      />
+      <button
+        class="SegmentedControl-segment SegmentedControl-segment--regular SegmentedControl-segment--equalWidth"
+        data-test="DesignSystem-SegmentedControl-Item"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="SegmentedControl-segmentLabel"
+        >
+          Medium Label
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;

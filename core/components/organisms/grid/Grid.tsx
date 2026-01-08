@@ -113,6 +113,36 @@ export type ColumnSchema = {
    */
   filters?: DropdownProps['options'];
   /**
+   * Filter Type
+   * @default 'multiSelect'
+   * @deprecated Use filterOptions.selectionType instead
+   */
+  filterType?: 'singleSelect' | 'multiSelect';
+  /**
+   * Filter Options Configuration
+   * <pre>
+   * FilterOptions: {
+   *   type?: 'singleSelect' | 'multiSelect';
+   *   minWidth?: number | string;
+   *   maxWidth?: number | string;
+   *   maxVisibleSelection?: number;
+   * }
+   * </pre>
+   *
+   * | Name | Description | Default |
+   * | --- | --- | --- |
+   * | type | Filter type for single or multi select | 'multiSelect' |
+   * | minWidth | Minimum width of filter trigger | - |
+   * | maxWidth | Maximum width of filter trigger | - |
+   * | maxVisibleSelection | Max number of options to show in trigger before showing count | - |
+   */
+  filterOptions?: {
+    selectionType?: 'singleSelect' | 'multiSelect';
+    minWidth?: number | string;
+    maxWidth?: number | string;
+    maxVisibleSelection?: number;
+  };
+  /**
    * Callback onFilterChange
    */
   onFilterChange?: onFilterChangeFunction;

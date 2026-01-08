@@ -25,6 +25,7 @@ export type SelectProps = {
    * OptionType: {
    *   label: string;
    *   value: any;
+   *   id?: string | number;
    * }
    * </pre>
    */
@@ -46,7 +47,7 @@ export type SelectProps = {
   /**
    * width of the popover by default it will be equal to the width of trigger.
    */
-  popoverWidth?: number;
+  popoverWidth?: number | string;
   /**
    * The maximum height of the popover before scroll is enabled.
    * @default 256
@@ -62,6 +63,7 @@ export type SelectProps = {
    * OptionType: {
    *   label: string;
    *   value: any;
+   *   id?: string | number;
    * }
    * </pre>
    */
@@ -105,6 +107,8 @@ export type SelectProps = {
    *  withClearButton?: boolean;
    *  setLabel?: (count: number) => string | undefined;
    *  onClear?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
+   *  minWidth?: number | string;
+   *  maxWidth?: number | string;
    * }
    * </pre>
    *
@@ -119,6 +123,8 @@ export type SelectProps = {
    * | withClearButton |  Determines whether the clear icon should be displayed in the trigger | true |
    * | setLabel | A function used to customize the label displayed when multiple options are selected. | - |
    * | onClear | Handler called when the clear button within the Select trigger is clicked | - |
+   * | minWidth | Minimum width of the Select trigger button | - |
+   * | maxWidth | Maximum width of the Select trigger button | - |
    *
    */
 

@@ -5,18 +5,18 @@ import { action } from '@/utils/action';
 // CSF format story
 export const withSections = () => {
   const medicineList = [
-    { label: 'Aspirin', value: 'Aspirin', group: 'Painkillers' },
-    { label: 'Paracetamol', value: 'Paracetamol', group: 'Painkillers' },
-    { label: 'Lisinopril', value: 'Lisinopril', group: 'Hypertension' },
-    { label: 'Simvastatin', value: 'Simvastatin', group: 'Antibiotics' },
-    { label: 'Amoxicillin', value: 'Amoxicillin', group: 'Antibiotics' },
-    { label: 'Ciprofloxacin', value: 'Ciprofloxacin', group: 'Antibiotics' },
-    { label: 'Omeprazole', value: 'Omeprazole', group: 'Painkillers' },
-    { label: 'Diazepam', value: 'Diazepam', group: 'Antibiotics' },
-    { label: 'Levothyroxine', value: 'Levothyroxine', group: 'Antibiotics' },
-    { label: 'Ibuprofen', value: 'Ibuprofen', group: 'Painkillers' },
-    { label: 'Prednisone', value: 'Prednisone', group: 'Painkillers' },
-    { label: 'Metoprolol', value: 'Metoprolol', group: 'Hypertension' },
+    { id: 'aspirin', label: 'Aspirin', value: 'Aspirin', group: 'Painkillers' },
+    { id: 'paracetamol', label: 'Paracetamol', value: 'Paracetamol', group: 'Painkillers' },
+    { id: 'lisinopril', label: 'Lisinopril', value: 'Lisinopril', group: 'Hypertension' },
+    { id: 'simvastatin', label: 'Simvastatin', value: 'Simvastatin', group: 'Antibiotics' },
+    { id: 'amoxicillin', label: 'Amoxicillin', value: 'Amoxicillin', group: 'Antibiotics' },
+    { id: 'ciprofloxacin', label: 'Ciprofloxacin', value: 'Ciprofloxacin', group: 'Antibiotics' },
+    { id: 'omeprazole', label: 'Omeprazole', value: 'Omeprazole', group: 'Painkillers' },
+    { id: 'diazepam', label: 'Diazepam', value: 'Diazepam', group: 'Antibiotics' },
+    { id: 'levothyroxine', label: 'Levothyroxine', value: 'Levothyroxine', group: 'Antibiotics' },
+    { id: 'ibuprofen', label: 'Ibuprofen', value: 'Ibuprofen', group: 'Painkillers' },
+    { id: 'prednisone', label: 'Prednisone', value: 'Prednisone', group: 'Painkillers' },
+    { id: 'metoprolol', label: 'Metoprolol', value: 'Metoprolol', group: 'Hypertension' },
   ];
 
   const [selectedOptions, setSelectedOptions] = React.useState([]);
@@ -53,7 +53,7 @@ export const withSections = () => {
               {group}
             </Text>
             {groupedMedicine[group].map((item) => (
-              <Select.Option key={item.value} option={{ label: item.label, value: item.value }}>
+              <Select.Option key={item.id} option={{ label: item.label, value: item.value, id: item.id }}>
                 {item.label}
               </Select.Option>
             ))}
@@ -66,18 +66,18 @@ export const withSections = () => {
 
 const customCode = `() => {
   const medicineList = [
-    { label: 'Aspirin', value: 'Aspirin', group: 'Painkillers' },
-    { label: 'Paracetamol', value: 'Paracetamol', group: 'Painkillers' },
-    { label: 'Lisinopril', value: 'Lisinopril', group: 'Hypertension' },
-    { label: 'Simvastatin', value: 'Simvastatin', group: 'Antibiotics' },
-    { label: 'Amoxicillin', value: 'Amoxicillin', group: 'Antibiotics' },
-    { label: 'Ciprofloxacin', value: 'Ciprofloxacin', group: 'Antibiotics' },
-    { label: 'Omeprazole', value: 'Omeprazole', group: 'Painkillers' },
-    { label: 'Diazepam', value: 'Diazepam', group: 'Antibiotics' },
-    { label: 'Levothyroxine', value: 'Levothyroxine', group: 'Antibiotics' },
-    { label: 'Ibuprofen', value: 'Ibuprofen', group: 'Painkillers' },
-    { label: 'Prednisone', value: 'Prednisone', group: 'Painkillers' },
-    { label: 'Metoprolol', value: 'Metoprolol', group: 'Hypertension' },
+    { id: 'aspirin', label: 'Aspirin', value: 'Aspirin', group: 'Painkillers' },
+    { id: 'paracetamol', label: 'Paracetamol', value: 'Paracetamol', group: 'Painkillers' },
+    { id: 'lisinopril', label: 'Lisinopril', value: 'Lisinopril', group: 'Hypertension' },
+    { id: 'simvastatin', label: 'Simvastatin', value: 'Simvastatin', group: 'Antibiotics' },
+    { id: 'amoxicillin', label: 'Amoxicillin', value: 'Amoxicillin', group: 'Antibiotics' },
+    { id: 'ciprofloxacin', label: 'Ciprofloxacin', value: 'Ciprofloxacin', group: 'Antibiotics' },
+    { id: 'omeprazole', label: 'Omeprazole', value: 'Omeprazole', group: 'Painkillers' },
+    { id: 'diazepam', label: 'Diazepam', value: 'Diazepam', group: 'Antibiotics' },
+    { id: 'levothyroxine', label: 'Levothyroxine', value: 'Levothyroxine', group: 'Antibiotics' },
+    { id: 'ibuprofen', label: 'Ibuprofen', value: 'Ibuprofen', group: 'Painkillers' },
+    { id: 'prednisone', label: 'Prednisone', value: 'Prednisone', group: 'Painkillers' },
+    { id: 'metoprolol', label: 'Metoprolol', value: 'Metoprolol', group: 'Hypertension' },
   ];
 
   const [selectedOptions, setSelectedOptions] = React.useState([]);
@@ -113,7 +113,7 @@ const customCode = `() => {
               {group}
             </Text>
             {groupedMedicine[group].map((item) => (
-              <Select.Option key={item.value} option={{ label: item.label, value: item.value }}>
+              <Select.Option key={item.id} option={{ label: item.label, value: item.value, id: item.id }}>
                 {item.label}
               </Select.Option>
             ))}

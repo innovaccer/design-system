@@ -33,6 +33,7 @@ export { LinkProps } from './components/atoms/link';
 export { HorizontalNavProps } from './components/organisms/horizontalNav';
 export { MessageProps } from './components/atoms/message';
 export { MetaListProps } from './components/atoms/metaList';
+export { MdsGridProps } from './components/atoms/mdsGrid';
 export { OutsideClickProps } from './components/atoms/outsideClick';
 export { ParagraphProps } from './components/atoms/paragraph';
 export { RadioProps } from './components/atoms/radio';
@@ -101,7 +102,7 @@ export { UnreadMessageProps } from './components/molecules/chat/unreadMessage';
 export { NewMessageProps } from './components/molecules/chat/newMessage';
 export { TypingIndicatorProps } from './components/molecules/chat/typingIndicator';
 export { MeterProps } from './components/atoms/meter';
-
+export { SegmentedControlProps, SegmentedControlItemProps } from './components/atoms/segmentedControl';
 export { SaraSparkleProps } from './ai-components/SaraSparkle';
 export { AIButtonProps } from './ai-components/AIButton';
 export { SaraProps } from './ai-components/Sara';

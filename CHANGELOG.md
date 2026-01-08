@@ -1,3 +1,233 @@
+## 4.19.0 (2025-01-07)
+
+### Highlights
+
+- feat(segmentedControl): add new segmented control component (847a58fa)
+- feat(selectTrigger): add minWidth maxWidth support (9931c6e9)
+- feat(table): replace dropdown with select in table and grid (d0b33355)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(segmentedControl): add new segmented control component (847a58fa)
+- feat(selectTrigger): add minWidth maxWidth support (9931c6e9)
+- feat(table): replace dropdown with select in table and grid (d0b33355)
+
+### Fixes
+
+- fix(segmentedControl): fix size issue and restrict first render animation (27b86d1c)
+
+### Improvements
+
+NA
+
+### Documentation
+
+- docs(segmentedControl): add docs of the new component segmented control (3cf558d6)
+- docs(segmentedControl): update interaction tab content and basic button content (389a8a11)
+
+---
+
+## 4.18.0 (2025-12-29)
+
+### Highlights
+
+- feat(grid): add grid component (1698445c)
+- feat(flex): add flex component (3ae8b0d4)
+- feat(table): add single select filter option in table header (e810b7c8)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(grid): add grid component (1698445c)
+- feat(flex): add flex component (3ae8b0d4)
+- feat(table): add single select filter option in table header (e810b7c8)
+
+### Fixes
+
+- fix(pagination): update table pagination while searching and page change (5b7e1bb6)
+- fix(combobox): fix onchange handler call on initial render (159bf17b)
+
+### Improvements
+
+- feat(table): add filter pattern story (11c1a616)
+- feat(table): add filtertype prop and update stories (a745f210)
+- feat(table): add test cases (6079f23f)
+
+### Documentation
+
+- docs(avatar): update avatar docs usage (8302d34a)
+
+---
+
+## 4.17.1 (2025-12-11)
+
+### Highlights
+
+- fix(avatar): update avatar fallback appearance and text color (f20339b8)
+- docs(Avatars): update the docs for the avatar and avatarGroups (9e3b9273)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+- fix(avatar): update avatar fallback appearance and text color (f20339b8)
+
+### Improvements
+
+NA
+
+### Documentation
+
+- docs(Avatars): update the docs for the avatar and avatarGroups (9e3b9273)
+- docs(avatar): update docs for avatar and avatarGroups (c7dc4be9)
+
+---
+
+## 4.17.0 (2025-12-10)
+
+### Highlights
+
+- feat(Avatar): update new color and update shape for avatarGroups and avatarSelection (3a6c626f)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(Avatar): update new color and update shape for avatarGroups and avatarSelection (3a6c626f)
+
+### Fixes
+
+NA
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
+## 4.16.1 (2025-11-23)
+
+### Highlights
+
+- fix(select): fix duplicate selection of options with same label (ffb5654b)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+- fix(select): fix duplicate selection of options with same label (ffb5654b)
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
+## 4.16.0 (2025-11-03)
+
+### Highlights
+
+- feat(select): add outlined styleType in select (b88c025d)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(select): add outlined styleType in select (b88c025d)
+
+### Fixes
+
+NA
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 4.15.0 (2025-10-21)
 
 ### Highlights

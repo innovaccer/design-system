@@ -16,7 +16,7 @@ exports[`TS renders children 1`] = `
         tabindex="0"
       >
         <i
-          class="material-symbols material-symbols-rounded Icon Icon--white Avatar-content"
+          class="material-symbols material-symbols-rounded Icon Icon--inverse"
           data-test="DesignSystem-Avatar--Icon"
           role="button"
           style="font-size: 20px; width: 20px;"
@@ -2477,12 +2477,28 @@ exports[`TS renders children 1`] = `
         class="Grid Grid--data Grid--standard"
         data-test="DesignSystem-Grid"
       >
-        <h4
-          class="Heading Heading--m Heading--default"
-          data-test="DesignSystem-Heading"
+        <div
+          class="d-flex justify-content-center align-item-center w-100 h-100"
         >
-          No results found
-        </h4>
+          <div
+            class="EmptyState-Wrapper"
+            data-test="DesignSystem-EmptyState--Wrapper"
+            style="max-width: 480px;"
+          >
+            <h4
+              class="Heading Heading--m Heading--default EmptyState-text EmptyState-title--standard"
+              data-test="DesignSystem-EmptyState--Heading"
+            >
+              No results found
+            </h4>
+            <span
+              class="Text Text--subtle Text--regular EmptyState-text mt-3"
+              data-test="DesignSystem-EmptyState--Text"
+            >
+              Try adjusting your search or filters to find what you are looking for.
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -2505,12 +2521,28 @@ exports[`TS renders children 1`] = `
             class="Grid-row Grid-row--head"
           />
         </div>
-        <h4
-          class="Heading Heading--m Heading--default"
-          data-test="DesignSystem-Heading"
+        <div
+          class="d-flex justify-content-center align-item-center w-100 h-100"
         >
-          No results found
-        </h4>
+          <div
+            class="EmptyState-Wrapper"
+            data-test="DesignSystem-EmptyState--Wrapper"
+            style="max-width: 480px;"
+          >
+            <h4
+              class="Heading Heading--m Heading--default EmptyState-text EmptyState-title--standard"
+              data-test="DesignSystem-EmptyState--Heading"
+            >
+              No results found
+            </h4>
+            <span
+              class="Text Text--subtle Text--regular EmptyState-text mt-3"
+              data-test="DesignSystem-EmptyState--Text"
+            >
+              Try adjusting your search or filters to find what you are looking for.
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   </div>

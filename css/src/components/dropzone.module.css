@@ -5,26 +5,32 @@
   background-color: var(--white);
   border-radius: var(--border-radius-10);
   width: 100%;
-  background-image: linear-gradient(to right, var(--secondary) 50%, rgba(255, 255, 255, 0) 0%),
+  background-image:
+    linear-gradient(to right, var(--secondary) 50%, rgba(255, 255, 255, 0) 0%),
     linear-gradient(var(--secondary) 50%, rgba(255, 255, 255, 0) 0%),
     linear-gradient(to right, var(--secondary) 50%, rgba(255, 255, 255, 0) 0%),
     linear-gradient(var(--secondary) 50%, rgba(255, 255, 255, 0) 0%);
   background-position: top, right, bottom, left;
   background-repeat: repeat-x, repeat-y;
-  background-size: var(--spacing-40) var(--spacing-2-5), var(--spacing-2-5) var(--spacing-40);
+  background-size:
+    var(--spacing-40) var(--spacing-2-5),
+    var(--spacing-2-5) var(--spacing-40);
   transition: background-color var(--duration--moderate-01) var(--standard-productive-curve);
   box-sizing: border-box;
 }
 
 .Dropzone--active {
   background-color: var(--primary-lightest);
-  background-image: linear-gradient(to right, var(--primary) 50%, rgba(255, 255, 255, 0) 0%),
+  background-image:
+    linear-gradient(to right, var(--primary) 50%, rgba(255, 255, 255, 0) 0%),
     linear-gradient(var(--primary) 50%, rgba(255, 255, 255, 0) 0%),
     linear-gradient(to right, var(--primary) 50%, rgba(255, 255, 255, 0) 0%),
     linear-gradient(var(--primary) 50%, rgba(255, 255, 255, 0) 0%);
   background-position: top, right, bottom, left;
   background-repeat: repeat-x, repeat-y;
-  background-size: var(--spacing-40) var(--spacing-2-5), var(--spacing-2-5) var(--spacing-40);
+  background-size:
+    var(--spacing-40) var(--spacing-2-5),
+    var(--spacing-2-5) var(--spacing-40);
   transition: background-color var(--duration--moderate-01) var(--standard-productive-curve);
   box-sizing: border-box;
 }
@@ -100,23 +106,29 @@
 
 .Dropzone--error {
   background: var(--alert-lightest);
-  background-image: linear-gradient(to right, var(--alert) 50%, rgba(255, 255, 255, 0) 0%),
+  background-image:
+    linear-gradient(to right, var(--alert) 50%, rgba(255, 255, 255, 0) 0%),
     linear-gradient(var(--alert) 50%, rgba(255, 255, 255, 0) 0%),
     linear-gradient(to right, var(--alert) 50%, rgba(255, 255, 255, 0) 0%),
     linear-gradient(var(--alert) 50%, rgba(255, 255, 255, 0) 0%);
   background-position: top, right, bottom, left;
   background-repeat: repeat-x, repeat-y;
-  background-size: var(--spacing-40) var(--spacing-2-5), var(--spacing-2-5) var(--spacing-40);
+  background-size:
+    var(--spacing-40) var(--spacing-2-5),
+    var(--spacing-2-5) var(--spacing-40);
 }
 
 .Dropzone--disabled {
-  background-image: linear-gradient(to right, var(--secondary) 50%, rgba(255, 255, 255, 0) 0%),
+  background-image:
+    linear-gradient(to right, var(--secondary) 50%, rgba(255, 255, 255, 0) 0%),
     linear-gradient(var(--secondary) 50%, rgba(255, 255, 255, 0) 0%),
     linear-gradient(to right, var(--secondary) 50%, rgba(255, 255, 255, 0) 0%),
     linear-gradient(var(--secondary) 50%, rgba(255, 255, 255, 0) 0%);
   background-position: top, right, bottom, left;
   background-repeat: repeat-x, repeat-y;
-  background-size: var(--spacing-40) var(--spacing-2-5), var(--spacing-2-5) var(--spacing-40);
+  background-size:
+    var(--spacing-40) var(--spacing-2-5),
+    var(--spacing-2-5) var(--spacing-40);
 }
 
 .Dropzone--standard {

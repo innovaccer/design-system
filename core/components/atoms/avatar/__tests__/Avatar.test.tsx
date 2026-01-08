@@ -15,7 +15,7 @@ const appearances: AccentAppearance[] = [
   'accent4',
 ];
 
-const sizes: AvatarSize[] = ['regular', 'tiny'];
+const sizes: AvatarSize[] = ['regular', 'tiny', 'micro'];
 
 const shapes: AvatarShape[] = ['round', 'square'];
 const booleanValues = [true, false];
@@ -134,14 +134,14 @@ describe('Avatar component with prop:appearance', () => {
 });
 
 describe('Avatar component accessibility', () => {
-  it('should have the Avatar-content class when appearance is secondary', () => {
+  it('should have the Avatar-content--secondary class when appearance is secondary', () => {
     const { getByTestId } = render(<Avatar appearance="secondary">Design</Avatar>);
-    expect(getByTestId('DesignSystem-Text')).toHaveClass('Avatar-content');
+    expect(getByTestId('DesignSystem-Text')).toHaveClass('Avatar-content--secondary');
   });
 
-  it('should not have the Avatar-content class when appearance is primary', () => {
+  it('should have the Avatar-content--primary class when appearance is primary', () => {
     const { getByTestId } = render(<Avatar appearance="primary">Design</Avatar>);
-    expect(getByTestId('DesignSystem-Text')).not.toHaveClass('Avatar-content');
+    expect(getByTestId('DesignSystem-Text')).toHaveClass('Avatar-content--primary');
   });
 });
 
@@ -314,5 +314,96 @@ describe('Avatar component with prop:status', () => {
     );
     const statusElement = getByTestId('DesignSystem-Avatar--Status');
     expect(statusElement).toHaveStyle('box-shadow: 0 0 0 var(--spacing-05) red');
+  });
+});
+
+describe('Avatar component with prop:shape square fallback icon', () => {
+  it('should render groups icon when shape is square and no initials', () => {
+    const { getByTestId } = render(<Avatar shape="square" />);
+    const icon = getByTestId('DesignSystem-Avatar--Icon');
+    expect(icon).toBeInTheDocument();
+    expect(icon.textContent).toBe('groups');
+  });
+
+  it('should render person icon when shape is round and no initials', () => {
+    const { getByTestId } = render(<Avatar shape="round" />);
+    const icon = getByTestId('DesignSystem-Avatar--Icon');
+    expect(icon).toBeInTheDocument();
+    expect(icon.textContent).toBe('person');
+  });
+
+  it('should render initials when shape is square and initials are provided', () => {
+    const { getByTestId, queryByTestId } = render(<Avatar shape="square" firstName="John" lastName="Doe" />);
+    expect(getByTestId('DesignSystem-Avatar').textContent).toMatch('JD');
+    expect(queryByTestId('DesignSystem-Avatar--Icon')).not.toBeInTheDocument();
+  });
+});
+
+describe('Avatar component with prop:size micro and presence/status', () => {
+  it('should not render presence when size is micro', () => {
+    render(<Avatar firstName="John" lastName="Doe" presence="active" size="micro" />);
+    const presenceEle = screen.queryByTestId('DesignSystem-Avatar--Presence');
+    expect(presenceEle).not.toBeInTheDocument();
+  });
+
+  it('should not render status when size is micro', () => {
+    render(
+      <Avatar firstName="John" lastName="Doe" status={statusComponent} size="micro">
+        Design
+      </Avatar>
+    );
+    const statusElement = screen.queryByTestId('DesignSystem-Avatar--Status');
+    expect(statusElement).not.toBeInTheDocument();
+  });
+
+  it('should render presence when size is regular', () => {
+    const { getByTestId } = render(<Avatar firstName="John" lastName="Doe" presence="active" size="regular" />);
+    const presenceEle = getByTestId('DesignSystem-Avatar--Presence');
+    expect(presenceEle).toBeInTheDocument();
+  });
+
+  it('should render status when size is regular', () => {
+    const { getByTestId } = render(
+      <Avatar status={statusComponent} size="regular">
+        Design
+      </Avatar>
+    );
+    const statusElement = getByTestId('DesignSystem-Avatar--Status');
+    expect(statusElement).toBeInTheDocument();
+  });
+});
+
+describe('Avatar component with Avatar.Image child and appearance', () => {
+  it('should apply appearance background when Avatar.Image is child', () => {
+    const { getByTestId } = render(
+      <Avatar appearance="primary" firstName="John" lastName="Doe">
+        <Avatar.Image src="https://design.innovaccer.com/images/avatar2.jpeg" />
+      </Avatar>
+    );
+    const avatarElement = getByTestId('DesignSystem-Avatar');
+    expect(avatarElement).toHaveClass('Avatar--primary');
+  });
+
+  it('should apply appearance background when Avatar.Icon is child', () => {
+    const { getByTestId } = render(
+      <Avatar appearance="primary" firstName="John" lastName="Doe">
+        <Avatar.Icon name="person" />
+      </Avatar>
+    );
+    const avatarElement = getByTestId('DesignSystem-Avatar');
+    expect(avatarElement).toHaveClass('Avatar--primary');
+  });
+
+  it('should apply appearance background when only initials are provided', () => {
+    const { getByTestId } = render(<Avatar appearance="primary" firstName="John" lastName="Doe" />);
+    const avatarElement = getByTestId('DesignSystem-Avatar');
+    expect(avatarElement).toHaveClass('Avatar--primary');
+  });
+});
+
+describe('Avatar component with prop:size micro', () => {
+  it('should have the Avatar--micro class when size is micro', () => {
+    const { getByTestId } = render(<Avatar size="micro">Design</Avatar>);
+    expect(getByTestId('DesignSystem-Avatar')).toHaveClass('Avatar--micro');
   });
 });

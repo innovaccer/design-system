@@ -1,5 +1,6 @@
 .AIResponse-container--glow {
-  background: linear-gradient(white, white) padding-box,
+  background:
+    linear-gradient(white, white) padding-box,
     linear-gradient(to right, rgba(254, 172, 95, 1) 9%, rgba(255, 31, 136, 1) 48%, rgba(227, 28, 121, 0.48) 100%)
       border-box;
   border: var(--spacing-2-5) solid transparent;
