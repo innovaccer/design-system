@@ -170,7 +170,9 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
   const mapValue = mapInitialValue(multiSelect, value);
 
   const [selectValue, setSelectValue] = React.useState<OptionType | OptionType[]>(mapValue);
-  const [isOptionSelected, setIsOptionSelected] = React.useState(false);
+  const [isOptionSelected, setIsOptionSelected] = React.useState(
+    value ? (Array.isArray(value) ? value.length > 0 : value && 'value' in value && value.value !== '') : false
+  );
 
   const triggerRef = React.createRef<HTMLButtonElement>();
   const listRef = React.useRef<HTMLDivElement | null>(null);

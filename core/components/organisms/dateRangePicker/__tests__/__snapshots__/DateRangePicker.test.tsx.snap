@@ -43190,7 +43190,7 @@ exports[`DateRangePicker component
       data-test="DesignSystem-Popover"
       id=":r6:"
       role="dialog"
-      style="position: absolute; left: 0px; top: 0px; visibility: hidden; transform: translate(0px, 0px);"
+      style="position: absolute; left: 0px; top: 0px; visibility: hidden; opacity: 0; pointer-events: none; transform: translate(0px, 0px);"
       tabindex="-1"
     >
       <div
@@ -44341,7 +44341,7 @@ exports[`DateRangePicker component
       data-test="DesignSystem-Popover"
       id=":r3:"
       role="dialog"
-      style="position: absolute; left: 0px; top: 0px; visibility: hidden; transform: translate(0px, 0px);"
+      style="position: absolute; left: 0px; top: 0px; visibility: hidden; opacity: 0; pointer-events: none; transform: translate(0px, 0px);"
       tabindex="-1"
     >
       <div
@@ -45492,7 +45492,7 @@ exports[`DateRangePicker component
       data-test="DesignSystem-Popover"
       id=":r0:"
       role="dialog"
-      style="position: absolute; left: 0px; top: 0px; visibility: hidden; transform: translate(0px, 0px);"
+      style="position: absolute; left: 0px; top: 0px; visibility: hidden; opacity: 0; pointer-events: none; transform: translate(0px, 0px);"
       tabindex="-1"
     >
       <div
@@ -47728,7 +47728,7 @@ exports[`DateRangePicker component
       data-test="DesignSystem-Popover"
       id=":rf:"
       role="dialog"
-      style="position: absolute; left: 0px; top: 0px; visibility: hidden; transform: translate(0px, 0px);"
+      style="position: absolute; left: 0px; top: 0px; visibility: hidden; opacity: 0; pointer-events: none; transform: translate(0px, 0px);"
       tabindex="-1"
     >
       <div
@@ -48879,7 +48879,7 @@ exports[`DateRangePicker component
       data-test="DesignSystem-Popover"
       id=":rc:"
       role="dialog"
-      style="position: absolute; left: 0px; top: 0px; visibility: hidden; transform: translate(0px, 0px);"
+      style="position: absolute; left: 0px; top: 0px; visibility: hidden; opacity: 0; pointer-events: none; transform: translate(0px, 0px);"
       tabindex="-1"
     >
       <div
@@ -50030,7 +50030,7 @@ exports[`DateRangePicker component
       data-test="DesignSystem-Popover"
       id=":r9:"
       role="dialog"
-      style="position: absolute; left: 0px; top: 0px; visibility: hidden; transform: translate(0px, 0px);"
+      style="position: absolute; left: 0px; top: 0px; visibility: hidden; opacity: 0; pointer-events: none; transform: translate(0px, 0px);"
       tabindex="-1"
     >
       <div

@@ -46,7 +46,7 @@ exports[`Menu component snapshot
       data-test="DesignSystem-Menu"
       id=":r0:"
       role="dialog"
-      style="position: absolute; left: 0px; top: 0px; width: 176px; visibility: hidden; transform: translate(0px, 0px);"
+      style="position: absolute; left: 0px; top: 0px; width: 176px; visibility: hidden; opacity: 0; pointer-events: none; transform: translate(0px, 0px);"
       tabindex="-1"
     >
       <div
@@ -146,7 +146,7 @@ exports[`Menu component with Nesting snapshot
       data-test="DesignSystem-Menu"
       id=":r6:"
       role="dialog"
-      style="position: absolute; left: 0px; top: 0px; width: 176px; visibility: hidden; transform: translate(0px, 0px);"
+      style="position: absolute; left: 0px; top: 0px; width: 176px; visibility: hidden; opacity: 0; pointer-events: none; transform: translate(0px, 0px);"
       tabindex="-1"
     >
       <div
@@ -331,7 +331,7 @@ exports[`Menu component with Trigger snapshot
       data-test="DesignSystem-Menu"
       id=":rf:"
       role="dialog"
-      style="position: absolute; left: 0px; top: 0px; width: 176px; visibility: hidden; transform: translate(0px, 0px);"
+      style="position: absolute; left: 0px; top: 0px; width: 176px; visibility: hidden; opacity: 0; pointer-events: none; transform: translate(0px, 0px);"
       tabindex="-1"
     >
       <div

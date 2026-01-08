@@ -1,0 +1,2836 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar component 
+  appearance: "accent1", disabled: false
+ 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <div
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            class="flex-grow-0"
+            data-state="closed"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <span
+                  class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+    <div
+      data-floating-ui-portal=""
+      id=":rt:"
+    />
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="flex-grow-0"
+          data-state="closed"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
+              data-test="DesignSystem-Avatar"
+              tabindex="0"
+            >
+              <span
+                class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </span>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  appearance: "accent1", disabled: true
+ 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <div
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            class="flex-grow-0"
+            data-state="closed"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--accent1 Avatar--disabled"
+                data-test="DesignSystem-Avatar"
+                tabindex="-1"
+              >
+                <span
+                  class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+    <div
+      data-floating-ui-portal=""
+      id=":rq:"
+    />
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="flex-grow-0"
+          data-state="closed"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--accent1 Avatar--disabled"
+              data-test="DesignSystem-Avatar"
+              tabindex="-1"
+            >
+              <span
+                class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </span>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  appearance: "accent2", disabled: false
+ 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <div
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            class="flex-grow-0"
+            data-state="closed"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--accent2 Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <span
+                  class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r13:"
+    />
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="flex-grow-0"
+          data-state="closed"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--accent2 Avatar--default"
+              data-test="DesignSystem-Avatar"
+              tabindex="0"
+            >
+              <span
+                class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </span>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  appearance: "accent2", disabled: true
+ 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <div
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            class="flex-grow-0"
+            data-state="closed"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--accent2 Avatar--disabled"
+                data-test="DesignSystem-Avatar"
+                tabindex="-1"
+              >
+                <span
+                  class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r10:"
+    />
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="flex-grow-0"
+          data-state="closed"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--accent2 Avatar--disabled"
+              data-test="DesignSystem-Avatar"
+              tabindex="-1"
+            >
+              <span
+                class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </span>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  appearance: "accent3", disabled: false
+ 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <div
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            class="flex-grow-0"
+            data-state="closed"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--accent3 Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <span
+                  class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent3"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r19:"
+    />
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="flex-grow-0"
+          data-state="closed"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--accent3 Avatar--default"
+              data-test="DesignSystem-Avatar"
+              tabindex="0"
+            >
+              <span
+                class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent3"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </span>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  appearance: "accent3", disabled: true
+ 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <div
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            class="flex-grow-0"
+            data-state="closed"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--accent3 Avatar--disabled"
+                data-test="DesignSystem-Avatar"
+                tabindex="-1"
+              >
+                <span
+                  class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent3"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r16:"
+    />
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="flex-grow-0"
+          data-state="closed"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--accent3 Avatar--disabled"
+              data-test="DesignSystem-Avatar"
+              tabindex="-1"
+            >
+              <span
+                class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent3"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </span>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  appearance: "accent4", disabled: false
+ 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <div
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            class="flex-grow-0"
+            data-state="closed"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--accent4 Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <span
+                  class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent4"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r1f:"
+    />
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="flex-grow-0"
+          data-state="closed"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--accent4 Avatar--default"
+              data-test="DesignSystem-Avatar"
+              tabindex="0"
+            >
+              <span
+                class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent4"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </span>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  appearance: "accent4", disabled: true
+ 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <div
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            class="flex-grow-0"
+            data-state="closed"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--accent4 Avatar--disabled"
+                data-test="DesignSystem-Avatar"
+                tabindex="-1"
+              >
+                <span
+                  class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent4"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r1c:"
+    />
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="flex-grow-0"
+          data-state="closed"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--accent4 Avatar--disabled"
+              data-test="DesignSystem-Avatar"
+              tabindex="-1"
+            >
+              <span
+                class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent4"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </span>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  appearance: "alert", disabled: false
+ 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <div
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            class="flex-grow-0"
+            data-state="closed"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--alert Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <span
+                  class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+    <div
+      data-floating-ui-portal=""
+      id=":rb:"
+    />
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="flex-grow-0"
+          data-state="closed"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--alert Avatar--default"
+              data-test="DesignSystem-Avatar"
+              tabindex="0"
+            >
+              <span
+                class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </span>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  appearance: "alert", disabled: true
+ 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <div
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            class="flex-grow-0"
+            data-state="closed"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--alert Avatar--disabled"
+                data-test="DesignSystem-Avatar"
+                tabindex="-1"
+              >
+                <span
+                  class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r8:"
+    />
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="flex-grow-0"
+          data-state="closed"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--alert Avatar--disabled"
+              data-test="DesignSystem-Avatar"
+              tabindex="-1"
+            >
+              <span
+                class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </span>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  appearance: "primary", disabled: false
+ 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <div
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            class="flex-grow-0"
+            data-state="closed"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--primary Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <span
+                  class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--primary"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r5:"
+    />
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="flex-grow-0"
+          data-state="closed"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--primary Avatar--default"
+              data-test="DesignSystem-Avatar"
+              tabindex="0"
+            >
+              <span
+                class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--primary"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </span>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  appearance: "primary", disabled: true
+ 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <div
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            class="flex-grow-0"
+            data-state="closed"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--primary Avatar--disabled"
+                data-test="DesignSystem-Avatar"
+                tabindex="-1"
+              >
+                <span
+                  class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--primary"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r2:"
+    />
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="flex-grow-0"
+          data-state="closed"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--primary Avatar--disabled"
+              data-test="DesignSystem-Avatar"
+              tabindex="-1"
+            >
+              <span
+                class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--primary"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </span>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  appearance: "success", disabled: false
+ 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <div
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            class="flex-grow-0"
+            data-state="closed"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--success Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <span
+                  class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--success"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+    <div
+      data-floating-ui-portal=""
+      id=":rn:"
+    />
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="flex-grow-0"
+          data-state="closed"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--success Avatar--default"
+              data-test="DesignSystem-Avatar"
+              tabindex="0"
+            >
+              <span
+                class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--success"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </span>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  appearance: "success", disabled: true
+ 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <div
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            class="flex-grow-0"
+            data-state="closed"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--success Avatar--disabled"
+                data-test="DesignSystem-Avatar"
+                tabindex="-1"
+              >
+                <span
+                  class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--success"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+    <div
+      data-floating-ui-portal=""
+      id=":rk:"
+    />
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="flex-grow-0"
+          data-state="closed"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--success Avatar--disabled"
+              data-test="DesignSystem-Avatar"
+              tabindex="-1"
+            >
+              <span
+                class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--success"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </span>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  appearance: "warning", disabled: false
+ 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <div
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            class="flex-grow-0"
+            data-state="closed"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--warning Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <span
+                  class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+    <div
+      data-floating-ui-portal=""
+      id=":rh:"
+    />
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="flex-grow-0"
+          data-state="closed"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--warning Avatar--default"
+              data-test="DesignSystem-Avatar"
+              tabindex="0"
+            >
+              <span
+                class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </span>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  appearance: "warning", disabled: true
+ 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <div
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            class="flex-grow-0"
+            data-state="closed"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--warning Avatar--disabled"
+                data-test="DesignSystem-Avatar"
+                tabindex="-1"
+              >
+                <span
+                  class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+    <div
+      data-floating-ui-portal=""
+      id=":re:"
+    />
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="flex-grow-0"
+          data-state="closed"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--warning Avatar--disabled"
+              data-test="DesignSystem-Avatar"
+              tabindex="-1"
+            >
+              <span
+                class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </span>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  shape: "round"
+ 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <div
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            class="flex-grow-0"
+            data-state="closed"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <span
+                  class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r1r:"
+    />
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="flex-grow-0"
+          data-state="closed"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
+              data-test="DesignSystem-Avatar"
+              tabindex="0"
+            >
+              <span
+                class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </span>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  shape: "square"
+ 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <div
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            class="flex-grow-0"
+            data-state="closed"
+          >
+            <span
+              class="Avatar-wrapper--square Avatar--regular"
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--square Avatar--accent1 Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <span
+                  class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r1u:"
+    />
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="flex-grow-0"
+          data-state="closed"
+        >
+          <span
+            class="Avatar-wrapper--square Avatar--regular"
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--square Avatar--accent1 Avatar--default"
+              data-test="DesignSystem-Avatar"
+              tabindex="0"
+            >
+              <span
+                class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </span>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  size: "micro"
+ 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <div
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            class="flex-grow-0"
+            data-state="closed"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--micro Avatar--accent1 Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <span
+                  class="Text Text--default Text--medium Text--regular Avatar-content--micro Avatar-content--accent1"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r1o:"
+    />
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="flex-grow-0"
+          data-state="closed"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--micro Avatar--accent1 Avatar--default"
+              data-test="DesignSystem-Avatar"
+              tabindex="0"
+            >
+              <span
+                class="Text Text--default Text--medium Text--regular Avatar-content--micro Avatar-content--accent1"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </span>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  size: "regular"
+ 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <div
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            class="flex-grow-0"
+            data-state="closed"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <span
+                  class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r1i:"
+    />
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="flex-grow-0"
+          data-state="closed"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
+              data-test="DesignSystem-Avatar"
+              tabindex="0"
+            >
+              <span
+                class="Text Text--default Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </span>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  size: "tiny"
+ 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="position-relative d-inline-flex"
+      >
+        <div
+          class="flex-grow-0"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            class="flex-grow-0"
+            data-state="closed"
+          >
+            <span
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
+              role="presentation"
+            >
+              <span
+                class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
+                data-test="DesignSystem-Avatar"
+                tabindex="0"
+              >
+                <span
+                  class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+    <div
+      data-floating-ui-portal=""
+      id=":r1l:"
+    />
+  </body>,
+  "container": <div>
+    <span
+      class="position-relative d-inline-flex"
+    >
+      <div
+        class="flex-grow-0"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          class="flex-grow-0"
+          data-state="closed"
+        >
+          <span
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
+            role="presentation"
+          >
+            <span
+              class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
+              data-test="DesignSystem-Avatar"
+              tabindex="0"
+            >
+              <span
+                class="Text Text--default Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </span>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

@@ -2182,7 +2182,7 @@ describe('render table with race condition prevention', () => {
       });
     });
 
-    const { getByTestId, getAllByTestId } = render(
+    const { getByTestId, getAllByTestId, queryByTestId } = render(
       <Table schema={schema} fetchData={fetchData} withPagination={true} pageSize={10} />
     );
 
@@ -2192,6 +2192,11 @@ describe('render table with race condition prevention', () => {
           page: 1,
         })
       );
+    });
+
+    await waitFor(() => {
+      const pagination = queryByTestId('DesignSystem-Pagination');
+      expect(pagination).toBeInTheDocument();
     });
 
     const nextButton = getByTestId('DesignSystem-Pagination--NextButton');

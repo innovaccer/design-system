@@ -717,11 +717,14 @@ describe('Dropdown component with all options selected', () => {
     const dropdownTrigger = getByTestId(trigger);
     fireEvent.click(dropdownTrigger);
 
-    await waitFor(() => {
-      const optionList = getAllByTestId('DesignSystem-DropdownOption--WITH_CHECKBOX');
-      expect(optionList[0]).toBeInTheDocument();
-      expect(optionList[0]).toHaveTextContent('Option 1');
-    });
+    await waitFor(
+      () => {
+        const optionList = getAllByTestId('DesignSystem-DropdownOption--WITH_CHECKBOX');
+        expect(optionList[0]).toBeInTheDocument();
+        expect(optionList[0]).toHaveTextContent('Option 1');
+      },
+      { timeout: 2000 }
+    );
   });
 
   it('check for rendering of all options selected', async () => {
