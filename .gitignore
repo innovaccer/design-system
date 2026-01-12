@@ -98,6 +98,8 @@ dist
 css/dist
 .lib
 .dist
+temp
+api-reports
 docs/public/*
 docs/.cache
 docs/node_modules

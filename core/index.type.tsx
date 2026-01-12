@@ -109,3 +109,47 @@ export { SaraProps } from './ai-components/Sara';
 export { AIIconButtonProps } from './ai-components/AIIconButton';
 export { AIChipProps } from './ai-components/AIChip';
 export { AIResponseProps } from './ai-components/AIResponse';
+
+// Export common types
+export type {
+  AccentAppearance,
+  AutoComplete,
+  AvatarShape,
+  AvatarSize,
+  ChangeEvent,
+  FileStatus,
+  FooterOptions,
+  HeadingAppearance,
+  IconType,
+  MessageAppearance,
+  NumberRange,
+  OptionType,
+  PositionType,
+  TEmptyStateSize,
+  TextColor,
+  TListboxSize,
+  TTabSize,
+} from './common.type';
+
+// Export utility types
+export type {
+  BaseHtmlProps,
+  BaseProps,
+  MakeOptional,
+  Mask,
+  OmitNativeProps,
+  SingleOrArray,
+  Validators,
+} from './utils/types';
+
+// Export navigation types
+// Note: Menu type is exported as NavigationMenu to avoid conflict with Menu component
+export type { ActiveMenu, Menu as NavigationMenu } from './utils/navigationHelper';
+
+// Export component-specific types
+export type { MultiSliderProps } from './components/atoms/multiSlider';
+export type { OptionSchema } from './components/atoms/dropdown/option';
+export type { OverlayHeaderProps } from './components/molecules/overlayHeader';
+export type { PlaceholderImageSize } from './components/atoms/placeholderImage';
+export type { PopperWrapperProps } from './components/atoms/popperWrapper';
+export type { TextAppearance } from './components/atoms/text';
