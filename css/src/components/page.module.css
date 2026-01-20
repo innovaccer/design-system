@@ -1,0 +1,10 @@
+.Page {
+  background-color: var(--secondary-lightest);
+  width: 100%;
+  height: calc(100dvh - var(--nav-height));
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
