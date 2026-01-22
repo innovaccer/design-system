@@ -48,8 +48,8 @@
 }
 
 .AIButton:focus {
-  outline: 0;
-  box-shadow: var(--shadow-spread) var(--primary-shadow);
+  outline: 2px solid #0070dd;
+  outline-offset: 2px;
 }
 
 /* Button Icon */

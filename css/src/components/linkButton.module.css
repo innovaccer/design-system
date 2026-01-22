@@ -18,6 +18,12 @@
   transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
+.LinkButton:focus,
+.LinkButton:focus-visible {
+  outline: 2px solid #0070dd;
+  outline-offset: 2px;
+}
+
 .LinkButton--iconAlign-right {
   flex-direction: row-reverse;
 }
@@ -58,12 +64,6 @@
   color: var(--primary-darker);
 }
 
-.LinkButton--default:focus,
-.LinkButton--default:focus-visible {
-  outline: 0;
-  box-shadow: var(--shadow-spread) var(--primary-shadow);
-}
-
 .LinkButton--default:disabled {
   cursor: not-allowed;
   pointer-events: none;
@@ -82,12 +82,6 @@
 
 .LinkButton--subtle:active {
   color: var(--inverse);
-}
-
-.LinkButton--subtle:focus,
-.LinkButton--subtle:focus-visible {
-  outline: 0;
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
 }
 
 .LinkButton--subtle:disabled {

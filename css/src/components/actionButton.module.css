@@ -11,7 +11,8 @@
 
 .ActionButton:focus-visible,
 .ActionButton:focus {
-  outline: var(--spacing-05) solid var(--secondary-shadow);
+  outline: 2px solid #0070dd;
+  outline-offset: 2px;
 }
 
 .ActionButton:hover {

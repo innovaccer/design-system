@@ -41,8 +41,8 @@
 
 .AIIconButton:focus,
 .AIIconButton:focus-visible {
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
-  outline: none;
+  outline: 2px solid #0070dd;
+  outline-offset: 2px;
 }
 
 .AIIconButton:disabled {
