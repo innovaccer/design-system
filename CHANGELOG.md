@@ -1,4 +1,40 @@
-## 4.19.0 (2025-01-07)
+## 4.19.1 (2026-01-22)
+
+### Highlights
+
+- feat(text): update font weight for small size variant in text component (5e1cf577)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(text): update font weight for small size variant in text component (5e1cf577)
+
+### Fixes
+
+NA
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
+## 4.19.0 (2026-01-07)
 
 ### Highlights
 
