@@ -56,8 +56,8 @@
 
 .DropdownButton:focus {
   background-color: var(--secondary-light);
-  outline: 2px solid #0070dd;
-  outline-offset: 2px;
+  outline: var(--spacing-s) solid var(--primary);
+  outline-offset: var(--spacing-s);
 }
 
 .DropdownButton:active,
