@@ -150,6 +150,7 @@ export type { ActiveMenu, Menu as NavigationMenu } from './utils/navigationHelpe
 export type { MultiSliderProps } from './components/atoms/multiSlider';
 export type { OptionSchema } from './components/atoms/dropdown/option';
 export type { OverlayHeaderProps } from './components/molecules/overlayHeader';
+export type { OverlayFooterProps } from './components/molecules/overlayFooter';
 export type { PlaceholderImageSize } from './components/atoms/placeholderImage';
 export type { PopperWrapperProps } from './components/atoms/popperWrapper';
 export type { TextAppearance } from './components/atoms/text';

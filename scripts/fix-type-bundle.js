@@ -15,6 +15,278 @@ const fs = require('fs');
 const path = require('path');
 
 const OUTPUT_FILE = path.resolve(__dirname, '../dist/index.type.d.ts');
+const DIST_CORE_DIR = path.resolve(__dirname, '../dist/core');
+
+/**
+ * Resolves a relative import path to an absolute file path
+ */
+function resolveImportPath(importPath) {
+  // Handle paths like './core/common.type' or './core/utils/types'
+  if (importPath.startsWith('./core/')) {
+    const relativePath = importPath.replace('./core/', '');
+    const filePath = path.join(DIST_CORE_DIR, relativePath);
+
+    // Try with .d.ts extension first
+    if (fs.existsSync(filePath + '.d.ts')) {
+      return filePath + '.d.ts';
+    }
+    // Try without extension
+    if (fs.existsSync(filePath)) {
+      return filePath;
+    }
+    // Try index.d.ts
+    if (fs.existsSync(path.join(filePath, 'index.d.ts'))) {
+      return path.join(filePath, 'index.d.ts');
+    }
+  }
+  return null;
+}
+
+/**
+ * Extracts a type definition from a .d.ts file
+ */
+function extractTypeDefinition(filePath, typeName) {
+  if (!fs.existsSync(filePath)) {
+    return null;
+  }
+
+  const content = fs.readFileSync(filePath, 'utf-8');
+  const lines = content.split('\n');
+
+  // Find the type/interface definition
+  let inDefinition = false;
+  let definitionLines = [];
+  let braceDepth = 0;
+  let foundStart = false;
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const trimmed = line.trim();
+
+    // Skip imports
+    if (trimmed.startsWith('import ') || trimmed.startsWith('///')) {
+      continue;
+    }
+
+    // Match: export declare type/interface/class/enum/namespace TypeName
+    const typeStartRegex = new RegExp(`^export\\s+declare\\s+(type|interface|class|enum|namespace)\\s+${typeName}\\b`);
+
+    if (typeStartRegex.test(trimmed)) {
+      inDefinition = true;
+      foundStart = true;
+      definitionLines = [line];
+      braceDepth = (line.match(/\{/g) || []).length - (line.match(/\}/g) || []).length;
+      continue;
+    }
+
+    if (inDefinition) {
+      definitionLines.push(line);
+      braceDepth += (line.match(/\{/g) || []).length - (line.match(/\}/g) || []).length;
+
+      // Check if definition is complete
+      if (braceDepth === 0 && (trimmed.endsWith(';') || trimmed === '')) {
+        break;
+      }
+    }
+  }
+
+  if (foundStart && definitionLines.length > 0) {
+    let definition = definitionLines.join('\n');
+    // Remove 'export' keyword, keep 'declare'
+    definition = definition.replace(/^export\s+/, '');
+    // Remove internal imports from the definition
+    definition = definition.replace(/^import\s+.*?from\s+['"]\.\/core\/[^'"]+['"];?\s*\n?/gm, '');
+    return definition;
+  }
+
+  return null;
+}
+
+/**
+ * Inlines all internal type imports by reading and inserting type definitions
+ */
+function inlineAllInternalTypes(content, visitedFiles = new Set(), processedImports = new Set(), depth = 0) {
+  // Prevent infinite recursion
+  if (depth > 20) {
+    console.warn('⚠️  Maximum recursion depth reached, stopping inlining');
+    return content;
+  }
+
+  // Match import statements from internal files (./core/...)
+  const internalImportRegex = /^import\s+\{([^}]+)\}\s+from\s+['"]\.\/core\/([^'"]+)['"];?$/gm;
+
+  let match;
+  const importsToProcess = [];
+
+  // Collect all internal imports that haven't been processed yet
+  while ((match = internalImportRegex.exec(content)) !== null) {
+    const fullLine = match[0];
+    // Skip if we've already processed this exact import line
+    if (processedImports.has(fullLine)) {
+      continue;
+    }
+
+    const importList = match[1].split(',').map((i) => i.trim());
+    const modulePath = match[2];
+
+    const typeMappings = [];
+    for (const item of importList) {
+      if (item.includes(' as ')) {
+        const [original, alias] = item.split(' as ').map((s) => s.trim());
+        typeMappings.push({ original, alias, isAliased: true });
+      } else {
+        typeMappings.push({ original: item, alias: item, isAliased: false });
+      }
+    }
+
+    importsToProcess.push({
+      fullLine,
+      modulePath,
+      typeMappings,
+      matchIndex: match.index,
+    });
+  }
+
+  if (importsToProcess.length === 0) {
+    return content;
+  }
+
+  // Sort by position (reverse order) for safe removal
+  importsToProcess.sort((a, b) => b.matchIndex - a.matchIndex);
+
+  const inlinedTypes = [];
+  const importsToRemove = [];
+  const aliasReplacements = new Map(); // alias -> original or exported name
+  const filesVisitedThisRound = new Set();
+
+  for (const { fullLine, modulePath, typeMappings } of importsToProcess) {
+    // Mark this import as processed
+    processedImports.add(fullLine);
+
+    // Resolve file path
+    const filePath = resolveImportPath(`./core/${modulePath}`);
+    if (!filePath) {
+      // File not found - skip
+      continue;
+    }
+
+    // Check for circular dependency
+    if (visitedFiles.has(filePath)) {
+      // Circular dependency - skip this file but still remove the import
+      importsToRemove.push({ fullLine });
+      continue;
+    }
+
+    visitedFiles.add(filePath);
+    filesVisitedThisRound.add(filePath);
+
+    for (const { original, alias, isAliased } of typeMappings) {
+      // Check if type is already defined in the file
+      const alreadyDefined = new RegExp(
+        `^export\\s+declare\\s+(type|interface|class|enum|namespace)\\s+${original}\\b`,
+        'm'
+      ).test(content);
+
+      if (alreadyDefined) {
+        // Type is already inlined, just remove import and replace alias
+        if (isAliased && alias !== original) {
+          aliasReplacements.set(alias, original);
+        }
+        continue;
+      }
+
+      // Extract type definition from file
+      const typeDef = extractTypeDefinition(filePath, original);
+      if (typeDef) {
+        // Store replacement: Menu_2 -> Menu (or NavigationMenu if that's what's exported)
+        if (isAliased && alias !== original) {
+          aliasReplacements.set(alias, original);
+        }
+
+        // Keep original type name in definition
+        inlinedTypes.push({ definition: typeDef, typeName: original, alias });
+      }
+    }
+
+    // Mark import for removal
+    importsToRemove.push({ fullLine });
+  }
+
+  // Remove import lines
+  const uniqueImportsToRemove = new Set();
+  for (const { fullLine } of importsToRemove) {
+    uniqueImportsToRemove.add(fullLine);
+  }
+
+  let hasChanges = false;
+  for (const importLine of uniqueImportsToRemove) {
+    const before = content;
+    content = content.replace(new RegExp(`^${importLine.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*\\n?`, 'gm'), '');
+    content = content.replace(
+      new RegExp(`\\n${importLine.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*\\n?`, 'gm'),
+      '\n'
+    );
+    if (content !== before) {
+      hasChanges = true;
+    }
+  }
+
+  // Replace aliases with original type names or exported aliases
+  for (const [alias, original] of aliasReplacements) {
+    // Special case: Menu_2 should become NavigationMenu if that's what's exported
+    if (alias === 'Menu_2' && original === 'Menu') {
+      // Check if NavigationMenu is exported (from core/index.type.tsx export)
+      if (/^export\s+declare\s+(type|interface)\s+NavigationMenu\b/m.test(content)) {
+        const before = content;
+        content = content.replace(new RegExp(`\\b${alias}\\b`, 'g'), 'NavigationMenu');
+        if (content !== before) {
+          hasChanges = true;
+        }
+        continue;
+      }
+    }
+    // For other aliases, replace with original type name
+    const before = content;
+    const aliasRegex = new RegExp(`\\b${alias}\\b`, 'g');
+    content = content.replace(aliasRegex, original);
+    if (content !== before) {
+      hasChanges = true;
+    }
+  }
+
+  // Insert inlined types before the first non-import, non-declare statement
+  if (inlinedTypes.length > 0) {
+    const lines = content.split('\n');
+    let insertIndex = 0;
+
+    // Find where to insert (after all imports and declare statements)
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i].trim();
+      if (line.startsWith('import ') || line.startsWith('declare ')) {
+        insertIndex = i + 1;
+      } else if (line && !line.startsWith('//')) {
+        break;
+      }
+    }
+
+    const inlinedBlock = inlinedTypes.map((t) => t.definition).join('\n\n') + '\n';
+    lines.splice(insertIndex, 0, inlinedBlock);
+    content = lines.join('\n');
+    hasChanges = true;
+  }
+
+  // Only recurse if we made changes and there are still imports to process
+  if (hasChanges) {
+    const hasMoreImports = /^import\s+.+\s+from\s+['"]\.\/core\//m.test(content);
+    if (hasMoreImports) {
+      // Clean up visited files for this round (keep them for circular dependency detection)
+      // But allow processing other types from the same file if needed
+      return inlineAllInternalTypes(content, visitedFiles, processedImports, depth + 1);
+    }
+  }
+
+  return content;
+}
 
 function fixTypeBundle() {
   console.log('🔧 Fixing type bundle...\n');
@@ -180,67 +452,12 @@ function fixTypeBundle() {
     console.log('✓ Resolved path aliases to relative paths');
   }
 
-  // 4.5. Remove imports for types that are already defined inline
-  // This fixes the issue where API Extractor both imports and inlines re-exported types
-  const beforeImportRemoval = content;
-  const internalImportRegex = /^import\s+\{([^}]+)\}\s+from\s+['"]\.\/core\/([^'"]+)['"];?$/gm;
-  const definedTypes = new Set();
-  const typeAliasMap = new Map(); // alias -> original name
-  
-  // Collect all type/interface definitions that are already in the file
-  const typeDefRegex = /^export\s+declare\s+(type|interface|class|enum|namespace)\s+(\w+)/gm;
-  let typeMatch;
-  while ((typeMatch = typeDefRegex.exec(content)) !== null) {
-    definedTypes.add(typeMatch[2]);
-  }
-  
-  // Remove imports for types that are already defined, and replace aliases
-  let importMatch;
-  const importsToProcess = [];
-  while ((importMatch = internalImportRegex.exec(content)) !== null) {
-    const importList = importMatch[1].split(',').map(i => i.trim());
-    const modulePath = importMatch[2];
-    
-    const typeMappings = [];
-    for (const item of importList) {
-      if (item.includes(' as ')) {
-        const [original, alias] = item.split(' as ').map(s => s.trim());
-        typeMappings.push({ original, alias, isAliased: true });
-      } else {
-        typeMappings.push({ original: item, alias: item, isAliased: false });
-      }
-    }
-    
-    // Check if all original types are already defined
-    const allDefined = typeMappings.every(({ original }) => definedTypes.has(original));
-    if (allDefined) {
-      importsToProcess.push({
-        fullLine: importMatch[0],
-        typeMappings,
-        modulePath
-      });
-    }
-  }
-  
-  // Remove imports and replace aliases with original type names
-  for (const { fullLine, typeMappings } of importsToProcess) {
-    // Remove the import line
-    content = content.replace(new RegExp(`^${fullLine.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*\\n?`, 'gm'), '');
-    content = content.replace(new RegExp(`\\n${fullLine.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*\\n?`, 'gm'), '\n');
-    
-    // Replace alias usage with original type name
-    for (const { original, alias, isAliased } of typeMappings) {
-      if (isAliased && alias !== original) {
-        // Replace alias with original type name (but be careful not to replace in strings/comments)
-        // Use word boundaries to avoid partial matches
-        const aliasRegex = new RegExp(`\\b${alias}\\b`, 'g');
-        content = content.replace(aliasRegex, original);
-      }
-    }
-  }
-  
-  if (content !== beforeImportRemoval) {
-    console.log(`✓ Removed ${importsToProcess.length} duplicate import(s) and replaced aliases for already-inlined types`);
+  // 4.5. Inline all internal type imports
+  // This reads type definitions from imported files and inlines them, removing all internal dependencies
+  const beforeInlining = content;
+  content = inlineAllInternalTypes(content);
+  if (content !== beforeInlining) {
+    console.log('✓ Inlined all internal type definitions and removed internal imports');
   }
 
   // 5. Consolidate duplicate imports from the same module
