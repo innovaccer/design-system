@@ -20,6 +20,8 @@ import {
   safePolygon,
 } from '@floating-ui/react';
 import { createStyleFromClass } from './utils';
+import OverlayManager from '@/utils/OverlayManager';
+import { getWrapperElement, getUpdatedZIndex } from '@/utils/overlayHelper';
 
 export interface PopperWrapperProps {
   initialOpen?: boolean;
@@ -227,6 +229,9 @@ export const PopoverContent = React.forwardRef<HTMLDivElement, React.HTMLProps<H
 ) {
   const { context: floatingContext, ...context } = usePopoverContext();
   const ref = useMergeRefs([context.refs.setFloating, propRef]);
+  const popoverRef = React.useRef<HTMLDivElement | null>(null);
+  const mergedRef = useMergeRefs([ref, popoverRef]);
+  const [zIndex, setZIndex] = React.useState<number | undefined>(undefined);
 
   // if (!floatingContext.open) return null;
 
@@ -258,6 +263,56 @@ export const PopoverContent = React.forwardRef<HTMLDivElement, React.HTMLProps<H
     hasValidPositionRef.current = false;
   }
 
+  // Integrate with OverlayManager for proper layering with other components
+  React.useEffect(() => {
+    if (!context.open || !popoverRef.current) {
+      if (popoverRef.current) {
+        OverlayManager.remove(popoverRef.current);
+        setZIndex(undefined);
+      }
+      return;
+    }
+
+    // Register with OverlayManager
+    OverlayManager.add(popoverRef.current);
+
+    // Calculate z-index: find max z-index among all overlay elements
+    const calculateZIndex = () => {
+      if (!popoverRef.current || typeof document === 'undefined') return;
+
+      // First try using existing helper for Overlay-container elements
+      const overlayWrapper = getWrapperElement();
+      let maxZIndex = getUpdatedZIndex({
+        element: overlayWrapper,
+        containerClassName: '.Overlay-container--open',
+        elementRef: { current: popoverRef.current },
+      });
+
+      // Also check all overlay elements in document.body (comprehensive fallback)
+      const allOverlays = document.querySelectorAll('[data-layer="true"], .Overlay-container--open');
+      allOverlays.forEach((element) => {
+        if (element !== popoverRef.current) {
+          const zIndexValue = parseInt(window.getComputedStyle(element).zIndex || '0', 10);
+          if (zIndexValue > 0) {
+            maxZIndex = Math.max(maxZIndex || 0, zIndexValue);
+          }
+        }
+      });
+
+      // Set z-index if found, otherwise undefined (uses default CSS)
+      setZIndex(maxZIndex && maxZIndex > 0 ? maxZIndex + 10 : undefined);
+    };
+
+    // Calculate after DOM update
+    requestAnimationFrame(calculateZIndex);
+
+    return () => {
+      if (popoverRef.current) {
+        OverlayManager.remove(popoverRef.current);
+      }
+    };
+  }, [context.open]);
+
   // Determine if we should show the content
   const canShow = hasReference && ((isValidPosition && hasCalculatedPosition) || hasValidPositionRef.current);
   const shouldHide = context.middlewareData.hide?.referenceHidden || context.middlewareData.hide?.escaped || !canShow;
@@ -267,10 +322,11 @@ export const PopoverContent = React.forwardRef<HTMLDivElement, React.HTMLProps<H
     // // modal={context.modal}
     // initialFocus={-1}>
     <div
-      ref={ref}
+      ref={mergedRef}
       style={{
         ...context.floatingStyles,
         ...style,
+        zIndex: zIndex,
         visibility: shouldHide ? 'hidden' : 'visible',
         // Completely hide when position is not ready to prevent (0,0) flash
         opacity: canShow ? undefined : 0,
