@@ -439,8 +439,10 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
           open={open}
           onToggle={this.onToggleHandler}
         >
-          {children}
-          {this.renderCalendar()}
+          <div className="d-flex">
+            {children}
+            {this.renderCalendar()}
+          </div>
         </Popover>
       );
     }
