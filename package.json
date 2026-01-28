@@ -64,7 +64,7 @@
     "@storybook/addon-toolbars": "6.4.8",
     "@storybook/addon-viewport": "6.4.8",
     "@storybook/preset-typescript": "3.0.0",
-    "@storybook/react": "6.5.14",
+    "@storybook/react": "10.2.1",
     "@storybook/storybook-deployer": "2.8.10",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^10.4.7",
