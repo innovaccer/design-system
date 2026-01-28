@@ -4,6 +4,6 @@
   "version": "0.0.1",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.2.6"
+    "@actions/core": "^2.0.0"
   }
 }
