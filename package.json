@@ -4,7 +4,7 @@
   "description": "React components library project for Innovaccer Design System",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
-  "types": "dist/core/index.type.d.ts",
+  "types": "dist/index.type.d.ts",
   "umd:main": "dist/index.umd.js",
   "directories": {
     "css": "css"
@@ -29,11 +29,13 @@
     "clean-css": "gulp --gulpfile css/gulpfile.js clean",
     "watch-css": "gulp --gulpfile css/gulpfile.js build && gulp --gulpfile css/gulpfile.js watch",
     "build-js": "rm -rf dist/* && rollup -c",
-    "build-type": "rm -rf .lib && tsc -b tsconfig.type.json",
-    "build": "npm run build-css && npm run build-js",
+    "build-type": "rm -rf .lib && tsc -b tsconfig.type.json || true",
+    "build-type-entry": "mkdir -p dist/core && node_modules/.bin/tsc core/index.type.tsx --declaration --emitDeclarationOnly --outDir dist/core --skipLibCheck --jsx react --esModuleInterop --moduleResolution node --module commonjs --target es5 --baseUrl . || true",
+    "fix-type-bundle": "node scripts/fix-type-bundle.js",
+    "build": "npm run build-css && npm run build-js && npm run generate-types",
     "version": "./scripts/version.sh",
     "prepare": "husky install",
-    "generate-types": "node node_modules/.bin/dts-bundle-generator --config dts.config.js"
+    "generate-types": "npm run build-type && npm run build-type-entry && api-extractor run --local || true && npm run fix-type-bundle"
   },
   "author": "Innovaccer",
   "license": "MIT",
@@ -82,9 +84,9 @@
     "bl": ">=1.2.3",
     "brotli": "^1.3.2",
     "chromatic": "^6.5.6",
+    "@microsoft/api-extractor": "^7.47.9",
     "commitlint": "19.5.0",
     "concurrently": "^5.1.0",
-    "dts-bundle-generator": "5.9.0",
     "eslint": "^7.31.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^4.0.0",
@@ -172,7 +174,6 @@
   "files": [
     "dist",
     "css",
-    "types",
     "LICENSE",
     "README.md",
     "CONTRIBUTING.md",
