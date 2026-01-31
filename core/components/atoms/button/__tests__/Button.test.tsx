@@ -502,3 +502,20 @@ describe('Button component with styleType prop', () => {
     });
   });
 });
+
+describe('Button component accessibility', () => {
+  it('sets aria-label from tooltip for icon-only button', () => {
+    const { getByTestId } = render(<Button icon="events" tooltip="Events" />);
+    expect(getByTestId('DesignSystem-Button')).toHaveAttribute('aria-label', 'Events');
+  });
+
+  it('sets aria-busy when loading', () => {
+    const { getByTestId } = render(<Button loading={true}>Loading</Button>);
+    expect(getByTestId('DesignSystem-Button')).toHaveAttribute('aria-busy', 'true');
+  });
+
+  it('sets a loading aria-label when no children are provided', () => {
+    const { getByTestId } = render(<Button loading={true} />);
+    expect(getByTestId('DesignSystem-Button')).toHaveAttribute('aria-label', 'Loading');
+  });
+});

@@ -67,6 +67,8 @@ exports[`Button component
 <body>
   <div>
     <button
+      aria-busy="true"
+      aria-label="Button"
       class="Button Button--regular Button--alert Button--iconAlign-left"
       data-test="DesignSystem-Button"
       disabled=""
@@ -185,6 +187,8 @@ exports[`Button component
 <body>
   <div>
     <button
+      aria-busy="true"
+      aria-label="Button"
       class="Button Button--regular Button--basic Button--iconAlign-left"
       data-test="DesignSystem-Button"
       disabled=""
@@ -303,6 +307,8 @@ exports[`Button component
 <body>
   <div>
     <button
+      aria-busy="true"
+      aria-label="Button"
       class="Button Button--regular Button--primary Button--iconAlign-left"
       data-test="DesignSystem-Button"
       disabled=""
@@ -421,6 +427,8 @@ exports[`Button component
 <body>
   <div>
     <button
+      aria-busy="true"
+      aria-label="Button"
       class="Button Button--regular Button--transparent Button--iconAlign-left"
       data-test="DesignSystem-Button"
       disabled=""
@@ -898,6 +906,8 @@ exports[`Button component with no children
 <body>
   <div>
     <button
+      aria-busy="true"
+      aria-label="Loading"
       class="Button Button--regular Button--regularSquare Button--alert"
       data-test="DesignSystem-Button"
       disabled=""
@@ -933,6 +943,8 @@ exports[`Button component with no children
 <body>
   <div>
     <button
+      aria-busy="true"
+      aria-label="Loading"
       class="Button Button--regular Button--regularSquare Button--basic"
       data-test="DesignSystem-Button"
       disabled=""
@@ -968,6 +980,8 @@ exports[`Button component with no children
 <body>
   <div>
     <button
+      aria-busy="true"
+      aria-label="Loading"
       class="Button Button--regular Button--regularSquare Button--primary"
       data-test="DesignSystem-Button"
       disabled=""
@@ -1003,6 +1017,8 @@ exports[`Button component with no children
 <body>
   <div>
     <button
+      aria-busy="true"
+      aria-label="Loading"
       class="Button Button--regular Button--regularSquare Button--transparent"
       data-test="DesignSystem-Button"
       disabled=""

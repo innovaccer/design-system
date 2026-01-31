@@ -128,6 +128,7 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
     className,
     tooltip,
     iconType,
+    ['aria-label']: ariaLabel,
     ...rest
   } = props;
 
@@ -176,6 +177,9 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
 
   const spinnerSize = size === 'large' && children ? 'small' : 'xsmall';
   const iconSize = size === 'tiny' ? 14 : largeIcon && !children ? sizeMapping[size] + 4 : sizeMapping[size];
+  const loadingLabel = children ? String(children) : tooltip || 'Loading';
+  const computedAriaLabel =
+    ariaLabel || (!children && icon ? tooltip : undefined) || (loading ? loadingLabel : undefined);
 
   return (
     <button
@@ -185,6 +189,8 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
       className={buttonClass}
       disabled={disabled || loading}
       tabIndex={tabIndex}
+      aria-busy={loading}
+      aria-label={computedAriaLabel}
       {...rest}
     >
       {loading ? (
