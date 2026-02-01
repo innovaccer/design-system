@@ -184,9 +184,6 @@ export const Meter = (props: MeterProps) => {
       aria-valuenow={value}
       aria-label={ariaLabel}
       aria-valuetext={}
-      aria-valuetext={}
-      aria-valuetext={}
-      aria-valuetext={}
       {...rest}
     >
       {steps}
