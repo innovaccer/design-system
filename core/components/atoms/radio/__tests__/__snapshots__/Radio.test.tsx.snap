@@ -14,6 +14,7 @@ exports[`Radio component
         data-test="DesignSystem-Radio-OuterWrapper"
       >
         <input
+          aria-describedby="radio-helptext"
           class="Radio-input"
           data-test="DesignSystem-Radio-Input"
           id="Options-Radio-Test-uid"
@@ -68,6 +69,7 @@ exports[`Radio component
         data-test="DesignSystem-Radio-OuterWrapper"
       >
         <input
+          aria-describedby="radio-helptext"
           class="Radio-input"
           data-test="DesignSystem-Radio-Input"
           disabled=""
@@ -123,6 +125,7 @@ exports[`Radio component
         data-test="DesignSystem-Radio-OuterWrapper"
       >
         <input
+          aria-describedby="radio-helptext"
           class="Radio-input"
           data-test="DesignSystem-Radio-Input"
           id="Options-Radio-Test-uid"
@@ -177,6 +180,7 @@ exports[`Radio component
         data-test="DesignSystem-Radio-OuterWrapper"
       >
         <input
+          aria-describedby="radio-helptext"
           class="Radio-input"
           data-test="DesignSystem-Radio-Input"
           id="Options-Radio-Test-uid"
