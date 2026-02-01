@@ -173,6 +173,8 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     ['indeterminate--tiny']: indeterminate && size === 'tiny',
   });
 
+  const helpTextId = helpText ? `${id}-helptext` : undefined;
+
   return (
     <>
       <div data-test="DesignSystem-Checkbox" className={CheckboxClass}>
@@ -191,8 +193,10 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
             tabIndex={tabIndex}
             id={id}
             data-test="DesignSystem-Checkbox-InputBox"
+            aria-invalid={error}
+            aria-describedby={helpTextId}
           />
-          <span className={CheckboxWrapper} data-test="DesignSystem-Checkbox-Icon">
+          <span className={CheckboxWrapper} data-test="DesignSystem-Checkbox-Icon" aria-hidden="true">
             {IconMapper && <CheckboxIcon name={IconMapper} />}
           </span>
         </div>
@@ -212,6 +216,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
             )}
             {helpText && (
               <Text
+                id={helpTextId}
                 data-test="DesignSystem-Checkbox-HelpText"
                 size="small"
                 appearance={disabled ? 'disabled' : 'subtle'}
