@@ -267,7 +267,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
         </div>
       )}
       <input
-        data-test="DesignSystem-Input"
+        data-test="DesignSystem-Input" aria-invalid={error} aria-describedby={info ? "input-info" : undefined}
         {...baseProps}
         {...rest}
         ref={ref}
