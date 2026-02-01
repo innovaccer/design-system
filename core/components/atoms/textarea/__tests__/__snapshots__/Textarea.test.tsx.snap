@@ -100,6 +100,7 @@ exports[`Textarea component size prop snapshot validation matches snapshot for s
 exports[`Textarea component size prop snapshot validation matches snapshot for small size with all modifiers 1`] = `
 <DocumentFragment>
   <textarea
+    aria-invalid="true"
     class="Textarea Textarea--error Textarea--readOnly Textarea--small"
     data-test="DesignSystem-Textarea"
     name="complex-textarea"
