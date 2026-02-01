@@ -8,6 +8,7 @@ exports[`Text component
     <span
       class="Text Text--default Text--regular"
       data-test="DesignSystem-Text"
+      role="text"
     >
       Sample String
     </span>
@@ -23,6 +24,7 @@ exports[`Text component
     <span
       class="Text Text--destructive Text--regular"
       data-test="DesignSystem-Text"
+      role="text"
     >
       Sample String
     </span>
@@ -38,6 +40,7 @@ exports[`Text component
     <span
       class="Text Text--disabled Text--regular"
       data-test="DesignSystem-Text"
+      role="text"
     >
       Sample String
     </span>
@@ -53,6 +56,7 @@ exports[`Text component
     <span
       class="Text Text--link Text--regular"
       data-test="DesignSystem-Text"
+      role="text"
     >
       Sample String
     </span>
@@ -68,6 +72,7 @@ exports[`Text component
     <span
       class="Text Text--subtle Text--regular"
       data-test="DesignSystem-Text"
+      role="text"
     >
       Sample String
     </span>
@@ -83,6 +88,7 @@ exports[`Text component
     <span
       class="Text Text--success Text--regular"
       data-test="DesignSystem-Text"
+      role="text"
     >
       Sample String
     </span>
@@ -98,6 +104,7 @@ exports[`Text component
     <span
       class="Text Text--white Text--regular"
       data-test="DesignSystem-Text"
+      role="text"
     >
       Sample String
     </span>
@@ -113,6 +120,7 @@ exports[`Text component
     <span
       class="Text Text--default Text--large"
       data-test="DesignSystem-Text"
+      role="text"
     >
       Sample String
     </span>
@@ -128,6 +136,7 @@ exports[`Text component
     <span
       class="Text Text--default Text--regular"
       data-test="DesignSystem-Text"
+      role="text"
     >
       Sample String
     </span>
@@ -143,6 +152,7 @@ exports[`Text component
     <span
       class="Text Text--default Text--small"
       data-test="DesignSystem-Text"
+      role="text"
     >
       Sample String
     </span>
@@ -160,6 +170,7 @@ Object {
       <span
         class="Text Text--default Text--regular"
         data-test="DesignSystem-Text"
+        role="text"
       >
         Sample String
       </span>
@@ -169,6 +180,7 @@ Object {
     <span
       class="Text Text--default Text--regular"
       data-test="DesignSystem-Text"
+      role="text"
     >
       Sample String
     </span>
@@ -237,6 +249,7 @@ Object {
       <span
         class="Text Text--default Text--regular Text--small"
         data-test="DesignSystem-Text"
+        role="text"
       >
         Sample String
       </span>
@@ -246,6 +259,7 @@ Object {
     <span
       class="Text Text--default Text--regular Text--small"
       data-test="DesignSystem-Text"
+      role="text"
     >
       Sample String
     </span>
@@ -312,6 +326,7 @@ exports[`Text component
     <span
       class="Text Text--default Text--medium Text--regular"
       data-test="DesignSystem-Text"
+      role="text"
     >
       Sample String
     </span>
@@ -327,6 +342,7 @@ exports[`Text component
     <span
       class="Text Text--default Text--strong Text--regular"
       data-test="DesignSystem-Text"
+      role="text"
     >
       Sample String
     </span>
