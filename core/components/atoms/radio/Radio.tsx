@@ -114,7 +114,11 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
           onChange={onChange}
           className={styles['Radio-input']}
           id={id}
-          data-test="DesignSystem-Radio-Input"
+          data-test="DesignSystem-Radio-Input" aria-describedby={helpText ? "radio-helptext" : undefined}
+          aria-describedby={helpText ? 'radio-helptext' : undefined}
+          aria-describedby={helpText ? 'radio-helptext' : undefined}
+          aria-invalid={error}
+          aria-describedby={helpText ? 'radio-helptext' : undefined}
           {...rest}
         />
         <span data-test="DesignSystem-Radio-wrapper" className={RadioWrapper} />
