@@ -21,7 +21,7 @@ export interface PillsProps extends BaseProps {
 }
 
 export const Pills = (props: PillsProps) => {
-  const { appearance, children, subtle, className } = props;
+  const { appearance, children, subtle, className, ...rest } = props;
 
   const baseProps = extractBaseProps(props);
 
