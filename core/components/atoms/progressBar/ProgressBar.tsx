@@ -53,7 +53,15 @@ export const ProgressBar = (props: ProgressBarProps) => {
   });
 
   return (
-    <div data-test="DesignSystem-ProgressBar" {...baseProps} className={ProgressBarClass}>
+    <div
+      data-test="DesignSystem-ProgressBar"
+      role="progressbar"
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-valuenow={value}
+      {...baseProps}
+      className={ProgressBarClass}
+    >
       <div data-test="DesignSystem-ProgressBar-Indicator" className={ProgressIndicatorClass} style={style} />
     </div>
   );
