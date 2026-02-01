@@ -102,9 +102,9 @@ export const Message = (props: MessageProps) => {
   };
 
   return (
-    <div data-test="DesignSystem-Message" {...baseProps} className={MessageClass}>
+    <div data-test="DesignSystem-Message" role="alert" {...baseProps} className={MessageClass}>
       <Icon
-        data-test="DesignSystem-Message--Icon"
+        data-test="DesignSystem-Message--Icon" aria-hidden="true"
         name={IconMapping[appearance]}
         size={size === 'small' ? 14 : 16}
         appearance={appearance}
