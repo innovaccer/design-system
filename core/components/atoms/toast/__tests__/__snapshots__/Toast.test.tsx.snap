@@ -6,7 +6,9 @@ exports[`Toast component
 <body>
   <div>
     <div
+      aria-live="polite"
       class="Toast Toast--alert"
+      role="status"
     >
       <i
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--alert"
@@ -50,7 +52,9 @@ exports[`Toast component
 <body>
   <div>
     <div
+      aria-live="polite"
       class="Toast Toast--info"
+      role="status"
     >
       <i
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--info"
@@ -94,7 +98,9 @@ exports[`Toast component
 <body>
   <div>
     <div
+      aria-live="polite"
       class="Toast Toast--success"
+      role="status"
     >
       <i
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--success"
@@ -138,7 +144,9 @@ exports[`Toast component
 <body>
   <div>
     <div
+      aria-live="polite"
       class="Toast Toast--warning"
+      role="status"
     >
       <i
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--warning"
@@ -182,7 +190,9 @@ exports[`Toast component
 <body>
   <div>
     <div
+      aria-live="polite"
       class="Toast Toast--withMessage Toast--alert"
+      role="status"
     >
       <i
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--alert"
@@ -232,7 +242,9 @@ exports[`Toast component
 <body>
   <div>
     <div
+      aria-live="polite"
       class="Toast Toast--withMessage Toast--alert"
+      role="status"
     >
       <i
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--alert"
@@ -296,7 +308,9 @@ exports[`Toast component
 <body>
   <div>
     <div
+      aria-live="polite"
       class="Toast Toast--withMessage Toast--info"
+      role="status"
     >
       <i
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--info"
@@ -346,7 +360,9 @@ exports[`Toast component
 <body>
   <div>
     <div
+      aria-live="polite"
       class="Toast Toast--withMessage Toast--info"
+      role="status"
     >
       <i
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--info"
@@ -410,7 +426,9 @@ exports[`Toast component
 <body>
   <div>
     <div
+      aria-live="polite"
       class="Toast Toast--withMessage Toast--success"
+      role="status"
     >
       <i
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--success"
@@ -460,7 +478,9 @@ exports[`Toast component
 <body>
   <div>
     <div
+      aria-live="polite"
       class="Toast Toast--withMessage Toast--success"
+      role="status"
     >
       <i
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--success"
@@ -524,7 +544,9 @@ exports[`Toast component
 <body>
   <div>
     <div
+      aria-live="polite"
       class="Toast Toast--withMessage Toast--warning"
+      role="status"
     >
       <i
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--warning"
@@ -574,7 +596,9 @@ exports[`Toast component
 <body>
   <div>
     <div
+      aria-live="polite"
       class="Toast Toast--withMessage Toast--warning"
+      role="status"
     >
       <i
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--warning"
