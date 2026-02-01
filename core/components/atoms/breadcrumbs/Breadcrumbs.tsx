@@ -43,7 +43,7 @@ interface renderItemProps {
   showTooltip?: boolean;
 }
 
-const RenderLink = ({ item, onClick }: renderLinkProps) => {
+const RenderLink = ({ item, onClick, isLast }: renderLinkProps & { isLast?: boolean }) => {
   const onClickHandler = (ev: React.MouseEvent) => {
     if (onClick) {
       ev.preventDefault();
@@ -64,23 +64,28 @@ const RenderLink = ({ item, onClick }: renderLinkProps) => {
       onClick={onClickHandler}
       appearance="subtle"
       size="tiny"
+      aria-current={isLast ? 'page' : undefined}
     >
       {item.label}
     </Link>
   );
 };
 
-const RenderItem = ({ item, onClick, index, showTooltip }: renderItemProps) => {
+const RenderItem = ({ item, onClick, index, showTooltip, isLast }: renderItemProps & { isLast?: boolean }) => {
   return (
     <div key={index} className={styles['Breadcrumbs-item']} data-test="DesignSystem-Breadcrumbs-item">
       {showTooltip ? (
         <Tooltip tooltip={item.label} position="bottom">
-          <RenderLink item={item} onClick={onClick} />
+          <RenderLink item={item} onClick={onClick} isLast={isLast} />
         </Tooltip>
       ) : (
-        <RenderLink item={item} onClick={onClick} />
+        <RenderLink item={item} onClick={onClick} isLast={isLast} />
       )}
-      <span className={styles['Breadcrumbs-itemSeparator']}>/</span>
+      {!isLast && (
+        <span className={styles['Breadcrumbs-itemSeparator']} aria-hidden="true">
+          /
+        </span>
+      )}
     </div>
   );
 };
@@ -134,22 +139,34 @@ export const Breadcrumbs = (props: BreadcrumbsProps) => {
   );
 
   return (
-    <div data-test="DesignSystem-Breadcrumbs" {...baseProps} className={BreadcrumbClass}>
-      {list.length <= 4 ? (
-        list.map((item, index) => {
-          return <RenderItem key={index} item={item} onClick={onClick} showTooltip={showTooltip} />;
-        })
-      ) : (
-        <>
-          <RenderItem item={list[0]} onClick={onClick} showTooltip={showTooltip} />
-          <div className="d-flex align-items-center">
-            {renderDropdown(list.slice(1, list.length - 1), onClick)}
-            <span className={styles['Breadcrumbs-itemSeparator']}>/</span>
-          </div>
-          <RenderItem item={list[list.length - 1]} onClick={onClick} showTooltip={showTooltip} />
-        </>
-      )}
-    </div>
+    <nav data-test="DesignSystem-Breadcrumbs" {...baseProps} className={BreadcrumbClass} aria-label="Breadcrumb">
+      <ol className="d-flex p-0 m-0 list-unstyled">
+        {list.length <= 4 ? (
+          list.map((item, index) => {
+            return (
+              <li key={index}>
+                <RenderItem item={item} onClick={onClick} showTooltip={showTooltip} isLast={index === list.length - 1} />
+              </li>
+            );
+          })
+        ) : (
+          <>
+            <li>
+              <RenderItem item={list[0]} onClick={onClick} showTooltip={showTooltip} />
+            </li>
+            <li className="d-flex align-items-center">
+              {renderDropdown(list.slice(1, list.length - 1), onClick)}
+              <span className={styles['Breadcrumbs-itemSeparator']} aria-hidden="true">
+                /
+              </span>
+            </li>
+            <li>
+              <RenderItem item={list[list.length - 1]} onClick={onClick} showTooltip={showTooltip} isLast={true} />
+            </li>
+          </>
+        )}
+      </ol>
+    </nav>
   );
 };
 
