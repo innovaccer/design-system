@@ -106,7 +106,7 @@ export const Toast = (props: ToastProps) => {
   };
 
   return (
-    <div {...baseProps} className={wrapperClass}>
+    <div {...baseProps} className={wrapperClass} role="status" aria-live="polite">
       {icon && <Icon name={icon} className={iconClass('left')} />}
       <div className={styles['Toast-body']}>
         <div className={titleClass}>
