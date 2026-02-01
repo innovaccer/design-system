@@ -94,6 +94,10 @@ export const Chip = (props: ChipProps) => {
   const clearbutton = type === 'action' ? false : clearButton;
   const select = type === 'selection' && selected ? true : false;
 
+  const role = type === 'selection' ? 'option' : 'button';
+  const ariaSelected = type === 'selection' ? !!selected : undefined;
+  const ariaPressed = type === 'action' ? !!selected : undefined;
+
   const chipClass = classNames(
     {
       [styles.Chip]: true,
@@ -124,6 +128,9 @@ export const Chip = (props: ChipProps) => {
       name={name}
       labelPrefix={labelPrefix}
       maxWidth={maxWidth}
+      role={role}
+      aria-selected={ariaSelected}
+      aria-pressed={ariaPressed}
     />
   );
 };

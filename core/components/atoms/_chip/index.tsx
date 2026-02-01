@@ -22,6 +22,9 @@ export interface GenericChipProps extends BaseProps {
   name: Name;
   maxWidth: string | number;
   size?: TChipSize;
+  role?: string;
+  'aria-selected'?: boolean;
+  'aria-pressed'?: boolean;
 }
 
 export const GenericChip = (props: GenericChipProps) => {
@@ -38,6 +41,9 @@ export const GenericChip = (props: GenericChipProps) => {
     iconType,
     maxWidth,
     size = 'regular',
+    role = 'button',
+    'aria-selected': ariaSelected,
+    'aria-pressed': ariaPressed,
   } = props;
   const wrapperStyle = { maxWidth: maxWidth };
   const [isTextTruncated, setIsTextTruncated] = React.useState(false);
@@ -73,13 +79,14 @@ export const GenericChip = (props: GenericChipProps) => {
   };
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' || event.key === ' ') {
       onCloseHandler(event);
     }
   };
 
   const onChipKeyDownHandler = (event: React.KeyboardEvent) => {
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
       onClickHandler();
     }
   };
@@ -156,7 +163,9 @@ export const GenericChip = (props: GenericChipProps) => {
         tabIndex={disabled ? -1 : 0}
         style={wrapperStyle}
         data-test="DesignSystem-GenericChip--Wrapper"
-        role="button"
+        role={role}
+        aria-selected={ariaSelected}
+        aria-pressed={ariaPressed}
         onKeyDown={onChipKeyDownHandler}
         {...baseProps}
         className={chipWrapperClass}
@@ -170,19 +179,21 @@ export const GenericChip = (props: GenericChipProps) => {
             size={IconSize}
             appearance={iconAppearance('left')}
             className={iconClass('left')}
+            aria-hidden="true"
           />
         )}
         {renderLabel()}
         {clearButton && (
           <div
             role="button"
+            aria-label="Remove"
             onClick={onCloseHandler}
             tabIndex={disabled ? -1 : 0}
             onKeyDown={onKeyDownHandler}
             className={iconClass('right')}
             data-test="DesignSystem-GenericChip--clearButton"
           >
-            <Icon name="clear" appearance={iconAppearance('right')} size={ClearIconSize} />
+            <Icon name="clear" appearance={iconAppearance('right')} size={ClearIconSize} aria-hidden="true" />
           </div>
         )}
       </div>
