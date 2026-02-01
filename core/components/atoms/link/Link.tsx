@@ -80,7 +80,7 @@ export const Link = (props: LinkProps) => {
       data-test="DesignSystem-Link"
       className={classes}
       componentType="a"
-      tabIndex={disabled ? -1 : 0}
+      tabIndex={disabled ? -1 : 0} aria-disabled={disabled}
       {...rest}
     >
       {children}
