@@ -35,7 +35,12 @@ export const Pills = (props: PillsProps) => {
   );
 
   return (
-    <span data-test="DesignSystem-Pills" {...baseProps} className={classes}>
+    <span
+      data-test="DesignSystem-Pills"
+      role={rest['aria-label'] ? 'status' : undefined}
+      {...baseProps}
+      className={classes}
+    >
       {children}
     </span>
   );
