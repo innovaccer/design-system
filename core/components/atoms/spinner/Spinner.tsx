@@ -56,7 +56,7 @@ export const Spinner = (props: SpinnerProps) => {
   };
 
   return (
-    <svg {...baseProps} className={wrapperClasses} {...svgProps}>
+    <svg {...baseProps} role="status" aria-live="polite" className={wrapperClasses} {...svgProps}>
       <circle className={circleClasses} {...circleProps} />
     </svg>
   );
