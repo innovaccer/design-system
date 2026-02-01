@@ -136,6 +136,7 @@ exports[`Input Component - Error State with Icon Snapshot Tests
       style="min-width: 256px;"
     >
       <input
+        aria-invalid="true"
         class="Input-input Input-input--regular"
         data-test="DesignSystem-Input"
         name="name"
@@ -171,6 +172,7 @@ exports[`Input Component - Error State with Icon Snapshot Tests
         </i>
       </div>
       <input
+        aria-invalid="true"
         class="Input-input Input-input--regular"
         data-test="DesignSystem-Input"
         name="name"
