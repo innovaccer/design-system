@@ -52,11 +52,11 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, ref) =>
   );
 
   return (
-    <GenericText ref={ref} data-test="DesignSystem-Text" {...rest} className={classes} componentType="span" role="text">
+    <GenericText ref={ref} data-test="DesignSystem-Text" {...rest} className={classes} componentType="span">
       {children}
     </GenericText>
   );
-});
+};
 
 Text.displayName = 'Text';
 
