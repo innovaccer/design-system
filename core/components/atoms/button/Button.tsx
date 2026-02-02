@@ -185,6 +185,9 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
       className={buttonClass}
       disabled={disabled || loading}
       tabIndex={tabIndex}
+      aria-label={!children && tooltip ? tooltip : undefined}
+      aria-busy={loading}
+      aria-live={loading ? 'polite' : undefined}
       {...rest}
     >
       {loading ? (
@@ -201,7 +204,13 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
         <>
           {icon && (
             <div className={iconClass} data-test="DesignSystem-Button--Icon-Wrapper">
-              <Icon data-test="DesignSystem-Button--Icon" name={icon} type={iconType} size={iconSize} />
+              <Icon
+                data-test="DesignSystem-Button--Icon"
+                name={icon}
+                type={iconType}
+                size={iconSize}
+                aria-hidden="true"
+              />
             </div>
           )}
           {children && <span className={styles['Button-text']}>{children}</span>}
