@@ -247,6 +247,9 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
 
   const iconSize = size === 'tiny' ? 14 : sizeMapping[size];
 
+  const inputId = props.id || (name ? `input-${name}` : undefined);
+  const infoId = inputId ? `${inputId}-info` : undefined;
+
   return (
     <div
       data-test="DesignSystem-InputWrapper"
@@ -269,9 +272,10 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
       <input
         data-test="DesignSystem-Input"
         aria-invalid={error}
-        aria-describedby={info ? 'input-info' : undefined}
+        aria-describedby={info ? infoId : undefined}
         {...baseProps}
         {...rest}
+        id={inputId}
         ref={ref}
         name={name}
         type={type}
@@ -297,7 +301,13 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
         ''
       ) : info ? (
         <Tooltip position="bottom" tooltip={info}>
-          {trigger}
+          <div
+            className={rightIconClass} // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+            tabIndex={0}
+            id={infoId}
+          >
+            <Icon name={'info'} size={sizeMapping[size]} className={styles['Input-icon--right']} />
+          </div>
         </Tooltip>
       ) : actionIcon && (value || defaultValue) ? (
         actionIcon
