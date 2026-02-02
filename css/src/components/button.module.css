@@ -29,7 +29,8 @@
 }
 
 .Button:focus {
-  outline: 0;
+  outline: var(--border-width-05) solid var(--focus-primary);
+  outline-offset: var(--spacing-05);
 }
 
 .Button--iconAlign-right {
@@ -128,7 +129,8 @@
 }
 
 .Button--basic:focus {
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+  outline: var(--border-width-05) solid var(--focus-primary);
+  outline-offset: var(--spacing-05);
 }
 
 .Button--basic:disabled {
@@ -149,7 +151,8 @@
 }
 
 .Button--primary:focus {
-  box-shadow: var(--shadow-spread) var(--primary-shadow);
+  outline: var(--border-width-05) solid var(--focus-primary);
+  outline-offset: var(--spacing-05);
 }
 
 .Button--primary:disabled {
@@ -169,7 +172,8 @@
 }
 
 .Button--success:focus {
-  box-shadow: var(--shadow-spread) var(--primary-shadow);
+  outline: var(--border-width-05) solid var(--focus-primary);
+  outline-offset: var(--spacing-05);
 }
 
 .Button--success:disabled {
@@ -189,7 +193,8 @@
 }
 
 .Button--alert:focus {
-  box-shadow: var(--shadow-spread) var(--alert-shadow);
+  outline: var(--border-width-05) solid var(--focus-primary);
+  outline-offset: var(--spacing-05);
 }
 
 .Button--alert:disabled {
@@ -206,7 +211,8 @@
 }
 
 .Button--transparent:focus {
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+  outline: var(--border-width-05) solid var(--focus-primary);
+  outline-offset: var(--spacing-05);
 }
 
 .Button--transparent:active {
@@ -244,7 +250,8 @@
 
 .Button--selected:focus {
   background: var(--primary-lightest);
-  box-shadow: var(--shadow-spread) var(--primary-shadow);
+  outline: var(--border-width-05) solid var(--focus-primary);
+  outline-offset: var(--spacing-05);
 }
 
 .Button--selected:focus:active {
@@ -286,7 +293,8 @@
 
 .Button-outlined--basic:focus {
   border: var(--border-width-2-5) solid var(--primary);
-  box-shadow: var(--shadow-spread) var(--primary-shadow);
+  outline: var(--border-width-05) solid var(--focus-primary);
+  outline-offset: var(--spacing-05);
 }
 
 .Button-outlined--basic:disabled {
@@ -315,7 +323,8 @@
 .Button-outlined--selected:focus {
   color: var(--primary-dark);
   border: var(--border-width-2-5) solid var(--primary);
-  box-shadow: var(--shadow-spread) var(--primary-shadow);
+  outline: var(--border-width-05) solid var(--focus-primary);
+  outline-offset: var(--spacing-05);
 }
 
 .Button-outlined--selected:disabled {
@@ -345,7 +354,8 @@
 
 .Button-outlined--primary:focus {
   border: var(--border-width-2-5) solid var(--primary);
-  box-shadow: var(--shadow-spread) var(--primary-shadow);
+  outline: var(--border-width-05) solid var(--focus-primary);
+  outline-offset: var(--spacing-05);
 }
 
 .Button-outlined--primary:disabled {
@@ -375,7 +385,8 @@
 
 .Button-outlined--alert:focus {
   border: var(--border-width-2-5) solid var(--alert);
-  box-shadow: var(--shadow-spread) var(--alert-shadow);
+  outline: var(--border-width-05) solid var(--focus-primary);
+  outline-offset: var(--spacing-05);
 }
 
 .Button-outlined--alert:disabled {

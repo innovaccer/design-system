@@ -92,6 +92,7 @@ export const tokenColors = [
     { token: '--accent4-ultra-light', value: '#F2F9E7' },
     { token: '--accent4-shadow', value: 'rgba(130, 201, 30, 0.16)' },
   ],
+  [{ token: '--focus-primary', value: 'var(--primary)' }],
   [{ token: '--white', value: '#FFFFFF', setBgColor: true }],
 ];
 
