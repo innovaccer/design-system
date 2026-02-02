@@ -82,9 +82,13 @@ export const Link = (props: LinkProps) => {
       componentType="a"
       tabIndex={disabled ? -1 : 0}
       aria-disabled={disabled}
+      rel={rest.target === '_blank' ? rest.rel || 'noopener noreferrer' : rest.rel}
       {...rest}
     >
       {children}
+      {rest.target === '_blank' && (
+        <span className="sr-only"> (opens in a new window)</span>
+      )}
     </GenericText>
   );
 };
