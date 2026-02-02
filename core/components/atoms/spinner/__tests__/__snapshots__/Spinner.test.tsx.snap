@@ -6,6 +6,7 @@ exports[`Spinner component
 <body>
   <div>
     <svg
+      aria-label="Loading"
       aria-live="polite"
       class="Spinner Spinner--medium"
       role="status"
@@ -31,6 +32,7 @@ exports[`Spinner component
 <body>
   <div>
     <svg
+      aria-label="Loading"
       aria-live="polite"
       class="Spinner Spinner--medium"
       role="status"
@@ -56,6 +58,7 @@ exports[`Spinner component
 <body>
   <div>
     <svg
+      aria-label="Loading"
       aria-live="polite"
       class="Spinner Spinner--medium"
       role="status"
@@ -81,6 +84,7 @@ exports[`Spinner component
 <body>
   <div>
     <svg
+      aria-label="Loading"
       aria-live="polite"
       class="Spinner Spinner--large"
       role="status"
@@ -106,6 +110,7 @@ exports[`Spinner component
 <body>
   <div>
     <svg
+      aria-label="Loading"
       aria-live="polite"
       class="Spinner Spinner--medium"
       role="status"
@@ -131,6 +136,7 @@ exports[`Spinner component
 <body>
   <div>
     <svg
+      aria-label="Loading"
       aria-live="polite"
       class="Spinner Spinner--small"
       role="status"
@@ -156,6 +162,7 @@ exports[`Spinner component
 <body>
   <div>
     <svg
+      aria-label="Loading"
       aria-live="polite"
       class="Spinner Spinner--xsmall"
       role="status"
