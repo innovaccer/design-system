@@ -106,8 +106,13 @@ export const Toast = (props: ToastProps) => {
   };
 
   return (
-    <div {...baseProps} className={wrapperClass} role="status" aria-live="polite">
-      {icon && <Icon name={icon} className={iconClass('left')} />}
+    <div
+      {...baseProps}
+      className={wrapperClass}
+      role={appearance === 'alert' || appearance === 'warning' ? 'alert' : 'status'}
+      aria-live={appearance === 'alert' || appearance === 'warning' ? 'assertive' : 'polite'}
+    >
+      {icon && <Icon name={icon} className={iconClass('left')} aria-hidden="true" />}
       <div className={styles['Toast-body']}>
         <div className={titleClass}>
           <Heading size="s" className={headingClass} appearance={appearance !== 'warning' ? 'white' : 'default'}>
@@ -118,6 +123,7 @@ export const Toast = (props: ToastProps) => {
             className={iconClass('right')}
             onClick={onCloseHandler}
             appearance={appearance !== 'warning' ? 'white' : 'default'}
+            aria-label="Close"
           />
         </div>
         {message && (
