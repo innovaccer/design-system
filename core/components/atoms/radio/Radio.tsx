@@ -99,6 +99,8 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
   });
 
   const id = `${name}-${label}-${uidGenerator()}`;
+  const helpTextId = helpText ? `${id}-helptext` : undefined;
+
   return (
     <div className={RadioClass} data-test="DesignSystem-Radio">
       <div className={RadioOuterWrapper} data-test="DesignSystem-Radio-OuterWrapper">
@@ -114,14 +116,12 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
           onChange={onChange}
           className={styles['Radio-input']}
           id={id}
-          data-test="DesignSystem-Radio-Input" aria-describedby={helpText ? "radio-helptext" : undefined}
-          aria-describedby={helpText ? 'radio-helptext' : undefined}
-          aria-describedby={helpText ? 'radio-helptext' : undefined}
+          data-test="DesignSystem-Radio-Input"
+          aria-describedby={helpTextId}
           aria-invalid={error}
-          aria-describedby={helpText ? 'radio-helptext' : undefined}
           {...rest}
         />
-        <span data-test="DesignSystem-Radio-wrapper" className={RadioWrapper} />
+        <span data-test="DesignSystem-Radio-wrapper" className={RadioWrapper} aria-hidden="true" />
       </div>
       <div className={styles['Radio-labelWrapper']}>
         {label && (
@@ -132,7 +132,12 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
           </label>
         )}
         {helpText && (
-          <Text data-test="DesignSystem-Radio-HelpText" size="small" appearance={disabled ? 'disabled' : 'subtle'}>
+          <Text
+            id={helpTextId}
+            data-test="DesignSystem-Radio-HelpText"
+            size="small"
+            appearance={disabled ? 'disabled' : 'subtle'}
+          >
             {helpText.trim()}
           </Text>
         )}
