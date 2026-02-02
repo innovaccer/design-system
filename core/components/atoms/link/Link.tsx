@@ -86,9 +86,7 @@ export const Link = (props: LinkProps) => {
       {...rest}
     >
       {children}
-      {rest.target === '_blank' && (
-        <span className="sr-only"> (opens in a new window)</span>
-      )}
+      {rest.target === '_blank' && <span className="sr-only"> (opens in a new window)</span>}
     </GenericText>
   );
 };

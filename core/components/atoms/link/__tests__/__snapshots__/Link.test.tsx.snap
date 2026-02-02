@@ -16,6 +16,11 @@ exports[`Link component
       target="_blank"
     >
       Link
+      <span
+        class="sr-only"
+      >
+         (opens in a new window)
+      </span>
     </a>
   </div>
 </body>
