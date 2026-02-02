@@ -84,8 +84,6 @@ export const StatusHint = (props: StatusHintProps) => {
   };
 
   return (
-    // TODO(a11y): fix accessibility
-    /* eslint-disable */
     <div
       data-test="DesignSystem-StatusHint"
       {...baseProps}
@@ -93,8 +91,15 @@ export const StatusHint = (props: StatusHintProps) => {
       onClick={(e) => onClick && onClick(e)}
       onMouseEnter={(e) => onMouseEnter && onMouseEnter(e)}
       onMouseLeave={(e) => onMouseLeave && onMouseLeave(e)}
+      role={onClick ? 'button' : 'status'}
+      tabIndex={onClick ? 0 : undefined}
+      onKeyDown={(e) => {
+        if (onClick && (e.key === 'Enter' || e.key === ' ')) {
+          e.preventDefault();
+          onClick(e as any);
+        }
+      }}
     >
-      {/* eslint-enable */}
       <span data-test="DesignSystem-StatusHint--Icon" aria-hidden="true" className={StatusHintIconClass} />
       {renderChildren()}
     </div>
