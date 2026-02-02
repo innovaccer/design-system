@@ -183,7 +183,7 @@ export const Meter = (props: MeterProps) => {
       aria-valuemax={max}
       aria-valuenow={value}
       aria-label={ariaLabel}
-      aria-valuetext={}
+      aria-valuetext={label.toString()}
       {...rest}
     >
       {steps}
