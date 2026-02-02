@@ -15,10 +15,15 @@ export interface SpinnerProps extends BaseProps {
    * Size of `Spinner`
    */
   size: SpinnerSize;
+  /**
+   * Accessible name for the spinner
+   * @default "Loading"
+   */
+  ariaLabel?: string;
 }
 
 export const Spinner = (props: SpinnerProps) => {
-  const { appearance, size, className } = props;
+  const { appearance, size, className, ariaLabel = 'Loading' } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -56,7 +61,14 @@ export const Spinner = (props: SpinnerProps) => {
   };
 
   return (
-    <svg {...baseProps} role="status" aria-live="polite" className={wrapperClasses} {...svgProps}>
+    <svg
+      {...baseProps}
+      role="status"
+      aria-live="polite"
+      aria-label={ariaLabel}
+      className={wrapperClasses}
+      {...svgProps}
+    >
       <circle className={circleClasses} {...circleProps} />
     </svg>
   );
