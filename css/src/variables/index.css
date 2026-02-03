@@ -3,7 +3,7 @@
 
   /* default */
   --primary: var(--jal);
-  --focus-primary: var(--primary);
+  --focus-primary: var(--primary-dark);
   --secondary: var(--stone);
   --success: var(--neem);
   --alert: var(--mirch);
