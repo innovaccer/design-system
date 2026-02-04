@@ -38,7 +38,6 @@ export const Divider = (props: DividerProps) => {
       data-test="DesignSystem-Divider"
       {...baseProps}
       className={DividerClass}
-      role="separator"
       aria-orientation={vertical ? 'vertical' : 'horizontal'}
     />
   );
