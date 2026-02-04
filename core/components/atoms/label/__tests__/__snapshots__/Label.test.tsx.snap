@@ -246,6 +246,7 @@ exports[`Label component - size prop snapshot tests renders correctly with size=
       >
         Complex Small Label
         <span
+          aria-label="required"
           class="Label-requiredIndicator"
           data-test="DesignSystem-Label--RequiredIndicator"
         />
@@ -305,6 +306,7 @@ exports[`Label component - size prop snapshot tests renders correctly with size=
       >
         Small Required Label
         <span
+          aria-label="required"
           class="Label-requiredIndicator"
           data-test="DesignSystem-Label--RequiredIndicator"
         />

@@ -6,7 +6,10 @@ exports[`Spinner component
 <body>
   <div>
     <svg
+      aria-label="Loading"
+      aria-live="polite"
       class="Spinner Spinner--medium"
+      role="status"
       viewBox="0 0 50 50"
     >
       <circle
@@ -29,7 +32,10 @@ exports[`Spinner component
 <body>
   <div>
     <svg
+      aria-label="Loading"
+      aria-live="polite"
       class="Spinner Spinner--medium"
+      role="status"
       viewBox="0 0 50 50"
     >
       <circle
@@ -52,7 +58,10 @@ exports[`Spinner component
 <body>
   <div>
     <svg
+      aria-label="Loading"
+      aria-live="polite"
       class="Spinner Spinner--medium"
+      role="status"
       viewBox="0 0 50 50"
     >
       <circle
@@ -75,7 +84,10 @@ exports[`Spinner component
 <body>
   <div>
     <svg
+      aria-label="Loading"
+      aria-live="polite"
       class="Spinner Spinner--large"
+      role="status"
       viewBox="0 0 50 50"
     >
       <circle
@@ -98,7 +110,10 @@ exports[`Spinner component
 <body>
   <div>
     <svg
+      aria-label="Loading"
+      aria-live="polite"
       class="Spinner Spinner--medium"
+      role="status"
       viewBox="0 0 50 50"
     >
       <circle
@@ -121,7 +136,10 @@ exports[`Spinner component
 <body>
   <div>
     <svg
+      aria-label="Loading"
+      aria-live="polite"
       class="Spinner Spinner--small"
+      role="status"
       viewBox="0 0 50 50"
     >
       <circle
@@ -144,7 +162,10 @@ exports[`Spinner component
 <body>
   <div>
     <svg
+      aria-label="Loading"
+      aria-live="polite"
       class="Spinner Spinner--xsmall"
+      role="status"
       viewBox="0 0 50 50"
     >
       <circle
