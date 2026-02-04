@@ -34,7 +34,14 @@ export const Subheading = React.forwardRef<HTMLHeadingElement, SubheadingProps>(
   );
 
   return (
-    <GenericText ref={ref} data-test="DesignSystem-Subheading" {...rest} className={classes} componentType={'h4'} aria-level={4}>
+    <GenericText
+      ref={ref}
+      data-test="DesignSystem-Subheading"
+      {...rest}
+      className={classes}
+      componentType={'h4'}
+      aria-level={4}
+    >
       {children}
     </GenericText>
   );
