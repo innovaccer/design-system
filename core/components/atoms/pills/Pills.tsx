@@ -21,7 +21,7 @@ export interface PillsProps extends BaseProps {
 }
 
 export const Pills = (props: PillsProps) => {
-  const { appearance, children, subtle, className } = props;
+  const { appearance, children, subtle, className, ...rest } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -35,7 +35,12 @@ export const Pills = (props: PillsProps) => {
   );
 
   return (
-    <span data-test="DesignSystem-Pills" {...baseProps} className={classes}>
+    <span
+      data-test="DesignSystem-Pills"
+      role={rest['aria-label'] ? 'status' : undefined}
+      {...baseProps}
+      className={classes}
+    >
       {children}
     </span>
   );
