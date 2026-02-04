@@ -6,9 +6,9 @@ exports[`Toast component
 <body>
   <div>
     <div
-      aria-live="polite"
+      aria-live="assertive"
       class="Toast Toast--alert"
-      role="status"
+      role="alert"
     >
       <i
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--alert"
@@ -31,6 +31,7 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
+            aria-label="Close"
             class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert Toast-close-icon--alert"
             data-test="DesignSystem-Icon"
             role="button"
@@ -77,6 +78,7 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
+            aria-label="Close"
             class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon--info"
             data-test="DesignSystem-Icon"
             role="button"
@@ -123,6 +125,7 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
+            aria-label="Close"
             class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success Toast-close-icon--success"
             data-test="DesignSystem-Icon"
             role="button"
@@ -144,9 +147,9 @@ exports[`Toast component
 <body>
   <div>
     <div
-      aria-live="polite"
+      aria-live="assertive"
       class="Toast Toast--warning"
-      role="status"
+      role="alert"
     >
       <i
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--warning"
@@ -169,6 +172,7 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
+            aria-label="Close"
             class="material-symbols material-symbols-rounded Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning Toast-close-icon--warning"
             data-test="DesignSystem-Icon"
             role="button"
@@ -190,9 +194,9 @@ exports[`Toast component
 <body>
   <div>
     <div
-      aria-live="polite"
+      aria-live="assertive"
       class="Toast Toast--withMessage Toast--alert"
-      role="status"
+      role="alert"
     >
       <i
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--alert"
@@ -215,6 +219,7 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
+            aria-label="Close"
             class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert Toast-close-icon--alert"
             data-test="DesignSystem-Icon"
             role="button"
@@ -242,9 +247,9 @@ exports[`Toast component
 <body>
   <div>
     <div
-      aria-live="polite"
+      aria-live="assertive"
       class="Toast Toast--withMessage Toast--alert"
-      role="status"
+      role="alert"
     >
       <i
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--alert"
@@ -267,6 +272,7 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
+            aria-label="Close"
             class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert Toast-close-icon--alert"
             data-test="DesignSystem-Icon"
             role="button"
@@ -333,6 +339,7 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
+            aria-label="Close"
             class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon--info"
             data-test="DesignSystem-Icon"
             role="button"
@@ -385,6 +392,7 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
+            aria-label="Close"
             class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon--info"
             data-test="DesignSystem-Icon"
             role="button"
@@ -451,6 +459,7 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
+            aria-label="Close"
             class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success Toast-close-icon--success"
             data-test="DesignSystem-Icon"
             role="button"
@@ -503,6 +512,7 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
+            aria-label="Close"
             class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success Toast-close-icon--success"
             data-test="DesignSystem-Icon"
             role="button"
@@ -544,9 +554,9 @@ exports[`Toast component
 <body>
   <div>
     <div
-      aria-live="polite"
+      aria-live="assertive"
       class="Toast Toast--withMessage Toast--warning"
-      role="status"
+      role="alert"
     >
       <i
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--warning"
@@ -569,6 +579,7 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
+            aria-label="Close"
             class="material-symbols material-symbols-rounded Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning Toast-close-icon--warning"
             data-test="DesignSystem-Icon"
             role="button"
@@ -596,9 +607,9 @@ exports[`Toast component
 <body>
   <div>
     <div
-      aria-live="polite"
+      aria-live="assertive"
       class="Toast Toast--withMessage Toast--warning"
-      role="status"
+      role="alert"
     >
       <i
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--warning"
@@ -621,6 +632,7 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
+            aria-label="Close"
             class="material-symbols material-symbols-rounded Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning Toast-close-icon--warning"
             data-test="DesignSystem-Icon"
             role="button"

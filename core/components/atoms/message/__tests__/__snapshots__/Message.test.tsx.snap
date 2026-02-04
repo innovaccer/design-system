@@ -170,7 +170,7 @@ exports[`Message component
     <div
       class="Message Message--info"
       data-test="DesignSystem-Message"
-      role="alert"
+      role="status"
     >
       <i
         class="material-symbols material-symbols-rounded Icon Icon--info Message-icon--info Message-icon--regular Message-icon--withTitle"
@@ -224,7 +224,7 @@ exports[`Message component
     <div
       class="Message Message--info"
       data-test="DesignSystem-Message"
-      role="alert"
+      role="status"
     >
       <i
         class="material-symbols material-symbols-rounded Icon Icon--info Message-icon--info Message-icon--regular Message-icon--withTitle"
@@ -278,7 +278,7 @@ exports[`Message component
     <div
       class="Message Message--info Message--small"
       data-test="DesignSystem-Message"
-      role="alert"
+      role="status"
     >
       <i
         class="material-symbols material-symbols-rounded Icon Icon--info Message-icon--info Message-icon--small Message-icon--withTitle"
@@ -332,7 +332,7 @@ exports[`Message component
     <div
       class="Message Message--success"
       data-test="DesignSystem-Message"
-      role="alert"
+      role="status"
     >
       <i
         class="material-symbols material-symbols-rounded Icon Icon--success Message-icon--success Message-icon--regular Message-icon--withTitle"
@@ -386,7 +386,7 @@ exports[`Message component
     <div
       class="Message Message--success"
       data-test="DesignSystem-Message"
-      role="alert"
+      role="status"
     >
       <i
         class="material-symbols material-symbols-rounded Icon Icon--success Message-icon--success Message-icon--regular Message-icon--withTitle"
@@ -440,7 +440,7 @@ exports[`Message component
     <div
       class="Message Message--success Message--small"
       data-test="DesignSystem-Message"
-      role="alert"
+      role="status"
     >
       <i
         class="material-symbols material-symbols-rounded Icon Icon--success Message-icon--success Message-icon--small Message-icon--withTitle"
