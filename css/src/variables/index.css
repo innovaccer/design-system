@@ -3,7 +3,6 @@
 
   /* default */
   --primary: var(--jal);
-  --focus-primary: var(--primary-dark);
   --secondary: var(--stone);
   --success: var(--neem);
   --alert: var(--mirch);
@@ -70,6 +69,9 @@
   --accent3-lightest: var(--neel-lightest);
   --accent4-lightest: var(--nimbu-lightest);
   --inverse-lightest: var(--night-lightest);
+
+  /* Focus */
+  --primary-focus: var(--jal-dark);
 
   /* Ultra Light */
   --primary-ultra-light: #eef6fc;
