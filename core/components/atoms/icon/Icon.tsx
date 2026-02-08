@@ -172,13 +172,15 @@ export const Icon = (props: IconProps) => {
       </span>
     );
   }
+  const isInteractive = props.onClick || props.onKeyDown || accessibilityProps.role === 'button';
+
   return (
     <i
       data-test="DesignSystem-Icon"
       {...baseProps}
       className={iconClass}
       style={styles}
-      aria-hidden={props['aria-label'] ? undefined : 'true'}
+      aria-hidden={props['aria-label'] || isInteractive ? undefined : 'true'}
       {...accessibilityProps}
     >
       {name}
