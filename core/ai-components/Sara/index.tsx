@@ -62,7 +62,7 @@ export const Sara = (props: SaraProps) => {
   );
 
   if (state === 'default') {
-    const isDecorativeImage = isInteractive || !ariaLabel;
+    const isDecorativeImage = isInteractive || !!ariaLabel;
 
     return (
       <div data-test="DesignSystem-AI-Sara" {...rest} {...accessibilityProps}>
