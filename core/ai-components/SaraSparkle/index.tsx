@@ -70,7 +70,7 @@ export const SaraSparkle = (props: SaraSparkleProps) => {
   );
 
   if (state === 'default') {
-    const isDecorativeImage = isInteractive || !ariaLabel;
+    const isDecorativeImage = isInteractive || !!ariaLabel;
 
     return (
       <div data-test="DesignSystem-AI-Sara-Sparkle" {...rest} {...accessibilityProps}>
