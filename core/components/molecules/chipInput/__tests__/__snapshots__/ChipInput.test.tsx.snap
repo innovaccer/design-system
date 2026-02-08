@@ -10,6 +10,7 @@ exports[`ChipInput component
       data-test="DesignSystem-ChipInput--Border"
     >
       <div
+        aria-label="Add value"
         class="ChipInput ChipInput--withChips ChipInput--regular"
         data-test="DesignSystem-ChipInput"
         role="button"
@@ -87,6 +88,7 @@ exports[`ChipInput component
             </div>
           </div>
           <input
+            aria-label="Add value"
             class="ChipInput-input ChipInput-input--regular p-0"
             data-test="DesignSystem-ChipInput--Input"
             placeholder=""
@@ -95,6 +97,7 @@ exports[`ChipInput component
           />
         </div>
         <i
+          aria-label="Clear all"
           class="material-symbols material-symbols-rounded Icon Icon--subtle ChipInput-icon ChipInput-icon--regular"
           data-test="DesignSystem-ChipInput--Icon"
           role="button"
@@ -119,7 +122,7 @@ exports[`ChipInput component
       data-test="DesignSystem-ChipInput--Border"
     >
       <div
-        aria-disabled="true"
+        aria-label="Add value"
         class="ChipInput ChipInput--disabled ChipInput--withChips ChipInput--regular"
         data-test="DesignSystem-ChipInput"
         role="button"
@@ -197,6 +200,7 @@ exports[`ChipInput component
             </div>
           </div>
           <input
+            aria-label="Add value"
             class="ChipInput-input ChipInput-input--regular p-0"
             data-test="DesignSystem-ChipInput--Input"
             disabled=""
@@ -206,6 +210,7 @@ exports[`ChipInput component
           />
         </div>
         <i
+          aria-label="Clear all"
           class="material-symbols material-symbols-rounded Icon Icon--disabled ChipInput-icon ChipInput-icon--regular"
           data-test="DesignSystem-ChipInput--Icon"
           role="button"
@@ -230,6 +235,7 @@ exports[`ChipInput component
       data-test="DesignSystem-ChipInput--Border"
     >
       <div
+        aria-label="Add value"
         class="ChipInput ChipInput--withChips ChipInput--error ChipInput--regular"
         data-test="DesignSystem-ChipInput"
         role="button"
@@ -307,6 +313,7 @@ exports[`ChipInput component
             </div>
           </div>
           <input
+            aria-label="Add value"
             class="ChipInput-input ChipInput-input--regular p-0"
             data-test="DesignSystem-ChipInput--Input"
             placeholder=""
@@ -315,6 +322,7 @@ exports[`ChipInput component
           />
         </div>
         <i
+          aria-label="Clear all"
           class="material-symbols material-symbols-rounded Icon Icon--subtle ChipInput-icon ChipInput-icon--regular"
           data-test="DesignSystem-ChipInput--Icon"
           role="button"
