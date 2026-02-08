@@ -75,6 +75,9 @@ export const Link = (props: LinkProps) => {
     className
   );
 
+  const isExternal = rest.target === '_blank';
+  const rel = isExternal ? (rest.rel || 'noopener noreferrer') : rest.rel;
+
   return (
     <GenericText
       data-test="DesignSystem-Link"
@@ -82,6 +85,8 @@ export const Link = (props: LinkProps) => {
       componentType="a"
       tabIndex={disabled ? -1 : 0}
       aria-disabled={disabled}
+      rel={rel}
+      aria-label={isExternal && !props['aria-label'] ? `${children} (opens in a new window)` : props['aria-label']}
       {...rest}
     >
       {children}

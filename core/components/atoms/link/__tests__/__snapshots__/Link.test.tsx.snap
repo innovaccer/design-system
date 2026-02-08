@@ -7,6 +7,7 @@ exports[`Link component
   <div>
     <a
       aria-disabled="false"
+      aria-label="Link (opens in a new window)"
       class="Link Link--regular Link--default"
       data-test="DesignSystem-Link"
       href="Sample string"
