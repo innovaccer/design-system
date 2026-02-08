@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { Chip, Icon } from '@/index';
 import { ChipProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import useAccessibilityProps from '@/accessibility/utils/useAccessibilityProps';
 import styles from '@css/components/chipInput.module.css';
 
 const keyCodes = {
@@ -125,6 +126,12 @@ export const ChipInput = (props: ChipInputProps) => {
     }
   }, [inputValue]);
 
+  React.useEffect(() => {
+    if (autoFocus && !disabled) {
+      inputRef.current?.focus();
+    }
+  }, [autoFocus, disabled]);
+
   const ChipInputBorderClass = classNames({
     [styles['ChipInput-border']]: true,
     [styles['ChipInput-border--error']]: error,
@@ -244,8 +251,17 @@ export const ChipInput = (props: ChipInputProps) => {
   };
 
   const onClickHandler = () => {
-    inputRef.current?.focus();
+    if (!disabled) {
+      inputRef.current?.focus();
+    }
   };
+
+  const containerAccessibilityProps = useAccessibilityProps({
+    onClick: disabled ? undefined : onClickHandler,
+    role: 'button',
+    tabIndex: disabled ? -1 : 0,
+    'aria-label': placeholder || 'Chip input',
+  });
 
   const chipComponents = chips.map((chip, index) => {
     const { type = 'input', onClick, ...rest } = chipOptions;
@@ -270,15 +286,12 @@ export const ChipInput = (props: ChipInputProps) => {
   const iconSize = size === 'small' ? 12 : 16;
 
   return (
-    /* TODO(a11y): fix accessibility  */
-    /* eslint-disable  */
     <div data-test="DesignSystem-ChipInput--Border" className={ChipInputBorderClass}>
       <div
         data-test="DesignSystem-ChipInput"
         {...baseProps}
         className={ChipInputClass}
-        onClick={onClickHandler}
-        tabIndex={disabled ? -1 : 0}
+        {...containerAccessibilityProps}
       >
         <div className={styles['ChipInput-wrapper']} ref={customRef}>
           {chips && chips.length > 0 && chipComponents}
@@ -286,7 +299,6 @@ export const ChipInput = (props: ChipInputProps) => {
             data-test="DesignSystem-ChipInput--Input"
             ref={inputRef}
             className={InputClass}
-            autoFocus={autoFocus}
             placeholder={chips && chips.length > 0 ? '' : placeholder}
             disabled={disabled}
             value={inputValue}
@@ -294,8 +306,8 @@ export const ChipInput = (props: ChipInputProps) => {
             onFocus={onFocus}
             onChange={onInputChangeHandler}
             onKeyDown={onKeyDownHandler}
+            aria-label={placeholder || 'Chip input'}
           />
-          {/* eslint-enable */}
         </div>
         {chips.length > 0 && (
           <Icon
@@ -306,6 +318,7 @@ export const ChipInput = (props: ChipInputProps) => {
             className={IconClass}
             onClick={onDeleteAllHandler}
             tabIndex={disabled ? -1 : 0}
+            aria-label="Clear all"
           />
         )}
       </div>
