@@ -6,6 +6,8 @@ import { IconType, TTabSize } from '@/common.type';
 import styles from '@css/components/tabs.module.css';
 import pageHeaderStyles from '@css/components/pageHeader.module.css';
 
+let tabsIdCounter = 0;
+
 type Tab = React.ReactElement | TabConfig;
 type noop = (tabInfo: TabInfo) => void;
 
@@ -111,6 +113,7 @@ export const Tabs = (props: TabsProps) => {
 
   const baseProps = extractBaseProps(props);
   const tabRefs: HTMLDivElement[] = [];
+  const tabIdPrefix = React.useRef(`tabs-${tabsIdCounter++}`);
 
   const tabs: Tab[] = children ? filterTabs(children) : props.tabs;
   const inlineComponent = children ? filterInlineComponent(children) : <></>;
@@ -180,7 +183,8 @@ export const Tabs = (props: TabsProps) => {
   };
 
   const tabKeyDownHandler = (event: React.KeyboardEvent, tabIndex: number) => {
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
       tabClickHandler(tabIndex, true);
     }
     if (event.key === 'ArrowLeft' && tabIndex > 0) {
@@ -300,9 +304,13 @@ export const Tabs = (props: TabsProps) => {
     );
   };
 
+  const hasTabPanel = Boolean(children);
   const renderTabs = tabs.map((tab: Tab, index) => {
     const currentTabProp = children && 'props' in tab ? tab.props : tab;
     const { disabled, label } = currentTabProp;
+    const tabId = `${tabIdPrefix.current}-tab-${index}`;
+    const panelId = `${tabIdPrefix.current}-panel-${index}`;
+    const isActive = !disabled && activeIndex === index;
 
     const tabHeaderClass = classNames({
       [styles['Tab']]: true,
@@ -322,23 +330,36 @@ export const Tabs = (props: TabsProps) => {
         className={tabHeaderClass}
         onClick={() => !disabled && tabClickHandler(index)}
         onKeyDown={(event: React.KeyboardEvent) => tabKeyDownHandler(event, index)}
-        tabIndex={disabled ? -1 : 0}
-        role="button"
-        aria-disabled={disabled || undefined}
+        tabIndex={disabled ? -1 : isActive ? 0 : -1}
+        role="tab"
+        id={tabId}
+        aria-selected={isActive}
+        aria-controls={hasTabPanel ? panelId : undefined}
+        aria-disabled={disabled}
       >
         {renderTab(currentTabProp, index)}
       </div>
     );
   });
 
+  const activeTabId = `${tabIdPrefix.current}-tab-${activeIndex}`;
+  const activePanelId = `${tabIdPrefix.current}-panel-${activeIndex}`;
+
   return (
     <div data-test="DesignSystem-Tabs" {...baseProps} className={wrapperClass}>
-      <div className={headerClass} data-test="DesignSystem-Tabs--Header">
+      <div className={headerClass} data-test="DesignSystem-Tabs--Header" role="tablist" aria-orientation="horizontal">
         {renderTabs}
         {inlineComponent}
       </div>
       {children && (
-        <div className={tabContentClass} data-test="DesignSystem-Tabs--Content">
+        <div
+          className={tabContentClass}
+          data-test="DesignSystem-Tabs--Content"
+          role="tabpanel"
+          id={activePanelId}
+          aria-labelledby={activeTabId}
+          tabIndex={0}
+        >
           {tabs[activeIndex]}
         </div>
       )}

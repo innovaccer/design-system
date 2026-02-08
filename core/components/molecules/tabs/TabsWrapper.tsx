@@ -5,6 +5,8 @@ import { TTabSize } from '@/common.type';
 import styles from '@css/components/tabs.module.css';
 import pageHeaderStyles from '@css/components/pageHeader.module.css';
 
+let tabsWrapperIdCounter = 0;
+
 export interface TabsWrapperProps extends BaseProps {
   /**
    * Index of desired selected `Tab`
@@ -30,6 +32,8 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
   const baseProps = extractBaseProps(props);
   const tabs = Array.isArray(children) ? children : [children];
   const totalTabs = tabs.length;
+  const tabRefs = React.useRef<Array<HTMLDivElement | null>>([]);
+  const tabIdPrefix = React.useRef(`tabs-wrapper-${tabsWrapperIdCounter++}`);
 
   const [active, setActiveTab] = React.useState(props.active && props.active < totalTabs ? props.active : 0);
 
@@ -54,8 +58,28 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
     if (onTabChange) onTabChange(tabIndex);
   };
 
+  const tabKeyDownHandler = (event: React.KeyboardEvent, tabIndex: number, disabled?: boolean) => {
+    if (disabled) return;
+
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      tabClickHandler(tabIndex);
+    }
+
+    if (event.key === 'ArrowLeft' && tabIndex > 0) {
+      tabRefs.current[tabIndex - 1]?.focus();
+    }
+
+    if (event.key === 'ArrowRight' && tabIndex < totalTabs - 1) {
+      tabRefs.current[tabIndex + 1]?.focus();
+    }
+  };
+
   const TabsHeader = tabs.map((child, index) => {
     const { label, disabled } = child.props;
+    const tabId = `${tabIdPrefix.current}-tab-${index}`;
+    const panelId = `${tabIdPrefix.current}-panel-${index}`;
+    const isActive = !disabled && active === index;
 
     const tabHeaderClass = classNames({
       [styles['Tab']]: true,
@@ -71,27 +95,38 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
         key={index}
         className={tabHeaderClass}
         onClick={() => !disabled && tabClickHandler(index)}
-        onKeyDown={(event: React.KeyboardEvent<HTMLDivElement>) => {
-          if (disabled) return;
-
-          if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            tabClickHandler(index);
-          }
+        onKeyDown={(event: React.KeyboardEvent) => tabKeyDownHandler(event, index, disabled)}
+        ref={(element) => {
+          tabRefs.current[index] = element;
         }}
-        role="button"
-        tabIndex={disabled ? -1 : 0}
-        aria-disabled={disabled || undefined}
+        role="tab"
+        id={tabId}
+        aria-selected={isActive}
+        aria-controls={panelId}
+        aria-disabled={disabled}
+        tabIndex={disabled ? -1 : isActive ? 0 : -1}
       >
         {label}
       </div>
     );
   });
 
+  const activeTabId = `${tabIdPrefix.current}-tab-${active}`;
+  const activePanelId = `${tabIdPrefix.current}-panel-${active}`;
+
   return (
     <div data-test="DesignSystem-TabsWrapper" {...baseProps} className={wrapperClass}>
-      <div className={headerClass}>{TabsHeader}</div>
-      <div className={styles['TabsWrapper-content']} data-test="DesignSystem-Tabs--Content">
+      <div className={headerClass} role="tablist" aria-orientation="horizontal">
+        {TabsHeader}
+      </div>
+      <div
+        className={styles['TabsWrapper-content']}
+        data-test="DesignSystem-Tabs--Content"
+        role="tabpanel"
+        id={activePanelId}
+        aria-labelledby={activeTabId}
+        tabIndex={0}
+      >
         {tabs[active]}
       </div>
     </div>
