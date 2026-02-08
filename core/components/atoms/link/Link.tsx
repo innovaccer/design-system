@@ -76,7 +76,15 @@ export const Link = (props: LinkProps) => {
   );
 
   const isExternal = rest.target === '_blank';
-  const rel = isExternal ? (rest.rel || 'noopener noreferrer') : rest.rel;
+  const rel = isExternal ? rest.rel || 'noopener noreferrer' : rest.rel;
+
+  const getAriaLabel = () => {
+    if (props['aria-label']) return props['aria-label'];
+    if (isExternal && typeof children === 'string') {
+      return `${children} (opens in a new window)`;
+    }
+    return undefined;
+  };
 
   return (
     <GenericText
@@ -86,7 +94,7 @@ export const Link = (props: LinkProps) => {
       tabIndex={disabled ? -1 : 0}
       aria-disabled={disabled}
       rel={rel}
-      aria-label={isExternal && !props['aria-label'] ? `${children} (opens in a new window)` : props['aria-label']}
+      aria-label={getAriaLabel()}
       {...rest}
     >
       {children}
