@@ -95,7 +95,7 @@ export const Label = (props: LabelProps) => {
           name="info"
           size={12}
           appearance="subtle"
-          aria-label="More information"
+          aria-label={info}
           className="ml-3 cursor-pointer d-flex align-items-center"
         />
       </Tooltip>
