@@ -9,11 +9,18 @@ exports[`TabsWrapper component
     data-test="DesignSystem-TabsWrapper"
   >
     <div
+      aria-orientation="horizontal"
       class="TabsWrapper-header"
+      role="tablist"
     >
       <div
+        aria-controls="tabs-wrapper-0-panel-0"
+        aria-selected="true"
         class="Tab Tab--active Tab--regular"
         data-test="DesignSystem-Tabs--Header"
+        id="tabs-wrapper-0-tab-0"
+        role="tab"
+        tabindex="0"
       >
         <span
           class="Text Text--default Text--regular"
@@ -23,8 +30,14 @@ exports[`TabsWrapper component
         </span>
       </div>
       <div
+        aria-controls="tabs-wrapper-0-panel-1"
+        aria-disabled="true"
+        aria-selected="false"
         class="Tab Tab--disabled Tab--regular"
         data-test="DesignSystem-Tabs--Header"
+        id="tabs-wrapper-0-tab-1"
+        role="tab"
+        tabindex="-1"
       >
         <span
           class="Text Text--default Text--regular"
@@ -35,8 +48,12 @@ exports[`TabsWrapper component
       </div>
     </div>
     <div
+      aria-labelledby="tabs-wrapper-0-tab-0"
       class="TabsWrapper-content"
       data-test="DesignSystem-Tabs--Content"
+      id="tabs-wrapper-0-panel-0"
+      role="tabpanel"
+      tabindex="0"
     >
       Tab 1
     </div>
@@ -53,11 +70,18 @@ exports[`TabsWrapper component
     data-test="DesignSystem-TabsWrapper"
   >
     <div
+      aria-orientation="horizontal"
       class="TabsWrapper-header"
+      role="tablist"
     >
       <div
+        aria-controls="tabs-wrapper-1-panel-0"
+        aria-selected="true"
         class="Tab Tab--active Tab--regular"
         data-test="DesignSystem-Tabs--Header"
+        id="tabs-wrapper-1-tab-0"
+        role="tab"
+        tabindex="0"
       >
         <span
           class="Text Text--default Text--regular"
@@ -67,8 +91,14 @@ exports[`TabsWrapper component
         </span>
       </div>
       <div
+        aria-controls="tabs-wrapper-1-panel-1"
+        aria-disabled="true"
+        aria-selected="false"
         class="Tab Tab--disabled Tab--regular"
         data-test="DesignSystem-Tabs--Header"
+        id="tabs-wrapper-1-tab-1"
+        role="tab"
+        tabindex="-1"
       >
         <span
           class="Text Text--default Text--regular"
@@ -79,8 +109,12 @@ exports[`TabsWrapper component
       </div>
     </div>
     <div
+      aria-labelledby="tabs-wrapper-1-tab-0"
       class="TabsWrapper-content"
       data-test="DesignSystem-Tabs--Content"
+      id="tabs-wrapper-1-panel-0"
+      role="tabpanel"
+      tabindex="0"
     >
       Tab 1
     </div>

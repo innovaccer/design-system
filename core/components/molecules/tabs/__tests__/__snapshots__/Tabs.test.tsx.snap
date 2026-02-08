@@ -9,12 +9,17 @@ exports[`Tabs component
     data-test="DesignSystem-Tabs"
   >
     <div
+      aria-orientation="horizontal"
       class="TabsWrapper-header"
       data-test="DesignSystem-Tabs--Header"
+      role="tablist"
     >
       <div
+        aria-selected="true"
         class="Tab Tab--active Tab-selected align-items-center"
         data-test="DesignSystem-Tabs--Tab"
+        id="tabs-2-tab-0"
+        role="tab"
         tabindex="0"
       >
         <span
@@ -46,9 +51,12 @@ exports[`Tabs component
         </span>
       </div>
       <div
+        aria-selected="false"
         class="Tab align-items-center"
         data-test="DesignSystem-Tabs--Tab"
-        tabindex="0"
+        id="tabs-2-tab-1"
+        role="tab"
+        tabindex="-1"
       >
         <span
           class="Tab--regular Tab--overflow"
@@ -72,8 +80,12 @@ exports[`Tabs component
         </span>
       </div>
       <div
+        aria-disabled="true"
+        aria-selected="false"
         class="Tab Tab--disabled align-items-center"
         data-test="DesignSystem-Tabs--Tab"
+        id="tabs-2-tab-2"
+        role="tab"
         tabindex="-1"
       >
         <span
@@ -109,12 +121,17 @@ exports[`Tabs component
     data-test="DesignSystem-Tabs"
   >
     <div
+      aria-orientation="horizontal"
       class="TabsWrapper-header"
       data-test="DesignSystem-Tabs--Header"
+      role="tablist"
     >
       <div
+        aria-selected="true"
         class="Tab Tab--active Tab-selected align-items-center"
         data-test="DesignSystem-Tabs--Tab"
+        id="tabs-3-tab-0"
+        role="tab"
         tabindex="0"
       >
         <span
@@ -146,9 +163,12 @@ exports[`Tabs component
         </span>
       </div>
       <div
+        aria-selected="false"
         class="Tab align-items-center"
         data-test="DesignSystem-Tabs--Tab"
-        tabindex="0"
+        id="tabs-3-tab-1"
+        role="tab"
+        tabindex="-1"
       >
         <span
           class="Tab--small Tab--overflow"
@@ -172,8 +192,12 @@ exports[`Tabs component
         </span>
       </div>
       <div
+        aria-disabled="true"
+        aria-selected="false"
         class="Tab Tab--disabled align-items-center"
         data-test="DesignSystem-Tabs--Tab"
+        id="tabs-3-tab-2"
+        role="tab"
         tabindex="-1"
       >
         <span
@@ -209,12 +233,17 @@ exports[`Tabs component
     data-test="DesignSystem-Tabs"
   >
     <div
+      aria-orientation="horizontal"
       class="TabsWrapper-header TabsWrapper-header--withSeparator"
       data-test="DesignSystem-Tabs--Header"
+      role="tablist"
     >
       <div
+        aria-selected="true"
         class="Tab Tab--active Tab-selected align-items-center"
         data-test="DesignSystem-Tabs--Tab"
+        id="tabs-0-tab-0"
+        role="tab"
         tabindex="0"
       >
         <span
@@ -246,9 +275,12 @@ exports[`Tabs component
         </span>
       </div>
       <div
+        aria-selected="false"
         class="Tab align-items-center"
         data-test="DesignSystem-Tabs--Tab"
-        tabindex="0"
+        id="tabs-0-tab-1"
+        role="tab"
+        tabindex="-1"
       >
         <span
           class="Tab--regular Tab--overflow"
@@ -272,8 +304,12 @@ exports[`Tabs component
         </span>
       </div>
       <div
+        aria-disabled="true"
+        aria-selected="false"
         class="Tab Tab--disabled align-items-center"
         data-test="DesignSystem-Tabs--Tab"
+        id="tabs-0-tab-2"
+        role="tab"
         tabindex="-1"
       >
         <span
@@ -309,12 +345,17 @@ exports[`Tabs component
     data-test="DesignSystem-Tabs"
   >
     <div
+      aria-orientation="horizontal"
       class="TabsWrapper-header TabsWrapper-header--withSeparator"
       data-test="DesignSystem-Tabs--Header"
+      role="tablist"
     >
       <div
+        aria-selected="true"
         class="Tab Tab--active Tab-selected align-items-center"
         data-test="DesignSystem-Tabs--Tab"
+        id="tabs-1-tab-0"
+        role="tab"
         tabindex="0"
       >
         <span
@@ -346,9 +387,12 @@ exports[`Tabs component
         </span>
       </div>
       <div
+        aria-selected="false"
         class="Tab align-items-center"
         data-test="DesignSystem-Tabs--Tab"
-        tabindex="0"
+        id="tabs-1-tab-1"
+        role="tab"
+        tabindex="-1"
       >
         <span
           class="Tab--small Tab--overflow"
@@ -372,8 +416,12 @@ exports[`Tabs component
         </span>
       </div>
       <div
+        aria-disabled="true"
+        aria-selected="false"
         class="Tab Tab--disabled align-items-center"
         data-test="DesignSystem-Tabs--Tab"
+        id="tabs-1-tab-2"
+        role="tab"
         tabindex="-1"
       >
         <span
