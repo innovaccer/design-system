@@ -11,6 +11,9 @@ exports[`FileList component
     <div
       class="FileItem"
       data-test="DesignSystem-FileListItem"
+      id="1"
+      role="button"
+      tabindex="0"
     >
       <div
         class="FileItem-file"
@@ -66,6 +69,9 @@ exports[`FileList component
     <div
       class="FileItem"
       data-test="DesignSystem-FileListItem"
+      id="2"
+      role="button"
+      tabindex="0"
     >
       <div
         class="FileItem-file"
@@ -103,6 +109,9 @@ exports[`FileList component
     <div
       class="FileItem"
       data-test="DesignSystem-FileListItem"
+      id="3"
+      role="button"
+      tabindex="0"
     >
       <div
         class="FileItem-file"
@@ -159,6 +168,9 @@ exports[`FileList component
     <div
       class="FileItem"
       data-test="DesignSystem-FileListItem"
+      id="4"
+      role="button"
+      tabindex="0"
     >
       <div
         class="FileItem-file"
@@ -196,6 +208,8 @@ exports[`FileList component
     <div
       class="FileItem"
       data-test="DesignSystem-FileListItem"
+      role="button"
+      tabindex="0"
     >
       <div
         class="FileItem-file"
