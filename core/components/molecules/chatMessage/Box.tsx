@@ -1,10 +1,11 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { BaseProps, extractBaseProps, OmitNativeProps } from '@/utils/types';
+import useAccessibilityProps from '@/accessibility/utils/useAccessibilityProps';
 import { SharedProps } from './ChatMessage';
 import styles from '@css/components/chat.module.css';
 
-export interface BoxProps extends BaseProps {
+export interface BoxProps extends BaseProps, OmitNativeProps<HTMLDivElement, 'onClick'> {
   /**
    * Callback function called when chat message is clicked.
    */
@@ -19,9 +20,31 @@ export interface BoxBaseProps {
 export type InternalBoxProps = BoxProps & BoxBaseProps & SharedProps;
 
 export const Box = (props: InternalBoxProps) => {
-  const { children, type, isTyping, statusType, withStatus, onClick, className } = props;
+  const {
+    children,
+    type,
+    isTyping,
+    statusType,
+    withStatus,
+    onClick,
+    className,
+    role,
+    tabIndex,
+    onKeyDown,
+    'aria-label': ariaLabel,
+    ...rest
+  } = props;
 
   const baseProps = extractBaseProps(props);
+  const accessibilityProps = onClick
+    ? useAccessibilityProps({
+        onClick,
+        onKeyDown,
+        role,
+        tabIndex,
+        'aria-label': ariaLabel,
+      })
+    : {};
 
   const MessageClass = classNames(
     {
@@ -34,14 +57,17 @@ export const Box = (props: InternalBoxProps) => {
     className
   );
 
-  /* TODO(a11y): fix accessibility  */
-  /* eslint-disable  */
   return (
-    <div {...baseProps} className={MessageClass} onClick={onClick} data-test="DesignSystem-ChatMessage--Box">
+    <div
+      {...baseProps}
+      {...rest}
+      {...accessibilityProps}
+      className={MessageClass}
+      data-test="DesignSystem-ChatMessage--Box"
+    >
       {children}
     </div>
   );
-  /* eslint-enable  */
 };
 
 Box.displayName = 'Box';
