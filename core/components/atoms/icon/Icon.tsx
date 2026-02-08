@@ -173,7 +173,14 @@ export const Icon = (props: IconProps) => {
     );
   }
   return (
-    <i data-test="DesignSystem-Icon" {...baseProps} className={iconClass} style={styles} {...accessibilityProps}>
+    <i
+      data-test="DesignSystem-Icon"
+      {...baseProps}
+      className={iconClass}
+      style={styles}
+      aria-hidden={props['aria-label'] ? undefined : 'true'}
+      {...accessibilityProps}
+    >
       {name}
     </i>
   );
