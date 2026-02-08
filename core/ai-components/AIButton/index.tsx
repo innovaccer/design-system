@@ -70,7 +70,8 @@ export const AIButton = (props: AIButtonProps) => {
       {withSparkle && (
         <img
           src={AISparkle}
-          alt="Button Icon"
+          alt=""
+          aria-hidden="true"
           width={16}
           height={16}
           className={IconClassNames}
