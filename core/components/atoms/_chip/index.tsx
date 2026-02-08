@@ -76,15 +76,13 @@ export const GenericChip = (props: GenericChipProps) => {
   };
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
+    if (event.key === 'Enter') {
       onCloseHandler(event);
     }
   };
 
   const onChipKeyDownHandler = (event: React.KeyboardEvent) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
+    if (event.key === 'Enter') {
       onClickHandler();
     }
   };
