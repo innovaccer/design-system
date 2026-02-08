@@ -109,11 +109,27 @@ export const Avatar = (props: AvatarProps) => {
 
   const getTooltipName = () => {
     if (children && typeof children === 'string') {
-      return `${children} ${tooltipSuffix || ''}`;
+      return `${children} ${tooltipSuffix || ''}`.trim();
     }
 
-    return `${firstName || ''} ${lastName || ''} ${tooltipSuffix || ''}` || '';
+    const name = `${firstName || ''} ${lastName || ''}`.trim();
+    return name ? `${name} ${tooltipSuffix || ''}`.trim() : '';
   };
+
+  const getAriaLabel = () => {
+    const name = getTooltipName();
+    if (!name) return undefined;
+
+    let label = name;
+    if (presence) {
+      label += ` - ${presence}`;
+    }
+    return label;
+  };
+
+  const avatarAriaLabel = props['aria-label'] || getAriaLabel();
+  const avatarRole =
+    props['aria-label'] || firstName || lastName || (children && typeof children === 'string') ? 'img' : role;
 
   const AvatarAppearance =
     appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] || DefaultAppearance;
@@ -180,7 +196,12 @@ export const Avatar = (props: AvatarProps) => {
   const renderAvatar = () => {
     if (children && typeof children !== 'string') {
       return (
-        <span data-test="DesignSystem-AvatarWrapper" className={AvatarWrapperClassNames} role={role}>
+        <span
+          data-test="DesignSystem-AvatarWrapper"
+          className={AvatarWrapperClassNames}
+          role={avatarRole}
+          aria-label={avatarAriaLabel}
+        >
           <AvatarProvider value={sharedProp}>
             <span
               data-test="DesignSystem-Avatar"
@@ -196,7 +217,12 @@ export const Avatar = (props: AvatarProps) => {
     }
 
     return (
-      <span data-test="DesignSystem-AvatarWrapper" className={AvatarWrapperClassNames} role={role}>
+      <span
+        data-test="DesignSystem-AvatarWrapper"
+        className={AvatarWrapperClassNames}
+        role={avatarRole}
+        aria-label={avatarAriaLabel}
+      >
         <span
           data-test="DesignSystem-Avatar"
           {...baseProps}
@@ -205,7 +231,7 @@ export const Avatar = (props: AvatarProps) => {
         >
           <>
             {initials && (
-              <Text weight="medium" className={TextClassNames}>
+              <Text weight="medium" className={TextClassNames} aria-hidden="true">
                 {initials}
               </Text>
             )}

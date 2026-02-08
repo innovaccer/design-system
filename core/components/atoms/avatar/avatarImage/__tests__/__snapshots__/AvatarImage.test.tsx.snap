@@ -15,9 +15,10 @@ Object {
           class="PopperWrapper-trigger flex-grow-0"
         >
           <span
+            aria-label="John Doe"
             class=""
             data-test="DesignSystem-AvatarWrapper"
-            role="presentation"
+            role="img"
           >
             <span
               class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
