@@ -1,7 +1,8 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { Text, InlineMessage } from '@/index';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { BaseProps, extractBaseProps, OmitNativeProps } from '@/utils/types';
+import useAccessibilityProps from '@/accessibility/utils/useAccessibilityProps';
 import FileIcon from './FileIcon';
 import { FileStatus } from '@/common.type';
 import styles from '@css/components/fileList.module.css';
@@ -20,7 +21,7 @@ export interface FileObject extends BaseProps, Record<string, any> {
    */
   type: string;
 }
-export interface FileListItemProps extends BaseProps, Record<string, any> {
+export interface FileListItemProps extends BaseProps, OmitNativeProps<HTMLDivElement, 'onClick'>, Record<string, any> {
   /**
    * Attached file
    *
@@ -60,7 +61,22 @@ export interface FileListItemProps extends BaseProps, Record<string, any> {
 }
 
 export const FileListItem = (props: FileListItemProps) => {
-  const { progress, errorMessage, onClick, className, actions, fileItem, file, status, fileSize } = props;
+  const {
+    progress,
+    errorMessage,
+    onClick,
+    className,
+    actions,
+    fileItem,
+    file,
+    status,
+    fileSize,
+    role,
+    tabIndex,
+    onKeyDown,
+    'aria-label': ariaLabel,
+    ...rest
+  } = props;
 
   const { name } = file;
 
@@ -79,10 +95,24 @@ export const FileListItem = (props: FileListItemProps) => {
     }
   };
 
+  const accessibilityProps = onClick
+    ? useAccessibilityProps({
+        onClick: onClickHandler,
+        onKeyDown,
+        role,
+        tabIndex,
+        'aria-label': ariaLabel,
+      })
+    : {};
+
   return (
-    // TODO(a11y)
-    //  eslint-disable-next-line
-    <div {...baseProps} className={FileItemClass} onClick={onClickHandler} data-test="DesignSystem-FileListItem">
+    <div
+      {...baseProps}
+      {...rest}
+      {...accessibilityProps}
+      className={FileItemClass}
+      data-test="DesignSystem-FileListItem"
+    >
       <div className={styles['FileItem-file']}>
         <div className={styles['FileItem-fileContent']}>
           <FileIcon file={file} status={status} progress={progress} />
