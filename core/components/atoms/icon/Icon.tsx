@@ -172,7 +172,7 @@ export const Icon = (props: IconProps) => {
       </span>
     );
   }
-  const isInteractive = props.onClick || props.onKeyDown || accessibilityProps.role === 'button';
+  const isInteractive = props.onClick || props.onKeyDown || (props.role && props.role !== 'presentation');
 
   return (
     <i
