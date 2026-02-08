@@ -257,7 +257,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
       onBlur={() => setIsInputBlank(!ref.current?.value)}
     >
       {inlineLabel && (
-        <div className={styles['Input-inlineLabel']}>
+        <div className={styles['Input-inlineLabel']} id={`${props.id || name}-inlineLabel`}>
           <Text appearance="subtle">{inlineLabel}</Text>
         </div>
       )}
@@ -285,6 +285,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
         onClick={onClick}
         onFocus={onFocus}
         onPaste={onPaste}
+        aria-invalid={error || undefined}
+        aria-labelledby={inlineLabel ? `${props.id || name}-inlineLabel` : undefined}
         /**
          *for readOnly: true, tab focus from input element is removed. Hence, its tabIndex is set to -1.
          *For rest, "undefined" lets user agent(browser) use the default tabIndex.
@@ -305,6 +307,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
           <div className={rightIconClass}>
             <Icon
               data-test="DesignSystem-Input--closeIcon"
+              aria-label="Clear input"
               onClick={(e) => {
                 ref.current?.focus({ preventScroll: true });
                 onClear(e);

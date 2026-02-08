@@ -6,6 +6,7 @@ exports[`ActionButton component
 <body>
   <div>
     <i
+      aria-hidden="true"
       class="material-symbols material-symbols-rounded Icon ActionButton"
       data-test="DesignSystem-Input-ActionButton"
       role="button"
@@ -24,6 +25,7 @@ exports[`ActionButton component
 <body>
   <div>
     <i
+      aria-hidden="true"
       class="material-symbols material-symbols-outlined Icon ActionButton"
       data-test="DesignSystem-Input-ActionButton"
       role="button"
@@ -42,6 +44,7 @@ exports[`ActionButton component
 <body>
   <div>
     <i
+      aria-hidden="true"
       class="material-symbols material-symbols-rounded Icon ActionButton"
       data-test="DesignSystem-Input-ActionButton"
       role="button"

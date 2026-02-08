@@ -40,6 +40,7 @@ exports[`Input Component - Disabled State with Icon Snapshot Tests
         class="Input-icon Input-icon--left"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Icon"
           role="button"
@@ -102,6 +103,7 @@ exports[`Input Component - Disabled State without Change Handler Snapshot Tests
         class="Input-icon Input-icon--left"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Icon"
           role="button"
@@ -136,6 +138,7 @@ exports[`Input Component - Error State with Icon Snapshot Tests
       style="min-width: 256px;"
     >
       <input
+        aria-invalid="true"
         class="Input-input Input-input--regular"
         data-test="DesignSystem-Input"
         name="name"
@@ -162,6 +165,7 @@ exports[`Input Component - Error State with Icon Snapshot Tests
         class="Input-icon Input-icon--left Input-icon--error"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Icon"
           role="button"
@@ -171,6 +175,7 @@ exports[`Input Component - Error State with Icon Snapshot Tests
         </i>
       </div>
       <input
+        aria-invalid="true"
         class="Input-input Input-input--regular"
         data-test="DesignSystem-Input"
         name="name"
@@ -221,6 +226,7 @@ exports[`Input Component - Icon and Placeholder Variants Snapshot Tests
         class="Input-icon Input-icon--left Input-icon--inputBlank"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Icon"
           role="button"
@@ -281,6 +287,7 @@ exports[`Input Component - Icon and Placeholder Variants Snapshot Tests
         class="Input-icon Input-icon--left"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Icon"
           role="button"
@@ -382,6 +389,7 @@ exports[`Input Component - Number Type with Inline Label Snapshot Tests
     >
       <div
         class="Input-inlineLabel"
+        id="name-inlineLabel"
       >
         <span
           class="Text Text--subtle Text--regular"
@@ -391,6 +399,7 @@ exports[`Input Component - Number Type with Inline Label Snapshot Tests
         </span>
       </div>
       <input
+        aria-labelledby="name-inlineLabel"
         class="Input-input Input-input--large"
         data-test="DesignSystem-Input"
         name="name"
@@ -414,6 +423,7 @@ exports[`Input Component - Number Type with Inline Label Snapshot Tests
     >
       <div
         class="Input-inlineLabel"
+        id="name-inlineLabel"
       >
         <span
           class="Text Text--subtle Text--regular"
@@ -423,6 +433,7 @@ exports[`Input Component - Number Type with Inline Label Snapshot Tests
         </span>
       </div>
       <input
+        aria-labelledby="name-inlineLabel"
         class="Input-input Input-input--regular"
         data-test="DesignSystem-Input"
         name="name"
@@ -446,6 +457,7 @@ exports[`Input Component - Number Type with Inline Label Snapshot Tests
     >
       <div
         class="Input-inlineLabel"
+        id="name-inlineLabel"
       >
         <span
           class="Text Text--subtle Text--regular"
@@ -455,6 +467,7 @@ exports[`Input Component - Number Type with Inline Label Snapshot Tests
         </span>
       </div>
       <input
+        aria-labelledby="name-inlineLabel"
         class="Input-input Input-input--tiny"
         data-test="DesignSystem-Input"
         name="name"
@@ -506,6 +519,7 @@ exports[`Input Component - ReadOnly State with Icon Snapshot Tests
         class="Input-icon Input-icon--left"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Icon"
           role="button"
