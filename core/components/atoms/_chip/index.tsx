@@ -148,6 +148,23 @@ export const GenericChip = (props: GenericChipProps) => {
     return labelText;
   };
 
+  const getAriaProps = () => {
+    const effectiveRole = props.role || 'button';
+    const ariaProps: React.HTMLAttributes<HTMLDivElement> = {};
+
+    if (type === 'selection') {
+      if (effectiveRole === 'button') {
+        ariaProps['aria-pressed'] = selected;
+      } else if (effectiveRole === 'checkbox' || effectiveRole === 'menuitemcheckbox') {
+        ariaProps['aria-checked'] = selected;
+      } else if (effectiveRole === 'option' || effectiveRole === 'tab' || effectiveRole === 'treeitem') {
+        ariaProps['aria-selected'] = selected;
+      }
+    }
+
+    return ariaProps;
+  };
+
   return (
     <Tooltip
       showTooltip={isTextTruncated}
@@ -160,7 +177,7 @@ export const GenericChip = (props: GenericChipProps) => {
         style={wrapperStyle}
         data-test="DesignSystem-GenericChip--Wrapper"
         role={props.role || 'button'}
-        aria-pressed={type === 'selection' ? selected : undefined}
+        {...getAriaProps()}
         onKeyDown={onChipKeyDownHandler}
         {...baseProps}
         className={chipWrapperClass}
