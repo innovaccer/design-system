@@ -1,7 +1,8 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { Text, InlineMessage, Button } from '@/index';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { BaseProps, extractBaseProps, OmitNativeProps } from '@/utils/types';
+import useAccessibilityProps from '@/accessibility/utils/useAccessibilityProps';
 import FileUploaderStatus from './FileUploaderStatus';
 import { FileStatus } from '@/common.type';
 import styles from '@css/components/fileUploader.module.css';
@@ -33,14 +34,29 @@ export interface FileItem {
   errorMessage?: string;
 }
 
-export interface FileUploaderItemProps extends BaseProps, FileItem {
+export interface FileUploaderItemProps extends BaseProps, OmitNativeProps<HTMLDivElement, 'onClick'>, FileItem {
   onDelete?: (file: File, id?: any) => void;
   onRetry?: (file: File, id?: any) => void;
   onClick?: (file: File, id?: any) => void;
 }
 
 export const FileUploaderItem = (props: FileUploaderItemProps) => {
-  const { file, id, status, errorMessage, progress, onClick, onDelete, onRetry, className } = props;
+  const {
+    file,
+    id,
+    status,
+    errorMessage,
+    progress,
+    onClick,
+    onDelete,
+    onRetry,
+    className,
+    role,
+    tabIndex,
+    onKeyDown,
+    'aria-label': ariaLabel,
+    ...rest
+  } = props;
 
   const { name } = file;
 
@@ -53,14 +69,23 @@ export const FileUploaderItem = (props: FileUploaderItemProps) => {
     className
   );
 
+  const accessibilityProps = onClick
+    ? useAccessibilityProps({
+        onClick: () => onClick(file, id),
+        onKeyDown,
+        role,
+        tabIndex,
+        'aria-label': ariaLabel,
+      })
+    : {};
+
   return (
-    // TODO(a11y)
-    //  eslint-disable-next-line
     <div
       {...baseProps}
+      {...rest}
+      {...accessibilityProps}
       data-test="DesignSystem-FileUploader--Item"
       className={FileItemClass}
-      onClick={() => onClick && onClick(file, id)}
     >
       <div className={styles['FileUploaderItem-file']}>
         <Text className={styles['FileUploaderItem-text']} appearance={status === 'completed' ? 'default' : 'subtle'}>
@@ -80,6 +105,7 @@ export const FileUploaderItem = (props: FileUploaderItemProps) => {
             size="regular"
             onClick={() => onDelete && onDelete(file, id)}
             icon="close"
+            aria-label={`Remove ${name}`}
           />
         </div>
       </div>
