@@ -6,6 +6,7 @@ exports[`Chip component
 <body>
   <div>
     <div
+      aria-pressed="false"
       class="Chip-wrapper Chip Chip--Action Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
       role="button"
@@ -22,6 +23,7 @@ exports[`Chip component
 <body>
   <div>
     <div
+      aria-pressed="false"
       class="Chip-wrapper Chip Chip--Action Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
       role="button"
@@ -38,6 +40,7 @@ exports[`Chip component
 <body>
   <div>
     <div
+      aria-pressed="false"
       class="Chip-wrapper Chip Chip-Action--disabled Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
       role="button"
@@ -54,6 +57,7 @@ exports[`Chip component
 <body>
   <div>
     <div
+      aria-pressed="false"
       class="Chip-wrapper Chip Chip--Input Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
       role="button"
@@ -70,6 +74,7 @@ exports[`Chip component
 <body>
   <div>
     <div
+      aria-pressed="false"
       class="Chip-wrapper Chip Chip--Input Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
       role="button"
@@ -86,6 +91,7 @@ exports[`Chip component
 <body>
   <div>
     <div
+      aria-pressed="false"
       class="Chip-wrapper Chip Chip-Input--disabled Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
       role="button"
@@ -102,6 +108,7 @@ exports[`Chip component
 <body>
   <div>
     <div
+      aria-pressed="false"
       class="Chip-wrapper Chip Chip--Selection Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
       role="button"
@@ -118,6 +125,7 @@ exports[`Chip component
 <body>
   <div>
     <div
+      aria-pressed="false"
       class="Chip-wrapper Chip Chip--Selection Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
       role="button"
@@ -134,6 +142,7 @@ exports[`Chip component
 <body>
   <div>
     <div
+      aria-pressed="false"
       class="Chip-wrapper Chip Chip-Selection--disabled Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
       role="button"
@@ -150,6 +159,7 @@ exports[`Chip component
 <body>
   <div>
     <div
+      aria-pressed="false"
       class="Chip-wrapper Chip Chip--Selection Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
       role="button"
@@ -166,6 +176,7 @@ exports[`Chip component
 <body>
   <div>
     <div
+      aria-pressed="false"
       class="Chip-wrapper Chip Chip--Selection Chip-Selection--selected Chip-size--regular"
       data-test="DesignSystem-Chip--GenericChip"
       role="button"
