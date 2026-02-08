@@ -74,12 +74,14 @@ export const GenericChip = (props: GenericChipProps) => {
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
     if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
       onCloseHandler(event);
     }
   };
 
   const onChipKeyDownHandler = (event: React.KeyboardEvent) => {
     if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
       onClickHandler();
     }
   };
@@ -157,7 +159,7 @@ export const GenericChip = (props: GenericChipProps) => {
         style={wrapperStyle}
         data-test="DesignSystem-GenericChip--Wrapper"
         role={props.role || 'button'}
-        aria-pressed={selected}
+        aria-pressed={props.role === 'button' || !props.role ? selected : undefined}
         onKeyDown={onChipKeyDownHandler}
         {...baseProps}
         className={chipWrapperClass}
