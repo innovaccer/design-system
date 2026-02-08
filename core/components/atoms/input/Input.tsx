@@ -247,6 +247,9 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
 
   const iconSize = size === 'tiny' ? 14 : sizeMapping[size];
 
+  const inputId = props.id || name;
+  const inlineLabelId = inlineLabel && inputId ? `${inputId}-inlineLabel` : undefined;
+
   return (
     <div
       data-test="DesignSystem-InputWrapper"
@@ -257,7 +260,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
       onBlur={() => setIsInputBlank(!ref.current?.value)}
     >
       {inlineLabel && (
-        <div className={styles['Input-inlineLabel']} id={`${props.id || name}-inlineLabel`}>
+        <div className={styles['Input-inlineLabel']} id={inlineLabelId}>
           <Text appearance="subtle">{inlineLabel}</Text>
         </div>
       )}
@@ -286,7 +289,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
         onFocus={onFocus}
         onPaste={onPaste}
         aria-invalid={error || undefined}
-        aria-labelledby={inlineLabel ? `${props.id || name}-inlineLabel` : undefined}
+        aria-labelledby={inlineLabelId}
         /**
          *for readOnly: true, tab focus from input element is removed. Hence, its tabIndex is set to -1.
          *For rest, "undefined" lets user agent(browser) use the default tabIndex.
