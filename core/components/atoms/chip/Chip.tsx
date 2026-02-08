@@ -124,6 +124,7 @@ export const Chip = (props: ChipProps) => {
       name={name}
       labelPrefix={labelPrefix}
       maxWidth={maxWidth}
+      type={type}
     />
   );
 };

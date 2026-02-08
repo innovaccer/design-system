@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import Icon from '@/components/atoms/icon';
 import Text from '@/components/atoms/text';
-import { Name } from '../chip/Chip';
+import { Name, ChipType } from '../chip/Chip';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { IconProps, TextProps } from '@/index.type';
 import { Tooltip } from '@/index';
@@ -22,6 +22,8 @@ export interface GenericChipProps extends BaseProps {
   name: Name;
   maxWidth: string | number;
   size?: TChipSize;
+  type?: ChipType;
+  role?: string;
 }
 
 export const GenericChip = (props: GenericChipProps) => {
@@ -38,6 +40,7 @@ export const GenericChip = (props: GenericChipProps) => {
     iconType,
     maxWidth,
     size = 'regular',
+    type,
   } = props;
   const wrapperStyle = { maxWidth: maxWidth };
   const [isTextTruncated, setIsTextTruncated] = React.useState(false);
@@ -159,7 +162,7 @@ export const GenericChip = (props: GenericChipProps) => {
         style={wrapperStyle}
         data-test="DesignSystem-GenericChip--Wrapper"
         role={props.role || 'button'}
-        aria-pressed={props.role === 'button' || !props.role ? selected : undefined}
+        aria-pressed={type === 'selection' ? selected : undefined}
         onKeyDown={onChipKeyDownHandler}
         {...baseProps}
         className={chipWrapperClass}
