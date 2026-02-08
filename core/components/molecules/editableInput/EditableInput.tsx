@@ -60,10 +60,10 @@ export const EditableInput = (props: EditableInputProps) => {
   }, [props.value]);
 
   React.useEffect(() => {
-    if (editing && showComponent) {
+    if (editing) {
       inputRef.current?.focus();
     }
-  }, [editing, showComponent]);
+  }, [editing]);
 
   const EditableInputClass = classNames(
     {
@@ -127,6 +127,7 @@ export const EditableInput = (props: EditableInputProps) => {
       className={InputClass}
       size={size}
       onChange={onInputChangeHandler}
+      onKeyDown={onKeyDown}
       error={error && editing}
       ref={inputRef}
       data-test="DesignSystem-EditableInput--Input"
@@ -166,13 +167,7 @@ export const EditableInput = (props: EditableInputProps) => {
   };
 
   return (
-    <div
-      data-test="DesignSystem-EditableInput"
-      {...baseProps}
-      className={EditableInputClass}
-      onKeyDown={onKeyDown}
-      role="presentation"
-    >
+    <div data-test="DesignSystem-EditableInput" {...baseProps} className={EditableInputClass}>
       <Editable onChange={onChangeHandler} editing={editing}>
         {renderChildren()}
       </Editable>
@@ -187,6 +182,7 @@ export const EditableInput = (props: EditableInputProps) => {
               setDefaultComponent(value);
             }}
             data-test="DesignSystem-EditableInput--Discard"
+            aria-label="Discard changes"
           />
           <Button
             icon="check"
@@ -196,6 +192,7 @@ export const EditableInput = (props: EditableInputProps) => {
             disabled={disableSaveAction}
             onClick={onSaveChanges}
             data-test="DesignSystem-EditableInput--Save"
+            aria-label="Save changes"
           />
         </div>
       )}
