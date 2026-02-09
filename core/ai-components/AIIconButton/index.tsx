@@ -107,7 +107,7 @@ export const AIIconButton = (props: AIIconButtonProps) => {
         {...rest}
         style={{ color: strokeColor }}
       >
-        <i data-test="DesignSystem-Icon" className={IconClassNames} style={iconStyles} aria-hidden="true">
+        <i data-test="DesignSystem-Icon" className={IconClassNames} style={iconStyles} aria-hidden={!!ariaLabel}>
           {icon}
         </i>
         <SaraIcon {...saraIconProps} />
