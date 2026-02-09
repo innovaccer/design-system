@@ -16,6 +16,8 @@ const SaraIconDisabled = (props: SaraIconType) => {
       xmlns="http://www.w3.org/2000/svg"
       className={className}
       data-test="DesignSystem-AI-Icon"
+      aria-hidden="true"
+      focusable="false"
     >
       <path
         fillRule="evenodd"
