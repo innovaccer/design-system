@@ -943,6 +943,7 @@ exports[`Navigation component
         </div>
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1083,6 +1084,7 @@ exports[`Navigation component
         </div>
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1212,6 +1214,7 @@ exports[`Navigation component
         />
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1278,6 +1281,7 @@ exports[`Navigation component
         />
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1353,6 +1357,7 @@ exports[`Navigation component
         />
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1405,6 +1410,7 @@ exports[`Navigation component
         />
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1451,6 +1457,7 @@ exports[`Navigation component
         />
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1521,6 +1528,7 @@ exports[`Navigation component
         />
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1837,6 +1845,7 @@ exports[`Navigation component
         </div>
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
