@@ -995,8 +995,13 @@ exports[`TS renders children 1`] = `
     Hello World!
   </p>
   <div
+    aria-valuemax="100"
+    aria-valuemin="0"
+    aria-valuenow="0"
+    aria-valuetext="0%"
     class="ProgressBar ProgressBar-indicator--regular"
     data-test="DesignSystem-ProgressBar"
+    role="progressbar"
   >
     <div
       class="ProgressBar-indicator"
@@ -1057,7 +1062,10 @@ exports[`TS renders children 1`] = `
     Hello World!
   </span>
   <svg
+    aria-label="Loading"
+    aria-live="polite"
     class="Spinner Spinner--medium"
+    role="status"
     viewBox="0 0 50 50"
   >
     <circle
@@ -2579,6 +2587,7 @@ exports[`TS renders children 1`] = `
       />
     </div>
     <hr
+      aria-orientation="horizontal"
       class="Divider Divider--horizontal Divider--header"
       data-test="DesignSystem-Divider"
     />
