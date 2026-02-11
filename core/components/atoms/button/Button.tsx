@@ -137,6 +137,9 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
   const appearanceClass = isOutlined ? `Button-outlined--${appearance}` : `Button--${appearance}`;
 
   const getSpinnerAppearance = () => {
+    if (selected && isBasicOrTransparent) {
+      return 'primary';
+    }
     if (isOutlined) {
       if (appearance === 'basic') return 'secondary';
       if (appearance === 'alert') return 'alert';
