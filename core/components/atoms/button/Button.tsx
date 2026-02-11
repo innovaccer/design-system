@@ -137,6 +137,9 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
   const appearanceClass = isOutlined ? `Button-outlined--${appearance}` : `Button--${appearance}`;
 
   const getSpinnerAppearance = () => {
+    if (selected && isBasicOrTransparent) {
+      return 'primary';
+    }
     if (isOutlined) {
       if (appearance === 'basic') return 'secondary';
       if (appearance === 'alert') return 'alert';
@@ -177,6 +180,8 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
   const spinnerSize = size === 'large' && children ? 'small' : 'xsmall';
   const iconSize = size === 'tiny' ? 14 : largeIcon && !children ? sizeMapping[size] + 4 : sizeMapping[size];
 
+  const shouldShowOverlay = selected && appearance === 'basic';
+
   return (
     <button
       data-test="DesignSystem-Button"
@@ -209,6 +214,7 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
           {children && <span className={styles['Button-text']}>{children}</span>}
         </>
       )}
+      {shouldShowOverlay && <div className={styles['Button-overlay']} data-test="DesignSystem-Button--Overlay" />}
     </button>
   );
 });
