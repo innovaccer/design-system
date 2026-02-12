@@ -180,7 +180,7 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
   const spinnerSize = size === 'large' && children ? 'small' : 'xsmall';
   const iconSize = size === 'tiny' ? 14 : largeIcon && !children ? sizeMapping[size] + 4 : sizeMapping[size];
 
-  const shouldShowOverlay = selected && appearance === 'basic';
+  const shouldShowOverlay = selected && isBasicOrTransparent;
 
   return (
     <button
