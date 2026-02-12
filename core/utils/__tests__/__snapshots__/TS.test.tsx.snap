@@ -947,6 +947,7 @@ exports[`TS renders children 1`] = `
     </span>
   </div>
   <a
+    aria-disabled="false"
     class="Link Link--regular Link--default"
     data-test="DesignSystem-Link"
     tabindex="0"
@@ -956,6 +957,7 @@ exports[`TS renders children 1`] = `
   <div
     class="Message Message--info"
     data-test="DesignSystem-Message"
+    role="status"
   >
     <i
       class="material-symbols material-symbols-rounded Icon Icon--info Message-icon--info Message-icon--regular"
@@ -993,8 +995,13 @@ exports[`TS renders children 1`] = `
     Hello World!
   </p>
   <div
+    aria-valuemax="100"
+    aria-valuemin="0"
+    aria-valuenow="0"
+    aria-valuetext="0%"
     class="ProgressBar ProgressBar-indicator--regular"
     data-test="DesignSystem-ProgressBar"
+    role="progressbar"
   >
     <div
       class="ProgressBar-indicator"
@@ -1037,6 +1044,7 @@ exports[`TS renders children 1`] = `
     data-test="DesignSystem-StatusHint"
   >
     <span
+      aria-hidden="true"
       class="StatusHint-icon StatusHint--default mr-4"
       data-test="DesignSystem-StatusHint--Icon"
     />
@@ -1054,7 +1062,10 @@ exports[`TS renders children 1`] = `
     Hello World!
   </span>
   <svg
+    aria-label="Loading"
+    aria-live="polite"
     class="Spinner Spinner--medium"
+    role="status"
     viewBox="0 0 50 50"
   >
     <circle
@@ -1490,6 +1501,7 @@ exports[`TS renders children 1`] = `
     </div>
   </div>
   <h4
+    aria-level="4"
     class="Subheading Subheading--default"
     data-test="DesignSystem-Subheading"
   >
@@ -1500,6 +1512,7 @@ exports[`TS renders children 1`] = `
   >
     <input
       class="Switch-input"
+      role="switch"
       type="checkbox"
       value=""
     />
@@ -1519,7 +1532,9 @@ exports[`TS renders children 1`] = `
     rows="3"
   />
   <div
+    aria-live="polite"
     class="Toast Toast--info"
+    role="status"
   >
     <i
       class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--info"
@@ -1542,6 +1557,7 @@ exports[`TS renders children 1`] = `
           Hello World!
         </h5>
         <i
+          aria-label="Close"
           class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon--info"
           data-test="DesignSystem-Icon"
           role="button"
@@ -2571,6 +2587,7 @@ exports[`TS renders children 1`] = `
       />
     </div>
     <hr
+      aria-orientation="horizontal"
       class="Divider Divider--horizontal Divider--header"
       data-test="DesignSystem-Divider"
     />

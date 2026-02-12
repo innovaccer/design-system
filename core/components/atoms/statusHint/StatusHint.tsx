@@ -95,7 +95,7 @@ export const StatusHint = (props: StatusHintProps) => {
       onMouseLeave={(e) => onMouseLeave && onMouseLeave(e)}
     >
       {/* eslint-enable */}
-      <span data-test="DesignSystem-StatusHint--Icon" className={StatusHintIconClass} />
+      <span data-test="DesignSystem-StatusHint--Icon" aria-hidden="true" className={StatusHintIconClass} />
       {renderChildren()}
     </div>
   );

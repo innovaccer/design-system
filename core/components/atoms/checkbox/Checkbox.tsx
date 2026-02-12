@@ -94,6 +94,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     id = `${name}-${label}-${uidGenerator()}`,
     labelRef,
     wrapLabel,
+    ['aria-describedby']: ariaDescribedby,
     ...rest
   } = props;
 
@@ -173,6 +174,9 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     ['indeterminate--tiny']: indeterminate && size === 'tiny',
   });
 
+  const helpTextId = helpText && helpText.trim() ? `${id}-helptext` : undefined;
+  const describedBy = [ariaDescribedby, helpTextId].filter(Boolean).join(' ') || undefined;
+
   return (
     <>
       <div data-test="DesignSystem-Checkbox" className={CheckboxClass}>
@@ -191,6 +195,9 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
             tabIndex={tabIndex}
             id={id}
             data-test="DesignSystem-Checkbox-InputBox"
+            aria-invalid={error || undefined}
+            aria-checked={indeterminate ? 'mixed' : undefined}
+            aria-describedby={describedBy}
           />
           <span className={CheckboxWrapper} data-test="DesignSystem-Checkbox-Icon">
             {IconMapper && <CheckboxIcon name={IconMapper} />}
@@ -213,6 +220,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
             {helpText && (
               <Text
                 data-test="DesignSystem-Checkbox-HelpText"
+                id={helpTextId}
                 size="small"
                 appearance={disabled ? 'disabled' : 'subtle'}
               >

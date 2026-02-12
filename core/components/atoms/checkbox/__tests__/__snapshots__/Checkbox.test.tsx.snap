@@ -14,6 +14,7 @@ exports[`Checkbox component
         data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
+          aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
           class="Checkbox-input"
           data-test="DesignSystem-Checkbox-InputBox"
           id="Checkbox-Checkbox-Test-uid"
@@ -45,6 +46,7 @@ exports[`Checkbox component
         <span
           class="Text Text--subtle Text--small"
           data-test="DesignSystem-Checkbox-HelpText"
+          id="Checkbox-Checkbox-Test-uid-helptext"
         >
           Checkbox
         </span>
@@ -68,6 +70,8 @@ exports[`Checkbox component
         data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
+          aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
+          aria-invalid="true"
           class="Checkbox-input"
           data-test="DesignSystem-Checkbox-InputBox"
           id="Checkbox-Checkbox-Test-uid"
@@ -99,6 +103,7 @@ exports[`Checkbox component
         <span
           class="Text Text--subtle Text--small"
           data-test="DesignSystem-Checkbox-HelpText"
+          id="Checkbox-Checkbox-Test-uid-helptext"
         >
           Checkbox
         </span>
@@ -122,6 +127,7 @@ exports[`Checkbox component
         data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
+          aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
           class="Checkbox-input"
           data-test="DesignSystem-Checkbox-InputBox"
           disabled=""
@@ -154,6 +160,7 @@ exports[`Checkbox component
         <span
           class="Text Text--disabled Text--small"
           data-test="DesignSystem-Checkbox-HelpText"
+          id="Checkbox-Checkbox-Test-uid-helptext"
         >
           Checkbox
         </span>
@@ -177,6 +184,8 @@ exports[`Checkbox component
         data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
+          aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
+          aria-invalid="true"
           class="Checkbox-input"
           data-test="DesignSystem-Checkbox-InputBox"
           disabled=""
@@ -209,6 +218,7 @@ exports[`Checkbox component
         <span
           class="Text Text--disabled Text--small"
           data-test="DesignSystem-Checkbox-HelpText"
+          id="Checkbox-Checkbox-Test-uid-helptext"
         >
           Checkbox
         </span>
@@ -232,6 +242,7 @@ exports[`Checkbox component
         data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
+          aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
           checked=""
           class="Checkbox-input Checkbox-input--checked"
           data-test="DesignSystem-Checkbox-InputBox"
@@ -279,6 +290,7 @@ exports[`Checkbox component
         <span
           class="Text Text--subtle Text--small"
           data-test="DesignSystem-Checkbox-HelpText"
+          id="Checkbox-Checkbox-Test-uid-helptext"
         >
           Checkbox
         </span>
@@ -302,6 +314,8 @@ exports[`Checkbox component
         data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
+          aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
+          aria-invalid="true"
           checked=""
           class="Checkbox-input Checkbox-input--checked"
           data-test="DesignSystem-Checkbox-InputBox"
@@ -349,6 +363,7 @@ exports[`Checkbox component
         <span
           class="Text Text--subtle Text--small"
           data-test="DesignSystem-Checkbox-HelpText"
+          id="Checkbox-Checkbox-Test-uid-helptext"
         >
           Checkbox
         </span>
@@ -372,6 +387,7 @@ exports[`Checkbox component
         data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
+          aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
           checked=""
           class="Checkbox-input Checkbox-input--checked"
           data-test="DesignSystem-Checkbox-InputBox"
@@ -420,6 +436,7 @@ exports[`Checkbox component
         <span
           class="Text Text--disabled Text--small"
           data-test="DesignSystem-Checkbox-HelpText"
+          id="Checkbox-Checkbox-Test-uid-helptext"
         >
           Checkbox
         </span>
@@ -443,6 +460,8 @@ exports[`Checkbox component
         data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
+          aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
+          aria-invalid="true"
           checked=""
           class="Checkbox-input Checkbox-input--checked"
           data-test="DesignSystem-Checkbox-InputBox"
@@ -491,6 +510,7 @@ exports[`Checkbox component
         <span
           class="Text Text--disabled Text--small"
           data-test="DesignSystem-Checkbox-HelpText"
+          id="Checkbox-Checkbox-Test-uid-helptext"
         >
           Checkbox
         </span>
@@ -514,6 +534,7 @@ exports[`Checkbox component
         data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
+          aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
           class="Checkbox-input"
           data-test="DesignSystem-Checkbox-InputBox"
           id="Checkbox-Checkbox-Test-uid"
@@ -545,6 +566,7 @@ exports[`Checkbox component
         <span
           class="Text Text--subtle Text--small"
           data-test="DesignSystem-Checkbox-HelpText"
+          id="Checkbox-Checkbox-Test-uid-helptext"
         >
           Checkbox
         </span>
@@ -568,6 +590,7 @@ exports[`Checkbox component
         data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
+          aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
           class="Checkbox-input"
           data-test="DesignSystem-Checkbox-InputBox"
           id="Checkbox-Checkbox-Test-uid"
@@ -599,6 +622,7 @@ exports[`Checkbox component
         <span
           class="Text Text--subtle Text--small"
           data-test="DesignSystem-Checkbox-HelpText"
+          id="Checkbox-Checkbox-Test-uid-helptext"
         >
           Checkbox
         </span>
@@ -622,6 +646,7 @@ exports[`Checkbox component
         data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
+          aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
           class="Checkbox-input"
           data-test="DesignSystem-Checkbox-InputBox"
           disabled=""
@@ -654,6 +679,7 @@ exports[`Checkbox component
         <span
           class="Text Text--disabled Text--small"
           data-test="DesignSystem-Checkbox-HelpText"
+          id="Checkbox-Checkbox-Test-uid-helptext"
         >
           Checkbox
         </span>
@@ -677,6 +703,7 @@ exports[`Checkbox component
         data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
+          aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
           class="Checkbox-input"
           data-test="DesignSystem-Checkbox-InputBox"
           disabled=""
@@ -709,6 +736,7 @@ exports[`Checkbox component
         <span
           class="Text Text--disabled Text--small"
           data-test="DesignSystem-Checkbox-HelpText"
+          id="Checkbox-Checkbox-Test-uid-helptext"
         >
           Checkbox
         </span>
@@ -732,6 +760,7 @@ exports[`Checkbox component
         data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
+          aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
           class="Checkbox-input"
           data-test="DesignSystem-Checkbox-InputBox"
           id="Checkbox-Checkbox-Test-uid"
@@ -763,6 +792,7 @@ exports[`Checkbox component
         <span
           class="Text Text--subtle Text--small"
           data-test="DesignSystem-Checkbox-HelpText"
+          id="Checkbox-Checkbox-Test-uid-helptext"
         >
           Checkbox
         </span>
@@ -786,6 +816,7 @@ exports[`Checkbox component
         data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
+          aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
           class="Checkbox-input"
           data-test="DesignSystem-Checkbox-InputBox"
           id="Checkbox-Checkbox-Test-uid"
@@ -817,6 +848,7 @@ exports[`Checkbox component
         <span
           class="Text Text--subtle Text--small"
           data-test="DesignSystem-Checkbox-HelpText"
+          id="Checkbox-Checkbox-Test-uid-helptext"
         >
           Checkbox
         </span>
@@ -840,6 +872,7 @@ exports[`Checkbox component
         data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
+          aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
           class="Checkbox-input"
           data-test="DesignSystem-Checkbox-InputBox"
           disabled=""
@@ -872,6 +905,7 @@ exports[`Checkbox component
         <span
           class="Text Text--disabled Text--small"
           data-test="DesignSystem-Checkbox-HelpText"
+          id="Checkbox-Checkbox-Test-uid-helptext"
         >
           Checkbox
         </span>
@@ -895,6 +929,7 @@ exports[`Checkbox component
         data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
+          aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
           class="Checkbox-input"
           data-test="DesignSystem-Checkbox-InputBox"
           disabled=""
@@ -927,6 +962,7 @@ exports[`Checkbox component
         <span
           class="Text Text--disabled Text--small"
           data-test="DesignSystem-Checkbox-HelpText"
+          id="Checkbox-Checkbox-Test-uid-helptext"
         >
           Checkbox
         </span>
@@ -950,6 +986,8 @@ exports[`Checkbox component
         data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
+          aria-checked="mixed"
+          aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
           class="Checkbox-input Checkbox-input--indeterminate"
           data-test="DesignSystem-Checkbox-InputBox"
           id="Checkbox-Checkbox-Test-uid"
@@ -994,6 +1032,7 @@ exports[`Checkbox component
         <span
           class="Text Text--subtle Text--small"
           data-test="DesignSystem-Checkbox-HelpText"
+          id="Checkbox-Checkbox-Test-uid-helptext"
         >
           Checkbox
         </span>
@@ -1017,6 +1056,8 @@ exports[`Checkbox component
         data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
+          aria-checked="mixed"
+          aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
           class="Checkbox-input Checkbox-input--indeterminate"
           data-test="DesignSystem-Checkbox-InputBox"
           id="Checkbox-Checkbox-Test-uid"
@@ -1061,6 +1102,7 @@ exports[`Checkbox component
         <span
           class="Text Text--subtle Text--small"
           data-test="DesignSystem-Checkbox-HelpText"
+          id="Checkbox-Checkbox-Test-uid-helptext"
         >
           Checkbox
         </span>
@@ -1084,6 +1126,8 @@ exports[`Checkbox component
         data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
+          aria-checked="mixed"
+          aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
           class="Checkbox-input Checkbox-input--indeterminate"
           data-test="DesignSystem-Checkbox-InputBox"
           disabled=""
@@ -1129,6 +1173,7 @@ exports[`Checkbox component
         <span
           class="Text Text--disabled Text--small"
           data-test="DesignSystem-Checkbox-HelpText"
+          id="Checkbox-Checkbox-Test-uid-helptext"
         >
           Checkbox
         </span>
@@ -1152,6 +1197,8 @@ exports[`Checkbox component
         data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
+          aria-checked="mixed"
+          aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
           class="Checkbox-input Checkbox-input--indeterminate"
           data-test="DesignSystem-Checkbox-InputBox"
           disabled=""
@@ -1197,6 +1244,7 @@ exports[`Checkbox component
         <span
           class="Text Text--disabled Text--small"
           data-test="DesignSystem-Checkbox-HelpText"
+          id="Checkbox-Checkbox-Test-uid-helptext"
         >
           Checkbox
         </span>
@@ -1220,6 +1268,8 @@ exports[`Checkbox component
         data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
+          aria-checked="mixed"
+          aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
           class="Checkbox-input Checkbox-input--indeterminate"
           data-test="DesignSystem-Checkbox-InputBox"
           id="Checkbox-Checkbox-Test-uid"
@@ -1266,6 +1316,7 @@ exports[`Checkbox component
         <span
           class="Text Text--subtle Text--small"
           data-test="DesignSystem-Checkbox-HelpText"
+          id="Checkbox-Checkbox-Test-uid-helptext"
         >
           Checkbox
         </span>
@@ -1289,6 +1340,8 @@ exports[`Checkbox component
         data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
+          aria-checked="mixed"
+          aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
           class="Checkbox-input Checkbox-input--indeterminate"
           data-test="DesignSystem-Checkbox-InputBox"
           id="Checkbox-Checkbox-Test-uid"
@@ -1335,6 +1388,7 @@ exports[`Checkbox component
         <span
           class="Text Text--subtle Text--small"
           data-test="DesignSystem-Checkbox-HelpText"
+          id="Checkbox-Checkbox-Test-uid-helptext"
         >
           Checkbox
         </span>
@@ -1358,6 +1412,8 @@ exports[`Checkbox component
         data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
+          aria-checked="mixed"
+          aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
           class="Checkbox-input Checkbox-input--indeterminate"
           data-test="DesignSystem-Checkbox-InputBox"
           disabled=""
@@ -1405,6 +1461,7 @@ exports[`Checkbox component
         <span
           class="Text Text--disabled Text--small"
           data-test="DesignSystem-Checkbox-HelpText"
+          id="Checkbox-Checkbox-Test-uid-helptext"
         >
           Checkbox
         </span>
@@ -1428,6 +1485,8 @@ exports[`Checkbox component
         data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
+          aria-checked="mixed"
+          aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
           class="Checkbox-input Checkbox-input--indeterminate"
           data-test="DesignSystem-Checkbox-InputBox"
           disabled=""
@@ -1475,6 +1534,7 @@ exports[`Checkbox component
         <span
           class="Text Text--disabled Text--small"
           data-test="DesignSystem-Checkbox-HelpText"
+          id="Checkbox-Checkbox-Test-uid-helptext"
         >
           Checkbox
         </span>
@@ -1498,6 +1558,7 @@ exports[`Checkbox component
         data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
+          aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
           checked=""
           class="Checkbox-input Checkbox-input--checked"
           data-test="DesignSystem-Checkbox-InputBox"
@@ -1545,6 +1606,7 @@ exports[`Checkbox component
         <span
           class="Text Text--subtle Text--small"
           data-test="DesignSystem-Checkbox-HelpText"
+          id="Checkbox-Checkbox-Test-uid-helptext"
         >
           Checkbox
         </span>
@@ -1568,6 +1630,7 @@ exports[`Checkbox component
         data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
+          aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
           checked=""
           class="Checkbox-input Checkbox-input--checked"
           data-test="DesignSystem-Checkbox-InputBox"
@@ -1613,6 +1676,7 @@ exports[`Checkbox component
         <span
           class="Text Text--subtle Text--small"
           data-test="DesignSystem-Checkbox-HelpText"
+          id="Checkbox-Checkbox-Test-uid-helptext"
         >
           Checkbox
         </span>

@@ -24,6 +24,7 @@ exports[`Navigation component
               data-test="DesignSystem-Breadcrumbs-item"
             >
               <a
+                aria-disabled="false"
                 class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
                 data-test="DesignSystem-Breadcrumbs-link"
                 href="/Senders"
@@ -125,6 +126,7 @@ exports[`Navigation component
                 data-test="DesignSystem-StatusHint"
               >
                 <span
+                  aria-hidden="true"
                   class="StatusHint-icon StatusHint--default mr-4"
                   data-test="DesignSystem-StatusHint--Icon"
                 />
@@ -336,6 +338,7 @@ exports[`Navigation component
               data-test="DesignSystem-Breadcrumbs-item"
             >
               <a
+                aria-disabled="false"
                 class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
                 data-test="DesignSystem-Breadcrumbs-link"
                 href="/Senders"
@@ -477,6 +480,7 @@ exports[`Navigation component
                 data-test="DesignSystem-StatusHint"
               >
                 <span
+                  aria-hidden="true"
                   class="StatusHint-icon StatusHint--default mr-4"
                   data-test="DesignSystem-StatusHint--Icon"
                 />
@@ -653,6 +657,7 @@ exports[`Navigation component
               data-test="DesignSystem-Breadcrumbs-item"
             >
               <a
+                aria-disabled="false"
                 class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
                 data-test="DesignSystem-Breadcrumbs-link"
                 href="/Senders"
@@ -754,6 +759,7 @@ exports[`Navigation component
                 data-test="DesignSystem-StatusHint"
               >
                 <span
+                  aria-hidden="true"
                   class="StatusHint-icon StatusHint--default mr-4"
                   data-test="DesignSystem-StatusHint--Icon"
                 />
@@ -937,6 +943,7 @@ exports[`Navigation component
         </div>
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1077,6 +1084,7 @@ exports[`Navigation component
         </div>
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1206,6 +1214,7 @@ exports[`Navigation component
         />
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1272,6 +1281,7 @@ exports[`Navigation component
         />
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1297,6 +1307,7 @@ exports[`Navigation component
               data-test="DesignSystem-Breadcrumbs-item"
             >
               <a
+                aria-disabled="false"
                 class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
                 data-test="DesignSystem-Breadcrumbs-link"
                 href="/Senders"
@@ -1346,6 +1357,7 @@ exports[`Navigation component
         />
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1398,6 +1410,7 @@ exports[`Navigation component
         />
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1444,6 +1457,7 @@ exports[`Navigation component
         />
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1514,6 +1528,7 @@ exports[`Navigation component
         />
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1539,6 +1554,7 @@ exports[`Navigation component
               data-test="DesignSystem-Breadcrumbs-item"
             >
               <a
+                aria-disabled="false"
                 class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
                 data-test="DesignSystem-Breadcrumbs-link"
                 href="/Senders"
@@ -1680,6 +1696,7 @@ exports[`Navigation component
                 data-test="DesignSystem-StatusHint"
               >
                 <span
+                  aria-hidden="true"
                   class="StatusHint-icon StatusHint--default mr-4"
                   data-test="DesignSystem-StatusHint--Icon"
                 />
@@ -1828,6 +1845,7 @@ exports[`Navigation component
         </div>
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />

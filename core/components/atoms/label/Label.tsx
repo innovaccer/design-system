@@ -68,7 +68,13 @@ export const Label = (props: LabelProps) => {
 
   const renderInfo = (isRequired = false, isOptional?: boolean) => {
     if (isRequired) {
-      return <span className={styles['Label-requiredIndicator']} data-test="DesignSystem-Label--RequiredIndicator" />;
+      return (
+        <span
+          className={styles['Label-requiredIndicator']}
+          aria-label="required"
+          data-test="DesignSystem-Label--RequiredIndicator"
+        />
+      );
     }
 
     if (isOptional) {
@@ -89,6 +95,7 @@ export const Label = (props: LabelProps) => {
           name="info"
           size={12}
           appearance="subtle"
+          aria-label={info}
           className="ml-3 cursor-pointer d-flex align-items-center"
         />
       </Tooltip>

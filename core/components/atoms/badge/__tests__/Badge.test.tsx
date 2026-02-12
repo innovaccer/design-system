@@ -117,3 +117,23 @@ describe('Badge component hover event', () => {
     expect(onMouseLeave).toHaveBeenCalledTimes(1);
   });
 });
+
+describe('Badge component accessibility', () => {
+  it('supports aria-label for additional context', () => {
+    const { getByTestId } = render(
+      <Badge appearance="success" aria-label="Status: success">
+        Success
+      </Badge>
+    );
+    expect(getByTestId('DesignSystem-Badge')).toHaveAttribute('aria-label', 'Status: success');
+  });
+
+  it('allows passing a role attribute', () => {
+    const { getByTestId } = render(
+      <Badge appearance="warning" role="status">
+        Warning
+      </Badge>
+    );
+    expect(getByTestId('DesignSystem-Badge')).toHaveAttribute('role', 'status');
+  });
+});
