@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Icon, Text } from '@/index';
 import styles from '@css/components/stepper.module.css';
+import useAccessibilityProps from '@/accessibility/utils/useAccessibilityProps';
 
 export interface StepProps {
   label: string;
@@ -45,16 +46,21 @@ export const Step = (props: StepProps) => {
   };
 
   const textColor = active ? 'primary-dark' : disabled ? 'inverse-lightest' : 'inverse';
+  const accessibilityProps = useAccessibilityProps({
+    onClick: onClickHandle,
+    onKeyDown: onKeyDownHandler,
+    role: 'button',
+    tabIndex: disabled ? -1 : 0,
+    'aria-label': label,
+  });
 
   return (
-    // TODO(a11y)
-    // eslint-disable-next-line
     <div
       data-test="DesignSystem-Step"
       className={StepClass}
-      onKeyDown={(e) => onKeyDownHandler(e)}
-      onClick={onClickHandle}
-      tabIndex={disabled ? -1 : 0}
+      {...accessibilityProps}
+      aria-disabled={disabled}
+      aria-current={active ? 'step' : undefined}
     >
       <Icon
         data-test="DesignSystem-Step--Icon"
