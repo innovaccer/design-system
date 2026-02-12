@@ -1,3 +1,39 @@
+## 4.19.2 (2026-02-12)
+
+### Highlights
+
+- fix(datepicker): update today chip disabled state logic (5e290ea4)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+- fix(datepicker): update today chip disabled state logic (5e290ea4)
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 4.19.1 (2026-01-22)
 
 ### Highlights
