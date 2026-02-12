@@ -89,9 +89,49 @@ describe('DatePicker component today date chip', () => {
   });
 
   it('disable today chip in case of disabledAfter prop', () => {
-    const todayDate = new Date();
+    const todayDate = new Date(Date.now());
     const { getByTestId } = render(<DatePicker disabledAfter={todayDate} view="date" />);
     expect(getByTestId('DesignSystem-Chip--GenericChip')).not.toHaveClass('Chip-action--disabled');
+  });
+
+  it('keeps today chip enabled when disabledBefore is today', () => {
+    const todayDate = new Date(Date.now());
+    const { getByTestId } = render(<DatePicker disabledBefore={todayDate} view="date" />);
+    expect(getByTestId('DesignSystem-Chip--GenericChip')).not.toHaveClass('Chip-action--disabled');
+  });
+
+  it('keeps today chip enabled when disabledAfter is today', () => {
+    const todayDate = new Date(Date.now());
+    const { getByTestId } = render(<DatePicker disabledAfter={todayDate} view="date" />);
+    expect(getByTestId('DesignSystem-Chip--GenericChip')).not.toHaveClass('Chip-action--disabled');
+  });
+
+  it('disables today chip when disabledBefore is tomorrow', () => {
+    const todayDate = new Date(Date.now());
+    const disabledBefore = new Date(todayDate);
+    disabledBefore.setDate(disabledBefore.getDate() + 1);
+    const { getByTestId } = render(<DatePicker disabledBefore={disabledBefore} view="date" />);
+    expect(getByTestId('DesignSystem-Chip--GenericChip')).toHaveClass('Chip-action--disabled');
+  });
+
+  it('disables today chip when disabledAfter is yesterday', () => {
+    const todayDate = new Date(Date.now());
+    const disabledAfter = new Date(todayDate);
+    disabledAfter.setDate(disabledAfter.getDate() - 1);
+    const { getByTestId } = render(<DatePicker disabledAfter={disabledAfter} view="date" />);
+    expect(getByTestId('DesignSystem-Chip--GenericChip')).toHaveClass('Chip-action--disabled');
+  });
+
+  it('disables today chip for inverted disabled range', () => {
+    const todayDate = new Date(Date.now());
+    const disabledBefore = new Date(todayDate);
+    disabledBefore.setDate(disabledBefore.getDate() + 1);
+    const disabledAfter = new Date(todayDate);
+    disabledAfter.setDate(disabledAfter.getDate() - 1);
+    const { getByTestId } = render(
+      <DatePicker disabledBefore={disabledBefore} disabledAfter={disabledAfter} view="date" />
+    );
+    expect(getByTestId('DesignSystem-Chip--GenericChip')).toHaveClass('Chip-action--disabled');
   });
 });
 
