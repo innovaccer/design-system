@@ -77,6 +77,14 @@ export interface IconProps extends BaseProps {
    */
   onKeyDown?: (e: React.KeyboardEvent<HTMLElement>) => void;
   /**
+   * Accessible label for icon when used as an interactive control.
+   */
+  'aria-label'?: React.AriaAttributes['aria-label'];
+  /**
+   * Role for icon when used as an interactive control.
+   */
+  role?: React.AriaRole;
+  /**
    * DOM node to be passed as child to the component
    */
   children?: React.ReactNode;
