@@ -76,7 +76,7 @@
 }
 
 .Checkbox-input ~ .Checkbox-wrapper--default {
-  border: var(--border-width-2-5) solid var(--inverse-lighter);
+  border: var(--border-width-2-5) solid var(--secondary-dark);
   background-color: var(--shadow-0);
 }
 
