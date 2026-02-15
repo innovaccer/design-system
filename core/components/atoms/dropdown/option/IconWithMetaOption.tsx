@@ -28,16 +28,26 @@ const IconWithMetaOption = (props: OptionTypeProps) => {
     [styles['Option-icon']]: true,
     ['mr-4']: true,
   });
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (disabled) return;
+
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      onClickHandler?.(event as unknown as React.MouseEvent<HTMLDivElement>);
+    }
+  };
 
   return (
-    // TODO(a11y): fix accessibility
-    /* eslint-disable */
     <div
       className={OptionClass}
       onClick={onClickHandler}
+      onKeyDown={handleKeyDown}
       onMouseEnter={onUpdateActiveOption}
       data-test={dataTest}
       data-disabled={disabled}
+      role="button"
+      tabIndex={disabled ? -1 : 0}
+      aria-disabled={disabled || undefined}
     >
       {/* eslint-enable  */}
       {icon && <Icon data-test={`${dataTest}--Icon`} className={IconClass} name={icon} appearance={appearance} />}

@@ -235,6 +235,7 @@ exports[`Navigation component
                 <div
                   class="Tab Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span
@@ -259,6 +260,7 @@ exports[`Navigation component
                 <div
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span
@@ -283,6 +285,7 @@ exports[`Navigation component
                 <div
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span
@@ -554,6 +557,7 @@ exports[`Navigation component
                 <div
                   class="Tab Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span
@@ -578,6 +582,7 @@ exports[`Navigation component
                 <div
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span
@@ -602,6 +607,7 @@ exports[`Navigation component
                 <div
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span
@@ -868,6 +874,7 @@ exports[`Navigation component
                 <div
                   class="Tab Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span
@@ -892,6 +899,7 @@ exports[`Navigation component
                 <div
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span
@@ -916,6 +924,7 @@ exports[`Navigation component
                 <div
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span
@@ -1009,6 +1018,7 @@ exports[`Navigation component
                 <div
                   class="Tab Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span
@@ -1033,6 +1043,7 @@ exports[`Navigation component
                 <div
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span
@@ -1057,6 +1068,7 @@ exports[`Navigation component
                 <div
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span
@@ -1138,6 +1150,7 @@ exports[`Navigation component
                     <div
                       class="Step Stepper-animate Step--active"
                       data-test="DesignSystem-Step"
+                      role="button"
                       tabindex="0"
                     >
                       <i
@@ -1156,8 +1169,10 @@ exports[`Navigation component
                       </span>
                     </div>
                     <div
+                      aria-disabled="true"
                       class="Step Stepper-animate Step--disabled"
                       data-test="DesignSystem-Step"
+                      role="button"
                       tabindex="-1"
                     >
                       <i
@@ -1176,8 +1191,10 @@ exports[`Navigation component
                       </span>
                     </div>
                     <div
+                      aria-disabled="true"
                       class="Step Stepper-animate Step--disabled"
                       data-test="DesignSystem-Step"
+                      role="button"
                       tabindex="-1"
                     >
                       <i
@@ -1770,6 +1787,7 @@ exports[`Navigation component
                 <div
                   class="Tab Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span
@@ -1794,6 +1812,7 @@ exports[`Navigation component
                 <div
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span
@@ -1818,6 +1837,7 @@ exports[`Navigation component
                 <div
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  role="button"
                   tabindex="0"
                 >
                   <span

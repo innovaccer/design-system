@@ -97,7 +97,6 @@ export const ChipInput = (props: ChipInputProps) => {
     defaultValue,
     value,
     className,
-    autoFocus,
     onChange,
     onBlur,
     onFocus,
@@ -268,17 +267,26 @@ export const ChipInput = (props: ChipInputProps) => {
   });
 
   const iconSize = size === 'small' ? 12 : 16;
+  const handleWrapperKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (disabled || event.currentTarget !== event.target) return;
+
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      onClickHandler();
+    }
+  };
 
   return (
-    /* TODO(a11y): fix accessibility  */
-    /* eslint-disable  */
     <div data-test="DesignSystem-ChipInput--Border" className={ChipInputBorderClass}>
       <div
         data-test="DesignSystem-ChipInput"
         {...baseProps}
         className={ChipInputClass}
         onClick={onClickHandler}
+        onKeyDown={handleWrapperKeyDown}
         tabIndex={disabled ? -1 : 0}
+        role="button"
+        aria-disabled={disabled || undefined}
       >
         <div className={styles['ChipInput-wrapper']} ref={customRef}>
           {chips && chips.length > 0 && chipComponents}
@@ -286,7 +294,6 @@ export const ChipInput = (props: ChipInputProps) => {
             data-test="DesignSystem-ChipInput--Input"
             ref={inputRef}
             className={InputClass}
-            autoFocus={autoFocus}
             placeholder={chips && chips.length > 0 ? '' : placeholder}
             disabled={disabled}
             value={inputValue}

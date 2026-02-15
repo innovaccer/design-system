@@ -118,7 +118,6 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
     const { stepSize, value } = this.props;
     const { keyCode } = event;
 
-    // TODO(a11y): add ARROW_DOWN & ARROW_UP too
     if (keyCode === Keys.ARROW_LEFT) {
       this.changeValue(value - stepSize);
       event.preventDefault();
@@ -186,20 +185,25 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
     });
 
     return (
-      // TODO(a11y): fix accessibility
-      /* eslint-disable */
       <>
         <div
           className={className}
           onMouseOver={this.handleMouseOver}
+          onFocus={this.handleMouseOver}
           onMouseLeave={this.handleMouseLeave}
+          onBlur={this.handleMouseLeave}
           onMouseDown={this.beginHandleMovement}
           onKeyDown={this.handleKeyDown}
           onKeyUp={this.handleKeyUp}
           ref={this.refHandlers.handle}
           style={style}
-          tabIndex={0}
+          tabIndex={disabled ? -1 : 0}
           data-test="DesignSystem-MultiSlider-Handle"
+          role="slider"
+          aria-valuemin={this.props.min}
+          aria-valuemax={this.props.max}
+          aria-valuenow={value}
+          aria-disabled={disabled || undefined}
         />
         {/* eslint-enable  */}
         <div className={TooltipClass} style={style}>

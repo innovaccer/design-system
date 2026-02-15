@@ -146,20 +146,30 @@ const HeaderCell = (props: HeaderCellProps) => {
     </>
   );
 
+  const isSortable = !loading && sorting;
+  const handleSortToggle = () => {
+    if (!isSortable) return;
+    if (sorted === 'asc') onMenuChange(name, 'sortDesc');
+    if (sorted === 'desc') onMenuChange(name, 'unsort');
+    if (!sorted) onMenuChange(name, 'sortAsc');
+  };
+
   return (
     <div key={name} className={classes} ref={el}>
-      {/* TODO(a11y) */}
-      {/* eslint-disable-next-line */}
       <div
         className={styles['Grid-cellContent']}
         data-test="DesignSystem-Grid-cellContent"
-        onClick={() => {
-          if (!loading && sorting) {
-            if (sorted === 'asc') onMenuChange(name, 'sortDesc');
-            if (sorted === 'desc') onMenuChange(name, 'unsort');
-            if (!sorted) onMenuChange(name, 'sortAsc');
+        onClick={handleSortToggle}
+        onKeyDown={(event: React.KeyboardEvent<HTMLDivElement>) => {
+          if (!isSortable) return;
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            handleSortToggle();
           }
         }}
+        role={isSortable ? 'button' : undefined}
+        tabIndex={isSortable ? 0 : -1}
+        aria-disabled={!isSortable || undefined}
       >
         {loading && !isValidSchema ? (
           <Placeholder withImage={false}>
@@ -228,14 +238,22 @@ const HeaderCell = (props: HeaderCellProps) => {
         </>
       )}
       {schema.resizable && (
-        //TODO(a11y)
-        //eslint-disable-next-line
         <span
           className={styles['Grid-cellResize']}
           onMouseDown={() => {
             resizeCol({ updateColumnSchema }, name, el.current);
             setIsDragged(false);
           }}
+          onKeyDown={(event: React.KeyboardEvent<HTMLSpanElement>) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+              event.preventDefault();
+              resizeCol({ updateColumnSchema }, name, el.current);
+              setIsDragged(false);
+            }
+          }}
+          role="button"
+          tabIndex={0}
+          aria-label={`Resize ${name} column`}
         />
       )}
     </div>

@@ -26,6 +26,8 @@ exports[`MultiSlider component
         <div
           class="Slider-track"
           data-test="DesignSystem-MultiSlider-Slider-Track"
+          role="button"
+          tabindex="0"
         >
           <div
             class="Slider-progress"
@@ -38,7 +40,9 @@ exports[`MultiSlider component
           <div
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
+            role="button"
             style="left: 0.00%;"
+            tabindex="0"
           >
             <span
               class="Slider-ticks"
@@ -53,7 +57,9 @@ exports[`MultiSlider component
           <div
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
+            role="button"
             style="left: 10.00%;"
+            tabindex="0"
           >
             <span
               class="Slider-ticks"
@@ -68,7 +74,9 @@ exports[`MultiSlider component
           <div
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
+            role="button"
             style="left: 20.00%;"
+            tabindex="0"
           >
             <span
               class="Slider-ticks"
@@ -83,7 +91,9 @@ exports[`MultiSlider component
           <div
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
+            role="button"
             style="left: 30.00%;"
+            tabindex="0"
           >
             <span
               class="Slider-ticks"
@@ -98,7 +108,9 @@ exports[`MultiSlider component
           <div
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
+            role="button"
             style="left: 40.00%;"
+            tabindex="0"
           >
             <span
               class="Slider-ticks"
@@ -113,7 +125,9 @@ exports[`MultiSlider component
           <div
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
+            role="button"
             style="left: 50.00%;"
+            tabindex="0"
           >
             <span
               class="Slider-ticks"
@@ -128,7 +142,9 @@ exports[`MultiSlider component
           <div
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
+            role="button"
             style="left: 60.00%;"
+            tabindex="0"
           >
             <span
               class="Slider-ticks"
@@ -143,7 +159,9 @@ exports[`MultiSlider component
           <div
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
+            role="button"
             style="left: 70.00%;"
+            tabindex="0"
           >
             <span
               class="Slider-ticks"
@@ -158,7 +176,9 @@ exports[`MultiSlider component
           <div
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
+            role="button"
             style="left: 80.00%;"
+            tabindex="0"
           >
             <span
               class="Slider-ticks"
@@ -173,7 +193,9 @@ exports[`MultiSlider component
           <div
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
+            role="button"
             style="left: 90.00%;"
+            tabindex="0"
           >
             <span
               class="Slider-ticks"
@@ -188,7 +210,9 @@ exports[`MultiSlider component
           <div
             class="Slider-label"
             data-test="DesignSystem-MultiSlider-Label"
+            role="button"
             style="left: 100.00%;"
+            tabindex="0"
           >
             <span
               class="Slider-ticks"

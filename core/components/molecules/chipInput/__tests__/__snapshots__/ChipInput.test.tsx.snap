@@ -12,6 +12,7 @@ exports[`ChipInput component
       <div
         class="ChipInput ChipInput--withChips ChipInput--regular"
         data-test="DesignSystem-ChipInput"
+        role="button"
         tabindex="0"
       >
         <div
@@ -118,8 +119,10 @@ exports[`ChipInput component
       data-test="DesignSystem-ChipInput--Border"
     >
       <div
+        aria-disabled="true"
         class="ChipInput ChipInput--disabled ChipInput--withChips ChipInput--regular"
         data-test="DesignSystem-ChipInput"
+        role="button"
         tabindex="-1"
       >
         <div
@@ -229,6 +232,7 @@ exports[`ChipInput component
       <div
         class="ChipInput ChipInput--withChips ChipInput--error ChipInput--regular"
         data-test="DesignSystem-ChipInput"
+        role="button"
         tabindex="0"
       >
         <div
