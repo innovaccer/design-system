@@ -97,7 +97,6 @@ export const ChipInput = (props: ChipInputProps) => {
     defaultValue,
     value,
     className,
-    autoFocus,
     onChange,
     onBlur,
     onFocus,
@@ -295,7 +294,6 @@ export const ChipInput = (props: ChipInputProps) => {
             data-test="DesignSystem-ChipInput--Input"
             ref={inputRef}
             className={InputClass}
-            autoFocus={autoFocus}
             placeholder={chips && chips.length > 0 ? '' : placeholder}
             disabled={disabled}
             value={inputValue}

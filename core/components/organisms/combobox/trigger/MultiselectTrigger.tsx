@@ -301,7 +301,6 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
             data-test="DesignSystem-MultiSelectTrigger--Input"
             ref={inputElementRef}
             className={styles['ChipInput-input']}
-            autoFocus={autoFocus}
             placeholder={chips && chips.length > 0 ? '' : placeholder}
             disabled={disabled}
             value={inputValue}

@@ -125,7 +125,6 @@ export const EditableInput = (props: EditableInputProps) => {
       defaultValue={inputValue}
       placeholder={placeholder}
       className={InputClass}
-      autoFocus={editing}
       size={size}
       onChange={onInputChangeHandler}
       error={error && editing}

@@ -494,7 +494,6 @@ const DropdownList = (props: OptionsProps) => {
           icon={'search'}
           value={searchTerm}
           placeholder={searchPlaceholder}
-          autoFocus={true}
           onChange={searchHandler}
           onClear={searchClearHandler}
           ref={inputRef}

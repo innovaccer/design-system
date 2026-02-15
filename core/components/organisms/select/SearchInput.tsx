@@ -46,7 +46,6 @@ export const SearchInput = (props: SelectInputProps) => {
         icon={'search'}
         size={size}
         onKeyDown={(event) => handleInputKeyDown(event, listRef, setFocusedOption, setOpenPopover, triggerRef)}
-        autoFocus={true}
         onChange={searchHandler}
         onClear={searchClearHandler}
         autoComplete={'off'}
