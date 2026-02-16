@@ -118,7 +118,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
     const { stepSize, value } = this.props;
     const { keyCode } = event;
 
-    if (keyCode === Keys.ARROW_LEFT) {
+    if (keyCode === Keys.ARROW_LEFT || keyCode === Keys.ARROW_DOWN) {
       this.changeValue(value - stepSize);
       event.preventDefault();
     } else if (keyCode === Keys.ARROW_RIGHT || keyCode === Keys.ARROW_UP) {
@@ -203,6 +203,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
           aria-valuemin={this.props.min}
           aria-valuemax={this.props.max}
           aria-valuenow={value}
+          aria-valuetext={label}
           aria-disabled={disabled || undefined}
         />
         {/* eslint-enable  */}
