@@ -8,11 +8,12 @@ exports[`TS renders children 1`] = `
     <span
       class=""
       data-test="DesignSystem-AvatarWrapper"
-      role="presentation"
     >
       <span
+        aria-label="Avatar"
         class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default"
         data-test="DesignSystem-Avatar"
+        role="img"
         tabindex="0"
       >
         <i
@@ -1302,6 +1303,7 @@ exports[`TS renders children 1`] = `
         aria-valuemax="10"
         aria-valuemin="0"
         aria-valuenow="0"
+        aria-valuetext="0"
         class="Slider-handle"
         data-test="DesignSystem-MultiSlider-Handle"
         role="slider"
@@ -1537,6 +1539,7 @@ exports[`TS renders children 1`] = `
         aria-valuemax="10"
         aria-valuemin="0"
         aria-valuenow="0"
+        aria-valuetext="0"
         class="Slider-handle"
         data-test="DesignSystem-MultiSlider-Handle"
         role="slider"
@@ -1553,6 +1556,7 @@ exports[`TS renders children 1`] = `
         aria-valuemax="10"
         aria-valuemin="0"
         aria-valuenow="10"
+        aria-valuetext="10"
         class="Slider-handle"
         data-test="DesignSystem-MultiSlider-Handle"
         role="slider"
