@@ -76,17 +76,17 @@
 }
 
 .Checkbox-input ~ .Checkbox-wrapper--default {
-  border: var(--border-width-2-5) solid var(--secondary-dark);
+  border: var(--border-width-2-5) solid var(--inverse-lighter);
   background-color: var(--shadow-0);
 }
 
 .Checkbox-input:hover ~ .Checkbox-wrapper--default {
-  border: var(--border-width-2-5) solid var(--inverse-lightest);
-  background-color: var(--shadow-0);
+  border: var(--border-width-2-5) solid var(--inverse-light);
+  background-color: var(--secondary-lighter);
 }
 
 .Checkbox-input:active ~ .Checkbox-wrapper--default {
-  border: var(--border-width-2-5) solid var(--inverse-lightest);
+  border: var(--border-width-2-5) solid var(--inverse-light);
   background-color: var(--secondary-light);
 }
 
