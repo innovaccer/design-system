@@ -250,7 +250,7 @@
 }
 
 .Button--selected:focus {
-  background: var(--primary-lightest);
+  background: var(--primary-ultra-light);
   outline: var(--border-width-05) solid var(--primary-focus);
   outline-offset: var(--spacing-05);
 }
