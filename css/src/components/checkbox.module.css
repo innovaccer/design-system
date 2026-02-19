@@ -95,7 +95,7 @@
 }
 
 .Checkbox--disabled .Checkbox-wrapper--default {
-  border: var(--border-width-2-5) solid var(--secondary-light);
+  border: var(--border-width-2-5) solid var(--secondary);
   background-color: var(--secondary-lightest);
 }
 
