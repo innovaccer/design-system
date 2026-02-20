@@ -170,7 +170,7 @@ Tooltip.useAutoTooltip = function () {
 };
 
 Tooltip.defaultProps = Object.assign({}, filterProps(Popover.defaultProps, tooltipPropsList), {
-  hoverable: false,
+  hoverable: true,
   showTooltip: true,
   showOnTruncation: false,
 });
