@@ -126,3 +126,36 @@ describe('Tooltip component with size prop', () => {
     expect(tooltipWrapper).toHaveClass('Tooltip');
   });
 });
+
+describe('Tooltip component keyboard accessibility', () => {
+  it('should close tooltip when Escape key is pressed', () => {
+    const { getByRole, queryByText } = render(
+      <Tooltip tooltip="A tooltip">
+        <Button>Hover over me</Button>
+      </Tooltip>
+    );
+    const button = getByRole('button');
+    fireEvent.mouseOver(button);
+    expect(queryByText('A tooltip')).toBeInTheDocument();
+
+    fireEvent.keyDown(document, { key: 'Escape' });
+    expect(queryByText('A tooltip')).not.toBeInTheDocument();
+  });
+
+  it('should not close tooltip when other keys are pressed', () => {
+    const { getByRole, queryByText } = render(
+      <Tooltip tooltip="A tooltip">
+        <Button>Hover over me</Button>
+      </Tooltip>
+    );
+    const button = getByRole('button');
+    fireEvent.mouseOver(button);
+    expect(queryByText('A tooltip')).toBeInTheDocument();
+
+    fireEvent.keyDown(document, { key: 'Enter' });
+    expect(queryByText('A tooltip')).toBeInTheDocument();
+
+    fireEvent.keyDown(document, { key: 'a' });
+    expect(queryByText('A tooltip')).toBeInTheDocument();
+  });
+});
