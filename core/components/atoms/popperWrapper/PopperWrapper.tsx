@@ -38,6 +38,8 @@ export interface PopperWrapperProps {
    * Holds `Popover` on hover
    *
    * **Use only if you are using `on = 'hover'`**
+   *
+   * Avoid setting this to false to keep the tooltip accessible and compliant with WCAG "Content on Hover or Focus" requirements.
    */
   hoverable: boolean;
   /**
@@ -151,10 +153,14 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
     this.boundaryScrollHandler = this.boundaryScrollHandler.bind(this);
+    this.handleEscapeKey = this.handleEscapeKey.bind(this);
   }
 
   componentDidMount() {
     this.addBoundaryScrollHandler();
+    if (this.props.open) {
+      this.addEscapeKeyHandler();
+    }
     const triggerElement = this.triggerRef.current;
     const zIndex = this.getZIndexForLayer(triggerElement);
     this.setState({
@@ -168,6 +174,11 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
       this.addBoundaryScrollHandler();
     }
     if (prevProps.open !== this.props.open) {
+      if (this.props.open) {
+        this.addEscapeKeyHandler();
+      } else {
+        this.removeEscapeKeyHandler();
+      }
       this._throttleWait = false;
       this.setState({
         animationKeyframe: '',
@@ -190,6 +201,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
 
   componentWillUnmount() {
     this.removeBoundaryScrollHandler();
+    this.removeEscapeKeyHandler();
   }
 
   boundaryScrollHandler() {
@@ -214,6 +226,34 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     if (this.props.boundaryElement && this.props.boundaryElement.removeEventListener) {
       this.props.boundaryElement.removeEventListener('scroll', this.boundaryScrollHandler);
     }
+  }
+
+  handleEscapeKey(event: KeyboardEvent) {
+    if (event.key !== 'Escape' || !this.props.open) return;
+
+    const openLayers = document.querySelectorAll('[data-opened="true"]');
+    if (openLayers.length === 0) return;
+
+    const ourEl = this.popupRef.current;
+    const ourZ = ourEl ? parseInt(window.getComputedStyle(ourEl).zIndex || '0', 10) : 0;
+    const maxZ = Math.max(
+      ...Array.from(openLayers).map((el) => parseInt(window.getComputedStyle(el).zIndex || '0', 10) || 0)
+    );
+
+    if (ourZ >= maxZ) {
+      this.togglePopper('escapeKeypress', false);
+      this.setState({ isOpen: false });
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    }
+  }
+
+  addEscapeKeyHandler() {
+    document.addEventListener('keydown', this.handleEscapeKey);
+  }
+
+  removeEscapeKeyHandler() {
+    document.removeEventListener('keydown', this.handleEscapeKey);
   }
 
   mouseMoveHandler() {
