@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { TSaraStates, TBaseHtmlProps } from '../common.type';
+import { useAccessibilityProps } from '@/accessibility/utils';
 import { Player } from '@lottiefiles/react-lottie-player';
 import AIResting from './assets/AI-Resting.json';
 import AILogo from './assets/AI-Sara.svg';
@@ -33,7 +34,25 @@ export interface SaraProps extends TBaseHtmlProps<HTMLDivElement> {
 }
 
 export const Sara = (props: SaraProps) => {
-  const { size, state, alt, className, ...rest } = props;
+  const { size, state, alt, className, onClick, onKeyDown, tabIndex, role, ...rest } = props;
+  const isInteractive = typeof onClick === 'function';
+  const hasAlt = typeof alt === 'string' && alt.trim().length > 0;
+  const ariaLabel = hasAlt ? alt : undefined;
+  const fallbackLabel = 'Sara';
+
+  const accessibilityProps = isInteractive
+    ? useAccessibilityProps({
+        onClick,
+        onKeyDown,
+        role: role ?? 'button',
+        tabIndex,
+        'aria-label': ariaLabel ?? fallbackLabel,
+      })
+    : {
+        ...(role ? { role } : ariaLabel ? { role: 'img' } : {}),
+        ...(ariaLabel ? { 'aria-label': ariaLabel } : { 'aria-hidden': true }),
+        ...(tabIndex !== undefined ? { tabIndex } : {}),
+      };
 
   const SaraClassNames = classNames(
     {
@@ -43,16 +62,25 @@ export const Sara = (props: SaraProps) => {
   );
 
   if (state === 'default') {
+    const isDecorativeImage = isInteractive || !!ariaLabel;
+
     return (
-      <div data-test="DesignSystem-AI-Sara" {...rest}>
-        <img src={AILogo} alt={alt} width={size} height={size} className={SaraClassNames} />
+      <div data-test="DesignSystem-AI-Sara" {...rest} {...accessibilityProps}>
+        <img
+          src={AILogo}
+          alt={isDecorativeImage ? '' : ariaLabel}
+          aria-hidden={isDecorativeImage}
+          width={size}
+          height={size}
+          className={SaraClassNames}
+        />
       </div>
     );
   }
 
   return (
-    <div data-test="DesignSystem-AI-Sara" className={className} {...rest}>
-      <Player autoplay={true} loop src={AIResting} style={{ height: size, width: size }} />
+    <div data-test="DesignSystem-AI-Sara" className={className} {...rest} {...accessibilityProps}>
+      <Player autoplay={true} loop src={AIResting} style={{ height: size, width: size }} aria-hidden="true" />
     </div>
   );
 };
