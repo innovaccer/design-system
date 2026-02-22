@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { TSaraSparkleStates, TBaseHtmlProps } from '../common.type';
+import { useAccessibilityProps } from '@/accessibility/utils';
 import { Player } from '@lottiefiles/react-lottie-player';
 import AIIcon from './assets/AI-Icon.svg';
 import Listening from './assets/AI-Listening.json';
@@ -35,7 +36,25 @@ export interface SaraSparkleProps extends TBaseHtmlProps<HTMLDivElement> {
 }
 
 export const SaraSparkle = (props: SaraSparkleProps) => {
-  const { size, state, alt, className, ...rest } = props;
+  const { size, state, alt, className, onClick, onKeyDown, tabIndex, role, ...rest } = props;
+  const isInteractive = typeof onClick === 'function';
+  const hasAlt = typeof alt === 'string' && alt.trim().length > 0;
+  const ariaLabel = hasAlt ? alt : undefined;
+  const fallbackLabel = 'Sara Sparkle';
+
+  const accessibilityProps = isInteractive
+    ? useAccessibilityProps({
+        onClick,
+        onKeyDown,
+        role: role ?? 'button',
+        tabIndex,
+        'aria-label': ariaLabel ?? fallbackLabel,
+      })
+    : {
+        ...(role ? { role } : ariaLabel ? { role: 'img' } : {}),
+        ...(ariaLabel ? { 'aria-label': ariaLabel } : { 'aria-hidden': true }),
+        ...(tabIndex !== undefined ? { tabIndex } : {}),
+      };
 
   const stateMapping: Record<string, TSaraSparkleStates> = {
     listening: Listening,
@@ -51,16 +70,31 @@ export const SaraSparkle = (props: SaraSparkleProps) => {
   );
 
   if (state === 'default') {
+    const isDecorativeImage = isInteractive || !!ariaLabel;
+
     return (
-      <div data-test="DesignSystem-AI-Sara-Sparkle" {...rest}>
-        <img src={AIIcon} alt={alt} width={size} height={size} className={SaraClassNames} />
+      <div data-test="DesignSystem-AI-Sara-Sparkle" {...rest} {...accessibilityProps}>
+        <img
+          src={AIIcon}
+          alt={isDecorativeImage ? '' : ariaLabel}
+          aria-hidden={isDecorativeImage}
+          width={size}
+          height={size}
+          className={SaraClassNames}
+        />
       </div>
     );
   }
 
   return (
-    <div data-test="DesignSystem-AI-Sara-Sparkle" className={className} {...rest}>
-      <Player autoplay loop src={(state && stateMapping[state]) || Listening} style={{ height: size, width: size }} />
+    <div data-test="DesignSystem-AI-Sara-Sparkle" className={className} {...rest} {...accessibilityProps}>
+      <Player
+        autoplay
+        loop
+        src={(state && stateMapping[state]) || Listening}
+        style={{ height: size, width: size }}
+        aria-hidden="true"
+      />
     </div>
   );
 };
