@@ -11,7 +11,7 @@ Object {
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -39,7 +39,7 @@ Object {
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -126,7 +126,7 @@ Object {
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -154,7 +154,7 @@ Object {
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -241,7 +241,7 @@ Object {
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -269,7 +269,7 @@ Object {
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -356,7 +356,7 @@ Object {
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -384,7 +384,7 @@ Object {
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -471,7 +471,7 @@ Object {
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -499,7 +499,7 @@ Object {
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -586,7 +586,7 @@ Object {
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -614,7 +614,7 @@ Object {
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -701,7 +701,7 @@ Object {
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -729,7 +729,7 @@ Object {
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -816,7 +816,7 @@ Object {
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -844,7 +844,7 @@ Object {
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -931,7 +931,7 @@ Object {
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -959,7 +959,7 @@ Object {
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -1046,7 +1046,7 @@ Object {
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -1074,7 +1074,7 @@ Object {
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -1161,7 +1161,7 @@ Object {
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -1189,7 +1189,7 @@ Object {
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -1276,7 +1276,7 @@ Object {
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -1304,7 +1304,7 @@ Object {
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -1391,7 +1391,7 @@ Object {
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -1419,7 +1419,7 @@ Object {
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -1506,7 +1506,7 @@ Object {
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -1534,7 +1534,7 @@ Object {
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -1621,7 +1621,7 @@ Object {
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -1649,7 +1649,7 @@ Object {
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -1736,7 +1736,7 @@ Object {
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -1764,7 +1764,7 @@ Object {
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -1851,7 +1851,7 @@ Object {
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -1879,7 +1879,7 @@ Object {
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span
@@ -1966,7 +1966,7 @@ Object {
         class="position-relative d-inline-flex"
       >
         <span
-          class=""
+          class="Avatar-wrapper"
           data-test="DesignSystem-AvatarWrapper"
         >
           <span
@@ -1994,7 +1994,7 @@ Object {
       class="position-relative d-inline-flex"
     >
       <span
-        class=""
+        class="Avatar-wrapper"
         data-test="DesignSystem-AvatarWrapper"
       >
         <span

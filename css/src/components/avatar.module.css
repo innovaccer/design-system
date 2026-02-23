@@ -13,15 +13,37 @@
   position: relative;
 }
 
-.Avatar--default:focus,
-.Avatar--default:focus-visible {
-  outline: 3px solid var(--primary-shadow);
-  outline-offset: 3px;
+.Avatar-wrapper:has(.Avatar:focus-visible)::after {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--spacing-20));
+  bottom: calc(-1 * var(--spacing-20));
+  left: calc(-1 * var(--spacing-10));
+  right: calc(-1 * var(--spacing-10));
+  border: var(--border-width-05) solid var(--primary);
+  border-radius: var(--border-radius-10);
+  pointer-events: none;
+}
+
+.Avatar:focus-visible {
+  /* Fallback focus ring for browsers without :has support */
+  outline: var(--border-width-05) solid var(--primary);
+  outline-offset: var(--spacing-05);
+}
+
+@supports selector(.Avatar-wrapper:has(.Avatar:focus-visible)) {
+  .Avatar:focus-visible {
+    outline: none;
+  }
 }
 
 .Avatar-wrapper--square {
   padding: var(--spacing-2-5);
   box-sizing: border-box;
+}
+
+.Avatar-wrapper {
+  position: relative;
 }
 
 .Avatar--square {

@@ -15,8 +15,12 @@
   position: relative;
 }
 
-.SelectionAvatarGroup-item--square {
-  border-radius: var(--border-radius-10);
+.SelectionAvatarGroup-item--tiny {
+  margin-right: 0;
+}
+
+.SelectionAvatarGroup-item--micro {
+  margin-right: var(--spacing-10);
 }
 
 .SelectionAvatarGroup-item--active:focus,
@@ -107,6 +111,7 @@
 .SelectionAvatar-input:focus-within {
   border: unset !important;
   box-shadow: none !important;
+  outline: none !important;
 }
 
 .SelectionAvatar-input:hover {
@@ -117,6 +122,10 @@
 
 .SelectionAvatarCount-wrapper {
   border-radius: var(--border-radius-full);
+}
+
+.SelectionAvatarCount-wrapper--micro {
+  margin-right: 0;
 }
 
 .SelectionAvatarCount:hover {

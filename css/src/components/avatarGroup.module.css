@@ -14,6 +14,11 @@
 
 .AvatarGroup-item--tiny {
   height: var(--spacing-60);
+  margin-right: 0;
+}
+
+.AvatarGroup-item--micro {
+  margin-right: var(--spacing-10);
 }
 
 .AvatarGroup-Popper {
@@ -35,7 +40,6 @@
   align-items: center;
 }
 
-.AvatarCount-wrapper:focus,
 .AvatarCount-wrapper:focus-visible {
   outline: 3px solid var(--primary-shadow);
   outline-offset: 3px;
@@ -61,6 +65,7 @@
 .AvatarGroup-input:focus-within {
   border: unset !important;
   box-shadow: none !important;
+  outline: none !important;
 }
 
 .AvatarGroup-input:hover {
