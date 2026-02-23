@@ -71,6 +71,10 @@ export interface AvatarProps extends BaseProps {
    */
   status?: React.ReactNode;
   /**
+   * Label for the status to be shown in tooltip along with the name
+   */
+  statusLabel?: string;
+  /**
    * Stroke color of `Presence indicator` & `Status indicator` in `Avatar`
    */
   strokeColor?: string;
@@ -96,6 +100,7 @@ export const Avatar = (props: AvatarProps) => {
     tabIndex,
     presence,
     status,
+    statusLabel,
     strokeColor,
     role,
   } = props;
@@ -107,23 +112,38 @@ export const Avatar = (props: AvatarProps) => {
       ? children.trim().slice(0, initialsLength)
       : `${firstName ? firstName.trim()[0] : ''}${lastName ? lastName.trim()[0] : ''}`;
 
-  const getTooltipName = () => {
-    if (children && typeof children === 'string') {
-      return `${children} ${tooltipSuffix || ''}`;
-    }
-
-    return `${firstName || ''} ${lastName || ''} ${tooltipSuffix || ''}` || '';
-  };
-
   const AvatarAppearance =
     appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] || DefaultAppearance;
-  const resolvedRole = role ?? (tabIndex !== undefined ? 'button' : 'img');
-  const ariaLabel = getTooltipName().trim() || initials || 'Avatar';
 
   const darkAppearance = ['secondary', 'success', 'warning', 'accent1', 'accent4'];
   const showPresence =
     presence && !disabled && size !== 'micro' && shape === 'round' && (presence === 'active' || presence === 'away');
   const showStatus = status && size !== 'micro' && size === 'regular' && shape === 'round';
+
+  const isStatusTooltip = React.isValidElement(status) && status.type === Tooltip;
+  const resolvedStatusLabel = isStatusTooltip
+    ? (status as React.ReactElement<TooltipProps>).props.tooltip
+    : statusLabel;
+  const resolvedStatusContent = isStatusTooltip ? (status as React.ReactElement<TooltipProps>).props.children : status;
+
+  const getTooltipName = () => {
+    let name = '';
+
+    if (children && typeof children === 'string') {
+      name = `${children} ${tooltipSuffix || ''}`.trim();
+    } else {
+      name = `${firstName || ''} ${lastName || ''} ${tooltipSuffix || ''}`.trim();
+    }
+
+    if (resolvedStatusLabel && showStatus) {
+      return `${name} · ${resolvedStatusLabel}`;
+    }
+
+    return name;
+  };
+
+  const resolvedRole = role ?? (tabIndex !== undefined ? 'button' : 'img');
+  const ariaLabel = getTooltipName().trim() || initials || 'Avatar';
 
   const AvatarClassNames = classNames(
     {
@@ -222,25 +242,31 @@ export const Avatar = (props: AvatarProps) => {
     );
   };
 
-  const renderTooltip = () => (
-    <span className="position-relative d-inline-flex">
-      {withTooltip && initials ? (
+  const renderTooltip = () => {
+    const content = (
+      <span className="position-relative d-inline-flex">
+        {renderAvatar()}
+        {showPresence && (
+          <span data-test="DesignSystem-Avatar--Presence" className={presenceClassNames} style={borderStyle} />
+        )}
+        {showStatus && (
+          <span data-test="DesignSystem-Avatar--Status" className={styles['Avatar-status']} style={borderStyle}>
+            {resolvedStatusContent}
+          </span>
+        )}
+      </span>
+    );
+
+    if (withTooltip && initials) {
+      return (
         <Tooltip tooltip={getTooltipName()} position={tooltipPosition} triggerClass="flex-grow-0">
-          {renderAvatar()}
+          {content}
         </Tooltip>
-      ) : (
-        renderAvatar()
-      )}
-      {showPresence && (
-        <span data-test="DesignSystem-Avatar--Presence" className={presenceClassNames} style={borderStyle} />
-      )}
-      {showStatus && (
-        <span data-test="DesignSystem-Avatar--Status" className={styles['Avatar-status']} style={borderStyle}>
-          {status}
-        </span>
-      )}
-    </span>
-  );
+      );
+    }
+
+    return content;
+  };
 
   return renderTooltip();
 };

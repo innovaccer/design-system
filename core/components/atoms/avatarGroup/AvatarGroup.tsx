@@ -18,6 +18,7 @@ export interface AvatarData extends Record<string, any> {
   disabled?: boolean;
   tooltipSuffix?: string;
   status?: React.ReactNode;
+  statusLabel?: string;
   presence?: AvatarProps['presence'];
   shape?: AvatarShape;
 }
