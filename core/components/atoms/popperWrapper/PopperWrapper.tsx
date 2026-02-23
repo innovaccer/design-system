@@ -38,6 +38,8 @@ export interface PopperWrapperProps {
    * Holds `Popover` on hover
    *
    * **Use only if you are using `on = 'hover'`**
+   *
+   * Avoid setting this to false to keep the tooltip accessible and compliant with WCAG "Content on Hover or Focus" requirements.
    */
   hoverable: boolean;
   /**
