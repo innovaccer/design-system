@@ -35,6 +35,7 @@ export { MetaList } from './components/atoms/metaList';
 export { MdsGrid } from './components/atoms/mdsGrid';
 export { MultiSlider } from './components/atoms/multiSlider';
 export { OutsideClick } from './components/atoms/outsideClick';
+export { Page } from './components/atoms/page';
 export { Paragraph } from './components/atoms/paragraph';
 export { ProgressBar } from './components/atoms/progressBar';
 export { Radio } from './components/atoms/radio';

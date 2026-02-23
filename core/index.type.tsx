@@ -35,6 +35,7 @@ export { MessageProps } from './components/atoms/message';
 export { MetaListProps } from './components/atoms/metaList';
 export { MdsGridProps } from './components/atoms/mdsGrid';
 export { OutsideClickProps } from './components/atoms/outsideClick';
+export { PageProps } from './components/atoms/page';
 export { ParagraphProps } from './components/atoms/paragraph';
 export { RadioProps } from './components/atoms/radio';
 export { RowProps } from './components/atoms/row';
