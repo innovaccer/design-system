@@ -128,7 +128,7 @@ describe('Tooltip component with size prop', () => {
 });
 
 describe('Tooltip component keyboard accessibility', () => {
-  it('should close tooltip when Escape key is pressed', () => {
+  it('should close tooltip when Escape key is pressed', async () => {
     const { getByRole, queryByText } = render(
       <Tooltip tooltip="A tooltip">
         <Button>Hover over me</Button>
@@ -138,6 +138,7 @@ describe('Tooltip component keyboard accessibility', () => {
     fireEvent.mouseOver(button);
     expect(queryByText('A tooltip')).toBeInTheDocument();
 
+    await new Promise((resolve) => setTimeout(resolve, 0));
     fireEvent.keyDown(document, { key: 'Escape' });
     expect(queryByText('A tooltip')).not.toBeInTheDocument();
   });
