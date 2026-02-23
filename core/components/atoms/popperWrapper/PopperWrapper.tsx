@@ -5,6 +5,7 @@ import { OutsideClick } from '@/index';
 import classNames from 'classnames';
 import { PositionType } from '@/common.type';
 import { flushSync } from 'react-dom';
+import OverlayManager from '@/utils/OverlayManager';
 
 type ActionType = 'click' | 'hover';
 type Offset = 'small' | 'medium' | 'large';
@@ -117,6 +118,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
   hoverableDelay?: number;
   _timer?: number;
   _throttleWait?: boolean;
+  _overlayAddTimer?: number;
   offsetMapping: Record<Offset, string>;
 
   static defaultProps = {
@@ -156,10 +158,31 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     this.handleEscapeKey = this.handleEscapeKey.bind(this);
   }
 
+  scheduleOverlayAdd() {
+    if (this._overlayAddTimer != null) {
+      window.clearTimeout(this._overlayAddTimer);
+      this._overlayAddTimer = undefined;
+    }
+    this._overlayAddTimer = window.setTimeout(() => {
+      this._overlayAddTimer = undefined;
+      if (this.popupRef.current && this.props.open) {
+        OverlayManager.add(this.popupRef.current);
+      }
+    }, 0);
+  }
+
+  clearOverlayAddTimer() {
+    if (this._overlayAddTimer != null) {
+      window.clearTimeout(this._overlayAddTimer);
+      this._overlayAddTimer = undefined;
+    }
+  }
+
   componentDidMount() {
     this.addBoundaryScrollHandler();
     if (this.props.open) {
       this.addEscapeKeyHandler();
+      this.scheduleOverlayAdd();
     }
     const triggerElement = this.triggerRef.current;
     const zIndex = this.getZIndexForLayer(triggerElement);
@@ -176,8 +199,11 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     if (prevProps.open !== this.props.open) {
       if (this.props.open) {
         this.addEscapeKeyHandler();
+        this.scheduleOverlayAdd();
       } else {
         this.removeEscapeKeyHandler();
+        this.clearOverlayAddTimer();
+        OverlayManager.remove(this.popupRef.current);
       }
       this._throttleWait = false;
       this.setState({
@@ -202,6 +228,8 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
   componentWillUnmount() {
     this.removeBoundaryScrollHandler();
     this.removeEscapeKeyHandler();
+    this.clearOverlayAddTimer();
+    OverlayManager.remove(this.popupRef.current);
   }
 
   boundaryScrollHandler() {
@@ -230,22 +258,12 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
 
   handleEscapeKey(event: KeyboardEvent) {
     if (event.key !== 'Escape' || !this.props.open) return;
+    if (!this.popupRef.current || !OverlayManager.isTopOverlay(this.popupRef.current)) return;
 
-    const openLayers = document.querySelectorAll('[data-opened="true"]');
-    if (openLayers.length === 0) return;
-
-    const ourEl = this.popupRef.current;
-    const ourZ = ourEl ? parseInt(window.getComputedStyle(ourEl).zIndex || '0', 10) : 0;
-    const maxZ = Math.max(
-      ...Array.from(openLayers).map((el) => parseInt(window.getComputedStyle(el).zIndex || '0', 10) || 0)
-    );
-
-    if (ourZ >= maxZ) {
-      this.togglePopper('escapeKeypress', false);
-      this.setState({ isOpen: false });
-      event.preventDefault();
-      event.stopImmediatePropagation();
-    }
+    this.togglePopper('escapeKeypress', false);
+    this.setState({ isOpen: false });
+    event.preventDefault();
+    event.stopImmediatePropagation();
   }
 
   addEscapeKeyHandler() {
