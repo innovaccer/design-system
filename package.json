@@ -1,6 +1,6 @@
 {
   "name": "@innovaccer/design-system",
-  "version": "4.19.2",
+  "version": "4.20.0",
   "description": "React components library project for Innovaccer Design System",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",

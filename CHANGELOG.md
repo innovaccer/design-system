@@ -1,3 +1,39 @@
+## 4.20.0 (2026-02-24)
+
+### Highlights
+
+- feat(a11y): add accessibility support in components (b8062d874)
+
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(a11y): add accessibility support in components (b8062d874)
+
+### Fixes
+
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 4.19.2 (2026-02-12)
 
 ### Highlights
