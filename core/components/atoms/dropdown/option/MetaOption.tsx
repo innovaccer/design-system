@@ -8,16 +8,26 @@ const MetaOption = (props: OptionTypeProps) => {
     props;
 
   const { subInfo, label, disabled } = optionData;
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (disabled) return;
+
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      onClickHandler?.(event as unknown as React.MouseEvent<HTMLDivElement>);
+    }
+  };
 
   return (
-    // TODO(a11y): fix accessibility
-    /* eslint-disable */
     <div
       className={className}
       onClick={onClickHandler}
+      onKeyDown={handleKeyDown}
       onMouseEnter={onUpdateActiveOption}
       data-test={dataTest}
       data-disabled={disabled}
+      role="button"
+      tabIndex={disabled ? -1 : 0}
+      aria-disabled={disabled || undefined}
     >
       {/* eslint-enable */}
       <div className={styles['Option-label']}>

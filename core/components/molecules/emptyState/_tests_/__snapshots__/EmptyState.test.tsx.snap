@@ -70,6 +70,7 @@ exports[`EmptyState component
       data-test="DesignSystem-EmptyState"
     >
       <img
+        alt="Manage your outreach campaigns"
         data-test="DesignSystem-EmptyState--Img"
         height="256px"
         src="noContent"
@@ -101,6 +102,7 @@ exports[`EmptyState component
       data-test="DesignSystem-EmptyState"
     >
       <img
+        alt="Manage your outreach campaigns"
         data-test="DesignSystem-EmptyState--Img"
         height="128px"
         src="noContent"

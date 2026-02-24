@@ -166,8 +166,6 @@ export const MenuItem = (props: MenuItemProps) => {
   return customItemRenderer ? (
     customItemRenderer(customItemProps)
   ) : (
-    // TODO(a11y)
-    // eslint-disable-next-line
     <Tooltip showTooltip={expanded ? isTextTruncated : true} tooltip={menu.label} position="right">
       <Link componentType="a" className={ItemClass} {...baseProps}>
         {customOptionRenderer ? (
