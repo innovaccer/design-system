@@ -35,7 +35,6 @@
   align-items: center;
 }
 
-.AvatarCount-wrapper:focus,
 .AvatarCount-wrapper:focus-visible {
   outline: 3px solid var(--primary-shadow);
   outline-offset: 3px;

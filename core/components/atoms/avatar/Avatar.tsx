@@ -139,6 +139,7 @@ export const Avatar = (props: AvatarProps) => {
   );
 
   const AvatarWrapperClassNames = classNames({
+    [styles['Avatar-wrapper']]: true,
     [styles['Avatar-wrapper--square']]: shape === 'square',
     [styles[`Avatar--${size}`]]: shape === 'square',
   });

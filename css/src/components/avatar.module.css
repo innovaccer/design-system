@@ -13,15 +13,29 @@
   position: relative;
 }
 
-.Avatar--default:focus,
-.Avatar--default:focus-visible {
-  outline: 3px solid var(--primary-shadow);
-  outline-offset: 3px;
+.Avatar-wrapper:has(.Avatar:focus-visible)::after {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--spacing-20));
+  bottom: calc(-1 * var(--spacing-20));
+  left: calc(-1 * var(--spacing-10));
+  right: calc(-1 * var(--spacing-10));
+  border: var(--border-width-05) solid var(--primary);
+  border-radius: var(--border-radius-10);
+  pointer-events: none;
+}
+
+.Avatar:focus-visible {
+  outline: none;
 }
 
 .Avatar-wrapper--square {
   padding: var(--spacing-2-5);
   box-sizing: border-box;
+}
+
+.Avatar-wrapper {
+  position: relative;
 }
 
 .Avatar--square {
