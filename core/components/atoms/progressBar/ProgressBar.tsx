@@ -52,8 +52,20 @@ export const ProgressBar = (props: ProgressBarProps) => {
     [styles['ProgressBar-indicator--indeterminate']]: state === 'indeterminate',
   });
 
+  const clampedValue = state !== 'indeterminate' ? Math.max(0, Math.min(value || 0, max)) : undefined;
+  const percentage = state !== 'indeterminate' && max > 0 ? Math.round(((clampedValue || 0) * 100) / max) : undefined;
+
   return (
-    <div data-test="DesignSystem-ProgressBar" {...baseProps} className={ProgressBarClass}>
+    <div
+      data-test="DesignSystem-ProgressBar"
+      role="progressbar"
+      aria-valuemin={0}
+      aria-valuemax={max}
+      aria-valuenow={clampedValue}
+      aria-valuetext={percentage !== undefined ? `${percentage}%` : undefined}
+      {...baseProps}
+      className={ProgressBarClass}
+    >
       <div data-test="DesignSystem-ProgressBar-Indicator" className={ProgressIndicatorClass} style={style} />
     </div>
   );

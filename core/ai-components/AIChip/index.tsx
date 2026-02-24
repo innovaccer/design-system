@@ -50,7 +50,7 @@ export const AIChip = (props: AIChipProps) => {
 
   return (
     <button type="button" data-test="DesignSystem-AI-Chip" className={ChipClassNames} disabled={disabled} {...rest}>
-      <i data-test="DesignSystem-AI-Chip-Icon" className={IconClassNames}>
+      <i data-test="DesignSystem-AI-Chip-Icon" className={IconClassNames} aria-hidden="true">
         {icon}
       </i>
 

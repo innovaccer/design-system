@@ -28,7 +28,7 @@ export interface LegendProps extends BaseProps {
   /**
    * Handler to be called when `Legend` is clicked
    */
-  onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
+  onClick?: (e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>) => void;
   /**
    * Handler to be called when mouse pointer enters `Legend`.
    */
@@ -53,6 +53,18 @@ export const Legend = (props: LegendProps) => {
   } = props;
 
   const baseProps = extractBaseProps(props);
+  const isClickable = Boolean(onClick);
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (!isClickable) {
+      return;
+    }
+
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      onClick?.(event);
+    }
+  };
 
   const legendClass = classNames(
     {
@@ -67,17 +79,17 @@ export const Legend = (props: LegendProps) => {
     width: `${iconSize}px`,
   };
 
-  // TODO(a11y): fix accessibility
-  /* eslint-disable */
   return (
     <div
       {...baseProps}
       className={legendClass}
+      role={isClickable ? 'button' : undefined}
+      tabIndex={isClickable ? 0 : undefined}
       onClick={(e) => onClick && onClick(e)}
+      onKeyDown={handleKeyDown}
       onMouseEnter={(e) => onMouseEnter && onMouseEnter(e)}
       onMouseLeave={(e) => onMouseLeave && onMouseLeave(e)}
     >
-      {/* eslint-enable */}
       <span className={legendStyles['Legend-icon']} style={styles} />
       <Text appearance={labelAppearance} weight={labelWeight}>
         {children}

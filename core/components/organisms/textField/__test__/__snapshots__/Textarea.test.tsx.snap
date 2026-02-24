@@ -297,6 +297,7 @@ exports[`textfield component
         </label>
       </div>
       <textarea
+        aria-invalid="false"
         class="Textarea Textarea--resize"
         data-test="DesignSystem-Textarea"
         helptext="i am the helptext"
@@ -365,6 +366,7 @@ exports[`textfield component
         </label>
       </div>
       <textarea
+        aria-invalid="false"
         class="Textarea Textarea--resize"
         data-test="DesignSystem-Textarea"
         helptext="i am the helptext"

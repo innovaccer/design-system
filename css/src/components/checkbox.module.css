@@ -70,22 +70,23 @@
   outline: 0;
 }
 
-.Checkbox-input ~ .Checkbox-wrapper--default {
-  border: var(--border-width-2-5) solid var(--secondary-dark);
-  background-color: var(--shadow-0);
+.Checkbox-input:focus ~ .Checkbox-wrapper {
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
-.Checkbox-input:focus ~ .Checkbox-wrapper--default {
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+.Checkbox-input ~ .Checkbox-wrapper--default {
+  border: var(--border-width-2-5) solid var(--inverse-lighter);
+  background-color: var(--shadow-0);
 }
 
 .Checkbox-input:hover ~ .Checkbox-wrapper--default {
-  border: var(--border-width-2-5) solid var(--inverse-lightest);
-  background-color: var(--shadow-0);
+  border: var(--border-width-2-5) solid var(--inverse-light);
+  background-color: var(--secondary-lighter);
 }
 
 .Checkbox-input:active ~ .Checkbox-wrapper--default {
-  border: var(--border-width-2-5) solid var(--inverse-lightest);
+  border: var(--border-width-2-5) solid var(--inverse-light);
   background-color: var(--secondary-light);
 }
 
@@ -94,7 +95,7 @@
 }
 
 .Checkbox--disabled .Checkbox-wrapper--default {
-  border: var(--border-width-2-5) solid var(--secondary-light);
+  border: var(--border-width-2-5) solid var(--secondary);
   background-color: var(--secondary-lightest);
 }
 
@@ -108,7 +109,6 @@
 
 .Checkbox-input--checked:focus ~ .Checkbox-wrapper,
 .Checkbox-input--indeterminate:focus ~ .Checkbox-wrapper {
-  box-shadow: var(--shadow-spread) var(--primary-shadow);
   background-color: var(--primary);
   border: 0;
 }
@@ -137,10 +137,6 @@
   border: var(--border-width-2-5) solid var(--alert);
 }
 
-.Checkbox-input:focus ~ .Checkbox-wrapper--error {
-  box-shadow: var(--shadow-spread) var(--alert-shadow);
-}
-
 .Checkbox-input:hover ~ .Checkbox-wrapper--error {
   border: var(--border-width-2-5) solid var(--alert-dark);
 }
@@ -165,7 +161,6 @@
 .Checkbox-input--checked:focus ~ .Checkbox-wrapper--error,
 .Checkbox-input--indeterminate:focus ~ .Checkbox-wrapper--error {
   border: var(--border-width-2-5) solid var(--alert);
-  box-shadow: var(--shadow-spread) var(--primary-shadow);
 }
 
 .Checkbox-input--checked:hover ~ .Checkbox-wrapper--error,

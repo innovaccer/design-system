@@ -30,6 +30,7 @@
     "jsx-no-lambda": "off",
     "jsx-no-bind": "off",
     "no-empty": "off",
+    "jsx-a11y/no-autofocus": "off",
     "no-duplicate-imports": "error",
     "no-restricted-imports": "off",
     "no-bitwise": "off",
