@@ -159,7 +159,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
 
   onFocusTrapKeyDown = (event: KeyboardEvent) => {
     const container = this.modalContentRef.current;
-    if (!container || !OverlayManager.isTopOverlay(this.modalRef.current)) return;
+    if (!container) return;
     handleFocusTrapKeyDown(event, container);
   };
 
@@ -187,10 +187,13 @@ class Modal extends React.Component<ModalProps, ModalState> {
     const container = this.modalContentRef.current;
     if (container) container.removeAttribute('tabindex');
 
-    if (this.previousActiveElement?.focus) {
-      window.requestAnimationFrame(() => this.previousActiveElement?.focus({ preventScroll: true }));
-    }
+    // Capture in variable so RAF callback has stable reference (previousActiveElement is cleared below)
+    const elementToFocus = this.previousActiveElement;
     this.previousActiveElement = null;
+
+    if (elementToFocus?.focus) {
+      window.requestAnimationFrame(() => elementToFocus.focus({ preventScroll: true }));
+    }
   };
 
   componentDidMount() {

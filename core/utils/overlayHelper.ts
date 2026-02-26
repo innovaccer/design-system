@@ -69,21 +69,26 @@ export const getFocusableElements = (container: HTMLElement): HTMLElement[] => {
 
 /**
  * Handles Tab/Shift+Tab to trap focus within the container.
- * Returns true if the event was handled (focus was redirected).
+ * Returns true if the event was handled (focus was redirected or prevented).
  */
 export const handleFocusTrapKeyDown = (event: KeyboardEvent, container: HTMLElement): boolean => {
   if (event.key !== 'Tab') return false;
 
   const focusable = getFocusableElements(container);
-  if (focusable.length === 0) return false;
-
-  const first = focusable[0];
-  const last = focusable[focusable.length - 1];
   const activeElement = document.activeElement as HTMLElement | null;
 
   if (!activeElement || !container.contains(activeElement)) {
     return false;
   }
+
+  if (focusable.length === 0) {
+    event.preventDefault();
+    container.focus({ preventScroll: true });
+    return true;
+  }
+
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
 
   if (event.shiftKey) {
     if (activeElement === first) {
