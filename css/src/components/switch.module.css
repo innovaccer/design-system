@@ -65,6 +65,10 @@
   background-color: var(--secondary-dark);
 }
 
+.Switch-input:active ~ .Switch-wrapper:before {
+  outline-color: var(--inverse-light);
+}
+
 .Switch-input:active ~ .Switch-wrapper--checked {
   background-color: var(--primary-darker);
 }
