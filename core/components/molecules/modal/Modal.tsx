@@ -174,7 +174,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
 
   onFocusTrapKeyDown = (event: KeyboardEvent) => {
     const container = this.modalContentRef.current;
-    if (!container || !OverlayManager.isTopOverlay(this.modalRef.current)) return;
+    if (!container) return;
     handleFocusTrapKeyDown(event, container);
   };
 
