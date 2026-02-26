@@ -1,0 +1,36 @@
+---
+description: Enforce design token usage — never hardcode colors, spacing, radius, shadows, font, or other visual values
+alwaysApply: true
+---
+
+# Always Use Design Tokens
+
+When implementing any visual change, you MUST resolve the requested value to the
+closest matching design token. Never hardcode raw hex, px, or numeric values in
+component CSS/styles.
+
+## Token source files
+
+Before writing any visual value, read these files to find the correct token:
+
+- **Raw tokens:** `css/src/tokens/index.css`
+- **Semantic variables:** `css/src/variables/index.css`
+
+## Rules
+
+1. **Look up first** — before using any color, spacing, radius, border-width,
+   font-size, font-weight, line-height, shadow, opacity, duration, or easing
+   value, read the token source files and find the token whose raw value matches
+   or is closest to what the user requested.
+2. **Use `var(--token-name)`** — always reference tokens via CSS custom properties.
+3. **Prefer semantic tokens** — use semantic aliases (e.g. `--primary`) over raw
+   palette tokens (e.g. `--jal`) when the intent is semantic.
+4. **No new tokens** — if no token exists for the requested value, inform the user
+   and suggest the nearest available token. Do not invent tokens.
+5. **Composites** — for shorthand properties like `border`, compose from tokens:
+   `var(--border-width-2-5) solid var(--secondary)`.
+6. **Hex / px from the user** — if the user provides a hex color or pixel value,
+   look it up in the token files and use the matching token variable.
+7. **Hardcode only on explicit request** — only write a raw value when the user
+   explicitly says "hardcode". Add a comment explaining why the token system was
+   bypassed.
