@@ -17,8 +17,10 @@ exports[`Modal component
       style="z-index: 1011;"
     >
       <div
+        aria-modal="true"
         class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Modal"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -108,8 +110,10 @@ exports[`Modal component
         style="z-index: 1011;"
       >
         <div
+          aria-modal="true"
           class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
           data-test="DesignSystem-Modal"
+          role="dialog"
         >
           <div
             class="Modal-header"
@@ -197,8 +201,10 @@ exports[`Modal component
       style="z-index: 1011;"
     >
       <div
+        aria-modal="true"
         class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Modal"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -364,8 +370,10 @@ exports[`Modal component
         style="z-index: 1011;"
       >
         <div
+          aria-modal="true"
           class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
           data-test="DesignSystem-Modal"
+          role="dialog"
         >
           <div
             class="Modal-header"
@@ -529,8 +537,10 @@ exports[`Modal component
       style="z-index: 1011;"
     >
       <div
+        aria-modal="true"
         class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Modal"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -688,8 +698,10 @@ exports[`Modal component
         style="z-index: 1011;"
       >
         <div
+          aria-modal="true"
           class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
           data-test="DesignSystem-Modal"
+          role="dialog"
         >
           <div
             class="Modal-header"
@@ -845,8 +857,10 @@ exports[`Modal component
       style="z-index: 1011;"
     >
       <div
+        aria-modal="true"
         class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Modal"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -936,8 +950,10 @@ exports[`Modal component
         style="z-index: 1011;"
       >
         <div
+          aria-modal="true"
           class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
           data-test="DesignSystem-Modal"
+          role="dialog"
         >
           <div
             class="Modal-header"
@@ -1025,8 +1041,10 @@ exports[`Modal component
       style="z-index: 1011;"
     >
       <div
+        aria-modal="true"
         class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Modal"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -1192,8 +1210,10 @@ exports[`Modal component
         style="z-index: 1011;"
       >
         <div
+          aria-modal="true"
           class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
           data-test="DesignSystem-Modal"
+          role="dialog"
         >
           <div
             class="Modal-header"
@@ -1357,8 +1377,10 @@ exports[`Modal component
       style="z-index: 1011;"
     >
       <div
+        aria-modal="true"
         class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Modal"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -1516,8 +1538,10 @@ exports[`Modal component
         style="z-index: 1011;"
       >
         <div
+          aria-modal="true"
           class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
           data-test="DesignSystem-Modal"
+          role="dialog"
         >
           <div
             class="Modal-header"
@@ -1674,8 +1698,10 @@ exports[`Modal component
       style="z-index: 1011;"
     >
       <div
+        aria-modal="true"
         class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Modal"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -1764,8 +1790,10 @@ exports[`Modal component
         style="z-index: 1011;"
       >
         <div
+          aria-modal="true"
           class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
           data-test="DesignSystem-Modal"
+          role="dialog"
         >
           <div
             class="Modal-header"
@@ -1853,8 +1881,10 @@ exports[`Modal component
       style="z-index: 1011;"
     >
       <div
+        aria-modal="true"
         class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Modal"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -2020,8 +2050,10 @@ exports[`Modal component
         style="z-index: 1011;"
       >
         <div
+          aria-modal="true"
           class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
           data-test="DesignSystem-Modal"
+          role="dialog"
         >
           <div
             class="Modal-header"
@@ -2185,8 +2217,10 @@ exports[`Modal component
       style="z-index: 1011;"
     >
       <div
+        aria-modal="true"
         class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Modal"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -2344,8 +2378,10 @@ exports[`Modal component
         style="z-index: 1011;"
       >
         <div
+          aria-modal="true"
           class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
           data-test="DesignSystem-Modal"
+          role="dialog"
         >
           <div
             class="Modal-header"
