@@ -42,12 +42,14 @@
 }
 
 .Switch-input:focus ~ .Switch-wrapper {
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+  box-shadow: 0 0 0 var(--spacing-05) var(--shadow-0),
+    0 0 0 calc(var(--spacing-05) + var(--border-width-05)) var(--primary-focus);
   background-color: var(--secondary-light);
 }
 
 .Switch-input:focus ~ .Switch-wrapper--checked {
-  box-shadow: var(--shadow-spread) var(--primary-shadow);
+  box-shadow: 0 0 0 var(--spacing-05) var(--shadow-0),
+    0 0 0 calc(var(--spacing-05) + var(--border-width-05)) var(--primary-focus);
   background-color: var(--primary);
 }
 
@@ -88,6 +90,8 @@
   border-radius: var(--border-radius-full);
   box-sizing: border-box;
   transition-duration: 80ms;
+  outline: 1px solid var(--inverse-lighter);
+  outline-offset: -1px;
 }
 
 .Switch-wrapper--checked {
@@ -102,6 +106,7 @@
   -ms-transform: translateX(100%);
   transform: translateX(100%);
   transition-duration: 80ms;
+  outline: none;
 }
 
 .Switch--disabled {
@@ -110,6 +115,10 @@
 
 .Switch-wrapper--disabled {
   background-color: var(--secondary-lighter);
+}
+
+.Switch-wrapper--disabled:before {
+  outline-color: var(--secondary-dark);
 }
 
 .Switch-wrapper--checkedDisabled {
