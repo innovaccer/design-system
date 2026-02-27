@@ -23,16 +23,16 @@
     </tr>
     <tr style={{verticalAlign: "top"}}>
       <td></td>
-      <td>&#60;Enter&#62;</td>
+      <td>&#60;Enter&#62; / &#60;Space&#62;</td>
       <td>
-       Open the popover, and transfer focus from the trigger to either the first focusable item or the search option, depending on the context.
+       Open the popover and transfer focus to search (if present) or the option with tabindex=0 (first or first-selected).
       </td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
       <td></td>
       <td>down arrow</td>
       <td>
-       Open the popover, and transfer focus from the trigger to either the first focusable item or the search option, depending on the context.
+       Open the popover and transfer focus to search (if present) or the option with tabindex=0 (first or first-selected).
       </td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
@@ -46,21 +46,35 @@
       <td></td>
       <td>&#60;Escape&#62;</td>
       <td>
-        Nothing happens.
+        Nothing happens (popover is closed). When the popover is open, &#60;Escape&#62; closes it and returns focus to the trigger.
       </td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
-      <td>Popover is open (The trigger will not be in focus at this instance)</td>
-      <td>&#60;Tab&#62;</td>
+      <td>Popover is open (focus is inside the popover)</td>
+      <td>&#60;Tab&#62; / &#60;Shift&#62;&#60;Tab&#62;</td>
       <td>
-       Shift focus to next item in Tab sequence on the page. <br /> The popover will be excluded from the tab sequence on the page.
+       Tab order when open: search (if present) → the single list option with tabindex=0 (first or first-selected; roving tabindex) → footer. Focus cycles within the popover; Tab from the list moves to the next focusable (e.g. footer) and the popover stays open.
       </td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
       <td></td>
-      <td>&#60;Enter&#62;</td>
+      <td>&#60;Enter&#62; / &#60;Space&#62;</td>
       <td>
-        Select the focused item and close the popover.
+        Select the focused item, close the popover, and return focus to the trigger.
+      </td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td></td>
+      <td>&#60;Home&#62;</td>
+      <td>
+        Focus moves to the first focusable item (search if present, otherwise first option).
+      </td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td></td>
+      <td>&#60;End&#62;</td>
+      <td>
+        Focus moves to the last option.
       </td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
@@ -132,7 +146,7 @@
     </tr>
     <tr style={{verticalAlign: "top"}}>
       <td></td>
-      <td>&#60;Enter&#62;</td>
+      <td>&#60;Enter&#62; / &#60;Space&#62;</td>
       <td>
        Open the popover, and transfer focus from the trigger to either the first focusable item or the search option, depending on the context.
       </td>
@@ -155,28 +169,35 @@
       <td></td>
       <td>&#60;Escape&#62;</td>
       <td>
-        Nothing happens.
+        Nothing happens (popover is closed). When the popover is open, &#60;Escape&#62; closes it and returns focus to the trigger.
       </td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
-      <td>Popover is open (The trigger will not be in focus at this instance)</td>
-      <td>&#60;Tab&#62;</td>
+      <td>Popover is open (focus is inside the popover)</td>
+      <td>&#60;Tab&#62; / &#60;Shift&#62;&#60;Tab&#62;</td>
       <td>
-        <ul>
-            <li>
-               Shift focus from the selected option item in popover to the buttons inside popover 
-            </li>
-            <li>
-               If the focus is on apply inside popover, shift focus to next item in Tab sequence on the page
-            </li>
-        </ul>
+       Tab order: search (if present) → option with tabindex=0 (roving) → footer. Tab from the list moves to the next focusable; popover stays open.
       </td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
       <td></td>
-      <td>&#60;Enter&#62;</td>
+      <td>&#60;Enter&#62; / &#60;Space&#62;</td>
       <td>
         Select the focused item.
+      </td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td></td>
+      <td>&#60;Home&#62;</td>
+      <td>
+        Focus moves to the first focusable item (search if present, otherwise first option).
+      </td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td></td>
+      <td>&#60;End&#62;</td>
+      <td>
+        Focus moves to the last option.
       </td>
     </tr>
     <tr style={{verticalAlign: "top"}}>

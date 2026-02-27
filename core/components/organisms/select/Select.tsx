@@ -7,7 +7,14 @@ import { Popover, OutsideClick } from '@/index';
 import SelectTrigger, { SelectTriggerProps } from './SelectTrigger';
 import SearchInput from './SearchInput';
 import SelectEmptyTemplate from './SelectEmptyTemplate';
-import { focusListItem, mapInitialValue } from './utils';
+import {
+  focusListItem,
+  focusPopoverInitial,
+  getFocusableElements,
+  getNextFocusableAfterTrigger,
+  getRovingIndex,
+  mapInitialValue,
+} from './utils';
 import SelectFooter from './SelectFooter';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import uidGenerator from '@/utils/uidGenerator';
@@ -173,12 +180,14 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
 
   const triggerRef = React.createRef<HTMLButtonElement>();
   const listRef = React.useRef<HTMLDivElement | null>(null);
+  const wasOpenRef = React.useRef(false);
 
   const [withSearch, setWithSearch] = React.useState(false);
 
   const [focusedOption, setFocusedOption] = React.useState<HTMLElement | undefined>();
   const [highlightFirstItem, setHighlightFirstItem] = React.useState<boolean>(false);
   const [highlightLastItem, setHighlightLastItem] = React.useState<boolean>(false);
+  const [rovingIndex, setRovingIndex] = React.useState<number>(-1);
   const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>({ width: popoverWidth || width });
   const listboxId = React.useRef(`select-listbox-${uidGenerator()}`).current;
 
@@ -227,20 +236,52 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     if (!openPopover) {
       setHighlightFirstItem(false);
       setHighlightLastItem(false);
+      setRovingIndex(-1);
+      if (wasOpenRef.current) {
+        triggerRef.current?.focus({ preventScroll: true });
+      }
     }
+    wasOpenRef.current = openPopover;
   }, [openPopover]);
 
   React.useEffect(() => {
-    if (highlightFirstItem && openPopover) {
-      requestAnimationFrame(() => focusListItem('down', setFocusedOption, listRef));
-    }
-  }, [highlightFirstItem]);
+    if (!highlightFirstItem || !openPopover) return;
+    let cancelled = false;
+    const rafId = requestAnimationFrame(() => {
+      if (cancelled) return;
+      // Second rAF ensures options (and aria-selected) are in the DOM before we focus/roving
+      requestAnimationFrame(() => {
+        if (cancelled) return;
+        const idx = focusPopoverInitial(listRef, setFocusedOption, selectValue);
+        setRovingIndex(idx);
+        setHighlightFirstItem(false);
+      });
+    });
+    return () => {
+      cancelled = true;
+      cancelAnimationFrame(rafId);
+    };
+  }, [highlightFirstItem, openPopover, selectValue]);
 
   React.useEffect(() => {
-    if (highlightLastItem && openPopover) {
-      requestAnimationFrame(() => focusListItem('up', setFocusedOption, listRef));
-    }
-  }, [highlightLastItem]);
+    if (!highlightLastItem || !openPopover) return;
+    let cancelled = false;
+    const rafId = requestAnimationFrame(() => {
+      if (cancelled) return;
+      focusListItem('up', setFocusedOption, listRef);
+      setHighlightLastItem(false);
+    });
+    return () => {
+      cancelled = true;
+      cancelAnimationFrame(rafId);
+    };
+  }, [highlightLastItem, openPopover]);
+
+  React.useEffect(() => {
+    if (!openPopover || !listRef.current) return;
+    const idx = getRovingIndex(listRef, focusedOption, selectValue);
+    setRovingIndex(idx);
+  }, [openPopover, focusedOption, selectValue]);
 
   React.useEffect(() => {
     if (value) {
@@ -264,11 +305,46 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
 
   const onOptionClick = (option: OptionType | OptionType[]) => {
     onSelect?.(option);
-    !multiSelect && setOpenPopover(false);
+    if (!multiSelect) {
+      setOpenPopover(false);
+      triggerRef.current?.focus({ preventScroll: true });
+    }
   };
 
   const onOutsideClickHandler = () => {
     onOutsideClick?.();
+  };
+
+  const handlePopoverKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (!openPopover || e.key !== 'Tab' || !listRef.current) return;
+    const container = listRef.current;
+    if (!container.contains(document.activeElement as Node)) return;
+    const focusables = getFocusableElements(container);
+    const currentIndex = focusables.length > 0 ? focusables.indexOf(document.activeElement as HTMLElement) : -1;
+    if (focusables.length === 0 || currentIndex === -1) {
+      e.preventDefault();
+      setOpenPopover(false);
+      const next = getNextFocusableAfterTrigger(
+        triggerRef.current ?? null,
+        e.shiftKey,
+        container
+      );
+      if (next) {
+        next.focus({ preventScroll: true });
+      } else {
+        triggerRef.current?.focus({ preventScroll: true });
+      }
+      return;
+    }
+    e.preventDefault();
+    const nextIndex = e.shiftKey
+      ? currentIndex === 0
+        ? focusables.length - 1
+        : currentIndex - 1
+      : currentIndex === focusables.length - 1
+        ? 0
+        : currentIndex + 1;
+    focusables[nextIndex].focus();
   };
 
   const contextProp = {
@@ -293,6 +369,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     setHighlightLastItem,
     styleType,
     error,
+    rovingIndex,
   };
 
   return (
@@ -316,7 +393,13 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
           trigger={getTriggerElement()}
         >
           <OutsideClick onOutsideClick={onOutsideClickHandler}>
-            <div role="listbox" id={listboxId} tabIndex={0} ref={listRef}>
+            <div
+              role="listbox"
+              id={listboxId}
+              tabIndex={-1}
+              ref={listRef}
+              onKeyDown={handlePopoverKeyDown}
+            >
               {children}
             </div>
           </OutsideClick>

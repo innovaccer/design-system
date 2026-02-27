@@ -118,6 +118,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     if (onClear) {
       onClear(event);
     }
+    triggerRef?.current?.focus({ preventScroll: true });
   };
 
   const buttonClass = classNames({
@@ -194,16 +195,22 @@ const SelectTrigger = (props: SelectTriggerProps) => {
           </div>
         }
         {isOptionSelected && withClearButton && (
-          <Icon
-            appearance={buttonDisabled}
-            onClick={onClearHandler}
+          <button
+            type="button"
             className={iconClass}
-            size={12}
-            name="close"
+            onClick={onClearHandler}
+            onKeyDown={(e) => e.stopPropagation()}
             aria-label="clear selected"
-            type={iconType}
             data-test="DesignSystem-Select--closeIcon"
-          />
+          >
+            <Icon
+              appearance={buttonDisabled}
+              size={12}
+              name="close"
+              type={iconType}
+              aria-hidden={true}
+            />
+          </button>
         )}
 
         <Icon appearance={buttonDisabled} name={iconName} type={iconType} />
