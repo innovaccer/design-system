@@ -46,3 +46,63 @@ export const closeOnEscapeKeypress = (
     event.preventDefault();
   }
 };
+
+const FOCUSABLE_SELECTOR =
+  'a[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [contenteditable="true"], summary, area[href], [tabindex]:not([tabindex="-1"])';
+
+/**
+ * Returns focusable elements within a container, in DOM order.
+ * Excludes elements with `visibility: hidden`, `display: none`, `aria-hidden="true"`,
+ * `aria-disabled="true"`, or inside an `[inert]` subtree.
+ */
+export const getFocusableElements = (container: HTMLElement): HTMLElement[] => {
+  const elements = container.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR);
+  return Array.from(elements).filter((el) => {
+    const style = window.getComputedStyle(el);
+    const isVisible = style.visibility !== 'hidden' && style.display !== 'none';
+    const isAriaHidden = el.getAttribute('aria-hidden') === 'true';
+    const isAriaDisabled = el.getAttribute('aria-disabled') === 'true';
+    const isInert = el.closest('[inert]') !== null;
+    return isVisible && !isAriaHidden && !isAriaDisabled && !isInert;
+  });
+};
+
+/**
+ * Handles Tab/Shift+Tab to trap focus within the container.
+ * Returns true if the event was handled (focus was redirected or prevented).
+ */
+export const handleFocusTrapKeyDown = (event: KeyboardEvent, container: HTMLElement): boolean => {
+  if (event.key !== 'Tab') return false;
+
+  const focusable = getFocusableElements(container);
+  const activeElement = document.activeElement as HTMLElement | null;
+
+  if (!activeElement || !container.contains(activeElement)) {
+    return false;
+  }
+
+  if (focusable.length === 0) {
+    event.preventDefault();
+    container.focus({ preventScroll: true });
+    return true;
+  }
+
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+
+  if (event.shiftKey) {
+    if (activeElement === first) {
+      event.preventDefault();
+      last.focus({ preventScroll: true });
+      return true;
+    }
+  } else {
+    if (activeElement === last) {
+      event.preventDefault();
+      first.focus({ preventScroll: true });
+      return true;
+    }
+  }
+
+  return false;
+};
