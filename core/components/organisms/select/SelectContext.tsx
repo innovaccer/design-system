@@ -24,6 +24,8 @@ export type ContextProps = {
   size?: TListboxSize;
   styleType?: SelectStyleType;
   error?: boolean;
+  /** Index of the option that has tabindex=0 (roving tabstop). -1 when none (e.g. search focused or empty list). */
+  rovingIndex?: number;
 };
 
 export const SelectContext = React.createContext<ContextProps>({});

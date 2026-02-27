@@ -41,10 +41,14 @@ export interface SelectOptionProps extends BaseProps {
    * Whether the option is disabled.
    */
   disabled?: boolean;
+  /**
+   * Index in the list (injected by Select.List for roving tabindex).
+   */
+  index?: number;
 }
 
 export const SelectOption = (props: SelectOptionProps) => {
-  const { children, option, checkedState, onClick, withCheckbox = true, disabled, ...rest } = props;
+  const { children, option, checkedState, onClick, withCheckbox = true, disabled, index, ...rest } = props;
   const contextProp = React.useContext(SelectContext);
   const {
     onOptionClick,
@@ -61,7 +65,10 @@ export const SelectOption = (props: SelectOptionProps) => {
     setOpenPopover,
     triggerRef,
     size,
+    rovingIndex,
   } = contextProp;
+
+  const isRovingTabstop = typeof index === 'number' && rovingIndex === index;
 
   const onClickHandler = () => {
     if (disabled) return;
@@ -118,7 +125,7 @@ export const SelectOption = (props: SelectOptionProps) => {
       aria-label="option item"
       onKeyDown={(event) => onKeyDownHandler(event)}
       selected={checked}
-      tabIndex={-1}
+      tabIndex={isRovingTabstop ? 0 : -1}
       disabled={disabled}
       data-test="DesignSystem-Select-Option"
       className={SelectOptionClass}

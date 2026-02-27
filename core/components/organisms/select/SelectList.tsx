@@ -3,6 +3,7 @@ import { Listbox } from '@/index';
 import { SelectContext } from './SelectContext';
 import { TListboxSize } from '@/common.type';
 import { BaseProps } from '@/utils/types';
+import SelectOption from './SelectOption';
 
 type TagType = 'ul' | 'ol' | 'div' | 'nav';
 
@@ -31,6 +32,13 @@ export const SelectList = (props: SelectListProps) => {
   const { children, size, ...rest } = props;
   const searchInputHeight = 33;
 
+  const childrenWithIndex = React.Children.map(children, (child, index) => {
+    if (React.isValidElement(child) && child.type === SelectOption) {
+      return React.cloneElement(child as React.ReactElement<{ index?: number }>, { index });
+    }
+    return child;
+  });
+
   const wrapperStyle: React.CSSProperties = {
     maxHeight: withSearch ? maxHeight! - searchInputHeight : maxHeight,
     overflowY: 'auto',
@@ -52,7 +60,7 @@ export const SelectList = (props: SelectListProps) => {
         size={size}
         {...rest}
       >
-        {children}
+        {childrenWithIndex}
       </Listbox>
     </SelectContext.Provider>
   );
