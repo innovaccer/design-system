@@ -39,10 +39,9 @@
   color: var(--secondary-dark) !important;
 }
 
-.AIIconButton:focus,
-.AIIconButton:focus-visible {
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
-  outline: none;
+.AIIconButton:focus {
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 .AIIconButton:disabled {
