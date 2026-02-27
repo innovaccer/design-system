@@ -260,8 +260,11 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     if (event.key !== 'Escape' || !this.props.open) return;
     if (!this.popupRef.current || !OverlayManager.isTopOverlay(this.popupRef.current)) return;
 
+    // Only notify parent; do not mutate local isOpen. Cleanup (removeEscapeKeyHandler,
+    // OverlayManager.remove) runs in componentDidUpdate when props.open becomes false.
+    // Mutating state here would hide the popper while props.open stayed true, so
+    // componentDidUpdate would never run cleanup and leave a stale overlay entry.
     this.togglePopper('escapeKeypress', false);
-    this.setState({ isOpen: false });
     event.preventDefault();
     event.stopImmediatePropagation();
   }
