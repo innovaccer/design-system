@@ -6,8 +6,10 @@
   border-bottom: var(--border-width-2-5) solid transparent;
 }
 
-.Link:focus-visible {
-  outline: none;
+.Link:focus {
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
+  border-radius: var(--border-radius-10);
 }
 
 .Link--regular {
@@ -47,16 +49,6 @@
 .Link--subtle:active {
   color: var(--inverse);
   border: none;
-}
-
-.Link--default:focus {
-  box-shadow: var(--shadow-spread) var(--primary-shadow);
-  border-radius: var(--border-radius-10);
-}
-
-.Link--subtle:focus {
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
-  border-radius: var(--border-radius-10);
 }
 
 .Link--default-disabled {
