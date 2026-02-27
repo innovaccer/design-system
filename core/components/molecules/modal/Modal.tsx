@@ -7,7 +7,13 @@ import { OverlayHeader, OverlayHeaderProps } from '@/components/molecules/overla
 import { OverlayBody } from '@/components/molecules/overlayBody';
 import { Row, Column, Backdrop, OutsideClick, Button, Tooltip } from '@/index';
 import { ColumnProps } from '@/index.type';
-import { getWrapperElement, getUpdatedZIndex, closeOnEscapeKeypress } from '@/utils/overlayHelper';
+import {
+  getWrapperElement,
+  getUpdatedZIndex,
+  closeOnEscapeKeypress,
+  getFocusableElements,
+  handleFocusTrapKeyDown,
+} from '@/utils/overlayHelper';
 import OverlayManager from '@/utils/OverlayManager';
 import { FooterOptions } from '@/common.type';
 import styles from '@css/components/modal.module.css';
@@ -123,11 +129,14 @@ interface ModalState {
  */
 class Modal extends React.Component<ModalProps, ModalState> {
   modalRef = React.createRef<HTMLDivElement>();
+  modalContentRef = React.createRef<HTMLDivElement>();
+  previousActiveElement: HTMLElement | null = null;
 
   element: Element;
 
   static defaultProps = {
     dimension: 'medium',
+    closeOnEscape: true,
   };
 
   constructor(props: ModalProps) {
@@ -146,6 +155,45 @@ class Modal extends React.Component<ModalProps, ModalState> {
   onCloseHandler = (event: KeyboardEvent) => {
     const isTopOverlay = OverlayManager.isTopOverlay(this.modalRef.current);
     closeOnEscapeKeypress(event, isTopOverlay, this.onOutsideClickHandler);
+  };
+
+  onFocusTrapKeyDown = (event: KeyboardEvent) => {
+    const container = this.modalContentRef.current;
+    if (!container) return;
+    handleFocusTrapKeyDown(event, container);
+  };
+
+  activateFocusTrap = () => {
+    this.previousActiveElement = document.activeElement as HTMLElement | null;
+    const container = this.modalContentRef.current;
+    if (!container) return;
+
+    window.requestAnimationFrame(() => {
+      const focusable = getFocusableElements(container);
+      if (focusable.length > 0) {
+        focusable[0].focus({ preventScroll: true });
+      } else {
+        container.setAttribute('tabindex', '-1');
+        container.focus({ preventScroll: true });
+      }
+    });
+
+    document.addEventListener('keydown', this.onFocusTrapKeyDown, true);
+  };
+
+  deactivateFocusTrap = () => {
+    document.removeEventListener('keydown', this.onFocusTrapKeyDown, true);
+
+    const container = this.modalContentRef.current;
+    if (container) container.removeAttribute('tabindex');
+
+    // Capture in variable so RAF callback has stable reference (previousActiveElement is cleared below)
+    const elementToFocus = this.previousActiveElement;
+    this.previousActiveElement = null;
+
+    if (elementToFocus?.focus) {
+      window.requestAnimationFrame(() => elementToFocus.focus({ preventScroll: true }));
+    }
   };
 
   componentDidMount() {
@@ -170,9 +218,16 @@ class Modal extends React.Component<ModalProps, ModalState> {
     this.setState({
       zIndex,
     });
+
+    if (this.state.open) {
+      this.activateFocusTrap();
+    }
   }
 
   componentWillUnmount() {
+    if (this.state.open) {
+      this.deactivateFocusTrap();
+    }
     if (this.props.closeOnEscape) {
       document.removeEventListener('keydown', this.onCloseHandler);
     }
@@ -194,7 +249,11 @@ class Modal extends React.Component<ModalProps, ModalState> {
         });
 
         if (this.props.closeOnEscape || this.props.backdropClose) OverlayManager.add(this.modalRef.current);
+
+        this.activateFocusTrap();
       } else {
+        this.deactivateFocusTrap();
+
         this.setState(
           {
             animate: false,
@@ -306,10 +365,15 @@ class Modal extends React.Component<ModalProps, ModalState> {
       >
         <Column
           data-test="DesignSystem-Modal"
+          role="dialog"
+          aria-modal={open}
           {...baseProps}
           className={classes}
           {...sizeMap[dimension]}
-          ref={this.modalRef}
+          ref={(el) => {
+            (this.modalContentRef as React.MutableRefObject<HTMLDivElement | null>).current = el;
+            if (!backdropClose) (this.modalRef as React.MutableRefObject<HTMLDivElement | null>).current = el;
+          }}
         >
           {(headerOptions || header) && (
             <div className={headerClass}>
@@ -347,6 +411,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
               {...footerOptions}
               open={open}
               className={footerClass}
+              skipFocusOnOpen
             >
               {footer}
             </OverlayFooter>
