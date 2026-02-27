@@ -5,12 +5,10 @@ import { Tooltip, Button } from '@/index';
 export const all = () => {
   const position = 'bottom';
   const appendToBody = true;
-  const hoverable = false;
   const tooltip = 'An awesome tooltip';
 
   const options = {
     tooltip,
-    hoverable,
     position,
     appendToBody,
   };

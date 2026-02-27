@@ -5,6 +5,7 @@ import { OutsideClick } from '@/index';
 import classNames from 'classnames';
 import { PositionType } from '@/common.type';
 import { flushSync } from 'react-dom';
+import OverlayManager from '@/utils/OverlayManager';
 
 type ActionType = 'click' | 'hover';
 type Offset = 'small' | 'medium' | 'large';
@@ -38,6 +39,8 @@ export interface PopperWrapperProps {
    * Holds `Popover` on hover
    *
    * **Use only if you are using `on = 'hover'`**
+   *
+   * Avoid setting this to false to keep the tooltip accessible and compliant with WCAG "Content on Hover or Focus" requirements.
    */
   hoverable: boolean;
   /**
@@ -115,6 +118,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
   hoverableDelay?: number;
   _timer?: number;
   _throttleWait?: boolean;
+  _overlayAddTimer?: number;
   offsetMapping: Record<Offset, string>;
 
   static defaultProps = {
@@ -151,10 +155,35 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
     this.boundaryScrollHandler = this.boundaryScrollHandler.bind(this);
+    this.handleEscapeKey = this.handleEscapeKey.bind(this);
+  }
+
+  scheduleOverlayAdd() {
+    if (this._overlayAddTimer != null) {
+      window.clearTimeout(this._overlayAddTimer);
+      this._overlayAddTimer = undefined;
+    }
+    this._overlayAddTimer = window.setTimeout(() => {
+      this._overlayAddTimer = undefined;
+      if (this.popupRef.current && this.props.open) {
+        OverlayManager.add(this.popupRef.current);
+      }
+    }, 0);
+  }
+
+  clearOverlayAddTimer() {
+    if (this._overlayAddTimer != null) {
+      window.clearTimeout(this._overlayAddTimer);
+      this._overlayAddTimer = undefined;
+    }
   }
 
   componentDidMount() {
     this.addBoundaryScrollHandler();
+    if (this.props.open) {
+      this.addEscapeKeyHandler();
+      this.scheduleOverlayAdd();
+    }
     const triggerElement = this.triggerRef.current;
     const zIndex = this.getZIndexForLayer(triggerElement);
     this.setState({
@@ -168,6 +197,14 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
       this.addBoundaryScrollHandler();
     }
     if (prevProps.open !== this.props.open) {
+      if (this.props.open) {
+        this.addEscapeKeyHandler();
+        this.scheduleOverlayAdd();
+      } else {
+        this.removeEscapeKeyHandler();
+        this.clearOverlayAddTimer();
+        OverlayManager.remove(this.popupRef.current);
+      }
       this._throttleWait = false;
       this.setState({
         animationKeyframe: '',
@@ -190,6 +227,9 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
 
   componentWillUnmount() {
     this.removeBoundaryScrollHandler();
+    this.removeEscapeKeyHandler();
+    this.clearOverlayAddTimer();
+    OverlayManager.remove(this.popupRef.current);
   }
 
   boundaryScrollHandler() {
@@ -214,6 +254,27 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     if (this.props.boundaryElement && this.props.boundaryElement.removeEventListener) {
       this.props.boundaryElement.removeEventListener('scroll', this.boundaryScrollHandler);
     }
+  }
+
+  handleEscapeKey(event: KeyboardEvent) {
+    if (event.key !== 'Escape' || !this.props.open) return;
+    if (!this.popupRef.current || !OverlayManager.isTopOverlay(this.popupRef.current)) return;
+
+    // Only notify parent; do not mutate local isOpen. Cleanup (removeEscapeKeyHandler,
+    // OverlayManager.remove) runs in componentDidUpdate when props.open becomes false.
+    // Mutating state here would hide the popper while props.open stayed true, so
+    // componentDidUpdate would never run cleanup and leave a stale overlay entry.
+    this.togglePopper('escapeKeypress', false);
+    event.preventDefault();
+    event.stopImmediatePropagation();
+  }
+
+  addEscapeKeyHandler() {
+    document.addEventListener('keydown', this.handleEscapeKey);
+  }
+
+  removeEscapeKeyHandler() {
+    document.removeEventListener('keydown', this.handleEscapeKey);
   }
 
   mouseMoveHandler() {
