@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, waitFor, act } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { Select, AIIconButton } from '@/index';
 import { SelectProps as Props } from '@/index.type';
@@ -263,6 +263,110 @@ describe('Select component single input trigger tests', () => {
     expect(triggerButton).toBeInTheDocument();
     expect(triggerButton).toHaveStyle('min-width: 176px');
     expect(triggerButton).toHaveStyle('max-width: 256px');
+  });
+});
+
+describe('Select Tab-escape fallback', () => {
+  it('when Tab is pressed inside popover and focus is not in trap list, closes popover and moves focus to next focusable after trigger', async () => {
+    const { getByTestId, getAllByTestId } = render(
+      <div>
+        <Select onSelect={FunctionValue}>
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+            <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+          </Select.List>
+        </Select>
+        <button type="button" data-test="after-select-button">
+          After Select
+        </button>
+      </div>
+    );
+    const trigger = getByTestId('DesignSystem-Select-trigger');
+    const afterButton = getByTestId('after-select-button');
+    fireEvent.click(trigger);
+    expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
+    const options = getAllByTestId('DesignSystem-Select-Option');
+    const optionItem = options[0];
+    optionItem.scrollIntoView = jest.fn();
+    optionItem.focus();
+    act(() => {
+      fireEvent.keyDown(optionItem, { key: 'Tab', shiftKey: false });
+    });
+    await waitFor(() => {
+      expect(getByTestId('DesignSystem-Popover')).toHaveAttribute('data-opened', 'false');
+    });
+    await waitFor(() => {
+      expect(document.activeElement).toBe(afterButton);
+    });
+  });
+
+  it('when Tab is pressed and no next focusable, closes popover and returns focus to trigger', async () => {
+    const { getByTestId } = render(
+      <Select onSelect={FunctionValue}>
+        <Select.List>
+          <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+        </Select.List>
+      </Select>
+    );
+    const trigger = getByTestId('DesignSystem-Select-trigger');
+    fireEvent.click(trigger);
+    expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
+    const optionItem = getByTestId('DesignSystem-Select-Option');
+    optionItem.scrollIntoView = jest.fn();
+    optionItem.focus();
+    act(() => {
+      fireEvent.keyDown(optionItem, { key: 'Tab', shiftKey: false });
+    });
+    await waitFor(() => {
+      expect(getByTestId('DesignSystem-Popover')).toHaveAttribute('data-opened', 'false');
+    });
+    await waitFor(() => {
+      expect(document.activeElement).toBe(trigger);
+    });
+  });
+});
+
+describe('Select single-select keyboard close and roving', () => {
+  it('single-select option click closes popover and returns focus to trigger', async () => {
+    const { getByTestId, getAllByTestId } = render(
+      <Select onSelect={FunctionValue}>
+        <Select.List>
+          <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+        </Select.List>
+      </Select>
+    );
+    const trigger = getByTestId('DesignSystem-Select-trigger');
+    fireEvent.click(trigger);
+    await waitFor(() => {
+      expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
+    });
+    const optionItem = getAllByTestId('DesignSystem-Select-Option')[0];
+    fireEvent.click(optionItem);
+    await waitFor(() => {
+      expect(getByTestId('DesignSystem-Popover')).toHaveAttribute('data-opened', 'false');
+    });
+    await waitFor(() => {
+      expect(document.activeElement).toBe(trigger);
+    });
+  });
+
+  it('one option has tabindex=0 (roving tabstop) when popover is open', async () => {
+    const { getByTestId, getAllByTestId } = render(
+      <Select onSelect={FunctionValue}>
+        <Select.List>
+          <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+        </Select.List>
+      </Select>
+    );
+    const trigger = getByTestId('DesignSystem-Select-trigger');
+    fireEvent.click(trigger);
+    await waitFor(() => {
+      const wrappers = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      const withZero = wrappers.filter((w) => w.getAttribute('tabindex') === '0');
+      expect(withZero).toHaveLength(1);
+    });
   });
 });
 
