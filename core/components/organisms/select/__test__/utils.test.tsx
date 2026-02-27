@@ -4,6 +4,8 @@ import {
   removeOrAddToList,
   computeValue,
   handleKeyDownTrigger,
+  getFocusableElements,
+  getNextFocusableAfterTrigger,
   focusListItem,
   handleKeyDown,
   handleEnterKey,
@@ -199,6 +201,20 @@ describe('handleKeyDownTrigger function', () => {
     expect(setHighlightLastItemMock).toHaveBeenCalledWith(true);
   });
 
+  it('should call setOpenPopover(true) and setHighlightFirstItem(true) when Space key is pressed', () => {
+    const event: React.KeyboardEvent = { key: ' ', preventDefault: jest.fn() } as unknown as React.KeyboardEvent;
+    handleKeyDownTrigger(event, setOpenPopoverMock, setHighlightFirstItemMock);
+    expect(setOpenPopoverMock).toHaveBeenCalledWith(true);
+    expect(setHighlightFirstItemMock).toHaveBeenCalledWith(true);
+  });
+
+  it('should call setOpenPopover(true) and setHighlightFirstItem(true) when Spacebar key is pressed', () => {
+    const event: React.KeyboardEvent = { key: 'Spacebar', preventDefault: jest.fn() } as unknown as React.KeyboardEvent;
+    handleKeyDownTrigger(event, setOpenPopoverMock, setHighlightFirstItemMock);
+    expect(setOpenPopoverMock).toHaveBeenCalledWith(true);
+    expect(setHighlightFirstItemMock).toHaveBeenCalledWith(true);
+  });
+
   it('should not call any setter functions when an unrecognized key is pressed', () => {
     const event: React.KeyboardEvent = { key: 'Escape' } as React.KeyboardEvent; // Unrecognized key
     handleKeyDownTrigger(event, setOpenPopoverMock, setHighlightFirstItemMock, setHighlightLastItemMock);
@@ -289,6 +305,106 @@ describe('handleKeyDown function', () => {
     expect(setHighlightLastItemMock).toHaveBeenCalledWith(false);
   });
 
+  it('should handle Space key press like Enter', () => {
+    const event: React.KeyboardEvent = {
+      key: ' ',
+      preventDefault: preventDefaultMock,
+    } as unknown as React.KeyboardEvent;
+    handleKeyDown(
+      event,
+      document.createElement('div'),
+      setFocusedOptionMock,
+      setHighlightFirstItemMock,
+      setHighlightLastItemMock,
+      listRefMock,
+      true
+    );
+    expect(preventDefaultMock).toHaveBeenCalled();
+    expect(setHighlightFirstItemMock).toHaveBeenCalledWith(false);
+    expect(setHighlightLastItemMock).toHaveBeenCalledWith(false);
+  });
+
+  it('should handle Home key and focus first item', () => {
+    const event: React.KeyboardEvent = {
+      key: 'Home',
+      preventDefault: preventDefaultMock,
+    } as unknown as React.KeyboardEvent;
+    const container = document.createElement('div');
+    const firstItem = document.createElement('div');
+    firstItem.focus = jest.fn();
+    firstItem.scrollIntoView = jest.fn();
+    container.querySelectorAll = jest.fn((selector: string) => {
+      if (selector.includes('Select--Input')) return [];
+      if (selector.includes('Listbox-ItemWrapper')) return [firstItem];
+      return [];
+    }) as any;
+    const listRefWithQuery = { current: container };
+    handleKeyDown(
+      event,
+      undefined,
+      setFocusedOptionMock,
+      setHighlightFirstItemMock,
+      setHighlightLastItemMock,
+      listRefWithQuery,
+      false
+    );
+    expect(preventDefaultMock).toHaveBeenCalled();
+    expect(setFocusedOptionMock).toHaveBeenCalledWith(firstItem);
+  });
+
+  it('should handle End key and focus last item', () => {
+    const event: React.KeyboardEvent = {
+      key: 'End',
+      preventDefault: preventDefaultMock,
+    } as unknown as React.KeyboardEvent;
+    const container = document.createElement('div');
+    const lastItem = document.createElement('div');
+    lastItem.focus = jest.fn();
+    lastItem.scrollIntoView = jest.fn();
+    container.querySelectorAll = jest.fn((selector: string) => {
+      if (selector.includes('Select--Input')) return [];
+      if (selector.includes('Listbox-ItemWrapper')) return [lastItem];
+      return [];
+    }) as any;
+    const listRefWithQuery = { current: container };
+    handleKeyDown(
+      event,
+      undefined,
+      setFocusedOptionMock,
+      setHighlightFirstItemMock,
+      setHighlightLastItemMock,
+      listRefWithQuery,
+      false
+    );
+    expect(preventDefaultMock).toHaveBeenCalled();
+    expect(setFocusedOptionMock).toHaveBeenCalledWith(lastItem);
+  });
+
+  it('should handle Escape key and close popover and focus trigger', () => {
+    const event: React.KeyboardEvent = {
+      key: 'Escape',
+      preventDefault: preventDefaultMock,
+    } as unknown as React.KeyboardEvent;
+    const setOpenPopoverMock = jest.fn();
+    const triggerFocusMock = jest.fn();
+    triggerRefMock.current = { focus: triggerFocusMock } as unknown as HTMLButtonElement;
+    handleKeyDown(
+      event,
+      document.createElement('div'),
+      setFocusedOptionMock,
+      setHighlightFirstItemMock,
+      setHighlightLastItemMock,
+      listRefMock,
+      true,
+      setOpenPopoverMock,
+      triggerRefMock
+    );
+    expect(preventDefaultMock).toHaveBeenCalled();
+    expect(setOpenPopoverMock).toHaveBeenCalledWith(false);
+    expect(triggerFocusMock).toHaveBeenCalled();
+    expect(setFocusedOptionMock).toHaveBeenCalledWith(undefined);
+  });
+
   it('should not call any functions if an unrecognized key is pressed', () => {
     const event: React.KeyboardEvent = {
       key: 'UnknownKey',
@@ -373,6 +489,77 @@ describe('focusListItem function', () => {
     expect(focusMock).toHaveBeenCalled();
     expect(scrollIntoViewMock).toHaveBeenCalledWith({ block: 'center' });
     expect(setFocusedOptionMock).toHaveBeenCalledWith(targetOption);
+  });
+});
+
+describe('getFocusableElements function', () => {
+  it('should return focusable elements within the container', () => {
+    const container = document.createElement('div');
+    const button = document.createElement('button');
+    const input = document.createElement('input');
+    container.appendChild(button);
+    container.appendChild(input);
+    const focusables = getFocusableElements(container);
+    expect(focusables).toContain(button);
+    expect(focusables).toContain(input);
+    expect(focusables.length).toBeGreaterThanOrEqual(2);
+  });
+
+  it('should return empty array when container has no focusable descendants', () => {
+    const container = document.createElement('div');
+    container.appendChild(document.createElement('div'));
+    const focusables = getFocusableElements(container);
+    expect(focusables).toEqual([]);
+  });
+});
+
+describe('getNextFocusableAfterTrigger function', () => {
+  let container: HTMLDivElement;
+
+  beforeEach(() => {
+    container = document.createElement('div');
+    document.body.appendChild(container);
+  });
+
+  afterEach(() => {
+    document.body.removeChild(container);
+  });
+
+  it('should return null when trigger is null', () => {
+    expect(getNextFocusableAfterTrigger(null, false)).toBeNull();
+    expect(getNextFocusableAfterTrigger(null, true)).toBeNull();
+  });
+
+  it('should return next focusable in document order when available and shiftKey is false', () => {
+    const trigger = document.createElement('button');
+    trigger.textContent = 'Trigger';
+    const nextButton = document.createElement('button');
+    nextButton.textContent = 'Next';
+    container.appendChild(trigger);
+    container.appendChild(nextButton);
+    expect(getNextFocusableAfterTrigger(trigger, false)).toBe(nextButton);
+  });
+
+  it('should return previous focusable when shiftKey is true', () => {
+    const prevButton = document.createElement('button');
+    prevButton.textContent = 'Prev';
+    const trigger = document.createElement('button');
+    trigger.textContent = 'Trigger';
+    container.appendChild(prevButton);
+    container.appendChild(trigger);
+    expect(getNextFocusableAfterTrigger(trigger, true)).toBe(prevButton);
+  });
+
+  it('should return null when trigger is last focusable and shiftKey is false', () => {
+    const trigger = document.createElement('button');
+    container.appendChild(trigger);
+    expect(getNextFocusableAfterTrigger(trigger, false)).toBeNull();
+  });
+
+  it('should return null when trigger is first focusable and shiftKey is true', () => {
+    const trigger = document.createElement('button');
+    container.appendChild(trigger);
+    expect(getNextFocusableAfterTrigger(trigger, true)).toBeNull();
   });
 });
 
