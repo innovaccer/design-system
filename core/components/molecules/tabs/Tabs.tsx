@@ -171,17 +171,16 @@ export const Tabs = (props: TabsProps) => {
     [`${activeTabClass}`]: activeTabClass,
   });
 
-  const tabClickHandler = (tabIndex: number, isKeyboard?: boolean) => {
+  const tabClickHandler = (tabIndex: number) => {
     if (props.activeIndex === undefined) {
       setActiveTab(tabIndex);
-      if (!isKeyboard) tabRefs[tabIndex]?.blur();
     }
     if (onTabChange) onTabChange(tabIndex);
   };
 
   const tabKeyDownHandler = (event: React.KeyboardEvent, tabIndex: number) => {
     if (event.key === 'Enter') {
-      tabClickHandler(tabIndex, true);
+      tabClickHandler(tabIndex);
     }
     if (event.key === 'ArrowLeft' && tabIndex > 0) {
       const prevElement = tabRefs[tabIndex - 1];

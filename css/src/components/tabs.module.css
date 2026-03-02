@@ -65,10 +65,9 @@
 }
 
 .Tab:focus {
-  outline: none;
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: 0;
   border-radius: var(--border-radius-10);
-  /* Using box shadow instead of border as border shifts the div down which cuts the Icon & Text of label. */
-  box-shadow: var(--shadow-spread) var(--primary-shadow);
 }
 
 .Tab--active:hover .Tab-selected {
@@ -80,7 +79,8 @@
 }
 
 .Tab:active:focus {
-  box-shadow: none;
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: 0;
 }
 
 .Tab--disabled {
@@ -88,7 +88,7 @@
 }
 
 .Tab--disabled:focus {
-  box-shadow: none;
+  outline: none;
 }
 
 .Tab--disabled:hover::after {
