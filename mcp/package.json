@@ -1,0 +1,33 @@
+{
+  "name": "@innovaccer/mds-mcp",
+  "version": "4.20.0",
+  "description": "MCP server for the Masala Design System",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "mds-mcp": "./dist/cli.js"
+  },
+  "files": [
+    "dist/",
+    "generated/"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "generate": "tsx src/generator/index.ts",
+    "test": "node --import tsx --test src/__tests__/*.test.ts",
+    "start": "node dist/cli.js",
+    "start:http": "node dist/cli.js --http"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "express": "^4.21.2",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.13.10",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  },
+  "license": "MIT"
+}

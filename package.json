@@ -179,6 +179,9 @@
     "CODE_OF_CONDUCT.md",
     "CHANGELOG.md"
   ],
+  "workspaces": [
+    "mcp"
+  ],
   "engines": {
     "node": ">=20.15.0",
     "npm": ">=10.7.0"

@@ -1,0 +1,57 @@
+name: 'MCP Pre-release'
+
+on:
+  push:
+    branches:
+      - feat-mcp
+    paths:
+      - 'mcp/**'
+
+jobs:
+  prerelease:
+    name: MCP pre-release
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./mcp
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+
+      - name: Install root dependencies
+        run: npm ci
+        working-directory: .
+
+      - name: Install MCP dependencies
+        run: npm ci
+
+      - name: Generate manifest
+        run: npm run generate
+
+      - name: Build
+        run: npm run build
+
+      - name: Test
+        run: npm run test
+
+      - name: Sync version from design system
+        run: |
+          DS_VERSION=$(node -p "require('../package.json').version")
+          COMMIT_SHA=$(echo "$GITHUB_SHA" | cut -c1-7)
+          PRE_VERSION="${DS_VERSION}-mcp.${GITHUB_RUN_NUMBER}.${COMMIT_SHA}"
+          npm version "$PRE_VERSION" --no-git-tag-version
+          echo "MCP_VERSION=$PRE_VERSION" >> "$GITHUB_ENV"
+
+      - name: Generate .npmrc
+        run: cp ../.npmrc.stub .npmrc
+
+      - name: Publish pre-release to npm
+        run: npm publish --access public --tag mcp
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Summary
+        run: echo "Published @innovaccer/mds-mcp@$MCP_VERSION" >> "$GITHUB_STEP_SUMMARY"
