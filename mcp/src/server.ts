@@ -1,5 +1,5 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
-import { loadManifest, getTokens, getVersion, getResources } from './manifest/loader.js';
+import { loadManifest, getTokens, getComponents, getVersion, getResources } from './manifest/loader.js';
 import { registerTokenTools } from './tools/tokens.js';
 import { registerComponentTools } from './tools/components.js';
 import { registerExampleTools } from './tools/examples.js';
@@ -61,13 +61,39 @@ export function createServer(manifestPath?: string): McpServer {
     }],
   }));
 
-  server.resource('component-types', 'design-system://types', async (uri) => ({
-    contents: [{
-      uri: uri.href,
-      mimeType: 'text/plain',
-      text: getResources().types || 'No types available.',
-    }],
-  }));
+  server.resource('component-types', 'design-system://types', async (uri) => {
+    const manifest = getComponents();
+    let text = `// Masala Design System — Component Props (v${manifest.version})\n`;
+    text += `// Auto-generated from component source files\n\n`;
+
+    for (const comp of manifest.components) {
+      if (comp.props.length === 0) continue;
+      const capName = comp.name.charAt(0).toUpperCase() + comp.name.slice(1);
+      text += `interface ${capName}Props {\n`;
+      for (const prop of comp.props) {
+        if (prop.description) text += `  /** ${prop.description} */\n`;
+        text += `  ${prop.name}${prop.required ? '' : '?'}: ${prop.type};`;
+        if (prop.defaultValue) text += ` // default: ${prop.defaultValue}`;
+        text += '\n';
+      }
+      text += `}\n\n`;
+
+      if (Object.keys(comp.variants).length > 0) {
+        for (const [typeName, values] of Object.entries(comp.variants)) {
+          text += `type ${typeName} = ${values.map((v) => `'${v}'`).join(' | ')};\n`;
+        }
+        text += '\n';
+      }
+    }
+
+    return {
+      contents: [{
+        uri: uri.href,
+        mimeType: 'text/plain',
+        text,
+      }],
+    };
+  });
 
   return server;
 }
