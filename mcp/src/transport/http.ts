@@ -94,6 +94,7 @@ export async function startHttp(port: number, manifestPath?: string): Promise<vo
       resources: [
         'design-system://tokens',
         'design-system://variables',
+        'design-system://helpers',
         'design-system://conventions',
         'design-system://exports',
         'design-system://types',
