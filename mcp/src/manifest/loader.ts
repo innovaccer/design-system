@@ -7,6 +7,7 @@ import type { ExampleEntry } from '../generator/extract-examples.js';
 import type { PatternsManifest } from '../generator/extract-patterns.js';
 import type { VersionManifest } from '../generator/extract-version.js';
 import type { ResourcesManifest } from '../generator/extract-resources.js';
+import type { UsageManifest } from '../generator/extract-usage.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -30,6 +31,7 @@ let examplesCache: ExampleEntry[] | null = null;
 let patternsCache: PatternsManifest | null = null;
 let versionCache: VersionManifest | null = null;
 let resourcesCache: ResourcesManifest | null = null;
+let usageCache: UsageManifest | null = null;
 let loadedDir: string | null = null;
 
 export function loadManifest(customPath?: string): void {
@@ -46,6 +48,11 @@ export function loadManifest(customPath?: string): void {
   resourcesCache = existsSync(resourcesPath)
     ? JSON.parse(readFileSync(resourcesPath, 'utf-8'))
     : { cssVariables: '', conventions: '', exports: '', types: '' };
+
+  const usagePath = resolve(dir, 'usage.json');
+  usageCache = existsSync(usagePath)
+    ? JSON.parse(readFileSync(usagePath, 'utf-8'))
+    : { version: '', entries: [] };
 
   const examplesPath = resolve(dir, 'examples.jsonl');
   const examplesRaw = readFileSync(examplesPath, 'utf-8').trim();
@@ -82,4 +89,9 @@ export function getVersion(): VersionManifest {
 export function getResources(): ResourcesManifest {
   if (!resourcesCache) throw new Error('Manifest not loaded');
   return resourcesCache;
+}
+
+export function getUsage(): UsageManifest {
+  if (!usageCache) throw new Error('Manifest not loaded');
+  return usageCache;
 }

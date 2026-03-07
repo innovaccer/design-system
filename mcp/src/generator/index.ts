@@ -7,6 +7,7 @@ import { extractExamples } from './extract-examples.js';
 import { extractPatterns } from './extract-patterns.js';
 import { extractVersion } from './extract-version.js';
 import { extractResources } from './extract-resources.js';
+import { extractUsage } from './extract-usage.js';
 
 const MCP_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../../../mcp');
 const OUT_DIR = resolve(MCP_ROOT, 'generated');
@@ -39,6 +40,11 @@ function main() {
   const patterns = extractPatterns(version);
   writeFileSync(resolve(OUT_DIR, 'patterns.json'), JSON.stringify(patterns, null, 2));
   console.log(`    ${patterns.patterns.length} patterns`);
+
+  console.log('  Extracting usage guidelines...');
+  const usage = extractUsage(version);
+  writeFileSync(resolve(OUT_DIR, 'usage.json'), JSON.stringify(usage, null, 2));
+  console.log(`    ${usage.entries.length} usage guides`);
 
   console.log('  Extracting resources...');
   const resources = extractResources();
