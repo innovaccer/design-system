@@ -45,7 +45,7 @@ jobs:
         run: cp ../.npmrc.stub .npmrc
 
       - name: Publish pre-release to npm
-        run: npm publish --access public --tag mcp
+        run: npm publish --access public
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
