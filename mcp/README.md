@@ -1,6 +1,6 @@
 # @innovaccer/mds-mcp
 
-MCP (Model Context Protocol) server for the Masala Design System. Enables AI coding tools (Cursor, Claude Code, OpenWebUI) to correctly use the design system's components, tokens, patterns, and examples.
+MCP (Model Context Protocol) server for the Masala Design System. Enables AI coding tools (Cursor, Claude Code, Windsurf, OpenWebUI) to correctly use the design system's components, tokens, patterns, and examples.
 
 ## Features
 
@@ -9,72 +9,76 @@ MCP (Model Context Protocol) server for the Masala Design System. Enables AI cod
 - **Deterministic**: no AI inside MCP, pure static lookup and AST validation
 - **Dual transport**: stdio (default, for Cursor/Claude) and HTTP (for OpenWebUI)
 
-## Quick Start
-
-### 1. Generate the manifest
+## Install
 
 ```bash
-npm run generate -w mcp
+npm install -g @innovaccer/mds-mcp
 ```
 
-### 2. Build
+## Usage
 
-```bash
-npm run build -w mcp
-```
+### Cursor
 
-### 3. Run
-
-**stdio (default)**:
-```bash
-node mcp/dist/cli.js
-```
-
-**HTTP**:
-```bash
-node mcp/dist/cli.js --http --port 3100
-```
-
-## Cursor Configuration
-
-Add to your project's `.cursor/mcp.json`:
+Add to `.cursor/mcp.json`:
 
 ```json
 {
   "mcpServers": {
     "masala-design-system": {
-      "command": "node",
-      "args": ["./mcp/dist/cli.js"]
+      "command": "mds-mcp"
     }
   }
 }
 ```
 
-## Claude Code Configuration
+### Claude Code
 
 ```bash
-claude mcp add masala-design-system node ./mcp/dist/cli.js
+claude mcp add masala-design-system mds-mcp
 ```
+
+### Windsurf
+
+Add to `~/.codeium/windsurf/mcp_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "masala-design-system": {
+      "command": "mds-mcp"
+    }
+  }
+}
+```
+
+### HTTP (OpenWebUI / remote clients)
+
+```bash
+mds-mcp --http --port 3100
+```
+
+Endpoint: `http://localhost:3100/mcp`
+Health check: `http://localhost:3100/health`
 
 ## Available Tools
 
 | Tool | Description |
 |------|-------------|
-| `ds.list_tokens` | List design tokens by namespace |
-| `ds.get_token` | Get a specific token's details |
-| `ds.search_tokens` | Search tokens by name/value |
-| `ds.list_components` | List all components by category |
-| `ds.get_component` | Get component props, variants, a11y info |
-| `ds.search_components` | Search components by keyword |
-| `ds.search_examples` | Search usage examples |
-| `ds.get_example` | Get full example code |
-| `ds.list_patterns` | List UI patterns |
-| `ds.get_pattern` | Get pattern code and components |
-| `ds.validate_code` | Validate code for DS compliance |
+| `ds_list_tokens` | List design tokens by namespace |
+| `ds_get_token` | Get a specific token's details |
+| `ds_search_tokens` | Search tokens by name/value |
+| `ds_list_components` | List all components by category |
+| `ds_get_component` | Get component props, variants, a11y info |
+| `ds_search_components` | Search components by keyword |
+| `ds_search_examples` | Search usage examples |
+| `ds_get_example` | Get full example code |
+| `ds_list_patterns` | List UI patterns |
+| `ds_get_pattern` | Get pattern code and components |
+| `ds_validate_code` | Validate code for DS compliance |
 
 ## Validation Rules
 
-`ds.validate_code` checks for:
+`ds_validate_code` checks for:
 
 - **no-raw-html-controls**: Flags `<input>`, `<button>`, `<select>`, `<textarea>` (use DS components)
 - **no-hardcoded-colors**: Flags hex/rgb values in color properties (use `var(--token)`)
@@ -84,15 +88,23 @@ claude mcp add masala-design-system node ./mcp/dist/cli.js
 ## Development
 
 ```bash
+cd mcp
+
+# Install dependencies
+npm install
+
 # Generate manifest from design system source
-npm run generate -w mcp
+npm run generate
 
 # Type check
-cd mcp && npx tsc --noEmit
+npx tsc --noEmit
 
 # Run tests
-npm run test -w mcp
+npm test
 
 # Build
-npm run build -w mcp
+npm run build
+
+# Run locally
+node dist/cli.js
 ```
