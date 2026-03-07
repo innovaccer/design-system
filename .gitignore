@@ -113,3 +113,9 @@ docs/cypress/screenshots
 tsconfig.type.tsbuildinfo
 dist/**/*.tsbuildinfo
 .vscode
+
+# --------------------
+# MCP
+# --------------------
+mcp/dist
+mcp/generated
