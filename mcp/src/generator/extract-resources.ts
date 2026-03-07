@@ -32,7 +32,7 @@ export function extractResources(): ResourcesManifest {
   return {
     cssVariables: safeRead('css/src/variables/index.css'),
     helperClasses: concatDir('css/src/utils'),
-    conventions: safeRead('AGENTS.md'),
+    conventions: safeRead('CODING_CONVENTIONS.md'),
     exports: safeRead('core/index.tsx'),
     types: safeRead('core/index.type.tsx'),
   };
