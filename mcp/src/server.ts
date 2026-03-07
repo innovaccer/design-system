@@ -37,6 +37,14 @@ export function createServer(manifestPath?: string): McpServer {
     }],
   }));
 
+  server.resource('helper-classes', 'design-system://helpers', async (uri) => ({
+    contents: [{
+      uri: uri.href,
+      mimeType: 'text/css',
+      text: getResources().helperClasses || 'No helper classes available.',
+    }],
+  }));
+
   server.resource('coding-conventions', 'design-system://conventions', async (uri) => ({
     contents: [{
       uri: uri.href,
