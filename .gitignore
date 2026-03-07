@@ -112,3 +112,5 @@ docs/cypress/screenshots
 # --------------------
 mcp/dist
 mcp/generated
+mcp/node_modules
+!mcp/package-lock.json
