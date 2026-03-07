@@ -5,6 +5,7 @@ import { registerComponentTools } from './tools/components.js';
 import { registerExampleTools } from './tools/examples.js';
 import { registerPatternTools } from './tools/patterns.js';
 import { registerValidationTools } from './tools/validate.js';
+import { registerUsageTools } from './tools/usage.js';
 
 export function createServer(manifestPath?: string): McpServer {
   loadManifest(manifestPath);
@@ -20,6 +21,7 @@ export function createServer(manifestPath?: string): McpServer {
   registerExampleTools(server);
   registerPatternTools(server);
   registerValidationTools(server);
+  registerUsageTools(server);
 
   server.resource('design-tokens', 'design-system://tokens', async (uri) => ({
     contents: [{

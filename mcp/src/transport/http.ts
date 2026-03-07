@@ -90,6 +90,7 @@ export async function startHttp(port: number, manifestPath?: string): Promise<vo
         'ds_search_examples', 'ds_get_example',
         'ds_list_patterns', 'ds_get_pattern',
         'ds_validate_code',
+        'ds_get_usage', 'ds_search_usage',
       ],
       resources: [
         'design-system://tokens',
