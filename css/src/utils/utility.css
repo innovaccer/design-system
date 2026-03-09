@@ -38,3 +38,11 @@
 .bottom-0 {
   bottom: 0;
 }
+
+.visibility-show {
+  visibility: visible !important;
+}
+
+.visibility-hidden {
+  visibility: hidden !important;
+}
