@@ -119,6 +119,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
   _timer?: number;
   _throttleWait?: boolean;
   _overlayAddTimer?: number;
+  _overlayElement: HTMLDivElement | null = null;
   offsetMapping: Record<Offset, string>;
 
   static defaultProps = {
@@ -166,7 +167,8 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     this._overlayAddTimer = window.setTimeout(() => {
       this._overlayAddTimer = undefined;
       if (this.popupRef.current && this.props.open) {
-        OverlayManager.add(this.popupRef.current);
+        this._overlayElement = this.popupRef.current;
+        OverlayManager.add(this._overlayElement);
       }
     }, 0);
   }
@@ -203,7 +205,8 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
       } else {
         this.removeEscapeKeyHandler();
         this.clearOverlayAddTimer();
-        OverlayManager.remove(this.popupRef.current);
+        OverlayManager.remove(this._overlayElement);
+        this._overlayElement = null;
       }
       this._throttleWait = false;
       this.setState({
@@ -229,7 +232,8 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     this.removeBoundaryScrollHandler();
     this.removeEscapeKeyHandler();
     this.clearOverlayAddTimer();
-    OverlayManager.remove(this.popupRef.current);
+    OverlayManager.remove(this._overlayElement);
+    this._overlayElement = null;
   }
 
   boundaryScrollHandler() {
@@ -258,8 +262,12 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
 
   handleEscapeKey(event: KeyboardEvent) {
     if (event.key !== 'Escape' || !this.props.open) return;
-    if (!this.popupRef.current || !OverlayManager.isTopOverlay(this.popupRef.current)) return;
+    const overlayEl = this._overlayElement || this.popupRef.current;
+    if (!overlayEl || !OverlayManager.isTopOverlay(overlayEl)) return;
 
+    OverlayManager.remove(overlayEl);
+    this._overlayElement = null;
+    this.removeEscapeKeyHandler();
     this.togglePopper('escapeKeypress', false);
     this.setState({ isOpen: false });
     event.preventDefault();
