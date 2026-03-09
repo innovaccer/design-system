@@ -225,7 +225,21 @@ describe('Horizontal Navigation component css classes', () => {
 });
 
 describe('Horizontal Navigation component keydown event handler', () => {
-  it('calls onClick callback on keydown event', () => {
+  it('does not call onClick callback on repeated Space keydown events for button items', () => {
+    jest.resetAllMocks();
+    const stepFocused = 1;
+    const buttonMenus = menus.map((menu) => ({ ...menu, link: undefined }));
+    const { getAllByTestId } = render(<HorizontalNav menus={buttonMenus} active={active} onClick={onClick} />);
+
+    const activeMenu = getAllByTestId('DesignSystem-HorizontalNav')[stepFocused];
+    fireEvent.focus(activeMenu);
+    fireEvent.keyDown(activeMenu, { key: ' ' });
+    fireEvent.keyDown(activeMenu, { key: ' ' });
+    fireEvent.keyDown(activeMenu, { key: ' ' });
+    expect(onClick).not.toHaveBeenCalled();
+  });
+
+  it('does not call onClick callback on Enter keydown event', () => {
     jest.resetAllMocks();
     const stepFocused = 1;
     const { getAllByTestId } = render(<HorizontalNav menus={menus} active={active} onClick={onClick} />);
@@ -233,7 +247,24 @@ describe('Horizontal Navigation component keydown event handler', () => {
     const activeMenu = getAllByTestId('DesignSystem-HorizontalNav')[stepFocused];
     fireEvent.focus(activeMenu);
     fireEvent.keyDown(activeMenu, { key: 'Enter' });
-    expect(onClick).toHaveBeenCalledTimes(1);
-    expect(onClick).toHaveBeenCalledWith(menus[stepFocused]);
+    expect(onClick).not.toHaveBeenCalled();
+  });
+
+  it('does not call onClick callback on Space keydown event for link items', () => {
+    jest.resetAllMocks();
+    const stepFocused = 1;
+    const { getAllByTestId } = render(<HorizontalNav menus={menus} active={active} onClick={onClick} />);
+
+    const activeMenu = getAllByTestId('DesignSystem-HorizontalNav')[stepFocused];
+    fireEvent.focus(activeMenu);
+    fireEvent.keyDown(activeMenu, { key: ' ' });
+    expect(onClick).not.toHaveBeenCalled();
+  });
+});
+
+describe('Horizontal Navigation component prop: aria-label', () => {
+  it('applies a custom aria-label to nav landmark', () => {
+    const { getByRole } = render(<HorizontalNav menus={menus} aria-label="Primary Section Navigation" />);
+    expect(getByRole('navigation', { name: 'Primary Section Navigation' })).toBeInTheDocument();
   });
 });

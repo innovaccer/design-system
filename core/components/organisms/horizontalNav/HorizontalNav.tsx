@@ -6,11 +6,14 @@ import { extractBaseProps, BaseProps } from '@/utils/types';
 import { getNavItemColor, getPillsAppearance, isMenuActive, Menu, formatCount } from '@/utils/navigationHelper';
 import styles from '@css/components/horizontalNav.module.css';
 
-export type HorizontalNavProps = BaseProps & Pick<VerticalNavProps, 'menus' | 'active' | 'onClick'>;
+export type HorizontalNavProps = BaseProps &
+  Pick<VerticalNavProps, 'menus' | 'active' | 'onClick'> & {
+    'aria-label'?: string;
+  };
 export type Align = 'left' | 'center';
 
 export const HorizontalNav = (props: HorizontalNavProps) => {
-  const { menus, active, onClick, className } = props;
+  const { menus, active, onClick, className, 'aria-label': ariaLabel = 'Horizontal Navigation' } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -21,8 +24,17 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
     className
   );
 
-  const onClickHandler = (menu: Menu) => () => {
-    if (onClick) onClick(menu);
+  const onClickHandler = (event: React.MouseEvent<HTMLElement>, menu: Menu) => {
+    if (menu.disabled) {
+      event.preventDefault();
+      return;
+    }
+
+    // Preserve link navigation when no callback is provided.
+    if (onClick) {
+      event.preventDefault();
+      onClick(menu);
+    }
   };
 
   const getPillsClass = (disabled?: boolean) =>
@@ -63,12 +75,6 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
     return null;
   };
 
-  const onKeyDownHandler = (event: React.KeyboardEvent, menu: Menu) => {
-    if (event.key === 'Enter' && onClick) {
-      onClick(menu);
-    }
-  };
-
   const list = menus.map((menu, index) => {
     const isActive = isMenuActive(menus, menu, active);
     const itemColor = getNavItemColor(isActive, menu.disabled);
@@ -84,28 +90,59 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
 
     const textClasses = classNames(styles['HorizontalNav-menuText'], styles['HorizontalNav-animate']);
 
-    return (
-      <div
-        tabIndex={menu.disabled ? -1 : 0}
-        data-test="DesignSystem-HorizontalNav"
-        key={index}
-        className={menuClasses}
-        onClick={onClickHandler(menu)}
-        onKeyDown={(e) => onKeyDownHandler(e, menu)}
-        role="button"
-      >
+    const commonProps = {
+      'data-test': 'DesignSystem-HorizontalNav',
+      className: menuClasses,
+    };
+
+    const content = (
+      <>
         {renderIcon(menu, isActive)}
         <Text color={itemColor} weight="medium" data-test="DesignSystem-HorizontalNav--Text" className={textClasses}>
           {menu.label}
         </Text>
-      </div>
+      </>
+    );
+
+    if (menu.disabled) {
+      return (
+        <span key={index} {...commonProps} aria-disabled="true">
+          {content}
+        </span>
+      );
+    }
+
+    if (menu.link) {
+      return (
+        <a
+          key={index}
+          {...commonProps}
+          href={menu.link}
+          aria-current={isActive ? 'page' : undefined}
+          onClick={(event) => onClickHandler(event, menu)}
+        >
+          {content}
+        </a>
+      );
+    }
+
+    return (
+      <button
+        type="button"
+        key={index}
+        {...commonProps}
+        aria-current={isActive ? 'page' : undefined}
+        onClick={(event) => onClickHandler(event, menu)}
+      >
+        {content}
+      </button>
     );
   });
 
   return (
-    <div {...baseProps} className={classes}>
+    <nav {...baseProps} className={classes} aria-label={ariaLabel}>
       {list}
-    </div>
+    </nav>
   );
 };
 
