@@ -118,6 +118,12 @@ export interface ModalProps extends BaseProps {
    * @default true
    */
   closeOnEscape?: boolean;
+  /**
+   * Associates the dialog with a visible heading element.
+   *
+   * Pass the `id` of the element that labels this modal.
+   */
+  'aria-labelledby'?: string;
 }
 
 interface ModalState {
@@ -292,6 +298,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
       seperator,
       footer,
       onClose,
+      'aria-labelledby': ariaLabelledBy,
     } = this.props;
 
     const BackdropZIndex: number = zIndex ? zIndex - 1 : 1000;
@@ -363,6 +370,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
           data-test="DesignSystem-Modal"
           role="dialog"
           aria-modal={open}
+          aria-labelledby={ariaLabelledBy}
           {...baseProps}
           className={classes}
           {...sizeMap[dimension]}

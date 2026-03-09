@@ -114,6 +114,11 @@ describe('Modal component', () => {
 });
 
 describe('Modal component with props', () => {
+  it('applies aria-labelledby on dialog container', () => {
+    const { getByTestId } = render(<Modal open={true} aria-labelledby="modal-title" />);
+    expect(getByTestId('DesignSystem-Modal')).toHaveAttribute('aria-labelledby', 'modal-title');
+  });
+
   it('renders children', () => {
     const { getByTestId } = render(
       <Modal backdropClose={FunctionValue} open={true}>
