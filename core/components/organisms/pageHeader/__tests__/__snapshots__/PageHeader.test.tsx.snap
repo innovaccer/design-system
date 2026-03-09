@@ -231,11 +231,15 @@ exports[`Navigation component
               <div
                 class="TabsWrapper-header TabsWrapper-header--withSeparator"
                 data-test="DesignSystem-Tabs--Header"
+                role="tablist"
               >
                 <div
+                  aria-label="New"
+                  aria-selected="true"
                   class="Tab Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-tab-0"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -258,9 +262,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Invalid"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-tab-1"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -283,9 +290,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Duplicate"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-tab-2"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -553,11 +563,15 @@ exports[`Navigation component
               <div
                 class="TabsWrapper-header TabsWrapper-header--withSeparator"
                 data-test="DesignSystem-Tabs--Header"
+                role="tablist"
               >
                 <div
+                  aria-label="New"
+                  aria-selected="true"
                   class="Tab Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-tab-0"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -580,9 +594,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Invalid"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-tab-1"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -605,9 +622,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Duplicate"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-tab-2"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -870,11 +890,15 @@ exports[`Navigation component
               <div
                 class="TabsWrapper-header TabsWrapper-header--withSeparator"
                 data-test="DesignSystem-Tabs--Header"
+                role="tablist"
               >
                 <div
+                  aria-label="New"
+                  aria-selected="true"
                   class="Tab Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-tab-0"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -897,9 +921,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Invalid"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-tab-1"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -922,9 +949,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Duplicate"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-tab-2"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -1014,11 +1044,15 @@ exports[`Navigation component
               <div
                 class="TabsWrapper-header TabsWrapper-header--withSeparator"
                 data-test="DesignSystem-Tabs--Header"
+                role="tablist"
               >
                 <div
+                  aria-label="New"
+                  aria-selected="true"
                   class="Tab Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-tab-0"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -1041,9 +1075,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Invalid"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-tab-1"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -1066,9 +1103,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Duplicate"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-tab-2"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -1783,11 +1823,15 @@ exports[`Navigation component
               <div
                 class="TabsWrapper-header TabsWrapper-header--withSeparator"
                 data-test="DesignSystem-Tabs--Header"
+                role="tablist"
               >
                 <div
+                  aria-label="New"
+                  aria-selected="true"
                   class="Tab Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-tab-0"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -1810,9 +1854,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Invalid"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-tab-1"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -1835,9 +1882,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Duplicate"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-tab-2"
+                  role="tab"
                   tabindex="0"
                 >
                   <span

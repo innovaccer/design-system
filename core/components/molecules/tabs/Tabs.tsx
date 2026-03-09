@@ -80,6 +80,10 @@ export interface TabsProps extends BaseProps {
    * Adds maxWidth to the `Tab` component
    */
   maxWidth?: string | number;
+  /**
+   * Associates the tablist with a visible label element.
+   */
+  'aria-labelledby'?: string;
 }
 
 const getChildrenArray = (children: SingleOrArray<React.ReactElement>) => {
@@ -115,6 +119,7 @@ export const Tabs = (props: TabsProps) => {
   const tabs: Tab[] = children ? filterTabs(children) : props.tabs;
   const inlineComponent = children ? filterInlineComponent(children) : <></>;
   const totalTabs = tabs.length;
+  const panelId = 'tabs-panel';
 
   const [activeIndex, setActiveTab] = React.useState(
     props.activeIndex && props.activeIndex < totalTabs ? props.activeIndex : 0
@@ -322,8 +327,12 @@ export const Tabs = (props: TabsProps) => {
         onClick={() => !disabled && tabClickHandler(index)}
         onKeyDown={(event: React.KeyboardEvent) => tabKeyDownHandler(event, index)}
         tabIndex={disabled ? -1 : 0}
-        role="button"
+        role="tab"
+        id={`tabs-tab-${index}`}
+        aria-selected={!disabled && activeIndex === index}
+        aria-controls={children ? panelId : undefined}
         aria-disabled={disabled || undefined}
+        aria-label={typeof label === 'string' ? label : undefined}
       >
         {renderTab(currentTabProp, index)}
       </div>
@@ -332,12 +341,23 @@ export const Tabs = (props: TabsProps) => {
 
   return (
     <div data-test="DesignSystem-Tabs" {...baseProps} className={wrapperClass}>
-      <div className={headerClass} data-test="DesignSystem-Tabs--Header">
+      <div
+        className={headerClass}
+        data-test="DesignSystem-Tabs--Header"
+        role="tablist"
+        aria-labelledby={props['aria-labelledby']}
+      >
         {renderTabs}
         {inlineComponent}
       </div>
       {children && (
-        <div className={tabContentClass} data-test="DesignSystem-Tabs--Content">
+        <div
+          className={tabContentClass}
+          data-test="DesignSystem-Tabs--Content"
+          role="tabpanel"
+          id={panelId}
+          aria-labelledby={`tabs-tab-${activeIndex}`}
+        >
           {tabs[activeIndex]}
         </div>
       )}

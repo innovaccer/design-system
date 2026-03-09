@@ -94,6 +94,22 @@ describe('Tabs component', () => {
     expect(getByTestId('DesignSystem-Tabs--Icon')).toHaveClass('Icon--info');
   });
 
+  it('supports tab roles and aria attributes', () => {
+    const { getByTestId, getAllByTestId } = render(<Tabs activeIndex={0} tabs={tabs} />);
+    const header = getByTestId('DesignSystem-Tabs--Header');
+    const tabElements = getAllByTestId('DesignSystem-Tabs--Tab');
+
+    expect(header).toHaveAttribute('role', 'tablist');
+    expect(tabElements[0]).toHaveAttribute('role', 'tab');
+    expect(tabElements[0]).toHaveAttribute('aria-selected', 'true');
+    expect(tabElements[1]).toHaveAttribute('aria-selected', 'false');
+  });
+
+  it('applies aria-labelledby on tablist container', () => {
+    const { getByTestId } = render(<Tabs tabs={tabs} aria-labelledby="tabs-heading" />);
+    expect(getByTestId('DesignSystem-Tabs--Header')).toHaveAttribute('aria-labelledby', 'tabs-heading');
+  });
+
   it('renders default tab as 0', () => {
     const defaultTab = 0;
 
