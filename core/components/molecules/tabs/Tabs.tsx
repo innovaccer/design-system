@@ -110,16 +110,23 @@ const filterInlineComponent = (children: SingleOrArray<React.ReactElement>) => {
   return inlineComponent;
 };
 
+let tabsInstanceCounter = 0;
+
 export const Tabs = (props: TabsProps) => {
   const { children, withSeparator, onTabChange, className, headerClassName, size, maxWidth } = props;
 
   const baseProps = extractBaseProps(props);
   const tabRefs: HTMLDivElement[] = [];
+  const tabsInstanceIdRef = React.useRef<string>('');
 
   const tabs: Tab[] = children ? filterTabs(children) : props.tabs;
   const inlineComponent = children ? filterInlineComponent(children) : <></>;
   const totalTabs = tabs.length;
-  const panelId = 'tabs-panel';
+  if (!tabsInstanceIdRef.current) {
+    tabsInstanceCounter += 1;
+    tabsInstanceIdRef.current = `tabs-${tabsInstanceCounter}`;
+  }
+  const panelId = `${tabsInstanceIdRef.current}-panel`;
 
   const [activeIndex, setActiveTab] = React.useState(
     props.activeIndex && props.activeIndex < totalTabs ? props.activeIndex : 0
@@ -328,7 +335,7 @@ export const Tabs = (props: TabsProps) => {
         onKeyDown={(event: React.KeyboardEvent) => tabKeyDownHandler(event, index)}
         tabIndex={disabled ? -1 : 0}
         role="tab"
-        id={`tabs-tab-${index}`}
+        id={`${tabsInstanceIdRef.current}-tab-${index}`}
         aria-selected={!disabled && activeIndex === index}
         aria-controls={children ? panelId : undefined}
         aria-disabled={disabled || undefined}
@@ -356,7 +363,7 @@ export const Tabs = (props: TabsProps) => {
           data-test="DesignSystem-Tabs--Content"
           role="tabpanel"
           id={panelId}
-          aria-labelledby={`tabs-tab-${activeIndex}`}
+          aria-labelledby={`${tabsInstanceIdRef.current}-tab-${activeIndex}`}
         >
           {tabs[activeIndex]}
         </div>
