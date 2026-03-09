@@ -52,7 +52,7 @@ exports[`Horizontal Navigation component
         class="HorizontalNav-menu HorizontalNav-menu--disabled HorizontalNav-animate color-inverse-lightest"
         data-test="DesignSystem-HorizontalNav"
         role="button"
-        tabindex="0"
+        tabindex="-1"
       >
         <span
           class="Text Text--medium Text--regular color-inverse-lightest HorizontalNav-menuText HorizontalNav-animate"

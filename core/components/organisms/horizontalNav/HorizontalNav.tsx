@@ -86,7 +86,7 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
 
     return (
       <div
-        tabIndex={0}
+        tabIndex={menu.disabled ? -1 : 0}
         data-test="DesignSystem-HorizontalNav"
         key={index}
         className={menuClasses}

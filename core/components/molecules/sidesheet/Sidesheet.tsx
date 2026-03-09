@@ -7,7 +7,13 @@ import { OverlayFooter } from '@/components/molecules/overlayFooter';
 import { OverlayHeader, OverlayHeaderProps } from '@/components/molecules/overlayHeader';
 import { OverlayBody } from '@/components/molecules/overlayBody';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import { getWrapperElement, getUpdatedZIndex, closeOnEscapeKeypress } from '@/utils/overlayHelper';
+import {
+  getWrapperElement,
+  getUpdatedZIndex,
+  closeOnEscapeKeypress,
+  getFocusableElements,
+  handleFocusTrapKeyDown,
+} from '@/utils/overlayHelper';
 import OverlayManager from '@/utils/OverlayManager';
 import { FooterOptions } from '@/common.type';
 import styles from '@css/components/sidesheet.module.css';
@@ -92,7 +98,9 @@ export interface SidesheetProps extends BaseProps {
    */
   backdropClose?: boolean;
   /**
-   * Closes `Sidesheet` when `Escape` key is pressed
+   * ** Closes `Sidesheet` when `Escape` key is pressed.
+   *
+   * ** This prop is deprecated and has no effect. Escape always closes the modal when the focus trap is active (a11y requirement for WCAG 2.2.1). **
    */
   closeOnEscape?: boolean;
   /**
@@ -112,14 +120,21 @@ const sidesheetWidth: Record<SidesheetDimension, ColumnProps['size']> = {
   large: '10',
 };
 
+const SIDESHEET_OPEN_ANIMATION = 'sidesheet-open';
+
 class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
   sidesheetRef = React.createRef<HTMLDivElement>();
+  sidesheetContentRef = React.createRef<HTMLDivElement>();
+  previousActiveElement: HTMLElement | null = null;
+  autofocusRAF: number | null = null;
+
   element: Element;
 
   static defaultProps = {
     dimension: 'regular',
     stickFooter: false,
     headerOptions: {},
+    closeOnEscape: true,
   };
 
   constructor(props: SidesheetProps) {
@@ -136,16 +151,76 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
   }
 
   onCloseHandler = (event: KeyboardEvent) => {
-    const isTopOverlay = OverlayManager.isTopOverlay(this.sidesheetRef.current);
-    closeOnEscapeKeypress(event, isTopOverlay, this.onOutsideClickHandler);
+    closeOnEscapeKeypress(event, true, this.onOutsideClickHandler);
+  };
+
+  onFocusTrapKeyDown = (event: KeyboardEvent) => {
+    const container = this.sidesheetContentRef.current;
+    if (!container) return;
+    handleFocusTrapKeyDown(event, container);
+  };
+
+  focusFirstFocusable = () => {
+    const container = this.sidesheetContentRef.current;
+    if (!container || !this.props.open) return;
+
+    const focusable = getFocusableElements(container);
+    if (focusable.length > 0) {
+      focusable[0].focus({ preventScroll: true });
+    } else {
+      container.setAttribute('tabindex', '-1');
+      container.focus({ preventScroll: true });
+    }
+  };
+
+  onOpenAnimationStart = (event: React.AnimationEvent<HTMLDivElement>) => {
+    if (event.animationName !== SIDESHEET_OPEN_ANIMATION) return;
+    if (this.autofocusRAF !== null) {
+      window.cancelAnimationFrame(this.autofocusRAF);
+      this.autofocusRAF = null;
+    }
+    this.focusFirstFocusable();
+  };
+
+  activateFocusTrap = () => {
+    this.previousActiveElement = document.activeElement as HTMLElement | null;
+    const container = this.sidesheetContentRef.current;
+    if (!container) return;
+
+    this.autofocusRAF = window.requestAnimationFrame(() => {
+      this.autofocusRAF = null;
+      this.focusFirstFocusable();
+    });
+
+    document.addEventListener('keydown', this.onFocusTrapKeyDown, true);
+    container.addEventListener('keydown', this.onCloseHandler);
+  };
+
+  deactivateFocusTrap = () => {
+    if (this.autofocusRAF !== null) {
+      window.cancelAnimationFrame(this.autofocusRAF);
+      this.autofocusRAF = null;
+    }
+    document.removeEventListener('keydown', this.onFocusTrapKeyDown, true);
+
+    const container = this.sidesheetContentRef.current;
+    if (container) {
+      container.removeEventListener('keydown', this.onCloseHandler);
+      container.removeAttribute('tabindex');
+    }
+
+    const elementToFocus = this.previousActiveElement;
+    this.previousActiveElement = null;
+
+    if (elementToFocus?.focus && OverlayManager.isTopOverlay(this.sidesheetRef.current)) {
+      window.requestAnimationFrame(() => elementToFocus.focus({ preventScroll: true }));
+    }
   };
 
   componentDidMount() {
-    if (this.props.closeOnEscape) {
-      if (this.state.open) {
-        OverlayManager.add(this.sidesheetRef.current);
-      }
-      document.addEventListener('keydown', this.onCloseHandler);
+    if (this.state.open) {
+      OverlayManager.add(this.sidesheetRef.current);
+      this.activateFocusTrap();
     }
     if (this.props.backdropClose && this.state.open) {
       OverlayManager.add(this.sidesheetRef.current);
@@ -161,8 +236,9 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
   }
 
   componentWillUnmount() {
-    if (this.props.closeOnEscape) {
-      document.removeEventListener('keydown', this.onCloseHandler);
+    if (this.state.open) {
+      this.deactivateFocusTrap();
+      OverlayManager.remove(this.sidesheetRef.current);
     }
   }
 
@@ -181,23 +257,24 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
           animate: true,
         });
 
-        if (this.props.closeOnEscape || this.props.backdropClose) OverlayManager.add(this.sidesheetRef.current);
+        OverlayManager.add(this.sidesheetRef.current);
+        this.activateFocusTrap();
       } else {
+        this.deactivateFocusTrap();
+        OverlayManager.remove(this.sidesheetRef.current);
+
         this.setState({
           animate: false,
         });
-
-        if (this.props.closeOnEscape || this.props.backdropClose) OverlayManager.remove(this.sidesheetRef.current);
       }
     }
   }
 
   onOutsideClickHandler(event: Event) {
-    const { backdropClose, closeOnEscape, onClose } = this.props;
+    const { onClose } = this.props;
     const { open } = this.state;
 
     if (open && OverlayManager.isTopOverlay(this.sidesheetRef.current)) {
-      if (backdropClose || closeOnEscape) OverlayManager.remove(this.sidesheetRef.current);
       if (onClose) onClose(event, 'OutsideClick');
     }
   }
@@ -279,7 +356,18 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
         ref={this.sidesheetRef}
         onAnimationEnd={() => this.handleAnimationEnd}
       >
-        <Column data-test="DesignSystem-Sidesheet" {...baseProps} className={classes} size={sidesheetWidth[dimension]}>
+        <Column
+          ref={(el) => {
+            (this.sidesheetContentRef as React.MutableRefObject<HTMLDivElement | null>).current = el;
+          }}
+          data-test="DesignSystem-Sidesheet"
+          role="dialog"
+          aria-modal={open}
+          onAnimationStart={this.onOpenAnimationStart}
+          {...baseProps}
+          className={classes}
+          size={sidesheetWidth[dimension]}
+        >
           <div className={headerClass}>
             <Column data-test="DesignSystem-Sidesheet--Header">
               {!header && <OverlayHeader headingClass={headingClass} {...headerOptions} />}
@@ -309,6 +397,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
               {...footerOptions}
               open={open}
               className={footerClass}
+              skipFocusOnOpen
             >
               {footer}
             </OverlayFooter>
