@@ -40,6 +40,10 @@ export const display = () => {
       className: 'd-inline-flex',
       properties: 'display: inline-flex ;',
     },
+    {
+      className: 'd-grid',
+      properties: 'display: grid ;',
+    },
   ];
   return (
     <div>

@@ -176,6 +176,79 @@ export const flex = () => {
       className: 'order-last',
       properties: 'order: 6 ;',
     },
+
+    {
+      className: 'gap-2-5',
+      properties: 'gap: var(--spacing-2-5) ;',
+    },
+    {
+      className: 'gap-05',
+      properties: 'gap: var(--spacing-05) ;',
+    },
+    {
+      className: 'gap-10',
+      properties: 'gap: var(--spacing-10) ;',
+    },
+    {
+      className: 'gap-15',
+      properties: 'gap: var(--spacing-15) ;',
+    },
+    {
+      className: 'gap-20',
+      properties: 'gap: var(--spacing-20) ;',
+    },
+    {
+      className: 'gap-30',
+      properties: 'gap: var(--spacing-30) ;',
+    },
+    {
+      className: 'row-gap-2-5',
+      properties: 'row-gap: var(--spacing-2-5) ;',
+    },
+    {
+      className: 'row-gap-05',
+      properties: 'row-gap: var(--spacing-05) ;',
+    },
+    {
+      className: 'row-gap-10',
+      properties: 'row-gap: var(--spacing-10) ;',
+    },
+    {
+      className: 'row-gap-15',
+      properties: 'row-gap: var(--spacing-15) ;',
+    },
+    {
+      className: 'row-gap-20',
+      properties: 'row-gap: var(--spacing-20) ;',
+    },
+    {
+      className: 'row-gap-30',
+      properties: 'row-gap: var(--spacing-30) ;',
+    },
+    {
+      className: 'column-gap-2-5',
+      properties: 'column-gap: var(--spacing-2-5) ;',
+    },
+    {
+      className: 'column-gap-05',
+      properties: 'column-gap: var(--spacing-05) ;',
+    },
+    {
+      className: 'column-gap-10',
+      properties: 'column-gap: var(--spacing-10) ;',
+    },
+    {
+      className: 'column-gap-15',
+      properties: 'column-gap: var(--spacing-15) ;',
+    },
+    {
+      className: 'column-gap-20',
+      properties: 'column-gap: var(--spacing-20) ;',
+    },
+    {
+      className: 'column-gap-30',
+      properties: 'column-gap: var(--spacing-30) ;',
+    },
   ];
   return (
     <div>

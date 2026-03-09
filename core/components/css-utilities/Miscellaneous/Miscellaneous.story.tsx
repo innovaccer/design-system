@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Card, Table } from '@/index';
+import { Card, Table, Heading, Text } from '@/index';
 import utilitiesSchema from '../Schema';
 
 export const miscellaneous = () => {
@@ -24,20 +24,46 @@ export const miscellaneous = () => {
       className: 'cursor-pointer',
       properties: 'cursor: pointer;',
     },
+    {
+      className: 'white-space-nowrap',
+      properties: 'white-space: nowrap;',
+    },
+    {
+      className: 'white-space-pre',
+      properties: 'white-space: pre;',
+    },
+    {
+      className: 'bottom-0',
+      properties: 'bottom: 0;',
+    },
+    {
+      className: 'visibility-show',
+      properties: 'visibility: visible;',
+    },
+    {
+      className: 'visibility-hidden',
+      properties: 'visibility: hidden;',
+    },
   ];
+
   return (
-    <div className="mt-8 mb-8">
-      <Card className="h-100">
-        <Table
-          data={data}
-          schema={utilitiesSchema}
-          headerOptions={{
-            withSearch: true,
-          }}
-          size={'standard'}
-          showMenu={false}
-        />
-      </Card>
+    <div>
+      <Heading size="xxl">Miscellaneous</Heading>
+      <br />
+      <Text weight="strong">Utility classes for overflow behavior, cursor, whitespace, and visibility.</Text>
+      <div className="mt-8 mb-8" style={{ height: '320px' }}>
+        <Card className="h-100">
+          <Table
+            data={data}
+            schema={utilitiesSchema}
+            headerOptions={{
+              withSearch: true,
+            }}
+            size="standard"
+            showMenu={false}
+          />
+        </Card>
+      </div>
     </div>
   );
 };

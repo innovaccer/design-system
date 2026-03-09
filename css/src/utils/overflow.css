@@ -5,3 +5,7 @@
 .overflow-hidden {
   overflow: hidden !important;
 }
+
+.overflow-scroll {
+  overflow: scroll !important;
+}
