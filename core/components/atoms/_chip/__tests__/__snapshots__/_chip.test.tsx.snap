@@ -170,12 +170,12 @@ exports[`Chip component
           ChipLabel
         </span>
       </div>
-      <div
+      <button
         aria-label="Remove"
         class="Chip-icon Chip-icon--right cursor-pointer"
         data-test="DesignSystem-GenericChip--clearButton"
-        role="button"
         tabindex="0"
+        type="button"
       >
         <i
           class="material-symbols material-symbols-rounded Icon Icon--subtle"
@@ -185,7 +185,7 @@ exports[`Chip component
         >
           clear
         </i>
-      </div>
+      </button>
     </div>
   </div>
 </body>
@@ -221,12 +221,12 @@ exports[`Chip component
           ChipLabel
         </span>
       </div>
-      <div
+      <button
         aria-label="Remove"
         class="Chip-icon Chip-icon--right cursor-pointer Chip-icon--selected"
         data-test="DesignSystem-GenericChip--clearButton"
-        role="button"
         tabindex="0"
+        type="button"
       >
         <i
           class="material-symbols material-symbols-rounded Icon Icon--primaryDark"
@@ -236,7 +236,7 @@ exports[`Chip component
         >
           clear
         </i>
-      </div>
+      </button>
     </div>
   </div>
 </body>
@@ -272,12 +272,13 @@ exports[`Chip component
           ChipLabel
         </span>
       </div>
-      <div
+      <button
         aria-label="Remove"
         class="Chip-icon Chip-icon--right Chip-icon-disabled--right"
         data-test="DesignSystem-GenericChip--clearButton"
-        role="button"
+        disabled=""
         tabindex="-1"
+        type="button"
       >
         <i
           class="material-symbols material-symbols-rounded Icon Icon--subtle"
@@ -287,7 +288,7 @@ exports[`Chip component
         >
           clear
         </i>
-      </div>
+      </button>
     </div>
   </div>
 </body>
@@ -323,12 +324,13 @@ exports[`Chip component
           ChipLabel
         </span>
       </div>
-      <div
+      <button
         aria-label="Remove"
         class="Chip-icon Chip-icon--right Chip-icon-disabled--right Chip-icon--selected"
         data-test="DesignSystem-GenericChip--clearButton"
-        role="button"
+        disabled=""
         tabindex="-1"
+        type="button"
       >
         <i
           class="material-symbols material-symbols-rounded Icon Icon--primaryDark"
@@ -338,7 +340,7 @@ exports[`Chip component
         >
           clear
         </i>
-      </div>
+      </button>
     </div>
   </div>
 </body>

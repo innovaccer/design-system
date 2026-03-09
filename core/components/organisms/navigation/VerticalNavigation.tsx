@@ -71,6 +71,10 @@ export interface VerticalNavigationProps {
    * Only one SubMenu visible at a time**(applicable only for type: `vertical`)**
    */
   autoCollapse: boolean;
+  /**
+   * Aria label for the `VerticalNavigation`
+   */
+  'aria-label'?: string;
 }
 
 export const VerticalNavigation = (props: VerticalNavigationProps) => {
@@ -154,6 +158,8 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
           role="button"
           tabIndex={menu.disabled ? -1 : 0}
           aria-disabled={menu.disabled || undefined}
+          aria-expanded={menu.subMenu ? !!menuState[menu.name] : undefined}
+          aria-current={activeMenu ? 'page' : undefined}
         >
           {menu.icon && (
             <Icon
@@ -211,6 +217,7 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
                   role="button"
                   tabIndex={subMenu.disabled ? -1 : 0}
                   aria-disabled={subMenu.disabled || undefined}
+                  aria-current={isActive ? 'page' : undefined}
                 >
                   <Text appearance={getTextAppearance(isActive, subMenu.disabled)} className="ellipsis--noWrap">
                     {subMenu.label}
@@ -228,14 +235,14 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
   const IconClassName = classNames(styles['Navigation-menuIcon'], styles['Navigation-menuIcon--footer']);
 
   return (
-    <>
+    <nav aria-label={props['aria-label'] || 'Vertical Navigation'}>
       <div className={styles['Navigation-body']}>{list}</div>
       {footer && (
         <div className={footerClasses}>
           <Icon className={IconClassName} name="menu_open" size={16} onClick={() => onToggle && onToggle(!expanded)} />
         </div>
       )}
-    </>
+    </nav>
   );
 };
 

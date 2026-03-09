@@ -197,17 +197,18 @@ export const GenericChip = (props: GenericChipProps) => {
         )}
         {renderLabel()}
         {clearButton && (
-          <div
-            role="button"
+          <button
+            type="button"
             aria-label="Remove"
             onClick={onCloseHandler}
             tabIndex={disabled ? -1 : 0}
             onKeyDown={onKeyDownHandler}
             className={iconClass('right')}
             data-test="DesignSystem-GenericChip--clearButton"
+            disabled={disabled}
           >
             <Icon name="clear" appearance={iconAppearance('right')} size={ClearIconSize} />
-          </div>
+          </button>
         )}
       </div>
     </Tooltip>

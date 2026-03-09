@@ -400,6 +400,74 @@ Object {
       <div
         class="Navigation Navigation--vertical Navigation--collapsed"
       >
+        <nav
+          aria-label="Vertical Navigation"
+        >
+          <div
+            class="Navigation-body"
+          >
+            <div
+              data-test="DesignSystem-Navigation-VerticalNavigation--menuWrapper"
+            >
+              <div
+                class="Navigation-menu Navigation-menu--vertical"
+                data-test="DesignSystem-Navigation-VerticalNavigation--menuItem"
+                role="button"
+                tabindex="0"
+              >
+                <i
+                  class="material-symbols material-symbols-rounded Icon Icon--default Navigation-menuIcon"
+                  data-test="DesignSystem-Navigation-VerticalNavigation--menuIcon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  event
+                </i>
+              </div>
+              <div
+                class="Navigation-subMenu"
+              />
+            </div>
+            <div
+              data-test="DesignSystem-Navigation-VerticalNavigation--menuWrapper"
+            >
+              <div
+                aria-expanded="false"
+                class="Navigation-menu Navigation-menu--vertical"
+                data-test="DesignSystem-Navigation-VerticalNavigation--menuItem"
+                role="button"
+                tabindex="0"
+              />
+              <div
+                class="Navigation-subMenu"
+              />
+            </div>
+            <div
+              data-test="DesignSystem-Navigation-VerticalNavigation--menuWrapper"
+            >
+              <div
+                aria-expanded="false"
+                class="Navigation-menu Navigation-menu--vertical"
+                data-test="DesignSystem-Navigation-VerticalNavigation--menuItem"
+                role="button"
+                tabindex="0"
+              />
+              <div
+                class="Navigation-subMenu"
+              />
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="Navigation Navigation--vertical Navigation--collapsed"
+    >
+      <nav
+        aria-label="Vertical Navigation"
+      >
         <div
           class="Navigation-body"
         >
@@ -429,6 +497,7 @@ Object {
             data-test="DesignSystem-Navigation-VerticalNavigation--menuWrapper"
           >
             <div
+              aria-expanded="false"
               class="Navigation-menu Navigation-menu--vertical"
               data-test="DesignSystem-Navigation-VerticalNavigation--menuItem"
               role="button"
@@ -442,6 +511,7 @@ Object {
             data-test="DesignSystem-Navigation-VerticalNavigation--menuWrapper"
           >
             <div
+              aria-expanded="false"
               class="Navigation-menu Navigation-menu--vertical"
               data-test="DesignSystem-Navigation-VerticalNavigation--menuItem"
               role="button"
@@ -452,65 +522,7 @@ Object {
             />
           </div>
         </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="Navigation Navigation--vertical Navigation--collapsed"
-    >
-      <div
-        class="Navigation-body"
-      >
-        <div
-          data-test="DesignSystem-Navigation-VerticalNavigation--menuWrapper"
-        >
-          <div
-            class="Navigation-menu Navigation-menu--vertical"
-            data-test="DesignSystem-Navigation-VerticalNavigation--menuItem"
-            role="button"
-            tabindex="0"
-          >
-            <i
-              class="material-symbols material-symbols-rounded Icon Icon--default Navigation-menuIcon"
-              data-test="DesignSystem-Navigation-VerticalNavigation--menuIcon"
-              role="button"
-              style="font-size: 16px; width: 16px;"
-            >
-              event
-            </i>
-          </div>
-          <div
-            class="Navigation-subMenu"
-          />
-        </div>
-        <div
-          data-test="DesignSystem-Navigation-VerticalNavigation--menuWrapper"
-        >
-          <div
-            class="Navigation-menu Navigation-menu--vertical"
-            data-test="DesignSystem-Navigation-VerticalNavigation--menuItem"
-            role="button"
-            tabindex="0"
-          />
-          <div
-            class="Navigation-subMenu"
-          />
-        </div>
-        <div
-          data-test="DesignSystem-Navigation-VerticalNavigation--menuWrapper"
-        >
-          <div
-            class="Navigation-menu Navigation-menu--vertical"
-            data-test="DesignSystem-Navigation-VerticalNavigation--menuItem"
-            role="button"
-            tabindex="0"
-          />
-          <div
-            class="Navigation-subMenu"
-          />
-        </div>
-      </div>
+      </nav>
     </div>
   </div>,
   "debug": [Function],
