@@ -2592,7 +2592,8 @@ exports[`TS renders children 1`] = `
   <div
     class="Navigation Navigation--horizontal justify-content-center"
   >
-    <div
+    <nav
+      aria-label="Horizontal Navigation"
       class="HorizontalNav"
     />
   </div>
