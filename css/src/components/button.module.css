@@ -247,6 +247,7 @@
 .Button--selected:active {
   background: var(--primary-lighter);
   color: var(--primary-darker);
+  box-shadow: inset 0 0 0 2px var(--primary-dark);
 }
 
 .Button--selected:focus {
@@ -318,7 +319,7 @@
 .Button-outlined--selected:active {
   background: var(--primary-lighter);
   color: var(--primary-darker);
-  box-shadow: inset 0 0 0 2px var(--primary);
+  box-shadow: inset 0 0 0 2px var(--primary-dark);
 }
 
 .Button-outlined--selected:focus {
