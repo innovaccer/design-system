@@ -34,6 +34,11 @@ export interface ListboxProps extends BaseProps, BaseHtmlProps<HTMLUListElement 
    * Add divider below all list item
    */
   showDivider: boolean;
+  /**
+   * When true, suppresses ListBody's built-in keyboard handler so a parent component
+   * (e.g. Select, Menu) can own all keyboard handling without double-firing.
+   */
+  suppressKeyboard?: boolean;
 }
 
 export const ListboxContext = React.createContext<Omit<ListboxProps, 'children' | 'tagName'>>({
@@ -41,12 +46,13 @@ export const ListboxContext = React.createContext<Omit<ListboxProps, 'children' 
   type: 'resource',
   draggable: false,
   showDivider: true,
+  suppressKeyboard: false,
 });
 
 const { Provider } = ListboxContext;
 
 export const Listbox = (props: ListboxProps) => {
-  const { children, className, draggable, size, type, showDivider, tagName: Tag, ...rest } = props;
+  const { children, className, draggable, size, type, showDivider, suppressKeyboard, tagName: Tag, ...rest } = props;
   const baseProps = extractBaseProps(props);
 
   const classes = classNames(styles.Listbox, className);
@@ -56,6 +62,7 @@ export const Listbox = (props: ListboxProps) => {
     type,
     draggable,
     showDivider,
+    suppressKeyboard,
   };
 
   return (

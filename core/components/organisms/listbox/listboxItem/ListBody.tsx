@@ -10,7 +10,7 @@ export const ListBody = (props: ListboxItemProps) => {
   const { children, className, disabled, selected, activated, tabIndex } = props;
 
   const contextProp = React.useContext(ListboxContext);
-  const { size, type, draggable } = contextProp;
+  const { size, type, draggable, suppressKeyboard } = contextProp;
 
   const itemClass = classNames(
     {
@@ -30,7 +30,9 @@ export const ListBody = (props: ListboxItemProps) => {
       data-test="DesignSystem-Listbox-ItemWrapper"
       tabIndex={draggable ? -1 : tabIndex || 0}
       className={itemClass}
-      onKeyDown={onKeyDown}
+      // When a parent component (e.g. Select, Menu) takes over keyboard handling,
+      // it sets suppressKeyboard=true via context to prevent double-handling.
+      onKeyDown={suppressKeyboard ? undefined : onKeyDown}
       role="tablist"
     >
       {draggable && (

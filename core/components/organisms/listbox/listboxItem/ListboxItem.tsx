@@ -59,7 +59,7 @@ export interface ListboxItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement
 }
 
 export const ListboxItem = (props: ListboxItemProps) => {
-  const { nestedBody, expanded, id, onClick, value, tagName: Tag = 'li', ...rest } = props;
+  const { nestedBody, expanded, id, onClick, value, tagName: Tag = 'li', tabIndex, ...rest } = props;
 
   const contextProp = React.useContext(ListboxContext);
   const { showDivider, draggable } = contextProp;
