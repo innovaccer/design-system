@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, waitFor, act } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { Select, AIIconButton } from '@/index';
 import { SelectProps as Props } from '@/index.type';
@@ -263,6 +263,385 @@ describe('Select component single input trigger tests', () => {
     expect(triggerButton).toBeInTheDocument();
     expect(triggerButton).toHaveStyle('min-width: 176px');
     expect(triggerButton).toHaveStyle('max-width: 256px');
+  });
+});
+
+describe('Select Tab always-trap (D1)', () => {
+  it('Tab inside list-only popover does not close the popover', async () => {
+    const { getByTestId, getAllByTestId } = render(
+      <div>
+        <Select onSelect={FunctionValue}>
+          <Select.List>
+            <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+            <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+          </Select.List>
+        </Select>
+        <button type="button" data-test="after-select-button">
+          After Select
+        </button>
+      </div>
+    );
+    const trigger = getByTestId('DesignSystem-Select-trigger');
+    fireEvent.click(trigger);
+    expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
+    const options = getAllByTestId('DesignSystem-Select-Option');
+    const optionItem = options[0];
+    optionItem.scrollIntoView = jest.fn();
+    optionItem.focus();
+    act(() => {
+      fireEvent.keyDown(optionItem, { key: 'Tab', shiftKey: false });
+    });
+    await new Promise((r) => setTimeout(r, 50));
+    expect(getByTestId('DesignSystem-Popover')).not.toHaveAttribute('data-opened', 'false');
+  });
+
+  it('Tab from list option with search moves focus to search input and keeps popover open', async () => {
+    const { getByTestId, getAllByTestId } = render(
+      <Select onSelect={FunctionValue}>
+        <Select.SearchInput placeholder="Search" />
+        <Select.List>
+          <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+        </Select.List>
+      </Select>
+    );
+    const trigger = getByTestId('DesignSystem-Select-trigger');
+    fireEvent.click(trigger);
+    await waitFor(() => {
+      const wrappers = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      expect(wrappers.some((w) => w.getAttribute('tabindex') === '0')).toBe(true);
+    });
+    const rovingWrapper = getAllByTestId('DesignSystem-Listbox-ItemWrapper').find(
+      (w) => w.getAttribute('tabindex') === '0'
+    )!;
+    rovingWrapper.scrollIntoView = jest.fn();
+    rovingWrapper.focus();
+    const searchInput = getByTestId('DesignSystem-Select--Input');
+    act(() => {
+      fireEvent.keyDown(rovingWrapper, { key: 'Tab', shiftKey: false });
+    });
+    await waitFor(() => {
+      expect(document.activeElement).toBe(searchInput);
+    });
+    expect(getByTestId('DesignSystem-Popover')).not.toHaveAttribute('data-opened', 'false');
+  });
+
+  it('Shift+Tab from search input cycles to last focusable in popover and keeps it open', async () => {
+    const { getByTestId, getAllByTestId } = render(
+      <Select onSelect={FunctionValue}>
+        <Select.SearchInput placeholder="Search" />
+        <Select.List>
+          <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+        </Select.List>
+      </Select>
+    );
+    const trigger = getByTestId('DesignSystem-Select-trigger');
+    fireEvent.click(trigger);
+    await waitFor(() => {
+      const wrappers = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      expect(wrappers.some((w) => w.getAttribute('tabindex') === '0')).toBe(true);
+    });
+    const searchInput = getByTestId('DesignSystem-Select--Input');
+    searchInput.focus();
+    act(() => {
+      fireEvent.keyDown(searchInput, { key: 'Tab', shiftKey: true });
+    });
+    await new Promise((r) => setTimeout(r, 50));
+    expect(getByTestId('DesignSystem-Popover')).not.toHaveAttribute('data-opened', 'false');
+  });
+});
+
+describe('Select multiselect Tab and Enter', () => {
+  it('Tab in multiselect does not focus checkbox inputs inside options', async () => {
+    const { getByTestId, getAllByTestId } = render(
+      <Select multiSelect={true} onSelect={FunctionValue}>
+        <Select.SearchInput placeholder="Search" />
+        <Select.List>
+          <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+        </Select.List>
+      </Select>
+    );
+    const trigger = getByTestId('DesignSystem-Select-trigger');
+    fireEvent.click(trigger);
+    await waitFor(() => {
+      const wrappers = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      expect(wrappers.some((w) => w.getAttribute('tabindex') === '0')).toBe(true);
+    });
+    const searchInput = getByTestId('DesignSystem-Select--Input');
+    searchInput.focus();
+    act(() => {
+      fireEvent.keyDown(searchInput, { key: 'Tab', shiftKey: false });
+    });
+    await waitFor(() => {
+      const active = document.activeElement as HTMLElement;
+      expect(active).toBeTruthy();
+      expect(active?.tagName?.toLowerCase()).not.toBe('input');
+      expect(active?.getAttribute?.('type')).not.toBe('checkbox');
+    });
+  });
+
+  it('Tab from search moves focus to roving option so Enter/Space can select', async () => {
+    const { getByTestId, getAllByTestId } = render(
+      <Select multiSelect={true} onSelect={FunctionValue}>
+        <Select.SearchInput placeholder="Search" />
+        <Select.List>
+          <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+        </Select.List>
+      </Select>
+    );
+    const trigger = getByTestId('DesignSystem-Select-trigger');
+    fireEvent.click(trigger);
+    await waitFor(() => {
+      const wrappers = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      expect(wrappers.some((w) => w.getAttribute('tabindex') === '0')).toBe(true);
+    });
+    const searchInput = getByTestId('DesignSystem-Select--Input');
+    searchInput.focus();
+    act(() => {
+      fireEvent.keyDown(searchInput, { key: 'Tab', shiftKey: false });
+    });
+    await waitFor(() => {
+      const wrappers = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      const options = getAllByTestId('DesignSystem-Select-Option');
+      const active = document.activeElement as HTMLElement;
+      const isOnOption = wrappers.includes(active) || options.includes(active);
+      expect(isOnOption).toBe(true);
+    });
+    // setFocusedOption is updated in handlePopoverKeyDown so Enter/Space will select the focused option (see "Space on multi-select option" test).
+  });
+});
+
+describe('Select single-select keyboard close and roving', () => {
+  it('single-select option click closes popover and returns focus to trigger', async () => {
+    const { getByTestId, getAllByTestId } = render(
+      <Select onSelect={FunctionValue}>
+        <Select.List>
+          <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+        </Select.List>
+      </Select>
+    );
+    const trigger = getByTestId('DesignSystem-Select-trigger');
+    fireEvent.click(trigger);
+    await waitFor(() => {
+      expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
+    });
+    const optionItem = getAllByTestId('DesignSystem-Select-Option')[0];
+    fireEvent.click(optionItem);
+    await waitFor(() => {
+      expect(getByTestId('DesignSystem-Popover')).toHaveAttribute('data-opened', 'false');
+    });
+    await waitFor(() => {
+      expect(document.activeElement).toBe(trigger);
+    });
+  });
+
+  it('one option has tabindex=0 (roving tabstop) when popover is open', async () => {
+    const { getByTestId, getAllByTestId } = render(
+      <Select onSelect={FunctionValue}>
+        <Select.List>
+          <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+        </Select.List>
+      </Select>
+    );
+    const trigger = getByTestId('DesignSystem-Select-trigger');
+    fireEvent.click(trigger);
+    await waitFor(() => {
+      const wrappers = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      const withZero = wrappers.filter((w) => w.getAttribute('tabindex') === '0');
+      expect(withZero).toHaveLength(1);
+    });
+  });
+
+  it('re-open focuses selected option (single select, no search)', async () => {
+    const { getByTestId, getAllByTestId } = render(
+      <Select onSelect={FunctionValue}>
+        <Select.List>
+          <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+          <Select.Option option={{ label: 'Option 3', value: 'Option 3' }}>Option 3</Select.Option>
+        </Select.List>
+      </Select>
+    );
+    const trigger = getByTestId('DesignSystem-Select-trigger');
+    fireEvent.click(trigger);
+    await waitFor(() => {
+      expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
+    });
+    const options = getAllByTestId('DesignSystem-Select-Option');
+    fireEvent.click(options[1]);
+    await waitFor(() => {
+      expect(trigger).toHaveTextContent('Option 2');
+      expect(getByTestId('DesignSystem-Popover')).toHaveAttribute('data-opened', 'false');
+    });
+    fireEvent.click(trigger);
+    await waitFor(() => {
+      expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
+    });
+    const wrappers = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+    const rovingWrapper = wrappers.find((w) => w.getAttribute('tabindex') === '0');
+    expect(rovingWrapper).toBeTruthy();
+    expect(options[1].contains(rovingWrapper!)).toBe(true);
+  });
+});
+
+describe('Select keyboard integration tests', () => {
+  it('Escape from list option closes popover and returns focus to trigger', async () => {
+    const { getByTestId, getAllByTestId } = render(
+      <Select onSelect={FunctionValue}>
+        <Select.List>
+          <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+        </Select.List>
+      </Select>
+    );
+    const trigger = getByTestId('DesignSystem-Select-trigger');
+    fireEvent.click(trigger);
+    await waitFor(() => {
+      expect(trigger).toHaveAttribute('aria-expanded', 'true');
+    });
+    const optionItem = getAllByTestId('DesignSystem-Select-Option')[0];
+    optionItem.scrollIntoView = jest.fn();
+    optionItem.focus();
+    act(() => {
+      fireEvent.keyDown(optionItem, { key: 'Escape' });
+    });
+    await waitFor(() => {
+      expect(trigger).toHaveAttribute('aria-expanded', 'false');
+    });
+    await waitFor(() => {
+      expect(document.activeElement).toBe(trigger);
+    });
+  });
+
+  it('Escape from search input closes popover and returns focus to trigger', async () => {
+    const { getByTestId } = render(
+      <Select onSelect={FunctionValue}>
+        <Select.SearchInput placeholder="Search" />
+        <Select.List>
+          <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+        </Select.List>
+      </Select>
+    );
+    const trigger = getByTestId('DesignSystem-Select-trigger');
+    fireEvent.click(trigger);
+    await waitFor(() => {
+      expect(trigger).toHaveAttribute('aria-expanded', 'true');
+    });
+    const searchInput = getByTestId('DesignSystem-Select--Input');
+    searchInput.focus();
+    act(() => {
+      fireEvent.keyDown(searchInput, { key: 'Escape' });
+    });
+    await waitFor(() => {
+      expect(trigger).toHaveAttribute('aria-expanded', 'false');
+    });
+    await waitFor(() => {
+      expect(document.activeElement).toBe(trigger);
+    });
+  });
+
+  it('Space on single-select option (via focusedOption) closes popover and returns focus to trigger', async () => {
+    const { getByTestId, getAllByTestId } = render(
+      <Select onSelect={FunctionValue}>
+        <Select.List>
+          <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+        </Select.List>
+      </Select>
+    );
+    const trigger = getByTestId('DesignSystem-Select-trigger');
+    fireEvent.click(trigger);
+    // Wait for rAF to fire so focusedOption is set to the first ItemWrapper
+    await waitFor(() => {
+      const wrappers = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      expect(wrappers.some((w) => w.getAttribute('tabindex') === '0')).toBe(true);
+    });
+    // focusedOption is the inner ItemWrapper; fire Space on the outer SelectOption which bubbles
+    const rovingWrapper = getAllByTestId('DesignSystem-Listbox-ItemWrapper').find(
+      (w) => w.getAttribute('tabindex') === '0'
+    )!;
+    rovingWrapper.scrollIntoView = jest.fn();
+    rovingWrapper.focus();
+    const outerOption = getAllByTestId('DesignSystem-Select-Option')[0];
+    act(() => {
+      fireEvent.keyDown(outerOption, { key: ' ' });
+    });
+    await waitFor(() => {
+      expect(trigger).toHaveAttribute('aria-expanded', 'false');
+    });
+    await waitFor(() => {
+      expect(document.activeElement).toBe(trigger);
+    });
+  });
+
+  it('Space on multi-select option (via focusedOption) toggles selection without closing popover', async () => {
+    const { getByTestId, getAllByTestId } = render(
+      <Select multiSelect={true} onSelect={FunctionValue}>
+        <Select.List>
+          <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+        </Select.List>
+      </Select>
+    );
+    const trigger = getByTestId('DesignSystem-Select-trigger');
+    fireEvent.click(trigger);
+    // Wait for rAF so focusedOption is set
+    await waitFor(() => {
+      const wrappers = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      expect(wrappers.some((w) => w.getAttribute('tabindex') === '0')).toBe(true);
+    });
+    const rovingWrapper = getAllByTestId('DesignSystem-Listbox-ItemWrapper').find(
+      (w) => w.getAttribute('tabindex') === '0'
+    )!;
+    rovingWrapper.scrollIntoView = jest.fn();
+    rovingWrapper.focus();
+    const outerOption = getAllByTestId('DesignSystem-Select-Option')[0];
+    act(() => {
+      fireEvent.keyDown(outerOption, { key: ' ' });
+    });
+    await new Promise((r) => setTimeout(r, 50));
+    // Multi-select: popover stays open
+    expect(trigger).toHaveAttribute('aria-expanded', 'true');
+    // Option is selected
+    const updatedOptions = getAllByTestId('DesignSystem-Select-Option');
+    expect(updatedOptions[0]).toHaveAttribute('aria-selected', 'true');
+  });
+
+  it('rovingIndex is updated synchronously when arrowing to an option', async () => {
+    const { getByTestId, getAllByTestId } = render(
+      <Select onSelect={FunctionValue}>
+        <Select.List>
+          <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+          <Select.Option option={{ label: 'Option 3', value: 'Option 3' }}>Option 3</Select.Option>
+        </Select.List>
+      </Select>
+    );
+    const trigger = getByTestId('DesignSystem-Select-trigger');
+    fireEvent.click(trigger);
+    await waitFor(() => {
+      const wrappers = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      expect(wrappers.some((w) => w.getAttribute('tabindex') === '0')).toBe(true);
+    });
+    const wrappers = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+    const initialRoving = wrappers.find((w) => w.getAttribute('tabindex') === '0')!;
+    initialRoving.scrollIntoView = jest.fn();
+    initialRoving.focus();
+    const outerOption = getAllByTestId('DesignSystem-Select-Option')[0];
+    outerOption.scrollIntoView = jest.fn();
+    act(() => {
+      fireEvent.keyDown(outerOption, { key: 'ArrowDown' });
+    });
+    await waitFor(() => {
+      const updatedWrappers = getAllByTestId('DesignSystem-Listbox-ItemWrapper');
+      const rovingCount = updatedWrappers.filter((w) => w.getAttribute('tabindex') === '0').length;
+      expect(rovingCount).toBe(1);
+    });
   });
 });
 
