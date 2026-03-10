@@ -69,6 +69,7 @@ export interface ModalProps extends BaseProps {
    * | backButtonCallback | Callback called when back button is clicked |
    * | backIcon | Determines if back button is visible |
    * | backIconCallback | Callback called when back button is clicked |
+   * | headingId | Optional id to attach to heading for aria-labelledby. |
    *
    * ** Don't use composition of `ModalHeader`, `ModalBody` and `ModalFooter` will be deprecated soon. **
    */
@@ -132,6 +133,8 @@ interface ModalState {
   zIndex?: number;
 }
 
+let modalInstanceCounter = 0;
+
 /**
  * ** NOTE: Use `headerOptions`, `header`, `footerOptions`, `footer`, `onClose` and `backdropClose`(boolean). **
  * ** Support for composition using `ModalHeader`, `ModalBody` and `ModalFooter` will be deprecated soon. **
@@ -140,6 +143,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
   modalRef = React.createRef<HTMLDivElement>();
   modalContentRef = React.createRef<HTMLDivElement>();
   previousActiveElement: HTMLElement | null = null;
+  autoHeadingId: string;
 
   element: Element;
 
@@ -157,6 +161,8 @@ class Modal extends React.Component<ModalProps, ModalState> {
       open: props.open,
       animate: props.open,
     };
+    modalInstanceCounter += 1;
+    this.autoHeadingId = `modal-title-${modalInstanceCounter}`;
 
     this.onOutsideClickHandler = this.onOutsideClickHandler.bind(this);
   }
@@ -300,6 +306,9 @@ class Modal extends React.Component<ModalProps, ModalState> {
       onClose,
       'aria-labelledby': ariaLabelledBy,
     } = this.props;
+    const shouldUseAutoHeadingId = !ariaLabelledBy && !header && Boolean(headerOptions?.heading);
+    const resolvedHeadingId = headerOptions?.headingId || (shouldUseAutoHeadingId ? this.autoHeadingId : undefined);
+    const resolvedAriaLabelledBy = ariaLabelledBy || resolvedHeadingId;
 
     const BackdropZIndex: number = zIndex ? zIndex - 1 : 1000;
 
@@ -370,7 +379,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
           data-test="DesignSystem-Modal"
           role="dialog"
           aria-modal={open}
-          aria-labelledby={ariaLabelledBy}
+          aria-labelledby={resolvedAriaLabelledBy}
           {...baseProps}
           className={classes}
           {...sizeMap[dimension]}
@@ -382,7 +391,13 @@ class Modal extends React.Component<ModalProps, ModalState> {
           {(headerOptions || header) && (
             <div className={headerClass}>
               <Column>
-                {!header && <OverlayHeader data-test="DesignSystem-Modal--header" {...headerOptions} />}
+                {!header && (
+                  <OverlayHeader
+                    data-test="DesignSystem-Modal--header"
+                    {...headerOptions}
+                    headingId={resolvedHeadingId}
+                  />
+                )}
 
                 {!!header && header}
               </Column>

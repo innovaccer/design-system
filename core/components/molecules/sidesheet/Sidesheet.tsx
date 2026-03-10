@@ -48,6 +48,7 @@ export interface SidesheetProps extends BaseProps {
    * | backButtonCallback | Callback called when back button is clicked |
    * | backIcon | Determines if back button is visible |
    * | backIconCallback | Callback called when back button is clicked |
+   * | headingId | Optional id to attach to heading for aria-labelledby. |
    */
   headerOptions: Omit<OverlayHeaderProps, 'onClose'>;
   /**
@@ -107,6 +108,12 @@ export interface SidesheetProps extends BaseProps {
    * Callback called `Sidesheet` is closed
    */
   onClose?: (event?: Event | React.MouseEvent<HTMLElement, MouseEvent>, reason?: string) => void;
+  /**
+   * Associates the dialog with a visible heading element.
+   *
+   * Pass the `id` of the element that labels this sidesheet.
+   */
+  'aria-labelledby'?: string;
 }
 
 interface SidesheetState {
@@ -121,12 +128,14 @@ const sidesheetWidth: Record<SidesheetDimension, ColumnProps['size']> = {
 };
 
 const SIDESHEET_OPEN_ANIMATION = 'sidesheet-open';
+let sidesheetInstanceCounter = 0;
 
 class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
   sidesheetRef = React.createRef<HTMLDivElement>();
   sidesheetContentRef = React.createRef<HTMLDivElement>();
   previousActiveElement: HTMLElement | null = null;
   autofocusRAF: number | null = null;
+  autoHeadingId: string;
 
   element: Element;
 
@@ -146,6 +155,8 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
       open: props.open,
       animate: props.open,
     };
+    sidesheetInstanceCounter += 1;
+    this.autoHeadingId = `sidesheet-title-${sidesheetInstanceCounter}`;
 
     this.onOutsideClickHandler = this.onOutsideClickHandler.bind(this);
   }
@@ -300,7 +311,11 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
       footerOptions,
       header,
       onClose,
+      'aria-labelledby': ariaLabelledBy,
     } = this.props;
+    const shouldUseAutoHeadingId = !ariaLabelledBy && !header && Boolean(headerOptions?.heading);
+    const resolvedHeadingId = headerOptions?.headingId || (shouldUseAutoHeadingId ? this.autoHeadingId : undefined);
+    const resolvedAriaLabelledBy = ariaLabelledBy || resolvedHeadingId;
 
     const BackdropZIndex: number = zIndex ? zIndex - 1 : 1000;
 
@@ -363,6 +378,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
           data-test="DesignSystem-Sidesheet"
           role="dialog"
           aria-modal={open}
+          aria-labelledby={resolvedAriaLabelledBy}
           onAnimationStart={this.onOpenAnimationStart}
           {...baseProps}
           className={classes}
@@ -370,7 +386,9 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
         >
           <div className={headerClass}>
             <Column data-test="DesignSystem-Sidesheet--Header">
-              {!header && <OverlayHeader headingClass={headingClass} {...headerOptions} />}
+              {!header && (
+                <OverlayHeader headingClass={headingClass} {...headerOptions} headingId={resolvedHeadingId} />
+              )}
 
               {!!header && header}
             </Column>
