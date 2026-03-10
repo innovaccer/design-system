@@ -44,12 +44,14 @@ export const SelectList = (props: SelectListProps) => {
   });
 
   if (optionValuesOrderRef) {
-    optionValuesOrderRef.current = React.Children.map(children, (child) => {
-      if (React.isValidElement(child) && child.type === SelectOption && 'option' in child.props) {
-        return (child.props as { option: OptionType }).option;
-      }
-      return null;
-    }).filter((o): o is OptionType => o != null);
+    optionValuesOrderRef.current = (
+      React.Children.map(children, (child) => {
+        if (React.isValidElement(child) && child.type === SelectOption && 'option' in child.props) {
+          return (child.props as { option: OptionType }).option;
+        }
+        return null;
+      }) ?? []
+    ).filter((o): o is OptionType => o != null);
   }
 
   React.useEffect(() => {
