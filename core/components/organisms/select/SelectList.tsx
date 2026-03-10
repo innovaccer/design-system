@@ -36,9 +36,11 @@ export const SelectList = (props: SelectListProps) => {
   const { children, size, ...rest } = props;
   const searchInputHeight = 33;
 
-  const childrenWithIndex = React.Children.map(children, (child, index) => {
+  let optionIndex = 0;
+  const childrenWithIndex = React.Children.map(children, (child) => {
     if (React.isValidElement(child) && child.type === SelectOption) {
-      return React.cloneElement(child as React.ReactElement<{ index?: number }>, { index });
+      const idx = optionIndex++;
+      return React.cloneElement(child as React.ReactElement<{ index?: number }>, { index: idx });
     }
     return child;
   });
