@@ -19,7 +19,11 @@ export const autoTooltipWithHook = () => {
         <Tooltip showTooltip={isFirstTruncated} tooltip="John Doe: Passionate Innovator and Visionary Leader">
           <div className="d-flex ellipsis--noWrap">
             <Avatar appearance="primary" withTooltip={false} firstName="John" lastName="Doe" size="tiny" />
-            <Text ref={firstContentRef} style={{ maxWidth: 150 }} className="ellipsis--noWrap w-100 ml-3 mt-2">
+            <Text
+              ref={firstContentRef}
+              style={{ maxWidth: 'var(--spacing-320)' }}
+              className="ellipsis--noWrap w-100 ml-3 mt-2"
+            >
               John Doe: Passionate Innovator and Visionary Leader
             </Text>
           </div>
@@ -57,7 +61,7 @@ const customCode = `() => {
         <Tooltip showTooltip={isFirstTruncated} tooltip="John Doe: Passionate Innovator and Visionary Leader">
           <div className="d-flex ellipsis--noWrap">
             <Avatar appearance="primary" withTooltip={false} firstName="John" lastName="Doe" size="tiny" />
-            <Text ref={firstContentRef} style={{ maxWidth: 150 }} className="ellipsis--noWrap w-100 ml-3 mt-2">
+            <Text ref={firstContentRef} style={{ maxWidth: 'var(--spacing-320)' }} className="ellipsis--noWrap w-100 ml-3 mt-2">
               John Doe: Passionate Innovator and Visionary Leader
             </Text>
           </div>
