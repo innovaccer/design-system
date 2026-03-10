@@ -41,6 +41,7 @@ export interface NavigationProps extends BaseProps, VerticalNavigationProps {
 
 export const Navigation = (props: NavigationProps) => {
   const { type, align, menus, active, onClick, expanded, rounded, onToggle, footer, autoCollapse, className } = props;
+  const ariaLabel = props['aria-label'];
 
   const baseProps = extractBaseProps(props);
 
@@ -68,6 +69,7 @@ export const Navigation = (props: NavigationProps) => {
         footer={footer}
         onToggle={onToggle}
         onClick={onClick}
+        aria-label={ariaLabel}
       />
     );
   };
