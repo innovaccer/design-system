@@ -7,7 +7,8 @@ import { Popover, OutsideClick } from '@/index';
 import SelectTrigger, { SelectTriggerProps } from './SelectTrigger';
 import SearchInput from './SearchInput';
 import SelectEmptyTemplate from './SelectEmptyTemplate';
-import { focusListItem, mapInitialValue } from './utils';
+import { focusListItem, focusPopoverInitial, getRovingIndex, mapInitialValue } from './utils';
+import { getFocusableElements } from '@/utils/overlayHelper';
 import SelectFooter from './SelectFooter';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import uidGenerator from '@/utils/uidGenerator';
@@ -171,16 +172,21 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
   const [selectValue, setSelectValue] = React.useState<OptionType | OptionType[]>(mapValue);
   const [isOptionSelected, setIsOptionSelected] = React.useState(false);
 
-  const triggerRef = React.createRef<HTMLButtonElement>();
+  const triggerRef = React.useRef<HTMLButtonElement>(null);
   const listRef = React.useRef<HTMLDivElement | null>(null);
+  const wasOpenRef = React.useRef(false);
+  const closedByOutsideClickRef = React.useRef(false);
 
   const [withSearch, setWithSearch] = React.useState(false);
 
   const [focusedOption, setFocusedOption] = React.useState<HTMLElement | undefined>();
   const [highlightFirstItem, setHighlightFirstItem] = React.useState<boolean>(false);
   const [highlightLastItem, setHighlightLastItem] = React.useState<boolean>(false);
+  const [rovingIndex, setRovingIndex] = React.useState<number>(-1);
   const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>({ width: popoverWidth || width });
   const listboxId = React.useRef(`select-listbox-${uidGenerator()}`).current;
+  const optionValuesOrderRef = React.useRef<OptionType[]>([]);
+  const [optionListLength, setOptionListLength] = React.useState(0);
 
   const baseProps = extractBaseProps(props);
   const WrapperStyle = trigger ? {} : { width: width };
@@ -227,20 +233,58 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     if (!openPopover) {
       setHighlightFirstItem(false);
       setHighlightLastItem(false);
+      setRovingIndex(-1);
+      if (wasOpenRef.current && !closedByOutsideClickRef.current) {
+        triggerRef.current?.focus({ preventScroll: true });
+      }
+      closedByOutsideClickRef.current = false;
     }
+    wasOpenRef.current = openPopover;
   }, [openPopover]);
 
   React.useEffect(() => {
-    if (highlightFirstItem && openPopover) {
-      requestAnimationFrame(() => focusListItem('down', setFocusedOption, listRef));
-    }
-  }, [highlightFirstItem]);
+    if (!highlightFirstItem || !openPopover) return;
+    let cancelled = false;
+    const rafId = requestAnimationFrame(() => {
+      if (cancelled) return;
+      requestAnimationFrame(() => {
+        if (cancelled) return;
+        const optionValuesOrder = optionValuesOrderRef.current;
+        const idx = focusPopoverInitial(listRef, setFocusedOption, selectValue, optionValuesOrder);
+        setRovingIndex(idx);
+        setHighlightFirstItem(false);
+      });
+    });
+    return () => {
+      cancelled = true;
+      cancelAnimationFrame(rafId);
+    };
+  }, [highlightFirstItem, openPopover, selectValue]);
 
   React.useEffect(() => {
-    if (highlightLastItem && openPopover) {
-      requestAnimationFrame(() => focusListItem('up', setFocusedOption, listRef));
+    if (!highlightLastItem || !openPopover) return;
+    let cancelled = false;
+    const rafId = requestAnimationFrame(() => {
+      if (cancelled) return;
+      focusListItem('up', setFocusedOption, listRef);
+      setHighlightLastItem(false);
+    });
+    return () => {
+      cancelled = true;
+      cancelAnimationFrame(rafId);
+    };
+  }, [highlightLastItem, openPopover]);
+
+  React.useEffect(() => {
+    if (!openPopover || !listRef.current) return;
+    if (focusedOption && !listRef.current.contains(focusedOption)) {
+      setFocusedOption(undefined);
     }
-  }, [highlightLastItem]);
+    const effectiveFocused = focusedOption && listRef.current.contains(focusedOption) ? focusedOption : undefined;
+    const optionValuesOrder = optionValuesOrderRef.current;
+    const idx = getRovingIndex(listRef, effectiveFocused, selectValue, optionValuesOrder);
+    setRovingIndex(idx);
+  }, [openPopover, focusedOption, selectValue, optionListLength]);
 
   React.useEffect(() => {
     if (value) {
@@ -264,11 +308,48 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
 
   const onOptionClick = (option: OptionType | OptionType[]) => {
     onSelect?.(option);
-    !multiSelect && setOpenPopover(false);
+    if (!multiSelect) {
+      setOpenPopover(false);
+      triggerRef.current?.focus({ preventScroll: true });
+    }
   };
 
   const onOutsideClickHandler = () => {
+    closedByOutsideClickRef.current = true;
     onOutsideClick?.();
+  };
+
+  const handlePopoverKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (!openPopover || e.key !== 'Tab' || !listRef.current) return;
+    const container = listRef.current;
+    if (!container.contains(document.activeElement as Node)) return;
+
+    e.preventDefault();
+
+    const focusables = getFocusableElements(container);
+
+    if (focusables.length === 0) {
+      // Empty state (no search, no footer, all options tabIndex=-1) — stay put.
+      return;
+    }
+
+    const currentIndex = focusables.indexOf(document.activeElement as HTMLElement);
+
+    if (currentIndex === -1) {
+      // Focus is on an option with tabIndex=-1 (not in the trap list).
+      // Tab → first focusable (search or footer); Shift+Tab → last focusable.
+      const nextTarget = e.shiftKey ? focusables[focusables.length - 1] : focusables[0];
+      nextTarget.focus({ preventScroll: true });
+      setFocusedOption(nextTarget);
+      return;
+    }
+
+    // Focus is on a real focusable (search, roving option, footer button) — cycle.
+    const atStart = currentIndex === 0;
+    const atEnd = currentIndex === focusables.length - 1;
+    const nextIndex = e.shiftKey ? (atStart ? focusables.length - 1 : currentIndex - 1) : atEnd ? 0 : currentIndex + 1;
+    focusables[nextIndex].focus({ preventScroll: true });
+    setFocusedOption(focusables[nextIndex]);
   };
 
   const contextProp = {
@@ -293,6 +374,10 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     setHighlightLastItem,
     styleType,
     error,
+    rovingIndex,
+    setRovingIndex,
+    optionValuesOrderRef,
+    setOptionListLength,
   };
 
   return (
@@ -316,7 +401,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
           trigger={getTriggerElement()}
         >
           <OutsideClick onOutsideClick={onOutsideClickHandler}>
-            <div role="listbox" id={listboxId} tabIndex={0} ref={listRef}>
+            <div role="listbox" id={listboxId} tabIndex={-1} ref={listRef} onKeyDown={handlePopoverKeyDown}>
               {children}
             </div>
           </OutsideClick>
