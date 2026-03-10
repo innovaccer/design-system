@@ -11,7 +11,7 @@ import '../style.css';
 export const DismissOrderOverlayManager = () => {
   return (
     <div className="p-6 flex align-items-center flex-nowrap">
-      <span style={{ marginRight: 120 }}>
+      <span className="mr-12">
         <Popover
           position="bottom"
           on="click"
@@ -25,7 +25,7 @@ export const DismissOrderOverlayManager = () => {
               position="right"
               tooltip="Hover me for tooltip text that appears in the tooltip when the line is truncated."
             >
-              <Text className="mt-4 d-block ellipsis--noWrap" style={{ maxWidth: 180 }}>
+              <Text className="mt-4 d-block ellipsis--noWrap" style={{ maxWidth: 'var(--spacing-440)' }}>
                 Hover me for tooltip text that appears in the tooltip when the line is truncated.
               </Text>
             </Tooltip>
@@ -62,13 +62,13 @@ DismissOrderOverlayManager.storyName = 'Popover Dismiss Order';
 
 const customCode = `() => (
   <div className="p-6 flex align-items-center flex-nowrap">
-      <span style={{ marginRight: 120 }}>
+      <span className="mr-12">
         <Popover position="bottom" on="click" trigger={<Button appearance="basic">1. Click here</Button>} closeOnBackdropClick>
           <div className="p-5 pb-6 pr-10">
             <Text weight="strong">3. Press escape</Text>
             <br />
             <Tooltip position="right" tooltip="Hover me for tooltip text that appears in the tooltip when the line is truncated.">
-              <Text className="mt-4 d-block ellipsis--noWrap" style={{ maxWidth: 180 }}>
+              <Text className="mt-4 d-block ellipsis--noWrap" style={{ maxWidth: 'var(--spacing-440)' }}>
                 Hover me for tooltip text that appears in the tooltip when the line is truncated.
               </Text>
             </Tooltip>

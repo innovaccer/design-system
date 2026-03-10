@@ -265,9 +265,6 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     const overlayEl = this._overlayElement || this.popupRef.current;
     if (!overlayEl || !OverlayManager.isTopOverlay(overlayEl)) return;
 
-    OverlayManager.remove(overlayEl);
-    this._overlayElement = null;
-    this.removeEscapeKeyHandler();
     this.togglePopper('escapeKeypress', false);
     event.preventDefault();
     event.stopImmediatePropagation();
