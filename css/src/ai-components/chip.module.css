@@ -35,8 +35,9 @@
 
 .AIChip:focus,
 .AIChip:focus-visible {
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
-  outline: none;
+  outline: var(--border-width-05) solid var(--primary-dark);
+  outline-offset: var(--spacing-05);
+  border-radius: var(--border-radius-full);
 }
 
 .AIChip-icon {
