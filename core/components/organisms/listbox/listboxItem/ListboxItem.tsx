@@ -80,6 +80,7 @@ export const ListboxItem = (props: ListboxItemProps) => {
       onClick={onClickHandler}
       data-value={value}
       className={tagClass}
+      tabIndex={tabIndex === -1 ? -1 : undefined}
     >
       <ListBody {...props} />
       {nestedBody && <NestedList expanded={expanded} nestedBody={nestedBody} />}
