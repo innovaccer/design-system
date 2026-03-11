@@ -104,7 +104,12 @@ export function registerComponentTools(server: McpServer): void {
       const q = query.toLowerCase();
 
       const matches = manifest.components
-        .filter((c) => c.name.toLowerCase().includes(q) || c.category.includes(q))
+        .filter((c) =>
+          c.name.toLowerCase().includes(q) ||
+          c.category.includes(q) ||
+          c.props.some((p) => p.name.toLowerCase().includes(q) || p.description?.toLowerCase().includes(q)) ||
+          c.subComponents.some((s) => s.toLowerCase().includes(q))
+        )
         .slice(0, maxResults);
 
       if (matches.length === 0) {

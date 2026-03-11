@@ -4,9 +4,9 @@ MCP (Model Context Protocol) server for the Masala Design System. Enables AI cod
 
 ## Features
 
-- **11 tools**: tokens, components, examples, patterns, and code validation
-- **5 resources**: tokens, CSS variables, coding conventions, exports, types
-- **Deterministic**: no AI inside MCP, pure static lookup and AST validation
+- **14 tools**: tokens, components, examples, patterns, helpers, usage, and code validation
+- **6 resources**: tokens, CSS variables, helper classes, coding conventions, exports, types
+- **Deterministic**: no AI inside MCP, pure static lookup and regex-based validation
 - **Dual transport**: stdio (default, for Cursor/Claude) and HTTP (for OpenWebUI)
 
 ## Install
@@ -74,7 +74,10 @@ Health check: `http://localhost:3100/health`
 | `ds_get_example` | Get full example code |
 | `ds_list_patterns` | List UI patterns |
 | `ds_get_pattern` | Get pattern code and components |
+| `ds_search_helpers` | Search CSS helper/utility classes by keyword |
 | `ds_validate_code` | Validate code for DS compliance |
+| `ds_get_usage` | Get usage guidelines for a component |
+| `ds_search_usage` | Search usage guidelines by keyword |
 
 ## Validation Rules
 
@@ -84,6 +87,7 @@ Health check: `http://localhost:3100/health`
 - **no-hardcoded-colors**: Flags hex/rgb values in color properties (use `var(--token)`)
 - **tokens-only**: Flags hardcoded px/rem for sizing (use spacing tokens)
 - **approved-imports**: Flags imports from non-approved UI libraries
+- **no-inline-style-layout**: Flags inline `style` props for layout/spacing (use CSS helper classes)
 
 ## Development
 
