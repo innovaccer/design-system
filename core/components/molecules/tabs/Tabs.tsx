@@ -244,7 +244,8 @@ export const Tabs = (props: TabsProps) => {
 
     const dismissIconClass = (disabled?: boolean) =>
       classNames({
-        [styles[`DismissibleTab-icon--right`]]: true,
+        [styles[`DismissibleRegularTab-icon--right`]]: size === 'regular',
+        [styles[`DismissibleSmallTab-icon--right`]]: size === 'small',
         [styles['DismissibleTab-icon--default']]: !disabled && activeIndex !== index,
         [styles[`DismissibleTab-icon--selected`]]: !disabled && activeIndex === index,
         ['cursor-pointer']: !disabled,
@@ -264,6 +265,7 @@ export const Tabs = (props: TabsProps) => {
         className={dismissIconClass(disabled)}
         onClick={!disabled ? onCloseHandler : undefined}
         tabIndex={disabled ? -1 : 0}
+        size={size === 'regular' ? 16 : 12}
       />
     );
   };
@@ -283,9 +285,11 @@ export const Tabs = (props: TabsProps) => {
     });
 
     const tabClass = classNames({
-      [styles['Tab--regular']]: size === 'regular',
-      [styles['Tab--small']]: size === 'small',
+      [styles['Tab--regular']]: size === 'regular' && !isDismissible,
+      [styles['Tab--small']]: size === 'small' && !isDismissible,
       [styles['Tab--overflow']]: true,
+      [styles['Tab--withIconRegular']]: isDismissible && size === 'regular',
+      [styles['Tab--withIconSmall']]: isDismissible && size === 'small',
     });
 
     return (
@@ -313,7 +317,7 @@ export const Tabs = (props: TabsProps) => {
 
   const renderTabs = tabs.map((tab: Tab, index) => {
     const currentTabProp = children && 'props' in tab ? tab.props : tab;
-    const { disabled, label } = currentTabProp;
+    const { disabled, label, isDismissible } = currentTabProp;
 
     const tabHeaderClass = classNames({
       [styles['Tab']]: true,
@@ -323,6 +327,7 @@ export const Tabs = (props: TabsProps) => {
       ['align-items-center']: true,
       [styles['Tab--regular']]: size === 'regular' && typeof label !== 'string',
       [styles['Tab--small']]: size === 'small' && typeof label !== 'string',
+      [styles['Tab--withDismissIcon']]: isDismissible,
     });
 
     return (
