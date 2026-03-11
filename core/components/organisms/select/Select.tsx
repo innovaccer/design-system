@@ -320,7 +320,21 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
   };
 
   const handlePopoverKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    if (!openPopover || e.key !== 'Tab' || !listRef.current) return;
+    if (!openPopover || !listRef.current) return;
+
+    // Handle Escape at popover level for all focus locations (footer, search, options)
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      setOpenPopover(false);
+      if (triggerRef?.current) {
+        triggerRef.current.focus();
+      }
+      setFocusedOption(undefined);
+      return;
+    }
+
+    // Tab trap logic
+    if (e.key !== 'Tab') return;
     const container = listRef.current;
     if (!container.contains(document.activeElement as Node)) return;
 

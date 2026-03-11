@@ -107,7 +107,7 @@ export const focusListItem = (
   let targetOption;
 
   if (position === 'down') {
-    targetOption = searchInput?.[0] || listItems?.[0];
+    targetOption = listItems?.[0] ?? searchInput?.[0];
   } else {
     targetOption = listItems?.[listItems.length - 1];
   }

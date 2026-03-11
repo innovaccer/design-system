@@ -545,6 +545,36 @@ describe('Select keyboard integration tests', () => {
     });
   });
 
+  it('Escape from footer button closes popover and returns focus to trigger', async () => {
+    const { getByTestId, getByText } = render(
+      <Select multiSelect onSelect={FunctionValue}>
+        <Select.List>
+          <Select.Option option={{ label: 'Option 1', value: 'Option 1' }}>Option 1</Select.Option>
+          <Select.Option option={{ label: 'Option 2', value: 'Option 2' }}>Option 2</Select.Option>
+        </Select.List>
+        <Select.Footer>
+          <button type="button">Apply</button>
+        </Select.Footer>
+      </Select>
+    );
+    const trigger = getByTestId('DesignSystem-Select-trigger');
+    fireEvent.click(trigger);
+    await waitFor(() => {
+      expect(trigger).toHaveAttribute('aria-expanded', 'true');
+    });
+    const footerButton = getByText('Apply');
+    footerButton.focus();
+    act(() => {
+      fireEvent.keyDown(footerButton, { key: 'Escape' });
+    });
+    await waitFor(() => {
+      expect(trigger).toHaveAttribute('aria-expanded', 'false');
+    });
+    await waitFor(() => {
+      expect(document.activeElement).toBe(trigger);
+    });
+  });
+
   it('Space on single-select option (via focusedOption) closes popover and returns focus to trigger', async () => {
     const { getByTestId, getAllByTestId } = render(
       <Select onSelect={FunctionValue}>

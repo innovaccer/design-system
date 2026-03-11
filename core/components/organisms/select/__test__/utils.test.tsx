@@ -463,7 +463,9 @@ describe('focusListItem function', () => {
     targetOption.focus = focusMock;
     targetOption.scrollIntoView = scrollIntoViewMock;
     focusListItem('down', setFocusedOptionMock, listRefMock);
-    expect(setFocusedOptionMock).toHaveBeenCalled();
+    expect(focusMock).toHaveBeenCalled();
+    expect(scrollIntoViewMock).toHaveBeenCalledWith({ block: 'center' });
+    expect(setFocusedOptionMock).toHaveBeenCalledWith(targetOption);
   });
 
   it('should focus on the search input when position is "down" and no list items are available', () => {
@@ -472,6 +474,9 @@ describe('focusListItem function', () => {
     const targetOption = searchInputMock[0];
     targetOption.focus = focusMock;
     targetOption.scrollIntoView = scrollIntoViewMock;
+    const querySpy = jest.spyOn(listRefMock.current!, 'querySelectorAll');
+    querySpy.mockReset();
+    querySpy.mockReturnValueOnce(searchInputMock).mockReturnValueOnce([]);
     focusListItem('down', setFocusedOptionMock, listRefMock);
     expect(focusMock).toHaveBeenCalled();
     expect(scrollIntoViewMock).toHaveBeenCalledWith({ block: 'center' });
