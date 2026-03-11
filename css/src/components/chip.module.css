@@ -3,8 +3,6 @@
   box-sizing: border-box;
   border-radius: var(--border-radius-30);
   padding-right: var(--spacing-20);
-  padding-top: var(--spacing-05);
-  padding-bottom: var(--spacing-05);
   width: fit-content;
   justify-content: space-between;
   border-style: solid;
@@ -19,9 +17,13 @@
   height: var(--spacing-60);
   padding-left: var(--spacing-20);
 }
+
 .Chip-size--small {
   height: 20px;
   padding-left: var(--spacing-15);
+  margin-top: var(--spacing-05);
+  margin-bottom: var(--spacing-05);
+  margin-right: var(--spacing-05);
 }
 
 .Chip-wrapper {
@@ -40,7 +42,8 @@
   align-items: center;
   justify-content: center;
   border-radius: var(--border-radius-full);
-  margin-left: var(--spacing-05);
+  margin-left: var(--spacing-10);
+  margin-right: var(--spacing-2-5);
 }
 
 .Chip--action {
