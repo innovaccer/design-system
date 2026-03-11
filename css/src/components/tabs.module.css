@@ -35,6 +35,22 @@
   padding: var(--spacing-30) var(--spacing-30) var(--spacing-40);
 }
 
+.Tab--withIconRegular {
+  padding-top: calc(var(--spacing-20) + var(--spacing-05));
+  padding-bottom: calc(var(--spacing-20) + var(--spacing-15));
+  padding-right: var(--spacing-15);
+  padding-left: calc(var(--spacing-40) + var(--spacing-05));
+  align-items: center;
+}
+
+.Tab--withIconSmall {
+  padding-top: var(--spacing-15);
+  padding-bottom: calc(var(--spacing-20) + var(--spacing-05));
+  padding-right: var(--spacing-15);
+  padding-left: calc(var(--spacing-40) + var(--spacing-05));
+  align-items: center;
+}
+
 .Tab:last-child {
   margin-right: 0;
 }
@@ -50,6 +66,10 @@
   margin-left: var(--spacing-30);
   border-top-left-radius: var(--border-radius-2-5);
   border-top-right-radius: var(--border-radius-2-5);
+}
+
+.Tab--withDismissIcon::after {
+  margin-left: calc(var(--spacing-40) + var(--spacing-05));
 }
 
 .Tab:hover::after {
@@ -122,15 +142,20 @@
   cursor: not-allowed;
 }
 
-.DismissibleTab-icon--right {
-  padding: var(--spacing-05);
-  margin-left: var(--spacing-05);
+.DismissibleRegularTab-icon--right {
+  padding: var(--spacing-10);
+  outline: none;
+  border-radius: var(--border-radius-full);
+}
+
+.DismissibleSmallTab-icon--right {
+  padding: var(--spacing-15);
   outline: none;
   border-radius: var(--border-radius-full);
 }
 
 .DismissibleTab-icon--default:focus-visible {
-  outline: var(--spacing-05) solid var(--secondary-shadow);
+  outline: var(--spacing-05) solid var(--primary-focus);
 }
 
 .DismissibleTab-icon--default:hover {
@@ -142,7 +167,7 @@
 }
 
 .DismissibleTab-icon--selected:focus-visible {
-  outline: var(--spacing-05) solid var(--primary-shadow);
+  outline: var(--spacing-05) solid var(--primary-focus);
 }
 
 .DismissibleTab-icon--selected:hover {
