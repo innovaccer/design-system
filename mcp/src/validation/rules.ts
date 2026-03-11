@@ -171,9 +171,73 @@ export const approvedImports: ValidationRule = {
   },
 };
 
+const LAYOUT_STYLE_PROPS: Record<string, string> = {
+  display: 'd-flex / d-block / d-none / d-inline',
+  flexDirection: 'flex-row / flex-column',
+  justifyContent: 'justify-content-{start,center,end,between}',
+  alignItems: 'align-items-{start,center,end,stretch}',
+  flexWrap: 'flex-wrap / flex-nowrap',
+  gap: 'Use margin/padding helpers (mt-*, mr-*, etc.)',
+  margin: 'm-{1..8} (scale: 1=4px, 2=8px, 3=12px, 4=16px, 5=20px, 6=24px, 7=32px, 8=40px)',
+  marginTop: 'mt-{1..8}',
+  marginBottom: 'mb-{1..8}',
+  marginLeft: 'ml-{1..8}',
+  marginRight: 'mr-{1..8}',
+  padding: 'p-{1..8}',
+  paddingTop: 'pt-{1..8}',
+  paddingBottom: 'pb-{1..8}',
+  paddingLeft: 'pl-{1..8}',
+  paddingRight: 'pr-{1..8}',
+};
+
+const INLINE_STYLE_LAYOUT_RE = /style\s*=\s*\{\s*\{/;
+
+export const noInlineStyleLayout: ValidationRule = {
+  id: 'no-inline-style-layout',
+  name: 'No inline style for layout/spacing',
+  check(lines) {
+    const violations: Violation[] = [];
+    let inStyleBlock = false;
+    let braceDepth = 0;
+
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
+
+      if (INLINE_STYLE_LAYOUT_RE.test(line)) {
+        inStyleBlock = true;
+        braceDepth = 0;
+      }
+
+      if (inStyleBlock) {
+        for (const ch of line) {
+          if (ch === '{') braceDepth++;
+          else if (ch === '}') braceDepth--;
+        }
+        if (braceDepth <= 0) inStyleBlock = false;
+      }
+
+      for (const [prop, helper] of Object.entries(LAYOUT_STYLE_PROPS)) {
+        const re = new RegExp(`(?:style\\s*=\\s*\\{\\s*\\{[^}]*|,\\s*)${prop}\\s*:`, 'g');
+        if (re.test(line)) {
+          violations.push({
+            ruleId: 'no-inline-style-layout',
+            message: `Inline style "${prop}" — use CSS helper class instead`,
+            line: i + 1,
+            column: line.indexOf(prop) + 1,
+            fix: `Remove "${prop}" from style prop and use className="${helper}"`,
+          });
+        }
+      }
+    }
+
+    return violations;
+  },
+};
+
 export const allRules: ValidationRule[] = [
   noRawHtmlControls,
   noHardcodedColors,
   tokensOnly,
   approvedImports,
+  noInlineStyleLayout,
 ];

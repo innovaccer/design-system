@@ -150,6 +150,85 @@ Even in these cases, use design tokens for all values (colors, spacing, radii, s
 
 ---
 
+## 7. Spacing Scale Reference
+
+Map pixel values to the helper class scale number. Use these with margin/padding helpers (`m-*`, `p-*`, `mt-*`, `px-*`, etc.):
+
+| Pixels | Scale | Example classes |
+|--------|-------|-----------------|
+| 4px | 1 | `mt-1`, `p-1` |
+| 8px | 2 | `mt-2`, `p-2` |
+| 12px | 3 | `mt-3`, `p-3` |
+| 16px | 4 | `mt-4`, `p-4` |
+| 20px | 5 | `mt-5`, `p-5` |
+| 24px | 6 | `mt-6`, `p-6` |
+| 32px | 7 | `mt-7`, `p-7` |
+| 40px | 8 | `mt-8`, `p-8` |
+
+---
+
+## 8. Common Component Patterns
+
+### Loading state
+
+Use `Placeholder` and `PlaceholderParagraph` for skeleton loading:
+
+```tsx
+import { Placeholder, PlaceholderParagraph } from '@innovaccer/design-system';
+
+<Placeholder withImage={false}>
+  <PlaceholderParagraph length="large" />
+  <PlaceholderParagraph length="medium" />
+</Placeholder>
+```
+
+### Error state
+
+Use `Message` for inline error display:
+
+```tsx
+import { Message } from '@innovaccer/design-system';
+
+<Message appearance="alert" description={error} />
+```
+
+### Empty state
+
+Use `EmptyState` for full empty/error pages:
+
+```tsx
+import { EmptyState, Button } from '@innovaccer/design-system';
+
+<EmptyState>
+  <EmptyState.Title>No results found</EmptyState.Title>
+  <EmptyState.Description>Try adjusting your filters.</EmptyState.Description>
+  <EmptyState.Actions>
+    <Button appearance="primary" onClick={handleReset}>Reset Filters</Button>
+  </EmptyState.Actions>
+</EmptyState>
+```
+
+### Table
+
+Use the `Table` component with `fetchData` pattern for data tables:
+
+```tsx
+import { Table } from '@innovaccer/design-system';
+
+<Table
+  type="resource"
+  fetchData={fetchData}
+  loaderSchema={schema}
+  withHeader
+  withPagination
+  pageSize={10}
+  headerOptions={{ withSearch: true }}
+  errorTemplate={errorTemplate}
+/>
+```
+
+---
+
 ## Summary
 
 | Do | Don't |
