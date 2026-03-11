@@ -58,7 +58,35 @@ mds-mcp --http --port 3100
 ```
 
 Endpoint: `http://localhost:3100/mcp`
-Health check: `http://localhost:3100/health`
+Health check: `http://localhost:3100/mcp/health`
+
+### Nginx deployment
+
+All routes are mounted under a single base path (`/mcp` by default), so one nginx `location` block is sufficient:
+
+```nginx
+location /mcp {
+    proxy_pass http://127.0.0.1:3100/mcp;
+    proxy_http_version 1.1;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+}
+```
+
+Use `--base-path` to change the mount point if needed:
+
+```bash
+mds-mcp --http --port 3100 --base-path /api/mcp
+```
+
+| Option | Env var | Default | Description |
+|--------|---------|---------|-------------|
+| `--http` | `MCP_TRANSPORT=http` | stdio | Use HTTP transport |
+| `--port` | `MCP_PORT` | `3100` | HTTP listen port |
+| `--base-path` | `MCP_BASE_PATH` | `/mcp` | Base path for all routes |
+| `--manifest-path` | `MCP_MANIFEST_PATH` | auto | Path to generated manifest |
 
 ## Available Tools
 

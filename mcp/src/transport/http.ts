@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Router } from 'express';
 import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
 import { createServer } from '../server.js';
 
@@ -9,7 +9,7 @@ interface SessionEntry {
 
 const SESSION_TTL_MS = 30 * 60 * 1000;
 
-export async function startHttp(port: number, manifestPath?: string): Promise<void> {
+export async function startHttp(port: number, manifestPath?: string, basePath = '/mcp'): Promise<void> {
   const app = express();
   app.use(express.json());
 
@@ -31,7 +31,9 @@ export async function startHttp(port: number, manifestPath?: string): Promise<vo
     if (entry) entry.lastActivity = Date.now();
   }
 
-  app.post('/mcp', async (req, res) => {
+  const router = Router();
+
+  router.post('/', async (req, res) => {
     const sessionId = req.headers['mcp-session-id'] as string | undefined;
 
     if (sessionId && sessions.has(sessionId)) {
@@ -59,10 +61,10 @@ export async function startHttp(port: number, manifestPath?: string): Promise<vo
     await transport.handleRequest(req, res, req.body);
   });
 
-  app.get('/mcp', async (req, res) => {
+  router.get('/', async (req, res) => {
     const sessionId = req.headers['mcp-session-id'] as string | undefined;
     if (!sessionId || !sessions.has(sessionId)) {
-      res.status(400).json({ error: 'Missing or invalid session. Send an initialize request first via POST /mcp.' });
+      res.status(400).json({ error: `Missing or invalid session. Send an initialize request first via POST ${basePath}` });
       return;
     }
     touchSession(sessionId);
@@ -70,7 +72,7 @@ export async function startHttp(port: number, manifestPath?: string): Promise<vo
     await transport.handleRequest(req, res);
   });
 
-  app.delete('/mcp', async (req, res) => {
+  router.delete('/', async (req, res) => {
     const sessionId = req.headers['mcp-session-id'] as string | undefined;
     if (!sessionId || !sessions.has(sessionId)) {
       res.status(400).json({ error: 'Invalid session.' });
@@ -80,7 +82,7 @@ export async function startHttp(port: number, manifestPath?: string): Promise<vo
     await transport.handleRequest(req, res);
   });
 
-  app.get('/health', (_req, res) => {
+  router.get('/health', (_req, res) => {
     res.json({
       status: 'ok',
       server: 'Masala Design System MCP',
@@ -89,6 +91,7 @@ export async function startHttp(port: number, manifestPath?: string): Promise<vo
         'ds_list_components', 'ds_get_component', 'ds_search_components',
         'ds_search_examples', 'ds_get_example',
         'ds_list_patterns', 'ds_get_pattern',
+        'ds_search_helpers',
         'ds_validate_code',
         'ds_get_usage', 'ds_search_usage',
       ],
@@ -103,8 +106,11 @@ export async function startHttp(port: number, manifestPath?: string): Promise<vo
     });
   });
 
+  const normalizedBase = basePath.startsWith('/') ? basePath : `/${basePath}`;
+  app.use(normalizedBase, router);
+
   app.listen(port, () => {
-    console.log(`Masala Design System MCP server running at http://localhost:${port}/mcp`);
-    console.log(`Health check: http://localhost:${port}/health`);
+    console.log(`Masala Design System MCP server running at http://localhost:${port}${normalizedBase}`);
+    console.log(`Health check: http://localhost:${port}${normalizedBase}/health`);
   });
 }
