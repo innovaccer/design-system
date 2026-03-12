@@ -77,6 +77,104 @@ describe('Editable component', () => {
   });
 });
 
+describe('Editable component keyboard interactions', () => {
+  beforeEach(() => {
+    onChange.mockClear();
+  });
+
+  it('Enter enters edit mode when not editing', () => {
+    const { getByTestId } = render(
+      <Editable onChange={onChange} editing={false}>
+        <span />
+      </Editable>
+    );
+
+    const editableWrapper = getByTestId('DesignSystem-EditableWrapper');
+    fireEvent.keyDown(editableWrapper, { key: 'Enter' });
+
+    expect(onChange).toHaveBeenCalledWith('edit');
+  });
+
+  it('Space enters edit mode when not editing and prevents default', () => {
+    const { getByTestId } = render(
+      <Editable onChange={onChange} editing={false}>
+        <span />
+      </Editable>
+    );
+
+    const editableWrapper = getByTestId('DesignSystem-EditableWrapper');
+    fireEvent.keyDown(editableWrapper, { key: ' ' });
+
+    expect(onChange).toHaveBeenCalledWith('edit');
+  });
+
+  it('calls onEditModeKeyDown when editing and user presses a key', () => {
+    const onEditModeKeyDown = jest.fn();
+    const { getByTestId } = render(
+      <Editable onChange={onChange} editing={true} onEditModeKeyDown={onEditModeKeyDown}>
+        <span />
+      </Editable>
+    );
+
+    const editableWrapper = getByTestId('DesignSystem-EditableWrapper');
+    fireEvent.keyDown(editableWrapper, { key: 'Escape' });
+
+    expect(onEditModeKeyDown).toHaveBeenCalled();
+    expect(onChange).not.toHaveBeenCalled();
+  });
+
+  it('does not call onEditModeKeyDown or enter edit mode when not editing and key is not Enter/Space', () => {
+    const onEditModeKeyDown = jest.fn();
+    const { getByTestId } = render(
+      <Editable onChange={onChange} editing={false} onEditModeKeyDown={onEditModeKeyDown}>
+        <span />
+      </Editable>
+    );
+
+    const editableWrapper = getByTestId('DesignSystem-EditableWrapper');
+    fireEvent.keyDown(editableWrapper, { key: 'a' });
+
+    expect(onEditModeKeyDown).not.toHaveBeenCalled();
+    expect(onChange).not.toHaveBeenCalled();
+  });
+
+  it('has tabIndex 0 when not editing', () => {
+    const { getByTestId } = render(
+      <Editable onChange={onChange} editing={false}>
+        <span />
+      </Editable>
+    );
+
+    const editableWrapper = getByTestId('DesignSystem-EditableWrapper');
+    expect(editableWrapper).toHaveAttribute('tabindex', '0');
+  });
+
+  it('has tabIndex -1 when editing', () => {
+    const { getByTestId } = render(
+      <Editable onChange={onChange} editing={true}>
+        <span />
+      </Editable>
+    );
+
+    const editableWrapper = getByTestId('DesignSystem-EditableWrapper');
+    expect(editableWrapper).toHaveAttribute('tabindex', '-1');
+  });
+
+  it('delegates to onEditModeKeyDown when keyDownDelegateActive is true', () => {
+    const onEditModeKeyDown = jest.fn();
+    const { getByTestId } = render(
+      <Editable onChange={onChange} editing={false} keyDownDelegateActive={true} onEditModeKeyDown={onEditModeKeyDown}>
+        <span />
+      </Editable>
+    );
+
+    const editableWrapper = getByTestId('DesignSystem-EditableWrapper');
+    fireEvent.keyDown(editableWrapper, { key: 'Escape' });
+
+    expect(onEditModeKeyDown).toHaveBeenCalled();
+  });
+});
+
 describe('Editable Component with overwrite class', () => {
   const className = 'DS-Editable';
 
