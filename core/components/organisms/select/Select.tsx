@@ -297,13 +297,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
 
   return (
     <SelectContext.Provider value={contextProp}>
-      <div
-        data-test="DesignSystem-Select"
-        style={WrapperStyle}
-        aria-haspopup="listbox"
-        aria-expanded={openPopover}
-        {...baseProps}
-      >
+      <div data-test="DesignSystem-Select" style={WrapperStyle} {...baseProps}>
         <Popover
           open={openPopover}
           onToggle={onToggleHandler}

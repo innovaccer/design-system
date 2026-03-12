@@ -119,7 +119,7 @@ export const SelectOption = (props: SelectOptionProps) => {
       role="option"
       onClick={onClickHandler}
       aria-selected={checked}
-      aria-label={props['aria-label'] || 'option item'}
+      aria-label={props['aria-label'] || option.label}
       onKeyDown={(event) => onKeyDownHandler(event)}
       selected={checked}
       tabIndex={-1}

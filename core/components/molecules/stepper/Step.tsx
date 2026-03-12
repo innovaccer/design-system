@@ -56,11 +56,14 @@ export const Step = (props: StepProps) => {
       tabIndex={disabled ? -1 : 0}
       role="button"
       aria-disabled={disabled || undefined}
+      aria-current={active ? 'step' : undefined}
+      aria-label={completed ? `${label}, completed` : label}
     >
       <Icon
         data-test="DesignSystem-Step--Icon"
         name={completed ? 'check_circle' : 'radio_button_unchecked'}
         className={IconClass}
+        aria-hidden="true"
       />
 
       {label && (

@@ -9,15 +9,16 @@ exports[`Stepper component
     data-test="DesignSystem-Stepper"
   >
     <div
+      aria-label="Step A, completed"
       class="Step Stepper-animate Step--completed"
       data-test="DesignSystem-Step"
       role="button"
       tabindex="0"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon mr-3 my-4 Stepper-animate"
         data-test="DesignSystem-Step--Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         check_circle
@@ -30,15 +31,17 @@ exports[`Stepper component
       </span>
     </div>
     <div
+      aria-current="step"
+      aria-label="Step B"
       class="Step Stepper-animate Step--active"
       data-test="DesignSystem-Step"
       role="button"
       tabindex="0"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-outlined Icon mr-3 my-4 Stepper-animate"
         data-test="DesignSystem-Step--Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         radio_button_unchecked
@@ -52,15 +55,16 @@ exports[`Stepper component
     </div>
     <div
       aria-disabled="true"
+      aria-label="Step C"
       class="Step Stepper-animate Step--disabled"
       data-test="DesignSystem-Step"
       role="button"
       tabindex="-1"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-outlined Icon mr-3 my-4 Stepper-animate"
         data-test="DesignSystem-Step--Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         radio_button_unchecked
@@ -74,15 +78,16 @@ exports[`Stepper component
     </div>
     <div
       aria-disabled="true"
+      aria-label="Step D"
       class="Step Stepper-animate Step--disabled"
       data-test="DesignSystem-Step"
       role="button"
       tabindex="-1"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-outlined Icon mr-3 my-4 Stepper-animate"
         data-test="DesignSystem-Step--Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         radio_button_unchecked

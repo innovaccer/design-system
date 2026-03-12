@@ -572,6 +572,12 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       [styles[`Calendar-headerIcon--${type}`]]: type,
     });
 
+    const navLabels: Record<string, Record<string, string>> = {
+      year: { prev: 'Previous year range', next: 'Next year range' },
+      month: { prev: 'Previous year', next: 'Next year' },
+      date: { prev: 'Previous month', next: 'Next month' },
+    };
+
     return (
       <Button
         type="button"
@@ -581,6 +587,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         disabled={disabled}
         size={size === 'small' ? 'tiny' : 'regular'}
         onClick={this.onNavIconClickHandler(type)}
+        aria-label={navLabels[view]?.[type]}
       />
     );
   };
@@ -642,10 +649,10 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     return (
       <div className={headerContentClass}>
+        {/* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/interactive-supports-focus */}
         {view !== 'date' && (
-          // TODO(a11y)
-          //  eslint-disable-next-line
           <div
+            role="button"
             className="d-flex justify-content-center align-items-center"
             onClick={this.onNavHeadingClickHandler(view)}
           >
@@ -655,17 +662,15 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
         {view === 'date' && (
           <>
-            {/* TODO(a11y) */}
-            {/* eslint-disable-next-line */}
             <div
+              role="button"
               onClick={this.onNavHeadingClickHandler(view)}
               className="d-flex justify-content-center align-items-center"
             >
               {renderHeading(months[monthNavVal])}
             </div>
-            {/* TODO(a11y) */}
-            {/* eslint-disable-next-line */}
             <div
+              role="button"
               className="ml-4 d-flex justify-content-center align-items-center"
               onClick={this.onNavHeadingClickHandler('month')}
             >
@@ -673,10 +678,12 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             </div>
           </>
         )}
+        {/* eslint-enable jsx-a11y/click-events-have-key-events, jsx-a11y/interactive-supports-focus */}
       </div>
     );
   };
 
+  /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/interactive-supports-focus, jsx-a11y/mouse-events-have-key-events */
   renderBodyYear = () => {
     const { yearBlockRange, yearsInRow } = config;
 
@@ -722,15 +729,12 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           }) as TextColor;
 
           return (
-            //  TODO(a11y)
-            //  eslint-disable-next-line
             <div
-              //  eslint-disable-next-line
+              role="button"
               key={`${row}-${col}`}
               data-test="DesignSystem-Calendar--yearValue"
               className={valueClass}
               onClick={this.selectYear(year)}
-              //  eslint-disable-next-line
               onMouseOver={this.yearMouseOverHandler.bind(this, year, isCurrentYear(), disabled)}
             >
               <Text size={size === 'small' ? 'small' : 'regular'} color={getTextColor} className={textClass}>
@@ -742,7 +746,9 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       </div>
     ));
   };
+  /* eslint-enable jsx-a11y/click-events-have-key-events, jsx-a11y/interactive-supports-focus, jsx-a11y/mouse-events-have-key-events */
 
+  /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/interactive-supports-focus, jsx-a11y/mouse-events-have-key-events */
   renderBodyMonth = () => {
     const { monthBlock, monthsInRow, months } = config;
 
@@ -785,14 +791,12 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           });
 
           return (
-            //TODO(a11y)
-            //eslint-disable-next-line
             <div
+              role="button"
               key={`${row}-${col}`}
               data-test="DesignSystem-Calendar--monthValue"
               className={valueClass}
               onClick={this.selectMonth(month)}
-              //  eslint-disable-next-line
               onMouseOver={this.monthMouseOverHandler.bind(this, month, isCurrentMonth(), disabled)}
             >
               <Text size={size === 'small' ? 'small' : 'regular'} color={getTextColor} className={textClass}>
@@ -804,6 +808,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       </div>
     ));
   };
+  /* eslint-enable jsx-a11y/click-events-have-key-events, jsx-a11y/interactive-supports-focus, jsx-a11y/mouse-events-have-key-events */
 
   onDateRowMouseLeaveHandler = () => {
     const { rangePicker } = this.props;
@@ -824,7 +829,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     return (
       <>
-        <div className={styles['Calendar-dayValues']}>
+        <div className={styles['Calendar-dayValues']} role="row">
           {Array.from({ length: 7 }, (_x, day) => {
             const valueClass = classNames({
               [styles['Calendar-valueWrapper']]: true,
@@ -832,13 +837,20 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             const dayValue = (day + daysInRow + getIndexOfDay(firstDayOfWeek)) % daysInRow;
 
             return (
-              <Text key={day} className={valueClass} appearance="default" weight="strong" size={textSize}>
+              <Text
+                key={day}
+                className={valueClass}
+                appearance="default"
+                weight="strong"
+                size={textSize}
+                role="columnheader"
+              >
                 {days[size][dayValue]}
               </Text>
             );
           })}
         </div>
-        <div className={styles['Calendar-dateValues']} onMouseLeave={this.onDateRowMouseLeaveHandler}>
+        <div className={styles['Calendar-dateValues']} role="rowgroup" onMouseLeave={this.onDateRowMouseLeaveHandler}>
           {this.renderDateValues(index)}
         </div>
       </>
@@ -942,7 +954,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     return Array.from({ length: noOfRows }, (_y, row) => {
       return (
-        <div key={row} className={styles['Calendar-valueRow']}>
+        <div key={row} className={styles['Calendar-valueRow']} role="row">
           {Array.from({ length: daysInRow }, (_x, col) => {
             const date = daysInRow * row + col - dummyDays + 1;
             const dummy = date <= 0 || date > dayRange;
@@ -1090,7 +1102,14 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             }) as TextColor;
 
             return (
-              <div key={`${row}-${col}`} className={wrapperClass} data-test="designSystem-Calendar-WrapperClass">
+              <div
+                key={`${row}-${col}`}
+                className={wrapperClass}
+                data-test="designSystem-Calendar-WrapperClass"
+                role="gridcell"
+                aria-selected={!dummy && (active || !!activeDate) ? true : undefined}
+                aria-disabled={disabled || undefined}
+              >
                 {!dummy && (
                   <>
                     <Text
@@ -1158,7 +1177,11 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           {this.renderHeaderContent(index)}
           {index === monthsInView - 1 && this.renderJumpButton('next')}
         </div>
-        <div className={bodyClass}>
+        <div
+          className={bodyClass}
+          role={view === 'date' ? 'grid' : undefined}
+          aria-label={view === 'date' ? 'Calendar' : undefined}
+        >
           {view === 'year' && this.renderBodyYear()}
           {view === 'month' && this.renderBodyMonth()}
           {view === 'date' && this.renderBodyDate(index)}

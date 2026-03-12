@@ -45,6 +45,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
               >
                 <div
                   class="d-flex justify-content-center align-items-center"
+                  role="button"
                 >
                   <h5
                     class="Heading Heading--s Heading--default"
@@ -63,6 +64,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                 </div>
                 <div
                   class="ml-4 d-flex justify-content-center align-items-center"
+                  role="button"
                 >
                   <h5
                     class="Heading Heading--s Heading--default"
@@ -718,6 +720,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
               >
                 <div
                   class="d-flex justify-content-center align-items-center"
+                  role="button"
                 >
                   <h5
                     class="Heading Heading--s Heading--default"
@@ -736,6 +739,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                 </div>
                 <div
                   class="ml-4 d-flex justify-content-center align-items-center"
+                  role="button"
                 >
                   <h5
                     class="Heading Heading--s Heading--default"
@@ -1391,6 +1395,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
               >
                 <div
                   class="d-flex justify-content-center align-items-center"
+                  role="button"
                 >
                   <h5
                     class="Heading Heading--s Heading--default"
@@ -1409,6 +1414,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                 </div>
                 <div
                   class="ml-4 d-flex justify-content-center align-items-center"
+                  role="button"
                 >
                   <h5
                     class="Heading Heading--s Heading--default"
@@ -2063,6 +2069,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
               >
                 <div
                   class="d-flex justify-content-center align-items-center"
+                  role="button"
                 >
                   <h5
                     class="Heading Heading--s Heading--default"
@@ -2081,6 +2088,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                 </div>
                 <div
                   class="ml-4 d-flex justify-content-center align-items-center"
+                  role="button"
                 >
                   <h5
                     class="Heading Heading--s Heading--default"
@@ -2735,6 +2743,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
               >
                 <div
                   class="d-flex justify-content-center align-items-center"
+                  role="button"
                 >
                   <h5
                     class="Heading Heading--s Heading--default"
@@ -2753,6 +2762,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                 </div>
                 <div
                   class="ml-4 d-flex justify-content-center align-items-center"
+                  role="button"
                 >
                   <h5
                     class="Heading Heading--s Heading--default"
@@ -3407,6 +3417,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
               >
                 <div
                   class="d-flex justify-content-center align-items-center"
+                  role="button"
                 >
                   <h5
                     class="Heading Heading--s Heading--default"
@@ -3425,6 +3436,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 </div>
                 <div
                   class="ml-4 d-flex justify-content-center align-items-center"
+                  role="button"
                 >
                   <h5
                     class="Heading Heading--s Heading--default"
@@ -4079,6 +4091,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
               >
                 <div
                   class="d-flex justify-content-center align-items-center"
+                  role="button"
                 >
                   <h5
                     class="Heading Heading--s Heading--default"
@@ -4126,6 +4139,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 <div
                   class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
                   data-test="DesignSystem-Calendar--monthValue"
+                  role="button"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-text"
@@ -4137,6 +4151,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 <div
                   class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
                   data-test="DesignSystem-Calendar--monthValue"
+                  role="button"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-text"
@@ -4148,6 +4163,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 <div
                   class="Calendar-value Calendar-value--active Calendar-monthValue Calendar-monthValue--large"
                   data-test="DesignSystem-Calendar--monthValue"
+                  role="button"
                 >
                   <span
                     class="Text Text--regular color-white Calendar-text"
@@ -4163,6 +4179,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 <div
                   class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
                   data-test="DesignSystem-Calendar--monthValue"
+                  role="button"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-text"
@@ -4174,6 +4191,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 <div
                   class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
                   data-test="DesignSystem-Calendar--monthValue"
+                  role="button"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-text"
@@ -4185,6 +4203,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 <div
                   class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
                   data-test="DesignSystem-Calendar--monthValue"
+                  role="button"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-text"
@@ -4200,6 +4219,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 <div
                   class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
                   data-test="DesignSystem-Calendar--monthValue"
+                  role="button"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-text"
@@ -4211,6 +4231,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 <div
                   class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
                   data-test="DesignSystem-Calendar--monthValue"
+                  role="button"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-text"
@@ -4222,6 +4243,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 <div
                   class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
                   data-test="DesignSystem-Calendar--monthValue"
+                  role="button"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-text"
@@ -4237,6 +4259,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 <div
                   class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
                   data-test="DesignSystem-Calendar--monthValue"
+                  role="button"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-text"
@@ -4248,6 +4271,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 <div
                   class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
                   data-test="DesignSystem-Calendar--monthValue"
+                  role="button"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-text"
@@ -4259,6 +4283,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 <div
                   class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
                   data-test="DesignSystem-Calendar--monthValue"
+                  role="button"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-text"
@@ -4345,6 +4370,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
               >
                 <div
                   class="d-flex justify-content-center align-items-center"
+                  role="button"
                 >
                   <h5
                     class="Heading Heading--s Heading--default"
@@ -4384,6 +4410,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 <div
                   class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
                   data-test="DesignSystem-Calendar--yearValue"
+                  role="button"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-text"
@@ -4395,6 +4422,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 <div
                   class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
                   data-test="DesignSystem-Calendar--yearValue"
+                  role="button"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-text"
@@ -4406,6 +4434,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 <div
                   class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
                   data-test="DesignSystem-Calendar--yearValue"
+                  role="button"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-text"
@@ -4421,6 +4450,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 <div
                   class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
                   data-test="DesignSystem-Calendar--yearValue"
+                  role="button"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-text"
@@ -4432,6 +4462,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 <div
                   class="Calendar-value Calendar-value--active Calendar-yearValue Calendar-yearValue--large"
                   data-test="DesignSystem-Calendar--yearValue"
+                  role="button"
                 >
                   <span
                     class="Text Text--regular color-white Calendar-text"
@@ -4443,6 +4474,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 <div
                   class="Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-value--currDateMonthYear"
                   data-test="DesignSystem-Calendar--yearValue"
+                  role="button"
                 >
                   <span
                     class="Text Text--regular color-primary Calendar-value--currDate Calendar-text"
@@ -4458,6 +4490,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 <div
                   class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
                   data-test="DesignSystem-Calendar--yearValue"
+                  role="button"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-text"
@@ -4469,6 +4502,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 <div
                   class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
                   data-test="DesignSystem-Calendar--yearValue"
+                  role="button"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-text"
@@ -4480,6 +4514,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 <div
                   class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
                   data-test="DesignSystem-Calendar--yearValue"
+                  role="button"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-text"
@@ -4495,6 +4530,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 <div
                   class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
                   data-test="DesignSystem-Calendar--yearValue"
+                  role="button"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-text"
@@ -4506,6 +4542,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 <div
                   class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
                   data-test="DesignSystem-Calendar--yearValue"
+                  role="button"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-text"
@@ -4517,6 +4554,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 <div
                   class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
                   data-test="DesignSystem-Calendar--yearValue"
+                  role="button"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-text"
@@ -4603,6 +4641,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
               >
                 <div
                   class="d-flex justify-content-center align-items-center"
+                  role="button"
                 >
                   <h5
                     class="Heading Heading--s Heading--default"
@@ -4621,6 +4660,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                 </div>
                 <div
                   class="ml-4 d-flex justify-content-center align-items-center"
+                  role="button"
                 >
                   <h5
                     class="Heading Heading--s Heading--default"

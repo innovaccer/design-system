@@ -121,6 +121,7 @@ export const MenuItem = (props: MenuItemProps) => {
     onClick: onClickHandler,
     href: menu.link,
     tabIndex: 0,
+    'aria-current': isActive && !hasSubmenu ? ('page' as const) : undefined,
     ...extractBaseProps(props),
   };
 
@@ -179,6 +180,8 @@ export const MenuItem = (props: MenuItemProps) => {
                   className={expanded ? 'mr-4' : ''}
                   name={menu.icon}
                   type={menu.iconType}
+                  aria-hidden={expanded ? 'true' : undefined}
+                  aria-label={!expanded ? menu.label : undefined}
                 />
               )}
               {expanded && <MenuLabel label={menu.label} labelColor={itemColor} />}

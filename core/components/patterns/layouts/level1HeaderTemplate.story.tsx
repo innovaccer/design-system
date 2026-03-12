@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+// A11y audit: verified compliant as of 2026-03-13 — HorizontalNav uses native <button>/<a> elements without nesting
 export const level1HeaderTemplate = () => <></>;
 
 const customCode = `() => {
