@@ -7,8 +7,7 @@ import { Popover, OutsideClick } from '@/index';
 import SelectTrigger, { SelectTriggerProps } from './SelectTrigger';
 import SearchInput from './SearchInput';
 import SelectEmptyTemplate from './SelectEmptyTemplate';
-import { focusListItem, focusPopoverInitial, getRovingIndex, mapInitialValue } from './utils';
-import { getFocusableElements } from '@/utils/overlayHelper';
+import { focusListItem, focusPopoverInitial, getRovingIndex, handleInputKeyDown, mapInitialValue } from './utils';
 import SelectFooter from './SelectFooter';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import uidGenerator from '@/utils/uidGenerator';
@@ -319,52 +318,18 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     onOutsideClick?.();
   };
 
-  const handlePopoverKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    if (!openPopover || !listRef.current) return;
-
-    // Handle Escape at popover level for all focus locations (footer, search, options)
-    if (e.key === 'Escape') {
-      e.preventDefault();
+  const handleEscape = React.useCallback(
+    (_e: React.KeyboardEvent<HTMLDivElement>) => {
       setOpenPopover(false);
-      if (triggerRef?.current) {
-        triggerRef.current.focus();
-      }
+      triggerRef.current?.focus({ preventScroll: true });
       setFocusedOption(undefined);
-      return;
-    }
+    },
+    []
+  );
 
-    // Tab trap logic
-    if (e.key !== 'Tab') return;
-    const container = listRef.current;
-    if (!container.contains(document.activeElement as Node)) return;
-
-    e.preventDefault();
-
-    const focusables = getFocusableElements(container);
-
-    if (focusables.length === 0) {
-      // Empty state (no search, no footer, all options tabIndex=-1) — stay put.
-      return;
-    }
-
-    const currentIndex = focusables.indexOf(document.activeElement as HTMLElement);
-
-    if (currentIndex === -1) {
-      // Focus is on an option with tabIndex=-1 (not in the trap list).
-      // Tab → first focusable (search or footer); Shift+Tab → last focusable.
-      const nextTarget = e.shiftKey ? focusables[focusables.length - 1] : focusables[0];
-      nextTarget.focus({ preventScroll: true });
-      setFocusedOption(nextTarget);
-      return;
-    }
-
-    // Focus is on a real focusable (search, roving option, footer button) — cycle.
-    const atStart = currentIndex === 0;
-    const atEnd = currentIndex === focusables.length - 1;
-    const nextIndex = e.shiftKey ? (atStart ? focusables.length - 1 : currentIndex - 1) : atEnd ? 0 : currentIndex + 1;
-    focusables[nextIndex].focus({ preventScroll: true });
-    setFocusedOption(focusables[nextIndex]);
-  };
+  const handleFocusMove = React.useCallback((el: HTMLElement) => {
+    setFocusedOption(el);
+  }, []);
 
   const contextProp = {
     openPopover,
@@ -413,9 +378,26 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
           boundaryElement={boundaryElement}
           appendToBody={appendToBody}
           trigger={getTriggerElement()}
+          trapFocus={true}
+          onEscape={handleEscape}
+          onFocusMove={handleFocusMove}
         >
           <OutsideClick onOutsideClick={onOutsideClickHandler}>
-            <div role="listbox" id={listboxId} tabIndex={-1} ref={listRef} onKeyDown={handlePopoverKeyDown}>
+            <div
+              role="listbox"
+              id={listboxId}
+              tabIndex={-1}
+              ref={listRef}
+              onKeyDown={(e) => {
+                if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+                  const active = document.activeElement as HTMLElement | null;
+                  const searchEl = listRef.current?.querySelector('[data-test="DesignSystem-Select--Input"]');
+                  if (searchEl && active && (searchEl === active || searchEl.contains(active))) {
+                    handleInputKeyDown(e, listRef, setFocusedOption, setOpenPopover, triggerRef);
+                  }
+                }
+              }}
+            >
               {children}
             </div>
           </OutsideClick>

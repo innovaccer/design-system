@@ -104,19 +104,23 @@ export const focusListItem = (
 ) => {
   const searchInput = listRef.current?.querySelectorAll('[data-test="DesignSystem-Select--Input"]');
   const listItems = listRef.current?.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
-  let targetOption;
+  let targetWrapper: HTMLElement | undefined;
 
   if (position === 'down') {
-    targetOption = listItems?.[0] ?? searchInput?.[0];
+    targetWrapper = (listItems?.[0] ?? searchInput?.[0]) as HTMLElement | undefined;
   } else {
-    targetOption = listItems?.[listItems.length - 1];
+    targetWrapper = listItems?.[listItems?.length - 1] as HTMLElement | undefined;
   }
 
-  (targetOption as HTMLElement)?.focus();
-  if (typeof (targetOption as HTMLElement)?.scrollIntoView === 'function') {
-    (targetOption as HTMLElement).scrollIntoView({ block: 'center' });
+  const isItemWrapper = targetWrapper?.getAttribute?.('data-test') === 'DesignSystem-Listbox-ItemWrapper';
+  const toFocus = (isItemWrapper && targetWrapper?.parentElement) ? targetWrapper.parentElement : targetWrapper;
+  if (toFocus) {
+    toFocus.focus();
+    if (typeof toFocus.scrollIntoView === 'function') {
+      toFocus.scrollIntoView({ block: 'center' });
+    }
+    setFocusedOption?.(toFocus);
   }
-  setFocusedOption && setFocusedOption(targetOption);
 };
 
 export const handleKeyDown = (
@@ -191,8 +195,9 @@ export const navigateOptions = (
   setRovingIndex?: React.Dispatch<React.SetStateAction<number>>
 ) => {
   const listItems = listRef.current.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
+  // focusedOption may be the ItemWrapper (from navigateOptions) or the list item LI (from handleInputKeyDown when coming from search)
   let index = Array.from(listItems).findIndex((item) => {
-    return item == focusedOption;
+    return item === focusedOption || (item as HTMLElement).parentElement === focusedOption;
   });
 
   if (index === -1) {
@@ -208,15 +213,15 @@ export const navigateOptions = (
   } else {
     index = direction === 'up' ? (index - 1 + listItems.length) % listItems.length : (index + 1) % listItems.length;
 
-    const targetOption = listItems[index];
+    const targetWrapper = listItems[index] as HTMLElement;
+    const targetLi = targetWrapper.parentElement;
+    const toFocus = targetLi ?? targetWrapper;
 
-    (targetOption as HTMLElement).focus();
-    setFocusedOption && setFocusedOption(targetOption);
-    // Synchronous roving index update eliminates the Tab-timing race where tabIndex
-    // is still -1 in the DOM while keyboard events fire immediately after arrow navigation.
+    toFocus.focus();
+    setFocusedOption?.(toFocus);
     setRovingIndex?.(index);
-    if (typeof (targetOption as HTMLElement).scrollIntoView === 'function') {
-      (targetOption as HTMLElement).scrollIntoView({ block: 'center' });
+    if (typeof toFocus.scrollIntoView === 'function') {
+      toFocus.scrollIntoView({ block: 'center' });
     }
   }
 };
@@ -234,11 +239,11 @@ export const handleInputKeyDown = (
   switch (event.key) {
     case 'ArrowUp':
       event.preventDefault();
-      targetOption = listItems[listItems.length - 1];
+      targetOption = listItems?.[listItems.length - 1];
       break;
     case 'ArrowDown':
       event.preventDefault();
-      targetOption = listItems[0];
+      targetOption = listItems?.[0];
       break;
     case 'Escape':
       setOpenPopover?.(false);
@@ -249,11 +254,18 @@ export const handleInputKeyDown = (
       break;
   }
 
-  (targetOption as HTMLElement)?.focus();
-  if (typeof (targetOption as HTMLElement)?.scrollIntoView === 'function') {
-    (targetOption as HTMLElement).scrollIntoView({ block: 'center' });
+  // Focus the list item (Tag with tabIndex); ItemWrapper's parent is always the list item (SelectOption overrides data-test so closest would fail).
+  const wrapper = targetOption as HTMLElement | null | undefined;
+  const toFocus = (wrapper?.parentElement ?? wrapper?.closest?.('[data-test="DesignSystem-Select-Option"]') ?? wrapper) as HTMLElement | null | undefined;
+  if (toFocus) {
+    toFocus.focus();
+    if (typeof toFocus.scrollIntoView === 'function') {
+      toFocus.scrollIntoView({ block: 'center' });
+    }
+    setFocusedOption?.(toFocus);
+  } else {
+    setFocusedOption?.(targetOption as HTMLElement);
   }
-  setFocusedOption && setFocusedOption(targetOption);
 };
 
 export const LISTBOX_ITEM_SELECTOR = '[data-test="DesignSystem-Listbox-ItemWrapper"]';
@@ -295,8 +307,11 @@ export const getRovingIndex = (
   const items = Array.from(list) as HTMLElement[];
 
   if (focusedOption) {
-    const focusedIdx = items.indexOf(focusedOption);
-    if (focusedIdx !== -1 && isOptionFocusable(focusedOption)) return focusedIdx;
+    const focusedIdx = items.findIndex(
+      (el) => el === focusedOption || el.parentElement === focusedOption
+    );
+    const focusedItem = focusedIdx >= 0 ? items[focusedIdx] : null;
+    if (focusedIdx !== -1 && focusedItem && isOptionFocusable(focusedItem)) return focusedIdx;
   }
 
   const focusableIndices = items.map((el, i) => (isOptionFocusable(el) ? i : -1)).filter((i) => i !== -1);
@@ -344,7 +359,8 @@ export const focusPopoverInitial = (
   const idx = getRovingIndex(listRef, undefined, selectValue, optionValuesOrder);
   if (idx >= 0) {
     const list = container.querySelectorAll(LISTBOX_ITEM_SELECTOR);
-    const option = list?.[idx] as HTMLElement | undefined;
+    const wrapper = list?.[idx] as HTMLElement | undefined;
+    const option = wrapper?.parentElement ?? wrapper;
     if (option) {
       option.focus();
       setFocusedOption?.(option);

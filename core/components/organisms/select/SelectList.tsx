@@ -80,6 +80,7 @@ export const SelectList = (props: SelectListProps) => {
         className="my-3"
         size={size}
         suppressKeyboard={true}
+        keyboardConfig={{ role: 'listbox', selectionKeepsOpen: multiSelect }}
         {...rest}
       >
         {childrenWithIndex}
