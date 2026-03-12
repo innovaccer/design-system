@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { PopperWrapper, PopperWrapperProps } from '@/components/atoms/popperWrapper';
 import { BaseProps, filterProps } from '@/utils/types';
 import { PositionType as Position } from '@/common.type';
+import { getFocusableElements } from '@/utils/overlayHelper';
 import styles from '@css/components/popover.module.css';
 
 export interface CustomStyle {
@@ -109,6 +110,22 @@ export interface PopoverProps extends Pick<PopperWrapperProps, PopperProps>, Bas
    * Add delay to the popover opening event
    */
   openDelay?: number;
+  /**
+   * When true, Tab/Shift+Tab cycles focus within the popover. When false, Tab triggers onTabEscape.
+   */
+  trapFocus?: boolean;
+  /**
+   * Called when Escape is pressed while popover is open. Consumer should close and return focus to trigger.
+   */
+  onEscape?: (e: React.KeyboardEvent<HTMLDivElement>) => void;
+  /**
+   * Called when Tab trap moves focus to a new element (for state sync, e.g. rovingIndex).
+   */
+  onFocusMove?: (el: HTMLElement) => void;
+  /**
+   * Called when Tab/Shift+Tab is pressed and trapFocus is false. Consumer should close and focus next element.
+   */
+  onTabEscape?: (e: React.KeyboardEvent<HTMLDivElement>) => void;
 }
 
 export const Popover = (props: PopoverProps) => {
@@ -122,6 +139,10 @@ export const Popover = (props: PopoverProps) => {
     hideOnReferenceEscape,
     boundaryElement = document.body,
     name,
+    trapFocus = false,
+    onEscape,
+    onFocusMove,
+    onTabEscape,
     ...rest
   } = props;
 
@@ -144,6 +165,50 @@ export const Popover = (props: PopoverProps) => {
     }
   }, [boundaryElement]);
 
+  const handlePopoverKeyDown = React.useCallback(
+    (e: React.KeyboardEvent<HTMLDivElement>) => {
+      if (!open) return;
+
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        onEscape?.(e);
+        return;
+      }
+
+      if (e.key !== 'Tab') return;
+
+      const container = e.currentTarget;
+      if (!container.contains(document.activeElement as Node)) return;
+
+      if (!trapFocus) {
+        e.preventDefault();
+        onTabEscape?.(e);
+        return;
+      }
+
+      e.preventDefault();
+      const focusables = getFocusableElements(container);
+
+      if (focusables.length === 0) return;
+
+      const currentIndex = focusables.indexOf(document.activeElement as HTMLElement);
+
+      if (currentIndex === -1) {
+        const nextTarget = e.shiftKey ? focusables[focusables.length - 1] : focusables[0];
+        nextTarget.focus({ preventScroll: true });
+        onFocusMove?.(nextTarget);
+        return;
+      }
+
+      const atStart = currentIndex === 0;
+      const atEnd = currentIndex === focusables.length - 1;
+      const nextIndex = e.shiftKey ? (atStart ? focusables.length - 1 : currentIndex - 1) : atEnd ? 0 : currentIndex + 1;
+      focusables[nextIndex].focus({ preventScroll: true });
+      onFocusMove?.(focusables[nextIndex]);
+    },
+    [open, trapFocus, onEscape, onFocusMove, onTabEscape]
+  );
+
   const classes = classNames(
     {
       [styles.Popover]: true,
@@ -152,8 +217,17 @@ export const Popover = (props: PopoverProps) => {
     className
   );
 
+  const hasKeyboardHandlers = onEscape || trapFocus || onTabEscape;
+
   const PopoverWrapper = (
-    <div data-test="DesignSystem-Popover" className={classes} data-layer={true} data-opened={open} data-name={name}>
+    <div
+      data-test="DesignSystem-Popover"
+      className={classes}
+      data-layer={true}
+      data-opened={open}
+      data-name={name}
+      onKeyDown={hasKeyboardHandlers ? handlePopoverKeyDown : undefined}
+    >
       {children}
     </div>
   );
