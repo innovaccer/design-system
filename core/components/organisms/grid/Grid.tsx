@@ -7,7 +7,7 @@ import { sortColumn, pinColumn, hideColumn, moveToIndex, getSchema, isScrollAtTo
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { NestedRowProps } from './GridNestedRow';
 import classNames from 'classnames';
-import { GridProvider } from './GridContext';
+import { GridKeyboardProvider } from './GridKeyboardProvider';
 import defaultProps from './defaultProps';
 import styles from '@css/components/grid.module.css';
 
@@ -678,6 +678,15 @@ export class Grid extends React.Component<GridProps, GridState> {
 
     const schema = getSchema(this.props.schema, loading, loaderSchema);
 
+    const { data, pageSize, withPagination, totalRecords } = this.props;
+    const totalRows =
+      loading && !data.length
+        ? pageSize
+        : withPagination
+        ? Math.min(pageSize, Math.max(0, totalRecords - (page - 1) * pageSize))
+        : data.length;
+    const totalCols = schema.filter((s) => !s.hidden).length;
+
     const classes = classNames(
       {
         [styles.Grid]: 'true',
@@ -687,9 +696,19 @@ export class Grid extends React.Component<GridProps, GridState> {
       className
     );
 
+    const baseContextValue = {
+      ...this.props,
+      ref: this.gridRef,
+      isSortingListUpdated: this.state.isSortingListUpdated,
+      updateIsSortingListUpdated: this.updateIsSortingListUpdated.bind(this),
+    };
+
     return (
       <div
         data-test="DesignSystem-Grid"
+        role="grid"
+        aria-rowcount={showHead ? totalRows + 1 : totalRows}
+        aria-colcount={totalCols}
         {...baseProps}
         className={classes}
         ref={(el) => {
@@ -697,13 +716,13 @@ export class Grid extends React.Component<GridProps, GridState> {
         }}
       >
         {init && (
-          <GridProvider
-            value={{
-              ...this.props,
-              ref: this.gridRef,
-              isSortingListUpdated: this.state.isSortingListUpdated,
-              updateIsSortingListUpdated: this.updateIsSortingListUpdated.bind(this),
-            }}
+          <GridKeyboardProvider
+            baseValue={baseContextValue}
+            totalRows={totalRows}
+            totalCols={totalCols}
+            data={data}
+            type={type}
+            onRowClick={this.props.onRowClick}
           >
             {showHead && (
               <GridHead
@@ -732,7 +751,7 @@ export class Grid extends React.Component<GridProps, GridState> {
                 fetchDataOnScroll={fetchDataOnScroll}
               />
             )}
-          </GridProvider>
+          </GridKeyboardProvider>
         )}
       </div>
     );
