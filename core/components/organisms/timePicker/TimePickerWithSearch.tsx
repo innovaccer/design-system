@@ -160,6 +160,12 @@ export const TimePickerWithSearch = (props: TimePickerDropdownProps) => {
       return;
     }
 
+    if (fetchTimeOptions) {
+      fetchTimeOptions('').then((result) => {
+        setFetchedOptions(result.options);
+      });
+    }
+
     const timer = setTimeout(() => {
       scrollToIndex(selectedIndex !== -1 ? selectedIndex : scrollIndex);
     }, 100);
