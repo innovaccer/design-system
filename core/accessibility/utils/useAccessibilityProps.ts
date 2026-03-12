@@ -32,10 +32,11 @@ const isKeyboardInteractionAllowed = (role: AriaRoleType, key: KeyboardEventKeyT
 
 const useAccessibilityProps = ({ onClick, onKeyDown, role, tabIndex, ...rest }: IProps) => {
   const ariaHidden = rest['aria-hidden'];
+  const isHidden = ariaHidden === true || ariaHidden === 'true';
 
-  if (ariaHidden) {
+  if (isHidden) {
     return {
-      'aria-hidden': ariaHidden as React.AriaAttributes['aria-hidden'],
+      'aria-hidden': true as const,
       ...(onClick ? { onClick } : {}),
       ...(onKeyDown ? { onKeyDown } : {}),
     };
