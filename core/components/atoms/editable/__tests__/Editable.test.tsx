@@ -160,6 +160,36 @@ describe('Editable component keyboard interactions', () => {
     expect(editableWrapper).toHaveAttribute('tabindex', '-1');
   });
 
+  it('triggers edit on Spacebar key alias when wrapper is focused', () => {
+    const { getByTestId } = render(
+      <Editable onChange={onChange} editing={false}>
+        <span />
+      </Editable>
+    );
+
+    const editableWrapper = getByTestId('DesignSystem-EditableWrapper');
+
+    fireEvent.keyDown(editableWrapper, { key: 'Spacebar', nativeEvent: { code: 'Space' } });
+
+    expect(onChange).toHaveBeenCalledTimes(1);
+    expect(onChange).toHaveBeenCalledWith('edit');
+  });
+
+  it('does not trigger edit shortcut when key is pressed inside child input', () => {
+    const { getByTestId } = render(
+      <Editable onChange={onChange} editing={false}>
+        <input data-test="DesignSystem-Editable-child-input" />
+      </Editable>
+    );
+
+    const childInput = getByTestId('DesignSystem-Editable-child-input');
+
+    fireEvent.keyDown(childInput, { key: ' ' });
+    fireEvent.keyDown(childInput, { key: 'Enter' });
+
+    expect(onChange).not.toHaveBeenCalled();
+  });
+
   it('delegates to onEditModeKeyDown when keyDownDelegateActive is true', () => {
     const onEditModeKeyDown = jest.fn();
     const { getByTestId } = render(
