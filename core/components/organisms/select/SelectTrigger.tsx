@@ -77,8 +77,9 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     setLabel,
     minWidth,
     maxWidth,
+    'aria-label': ariaLabelProp,
     ...rest
-  } = props;
+  } = props as SelectTriggerProps & { 'aria-label'?: string };
 
   const contextProp = React.useContext(SelectContext);
   const elementRef = React.useRef(null);
@@ -166,7 +167,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
         style={triggerStyle}
         aria-haspopup="listbox"
         aria-expanded={openPopover}
-        aria-label="trigger"
+        aria-label={ariaLabelProp || inlineLabel || trimmedPlaceholder || 'Select'}
         data-test="DesignSystem-Select-trigger"
         {...rest}
       >
@@ -200,7 +201,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
             className={iconClass}
             size={12}
             name="close"
-            aria-label="clear selected"
+            aria-label={`Clear ${ariaLabelProp || inlineLabel || trimmedPlaceholder || 'selection'}`}
             type={iconType}
             data-test="DesignSystem-Select--closeIcon"
           />

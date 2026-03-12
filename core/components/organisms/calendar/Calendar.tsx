@@ -642,10 +642,10 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     return (
       <div className={headerContentClass}>
+        {/* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/interactive-supports-focus */}
         {view !== 'date' && (
-          // TODO(a11y)
-          //  eslint-disable-next-line
           <div
+            role="button"
             className="d-flex justify-content-center align-items-center"
             onClick={this.onNavHeadingClickHandler(view)}
           >
@@ -655,17 +655,15 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
         {view === 'date' && (
           <>
-            {/* TODO(a11y) */}
-            {/* eslint-disable-next-line */}
             <div
+              role="button"
               onClick={this.onNavHeadingClickHandler(view)}
               className="d-flex justify-content-center align-items-center"
             >
               {renderHeading(months[monthNavVal])}
             </div>
-            {/* TODO(a11y) */}
-            {/* eslint-disable-next-line */}
             <div
+              role="button"
               className="ml-4 d-flex justify-content-center align-items-center"
               onClick={this.onNavHeadingClickHandler('month')}
             >
@@ -673,10 +671,12 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             </div>
           </>
         )}
+        {/* eslint-enable jsx-a11y/click-events-have-key-events, jsx-a11y/interactive-supports-focus */}
       </div>
     );
   };
 
+  /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/interactive-supports-focus, jsx-a11y/mouse-events-have-key-events */
   renderBodyYear = () => {
     const { yearBlockRange, yearsInRow } = config;
 
@@ -722,15 +722,12 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           }) as TextColor;
 
           return (
-            //  TODO(a11y)
-            //  eslint-disable-next-line
             <div
-              //  eslint-disable-next-line
+              role="button"
               key={`${row}-${col}`}
               data-test="DesignSystem-Calendar--yearValue"
               className={valueClass}
               onClick={this.selectYear(year)}
-              //  eslint-disable-next-line
               onMouseOver={this.yearMouseOverHandler.bind(this, year, isCurrentYear(), disabled)}
             >
               <Text size={size === 'small' ? 'small' : 'regular'} color={getTextColor} className={textClass}>
@@ -742,7 +739,9 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       </div>
     ));
   };
+  /* eslint-enable jsx-a11y/click-events-have-key-events, jsx-a11y/interactive-supports-focus, jsx-a11y/mouse-events-have-key-events */
 
+  /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/interactive-supports-focus, jsx-a11y/mouse-events-have-key-events */
   renderBodyMonth = () => {
     const { monthBlock, monthsInRow, months } = config;
 
@@ -785,14 +784,12 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           });
 
           return (
-            //TODO(a11y)
-            //eslint-disable-next-line
             <div
+              role="button"
               key={`${row}-${col}`}
               data-test="DesignSystem-Calendar--monthValue"
               className={valueClass}
               onClick={this.selectMonth(month)}
-              //  eslint-disable-next-line
               onMouseOver={this.monthMouseOverHandler.bind(this, month, isCurrentMonth(), disabled)}
             >
               <Text size={size === 'small' ? 'small' : 'regular'} color={getTextColor} className={textClass}>
@@ -804,6 +801,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       </div>
     ));
   };
+  /* eslint-enable jsx-a11y/click-events-have-key-events, jsx-a11y/interactive-supports-focus, jsx-a11y/mouse-events-have-key-events */
 
   onDateRowMouseLeaveHandler = () => {
     const { rangePicker } = this.props;

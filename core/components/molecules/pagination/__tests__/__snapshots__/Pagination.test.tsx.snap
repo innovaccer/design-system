@@ -155,6 +155,7 @@ exports[`Pagination component
         role="presentation"
       >
         <input
+          aria-label="Page 10 of 50"
           class="MetricInput-input MetricInput-input--regular"
           data-test="DesignSystem-Pagination--Input"
           name="page"

@@ -6,8 +6,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -19,7 +17,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -56,8 +54,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -69,7 +65,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -106,8 +102,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -119,7 +113,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -156,8 +150,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -169,7 +161,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -206,8 +198,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -219,7 +209,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -256,8 +246,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -269,7 +257,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -306,8 +294,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -319,7 +305,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -356,8 +342,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -369,7 +353,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -406,8 +390,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -419,7 +401,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -456,8 +438,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -469,7 +449,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -506,8 +486,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -519,7 +497,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -556,8 +534,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -569,7 +545,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -606,8 +582,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -619,7 +593,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -656,8 +630,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -669,7 +641,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -706,8 +678,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -719,7 +689,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -756,8 +726,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -769,7 +737,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -806,8 +774,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -819,7 +785,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -856,8 +822,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -869,7 +833,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -906,8 +870,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -919,7 +881,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -956,8 +918,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -969,7 +929,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -1006,8 +966,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1019,7 +977,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -1056,8 +1014,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1069,7 +1025,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -1106,8 +1062,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1119,7 +1073,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -1156,8 +1110,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1169,7 +1121,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -1206,8 +1158,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1219,7 +1169,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -1256,8 +1206,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1269,7 +1217,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -1306,8 +1254,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1319,7 +1265,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -1356,8 +1302,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1369,7 +1313,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -1406,8 +1350,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1419,7 +1361,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -1456,8 +1398,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1469,7 +1409,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -1506,8 +1446,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1519,7 +1457,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -1556,8 +1494,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1569,7 +1505,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -1606,8 +1542,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1619,7 +1553,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -1656,8 +1590,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1669,7 +1601,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -1706,8 +1638,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1719,7 +1649,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -1756,8 +1686,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1769,7 +1697,7 @@ exports[`Select List component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -1806,8 +1734,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1819,7 +1745,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -1856,8 +1782,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1869,7 +1793,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -1906,8 +1830,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1919,7 +1841,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -1956,8 +1878,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1969,7 +1889,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -2006,8 +1926,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2019,7 +1937,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -2056,8 +1974,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2069,7 +1985,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -2106,8 +2022,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2119,7 +2033,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -2156,8 +2070,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2169,7 +2081,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -2206,8 +2118,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2219,7 +2129,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -2256,8 +2166,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2269,7 +2177,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -2306,8 +2214,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2319,7 +2225,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -2356,8 +2262,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2369,7 +2273,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -2406,8 +2310,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2419,7 +2321,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -2456,8 +2358,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2469,7 +2369,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -2506,8 +2406,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2519,7 +2417,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -2556,8 +2454,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2569,7 +2465,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -2606,8 +2502,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2619,7 +2513,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -2656,8 +2550,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2669,7 +2561,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -2706,8 +2598,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2719,7 +2609,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -2756,8 +2646,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2769,7 +2657,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -2806,8 +2694,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2819,7 +2705,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -2856,8 +2742,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2869,7 +2753,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -2906,8 +2790,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2919,7 +2801,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -2956,8 +2838,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2969,7 +2849,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -3006,8 +2886,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3019,7 +2897,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -3056,8 +2934,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3069,7 +2945,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -3106,8 +2982,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3119,7 +2993,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -3156,8 +3030,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3169,7 +3041,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -3206,8 +3078,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3219,7 +3089,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -3256,8 +3126,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3269,7 +3137,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -3306,8 +3174,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3319,7 +3185,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -3356,8 +3222,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3369,7 +3233,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -3406,8 +3270,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3419,7 +3281,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -3456,8 +3318,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3469,7 +3329,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -3506,8 +3366,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3519,7 +3377,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -3556,8 +3414,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3569,7 +3425,7 @@ exports[`Select Option component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -3606,8 +3462,6 @@ exports[`Select component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3619,7 +3473,7 @@ exports[`Select component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"
@@ -3656,8 +3510,6 @@ exports[`Select component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3669,7 +3521,7 @@ exports[`Select component snapshots
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
           style="width: 176px;"

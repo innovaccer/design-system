@@ -149,6 +149,7 @@ export const Pagination = (props: PaginationProps) => {
             value={`${isNaturalNumber(page) ? page : ''}`}
             data-test="DesignSystem-Pagination--Input"
             onKeyPress={onKeyPressHandler}
+            aria-label={`Page ${isNaturalNumber(page) ? page : ''} of ${totalPages}`}
           />
           <Text>{` of ${totalPages} pages`}</Text>
         </div>

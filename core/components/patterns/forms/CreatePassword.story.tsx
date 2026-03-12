@@ -76,24 +76,25 @@ const customCode = `
     renderRequirements() {
 
       return (
-        <div>
+        <ul className="list-style-none pl-0">
           {
             passwordRequirements.map((item, index) => {
               const { validation, key } = item;
 
               return (
-                <div className="d-flex mb-4 align-items-center" key={index}>
+                <li className="d-flex mb-4 align-items-center" key={index}>
                   <Icon
                     className="mr-4"
                     name={this.state.validations[key] ? 'check_circle' : 'fiber_manual_record'}
                     appearance={this.state.validations[key] ? 'success' : 'default'}
+                    aria-hidden="true"
                   />
                   <Text>{validation}</Text>
-                </div>
+                </li>
               );
             })
           }
-        </div>
+        </ul>
       )
     }
 
@@ -112,7 +113,7 @@ const customCode = `
             <form onSubmit={this.onSubmit}>
               <Label withInput={true}>Password</Label>
               <Input
-                name="input"
+                name="password"
                 className="mb-4"
                 placeholder="Enter password"
                 type={this.state.passwordVisible ? 'text' : 'password'}
@@ -122,6 +123,7 @@ const customCode = `
                 actionIcon={(
                   <Icon
                     name={this.state.passwordVisible ? 'visibility' : 'visibility_off'}
+                    aria-label={this.state.passwordVisible ? 'Hide password' : 'Show password'}
                     onClick={() => this.setState({ passwordVisible: !passwordVisible })}
                   />
                 )}
@@ -129,7 +131,7 @@ const customCode = `
               {this.renderRequirements()}
               <Label withInput={true} className="mt-6">Confirm Password</Label>
               <Input
-                name="input"
+                name="confirmPassword"
                 placeholder="Enter password"
                 type={this.state.confirmPasswordVisible ? 'text' : 'password'}
                 value={this.state.confirmPassword}
@@ -138,6 +140,7 @@ const customCode = `
                 actionIcon={(
                   <Icon
                     name={this.state.confirmPasswordVisible ? 'visibility' : 'visibility_off'}
+                    aria-label={this.state.confirmPasswordVisible ? 'Hide confirm password' : 'Show confirm password'}
                     onClick={() => this.setState({ confirmPasswordVisible: !confirmPasswordVisible })}
                   />
                 )}
