@@ -31,7 +31,7 @@ export const controlledInput = () => {
           value={value}
           type="text"
           placeholder="Placeholder"
-          actionIcon={<Input.ActionButton name="visibility_off" />}
+          actionIcon={<Input.ActionButton name="visibility_off" className="p-3" />}
           onChange={handleParentChange}
         />
       </Column>
@@ -80,7 +80,7 @@ const customCode = `() => {
             }}
             name={visibility ? 'visibility_on' : 'visibility_off'}
             aria-label={visibility ? 'Show Password' : 'Hide Password'}
-            className="cursor-pointer"
+            className="cursor-pointer p-3"
           />
         }
         onChange={handleParentChange}

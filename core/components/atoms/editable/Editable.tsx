@@ -49,6 +49,7 @@ export const Editable = (props: EditableProps) => {
     if (!isWrapperFocused || !isEditTriggerKey) return;
 
     event.preventDefault();
+
     onChange('edit');
   };
 

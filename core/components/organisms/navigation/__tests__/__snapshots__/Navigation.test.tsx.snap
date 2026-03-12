@@ -392,7 +392,8 @@ Object {
       <div
         class="Navigation Navigation--vertical Navigation--collapsed"
       >
-        <div
+        <nav
+          aria-label="Vertical navigation"
           class="Navigation-body"
         >
           <div
@@ -443,7 +444,7 @@ Object {
               class="Navigation-subMenu"
             />
           </div>
-        </div>
+        </nav>
       </div>
     </div>
   </body>,
@@ -451,7 +452,8 @@ Object {
     <div
       class="Navigation Navigation--vertical Navigation--collapsed"
     >
-      <div
+      <nav
+        aria-label="Vertical navigation"
         class="Navigation-body"
       >
         <div
@@ -502,7 +504,7 @@ Object {
             class="Navigation-subMenu"
           />
         </div>
-      </div>
+      </nav>
     </div>
   </div>,
   "debug": [Function],

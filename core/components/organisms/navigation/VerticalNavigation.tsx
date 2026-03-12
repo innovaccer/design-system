@@ -71,10 +71,14 @@ export interface VerticalNavigationProps {
    * Only one SubMenu visible at a time**(applicable only for type: `vertical`)**
    */
   autoCollapse: boolean;
+  /**
+   * Accessible label for vertical navigation landmark
+   */
+  'aria-label'?: string;
 }
 
 export const VerticalNavigation = (props: VerticalNavigationProps) => {
-  const { menus, active, onClick, expanded, rounded, onToggle, footer, autoCollapse } = props;
+  const { menus, active, onClick, expanded, rounded, onToggle, footer, autoCollapse, 'aria-label': ariaLabel } = props;
 
   const [menuState, setMenuState] = useState<Record<string, boolean>>({});
 
@@ -229,7 +233,9 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
 
   return (
     <>
-      <div className={styles['Navigation-body']}>{list}</div>
+      <nav className={styles['Navigation-body']} aria-label={ariaLabel}>
+        {list}
+      </nav>
       {footer && (
         <div className={footerClasses}>
           <Icon className={IconClassName} name="menu_open" size={16} onClick={() => onToggle && onToggle(!expanded)} />
@@ -243,6 +249,7 @@ VerticalNavigation.defaultProps = {
   expanded: true,
   autoCollapse: true,
   rounded: false,
+  'aria-label': 'Vertical navigation',
 };
 
 export default VerticalNavigation;

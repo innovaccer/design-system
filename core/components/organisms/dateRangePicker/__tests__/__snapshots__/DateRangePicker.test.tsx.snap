@@ -40006,7 +40006,7 @@ exports[`DateRangePicker component
                 class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right"
+                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -40068,7 +40068,7 @@ exports[`DateRangePicker component
                 class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right"
+                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -40149,7 +40149,7 @@ exports[`DateRangePicker component
                 class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right"
+                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -40211,7 +40211,7 @@ exports[`DateRangePicker component
                 class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right"
+                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -40292,7 +40292,7 @@ exports[`DateRangePicker component
                 class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right"
+                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -40354,7 +40354,7 @@ exports[`DateRangePicker component
                 class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right"
+                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -41520,7 +41520,7 @@ exports[`DateRangePicker component
                 class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right"
+                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -41582,7 +41582,7 @@ exports[`DateRangePicker component
                 class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right"
+                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -41663,7 +41663,7 @@ exports[`DateRangePicker component
                 class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right"
+                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -41725,7 +41725,7 @@ exports[`DateRangePicker component
                 class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right"
+                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -41806,7 +41806,7 @@ exports[`DateRangePicker component
                 class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right"
+                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -41868,7 +41868,7 @@ exports[`DateRangePicker component
                 class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right"
+                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -43034,7 +43034,7 @@ exports[`DateRangePicker component
                 class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right"
+                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -43096,7 +43096,7 @@ exports[`DateRangePicker component
                 class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right"
+                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -44165,7 +44165,7 @@ exports[`DateRangePicker component
                 class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right"
+                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -44227,7 +44227,7 @@ exports[`DateRangePicker component
                 class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right"
+                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -45296,7 +45296,7 @@ exports[`DateRangePicker component
                 class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right"
+                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -45358,7 +45358,7 @@ exports[`DateRangePicker component
                 class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right"
+                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -47512,7 +47512,7 @@ exports[`DateRangePicker component
                 class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right"
+                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -47574,7 +47574,7 @@ exports[`DateRangePicker component
                 class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right"
+                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -48643,7 +48643,7 @@ exports[`DateRangePicker component
                 class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right"
+                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -48705,7 +48705,7 @@ exports[`DateRangePicker component
                 class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right"
+                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -49774,7 +49774,7 @@ exports[`DateRangePicker component
                 class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right"
+                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -49836,7 +49836,7 @@ exports[`DateRangePicker component
                 class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right"
+                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
