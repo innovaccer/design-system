@@ -156,11 +156,12 @@ export const TimePickerWithSearch = (props: TimePickerDropdownProps) => {
     if (!openPopover) {
       setSearchTerm('');
       setFetchedOptions([]);
-      if (fetchTimeOptions) setIsFetchMode(true);
+      setIsFetchMode(false);
       return;
     }
 
     if (fetchTimeOptions) {
+      setIsFetchMode(true);
       fetchTimeOptions('').then((result) => {
         setFetchedOptions(result.options);
       });
