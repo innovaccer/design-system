@@ -5,14 +5,16 @@ import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/u
 import { TimePickerProps as Props } from '@/index.type';
 import { convert12To24HourFormat } from '../utility/timePickerUtility';
 
-const optionID = 'DesignSystem-DropdownOption--DEFAULT';
-const trigger = 'DesignSystem-DropdownTrigger';
+window.HTMLElement.prototype.scrollIntoView = jest.fn();
+
+const optionID = 'DesignSystem-Select-Option';
+const trigger = 'DesignSystem-Select-trigger';
 const startTime = '05:00 AM';
 const endTime = '11:00 PM';
 const FunctionValue = jest.fn();
 const booleanValue = [true, false];
 const timeFormat = ['12-Hour', '24-Hour'];
-const activeOptionClass = 'Option--active';
+const activeOptionAttr = 'data-active';
 
 const fetchOption = () => {
   return new Promise<any>((resolve) => {
@@ -194,12 +196,12 @@ describe('TimePicker with disabled option list ', () => {
         disabledSlotList={['05:15 AM', '05:30 AM']}
       />
     );
-    const dropdownTrigger = getByTestId(trigger);
-    fireEvent.click(dropdownTrigger);
+    const selectTrigger = getByTestId(trigger);
+    fireEvent.click(selectTrigger);
     await waitFor(() => {
       const optionList = getAllByTestId(optionID);
-      expect(optionList[1]).toHaveClass('Option--disabled');
-      expect(getAllByTestId('DesignSystem-Text')[2]).toHaveClass('color-inverse-lightest');
+      const disabledWrapper = optionList[1].querySelector('[data-disabled="true"]');
+      expect(disabledWrapper).toBeInTheDocument();
     });
   });
 });
@@ -267,8 +269,8 @@ describe('TimePicker list for different interval', () => {
 describe('TimePicker fetchOption list', () => {
   it('check for fetchTimeOptions prop', async () => {
     const { getByTestId, getAllByTestId } = render(<TimePicker withSearch={true} fetchTimeOptions={fetchOption} />);
-    const dropdownTrigger = getByTestId(trigger);
-    fireEvent.click(dropdownTrigger);
+    const selectTrigger = getByTestId(trigger);
+    fireEvent.click(selectTrigger);
     await waitFor(() => {
       const optionList = getAllByTestId(optionID);
       expect(optionList[0]).toHaveTextContent('10:00 AM');
@@ -278,14 +280,15 @@ describe('TimePicker fetchOption list', () => {
 
 describe('TimePicker Event Handlers', () => {
   it('check for onChange prop', async () => {
-    const { getByTestId } = render(
+    const { getByTestId, getAllByTestId } = render(
       <TimePicker onChange={FunctionValue} withSearch={true} fetchTimeOptions={fetchOption} />
     );
-    const dropdownTrigger = getByTestId(trigger);
+    const selectTrigger = getByTestId(trigger);
 
-    fireEvent.click(dropdownTrigger);
+    fireEvent.click(selectTrigger);
     await waitFor(() => {
-      fireEvent.click(getByTestId('DesignSystem-Text'));
+      const optionList = getAllByTestId(optionID);
+      fireEvent.click(optionList[0]);
       expect(FunctionValue).toHaveBeenCalled();
     });
   });
@@ -294,16 +297,16 @@ describe('TimePicker Event Handlers', () => {
 describe('TimePicker Search Error Handlers', () => {
   it('check for five digit search query in 12 hour format', async () => {
     const { getByTestId } = render(<TimePicker withSearch={true} noResultMessage="No result found" />);
-    const dropdownTrigger = getByTestId(trigger);
+    const selectTrigger = getByTestId(trigger);
 
-    fireEvent.click(dropdownTrigger);
-    const searchInput = getByTestId('DesignSystem-Input');
+    fireEvent.click(selectTrigger);
+    const searchInput = getByTestId('DesignSystem-Select--Input');
     expect(searchInput).toBeInTheDocument();
-    fireEvent.input(searchInput, { target: { value: '123456' } });
+    fireEvent.change(searchInput, { target: { value: '123456' } });
 
     await waitFor(() => {
-      expect(getByTestId('DesignSystem-Dropdown--errorWrapper')).toBeInTheDocument();
-      expect(getByTestId('DesignSystem-Dropdown--errorWrapper')).toHaveTextContent('No result found');
+      expect(getByTestId('DesignSystem-Select-EmptyState--wrapper')).toBeInTheDocument();
+      expect(getByTestId('DesignSystem-Select-EmptyState--wrapper')).toHaveTextContent('No result found');
     });
   });
 
@@ -311,16 +314,16 @@ describe('TimePicker Search Error Handlers', () => {
     const { getByTestId } = render(
       <TimePicker startTime={startTime} endTime={endTime} withSearch={true} noResultMessage="No result found" />
     );
-    const dropdownTrigger = getByTestId(trigger);
+    const selectTrigger = getByTestId(trigger);
 
-    fireEvent.click(dropdownTrigger);
-    const searchInput = getByTestId('DesignSystem-Input');
+    fireEvent.click(selectTrigger);
+    const searchInput = getByTestId('DesignSystem-Select--Input');
     expect(searchInput).toBeInTheDocument();
-    fireEvent.input(searchInput, { target: { value: 'abc:;' } });
+    fireEvent.change(searchInput, { target: { value: 'abc:;' } });
 
     await waitFor(() => {
-      expect(getByTestId('DesignSystem-Dropdown--errorWrapper')).toBeInTheDocument();
-      expect(getByTestId('DesignSystem-Dropdown--errorWrapper')).toHaveTextContent('No result found');
+      expect(getByTestId('DesignSystem-Select-EmptyState--wrapper')).toBeInTheDocument();
+      expect(getByTestId('DesignSystem-Select-EmptyState--wrapper')).toHaveTextContent('No result found');
     });
   });
 
@@ -328,16 +331,16 @@ describe('TimePicker Search Error Handlers', () => {
     const { getByTestId } = render(
       <TimePicker startTime={startTime} endTime={endTime} withSearch={true} noResultMessage="Invalid Time" />
     );
-    const dropdownTrigger = getByTestId(trigger);
+    const selectTrigger = getByTestId(trigger);
 
-    fireEvent.click(dropdownTrigger);
-    const searchInput = getByTestId('DesignSystem-Input');
+    fireEvent.click(selectTrigger);
+    const searchInput = getByTestId('DesignSystem-Select--Input');
     expect(searchInput).toBeInTheDocument();
-    fireEvent.input(searchInput, { target: { value: 'abc:;' } });
+    fireEvent.change(searchInput, { target: { value: 'abc:;' } });
 
     await waitFor(() => {
-      expect(getByTestId('DesignSystem-Dropdown--errorWrapper')).toBeInTheDocument();
-      expect(getByTestId('DesignSystem-Dropdown--errorWrapper')).toHaveTextContent('Invalid Time');
+      expect(getByTestId('DesignSystem-Select-EmptyState--wrapper')).toBeInTheDocument();
+      expect(getByTestId('DesignSystem-Select-EmptyState--wrapper')).toHaveTextContent('Invalid Time');
     });
   });
 });
@@ -370,17 +373,17 @@ describe('TimePicker Search when start/end time is given', () => {
       const { getByTestId, getAllByTestId } = render(
         <TimePicker startTime={startTime} endTime={endTime} withSearch={true} />
       );
-      const dropdownTrigger = getByTestId(trigger);
+      const selectTrigger = getByTestId(trigger);
 
-      fireEvent.click(dropdownTrigger);
-      const searchInput = getByTestId('DesignSystem-Input');
+      fireEvent.click(selectTrigger);
+      const searchInput = getByTestId('DesignSystem-Select--Input');
       expect(searchInput).toBeInTheDocument();
-      fireEvent.input(searchInput, { target: { value: testCase.searchTime } });
+      fireEvent.change(searchInput, { target: { value: testCase.searchTime } });
 
       await waitFor(() => {
         const optionList = getAllByTestId(optionID);
         expect(optionList[testCase.resultIndex]).toHaveTextContent(testCase.result);
-        expect(optionList[testCase.resultIndex]).toHaveClass(activeOptionClass);
+        expect(optionList[testCase.resultIndex]).toHaveAttribute(activeOptionAttr);
       });
     });
 
@@ -388,19 +391,19 @@ describe('TimePicker Search when start/end time is given', () => {
       const { getByTestId, getAllByTestId } = render(
         <TimePicker timeFormat="24-Hour" startTime={startTime} endTime={endTime} withSearch={true} />
       );
-      const dropdownTrigger = getByTestId(trigger);
+      const selectTrigger = getByTestId(trigger);
 
-      fireEvent.click(dropdownTrigger);
-      const searchInput = getByTestId('DesignSystem-Input');
+      fireEvent.click(selectTrigger);
+      const searchInput = getByTestId('DesignSystem-Select--Input');
       expect(searchInput).toBeInTheDocument();
-      fireEvent.input(searchInput, { target: { value: testCase.searchTime } });
+      fireEvent.change(searchInput, { target: { value: testCase.searchTime } });
 
       const result = convert12To24HourFormat(testCase.result);
 
       await waitFor(() => {
         const optionList = getAllByTestId(optionID);
         expect(optionList[testCase.resultIndex]).toHaveTextContent(result);
-        expect(optionList[testCase.resultIndex]).toHaveClass(activeOptionClass);
+        expect(optionList[testCase.resultIndex]).toHaveAttribute(activeOptionAttr);
       });
     });
   });
@@ -410,35 +413,35 @@ describe('TimePicker Search when start/end time is not given', () => {
   searchQueryWithoutTimeProp.forEach((testCase) => {
     it(`${testCase.desc} in 12 hour format`, async () => {
       const { getByTestId, getAllByTestId } = render(<TimePicker withSearch={true} />);
-      const dropdownTrigger = getByTestId(trigger);
+      const selectTrigger = getByTestId(trigger);
 
-      fireEvent.click(dropdownTrigger);
-      const searchInput = getByTestId('DesignSystem-Input');
+      fireEvent.click(selectTrigger);
+      const searchInput = getByTestId('DesignSystem-Select--Input');
       expect(searchInput).toBeInTheDocument();
-      fireEvent.input(searchInput, { target: { value: testCase.searchTime } });
+      fireEvent.change(searchInput, { target: { value: testCase.searchTime } });
 
       await waitFor(() => {
         const optionList = getAllByTestId(optionID);
         expect(optionList[testCase.resultIndex]).toHaveTextContent(testCase.result);
-        expect(optionList[testCase.resultIndex]).toHaveClass(activeOptionClass);
+        expect(optionList[testCase.resultIndex]).toHaveAttribute(activeOptionAttr);
       });
     });
 
     it(`${testCase.desc} in 24 hour format`, async () => {
       const { getByTestId, getAllByTestId } = render(<TimePicker timeFormat="24-Hour" withSearch={true} />);
-      const dropdownTrigger = getByTestId(trigger);
+      const selectTrigger = getByTestId(trigger);
 
-      fireEvent.click(dropdownTrigger);
-      const searchInput = getByTestId('DesignSystem-Input');
+      fireEvent.click(selectTrigger);
+      const searchInput = getByTestId('DesignSystem-Select--Input');
       expect(searchInput).toBeInTheDocument();
-      fireEvent.input(searchInput, { target: { value: testCase.searchTime } });
+      fireEvent.change(searchInput, { target: { value: testCase.searchTime } });
 
       const result = convert12To24HourFormat(testCase.result);
 
       await waitFor(() => {
         const optionList = getAllByTestId(optionID);
         expect(optionList[testCase.resultIndex]).toHaveTextContent(result);
-        expect(optionList[testCase.resultIndex]).toHaveClass(activeOptionClass);
+        expect(optionList[testCase.resultIndex]).toHaveAttribute(activeOptionAttr);
       });
     });
   });
@@ -449,12 +452,12 @@ describe('TimePicker Search when current time is in AM', () => {
 
   it('check for one digit search query', async () => {
     const { getByTestId, getAllByTestId } = render(<TimePicker withSearch={true} />);
-    const dropdownTrigger = getByTestId(trigger);
+    const selectTrigger = getByTestId(trigger);
 
-    fireEvent.click(dropdownTrigger);
-    const searchInput = getByTestId('DesignSystem-Input');
+    fireEvent.click(selectTrigger);
+    const searchInput = getByTestId('DesignSystem-Select--Input');
     expect(searchInput).toBeInTheDocument();
-    fireEvent.input(searchInput, { target: { value: '5' } });
+    fireEvent.change(searchInput, { target: { value: '5' } });
 
     await waitFor(() => {
       const optionList = getAllByTestId(optionID);
@@ -466,8 +469,8 @@ describe('TimePicker Search when current time is in AM', () => {
 });
 
 describe('TimePicker Search with error state true', () => {
-  it('renders with DropdownButton--error class', () => {
+  it('renders with Select-trigger--error class', () => {
     const { getByTestId } = render(<TimePicker withSearch={true} error={true} />);
-    expect(getByTestId('DesignSystem-DropdownTrigger')).toHaveClass('DropdownButton--error');
+    expect(getByTestId('DesignSystem-Select-trigger')).toHaveClass('Select-trigger--error');
   });
 });
