@@ -39892,7 +39892,7 @@ exports[`DateRangePicker component
               data-test="DesignSystem-Calendar--yearValue"
             >
               <span
-                class="Text Text--regular color-primary Calendar-value--currDate Calendar-text"
+                class="Text Text--regular color-primary-dark Calendar-value--currDate Calendar-text"
                 data-test="DesignSystem-Text"
               >
                 2024
@@ -41406,7 +41406,7 @@ exports[`DateRangePicker component
               data-test="DesignSystem-Calendar--yearValue"
             >
               <span
-                class="Text Text--small color-primary Calendar-value--currDate Calendar-text"
+                class="Text Text--small color-primary-dark Calendar-value--currDate Calendar-text"
                 data-test="DesignSystem-Text"
               >
                 2024
@@ -42920,7 +42920,7 @@ exports[`DateRangePicker component
               data-test="DesignSystem-Calendar--yearValue"
             >
               <span
-                class="Text Text--regular color-primary Calendar-value--currDate Calendar-text"
+                class="Text Text--regular color-primary-dark Calendar-value--currDate Calendar-text"
                 data-test="DesignSystem-Text"
               >
                 2024
@@ -47398,7 +47398,7 @@ exports[`DateRangePicker component
               data-test="DesignSystem-Calendar--yearValue"
             >
               <span
-                class="Text Text--small color-primary Calendar-value--currDate Calendar-text"
+                class="Text Text--small color-primary-dark Calendar-value--currDate Calendar-text"
                 data-test="DesignSystem-Text"
               >
                 2024
