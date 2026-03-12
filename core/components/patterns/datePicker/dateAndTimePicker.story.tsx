@@ -22,23 +22,26 @@ const customCode = `
       });
     }
 
-    onPopperToggle(val) {
+    onToggleHandler(val) {
       this.setState({
         open: val
       });
     }
 
-    onChangeHandler(selected) {
+    onSelectHandler(option) {
       this.setState({
-        time: selected
+        time: option ? option.value : undefined
       });
     }
 
     render() {
       const timeValues = ['10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM', '01:00 PM', '01:30 PM'];
       const {
-        open
+        open,
+        time
       } = this.state;
+
+      const selectedValue = time ? { label: time, value: time } : undefined;
 
       console.log("Date", this.state.date, "Time", this.state.time);
 
@@ -53,12 +56,20 @@ const customCode = `
           </div>
           <div className="d-flex flex-column ml-5" style={{width: 'var(--spacing-440)'}}>
             <Label withInput>Time</Label>
-            <Dropdown
-              open={open}
-              onPopperToggle={this.onPopperToggle.bind(this)}
-              options={timeValues.map(value => ({label: value, value}))}
-              onChange={this.onChangeHandler.bind(this)}
-            />
+            <Select
+              width="100%"
+              onSelect={this.onSelectHandler.bind(this)}
+              value={selectedValue}
+              onToggle={this.onToggleHandler.bind(this)}
+            >
+              <Select.List>
+                {timeValues.map((value) => (
+                  <Select.Option key={value} option={{ label: value, value }}>
+                    {value}
+                  </Select.Option>
+                ))}
+              </Select.List>
+            </Select>
           </div>
         </div>
       );

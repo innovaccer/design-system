@@ -1,16 +1,21 @@
 import * as React from 'react';
-import { Dropdown } from '@/index';
+import { Select } from '@/index';
+import { OptionType } from '@/common.type';
 import { BaseProps } from '@/utils/types';
 import { getScrollIndex } from './utility/searchUtils';
-import { OptionSchema } from '@/components/atoms/dropdown/option';
-import { scrollToOptionIndex } from '@/components/atoms/dropdown/utility';
 import { getDropdownOptionList, isFormat12Hour, convert24To12HourFormat } from './utility/timePickerUtility';
+
+type SelectOptionItem = {
+  label: string;
+  value: string;
+  disabled?: boolean;
+};
 
 type fetchOptionsFunction = (searchTerm: string) => Promise<{
   count: number;
   searchTerm?: string;
   scrollToIndex?: number;
-  options: OptionSchema[];
+  options: SelectOptionItem[];
 }>;
 
 export type TimeFormat = '12-Hour' | '24-Hour';
@@ -60,23 +65,18 @@ export interface TimePickerDropdownProps extends BaseProps {
    * Callback function to fetch options list from API based on search term
    *
    * <pre className="DocPage-codeBlock p-4">
-   * fetchOptionsFunction: (searchTerm: string) => Promise<{
+   * fetchOptionsFunction: (searchTerm: string) => Promise&lt;{
    *      searchTerm?: string;
    *      count: number,
-   *      options: OptionSchema[];
+   *      options: SelectOptionItem[];
    *      scrollToIndex?: number;
-   * }>;
+   * }&gt;;
    * <br/> <br/>
    *
-   * OptionSchema: {
+   * SelectOptionItem: {
    *   label: string;
-   *   value: React.ReactText;
-   *   icon?: string;
-   *   subInfo?: string | [MetaListProps]
-   *   optionType?: OptionType;
-   *   selected?: boolean;
+   *   value: string;
    *   disabled?: boolean;
-   *   group?: string;
    * }
    * </pre>
    *
@@ -107,91 +107,157 @@ export const TimePickerWithSearch = (props: TimePickerDropdownProps) => {
     error,
   } = props;
 
-  const [tabIndex, setTabIndex] = React.useState(0);
   const [openPopover, setOpenPopover] = React.useState(false);
   const [selectedIndex, setSelectedIndex] = React.useState(-1);
+  const [searchTerm, setSearchTerm] = React.useState('');
   const [counter, setCounter] = React.useState(0);
+  const [fetchedOptions, setFetchedOptions] = React.useState<SelectOptionItem[]>([]);
+  const [isFetchMode, setIsFetchMode] = React.useState(false);
 
-  const dropdownOptionList = getDropdownOptionList(props);
+  const listRef = React.useRef<HTMLDivElement>(null);
+
+  const dropdownOptionList = React.useMemo(
+    () => getDropdownOptionList(props),
+    [startTime, endTime, interval, timeFormat, showDuration, disabledSlotList, counter]
+  );
+
+  const activeOptions = isFetchMode ? fetchedOptions : dropdownOptionList;
+
+  const scrollIndex = React.useMemo(() => {
+    if (searchTerm === '' && selectedIndex !== -1) {
+      return selectedIndex;
+    }
+    return getScrollIndex(dropdownOptionList, searchTerm);
+  }, [searchTerm, selectedIndex, dropdownOptionList]);
 
   React.useEffect(() => {
-    open !== undefined && setOpenPopover(open);
+    if (open !== undefined) setOpenPopover(open);
   }, [open]);
 
   React.useEffect(() => {
-    let timer: any;
-
-    if (openPopover && selectedIndex != -1) {
-      setTabIndex(selectedIndex);
-
-      timer = setTimeout(() => {
-        scrollToOptionIndex(selectedIndex, dropdownOptionList);
-      }, 100);
-    }
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [openPopover]);
-
-  // Required to re-render dropdown forcefully whenever props changes
-  React.useEffect(() => {
-    setCounter(counter + 1);
+    setCounter((c) => c + 1);
   }, [startTime, endTime, interval, showDuration, disabledSlotList]);
 
-  const onChangeHandler = (props: string) => {
-    let time = props;
+  React.useEffect(() => {
+    if (fetchTimeOptions) {
+      setIsFetchMode(true);
+      fetchTimeOptions(searchTerm).then((result) => {
+        setFetchedOptions(result.options);
+      });
+    }
+  }, [searchTerm, fetchTimeOptions]);
+
+  React.useEffect(() => {
+    if (!openPopover) {
+      setSearchTerm('');
+      setFetchedOptions([]);
+      if (fetchTimeOptions) setIsFetchMode(true);
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      scrollToIndex(selectedIndex !== -1 ? selectedIndex : scrollIndex);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [openPopover]);
+
+  React.useEffect(() => {
+    if (openPopover && scrollIndex >= 0) {
+      const timer = setTimeout(() => scrollToIndex(scrollIndex), 50);
+      return () => clearTimeout(timer);
+    }
+  }, [scrollIndex]);
+
+  const scrollToIndex = (index: number) => {
+    if (index < 0 || !listRef.current) return;
+    const items = listRef.current.querySelectorAll('[role="option"]');
+    if (items[index]) {
+      items[index].scrollIntoView({ block: 'center' });
+    }
+  };
+
+  const onSelectHandler = (option?: OptionType | OptionType[]) => {
+    if (!option || Array.isArray(option)) return;
+
+    let time = option.value as string;
 
     if (isFormat12Hour(timeFormat)) {
       time = convert24To12HourFormat(time);
     }
 
-    const selectIndex = dropdownOptionList.findIndex((option) => option.value === props);
-    setSelectedIndex(selectIndex);
+    const selectIdx = dropdownOptionList.findIndex((opt) => opt.value === option.value);
+    setSelectedIndex(selectIdx);
+    setOpenPopover(false);
     onChange && onChange(time);
   };
 
-  const getOptionList = (searchTerm: string) => {
-    let scrollIndex;
-    const indexValue = getScrollIndex(dropdownOptionList, searchTerm);
+  const onSearchChange = (value?: string) => {
+    const term = value || '';
+    setSearchTerm(term);
 
-    if (searchTerm === '' && selectedIndex != -1) {
-      scrollIndex = selectedIndex;
-      setTabIndex(selectedIndex);
-    } else {
-      scrollIndex = indexValue;
-      setTabIndex(indexValue);
+    if (!fetchTimeOptions) {
+      const idx = getScrollIndex(dropdownOptionList, term);
+      setIsFetchMode(idx === -1);
     }
-
-    return Promise.resolve({
-      options: indexValue === -1 ? [] : dropdownOptionList,
-      count: dropdownOptionList.length,
-      scrollToIndex: scrollIndex === 0 ? scrollIndex + 1 : scrollIndex,
-      searchTerm,
-    });
   };
 
-  const fetchOptionList = () => {
-    return fetchTimeOptions ? fetchTimeOptions : getOptionList;
+  const onSearchClear = () => {
+    setSearchTerm('');
+    setIsFetchMode(false);
   };
+
+  const showEmptyState = !fetchTimeOptions
+    ? getScrollIndex(dropdownOptionList, searchTerm) === -1 && searchTerm !== ''
+    : isFetchMode && fetchedOptions.length === 0 && searchTerm !== '';
+
+  const selectedValue =
+    selectedIndex >= 0 && dropdownOptionList[selectedIndex]
+      ? { label: dropdownOptionList[selectedIndex].label, value: dropdownOptionList[selectedIndex].value }
+      : undefined;
 
   return (
-    <Dropdown
+    <Select
       key={counter}
+      onSelect={onSelectHandler}
       maxHeight={160}
-      loadersCount={0}
-      withSearch={true}
-      open={openPopover}
-      tabIndex={tabIndex}
-      searchPlaceholder="Search"
-      onChange={onChangeHandler}
-      fetchOptions={fetchOptionList()}
-      noResultMessage={noResultMessage}
-      staticLimit={dropdownOptionList.length}
-      onPopperToggle={() => {
-        setOpenPopover(!openPopover);
-      }}
+      value={selectedValue}
       error={error}
-    />
+      width="100%"
+      triggerOptions={{
+        placeholder: 'Select',
+      }}
+      onToggle={(isOpen) => setOpenPopover(isOpen)}
+    >
+      <Select.SearchInput placeholder="Search" value={searchTerm} onChange={onSearchChange} onClear={onSearchClear} />
+
+      {showEmptyState ? (
+        <Select.EmptyTemplate
+          title={noResultMessage || 'No result found'}
+          data-test="DesignSystem-Select-EmptyState--wrapper"
+        />
+      ) : (
+        <div ref={listRef}>
+          <Select.List>
+            {activeOptions.map((option, index) => {
+              const isActive = index === scrollIndex && searchTerm !== '';
+
+              return (
+                <Select.Option
+                  key={`${option.value}-${index}`}
+                  option={{ label: option.label, value: option.value }}
+                  disabled={option.disabled}
+                  data-test="DesignSystem-Select-Option"
+                  data-active={isActive || undefined}
+                >
+                  {option.label}
+                </Select.Option>
+              );
+            })}
+          </Select.List>
+        </div>
+      )}
+    </Select>
   );
 };
 

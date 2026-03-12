@@ -6,25 +6,31 @@ exports[`TimePicker component snapshots renders snapshot for all props
 <body>
   <div>
     <div
-      class="Dropdown"
-      role="presentation"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 100%;"
     >
       
       <div
-        class="PopperWrapper-trigger w-100"
+        class="PopperWrapper-trigger d-block"
       >
         <button
-          class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
-          data-test="DesignSystem-DropdownTrigger"
+          aria-controls="select-listbox-Test-uid"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-label="trigger"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          style="width: 100%;"
           tabindex="0"
           type="button"
-          value=""
         >
           <div
-            class="DropdownButton-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular DropdownButton-text"
+              class="Text Text--regular Select-trigger--text"
             >
               Select
             </span>
@@ -50,25 +56,31 @@ exports[`TimePicker component snapshots renders snapshot for all props
 <body>
   <div>
     <div
-      class="Dropdown"
-      role="presentation"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 100%;"
     >
       
       <div
-        class="PopperWrapper-trigger w-100"
+        class="PopperWrapper-trigger d-block"
       >
         <button
-          class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--error"
-          data-test="DesignSystem-DropdownTrigger"
+          aria-controls="select-listbox-Test-uid"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-label="trigger"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled Select-trigger--error"
+          data-test="DesignSystem-Select-trigger"
+          style="width: 100%;"
           tabindex="0"
           type="button"
-          value=""
         >
           <div
-            class="DropdownButton-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular DropdownButton-text"
+              class="Text Text--regular Select-trigger--text"
             >
               Select
             </span>
@@ -94,25 +106,31 @@ exports[`TimePicker component snapshots renders snapshot for all props
 <body>
   <div>
     <div
-      class="Dropdown"
-      role="presentation"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 100%;"
     >
       
       <div
-        class="PopperWrapper-trigger w-100"
+        class="PopperWrapper-trigger d-block"
       >
         <button
-          class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
-          data-test="DesignSystem-DropdownTrigger"
+          aria-controls="select-listbox-Test-uid"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-label="trigger"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          style="width: 100%;"
           tabindex="0"
           type="button"
-          value=""
         >
           <div
-            class="DropdownButton-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular DropdownButton-text"
+              class="Text Text--regular Select-trigger--text"
             >
               Select
             </span>
@@ -138,25 +156,31 @@ exports[`TimePicker component snapshots renders snapshot for all props
 <body>
   <div>
     <div
-      class="Dropdown"
-      role="presentation"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 100%;"
     >
       
       <div
-        class="PopperWrapper-trigger w-100"
+        class="PopperWrapper-trigger d-block"
       >
         <button
-          class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--error"
-          data-test="DesignSystem-DropdownTrigger"
+          aria-controls="select-listbox-Test-uid"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-label="trigger"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled Select-trigger--error"
+          data-test="DesignSystem-Select-trigger"
+          style="width: 100%;"
           tabindex="0"
           type="button"
-          value=""
         >
           <div
-            class="DropdownButton-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular DropdownButton-text"
+              class="Text Text--regular Select-trigger--text"
             >
               Select
             </span>
@@ -182,25 +206,31 @@ exports[`TimePicker component snapshots renders snapshot for all props
 <body>
   <div>
     <div
-      class="Dropdown"
-      role="presentation"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 100%;"
     >
       
       <div
-        class="PopperWrapper-trigger w-100"
+        class="PopperWrapper-trigger d-block"
       >
         <button
-          class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
-          data-test="DesignSystem-DropdownTrigger"
+          aria-controls="select-listbox-Test-uid"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-label="trigger"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          style="width: 100%;"
           tabindex="0"
           type="button"
-          value=""
         >
           <div
-            class="DropdownButton-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular DropdownButton-text"
+              class="Text Text--regular Select-trigger--text"
             >
               Select
             </span>
@@ -226,25 +256,31 @@ exports[`TimePicker component snapshots renders snapshot for all props
 <body>
   <div>
     <div
-      class="Dropdown"
-      role="presentation"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 100%;"
     >
       
       <div
-        class="PopperWrapper-trigger w-100"
+        class="PopperWrapper-trigger d-block"
       >
         <button
-          class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--error"
-          data-test="DesignSystem-DropdownTrigger"
+          aria-controls="select-listbox-Test-uid"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-label="trigger"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled Select-trigger--error"
+          data-test="DesignSystem-Select-trigger"
+          style="width: 100%;"
           tabindex="0"
           type="button"
-          value=""
         >
           <div
-            class="DropdownButton-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular DropdownButton-text"
+              class="Text Text--regular Select-trigger--text"
             >
               Select
             </span>
@@ -270,25 +306,31 @@ exports[`TimePicker component snapshots renders snapshot for all props
 <body>
   <div>
     <div
-      class="Dropdown"
-      role="presentation"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 100%;"
     >
       
       <div
-        class="PopperWrapper-trigger w-100"
+        class="PopperWrapper-trigger d-block"
       >
         <button
-          class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
-          data-test="DesignSystem-DropdownTrigger"
+          aria-controls="select-listbox-Test-uid"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-label="trigger"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
+          data-test="DesignSystem-Select-trigger"
+          style="width: 100%;"
           tabindex="0"
           type="button"
-          value=""
         >
           <div
-            class="DropdownButton-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular DropdownButton-text"
+              class="Text Text--regular Select-trigger--text"
             >
               Select
             </span>
@@ -314,25 +356,31 @@ exports[`TimePicker component snapshots renders snapshot for all props
 <body>
   <div>
     <div
-      class="Dropdown"
-      role="presentation"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      data-test="DesignSystem-Select"
+      style="width: 100%;"
     >
       
       <div
-        class="PopperWrapper-trigger w-100"
+        class="PopperWrapper-trigger d-block"
       >
         <button
-          class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--error"
-          data-test="DesignSystem-DropdownTrigger"
+          aria-controls="select-listbox-Test-uid"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-label="trigger"
+          class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled Select-trigger--error"
+          data-test="DesignSystem-Select-trigger"
+          style="width: 100%;"
           tabindex="0"
           type="button"
-          value=""
         >
           <div
-            class="DropdownButton-wrapper"
+            class="Select-trigger-wrapper ellipsis--noWrap"
           >
             <span
-              class="Text Text--regular DropdownButton-text"
+              class="Text Text--regular Select-trigger--text"
             >
               Select
             </span>
