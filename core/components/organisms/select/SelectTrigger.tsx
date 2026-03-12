@@ -4,14 +4,16 @@ import { Icon, Text, Tooltip } from '@/index';
 import { IconType } from '@/common.type';
 import { SelectContext } from './SelectContext';
 import { handleKeyDownTrigger, computeValue } from './utils';
-import { BaseProps } from '@/utils/types';
+import { BaseProps, OmitNativeProps } from '@/utils/types';
 import selectStyles from '@css/components/select.module.css';
 import buttonStyles from '@css/components/button.module.css';
 import textStyles from '@css/components/text.module.css';
 
 export type SelectTriggerSize = 'small' | 'regular';
 
-export interface SelectTriggerProps extends BaseProps {
+export interface SelectTriggerProps
+  extends BaseProps,
+    OmitNativeProps<HTMLButtonElement, 'type' | 'value' | 'name' | 'form' | 'onKeyDown' | 'style' | 'tabIndex'> {
   /**
    * Specifies the size of the Select trigger button.
    * @default "regular"
@@ -79,7 +81,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     maxWidth,
     'aria-label': ariaLabelProp,
     ...rest
-  } = props as SelectTriggerProps & { 'aria-label'?: string };
+  } = props;
 
   const contextProp = React.useContext(SelectContext);
   const elementRef = React.useRef(null);
