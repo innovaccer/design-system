@@ -312,7 +312,7 @@ describe('Tabs component with prop:size', () => {
     it(`should have the Tab--${size} class when size=${size}`, () => {
       const { getByTestId } = render(
         <Tabs activeIndex={0} size={size}>
-          <Tab label="Tab(Recommended)" isDismissible={true} onDismiss={FunctionValue}></Tab>
+          <Tab label="Tab(Recommended)" onDismiss={FunctionValue}></Tab>
         </Tabs>
       );
       expect(getByTestId('DesignSystem-Tabs--TextWrapper')).toHaveClass(`Tab--${size}`);
