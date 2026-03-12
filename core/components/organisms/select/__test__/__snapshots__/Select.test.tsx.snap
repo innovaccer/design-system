@@ -36,7 +36,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -84,7 +83,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -132,7 +130,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -180,7 +177,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -228,7 +224,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -276,7 +271,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -324,7 +318,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -372,7 +365,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -420,7 +412,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -468,7 +459,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -516,7 +506,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -564,7 +553,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -612,7 +600,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -660,7 +647,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -708,7 +694,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -756,7 +741,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -804,7 +788,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -852,7 +835,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -900,7 +882,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -948,7 +929,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -996,7 +976,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -1044,7 +1023,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -1092,7 +1070,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -1140,7 +1117,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -1188,7 +1164,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -1236,7 +1211,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -1284,7 +1258,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -1332,7 +1305,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -1380,7 +1352,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -1428,7 +1399,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -1476,7 +1446,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -1524,7 +1493,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -1572,7 +1540,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -1620,7 +1587,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -1668,7 +1634,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -1716,7 +1681,6 @@ exports[`Select List component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -1764,7 +1728,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -1812,7 +1775,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -1860,7 +1822,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -1908,7 +1869,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -1956,7 +1916,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -2004,7 +1963,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -2052,7 +2010,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -2100,7 +2057,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -2148,7 +2104,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -2196,7 +2151,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -2244,7 +2198,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -2292,7 +2245,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -2340,7 +2292,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -2388,7 +2339,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -2436,7 +2386,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -2484,7 +2433,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -2532,7 +2480,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -2580,7 +2527,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -2628,7 +2574,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -2676,7 +2621,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -2724,7 +2668,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -2772,7 +2715,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -2820,7 +2762,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -2868,7 +2809,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -2916,7 +2856,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -2964,7 +2903,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -3012,7 +2950,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -3060,7 +2997,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -3108,7 +3044,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -3156,7 +3091,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -3204,7 +3138,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -3252,7 +3185,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -3300,7 +3232,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -3348,7 +3279,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -3396,7 +3326,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -3444,7 +3373,6 @@ exports[`Select Option component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -3492,7 +3420,6 @@ exports[`Select component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -3540,7 +3467,6 @@ exports[`Select component snapshots
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down

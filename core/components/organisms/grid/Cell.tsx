@@ -372,6 +372,7 @@ export const Cell = (props: CellProps) => {
     <div
       key={`${rowIndex}-${colIndex}`}
       className={cellClass}
+      role={!isHead ? 'cell' : undefined}
       draggable={isHead && draggable}
       onDragStart={(e) => {
         if (draggable) {

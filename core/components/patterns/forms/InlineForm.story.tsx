@@ -49,34 +49,36 @@ const customCode = `
             <form onSubmit={this.onSubmit}>
               <div className="d-flex flex-wrap">
                 <div className="mr-6 mb-6">
-                  <Label withInput={true}>Last Name</Label>
+                  <Label withInput={true} htmlFor="inline-form-lastName">Last Name</Label>
                   <Input
                     name="lastName"
+                    id="inline-form-lastName"
                     type="text"
                     placeholder="E.g. Doe, Smith, etc."
                     icon="person"
-                    autocomplete={'off'}
+                    autoComplete="family-name"
                     onChange={(event) => this.onChange(event.target.value, event.target.name)}
                   />
                 </div>
                 <div className="mr-6 mb-6">
-                  <Label withInput={true}>First Name</Label>
+                  <Label withInput={true} htmlFor="inline-form-firstName">First Name</Label>
                   <Input
                     name="firstName"
+                    id="inline-form-firstName"
                     type="text"
                     placeholder="E.g. John, Will, etc."
                     icon="person"
-                    autocomplete={'off'}
+                    autoComplete="given-name"
                     onChange={(event) => this.onChange(event.target.value, event.target.name)}
                   />
                 </div>
                 <div className="mr-6 mb-6" role="group" aria-label="Gender">
                   <Label withInput={true}>Gender</Label>
                   <div className="d-flex">
-                    <Button className="mr-3" onClick={() => this.onChange('Male', 'gender')}>Male</Button>
-                    <Button className="mr-3" onClick={() => this.onChange('Female', 'gender')}>Female</Button>
-                    <Button className="mr-3" onClick={() => this.onChange('Other', 'gender')}>Other</Button>
-                    <Button onClick={() => this.onChange('Unknown', 'gender')}>Unknown</Button>
+                    <Button className="mr-3" aria-pressed={this.state.data.gender === 'Male'} onClick={() => this.onChange('Male', 'gender')}>Male</Button>
+                    <Button className="mr-3" aria-pressed={this.state.data.gender === 'Female'} onClick={() => this.onChange('Female', 'gender')}>Female</Button>
+                    <Button className="mr-3" aria-pressed={this.state.data.gender === 'Other'} onClick={() => this.onChange('Other', 'gender')}>Other</Button>
+                    <Button aria-pressed={this.state.data.gender === 'Unknown'} onClick={() => this.onChange('Unknown', 'gender')}>Unknown</Button>
                   </div>
                 </div>
                 <div className="mr-6 mb-6" style={{ width: 'var(--spacing-640)' }}>
@@ -92,35 +94,38 @@ const customCode = `
                   />
                 </div>
                 <div className="mr-6 mb-6">
-                  <Label withInput={true}>EMPI</Label>
+                  <Label withInput={true} htmlFor="inline-form-empi">EMPI</Label>
                   <Input
                     name="empi"
+                    id="inline-form-empi"
                     type="text"
                     placeholder="P000000"
                     icon="fingerprint"
-                    autocomplete={'off'}
+                    autoComplete="off"
                     onChange={(event) => this.onChange(event.target.value, event.target.name)}
                   />
                 </div>
                 <div className="mr-6 mb-6">
-                  <Label withInput={true}>MRN</Label>
+                  <Label withInput={true} htmlFor="inline-form-mrn">MRN</Label>
                   <Input
                     name="mrn"
+                    id="inline-form-mrn"
                     type="text"
                     placeholder="Medical Record Number"
                     icon="account_box"
-                    autocomplete={'off'}
+                    autoComplete="off"
                     onChange={(event) => this.onChange(event.target.value, event.target.name)}
                   />
                 </div>
                 <div className="mr-6 mb-6">
-                  <Label withInput={true}>ZIP</Label>
+                  <Label withInput={true} htmlFor="inline-form-zip">ZIP</Label>
                   <Input
                     name="zip"
+                    id="inline-form-zip"
                     type="text"
                     placeholder="00000"
                     icon="location_on"
-                    autocomplete={'off'}
+                    autoComplete="postal-code"
                     onChange={(event) => this.onChange(event.target.value, event.target.name)}
                   />
                 </div>

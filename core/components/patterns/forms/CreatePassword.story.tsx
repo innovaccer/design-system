@@ -111,15 +111,16 @@ const customCode = `
         <div style={{ width: '350px' }}>
           <Card className="px-6 py-6">
             <form onSubmit={this.onSubmit}>
-              <Label withInput={true}>Password</Label>
+              <Label withInput={true} htmlFor="create-password-password">Password</Label>
               <Input
                 name="password"
+                id="create-password-password"
                 className="mb-4"
                 placeholder="Enter password"
                 type={this.state.passwordVisible ? 'text' : 'password'}
                 value={this.state.password}
                 onChange={this.onPasswordChange}
-                autocomplete="off"
+                autoComplete="new-password"
                 actionIcon={(
                   <Icon
                     name={this.state.passwordVisible ? 'visibility' : 'visibility_off'}
@@ -129,14 +130,15 @@ const customCode = `
                 )}
               />
               {this.renderRequirements()}
-              <Label withInput={true} className="mt-6">Confirm Password</Label>
+              <Label withInput={true} className="mt-6" htmlFor="create-password-confirm">Confirm Password</Label>
               <Input
                 name="confirmPassword"
+                id="create-password-confirm"
                 placeholder="Enter password"
                 type={this.state.confirmPasswordVisible ? 'text' : 'password'}
                 value={this.state.confirmPassword}
                 onChange={this.onConfirmPasswordChange}
-                autocomplete="off"
+                autoComplete="new-password"
                 actionIcon={(
                   <Icon
                     name={this.state.confirmPasswordVisible ? 'visibility' : 'visibility_off'}

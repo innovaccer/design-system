@@ -90,6 +90,7 @@ export const GridRow = (props: GridRowProps) => {
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
               onSelect(rI, event.target.checked);
             }}
+            aria-label={`Select row ${rI + 1}`}
           />
         )}
       </div>
@@ -149,7 +150,7 @@ export const GridRow = (props: GridRowProps) => {
     <div className={wrapperClasses} data-test="DesignSystem-Grid-rowWrapper">
       {/* TODO(a11y)  */}
       {/* eslint-disable-next-line */}
-      <div data-test="DesignSystem-Grid-row" className={rowClasses} onClick={onClickHandler} ref={rowRef}>
+      <div data-test="DesignSystem-Grid-row" className={rowClasses} role="row" onClick={onClickHandler} ref={rowRef}>
         {renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left')}
         {renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length)}
         {renderSchema(rightPinnedSchema, false, 'right')}

@@ -254,8 +254,8 @@ const customCode = `
                     }}
                   />
                 </div>
-                <Label className="mt-6" withInput={true} required>Retention</Label>
-                <Switch appearance="primary" defaultChecked={true} className="d-flex" />
+                <Label className="mt-6" withInput={true} required htmlFor="stepper-retention-switch">Retention</Label>
+                <Switch id="stepper-retention-switch" appearance="primary" defaultChecked={true} className="d-flex" aria-label="Retention" />
               </div>
             </form>
           </Card>
