@@ -25,9 +25,9 @@
     </tr>
     <tr style={{verticalAlign: "top"}}>
       <td></td>
-      <td>&#60;Enter&#62;</td>
+      <td>&#60;Enter&#62; / &#60;Space&#62;</td>
       <td>
-        Open popover (The trigger will be in active state when the popover is open)
+        Open popover and shift focus from the trigger to first focusable item.
       </td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
@@ -53,14 +53,14 @@
       <td>Popover is open and an item is in focus<br/>(The trigger will be in active state at this instance)</td>
       <td>&#60;Tab&#62;</td>
       <td>
-        Shift focus to the next item in Tab sequence on the page. <br/>The popover will be excluded from the tab sequence on the page. 
+        Close the popover. Focus shifts to the next item in Tab sequence on the page (after the trigger), or back to the trigger if there is no next focusable element.
       </td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
       <td></td>
-      <td>&#60;Enter&#62;</td>
+      <td>&#60;Enter&#62; / &#60;Space&#62;</td>
       <td>
-        Select the focused item and close the popover. 
+        Select the focused item and close the popover. Focus returns to the trigger.
       </td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
@@ -81,6 +81,20 @@
           <li>Shift focus to the previous focusable item(even if it’s in a different group).</li>
           <li>If focus is on the first focusable item, shift focus to the last focusable item.</li>
         </ul>
+      </td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td></td>
+      <td>&#60;Home&#62;</td>
+      <td>
+        Shift focus to the first focusable item in the menu.
+      </td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td></td>
+      <td>&#60;End&#62;</td>
+      <td>
+        Shift focus to the last focusable item in the menu.
       </td>
     </tr>
     <tr style={{verticalAlign: "top"}}>

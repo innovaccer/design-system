@@ -28,7 +28,8 @@ export const SubMenu = (props: SubMenuProps) => {
 
   let subMenuElement = <></>;
 
-  const { setOpenPopover, focusedOption, setFocusedOption, menuTriggerRef, listRef } = contextProp;
+  const { setOpenPopover, focusedOption, setFocusedOption, menuTriggerRef, listRef, isKeyboardNavigating } =
+    contextProp;
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
     handleKeyDown(
@@ -41,7 +42,10 @@ export const SubMenu = (props: SubMenuProps) => {
       subListRef,
       isSubMenuTrigger,
       triggerRef,
-      menuID
+      menuID,
+      undefined,
+      undefined,
+      isKeyboardNavigating
     );
   };
 

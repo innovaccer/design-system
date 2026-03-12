@@ -47,7 +47,8 @@ export const MenuItem = (props: MenuItemProps) => {
 
   const { triggerRef, menuID, setParentOpen, triggerID, parentListRef } = subMenuContextProp;
 
-  const { setOpenPopover, focusedOption, setFocusedOption, menuTriggerRef, listRef } = contextProp;
+  const { setOpenPopover, focusedOption, setFocusedOption, menuTriggerRef, listRef, isKeyboardNavigating } =
+    contextProp;
 
   const MenuItemClassName = classNames(
     styles['Menu-Item'],
@@ -58,15 +59,43 @@ export const MenuItem = (props: MenuItemProps) => {
   );
 
   React.useEffect(() => {
+    if (!triggerID || !parentListRef?.current) return;
+
     const handlePopoverOpen = () => {
       setOpenPopover?.(true);
     };
 
-    const handlePopoverClose = () => {
+    const handlePopoverClose = (event: FocusEvent) => {
+      // Don't close during keyboard navigation
+      if (isKeyboardNavigating?.current) {
+        return;
+      }
+
+      const relatedTarget = event.relatedTarget as HTMLElement | null;
+
+      if (relatedTarget) {
+        // Find the submenu wrapper associated with this trigger
+        const triggerElement = parentListRef.current?.querySelector(`#${triggerID}`);
+
+        // Check if focus is moving into the same submenu by checking if relatedTarget
+        // is a descendant of any element with the same submenu's aria-controls
+        const submenuId = triggerElement?.getAttribute('aria-controls');
+
+        if (submenuId) {
+          // Find the submenu popover container
+          const submenuPopover = document.querySelector(`[data-name="${submenuId}"]`);
+
+          if (submenuPopover && submenuPopover.contains(relatedTarget)) {
+            // Focus moved into the submenu - keep parent menu open
+            return;
+          }
+        }
+      }
+
       setOpenPopover?.(false);
     };
 
-    const triggerElement = parentListRef?.current?.querySelector(`#${triggerID}`)?.firstChild;
+    const triggerElement = parentListRef.current.querySelector(`#${triggerID}`)?.firstChild;
 
     triggerElement?.addEventListener('focus', handlePopoverOpen);
     triggerElement?.addEventListener('blur', handlePopoverClose);
@@ -96,7 +125,8 @@ export const MenuItem = (props: MenuItemProps) => {
       triggerRef,
       menuID,
       triggerID,
-      parentListRef
+      parentListRef,
+      isKeyboardNavigating
     );
   };
 
