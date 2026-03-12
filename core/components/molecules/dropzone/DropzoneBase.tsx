@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useReducer, useRef } from 'react';
+import { isEnterKey, isSpaceKey } from '@/accessibility/utils';
 import { composeEventHandlers, isEvtWithFiles, isPropagationStopped, onDocumentDragOver, reducer } from './utils';
 import { allFilesAccepted, getFileError, fileAccepted, fileMatchSize, FileErrorTypes } from './FileErrors';
 
@@ -189,19 +190,21 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
     };
   }, [inputRef, isFileDialogActive, onFileDialogCancel]);
 
-  // Cb to open the file dialog when SPACE/ENTER occurs on the dropzone
+  // Cb to open the file dialog when SPACE/ENTER occurs on the dropzone root
   const onKeyDownCb = useCallback(
-    (event) => {
+    (event: React.KeyboardEvent) => {
       if (!rootRef.current || !rootRef.current.isEqualNode(event.target)) {
         return;
       }
 
-      if (event.keyCode === 32 || event.keyCode === 13) {
+      if (isEnterKey(event) || isSpaceKey(event)) {
         event.preventDefault();
+        // Prevent auto-repeat: only process first keydown
+        if (event.repeat) return;
         openFileDialog();
       }
     },
-    [rootRef, inputRef]
+    [rootRef]
   );
 
   // Update focus state for the dropzone
@@ -398,6 +401,12 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
         onDragOver: composeDragHandler(composeEventHandlers(onDragOverCallback, onDragOverCb)),
         onDragLeave: composeDragHandler(composeEventHandlers(onDragLeaveCallback, onDragLeaveCb)),
         onDrop: composeDragHandler(composeEventHandlers(onDropCallback, onDropCb)),
+        onKeyDown: composeEventHandlers(onKeyDown, onKeyDownCb),
+        onFocus: composeEventHandlers(onFocus, onFocusCb),
+        onBlur: composeEventHandlers(onBlur, onBlurCb),
+        tabIndex: disabled ? -1 : 0,
+        role: 'button',
+        'aria-label': 'Drop files here or press Enter to browse',
         [refKey]: rootRef,
         ...rest,
       }),
