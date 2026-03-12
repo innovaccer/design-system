@@ -9,6 +9,20 @@ import styles from '@css/components/listbox.module.css';
 type ListboxType = 'option' | 'description' | 'resource';
 export type TagType = 'ul' | 'ol' | 'div' | 'nav';
 
+/**
+ * Keyboard configuration for Listbox when used inside Select, Menu, or Combobox.
+ * Popover owns Tab trap/Escape; Listbox owns arrow navigation, Home/End, Enter/Space.
+ * This config documents component-specific behavior for future shared handler implementation.
+ */
+export interface ListboxKeyboardConfig {
+  /** ARIA role of the list container: 'listbox' (Select, Combobox) or 'menu' (Menu) */
+  role?: 'listbox' | 'menu';
+  /** Whether Space activates in addition to Enter (Menu menuitems) */
+  spaceActivates?: boolean;
+  /** Whether selection keeps popover open (multi-select) */
+  selectionKeepsOpen?: boolean;
+}
+
 export interface ListboxProps extends BaseProps, BaseHtmlProps<HTMLUListElement | HTMLDivElement> {
   /**
    * React Element to be added inside `list`
@@ -39,6 +53,10 @@ export interface ListboxProps extends BaseProps, BaseHtmlProps<HTMLUListElement 
    * (e.g. Select, Menu) can own all keyboard handling without double-firing.
    */
   suppressKeyboard?: boolean;
+  /**
+   * Optional keyboard config for future shared Listbox keyboard handler (arrow nav, Home/End, etc.).
+   */
+  keyboardConfig?: ListboxKeyboardConfig;
 }
 
 export const ListboxContext = React.createContext<Omit<ListboxProps, 'children' | 'tagName'>>({
@@ -52,7 +70,18 @@ export const ListboxContext = React.createContext<Omit<ListboxProps, 'children' 
 const { Provider } = ListboxContext;
 
 export const Listbox = (props: ListboxProps) => {
-  const { children, className, draggable, size, type, showDivider, suppressKeyboard, tagName: Tag, ...rest } = props;
+  const {
+    children,
+    className,
+    draggable,
+    size,
+    type,
+    showDivider,
+    suppressKeyboard,
+    keyboardConfig,
+    tagName: Tag,
+    ...rest
+  } = props;
   const baseProps = extractBaseProps(props);
 
   const classes = classNames(styles.Listbox, className);
@@ -63,6 +92,7 @@ export const Listbox = (props: ListboxProps) => {
     draggable,
     showDivider,
     suppressKeyboard,
+    keyboardConfig,
   };
 
   return (

@@ -324,9 +324,11 @@ export const getRovingIndex = (
     }
   }
 
-  const firstSelectedIdx = items.findIndex(
-    (el) => isOptionFocusable(el) && el.getAttribute('aria-selected') === 'true'
-  );
+  const firstSelectedIdx = items.findIndex((el) => {
+    if (!isOptionFocusable(el)) return false;
+    const listItem = el.parentElement ?? el;
+    return listItem.getAttribute('aria-selected') === 'true';
+  });
   if (firstSelectedIdx !== -1) return firstSelectedIdx;
 
   return focusableIndices[0];
