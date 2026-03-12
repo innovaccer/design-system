@@ -705,7 +705,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             [styles['Calendar-value--disabled']]: disabled,
             [styles['Calendar-yearValue']]: true,
             [styles[`Calendar-yearValue--${size}`]]: size,
-            [styles['Calendar-value--currDateMonthYear']]: isCurrentYear(),
+            [styles['Calendar-value--currDateMonthYear']]: isCurrentYear() && !active,
           });
 
           const textClass = classNames({
@@ -717,7 +717,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             inverse: !active && !isCurrentYear() && !disabled,
             white: active,
             'primary-lighter': isCurrentYear() && disabled,
-            primary: isCurrentYear(),
+            'primary-dark': isCurrentYear() && !active && !disabled,
             'inverse-lightest': disabled,
           }) as TextColor;
 
@@ -768,14 +768,14 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             [styles['Calendar-value--disabled']]: disabled,
             [styles['Calendar-monthValue']]: true,
             [styles[`Calendar-monthValue--${size}`]]: size,
-            [styles['Calendar-value--currDateMonthYear']]: isCurrentMonth(),
+            [styles['Calendar-value--currDateMonthYear']]: isCurrentMonth() && !active,
           });
 
           const getTextColor = classNames({
             inverse: !active && !isCurrentMonth() && !disabled,
             white: active,
             'primary-lighter': isCurrentMonth() && disabled,
-            primary: isCurrentMonth(),
+            'primary-dark': isCurrentMonth() && !active && !disabled,
             'inverse-lightest': disabled,
           }) as TextColor;
 
@@ -1079,14 +1079,14 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               [styles['Calendar-value--disabled']]: disabled,
               [styles['Calendar-dateValue']]: true,
               [styles[`Calendar-dateValue--${size}`]]: size,
-              [styles['Calendar-value--currDateMonthYear']]: today(),
+              [styles['Calendar-value--currDateMonthYear']]: today() && !active && !activeDate,
               [styles['Calendar-value--currDate']]: today() && !active && !activeDate,
             });
 
             const getTextColor = classNames({
               inverse: !active && !today() && !disabled && !activeDate,
               white: active || activeDate,
-              primary: today(),
+              'primary-dark': today() && !active && !activeDate,
             }) as TextColor;
 
             return (
@@ -1111,7 +1111,13 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                 {((dummy && date > 0 && index === monthsInView - 1) || (dummy && date <= 0 && index === 0)) && (
                   <>
                     <Text
-                      appearance={active || activeDate ? 'white' : today() ? 'link' : 'subtle'}
+                      color={
+                        (active || activeDate
+                          ? 'inverse-light'
+                          : today()
+                          ? 'primary-dark'
+                          : 'inverse-lighter') as TextColor
+                      }
                       size={size === 'small' ? 'small' : 'regular'}
                       data-test="DesignSystem-Calendar--dateValue"
                       className={valueClass}

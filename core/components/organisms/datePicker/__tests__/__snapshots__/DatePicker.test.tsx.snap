@@ -518,7 +518,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       1
@@ -529,7 +529,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       2
@@ -540,7 +540,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       3
@@ -551,7 +551,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       4
@@ -566,7 +566,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       5
@@ -577,7 +577,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       6
@@ -588,7 +588,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       7
@@ -599,7 +599,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       8
@@ -610,7 +610,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       9
@@ -621,7 +621,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       10
@@ -632,7 +632,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       11
@@ -1191,7 +1191,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       1
@@ -1202,7 +1202,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       2
@@ -1213,7 +1213,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       3
@@ -1224,7 +1224,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       4
@@ -1239,7 +1239,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       5
@@ -1250,7 +1250,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       6
@@ -1261,7 +1261,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       7
@@ -1272,7 +1272,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       8
@@ -1283,7 +1283,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       9
@@ -1294,7 +1294,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       10
@@ -1305,7 +1305,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       11
@@ -1864,7 +1864,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       1
@@ -1875,7 +1875,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       2
@@ -1886,7 +1886,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       3
@@ -1897,7 +1897,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       4
@@ -1912,7 +1912,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       5
@@ -1923,7 +1923,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       6
@@ -1934,7 +1934,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       7
@@ -1945,7 +1945,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       8
@@ -1956,7 +1956,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       9
@@ -1967,7 +1967,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       10
@@ -1978,7 +1978,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       11
@@ -2536,7 +2536,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       1
@@ -2547,7 +2547,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       2
@@ -2558,7 +2558,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       3
@@ -2569,7 +2569,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       4
@@ -2584,7 +2584,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       5
@@ -2595,7 +2595,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       6
@@ -2606,7 +2606,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       7
@@ -2617,7 +2617,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       8
@@ -2628,7 +2628,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       9
@@ -2639,7 +2639,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       10
@@ -2650,7 +2650,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       11
@@ -3208,7 +3208,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       1
@@ -3219,7 +3219,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       2
@@ -3230,7 +3230,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       3
@@ -3241,7 +3241,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       4
@@ -3256,7 +3256,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       5
@@ -3267,7 +3267,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       6
@@ -3278,7 +3278,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       7
@@ -3289,7 +3289,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       8
@@ -3300,7 +3300,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       9
@@ -3311,7 +3311,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       10
@@ -3322,7 +3322,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       11
@@ -3880,7 +3880,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       1
@@ -3891,7 +3891,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       2
@@ -3902,7 +3902,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       3
@@ -3913,7 +3913,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       4
@@ -3928,7 +3928,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       5
@@ -3939,7 +3939,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       6
@@ -3950,7 +3950,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       7
@@ -3961,7 +3961,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       8
@@ -3972,7 +3972,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       9
@@ -3983,7 +3983,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       10
@@ -3994,7 +3994,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       11
@@ -4445,7 +4445,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   data-test="DesignSystem-Calendar--yearValue"
                 >
                   <span
-                    class="Text Text--regular color-primary Calendar-value--currDate Calendar-text"
+                    class="Text Text--regular color-primary-dark Calendar-value--currDate Calendar-text"
                     data-test="DesignSystem-Text"
                   >
                     2021
@@ -5076,7 +5076,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       1
@@ -5087,7 +5087,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       2
@@ -5098,7 +5098,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       3
@@ -5109,7 +5109,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       4
@@ -5124,7 +5124,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       5
@@ -5135,7 +5135,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       6
@@ -5146,7 +5146,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       7
@@ -5157,7 +5157,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       8
@@ -5168,7 +5168,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       9
@@ -5179,7 +5179,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       10
@@ -5190,7 +5190,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-inverse-lighter Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       11

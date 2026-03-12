@@ -118,10 +118,12 @@
 
 .Calendar-valueWrapper--inRange .Calendar-inRangeValue:hover {
   background: var(--primary-lighter);
+  box-shadow: none;
 }
 
 .Calendar-valueWrapper--inRange .Calendar-inRangeValue:active {
   background: var(--primary-light);
+  box-shadow: none;
 }
 
 .Calendar-valueWrapper--inRangeError {
@@ -172,63 +174,87 @@
 
 .Calendar-value:hover {
   background: var(--secondary-light);
+  box-shadow: inset 0 0 0 var(--border-width-2-5) var(--secondary-dark);
 }
 
 .Calendar-value:active {
   background: var(--secondary);
+  box-shadow: inset 0 0 0 var(--border-width-2-5) var(--secondary-dark);
 }
 
 .Calendar-value:active .Calendar-value--currDate {
-  color: var(--primary-dark);
+  color: var(--primary-darker);
 }
 
 .Calendar-value--start:hover,
 .Calendar-value--end:hover {
   background: var(--primary-lightest);
+  box-shadow: none;
+}
+
+.Calendar-value--start:active,
+.Calendar-value--end:active {
+  background: var(--primary-lightest);
+  box-shadow: none;
 }
 
 .Calendar-value--startError:hover,
 .Calendar-value--endError:hover {
   background: var(--alert-lightest);
+  box-shadow: none;
+}
+
+.Calendar-value--startError:active,
+.Calendar-value--endError:active {
+  background: var(--alert-lightest);
+  box-shadow: none;
 }
 
 .Calendar-value--start,
 .Calendar-value--end {
   background: var(--primary-lightest);
+  box-shadow: none;
 }
 
 .Calendar-value--startError,
 .Calendar-value--endError {
   background: var(--alert-lightest);
+  box-shadow: none;
 }
 
 .Calendar-value--currDateMonthYear {
-  background: var(--primary-lightest);
+  background: var(--primary-ultra-light);
+  box-shadow: inset 0 0 0 var(--border-width-2-5) var(--primary);
 }
 
 .Calendar-value--currDateMonthYear:hover {
-  background: var(--primary-lighter);
+  background: var(--primary-lightest);
+  box-shadow: inset 0 0 0 var(--border-width-2-5) var(--primary);
 }
 
 .Calendar-value--currDateMonthYear:active {
   background: var(--primary-lighter);
+  box-shadow: inset 0 0 0 var(--border-width-2-5) var(--primary-dark);
 }
 
 .Calendar-value--currDate:active {
-  color: var(--primary-dark);
+  color: var(--primary-darker);
 }
 
 .Calendar-value--active {
   background: var(--primary);
   font-weight: var(--font-weight-bold);
+  box-shadow: none;
 }
 
 .Calendar-value--active:hover {
   background: var(--primary-dark);
+  box-shadow: none;
 }
 
 .Calendar-value--active:active {
   background: var(--primary-darker);
+  box-shadow: none;
 }
 
 .Calendar-yearValue--small,
@@ -253,8 +279,46 @@
   width: var(--spacing-80);
 }
 
+.Calendar-valueWrapper--dummy .Calendar-value:hover {
+  background: var(--secondary-lightest);
+  box-shadow: none;
+}
+
+.Calendar-valueWrapper--dummy .Calendar-value:active {
+  background: var(--secondary-lighter);
+  box-shadow: none;
+  color: var(--inverse-light);
+}
+
+.Calendar-valueWrapper--dummy .Calendar-inRangeValue:hover {
+  background: var(--primary-lighter);
+  box-shadow: none;
+}
+
+.Calendar-valueWrapper--dummy .Calendar-inRangeValue:active {
+  background: var(--primary-light);
+  box-shadow: none;
+}
+
+.Calendar-valueWrapper--dummy .Calendar-value--active {
+  background: var(--primary-lighter);
+  box-shadow: none;
+}
+
+.Calendar-valueWrapper--dummy .Calendar-value--active:hover {
+  background: var(--primary-light);
+  box-shadow: none;
+  color: var(--inverse);
+}
+
+.Calendar-valueWrapper--dummy .Calendar-value--active:active {
+  background: var(--primary-dark);
+  box-shadow: none;
+  color: var(--white);
+}
+
 .Calendar-valueWrapper--dummy {
-  opacity: var(--opacity-20);
+  opacity: 1;
 }
 
 .Calendar-valueWrapper--disabled {
@@ -262,7 +326,24 @@
 }
 
 .Calendar-valueWrapper--active-dummy {
-  opacity: var(--opacity-16);
+  opacity: 1;
+}
+
+.Calendar-valueWrapper--active-dummy .Calendar-value--active {
+  background: var(--primary-lighter);
+  box-shadow: none;
+}
+
+.Calendar-valueWrapper--active-dummy .Calendar-value--active:hover {
+  background: var(--primary-light);
+  box-shadow: none;
+  color: var(--inverse);
+}
+
+.Calendar-valueWrapper--active-dummy .Calendar-value--active:active {
+  background: var(--primary-dark);
+  box-shadow: none;
+  color: var(--white);
 }
 
 .Calendar-value--disabled {
@@ -317,8 +398,10 @@
 
 .Calendar-valueWrapper--inEdgeRange .Calendar-inRangeValue:hover {
   background: var(--primary-lighter);
+  box-shadow: none;
 }
 
 .Calendar-valueWrapper--inEdgeRange .Calendar-inRangeValue:active {
   background: var(--primary-light);
+  box-shadow: none;
 }
