@@ -61,9 +61,11 @@ export const GenericChip = (props: GenericChipProps) => {
     classNames({
       [styles['Chip-icon']]: true,
       [styles[`Chip-icon--${align}`]]: align,
+      [styles['Chip-icon--rightSmall']]: size === 'small' && align === 'right',
       [styles[`Chip-icon-disabled--right`]]: align === 'right' && disabled,
       ['cursor-pointer']: align === 'right' && !disabled,
       [styles['Chip-icon--selected']]: align === 'right' && selected,
+      ['p-3']: size === 'regular' && align === 'right',
     });
 
   const onCloseHandler = (e: React.MouseEvent | React.KeyboardEvent) => {
