@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Select } from '@/index';
 import { OptionType } from '@/common.type';
+import { SelectMethods } from '@/components/organisms/select/Select';
 import { BaseProps } from '@/utils/types';
 import { getScrollIndex } from './utility/searchUtils';
 import { getDropdownOptionList, isFormat12Hour, convert24To12HourFormat } from './utility/timePickerUtility';
@@ -115,6 +116,7 @@ export const TimePickerWithSearch = (props: TimePickerDropdownProps) => {
   const [isFetchMode, setIsFetchMode] = React.useState(false);
 
   const listRef = React.useRef<HTMLDivElement>(null);
+  const selectRef = React.useRef<SelectMethods>(null);
 
   const dropdownOptionList = React.useMemo(
     () => getDropdownOptionList(props),
@@ -131,7 +133,10 @@ export const TimePickerWithSearch = (props: TimePickerDropdownProps) => {
   }, [searchTerm, selectedIndex, dropdownOptionList]);
 
   React.useEffect(() => {
-    if (open !== undefined) setOpenPopover(open);
+    if (open !== undefined) {
+      setOpenPopover(open);
+      selectRef.current?.setOpen(open);
+    }
   }, [open]);
 
   React.useEffect(() => {
@@ -218,6 +223,7 @@ export const TimePickerWithSearch = (props: TimePickerDropdownProps) => {
 
   return (
     <Select
+      ref={selectRef}
       key={counter}
       onSelect={onSelectHandler}
       maxHeight={160}
