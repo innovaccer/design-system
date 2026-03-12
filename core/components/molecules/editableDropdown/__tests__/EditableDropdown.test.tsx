@@ -107,6 +107,33 @@ describe('EditableDropdown component', () => {
   });
 });
 
+describe('EditableDropdown keyboard interactions', () => {
+  it('Escape cancels when dropdown is visible (hover mode)', () => {
+    const { getByTestId } = render(<EditableDropdown placeholder={placeholder} dropdownOptions={dropdownOptions} />);
+
+    const editableWrapper = getByTestId(editableWrapperTestId);
+    fireEvent.mouseEnter(editableWrapper);
+    expect(getByTestId('DesignSystem-EditableDropdown--Dropdown')).not.toHaveClass('d-none');
+
+    fireEvent.keyDown(editableWrapper, { key: 'Escape' });
+
+    expect(getByTestId('DesignSystem-EditableDropdown--Dropdown')).toHaveClass('d-none');
+    expect(getByTestId('DesignSystem-EditableDropdown--Default')).not.toHaveClass('d-none');
+  });
+
+  it('Escape cancels when dropdown is visible (edit mode)', () => {
+    const { getByTestId } = render(<EditableDropdown placeholder={placeholder} dropdownOptions={dropdownOptions} />);
+
+    const editableWrapper = getByTestId(editableWrapperTestId);
+    fireEvent.click(editableWrapper);
+    expect(getByTestId('DesignSystem-EditableDropdown--Dropdown')).not.toHaveClass('d-none');
+
+    fireEvent.keyDown(editableWrapper, { key: 'Escape' });
+
+    expect(getByTestId('DesignSystem-EditableDropdown--Dropdown')).toHaveClass('d-none');
+  });
+});
+
 describe('EditableDropdown Component with overwrite class', () => {
   const className = 'DS-EditableDropdown';
 

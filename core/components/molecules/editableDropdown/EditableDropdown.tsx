@@ -80,6 +80,14 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
     if (onDropdownClose) onDropdownClose(selected);
   };
 
+  const handleEditModeKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      setEditing(false);
+      setShowComponent(false);
+    }
+  };
+
   const renderComponent = (componentLabel: string) => {
     if (customTriggerRenderer) return customTriggerRenderer(componentLabel);
 
@@ -88,7 +96,12 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
 
   return (
     <div data-test="DesignSystem-EditableDropdown" {...baseProps} className={CompClass}>
-      <Editable onChange={onChangeHandler} editing={editing}>
+      <Editable
+        onChange={onChangeHandler}
+        editing={editing}
+        keyDownDelegateActive={showComponent}
+        onEditModeKeyDown={handleEditModeKeyDown}
+      >
         <Dropdown
           placeholder={placeholder}
           onChange={onChange}

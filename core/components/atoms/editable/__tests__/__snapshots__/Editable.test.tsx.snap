@@ -11,7 +11,7 @@ exports[`Editable component
     <div
       data-test="DesignSystem-EditableWrapper"
       role="button"
-      tabindex="0"
+      tabindex="-1"
     >
       <div>
         First Name

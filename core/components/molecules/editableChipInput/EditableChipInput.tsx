@@ -107,6 +107,21 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
     }
   };
 
+  const handleEditModeKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === 'Enter') {
+      const target = event.target as HTMLElement;
+      if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA') {
+        return;
+      }
+      if (disableSaveAction) return;
+      event.preventDefault();
+      onSaveChanges();
+    } else if (event.key === 'Escape') {
+      event.preventDefault();
+      setDefaultComponent(value);
+    }
+  };
+
   const onChipDelete = (index: number) => {
     if (value) {
       const updatedValue = [...value];
@@ -167,7 +182,7 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
 
   return (
     <div className={classes} data-test="DesignSystem-EditableChipInput" {...baseProps}>
-      <Editable onChange={onChangeHandler} editing={showComponent}>
+      <Editable onChange={onChangeHandler} editing={showComponent} onEditModeKeyDown={handleEditModeKeyDown}>
         {renderChildren()}
       </Editable>
       {showComponent && (
