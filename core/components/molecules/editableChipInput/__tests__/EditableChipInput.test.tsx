@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, waitFor } from '@testing-library/react';
 import { EditableChipInput } from '@/index';
 import { EditableChipInputProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -117,6 +117,18 @@ describe('EditableChipInput keyboard interactions', () => {
     expect(getByTestId(defaultComponentTestId)).toBeInTheDocument();
     expect(queryByTestId(chipInputTestId)).not.toBeInTheDocument();
     expect(getAllByTestId('DesignSystem-EditableChipInput--Chip')[0].textContent).toMatch(`${value[0]}clear`);
+  });
+
+  it('Escape restores focus to trigger after canceling', async () => {
+    const { getByTestId } = render(
+      <EditableChipInput value={value} onChange={onChange} chipInputOptions={chipInputOptions} size="regular" />
+    );
+
+    const editableWrapper = getByTestId(editableWrapperTestId);
+    fireEvent.click(editableWrapper);
+    fireEvent.keyDown(editableWrapper, { key: 'Escape' });
+
+    await waitFor(() => expect(editableWrapper).toHaveFocus());
   });
 
   it('Enter saves changes when editing and not focused on ChipInput', () => {

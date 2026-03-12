@@ -119,6 +119,11 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
     } else if (event.key === 'Escape') {
       event.preventDefault();
       setDefaultComponent(value);
+      // Restore focus to trigger for keyboard users
+      const wrapper = event.currentTarget;
+      requestAnimationFrame(() => {
+        wrapper?.focus();
+      });
     }
   };
 
@@ -180,8 +185,10 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
     );
   };
 
+  const containerRef = React.useRef<HTMLDivElement>(null);
+
   return (
-    <div className={classes} data-test="DesignSystem-EditableChipInput" {...baseProps}>
+    <div ref={containerRef} className={classes} data-test="DesignSystem-EditableChipInput" {...baseProps}>
       <Editable onChange={onChangeHandler} editing={showComponent} onEditModeKeyDown={handleEditModeKeyDown}>
         {renderChildren()}
       </Editable>
@@ -194,6 +201,12 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
             size="tiny"
             onClick={() => {
               setDefaultComponent(value);
+              const wrapper = containerRef.current?.querySelector(
+                '[data-test="DesignSystem-EditableWrapper"]'
+              ) as HTMLElement;
+              requestAnimationFrame(() => {
+                wrapper?.focus();
+              });
             }}
           />
           <Button

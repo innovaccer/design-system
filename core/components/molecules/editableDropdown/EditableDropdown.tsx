@@ -85,6 +85,11 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
       event.preventDefault();
       setEditing(false);
       setShowComponent(false);
+      // Restore focus to trigger for keyboard users
+      const wrapper = event.currentTarget;
+      requestAnimationFrame(() => {
+        wrapper?.focus();
+      });
     }
   };
 
