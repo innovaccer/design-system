@@ -24,6 +24,14 @@ export type ContextProps = {
   size?: TListboxSize;
   styleType?: SelectStyleType;
   error?: boolean;
+  /** Index of the option that has tabindex=0 (roving tabstop). -1 when none (e.g. search focused or empty list). */
+  rovingIndex?: number;
+  /** Synchronously update the roving index alongside .focus() to close the Tab-timing race. */
+  setRovingIndex?: React.Dispatch<React.SetStateAction<number>>;
+  /** Ref filled by Select.List with option props in DOM order; used to compute selected index from state (avoids DOM timing). */
+  optionValuesOrderRef?: React.MutableRefObject<OptionType[]>;
+  /** Set by Select.List when children change; roving effect re-runs so index is correct after filtering. */
+  setOptionListLength?: React.Dispatch<React.SetStateAction<number>>;
 };
 
 export const SelectContext = React.createContext<ContextProps>({});

@@ -7,11 +7,12 @@ import { Popover, OutsideClick } from '@/index';
 import SelectTrigger, { SelectTriggerProps } from './SelectTrigger';
 import SearchInput from './SearchInput';
 import SelectEmptyTemplate from './SelectEmptyTemplate';
-import { focusListItem, mapInitialValue } from './utils';
+import { focusListItem, focusPopoverInitial, getRovingIndex, handleInputKeyDown, mapInitialValue } from './utils';
 import SelectFooter from './SelectFooter';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import uidGenerator from '@/utils/uidGenerator';
 import { PopoverProps } from '@/index.type';
+import { useFocusOutside } from '@/utils/overlayHelper';
 
 export type SelectStyleType = 'filled' | 'outlined';
 
@@ -171,16 +172,21 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
   const [selectValue, setSelectValue] = React.useState<OptionType | OptionType[]>(mapValue);
   const [isOptionSelected, setIsOptionSelected] = React.useState(false);
 
-  const triggerRef = React.createRef<HTMLButtonElement>();
+  const triggerRef = React.useRef<HTMLButtonElement>(null);
   const listRef = React.useRef<HTMLDivElement | null>(null);
+  const wasOpenRef = React.useRef(false);
+  const closedByOutsideClickRef = React.useRef(false);
 
   const [withSearch, setWithSearch] = React.useState(false);
 
   const [focusedOption, setFocusedOption] = React.useState<HTMLElement | undefined>();
   const [highlightFirstItem, setHighlightFirstItem] = React.useState<boolean>(false);
   const [highlightLastItem, setHighlightLastItem] = React.useState<boolean>(false);
+  const [rovingIndex, setRovingIndex] = React.useState<number>(-1);
   const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>({ width: popoverWidth || width });
   const listboxId = React.useRef(`select-listbox-${uidGenerator()}`).current;
+  const optionValuesOrderRef = React.useRef<OptionType[]>([]);
+  const [optionListLength, setOptionListLength] = React.useState(0);
 
   const baseProps = extractBaseProps(props);
   const WrapperStyle = trigger ? {} : { width: width };
@@ -227,20 +233,58 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     if (!openPopover) {
       setHighlightFirstItem(false);
       setHighlightLastItem(false);
+      setRovingIndex(-1);
+      if (wasOpenRef.current && !closedByOutsideClickRef.current) {
+        triggerRef.current?.focus({ preventScroll: true });
+      }
+      closedByOutsideClickRef.current = false;
     }
+    wasOpenRef.current = openPopover;
   }, [openPopover]);
 
   React.useEffect(() => {
-    if (highlightFirstItem && openPopover) {
-      requestAnimationFrame(() => focusListItem('down', setFocusedOption, listRef));
-    }
-  }, [highlightFirstItem]);
+    if (!highlightFirstItem || !openPopover) return;
+    let cancelled = false;
+    const rafId = requestAnimationFrame(() => {
+      if (cancelled) return;
+      requestAnimationFrame(() => {
+        if (cancelled) return;
+        const optionValuesOrder = optionValuesOrderRef.current;
+        const idx = focusPopoverInitial(listRef, setFocusedOption, selectValue, optionValuesOrder);
+        setRovingIndex(idx);
+        setHighlightFirstItem(false);
+      });
+    });
+    return () => {
+      cancelled = true;
+      cancelAnimationFrame(rafId);
+    };
+  }, [highlightFirstItem, openPopover, selectValue]);
 
   React.useEffect(() => {
-    if (highlightLastItem && openPopover) {
-      requestAnimationFrame(() => focusListItem('up', setFocusedOption, listRef));
+    if (!highlightLastItem || !openPopover) return;
+    let cancelled = false;
+    const rafId = requestAnimationFrame(() => {
+      if (cancelled) return;
+      focusListItem('up', setFocusedOption, listRef);
+      setHighlightLastItem(false);
+    });
+    return () => {
+      cancelled = true;
+      cancelAnimationFrame(rafId);
+    };
+  }, [highlightLastItem, openPopover]);
+
+  React.useEffect(() => {
+    if (!openPopover || !listRef.current) return;
+    if (focusedOption && !listRef.current.contains(focusedOption)) {
+      setFocusedOption(undefined);
     }
-  }, [highlightLastItem]);
+    const effectiveFocused = focusedOption && listRef.current.contains(focusedOption) ? focusedOption : undefined;
+    const optionValuesOrder = optionValuesOrderRef.current;
+    const idx = getRovingIndex(listRef, effectiveFocused, selectValue, optionValuesOrder);
+    setRovingIndex(idx);
+  }, [openPopover, focusedOption, selectValue, optionListLength]);
 
   React.useEffect(() => {
     if (value) {
@@ -264,12 +308,37 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
 
   const onOptionClick = (option: OptionType | OptionType[]) => {
     onSelect?.(option);
-    !multiSelect && setOpenPopover(false);
+    if (!multiSelect) {
+      setOpenPopover(false);
+      triggerRef.current?.focus({ preventScroll: true });
+    }
   };
 
   const onOutsideClickHandler = () => {
+    closedByOutsideClickRef.current = true;
     onOutsideClick?.();
   };
+
+  const handleEscape = React.useCallback(() => {
+    setOpenPopover(false);
+    triggerRef.current?.focus({ preventScroll: true });
+    setFocusedOption(undefined);
+  }, []);
+
+  const handleFocusMove = React.useCallback((el: HTMLElement) => {
+    setFocusedOption(el);
+  }, []);
+
+  useFocusOutside(
+    [triggerRef, listRef],
+    React.useCallback(() => {
+      if (openPopover) {
+        setOpenPopover(false);
+      }
+    }, [openPopover]),
+    openPopover,
+    20
+  );
 
   const contextProp = {
     openPopover,
@@ -293,6 +362,10 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     setHighlightLastItem,
     styleType,
     error,
+    rovingIndex,
+    setRovingIndex,
+    optionValuesOrderRef,
+    setOptionListLength,
   };
 
   return (
@@ -314,9 +387,26 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
           boundaryElement={boundaryElement}
           appendToBody={appendToBody}
           trigger={getTriggerElement()}
+          trapFocus={true}
+          onEscape={handleEscape}
+          onFocusMove={handleFocusMove}
         >
           <OutsideClick onOutsideClick={onOutsideClickHandler}>
-            <div role="listbox" id={listboxId} tabIndex={0} ref={listRef}>
+            <div
+              role="listbox"
+              id={listboxId}
+              tabIndex={-1}
+              ref={listRef}
+              onKeyDown={(e) => {
+                if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+                  const active = document.activeElement as HTMLElement | null;
+                  const searchEl = listRef.current?.querySelector('[data-test="DesignSystem-Select--Input"]');
+                  if (searchEl && active && (searchEl === active || searchEl.contains(active))) {
+                    handleInputKeyDown(e, listRef, setFocusedOption, setOpenPopover, triggerRef);
+                  }
+                }
+              }}
+            >
               {children}
             </div>
           </OutsideClick>

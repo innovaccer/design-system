@@ -10,6 +10,7 @@ import {
   navigateOptions,
   handleInputKeyDown,
 } from '../utils';
+import { getFocusableElements } from '@/utils/overlayHelper';
 import { OptionType } from '@/common.type';
 
 const dummyOption: OptionType = { label: 'Option 1', value: '1' };
@@ -199,6 +200,20 @@ describe('handleKeyDownTrigger function', () => {
     expect(setHighlightLastItemMock).toHaveBeenCalledWith(true);
   });
 
+  it('should call setOpenPopover(true) and setHighlightFirstItem(true) when Space key is pressed', () => {
+    const event: React.KeyboardEvent = { key: ' ', preventDefault: jest.fn() } as unknown as React.KeyboardEvent;
+    handleKeyDownTrigger(event, setOpenPopoverMock, setHighlightFirstItemMock);
+    expect(setOpenPopoverMock).toHaveBeenCalledWith(true);
+    expect(setHighlightFirstItemMock).toHaveBeenCalledWith(true);
+  });
+
+  it('should call setOpenPopover(true) and setHighlightFirstItem(true) when Spacebar key is pressed', () => {
+    const event: React.KeyboardEvent = { key: 'Spacebar', preventDefault: jest.fn() } as unknown as React.KeyboardEvent;
+    handleKeyDownTrigger(event, setOpenPopoverMock, setHighlightFirstItemMock);
+    expect(setOpenPopoverMock).toHaveBeenCalledWith(true);
+    expect(setHighlightFirstItemMock).toHaveBeenCalledWith(true);
+  });
+
   it('should not call any setter functions when an unrecognized key is pressed', () => {
     const event: React.KeyboardEvent = { key: 'Escape' } as React.KeyboardEvent; // Unrecognized key
     handleKeyDownTrigger(event, setOpenPopoverMock, setHighlightFirstItemMock, setHighlightLastItemMock);
@@ -289,6 +304,106 @@ describe('handleKeyDown function', () => {
     expect(setHighlightLastItemMock).toHaveBeenCalledWith(false);
   });
 
+  it('should handle Space key press like Enter', () => {
+    const event: React.KeyboardEvent = {
+      key: ' ',
+      preventDefault: preventDefaultMock,
+    } as unknown as React.KeyboardEvent;
+    handleKeyDown(
+      event,
+      document.createElement('div'),
+      setFocusedOptionMock,
+      setHighlightFirstItemMock,
+      setHighlightLastItemMock,
+      listRefMock,
+      true
+    );
+    expect(preventDefaultMock).toHaveBeenCalled();
+    expect(setHighlightFirstItemMock).toHaveBeenCalledWith(false);
+    expect(setHighlightLastItemMock).toHaveBeenCalledWith(false);
+  });
+
+  it('should handle Home key and focus first item', () => {
+    const event: React.KeyboardEvent = {
+      key: 'Home',
+      preventDefault: preventDefaultMock,
+    } as unknown as React.KeyboardEvent;
+    const container = document.createElement('div');
+    const firstItem = document.createElement('div');
+    firstItem.focus = jest.fn();
+    firstItem.scrollIntoView = jest.fn();
+    container.querySelectorAll = jest.fn((selector: string) => {
+      if (selector.includes('Select--Input')) return [];
+      if (selector.includes('Listbox-ItemWrapper')) return [firstItem];
+      return [];
+    }) as any;
+    const listRefWithQuery = { current: container };
+    handleKeyDown(
+      event,
+      undefined,
+      setFocusedOptionMock,
+      setHighlightFirstItemMock,
+      setHighlightLastItemMock,
+      listRefWithQuery,
+      false
+    );
+    expect(preventDefaultMock).toHaveBeenCalled();
+    expect(setFocusedOptionMock).toHaveBeenCalledWith(firstItem);
+  });
+
+  it('should handle End key and focus last item', () => {
+    const event: React.KeyboardEvent = {
+      key: 'End',
+      preventDefault: preventDefaultMock,
+    } as unknown as React.KeyboardEvent;
+    const container = document.createElement('div');
+    const lastItem = document.createElement('div');
+    lastItem.focus = jest.fn();
+    lastItem.scrollIntoView = jest.fn();
+    container.querySelectorAll = jest.fn((selector: string) => {
+      if (selector.includes('Select--Input')) return [];
+      if (selector.includes('Listbox-ItemWrapper')) return [lastItem];
+      return [];
+    }) as any;
+    const listRefWithQuery = { current: container };
+    handleKeyDown(
+      event,
+      undefined,
+      setFocusedOptionMock,
+      setHighlightFirstItemMock,
+      setHighlightLastItemMock,
+      listRefWithQuery,
+      false
+    );
+    expect(preventDefaultMock).toHaveBeenCalled();
+    expect(setFocusedOptionMock).toHaveBeenCalledWith(lastItem);
+  });
+
+  it('should handle Escape key and close popover and focus trigger', () => {
+    const event: React.KeyboardEvent = {
+      key: 'Escape',
+      preventDefault: preventDefaultMock,
+    } as unknown as React.KeyboardEvent;
+    const setOpenPopoverMock = jest.fn();
+    const triggerFocusMock = jest.fn();
+    triggerRefMock.current = { focus: triggerFocusMock } as unknown as HTMLButtonElement;
+    handleKeyDown(
+      event,
+      document.createElement('div'),
+      setFocusedOptionMock,
+      setHighlightFirstItemMock,
+      setHighlightLastItemMock,
+      listRefMock,
+      true,
+      setOpenPopoverMock,
+      triggerRefMock
+    );
+    expect(preventDefaultMock).toHaveBeenCalled();
+    expect(setOpenPopoverMock).toHaveBeenCalledWith(false);
+    expect(triggerFocusMock).toHaveBeenCalled();
+    expect(setFocusedOptionMock).toHaveBeenCalledWith(undefined);
+  });
+
   it('should not call any functions if an unrecognized key is pressed', () => {
     const event: React.KeyboardEvent = {
       key: 'UnknownKey',
@@ -348,7 +463,9 @@ describe('focusListItem function', () => {
     targetOption.focus = focusMock;
     targetOption.scrollIntoView = scrollIntoViewMock;
     focusListItem('down', setFocusedOptionMock, listRefMock);
-    expect(setFocusedOptionMock).toHaveBeenCalled();
+    expect(focusMock).toHaveBeenCalled();
+    expect(scrollIntoViewMock).toHaveBeenCalledWith({ block: 'center' });
+    expect(setFocusedOptionMock).toHaveBeenCalledWith(targetOption);
   });
 
   it('should focus on the search input when position is "down" and no list items are available', () => {
@@ -357,6 +474,9 @@ describe('focusListItem function', () => {
     const targetOption = searchInputMock[0];
     targetOption.focus = focusMock;
     targetOption.scrollIntoView = scrollIntoViewMock;
+    const querySpy = jest.spyOn(listRefMock.current!, 'querySelectorAll');
+    querySpy.mockReset();
+    querySpy.mockReturnValueOnce(searchInputMock).mockReturnValueOnce([]);
     focusListItem('down', setFocusedOptionMock, listRefMock);
     expect(focusMock).toHaveBeenCalled();
     expect(scrollIntoViewMock).toHaveBeenCalledWith({ block: 'center' });
@@ -373,6 +493,40 @@ describe('focusListItem function', () => {
     expect(focusMock).toHaveBeenCalled();
     expect(scrollIntoViewMock).toHaveBeenCalledWith({ block: 'center' });
     expect(setFocusedOptionMock).toHaveBeenCalledWith(targetOption);
+  });
+});
+
+describe('getFocusableElements function', () => {
+  it('should return focusable elements within the container', () => {
+    const container = document.createElement('div');
+    const button = document.createElement('button');
+    const input = document.createElement('input');
+    container.appendChild(button);
+    container.appendChild(input);
+    const focusables = getFocusableElements(container);
+    expect(focusables).toContain(button);
+    expect(focusables).toContain(input);
+    expect(focusables.length).toBeGreaterThanOrEqual(2);
+  });
+
+  it('should return empty array when container has no focusable descendants', () => {
+    const container = document.createElement('div');
+    container.appendChild(document.createElement('div'));
+    const focusables = getFocusableElements(container);
+    expect(focusables).toEqual([]);
+  });
+
+  it('should exclude elements with tabindex="-1" even if they match input selector', () => {
+    const container = document.createElement('div');
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.setAttribute('tabindex', '-1');
+    const button = document.createElement('button');
+    container.appendChild(checkbox);
+    container.appendChild(button);
+    const focusables = getFocusableElements(container);
+    expect(focusables).not.toContain(checkbox);
+    expect(focusables).toContain(button);
   });
 });
 

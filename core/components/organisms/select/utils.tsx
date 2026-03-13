@@ -78,6 +78,12 @@ export const handleKeyDownTrigger = (
       setOpenPopover?.(true);
       setHighlightFirstItem?.(true);
       break;
+    case ' ':
+    case 'Spacebar':
+      event.preventDefault();
+      setOpenPopover?.(true);
+      setHighlightFirstItem?.(true);
+      break;
     case 'ArrowDown':
       setOpenPopover?.(true);
       setHighlightFirstItem?.(true);
@@ -98,17 +104,23 @@ export const focusListItem = (
 ) => {
   const searchInput = listRef.current?.querySelectorAll('[data-test="DesignSystem-Select--Input"]');
   const listItems = listRef.current?.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
-  let targetOption;
+  let targetWrapper: HTMLElement | undefined;
 
   if (position === 'down') {
-    targetOption = searchInput?.[0] || listItems?.[0];
+    targetWrapper = (listItems?.[0] ?? searchInput?.[0]) as HTMLElement | undefined;
   } else {
-    targetOption = listItems?.[listItems.length - 1];
+    targetWrapper = listItems?.[listItems?.length - 1] as HTMLElement | undefined;
   }
 
-  (targetOption as HTMLElement)?.focus();
-  targetOption?.scrollIntoView({ block: 'center' });
-  setFocusedOption && setFocusedOption(targetOption);
+  const isItemWrapper = targetWrapper?.getAttribute?.('data-test') === 'DesignSystem-Listbox-ItemWrapper';
+  const toFocus = (isItemWrapper && targetWrapper?.parentElement) ? targetWrapper.parentElement : targetWrapper;
+  if (toFocus) {
+    toFocus.focus();
+    if (typeof toFocus.scrollIntoView === 'function') {
+      toFocus.scrollIntoView({ block: 'center' });
+    }
+    setFocusedOption?.(toFocus);
+  }
 };
 
 export const handleKeyDown = (
@@ -120,29 +132,49 @@ export const handleKeyDown = (
   listRef?: any,
   withSearch?: boolean,
   setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>,
-  triggerRef?: any
+  triggerRef?: any,
+  setRovingIndex?: React.Dispatch<React.SetStateAction<number>>
 ) => {
   switch (event.key) {
     case 'ArrowUp':
       event.preventDefault();
-      navigateOptions('up', focusedOption, setFocusedOption, listRef, withSearch);
+      navigateOptions('up', focusedOption, setFocusedOption, listRef, withSearch, setRovingIndex);
       break;
     case 'ArrowDown':
       event.preventDefault();
-      navigateOptions('down', focusedOption, setFocusedOption, listRef, withSearch);
+      navigateOptions('down', focusedOption, setFocusedOption, listRef, withSearch, setRovingIndex);
       break;
     case 'Enter':
+      event.preventDefault();
       handleEnterKey(focusedOption);
       setHighlightLastItem?.(false);
       setHighlightFirstItem?.(false);
+      break;
+    case ' ':
+    case 'Spacebar':
+      event.preventDefault();
+      handleEnterKey(focusedOption);
+      setHighlightLastItem?.(false);
+      setHighlightFirstItem?.(false);
+      break;
+    case 'Home':
+      event.preventDefault();
+      focusListItem('down', setFocusedOption, listRef);
+      break;
+    case 'End':
+      event.preventDefault();
+      focusListItem('up', setFocusedOption, listRef);
       break;
     case 'Tab':
       setHighlightLastItem?.(false);
       setHighlightFirstItem?.(false);
       break;
     case 'Escape':
+      event.preventDefault();
       setOpenPopover?.(false);
-      triggerRef.current.focus();
+      if (triggerRef?.current) {
+        triggerRef.current.focus();
+      }
       setFocusedOption?.(undefined);
       break;
     default:
@@ -159,11 +191,13 @@ export const navigateOptions = (
   focusedOption: Element | undefined,
   setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>,
   listRef?: any,
-  withSearch?: boolean
+  withSearch?: boolean,
+  setRovingIndex?: React.Dispatch<React.SetStateAction<number>>
 ) => {
   const listItems = listRef.current.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
+  // focusedOption may be the ItemWrapper (from navigateOptions) or the list item LI (from handleInputKeyDown when coming from search)
   let index = Array.from(listItems).findIndex((item) => {
-    return item == focusedOption;
+    return item === focusedOption || (item as HTMLElement).parentElement === focusedOption;
   });
 
   if (index === -1) {
@@ -175,14 +209,20 @@ export const navigateOptions = (
     const searchInput = listRef.current.querySelector('[data-test="DesignSystem-Select--Input"]');
     searchInput.focus();
     setFocusedOption && setFocusedOption(searchInput);
+    setRovingIndex?.(-1);
   } else {
     index = direction === 'up' ? (index - 1 + listItems.length) % listItems.length : (index + 1) % listItems.length;
 
-    const targetOption = listItems[index];
+    const targetWrapper = listItems[index] as HTMLElement;
+    const targetLi = targetWrapper.parentElement;
+    const toFocus = targetLi ?? targetWrapper;
 
-    (targetOption as HTMLElement).focus();
-    setFocusedOption && setFocusedOption(targetOption);
-    targetOption.scrollIntoView({ block: 'center' });
+    toFocus.focus();
+    setFocusedOption?.(toFocus);
+    setRovingIndex?.(index);
+    if (typeof toFocus.scrollIntoView === 'function') {
+      toFocus.scrollIntoView({ block: 'center' });
+    }
   }
 };
 
@@ -199,11 +239,11 @@ export const handleInputKeyDown = (
   switch (event.key) {
     case 'ArrowUp':
       event.preventDefault();
-      targetOption = listItems[listItems.length - 1];
+      targetOption = listItems?.[listItems.length - 1];
       break;
     case 'ArrowDown':
       event.preventDefault();
-      targetOption = listItems[0];
+      targetOption = listItems?.[0];
       break;
     case 'Escape':
       setOpenPopover?.(false);
@@ -214,7 +254,122 @@ export const handleInputKeyDown = (
       break;
   }
 
-  (targetOption as HTMLElement)?.focus();
-  targetOption?.scrollIntoView({ block: 'center' });
-  setFocusedOption && setFocusedOption(targetOption);
+  // Focus the list item (Tag with tabIndex); ItemWrapper's parent is always the list item (SelectOption overrides data-test so closest would fail).
+  const wrapper = targetOption as HTMLElement | null | undefined;
+  const toFocus = (wrapper?.parentElement ?? wrapper?.closest?.('[data-test="DesignSystem-Select-Option"]') ?? wrapper) as HTMLElement | null | undefined;
+  if (toFocus) {
+    toFocus.focus();
+    if (typeof toFocus.scrollIntoView === 'function') {
+      toFocus.scrollIntoView({ block: 'center' });
+    }
+    setFocusedOption?.(toFocus);
+  } else {
+    setFocusedOption?.(targetOption as HTMLElement);
+  }
+};
+
+export const LISTBOX_ITEM_SELECTOR = '[data-test="DesignSystem-Listbox-ItemWrapper"]';
+
+function isOptionFocusable(el: Element): boolean {
+  return el.getAttribute('data-disabled') !== 'true';
+}
+
+/**
+ * Returns the index of the selected option from React state (option values in DOM order).
+ * Avoids DOM timing issues where aria-selected is not yet flushed on re-open.
+ */
+function getSelectedIndexFromState(
+  selectValue: OptionType | OptionType[] | undefined,
+  optionValuesOrder: OptionType[]
+): number {
+  if (!selectValue || optionValuesOrder.length === 0) return -1;
+  if (Array.isArray(selectValue)) {
+    return optionValuesOrder.findIndex((opt) => elementExist(opt, selectValue) !== -1);
+  }
+  return optionValuesOrder.findIndex((opt) => compareOptions(opt, selectValue));
+}
+
+/**
+ * Returns the index of the option that should have tabindex=0 (roving tabstop).
+ * If focusedOption is in the list, that option's index; otherwise the first selected
+ * option (from state when optionValuesOrder is provided, else from DOM aria-selected),
+ * or the first focusable option; -1 if list is empty or no focusable.
+ */
+export const getRovingIndex = (
+  listRef: React.RefObject<HTMLDivElement | null> | null,
+  focusedOption: HTMLElement | undefined,
+  selectValue?: OptionType | OptionType[] | undefined,
+  optionValuesOrder?: OptionType[]
+): number => {
+  const list = listRef?.current?.querySelectorAll(LISTBOX_ITEM_SELECTOR);
+  if (!list?.length) return -1;
+
+  const items = Array.from(list) as HTMLElement[];
+
+  if (focusedOption) {
+    const focusedIdx = items.findIndex(
+      (el) => el === focusedOption || el.parentElement === focusedOption
+    );
+    const focusedItem = focusedIdx >= 0 ? items[focusedIdx] : null;
+    if (focusedIdx !== -1 && focusedItem && isOptionFocusable(focusedItem)) return focusedIdx;
+  }
+
+  const focusableIndices = items.map((el, i) => (isOptionFocusable(el) ? i : -1)).filter((i) => i !== -1);
+  if (focusableIndices.length === 0) return -1;
+
+  if (selectValue && optionValuesOrder && optionValuesOrder.length > 0) {
+    const selectedIdx = getSelectedIndexFromState(selectValue, optionValuesOrder);
+    if (selectedIdx >= 0 && selectedIdx < items.length && isOptionFocusable(items[selectedIdx])) {
+      return selectedIdx;
+    }
+  }
+
+  const firstSelectedIdx = items.findIndex((el) => {
+    if (!isOptionFocusable(el)) return false;
+    const listItem = el.parentElement ?? el;
+    return listItem.getAttribute('aria-selected') === 'true';
+  });
+  if (firstSelectedIdx !== -1) return firstSelectedIdx;
+
+  return focusableIndices[0];
+};
+
+/**
+ * Focus the initial element when popover opens: search input if present, otherwise the option at roving index (first or first-selected).
+ * Returns the roving index for the list (or -1 if search was focused or list empty).
+ * optionValuesOrder (from state/ref) is used to compute selected index so focus lands on the selected option on re-open.
+ */
+export const focusPopoverInitial = (
+  listRef: React.RefObject<HTMLDivElement | null> | null,
+  setFocusedOption: React.Dispatch<React.SetStateAction<HTMLElement | undefined>> | undefined,
+  selectValue: OptionType | OptionType[] | undefined,
+  optionValuesOrder?: OptionType[]
+): number => {
+  const container = listRef?.current;
+  if (!container) return -1;
+
+  const searchInput = container.querySelector<HTMLElement>('[data-test="DesignSystem-Select--Input"]');
+  if (searchInput) {
+    searchInput.focus();
+    setFocusedOption?.(searchInput);
+    if (typeof searchInput.scrollIntoView === 'function') {
+      searchInput.scrollIntoView({ block: 'center' });
+    }
+    return -1;
+  }
+
+  const idx = getRovingIndex(listRef, undefined, selectValue, optionValuesOrder);
+  if (idx >= 0) {
+    const list = container.querySelectorAll(LISTBOX_ITEM_SELECTOR);
+    const wrapper = list?.[idx] as HTMLElement | undefined;
+    const option = wrapper?.parentElement ?? wrapper;
+    if (option) {
+      option.focus();
+      setFocusedOption?.(option);
+      if (typeof option.scrollIntoView === 'function') {
+        option.scrollIntoView({ block: 'center' });
+      }
+    }
+  }
+  return idx;
 };

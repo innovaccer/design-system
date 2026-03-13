@@ -2,8 +2,6 @@
 
 <br />
 
-#### Single Select
-
 <table style={{width: "100%"}}>
   <tbody>
     <tr>
@@ -12,213 +10,94 @@
       <th style={{width:"33%", textAlign: "left"}}>Final state</th>
     </tr>
     <tr style={{verticalAlign: "top"}}>
-      <td>Select trigger in default state  </td>
+      <td>Select trigger in default state</td>
       <td>&#60;Tab&#62;</td>
-      <td>The trigger will be in focus but the popover will not be opened. </td>
+      <td>Trigger receives focus</td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
       <td>Select trigger in focus </td>
       <td>&#60;Tab&#62;</td>
-      <td>Focus shifts to next item in Tab sequence on the page. <br /> The popover will be excluded from the tab sequence on the page. </td>
+      <td>Focus shifts to the next item in the tab sequence on the page</td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
       <td></td>
-      <td>&#60;Enter&#62;</td>
+      <td>&#60;Enter&#62; / &#60;Space&#62;</td>
+      <td>Popover opens. If there is a search input, focus shifts there. If not, focus goes to the selected/first option.</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td></td>
+      <td>&#60;Arrow Down&#62;</td>
+      <td>Popover opens. If there is a search input, focus shifts there. If not, focus goes to the selected/first option.</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td></td>
+      <td>&#60;Arrow Up&#62;</td>
+      <td>Popover opens. Focus shifts to the last list option.</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Popover is open (focus is inside the popover)</td>
+      <td>&#60;Tab&#62; / &#60;Shift Tab&#62;</td>
+      <td>Focus shifts to the next/previous focusable item inside the popover, wrapping at the end or start. Focus does not leave the popover to prevent accidental dismissals.</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td></td>
+      <td>&#60;Enter&#62; / &#60;Space&#62;</td>
       <td>
-       Open the popover, and transfer focus from the trigger to either the first focusable item or the search option, depending on the context.
+        <p style={{marginBottom: 4}}><strong>Single select:</strong></p>
+        <ul style={{marginTop: 0}}>
+          <li>Focused option is selected.</li>
+          <li>Popover closes. Focus returns to the trigger.</li>
+        </ul>
+        <p style={{marginBottom: 4}}><strong>Multi-select:</strong></p>
+        <ul style={{marginTop: 0}}>
+          <li>Focused option is Selected/Deselected.Popover stays open.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Focus is on a list option</td>
+      <td>&#60;Arrow Down&#62;</td>
+      <td>
+        <ul>
+          <li>Focus shifts to the next list option.</li>
+          <li>If focus is on the last option, focus wraps to the search input/first option.</li>
+        </ul>
       </td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
       <td></td>
-      <td>down arrow</td>
+      <td>&#60;Arrow Up&#62;</td>
       <td>
-       Open the popover, and transfer focus from the trigger to either the first focusable item or the search option, depending on the context.
+        <ul>
+          <li>Focus shifts to the previous list option.</li>
+          <li>If focus is on the first option, focus wraps to the search input/last option.</li>
+        </ul>
       </td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
-      <td></td>
-      <td>&#60;up arrow&#62;</td>
-      <td>
-       Open the popover, and transfer focus from the trigger to the last focusable item.
-      </td>
+      <td>Focus is on the search input</td>
+      <td>&#60;Arrow Down&#62;</td>
+      <td>Focus shifts to the first list option.</td>
     </tr>
     <tr style={{verticalAlign: "top"}}>
       <td></td>
+      <td>&#60;Arrow Up&#62;</td>
+      <td>Focus shifts to the last list option.</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Focus is on a list option</td>
+      <td>&#60;Home&#62;</td>
+      <td>Focus shifts to the search input/first list option.</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td></td>
+      <td>&#60;End&#62;</td>
+      <td>Focus shifts to the last list option.</td>
+    </tr>
+    <tr style={{verticalAlign: "top"}}>
+      <td>Focus within Popover</td>
       <td>&#60;Escape&#62;</td>
-      <td>
-        Nothing happens.
-      </td>
-    </tr>
-    <tr style={{verticalAlign: "top"}}>
-      <td>Popover is open (The trigger will not be in focus at this instance)</td>
-      <td>&#60;Tab&#62;</td>
-      <td>
-       Shift focus to next item in Tab sequence on the page. <br /> The popover will be excluded from the tab sequence on the page.
-      </td>
-    </tr>
-    <tr style={{verticalAlign: "top"}}>
-      <td></td>
-      <td>&#60;Enter&#62;</td>
-      <td>
-        Select the focused item and close the popover.
-      </td>
-    </tr>
-    <tr style={{verticalAlign: "top"}}>
-      <td></td>
-      <td>&#60;down arrow&#62;</td>
-      <td>
-        <ul>
-          <li>Shift focus to the next focusable item(even if it’s in a different group).</li>
-          <li>If focus is on the last focusable item, shift focus to the first focusable item.</li>
-          <li>
-            In case of search:
-            <ul>
-                <li class="ml-5">If focus is on the last item, shift focus to search. </li>
-                <li class="ml-5">If focus is on search, shift focus to the first focusable item. </li>
-            </ul>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr style={{verticalAlign: "top"}}>
-      <td></td>
-      <td>&#60;up arrow&#62;</td>
-      <td>
-        <ul>
-          <li>Shift focus to the previous focusable item.</li>
-          <li>If focus is on the first item, shift focus to the last focusable item.</li>
-          <li>
-            In case of search:
-            <ul>
-                <li class="ml-5">If focus is on the first item, shift focus to search. </li>
-                <li class="ml-5">If focus is on search, shift focus to the last focusable item. </li>
-            </ul>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr style={{verticalAlign: "top"}}>
-      <td></td>
-      <td>&#60;Escape&#62;</td>
-      <td>
-        Close the popover. Focus is now on the trigger.
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-<br />
-<br />
-
-#### Multi-Select
-
-
-<table style={{width: "100%"}}>
-  <tbody>
-    <tr>
-      <th style={{width:"33%", textAlign: "left"}}>Initial state</th>
-      <th style={{width:"33%", textAlign: "left"}}>Keyboard Interaction</th>
-      <th style={{width:"33%", textAlign: "left"}}>Final state</th>
-    </tr>
-    <tr style={{verticalAlign: "top"}}>
-      <td>Select trigger in default state  </td>
-      <td>&#60;Tab&#62;</td>
-      <td>The trigger will be in focus but the popover will not be opened. </td>
-    </tr>
-    <tr style={{verticalAlign: "top"}}>
-      <td>Select trigger in focus </td>
-      <td>&#60;Tab&#62;</td>
-      <td>Focus shifts to next item in Tab sequence on the page. <br /> The popover will be excluded from the tab sequence on the page. </td>
-    </tr>
-    <tr style={{verticalAlign: "top"}}>
-      <td></td>
-      <td>&#60;Enter&#62;</td>
-      <td>
-       Open the popover, and transfer focus from the trigger to either the first focusable item or the search option, depending on the context.
-      </td>
-    </tr>
-    <tr style={{verticalAlign: "top"}}>
-      <td></td>
-      <td>down arrow</td>
-      <td>
-       Open the popover, and transfer focus from the trigger to either the first focusable item or the search option, depending on the context.
-      </td>
-    </tr>
-    <tr style={{verticalAlign: "top"}}>
-      <td></td>
-      <td>&#60;up arrow&#62;</td>
-      <td>
-       Open the popover, and transfer focus from the trigger to the last focusable item.
-      </td>
-    </tr>
-    <tr style={{verticalAlign: "top"}}>
-      <td></td>
-      <td>&#60;Escape&#62;</td>
-      <td>
-        Nothing happens.
-      </td>
-    </tr>
-    <tr style={{verticalAlign: "top"}}>
-      <td>Popover is open (The trigger will not be in focus at this instance)</td>
-      <td>&#60;Tab&#62;</td>
-      <td>
-        <ul>
-            <li>
-               Shift focus from the selected option item in popover to the buttons inside popover 
-            </li>
-            <li>
-               If the focus is on apply inside popover, shift focus to next item in Tab sequence on the page
-            </li>
-        </ul>
-      </td>
-    </tr>
-    <tr style={{verticalAlign: "top"}}>
-      <td></td>
-      <td>&#60;Enter&#62;</td>
-      <td>
-        Select the focused item.
-      </td>
-    </tr>
-    <tr style={{verticalAlign: "top"}}>
-      <td></td>
-      <td>&#60;down arrow&#62;</td>
-      <td>
-        <ul>
-          <li>Shift focus to the next focusable item.</li>
-          <li>If focus is on the last focusable item, shift focus to the first focusable item.</li>
-          <li>
-            In case of search:
-            <ul>
-                <li class="ml-5">If focus is on the last item, shift focus to search. </li>
-                <li class="ml-5">If focus is on search, shift focus to the first focusable item. </li>
-            </ul>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr style={{verticalAlign: "top"}}>
-      <td></td>
-      <td>&#60;up arrow&#62;</td>
-      <td>
-        <ul>
-          <li>Shift focus to the previous focusable item.</li>
-          <li>If focus is on the first item, shift focus to the last focusable item.</li>
-          <li>
-            In case of search:
-            <ul>
-                <li class="ml-5">If focus is on the first item, shift focus to search. </li>
-                <li class="ml-5">If focus is on search, shift focus to the last focusable item. </li>
-            </ul>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr style={{verticalAlign: "top"}}>
-      <td></td>
-      <td>&#60;Escape&#62;</td>
-      <td>
-        Close the popover. Focus is now on the trigger.
-      </td>
+      <td>Popover closes. Focus returns to the trigger.</td>
     </tr>
   </tbody>
 </table>
