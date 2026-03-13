@@ -86,7 +86,9 @@ export const ListboxItem = (props: ListboxItemProps) => {
       className={tagClass}
       // Note: tabIndex must remain on outer Tag for Select/Menu Tab navigation to work correctly.
       // Moving to inner div breaks Tab-to-footer and focus trap detection.
-      tabIndex={tabIndex}
+      // Defaults to 0 for keyboard accessibility in standalone Listbox usage.
+      // Select/Menu pass explicit 0 or -1 for roving tabindex pattern.
+      tabIndex={tabIndex ?? 0}
       onKeyDown={keyDownHandler}
     >
       <ListBody {...props} />
