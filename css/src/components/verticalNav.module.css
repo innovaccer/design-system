@@ -65,6 +65,11 @@
   pointer-events: none;
 }
 
+.MenuItem--disabled:focus-visible,
+.MenuItem--disabled:focus {
+  outline: none;
+}
+
 .MenuItem:hover {
   background: var(--secondary);
   text-decoration: none;
@@ -74,13 +79,10 @@
   background: var(--secondary-dark);
 }
 
+.MenuItem:focus-visible,
 .MenuItem:focus {
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
-  outline: none;
-}
-
-.MenuItem--disabled:focus {
-  box-shadow: none;
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 .MenuItem--active {
@@ -100,9 +102,11 @@
   color: var(--primary-darker);
 }
 
+.MenuItem--active:focus-visible,
 .MenuItem--active:focus {
-  box-shadow: var(--shadow-spread) var(--primary-shadow);
-  outline: none;
+  background: var(--primary-lightest);
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 .MenuItem--rounded {

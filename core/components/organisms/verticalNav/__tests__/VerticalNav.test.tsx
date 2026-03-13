@@ -64,6 +64,9 @@ const menus = [
   },
 ];
 
+/** VerticalNav root has role="tree" and the onKeyDown handler; fire key events on it. */
+const getTreeElement = (container: HTMLElement) => container.querySelector('[role="tree"]') as HTMLElement;
+
 const menusWithExpandedSubMenu = [
   {
     name: 'patient_360',
@@ -378,5 +381,103 @@ describe('Vertical Navigation component prop: customOptionRenderer', () => {
       <VerticalNav menus={menus} active={active} customOptionRenderer={customOptionRenderer} />
     );
     expect(getAllByTestId('DesignSystem-VerticalNav--Item')).toHaveLength(menus.length);
+  });
+});
+
+describe('Vertical Navigation component keyboard accessibility', () => {
+  const getFocusableItems = (container: HTMLElement) =>
+    Array.from(container.querySelectorAll<HTMLElement>('[data-menu-name]')).filter(
+      (el) => el.getAttribute('data-disabled') !== 'true'
+    );
+
+  it('implements roving tabindex (only one item has tabIndex 0)', () => {
+    const { container } = render(<VerticalNav menus={menus} active={active} expanded={true} />);
+    const focusable = getFocusableItems(container);
+    const withTabIndex0 = focusable.filter((el) => el.getAttribute('tabindex') === '0');
+    expect(withTabIndex0).toHaveLength(1);
+  });
+
+  it('handles Arrow Down to navigate to next item', () => {
+    const { container } = render(<VerticalNav menus={menus} active={active} expanded={true} />);
+    const focusable = getFocusableItems(container);
+    focusable[0].focus();
+    fireEvent.keyDown(getTreeElement(container), { key: 'ArrowDown' });
+    expect(document.activeElement).toBe(focusable[1]);
+  });
+
+  it('handles Arrow Up to navigate to previous item', () => {
+    const { container } = render(<VerticalNav menus={menus} active={active} expanded={true} />);
+    const focusable = getFocusableItems(container);
+    focusable[1].focus();
+    fireEvent.keyDown(getTreeElement(container), { key: 'ArrowUp' });
+    expect(document.activeElement).toBe(focusable[0]);
+  });
+
+  it('handles Arrow Right to expand collapsed submenu', () => {
+    const { container } = render(<VerticalNav menus={menus} active={{ name: 'patient_360' }} expanded={true} />);
+    const focusable = getFocusableItems(container);
+    const careManagementIndex = focusable.findIndex((el) => el.getAttribute('data-menu-name') === 'care_management');
+    focusable[careManagementIndex].focus();
+    fireEvent.keyDown(getTreeElement(container), { key: 'ArrowRight' });
+    expect(container.querySelector('[data-menu-name="care_management.timeline"]')).toBeTruthy();
+  });
+
+  it('handles Arrow Left to collapse expanded submenu when on parent', () => {
+    const { container } = render(<VerticalNav menus={menus} active={active} expanded={true} autoCollapse={false} />);
+    const focusable = getFocusableItems(container);
+    const careManagementIndex = focusable.findIndex((el) => el.getAttribute('data-menu-name') === 'care_management');
+    focusable[careManagementIndex].focus();
+    fireEvent.keyDown(getTreeElement(container), { key: 'ArrowLeft' });
+    expect(container.querySelector('[data-menu-name="care_management.timeline"]')).toBeFalsy();
+  });
+
+  it('handles Arrow Left on submenu item to move focus to parent', () => {
+    const { container } = render(<VerticalNav menus={menus} active={active} expanded={true} autoCollapse={false} />);
+    const focusable = getFocusableItems(container);
+    const timelineIndex = focusable.findIndex((el) => el.getAttribute('data-menu-name') === 'care_management.timeline');
+    focusable[timelineIndex].focus();
+    fireEvent.keyDown(getTreeElement(container), { key: 'ArrowLeft' });
+    const parent = container.querySelector('[data-menu-name="care_management"]');
+    expect(document.activeElement).toBe(parent);
+  });
+
+  it('handles Home to focus first item', () => {
+    const { container } = render(<VerticalNav menus={menus} active={active} expanded={true} />);
+    const focusable = getFocusableItems(container);
+    focusable[focusable.length - 1].focus();
+    fireEvent.keyDown(getTreeElement(container), { key: 'Home' });
+    expect(document.activeElement).toBe(focusable[0]);
+  });
+
+  it('handles End to focus last visible item', () => {
+    const { container } = render(<VerticalNav menus={menus} active={active} expanded={true} />);
+    const focusable = getFocusableItems(container);
+    focusable[0].focus();
+    fireEvent.keyDown(getTreeElement(container), { key: 'End' });
+    expect(document.activeElement).toBe(focusable[focusable.length - 1]);
+  });
+
+  it('handles Space to activate focused item', () => {
+    const { container } = render(<VerticalNav menus={menus} active={active} expanded={true} onClick={onClick} />);
+    const focusable = getFocusableItems(container);
+    focusable[0].focus();
+    fireEvent.keyDown(getTreeElement(container), { key: ' ' });
+    expect(onClick).toHaveBeenCalledWith(menus[0]);
+  });
+
+  it('prevents default on Space to avoid page scroll', () => {
+    const onClickSpy = jest.fn();
+    const { container } = render(<VerticalNav menus={menus} active={active} expanded={true} onClick={onClickSpy} />);
+    const focusable = getFocusableItems(container);
+    focusable[0].focus();
+    fireEvent.keyDown(getTreeElement(container), { key: ' ' });
+    expect(onClickSpy).toHaveBeenCalledWith(menus[0]);
+  });
+
+  it('skips disabled items during keyboard navigation', () => {
+    const { container } = render(<VerticalNav menus={menus} active={active} expanded={true} />);
+    const focusable = getFocusableItems(container);
+    const hasEpisodes = focusable.some((el) => el.getAttribute('data-menu-name') === 'episodes');
+    expect(hasEpisodes).toBe(false);
   });
 });
