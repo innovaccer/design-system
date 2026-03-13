@@ -193,6 +193,8 @@ const customCode = `() => {
   const [isStatusSelectOpen, setStatusSelectOpen] = React.useState(false);
   const [isRecordSelectOpen, setRecordSelectOpen] = React.useState(false);
   const [isOverviewSelectOpen, setOverviewSelectOpen] = React.useState(false);
+  const [isRecordSelectOpen, setRecordSelectOpen] = React.useState(false);
+  const [isOverviewSelectOpen, setOverviewSelectOpen] = React.useState(false);
   const [selectedDevelopmentStatus, setSelectedDevelopmentStatus] = React.useState({
     label: 'Development',
     value: 'Development',
