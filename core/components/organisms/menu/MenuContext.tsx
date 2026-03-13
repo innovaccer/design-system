@@ -5,6 +5,7 @@ export type ContextProps = {
   focusedOption?: Element;
   menuTriggerRef?: React.RefObject<HTMLButtonElement>;
   listRef?: React.RefObject<HTMLDivElement>;
+  isKeyboardNavigating?: React.MutableRefObject<boolean>;
   setOpenPopover?: React.Dispatch<React.SetStateAction<boolean | undefined>>;
   setHighlightFirstItem?: React.Dispatch<React.SetStateAction<boolean>>;
   setHighlightLastItem?: React.Dispatch<React.SetStateAction<boolean>>;

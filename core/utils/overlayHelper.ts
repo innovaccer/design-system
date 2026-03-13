@@ -63,7 +63,8 @@ export const getFocusableElements = (container: HTMLElement): HTMLElement[] => {
     const isAriaHidden = el.getAttribute('aria-hidden') === 'true';
     const isAriaDisabled = el.getAttribute('aria-disabled') === 'true';
     const isInert = el.closest('[inert]') !== null;
-    return isVisible && !isAriaHidden && !isAriaDisabled && !isInert;
+    const isExplicitlyNonFocusable = el.getAttribute('tabindex') === '-1';
+    return isVisible && !isAriaHidden && !isAriaDisabled && !isInert && !isExplicitlyNonFocusable;
   });
 };
 

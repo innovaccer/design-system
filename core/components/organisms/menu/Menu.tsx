@@ -11,6 +11,7 @@ import classNames from 'classnames';
 import MenuContext from './MenuContext';
 import { focusListItem } from './trigger/utils';
 import SubMenuContext from './SubMenuContext';
+import { getNextFocusableAfterTrigger } from '@/utils/overlayHelper';
 import styles from '@css/components/menu.module.css';
 
 export interface MenuProps extends BaseProps {
@@ -67,6 +68,7 @@ export const Menu = (props: MenuProps) => {
   const [focusedOption, setFocusedOption] = React.useState<HTMLElement | undefined>();
   const listRef = React.createRef<HTMLDivElement>();
   const menuTriggerRef = React.useRef<HTMLButtonElement>(null);
+  const isKeyboardNavigating = React.useRef<boolean>(false);
   const subMenuContextProp = React.useContext(SubMenuContext);
 
   const { menuID } = subMenuContextProp;
@@ -97,8 +99,28 @@ export const Menu = (props: MenuProps) => {
     onToggle?.(openPopover);
   }, [openPopover]);
 
-  const onToggleHandler = (open: boolean) => {
+  const onToggleHandler = (open: boolean, type?: string) => {
+    // Don't close during keyboard navigation
+    if (!open && type === 'onBlur' && isKeyboardNavigating.current) {
+      return;
+    }
     setOpenPopover(open);
+  };
+
+  const handlePopoverKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (!openPopover || e.key !== 'Tab' || !listRef.current) return;
+    const container = listRef.current;
+    if (!container.contains(document.activeElement as Node)) return;
+
+    e.preventDefault();
+    setOpenPopover(false);
+
+    const nextFocusable = getNextFocusableAfterTrigger(menuTriggerRef.current, e.shiftKey, container);
+    if (nextFocusable) {
+      nextFocusable.focus({ preventScroll: true });
+    } else {
+      menuTriggerRef.current?.focus({ preventScroll: true });
+    }
   };
 
   const contextProp = {
@@ -110,6 +132,7 @@ export const Menu = (props: MenuProps) => {
     setFocusedOption,
     menuTriggerRef,
     listRef,
+    isKeyboardNavigating,
   };
 
   return (
@@ -126,9 +149,11 @@ export const Menu = (props: MenuProps) => {
         <div
           ref={listRef}
           role="menu"
+          tabIndex={-1}
           data-test={props['data-test'] || 'DesignSystem-Menu-Wrapper'}
           className={popoverClassName}
           style={{ maxHeight, minHeight }}
+          onKeyDown={handlePopoverKeyDown}
         >
           {children}
         </div>

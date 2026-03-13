@@ -1,4 +1,5 @@
 import React from 'react';
+import { getAllFocusableElements } from '@/utils/overlayHelper';
 
 export const handleKeyDown = (
   event: React.KeyboardEvent,
@@ -30,6 +31,11 @@ export const handleKeyDown = (
       inputTriggerRef.current.focus();
       setFocusedOption?.(undefined);
       break;
+    case 'Tab':
+      event.preventDefault();
+      setOpenPopover?.(false);
+      inputTriggerRef.current?.focus();
+      break;
     default:
       break;
   }
@@ -47,16 +53,16 @@ const handleEnterKey = (
     inputTriggerRef.current.focus();
   } else {
     // to focus first option by default when last option is selected
-    const listItems = listRef.current.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
-    const listArr = Array.from(listItems);
-    const index = listArr.findIndex((item) => {
-      return item == focusedOption;
-    });
+    if (!listRef?.current) return;
 
-    if (index === listArr.length - 1) {
-      (listItems[0] as HTMLElement).focus();
-      setFocusedOption && setFocusedOption(listItems[0]);
-      listItems[0].scrollIntoView({ block: 'center' });
+    // Scope to 'listbox' role to exclude nested elements
+    const focusables = getAllFocusableElements(listRef.current, 'listbox');
+    const index = focusables.findIndex((item) => item === focusedOption);
+
+    if (index === focusables.length - 1 && focusables.length > 0) {
+      focusables[0].focus({ preventScroll: true });
+      setFocusedOption && setFocusedOption(focusables[0]);
+      focusables[0].scrollIntoView({ block: 'center' });
     }
   }
 };
@@ -67,20 +73,22 @@ const navigateOptions = (
   setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>,
   listRef?: any
 ) => {
-  const listItems = listRef.current.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
-  let index = Array.from(listItems).findIndex((item) => {
-    return item == focusedOption;
-  });
+  if (!listRef?.current) return;
+
+  // Scope to 'listbox' role to exclude nested elements
+  const focusables = getAllFocusableElements(listRef.current, 'listbox');
+  if (focusables.length === 0) return;
+
+  let index = focusables.findIndex((item) => item === focusedOption || item === document.activeElement);
 
   if (index === -1) {
-    index = direction === 'up' ? listItems.length - 1 : 0;
+    index = direction === 'up' ? focusables.length - 1 : 0;
   } else {
-    index = direction === 'up' ? (index - 1 + listItems.length) % listItems.length : (index + 1) % listItems.length;
+    index = direction === 'up' ? (index - 1 + focusables.length) % focusables.length : (index + 1) % focusables.length;
   }
 
-  const targetOption = listItems[index];
-
-  (targetOption as HTMLElement).focus();
+  const targetOption = focusables[index];
+  targetOption.focus({ preventScroll: true });
   setFocusedOption && setFocusedOption(targetOption);
-  targetOption?.scrollIntoView?.({ block: 'center' });
+  targetOption.scrollIntoView?.({ block: 'center' });
 };
