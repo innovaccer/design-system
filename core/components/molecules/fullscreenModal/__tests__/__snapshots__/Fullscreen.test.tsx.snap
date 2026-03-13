@@ -13,8 +13,10 @@ exports[`FullscreenModal component
       data-test="DesignSystem-FullscreenModalContainer"
     >
       <div
+        aria-modal="true"
         class="FullscreenModal FullscreenModal-animation--open"
         data-test="DesignSystem-FullscreenModal"
+        role="dialog"
       >
         <div
           class="Row justify-content-center"
@@ -99,8 +101,10 @@ exports[`FullscreenModal component
       data-test="DesignSystem-FullscreenModalContainer"
     >
       <div
+        aria-modal="true"
         class="FullscreenModal FullscreenModal-animation--open"
         data-test="DesignSystem-FullscreenModal"
+        role="dialog"
       >
         <div
           class="Row justify-content-center"
@@ -210,8 +214,10 @@ exports[`FullscreenModal component
       data-test="DesignSystem-FullscreenModalContainer"
     >
       <div
+        aria-modal="true"
         class="FullscreenModal FullscreenModal-animation--open"
         data-test="DesignSystem-FullscreenModal"
+        role="dialog"
       >
         <div
           class="Row justify-content-center"
@@ -314,8 +320,10 @@ exports[`FullscreenModal component
       data-test="DesignSystem-FullscreenModalContainer"
     >
       <div
+        aria-modal="true"
         class="FullscreenModal FullscreenModal-animation--open"
         data-test="DesignSystem-FullscreenModal"
+        role="dialog"
       >
         <div
           class="Row justify-content-center"
@@ -399,8 +407,10 @@ exports[`FullscreenModal component
       data-test="DesignSystem-FullscreenModalContainer"
     >
       <div
+        aria-modal="true"
         class="FullscreenModal FullscreenModal-animation--open"
         data-test="DesignSystem-FullscreenModal"
+        role="dialog"
       >
         <div
           class="Row justify-content-center"
@@ -510,8 +520,10 @@ exports[`FullscreenModal component
       data-test="DesignSystem-FullscreenModalContainer"
     >
       <div
+        aria-modal="true"
         class="FullscreenModal FullscreenModal-animation--open"
         data-test="DesignSystem-FullscreenModal"
+        role="dialog"
       >
         <div
           class="Row justify-content-center"
