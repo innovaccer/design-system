@@ -2,14 +2,19 @@
 import isSpaceKey from '../isSpaceKey';
 
 describe('isSpaceKey', () => {
-  test('returns true if the space key is pressed', () => {
-    // Create a mock React keyboard event with 'Space' as the key
-    const spaceKeyEvent = {
-      key: 'Space',
-    } as React.KeyboardEvent;
+  test('returns true when key is space character', () => {
+    const event = { key: ' ' } as React.KeyboardEvent;
+    expect(isSpaceKey(event)).toBe(true);
+  });
 
-    // Assert that isSpaceKey returns true for the space key event
-    expect(isSpaceKey(spaceKeyEvent)).toBe(true);
+  test('returns true when key is Space', () => {
+    const event = { key: 'Space' } as React.KeyboardEvent;
+    expect(isSpaceKey(event)).toBe(true);
+  });
+
+  test('returns true when key is Spacebar (legacy)', () => {
+    const event = { key: 'Spacebar' } as React.KeyboardEvent;
+    expect(isSpaceKey(event)).toBe(true);
   });
 
   test('returns false if any other key is pressed', () => {
