@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, waitFor } from '@testing-library/react';
 import { EditableDropdown } from '@/index';
 import { DropdownProps, EditableDropdownProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -104,6 +104,43 @@ describe('EditableDropdown component', () => {
     fireEvent.mouseEnter(editableWrapper);
     expect(getByTestId('DesignSystem-EditableDropdown--Dropdown')).not.toHaveClass('d-none');
     expect(getByTestId('DesignSystem-EditableDropdown--Dropdown').textContent).toMatch(label);
+  });
+});
+
+describe('EditableDropdown keyboard interactions', () => {
+  it('Escape cancels when dropdown is visible (hover mode)', () => {
+    const { getByTestId } = render(<EditableDropdown placeholder={placeholder} dropdownOptions={dropdownOptions} />);
+
+    const editableWrapper = getByTestId(editableWrapperTestId);
+    fireEvent.mouseEnter(editableWrapper);
+    expect(getByTestId('DesignSystem-EditableDropdown--Dropdown')).not.toHaveClass('d-none');
+
+    fireEvent.keyDown(editableWrapper, { key: 'Escape' });
+
+    expect(getByTestId('DesignSystem-EditableDropdown--Dropdown')).toHaveClass('d-none');
+    expect(getByTestId('DesignSystem-EditableDropdown--Default')).not.toHaveClass('d-none');
+  });
+
+  it('Escape cancels when dropdown is visible (edit mode)', () => {
+    const { getByTestId } = render(<EditableDropdown placeholder={placeholder} dropdownOptions={dropdownOptions} />);
+
+    const editableWrapper = getByTestId(editableWrapperTestId);
+    fireEvent.click(editableWrapper);
+    expect(getByTestId('DesignSystem-EditableDropdown--Dropdown')).not.toHaveClass('d-none');
+
+    fireEvent.keyDown(editableWrapper, { key: 'Escape' });
+
+    expect(getByTestId('DesignSystem-EditableDropdown--Dropdown')).toHaveClass('d-none');
+  });
+
+  it('Escape restores focus to trigger after canceling', async () => {
+    const { getByTestId } = render(<EditableDropdown placeholder={placeholder} dropdownOptions={dropdownOptions} />);
+
+    const editableWrapper = getByTestId(editableWrapperTestId);
+    fireEvent.click(editableWrapper);
+    fireEvent.keyDown(editableWrapper, { key: 'Escape' });
+
+    await waitFor(() => expect(editableWrapper).toHaveFocus());
   });
 });
 

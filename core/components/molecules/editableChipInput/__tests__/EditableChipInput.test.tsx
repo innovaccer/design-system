@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, waitFor } from '@testing-library/react';
 import { EditableChipInput } from '@/index';
 import { EditableChipInputProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -99,6 +99,88 @@ describe('Chip component', () => {
     expect(onClick).toHaveBeenCalled();
     fireEvent.click(editableChipInputChip[1]);
     expect(onClick).toHaveBeenCalled();
+  });
+});
+
+describe('EditableChipInput keyboard interactions', () => {
+  it('Escape discards changes when editing', () => {
+    const { getByTestId, queryByTestId, getAllByTestId } = render(
+      <EditableChipInput value={value} onChange={onChange} chipInputOptions={chipInputOptions} size="regular" />
+    );
+
+    const editableWrapper = getByTestId(editableWrapperTestId);
+    fireEvent.click(editableWrapper);
+    expect(queryByTestId(chipInputTestId)).toBeInTheDocument();
+
+    fireEvent.keyDown(editableWrapper, { key: 'Escape' });
+
+    expect(getByTestId(defaultComponentTestId)).toBeInTheDocument();
+    expect(queryByTestId(chipInputTestId)).not.toBeInTheDocument();
+    expect(getAllByTestId('DesignSystem-EditableChipInput--Chip')[0].textContent).toMatch(`${value[0]}clear`);
+  });
+
+  it('Escape restores focus to trigger after canceling', async () => {
+    const { getByTestId } = render(
+      <EditableChipInput value={value} onChange={onChange} chipInputOptions={chipInputOptions} size="regular" />
+    );
+
+    const editableWrapper = getByTestId(editableWrapperTestId);
+    fireEvent.click(editableWrapper);
+    fireEvent.keyDown(editableWrapper, { key: 'Escape' });
+
+    await waitFor(() => expect(editableWrapper).toHaveFocus());
+  });
+
+  it('Enter saves changes when editing and not focused on ChipInput', () => {
+    const { getByTestId, queryByTestId } = render(
+      <EditableChipInput value={value} onChange={onChange} chipInputOptions={chipInputOptions} size="regular" />
+    );
+
+    const editableWrapper = getByTestId(editableWrapperTestId);
+    fireEvent.click(editableWrapper);
+    fireEvent.keyDown(editableWrapper, { key: 'Enter' });
+
+    expect(onChange).toHaveBeenCalled();
+    expect(getByTestId(defaultComponentTestId)).toBeInTheDocument();
+    expect(queryByTestId(chipInputTestId)).not.toBeInTheDocument();
+  });
+
+  it('Enter in ChipInput field adds chip and does not save', () => {
+    const { getByTestId, getAllByTestId } = render(
+      <EditableChipInput value={value} onChange={onChange} chipInputOptions={chipInputOptions} size="regular" />
+    );
+
+    const editableWrapper = getByTestId(editableWrapperTestId);
+    fireEvent.click(editableWrapper);
+
+    const chipInput = getByTestId(chipInputTestId);
+    const input = chipInput.querySelector('input');
+    if (input) {
+      fireEvent.change(input, { target: { value: 'NewChip' } });
+      fireEvent.keyDown(input, { key: 'Enter' });
+    }
+
+    expect(getAllByTestId('DesignSystem-ChipInput--Chip').length).toBeGreaterThan(value.length);
+  });
+
+  it('Enter does not save when disableSaveAction is true', () => {
+    const { getByTestId, queryByTestId } = render(
+      <EditableChipInput
+        value={value}
+        onChange={onChange}
+        chipInputOptions={chipInputOptions}
+        size="regular"
+        disableSaveAction={true}
+      />
+    );
+
+    const editableWrapper = getByTestId(editableWrapperTestId);
+    fireEvent.click(editableWrapper);
+    const saveCallsBefore = onChange.mock.calls.length;
+    fireEvent.keyDown(editableWrapper, { key: 'Enter' });
+
+    expect(onChange.mock.calls.length).toBe(saveCallsBefore);
+    expect(queryByTestId(chipInputTestId)).toBeInTheDocument();
   });
 });
 

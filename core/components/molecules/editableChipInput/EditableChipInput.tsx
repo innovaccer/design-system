@@ -107,6 +107,26 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
     }
   };
 
+  const handleEditModeKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === 'Enter') {
+      const target = event.target as HTMLElement;
+      if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA') {
+        return;
+      }
+      if (disableSaveAction) return;
+      event.preventDefault();
+      onSaveChanges();
+    } else if (event.key === 'Escape') {
+      event.preventDefault();
+      setDefaultComponent(value);
+      // Restore focus to trigger for keyboard users
+      const wrapper = event.currentTarget;
+      requestAnimationFrame(() => {
+        wrapper?.focus();
+      });
+    }
+  };
+
   const onChipDelete = (index: number) => {
     if (value) {
       const updatedValue = [...value];
@@ -165,9 +185,11 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
     );
   };
 
+  const containerRef = React.useRef<HTMLDivElement>(null);
+
   return (
-    <div className={classes} data-test="DesignSystem-EditableChipInput" {...baseProps}>
-      <Editable onChange={onChangeHandler} editing={showComponent}>
+    <div ref={containerRef} className={classes} data-test="DesignSystem-EditableChipInput" {...baseProps}>
+      <Editable onChange={onChangeHandler} editing={showComponent} onEditModeKeyDown={handleEditModeKeyDown}>
         {renderChildren()}
       </Editable>
       {showComponent && (
@@ -179,6 +201,12 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
             size="tiny"
             onClick={() => {
               setDefaultComponent(value);
+              const wrapper = containerRef.current?.querySelector(
+                '[data-test="DesignSystem-EditableWrapper"]'
+              ) as HTMLElement;
+              requestAnimationFrame(() => {
+                wrapper?.focus();
+              });
             }}
           />
           <Button
