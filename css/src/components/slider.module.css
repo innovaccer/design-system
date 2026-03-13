@@ -98,8 +98,8 @@
 }
 
 .Slider-handle:focus {
-  box-shadow: var(--shadow-spread) var(--primary-shadow);
-  outline: none;
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 .Slider-handle--disabled {
@@ -109,5 +109,6 @@
 }
 
 .Slider-handle--disabled:focus {
+  outline: none;
   box-shadow: none;
 }
