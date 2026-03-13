@@ -98,6 +98,10 @@ export interface FullscreenModalProps extends BaseProps {
    */
   'aria-labelledby'?: string;
   /**
+   * Accessible label for dialog when no heading id is available
+   */
+  'aria-label'?: string;
+  /**
    * Accessible description reference for dialog
    */
   'aria-describedby'?: string;
@@ -219,11 +223,15 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
       footerOptions,
       onClose,
       'aria-labelledby': ariaLabelledBy,
+      'aria-label': ariaLabel,
       'aria-describedby': ariaDescribedBy,
     } = this.props;
     const shouldUseAutoHeadingId = !ariaLabelledBy && !header && Boolean(headerOptions?.heading);
     const resolvedHeadingId = headerOptions?.headingId || (shouldUseAutoHeadingId ? this.autoHeadingId : undefined);
     const resolvedAriaLabelledBy = ariaLabelledBy || resolvedHeadingId;
+    const resolvedAriaLabel = !resolvedAriaLabelledBy
+      ? ariaLabel || (typeof header === 'string' ? header : undefined)
+      : undefined;
 
     const classes = classNames(
       {
@@ -270,6 +278,7 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
           role="dialog"
           aria-modal={true}
           aria-labelledby={resolvedAriaLabelledBy}
+          aria-label={resolvedAriaLabel}
           aria-describedby={ariaDescribedBy}
         >
           <Row className="justify-content-center">

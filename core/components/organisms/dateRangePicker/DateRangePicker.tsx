@@ -427,12 +427,12 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
       };
       const mergedStartInputOptions = {
         ...startInputOptions,
-        'aria-label': startInputOptions['aria-label'] || `${ariaLabel || 'Start date'}`,
+        'aria-label': startInputOptions['aria-label'],
         'aria-labelledby': startInputOptions['aria-labelledby'] || ariaLabelledBy,
       };
       const mergedEndInputOptions = {
         ...endInputOptions,
-        'aria-label': endInputOptions['aria-label'] || `${ariaLabel || 'End date'}`,
+        'aria-label': endInputOptions['aria-label'],
         'aria-labelledby': endInputOptions['aria-labelledby'] || ariaLabelledBy,
       };
       const trigger = singleInput ? (
