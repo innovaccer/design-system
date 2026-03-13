@@ -436,12 +436,12 @@ const DropdownList = (props: OptionsProps) => {
     );
   };
 
-  const renderGroups = (group: string, selectedGroup?: boolean) => {
+  const renderGroups = (group: string, selectedGroup?: boolean, inOptionsComposite?: boolean) => {
     const { onClearOptions } = props;
     const isClearDisabled = selected.every((option) => option.disabled);
 
     return (
-      <div className={getDropdownSectionClass(selectedGroup)}>
+      <div className={getDropdownSectionClass(selectedGroup)} role={inOptionsComposite ? 'presentation' : undefined}>
         <Text size="small" appearance={'subtle'}>
           {group}
         </Text>
@@ -560,7 +560,7 @@ const DropdownList = (props: OptionsProps) => {
     const id = `Checkbox-option-${index}-${item.value}-${new Date().getTime()}`;
 
     return (
-      <label htmlFor={id} key={index}>
+      <label htmlFor={id} key={index} role="presentation">
         <Option
           optionData={item}
           truncateOption={truncateOption}
@@ -633,7 +633,7 @@ const DropdownList = (props: OptionsProps) => {
           {selected.length > 0 &&
             listOptions.length - selected.length > 0 &&
             !listOptions[0].group?.trim() && // allItemsSectionLabel is displayed only when there are no groups
-            renderGroups(allItemsSectionLabel)}
+            renderGroups(allItemsSectionLabel, false, true)}
           {groupedListOptions.map((option, index) => {
             const prevGroup =
               index > 0 ? groupedListOptions[index - 1].group : selected.length ? selectedSectionLabel : undefined;
@@ -642,8 +642,8 @@ const DropdownList = (props: OptionsProps) => {
             const updatedIndex = index + selected.length;
 
             return (
-              <div className={dropdownStyles['Option-checkboxWrapper']} key={index}>
-                {isGroupDifferent && currentGroup && renderGroups(currentGroup)}
+              <div className={dropdownStyles['Option-checkboxWrapper']} key={index} role="presentation">
+                {isGroupDifferent && currentGroup && renderGroups(currentGroup, false, true)}
                 {renderOptions(option, updatedIndex)}
               </div>
             );

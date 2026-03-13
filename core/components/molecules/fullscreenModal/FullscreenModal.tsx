@@ -109,8 +109,11 @@ interface ModalState {
   zIndex?: number;
 }
 
+let fullscreenModalInstanceCounter = 0;
+
 class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> {
   modalRef = React.createRef<HTMLDivElement>();
+  autoHeadingId: string;
   element: Element;
 
   static defaultProps = {
@@ -126,6 +129,8 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
       open: props.open,
       animate: props.open,
     };
+    fullscreenModalInstanceCounter += 1;
+    this.autoHeadingId = `fullscreen-modal-title-${fullscreenModalInstanceCounter}`;
   }
 
   onOutsideClickHandler = (event: Event) => {
@@ -216,7 +221,9 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
       'aria-labelledby': ariaLabelledBy,
       'aria-describedby': ariaDescribedBy,
     } = this.props;
-    const resolvedAriaLabelledBy = ariaLabelledBy || headerOptions?.headingId;
+    const shouldUseAutoHeadingId = !ariaLabelledBy && !header && Boolean(headerOptions?.heading);
+    const resolvedHeadingId = headerOptions?.headingId || (shouldUseAutoHeadingId ? this.autoHeadingId : undefined);
+    const resolvedAriaLabelledBy = ariaLabelledBy || resolvedHeadingId;
 
     const classes = classNames(
       {
@@ -269,7 +276,13 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
             <Column {...sizeMap[dimension]}>
               <Row className={styles['FullscreenModal-header']}>
                 <Column>
-                  {!header && <OverlayHeader data-test="DesignSystem-FullscreenModal--header" {...headerOptions} />}
+                  {!header && (
+                    <OverlayHeader
+                      data-test="DesignSystem-FullscreenModal--header"
+                      {...headerOptions}
+                      headingId={resolvedHeadingId}
+                    />
+                  )}
 
                   {!!header && header}
                 </Column>
