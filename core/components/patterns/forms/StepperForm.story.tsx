@@ -102,7 +102,7 @@ const customCode = `
               </div>
               <div className={value !== 'Define_Input_Output' ? 'd-none' : ''}>
                 <div className="d-flex mr-3 mt-7 mb-2">
-                  <Text weight="strong" className="mr-4">Source</Text>
+                  <Heading size="s" className="mr-4">Source</Heading>
                   <Badge appearance="warning">2 Inputs</Badge>
                 </div>
                 <Text size="small" appearance="subtle">
@@ -112,7 +112,7 @@ const customCode = `
                   <Select 
                     width="100%"
                     className="mb-4"
-                    triggerOptions={{ placeholder: "Input Collection 1" }}
+                    triggerOptions={{ placeholder: "Input Collection 1", "aria-label": "Input Collection 1" }}
                     onSelect={(option) => this.onChangeOutput(option.value, 'collection1')}
                   >
                     <Select.List>
@@ -127,7 +127,7 @@ const customCode = `
                   </Select>
                   <Select 
                     width="100%"
-                    triggerOptions={{ placeholder: "Input Collection 2" }}
+                    triggerOptions={{ placeholder: "Input Collection 2", "aria-label": "Input Collection 2" }}
                     onSelect={(option) => this.onChangeOutput(option.value, 'collection2')}
                   >
                     <Select.List>
@@ -142,7 +142,7 @@ const customCode = `
                   </Select>
                 </div>
                 <div className="d-flex mr-3 mt-8 mb-2">
-                  <Text weight="strong" className="mr-4">Destination</Text>
+                  <Heading size="s" className="mr-4">Destination</Heading>
                   <Badge appearance="success">8 Outputs</Badge>
                 </div>
                 <Text size="small" appearance="subtle">
@@ -152,7 +152,7 @@ const customCode = `
                   <Label withInput={true}>Destination Collection</Label>
                   <Select 
                     width="100%" 
-                    triggerOptions={{ placeholder: "Select Destination" }}
+                    triggerOptions={{ placeholder: "Select Destination", "aria-label": "Select Destination" }}
                     onSelect={(option) => this.onChangeOutput(option.value, 'collection')}
                   >
                     <Select.List>
@@ -175,11 +175,13 @@ const customCode = `
                     placeholderChar="-"
                     onChange={(e) => this.onChangeOutput(e.target.value, e.target.name)}
                   />
+                  <Text size="small" appearance="subtle" className="mt-2">{"Format: <workspace_id>_<workflow_id>_<pipeline_id>"}</Text>
                 </div>
                 <div className="w-25 mt-6">
                   <Label withInput={true} required>Retention</Label>
                   <Select 
                     width="100%"
+                    triggerOptions={{ "aria-label": "Retention" }}
                     onSelect={(option) => this.onChangeOutput(option.value, 'retention')}
                   >
                     <Select.List>
@@ -194,7 +196,8 @@ const customCode = `
                   </Select>
                   <Label className="mt-6" withInput={true}>Visibility Clarification</Label>
                   <Select
-                    width="100%" 
+                    width="100%"
+                    triggerOptions={{ "aria-label": "Visibility Clarification" }}
                     onSelect={(option) => this.onChangeOutput(option.value, 'clarification')}
                   >
                     <Select.List>
@@ -213,7 +216,7 @@ const customCode = `
                 <div className="d-flex mt-7">
                   <Avatar className="mr-5" firstName="A" appearance="success" />
                   <div className="d-flex flex-column">
-                    <Text weight="strong" className="mb-2">Job Configuration</Text>
+                    <Heading size="s" className="mb-2">Job Configuration</Heading>
                     <Text size="small" appearance="subtle">
                       The system automatically creates collection for multiple support.
                     </Text>
@@ -222,6 +225,7 @@ const customCode = `
                 <div className="w-25 mt-6">
                   <Label withInput={true} required>Mode</Label>
                   <Select
+                    triggerOptions={{ "aria-label": "Mode" }}
                     onSelect={(option) => {
                       this.setState({
                         configuration: { ...this.state.configuration, mode: option.value }
@@ -250,8 +254,8 @@ const customCode = `
                     }}
                   />
                 </div>
-                <Label className="mt-6" withInput={true} required>Retention</Label>
-                <Switch appearance="primary" defaultChecked={true} className="d-flex" />
+                <Label className="mt-6" withInput={true} required htmlFor="stepper-retention-switch">Retention</Label>
+                <Switch id="stepper-retention-switch" appearance="primary" defaultChecked={true} className="d-flex" aria-label="Retention" />
               </div>
             </form>
           </Card>

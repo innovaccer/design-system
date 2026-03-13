@@ -76,24 +76,25 @@ const customCode = `
     renderRequirements() {
 
       return (
-        <div>
+        <ul className="list-style-none pl-0">
           {
             passwordRequirements.map((item, index) => {
               const { validation, key } = item;
 
               return (
-                <div className="d-flex mb-4 align-items-center" key={index}>
+                <li className="d-flex mb-4 align-items-center" key={index}>
                   <Icon
                     className="mr-4"
                     name={this.state.validations[key] ? 'check_circle' : 'fiber_manual_record'}
                     appearance={this.state.validations[key] ? 'success' : 'default'}
+                    aria-hidden="true"
                   />
                   <Text>{validation}</Text>
-                </div>
+                </li>
               );
             })
           }
-        </div>
+        </ul>
       )
     }
 
@@ -110,34 +111,38 @@ const customCode = `
         <div style={{ width: '350px' }}>
           <Card className="px-6 py-6">
             <form onSubmit={this.onSubmit}>
-              <Label withInput={true}>Password</Label>
+              <Label withInput={true} htmlFor="create-password-password">Password</Label>
               <Input
-                name="input"
+                name="password"
+                id="create-password-password"
                 className="mb-4"
                 placeholder="Enter password"
                 type={this.state.passwordVisible ? 'text' : 'password'}
                 value={this.state.password}
                 onChange={this.onPasswordChange}
-                autocomplete="off"
+                autoComplete="new-password"
                 actionIcon={(
                   <Icon
                     name={this.state.passwordVisible ? 'visibility' : 'visibility_off'}
+                    aria-label={this.state.passwordVisible ? 'Hide password' : 'Show password'}
                     onClick={() => this.setState({ passwordVisible: !passwordVisible })}
                   />
                 )}
               />
               {this.renderRequirements()}
-              <Label withInput={true} className="mt-6">Confirm Password</Label>
+              <Label withInput={true} className="mt-6" htmlFor="create-password-confirm">Confirm Password</Label>
               <Input
-                name="input"
+                name="confirmPassword"
+                id="create-password-confirm"
                 placeholder="Enter password"
                 type={this.state.confirmPasswordVisible ? 'text' : 'password'}
                 value={this.state.confirmPassword}
                 onChange={this.onConfirmPasswordChange}
-                autocomplete="off"
+                autoComplete="new-password"
                 actionIcon={(
                   <Icon
                     name={this.state.confirmPasswordVisible ? 'visibility' : 'visibility_off'}
+                    aria-label={this.state.confirmPasswordVisible ? 'Hide confirm password' : 'Show confirm password'}
                     onClick={() => this.setState({ confirmPasswordVisible: !confirmPasswordVisible })}
                   />
                 )}

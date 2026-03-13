@@ -323,11 +323,11 @@ export const Header = (props: HeaderProps) => {
           {
             <>
               {showSelectedLabel ? (
-                <span className={selectedRowLabelClass} onAnimationEnd={onSelectAnimationEnd}>
+                <span className={selectedRowLabelClass} onAnimationEnd={onSelectAnimationEnd} aria-live="polite">
                   <Label>{customSelectedRowLabel ?? getSelectedRowLabel()}</Label>
                 </span>
               ) : (
-                <span className={unselectedRowLabelClass} onAnimationEnd={onUnSelectAnimationEnd}>
+                <span className={unselectedRowLabelClass} onAnimationEnd={onUnSelectAnimationEnd} aria-live="polite">
                   <Label>{customUnSelectedRowLabel ?? getUnSelectedRowLabel()}</Label>
                 </span>
               )}

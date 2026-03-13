@@ -7,6 +7,10 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  text-decoration: none;
   height: var(--spacing-80);
   padding-right: var(--spacing-30);
   padding-left: var(--spacing-30);
@@ -25,8 +29,8 @@
 
 .HorizontalNav-menu--default:focus-visible,
 .HorizontalNav-menu--default:focus {
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
-  outline: none;
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 .HorizontalNav-menu--default:hover {
@@ -44,8 +48,8 @@
 .HorizontalNav-menu--active:focus-visible,
 .HorizontalNav-menu--active:focus {
   background-color: var(--primary-lightest);
-  box-shadow: var(--shadow-spread) var(--primary-shadow);
-  outline: none;
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 .HorizontalNav-menu--active:hover {

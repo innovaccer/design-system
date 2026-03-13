@@ -154,8 +154,11 @@ const HeaderCell = (props: HeaderCellProps) => {
     if (!sorted) onMenuChange(name, 'sortAsc');
   };
 
+  const ariaSortValue =
+    sorted === 'asc' ? 'ascending' : sorted === 'desc' ? 'descending' : sorting ? 'none' : undefined;
+
   return (
-    <div key={name} className={classes} ref={el}>
+    <div key={name} className={classes} ref={el} role="columnheader" aria-sort={ariaSortValue}>
       <div
         className={styles['Grid-cellContent']}
         data-test="DesignSystem-Grid-cellContent"
@@ -226,7 +229,13 @@ const HeaderCell = (props: HeaderCellProps) => {
                 menu={true}
                 optionType="WITH_ICON"
                 triggerOptions={{
-                  customTrigger: () => <Button icon="more_vert_filled" appearance="transparent" />,
+                  customTrigger: () => (
+                    <Button
+                      icon="more_vert_filled"
+                      appearance="transparent"
+                      aria-label={`More options for ${schema.displayName}`}
+                    />
+                  ),
                 }}
                 options={options}
                 align={'left'}
@@ -363,6 +372,7 @@ export const Cell = (props: CellProps) => {
     <div
       key={`${rowIndex}-${colIndex}`}
       className={cellClass}
+      role={!isHead ? 'cell' : undefined}
       draggable={isHead && draggable}
       onDragStart={(e) => {
         if (draggable) {

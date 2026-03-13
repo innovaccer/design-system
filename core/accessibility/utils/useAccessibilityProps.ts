@@ -9,6 +9,7 @@ interface IProps {
   role?: AriaRoleType;
   tabIndex?: number;
   'aria-label'?: React.AriaAttributes['aria-label'];
+  'aria-hidden'?: React.AriaAttributes['aria-hidden'];
 }
 
 const allowed: Record<string, Set<KeyboardEventKeyType>> = {
@@ -29,12 +30,25 @@ const isKeyboardInteractionAllowed = (role: AriaRoleType, key: KeyboardEventKeyT
   return allowedKeys.has(key);
 };
 
-const useAccessibilityProps = ({ onClick, onKeyDown, role = 'button', tabIndex, ...rest }: IProps) => {
+const useAccessibilityProps = ({ onClick, onKeyDown, role, tabIndex, ...rest }: IProps) => {
+  const ariaHidden = rest['aria-hidden'];
+  const isHidden = ariaHidden === true || ariaHidden === 'true';
+
+  if (isHidden) {
+    return {
+      'aria-hidden': true as const,
+      ...(onClick ? { onClick } : {}),
+      ...(onKeyDown ? { onKeyDown } : {}),
+    };
+  }
+
+  const effectiveRole = onClick ? role || 'button' : role;
+
   return {
     ...(onClick
       ? {
           onClick: onClick,
-          role: role,
+          role: effectiveRole,
           tabIndex: tabIndex || 0,
           'aria-label': rest['aria-label'],
           onKeyDown: (e: React.SyntheticEvent<HTMLElement>) => {
@@ -43,7 +57,7 @@ const useAccessibilityProps = ({ onClick, onKeyDown, role = 'button', tabIndex, 
               return;
             }
             const key = (e as React.KeyboardEvent<HTMLElement>).key;
-            if (isKeyboardInteractionAllowed(role, key)) {
+            if (isKeyboardInteractionAllowed(effectiveRole!, key)) {
               if (onClick) {
                 e.preventDefault();
                 onClick(e as React.MouseEvent<HTMLElement>);
@@ -51,7 +65,7 @@ const useAccessibilityProps = ({ onClick, onKeyDown, role = 'button', tabIndex, 
             }
           },
         }
-      : { role, tabIndex, 'aria-label': rest['aria-label'] }),
+      : { role: effectiveRole, tabIndex, 'aria-label': rest['aria-label'] }),
   };
 };
 

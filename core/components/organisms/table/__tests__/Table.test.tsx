@@ -130,9 +130,9 @@ describe('render Table component with header', () => {
     expect(applyButton).toBeInTheDocument();
     fireEvent.click(applyButton);
     // Verify filter was applied - popover should close after Apply
-    // The button might still exist in DOM but popover should be closed
-    const selectComponent = getByTestId('DesignSystem-Select');
-    expect(selectComponent).toHaveAttribute('aria-expanded', 'false');
+    // The trigger button should reflect closed state
+    const selectTrigger = getAllByTestId('DesignSystem-Select-trigger')[0];
+    expect(selectTrigger).toHaveAttribute('aria-expanded', 'false');
   });
 
   it('render table with globalActionRenderer', () => {
@@ -1471,8 +1471,8 @@ describe('render Table with filterType feature', () => {
         // After Apply, the popover closes
         // Wait for the popover to close
         await waitFor(() => {
-          const selectComponent = getByTestId('DesignSystem-Select');
-          expect(selectComponent).toHaveAttribute('aria-expanded', 'false');
+          const selectTrigger = getAllByTestId('DesignSystem-Select-trigger')[0];
+          expect(selectTrigger).toHaveAttribute('aria-expanded', 'false');
         });
 
         // Verify that the trigger label reflects the selections

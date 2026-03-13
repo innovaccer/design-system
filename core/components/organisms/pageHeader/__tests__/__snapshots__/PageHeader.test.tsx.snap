@@ -190,14 +190,14 @@ exports[`Navigation component
             class="PageHeader-navigationWrapper"
             data-test="DesignSystem-PageHeader--Nav"
           >
-            <div
+            <nav
+              aria-label="Horizontal Navigation"
               class="HorizontalNav"
             >
-              <div
+              <button
                 class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
                 data-test="DesignSystem-HorizontalNav"
-                role="button"
-                tabindex="0"
+                type="button"
               >
                 <span
                   class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
@@ -205,12 +205,11 @@ exports[`Navigation component
                 >
                   Virtual Visits
                 </span>
-              </div>
-              <div
+              </button>
+              <button
                 class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
                 data-test="DesignSystem-HorizontalNav"
-                role="button"
-                tabindex="0"
+                type="button"
               >
                 <span
                   class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
@@ -218,8 +217,8 @@ exports[`Navigation component
                 >
                   Assesments
                 </span>
-              </div>
-            </div>
+              </button>
+            </nav>
           </div>
           <div
             data-test="DesignSystem-PageHeader--Tabs"
@@ -231,11 +230,15 @@ exports[`Navigation component
               <div
                 class="TabsWrapper-header TabsWrapper-header--withSeparator"
                 data-test="DesignSystem-Tabs--Header"
+                role="tablist"
               >
                 <div
+                  aria-label="New"
+                  aria-selected="true"
                   class="Tab Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-5-tab-0"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -258,9 +261,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Invalid"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-5-tab-1"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -283,9 +289,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Duplicate"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-5-tab-2"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -421,14 +430,14 @@ exports[`Navigation component
                   class="PageHeader-navigationWrapper"
                   data-test="DesignSystem-PageHeader--Nav"
                 >
-                  <div
+                  <nav
+                    aria-label="Horizontal Navigation"
                     class="HorizontalNav"
                   >
-                    <div
+                    <button
                       class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
                       data-test="DesignSystem-HorizontalNav"
-                      role="button"
-                      tabindex="0"
+                      type="button"
                     >
                       <span
                         class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
@@ -436,12 +445,11 @@ exports[`Navigation component
                       >
                         Virtual Visits
                       </span>
-                    </div>
-                    <div
+                    </button>
+                    <button
                       class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
                       data-test="DesignSystem-HorizontalNav"
-                      role="button"
-                      tabindex="0"
+                      type="button"
                     >
                       <span
                         class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
@@ -449,8 +457,8 @@ exports[`Navigation component
                       >
                         Assesments
                       </span>
-                    </div>
-                  </div>
+                    </button>
+                  </nav>
                 </div>
               </div>
               <div
@@ -553,11 +561,15 @@ exports[`Navigation component
               <div
                 class="TabsWrapper-header TabsWrapper-header--withSeparator"
                 data-test="DesignSystem-Tabs--Header"
+                role="tablist"
               >
                 <div
+                  aria-label="New"
+                  aria-selected="true"
                   class="Tab Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-4-tab-0"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -580,9 +592,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Invalid"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-4-tab-1"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -605,9 +620,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Duplicate"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-4-tab-2"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -829,14 +847,14 @@ exports[`Navigation component
             class="PageHeader-navigationWrapper"
             data-test="DesignSystem-PageHeader--Nav"
           >
-            <div
+            <nav
+              aria-label="Horizontal Navigation"
               class="HorizontalNav"
             >
-              <div
+              <button
                 class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
                 data-test="DesignSystem-HorizontalNav"
-                role="button"
-                tabindex="0"
+                type="button"
               >
                 <span
                   class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
@@ -844,12 +862,11 @@ exports[`Navigation component
                 >
                   Virtual Visits
                 </span>
-              </div>
-              <div
+              </button>
+              <button
                 class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
                 data-test="DesignSystem-HorizontalNav"
-                role="button"
-                tabindex="0"
+                type="button"
               >
                 <span
                   class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
@@ -857,8 +874,8 @@ exports[`Navigation component
                 >
                   Assesments
                 </span>
-              </div>
-            </div>
+              </button>
+            </nav>
           </div>
           <div
             data-test="DesignSystem-PageHeader--Tabs"
@@ -870,11 +887,15 @@ exports[`Navigation component
               <div
                 class="TabsWrapper-header TabsWrapper-header--withSeparator"
                 data-test="DesignSystem-Tabs--Header"
+                role="tablist"
               >
                 <div
+                  aria-label="New"
+                  aria-selected="true"
                   class="Tab Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-3-tab-0"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -897,9 +918,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Invalid"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-3-tab-1"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -922,9 +946,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Duplicate"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-3-tab-2"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -1014,11 +1041,15 @@ exports[`Navigation component
               <div
                 class="TabsWrapper-header TabsWrapper-header--withSeparator"
                 data-test="DesignSystem-Tabs--Header"
+                role="tablist"
               >
                 <div
+                  aria-label="New"
+                  aria-selected="true"
                   class="Tab Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-1-tab-0"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -1041,9 +1072,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Invalid"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-1-tab-1"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -1066,9 +1100,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Duplicate"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-1-tab-2"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -1651,14 +1688,14 @@ exports[`Navigation component
                   class="PageHeader-navigationWrapper"
                   data-test="DesignSystem-PageHeader--Nav"
                 >
-                  <div
+                  <nav
+                    aria-label="Horizontal Navigation"
                     class="HorizontalNav"
                   >
-                    <div
+                    <button
                       class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
                       data-test="DesignSystem-HorizontalNav"
-                      role="button"
-                      tabindex="0"
+                      type="button"
                     >
                       <span
                         class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
@@ -1666,12 +1703,11 @@ exports[`Navigation component
                       >
                         Virtual Visits
                       </span>
-                    </div>
-                    <div
+                    </button>
+                    <button
                       class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
                       data-test="DesignSystem-HorizontalNav"
-                      role="button"
-                      tabindex="0"
+                      type="button"
                     >
                       <span
                         class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
@@ -1679,8 +1715,8 @@ exports[`Navigation component
                       >
                         Assesments
                       </span>
-                    </div>
-                  </div>
+                    </button>
+                  </nav>
                 </div>
               </div>
               <div
@@ -1783,11 +1819,15 @@ exports[`Navigation component
               <div
                 class="TabsWrapper-header TabsWrapper-header--withSeparator"
                 data-test="DesignSystem-Tabs--Header"
+                role="tablist"
               >
                 <div
+                  aria-label="New"
+                  aria-selected="true"
                   class="Tab Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-2-tab-0"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -1810,9 +1850,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Invalid"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-2-tab-1"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -1835,9 +1878,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Duplicate"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
-                  role="button"
+                  id="tabs-2-tab-2"
+                  role="tab"
                   tabindex="0"
                 >
                   <span

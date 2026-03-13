@@ -4,14 +4,16 @@ import { Icon, Text, Tooltip } from '@/index';
 import { IconType } from '@/common.type';
 import { SelectContext } from './SelectContext';
 import { handleKeyDownTrigger, computeValue } from './utils';
-import { BaseProps } from '@/utils/types';
+import { BaseProps, OmitNativeProps } from '@/utils/types';
 import selectStyles from '@css/components/select.module.css';
 import buttonStyles from '@css/components/button.module.css';
 import textStyles from '@css/components/text.module.css';
 
 export type SelectTriggerSize = 'small' | 'regular';
 
-export interface SelectTriggerProps extends BaseProps {
+export interface SelectTriggerProps
+  extends BaseProps,
+    OmitNativeProps<HTMLButtonElement, 'type' | 'value' | 'name' | 'form' | 'onKeyDown' | 'style' | 'tabIndex'> {
   /**
    * Specifies the size of the Select trigger button.
    * @default "regular"
@@ -77,6 +79,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     setLabel,
     minWidth,
     maxWidth,
+    'aria-label': ariaLabelProp,
     ...rest
   } = props;
 
@@ -166,7 +169,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
         style={triggerStyle}
         aria-haspopup="listbox"
         aria-expanded={openPopover}
-        aria-label="trigger"
+        aria-label={ariaLabelProp || inlineLabel || trimmedPlaceholder || 'Select'}
         data-test="DesignSystem-Select-trigger"
         {...rest}
       >
@@ -200,7 +203,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
             className={iconClass}
             size={12}
             name="close"
-            aria-label="clear selected"
+            aria-label={`Clear ${ariaLabelProp || inlineLabel || trimmedPlaceholder || 'selection'}`}
             type={iconType}
             data-test="DesignSystem-Select--closeIcon"
           />

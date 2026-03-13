@@ -17,8 +17,11 @@ exports[`Dialog component
       style="z-index: 1011;"
     >
       <div
+        aria-labelledby="modal-title-4"
+        aria-modal="true"
         class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Dialog"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -37,6 +40,7 @@ exports[`Dialog component
                 <h4
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
+                  id="modal-title-4"
                 >
                   Sample String
                 </h4>
@@ -157,8 +161,11 @@ exports[`Dialog component
       style="z-index: 1011;"
     >
       <div
+        aria-labelledby="modal-title-1"
+        aria-modal="true"
         class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Dialog"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -177,6 +184,7 @@ exports[`Dialog component
                 <h4
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
+                  id="modal-title-1"
                 >
                   Sample String
                 </h4>
@@ -295,8 +303,11 @@ exports[`Dialog component
       style="z-index: 1011;"
     >
       <div
+        aria-labelledby="modal-title-2"
+        aria-modal="true"
         class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Dialog"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -315,6 +326,7 @@ exports[`Dialog component
                 <h4
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
+                  id="modal-title-2"
                 >
                   Sample String
                 </h4>
@@ -434,8 +446,11 @@ exports[`Dialog component
       style="z-index: 1011;"
     >
       <div
+        aria-labelledby="modal-title-3"
+        aria-modal="true"
         class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Dialog"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -454,6 +469,7 @@ exports[`Dialog component
                 <h4
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
+                  id="modal-title-3"
                 >
                   Sample String
                 </h4>
@@ -573,8 +589,11 @@ exports[`Dialog component
       style="z-index: 1011;"
     >
       <div
+        aria-labelledby="modal-title-5"
+        aria-modal="true"
         class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Dialog"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -593,6 +612,7 @@ exports[`Dialog component
                 <h4
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
+                  id="modal-title-5"
                 >
                   Sample String
                 </h4>
@@ -712,8 +732,11 @@ exports[`Dialog component
       style="z-index: 1011;"
     >
       <div
+        aria-labelledby="modal-title-13"
+        aria-modal="true"
         class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Dialog"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -732,6 +755,7 @@ exports[`Dialog component
                 <h4
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
+                  id="modal-title-13"
                 >
                   Sample String
                 </h4>
@@ -851,8 +875,11 @@ exports[`Dialog component
       style="z-index: 1011;"
     >
       <div
+        aria-labelledby="modal-title-12"
+        aria-modal="true"
         class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Dialog"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -871,6 +898,7 @@ exports[`Dialog component
                 <h4
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
+                  id="modal-title-12"
                 >
                   Sample String
                 </h4>
@@ -990,8 +1018,11 @@ exports[`Dialog component
       style="z-index: 1011;"
     >
       <div
+        aria-labelledby="modal-title-11"
+        aria-modal="true"
         class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Dialog"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -1010,6 +1041,7 @@ exports[`Dialog component
                 <h4
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
+                  id="modal-title-11"
                 >
                   Sample String
                 </h4>
@@ -1129,8 +1161,11 @@ exports[`Dialog component
       style="z-index: 1011;"
     >
       <div
+        aria-labelledby="modal-title-9"
+        aria-modal="true"
         class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Dialog"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -1149,6 +1184,7 @@ exports[`Dialog component
                 <h4
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
+                  id="modal-title-9"
                 >
                   Sample String
                 </h4>
@@ -1268,8 +1304,11 @@ exports[`Dialog component
       style="z-index: 1011;"
     >
       <div
+        aria-labelledby="modal-title-6"
+        aria-modal="true"
         class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Dialog"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -1288,6 +1327,7 @@ exports[`Dialog component
                 <h4
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
+                  id="modal-title-6"
                 >
                   Sample String
                 </h4>
@@ -1407,8 +1447,11 @@ exports[`Dialog component
       style="z-index: 1011;"
     >
       <div
+        aria-labelledby="modal-title-7"
+        aria-modal="true"
         class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Dialog"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -1427,6 +1470,7 @@ exports[`Dialog component
                 <h4
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
+                  id="modal-title-7"
                 >
                   Sample String
                 </h4>
@@ -1546,8 +1590,11 @@ exports[`Dialog component
       style="z-index: 1011;"
     >
       <div
+        aria-labelledby="modal-title-8"
+        aria-modal="true"
         class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Dialog"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -1566,6 +1613,7 @@ exports[`Dialog component
                 <h4
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
+                  id="modal-title-8"
                 >
                   Sample String
                 </h4>
@@ -1685,8 +1733,11 @@ exports[`Dialog component
       style="z-index: 1011;"
     >
       <div
+        aria-labelledby="modal-title-10"
+        aria-modal="true"
         class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Dialog"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -1705,6 +1756,7 @@ exports[`Dialog component
                 <h4
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
+                  id="modal-title-10"
                 >
                   Sample String
                 </h4>

@@ -37,8 +37,9 @@
 
 .MetricInput:focus-within {
   background: var(--white);
-  border-color: var(--primary);
-  box-shadow: var(--shadow-spread) var(--primary-shadow);
+  border-color: var(--secondary);
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-2-5);
 }
 
 .MetricInput:focus-within .MetricInput-icon {
@@ -68,8 +69,9 @@
 }
 
 .MetricInput--error:focus-within {
-  border-color: var(--alert);
-  box-shadow: var(--shadow-spread) var(--alert-shadow);
+  border-color: var(--secondary);
+  outline: var(--border-width-05) solid var(--alert);
+  outline-offset: var(--spacing-2-5);
 }
 
 .MetricInput--error:focus-within .MetricInput-icon {

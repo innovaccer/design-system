@@ -692,6 +692,7 @@ export class Grid extends React.Component<GridProps, GridState> {
         data-test="DesignSystem-Grid"
         {...baseProps}
         className={classes}
+        role="table"
         ref={(el) => {
           this.gridRef = el;
         }}
