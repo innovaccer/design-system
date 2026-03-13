@@ -19,7 +19,8 @@ export interface GridRowProps {
 export const GridRow = (props: GridRowProps) => {
   const context = React.useContext(GridContext);
 
-  const { type, onRowClick, loading, withCheckbox, nestedRows, checkboxAlignment, showNestedRowTrigger } = context;
+  const { type, onRowClick, loading, withCheckbox, nestedRows, checkboxAlignment, showNestedRowTrigger, showHead } =
+    context;
 
   const { schema, data, rowIndex: rI, onSelect, className } = props;
 
@@ -147,9 +148,14 @@ export const GridRow = (props: GridRowProps) => {
 
   return (
     <div className={wrapperClasses} data-test="DesignSystem-Grid-rowWrapper">
-      {/* TODO(a11y)  */}
-      {/* eslint-disable-next-line */}
-      <div data-test="DesignSystem-Grid-row" className={rowClasses} onClick={onClickHandler} ref={rowRef}>
+      <div
+        data-test="DesignSystem-Grid-row"
+        className={rowClasses}
+        onClick={onClickHandler}
+        ref={rowRef}
+        role="row"
+        aria-rowindex={rI + (showHead ? 2 : 1)}
+      >
         {renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left')}
         {renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length)}
         {renderSchema(rightPinnedSchema, false, 'right')}
