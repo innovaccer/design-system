@@ -7,7 +7,13 @@ export const chipsInSingleLine = () => {
   return (
     <>
       <Label withInput={true}>Population Focus</Label>
-      <ChipInput value={value} chipOptions={{ clearButton: true }} className="w-50" onChange={setValue} />
+      <ChipInput
+        value={value}
+        chipOptions={{ clearButton: true, role: 'option' }}
+        className="w-50"
+        onChange={setValue}
+        aria-label="Population Focus"
+      />
     </>
   );
 };
@@ -20,8 +26,9 @@ const customCode = `() => {
       <Label withInput={true}>Population Focus</Label>
       <ChipInput
         value={value}
-        chipOptions={{ clearButton: true }}
+        chipOptions={{ clearButton: true, role: 'option' }}
         onChange={setValue}
+        aria-label="Population Focus"
       />
     </>
   );

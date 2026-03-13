@@ -44,9 +44,9 @@ export const withSections = () => {
       onSelect={handleSelect}
       value={selectedOptions}
       multiSelect={true}
-      triggerOptions={{ onClear: onClearHandler }}
+      triggerOptions={{ onClear: onClearHandler, 'aria-label': 'Medication multiselect with sections' }}
     >
-      <Select.List>
+      <Select.List aria-label="Medication options by category">
         {Object.keys(groupedMedicine).map((group) => (
           <React.Fragment key={group}>
             <Text className="d-flex ml-6 mt-5 mr-5 mb-4" size="small" appearance={'subtle'}>
@@ -101,8 +101,8 @@ const customCode = `() => {
   };
 
   return (
-    <Select onSelect={handleSelect} value={selectedOptions} multiSelect={true} triggerOptions={{ onClear: onClearHandler }}>
-      <Select.List>
+    <Select onSelect={handleSelect} value={selectedOptions} multiSelect={true} triggerOptions={{ onClear: onClearHandler, 'aria-label': 'Medication multiselect with sections' }}>
+      <Select.List aria-label="Medication options by category">
         {Object.keys(groupedMedicine).map((group) => (
           <React.Fragment key={group}>
             <Text

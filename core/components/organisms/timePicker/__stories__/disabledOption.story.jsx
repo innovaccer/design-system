@@ -8,12 +8,25 @@ export const disabledOption = () => {
     <Row>
       <div className="w-25">
         <Label>12 Hour Format</Label>
-        <TimePicker withSearch={true} disabledSlotList={['12:45 AM', '01:00 AM']} id="12-hour" />
+        <TimePicker
+          withSearch={true}
+          disabledSlotList={['12:45 AM', '01:00 AM']}
+          id="12-hour"
+          aria-label="12 hour time selector"
+          listboxAriaLabel="12 hour time options"
+        />
       </div>
 
       <div className="w-25 ml-7">
         <Label>24 Hour Format</Label>
-        <TimePicker timeFormat="24-Hour" withSearch={true} disabledSlotList={['00:45', '01:00']} id="24-hour" />
+        <TimePicker
+          timeFormat="24-Hour"
+          withSearch={true}
+          disabledSlotList={['00:45', '01:00']}
+          id="24-hour"
+          aria-label="24 hour time selector"
+          listboxAriaLabel="24 hour time options"
+        />
       </div>
     </Row>
   );
@@ -25,12 +38,25 @@ const customCode = `() => {
     <Row>
       <div className="w-25">
         <Label>12 Hour Format</Label>
-        <TimePicker withSearch={true} disabledSlotList={['12:45 AM', '01:00 AM']} id="12-hour" />
+        <TimePicker
+          withSearch={true}
+          disabledSlotList={['12:45 AM', '01:00 AM']}
+          id="12-hour"
+          aria-label="12 hour time selector"
+          listboxAriaLabel="12 hour time options"
+        />
       </div>
 
       <div className="w-25 ml-7">
         <Label>24 Hour Format</Label>
-        <TimePicker timeFormat="24-Hour" withSearch={true} disabledSlotList={['00:45', '01:00']} id="24-hour" />
+        <TimePicker
+          timeFormat="24-Hour"
+          withSearch={true}
+          disabledSlotList={['00:45', '01:00']}
+          id="24-hour"
+          aria-label="24 hour time selector"
+          listboxAriaLabel="24 hour time options"
+        />
       </div>
     </Row>
   );

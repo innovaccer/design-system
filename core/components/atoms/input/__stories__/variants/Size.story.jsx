@@ -16,7 +16,13 @@ export const size = () => {
             <Label htmlFor={InputSize} withInput={true} size={InputSize === 'tiny' ? 'small' : InputSize}>
               {InputSize.charAt(0).toUpperCase() + InputSize.slice(1)}
             </Label>
-            <Input name="input" onChange={action('on-change')} placeholder={placeholder} size={InputSize} />
+            <Input
+              id={InputSize}
+              name="input"
+              onChange={action('on-change')}
+              placeholder={placeholder}
+              size={InputSize}
+            />
           </div>
         );
       })}

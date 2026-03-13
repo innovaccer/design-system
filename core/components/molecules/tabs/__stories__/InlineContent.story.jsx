@@ -23,40 +23,50 @@ export const inlineContent = () => {
   };
 
   return (
-    <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6">
-      <Tab label="All" count={12} className="pl-5">
-        <div>All</div>
-      </Tab>
-      <Tab label="Active User" count={3} className="pl-5">
-        <div>Active User</div>
-      </Tab>
-      <Tab label="Inactive User" count={9} className="pl-5">
-        <div>Inactive User</div>
-      </Tab>
-      <div className="d-flex justify-content-end flex-grow-1">
-        <div style={{ width: 'var(--spacing-640)' }} className="ml-8">
-          <Input placeholder="Search by name" icon="search" />
-        </div>
-        <div style={{ width: 'var(--spacing-440)' }} className="ml-4">
-          <Select
-            triggerOptions={{
-              withClearButton: false,
-              placeholder: 'Sort by',
-            }}
-          >
-            <Select.List>
-              {options.map((item, key) => {
-                return (
-                  <Select.Option key={key} option={{ label: item.label, value: item.value }}>
-                    {item.label}
-                  </Select.Option>
-                );
-              })}
-            </Select.List>
-          </Select>
-        </div>
+    <>
+      <div id="tabs-inline-label" className="mb-3">
+        User tabs
       </div>
-    </Tabs>
+      <Tabs
+        activeIndex={activeIndex}
+        onTabChange={onTabChangeHandler}
+        className="mb-6"
+        aria-labelledby="tabs-inline-label"
+      >
+        <Tab label="All" count={12} className="pl-5">
+          <div>All</div>
+        </Tab>
+        <Tab label="Active User" count={3} className="pl-5">
+          <div>Active User</div>
+        </Tab>
+        <Tab label="Inactive User" count={9} className="pl-5">
+          <div>Inactive User</div>
+        </Tab>
+        <div className="d-flex justify-content-end flex-grow-1">
+          <div style={{ width: 'var(--spacing-640)' }} className="ml-8">
+            <Input placeholder="Search by name" icon="search" />
+          </div>
+          <div style={{ width: 'var(--spacing-440)' }} className="ml-4">
+            <Select
+              triggerOptions={{
+                withClearButton: false,
+                placeholder: 'Sort by',
+              }}
+            >
+              <Select.List>
+                {options.map((item, key) => {
+                  return (
+                    <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                      {item.label}
+                    </Select.Option>
+                  );
+                })}
+              </Select.List>
+            </Select>
+          </div>
+        </div>
+      </Tabs>
+    </>
   );
 };
 
@@ -79,11 +89,14 @@ const customCode = `() => {
   };
 
   return(
-    <Tabs
-      onTabChange={onTabChangeHandler}
-      className="mb-6"
-      activeIndex={activeIndex}
-    >
+    <>
+      <div id="tabs-inline-label" className="mb-3">User tabs</div>
+      <Tabs
+        onTabChange={onTabChangeHandler}
+        className="mb-6"
+        activeIndex={activeIndex}
+        aria-labelledby="tabs-inline-label"
+      >
       <Tab label="All" count={12} className="pl-5">
         <div>All</div>
       </Tab>
@@ -117,6 +130,7 @@ const customCode = `() => {
         </div>
       </div>
     </Tabs>
+    </>
   );
 }`;
 

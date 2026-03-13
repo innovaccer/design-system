@@ -90,6 +90,14 @@ export interface TimePickerDropdownProps extends BaseProps {
    * Shows error state in case of failed validation
    */
   error?: boolean;
+  /**
+   * Accessible name for time picker trigger.
+   */
+  'aria-label'?: string;
+  /**
+   * Accessible name for time options list.
+   */
+  listboxAriaLabel?: string;
 }
 
 export const TimePickerWithSearch = (props: TimePickerDropdownProps) => {
@@ -105,6 +113,8 @@ export const TimePickerWithSearch = (props: TimePickerDropdownProps) => {
     disabledSlotList,
     fetchTimeOptions,
     error,
+    'aria-label': ariaLabel,
+    listboxAriaLabel,
   } = props;
 
   const [tabIndex, setTabIndex] = React.useState(0);
@@ -191,6 +201,8 @@ export const TimePickerWithSearch = (props: TimePickerDropdownProps) => {
         setOpenPopover(!openPopover);
       }}
       error={error}
+      aria-label={ariaLabel}
+      listboxAriaLabel={listboxAriaLabel}
     />
   );
 };
@@ -198,6 +210,7 @@ export const TimePickerWithSearch = (props: TimePickerDropdownProps) => {
 TimePickerWithSearch.defaultProps = {
   timeFormat: '12-Hour',
   interval: 15,
+  listboxAriaLabel: 'Time options',
 };
 
 TimePickerWithSearch.displayName = 'TimePickerWithSearch';

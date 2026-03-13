@@ -167,6 +167,10 @@ export interface DropdownListProps extends TriggerAndOptionProps {
    * @ignore
    */
   scrollIndex?: number;
+  /**
+   * Accessible name for options list container.
+   */
+  listboxAriaLabel?: string;
 }
 
 interface OptionsProps extends DropdownListProps, BaseProps {
@@ -232,6 +236,7 @@ const DropdownList = (props: OptionsProps) => {
     popoverOptions,
     onSearchChange,
     optionRenderer,
+    listboxAriaLabel,
     applyOptions,
     cancelOptions,
     toggleDropdown,
@@ -614,7 +619,13 @@ const DropdownList = (props: OptionsProps) => {
     }
 
     return (
-      <div className={dropdownWrapperClass} style={dropdownStyle} ref={dropdownRef}>
+      <div
+        className={dropdownWrapperClass}
+        style={dropdownStyle}
+        ref={dropdownRef}
+        role={menu ? 'menu' : 'listbox'}
+        aria-label={listboxAriaLabel}
+      >
         {selectAllPresent && renderSelectAll()}
         {selected.length > 0 && renderGroups(selectedSectionLabel, true)}
         {selected.map((option, index) => renderOptions(option, index))}

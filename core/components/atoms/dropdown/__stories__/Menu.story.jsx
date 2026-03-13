@@ -20,8 +20,24 @@ export const dropdownAsMenu = () => {
   ];
   return (
     <div className="d-flex w-50">
-      <Dropdown options={options} menu={true} className="mr-5" align="right" maxWidth={130} />
-      <Dropdown options={options} menu={true} align="left" className="mr-5" maxWidth={130} />
+      <Dropdown
+        options={options}
+        menu={true}
+        className="mr-5"
+        align="right"
+        maxWidth={130}
+        aria-label="Open actions menu"
+        listboxAriaLabel="Actions menu options"
+      />
+      <Dropdown
+        options={options}
+        menu={true}
+        align="left"
+        className="mr-5"
+        maxWidth={130}
+        aria-label="Open actions menu"
+        listboxAriaLabel="Actions menu options"
+      />
     </div>
   );
 };

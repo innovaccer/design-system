@@ -27,7 +27,7 @@ export const uncontrolled = () => {
   return (
     <div>
       <Label withInput={true}>Barriers</Label>
-      <Combobox onChange={onChangeHandler} className="w-50" placeholder="Enter barriers">
+      <Combobox onChange={onChangeHandler} className="w-50" placeholder="Enter barriers" aria-label="Barriers selector">
         {filterList.length > 0 && (
           <Combobox.List>
             {filterList.map((item, key) => {
@@ -68,7 +68,7 @@ const customCode = `() => {
   return (
     <div>
       <Label withInput={true}>Barriers</Label>
-      <Combobox onChange={onChangeHandler} className="w-50" placeholder="Enter barriers">
+      <Combobox onChange={onChangeHandler} className="w-50" placeholder="Enter barriers" aria-label="Barriers selector">
         {filterList.length > 0 && (
           <Combobox.List>
             {filterList.map((item, key) => {

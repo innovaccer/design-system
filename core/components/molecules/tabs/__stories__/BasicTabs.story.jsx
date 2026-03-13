@@ -35,9 +35,11 @@ export const basicTabs = () => {
     return action(`tab-change: ${tabIndex}`)();
   };
 
+  const tabsLabelId = 'tabs-basic-label';
+
   return (
     <div>
-      <div className="d-flex justify-content-between">
+      <div id={tabsLabelId} className="d-flex justify-content-between">
         <Heading size="m" className="pl-5">
           Data Gaps
         </Heading>
@@ -58,7 +60,7 @@ export const basicTabs = () => {
           </Select>
         </div>
       </div>
-      <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6">
+      <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6" aria-labelledby={tabsLabelId}>
         <Tab label="Clinical Gaps" className="pl-5">
           <div>Clinical Gaps</div>
         </Tab>
@@ -104,9 +106,11 @@ const customCode = `() => {
     setActiveIndex(tabIndex);
   };
 
+  const tabsLabelId = 'tabs-basic-label';
+
   return(
     <div>
-      <div className="d-flex justify-content-between">
+      <div id={tabsLabelId} className="d-flex justify-content-between">
         <Heading size="m" className="pl-5">
           Data Gaps
         </Heading>
@@ -127,7 +131,7 @@ const customCode = `() => {
           </Select>
         </div>
       </div>
-      <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6">
+      <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6" aria-labelledby={tabsLabelId}>
         <Tab label="Clinical Gaps" className="pl-5">
           <div>Clinical Gaps</div>
         </Tab>

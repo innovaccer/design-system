@@ -8,12 +8,27 @@ export const timeDuration = () => {
     <Row>
       <div className="w-25">
         <Label>12 Hour Format</Label>
-        <TimePicker startTime="05:00" withSearch={true} showDuration={true} id="12-hour" />
+        <TimePicker
+          startTime="05:00"
+          withSearch={true}
+          showDuration={true}
+          id="12-hour"
+          aria-label="12 hour time selector"
+          listboxAriaLabel="12 hour time options"
+        />
       </div>
 
       <div className="w-25 ml-7">
         <Label>24 Hour Format</Label>
-        <TimePicker startTime="05:00" timeFormat="24-Hour" withSearch={true} showDuration={true} id="24-hour" />
+        <TimePicker
+          startTime="05:00"
+          timeFormat="24-Hour"
+          withSearch={true}
+          showDuration={true}
+          id="24-hour"
+          aria-label="24 hour time selector"
+          listboxAriaLabel="24 hour time options"
+        />
       </div>
     </Row>
   );
@@ -25,12 +40,27 @@ const customCode = `() => {
     <Row>
       <div className="w-25">
         <Label>12 Hour Format</Label>
-        <TimePicker startTime="05:00" withSearch={true} showDuration={true} id="12-hour" />
+        <TimePicker
+          startTime="05:00"
+          withSearch={true}
+          showDuration={true}
+          id="12-hour"
+          aria-label="12 hour time selector"
+          listboxAriaLabel="12 hour time options"
+        />
       </div>
 
       <div className="w-25 ml-7">
         <Label>24 Hour Format</Label>
-        <TimePicker startTime="05:00" timeFormat="24-Hour" withSearch={true} showDuration={true} id="24-hour" />
+        <TimePicker
+          startTime="05:00"
+          timeFormat="24-Hour"
+          withSearch={true}
+          showDuration={true}
+          id="24-hour"
+          aria-label="24 hour time selector"
+          listboxAriaLabel="24 hour time options"
+        />
       </div>
     </Row>
   );

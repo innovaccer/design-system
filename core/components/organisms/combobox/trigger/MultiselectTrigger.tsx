@@ -99,6 +99,14 @@ export interface MultiSelectTriggerProps extends BaseProps {
    * Specify role to chip input
    */
   role?: React.AriaRole;
+  /**
+   * Accessible name for trigger
+   */
+  'aria-label'?: string;
+  /**
+   * Associates trigger with external label
+   */
+  'aria-labelledby'?: string;
 }
 
 export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTriggerProps>((props, forwardedInputRef) => {
@@ -119,6 +127,8 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
     onInputChange,
     tabIndex,
     role,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledBy,
     ...rest
   } = props;
 
@@ -294,6 +304,8 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
         onKeyDown={handleTriggerKeyDown}
         tabIndex={disabled ? -1 : tabIndex || 0}
         role="button"
+        aria-label={ariaLabel}
+        aria-labelledby={ariaLabelledBy}
         aria-disabled={disabled || undefined}
       >
         <div className={styles['ChipInput-wrapper']} ref={customRef}>

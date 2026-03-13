@@ -23,14 +23,18 @@ export const disabled = () => {
 
   return (
     <Select
-      triggerOptions={{ disabled: true }}
+      triggerOptions={{ disabled: true, 'aria-label': 'Medication selector' }}
       onSelect={onSelectHandler}
       value={{ label: 'Alabama (205)', value: 'Alabama (205)' }}
     >
-      <Select.List>
+      <Select.List aria-label="Medication options list">
         {medicineList.map((item, key) => {
           return (
-            <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+            <Select.Option
+              key={key}
+              option={{ label: item.label, value: item.value }}
+              aria-label={`${item.label} option`}
+            >
               {item.label}
             </Select.Option>
           );
@@ -61,14 +65,18 @@ const customCode = `() => {
 
   return (
     <Select
-      triggerOptions={{ disabled: true }}
+      triggerOptions={{ disabled: true, 'aria-label': 'Medication selector' }}
       onSelect={onSelectHandler}
       value={{ label: 'Alabama (205)', value: 'Alabama (205)' }}
     >
-      <Select.List>
+      <Select.List aria-label="Medication options list">
         {medicineList.map((item, key) => {
           return (
-            <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+            <Select.Option
+              key={key}
+              option={{ label: item.label, value: item.value }}
+              aria-label={\`\${item.label} option\`}
+            >
               {item.label}
             </Select.Option>
           );

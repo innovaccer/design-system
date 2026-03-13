@@ -3,7 +3,7 @@ import { Label } from '@/index';
 
 // CSF format story
 export const all = () => {
-  return <Label>Label</Label>;
+  return <Label aria-label="Form field label">Label</Label>;
 };
 
 export default {

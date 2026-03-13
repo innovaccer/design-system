@@ -23,6 +23,7 @@ export const Controlled = () => {
         title={label}
         alignment={alignmentHorizontal}
         onChange={() => {}}
+        aria-label="Day selection"
       />
     </>
   );

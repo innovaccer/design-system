@@ -20,6 +20,7 @@ export const withDatePicker = () => {
       <div className="w-25">
         <Label>Date</Label>
         <DatePicker
+          aria-label="Visit date"
           firstDayOfWeek="saturday"
           onDateChange={handleDateChange}
           outputFormat="yyyy/mm/dd"
@@ -31,7 +32,7 @@ export const withDatePicker = () => {
       </div>
       <div className="w-25 ml-7">
         <Label>Time</Label>
-        <TimePicker withSearch={true} open={open} />
+        <TimePicker withSearch={true} open={open} aria-label="Appointment time" listboxAriaLabel="Time options" />
       </div>
     </Row>
   );
@@ -55,6 +56,7 @@ const customCode = `() => {
       <div className="w-25">
         <Label>Date</Label>
         <DatePicker
+          aria-label="Visit date"
           firstDayOfWeek="saturday"
           onDateChange={handleDateChange}
           outputFormat="yyyy/mm/dd"
@@ -66,7 +68,7 @@ const customCode = `() => {
       </div>
       <div className="w-25 ml-7">
         <Label>Time</Label>
-        <TimePicker withSearch={true} open={open} />
+        <TimePicker withSearch={true} open={open} aria-label="Appointment time" listboxAriaLabel="Time options" />
       </div>
     </Row>
   );

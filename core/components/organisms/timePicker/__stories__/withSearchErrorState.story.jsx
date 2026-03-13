@@ -20,6 +20,8 @@ export const withSearchErrorState = () => {
         noResultMessage="Invalid Time"
         id="12-hour"
         error={true}
+        aria-label="Time selector with error"
+        listboxAriaLabel="Time options"
       />
       <HelpText error={true} message={'Error message goes here.'} />
     </div>
@@ -43,6 +45,8 @@ const customCode = `() => {
         noResultMessage="Invalid Time"
         id="12-hour"
         error={true}
+        aria-label="Time selector with error"
+        listboxAriaLabel="Time options"
       />
       <HelpText error={true} message={'Error message goes here.'} />
     </div>

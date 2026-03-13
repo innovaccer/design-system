@@ -57,10 +57,29 @@ export interface MenuProps extends BaseProps {
    * Disables the `Menu`
    */
   disabled?: boolean;
+  /**
+   * Accessible name for the menu list
+   */
+  'aria-label'?: string;
+  /**
+   * Associates menu with an external label
+   */
+  'aria-labelledby'?: string;
 }
 
 export const Menu = (props: MenuProps) => {
-  const { children, width, minHeight, maxHeight, className, open, onToggle, ...rest } = props;
+  const {
+    children,
+    width,
+    minHeight,
+    maxHeight,
+    className,
+    open,
+    onToggle,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledBy,
+    ...rest
+  } = props;
   const [openPopover, setOpenPopover] = React.useState(open);
   const [highlightFirstItem, setHighlightFirstItem] = React.useState<boolean>(false);
   const [highlightLastItem, setHighlightLastItem] = React.useState<boolean>(false);
@@ -126,6 +145,8 @@ export const Menu = (props: MenuProps) => {
         <div
           ref={listRef}
           role="menu"
+          aria-label={ariaLabel}
+          aria-labelledby={ariaLabelledBy}
           data-test={props['data-test'] || 'DesignSystem-Menu-Wrapper'}
           className={popoverClassName}
           style={{ maxHeight, minHeight }}

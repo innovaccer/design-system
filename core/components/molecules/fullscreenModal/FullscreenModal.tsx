@@ -93,6 +93,14 @@ export interface FullscreenModalProps extends BaseProps {
    * Closes `FullScreenModal` when `Escape` key is pressed
    */
   closeOnEscape?: boolean;
+  /**
+   * Accessible name reference for dialog
+   */
+  'aria-labelledby'?: string;
+  /**
+   * Accessible description reference for dialog
+   */
+  'aria-describedby'?: string;
 }
 
 interface ModalState {
@@ -196,7 +204,19 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
 
   render() {
     const { animate, open, zIndex } = this.state;
-    const { className, dimension, children, header, headerOptions, footer, footerOptions, onClose } = this.props;
+    const {
+      className,
+      dimension,
+      children,
+      header,
+      headerOptions,
+      footer,
+      footerOptions,
+      onClose,
+      'aria-labelledby': ariaLabelledBy,
+      'aria-describedby': ariaDescribedBy,
+    } = this.props;
+    const resolvedAriaLabelledBy = ariaLabelledBy || headerOptions?.headingId;
 
     const classes = classNames(
       {
@@ -235,7 +255,16 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
         data-layer={true}
         style={{ zIndex }}
       >
-        <div data-test="DesignSystem-FullscreenModal" {...baseProps} className={classes} ref={this.modalRef}>
+        <div
+          data-test="DesignSystem-FullscreenModal"
+          {...baseProps}
+          className={classes}
+          ref={this.modalRef}
+          role="dialog"
+          aria-modal={true}
+          aria-labelledby={resolvedAriaLabelledBy}
+          aria-describedby={ariaDescribedBy}
+        >
           <Row className="justify-content-center">
             <Column {...sizeMap[dimension]}>
               <Row className={styles['FullscreenModal-header']}>

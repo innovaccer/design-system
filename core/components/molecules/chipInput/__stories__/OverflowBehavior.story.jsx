@@ -11,8 +11,15 @@ export const overflowBehavior = () => {
   return (
     <Row>
       <Column size={4}>
-        <Label withInput={true}>Population Focus</Label>
-        <ChipInput value={value} chipOptions={{ clearButton: true }} onChange={setValue} />
+        <Label withInput={true} id="population-focus-label">
+          Population Focus
+        </Label>
+        <ChipInput
+          value={value}
+          chipOptions={{ clearButton: true, role: 'option' }}
+          onChange={setValue}
+          aria-labelledby="population-focus-label"
+        />
       </Column>
     </Row>
   );
@@ -26,11 +33,12 @@ const customCode = `() => {
   return (
     <Row>
       <Column size={4}>
-        <Label withInput={true}>Population Focus</Label>
+        <Label withInput={true} id="population-focus-label">Population Focus</Label>
         <ChipInput
           value={value}
-          chipOptions={{ clearButton: true }}
+          chipOptions={{ clearButton: true, role: 'option' }}
           onChange={setValue}
+          aria-labelledby="population-focus-label"
         />
       </Column>
     </Row>
