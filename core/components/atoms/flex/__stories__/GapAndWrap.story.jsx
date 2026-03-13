@@ -136,6 +136,9 @@ export default {
       description: {
         component: 'Gap and wrap options for the Flex component.',
       },
+      docPage: {
+        a11yPropsTable: 'all',
+      },
     },
   },
 };

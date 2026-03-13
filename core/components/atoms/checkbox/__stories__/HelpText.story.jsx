@@ -15,4 +15,12 @@ export const withHelpText = () => {
 export default {
   title: 'Components/Checkbox/With Help Text',
   component: Checkbox,
+  parameters: {
+    docs: {
+      docPage: {
+        a11yPropsTable: 'all',
+        title: 'Checkbox',
+      },
+    },
+  },
 };

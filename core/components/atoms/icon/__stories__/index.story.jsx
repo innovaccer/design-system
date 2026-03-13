@@ -18,6 +18,7 @@ export default {
     docs: {
       docPage: {
         customCode,
+        a11yPropsTable: ['tabIndex'],
       },
     },
   },

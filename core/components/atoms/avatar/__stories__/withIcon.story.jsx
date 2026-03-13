@@ -26,4 +26,12 @@ export default {
   title: 'Components/Avatar/Avatar/With Icon',
   component: Avatar,
   subcomponents: { 'Avatar.Image': Avatar.Image, 'Avatar.Icon': Avatar.Icon },
+  parameters: {
+    docs: {
+      docPage: {
+        a11yPropsTable: ['role', 'tabIndex'],
+        title: 'Avatar',
+      },
+    },
+  },
 };

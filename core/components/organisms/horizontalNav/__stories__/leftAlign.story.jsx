@@ -249,6 +249,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: ['aria-label'],
         customCode,
         title: 'Horizontal Nav inside a Standard Modal',
         noHtml: true,

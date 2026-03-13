@@ -40,6 +40,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: ['tabIndex'],
         customCode,
         title: 'Dropdown',
         isDeprecated: true,

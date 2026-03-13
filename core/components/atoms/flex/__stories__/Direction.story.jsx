@@ -109,6 +109,9 @@ export default {
       description: {
         component: 'Direction variants of the Flex component showing how different directions affect layout.',
       },
+      docPage: {
+        a11yPropsTable: 'all',
+      },
     },
   },
 };

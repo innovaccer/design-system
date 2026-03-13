@@ -13,4 +13,12 @@ export const defaultCard = () => {
 export default {
   title: 'Components/Card/Type/Default Card',
   component: Card,
+  parameters: {
+    docs: {
+      docPage: {
+        a11yPropsTable: 'all',
+        title: 'Card',
+      },
+    },
+  },
 };

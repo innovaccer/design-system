@@ -110,6 +110,10 @@ export default {
         component: 'Demonstrates various gap options for Mds grid.',
       },
       docPage: {
+        a11yPropsTable: {
+          MdsGrid: 'all',
+          'MdsGrid.GridItem': 'all',
+        },
         title: 'MdsGrid Gap',
         customCode,
       },

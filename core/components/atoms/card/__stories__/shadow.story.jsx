@@ -20,4 +20,12 @@ export const Shadow = () => {
 export default {
   title: 'Components/Card/Shadow',
   component: Card,
+  parameters: {
+    docs: {
+      docPage: {
+        a11yPropsTable: 'all',
+        title: 'Card',
+      },
+    },
+  },
 };

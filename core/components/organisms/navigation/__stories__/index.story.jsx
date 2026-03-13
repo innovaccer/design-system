@@ -14,6 +14,7 @@ export default {
         isDeprecated: true,
         description:
           'Navigation component has been deprecated, please use [VerticalNav](https://mds.innovaccer.com/?path=/docs/components-verticalnav-verticalnav-all--all) and [HorizontalNav](https://mds.innovaccer.com/?path=/docs/components-horizontalnav-all--all) components instead.',
+        a11yPropsTable: ['aria-label'],
       },
     },
   },

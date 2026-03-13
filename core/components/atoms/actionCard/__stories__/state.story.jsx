@@ -41,6 +41,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: 'all',
         title: 'Action Card',
         propDescription: `Note: All the valid properties of HTML DIV elements are acceptable as a prop`,
       },

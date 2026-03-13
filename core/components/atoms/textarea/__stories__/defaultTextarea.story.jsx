@@ -17,6 +17,7 @@ export default {
     docs: {
       docPage: {
         title: 'Textarea',
+        a11yPropsTable: 'all',
       },
     },
   },

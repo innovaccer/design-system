@@ -21,6 +21,7 @@ export default {
     docs: {
       docPage: {
         a11yProps: ` **aria-label:** Add \`aria-label='Open'\` to describe the action of button `,
+        a11yPropsTable: 'all',
       },
     },
   },

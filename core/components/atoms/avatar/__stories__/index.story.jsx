@@ -24,4 +24,12 @@ export const all = () => {
 export default {
   title: 'Components/Avatar/Avatar/All',
   component: Avatar,
+  parameters: {
+    docs: {
+      docPage: {
+        a11yPropsTable: ['role', 'tabIndex'],
+        title: 'Avatar',
+      },
+    },
+  },
 };

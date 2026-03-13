@@ -12,6 +12,7 @@ export default {
     docs: {
       docPage: {
         title: 'AIChip',
+        a11yPropsTable: 'all',
       },
     },
   },

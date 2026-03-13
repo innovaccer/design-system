@@ -33,4 +33,12 @@ export const EmptyCard = () => {
 export default {
   title: 'Components/Card/Empty Card',
   component: Card,
+  parameters: {
+    docs: {
+      docPage: {
+        a11yPropsTable: 'all',
+        title: 'Card',
+      },
+    },
+  },
 };

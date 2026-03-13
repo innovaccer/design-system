@@ -24,6 +24,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: 'all',
         a11yProps: ` **aria-label:** Add \`aria-label='More Details'\` to describe the action of button `,
       },
     },

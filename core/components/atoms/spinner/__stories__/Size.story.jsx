@@ -27,6 +27,7 @@ export default {
     docs: {
       docPage: {
         title: 'Spinner',
+        a11yPropsTable: ['aria-label'],
       },
     },
   },

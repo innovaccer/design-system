@@ -31,6 +31,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: 'all',
         title: 'Button',
         a11yProps: ` **aria-label:** name accordingly which describe the action of button `,
       },

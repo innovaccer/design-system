@@ -10,6 +10,7 @@ export default {
     docs: {
       docPage: {
         title: 'Avatar',
+        a11yPropsTable: ['role', 'tabIndex'],
       },
     },
   },

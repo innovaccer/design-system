@@ -28,4 +28,12 @@ export const all = () => {
 export default {
   title: 'Components/Input/Textarea/All',
   component: Textarea,
+  parameters: {
+    docs: {
+      docPage: {
+        a11yPropsTable: 'all',
+        title: 'Textarea',
+      },
+    },
+  },
 };

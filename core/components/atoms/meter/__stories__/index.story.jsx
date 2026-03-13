@@ -48,6 +48,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: 'all',
         title: 'Meter',
         customCode,
       },

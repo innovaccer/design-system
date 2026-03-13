@@ -96,6 +96,14 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: {
+          Select: null,
+          'Select.List': ['aria-label'],
+          'Select.Option': ['aria-label'],
+          'Select.SearchInput': 'all',
+          'Select.EmptyTemplate': null,
+          'Select.Footer': null,
+        },
         title: 'Select',
         customCode,
       },

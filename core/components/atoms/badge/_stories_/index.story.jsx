@@ -12,6 +12,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: 'all',
         title: 'Badge',
         propDescription: `Note: All the valid properties of HTML SPAN elements are acceptable as a prop`,
       },

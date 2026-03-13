@@ -121,6 +121,7 @@ export default {
         component: 'Demonstrates various alignItems options for Flex component.',
       },
       docPage: {
+        a11yPropsTable: 'all',
         title: 'Flex AlignItems',
       },
     },

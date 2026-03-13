@@ -73,6 +73,14 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: {
+          Menu: null,
+          'Menu.Trigger': ['aria-label'],
+          'Menu.Group': null,
+          'Menu.List': null,
+          'Menu.Item': 'all',
+          'Menu.SubMenu': null,
+        },
         title: 'Menu',
         customCode,
       },

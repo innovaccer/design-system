@@ -35,4 +35,12 @@ export const all = () => {
 export default {
   title: 'Components/Checkbox/All',
   component: Checkbox,
+  parameters: {
+    docs: {
+      docPage: {
+        a11yPropsTable: 'all',
+        title: 'Checkbox',
+      },
+    },
+  },
 };

@@ -92,6 +92,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: 'all',
         customCode,
         props: {
           components: { Card, CardHeader, CardBody, CardFooter, CardSubdued },

@@ -87,6 +87,13 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: {
+          Modal: ['aria-labelledby'],
+          ModalHeader: null,
+          ModalBody: null,
+          ModalDescription: null,
+          ModalFooter: null,
+        },
         customCode,
         title: 'Modal',
         noHtml: true,

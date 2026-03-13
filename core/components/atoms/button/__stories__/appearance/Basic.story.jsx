@@ -13,6 +13,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: 'all',
         title: 'Button',
         description: 'Basic Button',
         a11yProps: `**aria-label:** Add \`aria-label='Cancel'\` to describe the action of button `,

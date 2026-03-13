@@ -29,6 +29,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: ['role', 'tabIndex'],
         title: 'Avatar',
       },
     },

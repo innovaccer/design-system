@@ -13,6 +13,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: 'all',
         title: 'Button',
         description: 'Secondary button with left aligned icon.',
         a11yProps: ` **aria-label:** Add \`aria-label='Download'\` on button to indicate its purpose. `,

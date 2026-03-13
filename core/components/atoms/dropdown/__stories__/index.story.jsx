@@ -155,6 +155,7 @@ export default {
           components: { Uncontrolled, Controlled },
           exclude: ['showHead'],
         },
+        a11yPropsTable: ['tabIndex'],
       },
     },
   },

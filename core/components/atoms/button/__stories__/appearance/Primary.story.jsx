@@ -13,6 +13,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: 'all',
         title: 'Button',
         description: 'Primary button',
         a11yProps: ` **aria-label:** Add \`aria-label='Submit your response'\` to describe the action of button `,

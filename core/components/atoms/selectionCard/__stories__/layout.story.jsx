@@ -39,6 +39,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: 'all',
         title: 'SelectionCard',
         propDescription: `Note: All the valid properties of HTML DIV elements are acceptable as a prop`,
       },

@@ -42,6 +42,7 @@ export default {
     docs: {
       docPage: {
         title: 'Pills',
+        a11yPropsTable: ['aria-label'],
       },
     },
   },

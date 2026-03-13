@@ -57,6 +57,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: 'all',
         title: 'Button',
         a11yProps: ` **aria-label:** <br/>- Add \`aria-label='Open'\` to describe the action of button.<br/> - Add \`aria-label='Events'\` on button with *event* icon to define its purpose.`,
       },

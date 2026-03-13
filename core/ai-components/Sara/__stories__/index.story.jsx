@@ -12,6 +12,7 @@ export default {
     docs: {
       docPage: {
         title: 'Sara',
+        a11yPropsTable: 'all',
       },
     },
   },

@@ -27,4 +27,5 @@ export const row = () => {
 export default {
   title: 'Components/Layout/Row',
   component: Row,
+  parameters: { docs: { docPage: { a11yPropsTable: 'all' } } },
 };

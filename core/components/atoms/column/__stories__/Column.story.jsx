@@ -17,4 +17,5 @@ export const column = () => {
 export default {
   title: 'Components/Layout/Column',
   component: Column,
+  parameters: { docs: { docPage: { a11yPropsTable: 'all' } } },
 };

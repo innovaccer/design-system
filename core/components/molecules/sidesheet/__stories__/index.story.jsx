@@ -130,6 +130,7 @@ export default {
         customCode,
         title: 'Sidesheet',
         noHtml: true,
+        a11yPropsTable: ['aria-labelledby'],
       },
     },
   },

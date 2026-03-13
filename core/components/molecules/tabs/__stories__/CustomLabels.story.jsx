@@ -116,6 +116,10 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: {
+          Tabs: ['aria-labelledby'],
+          Tab: null,
+        },
         customCode,
       },
     },

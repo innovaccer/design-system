@@ -115,6 +115,10 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: {
+          Input: 'all',
+          'Input.ActionButton': ['tabIndex'],
+        },
         title: 'Input',
         customCode,
         props: {
