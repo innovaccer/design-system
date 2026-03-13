@@ -231,6 +231,8 @@ export const handleDateViewKeyDown = (params: HandleDateViewKeyDownParams): bool
     case ' ':
     case 'Spacebar':
       event.preventDefault();
+      // Prevent auto-repeat: only process first keydown
+      if (event.repeat) return true;
       onSelect();
       return true;
     case 'Escape':
@@ -310,6 +312,8 @@ export const handleMonthViewKeyDown = (params: HandleMonthViewKeyDownParams): bo
     case ' ':
     case 'Spacebar':
       event.preventDefault();
+      // Prevent auto-repeat: only process first keydown
+      if (event.repeat) return true;
       onSelect(focusedMonth);
       return true;
     case 'Escape':
@@ -401,6 +405,8 @@ export const handleYearViewKeyDown = (params: HandleYearViewKeyDownParams): bool
     case ' ':
     case 'Spacebar':
       event.preventDefault();
+      // Prevent auto-repeat: only process first keydown
+      if (event.repeat) return true;
       onSelect(params.yearBlockStart + focusedYearIndex);
       return true;
     case 'Escape':
