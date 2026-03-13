@@ -5,8 +5,11 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Drop files here or press Enter to browse"
     class="Dropzone Dropzone--compressed Dropzone-animation Dropzone-animation--default"
     data-test="DesignSystem-Dropzone"
+    role="button"
+    tabindex="0"
   >
     <svg
       class="Dropzone-icon--compressed"
@@ -69,8 +72,11 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Drop files here or press Enter to browse"
     class="Dropzone Dropzone--standard Dropzone-animation Dropzone-standard--default"
     data-test="DesignSystem-Dropzone"
+    role="button"
+    tabindex="0"
   >
     <svg
       class="Dropzone-icon--standard"
@@ -133,8 +139,11 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Drop files here or press Enter to browse"
     class="Dropzone Dropzone--tight Dropzone-animation Dropzone-animation--default"
     data-test="DesignSystem-Dropzone"
+    role="button"
+    tabindex="0"
   >
     <div
       class="DropzoneWrapper DropzoneWrapper--tight"
@@ -186,8 +195,11 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Drop files here or press Enter to browse"
     class="Dropzone Dropzone--compressed Dropzone--disabled Dropzone-animation Dropzone-animation--default"
     data-test="DesignSystem-Dropzone"
+    role="button"
+    tabindex="-1"
   >
     <svg
       class="Dropzone-icon--compressed"
@@ -250,8 +262,11 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Drop files here or press Enter to browse"
     class="Dropzone Dropzone--standard Dropzone--disabled Dropzone-animation Dropzone-standard--default"
     data-test="DesignSystem-Dropzone"
+    role="button"
+    tabindex="-1"
   >
     <svg
       class="Dropzone-icon--standard"
@@ -314,8 +329,11 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Drop files here or press Enter to browse"
     class="Dropzone Dropzone--tight Dropzone--disabled Dropzone-animation Dropzone-animation--default"
     data-test="DesignSystem-Dropzone"
+    role="button"
+    tabindex="-1"
   >
     <div
       class="DropzoneWrapper DropzoneWrapper--tight"
@@ -367,8 +385,11 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Drop files here or press Enter to browse"
     class="Dropzone Dropzone--standard Dropzone-animation Dropzone-standard--default"
     data-test="DesignSystem-Dropzone"
+    role="button"
+    tabindex="0"
   >
     <svg
       class="Dropzone-icon--standard"
@@ -418,8 +439,11 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Drop files here or press Enter to browse"
     class="Dropzone Dropzone--standard Dropzone-animation Dropzone-standard--default"
     data-test="DesignSystem-Dropzone"
+    role="button"
+    tabindex="0"
   >
     <svg
       class="Dropzone-icon--standard"
@@ -470,8 +494,11 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Drop files here or press Enter to browse"
     class="Dropzone Dropzone--standard Dropzone-animation Dropzone-standard--default"
     data-test="DesignSystem-Dropzone"
+    role="button"
+    tabindex="0"
   >
     <svg
       class="Dropzone-icon--standard"
@@ -521,8 +548,11 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Drop files here or press Enter to browse"
     class="Dropzone Dropzone--standard Dropzone-animation Dropzone-standard--default"
     data-test="DesignSystem-Dropzone"
+    role="button"
+    tabindex="0"
   >
     <svg
       class="Dropzone-icon--standard"

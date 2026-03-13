@@ -120,6 +120,61 @@ describe('Dropzone component prop:sampleFileLink', () => {
   });
 });
 
+describe('Dropzone component keyboard accessibility', () => {
+  beforeEach(() => {
+    jest.useFakeTimers();
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
+  });
+
+  it('root drop zone is keyboard-focusable when not disabled', () => {
+    const { getByTestId } = render(<Dropzone />);
+    const root = getByTestId('DesignSystem-Dropzone');
+    expect(root).toHaveAttribute('tabindex', '0');
+    expect(root).toHaveAttribute('role', 'button');
+    expect(root).toHaveAttribute('aria-label', 'Drop files here or press Enter to browse');
+  });
+
+  it('root drop zone has tabIndex -1 when disabled', () => {
+    const { getByTestId } = render(<Dropzone disabled />);
+    const root = getByTestId('DesignSystem-Dropzone');
+    expect(root).toHaveAttribute('tabindex', '-1');
+  });
+
+  it('Enter on root opens file dialog (triggers onFileDialogCancel when cancelled)', () => {
+    const onFileDialogCancel = jest.fn();
+    const { getByTestId } = render(<Dropzone onFileDialogCancel={onFileDialogCancel} />);
+    const root = getByTestId('DesignSystem-Dropzone');
+    root.focus();
+    fireEvent.keyDown(root, { key: 'Enter' });
+    fireEvent.focus(window);
+    jest.advanceTimersByTime(350);
+    expect(onFileDialogCancel).toHaveBeenCalled();
+  });
+
+  it('Space on root opens file dialog (triggers onFileDialogCancel when cancelled)', () => {
+    const onFileDialogCancel = jest.fn();
+    const { getByTestId } = render(<Dropzone onFileDialogCancel={onFileDialogCancel} />);
+    const root = getByTestId('DesignSystem-Dropzone');
+    root.focus();
+    fireEvent.keyDown(root, { key: ' ' });
+    fireEvent.focus(window);
+    jest.advanceTimersByTime(350);
+    expect(onFileDialogCancel).toHaveBeenCalled();
+  });
+
+  it('Browse files link still works alongside root keyboard activation', () => {
+    const onFileDialogCancel = jest.fn();
+    const { getAllByTestId } = render(<Dropzone onFileDialogCancel={onFileDialogCancel} />);
+    fireEvent.click(getAllByTestId('DesignSystem-Text')[1]);
+    fireEvent.focus(window);
+    jest.advanceTimersByTime(350);
+    expect(onFileDialogCancel).toHaveBeenCalled();
+  });
+});
+
 describe('Dropzone component event handlers', () => {
   it('checks for onDragLeave event', () => {
     const { getByTestId } = render(<Dropzone onDragLeave={FunctionValue} accept="image/png" />);
