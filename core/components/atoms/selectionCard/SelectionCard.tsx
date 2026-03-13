@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, BaseHtmlProps } from '@/utils/types';
 import { useMultiSelect, useSingleSelect } from './hooks';
+import { isSpaceKey } from '@/accessibility/utils';
 import styles from '@css/components/selectionCard.module.css';
 
 type ClickEventType = React.MouseEvent<HTMLDivElement> | React.KeyboardEvent;
@@ -59,7 +60,12 @@ export const SelectionCard = (props: SelectionCardProps) => {
   };
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
-    if (event.key === 'Enter' && !disabled) {
+    // WAI-ARIA checkbox pattern: Space activates, Enter does nothing
+    // (Enter may be used for form submission in containing forms)
+    if (isSpaceKey(event) && !disabled) {
+      event.preventDefault(); // Prevent page scroll (must be before repeat check)
+      // Prevent auto-repeat: only process first keydown
+      if (event.repeat) return;
       onClickHandler(event);
     }
   };
