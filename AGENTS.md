@@ -82,6 +82,7 @@ ___
 - Ensure components meet WCAG 2.0 AA.
 - Verify keyboard navigation, color contrast, and ARIA attributes.
 - Resolve any `jsx-a11y` lint warnings.
+- **A11y references:** See `a11y-context/README.md`.
 
 ---
 

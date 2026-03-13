@@ -14,6 +14,8 @@ exports[`TabsWrapper component
       <div
         class="Tab Tab--active Tab--regular"
         data-test="DesignSystem-Tabs--Header"
+        role="button"
+        tabindex="0"
       >
         <span
           class="Text Text--default Text--regular"
@@ -23,8 +25,11 @@ exports[`TabsWrapper component
         </span>
       </div>
       <div
+        aria-disabled="true"
         class="Tab Tab--disabled Tab--regular"
         data-test="DesignSystem-Tabs--Header"
+        role="button"
+        tabindex="-1"
       >
         <span
           class="Text Text--default Text--regular"
@@ -58,6 +63,8 @@ exports[`TabsWrapper component
       <div
         class="Tab Tab--active Tab--regular"
         data-test="DesignSystem-Tabs--Header"
+        role="button"
+        tabindex="0"
       >
         <span
           class="Text Text--default Text--regular"
@@ -67,8 +74,11 @@ exports[`TabsWrapper component
         </span>
       </div>
       <div
+        aria-disabled="true"
         class="Tab Tab--disabled Tab--regular"
         data-test="DesignSystem-Tabs--Header"
+        role="button"
+        tabindex="-1"
       >
         <span
           class="Text Text--default Text--regular"

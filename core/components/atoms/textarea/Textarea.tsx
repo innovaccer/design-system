@@ -105,6 +105,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((pr
   return (
     <textarea
       data-test="DesignSystem-Textarea"
+      aria-invalid={error}
       {...rest}
       ref={ref}
       name={name}

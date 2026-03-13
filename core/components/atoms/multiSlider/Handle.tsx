@@ -118,11 +118,10 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
     const { stepSize, value } = this.props;
     const { keyCode } = event;
 
-    // TODO(a11y): add ARROW_DOWN & ARROW_UP too
-    if (keyCode === Keys.ARROW_LEFT) {
+    if (keyCode === Keys.ARROW_LEFT || keyCode === Keys.ARROW_DOWN) {
       this.changeValue(value - stepSize);
       event.preventDefault();
-    } else if (keyCode === Keys.ARROW_RIGHT) {
+    } else if (keyCode === Keys.ARROW_RIGHT || keyCode === Keys.ARROW_UP) {
       this.changeValue(value + stepSize);
       event.preventDefault();
     }
@@ -131,7 +130,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
   handleKeyUp = (event: React.KeyboardEvent<HTMLSpanElement>) => {
     if (this.props.disabled) return;
 
-    if ([Keys.ARROW_LEFT, Keys.ARROW_RIGHT].indexOf(event.keyCode) >= 0) {
+    if ([Keys.ARROW_LEFT, Keys.ARROW_RIGHT, Keys.ARROW_UP, Keys.ARROW_DOWN].indexOf(event.keyCode) >= 0) {
       const { onRelease } = this.props;
       if (onRelease) onRelease(this.props.value);
     }
@@ -186,20 +185,26 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
     });
 
     return (
-      // TODO(a11y): fix accessibility
-      /* eslint-disable */
       <>
         <div
           className={className}
           onMouseOver={this.handleMouseOver}
+          onFocus={this.handleMouseOver}
           onMouseLeave={this.handleMouseLeave}
+          onBlur={this.handleMouseLeave}
           onMouseDown={this.beginHandleMovement}
           onKeyDown={this.handleKeyDown}
           onKeyUp={this.handleKeyUp}
           ref={this.refHandlers.handle}
           style={style}
-          tabIndex={0}
+          tabIndex={disabled ? -1 : 0}
           data-test="DesignSystem-MultiSlider-Handle"
+          role="slider"
+          aria-valuemin={this.props.min}
+          aria-valuemax={this.props.max}
+          aria-valuenow={value}
+          aria-valuetext={label}
+          aria-disabled={disabled || undefined}
         />
         {/* eslint-enable  */}
         <div className={TooltipClass} style={style}>

@@ -70,6 +70,9 @@
   --accent4-lightest: var(--nimbu-lightest);
   --inverse-lightest: var(--night-lightest);
 
+  /* Focus */
+  --primary-focus: var(--jal-dark);
+
   /* Ultra Light */
   --primary-ultra-light: #eef6fc;
   --success-ultra-light: #ecf7f0;

@@ -409,6 +409,8 @@ Object {
             <div
               class="Navigation-menu Navigation-menu--vertical"
               data-test="DesignSystem-Navigation-VerticalNavigation--menuItem"
+              role="button"
+              tabindex="0"
             >
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--default Navigation-menuIcon"
@@ -429,6 +431,8 @@ Object {
             <div
               class="Navigation-menu Navigation-menu--vertical"
               data-test="DesignSystem-Navigation-VerticalNavigation--menuItem"
+              role="button"
+              tabindex="0"
             />
             <div
               class="Navigation-subMenu"
@@ -440,6 +444,8 @@ Object {
             <div
               class="Navigation-menu Navigation-menu--vertical"
               data-test="DesignSystem-Navigation-VerticalNavigation--menuItem"
+              role="button"
+              tabindex="0"
             />
             <div
               class="Navigation-subMenu"
@@ -462,6 +468,8 @@ Object {
           <div
             class="Navigation-menu Navigation-menu--vertical"
             data-test="DesignSystem-Navigation-VerticalNavigation--menuItem"
+            role="button"
+            tabindex="0"
           >
             <i
               class="material-symbols material-symbols-rounded Icon Icon--default Navigation-menuIcon"
@@ -482,6 +490,8 @@ Object {
           <div
             class="Navigation-menu Navigation-menu--vertical"
             data-test="DesignSystem-Navigation-VerticalNavigation--menuItem"
+            role="button"
+            tabindex="0"
           />
           <div
             class="Navigation-subMenu"
@@ -493,6 +503,8 @@ Object {
           <div
             class="Navigation-menu Navigation-menu--vertical"
             data-test="DesignSystem-Navigation-VerticalNavigation--menuItem"
+            role="button"
+            tabindex="0"
           />
           <div
             class="Navigation-subMenu"

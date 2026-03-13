@@ -26,11 +26,12 @@ Object {
               <span
                 class=""
                 data-test="DesignSystem-AvatarWrapper"
-                role="presentation"
               >
                 <span
+                  aria-label="John Doe"
                   class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
                   data-test="DesignSystem-Avatar"
+                  role="img"
                   tabindex="0"
                 >
                   <i
@@ -61,11 +62,12 @@ Object {
               <span
                 class=""
                 data-test="DesignSystem-AvatarWrapper"
-                role="presentation"
               >
                 <span
+                  aria-label="Steven Packton"
                   class="Avatar Avatar--regular Avatar--alert Avatar--default"
                   data-test="DesignSystem-Avatar"
+                  role="img"
                   tabindex="0"
                 >
                   <i
@@ -104,11 +106,12 @@ Object {
             <span
               class=""
               data-test="DesignSystem-AvatarWrapper"
-              role="presentation"
             >
               <span
+                aria-label="John Doe"
                 class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
                 data-test="DesignSystem-Avatar"
+                role="img"
                 tabindex="0"
               >
                 <i
@@ -139,11 +142,12 @@ Object {
             <span
               class=""
               data-test="DesignSystem-AvatarWrapper"
-              role="presentation"
             >
               <span
+                aria-label="Steven Packton"
                 class="Avatar Avatar--regular Avatar--alert Avatar--default"
                 data-test="DesignSystem-Avatar"
+                role="img"
                 tabindex="0"
               >
                 <i
@@ -241,11 +245,12 @@ Object {
               <span
                 class=""
                 data-test="DesignSystem-AvatarWrapper"
-                role="presentation"
               >
                 <span
+                  aria-label="John Doe"
                   class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
                   data-test="DesignSystem-Avatar"
+                  role="img"
                   tabindex="0"
                 >
                   <i
@@ -276,11 +281,12 @@ Object {
               <span
                 class=""
                 data-test="DesignSystem-AvatarWrapper"
-                role="presentation"
               >
                 <span
+                  aria-label="Steven Packton"
                   class="Avatar Avatar--regular Avatar--alert Avatar--default"
                   data-test="DesignSystem-Avatar"
+                  role="img"
                   tabindex="0"
                 >
                   <i
@@ -319,11 +325,12 @@ Object {
             <span
               class=""
               data-test="DesignSystem-AvatarWrapper"
-              role="presentation"
             >
               <span
+                aria-label="John Doe"
                 class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
                 data-test="DesignSystem-Avatar"
+                role="img"
                 tabindex="0"
               >
                 <i
@@ -354,11 +361,12 @@ Object {
             <span
               class=""
               data-test="DesignSystem-AvatarWrapper"
-              role="presentation"
             >
               <span
+                aria-label="Steven Packton"
                 class="Avatar Avatar--regular Avatar--alert Avatar--default"
                 data-test="DesignSystem-Avatar"
+                role="img"
                 tabindex="0"
               >
                 <i
@@ -456,11 +464,12 @@ Object {
               <span
                 class=""
                 data-test="DesignSystem-AvatarWrapper"
-                role="presentation"
               >
                 <span
+                  aria-label="John Doe"
                   class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
                   data-test="DesignSystem-Avatar"
+                  role="img"
                   tabindex="0"
                 >
                   <i
@@ -491,11 +500,12 @@ Object {
               <span
                 class=""
                 data-test="DesignSystem-AvatarWrapper"
-                role="presentation"
               >
                 <span
+                  aria-label="Steven Packton"
                   class="Avatar Avatar--tiny Avatar--alert Avatar--default"
                   data-test="DesignSystem-Avatar"
+                  role="img"
                   tabindex="0"
                 >
                   <i
@@ -534,11 +544,12 @@ Object {
             <span
               class=""
               data-test="DesignSystem-AvatarWrapper"
-              role="presentation"
             >
               <span
+                aria-label="John Doe"
                 class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
                 data-test="DesignSystem-Avatar"
+                role="img"
                 tabindex="0"
               >
                 <i
@@ -569,11 +580,12 @@ Object {
             <span
               class=""
               data-test="DesignSystem-AvatarWrapper"
-              role="presentation"
             >
               <span
+                aria-label="Steven Packton"
                 class="Avatar Avatar--tiny Avatar--alert Avatar--default"
                 data-test="DesignSystem-Avatar"
+                role="img"
                 tabindex="0"
               >
                 <i
@@ -671,11 +683,12 @@ Object {
               <span
                 class=""
                 data-test="DesignSystem-AvatarWrapper"
-                role="presentation"
               >
                 <span
+                  aria-label="John Doe"
                   class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
                   data-test="DesignSystem-Avatar"
+                  role="img"
                   tabindex="0"
                 >
                   <i
@@ -706,11 +719,12 @@ Object {
               <span
                 class=""
                 data-test="DesignSystem-AvatarWrapper"
-                role="presentation"
               >
                 <span
+                  aria-label="Steven Packton"
                   class="Avatar Avatar--tiny Avatar--alert Avatar--default"
                   data-test="DesignSystem-Avatar"
+                  role="img"
                   tabindex="0"
                 >
                   <i
@@ -749,11 +763,12 @@ Object {
             <span
               class=""
               data-test="DesignSystem-AvatarWrapper"
-              role="presentation"
             >
               <span
+                aria-label="John Doe"
                 class="Avatar Avatar--tiny Avatar--accent1 Avatar--default"
                 data-test="DesignSystem-Avatar"
+                role="img"
                 tabindex="0"
               >
                 <i
@@ -784,11 +799,12 @@ Object {
             <span
               class=""
               data-test="DesignSystem-AvatarWrapper"
-              role="presentation"
             >
               <span
+                aria-label="Steven Packton"
                 class="Avatar Avatar--tiny Avatar--alert Avatar--default"
                 data-test="DesignSystem-Avatar"
+                role="img"
                 tabindex="0"
               >
                 <i

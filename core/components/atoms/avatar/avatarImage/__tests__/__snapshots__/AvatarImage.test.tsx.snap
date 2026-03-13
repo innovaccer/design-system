@@ -17,11 +17,12 @@ Object {
           <span
             class=""
             data-test="DesignSystem-AvatarWrapper"
-            role="presentation"
           >
             <span
+              aria-label="John Doe"
               class="Avatar Avatar--regular Avatar--accent1 Avatar--default"
               data-test="DesignSystem-Avatar"
+              role="img"
               tabindex="0"
             >
               <img
@@ -43,11 +44,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="Avatar"
             class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <img
@@ -68,11 +70,12 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
       >
         <span
+          aria-label="Avatar"
           class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default"
           data-test="DesignSystem-Avatar"
+          role="img"
           tabindex="0"
         >
           <img
@@ -152,11 +155,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="Avatar"
             class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <svg
@@ -186,11 +190,12 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
       >
         <span
+          aria-label="Avatar"
           class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default"
           data-test="DesignSystem-Avatar"
+          role="img"
           tabindex="0"
         >
           <svg

@@ -52,6 +52,15 @@ export const StatusHint = (props: StatusHintProps) => {
   } = props;
 
   const baseProps = extractBaseProps(props);
+  const isClickable = Boolean(onClick);
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (!isClickable) return;
+
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      onClick?.(event as unknown as React.MouseEvent<HTMLDivElement>);
+    }
+  };
 
   const StatusHintClass = classNames(
     {
@@ -84,18 +93,19 @@ export const StatusHint = (props: StatusHintProps) => {
   };
 
   return (
-    // TODO(a11y): fix accessibility
-    /* eslint-disable */
     <div
       data-test="DesignSystem-StatusHint"
       {...baseProps}
       className={StatusHintClass}
       onClick={(e) => onClick && onClick(e)}
+      onKeyDown={handleKeyDown}
       onMouseEnter={(e) => onMouseEnter && onMouseEnter(e)}
       onMouseLeave={(e) => onMouseLeave && onMouseLeave(e)}
+      role={isClickable ? 'button' : undefined}
+      tabIndex={isClickable ? 0 : undefined}
     >
       {/* eslint-enable */}
-      <span data-test="DesignSystem-StatusHint--Icon" className={StatusHintIconClass} />
+      <span data-test="DesignSystem-StatusHint--Icon" aria-hidden="true" className={StatusHintIconClass} />
       {renderChildren()}
     </div>
   );

@@ -129,6 +129,7 @@ exports[`Combobox component snapshots
             <div
               class="ChipInput"
               data-test="DesignSystem-Combobox-ChipInput"
+              role="button"
               tabindex="-1"
             >
               <div
@@ -174,6 +175,7 @@ exports[`Combobox component snapshots
             <div
               class="ChipInput"
               data-test="DesignSystem-Combobox-ChipInput"
+              role="button"
               tabindex="-1"
             >
               <div
@@ -219,6 +221,7 @@ exports[`Combobox component snapshots
             <div
               class="ChipInput"
               data-test="DesignSystem-Combobox-ChipInput"
+              role="button"
               tabindex="-1"
             >
               <div

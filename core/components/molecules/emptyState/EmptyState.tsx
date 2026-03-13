@@ -129,9 +129,12 @@ export const EmptyState = (props: EmptyStateProps) => {
       <div data-test="DesignSystem-EmptyState" {...baseProps} className={wrapperClasses}>
         {image && <div style={{ height: imageHeight[templateSize] }}>{image}</div>}
         {imageSrc && !image && (
-          //TODO(a11y)
-          //eslint-disable-next-line
-          <img src={imageSrc} height={imageHeight[templateSize]} data-test="DesignSystem-EmptyState--Img" />
+          <img
+            src={imageSrc}
+            height={imageHeight[templateSize]}
+            data-test="DesignSystem-EmptyState--Img"
+            alt={title || description || ''}
+          />
         )}
         {title && (
           <Heading

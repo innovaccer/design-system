@@ -49,9 +49,7 @@
 }
 
 .Select-trigger--filled:focus {
-  border: var(--border-width-2-5) solid var(--primary);
   background-color: var(--secondary-light);
-  box-shadow: var(--shadow-spread) var(--primary-shadow);
 }
 
 /* styleType Outlined */
@@ -66,11 +64,6 @@
   background: var(--secondary-lighter);
   color: var(--inverse);
   border: var(--border-width-2-5) solid var(--secondary-dark);
-}
-
-.Select-trigger--outlined:focus {
-  border: var(--border-width-2-5) solid var(--primary);
-  box-shadow: var(--shadow-spread) var(--primary-shadow);
 }
 
 .Select-trigger--outlined:active,
@@ -202,5 +195,4 @@
 
 .Select-trigger--error {
   border: var(--border-width-2-5) solid var(--alert) !important;
-  box-shadow: var(--shadow-spread) var(--alert-shadow);
 }

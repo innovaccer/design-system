@@ -3,7 +3,7 @@ import { Spinner, Text } from '@/index';
 
 // CSF format story
 export const appearance = () => {
-  const appearances = ['primary', 'secondary', 'white'];
+  const appearances = ['primary', 'secondary', 'white', 'alert'];
   return (
     <div className="d-flex">
       {appearances.map((appear, ind) => {

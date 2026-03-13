@@ -85,10 +85,8 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
     const textClasses = classNames(styles['HorizontalNav-menuText'], styles['HorizontalNav-animate']);
 
     return (
-      // TODO(a11y)
-      // eslint-disable-next-line
       <div
-        tabIndex={0}
+        tabIndex={menu.disabled ? -1 : 0}
         data-test="DesignSystem-HorizontalNav"
         key={index}
         className={menuClasses}

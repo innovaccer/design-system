@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import Icon from '@/components/atoms/icon';
 import Text from '@/components/atoms/text';
-import { Name } from '../chip/Chip';
+import { Name, ChipType } from '../chip/Chip';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { IconProps, TextProps } from '@/index.type';
 import { Tooltip } from '@/index';
@@ -22,6 +22,8 @@ export interface GenericChipProps extends BaseProps {
   name: Name;
   maxWidth: string | number;
   size?: TChipSize;
+  type?: ChipType;
+  role?: string;
 }
 
 export const GenericChip = (props: GenericChipProps) => {
@@ -38,6 +40,7 @@ export const GenericChip = (props: GenericChipProps) => {
     iconType,
     maxWidth,
     size = 'regular',
+    type,
   } = props;
   const wrapperStyle = { maxWidth: maxWidth };
   const [isTextTruncated, setIsTextTruncated] = React.useState(false);
@@ -73,13 +76,15 @@ export const GenericChip = (props: GenericChipProps) => {
   };
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
+      event.preventDefault();
       onCloseHandler(event);
     }
   };
 
   const onChipKeyDownHandler = (event: React.KeyboardEvent) => {
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
+      event.preventDefault();
       onClickHandler();
     }
   };
@@ -145,6 +150,23 @@ export const GenericChip = (props: GenericChipProps) => {
     return labelText;
   };
 
+  const getAriaProps = () => {
+    const effectiveRole = props.role || 'button';
+    const ariaProps: React.HTMLAttributes<HTMLDivElement> = {};
+
+    if (type === 'selection') {
+      if (effectiveRole === 'button') {
+        ariaProps['aria-pressed'] = selected;
+      } else if (effectiveRole === 'checkbox' || effectiveRole === 'menuitemcheckbox') {
+        ariaProps['aria-checked'] = selected;
+      } else if (effectiveRole === 'option' || effectiveRole === 'tab' || effectiveRole === 'treeitem') {
+        ariaProps['aria-selected'] = selected;
+      }
+    }
+
+    return ariaProps;
+  };
+
   return (
     <Tooltip
       showTooltip={isTextTruncated}
@@ -156,7 +178,8 @@ export const GenericChip = (props: GenericChipProps) => {
         tabIndex={disabled ? -1 : 0}
         style={wrapperStyle}
         data-test="DesignSystem-GenericChip--Wrapper"
-        role="button"
+        role={props.role || 'button'}
+        {...getAriaProps()}
         onKeyDown={onChipKeyDownHandler}
         {...baseProps}
         className={chipWrapperClass}
@@ -176,6 +199,7 @@ export const GenericChip = (props: GenericChipProps) => {
         {clearButton && (
           <div
             role="button"
+            aria-label="Remove"
             onClick={onCloseHandler}
             tabIndex={disabled ? -1 : 0}
             onKeyDown={onKeyDownHandler}

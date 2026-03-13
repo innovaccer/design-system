@@ -1,0 +1,104 @@
+---
+alwaysApply: true
+---
+
+Use these sources as the primary references:
+- [a11y-context/wcag-as-json.json](mdc:a11y-context/wcag-as-json.json) for the full WCAG 2.2 success criteria set.
+- [wcag-audit-patterns.md](mdc:.cursor/rules/wcag-audit-patterns.md) for audit methodology.
+- [vercel-a11y-guidelines.mdc](mdc:.cursor/rules/vercel-a11y-guidelines.mdc) and
+  [web-interface-a11y-guidelines.mdc](mdc:.cursor/rules/web-interface-a11y-guidelines.mdc)
+  for supporting accessibility guidance.
+
+## Objective
+Perform a comprehensive WCAG 2.2 AA audit across all UI components, starting from
+atomic components, and consolidate all findings and remediations into a single
+markdown report.
+
+## Strict Requirements
+- Do not skip any WCAG 2.2 AA success criterion.
+- Cross-reference related criteria and evaluate exceptions.
+- Never assume compliance or developer intent.
+- If a component composes other components, re-validate inherited risks.
+- Never stop early; complete the audit for all components.
+- When measurable validation is required (contrast, focus order, etc), generate
+  scripts in `/scripts/`, execute them, and use their outputs.
+
+## Per-Issue Minimum Fields
+Each issue must include:
+- WCAG SC ID
+- Problem statement
+- Why it violates the criterion
+- Code-level fix
+- Testing strategy
+
+## Per-Component Audit Prompt
+You are auditing a single UI component for WCAG 2.2 AA compliance.
+Component: `{{component_name}}`
+
+You must:
+1. Analyze source code.
+2. Identify:
+   - HTML structure
+   - ARIA usage
+   - Events
+   - States
+   - Keyboard interactions
+   - Visual styling
+   - Color tokens
+   - Touch targets
+   - Focus handling
+3. For each WCAG 2.2 AA success criterion:
+   - Evaluate applicability
+   - Check the full requirement
+   - Check exceptions
+   - Cross-reference related criteria
+   - Identify violations
+   - Provide remediation steps
+   - Provide example code fixes
+4. Generate programmatic validation when needed:
+   - Contrast calculation
+   - Focus order simulation
+   - Keyboard trap detection
+   - ARIA role validation
+5. Output structured markdown:
+
+# Component: {{component_name}}
+
+## Summary
+Compliance score:
+Risk level:
+
+## Success Criteria Audit
+
+### SC 1.4.3 Contrast (Minimum)
+
+Status:
+Issues:
+Fix:
+Code Example:
+(repeat for all criteria)
+
+## Cross-Criteria Risks
+## Required Refactors
+## Automated Tests To Add
+
+Be legally strict. Assume nothing. Cross-reference aggressively.
+
+## Mandatory Validation Checks
+- Treat WCAG as legal requirements.
+- Validate interactive states (hover, focus, active, disabled).
+- Validate keyboard-only navigation.
+- Validate screen reader semantics.
+- Validate touch target size (2.5.5 AA).
+- Validate focus visibility (2.4.7).
+- Validate drag alternatives (2.5.7).
+- Validate target size (2.5.8 if applicable).
+- Validate error handling (3.3.x).
+- Validate name/role/value (4.1.2).
+- Validate status messages (4.1.3).
+
+For any criterion that requires computation (e.g., color contrast), create a
+program, run it, and act on its output. Ensure the program is accurate or the
+audit results will be invalid.
+
+Continue until every component is audited and the report is complete.

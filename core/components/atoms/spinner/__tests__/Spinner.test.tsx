@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import Spinner, { SpinnerProps as Props } from '../Spinner';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
-const appearance = ['primary', 'secondary', 'white'];
+const appearance = ['primary', 'secondary', 'white', 'alert'];
 const size = ['xsmall', 'small', 'medium', 'large'];
 
 describe('Spinner component', () => {

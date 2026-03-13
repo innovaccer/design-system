@@ -67,14 +67,18 @@ exports[`Button component
 <body>
   <div>
     <button
+      aria-busy="true"
       class="Button Button--regular Button--alert Button--iconAlign-left"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
     >
       <svg
+        aria-label="Loading"
+        aria-live="polite"
         class="Spinner Spinner--xsmall Button-spinner"
         data-test="DesignSystem-Button--Spinner"
+        role="status"
         viewBox="0 0 50 50"
       >
         <circle
@@ -185,14 +189,18 @@ exports[`Button component
 <body>
   <div>
     <button
+      aria-busy="true"
       class="Button Button--regular Button--basic Button--iconAlign-left"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
     >
       <svg
+        aria-label="Loading"
+        aria-live="polite"
         class="Spinner Spinner--xsmall Button-spinner"
         data-test="DesignSystem-Button--Spinner"
+        role="status"
         viewBox="0 0 50 50"
       >
         <circle
@@ -303,14 +311,18 @@ exports[`Button component
 <body>
   <div>
     <button
+      aria-busy="true"
       class="Button Button--regular Button--primary Button--iconAlign-left"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
     >
       <svg
+        aria-label="Loading"
+        aria-live="polite"
         class="Spinner Spinner--xsmall Button-spinner"
         data-test="DesignSystem-Button--Spinner"
+        role="status"
         viewBox="0 0 50 50"
       >
         <circle
@@ -421,14 +433,18 @@ exports[`Button component
 <body>
   <div>
     <button
+      aria-busy="true"
       class="Button Button--regular Button--transparent Button--iconAlign-left"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
     >
       <svg
+        aria-label="Loading"
+        aria-live="polite"
         class="Spinner Spinner--xsmall Button-spinner"
         data-test="DesignSystem-Button--Spinner"
+        role="status"
         viewBox="0 0 50 50"
       >
         <circle
@@ -898,14 +914,18 @@ exports[`Button component with no children
 <body>
   <div>
     <button
+      aria-busy="true"
       class="Button Button--regular Button--regularSquare Button--alert"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
     >
       <svg
+        aria-label="Loading"
+        aria-live="polite"
         class="Spinner Spinner--xsmall Button-spinner"
         data-test="DesignSystem-Button--Spinner"
+        role="status"
         viewBox="0 0 50 50"
       >
         <circle
@@ -933,14 +953,18 @@ exports[`Button component with no children
 <body>
   <div>
     <button
+      aria-busy="true"
       class="Button Button--regular Button--regularSquare Button--basic"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
     >
       <svg
+        aria-label="Loading"
+        aria-live="polite"
         class="Spinner Spinner--xsmall Button-spinner"
         data-test="DesignSystem-Button--Spinner"
+        role="status"
         viewBox="0 0 50 50"
       >
         <circle
@@ -968,14 +992,18 @@ exports[`Button component with no children
 <body>
   <div>
     <button
+      aria-busy="true"
       class="Button Button--regular Button--regularSquare Button--primary"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
     >
       <svg
+        aria-label="Loading"
+        aria-live="polite"
         class="Spinner Spinner--xsmall Button-spinner"
         data-test="DesignSystem-Button--Spinner"
+        role="status"
         viewBox="0 0 50 50"
       >
         <circle
@@ -1003,14 +1031,18 @@ exports[`Button component with no children
 <body>
   <div>
     <button
+      aria-busy="true"
       class="Button Button--regular Button--regularSquare Button--transparent"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
     >
       <svg
+        aria-label="Loading"
+        aria-live="polite"
         class="Spinner Spinner--xsmall Button-spinner"
         data-test="DesignSystem-Button--Spinner"
+        role="status"
         viewBox="0 0 50 50"
       >
         <circle

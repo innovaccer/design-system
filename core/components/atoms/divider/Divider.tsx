@@ -33,7 +33,14 @@ export const Divider = (props: DividerProps) => {
     className
   );
 
-  return <hr data-test="DesignSystem-Divider" {...baseProps} className={DividerClass} />;
+  return (
+    <hr
+      data-test="DesignSystem-Divider"
+      {...baseProps}
+      className={DividerClass}
+      aria-orientation={vertical ? 'vertical' : 'horizontal'}
+    />
+  );
 };
 
 Divider.displayName = 'Divider';

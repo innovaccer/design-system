@@ -15,6 +15,7 @@ exports[`Tabs component
       <div
         class="Tab Tab--active Tab-selected align-items-center"
         data-test="DesignSystem-Tabs--Tab"
+        role="button"
         tabindex="0"
       >
         <span
@@ -48,6 +49,7 @@ exports[`Tabs component
       <div
         class="Tab align-items-center"
         data-test="DesignSystem-Tabs--Tab"
+        role="button"
         tabindex="0"
       >
         <span
@@ -72,8 +74,10 @@ exports[`Tabs component
         </span>
       </div>
       <div
+        aria-disabled="true"
         class="Tab Tab--disabled align-items-center"
         data-test="DesignSystem-Tabs--Tab"
+        role="button"
         tabindex="-1"
       >
         <span
@@ -115,6 +119,7 @@ exports[`Tabs component
       <div
         class="Tab Tab--active Tab-selected align-items-center"
         data-test="DesignSystem-Tabs--Tab"
+        role="button"
         tabindex="0"
       >
         <span
@@ -148,6 +153,7 @@ exports[`Tabs component
       <div
         class="Tab align-items-center"
         data-test="DesignSystem-Tabs--Tab"
+        role="button"
         tabindex="0"
       >
         <span
@@ -172,8 +178,10 @@ exports[`Tabs component
         </span>
       </div>
       <div
+        aria-disabled="true"
         class="Tab Tab--disabled align-items-center"
         data-test="DesignSystem-Tabs--Tab"
+        role="button"
         tabindex="-1"
       >
         <span
@@ -215,6 +223,7 @@ exports[`Tabs component
       <div
         class="Tab Tab--active Tab-selected align-items-center"
         data-test="DesignSystem-Tabs--Tab"
+        role="button"
         tabindex="0"
       >
         <span
@@ -248,6 +257,7 @@ exports[`Tabs component
       <div
         class="Tab align-items-center"
         data-test="DesignSystem-Tabs--Tab"
+        role="button"
         tabindex="0"
       >
         <span
@@ -272,8 +282,10 @@ exports[`Tabs component
         </span>
       </div>
       <div
+        aria-disabled="true"
         class="Tab Tab--disabled align-items-center"
         data-test="DesignSystem-Tabs--Tab"
+        role="button"
         tabindex="-1"
       >
         <span
@@ -315,6 +327,7 @@ exports[`Tabs component
       <div
         class="Tab Tab--active Tab-selected align-items-center"
         data-test="DesignSystem-Tabs--Tab"
+        role="button"
         tabindex="0"
       >
         <span
@@ -348,6 +361,7 @@ exports[`Tabs component
       <div
         class="Tab align-items-center"
         data-test="DesignSystem-Tabs--Tab"
+        role="button"
         tabindex="0"
       >
         <span
@@ -372,8 +386,10 @@ exports[`Tabs component
         </span>
       </div>
       <div
+        aria-disabled="true"
         class="Tab Tab--disabled align-items-center"
         data-test="DesignSystem-Tabs--Tab"
+        role="button"
         tabindex="-1"
       >
         <span

@@ -135,6 +135,9 @@ export const MenuItem = (props: MenuItemProps) => {
     [styles['MenuItem--disabled']]: menu.disabled,
     [styles['MenuItem--subMenu']]: isChildren && expanded,
     [styles['MenuItem--rounded']]: rounded && expanded,
+    [styles['MenuItem--expandedRounded']]: expanded && rounded,
+    [styles['MenuItem--activeExpanded']]: isActive && expanded && !rounded,
+    [styles['MenuItem--activeExpandedRounded']]: isActive && expanded && rounded,
     ['pr-5']: !hasSubmenu && menu.count === undefined && expanded,
     [`color-${itemColor}`]: true,
   });
@@ -166,8 +169,6 @@ export const MenuItem = (props: MenuItemProps) => {
   return customItemRenderer ? (
     customItemRenderer(customItemProps)
   ) : (
-    // TODO(a11y)
-    // eslint-disable-next-line
     <Tooltip showTooltip={expanded ? isTextTruncated : true} tooltip={menu.label} position="right">
       <Link componentType="a" className={ItemClass} {...baseProps}>
         {customOptionRenderer ? (

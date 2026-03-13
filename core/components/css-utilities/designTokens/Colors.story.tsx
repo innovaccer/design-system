@@ -21,10 +21,12 @@ export const colors = () => {
       <br />
       {tokenColors.map((data, idx) => {
         const heading =
-          idx !== 4 && idx !== 9
+          idx !== 4 && idx !== 9 && idx !== 10
             ? data[0].token.slice(2)[0].toUpperCase() + data[0].token.slice(3)
             : idx === 4
             ? 'Neutral'
+            : idx === 9
+            ? 'Focus'
             : 'Others';
         return (
           <div className="mt-5 mb-5" key={idx}>

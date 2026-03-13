@@ -13,11 +13,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="Avatar"
             class="Avatar Avatar--regular Avatar--accent1 Avatar--noInitials Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <i
@@ -40,11 +41,12 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
       >
         <span
+          aria-label="Avatar"
           class="Avatar Avatar--regular Avatar--accent1 Avatar--noInitials Avatar--default"
           data-test="DesignSystem-Avatar"
+          role="img"
           tabindex="0"
         >
           <i
@@ -126,11 +128,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="Avatar"
             class="Avatar Avatar--regular Avatar--accent2 Avatar--noInitials Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <i
@@ -153,11 +156,12 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
       >
         <span
+          aria-label="Avatar"
           class="Avatar Avatar--regular Avatar--accent2 Avatar--noInitials Avatar--default"
           data-test="DesignSystem-Avatar"
+          role="img"
           tabindex="0"
         >
           <i
@@ -239,11 +243,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="Avatar"
             class="Avatar Avatar--regular Avatar--accent3 Avatar--noInitials Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <i
@@ -266,11 +271,12 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
       >
         <span
+          aria-label="Avatar"
           class="Avatar Avatar--regular Avatar--accent3 Avatar--noInitials Avatar--default"
           data-test="DesignSystem-Avatar"
+          role="img"
           tabindex="0"
         >
           <i
@@ -352,11 +358,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="Avatar"
             class="Avatar Avatar--regular Avatar--accent4 Avatar--noInitials Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <i
@@ -379,11 +386,12 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
       >
         <span
+          aria-label="Avatar"
           class="Avatar Avatar--regular Avatar--accent4 Avatar--noInitials Avatar--default"
           data-test="DesignSystem-Avatar"
+          role="img"
           tabindex="0"
         >
           <i
@@ -465,11 +473,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="Avatar"
             class="Avatar Avatar--regular Avatar--alert Avatar--noInitials Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <i
@@ -492,11 +501,12 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
       >
         <span
+          aria-label="Avatar"
           class="Avatar Avatar--regular Avatar--alert Avatar--noInitials Avatar--default"
           data-test="DesignSystem-Avatar"
+          role="img"
           tabindex="0"
         >
           <i
@@ -578,11 +588,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="Avatar"
             class="Avatar Avatar--regular Avatar--primary Avatar--noInitials Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <i
@@ -605,11 +616,12 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
       >
         <span
+          aria-label="Avatar"
           class="Avatar Avatar--regular Avatar--primary Avatar--noInitials Avatar--default"
           data-test="DesignSystem-Avatar"
+          role="img"
           tabindex="0"
         >
           <i
@@ -691,11 +703,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="Avatar"
             class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <i
@@ -718,11 +731,12 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
       >
         <span
+          aria-label="Avatar"
           class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default"
           data-test="DesignSystem-Avatar"
+          role="img"
           tabindex="0"
         >
           <i
@@ -804,11 +818,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="Avatar"
             class="Avatar Avatar--regular Avatar--success Avatar--noInitials Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <i
@@ -831,11 +846,12 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
       >
         <span
+          aria-label="Avatar"
           class="Avatar Avatar--regular Avatar--success Avatar--noInitials Avatar--default"
           data-test="DesignSystem-Avatar"
+          role="img"
           tabindex="0"
         >
           <i
@@ -917,11 +933,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="Avatar"
             class="Avatar Avatar--regular Avatar--warning Avatar--noInitials Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <i
@@ -944,11 +961,12 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
       >
         <span
+          aria-label="Avatar"
           class="Avatar Avatar--regular Avatar--warning Avatar--noInitials Avatar--default"
           data-test="DesignSystem-Avatar"
+          role="img"
           tabindex="0"
         >
           <i
@@ -1030,11 +1048,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="Avatar"
             class="Avatar Avatar--tiny Avatar--accent1 Avatar--noInitials Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <i
@@ -1057,11 +1076,12 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
       >
         <span
+          aria-label="Avatar"
           class="Avatar Avatar--tiny Avatar--accent1 Avatar--noInitials Avatar--default"
           data-test="DesignSystem-Avatar"
+          role="img"
           tabindex="0"
         >
           <i
@@ -1143,11 +1163,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="Avatar"
             class="Avatar Avatar--tiny Avatar--accent2 Avatar--noInitials Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <i
@@ -1170,11 +1191,12 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
       >
         <span
+          aria-label="Avatar"
           class="Avatar Avatar--tiny Avatar--accent2 Avatar--noInitials Avatar--default"
           data-test="DesignSystem-Avatar"
+          role="img"
           tabindex="0"
         >
           <i
@@ -1256,11 +1278,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="Avatar"
             class="Avatar Avatar--tiny Avatar--accent3 Avatar--noInitials Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <i
@@ -1283,11 +1306,12 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
       >
         <span
+          aria-label="Avatar"
           class="Avatar Avatar--tiny Avatar--accent3 Avatar--noInitials Avatar--default"
           data-test="DesignSystem-Avatar"
+          role="img"
           tabindex="0"
         >
           <i
@@ -1369,11 +1393,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="Avatar"
             class="Avatar Avatar--tiny Avatar--accent4 Avatar--noInitials Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <i
@@ -1396,11 +1421,12 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
       >
         <span
+          aria-label="Avatar"
           class="Avatar Avatar--tiny Avatar--accent4 Avatar--noInitials Avatar--default"
           data-test="DesignSystem-Avatar"
+          role="img"
           tabindex="0"
         >
           <i
@@ -1482,11 +1508,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="Avatar"
             class="Avatar Avatar--tiny Avatar--alert Avatar--noInitials Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <i
@@ -1509,11 +1536,12 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
       >
         <span
+          aria-label="Avatar"
           class="Avatar Avatar--tiny Avatar--alert Avatar--noInitials Avatar--default"
           data-test="DesignSystem-Avatar"
+          role="img"
           tabindex="0"
         >
           <i
@@ -1595,11 +1623,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="Avatar"
             class="Avatar Avatar--tiny Avatar--primary Avatar--noInitials Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <i
@@ -1622,11 +1651,12 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
       >
         <span
+          aria-label="Avatar"
           class="Avatar Avatar--tiny Avatar--primary Avatar--noInitials Avatar--default"
           data-test="DesignSystem-Avatar"
+          role="img"
           tabindex="0"
         >
           <i
@@ -1708,11 +1738,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="Avatar"
             class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <i
@@ -1735,11 +1766,12 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
       >
         <span
+          aria-label="Avatar"
           class="Avatar Avatar--tiny Avatar--secondary Avatar--noInitials Avatar--default"
           data-test="DesignSystem-Avatar"
+          role="img"
           tabindex="0"
         >
           <i
@@ -1821,11 +1853,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="Avatar"
             class="Avatar Avatar--tiny Avatar--success Avatar--noInitials Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <i
@@ -1848,11 +1881,12 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
       >
         <span
+          aria-label="Avatar"
           class="Avatar Avatar--tiny Avatar--success Avatar--noInitials Avatar--default"
           data-test="DesignSystem-Avatar"
+          role="img"
           tabindex="0"
         >
           <i
@@ -1934,11 +1968,12 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
-          role="presentation"
         >
           <span
+            aria-label="Avatar"
             class="Avatar Avatar--tiny Avatar--warning Avatar--noInitials Avatar--default"
             data-test="DesignSystem-Avatar"
+            role="img"
             tabindex="0"
           >
             <i
@@ -1961,11 +1996,12 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
-        role="presentation"
       >
         <span
+          aria-label="Avatar"
           class="Avatar Avatar--tiny Avatar--warning Avatar--noInitials Avatar--default"
           data-test="DesignSystem-Avatar"
+          role="img"
           tabindex="0"
         >
           <i

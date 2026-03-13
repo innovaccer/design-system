@@ -14,6 +14,8 @@ exports[`EditableChipInput component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
+        role="button"
+        tabindex="0"
       >
         <div
           class="EditableChipInput-defaultWithChips"
@@ -37,6 +39,7 @@ exports[`EditableChipInput component
               </span>
             </div>
             <div
+              aria-label="Remove"
               class="Chip-icon Chip-icon--right cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -70,6 +73,7 @@ exports[`EditableChipInput component
               </span>
             </div>
             <div
+              aria-label="Remove"
               class="Chip-icon Chip-icon--right cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -106,6 +110,8 @@ exports[`EditableChipInput component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
+        role="button"
+        tabindex="0"
       >
         <div
           class="EditableChipInput-defaultWithChips"
@@ -129,6 +135,7 @@ exports[`EditableChipInput component
               </span>
             </div>
             <div
+              aria-label="Remove"
               class="Chip-icon Chip-icon--right cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -162,6 +169,7 @@ exports[`EditableChipInput component
               </span>
             </div>
             <div
+              aria-label="Remove"
               class="Chip-icon Chip-icon--right cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -198,6 +206,8 @@ exports[`EditableChipInput component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
+        role="button"
+        tabindex="0"
       >
         <div
           class="EditableChipInput-defaultWithChips"
@@ -221,6 +231,7 @@ exports[`EditableChipInput component
               </span>
             </div>
             <div
+              aria-label="Remove"
               class="Chip-icon Chip-icon--right cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -254,6 +265,7 @@ exports[`EditableChipInput component
               </span>
             </div>
             <div
+              aria-label="Remove"
               class="Chip-icon Chip-icon--right cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -290,6 +302,8 @@ exports[`EditableChipInput component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
+        role="button"
+        tabindex="0"
       >
         <div
           class="EditableChipInput-defaultWithChips"
@@ -313,6 +327,7 @@ exports[`EditableChipInput component
               </span>
             </div>
             <div
+              aria-label="Remove"
               class="Chip-icon Chip-icon--right cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -346,6 +361,7 @@ exports[`EditableChipInput component
               </span>
             </div>
             <div
+              aria-label="Remove"
               class="Chip-icon Chip-icon--right cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -382,6 +398,8 @@ exports[`EditableChipInput component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
+        role="button"
+        tabindex="0"
       >
         <div
           class="EditableChipInput-defaultWithChips"
@@ -405,6 +423,7 @@ exports[`EditableChipInput component
               </span>
             </div>
             <div
+              aria-label="Remove"
               class="Chip-icon Chip-icon--right cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -438,6 +457,7 @@ exports[`EditableChipInput component
               </span>
             </div>
             <div
+              aria-label="Remove"
               class="Chip-icon Chip-icon--right cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -474,6 +494,8 @@ exports[`EditableChipInput component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
+        role="button"
+        tabindex="0"
       >
         <div
           class="EditableChipInput-defaultWithChips"
@@ -497,6 +519,7 @@ exports[`EditableChipInput component
               </span>
             </div>
             <div
+              aria-label="Remove"
               class="Chip-icon Chip-icon--right cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
@@ -530,6 +553,7 @@ exports[`EditableChipInput component
               </span>
             </div>
             <div
+              aria-label="Remove"
               class="Chip-icon Chip-icon--right cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"

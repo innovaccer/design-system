@@ -171,17 +171,16 @@ export const Tabs = (props: TabsProps) => {
     [`${activeTabClass}`]: activeTabClass,
   });
 
-  const tabClickHandler = (tabIndex: number, isKeyboard?: boolean) => {
+  const tabClickHandler = (tabIndex: number) => {
     if (props.activeIndex === undefined) {
       setActiveTab(tabIndex);
-      if (!isKeyboard) tabRefs[tabIndex]?.blur();
     }
     if (onTabChange) onTabChange(tabIndex);
   };
 
   const tabKeyDownHandler = (event: React.KeyboardEvent, tabIndex: number) => {
     if (event.key === 'Enter') {
-      tabClickHandler(tabIndex, true);
+      tabClickHandler(tabIndex);
     }
     if (event.key === 'ArrowLeft' && tabIndex > 0) {
       const prevElement = tabRefs[tabIndex - 1];
@@ -315,8 +314,6 @@ export const Tabs = (props: TabsProps) => {
     });
 
     return (
-      // TODO(a11y)
-      //  eslint-disable-next-line
       <div
         ref={(element) => element && !disabled && tabRefs.push(element)}
         data-test="DesignSystem-Tabs--Tab"
@@ -325,6 +322,8 @@ export const Tabs = (props: TabsProps) => {
         onClick={() => !disabled && tabClickHandler(index)}
         onKeyDown={(event: React.KeyboardEvent) => tabKeyDownHandler(event, index)}
         tabIndex={disabled ? -1 : 0}
+        role="button"
+        aria-disabled={disabled || undefined}
       >
         {renderTab(currentTabProp, index)}
       </div>

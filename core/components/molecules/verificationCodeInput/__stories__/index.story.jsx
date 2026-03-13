@@ -14,8 +14,6 @@ export const all = () => {
 
   const disabled = false;
 
-  const autoFocus = true;
-
   const readOnly = false;
 
   const error = false;
@@ -38,9 +36,6 @@ export const all = () => {
         placeholder={placeholder}
         error={error}
         pattern={pattern}
-        // TODO(a11y)
-        //  eslint-disable-next-line
-        autoFocus={autoFocus}
       />
     </>
   );
