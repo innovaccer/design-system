@@ -39,7 +39,7 @@ export const withErrorTemplate = () => {
       placeholder="Select"
       errorTemplate={errorTemplate}
       aria-label="Select option"
-      listboxAriaLabel="Options"
+      optionsAriaLabel="Options"
     />
   );
 };
@@ -81,7 +81,7 @@ const customCode = `() => {
       placeholder="Select"
       errorTemplate={errorTemplate}
       aria-label="Select option"
-      listboxAriaLabel="Options"
+      optionsAriaLabel="Options"
     />
   );
 }`;

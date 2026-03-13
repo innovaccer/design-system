@@ -13,7 +13,7 @@ export const disabledOption = () => {
           disabledSlotList={['12:45 AM', '01:00 AM']}
           id="12-hour"
           aria-label="12 hour time selector"
-          listboxAriaLabel="12 hour time options"
+          optionsAriaLabel="12 hour time options"
         />
       </div>
 
@@ -25,7 +25,7 @@ export const disabledOption = () => {
           disabledSlotList={['00:45', '01:00']}
           id="24-hour"
           aria-label="24 hour time selector"
-          listboxAriaLabel="24 hour time options"
+          optionsAriaLabel="24 hour time options"
         />
       </div>
     </Row>
@@ -43,7 +43,7 @@ const customCode = `() => {
           disabledSlotList={['12:45 AM', '01:00 AM']}
           id="12-hour"
           aria-label="12 hour time selector"
-          listboxAriaLabel="12 hour time options"
+          optionsAriaLabel="12 hour time options"
         />
       </div>
 
@@ -55,7 +55,7 @@ const customCode = `() => {
           disabledSlotList={['00:45', '01:00']}
           id="24-hour"
           aria-label="24 hour time selector"
-          listboxAriaLabel="24 hour time options"
+          optionsAriaLabel="24 hour time options"
         />
       </div>
     </Row>

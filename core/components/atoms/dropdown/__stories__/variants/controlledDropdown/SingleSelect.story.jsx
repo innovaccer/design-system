@@ -51,7 +51,7 @@ export const singleSelect = () => {
         onPopperToggle={onPopperToggle}
         open={open}
         aria-label="Select option"
-        listboxAriaLabel="Options"
+        optionsAriaLabel="Options"
       />
     </div>
   );
@@ -120,7 +120,7 @@ const customCode = `() => {
         onClose={onClose}
         open={open}
         aria-label="Select option"
-        listboxAriaLabel="Options"
+        optionsAriaLabel="Options"
       />
     </div>
   );

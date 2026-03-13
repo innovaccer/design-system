@@ -41,7 +41,7 @@ export const preSelection = () => {
               options={options}
               {...(value && { fetchOptions })}
               aria-label="Select options"
-              listboxAriaLabel="Options"
+              optionsAriaLabel="Options"
             />
           </div>
         );
@@ -82,11 +82,11 @@ const customCode = `() => {
     <div className='d-flex'>
       <div className='mr-10 w-25'>
         <Text weight="strong">{'Options > 50'}</Text> <br /><br />
-        <Dropdown withCheckbox={true} fetchOptions={fetchOptions} aria-label="Select options" listboxAriaLabel="Options" />
+        <Dropdown withCheckbox={true} fetchOptions={fetchOptions} aria-label="Select options" optionsAriaLabel="Options" />
       </div>
       <div className='mr-10 w-25'>
         <Text weight="strong">{'Options <= 50'}</Text> <br /><br />
-        <Dropdown withCheckbox={true} options={dropdownOptions.slice(0, 50)} aria-label="Select options" listboxAriaLabel="Options" />
+        <Dropdown withCheckbox={true} options={dropdownOptions.slice(0, 50)} aria-label="Select options" optionsAriaLabel="Options" />
       </div>
     </div>
   )

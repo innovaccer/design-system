@@ -19,7 +19,7 @@ export const placeholder = () => {
               menu={menu}
               options={storyOptions}
               aria-label={menu ? 'Open menu' : 'Select option'}
-              listboxAriaLabel="Menu options"
+              optionsAriaLabel="Menu options"
             />
           </div>
         );
@@ -43,11 +43,11 @@ const customCode = `() => {
     <div className='d-flex'>
       <div className='mr-8'>
         <Text weight="strong">Without Placeholder</Text> <br /><br />
-        <Dropdown menu={true} options={storyOptions} aria-label="Open menu" listboxAriaLabel="Menu options" />
+        <Dropdown menu={true} options={storyOptions} aria-label="Open menu" optionsAriaLabel="Menu options" />
       </div>
       <div className='mr-8'>
         <Text weight="strong">With Placeholder</Text> <br /><br />
-        <Dropdown menu={false} options={storyOptions} aria-label="Select option" listboxAriaLabel="Options" />
+        <Dropdown menu={false} options={storyOptions} aria-label="Select option" optionsAriaLabel="Options" />
       </div>
     </div>
   )

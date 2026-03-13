@@ -21,7 +21,7 @@ export const withSearchErrorState = () => {
         id="12-hour"
         error={true}
         aria-label="Time selector with error"
-        listboxAriaLabel="Time options"
+        optionsAriaLabel="Time options"
       />
       <HelpText error={true} message={'Error message goes here.'} />
     </div>
@@ -46,7 +46,7 @@ const customCode = `() => {
         id="12-hour"
         error={true}
         aria-label="Time selector with error"
-        listboxAriaLabel="Time options"
+        optionsAriaLabel="Time options"
       />
       <HelpText error={true} message={'Error message goes here.'} />
     </div>

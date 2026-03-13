@@ -20,7 +20,7 @@ export const size = () => {
               options={storyOptions}
               placeholder={'Select'}
               aria-label="Select option"
-              listboxAriaLabel="Options"
+              optionsAriaLabel="Options"
             />
           </div>
         );
@@ -46,11 +46,11 @@ const customCode = `() => {
     <div className='d-flex'>
       <div className='mr-8 w-25'>
         <Text weight="strong">Tiny</Text> <br /><br />
-        <Dropdown triggerSize={'tiny'} options={storyOptions} aria-label="Select option" listboxAriaLabel="Options" />
+        <Dropdown triggerSize={'tiny'} options={storyOptions} aria-label="Select option" optionsAriaLabel="Options" />
       </div>
       <div className='mr-8 w-25'>
         <Text weight="strong">Regular</Text> <br /><br />
-        <Dropdown triggerSize={'regular'} options={storyOptions} aria-label="Select option" listboxAriaLabel="Options" />
+        <Dropdown triggerSize={'regular'} options={storyOptions} aria-label="Select option" optionsAriaLabel="Options" />
       </div>
     </div>
   );

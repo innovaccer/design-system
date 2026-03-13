@@ -37,7 +37,7 @@ export const dropdownOptionsMoreThan50 = () => {
       className="w-25"
       placeholder="Select"
       aria-label="Select options"
-      listboxAriaLabel="Options"
+      optionsAriaLabel="Options"
     />
   );
 };
@@ -76,7 +76,7 @@ const customCode = `() => {
       className="w-25"
       placeholder="Select"
       aria-label="Select options"
-      listboxAriaLabel="Options"
+      optionsAriaLabel="Options"
     />
   );
 }`;

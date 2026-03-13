@@ -97,7 +97,7 @@ export interface TimePickerDropdownProps extends BaseProps {
   /**
    * Accessible name for time options list.
    */
-  listboxAriaLabel?: string;
+  optionsAriaLabel?: string;
 }
 
 export const TimePickerWithSearch = (props: TimePickerDropdownProps) => {
@@ -114,7 +114,7 @@ export const TimePickerWithSearch = (props: TimePickerDropdownProps) => {
     fetchTimeOptions,
     error,
     'aria-label': ariaLabel,
-    listboxAriaLabel,
+    optionsAriaLabel,
   } = props;
 
   const [tabIndex, setTabIndex] = React.useState(0);
@@ -202,7 +202,7 @@ export const TimePickerWithSearch = (props: TimePickerDropdownProps) => {
       }}
       error={error}
       aria-label={ariaLabel}
-      listboxAriaLabel={listboxAriaLabel}
+      optionsAriaLabel={optionsAriaLabel}
     />
   );
 };
@@ -210,7 +210,7 @@ export const TimePickerWithSearch = (props: TimePickerDropdownProps) => {
 TimePickerWithSearch.defaultProps = {
   timeFormat: '12-Hour',
   interval: 15,
-  listboxAriaLabel: 'Time options',
+  optionsAriaLabel: 'Time options',
 };
 
 TimePickerWithSearch.displayName = 'TimePickerWithSearch';

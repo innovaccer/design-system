@@ -15,7 +15,7 @@ export const optionsWrap = () => {
           options={storyWrapOptions}
           placeholder={'Select'}
           aria-label="Select option"
-          listboxAriaLabel="Options"
+          optionsAriaLabel="Options"
         />
       </div>
       <div className="mr-9">
@@ -26,7 +26,7 @@ export const optionsWrap = () => {
           placeholder={'Select'}
           truncateOption={false}
           aria-label="Select option"
-          listboxAriaLabel="Options"
+          optionsAriaLabel="Options"
         />
       </div>
     </div>
@@ -52,11 +52,11 @@ const customCode = `() => {
     <div className='d-flex'>
       <div className='mr-9'>
         <Text weight="strong">{'Options Trimmed'}</Text> <br /><br />
-        <Dropdown options={storyWrapOptions} placeholder={'Select'} aria-label="Select option" listboxAriaLabel="Options" />
+        <Dropdown options={storyWrapOptions} placeholder={'Select'} aria-label="Select option" optionsAriaLabel="Options" />
       </div>
       <div className='mr-9'>
         <Text weight="strong">{'Options Wrapped'}</Text> <br /><br />
-        <Dropdown options={storyWrapOptions} placeholder={'Select'} truncateOption={false} aria-label="Select option" listboxAriaLabel="Options" />
+        <Dropdown options={storyWrapOptions} placeholder={'Select'} truncateOption={false} aria-label="Select option" optionsAriaLabel="Options" />
       </div>
     </div>
   )

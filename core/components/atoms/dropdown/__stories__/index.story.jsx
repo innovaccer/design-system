@@ -94,7 +94,7 @@ export const all = () => {
     options: dropdownOptions,
     onChange: onChangeHandler,
     'aria-label': 'Select option',
-    listboxAriaLabel: 'Options',
+    optionsAriaLabel: 'Options',
   };
 
   const key = `checkbox${withCheckbox} applyButton:${showApplyButton} search:${withSearch}`;
@@ -141,7 +141,7 @@ const customCode = `() => {
       <Dropdown
         fetchOptions={fetchOptions}
         aria-label="Select option"
-        listboxAriaLabel="Options"
+        optionsAriaLabel="Options"
       />
     </div>
   );

@@ -20,7 +20,7 @@ export const disabled = () => {
               options={storyOptions}
               placeholder={'Select'}
               aria-label="Select option"
-              listboxAriaLabel="Options"
+              optionsAriaLabel="Options"
             />
           </div>
         );
@@ -44,11 +44,11 @@ const customCode = `() => {
     <div className='d-flex'>
       <div className='mr-8 w-25'>
         <Text weight="strong">Disabled</Text> <br /><br />
-        <Dropdown disabled={true} options={storyOptions} aria-label="Select option" listboxAriaLabel="Options" />
+        <Dropdown disabled={true} options={storyOptions} aria-label="Select option" optionsAriaLabel="Options" />
       </div>
       <div className='mr-8 w-25'>
         <Text weight="strong">Enabled</Text> <br /><br />
-        <Dropdown disabled={false} options={storyOptions} aria-label="Select option" listboxAriaLabel="Options" />
+        <Dropdown disabled={false} options={storyOptions} aria-label="Select option" optionsAriaLabel="Options" />
       </div>
     </div>
   )

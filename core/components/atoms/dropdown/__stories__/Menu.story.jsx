@@ -27,7 +27,7 @@ export const dropdownAsMenu = () => {
         align="right"
         maxWidth={130}
         aria-label="Open actions menu"
-        listboxAriaLabel="Actions menu options"
+        optionsAriaLabel="Actions menu options"
       />
       <Dropdown
         options={options}
@@ -36,7 +36,7 @@ export const dropdownAsMenu = () => {
         className="mr-5"
         maxWidth={130}
         aria-label="Open actions menu"
-        listboxAriaLabel="Actions menu options"
+        optionsAriaLabel="Actions menu options"
       />
     </div>
   );

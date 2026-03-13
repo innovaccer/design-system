@@ -18,7 +18,7 @@ export const dropdownAsMenuWithSubinfo = () => {
         className="mr-5"
         align="right"
         aria-label="Open age range menu"
-        listboxAriaLabel="Age range options"
+        optionsAriaLabel="Age range options"
       />
       <Dropdown
         options={options}
@@ -26,7 +26,7 @@ export const dropdownAsMenuWithSubinfo = () => {
         className="mr-5"
         align="right"
         aria-label="Open age range menu"
-        listboxAriaLabel="Age range options"
+        optionsAriaLabel="Age range options"
       />
     </div>
   );

@@ -32,7 +32,7 @@ export const sections = () => {
                   options={options}
                   withCheckbox={value}
                   aria-label="Select option"
-                  listboxAriaLabel="Options"
+                  optionsAriaLabel="Options"
                 />
               </div>
               <div className="d-flex flex-column align-items-center mr-7">
@@ -41,7 +41,7 @@ export const sections = () => {
                   options={storyOptions}
                   withCheckbox={value}
                   aria-label="Select option"
-                  listboxAriaLabel="Options"
+                  optionsAriaLabel="Options"
                 />
               </div>
             </div>

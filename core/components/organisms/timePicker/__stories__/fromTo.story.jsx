@@ -21,7 +21,7 @@ export const FromTo = () => {
           onChange={onFromChangeHandler}
           id="From"
           aria-label="Start time"
-          listboxAriaLabel="Start time options"
+          optionsAriaLabel="Start time options"
         />
       </div>
 
@@ -34,7 +34,7 @@ export const FromTo = () => {
           showDuration={true}
           id="To"
           aria-label="End time"
-          listboxAriaLabel="End time options"
+          optionsAriaLabel="End time options"
         />
       </div>
     </div>
@@ -60,7 +60,7 @@ const customCode = `() => {
           onChange={onFromChangeHandler}
           id="From"
           aria-label="Start time"
-          listboxAriaLabel="Start time options"
+          optionsAriaLabel="Start time options"
         />
       </div>
 
@@ -73,7 +73,7 @@ const customCode = `() => {
           showDuration={true}
           id="To"
           aria-label="End time"
-          listboxAriaLabel="End time options"
+          optionsAriaLabel="End time options"
         />
       </div>
     </div>

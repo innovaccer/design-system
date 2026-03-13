@@ -21,7 +21,7 @@ export const align = () => {
               options={storyOptions}
               menu={true}
               aria-label="Open menu"
-              listboxAriaLabel="Menu options"
+              optionsAriaLabel="Menu options"
             />
           </div>
         );
@@ -45,11 +45,11 @@ const customCode = `() => {
     <div className='d-flex'>
       <div className='mr-12'>
         <Text weight="strong">Towards Right</Text> <br /><br />
-        <Dropdown menu={true} options={storyOptions} align='right' aria-label="Open menu" listboxAriaLabel="Menu options" />
+        <Dropdown menu={true} options={storyOptions} align='right' aria-label="Open menu" optionsAriaLabel="Menu options" />
       </div>
       <div>
         <Text weight="strong">Towards Left</Text> <br /><br />
-        <Dropdown menu={true} options={storyOptions} align='left' aria-label="Open menu" listboxAriaLabel="Menu options" />
+        <Dropdown menu={true} options={storyOptions} align='left' aria-label="Open menu" optionsAriaLabel="Menu options" />
       </div>
     </div>
   )

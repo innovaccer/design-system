@@ -107,7 +107,7 @@ export const multiSelect = () => {
           onChange={onChangeHandler}
           withCheckbox={true}
           aria-label="Select options"
-          listboxAriaLabel="Options"
+          optionsAriaLabel="Options"
         />
       </div>
       <div className="ml-8 w-25">
@@ -123,7 +123,7 @@ export const multiSelect = () => {
           withCheckbox={true}
           withSearch={true}
           aria-label="Select options"
-          listboxAriaLabel="Options"
+          optionsAriaLabel="Options"
         />
       </div>
     </div>
@@ -228,7 +228,7 @@ const customCode = `() => {
           onChange={onChangeHandler}
           withCheckbox={true}
           aria-label="Select options"
-          listboxAriaLabel="Options"
+          optionsAriaLabel="Options"
         />
       </div>
       <div className="w-25 ml-5">
@@ -242,7 +242,7 @@ const customCode = `() => {
           withCheckbox={true}
           withSearch={true}
           aria-label="Select options"
-          listboxAriaLabel="Options"
+          optionsAriaLabel="Options"
         />
       </div>
     </div>

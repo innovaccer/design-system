@@ -63,7 +63,7 @@ export const bulkMultiSelectWithApplyButton = () => {
         showApplyButton={true}
         open={open}
         aria-label="Select options"
-        listboxAriaLabel="Options"
+        optionsAriaLabel="Options"
       />
     </div>
   );
@@ -141,7 +141,7 @@ const customCode = `() => {
         open={open}
         onClose={onClose}
         aria-label="Select options"
-        listboxAriaLabel="Options"
+        optionsAriaLabel="Options"
       />
     </div>
   );

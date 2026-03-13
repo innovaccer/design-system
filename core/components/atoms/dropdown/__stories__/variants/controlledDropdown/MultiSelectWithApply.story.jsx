@@ -47,7 +47,7 @@ export const multiSelectWithApplyButton = () => {
         showApplyButton={true}
         open={open}
         aria-label="Select options"
-        listboxAriaLabel="Options"
+        optionsAriaLabel="Options"
       />
     </div>
   );
@@ -103,7 +103,7 @@ const customCode = `() => {
         showApplyButton={true}
         open={open}
         aria-label="Select options"
-        listboxAriaLabel="Options"
+        optionsAriaLabel="Options"
       />
     </div>
   );

@@ -32,7 +32,7 @@ export const optionType = () => {
             <Dropdown
               options={optionsMapping[type].slice(0, 3)}
               aria-label="Select option"
-              listboxAriaLabel="Options"
+              optionsAriaLabel="Options"
             />
           </div>
         );
@@ -44,7 +44,7 @@ export const optionType = () => {
           options={storyOptions.slice(0, 3)}
           withCheckbox={true}
           aria-label="Select option"
-          listboxAriaLabel="Options"
+          optionsAriaLabel="Options"
         />
       </div>
     </div>

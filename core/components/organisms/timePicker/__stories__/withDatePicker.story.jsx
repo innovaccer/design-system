@@ -32,7 +32,7 @@ export const withDatePicker = () => {
       </div>
       <div className="w-25 ml-7">
         <Label>Time</Label>
-        <TimePicker withSearch={true} open={open} aria-label="Appointment time" listboxAriaLabel="Time options" />
+        <TimePicker withSearch={true} open={open} aria-label="Appointment time" optionsAriaLabel="Time options" />
       </div>
     </Row>
   );
@@ -68,7 +68,7 @@ const customCode = `() => {
       </div>
       <div className="w-25 ml-7">
         <Label>Time</Label>
-        <TimePicker withSearch={true} open={open} aria-label="Appointment time" listboxAriaLabel="Time options" />
+        <TimePicker withSearch={true} open={open} aria-label="Appointment time" optionsAriaLabel="Time options" />
       </div>
     </Row>
   );

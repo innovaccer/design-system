@@ -12,13 +12,13 @@ export const search = () => {
         <Text weight="strong">{'Search'}</Text>
         <br />
         <br />
-        <Dropdown withSearch={true} options={storyOptions} aria-label="Select option" listboxAriaLabel="Options" />
+        <Dropdown withSearch={true} options={storyOptions} aria-label="Select option" optionsAriaLabel="Options" />
       </div>
       <div className="mr-9 w-25">
         <Text weight="strong">{'Loading'}</Text>
         <br />
         <br />
-        <Dropdown withSearch={true} loading={true} aria-label="Select option" listboxAriaLabel="Options" />
+        <Dropdown withSearch={true} loading={true} aria-label="Select option" optionsAriaLabel="Options" />
       </div>
       <div className="mr-9 w-25">
         <Text weight="strong">{'No Result'}</Text>
@@ -28,7 +28,7 @@ export const search = () => {
           withSearch={true}
           noResultMessage={'No result found'}
           aria-label="Select option"
-          listboxAriaLabel="Options"
+          optionsAriaLabel="Options"
         />
       </div>
     </div>

@@ -41,7 +41,7 @@ export const staticLimit = () => {
               options={options}
               {...(value && { fetchOptions })}
               aria-label="Select options"
-              listboxAriaLabel="Options"
+              optionsAriaLabel="Options"
             />
           </div>
         );
@@ -88,7 +88,7 @@ const customCode = `() => {
           staticLimit={staticLimit}
           fetchOptions={fetchOptions}
           aria-label="Select options"
-          listboxAriaLabel="Options"
+          optionsAriaLabel="Options"
         />
       </div>
       <div className='mr-10 w-25'>
@@ -98,7 +98,7 @@ const customCode = `() => {
           staticLimit={staticLimit}
           options={dropdownOptions.slice(0, staticLimit)}
           aria-label="Select options"
-          listboxAriaLabel="Options"
+          optionsAriaLabel="Options"
         />
       </div>
     </div>

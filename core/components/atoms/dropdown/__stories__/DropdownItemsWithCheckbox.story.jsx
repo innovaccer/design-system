@@ -29,7 +29,7 @@ export const dropdownItemsWithCheckbox = () => {
       className="w-25"
       placeholder="Select"
       aria-label="Select age range"
-      listboxAriaLabel="Age range options"
+      optionsAriaLabel="Age range options"
     />
   );
 };

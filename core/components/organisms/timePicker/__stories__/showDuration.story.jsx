@@ -14,7 +14,7 @@ export const timeDuration = () => {
           showDuration={true}
           id="12-hour"
           aria-label="12 hour time selector"
-          listboxAriaLabel="12 hour time options"
+          optionsAriaLabel="12 hour time options"
         />
       </div>
 
@@ -27,7 +27,7 @@ export const timeDuration = () => {
           showDuration={true}
           id="24-hour"
           aria-label="24 hour time selector"
-          listboxAriaLabel="24 hour time options"
+          optionsAriaLabel="24 hour time options"
         />
       </div>
     </Row>
@@ -46,7 +46,7 @@ const customCode = `() => {
           showDuration={true}
           id="12-hour"
           aria-label="12 hour time selector"
-          listboxAriaLabel="12 hour time options"
+          optionsAriaLabel="12 hour time options"
         />
       </div>
 
@@ -59,7 +59,7 @@ const customCode = `() => {
           showDuration={true}
           id="24-hour"
           aria-label="24 hour time selector"
-          listboxAriaLabel="24 hour time options"
+          optionsAriaLabel="24 hour time options"
         />
       </div>
     </Row>

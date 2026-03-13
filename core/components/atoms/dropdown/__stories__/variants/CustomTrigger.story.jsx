@@ -21,7 +21,7 @@ export const customTrigger = () => {
           options={storyOptions}
           triggerOptions={{ customTrigger: customTriggerFunc }}
           aria-label="Select option"
-          listboxAriaLabel="Options"
+          optionsAriaLabel="Options"
         />
       </div>
     </div>
@@ -58,7 +58,7 @@ const customCode = `() => {
   return (
     <div className='d-flex'>
       <div>
-        <Dropdown options={storyOptions} customTrigger={customTriggerFunc} aria-label="Select option" listboxAriaLabel="Options" />
+        <Dropdown options={storyOptions} customTrigger={customTriggerFunc} aria-label="Select option" optionsAriaLabel="Options" />
       </div>
     </div>
   );

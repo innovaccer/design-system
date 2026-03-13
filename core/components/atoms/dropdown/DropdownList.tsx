@@ -170,7 +170,7 @@ export interface DropdownListProps extends TriggerAndOptionProps {
   /**
    * Accessible name for options list container.
    */
-  listboxAriaLabel?: string;
+  optionsAriaLabel?: string;
 }
 
 interface OptionsProps extends DropdownListProps, BaseProps {
@@ -236,7 +236,7 @@ const DropdownList = (props: OptionsProps) => {
     popoverOptions,
     onSearchChange,
     optionRenderer,
-    listboxAriaLabel,
+    optionsAriaLabel,
     applyOptions,
     cancelOptions,
     toggleDropdown,
@@ -626,7 +626,7 @@ const DropdownList = (props: OptionsProps) => {
         {selected.length > 0 && renderGroups(selectedSectionLabel, true)}
         <div
           role={menu ? 'menu' : 'listbox'}
-          aria-label={listboxAriaLabel}
+          aria-label={optionsAriaLabel}
           aria-multiselectable={!menu && withCheckbox ? true : undefined}
         >
           {selected.map((option, index) => renderOptions(option, index))}

@@ -55,7 +55,7 @@ export const dropdownWithActionButtons = () => {
       withCheckbox={true}
       showApplyButton={true}
       aria-label="Select problem"
-      listboxAriaLabel="Problem options"
+      optionsAriaLabel="Problem options"
     />
   );
 };

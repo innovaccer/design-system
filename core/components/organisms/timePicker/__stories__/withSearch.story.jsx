@@ -21,7 +21,7 @@ export const withSearch = () => {
           noResultMessage="Invalid Time"
           id="12-hour"
           aria-label="12 hour time selector"
-          listboxAriaLabel="12 hour time options"
+          optionsAriaLabel="12 hour time options"
         />
       </div>
       <div className="w-25 ml-7">
@@ -35,7 +35,7 @@ export const withSearch = () => {
           noResultMessage="Invalid Time"
           id="24-hour"
           aria-label="24 hour time selector"
-          listboxAriaLabel="24 hour time options"
+          optionsAriaLabel="24 hour time options"
         />
       </div>
     </Row>
@@ -60,7 +60,7 @@ const customCode = `() => {
           noResultMessage="Invalid Time"
           id="12-hour"
           aria-label="12 hour time selector"
-          listboxAriaLabel="12 hour time options"
+          optionsAriaLabel="12 hour time options"
         />
       </div>
       <div className="w-25 ml-7">
@@ -74,7 +74,7 @@ const customCode = `() => {
           noResultMessage="Invalid Time"
           id="24-hour"
           aria-label="24 hour time selector"
-          listboxAriaLabel="24 hour time options"
+          optionsAriaLabel="24 hour time options"
         />
       </div>
   </Row>
