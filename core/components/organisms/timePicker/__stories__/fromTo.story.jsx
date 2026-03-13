@@ -20,12 +20,22 @@ export const FromTo = () => {
           endTime="11:45 PM"
           onChange={onFromChangeHandler}
           id="From"
+          aria-label="Start time"
+          optionsAriaLabel="Start time options"
         />
       </div>
 
       <div className="w-25">
         <Label withInput={true}>To</Label>
-        <TimePicker withSearch={true} startTime={startTime} endTime="11:45 PM" showDuration={true} id="To" />
+        <TimePicker
+          withSearch={true}
+          startTime={startTime}
+          endTime="11:45 PM"
+          showDuration={true}
+          id="To"
+          aria-label="End time"
+          optionsAriaLabel="End time options"
+        />
       </div>
     </div>
   );
@@ -43,12 +53,28 @@ const customCode = `() => {
     <div className="d-flex">
       <div className="w-25 mr-5">
         <Label withInput={true}>From</Label>
-        <TimePicker withSearch={true} startTime="00:15 AM" endTime="11:45 PM" onChange={onFromChangeHandler} id="From" />
+        <TimePicker
+          withSearch={true}
+          startTime="00:15 AM"
+          endTime="11:45 PM"
+          onChange={onFromChangeHandler}
+          id="From"
+          aria-label="Start time"
+          optionsAriaLabel="Start time options"
+        />
       </div>
 
       <div className="w-25">
         <Label withInput={true}>To</Label>
-        <TimePicker withSearch={true} startTime={startTime} endTime="11:45 PM" showDuration={true} id="To" />
+        <TimePicker
+          withSearch={true}
+          startTime={startTime}
+          endTime="11:45 PM"
+          showDuration={true}
+          id="To"
+          aria-label="End time"
+          optionsAriaLabel="End time options"
+        />
       </div>
     </div>
   );

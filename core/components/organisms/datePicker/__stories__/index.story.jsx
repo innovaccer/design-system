@@ -42,6 +42,7 @@ export const all = () => {
         withInput={withInput}
         closeOnSelect={closeOnSelect}
         open={open}
+        aria-label="Visit date picker"
         inputFormat={inputFormat}
         outputFormat={outputFormat}
         jumpView={jumpView}
@@ -57,6 +58,7 @@ export const all = () => {
     <Card className="d-inline-flex" shadow="light">
       <DatePicker
         withInput={withInput}
+        aria-label="Visit date picker"
         inputFormat={inputFormat}
         outputFormat={outputFormat}
         jumpView={jumpView}

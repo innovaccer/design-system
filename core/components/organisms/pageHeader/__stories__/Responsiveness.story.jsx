@@ -74,7 +74,14 @@ export const Responsiveness = () => {
 
   const status = <StatusHint appearance="info">Ongoing</StatusHint>;
 
-  const navigation = <HorizontalNav menus={navigationData} onClick={onClickHandler} active={active} />;
+  const navigation = (
+    <HorizontalNav
+      menus={navigationData}
+      onClick={onClickHandler}
+      active={active}
+      aria-label="Follow-up protocol navigation"
+    />
+  );
 
   return (
     <div className="w-100 bg-secondary-lightest">
@@ -86,6 +93,7 @@ export const Responsiveness = () => {
         actions={actions}
         breadcrumbs={breadcrumbs}
         status={status}
+        aria-label="Pac follow-up page"
       />
     </div>
   );
@@ -177,6 +185,7 @@ const customCode = `() => {
       menus={navigationData}
       onClick={onClickHandler}
       active={active}
+      aria-label="Follow-up protocol navigation"
     />
   );
 
@@ -190,6 +199,7 @@ const customCode = `() => {
         actions={actions}
         breadcrumbs={breadcrumbs}
         status={status}
+        aria-label="Pac follow-up page"
       />
     </div>
   );

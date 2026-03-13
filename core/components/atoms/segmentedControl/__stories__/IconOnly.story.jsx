@@ -5,9 +5,9 @@ import { action } from '@/utils/action';
 export const iconOnly = () => {
   return (
     <SegmentedControl onChange={action('on-change')}>
-      <SegmentedControl.Item icon="home" />
-      <SegmentedControl.Item icon="settings" />
-      <SegmentedControl.Item icon="person" />
+      <SegmentedControl.Item icon="home" aria-label="Home" />
+      <SegmentedControl.Item icon="settings" aria-label="Settings" />
+      <SegmentedControl.Item icon="person" aria-label="Profile" />
     </SegmentedControl>
   );
 };
@@ -17,9 +17,9 @@ const customCode = `() => {
     <SegmentedControl onChange={(index) => {
       console.log('Selected index:', index);
     }}>
-      <SegmentedControl.Item icon="home" />
-      <SegmentedControl.Item icon="settings" />
-      <SegmentedControl.Item icon="person" />
+      <SegmentedControl.Item icon="home" aria-label="Home" />
+      <SegmentedControl.Item icon="settings" aria-label="Settings" />
+      <SegmentedControl.Item icon="person" aria-label="Profile" />
     </SegmentedControl>
   );
 }`;

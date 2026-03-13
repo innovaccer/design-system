@@ -63,6 +63,10 @@ export interface AvatarProps extends BaseProps {
    */
   tabIndex?: number;
   /**
+   * Accessible label for the avatar
+   */
+  'aria-label'?: string;
+  /**
    * Show presence indicator for the `Avatar`
    */
   presence?: TPresence;
@@ -104,6 +108,7 @@ export const Avatar = (props: AvatarProps) => {
     strokeColor,
     role,
     'aria-hidden': ariaHidden,
+    'aria-label': ariaLabelProp,
   } = props;
 
   const baseProps = extractBaseProps(props);
@@ -125,7 +130,7 @@ export const Avatar = (props: AvatarProps) => {
     appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] || DefaultAppearance;
   const isDecorative = ariaHidden === true;
   const resolvedRole = isDecorative ? 'presentation' : role ?? (tabIndex !== undefined ? 'button' : 'img');
-  const ariaLabel = isDecorative ? undefined : getTooltipName().trim() || initials || 'Avatar';
+  const ariaLabel = isDecorative ? undefined : ariaLabelProp || getTooltipName().trim() || initials || 'Avatar';
   const resolvedTabIndex = isDecorative ? -1 : disabled ? -1 : tabIndex !== undefined ? tabIndex : 0;
 
   const darkAppearance = ['secondary', 'success', 'warning', 'accent1', 'accent4'];

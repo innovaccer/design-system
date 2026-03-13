@@ -140,13 +140,25 @@ export const collapsibleNavigation = () => {
     <div className="vh-75 d-flex">
       <div className="w-50">
         <Collapsible expanded={expanded1} onToggle={setExpanded1} className="mr-14">
-          <VerticalNav menus={data1} active={active} expanded={expanded1} onClick={setActive} />
+          <VerticalNav
+            menus={data1}
+            active={active}
+            expanded={expanded1}
+            onClick={setActive}
+            aria-label="Primary sidebar navigation"
+          />
         </Collapsible>
       </div>
 
       <div className="w-50">
         <Collapsible expanded={expanded2} onToggle={setExpanded2} className="">
-          <VerticalNav menus={data2} active={active} expanded={expanded2} onClick={setActive} />
+          <VerticalNav
+            menus={data2}
+            active={active}
+            expanded={expanded2}
+            onClick={setActive}
+            aria-label="Secondary navigation"
+          />
         </Collapsible>
       </div>
     </div>

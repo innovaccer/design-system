@@ -3,7 +3,7 @@ import { Spinner } from '@/index';
 
 // CSF format story
 export const all = () => {
-  return <Spinner />;
+  return <Spinner aria-label="Loading patient records" />;
 };
 
 export default {

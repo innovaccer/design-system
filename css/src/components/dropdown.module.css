@@ -24,6 +24,7 @@
 .Dropdown-input:focus-within {
   border: unset !important;
   box-shadow: none !important;
+  outline: none !important;
 }
 
 .Dropdown-section {

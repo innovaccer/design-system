@@ -26,7 +26,15 @@ export const searchInDropdown = () => {
       value: 'lack_of_understanding',
     },
   ];
-  return <Dropdown options={options} withSearch={true} className="w-25" placeholder="Select barriers" />;
+  return (
+    <Dropdown
+      options={options}
+      withSearch={true}
+      className="w-25"
+      placeholder="Select barriers"
+      aria-label="Select barriers"
+    />
+  );
 };
 
 export default {

@@ -54,7 +54,7 @@ export const overflowBehavior = () => {
   return (
     <div className="Combobox-outerWrapper">
       <Label withInput={true}>Barriers</Label>
-      <Combobox onChange={onChangeHandler} placeholder="Enter barriers">
+      <Combobox onChange={onChangeHandler} placeholder="Enter barriers" aria-label="Barriers selector">
         {filterList.length > 0 && (
           <Combobox.List>
             {filterList.map((item, key) => {
@@ -124,7 +124,7 @@ const customCode = `() => {
   return (
     <div className="Combobox-outerWrapper">
       <Label withInput={true}>Barriers</Label>
-      <Combobox onChange={onChangeHandler} placeholder="Enter barriers">
+      <Combobox onChange={onChangeHandler} placeholder="Enter barriers" aria-label="Barriers selector">
         {filterList.length > 0 && (
           <Combobox.List>
             {filterList.map((item, key) => {

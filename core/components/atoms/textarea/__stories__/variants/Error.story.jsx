@@ -3,10 +3,10 @@ import { Textarea, Label } from '@/index';
 
 export const Error = () => (
   <div className="w-50">
-    <Label withInput={true} htmlFor="Error">
+    <Label withInput={true} htmlFor="error">
       Error
     </Label>
-    <Textarea name="error" id="error" aria-labelledby="Error" error={true} placeholder="This is the error state." />
+    <Textarea name="error" id="error" error={true} placeholder="This is the error state." />
   </div>
 );
 

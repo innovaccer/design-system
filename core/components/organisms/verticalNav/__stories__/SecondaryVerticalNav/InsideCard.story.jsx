@@ -125,11 +125,21 @@ export const insideCard = () => {
 
   return (
     <div className="d-flex bg-secondary-lightest vh-75 w-100">
-      <VerticalNav menus={primaryNavdata} active={primaryActive} onClick={setPrimaryActive} />
+      <VerticalNav
+        menus={primaryNavdata}
+        active={primaryActive}
+        onClick={setPrimaryActive}
+        aria-label="Primary sidebar navigation"
+      />
       <div className="mx-6 w-75">
         <Heading className="my-5">Assessments</Heading>
         <Card shadow="none pb-12">
-          <VerticalNav menus={secondaryNavdata} active={secondaryActive} onClick={setSecondaryActive} />
+          <VerticalNav
+            menus={secondaryNavdata}
+            active={secondaryActive}
+            onClick={setSecondaryActive}
+            aria-label="Secondary navigation"
+          />
         </Card>
       </div>
     </div>
@@ -265,6 +275,7 @@ const customCode = `() => {
         menus={primaryNavdata}
         active={primaryActive}
         onClick={setPrimaryActive}
+        aria-label="Primary sidebar navigation"
       />
       <div className="mx-6 w-75">
         <Heading className="my-5">Assessments</Heading>
@@ -273,6 +284,7 @@ const customCode = `() => {
             menus={secondaryNavdata}
             active={secondaryActive}
             onClick={setSecondaryActive}
+            aria-label="Secondary navigation"
           />
         </Card>
       </div>

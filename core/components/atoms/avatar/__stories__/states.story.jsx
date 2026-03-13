@@ -5,7 +5,7 @@ export const states = () => {
   return (
     <Row>
       <Column className="d-flex align-items-center flex-column">
-        <Avatar appearance="primary" firstName="John" lastName="Doe" />
+        <Avatar appearance="primary" firstName="John" lastName="Doe" role="button" tabIndex={0} aria-label="John Doe" />
         <Text appearance="subtle" className="mt-6">
           Default
         </Text>

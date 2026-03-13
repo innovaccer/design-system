@@ -66,6 +66,14 @@ export interface ChipProps extends BaseProps {
    * ARIA role for chip wrapper element
    */
   role?: React.AriaRole;
+  /**
+   * Accessible name for chip wrapper
+   */
+  'aria-label'?: string;
+  /**
+   * Associates chip wrapper with an external label
+   */
+  'aria-labelledby'?: string;
 }
 
 export const Chip = (props: ChipProps) => {
@@ -85,6 +93,8 @@ export const Chip = (props: ChipProps) => {
     iconType,
     maxWidth,
     role,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledBy,
   } = props;
 
   const baseProps = extractBaseProps(props);
@@ -131,6 +141,8 @@ export const Chip = (props: ChipProps) => {
       maxWidth={maxWidth}
       type={type}
       role={role}
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledBy}
     />
   );
 };

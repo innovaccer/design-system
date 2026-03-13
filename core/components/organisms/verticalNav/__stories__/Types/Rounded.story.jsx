@@ -110,9 +110,15 @@ export const rounded = () => {
 
   return (
     <div className="d-flex bg-secondary-lightest vh-75">
-      <VerticalNav menus={primaryNavdata} active={primaryActive} onClick={setPrimaryActive} />
+      <VerticalNav
+        menus={primaryNavdata}
+        active={primaryActive}
+        onClick={setPrimaryActive}
+        aria-label="Primary sidebar navigation"
+      />
       <VerticalNav
         menus={secondaryNavdata}
+        aria-label="Secondary navigation"
         active={secondaryActive}
         rounded={true}
         className="mt-10 ml-5"
@@ -236,9 +242,11 @@ const customCode = `() => {
         menus={primaryNavdata}
         active={primaryActive}
         onClick={setPrimaryActive}
+        aria-label="Primary sidebar navigation"
       />
       <VerticalNav
         menus={secondaryNavdata}
+        aria-label="Secondary navigation"
         active={secondaryActive}
         rounded={true}
         className="mt-10 ml-5"
