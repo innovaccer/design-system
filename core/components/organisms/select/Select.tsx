@@ -12,6 +12,7 @@ import SelectFooter from './SelectFooter';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import uidGenerator from '@/utils/uidGenerator';
 import { PopoverProps } from '@/index.type';
+import { useFocusOutside } from '@/utils/overlayHelper';
 
 export type SelectStyleType = 'filled' | 'outlined';
 
@@ -318,18 +319,26 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     onOutsideClick?.();
   };
 
-  const handleEscape = React.useCallback(
-    (_e: React.KeyboardEvent<HTMLDivElement>) => {
-      setOpenPopover(false);
-      triggerRef.current?.focus({ preventScroll: true });
-      setFocusedOption(undefined);
-    },
-    []
-  );
+  const handleEscape = React.useCallback(() => {
+    setOpenPopover(false);
+    triggerRef.current?.focus({ preventScroll: true });
+    setFocusedOption(undefined);
+  }, []);
 
   const handleFocusMove = React.useCallback((el: HTMLElement) => {
     setFocusedOption(el);
   }, []);
+
+  useFocusOutside(
+    [triggerRef, listRef],
+    React.useCallback(() => {
+      if (openPopover) {
+        setOpenPopover(false);
+      }
+    }, [openPopover]),
+    openPopover,
+    20
+  );
 
   const contextProp = {
     openPopover,
