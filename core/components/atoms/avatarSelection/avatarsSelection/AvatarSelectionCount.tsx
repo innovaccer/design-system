@@ -40,7 +40,10 @@ export const AvatarSelectionCount = (props: CountAvatarProp) => {
 
   const wrapperClassName = classNames({
     [styles['SelectionAvatarCount-wrapper']]: true,
+    [styles['SelectionAvatarCount-wrapper--micro']]: size === 'micro',
     [styles['SelectionAvatarGroup-item']]: true,
+    [styles['SelectionAvatarGroup-item--tiny']]: size === 'tiny',
+    [styles['SelectionAvatarGroup-item--micro']]: size === 'micro',
     [styles['SelectionAvatarCount--selected']]: selectedItemCount > 0,
     [styles[`SelectionAvatarCount--selected-${size}`]]: selectedItemCount > 0 && size,
   });

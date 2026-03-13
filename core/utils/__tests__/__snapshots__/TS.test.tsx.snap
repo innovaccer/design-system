@@ -6,7 +6,7 @@ exports[`TS renders children 1`] = `
     class="position-relative d-inline-flex"
   >
     <span
-      class=""
+      class="Avatar-wrapper"
       data-test="DesignSystem-AvatarWrapper"
     >
       <span
@@ -30,6 +30,7 @@ exports[`TS renders children 1`] = `
   <div
     class="AvatarGroup d-inline-flex"
     data-test="DesignSystem-AvatarGroup"
+    role="group"
   />
   <span
     class="Badge Badge--secondary"
