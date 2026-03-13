@@ -62,6 +62,10 @@ export interface ChipProps extends BaseProps {
    * Maximum width of the chip
    */
   maxWidth?: string | number;
+  /**
+   * ARIA role for chip wrapper element
+   */
+  role?: React.AriaRole;
 }
 
 export const Chip = (props: ChipProps) => {
@@ -80,6 +84,7 @@ export const Chip = (props: ChipProps) => {
     labelPrefix,
     iconType,
     maxWidth,
+    role,
   } = props;
 
   const baseProps = extractBaseProps(props);
@@ -125,6 +130,7 @@ export const Chip = (props: ChipProps) => {
       labelPrefix={labelPrefix}
       maxWidth={maxWidth}
       type={type}
+      role={role}
     />
   );
 };
