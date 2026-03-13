@@ -17,6 +17,7 @@ type ChipOptions = {
   type?: ChipProps['type'];
   iconType?: ChipProps['iconType'];
   clearButton?: ChipProps['clearButton'];
+  role?: ChipProps['role'];
   onClick?: (value: OptionType, index: number) => void;
 };
 
@@ -31,6 +32,7 @@ export interface MultiSelectTriggerProps extends BaseProps {
    *   icon?: string;
    *   type?: action | input | selection
    *   clearButton?: boolean;
+   *   role?: string;
    *   onClick?: (value: string, index: number) => void;
    *   iconType?: 'rounded' | 'outlined'
    *  }

@@ -17,6 +17,7 @@ type ChipOptions = {
   iconType?: ChipProps['iconType'];
   clearButton?: ChipProps['clearButton'];
   maxWidth?: ChipProps['maxWidth'];
+  role?: ChipProps['role'];
   onClick?: (value: string, index: number) => void;
 };
 
@@ -34,6 +35,7 @@ export interface ChipInputProps extends BaseProps {
    *   type?: action | input | selection;
    *   clearButton?: boolean;
    *   maxWidth?: string | number;
+   *   role?: string;
    *   onClick?: (value: string, index: number) => void;
    *   iconType?: 'rounded' | 'outlined'
    *  }
