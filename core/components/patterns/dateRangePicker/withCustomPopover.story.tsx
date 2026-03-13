@@ -140,6 +140,7 @@ const customCode = `
             }}
             monthsInView={1}
             monthNav={monthNav}
+            inputOptions={{ label: 'Date' }}
           >
             {this.renderChildren()}
             <Divider vertical={true} />

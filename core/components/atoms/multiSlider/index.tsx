@@ -285,6 +285,7 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
           onRelease={(newValue) => this.onReleaseHandler(newValue, index)}
           onChange={(newValue) => this.onChangeHandler(newValue, index)}
           label={this.formatLabel(value)}
+          aria-label={this.props.label}
           ref={this.addHandleRef}
           stepSize={stepSize}
           tickSize={this.state.tickSize}

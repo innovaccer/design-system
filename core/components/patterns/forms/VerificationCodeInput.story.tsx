@@ -87,13 +87,13 @@ const customCode = `() => {
             )}
             <Card className="py-6 px-6">
               <div className="d-flex flex-column">
-                <Text weight="strong" size="large">Enter Verification Code</Text>
+                <Heading size="s">Enter Verification Code</Heading>
                 <Text className="mt-3" appearance="subtle">
                   We have sent a 6 digit verification code to your phone (555) 555-1234
                 </Text>
               </div>
               <Label withInput={true} className="mt-7">Verification code</Label>
-              <div className="d-flex align-items-center">
+              <div className="d-flex align-items-center" role="group" aria-label="Verification code">
                 <VerificationCodeInput
                   fields={6}
                   onComplete={this.onCompleteHandler}
@@ -106,14 +106,14 @@ const customCode = `() => {
                   {\`Haven't recieved the code? Resend code in 0:\${time}\`}
                 </Text>
               ) : (
-                  <Text
-                    className="mt-7 d-flex cursor-pointer"
-                    appearance={loading || !!value ? 'disabled' : 'link'}
-                    weight="medium"
+                  <Button
+                    className="mt-7"
+                    appearance="transparent"
+                    disabled={loading || !!value}
                     onClick={this.onToogleLink}
                   >
                     Resend Code
-                  </Text>
+                  </Button>
                 )}
             </Card>
           </div>

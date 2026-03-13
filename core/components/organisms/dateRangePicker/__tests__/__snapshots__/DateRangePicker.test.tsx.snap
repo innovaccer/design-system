@@ -41,6 +41,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -51,6 +52,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -668,6 +670,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -678,6 +681,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -1296,6 +1300,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -1306,6 +1311,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -1924,6 +1930,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -1934,6 +1941,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -2551,6 +2559,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -2561,6 +2570,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -3178,6 +3188,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -3188,6 +3199,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -3805,6 +3817,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -3815,6 +3828,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -4432,6 +4446,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -4442,6 +4457,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -5059,6 +5075,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -5069,6 +5086,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -5686,6 +5704,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -5696,6 +5715,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -6313,6 +6333,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -6323,6 +6344,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -6940,6 +6962,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -6950,6 +6973,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -7567,6 +7591,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -7577,6 +7602,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -8194,6 +8220,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -8204,6 +8231,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -8821,6 +8849,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -8831,6 +8860,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -9448,6 +9478,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -9458,6 +9489,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -10075,6 +10107,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -10085,6 +10118,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -10702,6 +10736,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -10712,6 +10747,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -11329,6 +11365,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -11339,6 +11376,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -11956,6 +11994,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -11966,6 +12005,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -12583,6 +12623,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -12593,6 +12634,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -13210,6 +13252,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -13220,6 +13263,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -13837,6 +13881,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -13847,6 +13892,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -14464,6 +14510,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -14474,6 +14521,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -15091,6 +15139,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -15101,6 +15150,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -15718,6 +15768,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -15728,6 +15779,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -16345,6 +16397,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -16355,6 +16408,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -16972,6 +17026,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -16982,6 +17037,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -17599,6 +17655,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -17609,6 +17666,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -18226,6 +18284,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -18236,6 +18295,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -18853,6 +18913,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -18863,6 +18924,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -19480,6 +19542,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -19490,6 +19553,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -20107,6 +20171,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -20117,6 +20182,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -20734,6 +20800,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -20744,6 +20811,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -21361,6 +21429,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -21371,6 +21440,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -21988,6 +22058,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -21998,6 +22069,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -22615,6 +22687,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -22625,6 +22698,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -23242,6 +23316,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -23252,6 +23327,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -23869,6 +23945,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -23879,6 +23956,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -24496,6 +24574,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -24506,6 +24585,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -25123,6 +25203,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -25133,6 +25214,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -25750,6 +25832,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -25760,6 +25843,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -26377,6 +26461,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -26387,6 +26472,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -27004,6 +27090,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -27014,6 +27101,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -27631,6 +27719,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -27641,6 +27730,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -28258,6 +28348,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -28268,6 +28359,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -28885,6 +28977,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -28895,6 +28988,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -29512,6 +29606,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -29522,6 +29617,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -30139,6 +30235,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -30149,6 +30246,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -30589,6 +30687,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -30599,6 +30698,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -31128,6 +31228,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -31138,6 +31239,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -31578,6 +31680,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -31588,6 +31691,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -32042,6 +32146,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -32052,6 +32157,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -32560,6 +32666,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -32570,6 +32677,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -33187,6 +33295,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -33197,6 +33306,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -33658,6 +33768,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -33668,6 +33779,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -34176,6 +34288,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -34186,6 +34299,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -34647,6 +34761,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -34657,6 +34772,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -35104,6 +35220,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -35114,6 +35231,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -35689,6 +35807,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -35699,6 +35818,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -36316,6 +36436,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -36326,6 +36447,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -36801,6 +36923,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -36811,6 +36934,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -37386,6 +37510,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -37396,6 +37521,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -37871,6 +37997,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -37881,6 +38008,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -38367,6 +38495,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -38377,6 +38506,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -38899,6 +39029,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -38909,6 +39040,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -39526,6 +39658,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -39565,6 +39698,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -39576,6 +39710,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -39587,6 +39722,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -39602,6 +39738,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -39613,6 +39750,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -39624,6 +39762,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-value--active Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-white Calendar-text"
@@ -39639,6 +39778,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -39650,6 +39790,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -39661,6 +39802,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -39676,6 +39818,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -39687,6 +39830,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -39698,6 +39842,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -39755,6 +39900,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -39794,6 +39940,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -39805,6 +39952,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -39816,6 +39964,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -39831,6 +39980,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -39842,6 +39992,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -39853,6 +40004,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -39868,6 +40020,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -39879,6 +40032,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -39890,6 +40044,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-value--currDateMonthYear"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-primary-dark Calendar-value--currDate Calendar-text"
@@ -39905,6 +40060,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -39916,6 +40072,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -39927,6 +40084,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -40413,6 +40571,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -40423,6 +40582,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -41040,6 +41200,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -41079,6 +41240,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -41090,6 +41252,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -41101,6 +41264,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -41116,6 +41280,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -41127,6 +41292,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -41138,6 +41304,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-value--active Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-white Calendar-text"
@@ -41153,6 +41320,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -41164,6 +41332,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -41175,6 +41344,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -41190,6 +41360,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -41201,6 +41372,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -41212,6 +41384,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -41269,6 +41442,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -41308,6 +41482,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -41319,6 +41494,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -41330,6 +41506,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -41345,6 +41522,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -41356,6 +41534,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -41367,6 +41546,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -41382,6 +41562,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -41393,6 +41574,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -41404,6 +41586,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small Calendar-value--currDateMonthYear"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-primary-dark Calendar-value--currDate Calendar-text"
@@ -41419,6 +41602,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -41430,6 +41614,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -41441,6 +41626,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -41927,6 +42113,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -41937,6 +42124,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -42554,6 +42742,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -42593,6 +42782,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -42604,6 +42794,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -42615,6 +42806,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -42630,6 +42822,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -42641,6 +42834,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -42652,6 +42846,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-value--active Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-white Calendar-text"
@@ -42667,6 +42862,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -42678,6 +42874,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -42689,6 +42886,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -42704,6 +42902,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -42715,6 +42914,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -42726,6 +42926,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -42783,6 +42984,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -42822,6 +43024,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -42833,6 +43036,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -42844,6 +43048,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -42859,6 +43064,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -42870,6 +43076,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -42881,6 +43088,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -42896,6 +43104,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -42907,6 +43116,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -42918,6 +43128,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-value--currDateMonthYear"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-primary-dark Calendar-value--currDate Calendar-text"
@@ -42933,6 +43144,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -42944,6 +43156,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -42955,6 +43168,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-text"
@@ -43154,6 +43368,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -43164,6 +43379,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -43625,6 +43841,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -43635,6 +43852,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -44285,6 +44503,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -44295,6 +44514,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -44756,6 +44976,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -44766,6 +44987,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -45416,6 +45638,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -45426,6 +45649,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -45887,6 +46111,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -45897,6 +46122,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -46405,6 +46631,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -46415,6 +46642,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -47032,6 +47260,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -47071,6 +47300,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -47082,6 +47312,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -47093,6 +47324,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -47108,6 +47340,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -47119,6 +47352,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -47130,6 +47364,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-value--active Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-white Calendar-text"
@@ -47145,6 +47380,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -47156,6 +47392,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -47167,6 +47404,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -47182,6 +47420,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -47193,6 +47432,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -47204,6 +47444,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -47261,6 +47502,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -47300,6 +47542,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -47311,6 +47554,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -47322,6 +47566,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -47337,6 +47582,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -47348,6 +47594,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -47359,6 +47606,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -47374,6 +47622,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -47385,6 +47634,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -47396,6 +47646,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small Calendar-value--currDateMonthYear"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-primary-dark Calendar-value--currDate Calendar-text"
@@ -47411,6 +47662,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -47422,6 +47674,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -47433,6 +47686,7 @@ exports[`DateRangePicker component
             <div
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-test="DesignSystem-Calendar--yearValue"
+              role="button"
             >
               <span
                 class="Text Text--small color-inverse Calendar-text"
@@ -47632,6 +47886,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -47642,6 +47897,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -48103,6 +48359,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -48113,6 +48370,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -48763,6 +49021,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -48773,6 +49032,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -49234,6 +49494,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -49244,6 +49505,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -49894,6 +50156,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -49904,6 +50167,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -50365,6 +50629,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -50375,6 +50640,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -50883,6 +51149,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -50893,6 +51160,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -51510,6 +51778,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -51520,6 +51789,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -52137,6 +52407,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -52145,6 +52416,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -52275,6 +52547,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -52283,6 +52556,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -52413,6 +52687,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -52421,6 +52696,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -52551,6 +52827,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -52559,6 +52836,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -52689,6 +52967,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -52697,6 +52976,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -52827,6 +53107,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -52835,6 +53116,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -52965,6 +53247,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -52973,6 +53256,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -53103,6 +53387,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -53111,6 +53396,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -53241,6 +53527,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -53249,6 +53536,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -53379,6 +53667,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -53387,6 +53676,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -53517,6 +53807,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -53525,6 +53816,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -53655,6 +53947,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -53663,6 +53956,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -53793,6 +54087,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -53801,6 +54096,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -53931,6 +54227,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -53939,6 +54236,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -54069,6 +54367,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -54077,6 +54376,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -54207,6 +54507,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -54215,6 +54516,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -54345,6 +54647,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -54355,6 +54658,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -54972,6 +55276,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -54982,6 +55287,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -55599,6 +55905,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -55609,6 +55916,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -56226,6 +56534,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -56236,6 +56545,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -56853,6 +57163,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -56863,6 +57174,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -57480,6 +57792,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -57490,6 +57803,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -58107,6 +58421,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -58117,6 +58432,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -58734,6 +59050,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -58744,6 +59061,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -59361,6 +59679,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -59371,6 +59690,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -59988,6 +60308,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -59998,6 +60319,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -60615,6 +60937,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -60625,6 +60948,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -61242,6 +61566,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -61252,6 +61577,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -61869,6 +62195,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -61879,6 +62206,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -62496,6 +62824,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -62506,6 +62835,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -63123,6 +63453,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -63133,6 +63464,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -63750,6 +64082,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -63760,6 +64093,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -64377,6 +64711,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -64385,6 +64720,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -64515,6 +64851,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -64523,6 +64860,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -64653,6 +64991,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -64661,6 +65000,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -64791,6 +65131,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -64799,6 +65140,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -64929,6 +65271,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -64937,6 +65280,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -65067,6 +65411,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -65075,6 +65420,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -65205,6 +65551,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -65213,6 +65560,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -65343,6 +65691,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -65351,6 +65700,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -65481,6 +65831,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -65489,6 +65840,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -65619,6 +65971,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -65627,6 +65980,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -65757,6 +66111,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -65765,6 +66120,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -65895,6 +66251,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -65903,6 +66260,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -66033,6 +66391,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -66041,6 +66400,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -66171,6 +66531,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -66179,6 +66540,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -66309,6 +66671,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -66317,6 +66680,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -66447,6 +66811,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -66455,6 +66820,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -66585,6 +66951,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -66595,6 +66962,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -67212,6 +67580,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -67222,6 +67591,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -67839,6 +68209,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -67849,6 +68220,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -68466,6 +68838,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -68476,6 +68849,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -69093,6 +69467,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -69103,6 +69478,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -69720,6 +70096,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -69730,6 +70107,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -70347,6 +70725,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -70357,6 +70736,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -70974,6 +71354,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -70984,6 +71365,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -71601,6 +71983,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -71611,6 +71994,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -72228,6 +72612,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -72238,6 +72623,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -72855,6 +73241,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -72865,6 +73252,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -73482,6 +73870,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -73492,6 +73881,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -74109,6 +74499,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -74119,6 +74510,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -74736,6 +75128,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -74746,6 +75139,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -75363,6 +75757,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -75373,6 +75768,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -75990,6 +76386,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -76000,6 +76397,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -76617,6 +77015,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -76627,6 +77026,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -77244,6 +77644,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -77254,6 +77655,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -77871,6 +78273,7 @@ exports[`DateRangePicker component
           >
             <div
               class="d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -77881,6 +78284,7 @@ exports[`DateRangePicker component
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"

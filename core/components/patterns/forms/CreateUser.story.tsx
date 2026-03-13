@@ -63,35 +63,38 @@ const customCode = `
           <form onSubmit={this.onSubmit}>
             <Row className="mt-6">
               <Column sizeXL={4} sizeL={4} sizeM={6} className="mr-6 mb-6">
-                <Label withInput={true} required={true}>Last Name</Label>
+                <Label withInput={true} required={true} htmlFor="create-user-lastName">Last Name</Label>
                 <Input
                   name="lastName"
+                  id="create-user-lastName"
                   type="text"
                   placeholder="E.g. Doe, Smith, etc."
                   icon="person"
-                  autocomplete={'off'}
+                  autoComplete="family-name"
                   onChange={(event) => this.onChange(event.target.value, event.target.name)}
                 />
               </Column>
               <Column sizeXL={4} sizeL={4} sizeM={5} className="mr-6 mb-6">
-                <Label withInput={true}>Middle Name</Label>
+                <Label withInput={true} htmlFor="create-user-middleName">Middle Name</Label>
                 <Input
                   name="middleName"
+                  id="create-user-middleName"
                   type="text"
                   placeholder="E.g. Doe, Smith, etc."
                   icon="person"
-                  autocomplete={'off'}
+                  autoComplete="additional-name"
                   onChange={(event) => this.onChange(event.target.value, event.target.name)}
                 />
               </Column>
               <Column sizeXL={3} sizeL={3} sizeM={6} className="mr-6 mb-6">
-                <Label withInput={true} required={true}>First Name</Label>
+                <Label withInput={true} required={true} htmlFor="create-user-firstName">First Name</Label>
                 <Input
                   name="firstName"
+                  id="create-user-firstName"
                   type="text"
                   placeholder="E.g. John, Will, etc."
                   icon="person"
-                  autocomplete={'off'}
+                  autoComplete="given-name"
                   onChange={(event) => this.onChange(event.target.value, event.target.name)}
                 />
               </Column>
@@ -126,23 +129,25 @@ const customCode = `
                 />
               </Column>
               <Column sizeXL={3} sizeL={3} sizeM={5} className="mr-6 mb-6">
-                <Label withInput={true} >Maiden Name</Label>
+                <Label withInput={true} htmlFor="create-user-maidenName">Maiden Name</Label>
                 <Input
                   name="MaidenName"
+                  id="create-user-maidenName"
                   type="text"
                   placeholder="E.g. Roe, Will, etc."
                   icon="person"
-                  autocomplete={'off'}
+                  autoComplete="off"
                   onChange={(event) => this.onChange(event.target.value, event.target.name)}
                 />
               </Column>
               <Column sizeXL={4} sizeL={4} sizeM={6} className="mr-6 mb-6">
-                <Label withInput={true} required={true}>Email Address</Label>
+                <Label withInput={true} required={true} htmlFor="create-user-email">Email Address</Label>
                 <Input
                   name="email"
+                  id="create-user-email"
                   type="email"
                   placeholder="E.g. abc@gmail.com"
-                  autocomplete={'off'}
+                  autoComplete="email"
                   onChange={(event) => this.onChange(event.target.value, event.target.name)}
                 />
               </Column>
@@ -165,12 +170,13 @@ const customCode = `
                 </Select>
               </Column>
               <Column sizeXL={3} sizeL={3} sizeM={5} className="mr-6 mb-6">
-                <Label withInput={true} >NPI</Label>
+                <Label withInput={true} htmlFor="create-user-npi">NPI</Label>
                 <Input
                   name="npi"
+                  id="create-user-npi"
                   type="text"
                   placeholder="E.g. 000000"
-                  autocomplete={'off'}
+                  autoComplete="off"
                   onChange={(event) => this.onChange(event.target.value, event.target.name)}
                 />
               </Column>

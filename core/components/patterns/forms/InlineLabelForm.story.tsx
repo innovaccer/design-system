@@ -72,7 +72,7 @@ const customCode = `
                 <div className="mr-5 w-25">
                   <Select
                     width="100%"
-                    triggerOptions={{ withClearButton: false }}
+                    triggerOptions={{ withClearButton: false, "aria-label": "Known Languages" }}
                     onSelect={(option) => {
                       const updatedData = {
                         ...this.state.data,
@@ -107,10 +107,10 @@ const customCode = `
                 />
               </Column>
               <Column size={1} className="d-flex align-items-center justify-content-end">
-                <Button icon="delete" appearance="transparent" />
+                <Button icon="delete" appearance="transparent" aria-label="Remove known language" />
               </Column>
             </Row>
-            <Row className="my-5">
+            <Row className="my-5" role="group" aria-label="Preferred Method of Contact">
               <Column className="d-flex align-items-center" size={3}>
                 <Icon className="mr-4" name="record_voice_over" />
                 <Text>Preferred Method of Contact</Text>
@@ -128,9 +128,10 @@ const customCode = `
                 </Button>
               </Column>
               <Column size={1} className="d-flex align-items-center justify-content-end">
-                <Button icon="delete" appearance="transparent" />
+                <Button icon="delete" appearance="transparent" aria-label="Remove preferred contact method" />
               </Column>
             </Row>
+            <div role="group" aria-label="Phone Numbers">
             <Row className="mt-6">
               <Column size={3} className="d-flex align-items-center">
                 <Icon className="mr-4" name="call" />
@@ -142,6 +143,7 @@ const customCode = `
                   placeholder="(___) ___-____"
                   className="mr-4"
                   name="primaryPhoneNumber"
+                  aria-label="Primary phone number"
                   onChange={(e, value) => this.onChange(value, e.target.name)}
                 />
                 <Radio
@@ -159,7 +161,7 @@ const customCode = `
                 />
               </Column>
               <Column size={1} className="d-flex align-items-center justify-content-end">
-                <Button icon="delete" appearance="transparent" />
+                <Button icon="delete" appearance="transparent" aria-label="Remove primary phone number" />
               </Column>
             </Row>
             <Row className="my-5">
@@ -170,6 +172,7 @@ const customCode = `
                   placeholder="(___) ___-____"
                   className="mr-4"
                   name="secondaryPhoneNumber"
+                  aria-label="Secondary phone number"
                   onChange={(e, value) => this.onChange(value, e.target.name)}
                 />
                 <Radio
@@ -190,6 +193,7 @@ const customCode = `
                 <Icon name="flag" appearance="warning" className="mr-4"/>
               </Column>
             </Row>
+            </div>
           <div className="d-flex">
             <Button className="mr-4" type="submit" appearance="success">Save</Button>
             <Button>Cancel</Button>

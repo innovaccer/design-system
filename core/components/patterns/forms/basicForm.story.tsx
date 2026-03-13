@@ -65,27 +65,30 @@ const customCode = `
           <Card className="px-6 py-6">
             <form onSubmit={this.onSubmit}>
               <Heading className="mb-7" size="m">Login</Heading>
-              <Label withInput={true}>Email</Label>
+              <Label withInput={true} htmlFor="basic-form-email">Email</Label>
               <Input
-                name="input"
-                type="text"
+                name="email"
+                id="basic-form-email"
+                type="email"
                 placeholder="Enter email"
                 className="mb-6"
-                autocomplete={'off'}
+                autoComplete="email"
                 onChange={this.onEmailChange}
               />
-              <Label withInput={true}>Password</Label>
+              <Label withInput={true} htmlFor="basic-form-password">Password</Label>
               <Input
-                name="input"
+                name="password"
+                id="basic-form-password"
                 className="mb-4"
                 placeholder="Enter password"
-                autocomplete={'off'}
+                autoComplete="current-password"
                 type={this.state.passwordVisible ? 'text' : 'password'}
                 value={password}
                 onChange={this.onPasswordChange}
                 actionIcon={(
                   <Icon
                     name={this.state.passwordVisible ? 'visibility' : 'visibility_off'}
+                    aria-label={this.state.passwordVisible ? 'Hide password' : 'Show password'}
                     onClick={this.onActionClick}
                   />
                 )}

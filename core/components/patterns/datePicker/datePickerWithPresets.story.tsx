@@ -100,7 +100,7 @@ const customCode = `() => {
         <DatePickerPreset size="small" />
       </Card>
       <Card className="w-50 my-5 p-5">
-        <Label>Set an appointment date:</Label>
+        <Label htmlFor="parent-DatePicker">Set an appointment date:</Label>
         <DatePickerPreset withInput={true} />
       </Card>
     </>
