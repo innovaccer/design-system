@@ -11,13 +11,21 @@ export const size = () => {
     return action(`tab-change: ${tabIndex}`)();
   };
 
+  const tabsRegularId = 'tabs-size-regular';
+  const tabsSmallId = 'tabs-size-small';
   return (
     <div className="d-flex w-100">
       <div className="d-flex flex-column">
-        <Text weight="strong" className="mb-5">
+        <Text id={tabsRegularId} weight="strong" className="mb-5">
           Regular
         </Text>
-        <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6 mr-10" headerClassName="pl-3">
+        <Tabs
+          activeIndex={activeIndex}
+          onTabChange={onTabChangeHandler}
+          className="mb-6 mr-10"
+          headerClassName="pl-3"
+          aria-labelledby={tabsRegularId}
+        >
           <Tab label="All" count={15} className="pl-6">
             <div>All</div>
           </Tab>
@@ -31,7 +39,7 @@ export const size = () => {
       </div>
 
       <div className="d-flex flex-column">
-        <Text weight="strong" className="mb-5">
+        <Text id={tabsSmallId} weight="strong" className="mb-5">
           Small
         </Text>
         <Tabs
@@ -40,6 +48,7 @@ export const size = () => {
           onTabChange={onTabChangeHandler}
           className="mb-6"
           headerClassName="pl-3"
+          aria-labelledby={tabsSmallId}
         >
           <Tab label="All" count={15} className="pl-6">
             <div>All</div>
@@ -64,13 +73,15 @@ const customCode = `
       setActiveIndex(tabIndex);
     };
 
+    const tabsRegularId = 'tabs-size-regular';
+    const tabsSmallId = 'tabs-size-small';
     return (
       <div className="d-flex w-100">
         <div className="d-flex flex-column">
-          <Text weight="strong" className="mb-5">
+          <Text id={tabsRegularId} weight="strong" className="mb-5">
             Regular
           </Text>
-          <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6 mr-10" headerClassName="pl-3">
+          <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6 mr-10" headerClassName="pl-3" aria-labelledby={tabsRegularId}>
             <Tab label="All" count={15} className="pl-6">
               <div>All</div>
             </Tab>
@@ -84,7 +95,7 @@ const customCode = `
         </div>
 
         <div className="d-flex flex-column">
-          <Text weight="strong" className="mb-5">
+          <Text id={tabsSmallId} weight="strong" className="mb-5">
             Small
           </Text>
           <Tabs
@@ -93,6 +104,7 @@ const customCode = `
             onTabChange={onTabChangeHandler}
             className="mb-6"
             headerClassName="pl-3"
+            aria-labelledby={tabsSmallId}
           >
             <Tab label="All" count={15} className="pl-6">
               <div>All</div>

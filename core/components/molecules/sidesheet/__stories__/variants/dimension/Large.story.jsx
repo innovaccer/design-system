@@ -4,6 +4,7 @@ import { Sidesheet, Button, Label, Text } from '@/index';
 
 export const Large = () => {
   const [open, setOpen] = React.useState(false);
+  const headingId = 'sidesheet-large-heading';
 
   const onClose = () => {
     setOpen(false);
@@ -13,12 +14,14 @@ export const Large = () => {
   const headerOptions = {
     heading: 'Heading',
     subHeading: 'Subheading',
+    headingId,
   };
 
   const options = {
     onClose,
     open,
     headerOptions,
+    'aria-labelledby': headingId,
     footer: (
       <>
         <Button appearance="primary" className="mr-4">
@@ -64,6 +67,7 @@ export const Large = () => {
 
 const customCode = `() => {
   const [open, setOpen] = React.useState(false);
+  const headingId = 'sidesheet-large-heading';
 
   const onClose = () => {
     setOpen(false);
@@ -72,12 +76,14 @@ const customCode = `() => {
   const headerOptions = {
     heading: 'Heading',
     subHeading: 'Subheading',
+    headingId,
   };
 
   const options = {
     onClose,
     open,
     headerOptions,
+    'aria-labelledby': headingId,
     footer: (
       <>
         <Button appearance="primary" className="mr-4">

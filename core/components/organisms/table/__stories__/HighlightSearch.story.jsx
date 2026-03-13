@@ -153,6 +153,7 @@ export const highlightSearch = () => {
   return (
     <Card className="overflow-hidden">
       <Table
+        aria-label="Campaign table"
         loaderSchema={loaderSchema}
         showMenu={false}
         type="resource"
@@ -279,6 +280,7 @@ const customCode = `
   return (
     <Card className="overflow-hidden">
       <Table
+        aria-label="Campaign table"
         showMenu={false}
         type="resource"
         data={data}

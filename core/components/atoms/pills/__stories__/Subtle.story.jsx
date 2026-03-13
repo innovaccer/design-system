@@ -22,7 +22,7 @@ export const subtle = () => {
       {appearances.map((appear, ind) => {
         return (
           <div key={ind} className="mr-9">
-            <Pills appearance={appear} subtle={ButtonSubtle}>
+            <Pills appearance={appear} subtle={ButtonSubtle} aria-label={`${appear} count`}>
               {children}
             </Pills>
             <br />

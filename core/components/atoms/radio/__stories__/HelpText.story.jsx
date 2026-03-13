@@ -5,6 +5,8 @@ import { Radio } from '@/index';
 export const withHelpText = () => {
   return (
     <Radio
+      aria-label="Share all your data"
+      aria-required={true}
       label={'Share all your data'}
       value={'accepted'}
       name={'consent'}

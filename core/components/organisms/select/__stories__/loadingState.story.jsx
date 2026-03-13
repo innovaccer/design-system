@@ -50,7 +50,7 @@ export const loadingState = () => {
   const onSelectHandler = (selectedOption) => action('selectedOption', selectedOption);
 
   return (
-    <Select onSelect={onSelectHandler}>
+    <Select onSelect={onSelectHandler} triggerOptions={{ 'aria-label': 'Medication selector' }}>
       <Select.SearchInput value={searchTerm} placeholder="Search" onChange={onChangeHandler} onClear={onClearHandler} />
       {loading ? (
         <Select.EmptyTemplate>
@@ -63,9 +63,13 @@ export const loadingState = () => {
           title="No results found"
         />
       ) : (
-        <Select.List>
+        <Select.List aria-label="Medication options list">
           {filteredMedicines.map((item, key) => (
-            <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+            <Select.Option
+              key={key}
+              option={{ label: item.label, value: item.value }}
+              aria-label={`${item.label} option`}
+            >
               {item.label}
             </Select.Option>
           ))}
@@ -121,7 +125,7 @@ const customCode = `() => {
   const onSelectHandler = (selectedOption) => console.log('selectedOption', selectedOption);
 
   return (
-    <Select onSelect={onSelectHandler}>
+    <Select onSelect={onSelectHandler} triggerOptions={{ 'aria-label': 'Medication selector' }}>
       <Select.SearchInput
         value={searchTerm}
         placeholder="Search"
@@ -139,9 +143,9 @@ const customCode = `() => {
           title="No results found"
         />
       ) : (
-        <Select.List>
+        <Select.List aria-label="Medication options list">
           {filteredMedicines.map((item, key) => (
-            <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+            <Select.Option key={key} option={{ label: item.label, value: item.value }} aria-label={\`\${item.label} option\`}>
               {item.label}
             </Select.Option>
           ))}

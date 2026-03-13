@@ -58,7 +58,7 @@ export const Navigation = (props: NavigationProps) => {
 
   const renderNavigation = () => {
     return type === 'horizontal' ? (
-      <HorizontalNav menus={menus} active={active} onClick={onClick} />
+      <HorizontalNav menus={menus} active={active} onClick={onClick} aria-label={ariaLabel} />
     ) : (
       <VerticalNavigation
         menus={menus}

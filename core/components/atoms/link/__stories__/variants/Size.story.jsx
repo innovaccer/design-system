@@ -5,10 +5,10 @@ import { Link } from '@/index';
 export const size = () => {
   return (
     <div className="d-flex">
-      <Link href="http://innovaccer.com" size="regular">
+      <Link href="http://innovaccer.com" size="regular" aria-label="Regular size link">
         Regular Link
       </Link>
-      <Link href="http://innovaccer.com" size="tiny" className="ml-7 mt-2">
+      <Link href="http://innovaccer.com" size="tiny" className="ml-7 mt-2" aria-label="Tiny size link">
         Tiny Link
       </Link>
     </div>

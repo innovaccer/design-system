@@ -85,8 +85,15 @@ export const all = () => {
 
   return (
     <div className="w-50">
-      <Label withInput={true}>Drug Name</Label>
-      <Combobox onChange={onChangeHandler} icon="search" placeholder="Enter drug name">
+      <Label withInput={true} id="drug-name-combobox-label">
+        Drug Name
+      </Label>
+      <Combobox
+        onChange={onChangeHandler}
+        icon="search"
+        placeholder="Enter drug name"
+        aria-labelledby="drug-name-combobox-label"
+      >
         <PopoverContent loading={loading} optionList={optionList} />
       </Combobox>
     </div>
@@ -177,8 +184,13 @@ const customCode = `() => {
 
   return (
     <div className="w-50">
-      <Label withInput={true}>Drug Name</Label>
-      <Combobox onChange={onChangeHandler} icon="search" placeholder="Enter drug name">
+      <Label withInput={true} id="drug-name-combobox-label">Drug Name</Label>
+      <Combobox
+        onChange={onChangeHandler}
+        icon="search"
+        placeholder="Enter drug name"
+        aria-labelledby="drug-name-combobox-label"
+      >
         <PopoverContent loading={loading} optionList={optionList} />
       </Combobox>
     </div>

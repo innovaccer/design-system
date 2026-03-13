@@ -12,8 +12,22 @@ export const dropdownAsMenuWithSubinfo = () => {
   ];
   return (
     <div className="d-flex w-50">
-      <Dropdown options={options} menu={true} className="mr-5" align="right" />
-      <Dropdown options={options} menu={true} className="mr-5" align="right" />
+      <Dropdown
+        options={options}
+        menu={true}
+        className="mr-5"
+        align="right"
+        aria-label="Open age range menu"
+        optionsAriaLabel="Age range options"
+      />
+      <Dropdown
+        options={options}
+        menu={true}
+        className="mr-5"
+        align="right"
+        aria-label="Open age range menu"
+        optionsAriaLabel="Age range options"
+      />
     </div>
   );
 };

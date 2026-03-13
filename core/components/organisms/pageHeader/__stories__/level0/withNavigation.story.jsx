@@ -33,7 +33,13 @@ export const withNavigation = () => {
     <Row>
       <Column size={11}>
         <div className="bg-secondary-lightest">
-          <PageHeader title="Dashboard" separator={false} navigation={navigation} actions={actions} />
+          <PageHeader
+            title="Dashboard"
+            separator={false}
+            navigation={navigation}
+            actions={actions}
+            aria-label="Dashboard page header"
+          />
         </div>
       </Column>
     </Row>
@@ -77,6 +83,7 @@ const customCode = `() => {
             separator={false}
             navigation={navigation}
             actions={actions}
+            aria-label="Dashboard page header"
           />
         </div>
       </Column>

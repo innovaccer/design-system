@@ -29,7 +29,7 @@ export const preFilledValue = () => {
 
   return (
     <Select
-      triggerOptions={{ setLabel: setLableHandler }}
+      triggerOptions={{ setLabel: setLableHandler, 'aria-label': 'Medication multiselect' }}
       value={[
         { id: 'aspirin', label: 'Aspirin', value: 'Aspirin' },
         { id: 'paracetamol', label: 'Paracetamol', value: 'Paracetamol' },
@@ -37,10 +37,14 @@ export const preFilledValue = () => {
       onSelect={onSelectHandler}
       multiSelect={true}
     >
-      <Select.List>
+      <Select.List aria-label="Medication options">
         {medicineList.map((item) => {
           return (
-            <Select.Option key={item.id} option={{ label: item.label, value: item.value, id: item.id }}>
+            <Select.Option
+              key={item.id}
+              option={{ label: item.label, value: item.value, id: item.id }}
+              aria-label={item.label + ' option'}
+            >
               {item.label}
             </Select.Option>
           );
@@ -77,7 +81,7 @@ const customCode = `() => {
 
   return (    
   <Select
-    triggerOptions={{ setLabel: setLableHandler }}
+    triggerOptions={{ setLabel: setLableHandler, 'aria-label': 'Medication multiselect' }}
     value={[
       { id: 'aspirin', label: 'Aspirin', value: 'Aspirin' },
       { id: 'paracetamol', label: 'Paracetamol', value: 'Paracetamol' }
@@ -85,10 +89,10 @@ const customCode = `() => {
     onSelect={onSelectHandler}
     multiSelect={true}
   >
-        <Select.List>
+        <Select.List aria-label="Medication options">
           {medicineList.map((item) => {
             return (
-              <Select.Option key={item.id} option={{ label: item.label, value: item.value, id: item.id }}>
+              <Select.Option key={item.id} option={{ label: item.label, value: item.value, id: item.id }} aria-label={item.label + ' option'}>
                 {item.label}
               </Select.Option>
             );
