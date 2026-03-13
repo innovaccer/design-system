@@ -10,10 +10,11 @@
 .Select-input:focus-within {
   border: unset !important;
   box-shadow: none !important;
+  outline: none !important;
 }
 
 .Select-input:hover {
-  background-color: #f4f4f4;
+  background-color: var(--secondary-lightest);
 }
 
 .Select-trigger {
@@ -155,7 +156,7 @@
 
 .Select-crossButton:focus-visible,
 .Select-crossButton:focus {
-  outline: var(--spacing-05) solid var(--secondary-shadow);
+  outline: var(--spacing-05) solid var(--primary-focus);
 }
 
 .Select-crossButton:hover {

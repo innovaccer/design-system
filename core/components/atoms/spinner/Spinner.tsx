@@ -19,11 +19,11 @@ export interface SpinnerProps extends BaseProps {
    * Accessible name for the spinner
    * @default "Loading"
    */
-  ariaLabel?: string;
+  'aria-label'?: string;
 }
 
 export const Spinner = (props: SpinnerProps) => {
-  const { appearance, size, className, ariaLabel = 'Loading' } = props;
+  const { appearance, size, className, 'aria-label': ariaLabel = 'Loading' } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -78,6 +78,7 @@ Spinner.displayName = 'Spinner';
 Spinner.defaultProps = {
   appearance: 'primary',
   size: 'medium',
+  'aria-label': 'Loading',
 };
 
 export default Spinner;

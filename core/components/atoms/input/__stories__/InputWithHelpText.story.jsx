@@ -20,7 +20,7 @@ export const inputWithHelpText = () => {
             <Input.ActionButton
               onClick={() => setVisibility((x) => !x)}
               name={visibility ? 'visibility_on' : 'visibility_off'}
-              className="cursor-pointer"
+              className="cursor-pointer p-3"
             />
           }
         />
@@ -39,7 +39,7 @@ export const inputWithHelpText = () => {
             <Input.ActionButton
               onClick={() => setVisibility2((x) => !x)}
               name={visibility2 ? 'visibility_on' : 'visibility_off'}
-              className="cursor-pointer"
+              className="cursor-pointer p-3"
             />
           }
         />
@@ -74,7 +74,7 @@ const customCode = `() => {
               aria-label={visibility ? 'Show Password' : 'Hide Password'}
               onClick={() => setVisibility((x) => !x)}
               name={visibility ? 'visibility_on' : 'visibility_off'}
-              className="cursor-pointer"
+              className="cursor-pointer p-3"
             />
           }
         />
@@ -98,7 +98,7 @@ const customCode = `() => {
               aria-label={visibility ? 'Show Password' : 'Hide Password'}
               onClick={() => setVisibility2((x) => !x)}
               name={visibility2 ? 'visibility_on' : 'visibility_off'}
-              className="cursor-pointer"
+              className="cursor-pointer p-3"
             />
           }
         />

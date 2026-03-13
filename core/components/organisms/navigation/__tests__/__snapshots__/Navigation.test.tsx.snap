@@ -10,14 +10,14 @@ Object {
       <div
         class="Navigation Navigation--horizontal justify-content-center"
       >
-        <div
+        <nav
+          aria-label="Horizontal Navigation"
           class="HorizontalNav"
         >
-          <div
+          <button
             class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
             data-test="DesignSystem-HorizontalNav"
-            role="button"
-            tabindex="0"
+            type="button"
           >
             <span
               class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
@@ -31,12 +31,11 @@ Object {
             >
               Tab #1
             </span>
-          </div>
-          <div
+          </button>
+          <button
             class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
             data-test="DesignSystem-HorizontalNav"
-            role="button"
-            tabindex="0"
+            type="button"
           >
             <span
               class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
@@ -50,12 +49,11 @@ Object {
             >
               Tab #2
             </span>
-          </div>
-          <div
+          </button>
+          <button
             class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
             data-test="DesignSystem-HorizontalNav"
-            role="button"
-            tabindex="0"
+            type="button"
           >
             <span
               class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
@@ -69,8 +67,8 @@ Object {
             >
               Tab #3
             </span>
-          </div>
-        </div>
+          </button>
+        </nav>
       </div>
     </div>
   </body>,
@@ -78,14 +76,14 @@ Object {
     <div
       class="Navigation Navigation--horizontal justify-content-center"
     >
-      <div
+      <nav
+        aria-label="Horizontal Navigation"
         class="HorizontalNav"
       >
-        <div
+        <button
           class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
           data-test="DesignSystem-HorizontalNav"
-          role="button"
-          tabindex="0"
+          type="button"
         >
           <span
             class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
@@ -99,12 +97,11 @@ Object {
           >
             Tab #1
           </span>
-        </div>
-        <div
+        </button>
+        <button
           class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
           data-test="DesignSystem-HorizontalNav"
-          role="button"
-          tabindex="0"
+          type="button"
         >
           <span
             class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
@@ -118,12 +115,11 @@ Object {
           >
             Tab #2
           </span>
-        </div>
-        <div
+        </button>
+        <button
           class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
           data-test="DesignSystem-HorizontalNav"
-          role="button"
-          tabindex="0"
+          type="button"
         >
           <span
             class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
@@ -137,8 +133,8 @@ Object {
           >
             Tab #3
           </span>
-        </div>
-      </div>
+        </button>
+      </nav>
     </div>
   </div>,
   "debug": [Function],
@@ -205,14 +201,14 @@ Object {
       <div
         class="Navigation Navigation--horizontal justify-content-start"
       >
-        <div
+        <nav
+          aria-label="Horizontal Navigation"
           class="HorizontalNav"
         >
-          <div
+          <button
             class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
             data-test="DesignSystem-HorizontalNav"
-            role="button"
-            tabindex="0"
+            type="button"
           >
             <span
               class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
@@ -226,12 +222,11 @@ Object {
             >
               Tab #1
             </span>
-          </div>
-          <div
+          </button>
+          <button
             class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
             data-test="DesignSystem-HorizontalNav"
-            role="button"
-            tabindex="0"
+            type="button"
           >
             <span
               class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
@@ -245,12 +240,11 @@ Object {
             >
               Tab #2
             </span>
-          </div>
-          <div
+          </button>
+          <button
             class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
             data-test="DesignSystem-HorizontalNav"
-            role="button"
-            tabindex="0"
+            type="button"
           >
             <span
               class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
@@ -264,8 +258,8 @@ Object {
             >
               Tab #3
             </span>
-          </div>
-        </div>
+          </button>
+        </nav>
       </div>
     </div>
   </body>,
@@ -273,14 +267,14 @@ Object {
     <div
       class="Navigation Navigation--horizontal justify-content-start"
     >
-      <div
+      <nav
+        aria-label="Horizontal Navigation"
         class="HorizontalNav"
       >
-        <div
+        <button
           class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
           data-test="DesignSystem-HorizontalNav"
-          role="button"
-          tabindex="0"
+          type="button"
         >
           <span
             class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
@@ -294,12 +288,11 @@ Object {
           >
             Tab #1
           </span>
-        </div>
-        <div
+        </button>
+        <button
           class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
           data-test="DesignSystem-HorizontalNav"
-          role="button"
-          tabindex="0"
+          type="button"
         >
           <span
             class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
@@ -313,12 +306,11 @@ Object {
           >
             Tab #2
           </span>
-        </div>
-        <div
+        </button>
+        <button
           class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
           data-test="DesignSystem-HorizontalNav"
-          role="button"
-          tabindex="0"
+          type="button"
         >
           <span
             class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
@@ -332,8 +324,8 @@ Object {
           >
             Tab #3
           </span>
-        </div>
-      </div>
+        </button>
+      </nav>
     </div>
   </div>,
   "debug": [Function],
@@ -400,7 +392,8 @@ Object {
       <div
         class="Navigation Navigation--vertical Navigation--collapsed"
       >
-        <div
+        <nav
+          aria-label="Vertical navigation"
           class="Navigation-body"
         >
           <div
@@ -451,7 +444,7 @@ Object {
               class="Navigation-subMenu"
             />
           </div>
-        </div>
+        </nav>
       </div>
     </div>
   </body>,
@@ -459,7 +452,8 @@ Object {
     <div
       class="Navigation Navigation--vertical Navigation--collapsed"
     >
-      <div
+      <nav
+        aria-label="Vertical navigation"
         class="Navigation-body"
       >
         <div
@@ -510,7 +504,7 @@ Object {
             class="Navigation-subMenu"
           />
         </div>
-      </div>
+      </nav>
     </div>
   </div>,
   "debug": [Function],

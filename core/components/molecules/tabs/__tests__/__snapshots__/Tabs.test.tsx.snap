@@ -11,15 +11,19 @@ exports[`Tabs component
     <div
       class="TabsWrapper-header"
       data-test="DesignSystem-Tabs--Header"
+      role="tablist"
     >
       <div
-        class="Tab Tab--active Tab-selected align-items-center"
+        aria-label="Tab 1"
+        aria-selected="true"
+        class="Tab Tab--active Tab-selected align-items-center Tab--withDismissIcon"
         data-test="DesignSystem-Tabs--Tab"
-        role="button"
+        id="tabs-3-tab-0"
+        role="tab"
         tabindex="0"
       >
         <span
-          class="Tab--regular Tab--overflow"
+          class="Tab--overflow Tab--withIconRegular"
           data-test="DesignSystem-Tabs--TextWrapper"
           style="max-width: var(--spacing-640);"
         >
@@ -36,7 +40,7 @@ exports[`Tabs component
             Tab 1
           </span>
           <i
-            class="material-symbols material-symbols-rounded Icon Icon--info DismissibleTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
+            class="material-symbols material-symbols-rounded Icon Icon--info DismissibleRegularTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
             data-test="DesignSystem-DismissibleTabs--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -47,9 +51,12 @@ exports[`Tabs component
         </span>
       </div>
       <div
+        aria-label="Tab 2"
+        aria-selected="false"
         class="Tab align-items-center"
         data-test="DesignSystem-Tabs--Tab"
-        role="button"
+        id="tabs-3-tab-1"
+        role="tab"
         tabindex="0"
       >
         <span
@@ -75,9 +82,12 @@ exports[`Tabs component
       </div>
       <div
         aria-disabled="true"
+        aria-label="Tab 3"
+        aria-selected="false"
         class="Tab Tab--disabled align-items-center"
         data-test="DesignSystem-Tabs--Tab"
-        role="button"
+        id="tabs-3-tab-2"
+        role="tab"
         tabindex="-1"
       >
         <span
@@ -115,15 +125,19 @@ exports[`Tabs component
     <div
       class="TabsWrapper-header"
       data-test="DesignSystem-Tabs--Header"
+      role="tablist"
     >
       <div
-        class="Tab Tab--active Tab-selected align-items-center"
+        aria-label="Tab 1"
+        aria-selected="true"
+        class="Tab Tab--active Tab-selected align-items-center Tab--withDismissIcon"
         data-test="DesignSystem-Tabs--Tab"
-        role="button"
+        id="tabs-4-tab-0"
+        role="tab"
         tabindex="0"
       >
         <span
-          class="Tab--small Tab--overflow"
+          class="Tab--overflow Tab--withIconSmall"
           data-test="DesignSystem-Tabs--TextWrapper"
           style="max-width: var(--spacing-640);"
         >
@@ -140,10 +154,10 @@ exports[`Tabs component
             Tab 1
           </span>
           <i
-            class="material-symbols material-symbols-rounded Icon Icon--info DismissibleTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
+            class="material-symbols material-symbols-rounded Icon Icon--info DismissibleSmallTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
             data-test="DesignSystem-DismissibleTabs--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 12px; width: 12px;"
             tabindex="0"
           >
             clear
@@ -151,9 +165,12 @@ exports[`Tabs component
         </span>
       </div>
       <div
+        aria-label="Tab 2"
+        aria-selected="false"
         class="Tab align-items-center"
         data-test="DesignSystem-Tabs--Tab"
-        role="button"
+        id="tabs-4-tab-1"
+        role="tab"
         tabindex="0"
       >
         <span
@@ -179,9 +196,12 @@ exports[`Tabs component
       </div>
       <div
         aria-disabled="true"
+        aria-label="Tab 3"
+        aria-selected="false"
         class="Tab Tab--disabled align-items-center"
         data-test="DesignSystem-Tabs--Tab"
-        role="button"
+        id="tabs-4-tab-2"
+        role="tab"
         tabindex="-1"
       >
         <span
@@ -219,15 +239,19 @@ exports[`Tabs component
     <div
       class="TabsWrapper-header TabsWrapper-header--withSeparator"
       data-test="DesignSystem-Tabs--Header"
+      role="tablist"
     >
       <div
-        class="Tab Tab--active Tab-selected align-items-center"
+        aria-label="Tab 1"
+        aria-selected="true"
+        class="Tab Tab--active Tab-selected align-items-center Tab--withDismissIcon"
         data-test="DesignSystem-Tabs--Tab"
-        role="button"
+        id="tabs-1-tab-0"
+        role="tab"
         tabindex="0"
       >
         <span
-          class="Tab--regular Tab--overflow"
+          class="Tab--overflow Tab--withIconRegular"
           data-test="DesignSystem-Tabs--TextWrapper"
           style="max-width: var(--spacing-640);"
         >
@@ -244,7 +268,7 @@ exports[`Tabs component
             Tab 1
           </span>
           <i
-            class="material-symbols material-symbols-rounded Icon Icon--info DismissibleTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
+            class="material-symbols material-symbols-rounded Icon Icon--info DismissibleRegularTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
             data-test="DesignSystem-DismissibleTabs--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -255,9 +279,12 @@ exports[`Tabs component
         </span>
       </div>
       <div
+        aria-label="Tab 2"
+        aria-selected="false"
         class="Tab align-items-center"
         data-test="DesignSystem-Tabs--Tab"
-        role="button"
+        id="tabs-1-tab-1"
+        role="tab"
         tabindex="0"
       >
         <span
@@ -283,9 +310,12 @@ exports[`Tabs component
       </div>
       <div
         aria-disabled="true"
+        aria-label="Tab 3"
+        aria-selected="false"
         class="Tab Tab--disabled align-items-center"
         data-test="DesignSystem-Tabs--Tab"
-        role="button"
+        id="tabs-1-tab-2"
+        role="tab"
         tabindex="-1"
       >
         <span
@@ -323,15 +353,19 @@ exports[`Tabs component
     <div
       class="TabsWrapper-header TabsWrapper-header--withSeparator"
       data-test="DesignSystem-Tabs--Header"
+      role="tablist"
     >
       <div
-        class="Tab Tab--active Tab-selected align-items-center"
+        aria-label="Tab 1"
+        aria-selected="true"
+        class="Tab Tab--active Tab-selected align-items-center Tab--withDismissIcon"
         data-test="DesignSystem-Tabs--Tab"
-        role="button"
+        id="tabs-2-tab-0"
+        role="tab"
         tabindex="0"
       >
         <span
-          class="Tab--small Tab--overflow"
+          class="Tab--overflow Tab--withIconSmall"
           data-test="DesignSystem-Tabs--TextWrapper"
           style="max-width: var(--spacing-640);"
         >
@@ -348,10 +382,10 @@ exports[`Tabs component
             Tab 1
           </span>
           <i
-            class="material-symbols material-symbols-rounded Icon Icon--info DismissibleTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
+            class="material-symbols material-symbols-rounded Icon Icon--info DismissibleSmallTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
             data-test="DesignSystem-DismissibleTabs--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 12px; width: 12px;"
             tabindex="0"
           >
             clear
@@ -359,9 +393,12 @@ exports[`Tabs component
         </span>
       </div>
       <div
+        aria-label="Tab 2"
+        aria-selected="false"
         class="Tab align-items-center"
         data-test="DesignSystem-Tabs--Tab"
-        role="button"
+        id="tabs-2-tab-1"
+        role="tab"
         tabindex="0"
       >
         <span
@@ -387,9 +424,12 @@ exports[`Tabs component
       </div>
       <div
         aria-disabled="true"
+        aria-label="Tab 3"
+        aria-selected="false"
         class="Tab Tab--disabled align-items-center"
         data-test="DesignSystem-Tabs--Tab"
-        role="button"
+        id="tabs-2-tab-2"
+        role="tab"
         tabindex="-1"
       >
         <span
