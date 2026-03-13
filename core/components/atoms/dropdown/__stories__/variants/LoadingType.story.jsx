@@ -22,14 +22,26 @@ export const loadingType = () => {
           <div className="d-flex flex-column align-items-center mr-8 w-25" key={ind}>
             <Text weight="strong">{labelMapping[type]}</Text>
             <br />
-            <Dropdown options={storyOptions.slice(0, 5)} optionType={type} loading={true} />
+            <Dropdown
+              options={storyOptions.slice(0, 5)}
+              optionType={type}
+              loading={true}
+              aria-label="Select option"
+              listboxAriaLabel="Options"
+            />
           </div>
         );
       })}
       <div className="d-flex flex-column align-items-center w-25">
         <Text weight="strong">{'Checkboxes'}</Text>
         <br />
-        <Dropdown options={storyOptions.slice(0, 5)} withCheckbox={true} loading={true} />
+        <Dropdown
+          options={storyOptions.slice(0, 5)}
+          withCheckbox={true}
+          loading={true}
+          aria-label="Select option"
+          listboxAriaLabel="Options"
+        />
       </div>
     </div>
   );
@@ -50,23 +62,23 @@ const customCode = `() => {
     <div className='d-flex'>
       <div className='mr-8 w-25'>
         <Text weight="strong">Default</Text><br /><br />
-        <Dropdown options={storyOptions} optionType={'DEFAULT'} loading={true}/>
+        <Dropdown options={storyOptions} optionType={'DEFAULT'} loading={true} aria-label="Select option" listboxAriaLabel="Options" />
       </div>
       <div className='mr-8 w-25'>
         <Text weight="strong">Icon</Text><br /><br />
-        <Dropdown options={storyOptions} optionType={'WITH_ICON'} loading={true}/>
+        <Dropdown options={storyOptions} optionType={'WITH_ICON'} loading={true} aria-label="Select option" listboxAriaLabel="Options" />
       </div>
       <div className='mr-8 w-25'>
         <Text weight="strong">SubInfo</Text><br /><br />
-        <Dropdown options={storyOptions} optionType={'WITH_META'} loading={true}/>
+        <Dropdown options={storyOptions} optionType={'WITH_META'} loading={true} aria-label="Select option" listboxAriaLabel="Options" />
       </div>
       <div className='mr-8 w-25'>
         <Text weight="strong">Icon with subInfo</Text><br /><br />
-        <Dropdown options={storyOptions} optionType={'ICON_WITH_META'} loading={true}/>
+        <Dropdown options={storyOptions} optionType={'ICON_WITH_META'} loading={true} aria-label="Select option" listboxAriaLabel="Options" />
       </div>
       <div className='mr-8 w-25'>
         <Text weight="strong">{'Checkboxes'}</Text><br /><br />
-        <Dropdown options={storyOptions} withCheckbox={true} loading={true}/>
+        <Dropdown options={storyOptions} withCheckbox={true} loading={true} aria-label="Select option" listboxAriaLabel="Options" />
       </div>
     </div>
   )

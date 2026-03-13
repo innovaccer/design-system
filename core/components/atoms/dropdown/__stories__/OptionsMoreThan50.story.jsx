@@ -30,7 +30,16 @@ export const dropdownOptionsMoreThan50 = () => {
     });
   };
 
-  return <Dropdown fetchOptions={fetchOptions} withCheckbox={true} className="w-25" placeholder="Select" />;
+  return (
+    <Dropdown
+      fetchOptions={fetchOptions}
+      withCheckbox={true}
+      className="w-25"
+      placeholder="Select"
+      aria-label="Select options"
+      listboxAriaLabel="Options"
+    />
+  );
 };
 
 const customCode = `() => {
@@ -66,7 +75,9 @@ const customCode = `() => {
       withCheckbox={true}
       className="w-25"
       placeholder="Select"
-  />
+      aria-label="Select options"
+      listboxAriaLabel="Options"
+    />
   );
 }`;
 

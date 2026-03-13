@@ -22,7 +22,16 @@ export const dropdownItemsWithCheckbox = () => {
       value: '56_above',
     },
   ];
-  return <Dropdown options={options} withCheckbox={true} className="w-25" placeholder="Select" />;
+  return (
+    <Dropdown
+      options={options}
+      withCheckbox={true}
+      className="w-25"
+      placeholder="Select"
+      aria-label="Select age range"
+      listboxAriaLabel="Age range options"
+    />
+  );
 };
 
 export default {

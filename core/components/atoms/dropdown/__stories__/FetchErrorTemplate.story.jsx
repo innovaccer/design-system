@@ -93,6 +93,8 @@ export const fetchErrorTemplate = () => {
     triggerOptions: { customLabel, labelLimit },
     options: dropdownOptions,
     onChange: onChangeHandler,
+    'aria-label': 'Select option',
+    listboxAriaLabel: 'Options',
   };
 
   const key = `checkbox${withCheckbox} applyButton:${showApplyButton} search:${withSearch}`;
@@ -130,6 +132,8 @@ const customCode = `() => {
     <div className='w-25 pb-14'>
       <Dropdown
         fetchOptions={fetchOptions}
+        aria-label="Select option"
+        listboxAriaLabel="Options"
       />
     </div>
   );

@@ -35,7 +35,14 @@ export const staticLimit = () => {
             <Text weight="strong">{value ? 'Options length > staticLimit' : 'Options length <= staticLimit'}</Text>
             <br />
             <br />
-            <Dropdown withSearch={true} withCheckbox={true} options={options} {...(value && { fetchOptions })} />
+            <Dropdown
+              withSearch={true}
+              withCheckbox={true}
+              options={options}
+              {...(value && { fetchOptions })}
+              aria-label="Select options"
+              listboxAriaLabel="Options"
+            />
           </div>
         );
       })}
@@ -80,6 +87,8 @@ const customCode = `() => {
           withCheckbox={true}
           staticLimit={staticLimit}
           fetchOptions={fetchOptions}
+          aria-label="Select options"
+          listboxAriaLabel="Options"
         />
       </div>
       <div className='mr-10 w-25'>
@@ -88,6 +97,8 @@ const customCode = `() => {
           withCheckbox={true}
           staticLimit={staticLimit}
           options={dropdownOptions.slice(0, staticLimit)}
+          aria-label="Select options"
+          listboxAriaLabel="Options"
         />
       </div>
     </div>

@@ -46,6 +46,8 @@ export const multiSelectWithApplyButton = () => {
         withCheckbox={true}
         showApplyButton={true}
         open={open}
+        aria-label="Select options"
+        listboxAriaLabel="Options"
       />
     </div>
   );
@@ -100,6 +102,8 @@ const customCode = `() => {
         withCheckbox={true}
         showApplyButton={true}
         open={open}
+        aria-label="Select options"
+        listboxAriaLabel="Options"
       />
     </div>
   );

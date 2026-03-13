@@ -15,7 +15,13 @@ export const disabled = () => {
           <div className="w-25 ml-10" key={ind}>
             <Text weight="strong">{state ? 'Disabled' : 'Enabled'}</Text> <br />
             <br />
-            <Dropdown disabled={state} options={storyOptions} placeholder={'Select'} />
+            <Dropdown
+              disabled={state}
+              options={storyOptions}
+              placeholder={'Select'}
+              aria-label="Select option"
+              listboxAriaLabel="Options"
+            />
           </div>
         );
       })}
@@ -38,11 +44,11 @@ const customCode = `() => {
     <div className='d-flex'>
       <div className='mr-8 w-25'>
         <Text weight="strong">Disabled</Text> <br /><br />
-        <Dropdown disabled={true} options={storyOptions} />
+        <Dropdown disabled={true} options={storyOptions} aria-label="Select option" listboxAriaLabel="Options" />
       </div>
       <div className='mr-8 w-25'>
         <Text weight="strong">Enabled</Text> <br /><br />
-        <Dropdown disabled={false} options={storyOptions} />
+        <Dropdown disabled={false} options={storyOptions} aria-label="Select option" listboxAriaLabel="Options" />
       </div>
     </div>
   )

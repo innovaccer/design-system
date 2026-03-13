@@ -331,6 +331,8 @@ const DropdownList = (props: OptionsProps) => {
       error={error}
       ref={dropdownTriggerRef}
       iconType={iconType}
+      aria-label={props['aria-label']}
+      aria-labelledby={props['aria-labelledby']}
     >
       {triggerLabel}
     </DropdownButton>
@@ -619,34 +621,34 @@ const DropdownList = (props: OptionsProps) => {
     }
 
     return (
-      <div
-        className={dropdownWrapperClass}
-        style={dropdownStyle}
-        ref={dropdownRef}
-        role={menu ? 'menu' : 'listbox'}
-        aria-label={listboxAriaLabel}
-      >
+      <div className={dropdownWrapperClass} style={dropdownStyle} ref={dropdownRef}>
         {selectAllPresent && renderSelectAll()}
         {selected.length > 0 && renderGroups(selectedSectionLabel, true)}
-        {selected.map((option, index) => renderOptions(option, index))}
-        {selected.length > 0 &&
-          listOptions.length - selected.length > 0 &&
-          !listOptions[0].group?.trim() && // allItemsSectionLabel is displayed only when there are no groups
-          renderGroups(allItemsSectionLabel)}
-        {groupedListOptions.map((option, index) => {
-          const prevGroup =
-            index > 0 ? groupedListOptions[index - 1].group : selected.length ? selectedSectionLabel : undefined;
-          const currentGroup = option.group;
-          const isGroupDifferent = prevGroup !== currentGroup;
-          const updatedIndex = index + selected.length;
+        <div
+          role={menu ? 'menu' : 'listbox'}
+          aria-label={listboxAriaLabel}
+          aria-multiselectable={!menu && withCheckbox ? true : undefined}
+        >
+          {selected.map((option, index) => renderOptions(option, index))}
+          {selected.length > 0 &&
+            listOptions.length - selected.length > 0 &&
+            !listOptions[0].group?.trim() && // allItemsSectionLabel is displayed only when there are no groups
+            renderGroups(allItemsSectionLabel)}
+          {groupedListOptions.map((option, index) => {
+            const prevGroup =
+              index > 0 ? groupedListOptions[index - 1].group : selected.length ? selectedSectionLabel : undefined;
+            const currentGroup = option.group;
+            const isGroupDifferent = prevGroup !== currentGroup;
+            const updatedIndex = index + selected.length;
 
-          return (
-            <div className={dropdownStyles['Option-checkboxWrapper']} key={index}>
-              {isGroupDifferent && currentGroup && renderGroups(currentGroup)}
-              {renderOptions(option, updatedIndex)}
-            </div>
-          );
-        })}
+            return (
+              <div className={dropdownStyles['Option-checkboxWrapper']} key={index}>
+                {isGroupDifferent && currentGroup && renderGroups(currentGroup)}
+                {renderOptions(option, updatedIndex)}
+              </div>
+            );
+          })}
+        </div>
         {props.async && remainingOptions > 0 && renderFooter()}
       </div>
     );

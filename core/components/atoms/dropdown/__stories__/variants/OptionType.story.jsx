@@ -29,14 +29,23 @@ export const optionType = () => {
           <div className="d-flex flex-column mr-9 w-25" key={ind}>
             <Text weight="strong">{labelMapping[type]}</Text>
             <br />
-            <Dropdown options={optionsMapping[type].slice(0, 3)} />
+            <Dropdown
+              options={optionsMapping[type].slice(0, 3)}
+              aria-label="Select option"
+              listboxAriaLabel="Options"
+            />
           </div>
         );
       })}
       <div className="d-flex flex-column w-25">
         <Text weight="strong">{'Checkboxes'}</Text>
         <br />
-        <Dropdown options={storyOptions.slice(0, 3)} withCheckbox={true} />
+        <Dropdown
+          options={storyOptions.slice(0, 3)}
+          withCheckbox={true}
+          aria-label="Select option"
+          listboxAriaLabel="Options"
+        />
       </div>
     </div>
   );
