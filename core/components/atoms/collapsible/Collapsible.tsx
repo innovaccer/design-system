@@ -89,6 +89,16 @@ export const Collapsible = (props: CollapsibleProps) => {
     }
   };
 
+  const onKeyDownHandler = (event: React.KeyboardEvent) => {
+    // Only activate on Enter or Space (WAI-ARIA button pattern)
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault(); // Prevent page scroll on Space
+      // Prevent auto-repeat: only process first keydown
+      if (event.repeat) return;
+      onToggleHandler(!expanded, 'click')();
+    }
+  };
+
   const width = expanded ? expandedWidth : undefined;
 
   return (
@@ -110,7 +120,7 @@ export const Collapsible = (props: CollapsibleProps) => {
             className={FooterClass}
             data-test="DesignSystem-Collapsible--Footer"
             onClick={onToggleHandler(!expanded, 'click')}
-            onKeyDown={onToggleHandler(!expanded, 'click')}
+            onKeyDown={onKeyDownHandler}
           >
             <Icon
               name={expanded ? 'keyboard_arrow_left' : 'keyboard_arrow_right'}

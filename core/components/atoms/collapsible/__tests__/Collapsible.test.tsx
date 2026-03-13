@@ -176,3 +176,78 @@ describe('Collapsible component with prop: onToggle', () => {
     expect(onToggle).toHaveBeenCalledWith(false);
   });
 });
+
+describe('Collapsible keyboard interactions', () => {
+  it('should toggle on Enter key', () => {
+    const onToggleMock = jest.fn();
+    const { getByTestId } = render(
+      <Collapsible expanded={false} onToggle={onToggleMock} withTrigger={true} height={height} expandedWidth={width}>
+        <div>Content</div>
+      </Collapsible>
+    );
+
+    const footer = getByTestId('DesignSystem-Collapsible--Footer');
+    fireEvent.keyDown(footer, { key: 'Enter' });
+
+    expect(onToggleMock).toHaveBeenCalledWith(true);
+  });
+
+  it('should toggle on Space key', () => {
+    const onToggleMock = jest.fn();
+    const { getByTestId } = render(
+      <Collapsible expanded={false} onToggle={onToggleMock} withTrigger={true} height={height} expandedWidth={width}>
+        <div>Content</div>
+      </Collapsible>
+    );
+
+    const footer = getByTestId('DesignSystem-Collapsible--Footer');
+    fireEvent.keyDown(footer, { key: ' ' });
+
+    expect(onToggleMock).toHaveBeenCalledWith(true);
+  });
+
+  it('should NOT toggle on Tab key', () => {
+    const onToggleMock = jest.fn();
+    const { getByTestId } = render(
+      <Collapsible expanded={false} onToggle={onToggleMock} withTrigger={true} height={height} expandedWidth={width}>
+        <div>Content</div>
+      </Collapsible>
+    );
+
+    const footer = getByTestId('DesignSystem-Collapsible--Footer');
+    fireEvent.keyDown(footer, { key: 'Tab' });
+
+    expect(onToggleMock).not.toHaveBeenCalled();
+  });
+
+  it('should NOT toggle on arrow keys', () => {
+    const onToggleMock = jest.fn();
+    const { getByTestId } = render(
+      <Collapsible expanded={false} onToggle={onToggleMock} withTrigger={true} height={height} expandedWidth={width}>
+        <div>Content</div>
+      </Collapsible>
+    );
+
+    const footer = getByTestId('DesignSystem-Collapsible--Footer');
+    fireEvent.keyDown(footer, { key: 'ArrowDown' });
+    fireEvent.keyDown(footer, { key: 'ArrowUp' });
+
+    expect(onToggleMock).not.toHaveBeenCalled();
+  });
+
+  it('should prevent default on Space to avoid page scroll', () => {
+    const { getByTestId } = render(
+      <Collapsible expanded={false} onToggle={jest.fn()} withTrigger={true} height={height} expandedWidth={width}>
+        <div>Content</div>
+      </Collapsible>
+    );
+
+    const footer = getByTestId('DesignSystem-Collapsible--Footer');
+    const event = new KeyboardEvent('keydown', { key: ' ', bubbles: true });
+    const preventDefaultSpy = jest.spyOn(event, 'preventDefault');
+
+    footer.dispatchEvent(event);
+
+    expect(preventDefaultSpy).toHaveBeenCalled();
+  });
+});
