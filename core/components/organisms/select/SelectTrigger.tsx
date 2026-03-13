@@ -145,7 +145,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     'white-space-nowrap': true,
   });
 
-  const iconClass = classNames('align-items-center', 'mr-2', 'ml-3', selectStyles['Select-crossButton']);
+  const iconClass = classNames('align-items-center', 'mr-2', 'ml-3', 'p-3-5', selectStyles['Select-crossButton']);
   const iconSize = triggerSize === 'small' ? 14 : 16;
   const triggerTextSize = triggerSize === 'small' ? 'small' : 'regular';
   return (
