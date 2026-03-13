@@ -72,6 +72,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: 'all',
         title: 'Button',
         description: 'Outlined Alert Button - All States',
         a11yProps: ` **aria-label:** Add \`aria-label='Delete'\` to describe the action of outlined button `,

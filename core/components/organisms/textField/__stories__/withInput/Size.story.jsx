@@ -28,6 +28,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: 'all',
         title: 'TextField',
       },
     },

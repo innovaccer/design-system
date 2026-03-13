@@ -97,6 +97,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: 'all',
         title: 'Button',
         description: 'Outlined Basic Button - All States',
         a11yProps: `**aria-label:** Add \`aria-label='Cancel'\` to describe the action of outlined button `,

@@ -98,6 +98,10 @@ export default {
         component: 'Demonstrates various alignment options for Mds grid.',
       },
       docPage: {
+        a11yPropsTable: {
+          MdsGrid: 'all',
+          'MdsGrid.GridItem': 'all',
+        },
         title: 'MdsGrid Alignment',
       },
     },

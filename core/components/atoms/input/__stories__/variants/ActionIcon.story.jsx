@@ -30,6 +30,10 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: {
+          Input: 'all',
+          'Input.ActionButton': ['tabIndex'],
+        },
         customCode,
         props: {
           exclude: ['autocomplete'],

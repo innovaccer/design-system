@@ -39,6 +39,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: 'all',
         title: 'Button',
         a11yProps: ` **aria-label:** Add \`aria-label='Delete'\` to describe the action of button `,
       },

@@ -10,6 +10,7 @@ import vsDark from 'prism-react-renderer/themes/vsDark';
 import { LiveProvider, LiveEditor, LiveError, LivePreview, withLive } from 'react-live';
 import openSandbox from './sandbox';
 import generateImports from './generateImports';
+import { AccessibilityPropsTable, A11yPropsTableConfig } from './AccessibilityPropsTable';
 import * as componentLib from '@/index';
 import classNames from 'classnames';
 
@@ -339,12 +340,13 @@ export const docPage = () => {
     noSandbox,
     imports,
     a11yProps,
+    a11yPropsTable,
     propDescription,
     sandboxTitle,
     isDeprecated,
     isPattern,
     tsxStory,
-  } = sp.docs.docPage || {};
+  } = sp.docs.docPage || ({} as { a11yPropsTable?: A11yPropsTableConfig; [key: string]: any });
   const { component: { displayName = '' } = {} } = story;
   const pageClassnames = classNames({
     DocPage: true,
@@ -393,6 +395,8 @@ export const docPage = () => {
           <Description>{a11yProps}</Description>
         </>
       )}
+
+      {a11yPropsTable && <AccessibilityPropsTable config={a11yPropsTable} />}
 
       {!noProps && (
         <>

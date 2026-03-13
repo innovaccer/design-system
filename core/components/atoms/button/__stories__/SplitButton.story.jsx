@@ -25,6 +25,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: 'all',
         title: 'Button',
         description: 'Split button.',
         a11yProps: ` **aria-label:** Add \`aria-label='Request review'\` to describe the action of button `,

@@ -65,6 +65,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: ['tabIndex'],
         customCode,
         isDeprecated: true,
         props: {

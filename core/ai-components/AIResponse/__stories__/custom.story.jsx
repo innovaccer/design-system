@@ -60,6 +60,12 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: {
+          AIResponse: 'all',
+          'AIResponse.Button': 'all',
+          'AIResponse.ActionBar': 'all',
+          'AIResponse.Body': 'all',
+        },
         title: 'AIResponse',
         customCode,
       },

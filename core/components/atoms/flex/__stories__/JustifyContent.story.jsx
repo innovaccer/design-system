@@ -130,6 +130,7 @@ export default {
         component: 'Demonstrates various justifyContent options for Flex component.',
       },
       docPage: {
+        a11yPropsTable: 'all',
         title: 'Flex JustifyContent',
       },
     },

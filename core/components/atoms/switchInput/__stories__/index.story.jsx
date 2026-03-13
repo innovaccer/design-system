@@ -10,6 +10,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: 'all',
         title: 'Switch',
         a11yProps: ` **aria-label:** Add \`aria-label='Default Checked Switch'\` to describe the action of switch.`,
       },

@@ -69,6 +69,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: ['aria-label'],
         customCode,
       },
     },

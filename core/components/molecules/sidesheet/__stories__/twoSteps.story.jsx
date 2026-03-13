@@ -198,6 +198,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: ['aria-labelledby'],
         customCode,
         title: 'Sidesheet',
         noHtml: true,

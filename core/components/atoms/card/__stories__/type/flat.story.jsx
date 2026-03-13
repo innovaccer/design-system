@@ -13,4 +13,12 @@ export const Flat = () => {
 export default {
   title: 'Components/Card/Type/Flat',
   component: Card,
+  parameters: {
+    docs: {
+      docPage: {
+        a11yPropsTable: 'all',
+        title: 'Card',
+      },
+    },
+  },
 };

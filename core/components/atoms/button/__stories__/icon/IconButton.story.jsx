@@ -11,6 +11,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: 'all',
         title: 'Button',
         description: 'Secondary button with icon.',
         a11yProps: `**aria-label:** Add \`aria-label='Next in rank'\` to describe the action of button. `,

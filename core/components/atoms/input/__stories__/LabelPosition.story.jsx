@@ -63,6 +63,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: 'all',
         title: 'Input',
         customCode,
         props: {

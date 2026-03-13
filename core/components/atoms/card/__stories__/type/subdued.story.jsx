@@ -19,6 +19,7 @@ export default {
       docPage: {
         title: 'CardSubdued',
         description: 'A component to highlight section of a card.',
+        a11yPropsTable: 'all',
       },
     },
   },

@@ -28,6 +28,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: 'all',
         a11yProps: ` **htmlFor:**  <br/> 
         -Add \`htmlFor='vaccination-status'\` to label to programmatically associated it with switch 
         which has \`id='vaccination-status'\`. 

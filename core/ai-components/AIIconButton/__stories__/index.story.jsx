@@ -12,6 +12,7 @@ export default {
     docs: {
       docPage: {
         title: 'AIIconButton',
+        a11yPropsTable: 'all',
       },
     },
   },

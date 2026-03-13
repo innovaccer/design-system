@@ -13,6 +13,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: 'all',
         title: 'Button',
         description: 'Large expanded button.',
         a11yProps: ` **aria-label:** Add \`aria-label='Login'\` to describe the action of button `,

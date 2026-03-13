@@ -94,6 +94,9 @@ export default {
         component:
           'Flex is a layout component that helps create flexible and responsive layouts using CSS Flexbox properties.',
       },
+      docPage: {
+        a11yPropsTable: 'all',
+      },
     },
   },
 };

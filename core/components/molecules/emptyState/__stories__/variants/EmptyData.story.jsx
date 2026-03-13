@@ -49,6 +49,13 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: {
+          EmptyState: null,
+          'EmptyState.Image': 'all',
+          'EmptyState.Title': null,
+          'EmptyState.Description': null,
+          'EmptyState.Actions': null,
+        },
         title: 'EmptyState',
         customCode,
       },

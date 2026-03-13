@@ -36,6 +36,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: ['tabIndex'],
         isDeprecated: true,
         title: 'Dropdown',
         props: {

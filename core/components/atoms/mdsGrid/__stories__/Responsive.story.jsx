@@ -86,6 +86,10 @@ export default {
         component: 'Demonstrates responsive grid layouts that adapt to different screen sizes.',
       },
       docPage: {
+        a11yPropsTable: {
+          MdsGrid: 'all',
+          'MdsGrid.GridItem': 'all',
+        },
         title: 'MdsGrid Responsive',
       },
     },

@@ -179,6 +179,12 @@ export default {
     docs: {
       docPage: {
         title: 'AIResponse',
+        a11yPropsTable: {
+          AIResponse: 'all',
+          'AIResponse.Button': 'all',
+          'AIResponse.ActionBar': 'all',
+          'AIResponse.Body': 'all',
+        },
         customCode,
       },
     },

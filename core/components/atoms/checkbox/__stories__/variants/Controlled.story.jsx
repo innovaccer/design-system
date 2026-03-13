@@ -37,6 +37,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: 'all',
         customCode,
         description:
           '######Checkbox has two types:\n- [Controlled Checkbox](https://reactjs.org/docs/forms.html#controlled-components)\n- [Uncontrolled Checkbox](https://reactjs.org/docs/uncontrolled-components.html)',

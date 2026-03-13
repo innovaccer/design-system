@@ -23,4 +23,12 @@ export const withSuffix = () => {
 export default {
   title: 'Components/Avatar/Avatar/With Suffix',
   component: Avatar,
+  parameters: {
+    docs: {
+      docPage: {
+        a11yPropsTable: ['role', 'tabIndex'],
+        title: 'Avatar',
+      },
+    },
+  },
 };

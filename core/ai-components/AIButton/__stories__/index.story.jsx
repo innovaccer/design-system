@@ -12,6 +12,7 @@ export default {
     docs: {
       docPage: {
         title: 'AIButton',
+        a11yPropsTable: 'all',
         props: {
           exclude: ['appearance'],
         },

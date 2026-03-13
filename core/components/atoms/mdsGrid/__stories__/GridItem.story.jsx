@@ -225,6 +225,10 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: {
+          MdsGrid: 'all',
+          'MdsGrid.GridItem': 'all',
+        },
         customCode,
       },
     },

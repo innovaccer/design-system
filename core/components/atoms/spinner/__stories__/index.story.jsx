@@ -9,4 +9,12 @@ export const all = () => {
 export default {
   title: 'Components/Progress Indicators/Spinner/All',
   component: Spinner,
+  parameters: {
+    docs: {
+      docPage: {
+        a11yPropsTable: ['aria-label'],
+        title: 'Spinner',
+      },
+    },
+  },
 };

@@ -10,6 +10,7 @@ export default {
     docs: {
       docPage: {
         title: 'Checkbox',
+        a11yPropsTable: 'all',
       },
     },
   },

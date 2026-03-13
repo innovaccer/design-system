@@ -12,4 +12,12 @@ export const inlineLoader = () => (
 export default {
   title: 'Components/Progress Indicators/Spinner/Inline Loader',
   component: Spinner,
+  parameters: {
+    docs: {
+      docPage: {
+        a11yPropsTable: ['aria-label'],
+        title: 'Spinner',
+      },
+    },
+  },
 };

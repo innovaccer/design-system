@@ -99,6 +99,13 @@ export default {
         customCode,
         title: 'Modal',
         noHtml: true,
+        a11yPropsTable: {
+          Modal: ['aria-labelledby'],
+          ModalHeader: null,
+          ModalBody: null,
+          ModalDescription: null,
+          ModalFooter: null,
+        },
       },
     },
   },

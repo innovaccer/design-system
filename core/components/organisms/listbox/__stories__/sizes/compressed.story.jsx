@@ -66,6 +66,10 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: {
+          Listbox: 'all',
+          'Listbox.Item': 'all',
+        },
         title: 'Listbox',
       },
     },

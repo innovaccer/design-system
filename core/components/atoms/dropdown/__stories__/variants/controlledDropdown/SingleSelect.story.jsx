@@ -128,6 +128,7 @@ export default {
   parameters: {
     docs: {
       docPage: {
+        a11yPropsTable: ['tabIndex'],
         customCode,
         title: 'Controlled Dropdown',
         isDeprecated: true,
