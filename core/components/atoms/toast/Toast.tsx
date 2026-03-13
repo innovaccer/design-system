@@ -102,12 +102,13 @@ export const Toast = (props: ToastProps) => {
   });
 
   const toastRef = React.useRef<HTMLDivElement>(null);
+  const dismissibleOnMount = React.useRef(!!onClose);
 
   React.useEffect(() => {
-    if (onClose && toastRef.current) {
+    if (dismissibleOnMount.current && toastRef.current) {
       toastRef.current.focus({ preventScroll: true });
     }
-  }, [onClose]);
+  }, []);
 
   const onCloseHandler = () => {
     if (onClose) onClose();
