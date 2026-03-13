@@ -278,9 +278,9 @@ describe('text color for different states', () => {
     expect(getAllByTestId('DesignSystem-Text')[3]).toHaveClass('color-inverse-lightest');
   });
 
-  it('should have the text color as primary for current date ', () => {
+  it('should have the text color as primary-dark for current date ', () => {
     const { getAllByTestId } = render(<Calendar />);
-    expect(getAllByTestId('DesignSystem-Calendar--dateValue')[24]).toHaveClass('color-primary');
+    expect(getAllByTestId('DesignSystem-Calendar--dateValue')[24]).toHaveClass('color-primary-dark');
   });
 
   it('should have the text color as primary-lighter when the state is disabled but with current year', () => {
