@@ -28,13 +28,22 @@ export const disabledOption = () => {
           placeholder={'Select'}
           onChange={onChangeHandler}
           onClose={onClose}
+          aria-label="Select option"
+          optionsAriaLabel="Options"
         />
       </div>
       <div className="mr-9 w-25">
         <Text weight="strong">{'Without Checkbox'}</Text>
         <br />
         <br />
-        <Dropdown options={disabledStoryOptions} placeholder={'Select'} onChange={onChangeHandler} onClose={onClose} />
+        <Dropdown
+          options={disabledStoryOptions}
+          placeholder={'Select'}
+          onChange={onChangeHandler}
+          onClose={onClose}
+          aria-label="Select option"
+          optionsAriaLabel="Options"
+        />
       </div>
     </div>
   );
@@ -69,6 +78,8 @@ const customCode = `() => {
           placeholder={'Select'}
           onChange={onChangeHandler}
           onClose={onClose}
+          aria-label="Select option"
+          optionsAriaLabel="Options"
         />
       </div>
       <div className="mr-9 w-25">
@@ -78,6 +89,8 @@ const customCode = `() => {
           placeholder={'Select'}
           onChange={onChangeHandler}
           onClose={onClose}
+          aria-label="Select option"
+          optionsAriaLabel="Options"
         />
       </div>
     </div>

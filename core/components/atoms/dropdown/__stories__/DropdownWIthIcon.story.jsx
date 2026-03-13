@@ -203,7 +203,14 @@ export const dropdownWithIcon = () => {
     },
   ];
   return (
-    <Dropdown options={options} icon="location_on" className="w-25" placeholder="Select state" staticLimit={100} />
+    <Dropdown
+      options={options}
+      icon="location_on"
+      className="w-25"
+      placeholder="Select state"
+      staticLimit={100}
+      aria-label="Select state"
+    />
   );
 };
 

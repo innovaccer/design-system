@@ -110,13 +110,19 @@ export const floatingPanel = () => {
 
   return (
     <div className="d-flex bg-secondary-lightest vh-75">
-      <VerticalNav menus={primaryNavdata} active={primaryActive} onClick={setPrimaryActive} />
+      <VerticalNav
+        menus={primaryNavdata}
+        active={primaryActive}
+        onClick={setPrimaryActive}
+        aria-label="Primary sidebar navigation"
+      />
       <VerticalNav
         menus={secondaryNavdata}
         active={secondaryActive}
         rounded={true}
         className="mt-10 ml-5"
         onClick={setSecondaryActive}
+        aria-label="Secondary navigation"
       />
     </div>
   );
@@ -236,6 +242,7 @@ const customCode = `() => {
         menus={primaryNavdata}
         active={primaryActive}
         onClick={setPrimaryActive}
+        aria-label="Primary sidebar navigation"
       />
       <VerticalNav
         menus={secondaryNavdata}
@@ -243,6 +250,7 @@ const customCode = `() => {
         rounded={true}
         className="mt-10 ml-5"
         onClick={setSecondaryActive}
+        aria-label="Secondary navigation"
       />
     </div>
   );

@@ -10,7 +10,13 @@ export const Indented = () => {
           <CardBody className="p-0">
             <Row className="p-6">
               <Column size={8}>
-                <Input className="w-25" icon="search" name="input" placeholder="Search" />
+                <Input
+                  className="w-25"
+                  icon="search"
+                  name="input"
+                  placeholder="Search"
+                  aria-label="Search assessments"
+                />
               </Column>
             </Row>
 

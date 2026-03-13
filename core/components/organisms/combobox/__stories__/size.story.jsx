@@ -31,7 +31,12 @@ export const sizes = () => {
         return (
           <div key={size}>
             <Label withInput={true}>Drug Name</Label>
-            <Combobox onChange={onChangeHandler} placeholder="Enter drug name" size={size}>
+            <Combobox
+              onChange={onChangeHandler}
+              placeholder="Enter drug name"
+              size={size}
+              aria-label="Drug name selector"
+            >
               {filterList.length > 0 && (
                 <Combobox.List>
                   {filterList.map((item, key) => {
@@ -79,7 +84,7 @@ const customCode = `() => {
         return (
           <div key={size}>
             <Label withInput={true}>Drug Name</Label>
-            <Combobox onChange={onChangeHandler} placeholder="Enter drug name" size={size}>
+            <Combobox onChange={onChangeHandler} placeholder="Enter drug name" size={size} aria-label="Drug name selector">
               {filterList.length > 0 && (
                 <Combobox.List>
                   {filterList.map((item, key) => {

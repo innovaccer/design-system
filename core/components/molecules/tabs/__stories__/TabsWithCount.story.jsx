@@ -22,16 +22,17 @@ export const tabsWithCount = () => {
     return action(`tab-change: ${tabIndex}`)();
   };
 
+  const tabsLabelId = 'tabs-count-label';
   return (
     <div>
-      <div className="d-flex justify-content-between">
+      <div id={tabsLabelId} className="d-flex justify-content-between">
         <Heading size="m" className="pl-5">
           Strategy
         </Heading>
         <Button appearance="primary">New Strategy</Button>
       </div>
       <div className="d-flex align-items-center mt-3">
-        <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6">
+        <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6" aria-labelledby={tabsLabelId}>
           <Tab label="All" count={12} className="pl-5">
             <div>All</div>
           </Tab>
@@ -88,9 +89,10 @@ const customCode = `() => {
     setActiveIndex(tabIndex);
   };
 
+  const tabsLabelId = 'tabs-count-label';
   return(
     <div>
-      <div className="d-flex justify-content-between">
+      <div id={tabsLabelId} className="d-flex justify-content-between">
         <Heading size="m" className="pl-5">Strategy</Heading>
         <Button appearance="primary">New Strategy</Button>
       </div>
@@ -99,6 +101,7 @@ const customCode = `() => {
           onTabChange={onTabChangeHandler}
           className="mb-6"
           activeIndex={activeIndex}
+          aria-labelledby={tabsLabelId}
         >
           <Tab label="All" count={12} className="pl-5">
             <div>All</div>

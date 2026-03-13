@@ -27,9 +27,13 @@ export const all = () => {
         <Heading size="s">Select Assessment</Heading>
       </CardHeader>
 
-      <Listbox>
+      <Listbox aria-label="Assessment options">
         {data.map((item, key) => {
-          return <Listbox.Item key={key}>{item.assessment}</Listbox.Item>;
+          return (
+            <Listbox.Item key={key} aria-label={item.assessment}>
+              {item.assessment}
+            </Listbox.Item>
+          );
         })}
       </Listbox>
     </Card>
@@ -61,9 +65,9 @@ const customCode = `() => {
         <Heading size="s">Select Assessment</Heading>
       </CardHeader>
 
-      <Listbox>
+      <Listbox aria-label="Assessment options">
         {data.map((item, key) => {
-          return <Listbox.Item key={key}>{item.assessment}</Listbox.Item>;
+          return <Listbox.Item key={key} aria-label={item.assessment}>{item.assessment}</Listbox.Item>;
         })}
       </Listbox>
     </Card>

@@ -21,6 +21,7 @@ export const withInputErrorState = () => {
         outputFormat={outputFormat}
         onTimeChange={onTimeChange}
         error={true}
+        aria-label="Time input with error"
       />
       <HelpText error={true} message={'Error message goes here.'} />
     </div>
@@ -39,6 +40,7 @@ const customCode = `() => {
         outputFormat={'hh:mm AM'}
         onTimeChange={onTimeChange}
         error={true}
+        aria-label="Time input with error"
       />
       <HelpText error={true} message={'Error message goes here.'} />
     </div>

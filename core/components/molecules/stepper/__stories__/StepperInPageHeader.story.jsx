@@ -33,7 +33,7 @@ export const stepperInPageHeader = () => {
       </Text>
       <Avatar className="mr-4" firstName="John" lastName="Doe" appearance="accent2" />
       <div className="mr-4">
-        <Menu trigger={<Menu.Trigger />}>
+        <Menu trigger={<Menu.Trigger aria-label="Open actions menu" />}>
           <Menu.List>
             <Menu.Item>Option 1</Menu.Item>
             <Menu.Item>Option 2</Menu.Item>
@@ -106,7 +106,7 @@ const customCode = `() => {
       <Text className="mr-4" appearance="subtle" >Few minutes ago</Text>
       <Avatar className="mr-4" firstName="John" lastName="Doe" appearance="accent2"/>
       <div className="mr-4">
-        <Menu trigger={<Menu.Trigger />}>
+        <Menu trigger={<Menu.Trigger aria-label="Open actions menu" />}>
           <Menu.List>
             <Menu.Item>Option 1</Menu.Item>
             <Menu.Item>Option 2</Menu.Item>

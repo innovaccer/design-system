@@ -22,6 +22,7 @@ export const all = () => {
 
   return (
     <Checkbox
+      aria-label={label}
       checked={checked}
       indeterminate={indeterminate}
       disabled={disabled}
