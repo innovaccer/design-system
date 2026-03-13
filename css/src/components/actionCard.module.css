@@ -15,9 +15,8 @@
 
 .ActionCard--default:focus,
 .ActionCard--default:focus-visible {
-  outline: none;
-  border: var(--border-width-2-5) solid var(--secondary-dark);
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 .ActionCard--default:active {
