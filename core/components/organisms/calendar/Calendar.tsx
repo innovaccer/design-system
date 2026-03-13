@@ -1309,7 +1309,12 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             const effectiveRow = focusedDateRow ?? selectedPos?.row ?? 0;
             const effectiveCol = focusedDateCol ?? selectedPos?.col ?? 0;
             const effectiveMonthIndex = focusedDateMonthIndex ?? (selectedPos ? index : 0);
-            const isFocused = effectiveMonthIndex === index && effectiveRow === row && effectiveCol === colIndex;
+
+            // Clamp focused row to valid range for current month's grid
+            const maxValidRow = noOfRows - 1;
+            const clampedRow = Math.min(effectiveRow, maxValidRow);
+
+            const isFocused = effectiveMonthIndex === index && clampedRow === row && effectiveCol === colIndex;
 
             const dateCellContent = (
               <>
@@ -1363,11 +1368,15 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               </>
             );
 
+            // Only render dummy dates on outer edges in multi-month view
+            // In monthsInView > 1, prevent duplicate rendering of boundary dates
+            const { monthsInView = 1 } = this.props;
+            const isEdgeMonth = monthsInView === 1 || index === 0 || index === monthsInView - 1;
+            const shouldRenderDummy = !dummy || isEdgeMonth;
+
             return (
               <div key={`${row}-${colIndex}`} className={wrapperClass} data-test="designSystem-Calendar-WrapperClass">
-                {(!dummy || (dummy && date > 0 && index === monthsInView - 1) || (dummy && date <= 0 && index === 0)) && (
-                  dateCellContent
-                )}
+                {shouldRenderDummy && dateCellContent}
               </div>
             );
           })}
