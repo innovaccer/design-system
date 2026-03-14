@@ -1,0 +1,22 @@
+### Handling Errors in Checkbox
+
+<br />
+
+It is recommended to use an error message when a checkbox is in an error state to clearly communicate the issue and support accessibility for all users.
+
+<br />
+<br />
+
+<div style={{ background: '#FAFAFA', borderRadius: 'var(--spacing-m)', padding: '48px 24px', display: 'flex', flexDirection: 'column', alignItems: 'center', pointerEvents: 'none', marginBottom: 'var(--spacing-4)' }}>
+  <div>
+    <Checkbox checked={true} label="Label" error={true} onChange={() => {}} />
+    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', gap: '4px' }}>
+      <span style={{ paddingTop: '2px' }}>
+        <Icon name="error" appearance="alert" size={16} />
+      </span>
+      <Text appearance="destructive">Inline message goes here.</Text>
+    </div>
+  </div>
+</div>
+
+<br />
