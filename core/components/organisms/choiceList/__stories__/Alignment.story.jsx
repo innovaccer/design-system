@@ -18,9 +18,21 @@ export const alignment = () => {
 
   return (
     <>
-      <ChoiceList choices={gender} title={label} alignment={alignmentHorizontal} onChange={() => {}} />
+      <ChoiceList
+        choices={gender}
+        title={label}
+        alignment={alignmentHorizontal}
+        aria-label="Gender selection"
+        onChange={() => {}}
+      />
       <div className="mt-8">
-        <ChoiceList choices={allGender} title={label} alignment={alignmentVertical} onChange={() => {}} />
+        <ChoiceList
+          choices={allGender}
+          title={label}
+          alignment={alignmentVertical}
+          aria-label="Gender selection"
+          onChange={() => {}}
+        />
       </div>
     </>
   );

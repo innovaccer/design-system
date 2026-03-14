@@ -30,6 +30,26 @@ export interface Choice {
    * Adds name to the choice
    */
   name: string;
+  /**
+   * Accessible label for the underlying input.
+   */
+  'aria-label'?: string;
+  /**
+   * ID of the element that labels the underlying input.
+   */
+  'aria-labelledby'?: string;
+  /**
+   * ID of the element(s) that describe the underlying input.
+   */
+  'aria-describedby'?: string;
+  /**
+   * Tab index for the underlying input.
+   */
+  tabIndex?: number;
+  /**
+   * Marks the underlying input as required.
+   */
+  required?: boolean;
 }
 export interface ChoiceListProps extends BaseProps {
   /**
@@ -82,6 +102,14 @@ export interface ChoiceListProps extends BaseProps {
    * Wrap checkbox label to the next line for checkbox
    */
   wrapLabel?: boolean;
+  /**
+   * Accessible label for the ChoiceList group.
+   */
+  'aria-label'?: string;
+  /**
+   * ID of the element that labels the ChoiceList group.
+   */
+  'aria-labelledby'?: string;
 }
 
 const renderCheckbox = (
@@ -94,7 +122,7 @@ const renderCheckbox = (
   wrapLabel: boolean | undefined
 ) => {
   return list.map((item: Choice, checkboxIndex: number) => {
-    const { name, value, helpText, disabled, label } = item;
+    const { name, value, helpText, disabled, label, ...rest } = item;
     return (
       <Checkbox
         key={checkboxIndex}
@@ -108,6 +136,7 @@ const renderCheckbox = (
         defaultChecked={selected.length !== 0 && selected.includes(value)}
         className={getCheckboxClassName(alignment, checkboxIndex)}
         wrapLabel={wrapLabel}
+        {...rest}
       />
     );
   });
@@ -122,7 +151,7 @@ const renderRadio = (
   selected: string[]
 ) => {
   return list.map((item: Choice, radioIndex: number) => {
-    const { name, value, helpText, disabled, label } = item;
+    const { name, value, helpText, disabled, label, ...rest } = item;
     return (
       <Radio
         key={radioIndex}
@@ -135,6 +164,7 @@ const renderRadio = (
         value={value}
         defaultChecked={selected.length !== 0 && selected.includes(value)}
         className={getRadioClassName(alignment, radioIndex)}
+        {...rest}
       />
     );
   });
@@ -169,6 +199,8 @@ export const ChoiceList = (props: ChoiceListProps) => {
     size = 'regular',
     className,
     wrapLabel,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledBy,
   } = props;
   const { selected = [] } = props;
   let selectedChoiceValue = (selected && selected) || [];
@@ -206,7 +238,12 @@ export const ChoiceList = (props: ChoiceListProps) => {
 
   return (
     <>
-      <fieldset className={ChoiceListClass} data-test="DesignSystem-ChoiceList-Wrapper">
+      <fieldset
+        className={ChoiceListClass}
+        data-test="DesignSystem-ChoiceList-Wrapper"
+        aria-label={ariaLabel}
+        aria-labelledby={ariaLabelledBy}
+      >
         {title && title.trim() && <Label withInput={true}>{title.trim()}</Label>}
         {allowMultiple ? (
           <div className={`${alignment === 'horizontal' ? ChoiceHorizontalClass : ChoiceListVerticalClass}`}>

@@ -134,7 +134,13 @@ export const flat = () => {
   return (
     <div className="bg-secondary-lightest vh-75">
       <Collapsible expanded={expanded} onToggle={setExpanded} hoverable={false}>
-        <VerticalNav menus={data} expanded={expanded} active={active} onClick={onClickHandler} />
+        <VerticalNav
+          menus={data}
+          expanded={expanded}
+          active={active}
+          onClick={onClickHandler}
+          aria-label="Primary sidebar navigation"
+        />
       </Collapsible>
     </div>
   );
@@ -279,6 +285,7 @@ const customCode = `() => {
           active={active}
           expanded={expanded}
           onClick={onClickHandler}
+          aria-label="Primary sidebar navigation"
         />
       </Collapsible>
     </div>

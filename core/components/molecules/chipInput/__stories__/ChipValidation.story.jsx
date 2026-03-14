@@ -15,8 +15,9 @@ export const chipValidation = () => {
         allowDuplicates={allowDuplicates}
         placeholder={placeholder}
         disabled={disabled}
-        chipOptions={{ clearButton: true }}
+        chipOptions={{ clearButton: true, role: 'option' }}
         chipValidator={(chipValue) => emailRegex.test(chipValue)}
+        aria-label="Send to"
       />
     </>
   );
@@ -36,8 +37,9 @@ const customCode = `() => {
         allowDuplicates={allowDuplicates}
         placeholder={placeholder}
         disabled={disabled}
-        chipOptions={{ clearButton: true }}
+        chipOptions={{ clearButton: true, role: 'option' }}
         chipValidator={(chipValue) => emailRegex.test(chipValue)}
+        aria-label="Send to"
       />
     </>
   );

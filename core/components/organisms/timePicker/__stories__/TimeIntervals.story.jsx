@@ -8,12 +8,25 @@ export const TimeIntervals = () => {
     <Row>
       <div className="w-25">
         <Label>12 Hour Format (1 hour Interval)</Label>
-        <TimePicker withSearch={true} interval={60} id="12-hour" />
+        <TimePicker
+          withSearch={true}
+          interval={60}
+          id="12-hour"
+          aria-label="12 hour time selector"
+          optionsAriaLabel="12 hour time options"
+        />
       </div>
 
       <div className="w-25 ml-7">
         <Label>24 Hour Format (1 hour Interval)</Label>
-        <TimePicker timeFormat="24-Hour" withSearch={true} interval={60} id="24-hour" />
+        <TimePicker
+          timeFormat="24-Hour"
+          withSearch={true}
+          interval={60}
+          id="24-hour"
+          aria-label="24 hour time selector"
+          optionsAriaLabel="24 hour time options"
+        />
       </div>
     </Row>
   );
@@ -25,12 +38,25 @@ const customCode = `() => {
     <Row>
       <div className="w-25">
         <Label>12 Hour Format (1 hour Interval)</Label>
-        <TimePicker withSearch={true} interval={60} id="12-hour" />
+        <TimePicker
+          withSearch={true}
+          interval={60}
+          id="12-hour"
+          aria-label="12 hour time selector"
+          optionsAriaLabel="12 hour time options"
+        />
       </div>
 
       <div className="w-25 ml-7">
         <Label>24 Hour Format (1 hour Interval)</Label>
-        <TimePicker timeFormat="24-Hour" withSearch={true} interval={60} id="24-hour" />
+        <TimePicker
+          timeFormat="24-Hour"
+          withSearch={true}
+          interval={60}
+          id="24-hour"
+          aria-label="24 hour time selector"
+          optionsAriaLabel="24 hour time options"
+        />
       </div>
     </Row>
   );

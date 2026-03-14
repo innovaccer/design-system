@@ -104,6 +104,14 @@ export type DateRangePickerProps = SharedProps & {
    * **Default set to `2` when `withInput: true`**
    */
   monthsInView?: CalendarProps['monthsInView'];
+  /**
+   * Accessible label for single-input trigger
+   */
+  'aria-label'?: string;
+  /**
+   * Associates trigger input(s) with external label
+   */
+  'aria-labelledby'?: string;
 };
 
 export interface DateRangePickerState {
@@ -400,6 +408,8 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
       singleInput,
       contentAlign,
       children,
+      'aria-label': ariaLabel,
+      'aria-labelledby': ariaLabelledBy,
     } = this.props;
 
     const { open } = this.state;
@@ -410,10 +420,25 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
     });
 
     if (withInput) {
+      const mergedSingleInputOptions = {
+        ...inputOptions,
+        'aria-label': inputOptions['aria-label'] || ariaLabel,
+        'aria-labelledby': inputOptions['aria-labelledby'] || ariaLabelledBy,
+      };
+      const mergedStartInputOptions = {
+        ...startInputOptions,
+        'aria-label': startInputOptions['aria-label'],
+        'aria-labelledby': startInputOptions['aria-labelledby'] || ariaLabelledBy,
+      };
+      const mergedEndInputOptions = {
+        ...endInputOptions,
+        'aria-label': endInputOptions['aria-label'],
+        'aria-labelledby': endInputOptions['aria-labelledby'] || ariaLabelledBy,
+      };
       const trigger = singleInput ? (
         <SingleInputTrigger
           inputFormat={inputFormat}
-          inputOptions={inputOptions}
+          inputOptions={mergedSingleInputOptions}
           validators={validators}
           state={this.state}
           setState={this.setState.bind(this)}
@@ -421,8 +446,8 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
       ) : (
         <Trigger
           inputFormat={inputFormat}
-          startInputOptions={startInputOptions}
-          endInputOptions={endInputOptions}
+          startInputOptions={mergedStartInputOptions}
+          endInputOptions={mergedEndInputOptions}
           validators={validators}
           state={this.state}
           setState={this.setState.bind(this)}

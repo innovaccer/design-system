@@ -86,6 +86,18 @@ export interface ChipInputProps extends BaseProps {
    * Validator function to validate a chip before it's added.  Return `true` for valid, `false` for invalid.
    */
   chipValidator?: (chip: string) => boolean;
+  /**
+   * Accessible name for chip input trigger container
+   */
+  'aria-label'?: string;
+  /**
+   * Associates chip input with an external label element
+   */
+  'aria-labelledby'?: string;
+  /**
+   * Associates chip input with a description element
+   */
+  'aria-describedby'?: string;
 }
 
 export const ChipInput = (props: ChipInputProps) => {
@@ -104,6 +116,9 @@ export const ChipInput = (props: ChipInputProps) => {
     onBlur,
     onFocus,
     chipValidator,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledBy,
+    'aria-describedby': ariaDescribedBy,
   } = props;
 
   const inputRef = React.createRef<HTMLInputElement>();
@@ -289,6 +304,9 @@ export const ChipInput = (props: ChipInputProps) => {
         onKeyDown={handleWrapperKeyDown}
         tabIndex={disabled ? -1 : 0}
         role="button"
+        aria-label={ariaLabel}
+        aria-labelledby={ariaLabelledBy}
+        aria-describedby={ariaDescribedBy}
         aria-disabled={disabled || undefined}
       >
         <div className={styles['ChipInput-wrapper']} ref={customRef}>
@@ -305,6 +323,9 @@ export const ChipInput = (props: ChipInputProps) => {
             onFocus={onFocus}
             onChange={onInputChangeHandler}
             onKeyDown={onKeyDownHandler}
+            aria-label={ariaLabel}
+            aria-labelledby={ariaLabelledBy}
+            aria-describedby={ariaDescribedBy}
           />
           {/* eslint-enable */}
         </div>

@@ -10,7 +10,15 @@ export const controlledCheckbox = () => {
     setChecked(updatedChecked);
   };
 
-  return <Checkbox checked={checked} label={'Innovaccer'} onChange={handleParentChange} value={'Innovaccer'} />;
+  return (
+    <Checkbox
+      aria-label="Innovaccer"
+      checked={checked}
+      label={'Innovaccer'}
+      onChange={handleParentChange}
+      value={'Innovaccer'}
+    />
+  );
 };
 
 const customCode = `() => {
@@ -22,12 +30,13 @@ const customCode = `() => {
   };
 
   return (
-      <Checkbox
-        checked={checked}
-        label={'Innovaccer'}
-        onChange={handleParentChange}
-        value={'Innovaccer'}
-      />
+    <Checkbox
+      aria-label="Innovaccer"
+      checked={checked}
+      label={'Innovaccer'}
+      onChange={handleParentChange}
+      value={'Innovaccer'}
+    />
   );
 }`;
 

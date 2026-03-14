@@ -34,6 +34,7 @@ export const customLabel = () => {
             type="selection"
             selected={customLabel[2].selected}
             disabled={customLabel[2].disabled}
+            role="option"
           />
         ))}
       </div>
@@ -50,6 +51,7 @@ export const customLabel = () => {
             type="selection"
             selected={customLabel[2].selected}
             disabled={customLabel[2].disabled}
+            role="option"
           />
         ))}
       </div>
@@ -66,6 +68,7 @@ export const customLabel = () => {
             type="selection"
             selected={customLabel[2].selected}
             disabled={customLabel[2].disabled}
+            role="option"
           />
         ))}
       </div>

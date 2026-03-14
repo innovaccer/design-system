@@ -11,7 +11,7 @@ export const Action = () => {
       {BooleanValue.map((booleanvalue, ind) => {
         return (
           <div key={ind}>
-            <Chip icon={icon} label={label} disabled={booleanvalue} type="action" name={'chip'} />
+            <Chip icon={icon} label={label} disabled={booleanvalue} type="action" name={'chip'} role="button" />
             <br />
             <br />
             <Text weight="strong">{`Disabled: ${booleanvalue}`}</Text>

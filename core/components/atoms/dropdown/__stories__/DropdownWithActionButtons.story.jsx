@@ -54,6 +54,8 @@ export const dropdownWithActionButtons = () => {
       placeholder="Select problem"
       withCheckbox={true}
       showApplyButton={true}
+      aria-label="Select problem"
+      optionsAriaLabel="Problem options"
     />
   );
 };
