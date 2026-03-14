@@ -304,8 +304,6 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
         onKeyDown={handleTriggerKeyDown}
         tabIndex={disabled ? -1 : tabIndex || 0}
         role="button"
-        aria-label={ariaLabel}
-        aria-labelledby={ariaLabelledBy}
         aria-disabled={disabled || undefined}
       >
         <div className={styles['ChipInput-wrapper']} ref={customRef}>
@@ -324,6 +322,8 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
             onChange={onInputChangeHandler}
             onKeyDown={onKeyDownHandler}
             role={role}
+            aria-label={ariaLabel}
+            aria-labelledby={ariaLabelledBy}
           />
           {/* eslint-enable */}
         </div>
