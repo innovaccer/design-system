@@ -18,6 +18,8 @@ export interface MenuItemProps extends BaseProps {
   onClick?: (menu: Menu) => void;
   customItemRenderer?: (props: MenuItemProps) => JSX.Element;
   customOptionRenderer?: (props: MenuItemProps) => JSX.Element;
+  /** For roving tabindex: 0 for the focused item, -1 for others */
+  tabIndex?: number;
 }
 interface MenuPillsProps {
   isActive: boolean;
@@ -84,6 +86,7 @@ export const MenuItem = (props: MenuItemProps) => {
     onClick,
     customItemRenderer,
     customOptionRenderer,
+    tabIndex,
   } = props;
 
   const [isTextTruncated, setIsTextTruncated] = React.useState(false);
@@ -120,7 +123,9 @@ export const MenuItem = (props: MenuItemProps) => {
   const baseProps = {
     onClick: onClickHandler,
     href: menu.link,
-    tabIndex: 0,
+    tabIndex: tabIndex !== undefined ? tabIndex : 0,
+    'data-menu-name': menu.name,
+    'data-disabled': menu.disabled ? 'true' : undefined,
     ...extractBaseProps(props),
   };
 

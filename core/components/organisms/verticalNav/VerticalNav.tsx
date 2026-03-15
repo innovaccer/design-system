@@ -4,6 +4,7 @@ import { Text } from '@/index';
 import { MenuItem, MenuItemProps } from './MenuItem';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { getMenu, isMenuActive, ActiveMenu, Menu, getExpandedMenus } from '@/utils/navigationHelper';
+import { handleVerticalNavKeyDown, getInitialFocusedItemName, getFirstVisibleMenuItemName } from './utils';
 import styles from '@css/components/verticalNav.module.css';
 
 export interface VerticalNavProps extends BaseProps {
@@ -95,7 +96,57 @@ export const VerticalNav = (props: VerticalNavProps) => {
 
   const [subMenuExpandedState, setSubMenuExpandedState] = React.useState<Record<string, boolean>>({});
   const [menuState, setMenuState] = React.useState<Record<string, boolean>>({});
+  const [focusedItemName, setFocusedItemName] = React.useState<string | null>(null);
+  const containerRef = React.useRef<HTMLDivElement>(null);
   const baseProps = extractBaseProps(props);
+
+  // Validate that focusedItemName still exists in rendered items; otherwise reset
+  const isItemRendered = (name: string | null): boolean => {
+    if (!name) return false;
+    const menu = menus.find((m) => m.name === name);
+    if (menu) {
+      // In collapsed mode, top-level items without icons are not rendered
+      if (!expanded && !menu.icon) return false;
+      return true;
+    }
+    // Check if it's a submenu item
+    for (const m of menus) {
+      if (m.subMenu) {
+        const isExpanded = menuState[m.name] || subMenuExpandedState[m.name];
+        const isChild = m.subMenu.some((s) => s.name === name);
+        // Submenu items are only rendered when navigation is expanded AND parent is expanded
+        if (isChild && isExpanded && expanded) return true;
+      }
+    }
+    return false;
+  };
+
+  const validFocusedItemName = isItemRendered(focusedItemName) ? focusedItemName : null;
+
+  const effectiveFocused =
+    validFocusedItemName ??
+    getInitialFocusedItemName(menus, active, menuState, subMenuExpandedState, expanded) ??
+    getFirstVisibleMenuItemName(menus, expanded);
+
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    handleVerticalNavKeyDown(event, {
+      containerRef,
+      setFocusedItemName,
+      menuState,
+      subMenuExpandedState,
+      setMenuState,
+      setSubMenuExpandedState,
+      menus,
+      expanded,
+      autoCollapse,
+    });
+  };
+
+  const handleFocus = (event: React.FocusEvent) => {
+    const target = event.target as HTMLElement;
+    const item = target.closest?.('[data-menu-name]') as HTMLElement | null;
+    if (item) setFocusedItemName(item.getAttribute('data-menu-name'));
+  };
 
   React.useEffect(() => {
     if (props.active) {
@@ -180,6 +231,7 @@ export const VerticalNav = (props: VerticalNavProps) => {
               onClick={onClickHandler}
               customItemRenderer={customItemRenderer}
               customOptionRenderer={customOptionRenderer}
+              tabIndex={effectiveFocused === menu.name ? 0 : -1}
             />
           }
           {isChildrenVisible &&
@@ -196,6 +248,7 @@ export const VerticalNav = (props: VerticalNavProps) => {
                   isActive={isMenuActive(menus, subMenu, active)}
                   customItemRenderer={customItemRenderer}
                   customOptionRenderer={customOptionRenderer}
+                  tabIndex={effectiveFocused === subMenu.name ? 0 : -1}
                 />
               );
             })}
@@ -215,7 +268,15 @@ export const VerticalNav = (props: VerticalNavProps) => {
   );
 
   return (
-    <div {...baseProps} className={classes}>
+    <div
+      ref={containerRef}
+      role="tree"
+      tabIndex={-1}
+      {...baseProps}
+      className={classes}
+      onKeyDown={handleKeyDown}
+      onFocus={handleFocus}
+    >
       {renderList()}
     </div>
   );
