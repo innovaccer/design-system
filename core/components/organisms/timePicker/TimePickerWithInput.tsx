@@ -45,6 +45,10 @@ export interface TimePickerInputProps {
    * Shows error state in case of failed validation
    */
   error?: boolean;
+  /**
+   * Accessible label for time input trigger
+   */
+  'aria-label'?: string;
 }
 
 export const TimePickerWithInput = (props: TimePickerInputProps) => {
@@ -113,6 +117,7 @@ export const TimePickerWithInput = (props: TimePickerInputProps) => {
       onClear={onClearHandler}
       onBlur={onBlurHandler}
       error={error}
+      aria-label={inputOptions['aria-label'] || props['aria-label']}
       id="parent-TimePicker"
     />
   );

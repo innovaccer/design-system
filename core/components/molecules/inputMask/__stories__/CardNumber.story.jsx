@@ -5,8 +5,11 @@ import Label from '@/components/atoms/label';
 export const cardNumber = () => {
   return (
     <div className="w-25">
-      <Label className="mb-3">Card Number</Label>
+      <Label className="mb-3" htmlFor="card-number-input">
+        Card Number
+      </Label>
       <InputMask
+        id="card-number-input"
         mask={[
           /\d/,
           /\d/,

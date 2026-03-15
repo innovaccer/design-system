@@ -20,7 +20,7 @@ export const statusWithoutLabel = () => {
   ];
   return (
     <div className="mb-11 w-25">
-      <Dropdown options={options} placeholder="All Categories" />
+      <Dropdown options={options} placeholder="All Categories" aria-label="Select category" />
     </div>
   );
 };

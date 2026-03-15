@@ -77,7 +77,7 @@ Object {
                   data-test="DesignSystem-AvatarWrapper"
                 >
                   <span
-                    aria-label="John Doe"
+                    aria-label="Avatar of John Doe"
                     class="Avatar Avatar--regular Avatar--accent1 Avatar--noInitials Avatar--default mr-4"
                     data-test="DesignSystem-IncomingChatBubble-Avatar"
                     role="img"
@@ -179,7 +179,7 @@ Object {
                 data-test="DesignSystem-AvatarWrapper"
               >
                 <span
-                  aria-label="John Doe"
+                  aria-label="Avatar of John Doe"
                   class="Avatar Avatar--regular Avatar--accent1 Avatar--noInitials Avatar--default mr-4"
                   data-test="DesignSystem-IncomingChatBubble-Avatar"
                   role="img"

@@ -30,8 +30,16 @@ export const generatingAResponse = () => {
           iconType="outlined"
           size="tiny"
           largeIcon={true}
+          aria-label="Add attachment"
         />
-        <Button appearance="transparent" className="ml-2" icon="attach_file" size="tiny" largeIcon={true} />
+        <Button
+          appearance="transparent"
+          className="ml-2"
+          icon="attach_file"
+          size="tiny"
+          largeIcon={true}
+          aria-label="Attach file"
+        />
       </div>
     );
   };
@@ -112,8 +120,16 @@ const customCode = `() => {
           iconType="outlined"
           size="tiny"
           largeIcon={true}
+          aria-label="Add attachment"
         />
-        <Button appearance="transparent" className="ml-2" icon="attach_file" size="tiny" largeIcon={true} />
+        <Button
+          appearance="transparent"
+          className="ml-2"
+          icon="attach_file"
+          size="tiny"
+          largeIcon={true}
+          aria-label="Attach file"
+        />
       </div>
     );
   };

@@ -45,6 +45,7 @@ export const all = () => {
     return (
       <DateRangePicker
         withInput={withInput}
+        aria-label="Date range picker"
         open={open}
         monthsInView={monthsInView}
         inputFormat={inputFormat}
@@ -65,6 +66,7 @@ export const all = () => {
     <Card className="d-inline-flex" shadow="light">
       <DateRangePicker
         withInput={withInput}
+        aria-label="Date range picker"
         monthsInView={monthsInView}
         jumpView={jumpView}
         startDate={startDate}

@@ -17,12 +17,17 @@ export const withIcon = () => {
 
   return (
     <div className="d-flex justify-content-between w-50">
-      <Link {...options} className="d-inline-flex align-items-center">
+      <Link {...options} className="d-inline-flex align-items-center" aria-label="Read more about Innovaccer">
         <Icon name="book" className="mr-3" />
         Read more
       </Link>
 
-      <Link {...options} size="tiny" className="d-inline-flex align-items-center">
+      <Link
+        {...options}
+        size="tiny"
+        className="d-inline-flex align-items-center"
+        aria-label="Read more about Innovaccer"
+      >
         Read more
         <Icon name="book" size={14} className="ml-3" />
       </Link>

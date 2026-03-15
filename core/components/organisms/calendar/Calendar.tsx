@@ -94,6 +94,14 @@ export interface SharedProps extends BaseProps {
    * Should be use to allow reverse selection in the daterangepicker
    */
   allowReverseSelection?: boolean;
+  /**
+   * Accessible label for calendar wrapper
+   */
+  'aria-label'?: string;
+  /**
+   * Associates calendar wrapper with an external label
+   */
+  'aria-labelledby'?: string;
 }
 
 export type CalendarProps = {
@@ -1168,7 +1176,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
   };
 
   render() {
-    const { monthsInView, className } = this.props;
+    const { monthsInView, className, 'aria-label': ariaLabel, 'aria-labelledby': ariaLabelledBy } = this.props;
 
     const baseProps = extractBaseProps(this.props);
     const classes = classNames(
@@ -1179,7 +1187,13 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     );
 
     return (
-      <div {...baseProps} className={classes} data-test="DesignSystem-Calendar-Wrapper">
+      <div
+        {...baseProps}
+        className={classes}
+        data-test="DesignSystem-Calendar-Wrapper"
+        aria-label={ariaLabel}
+        aria-labelledby={ariaLabelledBy}
+      >
         {Array.from({ length: monthsInView }, (_x, index) => {
           return this.renderCalendar(index);
         })}

@@ -15,6 +15,7 @@ export const withSecondaryAction = () => {
               iconType="outlined"
               size="tiny"
               largeIcon={true}
+              aria-label="Add attachment"
             />
           }
         >
@@ -33,7 +34,14 @@ export const withSecondaryAction = () => {
             </Menu.Item>
           </Menu.List>
         </Menu>
-        <Button appearance="transparent" className="ml-2" icon="attach_file" size="tiny" largeIcon={true} />
+        <Button
+          appearance="transparent"
+          className="ml-2"
+          icon="attach_file"
+          size="tiny"
+          largeIcon={true}
+          aria-label="Attach file"
+        />
       </div>
     );
   };
@@ -60,6 +68,7 @@ const customCode = `() => {
               iconType="outlined"
               size="tiny"
               largeIcon={true}
+              aria-label="Add attachment"
             />
           }
         >
@@ -78,7 +87,14 @@ const customCode = `() => {
             </Menu.Item>
           </Menu.List>
         </Menu>
-        <Button appearance="transparent" className="ml-2" icon="attach_file" size="tiny" largeIcon={true} />
+        <Button
+          appearance="transparent"
+          className="ml-2"
+          icon="attach_file"
+          size="tiny"
+          largeIcon={true}
+          aria-label="Attach file"
+        />
       </div>
     );
   };

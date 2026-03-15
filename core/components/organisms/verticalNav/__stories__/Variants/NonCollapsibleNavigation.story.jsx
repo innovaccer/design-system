@@ -132,6 +132,7 @@ export const nonCollapsibleNavigation = () => {
         expanded={true}
         onClick={setActive}
         className="mr-14 bg-secondary-lightest"
+        aria-label="Primary sidebar navigation"
       />
 
       <VerticalNav
@@ -140,6 +141,7 @@ export const nonCollapsibleNavigation = () => {
         expanded={true}
         onClick={setActive}
         className="bg-secondary-lightest"
+        aria-label="Secondary navigation"
       />
     </div>
   );
@@ -276,6 +278,7 @@ const customCode = `() => {
         expanded={true}
         onClick={setActive}
         className="mr-14 bg-secondary-lightest"
+        aria-label="Primary sidebar navigation"
       />
 
       <VerticalNav
@@ -284,6 +287,7 @@ const customCode = `() => {
         expanded={true}
         onClick={setActive}
         className="bg-secondary-lightest"
+        aria-label="Secondary navigation"
       />
     </div>
   );

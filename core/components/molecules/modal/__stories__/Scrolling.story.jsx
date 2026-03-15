@@ -6,6 +6,7 @@ export const scrolling = () => {
   const [open, setOpen] = React.useState(false);
   const backdropClose = false;
 
+  const headingId = 'modal-scrolling-heading';
   const onClose = () => {
     setOpen(!open);
     action('on close triggered')();
@@ -87,7 +88,9 @@ export const scrolling = () => {
         onClose={onClose}
         headerOptions={{
           heading: 'Survey',
+          headingId,
         }}
+        aria-labelledby={headingId}
         footer={
           <>
             <Button onClick={() => action('Cancel button click')}>Cancel</Button>
@@ -129,6 +132,7 @@ export const scrolling = () => {
 const customCode = `() => {
   const [open, setOpen] = React.useState(false);
   const backdropClose = false;
+  const headingId = 'modal-scrolling-heading';
 
   const onClose = () => {
     setOpen(!open);
@@ -157,7 +161,9 @@ const customCode = `() => {
         onClose={onClose}
         headerOptions={{
           heading: 'Survey',
+          headingId,
         }}
+        aria-labelledby={headingId}
         footer={(
           <>
             <Button  onClick={() => console.log('Cancel button click')}>Cancel</Button>

@@ -52,9 +52,12 @@ export const inputModals = () => {
     <Navigation align="left" menus={data} active={active} onClick={onClickHandler} className="ml-5 mt-4" />
   );
 
+  const headingId = 'modal-input-heading';
   const header = (
     <div>
-      <Heading className="ml-7 mb-3">Medication</Heading>
+      <Heading id={headingId} className="ml-7 mb-3">
+        Medication
+      </Heading>
       {subHeading}
     </div>
   );
@@ -70,6 +73,7 @@ export const inputModals = () => {
         backdropClose={backdropClose}
         onClose={onClose}
         header={header}
+        aria-labelledby={headingId}
         footer={
           <>
             <Button appearance="basic" onClick={action('Cancel button click')}>
@@ -207,9 +211,10 @@ const customCode = `() => {
     />
   );
 
+  const headingId = 'modal-input-heading';
   const header = (
     <div>
-      <Heading className="ml-7 mb-3">Medication</Heading>
+      <Heading id={headingId} className="ml-7 mb-3">Medication</Heading>
       {subHeading}
     </div>
   );
@@ -223,6 +228,7 @@ const customCode = `() => {
         backdropClose={backdropClose}
         onClose={onClose}
         header={header}
+        aria-labelledby={headingId}
         footer={(
           <>
             <Button appearance="basic" onClick={console.log('Cancel button click')}>Discard</Button>

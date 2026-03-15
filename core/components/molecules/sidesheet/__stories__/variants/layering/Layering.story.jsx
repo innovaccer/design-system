@@ -6,6 +6,8 @@ export const layeringWithSidesheet = () => {
   const [open, setOpen] = React.useState(false);
   const [openSecond, setOpenSecond] = React.useState(false);
   const backdropClose = true;
+  const headingId = 'sidesheet-layering-heading';
+  const headingIdTwo = 'sidesheet-layering-heading-two';
 
   const onClose = () => {
     setOpen(false);
@@ -20,6 +22,13 @@ export const layeringWithSidesheet = () => {
   const headerOptions = {
     heading: 'Heading',
     subHeading: 'Subheading',
+    headingId,
+  };
+
+  const headerOptionsTwo = {
+    heading: 'Heading',
+    subHeading: 'Subheading',
+    headingId: headingIdTwo,
   };
 
   const options = {
@@ -27,6 +36,7 @@ export const layeringWithSidesheet = () => {
     open,
     backdropClose,
     headerOptions,
+    'aria-labelledby': headingId,
     footer: (
       <>
         <Button appearance="primary" className="mr-4" onClick={() => setOpenSecond(true)}>
@@ -38,7 +48,8 @@ export const layeringWithSidesheet = () => {
   };
 
   const SecondOverlayOptions = {
-    headerOptions,
+    headerOptions: headerOptionsTwo,
+    'aria-labelledby': headingIdTwo,
     backdropClose,
     onClose: onCloseSecond,
     open: openSecond,
@@ -103,6 +114,8 @@ const customCode = `() => {
   const [open, setOpen] = React.useState(false);
   const [openSecond, setOpenSecond] = React.useState(false);
   const backdropClose = true;
+  const headingId = 'sidesheet-layering-heading';
+  const headingIdTwo = 'sidesheet-layering-heading-two';
 
   const onClose = () => {
     setOpen(false);
@@ -115,6 +128,13 @@ const customCode = `() => {
   const headerOptions = {
     heading: 'Heading',
     subHeading: 'Subheading',
+    headingId,
+  };
+
+  const headerOptionsTwo = {
+    heading: 'Heading',
+    subHeading: 'Subheading',
+    headingId: headingIdTwo,
   };
 
   const options = {
@@ -122,6 +142,7 @@ const customCode = `() => {
     open,
     backdropClose,
     headerOptions,
+    'aria-labelledby': headingId,
     footer: (
       <>
         <Button appearance="primary" className="mr-4" onClick={() => setOpenSecond(true)}>
@@ -133,7 +154,8 @@ const customCode = `() => {
   };
 
   const SecondOverlayOptions = {
-    headerOptions,
+    headerOptions: headerOptionsTwo,
+    'aria-labelledby': headingIdTwo,
     backdropClose,
     onClose: onCloseSecond,
     open: openSecond,

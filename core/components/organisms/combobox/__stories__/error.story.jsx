@@ -27,7 +27,7 @@ export const withError = () => {
   return (
     <div>
       <Label withInput={true}>Barriers</Label>
-      <Combobox onChange={onChangeHandler} className="w-50" error={true}>
+      <Combobox onChange={onChangeHandler} className="w-50" error={true} aria-label="Barriers selector with error">
         {filterList.length > 0 && (
           <Combobox.List>
             {filterList.map((item, key) => {
@@ -69,7 +69,7 @@ const customCode = `() => {
   return (
     <div>
       <Label withInput={true}>Barriers</Label>
-      <Combobox onChange={onChangeHandler} className="w-50" error={true}>
+      <Combobox onChange={onChangeHandler} className="w-50" error={true} aria-label="Barriers selector with error">
         {filterList.length > 0 && (
           <Combobox.List>
             {filterList.map((item, key) => {
