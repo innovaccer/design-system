@@ -78,6 +78,21 @@
 .Toast-close-icon--warning:active {
   background: var(--warning-dark);
 }
+.Toast-closeButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.Toast-closeButton:focus-visible {
+  outline: var(--border-width-05) solid currentColor;
+  outline-offset: var(--spacing-05);
+}
 
 .Toast-close-icon--success:focus,
 .Toast-close-icon--success:focus-visible {

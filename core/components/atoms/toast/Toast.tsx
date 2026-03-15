@@ -105,12 +105,21 @@ export const Toast = (props: ToastProps) => {
     if (onClose) onClose();
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Escape' && onClose) {
+      e.preventDefault();
+      onClose();
+    }
+  };
+
   return (
     <div
       {...baseProps}
       className={wrapperClass}
       role={appearance === 'alert' || appearance === 'warning' ? 'alert' : 'status'}
       aria-live={appearance === 'alert' || appearance === 'warning' ? 'assertive' : 'polite'}
+      tabIndex={onClose ? -1 : undefined}
+      onKeyDown={onClose ? handleKeyDown : undefined}
     >
       {icon && <Icon name={icon} className={iconClass('left')} aria-hidden="true" />}
       <div className={styles['Toast-body']}>
@@ -118,13 +127,16 @@ export const Toast = (props: ToastProps) => {
           <Heading size="s" className={headingClass} appearance={appearance !== 'warning' ? 'white' : 'default'}>
             {title}
           </Heading>
-          <Icon
-            name={'close'}
-            className={iconClass('right')}
-            onClick={onCloseHandler}
-            appearance={appearance !== 'warning' ? 'white' : 'default'}
-            aria-label="Close"
-          />
+          {onClose && (
+            <button
+              type="button"
+              className={classNames(iconClass('right'), styles['Toast-closeButton'])}
+              onClick={onCloseHandler}
+              aria-label="Close"
+            >
+              <Icon name="close" appearance={appearance !== 'warning' ? 'white' : 'warning_darker'} aria-hidden="true" />
+            </button>
+          )}
         </div>
         {message && (
           <Text appearance={appearance !== 'warning' ? 'white' : 'default'} className={textClass}>
