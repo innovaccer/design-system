@@ -289,7 +289,7 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
       return null;
     }
 
-    return handleProps.map(({ value }, index) => {
+    return handleProps.map(({ value, 'aria-label': handleAriaLabel }, index) => {
       const isCurrentLabelHovered = this.state.hoveredLabelValue === Number(value.toFixed(this.state.labelPrecision));
 
       return (
@@ -307,6 +307,7 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
           tickSizeRatio={this.state.tickSizeRatio}
           value={value}
           isCurrentLabelHovered={isCurrentLabelHovered}
+          aria-label={handleAriaLabel || this.props.label}
         />
       );
     });

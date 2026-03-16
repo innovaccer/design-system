@@ -36,8 +36,8 @@ exports[`ChipInput component
               </span>
             </div>
             <div
-              aria-label="Remove"
-              class="Chip-icon Chip-icon--right cursor-pointer p-3"
+              aria-label="Remove 1020"
+              class="Chip-icon Chip-icon--right cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
               tabindex="0"
@@ -45,6 +45,7 @@ exports[`ChipInput component
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 clear
@@ -69,8 +70,8 @@ exports[`ChipInput component
               </span>
             </div>
             <div
-              aria-label="Remove"
-              class="Chip-icon Chip-icon--right cursor-pointer p-3"
+              aria-label="Remove 80"
+              class="Chip-icon Chip-icon--right cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
               tabindex="0"
@@ -78,6 +79,7 @@ exports[`ChipInput component
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 clear
@@ -144,8 +146,8 @@ exports[`ChipInput component
               </span>
             </div>
             <div
-              aria-label="Remove"
-              class="Chip-icon Chip-icon--right Chip-icon-disabled--right p-3"
+              aria-label="Remove 1020"
+              class="Chip-icon Chip-icon--right Chip-icon-disabled--right"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
               tabindex="-1"
@@ -153,6 +155,7 @@ exports[`ChipInput component
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 clear
@@ -177,8 +180,8 @@ exports[`ChipInput component
               </span>
             </div>
             <div
-              aria-label="Remove"
-              class="Chip-icon Chip-icon--right Chip-icon-disabled--right p-3"
+              aria-label="Remove 80"
+              class="Chip-icon Chip-icon--right Chip-icon-disabled--right"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
               tabindex="-1"
@@ -186,6 +189,7 @@ exports[`ChipInput component
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 clear
@@ -252,8 +256,8 @@ exports[`ChipInput component
               </span>
             </div>
             <div
-              aria-label="Remove"
-              class="Chip-icon Chip-icon--right cursor-pointer p-3"
+              aria-label="Remove 1020"
+              class="Chip-icon Chip-icon--right cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
               tabindex="0"
@@ -261,6 +265,7 @@ exports[`ChipInput component
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 clear
@@ -285,8 +290,8 @@ exports[`ChipInput component
               </span>
             </div>
             <div
-              aria-label="Remove"
-              class="Chip-icon Chip-icon--right cursor-pointer p-3"
+              aria-label="Remove 80"
+              class="Chip-icon Chip-icon--right cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
               tabindex="0"
@@ -294,6 +299,7 @@ exports[`ChipInput component
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 clear

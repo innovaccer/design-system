@@ -205,7 +205,7 @@ export const GenericChip = (props: GenericChipProps) => {
         {clearButton && (
           <div
             role="button"
-            aria-label="Remove"
+            aria-label={typeof label === 'string' ? `Remove ${labelPrefix ? `${labelPrefix} ` : ''}${label}` : 'Remove'}
             onClick={onCloseHandler}
             tabIndex={disabled ? -1 : 0}
             onKeyDown={onKeyDownHandler}

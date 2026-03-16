@@ -90,6 +90,7 @@ export const GridRow = (props: GridRowProps) => {
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
               onSelect(rI, event.target.checked);
             }}
+            aria-label={`Select row ${rI + 1}`}
           />
         )}
       </div>

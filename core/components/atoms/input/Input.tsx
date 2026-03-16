@@ -324,6 +324,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
               name={'close'}
               size={sizeMapping[size]}
               className={inputRightIconClass}
+              aria-label={`Clear ${inlineLabel || placeholder || name || 'input'}`}
             />
           </div>
         )

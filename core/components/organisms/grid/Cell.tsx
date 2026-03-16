@@ -207,7 +207,9 @@ const HeaderCell = (props: HeaderCellProps) => {
                 }}
                 filterType={filterType}
                 className="m-0"
-                customTrigger={<Button icon="filter_list" appearance="transparent" />}
+                customTrigger={
+                  <Button icon="filter_list" appearance="transparent" aria-label={`Filter ${schema.displayName}`} />
+                }
               />
             </div>
           )}
@@ -226,7 +228,13 @@ const HeaderCell = (props: HeaderCellProps) => {
                 menu={true}
                 optionType="WITH_ICON"
                 triggerOptions={{
-                  customTrigger: () => <Button icon="more_vert_filled" appearance="transparent" />,
+                  customTrigger: () => (
+                    <Button
+                      icon="more_vert_filled"
+                      appearance="transparent"
+                      aria-label={`More options for ${schema.displayName}`}
+                    />
+                  ),
                 }}
                 options={options}
                 align={'left'}
