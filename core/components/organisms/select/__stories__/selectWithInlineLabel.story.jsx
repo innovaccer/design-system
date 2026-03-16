@@ -33,13 +33,22 @@ export const withInlineLabel = () => {
           <Column key={key} size={4}>
             <Label withInput={true}>{size.label}</Label>
             <Select
-              triggerOptions={{ triggerSize: size.value, inlineLabel: 'color', placeholder: 'Select' }}
+              triggerOptions={{
+                triggerSize: size.value,
+                inlineLabel: 'color',
+                placeholder: 'Select',
+                'aria-label': 'Color selector',
+              }}
               onSelect={onSelectHandler}
             >
-              <Select.List>
+              <Select.List aria-label="Color options">
                 {colourList.map((item, key) => {
                   return (
-                    <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                    <Select.Option
+                      key={key}
+                      option={{ label: item.label, value: item.value }}
+                      aria-label={`${item.label} option`}
+                    >
                       {item.label}
                     </Select.Option>
                   );
@@ -82,11 +91,11 @@ const customCode = `() => {
         return (
           <Column key={key} size={4}>
             <Label withInput={true}>{size.label}</Label>
-            <Select triggerOptions={{ triggerSize: size.value, inlineLabel: 'color', placeholder: 'Select' }} onSelect={onSelectHandler}>
-              <Select.List>
+            <Select triggerOptions={{ triggerSize: size.value, inlineLabel: 'color', placeholder: 'Select', 'aria-label': 'Color selector' }} onSelect={onSelectHandler}>
+              <Select.List aria-label="Color options">
                 {colourList.map((item, key) => {
                   return (
-                    <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                    <Select.Option key={key} option={{ label: item.label, value: item.value }} aria-label={\`\${item.label} option\`}>
                       {item.label}
                     </Select.Option>
                   );

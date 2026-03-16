@@ -16,7 +16,6 @@ export const textareaWithCaption = () => {
           setValue(e.target.value);
         }}
         placeholder="Enter your comments here"
-        aria-labelledby="Confirmation Notes"
         id="notes"
       />
       <Caption withInput={true}>This note will be automatically pinned for export.</Caption>
@@ -39,7 +38,6 @@ const customCode = `() => {
           setValue(e.target.value);
         }}
         placeholder="Enter your comments here"
-        aria-labelledby="Confirmation Notes"
         id="notes"
       />
       <Caption withInput={true}>This note will be automatically pinned for export.</Caption>

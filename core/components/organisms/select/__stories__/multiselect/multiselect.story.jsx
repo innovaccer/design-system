@@ -28,11 +28,19 @@ export const multiSelect = () => {
   };
 
   return (
-    <Select triggerOptions={{ setLabel: setLableHandler }} onSelect={onSelectHandler} multiSelect={true}>
-      <Select.List>
+    <Select
+      triggerOptions={{ setLabel: setLableHandler, 'aria-label': 'Medication multiselect trigger' }}
+      onSelect={onSelectHandler}
+      multiSelect={true}
+    >
+      <Select.List aria-label="Medication multiselect options">
         {medicineList.map((item) => {
           return (
-            <Select.Option key={item.id} option={{ label: item.label, value: item.value, id: item.id }}>
+            <Select.Option
+              key={item.id}
+              option={{ label: item.label, value: item.value, id: item.id }}
+              aria-label={`${item.label} option`}
+            >
               {item.label}
             </Select.Option>
           );
@@ -68,11 +76,19 @@ const customCode = `() => {
   }
 
   return (
-    <Select triggerOptions={{ setLabel: setLableHandler }} onSelect={onSelectHandler} multiSelect={true} >
-        <Select.List>
+    <Select
+      triggerOptions={{ setLabel: setLableHandler, 'aria-label': 'Medication multiselect trigger' }}
+      onSelect={onSelectHandler}
+      multiSelect={true}
+    >
+      <Select.List aria-label="Medication multiselect options">
         {medicineList.map((item) => {
           return (
-            <Select.Option key={item.id} option={{ label: item.label, value: item.value, id: item.id }}>
+            <Select.Option
+              key={item.id}
+              option={{ label: item.label, value: item.value, id: item.id }}
+              aria-label={\`\${item.label} option\`}
+            >
               {item.label}
             </Select.Option>
           );

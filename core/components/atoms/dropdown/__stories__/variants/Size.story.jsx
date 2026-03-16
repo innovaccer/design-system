@@ -15,7 +15,13 @@ export const size = () => {
           <div key={ind} className="mr-8 w-25">
             <Text weight="strong">{dropdownSize.charAt(0).toUpperCase() + dropdownSize.slice(1)}</Text> <br />
             <br />
-            <Dropdown triggerSize={dropdownSize} options={storyOptions} placeholder={'Select'} />
+            <Dropdown
+              triggerSize={dropdownSize}
+              options={storyOptions}
+              placeholder={'Select'}
+              aria-label="Select option"
+              optionsAriaLabel="Options"
+            />
           </div>
         );
       })}
@@ -40,11 +46,11 @@ const customCode = `() => {
     <div className='d-flex'>
       <div className='mr-8 w-25'>
         <Text weight="strong">Tiny</Text> <br /><br />
-        <Dropdown triggerSize={'tiny'} options={storyOptions} />
+        <Dropdown triggerSize={'tiny'} options={storyOptions} aria-label="Select option" optionsAriaLabel="Options" />
       </div>
       <div className='mr-8 w-25'>
         <Text weight="strong">Regular</Text> <br /><br />
-        <Dropdown triggerSize={'regular'} options={storyOptions}/>
+        <Dropdown triggerSize={'regular'} options={storyOptions} aria-label="Select option" optionsAriaLabel="Options" />
       </div>
     </div>
   );

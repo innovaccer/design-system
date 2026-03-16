@@ -17,7 +17,7 @@ export const all = () => {
   };
 
   return (
-    <Link {...options} onClick={action('link click')}>
+    <Link {...options} onClick={action('link click')} aria-label="Read more about Innovaccer">
       Read more
     </Link>
   );

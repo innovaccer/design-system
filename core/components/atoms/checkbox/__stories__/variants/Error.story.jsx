@@ -22,6 +22,7 @@ export const error = () => {
 
   return (
     <Checkbox
+      aria-label={label}
       error={true}
       checked={checked}
       indeterminate={indeterminate}

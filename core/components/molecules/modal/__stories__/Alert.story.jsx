@@ -7,6 +7,7 @@ export const alerts = () => {
   const backdropClose = false;
   const dimension = 'small';
 
+  const headingId = 'modal-alert-heading';
   const onClose = () => {
     setOpen(!open);
     action('on close triggered')();
@@ -24,7 +25,9 @@ export const alerts = () => {
         onClose={onClose}
         headerOptions={{
           heading: 'Discard Changes',
+          headingId,
         }}
+        aria-labelledby={headingId}
         footer={
           <>
             <Button appearance="basic" onClick={action('Cancel button click')}>
@@ -49,6 +52,7 @@ const customCode = `() => {
   const [open, setOpen] = React.useState(false);
   const backdropClose = false;
   const dimension = 'small';
+  const headingId = 'modal-alert-heading';
 
   const onClose = () => {
     setOpen(!open);
@@ -65,7 +69,9 @@ const customCode = `() => {
         onClose={onClose}
         headerOptions={{
           heading: 'Discard Changes',
+          headingId,
         }}
+        aria-labelledby={headingId}
         footer={(
           <>
             <Button appearance="basic" onClick={console.log('Cancel button click')}>Cancel</Button>

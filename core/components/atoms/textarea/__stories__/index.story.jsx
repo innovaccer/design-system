@@ -19,7 +19,7 @@ export const all = () => {
         placeholder={placeholder}
         resize={resize}
         rows={rows}
-        aria-labelledby="Textarea"
+        aria-label="Textarea input"
       />
     </div>
   );

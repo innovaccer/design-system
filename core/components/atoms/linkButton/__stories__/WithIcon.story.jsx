@@ -6,7 +6,7 @@ export const withIcon = () => {
   return (
     <div className="d-flex">
       <div className="mr-10">
-        <LinkButton icon="add" iconAlign="left" aria-label="left">
+        <LinkButton icon="add" iconAlign="left" aria-label="Add items">
           add items
         </LinkButton>
         <br />
@@ -14,7 +14,7 @@ export const withIcon = () => {
       </div>
 
       <div>
-        <LinkButton icon="keyboard_arrow_down_round" iconAlign="right" aria-label="right">
+        <LinkButton icon="keyboard_arrow_down_round" iconAlign="right" aria-label="More details">
           more details
         </LinkButton>
         <br />

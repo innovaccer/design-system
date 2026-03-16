@@ -8,7 +8,7 @@ export const iconLeft = () => {
   return (
     <div className="Row">
       <div className="mr-9 mb-8 w-25">
-        <Input name="input" placeholder="Search" onChange={action('on-change')} icon={icon} />
+        <Input name="input" placeholder="Search" aria-label="Search" onChange={action('on-change')} icon={icon} />
         <br />
         <Text weight="strong">Default</Text>
       </div>
@@ -16,6 +16,7 @@ export const iconLeft = () => {
         <Input
           name="input"
           placeholder="Search"
+          aria-label="Search"
           onChange={action('on-change')}
           info="sample info tooltip"
           icon={icon}
@@ -24,17 +25,24 @@ export const iconLeft = () => {
         <Text weight="strong">Placeholder</Text>
       </div>
       <div className="mr-9 mb-8 w-25">
-        <Input name="input" placeholder="Search" onChange={action('on-change')} error={true} icon={icon} />
+        <Input
+          name="input"
+          placeholder="Search"
+          aria-label="Search"
+          onChange={action('on-change')}
+          error={true}
+          icon={icon}
+        />
         <br />
         <Text weight="strong">Error</Text>
       </div>
       <div className="mr-9 w-25">
-        <Input name="input" placeholder="Search" disabled={true} icon={icon} />
+        <Input name="input" placeholder="Search" aria-label="Search" disabled={true} icon={icon} />
         <br />
         <Text weight="strong">Disabled</Text>
       </div>
       <div className="mr-9 w-25">
-        <Input name="input" value="Value" icon={icon} readOnly={true} />
+        <Input name="input" value="Value" aria-label="Search" icon={icon} readOnly={true} />
         <br />
         <Text weight="strong">Read Only</Text>
       </div>

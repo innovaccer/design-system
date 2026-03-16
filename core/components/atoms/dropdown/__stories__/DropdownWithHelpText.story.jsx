@@ -49,9 +49,16 @@ export const dropdownWithHelpText = () => {
   ];
   return (
     <>
-      <Label withInput={true}>Area code</Label>
+      <Label withInput={true} id="area-code-label">
+        Area code
+      </Label>
       <div className="w-25">
-        <Dropdown options={options} withSearch={true} placeholder="Select an area code" />
+        <Dropdown
+          options={options}
+          withSearch={true}
+          placeholder="Select an area code"
+          aria-labelledby="area-code-label"
+        />
         <HelpText message={'If the number with this code is not available, we will use the next best match'} />
       </div>
     </>

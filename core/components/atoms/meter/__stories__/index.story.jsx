@@ -15,6 +15,7 @@ export const all = () => {
         value={40}
         max={200}
         stepCount={stepCount}
+        ariaLabel="Score out of 5 steps"
         renderLabel={({ filledSteps, value, min, max, stepCount, percentage }) => {
           action(
             'filledSteps, value, min, max, stepCount, percentage',
@@ -37,7 +38,7 @@ const customCode = `() => {
   return (
     <div className="d-flex align-items-center">
       <Text className="mr-5" weight="medium">Score:</Text>
-      <Meter value={40} max={100} stepCount={stepCount} renderLabel={({filledSteps, stepCount }) => \`\${filledSteps} out of \${stepCount}\`} />
+      <Meter value={40} max={100} stepCount={stepCount} ariaLabel="Score out of 5 steps" renderLabel={({filledSteps, stepCount }) => \`\${filledSteps} out of \${stepCount}\`} />
     </div>
   );
 }`;

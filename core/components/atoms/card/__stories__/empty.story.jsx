@@ -19,7 +19,7 @@ export const EmptyCard = () => {
               size="small"
               className="pb-6"
             >
-              <Button icon="refresh" iconAlign="left" className="mt-3">
+              <Button icon="refresh" iconAlign="left" className="mt-3" aria-label="Reload page">
                 Reload
               </Button>
             </EmptyState>

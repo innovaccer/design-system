@@ -28,11 +28,21 @@ export const sections = () => {
               <div className="d-flex flex-column align-items-center mr-7">
                 <Text weight="strong">{'With Sections'}</Text>
                 <br />
-                <Dropdown options={options} withCheckbox={value} />
+                <Dropdown
+                  options={options}
+                  withCheckbox={value}
+                  aria-label="Select option"
+                  optionsAriaLabel="Options"
+                />
               </div>
               <div className="d-flex flex-column align-items-center mr-7">
                 <Text weight="strong">{'Without Sections'}</Text> <br />
-                <Dropdown options={storyOptions} withCheckbox={value} />
+                <Dropdown
+                  options={storyOptions}
+                  withCheckbox={value}
+                  aria-label="Select option"
+                  optionsAriaLabel="Options"
+                />
               </div>
             </div>
             <br />

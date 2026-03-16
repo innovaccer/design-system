@@ -3,6 +3,7 @@ import { Radio } from '@/index';
 
 export const OverflowContent = () => (
   <Radio
+    aria-label="Share both your healthcare data and some personal information."
     className="w-25"
     label="Share both your healthcare data and some personal information."
     name="options"

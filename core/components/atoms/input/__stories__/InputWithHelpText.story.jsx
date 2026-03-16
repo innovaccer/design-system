@@ -18,6 +18,7 @@ export const inputWithHelpText = () => {
           type={visibility ? 'text' : 'password'}
           actionIcon={
             <Input.ActionButton
+              aria-label={visibility ? 'Show Password' : 'Hide Password'}
               onClick={() => setVisibility((x) => !x)}
               name={visibility ? 'visibility_on' : 'visibility_off'}
               className="cursor-pointer p-3"
@@ -37,6 +38,7 @@ export const inputWithHelpText = () => {
           type={visibility2 ? 'text' : 'password'}
           actionIcon={
             <Input.ActionButton
+              aria-label={visibility2 ? 'Show password' : 'Hide password'}
               onClick={() => setVisibility2((x) => !x)}
               name={visibility2 ? 'visibility_on' : 'visibility_off'}
               className="cursor-pointer p-3"
@@ -95,7 +97,7 @@ const customCode = `() => {
           }}
           actionIcon={
             <Input.ActionButton
-              aria-label={visibility ? 'Show Password' : 'Hide Password'}
+              aria-label={visibility2 ? 'Show Password' : 'Hide Password'}
               onClick={() => setVisibility2((x) => !x)}
               name={visibility2 ? 'visibility_on' : 'visibility_off'}
               className="cursor-pointer p-3"

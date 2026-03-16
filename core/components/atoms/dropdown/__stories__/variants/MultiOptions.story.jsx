@@ -29,6 +29,8 @@ export const multiOptions = () => {
           placeholder={'Select'}
           onChange={onChangeHandler}
           onClose={onClose}
+          aria-label="Select options"
+          optionsAriaLabel="Options"
         />
       </div>
       <div className="mr-9 w-25">
@@ -41,6 +43,8 @@ export const multiOptions = () => {
           placeholder={'Select'}
           onChange={onChangeHandler}
           onClose={onClose}
+          aria-label="Select options"
+          optionsAriaLabel="Options"
         />
       </div>
       <div className="mr-9 w-25">
@@ -54,6 +58,8 @@ export const multiOptions = () => {
           placeholder={'Select'}
           onChange={onChangeHandler}
           onClose={onClose}
+          aria-label="Select options"
+          optionsAriaLabel="Options"
         />
       </div>
     </div>
@@ -91,6 +97,8 @@ const customCode = `() => {
           placeholder={'Select'}
           onChange={onChangeHandler}
           onClose={onClose}
+          aria-label="Select options"
+          optionsAriaLabel="Options"
         />
       </div>
       <div className='mr-9 w-25'>
@@ -101,6 +109,8 @@ const customCode = `() => {
           placeholder={'Select'}
           onChange={onChangeHandler}
           onClose={onClose}
+          aria-label="Select options"
+          optionsAriaLabel="Options"
         />
       </div>
       <div className='mr-9 w-25'>
@@ -112,6 +122,8 @@ const customCode = `() => {
           placeholder={'Select'}
           onChange={onChangeHandler}
           onClose={onClose}
+          aria-label="Select options"
+          optionsAriaLabel="Options"
         />
       </div>
     </div>

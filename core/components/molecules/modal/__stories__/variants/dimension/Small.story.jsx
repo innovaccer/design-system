@@ -6,6 +6,7 @@ export const small = () => {
   const [open, setOpen] = React.useState(false);
   const backdropClose = false;
   const dimension = 'small';
+  const headingId = 'modal-small-a11y-heading';
 
   const onClose = () => {
     setOpen(false);
@@ -25,7 +26,9 @@ export const small = () => {
         headerOptions={{
           heading: 'Heading',
           subHeading: 'Subheading',
+          headingId,
         }}
+        aria-labelledby={headingId}
         footer={
           <>
             <Button appearance="basic" onClick={action('Basic button click')}>
@@ -51,6 +54,7 @@ const customCode = `() => {
   const [open, setOpen] = React.useState(false);
   const dimension = 'small';
   const backdropClose = true;
+  const headingId = 'modal-small-a11y-heading';
 
   const onClose = () => {
     setOpen(!open);
@@ -66,8 +70,10 @@ const customCode = `() => {
         onClose={onClose}
         headerOptions={{
           heading: 'Heading',
-          subHeading: 'Subheading'
+          subHeading: 'Subheading',
+          headingId,
         }}
+        aria-labelledby={headingId}
         footer={(
           <>
             <Button appearance="basic" onClick={()=>console.log('Basic button click')}>Basic</Button>

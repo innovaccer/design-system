@@ -12,23 +12,34 @@ export const tabLabelOverflow = () => {
   };
 
   return (
-    <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6" headerClassName="pl-3">
-      <Tab label="All" count={15} className="pl-6">
-        <div>All</div>
-      </Tab>
-      <Tab label="Pending" count={5} className="pl-6">
-        <div>Pending</div>
-      </Tab>
-      <Tab label="A very very very very very long tab label" count={3} className="pl-6">
-        <div>A very very very very very long tab label</div>
-      </Tab>
-      <Tab label="Successful" count={2} className="pl-6">
-        <div>Successful</div>
-      </Tab>
-      <Tab label="Declined" disabled={true} count={5}>
-        <div>Declined</div>
-      </Tab>
-    </Tabs>
+    <>
+      <div id="tabs-overflow-label" className="mb-3">
+        Tab options
+      </div>
+      <Tabs
+        activeIndex={activeIndex}
+        onTabChange={onTabChangeHandler}
+        className="mb-6"
+        headerClassName="pl-3"
+        aria-labelledby="tabs-overflow-label"
+      >
+        <Tab label="All" count={15} className="pl-6">
+          <div>All</div>
+        </Tab>
+        <Tab label="Pending" count={5} className="pl-6">
+          <div>Pending</div>
+        </Tab>
+        <Tab label="A very very very very very long tab label" count={3} className="pl-6">
+          <div>A very very very very very long tab label</div>
+        </Tab>
+        <Tab label="Successful" count={2} className="pl-6">
+          <div>Successful</div>
+        </Tab>
+        <Tab label="Declined" disabled={true} count={5}>
+          <div>Declined</div>
+        </Tab>
+      </Tabs>
+    </>
   );
 };
 
@@ -39,8 +50,10 @@ const customCode = `() => {
     setActiveIndex(tabIndex);
   };
 
-  return(
-    <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6" headerClassName="pl-3">
+  return (
+    <>
+      <div id="tabs-overflow-label" className="mb-3">Tab options</div>
+      <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6" headerClassName="pl-3" aria-labelledby="tabs-overflow-label">
       <Tab label="All" count={15} className="pl-6">
         <div>All</div>
       </Tab>

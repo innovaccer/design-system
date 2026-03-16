@@ -28,11 +28,19 @@ export const outlined = () => {
           <Column size={3}>
             <div className="bg-light p-6 d-flex flex-column">
               <Label className="mb-3">Outline</Label>
-              <Select styleType="outlined" triggerOptions={{ triggerSize: 'regular' }} onSelect={onSelectHandler}>
-                <Select.List size="compressed">
+              <Select
+                styleType="outlined"
+                triggerOptions={{ triggerSize: 'regular', 'aria-label': 'Medication selector' }}
+                onSelect={onSelectHandler}
+              >
+                <Select.List size="compressed" aria-label="Medication options list">
                   {medicineList.map((item, itemKey) => {
                     return (
-                      <Select.Option key={itemKey} option={{ label: item.label, value: item.value }}>
+                      <Select.Option
+                        key={itemKey}
+                        option={{ label: item.label, value: item.value }}
+                        aria-label={item.label + ' option'}
+                      >
                         {item.label}
                       </Select.Option>
                     );
@@ -44,11 +52,19 @@ export const outlined = () => {
           <Column size={3}>
             <div className="bg-secondary-lightest p-6 d-flex flex-column">
               <Label className="mb-3">Outline</Label>
-              <Select styleType="outlined" triggerOptions={{ triggerSize: 'regular' }} onSelect={onSelectHandler}>
-                <Select.List size="compressed">
+              <Select
+                styleType="outlined"
+                triggerOptions={{ triggerSize: 'regular', 'aria-label': 'Medication selector' }}
+                onSelect={onSelectHandler}
+              >
+                <Select.List size="compressed" aria-label="Medication options list">
                   {medicineList.map((item, itemKey) => {
                     return (
-                      <Select.Option key={itemKey} option={{ label: item.label, value: item.value }}>
+                      <Select.Option
+                        key={itemKey}
+                        option={{ label: item.label, value: item.value }}
+                        aria-label={item.label + ' option'}
+                      >
                         {item.label}
                       </Select.Option>
                     );
@@ -88,11 +104,11 @@ const customCode = `() => {
           <Column size={3}>
             <div className="bg-light p-6 d-flex flex-column">
               <Label className="mb-3">Outline</Label>
-              <Select styleType="outlined" triggerOptions={{ triggerSize: 'regular' }} onSelect={onSelectHandler}>
-                <Select.List size="compressed">
+              <Select styleType="outlined" triggerOptions={{ triggerSize: 'regular', 'aria-label': 'Medication selector' }} onSelect={onSelectHandler}>
+                <Select.List size="compressed" aria-label="Medication options list">
                   {medicineList.map((item, itemKey) => {
                     return (
-                      <Select.Option key={itemKey} option={{ label: item.label, value: item.value }}>
+                      <Select.Option key={itemKey} option={{ label: item.label, value: item.value }} aria-label={item.label + ' option'}>
                         {item.label}
                       </Select.Option>
                     );
@@ -104,11 +120,11 @@ const customCode = `() => {
           <Column size={3}>
             <div className="bg-secondary-lightest p-6 d-flex flex-column">
               <Label className="mb-3">Outline</Label>
-              <Select styleType="outlined" triggerOptions={{ triggerSize: 'regular' }} onSelect={onSelectHandler}>
-                <Select.List size="compressed">
+              <Select styleType="outlined" triggerOptions={{ triggerSize: 'regular', 'aria-label': 'Medication selector' }} onSelect={onSelectHandler}>
+                <Select.List size="compressed" aria-label="Medication options list">
                   {medicineList.map((item, itemKey) => {
                     return (
-                      <Select.Option key={itemKey} option={{ label: item.label, value: item.value }}>
+                      <Select.Option key={itemKey} option={{ label: item.label, value: item.value }} aria-label={item.label + ' option'}>
                         {item.label}
                       </Select.Option>
                     );

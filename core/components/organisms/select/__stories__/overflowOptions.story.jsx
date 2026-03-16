@@ -30,6 +30,7 @@ export const overflowBehavior = () => {
       <Tooltip showOnTruncation={true} tooltip={item.label} elementRef={elementRef} open={showTooltip}>
         <Select.Option
           option={{ label: item.label, value: item.value }}
+          aria-label={item.label + ' option'}
           onFocus={() => {
             setShowTooltip(true);
           }}
@@ -46,8 +47,8 @@ export const overflowBehavior = () => {
   };
 
   return (
-    <Select onSelect={onSelectHandler}>
-      <Select.List>
+    <Select onSelect={onSelectHandler} triggerOptions={{ 'aria-label': 'Medication selector' }}>
+      <Select.List aria-label="Medication options list">
         {medicineList.map((item, key) => {
           return <SelectItem item={item} key={key} />;
         })}
@@ -88,6 +89,7 @@ const customCode = `() => {
       <Tooltip showOnTruncation={true} tooltip={item.label} elementRef={elementRef} open={showTooltip}>
         <Select.Option
           option={{ label: item.label, value: item.value }}
+          aria-label={item.label + ' option'}
           onFocus={() => {
             setShowTooltip(true);
           }}
@@ -104,8 +106,8 @@ const customCode = `() => {
   };
 
   return (
-    <Select onSelect={onSelectHandler}>
-      <Select.List>
+    <Select onSelect={onSelectHandler} triggerOptions={{ 'aria-label': 'Medication selector' }}>
+      <Select.List aria-label="Medication options list">
         {medicineList.map((item, key) => {
           return <SelectItem item={item} key={key} />;
         })}

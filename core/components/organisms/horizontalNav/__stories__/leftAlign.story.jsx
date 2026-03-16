@@ -44,7 +44,15 @@ export const leftAligned = () => {
     setActive(menu);
   };
 
-  const subHeading = <HorizontalNav menus={data} active={active} onClick={onClickHandler} className="ml-5 mt-4" />;
+  const subHeading = (
+    <HorizontalNav
+      menus={data}
+      active={active}
+      onClick={onClickHandler}
+      className="ml-5 mt-4"
+      aria-label="Medication type tabs"
+    />
+  );
 
   const header = (
     <div>
@@ -82,8 +90,8 @@ export const leftAligned = () => {
           <Label withInput={true} required={true}>
             Type
           </Label>
-          <Select triggerOptions={{ withClearButton: false }} width="100%">
-            <Select.List>
+          <Select triggerOptions={{ withClearButton: false, 'aria-label': 'Medication type' }} width="100%">
+            <Select.List aria-label="Type options list">
               {options.map((item, key) => {
                 return (
                   <Select.Option key={key} option={{ label: item.label, value: item.value }}>
@@ -96,8 +104,8 @@ export const leftAligned = () => {
           <Label withInput={true} className="mt-6">
             Active Date
           </Label>
-          <Select triggerOptions={{ withClearButton: false }} width="100%">
-            <Select.List>
+          <Select triggerOptions={{ withClearButton: false, 'aria-label': 'Active date' }} width="100%">
+            <Select.List aria-label="Active date options list">
               {options.map((item, key) => {
                 return (
                   <Select.Option key={key} option={{ label: item.label, value: item.value }}>
@@ -110,8 +118,8 @@ export const leftAligned = () => {
           <Label withInput={true} className="mt-6" required={true}>
             Diagnosis Diseases
           </Label>
-          <Select triggerOptions={{ withClearButton: false }} width="100%">
-            <Select.List>
+          <Select triggerOptions={{ withClearButton: false, 'aria-label': 'Diagnosis diseases' }} width="100%">
+            <Select.List aria-label="Diagnosis diseases options list">
               {options.map((item, key) => {
                 return (
                   <Select.Option key={key} option={{ label: item.label, value: item.value }}>
@@ -174,6 +182,7 @@ const customCode = `() => {
       active={active}
       onClick={onClickHandler}
       className="ml-5 mt-4"
+      aria-label="Medication type tabs"
     />
   );
 
@@ -202,8 +211,8 @@ const customCode = `() => {
       >
         <div className="py-5 w-50">
           <Label withInput={true} required={true}>Type</Label>
-          <Select triggerOptions={{ withClearButton: false }} width="100%">
-            <Select.List>
+          <Select triggerOptions={{ withClearButton: false, 'aria-label': 'Medication type' }} width="100%">
+            <Select.List aria-label="Type options list">
               {options.map((item, key) => {
                 return (
                   <Select.Option key={key} option={{ label: item.label, value: item.value }}>
@@ -214,8 +223,8 @@ const customCode = `() => {
             </Select.List>
           </Select>
           <Label withInput={true} className="mt-6">Active Date</Label>
-          <Select triggerOptions={{ withClearButton: false }} width="100%">
-            <Select.List>
+          <Select triggerOptions={{ withClearButton: false, 'aria-label': 'Active date' }} width="100%">
+            <Select.List aria-label="Active date options list">
               {options.map((item, key) => {
                 return (
                   <Select.Option key={key} option={{ label: item.label, value: item.value }}>
@@ -226,8 +235,8 @@ const customCode = `() => {
             </Select.List>
           </Select>
           <Label withInput={true} className="mt-6" required={true}>Diagnosis Diseases</Label>
-            <Select triggerOptions={{ withClearButton: false }} width="100%">
-            <Select.List>
+          <Select triggerOptions={{ withClearButton: false, 'aria-label': 'Diagnosis diseases' }} width="100%">
+            <Select.List aria-label="Diagnosis diseases options list">
               {options.map((item, key) => {
                 return (
                   <Select.Option key={key} option={{ label: item.label, value: item.value }}>

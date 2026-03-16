@@ -8,7 +8,7 @@ export const splitButton = () => {
         Request review
       </Button>
       <div className="mb-10">
-        <Menu trigger={<Menu.Trigger />}>
+        <Menu trigger={<Menu.Trigger aria-label="Open options menu" />}>
           <Menu.List>
             <Menu.Item>Download All</Menu.Item>
             <Menu.Item>Download Selected</Menu.Item>

@@ -68,11 +68,21 @@ export const size = () => {
           return (
             <Column key={key} size={4}>
               <Label className="mb-3">{config.label} Select</Label>
-              <Select triggerOptions={{ triggerSize: config.triggerSize }} onSelect={onSelectHandler}>
-                <Select.List size={config.listSize}>
+              <Select
+                triggerOptions={{
+                  triggerSize: config.triggerSize,
+                  'aria-label': config.label + ' medication selector',
+                }}
+                onSelect={onSelectHandler}
+              >
+                <Select.List size={config.listSize} aria-label="Medication options list">
                   {medicineList.map((item, itemKey) => {
                     return (
-                      <Select.Option key={itemKey} option={{ label: item.label, value: item.value }}>
+                      <Select.Option
+                        key={itemKey}
+                        option={{ label: item.label, value: item.value }}
+                        aria-label={item.label + ' option'}
+                      >
                         {item.label}
                       </Select.Option>
                     );
@@ -92,7 +102,13 @@ export const size = () => {
           return (
             <Column key={key} size={4}>
               <Label className="mb-3">{config.label} Select with Search</Label>
-              <Select triggerOptions={{ triggerSize: config.triggerSize }} onSelect={onSelectHandler}>
+              <Select
+                triggerOptions={{
+                  triggerSize: config.triggerSize,
+                  'aria-label': config.label + ' medication selector with search',
+                }}
+                onSelect={onSelectHandler}
+              >
                 <Select.SearchInput
                   value={searchTerm}
                   placeholder="Search medicines..."
@@ -100,10 +116,14 @@ export const size = () => {
                   onChange={(value) => onChangeHandler(key, value)}
                   onClear={() => onClearHandler(key)}
                 />
-                <Select.List size={config.listSize}>
+                <Select.List size={config.listSize} aria-label="Medication options list">
                   {currentMedicines.map((item, itemKey) => {
                     return (
-                      <Select.Option key={itemKey} option={{ label: item.label, value: item.value }}>
+                      <Select.Option
+                        key={itemKey}
+                        option={{ label: item.label, value: item.value }}
+                        aria-label={item.label + ' option'}
+                      >
                         {item.label}
                       </Select.Option>
                     );
@@ -185,11 +205,14 @@ const customCode = `() => {
               <Label className="mb-3">
                 {config.label} Select
               </Label>
-              <Select triggerOptions={{ triggerSize: config.triggerSize }} onSelect={onSelectHandler}>
-                <Select.List size={config.listSize}>
+              <Select triggerOptions={{
+                triggerSize: config.triggerSize,
+                'aria-label': config.label + ' medication selector',
+              }} onSelect={onSelectHandler}>
+                <Select.List size={config.listSize} aria-label="Medication options list">
                   {medicineList.map((item, itemKey) => {
                     return (
-                      <Select.Option key={itemKey} option={{ label: item.label, value: item.value }}>
+                      <Select.Option key={itemKey} option={{ label: item.label, value: item.value }} aria-label={item.label + ' option'}>
                         {item.label}
                       </Select.Option>
                     );
@@ -211,7 +234,10 @@ const customCode = `() => {
               <Label className="mb-3">
                 {config.label} Select with Search
               </Label>
-              <Select triggerOptions={{ triggerSize: config.triggerSize }} onSelect={onSelectHandler}>
+              <Select triggerOptions={{
+                triggerSize: config.triggerSize,
+                'aria-label': config.label + ' medication selector with search',
+              }} onSelect={onSelectHandler}>
                 <Select.SearchInput
                   value={searchTerm}
                   placeholder="Search medicines..."
@@ -219,10 +245,10 @@ const customCode = `() => {
                   onChange={(value) => onChangeHandler(key, value)}
                   onClear={() => onClearHandler(key)}
                 />
-                <Select.List size={config.listSize}>
+                <Select.List size={config.listSize} aria-label="Medication options list">
                   {currentMedicines.map((item, itemKey) => {
                     return (
-                      <Select.Option key={itemKey} option={{ label: item.label, value: item.value }}>
+                      <Select.Option key={itemKey} option={{ label: item.label, value: item.value }} aria-label={item.label + ' option'}>
                         {item.label}
                       </Select.Option>
                     );

@@ -30,6 +30,7 @@ export const all = () => {
       max={max}
       minLength={minLength}
       maxLength={maxLength}
+      aria-label="URL input"
     />
   );
 };

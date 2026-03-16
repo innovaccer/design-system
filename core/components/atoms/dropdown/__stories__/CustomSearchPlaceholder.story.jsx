@@ -24,8 +24,10 @@ export const customSearchPlaceholder = () => {
   ];
   return (
     <div className="mb-10 w-25">
-      <Label withInput={true}>Gender</Label>
-      <Dropdown options={options} searchPlaceholder="Search Gender" withSearch={true} />
+      <Label withInput={true} id="gender-label">
+        Gender
+      </Label>
+      <Dropdown options={options} searchPlaceholder="Search Gender" withSearch={true} aria-labelledby="gender-label" />
     </div>
   );
 };

@@ -13,6 +13,7 @@ export const rangeLimit = () => {
           rangeLimit={7}
           yearNav={2023}
           monthNav={2}
+          aria-label="Date range picker with 7 day limit"
         />
       </Card>
     </div>

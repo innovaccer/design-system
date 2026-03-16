@@ -20,11 +20,15 @@ export const optionItemWithIcon = () => {
   };
 
   return (
-    <Select onSelect={onSelectHandler}>
-      <Select.List>
+    <Select onSelect={onSelectHandler} triggerOptions={{ 'aria-label': 'Assistance status selector' }}>
+      <Select.List aria-label="Assistance status options">
         {options.map((item, key) => {
           return (
-            <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+            <Select.Option
+              key={key}
+              option={{ label: item.label, value: item.value }}
+              aria-label={`${item.label} option`}
+            >
               <div className="d-flex align-items-center">
                 <Icon className="mr-4" name={item.icon} />
                 <Text> {item.label} </Text>
@@ -55,11 +59,11 @@ const customCode = `() => {
   };
 
   return (
-    <Select onSelect={onSelectHandler} >
-        <Select.List>
+    <Select onSelect={onSelectHandler} triggerOptions={{ 'aria-label': 'Assistance status selector' }}>
+        <Select.List aria-label="Assistance status options">
           {options.map((item, key) => {
             return (
-              <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+              <Select.Option key={key} option={{ label: item.label, value: item.value }} aria-label={\`\${item.label} option\`}>
               <div className="d-flex align-items-center">
                 <Icon
                 className="mr-4"

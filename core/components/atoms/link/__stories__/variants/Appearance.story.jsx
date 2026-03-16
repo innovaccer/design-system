@@ -5,10 +5,10 @@ import { Link } from '@/index';
 export const appearance = () => {
   return (
     <div className="d-flex">
-      <Link appearance="default" href="http://innovaccer.com">
+      <Link appearance="default" href="http://innovaccer.com" aria-label="Default link to Innovaccer">
         Default Link
       </Link>
-      <Link appearance="subtle" href="http://innovaccer.com" className="ml-7">
+      <Link appearance="subtle" href="http://innovaccer.com" className="ml-7" aria-label="Subtle link to Innovaccer">
         Subtle Link
       </Link>
     </div>

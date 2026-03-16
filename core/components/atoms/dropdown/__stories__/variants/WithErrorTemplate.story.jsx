@@ -32,7 +32,16 @@ export const withErrorTemplate = () => {
     );
   };
 
-  return <Dropdown fetchOptions={fetchOptions} className="w-25" placeholder="Select" errorTemplate={errorTemplate} />;
+  return (
+    <Dropdown
+      fetchOptions={fetchOptions}
+      className="w-25"
+      placeholder="Select"
+      errorTemplate={errorTemplate}
+      aria-label="Select option"
+      optionsAriaLabel="Options"
+    />
+  );
 };
 
 const customCode = `() => {
@@ -65,7 +74,16 @@ const customCode = `() => {
       );
     };
   
-    return <Dropdown fetchOptions={fetchOptions} className="w-25" placeholder="Select" errorTemplate={errorTemplate} />;
+    return (
+    <Dropdown
+      fetchOptions={fetchOptions}
+      className="w-25"
+      placeholder="Select"
+      errorTemplate={errorTemplate}
+      aria-label="Select option"
+      optionsAriaLabel="Options"
+    />
+  );
 }`;
 
 export default {

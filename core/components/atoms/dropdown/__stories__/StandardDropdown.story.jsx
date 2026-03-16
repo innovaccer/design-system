@@ -30,7 +30,7 @@ export const standardDropdown = () => {
       value: 'completely_failed',
     },
   ];
-  return <Dropdown options={options} className="w-25" placeholder="Status" />;
+  return <Dropdown options={options} className="w-25" placeholder="Status" aria-label="Select status" />;
 };
 
 export default {

@@ -38,6 +38,7 @@ export const withInput = () => {
     <div className="w-75">
       <DateRangePicker
         withInput={true}
+        aria-label="Date range input"
         startDate={startDate}
         endDate={endDate}
         inputFormat={inputFormat}

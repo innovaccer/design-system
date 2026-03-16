@@ -13,6 +13,8 @@ export const layering = () => {
     action('on close triggered')();
   };
 
+  const headingId = 'modal-layering-heading';
+  const headingIdTwo = 'modal-layering-heading-two';
   const onCloseSecondOverlay = () => {
     setOpenSecondOverlay(false);
     action('on close triggered')();
@@ -32,7 +34,9 @@ export const layering = () => {
         headerOptions={{
           heading: 'Heading',
           subHeading: 'Subheading',
+          headingId,
         }}
+        aria-labelledby={headingId}
         footer={
           <>
             <Button appearance="basic" onClick={action('Basic button click')}>
@@ -61,7 +65,9 @@ export const layering = () => {
         headerOptions={{
           heading: 'Heading Part Two',
           subHeading: 'Subheading Part Two',
+          headingId: headingIdTwo,
         }}
+        aria-labelledby={headingIdTwo}
         footer={
           <>
             <Button appearance="primary" className="ml-4" onClick={action('Primary button Two click')}>
@@ -83,6 +89,9 @@ const customCode = `() => {
   const dimension = 'medium';
   const backdropClose = true;
 
+  const headingId = 'modal-layering-heading';
+  const headingIdTwo = 'modal-layering-heading-two';
+
   const onClose = () => {
     setOpen(!open);
   };
@@ -102,8 +111,10 @@ const customCode = `() => {
         onClose={onClose}
         headerOptions={{
           heading: 'Heading',
-          subHeading: 'Subheading'
+          subHeading: 'Subheading',
+          headingId,
         }}
+        aria-labelledby={headingId}
         footer={(
           <>
             <Button appearance="basic" onClick={()=>console.log('Basic button click')}>Basic</Button>
@@ -130,7 +141,9 @@ const customCode = `() => {
         headerOptions={{
           heading: 'Heading Part Two',
           subHeading: 'Subheading Part Two',
+          headingId: headingIdTwo,
         }}
+        aria-labelledby={headingIdTwo}
         footer={
           <>
             <Button appearance="primary" className="ml-4" onClick={() => console.log('Primary button click')}>

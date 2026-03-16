@@ -50,6 +50,8 @@ export const singleSelect = () => {
         onChange={onChangeHandler}
         onPopperToggle={onPopperToggle}
         open={open}
+        aria-label="Select option"
+        optionsAriaLabel="Options"
       />
     </div>
   );
@@ -117,6 +119,8 @@ const customCode = `() => {
         onPopperToggle={onPopperToggle}
         onClose={onClose}
         open={open}
+        aria-label="Select option"
+        optionsAriaLabel="Options"
       />
     </div>
   );

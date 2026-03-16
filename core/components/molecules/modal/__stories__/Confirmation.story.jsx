@@ -7,6 +7,7 @@ export const confirmations = () => {
   const backdropClose = false;
   const dimension = 'medium';
 
+  const headingId = 'modal-confirmation-heading';
   const onClose = () => {
     setOpen(!open);
     action('on close triggered')();
@@ -24,7 +25,9 @@ export const confirmations = () => {
         onClose={onClose}
         headerOptions={{
           heading: 'Edit filters',
+          headingId,
         }}
+        aria-labelledby={headingId}
         footer={
           <>
             <Button appearance="basic" onClick={action('Cancel button click')}>
@@ -52,6 +55,7 @@ const customCode = `() => {
   const [open, setOpen] = React.useState(false);
   const backdropClose = false;
   const dimension = 'medium';
+  const headingId = 'modal-confirmation-heading';
 
   const onClose = () => {
     setOpen(!open);
@@ -68,7 +72,9 @@ const customCode = `() => {
         onClose={onClose}
         headerOptions={{
           heading: 'Edit filters',
+          headingId,
         }}
+        aria-labelledby={headingId}
         footer={(
           <>
             <Button appearance="basic" onClick={console.log('Cancel button click')}>Cancel</Button>

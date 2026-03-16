@@ -5,9 +5,11 @@ export const Disabled = () => {
   return (
     <div className="d-flex">
       <div>
-        <Label withInput={true}>Disabled</Label>
+        <Label htmlFor="disabled-textarea" withInput={true}>
+          Disabled
+        </Label>
         <Textarea
-          aria-labelledby="Textarea"
+          id="disabled-textarea"
           disabled={true}
           resize={false}
           name="Textarea"
@@ -16,8 +18,10 @@ export const Disabled = () => {
         />
       </div>
       <div className="ml-6">
-        <Label withInput={true}>Enabled</Label>
-        <Textarea aria-labelledby="Textarea" name="Textarea" placeholder="Placeholder" rows={3} />
+        <Label htmlFor="enabled-textarea" withInput={true}>
+          Enabled
+        </Label>
+        <Textarea id="enabled-textarea" name="Textarea" placeholder="Placeholder" rows={3} />
       </div>
     </div>
   );
@@ -27,9 +31,9 @@ const customCode = `() => {
   return (
     <div className="d-flex">
       <div>
-        <Label withInput={true}>Disabled</Label>
+        <Label htmlFor="disabled-textarea" withInput={true}>Disabled</Label>
         <Textarea
-          aria-labelledby="Textarea"
+          id="disabled-textarea"
           disabled={true}
           resize={false}
           name="Textarea"
@@ -38,9 +42,9 @@ const customCode = `() => {
         />
       </div>
       <div className="ml-6">
-        <Label withInput={true}>Enabled</Label>
+        <Label htmlFor="enabled-textarea" withInput={true}>Enabled</Label>
         <Textarea
-          aria-labelledby="Textarea"
+          id="enabled-textarea"
           name="Textarea"
           placeholder="Placeholder"
           rows={3}

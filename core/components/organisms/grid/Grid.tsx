@@ -401,6 +401,14 @@ export interface GridProps extends BaseProps {
    * Show nested row trigger
    */
   showNestedRowTrigger?: boolean;
+  /**
+   * Accessible label for grid container
+   */
+  'aria-label'?: string;
+  /**
+   * Associates grid with an external label element
+   */
+  'aria-labelledby'?: string;
 }
 
 export interface GridState {
@@ -674,6 +682,8 @@ export class Grid extends React.Component<GridProps, GridState> {
       fetchDataOnScroll,
       error,
       errorTemplate,
+      'aria-label': ariaLabel,
+      'aria-labelledby': ariaLabelledBy,
     } = this.props;
 
     const schema = getSchema(this.props.schema, loading, loaderSchema);
@@ -692,6 +702,8 @@ export class Grid extends React.Component<GridProps, GridState> {
         data-test="DesignSystem-Grid"
         {...baseProps}
         className={classes}
+        aria-label={ariaLabel}
+        aria-labelledby={ariaLabelledBy}
         ref={(el) => {
           this.gridRef = el;
         }}

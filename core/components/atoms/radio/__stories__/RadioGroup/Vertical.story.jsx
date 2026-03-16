@@ -6,11 +6,12 @@ export const vertical = () => {
   return (
     <ChoiceList
       choices={[
-        { label: 'Male', name: 'gender', value: 'Male' },
-        { label: 'Female', name: 'gender', value: 'Female' },
-        { label: 'Other', name: 'gender', value: 'Other' },
+        { label: 'Male', name: 'gender', value: 'Male', 'aria-label': 'Male' },
+        { label: 'Female', name: 'gender', value: 'Female', 'aria-label': 'Female' },
+        { label: 'Other', name: 'gender', value: 'Other', 'aria-label': 'Other' },
       ]}
       title="Gender"
+      aria-label="Gender selection"
     />
   );
 };

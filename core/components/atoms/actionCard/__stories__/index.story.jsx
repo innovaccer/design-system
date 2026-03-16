@@ -3,7 +3,7 @@ import { ActionCard, Icon, Text } from '@/index';
 
 export const all = () => {
   return (
-    <ActionCard className="w-25">
+    <ActionCard className="w-25" aria-label="Explore Marketplace">
       <div className="d-flex flex-column align-items-center justify-content-center p-6 text-align-center">
         <Icon name="store" size={24} className="mb-4" />
         <Text weight="strong" className="mb-2">

@@ -28,11 +28,16 @@ export const preFilledValue = () => {
         width="var(--spacing-640)"
         onSelect={onSelectHandler}
         value={{ label: 'Alabama (205)', value: 'Alabama (205)' }}
+        triggerOptions={{ 'aria-label': 'Area code selector' }}
       >
-        <Select.List>
+        <Select.List aria-label="Area code options">
           {areaCode.map((item, key) => {
             return (
-              <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+              <Select.Option
+                key={key}
+                option={{ label: item.label, value: item.value }}
+                aria-label={item.label + ' option'}
+              >
                 {item.label}
               </Select.Option>
             );
@@ -68,11 +73,12 @@ const customCode = `() => {
         width="var(--spacing-640)" 
         onSelect={onSelectHandler} 
         value={{ label: 'Alabama (205)', value: 'Alabama (205)' }}
+        triggerOptions={{ 'aria-label': 'Area code selector' }}
       >
-        <Select.List>
+        <Select.List aria-label="Area code options">
           {areaCode.map((item, key) => {
             return (
-              <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+              <Select.Option key={key} option={{ label: item.label, value: item.value }} aria-label={item.label + ' option'}>
                 {item.label}
               </Select.Option>
             );

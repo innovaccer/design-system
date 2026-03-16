@@ -10,15 +10,18 @@ export const Scrolling = () => {
     setOpen(!open);
   };
 
+  const headingId = 'sidesheet-scrolling-heading';
   const headerOptions = {
     heading: 'Goal details',
     subHeading: 'Comorbidities (e.g obesity, chronic rhinosinusitis, food allergy)',
+    headingId,
   };
 
   const options = {
     onClose,
     open,
     headerOptions,
+    'aria-labelledby': headingId,
     seperator: true,
     footer: (
       <>
@@ -74,7 +77,7 @@ export const Scrolling = () => {
             </Label>
             <Textarea
               className="mt-4"
-              aria-labelledby="Textarea"
+              aria-label="Define intervention"
               name="Textarea"
               placeholder="Define intervention"
               resize={true}
@@ -115,15 +118,18 @@ const customCode = `() => {
     setOpen(!open);
   };
 
+  const headingId = 'sidesheet-scrolling-heading';
   const headerOptions = {
     heading: 'Goal details',
     subHeading: 'Comorbidities (e.g obesity, chronic rhinosinusitis, food allergy)',
+    headingId,
   };
 
   const options = {
     onClose,
     open,
     headerOptions,
+    'aria-labelledby': headingId,
     seperator: true,
     footer: (
       <>
@@ -179,7 +185,7 @@ const customCode = `() => {
             </Label>
             <Textarea
               className="mt-4"
-              aria-labelledby="Textarea"
+              aria-label="Define intervention"
               name="Textarea"
               placeholder="Define intervention"
               resize={true}

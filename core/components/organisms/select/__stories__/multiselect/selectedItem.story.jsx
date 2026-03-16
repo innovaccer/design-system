@@ -52,16 +52,16 @@ export const selectedItem = () => {
       onSelect={handleSelect}
       value={selectedOptions}
       multiSelect={true}
-      triggerOptions={{ onClear: onClearHandler }}
+      triggerOptions={{ onClear: onClearHandler, 'aria-label': 'Medication multiselect with sections' }}
     >
-      <Select.List>
+      <Select.List aria-label="Medication options by category">
         {selectedOptions.length > 0 && (
           <React.Fragment>
             <Text className="d-flex ml-6 mt-5 mr-5 mb-4" size="small" appearance="subtle">
               Selected Items
             </Text>
             {selectedOptions.map((option) => (
-              <Select.Option key={getOptionIdentifier(option)} option={option}>
+              <Select.Option key={getOptionIdentifier(option)} option={option} aria-label={option.label + ' option'}>
                 {option.label}
               </Select.Option>
             ))}
@@ -79,6 +79,7 @@ export const selectedItem = () => {
                   <Select.Option
                     key={getOptionIdentifier(item)}
                     option={{ label: item.label, value: item.value, id: item.id }}
+                    aria-label={item.label + ' option'}
                   >
                     {item.label}
                   </Select.Option>
@@ -140,16 +141,16 @@ const customCode = `() => {
       onSelect={handleSelect}
       value={selectedOptions}
       multiSelect={true}
-      triggerOptions={{ onClear: onClearHandler }}
+      triggerOptions={{ onClear: onClearHandler, 'aria-label': 'Medication multiselect with sections' }}
     >
-      <Select.List>
+      <Select.List aria-label="Medication options by category">
         {selectedOptions.length > 0 && (
           <React.Fragment>
             <Text className="d-flex ml-6 mt-5 mr-5 mb-4" size="small" appearance="subtle">
               Selected Items
             </Text>
             {selectedOptions.map((option) => (
-              <Select.Option key={getOptionIdentifier(option)} option={option}>
+              <Select.Option key={getOptionIdentifier(option)} option={option} aria-label={option.label + ' option'}>
                 {option.label}
               </Select.Option>
             ))}
@@ -171,6 +172,7 @@ const customCode = `() => {
                   <Select.Option
                     key={getOptionIdentifier(item)}
                     option={{ label: item.label, value: item.value, id: item.id }}
+                  aria-label={item.label + ' option'}
                   >
                     {item.label}
                   </Select.Option>

@@ -6,6 +6,7 @@ export const old = () => {
   const [open, setOpen] = React.useState(false);
   const backdropClose = false;
   const dimension = 'medium';
+  const headingId = 'modal-old-a11y-heading';
 
   const onClose = () => {
     setOpen(false);
@@ -17,8 +18,13 @@ export const old = () => {
       <Button appearance="primary" onClick={() => setOpen(true)}>
         Open Modal
       </Button>
-      <Modal open={open} dimension={dimension} backdropClose={backdropClose ? onClose : undefined}>
-        <ModalHeader onClose={onClose} heading="Heading" subHeading="Subheading" />
+      <Modal
+        open={open}
+        dimension={dimension}
+        backdropClose={backdropClose ? onClose : undefined}
+        aria-labelledby={headingId}
+      >
+        <ModalHeader onClose={onClose} heading="Heading" subHeading="Subheading" headingId={headingId} />
         <ModalBody>
           <Text>Modal Body</Text>
           <ModalDescription
@@ -43,6 +49,7 @@ export const old = () => {
 const customCode = `() => {
   const [open, setOpen] = React.useState(false);
   const dimension = 'medium';
+  const headingId = 'modal-old-a11y-heading';
 
   const onClose = () => {
     setOpen(!open);
@@ -55,11 +62,13 @@ const customCode = `() => {
         open={open}
         dimension={dimension}
         backdropClose={onClose}
+        aria-labelledby={headingId}
       >
         <ModalHeader
           onClose={onClose}
           heading="Heading"
           subHeading="Subheading"
+          headingId={headingId}
         />
         <ModalBody>
           <Text>Modal Body</Text>

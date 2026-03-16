@@ -82,6 +82,7 @@ export const customTrigger = () => {
       <Select
         onSelect={onStatusSelect}
         onToggle={onToggleStatusSelect}
+        triggerOptions={{ 'aria-label': 'Publish status selector' }}
         trigger={
           <Button
             appearance="primary"
@@ -93,9 +94,13 @@ export const customTrigger = () => {
           </Button>
         }
       >
-        <Select.List>
+        <Select.List aria-label="Publish status options">
           {statusOptions.map((item, key) => (
-            <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+            <Select.Option
+              key={key}
+              option={{ label: item.label, value: item.value }}
+              aria-label={item.label + ' option'}
+            >
               {item.label}
             </Select.Option>
           ))}
@@ -108,18 +113,23 @@ export const customTrigger = () => {
         onToggle={onToggleRecordSelect}
         trigger={
           <AIIconButton
+            aria-label="Import record mapping suggestions"
             className={isRecordSelectOpen ? 'AIButton-secondary--active' : ''}
             icon="import_contacts"
             type="button"
           />
         }
       >
-        <Select.List>
+        <Select.List aria-label="Record mapping suggestions">
           <Text className="d-flex ml-6 mt-5 mr-5 mb-4" size="small" appearance="subtle">
             Mapping suggestions
           </Text>
           {recordOptions.map((item, key) => (
-            <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+            <Select.Option
+              key={key}
+              option={{ label: item.label, value: item.value }}
+              aria-label={item.label + ' option'}
+            >
               <div className="d-flex flex-column">
                 <Text>{item.label}</Text>
                 <Text size="small" appearance="subtle">
@@ -135,6 +145,7 @@ export const customTrigger = () => {
         onSelect={onOverviewSelect}
         onToggle={onToggleOverviewSelect}
         value={selectedDevelopmentStatus}
+        triggerOptions={{ 'aria-label': 'Overview status selector' }}
         trigger={
           <Button
             appearance="transparent"
@@ -146,9 +157,13 @@ export const customTrigger = () => {
           </Button>
         }
       >
-        <Select.List>
+        <Select.List aria-label="Overview status options">
           {overviewOptions.map((item, key) => (
-            <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+            <Select.Option
+              key={key}
+              option={{ label: item.label, value: item.value }}
+              aria-label={item.label + ' option'}
+            >
               {item.label}
             </Select.Option>
           ))}
@@ -176,6 +191,8 @@ const customCode = `() => {
    */
 
   const [isStatusSelectOpen, setStatusSelectOpen] = React.useState(false);
+  const [isRecordSelectOpen, setRecordSelectOpen] = React.useState(false);
+  const [isOverviewSelectOpen, setOverviewSelectOpen] = React.useState(false);
   const [isRecordSelectOpen, setRecordSelectOpen] = React.useState(false);
   const [isOverviewSelectOpen, setOverviewSelectOpen] = React.useState(false);
   const [selectedDevelopmentStatus, setSelectedDevelopmentStatus] = React.useState({
@@ -236,6 +253,7 @@ const customCode = `() => {
       <Select
         onSelect={onStatusSelect}
         onToggle={onToggleStatusSelect}
+        triggerOptions={{ 'aria-label': 'Publish status selector' }}
         trigger={
           <Button
             appearance="primary"
@@ -247,9 +265,9 @@ const customCode = `() => {
           </Button>
         }
       >
-        <Select.List>
+        <Select.List aria-label="Publish status options">
           {statusOptions.map((item, key) => (
-            <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+            <Select.Option key={key} option={{ label: item.label, value: item.value }} aria-label={item.label + ' option'}>
               {item.label}
             </Select.Option>
           ))}
@@ -262,18 +280,19 @@ const customCode = `() => {
         onToggle={onToggleRecordSelect}
         trigger={
           <AIIconButton
+            aria-label="Import record mapping suggestions"
             className={isRecordSelectOpen ? 'AIButton-secondary--active' : ''}
             icon="import_contacts"
             type="button"
           />
         }
       >
-        <Select.List>
+        <Select.List aria-label="Record mapping suggestions">
           <Text className="d-flex ml-6 mt-5 mr-5 mb-4" size="small" appearance="subtle">
             Mapping suggestions
           </Text>
           {recordOptions.map((item, key) => (
-            <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+            <Select.Option key={key} option={{ label: item.label, value: item.value }} aria-label={item.label + ' option'}>
               <div className="d-flex flex-column">
                 <Text>{item.label}</Text>
                 <Text size="small" appearance="subtle">
@@ -289,6 +308,7 @@ const customCode = `() => {
         onSelect={onOverviewSelect}
         onToggle={onToggleOverviewSelect}
         value={selectedDevelopmentStatus}
+        triggerOptions={{ 'aria-label': 'Overview status selector' }}
         trigger={
           <Button
             appearance="transparent"
@@ -300,9 +320,9 @@ const customCode = `() => {
           </Button>
         }
       >
-        <Select.List>
+        <Select.List aria-label="Overview status options">
           {overviewOptions.map((item, key) => (
-            <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+            <Select.Option key={key} option={{ label: item.label, value: item.value }} aria-label={item.label + ' option'}>
               {item.label}
             </Select.Option>
           ))}

@@ -14,17 +14,20 @@ export const stickyFooter = () => {
     action('back icon clicked')();
   };
 
+  const headingId = 'sidesheet-sticky-heading';
   const headerOptions = {
     backIconCallback,
     backIcon: true,
     heading: 'Heading',
     subHeading: 'Subheading',
+    headingId,
   };
 
   const options = {
     onClose,
     open,
     headerOptions,
+    'aria-labelledby': headingId,
     stickFooter: true,
     footer: (
       <>
@@ -85,17 +88,20 @@ const customCode = `() => {
     console.log('back icon clicked');
   };
 
+  const headingId = 'sidesheet-sticky-heading';
   const headerOptions = {
     backIconCallback,
     backIcon: true,
     heading: 'Heading',
     subHeading: 'Subheading',
+    headingId,
   };
 
   const options = {
     onClose,
     open,
     headerOptions,
+    'aria-labelledby': headingId,
     stickFooter: true,
     footer: (
       <>

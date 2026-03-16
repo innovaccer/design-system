@@ -63,16 +63,24 @@ export const addOption = () => {
   };
 
   return (
-    <Select ref={selectRef} onSelect={onSelectHandler}>
+    <Select
+      ref={selectRef}
+      onSelect={onSelectHandler}
+      triggerOptions={{ 'aria-label': 'Medication selector with add option' }}
+    >
       <Select.SearchInput value={searchTerm} placeholder="Search" onChange={onChangeHandler} onClear={onClearHandler} />
-      <Select.List>
+      <Select.List aria-label="Medication options list">
         {filteredMedicines.map((item, key) => (
-          <Select.Option key={key} option={item}>
+          <Select.Option key={key} option={item} aria-label={`${item.label} option`}>
             {item.label}
           </Select.Option>
         ))}
         {showAddOption && (
-          <Select.Option onClick={onAddMedicine} option={{ label: 'Add new medicine', value: 'add_new' }}>
+          <Select.Option
+            onClick={onAddMedicine}
+            option={{ label: 'Add new medicine', value: 'add_new' }}
+            aria-label="Add new medicine option"
+          >
             <Text color="primary"> Add "{searchTerm}" </Text>
           </Select.Option>
         )}
@@ -141,21 +149,21 @@ const customCode = `() => {
     };
   
     return (
-      <Select ref={selectRef} onSelect={onSelectHandler}>
+      <Select ref={selectRef} onSelect={onSelectHandler} triggerOptions={{ 'aria-label': 'Medication selector with add option' }}>
         <Select.SearchInput
           value={searchTerm}
           placeholder="Search"
           onChange={onChangeHandler}
           onClear={onClearHandler}
         />
-        <Select.List>
+        <Select.List aria-label="Medication options list">
           {filteredMedicines.map((item, key) => (
-            <Select.Option key={key} option={item}>
+            <Select.Option key={key} option={item} aria-label={\`\${item.label} option\`}>
               {item.label}
             </Select.Option>
           ))}
           {showAddOption && (
-            <Select.Option onClick={onAddMedicine} option={{ label: 'Add new medicine', value: 'add_new' }}> 
+            <Select.Option onClick={onAddMedicine} option={{ label: 'Add new medicine', value: 'add_new' }} aria-label="Add new medicine option"> 
               <Text color="primary"> Add "{searchTerm}" </Text>
             </Select.Option>
           )}

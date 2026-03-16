@@ -47,7 +47,7 @@ export const withSearch = () => {
   };
 
   return (
-    <Select onSelect={onSelectHandler}>
+    <Select onSelect={onSelectHandler} triggerOptions={{ 'aria-label': 'Medication search selector' }}>
       <Select.SearchInput
         value={searchTerm}
         placeholder="Search"
@@ -61,9 +61,13 @@ export const withSearch = () => {
           title="No results found"
         ></Select.EmptyTemplate>
       ) : (
-        <Select.List>
+        <Select.List aria-label="Medication options list">
           {filteredMedicines.map((item, key) => (
-            <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+            <Select.Option
+              key={key}
+              option={{ label: item.label, value: item.value }}
+              aria-label={item.label + ' option'}
+            >
               {item.label}
             </Select.Option>
           ))}
@@ -118,7 +122,7 @@ const customCode = `() => {
 
 
   return (
-    <Select onSelect={onSelectHandler}>
+    <Select onSelect={onSelectHandler} triggerOptions={{ 'aria-label': 'Medication search selector' }}>
       <Select.SearchInput
         value={searchTerm}
         placeholder="Search"
@@ -132,9 +136,9 @@ const customCode = `() => {
           title="No results found"
         ></Select.EmptyTemplate>
       ) : (
-        <Select.List>
+        <Select.List aria-label="Medication options list">
           {filteredMedicines.map((item, key) => (
-            <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+            <Select.Option key={key} option={{ label: item.label, value: item.value }} aria-label={item.label + ' option'}>
               {item.label}
             </Select.Option>
           ))}

@@ -6,22 +6,15 @@ export const controlledInput = () => {
   const [value, setValue] = React.useState('Value');
   const handleParentChange = (event) => {
     const updatedValue = event.target.value;
-    this.window.setTimeout(() => {
-      setValue(updatedValue);
-    }, 1000);
+    setValue(updatedValue);
   };
   const [value1, setValue1] = React.useState('Value');
   const onChangeHandler = (event) => {
     const updatedValue = event.target.value;
-    this.window.setTimeout(() => {
-      setValue1(updatedValue);
-    }, 1000);
+    setValue1(updatedValue);
   };
   const onClearHandler = () => {
-    const updatedValue = '';
-    this.window.setTimeout(() => {
-      setValue1(updatedValue);
-    }, 1000);
+    setValue1('');
   };
   return (
     <Row>
@@ -31,7 +24,10 @@ export const controlledInput = () => {
           value={value}
           type="text"
           placeholder="Placeholder"
-          actionIcon={<Input.ActionButton name="visibility_off" className="p-3" />}
+          aria-label="Placeholder input"
+          actionIcon={
+            <Input.ActionButton name="visibility_off" className="p-3" aria-label="Toggle password visibility" />
+          }
           onChange={handleParentChange}
         />
       </Column>
@@ -41,6 +37,7 @@ export const controlledInput = () => {
           value={value1}
           type="text"
           placeholder="PlaceHolder"
+          aria-label="Placeholder input"
           onChange={onChangeHandler}
           onClear={onClearHandler}
         />
@@ -73,6 +70,7 @@ const customCode = `() => {
         value={value}
         type={visibility ? 'text' : 'password'}
         placeholder="Placeholder"
+        aria-label="Placeholder input"
         actionIcon={
           <Input.ActionButton
             onClick={() => {
@@ -92,6 +90,7 @@ const customCode = `() => {
         value={value1}
         type="text"
         placeholder="PlaceHolder"
+        aria-label="Placeholder input"
         onChange={onChangeHandler}
         onClear={onClearHandler}
       />

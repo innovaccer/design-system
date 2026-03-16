@@ -55,7 +55,13 @@ export const reorderList = () => {
         <Text appearance="subtle">Select the columns that you want to see in work list</Text>
       </div>
       <Divider />
-      <Listbox showDivider={true} type="description" draggable={true} className="Listbox-wrapper overflow-auto">
+      <Listbox
+        showDivider={true}
+        type="description"
+        draggable={true}
+        aria-label="Table column options"
+        className="Listbox-wrapper overflow-auto"
+      >
         {dataList.map((record, key) => {
           return (
             <Listbox.Item key={key + 1} id={key + 1}>

@@ -22,11 +22,15 @@ export const all = () => {
   };
 
   return (
-    <Select onSelect={onSelectHandler}>
-      <Select.List>
+    <Select onSelect={onSelectHandler} triggerOptions={{ 'aria-label': 'Medication selector trigger' }}>
+      <Select.List aria-label="Medication options list">
         {medicineList.map((item, key) => {
           return (
-            <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+            <Select.Option
+              key={key}
+              option={{ label: item.label, value: item.value }}
+              aria-label={`${item.label} option`}
+            >
               {item.label}
             </Select.Option>
           );
@@ -56,11 +60,15 @@ const customCode = `() => {
   };
 
   return (
-    <Select onSelect={onSelectHandler} >
-        <Select.List>
+    <Select onSelect={onSelectHandler} triggerOptions={{ 'aria-label': 'Medication selector trigger' }}>
+        <Select.List aria-label="Medication options list">
           {medicineList.map((item, key) => {
             return (
-              <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+              <Select.Option
+                key={key}
+                option={{ label: item.label, value: item.value }}
+                aria-label={\`\${item.label} option\`}
+              >
                 {item.label}
               </Select.Option>
             );

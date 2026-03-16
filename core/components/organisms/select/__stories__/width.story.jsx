@@ -25,11 +25,15 @@ export const width = () => {
     <Row className="mb-6">
       <Column size={6} className="mb-6">
         <Label className="mb-3">Fixed Width</Label>
-        <Select width={200} onSelect={onSelectHandler}>
-          <Select.List>
+        <Select width={200} onSelect={onSelectHandler} triggerOptions={{ 'aria-label': 'Medication selector' }}>
+          <Select.List aria-label="Medication options list">
             {medicineList.map((item, itemKey) => {
               return (
-                <Select.Option key={itemKey} option={{ label: item.label, value: item.value }}>
+                <Select.Option
+                  key={itemKey}
+                  option={{ label: item.label, value: item.value }}
+                  aria-label={`${item.label} option`}
+                >
                   {item.label}
                 </Select.Option>
               );
@@ -44,13 +48,18 @@ export const width = () => {
           triggerOptions={{
             minWidth: '176px',
             maxWidth: '256px',
+            'aria-label': 'Medication selector',
           }}
           onSelect={onSelectHandler}
         >
-          <Select.List>
+          <Select.List aria-label="Medication options list">
             {medicineList.map((item, itemKey) => {
               return (
-                <Select.Option key={itemKey} option={{ label: item.label, value: item.value }}>
+                <Select.Option
+                  key={itemKey}
+                  option={{ label: item.label, value: item.value }}
+                  aria-label={`${item.label} option`}
+                >
                   {item.label}
                 </Select.Option>
               );
@@ -84,11 +93,11 @@ const customCode = `() => {
     <Row className="mb-6">
       <Column size={6} className="mb-6">
         <Label className="mb-3">Fixed Width</Label>
-        <Select width={200} onSelect={onSelectHandler}>
-          <Select.List>
+        <Select width={200} onSelect={onSelectHandler} triggerOptions={{ 'aria-label': 'Medication selector' }}>
+          <Select.List aria-label="Medication options list">
             {medicineList.map((item, itemKey) => {
               return (
-                <Select.Option key={itemKey} option={{ label: item.label, value: item.value }}>
+                <Select.Option key={itemKey} option={{ label: item.label, value: item.value }} aria-label={\`\${item.label} option\`}>
                   {item.label}
                 </Select.Option>
               );
@@ -103,13 +112,14 @@ const customCode = `() => {
           triggerOptions={{
             minWidth: '176px',
             maxWidth: '256px',
+            'aria-label': 'Medication selector',
           }}
           onSelect={onSelectHandler}
         >
-          <Select.List>
+          <Select.List aria-label="Medication options list">
             {medicineList.map((item, itemKey) => {
               return (
-                <Select.Option key={itemKey} option={{ label: item.label, value: item.value }}>
+                <Select.Option key={itemKey} option={{ label: item.label, value: item.value }} aria-label={\`\${item.label} option\`}>
                   {item.label}
                 </Select.Option>
               );

@@ -18,8 +18,10 @@ export const gender = () => {
   ];
   return (
     <div className="mb-10 w-25">
-      <Label withInput={true}>Gender</Label>
-      <Dropdown options={options} />
+      <Label withInput={true} id="gender-label">
+        Gender
+      </Label>
+      <Dropdown options={options} aria-labelledby="gender-label" />
     </div>
   );
 };

@@ -20,7 +20,8 @@ export const Size = () => {
               placeholder={placeholder}
               size={size}
               disabled={disabled}
-              chipOptions={{ clearButton: true }}
+              chipOptions={{ clearButton: true, role: 'option' }}
+              aria-label={`${size} chip input`}
             />
           </div>
         </Column>

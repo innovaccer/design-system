@@ -11,15 +11,16 @@ export const tabsWithIcon = () => {
     return action(`tab-change: ${tabIndex}`)();
   };
 
+  const tabsLabelId = 'tabs-icon-label';
   return (
     <div>
-      <div className="d-flex align-items-center">
+      <div id={tabsLabelId} className="d-flex align-items-center">
         <Heading size="s" className="pl-5">
           Diabetes: Hemoglobin A1c Poor Control
         </Heading>
         <Link className="ml-4">Measure definition</Link>
       </div>
-      <Tabs onTabChange={onTabChangeHandler} className="mb-6" activeIndex={activeIndex}>
+      <Tabs onTabChange={onTabChangeHandler} className="mb-6" activeIndex={activeIndex} aria-labelledby={tabsLabelId}>
         <Tab label="2020" icon="warning" className="pl-5">
           <div>2020</div>
         </Tab>
@@ -44,9 +45,10 @@ const customCode = `() => {
     setActiveIndex(tabIndex);
   };
 
+  const tabsLabelId = 'tabs-icon-label';
   return(
     <div>
-      <div className="d-flex align-items-center">
+      <div id={tabsLabelId} className="d-flex align-items-center">
         <Heading size="s" className="pl-5">Diabetes: Hemoglobin A1c Poor Control</Heading>
         <Link className="ml-4">Measure definition</Link>
       </div>
@@ -54,6 +56,7 @@ const customCode = `() => {
         activeIndex={activeIndex}
         onTabChange={onTabChangeHandler}
         className="mb-6"
+        aria-labelledby={tabsLabelId}
       >
         <Tab label="2020" icon="warning" className="pl-5">
           <div>2020</div>

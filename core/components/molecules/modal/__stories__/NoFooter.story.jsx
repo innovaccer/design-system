@@ -7,6 +7,7 @@ export const noFooter = () => {
   const backdropClose = false;
   const dimension = 'medium';
 
+  const headingId = 'modal-no-footer-heading';
   const onClose = () => {
     setOpen(false);
     action('on close triggered')();
@@ -25,7 +26,9 @@ export const noFooter = () => {
         headerOptions={{
           heading: 'Heading',
           subHeading: 'Subheading',
+          headingId,
         }}
+        aria-labelledby={headingId}
       >
         <Text>Modal Body</Text>
         <ModalDescription
@@ -42,6 +45,7 @@ const customCode = `() => {
   const [open, setOpen] = React.useState(false);
   const dimension = 'medium';
   const backdropClose = true;
+  const headingId = 'modal-no-footer-heading';
 
   const onClose = () => {
     setOpen(!open);
@@ -57,8 +61,10 @@ const customCode = `() => {
         onClose={onClose}
         headerOptions={{
           heading: 'Heading',
-          subHeading: 'Subheading'
+          subHeading: 'Subheading',
+          headingId,
         }}
+        aria-labelledby={headingId}
       >
         <Text>Modal Body</Text>
         <ModalDescription

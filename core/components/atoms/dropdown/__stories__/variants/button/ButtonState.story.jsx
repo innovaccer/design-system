@@ -17,7 +17,14 @@ export const state = () => {
               <div className="mr-8" key={ind}>
                 <Text weight="strong">{buttonState ? 'Disabled' : 'Enabled'}</Text> <br />
                 <br />
-                <Dropdown icon={'event'} disabled={buttonState} options={storyOptions} placeholder={'Select'} />
+                <Dropdown
+                  icon={'event'}
+                  disabled={buttonState}
+                  options={storyOptions}
+                  placeholder={'Select'}
+                  aria-label="Select option"
+                  optionsAriaLabel="Options"
+                />
               </div>
             );
           })}
@@ -32,7 +39,14 @@ export const state = () => {
               <div className="mr-8" key={ind}>
                 <Text weight="strong">{buttonState ? 'Disabled' : 'Enabled'}</Text> <br />
                 <br />
-                <Dropdown inlineLabel={'label'} disabled={buttonState} options={storyOptions} placeholder={'Select'} />
+                <Dropdown
+                  inlineLabel={'label'}
+                  disabled={buttonState}
+                  options={storyOptions}
+                  placeholder={'Select'}
+                  aria-label="Select option"
+                  optionsAriaLabel="Options"
+                />
               </div>
             );
           })}
@@ -61,19 +75,19 @@ const customCode = `() => {
     <div className='d-flex'>
       <div className='mr-8 w-25'>
         <Text weight="strong">Icon Disabled</Text> <br /><br />
-        <Dropdown icon={'event'} disabled={true} options={storyOptions} />
+        <Dropdown icon={'event'} disabled={true} options={storyOptions} aria-label="Select option" optionsAriaLabel="Options" />
       </div>
       <div className='mr-8 w-25'>
         <Text weight="strong">Icon Enabled</Text> <br /><br />
-        <Dropdown icon={'event'} disabled={false} options={storyOptions} />
+        <Dropdown icon={'event'} disabled={false} options={storyOptions} aria-label="Select option" optionsAriaLabel="Options" />
       </div>
       <div className='mr-8 w-25'>
         <Text weight="strong">Label Disabled</Text> <br /><br />
-        <Dropdown inlineLabel={'label'} disabled={true} options={storyOptions} />
+        <Dropdown inlineLabel={'label'} disabled={true} options={storyOptions} aria-label="Select option" optionsAriaLabel="Options" />
       </div>
       <div className='mr-8 w-25'>
         <Text weight="strong">Label Enabled</Text> <br /><br />
-        <Dropdown inlineLabel={'label'} disabled={false} options={storyOptions} />
+        <Dropdown inlineLabel={'label'} disabled={false} options={storyOptions} aria-label="Select option" optionsAriaLabel="Options" />
       </div>
     </div>
   );

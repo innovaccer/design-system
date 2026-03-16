@@ -4,7 +4,7 @@ import { Menu, Text } from '@/index';
 export const standard = () => {
   return (
     <div className="d-flex justify-content-between">
-      <Menu trigger={<Menu.Trigger />}>
+      <Menu trigger={<Menu.Trigger aria-label="Open menu" />}>
         <Menu.List>
           <Menu.Item>
             <Text>Edit</Text>
@@ -18,7 +18,7 @@ export const standard = () => {
         </Menu.List>
       </Menu>
 
-      <Menu trigger={<Menu.Trigger />}>
+      <Menu trigger={<Menu.Trigger aria-label="Open menu" />}>
         <Menu.List>
           <Menu.Item>
             <Text>Edit</Text>
@@ -40,7 +40,7 @@ const customCode = `
 
   return (
     <div className="d-flex justify-content-between">
-      <Menu trigger={<Menu.Trigger />}>
+      <Menu trigger={<Menu.Trigger aria-label="Open menu" />}>
         <Menu.List>
           <Menu.Item>
             <Text>Edit</Text>
@@ -54,7 +54,7 @@ const customCode = `
         </Menu.List>
       </Menu>
 
-      <Menu trigger={<Menu.Trigger />}>
+      <Menu trigger={<Menu.Trigger aria-label="Open menu" />}>
         <Menu.List>
           <Menu.Item>
             <Text>Edit</Text>

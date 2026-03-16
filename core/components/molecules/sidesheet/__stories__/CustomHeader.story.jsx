@@ -52,9 +52,12 @@ export const customHeader = () => {
       </Button>
       <Sidesheet
         {...options}
+        aria-labelledby="sidesheet-custom-heading"
         header={
           <div className="pl-7">
-            <Heading size="m">Untitled document</Heading>
+            <Heading id="sidesheet-custom-heading" size="m">
+              Untitled document
+            </Heading>
             <div className="d-flex mt-2">
               <div className="mr-3">
                 <Badge>User Interface</Badge>
@@ -126,9 +129,10 @@ const customCode = `() => {
       </Button>
       <Sidesheet
         {...options}
+        aria-labelledby="sidesheet-custom-heading"
         header={
           <div className="pl-7">
-          <Heading size="m">Untitled document</Heading>
+          <Heading id="sidesheet-custom-heading" size="m">Untitled document</Heading>
           <div className="d-flex mt-2">
             <div className="mr-3">
               <Badge>User Interface</Badge>

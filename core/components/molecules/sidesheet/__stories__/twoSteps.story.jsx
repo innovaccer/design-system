@@ -24,17 +24,20 @@ export const twoSteps = () => {
     setPage(1);
   };
 
+  const headingId = `sidesheet-twosteps-heading-${page}`;
   const headerOptions = {
     backIconCallback,
     backIcon: page === 2,
     heading: `Heading ${page}`,
     subHeading: 'Subheading',
+    headingId,
   };
 
   const options = {
     onClose,
     open,
     headerOptions,
+    'aria-labelledby': headingId,
     stickFooter: true,
     backdropClose: true,
     footer: (
@@ -119,17 +122,20 @@ const customCode = `() => {
     setPage(1);
   };
 
+  const headingId = \`sidesheet-twosteps-heading-\${page}\`;
   const headerOptions = {
     backIconCallback,
     backIcon: page === 2,
     heading: \`Heading \${page}\`,
     subHeading: 'Subheading',
+    headingId,
   };
 
   const options = {
     onClose,
     open,
     headerOptions,
+    'aria-labelledby': headingId,
     stickFooter: true,
     backdropClose: true,
     footer: (

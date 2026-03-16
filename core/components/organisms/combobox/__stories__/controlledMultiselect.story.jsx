@@ -51,6 +51,7 @@ export const preFilledValues = () => {
         onChange={onChangeHandler}
         multiSelect={true}
         clearButton={true}
+        aria-label="Drug name multiselect"
       >
         {filterList.length > 0 && (
           <Combobox.List>
@@ -117,6 +118,7 @@ const customCode = `() => {
         onChange={onChangeHandler}
         multiSelect={true}
         clearButton={true}
+        aria-label="Drug name multiselect"
       >
         {filterList.length > 0 && (
           <Combobox.List>

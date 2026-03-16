@@ -10,7 +10,7 @@ export const appearance = () => {
         return (
           <div key={ind} className="mr-8">
             <div className={appear === 'white' ? 'bg-dark' : 'bg-transparent'}>
-              <Spinner appearance={appear} />
+              <Spinner appearance={appear} aria-label={`Loading ${appear}`} />
             </div>
             <Text weight="strong">{appear.charAt(0).toUpperCase() + appear.slice(1)}</Text>
           </div>

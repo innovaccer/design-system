@@ -6,7 +6,7 @@ import { TextFieldWithInput } from '../../TextFieldWithInput';
 export const withInput = () => {
   return (
     <div className="w-25">
-      <TextField />
+      <TextField label="Username" helpText="Pick a unique username" />
     </div>
   );
 };

@@ -16,7 +16,13 @@ export const align = () => {
             <Text weight="strong">{`Towards ${alignment.charAt(0).toUpperCase() + alignment.slice(1)}`}</Text>
             <br />
             <br />
-            <Dropdown align={alignment} options={storyOptions} menu={true} />
+            <Dropdown
+              align={alignment}
+              options={storyOptions}
+              menu={true}
+              aria-label="Open menu"
+              optionsAriaLabel="Menu options"
+            />
           </div>
         );
       })}
@@ -39,11 +45,11 @@ const customCode = `() => {
     <div className='d-flex'>
       <div className='mr-12'>
         <Text weight="strong">Towards Right</Text> <br /><br />
-        <Dropdown menu={true} options={storyOptions} align='right'/>
+        <Dropdown menu={true} options={storyOptions} align='right' aria-label="Open menu" optionsAriaLabel="Menu options" />
       </div>
       <div>
         <Text weight="strong">Towards Left</Text> <br /><br />
-        <Dropdown menu={true} options={storyOptions} align='left'/>
+        <Dropdown menu={true} options={storyOptions} align='left' aria-label="Open menu" optionsAriaLabel="Menu options" />
       </div>
     </div>
   )

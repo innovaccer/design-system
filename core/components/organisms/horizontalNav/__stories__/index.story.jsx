@@ -34,7 +34,13 @@ export const all = () => {
 
   return (
     <div className="bg-secondary-lightest py-6">
-      <HorizontalNav className="w-100 justify-content-center" menus={data} active={active} onClick={onClickHandler} />
+      <HorizontalNav
+        className="w-100 justify-content-center"
+        menus={data}
+        active={active}
+        onClick={onClickHandler}
+        aria-label="Primary workspace navigation"
+      />
     </div>
   );
 };
@@ -75,6 +81,7 @@ const customCode = `() => {
         menus={data}
         active={active}
         onClick={onClickHandler}
+        aria-label="Primary workspace navigation"
       />
   </div>
   );

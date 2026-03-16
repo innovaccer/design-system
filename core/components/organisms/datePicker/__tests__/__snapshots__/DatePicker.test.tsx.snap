@@ -4445,7 +4445,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   data-test="DesignSystem-Calendar--yearValue"
                 >
                   <span
-                    class="Text Text--regular color-primary Calendar-value--currDate Calendar-text"
+                    class="Text Text--regular color-primary-dark Calendar-value--currDate Calendar-text"
                     data-test="DesignSystem-Text"
                   >
                     2021

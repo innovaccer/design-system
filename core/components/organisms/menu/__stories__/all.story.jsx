@@ -3,7 +3,7 @@ import { Menu } from '@/index';
 
 export const all = () => {
   return (
-    <Menu trigger={<Menu.Trigger />}>
+    <Menu aria-label="Actions menu" trigger={<Menu.Trigger aria-label="Open actions menu" />}>
       <Menu.List>
         <Menu.Item>Edit</Menu.Item>
         <Menu.Item>Export</Menu.Item>
@@ -17,7 +17,7 @@ const customCode = `
 () => {
 
   return (
-    <Menu trigger={<Menu.Trigger />}>
+    <Menu aria-label="Actions menu" trigger={<Menu.Trigger aria-label="Open actions menu" />}>
       <Menu.List>
         <Menu.Item>Edit</Menu.Item>
         <Menu.Item>Export</Menu.Item>

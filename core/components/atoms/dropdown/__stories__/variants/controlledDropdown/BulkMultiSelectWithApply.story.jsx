@@ -62,6 +62,8 @@ export const bulkMultiSelectWithApplyButton = () => {
         withCheckbox={true}
         showApplyButton={true}
         open={open}
+        aria-label="Select options"
+        optionsAriaLabel="Options"
       />
     </div>
   );
@@ -138,6 +140,8 @@ const customCode = `() => {
         showApplyButton={true}
         open={open}
         onClose={onClose}
+        aria-label="Select options"
+        optionsAriaLabel="Options"
       />
     </div>
   );

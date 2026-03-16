@@ -27,11 +27,20 @@ export const error = () => {
   };
 
   return (
-    <Select error={hasError} value={selectedValue} onSelect={onSelectHandler}>
-      <Select.List>
+    <Select
+      error={hasError}
+      value={selectedValue}
+      onSelect={onSelectHandler}
+      triggerOptions={{ 'aria-label': 'Medication selector with error' }}
+    >
+      <Select.List aria-label="Medication options list">
         {medicineList.map((item, key) => {
           return (
-            <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+            <Select.Option
+              key={key}
+              option={{ label: item.label, value: item.value }}
+              aria-label={`${item.label} option`}
+            >
               {item.label}
             </Select.Option>
           );
@@ -65,11 +74,20 @@ const customCode = `() => {
   };
 
   return (
-    <Select error={hasError} value={selectedValue} onSelect={onSelectHandler}>
-      <Select.List>
+    <Select
+      error={hasError}
+      value={selectedValue}
+      onSelect={onSelectHandler}
+      triggerOptions={{ 'aria-label': 'Medication selector with error' }}
+    >
+      <Select.List aria-label="Medication options list">
         {medicineList.map((item, key) => {
           return (
-            <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+            <Select.Option
+              key={key}
+              option={{ label: item.label, value: item.value }}
+              aria-label={\`\${item.label} option\`}
+            >
               {item.label}
             </Select.Option>
           );

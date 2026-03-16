@@ -38,6 +38,7 @@ export const Size = () => {
             selected={selected}
             name={`chip-${size}`}
             size={size}
+            role="option"
           />
         </div>
       ))}
