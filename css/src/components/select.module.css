@@ -194,6 +194,22 @@
   font-weight: var(--font-weight-medium);
 }
 
+.Select-option--textWrap {
+  white-space: normal;
+  word-break: break-word;
+  overflow: visible;
+  text-overflow: initial;
+}
+
+.Select-option--textLineClamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  white-space: normal;
+  word-break: break-word;
+  text-overflow: initial;
+}
+
 .Select-trigger--error {
   border: var(--border-width-2-5) solid var(--alert) !important;
 }

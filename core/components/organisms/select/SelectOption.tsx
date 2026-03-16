@@ -45,10 +45,28 @@ export interface SelectOptionProps extends BaseProps {
    * Aria label for the `SelectOption`
    */
   'aria-label'?: string;
+  /**
+   * Controls text wrapping behavior for this option's label.
+   * Overrides the `optionTextWrap` prop set on the parent `Select` component.
+   *
+   * - `undefined` (default): Inherits from parent `Select` or truncates with ellipsis.
+   * - `true`: Text wraps fully without any truncation.
+   * - `number` (e.g. `2`): Text wraps up to the specified number of lines, then truncates with ellipsis.
+   */
+  optionTextWrap?: boolean | number;
 }
 
 export const SelectOption = (props: SelectOptionProps) => {
-  const { children, option, checkedState, onClick, withCheckbox = true, disabled, ...rest } = props;
+  const {
+    children,
+    option,
+    checkedState,
+    onClick,
+    withCheckbox = true,
+    disabled,
+    optionTextWrap: optionTextWrapProp,
+    ...rest
+  } = props;
   const contextProp = React.useContext(SelectContext);
   const {
     onOptionClick,
@@ -65,7 +83,10 @@ export const SelectOption = (props: SelectOptionProps) => {
     setOpenPopover,
     triggerRef,
     size,
+    optionTextWrap: optionTextWrapContext,
   } = contextProp;
+
+  const optionTextWrap = optionTextWrapProp !== undefined ? optionTextWrapProp : optionTextWrapContext;
 
   const onClickHandler = () => {
     if (disabled) return;
@@ -90,11 +111,20 @@ export const SelectOption = (props: SelectOptionProps) => {
     [styles['Select-option']]: true,
   });
 
+  const isFullWrap = optionTextWrap === true;
+  const isLineClamp = typeof optionTextWrap === 'number' && optionTextWrap > 0;
+
   const textClass = classNames({
     [styles['Select-option--text']]: true,
     [styles['Select-option--textTight']]: size === 'tight',
+    [styles['Select-option--textWrap']]: isFullWrap,
+    [styles['Select-option--textLineClamp']]: isLineClamp,
     'pt-2': multiSelect,
   });
+
+  const textStyle: React.CSSProperties | undefined = isLineClamp
+    ? { WebkitLineClamp: optionTextWrap as number }
+    : undefined;
 
   const SelectOptionClass = classNames({
     [styles['Select-option--tight']]: size === 'tight',
@@ -137,7 +167,9 @@ export const SelectOption = (props: SelectOptionProps) => {
             indeterminate={indeterminate}
           />
         )}
-        <div className={textClass}>{children}</div>
+        <div className={textClass} style={textStyle}>
+          {children}
+        </div>
       </div>
     </Listbox.Item>
   );

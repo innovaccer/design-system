@@ -130,6 +130,14 @@ export interface SelectProps extends BaseProps {
    */
 
   triggerOptions?: SelectTriggerProps;
+  /**
+   * Controls text wrapping behavior for option labels in the popover.
+   *
+   * - `undefined` (default): Text is truncated with ellipsis (current behavior).
+   * - `true`: Text wraps fully without any truncation.
+   * - `number` (e.g. `2`): Text wraps up to the specified number of lines, then truncates with ellipsis.
+   */
+  optionTextWrap?: boolean | number;
 }
 
 export interface SelectMethods {
@@ -165,6 +173,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     onToggle,
     styleType = 'filled',
     error = false,
+    optionTextWrap,
   } = props;
 
   const [openPopover, setOpenPopover] = React.useState(false);
@@ -295,6 +304,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     setHighlightLastItem,
     styleType,
     error,
+    optionTextWrap,
   };
 
   return (

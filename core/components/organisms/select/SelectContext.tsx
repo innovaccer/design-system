@@ -24,6 +24,7 @@ export type ContextProps = {
   size?: TListboxSize;
   styleType?: SelectStyleType;
   error?: boolean;
+  optionTextWrap?: boolean | number;
 };
 
 export const SelectContext = React.createContext<ContextProps>({});
