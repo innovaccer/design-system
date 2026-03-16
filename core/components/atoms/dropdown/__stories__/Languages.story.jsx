@@ -21,8 +21,10 @@ export const languages = () => {
   ];
   return (
     <div className="mb-11 w-25">
-      <Label withInput={true}>Select Language</Label>
-      <Dropdown options={options} />
+      <Label withInput={true} id="languages-label">
+        Select Language
+      </Label>
+      <Dropdown options={options} aria-labelledby="languages-label" />
     </div>
   );
 };

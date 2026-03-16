@@ -28,7 +28,7 @@ export const preFilledValues = () => {
   return (
     <div>
       <Label withInput={true}>Drug Name</Label>
-      <Combobox icon="search" value={selectedOption} onChange={onChangeHandler}>
+      <Combobox icon="search" value={selectedOption} onChange={onChangeHandler} aria-label="Drug name selector">
         {filterList.length > 0 && (
           <Combobox.List>
             {filterList.map((item, key) => {
@@ -71,7 +71,7 @@ const customCode = `() => {
   return (
     <div>
       <Label withInput={true}>Drug Name</Label>
-      <Combobox icon="search" value={selectedOption} onChange={onChangeHandler}>
+      <Combobox icon="search" value={selectedOption} onChange={onChangeHandler} aria-label="Drug name selector">
         {filterList.length > 0 && (
           <Combobox.List>
             {filterList.map((item, key) => {

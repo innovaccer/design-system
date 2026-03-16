@@ -30,6 +30,7 @@ export const Nested = () => {
   return (
     <div>
       <Checkbox
+        aria-label="Measures"
         checked={parentStatus.checked}
         indeterminate={parentStatus.indeterminate}
         label={'Measures'}
@@ -40,6 +41,7 @@ export const Nested = () => {
         {labels.map((label, ind) => {
           return (
             <Checkbox
+              aria-label={label}
               key={`checkbox-${ind}`}
               label={label}
               checked={checked[ind]}
@@ -83,6 +85,7 @@ const customCode = `() => {
   return (
     <div>
       <Checkbox
+        aria-label="Measures"
         checked={parentStatus.checked}
         indeterminate={parentStatus.indeterminate}
         label={'Measures'}
@@ -94,6 +97,7 @@ const customCode = `() => {
           labels.map((label, ind) => {
             return (
               <Checkbox
+                aria-label={label}
                 key={\`checkbox-\${ind}\`}
                 label={label}
                 checked={checked[ind]}

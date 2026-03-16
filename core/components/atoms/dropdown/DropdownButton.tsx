@@ -44,6 +44,14 @@ export interface TriggerProps {
    * Determines if `Dropdown` has error
    */
   error?: boolean;
+  /**
+   * Accessible name for dropdown trigger button.
+   */
+  'aria-label'?: string;
+  /**
+   * Associates dropdown trigger with an external label.
+   */
+  'aria-labelledby'?: string;
 }
 
 export interface DropdownButtonProps extends TriggerProps {

@@ -5,6 +5,8 @@ import { Checkbox } from '@/index';
 export const withHelpText = () => {
   return (
     <Checkbox
+      aria-label="Guardian"
+      aria-required={true}
       label={'Guardian'}
       helpText={'A member legally responsible for the care of the patient.'}
       className="w-50"

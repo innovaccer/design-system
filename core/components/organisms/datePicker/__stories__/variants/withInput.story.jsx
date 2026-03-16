@@ -36,6 +36,7 @@ export const withInput = () => {
     <div className="w-25">
       <DatePicker
         withInput={true}
+        aria-label="Visit date input"
         closeOnSelect={closeOnSelect}
         inputFormat={inputFormat}
         outputFormat={outputFormat}

@@ -126,6 +126,7 @@ export const alignment = () => {
     <div className="vh-50">
       <Card className="h-100 overflow-hidden">
         <Table
+          aria-label="Patient records table"
           page={1}
           data={data}
           schema={schema}
@@ -268,6 +269,7 @@ const customCode = `() => {
     <div className="vh-50">
       <Card className="h-100 overflow-hidden">
         <Table
+          aria-label="Patient records table"
           page={1}
           data={data}
           schema={schema}

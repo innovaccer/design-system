@@ -7,6 +7,7 @@ export const all = () => {
   const [open, setOpen] = React.useState(false);
   const dimension = 'medium';
   const knobOpen = open;
+  const headingId = 'fullscreen-modal-a11y-heading';
 
   const onClose = () => {
     setOpen(!open);
@@ -26,9 +27,11 @@ export const all = () => {
         open={knobOpen}
         dimension={dimension}
         onClose={onClose}
+        aria-labelledby={headingId}
         headerOptions={{
           heading: 'Heading',
           subHeading: 'Subheading',
+          headingId,
         }}
         footerOptions={{
           actions: [
@@ -65,6 +68,7 @@ export const all = () => {
 const customCode = `
 () => {
   const [open, setOpen] = React.useState(false);
+  const headingId = 'fullscreen-modal-a11y-heading';
 
   const onClose = () => {
     setOpen(!open);
@@ -73,7 +77,6 @@ const customCode = `
   const openModal = () => {
     setOpen(true);
   };
-
 
   return (
     <div>
@@ -84,9 +87,11 @@ const customCode = `
       <FullscreenModal
         open={open}
         onClose={onClose}
+        aria-labelledby={headingId}
         headerOptions={{
           heading: 'Heading',
-          subHeading: 'Subheading'
+          subHeading: 'Subheading',
+          headingId,
         }}
         footerOptions={{
           actions: [

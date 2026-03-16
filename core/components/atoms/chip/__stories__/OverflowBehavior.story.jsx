@@ -10,6 +10,7 @@ export const overflowBehavior = () => {
           clearButton={true}
           name="Dan Mckenzie Farland Bartholomew"
           type="input"
+          role="button"
         />
       </Column>
       <Column>
@@ -19,6 +20,7 @@ export const overflowBehavior = () => {
           clearButton={true}
           name="Provider city :"
           type="input"
+          role="button"
         />
       </Column>
       <Column>
@@ -28,6 +30,7 @@ export const overflowBehavior = () => {
           name="Provider city is very very very long :"
           clearButton={true}
           type="input"
+          role="button"
         />
       </Column>
     </Row>

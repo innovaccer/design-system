@@ -4,8 +4,18 @@ import { OptionTypeProps } from './index';
 import styles from '@css/components/dropdown.module.css';
 
 const MetaOption = (props: OptionTypeProps) => {
-  const { className, textClassName, onClickHandler, optionData, onUpdateActiveOption, renderSubInfo, color, dataTest } =
-    props;
+  const {
+    className,
+    textClassName,
+    onClickHandler,
+    optionData,
+    onUpdateActiveOption,
+    renderSubInfo,
+    color,
+    dataTest,
+    selected,
+    menu,
+  } = props;
 
   const { subInfo, label, disabled } = optionData;
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
@@ -25,9 +35,10 @@ const MetaOption = (props: OptionTypeProps) => {
       onMouseEnter={onUpdateActiveOption}
       data-test={dataTest}
       data-disabled={disabled}
-      role="button"
+      role={menu ? 'menuitem' : 'option'}
       tabIndex={disabled ? -1 : 0}
       aria-disabled={disabled || undefined}
+      aria-selected={!menu ? selected : undefined}
     >
       {/* eslint-enable */}
       <div className={styles['Option-label']}>

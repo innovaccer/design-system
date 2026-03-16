@@ -5,6 +5,7 @@ import { action } from '@/utils/action';
 
 export const customized = () => {
   const [open, setOpen] = React.useState(false);
+  const headingId = 'fullscreen-modal-custom-heading';
 
   const onClose = () => {
     setOpen(!open);
@@ -24,9 +25,10 @@ export const customized = () => {
         open={open}
         dimension="medium"
         onClose={onClose}
+        aria-labelledby={headingId}
         header={
           <div className="ml-7">
-            <Heading>Custom Heading component</Heading>
+            <Heading id={headingId}>Custom Heading component</Heading>
             <Text appearance="subtle">This is subheading</Text>
           </div>
         }
@@ -60,6 +62,7 @@ export const customized = () => {
 const customCode = `
 () => {
   const [open, setOpen] = React.useState(false);
+  const headingId = 'fullscreen-modal-custom-heading';
 
   const onClose = () => {
     setOpen(!open);
@@ -80,9 +83,10 @@ const customCode = `
         open={open}
         dimension="medium"
         onClose={onClose}
+        aria-labelledby={headingId}
         header={(
           <div className="ml-7">
-            <Heading>Custom Heading component</Heading>
+            <Heading id={headingId}>Custom Heading component</Heading>
             <Text appearance="subtle">This is subheading</Text>
           </div>
         )}

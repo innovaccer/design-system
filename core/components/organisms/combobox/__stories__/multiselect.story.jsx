@@ -41,7 +41,13 @@ export const all = () => {
   return (
     <div>
       <Label withInput={true}>Drug Name</Label>
-      <Combobox onSearch={onSearchHandler} onChange={onChangeHandler} multiSelect={true} clearButton={true}>
+      <Combobox
+        onSearch={onSearchHandler}
+        onChange={onChangeHandler}
+        multiSelect={true}
+        clearButton={true}
+        aria-label="Drug name multiselect"
+      >
         {filterList.length > 0 && (
           <Combobox.List>
             {filterList.map((item, key) => {
@@ -96,7 +102,13 @@ const customCode = `() => {
   return (
     <div>
       <Label withInput={true}>Drug Name</Label>
-      <Combobox onSearch={onSearchHandler} onChange={onChangeHandler} multiSelect={true} clearButton={true}>
+      <Combobox
+        onSearch={onSearchHandler}
+        onChange={onChangeHandler}
+        multiSelect={true}
+        clearButton={true}
+        aria-label="Drug name multiselect"
+      >
         {filterList.length > 0 && (
           <Combobox.List>
             {filterList.map((item, key) => {

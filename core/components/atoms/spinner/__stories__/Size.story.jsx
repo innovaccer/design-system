@@ -10,7 +10,7 @@ export const size = () => {
         return (
           <div key={ind} className="mr-8 d-flex flex-column align-items-center">
             <div className="h-75">
-              <Spinner size={SpinnerSize} />
+              <Spinner size={SpinnerSize} aria-label={`Loading ${SpinnerSize}`} />
             </div>
             <Text weight="strong">{SpinnerSize.charAt(0).toUpperCase() + SpinnerSize.slice(1)}</Text>
           </div>

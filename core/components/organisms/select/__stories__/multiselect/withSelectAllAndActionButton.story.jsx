@@ -84,19 +84,24 @@ export const withSelectAllAndActionButton = () => {
       onSelect={handleSelect}
       value={selectedOptions}
       multiSelect={true}
-      triggerOptions={{ onClear: onClearHandler }}
+      triggerOptions={{ onClear: onClearHandler, 'aria-label': 'Medication multiselect with apply' }}
     >
-      <Select.List>
+      <Select.List aria-label="Medication options">
         <Select.Option
           checkedState={checkedState}
           onClick={handleSelectAllClick}
           option={{ id: 'select-all', label: 'SelectAll', value: 'SelectAll' }}
+          aria-label="Select all medications"
         >
           Select All
         </Select.Option>
         {medicineList.map((item) => {
           return (
-            <Select.Option key={item.id} option={{ label: item.label, value: item.value, id: item.id }}>
+            <Select.Option
+              key={item.id}
+              option={{ label: item.label, value: item.value, id: item.id }}
+              aria-label={item.label + ' option'}
+            >
               {item.label}
             </Select.Option>
           );
@@ -209,19 +214,20 @@ const customCode = `() => {
       onSelect={handleSelect}
       value={selectedOptions}
       multiSelect={true}
-      triggerOptions={{ onClear: onClearHandler }}
+      triggerOptions={{ onClear: onClearHandler, 'aria-label': 'Medication multiselect with apply' }}
     >
-      <Select.List>
+      <Select.List aria-label="Medication options">
         <Select.Option
           checkedState={checkedState}
           onClick={handleSelectAllClick}
           option={{ id: 'select-all', label: 'SelectAll', value: 'SelectAll' }}
+        aria-label="Select all medications"
         >
           Select All
         </Select.Option>
         {medicineList.map((item) => {
           return (
-            <Select.Option key={item.id} option={{ label: item.label, value: item.value, id: item.id }}>
+            <Select.Option key={item.id} option={{ label: item.label, value: item.value, id: item.id }} aria-label={item.label + ' option'}>
               {item.label}
             </Select.Option>
           );

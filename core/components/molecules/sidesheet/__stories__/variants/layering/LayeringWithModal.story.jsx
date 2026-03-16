@@ -7,6 +7,8 @@ export const layeringWithModal = () => {
   const [open, setOpen] = React.useState(false);
   const [openSecond, setOpenSecond] = React.useState(false);
   const backdropClose = true;
+  const headingId = 'sidesheet-layering-heading';
+  const modalHeadingId = 'modal-layering-heading';
 
   const onClose = () => {
     setOpen(false);
@@ -21,6 +23,7 @@ export const layeringWithModal = () => {
   const headerOptions = {
     heading: 'Heading',
     subHeading: 'Subheading',
+    headingId,
   };
 
   const options = {
@@ -28,6 +31,7 @@ export const layeringWithModal = () => {
     open,
     headerOptions,
     backdropClose,
+    'aria-labelledby': headingId,
     footer: (
       <>
         <Button appearance="primary" className="mr-4" onClick={() => setOpenSecond(true)}>
@@ -76,7 +80,9 @@ export const layeringWithModal = () => {
         headerOptions={{
           heading: 'Heading Part Two',
           subHeading: 'Subheading Part Two',
+          headingId: modalHeadingId,
         }}
+        aria-labelledby={modalHeadingId}
         footer={
           <>
             <Button appearance="primary" className="ml-4">
@@ -95,6 +101,8 @@ const customCode = `() =>  {
   const [open, setOpen] = React.useState(false);
   const [openSecond, setOpenSecond] = React.useState(false);
   const backdropClose = true;
+  const headingId = 'sidesheet-layering-heading';
+  const modalHeadingId = 'modal-layering-heading';
 
   const onClose = () => {
     setOpen(false);
@@ -107,6 +115,7 @@ const customCode = `() =>  {
   const headerOptions = {
     heading: 'Heading',
     subHeading: 'Subheading',
+    headingId,
   };
 
   const options = {
@@ -114,6 +123,7 @@ const customCode = `() =>  {
     open,
     headerOptions,
     backdropClose,
+    'aria-labelledby': headingId,
     footer: (
       <>
         <Button appearance="primary" className="mr-4" onClick={() => setOpenSecond(true)}>
@@ -162,7 +172,9 @@ const customCode = `() =>  {
         headerOptions={{
           heading: 'Heading Part Two',
           subHeading: 'Subheading Part Two',
+          headingId: modalHeadingId,
         }}
+        aria-labelledby={modalHeadingId}
         footer={
           <>
             <Button appearance="primary" className="ml-4">
