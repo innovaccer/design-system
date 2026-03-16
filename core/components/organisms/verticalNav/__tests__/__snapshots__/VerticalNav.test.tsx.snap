@@ -8,6 +8,7 @@ exports[`Vertical Navigation component
     <div
       class="VerticalNav"
       role="tree"
+      tabindex="-1"
     >
       
       <div
@@ -166,6 +167,7 @@ exports[`Vertical Navigation component
     <div
       class="VerticalNav VerticalNav--expanded"
       role="tree"
+      tabindex="-1"
     >
       <div
         class="VerticalNav-section"
