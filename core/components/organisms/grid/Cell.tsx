@@ -164,6 +164,8 @@ const HeaderCell = (props: HeaderCellProps) => {
           if (!isSortable) return;
           if (event.key === 'Enter' || event.key === ' ') {
             event.preventDefault();
+            // Prevent auto-repeat: only process first keydown
+            if (event.repeat) return;
             handleSortToggle();
           }
         }}
@@ -247,6 +249,8 @@ const HeaderCell = (props: HeaderCellProps) => {
           onKeyDown={(event: React.KeyboardEvent<HTMLSpanElement>) => {
             if (event.key === 'Enter' || event.key === ' ') {
               event.preventDefault();
+              // Prevent auto-repeat: only process first keydown
+              if (event.repeat) return;
               resizeCol({ updateColumnSchema }, name, el.current);
               setIsDragged(false);
             }
@@ -340,7 +344,26 @@ export const Cell = (props: CellProps) => {
     nestedRowData,
   } = props as CellProps;
 
-  const { draggable, separator, nestedRows, ref, withCheckbox, showNestedRowTrigger } = context;
+  const { draggable, separator, nestedRows, ref, withCheckbox, showNestedRowTrigger, showHead, gridKeyboard } =
+    context;
+
+  const cellRef = React.useRef<HTMLDivElement>(null);
+
+  const isFocusedCell =
+    gridKeyboard &&
+    rowIndex !== undefined &&
+    colIndex !== undefined &&
+    ((gridKeyboard.focusedCell?.rowIndex === rowIndex && gridKeyboard.focusedCell?.colIndex === colIndex) ||
+      (!gridKeyboard.focusedCell && rowIndex === 0 && colIndex === 0));
+
+  React.useEffect(() => {
+    if (isFocusedCell && cellRef.current && document.activeElement !== cellRef.current) {
+      cellRef.current.focus();
+      if (typeof cellRef.current.scrollIntoView === 'function') {
+        cellRef.current.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+      }
+    }
+  }, [isFocusedCell]);
 
   const { name, hidden, pinned, cellType = 'DEFAULT' } = schema;
 
@@ -359,11 +382,29 @@ export const Cell = (props: CellProps) => {
 
   if (hidden) return null;
 
+  const bodyCellKeyboardProps =
+    !isHead &&
+    gridKeyboard &&
+    rowIndex !== undefined &&
+    colIndex !== undefined
+      ? {
+          ref: cellRef,
+          role: 'gridcell' as const,
+          tabIndex: isFocusedCell ? 0 : -1,
+          'aria-rowindex': rowIndex + (showHead ? 2 : 1),
+          'aria-colindex': colIndex + 1,
+          onKeyDown: (e: React.KeyboardEvent<HTMLDivElement>) =>
+            gridKeyboard.handleGridCellKeyDown(e, rowIndex, colIndex),
+          onFocus: () => gridKeyboard.setFocusedCell(rowIndex, colIndex),
+        }
+      : {};
+
   return (
     <div
       key={`${rowIndex}-${colIndex}`}
       className={cellClass}
       draggable={isHead && draggable}
+      {...bodyCellKeyboardProps}
       onDragStart={(e) => {
         if (draggable) {
           setIsDragged(true);
