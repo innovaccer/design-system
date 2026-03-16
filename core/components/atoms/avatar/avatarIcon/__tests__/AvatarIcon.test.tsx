@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import { Avatar } from '@/index';
 import { AvatarProps as Props } from '@/index.type';
 import { AccentAppearance, AvatarSize } from '@/common.type';
@@ -69,5 +70,17 @@ describe('Avatar Icon component with prop:appearance', () => {
       </Avatar>
     );
     expect(getByTestId('DesignSystem-Icon')).toHaveClass('Icon--warningDarker');
+  });
+});
+
+describe('Avatar Icon component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <Avatar>
+        <Avatar.Icon name={icon} />
+      </Avatar>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import { Collapsible, CollapsibleProps as Props } from '@/components/atoms/collapsible';
 import { Icon, Text } from '@/index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -174,5 +175,17 @@ describe('Collapsible component with prop: onToggle', () => {
     fireEvent.mouseLeave(component);
     expect(onToggle).toHaveBeenCalled();
     expect(onToggle).toHaveBeenCalledWith(false);
+  });
+});
+
+describe('Collapsible component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <Collapsible expanded={false}>
+        <div>Panel</div>
+      </Collapsible>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

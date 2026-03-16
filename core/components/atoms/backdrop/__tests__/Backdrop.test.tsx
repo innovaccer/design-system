@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import Backdrop, { BackdropProps as Props } from '../Backdrop';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
@@ -45,5 +46,13 @@ describe('Backdrop component', () => {
         expect(getByTestId('DesignSystem-Backdrop')).toHaveClass('BackdropClass');
       });
     });
+  });
+});
+
+describe('Backdrop component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Backdrop open={true} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

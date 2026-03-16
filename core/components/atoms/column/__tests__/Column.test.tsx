@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { fireEvent, render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import { ColumnProps as Props } from '@/index.type';
 import { Column } from '@/index';
 import { filterUndefined, testHelper, testMessageHelper, valueHelper } from '@/utils/testHelper';
@@ -178,5 +179,17 @@ describe('Column component', () => {
 
     fireEvent.click(getByTestId('DesignSystem-Column'));
     expect(onClick).toBeCalled();
+  });
+});
+
+describe('Column component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <Column>
+        <div>Masala Design System</div>
+      </Column>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

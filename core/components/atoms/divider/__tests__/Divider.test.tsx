@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { Divider } from '@/index';
 import { DividerProps as Props } from '@/index.type';
@@ -46,5 +47,13 @@ describe('Divider component with orientation:vertical', () => {
     const { getByTestId } = render(<Divider vertical={true} />);
     expect(getByTestId('DesignSystem-Divider')).toHaveClass('Divider--vertical');
     expect(getByTestId('DesignSystem-Divider')).toHaveClass('Divider');
+  });
+});
+
+describe('Divider component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Divider />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

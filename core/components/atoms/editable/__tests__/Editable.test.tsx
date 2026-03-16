@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import Editable, { EditableProps as Props } from '../Editable';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
@@ -159,5 +160,17 @@ describe('Editable Component with overwrite class', () => {
       </Editable>
     );
     expect(getByTestId('DesignSystem-Editable')).toHaveClass(className);
+  });
+});
+
+describe('Editable component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <Editable onChange={onChange}>
+        <div>First Name</div>
+      </Editable>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

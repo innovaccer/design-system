@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import { MultiSlider } from '@/index';
 import { MultiSliderProps as Props } from '../index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -79,5 +80,13 @@ describe('Calls slider event handlers', () => {
     const elem = getByTestId('DesignSystem-MultiSlider-Slider-Track');
     fireEvent.mouseDown(elem);
     expect(FunctionValue).toBeCalled();
+  });
+});
+
+describe('MultiSlider component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<MultiSlider label="Range selector" />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import { MetricInput } from '@/index';
 import { MetricInputProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -1174,6 +1175,14 @@ describe('MetricInput Forward Ref and Imperative Handle - Tests ref forwarding a
     render(<MetricInput ref={ref} defaultValue={42} />);
 
     expect(ref.current?.value).toBe('42');
+  });
+});
+
+describe('MetricInput component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<MetricInput aria-label="Metric input" />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });
 

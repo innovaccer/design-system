@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import Switch, { SwitchProps as Props } from '../Switch';
 
@@ -36,4 +37,12 @@ describe('Switch component', () => {
     });
   };
   testHelper(mapper, testFunc);
+});
+
+describe('Switch component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Switch aria-label="Enable setting" />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 });

@@ -449,6 +449,7 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
             }}
             data-test="DesignSystem-MultiSlider-Slider-Track"
             role="button"
+            aria-label={label || 'Slider track'}
             // tabIndex={this.props.disabled ? -1 : 0}
             aria-disabled={this.props.disabled || undefined}
           >

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import Flex, { FlexGap, FlexDirection, FlexJustifyContent, FlexAlignItems, FlexWrap } from '../Flex';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
@@ -310,5 +311,13 @@ describe('Flex component specifics', () => {
         expect(getByTestId('DesignSystem-Flex')).toHaveClass(expectedClass);
       });
     });
+  });
+});
+
+describe('Flex component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Flex>Flex Content</Flex>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });
