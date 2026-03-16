@@ -57,7 +57,22 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        a11yPropsTable: 'all',
+        a11yPropsTable: [
+          'aria-label',
+          'aria-labelledby',
+          'aria-describedby',
+          'aria-disabled',
+          'aria-expanded',
+          'aria-pressed',
+          'aria-haspopup',
+          'aria-controls',
+          'aria-hidden',
+          'aria-busy',
+          'role',
+          'tabIndex',
+          'id',
+          'title',
+        ],
         title: 'Button',
         a11yProps: ` **aria-label:** <br/>- Add \`aria-label='Open'\` to describe the action of button.<br/> - Add \`aria-label='Events'\` on button with *event* icon to define its purpose.`,
       },

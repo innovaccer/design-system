@@ -15,7 +15,22 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        a11yPropsTable: 'all',
+        a11yPropsTable: [
+          'aria-label',
+          'aria-labelledby',
+          'aria-describedby',
+          'aria-disabled',
+          'aria-expanded',
+          'aria-pressed',
+          'aria-haspopup',
+          'aria-controls',
+          'aria-hidden',
+          'aria-busy',
+          'role',
+          'tabIndex',
+          'id',
+          'title',
+        ],
         title: 'Button',
         description: 'A pattern using tiny icon buttons in a group.',
         a11yProps: `**aria-label:** <br/> - Add \`aria-label='Copy'\` on button with *copy* icon to describe the action of button.<br/>- Add \`aria-label='Paste'\` on button with *paste* icon to describe the action of button.<br/>- Add \`aria-label='Delete'\` on button with *delete* icon to describe the action of button.`,
