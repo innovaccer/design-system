@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { EditableChipInput } from '@/index';
 import { EditableChipInputProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -413,5 +414,19 @@ describe('EditableChipInput component - Size functionality', () => {
       const chipInput = getByTestId(chipInputTestId);
       expect(chipInput).toHaveClass('ChipInput--small');
     });
+  });
+});
+
+describe('EditableChipInput component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <EditableChipInput
+        value={[]}
+        onChange={jest.fn()}
+        chipInputOptions={{ chipOptions: {}, allowDuplicates: false, defaultValue: [] }}
+      />
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

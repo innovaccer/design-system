@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { fireEvent, render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { MenuProps } from '@/index.type';
 import { Menu, Icon } from '@/index';
@@ -534,5 +535,70 @@ describe('Menu Component - Event listener lifecycle management and cleanup', () 
 
     // Should handle events without errors
     expect(menuItem).toBeInTheDocument();
+  });
+});
+
+describe('Menu component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <Menu>
+        <Menu.List>
+          <Menu.Item>Menu Item 1</Menu.Item>
+          <Menu.Item>Menu Item 2</Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});
+
+describe('Menu subcomponents a11y', () => {
+  it('Menu.Trigger has no detectable a11y violations', async () => {
+    const { container } = render(
+      <Menu trigger={<Menu.Trigger />}>
+        <Menu.List>
+          <Menu.Item>Menu Item 1</Menu.Item>
+          <Menu.Item>Menu Item 2</Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('Menu.Group has no detectable a11y violations', async () => {
+    const { container } = render(
+      <Menu trigger={<Menu.Trigger />} open={true}>
+        <Menu.Group label="Actions">{MenuList}</Menu.Group>
+        <Menu.Group label="More">{MenuList}</Menu.Group>
+      </Menu>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('Menu.SubMenu has no detectable a11y violations', async () => {
+    const { container } = render(
+      <Menu open={true}>
+        <Menu.List>
+          <Menu.Item>Menu Item 1</Menu.Item>
+          <Menu.SubMenu>
+            <Menu.Item className="d-flex align-items-center justify-content-between w-100">
+              Menu Item 2
+              <Icon name="chevron_right" />
+            </Menu.Item>
+            <Menu position="right-start">
+              <Menu.List>
+                <Menu.Item>Sub Menu Item 1</Menu.Item>
+                <Menu.Item>Sub Menu Item 2</Menu.Item>
+              </Menu.List>
+            </Menu>
+          </Menu.SubMenu>
+        </Menu.List>
+      </Menu>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

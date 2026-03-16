@@ -1596,6 +1596,7 @@ exports[`TS renders children 1`] = `
       class="Slider-wrapper"
     >
       <div
+        aria-label="Slider track"
         class="Slider-track"
         data-test="DesignSystem-MultiSlider-Slider-Track"
         role="button"
@@ -1790,6 +1791,7 @@ exports[`TS renders children 1`] = `
         </div>
       </div>
       <div
+        aria-label="0"
         aria-valuemax="10"
         aria-valuemin="0"
         aria-valuenow="0"
@@ -1816,6 +1818,7 @@ exports[`TS renders children 1`] = `
       class="Slider-wrapper"
     >
       <div
+        aria-label="Slider track"
         class="Slider-track"
         data-test="DesignSystem-MultiSlider-Slider-Track"
         role="button"
@@ -2014,6 +2017,7 @@ exports[`TS renders children 1`] = `
         </div>
       </div>
       <div
+        aria-label="0"
         aria-valuemax="10"
         aria-valuemin="0"
         aria-valuenow="0"
@@ -2031,6 +2035,7 @@ exports[`TS renders children 1`] = `
         0
       </div>
       <div
+        aria-label="10"
         aria-valuemax="10"
         aria-valuemin="0"
         aria-valuenow="10"

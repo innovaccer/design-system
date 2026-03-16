@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { fireEvent, render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { LinkButton } from '@/index';
 import { LinkButtonProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -110,5 +111,13 @@ describe('Link Button component appearance', () => {
     const { getByTestId } = render(<LinkButton>LinkButton</LinkButton>);
     expect(getByTestId('DesignSystem-LinkButton')).not.toHaveClass('LinkButton--subtle');
     expect(getByTestId('DesignSystem-LinkButton')).toHaveClass('LinkButton--default');
+  });
+});
+
+describe('LinkButton component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<LinkButton>LinkButton</LinkButton>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

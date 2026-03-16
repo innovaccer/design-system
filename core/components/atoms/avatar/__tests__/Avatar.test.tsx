@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import Avatar, { AvatarProps as Props } from '../Avatar';
 import { AccentAppearance, AvatarShape, AvatarSize } from '@/common.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -415,5 +416,13 @@ describe('Avatar component with prop:size micro', () => {
   it('should have the Avatar--micro class when size is micro', () => {
     const { getByTestId } = render(<Avatar size="micro">Design</Avatar>);
     expect(getByTestId('DesignSystem-Avatar')).toHaveClass('Avatar--micro');
+  });
+});
+
+describe('Avatar component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Avatar>JD</Avatar>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

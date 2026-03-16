@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import Placeholder, { PlaceholderProps as Props } from '../Placeholder';
 import { PlaceholderParagraph } from '@/index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -86,5 +87,17 @@ describe('Placeholder Component with overwrite class', () => {
       </Placeholder>
     );
     expect(getByTestId('DesignSystem-Placeholder')).toHaveClass(className);
+  });
+});
+
+describe('Placeholder component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <Placeholder>
+        <PlaceholderParagraph length="small" />
+      </Placeholder>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

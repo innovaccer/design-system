@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import ProgressBar, { ProgressBarProps as Props, ProgressBarSize } from '../ProgressBar';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
@@ -55,6 +56,14 @@ describe('ProgressBar component size variant', () => {
       const { getByTestId } = render(<ProgressBar size={size} value={50} />);
       expect(getByTestId('DesignSystem-ProgressBar')).toHaveClass(`ProgressBar-indicator--${size}`);
     });
+  });
+});
+
+describe('ProgressBar component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<ProgressBar value={50} aria-label="Progress" />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });
 

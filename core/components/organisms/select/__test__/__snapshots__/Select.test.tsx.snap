@@ -6,9 +6,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -55,9 +57,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -104,9 +108,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -153,9 +159,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -202,9 +210,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -251,9 +261,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -300,9 +312,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -349,9 +363,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -398,9 +414,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -447,9 +465,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -496,9 +516,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -545,9 +567,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -594,9 +618,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -643,9 +669,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -692,9 +720,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -741,9 +771,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -790,9 +822,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -839,9 +873,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -888,9 +924,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -937,9 +975,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -986,9 +1026,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -1035,9 +1077,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -1084,9 +1128,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -1133,9 +1179,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -1182,9 +1230,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -1231,9 +1281,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -1280,9 +1332,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -1329,9 +1383,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -1378,9 +1434,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -1427,9 +1485,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -1476,9 +1536,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -1525,9 +1587,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -1574,9 +1638,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -1623,9 +1689,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -1672,9 +1740,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -1721,9 +1791,11 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -1770,9 +1842,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -1819,9 +1893,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -1868,9 +1944,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -1917,9 +1995,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -1966,9 +2046,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -2015,9 +2097,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -2064,9 +2148,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -2113,9 +2199,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -2162,9 +2250,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -2211,9 +2301,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -2260,9 +2352,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -2309,9 +2403,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -2358,9 +2454,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -2407,9 +2505,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -2456,9 +2556,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -2505,9 +2607,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -2554,9 +2658,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -2603,9 +2709,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -2652,9 +2760,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -2701,9 +2811,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -2750,9 +2862,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -2799,9 +2913,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -2848,9 +2964,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -2897,9 +3015,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -2946,9 +3066,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -2995,9 +3117,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -3044,9 +3168,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -3093,9 +3219,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -3142,9 +3270,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -3191,9 +3321,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -3240,9 +3372,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -3289,9 +3423,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -3338,9 +3474,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -3387,9 +3525,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -3436,9 +3576,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -3485,9 +3627,11 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -3534,9 +3678,11 @@ exports[`Select component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       
@@ -3583,9 +3729,11 @@ exports[`Select component snapshots
 <body>
   <div>
     <div
+      aria-controls="select-listbox-Test-uid"
       aria-expanded="false"
       aria-haspopup="listbox"
       data-test="DesignSystem-Select"
+      role="combobox"
       style="width: 176px;"
     >
       

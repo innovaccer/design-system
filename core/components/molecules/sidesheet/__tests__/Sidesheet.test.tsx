@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent, act } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { SidesheetProps as Props } from '@/index.type';
 import { Button, Sidesheet, Text } from '@/index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -269,5 +270,13 @@ describe('Sidesheet component with prop: open', () => {
 
     jest.runOnlyPendingTimers();
     jest.useRealTimers();
+  });
+});
+
+describe('Sidesheet component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    render(<Sidesheet dimension="regular" headerOptions={{ heading: 'Heading' }} open={true} />);
+    const results = await axe(document.body);
+    expect(results).toHaveNoViolations();
   });
 });

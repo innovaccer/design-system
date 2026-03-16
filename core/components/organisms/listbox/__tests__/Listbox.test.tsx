@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { Listbox, Text } from '@/index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { ListboxItemProps as Props, ListboxProps as ListboxProps } from '@/index.type';
@@ -441,5 +442,36 @@ describe('Listbox component test for Nested Row', () => {
     );
     const nestedBody = screen.queryByText('DesignSystem-Nested-Row');
     expect(nestedBody).not.toBeInTheDocument();
+  });
+});
+
+describe('Listbox component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <Listbox>
+        <Listbox.Item id="item-1">
+          <div>list item</div>
+        </Listbox.Item>
+      </Listbox>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+});
+
+describe('Listbox.Item component a11y', () => {
+  it('has no detectable a11y violations with nestedBody', async () => {
+    const { container } = render(
+      <Listbox>
+        <Listbox.Item id="item-1" nestedBody={<div>Nested content</div>} expanded={true}>
+          <div>Item 1</div>
+        </Listbox.Item>
+        <Listbox.Item id="item-2" disabled={true}>
+          <div>Item 2 (disabled)</div>
+        </Listbox.Item>
+      </Listbox>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

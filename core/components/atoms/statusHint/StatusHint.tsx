@@ -1,14 +1,14 @@
 import * as React from 'react';
 import Text from '@/components/atoms/text';
 import classNames from 'classnames';
-import { BaseProps, extractBaseProps } from '@/utils/types';
+import { BaseProps, BaseHtmlProps, extractBaseProps } from '@/utils/types';
 import { MessageAppearance } from '@/common.type';
 import styles from '@css/components/statusHint.module.css';
 import pageHeaderStyles from '@css/components/pageHeader.module.css';
 
 type StatusHintSize = 'small' | 'regular';
 
-export interface StatusHintProps extends BaseProps {
+export interface StatusHintProps extends BaseProps, BaseHtmlProps<HTMLDivElement> {
   /**
    * Describes label of the `Status Hint`
    */
@@ -49,6 +49,7 @@ export const StatusHint = (props: StatusHintProps) => {
     truncateLabel,
     className,
     size = 'regular',
+    ...rest
   } = props;
 
   const baseProps = extractBaseProps(props);
@@ -96,6 +97,7 @@ export const StatusHint = (props: StatusHintProps) => {
     <div
       data-test="DesignSystem-StatusHint"
       {...baseProps}
+      {...rest}
       className={StatusHintClass}
       onClick={(e) => onClick && onClick(e)}
       onKeyDown={handleKeyDown}

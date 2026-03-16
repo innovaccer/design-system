@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent, createEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import Stepper, { StepperProps as Props } from '../Stepper';
 
@@ -334,5 +335,22 @@ describe('Stepper component keyboard accessibility', () => {
     eventRight.preventDefault = jest.fn();
     fireEvent(stepNodes[3], eventRight);
     expect(eventRight.preventDefault).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('Stepper component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <Stepper
+        steps={[
+          { label: 'Step A', value: 'Step1' },
+          { label: 'Step B', value: 'Step2' },
+        ]}
+        active={0}
+        completed={0}
+      />
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

@@ -54,6 +54,7 @@ exports[`FileUploader component
         </span>
       </button>
       <input
+        aria-label="Upload documents"
         class="FileUploaderButton-input"
         data-test="DesignSystem-FileUploaderButton--Input"
         tabindex="-1"
@@ -113,6 +114,7 @@ exports[`FileUploader component prop:accept snapshot
       </button>
       <input
         accept="jpg, pdf, png"
+        aria-label="Upload files"
         class="FileUploaderButton-input"
         data-test="DesignSystem-FileUploaderButton--Input"
         tabindex="-1"
@@ -171,6 +173,7 @@ exports[`FileUploader component prop:disabled snapshot
         </span>
       </button>
       <input
+        aria-label="Upload files"
         class="FileUploaderButton-input"
         data-test="DesignSystem-FileUploaderButton--Input"
         tabindex="-1"
@@ -230,6 +233,7 @@ exports[`FileUploader component prop:disabled snapshot
         </span>
       </button>
       <input
+        aria-label="Upload files"
         class="FileUploaderButton-input"
         data-test="DesignSystem-FileUploaderButton--Input"
         disabled=""
@@ -289,6 +293,7 @@ exports[`FileUploader component prop:multiple snapshot
         </span>
       </button>
       <input
+        aria-label="Upload files"
         class="FileUploaderButton-input"
         data-test="DesignSystem-FileUploaderButton--Input"
         tabindex="-1"
@@ -347,6 +352,7 @@ exports[`FileUploader component prop:multiple snapshot
         </span>
       </button>
       <input
+        aria-label="Upload files"
         class="FileUploaderButton-input"
         data-test="DesignSystem-FileUploaderButton--Input"
         multiple=""

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { EditableDropdown } from '@/index';
 import { DropdownProps, EditableDropdownProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -115,5 +116,13 @@ describe('EditableDropdown Component with overwrite class', () => {
       <EditableDropdown placeholder={placeholder} dropdownOptions={dropdownOptions} className={className} />
     );
     expect(getByTestId('DesignSystem-EditableDropdown')).toHaveClass(className);
+  });
+});
+
+describe('EditableDropdown component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<EditableDropdown placeholder={placeholder} dropdownOptions={dropdownOptions} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

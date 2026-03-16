@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from '@/utils/testAxe';
 import { Tooltip, Button } from '@/index';
 import { TooltipProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -124,6 +125,18 @@ describe('Tooltip component with size prop', () => {
     const tooltipWrapper = getByTestId('DesignSystem-Tooltip-Wrapper');
     expect(tooltipWrapper).not.toHaveClass('Tooltip--small');
     expect(tooltipWrapper).toHaveClass('Tooltip');
+  });
+});
+
+describe('Tooltip component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    render(
+      <Tooltip tooltip="Sample string">
+        <Button>Button</Button>
+      </Tooltip>
+    );
+    const results = await axe(document.body);
+    expect(results).toHaveNoViolations();
   });
 });
 

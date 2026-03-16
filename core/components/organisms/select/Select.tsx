@@ -302,8 +302,10 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
       <div
         data-test="DesignSystem-Select"
         style={WrapperStyle}
+        role="combobox"
         aria-haspopup="listbox"
         aria-expanded={openPopover}
+        aria-controls={listboxId}
         {...baseProps}
       >
         <Popover
