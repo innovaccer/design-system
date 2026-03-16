@@ -21,7 +21,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
               class="Calendar-header--large"
             >
               <button
-                aria-label="Previous date"
+                aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
                 data-test="DesignSystem-Button"
                 tabindex="0"
@@ -79,7 +79,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                 </div>
               </div>
               <button
-                aria-label="Next date"
+                aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
                 data-test="DesignSystem-Button"
                 tabindex="0"
@@ -691,7 +691,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
               class="Calendar-header--large"
             >
               <button
-                aria-label="Previous date"
+                aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
                 data-test="DesignSystem-Button"
                 disabled=""
@@ -750,7 +750,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                 </div>
               </div>
               <button
-                aria-label="Next date"
+                aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
                 data-test="DesignSystem-Button"
                 tabindex="0"
@@ -1362,7 +1362,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
               class="Calendar-header--large"
             >
               <button
-                aria-label="Previous date"
+                aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
                 data-test="DesignSystem-Button"
                 disabled=""
@@ -1421,7 +1421,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                 </div>
               </div>
               <button
-                aria-label="Next date"
+                aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
                 data-test="DesignSystem-Button"
                 tabindex="0"
@@ -2033,7 +2033,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
               class="Calendar-header--large"
             >
               <button
-                aria-label="Previous date"
+                aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
                 data-test="DesignSystem-Button"
                 tabindex="0"
@@ -2091,7 +2091,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                 </div>
               </div>
               <button
-                aria-label="Next date"
+                aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
                 data-test="DesignSystem-Button"
                 tabindex="0"
@@ -2703,7 +2703,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
               class="Calendar-header--large"
             >
               <button
-                aria-label="Previous date"
+                aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
                 data-test="DesignSystem-Button"
                 tabindex="0"
@@ -2761,7 +2761,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                 </div>
               </div>
               <button
-                aria-label="Next date"
+                aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
                 data-test="DesignSystem-Button"
                 tabindex="0"
@@ -3373,7 +3373,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
               class="Calendar-header--large"
             >
               <button
-                aria-label="Previous date"
+                aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
                 data-test="DesignSystem-Button"
                 tabindex="0"
@@ -3431,7 +3431,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 </div>
               </div>
               <button
-                aria-label="Next date"
+                aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
                 data-test="DesignSystem-Button"
                 tabindex="0"
@@ -4043,7 +4043,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
               class="Calendar-header--large"
             >
               <button
-                aria-label="Previous month"
+                aria-label="Previous year"
                 class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
                 data-test="DesignSystem-Button"
                 tabindex="0"
@@ -4084,7 +4084,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 </div>
               </div>
               <button
-                aria-label="Next month"
+                aria-label="Next year"
                 class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
                 data-test="DesignSystem-Button"
                 tabindex="0"
@@ -4566,7 +4566,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
               class="Calendar-header--large"
             >
               <button
-                aria-label="Previous date"
+                aria-label="Previous month"
                 class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
                 data-test="DesignSystem-Button"
                 tabindex="0"
@@ -4624,7 +4624,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                 </div>
               </div>
               <button
-                aria-label="Next date"
+                aria-label="Next month"
                 class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
                 data-test="DesignSystem-Button"
                 tabindex="0"
