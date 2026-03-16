@@ -46,7 +46,7 @@
   left: 0;
   box-sizing: border-box;
   background-color: var(--primary-ultra-light);
-  border: var(--border-width-2-5) solid var(--primary-lighter);
+  border: var(--border-width-05) solid var(--primary);
   border-radius: var(--border-radius-10);
   pointer-events: none;
   z-index: 2;
