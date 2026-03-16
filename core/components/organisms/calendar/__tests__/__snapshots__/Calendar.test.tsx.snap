@@ -17,7 +17,7 @@ exports[`Calendar component
           class="Calendar-header--large"
         >
           <button
-            aria-label="Previous date"
+            aria-label="Previous month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -75,7 +75,7 @@ exports[`Calendar component
             </div>
           </div>
           <button
-            aria-label="Next date"
+            aria-label="Next month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -658,7 +658,7 @@ exports[`Calendar component
           class="Calendar-header--large"
         >
           <button
-            aria-label="Previous date"
+            aria-label="Previous month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -716,7 +716,7 @@ exports[`Calendar component
             </div>
           </div>
           <button
-            aria-label="Next date"
+            aria-label="Next month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             disabled=""
@@ -1300,7 +1300,7 @@ exports[`Calendar component
           class="Calendar-header--large"
         >
           <button
-            aria-label="Previous date"
+            aria-label="Previous month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             disabled=""
@@ -1359,7 +1359,7 @@ exports[`Calendar component
             </div>
           </div>
           <button
-            aria-label="Next date"
+            aria-label="Next month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -1942,7 +1942,7 @@ exports[`Calendar component
           class="Calendar-header--large"
         >
           <button
-            aria-label="Previous date"
+            aria-label="Previous month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             disabled=""
@@ -2001,7 +2001,7 @@ exports[`Calendar component
             </div>
           </div>
           <button
-            aria-label="Next date"
+            aria-label="Next month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             disabled=""
@@ -2585,7 +2585,7 @@ exports[`Calendar component
           class="Calendar-header--large"
         >
           <button
-            aria-label="Previous date"
+            aria-label="Previous month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -2643,7 +2643,7 @@ exports[`Calendar component
             </div>
           </div>
           <button
-            aria-label="Next date"
+            aria-label="Next month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -3226,7 +3226,7 @@ exports[`Calendar component
           class="Calendar-header--large"
         >
           <button
-            aria-label="Previous date"
+            aria-label="Previous month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -3284,7 +3284,7 @@ exports[`Calendar component
             </div>
           </div>
           <button
-            aria-label="Next date"
+            aria-label="Next month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -3867,7 +3867,7 @@ exports[`Calendar component
           class="Calendar-header--large"
         >
           <button
-            aria-label="Previous date"
+            aria-label="Previous month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -3925,7 +3925,7 @@ exports[`Calendar component
             </div>
           </div>
           <button
-            aria-label="Next date"
+            aria-label="Next month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -4508,7 +4508,7 @@ exports[`Calendar component
           class="Calendar-header--large"
         >
           <button
-            aria-label="Previous date"
+            aria-label="Previous month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -4566,7 +4566,7 @@ exports[`Calendar component
             </div>
           </div>
           <button
-            aria-label="Next date"
+            aria-label="Next month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -5149,7 +5149,7 @@ exports[`Calendar component
           class="Calendar-header--large"
         >
           <button
-            aria-label="Previous date"
+            aria-label="Previous month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -5207,7 +5207,7 @@ exports[`Calendar component
             </div>
           </div>
           <button
-            aria-label="Next date"
+            aria-label="Next month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -5790,7 +5790,7 @@ exports[`Calendar component
           class="Calendar-header--large"
         >
           <button
-            aria-label="Previous date"
+            aria-label="Previous month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -5848,7 +5848,7 @@ exports[`Calendar component
             </div>
           </div>
           <button
-            aria-label="Next date"
+            aria-label="Next month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -6431,7 +6431,7 @@ exports[`Calendar component
           class="Calendar-header--large"
         >
           <button
-            aria-label="Previous date"
+            aria-label="Previous month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -6489,7 +6489,7 @@ exports[`Calendar component
             </div>
           </div>
           <button
-            aria-label="Next date"
+            aria-label="Next month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -7072,7 +7072,7 @@ exports[`Calendar component
           class="Calendar-header--large"
         >
           <button
-            aria-label="Previous date"
+            aria-label="Previous month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -7130,7 +7130,7 @@ exports[`Calendar component
             </div>
           </div>
           <button
-            aria-label="Next date"
+            aria-label="Next month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -7713,7 +7713,7 @@ exports[`Calendar component
           class="Calendar-header--large"
         >
           <button
-            aria-label="Previous date"
+            aria-label="Previous month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -8249,7 +8249,7 @@ exports[`Calendar component
             </div>
           </div>
           <button
-            aria-label="Next date"
+            aria-label="Next month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -8730,7 +8730,7 @@ exports[`Calendar component
           class="Calendar-header--large"
         >
           <button
-            aria-label="Previous date"
+            aria-label="Previous month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -9737,7 +9737,7 @@ exports[`Calendar component
             </div>
           </div>
           <button
-            aria-label="Next date"
+            aria-label="Next month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -10285,7 +10285,7 @@ exports[`Calendar component
           class="Calendar-header--large"
         >
           <button
-            aria-label="Previous date"
+            aria-label="Previous month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -10343,7 +10343,7 @@ exports[`Calendar component
             </div>
           </div>
           <button
-            aria-label="Next date"
+            aria-label="Next month"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -10926,7 +10926,7 @@ exports[`Calendar component
           class="Calendar-header--large"
         >
           <button
-            aria-label="Previous month"
+            aria-label="Previous year"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -10967,7 +10967,7 @@ exports[`Calendar component
             </div>
           </div>
           <button
-            aria-label="Next month"
+            aria-label="Next year"
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -11391,7 +11391,7 @@ exports[`Calendar component
           class="Calendar-header--small"
         >
           <button
-            aria-label="Previous date"
+            aria-label="Previous month"
             class="Button Button--tiny Button--tinySquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -11449,7 +11449,7 @@ exports[`Calendar component
             </div>
           </div>
           <button
-            aria-label="Next date"
+            aria-label="Next month"
             class="Button Button--tiny Button--tinySquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -12032,7 +12032,7 @@ exports[`Calendar component
           class="Calendar-header--small"
         >
           <button
-            aria-label="Previous date"
+            aria-label="Previous month"
             class="Button Button--tiny Button--tinySquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -12568,7 +12568,7 @@ exports[`Calendar component
             </div>
           </div>
           <button
-            aria-label="Next date"
+            aria-label="Next month"
             class="Button Button--tiny Button--tinySquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -13049,7 +13049,7 @@ exports[`Calendar component
           class="Calendar-header--small"
         >
           <button
-            aria-label="Previous date"
+            aria-label="Previous month"
             class="Button Button--tiny Button--tinySquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -14056,7 +14056,7 @@ exports[`Calendar component
             </div>
           </div>
           <button
-            aria-label="Next date"
+            aria-label="Next month"
             class="Button Button--tiny Button--tinySquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -14604,7 +14604,7 @@ exports[`Calendar component
           class="Calendar-header--small"
         >
           <button
-            aria-label="Previous date"
+            aria-label="Previous month"
             class="Button Button--tiny Button--tinySquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -14662,7 +14662,7 @@ exports[`Calendar component
             </div>
           </div>
           <button
-            aria-label="Next date"
+            aria-label="Next month"
             class="Button Button--tiny Button--tinySquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -15245,7 +15245,7 @@ exports[`Calendar component
           class="Calendar-header--small"
         >
           <button
-            aria-label="Previous month"
+            aria-label="Previous year"
             class="Button Button--tiny Button--tinySquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
             data-test="DesignSystem-Button"
             tabindex="0"
@@ -15286,7 +15286,7 @@ exports[`Calendar component
             </div>
           </div>
           <button
-            aria-label="Next month"
+            aria-label="Next year"
             class="Button Button--tiny Button--tinySquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
             data-test="DesignSystem-Button"
             tabindex="0"

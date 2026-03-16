@@ -581,7 +581,12 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     });
 
     const direction = type === 'next' ? 'Next' : 'Previous';
-    const viewLabel = view === 'year' ? 'year range' : view;
+    const navUnitMap: Record<View, string> = {
+      year: 'year range',
+      month: 'year',
+      date: 'month',
+    };
+    const viewLabel = navUnitMap[view];
 
     return (
       <Button

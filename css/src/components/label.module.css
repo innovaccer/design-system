@@ -45,10 +45,10 @@
 
 .Label-srOnly {
   position: absolute;
-  width: 1px;
-  height: 1px;
+  width: var(--spacing-xs);
+  height: var(--spacing-xs);
   padding: 0;
-  margin: -1px;
+  margin: calc(-1 * var(--spacing-xs));
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
