@@ -5,7 +5,11 @@ import {
   checkTimeDifference,
   getTimeDifference,
 } from './timePickerUtility';
-import { OptionSchema } from '@/components/atoms/dropdown/option';
+interface OptionItem {
+  label: string;
+  value: string;
+  disabled?: boolean;
+}
 
 interface timeObj {
   hour: string;
@@ -265,8 +269,8 @@ const isValidSearchTerm = (searchTerm: string) => {
   return totalDigit > 0 && totalDigit < 5;
 };
 
-const getValueFromOptionList = (optionList: OptionSchema[]) => {
-  const list = optionList.map((option: any) => option.value);
+const getValueFromOptionList = (optionList: OptionItem[]) => {
+  const list = optionList.map((option) => option.value);
   return list;
 };
 
@@ -280,7 +284,7 @@ const getSearchValueIndex = (options: string[], searchTerm: string): number => {
   return searchIndex;
 };
 
-export const getScrollIndex = (dropdownOptionList: OptionSchema[], searchTerm: string): number => {
+export const getScrollIndex = (dropdownOptionList: OptionItem[], searchTerm: string): number => {
   const optionList = getValueFromOptionList(dropdownOptionList);
 
   if (searchTerm === '') {
