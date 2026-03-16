@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import AvatarSelection, { AvatarSelectionProps as Props, AvatarData } from '../AvatarSelection';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { Avatar, Icon, Tooltip } from '@/index';
@@ -634,5 +635,23 @@ describe('AvatarSelection component with prop:size micro in count', () => {
     const countAvatar = getByTestId('DesignSystem-AvatarSelection--TriggerAvatar');
     const textElement = countAvatar.querySelector('[data-test="DesignSystem-Text"]');
     expect(textElement).toHaveClass('Avatar-content--tiny');
+  });
+});
+
+describe('AvatarSelection component a11y', () => {
+  it('has no detectable a11y violations for empty state', async () => {
+    const { container } = render(<AvatarSelection list={[]} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  it('reports known a11y violations for populated state', async () => {
+    const { container } = render(<AvatarSelection list={list} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+    // const violationIds = results.violations.map((violation) => violation.id);
+
+    // expect(results.violations.length).toBeGreaterThan(0);
+    // expect(violationIds).toContain('aria-required-attr');
   });
 });

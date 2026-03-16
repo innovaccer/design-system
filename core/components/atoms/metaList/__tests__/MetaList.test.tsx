@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { MetaList } from '@/index';
 import { MetaListProps as Props } from '@/index.type';
@@ -142,5 +143,13 @@ describe('MetaList component with different prop:size', () => {
       const { getByTestId } = render(<MetaList size={size} list={[{ icon: 'assessment', label: 'Meta data' }]} />);
       expect(getByTestId('DesignSystem-MetaList--MetaLabel')).toHaveClass(`Text--${size}`);
     });
+  });
+});
+
+describe('MetaList component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<MetaList list={[{ icon: 'assessment', label: 'Meta data' }]} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

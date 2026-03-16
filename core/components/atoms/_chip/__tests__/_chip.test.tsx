@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { GenericChip, GenericChipProps as Props } from '@/components/atoms/_chip';
 
@@ -178,5 +179,13 @@ describe('GenericChip component icon size functionality based on chip size', () 
     expect(leftIcon).toHaveStyle('width: 16px');
     expect(clearIcon).toHaveStyle('font-size: 16px');
     expect(clearIcon).toHaveStyle('width: 16px');
+  });
+});
+
+describe('GenericChip component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<GenericChip label="ChipLabel" name="Chip" />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

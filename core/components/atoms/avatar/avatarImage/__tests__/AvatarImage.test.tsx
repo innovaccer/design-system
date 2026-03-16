@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, waitFor, fireEvent } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import { Avatar } from '@/index';
 import { AvatarProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -219,5 +220,17 @@ describe('Avatar Image component with avatar sizes', () => {
       expect(textElement).toHaveClass('Avatar-content--micro');
       expect(textElement).toHaveClass('Avatar-content--primary');
     });
+  });
+});
+
+describe('Avatar Image component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <Avatar firstName="John" lastName="Doe">
+        <Avatar.Image src={imgSrc} />
+      </Avatar>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

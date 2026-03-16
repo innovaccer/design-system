@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import Checkbox, { CheckboxProps as Props } from '../Checkbox';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
@@ -163,5 +164,13 @@ describe('Checkbox component accessibility', () => {
   it('sets aria-checked to mixed when indeterminate', () => {
     const { getByTestId } = render(<Checkbox label={StringValue} indeterminate={true} />);
     expect(getByTestId('DesignSystem-Checkbox-InputBox')).toHaveAttribute('aria-checked', 'mixed');
+  });
+});
+
+describe('Checkbox component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Checkbox label={StringValue} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

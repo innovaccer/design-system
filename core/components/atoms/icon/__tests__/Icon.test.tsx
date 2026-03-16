@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import Icon, { IconProps as Props } from '../Icon';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
@@ -84,4 +85,12 @@ describe('Icon component snapshot', () => {
     });
   };
   testHelper(mapper, testFunc);
+});
+
+describe('Icon component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Icon name={StringValue} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 });

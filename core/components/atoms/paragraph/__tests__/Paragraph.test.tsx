@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import Paragraph, { ParagraphProps as Props, ParagraphAppearance } from '../Paragraph';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
@@ -64,5 +65,13 @@ describe('Paragraph Component with Prop:color', () => {
       </Paragraph>
     );
     expect(getByTestId('DesignSystem-Paragraph')).toHaveClass('color-accent1-lightest');
+  });
+});
+
+describe('Paragraph component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Paragraph>{'Paragraph'}</Paragraph>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

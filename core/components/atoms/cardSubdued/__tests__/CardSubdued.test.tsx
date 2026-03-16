@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import { CardSubdued } from '@/index';
 import { CardSubduedProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -44,5 +45,13 @@ describe('CardSubdued component', () => {
       const component = getByTestId('DesignSystem-CardSubdued');
       expect(component).toHaveStyle(`border-${border}: var(--spacing-2-5) solid var(--secondary-light)`);
     });
+  });
+});
+
+describe('CardSubdued component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<CardSubdued>CardSubdued Component</CardSubdued>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

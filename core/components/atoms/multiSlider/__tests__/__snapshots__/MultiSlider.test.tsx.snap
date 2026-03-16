@@ -24,6 +24,7 @@ exports[`MultiSlider component
         class="Slider-wrapper"
       >
         <div
+          aria-label="MultiSlider"
           class="Slider-track"
           data-test="DesignSystem-MultiSlider-Slider-Track"
           role="button"

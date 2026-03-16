@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import Handle from '../Handle';
 
 const min = 0;
@@ -67,5 +68,23 @@ describe('renders handle inside multislider component', () => {
     fireEvent.mouseMove(elem);
     fireEvent.mouseUp(elem);
     expect(FunctionValue).toBeCalled();
+  });
+});
+
+describe('Handle component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <Handle
+        value={4}
+        label="Handle value"
+        max={max}
+        min={min}
+        stepSize={stepSize}
+        tickSize={stepSize}
+        tickSizeRatio={stepSize}
+      />
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

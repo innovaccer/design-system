@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import { Dropdown } from '@/index';
 
 import { storyOptions, iconOptions, subInfoOptions, iconWithSubinfoOptions } from '../__stories__/Options';
@@ -61,5 +62,13 @@ describe('renders loading states', () => {
 
     expect(getAllByTestId('DesignSystem-Dropdown--Placeholder')).toHaveLength(storyOptions.length);
     expect(getAllByTestId('DesignSystem-Placeholder--Image')).toHaveLength(storyOptions.length);
+  });
+});
+
+describe('Dropdown Loading component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Dropdown options={storyOptions} loading={true} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import { CardFooter, Button } from '@/index';
 import { CardFooterProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -51,5 +52,13 @@ describe('CardFooter component with prop : withSeperator', () => {
   it('does not render seperator if withSeperator = false', () => {
     const { getByTestId } = render(<CardFooter withSeperator={false}>{children}</CardFooter>);
     expect(getByTestId('DesignSystem-CardFooter')).not.toHaveClass('Card-footer--withSeperator');
+  });
+});
+
+describe('CardFooter component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<CardFooter>{children}</CardFooter>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

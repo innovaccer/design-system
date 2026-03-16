@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import Badge, { BadgeProps as Props } from '../Badge';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { AccentAppearance } from '@/common.type';
@@ -135,5 +136,13 @@ describe('Badge component accessibility', () => {
       </Badge>
     );
     expect(getByTestId('DesignSystem-Badge')).toHaveAttribute('role', 'status');
+  });
+});
+
+describe('Badge component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Badge>Badge</Badge>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

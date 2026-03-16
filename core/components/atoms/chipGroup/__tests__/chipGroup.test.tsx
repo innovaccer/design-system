@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { ChipGroup } from '@/index';
 import { ChipGroupProps as Props } from '@/index.type';
@@ -84,5 +85,21 @@ describe('ChipGroup component', () => {
     const onCloseFunction = getAllByTestId('DesignSystem-GenericChip--clearButton')[0];
     fireEvent.click(onCloseFunction);
     expect(FunctionValue).toHaveBeenCalled();
+  });
+});
+
+describe('ChipGroup component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const accessibleList = [
+      {
+        label: 'Action',
+        disabled: false,
+        name: 'chip-action',
+        type: 'action' as ChipType,
+      },
+    ];
+    const { container } = render(<ChipGroup list={accessibleList} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

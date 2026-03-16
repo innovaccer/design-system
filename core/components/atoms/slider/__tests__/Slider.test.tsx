@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { fireEvent, render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import { Slider } from '@/index';
 import { SliderProps as Props } from '../Slider';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -51,5 +52,13 @@ describe('slider component', () => {
     fireEvent.keyDown(sliderHandle, { keyCode: 37 });
     expect(onChangeHandler).toBeCalled();
     expect(onChangeHandler.mock.calls[0][0]).toBe(3);
+  });
+});
+
+describe('Slider component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Slider label="Volume" />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

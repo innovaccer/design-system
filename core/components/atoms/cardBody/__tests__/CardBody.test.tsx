@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import { CardBody } from '@/index';
 import { CardBodyProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, testMessageHelper } from '@/utils/testHelper';
@@ -39,5 +40,17 @@ describe('CardBody component', () => {
       </CardBody>
     );
     expect(getByTestId('DesignSystem-CardBody')).toHaveClass('CardBodyClass');
+  });
+});
+
+describe('CardBody component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <CardBody>
+        <span>Card Body</span>
+      </CardBody>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

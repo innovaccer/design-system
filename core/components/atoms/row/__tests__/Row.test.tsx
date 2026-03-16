@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { fireEvent, render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import { Row } from '@/index';
 
 const onClick = jest.fn();
@@ -22,5 +23,17 @@ describe('Row component', () => {
 
     fireEvent.click(getByTestId('DesignSystem-Row'));
     expect(onClick).toBeCalled();
+  });
+});
+
+describe('Row component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(
+      <Row>
+        <div>Masala Design System</div>
+      </Row>
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

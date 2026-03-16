@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import { Button } from '@/index';
 import { ButtonProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -500,5 +501,13 @@ describe('Button component with styleType prop', () => {
       const circle = spinner.querySelector('circle');
       expect(circle).toHaveClass('Circle--white');
     });
+  });
+});
+
+describe('Button component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Button>Button</Button>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

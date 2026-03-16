@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import Caption, { CaptionProps as Props } from '../Caption';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
@@ -19,4 +20,12 @@ describe('Caption component', () => {
   };
 
   testHelper(mapper, testFunc);
+});
+
+describe('Caption component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Caption>{'Caption'}</Caption>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 });

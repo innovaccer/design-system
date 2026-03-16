@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import Pills, { PillsProps as Props } from '../Pills';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { AccentAppearance } from '@/common.type';
@@ -82,5 +83,13 @@ describe('Pills component', () => {
         expect(getByTestId('DesignSystem-Pills')).toHaveClass(`Badge--subtle-${appearance}`);
       });
     });
+  });
+});
+
+describe('Pills component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<Pills>Pills</Pills>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

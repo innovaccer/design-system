@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import AvatarGroup, { AvatarGroupProps as Props, AvatarData } from '../AvatarGroup';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { Avatar, Tooltip, Icon } from '@/index';
@@ -463,5 +464,13 @@ describe('AvatarGroup component with shape in data', () => {
       const avatarElement = item.querySelector('[data-test="DesignSystem-Avatar"]');
       expect(avatarElement).toHaveClass('Avatar--square');
     });
+  });
+});
+
+describe('AvatarGroup component a11y', () => {
+  it('has no detectable a11y violations', async () => {
+    const { container } = render(<AvatarGroup list={list} />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });
