@@ -257,8 +257,8 @@ const DropdownList = (props: OptionsProps) => {
 
   const dropdownRef = React.createRef<HTMLDivElement>();
   const triggerRef = React.createRef<HTMLDivElement>();
+  const popoverContentRef = React.createRef<HTMLDivElement>();
   const dropdownTriggerRef = React.createRef<HTMLButtonElement>();
-  const dropdownClearButtonRef = React.createRef<HTMLButtonElement>();
   const dropdownCancelButtonRef = React.createRef<HTMLButtonElement>();
   const dropdownApplyButtonRef = React.createRef<HTMLButtonElement>();
 
@@ -464,7 +464,6 @@ const DropdownList = (props: OptionsProps) => {
         </Text>
         {selectedGroup && (
           <Button
-            ref={dropdownClearButtonRef}
             onClick={onClearOptions}
             disabled={isClearDisabled}
             appearance="transparent"
@@ -876,84 +875,75 @@ const DropdownList = (props: OptionsProps) => {
         event.preventDefault();
         event.stopPropagation();
 
-        // Build the tab order: search → clear → [options] → cancel → apply
-        // Tab moves forward, Shift+Tab moves backward.
-        // Options are navigated with arrow keys, so Tab from an option skips
-        // to the next non-option stop; Shift+Tab goes to the previous one.
-        const currentEl = document.activeElement;
-        const searchInput = enableSearch ? inputRef.current : null;
-        const clearBtn =
-          dropdownClearButtonRef.current && !dropdownClearButtonRef.current.disabled
-            ? dropdownClearButtonRef.current
-            : null;
-        const cancelBtn = showApplyButton ? dropdownCancelButtonRef.current : null;
-        const applyBtn = showApplyButton ? dropdownApplyButtonRef.current : null;
+        // Tab order: [non-option focusables before options] → option list → [non-option focusables after options] → close
+        // The option list is a single tab stop; arrow keys navigate within it.
+        const container = popoverContentRef.current;
+        if (!container) {
+          onToggleDropdown(false, 'onClick');
+          return;
+        }
 
-        const isOnSearch = searchInput && (currentEl === searchInput || searchInput.contains(currentEl));
-        const isOnClear = clearBtn && currentEl === clearBtn;
-        const isOnCancel = cancelBtn && currentEl === cancelBtn;
-        const isOnApply = applyBtn && currentEl === applyBtn;
+        const currentEl = document.activeElement;
+        const isOnOption = currentEl && currentEl.closest('.OptionWrapper');
+
+        // Collect all non-option focusable elements in the popover
+        const focusableSelector = 'button:not([disabled]), input:not([disabled]), [tabindex="0"]';
+        const nonOptionFocusables = Array.from(container.querySelectorAll(focusableSelector)).filter((el) => {
+          if (el.closest('.OptionWrapper')) return false;
+          if ((el as HTMLElement).closest('[data-test="DesignSystem-Checkbox"]')) return false;
+          return true;
+        }) as HTMLElement[];
+
+        // Split into before-options and after-options using first OptionWrapper position
+        const firstOption = container.querySelector('.OptionWrapper');
+        const before: HTMLElement[] = [];
+        const after: HTMLElement[] = [];
+        nonOptionFocusables.forEach((el) => {
+          if (!firstOption) {
+            before.push(el);
+          } else if (el.compareDocumentPosition(firstOption) & Node.DOCUMENT_POSITION_FOLLOWING) {
+            before.push(el);
+          } else {
+            after.push(el);
+          }
+        });
+
+        // Build the full tab stops: [...before, OPTION_LIST, ...after]
+        const hasOptions = !!firstOption;
+        const tabStops: (HTMLElement | null)[] = [...before, ...(hasOptions ? [null] : []), ...after];
+
+        // Determine current position in tab stops
+        let currentStop = -1;
+        if (isOnOption) {
+          currentStop = tabStops.indexOf(null);
+        } else {
+          for (let idx = 0; idx < tabStops.length; idx++) {
+            const stop = tabStops[idx];
+            if (stop && (stop === currentEl || stop.contains(currentEl))) {
+              currentStop = idx;
+              break;
+            }
+          }
+        }
 
         if (event.shiftKey) {
-          // Backward: apply → cancel → options → clear → search → close
-          if (isOnApply) {
-            cancelBtn ? cancelBtn.focus() : focusEdgeOption('last');
-            return;
-          }
-          if (isOnCancel) {
+          const prev = currentStop > 0 ? currentStop - 1 : -1;
+          if (prev === -1) {
+            onToggleDropdown(false, 'onClick');
+          } else if (tabStops[prev] === null) {
             focusEdgeOption('last');
-            return;
+          } else {
+            (tabStops[prev] as HTMLElement).focus();
           }
-          if (isOnClear) {
-            searchInput ? searchInput.focus() : onToggleDropdown(false, 'onClick');
-            return;
-          }
-          if (isOnSearch) {
-            onToggleDropdown(false, 'onClick');
-            return;
-          }
-          // On an option — go to clear, then search, then close
-          if (clearBtn) {
-            clearBtn.focus();
-            return;
-          }
-          if (searchInput) {
-            searchInput.focus();
-            return;
-          }
-          onToggleDropdown(false, 'onClick');
         } else {
-          // Forward: search → clear → options → cancel → apply → close
-          if (isOnSearch) {
-            if (clearBtn) {
-              clearBtn.focus();
-              return;
-            }
-            focusEdgeOption('first');
-            return;
-          }
-          if (isOnClear) {
-            focusEdgeOption('first');
-            return;
-          }
-          if (isOnCancel) {
-            if (applyBtn && !applyBtn.disabled) {
-              applyBtn.focus();
-            } else {
-              onToggleDropdown(false, 'onClick');
-            }
-            return;
-          }
-          if (isOnApply) {
+          const next = currentStop !== -1 && currentStop < tabStops.length - 1 ? currentStop + 1 : -1;
+          if (next === -1) {
             onToggleDropdown(false, 'onClick');
-            return;
+          } else if (tabStops[next] === null) {
+            focusEdgeOption('first');
+          } else {
+            (tabStops[next] as HTMLElement).focus();
           }
-          // On an option — go to cancel/apply or close
-          if (cancelBtn) {
-            cancelBtn.focus();
-            return;
-          }
-          onToggleDropdown(false, 'onClick');
         }
         break;
       }
@@ -975,7 +965,7 @@ const DropdownList = (props: OptionsProps) => {
         data-test="DesignSystem-Dropdown--Popover"
       >
         {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
-        <div onKeyDown={onPopoverKeyDown}>
+        <div onKeyDown={onPopoverKeyDown} ref={popoverContentRef}>
           {enableSearch && renderSearch()}
           {renderDropdownSection()}
           {showApplyButton && withCheckbox && renderApplyButton()}
