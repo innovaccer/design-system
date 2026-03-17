@@ -40,8 +40,10 @@ exports[`Calendar component
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
           >
-            <div
-              class="d-flex justify-content-center align-items-center"
+            <button
+              aria-label="Select month"
+              class="Calendar-headerButton"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -57,9 +59,11 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
-            <div
-              class="ml-4 d-flex justify-content-center align-items-center"
+            </button>
+            <button
+              aria-label="Select year"
+              class="Calendar-headerButton ml-4"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -75,7 +79,7 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
+            </button>
           </div>
           <button
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -490,7 +494,6 @@ exports[`Calendar component
                 <button
                   aria-disabled="false"
                   aria-label="March 15, 2020"
-                  aria-selected="true"
                   class="Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-calendar-date-cell="true"
                   data-col="0"
@@ -500,7 +503,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-white"
+                    class="Text Text--medium Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -899,7 +902,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     1
@@ -922,7 +925,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     2
@@ -945,7 +948,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     3
@@ -968,7 +971,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     4
@@ -995,7 +998,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     5
@@ -1018,7 +1021,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     6
@@ -1041,7 +1044,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     7
@@ -1064,7 +1067,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     8
@@ -1087,7 +1090,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     9
@@ -1110,7 +1113,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     10
@@ -1133,7 +1136,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     11
@@ -1189,8 +1192,10 @@ exports[`Calendar component
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
           >
-            <div
-              class="d-flex justify-content-center align-items-center"
+            <button
+              aria-label="Select month"
+              class="Calendar-headerButton"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -1206,9 +1211,11 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
-            <div
-              class="ml-4 d-flex justify-content-center align-items-center"
+            </button>
+            <button
+              aria-label="Select year"
+              class="Calendar-headerButton ml-4"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -1224,7 +1231,7 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
+            </button>
           </div>
           <button
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -1640,7 +1647,6 @@ exports[`Calendar component
                 <button
                   aria-disabled="false"
                   aria-label="March 15, 2020"
-                  aria-selected="true"
                   class="Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-calendar-date-cell="true"
                   data-col="0"
@@ -1650,7 +1656,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-white"
+                    class="Text Text--medium Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -1789,7 +1795,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     21
@@ -1817,7 +1823,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     22
@@ -1841,7 +1847,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     23
@@ -1865,7 +1871,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     24
@@ -1889,7 +1895,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     25
@@ -1913,7 +1919,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     26
@@ -1937,7 +1943,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     27
@@ -1961,7 +1967,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     28
@@ -1989,7 +1995,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     29
@@ -2013,7 +2019,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     30
@@ -2037,7 +2043,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     31
@@ -2061,7 +2067,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     1
@@ -2085,7 +2091,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     2
@@ -2109,7 +2115,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     3
@@ -2133,7 +2139,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     4
@@ -2161,7 +2167,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     5
@@ -2185,7 +2191,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     6
@@ -2209,7 +2215,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     7
@@ -2233,7 +2239,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     8
@@ -2257,7 +2263,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     9
@@ -2281,7 +2287,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     10
@@ -2305,7 +2311,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     11
@@ -2362,8 +2368,10 @@ exports[`Calendar component
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
           >
-            <div
-              class="d-flex justify-content-center align-items-center"
+            <button
+              aria-label="Select month"
+              class="Calendar-headerButton"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -2379,9 +2387,11 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
-            <div
-              class="ml-4 d-flex justify-content-center align-items-center"
+            </button>
+            <button
+              aria-label="Select year"
+              class="Calendar-headerButton ml-4"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -2397,7 +2407,7 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
+            </button>
           </div>
           <button
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -2492,7 +2502,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     1
@@ -2516,7 +2526,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     2
@@ -2540,7 +2550,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     3
@@ -2564,7 +2574,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     4
@@ -2588,7 +2598,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     5
@@ -2612,7 +2622,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     6
@@ -2636,7 +2646,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     7
@@ -2664,7 +2674,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     8
@@ -2688,7 +2698,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     9
@@ -2821,7 +2831,6 @@ exports[`Calendar component
                 <button
                   aria-disabled="false"
                   aria-label="March 15, 2020"
-                  aria-selected="true"
                   class="Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-calendar-date-cell="true"
                   data-col="0"
@@ -2831,7 +2840,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-white"
+                    class="Text Text--medium Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -3230,7 +3239,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     1
@@ -3253,7 +3262,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     2
@@ -3276,7 +3285,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     3
@@ -3299,7 +3308,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     4
@@ -3326,7 +3335,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     5
@@ -3349,7 +3358,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     6
@@ -3372,7 +3381,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     7
@@ -3395,7 +3404,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     8
@@ -3418,7 +3427,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     9
@@ -3441,7 +3450,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     10
@@ -3464,7 +3473,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     11
@@ -3521,8 +3530,10 @@ exports[`Calendar component
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
           >
-            <div
-              class="d-flex justify-content-center align-items-center"
+            <button
+              aria-label="Select month"
+              class="Calendar-headerButton"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -3538,9 +3549,11 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
-            <div
-              class="ml-4 d-flex justify-content-center align-items-center"
+            </button>
+            <button
+              aria-label="Select year"
+              class="Calendar-headerButton ml-4"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -3556,7 +3569,7 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
+            </button>
           </div>
           <button
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -3652,7 +3665,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     1
@@ -3676,7 +3689,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     2
@@ -3700,7 +3713,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     3
@@ -3724,7 +3737,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     4
@@ -3748,7 +3761,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     5
@@ -3772,7 +3785,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     6
@@ -3796,7 +3809,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     7
@@ -3824,7 +3837,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     8
@@ -3848,7 +3861,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     9
@@ -3981,7 +3994,6 @@ exports[`Calendar component
                 <button
                   aria-disabled="false"
                   aria-label="March 15, 2020"
-                  aria-selected="true"
                   class="Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-calendar-date-cell="true"
                   data-col="0"
@@ -3991,7 +4003,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-white"
+                    class="Text Text--medium Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -4130,7 +4142,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     21
@@ -4158,7 +4170,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     22
@@ -4182,7 +4194,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     23
@@ -4206,7 +4218,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     24
@@ -4230,7 +4242,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     25
@@ -4254,7 +4266,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     26
@@ -4278,7 +4290,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     27
@@ -4302,7 +4314,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     28
@@ -4330,7 +4342,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     29
@@ -4354,7 +4366,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     30
@@ -4378,7 +4390,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     31
@@ -4402,7 +4414,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     1
@@ -4426,7 +4438,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     2
@@ -4450,7 +4462,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     3
@@ -4474,7 +4486,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     4
@@ -4502,7 +4514,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     5
@@ -4526,7 +4538,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     6
@@ -4550,7 +4562,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     7
@@ -4574,7 +4586,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     8
@@ -4598,7 +4610,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     9
@@ -4622,7 +4634,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     10
@@ -4646,7 +4658,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--subtle Text--regular"
+                    class="Text Text--disabled Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     11
@@ -4702,8 +4714,10 @@ exports[`Calendar component
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
           >
-            <div
-              class="d-flex justify-content-center align-items-center"
+            <button
+              aria-label="Select month"
+              class="Calendar-headerButton"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -4719,9 +4733,11 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
-            <div
-              class="ml-4 d-flex justify-content-center align-items-center"
+            </button>
+            <button
+              aria-label="Select year"
+              class="Calendar-headerButton ml-4"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -4737,7 +4753,7 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
+            </button>
           </div>
           <button
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -4831,7 +4847,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     28
@@ -4854,7 +4870,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     29
@@ -5198,7 +5214,6 @@ exports[`Calendar component
                 <button
                   aria-disabled="false"
                   aria-label="March 15, 2020"
-                  aria-selected="true"
                   class="Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-calendar-date-cell="true"
                   data-col="2"
@@ -5208,7 +5223,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-white"
+                    class="Text Text--medium Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -5607,7 +5622,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     1
@@ -5630,7 +5645,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     2
@@ -5657,7 +5672,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     3
@@ -5680,7 +5695,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     4
@@ -5703,7 +5718,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     5
@@ -5726,7 +5741,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     6
@@ -5749,7 +5764,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     7
@@ -5772,7 +5787,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     8
@@ -5795,7 +5810,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     9
@@ -5851,8 +5866,10 @@ exports[`Calendar component
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
           >
-            <div
-              class="d-flex justify-content-center align-items-center"
+            <button
+              aria-label="Select month"
+              class="Calendar-headerButton"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -5868,9 +5885,11 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
-            <div
-              class="ml-4 d-flex justify-content-center align-items-center"
+            </button>
+            <button
+              aria-label="Select year"
+              class="Calendar-headerButton ml-4"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -5886,7 +5905,7 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
+            </button>
           </div>
           <button
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -5980,7 +5999,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     24
@@ -6003,7 +6022,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     25
@@ -6026,7 +6045,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     26
@@ -6049,7 +6068,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     27
@@ -6072,7 +6091,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     28
@@ -6095,7 +6114,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     29
@@ -6439,7 +6458,6 @@ exports[`Calendar component
                 <button
                   aria-disabled="false"
                   aria-label="March 15, 2020"
-                  aria-selected="true"
                   class="Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-calendar-date-cell="true"
                   data-col="6"
@@ -6449,7 +6467,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-white"
+                    class="Text Text--medium Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -6852,7 +6870,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     1
@@ -6875,7 +6893,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     2
@@ -6898,7 +6916,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     3
@@ -6921,7 +6939,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     4
@@ -6944,7 +6962,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     5
@@ -7000,8 +7018,10 @@ exports[`Calendar component
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
           >
-            <div
-              class="d-flex justify-content-center align-items-center"
+            <button
+              aria-label="Select month"
+              class="Calendar-headerButton"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -7017,9 +7037,11 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
-            <div
-              class="ml-4 d-flex justify-content-center align-items-center"
+            </button>
+            <button
+              aria-label="Select year"
+              class="Calendar-headerButton ml-4"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -7035,7 +7057,7 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
+            </button>
           </div>
           <button
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -7129,7 +7151,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     29
@@ -7473,7 +7495,6 @@ exports[`Calendar component
                 <button
                   aria-disabled="false"
                   aria-label="March 15, 2020"
-                  aria-selected="true"
                   class="Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-calendar-date-cell="true"
                   data-col="1"
@@ -7483,7 +7504,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-white"
+                    class="Text Text--medium Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -7882,7 +7903,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     1
@@ -7905,7 +7926,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     2
@@ -7928,7 +7949,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     3
@@ -7955,7 +7976,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     4
@@ -7978,7 +7999,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     5
@@ -8001,7 +8022,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     6
@@ -8024,7 +8045,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     7
@@ -8047,7 +8068,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     8
@@ -8070,7 +8091,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     9
@@ -8093,7 +8114,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     10
@@ -8149,8 +8170,10 @@ exports[`Calendar component
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
           >
-            <div
-              class="d-flex justify-content-center align-items-center"
+            <button
+              aria-label="Select month"
+              class="Calendar-headerButton"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -8166,9 +8189,11 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
-            <div
-              class="ml-4 d-flex justify-content-center align-items-center"
+            </button>
+            <button
+              aria-label="Select year"
+              class="Calendar-headerButton ml-4"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -8184,7 +8209,7 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
+            </button>
           </div>
           <button
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -8599,7 +8624,6 @@ exports[`Calendar component
                 <button
                   aria-disabled="false"
                   aria-label="March 15, 2020"
-                  aria-selected="true"
                   class="Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-calendar-date-cell="true"
                   data-col="0"
@@ -8609,7 +8633,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-white"
+                    class="Text Text--medium Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -9008,7 +9032,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     1
@@ -9031,7 +9055,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     2
@@ -9054,7 +9078,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     3
@@ -9077,7 +9101,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     4
@@ -9104,7 +9128,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     5
@@ -9127,7 +9151,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     6
@@ -9150,7 +9174,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     7
@@ -9173,7 +9197,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     8
@@ -9196,7 +9220,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     9
@@ -9219,7 +9243,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     10
@@ -9242,7 +9266,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     11
@@ -9298,8 +9322,10 @@ exports[`Calendar component
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
           >
-            <div
-              class="d-flex justify-content-center align-items-center"
+            <button
+              aria-label="Select month"
+              class="Calendar-headerButton"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -9315,9 +9341,11 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
-            <div
-              class="ml-4 d-flex justify-content-center align-items-center"
+            </button>
+            <button
+              aria-label="Select year"
+              class="Calendar-headerButton ml-4"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -9333,7 +9361,7 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
+            </button>
           </div>
           <button
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -9427,7 +9455,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     27
@@ -9450,7 +9478,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     28
@@ -9473,7 +9501,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     29
@@ -9817,7 +9845,6 @@ exports[`Calendar component
                 <button
                   aria-disabled="false"
                   aria-label="March 15, 2020"
-                  aria-selected="true"
                   class="Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-calendar-date-cell="true"
                   data-col="3"
@@ -9827,7 +9854,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-white"
+                    class="Text Text--medium Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -10226,7 +10253,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     1
@@ -10253,7 +10280,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     2
@@ -10276,7 +10303,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     3
@@ -10299,7 +10326,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     4
@@ -10322,7 +10349,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     5
@@ -10345,7 +10372,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     6
@@ -10368,7 +10395,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     7
@@ -10391,7 +10418,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     8
@@ -10447,8 +10474,10 @@ exports[`Calendar component
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
           >
-            <div
-              class="d-flex justify-content-center align-items-center"
+            <button
+              aria-label="Select month"
+              class="Calendar-headerButton"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -10464,9 +10493,11 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
-            <div
-              class="ml-4 d-flex justify-content-center align-items-center"
+            </button>
+            <button
+              aria-label="Select year"
+              class="Calendar-headerButton ml-4"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -10482,7 +10513,7 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
+            </button>
           </div>
           <button
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -10576,7 +10607,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     25
@@ -10599,7 +10630,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     26
@@ -10622,7 +10653,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     27
@@ -10645,7 +10676,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     28
@@ -10668,7 +10699,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     29
@@ -11012,7 +11043,6 @@ exports[`Calendar component
                 <button
                   aria-disabled="false"
                   aria-label="March 15, 2020"
-                  aria-selected="true"
                   class="Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-calendar-date-cell="true"
                   data-col="5"
@@ -11022,7 +11052,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-white"
+                    class="Text Text--medium Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -11425,7 +11455,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     1
@@ -11448,7 +11478,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     2
@@ -11471,7 +11501,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     3
@@ -11494,7 +11524,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     4
@@ -11517,7 +11547,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     5
@@ -11540,7 +11570,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     6
@@ -11596,8 +11626,10 @@ exports[`Calendar component
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
           >
-            <div
-              class="d-flex justify-content-center align-items-center"
+            <button
+              aria-label="Select month"
+              class="Calendar-headerButton"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -11613,9 +11645,11 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
-            <div
-              class="ml-4 d-flex justify-content-center align-items-center"
+            </button>
+            <button
+              aria-label="Select year"
+              class="Calendar-headerButton ml-4"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -11631,7 +11665,7 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
+            </button>
           </div>
           <button
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -11725,7 +11759,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     26
@@ -11748,7 +11782,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     27
@@ -11771,7 +11805,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     28
@@ -11794,7 +11828,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     29
@@ -12138,7 +12172,6 @@ exports[`Calendar component
                 <button
                   aria-disabled="false"
                   aria-label="March 15, 2020"
-                  aria-selected="true"
                   class="Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-calendar-date-cell="true"
                   data-col="4"
@@ -12148,7 +12181,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-white"
+                    class="Text Text--medium Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -12551,7 +12584,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     1
@@ -12574,7 +12607,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     2
@@ -12597,7 +12630,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     3
@@ -12620,7 +12653,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     4
@@ -12643,7 +12676,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     5
@@ -12666,7 +12699,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     6
@@ -12689,7 +12722,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     7
@@ -12745,8 +12778,10 @@ exports[`Calendar component
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
           >
-            <div
-              class="d-flex justify-content-center align-items-center"
+            <button
+              aria-label="Select month"
+              class="Calendar-headerButton"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -12762,9 +12797,11 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
-            <div
-              class="ml-4 d-flex justify-content-center align-items-center"
+            </button>
+            <button
+              aria-label="Select year"
+              class="Calendar-headerButton ml-4"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -12780,7 +12817,7 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
+            </button>
           </div>
           <button
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -13195,7 +13232,6 @@ exports[`Calendar component
                 <button
                   aria-disabled="false"
                   aria-label="March 15, 2020"
-                  aria-selected="true"
                   class="Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-calendar-date-cell="true"
                   data-col="0"
@@ -13205,7 +13241,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-white"
+                    class="Text Text--medium Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -13604,7 +13640,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     1
@@ -13627,7 +13663,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     2
@@ -13650,7 +13686,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     3
@@ -13673,7 +13709,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     4
@@ -13700,7 +13736,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     5
@@ -13723,7 +13759,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     6
@@ -13746,7 +13782,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     7
@@ -13769,7 +13805,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     8
@@ -13792,7 +13828,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     9
@@ -13815,7 +13851,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     10
@@ -13838,7 +13874,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     11
@@ -13894,8 +13930,10 @@ exports[`Calendar component
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-right"
           >
-            <div
-              class="d-flex justify-content-center align-items-center"
+            <button
+              aria-label="Select month"
+              class="Calendar-headerButton"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -13911,9 +13949,11 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
-            <div
-              class="ml-4 d-flex justify-content-center align-items-center"
+            </button>
+            <button
+              aria-label="Select year"
+              class="Calendar-headerButton ml-4"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -13929,7 +13969,7 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
+            </button>
           </div>
         </div>
         <div
@@ -14324,7 +14364,6 @@ exports[`Calendar component
                 <button
                   aria-disabled="false"
                   aria-label="March 15, 2020"
-                  aria-selected="true"
                   class="Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-calendar-date-cell="true"
                   data-col="0"
@@ -14334,7 +14373,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-white"
+                    class="Text Text--medium Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -14733,7 +14772,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     1
@@ -14756,7 +14795,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     2
@@ -14779,7 +14818,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     3
@@ -14802,7 +14841,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     4
@@ -14824,8 +14863,10 @@ exports[`Calendar component
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left"
           >
-            <div
-              class="d-flex justify-content-center align-items-center"
+            <button
+              aria-label="Select month"
+              class="Calendar-headerButton"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -14841,9 +14882,11 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
-            <div
-              class="ml-4 d-flex justify-content-center align-items-center"
+            </button>
+            <button
+              aria-label="Select year"
+              class="Calendar-headerButton ml-4"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -14859,7 +14902,7 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
+            </button>
           </div>
           <button
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -14953,7 +14996,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     29
@@ -14976,7 +15019,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     30
@@ -14999,7 +15042,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     31
@@ -15728,7 +15771,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     1
@@ -15751,7 +15794,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     2
@@ -15807,8 +15850,10 @@ exports[`Calendar component
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-right"
           >
-            <div
-              class="d-flex justify-content-center align-items-center"
+            <button
+              aria-label="Select month"
+              class="Calendar-headerButton"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -15824,9 +15869,11 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
-            <div
-              class="ml-4 d-flex justify-content-center align-items-center"
+            </button>
+            <button
+              aria-label="Select year"
+              class="Calendar-headerButton ml-4"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -15842,7 +15889,7 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
+            </button>
           </div>
         </div>
         <div
@@ -16237,7 +16284,6 @@ exports[`Calendar component
                 <button
                   aria-disabled="false"
                   aria-label="March 15, 2020"
-                  aria-selected="true"
                   class="Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-calendar-date-cell="true"
                   data-col="0"
@@ -16247,7 +16293,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-white"
+                    class="Text Text--medium Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -16646,7 +16692,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     1
@@ -16669,7 +16715,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     2
@@ -16692,7 +16738,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     3
@@ -16715,7 +16761,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     4
@@ -16737,8 +16783,10 @@ exports[`Calendar component
           <div
             class="Calendar-headerContent"
           >
-            <div
-              class="d-flex justify-content-center align-items-center"
+            <button
+              aria-label="Select month"
+              class="Calendar-headerButton"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -16754,9 +16802,11 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
-            <div
-              class="ml-4 d-flex justify-content-center align-items-center"
+            </button>
+            <button
+              aria-label="Select year"
+              class="Calendar-headerButton ml-4"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -16772,7 +16822,7 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
+            </button>
           </div>
         </div>
         <div
@@ -16833,72 +16883,15 @@ exports[`Calendar component
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="March 29, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
-                  data-calendar-date-cell="true"
-                  data-col="0"
-                  data-row="0"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--regular color-inverse"
-                    data-test="DesignSystem-Text"
-                  >
-                    29
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="March 30, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
-                  data-calendar-date-cell="true"
-                  data-col="1"
-                  data-row="0"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--regular color-inverse"
-                    data-test="DesignSystem-Text"
-                  >
-                    30
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="March 31, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
-                  data-calendar-date-cell="true"
-                  data-col="2"
-                  data-row="0"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--regular color-inverse"
-                    data-test="DesignSystem-Text"
-                  >
-                    31
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -17608,49 +17601,11 @@ exports[`Calendar component
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="May 1, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
-                  data-calendar-date-cell="true"
-                  data-col="5"
-                  data-row="4"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--regular color-inverse"
-                    data-test="DesignSystem-Text"
-                  >
-                    1
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="May 2, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
-                  data-calendar-date-cell="true"
-                  data-col="6"
-                  data-row="4"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--regular color-inverse"
-                    data-test="DesignSystem-Text"
-                  >
-                    2
-                  </span>
-                </button>
-              </div>
+              />
             </div>
           </div>
         </div>
@@ -17666,8 +17621,10 @@ exports[`Calendar component
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left"
           >
-            <div
-              class="d-flex justify-content-center align-items-center"
+            <button
+              aria-label="Select month"
+              class="Calendar-headerButton"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -17683,9 +17640,11 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
-            <div
-              class="ml-4 d-flex justify-content-center align-items-center"
+            </button>
+            <button
+              aria-label="Select year"
+              class="Calendar-headerButton ml-4"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -17701,7 +17660,7 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
+            </button>
           </div>
           <button
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -17795,7 +17754,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     26
@@ -17818,7 +17777,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     27
@@ -17841,7 +17800,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     28
@@ -17864,7 +17823,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     29
@@ -17887,7 +17846,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     30
@@ -18643,7 +18602,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     1
@@ -18666,7 +18625,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     2
@@ -18689,7 +18648,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     3
@@ -18712,7 +18671,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     4
@@ -18735,7 +18694,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     5
@@ -18758,7 +18717,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     6
@@ -18814,8 +18773,10 @@ exports[`Calendar component
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
           >
-            <div
-              class="d-flex justify-content-center align-items-center"
+            <button
+              aria-label="Select month"
+              class="Calendar-headerButton"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -18831,9 +18792,11 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
-            <div
-              class="ml-4 d-flex justify-content-center align-items-center"
+            </button>
+            <button
+              aria-label="Select year"
+              class="Calendar-headerButton ml-4"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -18849,7 +18812,7 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
+            </button>
           </div>
           <button
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -19264,7 +19227,6 @@ exports[`Calendar component
                 <button
                   aria-disabled="false"
                   aria-label="March 15, 2020"
-                  aria-selected="true"
                   class="Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-calendar-date-cell="true"
                   data-col="0"
@@ -19274,7 +19236,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-white"
+                    class="Text Text--medium Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -19673,7 +19635,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     1
@@ -19696,7 +19658,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     2
@@ -19719,7 +19681,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     3
@@ -19742,7 +19704,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     4
@@ -19769,7 +19731,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     5
@@ -19792,7 +19754,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     6
@@ -19815,7 +19777,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     7
@@ -19838,7 +19800,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     8
@@ -19861,7 +19823,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     9
@@ -19884,7 +19846,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     10
@@ -19907,7 +19869,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--regular color-inverse"
+                    class="Text Text--subtle Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     11
@@ -19963,8 +19925,10 @@ exports[`Calendar component
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
           >
-            <div
-              class="d-flex justify-content-center align-items-center"
+            <button
+              aria-label="Select year"
+              class="Calendar-headerButton"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -19980,7 +19944,7 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
+            </button>
           </div>
           <button
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -20012,7 +19976,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="Jan"
-              aria-selected="false"
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-calendar-month-cell="true"
               data-month="0"
@@ -20030,7 +19993,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="Feb"
-              aria-selected="false"
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-calendar-month-cell="true"
               data-month="1"
@@ -20048,7 +20010,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="Mar"
-              aria-selected="true"
               class="Calendar-value Calendar-value--active Calendar-monthValue Calendar-monthValue--large"
               data-calendar-month-cell="true"
               data-month="2"
@@ -20070,7 +20031,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="Apr"
-              aria-selected="false"
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-calendar-month-cell="true"
               data-month="3"
@@ -20088,7 +20048,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="May"
-              aria-selected="false"
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-calendar-month-cell="true"
               data-month="4"
@@ -20106,7 +20065,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="Jun"
-              aria-selected="false"
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-calendar-month-cell="true"
               data-month="5"
@@ -20128,7 +20086,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="Jul"
-              aria-selected="false"
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-calendar-month-cell="true"
               data-month="6"
@@ -20146,7 +20103,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="Aug"
-              aria-selected="false"
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-calendar-month-cell="true"
               data-month="7"
@@ -20164,7 +20120,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="Sep"
-              aria-selected="false"
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-calendar-month-cell="true"
               data-month="8"
@@ -20186,7 +20141,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="Oct"
-              aria-selected="false"
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-calendar-month-cell="true"
               data-month="9"
@@ -20204,7 +20158,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="Nov"
-              aria-selected="false"
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-calendar-month-cell="true"
               data-month="10"
@@ -20222,7 +20175,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="Dec"
-              aria-selected="false"
               class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-calendar-month-cell="true"
               data-month="11"
@@ -20285,8 +20237,10 @@ exports[`Calendar component
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
           >
-            <div
-              class="d-flex justify-content-center align-items-center"
+            <button
+              aria-label="Select date"
+              class="Calendar-headerButton"
+              type="button"
             >
               <h5
                 class="Heading Heading--s Heading--default"
@@ -20294,7 +20248,7 @@ exports[`Calendar component
               >
                 2016 - 2027
               </h5>
-            </div>
+            </button>
           </div>
           <button
             class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -20326,7 +20280,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="2016"
-              aria-selected="false"
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-calendar-year-cell="true"
               data-test="DesignSystem-Calendar--yearValue"
@@ -20344,7 +20297,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="2017"
-              aria-selected="false"
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-calendar-year-cell="true"
               data-test="DesignSystem-Calendar--yearValue"
@@ -20362,7 +20314,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="2018"
-              aria-selected="false"
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-calendar-year-cell="true"
               data-test="DesignSystem-Calendar--yearValue"
@@ -20384,7 +20335,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="2019"
-              aria-selected="false"
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-calendar-year-cell="true"
               data-test="DesignSystem-Calendar--yearValue"
@@ -20402,7 +20352,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="2020"
-              aria-selected="true"
               class="Calendar-value Calendar-value--active Calendar-yearValue Calendar-yearValue--large"
               data-calendar-year-cell="true"
               data-test="DesignSystem-Calendar--yearValue"
@@ -20420,7 +20369,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="2021"
-              aria-selected="false"
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-value--currDateMonthYear"
               data-calendar-year-cell="true"
               data-test="DesignSystem-Calendar--yearValue"
@@ -20442,7 +20390,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="2022"
-              aria-selected="false"
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-calendar-year-cell="true"
               data-test="DesignSystem-Calendar--yearValue"
@@ -20460,7 +20407,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="2023"
-              aria-selected="false"
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-calendar-year-cell="true"
               data-test="DesignSystem-Calendar--yearValue"
@@ -20478,7 +20424,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="2024"
-              aria-selected="false"
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-calendar-year-cell="true"
               data-test="DesignSystem-Calendar--yearValue"
@@ -20500,7 +20445,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="2025"
-              aria-selected="false"
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-calendar-year-cell="true"
               data-test="DesignSystem-Calendar--yearValue"
@@ -20518,7 +20462,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="2026"
-              aria-selected="false"
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-calendar-year-cell="true"
               data-test="DesignSystem-Calendar--yearValue"
@@ -20536,7 +20479,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="2027"
-              aria-selected="false"
               class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-calendar-year-cell="true"
               data-test="DesignSystem-Calendar--yearValue"
@@ -20599,8 +20541,10 @@ exports[`Calendar component
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
           >
-            <div
-              class="d-flex justify-content-center align-items-center"
+            <button
+              aria-label="Select month"
+              class="Calendar-headerButton"
+              type="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -20616,9 +20560,11 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
-            <div
-              class="ml-4 d-flex justify-content-center align-items-center"
+            </button>
+            <button
+              aria-label="Select year"
+              class="Calendar-headerButton ml-4"
+              type="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -20634,7 +20580,7 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
+            </button>
           </div>
           <button
             class="Button Button--tiny Button--tinySquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -21049,7 +20995,6 @@ exports[`Calendar component
                 <button
                   aria-disabled="false"
                   aria-label="March 15, 2020"
-                  aria-selected="true"
                   class="Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--small"
                   data-calendar-date-cell="true"
                   data-col="0"
@@ -21059,7 +21004,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-white"
+                    class="Text Text--medium Text--small color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -21458,7 +21403,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     1
@@ -21481,7 +21426,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     2
@@ -21504,7 +21449,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     3
@@ -21527,7 +21472,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     4
@@ -21554,7 +21499,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     5
@@ -21577,7 +21522,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     6
@@ -21600,7 +21545,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     7
@@ -21623,7 +21568,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     8
@@ -21646,7 +21591,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     9
@@ -21669,7 +21614,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     10
@@ -21692,7 +21637,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     11
@@ -21748,8 +21693,10 @@ exports[`Calendar component
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-right"
           >
-            <div
-              class="d-flex justify-content-center align-items-center"
+            <button
+              aria-label="Select month"
+              class="Calendar-headerButton"
+              type="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -21765,9 +21712,11 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
-            <div
-              class="ml-4 d-flex justify-content-center align-items-center"
+            </button>
+            <button
+              aria-label="Select year"
+              class="Calendar-headerButton ml-4"
+              type="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -21783,7 +21732,7 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
+            </button>
           </div>
         </div>
         <div
@@ -22178,7 +22127,6 @@ exports[`Calendar component
                 <button
                   aria-disabled="false"
                   aria-label="March 15, 2020"
-                  aria-selected="true"
                   class="Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--small"
                   data-calendar-date-cell="true"
                   data-col="0"
@@ -22188,7 +22136,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-white"
+                    class="Text Text--medium Text--small color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -22587,7 +22535,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     1
@@ -22610,7 +22558,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     2
@@ -22633,7 +22581,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     3
@@ -22656,7 +22604,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     4
@@ -22678,8 +22626,10 @@ exports[`Calendar component
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left"
           >
-            <div
-              class="d-flex justify-content-center align-items-center"
+            <button
+              aria-label="Select month"
+              class="Calendar-headerButton"
+              type="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -22695,9 +22645,11 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
-            <div
-              class="ml-4 d-flex justify-content-center align-items-center"
+            </button>
+            <button
+              aria-label="Select year"
+              class="Calendar-headerButton ml-4"
+              type="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -22713,7 +22665,7 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
+            </button>
           </div>
           <button
             class="Button Button--tiny Button--tinySquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -22807,7 +22759,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     29
@@ -22830,7 +22782,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     30
@@ -22853,7 +22805,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     31
@@ -23582,7 +23534,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     1
@@ -23605,7 +23557,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     2
@@ -23661,8 +23613,10 @@ exports[`Calendar component
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-right"
           >
-            <div
-              class="d-flex justify-content-center align-items-center"
+            <button
+              aria-label="Select month"
+              class="Calendar-headerButton"
+              type="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -23678,9 +23632,11 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
-            <div
-              class="ml-4 d-flex justify-content-center align-items-center"
+            </button>
+            <button
+              aria-label="Select year"
+              class="Calendar-headerButton ml-4"
+              type="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -23696,7 +23652,7 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
+            </button>
           </div>
         </div>
         <div
@@ -24091,7 +24047,6 @@ exports[`Calendar component
                 <button
                   aria-disabled="false"
                   aria-label="March 15, 2020"
-                  aria-selected="true"
                   class="Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--small"
                   data-calendar-date-cell="true"
                   data-col="0"
@@ -24101,7 +24056,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-white"
+                    class="Text Text--medium Text--small color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -24500,7 +24455,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     1
@@ -24523,7 +24478,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     2
@@ -24546,7 +24501,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     3
@@ -24569,7 +24524,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     4
@@ -24591,8 +24546,10 @@ exports[`Calendar component
           <div
             class="Calendar-headerContent"
           >
-            <div
-              class="d-flex justify-content-center align-items-center"
+            <button
+              aria-label="Select month"
+              class="Calendar-headerButton"
+              type="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -24608,9 +24565,11 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
-            <div
-              class="ml-4 d-flex justify-content-center align-items-center"
+            </button>
+            <button
+              aria-label="Select year"
+              class="Calendar-headerButton ml-4"
+              type="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -24626,7 +24585,7 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
+            </button>
           </div>
         </div>
         <div
@@ -24687,72 +24646,15 @@ exports[`Calendar component
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="March 29, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--small"
-                  data-calendar-date-cell="true"
-                  data-col="0"
-                  data-row="0"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--small color-inverse"
-                    data-test="DesignSystem-Text"
-                  >
-                    29
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="March 30, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--small"
-                  data-calendar-date-cell="true"
-                  data-col="1"
-                  data-row="0"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--small color-inverse"
-                    data-test="DesignSystem-Text"
-                  >
-                    30
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="March 31, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--small"
-                  data-calendar-date-cell="true"
-                  data-col="2"
-                  data-row="0"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--small color-inverse"
-                    data-test="DesignSystem-Text"
-                  >
-                    31
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -25462,49 +25364,11 @@ exports[`Calendar component
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="May 1, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--small"
-                  data-calendar-date-cell="true"
-                  data-col="5"
-                  data-row="4"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--small color-inverse"
-                    data-test="DesignSystem-Text"
-                  >
-                    1
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="May 2, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--small"
-                  data-calendar-date-cell="true"
-                  data-col="6"
-                  data-row="4"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--small color-inverse"
-                    data-test="DesignSystem-Text"
-                  >
-                    2
-                  </span>
-                </button>
-              </div>
+              />
             </div>
           </div>
         </div>
@@ -25520,8 +25384,10 @@ exports[`Calendar component
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left"
           >
-            <div
-              class="d-flex justify-content-center align-items-center"
+            <button
+              aria-label="Select month"
+              class="Calendar-headerButton"
+              type="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -25537,9 +25403,11 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
-            <div
-              class="ml-4 d-flex justify-content-center align-items-center"
+            </button>
+            <button
+              aria-label="Select year"
+              class="Calendar-headerButton ml-4"
+              type="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -25555,7 +25423,7 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
+            </button>
           </div>
           <button
             class="Button Button--tiny Button--tinySquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -25649,7 +25517,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     26
@@ -25672,7 +25540,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     27
@@ -25695,7 +25563,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     28
@@ -25718,7 +25586,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     29
@@ -25741,7 +25609,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     30
@@ -26497,7 +26365,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     1
@@ -26520,7 +26388,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     2
@@ -26543,7 +26411,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     3
@@ -26566,7 +26434,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     4
@@ -26589,7 +26457,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     5
@@ -26612,7 +26480,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     6
@@ -26668,8 +26536,10 @@ exports[`Calendar component
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
           >
-            <div
-              class="d-flex justify-content-center align-items-center"
+            <button
+              aria-label="Select month"
+              class="Calendar-headerButton"
+              type="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -26685,9 +26555,11 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
-            <div
-              class="ml-4 d-flex justify-content-center align-items-center"
+            </button>
+            <button
+              aria-label="Select year"
+              class="Calendar-headerButton ml-4"
+              type="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -26703,7 +26575,7 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
+            </button>
           </div>
           <button
             class="Button Button--tiny Button--tinySquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -27118,7 +26990,6 @@ exports[`Calendar component
                 <button
                   aria-disabled="false"
                   aria-label="March 15, 2020"
-                  aria-selected="true"
                   class="Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--small"
                   data-calendar-date-cell="true"
                   data-col="0"
@@ -27128,7 +26999,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-white"
+                    class="Text Text--medium Text--small color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -27527,7 +27398,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     1
@@ -27550,7 +27421,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     2
@@ -27573,7 +27444,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     3
@@ -27596,7 +27467,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     4
@@ -27623,7 +27494,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     5
@@ -27646,7 +27517,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     6
@@ -27669,7 +27540,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     7
@@ -27692,7 +27563,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     8
@@ -27715,7 +27586,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     9
@@ -27738,7 +27609,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     10
@@ -27761,7 +27632,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--small color-inverse"
+                    class="Text Text--subtle Text--small"
                     data-test="DesignSystem-Text"
                   >
                     11
@@ -27817,8 +27688,10 @@ exports[`Calendar component
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
           >
-            <div
-              class="d-flex justify-content-center align-items-center"
+            <button
+              aria-label="Select year"
+              class="Calendar-headerButton"
+              type="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -27834,7 +27707,7 @@ exports[`Calendar component
               >
                 keyboard_arrow_down
               </i>
-            </div>
+            </button>
           </div>
           <button
             class="Button Button--tiny Button--tinySquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -27866,7 +27739,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="Jan"
-              aria-selected="false"
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-calendar-month-cell="true"
               data-month="0"
@@ -27884,7 +27756,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="Feb"
-              aria-selected="false"
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-calendar-month-cell="true"
               data-month="1"
@@ -27902,7 +27773,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="Mar"
-              aria-selected="true"
               class="Calendar-value Calendar-value--active Calendar-monthValue Calendar-monthValue--small"
               data-calendar-month-cell="true"
               data-month="2"
@@ -27924,7 +27794,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="Apr"
-              aria-selected="false"
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-calendar-month-cell="true"
               data-month="3"
@@ -27942,7 +27811,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="May"
-              aria-selected="false"
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-calendar-month-cell="true"
               data-month="4"
@@ -27960,7 +27828,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="Jun"
-              aria-selected="false"
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-calendar-month-cell="true"
               data-month="5"
@@ -27982,7 +27849,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="Jul"
-              aria-selected="false"
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-calendar-month-cell="true"
               data-month="6"
@@ -28000,7 +27866,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="Aug"
-              aria-selected="false"
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-calendar-month-cell="true"
               data-month="7"
@@ -28018,7 +27883,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="Sep"
-              aria-selected="false"
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-calendar-month-cell="true"
               data-month="8"
@@ -28040,7 +27904,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="Oct"
-              aria-selected="false"
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-calendar-month-cell="true"
               data-month="9"
@@ -28058,7 +27921,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="Nov"
-              aria-selected="false"
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-calendar-month-cell="true"
               data-month="10"
@@ -28076,7 +27938,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="Dec"
-              aria-selected="false"
               class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-calendar-month-cell="true"
               data-month="11"
@@ -28139,8 +28000,10 @@ exports[`Calendar component
           <div
             class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
           >
-            <div
-              class="d-flex justify-content-center align-items-center"
+            <button
+              aria-label="Select date"
+              class="Calendar-headerButton"
+              type="button"
             >
               <span
                 class="Text Text--default Text--strong Text--regular"
@@ -28148,7 +28011,7 @@ exports[`Calendar component
               >
                 2016 - 2027
               </span>
-            </div>
+            </button>
           </div>
           <button
             class="Button Button--tiny Button--tinySquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -28180,7 +28043,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="2016"
-              aria-selected="false"
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-calendar-year-cell="true"
               data-test="DesignSystem-Calendar--yearValue"
@@ -28198,7 +28060,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="2017"
-              aria-selected="false"
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-calendar-year-cell="true"
               data-test="DesignSystem-Calendar--yearValue"
@@ -28216,7 +28077,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="2018"
-              aria-selected="false"
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-calendar-year-cell="true"
               data-test="DesignSystem-Calendar--yearValue"
@@ -28238,7 +28098,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="2019"
-              aria-selected="false"
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-calendar-year-cell="true"
               data-test="DesignSystem-Calendar--yearValue"
@@ -28256,7 +28115,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="2020"
-              aria-selected="true"
               class="Calendar-value Calendar-value--active Calendar-yearValue Calendar-yearValue--small"
               data-calendar-year-cell="true"
               data-test="DesignSystem-Calendar--yearValue"
@@ -28274,7 +28132,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="2021"
-              aria-selected="false"
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small Calendar-value--currDateMonthYear"
               data-calendar-year-cell="true"
               data-test="DesignSystem-Calendar--yearValue"
@@ -28296,7 +28153,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="2022"
-              aria-selected="false"
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-calendar-year-cell="true"
               data-test="DesignSystem-Calendar--yearValue"
@@ -28314,7 +28170,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="2023"
-              aria-selected="false"
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-calendar-year-cell="true"
               data-test="DesignSystem-Calendar--yearValue"
@@ -28332,7 +28187,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="2024"
-              aria-selected="false"
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-calendar-year-cell="true"
               data-test="DesignSystem-Calendar--yearValue"
@@ -28354,7 +28208,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="2025"
-              aria-selected="false"
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-calendar-year-cell="true"
               data-test="DesignSystem-Calendar--yearValue"
@@ -28372,7 +28225,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="2026"
-              aria-selected="false"
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-calendar-year-cell="true"
               data-test="DesignSystem-Calendar--yearValue"
@@ -28390,7 +28242,6 @@ exports[`Calendar component
             <button
               aria-disabled="false"
               aria-label="2027"
-              aria-selected="false"
               class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-calendar-year-cell="true"
               data-test="DesignSystem-Calendar--yearValue"

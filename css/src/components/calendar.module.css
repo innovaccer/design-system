@@ -91,6 +91,34 @@
   user-select: none;
 }
 
+.Calendar-headerButton {
+  /* Reset button aesthetics */
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  color: inherit;
+  cursor: pointer;
+
+  /* Maintain the existing Flexbox layout structure */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Rounded corners for better focus outline appearance */
+  border-radius: var(--border-radius-10);
+}
+
+.Calendar-headerButton:focus-visible {
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: 1px;
+}
+
+.Calendar-headerButton:focus:not(:focus-visible) {
+  outline: none;
+}
+
 .Calendar-body {
   display: flex;
   flex-direction: column;
@@ -168,6 +196,23 @@
   user-select: none;
   border-radius: var(--spacing-10);
   transition: var(--duration--fast-01) var(--standard-productive-curve);
+
+  /* Button reset (used on <button> for a11y) */
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  color: inherit;
+}
+
+.Calendar-value:focus-visible {
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: 1px;
+}
+
+.Calendar-value:focus:not(:focus-visible) {
+  outline: none;
 }
 
 .Calendar-value:hover {
@@ -258,7 +303,7 @@
 }
 
 .Calendar-valueWrapper--disabled {
-  opacity: var(--opacity-10);
+  /* Disabled dates appearance is handled by the Text component's appearance="disabled" */
 }
 
 .Calendar-valueWrapper--active-dummy {

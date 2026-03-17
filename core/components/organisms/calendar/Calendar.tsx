@@ -364,6 +364,20 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         });
       }
     }
+
+    // Restore focus when it was dropped to body after nav (e.g. Next/Prev became disabled)
+    const navChanged =
+      prevState.monthNav !== this.state.monthNav ||
+      prevState.yearNav !== this.state.yearNav ||
+      prevState.yearBlockNav !== this.state.yearBlockNav;
+    if (navChanged && document.activeElement === document.body && this.calendarWrapperRef.current) {
+      const headerBtn = this.calendarWrapperRef.current.querySelector<HTMLElement>(
+        '[class*="Calendar-headerButton"]:not([disabled]), [class*="Calendar-headerIcon"]:not([disabled])'
+      );
+      if (headerBtn) {
+        headerBtn.focus({ preventScroll: true });
+      }
+    }
   }
 
   updateState = (year: number, month?: number, date?: number) => {
@@ -377,27 +391,6 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
   getDateValue = (year: number, month: number, date: number): Date | undefined => {
     const d = new Date(year, month, date);
     return d;
-  };
-
-  /** Compute row, col in date grid for a given date (1-based) in the given month's calendar. */
-  getDateGridPosition = (
-    year: number,
-    month: number,
-    date: number,
-    firstDayOfWeek: Day,
-    noOfRows: number
-  ): { row: number; col: number } => {
-    const { daysInRow } = config;
-    const dayRange = getDaysInMonth(year, month);
-    const firstDayIndex = getFirstDayOfMonth(year, month);
-    const desiredFirstDayIndex = getIndexOfDay(firstDayOfWeek);
-    const dayDiff = (firstDayIndex - desiredFirstDayIndex + 7) % 7;
-    const dummyDays = Math.abs(dayDiff);
-    const position = dummyDays + date - 1;
-    return {
-      row: Math.floor(position / daysInRow),
-      col: position % daysInRow,
-    };
   };
 
   getNavDateInfo = (index: number): Record<string, any> => {
@@ -420,7 +413,6 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
   getDateGridPosition = (year: number, month: number, date: number): { row: number; col: number } | null => {
     const { firstDayOfWeek } = this.props;
     const { daysInRow } = config;
-    const dayRange = getDaysInMonth(year, month);
     const firstDayIndex = getFirstDayOfMonth(year, month);
     const desiredFirstDayIndex = getIndexOfDay(firstDayOfWeek);
     const dayDiff = (firstDayIndex - desiredFirstDayIndex + 7) % 7;
@@ -476,7 +468,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     year: number,
     isCurrentYear: boolean,
     isDisabled: boolean,
-    ev: React.MouseEvent<HTMLDivElement>
+    ev: React.MouseEvent<HTMLButtonElement>
   ) => {
     const { onYearHover } = this.props;
     const yearData = {
@@ -499,7 +491,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     month: number,
     isCurrentMonth: boolean,
     isDisabled: boolean,
-    ev: React.MouseEvent<HTMLDivElement>
+    ev: React.MouseEvent<HTMLButtonElement>
   ) => {
     const { months } = config;
     const { onMonthHover } = this.props;
@@ -694,34 +686,34 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     return (
       <div className={headerContentClass}>
         {view !== 'date' && (
-          // TODO(a11y)
-          //  eslint-disable-next-line
-          <div
-            className="d-flex justify-content-center align-items-center"
+          <button
+            type="button"
+            className={styles['Calendar-headerButton']}
             onClick={this.onNavHeadingClickHandler(view)}
+            aria-label={view === 'year' ? 'Select date' : 'Select year'}
           >
             {renderHeading(headerContent)}
-          </div>
+          </button>
         )}
 
         {view === 'date' && (
           <>
-            {/* TODO(a11y) */}
-            {/* eslint-disable-next-line */}
-            <div
+            <button
+              type="button"
+              className={styles['Calendar-headerButton']}
               onClick={this.onNavHeadingClickHandler(view)}
-              className="d-flex justify-content-center align-items-center"
+              aria-label="Select month"
             >
               {renderHeading(months[monthNavVal])}
-            </div>
-            {/* TODO(a11y) */}
-            {/* eslint-disable-next-line */}
-            <div
-              className="ml-4 d-flex justify-content-center align-items-center"
+            </button>
+            <button
+              type="button"
+              className={classNames(styles['Calendar-headerButton'], 'ml-4')}
               onClick={this.onNavHeadingClickHandler('month')}
+              aria-label="Select year"
             >
               {renderHeading(yearNavVal)}
-            </div>
+            </button>
           </>
         )}
       </div>
@@ -764,13 +756,12 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             [styles['Calendar-text']]: true,
           });
 
-          const getTextColor = classNames({
-            inverse: !active && !isCurrentYear() && !disabled,
-            white: active,
-            'primary-lighter': isCurrentYear() && disabled,
-            primary: isCurrentYear(),
-            'inverse-lightest': disabled,
-          }) as TextColor;
+          const getTextColor = (
+            active ? 'white' : isCurrentYear() ? 'primary' : 'inverse'
+          ) as TextColor;
+
+          const getTextAppearance = (): 'default' | 'disabled' =>
+            disabled ? 'disabled' : 'default';
 
           const isFocused =
             (this.state.focusedYearIndex ?? (this.state.year !== undefined ? this.state.year - yearBlockNav : 0)) ===
@@ -793,7 +784,13 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               onFocus={() => this.setState({ focusedYearIndex: offset })}
               onMouseOver={this.yearMouseOverHandler.bind(this, year, isCurrentYear(), disabled)}
             >
-              <Text size={size === 'small' ? 'small' : 'regular'} color={getTextColor} className={textClass}>
+              <Text
+                size={size === 'small' ? 'small' : 'regular'}
+                color={getTextAppearance() === 'default' ? getTextColor : undefined}
+                appearance={getTextAppearance()}
+                className={textClass}
+                weight={active ? 'strong' : undefined}
+              >
                 {year}
               </Text>
             </button>
@@ -831,13 +828,12 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             [styles['Calendar-value--currDateMonthYear']]: isCurrentMonth(),
           });
 
-          const getTextColor = classNames({
-            inverse: !active && !isCurrentMonth() && !disabled,
-            white: active,
-            'primary-lighter': isCurrentMonth() && disabled,
-            primary: isCurrentMonth(),
-            'inverse-lightest': disabled,
-          }) as TextColor;
+          const getTextColor = (
+            active ? 'white' : isCurrentMonth() ? 'primary' : 'inverse'
+          ) as TextColor;
+
+          const getTextAppearance = (): 'default' | 'disabled' =>
+            disabled ? 'disabled' : 'default';
 
           const textClass = classNames({
             [styles['Calendar-value--currDate']]: isCurrentMonth() && !active,
@@ -863,7 +859,13 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               onFocus={() => this.setState({ focusedMonth: month })}
               onMouseOver={this.monthMouseOverHandler.bind(this, month, isCurrentMonth(), disabled)}
             >
-              <Text size={size === 'small' ? 'small' : 'regular'} color={getTextColor} className={textClass}>
+              <Text
+                size={size === 'small' ? 'small' : 'regular'}
+                color={getTextAppearance() === 'default' ? getTextColor : undefined}
+                appearance={getTextAppearance()}
+                className={textClass}
+                weight={active ? 'strong' : undefined}
+              >
                 {months[month]}
               </Text>
             </button>
@@ -883,7 +885,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     }
   };
 
-  handleMonthCellKeyDown = (event: React.KeyboardEvent, month: number, disabled: boolean) => {
+  handleMonthCellKeyDown = (event: React.KeyboardEvent, _month: number, disabled: boolean) => {
     if (disabled) {
       if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
         event.preventDefault();
@@ -901,8 +903,10 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       container,
       focusedMonth,
       onNavigate: (newMonth: number) => {
-        this.setState({ focusedMonth: newMonth });
-        focusMonthCell(container, newMonth);
+        const didFocus = focusMonthCell(container, newMonth);
+        if (didFocus) {
+          this.setState({ focusedMonth: newMonth });
+        }
       },
       onSelect: (m: number) => {
         this.selectMonth(m)();
@@ -914,7 +918,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     }
   };
 
-  handleYearCellKeyDown = (event: React.KeyboardEvent, year: number, offset: number, disabled: boolean) => {
+  handleYearCellKeyDown = (event: React.KeyboardEvent, _year: number, _offset: number, disabled: boolean) => {
     if (disabled) {
       if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
         event.preventDefault();
@@ -934,8 +938,10 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       focusedYearIndex,
       yearBlockStart: yearBlockNav,
       onNavigate: (newYearIndex: number) => {
-        this.setState({ focusedYearIndex: newYearIndex });
-        focusYearCell(container, newYearIndex);
+        const didFocus = focusYearCell(container, newYearIndex);
+        if (didFocus) {
+          this.setState({ focusedYearIndex: newYearIndex });
+        }
       },
       onSelect: (y: number) => {
         this.selectYear(y)();
@@ -977,12 +983,14 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       totalRows: noOfRows,
       monthIndex: index,
       onNavigate: (r, c) => {
-        this.setState({
-          focusedDateRow: r,
-          focusedDateCol: c,
-          focusedDateMonthIndex: index,
-        });
-        focusDateCell(container, r, c, index);
+        const didFocus = focusDateCell(container, r, c, index);
+        if (didFocus) {
+          this.setState({
+            focusedDateRow: r,
+            focusedDateCol: c,
+            focusedDateMonthIndex: index,
+          });
+        }
       },
       onSelect: () => {
         if (rangePicker) {
@@ -1283,11 +1291,12 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               [styles['Calendar-value--currDate']]: today() && !active && !activeDate,
             });
 
-            const getTextColor = classNames({
-              inverse: !active && !today() && !disabled && !activeDate,
-              white: active || activeDate,
-              primary: today(),
-            }) as TextColor;
+            const getTextColor = (
+              active || activeDate ? 'white' : today() ? 'primary' : 'inverse'
+            ) as TextColor;
+
+            const getTextAppearance = (): 'default' | 'subtle' | 'disabled' =>
+              disabled ? 'disabled' : active || activeDate ? 'default' : dummy ? 'subtle' : 'default';
 
             const displayDate = !dummy ? date : date <= 0 ? prevMonthDayRange + date : date - dayRange;
             const fullDate =
@@ -1349,9 +1358,10 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                   onMouseEnter={onMouseEnterHandler.bind(this, date, today(), disabled)}
                 >
                   <Text
-                    color={getTextColor}
+                    color={getTextAppearance() === 'default' ? getTextColor : undefined}
+                    appearance={getTextAppearance()}
                     size={size === 'small' ? 'small' : 'regular'}
-                    appearance={disabled ? 'subtle' : 'default'}
+                    weight={active || activeDate ? 'strong' : undefined}
                   >
                     {displayDate}
                   </Text>
