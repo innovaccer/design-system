@@ -70,21 +70,19 @@ export const Stepper = (props: StepperProps) => {
 
   const handleStepKeyDown = (e: React.KeyboardEvent, index: number) => {
     if (!ARROW_NAV_KEYS.includes(e.key as (typeof ARROW_NAV_KEYS)[number])) return;
+    e.preventDefault();
+
     const enabledIndexes = getEnabledIndexes();
     const pos = enabledIndexes.indexOf(index);
     if (pos === -1) return;
 
     if (e.key === 'ArrowRight' && pos < enabledIndexes.length - 1) {
-      e.preventDefault();
       stepRefs.current[enabledIndexes[pos + 1]]?.focus();
     } else if (e.key === 'ArrowLeft' && pos > 0) {
-      e.preventDefault();
       stepRefs.current[enabledIndexes[pos - 1]]?.focus();
     } else if (e.key === 'Home') {
-      e.preventDefault();
       stepRefs.current[enabledIndexes[0]]?.focus();
     } else if (e.key === 'End') {
-      e.preventDefault();
       stepRefs.current[enabledIndexes[enabledIndexes.length - 1]]?.focus();
     }
   };

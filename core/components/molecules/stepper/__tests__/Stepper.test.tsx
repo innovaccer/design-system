@@ -315,4 +315,22 @@ describe('Stepper component keyboard accessibility', () => {
     expect(stepNodes[2]).toHaveAttribute('tabIndex', '-1');
     expect(stepNodes[3]).toHaveAttribute('tabIndex', '-1');
   });
+
+  it('calls preventDefault on ArrowLeft and ArrowRight at boundaries to prevent scroll', () => {
+    const active = 0;
+    const completed = 3;
+    const { getAllByTestId } = render(
+      <Stepper steps={steps} active={active} completed={completed} onChange={onChange} />
+    );
+
+    const stepNodes = getAllByTestId('DesignSystem-Step');
+
+    const preventDefaultLeft = jest.fn();
+    fireEvent.keyDown(stepNodes[0], { key: 'ArrowLeft', preventDefault: preventDefaultLeft });
+    expect(preventDefaultLeft).toHaveBeenCalledTimes(1);
+
+    const preventDefaultRight = jest.fn();
+    fireEvent.keyDown(stepNodes[3], { key: 'ArrowRight', preventDefault: preventDefaultRight });
+    expect(preventDefaultRight).toHaveBeenCalledTimes(1);
+  });
 });
