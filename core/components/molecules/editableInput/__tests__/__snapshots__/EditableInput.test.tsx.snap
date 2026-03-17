@@ -7,7 +7,8 @@ exports[`EditableInput component
   <div
     class="EditableInput"
     data-test="DesignSystem-EditableInput"
-    role="presentation"
+    role="button"
+    tabindex="0"
   >
     <div
       class="Editable"
@@ -15,13 +16,24 @@ exports[`EditableInput component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
-        role="button"
-        tabindex="0"
       >
         <div
           class="EditableInput-default EditableInput-default--regular"
           data-test="DesignSystem-EditableInput--Default"
-        />
+        >
+          <span
+            aria-hidden="true"
+            class="d-flex align-items-center"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--alert EditableInput-errorIcon--regular"
+              data-test="DesignSystem-Icon"
+              style="font-size: 16px; width: 16px;"
+            >
+              error
+            </i>
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -35,7 +47,8 @@ exports[`EditableInput component
   <div
     class="EditableInput"
     data-test="DesignSystem-EditableInput"
-    role="presentation"
+    role="button"
+    tabindex="0"
   >
     <div
       class="Editable"
@@ -43,13 +56,24 @@ exports[`EditableInput component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
-        role="button"
-        tabindex="0"
       >
         <div
           class="EditableInput-default EditableInput-default--tiny"
           data-test="DesignSystem-EditableInput--Default"
-        />
+        >
+          <span
+            aria-hidden="true"
+            class="d-flex align-items-center"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--alert EditableInput-errorIcon--tiny"
+              data-test="DesignSystem-Icon"
+              style="font-size: 14px; width: 14px;"
+            >
+              error
+            </i>
+          </span>
+        </div>
       </div>
     </div>
   </div>
