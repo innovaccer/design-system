@@ -856,16 +856,31 @@ const DropdownList = (props: OptionsProps) => {
         event.stopPropagation();
         focusOption('up', optionClass);
         break;
-      case 'Home':
-        event.preventDefault();
-        event.stopPropagation();
-        focusEdgeOption('first');
+      case 'Home': {
+        // Let Home/End work normally in the search input for text cursor movement
+        const homeTarget = document.activeElement;
+        const isInputFocused =
+          enableSearch &&
+          inputRef.current &&
+          (homeTarget === inputRef.current || inputRef.current.contains(homeTarget));
+        if (!isInputFocused) {
+          event.preventDefault();
+          event.stopPropagation();
+          focusEdgeOption('first');
+        }
         break;
-      case 'End':
-        event.preventDefault();
-        event.stopPropagation();
-        focusEdgeOption('last');
+      }
+      case 'End': {
+        const endTarget = document.activeElement;
+        const isInputFocusedEnd =
+          enableSearch && inputRef.current && (endTarget === inputRef.current || inputRef.current.contains(endTarget));
+        if (!isInputFocusedEnd) {
+          event.preventDefault();
+          event.stopPropagation();
+          focusEdgeOption('last');
+        }
         break;
+      }
       case 'Escape':
         event.preventDefault();
         event.stopPropagation();
