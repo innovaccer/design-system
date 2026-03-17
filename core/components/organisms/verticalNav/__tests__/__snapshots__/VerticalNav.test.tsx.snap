@@ -7,16 +7,22 @@ exports[`Vertical Navigation component
   <div>
     <div
       class="VerticalNav"
+      data-test="DesignSystem-VerticalNav"
+      role="tree"
+      tabindex="-1"
     >
       
       <div
         class="PopperWrapper-trigger"
       >
         <a
+          aria-level="1"
           class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
+          data-menu-name="patient_360"
           data-test="DesignSystem-VerticalNav--Item"
           href="/patient360"
-          tabindex="0"
+          role="treeitem"
+          tabindex="-1"
         >
           <div
             class="d-flex align-items-center overflow-hidden"
@@ -37,9 +43,13 @@ exports[`Vertical Navigation component
         class="PopperWrapper-trigger"
       >
         <a
+          aria-expanded="true"
+          aria-level="1"
           class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
+          data-menu-name="care_management"
           data-test="DesignSystem-VerticalNav--Item"
-          tabindex="0"
+          role="treeitem"
+          tabindex="-1"
         >
           <div
             class="d-flex align-items-center overflow-hidden"
@@ -60,7 +70,10 @@ exports[`Vertical Navigation component
         class="PopperWrapper-trigger"
       >
         <a
+          aria-level="2"
           class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--active color-primary-dark"
+          data-menu-name="care_management.timeline"
+          role="treeitem"
           tabindex="0"
         >
           <div
@@ -82,8 +95,11 @@ exports[`Vertical Navigation component
         class="PopperWrapper-trigger"
       >
         <a
+          aria-level="2"
           class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
-          tabindex="0"
+          data-menu-name="care_management.care_plans"
+          role="treeitem"
+          tabindex="-1"
         >
           <div
             class="d-flex align-items-center overflow-hidden"
@@ -104,9 +120,13 @@ exports[`Vertical Navigation component
         class="PopperWrapper-trigger"
       >
         <a
+          aria-level="1"
           class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--disabled color-inverse-lightest"
+          data-disabled="true"
+          data-menu-name="episodes"
           data-test="DesignSystem-VerticalNav--Item"
-          tabindex="0"
+          role="treeitem"
+          tabindex="-1"
         >
           <div
             class="d-flex align-items-center overflow-hidden"
@@ -127,9 +147,13 @@ exports[`Vertical Navigation component
         class="PopperWrapper-trigger"
       >
         <a
+          aria-expanded="false"
+          aria-level="1"
           class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
+          data-menu-name="risk"
           data-test="DesignSystem-VerticalNav--Item"
-          tabindex="0"
+          role="treeitem"
+          tabindex="-1"
         >
           <div
             class="d-flex align-items-center overflow-hidden"
@@ -157,6 +181,9 @@ exports[`Vertical Navigation component
   <div>
     <div
       class="VerticalNav VerticalNav--expanded"
+      data-test="DesignSystem-VerticalNav"
+      role="tree"
+      tabindex="-1"
     >
       <div
         class="VerticalNav-section"
@@ -169,10 +196,13 @@ exports[`Vertical Navigation component
         </span>
       </div>
       <a
+        aria-level="1"
         class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--expandedRounded MenuItem--rounded color-inverse"
+        data-menu-name="patient_360"
         data-test="DesignSystem-VerticalNav--Item"
         href="/patient360"
-        tabindex="0"
+        role="treeitem"
+        tabindex="-1"
       >
         <div
           class="d-flex align-items-center overflow-hidden"
@@ -210,9 +240,13 @@ exports[`Vertical Navigation component
         </span>
       </div>
       <a
+        aria-expanded="true"
+        aria-level="1"
         class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--expandedRounded MenuItem--rounded color-inverse"
+        data-menu-name="care_management"
         data-test="DesignSystem-VerticalNav--Item"
-        tabindex="0"
+        role="treeitem"
+        tabindex="-1"
       >
         <div
           class="d-flex align-items-center overflow-hidden"
@@ -242,7 +276,10 @@ exports[`Vertical Navigation component
         </i>
       </a>
       <a
+        aria-level="2"
         class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--expandedRounded MenuItem--active MenuItem--activeExpanded MenuItem--activeExpandedRounded MenuItem--subMenu MenuItem--rounded pr-5 color-primary-dark"
+        data-menu-name="care_management.timeline"
+        role="treeitem"
         tabindex="0"
       >
         <div
@@ -265,8 +302,11 @@ exports[`Vertical Navigation component
         </div>
       </a>
       <a
+        aria-level="2"
         class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--expandedRounded MenuItem--subMenu MenuItem--rounded pr-5 color-inverse"
-        tabindex="0"
+        data-menu-name="care_management.care_plans"
+        role="treeitem"
+        tabindex="-1"
       >
         <div
           class="d-flex align-items-center overflow-hidden"
@@ -288,9 +328,13 @@ exports[`Vertical Navigation component
         </div>
       </a>
       <a
+        aria-level="1"
         class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--expandedRounded MenuItem--disabled MenuItem--rounded color-inverse-lightest"
+        data-disabled="true"
+        data-menu-name="episodes"
         data-test="DesignSystem-VerticalNav--Item"
-        tabindex="0"
+        role="treeitem"
+        tabindex="-1"
       >
         <div
           class="d-flex align-items-center overflow-hidden"
@@ -318,9 +362,13 @@ exports[`Vertical Navigation component
         </span>
       </a>
       <a
+        aria-expanded="false"
+        aria-level="1"
         class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--expandedRounded MenuItem--rounded color-inverse"
+        data-menu-name="risk"
         data-test="DesignSystem-VerticalNav--Item"
-        tabindex="0"
+        role="treeitem"
+        tabindex="-1"
       >
         <div
           class="d-flex align-items-center overflow-hidden"
