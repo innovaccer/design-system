@@ -32,7 +32,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -76,7 +75,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -120,7 +118,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -164,7 +161,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -208,7 +204,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -252,7 +247,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -296,7 +290,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
@@ -340,7 +333,6 @@ exports[`TimePicker component snapshots renders snapshot for all props
           <i
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
