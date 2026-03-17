@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, BaseHtmlProps } from '@/utils/types';
+import { isSpaceKey } from '@/accessibility/utils';
 import { useMultiSelect, useSingleSelect } from './hooks';
 import styles from '@css/components/selectionCard.module.css';
 
@@ -59,7 +60,9 @@ export const SelectionCard = (props: SelectionCardProps) => {
   };
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
-    if (event.key === 'Enter' && !disabled) {
+    if (isSpaceKey(event) && !disabled) {
+      event.preventDefault();
+      if (event.repeat) return;
       onClickHandler(event);
     }
   };
