@@ -105,6 +105,7 @@ export const VerticalNav = (props: VerticalNavProps) => {
     if (!name) return false;
     const menu = menus.find((m) => m.name === name);
     if (menu) {
+      if (menu.disabled) return false;
       // In collapsed mode, top-level items without icons are not rendered
       if (!expanded && !menu.icon) return false;
       return true;
@@ -113,9 +114,15 @@ export const VerticalNav = (props: VerticalNavProps) => {
     for (const m of menus) {
       if (m.subMenu) {
         const isExpanded = menuState[m.name] || subMenuExpandedState[m.name];
-        const isChild = m.subMenu.some((s) => s.name === name);
-        // Submenu items are only rendered when navigation is expanded AND parent is expanded
-        if (isChild && isExpanded && expanded) return true;
+        const subMenuMatch = m.subMenu.find((s) => s.name === name);
+        if (subMenuMatch) {
+          if (subMenuMatch.disabled) return false;
+          // Submenu items are only rendered when parent is expanded
+          // In collapsed mode, they are rendered only if they have an icon
+          if (!isExpanded) return false;
+          if (!expanded && !subMenuMatch.icon) return false;
+          return true;
+        }
       }
     }
     return false;

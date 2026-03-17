@@ -482,3 +482,36 @@ describe('Vertical Navigation component keyboard accessibility', () => {
     expect(hasEpisodes).toBe(false);
   });
 });
+
+describe('Vertical Navigation component WAI-ARIA tree semantics', () => {
+  it('renders each menu item with role="treeitem"', () => {
+    const { container } = render(<VerticalNav menus={menus} active={active} expanded={true} />);
+    const treeitems = container.querySelectorAll('[role="treeitem"]');
+    expect(treeitems.length).toBeGreaterThan(0);
+    treeitems.forEach((el) => {
+      expect(el.getAttribute('role')).toBe('treeitem');
+    });
+  });
+
+  it('sets aria-level 1 on top-level items and 2 on submenu items', () => {
+    const { container } = render(<VerticalNav menus={menusWithExpandedSubMenu} active={active} expanded={true} />);
+    const topLevel = container.querySelector('[data-menu-name="care_management"]');
+    const subItem = container.querySelector('[data-menu-name="care_management.timeline"]');
+    expect(topLevel?.getAttribute('aria-level')).toBe('1');
+    expect(subItem?.getAttribute('aria-level')).toBe('2');
+  });
+
+  it('sets aria-expanded on items with submenus and omits it on leaf items', () => {
+    const { container } = render(<VerticalNav menus={menusWithExpandedSubMenu} active={active} expanded={true} />);
+    const parentWithSubmenu = container.querySelector('[data-menu-name="care_management"]');
+    const leafItem = container.querySelector('[data-menu-name="care_management.timeline"]');
+    expect(parentWithSubmenu?.getAttribute('aria-expanded')).toBe('true');
+    expect(leafItem?.hasAttribute('aria-expanded')).toBe(false);
+  });
+
+  it('sets aria-expanded to false when submenu is collapsed', () => {
+    const { container } = render(<VerticalNav menus={menus} active={{ name: 'patient_360' }} expanded={true} />);
+    const careManagement = container.querySelector('[data-menu-name="care_management"]');
+    expect(careManagement?.getAttribute('aria-expanded')).toBe('false');
+  });
+});

@@ -30,7 +30,7 @@ const getFocusedIndex = (items: HTMLElement[]): number => {
 const focusItem = (item: HTMLElement): void => {
   item.focus({ preventScroll: true });
   if (typeof item.scrollIntoView === 'function') {
-    item.scrollIntoView({ block: 'center' });
+    item.scrollIntoView({ block: 'nearest' });
   }
 };
 
@@ -252,11 +252,14 @@ export const getInitialFocusedItemName = (
   // Active is a submenu item - find its parent
   for (const menu of menus) {
     if (menu.subMenu) {
-      const isChild = menu.subMenu.some((s) => s.name === activeMenu.name);
-      if (isChild) {
+      const activeSubMenu = menu.subMenu.find((s) => s.name === activeMenu.name);
+      if (activeSubMenu) {
         // Submenu items are only rendered when parent is expanded
         const isParentExpanded = menuState[menu.name] || subMenuExpandedState[menu.name];
-        if (!isParentExpanded) {
+        // In collapsed mode, submenu items need an icon to render
+        const isRenderedInCollapsed = !expanded && activeSubMenu.icon;
+
+        if (!isParentExpanded || (!expanded && !isRenderedInCollapsed)) {
           // Active submenu item is not rendered; fallback to parent if it's visible and enabled
           if (menu.disabled) return null;
           if (!expanded && !menu.icon) return null;
