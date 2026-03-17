@@ -64,8 +64,9 @@ const menus = [
   },
 ];
 
-/** VerticalNav root has role="tree" and the onKeyDown handler; fire key events on it. */
-const getTreeElement = (container: HTMLElement) => container.querySelector('[role="tree"]') as HTMLElement;
+/** VerticalNav root has data-test="DesignSystem-VerticalNav" and the onKeyDown handler; fire key events on it. */
+const getTreeElement = (container: HTMLElement) =>
+  container.querySelector('[data-test="DesignSystem-VerticalNav"]') as HTMLElement;
 
 const menusWithExpandedSubMenu = [
   {

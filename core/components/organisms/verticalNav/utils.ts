@@ -46,11 +46,6 @@ export interface VerticalNavKeyDownOptions {
   autoCollapse: boolean;
 }
 
-/**
- * Handle Tree View keyboard interactions for VerticalNav.
- * Implements Arrow Up/Down, Arrow Left/Right (expand/collapse), Home/End,
- * Enter/Space (activate). Tab is allowed to pass through.
- */
 export const handleVerticalNavKeyDown = (event: React.KeyboardEvent, options: VerticalNavKeyDownOptions): void => {
   const {
     containerRef,

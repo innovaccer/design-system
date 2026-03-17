@@ -272,6 +272,7 @@ export const VerticalNav = (props: VerticalNavProps) => {
       ref={containerRef}
       role="tree"
       tabIndex={-1}
+      data-test="DesignSystem-VerticalNav"
       {...baseProps}
       className={classes}
       onKeyDown={handleKeyDown}

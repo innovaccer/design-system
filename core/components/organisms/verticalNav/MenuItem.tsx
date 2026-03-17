@@ -18,7 +18,6 @@ export interface MenuItemProps extends BaseProps {
   onClick?: (menu: Menu) => void;
   customItemRenderer?: (props: MenuItemProps) => JSX.Element;
   customOptionRenderer?: (props: MenuItemProps) => JSX.Element;
-  /** For roving tabindex: 0 for the focused item, -1 for others */
   tabIndex?: number;
 }
 interface MenuPillsProps {
