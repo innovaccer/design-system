@@ -71,6 +71,7 @@ export const AIIconButton = (props: AIIconButtonProps) => {
     className,
     ...rest
   } = props;
+  const ariaLabel = rest['aria-label'] ?? tooltip ?? icon;
 
   const buttonClassNames = classNames(
     {
@@ -111,10 +112,11 @@ export const AIIconButton = (props: AIIconButtonProps) => {
         className={buttonClassNames}
         data-test="DesignSystem-AI-IconButton"
         disabled={disabled}
+        aria-label={ariaLabel}
         {...rest}
         style={{ color: strokeColor }}
       >
-        <i data-test="DesignSystem-Icon" className={IconClassNames} style={iconStyles}>
+        <i data-test="DesignSystem-Icon" className={IconClassNames} style={iconStyles} aria-hidden={!!ariaLabel}>
           {icon}
         </i>
         <SaraIcon {...saraIconProps} />

@@ -18,7 +18,7 @@
 }
 
 .Radio-defaultWrapper {
-  border: var(--border);
+  border: var(--border-width-2-5) solid var(--inverse-lighter);
 }
 
 .Radio-errorWrapper {
@@ -77,13 +77,13 @@
 }
 
 .Radio:hover .Radio-wrapper {
-  border: var(--border-width-2-5) solid var(--secondary-dark);
+  border: var(--border-width-2-5) solid var(--inverse-light);
   background-color: var(--secondary-lighter);
 }
 
 .Radio:active .Radio-wrapper {
   background-color: var(--secondary-light);
-  border: var(--border-width-2-5) solid var(--inverse-lightest);
+  border: var(--border-width-2-5) solid var(--inverse-light);
 }
 
 .Radio:hover .Radio-errorWrapper {
@@ -99,29 +99,27 @@
 }
 
 .Radio:focus-within .Radio-wrapper {
-  outline: 0;
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
-  border-radius: var(--border-radius-full);
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 .Radio:focus-within .Radio-errorWrapper {
-  outline: 0;
-  box-shadow: var(--shadow-spread) var(--alert-shadow);
-  border-radius: var(--border-radius-full);
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 .Radio:focus-within .Radio-input:checked ~ .Radio-wrapper {
-  outline: 0;
-  box-shadow: var(--shadow-spread) var(--primary-shadow);
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 .Radio:focus-within .Radio-input:checked ~ .Radio-errorWrapper {
-  outline: 0;
-  box-shadow: var(--shadow-spread) var(--primary-shadow);
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 .Radio--disabled .Radio-wrapper {
-  border: var(--border-width-2-5) solid var(--secondary-light);
+  border: var(--border-width-2-5) solid var(--secondary);
   background-color: var(--secondary-lightest);
 }
 
@@ -211,9 +209,9 @@
 }
 
 .Radio--disabled .Radio-input ~ .Radio-wrapper:focus {
-  box-shadow: none;
+  outline: none;
 }
 
 .Radio--disabled .Radio-input ~ .Radio-errorWrapper:focus {
-  box-shadow: none;
+  outline: none;
 }

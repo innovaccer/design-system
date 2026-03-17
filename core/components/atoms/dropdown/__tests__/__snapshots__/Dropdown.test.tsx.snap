@@ -7,6 +7,7 @@ exports[`Dropdown component
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       <div
         class="w-100"
@@ -36,7 +37,6 @@ exports[`Dropdown component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down
@@ -60,6 +60,7 @@ exports[`Dropdown component
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       <div
         class="w-100"
@@ -89,7 +90,6 @@ exports[`Dropdown component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down
@@ -113,6 +113,7 @@ exports[`Dropdown component
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       <div
         class="w-100"
@@ -142,7 +143,6 @@ exports[`Dropdown component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down
@@ -166,6 +166,7 @@ exports[`Dropdown component
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       <div
         class="w-100"
@@ -195,7 +196,6 @@ exports[`Dropdown component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down
@@ -219,6 +219,7 @@ exports[`Dropdown component
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       <div
         class="w-100"
@@ -242,7 +243,6 @@ exports[`Dropdown component
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--default d-flex align-items-center mr-4"
                 data-test="DesignSystem-Icon"
-                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 events
@@ -256,7 +256,6 @@ exports[`Dropdown component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down
@@ -280,6 +279,7 @@ exports[`Dropdown component
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       <div
         class="w-100"
@@ -315,7 +315,6 @@ exports[`Dropdown component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down
@@ -339,6 +338,7 @@ exports[`Dropdown component
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       <div
         class="w-100"
@@ -368,7 +368,6 @@ exports[`Dropdown component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down
@@ -392,6 +391,7 @@ exports[`Dropdown component
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       <div
         class="w-100"
@@ -416,7 +416,6 @@ exports[`Dropdown component
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--disabled d-flex align-items-center mr-4"
                 data-test="DesignSystem-Icon"
-                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 events
@@ -430,7 +429,6 @@ exports[`Dropdown component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--disabled"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down
@@ -454,6 +452,7 @@ exports[`Dropdown component
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       <div
         class="w-100"
@@ -490,7 +489,6 @@ exports[`Dropdown component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--disabled"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down
@@ -514,6 +512,7 @@ exports[`Dropdown component
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       <div
         class="w-100"
@@ -544,7 +543,6 @@ exports[`Dropdown component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--disabled"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down
@@ -568,6 +566,7 @@ exports[`Dropdown component
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       <div
         class="w-100"
@@ -597,7 +596,6 @@ exports[`Dropdown component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down
@@ -621,6 +619,7 @@ exports[`Dropdown component
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       <div
         class="w-100"
@@ -650,7 +649,6 @@ exports[`Dropdown component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down
@@ -674,6 +672,7 @@ exports[`Dropdown component
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       <div
         class="w-100"
@@ -703,7 +702,6 @@ exports[`Dropdown component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down
@@ -727,6 +725,7 @@ exports[`Dropdown component
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       <div
         class="w-100"
@@ -756,7 +755,6 @@ exports[`Dropdown component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down
@@ -780,6 +778,7 @@ exports[`Dropdown component
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       <div
         class="w-100"
@@ -809,7 +808,6 @@ exports[`Dropdown component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down
@@ -833,6 +831,7 @@ exports[`Dropdown component
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       <div
         class="w-fit-content"
@@ -853,7 +852,6 @@ exports[`Dropdown component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               more_horiz
@@ -877,6 +875,7 @@ exports[`Dropdown component
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       <div
         class="w-100"
@@ -906,7 +905,6 @@ exports[`Dropdown component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down
@@ -930,6 +928,7 @@ exports[`Dropdown component
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       <div
         class="w-100"
@@ -959,7 +958,6 @@ exports[`Dropdown component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down
@@ -983,6 +981,7 @@ exports[`Dropdown component
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       <div
         class="w-100"
@@ -1012,7 +1011,6 @@ exports[`Dropdown component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down
@@ -1036,6 +1034,7 @@ exports[`Dropdown component
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       <div
         class="w-100"
@@ -1065,7 +1064,6 @@ exports[`Dropdown component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down
@@ -1089,6 +1087,7 @@ exports[`Dropdown component
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       <div
         class="w-100"
@@ -1118,7 +1117,6 @@ exports[`Dropdown component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down
@@ -1142,6 +1140,7 @@ exports[`Dropdown component
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       <div
         class="w-100"
@@ -1171,7 +1170,6 @@ exports[`Dropdown component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down
@@ -1195,6 +1193,7 @@ exports[`Dropdown component
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       <div
         class="w-100"
@@ -1224,7 +1223,6 @@ exports[`Dropdown component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down
@@ -1248,6 +1246,7 @@ exports[`Dropdown component
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       <div
         class="w-100"
@@ -1277,7 +1276,6 @@ exports[`Dropdown component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down
@@ -1301,6 +1299,7 @@ exports[`Dropdown component
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       <div
         class="w-100"
@@ -1330,7 +1329,6 @@ exports[`Dropdown component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down
@@ -1354,6 +1352,7 @@ exports[`Dropdown component
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       <div
         class="w-100"
@@ -1383,7 +1382,6 @@ exports[`Dropdown component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down
@@ -1407,6 +1405,7 @@ exports[`Dropdown component
   <div>
     <div
       class="Dropdown"
+      role="presentation"
     >
       <div
         class="w-100"
@@ -1436,7 +1435,6 @@ exports[`Dropdown component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--default"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down

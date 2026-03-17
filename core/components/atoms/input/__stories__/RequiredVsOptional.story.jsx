@@ -9,7 +9,7 @@ export const requiredVsOptionalMarking = () => {
           <Label htmlFor="email" withInput={true} required={true}>
             Email
           </Label>
-          <Input id="email" required placeholder="e.g lawsonjoy@gmail.com" />
+          <Input id="email" required placeholder="e.g lawsonjoy@gmail.com" aria-required={true} />
           <div className="d-flex align-items-center justify-content-center mt-5">
             <Text weight="medium">Required Field</Text>
           </div>
@@ -29,7 +29,7 @@ export const requiredVsOptionalMarking = () => {
           <Label htmlFor="email3" withInput={true}>
             Email
           </Label>
-          <Input id="email3" placeholder="e.g lawsonjoy@gmail.com" />
+          <Input id="email3" placeholder="e.g lawsonjoy@gmail.com" aria-required={true} />
           <div className="d-flex align-items-center justify-content-center mt-5">
             <Text weight="medium">Required Field</Text>
           </div>

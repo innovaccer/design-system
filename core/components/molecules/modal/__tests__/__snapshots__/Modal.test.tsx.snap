@@ -17,8 +17,10 @@ exports[`Modal component
       style="z-index: 1011;"
     >
       <div
+        aria-modal="true"
         class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Modal"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -65,7 +67,6 @@ exports[`Modal component
                 <i
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
                 >
                   close
@@ -108,8 +109,10 @@ exports[`Modal component
         style="z-index: 1011;"
       >
         <div
+          aria-modal="true"
           class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
           data-test="DesignSystem-Modal"
+          role="dialog"
         >
           <div
             class="Modal-header"
@@ -156,7 +159,6 @@ exports[`Modal component
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     close
@@ -197,8 +199,10 @@ exports[`Modal component
       style="z-index: 1011;"
     >
       <div
+        aria-modal="true"
         class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Modal"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -239,7 +243,6 @@ exports[`Modal component
                     <i
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
-                      role="button"
                       style="font-size: 16px; width: 16px;"
                     >
                       close
@@ -299,7 +302,6 @@ exports[`Modal component
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     close
@@ -374,8 +376,10 @@ exports[`Modal component
         style="z-index: 1011;"
       >
         <div
+          aria-modal="true"
           class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
           data-test="DesignSystem-Modal"
+          role="dialog"
         >
           <div
             class="Modal-header"
@@ -416,7 +420,6 @@ exports[`Modal component
                       <i
                         class="material-symbols material-symbols-rounded Icon"
                         data-test="DesignSystem-Button--Icon"
-                        role="button"
                         style="font-size: 16px; width: 16px;"
                       >
                         close
@@ -476,7 +479,6 @@ exports[`Modal component
                     <i
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
-                      role="button"
                       style="font-size: 16px; width: 16px;"
                     >
                       close
@@ -549,8 +551,11 @@ exports[`Modal component
       style="z-index: 1011;"
     >
       <div
+        aria-labelledby="modal-title-17"
+        aria-modal="true"
         class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Modal"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -569,6 +574,7 @@ exports[`Modal component
                 <h4
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
+                  id="modal-title-17"
                 >
                   this is heading
                 </h4>
@@ -606,7 +612,6 @@ exports[`Modal component
                     <i
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
-                      role="button"
                       style="font-size: 16px; width: 16px;"
                     >
                       close
@@ -666,7 +671,6 @@ exports[`Modal component
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     close
@@ -718,8 +722,11 @@ exports[`Modal component
         style="z-index: 1011;"
       >
         <div
+          aria-labelledby="modal-title-18"
+          aria-modal="true"
           class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
           data-test="DesignSystem-Modal"
+          role="dialog"
         >
           <div
             class="Modal-header"
@@ -738,6 +745,7 @@ exports[`Modal component
                   <h4
                     class="Heading Heading--m Heading--default"
                     data-test="DesignSystem-OverlayHeader--heading"
+                    id="modal-title-18"
                   >
                     this is heading
                   </h4>
@@ -775,7 +783,6 @@ exports[`Modal component
                       <i
                         class="material-symbols material-symbols-rounded Icon"
                         data-test="DesignSystem-Button--Icon"
-                        role="button"
                         style="font-size: 16px; width: 16px;"
                       >
                         close
@@ -835,7 +842,6 @@ exports[`Modal component
                     <i
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
-                      role="button"
                       style="font-size: 16px; width: 16px;"
                     >
                       close
@@ -885,8 +891,10 @@ exports[`Modal component
       style="z-index: 1011;"
     >
       <div
+        aria-modal="true"
         class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Modal"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -933,7 +941,6 @@ exports[`Modal component
                 <i
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
                 >
                   close
@@ -976,8 +983,10 @@ exports[`Modal component
         style="z-index: 1011;"
       >
         <div
+          aria-modal="true"
           class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
           data-test="DesignSystem-Modal"
+          role="dialog"
         >
           <div
             class="Modal-header"
@@ -1024,7 +1033,6 @@ exports[`Modal component
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     close
@@ -1065,8 +1073,10 @@ exports[`Modal component
       style="z-index: 1011;"
     >
       <div
+        aria-modal="true"
         class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Modal"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -1107,7 +1117,6 @@ exports[`Modal component
                     <i
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
-                      role="button"
                       style="font-size: 16px; width: 16px;"
                     >
                       close
@@ -1167,7 +1176,6 @@ exports[`Modal component
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     close
@@ -1242,8 +1250,10 @@ exports[`Modal component
         style="z-index: 1011;"
       >
         <div
+          aria-modal="true"
           class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
           data-test="DesignSystem-Modal"
+          role="dialog"
         >
           <div
             class="Modal-header"
@@ -1284,7 +1294,6 @@ exports[`Modal component
                       <i
                         class="material-symbols material-symbols-rounded Icon"
                         data-test="DesignSystem-Button--Icon"
-                        role="button"
                         style="font-size: 16px; width: 16px;"
                       >
                         close
@@ -1344,7 +1353,6 @@ exports[`Modal component
                     <i
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
-                      role="button"
                       style="font-size: 16px; width: 16px;"
                     >
                       close
@@ -1417,8 +1425,11 @@ exports[`Modal component
       style="z-index: 1011;"
     >
       <div
+        aria-labelledby="modal-title-15"
+        aria-modal="true"
         class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Modal"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -1437,6 +1448,7 @@ exports[`Modal component
                 <h4
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
+                  id="modal-title-15"
                 >
                   this is heading
                 </h4>
@@ -1474,7 +1486,6 @@ exports[`Modal component
                     <i
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
-                      role="button"
                       style="font-size: 16px; width: 16px;"
                     >
                       close
@@ -1534,7 +1545,6 @@ exports[`Modal component
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     close
@@ -1586,8 +1596,11 @@ exports[`Modal component
         style="z-index: 1011;"
       >
         <div
+          aria-labelledby="modal-title-16"
+          aria-modal="true"
           class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
           data-test="DesignSystem-Modal"
+          role="dialog"
         >
           <div
             class="Modal-header"
@@ -1606,6 +1619,7 @@ exports[`Modal component
                   <h4
                     class="Heading Heading--m Heading--default"
                     data-test="DesignSystem-OverlayHeader--heading"
+                    id="modal-title-16"
                   >
                     this is heading
                   </h4>
@@ -1643,7 +1657,6 @@ exports[`Modal component
                       <i
                         class="material-symbols material-symbols-rounded Icon"
                         data-test="DesignSystem-Button--Icon"
-                        role="button"
                         style="font-size: 16px; width: 16px;"
                       >
                         close
@@ -1703,7 +1716,6 @@ exports[`Modal component
                     <i
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
-                      role="button"
                       style="font-size: 16px; width: 16px;"
                     >
                       close
@@ -1754,8 +1766,10 @@ exports[`Modal component
       style="z-index: 1011;"
     >
       <div
+        aria-modal="true"
         class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Modal"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -1802,7 +1816,6 @@ exports[`Modal component
                 <i
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
                 >
                   close
@@ -1844,8 +1857,10 @@ exports[`Modal component
         style="z-index: 1011;"
       >
         <div
+          aria-modal="true"
           class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
           data-test="DesignSystem-Modal"
+          role="dialog"
         >
           <div
             class="Modal-header"
@@ -1892,7 +1907,6 @@ exports[`Modal component
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     close
@@ -1933,8 +1947,10 @@ exports[`Modal component
       style="z-index: 1011;"
     >
       <div
+        aria-modal="true"
         class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Modal"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -1975,7 +1991,6 @@ exports[`Modal component
                     <i
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
-                      role="button"
                       style="font-size: 16px; width: 16px;"
                     >
                       close
@@ -2035,7 +2050,6 @@ exports[`Modal component
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     close
@@ -2110,8 +2124,10 @@ exports[`Modal component
         style="z-index: 1011;"
       >
         <div
+          aria-modal="true"
           class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
           data-test="DesignSystem-Modal"
+          role="dialog"
         >
           <div
             class="Modal-header"
@@ -2152,7 +2168,6 @@ exports[`Modal component
                       <i
                         class="material-symbols material-symbols-rounded Icon"
                         data-test="DesignSystem-Button--Icon"
-                        role="button"
                         style="font-size: 16px; width: 16px;"
                       >
                         close
@@ -2212,7 +2227,6 @@ exports[`Modal component
                     <i
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
-                      role="button"
                       style="font-size: 16px; width: 16px;"
                     >
                       close
@@ -2285,8 +2299,11 @@ exports[`Modal component
       style="z-index: 1011;"
     >
       <div
+        aria-labelledby="modal-title-13"
+        aria-modal="true"
         class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
         data-test="DesignSystem-Modal"
+        role="dialog"
       >
         <div
           class="Modal-header"
@@ -2305,6 +2322,7 @@ exports[`Modal component
                 <h4
                   class="Heading Heading--m Heading--default"
                   data-test="DesignSystem-OverlayHeader--heading"
+                  id="modal-title-13"
                 >
                   this is heading
                 </h4>
@@ -2342,7 +2360,6 @@ exports[`Modal component
                     <i
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
-                      role="button"
                       style="font-size: 16px; width: 16px;"
                     >
                       close
@@ -2402,7 +2419,6 @@ exports[`Modal component
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     close
@@ -2454,8 +2470,11 @@ exports[`Modal component
         style="z-index: 1011;"
       >
         <div
+          aria-labelledby="modal-title-14"
+          aria-modal="true"
           class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
           data-test="DesignSystem-Modal"
+          role="dialog"
         >
           <div
             class="Modal-header"
@@ -2474,6 +2493,7 @@ exports[`Modal component
                   <h4
                     class="Heading Heading--m Heading--default"
                     data-test="DesignSystem-OverlayHeader--heading"
+                    id="modal-title-14"
                   >
                     this is heading
                   </h4>
@@ -2511,7 +2531,6 @@ exports[`Modal component
                       <i
                         class="material-symbols material-symbols-rounded Icon"
                         data-test="DesignSystem-Button--Icon"
-                        role="button"
                         style="font-size: 16px; width: 16px;"
                       >
                         close
@@ -2571,7 +2590,6 @@ exports[`Modal component
                     <i
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Button--Icon"
-                      role="button"
                       style="font-size: 16px; width: 16px;"
                     >
                       close

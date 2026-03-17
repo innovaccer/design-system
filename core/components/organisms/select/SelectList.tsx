@@ -23,6 +23,10 @@ export interface SelectListProps extends BaseProps {
    * Add divider below all list item
    */
   showDivider?: boolean;
+  /**
+   * Aria label for the `SelectList`
+   */
+  'aria-label'?: string;
 }
 
 export const SelectList = (props: SelectListProps) => {
@@ -46,7 +50,7 @@ export const SelectList = (props: SelectListProps) => {
     <SelectContext.Provider value={updatedContextProp}>
       <Listbox
         style={wrapperStyle}
-        aria-label="Options item list"
+        aria-label={props['aria-label'] || 'Options item list'}
         aria-multiselectable={multiSelect}
         className="my-3"
         tagName={tagName}

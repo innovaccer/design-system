@@ -18,10 +18,14 @@ export type PillsProps = {
    * Text to be added inside `Pills`
    */
   children?: string | number;
+  /**
+   * Aria label for the `Pills`
+   */
+  'aria-label'?: string;
 } & BaseProps;
 
 export const Pills = (props: PillsProps) => {
-  const { appearance = 'secondary', children, subtle, className } = props;
+  const { appearance = 'secondary', children, subtle, className, 'aria-label': ariaLabel } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -35,7 +39,13 @@ export const Pills = (props: PillsProps) => {
   );
 
   return (
-    <span data-test="DesignSystem-Pills" {...baseProps} className={classes}>
+    <span
+      data-test="DesignSystem-Pills"
+      role={ariaLabel ? 'status' : undefined}
+      aria-label={ariaLabel}
+      {...baseProps}
+      className={classes}
+    >
       {children}
     </span>
   );

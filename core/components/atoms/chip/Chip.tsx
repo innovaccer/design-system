@@ -62,6 +62,18 @@ export type ChipProps = {
    * Maximum width of the chip
    */
   maxWidth?: string | number;
+  /**
+   * ARIA role for chip wrapper element
+   */
+  role?: React.AriaRole;
+  /**
+   * Accessible name for chip wrapper
+   */
+  'aria-label'?: string;
+  /**
+   * Associates chip wrapper with an external label
+   */
+  'aria-labelledby'?: string;
 } & BaseProps;
 
 export const Chip = (props: ChipProps) => {
@@ -80,6 +92,9 @@ export const Chip = (props: ChipProps) => {
     name,
     maxWidth = 'var(--spacing-640)',
     className,
+    role,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledBy,
   } = props;
 
   const baseProps = extractBaseProps(props);
@@ -124,6 +139,10 @@ export const Chip = (props: ChipProps) => {
       name={name}
       labelPrefix={labelPrefix}
       maxWidth={maxWidth}
+      type={type}
+      role={role}
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledBy}
     />
   );
 };

@@ -3,7 +3,7 @@ import { Menu, Icon } from '@/index';
 
 export const nesting = () => {
   return (
-    <Menu trigger={<Menu.Trigger />}>
+    <Menu aria-label="User actions menu" trigger={<Menu.Trigger aria-label="Open menu" />}>
       <Menu.Group label="Group 1">
         <Menu.List>
           <Menu.Item>App store</Menu.Item>
@@ -14,7 +14,7 @@ export const nesting = () => {
               User Admin
               <Icon name="chevron_right" />
             </Menu.Item>
-            <Menu position="right-start">
+            <Menu position="right-start" aria-label="User admin submenu">
               <Menu.List>
                 <Menu.Item>Users</Menu.Item>
                 <Menu.Item>Groups</Menu.Item>
@@ -32,7 +32,7 @@ const customCode = `
 () => {
 
   return (
-    <Menu trigger={<Menu.Trigger />}>
+    <Menu aria-label="User actions menu" trigger={<Menu.Trigger aria-label="Open menu" />}>
       <Menu.Group label="Group 1">
         <Menu.List>
           <Menu.Item>App store</Menu.Item>
@@ -43,7 +43,7 @@ const customCode = `
               User Admin
               <Icon name="chevron_right" />
             </Menu.Item>
-            <Menu position="right-start">
+            <Menu position="right-start" aria-label="User admin submenu">
               <Menu.List>
                 <Menu.Item>Users</Menu.Item>
                 <Menu.Item>Groups</Menu.Item>

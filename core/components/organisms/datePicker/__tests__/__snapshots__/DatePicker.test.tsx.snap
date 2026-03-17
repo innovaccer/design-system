@@ -33,7 +33,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     arrow_back
@@ -55,7 +54,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
@@ -73,7 +71,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
@@ -93,7 +90,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     arrow_forward
@@ -706,7 +702,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     arrow_back
@@ -728,7 +723,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
@@ -746,7 +740,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
@@ -766,7 +759,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     arrow_forward
@@ -1379,7 +1371,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     arrow_back
@@ -1401,7 +1392,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
@@ -1419,7 +1409,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
@@ -1439,7 +1428,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     arrow_forward
@@ -2051,7 +2039,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     arrow_back
@@ -2073,7 +2060,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
@@ -2091,7 +2077,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
@@ -2111,7 +2096,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     arrow_forward
@@ -2723,7 +2707,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     arrow_back
@@ -2745,7 +2728,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
@@ -2763,7 +2745,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
@@ -2783,7 +2764,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     arrow_forward
@@ -3395,7 +3375,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     arrow_back
@@ -3417,7 +3396,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
@@ -3435,7 +3413,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
@@ -3455,7 +3432,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     arrow_forward
@@ -4067,7 +4043,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     arrow_back
@@ -4089,7 +4064,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
@@ -4109,7 +4083,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     arrow_forward
@@ -4333,7 +4306,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     arrow_back
@@ -4367,7 +4339,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     arrow_forward
@@ -4445,7 +4416,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   data-test="DesignSystem-Calendar--yearValue"
                 >
                   <span
-                    class="Text Text--regular color-primary Calendar-value--currDate Calendar-text"
+                    class="Text Text--regular color-primary-dark Calendar-value--currDate Calendar-text"
                     data-test="DesignSystem-Text"
                   >
                     2021
@@ -4591,7 +4562,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     arrow_back
@@ -4613,7 +4583,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
@@ -4631,7 +4600,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
@@ -4651,7 +4619,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     arrow_forward
@@ -5260,7 +5227,6 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
               <i
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Icon"
-                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 events
@@ -5278,7 +5244,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
               class="Input-icon Input-iconWrapper--right"
             >
               <i
-                class="material-symbols material-symbols-rounded Icon Input-icon--right"
+                class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                 data-test="DesignSystem-Input--closeIcon"
                 role="button"
                 style="font-size: 16px; width: 16px;"

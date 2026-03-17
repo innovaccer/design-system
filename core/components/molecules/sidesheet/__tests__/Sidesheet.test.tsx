@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, act } from '@testing-library/react';
 import { SidesheetProps as Props } from '@/index.type';
 import { Button, Sidesheet, Text } from '@/index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -165,6 +165,75 @@ describe('Sidesheet component with prop: open', () => {
     );
 
     expect(getByTestId('DesignSystem-Sidesheet')).toHaveClass('Sidesheet-animation--close');
+  });
+
+  it('focuses first focusable element when Sidesheet opens', async () => {
+    jest.useRealTimers();
+    const flushRAF = () => act(() => new Promise<void>((resolve) => requestAnimationFrame(() => resolve())));
+
+    const { getByTestId } = render(
+      <Sidesheet dimension="large" headerOptions={headerOptions} open={true} footer={footer} onClose={jest.fn()}>
+        <Text>Body</Text>
+      </Sidesheet>
+    );
+
+    await flushRAF();
+
+    const closeButton = getByTestId('DesignSystem-Sidesheet--CloseButton');
+    expect(document.activeElement).toBe(closeButton);
+    jest.useFakeTimers();
+  });
+
+  it('Tab wraps focus within Sidesheet (header, body, footer)', async () => {
+    jest.useRealTimers();
+    const flushRAF = () => act(() => new Promise<void>((resolve) => requestAnimationFrame(() => resolve())));
+
+    const footerWithIds = (
+      <>
+        <Button appearance="primary" className="mr-4" data-test="DesignSystem-Sidesheet--PrimaryBtn">
+          Primary
+        </Button>
+        <Button appearance="basic" data-test="DesignSystem-Sidesheet--BasicBtn">
+          Basic
+        </Button>
+      </>
+    );
+
+    const { getByTestId } = render(
+      <Sidesheet dimension="large" headerOptions={headerOptions} open={true} footer={footerWithIds} onClose={jest.fn()}>
+        <Text>Body</Text>
+      </Sidesheet>
+    );
+
+    await flushRAF();
+
+    const lastFocusable = getByTestId('DesignSystem-Sidesheet--BasicBtn');
+    lastFocusable.focus();
+    fireEvent.keyDown(document, { key: 'Tab' });
+
+    const closeButton = getByTestId('DesignSystem-Sidesheet--CloseButton');
+    expect(document.activeElement).toBe(closeButton);
+    jest.useFakeTimers();
+  });
+
+  it('Escape closes Sidesheet', async () => {
+    jest.useRealTimers();
+    const flushRAF = () => act(() => new Promise<void>((resolve) => requestAnimationFrame(() => resolve())));
+    const onClose = jest.fn();
+
+    const { getByTestId } = render(
+      <Sidesheet dimension="large" headerOptions={headerOptions} open={true} footer={footer} onClose={onClose}>
+        <Text>Body</Text>
+      </Sidesheet>
+    );
+
+    await flushRAF();
+
+    const sidesheetContainer = getByTestId('DesignSystem-Sidesheet');
+    fireEvent.keyDown(sidesheetContainer, { key: 'Escape' });
+
+    expect(onClose).toHaveBeenCalled();
+    jest.useFakeTimers();
   });
 
   it('renders Sidesheet with toggle of open', () => {

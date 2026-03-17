@@ -4,6 +4,7 @@ import { Button, Chip, Text, FullscreenModal } from '@/index';
 
 export const scrolling = () => {
   const [open, setOpen] = React.useState(false);
+  const headingId = 'fullscreen-modal-survey-heading';
 
   const onClose = () => {
     setOpen(!open);
@@ -59,8 +60,10 @@ export const scrolling = () => {
         open={open}
         dimension="large"
         onClose={onClose}
+        aria-labelledby={headingId}
         headerOptions={{
           heading: 'Survey',
+          headingId,
         }}
         footer={
           <>
@@ -101,6 +104,7 @@ export const scrolling = () => {
 
 const customCode = `() => {
   const [open, setOpen] = React.useState(false);
+  const headingId = 'fullscreen-modal-survey-heading';
 
   const onClose = () => {
     setOpen(!open);
@@ -123,8 +127,10 @@ const customCode = `() => {
         open={open}
         dimension="large"
         onClose={onClose}
+        aria-labelledby={headingId}
         headerOptions={{
           heading: 'Survey',
+          headingId,
         }}
         footer={(
           <>

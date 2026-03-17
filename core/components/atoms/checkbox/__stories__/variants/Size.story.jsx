@@ -11,7 +11,7 @@ export const size = () => {
         return (
           <div key={ind} className="mr-7">
             <Label withInput={true}>{CheckboxSize.charAt(0).toUpperCase() + CheckboxSize.slice(1)}</Label>
-            <Checkbox disabled={false} size={CheckboxSize} label={label} />
+            <Checkbox aria-label={label} disabled={false} size={CheckboxSize} label={label} />
           </div>
         );
       })}

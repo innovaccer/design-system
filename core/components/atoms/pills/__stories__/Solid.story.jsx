@@ -23,7 +23,7 @@ export const solid = () => {
       {appearances.map((appear, ind) => {
         return (
           <div key={ind} className="mr-9">
-            <Pills appearance={appear} subtle={subtle}>
+            <Pills appearance={appear} subtle={subtle} aria-label={`${appear} count`}>
               {children}
             </Pills>
             <br />

@@ -167,6 +167,10 @@ export interface DropdownListProps extends TriggerAndOptionProps {
    * @ignore
    */
   scrollIndex?: number;
+  /**
+   * Accessible name for options list container.
+   */
+  optionsAriaLabel?: string;
 }
 
 interface OptionsProps extends DropdownListProps, BaseProps {
@@ -232,6 +236,7 @@ const DropdownList = (props: OptionsProps) => {
     popoverOptions,
     onSearchChange,
     optionRenderer,
+    optionsAriaLabel,
     applyOptions,
     cancelOptions,
     toggleDropdown,
@@ -243,6 +248,11 @@ const DropdownList = (props: OptionsProps) => {
     errorType,
     loadingOptions,
   } = props;
+
+  const triggerAriaLabel = props['aria-label']?.trim();
+  const triggerAriaLabelledBy = props['aria-labelledby'];
+  const resolvedOptionsAriaLabel =
+    optionsAriaLabel?.trim() || (triggerAriaLabel ? `${triggerAriaLabel} options` : menu ? 'Menu options' : 'Options');
 
   const baseProps = extractBaseProps(props);
 
@@ -326,6 +336,8 @@ const DropdownList = (props: OptionsProps) => {
       error={error}
       ref={dropdownTriggerRef}
       iconType={iconType}
+      aria-label={props['aria-label']}
+      aria-labelledby={props['aria-labelledby']}
     >
       {triggerLabel}
     </DropdownButton>
@@ -429,12 +441,12 @@ const DropdownList = (props: OptionsProps) => {
     );
   };
 
-  const renderGroups = (group: string, selectedGroup?: boolean) => {
+  const renderGroups = (group: string, selectedGroup?: boolean, inOptionsComposite?: boolean) => {
     const { onClearOptions } = props;
     const isClearDisabled = selected.every((option) => option.disabled);
 
     return (
-      <div className={getDropdownSectionClass(selectedGroup)}>
+      <div className={getDropdownSectionClass(selectedGroup)} role={inOptionsComposite ? 'presentation' : undefined}>
         <Text size="small" appearance={'subtle'}>
           {group}
         </Text>
@@ -494,8 +506,6 @@ const DropdownList = (props: OptionsProps) => {
           icon={'search'}
           value={searchTerm}
           placeholder={searchPlaceholder}
-          // TODO(a11y): research more on this.
-          // eslint-disable-next-line jsx-a11y/no-autofocus
           autoFocus={true}
           onChange={searchHandler}
           onClear={searchClearHandler}
@@ -555,7 +565,7 @@ const DropdownList = (props: OptionsProps) => {
     const id = `Checkbox-option-${index}-${item.value}-${new Date().getTime()}`;
 
     return (
-      <label htmlFor={id} key={index}>
+      <label htmlFor={id} key={index} role="presentation">
         <Option
           optionData={item}
           truncateOption={truncateOption}
@@ -619,25 +629,32 @@ const DropdownList = (props: OptionsProps) => {
       <div className={dropdownWrapperClass} style={dropdownStyle} ref={dropdownRef}>
         {selectAllPresent && renderSelectAll()}
         {selected.length > 0 && renderGroups(selectedSectionLabel, true)}
-        {selected.map((option, index) => renderOptions(option, index))}
-        {selected.length > 0 &&
-          listOptions.length - selected.length > 0 &&
-          !listOptions[0].group?.trim() && // allItemsSectionLabel is displayed only when there are no groups
-          renderGroups(allItemsSectionLabel)}
-        {groupedListOptions.map((option, index) => {
-          const prevGroup =
-            index > 0 ? groupedListOptions[index - 1].group : selected.length ? selectedSectionLabel : undefined;
-          const currentGroup = option.group;
-          const isGroupDifferent = prevGroup !== currentGroup;
-          const updatedIndex = index + selected.length;
+        <div
+          role={menu ? 'menu' : 'listbox'}
+          aria-label={resolvedOptionsAriaLabel}
+          aria-labelledby={triggerAriaLabelledBy}
+          aria-multiselectable={!menu && withCheckbox ? true : undefined}
+        >
+          {selected.map((option, index) => renderOptions(option, index))}
+          {selected.length > 0 &&
+            listOptions.length - selected.length > 0 &&
+            !listOptions[0].group?.trim() && // allItemsSectionLabel is displayed only when there are no groups
+            renderGroups(allItemsSectionLabel, false, true)}
+          {groupedListOptions.map((option, index) => {
+            const prevGroup =
+              index > 0 ? groupedListOptions[index - 1].group : selected.length ? selectedSectionLabel : undefined;
+            const currentGroup = option.group;
+            const isGroupDifferent = prevGroup !== currentGroup;
+            const updatedIndex = index + selected.length;
 
-          return (
-            <div className={dropdownStyles['Option-checkboxWrapper']} key={index}>
-              {isGroupDifferent && currentGroup && renderGroups(currentGroup)}
-              {renderOptions(option, updatedIndex)}
-            </div>
-          );
-        })}
+            return (
+              <div className={dropdownStyles['Option-checkboxWrapper']} key={index} role="presentation">
+                {isGroupDifferent && currentGroup && renderGroups(currentGroup, false, true)}
+                {renderOptions(option, updatedIndex)}
+              </div>
+            );
+          })}
+        </div>
         {props.async && remainingOptions > 0 && renderFooter()}
       </div>
     );
@@ -730,9 +747,7 @@ const DropdownList = (props: OptionsProps) => {
   const enableSearch = withSearch || props.async;
 
   return (
-    //TODO(a11y)
-    //eslint-disable-next-line
-    <div {...baseProps} className={dropdownClass} ref={triggerRef} onKeyDown={onkeydown}>
+    <div {...baseProps} className={dropdownClass} ref={triggerRef} onKeyDown={onkeydown} role="presentation">
       <Popover
         onToggle={onToggleDropdown}
         trigger={trigger}

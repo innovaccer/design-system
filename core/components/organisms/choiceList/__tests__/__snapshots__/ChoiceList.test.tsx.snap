@@ -36,7 +36,6 @@ exports[`ChoiceList component
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -75,7 +74,6 @@ exports[`ChoiceList component
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -143,7 +141,6 @@ exports[`ChoiceList component
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -182,7 +179,6 @@ exports[`ChoiceList component
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -251,7 +247,6 @@ exports[`ChoiceList component
               disabled=""
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -291,7 +286,6 @@ exports[`ChoiceList component
               disabled=""
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -360,7 +354,6 @@ exports[`ChoiceList component
               disabled=""
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -400,7 +393,6 @@ exports[`ChoiceList component
               disabled=""
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -900,7 +892,6 @@ exports[`ChoiceList component
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -939,7 +930,6 @@ exports[`ChoiceList component
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -1007,7 +997,6 @@ exports[`ChoiceList component
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -1046,7 +1035,6 @@ exports[`ChoiceList component
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -1115,7 +1103,6 @@ exports[`ChoiceList component
               disabled=""
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -1155,7 +1142,6 @@ exports[`ChoiceList component
               disabled=""
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -1224,7 +1210,6 @@ exports[`ChoiceList component
               disabled=""
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -1264,7 +1249,6 @@ exports[`ChoiceList component
               disabled=""
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -1764,7 +1748,6 @@ exports[`ChoiceList component
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -1803,7 +1786,6 @@ exports[`ChoiceList component
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -1871,7 +1853,6 @@ exports[`ChoiceList component
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -1910,7 +1891,6 @@ exports[`ChoiceList component
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -1979,7 +1959,6 @@ exports[`ChoiceList component
               disabled=""
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -2019,7 +1998,6 @@ exports[`ChoiceList component
               disabled=""
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -2088,7 +2066,6 @@ exports[`ChoiceList component
               disabled=""
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -2128,7 +2105,6 @@ exports[`ChoiceList component
               disabled=""
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -2628,7 +2604,6 @@ exports[`ChoiceList component
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -2667,7 +2642,6 @@ exports[`ChoiceList component
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -2735,7 +2709,6 @@ exports[`ChoiceList component
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -2774,7 +2747,6 @@ exports[`ChoiceList component
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -2843,7 +2815,6 @@ exports[`ChoiceList component
               disabled=""
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -2883,7 +2854,6 @@ exports[`ChoiceList component
               disabled=""
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -2952,7 +2922,6 @@ exports[`ChoiceList component
               disabled=""
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />
@@ -2992,7 +2961,6 @@ exports[`ChoiceList component
               disabled=""
               id="choiceList-radio-Test-uid"
               name="choiceList"
-              tabindex="0"
               type="radio"
               value="radio"
             />

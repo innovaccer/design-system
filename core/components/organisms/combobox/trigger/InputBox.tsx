@@ -46,7 +46,8 @@ export const InputBox = (props: InputProps) => {
       role="combobox"
       aria-haspopup="listbox"
       aria-controls={popoverId}
-      aria-label={props.placeholder || 'Combobox-Input-Trigger'}
+      aria-label={props['aria-label'] || props.placeholder || 'Combobox-Input-Trigger'}
+      aria-labelledby={props['aria-labelledby']}
       aria-expanded={openPopover}
       data-test="DesignSystem-Combobox-Input"
     />

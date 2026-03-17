@@ -62,6 +62,10 @@ export type AvatarProps = {
    */
   tabIndex?: number;
   /**
+   * Accessible label for the avatar
+   */
+  'aria-label'?: string;
+  /**
    * Show presence indicator for the `Avatar`
    */
   presence?: TPresence;
@@ -97,6 +101,7 @@ export const Avatar = (props: AvatarProps) => {
     status,
     strokeColor = 'var(--white)',
     role = 'presentation',
+    'aria-label': ariaLabelProp,
   } = props;
 
   const baseProps = extractBaseProps(props);
@@ -116,6 +121,8 @@ export const Avatar = (props: AvatarProps) => {
 
   const AvatarAppearance =
     appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] || DefaultAppearance;
+  const resolvedRole = role ?? (tabIndex !== undefined ? 'button' : 'img');
+  const ariaLabel = ariaLabelProp || getTooltipName().trim() || initials || 'Avatar';
 
   const darkAppearance = ['secondary', 'success', 'warning', 'accent1', 'accent4'];
   const showPresence =
@@ -179,13 +186,15 @@ export const Avatar = (props: AvatarProps) => {
   const renderAvatar = () => {
     if (children && typeof children !== 'string') {
       return (
-        <span data-test="DesignSystem-AvatarWrapper" className={AvatarWrapperClassNames} role={role}>
+        <span data-test="DesignSystem-AvatarWrapper" className={AvatarWrapperClassNames}>
           <AvatarProvider value={sharedProp}>
             <span
               data-test="DesignSystem-Avatar"
               {...baseProps}
               className={AvatarClassNames}
-              tabIndex={tabIndex || disabled ? -1 : 0}
+              role={resolvedRole}
+              aria-label={ariaLabel}
+              tabIndex={disabled ? -1 : tabIndex !== undefined ? tabIndex : 0}
             >
               {children}
             </span>
@@ -195,12 +204,14 @@ export const Avatar = (props: AvatarProps) => {
     }
 
     return (
-      <span data-test="DesignSystem-AvatarWrapper" className={AvatarWrapperClassNames} role={role}>
+      <span data-test="DesignSystem-AvatarWrapper" className={AvatarWrapperClassNames}>
         <span
           data-test="DesignSystem-Avatar"
           {...baseProps}
           className={AvatarClassNames}
-          tabIndex={tabIndex || disabled ? -1 : 0}
+          role={resolvedRole}
+          aria-label={ariaLabel}
+          tabIndex={disabled ? -1 : tabIndex !== undefined ? tabIndex : 0}
         >
           <>
             {initials && (

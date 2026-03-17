@@ -48,9 +48,12 @@ export const all = () => {
 
   return (
     <>
-      <Label withInput={true}>Area code</Label>
+      <Label withInput={true} id="area-code-label">
+        Area code
+      </Label>
       <div className="w-25">
         <Select
+          aria-labelledby="area-code-label"
           triggerOptions={{
             placeholder: 'Select an area code',
           }}
@@ -117,9 +120,12 @@ const customCode = `() => {
 
   return (
     <>
-      <Label withInput={true}>Area code</Label>
+      <Label withInput={true} id="area-code-label">
+        Area code
+      </Label>
       <div className="w-25">
         <Select
+          aria-labelledby="area-code-label"
           triggerOptions={{
             placeholder: 'Select an area code',
           }}

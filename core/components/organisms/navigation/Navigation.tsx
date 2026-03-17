@@ -53,6 +53,7 @@ export const Navigation = (props: NavigationProps) => {
     footer,
     className,
   } = props;
+  const ariaLabel = props['aria-label'];
 
   const baseProps = extractBaseProps(props);
 
@@ -69,7 +70,7 @@ export const Navigation = (props: NavigationProps) => {
 
   const renderNavigation = () => {
     return type === 'horizontal' ? (
-      <HorizontalNav menus={menus} active={active} onClick={onClick} />
+      <HorizontalNav menus={menus} active={active} onClick={onClick} aria-label={ariaLabel} />
     ) : (
       <VerticalNavigation
         menus={menus}
@@ -80,6 +81,7 @@ export const Navigation = (props: NavigationProps) => {
         footer={footer}
         onToggle={onToggle}
         onClick={onClick}
+        aria-label={ariaLabel}
       />
     );
   };

@@ -21,6 +21,7 @@ export const Selection = () => {
               type="selection"
               selected={false}
               name={'chip'}
+              role="option"
             />
             <br />
             <br />
@@ -38,6 +39,7 @@ export const Selection = () => {
           onClick={action(`onClick: ${label}`)}
           selected={true}
           name={'chip'}
+          role="option"
         />
         <br />
         <br />
@@ -54,6 +56,7 @@ export const Selection = () => {
           selected={true}
           disabled={true}
           name={'chip'}
+          role="option"
         />
         <br />
         <br />

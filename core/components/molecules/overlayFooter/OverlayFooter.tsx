@@ -10,10 +10,15 @@ export interface OverlayFooterProps extends BaseProps {
   open?: boolean;
   children?: React.ReactNode;
   actions?: ButtonProps[];
+  /**
+   * When true, skips the built-in focus-on-open behavior.
+   * Use when the parent (e.g. Modal) manages focus via a focus trap.
+   */
+  skipFocusOnOpen?: boolean;
 }
 
 export const OverlayFooter = (props: OverlayFooterProps) => {
-  const { open, className, children, actions } = props;
+  const { open, className, children, actions, skipFocusOnOpen } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -27,18 +32,16 @@ export const OverlayFooter = (props: OverlayFooterProps) => {
   const wrapperRef = React.createRef<HTMLDivElement>();
 
   React.useEffect(() => {
-    if (open) {
-      if (wrapperRef.current) {
-        const secondaryBtns: NodeListOf<HTMLButtonElement> = wrapperRef.current?.querySelectorAll(
-          `.${buttonStyles['Button--basic']}`
-        );
-        const secondaryBtn = secondaryBtns[secondaryBtns.length - 1];
-        if (secondaryBtn) {
-          window.requestAnimationFrame(() => secondaryBtn.focus({ preventScroll: true }));
-        }
+    if (open && !skipFocusOnOpen && wrapperRef.current) {
+      const secondaryBtns: NodeListOf<HTMLButtonElement> = wrapperRef.current?.querySelectorAll(
+        `.${buttonStyles['Button--basic']}`
+      );
+      const secondaryBtn = secondaryBtns[secondaryBtns.length - 1];
+      if (secondaryBtn) {
+        window.requestAnimationFrame(() => secondaryBtn.focus({ preventScroll: true }));
       }
     }
-  }, [open]);
+  }, [open, skipFocusOnOpen]);
 
   if (actions) {
     return (

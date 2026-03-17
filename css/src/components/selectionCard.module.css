@@ -16,10 +16,9 @@
 
 .Selection-card--default:focus,
 .Selection-card--default:focus-visible {
-  outline: none;
-  box-shadow:
-    var(--shadow-spread) var(--secondary-shadow),
-    inset 0 0 0 var(--spacing-2-5) var(--secondary-dark);
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
+  box-shadow: inset 0 0 0 var(--spacing-2-5) var(--secondary-dark);
 }
 
 .Selection-card--default:active {
@@ -48,10 +47,9 @@
 
 .Selection-card--selected:focus,
 .Selection-card--selected:focus-visible {
-  outline: none;
-  box-shadow:
-    var(--shadow-spread) var(--primary-shadow),
-    inset 0 0 0 var(--spacing-05) var(--primary);
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
+  box-shadow: inset 0 0 0 var(--spacing-05) var(--primary);
 }
 
 .Selection-card--selected:active {

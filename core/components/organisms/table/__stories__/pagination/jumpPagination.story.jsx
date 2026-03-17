@@ -9,7 +9,14 @@ export const jumpPagination = () => {
   return (
     <div className="vh-50">
       <Card className="h-100 overflow-hidden">
-        <Table data={data} pageSize={6} schema={schema} withPagination={true} paginationType={'jump'} />
+        <Table
+          aria-label="Paginated table"
+          data={data}
+          pageSize={6}
+          schema={schema}
+          withPagination={true}
+          paginationType={'jump'}
+        />
       </Card>
     </div>
   );
@@ -123,6 +130,7 @@ const customCode = `
     <div className="vh-50">
       <Card className="h-100 overflow-hidden">
         <Table
+          aria-label="Paginated table"
           data={data}
           pageSize={6}
           schema={schema}

@@ -8,11 +8,12 @@ exports[`Message component
     <div
       class="Message Message--alert"
       data-test="DesignSystem-Message"
+      role="alert"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Icon--alert Message-icon--alert Message-icon--regular Message-icon--withTitle"
         data-test="DesignSystem-Message--Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         error
@@ -61,11 +62,12 @@ exports[`Message component
     <div
       class="Message Message--alert"
       data-test="DesignSystem-Message"
+      role="alert"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Icon--alert Message-icon--alert Message-icon--regular Message-icon--withTitle"
         data-test="DesignSystem-Message--Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         error
@@ -114,11 +116,12 @@ exports[`Message component
     <div
       class="Message Message--alert Message--small"
       data-test="DesignSystem-Message"
+      role="alert"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Icon--alert Message-icon--alert Message-icon--small Message-icon--withTitle"
         data-test="DesignSystem-Message--Icon"
-        role="button"
         style="font-size: 14px; width: 14px;"
       >
         error
@@ -167,11 +170,12 @@ exports[`Message component
     <div
       class="Message Message--info"
       data-test="DesignSystem-Message"
+      role="status"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Icon--info Message-icon--info Message-icon--regular Message-icon--withTitle"
         data-test="DesignSystem-Message--Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         info
@@ -220,11 +224,12 @@ exports[`Message component
     <div
       class="Message Message--info"
       data-test="DesignSystem-Message"
+      role="status"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Icon--info Message-icon--info Message-icon--regular Message-icon--withTitle"
         data-test="DesignSystem-Message--Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         info
@@ -273,11 +278,12 @@ exports[`Message component
     <div
       class="Message Message--info Message--small"
       data-test="DesignSystem-Message"
+      role="status"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Icon--info Message-icon--info Message-icon--small Message-icon--withTitle"
         data-test="DesignSystem-Message--Icon"
-        role="button"
         style="font-size: 14px; width: 14px;"
       >
         info
@@ -326,11 +332,12 @@ exports[`Message component
     <div
       class="Message Message--success"
       data-test="DesignSystem-Message"
+      role="status"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Icon--success Message-icon--success Message-icon--regular Message-icon--withTitle"
         data-test="DesignSystem-Message--Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         check_circle
@@ -379,11 +386,12 @@ exports[`Message component
     <div
       class="Message Message--success"
       data-test="DesignSystem-Message"
+      role="status"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Icon--success Message-icon--success Message-icon--regular Message-icon--withTitle"
         data-test="DesignSystem-Message--Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         check_circle
@@ -432,11 +440,12 @@ exports[`Message component
     <div
       class="Message Message--success Message--small"
       data-test="DesignSystem-Message"
+      role="status"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Icon--success Message-icon--success Message-icon--small Message-icon--withTitle"
         data-test="DesignSystem-Message--Icon"
-        role="button"
         style="font-size: 14px; width: 14px;"
       >
         check_circle
@@ -485,11 +494,12 @@ exports[`Message component
     <div
       class="Message Message--warning"
       data-test="DesignSystem-Message"
+      role="alert"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Icon--warning Message-icon--warning Message-icon--regular Message-icon--withTitle"
         data-test="DesignSystem-Message--Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         warning
@@ -538,11 +548,12 @@ exports[`Message component
     <div
       class="Message Message--warning"
       data-test="DesignSystem-Message"
+      role="alert"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Icon--warning Message-icon--warning Message-icon--regular Message-icon--withTitle"
         data-test="DesignSystem-Message--Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         warning
@@ -591,11 +602,12 @@ exports[`Message component
     <div
       class="Message Message--warning Message--small"
       data-test="DesignSystem-Message"
+      role="alert"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Icon--warning Message-icon--warning Message-icon--small Message-icon--withTitle"
         data-test="DesignSystem-Message--Icon"
-        role="button"
         style="font-size: 14px; width: 14px;"
       >
         warning

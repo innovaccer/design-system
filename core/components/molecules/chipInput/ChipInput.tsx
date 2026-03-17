@@ -17,6 +17,7 @@ type ChipOptions = {
   iconType?: ChipProps['iconType'];
   clearButton?: ChipProps['clearButton'];
   maxWidth?: ChipProps['maxWidth'];
+  role?: ChipProps['role'];
   onClick?: (value: string, index: number) => void;
 };
 
@@ -34,6 +35,7 @@ export type ChipInputProps = {
    *   type?: action | input | selection;
    *   clearButton?: boolean;
    *   maxWidth?: string | number;
+   *   role?: string;
    *   onClick?: (value: string, index: number) => void;
    *   iconType?: 'rounded' | 'outlined'
    *  }
@@ -84,6 +86,18 @@ export type ChipInputProps = {
    * Validator function to validate a chip before it's added.  Return `true` for valid, `false` for invalid.
    */
   chipValidator?: (chip: string) => boolean;
+  /**
+   * Accessible name for chip input trigger container
+   */
+  'aria-label'?: string;
+  /**
+   * Associates chip input with an external label element
+   */
+  'aria-labelledby'?: string;
+  /**
+   * Associates chip input with a description element
+   */
+  'aria-describedby'?: string;
 } & BaseProps;
 
 export const ChipInput = (props: ChipInputProps) => {
@@ -102,6 +116,9 @@ export const ChipInput = (props: ChipInputProps) => {
     onBlur,
     onFocus,
     chipValidator,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledBy,
+    'aria-describedby': ariaDescribedBy,
   } = props;
 
   const inputRef = React.createRef<HTMLInputElement>();
@@ -268,17 +285,29 @@ export const ChipInput = (props: ChipInputProps) => {
   });
 
   const iconSize = size === 'small' ? 12 : 16;
+  const handleWrapperKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (disabled || event.currentTarget !== event.target) return;
+
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      onClickHandler();
+    }
+  };
 
   return (
-    /* TODO(a11y): fix accessibility  */
-    /* eslint-disable  */
     <div data-test="DesignSystem-ChipInput--Border" className={ChipInputBorderClass}>
       <div
         data-test="DesignSystem-ChipInput"
         {...baseProps}
         className={ChipInputClass}
         onClick={onClickHandler}
+        onKeyDown={handleWrapperKeyDown}
         tabIndex={disabled ? -1 : 0}
+        role="button"
+        aria-label={ariaLabel}
+        aria-labelledby={ariaLabelledBy}
+        aria-describedby={ariaDescribedBy}
+        aria-disabled={disabled || undefined}
       >
         <div className={styles['ChipInput-wrapper']} ref={customRef}>
           {chips && chips.length > 0 && chipComponents}
@@ -294,6 +323,9 @@ export const ChipInput = (props: ChipInputProps) => {
             onFocus={onFocus}
             onChange={onInputChangeHandler}
             onKeyDown={onKeyDownHandler}
+            aria-label={ariaLabel}
+            aria-labelledby={ariaLabelledBy}
+            aria-describedby={ariaDescribedBy}
           />
           {/* eslint-enable */}
         </div>

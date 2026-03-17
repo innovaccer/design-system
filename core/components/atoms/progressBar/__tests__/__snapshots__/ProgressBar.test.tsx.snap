@@ -6,8 +6,13 @@ exports[`ProgressBar component
 <body>
   <div>
     <div
+      aria-valuemax="100"
+      aria-valuemin="0"
+      aria-valuenow="10"
+      aria-valuetext="10%"
       class="ProgressBar ProgressBar-indicator--regular"
       data-test="DesignSystem-ProgressBar"
+      role="progressbar"
     >
       <div
         class="ProgressBar-indicator"
@@ -25,8 +30,11 @@ exports[`ProgressBar component
 <body>
   <div>
     <div
+      aria-valuemax="100"
+      aria-valuemin="0"
       class="ProgressBar ProgressBar-indicator--regular position-relative overflow-hidden"
       data-test="DesignSystem-ProgressBar"
+      role="progressbar"
     >
       <div
         class="ProgressBar-indicator ProgressBar-indicator--indeterminate"
@@ -43,8 +51,13 @@ exports[`ProgressBar component
 <body>
   <div>
     <div
+      aria-valuemax="100"
+      aria-valuemin="0"
+      aria-valuenow="10"
+      aria-valuetext="10%"
       class="ProgressBar ProgressBar-indicator--small"
       data-test="DesignSystem-ProgressBar"
+      role="progressbar"
     >
       <div
         class="ProgressBar-indicator"
@@ -62,8 +75,11 @@ exports[`ProgressBar component
 <body>
   <div>
     <div
+      aria-valuemax="100"
+      aria-valuemin="0"
       class="ProgressBar ProgressBar-indicator--small position-relative overflow-hidden"
       data-test="DesignSystem-ProgressBar"
+      role="progressbar"
     >
       <div
         class="ProgressBar-indicator ProgressBar-indicator--indeterminate"

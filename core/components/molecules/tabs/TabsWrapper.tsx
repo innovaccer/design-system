@@ -66,13 +66,22 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
     });
 
     return (
-      // TODO(a11y)
-      //  eslint-disable-next-line
       <div
         data-test="DesignSystem-Tabs--Header"
         key={index}
         className={tabHeaderClass}
         onClick={() => !disabled && tabClickHandler(index)}
+        onKeyDown={(event: React.KeyboardEvent<HTMLDivElement>) => {
+          if (disabled) return;
+
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            tabClickHandler(index);
+          }
+        }}
+        role="button"
+        tabIndex={disabled ? -1 : 0}
+        aria-disabled={disabled || undefined}
       >
         {label}
       </div>

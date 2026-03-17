@@ -1,4 +1,112 @@
-## 4.19.0 (2025-01-07)
+## 4.20.0 (2026-02-24)
+
+### Highlights
+
+- feat(a11y): add accessibility support in components (b8062d874)
+
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(a11y): add accessibility support in components (b8062d874)
+
+### Fixes
+
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
+## 4.19.2 (2026-02-12)
+
+### Highlights
+
+- fix(datepicker): update today chip disabled state logic (5e290ea4)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+- fix(datepicker): update today chip disabled state logic (5e290ea4)
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
+## 4.19.1 (2026-01-22)
+
+### Highlights
+
+- feat(text): update font weight for small size variant in text component (5e1cf577)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(text): update font weight for small size variant in text component (5e1cf577)
+
+### Fixes
+
+NA
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
+## 4.19.0 (2026-01-07)
 
 ### Highlights
 

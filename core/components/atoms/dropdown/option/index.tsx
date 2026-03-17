@@ -17,7 +17,6 @@ export interface OptionRendererProps {
   /**
    * Adds custom option
    *
-   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
    * OptionProps: {
    *   optionData: Option;
    *   selected: boolean;
@@ -25,7 +24,6 @@ export interface OptionRendererProps {
    *   index: number;
    *   onChange?: (checked: boolean) => void;
    * }
-   * </pre>
    */
   optionRenderer?: (props: OptionProps) => React.JSX.Element;
   /**
@@ -52,6 +50,7 @@ export interface OptionTypeProps {
   dataTest?: string;
   optionData: OptionSchema;
   selected: boolean;
+  menu?: boolean;
   appearance?: IconProps['appearance'];
   color?: TextProps['color'];
   index: number;
@@ -157,6 +156,9 @@ const Option = (props: OptionProps) => {
         className={customOptionClass}
         data-disabled={disabled}
         onMouseEnter={onUpdateActiveOption}
+        role={menu ? 'menuitem' : 'option'}
+        aria-selected={!menu ? selected : undefined}
+        aria-disabled={disabled || undefined}
         {...(!checkboxes && { onClick })}
       >
         {props.optionRenderer({
@@ -204,6 +206,7 @@ const Option = (props: OptionProps) => {
 
   return component({
     selected,
+    menu,
     index,
     renderSubInfo,
     optionData,

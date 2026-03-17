@@ -218,7 +218,6 @@ exports[`Menu component with Nesting snapshot
                     <i
                       class="material-symbols material-symbols-rounded Icon"
                       data-test="DesignSystem-Icon"
-                      role="button"
                       style="font-size: 16px; width: 16px;"
                     >
                       chevron_right
@@ -265,7 +264,6 @@ exports[`Menu component with Trigger snapshot
             <i
               class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Button--Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               more_horiz
@@ -309,7 +307,6 @@ exports[`Menu component with Trigger snapshot
             <i
               class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Button--Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               more_horiz

@@ -7,6 +7,10 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  text-decoration: none;
   height: var(--spacing-80);
   padding-right: var(--spacing-30);
   padding-left: var(--spacing-30);
@@ -25,8 +29,8 @@
 
 .HorizontalNav-menu--default:focus-visible,
 .HorizontalNav-menu--default:focus {
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
-  outline: none;
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 .HorizontalNav-menu--default:hover {
@@ -38,27 +42,35 @@
 }
 
 .HorizontalNav-menu--active {
-  background-color: var(--primary-lightest);
+  background-color: var(--primary-ultra-light);
+  box-shadow: 0 0 0 var(--border-width-05) var(--primary);
 }
 
 .HorizontalNav-menu--active:focus-visible,
 .HorizontalNav-menu--active:focus {
-  background-color: var(--primary-lightest);
-  box-shadow: var(--shadow-spread) var(--primary-shadow);
-  outline: none;
+  background-color: var(--primary-ultra-light);
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 .HorizontalNav-menu--active:hover {
-  background-color: var(--primary-lighter);
+  background-color: var(--primary-lightest);
 }
 
 .HorizontalNav-menu--active:active {
   background-color: var(--primary-lighter);
   color: var(--primary-darker);
+  box-shadow: 0 0 0 var(--border-width-05) var(--primary-dark);
 }
 
 .HorizontalNav-menu--active:active .HorizontalNav-menuText {
   color: var(--primary-darker);
+}
+
+.HorizontalNav-menu--active:focus-visible:active,
+.HorizontalNav-menu--active:focus:active {
+  background-color: var(--primary-lighter);
+  box-shadow: 0 0 0 var(--border-width-05) var(--primary-dark);
 }
 
 .HorizontalNav-menuText {

@@ -40,11 +40,24 @@ export interface OverlayHeaderProps extends BaseProps {
    * Specify css classes to be applied on heading
    */
   headingClass?: string;
+  /**
+   * Optional id to attach to heading for aria-labelledby.
+   */
+  headingId?: string;
 }
 
 export const OverlayHeader = (props: OverlayHeaderProps) => {
-  const { className, heading, subHeading, backButton, backIcon, backIconCallback, backButtonCallback, headingClass } =
-    props;
+  const {
+    className,
+    heading,
+    subHeading,
+    backButton,
+    backIcon,
+    backIconCallback,
+    backButtonCallback,
+    headingClass,
+    headingId,
+  } = props;
   const baseProps = extractBaseProps(props);
 
   const classes = classNames(
@@ -74,7 +87,7 @@ export const OverlayHeader = (props: OverlayHeaderProps) => {
           />
         )}
         {heading && (
-          <Heading className={headingClass} data-test="DesignSystem-OverlayHeader--heading">
+          <Heading id={headingId} className={headingClass} data-test="DesignSystem-OverlayHeader--heading">
             {heading}
           </Heading>
         )}

@@ -54,8 +54,8 @@
 }
 
 .Chip--action:focus-visible {
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
-  outline: none;
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 .Chip--action:active {
@@ -82,8 +82,8 @@
 }
 
 .Chip--selection:focus-visible {
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
-  outline: none;
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 .Chip--selection:active {
@@ -99,18 +99,18 @@
 }
 
 .Chip-selection--selected {
-  background: color-mod(var(--primary-lightest) a(var(--opacity-12)));
-  border-color: var(--primary-lighter);
+  background: var(--primary-ultra-light);
+  border-color: var(--primary);
 }
 
 .Chip-selection--selected:hover {
-  background: color-mod(var(--primary-lighter) a(var(--opacity-12)));
-  border-color: var(--primary-light);
+  background: var(--primary-lightest);
+  border-color: var(--primary);
 }
 
 .Chip-selection--selected:focus-visible {
-  box-shadow: var(--shadow-spread) var(--primary-shadow);
-  outline: none;
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 .Chip-selection--selected:active {
@@ -132,7 +132,7 @@
 }
 
 .Chip-selection--selectedDisabled {
-  background: color-mod(var(--primary-lightest) a(var(--opacity-12)));
+  background: var(--primary-ultra-light);
   border-color: var(--primary-lighter);
 }
 
@@ -148,8 +148,8 @@
 
 .Chip--input:focus-visible,
 .Chip--input:focus {
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
-  outline: none;
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 .Chip--input:active {

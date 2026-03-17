@@ -1,8 +1,10 @@
 import * as React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, act } from '@testing-library/react';
 import { ModalProps as Props } from '@/index.type';
 import { ModalHeader, Modal, ModalBody, ModalFooter, Button, Text } from '@/index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
+
+const flushRAF = () => act(() => new Promise<void>((resolve) => requestAnimationFrame(() => resolve())));
 
 const FunctionValue = jest.fn();
 const onClose = jest.fn();
@@ -112,6 +114,11 @@ describe('Modal component', () => {
 });
 
 describe('Modal component with props', () => {
+  it('applies aria-labelledby on dialog container', () => {
+    const { getByTestId } = render(<Modal open={true} aria-labelledby="modal-title" />);
+    expect(getByTestId('DesignSystem-Modal')).toHaveAttribute('aria-labelledby', 'modal-title');
+  });
+
   it('renders children', () => {
     const { getByTestId } = render(
       <Modal backdropClose={FunctionValue} open={true}>
@@ -331,5 +338,326 @@ describe('Modal Component with overwrite class', () => {
     const { getByTestId } = render(<Modal backdropClose={FunctionValue} open={true} className={className} />);
 
     expect(getByTestId('DesignSystem-Modal')).toHaveClass(className);
+  });
+});
+
+describe('Modal focus trap', () => {
+  beforeEach(() => {
+    jest.useFakeTimers();
+  });
+
+  afterEach(() => {
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
+  });
+
+  it('focuses first focusable element when modal opens', async () => {
+    jest.useRealTimers();
+    const { getByTestId } = render(
+      <Modal
+        open={true}
+        onClose={jest.fn()}
+        headerOptions={{ heading: 'Heading', subHeading: 'Subheading' }}
+        footer={
+          <>
+            <Button appearance="basic">Basic</Button>
+            <Button appearance="primary">Primary</Button>
+          </>
+        }
+      >
+        <Text>Body</Text>
+      </Modal>
+    );
+
+    await flushRAF();
+
+    const closeButton = getByTestId('DesignSystem-Modal--CloseButton');
+    expect(document.activeElement).toBe(closeButton);
+    jest.useFakeTimers();
+  });
+
+  it('focuses container when modal has no focusable elements (content-only)', async () => {
+    jest.useRealTimers();
+    const { getByTestId } = render(
+      <Modal open={true} onClose={jest.fn()}>
+        <Text>Content only, no buttons or inputs</Text>
+      </Modal>
+    );
+
+    await flushRAF();
+
+    const modalContainer = getByTestId('DesignSystem-Modal');
+    expect(document.activeElement).toBe(modalContainer);
+    expect(modalContainer).toHaveAttribute('tabindex', '-1');
+    jest.useFakeTimers();
+  });
+
+  it('prevents Tab from escaping content-only modal', async () => {
+    jest.useRealTimers();
+    const { getByTestId } = render(
+      <Modal open={true} onClose={jest.fn()}>
+        <Text>Content only</Text>
+      </Modal>
+    );
+
+    await flushRAF();
+
+    const modalContainer = getByTestId('DesignSystem-Modal');
+    expect(document.activeElement).toBe(modalContainer);
+
+    const tabEvent = new KeyboardEvent('keydown', { key: 'Tab', bubbles: true });
+    const preventDefaultSpy = jest.spyOn(tabEvent, 'preventDefault');
+    document.dispatchEvent(tabEvent);
+
+    expect(preventDefaultSpy).toHaveBeenCalled();
+    expect(document.activeElement).toBe(modalContainer);
+    jest.useFakeTimers();
+  });
+
+  it('prevents Shift+Tab from escaping content-only modal', async () => {
+    jest.useRealTimers();
+    const { getByTestId } = render(
+      <Modal open={true} onClose={jest.fn()}>
+        <Text>Content only</Text>
+      </Modal>
+    );
+
+    await flushRAF();
+
+    const modalContainer = getByTestId('DesignSystem-Modal');
+    const shiftTabEvent = new KeyboardEvent('keydown', { key: 'Tab', shiftKey: true, bubbles: true });
+    const preventDefaultSpy = jest.spyOn(shiftTabEvent, 'preventDefault');
+    document.dispatchEvent(shiftTabEvent);
+
+    expect(preventDefaultSpy).toHaveBeenCalled();
+    expect(document.activeElement).toBe(modalContainer);
+    jest.useFakeTimers();
+  });
+
+  it('Tab from last focusable wraps to first', async () => {
+    jest.useRealTimers();
+    const { getByTestId } = render(
+      <Modal
+        open={true}
+        onClose={jest.fn()}
+        headerOptions={{ heading: 'Heading' }}
+        footer={
+          <>
+            <Button appearance="basic">Basic</Button>
+            <Button appearance="primary" data-test="primary-btn">
+              Primary
+            </Button>
+          </>
+        }
+      >
+        <Text>Body</Text>
+      </Modal>
+    );
+
+    await flushRAF();
+
+    const primaryButton = getByTestId('primary-btn');
+    primaryButton.focus();
+    expect(document.activeElement).toBe(primaryButton);
+
+    fireEvent.keyDown(document, { key: 'Tab' });
+
+    const closeButton = getByTestId('DesignSystem-Modal--CloseButton');
+    expect(document.activeElement).toBe(closeButton);
+    jest.useFakeTimers();
+  });
+
+  it('Shift+Tab from first focusable wraps to last', async () => {
+    jest.useRealTimers();
+    const { getByTestId } = render(
+      <Modal
+        open={true}
+        onClose={jest.fn()}
+        headerOptions={{ heading: 'Heading' }}
+        footer={
+          <>
+            <Button appearance="basic">Basic</Button>
+            <Button appearance="primary" data-test="primary-btn">
+              Primary
+            </Button>
+          </>
+        }
+      >
+        <Text>Body</Text>
+      </Modal>
+    );
+
+    await flushRAF();
+
+    const closeButton = getByTestId('DesignSystem-Modal--CloseButton');
+    expect(document.activeElement).toBe(closeButton);
+
+    fireEvent.keyDown(document, { key: 'Tab', shiftKey: true });
+
+    const primaryButton = getByTestId('primary-btn');
+    expect(document.activeElement).toBe(primaryButton);
+    jest.useFakeTimers();
+  });
+
+  it('restores focus to trigger when modal closes via Escape', async () => {
+    jest.useRealTimers();
+    const TestComponent = () => {
+      const [open, setOpen] = React.useState(false);
+      return (
+        <>
+          <Button data-test="trigger" onClick={() => setOpen(true)}>
+            Open
+          </Button>
+          <Modal open={open} onClose={() => setOpen(false)} closeOnEscape={true} backdropClose={true}>
+            <Text>Content</Text>
+          </Modal>
+        </>
+      );
+    };
+
+    const { getByTestId } = render(<TestComponent />);
+
+    const trigger = getByTestId('trigger');
+    await act(async () => {
+      trigger.focus();
+      fireEvent.click(trigger);
+    });
+    await flushRAF();
+
+    const modalContainer = getByTestId('DesignSystem-Modal');
+    await act(async () => {
+      fireEvent.keyDown(modalContainer, { key: 'Escape' });
+    });
+    await flushRAF();
+
+    await act(async () => {
+      await new Promise((r) => setTimeout(r, 150));
+    });
+    await flushRAF();
+
+    expect(document.activeElement).toBe(trigger);
+    jest.useFakeTimers();
+  });
+
+  it('restores focus to trigger when modal closes via close button', async () => {
+    jest.useRealTimers();
+    const TestComponent = () => {
+      const [open, setOpen] = React.useState(false);
+      return (
+        <>
+          <Button data-test="trigger" onClick={() => setOpen(true)}>
+            Open
+          </Button>
+          <Modal
+            open={open}
+            onClose={() => setOpen(false)}
+            headerOptions={{ heading: 'Heading' }}
+            footer={<Button appearance="primary">Primary</Button>}
+          >
+            <Text>Content</Text>
+          </Modal>
+        </>
+      );
+    };
+
+    const { getByTestId } = render(<TestComponent />);
+
+    const trigger = getByTestId('trigger');
+    await act(async () => {
+      trigger.focus();
+      fireEvent.click(trigger);
+    });
+    await flushRAF();
+
+    const closeButton = getByTestId('DesignSystem-Modal--CloseButton');
+    await act(async () => {
+      fireEvent.click(closeButton);
+    });
+    await flushRAF();
+
+    await act(async () => {
+      await new Promise((r) => setTimeout(r, 150));
+    });
+    await flushRAF();
+
+    expect(document.activeElement).toBe(trigger);
+    jest.useFakeTimers();
+  });
+
+  it('focus trap works without closeOnEscape or backdropClose', async () => {
+    jest.useRealTimers();
+    const { getByTestId } = render(
+      <Modal
+        open={true}
+        onClose={jest.fn()}
+        closeOnEscape={false}
+        headerOptions={{ heading: 'Heading' }}
+        footer={
+          <>
+            <Button appearance="basic" data-test="basic-btn">
+              Basic
+            </Button>
+            <Button appearance="primary" data-test="primary-btn">
+              Primary
+            </Button>
+          </>
+        }
+      >
+        <Text>Body</Text>
+      </Modal>
+    );
+
+    await flushRAF();
+
+    const primaryButton = getByTestId('primary-btn');
+    primaryButton.focus();
+    fireEvent.keyDown(document, { key: 'Tab' });
+
+    const closeButton = getByTestId('DesignSystem-Modal--CloseButton');
+    expect(document.activeElement).toBe(closeButton);
+    jest.useFakeTimers();
+  });
+
+  it('Escape closes modal even when closeOnEscape={false} to prevent keyboard trap (WCAG 2.2.1)', async () => {
+    jest.useRealTimers();
+    const onClose = jest.fn();
+    const { getByTestId } = render(
+      <Modal open={true} onClose={onClose} closeOnEscape={false} headerOptions={{ heading: 'Heading' }}>
+        <Text>Body</Text>
+      </Modal>
+    );
+
+    await flushRAF();
+
+    const modalContainer = getByTestId('DesignSystem-Modal');
+    fireEvent.keyDown(modalContainer, { key: 'Escape' });
+
+    expect(onClose).toHaveBeenCalled();
+    jest.useFakeTimers();
+  });
+
+  it('focuses first focusable in DOM order (header, body, footer)', async () => {
+    jest.useRealTimers();
+    const { getByTestId } = render(
+      <Modal
+        open={true}
+        onClose={jest.fn()}
+        headerOptions={{ heading: 'Heading' }}
+        footer={
+          <>
+            <Button appearance="basic">Basic</Button>
+            <Button appearance="primary">Primary</Button>
+          </>
+        }
+      >
+        <Text>Body</Text>
+      </Modal>
+    );
+
+    await flushRAF();
+
+    const closeButton = getByTestId('DesignSystem-Modal--CloseButton');
+    expect(document.activeElement).toBe(closeButton);
+    jest.useFakeTimers();
   });
 });

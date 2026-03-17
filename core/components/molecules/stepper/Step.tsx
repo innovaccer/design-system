@@ -39,7 +39,8 @@ export const Step = (props: StepProps) => {
   };
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
       onClickHandle();
     }
   };
@@ -47,14 +48,14 @@ export const Step = (props: StepProps) => {
   const textColor = active ? 'primary-dark' : disabled ? 'inverse-lightest' : 'inverse';
 
   return (
-    // TODO(a11y)
-    // eslint-disable-next-line
     <div
       data-test="DesignSystem-Step"
       className={StepClass}
       onKeyDown={(e) => onKeyDownHandler(e)}
       onClick={onClickHandle}
       tabIndex={disabled ? -1 : 0}
+      role="button"
+      aria-disabled={disabled || undefined}
     >
       <Icon
         data-test="DesignSystem-Step--Icon"

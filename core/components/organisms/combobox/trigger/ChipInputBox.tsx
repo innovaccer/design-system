@@ -61,7 +61,8 @@ export const ChipInputBox = (props: MultiSelectTriggerProps) => {
       role="combobox"
       aria-haspopup="listbox"
       aria-controls={popoverId}
-      aria-label={props.placeholder || 'Combobox-ChipInput-Trigger'}
+      aria-label={props['aria-label'] || props.placeholder || 'Combobox-ChipInput-Trigger'}
+      aria-labelledby={props['aria-labelledby']}
       aria-expanded={openPopover}
       data-test="DesignSystem-Combobox-ChipInput"
     />

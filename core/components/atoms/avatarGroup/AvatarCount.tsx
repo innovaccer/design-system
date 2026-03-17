@@ -28,6 +28,7 @@ const AvatarCount = (props: any) => {
       style={avatarStyle}
       tabIndex={0}
       role="button"
+      aria-haspopup="listbox"
     >
       <span data-test="DesignSystem-AvatarGroup--TriggerAvatarVariants" className={AvatarVariantsClass}>
         <Text className={ContentClass}>{`+${hiddenAvatarCount}`}</Text>

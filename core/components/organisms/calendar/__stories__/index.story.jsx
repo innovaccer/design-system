@@ -89,6 +89,7 @@ export const all = () => {
 
   return (
     <Calendar
+      aria-label="Appointment calendar"
       monthsInView={monthsInView}
       rangePicker={rangePicker}
       jumpView={jumpView}

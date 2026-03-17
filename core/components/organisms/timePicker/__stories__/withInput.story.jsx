@@ -20,6 +20,7 @@ export const withInput = () => {
         inputFormat={inputFormat}
         outputFormat={outputFormat}
         onTimeChange={onTimeChange}
+        aria-label="Appointment time input"
       />
     </div>
   );
@@ -36,6 +37,7 @@ const customCode = `() => {
         inputFormat={'hh:mm AM'}
         outputFormat={'hh:mm AM'}
         onTimeChange={onTimeChange}
+        aria-label="Appointment time input"
       />
     </div>
   );

@@ -75,11 +75,12 @@ exports[`ChatBubble component snapshot
                 <span
                   class=""
                   data-test="DesignSystem-AvatarWrapper"
-                  role="presentation"
                 >
                   <span
+                    aria-label="Avatar of John Doe"
                     class="Avatar Avatar--regular Avatar--accent1 Avatar--noInitials Avatar--default mr-4"
                     data-test="DesignSystem-IncomingChatBubble-Avatar"
+                    role="presentation"
                     tabindex="0"
                   >
                     <span
@@ -176,11 +177,12 @@ exports[`ChatBubble component snapshot
               <span
                 class=""
                 data-test="DesignSystem-AvatarWrapper"
-                role="presentation"
               >
                 <span
+                  aria-label="Avatar of John Doe"
                   class="Avatar Avatar--regular Avatar--accent1 Avatar--noInitials Avatar--default mr-4"
                   data-test="DesignSystem-IncomingChatBubble-Avatar"
+                  role="presentation"
                   tabindex="0"
                 >
                   <span
@@ -341,7 +343,6 @@ exports[`ChatBubble component snapshot
             aria-label="Message sent successfully"
             class="material-symbols material-symbols-rounded Icon Icon--success ml-3"
             data-test="DesignSystem-OutgoingChatBubble-Status"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             check_circle
@@ -424,7 +425,6 @@ exports[`ChatBubble component snapshot
           aria-label="Message sent successfully"
           class="material-symbols material-symbols-rounded Icon Icon--success ml-3"
           data-test="DesignSystem-OutgoingChatBubble-Status"
-          role="button"
           style="font-size: 16px; width: 16px;"
         >
           check_circle
