@@ -29,8 +29,9 @@
 
 .HorizontalNav-menu--default:focus-visible,
 .HorizontalNav-menu--default:focus {
-  outline: var(--border-width-05) solid var(--primary-focus);
-  outline-offset: var(--spacing-05);
+  outline: none;
+  /* 2px transparent gap + 2px focus ring so offset is visible on any background */
+  box-shadow: 0 0 0 2px transparent, 0 0 0 4px var(--primary-focus);
 }
 
 .HorizontalNav-menu--default:hover {
@@ -49,8 +50,10 @@
 .HorizontalNav-menu--active:focus-visible,
 .HorizontalNav-menu--active:focus {
   background-color: var(--primary-ultra-light);
-  outline: var(--border-width-05) solid var(--primary-focus);
-  outline-offset: var(--spacing-05);
+  outline: none;
+  box-shadow: 0 0 0 var(--border-width-05) var(--primary),
+    0 0 0 calc(var(--border-width-05) + 2px) var(--primary-ultra-light),
+    0 0 0 calc(var(--border-width-05) + 4px) var(--primary-focus);
 }
 
 .HorizontalNav-menu--active:hover {
@@ -70,7 +73,9 @@
 .HorizontalNav-menu--active:focus-visible:active,
 .HorizontalNav-menu--active:focus:active {
   background-color: var(--primary-lighter);
-  box-shadow: 0 0 0 var(--border-width-05) var(--primary-dark);
+  box-shadow: 0 0 0 var(--border-width-05) var(--primary-dark),
+    0 0 0 calc(var(--border-width-05) + 2px) var(--primary-ultra-light),
+    0 0 0 calc(var(--border-width-05) + 4px) var(--primary-focus);
 }
 
 .HorizontalNav-menuText {
