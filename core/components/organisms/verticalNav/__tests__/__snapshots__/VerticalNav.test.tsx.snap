@@ -30,7 +30,6 @@ exports[`Vertical Navigation component
             <i
               class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-VerticalNav--Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assignment_ind
@@ -57,7 +56,6 @@ exports[`Vertical Navigation component
             <i
               class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-VerticalNav--Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               forum
@@ -82,7 +80,6 @@ exports[`Vertical Navigation component
             <i
               class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-VerticalNav--Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assignment_ind
@@ -107,7 +104,6 @@ exports[`Vertical Navigation component
             <i
               class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-VerticalNav--Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               events
@@ -134,7 +130,6 @@ exports[`Vertical Navigation component
             <i
               class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-VerticalNav--Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               airline_seat_flat_angled
@@ -161,7 +156,6 @@ exports[`Vertical Navigation component
             <i
               class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-VerticalNav--Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               favorite
@@ -210,7 +204,6 @@ exports[`Vertical Navigation component
           <i
             class="material-symbols material-symbols-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assignment_ind
@@ -254,7 +247,6 @@ exports[`Vertical Navigation component
           <i
             class="material-symbols material-symbols-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             forum
@@ -269,7 +261,6 @@ exports[`Vertical Navigation component
         <i
           class="material-symbols material-symbols-rounded Icon mx-4"
           data-test="DesignSystem-Icon"
-          role="button"
           style="font-size: 16px; width: 16px;"
         >
           keyboard_arrow_up
@@ -288,7 +279,6 @@ exports[`Vertical Navigation component
           <i
             class="material-symbols material-symbols-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assignment_ind
@@ -314,7 +304,6 @@ exports[`Vertical Navigation component
           <i
             class="material-symbols material-symbols-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             events
@@ -342,7 +331,6 @@ exports[`Vertical Navigation component
           <i
             class="material-symbols material-symbols-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             airline_seat_flat_angled
@@ -376,7 +364,6 @@ exports[`Vertical Navigation component
           <i
             class="material-symbols material-symbols-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             favorite
@@ -391,7 +378,6 @@ exports[`Vertical Navigation component
         <i
           class="material-symbols material-symbols-rounded Icon mx-4"
           data-test="DesignSystem-Icon"
-          role="button"
           style="font-size: 16px; width: 16px;"
         >
           keyboard_arrow_down
