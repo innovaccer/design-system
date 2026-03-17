@@ -112,16 +112,17 @@ const customCode = `
             <form onSubmit={this.onSubmit}>
               <Label withInput={true}>Password</Label>
               <Input
-                name="input"
+                name="password"
                 className="mb-4"
                 placeholder="Enter password"
                 type={this.state.passwordVisible ? 'text' : 'password'}
                 value={this.state.password}
                 onChange={this.onPasswordChange}
-                autocomplete="off"
+                autocomplete="new-password"
                 actionIcon={(
                   <Icon
                     name={this.state.passwordVisible ? 'visibility' : 'visibility_off'}
+                    aria-label={this.state.passwordVisible ? 'Hide password' : 'Show password'}
                     onClick={() => this.setState({ passwordVisible: !passwordVisible })}
                   />
                 )}
@@ -129,15 +130,16 @@ const customCode = `
               {this.renderRequirements()}
               <Label withInput={true} className="mt-6">Confirm Password</Label>
               <Input
-                name="input"
-                placeholder="Enter password"
+                name="confirmPassword"
+                placeholder="Re-enter password"
                 type={this.state.confirmPasswordVisible ? 'text' : 'password'}
                 value={this.state.confirmPassword}
                 onChange={this.onConfirmPasswordChange}
-                autocomplete="off"
+                autocomplete="new-password"
                 actionIcon={(
                   <Icon
                     name={this.state.confirmPasswordVisible ? 'visibility' : 'visibility_off'}
+                    aria-label={this.state.confirmPasswordVisible ? 'Hide confirm password' : 'Show confirm password'}
                     onClick={() => this.setState({ confirmPasswordVisible: !confirmPasswordVisible })}
                   />
                 )}

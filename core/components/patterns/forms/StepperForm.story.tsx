@@ -109,10 +109,11 @@ const customCode = `
                   The system automatically creates collection for multiple support.
                 </Text>
                 <div className="w-50 mt-4">
+                  <Label withInput={true}>Input Collection 1</Label>
                   <Select 
                     width="100%"
                     className="mb-4"
-                    triggerOptions={{ placeholder: "Input Collection 1" }}
+                    triggerOptions={{ placeholder: "Input Collection 1", 'aria-label': "Input Collection 1" }}
                     onSelect={(option) => this.onChangeOutput(option.value, 'collection1')}
                   >
                     <Select.List>
@@ -125,9 +126,10 @@ const customCode = `
                       })}
                     </Select.List>
                   </Select>
+                  <Label withInput={true}>Input Collection 2</Label>
                   <Select 
                     width="100%"
-                    triggerOptions={{ placeholder: "Input Collection 2" }}
+                    triggerOptions={{ placeholder: "Input Collection 2", 'aria-label': "Input Collection 2" }}
                     onSelect={(option) => this.onChangeOutput(option.value, 'collection2')}
                   >
                     <Select.List>
@@ -152,7 +154,7 @@ const customCode = `
                   <Label withInput={true}>Destination Collection</Label>
                   <Select 
                     width="100%" 
-                    triggerOptions={{ placeholder: "Select Destination" }}
+                    triggerOptions={{ placeholder: "Select Destination", 'aria-label': "Destination Collection" }}
                     onSelect={(option) => this.onChangeOutput(option.value, 'collection')}
                   >
                     <Select.List>
@@ -171,7 +173,7 @@ const customCode = `
                   <InputMask
                     mask={[/\\d/, '_', /\\d/, '_', /\\d/]}
                     name="prefix"
-                    placeholder="<workspace_id>_<workflow_id>_<pipeline_id>"
+                    placeholder="ID_ID_ID"
                     placeholderChar="-"
                     onChange={(e) => this.onChangeOutput(e.target.value, e.target.name)}
                   />
@@ -180,6 +182,7 @@ const customCode = `
                   <Label withInput={true} required>Retention</Label>
                   <Select 
                     width="100%"
+                    triggerOptions={{ 'aria-label': "Retention" }}
                     onSelect={(option) => this.onChangeOutput(option.value, 'retention')}
                   >
                     <Select.List>
@@ -194,7 +197,8 @@ const customCode = `
                   </Select>
                   <Label className="mt-6" withInput={true}>Visibility Clarification</Label>
                   <Select
-                    width="100%" 
+                    width="100%"
+                    triggerOptions={{ 'aria-label': "Visibility Clarification" }}
                     onSelect={(option) => this.onChangeOutput(option.value, 'clarification')}
                   >
                     <Select.List>
@@ -222,6 +226,7 @@ const customCode = `
                 <div className="w-25 mt-6">
                   <Label withInput={true} required>Mode</Label>
                   <Select
+                    triggerOptions={{ 'aria-label': "Mode" }}
                     onSelect={(option) => {
                       this.setState({
                         configuration: { ...this.state.configuration, mode: option.value }
