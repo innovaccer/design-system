@@ -737,6 +737,30 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     const noOfRows = Math.ceil(yearBlockRange / yearsInRow);
 
+    const calculatedIndex = this.state.year !== undefined ? this.state.year - yearBlockNav : 0;
+    const defaultIndex = calculatedIndex >= 0 && calculatedIndex <= 11 ? calculatedIndex : 0;
+
+    let targetIndex = this.state.focusedYearIndex ?? defaultIndex;
+    if (targetIndex < 0 || targetIndex > 11) {
+      targetIndex = defaultIndex;
+    }
+
+    const targetYear = yearBlockNav + targetIndex;
+    const isTargetDisabled =
+      compareDate(disabledBefore, 'more', targetYear) || compareDate(disabledAfter, 'less', targetYear);
+
+    if (isTargetDisabled) {
+      for (let i = 0; i < 12; i++) {
+        const y = yearBlockNav + i;
+        if (!(compareDate(disabledBefore, 'more', y) || compareDate(disabledAfter, 'less', y))) {
+          targetIndex = i;
+          break;
+        }
+      }
+    }
+
+    const effectiveFocusedYearIndex = targetIndex;
+
     return Array.from({ length: noOfRows }, (_y, row) => (
       <div key={row} className={styles['Calendar-valueRow']}>
         {Array.from({ length: yearsInRow }, (_x, col) => {
@@ -775,9 +799,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           const getTextAppearance = (): 'default' | 'disabled' =>
             disabled ? 'disabled' : 'default';
 
-          const calculatedIndex = this.state.year !== undefined ? this.state.year - yearBlockNav : 0;
-          const fallbackIndex = calculatedIndex >= 0 && calculatedIndex <= 11 ? calculatedIndex : 0;
-          const isFocused = (this.state.focusedYearIndex ?? fallbackIndex) === offset;
+          const isFocused = effectiveFocusedYearIndex === offset;
 
           return (
             <button
@@ -821,6 +843,30 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     const noOfRows = Math.ceil(monthBlock / monthsInRow);
 
+    const defaultMonth = this.state.month ?? 0;
+    let targetMonth = this.state.focusedMonth ?? defaultMonth;
+
+    if (targetMonth < 0 || targetMonth > 11) {
+      targetMonth = defaultMonth;
+    }
+
+    const isTargetDisabled =
+      compareDate(disabledBefore, 'more', yearNav, targetMonth) ||
+      compareDate(disabledAfter, 'less', yearNav, targetMonth);
+
+    if (isTargetDisabled) {
+      for (let m = 0; m < monthBlock; m++) {
+        if (
+          !(compareDate(disabledBefore, 'more', yearNav, m) || compareDate(disabledAfter, 'less', yearNav, m))
+        ) {
+          targetMonth = m;
+          break;
+        }
+      }
+    }
+
+    const effectiveFocusedMonth = targetMonth;
+
     return Array.from({ length: noOfRows }, (_y, row) => (
       <div key={row} className={styles['Calendar-valueRow']}>
         {Array.from({ length: monthsInRow }, (_x, col) => {
@@ -856,7 +902,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             [styles['Calendar-text']]: true,
           });
 
-          const isFocused = (this.state.focusedMonth ?? this.state.month ?? 0) === month;
+          const isFocused = effectiveFocusedMonth === month;
 
           return (
             <button
@@ -912,7 +958,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const container = this.calendarWrapperRef.current;
     if (!container) return;
 
-    const focusedMonth = this.state.focusedMonth ?? this.state.month ?? 0;
+    const focusedMonth = _month;
 
     const handled = handleMonthViewKeyDown({
       event,
@@ -946,7 +992,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     if (!container) return;
 
     const { yearBlockNav } = this.state;
-    const focusedYearIndex = this.state.focusedYearIndex ?? (this.state.year ? this.state.year - yearBlockNav : 0);
+    const focusedYearIndex = _offset;
 
     const handled = handleYearViewKeyDown({
       event,
@@ -988,14 +1034,11 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const container = this.calendarWrapperRef.current;
     if (!container) return;
 
-    const effectiveRow = this.state.focusedDateRow ?? row;
-    const effectiveCol = this.state.focusedDateCol ?? col;
-
     const handled = handleDateViewKeyDown({
       event: ev,
       container,
-      focusedRow: effectiveRow,
-      focusedCol: effectiveCol,
+      focusedRow: row,
+      focusedCol: col,
       totalRows: noOfRows,
       monthIndex: index,
       onNavigate: (r, c) => {
@@ -1164,6 +1207,74 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       if (onDateHover) onDateHover(dateData, ev);
     };
 
+    const selectedPos =
+      yearState === yearNavVal && monthState === monthNavVal && dateState
+        ? this.getDateGridPosition(yearNavVal, monthNavVal, dateState)
+        : null;
+    const effectiveRow = focusedDateRow ?? selectedPos?.row ?? 0;
+    const effectiveCol = focusedDateCol ?? selectedPos?.col ?? 0;
+    const effectiveMonthIndex = focusedDateMonthIndex ?? (selectedPos ? index : 0);
+
+    const maxValidRow = noOfRows - 1;
+    const clampedRow = Math.min(effectiveRow, maxValidRow);
+
+    let finalFocusRow = clampedRow;
+    let finalFocusCol = effectiveCol;
+
+    if (effectiveMonthIndex === index) {
+      const isValidFocus = (r: number, c: number) => {
+        const d = daysInRow * r + c - dummyDays + 1;
+        const isDummy = d <= 0 || d > dayRange;
+        let renders = !isDummy;
+        if (isDummy) {
+          if (monthsInView === 1) renders = true;
+          else if (index === 0) renders = d <= 0;
+          else if (index === monthsInView - 1) renders = d > dayRange;
+        }
+        if (!renders) return false;
+        const disabled =
+          compareDate(disabledBefore, 'more', yearNavVal, monthNavVal, d) ||
+          compareDate(disabledAfter, 'less', yearNavVal, monthNavVal, d);
+        return !disabled;
+      };
+
+      if (!isValidFocus(clampedRow, effectiveCol)) {
+        let found = false;
+        if (yearState === yearNavVal && monthState === monthNavVal && dateState) {
+          const pos = this.getDateGridPosition(yearNavVal, monthNavVal, dateState);
+          if (pos && isValidFocus(pos.row, pos.col)) {
+            finalFocusRow = pos.row;
+            finalFocusCol = pos.col;
+            found = true;
+          }
+        }
+        if (!found) {
+          for (let d = 1; d <= dayRange; d++) {
+            const pos = this.getDateGridPosition(yearNavVal, monthNavVal, d);
+            if (pos && isValidFocus(pos.row, pos.col)) {
+              finalFocusRow = pos.row;
+              finalFocusCol = pos.col;
+              found = true;
+              break;
+            }
+          }
+        }
+        if (!found) {
+          for (let r = 0; r < noOfRows; r++) {
+            for (let c = 0; c < daysInRow; c++) {
+              if (isValidFocus(r, c)) {
+                finalFocusRow = r;
+                finalFocusCol = c;
+                found = true;
+                break;
+              }
+            }
+            if (found) break;
+          }
+        }
+      }
+    }
+
     return Array.from({ length: noOfRows }, (_y, row) => {
       return (
         <div key={row} className={styles['Calendar-valueRow']}>
@@ -1321,19 +1432,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               this.calculateDate(index, date, prevMonthDayRange, dayRange, true) ||
               this.getDateValue(yearNavVal, monthNavVal, displayDate) ||
               new Date();
-            const selectedPos =
-              yearState === yearNavVal && monthState === monthNavVal && dateState
-                ? this.getDateGridPosition(yearNavVal, monthNavVal, dateState)
-                : null;
-            const effectiveRow = focusedDateRow ?? selectedPos?.row ?? 0;
-            const effectiveCol = focusedDateCol ?? selectedPos?.col ?? 0;
-            const effectiveMonthIndex = focusedDateMonthIndex ?? (selectedPos ? index : 0);
-
-            // Clamp focused row to valid range for current month's grid
-            const maxValidRow = noOfRows - 1;
-            const clampedRow = Math.min(effectiveRow, maxValidRow);
-
-            const isFocused = effectiveMonthIndex === index && clampedRow === row && effectiveCol === colIndex;
+            const isFocused = effectiveMonthIndex === index && finalFocusRow === row && finalFocusCol === colIndex;
 
             const dateCellContent = (
               <>
