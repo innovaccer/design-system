@@ -11,9 +11,9 @@ exports[`Toast component
       role="alert"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--alert"
         data-test="DesignSystem-Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         error
@@ -58,9 +58,9 @@ exports[`Toast component
       role="status"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--info"
         data-test="DesignSystem-Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         info
@@ -105,9 +105,9 @@ exports[`Toast component
       role="status"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--success"
         data-test="DesignSystem-Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         check_circle
@@ -152,9 +152,9 @@ exports[`Toast component
       role="alert"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--warning"
         data-test="DesignSystem-Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         warning
@@ -199,9 +199,9 @@ exports[`Toast component
       role="alert"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--alert"
         data-test="DesignSystem-Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         error
@@ -252,9 +252,9 @@ exports[`Toast component
       role="alert"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--alert"
         data-test="DesignSystem-Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         error
@@ -319,9 +319,9 @@ exports[`Toast component
       role="status"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--info"
         data-test="DesignSystem-Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         info
@@ -372,9 +372,9 @@ exports[`Toast component
       role="status"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--info"
         data-test="DesignSystem-Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         info
@@ -439,9 +439,9 @@ exports[`Toast component
       role="status"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--success"
         data-test="DesignSystem-Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         check_circle
@@ -492,9 +492,9 @@ exports[`Toast component
       role="status"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--success"
         data-test="DesignSystem-Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         check_circle
@@ -559,9 +559,9 @@ exports[`Toast component
       role="alert"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--warning"
         data-test="DesignSystem-Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         warning
@@ -612,9 +612,9 @@ exports[`Toast component
       role="alert"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--warning"
         data-test="DesignSystem-Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         warning

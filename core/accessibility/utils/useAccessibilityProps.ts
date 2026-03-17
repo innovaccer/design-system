@@ -9,6 +9,9 @@ interface IProps {
   role?: AriaRoleType;
   tabIndex?: number;
   'aria-label'?: React.AriaAttributes['aria-label'];
+  'aria-labelledby'?: React.AriaAttributes['aria-labelledby'];
+  'aria-describedby'?: React.AriaAttributes['aria-describedby'];
+  'aria-hidden'?: React.AriaAttributes['aria-hidden'];
 }
 
 const allowed: Record<string, Set<KeyboardEventKeyType>> = {
@@ -30,11 +33,20 @@ const isKeyboardInteractionAllowed = (role: AriaRoleType, key: KeyboardEventKeyT
 };
 
 const useAccessibilityProps = ({ onClick, onKeyDown, role = 'button', tabIndex, ...rest }: IProps) => {
-  // Only add interactive props when onClick is provided. Adding role="button" or tabIndex
-  // to non-interactive elements (e.g. decorative icons inside buttons/links) creates
-  // invalid nesting and causes dual role announcement + extra tab stops (WCAG 4.1.2).
+  // Only add interactive props when onClick is provided.
   if (!onClick) {
-    return {};
+    const {
+      'aria-label': ariaLabel,
+      'aria-labelledby': ariaLabelledBy,
+      'aria-describedby': ariaDescribedBy,
+      'aria-hidden': ariaHidden,
+    } = rest;
+    return {
+      ...(ariaLabel != null && { 'aria-label': ariaLabel }),
+      ...(ariaLabelledBy != null && { 'aria-labelledby': ariaLabelledBy }),
+      ...(ariaDescribedBy != null && { 'aria-describedby': ariaDescribedBy }),
+      ...(ariaHidden != null && { 'aria-hidden': ariaHidden }),
+    };
   }
   return {
     onClick: onClick,

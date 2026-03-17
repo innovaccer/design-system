@@ -57,7 +57,14 @@ describe('useAccessibilityProps', () => {
     const element = container.firstChild as HTMLElement;
     expect(element).not.toHaveAttribute('role');
     expect(element).not.toHaveAttribute('tabindex');
-    expect(element).not.toHaveAttribute('aria-label');
+  });
+
+  test('preserves non-interactive ARIA props when onClick is not provided', () => {
+    const { container } = render(<TestComponent aria-label="Message sent" aria-labelledby="id" aria-hidden={true} />);
+    const element = container.firstChild as HTMLElement;
+    expect(element).toHaveAttribute('aria-label', 'Message sent');
+    expect(element).toHaveAttribute('aria-labelledby', 'id');
+    expect(element).toHaveAttribute('aria-hidden', 'true');
   });
 
   test('No trigger for callback on event of not allowed aria roles', () => {
