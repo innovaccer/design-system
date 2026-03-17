@@ -23,7 +23,6 @@ exports[`Pagination component
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             first_page
@@ -42,7 +41,6 @@ exports[`Pagination component
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             navigate_before
@@ -65,7 +63,6 @@ exports[`Pagination component
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             navigate_next
@@ -84,7 +81,6 @@ exports[`Pagination component
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             last_page
@@ -119,7 +115,6 @@ exports[`Pagination component
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             first_page
@@ -138,7 +133,6 @@ exports[`Pagination component
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             navigate_before
@@ -173,7 +167,6 @@ exports[`Pagination component
             <i
               class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 14px; width: 14px;"
             >
               keyboard_arrow_up
@@ -188,7 +181,6 @@ exports[`Pagination component
             <i
               class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 14px; width: 14px;"
             >
               keyboard_arrow_down
@@ -218,7 +210,6 @@ exports[`Pagination component
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             navigate_next
@@ -237,7 +228,6 @@ exports[`Pagination component
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             last_page
