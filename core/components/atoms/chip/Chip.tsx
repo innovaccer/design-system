@@ -76,7 +76,6 @@ export type ChipProps = {
   'aria-labelledby'?: string;
 } & BaseProps;
 
-
 export const Chip = (props: ChipProps) => {
   const {
     label,

@@ -393,7 +393,6 @@ exports[`Navigation component
         class="Navigation Navigation--vertical Navigation--collapsed"
       >
         <nav
-          aria-label="Vertical navigation"
           class="Navigation-body"
         >
           <div
@@ -452,7 +451,6 @@ exports[`Navigation component
       class="Navigation Navigation--vertical Navigation--collapsed"
     >
       <nav
-        aria-label="Vertical navigation"
         class="Navigation-body"
       >
         <div

@@ -4,7 +4,7 @@ import { ModalProps as Props } from '@/index.type';
 import { ModalHeader, Modal, ModalBody, ModalFooter, Button, Text } from '@/index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
-const flushRAF = () => act(() => new Promise((resolve) => requestAnimationFrame(() => resolve())));
+const flushRAF = () => act(() => new Promise<void>((resolve) => requestAnimationFrame(() => resolve())));
 
 const FunctionValue = jest.fn();
 const onClose = jest.fn();
@@ -352,6 +352,7 @@ describe('Modal focus trap', () => {
   });
 
   it('focuses first focusable element when modal opens', async () => {
+    jest.useRealTimers();
     const { getByTestId } = render(
       <Modal
         open={true}
@@ -372,9 +373,11 @@ describe('Modal focus trap', () => {
 
     const closeButton = getByTestId('DesignSystem-Modal--CloseButton');
     expect(document.activeElement).toBe(closeButton);
+    jest.useFakeTimers();
   });
 
   it('focuses container when modal has no focusable elements (content-only)', async () => {
+    jest.useRealTimers();
     const { getByTestId } = render(
       <Modal open={true} onClose={jest.fn()}>
         <Text>Content only, no buttons or inputs</Text>
@@ -386,9 +389,11 @@ describe('Modal focus trap', () => {
     const modalContainer = getByTestId('DesignSystem-Modal');
     expect(document.activeElement).toBe(modalContainer);
     expect(modalContainer).toHaveAttribute('tabindex', '-1');
+    jest.useFakeTimers();
   });
 
   it('prevents Tab from escaping content-only modal', async () => {
+    jest.useRealTimers();
     const { getByTestId } = render(
       <Modal open={true} onClose={jest.fn()}>
         <Text>Content only</Text>
@@ -406,9 +411,11 @@ describe('Modal focus trap', () => {
 
     expect(preventDefaultSpy).toHaveBeenCalled();
     expect(document.activeElement).toBe(modalContainer);
+    jest.useFakeTimers();
   });
 
   it('prevents Shift+Tab from escaping content-only modal', async () => {
+    jest.useRealTimers();
     const { getByTestId } = render(
       <Modal open={true} onClose={jest.fn()}>
         <Text>Content only</Text>
@@ -424,9 +431,11 @@ describe('Modal focus trap', () => {
 
     expect(preventDefaultSpy).toHaveBeenCalled();
     expect(document.activeElement).toBe(modalContainer);
+    jest.useFakeTimers();
   });
 
   it('Tab from last focusable wraps to first', async () => {
+    jest.useRealTimers();
     const { getByTestId } = render(
       <Modal
         open={true}
@@ -455,9 +464,11 @@ describe('Modal focus trap', () => {
 
     const closeButton = getByTestId('DesignSystem-Modal--CloseButton');
     expect(document.activeElement).toBe(closeButton);
+    jest.useFakeTimers();
   });
 
   it('Shift+Tab from first focusable wraps to last', async () => {
+    jest.useRealTimers();
     const { getByTestId } = render(
       <Modal
         open={true}
@@ -485,6 +496,7 @@ describe('Modal focus trap', () => {
 
     const primaryButton = getByTestId('primary-btn');
     expect(document.activeElement).toBe(primaryButton);
+    jest.useFakeTimers();
   });
 
   it('restores focus to trigger when modal closes via Escape', async () => {
@@ -573,6 +585,7 @@ describe('Modal focus trap', () => {
   });
 
   it('focus trap works without closeOnEscape or backdropClose', async () => {
+    jest.useRealTimers();
     const { getByTestId } = render(
       <Modal
         open={true}
@@ -602,9 +615,11 @@ describe('Modal focus trap', () => {
 
     const closeButton = getByTestId('DesignSystem-Modal--CloseButton');
     expect(document.activeElement).toBe(closeButton);
+    jest.useFakeTimers();
   });
 
   it('Escape closes modal even when closeOnEscape={false} to prevent keyboard trap (WCAG 2.2.1)', async () => {
+    jest.useRealTimers();
     const onClose = jest.fn();
     const { getByTestId } = render(
       <Modal open={true} onClose={onClose} closeOnEscape={false} headerOptions={{ heading: 'Heading' }}>
@@ -618,9 +633,11 @@ describe('Modal focus trap', () => {
     fireEvent.keyDown(modalContainer, { key: 'Escape' });
 
     expect(onClose).toHaveBeenCalled();
+    jest.useFakeTimers();
   });
 
   it('focuses first focusable in DOM order (header, body, footer)', async () => {
+    jest.useRealTimers();
     const { getByTestId } = render(
       <Modal
         open={true}
@@ -641,5 +658,6 @@ describe('Modal focus trap', () => {
 
     const closeButton = getByTestId('DesignSystem-Modal--CloseButton');
     expect(document.activeElement).toBe(closeButton);
+    jest.useFakeTimers();
   });
 });

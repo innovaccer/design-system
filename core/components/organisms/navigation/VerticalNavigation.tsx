@@ -77,9 +77,18 @@ export interface VerticalNavigationProps {
   'aria-label'?: string;
 }
 
-
 export const VerticalNavigation = (props: VerticalNavigationProps) => {
-  const { menus, active, onClick, expanded = true, rounded = false, onToggle, footer, autoCollapse = true, 'aria-label': ariaLabel } = props;
+  const {
+    menus,
+    active,
+    onClick,
+    expanded = true,
+    rounded = false,
+    onToggle,
+    footer,
+    autoCollapse = true,
+    'aria-label': ariaLabel,
+  } = props;
 
   const [menuState, setMenuState] = useState<Record<string, boolean>>({});
 

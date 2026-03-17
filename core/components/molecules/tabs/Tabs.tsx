@@ -376,9 +376,9 @@ export const Tabs = (props: TabsProps) => {
         {inlineComponent}
       </div>
       {children && (
-        <div 
-          className={tabContentClass} 
-          data-test="DesignSystem-Tabs--Content" 
+        <div
+          className={tabContentClass}
+          data-test="DesignSystem-Tabs--Content"
           role="tabpanel"
           id={panelId}
           aria-labelledby={`${tabsInstanceIdRef.current}-tab-${activeIndex}`}

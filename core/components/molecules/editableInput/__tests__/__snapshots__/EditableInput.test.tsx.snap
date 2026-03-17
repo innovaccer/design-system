@@ -35,6 +35,7 @@ exports[`EditableInput component
   <div
     class="EditableInput"
     data-test="DesignSystem-EditableInput"
+    role="presentation"
   >
     <div
       class="Editable"
@@ -42,6 +43,8 @@ exports[`EditableInput component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
+        role="button"
+        tabindex="0"
       >
         <div
           class="EditableInput-default EditableInput-default--regular"
@@ -88,6 +91,7 @@ exports[`EditableInput component
   <div
     class="EditableInput"
     data-test="DesignSystem-EditableInput"
+    role="presentation"
   >
     <div
       class="Editable"
@@ -95,6 +99,8 @@ exports[`EditableInput component
     >
       <div
         data-test="DesignSystem-EditableWrapper"
+        role="button"
+        tabindex="0"
       >
         <div
           class="EditableInput-default EditableInput-default--tiny"

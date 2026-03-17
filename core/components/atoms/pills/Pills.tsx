@@ -19,8 +19,8 @@ export type PillsProps = {
    */
   children?: string | number;
   /**
- * Aria label for the `Pills`
- */
+   * Aria label for the `Pills`
+   */
   'aria-label'?: string;
 } & BaseProps;
 

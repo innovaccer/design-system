@@ -13,7 +13,7 @@ exports[`TS renders children 1`] = `
         aria-label="Avatar"
         class="Avatar Avatar--regular Avatar--secondary Avatar--noInitials Avatar--default"
         data-test="DesignSystem-Avatar"
-        role="img"
+        role="presentation"
         tabindex="0"
       >
         <i
@@ -785,17 +785,21 @@ exports[`TS renders children 1`] = `
           <div
             class="DropdownButton-wrapper"
           >
-            Select
-          </span>
-        </div>
-        <i
-          class="material-symbols material-symbols-rounded Icon Icon--default"
-          data-test="DesignSystem-Icon"
-          style="font-size: 16px; width: 16px;"
-        >
-          keyboard_arrow_down
-        </i>
-      </button>
+            <span
+              class="Text Text--regular DropdownButton-text"
+            >
+              Select
+            </span>
+          </div>
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down
+          </i>
+        </button>
+      </div>
     </div>
   </div>
   <div
@@ -825,22 +829,12 @@ exports[`TS renders children 1`] = `
               class="w-100"
               data-state="closed"
             >
-<<<<<<< HEAD
               <button
                 class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
                 data-test="DesignSystem-DropdownTrigger"
                 tabindex="0"
                 type="button"
                 value=""
-=======
-              <div
-                class="DropdownButton-wrapper"
-              />
-              <i
-                class="material-symbols material-symbols-rounded Icon Icon--default"
-                data-test="DesignSystem-Icon"
-                style="font-size: 16px; width: 16px;"
->>>>>>> feat-ally
               >
                 <div
                   class="DropdownButton-wrapper"
@@ -848,7 +842,6 @@ exports[`TS renders children 1`] = `
                 <i
                   class="material-symbols material-symbols-rounded Icon Icon--default"
                   data-test="DesignSystem-Icon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
                 >
                   keyboard_arrow_down

@@ -98,6 +98,7 @@ exports[`textfield component
         </label>
       </div>
       <textarea
+        aria-invalid="false"
         class="Textarea Textarea--resize"
         data-test="DesignSystem-Textarea"
         helptext="i am the helptext"
@@ -167,6 +168,7 @@ exports[`textfield component
         </label>
       </div>
       <textarea
+        aria-invalid="false"
         class="Textarea Textarea--resize"
         data-test="DesignSystem-Textarea"
         disabled=""
@@ -381,6 +383,7 @@ exports[`textfield component
         </label>
       </div>
       <textarea
+        aria-invalid="false"
         class="Textarea Textarea--resize"
         data-test="DesignSystem-Textarea"
         helptext="i am the helptext"
@@ -450,6 +453,7 @@ exports[`textfield component
         </label>
       </div>
       <textarea
+        aria-invalid="true"
         class="Textarea Textarea--resize Textarea--error"
         data-test="DesignSystem-Textarea"
         helptext="i am the helptext"
@@ -470,7 +474,6 @@ exports[`textfield component
           <i
             class="material-symbols material-symbols-rounded Icon Icon--alert InlineMessage-icon--small"
             data-test="DesignSystem-InlineMessage--Icon"
-            role="button"
             style="font-size: 14px; width: 14px;"
           >
             error

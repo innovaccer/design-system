@@ -22,7 +22,7 @@ const fetchOption = () => {
         options: [{ label: '10:00 AM', value: '10:00 AM' }],
         count: 1,
       });
-    }, 1000);
+    }, 100);
   });
 };
 
@@ -269,10 +269,13 @@ describe('TimePicker fetchOption list', () => {
     const { getByTestId, getAllByTestId } = render(<TimePicker withSearch={true} fetchTimeOptions={fetchOption} />);
     const dropdownTrigger = getByTestId(trigger);
     fireEvent.click(dropdownTrigger);
-    await waitFor(() => {
-      const optionList = getAllByTestId(optionID);
-      expect(optionList[0]).toHaveTextContent('10:00 AM');
-    });
+    await waitFor(
+      () => {
+        const optionList = getAllByTestId(optionID);
+        expect(optionList[0]).toHaveTextContent('10:00 AM');
+      },
+      { timeout: 2000 }
+    );
   });
 });
 
