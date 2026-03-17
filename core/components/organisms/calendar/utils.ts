@@ -149,11 +149,9 @@ export interface HandleDateViewKeyDownParams {
 export const handleDateViewKeyDown = (params: HandleDateViewKeyDownParams): boolean => {
   const {
     event,
-    container,
     focusedRow,
     focusedCol,
     totalRows,
-    monthIndex,
     onNavigate,
     onSelect,
     onPageUp,
@@ -226,6 +224,8 @@ export const handleDateViewKeyDown = (params: HandleDateViewKeyDownParams): bool
       return true;
     case 'Enter':
       event.preventDefault();
+      // Prevent auto-repeat: only process first keydown
+      if (event.repeat) return true;
       onSelect();
       return true;
     case ' ':
@@ -261,7 +261,7 @@ export interface HandleMonthViewKeyDownParams {
  * Handle keyboard events in the month view grid (3x4).
  */
 export const handleMonthViewKeyDown = (params: HandleMonthViewKeyDownParams): boolean => {
-  const { event, container, focusedMonth, onNavigate, onSelect, onEscape } = params;
+  const { event, focusedMonth, onNavigate, onSelect, onEscape } = params;
 
   const row = Math.floor(focusedMonth / monthsInRow);
   const col = focusedMonth % monthsInRow;

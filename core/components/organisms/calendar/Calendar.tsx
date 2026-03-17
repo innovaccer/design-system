@@ -796,8 +796,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             'inverse-lightest': disabled,
           }) as TextColor;
 
-          const getTextAppearance = (): 'default' | 'disabled' =>
-            disabled ? 'disabled' : 'default';
+          const getTextAppearance = (): 'default' | 'disabled' => (disabled ? 'disabled' : 'default');
 
           const isFocused = effectiveFocusedYearIndex === offset;
 
@@ -856,9 +855,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     if (isTargetDisabled) {
       for (let m = 0; m < monthBlock; m++) {
-        if (
-          !(compareDate(disabledBefore, 'more', yearNav, m) || compareDate(disabledAfter, 'less', yearNav, m))
-        ) {
+        if (!(compareDate(disabledBefore, 'more', yearNav, m) || compareDate(disabledAfter, 'less', yearNav, m))) {
           targetMonth = m;
           break;
         }
@@ -894,8 +891,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             'inverse-lightest': disabled,
           }) as TextColor;
 
-          const getTextAppearance = (): 'default' | 'disabled' =>
-            disabled ? 'disabled' : 'default';
+          const getTextAppearance = (): 'default' | 'disabled' => (disabled ? 'disabled' : 'default');
 
           const textClass = classNames({
             [styles['Calendar-value--currDate']]: isCurrentMonth() && !active,
@@ -1213,7 +1209,9 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         : null;
     const effectiveRow = focusedDateRow ?? selectedPos?.row ?? 0;
     const effectiveCol = focusedDateCol ?? selectedPos?.col ?? 0;
-    const effectiveMonthIndex = focusedDateMonthIndex ?? (selectedPos ? index : 0);
+    const effectiveMonthIndex =
+      focusedDateMonthIndex ??
+      (selectedPos && selectedPos.row >= 0 && selectedPos.col >= 0 ? index : index === 0 ? 0 : -1);
 
     const maxValidRow = noOfRows - 1;
     const clampedRow = Math.min(effectiveRow, maxValidRow);
