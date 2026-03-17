@@ -103,6 +103,7 @@ export const CustomItemsRenderer = () => {
         active={active}
         onClick={setActive}
         customItemRenderer={customItemRenderer}
+        aria-label="Clinical navigation"
       />
     </div>
   );
@@ -221,6 +222,7 @@ const customCode = `() => {
         active={active}
         onClick={setActive}
         customItemRenderer={customItemRenderer}
+        aria-label="Clinical navigation"
       />
     </div>
   );

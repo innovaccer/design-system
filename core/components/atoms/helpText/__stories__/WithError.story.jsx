@@ -5,10 +5,10 @@ import { HelpText, Label, Input } from '@/index';
 export const withError = () => {
   return (
     <div className="w-25">
-      <Label required={true} withInput={true}>
+      <Label required={true} withInput={true} htmlFor="password-input">
         Password
       </Label>
-      <Input error={true} name="input" required={true} type="password" />
+      <Input error={true} name="input" id="password-input" required={true} type="password" />
       <HelpText error={true} message="Pick a strong, unique password" />
     </div>
   );

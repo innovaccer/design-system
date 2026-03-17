@@ -215,7 +215,6 @@ exports[`Dropzone component snapshot
           aria-label="Drag your files here or click to select files"
           class="Text Text--disabled Text--strong Text--large ml-2 cursor-pointer"
           data-test="DesignSystem-Text"
-          role="button"
           tabindex="-1"
         >
           browse files
@@ -279,7 +278,6 @@ exports[`Dropzone component snapshot
           aria-label="Drag your files here or click to select files"
           class="Text Text--disabled Text--strong Text--large ml-2 cursor-pointer"
           data-test="DesignSystem-Text"
-          role="button"
           tabindex="-1"
         >
           browse files
@@ -332,7 +330,6 @@ exports[`Dropzone component snapshot
           aria-label="Drag your files here or click to select files"
           class="Text Text--disabled Text--strong Text--large ml-2 cursor-pointer"
           data-test="DesignSystem-Text"
-          role="button"
           tabindex="-1"
         >
           browse files

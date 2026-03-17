@@ -7,7 +7,7 @@ export const State = () => {
       <Column>
         <Label withInput={true}>Default</Label>
         <br />
-        <Menu trigger={<Menu.Trigger size="regular" />}>
+        <Menu aria-label="Actions menu" trigger={<Menu.Trigger size="regular" aria-label="Open menu" />}>
           <Menu.List>
             <Menu.Item>Edit</Menu.Item>
             <Menu.Item>Export</Menu.Item>
@@ -19,7 +19,11 @@ export const State = () => {
       <Column>
         <Label withInput={true}>Disabled</Label>
         <br />
-        <Menu disabled={true} trigger={<Menu.Trigger size="regular" disabled={true} />}>
+        <Menu
+          disabled={true}
+          aria-label="Actions menu"
+          trigger={<Menu.Trigger size="regular" disabled={true} aria-label="Open menu" />}
+        >
           <Menu.List>
             <Menu.Item>Edit</Menu.Item>
             <Menu.Item>Export</Menu.Item>
@@ -39,7 +43,7 @@ const customCode = `
       <Column>
         <Label withInput={true}>Default</Label>
         <br />
-        <Menu trigger={<Menu.Trigger size="regular" />}>
+        <Menu aria-label="Actions menu" trigger={<Menu.Trigger size="regular" aria-label="Open menu" />}>
           <Menu.List>
             <Menu.Item>Edit</Menu.Item>
             <Menu.Item>Export</Menu.Item>
@@ -51,7 +55,11 @@ const customCode = `
       <Column>
         <Label withInput={true}>Disabled</Label>
         <br />
-        <Menu disabled={true} trigger={<Menu.Trigger size="regular" disabled={true} />}>
+        <Menu
+          disabled={true}
+          aria-label="Actions menu"
+          trigger={<Menu.Trigger size="regular" disabled={true} aria-label="Open menu" />}
+        >
           <Menu.List>
             <Menu.Item>Edit</Menu.Item>
             <Menu.Item>Export</Menu.Item>

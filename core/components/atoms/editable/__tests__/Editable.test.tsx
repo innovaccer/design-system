@@ -6,6 +6,10 @@ import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/u
 const onChange = jest.fn();
 
 describe('Editable component', () => {
+  beforeEach(() => {
+    onChange.mockClear();
+  });
+
   const mapper = {
     editing: valueHelper(true, { required: true }),
     onChange: valueHelper(onChange, { required: true }),
@@ -28,6 +32,10 @@ describe('Editable component', () => {
 });
 
 describe('Editable component', () => {
+  beforeEach(() => {
+    onChange.mockClear();
+  });
+
   it('renders children', () => {
     const { getByTestId } = render(
       <Editable onChange={onChange}>
@@ -57,6 +65,23 @@ describe('Editable component', () => {
     expect(onChange).not.toHaveBeenCalledWith('default');
   });
 
+  it('triggers edit shortcut keys even when editing is true', () => {
+    const { getByTestId } = render(
+      <Editable onChange={onChange} editing={true}>
+        <span />
+      </Editable>
+    );
+
+    const editableWrapper = getByTestId('DesignSystem-EditableWrapper');
+
+    fireEvent.keyDown(editableWrapper, { key: 'Enter' });
+    fireEvent.keyDown(editableWrapper, { key: ' ' });
+
+    expect(onChange).toHaveBeenCalledTimes(2);
+    expect(onChange).toHaveBeenNthCalledWith(1, 'edit');
+    expect(onChange).toHaveBeenNthCalledWith(2, 'edit');
+  });
+
   it('Editable component with props editing (false) and onChange', () => {
     const { getByTestId } = render(
       <Editable onChange={onChange} editing={false}>
@@ -74,6 +99,53 @@ describe('Editable component', () => {
 
     fireEvent.mouseLeave(editableWrapper);
     expect(onChange).toHaveBeenCalledWith('default');
+  });
+
+  it('triggers edit on Enter and Space key when wrapper is focused', () => {
+    const { getByTestId } = render(
+      <Editable onChange={onChange} editing={false}>
+        <span />
+      </Editable>
+    );
+
+    const editableWrapper = getByTestId('DesignSystem-EditableWrapper');
+
+    fireEvent.keyDown(editableWrapper, { key: 'Enter' });
+    fireEvent.keyDown(editableWrapper, { key: ' ' });
+
+    expect(onChange).toHaveBeenCalledTimes(2);
+    expect(onChange).toHaveBeenNthCalledWith(1, 'edit');
+    expect(onChange).toHaveBeenNthCalledWith(2, 'edit');
+  });
+
+  it('triggers edit on Spacebar key alias when wrapper is focused', () => {
+    const { getByTestId } = render(
+      <Editable onChange={onChange} editing={false}>
+        <span />
+      </Editable>
+    );
+
+    const editableWrapper = getByTestId('DesignSystem-EditableWrapper');
+
+    fireEvent.keyDown(editableWrapper, { key: 'Spacebar', code: 'Space' });
+
+    expect(onChange).toHaveBeenCalledTimes(1);
+    expect(onChange).toHaveBeenCalledWith('edit');
+  });
+
+  it('does not trigger edit shortcut when key is pressed inside child input', () => {
+    const { getByTestId } = render(
+      <Editable onChange={onChange} editing={false}>
+        <input data-test="DesignSystem-Editable-child-input" />
+      </Editable>
+    );
+
+    const childInput = getByTestId('DesignSystem-Editable-child-input');
+
+    fireEvent.keyDown(childInput, { key: ' ' });
+    fireEvent.keyDown(childInput, { key: 'Enter' });
+
+    expect(onChange).not.toHaveBeenCalled();
   });
 });
 

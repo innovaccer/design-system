@@ -20,10 +20,16 @@ export const Editable = (props: EditableProps) => {
     className
   );
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      onChange('edit');
-    }
+    const isWrapperFocused = event.currentTarget === event.target;
+    const nativeCode = event?.nativeEvent?.code;
+    const isSpaceKey = event.key === ' ' || event.key === 'Spacebar' || nativeCode === 'Space';
+    const isEditTriggerKey = event.key === 'Enter' || isSpaceKey;
+
+    if (!isWrapperFocused || !isEditTriggerKey) return;
+
+    event.preventDefault();
+
+    onChange('edit');
   };
 
   return (

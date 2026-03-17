@@ -107,7 +107,13 @@ export const usingHover = () => {
   return (
     <div className="d-flex bg-secondary-lightest vh-75 w-100 overflow-hidden">
       <Collapsible expanded={expanded} onToggle={setExpanded}>
-        <VerticalNav menus={data} active={active} expanded={expanded} onClick={setActive} />
+        <VerticalNav
+          menus={data}
+          active={active}
+          expanded={expanded}
+          onClick={setActive}
+          aria-label="Primary sidebar navigation"
+        />
       </Collapsible>
       <div className="ml-8 d-flex flex-column w-75">
         <Heading className="my-5">Assessments</Heading>
@@ -315,6 +321,7 @@ const customCode = `() => {
           active={active}
           expanded={expanded}
           onClick={setActive}
+          aria-label="Primary sidebar navigation"
         />
       </Collapsible>
       <div className="ml-8 d-flex flex-column w-75">

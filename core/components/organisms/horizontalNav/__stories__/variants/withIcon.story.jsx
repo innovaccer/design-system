@@ -32,7 +32,13 @@ export const withIcon = () => {
 
   return (
     <div className="d-flex align-items-center py-6 bg-secondary-lightest">
-      <HorizontalNav className="w-100 justify-content-center" menus={data} active={active} onClick={onClickHandler} />
+      <HorizontalNav
+        className="w-100 justify-content-center"
+        menus={data}
+        active={active}
+        onClick={onClickHandler}
+        aria-label="Icon navigation menu"
+      />
     </div>
   );
 };
@@ -72,6 +78,7 @@ const customCode = `() => {
         menus={data}
         active={active}
         onClick={onClickHandler}
+        aria-label="Icon navigation menu"
       />
     </div>
   );

@@ -43,10 +43,16 @@ export const customVerticalNavigation = () => {
         <>
           {expanded && (
             <div className="mt-5 d-flex justify-content-center border-bottom">
-              <DatePicker date={new Date()} size="small" />
+              <DatePicker date={new Date()} size="small" aria-label="Select navigation date" />
             </div>
           )}
-          <VerticalNav menus={data} expanded={expanded} active={active} onClick={setActive} />
+          <VerticalNav
+            menus={data}
+            expanded={expanded}
+            active={active}
+            onClick={setActive}
+            aria-label="To-dos navigation"
+          />
         </>
       </Collapsible>
     </div>
@@ -95,7 +101,7 @@ const customCode = `() => {
         <>
         {expanded && (
           <div className="mt-5 d-flex justify-content-center border-bottom">
-          <DatePicker date={new Date()} size="small" />
+          <DatePicker date={new Date()} size="small" aria-label="Select navigation date" />
           </div>
           )}
           <VerticalNav
@@ -103,6 +109,7 @@ const customCode = `() => {
             expanded={expanded}
             active={active}
             onClick={setActive}
+            aria-label="To-dos navigation"
           />
         </>
       </Collapsible>

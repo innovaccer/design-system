@@ -22,7 +22,15 @@ export const dropdownItemsWithSubInfo = () => {
     },
   ];
 
-  return <Dropdown options={options} optionType="WITH_META" className="w-25" placeholder="Select Recipient" />;
+  return (
+    <Dropdown
+      options={options}
+      optionType="WITH_META"
+      className="w-25"
+      placeholder="Select Recipient"
+      aria-label="Select recipient"
+    />
+  );
 };
 
 export default {

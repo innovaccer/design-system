@@ -36,7 +36,13 @@ export const customOptions = () => {
   return (
     <div>
       <Label withInput={true}>Provider Name</Label>
-      <Combobox onChange={onChangeHandler} className="w-50" icon="search" placeholder="Enter provider name">
+      <Combobox
+        onChange={onChangeHandler}
+        className="w-50"
+        icon="search"
+        placeholder="Enter provider name"
+        aria-label="Provider name selector"
+      >
         {filterList.length > 0 && (
           <Combobox.List>
             {filterList.map((item, key) => {
@@ -94,7 +100,13 @@ const customCode = `() => {
   return (
     <div>
       <Label withInput={true}>Provider Name</Label>
-      <Combobox onChange={onChangeHandler} className="w-50" icon="search" placeholder='Enter provider name'>
+      <Combobox
+        onChange={onChangeHandler}
+        className="w-50"
+        icon="search"
+        placeholder='Enter provider name'
+        aria-label="Provider name selector"
+      >
         {filterList.length > 0 && (
           <Combobox.List>
             {filterList.map((item, key) => {

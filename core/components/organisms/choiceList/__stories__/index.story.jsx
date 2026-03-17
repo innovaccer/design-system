@@ -9,7 +9,7 @@ export const all = () => {
     { label: 'Other', name: 'gender', value: 'Other' },
   ];
 
-  return <ChoiceList choices={gender} title={label} onChange={() => {}} />;
+  return <ChoiceList choices={gender} title={label} onChange={() => {}} aria-label="Gender selection" />;
 };
 
 export default {

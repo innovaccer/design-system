@@ -3,9 +3,9 @@ import isSpaceKey from '../isSpaceKey';
 
 describe('isSpaceKey', () => {
   test('returns true if the space key is pressed', () => {
-    // Create a mock React keyboard event with 'Space' as the key
+    // Create a mock React keyboard event with ' ' as the key
     const spaceKeyEvent = {
-      key: 'Space',
+      key: ' ',
     } as React.KeyboardEvent;
 
     // Assert that isSpaceKey returns true for the space key event

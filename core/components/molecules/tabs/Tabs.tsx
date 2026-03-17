@@ -80,6 +80,10 @@ export interface TabsProps extends BaseProps {
    * Adds maxWidth to the `Tab` component
    */
   maxWidth?: string | number;
+  /**
+   * Associates the tablist with a visible label element.
+   */
+  'aria-labelledby'?: string;
 }
 
 const getChildrenArray = (children: SingleOrArray<React.ReactElement>) => {
@@ -106,15 +110,23 @@ const filterInlineComponent = (children: SingleOrArray<React.ReactElement>) => {
   return inlineComponent;
 };
 
+let tabsInstanceCounter = 0;
+
 export const Tabs = (props: TabsProps) => {
   const { children, withSeparator, onTabChange, className, headerClassName, size, maxWidth } = props;
 
   const baseProps = extractBaseProps(props);
   const tabRefs: HTMLDivElement[] = [];
+  const tabsInstanceIdRef = React.useRef<string>('');
 
   const tabs: Tab[] = children ? filterTabs(children) : props.tabs;
   const inlineComponent = children ? filterInlineComponent(children) : <></>;
   const totalTabs = tabs.length;
+  if (!tabsInstanceIdRef.current) {
+    tabsInstanceCounter += 1;
+    tabsInstanceIdRef.current = `tabs-${tabsInstanceCounter}`;
+  }
+  const panelId = `${tabsInstanceIdRef.current}-panel`;
 
   const [activeIndex, setActiveTab] = React.useState(
     props.activeIndex && props.activeIndex < totalTabs ? props.activeIndex : 0
@@ -171,17 +183,16 @@ export const Tabs = (props: TabsProps) => {
     [`${activeTabClass}`]: activeTabClass,
   });
 
-  const tabClickHandler = (tabIndex: number, isKeyboard?: boolean) => {
+  const tabClickHandler = (tabIndex: number) => {
     if (props.activeIndex === undefined) {
       setActiveTab(tabIndex);
-      if (!isKeyboard) tabRefs[tabIndex]?.blur();
     }
     if (onTabChange) onTabChange(tabIndex);
   };
 
   const tabKeyDownHandler = (event: React.KeyboardEvent, tabIndex: number) => {
     if (event.key === 'Enter') {
-      tabClickHandler(tabIndex, true);
+      tabClickHandler(tabIndex);
     }
     if (event.key === 'ArrowLeft' && tabIndex > 0) {
       const prevElement = tabRefs[tabIndex - 1];
@@ -233,7 +244,8 @@ export const Tabs = (props: TabsProps) => {
 
     const dismissIconClass = (disabled?: boolean) =>
       classNames({
-        [styles[`DismissibleTab-icon--right`]]: true,
+        [styles[`DismissibleRegularTab-icon--right`]]: size === 'regular',
+        [styles[`DismissibleSmallTab-icon--right`]]: size === 'small',
         [styles['DismissibleTab-icon--default']]: !disabled && activeIndex !== index,
         [styles[`DismissibleTab-icon--selected`]]: !disabled && activeIndex === index,
         ['cursor-pointer']: !disabled,
@@ -253,6 +265,7 @@ export const Tabs = (props: TabsProps) => {
         className={dismissIconClass(disabled)}
         onClick={!disabled ? onCloseHandler : undefined}
         tabIndex={disabled ? -1 : 0}
+        size={size === 'regular' ? 16 : 12}
       />
     );
   };
@@ -272,9 +285,11 @@ export const Tabs = (props: TabsProps) => {
     });
 
     const tabClass = classNames({
-      [styles['Tab--regular']]: size === 'regular',
-      [styles['Tab--small']]: size === 'small',
+      [styles['Tab--regular']]: size === 'regular' && !isDismissible,
+      [styles['Tab--small']]: size === 'small' && !isDismissible,
       [styles['Tab--overflow']]: true,
+      [styles['Tab--withIconRegular']]: isDismissible && size === 'regular',
+      [styles['Tab--withIconSmall']]: isDismissible && size === 'small',
     });
 
     return (
@@ -302,7 +317,7 @@ export const Tabs = (props: TabsProps) => {
 
   const renderTabs = tabs.map((tab: Tab, index) => {
     const currentTabProp = children && 'props' in tab ? tab.props : tab;
-    const { disabled, label } = currentTabProp;
+    const { disabled, label, isDismissible } = currentTabProp;
 
     const tabHeaderClass = classNames({
       [styles['Tab']]: true,
@@ -312,6 +327,7 @@ export const Tabs = (props: TabsProps) => {
       ['align-items-center']: true,
       [styles['Tab--regular']]: size === 'regular' && typeof label !== 'string',
       [styles['Tab--small']]: size === 'small' && typeof label !== 'string',
+      [styles['Tab--withDismissIcon']]: isDismissible,
     });
 
     return (
@@ -323,8 +339,12 @@ export const Tabs = (props: TabsProps) => {
         onClick={() => !disabled && tabClickHandler(index)}
         onKeyDown={(event: React.KeyboardEvent) => tabKeyDownHandler(event, index)}
         tabIndex={disabled ? -1 : 0}
-        role="button"
+        role="tab"
+        id={`${tabsInstanceIdRef.current}-tab-${index}`}
+        aria-selected={!disabled && activeIndex === index}
+        aria-controls={children ? panelId : undefined}
         aria-disabled={disabled || undefined}
+        aria-label={typeof label === 'string' ? label : undefined}
       >
         {renderTab(currentTabProp, index)}
       </div>
@@ -333,12 +353,23 @@ export const Tabs = (props: TabsProps) => {
 
   return (
     <div data-test="DesignSystem-Tabs" {...baseProps} className={wrapperClass}>
-      <div className={headerClass} data-test="DesignSystem-Tabs--Header">
+      <div
+        className={headerClass}
+        data-test="DesignSystem-Tabs--Header"
+        role="tablist"
+        aria-labelledby={props['aria-labelledby']}
+      >
         {renderTabs}
         {inlineComponent}
       </div>
       {children && (
-        <div className={tabContentClass} data-test="DesignSystem-Tabs--Content">
+        <div
+          className={tabContentClass}
+          data-test="DesignSystem-Tabs--Content"
+          role="tabpanel"
+          id={panelId}
+          aria-labelledby={`${tabsInstanceIdRef.current}-tab-${activeIndex}`}
+        >
           {tabs[activeIndex]}
         </div>
       )}

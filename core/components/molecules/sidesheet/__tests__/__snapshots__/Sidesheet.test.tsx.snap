@@ -17,8 +17,11 @@ exports[`Sidesheet component
       style="z-index: 1001;"
     >
       <div
+        aria-labelledby="sidesheet-title-2"
+        aria-modal="true"
         class="Col Col--10 Sidesheet Sidesheet--open Sidesheet-animation--open"
         data-test="DesignSystem-Sidesheet"
+        role="dialog"
       >
         <div
           class="Sidesheet-header"
@@ -37,6 +40,7 @@ exports[`Sidesheet component
                 <h4
                   class="Heading Heading--m Heading--default Sidesheet-header--shiftLeft"
                   data-test="DesignSystem-OverlayHeader--heading"
+                  id="sidesheet-title-2"
                 >
                   Heading
                 </h4>
@@ -69,7 +73,6 @@ exports[`Sidesheet component
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 20px; width: 20px;"
                   >
                     close
@@ -115,8 +118,11 @@ exports[`Sidesheet component
       style="z-index: 1001;"
     >
       <div
+        aria-labelledby="sidesheet-title-1"
+        aria-modal="true"
         class="Col Col--6 Sidesheet Sidesheet--open Sidesheet-animation--open"
         data-test="DesignSystem-Sidesheet"
+        role="dialog"
       >
         <div
           class="Sidesheet-header"
@@ -135,6 +141,7 @@ exports[`Sidesheet component
                 <h4
                   class="Heading Heading--m Heading--default Sidesheet-header--shiftLeft"
                   data-test="DesignSystem-OverlayHeader--heading"
+                  id="sidesheet-title-1"
                 >
                   Heading
                 </h4>
@@ -167,7 +174,6 @@ exports[`Sidesheet component
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 20px; width: 20px;"
                   >
                     close

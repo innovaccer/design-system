@@ -63,7 +63,14 @@ export const all = () => {
 
   return (
     <div className="bg-secondary-lightest vh-75">
-      <VerticalNav menus={data} expanded={true} autoCollapse={autoCollapse} active={active} onClick={onClickHandler} />
+      <VerticalNav
+        menus={data}
+        expanded={true}
+        autoCollapse={autoCollapse}
+        active={active}
+        onClick={onClickHandler}
+        aria-label="Primary sidebar navigation"
+      />
     </div>
   );
 };
@@ -132,6 +139,7 @@ const customCode = `() => {
         active={active}
         onClick={onClickHandler}
         hoverable={false}
+        aria-label="Primary sidebar navigation"
       />
     </div>
   );

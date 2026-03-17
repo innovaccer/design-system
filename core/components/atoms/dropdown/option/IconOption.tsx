@@ -5,7 +5,17 @@ import classNames from 'classnames';
 import styles from '@css/components/dropdown.module.css';
 
 const IconOption = (props: OptionTypeProps) => {
-  const { className, textClassName, onClickHandler, optionData, onUpdateActiveOption, color, dataTest } = props;
+  const {
+    className,
+    textClassName,
+    onClickHandler,
+    optionData,
+    onUpdateActiveOption,
+    color,
+    dataTest,
+    selected,
+    menu,
+  } = props;
 
   const { label, icon, disabled, iconType } = optionData;
 
@@ -35,9 +45,10 @@ const IconOption = (props: OptionTypeProps) => {
       onMouseEnter={onUpdateActiveOption}
       data-test={dataTest}
       data-disabled={disabled}
-      role="button"
+      role={menu ? 'menuitem' : 'option'}
       tabIndex={disabled ? -1 : 0}
       aria-disabled={disabled || undefined}
+      aria-selected={!menu ? selected : undefined}
     >
       {/* eslint-enable  */}
       {icon && <Icon className={IconClass} data-test={`${dataTest}--Icon`} name={icon} type={iconType} />}

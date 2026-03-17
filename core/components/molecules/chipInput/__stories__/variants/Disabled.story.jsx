@@ -4,7 +4,15 @@ import { ChipInput } from '@/index';
 export const disabled = () => {
   const [value, setValue] = React.useState(['1024', '80']);
 
-  return <ChipInput value={value} chipOptions={{ clearButton: true }} onChange={setValue} disabled={true} />;
+  return (
+    <ChipInput
+      value={value}
+      chipOptions={{ clearButton: true, role: 'option' }}
+      onChange={setValue}
+      disabled={true}
+      aria-label="Add value"
+    />
+  );
 };
 
 const customCode = `() => {
@@ -13,9 +21,10 @@ const customCode = `() => {
   return (
     <ChipInput
       value={value}
-      chipOptions={{ clearButton: true }}
+      chipOptions={{ clearButton: true, role: 'option' }}
       onChange={setValue}
       disabled={true}
+      aria-label="Add value"
     />
   );
 }`;

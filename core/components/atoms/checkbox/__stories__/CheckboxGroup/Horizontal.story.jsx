@@ -5,13 +5,13 @@ export const Horizontal = () => {
   const labelHorizontal = 'Horizontal Alignment';
   const alignmentHorizontal = 'horizontal';
   const days = [
-    { label: 'Mon', name: 'days', value: 'mon' },
-    { label: 'Tue', name: 'days', value: 'tue' },
-    { label: 'Wed', name: 'days', value: 'wed' },
-    { label: 'Thu', name: 'days', value: 'thu' },
-    { label: 'Fri', name: 'days', value: 'fri' },
-    { label: 'Sat', name: 'days', value: 'sat' },
-    { label: 'Sun', name: 'days', value: 'sun' },
+    { label: 'Mon', name: 'days', value: 'mon', 'aria-label': 'Monday' },
+    { label: 'Tue', name: 'days', value: 'tue', 'aria-label': 'Tuesday' },
+    { label: 'Wed', name: 'days', value: 'wed', 'aria-label': 'Wednesday' },
+    { label: 'Thu', name: 'days', value: 'thu', 'aria-label': 'Thursday' },
+    { label: 'Fri', name: 'days', value: 'fri', 'aria-label': 'Friday' },
+    { label: 'Sat', name: 'days', value: 'sat', 'aria-label': 'Saturday' },
+    { label: 'Sun', name: 'days', value: 'sun', 'aria-label': 'Sunday' },
   ];
 
   return (
@@ -22,6 +22,7 @@ export const Horizontal = () => {
       title={labelHorizontal}
       alignment={alignmentHorizontal}
       onChange={() => {}}
+      aria-label="Horizontal day selection"
     />
   );
 };

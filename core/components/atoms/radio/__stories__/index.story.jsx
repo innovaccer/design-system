@@ -12,7 +12,7 @@ export const all = () => {
     return action(`onChange: ${event.target.value}: ${event.target.checked}`)();
   };
 
-  return <Radio label={label} name={name} value={label} onChange={onChangeHandler} />;
+  return <Radio aria-label={label} label={label} name={name} value={label} onChange={onChangeHandler} />;
 };
 
 export default {

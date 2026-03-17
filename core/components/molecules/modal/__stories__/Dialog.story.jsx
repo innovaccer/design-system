@@ -7,6 +7,7 @@ export const dialogs = () => {
   const [open, setOpen] = React.useState(false);
   const backdropClose = true;
   const dimension = 'medium';
+  const headingId = 'modal-dialog-heading';
   const onClose = () => {
     setOpen(!open);
     action('on close triggered')();
@@ -49,7 +50,9 @@ export const dialogs = () => {
         onClose={onClose}
         headerOptions={{
           heading: 'Cannot delete Leona Lucas',
+          headingId,
         }}
+        aria-labelledby={headingId}
         footer={
           <>
             <Button className="ml-4" onClick={action('Close button click')}>
@@ -88,6 +91,7 @@ const customCode = `/*
   const [open, setOpen] = React.useState(false);
   const backdropClose = true;
   const dimension = 'medium';
+  const headingId = 'modal-dialog-heading';
   const onClose = () => {
     setOpen(!open);
     console.log('on close triggered');
@@ -117,7 +121,9 @@ const customCode = `/*
         onClose={onClose}
         headerOptions={{
           heading: 'Cannot delete Leona Lucas',
+          headingId,
         }}
+        aria-labelledby={headingId}
         footer={(
           <>
             <Button className="ml-4" onClick={console.log('Close button click')}>Close</Button>

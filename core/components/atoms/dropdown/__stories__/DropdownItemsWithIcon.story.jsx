@@ -26,7 +26,15 @@ export const dropdownItemsWithIcon = () => {
       icon: 'check',
     },
   ];
-  return <Dropdown options={options} optionType="WITH_ICON" className="w-25" placeholder="Select status" />;
+  return (
+    <Dropdown
+      options={options}
+      optionType="WITH_ICON"
+      className="w-25"
+      placeholder="Select status"
+      aria-label="Select status"
+    />
+  );
 };
 
 export default {

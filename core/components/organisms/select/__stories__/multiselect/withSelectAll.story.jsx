@@ -57,19 +57,24 @@ export const withSelectAll = () => {
       onSelect={onSelectHandler}
       value={selectedValue}
       multiSelect={true}
-      triggerOptions={{ onClear: onClearHandler }}
+      triggerOptions={{ onClear: onClearHandler, 'aria-label': 'Medication multiselect' }}
     >
-      <Select.List>
+      <Select.List aria-label="Medication options">
         <Select.Option
           checkedState={checkedState}
           onClick={onClickHandler}
           option={{ id: 'select-all', label: 'SelectAll', value: 'SelectAll' }}
+          aria-label="Select all medications"
         >
           Select All
         </Select.Option>
         {medicineList.map((item) => {
           return (
-            <Select.Option key={item.id} option={{ label: item.label, value: item.value, id: item.id }}>
+            <Select.Option
+              key={item.id}
+              option={{ label: item.label, value: item.value, id: item.id }}
+              aria-label={`${item.label} option`}
+            >
               {item.label}
             </Select.Option>
           );
@@ -133,15 +138,15 @@ const customCode = `() => {
         onSelect={onSelectHandler} 
         value={selectedValue} 
         multiSelect={true} 
-        triggerOptions={{ onClear: onClearHandler }}
+        triggerOptions={{ onClear: onClearHandler, 'aria-label': 'Medication multiselect' }}
         >
-            <Select.List>
-                <Select.Option checkedState={checkedState} onClick={onClickHandler} option={{ id: 'select-all', label: 'SelectAll', value: 'SelectAll' }}>
+            <Select.List aria-label="Medication options">
+                <Select.Option checkedState={checkedState} onClick={onClickHandler} option={{ id: 'select-all', label: 'SelectAll', value: 'SelectAll' }} aria-label="Select all medications">
                     Select All
                 </Select.Option>
             {medicineList.map((item) => {
                 return (
-                <Select.Option key={item.id} option={{ label: item.label, value: item.value, id: item.id }}>
+                <Select.Option key={item.id} option={{ label: item.label, value: item.value, id: item.id }} aria-label={item.label + ' option'}>
                     {item.label}
                 </Select.Option>
                 );

@@ -63,7 +63,7 @@ const customCode = `
       <div className="w-100">
         <Card className="px-6 py-6">
           <form onSubmit={this.onSubmit}>
-            <Row className="mb-6">
+            <Row className="mb-6" role="group" aria-label="Known Languages">
               <Column size={3} className="d-flex align-items-center">
                 <Icon className="mr-4" name="language" />
                 <Text>Known Languages</Text>
@@ -72,7 +72,7 @@ const customCode = `
                 <div className="mr-5 w-25">
                   <Select
                     width="100%"
-                    triggerOptions={{ withClearButton: false }}
+                    triggerOptions={{ withClearButton: false, 'aria-label': "Known Languages" }}
                     onSelect={(option) => {
                       const updatedData = {
                         ...this.state.data,
@@ -96,7 +96,7 @@ const customCode = `
                 <Checkbox
                   name="defaultLanguage"
                   label="Set as Default"
-                  defaultChecked={defaultLanguage}
+                  defaultChecked={!!defaultLanguage}
                   onChange={(e) => {
                     const updatedData = {
                       ...this.state.data,
@@ -107,15 +107,15 @@ const customCode = `
                 />
               </Column>
               <Column size={1} className="d-flex align-items-center justify-content-end">
-                <Button icon="delete" appearance="transparent" />
+                <Button icon="delete" appearance="transparent" aria-label="Delete known language" />
               </Column>
             </Row>
-            <Row className="my-5">
+            <Row className="my-5" role="group" aria-label="Preferred Method of Contact">
               <Column className="d-flex align-items-center" size={3}>
                 <Icon className="mr-4" name="record_voice_over" />
                 <Text>Preferred Method of Contact</Text>
               </Column>
-              <Column size={8} className="d-flex">
+              <Column size={8} className="d-flex" role="group" aria-label="Contact method options">
                 <Button className="mr-3" icon="call" onClick={() => this.onChange('phone', 'contact')}>Phone</Button>
                 <Button className="mr-3" icon="chat" onClick={() => this.onChange('message', 'contact')}>Message</Button>
                 <Button className="mr-3" icon="email" onClick={() => this.onChange('email', 'contact')}>Email</Button>
@@ -128,9 +128,10 @@ const customCode = `
                 </Button>
               </Column>
               <Column size={1} className="d-flex align-items-center justify-content-end">
-                <Button icon="delete" appearance="transparent" />
+                <Button icon="delete" appearance="transparent" aria-label="Delete contact method" />
               </Column>
             </Row>
+            <div role="group" aria-label="Phone Numbers">
             <Row className="mt-6">
               <Column size={3} className="d-flex align-items-center">
                 <Icon className="mr-4" name="call" />
@@ -142,13 +143,14 @@ const customCode = `
                   placeholder="(___) ___-____"
                   className="mr-4"
                   name="primaryPhoneNumber"
+                  aria-label="Primary phone number"
                   onChange={(e, value) => this.onChange(value, e.target.name)}
                 />
                 <Radio
                   defaultChecked={defaultPhoneNumber === 'primaryPhoneNumber'}
                   name="defaultPhoneNumber"
                   value="defaultPrimaryPhoneNumber"
-                  label="Mark as Preferred"
+                  label="Mark primary as preferred"
                   onChange={(e) => {
                     const updatedData = {
                       ...this.state.data,
@@ -159,7 +161,7 @@ const customCode = `
                 />
               </Column>
               <Column size={1} className="d-flex align-items-center justify-content-end">
-                <Button icon="delete" appearance="transparent" />
+                <Button icon="delete" appearance="transparent" aria-label="Delete primary phone number" />
               </Column>
             </Row>
             <Row className="my-5">
@@ -170,13 +172,14 @@ const customCode = `
                   placeholder="(___) ___-____"
                   className="mr-4"
                   name="secondaryPhoneNumber"
+                  aria-label="Secondary phone number"
                   onChange={(e, value) => this.onChange(value, e.target.name)}
                 />
                 <Radio
                   defaultChecked={defaultPhoneNumber === 'secondaryPhoneNumber'}
                   name="defaultPhoneNumber"
                   value="defaultSecondaryPhoneNumber"
-                  label="Mark as Preferred"
+                  label="Mark secondary as preferred"
                   onChange={(e) => {
                     const updatedData = {
                       ...this.state.data,
@@ -190,6 +193,7 @@ const customCode = `
                 <Icon name="flag" appearance="warning" className="mr-4"/>
               </Column>
             </Row>
+            </div>
           <div className="d-flex">
             <Button className="mr-4" type="submit" appearance="success">Save</Button>
             <Button>Cancel</Button>

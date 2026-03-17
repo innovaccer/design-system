@@ -5,6 +5,8 @@ import { List } from '@/index.type';
 export const twoStepsWorkflow = () => {
   const [open, setOpen] = React.useState(false);
   const [page, setPage] = React.useState(0);
+  const stepOneHeadingId = 'fullscreen-step0-heading';
+  const stepTwoHeadingId = 'fullscreen-step1-heading';
 
   const onClose = () => {
     setOpen(!open);
@@ -18,10 +20,12 @@ export const twoStepsWorkflow = () => {
     if (page === 0) {
       return {
         heading: 'New Care Plan',
+        headingId: stepOneHeadingId,
       };
     }
     return {
       heading: 'Name the care plan',
+      headingId: stepTwoHeadingId,
       backButton: true,
       backButtonCallback: () => setPage(0),
     };
@@ -58,6 +62,7 @@ export const twoStepsWorkflow = () => {
         open={open}
         dimension="medium"
         onClose={onClose}
+        aria-labelledby={page === 0 ? stepOneHeadingId : stepTwoHeadingId}
         headerOptions={headerOptions()}
         footer={
           <>
@@ -114,6 +119,8 @@ const customCode = `
 () => {
   const [open, setOpen] = React.useState(false);
   const [page, setPage] = React.useState(0);
+  const stepOneHeadingId = 'fullscreen-step0-heading';
+  const stepTwoHeadingId = 'fullscreen-step1-heading';
 
   const onClose = () => {
     setOpen(!open);
@@ -128,12 +135,14 @@ const customCode = `
       return(
       {
         heading:'New Care Plan',
+        headingId: stepOneHeadingId,
       }
       );
     }
     return(
     {
       heading: 'Name the care plan',
+      headingId: stepTwoHeadingId,
       backButton: true,
       backButtonCallback: () => setPage(0)
     }
@@ -168,6 +177,7 @@ const customCode = `
         open={open}
         dimension="medium"
         onClose={onClose}
+        aria-labelledby={page === 0 ? stepOneHeadingId : stepTwoHeadingId}
         headerOptions={headerOptions()}
         footer={(
           <>

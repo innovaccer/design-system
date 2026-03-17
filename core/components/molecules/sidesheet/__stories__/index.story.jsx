@@ -4,6 +4,7 @@ import { Sidesheet, Button, Label, Text } from '@/index';
 
 export const all = () => {
   const [open, setOpen] = React.useState(false);
+  const headingId = 'sidesheet-a11y-heading';
 
   const onClose = () => {
     setOpen(false);
@@ -13,6 +14,7 @@ export const all = () => {
   const headerOptions = {
     heading: 'Heading',
     subHeading: 'Subheading',
+    headingId,
   };
 
   const options = {
@@ -27,6 +29,7 @@ export const all = () => {
         <Button appearance="basic">Cancel</Button>
       </>
     ),
+    'aria-labelledby': headingId,
   };
 
   const SidesheetDescription = (params) => {
@@ -64,6 +67,7 @@ export const all = () => {
 
 const customCode = `() => {
   const [open, setOpen] = React.useState(false);
+  const headingId = 'sidesheet-a11y-heading';
 
   const onClose = () => {
     setOpen(false);
@@ -72,6 +76,7 @@ const customCode = `() => {
   const headerOptions = {
     heading: 'Heading',
     subHeading: 'Subheading',
+    headingId,
   };
 
   const options = {
@@ -86,6 +91,7 @@ const customCode = `() => {
         <Button appearance="basic">Cancel</Button>
       </>
     ),
+    'aria-labelledby': headingId,
   };
 
   const SidesheetDescription = (params) => {
