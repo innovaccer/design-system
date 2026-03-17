@@ -293,29 +293,15 @@ export const ChipInput = (props: ChipInputProps) => {
   });
 
   const iconSize = size === 'small' ? 12 : 16;
-  const handleWrapperKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
-    if (disabled || event.currentTarget !== event.target) return;
-
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      onClickHandler();
-    }
-  };
 
   return (
     <div data-test="DesignSystem-ChipInput--Border" className={ChipInputBorderClass}>
+      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
       <div
         data-test="DesignSystem-ChipInput"
         {...baseProps}
         className={ChipInputClass}
         onClick={onClickHandler}
-        onKeyDown={handleWrapperKeyDown}
-        tabIndex={disabled ? -1 : 0}
-        role="button"
-        aria-label={ariaLabel}
-        aria-labelledby={ariaLabelledBy}
-        aria-describedby={ariaDescribedBy}
-        aria-disabled={disabled || undefined}
       >
         <div className={styles['ChipInput-wrapper']} ref={customRef}>
           {chips && chips.length > 0 && chipComponents}
