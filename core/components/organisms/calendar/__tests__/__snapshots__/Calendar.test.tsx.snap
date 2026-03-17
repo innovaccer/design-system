@@ -499,7 +499,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--medium Text--regular color-white"
+                    class="Text Text--strong Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -1648,7 +1648,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--medium Text--regular color-white"
+                    class="Text Text--strong Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -2828,7 +2828,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--medium Text--regular color-white"
+                    class="Text Text--strong Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -3987,7 +3987,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--medium Text--regular color-white"
+                    class="Text Text--strong Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -5203,7 +5203,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--medium Text--regular color-white"
+                    class="Text Text--strong Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -6443,7 +6443,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--medium Text--regular color-white"
+                    class="Text Text--strong Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -7476,7 +7476,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--medium Text--regular color-white"
+                    class="Text Text--strong Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -8601,7 +8601,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--medium Text--regular color-white"
+                    class="Text Text--strong Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -9818,7 +9818,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--medium Text--regular color-white"
+                    class="Text Text--strong Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -11012,7 +11012,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--medium Text--regular color-white"
+                    class="Text Text--strong Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -12137,7 +12137,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--medium Text--regular color-white"
+                    class="Text Text--strong Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -13193,7 +13193,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--medium Text--regular color-white"
+                    class="Text Text--strong Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -14322,7 +14322,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--medium Text--regular color-white"
+                    class="Text Text--strong Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -14708,95 +14708,19 @@ exports[`Calendar component
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="April 1, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
-                  data-calendar-date-cell="true"
-                  data-col="3"
-                  data-row="4"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    1
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="April 2, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
-                  data-calendar-date-cell="true"
-                  data-col="4"
-                  data-row="4"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    2
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="April 3, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
-                  data-calendar-date-cell="true"
-                  data-col="5"
-                  data-row="4"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    3
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="April 4, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
-                  data-calendar-date-cell="true"
-                  data-col="6"
-                  data-row="4"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    4
-                  </span>
-                </button>
-              </div>
+              />
             </div>
           </div>
         </div>
@@ -14929,72 +14853,15 @@ exports[`Calendar component
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="March 29, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
-                  data-calendar-date-cell="true"
-                  data-col="0"
-                  data-row="0"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    29
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="March 30, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
-                  data-calendar-date-cell="true"
-                  data-col="1"
-                  data-row="0"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    30
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="March 31, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
-                  data-calendar-date-cell="true"
-                  data-col="2"
-                  data-row="0"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    31
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -16236,7 +16103,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--medium Text--regular color-white"
+                    class="Text Text--strong Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -16622,95 +16489,19 @@ exports[`Calendar component
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="April 1, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
-                  data-calendar-date-cell="true"
-                  data-col="3"
-                  data-row="4"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    1
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="April 2, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
-                  data-calendar-date-cell="true"
-                  data-col="4"
-                  data-row="4"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    2
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="April 3, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
-                  data-calendar-date-cell="true"
-                  data-col="5"
-                  data-row="4"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    3
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="April 4, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
-                  data-calendar-date-cell="true"
-                  data-col="6"
-                  data-row="4"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    4
-                  </span>
-                </button>
-              </div>
+              />
             </div>
           </div>
         </div>
@@ -17679,118 +17470,23 @@ exports[`Calendar component
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="April 26, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
-                  data-calendar-date-cell="true"
-                  data-col="0"
-                  data-row="0"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    26
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="April 27, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
-                  data-calendar-date-cell="true"
-                  data-col="1"
-                  data-row="0"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    27
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="April 28, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
-                  data-calendar-date-cell="true"
-                  data-col="2"
-                  data-row="0"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    28
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="April 29, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
-                  data-calendar-date-cell="true"
-                  data-col="3"
-                  data-row="0"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    29
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="April 30, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
-                  data-calendar-date-cell="true"
-                  data-col="4"
-                  data-row="0"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--regular"
-                    data-test="DesignSystem-Text"
-                  >
-                    30
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -19170,7 +18866,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--medium Text--regular color-white"
+                    class="Text Text--strong Text--regular color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -19949,7 +19645,7 @@ exports[`Calendar component
               type="button"
             >
               <span
-                class="Text Text--regular color-white Calendar-text"
+                class="Text Text--strong Text--regular color-white Calendar-text"
                 data-test="DesignSystem-Text"
               >
                 Mar
@@ -20289,7 +19985,7 @@ exports[`Calendar component
               type="button"
             >
               <span
-                class="Text Text--regular color-white Calendar-text"
+                class="Text Text--strong Text--regular color-white Calendar-text"
                 data-test="DesignSystem-Text"
               >
                 2020
@@ -20929,7 +20625,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--medium Text--small color-white"
+                    class="Text Text--strong Text--small color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -22058,7 +21754,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--medium Text--small color-white"
+                    class="Text Text--strong Text--small color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -22444,95 +22140,19 @@ exports[`Calendar component
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="April 1, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--small"
-                  data-calendar-date-cell="true"
-                  data-col="3"
-                  data-row="4"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--small"
-                    data-test="DesignSystem-Text"
-                  >
-                    1
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="April 2, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--small"
-                  data-calendar-date-cell="true"
-                  data-col="4"
-                  data-row="4"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--small"
-                    data-test="DesignSystem-Text"
-                  >
-                    2
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="April 3, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--small"
-                  data-calendar-date-cell="true"
-                  data-col="5"
-                  data-row="4"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--small"
-                    data-test="DesignSystem-Text"
-                  >
-                    3
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="April 4, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--small"
-                  data-calendar-date-cell="true"
-                  data-col="6"
-                  data-row="4"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--small"
-                    data-test="DesignSystem-Text"
-                  >
-                    4
-                  </span>
-                </button>
-              </div>
+              />
             </div>
           </div>
         </div>
@@ -22665,72 +22285,15 @@ exports[`Calendar component
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="March 29, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--small"
-                  data-calendar-date-cell="true"
-                  data-col="0"
-                  data-row="0"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--small"
-                    data-test="DesignSystem-Text"
-                  >
-                    29
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="March 30, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--small"
-                  data-calendar-date-cell="true"
-                  data-col="1"
-                  data-row="0"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--small"
-                    data-test="DesignSystem-Text"
-                  >
-                    30
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="March 31, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--small"
-                  data-calendar-date-cell="true"
-                  data-col="2"
-                  data-row="0"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--small"
-                    data-test="DesignSystem-Text"
-                  >
-                    31
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -23972,7 +23535,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--medium Text--small color-white"
+                    class="Text Text--strong Text--small color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -24358,95 +23921,19 @@ exports[`Calendar component
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="April 1, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--small"
-                  data-calendar-date-cell="true"
-                  data-col="3"
-                  data-row="4"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--small"
-                    data-test="DesignSystem-Text"
-                  >
-                    1
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="April 2, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--small"
-                  data-calendar-date-cell="true"
-                  data-col="4"
-                  data-row="4"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--small"
-                    data-test="DesignSystem-Text"
-                  >
-                    2
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="April 3, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--small"
-                  data-calendar-date-cell="true"
-                  data-col="5"
-                  data-row="4"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--small"
-                    data-test="DesignSystem-Text"
-                  >
-                    3
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="April 4, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--small"
-                  data-calendar-date-cell="true"
-                  data-col="6"
-                  data-row="4"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--small"
-                    data-test="DesignSystem-Text"
-                  >
-                    4
-                  </span>
-                </button>
-              </div>
+              />
             </div>
           </div>
         </div>
@@ -25415,118 +24902,23 @@ exports[`Calendar component
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="April 26, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--small"
-                  data-calendar-date-cell="true"
-                  data-col="0"
-                  data-row="0"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--small"
-                    data-test="DesignSystem-Text"
-                  >
-                    26
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="April 27, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--small"
-                  data-calendar-date-cell="true"
-                  data-col="1"
-                  data-row="0"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--small"
-                    data-test="DesignSystem-Text"
-                  >
-                    27
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="April 28, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--small"
-                  data-calendar-date-cell="true"
-                  data-col="2"
-                  data-row="0"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--small"
-                    data-test="DesignSystem-Text"
-                  >
-                    28
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="April 29, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--small"
-                  data-calendar-date-cell="true"
-                  data-col="3"
-                  data-row="0"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--small"
-                    data-test="DesignSystem-Text"
-                  >
-                    29
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="April 30, 2020"
-                  class="Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--small"
-                  data-calendar-date-cell="true"
-                  data-col="4"
-                  data-row="0"
-                  data-test="DesignSystem-Calendar--dateValue"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span
-                    class="Text Text--subtle Text--small"
-                    data-test="DesignSystem-Text"
-                  >
-                    30
-                  </span>
-                </button>
-              </div>
+              />
               <div
                 class="Calendar-valueWrapper"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -26906,7 +26298,7 @@ exports[`Calendar component
                   type="button"
                 >
                   <span
-                    class="Text Text--medium Text--small color-white"
+                    class="Text Text--strong Text--small color-white"
                     data-test="DesignSystem-Text"
                   >
                     15
@@ -27685,7 +27077,7 @@ exports[`Calendar component
               type="button"
             >
               <span
-                class="Text Text--small color-white Calendar-text"
+                class="Text Text--strong Text--small color-white Calendar-text"
                 data-test="DesignSystem-Text"
               >
                 Mar
@@ -28025,7 +27417,7 @@ exports[`Calendar component
               type="button"
             >
               <span
-                class="Text Text--small color-white Calendar-text"
+                class="Text Text--strong Text--small color-white Calendar-text"
                 data-test="DesignSystem-Text"
               >
                 2020

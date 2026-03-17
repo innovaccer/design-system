@@ -12,6 +12,7 @@ export const all = () => {
     disabledAfter,
     firstDayOfWeek: 'saturday',
     jumpView: true,
+    'aria-label': 'Appointment calendar',
     onDateChange: (currDate) => action(`on date change : ${currDate}`)(),
     onRangeChange: (sDate, eDate) => action(`on range change: ${sDate} - ${eDate}`)(),
   };

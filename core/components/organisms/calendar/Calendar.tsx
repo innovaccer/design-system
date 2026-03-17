@@ -775,9 +775,9 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           const getTextAppearance = (): 'default' | 'disabled' =>
             disabled ? 'disabled' : 'default';
 
-          const isFocused =
-            (this.state.focusedYearIndex ?? (this.state.year !== undefined ? this.state.year - yearBlockNav : 0)) ===
-            offset;
+          const calculatedIndex = this.state.year !== undefined ? this.state.year - yearBlockNav : 0;
+          const fallbackIndex = calculatedIndex >= 0 && calculatedIndex <= 11 ? calculatedIndex : 0;
+          const isFocused = (this.state.focusedYearIndex ?? fallbackIndex) === offset;
 
           return (
             <button
@@ -1391,8 +1391,16 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             // Only render dummy dates on outer edges in multi-month view
             // In monthsInView > 1, prevent duplicate rendering of boundary dates
             const { monthsInView = 1 } = this.props;
-            const isEdgeMonth = monthsInView === 1 || index === 0 || index === monthsInView - 1;
-            const shouldRenderDummy = !dummy || isEdgeMonth;
+            let shouldRenderDummy = !dummy;
+            if (dummy) {
+              if (monthsInView === 1) {
+                shouldRenderDummy = true;
+              } else if (index === 0) {
+                shouldRenderDummy = date <= 0; // Only leading dummies
+              } else if (index === monthsInView - 1) {
+                shouldRenderDummy = date > dayRange; // Only trailing dummies
+              }
+            }
 
             return (
               <div key={`${row}-${colIndex}`} className={wrapperClass} data-test="designSystem-Calendar-WrapperClass">
