@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { SelectContext } from './SelectContext';
-import { Listbox, Checkbox } from '@/index';
+import { Listbox, Checkbox, Icon } from '@/index';
 import { OptionType } from '@/common.type';
 import { BaseProps } from '@/utils/types';
 import { handleKeyDown, elementExist, removeOrAddToList } from './utils';
@@ -137,7 +137,14 @@ export const SelectOption = (props: SelectOptionProps) => {
             indeterminate={indeterminate}
           />
         )}
-        <div className={textClass}>{children}</div>
+        <div className={textClass}>
+          <span className={styles['Select-option--label']}>{children}</span>
+          {!multiSelect && checked && (
+            <span className={styles['Select-option--iconWrapper']}>
+              <Icon name="done" className={styles['Select-option--check']} aria-hidden="true" />
+            </span>
+          )}
+        </div>
       </div>
     </Listbox.Item>
   );

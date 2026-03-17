@@ -104,8 +104,7 @@
   padding-left: var(--spacing-20);
 }
 
-.Select-trigger--text,
-.Select-option--text {
+.Select-trigger--text {
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
@@ -115,6 +114,34 @@
   font-size: var(--font-size);
   line-height: var(--font-height);
   width: 100%;
+}
+
+.Select-option--text {
+  text-align: left;
+  white-space: nowrap;
+  max-width: 100%;
+  margin: 0;
+  font-size: var(--font-size);
+  line-height: var(--font-height);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-20);
+}
+
+.Select-option--label {
+  white-space: inherit;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  flex-grow: 1;
+}
+
+.Select-option--iconWrapper {
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
 }
 
 .Select-trigger--regular {
