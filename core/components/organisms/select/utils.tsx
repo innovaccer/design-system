@@ -1,6 +1,45 @@
 import React from 'react';
 import { OptionType } from '@/common.type';
 
+/** Selector for elements that participate in document tab order (excludes tabindex="-1"). */
+const DOCUMENT_FOCUSABLE_SELECTOR =
+  'a[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+/**
+ * Returns the next (or previous with shiftKey) focusable element in document order after the trigger.
+ * Used when Tab is pressed inside the popover but the focus trap misses (e.g. options have tabindex=-1).
+ * Queries from document.body so it works with portaled popovers.
+ * Excludes focusables inside excludeContainer (e.g. the popover) so we do not focus an element inside the closing popover.
+ */
+export const getNextFocusableAfterTrigger = (
+  trigger: HTMLElement | null,
+  shiftKey: boolean,
+  excludeContainer: HTMLElement | null = null
+): HTMLElement | null => {
+  if (!trigger) return null;
+  const elements = Array.from(document.body.querySelectorAll<HTMLElement>(DOCUMENT_FOCUSABLE_SELECTOR)).filter(
+    (el) => {
+      const style = window.getComputedStyle(el);
+      if (style.visibility === 'hidden' || style.display === 'none' || el.getAttribute('aria-hidden') === 'true') {
+        return false;
+      }
+      if (excludeContainer && (el === excludeContainer || excludeContainer.contains(el))) return false;
+      return true;
+    }
+  );
+  const index = elements.indexOf(trigger);
+  if (index === -1) return null;
+  if (shiftKey) return index <= 0 ? null : elements[index - 1];
+  return index >= elements.length - 1 ? null : elements[index + 1];
+};
+
+/** Returns focusable elements inside container (for focus trap). Excludes elements with tabindex="-1" so e.g. checkboxes inside list options do not get their own tab stop. */
+export const getFocusableElements = (container: HTMLElement): HTMLElement[] => {
+  const selector =
+    'a[href], button:not([disabled]), input:not([disabled]):not([tabindex="-1"]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+  return Array.from(container.querySelectorAll<HTMLElement>(selector));
+};
+
 export const mapInitialValue = (multiSelect: boolean, selectedValue: OptionType | OptionType[] | undefined) => {
   if (multiSelect) {
     return selectedValue && !Array.isArray(selectedValue) ? [selectedValue] : selectedValue || [];
@@ -78,6 +117,12 @@ export const handleKeyDownTrigger = (
       setOpenPopover?.(true);
       setHighlightFirstItem?.(true);
       break;
+    case ' ':
+    case 'Spacebar':
+      event.preventDefault();
+      setOpenPopover?.(true);
+      setHighlightFirstItem?.(true);
+      break;
     case 'ArrowDown':
       setOpenPopover?.(true);
       setHighlightFirstItem?.(true);
@@ -107,7 +152,9 @@ export const focusListItem = (
   }
 
   (targetOption as HTMLElement)?.focus();
-  targetOption?.scrollIntoView({ block: 'center' });
+  if (typeof (targetOption as HTMLElement)?.scrollIntoView === 'function') {
+    (targetOption as HTMLElement).scrollIntoView({ block: 'center' });
+  }
   setFocusedOption && setFocusedOption(targetOption);
 };
 
@@ -132,17 +179,36 @@ export const handleKeyDown = (
       navigateOptions('down', focusedOption, setFocusedOption, listRef, withSearch);
       break;
     case 'Enter':
+      event.preventDefault();
       handleEnterKey(focusedOption);
       setHighlightLastItem?.(false);
       setHighlightFirstItem?.(false);
+      break;
+    case ' ':
+    case 'Spacebar':
+      event.preventDefault();
+      handleEnterKey(focusedOption);
+      setHighlightLastItem?.(false);
+      setHighlightFirstItem?.(false);
+      break;
+    case 'Home':
+      event.preventDefault();
+      focusListItem('down', setFocusedOption, listRef);
+      break;
+    case 'End':
+      event.preventDefault();
+      focusListItem('up', setFocusedOption, listRef);
       break;
     case 'Tab':
       setHighlightLastItem?.(false);
       setHighlightFirstItem?.(false);
       break;
     case 'Escape':
+      event.preventDefault();
       setOpenPopover?.(false);
-      triggerRef.current.focus();
+      if (triggerRef?.current) {
+        triggerRef.current.focus();
+      }
       setFocusedOption?.(undefined);
       break;
     default:
@@ -182,7 +248,9 @@ export const navigateOptions = (
 
     (targetOption as HTMLElement).focus();
     setFocusedOption && setFocusedOption(targetOption);
-    targetOption.scrollIntoView({ block: 'center' });
+    if (typeof (targetOption as HTMLElement).scrollIntoView === 'function') {
+      (targetOption as HTMLElement).scrollIntoView({ block: 'center' });
+    }
   }
 };
 
@@ -215,6 +283,84 @@ export const handleInputKeyDown = (
   }
 
   (targetOption as HTMLElement)?.focus();
-  targetOption?.scrollIntoView({ block: 'center' });
+  if (typeof (targetOption as HTMLElement)?.scrollIntoView === 'function') {
+    (targetOption as HTMLElement).scrollIntoView({ block: 'center' });
+  }
   setFocusedOption && setFocusedOption(targetOption);
+};
+
+export const LISTBOX_ITEM_SELECTOR = '[data-test="DesignSystem-Listbox-ItemWrapper"]';
+
+function isOptionFocusable(el: Element): boolean {
+  return el.getAttribute('data-disabled') !== 'true';
+}
+
+/**
+ * Returns the index of the option that should have tabindex=0 (roving tabstop).
+ * If focusedOption is in the list, that option's index; otherwise the first selected
+ * option among focusable options, or the first focusable option; -1 if list is empty or no focusable.
+ */
+export const getRovingIndex = (
+  listRef: React.RefObject<HTMLDivElement | null> | null,
+  focusedOption: HTMLElement | undefined,
+  _selectValue?: OptionType | OptionType[] | undefined
+): number => {
+  const list = listRef?.current?.querySelectorAll(LISTBOX_ITEM_SELECTOR);
+  if (!list?.length) return -1;
+
+  const items = Array.from(list) as HTMLElement[];
+
+  if (focusedOption) {
+    const focusedIdx = items.indexOf(focusedOption);
+    if (focusedIdx !== -1 && isOptionFocusable(focusedOption)) return focusedIdx;
+  }
+
+  const focusableIndices = items
+    .map((el, i) => (isOptionFocusable(el) ? i : -1))
+    .filter((i) => i !== -1);
+  if (focusableIndices.length === 0) return -1;
+
+  const firstSelectedIdx = items.findIndex(
+    (el) => isOptionFocusable(el) && el.getAttribute('aria-selected') === 'true'
+  );
+  if (firstSelectedIdx !== -1) return firstSelectedIdx;
+
+  return focusableIndices[0];
+};
+
+/**
+ * Focus the initial element when popover opens: search input if present, otherwise the option at roving index (first or first-selected).
+ * Returns the roving index for the list (or -1 if search was focused or list empty).
+ */
+export const focusPopoverInitial = (
+  listRef: React.RefObject<HTMLDivElement | null> | null,
+  setFocusedOption: React.Dispatch<React.SetStateAction<HTMLElement | undefined>> | undefined,
+  selectValue: OptionType | OptionType[] | undefined
+): number => {
+  const container = listRef?.current;
+  if (!container) return -1;
+
+  const searchInput = container.querySelector<HTMLElement>('[data-test="DesignSystem-Select--Input"]');
+  if (searchInput) {
+    searchInput.focus();
+    setFocusedOption?.(searchInput);
+    if (typeof searchInput.scrollIntoView === 'function') {
+      searchInput.scrollIntoView({ block: 'center' });
+    }
+    return -1;
+  }
+
+  const idx = getRovingIndex(listRef, undefined, selectValue);
+  if (idx >= 0) {
+    const list = container.querySelectorAll(LISTBOX_ITEM_SELECTOR);
+    const option = list?.[idx] as HTMLElement | undefined;
+    if (option) {
+      option.focus();
+      setFocusedOption?.(option);
+      if (typeof option.scrollIntoView === 'function') {
+        option.scrollIntoView({ block: 'center' });
+      }
+    }
+  }
+  return idx;
 };
