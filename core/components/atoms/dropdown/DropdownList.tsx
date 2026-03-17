@@ -258,6 +258,7 @@ const DropdownList = (props: OptionsProps) => {
   const dropdownRef = React.createRef<HTMLDivElement>();
   const triggerRef = React.createRef<HTMLDivElement>();
   const dropdownTriggerRef = React.createRef<HTMLButtonElement>();
+  const dropdownClearButtonRef = React.createRef<HTMLButtonElement>();
   const dropdownCancelButtonRef = React.createRef<HTMLButtonElement>();
   const dropdownApplyButtonRef = React.createRef<HTMLButtonElement>();
 
@@ -463,6 +464,7 @@ const DropdownList = (props: OptionsProps) => {
         </Text>
         {selectedGroup && (
           <Button
+            ref={dropdownClearButtonRef}
             onClick={onClearOptions}
             disabled={isClearDisabled}
             appearance="transparent"
@@ -874,32 +876,84 @@ const DropdownList = (props: OptionsProps) => {
         event.preventDefault();
         event.stopPropagation();
 
-        // Shift+Tab: move focus to search input if present
-        if (event.shiftKey && enableSearch && inputRef.current) {
-          inputRef.current.focus();
-          return;
-        }
+        // Build the tab order: search → clear → [options] → cancel → apply
+        // Tab moves forward, Shift+Tab moves backward.
+        // Options are navigated with arrow keys, so Tab from an option skips
+        // to the next non-option stop; Shift+Tab goes to the previous one.
+        const currentEl = document.activeElement;
+        const searchInput = enableSearch ? inputRef.current : null;
+        const clearBtn =
+          dropdownClearButtonRef.current && !dropdownClearButtonRef.current.disabled
+            ? dropdownClearButtonRef.current
+            : null;
+        const cancelBtn = showApplyButton ? dropdownCancelButtonRef.current : null;
+        const applyBtn = showApplyButton ? dropdownApplyButtonRef.current : null;
 
-        if (!showApplyButton) {
+        const isOnSearch = searchInput && (currentEl === searchInput || searchInput.contains(currentEl));
+        const isOnClear = clearBtn && currentEl === clearBtn;
+        const isOnCancel = cancelBtn && currentEl === cancelBtn;
+        const isOnApply = applyBtn && currentEl === applyBtn;
+
+        if (event.shiftKey) {
+          // Backward: apply → cancel → options → clear → search → close
+          if (isOnApply) {
+            cancelBtn ? cancelBtn.focus() : focusEdgeOption('last');
+            return;
+          }
+          if (isOnCancel) {
+            focusEdgeOption('last');
+            return;
+          }
+          if (isOnClear) {
+            searchInput ? searchInput.focus() : onToggleDropdown(false, 'onClick');
+            return;
+          }
+          if (isOnSearch) {
+            onToggleDropdown(false, 'onClick');
+            return;
+          }
+          // On an option — go to clear, then search, then close
+          if (clearBtn) {
+            clearBtn.focus();
+            return;
+          }
+          if (searchInput) {
+            searchInput.focus();
+            return;
+          }
           onToggleDropdown(false, 'onClick');
-          return;
-        }
-
-        const currentElement = document.activeElement;
-        const disabledApplyButton = dropdownApplyButtonRef.current?.disabled;
-
-        if (
-          (currentElement === dropdownCancelButtonRef.current && disabledApplyButton) ||
-          currentElement === dropdownApplyButtonRef.current
-        ) {
-          onToggleDropdown(false, 'onClick');
-          return;
-        }
-
-        if (currentElement === dropdownCancelButtonRef.current) {
-          dropdownApplyButtonRef.current?.focus();
         } else {
-          dropdownCancelButtonRef.current?.focus();
+          // Forward: search → clear → options → cancel → apply → close
+          if (isOnSearch) {
+            if (clearBtn) {
+              clearBtn.focus();
+              return;
+            }
+            focusEdgeOption('first');
+            return;
+          }
+          if (isOnClear) {
+            focusEdgeOption('first');
+            return;
+          }
+          if (isOnCancel) {
+            if (applyBtn && !applyBtn.disabled) {
+              applyBtn.focus();
+            } else {
+              onToggleDropdown(false, 'onClick');
+            }
+            return;
+          }
+          if (isOnApply) {
+            onToggleDropdown(false, 'onClick');
+            return;
+          }
+          // On an option — go to cancel/apply or close
+          if (cancelBtn) {
+            cancelBtn.focus();
+            return;
+          }
+          onToggleDropdown(false, 'onClick');
         }
         break;
       }

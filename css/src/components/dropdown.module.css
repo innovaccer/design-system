@@ -21,7 +21,7 @@
   background: transparent;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  height: 36px;
+  height: 36px; /* Matches Select-input height — no spacing token for 36px */
 }
 
 .Dropdown-input,
