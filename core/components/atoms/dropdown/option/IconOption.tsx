@@ -57,6 +57,15 @@ const IconOption = (props: OptionTypeProps) => {
           {label}
         </Text>
       </div>
+      {selected && !menu && (
+        <Icon
+          name="check"
+          appearance={props.appearance}
+          className={styles['Option-checkIcon']}
+          size={16}
+          data-test="DesignSystem-DropdownOption--checkIcon"
+        />
+      )}
     </div>
   );
 };

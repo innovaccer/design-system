@@ -18,6 +18,10 @@
 
 .Dropdown-input {
   min-width: unset !important;
+  background: transparent;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  height: 36px;
 }
 
 .Dropdown-input,
@@ -25,6 +29,10 @@
   border: unset !important;
   box-shadow: none !important;
   outline: none !important;
+}
+
+.Dropdown-input:hover {
+  background-color: var(--secondary-lightest);
 }
 
 .Dropdown-section {
@@ -60,6 +68,8 @@
 .Option {
   display: flex;
   transition: var(--duration--fast-01) var(--standard-productive-curve);
+  color: var(--text);
+  cursor: pointer;
 }
 
 .Option,
@@ -85,25 +95,22 @@
   padding-bottom: var(--spacing-15);
 }
 
-.Option--active,
-.Option-checkbox--active {
+.Option:hover,
+.Option-checkbox:hover {
   background-color: var(--secondary-lightest);
-  cursor: pointer;
 }
 
-.Option--active:hover,
-.Option-checkbox--active:hover {
-  background-color: var(--secondary-lighter);
-}
-
-.Option--active:active,
-.Option-checkbox--active:active {
+.Option:hover:active,
+.Option-checkbox:hover:active {
   background-color: var(--secondary-light);
-  cursor: pointer;
 }
 
-.Option--active {
-  transition: var(--standard-productive-curve);
+.Option:focus,
+.Option:focus-visible,
+.Option-checkbox:focus,
+.Option-checkbox:focus-visible {
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: calc(-1 * var(--border-width-05));
 }
 
 .Option-loading {
@@ -112,6 +119,12 @@
 
 .Option--selected {
   background-color: var(--primary-lightest);
+}
+
+.Option--selected:focus,
+.Option--selected:focus-visible {
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: calc(-1 * var(--border-width-05));
 }
 
 .Option--selected:hover {
@@ -138,6 +151,16 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.Option-checkIcon {
+  display: flex;
+  flex-shrink: 0;
+  align-self: center;
+  margin-left: auto;
+  padding-left: var(--spacing-20);
 }
 
 .OptionCheckbox .Checkbox-label {

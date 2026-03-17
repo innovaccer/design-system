@@ -14,6 +14,8 @@ exports[`TimePicker component snapshots renders snapshot for all props
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -58,6 +60,8 @@ exports[`TimePicker component snapshots renders snapshot for all props
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--error"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -102,6 +106,8 @@ exports[`TimePicker component snapshots renders snapshot for all props
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -146,6 +152,8 @@ exports[`TimePicker component snapshots renders snapshot for all props
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--error"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -190,6 +198,8 @@ exports[`TimePicker component snapshots renders snapshot for all props
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -234,6 +244,8 @@ exports[`TimePicker component snapshots renders snapshot for all props
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--error"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -278,6 +290,8 @@ exports[`TimePicker component snapshots renders snapshot for all props
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -322,6 +336,8 @@ exports[`TimePicker component snapshots renders snapshot for all props
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--error"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"

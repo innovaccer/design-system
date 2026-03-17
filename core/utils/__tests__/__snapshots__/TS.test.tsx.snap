@@ -776,6 +776,7 @@ exports[`TS renders children 1`] = `
       class="PopperWrapper-trigger w-100"
     >
       <button
+        aria-haspopup="listbox"
         class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
         data-test="DesignSystem-DropdownTrigger"
         tabindex="0"
@@ -824,6 +825,7 @@ exports[`TS renders children 1`] = `
             class="PopperWrapper-trigger w-100"
           >
             <button
+              aria-haspopup="listbox"
               class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
               data-test="DesignSystem-DropdownTrigger"
               tabindex="0"

@@ -14,6 +14,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -58,6 +59,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -102,6 +104,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -146,6 +149,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -190,6 +194,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--icon"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -242,6 +247,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -292,6 +298,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -336,6 +343,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--icon"
           data-test="DesignSystem-DropdownTrigger"
           disabled=""
@@ -389,6 +397,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           disabled=""
@@ -440,6 +449,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           disabled=""
@@ -485,6 +495,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -529,6 +540,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -573,6 +585,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -617,6 +630,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -661,6 +675,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -705,6 +720,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger"
       >
         <button
+          aria-haspopup="menu"
           class="Button DropdownButton DropdownButton--regular DropdownButton--regularSquare"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -740,6 +756,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -784,6 +801,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -828,6 +846,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -872,6 +891,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -916,6 +936,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -960,6 +981,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -1004,6 +1026,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -1048,6 +1071,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -1092,6 +1116,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--tiny DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -1136,6 +1161,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -1180,6 +1206,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"

@@ -11,7 +11,6 @@ import { ChangeEvent } from '@/common.type';
 import { ErrorTemplate } from './ErrorTemplate';
 import { ErrorType } from './Dropdown';
 import dropdownStyles from '@css/components/dropdown.module.css';
-import checkboxStyles from '@css/components/checkbox.module.css';
 
 export type DropdownAlign = 'left' | 'right';
 export type OptionType = 'DEFAULT' | 'WITH_ICON' | 'WITH_META' | 'ICON_WITH_META';
@@ -262,6 +261,8 @@ const DropdownList = (props: OptionsProps) => {
   const dropdownCancelButtonRef = React.createRef<HTMLButtonElement>();
   const dropdownApplyButtonRef = React.createRef<HTMLButtonElement>();
 
+  const enableSearch = withSearch || props.async;
+
   const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>();
   const [cursor, setCursor] = React.useState(firstEnabledOption);
   const [minHeight, setMinHeight] = React.useState<number | undefined>();
@@ -296,6 +297,16 @@ const DropdownList = (props: OptionsProps) => {
         timer = setTimeout(() => {
           scrollToOptionIndex(scrollIndex, listOptions);
         }, 100);
+      }
+
+      // Focus first option when popover opens (when no search input).
+      // rAF is needed because the popover portal isn't in the DOM yet during useEffect.
+      // This is safe from hover race conditions since focusOption uses document.activeElement,
+      // not cursor state.
+      if (!enableSearch) {
+        requestAnimationFrame(() => {
+          focusFirstOption();
+        });
       }
     }
 
@@ -511,6 +522,7 @@ const DropdownList = (props: OptionsProps) => {
           onClear={searchClearHandler}
           ref={inputRef}
           autoComplete={'off'}
+          aria-label={resolvedOptionsAriaLabel ? `Search ${resolvedOptionsAriaLabel}` : 'Search options'}
           className={dropdownStyles['Dropdown-input']}
         />
       </div>
@@ -535,8 +547,23 @@ const DropdownList = (props: OptionsProps) => {
     const label = selectAllLabel.trim() ? selectAllLabel.trim() : 'Select All';
     const id = `Checkbox-option-${label.toLowerCase().replace(/\s+/g, '')}-${new Date().getTime()}`;
 
+    const onSelectAllKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        const checkboxInput = event.currentTarget.querySelector('input[type="checkbox"]') as HTMLInputElement;
+        if (checkboxInput) checkboxInput.click();
+      }
+    };
+
     return (
-      <div className={SelectAllClass} onMouseEnter={() => updateActiveOption(0, true)}>
+      <div
+        className={SelectAllClass}
+        onMouseEnter={() => updateActiveOption(0, true)}
+        onKeyDown={onSelectAllKeyDown}
+        tabIndex={0}
+        role="option"
+        aria-selected={selectAll.checked}
+      >
         <label htmlFor={id} className={dropdownStyles['Checkbox-label']}>
           <Checkbox
             label={label}
@@ -660,27 +687,93 @@ const DropdownList = (props: OptionsProps) => {
     );
   };
 
+  const isFocusableOption = (node: Element): boolean => {
+    if (!node || node.getAttribute('data-disabled') === 'true') return false;
+    return (node as HTMLElement).tabIndex >= 0;
+  };
+
   const focusOption = (direction: string, classes: string) => {
     const elements = document.querySelectorAll(classes);
+    if (!elements.length) return;
 
-    const updatedCursor = direction === 'down' ? cursor + 1 : cursor - 1;
-    let startIndex = updatedCursor;
+    // Determine current position from actual DOM focus, not cursor state
+    const activeEl = document.activeElement;
+    let currentIndex = -1;
+
+    // Check if focus is currently on the search input
+    const isSearchFocused =
+      enableSearch && inputRef.current && (activeEl === inputRef.current || inputRef.current.contains(activeEl));
+
+    if (isSearchFocused) {
+      if (direction === 'up') return; // Already at the top, nothing above search
+      currentIndex = -1; // From search, down goes to first option
+    } else {
+      for (let i = 0; i < elements.length; i++) {
+        if (elements[i] === activeEl || elements[i].contains(activeEl)) {
+          currentIndex = i;
+          break;
+        }
+      }
+      // If no option focused, start from edge
+      if (currentIndex === -1) {
+        currentIndex = direction === 'down' ? -1 : elements.length;
+      }
+    }
+
+    const startIndex = direction === 'down' ? currentIndex + 1 : currentIndex - 1;
     const endIndex = direction === 'down' ? elements.length : -1;
+    let i = startIndex;
 
-    while (startIndex !== endIndex) {
-      const node = elements[startIndex];
-
-      if (node.getAttribute('data-disabled') !== 'true') {
-        const element: HTMLElement = elements[startIndex] as HTMLElement;
-        if (element) scrollIntoView(dropdownRef.current, element);
-        if (element !== undefined) setCursor(startIndex);
+    let found = false;
+    while (i !== endIndex) {
+      if (isFocusableOption(elements[i])) {
+        const element = elements[i] as HTMLElement;
+        if (dropdownRef.current) scrollIntoView(dropdownRef.current, element);
+        element.focus();
+        found = true;
         break;
       }
+      i += direction === 'down' ? 1 : -1;
+    }
 
-      if (direction === 'down') {
-        startIndex++;
-      } else {
-        startIndex--;
+    // If going up and no option found above, focus the search input
+    if (!found && direction === 'up' && enableSearch && inputRef.current) {
+      inputRef.current.focus();
+    }
+  };
+
+  const focusFirstOption = () => {
+    const optionClass = '.OptionWrapper';
+    const elements = document.querySelectorAll(optionClass);
+    if (!elements.length) return;
+
+    for (let i = 0; i < elements.length; i++) {
+      if (isFocusableOption(elements[i])) {
+        const element = elements[i] as HTMLElement;
+        if (dropdownRef.current) scrollIntoView(dropdownRef.current, element);
+        element.focus();
+        break;
+      }
+    }
+  };
+
+  const focusEdgeOption = (position: 'first' | 'last') => {
+    const elements = document.querySelectorAll('.OptionWrapper');
+    if (!elements.length) return;
+
+    if (position === 'first') {
+      for (let i = 0; i < elements.length; i++) {
+        if (isFocusableOption(elements[i])) {
+          (elements[i] as HTMLElement).focus();
+          break;
+        }
+      }
+    } else {
+      for (let i = elements.length - 1; i >= 0; i--) {
+        if (isFocusableOption(elements[i])) {
+          (elements[i] as HTMLElement).focus();
+          break;
+        }
       }
     }
   };
@@ -697,17 +790,18 @@ const DropdownList = (props: OptionsProps) => {
         dropdownOpen ? focusOption('up', optionClass) : onToggleDropdown(!dropdownOpen);
         break;
       case 'Enter': {
-        const activeElement = document.activeElement;
-        if (dropdownOpen && (inputRef.current === activeElement || dropdownTriggerRef.current === activeElement)) {
+        if (!dropdownOpen) {
           event.preventDefault();
-          const classes = withCheckbox ? `${optionClass} .${checkboxStyles['Checkbox-input']}` : optionClass;
-          const elements = document.querySelectorAll(classes);
-          const element = elements[cursor] as HTMLElement;
-          if (element) element.click();
+          onToggleDropdown(true);
         }
-        if (!dropdownOpen) onToggleDropdown(!dropdownOpen);
         break;
       }
+      case 'Escape':
+        if (dropdownOpen) {
+          event.preventDefault();
+          onToggleDropdown(false, 'onClick');
+        }
+        break;
       case 'Tab': {
         if (!showApplyButton && dropdownOpen) {
           event.preventDefault();
@@ -744,7 +838,75 @@ const DropdownList = (props: OptionsProps) => {
     }
   };
 
-  const enableSearch = withSearch || props.async;
+  const onPopoverKeyDown = (event: React.KeyboardEvent) => {
+    // stopPropagation is critical: React synthetic events bubble through the React
+    // component tree (not DOM tree), so even with portals the event reaches the
+    // container's onkeydown handler. Without stopping, ArrowDown/Up fires focusOption
+    // twice per keypress, causing every second option to be skipped.
+    const optionClass = '.OptionWrapper';
+    switch (event.key) {
+      case 'ArrowDown':
+        event.preventDefault();
+        event.stopPropagation();
+        focusOption('down', optionClass);
+        break;
+      case 'ArrowUp':
+        event.preventDefault();
+        event.stopPropagation();
+        focusOption('up', optionClass);
+        break;
+      case 'Home':
+        event.preventDefault();
+        event.stopPropagation();
+        focusEdgeOption('first');
+        break;
+      case 'End':
+        event.preventDefault();
+        event.stopPropagation();
+        focusEdgeOption('last');
+        break;
+      case 'Escape':
+        event.preventDefault();
+        event.stopPropagation();
+        onToggleDropdown(false, 'onClick');
+        break;
+      case 'Tab': {
+        event.preventDefault();
+        event.stopPropagation();
+
+        // Shift+Tab: move focus to search input if present
+        if (event.shiftKey && enableSearch && inputRef.current) {
+          inputRef.current.focus();
+          return;
+        }
+
+        if (!showApplyButton) {
+          onToggleDropdown(false, 'onClick');
+          return;
+        }
+
+        const currentElement = document.activeElement;
+        const disabledApplyButton = dropdownApplyButtonRef.current?.disabled;
+
+        if (
+          (currentElement === dropdownCancelButtonRef.current && disabledApplyButton) ||
+          currentElement === dropdownApplyButtonRef.current
+        ) {
+          onToggleDropdown(false, 'onClick');
+          return;
+        }
+
+        if (currentElement === dropdownCancelButtonRef.current) {
+          dropdownApplyButtonRef.current?.focus();
+        } else {
+          dropdownCancelButtonRef.current?.focus();
+        }
+        break;
+      }
+      default:
+        break;
+    }
+  };
 
   return (
     <div {...baseProps} className={dropdownClass} ref={triggerRef} onKeyDown={onkeydown} role="presentation">
@@ -758,9 +920,12 @@ const DropdownList = (props: OptionsProps) => {
         {...popoverOptions}
         data-test="DesignSystem-Dropdown--Popover"
       >
-        {enableSearch && renderSearch()}
-        {renderDropdownSection()}
-        {showApplyButton && withCheckbox && renderApplyButton()}
+        {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+        <div onKeyDown={onPopoverKeyDown}>
+          {enableSearch && renderSearch()}
+          {renderDropdownSection()}
+          {showApplyButton && withCheckbox && renderApplyButton()}
+        </div>
       </Popover>
     </div>
   );
