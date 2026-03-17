@@ -46,8 +46,6 @@ export const SearchInput = (props: SelectInputProps) => {
         icon={'search'}
         size={size}
         onKeyDown={(event) => handleInputKeyDown(event, listRef, setFocusedOption, setOpenPopover, triggerRef)}
-        // TODO(a11y): research more on this.
-        // eslint-disable-next-line jsx-a11y/no-autofocus
         autoFocus={true}
         onChange={searchHandler}
         onClear={searchClearHandler}

@@ -58,7 +58,12 @@ export type PageHeaderProps = {
    * provides a border at bottom
    */
   separator?: boolean;
+  /**
+   * Accessible label for the page header region
+   */
+  'aria-label'?: string;
 } & BaseProps;
+
 
 export const PageHeader = (props: PageHeaderProps) => {
   const {
@@ -75,6 +80,7 @@ export const PageHeader = (props: PageHeaderProps) => {
     navigationPosition = 'center',
     className,
     button,
+    'aria-label': ariaLabel,
   } = props;
   const baseProps = extractBaseProps(props);
 
@@ -108,7 +114,7 @@ export const PageHeader = (props: PageHeaderProps) => {
 
   return (
     <div data-test="DesignSystem-PageHeader">
-      <div {...baseProps} className={wrapperClasses}>
+      <div {...baseProps} className={wrapperClasses} aria-label={ariaLabel}>
         {breadcrumbs && (
           <div className="pl-6" data-test="DesignSystem-PageHeader--Breadcrumbs">
             {breadcrumbs}

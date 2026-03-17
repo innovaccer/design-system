@@ -177,6 +177,14 @@ interface AsyncProps {
 
 type SharedTableProps = BaseProps & {
   /**
+   * Accessible label for table wrapper
+   */
+  'aria-label'?: string;
+  /**
+   * Associates table wrapper with an external label
+   */
+  'aria-labelledby'?: string;
+  /**
    * Controls Table Head display
    */
   showHead: GridProps['showHead'];
@@ -1137,6 +1145,8 @@ export class Table extends React.Component<TableProps, TableState> {
       onScroll,
       highlightRegex,
       showNestedRowTrigger,
+      'aria-label': ariaLabel,
+      'aria-labelledby': ariaLabelledBy,
     } = this.props;
 
     const baseProps = extractBaseProps(this.props);
@@ -1150,7 +1160,13 @@ export class Table extends React.Component<TableProps, TableState> {
     const tableClass = classNames(tableStyles['Table'], classes);
 
     return (
-      <div {...baseProps} className={tableClass} data-test="DesignSystem-Table-wrapper">
+      <div
+        {...baseProps}
+        className={tableClass}
+        data-test="DesignSystem-Table-wrapper"
+        aria-label={ariaLabel}
+        aria-labelledby={ariaLabelledBy}
+      >
         {withHeader && (
           <div data-test="DesignSystem-Table-header">
             <Header

@@ -10,6 +10,7 @@ import SelectEmptyTemplate from './SelectEmptyTemplate';
 import { focusListItem, mapInitialValue, isValueEqual } from './utils';
 import SelectFooter from './SelectFooter';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import uidGenerator from '@/utils/uidGenerator';
 import { PopoverProps } from '@/index.type';
 
 export type SelectStyleType = 'filled' | 'outlined';
@@ -99,6 +100,7 @@ export type SelectProps = {
    * TriggerProps:
    * {
    *  triggerSize?: 'small' | 'regular';
+   *  'aria-label'?: string;
    *  icon?: string;
    *  placeholder?: string;
    *  inlineLabel?: string;
@@ -115,6 +117,7 @@ export type SelectProps = {
    * | Name | Description | Default |
    * | --- | --- | --- |
    * | triggerSize | Specifies the size of the Select trigger button. | regular |
+   * | aria-label | Accessible label for the Select trigger button | Select trigger |
    * | icon | Specifies the name of the icon to be displayed in the trigger button | - |
    * | iconType | Specifies the type of icon to be displayed in the trigger button | - |
    * | inlineLabel | Optional label displayed inline inside the Select trigger button | - |
@@ -184,6 +187,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
   const [highlightFirstItem, setHighlightFirstItem] = React.useState<boolean>(false);
   const [highlightLastItem, setHighlightLastItem] = React.useState<boolean>(false);
   const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>({ width: popoverWidth || width });
+  const listboxId = React.useRef(`select-listbox-${uidGenerator()}`).current;
 
   const baseProps = extractBaseProps(props);
   const WrapperStyle = trigger ? {} : { width: width };
@@ -192,7 +196,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     if (trigger) {
       return React.cloneElement(trigger, { ref: triggerRef } as any);
     }
-    return <SelectTrigger aria-controls="select-listbox" {...triggerOptions} />;
+    return <SelectTrigger aria-controls={listboxId} {...triggerOptions} />;
   };
 
   React.useEffect(() => {
@@ -323,7 +327,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
           trigger={getTriggerElement()}
         >
           <OutsideClick onOutsideClick={onOutsideClickHandler}>
-            <div role="listbox" id="select-listbox" tabIndex={0} ref={listRef}>
+            <div role="listbox" id={listboxId} tabIndex={0} ref={listRef}>
               {children}
             </div>
           </OutsideClick>

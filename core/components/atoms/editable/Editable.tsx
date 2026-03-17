@@ -19,16 +19,29 @@ export const Editable = (props: EditableProps) => {
     },
     className
   );
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    const isWrapperFocused = event.currentTarget === event.target;
+    const nativeCode = event?.nativeEvent?.code;
+    const isSpaceKey = event.key === ' ' || event.key === 'Spacebar' || nativeCode === 'Space';
+    const isEditTriggerKey = event.key === 'Enter' || isSpaceKey;
+
+    if (!isWrapperFocused || !isEditTriggerKey) return;
+
+    event.preventDefault();
+
+    onChange('edit');
+  };
 
   return (
     <div data-test="DesignSystem-Editable" {...baseProps} className={EditableClass}>
-      {/* TODO(a11y): fix accessibility */}
-      {/* eslint-disable  */}
       <div
         data-test="DesignSystem-EditableWrapper"
         onClick={() => onChange('edit')}
+        onKeyDown={handleKeyDown}
         onMouseEnter={() => !editing && onChange('hover')}
         onMouseLeave={() => !editing && onChange('default')}
+        role="button"
+        tabIndex={0}
       >
         {/* eslint-enable  */}
         {children}

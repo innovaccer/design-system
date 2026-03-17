@@ -68,6 +68,12 @@ export const EditableInput = (props: EditableInputProps) => {
     if (isControlled) setValue(props.value);
   }, [props.value]);
 
+  React.useEffect(() => {
+    if (editing && showComponent) {
+      inputRef.current?.focus();
+    }
+  }, [editing, showComponent]);
+
   const EditableInputClass = classNames(
     {
       [styles['EditableInput']]: true,
@@ -109,7 +115,6 @@ export const EditableInput = (props: EditableInputProps) => {
   const onChangeHandler = (eventType: string) => {
     switch (eventType) {
       case 'edit': {
-        inputRef.current?.focus();
         setEditing(true);
         setShowComponent(true);
         break;
@@ -129,8 +134,6 @@ export const EditableInput = (props: EditableInputProps) => {
       defaultValue={inputValue}
       placeholder={placeholder}
       className={InputClass}
-      // TODO(a11y)
-      // eslint-disable-next-line jsx-a11y/no-autofocus
       autoFocus={editing}
       size={size}
       onChange={onInputChangeHandler}
@@ -173,9 +176,13 @@ export const EditableInput = (props: EditableInputProps) => {
   };
 
   return (
-    // TODO(a11y)
-    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-    <div data-test="DesignSystem-EditableInput" {...baseProps} className={EditableInputClass} onKeyDown={onKeyDown}>
+    <div
+      data-test="DesignSystem-EditableInput"
+      {...baseProps}
+      className={EditableInputClass}
+      onKeyDown={onKeyDown}
+      role="presentation"
+    >
       <Editable onChange={onChangeHandler} editing={editing}>
         {renderChildren()}
       </Editable>

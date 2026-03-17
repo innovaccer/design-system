@@ -19,6 +19,7 @@ export const syncTable = () => {
     <div className="vh-75">
       <Card className="h-100 overflow-hidden">
         <Table
+          aria-label="Patient table"
           loaderSchema={loaderSchema}
           data={[...Array(100)].map((_, index) => {
             return data[index % 10];
@@ -180,6 +181,7 @@ const customCode = `() => {
     <div className="vh-75">
       <Card className="h-100 overflow-hidden">
         <Table
+          aria-label="Patient table"
           error={error}
           data={data}
           schema={schema}

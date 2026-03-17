@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Icon } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import { isEnterKey, isSpaceKey } from '@/accessibility/utils';
 import styles from '@css/components/collapsible.module.css';
 
 export type CollapsibleProps = {
@@ -119,7 +120,12 @@ export const Collapsible = (props: CollapsibleProps) => {
             className={FooterClass}
             data-test="DesignSystem-Collapsible--Footer"
             onClick={onToggleHandler(!expanded, 'click')}
-            onKeyDown={onToggleHandler(!expanded, 'click')}
+            onKeyDown={(e: React.KeyboardEvent) => {
+              if (isSpaceKey(e) || isEnterKey(e)) {
+                e.preventDefault();
+                onToggleHandler(!expanded, 'click')();
+              }
+            }}
           >
             <Icon
               name={expanded ? 'keyboard_arrow_left' : 'keyboard_arrow_right'}

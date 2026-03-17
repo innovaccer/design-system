@@ -31,6 +31,8 @@ export const all = () => {
       onClick={action(`onClick: ${label}`)}
       selected={selected}
       name={'chip'}
+      role="button"
+      aria-label="Chip Label"
     />
   );
 };

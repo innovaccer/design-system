@@ -3,14 +3,14 @@ import { Spinner, Text } from '@/index';
 
 // CSF format story
 export const appearance = () => {
-  const appearances = ['primary', 'secondary', 'white'];
+  const appearances = ['primary', 'secondary', 'white', 'alert'];
   return (
     <div className="d-flex">
       {appearances.map((appear, ind) => {
         return (
           <div key={ind} className="mr-8">
             <div className={appear === 'white' ? 'bg-dark' : 'bg-transparent'}>
-              <Spinner appearance={appear} />
+              <Spinner appearance={appear} aria-label={`Loading ${appear}`} />
             </div>
             <Text weight="strong">{appear.charAt(0).toUpperCase() + appear.slice(1)}</Text>
           </div>

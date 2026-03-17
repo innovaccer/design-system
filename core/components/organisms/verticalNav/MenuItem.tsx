@@ -18,6 +18,7 @@ export interface MenuItemProps extends BaseProps {
   onClick?: (menu: Menu) => void;
   customItemRenderer?: (props: MenuItemProps) => React.JSX.Element;
   customOptionRenderer?: (props: MenuItemProps) => React.JSX.Element;
+  tabIndex?: number;
 }
 interface MenuPillsProps {
   isActive: boolean;
@@ -84,6 +85,7 @@ export const MenuItem = (props: MenuItemProps) => {
     onClick,
     customItemRenderer,
     customOptionRenderer,
+    tabIndex,
   } = props;
 
   const [isTextTruncated, setIsTextTruncated] = React.useState(false);
@@ -120,7 +122,12 @@ export const MenuItem = (props: MenuItemProps) => {
   const baseProps = {
     onClick: onClickHandler,
     href: menu.link,
-    tabIndex: 0,
+    tabIndex: tabIndex !== undefined ? tabIndex : 0,
+    role: 'treeitem',
+    'aria-level': isChildren ? 2 : 1,
+    'aria-expanded': hasSubmenu ? (isChildrenVisible ? 'true' : 'false') : undefined,
+    'data-menu-name': menu.name,
+    'data-disabled': menu.disabled ? 'true' : undefined,
     ...extractBaseProps(props),
   };
 
@@ -131,7 +138,10 @@ export const MenuItem = (props: MenuItemProps) => {
     [styles['MenuItem--vertical']]: true,
     [styles['MenuItem--collapsed']]: !expanded,
     [styles['MenuItem--expanded']]: expanded,
+    [styles['MenuItem--expandedRounded']]: expanded && rounded,
     [styles['MenuItem--active']]: isActive,
+    [styles['MenuItem--activeExpanded']]: isActive && expanded,
+    [styles['MenuItem--activeExpandedRounded']]: isActive && expanded && rounded,
     [styles['MenuItem--disabled']]: menu.disabled,
     [styles['MenuItem--subMenu']]: isChildren && expanded,
     [styles['MenuItem--rounded']]: rounded && expanded,
@@ -166,8 +176,6 @@ export const MenuItem = (props: MenuItemProps) => {
   return customItemRenderer ? (
     customItemRenderer(customItemProps)
   ) : (
-    // TODO(a11y)
-    // eslint-disable-next-line
     <Tooltip showTooltip={expanded ? isTextTruncated : true} tooltip={menu.label} position="right">
       <Link componentType="a" className={ItemClass} {...baseProps}>
         {customOptionRenderer ? (

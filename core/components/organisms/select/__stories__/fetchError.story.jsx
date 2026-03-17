@@ -34,9 +34,13 @@ export const fetchErrorTemplate = () => {
           </Button>
         </Select.EmptyTemplate>
       ) : (
-        <Select.List>
+        <Select.List aria-label="Medicine options list">
           {medicineList.map((item, key) => (
-            <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+            <Select.Option
+              key={key}
+              option={{ label: item.label, value: item.value }}
+              aria-label={item.label + ' option'}
+            >
               {item.label}
             </Select.Option>
           ))}
@@ -63,7 +67,7 @@ const customCode = `() => {
   };
 
   return (
-    <Select onSelect={onSelectHandler}>
+    <Select onSelect={onSelectHandler} triggerOptions={{ 'aria-label': 'Medication selector' }}>
       <Select.SearchInput
         value={searchTerm}
         placeholder='Search'
@@ -77,9 +81,9 @@ const customCode = `() => {
         <Button onClick={function(){}} size="tiny" aria-label="Reload" icon="refresh" iconAlign="left">Reload</Button>
         </Select.EmptyTemplate>
       ) : (
-      <Select.List>
+      <Select.List aria-label="Medication options list">
           {medicineList.map((item, key) => (
-            <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+            <Select.Option key={key} option={{ label: item.label, value: item.value }} aria-label={item.label + ' option'}>
               {item.label}
             </Select.Option>
           ))}

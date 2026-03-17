@@ -47,6 +47,7 @@ export const All = () => {
     <div className="Grid-outerWrapper">
       <Card className="h-100 overflow-hidden">
         <Grid
+          aria-label="Patient data grid"
           schema={applySchema ? schema : undefined}
           data={applyData ? data : undefined}
           loading={loading}

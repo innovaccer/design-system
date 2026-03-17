@@ -7,6 +7,7 @@
 .Text--small {
   font-size: var(--font-size-s);
   line-height: var(--font-height-normal);
+  font-weight: var(--font-weight-medium);
 }
 
 .Text--regular {

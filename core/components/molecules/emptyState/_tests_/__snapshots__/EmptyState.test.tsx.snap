@@ -32,7 +32,6 @@ exports[`EmptyState component
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 32px; width: 32px;"
           >
             events
@@ -70,6 +69,7 @@ exports[`EmptyState component
       data-test="DesignSystem-EmptyState"
     >
       <img
+        alt="Manage your outreach campaigns"
         data-test="DesignSystem-EmptyState--Img"
         height="256px"
         src="noContent"
@@ -101,6 +101,7 @@ exports[`EmptyState component
       data-test="DesignSystem-EmptyState"
     >
       <img
+        alt="Manage your outreach campaigns"
         data-test="DesignSystem-EmptyState--Img"
         height="128px"
         src="noContent"
@@ -154,7 +155,6 @@ exports[`EmptyState component
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 32px; width: 32px;"
           >
             events
@@ -214,7 +214,6 @@ exports[`EmptyState component
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 32px; width: 32px;"
           >
             events

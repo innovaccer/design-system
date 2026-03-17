@@ -91,6 +91,14 @@ export type DatePickerProps = SharedProps & {
    *
    */
   popoverOptions?: PopoverOptions;
+  /**
+   * Accessible label for date input trigger
+   */
+  'aria-label'?: string;
+  /**
+   * Associates date input trigger with an external label
+   */
+  'aria-labelledby'?: string;
 };
 
 export interface DatePickerState {
@@ -250,17 +258,21 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     };
 
     const isTodayDisabled = () => {
-      if (
-        (dateDisabledBefore && isSameDay(todayDate, dateDisabledBefore)) ||
-        (dateDisabledAfter && isSameDay(todayDate, dateDisabledAfter))
-      ) {
-        return false;
-      }
+      const isSameAsDisabledBefore = dateDisabledBefore && isSameDay(todayDate, dateDisabledBefore);
+      const isSameAsDisabledAfter = dateDisabledAfter && isSameDay(todayDate, dateDisabledAfter);
 
-      const isTodayDateDisabled =
-        (dateDisabledBefore && todayDate < dateDisabledBefore) || (dateDisabledAfter && todayDate > dateDisabledAfter);
-
-      return isTodayDateDisabled;
+      return (
+        (!isSameAsDisabledBefore &&
+          compareDate(
+            dateDisabledBefore,
+            'more',
+            todayDate.getFullYear(),
+            todayDate.getMonth(),
+            todayDate.getDate()
+          )) ||
+        (!isSameAsDisabledAfter &&
+          compareDate(dateDisabledAfter, 'less', todayDate.getFullYear(), todayDate.getMonth(), todayDate.getDate()))
+      );
     };
 
     const todayChipClass = classNames({
@@ -305,12 +317,17 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     const { open } = this.state;
 
     if (withInput) {
+      const triggerInputOptions = {
+        ...inputOptions,
+        'aria-label': inputOptions['aria-label'] || this.props['aria-label'],
+        'aria-labelledby': inputOptions['aria-labelledby'] || this.props['aria-labelledby'],
+      };
       return (
         <Popover
           trigger={
             <Trigger
               inputFormat={inputFormat}
-              inputOptions={inputOptions}
+              inputOptions={triggerInputOptions}
               validators={validators}
               state={this.state}
               setState={this.setState.bind(this)}

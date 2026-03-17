@@ -3,7 +3,7 @@ import { Radio } from '@/index';
 
 // CSF format story
 export const defaultChecked = () => (
-  <Radio defaultChecked={true} label={'Survey Outreach'} name={'Radio'} value={'Radio'} />
+  <Radio aria-label="Survey Outreach" defaultChecked={true} label={'Survey Outreach'} name={'Radio'} value={'Radio'} />
 );
 
 export default {

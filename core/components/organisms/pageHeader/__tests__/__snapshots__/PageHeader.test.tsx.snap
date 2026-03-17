@@ -24,6 +24,7 @@ exports[`Navigation component
               data-test="DesignSystem-Breadcrumbs-item"
             >
               <a
+                aria-disabled="false"
                 class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
                 data-test="DesignSystem-Breadcrumbs-link"
                 href="/Senders"
@@ -58,7 +59,6 @@ exports[`Navigation component
                 <i
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
-                  role="button"
                   style="font-size: 14px; width: 14px;"
                 >
                   arrow_back
@@ -125,6 +125,7 @@ exports[`Navigation component
                 data-test="DesignSystem-StatusHint"
               >
                 <span
+                  aria-hidden="true"
                   class="StatusHint-icon StatusHint--default mr-4"
                   data-test="DesignSystem-StatusHint--Icon"
                 />
@@ -156,7 +157,6 @@ exports[`Navigation component
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
                     data-test="DesignSystem-MetaList--rightSeperator"
-                    role="button"
                     style="font-size: 8px; width: 8px;"
                   >
                     fiber_manual_record
@@ -188,14 +188,14 @@ exports[`Navigation component
             class="PageHeader-navigationWrapper"
             data-test="DesignSystem-PageHeader--Nav"
           >
-            <div
+            <nav
+              aria-label="Horizontal Navigation"
               class="HorizontalNav"
             >
-              <div
+              <button
                 class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
                 data-test="DesignSystem-HorizontalNav"
-                role="button"
-                tabindex="0"
+                type="button"
               >
                 <span
                   class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
@@ -203,12 +203,11 @@ exports[`Navigation component
                 >
                   Virtual Visits
                 </span>
-              </div>
-              <div
+              </button>
+              <button
                 class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
                 data-test="DesignSystem-HorizontalNav"
-                role="button"
-                tabindex="0"
+                type="button"
               >
                 <span
                   class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
@@ -216,8 +215,8 @@ exports[`Navigation component
                 >
                   Assesments
                 </span>
-              </div>
-            </div>
+              </button>
+            </nav>
           </div>
           <div
             data-test="DesignSystem-PageHeader--Tabs"
@@ -229,10 +228,15 @@ exports[`Navigation component
               <div
                 class="TabsWrapper-header TabsWrapper-header--withSeparator"
                 data-test="DesignSystem-Tabs--Header"
+                role="tablist"
               >
                 <div
+                  aria-label="New"
+                  aria-selected="true"
                   class="Tab Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  id="tabs-5-tab-0"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -255,8 +259,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Invalid"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  id="tabs-5-tab-1"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -279,8 +287,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Duplicate"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  id="tabs-5-tab-2"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -336,6 +348,7 @@ exports[`Navigation component
               data-test="DesignSystem-Breadcrumbs-item"
             >
               <a
+                aria-disabled="false"
                 class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
                 data-test="DesignSystem-Breadcrumbs-link"
                 href="/Senders"
@@ -370,7 +383,6 @@ exports[`Navigation component
                 <i
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
-                  role="button"
                   style="font-size: 14px; width: 14px;"
                 >
                   arrow_back
@@ -415,14 +427,14 @@ exports[`Navigation component
                   class="PageHeader-navigationWrapper"
                   data-test="DesignSystem-PageHeader--Nav"
                 >
-                  <div
+                  <nav
+                    aria-label="Horizontal Navigation"
                     class="HorizontalNav"
                   >
-                    <div
+                    <button
                       class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
                       data-test="DesignSystem-HorizontalNav"
-                      role="button"
-                      tabindex="0"
+                      type="button"
                     >
                       <span
                         class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
@@ -430,12 +442,11 @@ exports[`Navigation component
                       >
                         Virtual Visits
                       </span>
-                    </div>
-                    <div
+                    </button>
+                    <button
                       class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
                       data-test="DesignSystem-HorizontalNav"
-                      role="button"
-                      tabindex="0"
+                      type="button"
                     >
                       <span
                         class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
@@ -443,8 +454,8 @@ exports[`Navigation component
                       >
                         Assesments
                       </span>
-                    </div>
-                  </div>
+                    </button>
+                  </nav>
                 </div>
               </div>
               <div
@@ -477,6 +488,7 @@ exports[`Navigation component
                 data-test="DesignSystem-StatusHint"
               >
                 <span
+                  aria-hidden="true"
                   class="StatusHint-icon StatusHint--default mr-4"
                   data-test="DesignSystem-StatusHint--Icon"
                 />
@@ -508,7 +520,6 @@ exports[`Navigation component
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
                     data-test="DesignSystem-MetaList--rightSeperator"
-                    role="button"
                     style="font-size: 8px; width: 8px;"
                   >
                     fiber_manual_record
@@ -546,10 +557,15 @@ exports[`Navigation component
               <div
                 class="TabsWrapper-header TabsWrapper-header--withSeparator"
                 data-test="DesignSystem-Tabs--Header"
+                role="tablist"
               >
                 <div
+                  aria-label="New"
+                  aria-selected="true"
                   class="Tab Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  id="tabs-4-tab-0"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -572,8 +588,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Invalid"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  id="tabs-4-tab-1"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -596,8 +616,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Duplicate"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  id="tabs-4-tab-2"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -653,6 +677,7 @@ exports[`Navigation component
               data-test="DesignSystem-Breadcrumbs-item"
             >
               <a
+                aria-disabled="false"
                 class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
                 data-test="DesignSystem-Breadcrumbs-link"
                 href="/Senders"
@@ -687,7 +712,6 @@ exports[`Navigation component
                 <i
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
-                  role="button"
                   style="font-size: 14px; width: 14px;"
                 >
                   arrow_back
@@ -754,6 +778,7 @@ exports[`Navigation component
                 data-test="DesignSystem-StatusHint"
               >
                 <span
+                  aria-hidden="true"
                   class="StatusHint-icon StatusHint--default mr-4"
                   data-test="DesignSystem-StatusHint--Icon"
                 />
@@ -785,7 +810,6 @@ exports[`Navigation component
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
                     data-test="DesignSystem-MetaList--rightSeperator"
-                    role="button"
                     style="font-size: 8px; width: 8px;"
                   >
                     fiber_manual_record
@@ -817,14 +841,14 @@ exports[`Navigation component
             class="PageHeader-navigationWrapper"
             data-test="DesignSystem-PageHeader--Nav"
           >
-            <div
+            <nav
+              aria-label="Horizontal Navigation"
               class="HorizontalNav"
             >
-              <div
+              <button
                 class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
                 data-test="DesignSystem-HorizontalNav"
-                role="button"
-                tabindex="0"
+                type="button"
               >
                 <span
                   class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
@@ -832,12 +856,11 @@ exports[`Navigation component
                 >
                   Virtual Visits
                 </span>
-              </div>
-              <div
+              </button>
+              <button
                 class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
                 data-test="DesignSystem-HorizontalNav"
-                role="button"
-                tabindex="0"
+                type="button"
               >
                 <span
                   class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
@@ -845,8 +868,8 @@ exports[`Navigation component
                 >
                   Assesments
                 </span>
-              </div>
-            </div>
+              </button>
+            </nav>
           </div>
           <div
             data-test="DesignSystem-PageHeader--Tabs"
@@ -858,10 +881,15 @@ exports[`Navigation component
               <div
                 class="TabsWrapper-header TabsWrapper-header--withSeparator"
                 data-test="DesignSystem-Tabs--Header"
+                role="tablist"
               >
                 <div
+                  aria-label="New"
+                  aria-selected="true"
                   class="Tab Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  id="tabs-3-tab-0"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -884,8 +912,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Invalid"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  id="tabs-3-tab-1"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -908,8 +940,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Duplicate"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  id="tabs-3-tab-2"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -937,6 +973,7 @@ exports[`Navigation component
         </div>
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -998,10 +1035,15 @@ exports[`Navigation component
               <div
                 class="TabsWrapper-header TabsWrapper-header--withSeparator"
                 data-test="DesignSystem-Tabs--Header"
+                role="tablist"
               >
                 <div
+                  aria-label="New"
+                  aria-selected="true"
                   class="Tab Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  id="tabs-1-tab-0"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -1024,8 +1066,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Invalid"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  id="tabs-1-tab-1"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -1048,8 +1094,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Duplicate"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  id="tabs-1-tab-2"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -1077,6 +1127,7 @@ exports[`Navigation component
         </div>
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1130,12 +1181,12 @@ exports[`Navigation component
                     <div
                       class="Step Stepper-animate Step--active"
                       data-test="DesignSystem-Step"
+                      role="button"
                       tabindex="0"
                     >
                       <i
                         class="material-symbols material-symbols-outlined Icon mr-3 my-4 Stepper-animate"
                         data-test="DesignSystem-Step--Icon"
-                        role="button"
                         style="font-size: 16px; width: 16px;"
                       >
                         radio_button_unchecked
@@ -1148,14 +1199,15 @@ exports[`Navigation component
                       </span>
                     </div>
                     <div
+                      aria-disabled="true"
                       class="Step Stepper-animate Step--disabled"
                       data-test="DesignSystem-Step"
+                      role="button"
                       tabindex="-1"
                     >
                       <i
                         class="material-symbols material-symbols-outlined Icon mr-3 my-4 Stepper-animate"
                         data-test="DesignSystem-Step--Icon"
-                        role="button"
                         style="font-size: 16px; width: 16px;"
                       >
                         radio_button_unchecked
@@ -1168,14 +1220,15 @@ exports[`Navigation component
                       </span>
                     </div>
                     <div
+                      aria-disabled="true"
                       class="Step Stepper-animate Step--disabled"
                       data-test="DesignSystem-Step"
+                      role="button"
                       tabindex="-1"
                     >
                       <i
                         class="material-symbols material-symbols-outlined Icon mr-3 my-4 Stepper-animate"
                         data-test="DesignSystem-Step--Icon"
-                        role="button"
                         style="font-size: 16px; width: 16px;"
                       >
                         radio_button_unchecked
@@ -1206,6 +1259,7 @@ exports[`Navigation component
         />
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1272,6 +1326,7 @@ exports[`Navigation component
         />
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1297,6 +1352,7 @@ exports[`Navigation component
               data-test="DesignSystem-Breadcrumbs-item"
             >
               <a
+                aria-disabled="false"
                 class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
                 data-test="DesignSystem-Breadcrumbs-link"
                 href="/Senders"
@@ -1346,6 +1402,7 @@ exports[`Navigation component
         />
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1398,6 +1455,7 @@ exports[`Navigation component
         />
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1444,6 +1502,7 @@ exports[`Navigation component
         />
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1475,7 +1534,6 @@ exports[`Navigation component
                 <i
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
-                  role="button"
                   style="font-size: 14px; width: 14px;"
                 >
                   arrow_back
@@ -1514,6 +1572,7 @@ exports[`Navigation component
         />
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />
@@ -1539,6 +1598,7 @@ exports[`Navigation component
               data-test="DesignSystem-Breadcrumbs-item"
             >
               <a
+                aria-disabled="false"
                 class="Link Link--tiny Link--subtle Breadcrumbs-link ellipsis--noWrap"
                 data-test="DesignSystem-Breadcrumbs-link"
                 href="/Senders"
@@ -1573,7 +1633,6 @@ exports[`Navigation component
                 <i
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
-                  role="button"
                   style="font-size: 14px; width: 14px;"
                 >
                   arrow_back
@@ -1618,14 +1677,14 @@ exports[`Navigation component
                   class="PageHeader-navigationWrapper"
                   data-test="DesignSystem-PageHeader--Nav"
                 >
-                  <div
+                  <nav
+                    aria-label="Horizontal Navigation"
                     class="HorizontalNav"
                   >
-                    <div
+                    <button
                       class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
                       data-test="DesignSystem-HorizontalNav"
-                      role="button"
-                      tabindex="0"
+                      type="button"
                     >
                       <span
                         class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
@@ -1633,12 +1692,11 @@ exports[`Navigation component
                       >
                         Virtual Visits
                       </span>
-                    </div>
-                    <div
+                    </button>
+                    <button
                       class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
                       data-test="DesignSystem-HorizontalNav"
-                      role="button"
-                      tabindex="0"
+                      type="button"
                     >
                       <span
                         class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
@@ -1646,8 +1704,8 @@ exports[`Navigation component
                       >
                         Assesments
                       </span>
-                    </div>
-                  </div>
+                    </button>
+                  </nav>
                 </div>
               </div>
               <div
@@ -1680,6 +1738,7 @@ exports[`Navigation component
                 data-test="DesignSystem-StatusHint"
               >
                 <span
+                  aria-hidden="true"
                   class="StatusHint-icon StatusHint--default mr-4"
                   data-test="DesignSystem-StatusHint--Icon"
                 />
@@ -1711,7 +1770,6 @@ exports[`Navigation component
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
                     data-test="DesignSystem-MetaList--rightSeperator"
-                    role="button"
                     style="font-size: 8px; width: 8px;"
                   >
                     fiber_manual_record
@@ -1749,10 +1807,15 @@ exports[`Navigation component
               <div
                 class="TabsWrapper-header TabsWrapper-header--withSeparator"
                 data-test="DesignSystem-Tabs--Header"
+                role="tablist"
               >
                 <div
+                  aria-label="New"
+                  aria-selected="true"
                   class="Tab Tab--active Tab-selected align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  id="tabs-2-tab-0"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -1775,8 +1838,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Invalid"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  id="tabs-2-tab-1"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -1799,8 +1866,12 @@ exports[`Navigation component
                   </span>
                 </div>
                 <div
+                  aria-label="Duplicate"
+                  aria-selected="false"
                   class="Tab align-items-center"
                   data-test="DesignSystem-Tabs--Tab"
+                  id="tabs-2-tab-2"
+                  role="tab"
                   tabindex="0"
                 >
                   <span
@@ -1828,6 +1899,7 @@ exports[`Navigation component
         </div>
       </div>
       <hr
+        aria-orientation="horizontal"
         class="Divider Divider--horizontal Divider--header"
         data-test="DesignSystem-Divider"
       />

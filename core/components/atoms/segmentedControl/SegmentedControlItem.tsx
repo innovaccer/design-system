@@ -37,6 +37,14 @@ export interface SegmentedControlItemProps extends BaseProps {
    * Value associated with this segment. Returned in onChange callback alongside index.
    */
   value?: SegmentedControlValue;
+  /**
+   * Accessible name for icon-only or custom content segments.
+   */
+  'aria-label'?: string;
+  /**
+   * Associates segment with an external label element.
+   */
+  'aria-labelledby'?: string;
 }
 
 const iconSizeMap: Record<SegmentedControlSize, number> = {
@@ -46,7 +54,18 @@ const iconSizeMap: Record<SegmentedControlSize, number> = {
 };
 
 export const SegmentedControlItem = (props: SegmentedControlItemProps) => {
-  const { children, label, icon, iconType, tooltip, disabled, value, className } = props;
+  const {
+    children,
+    label,
+    icon,
+    iconType,
+    tooltip,
+    disabled,
+    value,
+    className,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledBy,
+  } = props;
   const baseProps = extractBaseProps(props);
   const labelRef = React.useRef<HTMLSpanElement>(null);
   const buttonRef = React.useRef<HTMLButtonElement | null>(null);
@@ -132,6 +151,8 @@ export const SegmentedControlItem = (props: SegmentedControlItemProps) => {
       disabled={isDisabled}
       tabIndex={isDisabled || isSelected ? -1 : 0}
       data-test="DesignSystem-SegmentedControl-Item"
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledBy}
       {...baseProps}
       onClick={() => {
         if (!isDisabled && onSelect) {

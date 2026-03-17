@@ -6,6 +6,7 @@ exports[`Link component
 <body>
   <div>
     <a
+      aria-disabled="false"
       class="Link Link--regular Link--default"
       data-test="DesignSystem-Link"
       href="Sample string"
@@ -26,6 +27,7 @@ exports[`Link component
 <body>
   <div>
     <a
+      aria-disabled="false"
       class="Link Link--regular Link--default"
       data-test="DesignSystem-Link"
       href="Sample string"
@@ -46,6 +48,7 @@ exports[`Link component
 <body>
   <div>
     <a
+      aria-disabled="false"
       class="Link Link--regular Link--default"
       data-test="DesignSystem-Link"
       href="Sample string"
@@ -66,6 +69,7 @@ exports[`Link component
 <body>
   <div>
     <a
+      aria-disabled="false"
       class="Link Link--regular Link--default"
       data-test="DesignSystem-Link"
       href="Sample string"

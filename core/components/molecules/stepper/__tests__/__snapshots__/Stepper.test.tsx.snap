@@ -11,12 +11,12 @@ exports[`Stepper component
     <div
       class="Step Stepper-animate Step--completed"
       data-test="DesignSystem-Step"
+      role="button"
       tabindex="0"
     >
       <i
         class="material-symbols material-symbols-rounded Icon mr-3 my-4 Stepper-animate"
         data-test="DesignSystem-Step--Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         check_circle
@@ -31,12 +31,12 @@ exports[`Stepper component
     <div
       class="Step Stepper-animate Step--active"
       data-test="DesignSystem-Step"
+      role="button"
       tabindex="0"
     >
       <i
         class="material-symbols material-symbols-outlined Icon mr-3 my-4 Stepper-animate"
         data-test="DesignSystem-Step--Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         radio_button_unchecked
@@ -49,14 +49,15 @@ exports[`Stepper component
       </span>
     </div>
     <div
+      aria-disabled="true"
       class="Step Stepper-animate Step--disabled"
       data-test="DesignSystem-Step"
+      role="button"
       tabindex="-1"
     >
       <i
         class="material-symbols material-symbols-outlined Icon mr-3 my-4 Stepper-animate"
         data-test="DesignSystem-Step--Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         radio_button_unchecked
@@ -69,14 +70,15 @@ exports[`Stepper component
       </span>
     </div>
     <div
+      aria-disabled="true"
       class="Step Stepper-animate Step--disabled"
       data-test="DesignSystem-Step"
+      role="button"
       tabindex="-1"
     >
       <i
         class="material-symbols material-symbols-outlined Icon mr-3 my-4 Stepper-animate"
         data-test="DesignSystem-Step--Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         radio_button_unchecked

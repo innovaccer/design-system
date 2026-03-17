@@ -17,6 +17,7 @@ type ChipOptions = {
   type?: ChipProps['type'];
   iconType?: ChipProps['iconType'];
   clearButton?: ChipProps['clearButton'];
+  role?: ChipProps['role'];
   onClick?: (value: OptionType, index: number) => void;
 };
 
@@ -32,6 +33,7 @@ export interface MultiSelectTriggerProps extends BaseProps {
    *   icon?: string;
    *   type?: action | input | selection
    *   clearButton?: boolean;
+   *   role?: string;
    *   onClick?: (value: string, index: number) => void;
    *   iconType?: 'rounded' | 'outlined'
    *  }
@@ -102,6 +104,14 @@ export interface MultiSelectTriggerProps extends BaseProps {
    * Specify role to chip input
    */
   role?: React.AriaRole;
+  /**
+   * Accessible name for trigger
+   */
+  'aria-label'?: string;
+  /**
+   * Associates trigger with external label
+   */
+  'aria-labelledby'?: string;
 }
 
 export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTriggerProps>((props, forwardedInputRef) => {
@@ -122,6 +132,8 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
     onInputChange,
     tabIndex,
     role,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledBy,
     ...rest
   } = props;
 
@@ -257,6 +269,14 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
   const onClickHandler = () => {
     inputElementRef.current?.focus();
   };
+  const handleTriggerKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (disabled || event.currentTarget !== event.target) return;
+
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      onClickHandler();
+    }
+  };
 
   const chipComponents = chips.map((chip, index) => {
     const { type = 'input', onClick, ...rest } = chipOptions;
@@ -280,23 +300,24 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
   });
 
   return (
-    /* TODO(a11y): fix accessibility  */
-    /* eslint-disable  */
     <div data-test="DesignSystem-MultiSelectTrigger--Border" className={ChipInputBorderClass}>
       <div
         data-test="DesignSystem-MultiSelectTrigger"
         {...baseProps}
         className={ChipInputClass}
         onClick={onClickHandler}
+        onKeyDown={handleTriggerKeyDown}
         tabIndex={disabled ? -1 : tabIndex || 0}
+        role="button"
+        aria-disabled={disabled || undefined}
       >
-        <div className={styles["ChipInput-wrapper"]} ref={customRef}>
+        <div className={styles['ChipInput-wrapper']} ref={customRef}>
           {chips && chips.length > 0 && chipComponents}
           <input
             {...rest}
             data-test="DesignSystem-MultiSelectTrigger--Input"
             ref={inputElementRef}
-            className={styles["ChipInput-input"]}
+            className={styles['ChipInput-input']}
             autoFocus={autoFocus}
             placeholder={chips && chips.length > 0 ? '' : placeholder}
             disabled={disabled}
@@ -306,6 +327,8 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
             onChange={onInputChangeHandler}
             onKeyDown={onKeyDownHandler}
             role={role}
+            aria-label={ariaLabel}
+            aria-labelledby={ariaLabelledBy}
           />
           {/* eslint-enable */}
         </div>

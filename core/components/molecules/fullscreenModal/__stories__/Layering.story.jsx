@@ -9,6 +9,8 @@ export const layering = () => {
   const dimension = 'medium';
   const knobOpen = open;
   const knobSecondOpen = openSecondOverlay;
+  const headingId = 'fullscreen-layering-heading';
+  const headingIdTwo = 'fullscreen-layering-heading-two';
 
   const onClose = () => {
     setOpen(!open);
@@ -37,9 +39,11 @@ export const layering = () => {
         open={knobOpen}
         dimension={dimension}
         onClose={onClose}
+        aria-labelledby={headingId}
         headerOptions={{
           heading: 'Heading',
           subHeading: 'Subheading',
+          headingId,
         }}
         footerOptions={{
           actions: [
@@ -75,9 +79,11 @@ export const layering = () => {
         open={knobSecondOpen}
         dimension={dimension}
         onClose={onCloseSecondOverlay}
+        aria-labelledby={headingIdTwo}
         headerOptions={{
           heading: 'Second modal heading',
           subHeading: 'Second modal subheading',
+          headingId: headingIdTwo,
         }}
         footerOptions={{
           actions: [
@@ -102,6 +108,8 @@ const customCode = `
 () => {
   const [open, setOpen] = React.useState(false);
   const [openSecondOverlay, setOpenSecondOverlay] = React.useState(false);
+  const headingId = 'fullscreen-layering-heading';
+  const headingIdTwo = 'fullscreen-layering-heading-two';
 
 
   const onClose = () => {
@@ -132,9 +140,11 @@ const customCode = `
         open={open}
         closeOnEscape={true}
         onClose={onClose}
+        aria-labelledby={headingId}
         headerOptions={{
           heading: 'Heading',
-          subHeading: 'Subheading'
+          subHeading: 'Subheading',
+          headingId
         }}
         footerOptions={{
           actions: [
@@ -169,9 +179,11 @@ const customCode = `
         closeOnEscape={true}
         open={openSecondOverlay}
         onClose={onCloseSecondOverlay}
+        aria-labelledby={headingIdTwo}
         headerOptions={{
           heading: 'Second modal heading',
-          subHeading: 'Second modal subheading'
+          subHeading: 'Second modal subheading',
+          headingId: headingIdTwo
         }}
         footerOptions={{
           actions: [

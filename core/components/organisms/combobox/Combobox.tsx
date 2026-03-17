@@ -128,6 +128,14 @@ export interface ComboboxProps extends BaseProps {
    * Adds custom class to trigger wrapper
    */
   className?: string;
+  /**
+   * Accessible name for the combobox trigger
+   */
+  'aria-label'?: string;
+  /**
+   * Associates combobox trigger with an external label
+   */
+  'aria-labelledby'?: string;
 }
 
 export const Combobox = (props: ComboboxProps) => {
@@ -155,12 +163,14 @@ export const Combobox = (props: ComboboxProps) => {
     onKeyDown,
     onKeyUp,
     // computeStyles,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledBy,
   } = props;
 
   const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>();
   const [wrapperStyle, setWrapperStyle] = React.useState({});
   const triggerRef = React.createRef<HTMLDivElement>();
-  const listRef = React.createRef<HTMLDivElement | null>();
+  const listRef = React.createRef<HTMLDivElement>();
   const [openPopover, setOpenPopover] = React.useState(false);
 
   const [isOptionSelected, setIsOptionSelected] = React.useState(false);
@@ -268,6 +278,8 @@ export const Combobox = (props: ComboboxProps) => {
     clearButton,
     onKeyDown,
     onKeyUp,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledBy,
   };
 
   const contextProp = {

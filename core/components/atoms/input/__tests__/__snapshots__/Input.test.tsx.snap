@@ -41,7 +41,6 @@ exports[`Input Component - Disabled State with Icon Snapshot Tests
         <i
           class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Icon"
-          role="button"
           style="font-size: 16px; width: 16px;"
         >
           events
@@ -101,7 +100,6 @@ exports[`Input Component - Disabled State without Change Handler Snapshot Tests
         <i
           class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Icon"
-          role="button"
           style="font-size: 16px; width: 16px;"
         >
           events
@@ -160,7 +158,6 @@ exports[`Input Component - Error State with Icon Snapshot Tests
         <i
           class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Icon"
-          role="button"
           style="font-size: 16px; width: 16px;"
         >
           events
@@ -218,7 +215,6 @@ exports[`Input Component - Icon and Placeholder Variants Snapshot Tests
         <i
           class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Icon"
-          role="button"
           style="font-size: 16px; width: 16px;"
         >
           events
@@ -277,7 +273,6 @@ exports[`Input Component - Icon and Placeholder Variants Snapshot Tests
         <i
           class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Icon"
-          role="button"
           style="font-size: 16px; width: 16px;"
         >
           events
@@ -496,7 +491,6 @@ exports[`Input Component - ReadOnly State with Icon Snapshot Tests
         <i
           class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Icon"
-          role="button"
           style="font-size: 16px; width: 16px;"
         >
           events

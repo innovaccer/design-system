@@ -4,20 +4,41 @@ import { OptionTypeProps } from './index';
 import styles from '@css/components/dropdown.module.css';
 
 const MetaOption = (props: OptionTypeProps) => {
-  const { className, textClassName, onClickHandler, optionData, onUpdateActiveOption, renderSubInfo, color, dataTest } =
-    props;
+  const {
+    className,
+    textClassName,
+    onClickHandler,
+    optionData,
+    onUpdateActiveOption,
+    renderSubInfo,
+    color,
+    dataTest,
+    selected,
+    menu,
+  } = props;
 
   const { subInfo, label, disabled } = optionData;
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (disabled) return;
+
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      onClickHandler?.(event as unknown as React.MouseEvent<HTMLDivElement>);
+    }
+  };
 
   return (
-    // TODO(a11y): fix accessibility
-    /* eslint-disable */
     <div
       className={className}
       onClick={onClickHandler}
+      onKeyDown={handleKeyDown}
       onMouseEnter={onUpdateActiveOption}
       data-test={dataTest}
       data-disabled={disabled}
+      role={menu ? 'menuitem' : 'option'}
+      tabIndex={disabled ? -1 : 0}
+      aria-disabled={disabled || undefined}
+      aria-selected={!menu ? selected : undefined}
     >
       {/* eslint-enable */}
       <div className={styles['Option-label']}>

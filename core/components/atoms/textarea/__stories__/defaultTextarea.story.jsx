@@ -6,7 +6,7 @@ export const defaultTextarea = () => (
     <Label withInput={true} htmlFor="comments">
       Comments
     </Label>
-    <Textarea name="comments" id="comments" aria-labelledby="Comments" placeholder="Enter your comments here" />
+    <Textarea name="comments" id="comments" placeholder="Enter your comments here" />
   </div>
 );
 

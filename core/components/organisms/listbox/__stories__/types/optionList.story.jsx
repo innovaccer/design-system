@@ -70,11 +70,15 @@ export const optionList = () => {
       </CardHeader>
       <CardBody>
         <div className="d-flex w-50 mb-4">
-          <Input className=" mr-4" icon="search" name="input" placeholder="Search" />
-          <Select triggerOptions={{ placeholder: 'Transition' }}>
-            <Select.List>
+          <Input className=" mr-4" icon="search" name="input" placeholder="Search" aria-label="Search templates" />
+          <Select triggerOptions={{ placeholder: 'Transition', 'aria-label': 'Transition status selector' }}>
+            <Select.List aria-label="Transition options">
               {transitionOptions.map((item, key) => (
-                <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                <Select.Option
+                  key={key}
+                  option={{ label: item.label, value: item.value }}
+                  aria-label={`${item.label} option`}
+                >
                   {item.label}
                 </Select.Option>
               ))}
@@ -83,7 +87,7 @@ export const optionList = () => {
         </div>
         <Tabs activeIndex={0}>
           <Tab label="Suggested" count={6} className="Listbox-wrapper overflow-auto">
-            <Listbox type="option">
+            <Listbox type="option" aria-label="Protocol template options">
               {dataList.map((data, key) => {
                 return (
                   <Listbox.Item selected={data.selected} key={key} id={key} disabled={key === 2}>
@@ -169,11 +173,15 @@ const customCode = `
       </CardHeader>
       <CardBody>
         <div className="d-flex w-50 mb-4">
-          <Input className=" mr-4" icon="search" name="input" placeholder="Search" />
-          <Select triggerOptions={{placeholder: 'Transition'}}>
-            <Select.List>
+          <Input className=" mr-4" icon="search" name="input" placeholder="Search" aria-label="Search templates" />
+          <Select triggerOptions={{ placeholder: 'Transition', 'aria-label': 'Transition status selector' }}>
+            <Select.List aria-label="Transition options">
               {transitionOptions.map((item, key) => (
-                <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+                <Select.Option
+                  key={key}
+                  option={{ label: item.label, value: item.value }}
+                  aria-label={\`\${item.label} option\`}
+                >
                   {item.label}
                 </Select.Option>
               ))}
@@ -182,7 +190,7 @@ const customCode = `
         </div>
         <Tabs activeIndex={0}>
           <Tab label="Suggested" count={6} className="Listbox-wrapper overflow-auto">
-            <Listbox type="option">
+            <Listbox type="option" aria-label="Protocol template options">
               {dataList.map((data, key) => {
                 return (
                   <Listbox.Item selected={data.selected} key={key} id={key} disabled={key === 2}>

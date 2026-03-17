@@ -12,7 +12,17 @@ export const basicInput = () => {
     setValue('');
   }, []);
 
-  return <Input placeholder="Name" name="input" className="w-25" value={value} onChange={onChange} onClear={onClear} />;
+  return (
+    <Input
+      placeholder="Name"
+      name="input"
+      className="w-25"
+      value={value}
+      onChange={onChange}
+      onClear={onClear}
+      aria-label="Name"
+    />
+  );
 };
 
 const customCode = `() => {
@@ -34,6 +44,7 @@ const customCode = `() => {
       value={value}
       onChange={onChange}
       onClear={onClear}
+      aria-label="Name"
     />
   );
 }`;

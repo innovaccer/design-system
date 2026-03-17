@@ -15,6 +15,10 @@ export type MenuTriggerProps = BaseProps & {
    * Defines appearance of the `Trigger`
    */
   appearance?: 'transparent' | 'basic';
+  /**
+   * Aria label for the `MenuTrigger`
+   */
+  'aria-label'?: string;
 };
 
 export const MenuTrigger = (props: MenuTriggerProps) => {
@@ -38,7 +42,7 @@ export const MenuTrigger = (props: MenuTriggerProps) => {
       data-test="DesignSystem-Menu-Trigger"
       icon="more_horiz"
       ref={menuTriggerRef}
-      aria-label="Open menu"
+      aria-label={props['aria-label'] || 'Open menu'}
       aria-haspopup={true}
       aria-expanded={openPopover}
       {...props}

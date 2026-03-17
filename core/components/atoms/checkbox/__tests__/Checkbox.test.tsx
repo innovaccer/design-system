@@ -137,3 +137,31 @@ describe('Checkbox component', () => {
     expect(checkboxIcon).toHaveClass('Checkbox-wrapper--default');
   });
 });
+
+describe('Checkbox component accessibility', () => {
+  it('associates help text using aria-describedby', () => {
+    const { getByTestId } = render(<Checkbox label={StringValue} helpText={StringValue} />);
+    const input = getByTestId('DesignSystem-Checkbox-InputBox');
+    const helpText = getByTestId('DesignSystem-Checkbox-HelpText');
+    expect(input).toHaveAttribute('aria-describedby', helpText.getAttribute('id'));
+  });
+
+  it('merges provided aria-describedby with help text id', () => {
+    const { getByTestId } = render(
+      <Checkbox label={StringValue} helpText={StringValue} aria-describedby="custom-description" />
+    );
+    const input = getByTestId('DesignSystem-Checkbox-InputBox');
+    const helpText = getByTestId('DesignSystem-Checkbox-HelpText');
+    expect(input).toHaveAttribute('aria-describedby', `custom-description ${helpText.getAttribute('id')}`);
+  });
+
+  it('sets aria-invalid when error is true', () => {
+    const { getByTestId } = render(<Checkbox label={StringValue} error={true} />);
+    expect(getByTestId('DesignSystem-Checkbox-InputBox')).toHaveAttribute('aria-invalid', 'true');
+  });
+
+  it('sets aria-checked to mixed when indeterminate', () => {
+    const { getByTestId } = render(<Checkbox label={StringValue} indeterminate={true} />);
+    expect(getByTestId('DesignSystem-Checkbox-InputBox')).toHaveAttribute('aria-checked', 'mixed');
+  });
+});

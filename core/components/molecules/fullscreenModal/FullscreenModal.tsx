@@ -93,6 +93,18 @@ export type FullscreenModalProps = {
    * Closes `FullScreenModal` when `Escape` key is pressed
    */
   closeOnEscape?: boolean;
+  /**
+   * Accessible name reference for dialog
+   */
+  'aria-labelledby'?: string;
+  /**
+   * Accessible label for dialog when no heading id is available
+   */
+  'aria-label'?: string;
+  /**
+   * Accessible description reference for dialog
+   */
+  'aria-describedby'?: string;
 } & BaseProps;
 
 interface ModalState {
@@ -101,8 +113,11 @@ interface ModalState {
   zIndex?: number;
 }
 
+let fullscreenModalInstanceCounter = 0;
+
 class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> {
   modalRef = React.createRef<HTMLDivElement>();
+  autoHeadingId: string;
   element: Element;
 
   static defaultProps = {
@@ -118,6 +133,8 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
       open: props.open,
       animate: props.open,
     };
+    fullscreenModalInstanceCounter += 1;
+    this.autoHeadingId = `fullscreen-modal-title-${fullscreenModalInstanceCounter}`;
   }
 
   onOutsideClickHandler = (event: Event) => {
@@ -196,7 +213,25 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
 
   render() {
     const { animate, open, zIndex } = this.state;
-    const { className, dimension, children, header, headerOptions, footer, footerOptions, onClose } = this.props;
+    const {
+      className,
+      dimension,
+      children,
+      header,
+      headerOptions,
+      footer,
+      footerOptions,
+      onClose,
+      'aria-labelledby': ariaLabelledBy,
+      'aria-label': ariaLabel,
+      'aria-describedby': ariaDescribedBy,
+    } = this.props;
+    const shouldUseAutoHeadingId = !ariaLabelledBy && !header && Boolean(headerOptions?.heading);
+    const resolvedHeadingId = headerOptions?.headingId || (shouldUseAutoHeadingId ? this.autoHeadingId : undefined);
+    const resolvedAriaLabelledBy = ariaLabelledBy || resolvedHeadingId;
+    const resolvedAriaLabel = !resolvedAriaLabelledBy
+      ? ariaLabel || (typeof header === 'string' ? header : undefined)
+      : undefined;
 
     const classes = classNames(
       {
@@ -235,12 +270,28 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
         data-layer={true}
         style={{ zIndex }}
       >
-        <div data-test="DesignSystem-FullscreenModal" {...baseProps} className={classes} ref={this.modalRef}>
+        <div
+          data-test="DesignSystem-FullscreenModal"
+          {...baseProps}
+          className={classes}
+          ref={this.modalRef}
+          role="dialog"
+          aria-modal={true}
+          aria-labelledby={resolvedAriaLabelledBy}
+          aria-label={resolvedAriaLabel}
+          aria-describedby={ariaDescribedBy}
+        >
           <Row className="justify-content-center">
             <Column {...sizeMap[dimension]}>
               <Row className={styles['FullscreenModal-header']}>
                 <Column>
-                  {!header && <OverlayHeader data-test="DesignSystem-FullscreenModal--header" {...headerOptions} />}
+                  {!header && (
+                    <OverlayHeader
+                      data-test="DesignSystem-FullscreenModal--header"
+                      {...headerOptions}
+                      headingId={resolvedHeadingId}
+                    />
+                  )}
 
                   {!!header && header}
                 </Column>

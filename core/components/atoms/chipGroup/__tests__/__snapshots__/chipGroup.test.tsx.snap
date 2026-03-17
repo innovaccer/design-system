@@ -22,7 +22,6 @@ exports[`ChipGroup component
           <i
             class="material-symbols material-symbols-rounded Icon Icon--inverse Chip-icon Chip-icon--left"
             data-test="DesignSystem-GenericChip--Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment
@@ -52,7 +51,6 @@ exports[`ChipGroup component
           <i
             class="material-symbols material-symbols-rounded Icon Icon--inverse Chip-icon Chip-icon--left"
             data-test="DesignSystem-GenericChip--Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment
@@ -68,6 +66,7 @@ exports[`ChipGroup component
             </span>
           </div>
           <div
+            aria-label="Remove"
             class="Chip-icon Chip-icon--right cursor-pointer"
             data-test="DesignSystem-GenericChip--clearButton"
             role="button"
@@ -76,7 +75,6 @@ exports[`ChipGroup component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--subtle"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               clear
@@ -88,6 +86,7 @@ exports[`ChipGroup component
         class="ChipGroup-item"
       >
         <div
+          aria-pressed="true"
           class="Chip-wrapper Chip Chip--selection Chip-selection--selected Chip-icon--clear Chip-size--regular"
           data-test="DesignSystem-ChipGroup--Chip"
           role="button"
@@ -97,7 +96,6 @@ exports[`ChipGroup component
           <i
             class="material-symbols material-symbols-rounded Icon Icon--primaryDark Chip-icon Chip-icon--left"
             data-test="DesignSystem-GenericChip--Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment
@@ -113,6 +111,7 @@ exports[`ChipGroup component
             </span>
           </div>
           <div
+            aria-label="Remove"
             class="Chip-icon Chip-icon--right cursor-pointer Chip-icon--selected"
             data-test="DesignSystem-GenericChip--clearButton"
             role="button"
@@ -121,7 +120,6 @@ exports[`ChipGroup component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--primaryDark"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               clear
@@ -133,6 +131,7 @@ exports[`ChipGroup component
         class="ChipGroup-item"
       >
         <div
+          aria-pressed="false"
           class="Chip-wrapper Chip Chip--selection Chip-icon--clear Chip-size--regular"
           data-test="DesignSystem-ChipGroup--Chip"
           role="button"
@@ -142,7 +141,6 @@ exports[`ChipGroup component
           <i
             class="material-symbols material-symbols-rounded Icon Icon--inverse Chip-icon Chip-icon--left"
             data-test="DesignSystem-GenericChip--Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment
@@ -158,6 +156,7 @@ exports[`ChipGroup component
             </span>
           </div>
           <div
+            aria-label="Remove"
             class="Chip-icon Chip-icon--right cursor-pointer"
             data-test="DesignSystem-GenericChip--clearButton"
             role="button"
@@ -166,7 +165,6 @@ exports[`ChipGroup component
             <i
               class="material-symbols material-symbols-rounded Icon Icon--subtle"
               data-test="DesignSystem-Icon"
-              role="button"
               style="font-size: 16px; width: 16px;"
             >
               clear

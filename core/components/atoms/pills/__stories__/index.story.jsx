@@ -3,7 +3,7 @@ import { Pills } from '@/index';
 
 // CSF format story
 export const all = () => {
-  return <Pills>10</Pills>;
+  return <Pills aria-label="Unread notifications">10</Pills>;
 };
 
 export default {

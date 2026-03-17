@@ -82,6 +82,7 @@ export const Link = (props: LinkProps) => {
       className={classes}
       componentType="a"
       tabIndex={disabled ? -1 : 0}
+      aria-disabled={disabled}
       {...rest}
     >
       {children}

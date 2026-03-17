@@ -12,8 +12,6 @@ export const WithResetButton = () => {
 
   const disabled = false;
 
-  const autoFocus = true;
-
   const readOnly = false;
 
   const error = false;
@@ -42,9 +40,6 @@ export const WithResetButton = () => {
         placeholder={placeholder}
         error={error}
         pattern={pattern}
-        // TODO(a11y)
-        //  eslint-disable-next-line
-        autoFocus={autoFocus}
       />
       <Button className="mt-5" onClick={handleClick}>
         Reset
@@ -92,9 +87,6 @@ const customCode = `() => {
           placeholder={placeholder}
           error={error}
           pattern={pattern}
-          // TODO(a11y)
-          //  eslint-disable-next-line
-          autoFocus={autoFocus}
         />
         <Button className="mt-5" onClick={handleClick}>
           Reset
