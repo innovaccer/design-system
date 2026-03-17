@@ -107,6 +107,19 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
     }
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (!showComponent && (event.key === 'Enter' || event.key === ' ')) {
+      if (event.currentTarget !== event.target) return;
+      event.preventDefault();
+      if (event.repeat) return;
+      onChangeHandler('edit');
+    }
+  };
+
+  const handleClick = () => {
+    if (!showComponent) onChangeHandler('edit');
+  };
+
   const onChipDelete = (index: number) => {
     if (value) {
       const updatedValue = [...value];
@@ -166,7 +179,15 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
   };
 
   return (
-    <div className={classes} data-test="DesignSystem-EditableChipInput" {...baseProps}>
+    <div
+      className={classes}
+      data-test="DesignSystem-EditableChipInput"
+      {...baseProps}
+      onKeyDown={handleKeyDown}
+      onClick={handleClick}
+      role="button"
+      tabIndex={showComponent ? -1 : 0}
+    >
       <Editable onChange={onChangeHandler} editing={showComponent}>
         {renderChildren()}
       </Editable>
@@ -174,21 +195,23 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
         <div className={actionClass} data-test="DesignSystem-EditableChipInput--Actions">
           <Button
             data-test="DesignSystem-EditableChipInput--DiscardButton"
-            icon="clear"
             className="mr-3"
             size="tiny"
             onClick={() => {
               setDefaultComponent(value);
             }}
-          />
+          >
+            Cancel
+          </Button>
           <Button
             data-test="DesignSystem-EditableChipInput--SaveButton"
-            icon="check"
             appearance="primary"
             size="tiny"
             disabled={disableSaveAction}
             onClick={onSaveChanges}
-          />
+          >
+            Save
+          </Button>
         </div>
       )}
     </div>
