@@ -42,11 +42,29 @@ describe('useAccessibilityProps', () => {
     }
   });
 
-  test('role, tabIndex and aria-label are set correctly', () => {
-    const { getByRole } = render(<TestComponent role="button" tabIndex={-1} aria-label="test label" />);
+  test('role, tabIndex and aria-label are set correctly when onClick is provided', () => {
+    const onClick = jest.fn();
+    const { getByRole } = render(
+      <TestComponent onClick={onClick} role="button" tabIndex={-1} aria-label="test label" />
+    );
     const element = getByRole('button');
     expect(element).toHaveAttribute('tabIndex', '-1');
     expect(element).toHaveAttribute('aria-label', 'test label');
+  });
+
+  test('does not add interactive props when onClick is not provided (avoids nested button/link)', () => {
+    const { container } = render(<TestComponent role="button" tabIndex={-1} aria-label="test label" />);
+    const element = container.firstChild as HTMLElement;
+    expect(element).not.toHaveAttribute('role');
+    expect(element).not.toHaveAttribute('tabindex');
+  });
+
+  test('preserves non-interactive ARIA props when onClick is not provided', () => {
+    const { container } = render(<TestComponent aria-label="Message sent" aria-labelledby="id" aria-hidden={true} />);
+    const element = container.firstChild as HTMLElement;
+    expect(element).toHaveAttribute('aria-label', 'Message sent');
+    expect(element).toHaveAttribute('aria-labelledby', 'id');
+    expect(element).toHaveAttribute('aria-hidden', 'true');
   });
 
   test('No trigger for callback on event of not allowed aria roles', () => {

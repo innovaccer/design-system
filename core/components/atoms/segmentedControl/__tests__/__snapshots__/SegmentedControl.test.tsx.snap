@@ -370,7 +370,6 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 20px; width: 20px;"
           >
             home
@@ -397,7 +396,6 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 20px; width: 20px;"
           >
             settings
@@ -424,7 +422,6 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 20px; width: 20px;"
           >
             person
@@ -465,7 +462,6 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             home
@@ -492,7 +488,6 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             settings
@@ -519,7 +514,6 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             person
@@ -560,7 +554,6 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 14px; width: 14px;"
           >
             home
@@ -587,7 +580,6 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 14px; width: 14px;"
           >
             settings
@@ -614,7 +606,6 @@ exports[`SegmentedControl Component - Icon + Label Snapshot Tests matches snapsh
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 14px; width: 14px;"
           >
             person
@@ -655,7 +646,6 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 20px; width: 20px;"
           >
             home
@@ -677,7 +667,6 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 20px; width: 20px;"
           >
             settings
@@ -699,7 +688,6 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 20px; width: 20px;"
           >
             person
@@ -735,7 +723,6 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             home
@@ -757,7 +744,6 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             settings
@@ -779,7 +765,6 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 16px; width: 16px;"
           >
             person
@@ -815,7 +800,6 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 14px; width: 14px;"
           >
             home
@@ -837,7 +821,6 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 14px; width: 14px;"
           >
             settings
@@ -859,7 +842,6 @@ exports[`SegmentedControl Component - Icon Only Snapshot Tests matches snapshot 
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 14px; width: 14px;"
           >
             person
