@@ -118,7 +118,7 @@ const customCode = `
                 type={this.state.passwordVisible ? 'text' : 'password'}
                 value={this.state.password}
                 onChange={this.onPasswordChange}
-                autocomplete="off"
+                autocomplete="new-password"
                 actionIcon={(
                   <Icon
                     name={this.state.passwordVisible ? 'visibility' : 'visibility_off'}
@@ -135,7 +135,7 @@ const customCode = `
                 type={this.state.confirmPasswordVisible ? 'text' : 'password'}
                 value={this.state.confirmPassword}
                 onChange={this.onConfirmPasswordChange}
-                autocomplete="off"
+                autocomplete="new-password"
                 actionIcon={(
                   <Icon
                     name={this.state.confirmPasswordVisible ? 'visibility' : 'visibility_off'}

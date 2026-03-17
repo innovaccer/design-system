@@ -61,7 +61,11 @@ const customCode = `
             </div>
             <Link target="_blank" href="#">Add organizations</Link>
             <div className="my-6 pt-6" style={{ borderTop: 'var(--border-width-2-5) solid var(--secondary-light)' }}>
+<<<<<<< HEAD
               <Heading size="s">Time Period</Heading>
+=======
+              <Heading size="xs">Time Period</Heading>
+>>>>>>> b0ac8189e (fix(patterns): update patterns stories with a11y issues)
               <div className="mt-5">
                 <DateRangePicker withInput />
               </div>
