@@ -17,6 +17,7 @@
   background: var(--white);
   border: var(--border);
   height: var(--spacing-3);
+  margin: 0;
 }
 
 .header .DocSearch-Button:active,
