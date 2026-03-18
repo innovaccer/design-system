@@ -418,6 +418,7 @@ Object {
               tabindex="0"
             >
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--default Navigation-menuIcon"
                 data-test="DesignSystem-Navigation-VerticalNavigation--menuIcon"
                 style="font-size: 16px; width: 16px;"
@@ -477,6 +478,7 @@ Object {
             tabindex="0"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default Navigation-menuIcon"
               data-test="DesignSystem-Navigation-VerticalNavigation--menuIcon"
               style="font-size: 16px; width: 16px;"

@@ -78,6 +78,7 @@ exports[`FileList component
           class="FileItem-fileContent"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon FileIcon FileIcon--animate FileIcon--video"
             data-test="DesignSystem-FileListItem--Icon"
             style="font-size: 16px; width: 16px;"
@@ -116,6 +117,7 @@ exports[`FileList component
           class="FileItem-fileContent"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon FileIcon FileIcon--image"
             data-test="DesignSystem-FileListItem--Icon"
             style="font-size: 16px; width: 16px;"
@@ -145,6 +147,7 @@ exports[`FileList component
         data-test="DesignSystem-InlineMessage"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon Icon--alert InlineMessage-icon--small"
           data-test="DesignSystem-InlineMessage--Icon"
           style="font-size: 14px; width: 14px;"
@@ -172,6 +175,7 @@ exports[`FileList component
           class="FileItem-fileContent"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon FileIcon FileIcon--animate FileIcon--application"
             data-test="DesignSystem-FileListItem--Icon"
             style="font-size: 16px; width: 16px;"
@@ -210,6 +214,7 @@ exports[`FileList component
           class="FileItem-fileContent"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon FileIcon FileIcon--animate FileIcon--others"
             data-test="DesignSystem-FileListItem--Icon"
             style="font-size: 16px; width: 16px;"

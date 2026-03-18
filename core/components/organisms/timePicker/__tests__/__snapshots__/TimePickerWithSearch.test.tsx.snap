@@ -32,6 +32,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -77,6 +78,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -122,6 +124,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -167,6 +170,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -212,6 +216,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -257,6 +262,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -302,6 +308,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -347,6 +354,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"

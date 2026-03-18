@@ -30,6 +30,7 @@ exports[`Vertical Navigation component
             class="d-flex align-items-center overflow-hidden"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-VerticalNav--Icon"
               style="font-size: 16px; width: 16px;"
@@ -57,6 +58,7 @@ exports[`Vertical Navigation component
             class="d-flex align-items-center overflow-hidden"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-VerticalNav--Icon"
               style="font-size: 16px; width: 16px;"
@@ -82,6 +84,7 @@ exports[`Vertical Navigation component
             class="d-flex align-items-center overflow-hidden"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-VerticalNav--Icon"
               style="font-size: 16px; width: 16px;"
@@ -107,6 +110,7 @@ exports[`Vertical Navigation component
             class="d-flex align-items-center overflow-hidden"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-VerticalNav--Icon"
               style="font-size: 16px; width: 16px;"
@@ -134,6 +138,7 @@ exports[`Vertical Navigation component
             class="d-flex align-items-center overflow-hidden"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-VerticalNav--Icon"
               style="font-size: 16px; width: 16px;"
@@ -161,6 +166,7 @@ exports[`Vertical Navigation component
             class="d-flex align-items-center overflow-hidden"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-VerticalNav--Icon"
               style="font-size: 16px; width: 16px;"
@@ -211,6 +217,7 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             style="font-size: 16px; width: 16px;"
@@ -255,6 +262,7 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             style="font-size: 16px; width: 16px;"
@@ -269,6 +277,7 @@ exports[`Vertical Navigation component
           </span>
         </div>
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon mx-4"
           data-test="DesignSystem-Icon"
           style="font-size: 16px; width: 16px;"
@@ -288,6 +297,7 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             style="font-size: 16px; width: 16px;"
@@ -314,6 +324,7 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             style="font-size: 16px; width: 16px;"
@@ -342,6 +353,7 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             style="font-size: 16px; width: 16px;"
@@ -376,6 +388,7 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             style="font-size: 16px; width: 16px;"
@@ -390,6 +403,7 @@ exports[`Vertical Navigation component
           </span>
         </div>
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon mx-4"
           data-test="DesignSystem-Icon"
           style="font-size: 16px; width: 16px;"

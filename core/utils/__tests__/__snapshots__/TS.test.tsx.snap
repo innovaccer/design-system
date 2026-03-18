@@ -17,6 +17,7 @@ exports[`TS renders children 1`] = `
         tabindex="0"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon Icon--inverse"
           data-test="DesignSystem-Avatar--Icon"
           style="font-size: 20px; width: 20px;"
@@ -133,6 +134,7 @@ exports[`TS renders children 1`] = `
                 data-test="DesignSystem-Button--Icon-Wrapper"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   style="font-size: 16px; width: 16px;"
@@ -156,6 +158,7 @@ exports[`TS renders children 1`] = `
                   Jun
                 </h5>
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                   data-test="DesignSystem-Icon"
                   style="font-size: 16px; width: 16px;"
@@ -175,6 +178,7 @@ exports[`TS renders children 1`] = `
                   2021
                 </h5>
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                   data-test="DesignSystem-Icon"
                   style="font-size: 16px; width: 16px;"
@@ -195,6 +199,7 @@ exports[`TS renders children 1`] = `
                 data-test="DesignSystem-Button--Icon-Wrapper"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   style="font-size: 16px; width: 16px;"
@@ -939,6 +944,7 @@ exports[`TS renders children 1`] = `
           </span>
         </div>
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon Icon--default"
           data-test="DesignSystem-Icon"
           style="font-size: 16px; width: 16px;"
@@ -981,6 +987,7 @@ exports[`TS renders children 1`] = `
                 class="DropdownButton-wrapper"
               />
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--default"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -1025,6 +1032,7 @@ exports[`TS renders children 1`] = `
     Hello World!
   </h4>
   <i
+    aria-hidden="true"
     class="material-symbols material-symbols-rounded Icon"
     data-test="DesignSystem-Icon"
     style="font-size: 16px; width: 16px;"
@@ -1814,6 +1822,7 @@ exports[`TS renders children 1`] = `
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -1870,6 +1879,7 @@ exports[`TS renders children 1`] = `
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -1890,6 +1900,7 @@ exports[`TS renders children 1`] = `
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -1914,6 +1925,7 @@ exports[`TS renders children 1`] = `
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -1934,6 +1946,7 @@ exports[`TS renders children 1`] = `
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -2026,6 +2039,7 @@ exports[`TS renders children 1`] = `
             data-test="DesignSystem-Button--Icon-Wrapper"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Button--Icon"
               style="font-size: 16px; width: 16px;"
@@ -2074,6 +2088,7 @@ exports[`TS renders children 1`] = `
             data-test="DesignSystem-Button--Icon-Wrapper"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Button--Icon"
               style="font-size: 16px; width: 16px;"
@@ -2816,6 +2831,7 @@ exports[`TS renders children 1`] = `
   <div
     class="Table"
     data-test="DesignSystem-Table-wrapper"
+    role="table"
   >
     <div
       class="Table-grid"
@@ -2853,6 +2869,7 @@ exports[`TS renders children 1`] = `
   <div
     class="Table"
     data-test="DesignSystem-Table-wrapper"
+    role="table"
   >
     <div
       class="Table-grid"

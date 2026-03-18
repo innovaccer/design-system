@@ -527,6 +527,7 @@ exports[`Button component
         data-test="DesignSystem-Button--Icon-Wrapper"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Button--Icon"
           style="font-size: 20px; width: 20px;"
@@ -559,6 +560,7 @@ exports[`Button component
         data-test="DesignSystem-Button--Icon-Wrapper"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Button--Icon"
           style="font-size: 20px; width: 20px;"
@@ -591,6 +593,7 @@ exports[`Button component
         data-test="DesignSystem-Button--Icon-Wrapper"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Button--Icon"
           style="font-size: 20px; width: 20px;"
@@ -643,6 +646,7 @@ exports[`Button component
         data-test="DesignSystem-Button--Icon-Wrapper"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Button--Icon"
           style="font-size: 16px; width: 16px;"
@@ -675,6 +679,7 @@ exports[`Button component
         data-test="DesignSystem-Button--Icon-Wrapper"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Button--Icon"
           style="font-size: 16px; width: 16px;"
@@ -707,6 +712,7 @@ exports[`Button component
         data-test="DesignSystem-Button--Icon-Wrapper"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Button--Icon"
           style="font-size: 16px; width: 16px;"
@@ -759,6 +765,7 @@ exports[`Button component
         data-test="DesignSystem-Button--Icon-Wrapper"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Button--Icon"
           style="font-size: 14px; width: 14px;"
@@ -791,6 +798,7 @@ exports[`Button component
         data-test="DesignSystem-Button--Icon-Wrapper"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Button--Icon"
           style="font-size: 14px; width: 14px;"
@@ -823,6 +831,7 @@ exports[`Button component
         data-test="DesignSystem-Button--Icon-Wrapper"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Button--Icon"
           style="font-size: 14px; width: 14px;"
