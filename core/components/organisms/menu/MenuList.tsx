@@ -36,7 +36,7 @@ export const MenuList = (props: MenuListProps) => {
   return (
     <Listbox
       data-test="DesignSystem-Menu-List"
-      role="menu"
+      role="presentation"
       aria-label={props['aria-label']}
       aria-labelledby={props['aria-labelledby']}
       {...rest}

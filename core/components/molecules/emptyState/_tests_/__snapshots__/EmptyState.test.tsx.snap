@@ -30,7 +30,6 @@ exports[`EmptyState component
           style="max-height: 150px;"
         >
           <i
-            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 32px; width: 32px;"
@@ -154,7 +153,6 @@ exports[`EmptyState component
           style="max-height: 200px;"
         >
           <i
-            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 32px; width: 32px;"
@@ -214,7 +212,6 @@ exports[`EmptyState component
           style="max-height: 100px;"
         >
           <i
-            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 32px; width: 32px;"

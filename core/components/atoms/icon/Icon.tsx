@@ -180,14 +180,7 @@ export const Icon = (props: IconProps) => {
     width: `${size}px`,
   };
 
-  const isInteractive = !!props.onClick;
-  const hasAriaLabel = !!props['aria-label'] || !!props['aria-labelledby'];
-
-  // Decorative icons should be hidden from screen readers.
-  // If it's interactive or explicitly labeled, we don't hide it unless explicitly told to.
-  const defaultAriaHidden = !isInteractive && !hasAriaLabel ? true : undefined;
-
-  const ariaHidden = props['aria-hidden'] !== undefined ? props['aria-hidden'] : defaultAriaHidden;
+  const ariaHidden = props['aria-hidden'];
 
   // change `children` to {name} after migration
   if (children && React.isValidElement(children)) {

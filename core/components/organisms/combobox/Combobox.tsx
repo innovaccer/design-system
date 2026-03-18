@@ -140,7 +140,6 @@ export interface ComboboxProps extends BaseProps {
   /**
    * Accessible name for the combobox listbox
    */
-  listboxAriaLabel?: string;
 }
 
 export const Combobox = (props: ComboboxProps) => {
@@ -170,7 +169,6 @@ export const Combobox = (props: ComboboxProps) => {
     computeStyles,
     'aria-label': ariaLabel,
     'aria-labelledby': ariaLabelledBy,
-    listboxAriaLabel,
   } = props;
 
   const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>();
@@ -337,13 +335,7 @@ export const Combobox = (props: ComboboxProps) => {
             trigger={<ComboboxTrigger {...triggerProps} />}
             computeStyles={popoverComputeStyle}
           >
-            <div
-              style={wrapperStyle}
-              ref={listRef}
-              id={popoverId}
-              role="listbox"
-              aria-label={listboxAriaLabel || ariaLabel || 'Combobox options'}
-            >
+            <div style={wrapperStyle} ref={listRef}>
               {children && typeof children === 'function' ? children(contextProp) : children}
             </div>
           </Popover>

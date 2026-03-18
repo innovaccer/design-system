@@ -53,6 +53,7 @@ export const SelectList = (props: SelectListProps) => {
   return (
     <SelectContext.Provider value={updatedContextProp}>
       <Listbox
+        id={contextProp.listboxId}
         style={wrapperStyle}
         role="listbox"
         aria-label={props['aria-label'] || 'Options item list'}

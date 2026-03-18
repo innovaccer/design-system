@@ -96,7 +96,7 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
     [dropdownButtonStyles['DropdownButton-text']]: true,
   });
 
-  const ariaLabel = props['aria-label'] || (inlineLabel ? inlineLabel.trim() : undefined);
+  const ariaLabel = props['aria-label'];
 
   return (
     <button

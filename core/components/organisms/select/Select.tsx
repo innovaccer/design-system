@@ -23,7 +23,6 @@ export interface SelectProps extends BaseProps {
   /**
    * Accessible name for the listbox
    */
-  listboxAriaLabel?: string;
   /**
    * Whether multiple options can be selected.
    */
@@ -174,7 +173,6 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     styleType = 'filled',
     error = false,
     popoverOptions,
-    listboxAriaLabel,
   } = props;
 
   const [openPopover, setOpenPopover] = React.useState(false);
@@ -305,6 +303,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     setHighlightLastItem,
     styleType,
     error,
+    listboxId,
   };
 
   return (
@@ -323,13 +322,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
           {...popoverOptions}
         >
           <OutsideClick onOutsideClick={onOutsideClickHandler}>
-            <div
-              id={listboxId}
-              tabIndex={-1}
-              ref={listRef}
-              role="listbox"
-              aria-label={listboxAriaLabel || 'Select options'}
-            >
+            <div tabIndex={-1} ref={listRef}>
               {children}
             </div>
           </OutsideClick>

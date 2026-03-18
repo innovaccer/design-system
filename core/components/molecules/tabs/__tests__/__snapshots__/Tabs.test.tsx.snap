@@ -66,7 +66,6 @@ exports[`Tabs component
           style="max-width: var(--spacing-640);"
         >
           <i
-            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--subtle mr-4 "
             data-test="DesignSystem-Tabs--Icon"
             style="font-size: 16px; width: 16px;"
@@ -181,7 +180,6 @@ exports[`Tabs component
           style="max-width: var(--spacing-640);"
         >
           <i
-            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--subtle mr-4 "
             data-test="DesignSystem-Tabs--Icon"
             style="font-size: 16px; width: 16px;"
@@ -296,7 +294,6 @@ exports[`Tabs component
           style="max-width: var(--spacing-640);"
         >
           <i
-            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--subtle mr-4 "
             data-test="DesignSystem-Tabs--Icon"
             style="font-size: 16px; width: 16px;"
@@ -411,7 +408,6 @@ exports[`Tabs component
           style="max-width: var(--spacing-640);"
         >
           <i
-            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--subtle mr-4 "
             data-test="DesignSystem-Tabs--Icon"
             style="font-size: 16px; width: 16px;"

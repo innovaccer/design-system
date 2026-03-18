@@ -24,6 +24,7 @@ export type ContextProps = {
   size?: TListboxSize;
   styleType?: SelectStyleType;
   error?: boolean;
+  listboxId?: string;
 };
 
 export const SelectContext = React.createContext<ContextProps>({});

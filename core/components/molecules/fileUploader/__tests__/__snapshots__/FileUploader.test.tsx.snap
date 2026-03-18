@@ -40,7 +40,6 @@ exports[`FileUploader component
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
-            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -99,7 +98,6 @@ exports[`FileUploader component prop:accept snapshot
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
-            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -159,7 +157,6 @@ exports[`FileUploader component prop:disabled snapshot
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
-            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -219,7 +216,6 @@ exports[`FileUploader component prop:disabled snapshot
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
-            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -279,7 +275,6 @@ exports[`FileUploader component prop:multiple snapshot
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
-            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -338,7 +333,6 @@ exports[`FileUploader component prop:multiple snapshot
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
-            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"

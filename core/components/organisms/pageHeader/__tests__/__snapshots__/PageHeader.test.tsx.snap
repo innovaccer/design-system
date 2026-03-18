@@ -58,7 +58,6 @@ exports[`Navigation component
                 data-test="DesignSystem-Button--Icon-Wrapper"
               >
                 <i
-                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   style="font-size: 14px; width: 14px;"
@@ -158,7 +157,6 @@ exports[`Navigation component
                     </span>
                   </span>
                   <i
-                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
                     data-test="DesignSystem-MetaList--rightSeperator"
                     style="font-size: 8px; width: 8px;"
@@ -388,7 +386,6 @@ exports[`Navigation component
                 data-test="DesignSystem-Button--Icon-Wrapper"
               >
                 <i
-                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   style="font-size: 14px; width: 14px;"
@@ -529,7 +526,6 @@ exports[`Navigation component
                     </span>
                   </span>
                   <i
-                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
                     data-test="DesignSystem-MetaList--rightSeperator"
                     style="font-size: 8px; width: 8px;"
@@ -723,7 +719,6 @@ exports[`Navigation component
                 data-test="DesignSystem-Button--Icon-Wrapper"
               >
                 <i
-                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   style="font-size: 14px; width: 14px;"
@@ -823,7 +818,6 @@ exports[`Navigation component
                     </span>
                   </span>
                   <i
-                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
                     data-test="DesignSystem-MetaList--rightSeperator"
                     style="font-size: 8px; width: 8px;"
@@ -1572,7 +1566,6 @@ exports[`Navigation component
                 data-test="DesignSystem-Button--Icon-Wrapper"
               >
                 <i
-                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   style="font-size: 14px; width: 14px;"
@@ -1674,7 +1667,6 @@ exports[`Navigation component
                 data-test="DesignSystem-Button--Icon-Wrapper"
               >
                 <i
-                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   style="font-size: 14px; width: 14px;"
@@ -1815,7 +1807,6 @@ exports[`Navigation component
                     </span>
                   </span>
                   <i
-                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
                     data-test="DesignSystem-MetaList--rightSeperator"
                     style="font-size: 8px; width: 8px;"
