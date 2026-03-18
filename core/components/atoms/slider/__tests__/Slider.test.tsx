@@ -52,4 +52,48 @@ describe('slider component', () => {
     expect(onChangeHandler).toBeCalled();
     expect(onChangeHandler.mock.calls[0][0]).toBe(3);
   });
+
+  it('Home jumps to minimum value', () => {
+    const onChange = jest.fn();
+    const { getByTestId } = render(
+      <Slider label="Slider" value={50} min={0} max={100} stepSize={5} onChange={onChange} />
+    );
+    const handle = getByTestId('DesignSystem-MultiSlider-Handle');
+    handle.focus();
+    fireEvent.keyDown(handle, { keyCode: 36 });
+    expect(onChange).toHaveBeenCalledWith(0);
+  });
+
+  it('End jumps to maximum value', () => {
+    const onChange = jest.fn();
+    const { getByTestId } = render(
+      <Slider label="Slider" value={50} min={0} max={100} stepSize={5} onChange={onChange} />
+    );
+    const handle = getByTestId('DesignSystem-MultiSlider-Handle');
+    handle.focus();
+    fireEvent.keyDown(handle, { keyCode: 35 });
+    expect(onChange).toHaveBeenCalledWith(100);
+  });
+
+  it('Page Up increases by 10× step', () => {
+    const onChange = jest.fn();
+    const { getByTestId } = render(
+      <Slider label="Slider" value={25} min={0} max={100} stepSize={5} onChange={onChange} />
+    );
+    const handle = getByTestId('DesignSystem-MultiSlider-Handle');
+    handle.focus();
+    fireEvent.keyDown(handle, { keyCode: 33 });
+    expect(onChange).toHaveBeenCalledWith(75);
+  });
+
+  it('Page Down decreases by 10× step', () => {
+    const onChange = jest.fn();
+    const { getByTestId } = render(
+      <Slider label="Slider" value={75} min={0} max={100} stepSize={5} onChange={onChange} />
+    );
+    const handle = getByTestId('DesignSystem-MultiSlider-Handle');
+    handle.focus();
+    fireEvent.keyDown(handle, { keyCode: 34 });
+    expect(onChange).toHaveBeenCalledWith(25);
+  });
 });
