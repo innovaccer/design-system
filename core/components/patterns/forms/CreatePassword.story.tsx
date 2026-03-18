@@ -76,24 +76,26 @@ const customCode = `
     renderRequirements() {
 
       return (
-        <div>
+        <ul aria-label="Password requirements" className="list-unstyled p-0 m-0">
           {
             passwordRequirements.map((item, index) => {
               const { validation, key } = item;
+              const isMet = this.state.validations[key];
 
               return (
-                <div className="d-flex mb-4 align-items-center" key={index}>
+                <li className="d-flex mb-4 align-items-center" key={index}>
                   <Icon
                     className="mr-4"
-                    name={this.state.validations[key] ? 'check_circle' : 'fiber_manual_record'}
-                    appearance={this.state.validations[key] ? 'success' : 'default'}
+                    name={isMet ? 'check_circle' : 'fiber_manual_record'}
+                    appearance={isMet ? 'success' : 'default'}
+                    aria-label={isMet ? 'Requirement met' : 'Requirement not met'}
                   />
                   <Text>{validation}</Text>
-                </div>
+                </li>
               );
             })
           }
-        </div>
+        </ul>
       )
     }
 
@@ -110,8 +112,9 @@ const customCode = `
         <div style={{ width: '350px' }}>
           <Card className="px-6 py-6">
             <form onSubmit={this.onSubmit}>
-              <Label withInput={true}>Password</Label>
+              <Label withInput={true} htmlFor="create-password">Password</Label>
               <Input
+                id="create-password"
                 name="password"
                 className="mb-4"
                 placeholder="Enter password"
@@ -128,8 +131,9 @@ const customCode = `
                 )}
               />
               {this.renderRequirements()}
-              <Label withInput={true} className="mt-6">Confirm Password</Label>
+              <Label withInput={true} htmlFor="create-confirm-password" className="mt-6">Confirm Password</Label>
               <Input
+                id="create-confirm-password"
                 name="confirmPassword"
                 placeholder="Re-enter password"
                 type={this.state.confirmPasswordVisible ? 'text' : 'password'}

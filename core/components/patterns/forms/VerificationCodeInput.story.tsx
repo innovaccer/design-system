@@ -87,13 +87,13 @@ const customCode = `() => {
             )}
             <Card className="py-6 px-6">
               <div className="d-flex flex-column">
-                <Heading size="s">Enter Verification Code</Heading>
+                <Heading size="m">Enter Verification Code</Heading>
                 <Text className="mt-3" appearance="subtle">
                   We have sent a 6 digit verification code to your phone (555) 555-1234
                 </Text>
               </div>
-              <div role="group" aria-label="Verification code" className="mt-7">
-                <Label withInput={true}>Verification code</Label>
+              <div role="group" aria-labelledby="verification-code-label" className="mt-7">
+                <Label id="verification-code-label" withInput={true}>Verification code</Label>
                 <div className="d-flex align-items-center">
                   <VerificationCodeInput
                     fields={6}
@@ -103,20 +103,19 @@ const customCode = `() => {
                   {loading && <Spinner className="ml-5" size="medium" />}
                 </div>
               </div>
-              {isTimerStarted ? (
-                <Text className="mt-7 d-flex" weight="medium">
+              {isTimerStarted && (
+                <Text aria-live="polite" className="mt-7 d-flex" weight="medium">
                   {\`Haven't recieved the code? Resend code in 0:\${time}\`}
                 </Text>
-              ) : (
-                  <Button
-                    className="mt-7"
-                    appearance="transparent"
-                    disabled={loading || !!value}
-                    onClick={this.onToogleLink}
-                  >
-                    Resend Code
-                  </Button>
-                )}
+              )}
+              <Button
+                className="mt-4"
+                appearance="transparent"
+                disabled={loading || !!value || isTimerStarted}
+                onClick={this.onToogleLink}
+              >
+                Resend Code
+              </Button>
             </Card>
           </div>
         </div>
