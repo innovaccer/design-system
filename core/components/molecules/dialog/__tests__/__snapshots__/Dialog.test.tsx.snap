@@ -67,7 +67,6 @@ exports[`Dialog component
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     close
@@ -211,7 +210,6 @@ exports[`Dialog component
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     close
@@ -353,7 +351,6 @@ exports[`Dialog component
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     close
@@ -496,7 +493,6 @@ exports[`Dialog component
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     close
@@ -639,7 +635,6 @@ exports[`Dialog component
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     close
@@ -782,7 +777,6 @@ exports[`Dialog component
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     close
@@ -925,7 +919,6 @@ exports[`Dialog component
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     close
@@ -1068,7 +1061,6 @@ exports[`Dialog component
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     close
@@ -1211,7 +1203,6 @@ exports[`Dialog component
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     close
@@ -1354,7 +1345,6 @@ exports[`Dialog component
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     close
@@ -1497,7 +1487,6 @@ exports[`Dialog component
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     close
@@ -1640,7 +1629,6 @@ exports[`Dialog component
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     close
@@ -1783,7 +1771,6 @@ exports[`Dialog component
                   <i
                     class="material-symbols material-symbols-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     close

@@ -5,19 +5,20 @@ exports[`Stepper component
  1`] = `
 <DocumentFragment>
   <div
+    aria-label="Steps"
     class="Stepper"
     data-test="DesignSystem-Stepper"
+    role="group"
   >
     <div
       class="Step Stepper-animate Step--completed"
       data-test="DesignSystem-Step"
       role="button"
-      tabindex="0"
+      tabindex="-1"
     >
       <i
         class="material-symbols material-symbols-rounded Icon mr-3 my-4 Stepper-animate"
         data-test="DesignSystem-Step--Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         check_circle
@@ -38,7 +39,6 @@ exports[`Stepper component
       <i
         class="material-symbols material-symbols-outlined Icon mr-3 my-4 Stepper-animate"
         data-test="DesignSystem-Step--Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         radio_button_unchecked
@@ -60,7 +60,6 @@ exports[`Stepper component
       <i
         class="material-symbols material-symbols-outlined Icon mr-3 my-4 Stepper-animate"
         data-test="DesignSystem-Step--Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         radio_button_unchecked
@@ -82,7 +81,6 @@ exports[`Stepper component
       <i
         class="material-symbols material-symbols-outlined Icon mr-3 my-4 Stepper-animate"
         data-test="DesignSystem-Step--Icon"
-        role="button"
         style="font-size: 16px; width: 16px;"
       >
         radio_button_unchecked
