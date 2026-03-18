@@ -76,14 +76,14 @@ const customCode = `
     renderRequirements() {
 
       return (
-        <ul aria-label="Password requirements" className="list-unstyled p-0 m-0">
+        <div role="list" aria-label="Password requirements">
           {
             passwordRequirements.map((item, index) => {
               const { validation, key } = item;
               const isMet = this.state.validations[key];
 
               return (
-                <li className="d-flex mb-4 align-items-center" key={index}>
+                <div role="listitem" className="d-flex mb-4 align-items-center" key={index}>
                   <Icon
                     className="mr-4"
                     name={isMet ? 'check_circle' : 'fiber_manual_record'}
@@ -91,11 +91,11 @@ const customCode = `
                     aria-label={isMet ? 'Requirement met' : 'Requirement not met'}
                   />
                   <Text>{validation}</Text>
-                </li>
+                </div>
               );
             })
           }
-        </ul>
+        </div>
       )
     }
 

@@ -15,7 +15,6 @@ const customCode = `() => {
         loading: false,
         value: '',
         error: false,
-        statusMessage: '',
       };
 
       this.onToogleLink = this.onToogleLink.bind(this);
@@ -39,18 +38,16 @@ const customCode = `() => {
         if (timer === 0) {
           this.setState({
             isTimerStarted: !isTimerStarted,
-            statusMessage: 'Resend Code is now available.',
           });
         }
       }
     }
 
     onToogleLink() {
-      if (this.state.loading || !!this.state.value) return;
+      if (this.state.loading || !!this.state.value || this.state.isTimerStarted) return;
       this.setState({
         isTimerStarted: true,
         timer: 30,
-        statusMessage: 'Code resent. Resend Code button available in 30 seconds.',
       });
     };
 
@@ -71,7 +68,7 @@ const customCode = `() => {
     };
 
     render() {
-      const { isTimerStarted, timer, loading, value, error, statusMessage } = this.state;
+      const { isTimerStarted, timer, loading, value, error } = this.state;
       const time = timer < 10 ? \`0\${timer}\` : timer;
 
       return (
@@ -106,16 +103,16 @@ const customCode = `() => {
                   {loading && <Spinner className="ml-5" size="medium" />}
                 </div>
               </div>
-              <span role="status" aria-live="polite" aria-atomic="true" className="sr-only">{statusMessage}</span>
               {isTimerStarted && (
-                <Text className="mt-7 d-flex" weight="medium" aria-hidden="true">
+                <Text className="mt-7 d-flex" weight="medium">
                   {\`Haven't recieved the code? Resend code in 0:\${time}\`}
                 </Text>
               )}
               <Button
                 className="mt-4"
                 appearance="transparent"
-                disabled={loading || !!value || isTimerStarted}
+                disabled={loading || !!value}
+                aria-disabled={isTimerStarted || undefined}
                 onClick={this.onToogleLink}
               >
                 Resend Code
