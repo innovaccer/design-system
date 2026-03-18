@@ -2,6 +2,10 @@ import * as React from 'react';
 
 export interface TabProps {
   /**
+   * Accessible label for the tab
+   */
+  'aria-label'?: string;
+  /**
    * Label of the Tab
    */
   label: React.ReactNode | string;

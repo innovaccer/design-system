@@ -304,6 +304,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
               type="action"
               disabled={isTodayDisabled()}
               onClick={() => this.onDateChangeHandler(new Date())}
+              aria-label={`Select today's date, ${todayMonthAndDate}`}
             />
           </div>
         )}
@@ -319,7 +320,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     if (withInput) {
       const triggerInputOptions = {
         ...inputOptions,
-        'aria-label': inputOptions['aria-label'] || this.props['aria-label'],
+        'aria-label': inputOptions['aria-label'] || this.props['aria-label'] || 'Select date',
         'aria-labelledby': inputOptions['aria-labelledby'] || this.props['aria-labelledby'],
       };
       return (
@@ -339,6 +340,8 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
           appendToBody={true}
           open={open}
           onToggle={this.onToggleHandler}
+          role="dialog"
+          aria-label="Date picker"
         >
           {this.renderCalendar()}
         </Popover>

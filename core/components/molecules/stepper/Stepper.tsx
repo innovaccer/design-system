@@ -45,6 +45,14 @@ export interface StepperProps extends BaseProps {
   onChange?: (active: number, completed: number, label?: string, value?: React.ReactText) => void;
 
   skipIndexes: number[];
+  /**
+   * Accessible label for the stepper
+   */
+  'aria-label'?: string;
+  /**
+   * Associates stepper with an external label
+   */
+  'aria-labelledby'?: string;
 }
 
 export const Stepper = (props: StepperProps) => {
@@ -98,7 +106,14 @@ export const Stepper = (props: StepperProps) => {
   const hasActiveStep = active >= 0 && active < steps.length;
 
   return (
-    <div data-test="DesignSystem-Stepper" {...baseProps} className={StepperClass} role="group" aria-label="Steps">
+    <div
+      data-test="DesignSystem-Stepper"
+      {...baseProps}
+      className={StepperClass}
+      role="group"
+      aria-label={props['aria-label'] || 'Progress steps'}
+      aria-labelledby={props['aria-labelledby']}
+    >
       {steps.map((step, index) => {
         const { label, value } = step;
 

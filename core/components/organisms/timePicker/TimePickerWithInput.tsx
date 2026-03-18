@@ -49,6 +49,10 @@ export interface TimePickerInputProps {
    * Accessible label for time input trigger
    */
   'aria-label'?: string;
+  /**
+   * Associates time input trigger with an external label
+   */
+  'aria-labelledby'?: string;
 }
 
 export const TimePickerWithInput = (props: TimePickerInputProps) => {
@@ -117,7 +121,8 @@ export const TimePickerWithInput = (props: TimePickerInputProps) => {
       onClear={onClearHandler}
       onBlur={onBlurHandler}
       error={error}
-      aria-label={inputOptions['aria-label'] || props['aria-label']}
+      aria-label={inputOptions['aria-label'] || props['aria-label'] || 'Time picker'}
+      aria-labelledby={inputOptions['aria-labelledby'] || props['aria-labelledby']}
       id="parent-TimePicker"
     />
   );

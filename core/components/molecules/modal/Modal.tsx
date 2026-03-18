@@ -125,6 +125,10 @@ export interface ModalProps extends BaseProps {
    * Pass the `id` of the element that labels this modal.
    */
   'aria-labelledby'?: string;
+  /**
+   * Accessible label for dialog when no heading id is available
+   */
+  'aria-label'?: string;
 }
 
 interface ModalState {
@@ -305,10 +309,14 @@ class Modal extends React.Component<ModalProps, ModalState> {
       footer,
       onClose,
       'aria-labelledby': ariaLabelledBy,
+      'aria-label': ariaLabel,
     } = this.props;
     const shouldUseAutoHeadingId = !ariaLabelledBy && !header && Boolean(headerOptions?.heading);
     const resolvedHeadingId = headerOptions?.headingId || (shouldUseAutoHeadingId ? this.autoHeadingId : undefined);
     const resolvedAriaLabelledBy = ariaLabelledBy || resolvedHeadingId;
+    const resolvedAriaLabel = !resolvedAriaLabelledBy
+      ? ariaLabel || (typeof header === 'string' ? header : undefined)
+      : undefined;
 
     const BackdropZIndex: number = zIndex ? zIndex - 1 : 1000;
 
@@ -380,6 +388,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
           role="dialog"
           aria-modal={open}
           aria-labelledby={resolvedAriaLabelledBy}
+          aria-label={resolvedAriaLabel}
           {...baseProps}
           className={classes}
           {...sizeMap[dimension]}
@@ -407,6 +416,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
                     icon="close"
                     appearance="transparent"
                     data-test="DesignSystem-Modal--CloseButton"
+                    aria-label="Close modal"
                     onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
                       if (onClose) onClose(event, 'IconClick');
                     }}

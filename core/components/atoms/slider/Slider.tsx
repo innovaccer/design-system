@@ -3,6 +3,14 @@ import MultiSlider, { MultiSliderProps } from '@/components/atoms/multiSlider';
 
 export interface SliderProps extends MultiSliderProps {
   /**
+   * Accessible label for the slider handle
+   */
+  'aria-label'?: string;
+  /**
+   * Associates the slider handle with an external label
+   */
+  'aria-labelledby'?: string;
+  /**
    * Gives default value to `Slider` (Used in case of uncontrolled `Slider`).
    */
   defaultValue: number;
@@ -40,7 +48,14 @@ export const Slider = (props: SliderProps) => {
 
   return (
     <MultiSlider {...rest}>
-      <MultiSlider.Handle value={value} onChange={onChangeHandler} onRelease={onRelease} fillBefore={true} />
+      <MultiSlider.Handle
+        value={value}
+        onChange={onChangeHandler}
+        onRelease={onRelease}
+        fillBefore={true}
+        aria-label={props['aria-label']}
+        aria-labelledby={props['aria-labelledby']}
+      />
     </MultiSlider>
   );
 };

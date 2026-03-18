@@ -81,12 +81,13 @@ export const GridRow = (props: GridRowProps) => {
     return (
       // TODO(a11y)
       // eslint-disable-next-line
-      <div className={CheckboxClass} onClick={(e) => e.stopPropagation()} data-test="DesignSystem-Grid-cellCheckbox">
+      <div className={CheckboxClass} onClick={(e) => e.stopPropagation()} data-test="DesignSystem-Grid-cellCheckbox" role="gridcell">
         {loading ? (
           <Placeholder className="mr-4" />
         ) : (
           <Checkbox
             checked={!!data._selected}
+            aria-label={`Select row ${rowIndex}`}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
               onSelect(rI, event.target.checked);
             }}
@@ -149,12 +150,16 @@ export const GridRow = (props: GridRowProps) => {
     <div className={wrapperClasses} data-test="DesignSystem-Grid-rowWrapper">
       {/* TODO(a11y)  */}
       {/* eslint-disable-next-line */}
-      <div data-test="DesignSystem-Grid-row" className={rowClasses} onClick={onClickHandler} ref={rowRef}>
+      <div data-test="DesignSystem-Grid-row" className={rowClasses} onClick={onClickHandler} ref={rowRef} role="row">
         {renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left')}
         {renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length)}
         {renderSchema(rightPinnedSchema, false, 'right')}
       </div>
-      {nestedRows && expanded && <div className={styles['Grid-nestedRow']}>{nestedRowData}</div>}
+      {nestedRows && expanded && (
+        <div className={styles['Grid-nestedRow']} role="rowgroup">
+          {nestedRowData}
+        </div>
+      )}
     </div>
   );
 };

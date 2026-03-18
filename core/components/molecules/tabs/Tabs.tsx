@@ -23,6 +23,7 @@ export interface TabConfig {
   isDismissible?: boolean;
   onDismiss?: (tabInfo: TabInfo) => void;
   iconType?: IconType;
+  'aria-label'?: string;
 }
 export interface TabsProps extends BaseProps {
   /**
@@ -253,7 +254,7 @@ export const Tabs = (props: TabsProps) => {
       });
 
     const tabInfo = { label: label, activeIndex: activeIndex, currentTabIndex: index };
-    const onCloseHandler = (e: React.MouseEvent) => {
+    const onCloseHandler = (e: React.MouseEvent | React.KeyboardEvent) => {
       e.stopPropagation();
       if (onDismiss) onDismiss(tabInfo);
     };
@@ -264,8 +265,20 @@ export const Tabs = (props: TabsProps) => {
         appearance={iconAppearance}
         className={dismissIconClass(disabled)}
         onClick={!disabled ? onCloseHandler : undefined}
+        onKeyDown={
+          !disabled
+            ? (e: React.KeyboardEvent) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  onCloseHandler(e);
+                }
+              }
+            : undefined
+        }
         tabIndex={disabled ? -1 : 0}
         size={size === 'regular' ? 16 : 12}
+        role="button"
+        aria-label={`Dismiss ${label} tab`}
       />
     );
   };
@@ -344,7 +357,7 @@ export const Tabs = (props: TabsProps) => {
         aria-selected={!disabled && activeIndex === index}
         aria-controls={children ? panelId : undefined}
         aria-disabled={disabled || undefined}
-        aria-label={typeof label === 'string' ? label : undefined}
+        aria-label={currentTabProp['aria-label'] || (typeof label === 'string' ? label : undefined)}
       >
         {renderTab(currentTabProp, index)}
       </div>

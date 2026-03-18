@@ -117,7 +117,7 @@ export const Tooltip = (props: TooltipProps) => {
   });
 
   const tooltipWrapper = (
-    <div className={tooltipClass} data-test="DesignSystem-Tooltip-Wrapper">
+    <div className={tooltipClass} data-test="DesignSystem-Tooltip-Wrapper" role="tooltip">
       <Text className={styles['Tooltip-text']} appearance="white" size={size}>
         {tooltip}
       </Text>

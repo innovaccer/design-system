@@ -5,6 +5,14 @@ import styles from '@css/components/menu.module.css';
 
 export interface MenuGroupProps extends BaseProps {
   /**
+   * Accessible name for the menu group
+   */
+  'aria-label'?: string;
+  /**
+   * Associates menu group with an external label
+   */
+  'aria-labelledby'?: string;
+  /**
    * Defines Group label
    */
   label?: string;
@@ -23,7 +31,14 @@ export const MenuGroup = (props: MenuGroupProps) => {
 
   if (label) {
     return (
-      <div data-test="DesignSystem-Menu-Group" role="group" className={styles['Menu-Group']} {...rest}>
+      <div
+        data-test="DesignSystem-Menu-Group"
+        role="group"
+        aria-label={props['aria-label'] || label}
+        aria-labelledby={props['aria-labelledby']}
+        className={styles['Menu-Group']}
+        {...rest}
+      >
         <Text
           data-test="DesignSystem-Menu-Group-Label"
           size="small"
@@ -39,7 +54,13 @@ export const MenuGroup = (props: MenuGroupProps) => {
   }
 
   return (
-    <div data-test="DesignSystem-Menu-Group" role="group" {...rest}>
+    <div
+      data-test="DesignSystem-Menu-Group"
+      role="group"
+      aria-label={props['aria-label']}
+      aria-labelledby={props['aria-labelledby']}
+      {...rest}
+    >
       {children}
       {showDivider && <Divider className="my-3" />}
     </div>

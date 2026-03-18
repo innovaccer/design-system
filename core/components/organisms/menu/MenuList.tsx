@@ -7,6 +7,14 @@ type TagType = 'ul' | 'ol' | 'div' | 'nav';
 
 export interface MenuListProps extends BaseProps {
   /**
+   * Accessible name for the menu list
+   */
+  'aria-label'?: string;
+  /**
+   * Associates menu list with an external label
+   */
+  'aria-labelledby'?: string;
+  /**
    * Describe size of `Menu List`
    */
   size?: TListboxSize;
@@ -26,7 +34,13 @@ export const MenuList = (props: MenuListProps) => {
   const { children, ...rest } = props;
 
   return (
-    <Listbox data-test="DesignSystem-Menu-List" {...rest}>
+    <Listbox
+      data-test="DesignSystem-Menu-List"
+      role="menu"
+      aria-label={props['aria-label']}
+      aria-labelledby={props['aria-labelledby']}
+      {...rest}
+    >
       <MenuListContext.Provider value={{ size: props.size }}>{children}</MenuListContext.Provider>
     </Listbox>
   );

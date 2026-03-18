@@ -9,6 +9,10 @@ export type ActionButtonType = 'outlined' | 'rounded';
 
 export interface ActionButtonProps extends BaseProps {
   /**
+   * Accessible name for the action button
+   */
+  'aria-label'?: string;
+  /**
    * Material icon name
    */
   name?: string;

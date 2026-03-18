@@ -46,6 +46,14 @@ interface hoveredYearProps {
 }
 export interface SharedProps extends BaseProps {
   /**
+   * Accessible name for the component
+   */
+  'aria-label'?: string;
+  /**
+   * ID of the element that labels the component
+   */
+  'aria-labelledby'?: string;
+  /**
    * Size of `Calendar`
    */
   size: Size;
@@ -102,6 +110,10 @@ export interface SharedProps extends BaseProps {
    * Associates calendar wrapper with an external label
    */
   'aria-labelledby'?: string;
+  /**
+   * Accessible role for the calendar
+   */
+  role?: string;
 }
 
 export type CalendarProps = {
@@ -580,6 +592,13 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       [styles[`Calendar-headerIcon--${type}`]]: type,
     });
 
+    let ariaLabel = '';
+    if (type === 'prev') {
+      ariaLabel = view === 'year' ? 'Previous year block' : view === 'month' ? 'Previous year' : 'Previous month';
+    } else {
+      ariaLabel = view === 'year' ? 'Next year block' : view === 'month' ? 'Next year' : 'Next month';
+    }
+
     return (
       <Button
         type="button"
@@ -589,6 +608,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         disabled={disabled}
         size={size === 'small' ? 'tiny' : 'regular'}
         onClick={this.onNavIconClickHandler(type)}
+        aria-label={ariaLabel}
       />
     );
   };
@@ -651,11 +671,17 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     return (
       <div className={headerContentClass}>
         {view !== 'date' && (
-          // TODO(a11y)
-          //  eslint-disable-next-line
           <div
-            className="d-flex justify-content-center align-items-center"
+            role="button"
+            tabIndex={0}
+            className="d-flex justify-content-center align-items-center cursor-pointer"
             onClick={this.onNavHeadingClickHandler(view)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                this.onNavHeadingClickHandler(view)();
+              }
+            }}
           >
             {renderHeading(headerContent)}
           </div>
@@ -663,19 +689,31 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
         {view === 'date' && (
           <>
-            {/* TODO(a11y) */}
-            {/* eslint-disable-next-line */}
             <div
+              role="button"
+              tabIndex={0}
               onClick={this.onNavHeadingClickHandler(view)}
-              className="d-flex justify-content-center align-items-center"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  this.onNavHeadingClickHandler(view)();
+                }
+              }}
+              className="d-flex justify-content-center align-items-center cursor-pointer"
             >
               {renderHeading(months[monthNavVal])}
             </div>
-            {/* TODO(a11y) */}
-            {/* eslint-disable-next-line */}
             <div
-              className="ml-4 d-flex justify-content-center align-items-center"
+              role="button"
+              tabIndex={0}
+              className="ml-4 d-flex justify-content-center align-items-center cursor-pointer"
               onClick={this.onNavHeadingClickHandler('month')}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  this.onNavHeadingClickHandler('month')();
+                }
+              }}
             >
               {renderHeading(yearNavVal)}
             </div>
@@ -730,16 +768,23 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           }) as TextColor;
 
           return (
-            //  TODO(a11y)
-            //  eslint-disable-next-line
             <div
-              //  eslint-disable-next-line
               key={`${row}-${col}`}
               data-test="DesignSystem-Calendar--yearValue"
               className={valueClass}
               onClick={this.selectYear(year)}
-              //  eslint-disable-next-line
               onMouseOver={this.yearMouseOverHandler.bind(this, year, isCurrentYear(), disabled)}
+              onFocus={this.yearMouseOverHandler.bind(this, year, isCurrentYear(), disabled)}
+              role="button"
+              tabIndex={disabled ? -1 : 0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  this.selectYear(year)();
+                }
+              }}
+              aria-disabled={disabled || undefined}
+              aria-pressed={active || undefined}
             >
               <Text size={size === 'small' ? 'small' : 'regular'} color={getTextColor} className={textClass}>
                 {year}
@@ -793,15 +838,23 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           });
 
           return (
-            //TODO(a11y)
-            //eslint-disable-next-line
             <div
               key={`${row}-${col}`}
               data-test="DesignSystem-Calendar--monthValue"
               className={valueClass}
               onClick={this.selectMonth(month)}
-              //  eslint-disable-next-line
               onMouseOver={this.monthMouseOverHandler.bind(this, month, isCurrentMonth(), disabled)}
+              onFocus={this.monthMouseOverHandler.bind(this, month, isCurrentMonth(), disabled)}
+              role="button"
+              tabIndex={disabled ? -1 : 0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  this.selectMonth(month)();
+                }
+              }}
+              aria-disabled={disabled || undefined}
+              aria-pressed={active || undefined}
             >
               <Text size={size === 'small' ? 'small' : 'regular'} color={getTextColor} className={textClass}>
                 {months[month]}
@@ -832,7 +885,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     return (
       <>
-        <div className={styles['Calendar-dayValues']}>
+        <div className={styles['Calendar-dayValues']} role="row">
           {Array.from({ length: 7 }, (_x, day) => {
             const valueClass = classNames({
               [styles['Calendar-valueWrapper']]: true,
@@ -840,13 +893,20 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             const dayValue = (day + daysInRow + getIndexOfDay(firstDayOfWeek)) % daysInRow;
 
             return (
-              <Text key={day} className={valueClass} appearance="default" weight="strong" size={textSize}>
+              <Text
+                key={day}
+                className={valueClass}
+                appearance="default"
+                weight="strong"
+                size={textSize}
+                role="columnheader"
+              >
                 {days[size][dayValue]}
               </Text>
             );
           })}
         </div>
-        <div className={styles['Calendar-dateValues']} onMouseLeave={this.onDateRowMouseLeaveHandler}>
+        <div className={styles['Calendar-dateValues']} role="rowgroup" onMouseLeave={this.onDateRowMouseLeaveHandler}>
           {this.renderDateValues(index)}
         </div>
       </>
@@ -950,7 +1010,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     return Array.from({ length: noOfRows }, (_y, row) => {
       return (
-        <div key={row} className={styles['Calendar-valueRow']}>
+        <div key={row} className={styles['Calendar-valueRow']} role="row">
           {Array.from({ length: daysInRow }, (_x, col) => {
             const date = daysInRow * row + col - dummyDays + 1;
             const dummy = date <= 0 || date > dayRange;
@@ -1098,7 +1158,13 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             }) as TextColor;
 
             return (
-              <div key={`${row}-${col}`} className={wrapperClass} data-test="designSystem-Calendar-WrapperClass">
+              <div
+                key={`${row}-${col}`}
+                className={wrapperClass}
+                data-test="designSystem-Calendar-WrapperClass"
+                role="gridcell"
+                aria-selected={active || activeDate || undefined}
+              >
                 {!dummy && (
                   <>
                     <Text
@@ -1110,6 +1176,15 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                       onClick={onClickHandler(date)}
                       onMouseOver={onMouseOverHandler(date)}
                       onMouseEnter={onMouseEnterHandler.bind(this, date, today(), disabled)}
+                      role="button"
+                      tabIndex={disabled ? -1 : 0}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          onClickHandler(date)();
+                        }
+                      }}
+                      aria-disabled={disabled || undefined}
                     >
                       {date}
                     </Text>
@@ -1127,6 +1202,15 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                       onClick={onClickHandler(date)}
                       onMouseOver={onMouseOverHandler(date)}
                       onMouseEnter={onMouseEnterHandler.bind(this, date, today(), disabled)}
+                      role="button"
+                      tabIndex={disabled ? -1 : 0}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          onClickHandler(date)();
+                        }
+                      }}
+                      aria-disabled={disabled || undefined}
                     >
                       {date <= 0 ? prevMonthDayRange + date : date - dayRange}
                     </Text>
@@ -1167,7 +1251,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           {this.renderHeaderContent(index)}
           {index === monthsInView - 1 && this.renderJumpButton('next')}
         </div>
-        <div className={bodyClass}>
+        <div className={bodyClass} role="grid">
           {view === 'year' && this.renderBodyYear()}
           {view === 'month' && this.renderBodyMonth()}
           {view === 'date' && this.renderBodyDate(index)}
@@ -1194,6 +1278,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         data-test="DesignSystem-Calendar-Wrapper"
         aria-label={ariaLabel}
         aria-labelledby={ariaLabelledBy}
+        role={this.props.role || 'application'}
       >
         {Array.from({ length: monthsInView }, (_x, index) => {
           return this.renderCalendar(index);

@@ -18,6 +18,10 @@ export interface SelectTriggerProps extends BaseProps {
    */
   'aria-label'?: string;
   /**
+   * Associates the Select trigger button with an external label.
+   */
+  'aria-labelledby'?: string;
+  /**
    * Specifies the size of the Select trigger button.
    * @default "regular"
    */
@@ -72,7 +76,8 @@ export interface SelectTriggerProps extends BaseProps {
 const SelectTrigger = (props: SelectTriggerProps) => {
   const {
     triggerSize = 'regular',
-    'aria-label': ariaLabel = 'Select trigger',
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledby,
     placeholder,
     withClearButton,
     icon,
@@ -85,6 +90,8 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     maxWidth,
     ...rest
   } = props;
+
+  const resolvedAriaLabel = ariaLabel || inlineLabel || placeholder || 'Select trigger';
 
   const contextProp = React.useContext(SelectContext);
   const elementRef = React.useRef(null);
@@ -172,8 +179,11 @@ const SelectTrigger = (props: SelectTriggerProps) => {
         style={triggerStyle}
         aria-haspopup="listbox"
         aria-expanded={openPopover}
-        aria-label={ariaLabel}
+        aria-label={resolvedAriaLabel}
+        aria-labelledby={ariaLabelledby}
         data-test="DesignSystem-Select-trigger"
+        role="combobox"
+        aria-controls={rest['aria-controls']}
         {...rest}
       >
         {
@@ -203,10 +213,19 @@ const SelectTrigger = (props: SelectTriggerProps) => {
           <Icon
             appearance={buttonDisabled}
             onClick={onClearHandler}
+            onKeyDown={(e: React.KeyboardEvent) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                e.stopPropagation();
+                onClearHandler(e as any);
+              }
+            }}
+            tabIndex={0}
+            role="button"
             className={iconClass}
             size={12}
             name="close"
-            aria-label="clear selected"
+            aria-label={`Clear ${inlineLabel || resolvedAriaLabel || placeholder || 'selected'}`}
             type={iconType}
             data-test="DesignSystem-Select--closeIcon"
           />

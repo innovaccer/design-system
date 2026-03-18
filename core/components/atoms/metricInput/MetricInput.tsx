@@ -10,6 +10,14 @@ export type MetricInputSize = 'small' | 'regular' | 'large';
 
 export interface MetricInputProps extends BaseProps, BaseHtmlProps<HTMLInputElement> {
   /**
+   * Accessible label for the input
+   */
+  'aria-label'?: string;
+  /**
+   * Associates input with an external label
+   */
+  'aria-labelledby'?: string;
+  /**
    * Name of the `MetricInput`
    */
   name?: string;
@@ -312,6 +320,8 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
         onClick={onClick}
         onFocus={onFocus}
         onKeyDown={handleKeyDown}
+        aria-label={props['aria-label'] || name || 'Metric input'}
+        aria-labelledby={props['aria-labelledby']}
       />
       {suffix && (
         <Text data-test="DesignSystem-MetricInput--suffix" className={suffixClass} size={size} appearance="subtle">

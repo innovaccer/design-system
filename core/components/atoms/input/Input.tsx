@@ -280,6 +280,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
       )}
       <input
         data-test="DesignSystem-Input"
+        aria-label={props['aria-label'] || (inlineLabel ? inlineLabel.trim() : undefined)}
         {...baseProps}
         {...rest}
         ref={ref}
@@ -317,6 +318,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
           <div className={rightIconClass}>
             <Icon
               data-test="DesignSystem-Input--closeIcon"
+              aria-label={`Clear ${name || placeholder || 'input'}`}
               onClick={(e) => {
                 ref.current?.focus({ preventScroll: true });
                 onClear(e);

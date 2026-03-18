@@ -95,6 +95,10 @@ export interface TimePickerDropdownProps extends BaseProps {
    */
   'aria-label'?: string;
   /**
+   * Associates time picker trigger with an external label.
+   */
+  'aria-labelledby'?: string;
+  /**
    * Accessible name for time options list.
    */
   optionsAriaLabel?: string;
@@ -114,6 +118,7 @@ export const TimePickerWithSearch = (props: TimePickerDropdownProps) => {
     fetchTimeOptions,
     error,
     'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledby,
     optionsAriaLabel,
   } = props;
 
@@ -202,6 +207,7 @@ export const TimePickerWithSearch = (props: TimePickerDropdownProps) => {
       }}
       error={error}
       aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledby}
       optionsAriaLabel={optionsAriaLabel}
     />
   );

@@ -4,6 +4,8 @@ import { menuItemAnimation, getAnimationClass } from './Animation';
 export interface NestedListProp {
   expanded?: boolean;
   nestedBody?: React.ReactNode;
+  'aria-label'?: string;
+  'aria-labelledby'?: string;
 }
 
 function usePrevious(value?: boolean) {
@@ -58,6 +60,9 @@ export const NestedList = (props: NestedListProp) => {
           onAnimationEnd={handleAnimationEnd}
           data-test="DesignSystem-Listbox--Nested-Item"
           ref={listItemRef}
+          role="group"
+          aria-label={props['aria-label']}
+          aria-labelledby={props['aria-labelledby']}
         >
           {nestedBody}
         </div>

@@ -27,6 +27,10 @@ export interface SelectListProps extends BaseProps {
    * Aria label for the `SelectList`
    */
   'aria-label'?: string;
+  /**
+   * Associates `SelectList` with an external label
+   */
+  'aria-labelledby'?: string;
 }
 
 export const SelectList = (props: SelectListProps) => {
@@ -50,7 +54,9 @@ export const SelectList = (props: SelectListProps) => {
     <SelectContext.Provider value={updatedContextProp}>
       <Listbox
         style={wrapperStyle}
+        role="listbox"
         aria-label={props['aria-label'] || 'Options item list'}
+        aria-labelledby={props['aria-labelledby']}
         aria-multiselectable={multiSelect}
         className="my-3"
         size={size}

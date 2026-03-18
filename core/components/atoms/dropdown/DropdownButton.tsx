@@ -96,6 +96,8 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
     [dropdownButtonStyles['DropdownButton-text']]: true,
   });
 
+  const ariaLabel = props['aria-label'] || (inlineLabel ? inlineLabel.trim() : undefined);
+
   return (
     <button
       ref={ref}
@@ -105,6 +107,9 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
       disabled={disabled}
       tabIndex={0}
       data-test="DesignSystem-DropdownTrigger"
+      aria-haspopup={menu ? 'menu' : 'listbox'}
+      aria-expanded={open}
+      aria-label={ariaLabel}
       {...rest}
     >
       {!menu && (

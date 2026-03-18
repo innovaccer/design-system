@@ -48,8 +48,12 @@ export const GridHead = (props: GridHeadProps) => {
   const renderCheckbox = (show: boolean) => {
     if (!show || !withCheckbox) return null;
     return (
-      <div className={CheckboxClass}>
-        {loading ? <Placeholder className="mr-4" /> : <Checkbox {...selectAll} onChange={onSelectAll} />}
+      <div className={CheckboxClass} role="columnheader">
+        {loading ? (
+          <Placeholder className="mr-4" />
+        ) : (
+          <Checkbox {...selectAll} aria-label="Select all rows" onChange={onSelectAll} />
+        )}
       </div>
     );
   };
@@ -94,8 +98,8 @@ export const GridHead = (props: GridHeadProps) => {
   };
 
   return (
-    <div className={styles['Grid-head']} data-test="DesignSystem-GridHead-wrapper">
-      <div className={RowClass}>
+    <div className={styles['Grid-head']} data-test="DesignSystem-GridHead-wrapper" role="rowgroup">
+      <div className={RowClass} role="row">
         {renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left')}
         {renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length)}
         {renderSchema(rightPinnedSchema, false, 'right')}

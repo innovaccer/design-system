@@ -37,8 +37,16 @@ export const DraggableList = (props: ListboxProps) => {
           </div>
         );
       }}
-      renderList={({ children, props }) => (
-        <Tag data-test="DesignSystem-Listbox" {...baseProps} className={classes} {...props}>
+      renderList={({ children, props: renderProps }) => (
+        <Tag
+          data-test="DesignSystem-Listbox"
+          {...baseProps}
+          className={classes}
+          role={props.role || 'listbox'}
+          aria-label={props['aria-label']}
+          aria-labelledby={props['aria-labelledby']}
+          {...renderProps}
+        >
           {children}
         </Tag>
       )}

@@ -11,6 +11,18 @@ export type TagType = 'ul' | 'ol' | 'div' | 'nav';
 
 export interface ListboxProps extends BaseProps, BaseHtmlProps<HTMLUListElement | HTMLDivElement> {
   /**
+   * Accessible name for the listbox
+   */
+  'aria-label'?: string;
+  /**
+   * Associates listbox with an external label
+   */
+  'aria-labelledby'?: string;
+  /**
+   * Accessible role for the listbox
+   */
+  role?: string;
+  /**
    * React Element to be added inside `list`
    */
   children: React.ReactNode;
@@ -63,7 +75,15 @@ export const Listbox = (props: ListboxProps) => {
       {draggable ? (
         <DraggableList {...props} />
       ) : (
-        <Tag data-test="DesignSystem-Listbox" {...baseProps} className={classes} {...rest}>
+        <Tag
+          data-test="DesignSystem-Listbox"
+          {...baseProps}
+          className={classes}
+          role={props.role || 'listbox'}
+          aria-label={props['aria-label']}
+          aria-labelledby={props['aria-labelledby']}
+          {...rest}
+        >
           {children}
         </Tag>
       )}

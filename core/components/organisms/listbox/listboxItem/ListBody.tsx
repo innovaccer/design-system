@@ -25,13 +25,13 @@ export const ListBody = (props: ListboxItemProps) => {
   );
 
   return (
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
       data-disabled={disabled}
       data-test="DesignSystem-Listbox-ItemWrapper"
       tabIndex={draggable ? -1 : tabIndex || 0}
       className={itemClass}
       onKeyDown={onKeyDown}
-      role="tablist"
     >
       {draggable && (
         <Icon
@@ -40,6 +40,7 @@ export const ListBody = (props: ListboxItemProps) => {
           name="drag_indicator"
           className={styles['Listbox-item--drag-icon']}
           data-test="DesignSystem-Listbox-DragIcon"
+          aria-label={props['aria-label'] ? `Drag to reorder ${props['aria-label']}` : 'Drag to reorder'}
         />
       )}
       {children}

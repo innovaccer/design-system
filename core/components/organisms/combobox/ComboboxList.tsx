@@ -7,6 +7,14 @@ type TagType = 'ul' | 'ol' | 'div' | 'nav';
 
 export interface ComboboxListProps extends BaseProps {
   /**
+   * Accessible name for the listbox
+   */
+  'aria-label'?: string;
+  /**
+   * Associates listbox with an external label
+   */
+  'aria-labelledby'?: string;
+  /**
    * React Element to be added inside `list`
    */
   children: React.ReactNode;
@@ -26,7 +34,13 @@ export interface ComboboxListProps extends BaseProps {
 
 export const ComboboxList = (props: ComboboxListProps) => {
   return (
-    <Listbox className="py-3" {...props} role="listbox">
+    <Listbox
+      className="py-3"
+      {...props}
+      role="listbox"
+      aria-label={props['aria-label'] || 'Combobox options'}
+      aria-labelledby={props['aria-labelledby']}
+    >
       {props.children}
     </Listbox>
   );

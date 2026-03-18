@@ -172,3 +172,9 @@
   height: fit-content;
   line-height: var(--font-height);
 }
+
+.Option:focus-visible,
+.Option-checkbox:focus-visible {
+  outline: var(--border-width-2-5) solid var(--primary);
+  outline-offset: -2px;
+}

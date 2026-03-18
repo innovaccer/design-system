@@ -226,6 +226,14 @@ export interface InfiniteScrollProps {
 
 export interface GridProps extends BaseProps {
   /**
+   * Accessible label for grid container
+   */
+  'aria-label'?: string;
+  /**
+   * Associates grid with an external label element
+   */
+  'aria-labelledby'?: string;
+  /**
    * Controls spacing of `Grid`
    */
   size: GridSize;
@@ -401,14 +409,6 @@ export interface GridProps extends BaseProps {
    * Show nested row trigger
    */
   showNestedRowTrigger?: boolean;
-  /**
-   * Accessible label for grid container
-   */
-  'aria-label'?: string;
-  /**
-   * Associates grid with an external label element
-   */
-  'aria-labelledby'?: string;
 }
 
 export interface GridState {
@@ -704,6 +704,7 @@ export class Grid extends React.Component<GridProps, GridState> {
         className={classes}
         aria-label={ariaLabel}
         aria-labelledby={ariaLabelledBy}
+        role="grid"
         ref={(el) => {
           this.gridRef = el;
         }}

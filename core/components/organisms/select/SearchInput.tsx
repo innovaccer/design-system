@@ -8,6 +8,14 @@ import classNames from 'classnames';
 
 export interface SelectInputProps extends Omit<InputProps, 'onChange'> {
   /**
+   * Accessible label for the search input
+   */
+  'aria-label'?: string;
+  /**
+   * Associates search input with an external label
+   */
+  'aria-labelledby'?: string;
+  /**
    * Callback function when user clicks the clear button
    */
   onClear?: (e: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => void;
@@ -40,7 +48,7 @@ export const SearchInput = (props: SelectInputProps) => {
   });
 
   return (
-    <div className={styles['Select-inputWrapper']}>
+    <div className={styles['Select-inputWrapper']} role="search">
       <Input
         {...rest}
         icon={'search'}
@@ -50,7 +58,8 @@ export const SearchInput = (props: SelectInputProps) => {
         onChange={searchHandler}
         onClear={searchClearHandler}
         autoComplete={'off'}
-        aria-label="Search"
+        aria-label={props['aria-label'] || 'Search options'}
+        aria-labelledby={props['aria-labelledby']}
         aria-haspopup="listbox"
         className={inputClass}
         data-test="DesignSystem-Select--Input"

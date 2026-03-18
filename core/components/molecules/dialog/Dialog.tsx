@@ -5,6 +5,14 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export interface DialogProps extends BaseProps {
   /**
+   * Accessible label for dialog when no heading id is available
+   */
+  'aria-label'?: string;
+  /**
+   * Associates dialog with an external label
+   */
+  'aria-labelledby'?: string;
+  /**
    * Callback for `Dialog` close event
    */
   onClose: (event?: Event | React.MouseEvent<HTMLElement, MouseEvent>, reason?: string) => void;
@@ -85,6 +93,8 @@ const Dialog = (props: DialogProps) => {
       open={open}
       dimension={dimension}
       onClose={onClose}
+      aria-labelledby={props['aria-labelledby']}
+      aria-label={props['aria-label']}
       headerOptions={{
         heading,
       }}

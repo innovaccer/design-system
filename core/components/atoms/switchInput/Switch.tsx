@@ -12,6 +12,14 @@ type KeyboardEvent = React.KeyboardEvent<HTMLInputElement>;
 
 export interface SwitchProps extends BaseProps, OmitNativeProps<HTMLInputElement, 'onChange'> {
   /**
+   * Accessible label for the switch
+   */
+  'aria-label'?: string;
+  /**
+   * Associates switch with an external label
+   */
+  'aria-labelledby'?: string;
+  /**
    * Size of `Switch`
    *
    * **'large' size has been deprecated and all large switch will now be changed to regular switch automatically**
@@ -115,6 +123,8 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>((props, re
         type="checkbox"
         role="switch"
         aria-checked={checked}
+        aria-label={props['aria-label'] || name || 'Switch'}
+        aria-labelledby={props['aria-labelledby']}
         defaultChecked={defaultChecked}
         disabled={disabled}
         onChange={onChangeHandler}

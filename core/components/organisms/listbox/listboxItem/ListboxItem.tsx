@@ -11,6 +11,18 @@ export type ItemTagType = 'li' | 'div' | 'a';
 
 export interface ListboxItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement | HTMLDivElement | HTMLAnchorElement> {
   /**
+   * Accessible name for the listbox item
+   */
+  'aria-label'?: string;
+  /**
+   * Associates listbox item with an external label
+   */
+  'aria-labelledby'?: string;
+  /**
+   * Accessible role for the listbox item
+   */
+  role?: string;
+  /**
    * React Element to be added inside `list`
    */
   children: React.ReactNode;
@@ -80,9 +92,20 @@ export const ListboxItem = (props: ListboxItemProps) => {
       onClick={onClickHandler}
       data-value={value}
       className={tagClass}
+      role={props.role || 'option'}
+      aria-selected={props.selected}
+      aria-disabled={props.disabled}
+      aria-label={props['aria-label']}
+      aria-labelledby={props['aria-labelledby']}
     >
       <ListBody {...props} />
-      {nestedBody && <NestedList expanded={expanded} nestedBody={nestedBody} />}
+      {nestedBody && (
+        <NestedList
+          expanded={expanded}
+          nestedBody={nestedBody}
+          aria-label={props['aria-label'] ? `Nested list for ${props['aria-label']}` : undefined}
+        />
+      )}
       {showDivider && <Divider className={styles['Listbox-divider']} />}
     </Tag>
   );

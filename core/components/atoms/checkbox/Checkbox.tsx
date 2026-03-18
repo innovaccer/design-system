@@ -13,6 +13,14 @@ export type CheckBoxSize = 'regular' | 'tiny';
 
 export interface CheckboxProps extends BaseProps, OmitNativeProps<HTMLInputElement, 'onChange'> {
   /**
+   * Accessible label for the checkbox
+   */
+  'aria-label'?: string;
+  /**
+   * Associates checkbox with an external label
+   */
+  'aria-labelledby'?: string;
+  /**
    * Size of the `Checkbox`
    * @default "regular"
    */
@@ -198,6 +206,8 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
             aria-invalid={error || undefined}
             aria-checked={indeterminate ? 'mixed' : undefined}
             aria-describedby={describedBy}
+            aria-label={props['aria-label'] || label || name || 'Checkbox'}
+            aria-labelledby={props['aria-labelledby']}
           />
           <span className={CheckboxWrapper} data-test="DesignSystem-Checkbox-Icon">
             {IconMapper && <CheckboxIcon name={IconMapper} />}

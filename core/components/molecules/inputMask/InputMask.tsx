@@ -388,6 +388,8 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
 
   const isValueEqualPlaceholder = value === defaultPlaceholderValue;
 
+  const persistentLabel = rest.label || rest['aria-label'] || rest.placeholder;
+
   return (
     <div className={classes} data-test="DesignSystem-InputMask--Wrapper">
       <Input
@@ -406,6 +408,7 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
         onBlur={onBlurHandler}
         onPaste={onPasteHandler}
         autoComplete={'off'}
+        aria-label={persistentLabel}
         ref={ref}
       />
       <HelpText message={error ? caption : helpText} error={error} />

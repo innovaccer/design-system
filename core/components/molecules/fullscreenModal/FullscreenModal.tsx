@@ -163,10 +163,50 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
     closeOnEscapeKeypress(event, isTopOverlay, this.onOutsideClickHandler);
   };
 
+  onFocusTrapKeyDown = (event: KeyboardEvent) => {
+    const container = this.modalRef.current;
+    if (!container) return;
+    handleFocusTrapKeyDown(event, container);
+  };
+
+  focusFirstFocusable = () => {
+    const container = this.modalRef.current;
+    if (!container || !this.state.open) return;
+
+    const focusable = getFocusableElements(container);
+    if (focusable.length > 0) {
+      focusable[0].focus({ preventScroll: true });
+    } else {
+      container.setAttribute('tabindex', '-1');
+      container.focus({ preventScroll: true });
+    }
+  };
+
+  activateFocusTrap = () => {
+    const container = this.modalRef.current;
+    if (!container) return;
+
+    window.requestAnimationFrame(() => {
+      this.focusFirstFocusable();
+    });
+
+    document.addEventListener('keydown', this.onFocusTrapKeyDown, true);
+  };
+
+  deactivateFocusTrap = () => {
+    document.removeEventListener('keydown', this.onFocusTrapKeyDown, true);
+
+    const container = this.modalRef.current;
+    if (container) {
+      container.removeAttribute('tabindex');
+    }
+  };
+
   componentDidMount() {
     if (this.props.closeOnEscape) {
       if (this.state.open) {
         OverlayManager.add(this.modalRef.current);
+        this.activateFocusTrap();
       }
       document.addEventListener('keydown', this.onCloseHandler);
     }
@@ -174,6 +214,7 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
 
   componentWillUnmount() {
     if (this.props.closeOnEscape) document.removeEventListener('keydown', this.onCloseHandler);
+    this.deactivateFocusTrap();
   }
 
   componentDidUpdate(prevProps: FullscreenModalProps) {
@@ -191,8 +232,12 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
           animate: true,
         });
 
-        if (this.props.closeOnEscape) OverlayManager.add(this.modalRef.current);
+        if (this.props.closeOnEscape) {
+          OverlayManager.add(this.modalRef.current);
+          this.activateFocusTrap();
+        }
       } else {
+        this.deactivateFocusTrap();
         this.setState(
           {
             animate: false,
@@ -301,6 +346,7 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
                       icon="close"
                       appearance="transparent"
                       data-test="DesignSystem-FullscreenModal--CloseButton"
+                      aria-label="Close fullscreen modal"
                       onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
                         if (onClose) onClose(event, 'IconClick');
                       }}

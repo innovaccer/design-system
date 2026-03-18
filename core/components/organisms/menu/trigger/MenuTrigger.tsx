@@ -19,6 +19,10 @@ export interface MenuTriggerProps extends BaseProps {
    * Aria label for the `MenuTrigger`
    */
   'aria-label'?: string;
+  /**
+   * Associates `MenuTrigger` with an external label
+   */
+  'aria-labelledby'?: string;
 }
 
 export const MenuTrigger = (props: MenuTriggerProps) => {
@@ -43,7 +47,8 @@ export const MenuTrigger = (props: MenuTriggerProps) => {
       icon="more_horiz"
       ref={menuTriggerRef}
       aria-label={props['aria-label'] || 'Open menu'}
-      aria-haspopup={true}
+      aria-labelledby={props['aria-labelledby']}
+      aria-haspopup="menu"
       aria-expanded={openPopover}
       {...props}
       className={triggerClassName}
