@@ -102,6 +102,11 @@
   outline-offset: var(--spacing-05);
 }
 
+.Slider-handle:focus-visible {
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
+}
+
 .Slider-handle--disabled {
   pointer-events: none;
   background-color: var(--secondary-lighter);
