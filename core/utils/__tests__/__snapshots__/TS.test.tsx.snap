@@ -1833,8 +1833,10 @@ exports[`TS renders children 1`] = `
     </span>
   </div>
   <div
+    aria-label="Steps"
     class="Stepper"
     data-test="DesignSystem-Stepper"
+    role="group"
   />
   <div
     class="Calendar-wrapper"
