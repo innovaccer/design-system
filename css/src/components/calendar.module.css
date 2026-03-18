@@ -303,13 +303,6 @@
   width: var(--spacing-80);
 }
 
-.Calendar-valueWrapper--dummy {
-  /* Handled by Text appearance */
-}
-
-.Calendar-valueWrapper--disabled {
-  /* Handled by Text appearance */
-}
 
 .Calendar-valueWrapper--active-dummy .Calendar-value {
   border: none;
