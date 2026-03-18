@@ -55,6 +55,8 @@
 .Radio-Label {
   display: flex;
   cursor: pointer;
+  margin-left: calc(-1 * var(--spacing-20));
+  padding-left: var(--spacing-20);
 }
 
 .Radio-wrapper {

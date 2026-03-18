@@ -21,7 +21,6 @@ describe('AI Response Action Button Component', () => {
       </AIResponse>
     );
     expect(getByTestId('DesignSystem-AIResponse-Button')).toHaveClass(customClassName);
-    expect(getByTestId('DesignSystem-AIResponse-Button')).toHaveClass('AIResponse-button');
     expect(getByTestId('DesignSystem-AIResponse-Button')).toHaveClass('Button Button--tiny Button--transparent');
   });
 
@@ -34,7 +33,6 @@ describe('AI Response Action Button Component', () => {
       </AIResponse>
     );
     expect(getByTestId('DesignSystem-AIResponse-Button')).toHaveClass(customClassName);
-    expect(getByTestId('DesignSystem-AIResponse-Button')).toHaveClass('AIResponse-button--selected');
   });
 });
 

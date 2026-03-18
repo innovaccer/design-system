@@ -1128,7 +1128,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--disabled Text--small"
+            class="Text Text--subtle Text--small"
             data-test="DesignSystem-Text"
           >
             1
@@ -1144,7 +1144,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--disabled Text--small"
+            class="Text Text--subtle Text--small"
             data-test="DesignSystem-Text"
           >
             2
@@ -1160,7 +1160,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--disabled Text--small"
+            class="Text Text--subtle Text--small"
             data-test="DesignSystem-Text"
           >
             3
@@ -1176,7 +1176,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--disabled Text--small"
+            class="Text Text--subtle Text--small"
             data-test="DesignSystem-Text"
           >
             4
@@ -1192,7 +1192,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--disabled Text--small"
+            class="Text Text--subtle Text--small"
             data-test="DesignSystem-Text"
           >
             5
@@ -1208,7 +1208,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--disabled Text--small"
+            class="Text Text--subtle Text--small"
             data-test="DesignSystem-Text"
           >
             6
@@ -1224,7 +1224,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--disabled Text--small"
+            class="Text Text--subtle Text--small"
             data-test="DesignSystem-Text"
           >
             7
@@ -1240,7 +1240,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--disabled Text--small"
+            class="Text Text--subtle Text--small"
             data-test="DesignSystem-Text"
           >
             8
@@ -1256,7 +1256,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--disabled Text--small"
+            class="Text Text--subtle Text--small"
             data-test="DesignSystem-Text"
           >
             9
@@ -1272,7 +1272,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--disabled Text--small"
+            class="Text Text--subtle Text--small"
             data-test="DesignSystem-Text"
           >
             10
@@ -1352,7 +1352,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--disabled Text--small"
+            class="Text Text--subtle Text--small"
             data-test="DesignSystem-Text"
           >
             1
@@ -1368,7 +1368,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--disabled Text--small"
+            class="Text Text--subtle Text--small"
             data-test="DesignSystem-Text"
           >
             2
@@ -1384,7 +1384,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--disabled Text--small"
+            class="Text Text--subtle Text--small"
             data-test="DesignSystem-Text"
           >
             3
@@ -1400,7 +1400,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--disabled Text--small"
+            class="Text Text--subtle Text--small"
             data-test="DesignSystem-Text"
           >
             4
@@ -1416,7 +1416,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--disabled Text--small"
+            class="Text Text--subtle Text--small"
             data-test="DesignSystem-Text"
           >
             5
@@ -1432,7 +1432,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--disabled Text--small"
+            class="Text Text--subtle Text--small"
             data-test="DesignSystem-Text"
           >
             6
@@ -1448,7 +1448,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--disabled Text--small"
+            class="Text Text--subtle Text--small"
             data-test="DesignSystem-Text"
           >
             7
@@ -1464,7 +1464,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--disabled Text--small"
+            class="Text Text--subtle Text--small"
             data-test="DesignSystem-Text"
           >
             8
@@ -1480,7 +1480,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--disabled Text--small"
+            class="Text Text--subtle Text--small"
             data-test="DesignSystem-Text"
           >
             9
@@ -1833,8 +1833,10 @@ exports[`TS renders children 1`] = `
     </span>
   </div>
   <div
+    aria-label="Steps"
     class="Stepper"
     data-test="DesignSystem-Stepper"
+    role="group"
   />
   <div
     class="Calendar-wrapper"

@@ -63,9 +63,11 @@ export const GenericChip = (props: GenericChipProps) => {
     classNames({
       [styles['Chip-icon']]: true,
       [styles[`Chip-icon--${align}`]]: align,
+      [styles['Chip-icon--rightSmall']]: size === 'small' && align === 'right',
       [styles[`Chip-icon-disabled--right`]]: align === 'right' && disabled,
       ['cursor-pointer']: align === 'right' && !disabled,
       [styles['Chip-icon--selected']]: align === 'right' && selected,
+      ['p-3']: size === 'regular' && align === 'right',
     });
 
   const onCloseHandler = (e: React.MouseEvent | React.KeyboardEvent) => {
@@ -93,7 +95,8 @@ export const GenericChip = (props: GenericChipProps) => {
 
   const iconAppearance = (align: string) =>
     classNames({
-      ['primary_dark']: selected,
+      ['primary_dark']: selected && !disabled,
+      ['primary_lighter']: selected && disabled,
       ['subtle']: !selected && align === 'right',
       ['inverse']: !selected && align === 'left',
     }) as IconProps['appearance'];
@@ -104,7 +107,8 @@ export const GenericChip = (props: GenericChipProps) => {
   });
 
   const textColor = classNames({
-    ['primary-dark']: selected,
+    ['primary-dark']: selected && !disabled,
+    ['primary-lighter']: selected && disabled,
     ['inverse']: !disabled && !selected,
   }) as TextProps['color'];
 

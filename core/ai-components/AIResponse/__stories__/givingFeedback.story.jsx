@@ -127,9 +127,7 @@ export const GivingFeedback = () => {
                     onClick={() => setSelectedList({ ...selectedList, dislike: !selectedList.dislike, like: false })}
                   />
 
-                  <Menu
-                    trigger={<Menu.Trigger className="AIResponse-menu-button" appearance="transparent" size="tiny" />}
-                  >
+                  <Menu trigger={<Menu.Trigger appearance="transparent" size="tiny" />}>
                     <Menu.List>
                       <Menu.Item>Share</Menu.Item>
                       <Menu.Item>View source</Menu.Item>
@@ -357,7 +355,7 @@ const customCode = `() => {
                   />
 
                   <Menu
-                    trigger={<Menu.Trigger className="AIResponse-menu-button" appearance="transparent" size="tiny" />}
+                    trigger={<Menu.Trigger appearance="transparent" size="tiny" />}
                   >
                     <Menu.List>
                       <Menu.Item>Share</Menu.Item>
