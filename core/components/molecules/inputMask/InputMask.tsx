@@ -392,6 +392,7 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
     <div className={classes} data-test="DesignSystem-InputMask--Wrapper">
       <Input
         {...rest}
+        id={id}
         value={value}
         error={error}
         required={required}

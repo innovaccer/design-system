@@ -111,8 +111,7 @@ const customCode = `() => {
               <Button
                 className="mt-4"
                 appearance="transparent"
-                disabled={loading || !!value}
-                aria-disabled={isTimerStarted || undefined}
+                disabled={loading || !!value || isTimerStarted}
                 onClick={this.onToogleLink}
               >
                 Resend Code
