@@ -248,6 +248,7 @@ exports[`Dropdown component
       >
         <button
           aria-haspopup="listbox"
+          aria-label="Label"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -398,6 +399,7 @@ exports[`Dropdown component
       >
         <button
           aria-haspopup="listbox"
+          aria-label="Label"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           disabled=""

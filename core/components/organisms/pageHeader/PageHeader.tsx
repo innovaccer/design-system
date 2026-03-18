@@ -118,12 +118,7 @@ export const PageHeader = (props: PageHeaderProps) => {
 
   return (
     <div data-test="DesignSystem-PageHeader">
-      <div
-        {...baseProps}
-        className={wrapperClasses}
-        aria-label={ariaLabel}
-        aria-labelledby={ariaLabelledby}
-      >
+      <div {...baseProps} className={wrapperClasses} aria-label={ariaLabel} aria-labelledby={ariaLabelledby}>
         {breadcrumbs && (
           <div className="pl-6" data-test="DesignSystem-PageHeader--Breadcrumbs">
             {breadcrumbs}

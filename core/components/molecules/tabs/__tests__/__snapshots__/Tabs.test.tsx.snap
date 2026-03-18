@@ -40,12 +40,12 @@ exports[`Tabs component
             Tab 1
           </span>
           <i
-            aria-label="Dismiss Tab 1 tab"
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--info DismissibleRegularTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
             data-test="DesignSystem-DismissibleTabs--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
-            tabindex="0"
+            tabindex="-1"
           >
             clear
           </i>
@@ -155,12 +155,12 @@ exports[`Tabs component
             Tab 1
           </span>
           <i
-            aria-label="Dismiss Tab 1 tab"
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--info DismissibleSmallTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
             data-test="DesignSystem-DismissibleTabs--Icon"
             role="button"
             style="font-size: 12px; width: 12px;"
-            tabindex="0"
+            tabindex="-1"
           >
             clear
           </i>
@@ -270,12 +270,12 @@ exports[`Tabs component
             Tab 1
           </span>
           <i
-            aria-label="Dismiss Tab 1 tab"
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--info DismissibleRegularTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
             data-test="DesignSystem-DismissibleTabs--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
-            tabindex="0"
+            tabindex="-1"
           >
             clear
           </i>
@@ -385,12 +385,12 @@ exports[`Tabs component
             Tab 1
           </span>
           <i
-            aria-label="Dismiss Tab 1 tab"
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--info DismissibleSmallTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
             data-test="DesignSystem-DismissibleTabs--Icon"
             role="button"
             style="font-size: 12px; width: 12px;"
-            tabindex="0"
+            tabindex="-1"
           >
             clear
           </i>

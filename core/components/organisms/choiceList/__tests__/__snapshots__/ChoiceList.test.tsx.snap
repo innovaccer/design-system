@@ -32,6 +32,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
@@ -70,6 +71,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
@@ -137,6 +139,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
@@ -175,6 +178,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
@@ -242,6 +246,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               disabled=""
@@ -281,6 +286,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               disabled=""
@@ -349,6 +355,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               disabled=""
@@ -388,6 +395,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               disabled=""
@@ -896,6 +904,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
@@ -934,6 +943,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
@@ -1001,6 +1011,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
@@ -1039,6 +1050,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
@@ -1106,6 +1118,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               disabled=""
@@ -1145,6 +1158,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               disabled=""
@@ -1213,6 +1227,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               disabled=""
@@ -1252,6 +1267,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               disabled=""
@@ -1760,6 +1776,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
@@ -1798,6 +1815,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
@@ -1865,6 +1883,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
@@ -1903,6 +1922,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
@@ -1970,6 +1990,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               disabled=""
@@ -2009,6 +2030,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               disabled=""
@@ -2077,6 +2099,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               disabled=""
@@ -2116,6 +2139,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               disabled=""
@@ -2624,6 +2648,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
@@ -2662,6 +2687,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
@@ -2729,6 +2755,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
@@ -2767,6 +2794,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               id="choiceList-radio-Test-uid"
@@ -2834,6 +2862,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               disabled=""
@@ -2873,6 +2902,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               disabled=""
@@ -2941,6 +2971,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               disabled=""
@@ -2980,6 +3011,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Radio-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Radio-input"
               data-test="DesignSystem-Radio-Input"
               disabled=""

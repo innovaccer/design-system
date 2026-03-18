@@ -726,11 +726,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     );
   };
 
-  handleGridKeyDown = (
-    e: React.KeyboardEvent,
-    colsPerRow: number,
-    containerSelector: string
-  ) => {
+  handleGridKeyDown = (e: React.KeyboardEvent, colsPerRow: number, containerSelector: string) => {
     const { key } = e;
     if (!['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(key)) return;
 
@@ -739,9 +735,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const container = target.closest(containerSelector) || target.parentElement?.parentElement;
     if (!container) return;
 
-    const cells = Array.from(
-      container.querySelectorAll<HTMLElement>('[role="button"]:not([aria-disabled="true"])')
-    );
+    const cells = Array.from(container.querySelectorAll<HTMLElement>('[role="button"]:not([aria-disabled="true"])'));
     const currentIndex = cells.indexOf(target);
     if (currentIndex === -1) return;
 

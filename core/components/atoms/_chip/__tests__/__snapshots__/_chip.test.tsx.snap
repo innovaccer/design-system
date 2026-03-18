@@ -172,7 +172,7 @@ exports[`Chip component
       </div>
       <div
         aria-label="Remove ChipLabel"
-        class="Chip-icon Chip-icon--right cursor-pointer"
+        class="Chip-icon Chip-icon--right cursor-pointer p-3"
         data-test="DesignSystem-GenericChip--clearButton"
         role="button"
         tabindex="0"
@@ -223,7 +223,7 @@ exports[`Chip component
       </div>
       <div
         aria-label="Remove ChipLabel"
-        class="Chip-icon Chip-icon--right cursor-pointer Chip-icon--selected"
+        class="Chip-icon Chip-icon--right cursor-pointer Chip-icon--selected p-3"
         data-test="DesignSystem-GenericChip--clearButton"
         role="button"
         tabindex="0"
@@ -274,7 +274,7 @@ exports[`Chip component
       </div>
       <div
         aria-label="Remove ChipLabel"
-        class="Chip-icon Chip-icon--right Chip-icon-disabled--right"
+        class="Chip-icon Chip-icon--right Chip-icon-disabled--right p-3"
         data-test="DesignSystem-GenericChip--clearButton"
         role="button"
         tabindex="-1"
@@ -325,7 +325,7 @@ exports[`Chip component
       </div>
       <div
         aria-label="Remove ChipLabel"
-        class="Chip-icon Chip-icon--right Chip-icon-disabled--right Chip-icon--selected"
+        class="Chip-icon Chip-icon--right Chip-icon-disabled--right Chip-icon--selected p-3"
         data-test="DesignSystem-GenericChip--clearButton"
         role="button"
         tabindex="-1"

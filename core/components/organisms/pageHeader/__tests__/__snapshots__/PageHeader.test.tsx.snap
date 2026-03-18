@@ -10,7 +10,6 @@ exports[`Navigation component
     >
       <div
         class="PageHeader-wrapper PageHeader-wrapper--withTabs"
-        role="banner"
       >
         <div
           class="pl-6"
@@ -340,7 +339,6 @@ exports[`Navigation component
     >
       <div
         class="PageHeader-wrapper PageHeader-wrapper--withTabs"
-        role="banner"
       >
         <div
           class="pl-6"
@@ -675,7 +673,6 @@ exports[`Navigation component
     >
       <div
         class="PageHeader-wrapper PageHeader-wrapper--withTabs"
-        role="banner"
       >
         <div
           class="pl-6"
@@ -1010,7 +1007,6 @@ exports[`Navigation component
     >
       <div
         class="PageHeader-wrapper PageHeader-wrapper--withTabs"
-        role="banner"
       >
         <div
           class="d-flex pl-6"
@@ -1159,7 +1155,6 @@ exports[`Navigation component
     >
       <div
         class="PageHeader-wrapper"
-        role="banner"
       >
         <div
           class="d-flex pl-6"
@@ -1302,7 +1297,6 @@ exports[`Navigation component
     >
       <div
         class="PageHeader-wrapper"
-        role="banner"
       >
         <div
           class="d-flex pl-6"
@@ -1371,7 +1365,6 @@ exports[`Navigation component
     >
       <div
         class="PageHeader-wrapper"
-        role="banner"
       >
         <div
           class="pl-6"
@@ -1449,7 +1442,6 @@ exports[`Navigation component
     >
       <div
         class="PageHeader-wrapper"
-        role="banner"
       >
         <div
           class="d-flex pl-6"
@@ -1504,7 +1496,6 @@ exports[`Navigation component
     >
       <div
         class="PageHeader-wrapper"
-        role="banner"
       >
         <div
           class="d-flex pl-6"
@@ -1553,7 +1544,6 @@ exports[`Navigation component
     >
       <div
         class="PageHeader-wrapper"
-        role="banner"
       >
         <div
           class="d-flex pl-6"
@@ -1626,7 +1616,6 @@ exports[`Navigation component
     >
       <div
         class="PageHeader-wrapper PageHeader-wrapper--withTabs"
-        role="banner"
       >
         <div
           class="pl-6"

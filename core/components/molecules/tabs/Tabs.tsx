@@ -204,7 +204,8 @@ export const Tabs = (props: TabsProps) => {
       nextElement?.focus();
     }
     if (event.key === 'Delete' || event.key === 'Backspace') {
-      const currentTab = children && 'props' in tabs[tabIndex] ? (tabs[tabIndex] as React.ReactElement).props : tabs[tabIndex];
+      const currentTab =
+        children && 'props' in tabs[tabIndex] ? (tabs[tabIndex] as React.ReactElement).props : tabs[tabIndex];
       if (currentTab.isDismissible && !currentTab.disabled && currentTab.onDismiss) {
         event.preventDefault();
         const tabInfo = { label: currentTab.label, activeIndex, currentTabIndex: tabIndex };
