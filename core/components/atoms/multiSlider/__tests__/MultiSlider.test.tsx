@@ -81,3 +81,96 @@ describe('Calls slider event handlers', () => {
     expect(FunctionValue).toBeCalled();
   });
 });
+
+describe('Range slider handle collision (snap-to-lock)', () => {
+  it('End key on first handle snaps to second handle position when blocked', () => {
+    const onRangeChange = jest.fn();
+    const { getAllByTestId } = render(
+      <MultiSlider min={0} max={10} stepSize={1} onRangeChange={onRangeChange}>
+        <MultiSlider.Handle value={2} />
+        <MultiSlider.Handle value={8} />
+      </MultiSlider>
+    );
+    const handles = getAllByTestId('DesignSystem-MultiSlider-Handle');
+    const firstHandle = handles[0];
+
+    firstHandle.focus();
+    fireEvent.keyDown(firstHandle, { keyCode: 35 }); // End key
+
+    // First handle should snap to second handle's position (8), not reach max (10)
+    expect(onRangeChange).toHaveBeenCalledWith([8, 8]);
+  });
+
+  it('PageUp on first handle crossing second handle snaps to second handle position', () => {
+    const onRangeChange = jest.fn();
+    const { getAllByTestId } = render(
+      <MultiSlider min={0} max={100} stepSize={5} onRangeChange={onRangeChange}>
+        <MultiSlider.Handle value={10} />
+        <MultiSlider.Handle value={40} />
+      </MultiSlider>
+    );
+    const handles = getAllByTestId('DesignSystem-MultiSlider-Handle');
+    const firstHandle = handles[0];
+
+    firstHandle.focus();
+    fireEvent.keyDown(firstHandle, { keyCode: 33 }); // Page Up (10 + 50 = 60, but blocked at 40)
+
+    // Should snap to second handle at 40
+    expect(onRangeChange).toHaveBeenCalledWith([40, 40]);
+  });
+
+  it('Home key on second handle snaps to first handle position when blocked', () => {
+    const onRangeChange = jest.fn();
+    const { getAllByTestId } = render(
+      <MultiSlider min={0} max={10} stepSize={1} onRangeChange={onRangeChange}>
+        <MultiSlider.Handle value={3} />
+        <MultiSlider.Handle value={7} />
+      </MultiSlider>
+    );
+    const handles = getAllByTestId('DesignSystem-MultiSlider-Handle');
+    const secondHandle = handles[1];
+
+    secondHandle.focus();
+    fireEvent.keyDown(secondHandle, { keyCode: 36 }); // Home key
+
+    // Second handle should snap to first handle's position (3), not reach min (0)
+    expect(onRangeChange).toHaveBeenCalledWith([3, 3]);
+  });
+
+  it('Arrow keys snap to adjacent handle when trying to cross', () => {
+    const onRangeChange = jest.fn();
+    const { getAllByTestId } = render(
+      <MultiSlider min={0} max={10} stepSize={1} onRangeChange={onRangeChange}>
+        <MultiSlider.Handle value={4} />
+        <MultiSlider.Handle value={6} />
+      </MultiSlider>
+    );
+    const handles = getAllByTestId('DesignSystem-MultiSlider-Handle');
+    const firstHandle = handles[0];
+
+    firstHandle.focus();
+    // Move first handle closer to second
+    fireEvent.keyDown(firstHandle, { keyCode: 39 }); // Arrow Right (4 + 1 = 5)
+    expect(onRangeChange).toHaveBeenCalledWith([5, 6]);
+  });
+
+  it('Multi-handle slider: only snaps to first blocking handle, preserves others', () => {
+    const onRangeChange = jest.fn();
+    const { getAllByTestId } = render(
+      <MultiSlider min={0} max={40} stepSize={1} onRangeChange={onRangeChange}>
+        <MultiSlider.Handle value={10} />
+        <MultiSlider.Handle value={20} />
+        <MultiSlider.Handle value={30} />
+      </MultiSlider>
+    );
+    const handles = getAllByTestId('DesignSystem-MultiSlider-Handle');
+    const firstHandle = handles[0];
+
+    firstHandle.focus();
+    // Try to move first handle past both others (to 35)
+    fireEvent.keyDown(firstHandle, { keyCode: 35 }); // End key (jumps to max=40, but blocked at 20)
+
+    // Should snap to second handle at 20, but keep third handle at 30
+    expect(onRangeChange).toHaveBeenCalledWith([20, 20, 30]);
+  });
+});
