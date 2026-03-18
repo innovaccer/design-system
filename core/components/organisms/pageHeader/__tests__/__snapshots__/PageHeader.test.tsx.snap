@@ -1175,8 +1175,10 @@ exports[`Navigation component
                   data-test="DesignSystem-PageHeader--Nav"
                 >
                   <div
+                    aria-label="Steps"
                     class="Stepper"
                     data-test="DesignSystem-Stepper"
+                    role="group"
                   >
                     <div
                       class="Step Stepper-animate Step--active"

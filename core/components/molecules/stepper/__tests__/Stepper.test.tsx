@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, createEvent } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import Stepper, { StepperProps as Props } from '../Stepper';
 
@@ -198,5 +198,141 @@ describe('Stepper component with onChange callback', () => {
     const stepNode = getAllByTestId('DesignSystem-Step')[disabledClicked];
     fireEvent.click(stepNode);
     expect(onChange).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('Stepper component keyboard accessibility', () => {
+  const onChange = jest.fn();
+
+  beforeEach(() => {
+    onChange.mockClear();
+  });
+
+  it('activates step on Space key when step is clickable', () => {
+    const active = 2;
+    const completed = 1;
+    const stepIndex = 1;
+    const { label, value } = steps[stepIndex];
+
+    const { getAllByTestId } = render(
+      <Stepper steps={steps} active={active} completed={completed} onChange={onChange} />
+    );
+
+    const stepNode = getAllByTestId('DesignSystem-Step')[stepIndex];
+    fireEvent.keyDown(stepNode, { key: ' ' });
+    expect(onChange).toHaveBeenCalledTimes(1);
+    expect(onChange).toHaveBeenCalledWith(stepIndex, completed, label, value);
+  });
+
+  it('activates step on Enter key when step is clickable', () => {
+    const active = 2;
+    const completed = 1;
+    const stepIndex = 0;
+
+    const { getAllByTestId } = render(
+      <Stepper steps={steps} active={active} completed={completed} onChange={onChange} />
+    );
+
+    const stepNode = getAllByTestId('DesignSystem-Step')[stepIndex];
+    fireEvent.keyDown(stepNode, { key: 'Enter' });
+    expect(onChange).toHaveBeenCalledTimes(1);
+  });
+
+  it('ArrowRight moves focus to next enabled step', () => {
+    const active = 1;
+    const completed = 0;
+    const { getAllByTestId } = render(
+      <Stepper steps={steps} active={active} completed={completed} onChange={onChange} />
+    );
+
+    const stepNodes = getAllByTestId('DesignSystem-Step');
+    stepNodes[0].focus();
+    fireEvent.keyDown(stepNodes[0], { key: 'ArrowRight' });
+
+    expect(document.activeElement).toBe(stepNodes[1]);
+  });
+
+  it('ArrowLeft moves focus to previous enabled step', () => {
+    const active = 2;
+    const completed = 1;
+    const { getAllByTestId } = render(
+      <Stepper steps={steps} active={active} completed={completed} onChange={onChange} />
+    );
+
+    const stepNodes = getAllByTestId('DesignSystem-Step');
+    stepNodes[2].focus();
+    fireEvent.keyDown(stepNodes[2], { key: 'ArrowLeft' });
+
+    expect(document.activeElement).toBe(stepNodes[1]);
+  });
+
+  it('Home moves focus to first enabled step', () => {
+    const active = 2;
+    const completed = 1;
+    const { getAllByTestId } = render(
+      <Stepper steps={steps} active={active} completed={completed} onChange={onChange} />
+    );
+
+    const stepNodes = getAllByTestId('DesignSystem-Step');
+    stepNodes[2].focus();
+    fireEvent.keyDown(stepNodes[2], { key: 'Home' });
+
+    expect(document.activeElement).toBe(stepNodes[0]);
+  });
+
+  it('End moves focus to last enabled step', () => {
+    const active = 2;
+    const completed = 1;
+    const { getAllByTestId } = render(
+      <Stepper steps={steps} active={active} completed={completed} onChange={onChange} />
+    );
+
+    const stepNodes = getAllByTestId('DesignSystem-Step');
+    stepNodes[0].focus();
+    fireEvent.keyDown(stepNodes[0], { key: 'End' });
+
+    expect(document.activeElement).toBe(stepNodes[2]);
+  });
+
+  it('implements roving tabindex pattern', () => {
+    const active = 2;
+    const completed = 1;
+    const { getAllByTestId } = render(<Stepper steps={steps} active={active} completed={completed} />);
+    const stepNodes = getAllByTestId('DesignSystem-Step');
+    // Only the active step (step 2) should have tabIndex 0
+    // Steps 0, 1, 2 are enabled; step 3 is disabled
+    expect(stepNodes[0]).toHaveAttribute('tabIndex', '-1');
+    expect(stepNodes[1]).toHaveAttribute('tabIndex', '-1');
+    expect(stepNodes[2]).toHaveAttribute('tabIndex', '0');
+  });
+
+  it('disabled steps have tabIndex -1', () => {
+    const active = 0;
+    const completed = 0;
+    const { getAllByTestId } = render(<Stepper steps={steps} active={active} completed={completed} />);
+    const stepNodes = getAllByTestId('DesignSystem-Step');
+    // Steps 2 and 3 are disabled (completed+1 < index)
+    expect(stepNodes[2]).toHaveAttribute('tabIndex', '-1');
+    expect(stepNodes[3]).toHaveAttribute('tabIndex', '-1');
+  });
+
+  it('calls preventDefault on ArrowLeft and ArrowRight at boundaries to prevent scroll', () => {
+    const active = 0;
+    const completed = 3;
+    const { getAllByTestId } = render(
+      <Stepper steps={steps} active={active} completed={completed} onChange={onChange} />
+    );
+
+    const stepNodes = getAllByTestId('DesignSystem-Step');
+
+    const eventLeft = createEvent.keyDown(stepNodes[0], { key: 'ArrowLeft' });
+    eventLeft.preventDefault = jest.fn();
+    fireEvent(stepNodes[0], eventLeft);
+    expect(eventLeft.preventDefault).toHaveBeenCalledTimes(1);
+
+    const eventRight = createEvent.keyDown(stepNodes[3], { key: 'ArrowRight' });
+    eventRight.preventDefault = jest.fn();
+    fireEvent(stepNodes[3], eventRight);
+    expect(eventRight.preventDefault).toHaveBeenCalledTimes(1);
   });
 });
