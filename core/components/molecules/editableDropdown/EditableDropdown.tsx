@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import Editable from '@/components/atoms/editable';
-import { Dropdown } from '@/index';
+import { Dropdown, Icon } from '@/index';
 import { DropdownProps } from '@/index.type';
 import { BaseProps, extractBaseProps, MakeOptional } from '@/utils/types';
 import styles from '@css/components/editableDropdown.module.css';
@@ -31,6 +31,7 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
   const [label, setLabel] = React.useState(placeholder);
   const [editing, setEditing] = React.useState(false);
   const [showComponent, setShowComponent] = React.useState(false);
+  const [dropdownOpen, setDropdownOpen] = React.useState(false);
 
   const CompClass = classNames(
     {
@@ -59,9 +60,10 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
       case 'edit':
         setEditing(true);
         setShowComponent(true);
+        setDropdownOpen(true);
         break;
       case 'hover':
-        setShowComponent(true);
+        // Do not set showComponent to true on hover to avoid keyboard focus interference
         break;
       case 'default':
         setShowComponent(false);
@@ -71,13 +73,23 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
   const onChange = (value: any) => {
     setEditing(false);
     setShowComponent(false);
+    setDropdownOpen(false);
     if (onDropdownChange) onDropdownChange(value);
   };
 
   const onClose = (selected: any) => {
     setEditing(false);
     setShowComponent(false);
+    setDropdownOpen(false);
     if (onDropdownClose) onDropdownClose(selected);
+  };
+
+  const onPopperToggle = (open: boolean) => {
+    setDropdownOpen(open);
+    if (!open) {
+      setEditing(false);
+      setShowComponent(false);
+    }
   };
 
   const renderComponent = (componentLabel: string) => {
@@ -86,20 +98,51 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
     return componentLabel;
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (!editing && (event.key === 'Enter' || event.key === ' ')) {
+      if (event.currentTarget !== event.target) return;
+      event.preventDefault();
+      if (event.repeat) return;
+      onChangeHandler('edit');
+    }
+  };
+
+  const handleClick = () => {
+    if (!editing) onChangeHandler('edit');
+  };
+
   return (
-    <div data-test="DesignSystem-EditableDropdown" {...baseProps} className={CompClass}>
+    <div
+      data-test="DesignSystem-EditableDropdown"
+      {...baseProps}
+      className={CompClass}
+      onKeyDown={handleKeyDown}
+      onClick={handleClick}
+      role="button"
+      tabIndex={editing ? -1 : 0}
+    >
       <Editable onChange={onChangeHandler} editing={editing}>
         <Dropdown
           placeholder={placeholder}
           onChange={onChange}
           getLabel={getLabel}
           onClose={onClose}
+          open={dropdownOpen}
+          onPopperToggle={onPopperToggle}
           className={EditableDropdownClass}
           data-test="DesignSystem-EditableDropdown--Dropdown"
           {...rest}
         />
         <div className={DefaultCompClass} data-test="DesignSystem-EditableDropdown--Default">
-          {renderComponent(label || placeholder)}
+          <div className={styles['EditableDropdown-wrapper']}>
+            <span
+              className={styles['EditableDropdown-text']}
+              style={{ color: !label ? 'var(--text-subtle)' : undefined }}
+            >
+              {renderComponent(label || placeholder)}
+            </span>
+          </div>
+          <Icon appearance="default" name="keyboard_arrow_down" className={styles['EditableDropdown-icon']} />
         </div>
       </Editable>
     </div>
