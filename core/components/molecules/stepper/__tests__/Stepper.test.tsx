@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, createEvent } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import Stepper, { StepperProps as Props } from '../Stepper';
 
@@ -325,12 +325,14 @@ describe('Stepper component keyboard accessibility', () => {
 
     const stepNodes = getAllByTestId('DesignSystem-Step');
 
-    const preventDefaultLeft = jest.fn();
-    fireEvent.keyDown(stepNodes[0], { key: 'ArrowLeft', preventDefault: preventDefaultLeft });
-    expect(preventDefaultLeft).toHaveBeenCalledTimes(1);
+    const eventLeft = createEvent.keyDown(stepNodes[0], { key: 'ArrowLeft' });
+    eventLeft.preventDefault = jest.fn();
+    fireEvent(stepNodes[0], eventLeft);
+    expect(eventLeft.preventDefault).toHaveBeenCalledTimes(1);
 
-    const preventDefaultRight = jest.fn();
-    fireEvent.keyDown(stepNodes[3], { key: 'ArrowRight', preventDefault: preventDefaultRight });
-    expect(preventDefaultRight).toHaveBeenCalledTimes(1);
+    const eventRight = createEvent.keyDown(stepNodes[3], { key: 'ArrowRight' });
+    eventRight.preventDefault = jest.fn();
+    fireEvent(stepNodes[3], eventRight);
+    expect(eventRight.preventDefault).toHaveBeenCalledTimes(1);
   });
 });
