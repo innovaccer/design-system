@@ -311,8 +311,33 @@
   /* Handled by Text appearance */
 }
 
-.Calendar-valueWrapper--dummy {
-  /* Handled by Text appearance */
+.Calendar-valueWrapper--active-dummy .Calendar-value {
+  border: none;
+}
+
+.Calendar-valueWrapper--active-dummy .Calendar-value--active {
+  background: var(--primary-lighter);
+}
+
+.Calendar-valueWrapper--active-dummy .Calendar-value--active:hover {
+  background: var(--primary-light);
+  color: var(--inverse);
+}
+
+.Calendar-valueWrapper--active-dummy .Calendar-value--active:active {
+  background: var(--primary-dark);
+  color: var(--white);
+}
+
+.Calendar-valueWrapper--active-dummy .Calendar-value--startError,
+.Calendar-valueWrapper--active-dummy .Calendar-value--endError {
+  background: var(--alert-lightest);
+}
+
+.Calendar-valueWrapper--active-dummy .Calendar-value--startError:hover,
+.Calendar-valueWrapper--active-dummy .Calendar-value--endError:hover {
+  background: var(--alert-lightest);
+  border-color: transparent;
 }
 
 .Calendar-value--disabled {
