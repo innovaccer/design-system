@@ -89,6 +89,16 @@
     background-color var(--duration--fast-01) var(--standard-productive-curve);
 }
 
+.Slider-handle::after {
+  content: '';
+  position: absolute;
+  top: calc(var(--spacing-10) * -1);
+  left: calc(var(--spacing-10) * -1);
+  right: calc(var(--spacing-10) * -1);
+  bottom: calc(var(--spacing-10) * -1);
+  border-radius: var(--border-radius-full);
+}
+
 .Slider-handle:hover {
   background-color: var(--primary-lightest);
 }
