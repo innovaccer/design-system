@@ -92,10 +92,12 @@
 .Slider-handle::after {
   content: '';
   position: absolute;
-  top: calc(var(--spacing-10) * -1);
-  left: calc(var(--spacing-10) * -1);
-  right: calc(var(--spacing-10) * -1);
-  bottom: calc(var(--spacing-10) * -1);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--spacing-60);
+  height: var(--spacing-60);
+  background-color: transparent;
   border-radius: var(--border-radius-full);
 }
 

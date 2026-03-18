@@ -99,7 +99,8 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
 
       if (isCurrentOnGrid) {
         // Current is on grid, so find the step in the direction of newValue
-        const stepsFromMin = (newValue - min) / stepSize;
+        const rawStepsFromMin = (newValue - min) / stepSize;
+        const stepsFromMin = Math.round(rawStepsFromMin * 1e10) / 1e10;
         const lowerStep = min + Math.floor(stepsFromMin) * stepSize;
         const upperStep = min + Math.ceil(stepsFromMin) * stepSize;
 
@@ -110,7 +111,8 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
         snapped = isIncrementing ? upperClean : lowerClean;
       } else {
         // Current is off-grid, snap to nearest valid step in movement direction
-        const stepsFromMin = (currentValue - min) / stepSize;
+        const rawStepsFromMin = (currentValue - min) / stepSize;
+        const stepsFromMin = Math.round(rawStepsFromMin * 1e10) / 1e10;
         const lowerStep = min + Math.floor(stepsFromMin) * stepSize;
         const upperStep = min + Math.ceil(stepsFromMin) * stepSize;
 
@@ -124,7 +126,8 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
       // For non-directional or large movement (mouse, initial value, labels, page up/down), use nearest step to newValue
       // Preserve value as-is when there is no positional change (e.g., click without drag)
       if (newValue === currentValue) return currentValue;
-      const stepsFromMin = (newValue - min) / stepSize;
+      const rawStepsFromMin = (newValue - min) / stepSize;
+      const stepsFromMin = Math.round(rawStepsFromMin * 1e10) / 1e10;
       const lowerStep = min + Math.floor(stepsFromMin) * stepSize;
       const upperStep = min + Math.ceil(stepsFromMin) * stepSize;
 
