@@ -3,7 +3,7 @@
   font-weight: var(--font-weight-medium);
   transition: var(--duration--fast-01) var(--standard-productive-curve);
   box-sizing: border-box;
-  border-bottom: var(--border-width-2-5) solid transparent;
+  border-bottom: var(--border-width-2-5) solid currentColor;
 }
 
 .Link:focus {
@@ -29,6 +29,7 @@
 
 .Link--subtle {
   color: var(--inverse-lighter);
+  border-bottom-color: transparent;
 }
 
 .Link--default:hover {
@@ -43,12 +44,12 @@
 
 .Link--default:active {
   color: var(--primary-darker);
-  border: none;
+  border-bottom: var(--border-width-2-5) solid currentColor;
 }
 
 .Link--subtle:active {
   color: var(--inverse);
-  border: none;
+  border-bottom: var(--border-width-2-5) solid transparent;
 }
 
 .Link--default-disabled {
