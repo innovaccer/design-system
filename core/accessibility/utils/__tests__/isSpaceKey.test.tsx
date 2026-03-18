@@ -12,7 +12,7 @@ describe('isSpaceKey', () => {
 
   test('returns true for "Space" key value', () => {
     const spaceKeyEvent = {
-      key: ' ',
+      key: 'Space',
     } as React.KeyboardEvent;
 
     expect(isSpaceKey(spaceKeyEvent)).toBe(true);
