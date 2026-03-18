@@ -156,7 +156,6 @@ const curatedElementProps: Record<HtmlElementType, AccessibilityPropDef[]> = {
     { name: 'aria-multiline', type: 'boolean', description: 'Indicates the text input accepts multiple lines.' },
     { name: 'aria-hidden', type: 'boolean', description: 'Hides the element from assistive technologies.' },
     { name: 'role', type: 'string', description: 'Overrides the implicit textbox role.' },
-    { name: 'tabIndex', type: 'number', description: 'Controls focus order.' },
   ],
 
   /**
@@ -297,9 +296,16 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
   Radio: { htmlElement: 'radio' },
 
   // Textbox-like (BaseHtmlProps<HTMLInputElement/HTMLTextAreaElement>)
+  // Note: Input overrides tabIndex internally (readOnly ? -1 : undefined), so consumers cannot customise it.
   Input: { htmlElement: 'textbox' },
-  Textarea: { htmlElement: 'textbox' },
-  MetricInput: { htmlElement: 'textbox' },
+  Textarea: {
+    htmlElement: 'textbox',
+    customProps: [{ name: 'tabIndex', type: 'number', description: 'Controls focus order.' }],
+  },
+  MetricInput: {
+    htmlElement: 'textbox',
+    customProps: [{ name: 'tabIndex', type: 'number', description: 'Controls focus order.' }],
+  },
 
   // Link-like (OmitNativeProps<HTMLLinkElement> / BaseHtmlProps<HTMLDivElement>)
   Link: { htmlElement: 'link' },
@@ -314,10 +320,10 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
   // Listbox (BaseHtmlProps<HTMLUListElement | HTMLDivElement>)
   Listbox: { htmlElement: 'listbox' },
 
-  // InputMask (extends InputProps which extends BaseHtmlProps<HTMLInputElement>)
+  // InputMask (extends InputProps — inherits Input's tabIndex override)
   InputMask: { htmlElement: 'textbox' },
 
-  // VerificationCodeInput (extends InputProps via Omit)
+  // VerificationCodeInput (extends InputProps — inherits Input's tabIndex override)
   VerificationCodeInput: { htmlElement: 'textbox' },
 
   // ========================================================================
@@ -370,10 +376,24 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
-  // Icon: tabIndex is only forwarded when onClick is also provided (via useAccessibilityProps hook)
+  // Icon: useAccessibilityProps forwards different props based on onClick presence.
+  // With onClick: role, tabIndex, aria-label, onKeyDown.
+  // Without onClick: aria-label, aria-labelledby, aria-describedby, aria-hidden.
   Icon: {
     htmlElement: 'custom',
     customProps: [
+      {
+        name: 'aria-label',
+        type: 'string',
+        description:
+          'Provides an accessible name for the icon. Forwarded for both interactive (onClick) and non-interactive icons.',
+      },
+      {
+        name: 'aria-hidden',
+        type: 'boolean',
+        description:
+          'Hides the icon from assistive technologies. Use on decorative, non-interactive icons. Only effective when onClick is not provided.',
+      },
       {
         name: 'tabIndex',
         type: 'number',
@@ -499,15 +519,26 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
-  // Dropdown: accepts aria-label, aria-labelledby
+  // Dropdown: accepts aria-label, aria-labelledby (forwarded to built-in trigger only), optionsAriaLabel
   Dropdown: {
     htmlElement: 'custom',
     customProps: [
-      { name: 'aria-label', type: 'string', description: 'Defines an accessible name for the dropdown trigger.' },
+      {
+        name: 'aria-label',
+        type: 'string',
+        description:
+          'Defines an accessible name for the dropdown trigger. Applied to the built-in trigger only; not forwarded when using customTrigger.',
+      },
       {
         name: 'aria-labelledby',
         type: 'string',
-        description: 'References the ID of element(s) that label the dropdown.',
+        description:
+          'References the ID of element(s) that label the dropdown trigger. Applied to the built-in trigger only; not forwarded when using customTrigger.',
+      },
+      {
+        name: 'optionsAriaLabel',
+        type: 'string',
+        description: 'Accessible name for the options list container. Defaults to "{aria-label} options" or "Options".',
       },
     ],
   },
