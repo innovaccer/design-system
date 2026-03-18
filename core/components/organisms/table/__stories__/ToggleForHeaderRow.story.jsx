@@ -16,7 +16,7 @@ export const toggleForHeaderRow = () => {
             <Heading>{`showHead: ${v}`}</Heading>
             <div className="vh-75">
               <Card className="h-100 overflow-hidden">
-                <Table showHead={v} data={data} schema={schema} />
+                <Table aria-label="Table with header row toggle" showHead={v} data={data} schema={schema} />
               </Card>
             </div>
           </Column>
@@ -118,7 +118,7 @@ const customCode = `() => {
         <Heading>{\`showHead: \${v}\`}</Heading>
         <div className="vh-75">
           <Card className="h-100 overflow-hidden">
-            <Table showHead={v} data={data} schema={schema} />
+            <Table aria-label="Table with header row toggle" showHead={v} data={data} schema={schema} />
           </Card>
         </div>
       </Column>

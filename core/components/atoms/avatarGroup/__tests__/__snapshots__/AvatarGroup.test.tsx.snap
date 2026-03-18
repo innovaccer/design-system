@@ -37,7 +37,6 @@ Object {
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 20px; width: 20px;"
                   >
                     places
@@ -73,7 +72,6 @@ Object {
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 20px; width: 20px;"
                   >
                     smart_toy
@@ -117,7 +115,6 @@ Object {
                 <i
                   class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                   data-test="DesignSystem-Icon"
-                  role="button"
                   style="font-size: 20px; width: 20px;"
                 >
                   places
@@ -153,7 +150,6 @@ Object {
                 <i
                   class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                   data-test="DesignSystem-Icon"
-                  role="button"
                   style="font-size: 20px; width: 20px;"
                 >
                   smart_toy
@@ -256,7 +252,6 @@ Object {
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 20px; width: 20px;"
                   >
                     places
@@ -292,7 +287,6 @@ Object {
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 20px; width: 20px;"
                   >
                     smart_toy
@@ -336,7 +330,6 @@ Object {
                 <i
                   class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                   data-test="DesignSystem-Icon"
-                  role="button"
                   style="font-size: 20px; width: 20px;"
                 >
                   places
@@ -372,7 +365,6 @@ Object {
                 <i
                   class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                   data-test="DesignSystem-Icon"
-                  role="button"
                   style="font-size: 20px; width: 20px;"
                 >
                   smart_toy
@@ -475,7 +467,6 @@ Object {
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     places
@@ -511,7 +502,6 @@ Object {
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     smart_toy
@@ -555,7 +545,6 @@ Object {
                 <i
                   class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                   data-test="DesignSystem-Icon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
                 >
                   places
@@ -591,7 +580,6 @@ Object {
                 <i
                   class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                   data-test="DesignSystem-Icon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
                 >
                   smart_toy
@@ -694,7 +682,6 @@ Object {
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     places
@@ -730,7 +717,6 @@ Object {
                   <i
                     class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                     data-test="DesignSystem-Icon"
-                    role="button"
                     style="font-size: 16px; width: 16px;"
                   >
                     smart_toy
@@ -774,7 +760,6 @@ Object {
                 <i
                   class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                   data-test="DesignSystem-Icon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
                 >
                   places
@@ -810,7 +795,6 @@ Object {
                 <i
                   class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                   data-test="DesignSystem-Icon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
                 >
                   smart_toy

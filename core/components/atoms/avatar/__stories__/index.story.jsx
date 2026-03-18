@@ -16,6 +16,7 @@ export const all = () => {
     size,
     firstName,
     lastName,
+    'aria-label': 'John Doe avatar',
   };
 
   return <Avatar {...options}>{children}</Avatar>;

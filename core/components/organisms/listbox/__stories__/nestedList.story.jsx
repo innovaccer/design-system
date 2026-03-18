@@ -15,7 +15,7 @@ const SubList = () => {
   */
 
   return (
-    <Listbox type="description" className="SubList-wrapper mr-6 mb-5 mt-3">
+    <Listbox type="description" aria-label="Note types" className="SubList-wrapper mr-6 mb-5 mt-3">
       {noteList.map((note, key) => {
         return (
           <Listbox.Item key={key} className="justify-content-between">
@@ -76,7 +76,7 @@ export const nestedList = () => {
 
   return (
     <Card className="w-75" shadow="none">
-      <Listbox type="description" className="Listbox-wrapper overflow-auto">
+      <Listbox type="description" aria-label="Activity list" className="Listbox-wrapper overflow-auto">
         {dataList.map((record, key) => {
           const expanded = expandList.includes(key);
           return (
@@ -97,7 +97,10 @@ export const nestedList = () => {
 
                 <div className="d-flex align-items-center">
                   <StatusHint appearance="info">{record.status}</StatusHint>
-                  <Menu trigger={<Menu.Trigger className="ml-5" appearance="transparent" />}>
+                  <Menu
+                    aria-label="Row actions"
+                    trigger={<Menu.Trigger className="ml-5" appearance="transparent" aria-label="Open row actions" />}
+                  >
                     <Menu.List>
                       <Menu.Item>Edit</Menu.Item>
                       <Menu.Item>Export</Menu.Item>
@@ -132,7 +135,7 @@ const customCode = `
     */
 
     return (
-      <Listbox type="description" className="SubList-wrapper mr-6 mb-5 mt-3">
+      <Listbox type="description" aria-label="Note types" className="SubList-wrapper mr-6 mb-5 mt-3">
         {noteList.map((note, key) => {
           return (
             <Listbox.Item key={key} className="justify-content-between">
@@ -192,7 +195,7 @@ const customCode = `
 
   return (
     <Card className="w-75" shadow="none">
-      <Listbox type="description" className="Listbox-wrapper overflow-auto">
+      <Listbox type="description" aria-label="Activity list" className="Listbox-wrapper overflow-auto">
         {dataList.map((record, key) => {
           const expanded = expandList.includes(key);
 
@@ -214,7 +217,7 @@ const customCode = `
 
                 <div className="d-flex align-items-center">
                   <StatusHint appearance="info">{record.status}</StatusHint>
-                  <Menu trigger={<Menu.Trigger className="ml-5" appearance="transparent" />}>
+                  <Menu aria-label="Row actions" trigger={<Menu.Trigger className="ml-5" appearance="transparent" aria-label="Open row actions" />}>
                     <Menu.List>
                       <Menu.Item>Edit</Menu.Item>
                       <Menu.Item>Export</Menu.Item>

@@ -49,7 +49,13 @@ export const LabelOverflow = () => {
 
   return (
     <div className="bg-secondary-lightest vh-75">
-      <VerticalNav menus={data} expanded={true} active={active} onClick={setActive} />
+      <VerticalNav
+        menus={data}
+        expanded={true}
+        active={active}
+        onClick={setActive}
+        aria-label="Primary sidebar navigation"
+      />
     </div>
   );
 };
@@ -106,7 +112,8 @@ const customCode = `() => {
         menus={data}
         expanded={true}
         active={active}
-        onClick={setActive}   
+        onClick={setActive}
+        aria-label="Primary sidebar navigation"
       />
     </div>
   );

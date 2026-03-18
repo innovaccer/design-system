@@ -6,6 +6,7 @@ import { Tabs, Tab } from '@/index';
 export const dismissibleTab = () => {
   const [activeIndex, setActiveIndex] = React.useState(0);
   const [dismissList, setDismissList] = React.useState([]);
+  const tabsLabelId = 'tabs-dismissible-label';
 
   const onTabChangeHandler = (tabIndex) => {
     setActiveIndex(tabIndex);
@@ -20,38 +21,43 @@ export const dismissibleTab = () => {
   };
 
   return (
-    <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6">
-      {!dismissList.includes('All') && (
-        <Tab label="All" count={15} className="pl-5">
-          <div>All</div>
+    <>
+      <div id={tabsLabelId} className="mb-3">
+        Dismissible Tabs
+      </div>
+      <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6" aria-labelledby={tabsLabelId}>
+        {!dismissList.includes('All') && (
+          <Tab label="All" count={15} className="pl-5">
+            <div>All</div>
+          </Tab>
+        )}
+        {!dismissList.includes('Pending') && (
+          <Tab
+            label="Pending"
+            className="pl-5"
+            count={10}
+            isDismissible={true}
+            onDismiss={(tabInfo) => onDismissHandler(tabInfo)}
+          >
+            <div>Pending</div>
+          </Tab>
+        )}
+        {!dismissList.includes('Declined') && (
+          <Tab
+            label="Declined"
+            className="pl-5"
+            count={4}
+            isDismissible={true}
+            onDismiss={(tabInfo) => onDismissHandler(tabInfo)}
+          >
+            <div>Declined</div>
+          </Tab>
+        )}
+        <Tab label="Successful" disabled={true} count={1} isDismissible={true}>
+          <div>Successful</div>
         </Tab>
-      )}
-      {!dismissList.includes('Pending') && (
-        <Tab
-          label="Pending"
-          className="pl-5"
-          count={10}
-          isDismissible={true}
-          onDismiss={(tabInfo) => onDismissHandler(tabInfo)}
-        >
-          <div>Pending</div>
-        </Tab>
-      )}
-      {!dismissList.includes('Declined') && (
-        <Tab
-          label="Declined"
-          className="pl-5"
-          count={4}
-          isDismissible={true}
-          onDismiss={(tabInfo) => onDismissHandler(tabInfo)}
-        >
-          <div>Declined</div>
-        </Tab>
-      )}
-      <Tab label="Successful" disabled={true} count={1} isDismissible={true}>
-        <div>Successful</div>
-      </Tab>
-    </Tabs>
+      </Tabs>
+    </>
   );
 };
 
@@ -59,6 +65,7 @@ const customCode = `() => {
   
   const [activeIndex, setActiveIndex] = React.useState(0);
   const [dismissList, setDismissList] = React.useState([]);
+  const tabsLabelId = 'tabs-dismissible-label';
 
   const onTabChangeHandler = (tabIndex) => {
     setActiveIndex(tabIndex);
@@ -71,38 +78,43 @@ const customCode = `() => {
   };
 
   return (
-    <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6">
-      {!dismissList.includes('All') && (
-        <Tab label="All" count={15} className="pl-5">
-          <div>All</div>
+    <>
+      <div id={tabsLabelId} className="mb-3">
+        Dismissible Tabs
+      </div>
+      <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6" aria-labelledby={tabsLabelId}>
+        {!dismissList.includes('All') && (
+          <Tab label="All" count={15} className="pl-5">
+            <div>All</div>
+          </Tab>
+        )}
+        {!dismissList.includes('Pending') && (
+          <Tab
+            label="Pending"
+            className="pl-5"
+            count={10}
+            isDismissible={true}
+            onDismiss={(tabInfo) => onDismissHandler(tabInfo)}
+          >
+            <div>Pending</div>
+          </Tab>
+        )}
+        {!dismissList.includes('Declined') && (
+          <Tab
+            label="Declined"
+            className="pl-5"
+            count={4}
+            isDismissible={true}
+            onDismiss={(tabInfo) => onDismissHandler(tabInfo)}
+          >
+            <div>Declined</div>
+          </Tab>
+        )}
+        <Tab label="Successful" disabled={true} count={1} isDismissible={true}>
+          <div>Successful</div>
         </Tab>
-      )}
-      {!dismissList.includes('Pending') && (
-        <Tab
-          label="Pending"
-          className="pl-5"
-          count={10}
-          isDismissible={true}
-          onDismiss={(tabInfo) => onDismissHandler(tabInfo)}
-        >
-          <div>Pending</div>
-        </Tab>
-      )}
-      {!dismissList.includes('Declined') && (
-        <Tab
-          label="Declined"
-          className="pl-5"
-          count={4}
-          isDismissible={true}
-          onDismiss={(tabInfo) => onDismissHandler(tabInfo)}
-        >
-          <div>Declined</div>
-        </Tab>
-      )}
-      <Tab label="Successful" disabled={true} count={1} isDismissible={true}>
-        <div>Successful</div>
-      </Tab>
-    </Tabs>
+      </Tabs>
+    </>
   );
 }`;
 

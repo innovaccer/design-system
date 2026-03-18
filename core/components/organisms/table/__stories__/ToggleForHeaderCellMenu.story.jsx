@@ -18,7 +18,7 @@ export const toggleForHeaderCellMenu = () => {
             <Heading>{`showMenu: ${v}`}</Heading>
             <div className="vh-75">
               <Card className="h-100 overflow-hidden">
-                <Table showMenu={v} data={data} schema={schema} />
+                <Table aria-label="Table with header menu" showMenu={v} data={data} schema={schema} />
               </Card>
             </div>
           </Column>
@@ -64,7 +64,7 @@ const customCode = `
         <Heading>{\`showMenu: \${v}\`}</Heading>
         <div className="vh-75">
           <Card className="h-100 overflow-hidden">
-            <Table showMenu={v} data={data} schema={schema} />
+            <Table aria-label="Table with header menu" showMenu={v} data={data} schema={schema} />
           </Card>
         </div>
       </Column>

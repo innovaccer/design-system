@@ -15,6 +15,8 @@ const IconWithMetaOption = (props: OptionTypeProps) => {
     appearance,
     color,
     dataTest,
+    selected,
+    menu,
   } = props;
 
   const { subInfo, label, icon, disabled } = optionData;
@@ -45,9 +47,10 @@ const IconWithMetaOption = (props: OptionTypeProps) => {
       onMouseEnter={onUpdateActiveOption}
       data-test={dataTest}
       data-disabled={disabled}
-      role="button"
+      role={menu ? 'menuitem' : 'option'}
       tabIndex={disabled ? -1 : 0}
       aria-disabled={disabled || undefined}
+      aria-selected={!menu ? selected : undefined}
     >
       {/* eslint-enable  */}
       {icon && <Icon data-test={`${dataTest}--Icon`} className={IconClass} name={icon} appearance={appearance} />}

@@ -7,7 +7,7 @@ import styles from '@css/components/dropdown.module.css';
 import classNames from 'classnames';
 
 const CheckboxOption = (props: OptionTypeProps) => {
-  const { className, selected, optionData, onChangeHandler, onUpdateActiveOption, dataTest, id = '' } = props;
+  const { className, selected, optionData, onChangeHandler, onUpdateActiveOption, dataTest, id = '', menu } = props;
   const { subInfo, label, disabled } = optionData;
 
   const checkboxClassName = classNames({
@@ -45,8 +45,28 @@ const CheckboxOption = (props: OptionTypeProps) => {
     );
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (disabled) return;
+
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      event.currentTarget.click();
+    }
+  };
+
   return (
-    <div className={className} onMouseEnter={onUpdateActiveOption} data-test={dataTest} data-disabled={disabled}>
+    <div
+      className={className}
+      onMouseEnter={onUpdateActiveOption}
+      onKeyDown={handleKeyDown}
+      data-test={dataTest}
+      data-disabled={disabled}
+      role={menu ? 'menuitemcheckbox' : 'option'}
+      aria-checked={menu ? selected : undefined}
+      aria-selected={!menu ? selected : undefined}
+      aria-disabled={disabled || undefined}
+      tabIndex={disabled ? -1 : 0}
+    >
       <Checkbox
         label={label}
         disabled={disabled}

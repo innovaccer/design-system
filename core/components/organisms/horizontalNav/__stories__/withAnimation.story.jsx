@@ -253,6 +253,7 @@ export const withAnimation = () => {
         menus={data}
         active={menu}
         onClick={onClickHandler}
+        aria-label="Workspace navigation"
       />
 
       {active.name === 'menu_1'
@@ -508,6 +509,7 @@ const customCode = `() => {
         menus={data}
         active={menu}
         onClick={onClickHandler}
+        aria-label="Workspace navigation"
       />
 
       {active.name === 'menu_1' ?

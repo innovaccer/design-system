@@ -37,7 +37,13 @@ export const LabelInline = () => {
   ];
   return (
     <div>
-      <Dropdown options={options} className="w-25" inlineLabel="Status" withCheckbox={true} />
+      <Dropdown
+        options={options}
+        className="w-25"
+        inlineLabel="Status"
+        withCheckbox={true}
+        aria-label="Select status"
+      />
     </div>
   );
 };

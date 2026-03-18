@@ -175,4 +175,26 @@ describe('Collapsible component with prop: onToggle', () => {
     expect(onToggle).toHaveBeenCalled();
     expect(onToggle).toHaveBeenCalledWith(false);
   });
+
+  it('calls onToggle callback on Enter or Space key press, but not on other keys', () => {
+    const onToggleMock = jest.fn();
+    const { getByTestId } = render(
+      <Collapsible expanded={false} onToggle={onToggleMock}>
+        <div />
+      </Collapsible>
+    );
+
+    const footer = getByTestId('DesignSystem-Collapsible--Footer');
+
+    fireEvent.keyDown(footer, { key: 'ArrowDown' });
+    expect(onToggleMock).not.toHaveBeenCalled();
+
+    fireEvent.keyDown(footer, { key: 'Space' });
+    expect(onToggleMock).toHaveBeenCalledTimes(1);
+    expect(onToggleMock).toHaveBeenCalledWith(true);
+
+    fireEvent.keyDown(footer, { key: 'Enter' });
+    expect(onToggleMock).toHaveBeenCalledTimes(2);
+    expect(onToggleMock).toHaveBeenLastCalledWith(true);
+  });
 });

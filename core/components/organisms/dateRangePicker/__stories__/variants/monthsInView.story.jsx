@@ -17,6 +17,7 @@ export const monthsInView = () => {
               endDate={new Date(2023, x - 2, 11)}
               yearNav={2023}
               monthNav={11}
+              aria-label={`Date range picker with ${x} month view`}
             />
           </Card>
         </div>

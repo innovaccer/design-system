@@ -4,7 +4,7 @@ import { Spinner, Text } from '@/index';
 // CSF format story
 export const inlineLoader = () => (
   <div className="d-flex">
-    <Spinner appearance="primary" size="small" className="mr-3" />
+    <Spinner appearance="primary" size="small" className="mr-3" aria-label="Uploading" />
     <Text>uploading...</Text>
   </div>
 );

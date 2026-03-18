@@ -24,6 +24,8 @@ export interface GenericChipProps extends BaseProps {
   size?: TChipSize;
   type?: ChipType;
   role?: string;
+  'aria-label'?: string;
+  'aria-labelledby'?: string;
 }
 
 export const GenericChip = (props: GenericChipProps) => {
@@ -181,6 +183,8 @@ export const GenericChip = (props: GenericChipProps) => {
         style={wrapperStyle}
         data-test="DesignSystem-GenericChip--Wrapper"
         role={props.role || 'button'}
+        aria-label={props['aria-label']}
+        aria-labelledby={props['aria-labelledby']}
         {...getAriaProps()}
         onKeyDown={onChipKeyDownHandler}
         {...baseProps}

@@ -13,8 +13,10 @@ exports[`FullscreenModal component
       data-test="DesignSystem-FullscreenModalContainer"
     >
       <div
+        aria-modal="true"
         class="FullscreenModal FullscreenModal-animation--open"
         data-test="DesignSystem-FullscreenModal"
+        role="dialog"
       >
         <div
           class="Row justify-content-center"
@@ -61,7 +63,6 @@ exports[`FullscreenModal component
                       <i
                         class="material-symbols material-symbols-rounded Icon"
                         data-test="DesignSystem-Button--Icon"
-                        role="button"
                         style="font-size: 16px; width: 16px;"
                       >
                         close
@@ -99,8 +100,10 @@ exports[`FullscreenModal component
       data-test="DesignSystem-FullscreenModalContainer"
     >
       <div
+        aria-modal="true"
         class="FullscreenModal FullscreenModal-animation--open"
         data-test="DesignSystem-FullscreenModal"
+        role="dialog"
       >
         <div
           class="Row justify-content-center"
@@ -145,7 +148,6 @@ exports[`FullscreenModal component
                       <i
                         class="material-symbols material-symbols-rounded Icon"
                         data-test="DesignSystem-Button--Icon"
-                        role="button"
                         style="font-size: 16px; width: 16px;"
                       >
                         close
@@ -210,8 +212,11 @@ exports[`FullscreenModal component
       data-test="DesignSystem-FullscreenModalContainer"
     >
       <div
+        aria-labelledby="fullscreen-modal-title-6"
+        aria-modal="true"
         class="FullscreenModal FullscreenModal-animation--open"
         data-test="DesignSystem-FullscreenModal"
+        role="dialog"
       >
         <div
           class="Row justify-content-center"
@@ -239,6 +244,7 @@ exports[`FullscreenModal component
                     <h4
                       class="Heading Heading--m Heading--default"
                       data-test="DesignSystem-OverlayHeader--heading"
+                      id="fullscreen-modal-title-6"
                     >
                       this is heading
                     </h4>
@@ -271,7 +277,6 @@ exports[`FullscreenModal component
                       <i
                         class="material-symbols material-symbols-rounded Icon"
                         data-test="DesignSystem-Button--Icon"
-                        role="button"
                         style="font-size: 16px; width: 16px;"
                       >
                         close
@@ -314,8 +319,10 @@ exports[`FullscreenModal component
       data-test="DesignSystem-FullscreenModalContainer"
     >
       <div
+        aria-modal="true"
         class="FullscreenModal FullscreenModal-animation--open"
         data-test="DesignSystem-FullscreenModal"
+        role="dialog"
       >
         <div
           class="Row justify-content-center"
@@ -362,7 +369,6 @@ exports[`FullscreenModal component
                       <i
                         class="material-symbols material-symbols-rounded Icon"
                         data-test="DesignSystem-Button--Icon"
-                        role="button"
                         style="font-size: 16px; width: 16px;"
                       >
                         close
@@ -399,8 +405,10 @@ exports[`FullscreenModal component
       data-test="DesignSystem-FullscreenModalContainer"
     >
       <div
+        aria-modal="true"
         class="FullscreenModal FullscreenModal-animation--open"
         data-test="DesignSystem-FullscreenModal"
+        role="dialog"
       >
         <div
           class="Row justify-content-center"
@@ -445,7 +453,6 @@ exports[`FullscreenModal component
                       <i
                         class="material-symbols material-symbols-rounded Icon"
                         data-test="DesignSystem-Button--Icon"
-                        role="button"
                         style="font-size: 16px; width: 16px;"
                       >
                         close
@@ -510,8 +517,11 @@ exports[`FullscreenModal component
       data-test="DesignSystem-FullscreenModalContainer"
     >
       <div
+        aria-labelledby="fullscreen-modal-title-5"
+        aria-modal="true"
         class="FullscreenModal FullscreenModal-animation--open"
         data-test="DesignSystem-FullscreenModal"
+        role="dialog"
       >
         <div
           class="Row justify-content-center"
@@ -539,6 +549,7 @@ exports[`FullscreenModal component
                     <h4
                       class="Heading Heading--m Heading--default"
                       data-test="DesignSystem-OverlayHeader--heading"
+                      id="fullscreen-modal-title-5"
                     >
                       this is heading
                     </h4>
@@ -571,7 +582,6 @@ exports[`FullscreenModal component
                       <i
                         class="material-symbols material-symbols-rounded Icon"
                         data-test="DesignSystem-Button--Icon"
-                        role="button"
                         style="font-size: 16px; width: 16px;"
                       >
                         close

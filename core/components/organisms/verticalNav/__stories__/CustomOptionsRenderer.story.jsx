@@ -103,6 +103,7 @@ export const CustomOptionsRenderer = () => {
         active={active}
         onClick={setActive}
         customOptionRenderer={customOptionRenderer}
+        aria-label="Clinical navigation"
       />
     </div>
   );
@@ -206,6 +207,7 @@ const customCode = `() => {
         active={active}
         onClick={setActive}
         customOptionRenderer={customOptionRenderer}
+        aria-label="Clinical navigation"
       />
     </div>
   );

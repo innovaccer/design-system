@@ -45,7 +45,6 @@ exports[`ChipInput component
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
-                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 clear
@@ -79,7 +78,6 @@ exports[`ChipInput component
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
-                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 clear
@@ -155,7 +153,6 @@ exports[`ChipInput component
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
-                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 clear
@@ -189,7 +186,6 @@ exports[`ChipInput component
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
-                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 clear
@@ -265,7 +261,6 @@ exports[`ChipInput component
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
-                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 clear
@@ -299,7 +294,6 @@ exports[`ChipInput component
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
-                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 clear

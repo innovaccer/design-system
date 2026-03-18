@@ -24,7 +24,7 @@ export const errorInTable = () => {
   return (
     <div className="vh-75">
       <Card className="h-100 overflow-hidden">
-        <Table schema={schema} data={[]} error={true} errorTemplate={errorTemplate} />
+        <Table aria-label="Data table" schema={schema} data={[]} error={true} errorTemplate={errorTemplate} />
       </Card>
     </div>
   );
@@ -132,7 +132,7 @@ const customCode = `() => {
   return (
     <div className="vh-75">
       <Card className="h-100 overflow-hidden">
-        <Table data={[]} schema={schema} error={true} errorTemplate={errorTemplate} />
+        <Table aria-label="Data table" data={[]} schema={schema} error={true} errorTemplate={errorTemplate} />
       </Card>
     </div>
   );

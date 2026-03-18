@@ -244,3 +244,79 @@ describe('selection card component hooks test', () => {
     expect(element2).toHaveClass('Selection-card--selected');
   });
 });
+
+describe('SelectionCard keyboard interactions', () => {
+  it('should toggle on Space key', () => {
+    const onClick = jest.fn();
+    const { getByTestId } = render(
+      <SelectionCard id="card-1" onClick={onClick}>
+        Content
+      </SelectionCard>
+    );
+
+    const card = getByTestId('DesignSystem-SelectionCard');
+    fireEvent.keyDown(card, { key: ' ' });
+
+    expect(onClick).toHaveBeenCalledWith(expect.any(Object), 'card-1', undefined);
+  });
+
+  it('should NOT toggle on Enter key (WAI-ARIA checkbox pattern)', () => {
+    const onClick = jest.fn();
+    const { getByTestId } = render(
+      <SelectionCard id="card-1" onClick={onClick}>
+        Content
+      </SelectionCard>
+    );
+
+    const card = getByTestId('DesignSystem-SelectionCard');
+    fireEvent.keyDown(card, { key: 'Enter' });
+
+    expect(onClick).not.toHaveBeenCalled();
+  });
+
+  it('should NOT toggle on Space when disabled', () => {
+    const onClick = jest.fn();
+    const { getByTestId } = render(
+      <SelectionCard id="card-1" onClick={onClick} disabled={true}>
+        Content
+      </SelectionCard>
+    );
+
+    const card = getByTestId('DesignSystem-SelectionCard');
+    fireEvent.keyDown(card, { key: ' ' });
+
+    expect(onClick).not.toHaveBeenCalled();
+  });
+
+  it('should prevent default on Space to avoid page scroll', () => {
+    const onClick = jest.fn();
+    const { getByTestId } = render(
+      <SelectionCard id="card-1" onClick={onClick}>
+        Content
+      </SelectionCard>
+    );
+
+    const card = getByTestId('DesignSystem-SelectionCard');
+    const event = new KeyboardEvent('keydown', { key: ' ', bubbles: true });
+    const preventDefaultSpy = jest.spyOn(event, 'preventDefault');
+
+    card.dispatchEvent(event);
+
+    expect(preventDefaultSpy).toHaveBeenCalled();
+  });
+
+  it('should pass cardValue to onClick handler', () => {
+    const onClick = jest.fn();
+    const cardValue = { name: 'test', value: 123 };
+    const { getByTestId } = render(
+      <SelectionCard id="card-1" onClick={onClick} cardValue={cardValue}>
+        Content
+      </SelectionCard>
+    );
+
+    const card = getByTestId('DesignSystem-SelectionCard');
+    fireEvent.keyDown(card, { key: ' ' });
+
+    expect(onClick).toHaveBeenCalledWith(expect.any(Object), 'card-1', cardValue);
+  });
+});

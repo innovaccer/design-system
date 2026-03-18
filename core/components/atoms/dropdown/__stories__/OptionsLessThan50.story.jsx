@@ -11,7 +11,17 @@ export const dropdownOptionsLessThan50 = () => {
       value: `Option${i}`,
     });
   }
-  return <Dropdown options={options} withCheckbox={true} withSearch={true} className="w-25" placeholder="Select" />;
+  return (
+    <Dropdown
+      options={options}
+      withCheckbox={true}
+      withSearch={true}
+      className="w-25"
+      placeholder="Select"
+      aria-label="Select options"
+      optionsAriaLabel="Options"
+    />
+  );
 };
 
 const customCode = `() => {
@@ -30,7 +40,9 @@ const customCode = `() => {
       withSearch={true}
       className="w-25"
       placeholder="Select"
-  />
+      aria-label="Select options"
+      optionsAriaLabel="Options"
+    />
   );
 }`;
 

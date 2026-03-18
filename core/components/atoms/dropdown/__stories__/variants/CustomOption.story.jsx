@@ -34,12 +34,23 @@ export const customOption = () => {
       <div className="mr-10 w-25">
         <Text weight="strong">Without Checkbox</Text> <br />
         <br />
-        <Dropdown options={storyOptions} optionRenderer={customOptionRenderer} />
+        <Dropdown
+          options={storyOptions}
+          optionRenderer={customOptionRenderer}
+          aria-label="Select option"
+          optionsAriaLabel="Options"
+        />
       </div>
       <div className="w-25">
         <Text weight="strong">With Checkbox</Text> <br />
         <br />
-        <Dropdown options={storyOptions} optionRenderer={customCheckboxRenderer} withCheckbox={true} />
+        <Dropdown
+          options={storyOptions}
+          optionRenderer={customCheckboxRenderer}
+          withCheckbox={true}
+          aria-label="Select option"
+          optionsAriaLabel="Options"
+        />
       </div>
     </div>
   );
@@ -80,11 +91,17 @@ const customCode = `() => {
     <div className='d-flex'>
       <div className='mr-10 w-25'>
         <Text weight="strong">Without Checkbox</Text> <br /><br />
-        <Dropdown options={storyOptions} optionRenderer={customOptionRenderer} />
+        <Dropdown options={storyOptions} optionRenderer={customOptionRenderer} aria-label="Select option" optionsAriaLabel="Options" />
       </div>
       <div className='w-25'>
         <Text weight="strong">With Checkbox</Text> <br /><br />
-        <Dropdown options={storyOptions} optionRenderer={customCheckboxRenderer} withCheckbox={true} />
+        <Dropdown
+          options={storyOptions}
+          optionRenderer={customCheckboxRenderer}
+          withCheckbox={true}
+          aria-label="Select option"
+          optionsAriaLabel="Options"
+        />
       </div>
     </div>
   );

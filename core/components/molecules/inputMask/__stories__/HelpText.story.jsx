@@ -15,8 +15,11 @@ export const helpText = () => {
   return (
     <Row className="w-25 d-flex">
       <div>
-        <Label withInput={true}>Phone Number</Label>
+        <Label withInput={true} htmlFor="primary_phone_1">
+          Phone Number
+        </Label>
         <InputMask
+          id="primary_phone_1"
           icon="call"
           name="primary_phone"
           placeholder="(___) ___-____"
@@ -26,9 +29,12 @@ export const helpText = () => {
       </div>
 
       <div className="mt-8">
-        <Label withInput={true}>Phone Number</Label>
+        <Label withInput={true} htmlFor="primary_phone_2">
+          Phone Number
+        </Label>
         <InputMask
           ref={ref}
+          id="primary_phone_2"
           icon="call"
           error={error}
           onChange={onChangeHandler}
@@ -54,8 +60,9 @@ const customCode = `() => {
   return (
     <Row className="w-25 d-flex">
       <div>
-        <Label withInput={true}>Phone Number</Label>
+        <Label withInput={true} htmlFor="primary_phone_1">Phone Number</Label>
         <InputMask
+          id="primary_phone_1"
           icon="call"
           name="primary_phone"
           placeholder="(___) ___-____"
@@ -65,9 +72,10 @@ const customCode = `() => {
       </div>
 
       <div className="mt-8">
-        <Label withInput={true}>Phone Number</Label>
+        <Label withInput={true} htmlFor="primary_phone_2">Phone Number</Label>
         <InputMask
           ref={ref}
+          id="primary_phone_2"
           icon="call"
           error={error}
           onChange={onChangeHandler}

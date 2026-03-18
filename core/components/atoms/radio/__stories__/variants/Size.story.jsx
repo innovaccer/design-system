@@ -12,6 +12,7 @@ export const size = () => {
         return (
           <Radio
             key={ind}
+            aria-label={RadioSize.charAt(0).toUpperCase() + RadioSize.slice(1)}
             size={RadioSize}
             label={RadioSize.charAt(0).toUpperCase() + RadioSize.slice(1)}
             name={name}
