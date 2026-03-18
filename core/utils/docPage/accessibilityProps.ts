@@ -370,32 +370,21 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
-  // Icon: accepts tabIndex only (uses useAccessibilityProps hook internally)
+  // Icon: tabIndex is only forwarded when onClick is also provided (via useAccessibilityProps hook)
   Icon: {
     htmlElement: 'custom',
     customProps: [
       {
         name: 'tabIndex',
         type: 'number',
-        description: 'Makes the icon focusable when interactive. Avoid on decorative icons.',
+        description: 'Makes the icon focusable. Only effective when onClick is also provided; ignored on non-interactive icons.',
       },
     ],
   },
 
-  // ProgressBar: accepts aria-value* props (role="progressbar" is hardcoded)
-  ProgressBar: {
-    htmlElement: 'custom',
-    customProps: [
-      { name: 'aria-valuemin', type: 'number', description: 'Minimum value of the progress bar.' },
-      { name: 'aria-valuemax', type: 'number', description: 'Maximum value of the progress bar.' },
-      { name: 'aria-valuenow', type: 'number', description: 'Current progress value.' },
-      {
-        name: 'aria-valuetext',
-        type: 'string',
-        description: 'Human-readable text for the current value (e.g., "50% complete").',
-      },
-    ],
-  },
+  // ProgressBar: aria-value* attributes are computed internally from `value` and `max` props.
+  // Consumers should NOT pass aria-valuemin, aria-valuemax, aria-valuenow, or aria-valuetext
+  // directly — ProgressBarProps does not declare them and extractBaseProps does not forward them.
 
   // Pills: accepts aria-label
   Pills: {
@@ -433,7 +422,7 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
-  // FullscreenModal: accepts aria-labelledby
+  // FullscreenModal: accepts aria-labelledby, aria-label, aria-describedby
   FullscreenModal: {
     htmlElement: 'custom',
     customProps: [
@@ -441,6 +430,16 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
         name: 'aria-labelledby',
         type: 'string',
         description: 'References the fullscreen modal heading. Use headerOptions.headingId to auto-set.',
+      },
+      {
+        name: 'aria-label',
+        type: 'string',
+        description: 'Accessible label for the dialog when no heading ID is available. Used as fallback when aria-labelledby is not set.',
+      },
+      {
+        name: 'aria-describedby',
+        type: 'string',
+        description: 'References the element(s) providing an accessible description for the dialog.',
       },
     ],
   },
@@ -484,11 +483,16 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
     ],
   },
 
-  // ChoiceList: accepts aria-label on the component
+  // ChoiceList: accepts aria-label and aria-labelledby on the component
   ChoiceList: {
     htmlElement: 'custom',
     customProps: [
       { name: 'aria-label', type: 'string', description: 'Provides an accessible name for the choice list group.' },
+      {
+        name: 'aria-labelledby',
+        type: 'string',
+        description: 'References the ID of element(s) that label the choice list group. Use when the group is labelled by another element on the page.',
+      },
     ],
   },
 
@@ -507,10 +511,11 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
 
   // ========================================================================
   // NOT INCLUDED (BaseProps only, NO passable a11y props):
-  // SegmentedControl, AvatarSelection, ProgressRing, Toast, Message,
-  // Collapsible, AvatarGroup, HelpText, Dialog, Tooltip, Popover, Dropzone,
-  // EditableInput, EditableChipInput, EditableDropdown, Stepper, VerticalNav,
-  // Navigation, DatePicker, DateRangePicker, Calendar, InlineMessage
+  // SegmentedControl, AvatarSelection, ProgressBar, ProgressRing, Toast,
+  // Message, Collapsible, AvatarGroup, HelpText, Dialog, Tooltip, Popover,
+  // Dropzone, EditableInput, EditableChipInput, EditableDropdown, Stepper,
+  // VerticalNav, Navigation, DatePicker, DateRangePicker, Calendar,
+  // InlineMessage
   // These components manage a11y internally and do not expose configurable
   // aria-* props to consumers.
   // ========================================================================
