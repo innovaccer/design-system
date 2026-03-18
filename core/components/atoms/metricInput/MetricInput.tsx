@@ -320,7 +320,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
         onClick={onClick}
         onFocus={onFocus}
         onKeyDown={handleKeyDown}
-        aria-label={props['aria-label'] || name || 'Metric input'}
+        aria-label={props['aria-label']}
         aria-labelledby={props['aria-labelledby']}
       />
       {suffix && (

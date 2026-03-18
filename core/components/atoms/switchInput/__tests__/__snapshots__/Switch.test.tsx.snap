@@ -10,7 +10,6 @@ exports[`Switch component
     >
       <input
         aria-checked="true"
-        aria-label="Switch"
         checked=""
         class="Switch-input"
         role="switch"
@@ -35,7 +34,6 @@ exports[`Switch component
     >
       <input
         aria-checked="true"
-        aria-label="Switch"
         checked=""
         class="Switch-input"
         role="switch"
@@ -60,7 +58,6 @@ exports[`Switch component
     >
       <input
         aria-checked="true"
-        aria-label="Switch"
         checked=""
         class="Switch-input"
         disabled=""
@@ -86,7 +83,6 @@ exports[`Switch component
     >
       <input
         aria-checked="true"
-        aria-label="Switch"
         checked=""
         class="Switch-input"
         role="switch"
@@ -111,7 +107,6 @@ exports[`Switch component
     >
       <input
         aria-checked="true"
-        aria-label="Switch"
         checked=""
         class="Switch-input"
         role="switch"

@@ -115,7 +115,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((pr
       data-test="DesignSystem-Textarea"
       {...rest}
       {...(error !== undefined ? { 'aria-invalid': error || undefined } : {})}
-      aria-label={props['aria-label'] || placeholder || name || 'Textarea'}
+      aria-label={props['aria-label']}
       aria-labelledby={props['aria-labelledby']}
       ref={ref}
       name={name}

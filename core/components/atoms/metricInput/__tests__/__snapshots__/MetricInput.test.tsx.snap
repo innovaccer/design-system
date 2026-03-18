@@ -19,7 +19,6 @@ exports[`MetricInput component
         events
       </i>
       <input
-        aria-label="Metric input"
         class="MetricInput-input MetricInput-input--regular"
         data-test="DesignSystem-MetricInput"
         type="number"
@@ -83,7 +82,6 @@ exports[`MetricInput component
         events
       </i>
       <input
-        aria-label="Metric input"
         class="MetricInput-input MetricInput-input--regular"
         data-test="DesignSystem-MetricInput"
         type="number"
@@ -145,7 +143,6 @@ exports[`MetricInput component
         USD
       </span>
       <input
-        aria-label="name"
         class="MetricInput-input MetricInput-input--large"
         data-test="DesignSystem-MetricInput"
         name="name"
@@ -214,7 +211,6 @@ exports[`MetricInput component
         USD
       </span>
       <input
-        aria-label="name"
         class="MetricInput-input MetricInput-input--regular"
         data-test="DesignSystem-MetricInput"
         name="name"
@@ -283,7 +279,6 @@ exports[`MetricInput component
         USD
       </span>
       <input
-        aria-label="name"
         class="MetricInput-input MetricInput-input--small"
         data-test="DesignSystem-MetricInput"
         name="name"

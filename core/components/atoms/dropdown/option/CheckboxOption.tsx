@@ -56,7 +56,8 @@ const CheckboxOption = (props: OptionTypeProps) => {
 
   const handleDivClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (disabled) return;
-    if ((e.target as HTMLElement).tagName === 'INPUT' || (e.target as HTMLElement).tagName === 'LABEL') {
+    const target = e.target as HTMLElement;
+    if (target.closest('input') || target.closest('label')) {
       return;
     }
     if (onChangeHandler) {
