@@ -11,6 +11,7 @@ export interface HandleProps {
   fillBefore?: boolean;
   onChange?: (newValue: number) => void;
   onRelease?: (newValue: number) => void;
+  'aria-label'?: string;
 }
 
 export interface InternalHandleProps extends HandleProps {
@@ -306,6 +307,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
           tabIndex={disabled ? -1 : 0}
           data-test="DesignSystem-MultiSlider-Handle"
           role="slider"
+          aria-label={this.props['aria-label']}
           aria-valuemin={this.props.min}
           aria-valuemax={this.props.max}
           aria-valuenow={value}

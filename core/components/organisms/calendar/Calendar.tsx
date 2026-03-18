@@ -580,6 +580,14 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       [styles[`Calendar-headerIcon--${type}`]]: type,
     });
 
+    const direction = type === 'next' ? 'Next' : 'Previous';
+    const navUnitMap: Record<View, string> = {
+      year: 'year range',
+      month: 'year',
+      date: 'month',
+    };
+    const viewLabel = navUnitMap[view];
+
     return (
       <Button
         type="button"
@@ -589,6 +597,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         disabled={disabled}
         size={size === 'small' ? 'tiny' : 'regular'}
         onClick={this.onNavIconClickHandler(type)}
+        aria-label={`${direction} ${viewLabel}`}
       />
     );
   };

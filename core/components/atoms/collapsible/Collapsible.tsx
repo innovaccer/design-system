@@ -108,6 +108,8 @@ export const Collapsible = (props: CollapsibleProps) => {
           <div
             role="button"
             tabIndex={0}
+            aria-expanded={expanded}
+            aria-label={expanded ? 'Collapse panel' : 'Expand panel'}
             className={FooterClass}
             data-test="DesignSystem-Collapsible--Footer"
             onClick={onToggleHandler(!expanded, 'click')}

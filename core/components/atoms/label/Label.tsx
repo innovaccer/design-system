@@ -69,11 +69,14 @@ export const Label = (props: LabelProps) => {
   const renderInfo = (isRequired = false, isOptional?: boolean) => {
     if (isRequired) {
       return (
-        <span
-          className={styles['Label-requiredIndicator']}
-          aria-label="required"
-          data-test="DesignSystem-Label--RequiredIndicator"
-        />
+        <>
+          <span
+            className={styles['Label-requiredIndicator']}
+            aria-hidden="true"
+            data-test="DesignSystem-Label--RequiredIndicator"
+          />
+          <span className={styles['Label-srOnly']}>(required)</span>
+        </>
       );
     }
 

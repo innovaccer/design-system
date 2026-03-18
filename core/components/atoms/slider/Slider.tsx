@@ -18,10 +18,14 @@ export interface SliderProps extends MultiSliderProps {
    * Callback invoked when the handle is released.
    */
   onRelease?: (value: number) => void;
+  /**
+   * Accessible label for the slider handle.
+   */
+  'aria-label'?: string;
 }
 
 export const Slider = (props: SliderProps) => {
-  const { value: valueProp, defaultValue, onRelease, onChange, ...rest } = props;
+  const { value: valueProp, defaultValue, onRelease, onChange, 'aria-label': sliderAriaLabel, ...rest } = props;
 
   const [value, setValue] = React.useState(valueProp === undefined ? defaultValue : valueProp);
 
@@ -40,7 +44,13 @@ export const Slider = (props: SliderProps) => {
 
   return (
     <MultiSlider {...rest}>
-      <MultiSlider.Handle value={value} onChange={onChangeHandler} onRelease={onRelease} fillBefore={true} />
+      <MultiSlider.Handle
+        value={value}
+        onChange={onChangeHandler}
+        onRelease={onRelease}
+        fillBefore={true}
+        aria-label={sliderAriaLabel}
+      />
     </MultiSlider>
   );
 };

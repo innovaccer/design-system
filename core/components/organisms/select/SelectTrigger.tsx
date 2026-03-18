@@ -72,7 +72,7 @@ export interface SelectTriggerProps extends BaseProps {
 const SelectTrigger = (props: SelectTriggerProps) => {
   const {
     triggerSize = 'regular',
-    'aria-label': ariaLabel = 'Select trigger',
+    'aria-label': ariaLabel,
     placeholder,
     withClearButton,
     icon,
@@ -107,6 +107,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
 
   const buttonDisabled = disabled ? 'disabled' : 'default';
   const trimmedPlaceholder = placeholder?.trim();
+  const effectiveAriaLabel = ariaLabel || trimmedPlaceholder || 'Select';
   const displayValue = computeValue(multiSelect, selectValue, setLabel);
   const value = isOptionSelected && displayValue.length > 0 ? displayValue : trimmedPlaceholder;
   const iconName = openPopover ? 'keyboard_arrow_up' : 'keyboard_arrow_down';
@@ -172,7 +173,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
         style={triggerStyle}
         aria-haspopup="listbox"
         aria-expanded={openPopover}
-        aria-label={ariaLabel}
+        aria-label={effectiveAriaLabel}
         data-test="DesignSystem-Select-trigger"
         {...rest}
       >
@@ -206,7 +207,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
             className={iconClass}
             size={12}
             name="close"
-            aria-label="clear selected"
+            aria-label={`Clear ${inlineLabel || trimmedPlaceholder || 'selection'}`}
             type={iconType}
             data-test="DesignSystem-Select--closeIcon"
           />
