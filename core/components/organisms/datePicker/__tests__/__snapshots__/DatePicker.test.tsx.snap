@@ -5231,6 +5231,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
             autocomplete="off"
             class="Input-input Input-input--regular mr-4"
             data-test="DesignSystem-Input"
+            id="parent-DatePicker"
             placeholder="mm/dd/yyyy"
             type="text"
             value="03/01/2020"
