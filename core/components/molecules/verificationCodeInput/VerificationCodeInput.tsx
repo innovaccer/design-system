@@ -246,6 +246,7 @@ const VerificationCodeInput = (props: VerificationCodeInputProps) => {
           data-id={index}
           ref={refs[index]}
           type={type}
+          aria-label={`Digit ${index + 1} of ${fields}`}
           {...rest}
           aria-label={ariaLabel ? `${ariaLabel} digit ${index + 1}` : `Digit ${index + 1} of ${fields}`}
         />
