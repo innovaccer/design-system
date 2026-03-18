@@ -177,14 +177,14 @@ const SelectTrigger = (props: SelectTriggerProps) => {
         disabled={disabled}
         tabIndex={0}
         style={triggerStyle}
+        data-test="DesignSystem-Select-trigger"
+        {...rest}
         aria-haspopup="listbox"
         aria-expanded={openPopover}
         aria-label={resolvedAriaLabel}
         aria-labelledby={ariaLabelledby}
-        data-test="DesignSystem-Select-trigger"
         role="combobox"
         aria-controls={rest['aria-controls']}
-        {...rest}
       >
         {
           <div className={triggerClass}>

@@ -265,6 +265,7 @@ export const Tabs = (props: TabsProps) => {
         appearance={iconAppearance}
         className={dismissIconClass(disabled)}
         onClick={!disabled ? onCloseHandler : undefined}
+        tabIndex={disabled ? -1 : 0}
         size={size === 'regular' ? 16 : 12}
         aria-label={`Dismiss ${label} tab`}
       />

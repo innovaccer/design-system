@@ -674,6 +674,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           <div
             role="button"
             tabIndex={0}
+            aria-label={view === 'year' ? `Select year from ${headerContent}` : `Select month from ${yearNavVal}`}
             className="d-flex justify-content-center align-items-center cursor-pointer"
             onClick={this.onNavHeadingClickHandler(view)}
             onKeyDown={(e) => {
@@ -692,6 +693,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             <div
               role="button"
               tabIndex={0}
+              aria-label={`Switch to month view, currently ${months[monthNavVal]}`}
               onClick={this.onNavHeadingClickHandler(view)}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
@@ -706,6 +708,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             <div
               role="button"
               tabIndex={0}
+              aria-label={`Switch to year view, currently ${yearNavVal}`}
               className="ml-4 d-flex justify-content-center align-items-center cursor-pointer"
               onClick={this.onNavHeadingClickHandler('month')}
               onKeyDown={(e) => {
@@ -731,6 +734,9 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const { yearBlockNav, currYear } = this.state;
 
     const noOfRows = Math.ceil(yearBlockRange / yearsInRow);
+
+    // Roving tabindex: determine which year gets tabIndex={0}
+    const focusYear = this.state.year ?? currYear;
 
     return Array.from({ length: noOfRows }, (_y, row) => (
       <div key={row} className={styles['Calendar-valueRow']}>
@@ -776,7 +782,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               onMouseOver={this.yearMouseOverHandler.bind(this, year, isCurrentYear(), disabled)}
               onFocus={this.yearMouseOverHandler.bind(this, year, isCurrentYear(), disabled)}
               role="button"
-              tabIndex={disabled ? -1 : 0}
+              tabIndex={disabled ? -1 : year === focusYear ? 0 : -1}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                   e.preventDefault();
@@ -784,7 +790,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                 }
               }}
               aria-disabled={disabled || undefined}
-              aria-pressed={active || undefined}
+              aria-current={active ? 'true' : undefined}
             >
               <Text size={size === 'small' ? 'small' : 'regular'} color={getTextColor} className={textClass}>
                 {year}
@@ -804,6 +810,10 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const { yearNav, year, currYear, currMonth } = this.state;
 
     const noOfRows = Math.ceil(monthBlock / monthsInRow);
+
+    // Roving tabindex: determine which month gets tabIndex={0}
+    const focusMonth =
+      year === yearNav && this.state.month != null ? this.state.month : currYear === yearNav ? currMonth : 0;
 
     return Array.from({ length: noOfRows }, (_y, row) => (
       <div key={row} className={styles['Calendar-valueRow']}>
@@ -846,7 +856,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               onMouseOver={this.monthMouseOverHandler.bind(this, month, isCurrentMonth(), disabled)}
               onFocus={this.monthMouseOverHandler.bind(this, month, isCurrentMonth(), disabled)}
               role="button"
-              tabIndex={disabled ? -1 : 0}
+              tabIndex={disabled ? -1 : month === focusMonth ? 0 : -1}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                   e.preventDefault();
@@ -854,7 +864,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                 }
               }}
               aria-disabled={disabled || undefined}
-              aria-pressed={active || undefined}
+              aria-current={active ? 'true' : undefined}
             >
               <Text size={size === 'small' ? 'small' : 'regular'} color={getTextColor} className={textClass}>
                 {months[month]}
@@ -1007,6 +1017,16 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       };
       if (onDateHover) onDateHover(dateData, ev);
     };
+
+    // Roving tabindex: only one date cell should be tabbable
+    const hasActiveDate =
+      yearState === yearNavVal &&
+      monthState === monthNavVal &&
+      dateState != null &&
+      dateState > 0 &&
+      dateState <= dayRange;
+    const isTodayInView = currYear === yearNavVal && currMonth === monthNavVal;
+    const focusDate = hasActiveDate ? dateState : isTodayInView ? todayDate : 1;
 
     return Array.from({ length: noOfRows }, (_y, row) => {
       return (
@@ -1177,7 +1197,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                       onMouseOver={onMouseOverHandler(date)}
                       onMouseEnter={onMouseEnterHandler.bind(this, date, today(), disabled)}
                       role="button"
-                      tabIndex={disabled ? -1 : 0}
+                      tabIndex={disabled ? -1 : date === focusDate ? 0 : -1}
                       onKeyDown={(e) => {
                         if (e.key === 'Enter' || e.key === ' ') {
                           e.preventDefault();
@@ -1203,7 +1223,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                       onMouseOver={onMouseOverHandler(date)}
                       onMouseEnter={onMouseEnterHandler.bind(this, date, today(), disabled)}
                       role="button"
-                      tabIndex={disabled ? -1 : 0}
+                      tabIndex={-1}
                       onKeyDown={(e) => {
                         if (e.key === 'Enter' || e.key === ' ') {
                           e.preventDefault();

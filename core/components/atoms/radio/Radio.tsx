@@ -126,10 +126,10 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
           className={styles['Radio-input']}
           id={id}
           data-test="DesignSystem-Radio-Input"
+          {...rest}
           aria-label={props['aria-label'] || label || name || 'Radio'}
           aria-labelledby={props['aria-labelledby']}
           aria-describedby={describedBy}
-          {...rest}
         />
         <span data-test="DesignSystem-Radio-wrapper" className={RadioWrapper} />
       </div>

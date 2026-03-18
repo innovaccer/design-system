@@ -7,7 +7,13 @@ import { OverlayHeader, OverlayHeaderProps } from '@/components/molecules/overla
 import { OverlayBody } from '@/components/molecules/overlayBody';
 import { Row, Column, Button, Tooltip } from '@/index';
 import { ColumnProps } from '@/index.type';
-import { getWrapperElement, getUpdatedZIndex, closeOnEscapeKeypress } from '@/utils/overlayHelper';
+import {
+  getWrapperElement,
+  getUpdatedZIndex,
+  closeOnEscapeKeypress,
+  getFocusableElements,
+  handleFocusTrapKeyDown,
+} from '@/utils/overlayHelper';
 import OverlayManager from '@/utils/OverlayManager';
 import { FooterOptions } from '@/common.type';
 import styles from '@css/components/fullscreenModal.module.css';
@@ -117,6 +123,7 @@ let fullscreenModalInstanceCounter = 0;
 
 class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> {
   modalRef = React.createRef<HTMLDivElement>();
+  previousActiveElement: HTMLElement | null = null;
   autoHeadingId: string;
   element: Element;
 
@@ -183,6 +190,7 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
   };
 
   activateFocusTrap = () => {
+    this.previousActiveElement = document.activeElement as HTMLElement | null;
     const container = this.modalRef.current;
     if (!container) return;
 
@@ -199,6 +207,13 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
     const container = this.modalRef.current;
     if (container) {
       container.removeAttribute('tabindex');
+    }
+
+    const elementToFocus = this.previousActiveElement;
+    this.previousActiveElement = null;
+
+    if (elementToFocus?.focus && OverlayManager.isTopOverlay(this.modalRef.current)) {
+      window.requestAnimationFrame(() => elementToFocus.focus({ preventScroll: true }));
     }
   };
 

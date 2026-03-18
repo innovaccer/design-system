@@ -81,6 +81,8 @@ const VerificationCodeInput = (props: VerificationCodeInputProps) => {
     onBlur,
     className,
     value,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledBy,
     ...rest
   } = props;
 
@@ -226,8 +228,8 @@ const VerificationCodeInput = (props: VerificationCodeInputProps) => {
       data-test="DesignSystem-VerificationCodeInput"
       className={styles['VerificationCodeInput']}
       role="group"
-      aria-label={props['aria-label'] || 'Verification code'}
-      aria-labelledby={props['aria-labelledby']}
+      aria-label={ariaLabel || 'Verification code'}
+      aria-labelledby={ariaLabelledBy}
     >
       {values.map((val: string, index: number) => (
         <Input
@@ -245,9 +247,7 @@ const VerificationCodeInput = (props: VerificationCodeInputProps) => {
           ref={refs[index]}
           type={type}
           {...rest}
-          aria-label={
-            props['aria-label'] ? `${props['aria-label']} digit ${index + 1}` : `Digit ${index + 1} of ${fields}`
-          }
+          aria-label={ariaLabel ? `${ariaLabel} digit ${index + 1}` : `Digit ${index + 1} of ${fields}`}
         />
       ))}
     </div>

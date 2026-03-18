@@ -334,6 +334,7 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
             appearance={disabled ? 'disabled' : 'subtle'}
             className={styles['ChipInput-icon']}
             onClick={onDeleteAllHandler}
+            tabIndex={disabled ? -1 : 0}
             aria-label="Clear all selections"
           />
         )}

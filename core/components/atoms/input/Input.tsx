@@ -280,9 +280,9 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
       )}
       <input
         data-test="DesignSystem-Input"
-        aria-label={props['aria-label'] || (inlineLabel ? inlineLabel.trim() : undefined)}
         {...baseProps}
         {...rest}
+        aria-label={props['aria-label'] || (inlineLabel ? inlineLabel.trim() : undefined)}
         ref={ref}
         name={name}
         type={type}
