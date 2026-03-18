@@ -40,7 +40,16 @@
   align-items: center;
   justify-content: center;
   border-radius: var(--border-radius-full);
-  margin-left: var(--spacing-05);
+}
+
+.Chip-icon--rightSmall {
+  width: var(--spacing-60);
+  height: var(--spacing-60);
+  box-sizing: border-box;
+  padding: var(--spacing-15);
+  margin-left: calc(var(--spacing-05) * -1);
+  margin-right: calc((var(--spacing-05) + var(--spacing-2-5)) * -1);
+  flex-shrink: 0;
 }
 
 .Chip--action {
@@ -164,7 +173,7 @@
 }
 
 .Chip-icon--right:focus-visible {
-  outline: var(--spacing-05) solid var(--secondary-shadow);
+  outline: var(--spacing-05) solid var(--primary-focus);
 }
 
 .Chip-icon--right:hover {
@@ -184,7 +193,7 @@
 }
 
 .Chip-icon--selected:focus-visible {
-  outline: var(--spacing-05) solid var(--primary-shadow);
+  outline: var(--spacing-05) solid var(--primary-focus);
 }
 
 .Chip-icon--selected:hover {
@@ -203,5 +212,5 @@
 }
 
 .Chip-icon--clear {
-  padding-right: var(--spacing-05);
+  padding-right: 0;
 }
