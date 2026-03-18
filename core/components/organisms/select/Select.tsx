@@ -98,6 +98,7 @@ export interface SelectProps extends BaseProps {
    * TriggerProps:
    * {
    *  triggerSize?: 'small' | 'regular';
+   *  'aria-label'?: string;
    *  icon?: string;
    *  placeholder?: string;
    *  inlineLabel?: string;
@@ -114,6 +115,7 @@ export interface SelectProps extends BaseProps {
    * | Name | Description | Default |
    * | --- | --- | --- |
    * | triggerSize | Specifies the size of the Select trigger button. | regular |
+   * | aria-label | Accessible label for the Select trigger button | Select trigger |
    * | icon | Specifies the name of the icon to be displayed in the trigger button | - |
    * | iconType | Specifies the type of icon to be displayed in the trigger button | - |
    * | inlineLabel | Optional label displayed inline inside the Select trigger button | - |

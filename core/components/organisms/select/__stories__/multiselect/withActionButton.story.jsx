@@ -60,12 +60,16 @@ export const withActionButton = () => {
       onSelect={handleSelect}
       value={selectedOptions}
       multiSelect={true}
-      triggerOptions={{ onClear: onClearHandler }}
+      triggerOptions={{ onClear: onClearHandler, 'aria-label': 'Medication multiselect trigger' }}
     >
-      <Select.List>
+      <Select.List aria-label="Medication multiselect options">
         {medicineList.map((item) => {
           return (
-            <Select.Option key={item.id} option={{ label: item.label, value: item.value, id: item.id }}>
+            <Select.Option
+              key={item.id}
+              option={{ label: item.label, value: item.value, id: item.id }}
+              aria-label={item.label + ' option'}
+            >
               {item.label}
             </Select.Option>
           );
@@ -154,12 +158,12 @@ const customCode = `() => {
       onSelect={handleSelect}
       value={selectedOptions}
       multiSelect={true}
-      triggerOptions={{ onClear: onClearHandler }}
+      triggerOptions={{ onClear: onClearHandler, 'aria-label': 'Medication multiselect trigger' }}
     >
-      <Select.List>
+      <Select.List aria-label="Medication multiselect options">
         {medicineList.map((item) => {
           return (
-            <Select.Option key={item.id} option={{ label: item.label, value: item.value, id: item.id }}>
+            <Select.Option key={item.id} option={{ label: item.label, value: item.value, id: item.id }} aria-label={item.label + ' option'}>
               {item.label}
             </Select.Option>
           );

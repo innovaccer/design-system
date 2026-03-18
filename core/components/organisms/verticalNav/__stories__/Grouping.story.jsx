@@ -72,7 +72,13 @@ export const grouping = () => {
   return (
     <div className="bg-secondary-lightest vh-75">
       <Collapsible expanded={expanded} onToggle={setExpanded}>
-        <VerticalNav menus={data} expanded={expanded} active={active} onClick={setActive} />
+        <VerticalNav
+          menus={data}
+          expanded={expanded}
+          active={active}
+          onClick={setActive}
+          aria-label="Primary sidebar navigation"
+        />
       </Collapsible>
     </div>
   );
@@ -154,6 +160,7 @@ const customCode = `() => {
           expanded={expanded}
           active={active}
           onClick={setActive}
+          aria-label="Primary sidebar navigation"
         />
       </Collapsible>
     </div>

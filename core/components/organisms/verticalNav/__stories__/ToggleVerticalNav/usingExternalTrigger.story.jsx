@@ -46,7 +46,13 @@ export const usingExternalTrigger = () => {
         Click here
       </Button>
       <Collapsible withTrigger={false} expanded={expanded} height="75vh">
-        <VerticalNav menus={data} active={active} expanded={expanded} onClick={setActive} />
+        <VerticalNav
+          menus={data}
+          active={active}
+          expanded={expanded}
+          onClick={setActive}
+          aria-label="Primary sidebar navigation"
+        />
       </Collapsible>
     </div>
   );
@@ -95,7 +101,7 @@ const customCode = `() => {
         Click here
       </Button>
       <Collapsible withTrigger={false} expanded={expanded} height="75vh">
-        <VerticalNav menus={data} active={active} expanded={expanded} onClick={setActive} />
+        <VerticalNav menus={data} active={active} expanded={expanded} onClick={setActive} aria-label="Primary sidebar navigation" />
       </Collapsible>
     </div>
   );

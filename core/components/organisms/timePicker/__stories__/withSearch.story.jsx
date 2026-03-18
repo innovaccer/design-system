@@ -20,6 +20,8 @@ export const withSearch = () => {
           onChange={onChangeHandler}
           noResultMessage="Invalid Time"
           id="12-hour"
+          aria-label="12 hour time selector"
+          optionsAriaLabel="12 hour time options"
         />
       </div>
       <div className="w-25 ml-7">
@@ -32,6 +34,8 @@ export const withSearch = () => {
           onChange={onChangeHandler}
           noResultMessage="Invalid Time"
           id="24-hour"
+          aria-label="24 hour time selector"
+          optionsAriaLabel="24 hour time options"
         />
       </div>
     </Row>
@@ -55,6 +59,8 @@ const customCode = `() => {
           onChange={onChangeHandler} 
           noResultMessage="Invalid Time"
           id="12-hour"
+          aria-label="12 hour time selector"
+          optionsAriaLabel="12 hour time options"
         />
       </div>
       <div className="w-25 ml-7">
@@ -67,6 +73,8 @@ const customCode = `() => {
           onChange={onChangeHandler}
           noResultMessage="Invalid Time"
           id="24-hour"
+          aria-label="24 hour time selector"
+          optionsAriaLabel="24 hour time options"
         />
       </div>
   </Row>

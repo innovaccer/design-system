@@ -37,7 +37,7 @@ exports[`ChipInput component
             </div>
             <div
               aria-label="Remove"
-              class="Chip-icon Chip-icon--right cursor-pointer"
+              class="Chip-icon Chip-icon--right cursor-pointer p-3"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
               tabindex="0"
@@ -45,7 +45,6 @@ exports[`ChipInput component
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
-                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 clear
@@ -71,7 +70,7 @@ exports[`ChipInput component
             </div>
             <div
               aria-label="Remove"
-              class="Chip-icon Chip-icon--right cursor-pointer"
+              class="Chip-icon Chip-icon--right cursor-pointer p-3"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
               tabindex="0"
@@ -79,7 +78,6 @@ exports[`ChipInput component
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
-                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 clear
@@ -147,7 +145,7 @@ exports[`ChipInput component
             </div>
             <div
               aria-label="Remove"
-              class="Chip-icon Chip-icon--right Chip-icon-disabled--right"
+              class="Chip-icon Chip-icon--right Chip-icon-disabled--right p-3"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
               tabindex="-1"
@@ -155,7 +153,6 @@ exports[`ChipInput component
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
-                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 clear
@@ -181,7 +178,7 @@ exports[`ChipInput component
             </div>
             <div
               aria-label="Remove"
-              class="Chip-icon Chip-icon--right Chip-icon-disabled--right"
+              class="Chip-icon Chip-icon--right Chip-icon-disabled--right p-3"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
               tabindex="-1"
@@ -189,7 +186,6 @@ exports[`ChipInput component
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
-                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 clear
@@ -257,7 +253,7 @@ exports[`ChipInput component
             </div>
             <div
               aria-label="Remove"
-              class="Chip-icon Chip-icon--right cursor-pointer"
+              class="Chip-icon Chip-icon--right cursor-pointer p-3"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
               tabindex="0"
@@ -265,7 +261,6 @@ exports[`ChipInput component
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
-                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 clear
@@ -291,7 +286,7 @@ exports[`ChipInput component
             </div>
             <div
               aria-label="Remove"
-              class="Chip-icon Chip-icon--right cursor-pointer"
+              class="Chip-icon Chip-icon--right cursor-pointer p-3"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
               tabindex="0"
@@ -299,7 +294,6 @@ exports[`ChipInput component
               <i
                 class="material-symbols material-symbols-rounded Icon Icon--subtle"
                 data-test="DesignSystem-Icon"
-                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 clear

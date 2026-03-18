@@ -27,4 +27,11 @@ export const all = () => {
 export default {
   title: 'Components/Tooltip/All',
   component: Tooltip,
+  parameters: {
+    docs: {
+      docPage: {
+        a11yProps: `Use \`aria-label\` on the trigger when it is icon-only (no visible text).`,
+      },
+    },
+  },
 };

@@ -17,6 +17,7 @@ type ChipOptions = {
   type?: ChipProps['type'];
   iconType?: ChipProps['iconType'];
   clearButton?: ChipProps['clearButton'];
+  role?: ChipProps['role'];
   onClick?: (value: OptionType, index: number) => void;
 };
 
@@ -31,6 +32,7 @@ export interface MultiSelectTriggerProps extends BaseProps {
    *   icon?: string;
    *   type?: action | input | selection
    *   clearButton?: boolean;
+   *   role?: string;
    *   onClick?: (value: string, index: number) => void;
    *   iconType?: 'rounded' | 'outlined'
    *  }
@@ -97,6 +99,14 @@ export interface MultiSelectTriggerProps extends BaseProps {
    * Specify role to chip input
    */
   role?: React.AriaRole;
+  /**
+   * Accessible name for trigger
+   */
+  'aria-label'?: string;
+  /**
+   * Associates trigger with external label
+   */
+  'aria-labelledby'?: string;
 }
 
 export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTriggerProps>((props, forwardedInputRef) => {
@@ -117,6 +127,8 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
     onInputChange,
     tabIndex,
     role,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledBy,
     ...rest
   } = props;
 
@@ -310,6 +322,8 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
             onChange={onInputChangeHandler}
             onKeyDown={onKeyDownHandler}
             role={role}
+            aria-label={ariaLabel}
+            aria-labelledby={ariaLabelledBy}
           />
           {/* eslint-enable */}
         </div>

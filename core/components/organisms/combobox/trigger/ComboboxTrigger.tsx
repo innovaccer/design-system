@@ -20,6 +20,8 @@ interface ComboboxTriggerProps {
   size?: ComboboxInputSize;
   chipValue?: OptionType[];
   clearButton?: boolean;
+  'aria-label'?: string;
+  'aria-labelledby'?: string;
 }
 
 export const ComboboxTrigger = (props: ComboboxTriggerProps) => {

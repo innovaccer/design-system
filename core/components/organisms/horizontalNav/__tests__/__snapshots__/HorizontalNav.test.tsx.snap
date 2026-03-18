@@ -5,19 +5,19 @@ exports[`Horizontal Navigation component
  1`] = `
 <body>
   <div>
-    <div
+    <nav
+      aria-label="Horizontal Navigation"
       class="HorizontalNav"
     >
-      <div
+      <a
+        aria-current="page"
         class="HorizontalNav-menu HorizontalNav-menu--active HorizontalNav-animate color-primary-dark"
         data-test="DesignSystem-HorizontalNav"
-        role="button"
-        tabindex="0"
+        href="/patient360"
       >
         <i
           class="material-symbols material-symbols-rounded Icon mr-3 HorizontalNav-animate"
           data-test="DesignSystem-HorizontalNav--Icon"
-          role="button"
           style="font-size: 16px; width: 16px;"
         >
           events
@@ -28,12 +28,11 @@ exports[`Horizontal Navigation component
         >
           Tab #1
         </span>
-      </div>
-      <div
+      </a>
+      <a
         class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
         data-test="DesignSystem-HorizontalNav"
-        role="button"
-        tabindex="0"
+        href="/outreach"
       >
         <span
           class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
@@ -47,12 +46,11 @@ exports[`Horizontal Navigation component
         >
           Tab #2
         </span>
-      </div>
-      <div
+      </a>
+      <span
+        aria-disabled="true"
         class="HorizontalNav-menu HorizontalNav-menu--disabled HorizontalNav-animate color-inverse-lightest"
         data-test="DesignSystem-HorizontalNav"
-        role="button"
-        tabindex="0"
       >
         <span
           class="Text Text--medium Text--regular color-inverse-lightest HorizontalNav-menuText HorizontalNav-animate"
@@ -60,8 +58,8 @@ exports[`Horizontal Navigation component
         >
           Tab #3
         </span>
-      </div>
-    </div>
+      </span>
+    </nav>
   </div>
 </body>
 `;

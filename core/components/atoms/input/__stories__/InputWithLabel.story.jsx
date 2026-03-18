@@ -34,6 +34,7 @@ const customCode = `() => {
         Email
       </Label>
       <Input
+        id="email"
         name="input"
         className="w-25"
         value={value}

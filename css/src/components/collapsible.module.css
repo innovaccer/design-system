@@ -46,8 +46,8 @@
 
 .Collapsible-footer:focus,
 .Collapsible-footer:focus-visible {
-  outline: none;
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 .Collapsible-footer:active {

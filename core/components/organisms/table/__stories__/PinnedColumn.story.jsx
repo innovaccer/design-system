@@ -120,6 +120,7 @@ export const pinnedColumns = () => {
     <div className="vh-50">
       <Card className="h-100 overflow-hidden">
         <Table
+          aria-label="Patient table with pinned columns"
           loaderSchema={loaderSchema}
           size="compressed"
           showMenu={false}
@@ -255,6 +256,7 @@ const customCode = `() => {
     <div className="vh-50">
       <Card className="h-100 overflow-hidden">
         <Table
+          aria-label="Patient table with pinned columns"
           showMenu={false}
           size="compressed"
           separator={false}

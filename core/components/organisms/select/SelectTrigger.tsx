@@ -13,6 +13,11 @@ export type SelectTriggerSize = 'small' | 'regular';
 
 export interface SelectTriggerProps extends BaseProps {
   /**
+   * Accessible label for the Select trigger button.
+   * @default "Select trigger"
+   */
+  'aria-label'?: string;
+  /**
    * Specifies the size of the Select trigger button.
    * @default "regular"
    */
@@ -67,6 +72,7 @@ export interface SelectTriggerProps extends BaseProps {
 const SelectTrigger = (props: SelectTriggerProps) => {
   const {
     triggerSize = 'regular',
+    'aria-label': ariaLabel = 'Select trigger',
     placeholder,
     withClearButton,
     icon,
@@ -145,7 +151,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     'white-space-nowrap': true,
   });
 
-  const iconClass = classNames('align-items-center', 'mr-2', 'ml-3', selectStyles['Select-crossButton']);
+  const iconClass = classNames('align-items-center', 'mr-2', 'ml-3', 'p-3-5', selectStyles['Select-crossButton']);
   const iconSize = triggerSize === 'small' ? 14 : 16;
   const triggerTextSize = triggerSize === 'small' ? 'small' : 'regular';
   return (
@@ -166,7 +172,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
         style={triggerStyle}
         aria-haspopup="listbox"
         aria-expanded={openPopover}
-        aria-label="trigger"
+        aria-label={ariaLabel}
         data-test="DesignSystem-Select-trigger"
         {...rest}
       >

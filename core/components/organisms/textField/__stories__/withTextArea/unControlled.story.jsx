@@ -6,7 +6,7 @@ import { TextFieldWithTextarea } from '../../TextFieldWithTextarea';
 export const WithUncontrolledTextArea = () => {
   return (
     <div className="w-25">
-      <TextField />
+      <TextField label="Description" withTextarea={true} helpText="Enter billing details" />
     </div>
   );
 };

@@ -20,11 +20,15 @@ export const optionItemWithInfo = () => {
   };
 
   return (
-    <Select onSelect={onSelectHandler}>
-      <Select.List>
+    <Select onSelect={onSelectHandler} triggerOptions={{ 'aria-label': 'Care team member selector' }}>
+      <Select.List aria-label="Care team member options">
         {medicineList.map((item, key) => {
           return (
-            <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+            <Select.Option
+              key={key}
+              option={{ label: item.label, value: item.value }}
+              aria-label={`${item.label} option`}
+            >
               <div className="d-flex flex-column">
                 <Text>{item.label}</Text>
                 <Text size="small" appearance="subtle">
@@ -56,11 +60,11 @@ const customCode = `() => {
   };
 
   return (
-    <Select onSelect={onSelectHandler}>
-        <Select.List>
+    <Select onSelect={onSelectHandler} triggerOptions={{ 'aria-label': 'Care team member selector' }}>
+        <Select.List aria-label="Care team member options">
           {medicineList.map((item, key) => {
             return (
-              <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+              <Select.Option key={key} option={{ label: item.label, value: item.value }} aria-label={\`\${item.label} option\`}>
               <div className='d-flex flex-column'>
                 <Text>{item.label}</Text>
                 <Text size="small" appearance="subtle">

@@ -18,10 +18,14 @@ export interface PillsProps extends BaseProps {
    * Text to be added inside `Pills`
    */
   children: React.ReactText;
+  /**
+   * Aria label for the `Pills`
+   */
+  'aria-label'?: string;
 }
 
 export const Pills = (props: PillsProps) => {
-  const { appearance, children, subtle, className, ...rest } = props;
+  const { appearance, children, subtle, className, 'aria-label': ariaLabel } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -37,7 +41,8 @@ export const Pills = (props: PillsProps) => {
   return (
     <span
       data-test="DesignSystem-Pills"
-      role={rest['aria-label'] ? 'status' : undefined}
+      role={ariaLabel ? 'status' : undefined}
+      aria-label={ariaLabel}
       {...baseProps}
       className={classes}
     >

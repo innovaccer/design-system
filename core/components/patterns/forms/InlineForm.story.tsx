@@ -72,7 +72,7 @@ const customCode = `
                 </div>
                 <div className="mr-6 mb-6">
                   <Label withInput={true}>Gender</Label>
-                  <div className="d-flex">
+                  <div className="d-flex" role="group" aria-label="Gender">
                     <Button className="mr-3" onClick={() => this.onChange('Male', 'gender')}>Male</Button>
                     <Button className="mr-3" onClick={() => this.onChange('Female', 'gender')}>Female</Button>
                     <Button className="mr-3" onClick={() => this.onChange('Other', 'gender')}>Other</Button>
@@ -129,7 +129,7 @@ const customCode = `
                   <Select
                     width="100%"
                     onSelect={(option) => this.onChange(option.value, 'pcp')}
-                    triggerOptions={{ placeholder: "00000", icon: "add_box", }}
+                    triggerOptions={{ placeholder: "Select physician…", icon: "add_box", 'aria-label': "Primary Care Physician" }}
                   >
                     <Select.List>
                       {options.map((item, key) => {
@@ -147,7 +147,7 @@ const customCode = `
                   <Select
                     width="100%"
                     onSelect={(option) => this.onChange(option.value, 'region')}
-                    triggerOptions={{ placeholder: "00000", icon: "flag", }}
+                    triggerOptions={{ placeholder: "Select region…", icon: "flag", 'aria-label': "Region" }}
                   >
                     <Select.List>
                       {options.map((item, key) => {

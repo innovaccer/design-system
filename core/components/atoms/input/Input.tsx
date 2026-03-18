@@ -143,6 +143,12 @@ export interface InputProps extends BaseProps, BaseHtmlProps<HTMLInputElement> {
 const sizeMapping = {
   tiny: 12,
   regular: 16,
+  large: 16,
+};
+
+const iconSizeMapping = {
+  tiny: 14,
+  regular: 16,
   large: 20,
 };
 
@@ -236,16 +242,22 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     [styles['Input-iconWrapper--right']]: true,
   });
 
+  const inputRightIconClass = classNames({
+    [styles['Input-icon--right']]: true,
+    ['p-3-5']: size === 'tiny',
+    ['p-3']: size === 'regular' || size === 'large',
+  });
+
   const trigger = (
     <div
       className={rightIconClass} // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
       tabIndex={0}
     >
-      <Icon name={'info'} size={sizeMapping[size]} className={styles['Input-icon--right']} />
+      <Icon name={'info'} size={sizeMapping[size]} className={inputRightIconClass} />
     </div>
   );
 
-  const iconSize = size === 'tiny' ? 14 : sizeMapping[size];
+  const iconSize = iconSizeMapping[size];
 
   return (
     <div
@@ -311,7 +323,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
               }}
               name={'close'}
               size={sizeMapping[size]}
-              className={styles['Input-icon--right']}
+              className={inputRightIconClass}
             />
           </div>
         )

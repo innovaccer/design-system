@@ -40,7 +40,16 @@
   align-items: center;
   justify-content: center;
   border-radius: var(--border-radius-full);
-  margin-left: var(--spacing-05);
+}
+
+.Chip-icon--rightSmall {
+  width: var(--spacing-60);
+  height: var(--spacing-60);
+  box-sizing: border-box;
+  padding: var(--spacing-15);
+  margin-left: calc(var(--spacing-05) * -1);
+  margin-right: calc((var(--spacing-05) + var(--spacing-2-5)) * -1);
+  flex-shrink: 0;
 }
 
 .Chip--action {
@@ -54,8 +63,8 @@
 }
 
 .Chip--action:focus-visible {
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
-  outline: none;
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 .Chip--action:active {
@@ -82,8 +91,8 @@
 }
 
 .Chip--selection:focus-visible {
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
-  outline: none;
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 .Chip--selection:active {
@@ -99,23 +108,26 @@
 }
 
 .Chip-selection--selected {
-  background: color-mod(var(--primary-lightest) a(var(--opacity-12)));
-  border-color: var(--primary-lighter);
+  background: var(--primary-ultra-light);
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
 }
 
 .Chip-selection--selected:hover {
-  background: color-mod(var(--primary-lighter) a(var(--opacity-12)));
-  border-color: var(--primary-light);
+  background: var(--primary-lightest);
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
 }
 
 .Chip-selection--selected:focus-visible {
-  box-shadow: var(--shadow-spread) var(--primary-shadow);
-  outline: none;
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 .Chip-selection--selected:active {
   background: var(--primary-lighter);
   border-color: var(--primary-dark);
+  box-shadow: inset 0 0 0 1px var(--primary-dark);
 }
 
 .Chip-selection--selected:active .Chip-icon,
@@ -132,8 +144,10 @@
 }
 
 .Chip-selection--selectedDisabled {
-  background: color-mod(var(--primary-lightest) a(var(--opacity-12)));
-  border-color: var(--primary-lighter);
+  background: var(--primary-ultra-light);
+  border-color: var(--primary-lightest);
+  box-shadow: inset 0 0 0 1px var(--primary-lightest);
+  opacity: 1;
 }
 
 .Chip--input {
@@ -148,8 +162,8 @@
 
 .Chip--input:focus-visible,
 .Chip--input:focus {
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
-  outline: none;
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }
 
 .Chip--input:active {
@@ -164,7 +178,7 @@
 }
 
 .Chip-icon--right:focus-visible {
-  outline: var(--spacing-05) solid var(--secondary-shadow);
+  outline: var(--spacing-05) solid var(--primary-focus);
 }
 
 .Chip-icon--right:hover {
@@ -184,7 +198,7 @@
 }
 
 .Chip-icon--selected:focus-visible {
-  outline: var(--spacing-05) solid var(--primary-shadow);
+  outline: var(--spacing-05) solid var(--primary-focus);
 }
 
 .Chip-icon--selected:hover {
@@ -203,5 +217,5 @@
 }
 
 .Chip-icon--clear {
-  padding-right: var(--spacing-05);
+  padding-right: 0;
 }

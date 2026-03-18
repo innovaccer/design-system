@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, act } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import Dropzone, { DropzoneProps as Props, DropZoneType } from '../Dropzone';
 import Link from '@/components/atoms/link';
@@ -117,6 +117,40 @@ describe('Dropzone component prop:sampleFileLink', () => {
       />
     );
     expect(getByTestId('DesignSystem-Link')).toBeInTheDocument();
+  });
+});
+
+describe('Dropzone component keyboard accessibility', () => {
+  beforeEach(() => {
+    jest.useFakeTimers();
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
+  });
+
+  it('browse files link is keyboard-focusable when not disabled', () => {
+    const { getAllByTestId } = render(<Dropzone />);
+    const browseLink = getAllByTestId('DesignSystem-Text')[1];
+    expect(browseLink).toHaveAttribute('tabindex', '0');
+    expect(browseLink).toHaveAttribute('role', 'button');
+  });
+
+  it('browse files link has tabIndex -1 when disabled', () => {
+    const { getAllByTestId } = render(<Dropzone disabled />);
+    const browseLink = getAllByTestId('DesignSystem-Text')[1];
+    expect(browseLink).toHaveAttribute('tabindex', '-1');
+  });
+
+  it('clicking browse files link opens file dialog', () => {
+    const onFileDialogCancel = jest.fn();
+    const { getAllByTestId } = render(<Dropzone onFileDialogCancel={onFileDialogCancel} />);
+    fireEvent.click(getAllByTestId('DesignSystem-Text')[1]);
+    fireEvent.focus(window);
+    act(() => {
+      jest.advanceTimersByTime(350);
+    });
+    expect(onFileDialogCancel).toHaveBeenCalled();
   });
 });
 

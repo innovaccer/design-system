@@ -32,7 +32,6 @@ exports[`EmptyState component
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 32px; width: 32px;"
           >
             events
@@ -156,7 +155,6 @@ exports[`EmptyState component
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 32px; width: 32px;"
           >
             events
@@ -216,7 +214,6 @@ exports[`EmptyState component
           <i
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
-            role="button"
             style="font-size: 32px; width: 32px;"
           >
             events

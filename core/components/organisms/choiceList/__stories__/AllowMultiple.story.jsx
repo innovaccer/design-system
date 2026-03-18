@@ -14,7 +14,16 @@ export const allowMultiple = () => {
     { label: 'Sun', name: 'days', value: 'sun' },
   ];
 
-  return <ChoiceList choices={days} title={label} alignment={alignment} allowMultiple={true} onChange={() => {}} />;
+  return (
+    <ChoiceList
+      choices={days}
+      title={label}
+      alignment={alignment}
+      aria-label="Day selection"
+      allowMultiple={true}
+      onChange={() => {}}
+    />
+  );
 };
 
 export default {

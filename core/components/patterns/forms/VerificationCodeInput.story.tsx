@@ -44,10 +44,10 @@ const customCode = `() => {
     }
 
     onToogleLink() {
-      if (this.state.loading || !!this.state.value) return;
+      if (this.state.loading || !!this.state.value || this.state.isTimerStarted) return;
       this.setState({
         isTimerStarted: true,
-        timer: 30
+        timer: 30,
       });
     };
 
@@ -87,34 +87,36 @@ const customCode = `() => {
             )}
             <Card className="py-6 px-6">
               <div className="d-flex flex-column">
-                <Text weight="strong" size="large">Enter Verification Code</Text>
+                <Heading size="m">Enter Verification Code</Heading>
                 <Text className="mt-3" appearance="subtle">
                   We have sent a 6 digit verification code to your phone (555) 555-1234
                 </Text>
               </div>
-              <Label withInput={true} className="mt-7">Verification code</Label>
-              <div className="d-flex align-items-center">
-                <VerificationCodeInput
-                  fields={6}
-                  onComplete={this.onCompleteHandler}
-                  disabled={loading || !!value}
-                />
-                {loading && <Spinner className="ml-5" size="medium" />}
+              <div role="group" aria-labelledby="verification-code-label" className="mt-7">
+                <Label id="verification-code-label" withInput={true}>Verification code</Label>
+                <div className="d-flex align-items-center">
+                  <VerificationCodeInput
+                    fields={6}
+                    onComplete={this.onCompleteHandler}
+                    disabled={loading || !!value}
+                  />
+                  {loading && <Spinner className="ml-5" size="medium" />}
+                </div>
               </div>
-              {isTimerStarted ? (
+              {isTimerStarted && (
                 <Text className="mt-7 d-flex" weight="medium">
                   {\`Haven't recieved the code? Resend code in 0:\${time}\`}
                 </Text>
-              ) : (
-                  <Text
-                    className="mt-7 d-flex cursor-pointer"
-                    appearance={loading || !!value ? 'disabled' : 'link'}
-                    weight="medium"
-                    onClick={this.onToogleLink}
-                  >
-                    Resend Code
-                  </Text>
-                )}
+              )}
+              <Button
+                className="mt-4"
+                appearance="transparent"
+                disabled={loading || !!value}
+                aria-disabled={isTimerStarted || undefined}
+                onClick={this.onToogleLink}
+              >
+                Resend Code
+              </Button>
             </Card>
           </div>
         </div>

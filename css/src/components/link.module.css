@@ -3,11 +3,13 @@
   font-weight: var(--font-weight-medium);
   transition: var(--duration--fast-01) var(--standard-productive-curve);
   box-sizing: border-box;
-  border-bottom: var(--border-width-2-5) solid transparent;
+  border-bottom: var(--border-width-2-5) solid currentColor;
 }
 
-.Link:focus-visible {
-  outline: none;
+.Link:focus {
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
+  border-radius: var(--border-radius-10);
 }
 
 .Link--regular {
@@ -27,6 +29,7 @@
 
 .Link--subtle {
   color: var(--inverse-lighter);
+  border-bottom-color: transparent;
 }
 
 .Link--default:hover {
@@ -41,22 +44,12 @@
 
 .Link--default:active {
   color: var(--primary-darker);
-  border: none;
+  border-bottom: var(--border-width-2-5) solid currentColor;
 }
 
 .Link--subtle:active {
   color: var(--inverse);
-  border: none;
-}
-
-.Link--default:focus {
-  box-shadow: var(--shadow-spread) var(--primary-shadow);
-  border-radius: var(--border-radius-10);
-}
-
-.Link--subtle:focus {
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
-  border-radius: var(--border-radius-10);
+  border-bottom: var(--border-width-2-5) solid transparent;
 }
 
 .Link--default-disabled {

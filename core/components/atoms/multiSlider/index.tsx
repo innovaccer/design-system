@@ -198,6 +198,25 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
     const handleProps = this.getHandleValues(this.props);
     const oldValues = handleProps.map((handle) => handle.value);
     const newValues = oldValues.slice();
+
+    // Check if moving this handle would cross another handle
+    const direction = newValue > oldValues[oldIndex] ? 1 : -1;
+    const adjacentIndex = oldIndex + direction;
+
+    // If there's an adjacent handle in the movement direction, check for collision
+    if (adjacentIndex >= 0 && adjacentIndex < oldValues.length) {
+      const adjacentValue = oldValues[adjacentIndex];
+      const wouldCross = direction > 0 ? newValue > adjacentValue : newValue < adjacentValue;
+
+      if (wouldCross) {
+        // Snap to the adjacent handle's value
+        newValues[oldIndex] = adjacentValue;
+        if (newValues.length > 1) newValues.sort((left, right) => left - right);
+        return newValues;
+      }
+    }
+
+    // No collision, proceed normally
     newValues[oldIndex] = newValue;
     if (newValues.length > 1) newValues.sort((left, right) => left - right);
 
@@ -206,11 +225,8 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
 
     if (lockIndex === -1) {
       fillValues(newValues, oldIndex, newIndex, newValue);
-    } else {
-      const lockValue = oldValues[lockIndex];
-      fillValues(oldValues, oldIndex, lockIndex, lockValue);
-      return oldValues;
     }
+
     return newValues;
   };
 
@@ -355,7 +371,7 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
           {/* eslint-enable  */}
           <span className={SliderTicksClass} />
           {labelRenderer !== false && (
-            <Text size="small" appearance={active ? 'default' : 'disabled'}>
+            <Text size="small" appearance={active ? 'default' : 'subtle'}>
               {this.formatLabel(i)}
             </Text>
           )}

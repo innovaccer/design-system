@@ -42,6 +42,7 @@ export const all = () => {
               className="p-6 d-flex mr-6"
               onClick={onClickHandler}
               selected={isCardSelected(id)}
+              aria-label={`${title} - ${description}`}
             >
               <Icon size={20} name={iconName} />
               <div className="ml-5">
@@ -98,6 +99,7 @@ const customCode = `() => {
               className="p-6 d-flex mr-6"
               onClick={onClickHandler}
               selected={isCardSelected(id)}
+              aria-label={\`\${title}, \${description}\`}
             >
               <Icon size={20} name={iconName} />
               <div className="ml-5">

@@ -39,8 +39,10 @@ export const LabelOnTop = () => {
   return (
     <div>
       <div className="w-25 mb-9">
-        <Label withInput={true}>Status</Label>
-        <Dropdown options={options} className="w-100" withCheckbox={true} />
+        <Label withInput={true} id="status-label">
+          Status
+        </Label>
+        <Dropdown options={options} className="w-100" withCheckbox={true} aria-labelledby="status-label" />
       </div>
     </div>
   );

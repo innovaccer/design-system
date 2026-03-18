@@ -24,11 +24,22 @@ export const selectWithIcon = () => {
   };
 
   return (
-    <Select triggerOptions={{ icon: 'location_on', placeholder: 'Select state' }} onSelect={onSelectHandler}>
-      <Select.List>
+    <Select
+      triggerOptions={{
+        icon: 'location_on',
+        placeholder: 'Select state',
+        'aria-label': 'State selector',
+      }}
+      onSelect={onSelectHandler}
+    >
+      <Select.List aria-label="State options list">
         {stateAbbreviations.map((item, key) => {
           return (
-            <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+            <Select.Option
+              key={key}
+              option={{ label: item.label, value: item.value }}
+              aria-label={`${item.label} option`}
+            >
               {item.label}
             </Select.Option>
           );
@@ -60,11 +71,22 @@ const customCode = `() => {
 
 
   return (
-    <Select triggerOptions={{ icon: 'location_on', placeholder: 'Select state' }} onSelect={onSelectHandler}>
-      <Select.List>
+    <Select
+      triggerOptions={{
+        icon: 'location_on',
+        placeholder: 'Select state',
+        'aria-label': 'State selector',
+      }}
+      onSelect={onSelectHandler}
+    >
+      <Select.List aria-label="State options list">
         {stateAbbreviations.map((item, key) => {
           return (
-            <Select.Option key={key} option={{ label: item.label, value: item.value }}>
+            <Select.Option
+              key={key}
+              option={{ label: item.label, value: item.value }}
+              aria-label={\`\${item.label} option\`}
+            >
               {item.label}
             </Select.Option>
           );

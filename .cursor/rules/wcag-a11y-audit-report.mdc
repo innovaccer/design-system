@@ -1,7 +1,6 @@
 ---
 alwaysApply: true
 ---
-
 Use these sources as the primary references:
 - [a11y-context/wcag-as-json.json](mdc:a11y-context/wcag-as-json.json) for the full WCAG 2.2 success criteria set.
 - [wcag-audit-patterns.md](mdc:.cursor/rules/wcag-audit-patterns.md) for audit methodology.

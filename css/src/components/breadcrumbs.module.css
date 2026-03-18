@@ -37,5 +37,6 @@
 }
 
 .Breadcrumbs-Button:focus {
-  background: var(--secondary) !important;
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: var(--spacing-05);
 }

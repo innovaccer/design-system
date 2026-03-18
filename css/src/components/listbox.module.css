@@ -51,7 +51,8 @@
 
 .Listbox-item--option:focus,
 .Listbox-item--option:focus-visible {
-  outline: 3px auto var(--secondary-shadow);
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: calc(-1 * var(--border-width-05));
 }
 
 .Listbox-item--option:active {
@@ -68,7 +69,8 @@
 
 .Listbox-item--selected:focus,
 .Listbox-item--selected:focus-visible {
-  outline: 3px auto color-mod(var(--primary-shadow));
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: calc(-1 * var(--border-width-05));
 }
 
 .Listbox-item--selected:active {
@@ -87,7 +89,8 @@
 
 .Listbox-item--resource:focus,
 .Listbox-item--resource:focus-visible {
-  outline: 3px auto var(--secondary-shadow);
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: calc(-1 * var(--border-width-05));
 }
 
 .Listbox-item--resource:active {
@@ -115,7 +118,8 @@
 /* Listbox type - draggable  */
 
 .Listbox-item--draggable:focus {
-  outline: 3px auto var(--secondary-shadow);
+  outline: var(--border-width-05) solid var(--primary-focus);
+  outline-offset: calc(-1 * var(--border-width-05));
 }
 
 .Listbox-item--drag-icon {

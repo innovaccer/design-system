@@ -8,15 +8,15 @@ export const disabled = () => {
     <div className="d-flex">
       <div className="mr-7">
         <Label withInput={true}>Checked</Label>
-        <Checkbox checked={true} disabled={true} label={label} />
+        <Checkbox aria-label="Checkbox checked" checked={true} disabled={true} label={label} />
       </div>
       <div className="mr-7">
         <Label withInput={true}>Unchecked</Label>
-        <Checkbox checked={false} disabled={true} label={label} />
+        <Checkbox aria-label="Checkbox unchecked" checked={false} disabled={true} label={label} />
       </div>
       <div>
         <Label withInput={true}>Indeterminate</Label>
-        <Checkbox indeterminate={true} disabled={true} label={label} />
+        <Checkbox aria-label="Checkbox indeterminate" indeterminate={true} disabled={true} label={label} />
       </div>
     </div>
   );
