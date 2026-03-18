@@ -377,7 +377,8 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
       {
         name: 'tabIndex',
         type: 'number',
-        description: 'Makes the icon focusable. Only effective when onClick is also provided; ignored on non-interactive icons.',
+        description:
+          'Makes the icon focusable. Only effective when onClick is also provided; ignored on non-interactive icons.',
       },
     ],
   },
@@ -434,7 +435,8 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
       {
         name: 'aria-label',
         type: 'string',
-        description: 'Accessible label for the dialog when no heading ID is available. Used as fallback when aria-labelledby is not set.',
+        description:
+          'Accessible label for the dialog when no heading ID is available. Used as fallback when aria-labelledby is not set.',
       },
       {
         name: 'aria-describedby',
@@ -491,7 +493,8 @@ export const componentA11yRegistry: Record<string, A11yPropTableConfig> = {
       {
         name: 'aria-labelledby',
         type: 'string',
-        description: 'References the ID of element(s) that label the choice list group. Use when the group is labelled by another element on the page.',
+        description:
+          'References the ID of element(s) that label the choice list group. Use when the group is labelled by another element on the page.',
       },
     ],
   },
