@@ -244,7 +244,6 @@ const HeaderCell = (props: HeaderCellProps) => {
                 align={'left'}
                 onChange={(selected: any) => onMenuChange(name, selected)}
                 minWidth={176}
-                popoverOptions={{ appendToBody: false }}
               />
             </div>
           )}

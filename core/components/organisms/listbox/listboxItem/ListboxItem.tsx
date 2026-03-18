@@ -11,6 +11,18 @@ export type ItemTagType = 'li' | 'div' | 'a';
 
 export interface ListboxItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement | HTMLDivElement | HTMLAnchorElement> {
   /**
+   * Accessible name for the listbox item
+   */
+  'aria-label'?: string;
+  /**
+   * Associates listbox item with an external label
+   */
+  'aria-labelledby'?: string;
+  /**
+   * Accessible role for the listbox item
+   */
+  role?: string;
+  /**
    * React Element to be added inside `list`
    */
   children: React.ReactNode;

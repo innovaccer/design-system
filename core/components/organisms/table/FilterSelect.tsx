@@ -268,7 +268,6 @@ export const FilterSelect: React.FC<FilterSelectProps> = (props) => {
         onToggle={onToggleHandler}
         maxHeight={256}
         popoverWidth={'auto'}
-        popoverOptions={{ appendToBody: false }}
       >
         <div style={{ minWidth, maxWidth: filterOptions?.maxWidth }}>
           <Select.List>

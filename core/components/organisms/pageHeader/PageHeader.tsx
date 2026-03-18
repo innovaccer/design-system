@@ -66,10 +66,6 @@ export interface PageHeaderProps extends BaseProps {
    * provides a border at bottom
    */
   separator: boolean;
-  /**
-   * Accessible label for the page header region
-   */
-  'aria-label'?: string;
 }
 
 export const PageHeader = (props: PageHeaderProps) => {
@@ -127,7 +123,6 @@ export const PageHeader = (props: PageHeaderProps) => {
         className={wrapperClasses}
         aria-label={ariaLabel}
         aria-labelledby={ariaLabelledby}
-        role="banner"
       >
         {breadcrumbs && (
           <div className="pl-6" data-test="DesignSystem-PageHeader--Breadcrumbs">

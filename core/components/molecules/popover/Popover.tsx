@@ -164,6 +164,8 @@ export const Popover = (props: PopoverProps) => {
       data-opened={open}
       data-name={name}
       role={props.role}
+      aria-label={props['aria-label']}
+      aria-labelledby={props['aria-labelledby']}
     >
       {children}
     </div>

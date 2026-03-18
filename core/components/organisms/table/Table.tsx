@@ -1166,6 +1166,7 @@ export class Table extends React.Component<TableProps, TableState> {
         data-test="DesignSystem-Table-wrapper"
         aria-label={ariaLabel}
         aria-labelledby={ariaLabelledBy}
+        role="table"
       >
         {withHeader && (
           <div data-test="DesignSystem-Table-header">

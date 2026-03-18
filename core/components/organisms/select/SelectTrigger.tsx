@@ -179,11 +179,11 @@ const SelectTrigger = (props: SelectTriggerProps) => {
         style={triggerStyle}
         data-test="DesignSystem-Select-trigger"
         {...rest}
+        role="combobox"
         aria-haspopup="listbox"
         aria-expanded={openPopover}
         aria-label={resolvedAriaLabel}
         aria-labelledby={ariaLabelledby}
-        role="combobox"
         aria-controls={rest['aria-controls']}
       >
         {
@@ -213,6 +213,15 @@ const SelectTrigger = (props: SelectTriggerProps) => {
           <Icon
             appearance={buttonDisabled}
             onClick={onClearHandler}
+            onKeyDown={(e: React.KeyboardEvent) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                e.stopPropagation();
+                onClearHandler(e as any);
+              }
+            }}
+            tabIndex={0}
+            role="button"
             className={iconClass}
             size={12}
             name="close"

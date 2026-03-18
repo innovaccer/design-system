@@ -6,6 +6,14 @@ import styles from '@css/components/textarea.module.css';
 type TextareaSize = 'small' | 'regular';
 export interface TextareaProps extends BaseProps, BaseHtmlProps<HTMLTextAreaElement> {
   /**
+   * Accessible label for the textarea
+   */
+  'aria-label'?: string;
+  /**
+   * Associates textarea with an external label
+   */
+  'aria-labelledby'?: string;
+  /**
    * Name of the `Textarea`
    */
   name?: string;

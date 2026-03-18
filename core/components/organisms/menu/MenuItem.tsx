@@ -12,6 +12,10 @@ type ItemTagType = 'li' | 'div' | 'a';
 
 export interface MenuItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement | HTMLDivElement> {
   /**
+   * Accessible name for the menu item
+   */
+  'aria-label'?: string;
+  /**
    * Set a custom element for `Menu List Item`
    */
   tagName?: ItemTagType;

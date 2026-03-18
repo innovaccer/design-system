@@ -726,6 +726,52 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     );
   };
 
+  handleGridKeyDown = (
+    e: React.KeyboardEvent,
+    colsPerRow: number,
+    containerSelector: string
+  ) => {
+    const { key } = e;
+    if (!['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(key)) return;
+
+    e.preventDefault();
+    const target = e.currentTarget as HTMLElement;
+    const container = target.closest(containerSelector) || target.parentElement?.parentElement;
+    if (!container) return;
+
+    const cells = Array.from(
+      container.querySelectorAll<HTMLElement>('[role="button"]:not([aria-disabled="true"])')
+    );
+    const currentIndex = cells.indexOf(target);
+    if (currentIndex === -1) return;
+
+    let nextIndex = currentIndex;
+    switch (key) {
+      case 'ArrowRight':
+        nextIndex = currentIndex + 1;
+        break;
+      case 'ArrowLeft':
+        nextIndex = currentIndex - 1;
+        break;
+      case 'ArrowDown':
+        nextIndex = currentIndex + colsPerRow;
+        break;
+      case 'ArrowUp':
+        nextIndex = currentIndex - colsPerRow;
+        break;
+      case 'Home':
+        nextIndex = 0;
+        break;
+      case 'End':
+        nextIndex = cells.length - 1;
+        break;
+    }
+
+    if (nextIndex >= 0 && nextIndex < cells.length) {
+      cells[nextIndex].focus();
+    }
+  };
+
   renderBodyYear = () => {
     const { yearBlockRange, yearsInRow } = config;
 
@@ -787,6 +833,8 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                 if (e.key === 'Enter' || e.key === ' ') {
                   e.preventDefault();
                   this.selectYear(year)();
+                } else {
+                  this.handleGridKeyDown(e, yearsInRow, '[class*="Calendar-body"]');
                 }
               }}
               aria-disabled={disabled || undefined}
@@ -861,6 +909,8 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                 if (e.key === 'Enter' || e.key === ' ') {
                   e.preventDefault();
                   this.selectMonth(month)();
+                } else {
+                  this.handleGridKeyDown(e, monthsInRow, '[class*="Calendar-body"]');
                 }
               }}
               aria-disabled={disabled || undefined}
@@ -1202,6 +1252,8 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                         if (e.key === 'Enter' || e.key === ' ') {
                           e.preventDefault();
                           onClickHandler(date)();
+                        } else {
+                          this.handleGridKeyDown(e, daysInRow, '[class*="Calendar-body"]');
                         }
                       }}
                       aria-disabled={disabled || undefined}
@@ -1298,7 +1350,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         data-test="DesignSystem-Calendar-Wrapper"
         aria-label={ariaLabel}
         aria-labelledby={ariaLabelledBy}
-        role={this.props.role || 'application'}
+        role={this.props.role || 'group'}
       >
         {Array.from({ length: monthsInView }, (_x, index) => {
           return this.renderCalendar(index);
