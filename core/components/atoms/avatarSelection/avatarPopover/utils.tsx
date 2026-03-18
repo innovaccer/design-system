@@ -46,7 +46,9 @@ const navigateOptions = (
   listRef?: any,
   withSearch?: boolean
 ) => {
-  const listItems = listRef?.current.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
+  const listItems =
+    listRef?.current.querySelectorAll('[data-test="DesignSystem-Listbox-Item"]') ||
+    listRef?.current.querySelectorAll('[data-test="DesignSystem-AvatarSelection--Option"]');
   let index = Array.from(listItems).findIndex((item) => {
     return item == focusedOption;
   });
@@ -78,7 +80,9 @@ export const handleInputKeyDown = (
   setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>,
   triggerRef?: any
 ) => {
-  const listItems = listRef.current?.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
+  const listItems =
+    listRef.current?.querySelectorAll('[data-test="DesignSystem-Listbox-Item"]') ||
+    listRef.current?.querySelectorAll('[data-test="DesignSystem-AvatarSelection--Option"]');
   let targetOption;
 
   switch (event.key) {

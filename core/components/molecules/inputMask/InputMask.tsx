@@ -388,7 +388,8 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
 
   const isValueEqualPlaceholder = value === defaultPlaceholderValue;
 
-  const persistentLabel = rest.label || rest['aria-label'] || rest.placeholder;
+  // Don't use placeholder as aria-label when a visible <label> exists; it would override the label
+  const persistentLabel = rest.label ? undefined : rest['aria-label'] || rest.placeholder;
 
   return (
     <div className={classes} data-test="DesignSystem-InputMask--Wrapper">

@@ -4,7 +4,7 @@ describe('AvatarSelection component focusListItem utility test', () => {
   // Create reusable mock references to the list and the setState function
   const mockSetFocusedOption = jest.fn();
   const mockListItems = [document.createElement('div'), document.createElement('div')];
-  mockListItems.forEach((item) => item.setAttribute('data-test', 'DesignSystem-Listbox-ItemWrapper'));
+  mockListItems.forEach((item) => item.setAttribute('data-test', 'DesignSystem-Listbox-Item'));
 
   const mockListRef = {
     current: {
@@ -26,7 +26,7 @@ describe('AvatarSelection component focusListItem utility test', () => {
 
     focusListItem('down', mockSetFocusedOption, mockListRef);
 
-    expect(mockListRef.current.querySelectorAll).toHaveBeenCalledWith('[data-test="DesignSystem-Listbox-ItemWrapper"]');
+    expect(mockListRef.current.querySelectorAll).toHaveBeenCalledWith('[data-test="DesignSystem-Listbox-Item"]');
     expect(mockSetFocusedOption).toHaveBeenCalledWith(mockListItems[0]);
     expect(mockListItems[0].focus).toHaveBeenCalled();
   });
@@ -36,7 +36,7 @@ describe('AvatarSelection component focusListItem utility test', () => {
 
     focusListItem('up', mockSetFocusedOption, mockListRef);
 
-    expect(mockListRef.current.querySelectorAll).toHaveBeenCalledWith('[data-test="DesignSystem-Listbox-ItemWrapper"]');
+    expect(mockListRef.current.querySelectorAll).toHaveBeenCalledWith('[data-test="DesignSystem-Listbox-Item"]');
     expect(mockSetFocusedOption).toHaveBeenCalledWith(mockListItems[1]);
     expect(mockListItems[1].focus).toHaveBeenCalled();
   });

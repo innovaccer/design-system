@@ -182,10 +182,11 @@ export const Icon = (props: IconProps) => {
 
   const isInteractive = !!props.onClick;
   const hasAriaLabel = !!props['aria-label'] || !!props['aria-labelledby'];
+  const isFocusable = props.tabIndex !== undefined && props.tabIndex !== -1;
 
   // Decorative icons should be hidden from screen readers.
-  // If it's interactive or explicitly labeled, we don't hide it unless explicitly told to.
-  const defaultAriaHidden = !isInteractive && !hasAriaLabel ? true : undefined;
+  // If it's interactive, explicitly labeled, or focusable (e.g. icon-only button), we don't hide it unless explicitly told to.
+  const defaultAriaHidden = !isInteractive && !hasAriaLabel && !isFocusable ? true : undefined;
 
   const ariaHidden = props['aria-hidden'] !== undefined ? props['aria-hidden'] : defaultAriaHidden;
 

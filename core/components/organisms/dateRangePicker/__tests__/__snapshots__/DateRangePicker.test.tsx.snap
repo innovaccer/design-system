@@ -49739,7 +49739,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
               <input
-                aria-label="Start Date"
                 autocomplete="off"
                 class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
@@ -49803,7 +49802,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
               <input
-                aria-label="End Date"
                 autocomplete="off"
                 class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
@@ -49886,7 +49884,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
               <input
-                aria-label="Start Date"
                 autocomplete="off"
                 class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
@@ -49950,7 +49947,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
               <input
-                aria-label="End Date"
                 autocomplete="off"
                 class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
@@ -50033,7 +50029,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
               <input
-                aria-label="Start Date"
                 autocomplete="off"
                 class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
@@ -50097,7 +50092,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
               <input
-                aria-label="End Date"
                 autocomplete="off"
                 class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
@@ -51480,7 +51474,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
               <input
-                aria-label="Start Date"
                 autocomplete="off"
                 class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
@@ -51544,7 +51537,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
               <input
-                aria-label="End Date"
                 autocomplete="off"
                 class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
@@ -51627,7 +51619,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
               <input
-                aria-label="Start Date"
                 autocomplete="off"
                 class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
@@ -51691,7 +51682,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
               <input
-                aria-label="End Date"
                 autocomplete="off"
                 class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
@@ -51774,7 +51764,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
               <input
-                aria-label="Start Date"
                 autocomplete="off"
                 class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
@@ -51838,7 +51827,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
               <input
-                aria-label="End Date"
                 autocomplete="off"
                 class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
@@ -53221,7 +53209,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
               <input
-                aria-label="Start Date"
                 autocomplete="off"
                 class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
@@ -53285,7 +53272,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
               <input
-                aria-label="End Date"
                 autocomplete="off"
                 class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
@@ -54600,7 +54586,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
               <input
-                aria-label="Start Date"
                 autocomplete="off"
                 class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
@@ -54664,7 +54649,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
               <input
-                aria-label="End Date"
                 autocomplete="off"
                 class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
@@ -55979,7 +55963,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
               <input
-                aria-label="Start Date"
                 autocomplete="off"
                 class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
@@ -56043,7 +56026,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
               <input
-                aria-label="End Date"
                 autocomplete="off"
                 class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
@@ -58658,7 +58640,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
               <input
-                aria-label="Start Date"
                 autocomplete="off"
                 class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
@@ -58722,7 +58703,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
               <input
-                aria-label="End Date"
                 autocomplete="off"
                 class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
@@ -60037,7 +60017,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
               <input
-                aria-label="Start Date"
                 autocomplete="off"
                 class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
@@ -60101,7 +60080,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
               <input
-                aria-label="End Date"
                 autocomplete="off"
                 class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
@@ -61416,7 +61394,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
               <input
-                aria-label="Start Date"
                 autocomplete="off"
                 class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"
@@ -61480,7 +61457,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
               <input
-                aria-label="End Date"
                 autocomplete="off"
                 class="Input-input Input-input--regular mr-4"
                 data-test="DesignSystem-Input"

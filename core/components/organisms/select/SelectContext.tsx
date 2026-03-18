@@ -25,6 +25,7 @@ export type ContextProps = {
   styleType?: SelectStyleType;
   error?: boolean;
   listboxId?: string;
+  listboxAriaLabel?: string;
 };
 
 export const SelectContext = React.createContext<ContextProps>({});

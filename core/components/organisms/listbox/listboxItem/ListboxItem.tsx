@@ -4,6 +4,7 @@ import { Divider } from '@/index';
 import { ListboxContext } from '../Listbox';
 import { ListBody } from './ListBody';
 import { NestedList } from '../nestedList';
+import { onKeyDown } from '../utils';
 import classNames from 'classnames';
 import styles from '@css/components/listbox.module.css';
 
@@ -71,7 +72,17 @@ export interface ListboxItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement
 }
 
 export const ListboxItem = (props: ListboxItemProps) => {
-  const { nestedBody, expanded, id, onClick, value, tagName: Tag = 'li', ...rest } = props;
+  const {
+    nestedBody,
+    expanded,
+    id,
+    onClick,
+    value,
+    tagName: Tag = 'li',
+    tabIndex,
+    onKeyDown: onKeyDownProp,
+    ...rest
+  } = props;
 
   const contextProp = React.useContext(ListboxContext);
   const { showDivider, draggable } = contextProp;
@@ -80,16 +91,28 @@ export const ListboxItem = (props: ListboxItemProps) => {
     onClick && onClick(e, id, value);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    onKeyDownProp?.(e);
+    if (!e.defaultPrevented) {
+      onKeyDown(e);
+    }
+  };
+
   const tagClass = classNames({
     [styles['Listbox-item-wrapper']]: !draggable,
   });
+
+  // Focus and keyboard must be on the element with role="option" (the Tag), not the inner ListBody
+  const optionTabIndex = draggable ? -1 : tabIndex ?? 0;
 
   return (
     <Tag
       id={id}
       data-test="DesignSystem-Listbox-Item"
       {...rest}
+      tabIndex={optionTabIndex}
       onClick={onClickHandler}
+      onKeyDown={handleKeyDown}
       data-value={value}
       className={tagClass}
       role={props.role || 'option'}
@@ -98,7 +121,7 @@ export const ListboxItem = (props: ListboxItemProps) => {
       aria-label={props['aria-label']}
       aria-labelledby={props['aria-labelledby']}
     >
-      <ListBody {...props} />
+      <ListBody {...props} tabIndex={-1} />
       {nestedBody && (
         <NestedList
           expanded={expanded}

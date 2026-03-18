@@ -212,8 +212,11 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
     const elementToFocus = this.previousActiveElement;
     this.previousActiveElement = null;
 
-    if (elementToFocus?.focus && OverlayManager.isTopOverlay(this.modalRef.current)) {
-      window.requestAnimationFrame(() => elementToFocus.focus({ preventScroll: true }));
+    if (elementToFocus?.focus) {
+      const isTopOverlay = !this.modalRef.current || OverlayManager.isTopOverlay(this.modalRef.current);
+      if (isTopOverlay) {
+        window.requestAnimationFrame(() => elementToFocus.focus({ preventScroll: true }));
+      }
     }
   };
 

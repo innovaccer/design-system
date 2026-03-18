@@ -64,7 +64,9 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
             appearance="transparent"
             icon="keyboard_arrow_down_filled"
             iconAlign="right"
-            aria-label="Manage columns"
+            aria-label={`Manage columns, showing ${options.filter((option) => option.selected).length} of ${
+              options.length
+            } selected`}
           >
             {`Showing ${options.filter((option) => option.selected).length} of ${
               options.length

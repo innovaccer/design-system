@@ -29,9 +29,9 @@ export const ListBody = (props: ListboxItemProps) => {
     <div
       data-disabled={disabled}
       data-test="DesignSystem-Listbox-ItemWrapper"
-      tabIndex={draggable ? -1 : tabIndex || 0}
+      tabIndex={tabIndex ?? -1}
       className={itemClass}
-      onKeyDown={onKeyDown}
+      onKeyDown={tabIndex !== -1 ? onKeyDown : undefined}
     >
       {draggable && (
         <Icon

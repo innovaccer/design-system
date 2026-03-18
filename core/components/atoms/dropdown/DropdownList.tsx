@@ -541,7 +541,8 @@ const DropdownList = (props: OptionsProps) => {
         className={SelectAllClass}
         onMouseEnter={() => updateActiveOption(0, true)}
         onClick={(e) => {
-          if ((e.target as HTMLElement).tagName === 'INPUT' || (e.target as HTMLElement).tagName === 'LABEL') {
+          const target = e.target as HTMLElement;
+          if (target.closest('input') || target.closest('label')) {
             return;
           }
           onSelectAll({

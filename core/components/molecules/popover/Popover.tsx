@@ -32,6 +32,14 @@ export interface PopoverProps extends Pick<PopperWrapperProps, PopperProps>, Bas
    */
   role?: string;
   /**
+   * Accessible name for the popover (forwarded to the popup)
+   */
+  'aria-label'?: string;
+  /**
+   * ID of element that labels the popover (forwarded to the popup)
+   */
+  'aria-labelledby'?: string;
+  /**
    * To be rendered in `Popover` component
    */
   children: React.ReactNode;

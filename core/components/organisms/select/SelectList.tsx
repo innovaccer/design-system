@@ -56,7 +56,7 @@ export const SelectList = (props: SelectListProps) => {
         id={contextProp.listboxId}
         style={wrapperStyle}
         role="listbox"
-        aria-label={props['aria-label'] || 'Options item list'}
+        aria-label={props['aria-label'] || contextProp.listboxAriaLabel || 'Options item list'}
         aria-labelledby={props['aria-labelledby']}
         aria-multiselectable={multiSelect}
         className="my-3"

@@ -306,6 +306,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     styleType,
     error,
     listboxId,
+    listboxAriaLabel,
   };
 
   return (
@@ -324,13 +325,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
           {...popoverOptions}
         >
           <OutsideClick onOutsideClick={onOutsideClickHandler}>
-            <div
-              id={listboxId}
-              tabIndex={-1}
-              ref={listRef}
-              role="listbox"
-              aria-label={listboxAriaLabel || 'Select options'}
-            >
+            <div id={listboxId} tabIndex={-1} ref={listRef} role="presentation">
               {children}
             </div>
           </OutsideClick>
