@@ -26,6 +26,7 @@ exports[`EditableDropdown component
             class="PopperWrapper-trigger w-100"
           >
             <button
+              aria-haspopup="listbox"
               class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
               data-test="DesignSystem-DropdownTrigger"
               tabindex="0"
@@ -36,6 +37,7 @@ exports[`EditableDropdown component
                 class="DropdownButton-wrapper"
               />
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--default"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"

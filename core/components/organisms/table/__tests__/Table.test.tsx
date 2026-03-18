@@ -131,8 +131,7 @@ describe('render Table component with header', () => {
     fireEvent.click(applyButton);
     // Verify filter was applied - popover should close after Apply
     // The button might still exist in DOM but popover should be closed
-    const selectComponent = getByTestId('DesignSystem-Select');
-    expect(selectComponent).toHaveAttribute('aria-expanded', 'false');
+    expect(filterSelectTrigger).toHaveAttribute('aria-expanded', 'false');
   });
 
   it('render table with globalActionRenderer', () => {
@@ -265,13 +264,12 @@ describe('render Table component with DraggableDropdown', () => {
     fireEvent.click(draggableDropdown);
     const draggableSrc = getAllByTestId('DesignSystem-Table-Header--draggableDropdownOption')[0];
     const draggableDest = getAllByTestId('DesignSystem-Table-Header--draggableDropdownOption')[1];
-    const dropDownOptionsBeforeDrag = getAllByTestId('DesignSystem-Text');
-    expect(dropDownOptionsBeforeDrag[5]).toHaveTextContent('Name');
+    expect(draggableSrc).toHaveTextContent('Name');
     fireEvent.dragStart(draggableSrc, { dataTransfer: { setData: jest.fn() } });
     fireEvent.dragOver(draggableSrc);
     fireEvent.drop(draggableDest, { dataTransfer: { getData: jest.fn().mockReturnValueOnce(0) } });
-    const dropDownOptionsAfterDrag = getAllByTestId('DesignSystem-Text');
-    expect(dropDownOptionsAfterDrag[5]).toHaveTextContent('Gender');
+    const newDraggableSrc = getAllByTestId('DesignSystem-Table-Header--draggableDropdownOption')[0];
+    expect(newDraggableSrc).toHaveTextContent('Gender');
   });
 });
 
@@ -1471,8 +1469,8 @@ describe('render Table with filterType feature', () => {
         // After Apply, the popover closes
         // Wait for the popover to close
         await waitFor(() => {
-          const selectComponent = getByTestId('DesignSystem-Select');
-          expect(selectComponent).toHaveAttribute('aria-expanded', 'false');
+          const selectTrigger = getAllByTestId('DesignSystem-Select-trigger')[0];
+          expect(selectTrigger).toHaveAttribute('aria-expanded', 'false');
         });
 
         // Verify that the trigger label reflects the selections

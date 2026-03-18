@@ -456,6 +456,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               id="choiceList-radio-Test-uid"
@@ -495,6 +496,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               id="choiceList-radio-Test-uid"
@@ -563,6 +565,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               id="choiceList-radio-Test-uid"
@@ -602,6 +605,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               id="choiceList-radio-Test-uid"
@@ -670,6 +674,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               disabled=""
@@ -710,6 +715,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               disabled=""
@@ -779,6 +785,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               disabled=""
@@ -819,6 +826,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               disabled=""
@@ -1312,6 +1320,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               id="choiceList-radio-Test-uid"
@@ -1351,6 +1360,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               id="choiceList-radio-Test-uid"
@@ -1419,6 +1429,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               id="choiceList-radio-Test-uid"
@@ -1458,6 +1469,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               id="choiceList-radio-Test-uid"
@@ -1526,6 +1538,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               disabled=""
@@ -1566,6 +1579,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               disabled=""
@@ -1635,6 +1649,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               disabled=""
@@ -1675,6 +1690,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               disabled=""
@@ -2168,6 +2184,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               id="choiceList-radio-Test-uid"
@@ -2207,6 +2224,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               id="choiceList-radio-Test-uid"
@@ -2275,6 +2293,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               id="choiceList-radio-Test-uid"
@@ -2314,6 +2333,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               id="choiceList-radio-Test-uid"
@@ -2382,6 +2402,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               disabled=""
@@ -2422,6 +2443,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               disabled=""
@@ -2491,6 +2513,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               disabled=""
@@ -2531,6 +2554,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               disabled=""
@@ -3024,6 +3048,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               id="choiceList-radio-Test-uid"
@@ -3063,6 +3088,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               id="choiceList-radio-Test-uid"
@@ -3131,6 +3157,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               id="choiceList-radio-Test-uid"
@@ -3170,6 +3197,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               id="choiceList-radio-Test-uid"
@@ -3238,6 +3266,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               disabled=""
@@ -3278,6 +3307,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               disabled=""
@@ -3347,6 +3377,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               disabled=""
@@ -3387,6 +3418,7 @@ exports[`ChoiceList component
             data-test="DesignSystem-Checkbox-OuterWrapper"
           >
             <input
+              aria-label="radio"
               class="Checkbox-input"
               data-test="DesignSystem-Checkbox-InputBox"
               disabled=""

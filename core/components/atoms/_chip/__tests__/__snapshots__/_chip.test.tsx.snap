@@ -13,6 +13,7 @@ exports[`Chip component
       tabindex="0"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Icon--inverse Chip-icon Chip-icon--left"
         data-test="DesignSystem-GenericChip--Icon"
         style="font-size: 16px; width: 16px;"
@@ -47,6 +48,7 @@ exports[`Chip component
       tabindex="0"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Icon--primaryDark Chip-icon Chip-icon--left"
         data-test="DesignSystem-GenericChip--Icon"
         style="font-size: 16px; width: 16px;"
@@ -81,6 +83,7 @@ exports[`Chip component
       tabindex="-1"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Icon--inverse Chip-icon Chip-icon--left"
         data-test="DesignSystem-GenericChip--Icon"
         style="font-size: 16px; width: 16px;"
@@ -115,7 +118,8 @@ exports[`Chip component
       tabindex="-1"
     >
       <i
-        class="material-symbols material-symbols-rounded Icon Icon--primaryLighter Chip-icon Chip-icon--left"
+        aria-hidden="true"
+        class="material-symbols material-symbols-rounded Icon Icon--primaryDark Chip-icon Chip-icon--left"
         data-test="DesignSystem-GenericChip--Icon"
         style="font-size: 16px; width: 16px;"
       >
@@ -125,7 +129,7 @@ exports[`Chip component
         class="Chip-text--truncate"
       >
         <span
-          class="Text Text--regular color-primary-lighter Chip-text"
+          class="Text Text--regular color-primary-dark Chip-text"
           data-test="DesignSystem-GenericChip--Text"
         >
           ChipLabel
@@ -149,6 +153,7 @@ exports[`Chip component
       tabindex="0"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Icon--inverse Chip-icon Chip-icon--left"
         data-test="DesignSystem-GenericChip--Icon"
         style="font-size: 16px; width: 16px;"
@@ -166,13 +171,14 @@ exports[`Chip component
         </span>
       </div>
       <div
-        aria-label="Remove"
-        class="Chip-icon Chip-icon--right cursor-pointer p-3"
+        aria-label="Remove ChipLabel"
+        class="Chip-icon Chip-icon--right cursor-pointer"
         data-test="DesignSystem-GenericChip--clearButton"
         role="button"
         tabindex="0"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon Icon--subtle"
           data-test="DesignSystem-Icon"
           style="font-size: 16px; width: 16px;"
@@ -198,6 +204,7 @@ exports[`Chip component
       tabindex="0"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Icon--primaryDark Chip-icon Chip-icon--left"
         data-test="DesignSystem-GenericChip--Icon"
         style="font-size: 16px; width: 16px;"
@@ -215,13 +222,14 @@ exports[`Chip component
         </span>
       </div>
       <div
-        aria-label="Remove"
-        class="Chip-icon Chip-icon--right cursor-pointer Chip-icon--selected p-3"
+        aria-label="Remove ChipLabel"
+        class="Chip-icon Chip-icon--right cursor-pointer Chip-icon--selected"
         data-test="DesignSystem-GenericChip--clearButton"
         role="button"
         tabindex="0"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon Icon--primaryDark"
           data-test="DesignSystem-Icon"
           style="font-size: 16px; width: 16px;"
@@ -247,6 +255,7 @@ exports[`Chip component
       tabindex="-1"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Icon--inverse Chip-icon Chip-icon--left"
         data-test="DesignSystem-GenericChip--Icon"
         style="font-size: 16px; width: 16px;"
@@ -264,13 +273,14 @@ exports[`Chip component
         </span>
       </div>
       <div
-        aria-label="Remove"
-        class="Chip-icon Chip-icon--right Chip-icon-disabled--right p-3"
+        aria-label="Remove ChipLabel"
+        class="Chip-icon Chip-icon--right Chip-icon-disabled--right"
         data-test="DesignSystem-GenericChip--clearButton"
         role="button"
         tabindex="-1"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon Icon--subtle"
           data-test="DesignSystem-Icon"
           style="font-size: 16px; width: 16px;"
@@ -296,7 +306,8 @@ exports[`Chip component
       tabindex="-1"
     >
       <i
-        class="material-symbols material-symbols-rounded Icon Icon--primaryLighter Chip-icon Chip-icon--left"
+        aria-hidden="true"
+        class="material-symbols material-symbols-rounded Icon Icon--primaryDark Chip-icon Chip-icon--left"
         data-test="DesignSystem-GenericChip--Icon"
         style="font-size: 16px; width: 16px;"
       >
@@ -306,21 +317,22 @@ exports[`Chip component
         class="Chip-text--truncate"
       >
         <span
-          class="Text Text--regular color-primary-lighter Chip-text"
+          class="Text Text--regular color-primary-dark Chip-text"
           data-test="DesignSystem-GenericChip--Text"
         >
           ChipLabel
         </span>
       </div>
       <div
-        aria-label="Remove"
-        class="Chip-icon Chip-icon--right Chip-icon-disabled--right Chip-icon--selected p-3"
+        aria-label="Remove ChipLabel"
+        class="Chip-icon Chip-icon--right Chip-icon-disabled--right Chip-icon--selected"
         data-test="DesignSystem-GenericChip--clearButton"
         role="button"
         tabindex="-1"
       >
         <i
-          class="material-symbols material-symbols-rounded Icon Icon--primaryLighter"
+          aria-hidden="true"
+          class="material-symbols material-symbols-rounded Icon Icon--primaryDark"
           data-test="DesignSystem-Icon"
           style="font-size: 16px; width: 16px;"
         >

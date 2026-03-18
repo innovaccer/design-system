@@ -14,6 +14,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -30,6 +31,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -57,6 +59,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -73,6 +76,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -100,6 +104,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -116,6 +121,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -143,6 +149,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -159,6 +166,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -186,6 +194,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--icon"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -196,6 +205,7 @@ exports[`Dropdown component
             class="DropdownButton-wrapper"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--default d-flex align-items-center mr-4"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -209,6 +219,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -236,6 +247,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -258,6 +270,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -285,6 +298,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -301,6 +315,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -328,6 +343,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--icon"
           data-test="DesignSystem-DropdownTrigger"
           disabled=""
@@ -339,6 +355,7 @@ exports[`Dropdown component
             class="DropdownButton-wrapper"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--disabled d-flex align-items-center mr-4"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -352,6 +369,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--disabled"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -379,6 +397,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           disabled=""
@@ -402,6 +421,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--disabled"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -429,6 +449,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           disabled=""
@@ -446,6 +467,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--disabled"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -473,6 +495,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -489,6 +512,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -516,6 +540,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -532,6 +557,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -559,6 +585,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -575,6 +602,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -602,6 +630,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -618,6 +647,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -645,6 +675,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -661,6 +692,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -688,6 +720,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger"
       >
         <button
+          aria-haspopup="menu"
           class="Button DropdownButton DropdownButton--regular DropdownButton--regularSquare"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -695,6 +728,7 @@ exports[`Dropdown component
           value=""
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -722,6 +756,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -738,6 +773,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -765,6 +801,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -781,6 +818,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -808,6 +846,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -824,6 +863,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -851,6 +891,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -867,6 +908,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -894,6 +936,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -910,6 +953,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -937,6 +981,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -953,6 +998,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -980,6 +1026,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -996,6 +1043,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -1023,6 +1071,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -1039,6 +1088,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -1066,6 +1116,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--tiny DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -1082,6 +1133,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -1109,6 +1161,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -1125,6 +1178,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -1152,6 +1206,7 @@ exports[`Dropdown component
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -1168,6 +1223,7 @@ exports[`Dropdown component
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"

@@ -5,6 +5,7 @@ exports[`Textarea component
  1`] = `
 <DocumentFragment>
   <textarea
+    aria-label="Write something.."
     class="Textarea Textarea--resize"
     data-test="DesignSystem-Textarea"
     name="Textarea"
@@ -21,6 +22,7 @@ exports[`Textarea component
  1`] = `
 <DocumentFragment>
   <textarea
+    aria-label="Write something.."
     class="Textarea Textarea--resize Textarea--small"
     data-test="DesignSystem-Textarea"
     name="Textarea"
@@ -37,6 +39,7 @@ exports[`Textarea component
  1`] = `
 <DocumentFragment>
   <textarea
+    aria-label="Write something.."
     class="Textarea Textarea--resize"
     data-test="DesignSystem-Textarea"
     disabled=""
@@ -54,6 +57,7 @@ exports[`Textarea component
  1`] = `
 <DocumentFragment>
   <textarea
+    aria-label="Write something.."
     class="Textarea Textarea--resize Textarea--small"
     data-test="DesignSystem-Textarea"
     disabled=""
@@ -69,6 +73,7 @@ exports[`Textarea component
 exports[`Textarea component size prop snapshot validation matches snapshot for size prop transitions 1`] = `
 <DocumentFragment>
   <textarea
+    aria-label="Textarea"
     class="Textarea Textarea--resize"
     data-test="DesignSystem-Textarea"
     rows="3"
@@ -79,6 +84,7 @@ exports[`Textarea component size prop snapshot validation matches snapshot for s
 exports[`Textarea component size prop snapshot validation matches snapshot for size prop transitions 2`] = `
 <DocumentFragment>
   <textarea
+    aria-label="Textarea"
     class="Textarea Textarea--resize Textarea--small"
     data-test="DesignSystem-Textarea"
     rows="3"
@@ -89,6 +95,7 @@ exports[`Textarea component size prop snapshot validation matches snapshot for s
 exports[`Textarea component size prop snapshot validation matches snapshot for small size basic configuration 1`] = `
 <DocumentFragment>
   <textarea
+    aria-label="Small textarea"
     class="Textarea Textarea--resize Textarea--small"
     data-test="DesignSystem-Textarea"
     placeholder="Small textarea"
@@ -101,6 +108,7 @@ exports[`Textarea component size prop snapshot validation matches snapshot for s
 <DocumentFragment>
   <textarea
     aria-invalid="true"
+    aria-label="Complex small textarea"
     class="Textarea Textarea--error Textarea--readOnly Textarea--small"
     data-test="DesignSystem-Textarea"
     name="complex-textarea"

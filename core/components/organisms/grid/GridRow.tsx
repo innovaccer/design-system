@@ -87,7 +87,7 @@ export const GridRow = (props: GridRowProps) => {
         ) : (
           <Checkbox
             checked={!!data._selected}
-            aria-label={`Select row ${rowIndex}`}
+            aria-label={`Select row ${rI}`}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
               onSelect(rI, event.target.checked);
             }}

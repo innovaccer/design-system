@@ -208,7 +208,11 @@ const HeaderCell = (props: HeaderCellProps) => {
                 filterType={filterType}
                 className="m-0"
                 customTrigger={
-                  <Button icon="filter_list" appearance="transparent" aria-label={`Filter ${displayName || name}`} />
+                  <Button
+                    icon="filter_list"
+                    appearance="transparent"
+                    aria-label={`Filter ${schema.displayName || name}`}
+                  />
                 }
               />
             </div>

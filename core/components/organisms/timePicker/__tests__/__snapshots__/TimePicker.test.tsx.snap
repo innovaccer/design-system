@@ -16,6 +16,7 @@ exports[`TimePicker component prop:error snapshot
         style="min-width: 256px;"
       >
         <input
+          aria-label="Time picker"
           autocomplete="off"
           class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
@@ -45,6 +46,7 @@ exports[`TimePicker component prop:error snapshot
         style="min-width: 256px;"
       >
         <input
+          aria-label="Time picker"
           autocomplete="off"
           class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
@@ -74,6 +76,7 @@ exports[`TimePicker component prop:inputFormat snapshot
         style="min-width: 256px;"
       >
         <input
+          aria-label="Time picker"
           autocomplete="off"
           class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
@@ -103,6 +106,7 @@ exports[`TimePicker component prop:inputFormat snapshot
         style="min-width: 256px;"
       >
         <input
+          aria-label="Time picker"
           autocomplete="off"
           class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
@@ -132,6 +136,7 @@ exports[`TimePicker component prop:outputFormat snapshot
         style="min-width: 256px;"
       >
         <input
+          aria-label="Time picker"
           autocomplete="off"
           class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
@@ -161,6 +166,7 @@ exports[`TimePicker component prop:outputFormat snapshot
         style="min-width: 256px;"
       >
         <input
+          aria-label="Time picker"
           autocomplete="off"
           class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
@@ -190,6 +196,7 @@ exports[`TimePicker component prop:time snapshot
         style="min-width: 256px;"
       >
         <input
+          aria-label="Time picker"
           autocomplete="off"
           class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
@@ -201,6 +208,7 @@ exports[`TimePicker component prop:time snapshot
           class="Input-icon Input-iconWrapper--right"
         >
           <i
+            aria-label="Clear --:-- AM"
             class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
             data-test="DesignSystem-Input--closeIcon"
             role="button"
@@ -232,6 +240,7 @@ exports[`TimePicker component prop:time snapshot
         style="min-width: 256px;"
       >
         <input
+          aria-label="Time picker"
           autocomplete="off"
           class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
@@ -243,6 +252,7 @@ exports[`TimePicker component prop:time snapshot
           class="Input-icon Input-iconWrapper--right"
         >
           <i
+            aria-label="Clear --:-- AM"
             class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
             data-test="DesignSystem-Input--closeIcon"
             role="button"
@@ -274,6 +284,7 @@ exports[`TimePicker component prop:validators snapshot
         style="min-width: 256px;"
       >
         <input
+          aria-label="Time picker"
           autocomplete="off"
           class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"
@@ -303,6 +314,7 @@ exports[`TimePicker component prop:validators snapshot
         style="min-width: 256px;"
       >
         <input
+          aria-label="Time picker"
           autocomplete="off"
           class="Input-input Input-input--regular mr-4"
           data-test="DesignSystem-Input"

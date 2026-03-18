@@ -14,8 +14,10 @@ exports[`Horizontal Navigation component
         class="HorizontalNav-menu HorizontalNav-menu--active HorizontalNav-animate color-primary-dark"
         data-test="DesignSystem-HorizontalNav"
         href="/patient360"
+        tabindex="0"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon mr-3 HorizontalNav-animate"
           data-test="DesignSystem-HorizontalNav--Icon"
           style="font-size: 16px; width: 16px;"
@@ -33,6 +35,7 @@ exports[`Horizontal Navigation component
         class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
         data-test="DesignSystem-HorizontalNav"
         href="/outreach"
+        tabindex="0"
       >
         <span
           class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"

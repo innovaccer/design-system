@@ -17,6 +17,7 @@ exports[`TS renders children 1`] = `
         tabindex="0"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon Icon--inverse"
           data-test="DesignSystem-Avatar--Icon"
           style="font-size: 20px; width: 20px;"
@@ -87,6 +88,7 @@ exports[`TS renders children 1`] = `
       data-test="DesignSystem-Checkbox-OuterWrapper"
     >
       <input
+        aria-label="Checkbox"
         class="Checkbox-input"
         data-test="DesignSystem-Checkbox-InputBox"
         id="undefined-undefined-Test-uid"
@@ -111,6 +113,7 @@ exports[`TS renders children 1`] = `
       <div
         class="Calendar-wrapper"
         data-test="DesignSystem-Calendar-Wrapper"
+        role="application"
       >
         <div
           class="Calendar Calendar-date--large Calendar--large"
@@ -120,6 +123,7 @@ exports[`TS renders children 1`] = `
             class="Calendar-header--large"
           >
             <button
+              aria-label="Previous month"
               class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
               data-test="DesignSystem-Button"
               tabindex="0"
@@ -130,6 +134,7 @@ exports[`TS renders children 1`] = `
                 data-test="DesignSystem-Button--Icon-Wrapper"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   style="font-size: 16px; width: 16px;"
@@ -142,7 +147,9 @@ exports[`TS renders children 1`] = `
               class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
             >
               <div
-                class="d-flex justify-content-center align-items-center"
+                class="d-flex justify-content-center align-items-center cursor-pointer"
+                role="button"
+                tabindex="0"
               >
                 <h5
                   class="Heading Heading--s Heading--default"
@@ -151,6 +158,7 @@ exports[`TS renders children 1`] = `
                   Jun
                 </h5>
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                   data-test="DesignSystem-Icon"
                   style="font-size: 16px; width: 16px;"
@@ -159,7 +167,9 @@ exports[`TS renders children 1`] = `
                 </i>
               </div>
               <div
-                class="ml-4 d-flex justify-content-center align-items-center"
+                class="ml-4 d-flex justify-content-center align-items-center cursor-pointer"
+                role="button"
+                tabindex="0"
               >
                 <h5
                   class="Heading Heading--s Heading--default"
@@ -168,6 +178,7 @@ exports[`TS renders children 1`] = `
                   2021
                 </h5>
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                   data-test="DesignSystem-Icon"
                   style="font-size: 16px; width: 16px;"
@@ -177,6 +188,7 @@ exports[`TS renders children 1`] = `
               </div>
             </div>
             <button
+              aria-label="Next month"
               class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
               data-test="DesignSystem-Button"
               tabindex="0"
@@ -187,6 +199,7 @@ exports[`TS renders children 1`] = `
                 data-test="DesignSystem-Button--Icon-Wrapper"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   style="font-size: 16px; width: 16px;"
@@ -198,66 +211,80 @@ exports[`TS renders children 1`] = `
           </div>
           <div
             class="Calendar-body"
+            role="grid"
           >
             <div
               class="Calendar-dayValues"
+              role="row"
             >
               <span
                 class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
                 data-test="DesignSystem-Text"
+                role="columnheader"
               >
                 Su
               </span>
               <span
                 class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
                 data-test="DesignSystem-Text"
+                role="columnheader"
               >
                 Mo
               </span>
               <span
                 class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
                 data-test="DesignSystem-Text"
+                role="columnheader"
               >
                 Tu
               </span>
               <span
                 class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
                 data-test="DesignSystem-Text"
+                role="columnheader"
               >
                 We
               </span>
               <span
                 class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
                 data-test="DesignSystem-Text"
+                role="columnheader"
               >
                 Th
               </span>
               <span
                 class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
                 data-test="DesignSystem-Text"
+                role="columnheader"
               >
                 Fr
               </span>
               <span
                 class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
                 data-test="DesignSystem-Text"
+                role="columnheader"
               >
                 Sa
               </span>
             </div>
             <div
               class="Calendar-dateValues"
+              role="rowgroup"
             >
               <div
                 class="Calendar-valueRow"
+                role="row"
               >
                 <div
                   class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     30
                   </span>
@@ -265,10 +292,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     31
                   </span>
@@ -276,10 +306,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     1
                   </span>
@@ -287,10 +320,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     2
                   </span>
@@ -298,10 +334,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     3
                   </span>
@@ -309,10 +348,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     4
                   </span>
@@ -320,10 +362,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     5
                   </span>
@@ -331,14 +376,18 @@ exports[`TS renders children 1`] = `
               </div>
               <div
                 class="Calendar-valueRow"
+                role="row"
               >
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     6
                   </span>
@@ -346,10 +395,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     7
                   </span>
@@ -357,10 +409,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     8
                   </span>
@@ -368,10 +423,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     9
                   </span>
@@ -379,10 +437,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     10
                   </span>
@@ -390,10 +451,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     11
                   </span>
@@ -401,10 +465,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     12
                   </span>
@@ -412,14 +479,18 @@ exports[`TS renders children 1`] = `
               </div>
               <div
                 class="Calendar-valueRow"
+                role="row"
               >
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     13
                   </span>
@@ -427,10 +498,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-primary-dark Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large Calendar-value--currDateMonthYear Calendar-value--currDate"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     14
                   </span>
@@ -438,10 +512,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     15
                   </span>
@@ -449,10 +526,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     16
                   </span>
@@ -460,10 +540,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     17
                   </span>
@@ -471,10 +554,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     18
                   </span>
@@ -482,10 +568,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     19
                   </span>
@@ -493,14 +582,18 @@ exports[`TS renders children 1`] = `
               </div>
               <div
                 class="Calendar-valueRow"
+                role="row"
               >
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     20
                   </span>
@@ -508,10 +601,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     21
                   </span>
@@ -519,10 +615,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     22
                   </span>
@@ -530,10 +629,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     23
                   </span>
@@ -541,10 +643,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     24
                   </span>
@@ -552,10 +657,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     25
                   </span>
@@ -563,10 +671,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     26
                   </span>
@@ -574,14 +685,18 @@ exports[`TS renders children 1`] = `
               </div>
               <div
                 class="Calendar-valueRow"
+                role="row"
               >
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     27
                   </span>
@@ -589,10 +704,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     28
                   </span>
@@ -600,10 +718,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     29
                   </span>
@@ -611,10 +732,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     30
                   </span>
@@ -622,10 +746,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     1
                   </span>
@@ -633,10 +760,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     2
                   </span>
@@ -644,10 +774,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     3
                   </span>
@@ -655,14 +788,18 @@ exports[`TS renders children 1`] = `
               </div>
               <div
                 class="Calendar-valueRow"
+                role="row"
               >
                 <div
                   class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     4
                   </span>
@@ -670,10 +807,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     5
                   </span>
@@ -681,10 +821,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     6
                   </span>
@@ -692,10 +835,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     7
                   </span>
@@ -703,10 +849,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     8
                   </span>
@@ -714,10 +863,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     9
                   </span>
@@ -725,10 +877,13 @@ exports[`TS renders children 1`] = `
                 <div
                   class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                   data-test="designSystem-Calendar-WrapperClass"
+                  role="gridcell"
                 >
                   <span
                     class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                     data-test="DesignSystem-Calendar--dateValue"
+                    role="button"
+                    tabindex="0"
                   >
                     10
                   </span>
@@ -744,6 +899,7 @@ exports[`TS renders children 1`] = `
       data-test="DesignSystem-Select--TodaysDate-wrapper"
     >
       <div
+        aria-label="Select today's date, Jun 14"
         class="Chip-wrapper Chip Chip--action Chip-size--regular"
         data-test="DesignSystem-Chip--GenericChip"
         role="button"
@@ -771,6 +927,7 @@ exports[`TS renders children 1`] = `
       class="PopperWrapper-trigger w-100"
     >
       <button
+        aria-haspopup="listbox"
         class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
         data-test="DesignSystem-DropdownTrigger"
         tabindex="0"
@@ -787,6 +944,7 @@ exports[`TS renders children 1`] = `
           </span>
         </div>
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon Icon--default"
           data-test="DesignSystem-Icon"
           style="font-size: 16px; width: 16px;"
@@ -818,6 +976,7 @@ exports[`TS renders children 1`] = `
             class="PopperWrapper-trigger w-100"
           >
             <button
+              aria-haspopup="listbox"
               class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
               data-test="DesignSystem-DropdownTrigger"
               tabindex="0"
@@ -828,6 +987,7 @@ exports[`TS renders children 1`] = `
                 class="DropdownButton-wrapper"
               />
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon Icon--default"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -872,6 +1032,7 @@ exports[`TS renders children 1`] = `
     Hello World!
   </h4>
   <i
+    aria-hidden="true"
     class="material-symbols material-symbols-rounded Icon"
     data-test="DesignSystem-Icon"
     style="font-size: 16px; width: 16px;"
@@ -1018,6 +1179,7 @@ exports[`TS renders children 1`] = `
       data-test="DesignSystem-Radio-OuterWrapper"
     >
       <input
+        aria-label="Hello World!"
         class="Radio-input"
         data-test="DesignSystem-Radio-Input"
         id="Hello World!-undefined-Test-uid"
@@ -1128,7 +1290,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--subtle Text--small"
+            class="Text Text--disabled Text--small"
             data-test="DesignSystem-Text"
           >
             1
@@ -1144,7 +1306,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--subtle Text--small"
+            class="Text Text--disabled Text--small"
             data-test="DesignSystem-Text"
           >
             2
@@ -1160,7 +1322,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--subtle Text--small"
+            class="Text Text--disabled Text--small"
             data-test="DesignSystem-Text"
           >
             3
@@ -1176,7 +1338,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--subtle Text--small"
+            class="Text Text--disabled Text--small"
             data-test="DesignSystem-Text"
           >
             4
@@ -1192,7 +1354,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--subtle Text--small"
+            class="Text Text--disabled Text--small"
             data-test="DesignSystem-Text"
           >
             5
@@ -1208,7 +1370,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--subtle Text--small"
+            class="Text Text--disabled Text--small"
             data-test="DesignSystem-Text"
           >
             6
@@ -1224,7 +1386,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--subtle Text--small"
+            class="Text Text--disabled Text--small"
             data-test="DesignSystem-Text"
           >
             7
@@ -1240,7 +1402,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--subtle Text--small"
+            class="Text Text--disabled Text--small"
             data-test="DesignSystem-Text"
           >
             8
@@ -1256,7 +1418,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--subtle Text--small"
+            class="Text Text--disabled Text--small"
             data-test="DesignSystem-Text"
           >
             9
@@ -1272,7 +1434,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--subtle Text--small"
+            class="Text Text--disabled Text--small"
             data-test="DesignSystem-Text"
           >
             10
@@ -1280,6 +1442,7 @@ exports[`TS renders children 1`] = `
         </div>
       </div>
       <div
+        aria-label="Slider handle"
         aria-valuemax="10"
         aria-valuemin="0"
         aria-valuenow="0"
@@ -1352,7 +1515,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--subtle Text--small"
+            class="Text Text--disabled Text--small"
             data-test="DesignSystem-Text"
           >
             1
@@ -1368,7 +1531,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--subtle Text--small"
+            class="Text Text--disabled Text--small"
             data-test="DesignSystem-Text"
           >
             2
@@ -1384,7 +1547,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--subtle Text--small"
+            class="Text Text--disabled Text--small"
             data-test="DesignSystem-Text"
           >
             3
@@ -1400,7 +1563,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--subtle Text--small"
+            class="Text Text--disabled Text--small"
             data-test="DesignSystem-Text"
           >
             4
@@ -1416,7 +1579,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--subtle Text--small"
+            class="Text Text--disabled Text--small"
             data-test="DesignSystem-Text"
           >
             5
@@ -1432,7 +1595,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--subtle Text--small"
+            class="Text Text--disabled Text--small"
             data-test="DesignSystem-Text"
           >
             6
@@ -1448,7 +1611,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--subtle Text--small"
+            class="Text Text--disabled Text--small"
             data-test="DesignSystem-Text"
           >
             7
@@ -1464,7 +1627,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--subtle Text--small"
+            class="Text Text--disabled Text--small"
             data-test="DesignSystem-Text"
           >
             8
@@ -1480,7 +1643,7 @@ exports[`TS renders children 1`] = `
             class="Slider-ticks"
           />
           <span
-            class="Text Text--subtle Text--small"
+            class="Text Text--disabled Text--small"
             data-test="DesignSystem-Text"
           >
             9
@@ -1504,6 +1667,7 @@ exports[`TS renders children 1`] = `
         </div>
       </div>
       <div
+        aria-label="Slider handle"
         aria-valuemax="10"
         aria-valuemin="0"
         aria-valuenow="0"
@@ -1521,6 +1685,7 @@ exports[`TS renders children 1`] = `
         0
       </div>
       <div
+        aria-label="Slider handle"
         aria-valuemax="10"
         aria-valuemin="0"
         aria-valuenow="10"
@@ -1550,6 +1715,7 @@ exports[`TS renders children 1`] = `
     class="Switch Switch--regular"
   >
     <input
+      aria-label="Switch"
       class="Switch-input"
       role="switch"
       type="checkbox"
@@ -1566,6 +1732,7 @@ exports[`TS renders children 1`] = `
     Hello World!
   </span>
   <textarea
+    aria-label="Textarea"
     class="Textarea Textarea--resize"
     data-test="DesignSystem-Textarea"
     rows="3"
@@ -1655,6 +1822,7 @@ exports[`TS renders children 1`] = `
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -1691,7 +1859,8 @@ exports[`TS renders children 1`] = `
     class="Modal-description"
     data-test="DesignSystem-ModalDescription"
   />
-  <div
+  <nav
+    aria-label="Pagination"
     class="Pagination Pagination--basic"
     data-test="DesignSystem-Pagination"
   >
@@ -1699,6 +1868,7 @@ exports[`TS renders children 1`] = `
       class="Pagination-buttonWrapper Pagination-buttonWrapper--previous"
     >
       <button
+        aria-label="First page"
         class="Button Button--regular Button--regularSquare Button--transparent Pagination-button"
         data-test="DesignSystem-Pagination--FirstButton"
         disabled=""
@@ -1709,6 +1879,7 @@ exports[`TS renders children 1`] = `
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -1718,6 +1889,7 @@ exports[`TS renders children 1`] = `
         </div>
       </button>
       <button
+        aria-label="Previous page"
         class="Button Button--regular Button--regularSquare Button--basic ml-4 mr-3 Pagination-button"
         data-test="DesignSystem-Pagination--PrevButton"
         disabled=""
@@ -1728,6 +1900,7 @@ exports[`TS renders children 1`] = `
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -1741,6 +1914,7 @@ exports[`TS renders children 1`] = `
       class="Pagination-buttonWrapper Pagination-buttonWrapper--next"
     >
       <button
+        aria-label="Next page"
         class="Button Button--regular Button--regularSquare Button--basic ml-3 mr-4 Pagination-button"
         data-test="DesignSystem-Pagination--NextButton"
         disabled=""
@@ -1751,6 +1925,7 @@ exports[`TS renders children 1`] = `
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -1760,6 +1935,7 @@ exports[`TS renders children 1`] = `
         </div>
       </button>
       <button
+        aria-label="Last page"
         class="Button Button--regular Button--regularSquare Button--transparent Pagination-button"
         data-test="DesignSystem-Pagination--LastButton"
         disabled=""
@@ -1770,6 +1946,7 @@ exports[`TS renders children 1`] = `
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -1779,7 +1956,7 @@ exports[`TS renders children 1`] = `
         </div>
       </button>
     </div>
-  </div>
+  </nav>
   <div
     class="Placeholder"
     data-test="DesignSystem-Placeholder"
@@ -1833,7 +2010,7 @@ exports[`TS renders children 1`] = `
     </span>
   </div>
   <div
-    aria-label="Steps"
+    aria-label="Progress steps"
     class="Stepper"
     data-test="DesignSystem-Stepper"
     role="group"
@@ -1841,6 +2018,7 @@ exports[`TS renders children 1`] = `
   <div
     class="Calendar-wrapper"
     data-test="DesignSystem-Calendar-Wrapper"
+    role="application"
   >
     <div
       class="Calendar Calendar-date--large Calendar--large"
@@ -1850,6 +2028,7 @@ exports[`TS renders children 1`] = `
         class="Calendar-header--large"
       >
         <button
+          aria-label="Previous month"
           class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
           data-test="DesignSystem-Button"
           tabindex="0"
@@ -1860,6 +2039,7 @@ exports[`TS renders children 1`] = `
             data-test="DesignSystem-Button--Icon-Wrapper"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Button--Icon"
               style="font-size: 16px; width: 16px;"
@@ -1872,7 +2052,9 @@ exports[`TS renders children 1`] = `
           class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
         >
           <div
-            class="d-flex justify-content-center align-items-center"
+            class="d-flex justify-content-center align-items-center cursor-pointer"
+            role="button"
+            tabindex="0"
           >
             <h5
               class="Heading Heading--s Heading--default"
@@ -1882,7 +2064,9 @@ exports[`TS renders children 1`] = `
             </h5>
           </div>
           <div
-            class="ml-4 d-flex justify-content-center align-items-center"
+            class="ml-4 d-flex justify-content-center align-items-center cursor-pointer"
+            role="button"
+            tabindex="0"
           >
             <h5
               class="Heading Heading--s Heading--default"
@@ -1893,6 +2077,7 @@ exports[`TS renders children 1`] = `
           </div>
         </div>
         <button
+          aria-label="Next month"
           class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
           data-test="DesignSystem-Button"
           tabindex="0"
@@ -1903,6 +2088,7 @@ exports[`TS renders children 1`] = `
             data-test="DesignSystem-Button--Icon-Wrapper"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Button--Icon"
               style="font-size: 16px; width: 16px;"
@@ -1914,66 +2100,80 @@ exports[`TS renders children 1`] = `
       </div>
       <div
         class="Calendar-body"
+        role="grid"
       >
         <div
           class="Calendar-dayValues"
+          role="row"
         >
           <span
             class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
             data-test="DesignSystem-Text"
+            role="columnheader"
           >
             Su
           </span>
           <span
             class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
             data-test="DesignSystem-Text"
+            role="columnheader"
           >
             Mo
           </span>
           <span
             class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
             data-test="DesignSystem-Text"
+            role="columnheader"
           >
             Tu
           </span>
           <span
             class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
             data-test="DesignSystem-Text"
+            role="columnheader"
           >
             We
           </span>
           <span
             class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
             data-test="DesignSystem-Text"
+            role="columnheader"
           >
             Th
           </span>
           <span
             class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
             data-test="DesignSystem-Text"
+            role="columnheader"
           >
             Fr
           </span>
           <span
             class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
             data-test="DesignSystem-Text"
+            role="columnheader"
           >
             Sa
           </span>
         </div>
         <div
           class="Calendar-dateValues"
+          role="rowgroup"
         >
           <div
             class="Calendar-valueRow"
+            role="row"
           >
             <div
               class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 30
               </span>
@@ -1981,10 +2181,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 31
               </span>
@@ -1992,10 +2195,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 1
               </span>
@@ -2003,10 +2209,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 2
               </span>
@@ -2014,10 +2223,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 3
               </span>
@@ -2025,10 +2237,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 4
               </span>
@@ -2036,10 +2251,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 5
               </span>
@@ -2047,14 +2265,18 @@ exports[`TS renders children 1`] = `
           </div>
           <div
             class="Calendar-valueRow"
+            role="row"
           >
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 6
               </span>
@@ -2062,10 +2284,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 7
               </span>
@@ -2073,10 +2298,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 8
               </span>
@@ -2084,10 +2312,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 9
               </span>
@@ -2095,10 +2326,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 10
               </span>
@@ -2106,10 +2340,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 11
               </span>
@@ -2117,10 +2354,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 12
               </span>
@@ -2128,14 +2368,18 @@ exports[`TS renders children 1`] = `
           </div>
           <div
             class="Calendar-valueRow"
+            role="row"
           >
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 13
               </span>
@@ -2143,10 +2387,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-primary-dark Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large Calendar-value--currDateMonthYear Calendar-value--currDate"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 14
               </span>
@@ -2154,10 +2401,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 15
               </span>
@@ -2165,10 +2415,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 16
               </span>
@@ -2176,10 +2429,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 17
               </span>
@@ -2187,10 +2443,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 18
               </span>
@@ -2198,10 +2457,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 19
               </span>
@@ -2209,14 +2471,18 @@ exports[`TS renders children 1`] = `
           </div>
           <div
             class="Calendar-valueRow"
+            role="row"
           >
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 20
               </span>
@@ -2224,10 +2490,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 21
               </span>
@@ -2235,10 +2504,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 22
               </span>
@@ -2246,10 +2518,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 23
               </span>
@@ -2257,10 +2532,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 24
               </span>
@@ -2268,10 +2546,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 25
               </span>
@@ -2279,10 +2560,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 26
               </span>
@@ -2290,14 +2574,18 @@ exports[`TS renders children 1`] = `
           </div>
           <div
             class="Calendar-valueRow"
+            role="row"
           >
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 27
               </span>
@@ -2305,10 +2593,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 28
               </span>
@@ -2316,10 +2607,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 29
               </span>
@@ -2327,10 +2621,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 30
               </span>
@@ -2338,10 +2635,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 1
               </span>
@@ -2349,10 +2649,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 2
               </span>
@@ -2360,10 +2663,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 3
               </span>
@@ -2371,14 +2677,18 @@ exports[`TS renders children 1`] = `
           </div>
           <div
             class="Calendar-valueRow"
+            role="row"
           >
             <div
               class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 4
               </span>
@@ -2386,10 +2696,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 5
               </span>
@@ -2397,10 +2710,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 6
               </span>
@@ -2408,10 +2724,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 7
               </span>
@@ -2419,10 +2738,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 8
               </span>
@@ -2430,10 +2752,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 9
               </span>
@@ -2441,10 +2766,13 @@ exports[`TS renders children 1`] = `
             <div
               class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
               data-test="designSystem-Calendar-WrapperClass"
+              role="gridcell"
             >
               <span
                 class="Text Text--subtle Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
                 data-test="DesignSystem-Calendar--dateValue"
+                role="button"
+                tabindex="0"
               >
                 10
               </span>
@@ -2483,22 +2811,27 @@ exports[`TS renders children 1`] = `
   <div
     class="Grid Grid--data Grid--standard"
     data-test="DesignSystem-Grid"
+    role="grid"
   >
     <div
       class="Grid-head"
       data-test="DesignSystem-GridHead-wrapper"
+      role="rowgroup"
     >
       <div
         class="Grid-row Grid-row--head"
+        role="row"
       />
     </div>
     <div
       class="Grid-body"
+      role="rowgroup"
     />
   </div>
   <div
     class="Table"
     data-test="DesignSystem-Table-wrapper"
+    role="table"
   >
     <div
       class="Table-grid"
@@ -2506,6 +2839,7 @@ exports[`TS renders children 1`] = `
       <div
         class="Grid Grid--data Grid--standard"
         data-test="DesignSystem-Grid"
+        role="grid"
       >
         <div
           class="d-flex justify-content-center align-item-center w-100 h-100"
@@ -2535,6 +2869,7 @@ exports[`TS renders children 1`] = `
   <div
     class="Table"
     data-test="DesignSystem-Table-wrapper"
+    role="table"
   >
     <div
       class="Table-grid"
@@ -2542,13 +2877,16 @@ exports[`TS renders children 1`] = `
       <div
         class="Grid Grid--data Grid--standard"
         data-test="DesignSystem-Grid"
+        role="grid"
       >
         <div
           class="Grid-head"
           data-test="DesignSystem-GridHead-wrapper"
+          role="rowgroup"
         >
           <div
             class="Grid-row Grid-row--head"
+            role="row"
           />
         </div>
         <div
@@ -2589,6 +2927,7 @@ exports[`TS renders children 1`] = `
   >
     <div
       class="PageHeader-wrapper"
+      role="banner"
     >
       <div
         class="d-flex pl-6"
@@ -2609,6 +2948,7 @@ exports[`TS renders children 1`] = `
                 data-test="DesignSystem-PageHeader--Title"
               >
                 <h4
+                  aria-level="1"
                   class="Heading Heading--m Heading--default PageHeader-title"
                   data-test="DesignSystem-Heading"
                 >

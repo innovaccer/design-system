@@ -20,6 +20,7 @@ exports[`ChipGroup component
           tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--inverse Chip-icon Chip-icon--left"
             data-test="DesignSystem-GenericChip--Icon"
             style="font-size: 16px; width: 16px;"
@@ -49,6 +50,7 @@ exports[`ChipGroup component
           tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--inverse Chip-icon Chip-icon--left"
             data-test="DesignSystem-GenericChip--Icon"
             style="font-size: 16px; width: 16px;"
@@ -66,13 +68,14 @@ exports[`ChipGroup component
             </span>
           </div>
           <div
-            aria-label="Remove"
-            class="Chip-icon Chip-icon--right cursor-pointer p-3"
+            aria-label="Remove Input"
+            class="Chip-icon Chip-icon--right cursor-pointer"
             data-test="DesignSystem-GenericChip--clearButton"
             role="button"
             tabindex="0"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -94,6 +97,7 @@ exports[`ChipGroup component
           tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--primaryDark Chip-icon Chip-icon--left"
             data-test="DesignSystem-GenericChip--Icon"
             style="font-size: 16px; width: 16px;"
@@ -111,13 +115,14 @@ exports[`ChipGroup component
             </span>
           </div>
           <div
-            aria-label="Remove"
-            class="Chip-icon Chip-icon--right cursor-pointer Chip-icon--selected p-3"
+            aria-label="Remove Selection"
+            class="Chip-icon Chip-icon--right cursor-pointer Chip-icon--selected"
             data-test="DesignSystem-GenericChip--clearButton"
             role="button"
             tabindex="0"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--primaryDark"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"
@@ -139,6 +144,7 @@ exports[`ChipGroup component
           tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--inverse Chip-icon Chip-icon--left"
             data-test="DesignSystem-GenericChip--Icon"
             style="font-size: 16px; width: 16px;"
@@ -156,13 +162,14 @@ exports[`ChipGroup component
             </span>
           </div>
           <div
-            aria-label="Remove"
-            class="Chip-icon Chip-icon--right cursor-pointer p-3"
+            aria-label="Remove Selection"
+            class="Chip-icon Chip-icon--right cursor-pointer"
             data-test="DesignSystem-GenericChip--clearButton"
             role="button"
             tabindex="0"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon Icon--subtle"
               data-test="DesignSystem-Icon"
               style="font-size: 16px; width: 16px;"

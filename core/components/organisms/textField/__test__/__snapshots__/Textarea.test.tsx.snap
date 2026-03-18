@@ -40,6 +40,7 @@ exports[`TextField component matches snapshot when input exceeds maximum charact
         data-test="DesignSystem-InlineMessage"
       >
         <i
+          aria-hidden="true"
           class="material-symbols material-symbols-rounded Icon Icon--alert InlineMessage-icon--small"
           data-test="DesignSystem-InlineMessage--Icon"
           style="font-size: 14px; width: 14px;"
@@ -297,6 +298,7 @@ exports[`textfield component
       </div>
       <textarea
         aria-invalid="false"
+        aria-label="name"
         class="Textarea Textarea--resize"
         data-test="DesignSystem-Textarea"
         helptext="i am the helptext"
@@ -366,6 +368,7 @@ exports[`textfield component
       </div>
       <textarea
         aria-invalid="false"
+        aria-label="name"
         class="Textarea Textarea--resize"
         data-test="DesignSystem-Textarea"
         helptext="i am the helptext"

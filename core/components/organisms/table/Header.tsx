@@ -326,13 +326,21 @@ export const Header = (props: HeaderProps) => {
             <div role="status" aria-live="polite" className="d-flex align-items-center">
               {showSelectedLabel ? (
                 <span className={selectedRowLabelClass} onAnimationEnd={onSelectAnimationEnd}>
-                  <Text weight="medium" className={gridStyles['Header-label-text']}>
+                  <Text
+                    data-test="DesignSystem-Label--Text"
+                    weight="medium"
+                    className={gridStyles['Header-label-text']}
+                  >
                     {customSelectedRowLabel ?? getSelectedRowLabel()}
                   </Text>
                 </span>
               ) : (
                 <span className={unselectedRowLabelClass} onAnimationEnd={onUnSelectAnimationEnd}>
-                  <Text weight="medium" className={gridStyles['Header-label-text']}>
+                  <Text
+                    data-test="DesignSystem-Label--Text"
+                    weight="medium"
+                    className={gridStyles['Header-label-text']}
+                  >
                     {customUnSelectedRowLabel ?? getUnSelectedRowLabel()}
                   </Text>
                 </span>

@@ -6,8 +6,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -84,8 +86,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -162,8 +166,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -240,8 +246,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -318,8 +326,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -396,8 +406,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -474,8 +486,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -584,8 +598,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -694,8 +710,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -804,8 +822,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -914,8 +934,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -992,8 +1014,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -1070,8 +1094,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -1148,8 +1174,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -1226,8 +1254,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -1304,8 +1334,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -1382,8 +1414,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -1460,8 +1494,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -1538,8 +1574,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -1648,8 +1686,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -1758,8 +1798,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -1868,8 +1910,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -1978,8 +2022,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -2056,8 +2102,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -2134,8 +2182,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -2212,8 +2262,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -2290,8 +2342,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -2368,8 +2422,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -2446,8 +2502,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -2524,8 +2582,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -2634,8 +2694,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -2744,8 +2806,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -2854,8 +2918,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -2964,8 +3030,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -3042,8 +3110,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
@@ -3120,8 +3190,10 @@ exports[`VerificationCodeInput component
 <body>
   <div>
     <div
+      aria-label="Verification code"
       class="VerificationCodeInput"
       data-test="DesignSystem-VerificationCodeInput"
+      role="group"
     >
       <div
         class="Input Input--large VerificationCodeInput-Input"
