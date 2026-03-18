@@ -109,7 +109,7 @@ const customCode = `
                   The system automatically creates collection for multiple support.
                 </Text>
                 <div className="mt-4">
-                  <Label withInput={true} htmlFor="input-collection-1">Input Collection 1</Label>
+                  <Label withInput={true}>Input Collection 1</Label>
                   <Select
                     width="100%"
                     className="mb-4"
@@ -126,7 +126,7 @@ const customCode = `
                       })}
                     </Select.List>
                   </Select>
-                  <Label withInput={true} htmlFor="input-collection-2">Input Collection 2</Label>
+                  <Label withInput={true}>Input Collection 2</Label>
                   <Select
                     width="100%"
                     triggerOptions={{ placeholder: "Input Collection 2", 'aria-label': "Input Collection 2" }}
@@ -151,7 +151,7 @@ const customCode = `
                   The system automatically creates collection for multiple support.
                 </Text>
                 <div className="mt-6">
-                  <Label withInput={true} htmlFor="destination-collection">Destination Collection</Label>
+                  <Label withInput={true}>Destination Collection</Label>
                   <Select
                     width="100%"
                     triggerOptions={{ placeholder: "Select Destination", 'aria-label': "Destination Collection" }}
@@ -181,7 +181,7 @@ const customCode = `
                 </div>
                 <div className="mt-6">
                   <Label withInput={true} required>Retention Period</Label>
-                  <Select 
+                  <Select
                     width="100%"
                     triggerOptions={{ 'aria-label': "Retention Period" }}
                     onSelect={(option) => this.onChangeOutput(option.value, 'retention')}
