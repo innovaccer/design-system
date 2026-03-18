@@ -95,13 +95,13 @@
   padding-bottom: var(--spacing-15);
 }
 
-.Option:hover,
-.Option-checkbox:hover {
+.Option:not([data-disabled='true']):hover,
+.Option-checkbox:not([data-disabled='true']):hover {
   background-color: var(--secondary-lightest);
 }
 
-.Option:hover:active,
-.Option-checkbox:hover:active {
+.Option:not([data-disabled='true']):hover:active,
+.Option-checkbox:not([data-disabled='true']):hover:active {
   background-color: var(--secondary-light);
 }
 

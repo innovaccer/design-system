@@ -791,7 +791,20 @@ const DropdownList = (props: OptionsProps) => {
         dropdownOpen ? focusOption('up', optionClass) : onToggleDropdown(!dropdownOpen);
         break;
       case 'Enter': {
-        if (!dropdownOpen) {
+        const activeElement = document.activeElement;
+        if (dropdownOpen && (inputRef.current === activeElement || dropdownTriggerRef.current === activeElement)) {
+          event.preventDefault();
+          const elements = document.querySelectorAll(optionClass);
+          const element = elements[cursor] as HTMLElement;
+          if (element) {
+            if (withCheckbox) {
+              const checkboxInput = element.querySelector('input[type="checkbox"]') as HTMLInputElement;
+              if (checkboxInput) checkboxInput.click();
+            } else {
+              element.click();
+            }
+          }
+        } else if (!dropdownOpen) {
           event.preventDefault();
           onToggleDropdown(true);
         }
