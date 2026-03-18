@@ -115,7 +115,7 @@ exports[`Chip component
       tabindex="-1"
     >
       <i
-        class="material-symbols material-symbols-rounded Icon Icon--primaryDark Chip-icon Chip-icon--left"
+        class="material-symbols material-symbols-rounded Icon Icon--primaryLighter Chip-icon Chip-icon--left"
         data-test="DesignSystem-GenericChip--Icon"
         style="font-size: 16px; width: 16px;"
       >
@@ -125,7 +125,7 @@ exports[`Chip component
         class="Chip-text--truncate"
       >
         <span
-          class="Text Text--regular color-primary-dark Chip-text"
+          class="Text Text--regular color-primary-lighter Chip-text"
           data-test="DesignSystem-GenericChip--Text"
         >
           ChipLabel
@@ -296,7 +296,7 @@ exports[`Chip component
       tabindex="-1"
     >
       <i
-        class="material-symbols material-symbols-rounded Icon Icon--primaryDark Chip-icon Chip-icon--left"
+        class="material-symbols material-symbols-rounded Icon Icon--primaryLighter Chip-icon Chip-icon--left"
         data-test="DesignSystem-GenericChip--Icon"
         style="font-size: 16px; width: 16px;"
       >
@@ -306,7 +306,7 @@ exports[`Chip component
         class="Chip-text--truncate"
       >
         <span
-          class="Text Text--regular color-primary-dark Chip-text"
+          class="Text Text--regular color-primary-lighter Chip-text"
           data-test="DesignSystem-GenericChip--Text"
         >
           ChipLabel
@@ -320,7 +320,7 @@ exports[`Chip component
         tabindex="-1"
       >
         <i
-          class="material-symbols material-symbols-rounded Icon Icon--primaryDark"
+          class="material-symbols material-symbols-rounded Icon Icon--primaryLighter"
           data-test="DesignSystem-Icon"
           style="font-size: 16px; width: 16px;"
         >
