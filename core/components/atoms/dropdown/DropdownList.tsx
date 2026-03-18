@@ -536,22 +536,8 @@ const DropdownList = (props: OptionsProps) => {
     const id = `Checkbox-option-${label.toLowerCase().replace(/\s+/g, '')}-${new Date().getTime()}`;
 
     return (
-      // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
-      <div
-        className={SelectAllClass}
-        onMouseEnter={() => updateActiveOption(0, true)}
-        onClick={(e) => {
-          if ((e.target as HTMLElement).tagName === 'INPUT' || (e.target as HTMLElement).tagName === 'LABEL') {
-            return;
-          }
-          onSelectAll({
-            target: { checked: !isAllSelected },
-            stopPropagation: () => e.stopPropagation(),
-            preventDefault: () => e.preventDefault(),
-          } as any);
-        }}
-      >
-        <div className={dropdownStyles['Checkbox-label']}>
+      <div className={SelectAllClass} onMouseEnter={() => updateActiveOption(0, true)}>
+        <label htmlFor={id} className={dropdownStyles['Checkbox-label']}>
           <Checkbox
             label={label}
             onChange={onSelectAll}
@@ -561,7 +547,7 @@ const DropdownList = (props: OptionsProps) => {
             className={dropdownStyles['OptionCheckbox']}
             id={id}
           />
-        </div>
+        </label>
       </div>
     );
   };
@@ -579,7 +565,7 @@ const DropdownList = (props: OptionsProps) => {
     const id = `Checkbox-option-${index}-${item.value}-${new Date().getTime()}`;
 
     return (
-      <React.Fragment key={index}>
+      <label htmlFor={id} key={index} role="presentation">
         <Option
           optionData={item}
           truncateOption={truncateOption}
@@ -595,7 +581,7 @@ const DropdownList = (props: OptionsProps) => {
           optionType={props.optionType}
           id={id}
         />
-      </React.Fragment>
+      </label>
     );
   };
 

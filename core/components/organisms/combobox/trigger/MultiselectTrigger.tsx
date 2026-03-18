@@ -334,15 +334,6 @@ export const MultiSelectTrigger = React.forwardRef<HTMLElement, MultiSelectTrigg
             appearance={disabled ? 'disabled' : 'subtle'}
             className={styles['ChipInput-icon']}
             onClick={onDeleteAllHandler}
-            onKeyDown={(e: React.KeyboardEvent) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                e.stopPropagation();
-                onDeleteAllHandler(e as any);
-              }
-            }}
-            tabIndex={disabled ? -1 : 0}
-            role="button"
             aria-label="Clear all selections"
           />
         )}

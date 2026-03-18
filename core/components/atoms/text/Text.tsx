@@ -10,18 +10,6 @@ export type TextAppearance = 'default' | 'white' | 'destructive' | 'subtle' | 'd
 
 export interface TextProps extends BaseProps, BaseHtmlProps<HTMLSpanElement> {
   /**
-   * Accessible role for the text
-   */
-  role?: string;
-  /**
-   * Accessible level for headings (e.g. aria-level)
-   */
-  'aria-level'?: number;
-  /**
-   * Tab index for the text
-   */
-  tabIndex?: number;
-  /**
    * Text to be rendered
    */
   children: React.ReactText;
@@ -63,30 +51,8 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, ref) =>
     className
   );
 
-  const interactiveProps = rest.onClick
-    ? {
-        role: rest.role || 'button',
-        tabIndex: rest.tabIndex !== undefined ? rest.tabIndex : 0,
-        onKeyDown: (e: React.KeyboardEvent<HTMLSpanElement>) => {
-          if (rest.onKeyDown) {
-            rest.onKeyDown(e);
-          } else if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            rest.onClick?.(e as any);
-          }
-        },
-      }
-    : {};
-
   return (
-    <GenericText
-      ref={ref}
-      data-test="DesignSystem-Text"
-      {...rest}
-      {...interactiveProps}
-      className={classes}
-      componentType="span"
-    >
+    <GenericText ref={ref} data-test="DesignSystem-Text" {...rest} className={classes} componentType="span">
       {children}
     </GenericText>
   );

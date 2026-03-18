@@ -213,15 +213,6 @@ const SelectTrigger = (props: SelectTriggerProps) => {
           <Icon
             appearance={buttonDisabled}
             onClick={onClearHandler}
-            onKeyDown={(e: React.KeyboardEvent) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                e.stopPropagation();
-                onClearHandler(e as any);
-              }
-            }}
-            tabIndex={0}
-            role="button"
             className={iconClass}
             size={12}
             name="close"

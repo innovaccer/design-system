@@ -10,14 +10,6 @@ export type MetricInputSize = 'small' | 'regular' | 'large';
 
 export interface MetricInputProps extends BaseProps, BaseHtmlProps<HTMLInputElement> {
   /**
-   * Accessible label for the input
-   */
-  'aria-label'?: string;
-  /**
-   * Associates input with an external label
-   */
-  'aria-labelledby'?: string;
-  /**
    * Name of the `MetricInput`
    */
   name?: string;
