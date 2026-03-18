@@ -10,7 +10,6 @@ exports[`InlineMessage component
       data-test="DesignSystem-InlineMessage"
     >
       <i
-        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Icon--alert InlineMessage-icon--regular"
         data-test="DesignSystem-InlineMessage--Icon"
         style="font-size: 16px; width: 16px;"
@@ -58,7 +57,6 @@ exports[`InlineMessage component
       data-test="DesignSystem-InlineMessage"
     >
       <i
-        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Icon--info InlineMessage-icon--regular"
         data-test="DesignSystem-InlineMessage--Icon"
         style="font-size: 16px; width: 16px;"
@@ -86,7 +84,6 @@ exports[`InlineMessage component
       data-test="DesignSystem-InlineMessage"
     >
       <i
-        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Icon--success InlineMessage-icon--regular"
         data-test="DesignSystem-InlineMessage--Icon"
         style="font-size: 16px; width: 16px;"
@@ -114,7 +111,6 @@ exports[`InlineMessage component
       data-test="DesignSystem-InlineMessage"
     >
       <i
-        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Icon--warning InlineMessage-icon--warning InlineMessage-icon--regular"
         data-test="DesignSystem-InlineMessage--Icon"
         style="font-size: 16px; width: 16px;"

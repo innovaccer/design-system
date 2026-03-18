@@ -1537,10 +1537,10 @@ describe('render Table with filterType feature', () => {
           expect(screen.getAllByTestId('DesignSystem-Select-Option').length).toBeGreaterThan(0);
         });
 
-        // Find the div with style inside the Select listbox
+        // The div with minWidth/maxWidth wraps around the listbox (is its parent)
         const listbox = document.querySelector('[role="listbox"]');
         expect(listbox).toBeInTheDocument();
-        const selectListDiv = listbox?.querySelector('div[style]');
+        const selectListDiv = listbox?.closest('div[style]');
         expect(selectListDiv).toBeInTheDocument();
         const style = (selectListDiv as HTMLElement).style;
         expect(parseFloat(style.minWidth || '0')).toBeGreaterThanOrEqual(176);
@@ -1580,10 +1580,10 @@ describe('render Table with filterType feature', () => {
           expect(screen.getAllByTestId('DesignSystem-Select-Option').length).toBeGreaterThan(0);
         });
 
-        // Find the div with style inside the Select listbox
+        // The div with minWidth/maxWidth wraps around the listbox (is its parent)
         const listbox = document.querySelector('[role="listbox"]');
         expect(listbox).toBeInTheDocument();
-        const selectListDiv = listbox?.querySelector('div[style]');
+        const selectListDiv = listbox?.closest('div[style]');
         expect(selectListDiv).toBeInTheDocument();
         const style = (selectListDiv as HTMLElement).style;
         expect(parseFloat(style.minWidth || '0')).toBeGreaterThanOrEqual(200);
@@ -1623,10 +1623,10 @@ describe('render Table with filterType feature', () => {
           expect(screen.getAllByTestId('DesignSystem-Select-Option').length).toBeGreaterThan(0);
         });
 
-        // Find the div with style inside the Select listbox
+        // The div with minWidth/maxWidth wraps around the listbox (is its parent)
         const listbox = document.querySelector('[role="listbox"]');
         expect(listbox).toBeInTheDocument();
-        const selectListDiv = listbox?.querySelector('div[style]');
+        const selectListDiv = listbox?.closest('div[style]');
         expect(selectListDiv).toBeInTheDocument();
         const style = (selectListDiv as HTMLElement).style;
         expect(style.maxWidth).toBe('500px');
@@ -1663,10 +1663,10 @@ describe('render Table with filterType feature', () => {
           expect(screen.getAllByTestId('DesignSystem-Select-Option').length).toBeGreaterThan(0);
         });
 
-        // Find the div with style inside the Select listbox
+        // The div with minWidth/maxWidth wraps around the listbox (is its parent)
         const listbox = document.querySelector('[role="listbox"]');
         expect(listbox).toBeInTheDocument();
-        const selectListDiv = listbox?.querySelector('div[style]');
+        const selectListDiv = listbox?.closest('div[style]');
         expect(selectListDiv).toBeInTheDocument();
         const style = (selectListDiv as HTMLElement).style;
         // Should be clamped to 176 since 150 < 176
@@ -1703,10 +1703,10 @@ describe('render Table with filterType feature', () => {
           expect(screen.getAllByTestId('DesignSystem-Select-Option').length).toBeGreaterThan(0);
         });
 
-        // Find the div with style inside the Select listbox
+        // The div with minWidth/maxWidth wraps around the listbox (is its parent)
         const listbox = document.querySelector('[role="listbox"]');
         expect(listbox).toBeInTheDocument();
-        const selectListDiv = listbox?.querySelector('div[style]');
+        const selectListDiv = listbox?.closest('div[style]');
         expect(selectListDiv).toBeInTheDocument();
         const style = (selectListDiv as HTMLElement).style;
         expect(parseFloat(style.minWidth || '0')).toBeGreaterThanOrEqual(176);
