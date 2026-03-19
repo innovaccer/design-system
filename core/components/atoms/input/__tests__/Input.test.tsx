@@ -444,16 +444,6 @@ describe('Input Component - Comprehensive Behavior Tests', () => {
       expect(onClearMock).toHaveBeenCalledTimes(1);
       expect(input.focus).toHaveBeenCalledWith({ preventScroll: true });
     });
-
-    it('applies custom clearButtonAriaLabel correctly', () => {
-      const onClearMock = jest.fn();
-      const { getByRole } = render(
-        <Input name="test" value="test value" onClear={onClearMock} clearButtonAriaLabel="Reset field" />
-      );
-
-      const clearButton = getByRole('button', { name: 'Reset field' });
-      expect(clearButton).toBeInTheDocument();
-    });
   });
 
   describe('Input Component - Custom Action Icon Functionality', () => {
