@@ -139,11 +139,6 @@ export interface InputProps extends BaseProps, BaseHtmlProps<HTMLInputElement> {
    * Custom Icon Component to be passed to Input to replace Clear Icon in the right
    */
   actionIcon?: React.ReactElement<IconProps>;
-  /**
-   * Aria label for the clear button
-   * @default "Clear input"
-   */
-  clearButtonAriaLabel?: string;
 }
 
 const sizeMapping = {
@@ -184,7 +179,6 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     onFocus,
     onPaste,
     actionIcon,
-    clearButtonAriaLabel,
     className,
     autoFocus,
     disabled,
@@ -222,7 +216,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     }
   }, [type]);
 
-  const resolvedClearButtonAriaLabel = clearButtonAriaLabel ?? (placeholder ? `Clear ${placeholder}` : 'Clear input');
+  const resolvedClearButtonAriaLabel = placeholder ? `Clear ${placeholder}` : 'Clear input';
 
   const baseProps = extractBaseProps(props);
 
