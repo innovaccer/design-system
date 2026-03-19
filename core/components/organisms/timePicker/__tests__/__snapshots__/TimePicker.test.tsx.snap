@@ -198,14 +198,16 @@ exports[`TimePicker component prop:time snapshot
           value="3:30 AM"
         />
         <div
+          aria-label="Clear --:-- AM"
           class="Input-icon Input-iconWrapper--right"
+          role="button"
+          tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
             data-test="DesignSystem-Input--closeIcon"
-            role="button"
             style="font-size: 16px; width: 16px;"
-            tabindex="0"
           >
             close
           </i>
@@ -240,14 +242,16 @@ exports[`TimePicker component prop:time snapshot
           value="08:44 PM"
         />
         <div
+          aria-label="Clear --:-- AM"
           class="Input-icon Input-iconWrapper--right"
+          role="button"
+          tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
             data-test="DesignSystem-Input--closeIcon"
-            role="button"
             style="font-size: 16px; width: 16px;"
-            tabindex="0"
           >
             close
           </i>
