@@ -49750,16 +49750,21 @@ exports[`DateRangePicker component
               <div
                 class="Input-icon Input-iconWrapper--right"
               >
-                <i
+                <button
                   aria-label="Clear mm/dd/yyyy"
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
+                  class="Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
-                  tabindex="0"
+                  type="button"
                 >
-                  close
-                </i>
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close
+                  </i>
+                </button>
               </div>
             </div>
           </div>
@@ -49813,16 +49818,21 @@ exports[`DateRangePicker component
               <div
                 class="Input-icon Input-iconWrapper--right"
               >
-                <i
+                <button
                   aria-label="Clear mm/dd/yyyy"
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
+                  class="Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
-                  tabindex="0"
+                  type="button"
                 >
-                  close
-                </i>
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close
+                  </i>
+                </button>
               </div>
             </div>
           </div>
@@ -49895,16 +49905,21 @@ exports[`DateRangePicker component
               <div
                 class="Input-icon Input-iconWrapper--right"
               >
-                <i
+                <button
                   aria-label="Clear mm/dd/yyyy"
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
+                  class="Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
-                  tabindex="0"
+                  type="button"
                 >
-                  close
-                </i>
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close
+                  </i>
+                </button>
               </div>
             </div>
           </div>
@@ -49958,16 +49973,21 @@ exports[`DateRangePicker component
               <div
                 class="Input-icon Input-iconWrapper--right"
               >
-                <i
+                <button
                   aria-label="Clear mm/dd/yyyy"
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
+                  class="Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
-                  tabindex="0"
+                  type="button"
                 >
-                  close
-                </i>
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close
+                  </i>
+                </button>
               </div>
             </div>
           </div>
@@ -50040,16 +50060,21 @@ exports[`DateRangePicker component
               <div
                 class="Input-icon Input-iconWrapper--right"
               >
-                <i
+                <button
                   aria-label="Clear mm/dd/yyyy"
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
+                  class="Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
-                  tabindex="0"
+                  type="button"
                 >
-                  close
-                </i>
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close
+                  </i>
+                </button>
               </div>
             </div>
           </div>
@@ -50103,16 +50128,21 @@ exports[`DateRangePicker component
               <div
                 class="Input-icon Input-iconWrapper--right"
               >
-                <i
+                <button
                   aria-label="Clear mm/dd/yyyy"
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
+                  class="Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
-                  tabindex="0"
+                  type="button"
                 >
-                  close
-                </i>
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close
+                  </i>
+                </button>
               </div>
             </div>
           </div>
@@ -51485,16 +51515,21 @@ exports[`DateRangePicker component
               <div
                 class="Input-icon Input-iconWrapper--right"
               >
-                <i
+                <button
                   aria-label="Clear mm/dd/yyyy"
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
+                  class="Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
-                  tabindex="0"
+                  type="button"
                 >
-                  close
-                </i>
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close
+                  </i>
+                </button>
               </div>
             </div>
           </div>
@@ -51548,16 +51583,21 @@ exports[`DateRangePicker component
               <div
                 class="Input-icon Input-iconWrapper--right"
               >
-                <i
+                <button
                   aria-label="Clear mm/dd/yyyy"
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
+                  class="Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
-                  tabindex="0"
+                  type="button"
                 >
-                  close
-                </i>
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close
+                  </i>
+                </button>
               </div>
             </div>
           </div>
@@ -51630,16 +51670,21 @@ exports[`DateRangePicker component
               <div
                 class="Input-icon Input-iconWrapper--right"
               >
-                <i
+                <button
                   aria-label="Clear mm/dd/yyyy"
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
+                  class="Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
-                  tabindex="0"
+                  type="button"
                 >
-                  close
-                </i>
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close
+                  </i>
+                </button>
               </div>
             </div>
           </div>
@@ -51693,16 +51738,21 @@ exports[`DateRangePicker component
               <div
                 class="Input-icon Input-iconWrapper--right"
               >
-                <i
+                <button
                   aria-label="Clear mm/dd/yyyy"
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
+                  class="Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
-                  tabindex="0"
+                  type="button"
                 >
-                  close
-                </i>
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close
+                  </i>
+                </button>
               </div>
             </div>
           </div>
@@ -51775,16 +51825,21 @@ exports[`DateRangePicker component
               <div
                 class="Input-icon Input-iconWrapper--right"
               >
-                <i
+                <button
                   aria-label="Clear mm/dd/yyyy"
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
+                  class="Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
-                  tabindex="0"
+                  type="button"
                 >
-                  close
-                </i>
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close
+                  </i>
+                </button>
               </div>
             </div>
           </div>
@@ -51838,16 +51893,21 @@ exports[`DateRangePicker component
               <div
                 class="Input-icon Input-iconWrapper--right"
               >
-                <i
+                <button
                   aria-label="Clear mm/dd/yyyy"
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
+                  class="Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
-                  tabindex="0"
+                  type="button"
                 >
-                  close
-                </i>
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close
+                  </i>
+                </button>
               </div>
             </div>
           </div>
@@ -53220,16 +53280,21 @@ exports[`DateRangePicker component
               <div
                 class="Input-icon Input-iconWrapper--right"
               >
-                <i
+                <button
                   aria-label="Clear mm/dd/yyyy"
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
+                  class="Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
-                  tabindex="0"
+                  type="button"
                 >
-                  close
-                </i>
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close
+                  </i>
+                </button>
               </div>
             </div>
           </div>
@@ -53283,16 +53348,21 @@ exports[`DateRangePicker component
               <div
                 class="Input-icon Input-iconWrapper--right"
               >
-                <i
+                <button
                   aria-label="Clear mm/dd/yyyy"
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
+                  class="Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
-                  tabindex="0"
+                  type="button"
                 >
-                  close
-                </i>
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close
+                  </i>
+                </button>
               </div>
             </div>
           </div>
@@ -54597,16 +54667,21 @@ exports[`DateRangePicker component
               <div
                 class="Input-icon Input-iconWrapper--right"
               >
-                <i
+                <button
                   aria-label="Clear mm/dd/yyyy"
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
+                  class="Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
-                  tabindex="0"
+                  type="button"
                 >
-                  close
-                </i>
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close
+                  </i>
+                </button>
               </div>
             </div>
           </div>
@@ -54660,16 +54735,21 @@ exports[`DateRangePicker component
               <div
                 class="Input-icon Input-iconWrapper--right"
               >
-                <i
+                <button
                   aria-label="Clear mm/dd/yyyy"
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
+                  class="Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
-                  tabindex="0"
+                  type="button"
                 >
-                  close
-                </i>
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close
+                  </i>
+                </button>
               </div>
             </div>
           </div>
@@ -55974,16 +56054,21 @@ exports[`DateRangePicker component
               <div
                 class="Input-icon Input-iconWrapper--right"
               >
-                <i
+                <button
                   aria-label="Clear mm/dd/yyyy"
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
+                  class="Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
-                  tabindex="0"
+                  type="button"
                 >
-                  close
-                </i>
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close
+                  </i>
+                </button>
               </div>
             </div>
           </div>
@@ -56037,16 +56122,21 @@ exports[`DateRangePicker component
               <div
                 class="Input-icon Input-iconWrapper--right"
               >
-                <i
+                <button
                   aria-label="Clear mm/dd/yyyy"
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
+                  class="Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
-                  tabindex="0"
+                  type="button"
                 >
-                  close
-                </i>
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close
+                  </i>
+                </button>
               </div>
             </div>
           </div>
@@ -58651,16 +58741,21 @@ exports[`DateRangePicker component
               <div
                 class="Input-icon Input-iconWrapper--right"
               >
-                <i
+                <button
                   aria-label="Clear mm/dd/yyyy"
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
+                  class="Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
-                  tabindex="0"
+                  type="button"
                 >
-                  close
-                </i>
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close
+                  </i>
+                </button>
               </div>
             </div>
           </div>
@@ -58714,16 +58809,21 @@ exports[`DateRangePicker component
               <div
                 class="Input-icon Input-iconWrapper--right"
               >
-                <i
+                <button
                   aria-label="Clear mm/dd/yyyy"
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
+                  class="Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
-                  tabindex="0"
+                  type="button"
                 >
-                  close
-                </i>
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close
+                  </i>
+                </button>
               </div>
             </div>
           </div>
@@ -60028,16 +60128,21 @@ exports[`DateRangePicker component
               <div
                 class="Input-icon Input-iconWrapper--right"
               >
-                <i
+                <button
                   aria-label="Clear mm/dd/yyyy"
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
+                  class="Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
-                  tabindex="0"
+                  type="button"
                 >
-                  close
-                </i>
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close
+                  </i>
+                </button>
               </div>
             </div>
           </div>
@@ -60091,16 +60196,21 @@ exports[`DateRangePicker component
               <div
                 class="Input-icon Input-iconWrapper--right"
               >
-                <i
+                <button
                   aria-label="Clear mm/dd/yyyy"
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
+                  class="Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
-                  tabindex="0"
+                  type="button"
                 >
-                  close
-                </i>
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close
+                  </i>
+                </button>
               </div>
             </div>
           </div>
@@ -61405,16 +61515,21 @@ exports[`DateRangePicker component
               <div
                 class="Input-icon Input-iconWrapper--right"
               >
-                <i
+                <button
                   aria-label="Clear mm/dd/yyyy"
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
+                  class="Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
-                  tabindex="0"
+                  type="button"
                 >
-                  close
-                </i>
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close
+                  </i>
+                </button>
               </div>
             </div>
           </div>
@@ -61468,16 +61583,21 @@ exports[`DateRangePicker component
               <div
                 class="Input-icon Input-iconWrapper--right"
               >
-                <i
+                <button
                   aria-label="Clear mm/dd/yyyy"
-                  class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
+                  class="Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
-                  tabindex="0"
+                  type="button"
                 >
-                  close
-                </i>
+                  <i
+                    aria-hidden="true"
+                    class="material-symbols material-symbols-rounded Icon"
+                    data-test="DesignSystem-Icon"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close
+                  </i>
+                </button>
               </div>
             </div>
           </div>

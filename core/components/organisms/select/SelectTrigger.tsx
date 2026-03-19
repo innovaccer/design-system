@@ -57,6 +57,11 @@ export interface SelectTriggerProps extends BaseProps {
    */
   onClear?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
   /**
+   * Custom accessible label for the clear button.
+   * Defaults to "Clear {inlineLabel || placeholder || 'selection'}"
+   */
+  clearButtonAriaLabel?: string;
+  /**
    * A function used to customize the label displayed when multiple options are selected.
    *
    * The function receives the count of selected options as its argument and should return a string
@@ -85,6 +90,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     inlineLabel,
     iconType,
     onClear,
+    clearButtonAriaLabel,
     setLabel,
     minWidth,
     maxWidth,
@@ -164,6 +170,8 @@ const SelectTrigger = (props: SelectTriggerProps) => {
   const iconClass = classNames('align-items-center', 'mr-2', 'ml-3', 'p-3-5', selectStyles['Select-crossButton']);
   const iconSize = triggerSize === 'small' ? 14 : 16;
   const triggerTextSize = triggerSize === 'small' ? 'small' : 'regular';
+  const clearLabel = clearButtonAriaLabel || `Clear ${inlineLabel || ariaLabel || placeholder || 'selection'}`;
+
   return (
     <Tooltip
       showOnTruncation={true}
@@ -172,9 +180,10 @@ const SelectTrigger = (props: SelectTriggerProps) => {
       elementRef={elementRef}
       triggerClass="w-100"
     >
-      <button
+      <div
         ref={triggerRef}
         onKeyDown={(event) => {
+          if (disabled) return;
           if (
             !openPopover &&
             isOptionSelected &&
@@ -187,10 +196,9 @@ const SelectTrigger = (props: SelectTriggerProps) => {
           }
           handleKeyDownTrigger(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem);
         }}
-        type="button"
         className={buttonClass}
-        disabled={disabled}
-        tabIndex={0}
+        aria-disabled={disabled || undefined}
+        tabIndex={disabled ? -1 : 0}
         style={triggerStyle}
         data-test="DesignSystem-Select-trigger"
         {...rest}
@@ -225,13 +233,19 @@ const SelectTrigger = (props: SelectTriggerProps) => {
           </div>
         }
         {isOptionSelected && withClearButton && (
-          <span className={iconClass} onClick={onClearHandler} aria-hidden data-test="DesignSystem-Select--closeIcon">
+          <button
+            type="button"
+            className={iconClass}
+            aria-label={clearLabel}
+            onClick={onClearHandler}
+            data-test="DesignSystem-Select--closeIcon"
+          >
             <Icon appearance={buttonDisabled} name="close" size={12} type={iconType} aria-hidden />
-          </span>
+          </button>
         )}
 
-        <Icon appearance={buttonDisabled} name={iconName} type={iconType} />
-      </button>
+        <Icon appearance={buttonDisabled} name={iconName} type={iconType} aria-hidden />
+      </div>
     </Tooltip>
   );
 };

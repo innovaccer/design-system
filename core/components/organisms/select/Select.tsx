@@ -183,7 +183,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
   const [selectValue, setSelectValue] = React.useState<OptionType | OptionType[]>(mapValue);
   const [isOptionSelected, setIsOptionSelected] = React.useState(false);
 
-  const triggerRef = React.createRef<HTMLButtonElement>();
+  const triggerRef = React.createRef<HTMLElement>();
   const listRef = React.useRef<HTMLDivElement | null>(null);
 
   const [withSearch, setWithSearch] = React.useState(false);

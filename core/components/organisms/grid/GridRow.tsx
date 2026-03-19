@@ -49,13 +49,23 @@ export const GridRow = (props: GridRowProps) => {
     [styles['Grid-row--activated']]: data._activated,
   });
 
+  const isRowClickable = type === 'resource' && !loading && !!onRowClick;
+
   const onClickHandler = React.useCallback(() => {
-    if (type === 'resource' && !loading) {
-      if (onRowClick) {
-        onRowClick(data, rI);
-      }
+    if (isRowClickable) {
+      onRowClick!(data, rI);
     }
-  }, [data, rI]);
+  }, [data, rI, isRowClickable]);
+
+  const onRowKeyDown = React.useCallback(
+    (event: React.KeyboardEvent<HTMLDivElement>) => {
+      if (isRowClickable && (event.key === 'Enter' || event.key === ' ')) {
+        event.preventDefault();
+        onRowClick!(data, rI);
+      }
+    },
+    [data, rI, isRowClickable]
+  );
 
   const pinnedSchema = schema.filter((s) => !s.hidden && s.pinned);
   const leftPinnedSchema = pinnedSchema.filter((s) => !s.hidden && s.pinned === 'left');
@@ -79,15 +89,20 @@ export const GridRow = (props: GridRowProps) => {
     });
 
     return (
-      // TODO(a11y)
-      // eslint-disable-next-line
-      <div className={CheckboxClass} onClick={(e) => e.stopPropagation()} data-test="DesignSystem-Grid-cellCheckbox" role="gridcell">
+      <div
+        className={CheckboxClass}
+        onClick={(e) => e.stopPropagation()}
+        onKeyDown={(e) => e.stopPropagation()}
+        data-test="DesignSystem-Grid-cellCheckbox"
+        role="gridcell"
+        tabIndex={-1}
+      >
         {loading ? (
           <Placeholder className="mr-4" />
         ) : (
           <Checkbox
             checked={!!data._selected}
-            aria-label={`Select row ${rI}`}
+            aria-label={`Select row ${rI + 1}`}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
               onSelect(rI, event.target.checked);
             }}
@@ -148,9 +163,15 @@ export const GridRow = (props: GridRowProps) => {
 
   return (
     <div className={wrapperClasses} data-test="DesignSystem-Grid-rowWrapper">
-      {/* TODO(a11y)  */}
-      {/* eslint-disable-next-line */}
-      <div data-test="DesignSystem-Grid-row" className={rowClasses} onClick={onClickHandler} ref={rowRef} role="row">
+      <div
+        data-test="DesignSystem-Grid-row"
+        className={rowClasses}
+        onClick={onClickHandler}
+        onKeyDown={onRowKeyDown}
+        ref={rowRef}
+        role="row"
+        tabIndex={isRowClickable ? 0 : undefined}
+      >
         {renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left')}
         {renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length)}
         {renderSchema(rightPinnedSchema, false, 'right')}

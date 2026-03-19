@@ -191,13 +191,17 @@ describe('Select component single input trigger tests', () => {
     expect(FunctionValue).toHaveBeenCalled();
   });
 
-  it('check for onChange event handler in single input trigger', () => {
-    const { getByTestId } = render(<Select onSelect={FunctionValue}>{children}</Select>);
+  it('check for onSelect event handler when option is clicked', () => {
+    const onSelectMock = jest.fn();
+    const { getByTestId } = render(<Select onSelect={onSelectMock}>{children}</Select>);
     const inputTrigger = getByTestId('DesignSystem-Select-trigger');
     expect(inputTrigger).toBeInTheDocument();
 
-    fireEvent.change(inputTrigger, { target: { label: 'Option 2', value: 'Option 2' } });
-    expect(FunctionValue).toHaveBeenCalled();
+    fireEvent.click(inputTrigger);
+    const optionItem = getByTestId('DesignSystem-Select-Option');
+    fireEvent.click(optionItem);
+
+    expect(onSelectMock).toHaveBeenCalled();
   });
 
   it('check for onClear event handler in single input trigger', () => {

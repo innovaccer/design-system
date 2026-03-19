@@ -13,7 +13,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -23,7 +23,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -42,7 +41,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -62,7 +61,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -72,7 +71,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -91,7 +89,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -111,7 +109,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -121,7 +119,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -140,7 +137,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -160,7 +157,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -170,7 +167,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -189,7 +185,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -209,7 +205,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -219,7 +215,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -238,7 +233,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -258,7 +253,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -268,7 +263,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -287,7 +281,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -307,7 +301,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -317,7 +311,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -336,7 +329,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -356,7 +349,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -366,7 +359,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -385,7 +377,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -405,7 +397,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -415,7 +407,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -434,7 +425,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -454,7 +445,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -464,7 +455,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -483,7 +473,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -503,7 +493,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -513,7 +503,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -532,7 +521,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -552,7 +541,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -562,7 +551,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -581,7 +569,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -601,7 +589,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -611,7 +599,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -630,7 +617,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -650,7 +637,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -660,7 +647,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -679,7 +665,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -699,7 +685,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -709,7 +695,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -728,7 +713,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -748,7 +733,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -758,7 +743,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -777,7 +761,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -797,7 +781,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -807,7 +791,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -826,7 +809,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -846,7 +829,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -856,7 +839,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -875,7 +857,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -895,7 +877,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -905,7 +887,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -924,7 +905,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -944,7 +925,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -954,7 +935,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -973,7 +953,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -993,7 +973,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -1003,7 +983,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1022,7 +1001,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1042,7 +1021,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -1052,7 +1031,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1071,7 +1049,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1091,7 +1069,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -1101,7 +1079,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1120,7 +1097,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1140,7 +1117,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -1150,7 +1127,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1169,7 +1145,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1189,7 +1165,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -1199,7 +1175,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1218,7 +1193,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1238,7 +1213,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -1248,7 +1223,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1267,7 +1241,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1287,7 +1261,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -1297,7 +1271,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1316,7 +1289,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1336,7 +1309,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -1346,7 +1319,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1365,7 +1337,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1385,7 +1357,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -1395,7 +1367,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1414,7 +1385,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1434,7 +1405,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -1444,7 +1415,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1463,7 +1433,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1483,7 +1453,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -1493,7 +1463,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1512,7 +1481,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1532,7 +1501,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -1542,7 +1511,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1561,7 +1529,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1581,7 +1549,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -1591,7 +1559,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1610,7 +1577,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1630,7 +1597,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -1640,7 +1607,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1659,7 +1625,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1679,7 +1645,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -1689,7 +1655,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1708,7 +1673,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1728,7 +1693,7 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -1738,7 +1703,6 @@ exports[`Select List component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1757,7 +1721,7 @@ exports[`Select List component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1777,7 +1741,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -1787,7 +1751,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1806,7 +1769,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1826,7 +1789,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -1836,7 +1799,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1855,7 +1817,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1875,7 +1837,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -1885,7 +1847,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1904,7 +1865,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1924,7 +1885,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -1934,7 +1895,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1953,7 +1913,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1973,7 +1933,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -1983,7 +1943,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2002,7 +1961,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2022,7 +1981,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -2032,7 +1991,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2051,7 +2009,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2071,7 +2029,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -2081,7 +2039,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2100,7 +2057,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2120,7 +2077,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -2130,7 +2087,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2149,7 +2105,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2169,7 +2125,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -2179,7 +2135,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2198,7 +2153,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2218,7 +2173,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -2228,7 +2183,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2247,7 +2201,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2267,7 +2221,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -2277,7 +2231,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2296,7 +2249,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2316,7 +2269,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -2326,7 +2279,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2345,7 +2297,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2365,7 +2317,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -2375,7 +2327,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2394,7 +2345,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2414,7 +2365,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -2424,7 +2375,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2443,7 +2393,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2463,7 +2413,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -2473,7 +2423,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2492,7 +2441,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2512,7 +2461,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -2522,7 +2471,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2541,7 +2489,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2561,7 +2509,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -2571,7 +2519,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2590,7 +2537,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2610,7 +2557,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -2620,7 +2567,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2639,7 +2585,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2659,7 +2605,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -2669,7 +2615,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2688,7 +2633,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2708,7 +2653,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -2718,7 +2663,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2737,7 +2681,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2757,7 +2701,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -2767,7 +2711,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2786,7 +2729,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2806,7 +2749,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -2816,7 +2759,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2835,7 +2777,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2855,7 +2797,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -2865,7 +2807,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2884,7 +2825,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2904,7 +2845,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -2914,7 +2855,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2933,7 +2873,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2953,7 +2893,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -2963,7 +2903,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2982,7 +2921,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3002,7 +2941,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -3012,7 +2951,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -3031,7 +2969,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3051,7 +2989,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -3061,7 +2999,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -3080,7 +3017,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3100,7 +3037,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -3110,7 +3047,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -3129,7 +3065,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3149,7 +3085,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -3159,7 +3095,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -3178,7 +3113,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3198,7 +3133,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -3208,7 +3143,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -3227,7 +3161,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3247,7 +3181,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -3257,7 +3191,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -3276,7 +3209,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3296,7 +3229,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -3306,7 +3239,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -3325,7 +3257,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3345,7 +3277,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -3355,7 +3287,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -3374,7 +3305,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3394,7 +3325,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -3404,7 +3335,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -3423,7 +3353,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3443,7 +3373,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -3453,7 +3383,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -3472,7 +3401,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3492,7 +3421,7 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -3502,7 +3431,6 @@ exports[`Select Option component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -3521,7 +3449,7 @@ exports[`Select Option component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3541,7 +3469,7 @@ exports[`Select component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -3551,7 +3479,6 @@ exports[`Select component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -3570,7 +3497,7 @@ exports[`Select component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3590,7 +3517,7 @@ exports[`Select component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
@@ -3600,7 +3527,6 @@ exports[`Select component snapshots
           role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -3619,7 +3545,7 @@ exports[`Select component snapshots
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
