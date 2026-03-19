@@ -396,6 +396,64 @@ describe('Input Component - Comprehensive Behavior Tests', () => {
       const clearIcon = getByTestId('DesignSystem-Input--closeIcon');
       expect(clearIcon).toBeInTheDocument();
     });
+
+    it('uses placeholder in default aria-label for clear button', () => {
+      const onClearMock = jest.fn();
+      const { getByRole } = render(<Input name="test" placeholder="Name" value="test value" onClear={onClearMock} />);
+
+      const clearButton = getByRole('button', { name: 'Clear Name' });
+      expect(clearButton).toBeInTheDocument();
+    });
+
+    it('falls back to "Clear input" aria-label when no placeholder is provided', () => {
+      const onClearMock = jest.fn();
+      const { getByRole } = render(<Input name="test" value="test value" onClear={onClearMock} />);
+
+      const clearButton = getByRole('button', { name: 'Clear input' });
+      expect(clearButton).toBeInTheDocument();
+    });
+
+    it('calls onClear and focuses input when clear button receives Enter key', () => {
+      const onClearMock = jest.fn();
+      const { getByRole, getByTestId } = render(
+        <Input name="test" placeholder="Name" value="test value" onClear={onClearMock} />
+      );
+
+      const input = getByTestId('DesignSystem-Input') as HTMLInputElement;
+      const clearButton = getByRole('button', { name: 'Clear Name' });
+
+      input.focus = jest.fn();
+      fireEvent.keyDown(clearButton, { key: 'Enter' });
+
+      expect(onClearMock).toHaveBeenCalledTimes(1);
+      expect(input.focus).toHaveBeenCalledWith({ preventScroll: true });
+    });
+
+    it('calls onClear and focuses input when clear button receives Space key', () => {
+      const onClearMock = jest.fn();
+      const { getByRole, getByTestId } = render(
+        <Input name="test" placeholder="Name" value="test value" onClear={onClearMock} />
+      );
+
+      const input = getByTestId('DesignSystem-Input') as HTMLInputElement;
+      const clearButton = getByRole('button', { name: 'Clear Name' });
+
+      input.focus = jest.fn();
+      fireEvent.keyDown(clearButton, { key: ' ' });
+
+      expect(onClearMock).toHaveBeenCalledTimes(1);
+      expect(input.focus).toHaveBeenCalledWith({ preventScroll: true });
+    });
+
+    it('applies custom clearButtonAriaLabel correctly', () => {
+      const onClearMock = jest.fn();
+      const { getByRole } = render(
+        <Input name="test" value="test value" onClear={onClearMock} clearButtonAriaLabel="Reset field" />
+      );
+
+      const clearButton = getByRole('button', { name: 'Reset field' });
+      expect(clearButton).toBeInTheDocument();
+    });
   });
 
   describe('Input Component - Custom Action Icon Functionality', () => {
