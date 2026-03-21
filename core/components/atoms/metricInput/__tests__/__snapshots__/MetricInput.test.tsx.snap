@@ -11,6 +11,7 @@ exports[`MetricInput component
       role="presentation"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Icon--subtle MetricInput-icon MetricInput-icon--regular"
         data-test="DesignSystem-MetricInput--icon"
         style="font-size: 16px; width: 16px;"
@@ -33,6 +34,7 @@ exports[`MetricInput component
           type="button"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 14px; width: 14px;"
@@ -47,6 +49,7 @@ exports[`MetricInput component
           type="button"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 14px; width: 14px;"
@@ -71,6 +74,7 @@ exports[`MetricInput component
       role="presentation"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Icon--subtle MetricInput-icon MetricInput-icon--regular"
         data-test="DesignSystem-MetricInput--icon"
         style="font-size: 16px; width: 16px;"
@@ -93,6 +97,7 @@ exports[`MetricInput component
           type="button"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 14px; width: 14px;"
@@ -107,6 +112,7 @@ exports[`MetricInput component
           type="button"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 14px; width: 14px;"
@@ -159,6 +165,7 @@ exports[`MetricInput component
           type="button"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -173,6 +180,7 @@ exports[`MetricInput component
           type="button"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -225,6 +233,7 @@ exports[`MetricInput component
           type="button"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 14px; width: 14px;"
@@ -239,6 +248,7 @@ exports[`MetricInput component
           type="button"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 14px; width: 14px;"
@@ -291,6 +301,7 @@ exports[`MetricInput component
           type="button"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 12px; width: 12px;"
@@ -305,6 +316,7 @@ exports[`MetricInput component
           type="button"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Icon"
             style="font-size: 12px; width: 12px;"

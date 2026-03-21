@@ -28,6 +28,18 @@ type PopperProps = (typeof propsList)[number];
 
 export interface PopoverProps extends Pick<PopperWrapperProps, PopperProps>, BaseProps {
   /**
+   * Accessible role for the popover wrapper
+   */
+  role?: string;
+  /**
+   * Accessible name for the popover (forwarded to the popup)
+   */
+  'aria-label'?: string;
+  /**
+   * ID of element that labels the popover (forwarded to the popup)
+   */
+  'aria-labelledby'?: string;
+  /**
    * To be rendered in `Popover` component
    */
   children: React.ReactNode;
@@ -153,7 +165,16 @@ export const Popover = (props: PopoverProps) => {
   );
 
   const PopoverWrapper = (
-    <div data-test="DesignSystem-Popover" className={classes} data-layer={true} data-opened={open} data-name={name}>
+    <div
+      data-test="DesignSystem-Popover"
+      className={classes}
+      data-layer={true}
+      data-opened={open}
+      data-name={name}
+      role={props.role}
+      aria-label={props['aria-label']}
+      aria-labelledby={props['aria-labelledby']}
+    >
       {children}
     </div>
   );

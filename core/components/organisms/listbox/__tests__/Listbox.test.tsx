@@ -351,8 +351,8 @@ describe('Listbox component test for keyboard events', () => {
       </Listbox>
     );
 
-    const sourceElement = getAllByTestId('DesignSystem-Listbox-ItemWrapper')[0];
-    const targetElement = getAllByTestId('DesignSystem-Listbox-ItemWrapper')[1];
+    const sourceElement = getAllByTestId('DesignSystem-Listbox-Item')[0];
+    const targetElement = getAllByTestId('DesignSystem-Listbox-Item')[1];
     fireEvent.click(sourceElement);
     fireEvent.keyDown(sourceElement, { key: 'ArrowDown' });
 
@@ -372,8 +372,8 @@ describe('Listbox component test for keyboard events', () => {
       </Listbox>
     );
 
-    const sourceElement = getAllByTestId('DesignSystem-Listbox-ItemWrapper')[1];
-    const targetElement = getAllByTestId('DesignSystem-Listbox-ItemWrapper')[0];
+    const sourceElement = getAllByTestId('DesignSystem-Listbox-Item')[1];
+    const targetElement = getAllByTestId('DesignSystem-Listbox-Item')[0];
     fireEvent.click(sourceElement);
     fireEvent.keyDown(sourceElement, { key: 'ArrowUp' });
 
@@ -393,8 +393,8 @@ describe('Listbox component test for keyboard events', () => {
       </Listbox>
     );
 
-    const sourceElement = getAllByTestId('DesignSystem-Listbox-ItemWrapper')[1];
-    const targetElement = getAllByTestId('DesignSystem-Listbox-ItemWrapper')[3];
+    const sourceElement = getAllByTestId('DesignSystem-Listbox-Item')[1];
+    const targetElement = getAllByTestId('DesignSystem-Listbox-Item')[3];
     fireEvent.click(sourceElement);
     fireEvent.keyDown(sourceElement, { key: 'ArrowDown' });
 
@@ -414,8 +414,8 @@ describe('Listbox component test for keyboard events', () => {
       </Listbox>
     );
 
-    const sourceElement = getAllByTestId('DesignSystem-Listbox-ItemWrapper')[3];
-    const targetElement = getAllByTestId('DesignSystem-Listbox-ItemWrapper')[1];
+    const sourceElement = getAllByTestId('DesignSystem-Listbox-Item')[3];
+    const targetElement = getAllByTestId('DesignSystem-Listbox-Item')[1];
     fireEvent.click(sourceElement);
     fireEvent.keyDown(sourceElement, { key: 'ArrowUp' });
 

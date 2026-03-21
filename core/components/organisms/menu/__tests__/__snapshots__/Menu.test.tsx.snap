@@ -39,6 +39,7 @@ exports[`Menu component snapshot
       <nav
         class="Listbox"
         data-test="DesignSystem-Menu-List"
+        role="presentation"
       >
         <a
           class="Listbox-item-wrapper"
@@ -49,7 +50,6 @@ exports[`Menu component snapshot
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
             data-test="DesignSystem-Listbox-ItemWrapper"
-            role="tablist"
             tabindex="-1"
           >
             Menu Item 1
@@ -64,7 +64,6 @@ exports[`Menu component snapshot
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
             data-test="DesignSystem-Listbox-ItemWrapper"
-            role="tablist"
             tabindex="-1"
           >
             Menu Item 2
@@ -115,6 +114,7 @@ exports[`Menu component with Nesting snapshot
       <nav
         class="Listbox"
         data-test="DesignSystem-Menu-List"
+        role="presentation"
       >
         <a
           class="Listbox-item-wrapper"
@@ -125,7 +125,6 @@ exports[`Menu component with Nesting snapshot
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
             data-test="DesignSystem-Listbox-ItemWrapper"
-            role="tablist"
             tabindex="-1"
           >
             Menu Item 1
@@ -140,7 +139,6 @@ exports[`Menu component with Nesting snapshot
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
             data-test="DesignSystem-Listbox-ItemWrapper"
-            role="tablist"
             tabindex="-1"
           >
             Menu Item 2
@@ -163,11 +161,11 @@ exports[`Menu component with Nesting snapshot
             <div
               class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item d-flex align-items-center justify-content-between w-100"
               data-test="DesignSystem-Listbox-ItemWrapper"
-              role="tablist"
               tabindex="-1"
             >
               Menu Item 3
               <i
+                aria-hidden="true"
                 class="material-symbols material-symbols-rounded Icon"
                 data-test="DesignSystem-Icon"
                 style="font-size: 16px; width: 16px;"
@@ -194,7 +192,7 @@ exports[`Menu component with Trigger snapshot
     >
       <button
         aria-expanded="false"
-        aria-haspopup="true"
+        aria-haspopup="menu"
         aria-label="Open menu"
         class="Button Button--regular Button--regularSquare Button--basic"
         data-test="DesignSystem-Menu-Trigger"
@@ -205,6 +203,7 @@ exports[`Menu component with Trigger snapshot
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -229,7 +228,7 @@ exports[`Menu component with Trigger snapshot
     >
       <button
         aria-expanded="true"
-        aria-haspopup="true"
+        aria-haspopup="menu"
         aria-label="Open menu"
         class="Button Button--regular Button--regularSquare Button--basic Menu-Trigger--active"
         data-test="DesignSystem-Menu-Trigger"
@@ -240,6 +239,7 @@ exports[`Menu component with Trigger snapshot
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -266,6 +266,7 @@ exports[`Menu component with Trigger snapshot
       <nav
         class="Listbox"
         data-test="DesignSystem-Menu-List"
+        role="presentation"
       >
         <a
           class="Listbox-item-wrapper"
@@ -276,7 +277,6 @@ exports[`Menu component with Trigger snapshot
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
             data-test="DesignSystem-Listbox-ItemWrapper"
-            role="tablist"
             tabindex="-1"
           >
             Menu Item 1
@@ -291,7 +291,6 @@ exports[`Menu component with Trigger snapshot
           <div
             class="Listbox-item Listbox-item--compressed Listbox-item--option Menu-Item"
             data-test="DesignSystem-Listbox-ItemWrapper"
-            role="tablist"
             tabindex="-1"
           >
             Menu Item 2

@@ -2,10 +2,19 @@ import * as React from 'react';
 import { Listbox } from '@/index';
 import { BaseProps } from '@/utils/types';
 import { TListboxSize } from '@/common.type';
+import ComboboxContext from './ComboboxContext';
 
 type TagType = 'ul' | 'ol' | 'div' | 'nav';
 
 export interface ComboboxListProps extends BaseProps {
+  /**
+   * Accessible name for the listbox
+   */
+  'aria-label'?: string;
+  /**
+   * Associates listbox with an external label
+   */
+  'aria-labelledby'?: string;
   /**
    * React Element to be added inside `list`
    */
@@ -25,8 +34,18 @@ export interface ComboboxListProps extends BaseProps {
 }
 
 export const ComboboxList = (props: ComboboxListProps) => {
+  const contextProp = React.useContext(ComboboxContext);
+  const { popoverId } = contextProp;
+
   return (
-    <Listbox className="py-3" {...props} role="listbox">
+    <Listbox
+      id={popoverId}
+      className="py-3"
+      {...props}
+      role="listbox"
+      aria-label={props['aria-label'] || 'Combobox options'}
+      aria-labelledby={props['aria-labelledby']}
+    >
       {props.children}
     </Listbox>
   );

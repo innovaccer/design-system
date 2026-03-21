@@ -9,6 +9,14 @@ export type navigationPositionType = 'center' | 'bottom';
 
 export interface PageHeaderProps extends BaseProps {
   /**
+   * Accessible label for the page header region
+   */
+  'aria-label'?: string;
+  /**
+   * Associates page header with an external label
+   */
+  'aria-labelledby'?: string;
+  /**
    * Page title
    */
   title: string;
@@ -58,10 +66,6 @@ export interface PageHeaderProps extends BaseProps {
    * provides a border at bottom
    */
   separator: boolean;
-  /**
-   * Accessible label for the page header region
-   */
-  'aria-label'?: string;
 }
 
 export const PageHeader = (props: PageHeaderProps) => {
@@ -80,6 +84,7 @@ export const PageHeader = (props: PageHeaderProps) => {
     className,
     button,
     'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledby,
   } = props;
   const baseProps = extractBaseProps(props);
 
@@ -113,7 +118,7 @@ export const PageHeader = (props: PageHeaderProps) => {
 
   return (
     <div data-test="DesignSystem-PageHeader">
-      <div {...baseProps} className={wrapperClasses} aria-label={ariaLabel}>
+      <div {...baseProps} className={wrapperClasses} aria-label={ariaLabel} aria-labelledby={ariaLabelledby}>
         {breadcrumbs && (
           <div className="pl-6" data-test="DesignSystem-PageHeader--Breadcrumbs">
             {breadcrumbs}

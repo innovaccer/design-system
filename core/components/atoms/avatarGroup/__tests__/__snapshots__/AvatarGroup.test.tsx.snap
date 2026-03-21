@@ -35,6 +35,7 @@ Object {
                   tabindex="0"
                 >
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                     data-test="DesignSystem-Icon"
                     style="font-size: 20px; width: 20px;"
@@ -70,6 +71,7 @@ Object {
                   tabindex="0"
                 >
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                     data-test="DesignSystem-Icon"
                     style="font-size: 20px; width: 20px;"
@@ -113,6 +115,7 @@ Object {
                 tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                   data-test="DesignSystem-Icon"
                   style="font-size: 20px; width: 20px;"
@@ -148,6 +151,7 @@ Object {
                 tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                   data-test="DesignSystem-Icon"
                   style="font-size: 20px; width: 20px;"
@@ -250,6 +254,7 @@ Object {
                   tabindex="0"
                 >
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                     data-test="DesignSystem-Icon"
                     style="font-size: 20px; width: 20px;"
@@ -285,6 +290,7 @@ Object {
                   tabindex="0"
                 >
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                     data-test="DesignSystem-Icon"
                     style="font-size: 20px; width: 20px;"
@@ -328,6 +334,7 @@ Object {
                 tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                   data-test="DesignSystem-Icon"
                   style="font-size: 20px; width: 20px;"
@@ -363,6 +370,7 @@ Object {
                 tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                   data-test="DesignSystem-Icon"
                   style="font-size: 20px; width: 20px;"
@@ -465,6 +473,7 @@ Object {
                   tabindex="0"
                 >
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                     data-test="DesignSystem-Icon"
                     style="font-size: 16px; width: 16px;"
@@ -500,6 +509,7 @@ Object {
                   tabindex="0"
                 >
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                     data-test="DesignSystem-Icon"
                     style="font-size: 16px; width: 16px;"
@@ -543,6 +553,7 @@ Object {
                 tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                   data-test="DesignSystem-Icon"
                   style="font-size: 16px; width: 16px;"
@@ -578,6 +589,7 @@ Object {
                 tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                   data-test="DesignSystem-Icon"
                   style="font-size: 16px; width: 16px;"
@@ -680,6 +692,7 @@ Object {
                   tabindex="0"
                 >
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                     data-test="DesignSystem-Icon"
                     style="font-size: 16px; width: 16px;"
@@ -715,6 +728,7 @@ Object {
                   tabindex="0"
                 >
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                     data-test="DesignSystem-Icon"
                     style="font-size: 16px; width: 16px;"
@@ -758,6 +772,7 @@ Object {
                 tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Icon--accent1Darker Avatar-content"
                   data-test="DesignSystem-Icon"
                   style="font-size: 16px; width: 16px;"
@@ -793,6 +808,7 @@ Object {
                 tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
                   data-test="DesignSystem-Icon"
                   style="font-size: 16px; width: 16px;"

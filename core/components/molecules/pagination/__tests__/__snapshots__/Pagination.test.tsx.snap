@@ -4,7 +4,8 @@ exports[`Pagination component
   type: "basic", page: 10, totalPages: 50, onPageChange: "[Function]"
  1`] = `
 <DocumentFragment>
-  <div
+  <nav
+    aria-label="Pagination"
     class="Pagination Pagination--basic"
     data-test="DesignSystem-Pagination"
   >
@@ -12,6 +13,7 @@ exports[`Pagination component
       class="Pagination-buttonWrapper Pagination-buttonWrapper--previous"
     >
       <button
+        aria-label="First page"
         class="Button Button--regular Button--regularSquare Button--transparent Pagination-button"
         data-test="DesignSystem-Pagination--FirstButton"
         tabindex="0"
@@ -21,6 +23,7 @@ exports[`Pagination component
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -30,6 +33,7 @@ exports[`Pagination component
         </div>
       </button>
       <button
+        aria-label="Previous page"
         class="Button Button--regular Button--regularSquare Button--basic ml-4 mr-3 Pagination-button"
         data-test="DesignSystem-Pagination--PrevButton"
         tabindex="0"
@@ -39,6 +43,7 @@ exports[`Pagination component
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -52,6 +57,7 @@ exports[`Pagination component
       class="Pagination-buttonWrapper Pagination-buttonWrapper--next"
     >
       <button
+        aria-label="Next page"
         class="Button Button--regular Button--regularSquare Button--basic ml-3 mr-4 Pagination-button"
         data-test="DesignSystem-Pagination--NextButton"
         tabindex="0"
@@ -61,6 +67,7 @@ exports[`Pagination component
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -70,6 +77,7 @@ exports[`Pagination component
         </div>
       </button>
       <button
+        aria-label="Last page"
         class="Button Button--regular Button--regularSquare Button--transparent Pagination-button"
         data-test="DesignSystem-Pagination--LastButton"
         tabindex="0"
@@ -79,6 +87,7 @@ exports[`Pagination component
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -88,7 +97,7 @@ exports[`Pagination component
         </div>
       </button>
     </div>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
 
@@ -96,7 +105,8 @@ exports[`Pagination component
   type: "jump", page: 10, totalPages: 50, onPageChange: "[Function]"
  1`] = `
 <DocumentFragment>
-  <div
+  <nav
+    aria-label="Pagination"
     class="Pagination Pagination--jump"
     data-test="DesignSystem-Pagination"
   >
@@ -104,6 +114,7 @@ exports[`Pagination component
       class="Pagination-buttonWrapper Pagination-buttonWrapper--previous"
     >
       <button
+        aria-label="First page"
         class="Button Button--regular Button--regularSquare Button--transparent Pagination-button"
         data-test="DesignSystem-Pagination--FirstButton"
         tabindex="0"
@@ -113,6 +124,7 @@ exports[`Pagination component
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -122,6 +134,7 @@ exports[`Pagination component
         </div>
       </button>
       <button
+        aria-label="Previous page"
         class="Button Button--regular Button--regularSquare Button--basic ml-4 mr-3 Pagination-button"
         data-test="DesignSystem-Pagination--PrevButton"
         tabindex="0"
@@ -131,6 +144,7 @@ exports[`Pagination component
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -149,6 +163,7 @@ exports[`Pagination component
         role="presentation"
       >
         <input
+          aria-label="Page number"
           class="MetricInput-input MetricInput-input--regular"
           data-test="DesignSystem-Pagination--Input"
           name="page"
@@ -165,6 +180,7 @@ exports[`Pagination component
             type="button"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Icon"
               style="font-size: 14px; width: 14px;"
@@ -179,6 +195,7 @@ exports[`Pagination component
             type="button"
           >
             <i
+              aria-hidden="true"
               class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Icon"
               style="font-size: 14px; width: 14px;"
@@ -199,6 +216,7 @@ exports[`Pagination component
       class="Pagination-buttonWrapper Pagination-buttonWrapper--next"
     >
       <button
+        aria-label="Next page"
         class="Button Button--regular Button--regularSquare Button--basic ml-3 mr-4 Pagination-button"
         data-test="DesignSystem-Pagination--NextButton"
         tabindex="0"
@@ -208,6 +226,7 @@ exports[`Pagination component
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -217,6 +236,7 @@ exports[`Pagination component
         </div>
       </button>
       <button
+        aria-label="Last page"
         class="Button Button--regular Button--regularSquare Button--transparent Pagination-button"
         data-test="DesignSystem-Pagination--LastButton"
         tabindex="0"
@@ -226,6 +246,7 @@ exports[`Pagination component
           data-test="DesignSystem-Button--Icon-Wrapper"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             style="font-size: 16px; width: 16px;"
@@ -235,6 +256,6 @@ exports[`Pagination component
         </div>
       </button>
     </div>
-  </div>
+  </nav>
 </DocumentFragment>
 `;

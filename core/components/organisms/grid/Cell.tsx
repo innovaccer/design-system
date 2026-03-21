@@ -207,7 +207,13 @@ const HeaderCell = (props: HeaderCellProps) => {
                 }}
                 filterType={filterType}
                 className="m-0"
-                customTrigger={<Button icon="filter_list" appearance="transparent" />}
+                customTrigger={
+                  <Button
+                    icon="filter_list"
+                    appearance="transparent"
+                    aria-label={`Filter ${schema.displayName || name}`}
+                  />
+                }
               />
             </div>
           )}
@@ -226,7 +232,13 @@ const HeaderCell = (props: HeaderCellProps) => {
                 menu={true}
                 optionType="WITH_ICON"
                 triggerOptions={{
-                  customTrigger: () => <Button icon="more_vert_filled" appearance="transparent" />,
+                  customTrigger: () => (
+                    <Button
+                      icon="more_vert_filled"
+                      appearance="transparent"
+                      aria-label={`More options for ${schema.displayName || name}`}
+                    />
+                  ),
                 }}
                 options={options}
                 align={'left'}
@@ -249,6 +261,14 @@ const HeaderCell = (props: HeaderCellProps) => {
               event.preventDefault();
               resizeCol({ updateColumnSchema }, name, el.current);
               setIsDragged(false);
+            } else if (event.key === 'ArrowLeft') {
+              event.preventDefault();
+              const currentWidth = schema.width || el.current?.clientWidth || 100;
+              updateColumnSchema(name, { width: Math.max(currentWidth - 10, schema.minWidth || 96) });
+            } else if (event.key === 'ArrowRight') {
+              event.preventDefault();
+              const currentWidth = schema.width || el.current?.clientWidth || 100;
+              updateColumnSchema(name, { width: Math.min(currentWidth + 10, schema.maxWidth || 800) });
             }
           }}
           role="button"
@@ -301,6 +321,17 @@ const BodyCell = (props: BodyCellProps) => {
               setExpanded(!expanded);
             }
           }}
+          onKeyDown={(e: React.KeyboardEvent) => {
+            if (nestedRowData && (e.key === 'Enter' || e.key === ' ')) {
+              e.preventDefault();
+              e.stopPropagation();
+              setExpanded(!expanded);
+            }
+          }}
+          role="button"
+          tabIndex={0}
+          aria-label={expanded ? 'Collapse row' : 'Expand row'}
+          aria-expanded={expanded}
         />
       );
     }
@@ -340,13 +371,18 @@ export const Cell = (props: CellProps) => {
     nestedRowData,
   } = props as CellProps;
 
-  const { draggable, separator, nestedRows, ref, withCheckbox, showNestedRowTrigger } = context;
+  const { draggable, separator, nestedRows, ref, withCheckbox, showNestedRowTrigger, sortingList } = context;
 
-  const { name, hidden, pinned, cellType = 'DEFAULT' } = schema;
+  const { name, hidden, pinned, cellType = 'DEFAULT', sorting = true } = schema;
 
   const { width, minWidth = 96, maxWidth = 800 } = getCellSize(cellType);
 
   const [isDragged, setIsDragged] = React.useState<boolean>(false);
+
+  const listIndex = sortingList.findIndex((l) => l.name === name);
+  const sorted = listIndex !== -1 ? sortingList[listIndex].type : null;
+  const ariaSort =
+    isHead && sorting ? (sorted === 'asc' ? 'ascending' : sorted === 'desc' ? 'descending' : 'none') : undefined;
 
   const cellClass = classNames({
     [styles['Grid-cell']]: true,
@@ -361,6 +397,8 @@ export const Cell = (props: CellProps) => {
 
   return (
     <div
+      role={isHead ? 'columnheader' : 'gridcell'}
+      aria-sort={ariaSort}
       key={`${rowIndex}-${colIndex}`}
       className={cellClass}
       draggable={isHead && draggable}

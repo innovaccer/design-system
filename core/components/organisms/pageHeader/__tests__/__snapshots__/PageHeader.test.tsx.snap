@@ -57,6 +57,7 @@ exports[`Navigation component
                 data-test="DesignSystem-Button--Icon-Wrapper"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   style="font-size: 14px; width: 14px;"
@@ -82,6 +83,7 @@ exports[`Navigation component
                   data-test="DesignSystem-PageHeader--Title"
                 >
                   <h4
+                    aria-level="1"
                     class="Heading Heading--m Heading--default PageHeader-title"
                     data-test="DesignSystem-Heading"
                   >
@@ -155,6 +157,7 @@ exports[`Navigation component
                     </span>
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
                     data-test="DesignSystem-MetaList--rightSeperator"
                     style="font-size: 8px; width: 8px;"
@@ -195,6 +198,7 @@ exports[`Navigation component
               <button
                 class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
                 data-test="DesignSystem-HorizontalNav"
+                tabindex="0"
                 type="button"
               >
                 <span
@@ -207,6 +211,7 @@ exports[`Navigation component
               <button
                 class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
                 data-test="DesignSystem-HorizontalNav"
+                tabindex="0"
                 type="button"
               >
                 <span
@@ -381,6 +386,7 @@ exports[`Navigation component
                 data-test="DesignSystem-Button--Icon-Wrapper"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   style="font-size: 14px; width: 14px;"
@@ -406,6 +412,7 @@ exports[`Navigation component
                   data-test="DesignSystem-PageHeader--Title"
                 >
                   <h4
+                    aria-level="1"
                     class="Heading Heading--m Heading--default PageHeader-title"
                     data-test="DesignSystem-Heading"
                   >
@@ -434,6 +441,7 @@ exports[`Navigation component
                     <button
                       class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
                       data-test="DesignSystem-HorizontalNav"
+                      tabindex="0"
                       type="button"
                     >
                       <span
@@ -446,6 +454,7 @@ exports[`Navigation component
                     <button
                       class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
                       data-test="DesignSystem-HorizontalNav"
+                      tabindex="0"
                       type="button"
                     >
                       <span
@@ -518,6 +527,7 @@ exports[`Navigation component
                     </span>
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
                     data-test="DesignSystem-MetaList--rightSeperator"
                     style="font-size: 8px; width: 8px;"
@@ -710,6 +720,7 @@ exports[`Navigation component
                 data-test="DesignSystem-Button--Icon-Wrapper"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   style="font-size: 14px; width: 14px;"
@@ -735,6 +746,7 @@ exports[`Navigation component
                   data-test="DesignSystem-PageHeader--Title"
                 >
                   <h4
+                    aria-level="1"
                     class="Heading Heading--m Heading--default PageHeader-title"
                     data-test="DesignSystem-Heading"
                   >
@@ -808,6 +820,7 @@ exports[`Navigation component
                     </span>
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
                     data-test="DesignSystem-MetaList--rightSeperator"
                     style="font-size: 8px; width: 8px;"
@@ -848,6 +861,7 @@ exports[`Navigation component
               <button
                 class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
                 data-test="DesignSystem-HorizontalNav"
+                tabindex="0"
                 type="button"
               >
                 <span
@@ -860,6 +874,7 @@ exports[`Navigation component
               <button
                 class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
                 data-test="DesignSystem-HorizontalNav"
+                tabindex="0"
                 type="button"
               >
                 <span
@@ -1012,6 +1027,7 @@ exports[`Navigation component
                   data-test="DesignSystem-PageHeader--Title"
                 >
                   <h4
+                    aria-level="1"
                     class="Heading Heading--m Heading--default PageHeader-title"
                     data-test="DesignSystem-Heading"
                   >
@@ -1159,6 +1175,7 @@ exports[`Navigation component
                   data-test="DesignSystem-PageHeader--Title"
                 >
                   <h4
+                    aria-level="1"
                     class="Heading Heading--m Heading--default PageHeader-title"
                     data-test="DesignSystem-Heading"
                   >
@@ -1175,18 +1192,21 @@ exports[`Navigation component
                   data-test="DesignSystem-PageHeader--Nav"
                 >
                   <div
-                    aria-label="Steps"
+                    aria-label="Progress steps"
                     class="Stepper"
                     data-test="DesignSystem-Stepper"
                     role="group"
                   >
                     <div
+                      aria-current="step"
+                      aria-label="Step 1"
                       class="Step Stepper-animate Step--active"
                       data-test="DesignSystem-Step"
                       role="button"
                       tabindex="0"
                     >
                       <i
+                        aria-hidden="true"
                         class="material-symbols material-symbols-outlined Icon mr-3 my-4 Stepper-animate"
                         data-test="DesignSystem-Step--Icon"
                         style="font-size: 16px; width: 16px;"
@@ -1202,12 +1222,14 @@ exports[`Navigation component
                     </div>
                     <div
                       aria-disabled="true"
+                      aria-label="Step 2"
                       class="Step Stepper-animate Step--disabled"
                       data-test="DesignSystem-Step"
                       role="button"
                       tabindex="-1"
                     >
                       <i
+                        aria-hidden="true"
                         class="material-symbols material-symbols-outlined Icon mr-3 my-4 Stepper-animate"
                         data-test="DesignSystem-Step--Icon"
                         style="font-size: 16px; width: 16px;"
@@ -1223,12 +1245,14 @@ exports[`Navigation component
                     </div>
                     <div
                       aria-disabled="true"
+                      aria-label="Step 3"
                       class="Step Stepper-animate Step--disabled"
                       data-test="DesignSystem-Step"
                       role="button"
                       tabindex="-1"
                     >
                       <i
+                        aria-hidden="true"
                         class="material-symbols material-symbols-outlined Icon mr-3 my-4 Stepper-animate"
                         data-test="DesignSystem-Step--Icon"
                         style="font-size: 16px; width: 16px;"
@@ -1293,6 +1317,7 @@ exports[`Navigation component
                   data-test="DesignSystem-PageHeader--Title"
                 >
                   <h4
+                    aria-level="1"
                     class="Heading Heading--m Heading--default PageHeader-title"
                     data-test="DesignSystem-Heading"
                   >
@@ -1389,6 +1414,7 @@ exports[`Navigation component
                   data-test="DesignSystem-PageHeader--Title"
                 >
                   <h4
+                    aria-level="1"
                     class="Heading Heading--m Heading--default PageHeader-title"
                     data-test="DesignSystem-Heading"
                   >
@@ -1436,6 +1462,7 @@ exports[`Navigation component
                   data-test="DesignSystem-PageHeader--Title"
                 >
                   <h4
+                    aria-level="1"
                     class="Heading Heading--m Heading--default PageHeader-title"
                     data-test="DesignSystem-Heading"
                   >
@@ -1489,6 +1516,7 @@ exports[`Navigation component
                   data-test="DesignSystem-PageHeader--Title"
                 >
                   <h4
+                    aria-level="1"
                     class="Heading Heading--m Heading--default PageHeader-title"
                     data-test="DesignSystem-Heading"
                   >
@@ -1534,6 +1562,7 @@ exports[`Navigation component
                 data-test="DesignSystem-Button--Icon-Wrapper"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   style="font-size: 14px; width: 14px;"
@@ -1559,6 +1588,7 @@ exports[`Navigation component
                   data-test="DesignSystem-PageHeader--Title"
                 >
                   <h4
+                    aria-level="1"
                     class="Heading Heading--m Heading--default PageHeader-title"
                     data-test="DesignSystem-Heading"
                   >
@@ -1633,6 +1663,7 @@ exports[`Navigation component
                 data-test="DesignSystem-Button--Icon-Wrapper"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   style="font-size: 14px; width: 14px;"
@@ -1658,6 +1689,7 @@ exports[`Navigation component
                   data-test="DesignSystem-PageHeader--Title"
                 >
                   <h4
+                    aria-level="1"
                     class="Heading Heading--m Heading--default PageHeader-title"
                     data-test="DesignSystem-Heading"
                   >
@@ -1686,6 +1718,7 @@ exports[`Navigation component
                     <button
                       class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
                       data-test="DesignSystem-HorizontalNav"
+                      tabindex="0"
                       type="button"
                     >
                       <span
@@ -1698,6 +1731,7 @@ exports[`Navigation component
                     <button
                       class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
                       data-test="DesignSystem-HorizontalNav"
+                      tabindex="0"
                       type="button"
                     >
                       <span
@@ -1770,6 +1804,7 @@ exports[`Navigation component
                     </span>
                   </span>
                   <i
+                    aria-hidden="true"
                     class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
                     data-test="DesignSystem-MetaList--rightSeperator"
                     style="font-size: 8px; width: 8px;"

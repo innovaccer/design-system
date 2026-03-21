@@ -45,6 +45,10 @@ export interface SelectOptionProps extends BaseProps {
    * Aria label for the `SelectOption`
    */
   'aria-label'?: string;
+  /**
+   * Associates `SelectOption` with an external label
+   */
+  'aria-labelledby'?: string;
 }
 
 export const SelectOption = (props: SelectOptionProps) => {
@@ -119,7 +123,9 @@ export const SelectOption = (props: SelectOptionProps) => {
       role="option"
       onClick={onClickHandler}
       aria-selected={checked}
-      aria-label={props['aria-label'] || 'option item'}
+      aria-disabled={disabled}
+      aria-label={props['aria-label'] || option.label || 'option item'}
+      aria-labelledby={props['aria-labelledby']}
       onKeyDown={(event) => onKeyDownHandler(event)}
       selected={checked}
       tabIndex={-1}

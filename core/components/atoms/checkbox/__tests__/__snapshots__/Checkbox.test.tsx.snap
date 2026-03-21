@@ -15,6 +15,7 @@ exports[`Checkbox component
       >
         <input
           aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
+          aria-label="Checkbox"
           class="Checkbox-input"
           data-test="DesignSystem-Checkbox-InputBox"
           id="Checkbox-Checkbox-Test-uid"
@@ -72,6 +73,7 @@ exports[`Checkbox component
         <input
           aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
           aria-invalid="true"
+          aria-label="Checkbox"
           class="Checkbox-input"
           data-test="DesignSystem-Checkbox-InputBox"
           id="Checkbox-Checkbox-Test-uid"
@@ -128,6 +130,7 @@ exports[`Checkbox component
       >
         <input
           aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
+          aria-label="Checkbox"
           class="Checkbox-input"
           data-test="DesignSystem-Checkbox-InputBox"
           disabled=""
@@ -186,6 +189,7 @@ exports[`Checkbox component
         <input
           aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
           aria-invalid="true"
+          aria-label="Checkbox"
           class="Checkbox-input"
           data-test="DesignSystem-Checkbox-InputBox"
           disabled=""
@@ -243,6 +247,7 @@ exports[`Checkbox component
       >
         <input
           aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
+          aria-label="Checkbox"
           checked=""
           class="Checkbox-input Checkbox-input--checked"
           data-test="DesignSystem-Checkbox-InputBox"
@@ -316,6 +321,7 @@ exports[`Checkbox component
         <input
           aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
           aria-invalid="true"
+          aria-label="Checkbox"
           checked=""
           class="Checkbox-input Checkbox-input--checked"
           data-test="DesignSystem-Checkbox-InputBox"
@@ -388,6 +394,7 @@ exports[`Checkbox component
       >
         <input
           aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
+          aria-label="Checkbox"
           checked=""
           class="Checkbox-input Checkbox-input--checked"
           data-test="DesignSystem-Checkbox-InputBox"
@@ -462,6 +469,7 @@ exports[`Checkbox component
         <input
           aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
           aria-invalid="true"
+          aria-label="Checkbox"
           checked=""
           class="Checkbox-input Checkbox-input--checked"
           data-test="DesignSystem-Checkbox-InputBox"
@@ -535,6 +543,7 @@ exports[`Checkbox component
       >
         <input
           aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
+          aria-label="Checkbox"
           class="Checkbox-input"
           data-test="DesignSystem-Checkbox-InputBox"
           id="Checkbox-Checkbox-Test-uid"
@@ -591,6 +600,7 @@ exports[`Checkbox component
       >
         <input
           aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
+          aria-label="Checkbox"
           class="Checkbox-input"
           data-test="DesignSystem-Checkbox-InputBox"
           id="Checkbox-Checkbox-Test-uid"
@@ -647,6 +657,7 @@ exports[`Checkbox component
       >
         <input
           aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
+          aria-label="Checkbox"
           class="Checkbox-input"
           data-test="DesignSystem-Checkbox-InputBox"
           disabled=""
@@ -704,6 +715,7 @@ exports[`Checkbox component
       >
         <input
           aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
+          aria-label="Checkbox"
           class="Checkbox-input"
           data-test="DesignSystem-Checkbox-InputBox"
           disabled=""
@@ -761,6 +773,7 @@ exports[`Checkbox component
       >
         <input
           aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
+          aria-label="Checkbox"
           class="Checkbox-input"
           data-test="DesignSystem-Checkbox-InputBox"
           id="Checkbox-Checkbox-Test-uid"
@@ -817,6 +830,7 @@ exports[`Checkbox component
       >
         <input
           aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
+          aria-label="Checkbox"
           class="Checkbox-input"
           data-test="DesignSystem-Checkbox-InputBox"
           id="Checkbox-Checkbox-Test-uid"
@@ -873,6 +887,7 @@ exports[`Checkbox component
       >
         <input
           aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
+          aria-label="Checkbox"
           class="Checkbox-input"
           data-test="DesignSystem-Checkbox-InputBox"
           disabled=""
@@ -930,6 +945,7 @@ exports[`Checkbox component
       >
         <input
           aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
+          aria-label="Checkbox"
           class="Checkbox-input"
           data-test="DesignSystem-Checkbox-InputBox"
           disabled=""
@@ -988,6 +1004,7 @@ exports[`Checkbox component
         <input
           aria-checked="mixed"
           aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
+          aria-label="Checkbox"
           class="Checkbox-input Checkbox-input--indeterminate"
           data-test="DesignSystem-Checkbox-InputBox"
           id="Checkbox-Checkbox-Test-uid"
@@ -1058,6 +1075,7 @@ exports[`Checkbox component
         <input
           aria-checked="mixed"
           aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
+          aria-label="Checkbox"
           class="Checkbox-input Checkbox-input--indeterminate"
           data-test="DesignSystem-Checkbox-InputBox"
           id="Checkbox-Checkbox-Test-uid"
@@ -1128,6 +1146,7 @@ exports[`Checkbox component
         <input
           aria-checked="mixed"
           aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
+          aria-label="Checkbox"
           class="Checkbox-input Checkbox-input--indeterminate"
           data-test="DesignSystem-Checkbox-InputBox"
           disabled=""
@@ -1199,6 +1218,7 @@ exports[`Checkbox component
         <input
           aria-checked="mixed"
           aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
+          aria-label="Checkbox"
           class="Checkbox-input Checkbox-input--indeterminate"
           data-test="DesignSystem-Checkbox-InputBox"
           disabled=""
@@ -1270,6 +1290,7 @@ exports[`Checkbox component
         <input
           aria-checked="mixed"
           aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
+          aria-label="Checkbox"
           class="Checkbox-input Checkbox-input--indeterminate"
           data-test="DesignSystem-Checkbox-InputBox"
           id="Checkbox-Checkbox-Test-uid"
@@ -1342,6 +1363,7 @@ exports[`Checkbox component
         <input
           aria-checked="mixed"
           aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
+          aria-label="Checkbox"
           class="Checkbox-input Checkbox-input--indeterminate"
           data-test="DesignSystem-Checkbox-InputBox"
           id="Checkbox-Checkbox-Test-uid"
@@ -1414,6 +1436,7 @@ exports[`Checkbox component
         <input
           aria-checked="mixed"
           aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
+          aria-label="Checkbox"
           class="Checkbox-input Checkbox-input--indeterminate"
           data-test="DesignSystem-Checkbox-InputBox"
           disabled=""
@@ -1487,6 +1510,7 @@ exports[`Checkbox component
         <input
           aria-checked="mixed"
           aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
+          aria-label="Checkbox"
           class="Checkbox-input Checkbox-input--indeterminate"
           data-test="DesignSystem-Checkbox-InputBox"
           disabled=""
@@ -1559,6 +1583,7 @@ exports[`Checkbox component
       >
         <input
           aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
+          aria-label="Checkbox"
           checked=""
           class="Checkbox-input Checkbox-input--checked"
           data-test="DesignSystem-Checkbox-InputBox"
@@ -1631,6 +1656,7 @@ exports[`Checkbox component
       >
         <input
           aria-describedby="Checkbox-Checkbox-Test-uid-helptext"
+          aria-label="Checkbox"
           checked=""
           class="Checkbox-input Checkbox-input--checked"
           data-test="DesignSystem-Checkbox-InputBox"

@@ -11,6 +11,8 @@ export interface HandleProps {
   fillBefore?: boolean;
   onChange?: (newValue: number) => void;
   onRelease?: (newValue: number) => void;
+  'aria-label'?: string;
+  'aria-labelledby'?: string;
 }
 
 export interface InternalHandleProps extends HandleProps {
@@ -311,6 +313,8 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
           aria-valuenow={value}
           aria-valuetext={label}
           aria-disabled={disabled || undefined}
+          aria-label={this.props['aria-label'] || 'Slider handle'}
+          aria-labelledby={this.props['aria-labelledby']}
         />
         {/* eslint-enable  */}
         <div className={TooltipClass} style={style}>

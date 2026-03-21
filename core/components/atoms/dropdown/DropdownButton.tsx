@@ -96,6 +96,12 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
     [dropdownButtonStyles['DropdownButton-text']]: true,
   });
 
+  // Don't override visible selected value (children) with static aria-label; use aria-labelledby when we have value
+  const valueId = React.useId?.() ?? `dropdown-trigger-value-${Math.random().toString(36).slice(2)}`;
+  const hasVisibleValue = !!children;
+  const ariaLabel = !hasVisibleValue && (props['aria-label'] || (inlineLabel ? inlineLabel.trim() : undefined));
+  const ariaLabelledBy = hasVisibleValue ? valueId : props['aria-labelledby'];
+
   return (
     <button
       ref={ref}
@@ -106,6 +112,10 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
       tabIndex={0}
       data-test="DesignSystem-DropdownTrigger"
       {...rest}
+      aria-haspopup={menu ? 'menu' : 'listbox'}
+      aria-expanded={open}
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledBy}
     >
       {!menu && (
         <div className={dropdownButtonStyles['DropdownButton-wrapper']}>
@@ -117,7 +127,11 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
           {icon && !inlineLabel && (
             <Icon appearance={buttonDisabled} className="d-flex align-items-center mr-4" name={icon} type={iconType} />
           )}
-          {value && <span className={textClass}>{value}</span>}
+          {value && (
+            <span id={hasVisibleValue ? valueId : undefined} className={textClass}>
+              {value}
+            </span>
+          )}
         </div>
       )}
       <Icon appearance={buttonDisabled} name={iconName} type={iconType} />

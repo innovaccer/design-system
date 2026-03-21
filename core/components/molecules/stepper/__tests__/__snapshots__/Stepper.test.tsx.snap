@@ -5,18 +5,20 @@ exports[`Stepper component
  1`] = `
 <DocumentFragment>
   <div
-    aria-label="Steps"
+    aria-label="Progress steps"
     class="Stepper"
     data-test="DesignSystem-Stepper"
     role="group"
   >
     <div
+      aria-label="Step A"
       class="Step Stepper-animate Step--completed"
       data-test="DesignSystem-Step"
       role="button"
       tabindex="-1"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon mr-3 my-4 Stepper-animate"
         data-test="DesignSystem-Step--Icon"
         style="font-size: 16px; width: 16px;"
@@ -31,12 +33,15 @@ exports[`Stepper component
       </span>
     </div>
     <div
+      aria-current="step"
+      aria-label="Step B"
       class="Step Stepper-animate Step--active"
       data-test="DesignSystem-Step"
       role="button"
       tabindex="0"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-outlined Icon mr-3 my-4 Stepper-animate"
         data-test="DesignSystem-Step--Icon"
         style="font-size: 16px; width: 16px;"
@@ -52,12 +57,14 @@ exports[`Stepper component
     </div>
     <div
       aria-disabled="true"
+      aria-label="Step C"
       class="Step Stepper-animate Step--disabled"
       data-test="DesignSystem-Step"
       role="button"
       tabindex="-1"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-outlined Icon mr-3 my-4 Stepper-animate"
         data-test="DesignSystem-Step--Icon"
         style="font-size: 16px; width: 16px;"
@@ -73,12 +80,14 @@ exports[`Stepper component
     </div>
     <div
       aria-disabled="true"
+      aria-label="Step D"
       class="Step Stepper-animate Step--disabled"
       data-test="DesignSystem-Step"
       role="button"
       tabindex="-1"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-outlined Icon mr-3 my-4 Stepper-animate"
         data-test="DesignSystem-Step--Icon"
         style="font-size: 16px; width: 16px;"

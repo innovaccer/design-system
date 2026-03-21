@@ -8,12 +8,26 @@ import styles from '@css/components/horizontalNav.module.css';
 
 export type HorizontalNavProps = BaseProps &
   Pick<VerticalNavProps, 'menus' | 'active' | 'onClick'> & {
+    /**
+     * Accessible label for the navigation
+     */
     'aria-label'?: string;
+    /**
+     * Associates navigation with an external label
+     */
+    'aria-labelledby'?: string;
   };
 export type Align = 'left' | 'center';
 
 export const HorizontalNav = (props: HorizontalNavProps) => {
-  const { menus, active, onClick, className, 'aria-label': ariaLabel = 'Horizontal Navigation' } = props;
+  const {
+    menus,
+    active,
+    onClick,
+    className,
+    'aria-label': ariaLabel = 'Horizontal Navigation',
+    'aria-labelledby': ariaLabelledby,
+  } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -120,6 +134,7 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
           href={menu.link}
           aria-current={isActive ? 'page' : undefined}
           onClick={(event) => onClickHandler(event, menu)}
+          tabIndex={0}
         >
           {content}
         </a>
@@ -133,6 +148,7 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
         {...commonProps}
         aria-current={isActive ? 'page' : undefined}
         onClick={(event) => onClickHandler(event, menu)}
+        tabIndex={0}
       >
         {content}
       </button>
@@ -140,7 +156,7 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
   });
 
   return (
-    <nav {...baseProps} className={classes} aria-label={ariaLabel}>
+    <nav {...baseProps} className={classes} aria-label={ariaLabel} aria-labelledby={ariaLabelledby}>
       {list}
     </nav>
   );

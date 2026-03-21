@@ -16,7 +16,7 @@ export type ContextProps = {
   setWithSearch?: React.Dispatch<React.SetStateAction<boolean>>;
   multiSelect?: boolean;
   listRef?: React.RefObject<HTMLDivElement>;
-  triggerRef?: React.RefObject<HTMLButtonElement>;
+  triggerRef?: React.RefObject<HTMLElement>;
   focusedOption?: HTMLElement;
   setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>;
   setHighlightFirstItem?: React.Dispatch<React.SetStateAction<boolean>>;
@@ -24,6 +24,8 @@ export type ContextProps = {
   size?: TListboxSize;
   styleType?: SelectStyleType;
   error?: boolean;
+  listboxId?: string;
+  listboxAriaLabel?: string;
 };
 
 export const SelectContext = React.createContext<ContextProps>({});

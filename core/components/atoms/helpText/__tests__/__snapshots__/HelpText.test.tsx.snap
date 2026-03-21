@@ -29,6 +29,7 @@ exports[`HelpText component snapshot
       data-test="DesignSystem-InlineMessage"
     >
       <i
+        aria-hidden="true"
         class="material-symbols material-symbols-rounded Icon Icon--alert InlineMessage-icon--small"
         data-test="DesignSystem-InlineMessage--Icon"
         style="font-size: 14px; width: 14px;"

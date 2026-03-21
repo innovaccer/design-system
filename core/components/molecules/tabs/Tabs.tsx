@@ -23,6 +23,7 @@ export interface TabConfig {
   isDismissible?: boolean;
   onDismiss?: (tabInfo: TabInfo) => void;
   iconType?: IconType;
+  'aria-label'?: string;
 }
 export interface TabsProps extends BaseProps {
   /**
@@ -202,6 +203,15 @@ export const Tabs = (props: TabsProps) => {
       const nextElement = tabRefs[tabIndex + 1];
       nextElement?.focus();
     }
+    if (event.key === 'Delete' || event.key === 'Backspace') {
+      const currentTab =
+        children && 'props' in tabs[tabIndex] ? (tabs[tabIndex] as React.ReactElement).props : tabs[tabIndex];
+      if (currentTab.isDismissible && !currentTab.disabled && currentTab.onDismiss) {
+        event.preventDefault();
+        const tabInfo = { label: currentTab.label, activeIndex, currentTabIndex: tabIndex };
+        currentTab.onDismiss(tabInfo);
+      }
+    }
   };
 
   const renderInfo = (tab: Tab, index: number) => {
@@ -253,7 +263,7 @@ export const Tabs = (props: TabsProps) => {
       });
 
     const tabInfo = { label: label, activeIndex: activeIndex, currentTabIndex: index };
-    const onCloseHandler = (e: React.MouseEvent) => {
+    const onCloseHandler = (e: React.MouseEvent | React.KeyboardEvent) => {
       e.stopPropagation();
       if (onDismiss) onDismiss(tabInfo);
     };
@@ -264,8 +274,19 @@ export const Tabs = (props: TabsProps) => {
         appearance={iconAppearance}
         className={dismissIconClass(disabled)}
         onClick={!disabled ? onCloseHandler : undefined}
-        tabIndex={disabled ? -1 : 0}
+        onKeyDown={
+          !disabled
+            ? (e: React.KeyboardEvent) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  onCloseHandler(e);
+                }
+              }
+            : undefined
+        }
+        tabIndex={-1}
         size={size === 'regular' ? 16 : 12}
+        aria-hidden="true"
       />
     );
   };
@@ -344,7 +365,7 @@ export const Tabs = (props: TabsProps) => {
         aria-selected={!disabled && activeIndex === index}
         aria-controls={children ? panelId : undefined}
         aria-disabled={disabled || undefined}
-        aria-label={typeof label === 'string' ? label : undefined}
+        aria-label={currentTabProp['aria-label'] || (typeof label === 'string' ? label : undefined)}
       >
         {renderTab(currentTabProp, index)}
       </div>

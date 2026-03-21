@@ -99,7 +99,9 @@ export const Title = (props: { badge: React.ReactNode; title: string }) => {
   const { badge, title } = props;
   return (
     <div className={styles['PageHeader-titleWrapper']} data-test="DesignSystem-PageHeader--Title">
-      <Heading className={styles['PageHeader-title']}>{title}</Heading>
+      <Heading className={styles['PageHeader-title']} aria-level={1}>
+        {title}
+      </Heading>
       {badge}
     </div>
   );

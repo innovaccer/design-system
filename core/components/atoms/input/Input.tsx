@@ -115,6 +115,11 @@ export interface InputProps extends BaseProps, BaseHtmlProps<HTMLInputElement> {
    */
   onClear?: (e: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => void;
   /**
+   * Custom accessible label for the clear button.
+   * Defaults to "Clear {inlineLabel || placeholder || name || 'input'}"
+   */
+  clearButtonAriaLabel?: string;
+  /**
    * Callback function when `Input` text changes
    */
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -183,6 +188,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     disabled,
     readOnly,
     iconType,
+    clearButtonAriaLabel,
     ...rest
   } = props;
 
@@ -282,6 +288,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
         data-test="DesignSystem-Input"
         {...baseProps}
         {...rest}
+        aria-label={props['aria-label'] || (inlineLabel ? inlineLabel.trim() : undefined)}
         ref={ref}
         name={name}
         type={type}
@@ -315,16 +322,18 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
         onClear &&
         (value || defaultValue) && (
           <div className={rightIconClass}>
-            <Icon
+            <button
+              type="button"
               data-test="DesignSystem-Input--closeIcon"
+              aria-label={clearButtonAriaLabel || `Clear ${inlineLabel || placeholder || name || 'input'}`}
               onClick={(e) => {
                 ref.current?.focus({ preventScroll: true });
                 onClear(e);
               }}
-              name={'close'}
-              size={sizeMapping[size]}
               className={inputRightIconClass}
-            />
+            >
+              <Icon name={'close'} size={sizeMapping[size]} aria-hidden />
+            </button>
           </div>
         )
       )}

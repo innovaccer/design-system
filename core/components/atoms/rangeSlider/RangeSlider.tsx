@@ -9,6 +9,14 @@ enum RangeIndex {
 
 export interface RangeSliderProps extends MultiSliderProps {
   /**
+   * Accessible label for the first handle
+   */
+  'aria-label-start'?: string;
+  /**
+   * Accessible label for the second handle
+   */
+  'aria-label-end'?: string;
+  /**
    * Gives default value to `RangeSlider` (Used in case of uncontrolled `RangeSlider`).
    */
   defaultValue: NumberRange;
@@ -47,8 +55,12 @@ export const RangeSlider = (props: RangeSliderProps) => {
 
   return (
     <MultiSlider onRangeChange={onChangeHandler} onRangeRelease={onRelease} {...rest}>
-      <MultiSlider.Handle value={value[RangeIndex.START]} fillAfter={true} />
-      <MultiSlider.Handle value={value[RangeIndex.END]} />
+      <MultiSlider.Handle
+        value={value[RangeIndex.START]}
+        fillAfter={true}
+        aria-label={props['aria-label-start'] || 'Start handle'}
+      />
+      <MultiSlider.Handle value={value[RangeIndex.END]} aria-label={props['aria-label-end'] || 'End handle'} />
     </MultiSlider>
   );
 };

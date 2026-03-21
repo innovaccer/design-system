@@ -225,6 +225,7 @@ export const FilterSelect: React.FC<FilterSelectProps> = (props) => {
     setLabel: customSetLabel,
     minWidth: filterOptions?.minWidth || '72px',
     maxWidth: filterOptions?.maxWidth || '256px',
+    'aria-label': `Filter ${displayName}`,
   };
 
   const SelectItem: React.FC<{ option: OptionType; index: number }> = ({ option, index }) => {

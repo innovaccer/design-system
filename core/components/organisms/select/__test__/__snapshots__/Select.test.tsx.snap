@@ -6,8 +6,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -15,16 +13,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -36,13 +34,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -55,8 +54,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -64,16 +61,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -85,13 +82,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -104,8 +102,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -113,16 +109,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -134,13 +130,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -153,8 +150,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -162,16 +157,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -183,13 +178,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -202,8 +198,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -211,16 +205,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -232,13 +226,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -251,8 +246,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -260,16 +253,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -281,13 +274,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -300,8 +294,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -309,16 +301,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -330,13 +322,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -349,8 +342,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -358,16 +349,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -379,13 +370,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -398,8 +390,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -407,16 +397,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -428,13 +418,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -447,8 +438,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -456,16 +445,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -477,13 +466,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -496,8 +486,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -505,16 +493,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -526,13 +514,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -545,8 +534,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -554,16 +541,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -575,13 +562,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -594,8 +582,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -603,16 +589,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -624,13 +610,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -643,8 +630,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -652,16 +637,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -673,13 +658,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -692,8 +678,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -701,16 +685,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -722,13 +706,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -741,8 +726,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -750,16 +733,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -771,13 +754,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -790,8 +774,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -799,16 +781,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -820,13 +802,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -839,8 +822,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -848,16 +829,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -869,13 +850,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -888,8 +870,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -897,16 +877,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -918,13 +898,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -937,8 +918,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -946,16 +925,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -967,13 +946,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -986,8 +966,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -995,16 +973,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1016,13 +994,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1035,8 +1014,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1044,16 +1021,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1065,13 +1042,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1084,8 +1062,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1093,16 +1069,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1114,13 +1090,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1133,8 +1110,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1142,16 +1117,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1163,13 +1138,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1182,8 +1158,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1191,16 +1165,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1212,13 +1186,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1231,8 +1206,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1240,16 +1213,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1261,13 +1234,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1280,8 +1254,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1289,16 +1261,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1310,13 +1282,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1329,8 +1302,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1338,16 +1309,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1359,13 +1330,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1378,8 +1350,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1387,16 +1357,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1408,13 +1378,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1427,8 +1398,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1436,16 +1405,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1457,13 +1426,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1476,8 +1446,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1485,16 +1453,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1506,13 +1474,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1525,8 +1494,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1534,16 +1501,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1555,13 +1522,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1574,8 +1542,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1583,16 +1549,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1604,13 +1570,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1623,8 +1590,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1632,16 +1597,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1653,13 +1618,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1672,8 +1638,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1681,16 +1645,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1702,13 +1666,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1721,8 +1686,6 @@ exports[`Select List component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1730,16 +1693,16 @@ exports[`Select List component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1751,13 +1714,14 @@ exports[`Select List component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1770,8 +1734,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1779,16 +1741,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1800,13 +1762,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1819,8 +1782,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1828,16 +1789,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1849,13 +1810,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1868,8 +1830,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1877,16 +1837,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1898,13 +1858,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1917,8 +1878,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1926,16 +1885,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1947,13 +1906,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1966,8 +1926,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -1975,16 +1933,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -1996,13 +1954,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2015,8 +1974,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2024,16 +1981,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2045,13 +2002,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2064,8 +2022,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2073,16 +2029,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2094,13 +2050,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2113,8 +2070,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2122,16 +2077,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2143,13 +2098,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2162,8 +2118,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2171,16 +2125,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2192,13 +2146,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2211,8 +2166,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2220,16 +2173,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2241,13 +2194,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2260,8 +2214,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2269,16 +2221,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2290,13 +2242,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2309,8 +2262,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2318,16 +2269,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2339,13 +2290,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2358,8 +2310,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2367,16 +2317,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2388,13 +2338,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2407,8 +2358,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2416,16 +2365,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2437,13 +2386,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2456,8 +2406,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2465,16 +2413,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2486,13 +2434,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2505,8 +2454,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2514,16 +2461,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2535,13 +2482,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2554,8 +2502,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2563,16 +2509,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2584,13 +2530,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2603,8 +2550,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2612,16 +2557,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2633,13 +2578,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2652,8 +2598,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2661,16 +2605,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2682,13 +2626,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2701,8 +2646,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2710,16 +2653,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2731,13 +2674,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2750,8 +2694,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2759,16 +2701,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2780,13 +2722,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2799,8 +2742,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2808,16 +2749,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2829,13 +2770,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2848,8 +2790,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2857,16 +2797,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2878,13 +2818,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2897,8 +2838,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2906,16 +2845,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2927,13 +2866,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2946,8 +2886,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -2955,16 +2893,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -2976,13 +2914,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2995,8 +2934,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3004,16 +2941,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -3025,13 +2962,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3044,8 +2982,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3053,16 +2989,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -3074,13 +3010,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3093,8 +3030,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3102,16 +3037,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -3123,13 +3058,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3142,8 +3078,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3151,16 +3085,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -3172,13 +3106,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3191,8 +3126,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3200,16 +3133,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -3221,13 +3154,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3240,8 +3174,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3249,16 +3181,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -3270,13 +3202,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3289,8 +3222,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3298,16 +3229,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -3319,13 +3250,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3338,8 +3270,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3347,16 +3277,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -3368,13 +3298,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3387,8 +3318,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3396,16 +3325,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -3417,13 +3346,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3436,8 +3366,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3445,16 +3373,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -3466,13 +3394,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3485,8 +3414,6 @@ exports[`Select Option component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3494,16 +3421,16 @@ exports[`Select Option component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -3515,13 +3442,14 @@ exports[`Select Option component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3534,8 +3462,6 @@ exports[`Select component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3543,16 +3469,16 @@ exports[`Select component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -3564,13 +3490,14 @@ exports[`Select component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>
@@ -3583,8 +3510,6 @@ exports[`Select component snapshots
 <body>
   <div>
     <div
-      aria-expanded="false"
-      aria-haspopup="listbox"
       data-test="DesignSystem-Select"
       style="width: 176px;"
     >
@@ -3592,16 +3517,16 @@ exports[`Select component snapshots
       <div
         class="PopperWrapper-trigger d-block"
       >
-        <button
+        <div
           aria-controls="select-listbox-Test-uid"
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-label="Select trigger"
+          aria-label="Select"
           class="Button Select-trigger Select-trigger--regular Select-trigger--placeholder Select-trigger--filledPlaceholder Select-trigger--filled"
           data-test="DesignSystem-Select-trigger"
+          role="combobox"
           style="width: 176px;"
           tabindex="0"
-          type="button"
         >
           <div
             class="Select-trigger-wrapper ellipsis--noWrap"
@@ -3613,13 +3538,14 @@ exports[`Select component snapshots
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
           >
             keyboard_arrow_down
           </i>
-        </button>
+        </div>
       </div>
     </div>
   </div>

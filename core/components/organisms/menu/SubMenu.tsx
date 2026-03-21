@@ -6,6 +6,14 @@ import SubMenuContext from './SubMenuContext';
 
 export interface SubMenuProps {
   /**
+   * Accessible name for the submenu trigger
+   */
+  'aria-label'?: string;
+  /**
+   * Associates submenu trigger with an external label
+   */
+  'aria-labelledby'?: string;
+  /**
    * Element to be rendered inside `SubMenu`
    * <br/>
    * First child will be consider as `trigger`,
@@ -60,7 +68,10 @@ export const SubMenu = (props: SubMenuProps) => {
     'aria-haspopup': 'menu',
     'aria-expanded': subListRef.current ? 'true' : 'false',
     'aria-controls': menuID,
+    'aria-label': props['aria-label'] || (submenuTrigger as React.ReactElement)?.props['aria-label'],
+    'aria-labelledby': props['aria-labelledby'] || (submenuTrigger as React.ReactElement)?.props['aria-labelledby'],
     id: triggerID,
+    role: 'menuitem',
   });
 
   if (React.isValidElement(submenuContent)) {

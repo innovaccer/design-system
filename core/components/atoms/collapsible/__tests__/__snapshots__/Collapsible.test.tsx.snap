@@ -24,12 +24,15 @@ exports[`Collapsible component
           </div>
         </div>
         <div
+          aria-expanded="false"
+          aria-label="Expand"
           class="Collapsible-footer"
           data-test="DesignSystem-Collapsible--Footer"
           role="button"
           tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon px-6 py-4 my-2 cursor-pointer"
             data-test="DesignSystem-Collapsible--FooterIcon"
             style="font-size: 16px; width: 16px;"
@@ -67,12 +70,15 @@ exports[`Collapsible component
           </div>
         </div>
         <div
+          aria-expanded="false"
+          aria-label="Expand"
           class="Collapsible-footer"
           data-test="DesignSystem-Collapsible--Footer"
           role="button"
           tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon px-6 py-4 my-2 cursor-pointer"
             data-test="DesignSystem-Collapsible--FooterIcon"
             style="font-size: 16px; width: 16px;"
@@ -111,12 +117,15 @@ exports[`Collapsible component
           </div>
         </div>
         <div
+          aria-expanded="true"
+          aria-label="Collapse"
           class="Collapsible-footer"
           data-test="DesignSystem-Collapsible--Footer"
           role="button"
           tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon px-6 py-4 my-2 cursor-pointer"
             data-test="DesignSystem-Collapsible--FooterIcon"
             style="font-size: 16px; width: 16px;"
@@ -155,12 +164,15 @@ exports[`Collapsible component
           </div>
         </div>
         <div
+          aria-expanded="true"
+          aria-label="Collapse"
           class="Collapsible-footer"
           data-test="DesignSystem-Collapsible--Footer"
           role="button"
           tabindex="0"
         >
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon px-6 py-4 my-2 cursor-pointer"
             data-test="DesignSystem-Collapsible--FooterIcon"
             style="font-size: 16px; width: 16px;"

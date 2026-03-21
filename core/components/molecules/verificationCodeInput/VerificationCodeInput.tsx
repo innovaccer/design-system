@@ -37,6 +37,14 @@ interface VerificationProps extends BaseProps {
    * Callback triggered when input value is changed.
    */
   onChange?: (value: string) => void;
+  /**
+   * Accessible name for the input fields
+   */
+  'aria-label'?: string;
+  /**
+   * Associates input fields with an external label
+   */
+  'aria-labelledby'?: string;
 }
 
 type Refs = RefObject<HTMLInputElement>[];
@@ -73,6 +81,8 @@ const VerificationCodeInput = (props: VerificationCodeInputProps) => {
     onBlur,
     className,
     value,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledBy,
     ...rest
   } = props;
 
@@ -214,7 +224,13 @@ const VerificationCodeInput = (props: VerificationCodeInputProps) => {
     );
 
   return (
-    <div data-test="DesignSystem-VerificationCodeInput" className={styles['VerificationCodeInput']}>
+    <div
+      data-test="DesignSystem-VerificationCodeInput"
+      className={styles['VerificationCodeInput']}
+      role="group"
+      aria-label={ariaLabel || 'Verification code'}
+      aria-labelledby={ariaLabelledBy}
+    >
       {values.map((val: string, index: number) => (
         <Input
           key={index}
@@ -230,8 +246,8 @@ const VerificationCodeInput = (props: VerificationCodeInputProps) => {
           data-id={index}
           ref={refs[index]}
           type={type}
-          aria-label={`Digit ${index + 1} of ${fields}`}
           {...rest}
+          aria-label={ariaLabel ? `${ariaLabel} digit ${index + 1}` : `Digit ${index + 1} of ${fields}`}
         />
       ))}
     </div>

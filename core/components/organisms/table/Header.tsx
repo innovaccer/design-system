@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Checkbox, Label, Input, Button, Divider } from '@/index';
+import { Checkbox, Input, Button, Divider, Text } from '@/index';
 import {
   updateSchemaFunction,
   ColumnSchema,
@@ -255,7 +255,7 @@ export const Header = (props: HeaderProps) => {
   const tableDividerClasses = classNames(tableStyles['Table-Header--Divider'], 'mx-4');
 
   return (
-    <div className={gridStyles['Header']}>
+    <div className={gridStyles['Header']} role="toolbar" aria-label="Table controls">
       <div className={gridStyles['Header-content']}>
         <div className="d-flex w-100">
           {withSearch && (
@@ -270,6 +270,7 @@ export const Header = (props: HeaderProps) => {
                 onClear={() => updateSearchTerm && updateSearchTerm('')}
                 disabled={loading && !hasSchema(schema)}
                 autoComplete="off"
+                aria-label={searchPlaceholder || 'Search table'}
               />
             </div>
           )}
@@ -315,20 +316,33 @@ export const Header = (props: HeaderProps) => {
             <Checkbox
               className="mr-4"
               {...selectAll}
+              aria-label="Select all rows"
               onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                 if (onSelectAll) onSelectAll(event.target.checked);
               }}
             />
           )}
           {
-            <>
+            <div role="status" aria-live="polite" className="d-flex align-items-center">
               {showSelectedLabel ? (
                 <span className={selectedRowLabelClass} onAnimationEnd={onSelectAnimationEnd}>
-                  <Label>{customSelectedRowLabel ?? getSelectedRowLabel()}</Label>
+                  <Text
+                    data-test="DesignSystem-Label--Text"
+                    weight="medium"
+                    className={gridStyles['Header-label-text']}
+                  >
+                    {customSelectedRowLabel ?? getSelectedRowLabel()}
+                  </Text>
                 </span>
               ) : (
                 <span className={unselectedRowLabelClass} onAnimationEnd={onUnSelectAnimationEnd}>
-                  <Label>{customUnSelectedRowLabel ?? getUnSelectedRowLabel()}</Label>
+                  <Text
+                    data-test="DesignSystem-Label--Text"
+                    weight="medium"
+                    className={gridStyles['Header-label-text']}
+                  >
+                    {customUnSelectedRowLabel ?? getUnSelectedRowLabel()}
+                  </Text>
                 </span>
               )}
 
@@ -362,7 +376,7 @@ export const Header = (props: HeaderProps) => {
                   {selectionActionRenderer(selectedRowsRef?.current, selectedAllRef?.current)}
                 </div>
               )}
-            </>
+            </div>
           }
         </div>
         {dynamicColumn && (

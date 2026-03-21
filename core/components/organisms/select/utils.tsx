@@ -97,7 +97,7 @@ export const focusListItem = (
   listRef?: any
 ) => {
   const searchInput = listRef.current?.querySelectorAll('[data-test="DesignSystem-Select--Input"]');
-  const listItems = listRef.current?.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
+  const listItems = listRef.current?.querySelectorAll('[data-test="DesignSystem-Listbox-Item"]');
   let targetOption;
 
   if (position === 'down') {
@@ -161,7 +161,7 @@ export const navigateOptions = (
   listRef?: any,
   withSearch?: boolean
 ) => {
-  const listItems = listRef.current.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
+  const listItems = listRef.current.querySelectorAll('[data-test="DesignSystem-Listbox-Item"]');
   let index = Array.from(listItems).findIndex((item) => {
     return item == focusedOption;
   });
@@ -193,7 +193,7 @@ export const handleInputKeyDown = (
   setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>,
   triggerRef?: any
 ) => {
-  const listItems = listRef.current?.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
+  const listItems = listRef.current?.querySelectorAll('[data-test="DesignSystem-Listbox-Item"]');
   let targetOption;
 
   switch (event.key) {

@@ -14,6 +14,8 @@ exports[`TimePicker component snapshots renders snapshot for all props
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -30,6 +32,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -57,6 +60,8 @@ exports[`TimePicker component snapshots renders snapshot for all props
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--error"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -73,6 +78,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -100,6 +106,8 @@ exports[`TimePicker component snapshots renders snapshot for all props
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -116,6 +124,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -143,6 +152,8 @@ exports[`TimePicker component snapshots renders snapshot for all props
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--error"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -159,6 +170,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -186,6 +198,8 @@ exports[`TimePicker component snapshots renders snapshot for all props
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -202,6 +216,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -229,6 +244,8 @@ exports[`TimePicker component snapshots renders snapshot for all props
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--error"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -245,6 +262,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -272,6 +290,8 @@ exports[`TimePicker component snapshots renders snapshot for all props
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -288,6 +308,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"
@@ -315,6 +336,8 @@ exports[`TimePicker component snapshots renders snapshot for all props
         class="PopperWrapper-trigger w-100"
       >
         <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
           class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder DropdownButton--error"
           data-test="DesignSystem-DropdownTrigger"
           tabindex="0"
@@ -331,6 +354,7 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </span>
           </div>
           <i
+            aria-hidden="true"
             class="material-symbols material-symbols-rounded Icon Icon--default"
             data-test="DesignSystem-Icon"
             style="font-size: 16px; width: 16px;"

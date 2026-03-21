@@ -75,6 +75,14 @@ export interface VerticalNavProps extends BaseProps {
    * **Please don't use this prop.**
    */
   showTooltip: boolean;
+  /**
+   * Accessible label for the navigation tree
+   */
+  'aria-label'?: string;
+  /**
+   * Associates navigation tree with an external label
+   */
+  'aria-labelledby'?: string;
 }
 
 /**
@@ -278,6 +286,8 @@ export const VerticalNav = (props: VerticalNavProps) => {
     <div
       ref={containerRef}
       role="tree"
+      aria-label={props['aria-label'] || 'Vertical Navigation'}
+      aria-labelledby={props['aria-labelledby']}
       tabIndex={-1}
       data-test="DesignSystem-VerticalNav"
       {...baseProps}

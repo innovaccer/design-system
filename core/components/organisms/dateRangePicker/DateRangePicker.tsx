@@ -112,6 +112,10 @@ export type DateRangePickerProps = SharedProps & {
    * Associates trigger input(s) with external label
    */
   'aria-labelledby'?: string;
+  /**
+   * Options for the Popover component
+   */
+  popoverOptions?: Partial<PopoverProps>;
 };
 
 export interface DateRangePickerState {
@@ -408,6 +412,7 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
       singleInput,
       contentAlign,
       children,
+      popoverOptions,
       'aria-label': ariaLabel,
       'aria-labelledby': ariaLabelledBy,
     } = this.props;
@@ -422,17 +427,17 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
     if (withInput) {
       const mergedSingleInputOptions = {
         ...inputOptions,
-        'aria-label': inputOptions['aria-label'] || ariaLabel,
+        'aria-label': inputOptions['aria-label'] || ariaLabel || 'Select date range',
         'aria-labelledby': inputOptions['aria-labelledby'] || ariaLabelledBy,
       };
       const mergedStartInputOptions = {
         ...startInputOptions,
-        'aria-label': startInputOptions['aria-label'],
+        'aria-label': startInputOptions['aria-label'] || 'Select start date',
         'aria-labelledby': startInputOptions['aria-labelledby'] || ariaLabelledBy,
       };
       const mergedEndInputOptions = {
         ...endInputOptions,
-        'aria-label': endInputOptions['aria-label'],
+        'aria-label': endInputOptions['aria-label'] || 'Select end date',
         'aria-labelledby': endInputOptions['aria-labelledby'] || ariaLabelledBy,
       };
       const trigger = singleInput ? (
@@ -463,6 +468,9 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
           appendToBody={true}
           open={open}
           onToggle={this.onToggleHandler}
+          role="dialog"
+          aria-label="Date range picker"
+          {...popoverOptions}
         >
           {children}
           {this.renderCalendar()}

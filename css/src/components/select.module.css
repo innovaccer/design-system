@@ -30,7 +30,8 @@
   color: var(--text);
 }
 
-.Select-trigger--filled:disabled {
+.Select-trigger--filled:disabled,
+.Select-trigger--filled[aria-disabled='true'] {
   background: var(--secondary-lighter);
   color: var(--text-disabled);
   pointer-events: none;
@@ -76,7 +77,8 @@
   animation-duration: var(--duration--fast-02);
 }
 
-.Select-trigger--outlined:disabled {
+.Select-trigger--outlined:disabled,
+.Select-trigger--outlined[aria-disabled='true'] {
   color: var(--inverse-lightest) !important;
   background: var(--secondary-lightest) !important;
   border: var(--border-width-2-5) solid var(--secondary-lighter) !important;
@@ -146,12 +148,19 @@
 
 .Select-crossButton {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
   overflow: hidden;
   user-select: none;
   cursor: pointer;
   border-radius: var(--border-radius-full);
   padding: var(--spacing-05);
+  border: none;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  line-height: 1;
 }
 
 .Select-crossButton:focus-visible,

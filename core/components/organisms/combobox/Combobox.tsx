@@ -137,6 +137,9 @@ export interface ComboboxProps extends BaseProps {
    * Associates combobox trigger with an external label
    */
   'aria-labelledby'?: string;
+  /**
+   * Accessible name for the combobox listbox
+   */
 }
 
 export const Combobox = (props: ComboboxProps) => {
@@ -332,7 +335,7 @@ export const Combobox = (props: ComboboxProps) => {
             trigger={<ComboboxTrigger {...triggerProps} />}
             computeStyles={popoverComputeStyle}
           >
-            <div style={wrapperStyle} ref={listRef} id={popoverId}>
+            <div style={wrapperStyle} ref={listRef}>
               {children && typeof children === 'function' ? children(contextProp) : children}
             </div>
           </Popover>

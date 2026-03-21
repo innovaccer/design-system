@@ -11,6 +11,10 @@ export type PaginationType = 'basic' | 'jump';
 
 export interface PaginationProps extends BaseProps {
   /**
+   * Accessible label for the pagination component
+   */
+  'aria-label'?: string;
+  /**
    * `Pagination` component type
    */
   type: PaginationType;
@@ -122,7 +126,12 @@ export const Pagination = (props: PaginationProps) => {
   };
 
   return (
-    <div data-test="DesignSystem-Pagination" {...baseProps} className={wrapperClass}>
+    <nav
+      aria-label={props['aria-label'] || 'Pagination'}
+      data-test="DesignSystem-Pagination"
+      {...baseProps}
+      className={wrapperClass}
+    >
       <div className={prevButtonWrapperClass}>
         <Button
           onClick={() => onClickHandler('first')}
@@ -131,6 +140,7 @@ export const Pagination = (props: PaginationProps) => {
           icon="first_page"
           className={styles['Pagination-button']}
           data-test="DesignSystem-Pagination--FirstButton"
+          aria-label="First page"
         />
         <Button
           onClick={() => onClickHandler('prev')}
@@ -138,6 +148,7 @@ export const Pagination = (props: PaginationProps) => {
           icon="navigate_before"
           data-test="DesignSystem-Pagination--PrevButton"
           className={`ml-4 mr-3 ${styles['Pagination-button']}`}
+          aria-label="Previous page"
         />
       </div>
       {type === 'jump' && (
@@ -149,6 +160,7 @@ export const Pagination = (props: PaginationProps) => {
             value={`${isNaturalNumber(page) ? page : ''}`}
             data-test="DesignSystem-Pagination--Input"
             onKeyPress={onKeyPressHandler}
+            aria-label="Page number"
           />
           <Text>{` of ${totalPages} pages`}</Text>
         </div>
@@ -160,6 +172,7 @@ export const Pagination = (props: PaginationProps) => {
           icon="navigate_next"
           data-test="DesignSystem-Pagination--NextButton"
           className={`ml-3 mr-4 ${styles['Pagination-button']}`}
+          aria-label="Next page"
         />
         <Button
           onClick={() => onClickHandler('last')}
@@ -168,9 +181,10 @@ export const Pagination = (props: PaginationProps) => {
           icon="last_page"
           className={styles['Pagination-button']}
           data-test="DesignSystem-Pagination--LastButton"
+          aria-label="Last page"
         />
       </div>
-    </div>
+    </nav>
   );
 };
 

@@ -54,11 +54,27 @@ const CheckboxOption = (props: OptionTypeProps) => {
     }
   };
 
+  const handleDivClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (disabled) return;
+    const target = e.target as HTMLElement;
+    if (target.closest('input') || target.closest('label')) {
+      return;
+    }
+    if (onChangeHandler) {
+      onChangeHandler({
+        target: { checked: !selected },
+        stopPropagation: () => e.stopPropagation(),
+        preventDefault: () => e.preventDefault(),
+      } as any);
+    }
+  };
+
   return (
     <div
       className={className}
       onMouseEnter={onUpdateActiveOption}
       onKeyDown={handleKeyDown}
+      onClick={handleDivClick}
       data-test={dataTest}
       data-disabled={disabled}
       role={menu ? 'menuitemcheckbox' : 'option'}

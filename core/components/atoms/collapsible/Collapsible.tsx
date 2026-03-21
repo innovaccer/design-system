@@ -34,6 +34,10 @@ export interface CollapsibleProps extends BaseProps {
    * Determines whether to show trigger at bottom of `Collapsible`
    */
   withTrigger: boolean;
+  /**
+   * Accessible name for the trigger button
+   */
+  'aria-label'?: string;
 }
 
 export const Collapsible = (props: CollapsibleProps) => {
@@ -108,6 +112,8 @@ export const Collapsible = (props: CollapsibleProps) => {
           <div
             role="button"
             tabIndex={0}
+            aria-expanded={expanded}
+            aria-label={props['aria-label'] || (expanded ? 'Collapse' : 'Expand')}
             className={FooterClass}
             data-test="DesignSystem-Collapsible--Footer"
             onClick={onToggleHandler(!expanded, 'click')}

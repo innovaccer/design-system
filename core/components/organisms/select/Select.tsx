@@ -17,6 +17,14 @@ export type SelectStyleType = 'filled' | 'outlined';
 
 export interface SelectProps extends BaseProps {
   /**
+   * Options to be passed to the underlying Popover component
+   */
+  popoverOptions?: Partial<PopoverProps>;
+  /**
+   * Accessible name for the listbox
+   */
+  listboxAriaLabel?: string;
+  /**
    * Whether multiple options can be selected.
    */
   multiSelect?: boolean;
@@ -165,6 +173,8 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     onToggle,
     styleType = 'filled',
     error = false,
+    popoverOptions,
+    listboxAriaLabel,
   } = props;
 
   const [openPopover, setOpenPopover] = React.useState(false);
@@ -173,7 +183,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
   const [selectValue, setSelectValue] = React.useState<OptionType | OptionType[]>(mapValue);
   const [isOptionSelected, setIsOptionSelected] = React.useState(false);
 
-  const triggerRef = React.createRef<HTMLButtonElement>();
+  const triggerRef = React.createRef<HTMLElement>();
   const listRef = React.useRef<HTMLDivElement | null>(null);
 
   const [withSearch, setWithSearch] = React.useState(false);
@@ -189,7 +199,7 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
 
   const getTriggerElement = () => {
     if (trigger) {
-      return React.cloneElement(trigger, { ref: triggerRef });
+      return React.cloneElement(trigger, { ref: triggerRef, 'aria-controls': listboxId });
     }
     return <SelectTrigger aria-controls={listboxId} {...triggerOptions} />;
   };
@@ -295,17 +305,13 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
     setHighlightLastItem,
     styleType,
     error,
+    listboxId,
+    listboxAriaLabel,
   };
 
   return (
     <SelectContext.Provider value={contextProp}>
-      <div
-        data-test="DesignSystem-Select"
-        style={WrapperStyle}
-        aria-haspopup="listbox"
-        aria-expanded={openPopover}
-        {...baseProps}
-      >
+      <div data-test="DesignSystem-Select" style={WrapperStyle} {...baseProps}>
         <Popover
           open={openPopover}
           onToggle={onToggleHandler}
@@ -316,9 +322,10 @@ export const Select = React.forwardRef<SelectMethods, SelectProps>((props, ref) 
           boundaryElement={boundaryElement}
           appendToBody={appendToBody}
           trigger={getTriggerElement()}
+          {...popoverOptions}
         >
           <OutsideClick onOutsideClick={onOutsideClickHandler}>
-            <div role="listbox" id={listboxId} tabIndex={0} ref={listRef}>
+            <div id={listboxId} tabIndex={-1} ref={listRef} role="presentation">
               {children}
             </div>
           </OutsideClick>

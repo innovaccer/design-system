@@ -150,6 +150,13 @@
   cursor: pointer;
   color: var(--inverse-lighter);
   border-radius: var(--border-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  font: inherit;
+  line-height: 1;
 }
 
 .Input-iconWrapper--right:focus-visible .Input-icon--right {

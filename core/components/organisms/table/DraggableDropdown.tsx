@@ -64,6 +64,9 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
             appearance="transparent"
             icon="keyboard_arrow_down_filled"
             iconAlign="right"
+            aria-label={`Manage columns, showing ${options.filter((option) => option.selected).length} of ${
+              options.length
+            } selected`}
           >
             {`Showing ${options.filter((option) => option.selected).length} of ${
               options.length
@@ -113,7 +116,7 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
                   checked={tempOptions[index].selected}
                   onChange={(e) => handleChildChange(e, index)}
                 />
-                <Icon name="drag_handle" className="mr-4" />
+                <Icon name="drag_handle" className="mr-4" aria-label={`Drag to reorder ${option.label} column`} />
               </div>
             );
           })}

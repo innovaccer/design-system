@@ -1166,6 +1166,7 @@ export class Table extends React.Component<TableProps, TableState> {
         data-test="DesignSystem-Table-wrapper"
         aria-label={ariaLabel}
         aria-labelledby={ariaLabelledBy}
+        role="region"
       >
         {withHeader && (
           <div data-test="DesignSystem-Table-header">
@@ -1238,6 +1239,7 @@ export class Table extends React.Component<TableProps, TableState> {
               type={paginationType}
               onPageChange={this.onPageChange}
               pageJumpDebounceDuration={pageJumpDebounceDuration}
+              aria-label={ariaLabel ? `${ariaLabel} pagination` : undefined}
             />
           </div>
         )}

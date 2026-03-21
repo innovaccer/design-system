@@ -18,6 +18,10 @@ export interface SelectTriggerProps extends BaseProps {
    */
   'aria-label'?: string;
   /**
+   * Associates the Select trigger button with an external label.
+   */
+  'aria-labelledby'?: string;
+  /**
    * Specifies the size of the Select trigger button.
    * @default "regular"
    */
@@ -53,6 +57,11 @@ export interface SelectTriggerProps extends BaseProps {
    */
   onClear?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
   /**
+   * Custom accessible label for the clear button.
+   * Defaults to "Clear {inlineLabel || placeholder || 'selection'}"
+   */
+  clearButtonAriaLabel?: string;
+  /**
    * A function used to customize the label displayed when multiple options are selected.
    *
    * The function receives the count of selected options as its argument and should return a string
@@ -72,7 +81,8 @@ export interface SelectTriggerProps extends BaseProps {
 const SelectTrigger = (props: SelectTriggerProps) => {
   const {
     triggerSize = 'regular',
-    'aria-label': ariaLabel = 'Select trigger',
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledby,
     placeholder,
     withClearButton,
     icon,
@@ -80,6 +90,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     inlineLabel,
     iconType,
     onClear,
+    clearButtonAriaLabel,
     setLabel,
     minWidth,
     maxWidth,
@@ -105,10 +116,15 @@ const SelectTrigger = (props: SelectTriggerProps) => {
     error,
   } = contextProp;
 
+  const displayValue = computeValue(multiSelect, selectValue, setLabel);
+  const hasVisibleValue = isOptionSelected && displayValue.length > 0;
+  const valueId = React.useId?.() ?? `select-trigger-value-${Math.random().toString(36).slice(2)}`;
+  // Use aria-labelledby when we have visible selected value so screen readers announce it; otherwise use aria-label
+  const resolvedAriaLabel = !hasVisibleValue ? ariaLabel || inlineLabel || placeholder || 'Select trigger' : undefined;
+
   const buttonDisabled = disabled ? 'disabled' : 'default';
   const trimmedPlaceholder = placeholder?.trim();
-  const displayValue = computeValue(multiSelect, selectValue, setLabel);
-  const value = isOptionSelected && displayValue.length > 0 ? displayValue : trimmedPlaceholder;
+  const value = hasVisibleValue ? displayValue : trimmedPlaceholder;
   const iconName = openPopover ? 'keyboard_arrow_up' : 'keyboard_arrow_down';
   const triggerStyle = {
     width: width,
@@ -154,6 +170,8 @@ const SelectTrigger = (props: SelectTriggerProps) => {
   const iconClass = classNames('align-items-center', 'mr-2', 'ml-3', 'p-3-5', selectStyles['Select-crossButton']);
   const iconSize = triggerSize === 'small' ? 14 : 16;
   const triggerTextSize = triggerSize === 'small' ? 'small' : 'regular';
+  const clearLabel = clearButtonAriaLabel || `Clear ${inlineLabel || ariaLabel || placeholder || 'selection'}`;
+
   return (
     <Tooltip
       showOnTruncation={true}
@@ -162,19 +180,34 @@ const SelectTrigger = (props: SelectTriggerProps) => {
       elementRef={elementRef}
       triggerClass="w-100"
     >
-      <button
+      <div
         ref={triggerRef}
-        onKeyDown={(event) => handleKeyDownTrigger(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem)}
-        type="button"
+        onKeyDown={(event) => {
+          if (disabled) return;
+          if (
+            !openPopover &&
+            isOptionSelected &&
+            (event.key === 'Backspace' || event.key === 'Delete') &&
+            withClearButton
+          ) {
+            event.preventDefault();
+            onClearHandler(event as any);
+            return;
+          }
+          handleKeyDownTrigger(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem);
+        }}
         className={buttonClass}
-        disabled={disabled}
-        tabIndex={0}
+        aria-disabled={disabled || undefined}
+        tabIndex={disabled ? -1 : 0}
         style={triggerStyle}
-        aria-haspopup="listbox"
-        aria-expanded={openPopover}
-        aria-label={ariaLabel}
         data-test="DesignSystem-Select-trigger"
         {...rest}
+        role="combobox"
+        aria-haspopup="listbox"
+        aria-expanded={openPopover}
+        aria-label={resolvedAriaLabel}
+        aria-labelledby={hasVisibleValue ? valueId : ariaLabelledby}
+        aria-controls={rest['aria-controls']}
       >
         {
           <div className={triggerClass}>
@@ -193,27 +226,26 @@ const SelectTrigger = (props: SelectTriggerProps) => {
               />
             )}
             {value && (
-              <span ref={elementRef} className={textClass}>
+              <span ref={elementRef} id={hasVisibleValue ? valueId : undefined} className={textClass}>
                 {value}
               </span>
             )}
           </div>
         }
         {isOptionSelected && withClearButton && (
-          <Icon
-            appearance={buttonDisabled}
-            onClick={onClearHandler}
+          <button
+            type="button"
             className={iconClass}
-            size={12}
-            name="close"
-            aria-label="clear selected"
-            type={iconType}
+            aria-label={clearLabel}
+            onClick={onClearHandler}
             data-test="DesignSystem-Select--closeIcon"
-          />
+          >
+            <Icon appearance={buttonDisabled} name="close" size={12} type={iconType} aria-hidden />
+          </button>
         )}
 
-        <Icon appearance={buttonDisabled} name={iconName} type={iconType} />
-      </button>
+        <Icon appearance={buttonDisabled} name={iconName} type={iconType} aria-hidden />
+      </div>
     </Tooltip>
   );
 };

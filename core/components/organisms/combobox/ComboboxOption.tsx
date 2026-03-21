@@ -9,6 +9,10 @@ type ItemTagType = 'li' | 'div';
 
 export interface ComboboxOptionProps extends BaseProps {
   /**
+   * Accessible name for the option
+   */
+  'aria-label'?: string;
+  /**
    * React Element to be added inside `Option Item`
    */
   children: React.ReactNode;
@@ -93,6 +97,8 @@ export const ComboboxOption = (props: ComboboxOptionProps) => {
       onKeyDown={onKeyDownHandler}
       tabIndex={-1}
       role="option"
+      aria-selected={option.label === inputValue?.label}
+      aria-label={props['aria-label'] || option.label || 'Combobox option'}
       data-test="DesignSystem-Combobox-Option"
       {...rest}
     >

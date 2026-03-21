@@ -24,7 +24,15 @@ export const GridNestedRow = (props: GridNestedRowProps) => {
 
   const { data, rowIndex, expanded } = props;
 
-  if (nestedRowRenderer) return nestedRowRenderer({ data, schema, loading, rowIndex, expanded });
+  if (nestedRowRenderer) {
+    return (
+      <div role="row">
+        <div role="gridcell" style={{ display: 'contents' }}>
+          {nestedRowRenderer({ data, schema, loading, rowIndex, expanded })}
+        </div>
+      </div>
+    );
+  }
   // return (
   //   <Text>{JSON.stringify(data)}</Text>
   // )

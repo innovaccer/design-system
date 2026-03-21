@@ -6,6 +6,14 @@ import styles from '@css/components/textarea.module.css';
 type TextareaSize = 'small' | 'regular';
 export interface TextareaProps extends BaseProps, BaseHtmlProps<HTMLTextAreaElement> {
   /**
+   * Accessible label for the textarea
+   */
+  'aria-label'?: string;
+  /**
+   * Associates textarea with an external label
+   */
+  'aria-labelledby'?: string;
+  /**
    * Name of the `Textarea`
    */
   name?: string;
@@ -105,8 +113,10 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((pr
   return (
     <textarea
       data-test="DesignSystem-Textarea"
-      aria-invalid={error}
       {...rest}
+      {...(error !== undefined ? { 'aria-invalid': error || undefined } : {})}
+      aria-label={props['aria-label']}
+      aria-labelledby={props['aria-labelledby']}
       ref={ref}
       name={name}
       rows={rows}

@@ -13,6 +13,8 @@ export interface StepProps {
   onChange?: (label: string, value?: React.ReactText) => void;
   onKeyDown?: (e: React.KeyboardEvent) => void;
   isTabStop?: boolean;
+  'aria-label'?: string;
+  'aria-labelledby'?: string;
 }
 
 export const Step = React.forwardRef<HTMLDivElement, StepProps>((props, ref) => {
@@ -65,12 +67,16 @@ export const Step = React.forwardRef<HTMLDivElement, StepProps>((props, ref) => 
       onClick={onClickHandle}
       tabIndex={disabled ? -1 : isTabStop ? 0 : -1}
       role="button"
+      aria-current={active ? 'step' : undefined}
       aria-disabled={disabled || undefined}
+      aria-label={props['aria-label'] || label || 'Step'}
+      aria-labelledby={props['aria-labelledby']}
     >
       <Icon
         data-test="DesignSystem-Step--Icon"
         name={completed ? 'check_circle' : 'radio_button_unchecked'}
         className={IconClass}
+        aria-hidden="true"
       />
 
       {label && (
