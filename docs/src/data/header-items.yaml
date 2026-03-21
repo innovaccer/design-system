@@ -6,6 +6,10 @@
   link: /foundations/principles/
   mobileTab: true
 
+- label: Accessibility
+  link: /accessibility/
+  mobileTab: true
+
 - label: Content
   link: /content/voice-and-tone-guidelines/tabs/voice-and-tone/
   mobileTab: false
