@@ -8,11 +8,11 @@ keywords: ['Toggle']
 
 Chips are compact interactive elements that allow users to make selections, filter content, or trigger actions. Since they mostly appear in a group, they are compact in size and come to the rescue when regular components are either too overwhelming (e.g. buttons for selection) or too underwhelming (e.g. dropdowns for applied filters).
 
-<br/>
+<br />
 
 ### Types
 
-<br/>
+<br />
 
 #### Selection Chips
 
@@ -22,7 +22,7 @@ For example - applying filters on a page. In that case, as soon as a selection c
 
 ![Selection chips](./images/mchips-1.png)
 
-<br/>
+<br />
 
 #### Input Chips
 
@@ -30,7 +30,7 @@ Input chips are used inside inputs to behave as removable entries or tags.
 
 ![Input chips](./images/mchips-2.png)
 
-<br/>
+<br />
 
 #### Action Chips
 
@@ -38,12 +38,12 @@ Action chips are used when there is a group of related actions to perform. These
 
 ![Action chips](./images/mchips-3.png)
 
-<br/>
-<br/>
+<br />
+<br />
 
 ### Variants
 
-<br/>
+<br />
 
 #### With Icon on Left
 
@@ -51,7 +51,7 @@ Chips can have an optional icon on the left preceding the label.
 
 ![Chips with icon on the left](./images/mchips-4.png)
 
-<br/>
+<br />
 
 #### With Remove Button
 
@@ -59,14 +59,14 @@ Selection and input chips can have a remove button on the right of the label to 
 
 ![[Left] Selection chip vs [Right] Input chip](./images/mchips-5.png)
 
-<br/>
-<br/>
+<br />
+<br />
 
 ### Properties
 
-<br/>
+<br />
 
-<Card shadow='none'>
+<Card shadow="none">
   <Table
     showMenu={false}
     separator={true}
@@ -98,7 +98,8 @@ Selection and input chips can have a remove button on the right of the label to 
       },
       {
         Property: 'Gradient while scrolling',
-        Value: 'Height: 32px, Width: 40px Background: linear-gradient(90deg, rgba(244, 244, 244, 0) 0%, #F4F4F4 100%) or linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%) "Background of the gradient must match the page background color."',
+        Value:
+          'Height: 32px, Width: 40px Background: linear-gradient(90deg, rgba(247, 247, 247, 0) 0%, #F7F7F7 100%) or linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%) "Background of the gradient must match the page background color."',
         Configurable: '❌',
       },
     ]}
@@ -109,30 +110,28 @@ Selection and input chips can have a remove button on the right of the label to 
         width: '34%',
         sorting: false,
         separator: true,
-        cellType: 'DEFAULT'
+        cellType: 'DEFAULT',
       },
       {
         name: 'Value',
         displayName: 'Value',
         width: '33%',
         sorting: false,
-        separator: true
-        
+        separator: true,
       },
       {
         name: 'Configurable',
         displayName: 'Configurable?',
         width: '33%',
         sorting: false,
-        separator: true
+        separator: true,
       },
     ]}
     withHeader={false}
   />
 </Card>
-<br/>
-<br/>
-
+<br />
+<br />
 
 ### States
 
@@ -140,18 +139,18 @@ Chips have the **default**, **disabled**, and **active** states. In addition to
 
 ![States of chips](./images/mchips-6.png)
 
-<br/>
-<br/>
+<br />
+<br />
 
 ### Usage
 
-<br/>
+<br />
 
 #### Selection vs Action vs Input Chips
 
-<br/>
+<br />
 
-<Card shadow='none'>
+<Card shadow="none">
   <Table
     showMenu={false}
     separator={true}
@@ -179,30 +178,28 @@ Chips have the **default**, **disabled**, and **active** states. In addition to
         width: '20%',
         sorting: false,
         separator: true,
-        cellType: 'DEFAULT'
+        cellType: 'DEFAULT',
       },
       {
         name: 'Value',
         displayName: 'Usage',
         width: '60%',
         sorting: false,
-        separator: true
-        
+        separator: true,
       },
       {
         name: 'Configurable',
         displayName: 'Behaviour',
         width: '20%',
         sorting: false,
-        separator: true
+        separator: true,
       },
     ]}
     withHeader={false}
   />
 </Card>
-<br/>
-<br/>
-
+<br />
+<br />
 
 #### Chips Group
 
@@ -210,12 +207,12 @@ Chips are compact elements and hence are best suitable to be used in groups with
 
 ![A chips group ](./images/mchips-7.png)
 
-<br/>
-<br/>
+<br />
+<br />
 
 #### Overflow Behavior
 
-<br/>
+<br />
 
 ##### Wrapped to Next Line
 
@@ -223,13 +220,13 @@ Chips in a chip group can wrap to a new row if all the chips need to be visible.
 
 ![Chips wrapped to next line](./images/mchips-8.png)
 
-<br/>
+<br />
 
 ##### Scrollable
 
 The chips group can scroll horizontally if the width exceeds the viewport. A linear gradient shows up on the edges to indicate the overflowed chips.
 
-**[Img 1]** Scroll indication in right 
+**[Img 1]** Scroll indication in right
 
 **[Img 2]** Scroll indication in both sides
 
@@ -237,11 +234,11 @@ The chips group can scroll horizontally if the width exceeds the viewport. A lin
 
 ![[Img 1] Scroll indication in right vs [Img 2] Scroll indication in both sides vs [Img 3] Scroll indication in left](./images/mchips-9.png)
 
-<br/>
+<br />
 
 **Note: It is not recommended to use wrapping and scrolling at the same time.**
 
-<br/>
+<br />
 
 #### Action Chips vs Buttons
 
@@ -255,7 +252,7 @@ The number and label of action chips are contextual to the content and appear dy
 
 ![[Left] Action chips vs [Right] Buttons at the bottom](./images/mchips-10.png)
 
-<br/>
+<br />
 
 #### Selection Chips vs Radio/checkbox
 
@@ -269,5 +266,5 @@ Selection chips generally provide an immediate response but in forms where there
 
 ![[Left - Recommended] Example using selection chips vs [Right] Example using radio and checkboxes](./images/mchips-11.png)
 
-<br/>
-<br/>
+<br />
+<br />
