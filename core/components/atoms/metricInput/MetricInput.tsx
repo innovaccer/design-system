@@ -154,7 +154,9 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
   const ref = React.useRef<HTMLInputElement>(null);
   const isUncontrolled = valueProp === undefined;
 
-  const [value, setValue] = React.useState(valueProp || defaultValue);
+  const [value, setValue] = React.useState(
+    valueProp !== undefined ? valueProp : defaultValue !== undefined ? defaultValue : ''
+  );
 
   React.useImperativeHandle(forwardedRef, (): HTMLInputElement => {
     return ref.current as HTMLInputElement;
@@ -301,10 +303,9 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
         type="number"
         ref={ref}
         name={name}
-        defaultValue={defaultValue}
         placeholder={placeholder}
         className={inputClass}
-        value={value}
+        value={value !== undefined ? value : ''}
         disabled={disabled}
         readOnly={readOnly}
         onChange={onChangeHandler}

@@ -88,6 +88,14 @@ export const Label = (props: LabelProps) => {
   };
 
   const renderIndicator = (info: string) => {
+    const iconClass = classNames({
+      'ml-3': true,
+      'cursor-pointer': true,
+      'd-flex': true,
+      'align-items-center': true,
+      [styles['Label-infoIcon']]: true,
+    });
+
     return (
       <Tooltip tooltip={info}>
         <Icon
@@ -96,7 +104,7 @@ export const Label = (props: LabelProps) => {
           size={12}
           appearance="subtle"
           aria-label={info}
-          className="ml-3 cursor-pointer d-flex align-items-center"
+          className={iconClass}
         />
       </Tooltip>
     );
