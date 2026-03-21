@@ -99,8 +99,8 @@ const Option = (props: OptionProps) => {
 
   const { optionType = 'DEFAULT' } = optionData.optionType ? optionData : props;
   const { disabled } = optionData;
-  const color = disabled ? 'inverse-lightest' : selected && !menu ? 'primary-dark' : 'inverse';
-  const appearance = disabled ? 'disabled' : selected && !menu ? 'primary_dark' : 'default';
+  const color = disabled ? 'inverse-lightest' : undefined;
+  const appearance = disabled ? 'disabled' : 'default';
   const type = checkboxes ? 'WITH_CHECKBOX' : optionType;
   const component = OptionTypeMapping[type];
 
@@ -110,7 +110,7 @@ const Option = (props: OptionProps) => {
     [styles['Option--selected']]: selected && !menu,
     [styles['Option--disabled']]: disabled,
     ['OptionWrapper']: true,
-    [`color-${color}`]: true,
+    [`color-${color}`]: !!color,
   });
 
   const CheckboxClassName = classNames({
