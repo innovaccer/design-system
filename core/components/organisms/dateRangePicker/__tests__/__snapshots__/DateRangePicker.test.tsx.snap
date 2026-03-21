@@ -39884,14 +39884,16 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
+                aria-label="Clear mm/dd/yyyy"
                 class="Input-icon Input-iconWrapper--right"
+                role="button"
+                tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
-                  tabindex="0"
                 >
                   close
                 </i>
@@ -39945,14 +39947,16 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
+                aria-label="Clear mm/dd/yyyy"
                 class="Input-icon Input-iconWrapper--right"
+                role="button"
+                tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
-                  tabindex="0"
                 >
                   close
                 </i>
@@ -40025,14 +40029,16 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
+                aria-label="Clear mm/dd/yyyy"
                 class="Input-icon Input-iconWrapper--right"
+                role="button"
+                tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
-                  tabindex="0"
                 >
                   close
                 </i>
@@ -40086,14 +40092,16 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
+                aria-label="Clear mm/dd/yyyy"
                 class="Input-icon Input-iconWrapper--right"
+                role="button"
+                tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
-                  tabindex="0"
                 >
                   close
                 </i>
@@ -40166,14 +40174,16 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
+                aria-label="Clear mm/dd/yyyy"
                 class="Input-icon Input-iconWrapper--right"
+                role="button"
+                tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
-                  tabindex="0"
                 >
                   close
                 </i>
@@ -40227,14 +40237,16 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
+                aria-label="Clear mm/dd/yyyy"
                 class="Input-icon Input-iconWrapper--right"
+                role="button"
+                tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
-                  tabindex="0"
                 >
                   close
                 </i>
@@ -41386,14 +41398,16 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
+                aria-label="Clear mm/dd/yyyy"
                 class="Input-icon Input-iconWrapper--right"
+                role="button"
+                tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
-                  tabindex="0"
                 >
                   close
                 </i>
@@ -41447,14 +41461,16 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
+                aria-label="Clear mm/dd/yyyy"
                 class="Input-icon Input-iconWrapper--right"
+                role="button"
+                tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
-                  tabindex="0"
                 >
                   close
                 </i>
@@ -41527,14 +41543,16 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
+                aria-label="Clear mm/dd/yyyy"
                 class="Input-icon Input-iconWrapper--right"
+                role="button"
+                tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
-                  tabindex="0"
                 >
                   close
                 </i>
@@ -41588,14 +41606,16 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
+                aria-label="Clear mm/dd/yyyy"
                 class="Input-icon Input-iconWrapper--right"
+                role="button"
+                tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
-                  tabindex="0"
                 >
                   close
                 </i>
@@ -41668,14 +41688,16 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
+                aria-label="Clear mm/dd/yyyy"
                 class="Input-icon Input-iconWrapper--right"
+                role="button"
+                tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
-                  tabindex="0"
                 >
                   close
                 </i>
@@ -41729,14 +41751,16 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
+                aria-label="Clear mm/dd/yyyy"
                 class="Input-icon Input-iconWrapper--right"
+                role="button"
+                tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
-                  tabindex="0"
                 >
                   close
                 </i>
@@ -42888,14 +42912,16 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
+                aria-label="Clear mm/dd/yyyy"
                 class="Input-icon Input-iconWrapper--right"
+                role="button"
+                tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
-                  tabindex="0"
                 >
                   close
                 </i>
@@ -42949,14 +42975,16 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
+                aria-label="Clear mm/dd/yyyy"
                 class="Input-icon Input-iconWrapper--right"
+                role="button"
+                tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
-                  tabindex="0"
                 >
                   close
                 </i>
@@ -44015,14 +44043,16 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
+                aria-label="Clear mm/dd/yyyy"
                 class="Input-icon Input-iconWrapper--right"
+                role="button"
+                tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
-                  tabindex="0"
                 >
                   close
                 </i>
@@ -44076,14 +44106,16 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
+                aria-label="Clear mm/dd/yyyy"
                 class="Input-icon Input-iconWrapper--right"
+                role="button"
+                tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
-                  tabindex="0"
                 >
                   close
                 </i>
@@ -45142,14 +45174,16 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
+                aria-label="Clear mm/dd/yyyy"
                 class="Input-icon Input-iconWrapper--right"
+                role="button"
+                tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
-                  tabindex="0"
                 >
                   close
                 </i>
@@ -45203,14 +45237,16 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
+                aria-label="Clear mm/dd/yyyy"
                 class="Input-icon Input-iconWrapper--right"
+                role="button"
+                tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
-                  tabindex="0"
                 >
                   close
                 </i>
@@ -47348,14 +47384,16 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
+                aria-label="Clear mm/dd/yyyy"
                 class="Input-icon Input-iconWrapper--right"
+                role="button"
+                tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
-                  tabindex="0"
                 >
                   close
                 </i>
@@ -47409,14 +47447,16 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
+                aria-label="Clear mm/dd/yyyy"
                 class="Input-icon Input-iconWrapper--right"
+                role="button"
+                tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
-                  tabindex="0"
                 >
                   close
                 </i>
@@ -48475,14 +48515,16 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
+                aria-label="Clear mm/dd/yyyy"
                 class="Input-icon Input-iconWrapper--right"
+                role="button"
+                tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
-                  tabindex="0"
                 >
                   close
                 </i>
@@ -48536,14 +48578,16 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
+                aria-label="Clear mm/dd/yyyy"
                 class="Input-icon Input-iconWrapper--right"
+                role="button"
+                tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
-                  tabindex="0"
                 >
                   close
                 </i>
@@ -49602,14 +49646,16 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
+                aria-label="Clear mm/dd/yyyy"
                 class="Input-icon Input-iconWrapper--right"
+                role="button"
+                tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
-                  tabindex="0"
                 >
                   close
                 </i>
@@ -49663,14 +49709,16 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
+                aria-label="Clear mm/dd/yyyy"
                 class="Input-icon Input-iconWrapper--right"
+                role="button"
+                tabindex="0"
               >
                 <i
+                  aria-hidden="true"
                   class="material-symbols material-symbols-rounded Icon Input-icon--right p-3"
                   data-test="DesignSystem-Input--closeIcon"
-                  role="button"
                   style="font-size: 16px; width: 16px;"
-                  tabindex="0"
                 >
                   close
                 </i>
