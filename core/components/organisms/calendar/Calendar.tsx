@@ -776,7 +776,22 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const noOfRows = Math.ceil(yearBlockRange / yearsInRow);
 
     // Roving tabindex: determine which year gets tabIndex={0}
-    const focusYear = this.state.year ?? currYear;
+    // Fall back to first enabled year in the visible block if selected/current year is outside
+    const blockEnd = yearBlockNav + yearBlockRange;
+    const selectedYear = this.state.year;
+    const isInBlock = (y: number) => y >= yearBlockNav && y < blockEnd;
+    const candidateYear =
+      selectedYear != null && isInBlock(selectedYear) ? selectedYear : isInBlock(currYear) ? currYear : null;
+
+    const focusYear =
+      candidateYear ??
+      (() => {
+        for (let y = yearBlockNav; y < blockEnd; y++) {
+          const isDisabled = compareDate(disabledBefore, 'more', y) || compareDate(disabledAfter, 'less', y);
+          if (!isDisabled) return y;
+        }
+        return yearBlockNav;
+      })();
 
     return Array.from({ length: noOfRows }, (_y, row) => (
       <div key={row} className={styles['Calendar-valueRow']} role="row">

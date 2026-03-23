@@ -197,6 +197,7 @@ const SelectTrigger = (props: SelectTriggerProps) => {
         ref={triggerRef}
         onKeyDown={(event) => {
           if (disabled) return;
+          if (event.currentTarget !== event.target) return;
           if (
             !openPopover &&
             isOptionSelected &&
